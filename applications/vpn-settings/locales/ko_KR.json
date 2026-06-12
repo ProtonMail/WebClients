@@ -209,6 +209,9 @@
       "Connect to video conferencing": [
         "화상 회의에 연결하기"
       ],
+      "Connect your email": [
+        "이메일 연결하기"
+      ],
       "Connected": [
         "연결됨"
       ],
@@ -232,6 +235,9 @@
       ],
       "Continue to sign in": [
         "로그인하기"
+      ],
+      "Continue with Free": [
+        "무료로 계속하기"
       ],
       "Continue with this password": [
         "이 비밀번호로 계속"
@@ -262,9 +268,6 @@
       ],
       "Create new policy": [
         "새 정책 추가"
-      ],
-      "Create organization": [
-        "조직 생성"
       ],
       "Create users": [
         "사용자 만들기"
@@ -349,6 +352,9 @@
       ],
       "Discard Changes": [
         "변경 내용 취소"
+      ],
+      "Disconnect": [
+        "연결 해제"
       ],
       "Discover ${ planName }": [
         "${ planName } 알아보기"
@@ -568,6 +574,9 @@
       ],
       "Hide plan features": [
         "플랜 기능 숨기기"
+      ],
+      "I don't have my phrase": [
+        "복구 키를 가지고 있지 않아요."
       ],
       "Import": [
         "불러오기"
@@ -1875,6 +1884,9 @@
       "Migration status": [
         "마이그레이션 상태"
       ],
+      "Not activated": [
+        "활성화되지 않음"
+      ],
       "Organization does not have enough seats available": [
         "조직의 사용 권한이 충분하지 않습니다."
       ],
@@ -1989,9 +2001,6 @@
       "Close": [
         "닫기"
       ],
-      "Configure your network": [
-        "네트워크 구성"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
@@ -2010,12 +2019,6 @@
       "Discover and set up features": [
         "기능 알아보고 설정하기"
       ],
-      "Invite your team": [
-        "팀 초대"
-      ],
-      "Manage global VPN permissions": [
-        "전역 VPN 권한 관리"
-      ],
       "Maybe later": [
         "나중에"
       ],
@@ -2027,9 +2030,6 @@
       ],
       "Set up other features": [
         "다른 기능 설정하기"
-      ],
-      "Set up SSO": [
-        "SSO 설정"
       ],
       "Take a tour": [
         "둘러보기"
@@ -3311,6 +3311,9 @@
       "Automatically forward incoming email to another email address.": [
         "수신 이메일을 다른 이메일 주소로 자동 전달합니다."
       ],
+      "Available storage: ${ storageText }": [
+        "사용 가능한 저장공간: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Google의 염탐 가능성을 차단하세요. Gmail 은 사용자가 ${ MAIL_APP_NAME }에서 무엇을 하는지 볼 수 없습니다."
       ],
@@ -3353,6 +3356,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "수년 치의 이메일과 첨부 파일 등을 보관하기에 충분한 공간입니다."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "팀이 원격으로 있거나 공용 WiFi를 사용하는 경우에도 조직 데이터에 대한 안전한 접근이 보장됩니다."
       ],
@@ -3373,9 +3379,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "아직까지 조치하지 않으셨다면, ${ VPN_APP_NAME }에 대한 접근을 영구적으로 상실하지 않기 위해 일부 복구 방법을 활성화하시기 바랍니다."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
@@ -3425,14 +3428,26 @@
       "Track the status and activity of your referrals": [
         "추천인 상태와 활동 추적하기"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "단 ${ config.offerPrice }의 비용으로 15 GB 저장공간을 이용해 보세요."
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
       ],
       "We can't access ${ boldEmails } anymore.": [
         "${ boldEmails }에 더 이상 접근할 수 없습니다."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "지난 이메일을 불러오고 Gmail을 ${ MAIL_APP_NAME }에 연결하여 새 메세지가 자동으로 표시되도록 합니다."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "이전 이메일을 불러오고 중복 항목은 건너뛴 뒤 귀하의 Gmail에 연결하여 새 메시지가 자동으로 나타나도록 합니다. Easy Switch 설정에서 언제든지 불러오기를 실행 취소할 수 있습니다"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -3451,6 +3466,15 @@
       ],
       "You can still login with this address and re-connect at any time.": [
         "여전히 이 주소로 로그인하고 언제든지 다시 연결할 수 있습니다."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "귀하는 더 이상 ${ BRAND_NAME }에서 이메일을 수신하고 발신하는 데 ${ address.Email } 주소를 사용하실 수 없습니다. 또한 ${ BRAND_NAME }에서 이 주소로 보내는 메시지는 더 이상 종단간 암호화되지 않으니 유의하시기 바랍니다."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ]
     },
     "description": {
@@ -4341,6 +4365,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
+      "Something went wrong while converting the address": [
+        "주소를 변환하는 중 오류가 발생했습니다."
+      ],
       "Something went wrong while creating the address": [
         "주소를 생성하는 동안 문제가 발생했습니다."
       ],
@@ -5016,6 +5043,9 @@
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN 연결"
       ],
+      "10+ premium features": [
+        "10개 이상의 premium 기능"
+      ],
       "Access to all countries": [
         "모든 국가에 접근"
       ],
@@ -5030,6 +5060,12 @@
       ],
       "Continue": [
         "계속하기"
+      ],
+      "Custom email domain": [
+        "사용자 지정 이메일 도메인"
+      ],
+      "Email addresses": [
+        "이메일 주소"
       ],
       "Encrypted cloud storage for files, photos and documents": [
         "파일, 사진 및 문서에 대한 암호화된 클라우드 저장공간"
@@ -5049,8 +5085,14 @@
       "Secure streaming support": [
         "보안 스트리밍 지원"
       ],
+      "Storage": [
+        "저장공간"
+      ],
       "Torrenting support (P2P)": [
         "토렌팅 지원 (P2P)"
+      ],
+      "Unlimited folders, labels and filters": [
+        "무제한 폴더, 라벨 및 필터"
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
@@ -6631,6 +6673,9 @@
       "Enter your recovery phrase to change your password now.": [
         "비밀번호 변경을 즉시 하려면 복구 구문을 입력하십시오."
       ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "사용자의 신원을 인증하고 2단계 인증을 비활성화하기 위해 복구 키를 입력하세요."
+      ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName }(에)서 하나로"
       ],
@@ -6813,6 +6858,9 @@
       ],
       "Include device, location, and IP details": [
         "기기, 위치 및 IP 정보 포함"
+      ],
+      "Included": [
+        "포함됨"
       ],
       "Increase your account security by verifying your email address.": [
         "이메일 인증을 통해 계정 보안을 한차원 더 끌어올리세요."
@@ -7321,6 +7369,9 @@
       "Recently used servers:": [
         "최근 사용된 서버:"
       ],
+      "RECOMMENDED": [
+        "권장됨"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "신뢰하는 기기에서 권장됩니다. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -7783,6 +7834,9 @@
       "To proceed, we must verify the request.": [
         "계속하기 위해, 요청 검증이 필요합니다."
       ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "계정과 데이터에 다시 접근할 수 있도록, 사용자의 계정과 연결된 12개 단어로 구성된 복구 키를 입력하십시오."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "인터넷 연결을 안전하게 보호하기 위해, 기기에 맞는 ${ VPN_APP_NAME } 애플리케이션을 다운로드 및 설치하여 서버에 접속하세요."
       ],
@@ -7852,8 +7906,14 @@
       "Unverified email address.": [
         "확인되지 않은 이메일 주소."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "언제든지 업그레이드하여 남은 메일을 모두 가져오세요"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "언제든지 업그레이드하거나 공간을 비워 남은 메일을 모두 가져오세요"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
@@ -7971,6 +8031,9 @@
       ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "이미 **다른 브라우저**로 ${ BRAND_NAME } 웹 앱을 로그인한 것이 감지되었습니다.\n현재 활성 세션에서 비밀번호 재설정을 진행할 수 없습니다."
       ],
       "We generated a strong password for you": [
         "강력한 비밀번호를 생성했습니다."
@@ -8151,6 +8214,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "이제 관리자로써 계정에 접근하고 관리할 수 있습니다."
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "이제 계정의 접근 권한을 회복하도록 비밀번호 재설정이 가능합니다."
       ],
       "You can now return to the application to continue": [
         "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
@@ -8448,19 +8514,9 @@
         "보기 전용"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "조직이 다른 사용자에게 표시되는 방식입니다. 언제든지 변경할 수 있습니다."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "유효하지 않은 이메일 주소입니다"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "조직의 이름이 무엇인가요?"
       ]
     },
     "invitation status": {
@@ -12237,9 +12293,6 @@
       "Enter a name": [
         "이름 입력"
       ],
-      "Enter name": [
-        "이름 입력"
-      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -15294,6 +15347,9 @@
       "Contact us": [
         "문의"
       ],
+      "Continue with free storage": [
+        "무료 저장공간으로 계속하기"
+      ],
       "Continue with partial import?": [
         "일부 불러오기 계속?"
       ],
@@ -15579,6 +15635,9 @@
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus로 더 많은 저장공간을 확보하세요"
+      ],
       "Get the apps": [
         "앱 다운로드"
       ],
@@ -15807,8 +15866,14 @@
       "Remove domain": [
         "도메인 제거"
       ],
+      "Remove email": [
+        "이메일 삭제"
+      ],
       "Remove forwarding address": [
         "포워딩 주소 삭제"
+      ],
+      "Remove recovery phone number": [
+        "복구 휴대폰 번호 삭제"
       ],
       "Remove server?": [
         "서버를 삭제할까요?"
@@ -15987,6 +16052,9 @@
       "Summary": [
         "요약"
       ],
+      "Summer Sale": [
+        "여름 세일"
+      ],
       "Switch to one-password mode": [
         "단일 비밀번호 모드로 변경"
       ],
@@ -16109,9 +16177,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
-      ],
-      "Welcome to ${ planName }": [
-        "${ planName }에 오신 것을 환영해요"
       ],
       "What is an alias?": [
         "별칭이란?"
@@ -16930,6 +16995,12 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+      ],
+      "Are you sure you want to remove your notification email?": [
+        "알림 이메일을 정말 삭제하시겠어요?"
+      ],
+      "Are you sure you want to remove your recovery email?": [
+        "복구 이메일을 정말 삭제하시겠어요?"
       ],
       "Are you sure you want to remove your recovery phone number?": [
         "복구 휴대폰 번호를 정말 삭제하시겠어요?"

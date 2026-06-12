@@ -80,6 +80,9 @@
       "Choose a file or drag it here": [
         "فایلی را انتخاب کنید یا آن را به اینجا بکشید"
       ],
+      "Claim this address": [
+        "دریافت این نشانی"
+      ],
       "Close": [
         "بستن"
       ],
@@ -175,6 +178,9 @@
       ],
       "Discard changes": [
         "لغو تغییرات"
+      ],
+      "Disconnect": [
+        "قطع اتصال"
       ],
       "Dismiss": [
         "رد کردن"
@@ -349,6 +355,9 @@
       ],
       "Or": [
         "یا"
+      ],
+      "Or use a different Gmail address": [
+        "یا استفاده از یک نشانی Gmail دیگر"
       ],
       "Organization": [
         "سازمان"
@@ -611,6 +620,9 @@
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
       ],
+      "Use this Gmail address": [
+        "استفاده از این نشانی Gmail"
+      ],
       "Use your current email instead": [
         "در عوض از ایمیل فعلی خود استفاده کنید"
       ],
@@ -706,6 +718,9 @@
       ],
       "Disabled": [
         "غیرفعال"
+      ],
+      "Disconnected": [
+        "قطع‌شده"
       ],
       "Inactive": [
         "غیرفعال"
@@ -1948,8 +1963,20 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "گویا فهرست مخاطبی که وارد می‌کنید شامل برخی گروه‌ها است. لطفا بررسی کنید که چگونه این گروه‌ها باید درون‌برد شوند."
       ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "ما ایمیل‌های قدیمی شما را منتقل کرده و Gmail شما را به ${ MAIL_APP_NAME } متصل می‌کنیم تا پیام‌های جدید به‌طور خودکار ظاهر شوند"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "ما ایمیل‌های قدیمی شما را واردسازی کرده، از موارد تکراری رد می‌شویم و به Gmail شما متصل می‌شویم تا پیام‌های جدید به‌طور خودکار ظاهر شوند. می‌توانید هر زمان که خواستید واردسازی را در تنظیمات Easy Switch واگرد کنید"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "شما می‌توانید رویدادها را در قالب iCal وارد کنید (فایل ICS). اندازه فایل باید حداکثر ${ MAX_IMPORT_FILE_SIZE_STRING } و حداکثر ${ MAX_IMPORT_EVENTS_STRING } رویداد داشته باشد. اگر فایل شما بزرگتر است، لطفا آن را به فایل‌های کوچکتر تقسیم کنید."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "همچنان می‌توانید با این نشانی وارد شوید و هر زمان که خواستید دوباره متصل شوید."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "دیگر نمی‌توانید از ${ address.Email } برای دریافت و ارسال ایمیل در ${ BRAND_NAME } استفاده کنید. همچنین توجه داشته باشید پیام‌های ارسال‌شده به این نشانی از ${ BRAND_NAME } دیگر به‌صورت سرتاسر رمزگذاری نخواهند شد."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4627,6 +4654,12 @@
         "به"
       ]
     },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } از ${ maxBYOEAddresses } نشانی ایمیل در دسترس است",
+        "${ byoeAddressesAvailableCount } از ${ maxBYOEAddresses } نشانی ایمیل در دسترس است"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "دامنه‌ای را که متعلق به شماست به حساب ${ MAIL_APP_NAME } خود اضافه کنید."
@@ -6726,6 +6759,9 @@
       "Apply gift code": [
         "اعمال کد هدیه"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "آیا مطمئن هستید که می‌خواهید اتصال این نشانی را قطع کنید؟"
+      ],
       "Billing cycle": [
         "دوره صورت‌حساب"
       ],
@@ -7104,6 +7140,9 @@
       ],
       "Subscription": [
         "اشتراک"
+      ],
+      "Summer Sale": [
+        "حراج تابستانه"
       ],
       "Switch to one-password mode": [
         "گذر به حالت تک‌گذرواژه"

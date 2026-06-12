@@ -287,9 +287,6 @@
       "Create new policy": [
         "Yeni ilke oluştur"
       ],
-      "Create organization": [
-        "Kuruluş oluştur"
-      ],
       "Create users": [
         "Kullanıcılar ekle"
       ],
@@ -2187,14 +2184,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Kullanıcıları el ile ekle"
-      ],
       "Close": [
         "Kapat"
-      ],
-      "Configure your network": [
-        "Ağınızı yapılandırın"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
@@ -2214,29 +2205,17 @@
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
       ],
-      "Invite your team": [
-        "Ekibinizi davet edin"
-      ],
-      "Manage global VPN permissions": [
-        "Genel VPN izinlerini ayarlayın"
-      ],
       "Maybe later": [
         "Belki sonra"
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
       ],
-      "Secure your organization": [
-        "Kuruluşunuzun güvenliğini sağlayın"
-      ],
       "Send": [
         "Gönder"
       ],
       "Set up other features": [
         "Diğer özellikleri ayarlayın"
-      ],
-      "Set up SSO": [
-        "Tek oturum açmayı kurun"
       ],
       "Take a tour": [
         "Keşfedin"
@@ -3591,23 +3570,14 @@
       "Connect your CRM, website, printers, and more.": [
         "CRM uygulamanızı, sitenizi, yazıcılarınızı ve diğer şeyleri bağlayın."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Kullanıcılarınızın BT kaynaklarınıza size ayrılmış sunucular üzerinden erişebilmesi için bir ağ geçidi oluşturun."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Tek tıklamayla Zoom görüşmesi oluşturun ve etkinliğinize katılım bilgilerini ekleyin."
       ],
       "Create groups you can email with a single address.": [
         "Tek bir adresle e-posta gönderebileceğiniz gruplar oluşturun."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Yeni kullanıcı hesapları açın veya kullanıcıları SSO (tek oturum açma) SCIM ile içe aktarın."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Her ülkedeki paylaşılan sunuculara kimlerin bağlanabileceğini belirlemek için ilkeler oluşturun."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Hangi kullanıcıların 120 üzerinde paylaşılan sunucu konumumuzdan hangilerine bağlanabileceğine karar verin."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "E-postanıza ve takviminize bilgisayarınızdan ve mobil aygıtınızdan kolayca erişin."
@@ -3668,9 +3638,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Gizlilik ve ifade özgürlüğü tehdit edildiğinde yerel aktivistleri nasıl destekledik."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Henüz yapmadıysanız, ${ VPN_APP_NAME } erişiminizi asla kaybetmemek için bazı kurtarma yöntemlerini açın."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
@@ -3750,6 +3717,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Eski e-postalarınızı içe aktaracağız, yinelenenleri atlayacağız ve Gmail hesabınızla bağlantı kurarak yeni iletilerin otomatik olarak görünmesini sağlayacağız. Easy Switch ayarlarından istediğiniz zaman içe aktarma işlemini geri alabilirsiniz"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
@@ -7328,9 +7298,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Parolanız veya diğer kişisel verileriniz sızdırılmışsa bildirim alın. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Başlayalım"
-      ],
       "Get started with the referral link above.": [
         "Yukarıdaki öneri bağlantısı ile başlayın."
       ],
@@ -8147,9 +8114,6 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Birkaç kolay adımda kuruluşunuzu ayarlayın ve verilerinizi korumaya başlayın."
-      ],
       "Setting up ${ feature }…": [
         "${ feature } ayarlanıyor…"
       ],
@@ -8930,6 +8894,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } kullanıcılarını kaynak gösteremezsiniz"
       ],
+      "You do not have permission to create users.": [
+        "Kullanıcı oluşturmak için izniniz yok."
+      ],
       "You don't have any referrals.": [
         "Herhangi bir öneriniz yok."
       ],
@@ -9230,19 +9197,9 @@
         "Yalnızca görüntüleme"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Kuruluşunuz kullanıcılara bu şekilde görünecek. Bunu dilediğiniz zaman değiştirebilirsiniz."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Geçerli bir e-posta adresi değil"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Kuruluşunuzun adı nedir?"
       ]
     },
     "invitation status": {
@@ -10452,6 +10409,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } tarifesini edinin"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasından yardım al"
       ],
       "Groups": [
         "Gruplar"
@@ -13355,9 +13315,6 @@
       "Enter a name": [
         "Bir ad yazın"
       ],
-      "Enter name": [
-        "Adı yazın"
-      ],
       "example@domain.com": [
         "ornek@etkialani.com"
       ],
@@ -14111,6 +14068,28 @@
       ],
       "Edit retention rule": [
         "Verileri tutma kuralını düzenle"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Kuruluş Yöneticisi"
+      ],
+      "Security Admin": [
+        "Güvenlik Yöneticisi"
+      ],
+      "User Admin": [
+        "Kullanıcı Yöneticisi"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, veri tutma kurallarını ve VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturalandırmayı ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyeler için kullanıcıları, grupları ve depolama alanını yönetin, roller atayın ve lisansları tahsis edin."
       ]
     },
     "Safety review": {
@@ -16781,9 +16760,6 @@
       "Disconnected from Gmail": [
         "Gmail bağlantısı kesildi"
       ],
-      "Dismiss setup checklist": [
-        "Kurulum kontrol listesini atla"
-      ],
       "Domain names": [
         "Etki alanları"
       ],
@@ -16943,9 +16919,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "${ MAIL_APP_NAME } Plus ile daha fazla depolama alanı edinin"
-      ],
-      "Get started": [
-        "Başlayalım"
       ],
       "Get the apps": [
         "Uygulamaları indirme"
@@ -17412,7 +17385,7 @@
         "Özet"
       ],
       "Summer Sale": [
-        "Yaz indirimi"
+        "Yaz İndirimi"
       ],
       "Support your compliance objectives": [
         "Uyumluluk gereksinimlerinizi karşılayın"
@@ -17566,9 +17539,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
-      ],
-      "Welcome to ${ planName }": [
-        "${ planName } hizmetine hoş geldiniz"
       ],
       "What changes if you switch to the Free plan": [
         "Free tarifesine geçerseniz ne değişir?"
@@ -17868,8 +17838,8 @@
       "User is a group": [
         "Kullanıcı bir grup"
       ],
-      "via ${ groupName }": [
-        "${ groupName } üzerinden"
+      "via ${ groupNames }": [
+        "${ groupNames } aracılığıyla"
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"

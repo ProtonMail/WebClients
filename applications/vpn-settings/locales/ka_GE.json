@@ -257,9 +257,6 @@
       "Create new policy": [
         "ახალი პოლიტიკის შექმნა"
       ],
-      "Create organization": [
-        "ორგანიზაციის შექმნა"
-      ],
       "Create users": [
         "მომხმარებლების შექმნა"
       ],
@@ -1997,9 +1994,6 @@
       "Set up other features": [
         "სხვა ფუნქციების მორგება"
       ],
-      "Set up SSO": [
-        "SSO-ის მორგება"
-      ],
       "Take a tour": [
         "გასაცნობი ტური"
       ]
@@ -3357,8 +3351,20 @@
       "Track the status and activity of your referrals": [
         "თქვენი მიმართვების სტატუსისა და აქტივობების ტრეკინგი"
       ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "ჩვენ გადმოვიტანთ თქვენს ძველ ელფოსტას და დავაკავშირებთ თქვენს Gmail-ს ${ MAIL_APP_NAME }-თან, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "ჩვენ მოვახდენთ თქვენი ძველი ელფოსტის იმპორტს, გამოვტოვებთ დუბლიკატებს და დავუკავშირდებით თქვენს Gmail-ს, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს. იმპორტის დაბრუნება ნებისმიერ დროს შეგიძლიათ Easy Switch-ის პარამეტრებში"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "შეგიძლიათ, შემოიტანოთ ფაილები iCAL ფორმატში (ICS ფაილები). ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება შეიცავდეს ${ MAX_IMPORT_EVENTS_STRING }-მდე მოვლენას. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "თქვენ კვლავ შეძლებთ ამ მისამართით შესვლას და ნებისმიერ დროს ხელახლა დაკავშირებას."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "თქვენ ვეღარ შეძლებთ ${ address.Email }-ის გამოყენებას ${ BRAND_NAME }-ში ელფოსტის მისაღებად და გასაგზავნად. ასევე გაითვალისწინეთ, რომ ${ BRAND_NAME }-დან ამ მისამართზე გაგზავნილი შეტყობინებები აღარ იქნება ბოლოდან ბოლომდე დაშიფრული."
       ]
     },
     "description": {
@@ -6515,9 +6521,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "მიიღეთ გაფრთხილება, თუ თქვენმა პაროლმა ან სხვა პირადმა მონაცემებმა გაჟონა. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "დავიწყოთ"
-      ],
       "Get started with the referral link above.": [
         "დაიწყეთ რეფერალი ბმულით ზემოთ მხარეს."
       ],
@@ -8171,19 +8174,9 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "ასე გამოჩნდება თქვენი ორგანიზაცია მომხმარებლებისთვის. შეგიძლიათ შეცვალოთ ის ნებისმიერ დროს."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "არასწორი ელფოსტის მისამართია"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "რა ჰქვია თქვენს ორგანიზაციას?"
       ]
     },
     "invitation status": {
@@ -11858,9 +11851,6 @@
       "Enter a name": [
         "შეიყვანეთ სახელი"
       ],
-      "Enter name": [
-        "შეიყვანეთ სახელი"
-      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -14718,6 +14708,9 @@
       "Are you sure you want to close the preview?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ მინიატურა?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "დარწმუნებული ხართ, რომ გსურთ ამ მისამართის გათიშვა?"
+      ],
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
       ],
@@ -15108,9 +15101,6 @@
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
-      "Get started": [
-        "დავიწყოთ"
-      ],
       "Get the apps": [
         "აპების გადმოწერა"
       ],
@@ -15412,6 +15402,9 @@
       "Select data to import": [
         "აირჩიეთ შემოსატანი მონაცემები"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "გააგზავნეთ და მიიღეთ Gmail ${ MAIL_APP_NAME }-ის გამოყენებით"
+      ],
       "Send email reminders?": [
         "გავაგზავნო ელფოსტის შეხსენებები?"
       ],
@@ -15516,7 +15509,7 @@
         "შეჯამება"
       ],
       "Summer Sale": [
-        "საზაფხულო ფასდაკლება"
+        "ზაფხულის ფასდაკლება"
       ],
       "Switch to one-password mode": [
         "ერთპაროლიან რეჟიმზე გადართვა"
@@ -15637,9 +15630,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "მოგესალმებათ ${ planName }"
       ],
       "What is an alias?": [
         "რა არის ფსევდონიმი?"
