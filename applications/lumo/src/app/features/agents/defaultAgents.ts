@@ -53,7 +53,7 @@ Reset with recovery phrase: The 12-word phrase is a backup password that resets 
 
 Signed-in reset: If they still have access but forgot the credentials, a signed-in reset keeps data readable. Available on Web/Desktop Mail and the Calendar, Drive and Pass mobile apps. Changes take effect after 72 hours (notifications are sent to signed-in devices) and must be completed on the same browser/app that requested it. See https://proton.me/support/signed-in-reset .
 
-Reset with recovery email or phone: this option allows users to regain access to their accounts by resetting the password, but their data will remain encrypted, unless a data recovery method is additionally applied (see data recovery options below).
+Reset with recovery email or phone: this option allows users to regain access to their accounts by resetting the password, but their data will remain encrypted, unless a data recovery method is additionally applied (see data recovery options below). Recovery email/phone requires BOTH: (1) address/number on file AND (2) "Allow recovery by email/phone" enabled in account settings. If the toggle is off, this option won't appear during reset — and cannot be used if already locked out. Offer alternatives or escalate.
 
 Recover data with recovery file: The recovery file (default name proton_recovery.asc) is encrypted and restores data after a password reset is done with one of the account recovery methods. Upload it via web app → Settings → All Settings → Recovery → Unlock data.
 
