@@ -3919,6 +3919,9 @@
       ],
       "Åland Islands": [
         "Åland"
+      ],
+      "Canary Islands": [
+        "Kanarieöarna"
       ]
     },
     "customer_support.feature.all": {
@@ -4317,6 +4320,27 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tillräckligt med plats för åratal av e-post, bilagor och mer."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Om ett meddelande visas i fel kategori flyttar du det helt enkelt till rätt kategori. Högerklicka på ett meddelande för att välja en ny kategori, eller dra och släpp det där det hör hemma."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Vi importerar dina gamla e-postmeddelanden, hoppar över dubbletter och ansluter till ditt Gmail så att nya meddelanden visas automatiskt. Du kan ångra importen när som helst i inställningarna för Easy Switch."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Tråkigt att du lämnar oss. Om du har en stund över skulle vi verkligen uppskatta att höra varför du vill avbryta Din feedback hjälper oss att göra ${ BRAND_NAME } bättre för alla."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera ${ newUserStorageText } av dina senaste Gmail-meddelanden"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera dina senaste Gmail-e-postmeddelanden."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Du är bland de första som får prova vår nya kategorivy innan den lanseras. Din feedback hjälper till att förbättra hur Proton Mail sorterar e-post för alla."
       ]
     },
     "description": {
@@ -5293,6 +5317,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
+      ],
+      "Something went wrong while converting the address": [
+        "Något gick fel när adressen konverterades"
       ]
     },
     "error": {
@@ -9077,6 +9104,24 @@
       ],
       "Password verified": [
         "Lösenord verifierat"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i krediter om de prenumererar."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Sorterar inkommande e-post automatiskt i kategorier"
+      ],
+      "Please select the labels you would like to import:": [
+        "Välj etiketterna du vill importera:"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
       ]
     },
     "info": {
@@ -10148,6 +10193,9 @@
       ],
       "Email categories": [
         "E-postkategorier"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Personlig och arbetsrelaterad e-post, plus viktiga uppdateringar och aviseringar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12688,6 +12736,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
+      ],
+      "This key is used for message verification": [
+        "Denna nyckel används för meddelandeverifiering"
       ]
     },
     "PGP key warning": {
@@ -16119,6 +16170,12 @@
       ],
       "Verify your password": [
         "Verifiera ditt lösenord"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Hjälp till att forma framtiden för e-postkategorier i ${ MAIL_APP_NAME }"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrera din organisation till ${ BRAND_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16791,6 +16848,12 @@
       ],
       "You": [
         "Du"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Kontakta din administratör för att starta en migrering."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {

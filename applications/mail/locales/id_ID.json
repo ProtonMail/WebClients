@@ -1688,6 +1688,15 @@
       ],
       "Get the deal": [
         "Dapatkan penawaran ini"
+      ],
+      "Connect your email": [
+        "Hubungkan email Anda"
+      ],
+      "Continue with Free": [
+        "Lanjutkan dengan Gratis"
+      ],
+      "Reconnect to Gmail": [
+        "Hubungkan ulang ke Gmail"
       ]
     },
     "action": {
@@ -4092,6 +4101,69 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Penyimpanan tersedia: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blokir kemampuan Google untuk membuat profil Anda. Gmail tidak dapat melihat aktivitas di ${ MAIL_APP_NAME }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Email yang dikirim ke ${ connectedAddressText } kini akan muncul di ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Ruang yang cukup untuk email, lampiran, dan lainnya selama bertahun-tahun."
+      ],
+      "No ads. No trackers.": [
+        "Tanpa iklan. Tanpa pelacak."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Baca, balas, dan pantau Gmail dari dalam ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Kirim dan terima pesan Gmail secara langsung di ${ MAIL_APP_NAME }. Hubungkan alamat Anda di ${ addressesSettingsLink }."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Hal ini dapat terjadi jika izin dihapus atau kata sandi Anda diubah."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Untuk terus menerima dan mengirim pesan Gmail di ${ BRAND_NAME }, silakan hubungkan ulang akun Anda."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Untuk terus menerima dan mengirim pesan Gmail di ${ BRAND_NAME }, silakan hubungkan ulang akun Anda."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Buka kapasitas penyimpanan sebesar 15 GB hanya dengan ${ config.offerPrice }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Tidak dapat lagi mengakses ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Impor akan dijeda saat penyimpanan mencapai 80% untuk menyisakan ruang bagi pesan baru."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Email lama Anda akan diimpor dan Gmail akan dihubungkan ke ${ MAIL_APP_NAME } agar pesan baru muncul secara otomatis"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Email lama akan diimpor, duplikat akan dilewati, dan dihubungkan ke Gmail agar pesan baru muncul secara otomatis. Impor dapat diurungkan kapan saja di pengaturan Easy Switch."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Impor email dari Gmail telah dimulai. Anda akan diberi tahu setelah selesai."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Sudah ada alamat Gmail yang meneruskan ke ${ MAIL_APP_NAME }. Hubungkan di bawah ini untuk mengirim dan menerima email secara langsung dari ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Sudah ada alamat Gmail yang meneruskan ke ${ MAIL_APP_NAME }. Hubungkan salah satu di bawah ini untuk mengirim dan menerima email secara langsung dari ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Kini dapat mengirim email dari ${ BRAND_NAME } menggunakan alamat ini."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya ${ newUserStorageText } pesan Gmail terbaru Anda yang akan diimpor"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya email Gmail terbaru Anda yang akan diimpor."
       ]
     },
     "description": {
@@ -5005,6 +5077,18 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
+      ],
+      "Address is already added to your account": [
+        "Alamat sudah ditambahkan ke akun Anda"
+      ],
+      "Something went wrong while converting the address": [
+        "Terjadi kesalahan saat mengonversi alamat"
+      ],
+      "Something went wrong while creating the address": [
+        "Terjadi kesalahan saat membuat alamat"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Terjadi kesalahan saat mengambil domain yang tersedia"
       ]
     },
     "error": {
@@ -5429,6 +5513,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Tanpa batasan jumlah alias hide-my-email"
+      ],
+      "10+ premium features": [
+        "10+ fitur premium"
+      ],
+      "Custom email domain": [
+        "Domain email khusus"
+      ],
+      "Email addresses": [
+        "Alamat email"
+      ],
+      "Storage": [
+        "Penyimpanan"
       ]
     },
     "Features": {
@@ -8562,6 +8658,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "Included": [
+        "Termasuk"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Tingkatkan kapan saja untuk memindahkan sisanya"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Tingkatkan atau bersihkan ruang penyimpanan kapan saja untuk memindahkan sisanya"
       ]
     },
     "info": {
@@ -9589,6 +9694,9 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Select which Gmail address to connect": [
+        "Pilih alamat Gmail yang ingin dihubungkan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11222,6 +11330,9 @@
       ],
       "Trial started": [
         "Masa uji coba dimulai"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Alamat ${ BRAND_NAME } Anda siap digunakan"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11373,6 +11484,12 @@
       ],
       "Skip for now": [
         "Lewati untuk sementara"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Pindahkan email ke ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Pindahkan email yang ada ke ${ MAIL_APP_NAME } agar dapat mengelola semuanya dari satu kotak masuk pribadi."
       ]
     },
     "Onboarding modal": {
@@ -15096,6 +15213,30 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Pindahkan Gmail Anda ke ${ MAIL_APP_NAME }"
+      ],
+      "Continue with free storage": [
+        "Lanjutkan dengan penyimpanan gratis"
+      ],
+      "Disconnected from Gmail": [
+        "Terputus dari Gmail"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Dapatkan penyimpanan lebih besar dengan ${ MAIL_APP_NAME } Plus"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Kirim dan terima Gmail menggunakan ${ MAIL_APP_NAME }"
+      ],
+      "Summer Sale": [
+        "Promo Musim Panas"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Gunakan Gmail dengan aman di ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "Semua sudah siap"
       ]
     },
     "Today icon tooltip in mini calendar": {

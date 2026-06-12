@@ -3928,6 +3928,9 @@
       ],
       "Åland Islands": [
         "Ilhas Åland"
+      ],
+      "Canary Islands": [
+        "Ilhas Canárias"
       ]
     },
     "customer_support.feature.all": {
@@ -4338,6 +4341,15 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leia, responda e fique por dentro do Gmail de dentro do ${ MAIL_APP_NAME }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espaço suficiente para anos de e-mails, anexos e muito mais."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isso pode acontecer se as permissões foram removidas ou se a sua senha foi alterada."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Vamos importar seus e-mails antigos, pular duplicatas e conectar ao seu Gmail para que as novas mensagens apareçam automaticamente. Você pode desfazer a importação a qualquer momento nas configurações do Easy Switch."
       ]
     },
     "description": {
@@ -5320,6 +5332,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
+      ],
+      "Something went wrong while converting the address": [
+        "Ocorreu um erro ao converter o endereço"
       ]
     },
     "error": {
@@ -9139,6 +9154,15 @@
       ],
       "Do you remember your password? ${ verifyButton }": [
         "Você lembra sua senha ? ${ verifyButton }"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convide seus amigos** para ${ BRAND_NAME } com seu link de indicação."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Eles ganham ${ refereeRewardAmount }** em créditos se se inscreverem."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Ganhe ${ referrerRewardAmount }** créditos para cada amigo que se inscrever."
       ]
     },
     "info": {
@@ -16221,7 +16245,7 @@
         "Migre sua organização para a ${ BRAND_NAME }"
       ],
       "Summer Sale": [
-        "Promoção de verão"
+        "Oferta Especial"
       ],
       "Verify your password": [
         "Verificar sua senha"

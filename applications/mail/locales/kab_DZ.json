@@ -1227,6 +1227,15 @@
       ],
       "Get the deal": [
         "Faṛes tagnit"
+      ],
+      "Claim this address": [
+        "Suter tansa-agi"
+      ],
+      "Or use a different Gmail address": [
+        "Neɣ seqdec tansa n Gmail nniḍen"
+      ],
+      "Use this Gmail address": [
+        "Seqdec tansa-agi n Gmail"
       ]
     },
     "action": {
@@ -3001,6 +3010,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Tzemreḍ ad tcerḍeḍ ɣef yinermisen ur tebɣiḍ ara ad tesmezdiḍ neɣ ad tḥerzeḍ. Tukksa ur tetteddu ara alamma tessdeḍ ɣef tqeffalt n usmezdi"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "A d-nawi imaylen-ik iqdacen u ad nqqen Gmail-ik ɣer ${ MAIL_APP_NAME } iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "A nsserṛeḥ imaylen-ik iqdacen, ad nezgel ayen yettwalesen, u ad nqqen ɣer Gmail-ik iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut. Tizmired ad tsewtid aserṛeḥ melmi i k-yehwa deg yiɣewwaren n Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -9295,6 +9310,9 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "Summer Sale": [
+        "Tanzayt n unebdu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9825,6 +9843,14 @@
       ],
       "SUMMER SALE": [
         "TANZAYT N UNEBDU"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Awi imaylen-ik ɣer ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Awi-d imaylen-ik yellan ɣer ${ MAIL_APP_NAME } iwakken ad tizmired ad tsefreked kullec seg yiwet n tnakat n unermas tusligt."
       ]
     }
   }

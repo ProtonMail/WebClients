@@ -1685,6 +1685,15 @@
       ],
       "Get the deal": [
         "取得優惠"
+      ],
+      "Or use a different Gmail address": [
+        "或使用其他 Gmail 位址"
+      ],
+      "Use this Gmail address": [
+        "使用此 Gmail 位址"
+      ],
+      "Verify now": [
+        "立即驗證"
       ]
     },
     "action": {
@@ -4218,6 +4227,24 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "阻止 Google 建立您的個人檔案。Gmail 無法查看您在 ${ MAIL_APP_NAME } 中的活動"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "直接在 ${ MAIL_APP_NAME } 中閱讀、回覆並隨時掌握 Gmail 動態"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "直接在 ${ MAIL_APP_NAME } 中傳送和接收 Gmail 訊息。請在 ${ addressesSettingsLink } 中連線您的位址。"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "我們將匯入您的舊電子郵件、略過重複項目，並連線至您的 Gmail，以便新訊息自動出現。您可以隨時在 Easy Switch 設定中復原匯入"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。請在下方連線一個位址，以便直接從 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
       ]
     },
     "description": {
@@ -5158,6 +5185,15 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
+      ],
+      "Something went wrong while converting the address": [
+        "轉換位址時發生錯誤"
+      ],
+      "Something went wrong while creating the address": [
+        "建立位址時發生錯誤"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
       ]
     },
     "error": {
@@ -8786,6 +8822,15 @@
       ],
       "${ total } user found": [
         "找到 ${ total } 位使用者"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
       ]
     },
     "info": {
@@ -11676,6 +11721,9 @@
       ],
       "Some popular services": [
         "熱門的服務"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "將您現有的電子郵件帶入 ${ MAIL_APP_NAME }，以便您能從一個私有收件匣管理所有內容。"
       ]
     },
     "Onboarding modal": {
@@ -13928,6 +13976,9 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe撰寫幫手"
       ]
     },
     "subscription reminder": {
@@ -15521,6 +15572,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Summer Sale": [
+        "夏季特賣"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16125,6 +16182,16 @@
       ],
       "SUMMER SALE": [
         "夏季特賣"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "切換至 ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "切換至 ${ MAIL_APP_NAME }"
       ]
     }
   }

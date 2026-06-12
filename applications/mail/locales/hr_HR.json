@@ -1267,6 +1267,15 @@
       ],
       "Get the deal": [
         "Ugrabite ponudu"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Zatražite svoju besplatnu ${ BRAND_NAME } adresu"
+      ],
+      "Or use a different Gmail address": [
+        "Ili upotrijebite drugu Gmail adresu"
+      ],
+      "Use this Gmail address": [
+        "Upotrijebite ovu Gmail adresu"
       ]
     },
     "action": {
@@ -3034,6 +3043,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Označite za brisanje kontakte koje ne želite ni spajati ni zadržavati. Brisanje će se izvršiti tek kad se pritisne gumb za spajanje"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Prenijet ćemo vašu staru e-poštu i povezati vaš Gmail s ${ MAIL_APP_NAME } kako bi se nove poruke automatski prikazivale."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Uvest ćemo vašu staru e-poštu, preskočiti duplikate i povezati se s vašim Gmailom kako bi se nove poruke automatski prikazivale. Uvoz možete poništiti u bilo kojem trenutku u postavkama Easy Switch."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7521,6 +7536,12 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Možda kasnije"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Prenesite svoju e-poštu u ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Prenesite svoju postojeću e-poštu u ${ MAIL_APP_NAME } kako biste mogli upravljati svime iz jedne privatne pristigle pošte."
       ]
     },
     "Onboarding modal": {
@@ -9834,6 +9855,9 @@
       ],
       "Your plan": [
         "Vaša pretplata"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
       ]
     },
     "Today icon tooltip in mini calendar": {
