@@ -132,6 +132,16 @@ async function* errorIterator(source = 'src', options = { isVerbose: false }) {
         if (errorsNumbers.match) {
             yield* errorsNumbers.errors(file);
         }
+
+        // Matches an empty (or whitespace-only) context: c(''), c(""), c(``)
+        const errorEmptyContext = testRule(
+            /c\(\s*(?:\x27\s*\x27|\x22\s*\x22|\x60\s*\x60)\s*\)\./g,
+            content,
+            'emptyContext'
+        );
+        if (errorEmptyContext.match) {
+            yield* errorEmptyContext.errors(file);
+        }
     }
 }
 
@@ -178,6 +188,15 @@ function formatErrors(error) {
     match: ${error.match}
      line: ${error.line}
       fix: Unexpected newline inside the string.
+`;
+    }
+
+    if (error.type === 'emptyContext') {
+        return `🚨 [Error] ${error.file}:${error.index}
+    match: ${error.match}
+     line: ${error.line}
+      fix: The translation context must not be empty.
+           Use a meaningful context - c(\x27<context>\x27).t\`<string>\`
 `;
     }
 

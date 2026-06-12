@@ -119,7 +119,12 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                 {c('BOSS')
                     .t`You're almost done, you need to configure your domain to receive your emails directly on ${BRAND_NAME}. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.`}
             </p>
-            <LazyLottie style={{ padding: '0 10rem' }} autoPlay getAnimationData={() => import('../../animations/providerSwitch.json')} loop={true} />
+            <LazyLottie
+                style={{ padding: '0 10rem' }}
+                autoPlay
+                getAnimationData={() => import('../../animations/providerSwitch.json')}
+                loop={true}
+            />
             <p className="color-weak">{c('BOSS')
                 .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
             <DNSGroupRecords group={group} />
@@ -131,7 +136,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
             >
                 <div className="px-2">
                     <p className="m-0">{c('Label').t`Confirm MX records added`}</p>
-                    <span className="color-weak text-sm">{c('').t`Required to proceed to the next step`}</span>
+                    <span className="color-weak text-sm">{c('Info').t`Required to proceed to the next step`}</span>
                 </div>
             </Checkbox>
         </div>
