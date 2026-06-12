@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
 import { conversationCountsThunk } from '@proton/mail/store/counts/conversationCountsSlice';
@@ -30,6 +30,19 @@ export const useCategoryFlagWatcher = () => {
     const dispatch = useMailDispatch();
     const categoryView = useCategoriesView();
 
+    const isFirstRun = useRef(true);
+
+    // Counts must be re-fetched when the category view setting changes and it's not the first mount
+    useEffect(() => {
+        if (isFirstRun.current) {
+            isFirstRun.current = false;
+            return;
+        }
+
+        void dispatch(conversationCountsThunk({ cache: CacheType.None }));
+        void dispatch(messageCountsThunk({ cache: CacheType.None }));
+    }, [categoryView.categoryViewAccess, dispatch]);
+
     // We get the ID from the URL because the labelID in the state is not up-to-date yet.
     useEffect(() => {
         const { rawLabelID } = getParametersFromPath(location.pathname);
@@ -37,9 +50,6 @@ export const useCategoryFlagWatcher = () => {
         if (!isInbox) {
             return;
         }
-
-        void dispatch(conversationCountsThunk({ cache: CacheType.None }));
-        void dispatch(messageCountsThunk({ cache: CacheType.None }));
 
         const categoryID = categoryIDFromUrl(location);
         if (
