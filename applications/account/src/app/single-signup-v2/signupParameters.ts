@@ -46,6 +46,8 @@ export const getSignupParameters = ({
     const slEmail = searchParams.get('slEmail');
     const emailUnspecified = slEmail === 'unspecified';
 
+    const visitorId = searchParams.get('visitorId') || undefined;
+
     if (getIsPassApp(toApp)) {
         if (invitee && inviter) {
             mode = SignupMode.Invite;
@@ -106,6 +108,7 @@ export const getSignupParameters = ({
                         porkbunToken,
                     },
                 },
+                visitorId,
                 preSelectedPlan: PLANS.FREE,
                 coupon: COUPON_CODES.PORKBUN,
             };
@@ -173,5 +176,6 @@ export const getSignupParameters = ({
         signIn,
         mode,
         invite,
+        visitorId,
     };
 };

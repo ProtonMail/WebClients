@@ -55,6 +55,7 @@ export const queryCreateUserExternal = (
             [key: string]: string;
         };
         Salt?: string;
+        VisitorId: string | undefined;
     },
     product: ProductParam
 ): FetchConfig => ({
