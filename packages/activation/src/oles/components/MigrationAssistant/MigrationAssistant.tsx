@@ -297,7 +297,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
                 />
             )}
 
-            {migrating && <MigratingModal />}
+            {migrating && <MigratingModal variant="migrating" />}
         </div>
     );
 };
