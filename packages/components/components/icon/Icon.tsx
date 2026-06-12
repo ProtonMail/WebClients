@@ -23,6 +23,14 @@ export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     nameSpaceSvg?: string;
 }
 
+/**
+ * @deprecated please use direct Icon component Ic<IconName> instead
+ * @example
+ * // bad
+ * <Icon name="brand-proton" />
+ * // good
+ * <IcBrandProton />
+ */
 const Icon = forwardRef<SVGSVGElement, IconProps>(
     ({ name, alt, title, color, className = '', viewBox = '0 0 16 16', size = 4, rotate = 0, ...rest }, ref) => {
         const style = {
@@ -32,6 +40,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
 
         return (
             <>
+                {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                 <svg
                     style={style}
                     viewBox={viewBox}
@@ -50,5 +59,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
         );
     }
 );
+
+Icon.displayName = 'Icon';
 
 export default Icon;
