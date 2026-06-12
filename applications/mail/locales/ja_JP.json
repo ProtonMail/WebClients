@@ -291,6 +291,9 @@
       "Connect to video conferencing": [
         "ビデオ会議に接続"
       ],
+      "Connect your email": [
+        "メールを接続する"
+      ],
       "Contact group": [
         "連絡先グループ"
       ],
@@ -305,6 +308,9 @@
       ],
       "Continue with categories": [
         "カテゴリを続ける"
+      ],
+      "Continue with Free": [
+        "無料で続行"
       ],
       "Continue with Google": [
         "Google で続行"
@@ -1496,6 +1502,9 @@
       ],
       "Trust": [
         "信頼する"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -4062,6 +4071,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "受信トレイに届く前に、メールを自動的に分類します。"
       ],
+      "Available storage: ${ storageText }": [
+        "利用可能なストレージ: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Google によるあなたのプロファイリングをブロックします。 ${ MAIL_APP_NAME } でのお客様の行動は Gmail からは閲覧できません"
       ],
@@ -4092,11 +4104,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "デスクトップからクラウドにファイルを簡単に同期し、モバイルデバイスからアクセスできます。"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }宛てに送信されたメールが${ MAIL_APP_NAME }に表示されるようになります。"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "セキュリティを強化するために、組織内で2要素認証の使用を推奨します。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "メールや添付ファイル、その他のデータを何年分も保存できる十分な容量があります。"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "チームがリモートまたは公共のWi-Fiを使用している場合でも、組織のデータへの安全なアクセスを確保します。"
@@ -4140,6 +4158,12 @@
       "No labels": [
         "ラベルがありません"
       ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }内からGmailの閲覧、返信、最新情報の確認が行えます"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "${ MAIL_APP_NAME }で直接Gmailメッセージを送受信できます。${ addressesSettingsLink }でお客様のアドレスを接続してください。"
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
       ],
@@ -4155,11 +4179,17 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "共有カレンダーで同期やスケジューリングを簡単に。"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "これは、権限が削除されたか、お客様のパスワードが変更された場合に発生する可能性があります。"
+      ],
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "別のGmailアドレスに接続するには、${ BRAND_NAME }に転送されている余分なGmailアドレスを削除してください。"
       ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "最大${ MAX_SYNC_PAID_USER }件のGmailアドレスに接続するには、${ planName }にアップグレードしてください。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME }でGmailのメッセージの送受信を継続するには、アカウントを再接続してください。"
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "${ BRAND_NAME }でGmailメッセージの送受信を続けるには、アカウントを再接続してください。"
@@ -4185,6 +4215,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "メール トラッカー保護をオンにして、広告主などがお客様の位置情報やオンライン アクティビティを追跡しないようにします。"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "たった${ config.offerPrice }で15GBの容量をアンロック。"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "最大${ MAX_SYNC_PAID_USER }件のアカウントを接続するには${ planName }にアップグレードしてください"
       ],
@@ -4206,6 +4239,18 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "このメールには既知のトラッカーと追跡URLは見つかりませんでした。"
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "新規メッセージ用の容量を確保するため、ストレージ容量が80%に達した時点でインポートを一時停止します。"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "お客様の以前のメールを取り込み、Gmailを${ MAIL_APP_NAME }に接続することで、新しいメッセージが自動的に表示されるようになります。"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "古いメールをインポートし、重複をスキップして、新しいメッセージが自動的に表示されるようにお客様のGmailに接続します。インポートは、Easy Switchの設定からいつでも元に戻すことができます。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmailからのメールのインポートを開始しました。完了次第お知らせいたします。"
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
       ],
@@ -4220,6 +4265,9 @@
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "すでにGmailアドレスが${ MAIL_APP_NAME }に転送される設定になっています。以下から接続してお客様の${ MAIL_APP_NAME }で直接メールを送受信できるようにしましょう。"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "すでに${ MAIL_APP_NAME }に転送されているGmailアドレスがあります。以下でアドレスを接続すると、${ MAIL_APP_NAME }から直接メールを送受信できるようになります。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
@@ -4247,6 +4295,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "アカウントとデータの回復手段が設定されています。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "お客様の無料の${ MAIL_APP_NAME }アカウントはストレージ容量が限られているため、直近のGmailメッセージから${ newUserStorageText }分のみインポートされます。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "お客様の無料の${ MAIL_APP_NAME }アカウントはストレージ容量が限られているため、直近のGmailメールのみがインポートされます。"
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "あなたのプランでは${ MAX_SYNC_FREE_USER }件のGmailアドレスがサポートされています。"
@@ -5028,6 +5082,15 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
+      "Something went wrong while converting the address": [
+        "アドレスの変換中にエラーが発生しました"
+      ],
+      "Something went wrong while creating the address": [
+        "アドレスの作成中にエラーが発生しました"
+      ],
+      "Something went wrong while fetching available domains": [
+        "利用可能なドメインのフェッチ中にエラーが発生しました"
+      ],
       "Something went wrong. Please try again.": [
         "何か問題が発生しました。もう一度お試しください。"
       ],
@@ -5626,11 +5689,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10個以上のプレミアム機能"
+      ],
+      "Custom email domain": [
+        "カスタムメールドメイン"
+      ],
+      "Email addresses": [
+        "メールアドレス"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "ファイル、写真、文書のための暗号化済みクラウドストレージ"
       ],
       "More premium features": [
         "さらなるプレミアム機能"
+      ],
+      "Storage": [
+        "ストレージ"
       ],
       "Unlimited hide-my-email aliases": [
         "無制限の Hide-my-email エイリアス"
@@ -5693,6 +5768,9 @@
     "Filter": {
       "Filter": [
         "フィルター"
+      ],
+      "Filter and sort emails": [
+        "メールのフィルタと並べ替え"
       ],
       "Reset": [
         "リセット"
@@ -6959,6 +7037,9 @@
       "Create a new contact group": [
         "新しい連絡先グループを作成"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } 人のメンバーのために安全なクラウドを作成"
+      ],
       "Create in": [
         "作成日時"
       ],
@@ -7349,6 +7430,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "プロンプトと応答を記入して、サービスの改善を手伝ってください"
       ],
+      "Included": [
+        "含まれています"
+      ],
       "Included for free with your plan": [
         "プランに無料で含まれています"
       ],
@@ -7377,7 +7461,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8348,8 +8432,14 @@
       "Updating message content search...": [
         "メッセージ内容の検索を更新中..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "残りを持ち越すためにいつでもアップグレードできます"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "残りのメールを取り込むには、いつでもアップグレードするか容量を空けてください"
       ],
       "Upgrade to ${ plan } to unlock": [
         "${ plan }にアップグレードしてロックを解除する"
@@ -9033,6 +9123,11 @@
         "スターを付ける"
       ]
     },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }に切り替える"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "アクションのショートカット"
@@ -9045,6 +9140,9 @@
       ],
       "Composer shortcuts": [
         "作成画面のショートカット"
+      ],
+      "Desktop app navigation": [
+        "デスクトップアプリナビゲーション"
       ],
       "Folder shortcuts": [
         "フォルダのショートカット"
@@ -9212,6 +9310,9 @@
       ],
       "Category": [
         "カテゴリー"
+      ],
+      "Category:": [
+        "カテゴリー:"
       ],
       "CC": [
         "CC"
@@ -9611,6 +9712,9 @@
       ],
       "Payment method": [
         "支払い方法"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "個人のメールも、仕事のメールも、さらに重要な更新や通知も"
       ],
       "PGP scheme": [
         "PGP 形式"
@@ -10743,6 +10847,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "すべての基本的な${ BRAND_NAME }サービス(${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }個の予約ページの予定されたスケジュール"
+      ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
       ],
@@ -11418,6 +11525,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } カ国"
+      ],
       "Access advanced VPN features": [
         "高度な VPN 機能にアクセス"
       ],
@@ -11512,6 +11622,9 @@
       ],
       "Trial started": [
         "トライアルが始まりました"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME }アドレスの準備が整いました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11660,6 +11773,9 @@
     "Onboarding List Placeholder": {
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "メールを${ MAIL_APP_NAME }に取り込む"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "お客様の既存のメールを ${ MAIL_APP_NAME } に取り込み、1つのプライベートな受信トレイですべてを管理できるようにしましょう。"
       ],
       "Maybe later": [
         "今度やる"
@@ -12285,6 +12401,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "外部鍵は、WKD から自動的に取得されました。"
+      ],
+      "This key is used for message verification": [
+        "このキーはメッセージの認証に使用されています"
       ],
       "This key is used to encrypt messages to this contact": [
         "この鍵は、この連絡先宛のメッセージの暗号化に使用されます"
@@ -13342,6 +13461,9 @@
       ],
       "Smallest first": [
         "容量の小さい順"
+      ],
+      "Sort by": [
+        "並べ替え"
       ]
     },
     "specialoffer: Action": {
@@ -14040,6 +14162,9 @@
       ],
       "Version history": [
         "バージョン履歴"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "${ PAID_PREMIUM_MAX_PARTICIPANTS }人まで参加可能なビデオ会議"
       ],
       "Watch the interview": [
         "インタビューを見る"
@@ -14746,6 +14871,9 @@
       "Block sender": [
         "差出人をブロック"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Gmailを${ MAIL_APP_NAME }に取り込む"
+      ],
       "Built for privacy": [
         "プライバシーのために構築"
       ],
@@ -14814,6 +14942,9 @@
       ],
       "Contacts": [
         "連絡先"
+      ],
+      "Continue with free storage": [
+        "無料のストレージのまま続行"
       ],
       "Continue with partial import?": [
         "部分的なインポートを続行しますか?"
@@ -15015,6 +15146,9 @@
       ],
       "Get more from your VPN": [
         "VPNからさらに入手する"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plusでストレージ容量を増やす"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } アプリを入手"
@@ -15517,6 +15651,9 @@
       "Summary": [
         "概要"
       ],
+      "Summer Sale": [
+        "サマーセール"
+      ],
       "This field cannot be empty": [
         "このフィールドは空欄にできません"
       ],
@@ -15630,6 +15767,9 @@
       ],
       "When is it most important to use a VPN?": [
         "最もVPNの利用が重要になるのはいつでしょうか？"
+      ],
+      "You are all set": [
+        "準備が完了しました"
       ],
       "You can now create unlimited folders and labels": [
         "無制限のフォルダとラベルを作成できるようになりました"

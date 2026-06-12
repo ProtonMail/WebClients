@@ -291,6 +291,9 @@
       "Connect to video conferencing": [
         "Hubungkan ke konferensi video"
       ],
+      "Connect your email": [
+        "Hubungkan email Anda"
+      ],
       "Contact group": [
         "Grup kontak"
       ],
@@ -302,6 +305,9 @@
       ],
       "Continue with categories": [
         "Lanjutkan dengan kategori"
+      ],
+      "Continue with Free": [
+        "Lanjutkan dengan Gratis"
       ],
       "Continue with Google": [
         "Lanjut dengan Google"
@@ -1100,6 +1106,9 @@
       ],
       "Reconnect": [
         "Hubungkan kembali"
+      ],
+      "Reconnect to Gmail": [
+        "Hubungkan ulang ke Gmail"
       ],
       "Recover data": [
         "Pulihkan data"
@@ -3978,6 +3987,12 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Urutkan pesan masuk Anda secara otomatis sebelum mencapai kotak masuk Anda."
       ],
+      "Available storage: ${ storageText }": [
+        "Penyimpanan tersedia: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blokir kemampuan Google untuk membuat profil Anda. Gmail tidak dapat melihat aktivitas di ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Sesuaikan pengaturan ini terlebih dahulu untuk mengaktifkan organisasi Anda dan menyesuaikan alamat email Anda."
       ],
@@ -4005,11 +4020,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sinkronkan file ke layanan cloud dari desktop Anda dengan mudah dan akses file dari perangkat seluler Anda."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Email yang dikirim ke ${ connectedAddressText } kini akan muncul di ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Anjurkan penggunaan autentikasi dua faktor di dalam organisasi Anda untuk keamanan ekstra."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Ruang yang cukup untuk email, lampiran, dan lainnya selama bertahun-tahun."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Pastikan data milik organisasi Anda selalu terakses secara aman, bahkan apabila tim Anda bekerja secara jarak jauh atau menggunakan WiFi publik."
@@ -4044,11 +4065,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Email baru dari ${ senderEmailAddress } tidak akan disampaikan kepada Anda dan akan dihapus secara permanen."
       ],
+      "No ads. No trackers.": [
+        "Tanpa iklan. Tanpa pelacak."
+      ],
       "No folders": [
         "Tidak ada folder"
       ],
       "No labels": [
         "Tidak ada label"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Baca, balas, dan pantau Gmail dari dalam ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Kirim dan terima pesan Gmail secara langsung di ${ MAIL_APP_NAME }. Hubungkan alamat Anda di ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai segi kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
@@ -4064,6 +4094,15 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Sederhanakan sinkronisasi dan penjadwalan dengan kalender terbagi."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Hal ini dapat terjadi jika izin dihapus atau kata sandi Anda diubah."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Untuk terus menerima dan mengirim pesan Gmail di ${ BRAND_NAME }, silakan hubungkan ulang akun Anda."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Untuk terus menerima dan mengirim pesan Gmail di ${ BRAND_NAME }, silakan hubungkan ulang akun Anda."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Untuk lanjut menggunakan asisten penulisan, tambahkan fitur ini ke dalam langganan Anda."
@@ -4083,6 +4122,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Aktifkan perlindungan pelacak email untuk mencegah pengiklan dan pihak lain melacak lokasi serta aktivitas daring Anda."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Buka kapasitas penyimpanan sebesar 15 GB hanya dengan ${ config.offerPrice }."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Tingkatkan untuk mendapatkan ${ activatePmUser } untuk alamat email yang lebih pendek dan mudah untuk diingat sebagai tambahan dari yang Anda punya saat ini."
       ],
@@ -4095,8 +4137,23 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gunakan panduan ini agar organisasi Anda dapat menikmati ekosistem enkripsi dan privasi ${ BRAND_NAME } yang terdepan di industri dengan segera."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Tidak dapat lagi mengakses ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Kami tidak menemukan pelacak maupun URL pelacakan yang dikenal dalam email ini."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Impor akan dijeda saat penyimpanan mencapai 80% untuk menyisakan ruang bagi pesan baru."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Email lama Anda akan diimpor dan Gmail akan dihubungkan ke ${ MAIL_APP_NAME } agar pesan baru muncul secara otomatis"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Email lama akan diimpor, duplikat akan dilewati, dan dihubungkan ke Gmail agar pesan baru muncul secara otomatis. Impor dapat diurungkan kapan saja di pengaturan Easy Switch."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Impor email dari Gmail telah dimulai. Anda akan diberi tahu setelah selesai."
       ],
       "When do you want your message to be sent?": [
         "Kapan Anda ingin pesan Anda dikirim?"
@@ -4107,17 +4164,32 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Dengan waktu tunda khusus, Anda dapat menyembunyikan email tertentu dan mengatur email ini agar muncul kembali di waktu yang lebih sesuai."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Sudah ada alamat Gmail yang meneruskan ke ${ MAIL_APP_NAME }. Hubungkan di bawah ini untuk mengirim dan menerima email secara langsung dari ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Sudah ada alamat Gmail yang meneruskan ke ${ MAIL_APP_NAME }. Hubungkan salah satu di bawah ini untuk mengirim dan menerima email secara langsung dari ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). File Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung maksimal ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila file Anda melebihi persyaratan ini, silakan bagi menjadi file yang lebih kecil."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Kini dapat mengirim email dari ${ BRAND_NAME } menggunakan alamat ini."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Metode pemulihan akun dan data Anda telah diatur dan 2FA telah diaktifkan."
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya ${ newUserStorageText } pesan Gmail terbaru Anda yang akan diimpor"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya email Gmail terbaru Anda yang akan diimpor."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
@@ -4425,6 +4497,9 @@
       ],
       "Add at least one condition": [
         "Tambah setidaknya satu kondisi"
+      ],
+      "Address is already added to your account": [
+        "Alamat sudah ditambahkan ke akun Anda"
       ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
@@ -4869,6 +4944,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Something went wrong while converting the address": [
+        "Terjadi kesalahan saat mengonversi alamat"
+      ],
+      "Something went wrong while creating the address": [
+        "Terjadi kesalahan saat membuat alamat"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Terjadi kesalahan saat mengambil domain yang tersedia"
       ],
       "Something went wrong. Please try again.": [
         "Terjadi kesalahan. Silakan coba lagi."
@@ -5450,11 +5534,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ fitur premium"
+      ],
+      "Custom email domain": [
+        "Domain email khusus"
+      ],
+      "Email addresses": [
+        "Alamat email"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Penyimpanan cloud terenkripsi untuk file, foto, dan dokumen"
       ],
       "More premium features": [
         "Fitur premium lainnya"
+      ],
+      "Storage": [
+        "Penyimpanan"
       ],
       "Unlimited hide-my-email aliases": [
         "Tanpa batasan jumlah alias hide-my-email"
@@ -7134,6 +7230,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Sertakan perintah Anda dan respon yang Anda peroleh untuk membantu kami meningkatkan akurasi asisten penulisan."
       ],
+      "Included": [
+        "Termasuk"
+      ],
       "Included for free with your plan": [
         "Terliput secara gratis dengan paket Anda"
       ],
@@ -8121,8 +8220,14 @@
       "Updating message content search...": [
         "Memperbarui pencarian konten pesan..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Tingkatkan kapan saja untuk memindahkan sisanya"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Tingkatkan atau bersihkan ruang penyimpanan kapan saja untuk memindahkan sisanya"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Tingkatkan ke ${ plan } untuk membuka fitur"
@@ -9420,6 +9525,9 @@
       ],
       "Search in": [
         "Cari di"
+      ],
+      "Select which Gmail address to connect": [
+        "Pilih alamat Gmail yang ingin dihubungkan"
       ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
@@ -11206,6 +11314,9 @@
       ],
       "Trial started": [
         "Masa uji coba dimulai"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Alamat ${ BRAND_NAME } Anda siap digunakan"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11352,6 +11463,12 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Pindahkan email ke ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Pindahkan email yang ada ke ${ MAIL_APP_NAME } agar dapat mengelola semuanya dari satu kotak masuk pribadi."
+      ],
       "Maybe later": [
         "Mungkin nanti"
       ],
@@ -14262,6 +14379,9 @@
       "Block sender": [
         "Blokir pengirim"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Pindahkan Gmail Anda ke ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Dibuat untuk privasi"
       ],
@@ -14327,6 +14447,9 @@
       ],
       "Contacts": [
         "Kontak"
+      ],
+      "Continue with free storage": [
+        "Lanjutkan dengan penyimpanan gratis"
       ],
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
@@ -14420,6 +14543,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Disconnected from Gmail": [
+        "Terputus dari Gmail"
       ],
       "Discover your subscription benefits": [
         "Telusuri manfaat langganan Anda"
@@ -14525,6 +14651,9 @@
       ],
       "Get more from your VPN": [
         "Dapatkan lebih banyak dari VPN Anda"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Dapatkan penyimpanan lebih besar dengan ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Dapatkan aplikasi ${ appName[APP_NAME] }"
@@ -14916,6 +15045,9 @@
       "Self-destruct message": [
         "Hapus pesan otomatis"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Kirim dan terima Gmail menggunakan ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Kirim email"
       ],
@@ -15009,6 +15141,9 @@
       "Summary": [
         "Ikhtisar"
       ],
+      "Summer Sale": [
+        "Promo Musim Panas"
+      ],
       "This field cannot be empty": [
         "Kolom ini tidak boleh kosong"
       ],
@@ -15075,6 +15210,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Gunakan Gmail dengan aman di ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Kesalahan verifikasi"
       ],
@@ -15119,6 +15257,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kapan waktu yang paling tepat untuk menggunakan VPN?"
+      ],
+      "You are all set": [
+        "Semua sudah siap"
       ],
       "You can now create unlimited folders and labels": [
         "Anda kini dapat membuat folder dan label tanpa batasan jumlah"

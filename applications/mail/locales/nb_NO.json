@@ -1519,6 +1519,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -2204,6 +2208,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Emails": [
+        "E-poster"
+      ],
       "Errors": [
         "Feil"
       ],
@@ -2221,6 +2228,9 @@
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
+      "Migrate": [
+        "Migrer"
       ],
       "Migrated": [
         "Migrert"
@@ -3333,6 +3343,9 @@
       "Canada": [
         "Canada"
       ],
+      "Canary Islands": [
+        "Kanariøyene"
+      ],
       "Cape Verde": [
         "Kapp Verde"
       ],
@@ -4346,6 +4359,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Vi importerer de gamle e-postene dine, hopper over duplikater og kobler til Gmail slik at nye meldinger dukker opp automatisk. Du kan når som helst angre importen i innstillingene for Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
@@ -7749,8 +7765,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8108,6 +8123,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Velg mappene du vil importere:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Velg etikettene du vil importere:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Velg hvilken type kobling du vil sette inn og fyll ut alle felt."
