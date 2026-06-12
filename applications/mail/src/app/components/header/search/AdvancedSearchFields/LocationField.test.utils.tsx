@@ -48,6 +48,7 @@ const folders: useLocationFieldOptionsModule.ItemCustomFolder[] = [
             Notify: 1,
             Expanded: 0,
             subfolders: [],
+            LastUnseenMessageEventID: null,
         },
     },
 ];
