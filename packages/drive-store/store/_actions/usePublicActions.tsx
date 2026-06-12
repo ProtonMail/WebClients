@@ -32,21 +32,24 @@ export function usePublicActions() {
         abortSignal: AbortSignal,
         token: string,
         parentLinkId: string,
-        name: string
+        ellipsedName: string
     ): Promise<string> => {
         return publicLink
-            .createFolder(abortSignal, { token, parentLinkId, name })
+            .createFolder(abortSignal, { token, parentLinkId, name: ellipsedName })
             .then(async (id: string) => {
                 await publicLinksListing.loadChildren(abortSignal, token, parentLinkId, false);
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').t`"${name}" created successfully`}</span>,
+                    text: (
+                        <span className="text-pre-wrap">{c('Notification')
+                            .t`"${ellipsedName}" created successfully`}</span>
+                    ),
                 });
                 return id;
             })
             .catch((e) => {
                 showErrorNotification(
                     e,
-                    <span className="text-pre-wrap">{c('Notification').t`"${name}" failed to be created`}</span>
+                    <span className="text-pre-wrap">{c('Notification').t`"${ellipsedName}" failed to be created`}</span>
                 );
                 throw e;
             });
