@@ -1,12 +1,14 @@
 import { Button } from '@proton/atoms/Button/Button'
+import { useAuthentication } from '@proton/components'
 import type { AuthenticatedDocControllerInterface } from '@proton/docs-core'
+import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { getDrive } from '@proton/drive'
 import type { useSharingModal } from '@proton/drive/public/sharingModal'
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus'
 import { generateNodeUid } from '@protontech/drive-sdk'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { getPrivateURL, getPublicURL } from '../../useChangeAddressWhenPubliclyShared'
+import { getPrivateURL, getPublicURL, getToken } from '../../useChangeAddressWhenPubliclyShared'
 
 type ShowSharingModal = ReturnType<typeof useSharingModal>['showSharingModal']
 
@@ -24,6 +26,7 @@ export function HeaderShareButton({
   authenticatedController: AuthenticatedDocControllerInterface | undefined
 }) {
   const { logger } = useApplication()
+  const { getLocalID } = useAuthentication()
 
   return (
     <Button
@@ -40,6 +43,13 @@ export function HeaderShareButton({
                   const { publicLink } = result.value
                   try {
                     const newAddress = publicLink ? getPublicURL(publicLink.url) : getPrivateURL(volumeId, nodeId)
+                    if (publicLink) {
+                      const localID = getLocalID()
+                      if (localID !== undefined) {
+                        const token = getToken(new URL(publicLink.url).pathname)
+                        CacheService.setLocalIDForDocumentInCache({ token }, localID)
+                      }
+                    }
                     history.replaceState(null, '', newAddress)
                   } catch (error: any) {
                     logger.warn('Failed to change URL in address bar after changing public sharing', error)

@@ -80,7 +80,7 @@ export function getPublicURL(publicLinkUrl: string) {
   return result
 }
 
-function getToken(pathname: string) {
+export function getToken(pathname: string) {
   const token = pathname.split('/').pop()
   if (!token) {
     throw new Error('Failed to extract token from current URL')
