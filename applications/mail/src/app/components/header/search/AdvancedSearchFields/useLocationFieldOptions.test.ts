@@ -36,6 +36,7 @@ describe('useLocationFieldOptions', () => {
                     Color: '#EC3E7C',
                     Order: 2,
                     Display: 1,
+                    LastUnseenMessageEventID: null,
                 },
             ],
         ]);
@@ -50,6 +51,7 @@ describe('useLocationFieldOptions', () => {
                     Order: 1,
                     Notify: 1,
                     Expanded: 0,
+                    LastUnseenMessageEventID: null,
                 },
             ],
         ]);

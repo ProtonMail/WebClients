@@ -57,4 +57,5 @@ export const toFolderItem = (label: LabelModel): FolderItem => ({
     Type: label.Type,
     icon: 'folder',
     level: 0,
+    LastUnseenMessageEventID: null,
 });
