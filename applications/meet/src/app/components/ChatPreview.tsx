@@ -58,7 +58,8 @@ export const ChatPreview = () => {
         return () => {
             clearTimeout(timeoutId);
         };
-    }, [pseudoId, latestMeetingRoomUpdate, sideBarState]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [pseudoId]);
 
     const isLargerThanMd = useIsLargerThanMd();
 
