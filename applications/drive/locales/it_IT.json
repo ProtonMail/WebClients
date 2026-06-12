@@ -1247,6 +1247,9 @@
       ],
       "Get the deal": [
         "Approfitta dell'offerta"
+      ],
+      "Continue with Free": [
+        "Continua con la versione gratuita"
       ]
     },
     "Action: Docs": {
@@ -1333,6 +1336,10 @@
       ],
       "Writing assistant seats": [
         "Posti dell'assistente alla scrittura"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
       ]
     },
     "Alert": {
@@ -3017,6 +3024,27 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ora puoi inviare email da ${ BRAND_NAME } utilizzando questo indirizzo."
+      ],
+      "Available storage: ${ storageText }": [
+        "Archiviazione disponibile: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Abbastanza spazio per anni di email, allegati e altro."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Sblocca 15 GB di archiviazione a soli ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Metteremo in pausa le importazioni all'80% dell'archiviazione per riservare spazio per i nuovi messaggi."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Abbiamo iniziato a importare le tue email da Gmail. Ti faremo sapere quando avremo finito."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo ${ newUserStorageText } dei tuoi messaggi Gmail più recenti"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo le tue email di Gmail più recenti."
       ]
     },
     "description": {
@@ -4339,6 +4367,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias Hide-my-email illimitati"
+      ],
+      "10+ premium features": [
+        "10+ funzionalità premium"
+      ],
+      "Custom email domain": [
+        "Dominio email personalizzato"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
+      "Storage": [
+        "Archiviazione"
       ]
     },
     "Features": {
@@ -6912,6 +6952,19 @@
       "${ total } user found": [
         "${ total } utente trovato",
         "${ total } utenti trovati"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un cloud sicuro per ${ memberCount } membro",
+        "Crea un cloud sicuro per ${ memberCount } membri"
+      ],
+      "Included": [
+        "Incluso"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Effettua l'upgrade in qualsiasi momento per trasferire il resto"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Effettua l'upgrade o libera spazio in qualsiasi momento per trasferire il resto"
       ]
     },
     "info": {
@@ -7986,6 +8039,10 @@
       "Up to ${ n } participant": [
         "Fino a ${ n } partecipante",
         "Fino a ${ n } partecipanti"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferenze, ${ n } partecipante",
+        "Videoconferenze, ${ n } partecipanti"
       ]
     },
     "Message": {
@@ -9186,6 +9243,10 @@
       "Support for ${ n } custom email domain": [
         "Supporto per ${ n } dominio email personalizzato",
         "Supporto per ${ n } domini email personalizzati"
+      ],
+      "${ n } country": [
+        "${ n } paese",
+        "${ n } paesi"
       ]
     },
     "Notification": {
@@ -10344,6 +10405,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Ti consigliamo di \"non considerare attendibile\" questa chiave."
+      ],
+      "This key is used for message verification": [
+        "Questa chiave è usata per la verifica dei messaggi"
       ]
     },
     "PGP key warning": {
@@ -11712,6 +11776,10 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipante",
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipanti"
       ]
     },
     "subscription reminder": {
@@ -13128,6 +13196,15 @@
       ],
       "You are all set": [
         "Tutto pronto"
+      ],
+      "Continue with free storage": [
+        "Continua con l'archiviazione gratuita"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Ottieni più archiviazione con ${ MAIL_APP_NAME } Plus"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13551,6 +13628,12 @@
       ],
       "SUMMER SALE": [
         "SALDI ESTIVI"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licenza inclusa",
+        "${ seats } licenze incluse"
       ]
     }
   }
