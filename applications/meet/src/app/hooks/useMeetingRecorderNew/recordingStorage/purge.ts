@@ -1,4 +1,4 @@
-export const RECORDING_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+export const RECORDING_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 // Matches `recording-<timestamp>.<ext>` as written by the storage worker.
 const RECORDING_FILENAME_RE = /^recording-(\d+)\./;
