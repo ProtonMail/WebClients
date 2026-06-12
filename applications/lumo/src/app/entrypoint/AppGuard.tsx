@@ -1,11 +1,10 @@
-import { Suspense, lazy, useEffect, useMemo } from 'react';
+import { Suspense, lazy, useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import TextLoader from '@proton/components/components/loader/TextLoader';
 
 import { LUMO_APP_NAME } from '../constants';
-import { notifyMobileAppLoaded } from '../util/mobileAppNotification';
 
 export const LUMO_ROUTES = {
     PRIVATE_ROUTES_PREFIX: '/u/',
@@ -51,11 +50,10 @@ const AppGuard = () => {
         </div>
     );
 
-    // Notify mobile apps that the Lumo application is fully loaded
-    // This runs once when AppGuard mounts, avoiding duplicate notifications
-    useEffect(() => {
-        notifyMobileAppLoaded(150); // 150ms delay to ensure loading is complete
-    }, []);
+    // NOTE: the native "app loaded" signal is intentionally NOT sent from here. AppGuard mounts
+    // before the lazy-loaded app chunks (and the real composer) render, so signalling here would
+    // dismiss the native loading placeholder too early and reveal a blank web view on slow
+    // networks. The signal is sent from the composer's mount instead (see ComposerComponent).
 
     if (routeType === 'private') {
         return (
