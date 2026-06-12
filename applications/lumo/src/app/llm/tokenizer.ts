@@ -1,11 +1,10 @@
-import { encode as gptOssTokenize } from 'gpt-tokenizer/encoding/o200k_harmony';
-
-// Simple approximation for token counting (4 characters per token)
+// Local ~4-chars/token approximation. Intentionally NOT an accurate tokenizer: gpt-tokenizer's
+// o200k table is ~1.1MB over the wire (~2.2MB unpacked) and dominated mobile first-paint load
+// (~46s on 3G). The server enforces the real context limit, so a rough estimate is enough here.
 const CHARS_PER_TOKEN = 4;
 
 /**
- * Simple token count approximation (4 characters per token)
- * This is fast and sufficient for most use cases
+ * Approximate token count (≈4 characters per token).
  */
 export const getApproximateTokenCount = (text: string): number => {
     if (!text || text.length === 0) return 0;
@@ -13,19 +12,9 @@ export const getApproximateTokenCount = (text: string): number => {
 };
 
 /**
- * Get accurate token count using o200k_harmony encoding (for gpt-oss-120b)
- * Falls back to approximation if encoding fails
- * @param text - Text to tokenize
+ * Token count for message/context sizing. Uses the local approximation (see file note above).
  */
 export const countTokens = (text: string | undefined): number => {
     if (!text || text.length === 0) return 0;
-
-    try {
-        const tokens = gptOssTokenize(text);
-        return tokens.length;
-    } catch (error) {
-        console.warn('[Tokenizer] Failed to count tokens, falling back to approximation:', error);
-        // Fallback to approximation if encoding fails
-        return getApproximateTokenCount(text);
-    }
+    return getApproximateTokenCount(text);
 };
