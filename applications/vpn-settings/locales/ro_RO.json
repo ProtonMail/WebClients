@@ -287,9 +287,6 @@
       "Create new policy": [
         "Creare regulă"
       ],
-      "Create organization": [
-        "Creare organizație"
-      ],
       "Create users": [
         "Creare utilizatori"
       ],
@@ -2204,14 +2201,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Adăugați utilizatori manual"
-      ],
       "Close": [
         "Închidere"
-      ],
-      "Configure your network": [
-        "Configurați-vă rețeaua"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
@@ -2231,29 +2222,17 @@
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
       ],
-      "Invite your team": [
-        "Invitați-vă echipa"
-      ],
-      "Manage global VPN permissions": [
-        "Gestionare permisiuni globale VPN"
-      ],
       "Maybe later": [
         "Poate mai târziu"
       ],
       "Remind me later": [
         "Amintește-mi mai târziu"
       ],
-      "Secure your organization": [
-        "Securizați-vă organizația"
-      ],
       "Send": [
         "Trimitere"
       ],
       "Set up other features": [
         "Setare alte funcții"
-      ],
-      "Set up SSO": [
-        "Configurare SSO"
       ],
       "Take a tour": [
         "Faceți un tur"
@@ -2755,6 +2734,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Insulele Canare"
       ],
       "Cape Verde": [
         "Capul Verde"
@@ -3611,23 +3593,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Creați o poartă de acces pentru a oferi utilizatorilor acces la resursele IT prin intermediul serverelor dedicate."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creați o întâlnire pe Zoom și adăugați detaliile de conectare la evenimentul dvs. cu un singur clic."
       ],
       "Create groups you can email with a single address.": [
         "Creați grupuri cărora le puteți trimite mesaje cu o singură adresă."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Creați conturi noi de utilizator sau importați utilizatori cu furnizarea SCIM SSO (autentificare unică)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creați reguli pentru a decide cine se poate conecta la serverele partajate din fiecare țară."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decideți care utilizatori se pot conecta la fiecare dintre cele peste 120 de locuri cu servere partajate."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accesați-vă cu ușurință adresa de e-mail și calendarul pe desktop și mobil."
@@ -3688,9 +3661,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Cum am susținut activiștii locali atunci când confidențialitatea și libertatea de exprimare au fost amenințate."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Dacă nu ați făcut-o deja, activați unele metode de recuperare pentru a vă asigura că nu pierdeți niciodată accesul la ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
@@ -3771,6 +3741,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Se vor importa mesajele, se vor omite duplicatele și se va efectua conexiunea la contul Gmail, astfel încât mesajele noi să apară automat. Puteți reveni asupra importării oricând din setările Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
@@ -7423,9 +7396,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Primiți notificări dacă parola sau alte date personale v-au fost divulgate. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Să începem"
-      ],
       "Get started with the referral link above.": [
         "Începeți cu legătura web de recomandate de mai sus."
       ],
@@ -8035,6 +8005,9 @@
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
       ],
+      "Please select the labels you would like to import:": [
+        "Selectați etichetele pe care doriți să le importați:"
+      ],
       "Please specify...": [
         "Vă rugăm să specificați..."
       ],
@@ -8244,9 +8217,6 @@
       ],
       "Set up your organization": [
         "Setați organizația"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configurați-vă organizația și începeți să vă protejați datele în câțiva pași simpli."
       ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
@@ -9040,6 +9010,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nu puteți recomanda utilizatori ai ${ MAIL_APP_NAME }."
       ],
+      "You do not have permission to create users.": [
+        "Nu aveți permisiunea de a crea utilizatori."
+      ],
       "You don't have any referrals.": [
         "Nu aveți persoane recomandate."
       ],
@@ -9347,19 +9320,9 @@
         "Numai vizualizare"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Acesta este numele pe care îl vor vedea utilizatorii organizație. Îl puteți modifica oricând."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Nu este o adresă de e-mail validă."
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Care este numele organizației?"
       ]
     },
     "invitation status": {
@@ -10576,6 +10539,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Luați ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obțineți ajutor de la ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupuri"
@@ -13532,9 +13498,6 @@
       "Enter a name": [
         "Introduceți un nume"
       ],
-      "Enter name": [
-        "Introduceți numele"
-      ],
       "example@domain.com": [
         "exemplu@domeniu.com"
       ],
@@ -14296,6 +14259,28 @@
       ],
       "Edit retention rule": [
         "Editare regulă de păstrare"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Administrator organizație"
+      ],
+      "Security Admin": [
+        "Administrator securitate"
+      ],
+      "User Admin": [
+        "Administrare utilizatori"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     },
     "Safety review": {
@@ -17025,9 +17010,6 @@
       "Disconnected from Gmail": [
         "Deconectat de la Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Ignorare listă de verificare configurare"
-      ],
       "Domain names": [
         "Nume de domenii"
       ],
@@ -17188,9 +17170,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Să începem"
       ],
       "Get the apps": [
         "Luați aplicațiile"
@@ -17659,7 +17638,7 @@
         "Sumar"
       ],
       "Summer Sale": [
-        "Promoție de vară"
+        "Reduceri de vară"
       ],
       "Support your compliance objectives": [
         "Susțineți-vă obiectivele de conformitate"
@@ -17813,9 +17792,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bun venit la ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Bun venit la ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "Ce se modifică dacă vă comutați la planul gratuit"
@@ -18011,6 +17987,9 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Include e-mail profesional la @domeniulmeu.com, stocare în cloud cu editare colaborativă a documentelor, planificare și videoconferințe, gestionarea parolelor, o aplicație securizată ${ VPN_SHORT_APP_NAME } și multe altele."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistență instantanee prin IA, expert uman la îndemână!"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Membrii care nu folosesc A2F vor primi un e-mail prin care li se va cere să îl activeze cât mai curând posibil. Utilizatorii cu autentificare unică nu vor primi acest mesajul."
       ],
@@ -18112,8 +18091,8 @@
       "User is a group": [
         "Utilizatorul este un grup"
       ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
