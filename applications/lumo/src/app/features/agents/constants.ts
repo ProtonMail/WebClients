@@ -4,6 +4,9 @@ export const DEFAULT_AGENT_ICON = 'robot';
 
 export const AGENT_INSTRUCTIONS_MAX_LENGTH = 8000;
 
+/** Max length of the one-line description shown in the agent picker. */
+export const AGENT_BYLINE_MAX_LENGTH = 90;
+
 /** Max number of conversation starters shown on an agent's welcome screen. */
 export const MAX_CONVERSATION_STARTERS = 4;
 

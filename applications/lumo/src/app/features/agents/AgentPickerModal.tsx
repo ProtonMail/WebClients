@@ -16,7 +16,7 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME} from '@proton/shared/lib/constants';
 
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import { useCustomAgents } from '../../hooks/useCustomAgents';
@@ -100,16 +100,16 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
     const tabs: { id: AgentFilter; label: string; disabled?: boolean }[] = [
         { id: 'all', label: c('collider_2025:Filter').t`All` },
         { id: 'mine', label: c('collider_2025:Filter').t`Mine` },
-        { id: 'default', label: c('collider_2025:Filter').t`Default` },
+        { id: 'default', label: c('collider_2025:Filter').t`Built-in` },
     ];
 
     return (
         <>
             <ModalTwo open={isOpen} onClose={close} size="medium">
-                <ModalTwoHeader title={c('collider_2025:Title').t`Agents`} />
+                <ModalTwoHeader title={c('collider_2025:Title').t`Custom ${LUMO_SHORT_APP_NAME}s`} />
                 <ModalTwoContent>
                     <InputFieldTwo
-                        placeholder={c('collider_2025:Placeholder').t`Search agents`}
+                        placeholder={c('collider_2025:Placeholder').t`Search custom ${LUMO_SHORT_APP_NAME}`}
                         value={search}
                         onValue={setSearch}
                         dense
@@ -136,7 +136,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                     </div>
 
                     <div
-                        className="overflow-y-auto overflow-x-none h-custom mb-4"
+                        className="overflow-y-auto overflow-x-none h-custom mb-4 min-w-0 w-full"
                         style={{ '--h-custom': '17.5rem' } as React.CSSProperties}
                     >
                         {filteredAgents.length === 0 ? (
@@ -147,19 +147,26 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                 </p>
                             </div>
                         ) : (
-                            <div className="flex flex-column gap-1">
+                            <div className="flex flex-column gap-1 min-w-0">
                                 {filteredAgents.map((agent) => {
                                     const editable = isAgentEditable(agent);
                                     const isActive = agent.id === activeAgentId;
+                                    const byline = getAgentByline(agent);
+                                    const bylineFull = agent.description?.trim() || byline;
                                     return (
                                         <div
                                             key={agent.id}
-                                            className="flex flex-nowrap items-center gap-1 rounded-lg px-2 min-h-custom interactive-pseudo-inset"
-                                            style={{ '--min-h-custom': '3.5rem' } as React.CSSProperties}
+                                            className="grid items-center gap-1 rounded-lg pl-2 pr-1 min-h-custom w-full max-w-full"
+                                            style={
+                                                {
+                                                    '--min-h-custom': '3.5rem',
+                                                    gridTemplateColumns: 'minmax(0, 1fr) auto',
+                                                } as React.CSSProperties
+                                            }
                                         >
                                             <button
                                                 type="button"
-                                                className="flex flex-nowrap items-center gap-2 flex-1 text-left min-w-0 h-full"
+                                                className="flex flex-nowrap items-center gap-2 min-w-0 overflow-hidden text-left h-full w-full interactive-pseudo-inset rounded-lg"
                                                 onClick={() => handlePick(agent.id)}
                                             >
                                                 <Icon
@@ -167,57 +174,64 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                     size={4.5}
                                                     className="shrink-0"
                                                 />
-                                                <span className="flex flex-column flex-1 min-w-0">
-                                                    <span className="flex items-center gap-1 min-w-0">
-                                                        <span className="text-semibold text-ellipsis">
+                                                <span className="flex flex-column flex-1 min-w-0 overflow-hidden">
+                                                    <span className="flex items-center gap-1 min-w-0 overflow-hidden">
+                                                        <span className="text-semibold text-ellipsis min-w-0 shrink block">
                                                             {agent.name}
                                                         </span>
+                                                        {isActive && (
+                                                            <span className="inline-flex items-center gap-0.5 text-xs text-semibold color-primary bg-weak rounded-full px-1.5 py-0.5 shrink-0">
+                                                                <IcCheckmark size={3.5} />
+                                                                {c('collider_2025:Badge').t`Selected`}
+                                                            </span>
+                                                        )}
                                                         {agent.source === 'published' && (
                                                             <span
                                                                 className="text-xs text-semibold color-weak bg-weak rounded-full px-1 shrink-0"
                                                                 title={c('collider_2025:Info')
                                                                     .t`Built-in ${BRAND_NAME} agent`}
                                                             >
-                                                                {c('collider_2025:Badge').t`Default`}
+                                                                {c('collider_2025:Badge').t`Built-in`}
                                                             </span>
                                                         )}
                                                     </span>
-                                                    <span className="text-sm color-weak text-ellipsis">
-                                                        {getAgentByline(agent) || '\u00A0'}
+                                                    <span
+                                                        className="text-sm color-weak text-ellipsis min-w-0 block w-full"
+                                                        title={bylineFull.length > byline.length ? bylineFull : undefined}
+                                                    >
+                                                        {byline || '\u00A0'}
                                                     </span>
                                                 </span>
                                             </button>
 
-                                            {/* Fixed-width action cluster so columns stay aligned across all rows. */}
-                                            <span
-                                                className="flex items-center justify-center shrink-0 w-custom"
-                                                style={{ '--w-custom': '1.5rem' } as React.CSSProperties}
-                                            >
-                                                {isActive && <IcCheckmark size={4} className="color-primary" />}
+                                            {/* Action button — edit for personal agents, clone for built-in. */}
+                                            <span className="flex items-center shrink-0">
+                                                {editable ? (
+                                                    <Button
+                                                        icon
+                                                        shape="ghost"
+                                                        size="small"
+                                                        className="shrink-0"
+                                                        onClick={() => openEditor(agent.id)}
+                                                        title={c('collider_2025:Action').t`Edit agent`}
+                                                        aria-label={c('collider_2025:Action').t`Edit agent`}
+                                                    >
+                                                        <IcPen size={4} />
+                                                    </Button>
+                                                ) : (
+                                                    <Button
+                                                        icon
+                                                        shape="ghost"
+                                                        size="small"
+                                                        className="shrink-0"
+                                                        onClick={() => handleClone(agent)}
+                                                        title={c('collider_2025:Action').t`Make a copy`}
+                                                        aria-label={c('collider_2025:Action').t`Make a copy`}
+                                                    >
+                                                        <IcSquares size={4} />
+                                                    </Button>
+                                                )}
                                             </span>
-                                            {editable ? (
-                                                <Button
-                                                    icon
-                                                    shape="ghost"
-                                                    size="small"
-                                                    onClick={() => openEditor(agent.id)}
-                                                    title={c('collider_2025:Action').t`Edit agent`}
-                                                    aria-label={c('collider_2025:Action').t`Edit agent`}
-                                                >
-                                                    <IcPen size={4} />
-                                                </Button>
-                                            ) : (
-                                                <Button
-                                                    icon
-                                                    shape="ghost"
-                                                    size="small"
-                                                    onClick={() => handleClone(agent)}
-                                                    title={c('collider_2025:Action').t`Make a copy`}
-                                                    aria-label={c('collider_2025:Action').t`Make a copy`}
-                                                >
-                                                    <IcSquares size={4} />
-                                                </Button>
-                                            )}
                                         </div>
                                     );
                                 })}
@@ -232,7 +246,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                         onClick={() => openEditor(undefined)}
                     >
                         <IcPlus size={4} />
-                        {c('collider_2025:Action').t`New agent`}
+                        {c('collider_2025:Action').t`New ${LUMO_SHORT_APP_NAME}`}
                     </Button>
                 </ModalTwoContent>
             </ModalTwo>
