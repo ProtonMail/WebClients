@@ -828,6 +828,9 @@
       "Verify account": [
         "驗證帳號"
       ],
+      "Verify now": [
+        "立即驗證"
+      ],
       "View": [
         "檢視"
       ],
@@ -2501,6 +2504,9 @@
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
       ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
       ],
@@ -3070,6 +3076,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
       ],
       "Something went wrong. Please try again.": [
         "發生錯誤，請稍後再試。"
@@ -4317,6 +4326,9 @@
       "Display word count": [
         "顯示字數統計"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "文件位於垃圾桶"
       ],
@@ -4436,6 +4448,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Free5GB加密的儲存空間以開始"
@@ -4785,12 +4800,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
       ],
-      "Settings update failed": [
-        "設定更新失敗"
-      ],
-      "Settings updated": [
-        "已更新設定"
-      ],
       "Share via link settings": [
         "請用連結設定共享"
       ],
@@ -4955,6 +4964,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "不幸的是，該檔案或其部份資料似乎無法解密。"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
@@ -9565,6 +9577,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ],
       "VPN explained": [
         "VPN 說明"

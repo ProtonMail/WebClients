@@ -1230,6 +1230,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Emails": [
+        "E-poster"
+      ],
       "Errors": [
         "Feil"
       ],
@@ -1247,6 +1250,9 @@
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
+      "Migrate": [
+        "Migrer"
       ],
       "Migrated": [
         "Migrert"
@@ -1817,6 +1823,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Kanariøyene"
       ],
       "Cape Verde": [
         "Kapp Verde"
@@ -5139,6 +5148,9 @@
       "Please select the folders you would like to import:": [
         "Velg mappene du vil importere:"
       ],
+      "Please select the labels you would like to import:": [
+        "Velg etikettene du vil importere:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Velg hvilke e-postadresser som skal legges til i ${ groupCount } gruppe.",
         "Velg hvilke e-postadresser som skal legges til i ${ groupCount } grupper."
@@ -5229,12 +5241,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
-      ],
-      "Settings update failed": [
-        "Oppdatering av innstillinger mislyktes"
-      ],
-      "Settings updated": [
-        "Innstillinger oppdatert"
       ],
       "Share via link settings": [
         "Del via koblingsinnstillinger"
