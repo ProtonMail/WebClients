@@ -78,7 +78,7 @@ export const useGateways = (organization: Organization | undefined, maxAge: numb
 
     // Specialized fetcher for Gateways
     const fetcher = async () => {
-        if (!hasGatewaysAccess) {
+        if (!hasGatewaysAccess || organization.MaxDedicatedIPs < 1) {
             return {
                 Config: getDefaultConfig(nbDay),
                 Countries: [],
