@@ -1035,6 +1035,9 @@
       "Or remove forwarding address": [
         "或移除轉寄位址"
       ],
+      "Or use a different Gmail address": [
+        "或使用其他 Gmail 位址"
+      ],
       "Ordered list": [
         "有序列表"
       ],
@@ -1494,6 +1497,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任金鑰"
+      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1608,6 +1614,9 @@
       "Use this": [
         "使用此"
       ],
+      "Use this Gmail address": [
+        "使用此 Gmail 位址"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用您的滑鼠調整檢視大小。若您使用鍵盤，您也可以使用左右方向鍵來調整。"
       ],
@@ -1616,6 +1625,9 @@
       ],
       "Verify account": [
         "驗證帳號"
+      ],
+      "Verify now": [
+        "立即驗證"
       ],
       "View": [
         "檢視"
@@ -4020,6 +4032,9 @@
       "Available storage: ${ storageText }": [
         "可用儲存空間: ${ storageText }"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "阻止 Google 建立您的個人檔案。Gmail 無法查看您在 ${ MAIL_APP_NAME } 中的活動"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "設置此以先啟動您的組織和自訂您的電子郵件地址。"
       ],
@@ -4091,6 +4106,12 @@
       ],
       "No labels": [
         "沒有標籤"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "直接在 ${ MAIL_APP_NAME } 中閱讀、回覆並隨時掌握 Gmail 動態"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "直接在 ${ MAIL_APP_NAME } 中傳送和接收 Gmail 訊息。請在 ${ addressesSettingsLink } 中連線您的位址。"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
@@ -4173,6 +4194,9 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
       ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "我們將匯入您的舊電子郵件、略過重複項目，並連線至您的 Gmail，以便新訊息自動出現。您可以隨時在 Easy Switch 設定中復原匯入"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "我們已匯入來自於 Gmail 的電子郵件。完成時我們將讓您知道。"
       ],
@@ -4187,6 +4211,9 @@
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。請在下方連線一個位址，以便直接從 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -4214,6 +4241,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
@@ -4989,6 +5019,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
+      ],
+      "Something went wrong while converting the address": [
+        "轉換位址時發生錯誤"
+      ],
+      "Something went wrong while creating the address": [
+        "建立位址時發生錯誤"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
       ],
       "Something went wrong. Please try again.": [
         "發生錯誤，請稍後再試。"
@@ -7003,6 +7042,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 商標"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
       "Do you want to download this attachment anyway?": [
         "無論如何，您仍打算要下載這些附件嗎？"
       ],
@@ -7213,6 +7255,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "嚐鮮體驗版還有 ${ ASSISTANT_TRIAL_TIME_DAYS } 天"
       ],
@@ -7355,7 +7400,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -8314,6 +8359,9 @@
       "Updating message content search...": [
         "正在更新郵件內容搜尋..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
@@ -8991,6 +9039,16 @@
       ],
       "Star": [
         "標注星號"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "切換至 ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "切換至 ${ MAIL_APP_NAME }"
       ]
     },
     "Keyboard shortcut section name": {
@@ -11621,6 +11679,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "帶入您的電子郵件至 ${ MAIL_APP_NAME }"
       ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "將您現有的電子郵件帶入 ${ MAIL_APP_NAME }，以便您能從一個私有收件匣管理所有內容。"
+      ],
       "Choose a provider": [
         "選擇服務商"
       ],
@@ -13723,6 +13784,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe撰寫幫手"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
       ],
@@ -15403,6 +15467,9 @@
       "Summary": [
         "總結"
       ],
+      "Summer Sale": [
+        "夏季特賣"
+      ],
       "This field cannot be empty": [
         "此欄無法空白"
       ],
@@ -15474,6 +15541,9 @@
       ],
       "Verification failed": [
         "驗證失敗"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ],
       "Verifying your card...": [
         "正在驗證您的信用卡..."
