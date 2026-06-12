@@ -13,6 +13,7 @@ import {
     PlanType,
 } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
+import { PLANS } from '@proton/payments/index';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
@@ -34,8 +35,13 @@ export type OrganizationState = {
 };
 
 const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null, action) => {
-    /* Remove all organization state if the user plan changes */
-    if (getUserAccessSuccess.match(action)) return action.payload.plan.Type !== PlanType.BUSINESS ? null : state;
+    /* Remove all organization state if the user plan is no longer B2B.
+     * Pass Essentials is currently considered Plus and not Business */
+    if (getUserAccessSuccess.match(action)) {
+        const { plan } = action.payload;
+        const isB2BPlan = plan.Type === PlanType.BUSINESS || plan.InternalName === PLANS.PASS_PRO;
+        return isB2BPlan ? state : null;
+    }
 
     if (state !== null) {
         /* Actions applied to the organization state should only be processed
