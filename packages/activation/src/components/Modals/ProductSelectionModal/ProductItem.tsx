@@ -9,15 +9,15 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 const productMap = {
     [ImportType.MAIL]: {
-        getLabel: () => c('').t`Emails`,
+        getLabel: () => c('Label').t`Emails`,
         icon: <IcEnvelope className="shrink-0" />,
     },
     [ImportType.CALENDAR]: {
-        getLabel: () => c('').t`Calendars`,
+        getLabel: () => c('Label').t`Calendars`,
         icon: <IcCalendarGrid className="shrink-0" />,
     },
     [ImportType.CONTACTS]: {
-        getLabel: () => c('').t`Contacts`,
+        getLabel: () => c('Label').t`Contacts`,
         icon: <IcUsers className="shrink-0" />,
     },
 };
