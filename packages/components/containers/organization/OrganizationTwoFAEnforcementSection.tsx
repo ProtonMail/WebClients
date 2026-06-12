@@ -3,9 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
-import { Banner } from '@proton/atoms/Banner/Banner';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
+import { PermissionBanner, PermissionTooltip } from '@proton/components/components/orgPermissions';
 import Loader from '@proton/components/components/loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
@@ -84,11 +83,7 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                           .t`We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.`}
             </SettingsParagraph>
 
-            {!canSavePolicy && (
-                <Banner variant="norm" noIcon className="mb-4 max-w-custom" style={{ '--max-w-custom': '43em' }}>
-                    {c('Info').t`Editing requires permission`}
-                </Banner>
-            )}
+            <PermissionBanner hasPermission={!!canSavePolicy} className="mb-4 max-w-custom" style={{ '--max-w-custom': '43em' }} />
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="two-fa-admin" className="text-semibold flex items-center">
@@ -103,30 +98,26 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
-                    <Tooltip
-                        title={
-                            !isTwoFARequiredForAllChecked &&
-                            (isTwoFARequiredForAdminOnlyChecked ? !canDelete : !canSavePolicy)
-                                ? c('Label').t`You don't have permissions`
-                                : undefined
+                    <PermissionTooltip
+                        hasPermission={
+                            isTwoFARequiredForAllChecked ||
+                            (isTwoFARequiredForAdminOnlyChecked ? !!canDelete : !!canSavePolicy)
                         }
                     >
-                        <span>
-                            <Toggle
-                                id="two-fa-admin"
-                                checked={isTwoFARequiredForAdminOnlyChecked || isTwoFARequiredForAllChecked}
-                                disabled={
-                                    isTwoFARequiredForAllChecked ||
-                                    (isTwoFARequiredForAdminOnlyChecked ? !canDelete : !canSavePolicy)
-                                }
-                                onChange={() =>
-                                    !isTwoFARequiredForAdminOnlyChecked
-                                        ? handleEnforceTwoFA(ORGANIZATION_TWOFA_SETTING.REQUIRED_ADMIN_ONLY)
-                                        : handleRemoveTwoFA()
-                                }
-                            />
-                        </span>
-                    </Tooltip>
+                        <Toggle
+                            id="two-fa-admin"
+                            checked={isTwoFARequiredForAdminOnlyChecked || isTwoFARequiredForAllChecked}
+                            disabled={
+                                isTwoFARequiredForAllChecked ||
+                                (isTwoFARequiredForAdminOnlyChecked ? !canDelete : !canSavePolicy)
+                            }
+                            onChange={() =>
+                                !isTwoFARequiredForAdminOnlyChecked
+                                    ? handleEnforceTwoFA(ORGANIZATION_TWOFA_SETTING.REQUIRED_ADMIN_ONLY)
+                                    : handleRemoveTwoFA()
+                            }
+                        />
+                    </PermissionTooltip>
                 </SettingsLayoutRight>
             </SettingsLayout>
 
@@ -144,20 +135,18 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
-                    <Tooltip title={!canSavePolicy ? c('Label').t`You don't have permissions` : undefined}>
-                        <span>
-                            <Toggle
-                                id="two-fa-member"
-                                checked={isTwoFARequiredForAllChecked}
-                                disabled={isTwoFARequiredForAllChecked ? !canDelete : !canSavePolicy}
-                                onChange={() =>
-                                    !isTwoFARequiredForAllChecked
-                                        ? handleEnforceTwoFA(ORGANIZATION_TWOFA_SETTING.REQUIRED_ALL)
-                                        : handleRemoveTwoFA()
-                                }
-                            />
-                        </span>
-                    </Tooltip>
+                    <PermissionTooltip hasPermission={!!canSavePolicy}>
+                        <Toggle
+                            id="two-fa-member"
+                            checked={isTwoFARequiredForAllChecked}
+                            disabled={isTwoFARequiredForAllChecked ? !canDelete : !canSavePolicy}
+                            onChange={() =>
+                                !isTwoFARequiredForAllChecked
+                                    ? handleEnforceTwoFA(ORGANIZATION_TWOFA_SETTING.REQUIRED_ALL)
+                                    : handleRemoveTwoFA()
+                            }
+                        />
+                    </PermissionTooltip>
                 </SettingsLayoutRight>
             </SettingsLayout>
         </>
