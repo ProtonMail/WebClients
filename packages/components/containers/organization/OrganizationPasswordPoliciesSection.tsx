@@ -5,9 +5,8 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
-import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { PermissionBanner, PermissionTooltip } from '@proton/components/components/orgPermissions';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Info from '@proton/components/components/link/Info';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -262,11 +261,7 @@ const OrganizationPasswordPoliciesSection = ({ organization }: OrganizationProto
                 {c('Info')
                     .t`You can enforce the password rules members of your organization will use when they create or reset the password to their ${BRAND_NAME} Account.`}
             </SettingsParagraph>
-            {!canSavePolicy && (
-                <Banner variant="norm" noIcon className="mb-4 max-w-custom" style={{ '--max-w-custom': '43em' }}>
-                    {c('Info').t`Editing requires permission`}
-                </Banner>
-            )}
+            <PermissionBanner hasPermission={!!canSavePolicy} className="mb-4 max-w-custom" style={{ '--max-w-custom': '43em' }} />
 
             <form
                 name="org-password-policies"
@@ -321,13 +316,11 @@ const OrganizationPasswordPoliciesSection = ({ organization }: OrganizationProto
                     />
                 ))}
 
-                <Tooltip title={!canSavePolicy ? c('Label').t`You don't have permissions` : undefined}>
-                    <span>
-                        <Button type="submit" color="norm" disabled={!canSave || !canSavePolicy} loading={loading}>
-                            {c('Action').t`Save`}
-                        </Button>
-                    </span>
-                </Tooltip>
+                <PermissionTooltip hasPermission={!!canSavePolicy}>
+                    <Button type="submit" color="norm" disabled={!canSave || !canSavePolicy} loading={loading}>
+                        {c('Action').t`Save`}
+                    </Button>
+                </PermissionTooltip>
             </form>
         </>
     );
