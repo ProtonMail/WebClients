@@ -5,6 +5,10 @@ export function useSharingModalDriveSdkEnabled() {
   return useFlag('DocsSharingModalDriveSDK') || isDevOrBlack()
 }
 
+export function useMoveModalDriveSdkEnabled() {
+  return useFlag('DocsMoveModalDriveSDK') || isDevOrBlack()
+}
+
 export function useLoadRecentsWithSdkEnabled() {
   return useFlag('DocsLoadRecentsWithDriveSDK') || isDevOrBlack()
 }

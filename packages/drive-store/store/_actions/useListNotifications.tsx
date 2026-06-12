@@ -64,7 +64,7 @@ export default function useListNotifications() {
         createSuccessMessage(
             linkInfos,
             ok,
-            (name: string) => c('Notification').t`"${name}" moved`,
+            (ellipsedName: string) => c('Notification').t`"${ellipsedName}" moved`,
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item moved`,
