@@ -1,4 +1,15 @@
-import { BrowserWindow, Menu, type Session, Tray, app, nativeImage, nativeTheme, session, shell } from 'electron';
+import {
+    BrowserWindow,
+    Menu,
+    type Session,
+    Tray,
+    app,
+    autoUpdater,
+    nativeImage,
+    nativeTheme,
+    session,
+    shell,
+} from 'electron';
 import { join } from 'path';
 
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -318,8 +329,11 @@ app.addListener('activate', handleActivate);
 // or create the main window of the existing process
 app.addListener('second-instance', handleActivate);
 
-// Prevent hiding windows when explicitly quitting
+// Prevent hiding windows when explicitly quitting. `quitAndInstall()` does not emit `before-quit`
+// before closing windows, so `before-quit-for-update` must be handled too — otherwise the
+// hide-to-tray close handler keeps the app alive and the update install never completes.
 app.addListener('before-quit', () => (ctx.quitting = true));
+autoUpdater.addListener('before-quit-for-update', () => (ctx.quitting = true));
 
 await createWindow(ctx.session);
 
