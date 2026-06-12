@@ -287,9 +287,6 @@
       "Create new policy": [
         "Créer une politique"
       ],
-      "Create organization": [
-        "Créer une organisation"
-      ],
       "Create users": [
         "Créer des utilisateurs"
       ],
@@ -2187,14 +2184,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Ajouter des utilisateurs manuellement"
-      ],
       "Close": [
         "Fermer"
-      ],
-      "Configure your network": [
-        "Configurez votre réseau"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
@@ -2214,29 +2205,17 @@
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
       ],
-      "Invite your team": [
-        "Inviter votre équipe"
-      ],
-      "Manage global VPN permissions": [
-        "Gérer les autorisations VPN globales"
-      ],
       "Maybe later": [
         "Peut-être plus tard"
       ],
       "Remind me later": [
         "Me le rappeler plus tard"
       ],
-      "Secure your organization": [
-        "Sécurisez votre organisation"
-      ],
       "Send": [
         "Envoyer"
       ],
       "Set up other features": [
         "Configurez d'autres fonctionnalités"
-      ],
-      "Set up SSO": [
-        "Configurer le SSO"
       ],
       "Take a tour": [
         "Laissez-vous guider"
@@ -3591,23 +3570,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Connectez votre CRM, votre site internet, vos imprimantes et bien plus encore."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Créez une passerelle pour permettre à vos utilisateurs d'accéder à vos ressources informatiques via des serveurs dédiés."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Créez une réunion Zoom et ajouter les informations de participation à votre événement en un clic."
       ],
       "Create groups you can email with a single address.": [
         "Créez des groupes auxquels vous pouvez envoyer des messages avec une seule adresse."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Créez de nouveaux comptes utilisateur ou importez des utilisateurs avec l'approvisionnement SCIM SSO (authentification unique)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Créez des politiques pour déterminer qui peut se connecter aux serveurs partagés dans chaque pays."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Décidez quels utilisateurs peuvent se connecter à chacun de nos plus de 120 emplacements de serveurs partagés."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accédez facilement à votre adresse e-mail et à votre calendrier sur ordinateur et appareil mobile."
@@ -3668,9 +3638,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Voici comment nous avons soutenu les activistes locaux lorsque la vie privée et la liberté d'expression étaient menacées."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Si ce n'est pas déjà fait, activez des méthodes de récupération pour vous assurer de ne jamais perdre l'accès à ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
@@ -3750,6 +3717,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Nous allons importer vos anciens messages, ignorer les doublons et nous connecter à votre compte Gmail afin que vos nouveaux messages s'affichent automatiquement. Vous pouvez annuler l'importation à tout moment dans les paramètres d'Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
@@ -7328,9 +7298,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données personnelles ont été exposées. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Commencez"
-      ],
       "Get started with the referral link above.": [
         "Commencez par le lien de parrainage ci-dessus."
       ],
@@ -8147,9 +8114,6 @@
       "Set up your organization": [
         "Configurez votre organisation"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configurez votre organisation et commencez à protéger vos données en quelques étapes faciles."
-      ],
       "Setting up ${ feature }…": [
         "Configuration de ${ feature }…"
       ],
@@ -8930,6 +8894,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Vous ne pouvez pas parrainer les utilisateurs de ${ MAIL_APP_NAME }."
       ],
+      "You do not have permission to create users.": [
+        "Vous n'avez pas l'autorisation de créer des utilisateurs."
+      ],
       "You don't have any referrals.": [
         "Vous n'avez aucun parrainage."
       ],
@@ -9230,19 +9197,9 @@
         "Lecture seule"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Voici comment votre organisation apparaîtra aux utilisateurs. Vous pouvez la modifier à tout moment."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "L'adresse e-mail n'est pas valide."
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Quel est le nom de votre organisation ?"
       ]
     },
     "invitation status": {
@@ -10452,6 +10409,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obtenir ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtenir de l'aide avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Groupes"
@@ -13355,9 +13315,6 @@
       "Enter a name": [
         "Saisissez un nom"
       ],
-      "Enter name": [
-        "Saisir un nom"
-      ],
       "example@domain.com": [
         "exemple@domaine.fr"
       ],
@@ -14111,6 +14068,28 @@
       ],
       "Edit retention rule": [
         "Modifier la règle de conservation"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Administrateur de l'organisation"
+      ],
+      "Security Admin": [
+        "Administrateur de sécurité"
+      ],
+      "User Admin": [
+        "Administrateur des utilisateurs"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
       ]
     },
     "Safety review": {
@@ -16784,9 +16763,6 @@
       "Disconnected from Gmail": [
         "Déconnecté de Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Ignorer la liste de vérification de configuration"
-      ],
       "Domain names": [
         "Noms de domaine"
       ],
@@ -16946,9 +16922,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Obtenez plus d'espace de stockage avec ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Commencez"
       ],
       "Get the apps": [
         "Obtenir les applications"
@@ -17415,7 +17388,7 @@
         "Résumé"
       ],
       "Summer Sale": [
-        "Soldes d'été"
+        "Offre estivale"
       ],
       "Support your compliance objectives": [
         "Prise en charge de vos objectifs de conformité"
@@ -17569,9 +17542,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bienvenue dans ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Bienvenue dans ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "Ce qui change si vous passez au plan gratuit"
@@ -17871,8 +17841,8 @@
       "User is a group": [
         "L’utilisateur est un groupe"
       ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "En attente de l’acceptation de l’invitation par l’utilisateur"

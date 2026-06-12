@@ -287,9 +287,6 @@
       "Create new policy": [
         "创建新政策"
       ],
-      "Create organization": [
-        "创建组织"
-      ],
       "Create users": [
         "创建用户"
       ],
@@ -2170,14 +2167,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "手动添加用户"
-      ],
       "Close": [
         "关闭"
-      ],
-      "Configure your network": [
-        "配置您的网络"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
@@ -2197,29 +2188,17 @@
       "Discover and set up features": [
         "发现并设置功能"
       ],
-      "Invite your team": [
-        "邀请您的团队"
-      ],
-      "Manage global VPN permissions": [
-        "管理全局 VPN 权限"
-      ],
       "Maybe later": [
         "以后再说"
       ],
       "Remind me later": [
         "稍后提醒我"
       ],
-      "Secure your organization": [
-        "保护您的组织安全"
-      ],
       "Send": [
         "发送"
       ],
       "Set up other features": [
         "设置其他功能"
-      ],
-      "Set up SSO": [
-        "设置 SSO"
       ],
       "Take a tour": [
         "开始导览"
@@ -3565,23 +3544,14 @@
       "Connect your CRM, website, printers, and more.": [
         "连接您的 CRM、网站、打印机等。"
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "创建网关，让您的用户通过专属服务器访问您的 IT 资源。"
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "创建 Zoom 会议并一键添加加入事件的详细信息。"
       ],
       "Create groups you can email with a single address.": [
         "创建可通过单一地址发送电子邮件的群组。"
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "创建新账户或通过单点登录 (SSO) SCIM 配置导入用户。"
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "创建策略，决定谁可以连接到每个国家/地区的共享服务器。"
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "决定哪些用户可以连接到我们 120 多个共享服务器的位置。"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "在电脑和手机上轻松访问电子邮件和日历。"
@@ -3642,9 +3612,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "当隐私和言论自由受到威胁时，我们如何支持本地活动人士。"
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "如果尚未设置，请启用一些恢复方法，以确保您永远不会无法访问 ${ VPN_APP_NAME }。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
@@ -3723,6 +3690,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "我们将导入您的旧电子邮件、跳过重复项，并连接到您的 Gmail，以便自动显示新消息。您可以随时在 Easy Switch 设置中撤消导入。"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
@@ -4672,6 +4642,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong while converting the address": [
+        "转换地址时发生错误"
       ],
       "Something went wrong while creating the address": [
         "创建地址时出错"
@@ -7224,9 +7197,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "当您的密码等个人信息泄露时迅速得到通知。${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "开始使用"
-      ],
       "Get started with the referral link above.": [
         "立即通过上方推荐链接开始使用。"
       ],
@@ -8033,9 +8003,6 @@
       ],
       "Set up your organization": [
         "设置您的组织"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "只需几个简单步骤即可设置您的组织并开始保护您的数据。"
       ],
       "Setting up ${ feature }…": [
         "正在设置 ${ feature }…"
@@ -9098,19 +9065,9 @@
         "仅查看"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "这是您的组织对用户显示的名称，您可以随时更改。"
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "不是一个合法的邮箱地址"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "您组织的名称是什么？"
       ]
     },
     "invitation status": {
@@ -13157,9 +13114,6 @@
       "Enter a name": [
         "请输入名称"
       ],
-      "Enter name": [
-        "输入名称"
-      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -16414,9 +16368,6 @@
       "Disconnected from Gmail": [
         "已断开与 Gmail 的连接"
       ],
-      "Dismiss setup checklist": [
-        "关闭设置清单"
-      ],
       "Domain names": [
         "域名"
       ],
@@ -16575,9 +16526,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "使用 ${ MAIL_APP_NAME } Plus 获取更多存储空间"
-      ],
-      "Get started": [
-        "开始使用"
       ],
       "Get the apps": [
         "下载应用"
@@ -17042,7 +16990,7 @@
         "概览"
       ],
       "Summer Sale": [
-        "夏季促销"
+        "夏季大促"
       ],
       "Support your compliance objectives": [
         "支持您的合规目标"
@@ -17196,9 +17144,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
-      ],
-      "Welcome to ${ planName }": [
-        "欢迎使用 ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "切换到免费套餐会有什么变化"
@@ -17494,9 +17439,6 @@
       ],
       "User is a group": [
         "用户是群组"
-      ],
-      "via ${ groupName }": [
-        "通过 ${ groupName }"
       ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
