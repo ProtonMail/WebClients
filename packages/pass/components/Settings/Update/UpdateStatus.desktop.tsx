@@ -10,6 +10,7 @@ import { getErrorLabel } from '@proton/pass/components/Settings/Update/Update.de
 import type { UpdateErrorType, UpdateStore } from '@proton/pass/types/desktop';
 import { UpdateStatus as UpdateStatusEnum } from '@proton/pass/types/desktop';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isWindows } from '@proton/shared/lib/helpers/browser';
 
 const getStatusLabel = (
     status: UpdateStatusEnum,
@@ -22,6 +23,13 @@ const getStatusLabel = (
         case UpdateStatusEnum.Downloading:
             return newVersion ? c('Info').t`Downloading update ${newVersion}...` : c('Info').t`Downloading update...`;
         case UpdateStatusEnum.UpdateReady:
+            // Windows MSIX applies the staged update only on a full quit and does not auto-restart,
+            // so the user must reopen the app to finish — make that explicit.
+            if (isWindows()) {
+                return newVersion
+                    ? c('Info').t`Quit and reopen ${PASS_APP_NAME} to apply update ${newVersion}.`
+                    : c('Info').t`Quit and reopen ${PASS_APP_NAME} to apply the update.`;
+            }
             return newVersion
                 ? c('Info').t`Restart to apply update to ${newVersion}.`
                 : c('Info').t`Restart to apply update.`;
@@ -69,7 +77,7 @@ export const UpdateStatus: FC<Props> = ({
                 )}
                 {status === UpdateStatusEnum.UpdateReady && (
                     <Button color="norm" shape="solid" size="small" onClick={handleRestartToUpdate}>
-                        {c('Action').t`Restart to update`}
+                        {isWindows() ? c('Action').t`Quit and update` : c('Action').t`Restart to update`}
                     </Button>
                 )}
             </div>
