@@ -210,6 +210,12 @@
       "Claim ${ BRAND_NAME } address": [
         "Pridobi ${ BRAND_NAME } naslov"
       ],
+      "Claim this address": [
+        "Prevzemite ta naslov"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Prevzemite svoj brezplačni naslov ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Počisti"
       ],
@@ -282,6 +288,9 @@
       "Connect to video conferencing": [
         "Poveži se z videokonferenco"
       ],
+      "Connect your email": [
+        "Povežite svojo e-pošto"
+      ],
       "Contact group": [
         "Skupina stikov"
       ],
@@ -293,6 +302,9 @@
       ],
       "Continue with categories": [
         "Nadaljuj s kategorijami"
+      ],
+      "Continue with Free": [
+        "Nadaljujte z brezplačnim"
       ],
       "Continue with Google": [
         "Nadaljuj z Googlovim računom"
@@ -1014,6 +1026,9 @@
       "Open navigation": [
         "Odpri krmarjenje"
       ],
+      "Or use a different Gmail address": [
+        "Ali pa uporabite drug naslov Gmail"
+      ],
       "Ordered list": [
         "Oštevilčen seznam"
       ],
@@ -1082,6 +1097,9 @@
       ],
       "Reconnect": [
         "Znova poveži"
+      ],
+      "Reconnect to Gmail": [
+        "Znova se povežite z Gmailom"
       ],
       "Recover data": [
         "Obnovi podatke"
@@ -1462,7 +1480,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -3988,6 +4009,12 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Samodejno razvrstite dohodna sporočila, preden prispejo v vaš nabiralnik."
       ],
+      "Available storage: ${ storageText }": [
+        "Razpoložljiva shramba: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Onemogočite Googlu, da bi ustvaril vaš profil. Gmail ne more videti, kaj počnete v ${ MAIL_APP_NAME }"
+      ],
       "Connect your CRM, website, printers, and more.": [
         "Povežite svoj CRM, spletno stran, tiskalnike in drugo."
       ],
@@ -4012,8 +4039,14 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Preprosto sinhronizirajte datoteke v oblak iz namizja in do njih dostopajte iz mobilne naprave."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-poštna sporočila, poslana na naslov ${ connectedAddressText }, bodo zdaj prikazana v ${ MAIL_APP_NAME }."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dovolj prostora za leta e-pošte, priponk in drugega."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zagotovite si varen dostop do podatkov organizacije, tudi če je vaša ekipa oddaljena ali uporablja javni WiFi."
@@ -4057,6 +4090,12 @@
       "No labels": [
         "Brez oznak"
       ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Berite, odgovarjajte in bodite na tekočem z Gmailom neposredno v ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Pošiljajte in prejemajte sporočila Gmail neposredno v ${ MAIL_APP_NAME }. Povežite svoj naslov v ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Z nadgradnjo paketa omogočite premijske storitve, kot je več e-poštnih naslovov, s katerimi ločite različne vidike svojega življenja."
       ],
@@ -4065,6 +4104,15 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavite način obnovitve, da preprečite izgubo dostopa do svojega računa."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "To se lahko zgodi, če so bila dovoljenja odstranjena ali se je spremenilo vaše geslo."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Če želite še naprej prejemati in pošiljati sporočila Gmail v ${ BRAND_NAME }, znova povežite svoj račun."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Če želite še naprej prejemati in pošiljati sporočila Gmail v ${ BRAND_NAME }, znova povežite svoje račune."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Če želite še naprej uporabljati pisnega pomočnika, ga dodajte v svojo naročnino."
@@ -4087,6 +4135,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Vključite zaščito pred e-poštnimi sledilniki, da oglaševalcem in ostalim preprečite zbiranje podatkov o vaši lokaciji in spletni dejavnosti."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odklenite 15 GB shrambe za samo ${ config.offerPrice }."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Nadgradite, da dobite ${ activatePmUser } za krajši in lažje zapomnljiv e-poštni naslov poleg trenutnega."
       ],
@@ -4099,8 +4150,23 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Uporabite ta priročnik, da bo vaša organizacija čim prej začela izkoriščati prednosti vodilnega ekosistema za šifriranje in varstvo zasebnosti podjetja ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Do ${ boldEmails } ne moremo več dostopati."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "V tem sporočilu nismo zaznali znanih sledilnikov ali sledilnih spletnih naslovov."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Uvoz bomo začasno ustavili pri 80 % zasedenosti shrambe, da rezerviramo prostor za nova sporočila."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Uvozili bomo vašo staro e-pošto in povezali vaš Gmail s ${ MAIL_APP_NAME }, tako da se bodo nova sporočila prikazala samodejno"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Uvozili bomo vašo staro e-pošto, preskočili dvojnike in se povezali z vašim Gmailom, da se bodo nova sporočila prikazovala samodejno. Uvoz lahko kadar koli razveljavite v nastavitvah Easy Switch"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začeli smo uvažati vašo e-pošto iz Gmaila. Obvestili vas bomo, ko bo končano."
       ],
       "When do you want your message to be sent?": [
         "Kdaj želite, da se sporočilo pošlje?"
@@ -4111,17 +4177,32 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Z možnostjo dremeža po meri lahko skrijete e-poštna sporočila in jih nastavite tako, da se znova prikažejo ob boljšem času."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Naslov Gmail že posreduje sporočila v ${ MAIL_APP_NAME }. Povežite ga spodaj za pošiljanje in prejemanje e-pošte neposredno iz ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Naslove Gmail že posredujete v ${ MAIL_APP_NAME }. Povežite enega spodaj za pošiljanje in prejemanje e-pošte neposredno iz ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Dogodke lahko uvozite v formatu iCal (datoteka ICS). Datoteka ima lahko največjo velikost ${ MAX_IMPORT_FILE_SIZE_STRING } in vsebuje največ ${ MAX_IMPORT_EVENTS_STRING } dogodkov. Če je datoteka večja, jo razdelite na manjše datoteke."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Stike, ki jih ne želite niti združiti niti ohraniti, lahko označite za izbris. Brisanje se izvede šele po kliku gumba za združevanje"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Zdaj lahko s tega naslova pošiljate e-pošto iz ${ BRAND_NAME }."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Vaš račun in načini obnovitve podatkov so nastavljeni in 2FA je omogočen."
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
@@ -4424,6 +4505,9 @@
       ],
       "Address could not be added.": [
         "Naslova ni bilo mogoče dodati."
+      ],
+      "Address is already added to your account": [
+        "Naslov je že dodan vašemu računu"
       ],
       "Address primary private key not found": [
         "Primarni zasebni ključ naslova ni najden"
@@ -4895,6 +4979,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
+      ],
+      "Something went wrong while converting the address": [
+        "Med pretvorbo naslova je prišlo do napake"
+      ],
+      "Something went wrong while creating the address": [
+        "Med ustvarjanjem naslova je prišlo do napake"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Med pridobivanjem razpoložljivih domen je prišlo do napake"
       ],
       "Something went wrong. Please try again.": [
         "Nekaj je šlo narobe. Poskusite znova."
@@ -5494,11 +5587,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premijskih funkcij"
+      ],
+      "Custom email domain": [
+        "E-poštna domena po meri"
+      ],
+      "Email addresses": [
+        "E-poštni naslovi"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Šifrirana shramba v oblaku za datoteke, fotografije in dokumente"
       ],
       "More premium features": [
         "Več premijskih funkcij"
+      ],
+      "Storage": [
+        "Shramba"
       ],
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov hide-my-email"
@@ -7191,6 +7296,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Uživajte v hitrejši in bolj osredotočeni izkušnji e-pošte z namizno aplikacijo."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zagotovite si popolnoma zasebno in šifrirano komunikacijo. Prevzemite svoj brezplačni e-poštni naslov ${ BRAND_NAME } zdaj."
+      ],
       "Enter code": [
         "Vnesi kodo"
       ],
@@ -7401,6 +7509,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Vključite svoj vnos in odgovor ter nam tako pomagajte izboljšati natančnost."
       ],
+      "Included": [
+        "Vključeno"
+      ],
       "Included for free with your plan": [
         "Vključeno brezplačno v vaš paket"
       ],
@@ -7420,10 +7531,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8382,8 +8490,14 @@
       "Updating message content search...": [
         "Posodabljanje iskanja po vsebini sporočil ..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Nadgradite kadar koli, da prenesete preostalo"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Nadgradite ali kadar koli počistite prostor, da prenesete preostalo"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Za odklepanje nadgradite na ${ plan }"
@@ -9702,6 +9816,9 @@
       ],
       "Search in": [
         "Išči v"
+      ],
+      "Select which Gmail address to connect": [
+        "Izberite, kateri naslov Gmail želite povezati"
       ],
       "Send auto-reply": [
         "Pošlji samodejni odgovor"
@@ -11558,6 +11675,9 @@
       ],
       "Trial started": [
         "Preizkusna doba se je začela"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Vaš naslov ${ BRAND_NAME } je pripravljen za uporabo"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11683,6 +11803,12 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Prenesite svojo e-pošto v ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Prenesite svojo obstoječo e-pošto v ${ MAIL_APP_NAME }, da boste lahko vse upravljali iz enega zasebnega predala Prejeto."
+      ],
       "Choose a provider": [
         "Izberite ponudnika"
       ],
@@ -14720,6 +14846,9 @@
       "Block sender": [
         "Blokiraj pošiljatelja"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Prenesite svoj Gmail v ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Narejen za zasebnost"
       ],
@@ -14749,6 +14878,9 @@
       ],
       "Choose a provider": [
         "Izberite ponudnika"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Prevzemite svoj naslov ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Čiščenje podatkov"
@@ -14785,6 +14917,9 @@
       ],
       "Contacts": [
         "Stiki"
+      ],
+      "Continue with free storage": [
+        "Nadaljujte z brezplačno shrambo"
       ],
       "Continue with partial import?": [
         "Nadaljujte z delnim uvozom?"
@@ -14894,6 +15029,9 @@
       "Desktop": [
         "Namizje"
       ],
+      "Disconnected from Gmail": [
+        "Povezava z Gmailom je prekinjena"
+      ],
       "Discover your subscription benefits": [
         "Odkrijte ugodnosti svoje naročnine"
       ],
@@ -14995,6 +15133,9 @@
       ],
       "Get more from your VPN": [
         "Izkoristite več od svoje VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Pridobite več shrambe s ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Prenesite aplikacijo ${ appName[APP_NAME] }"
@@ -15383,6 +15524,9 @@
       "Self-destruct message": [
         "Samouniči sporočilo"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Pošiljajte in prejemajte Gmail z uporabo ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Pošlji sporočilo"
       ],
@@ -15473,6 +15617,9 @@
       "Summary": [
         "Povzetek"
       ],
+      "Summer Sale": [
+        "Poletna razprodaja"
+      ],
       "This field cannot be empty": [
         "To polje ne more biti prazno"
       ],
@@ -15532,6 +15679,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Uporabljajte ${ VPN_SHORT_APP_NAME } za zasebnost podatkov"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Varno uporabljajte Gmail v ${ MAIL_APP_NAME }"
       ],
       "Verification error": [
         "Napaka pri preverjanju"

@@ -101,6 +101,9 @@
       "Done": [
         "Concluído"
       ],
+      "Download": [
+        "Baixar"
+      ],
       "Download app": [
         "Baixar aplicativo"
       ],
@@ -1494,14 +1497,23 @@
       "Failed to delete event": [
         "Falha ao excluir o evento"
       ],
+      "Failed to delete recording": [
+        "Erro ao excluir a gravação"
+      ],
       "Failed to delete room": [
         "Não foi possível excluir a sala"
+      ],
+      "Failed to download recording": [
+        "Erro ao baixar a gravação"
       ],
       "Failed to edit room name": [
         "Falha ao editar nome da sala"
       ],
       "Failed to join meeting. Please try again later.": [
         "Falha ao entrar na reunião. Tente novamente mais tarde."
+      ],
+      "Failed to load recordings": [
+        "Erro ao carregar as gravações"
       ],
       "Failed to lock meeting": [
         "Falha ao bloquear reunião"
@@ -1649,6 +1661,46 @@
         "Chave de segurança"
       ]
     },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Padrão do sistema"
@@ -1736,6 +1788,9 @@
       "${ maxParticipants } participant limit reached": [
         "Limite de ${ maxParticipants } participantes atingido"
       ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "O ${ MEET_APP_NAME } precisa de acesso para que os outros possam ver e ouvir você durante a chamada. Você pode desligar a câmera ou o microfone a qualquer momento."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "O ${ MEET_APP_NAME } precisa do WebRTC para funcionar. Atualize seu navegador ou dispositivo para uma versão que tenha suporte para WebRTC, tente usar outro navegador ou desative todas as extensões que possam estar bloqueando-o."
       ],
@@ -1796,6 +1851,9 @@
       ],
       "camera": [
         "câmera"
+      ],
+      "Camera permission denied": [
+        "Permissão da câmera negada"
       ],
       "Chat with everyone": [
         "Conversar com todo mundo"
@@ -2031,6 +2089,12 @@
       "Microphone effects": [
         "Efeitos de microfone"
       ],
+      "Microphone permission denied": [
+        "Permissão de microfone negada"
+      ],
+      "Mute microphone": [
+        "Silenciar microfone"
+      ],
       "My meetings": [
         "Minhas reuniões"
       ],
@@ -2126,6 +2190,9 @@
       ],
       "Recording": [
         "Gravando"
+      ],
+      "Recording deleted": [
+        "Gravação excluída"
       ],
       "Recording in progress": [
         "Gravação em andamento"
@@ -2250,14 +2317,8 @@
       "Turn off camera": [
         "Desativar câmera"
       ],
-      "Turn off microphone": [
-        "Desativar microfone"
-      ],
       "Turn on camera": [
         "Ativar câmera"
-      ],
-      "Turn on microphone": [
-        "Ativar microfone"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Não foi possível reconectar-se à reunião. Participe novamente ou saia."
@@ -2267,6 +2328,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Desbloqueie ${ unlimitedMeeting } e recursos premium"
+      ],
+      "Unmute microphone": [
+        "Reativar microfone"
       ],
       "Upgrade to record your meetings locally.": [
         "Faça o upgrade para gravar suas reuniões localmente."
@@ -2462,6 +2526,9 @@
       ],
       "Last used": [
         "Última utilização"
+      ],
+      "Manage recordings": [
+        "Gerenciar gravações"
       ],
       "Meeting ID": [
         "ID da reunião"
@@ -2821,6 +2888,20 @@
         "Verificado com sucesso"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Ações"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Size": [
+        "Tamanho"
+      ]
+    },
     "Title": {
       "Account restricted": [
         "Conta restrita"
@@ -2875,6 +2956,9 @@
       ],
       "Debug Overlay": [
         "Sobreposição de depuração"
+      ],
+      "Delete recording?": [
+        "Excluir gravação?"
       ],
       "Enter your password": [
         "Digite sua senha"
@@ -2972,6 +3056,9 @@
       ],
       "Record this meeting": [
         "Gravar esta reunião"
+      ],
+      "Recordings": [
+        "Gravações"
       ],
       "Remote Participants": [
         "Participantes remotos"

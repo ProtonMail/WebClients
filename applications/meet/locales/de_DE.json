@@ -101,6 +101,9 @@
       "Done": [
         "Fertig"
       ],
+      "Download": [
+        "Herunterladen"
+      ],
       "Download app": [
         "App herunterladen"
       ],
@@ -1646,6 +1649,46 @@
         "Sicherheitsschlüssel"
       ]
     },
+    "file size format": {
+      "byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systemstandard"
@@ -2046,6 +2089,9 @@
       "Microphone permission denied": [
         "Mikrofonzugriff verweigert"
       ],
+      "Mute microphone": [
+        "Mikrofon stummschalten"
+      ],
       "My meetings": [
         "Meine Meetings"
       ],
@@ -2271,14 +2317,8 @@
       "Turn off camera": [
         "Kamera ausschalten"
       ],
-      "Turn off microphone": [
-        "Mikrofon ausschalten"
-      ],
       "Turn on camera": [
         "Kamera aktivieren"
-      ],
-      "Turn on microphone": [
-        "Mikrofon einschalten"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Die Verbindung zum Meeting kann nicht wiederhergestellt werden. Bitte trete erneut bei oder verlasse das Meeting."
@@ -2288,6 +2328,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "${ unlimitedMeeting } und Premium-Funktionen freischalten"
+      ],
+      "Unmute microphone": [
+        "Stummschaltung aufheben"
       ],
       "Upgrade to record your meetings locally.": [
         "Upgraden, um deine Meetings lokal aufzuzeichnen."
@@ -2837,6 +2880,14 @@
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Name": [
+        "Name"
       ]
     },
     "Title": {

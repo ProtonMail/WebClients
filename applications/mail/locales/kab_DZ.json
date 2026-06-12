@@ -163,6 +163,9 @@
       "Choose a file or drag it here": [
         "Fren afaylu neɣ zuɣer-it dagi"
       ],
+      "Claim this address": [
+        "Suter tansa-agi"
+      ],
       "Clear": [
         "Sfeḍ"
       ],
@@ -763,6 +766,9 @@
       "Open navigation": [
         "Ldi tunigin"
       ],
+      "Or use a different Gmail address": [
+        "Neɣ seqdec tansa n Gmail nniḍen"
+      ],
       "Ordered list": [
         "Tabdart n usmizwer"
       ],
@@ -1090,9 +1096,6 @@
       "Trust": [
         "Amen"
       ],
-      "Trust key": [
-        "Tasarut yettwamanen"
-      ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
       ],
@@ -1176,6 +1179,9 @@
       ],
       "Use recovery code": [
         "Seqdec tangalt n tririt"
+      ],
+      "Use this Gmail address": [
+        "Seqdec tansa-agi n Gmail"
       ],
       "Verify": [
         "Senqed"
@@ -2992,6 +2998,12 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seqdec tawuri Zuɣer Sers iwakken ad tesmizzwireḍ tazwart n usmezdi gar yinermisen. Kkes afran i yinermisen ur tebɣiḍ ara ad tesmezdiḍ."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "A d-nawi imaylen-ik iqdacen u ad nqqen Gmail-ik ɣer ${ MAIL_APP_NAME } iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "A nsserṛeḥ imaylen-ik iqdacen, ad nezgel ayen yettwalesen, u ad nqqen ɣer Gmail-ik iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut. Tizmired ad tsewtid aserṛeḥ melmi i k-yehwa deg yiɣewwaren n Easy Switch"
       ],
       "When do you want your message to be sent?": [
         "Melmi i tebɣiḍ ad yettwazen yizen-ik·im?"
@@ -4883,8 +4895,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -7310,6 +7321,14 @@
         "Asekles"
       ]
     },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Awi imaylen-ik ɣer ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Awi-d imaylen-ik yellan ɣer ${ MAIL_APP_NAME } iwakken ad tizmired ad tsefreked kullec seg yiwet n tnakat n unermas tusligt."
+      ]
+    },
     "Onboarding modal": {
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } ɣef App Store"
@@ -9282,6 +9301,9 @@
       ],
       "Summary": [
         "Agzul"
+      ],
+      "Summer Sale": [
+        "Tanzayt n unebdu"
       ],
       "This field cannot be empty": [
         "Urti-a ur ilaq ad yili d ilem"

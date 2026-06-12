@@ -287,9 +287,6 @@
       "Create new policy": [
         "Стварыць новую палітыку"
       ],
-      "Create organization": [
-        "Стварыць арганізацыю"
-      ],
       "Create users": [
         "Стварыць карыстальнікаў"
       ],
@@ -2221,14 +2218,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Дадаць карыстальнікаў уручную"
-      ],
       "Close": [
         "Закрыць"
-      ],
-      "Configure your network": [
-        "Сканфігурыруйце сваю сетку"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
@@ -2248,29 +2239,17 @@
       "Discover and set up features": [
         "Пазнаёміцца і наладзіць функцыі"
       ],
-      "Invite your team": [
-        "Запрасіць сваю каманду"
-      ],
-      "Manage global VPN permissions": [
-        "Кіраваць глабальнымі дазволамі VPN"
-      ],
       "Maybe later": [
         "Магчыма пазней"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
       ],
-      "Secure your organization": [
-        "Абараніць сваю арганізацыю"
-      ],
       "Send": [
         "Адправіць"
       ],
       "Set up other features": [
         "Наладзіць іншыя функцыі"
-      ],
-      "Set up SSO": [
-        "Наладзіць SSO"
       ],
       "Take a tour": [
         "Пачаць знаёмства"
@@ -3637,23 +3616,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Стварыце шлюз, каб даць карыстальнікам доступ да сваіх ІТ-рэсурсаў праз вылучаныя серверы."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Стварыце сустрэчу Zoom і дадайце падрабязнасці аб далучэнні да падзеі адным націскам."
       ],
       "Create groups you can email with a single address.": [
         "Стварайце групы, на якія можна адпраўляць электронныя лісты, выкарыстоўваючы адзін адрас."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Стварыце новы ўліковы запіс карыстальніка або імпартуйце карыстальнікаў з SSO (адзінага ўваходу) забеспячэння SCIM."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Стварыце палітыку, каб вырашаць, хто можа падключацца да абагуленых сервераў у кожнай краіне."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Вырашыце, якія карыстальнікі могуць падключыцца да кожнага з нашых 120+ абагуленых серверных месцазнаходжанняў."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
@@ -3714,9 +3684,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Як мы падтрымлівалі мясцовых актывістаў, калі прыватнасць і свабода слова апынуліся пад пагрозай."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Уключыце некаторыя спосабы аднаўлення, каб быць упэўненым у тым, што вы ніколі не страціце доступ да ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
@@ -3798,6 +3765,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Мы імпартуем вашы старыя лісты, прапусцім дублікаты і падключым ваш Gmail, каб новыя паведамленні з'яўляліся аўтаматычна. Вы можаце адрабіць імпарт у любы час у наладах Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
@@ -7524,9 +7494,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых асабістых даных. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Пачатак працы"
-      ],
       "Get started with the referral link above.": [
         "Пачніце па рэферальнай спасылцы вышэй."
       ],
@@ -8355,9 +8322,6 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Наладзьце сваю арганізацыю і пачніце абараняць свае даныя за некалькі простых крокаў."
-      ],
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
       ],
@@ -9162,6 +9126,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Вы не можаце запрасіць карыстальніка ${ MAIL_APP_NAME }"
       ],
+      "You do not have permission to create users.": [
+        "У вас няма дазволу на стварэнне карыстальнікаў."
+      ],
       "You don't have any referrals.": [
         "У вас пакуль няма рэфералаў."
       ],
@@ -9476,19 +9443,9 @@
         "Толькі прагляд"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Так будзе выглядаць ваша арганізацыя для карыстальнікаў. Выгляд можна змяніць у любы час."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Памылковы адрас электроннай пошты"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Як называецца ваша арганізацыя?"
       ]
     },
     "invitation status": {
@@ -13721,9 +13678,6 @@
       "Enter a name": [
         "Увядзіце назву"
       ],
-      "Enter name": [
-        "Увядзіце назву"
-      ],
       "example@domain.com": [
         "pryklad@domain.com"
       ],
@@ -14397,6 +14351,28 @@
       ],
       "Edit retention rule": [
         "Рэдагаванне правіла захоўвання"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Адміністратар арганізацыі"
+      ],
+      "Security Admin": [
+        "Адміністратар бяспекі"
+      ],
+      "User Admin": [
+        "Адміністратар карыстальніка"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Канфіграцыя палітык бяспекі, захоўванне даных, інфраструктура VPN і кіраванне журналамі аўдыту."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Кіраванне ўсімі карыстальнікамі, групы, бяспека, білінг і сістэмныя канфігурацыі."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Кіраванне карыстальнікамі, групы, сховішча для ўсіх удзельнікаў, прызначэнне роляў і размеркаванне ліцэнзій."
       ]
     },
     "Safety review": {
@@ -17185,9 +17161,6 @@
       "Disconnected from Gmail": [
         "Адключана ад Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Адхіліць кантрольны спіс наладкі"
-      ],
       "Domain names": [
         "Даменныя імёны"
       ],
@@ -17349,9 +17322,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Пачатак працы"
       ],
       "Get the apps": [
         "Атрымаць праграмы"
@@ -17977,9 +17947,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
       ],
-      "Welcome to ${ planName }": [
-        "Вітаем у ${ planName }"
-      ],
       "What changes if you switch to the Free plan": [
         "Што зменіцца пры пераходзе на тарыфны план Free"
       ],
@@ -18278,8 +18245,8 @@
       "User is a group": [
         "Карыстальнік - гэта група"
       ],
-      "via ${ groupName }": [
-        "праз ${ groupName }"
+      "via ${ groupNames }": [
+        "праз ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"

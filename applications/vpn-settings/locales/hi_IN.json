@@ -141,6 +141,12 @@
       "Choose my own password": [
         "मेरा खुद का पासवर्ड चुनें"
       ],
+      "Claim this address": [
+        "इस पते पर दावा करें"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "अपने मुफ़्त ${ BRAND_NAME } पते पर दावा करें"
+      ],
       "Close": [
         "बंद करें"
       ],
@@ -165,6 +171,9 @@
       "Connect": [
         "जुड़े"
       ],
+      "Connect your email": [
+        "अपना ईमेल कनेक्ट करें"
+      ],
       "Connected": [
         "कनेक्ट है"
       ],
@@ -182,6 +191,9 @@
       ],
       "Continue import": [
         "आयात जारी रखें"
+      ],
+      "Continue with Free": [
+        "मुफ़्त के साथ जारी रखें"
       ],
       "Continue with this password": [
         "इस पासवर्ड के साथ जारी रखें"
@@ -287,6 +299,9 @@
       ],
       "Discard Changes": [
         "बदलाव रद्द करें"
+      ],
+      "Disconnect": [
+        "डिस्कनेक्ट करें"
       ],
       "Discover ${ planName }": [
         "जानें ${ planName }"
@@ -570,6 +585,9 @@
       "Or": [
         "या"
       ],
+      "Or use a different Gmail address": [
+        "या किसी अन्य Gmail पते का उपयोग करें"
+      ],
       "Organization": [
         "संगठन"
       ],
@@ -593,6 +611,9 @@
       ],
       "Reconnect": [
         "वापस जुड़ें"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail से फिर से कनेक्ट करें"
       ],
       "Recover data": [
         "डाटा रिकवर करें"
@@ -924,6 +945,9 @@
       "Use recovery code": [
         "रिकवरी कोड इस्तेमाल करें"
       ],
+      "Use this Gmail address": [
+        "इस Gmail पते का उपयोग करें"
+      ],
       "Use your current email instead": [
         "इसके जगह चालू ईमेल पते इस्तेमाल करें"
       ],
@@ -1065,6 +1089,9 @@
       ],
       "Disabled": [
         "अक्षम"
+      ],
+      "Disconnected": [
+        "डिस्कनेक्ट किया गया"
       ],
       "External": [
         "बाहरी"
@@ -2487,11 +2514,20 @@
       ]
     },
     "Description": {
+      "Available storage: ${ storageText }": [
+        "उपलब्ध स्टोरेज: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Google की आपको प्रोफाइल करने की क्षमता को ब्लॉक करें। Gmail नहीं देख सकता कि आप ${ MAIL_APP_NAME } में क्या करते हैं"
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "एक क्लिक के साथ ज़ूम मीटिंग बनाएं और अपने कार्यक्रम में जॉइनिंग विवरण जोड़ें।"
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "हर देश में साझा सर्वर से कौन कनेक्ट कर सकता है, यह तय करने के लिए नीतियाँ बनाएं।"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText } पर भेजे गए ईमेल अब ${ MAIL_APP_NAME } में दिखाई देंगे।"
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "इन सुविधाओं तक पहुँचने के लिए ${ PROTON_SENTINEL_NAME } को सक्षम करें"
@@ -2505,6 +2541,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "वर्षों के ईमेल, अटैचमेंट और बहुत कुछ के लिए पर्याप्त जगह।"
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "आपके संगठन के सभी सदस्य सभी देशों में साझा सर्वर से कनेक्ट कर सकते हैं।"
       ],
@@ -2517,11 +2556,65 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "अतिरिक्त पतों के साथ अपने जीवन के विभिन्न हिस्सों को अलग रखें और अपने इंबॉक्स को व्यवस्थित रखें।"
       ],
+      "No ads. No trackers.": [
+        "कोई विज्ञापन नहीं। कोई ट्रैकर नहीं।"
+      ],
       "No one in your organization can connect to shared servers.": [
         "आपके संगठन में कोई भी साझा सर्वर से कनेक्ट नहीं कर सकता।"
       ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } के भीतर से ही Gmail पढ़ें, जवाब दें और हर गतिविधि पर नज़र रखें"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "ऐसा तब हो सकता है यदि अनुमतियाँ हटा दी गई हों या आपका पासवर्ड बदल गया हो।"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } में Gmail संदेश प्राप्त करना और भेजना जारी रखने के लिए, कृपया अपना खाता फिर से कनेक्ट करें।"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } में Gmail संदेश प्राप्त करना और भेजना जारी रखने के लिए, कृपया अपने खाते फिर से कनेक्ट करें।"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "केवल ${ config.offerPrice } में 15 जीबी स्टोरेज अनलॉक करें।"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "हम अब ${ boldEmails } को एक्सेस नहीं कर सकते।"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "नए संदेशों के लिए जगह आरक्षित रखने के लिए हम 80% स्टोरेज पर आयात रोक देंगे।"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "हम आपके पुराने ईमेल लाएंगे और आपके Gmail को ${ MAIL_APP_NAME } से कनेक्ट करेंगे ताकि नए संदेश अपने आप दिखाई दें"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "हम आपके पुराने ईमेल आयात करेंगे, डुप्लिकेट छोड़ेंगे और आपके Gmail से कनेक्ट करेंगे ताकि नए संदेश अपने आप दिखाई दें। आप Easy Switch सेटिंग में किसी भी समय आयात को अनडू कर सकते हैं"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "हमने Gmail से आपके ईमेल आयात करना शुरू कर दिया है। पूरा होने पर हम आपको सूचित करेंगे।"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "आपके पास पहले से ही ${ MAIL_APP_NAME } पर फॉरवर्ड होने वाला एक Gmail पता है। ${ MAIL_APP_NAME } से सीधे ईमेल भेजने और प्राप्त करने के लिए इसे नीचे कनेक्ट करें।"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "आपके पास पहले से ही ${ MAIL_APP_NAME } पर फॉरवर्ड होने वाले Gmail पते हैं। ${ MAIL_APP_NAME } से सीधे ईमेल भेजने और प्राप्त करने के लिए नीचे किसी एक को कनेक्ट करें।"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "आप iCal फॉर्मैट (ICS फाइल) में इवेंट आयात कर सकते है। फाइल ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_FILE_SIZE_STRING } साइज़ का होना चाहिए और ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_EVENTS_STRING } तक इवेंट रखा हो सकता है। अगर आपका फाइल ज़्यादा बड़ा है, तो उसे छोटे फाइलों में तोड़े।"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "अब आप इस पते का उपयोग करके ${ BRAND_NAME } से ईमेल भेज सकते हैं।"
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "आप अभी भी इस पते से लॉगइन कर सकते हैं और किसी भी समय फिर से कनेक्ट कर सकते हैं।"
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "आप ${ BRAND_NAME } में ईमेल प्राप्त करने और भेजने के लिए अब ${ address.Email } का उपयोग नहीं कर पाएंगे। यह भी ध्यान रखें कि ${ BRAND_NAME } से इस पते पर भेजे गए संदेश अब शुरु-से-अंत तक एन्क्रिप्ट नहीं होंगे।"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "आपका मुफ़्त ${ MAIL_APP_NAME } खाता सीमित स्टोरेज के साथ आता है इसलिए हम आपके सबसे हाल के Gmail संदेशों में से केवल ${ newUserStorageText } ही आयात करेंगे"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "आपका मुफ़्त ${ MAIL_APP_NAME } खाता सीमित स्टोरेज के साथ आता है इसलिए हम केवल आपके सबसे हाल के Gmail ईमेल ही आयात करेंगे।"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2805,6 +2898,9 @@
       "A group with this name already exists": [
         "इस नाम का एक समूह पहले से मौजूद है"
       ],
+      "Address is already added to your account": [
+        "पता आपके खाते में पहले से ही जोड़ा गया है"
+      ],
       "Address primary private key not found": [
         "पता प्राथमिक निजी कुंजी नहीं मिली"
       ],
@@ -3081,6 +3177,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
+      ],
+      "Something went wrong while converting the address": [
+        "पता बदलते समय कुछ गलत हो गया"
+      ],
+      "Something went wrong while creating the address": [
+        "पता बनाते समय कुछ गलत हो गया"
+      ],
+      "Something went wrong while fetching available domains": [
+        "उपलब्ध डोमेन लाते समय कुछ गलत हो गया"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "कुछ गलत हुआ, आगे बढ़ने के लिए कृपया पेज ${ refresh } करें। अगर फिर भी यह त्रुटि है तो ${ supportTeam } से सम्पर्क करें।"
@@ -3629,6 +3734,9 @@
         "${ MaxVPN } VPN कनेक्शन",
         "${ MaxVPN } VPN कनेक्शन"
       ],
+      "10+ premium features": [
+        "10+ प्रीमियम खासियतें"
+      ],
       "Access to all countries": [
         "सभी देशों तक पहुंच"
       ],
@@ -3646,6 +3754,12 @@
       "Continue": [
         "जारी रखें"
       ],
+      "Custom email domain": [
+        "कस्टम ईमेल डोमेन"
+      ],
+      "Email addresses": [
+        "ईमेल पते"
+      ],
       "Fastest VPN servers": [
         "सबसे तेज़ वीपीएन सर्वर"
       ],
@@ -3657,6 +3771,9 @@
       ],
       "Secure streaming support": [
         "सुरक्षित स्ट्रीमिंग समर्थन"
+      ],
+      "Storage": [
+        "स्टोरेज"
       ],
       "Torrenting support (P2P)": [
         "टोरेंटिंग सपोर्ट (P2P)"
@@ -4967,6 +5084,9 @@
       "Enhance your network security": [
         "नेटवर्क सुरक्षा बढ़ाएं"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "पूरी तरह से निजी और एन्क्रिप्ट किया गया संचार सुनिश्चित करें। अपने मुफ़्त ${ BRAND_NAME } ईमेल पते पर अभी दावा करें।"
+      ],
       "Enter key manually instead": [
         "इसके बजाय मैन्युअल रूप से कुंजी दर्ज करें"
       ],
@@ -5144,6 +5264,9 @@
       ],
       "inactive": [
         "निष्क्रिय"
+      ],
+      "Included": [
+        "शामिल है"
       ],
       "Increase your account security by verifying your email address.": [
         "अपने खाते की सुरक्षा बढ़ा के लिए अपने ईमेल पते की पुष्टि करें।"
@@ -5982,8 +6105,14 @@
       "Unverified email address.": [
         "असत्यापित ईमेल पता।"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "बाकी को लाने के लिए किसी भी समय अपग्रेड करें"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "बाकी को लाने के लिए किसी भी समय अपग्रेड करें या जगह खाली करें"
       ],
       "Upload your completed CSV file to create accounts": [
         "खाते बनाने के लिए अपनी पूरी CSV फ़ाइल अपलोड करें"
@@ -7077,6 +7206,9 @@
       "Second password": [
         "दूसरा पासवर्ड"
       ],
+      "Select which Gmail address to connect": [
+        "कनेक्ट करने के लिए Gmail पता चुनें"
+      ],
       "Send crash reports": [
         "क्रेश रिपोर्ट भेजे"
       ],
@@ -7218,6 +7350,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "को"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ maxBYOEAddresses } में से ${ byoeAddressesAvailableCount } ईमेल पता उपलब्ध है",
+        "${ maxBYOEAddresses } में से ${ byoeAddressesAvailableCount } ईमेल पते उपलब्ध हैं"
       ]
     },
     "Label for adding a new custom domain": {
@@ -8534,6 +8672,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "अब टू फैक्टर ऑथेंटिकेशन की आवश्यकता नहीं है"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "आपका ${ BRAND_NAME } पता उपयोग करने के लिए तैयार है"
       ]
     },
     "Oauth instructions": {
@@ -11207,6 +11348,9 @@
       "Are you sure you want to close the preview?": [
         "आप पक्का इस प्रीव्यू को बंद करना चाहते हैं?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "क्या आप वाकई इस पते को डिस्कनेक्ट करना चाहते हैं?"
+      ],
       "Are you sure?": [
         "क्या आप पक्का हैं?"
       ],
@@ -11218,6 +11362,9 @@
       ],
       "Block trackers and malware": [
         "ट्रैकर्स और मैलवेयर को ब्लॉक करें"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "अपने Gmail को ${ MAIL_APP_NAME } में लाएं"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } सदस्यता रद्द करें"
@@ -11258,6 +11405,9 @@
       "Choose user affiliations": [
         "उपयोगकर्ता संबद्धताएँ चुनें"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "अपने ${ MAIL_APP_NAME } पते पर दावा करें"
+      ],
       "Close": [
         "बंद करें"
       ],
@@ -11278,6 +11428,9 @@
       ],
       "Contact us": [
         "हमसे संपर्क करें"
+      ],
+      "Continue with free storage": [
+        "मुफ़्त स्टोरेज के साथ जारी रखें"
       ],
       "Continue with partial import?": [
         "आंशिक आयात जारी रखें?"
@@ -11401,6 +11554,9 @@
       "Discard changes?": [
         "बदलाव रद्द करें?"
       ],
+      "Disconnected from Gmail": [
+        "Gmail से डिस्कनेक्ट हो गया"
+      ],
       "Domain names": [
         "डोमेन नाम"
       ],
@@ -11518,6 +11674,9 @@
       ],
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus के साथ अधिक स्टोरेज प्राप्त करें"
       ],
       "Get the apps": [
         "ऐप प्राप्त करें"
@@ -11745,6 +11904,9 @@
       "Select contact group": [
         "संपर्क समूह चुनें"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } का उपयोग करके Gmail भेजें और प्राप्त करें"
+      ],
       "Send email reminders?": [
         "ईमेल अनुस्मारक भेजें?"
       ],
@@ -11830,6 +11992,9 @@
       "Summary": [
         "सार"
       ],
+      "Summer Sale": [
+        "समर सेल"
+      ],
       "Switch to one-password mode": [
         "एक-पासवर्ड मोड में स्विच करें"
       ],
@@ -11913,6 +12078,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard संरचना"
+      ],
+      "You are all set": [
+        "आप पूरी तरह तैयार हैं"
       ],
       "You can now create unlimited folders and labels": [
         "अब आप असीमित फोल्डर और लेबल बना सकते हैं"

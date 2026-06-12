@@ -233,6 +233,9 @@
       "Continue transfers": [
         "Continuar as transferências"
       ],
+      "Continue with Free": [
+        "Continuar com a versão gratuita"
+      ],
       "Continue with Google": [
         "Continuar com o Google"
       ],
@@ -2675,6 +2678,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronize facilmente os ficheiros para a nuvem a partir do seu computador e aceda aos mesmos a partir do seu dispositivo móvel."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Os e-mails enviados para ${ connectedAddressText } serão agora mostrados no ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Incentive o uso da autenticação em dois fatores na sua organização para garantir uma segurança adicional."
       ],
@@ -2720,6 +2726,12 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique a sincronização e o agendamento com calendários partilhados."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isto pode acontecer se as permissões tiverem sido removidas ou se a sua palavra-passe tiver sido alterada."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar a receber e a enviar mensagens do Gmail no ${ BRAND_NAME }, volte a ligar a sua conta."
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Para continuar a receber e enviar mensagens Gmail no ${ BRAND_NAME }, volte a ligar as suas contas."
       ],
@@ -2750,6 +2762,12 @@
       "We can't access ${ boldEmails } anymore.": [
         "Já não conseguimos aceder a ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Iremos colocar as importações em pausa aos 80% de armazenamento para reservar espaço para novas mensagens."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Começámos a importar os seus e-mails do Gmail. Avisá-lo-emos quando estiver concluído."
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos vê-lo partir. Se tiver um momento, gostaríamos muito de saber por que motivo pretende cancelar. O seu feedback ajuda-nos a tornar o ${ BRAND_NAME } melhor para todos."
       ],
@@ -2773,6 +2791,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "A sua conta gratuita do ${ MAIL_APP_NAME }inclui armazenamento limitado, pelo que importaremos apenas ${ newUserStorageText }das suas mensagens Gmail mais recentes"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "A sua conta gratuita do ${ MAIL_APP_NAME } tem armazenamento limitado, pelo que apenas iremos importar os seus e-mails mais recentes do Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
@@ -3406,6 +3427,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao obter os domínios disponíveis"
+      ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente mais tarde."
       ],
@@ -3906,6 +3930,9 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Mais de 10 funcionalidades premium"
+      ],
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
@@ -5764,6 +5791,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Atualize ou limpe espaço a qualquer momento para trazer o resto"
       ],
       "upgrade your storage": [
         "atualize o seu armazenamento"
@@ -8388,6 +8418,9 @@
       "You stopped sharing this item": [
         "Parou de partilhar este item."
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "O seu endereço do ${ BRAND_NAME } está pronto a usar"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Os seus ficheiros antigos serão eliminados em 72 horas."
       ],
@@ -10978,6 +11011,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue with free storage": [
+        "Continuar com o armazenamento gratuito"
+      ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
@@ -11520,6 +11556,9 @@
       "Summary": [
         "Resumo"
       ],
+      "Summer Sale": [
+        "Saldos de Verão"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Este ficheiro tem uma assinatura em falta ou inválida. Vá a Menu (⋮) → Detalhes para obter informações."
       ],
@@ -11612,6 +11651,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Quando é mais importante utilizar uma VPN?"
+      ],
+      "You are all set": [
+        "Está tudo pronto"
       ],
       "You can now create unlimited folders and labels": [
         "Agora pode criar pastas e etiquetas ilimitadas."

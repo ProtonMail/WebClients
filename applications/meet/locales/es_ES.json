@@ -101,6 +101,9 @@
       "Done": [
         "Hecho"
       ],
+      "Download": [
+        "Descargar"
+      ],
       "Download app": [
         "Descargar aplicación"
       ],
@@ -265,6 +268,9 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Return to dashboard": [
+        "Volver al panel principal"
       ],
       "Room": [
         "Sala"
@@ -1627,6 +1633,46 @@
         "Clave de seguridad"
       ]
     },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Valor por defecto del sistema"
@@ -1714,6 +1760,15 @@
       "${ maxParticipants } participant limit reached": [
         "Se ha alcanzado el límite de ${ maxParticipants } participantes"
       ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } necesita acceso para que el resto pueda verte y oírte durante la llamada. Puedes apagar tu cámara o el micrófono en cualquier momento."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } necesita acceso a la cámara para que el resto pueda verte durante la llamada. Puedes apagarla en cualquier momento."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } necesita acceso a la cámara para que el resto pueda verte durante la llamada. Puedes apagarla en cualquier momento."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualiza tu navegador o dispositivo a una versión que sea compatible con WebRTC, prueba con otro navegador o desactiva cualquier extensión que pueda estar bloqueándolo."
       ],
@@ -1768,6 +1823,9 @@
       ],
       "camera": [
         "cámara"
+      ],
+      "Camera permission denied": [
+        "Sin acceso a la cámara"
       ],
       "Chat with everyone": [
         "Chatea con todos"
@@ -1862,6 +1920,9 @@
       "Enter your own password (as trusted contact).": [
         "Introduce tu propia contraseña (como contacto de confianza)."
       ],
+      "Everyone has been disconnected from the call.": [
+        "Se ha desconectado a todo el mundo de la llamada."
+      ],
       "Failed to update meeting name": [
         "Error al actualizar el nombre de la reunión"
       ],
@@ -1937,6 +1998,9 @@
       "Loading...": [
         "Cargando..."
       ],
+      "Loading…": [
+        "Cargando…"
+      ],
       "Lower participant's hand": [
         "Bajar la mano del participante"
       ],
@@ -1964,6 +2028,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Firefox no soporta grabar reuniones."
       ],
+      "Meeting time is up": [
+        "Se ha agotado el tiempo de la reunión"
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Reunión desbloqueada. Los participantes pueden unirse de nuevo."
       ],
@@ -1978,6 +2045,12 @@
       ],
       "Microphone effects": [
         "Efectos de micrófono"
+      ],
+      "Microphone permission denied": [
+        "Permiso de micrófono denegado"
+      ],
+      "Mute microphone": [
+        "Silenciar micrófono"
       ],
       "My meetings": [
         "Mis reuniones"
@@ -2159,6 +2232,9 @@
       "This meeting is password protected": [
         "Esta reunión está protegida con contraseña"
       ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Esta reunión ha alcanzado el límite de tiempo de un plan gratuito. Mejora tu plan para ampliar la duración de la reunión en próximas llamadas."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión se ha abierto en la aplicación de escritorio de ${ MEET_APP_NAME }."
       ],
@@ -2189,14 +2265,8 @@
       "Turn off camera": [
         "Apagar cámara"
       ],
-      "Turn off microphone": [
-        "Apagar el micrófono"
-      ],
       "Turn on camera": [
         "Encender cámara"
-      ],
-      "Turn on microphone": [
-        "Activar micrófono"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "No se ha podido retomar la conexión con la reunión. Vuelve a unirte o sal."
@@ -2206,6 +2276,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Desbloquea ${ unlimitedMeeting } y funciones prémium"
+      ],
+      "Unmute microphone": [
+        "Activar micrófono"
       ],
       "Upgrade to record your meetings locally.": [
         "Mejora tu cuenta para grabar tus reuniones localmente."
@@ -2437,6 +2510,9 @@
       ],
       "Repeat event": [
         "Repetir evento"
+      ],
+      "Return to dashboard": [
+        "Volver al panel principal"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -2754,6 +2830,14 @@
         "Verificación completada"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Name": [
+        "Nombre"
+      ]
+    },
     "Title": {
       "Account restricted": [
         "Cuenta restringida"
@@ -2763,6 +2847,15 @@
       ],
       "Activity events": [
         "Eventos de actividad"
+      ],
+      "Allow camera ": [
+        "Permitir cámara "
+      ],
+      "Allow camera and microphone": [
+        "Permitir cámara y micrófono"
+      ],
+      "Allow microphone": [
+        "Permitir micrófono"
       ],
       "Are you sure?": [
         "¿Estás seguro?"
@@ -2972,6 +3065,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generar un nuevo enlace de reunión. El enlace actual dejará de funcionar."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia de IA al instante y un experto humano a tu disposición."
       ],
       "Recurring meeting": [
         "Reunión periódica"

@@ -318,6 +318,9 @@
       "Connect your ${ BRAND_NAME } Account": [
         "Connetti il tuo account ${ BRAND_NAME }"
       ],
+      "Connect your email": [
+        "Connetti la tua email"
+      ],
       "Connected": [
         "Connesso"
       ],
@@ -347,6 +350,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continua con ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Free": [
+        "Continua con la versione gratuita"
       ],
       "Continue with Google": [
         "Continua con Google"
@@ -419,9 +425,6 @@
       ],
       "Create new policy": [
         "Crea una nuova policy"
-      ],
-      "Create organization": [
-        "Crea organizzazione"
       ],
       "Create users": [
         "Crea gli utenti"
@@ -1819,6 +1822,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licenza ${ LUMO_APP_NAME }",
         "${ seats } licenze ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } posto dell'assistente alla scrittura",
@@ -4645,6 +4652,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Riordina automaticamente i tuoi messaggi in arrivo prima che raggiungano la tua casella di posta."
       ],
+      "Available storage: ${ storageText }": [
+        "Archiviazione disponibile: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Disponibile con ${ title }"
       ],
@@ -4692,6 +4702,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Abbastanza spazio per anni di email, allegati e altro."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Garantisci un accesso sicuro ai dati dell'organizzazione, anche se il tuo team è da remoto o utilizza una rete WiFi pubblica."
@@ -4778,6 +4791,9 @@
       "Track the status and activity of your referrals": [
         "Tieni traccia dello stato e dell'attività dei tuoi referral"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Sblocca 15 GB di archiviazione a soli ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Effettua l'upgrade a ${ planName } per connettere fino a ${ MAX_SYNC_PAID_USER } account"
       ],
@@ -4790,8 +4806,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Non possiamo più accedere a ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Metteremo in pausa le importazioni all'80% dell'archiviazione per riservare spazio per i nuovi messaggi."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importeremo le tue vecchie email e connetteremo il tuo Gmail a ${ MAIL_APP_NAME } in modo che i nuovi messaggi appaiano automaticamente"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importeremo le tue vecchie email, ignoreremo i duplicati e ci connetteremo al tuo Gmail in modo che i nuovi messaggi appaiano automaticamente. Puoi annullare l'importazione in qualsiasi momento nelle impostazioni di Easy Switch."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Abbiamo iniziato a importare le tue email da Gmail. Ti faremo sapere quando avremo finito."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Con le nuove categorie di email, solo i messaggi importanti arrivano nella tua posta in arrivo principale. Le categorie funzionano proprio come i filtri spam. ${ MAIL_APP_NAME } non legge mai le tue email né condivide i tuoi dati."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Hai già un indirizzo Gmail che inoltra a ${ MAIL_APP_NAME }. Collegalo qui sotto per inviare e ricevere email direttamente da ${ MAIL_APP_NAME }."
@@ -4833,6 +4861,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Hai collegato un indirizzo di account esterno a ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo ${ newUserStorageText } dei tuoi messaggi Gmail più recenti"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo le tue email di Gmail più recenti."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Il tuo piano supporta ${ MAX_SYNC_FREE_USER } indirizzo Gmail.",
@@ -6690,6 +6724,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
       ],
+      "Something went wrong while converting the address": [
+        "Si è verificato un errore durante la conversione dell'indirizzo"
+      ],
       "Something went wrong while creating the address": [
         "Si è verificato un errore durante la creazione dell'indirizzo"
       ],
@@ -7541,6 +7578,9 @@
         "${ MaxVPN } connessione VPN",
         "${ MaxVPN } connessioni VPN"
       ],
+      "10+ premium features": [
+        "10+ funzionalità premium"
+      ],
       "3 email domains": [
         "3 domini e-mail"
       ],
@@ -7564,6 +7604,12 @@
       "Continue": [
         "Continua"
       ],
+      "Custom email domain": [
+        "Dominio email personalizzato"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Archiviazione cloud crittografata per foto e documenti"
       ],
@@ -7581,6 +7627,9 @@
       ],
       "Secure streaming support": [
         "Supporto streaming sicuro"
+      ],
+      "Storage": [
+        "Archiviazione"
       ],
       "Torrenting support (P2P)": [
         "Supporto torrenting (P2P)"
@@ -9449,6 +9498,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un cloud sicuro per ${ memberCount } membro",
+        "Crea un cloud sicuro per ${ memberCount } membri"
+      ],
       "Create an account": [
         "Crea un account"
       ],
@@ -10085,6 +10138,9 @@
       ],
       "Include device, location, and IP details": [
         "Includi dettagli relativi a dispositivo, posizione e indirizzo IP"
+      ],
+      "Included": [
+        "Incluso"
       ],
       "Increase your account security by verifying your email address.": [
         "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
@@ -11411,8 +11467,14 @@
       "Unverified email address.": [
         "Indirizzo email non verificato."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Effettua l'upgrade in qualsiasi momento per trasferire il resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Effettua l'upgrade o libera spazio in qualsiasi momento per trasferire il resto"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Esegui l'upgrade per aggiungere al tuo account un indirizzo @pm.me più breve che sia più facile da condividere. Significa \"${ MAIL_APP_NAME } me\" o \"Private Message me\"."
@@ -12163,11 +12225,6 @@
         "Visualizza soltanto"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "È così che la tua organizzazione apparirà agli utenti. Puoi cambiarla in qualsiasi momento."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Indirizzo email non valido"
@@ -12181,11 +12238,6 @@
     "Input placeholder": {
       "Add label": [
         "Aggiungi etichetta"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Qual è il nome della tua organizzazione?"
       ]
     },
     "invitation status": {
@@ -13640,6 +13692,9 @@
       "Pending": [
         "In attesa"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Email personali e di lavoro, e in più importanti aggiornamenti e notifiche"
+      ],
       "Phone number": [
         "Numero di telefono"
       ],
@@ -14808,9 +14863,17 @@
       "Up to ${ n } participant": [
         "Fino a ${ n } partecipante",
         "Fino a ${ n } partecipanti"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferenze, ${ n } partecipante",
+        "Videoconferenze, ${ n } partecipanti"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licenza inclusa",
+        "${ seats } licenze incluse"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 indirizzi email ${ BRAND_NAME }"
       ],
@@ -16213,6 +16276,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } paese",
+        "${ n } paesi"
+      ],
       "Access advanced VPN features": [
         "Accedi a funzionalità VPN avanzate"
       ],
@@ -18005,9 +18072,6 @@
       ],
       "End date": [
         "Data di fine"
-      ],
-      "Enter name": [
-        "Inserisci nome"
       ],
       "example@domain.com": [
         "esempio@dominio.it"
@@ -21335,6 +21399,10 @@
       "Version history": [
         "Cronologia delle versioni"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipante",
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipanti"
+      ],
       "Watch the interview": [
         "Guarda l'intervista"
       ],
@@ -22349,6 +22417,9 @@
       "Contact us": [
         "Contattaci"
       ],
+      "Continue with free storage": [
+        "Continua con l'archiviazione gratuita"
+      ],
       "Continue with partial import?": [
         "Continuare con l'importazione parziale?"
       ],
@@ -22813,6 +22884,9 @@
       ],
       "Get more from your VPN": [
         "Ottieni di più dalla tua VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Ottieni più archiviazione con ${ MAIL_APP_NAME } Plus"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Ottieni l'app su tutti i tuoi dispositivi e goditi un accesso sicuro e senza interruzioni ovunque."
@@ -23425,6 +23499,9 @@
       "Summary": [
         "Riepilogo"
       ],
+      "Summer Sale": [
+        "Saldi estivi"
+      ],
       "Support ticket closed": [
         "Ticket di supporto chiuso"
       ],
@@ -23595,9 +23672,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Benvenuto in ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Ti diamo il benvenuto a ${ planName }"
       ],
       "Welcome to your new password manager!": [
         "Benvenuto nel tuo nuovo gestore di password!"

@@ -404,6 +404,9 @@
       "Expand video conferencing widget": [
         "Expandera widget för videokonferenser"
       ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Utforska ${ MEET_SHORT_APP_NAME }"
+      ],
       "Explore other plans": [
         "Utforska andra paket"
       ],
@@ -1528,6 +1531,9 @@
       "Pending": [
         "Väntar"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
       "Select users to migrate": [
         "Välj användare att migrera"
       ],
@@ -2325,6 +2331,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanarieöarna"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -3203,6 +3212,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tillräckligt med plats för åratal av e-post, bilagor och mer."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Säkerställ säker åtkomst till organisationens data, även om ditt team är på distans eller använder offentligt WiFi."
       ],
@@ -3284,6 +3296,9 @@
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Tråkigt att du lämnar oss. Om du har en stund över skulle vi verkligen uppskatta att höra varför du vill avbryta Din feedback hjälper oss att göra ${ BRAND_NAME } bättre för alla."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
       ],
@@ -3301,6 +3316,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dataåterställningsmetoder är inställda."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera ${ newUserStorageText } av dina senaste Gmail-meddelanden"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera dina senaste Gmail-e-postmeddelanden."
       ],
       "You’ll get a secure email with the details shortly.": [
         "Du kommer få en säker e-post med detaljerna inom kort."
@@ -5295,6 +5316,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill-switch**: Stoppar dataläckage genom att blockera ditt internet om VPN:et oväntat slutar fungera."
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i krediter om de prenumererar."
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
       ],
@@ -6057,6 +6081,9 @@
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
       ],
+      "Please select the labels you would like to import:": [
+        "Välj etiketterna du vill importera:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupCount } grupp.",
         "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupCount } grupper."
@@ -6309,6 +6336,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
@@ -6407,6 +6437,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Vi aviserar dig när importen är klar."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
@@ -9815,6 +9848,9 @@
       "This contact currently signs messages with this key": [
         "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
       ],
+      "This key is used for message verification": [
+        "Denna nyckel används för meddelandeverifiering"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Denna nyckel används för att kryptera meddelanden till denna kontakt"
       ],
@@ -12255,6 +12291,9 @@
       ],
       "Merging contacts": [
         "Slår ihop kontakter"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrera din organisation till ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minikalender"
