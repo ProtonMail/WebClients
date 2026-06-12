@@ -219,6 +219,9 @@
       "Continue to ${ planOrAppName }": [
         "Jatka sovellukseen ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Jatka maksuttomalla"
+      ],
       "Continue with Google": [
         "Jatka Googlella"
       ],
@@ -3050,6 +3053,9 @@
       "Availability unknown": [
         "Tavoitettavuus ei ole tiedossa"
       ],
+      "Available storage: ${ storageText }": [
+        "Käytettävissä oleva tallennustila: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Värikoodaa tapahtumat, jotta sinun on helpompi suunnitella päiväsi, seurata ajankäyttöäsi ja laittaa tehtäväsi tärkeysjärjestykseen."
       ],
@@ -3082,6 +3088,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tarpeeksi tilaa vuosien sähköposteille, liitteille ja muulle."
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Varmista ensiluokkainen tietoturva tilillesi ${ PROTON_SENTINEL_NAME } -ohjelmalla."
@@ -3143,11 +3152,20 @@
       "To start, give your organization a name.": [
         "Aloita antamalla organisaatiollesi nimi."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Avaa 15 Gt tallennustilaa vain hintaan ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Emme voi enää käyttää ${ boldEmails } -osoitteita."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pysäytämme tuonnit, kun tallennustilasta on käytössä 80 %, varataksemme tilaa uusille viesteille."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Olemme aloittaneet sähköpostienne tuomisen Gmailista. Ilmoitamme teille, kun se on valmis."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
@@ -3166,6 +3184,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain ${ newUserStorageText } viimeisimmistä Gmail-viesteistänne"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain viimeisimmät Gmail-sähköpostinne."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
@@ -4506,11 +4530,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Yli 10 premium-ominaisuutta"
+      ],
+      "Custom email domain": [
+        "Mukautettu sähköpostin verkkotunnus"
+      ],
+      "Email addresses": [
+        "Sähköpostiosoitteet"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Salattu pilvipalvelu tiedostoillesi, kuvillesi ja asiakirjoillesi"
       ],
       "More premium features": [
         "Lisää premium-ominaisuuksia"
+      ],
+      "Storage": [
+        "Tallennustila"
       ],
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
@@ -5617,6 +5653,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
       ],
+      "Included": [
+        "Sisältyy"
+      ],
       "Indexing events: ${ current }/${ total }": [
         "Indeksoidaan tapahtumia: ${ current }/${ total }"
       ],
@@ -6145,8 +6184,14 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Päivitä milloin tahansa tuodaksesi loputkin"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Päivitä tai tyhjennä tilaa milloin tahansa tuodaksesi loputkin"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
@@ -11618,6 +11663,9 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Continue with free storage": [
+        "Jatka maksuttoman tallennustilan käyttöä"
+      ],
       "Continue with partial import?": [
         "Jatketaanko osittaista tuontia?"
       ],
@@ -11778,6 +11826,9 @@
       ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Hanki lisää tallennustilaa ${ MAIL_APP_NAME } Plus -tilauksella"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Hanki ${ appName[APP_NAME] } -sovellukset"
@@ -12088,6 +12139,9 @@
       ],
       "Summary": [
         "Yhteenveto"
+      ],
+      "Summer Sale": [
+        "Kesäale"
       ],
       "The booking feature is currently unavailable.": [
         "Varausominaisuus ei ole tällä hetkellä käytettävissä."
