@@ -1,9 +1,12 @@
+import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
+import {
+    addGroupMember as addGroupMemberApi,
+    addGroupMemberKeys as addGroupMemberKeysApi,
+} from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getIsEncryptionDisabled } from '@proton/shared/lib/helpers/address';
@@ -16,6 +19,8 @@ import type {
     EnhancedMember,
 } from '@proton/shared/lib/interfaces';
 import { GroupMemberType } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces/GroupMember';
+import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 import { getAddressKeyToken, getDecryptedUserKeys, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import { getInternalParameters, getInternalParametersPrivate } from '@proton/shared/lib/keys/forward/forward';
 import { getGroupMemberPublicKeys } from '@proton/shared/lib/keys/groupKeys';
@@ -294,5 +299,109 @@ export const addGroupMembersThunk = ({
         if (firstError) {
             throw firstError.reason;
         }
+    };
+};
+
+export const addGroupMemberKeysThunk = ({
+    groupMember,
+    groupAddress,
+    getMemberPublicKeys,
+}: {
+    groupMember: GroupMember;
+    groupAddress: Address;
+    getMemberPublicKeys: (email: string) => Promise<ApiKeysConfig>;
+}): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const email = groupMember.Email;
+        if (!email) {
+            throw new Error('Group member has no email');
+        }
+
+        const api = getSilentApi(extra.api);
+        const forwarderKey = await dispatch(getGroupKey({ groupAddress }));
+        const { forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey } = await getGroupMemberPublicKeys({
+            api,
+            memberEmail: email,
+            getMemberPublicKeys,
+        });
+
+        // External recipients can't keep E2EE, so disable it on the group address (skip if already off).
+        // NOTE: getIsEncryptionDisabled reads cached state and is therefore not safe under concurrency.
+        // Once the key addition is parallelized across multiple members, do this once up front (as addGroupMembersThunk does) instead of per member.
+        if (isExternalForMail(forwardeeKeysConfig) && !getIsEncryptionDisabled(groupAddress)) {
+            await dispatch(disableGroupAddressEncryption({ groupAddress, forwarderKey }));
+        }
+
+        const [members, organizationKey] = await Promise.all([
+            dispatch(membersThunk()),
+            dispatch(organizationKeyThunk()),
+        ]);
+
+        const canonicalEmail = canonicalizeInternalEmail(email);
+        const member = getMemberByEmail(members, canonicalEmail);
+
+        const AddressSignaturePacket = await signMemberEmail(canonicalEmail, forwarderKey.privateKey);
+
+        // Case 1 — External: no key to forward to, send email + signature only.
+        if (groupMember.Type === GROUP_MEMBER_TYPE.EXTERNAL) {
+            return api(addGroupMemberKeysApi(groupMember.ID, { Email: email, AddressSignaturePacket }));
+        }
+
+        // Case 2 — Internal we can't decrypt for (other org / private / no org key): build the key
+        // from their public key and send an ActivationToken for them to activate it themselves.
+        if (!member || isPrivate(member) || !organizationKey.privateKey) {
+            const forwardeePublicKey = await getForwardeePublicKey(forwardeeArmoredPrimaryPublicKey);
+            const Email = getEmailFromKey(forwardeePublicKey) ?? email;
+            const userIDsForForwardeeKey = [{ email: Email, name: Email }];
+            const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
+                forwarderKey.privateKey,
+                userIDsForForwardeeKey,
+                forwardeePublicKey
+            );
+            return api(
+                addGroupMemberKeysApi(groupMember.ID, {
+                    Email: canonicalEmail,
+                    AddressSignaturePacket,
+                    ActivationToken: activationToken,
+                    GroupMemberAddressPrivateKey: forwardeeKey,
+                    ProxyInstances: proxyInstances.map(mapProxyInstance),
+                })
+            );
+        }
+
+        // Case 3 — Managed internal member: we hold the org key, so we decrypt their address
+        // token ourselves and forward a ready-to-use key (no activation step needed).
+        await dispatch(replaceMemberAddressTokensIfNeeded({ member }));
+
+        const memberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
+        const forwardeeAddress = memberAddresses.find(
+            ({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail
+        );
+        if (!forwardeeAddress) {
+            throw new Error('Member without matching address');
+        }
+
+        const { decryptedToken, Token, Signature } = await getPrimaryMemberTokenAndSignature({
+            member,
+            forwardeeAddress,
+            organizationKey,
+        });
+
+        const userIDsForForwardeeKey = [{ email: canonicalEmail, name: canonicalEmail }];
+        const { forwardeeKey, proxyInstances } = await getInternalParameters(
+            forwarderKey.privateKey,
+            userIDsForForwardeeKey,
+            decryptedToken
+        );
+        return api(
+            addGroupMemberKeysApi(groupMember.ID, {
+                Email: canonicalEmail,
+                AddressSignaturePacket,
+                GroupMemberAddressPrivateKey: forwardeeKey,
+                ProxyInstances: proxyInstances.map(mapProxyInstance),
+                Token,
+                Signature,
+            })
+        );
     };
 };
