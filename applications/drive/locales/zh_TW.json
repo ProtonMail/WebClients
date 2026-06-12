@@ -1137,6 +1137,9 @@
       "Verify account": [
         "驗證帳號"
       ],
+      "Verify now": [
+        "立即驗證"
+      ],
       "View": [
         "檢視"
       ],
@@ -2964,6 +2967,9 @@
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
       ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
       ],
@@ -3628,6 +3634,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
       ],
       "Something went wrong. Please try again.": [
         "發生錯誤，請稍後再試。"
@@ -5101,6 +5110,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 商標"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
       "Done": [
         "完成"
       ],
@@ -5244,6 +5256,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "只要 ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Free5GB加密的儲存空間以開始"
@@ -6087,6 +6102,9 @@
       ],
       "Updating drive search...": [
         "正在更新雲端硬碟搜索..."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
@@ -10757,6 +10775,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe撰寫幫手"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
       ],
@@ -12093,6 +12114,9 @@
       "Summary": [
         "總結"
       ],
+      "Summer Sale": [
+        "夏季特賣"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此檔案的簽章遺失或無效。詳見功能表 (⋮) → 詳細資料。"
       ],
@@ -12155,6 +12179,9 @@
       ],
       "Verification failed": [
         "驗證失敗"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ],
       "Verifying your card...": [
         "正在驗證您的信用卡..."

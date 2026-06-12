@@ -156,6 +156,12 @@
       "Choose a file or drag it here": [
         "Выберите файл или перетащите его сюда"
       ],
+      "Claim this address": [
+        "Получить этот адрес"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Получите бесплатный адрес ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Очистить"
       ],
@@ -224,6 +230,9 @@
       ],
       "Continue transfers": [
         "Продолжить передачи"
+      ],
+      "Continue with Free": [
+        "Продолжить бесплатно"
       ],
       "Continue with Google": [
         "Продолжить с Google"
@@ -686,6 +695,9 @@
       ],
       "Reconnect": [
         "Переподключиться"
+      ],
+      "Reconnect to Gmail": [
+        "Переподключить Gmail"
       ],
       "Recover data": [
         "Восстановить данные"
@@ -2538,6 +2550,9 @@
       "Automatically forward incoming email to another email address.": [
         "Автоматически пересылайте входящие сообщения на другой адрес электронной почты."
       ],
+      "Available storage: ${ storageText }": [
+        "Доступный объем хранилища: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Сначала настройте это, чтобы активировать вашу организацию и настроить ваш адрес электронной почты."
       ],
@@ -2559,11 +2574,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Легко синхронизируйте файлы с облаком с настольного компьютера и получайте к ним доступ с мобильного устройства."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Письма, отправленные на ${ connectedAddressText }, теперь будут появляться в ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Поощряйте использование двухфакторной аутентификации в вашей организации для обеспечения дополнительной безопасности."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Достаточно места для писем, вложений и многого другого на годы вперед."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Обеспечьте защищенный доступ к данным организации, даже если ваша команда работает удаленно или использует публичный WiFi."
@@ -2601,6 +2622,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Упростите синхронизацию и планирование с общими календарями."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Это могло произойти, если были отозваны разрешения или изменился ваш пароль."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Чтобы продолжить получать и отправлять сообщения Gmail в ${ BRAND_NAME }, пожалуйста, переподключите свой аккаунт."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Чтобы продолжить получать и отправлять сообщения Gmail в ${ BRAND_NAME }, пожалуйста, переподключите свои аккаунты."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Чтобы убедиться в высшей безопасности вашего аккаунта, установите фразу для восстановления."
       ],
@@ -2609,6 +2639,9 @@
       ],
       "To start, give your organization a name.": [
         "Чтобы начать, дайте имя вашей организации."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Получите 15 ГБ пространства всего за ${ config.offerPrice }."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Улучшите до тарифа ${ planName } для продолжения обмена файлами с правом изменения"
@@ -2619,6 +2652,15 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Воспользуйтесь этим руководством, чтобы ваша организация начала быстро получать выгоду от лучшей в отрасли экосистемы шифрования и приватности ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Мы больше не можем получить доступ к ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Мы приостановим импорт при заполнении хранилища на 80%, чтобы зарезервировать место для новых сообщений."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Мы начали импорт ваших писем из Gmail. Мы сообщим вам, когда он завершится."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Используя группы контактов, вы можете отправлять письма всем членам группы одним щелчком."
       ],
@@ -2628,11 +2670,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление будет происходить только после нажатия кнопки «Объединить»."
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Теперь вы можете отправлять электронные письма из ${ BRAND_NAME }, используя этот адрес."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ваш аккаунт и методы восстановления данных настроены, а двухфакторная идентификация включена."
       ],
       "Your account and data recovery methods are set.": [
         "Ваш аккаунт и методы восстановления данных настроены."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ваш бесплатный аккаунт ${ MAIL_APP_NAME } имеет ограниченный объем хранилища, поэтому мы импортируем только последние сообщения Gmail общим объемом ${ newUserStorageText }"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ваш бесплатный аккаунт ${ MAIL_APP_NAME } имеет ограниченный объем хранилища, поэтому мы импортируем только ваши самые последние письма из Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
@@ -3194,6 +3245,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
+      "Something went wrong while fetching available domains": [
+        "Что-то пошло не так при получении доступных доменов"
+      ],
       "Something went wrong. Please try again.": [
         "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
       ],
@@ -3679,6 +3733,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Более 10 платных функций"
+      ],
+      "Custom email domain": [
+        "Собственный домен электронной почты"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
+      ],
+      "Storage": [
+        "Хранилище"
+      ],
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
       ]
@@ -4703,6 +4769,9 @@
       "End-to-end encrypted": [
         "Зашифровано сквозным методом"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Обеспечьте полную конфиденциальность и шифрование переписки. Получите бесплатный адрес электронной почты ${ BRAND_NAME } прямо сейчас."
+      ],
       "Enter password": [
         "Введите пароль"
       ],
@@ -4831,6 +4900,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
+      ],
+      "Included": [
+        "Включено"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Индексирование элементов: ${ esProgress } из ${ totalProgressToShow }"
@@ -5522,8 +5594,14 @@
       "Updating drive search...": [
         "Обновляем поиск по хранилищу..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Улучшите тарифный план в любое время, чтобы перенести остальное"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Улучшите тарифный план или освободите место в любое время, чтобы перенести остальное"
       ],
       "upgrade your storage": [
         "улучшите свое хранилище"
@@ -8076,6 +8154,9 @@
       "You stopped sharing this item": [
         "Вы перестали делиться этим элементом"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрес ${ BRAND_NAME } готов к использованию"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Ваши старые файлы будут удалены в течение 72 часов"
       ],
@@ -10433,6 +10514,9 @@
       "Check for malicious files": [
         "Проверять наличие вредоносных файлов"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Получите свой адрес ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Очистка данных"
       ],
@@ -10468,6 +10552,9 @@
       ],
       "Contacts": [
         "Контакты"
+      ],
+      "Continue with free storage": [
+        "Продолжить с бесплатным хранилищем"
       ],
       "Continue with partial import?": [
         "Продолжить частичный импорт?"
@@ -10562,6 +10649,9 @@
       "Discard changes?": [
         "Сбросить изменения?"
       ],
+      "Disconnected from Gmail": [
+        "Соединение с Gmail разорвано"
+      ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
       ],
@@ -10648,6 +10738,9 @@
       ],
       "Get more from your VPN": [
         "Получите больше от VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Получите больше места в хранилище с ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Получить приложения"
@@ -11000,6 +11093,9 @@
       "Summary": [
         "Сводка"
       ],
+      "Summer Sale": [
+        "Летние скидки"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У этого файла отсутствует или недействительна подпись. Перейдите в Меню (⋮) → Подробности для получения дополнительной информации."
       ],
@@ -11080,6 +11176,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Когда важнее всего использовать VPN?"
+      ],
+      "You are all set": [
+        "Всё готово"
       ],
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."
