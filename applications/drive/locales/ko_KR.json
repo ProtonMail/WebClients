@@ -243,6 +243,9 @@
       "Continue transfers": [
         "이동 계속"
       ],
+      "Continue with Free": [
+        "무료로 계속하기"
+      ],
       "Continue with Google": [
         "Google 계정으로 로그인"
       ],
@@ -1556,6 +1559,9 @@
       ],
       "Migration status": [
         "마이그레이션 상태"
+      ],
+      "Not activated": [
+        "활성화되지 않음"
       ],
       "Organization does not have enough seats available": [
         "조직의 사용 권한이 충분하지 않습니다."
@@ -2898,6 +2904,9 @@
       "Automatically forward incoming email to another email address.": [
         "수신 이메일을 다른 이메일 주소로 자동 전달합니다."
       ],
+      "Available storage: ${ storageText }": [
+        "사용 가능한 저장공간: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
       ],
@@ -2927,6 +2936,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "수년 치의 이메일과 첨부 파일 등을 보관하기에 충분한 공간입니다."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "팀이 원격으로 있거나 공용 WiFi를 사용하는 경우에도 조직 데이터에 대한 안전한 접근이 보장됩니다."
@@ -2985,6 +2997,9 @@
       "To start, give your organization a name.": [
         "시작하려면 먼저 조직의 이름을 지정하세요."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "단 ${ config.offerPrice }의 비용으로 15 GB 저장공간을 이용해 보세요."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "편집 권한으로 파일 공유를 계속하려면 ${ planName }(으)로 업그레이드하세요."
       ],
@@ -2996,6 +3011,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "${ boldEmails }에 더 이상 접근할 수 없습니다."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -3017,6 +3038,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
@@ -4283,11 +4310,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10개 이상의 premium 기능"
+      ],
+      "Custom email domain": [
+        "사용자 지정 이메일 도메인"
+      ],
+      "Email addresses": [
+        "이메일 주소"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "파일, 사진 및 문서에 대한 암호화된 클라우드 저장공간"
       ],
       "More premium features": [
         "개 더 많은 프리미엄 기능들"
+      ],
+      "Storage": [
+        "저장공간"
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
@@ -5471,6 +5510,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
       ],
+      "Included": [
+        "포함됨"
+      ],
       "Index is empty.": [
         "색인이 비어있습니다."
       ],
@@ -5882,6 +5924,9 @@
       "Ready to add some photos?": [
         "사진 좀 올려 볼까요?"
       ],
+      "RECOMMENDED": [
+        "권장됨"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
       ],
@@ -5938,6 +5983,9 @@
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "검색이 준비되었습니다. 사용자의 파일이 색인 완료되었습니다."
       ],
       "Search module is not available.": [
         "검색 모듈 사용 불가합니다."
@@ -6263,8 +6311,14 @@
       "Updating drive search...": [
         "드라이브 검색을 업데이트하는 중..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "언제든지 업그레이드하여 남은 메일을 모두 가져오세요"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "언제든지 업그레이드하거나 공간을 비워 남은 메일을 모두 가져오세요"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
@@ -11782,6 +11836,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Continue with free storage": [
+        "무료 저장공간으로 계속하기"
+      ],
       "Continue with partial import?": [
         "일부 불러오기 계속?"
       ],
@@ -12003,6 +12060,9 @@
       ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus로 더 많은 저장공간을 확보하세요"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "무료로 제공하는 10분 업로드로 시작해 보세요."
@@ -12414,6 +12474,9 @@
       ],
       "Summary": [
         "요약"
+      ],
+      "Summer Sale": [
+        "여름 세일"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "이 파일이 유효하지 않거나 서명이 존재하지 않습니다. 매뉴(⋮) → 상세 정보에서 자세한 정보를 확인하세요"
