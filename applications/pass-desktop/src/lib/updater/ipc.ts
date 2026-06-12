@@ -49,7 +49,10 @@ export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>, getS
             setUpdateStore({ status: UpdateStatus.Idle });
             autoUpdater.quitAndInstall();
         } else if (isWindows()) {
-            app.relaunch();
+            // The MSIX registration is deferred until the package is no longer in use, and
+            // `app.relaunch()` re-execs the old binary in place — keeping it in use, so the staged
+            // version never registers. Quit fully instead: the update applies on exit and the user
+            // reopens into the new version.
             app.quit();
         }
     });
