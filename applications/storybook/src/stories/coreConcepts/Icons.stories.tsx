@@ -4,10 +4,9 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import { ButtonGroup, Icon, Mark } from '@proton/components';
-import iconSvg from '@proton/icons/assets/sprite-icons.svg';
+import { ButtonGroup, Mark } from '@proton/components';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import type { IconName } from '@proton/icons/types';
+import type { IconSize } from '@proton/icons/types';
 
 const meta: Meta = {
     title: 'Core Concepts/Icons',
@@ -15,7 +14,7 @@ const meta: Meta = {
         docs: {
             description: {
                 component:
-                    'Custom icon set for Proton applications. To use an icon in your code, refer to the Icon component.',
+                    'Custom icon set for Proton applications. To use an icon in your code, import the matching `Ic<Name>` component from `@proton/icons/icons/<Name>`.',
             },
         },
     },
@@ -26,58 +25,71 @@ export default meta;
 
 type Story = StoryObj;
 
-type IconProps = React.ComponentProps<typeof Icon>;
+type IconComponent = React.ComponentType<{ size?: IconSize }>;
 
-const sizes: Required<IconProps>['size'][] = [4, 5, 7, 10, 15];
+const iconsContext = require.context('../../../../../packages/icons/icons', false, /\.tsx$/);
 
-export const Default: Story = {
-    render: () => {
-        const [selectedSize, setSelectedSize] = useState<Required<IconProps>['size']>(10);
-        const primaryIconNames: IconName[] = iconSvg
-            .match(/id="ic-([^"]+)/g)
-            .map((x: string) => x.replace('id="ic-', ''));
-        const [search, setSearch] = useState('');
+const iconComponents: Record<string, IconComponent> = Object.fromEntries(
+    iconsContext.keys().map((key) => {
+        const name = key.replace(/^\.\//, '').replace(/\.tsx$/, '');
+        return [name, iconsContext(key)[name] as IconComponent];
+    })
+);
 
-        const iconResults = useMemo(() => {
-            if (search.length <= 1) {
-                return primaryIconNames;
-            }
-            return primaryIconNames.filter((x) => x.toLowerCase().includes(search.toLocaleLowerCase()));
-        }, [search]);
+const iconNames = Object.keys(iconComponents).sort();
 
-        return (
-            <>
-                <div className="flex flex-nowrap gap-4">
-                    <Input
-                        prefix={<IcMagnifier />}
-                        placeholder={`Search ${primaryIconNames.length} icons by name…`}
-                        value={search}
-                        onChange={({ target: { value } }) => setSearch(value)}
-                        className="flex-1"
-                    />
-                    <ButtonGroup>
-                        {sizes.map((size) => (
-                            <Button
-                                onClick={() => setSelectedSize(size)}
-                                selected={size === selectedSize}
-                                title={`Set icon size to ${size}`}
-                            >
-                                {size}
-                            </Button>
-                        ))}
-                    </ButtonGroup>
-                </div>
-                <div className="icon-grid mt-8">
-                    {iconResults.map((iconName) => (
-                        <div className="border rounded text-center p-4" key={iconName}>
-                            <Icon name={iconName} size={selectedSize} />
+const sizes: IconSize[] = [4, 5, 7, 10, 15];
+
+const IconsGallery = () => {
+    const [selectedSize, setSelectedSize] = useState<IconSize>(10);
+    const [search, setSearch] = useState('');
+
+    const iconResults = useMemo(() => {
+        if (search.length <= 1) {
+            return iconNames;
+        }
+        return iconNames.filter((x) => x.toLowerCase().includes(search.toLowerCase()));
+    }, [search]);
+
+    return (
+        <>
+            <div className="flex flex-nowrap gap-4">
+                <Input
+                    prefix={<IcMagnifier />}
+                    placeholder={`Search ${iconNames.length} icons by name…`}
+                    value={search}
+                    onChange={({ target: { value } }) => setSearch(value)}
+                    className="flex-1"
+                />
+                <ButtonGroup>
+                    {sizes.map((size) => (
+                        <Button
+                            onClick={() => setSelectedSize(size)}
+                            selected={size === selectedSize}
+                            title={`Set icon size to ${size}`}
+                        >
+                            {size}
+                        </Button>
+                    ))}
+                </ButtonGroup>
+            </div>
+            <div className="icon-grid mt-8">
+                {iconResults.map((componentName) => {
+                    const IconComponent = iconComponents[componentName];
+                    return (
+                        <div className="border rounded text-center p-4" key={componentName}>
+                            <IconComponent size={selectedSize} />
                             <div className="mt-4 text-monospace lh120 user-select">
-                                <Mark value={search}>{iconName}</Mark>
+                                <Mark value={search}>{componentName}</Mark>
                             </div>
                         </div>
-                    ))}
-                </div>
-            </>
-        );
-    },
+                    );
+                })}
+            </div>
+        </>
+    );
+};
+
+export const Default: Story = {
+    render: () => <IconsGallery />,
 };
