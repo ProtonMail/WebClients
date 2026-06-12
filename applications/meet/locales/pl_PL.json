@@ -86,6 +86,9 @@
       "Done": [
         "Gotowe"
       ],
+      "Download": [
+        "Pobierz"
+      ],
       "Download app": [
         "Pobierz aplikację"
       ],
@@ -1572,6 +1575,58 @@
         "Klucz bezpieczeństwa"
       ]
     },
+    "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "kB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
+      "Gigabyte": [
+        "gigabajt",
+        "gigabajty",
+        "gigabajtów",
+        "gigabajtów"
+      ],
+      "Kilobyte": [
+        "kilobajt",
+        "kilobajty",
+        "kilobajtów",
+        "kilobajtów"
+      ],
+      "Megabyte": [
+        "megabajt",
+        "megabajty",
+        "megabajtów",
+        "megabajtów"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtów",
+        "terabajtów"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Domyślne ustawienia systemu"
@@ -2038,14 +2093,8 @@
       "Turn off camera": [
         "Wyłącz kamerę"
       ],
-      "Turn off microphone": [
-        "Wyłącz mikrofon"
-      ],
       "Turn on camera": [
         "Włącz kamerę"
-      ],
-      "Turn on microphone": [
-        "Włącz mikrofon"
       ],
       "unlimited meeting": [
         "nielimitowane spotkania"
@@ -2557,6 +2606,14 @@
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Akcje"
+      ],
+      "Name": [
+        "Nazwa"
       ]
     },
     "Title": {

@@ -101,6 +101,9 @@
       "Done": [
         "Hecho"
       ],
+      "Download": [
+        "Descargar"
+      ],
       "Download app": [
         "Descargar aplicación"
       ],
@@ -1649,6 +1652,46 @@
         "Clave de seguridad"
       ]
     },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Predeterminado del sistema"
@@ -2277,14 +2320,8 @@
       "Turn off camera": [
         "Apagar la cámara"
       ],
-      "Turn off microphone": [
-        "Apagar el micrófono"
-      ],
       "Turn on camera": [
         "Encender la cámara"
-      ],
-      "Turn on microphone": [
-        "Encender el micrófono"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "No se puede reconectar a la reunión. Vuelva a unirse o abandone."
@@ -2846,6 +2883,14 @@
       ],
       "Verification successful": [
         "Verificación completada"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Name": [
+        "Nombre"
       ]
     },
     "Title": {
