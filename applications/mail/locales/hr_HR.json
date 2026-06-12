@@ -161,6 +161,9 @@
       "Claim this address": [
         "Preuzmi ovu adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Zatražite svoju besplatnu ${ BRAND_NAME } adresu"
+      ],
       "Clear": [
         "Očisti"
       ],
@@ -791,6 +794,9 @@
       "Open navigation": [
         "Otvori navigaciju"
       ],
+      "Or use a different Gmail address": [
+        "Ili upotrijebite drugu Gmail adresu"
+      ],
       "Ordered list": [
         "Numerirani popis"
       ],
@@ -1127,9 +1133,6 @@
       "Trust": [
         "Vjeruj"
       ],
-      "Trust key": [
-        "Ključ povjerenja"
-      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -1216,6 +1219,9 @@
       ],
       "Use recovery code": [
         "Koristi kȏd za oporavak"
+      ],
+      "Use this Gmail address": [
+        "Upotrijebite ovu Gmail adresu"
       ],
       "Verify": [
         "Potvrdi"
@@ -3025,6 +3031,12 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Upotrijebite povlačenje i ispuštanje da biste rangirali prioritet među kontaktima. Odznačite kontakte koje ne želite spojiti."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Prenijet ćemo vašu staru e-poštu i povezati vaš Gmail s ${ MAIL_APP_NAME } kako bi se nove poruke automatski prikazivale."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Uvest ćemo vašu staru e-poštu, preskočiti duplikate i povezati se s vašim Gmailom kako bi se nove poruke automatski prikazivale. Uvoz možete poništiti u bilo kojem trenutku u postavkama Easy Switch."
       ],
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "S prilagođenom odgodom možete sakriti e-poštu i postaviti da se ponovno pojavi u bolje vrijeme."
@@ -4953,9 +4965,7 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -7488,6 +7498,12 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Prenesite svoju e-poštu u ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Prenesite svoju postojeću e-poštu u ${ MAIL_APP_NAME } kako biste mogli upravljati svime iz jedne privatne pristigle pošte."
+      ],
       "Maybe later": [
         "Možda kasnije"
       ]
@@ -9799,6 +9815,9 @@
       ],
       "Summary": [
         "Sažetak"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
       ],
       "This field cannot be empty": [
         "Ovo polje ne može biti prazno"

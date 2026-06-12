@@ -312,6 +312,9 @@
       "Continue with categories": [
         "Pokračovat s kategoriemi"
       ],
+      "Continue with Free": [
+        "Pokračovat zdarma"
+      ],
       "Continue with Google": [
         "Pokračovat skrze Google"
       ],
@@ -1516,7 +1519,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4155,6 +4161,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické třídění příchozích zpráv předtím, než se dostanou do doručené pošty."
       ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložiště: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokujte možnosti Googlu sledovat vaše aktivity. Gmail nemůže vidět, do děláte v ${ MAIL_APP_NAME }"
       ],
@@ -4193,6 +4202,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatek místa pro e-maily, přílohy a další na dlouhé roky."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zajistěte bezpečný přístup k datům organizace, i když je váš tým vzdálený nebo používá veřejnou Wi-Fi."
@@ -4299,6 +4311,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odemkněte si 15 GB úložiště za pouhých ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Navyšte na ${ planName } pro připojení až ${ MAX_SYNC_PAID_USER } účtů"
       ],
@@ -4320,8 +4335,17 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "V tomto e-mailu jsme nenašli žádné známé sledovací prvky a sledovací adresy URL."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Při zaplnění úložiště na 80 % importy pozastavíme, abychom vyhradili místo pro nové zprávy."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načteme vaše staré e-maily a propojíme váš účet Gmail s aplikací ${ MAIL_APP_NAME }, aby se nové zprávy zobrazovaly automaticky"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Naimportujeme vaše staré e-maily, přeskočíme duplikáty a připojíme se k vašemu Gmailu, aby se nové zprávy zobrazovaly automaticky. Import můžete kdykoli vzít zpět v nastavení Easy Switch."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Zahájili jsme import vašich e-mailů z Gmailu. Jakmile bude dokončen, dáme vám vědět."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
@@ -4376,6 +4400,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze ${ newUserStorageText } vašich nejnovějších zpráv z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze vaše nejnovější e-maily z Gmailu."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Váš tarif podporuje ${ MAX_SYNC_FREE_USER } adresu Gmail.",
@@ -5208,6 +5238,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
       ],
+      "Something went wrong while converting the address": [
+        "Při převodu adresy došlo k chybě"
+      ],
       "Something went wrong while creating the address": [
         "Při vytváření adresy se něco pokazilo"
       ],
@@ -5830,11 +5863,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ prémiových funkcí"
+      ],
+      "Custom email domain": [
+        "Vlastní e-mailová doména"
+      ],
+      "Email addresses": [
+        "E-mailové adresy"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Šifrované cloudové úložiště pro soubory, fotky a dokumenty"
       ],
       "More premium features": [
         "Další prémiové funkce"
+      ],
+      "Storage": [
+        "Úložiště"
       ],
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
@@ -7832,6 +7877,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Uveďte vámi použitý požadavek a odpověď, abyste nám pomohli vylepšit přesnost."
       ],
+      "Included": [
+        "Zahrnuto"
+      ],
       "Included for free with your plan": [
         "Bezplatně v rámci vašeho tarifu"
       ],
@@ -7860,10 +7908,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8849,8 +8894,14 @@
       "Updating message content search...": [
         "Aktualizuji vyhledávání ve zprávách..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Kdykoli upgradujte, abyste přenesli i zbytek"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Pro odemknutí navyšte tarif na ${ plan }"
@@ -15859,6 +15910,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with free storage": [
+        "Pokračovat s bezplatným úložištěm"
+      ],
       "Continue with partial import?": [
         "Pokračovat s částečným importem?"
       ],
@@ -16074,6 +16128,9 @@
       ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získejte více úložiště s ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Získat ${ appName[APP_NAME] } aplikace"
@@ -16572,6 +16629,9 @@
       ],
       "Summary": [
         "Shrnutí"
+      ],
+      "Summer Sale": [
+        "Letní výprodej"
       ],
       "This field cannot be empty": [
         "Toto pole nemůže být prázdné"

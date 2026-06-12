@@ -1520,7 +1520,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4367,6 +4368,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Θα εισαγάγουμε τα παλιά σας email, θα παραλείψουμε τα διπλότυπα και θα συνδεθούμε στο Gmail σας, ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα. Μπορείτε να αναιρέσετε την εισαγωγή ανά πάσα στιγμή στις ρυθμίσεις του Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
@@ -7770,8 +7774,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8129,6 +8132,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Επιλέξτε τις ετικέτες που θέλετε να εισάγετε:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Επιλέξτε τον τύπο σύνδεσμου που θέλετε να εισαγάγετε και συμπληρώστε όλα τα πεδία."
@@ -16149,7 +16155,7 @@
         "Περίληψη"
       ],
       "Summer Sale": [
-        "Καλοκαιρινές Εκπτώσεις"
+        "Καλοκαιρινές εκπτώσεις"
       ],
       "This field cannot be empty": [
         "Αυτό το πεδίο δεν μπορεί να είναι κενό"
@@ -16351,6 +16357,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
       ],
       "Load image": [
         "Φόρτωση εικόνας"

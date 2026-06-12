@@ -289,6 +289,9 @@
       "Connect to video conferencing": [
         "Kapcsolódás videokonferenciához"
       ],
+      "Connect your email": [
+        "Csatlakoztassa az e-mail-címét"
+      ],
       "Contact group": [
         "Névjegy csoport"
       ],
@@ -300,6 +303,9 @@
       ],
       "Continue with categories": [
         "Folytatás kategóriákkal"
+      ],
+      "Continue with Free": [
+        "Folytatás az ingyenes verzióval"
       ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
@@ -1015,6 +1021,9 @@
       "Open navigation": [
         "Navigáció megnyitása"
       ],
+      "Or use a different Gmail address": [
+        "Vagy egy másik Gmail-cím használata"
+      ],
       "Ordered list": [
         "Számozott lista"
       ],
@@ -1086,6 +1095,9 @@
       ],
       "Reconnect": [
         "Újrakapcsolódás"
+      ],
+      "Reconnect to Gmail": [
+        "Kapcsolódjon újra a Gmailhez"
       ],
       "Recover data": [
         "Adatok helyreállítása"
@@ -1472,7 +1484,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1584,6 +1597,9 @@
       ],
       "Use this": [
         "Ennek használata"
+      ],
+      "Use this Gmail address": [
+        "Ezen Gmail-cím használata"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Az egérrel átméretezheti a nézetet. Ha a billentyűzetet használja, a jobba és balra nyilakkal méretezheti át."
@@ -3852,6 +3868,12 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "A beérkező üzenetei automatikus rendezése még mielőtt a beérkezett üzenetek mappádba kerülnének."
       ],
+      "Available storage: ${ storageText }": [
+        "Elérhető tárhely: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Akadályozza meg, hogy a Google profilt készítsen Önről. A Gmail nem láthatja, mit tesz a ${ MAIL_APP_NAME } alkalmazásban."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurálja először ezt, hogy aktiválja a szervezetét és testre szabja az Ön e-mail címét."
       ],
@@ -3878,6 +3900,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Könnyedén szinkronizálhatja a fájlokat az asztali gépéről a felhőbe, és elérheti őket a mobilkészülékéről."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "A(z) ${ connectedAddressText } címre küldött e-mailek mostantól megjelennek a ${ MAIL_APP_NAME } alkalmazásban."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ösztönözze a kétlépcsős hitelesítés használatát az Ön szervezetében a nagyobb biztonság érdekében."
@@ -3922,11 +3947,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "A ${ senderEmailAddress } címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek."
       ],
+      "No ads. No trackers.": [
+        "Nincsenek hirdetések. Nincsenek követők."
+      ],
       "No folders": [
         "Nincsenek mappák"
       ],
       "No labels": [
         "Nincsenek címkék"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Olvassa, válaszolja meg és tartsa kézben Gmail-üzeneteit a ${ MAIL_APP_NAME } alkalmazáson belül"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Küldjön és fogadjon Gmail-üzeneteket közvetlenül a ${ MAIL_APP_NAME } alkalmazásban. Csatlakoztassa a címét itt: ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
@@ -3942,6 +3976,15 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Egyszerűsítse a szinkronizálást és az ütemezést megosztott naptárakkal."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Ez olyankor fordulhat elő, ha az engedélyeket eltávolították, vagy megváltozott a jelszava."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókját."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókjait."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Ha továbbra is használni szeretné az írási segédet, adja hozzá az előfizetéséhez."
@@ -3961,6 +4004,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Kapcsolja be az e-mail nyomkövetés elleni védelmet, hogy megakadályozza, hogy a hirdetők és mások nyomon kövessék az Ön tartózkodási helyét és online tevékenységét."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Oldjon fel 15 GB tárhelyet mindössze ${ config.offerPrice } áron."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Frissítsen a ${ activatePmUser } verzióra, hogy a jelenlegi mellett egy rövidebb, könnyen megjegyezhető e-mail címet kapjon."
       ],
@@ -3973,8 +4019,23 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Ezzel az útmutatóval szervezete gyorsan részesülhet ${ BRAND_NAME } iparágvezető titkosítási és adatvédelmi ökoszisztémájának előnyeiből."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Már nincs hozzáférésünk a következőhöz: ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Nem találtunk egyetlen ismert követőt és követő hivatkozást sem ebben az e-mailben."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Az importálást 80%-os tárhelytelítettségnél szüneteltetjük, hogy helyet biztosítsunk az új üzeneteknek."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Áthozzuk a régi e-mailjeit, és összekapcsoljuk a Gmailjét a ${ MAIL_APP_NAME } alkalmazással, így az új üzenetek automatikusan megjelennek"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importáljuk a régi e-mailjeit, átugorjuk a duplikátumokat, és kapcsolódunk a Gmail-fiókjához, hogy az új üzenetek automatikusan megjelenjenek. Az importálást bármikor visszavonhatja az Easy Switch beállításaiban"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Elindítottuk az e-mailjei importálását a Gmailből. Értesíteni fogjuk, ha befejeződött."
       ],
       "When do you want your message to be sent?": [
         "Mikor szeretné elküldeni az üzenetet?"
@@ -3985,17 +4046,32 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Az egyéni némítás funkcióval elrejtheti az e-maileket, és beállíthatja, hogy egy alkalmasabb időpontban újra megjelenjenek."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Már van egy Gmail-címe, amely továbbítja a leveleket a ${ MAIL_APP_NAME } alkalmazásba. Csatlakoztassa alább, hogy közvetlenül a ${ MAIL_APP_NAME } alkalmazásból küldhessen és fogadhasson e-maileket."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Már vannak olyan Gmail-címei, amelyek továbbítják a leveleket a ${ MAIL_APP_NAME } alkalmazásba. Csatlakoztasson egyet alább, hogy közvetlenül a ${ MAIL_APP_NAME } alkalmazásból küldhessen és fogadhasson e-maileket."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Mostantól küldhet e-maileket a ${ BRAND_NAME } szolgáltatásból erről a címről."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "A fiókja és az adat-helyreállítási módjai be vannak állítva, és a kétlépcsős hitelesítés engedélyezve van."
       ],
       "Your account and data recovery methods are set.": [
         "A fiókja és az adat-helyreállítási módszerek be vannak állítva."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail-üzeneteiből importálunk ${ newUserStorageText } mennyiséget"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail e-mailjeit importáljuk."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Már létrehozott 10 e-mail álnevet. Szerezzen korlátlan e-mail álnevet és 500 GB tárhelyet a ${ BRAND_NAME } Unlimited szolgáltatással."
@@ -4305,6 +4381,9 @@
       ],
       "Add at least one condition": [
         "Adjon hozzá legalább egy feltételt"
+      ],
+      "Address is already added to your account": [
+        "A cím már hozzá van adva a fiókjához"
       ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
@@ -4748,6 +4827,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      ],
+      "Something went wrong while converting the address": [
+        "Hiba történt a cím átalakítása közben"
+      ],
+      "Something went wrong while creating the address": [
+        "Hiba történt a cím létrehozása közben"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Hiba történt az elérhető domainnevek lekérése közben"
       ],
       "Something went wrong. Please try again.": [
         "Valami hiba történt. Kérjük próbálja újra."
@@ -5329,11 +5417,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ prémium funkció"
+      ],
+      "Custom email domain": [
+        "Egyéni e-mail-domainnév"
+      ],
+      "Email addresses": [
+        "E-mail-címek"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Titkosított felhőtárhely fájlok, fényképek és dokumentumok tárolására"
       ],
       "More premium features": [
         "További prémium funkciók"
+      ],
+      "Storage": [
+        "Tárhely"
       ],
       "Unlimited hide-my-email aliases": [
         "Korlátlan számú hide-my-email álnév"
@@ -7076,6 +7176,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Adja meg a kérést és a választ, amivel segíthet nekünk a pontosság javításában."
       ],
+      "Included": [
+        "Tartalmazza"
+      ],
       "Included for free with your plan": [
         "Az ingyenes csomag is tartalmazza"
       ],
@@ -7104,7 +7207,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8055,8 +8157,14 @@
       "Updating message content search...": [
         "Üzenetek tartalmában való keresés frissítése..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Frissítsen bármikor a többi áthozatalához"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Bármikor frissíthet nagyobb csomagra vagy szabadíthat fel helyet a többi áthozatalához"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Váltson ${ plan } csomagra a feloldáshoz"
@@ -9365,6 +9473,9 @@
       ],
       "Search in": [
         "Keresés:"
+      ],
+      "Select which Gmail address to connect": [
+        "Válassza ki a csatlakoztatni kívánt Gmail-címet"
       ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
@@ -11130,6 +11241,9 @@
       ],
       "Trial started": [
         "A próbaidőszak elkezdődött"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "A(z) ${ BRAND_NAME }-címe használatra kész"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11258,6 +11372,12 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Hozza át e-mailjeit a ${ MAIL_APP_NAME } alkalmazásba"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Hozza át meglévő e-mailjeit a ${ MAIL_APP_NAME } alkalmazásba, hogy mindent egyetlen privát beérkezett üzenetek mappából kezelhessen."
+      ],
       "Maybe later": [
         "Talán később"
       ]
@@ -14166,6 +14286,9 @@
       "Block sender": [
         "Feladó tiltása"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Hozza át a Gmailjét a ${ MAIL_APP_NAME } alkalmazásba"
+      ],
       "Built for privacy": [
         "Az adatvédelem jegyében készült"
       ],
@@ -14228,6 +14351,9 @@
       ],
       "Contacts": [
         "Névjegyek"
+      ],
+      "Continue with free storage": [
+        "Folytatás az ingyenes tárhellyel"
       ],
       "Continue with partial import?": [
         "Folytatja részleges importálással?"
@@ -14431,6 +14557,9 @@
       ],
       "Get more from your VPN": [
         "Hozzon ki többet a VPN-ből"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Szerezzen több tárhelyet a ${ MAIL_APP_NAME } Plus segítségével"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } alkalmazások"
@@ -14814,6 +14943,9 @@
       "Self-destruct message": [
         "Önmegsemmisítő üzenet"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gmail-üzenetek küldése és fogadása a ${ MAIL_APP_NAME } alkalmazással"
+      ],
       "Send email": [
         "E-mail küldése"
       ],
@@ -14907,6 +15039,9 @@
       "Summary": [
         "Összegzés"
       ],
+      "Summer Sale": [
+        "Nyári akció"
+      ],
       "This field cannot be empty": [
         "Ez a mező nem lehet üres"
       ],
@@ -14965,6 +15100,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatok védelmének biztosításához"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Használja biztonságosan a Gmailt a ${ MAIL_APP_NAME } alkalmazásban"
+      ],
       "Verification error": [
         "Ellenőrzési hiba"
       ],
@@ -15010,6 +15148,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Mikor a legfontosabb a VPN használata?"
+      ],
+      "You are all set": [
+        "Minden készen áll"
       ],
       "You can now create unlimited folders and labels": [
         "Mostantól korlátlan számú mappát és címkét hozhat létre"
