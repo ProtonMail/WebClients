@@ -30,6 +30,12 @@ export const useCategoryFlagWatcher = () => {
     const dispatch = useMailDispatch();
     const categoryView = useCategoriesView();
 
+    // Counts must be re-fetched when the category view setting changes
+    useEffect(() => {
+        void dispatch(conversationCountsThunk({ cache: CacheType.None }));
+        void dispatch(messageCountsThunk({ cache: CacheType.None }));
+    }, [categoryView.categoryViewAccess, dispatch]);
+
     // We get the ID from the URL because the labelID in the state is not up-to-date yet.
     useEffect(() => {
         const { rawLabelID } = getParametersFromPath(location.pathname);
@@ -37,9 +43,6 @@ export const useCategoryFlagWatcher = () => {
         if (!isInbox) {
             return;
         }
-
-        void dispatch(conversationCountsThunk({ cache: CacheType.None }));
-        void dispatch(messageCountsThunk({ cache: CacheType.None }));
 
         const categoryID = categoryIDFromUrl(location);
         if (
