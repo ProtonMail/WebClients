@@ -7,8 +7,8 @@ import { useUser } from '@proton/account/user/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { ComposerAgentBar } from '../../features/agents/ComposerAgentBar';
 import { AgentPickerModal } from '../../features/agents/AgentPickerModal';
+import { ComposerAgentBar } from '../../features/agents/ComposerAgentBar';
 import { ConversationStarters } from '../../features/agents/ConversationStarters';
 import { SketchOverlay } from '../../features/drawingcanvas';
 import useComposerInput from '../../hooks/useComposerInput';
@@ -26,6 +26,7 @@ import { upsertAttachment } from '../../redux/slices/core/attachments';
 import type { Attachment, Message } from '../../types';
 import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
+import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import { AttachmentArea } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
@@ -135,6 +136,15 @@ const ComposerComponentInner = ({
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const isGuest = useIsGuest();
+
+    // Tell the native mobile shells (iOS/Android) the app is interactive once the real
+    // composer is on screen. This is the authoritative "ready" signal that dismisses the
+    // native loading placeholder. It must fire HERE — not earlier from the app shell — because
+    // the composer mounting is what proves the lazy-loaded UI has actually rendered; firing
+    // sooner makes native reveal a still-loading (blank) web view on slow networks.
+    useEffect(() => {
+        notifyMobileAppLoaded();
+    }, []);
 
     // Agents are hidden inside projects: a project already injects its own instructions,
     // so layering an agent persona on top would be redundant and confusing.
