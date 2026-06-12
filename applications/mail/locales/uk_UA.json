@@ -198,6 +198,12 @@
       "Choose a file or drag it here": [
         "Виберіть файл або перетягніть його сюди"
       ],
+      "Claim this address": [
+        "Отримати цю адресу"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Отримайте безкоштовну адресу ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Очистити"
       ],
@@ -264,6 +270,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Підтвердити відкриття посилання ${ linkToShow }"
       ],
+      "Connect your email": [
+        "Підключіть свою електронну пошту"
+      ],
       "Contact group": [
         "Група контактів"
       ],
@@ -272,6 +281,9 @@
       ],
       "Continue import": [
         "Продовжити імпорт"
+      ],
+      "Continue with Free": [
+        "Продовжити безкоштовно"
       ],
       "Continue with Google": [
         "Продовжити з Google"
@@ -909,6 +921,9 @@
       "Open navigation": [
         "Відкрити панель навігації"
       ],
+      "Or use a different Gmail address": [
+        "Або використовувати іншу адресу Gmail"
+      ],
       "Ordered list": [
         "Нумерований список"
       ],
@@ -971,6 +986,9 @@
       ],
       "Reconnect": [
         "Відновити з'єднання"
+      ],
+      "Reconnect to Gmail": [
+        "Повторно підключитися до Gmail"
       ],
       "Recover data": [
         "Відновити дані"
@@ -1302,9 +1320,6 @@
       "Trust": [
         "Довіряти"
       ],
-      "Trust key": [
-        "Довіряти ключу"
-      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -1400,6 +1415,9 @@
       ],
       "Use this": [
         "Скористатися"
+      ],
+      "Use this Gmail address": [
+        "Використовувати цю адресу Gmail"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Змініть розмір вікна перегляду за допомогою миші. Якщо ви використовуєте клавіатуру, можете змінювати розмір стрілками ліворуч та праворуч."
@@ -3562,6 +3580,12 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Автоматично сортувати ваші вхідні повідомлення, перш ніж вони потрапляють до вхідних."
       ],
+      "Available storage: ${ storageText }": [
+        "Доступне сховище: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Заблокуйте можливість Google аналізувати ваші дані. Gmail не бачитиме, що ви робите в ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
       ],
@@ -3580,8 +3604,14 @@
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "Не бажаєте відправити лист просто зараз? Заплануйте відправлення на потрібний час."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Електронні листи, надіслані на ${ connectedAddressText }, тепер з'являтимуться в ${ MAIL_APP_NAME }."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Достатньо місця для електронних листів, вкладень та багато чого іншого на роки вперед."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Для отримання необмеженого доступу до асистента письма та багато іншого, оновіть ${ BRAND_NAME } Duo."
@@ -3607,11 +3637,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Нові листи від ${ senderEmailAddress } неможливо доставити, тому їх буде остаточно видалено."
       ],
+      "No ads. No trackers.": [
+        "Жодної реклами. Жодних вистежувачів."
+      ],
       "No folders": [
         "Немає тек"
       ],
       "No labels": [
         "Немає міток"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Читайте, відповідайте та керуйте Gmail безпосередньо в ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Надсилайте та отримуйте повідомлення Gmail безпосередньо в ${ MAIL_APP_NAME }. Підключіть свою адресу в ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
@@ -3621,6 +3660,15 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Це може статися, якщо дозволи було вилучено або ваш пароль змінився."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свій обліковий запис."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свої облікові записи."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Щоб продовжувати користуватися помічником з написання, додайте його до своєї передплати."
@@ -3637,6 +3685,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Увімкніть захист від стеження для електронної пошти, щоб рекламодавці та сторонні служби не відстежували ваше розташування й активність в інтернеті."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Розблокуйте 15 ГБ сховища всього за ${ config.offerPrice }."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Оновіться, щоб отримати ${ activatePmUser } для коротшої, легкої для запам'ятовування адреси електронної пошти на додаток до вашої поточної."
       ],
@@ -3646,8 +3697,23 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ми більше не маємо доступу до ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "У цьому електронному листі не знайдено відомих вистежувачів чи URL-адрес із вбудованими елементами стеження."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Ми призупинимо імпорт, коли сховище буде заповнено на 80%, щоб зберегти місце для нових повідомлень."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Ми перенесемо ваші старі електронні листи й підключимо ваш Gmail до ${ MAIL_APP_NAME }, щоб нові повідомлення з'являлися автоматично"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Ми імпортуємо вашу стару електронну пошту, пропустимо дублікати та з’єднаємося з вашим Gmail, щоб нові повідомлення з’являлися автоматично. Ви можете скасувати імпорт у будь-який момент у налаштуваннях Easy Switch"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ми почали імпортувати ваші електронні листи з Gmail. Ми повідомимо вас, коли процес завершиться."
       ],
       "When do you want your message to be sent?": [
         "Коли ви хочете надіслати своє повідомлення?"
@@ -3658,17 +3724,32 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "За допомогою власного відкладення ви можете приховати листи та повернути їх у потрібний момент."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас уже є адреса Gmail, з якої налаштовано пересилання до ${ MAIL_APP_NAME }. Підключіть її нижче, щоб надсилати й отримувати електронні листи безпосередньо з ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас уже є адреси Gmail, з яких налаштовано пересилання до ${ MAIL_APP_NAME }. Підключіть одну з них нижче, щоб надсилати й отримувати електронні листи безпосередньо з ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Тепер ви можете надсилати електронні листи з ${ BRAND_NAME }, використовуючи цю адресу."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ваш обліковий запис і способи відновлення налаштовано, а двоетапну автентифікацію ввімкнено."
       ],
       "Your account and data recovery methods are set.": [
         "Ваш обліковий запис і способи відновлення налаштовано."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ${ newUserStorageText } ваших найновіших повідомлень Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ваші найновіші електронні листи з Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
@@ -3915,6 +3996,9 @@
       ],
       "Add at least one condition": [
         "Додайте хоча б одну умову"
+      ],
+      "Address is already added to your account": [
+        "Адресу вже додано до вашого облікового запису"
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -4353,6 +4437,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      ],
+      "Something went wrong while converting the address": [
+        "Під час конвертації адреси сталася помилка"
+      ],
+      "Something went wrong while creating the address": [
+        "Під час створення адреси сталася помилка"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Під час отримання доступних доменів сталася помилка"
       ],
       "Something went wrong. Please try again.": [
         "Сталася помилка. Повторіть спробу пізніше."
@@ -4920,6 +5013,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Понад 10 преміумфункцій"
+      ],
+      "Custom email domain": [
+        "Власний домен електронної пошти"
+      ],
+      "Email addresses": [
+        "Адреси електронної пошти"
+      ],
+      "Storage": [
+        "Сховище"
+      ],
       "Unlimited hide-my-email aliases": [
         "Необмежена кількість псевдонімів Hide-my-email"
       ]
@@ -6032,6 +6137,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Перевірка адреси з довіреними ключами увімкнена для цієї адреси. Щоб мати змогу надсилати на цю адресу, спочатку зробіть довіреними відкриті ключі, які можна використовувати для надсилання."
       ],
+      "Addresses settings": [
+        "Налаштування адрес"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
       ],
@@ -6440,6 +6548,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Насолоджуйтесь швидшою та цілеспрямованою роботою з настільним застосунком."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Забезпечте повністю приватне й зашифроване спілкування. Отримайте безкоштовну адресу електронної пошти ${ BRAND_NAME } просто зараз."
+      ],
       "Enter the code from your authenticator app": [
         "Введіть код з вашого додатку автентифікатора"
       ],
@@ -6632,6 +6743,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Вкажіть свій запит і отриману відповідь, щоб допомогти нам підвищити точність."
       ],
+      "Included": [
+        "Включено"
+      ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
       ],
@@ -6639,9 +6753,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -7457,8 +7568,14 @@
       "Updating message content search...": [
         "Оновлення пошуку вмісту повідомлень..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Покращте тарифний план у будь-який час, щоб перенести решту"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Покращте тарифний план або очистьте місце в будь-який час, щоб перенести решту"
       ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
@@ -8625,6 +8742,9 @@
       ],
       "Search in": [
         "Шукати в"
+      ],
+      "Select which Gmail address to connect": [
+        "Виберіть, яку адресу Gmail підключити"
       ],
       "Send auto-reply": [
         "Надіслати автовідповідь"
@@ -10303,6 +10423,9 @@
       ],
       "Trial started": [
         "Пробний період увімкнено"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваша адреса ${ BRAND_NAME } готова до використання"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10362,6 +10485,14 @@
       ],
       "Storage": [
         "Сховище"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Перенесіть свою електронну пошту до ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Перенесіть свою наявну електронну пошту до ${ MAIL_APP_NAME }, щоб керувати всім з однієї приватної папки «Вхідні»."
       ]
     },
     "Onboarding modal": {
@@ -13058,6 +13189,9 @@
       "Block sender": [
         "Заблокувати відправника"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Перенесіть свій Gmail до ${ MAIL_APP_NAME }"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -13082,6 +13216,9 @@
       "Change password": [
         "Змінити пароль"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Отримайте адресу ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Стирання даних"
       ],
@@ -13105,6 +13242,9 @@
       ],
       "Contacts": [
         "Контакти"
+      ],
+      "Continue with free storage": [
+        "Продовжити з безкоштовним сховищем"
       ],
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
@@ -13211,6 +13351,9 @@
       "Desktop": [
         "Настільний"
       ],
+      "Disconnected from Gmail": [
+        "Від'єднано від Gmail"
+      ],
       "Distraction-free emailing": [
         "Надсилайте листи, не відволікаючись"
       ],
@@ -13288,6 +13431,9 @@
       ],
       "Forward": [
         "Переслати"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Отримайте програми ${ appName[APP_NAME] }"
@@ -13616,6 +13762,9 @@
       "Self-destruct message": [
         "Повідомлення з автовидаленням"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Надсилайте та отримуйте Gmail за допомогою ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Надіслати лист"
       ],
@@ -13691,6 +13840,9 @@
       "Summary": [
         "Підсумок"
       ],
+      "Summer Sale": [
+        "Літній розпродаж"
+      ],
       "This field cannot be empty": [
         "Необхідно заповнити це поле"
       ],
@@ -13733,6 +13885,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Безпечно використовуйте Gmail у ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Помилка підтвердження"
       ],
@@ -13765,6 +13920,9 @@
       ],
       "Welcome ${ userName }": [
         "Вітаємо, ${ userName }"
+      ],
+      "You are all set": [
+        "Усе готово"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш безплатний пробний період ${ planName } завершується ${ textDate }"

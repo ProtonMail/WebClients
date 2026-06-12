@@ -382,9 +382,6 @@
       "Create new policy": [
         "إنشاء سياسة جديدة"
       ],
-      "Create organization": [
-        "إنشاء مؤسسة"
-      ],
       "Create users": [
         "إنشاء مستخدمين"
       ],
@@ -489,6 +486,9 @@
       ],
       "Discard Changes": [
         "تجاهل التغييرات"
+      ],
+      "Disconnect": [
+        "قطع الاتصال"
       ],
       "Discover ${ planName }": [
         "استكشف ${ planName }"
@@ -1017,6 +1017,9 @@
       ],
       "Reconnect": [
         "أعد الإتصال"
+      ],
+      "Reconnect to Gmail": [
+        "إعادة الاتصال بـ Gmail"
       ],
       "Recover data": [
         "استعادة البيانات"
@@ -4436,8 +4439,17 @@
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "يتيح لك ذلك استعادة الوصول إلى حساب ${ BRAND_NAME } الخاص بك، لكنه لا يستعيد بياناتك المشفّرة."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "قد يحدث هذا في حال إزالة الأذونات أو تغيير كلمة مرورك."
+      ],
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "لربط عنوان Gmail آخر، أزل عناوين Gmail الإضافية التي تقوم بإعادة توجيه الرسائل إلى ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "لمواصلة استلام رسائل Gmail وإرسالها في ${ BRAND_NAME }، يرجى إعادة توصيل حسابك."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "لمواصلة استلام رسائل Gmail وإرسالها في ${ BRAND_NAME }، يرجى إعادة توصيل حساباتك."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "لاستيراد جهات الاتصال عبر ملف CSV أو VCF، تأكد من أن حجم الملف لا يتجاوز ${ MAX_IMPORT_FILE_SIZE_STRING } أو ${ maxContactString } جهة اتصال. إذا كان ملفك أكبر من ذلك، يرجى تقسيمه إلى ملفات أصغر. ${ learnMoreLink }."
@@ -4463,11 +4475,32 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "استخدم هذا الدليل لتجعل مؤسستك تستفيد على الفور من نظام ${ BRAND_NAME } البيئي الرائد في مجال التشفير والخصوصية."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "لم يعد بالإمكان الوصول إلى ${ boldEmails }."
+      ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "سنقوم بإيقاف الواردات مؤقتا عند 80٪ من التخزين لحجز مساحة للرسائل الجديدة."
       ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "سيتم جلب رسائل البريد الإلكتروني القديمة وتوصيل حساب Gmail بـ ${ MAIL_APP_NAME } لتظهر الرسائل الجديدة تلقائيًا."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "سنستورد رسائل بريدك الإلكتروني القديمة، ونتخطى الرسائل المكررة، ونتصل بحسابك على Gmail لتظهر الرسائل الجديدة تلقائيًا. ويمكن التراجع عن الاستيراد في أي وقت من إعدادات Easy Switch."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "بدأ استيراد رسائل بريدك الإلكتروني من Gmail. وسيتم إعلامك بمجرد الانتهاء."
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "نأسف لرؤيتك تغادر. إذا كان لديك بعض الوقت، سنكون ممتنين لمعرفة سبب رغبتك في الإلغاء. تساعدنا ملاحظاتك على جعل ${ BRAND_NAME } أفضل للجميع."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "مع فئات البريد الإلكتروني الجديدة، تصل الرسائل الهامة فقط إلى صندوق الوارد الأساسي. تعمل الفئات تمامًا مثل مرشحات البريد المزعج. لا يقرأ ${ MAIL_APP_NAME } رسائل بريدك الإلكتروني أو يشارك بياناتك أبدًا."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "يتوفر لديك بالفعل عنوان Gmail يعيد التوجيه إلى ${ MAIL_APP_NAME }. يرجى توصيله أدناه لإرسال رسائل البريد الإلكتروني واستلامها مباشرة من ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "يتوفر لديك بالفعل عناوين Gmail تعيد التوجيه إلى ${ MAIL_APP_NAME }. يرجى توصيل أحدها أدناه لإرسال رسائل البريد الإلكتروني واستلامها مباشرة من ${ MAIL_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "يمكنك استيراد الأحداث بتنسيق iCal (ملف ICS). يجب أن يكون حجم الملف الأقصى ${ MAX_IMPORT_FILE_SIZE_STRING } ويحتوي على ما يصل إلى ${ MAX_IMPORT_EVENTS_STRING } حدثًا. إذا كان ملفك أكبر، فيرجى تقسيمه إلى ملفات أصغر."
@@ -4480,6 +4513,12 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "يمكنك الآن إرسال رسائل البريد الإلكتروني من ${ BRAND_NAME } باستخدام هذا العنوان."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "لا يزال بإمكانك تسجيل الدخول باستخدام هذا العنوان وإعادة الاتصال في أي وقت."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "لن يكون بإمكانك بعد الآن استخدام ${ address.Email } لتلقي رسائل البريد الإلكتروني وإرسالها في ${ BRAND_NAME }. يُرجى العلم أيضاً أن الرسائل المرسلة إلى هذا العنوان من ${ BRAND_NAME } لن تكون مشفرة من طرف إلى طرف بعد الآن."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "لقد قمت بتوصيل عنوان حساب خارجي واحد ب ${ MAIL_APP_NAME }."
@@ -5686,6 +5725,9 @@
       ],
       "Address could not be added.": [
         "تعذر إضافة العنوان."
+      ],
+      "Address is already added to your account": [
+        "العنوان مضاف بالفعل إلى حسابك"
       ],
       "Address primary private key not found": [
         "لم يتم العثور على المفتاح الخاص الرئيسي للعنوان"
@@ -8056,6 +8098,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "حدد ${ boldExport } لتصدير التقويم كملف ICS."
+      ]
+    },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "هل تؤكد رغبتك في استيراد مفتاح خاص؟ إن استيراد مفتاح خاص تم إنشاؤه بشكل غير آمن أو تسريبه قد يضر بأمان رسائل بريدك الإلكتروني.\\n\\nيرجى الملاحظة أيضًا أن المفتاح العام المقابل لهذا المفتاح الخاص سيكون متاحًا للعامة من خادم المفاتيح لدينا. إذا كان المفتاح يحتوي على تفاصيل شخصية (مثل الاسم الكامل) لا ترغب في نشرها، فيرجى تعديل المفتاح قبل استيراده."
       ]
     },
     "Import status": {
@@ -11574,11 +11621,6 @@
         "للعرض فقط"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "هكذا ستظهر مؤسستك للمستخدمين. يمكنك تغيير ذلك في أي وقت."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "بريد الكتروني غير صالح"
@@ -11592,11 +11634,6 @@
     "Input placeholder": {
       "Add label": [
         "أضف وسمًا"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "ما اسم مؤسستك؟"
       ]
     },
     "invitation status": {
@@ -15497,6 +15534,9 @@
       "Two-factor authentication is not required anymore": [
         "لم تعد المصادقة الثنائية مطلوبة"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "عنوانك في ${ BRAND_NAME } جاهز للاستخدام"
+      ],
       "Zoom video conferencing settings have been updated": [
         "حُدثت إعدادات مؤتمرات الفيديو عبر Zoom"
       ]
@@ -16991,9 +17031,6 @@
       ],
       "Enter a name": [
         "أدخل اسما"
-      ],
-      "Enter name": [
-        "أدخل الاسم"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -21350,6 +21387,9 @@
       "Are you sure you want to close?": [
         "هل أنت متأكد من رغبتك في الإغلاق؟"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "هل ترغب بالتأكيد في قطع الاتصال بهذا العنوان؟"
+      ],
       "Are you sure?": [
         "هل أنت متأكد؟"
       ],
@@ -22695,9 +22735,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "مرحبًا بك في ${ BRAND_NAME } للأعمال"
       ],
-      "Welcome to ${ planName }": [
-        "مرحبًا بك في ${ planName }"
-      ],
       "Welcome to your new password manager!": [
         "مرحبًا بك في مدير كلمات المرور الجديد!"
       ],
@@ -22712,6 +22749,9 @@
       ],
       "WireGuard configuration": [
         "تكوين WireGuard"
+      ],
+      "You are all set": [
+        "أصبح كل شيء جاهزًا"
       ],
       "You can now create unlimited folders and labels": [
         "يمكنك الآن إنشاء عدد غير محدود من المجلدات والتسميات"

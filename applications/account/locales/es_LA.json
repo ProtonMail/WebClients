@@ -462,9 +462,6 @@
       "Create new policy": [
         "Crear una política"
       ],
-      "Create organization": [
-        "Crear organización"
-      ],
       "Create recovery phrase": [
         "Crear frase de recuperación"
       ],
@@ -3395,17 +3392,11 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Añadir usuarios manualmente"
-      ],
       "Cancel": [
         "Cancelar"
       ],
       "Close": [
         "Cerrar"
-      ],
-      "Configure your network": [
-        "Configure su red"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
@@ -3428,12 +3419,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Invite your team": [
-        "Invite a su equipo"
-      ],
-      "Manage global VPN permissions": [
-        "Gestionar permisos globales de VPN"
-      ],
       "Maybe later": [
         "Quizás más tarde"
       ],
@@ -3443,17 +3428,11 @@
       "Remind me later": [
         "Recordarme más tarde"
       ],
-      "Secure your organization": [
-        "Proteja su organización"
-      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configure otras funciones"
-      ],
-      "Set up SSO": [
-        "Configurar SSO"
       ],
       "Sign in": [
         "Iniciar sesión"
@@ -5319,9 +5298,6 @@
       "Connect your CRM, website, printers, and more.": [
         "Conecte su CRM, sitio web, impresoras y mucho más."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Cree una puerta de enlace para brindar a sus usuarios acceso a los recursos de TI a través de servidores dedicados."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Cree una reunión de Zoom y agregue detalles de ingreso a su evento con un solo clic."
       ],
@@ -5331,14 +5307,8 @@
       "Create groups you can email with a single address.": [
         "Cree grupos a los que pueda enviar correos electrónicos con una sola dirección."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Cree cuentas de usuario o importe usuarios con aprovisionamiento SCIM de SSO (inicio de sesión único)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Cree políticas para decidir quién puede conectarse a servidores compartidos en cada país."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decida cuáles usuarios se pueden conectar a cada una de nuestras más de 120 ubicaciones de servidor compartidas."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Acceda fácilmente a su correo electrónico y calendario en computadoras de escritorio y dispositivos móviles."
@@ -5402,9 +5372,6 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Cómo desbloquear sus datos cifrados si pierde la contraseña."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Si aún no lo ha hecho, active algunos métodos de recuperación para asegurarse de que nunca pierda el acceso a ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
@@ -5508,6 +5475,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importaremos sus correos electrónicos antiguos y conectaremos su Gmail a ${ MAIL_APP_NAME } para que los nuevos mensajes aparezcan automáticamente"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importaremos sus correos electrónicos anteriores, omitiremos los duplicados y nos conectaremos a su Gmail para que los nuevos mensajes aparezcan automáticamente. Puede deshacer la importación en cualquier momento en los ajustes de Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Estamos importando sus correos electrónicos de Gmail. Le avisaremos cuando finalicemos."
@@ -11136,9 +11106,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Reciba notificaciones si la contraseña u otro dato personal fue filtrado. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Comenzar"
-      ],
       "Get started with the referral link above.": [
         "Comience con el enlace de referidos de arriba."
       ],
@@ -12225,9 +12192,6 @@
       ],
       "Set up your organization": [
         "Configure la organización"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configure su organización y empiece a proteger sus datos en unos pasos sencillos."
       ],
       "Setting successfully saved": [
         "Se actualizó el ajuste."
@@ -13668,11 +13632,6 @@
         "Solo lectura"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Así es como su organización aparecerá a los usuarios. Puede cambiarlo en cualquier momento."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "No es una dirección de correo electrónico válida."
@@ -13686,11 +13645,6 @@
     "Input placeholder": {
       "Add label": [
         "Agregar etiqueta"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "¿Cuál es el nombre de su organización?"
       ]
     },
     "invitation status": {
@@ -20005,9 +19959,6 @@
       "Enter a name": [
         "Ingrese un nombre"
       ],
-      "Enter name": [
-        "Ingresar un nombre"
-      ],
       "example@domain.com": [
         "ejemplo@dominio.com"
       ],
@@ -25452,9 +25403,6 @@
       "Disconnected from Gmail": [
         "Sin conexión a Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Descartar lista de configuración"
-      ],
       "Display name and signature": [
         "Nombre a mostrar y firma"
       ],
@@ -25743,9 +25691,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Obtenga más almacenamiento con ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Comenzar"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obtenga la aplicación en todos sus dispositivos y acceda de forma segura y sin interrupciones en cualquier lugar."
@@ -26458,7 +26403,7 @@
         "Resumen"
       ],
       "Summer Sale": [
-        "Oferta de Verano"
+        "Ofertas de verano"
       ],
       "Support ticket closed": [
         "Tiquete de soporte cerrado"
@@ -26657,9 +26602,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Le damos la bienvenida a ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Le damos la bienvenida a ${ planName }"
       ],
       "Welcome to your new password manager!": [
         "¡Le damos la bienvenida a su nuevo gestor de contraseñas!"
@@ -27175,9 +27117,6 @@
       ],
       "User is a group": [
         "El usuario es un grupo"
-      ],
-      "via ${ groupName }": [
-        "vía ${ groupName }"
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."

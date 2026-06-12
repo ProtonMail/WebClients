@@ -287,9 +287,6 @@
       "Create new policy": [
         "Vytvoriť novú politiku"
       ],
-      "Create organization": [
-        "Vytvoriť organizáciu"
-      ],
       "Create users": [
         "Vytvoriť používateľov"
       ],
@@ -2221,14 +2218,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Pridať používateľov manuálne"
-      ],
       "Close": [
         "Zavrieť"
-      ],
-      "Configure your network": [
-        "Nakonfigurujte svoju sieť"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
@@ -2248,29 +2239,17 @@
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
       ],
-      "Invite your team": [
-        "Pozvite váš tím"
-      ],
-      "Manage global VPN permissions": [
-        "Správa globálnych oprávnení VPN"
-      ],
       "Maybe later": [
         "Možno neskôr"
       ],
       "Remind me later": [
         "Pripomenúť neskôr"
       ],
-      "Secure your organization": [
-        "Zabezpečte svoju organizáciu"
-      ],
       "Send": [
         "Odoslať"
       ],
       "Set up other features": [
         "Nastaviť ďalšie funkcie"
-      ],
-      "Set up SSO": [
-        "Nastaviť SSO"
       ],
       "Take a tour": [
         "Absolvovať prehliadku"
@@ -2778,6 +2757,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanárske ostrovy"
       ],
       "Cape Verde": [
         "Kapverdy"
@@ -3634,23 +3616,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Pripojte svoj CRM, webovú stránku, tlačiarne a ďalšie."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Vytvorte bránu, aby vaši používatelia mali prístup k vašim IT zdrojom prostredníctvom vyhradených serverov."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Vytvorte Zoom stretnutie a jedným kliknutím pridajte podrobnosti o pripojení k udalosti."
       ],
       "Create groups you can email with a single address.": [
         "Vytvorte skupiny, ktorým môžete posielať emaily pomocou jednej adresy."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Vytvorte nové používateľské účty alebo importujte používateľov pomocou SSO (jednotného prihlásenia) SCIM provisioningu."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvorte pravidlá na určenie toho, kto sa môže pripojiť k zdieľaným serverom v jednotlivých krajinách."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Rozhodnite, ktorí používatelia sa môžu pripojiť ku každej z našich viac ako 120 zdieľaných serverových lokalít."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Získajte jednoduchý prístup k svojmu emailu a kalendáru v počítači aj v mobile."
@@ -3711,9 +3684,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Ako sme podporili miestnych aktivistov, keď bolo ohrozené súkromie a sloboda prejavu."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Ak ste tak ešte neurobili, povoľte niektoré metódy obnovy, aby ste sa uistili, že nikdy nestratíte prístup k ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
@@ -3795,6 +3765,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načítame vaše staré emaily a prepojíme váš Gmail s aplikáciou ${ MAIL_APP_NAME }, aby sa nové správy zobrazovali automaticky"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importujeme vaše staré emaily, preskočíme duplikáty a pripojíme sa k vášmu Gmailu, aby sa nové správy zobrazovali automaticky. Import môžete kedykoľvek vrátiť späť v nastaveniach Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
@@ -7521,9 +7494,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Nechajte sa upozorniť, ak dôjde k úniku vášho hesla alebo iných osobných údajov. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Začíname"
-      ],
       "Get started with the referral link above.": [
         "Začnite s odporúčacím odkazom vyššie."
       ],
@@ -8139,6 +8109,9 @@
       "Please select the folders you would like to import:": [
         "Vyberte priečinky, ktoré chcete importovať:"
       ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, ktoré chcete importovať:"
+      ],
       "Please specify...": [
         "Upresnite, prosím..."
       ],
@@ -8348,9 +8321,6 @@
       ],
       "Set up your organization": [
         "Nastavte svoju organizáciu"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Nastavte svoju organizáciu a začnite chrániť svoje údaje v niekoľkých jednoduchých krokoch."
       ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
@@ -9156,6 +9126,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nemôžete odporúčať používateľom ${ MAIL_APP_NAME }"
       ],
+      "You do not have permission to create users.": [
+        "Nemáte oprávnenie na vytváranie používateľov."
+      ],
       "You don't have any referrals.": [
         "Nemáte žiadne odporúčania."
       ],
@@ -9470,19 +9443,9 @@
         "Iba zobrazenie"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Takto sa vaša organizácia zobrazí používateľom. Môžete to kedykoľvek zmeniť."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Neplatná emailová adresa"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Ako sa nazýva vaša organizácia?"
       ]
     },
     "invitation status": {
@@ -13715,9 +13678,6 @@
       "Enter a name": [
         "Zadajte meno"
       ],
-      "Enter name": [
-        "Zadajte názov"
-      ],
       "example@domain.com": [
         "priklad@domena.sk"
       ],
@@ -14391,6 +14351,28 @@
       ],
       "Edit retention rule": [
         "Upraviť pravidlo uchovávania"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Správca organizácie"
+      ],
+      "Security Admin": [
+        "Bezpečnostný správca"
+      ],
+      "User Admin": [
+        "Správca používateľov"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všetkých používateľov, skupiny, zabezpečenie, fakturáciu a systémové konfigurácie."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Správa používateľov, skupín a úložného priestoru pre všetkých členov, prideľovanie rolí a prideľovanie licencií."
       ]
     },
     "Safety review": {
@@ -17179,9 +17161,6 @@
       "Disconnected from Gmail": [
         "Odpojené od Gmailu"
       ],
-      "Dismiss setup checklist": [
-        "Zrušiť kontrolný zoznam nastavení"
-      ],
       "Domain names": [
         "Názvy domén"
       ],
@@ -17343,9 +17322,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Získajte väčšie úložisko s ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Začíname"
       ],
       "Get the apps": [
         "Získajte aplikácie"
@@ -17816,7 +17792,7 @@
         "Zhrnutie"
       ],
       "Summer Sale": [
-        "Letná zľava"
+        "Letný výpredaj"
       ],
       "Support your compliance objectives": [
         "Podporte vaše ciele v oblasti dodržiavania predpisov"
@@ -17970,9 +17946,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Vitajte v ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "Čo sa zmení, keď prejdete na plán Free"
@@ -18168,6 +18141,9 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Zahŕňa profesionálnu emailovú adresu v tvare @vasadomena.sk, cloudové úložisko s možnosťou spoločnej úpravy dokumentov, plánovanie a videokonferencie, správu hesiel, bezpečnú službu ${ VPN_SHORT_APP_NAME } a ďalšie funkcie."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá pomoc AI, k dispozícii je aj ľudský odborník!"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Členovia, ktorí nepoužívajú 2FA, dostanú email s výzvou, aby si ho čo najskôr aktivovali. Používatelia s jedným prihlásením nedostanú emailovú pripomienku."
       ],
@@ -18269,8 +18245,8 @@
       "User is a group": [
         "Používateľ je skupina"
       ],
-      "via ${ groupName }": [
-        "cez ${ groupName }"
+      "via ${ groupNames }": [
+        "cez ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"

@@ -459,9 +459,6 @@
       "Create new policy": [
         "Créer une politique"
       ],
-      "Create organization": [
-        "Créer une organisation"
-      ],
       "Create recovery phrase": [
         "Créer une phrase de récupération"
       ],
@@ -2966,6 +2963,9 @@
       "Calendar": [
         "Calendrier"
       ],
+      "Collapse invitation message": [
+        "Réduire le message d'invitation"
+      ],
       "Collapse step": [
         "Réduire l'étape"
       ],
@@ -3025,6 +3025,9 @@
       ],
       "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
         "Tous les utilisateurs reçoivent le même lien d'invitation. Ils se rendent sur la page, saisissent leur e-mail, puis un code de vérification est envoyé sur leur boite de réception Gmail. À partir de là, ils définissent leur mot de passe ${ BRAND_NAME }."
+      ],
+      "Expand invitation message": [
+        "Développer le message d'invitation"
       ],
       "Expand step": [
         "Agrandir l'étape"
@@ -3389,17 +3392,11 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Ajouter des utilisateurs manuellement"
-      ],
       "Cancel": [
         "Annuler"
       ],
       "Close": [
         "Fermer"
-      ],
-      "Configure your network": [
-        "Configurez votre réseau"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
@@ -3422,12 +3419,6 @@
       "Got it": [
         "J'ai compris"
       ],
-      "Invite your team": [
-        "Inviter votre équipe"
-      ],
-      "Manage global VPN permissions": [
-        "Gérer les autorisations VPN globales"
-      ],
       "Maybe later": [
         "Peut-être plus tard"
       ],
@@ -3437,17 +3428,11 @@
       "Remind me later": [
         "Me le rappeler plus tard"
       ],
-      "Secure your organization": [
-        "Sécurisez votre organisation"
-      ],
       "Send": [
         "Envoyer"
       ],
       "Set up other features": [
         "Configurez d'autres fonctionnalités"
-      ],
-      "Set up SSO": [
-        "Configurer le SSO"
       ],
       "Sign in": [
         "Se connecter"
@@ -5313,9 +5298,6 @@
       "Connect your CRM, website, printers, and more.": [
         "Connectez votre CRM, votre site internet, vos imprimantes et bien plus encore."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Créez une passerelle pour permettre à vos utilisateurs d'accéder à vos ressources informatiques via des serveurs dédiés."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Créez une réunion Zoom et ajouter les informations de participation à votre événement en un clic."
       ],
@@ -5325,14 +5307,8 @@
       "Create groups you can email with a single address.": [
         "Créez des groupes auxquels vous pouvez envoyer des messages avec une seule adresse."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Créez de nouveaux comptes utilisateur ou importez des utilisateurs avec l'approvisionnement SCIM SSO (authentification unique)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Créez des politiques pour déterminer qui peut se connecter aux serveurs partagés dans chaque pays."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Décidez quels utilisateurs peuvent se connecter à chacun de nos plus de 120 emplacements de serveurs partagés."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accédez facilement à votre adresse e-mail et à votre calendrier sur ordinateur et appareil mobile."
@@ -5396,9 +5372,6 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Comment déverrouiller mes données chiffrées si je perds mon mot de passe."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Si ce n'est pas déjà fait, activez des méthodes de récupération pour vous assurer de ne jamais perdre l'accès à ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
@@ -5502,6 +5475,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Nous allons importer vos anciens messages, ignorer les doublons et nous connecter à votre compte Gmail afin que vos nouveaux messages s'affichent automatiquement. Vous pouvez annuler l'importation à tout moment dans les paramètres d'Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
@@ -11130,9 +11106,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données personnelles ont été exposées. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Commencez"
-      ],
       "Get started with the referral link above.": [
         "Commencez par le lien de parrainage ci-dessus."
       ],
@@ -12220,9 +12193,6 @@
       "Set up your organization": [
         "Configurez votre organisation"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configurez votre organisation et commencez à protéger vos données en quelques étapes faciles."
-      ],
       "Setting successfully saved": [
         "Paramètre enregistré avec succès"
       ],
@@ -13286,6 +13256,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vous n'avez pas défini de méthode de récupération : si vous oubliez votre mot de passe, la récupération de votre compte ne sera pas possible. Voulez-vous continuer sans méthode de récupération ?"
       ],
+      "You do not have permission to create users.": [
+        "Vous n'avez pas l'autorisation de créer des utilisateurs."
+      ],
       "You do not have permission to perform this action": [
         "Vous n’avez pas l'autorisation d’effectuer cette action"
       ],
@@ -13662,11 +13635,6 @@
         "Lecture seule"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Voici comment votre organisation apparaîtra aux utilisateurs. Vous pouvez la modifier à tout moment."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "L'adresse e-mail n'est pas valide."
@@ -13680,11 +13648,6 @@
     "Input placeholder": {
       "Add label": [
         "Ajoutez un label."
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Quel est le nom de votre organisation ?"
       ]
     },
     "invitation status": {
@@ -16052,6 +16015,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obtenir ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtenir de l'aide avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Groupes"
@@ -19999,9 +19965,6 @@
       "Enter a name": [
         "Saisissez un nom"
       ],
-      "Enter name": [
-        "Saisir un nom"
-      ],
       "example@domain.com": [
         "exemple@domaine.fr"
       ],
@@ -21121,6 +21084,28 @@
       ],
       "Edit retention rule": [
         "Modifier la règle de conservation"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Administrateur de l'organisation"
+      ],
+      "Security Admin": [
+        "Administrateur de sécurité"
+      ],
+      "User Admin": [
+        "Administrateur des utilisateurs"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
       ]
     },
     "Safety review": {
@@ -25410,9 +25395,6 @@
       "Disconnected from Gmail": [
         "Déconnecté de Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Ignorer la liste de vérification de configuration"
-      ],
       "Display name and signature": [
         "Nom d'affichage et signature"
       ],
@@ -25701,9 +25683,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Obtenez plus d'espace de stockage avec ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Commencez"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obtenez l'application sur tous vos appareils et profitez d'un accès sécurisé et fluide partout."
@@ -26416,7 +26395,7 @@
         "Résumé"
       ],
       "Summer Sale": [
-        "Soldes d'été"
+        "Offre estivale"
       ],
       "Support ticket closed": [
         "Le ticket de support a été fermé."
@@ -26615,9 +26594,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bienvenue dans ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Bienvenue dans ${ planName }"
       ],
       "Welcome to your new password manager!": [
         "Bienvenue dans votre nouveau gestionnaire de mots de passe"
@@ -27134,8 +27110,8 @@
       "User is a group": [
         "L’utilisateur est un groupe"
       ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "En attente de l’acceptation de l’invitation par l’utilisateur"

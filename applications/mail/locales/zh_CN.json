@@ -4338,6 +4338,9 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
       ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "我们将导入您的旧电子邮件、跳过重复项，并连接到您的 Gmail，以便自动显示新消息。您可以随时在 Easy Switch 设置中撤消导入。"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
       ],
@@ -5192,6 +5195,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong while converting the address": [
+        "转换地址时发生错误"
       ],
       "Something went wrong while creating the address": [
         "创建地址时出错"
@@ -7635,7 +7641,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -15837,7 +15843,7 @@
         "概览"
       ],
       "Summer Sale": [
-        "夏季促销"
+        "夏季大促"
       ],
       "This field cannot be empty": [
         "此字段不能为空"

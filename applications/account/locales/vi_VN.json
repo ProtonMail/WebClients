@@ -315,6 +315,9 @@
       "Connect your ${ BRAND_NAME } Account": [
         "Kết nối tài khoản ${ BRAND_NAME }"
       ],
+      "Connect your email": [
+        "Kết nối email"
+      ],
       "Connected": [
         "Đã kết nối"
       ],
@@ -335,6 +338,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Tiếp tục với ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Free": [
+        "Tiếp tục miễn phí"
       ],
       "Continue with Google": [
         "Tiếp tục với Google"
@@ -407,9 +413,6 @@
       ],
       "Create new policy": [
         "Tạo chính sách mới"
-      ],
-      "Create organization": [
-        "Tạo tổ chức"
       ],
       "Create users": [
         "Tạo người dùng"
@@ -521,6 +524,9 @@
       ],
       "Discard Changes": [
         "Hủy bỏ thay đổi"
+      ],
+      "Disconnect": [
+        "Ngắt kết nối"
       ],
       "Discover ${ planName }": [
         "Khám phá ${ planName }"
@@ -1100,6 +1106,9 @@
       ],
       "Reconnect": [
         "Kết nối lại"
+      ],
+      "Reconnect to Gmail": [
+        "Kết nối lại với Gmail"
       ],
       "Recover data": [
         "Khôi phục dữ liệu"
@@ -4506,8 +4515,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Tự động sắp xếp thư đến trước khi vào hộp thư đến."
       ],
+      "Available storage: ${ storageText }": [
+        "Dung lượng lưu trữ khả dụng: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Có sẵn với ${ title }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Chặn khả năng lập hồ sơ của Google. Gmail không thể xem hoạt động trên ${ MAIL_APP_NAME }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Cấu hình mục này trước để kích hoạt tổ chức và tùy chỉnh địa chỉ email."
@@ -4533,6 +4548,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Dễ dàng đồng bộ tệp lên đám mây từ máy tính và truy cập từ thiết bị di động."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Email gửi đến ${ connectedAddressText } giờ đây sẽ hiển thị trong ${ MAIL_APP_NAME }."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Kích hoạt ${ PROTON_SENTINEL_NAME } để truy cập các tính năng này"
       ],
@@ -4547,6 +4565,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Đang mã hóa và nhập liên hệ... Quá trình này có thể mất vài phút. Khi hoàn tất, có thể đóng hộp thoại này."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Đủ không gian cho nhiều năm lưu trữ email, tập tin đính kèm và hơn thế nữa."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Đảm bảo truy cập an toàn vào dữ liệu tổ chức, ngay cả khi nhóm làm việc từ xa hoặc sử dụng WiFi công cộng."
@@ -4584,8 +4605,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Tạo chân trang email của riêng bạn — thể hiện thương hiệu độc đáo, không phải của chúng tôi."
       ],
+      "No ads. No trackers.": [
+        "Không quảng cáo. Không trình theo dõi."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Không ai trong tổ chức có thể kết nối với các máy chủ này."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Đọc, trả lời và quản lý Gmail ngay trong ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Thiết lập tài khoản cho tất cả người dùng và mời họ tham gia ${ BRAND_NAME }."
@@ -4596,6 +4623,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Đơn giản hóa việc đồng bộ và lên lịch với các lịch được chia sẻ."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Điều này có thể xảy ra nếu quyền truy cập bị xóa hoặc mật khẩu bị thay đổi."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Để tiếp tục nhận và gửi thư Gmail trong ${ BRAND_NAME }, vui lòng kết nối lại tài khoản."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Để tiếp tục nhận và gửi thư Gmail trong ${ BRAND_NAME }, vui lòng kết nối lại các tài khoản."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Để nhập liên hệ từ Google hoặc Outlook, ${ easySwitchLink }."
       ],
@@ -4605,11 +4641,38 @@
       "Track the status and activity of your referrals": [
         "Theo dõi trạng thái và hoạt động của các lời giới thiệu"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Mở khóa 15 GB dung lượng lưu trữ chỉ với ${ config.offerPrice }."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Nâng cấp để nhận ${ activatePmUser } cho địa chỉ email ngắn hơn, dễ nhớ ngoài địa chỉ hiện tại."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Sử dụng hướng dẫn này để tổ chức nhanh chóng được hưởng lợi từ hệ sinh thái quyền riêng tư và mã hóa hàng đầu trong ngành của ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Không thể truy cập ${ boldEmails } nữa."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Quá trình nhập sẽ tạm dừng ở mức 80% dung lượng lưu trữ để dành không gian cho thư mới."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Sẽ chuyển các email cũ sang và kết nối Gmail với ${ MAIL_APP_NAME } để thư mới tự động hiển thị"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Nhập các email cũ, bỏ qua các thư trùng lặp và kết nối với Gmail để thư mới tự động xuất hiện. Có thể hoàn tác việc nhập bất kỳ lúc nào trong cài đặt Easy Switch"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Đã bắt đầu nhập email từ Gmail. Hệ thống sẽ thông báo khi hoàn tất."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Với các danh mục email mới, chỉ những thư quan trọng mới được chuyển đến hộp thư đến chính. Các danh mục hoạt động giống như bộ lọc thư rác. ${ MAIL_APP_NAME } không bao giờ đọc email hoặc chia sẻ dữ liệu."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Đã có địa chỉ Gmail chuyển tiếp đến ${ MAIL_APP_NAME }. Hãy kết nối bên dưới để gửi và nhận email trực tiếp từ ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Đã có các địa chỉ Gmail chuyển tiếp đến ${ MAIL_APP_NAME }. Hãy kết nối một địa chỉ bên dưới để gửi và nhận email trực tiếp từ ${ MAIL_APP_NAME }."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Có thể tùy chỉnh danh sách miền mà tại đó một số chức năng tự động trong phần mở rộng trình duyệt ${ PASS_APP_NAME } (Tự động điền, Tự động đề xuất, Tự động lưu) không nên chạy."
@@ -4619,6 +4682,21 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Có thể nhập sự kiện ở định dạng iCal (tệp ICS). Tệp nên có kích thước tối đa là ${ MAX_IMPORT_FILE_SIZE_STRING } và có tối đa ${ MAX_IMPORT_EVENTS_STRING } sự kiện. Nếu tệp lớn hơn, vui lòng chia nhỏ thành các tệp nhỏ hơn."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Hiện đã có thể gửi email từ ${ BRAND_NAME } bằng địa chỉ này."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Vẫn có thể đăng nhập bằng địa chỉ này và kết nối lại bất kỳ lúc nào."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Sẽ không còn có thể sử dụng ${ address.Email } để nhận và gửi email trong ${ BRAND_NAME }. Ngoài ra, lưu ý rằng thư gửi đến địa chỉ này từ ${ BRAND_NAME } sẽ không còn được mã hóa đầu cuối."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Tài khoản ${ MAIL_APP_NAME } miễn phí có dung lượng lưu trữ giới hạn, vì vậy hệ thống sẽ chỉ nhập ${ newUserStorageText } các thư Gmail gần đây nhất"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Tài khoản ${ MAIL_APP_NAME } miễn phí có dung lượng lưu trữ giới hạn, vì vậy hệ thống sẽ chỉ nhập các email Gmail gần đây nhất."
       ]
     },
     "description": {
@@ -6005,6 +6083,9 @@
       "Address cannot be yours": [
         "Địa chỉ không thể là của bạn"
       ],
+      "Address is already added to your account": [
+        "Địa chỉ đã được thêm vào tài khoản"
+      ],
       "Address primary private key not found": [
         "Không tìm thấy địa chỉ khóa riêng tư chính"
       ],
@@ -6436,6 +6517,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Một số tên nhãn vượt quá giới hạn ký tự tối đa của ${ MAIL_APP_NAME }. Vui lòng tùy chỉnh nhập khẩu để chỉnh sửa các tên này."
+      ],
+      "Something went wrong while converting the address": [
+        "Đã xảy ra lỗi khi chuyển đổi địa chỉ"
+      ],
+      "Something went wrong while creating the address": [
+        "Đã xảy ra lỗi khi tạo địa chỉ"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Đã xảy ra lỗi khi tìm nạp các miền khả dụng"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Đã xảy ra sự cố, vui lòng ${ refresh } để tiếp tục. Nếu vẫn thấy thông báo lỗi này, vui lòng liên hệ với ${ supportTeam } của chúng tôi."
@@ -7262,6 +7352,9 @@
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } kết nối VPN"
       ],
+      "10+ premium features": [
+        "Hơn 10 tính năng cao cấp"
+      ],
       "Access to all countries": [
         "Truy cập vào tất cả các quốc gia"
       ],
@@ -7276,6 +7369,12 @@
       ],
       "Continue": [
         "Tiếp tục"
+      ],
+      "Custom email domain": [
+        "Miền email tùy chỉnh"
+      ],
+      "Email addresses": [
+        "Các địa chỉ email"
       ],
       "Encrypted cloud storage for files, photos and documents": [
         "Lưu trữ đám mây đã mã hóa cho tệp, ảnh và tài liệu"
@@ -7294,6 +7393,9 @@
       ],
       "Secure streaming support": [
         "Hỗ trợ phát trực tuyến bảo mật"
+      ],
+      "Storage": [
+        "Dung lượng lưu trữ"
       ],
       "Torrenting support (P2P)": [
         "Hỗ trợ torrent (P2P)"
@@ -9654,6 +9756,9 @@
       "Include device, location, and IP details": [
         "Bao gồm chi tiết thiết bị, vị trí và IP"
       ],
+      "Included": [
+        "Đã bao gồm"
+      ],
       "Increase your account security by verifying your email address.": [
         "Tăng cường bảo mật tài khoản bằng cách xác minh địa chỉ email."
       ],
@@ -10935,8 +11040,14 @@
       "Unverified email address.": [
         "Địa chỉ email chưa được xác minh."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Nâng cấp bất kỳ lúc nào để chuyển phần còn lại sang"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nâng cấp ngay bây giờ để nhận các tính năng, sản phẩm và dung lượng lưu trữ cao cấp với mức giá đặc biệt"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Nâng cấp hoặc giải phóng dung lượng bất kỳ lúc nào để chuyển phần còn lại sang"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Nâng cấp để thêm địa chỉ @pm.me ngắn hơn vào tài khoản, giúp chia sẻ dễ dàng hơn. Đây là viết tắt của “${ MAIL_APP_NAME } cho tôi” hoặc “Nhắn tin riêng cho tôi”."
@@ -11634,11 +11745,6 @@
         "Chỉ xem"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Đây là cách tổ chức sẽ hiển thị với người dùng. Có thể thay đổi bất cứ lúc nào."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Địa chỉ email không hợp lệ"
@@ -11652,11 +11758,6 @@
     "Input placeholder": {
       "Add label": [
         "Thêm nhãn"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Tên tổ chức là gì?"
       ]
     },
     "invitation status": {
@@ -13212,6 +13313,9 @@
       ],
       "Select Linux platform": [
         "Chọn nền tảng Linux"
+      ],
+      "Select which Gmail address to connect": [
+        "Chọn địa chỉ Gmail muốn kết nối"
       ],
       "Send auto-reply": [
         "Gửi tự động trả lời"
@@ -15744,6 +15848,9 @@
       "Two-factor authentication is not required anymore": [
         "Không còn yêu cầu xác thực hai yếu tố bắt buộc nữa"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Địa chỉ ${ BRAND_NAME } đã sẵn sàng để sử dụng"
+      ],
       "Zoom video conferencing settings have been updated": [
         "Cài đặt hội nghị truyền hình Zoom đã được cập nhật"
       ]
@@ -17290,9 +17397,6 @@
       ],
       "End date": [
         "Ngày kết thúc"
-      ],
-      "Enter name": [
-        "Nhập tên"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -21290,6 +21394,9 @@
       "Are you sure you want to close?": [
         "Chắc chắn muốn đóng không?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Chắc chắn muốn ngắt kết nối địa chỉ này?"
+      ],
       "Are you sure?": [
         "Bạn có chắc không?"
       ],
@@ -21313,6 +21420,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge cho ${ platform }"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Đưa Gmail vào ${ MAIL_APP_NAME }"
       ],
       "Browser extensions": [
         "Phần mở rộng trình duyệt"
@@ -21418,6 +21528,9 @@
       ],
       "Contact us": [
         "Liên hệ"
+      ],
+      "Continue with free storage": [
+        "Tiếp tục với dung lượng lưu trữ miễn phí"
       ],
       "Continue with partial import?": [
         "Tiếp tục nhập một phần?"
@@ -21604,6 +21717,9 @@
       ],
       "Discard changes?": [
         "Hủy bỏ thay đổi?"
+      ],
+      "Disconnected from Gmail": [
+        "Đã ngắt kết nối khỏi Gmail"
       ],
       "Display name and signature": [
         "Tên hiển thị và chữ ký"
@@ -21862,6 +21978,9 @@
       ],
       "Get more from your VPN": [
         "Nhận thêm lợi ích từ VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Nhận thêm dung lượng lưu trữ với ${ MAIL_APP_NAME } Plus"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Tải ứng dụng trên tất cả thiết bị và tận hưởng quyền truy cập an toàn, liền mạch ở bất cứ đâu."
@@ -22313,6 +22432,9 @@
       "Select when you want this notification to be sent": [
         "Chọn khi nào bạn muốn thông báo này được gửi đi"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gửi và nhận Gmail bằng ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "Gửi lời nhắc qua email?"
       ],
@@ -22456,6 +22578,9 @@
       ],
       "Summary": [
         "Tóm tắt"
+      ],
+      "Summer Sale": [
+        "Khuyến mãi mùa hè"
       ],
       "Support ticket closed": [
         "Đã đóng phiếu hỗ trợ"
@@ -22613,9 +22738,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Chào mừng đến với ${ BRAND_NAME } dành cho Doanh nghiệ"
       ],
-      "Welcome to ${ planName }": [
-        "Chào mừng đến với ${ planName }"
-      ],
       "Welcome to your new password manager!": [
         "Chào mừng đến trình quản lý mật khẩu mới!"
       ],
@@ -22630,6 +22752,9 @@
       ],
       "WireGuard configuration": [
         "Cấu hình WireGuard"
+      ],
+      "You are all set": [
+        "Đã thiết lập xong"
       ],
       "You can now create unlimited folders and labels": [
         "Hiện có thể tạo không giới hạn thư mục và nhãn"

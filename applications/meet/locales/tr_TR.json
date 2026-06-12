@@ -101,6 +101,9 @@
       "Done": [
         "Tamam"
       ],
+      "Download": [
+        "İndir"
+      ],
       "Download app": [
         "Uygulamayı indir"
       ],
@@ -1494,14 +1497,23 @@
       "Failed to delete event": [
         "Etkinlik silinemedi"
       ],
+      "Failed to delete recording": [
+        "Kayıt silinemedi"
+      ],
       "Failed to delete room": [
         "Oda silinemedi"
+      ],
+      "Failed to download recording": [
+        "Kayıt indirilemedi"
       ],
       "Failed to edit room name": [
         "Oda adı düzenlenemedi"
       ],
       "Failed to join meeting. Please try again later.": [
         "Görüşmeye katılınamadı. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Failed to load recordings": [
+        "Kayıtlar yüklenemedi"
       ],
       "Failed to lock meeting": [
         "Görüşme kilitlenemedi"
@@ -1647,6 +1659,46 @@
     "fido2: Label": {
       "Security key": [
         "Güvenlik anahtarı"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
       ]
     },
     "Font face option": {
@@ -2052,6 +2104,9 @@
       "Microphone permission denied": [
         "Mikrofona erişme izni verilmedi"
       ],
+      "Mute microphone": [
+        "Mikrofonu sessize al"
+      ],
       "My meetings": [
         "Görüşmelerim"
       ],
@@ -2081,6 +2136,9 @@
       ],
       "No publications": [
         "Herhangi bir yayın yok"
+      ],
+      "No recordings found on this device.": [
+        "Bu aygıtta kayıt bulunamadı."
       ],
       "No remote participants": [
         "Herhangi bir uzak katılımcı yok"
@@ -2148,6 +2206,9 @@
       "Recording": [
         "Kaydediliyor"
       ],
+      "Recording deleted": [
+        "Kayıt silindi"
+      ],
       "Recording in progress": [
         "Kayıt sürüyor"
       ],
@@ -2156,6 +2217,9 @@
       ],
       "Recording will begin and attendees will be notified.": [
         "Kayıt başlatılacak ve katılımcılara bildirim gönderilecek."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Kayıtlar tarayıcınızda yerel olarak saklanır. Saklamak istediklerinizi indirin. Aksi takdirde 30 gün sonra otomatik olarak silinirler."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
@@ -2247,6 +2311,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
       ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Bu kayıt bu aygıttan kalıcı olarak silinecek. Bu işlem geri alınamaz."
+      ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Bu işlem görüşmeyi tüm katılımcılar için sonlandırır ve ekran paylaşımınızı durdurur."
       ],
@@ -2277,14 +2344,8 @@
       "Turn off camera": [
         "Kamerayı kapat"
       ],
-      "Turn off microphone": [
-        "Mikrofonu kapat"
-      ],
       "Turn on camera": [
         "Kamerayı aç"
-      ],
-      "Turn on microphone": [
-        "Mikrofonu aç"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Görüşme ile yeniden bağlantı kurulamadı. Lütfen yeniden katılın ya da görüşmeden ayrılın."
@@ -2294,6 +2355,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "${ unlimitedMeeting } ve ücretli özelliklere erişin"
+      ],
+      "Unmute microphone": [
+        "Mikrofonun sesini aç"
       ],
       "Upgrade to record your meetings locally.": [
         "Görüşmelerinizi yerel olarak kaydetmek için tarifenizi yükseltin."
@@ -2489,6 +2553,9 @@
       ],
       "Last used": [
         "Son kullanılan"
+      ],
+      "Manage recordings": [
+        "Kayıtları yönet"
       ],
       "Meeting ID": [
         "Görüşme kimliği"
@@ -2848,6 +2915,20 @@
         "Doğrulandı"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Date": [
+        "Tarih"
+      ],
+      "Name": [
+        "Ad"
+      ],
+      "Size": [
+        "Boyut"
+      ]
+    },
     "Title": {
       "Account restricted": [
         "Hesap kısıtlandı"
@@ -2902,6 +2983,9 @@
       ],
       "Debug Overlay": [
         "Hata ayıklama katmanı"
+      ],
+      "Delete recording?": [
+        "Kayıt silinsin mi?"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -2999,6 +3083,9 @@
       ],
       "Record this meeting": [
         "Bu görüşmeyi kaydet"
+      ],
+      "Recordings": [
+        "Kayıtlar"
       ],
       "Remote Participants": [
         "Uzak katılımcılar"

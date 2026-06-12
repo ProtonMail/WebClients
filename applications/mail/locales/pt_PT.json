@@ -310,6 +310,9 @@
       "Continue with categories": [
         "Continuar com categorias"
       ],
+      "Continue with Free": [
+        "Continuar com a versão gratuita"
+      ],
       "Continue with Google": [
         "Continuar com o Google"
       ],
@@ -1027,6 +1030,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Or use a different Gmail address": [
+        "Ou utilizar um endereço do Gmail diferente"
+      ],
       "Ordered list": [
         "Lista ordenada"
       ],
@@ -1484,7 +1490,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1596,6 +1603,9 @@
       ],
       "Use this": [
         "Utilizar isto"
+      ],
+      "Use this Gmail address": [
+        "Utilizar este endereço do Gmail"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilize o seu rato para redimensionar a vista. Se está a utilizar o teclado pode utilizar os botões de seta para a esquerda e direita para redimensionar."
@@ -3946,6 +3956,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronize facilmente os ficheiros para a nuvem a partir do seu computador e aceda aos mesmos a partir do seu dispositivo móvel."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Os e-mails enviados para ${ connectedAddressText } serão agora mostrados no ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Incentive o uso da autenticação em dois fatores na sua organização para garantir uma segurança adicional."
       ],
@@ -3998,6 +4011,9 @@
       "No labels": [
         "Sem etiquetas"
       ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Leia, responda e mantenha-se a par do Gmail a partir do ${ MAIL_APP_NAME }"
+      ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envie e receba mensagens do Gmail diretamente no ${ MAIL_APP_NAME }. Ligue o seu endereço em ${ addressesSettingsLink }."
       ],
@@ -4016,12 +4032,18 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique a sincronização e o agendamento com calendários partilhados."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isto pode acontecer se as permissões tiverem sido removidas ou se a sua palavra-passe tiver sido alterada."
+      ],
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "Para ligar um endereço Gmail diferente, remova os endereços Gmail adicionais que reencaminham para ${ BRAND_NAME }."
       ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Para ligar até ${ MAX_SYNC_PAID_USER } endereço Gmail, atualize para o plano ${ planName }.",
         "Para ligar até ${ MAX_SYNC_PAID_USER } endereços Gmail, atualize para o plano ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar a receber e a enviar mensagens do Gmail no ${ BRAND_NAME }, volte a ligar a sua conta."
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Para continuar a receber e enviar mensagens Gmail no ${ BRAND_NAME }, volte a ligar as suas contas."
@@ -4071,8 +4093,17 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Não encontrámos nenhum rastreador conhecido nem URLs de rastreio neste e-mail."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Iremos colocar as importações em pausa aos 80% de armazenamento para reservar espaço para novas mensagens."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importaremos os seus e-mails antigos e ligaremos o seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Iremos importar os seus e-mails antigos, ignorar duplicados e ligar ao seu Gmail para que as novas mensagens apareçam automaticamente. Pode desfazer a importação a qualquer momento nas definições do Easy Switch"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Começámos a importar os seus e-mails do Gmail. Avisá-lo-emos quando estiver concluído."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos vê-lo partir. Se tiver um momento, gostaríamos muito de saber por que motivo pretende cancelar. O seu feedback ajuda-nos a tornar o ${ BRAND_NAME } melhor para todos."
@@ -4088,6 +4119,9 @@
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Já tem um endereço Gmail encaminhado para o ${ MAIL_APP_NAME }. Ligue-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Já tem endereços do Gmail a encaminhar para o ${ MAIL_APP_NAME }. Ligue um abaixo para enviar e receber e-mails diretamente a partir do ${ MAIL_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, divida-o."
@@ -4121,6 +4155,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "A sua conta gratuita do ${ MAIL_APP_NAME }inclui armazenamento limitado, pelo que importaremos apenas ${ newUserStorageText }das suas mensagens Gmail mais recentes"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "A sua conta gratuita do ${ MAIL_APP_NAME } tem armazenamento limitado, pelo que apenas iremos importar os seus e-mails mais recentes do Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "O seu plano suporta ${ MAX_SYNC_FREE_USER } endereço Gmail.",
@@ -4896,6 +4933,15 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Something went wrong while converting the address": [
+        "Ocorreu um erro ao converter o endereço"
+      ],
+      "Something went wrong while creating the address": [
+        "Ocorreu um erro ao criar o endereço"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao obter os domínios disponíveis"
+      ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente mais tarde."
       ],
@@ -5485,6 +5531,9 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Mais de 10 funcionalidades premium"
+      ],
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
@@ -7297,8 +7346,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8271,6 +8319,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Atualize ou limpe espaço a qualquer momento para trazer o resto"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Atualize para ${ plan } para desbloquear"
@@ -11446,6 +11497,9 @@
       ],
       "Trial started": [
         "Avaliação Iniciada"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "O seu endereço do ${ BRAND_NAME } está pronto a usar"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11573,6 +11627,9 @@
     "Onboarding List Placeholder": {
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Transfira os seus e-mails para o ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Traga os seus e-mails existentes para o ${ MAIL_APP_NAME } para poder gerir tudo a partir de uma caixa de entrada privada."
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -14612,6 +14669,9 @@
       "Block sender": [
         "Bloquear remetente"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Traga o seu Gmail para o ${ MAIL_APP_NAME }"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar a subscrição do ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14674,6 +14734,9 @@
       ],
       "Contacts": [
         "Contactos"
+      ],
+      "Continue with free storage": [
+        "Continuar com o armazenamento gratuito"
       ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
@@ -15366,6 +15429,9 @@
       "Summary": [
         "Resumo"
       ],
+      "Summer Sale": [
+        "Saldos de Verão"
+      ],
       "This field cannot be empty": [
         "Este campo não pode estar vazio."
       ],
@@ -15472,6 +15538,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Quando é mais importante utilizar uma VPN?"
+      ],
+      "You are all set": [
+        "Está tudo pronto"
       ],
       "You can now create unlimited folders and labels": [
         "Agora pode criar pastas e etiquetas ilimitadas."
