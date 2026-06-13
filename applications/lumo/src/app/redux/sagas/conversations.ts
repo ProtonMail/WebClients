@@ -392,6 +392,12 @@ export function* refreshConversationFromRemote({
     }
     const cleanRemote = cleanConversation(deserializedRemoteConversation);
     const localConversation: Conversation | undefined = yield select(selectConversationById(localId));
+
+    // Always persist the local->remote id mapping, even when the conversation object itself is
+    // unchanged (equal in Redux/IDB) or dirty. Otherwise the mapping can be missing from IDB after
+    // a reload, which makes pullConversation fail with "Remote ID not found".
+    yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
+
     if (localConversation) {
         const cleanLocal = cleanConversation(localConversation);
         if (isEqual(cleanRemote, cleanLocal)) {
@@ -419,7 +425,6 @@ export function* refreshConversationFromRemote({
 
     // Update locally
     yield put(addConversation(cleanRemote)); // Redux
-    yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
     yield call([dbApi, dbApi.updateConversation], remoteConversation, { dirty: false }); // IDB
 }
 
@@ -433,11 +438,11 @@ export function* pullConversation({
     try {
         const lumoApi: LumoApi = yield getContext('lumoApi');
         const remoteId: RemoteId | undefined = yield select((s: LumoState) => s.idmap.local2remote[type][localId]);
+        const conversation: Conversation | undefined = yield select(selectConversationById(localId));
         if (!remoteId) {
             console.error(`GET ${type} ${localId}: Remote ID not found`);
             return;
         }
-        const conversation: Conversation | undefined = yield select(selectConversationById(localId));
         if (!conversation) {
             console.log(`GET ${type} ${localId}: Cannot GET a conversation that isn't yet pushed to the server`);
             return;

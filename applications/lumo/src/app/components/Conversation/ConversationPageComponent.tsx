@@ -139,6 +139,11 @@ const ConversationPageComponentInner = () => {
             } /* !isGuest */ else {
                 console.log('new conversation effect: persistence.ready check');
 
+                // Wait until the IDB rehydration has completed before pulling.
+                if (!remoteWasSynced) {
+                    return;
+                }
+
                 console.log('new conversation effect: local existence check');
                 const conversationDoesNotExistLocally = remoteWasSynced && conversation === undefined;
                 if (conversationDoesNotExistLocally) {
