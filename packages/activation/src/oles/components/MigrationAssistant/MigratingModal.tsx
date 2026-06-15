@@ -5,6 +5,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { LazyLottie } from '../LazyLottie';
 
@@ -20,16 +21,16 @@ const MigratingModal = ({ variant }: { variant: ModalVariant }) => {
         { title: string; subtitle: string; getAnimationData: () => Promise<{ default: object }> }
     > = {
         migrating: {
-            title: c('BOSS').t`Creating accounts. Going private`,
+            title: c('BOSS').t`Creating accounts`,
             subtitle: c('BOSS')
-                .t`We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.`,
-            getAnimationData: () => import('../../animations/fileTransfer.json'),
+                .t`We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${BRAND_NAME} account.`,
+            getAnimationData: () => import('../../animations/creatingAccounts.json'),
         },
         completing: {
             title: c('BOSS').t`Going private`,
             subtitle: c('BOSS')
                 .t`We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.`,
-            getAnimationData: () => import('../../animations/fileTransfer.json'),
+            getAnimationData: () => import('../../animations/goingPrivate.json'),
         },
     };
 
@@ -42,7 +43,7 @@ const MigratingModal = ({ variant }: { variant: ModalVariant }) => {
             className="rounded-xxl shadow-none bg-transparent"
             rootClassName="oles-migrating-modal"
         >
-            <ModalTwoContent>
+            <ModalTwoContent className='mx-2'>
                 <div className="text-center pt-12 pb-6">
                     <LazyLottie autoPlay getAnimationData={getAnimationData} loop={true} className="px-12" />
                     <h2 className="text-center text-lg text-semibold mt-6 mb-4">
