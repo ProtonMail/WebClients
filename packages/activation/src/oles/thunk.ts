@@ -25,6 +25,7 @@ import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/a
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { authMember, createMemberAddress, updateQuota } from '@proton/shared/lib/api/members';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DEFAULT_CALENDAR } from '@proton/shared/lib/calendar/constants';
@@ -240,8 +241,10 @@ export const createMigrationBatch = createAsyncThunk<
         { importerOrganizationId, domain, providerUsers, selectedUsers, oauthToken, password },
         { dispatch, extra }
     ) => {
-        const errors: CreateMigrationBatchResult['errors'] = [];
         const api = getPersistedApi(extra.api);
+        await api(unlockPasswordChanges());
+
+        const errors: CreateMigrationBatchResult['errors'] = [];
 
         const [organization, members, orgKey, ktUser, ktUserKeys, userSettings] = await Promise.all([
             dispatch(organizationThunk()),
@@ -474,6 +477,9 @@ export const completeMigration = createAsyncThunk<
     { importerOrganizationId: string; providerUsers: ApiImporterOrganizationUser[] },
     ThunkApi<KtState & OrganizationKeyState>
 >('oles/completeMigration', async ({ providerUsers, importerOrganizationId }, { dispatch, extra }) => {
+    const api = getPersistedApi(extra.api);
+    await api(unlockPasswordChanges());
+
     const [members, orgKey] = await Promise.all([dispatch(membersThunk()), dispatch(organizationKeyThunk())]);
 
     if (!orgKey.privateKey) {
@@ -483,8 +489,6 @@ export const completeMigration = createAsyncThunk<
     if (!orgKey.publicKey) {
         throw new Error(c('BOSS').t`Missing organization public key`);
     }
-
-    const api = getPersistedApi(extra.api);
 
     const { keyTransparencyVerify } = createKTVerifier({
         api,
