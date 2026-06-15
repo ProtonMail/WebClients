@@ -21,7 +21,9 @@ export const consumeSessionRecovery = (data: {
     data,
 });
 
-export const updateSessionAccountRecovery = (data: { SessionAccountRecovery: 0 | 1 }) => ({
+export const updateSessionAccountRecovery = (
+    data: { SessionAccountRecovery: 0 | 1 } & { PersistPasswordScope?: boolean }
+) => ({
     url: 'core/v4/settings/sessionaccountrecovery',
     method: 'PUT',
     data,

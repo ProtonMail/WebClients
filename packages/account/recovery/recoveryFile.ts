@@ -19,12 +19,9 @@ import {
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
 
-export const downloadRecoveryFileThunk = (): ThunkAction<
-    Promise<void>,
-    UserState & UserKeysState & UserSettingsState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+export const downloadRecoveryFileThunk = (
+    persistPasswordScope: boolean = false
+): ThunkAction<Promise<void>, UserState & UserKeysState & UserSettingsState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
         const user = await dispatch(userThunk());
         const userKeys = await dispatch(userKeysThunk());
@@ -41,6 +38,7 @@ export const downloadRecoveryFileThunk = (): ThunkAction<
                 setNewRecoverySecret({
                     RecoverySecret: recoverySecret,
                     Signature: signature,
+                    PersistPasswordScope: persistPasswordScope,
                 })
             );
             await exportRecoveryFile({ recoverySecret, userKeys });
