@@ -36,10 +36,12 @@ export const useLumoFlags = () => {
     const lumoSurvey = useFlag('LumoSurveys');
     const memory = useFlag('LumoMeowmory');
     const customAgents = useFlag('LumoCustomAgents');
+    const aiPaperTrail = useFlag('LumoAiPaperTrail');
 
     return {
         memory,
         customAgents,
+        aiPaperTrail,
         imageTools,
         smoothRendering,
         externalTools,
