@@ -52,7 +52,7 @@ const prepareContext = (state: MailState, ctxIdentifier: string) => ({
     bypassFilerLength: state.elements.bypassFilter.length,
 });
 
-export const loggerMiddleware: Middleware<{}, MailState> = (store) => (next) => (action) => {
+export const mailboxActionLogger: Middleware<{}, MailState> = (store) => (next) => (action) => {
     if (!isAction(action) || !mailLogger.isInitialized()) {
         return next(action);
     }
@@ -78,7 +78,7 @@ export const loggerMiddleware: Middleware<{}, MailState> = (store) => (next) => 
         awaitingStaleRetryAfter: after.awaitingStaleRetry,
         elementID: after.elementID,
         messageID: after.messageID,
-        tabTime: performance.now() / 1000,
+        tabTimeSeconds: (performance.now() / 1000).toFixed(2),
     });
 
     return result;
