@@ -1,6 +1,6 @@
 import { type FC, useMemo } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card/Card';
 import type { BadgeType } from '@proton/components/components/badge/Badge';
@@ -10,8 +10,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
 import { type TokenStatus, getTokenStatus } from '@proton/pass/lib/access-token/access-token.utils';
-import { epochHoursFromNow } from '@proton/pass/utils/time/epoch';
-import { epochToDate } from '@proton/pass/utils/time/format';
+import { epochToDate, epochToDateTime } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
 type Derived = {
@@ -43,14 +42,13 @@ const getStatusBadge = (status: TokenStatus): { label: string; type: BadgeType }
 };
 
 const getExpiryLabel = (expireTime: number): string => {
-    const hours = epochHoursFromNow(expireTime);
-    if (hours < 0) {
-        const abs = Math.abs(hours);
-        return c('Info').ngettext(msgid`Expired ${abs} hour ago`, `Expired ${abs} hours ago`, abs);
+    const formattedDate = epochToDateTime(expireTime);
+
+    if (getTokenStatus(expireTime) === 'expired') {
+        return c('Info').t`Expired on ${formattedDate}`;
     }
 
-    if (hours === 0) return c('Info').t`Expires in less than an hour`;
-    return c('Info').ngettext(msgid`Expires in ${hours} hour`, `Expires in ${hours} hours`, hours);
+    return c('Info').t`Expires on ${formattedDate}`;
 };
 
 export const AccessTokenCard: FC<Props> = ({ className, token, onDelete, onManageAccess, onViewActions }) => {
