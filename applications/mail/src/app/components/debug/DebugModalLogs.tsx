@@ -1,6 +1,8 @@
 import type { MouseEvent } from 'react';
 import { useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -36,7 +38,7 @@ export const DebugModalLogs = () => {
 
     const handleCopy = (e: MouseEvent<HTMLButtonElement>, value: string) => {
         textToClipboard(value, e.currentTarget);
-        createNotification({ text: 'Copied to clipboard' });
+        createNotification({ text: c('Info').t`Copied to clipboard` });
     };
 
     const logsSize = logs ? new Blob([logs]).size : 0;
@@ -44,16 +46,16 @@ export const DebugModalLogs = () => {
     return (
         <div className="flex gap-2 items-center">
             <Button size="small" onClick={handleRefreshLog}>
-                Refresh logs
+                {c('Label').t`Refresh logs`}
             </Button>
             <Button size="small" onClick={() => mailLogger.downloadLogs()}>
-                Download Redux logs
+                {c('Label').t`Download logs`}
             </Button>
             <Button size="small" onClick={(e) => handleCopy(e, logs || '')}>
-                Copy
+                {c('Label').t`Copy`}
             </Button>
             <Button size="small" onClick={handleClearLog}>
-                Clear logs
+                {c('Label').t`Clear logs`}
             </Button>
             {logsSize > 0 && <span>{`${humanSize({ bytes: logsSize })}`}</span>}
             {logs && <pre className="text-sm m-0 p-2 bg-weak rounded overflow-auto">{logs}</pre>}
