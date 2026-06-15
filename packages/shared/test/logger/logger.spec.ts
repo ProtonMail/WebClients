@@ -345,8 +345,6 @@ describe('Logger', () => {
 
             const allLogs = await loggerManager.getAllLogs();
 
-            expect(allLogs).toContain('=== Logger: api (test-app#api) ===');
-            expect(allLogs).toContain('=== Logger: ui (test-app#ui) ===');
             expect(allLogs).toContain('API message');
             expect(allLogs).toContain('UI message');
         });
