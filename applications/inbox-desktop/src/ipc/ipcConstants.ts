@@ -22,7 +22,10 @@ export const DESKTOP_FEATURES = {
     ClearAppModal: true,
     SnapSupport: true,
     BugReportLogAttachments: true,
-    PrintDialog: true,
+    /**
+     * @deprecated for clients running Electron 41+.
+     */
+    PrintDialog: false,
     UserLogoutV2: true,
     MailtoBannerPermanentDismiss: true,
     OAuthPopupV2: true,
