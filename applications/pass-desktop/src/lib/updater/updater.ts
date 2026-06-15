@@ -14,7 +14,7 @@ import logger from '../../utils/logger';
 import { isMac, isProdEnv, isWindows } from '../../utils/platform';
 import { calculateUpdateDistribution } from './helpers';
 import { mockDownload } from './mock';
-import { getUpdateStore, initUpdateStore, isUpdatePending, setUpdateStore } from './store';
+import { getUpdateStore, initUpdateStore, isUpdateInProgress, setUpdateStore } from './store';
 
 const SUPPORTED_PLATFORMS = ['darwin', 'win32'];
 export const UPDATE_SOURCE_URL = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`;
@@ -50,7 +50,10 @@ const getFeedURL = (isBeta: boolean) => {
 };
 
 const getLatestRelease = async (session: Session): Promise<MaybeNull<RemoteRelease>> => {
-    const { currentVersion } = getUpdateStore();
+    const { currentVersion, status: previousStatus } = getUpdateStore();
+
+    // a re-check that finds nothing newer must not clobber an already staged update
+    const idleStatus = previousStatus === UpdateStatus.UpdateReady ? UpdateStatus.UpdateReady : UpdateStatus.Idle;
 
     setUpdateStore({ status: UpdateStatus.Checking });
 
@@ -85,7 +88,7 @@ const getLatestRelease = async (session: Session): Promise<MaybeNull<RemoteRelea
     // no update if latest version is not newer
     if (semver(latestRelease.Version) <= semver(currentVersion)) {
         logger.log(`[Update] Latest release is not newer, current=${currentVersion}, latest=${latestRelease.Version}`);
-        setUpdateStore({ status: UpdateStatus.Idle });
+        setUpdateStore({ status: idleStatus });
         return null;
     }
 
@@ -96,7 +99,7 @@ const getLatestRelease = async (session: Session): Promise<MaybeNull<RemoteRelea
         logger.log(
             `[Update] Rollout distribution short-circuit triggered, r=${remoteDistributionPct}, l=${localDistributionPct}, v=${latestRelease.Version}`
         );
-        setUpdateStore({ status: UpdateStatus.Idle });
+        setUpdateStore({ status: idleStatus });
         return null;
     }
 
@@ -110,7 +113,7 @@ const getLatestRelease = async (session: Session): Promise<MaybeNull<RemoteRelea
 
     if (!featureFlags?.some((f) => f.name === PassFeature.PassEnableDesktopAutoUpdate)) {
         logger.log('[Update] Feature flag short-circuit triggered');
-        setUpdateStore({ status: UpdateStatus.Idle });
+        setUpdateStore({ status: idleStatus });
         return null;
     }
 
@@ -171,7 +174,7 @@ const macUpdate = async () => {
 };
 
 export const checkForUpdates = async (session: Session): Promise<boolean> => {
-    if (isUpdatePending()) return false;
+    if (isUpdateInProgress()) return false;
     const latestRelease = await getLatestRelease(session);
     if (latestRelease === null) return false;
     if (!isProdEnv()) {
