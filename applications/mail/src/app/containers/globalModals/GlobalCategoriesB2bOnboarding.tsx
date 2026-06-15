@@ -7,16 +7,14 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useApi from '@proton/components/hooks/useApi';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
-import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
-import { MAILBOX_LABEL_IDS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { useCategoriesToggle } from '@proton/mail/features/categoriesView/useCategoriesToggle';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
-import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { CategoriesOnboardingFlags } from 'proton-mail/components/categoryView/categoriesOnboarding/onboardingInterface';
 
@@ -34,7 +32,7 @@ export const GlobalCategoriesB2bOnboarding = () => {
 
     const { sendEventOnboardingAccept, sendEventOnboardingDismiss } = useCategoriesTelemetry();
 
-    const api = useApi();
+    const { handleChange } = useCategoriesToggle();
     const { update } = useFeature(FeatureCode.CategoryViewB2BOnboardingViewFlags);
 
     const [loading, withLoading] = useLoading();
@@ -54,17 +52,12 @@ export const GlobalCategoriesB2bOnboarding = () => {
             return;
         }
 
-        const promises = [
-            api(updateMailCategoryView(enableCategories)),
-            update(setBit(b2bModalProps.flagValue, CategoriesOnboardingFlags.FULL_DISPLAY)),
-        ];
+        await handleChange({ checked: enableCategories, notification: false });
+        void update(setBit(b2bModalProps.flagValue, CategoriesOnboardingFlags.FULL_DISPLAY));
 
-        await Promise.all(promises);
         modalProps.onClose?.();
-
         if (enableCategories) {
             sendEventOnboardingAccept();
-            window.location.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
         } else {
             sendEventOnboardingDismiss();
         }
