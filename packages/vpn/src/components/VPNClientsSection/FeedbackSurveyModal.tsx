@@ -39,6 +39,9 @@ export const FeedbackSurveyModal = (props: Props) => {
         if (userChoice === 'Other' && !otherReason) {
             return true;
         }
+        if (userChoice === 'Podcast' && !podcastValue) {
+            return true;
+        }
 
         return false;
     };
