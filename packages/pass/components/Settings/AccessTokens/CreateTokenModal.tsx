@@ -8,6 +8,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
@@ -17,6 +19,7 @@ import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-t
 import { createAccessToken } from '@proton/pass/store/actions';
 import { selectWritableVaults } from '@proton/pass/store/selectors';
 import { sortOn } from '@proton/pass/utils/fp/sort';
+import { DAY_IN_MINUTES, HOUR_IN_MINUTES, MONTH_IN_MINUTES, WEEK_IN_MINUTES, YEAR_IN_MINUTES } from '@proton/pass/utils/time/constants';
 
 type Props = {
     onClose: () => void;
@@ -27,13 +30,44 @@ const MAX_NAME_LENGTH = 191;
 const MIN_EXPIRATION_MINUTES = 60;
 const MAX_EXPIRATION_MINUTES = 365 * 24 * 60;
 
+type ExpirationPreset = keyof typeof EXPIRATION_PRESETS;
+const EXPIRATION_PRESETS = {
+    hour: {
+        label: () => c('Label').t`1 hour`,
+        value: HOUR_IN_MINUTES,
+    },
+    day: {
+        label: () => c('Label').t`1 day`,
+        value: DAY_IN_MINUTES,
+    },
+    week: {
+        label: () => c('Label').t`1 week`,
+        value: WEEK_IN_MINUTES,
+    },
+    month: {
+        label: () => c('Label').t`1 month`,
+        value: MONTH_IN_MINUTES,
+    },
+    year: {
+        label: () => c('Label').t`1 year`,
+        value: YEAR_IN_MINUTES,
+    },
+    custom: {
+        label: () => c('Label').t`Custom`,
+        value: 'custom',
+    },
+} as const;
+
+const EXPIRATION_PRESET_OPTIONS = Object.keys(EXPIRATION_PRESETS) as ExpirationPreset[];
+
 export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
     const writableVaults = useSelector(selectWritableVaults);
 
     const vaults = useMemo(() => [...writableVaults].sort(sortOn('createTime', 'ASC')), [writableVaults]);
 
     const [name, setName] = useState('');
-    const [expirationMinutes, setExpirationMinutes] = useState('60');
+    const [expirationPreset, setExpirationPreset] = useState<ExpirationPreset>('hour');
+    const [customExpirationMinutes, setCustomExpirationMinutes] = useState('60');
     const [isAgent, setIsAgent] = useState(false);
     const [selectedShareIds, setSelectedShareIds] = useState<Set<string>>(() => new Set());
     const [nameError, setNameError] = useState('');
@@ -64,14 +98,18 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
             return;
         }
 
-        const minutes = Number(expirationMinutes);
+        const minutes =
+            expirationPreset === 'custom'
+                ? Number(customExpirationMinutes)
+                : EXPIRATION_PRESETS[expirationPreset].value;
+
         if (
             !Number.isFinite(minutes) ||
             !Number.isInteger(minutes) ||
             minutes < MIN_EXPIRATION_MINUTES ||
             minutes > MAX_EXPIRATION_MINUTES
         ) {
-            setMinutesError(c('Error').t`Expiration must be between 60 minutes and 1 year`);
+            setMinutesError(c('Error').t`Expiration must be between 1 hour and 1 year`);
             return;
         }
 
@@ -107,23 +145,41 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                 />
 
                 <InputFieldTwo
-                    id="pat-expiry-minutes"
-                    type="number"
-                    min={MIN_EXPIRATION_MINUTES}
-                    max={MAX_EXPIRATION_MINUTES}
-                    step={1}
-                    label={c('Label').t`Expires in (minutes)`}
-                    hint={c('Info').t`Between 60 (1 hour) and 525600 (1 year)`}
-                    placeholder={c('Placeholder').t`e.g. 60`}
-                    value={expirationMinutes}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                        setExpirationMinutes(e.target.value);
+                    as={SelectTwo<ExpirationPreset>}
+                    id="pat-expiry-preset"
+                    label={c('Label').t`Expires in`}
+                    onValue={(value) => {
+                        setExpirationPreset(value);
                         if (minutesError) setMinutesError('');
                     }}
-                    error={minutesError}
-                    assistContainerClassName={minutesError ? undefined : 'hidden'}
+                    value={expirationPreset}
                     rootClassName="mb-4"
-                />
+                >
+                    {EXPIRATION_PRESET_OPTIONS.map((preset) => (
+                        <Option key={preset} title={EXPIRATION_PRESETS[preset].label()} value={preset} />
+                    ))}
+                </InputFieldTwo>
+
+                {expirationPreset === 'custom' && (
+                    <InputFieldTwo
+                        id="pat-expiry-minutes"
+                        type="number"
+                        min={MIN_EXPIRATION_MINUTES}
+                        max={MAX_EXPIRATION_MINUTES}
+                        step={1}
+                        label={c('Label').t`Custom expiration (minutes)`}
+                        hint={c('Info').t`Between 60 (1 hour) and 525600 (1 year)`}
+                        placeholder={c('Placeholder').t`e.g. 60`}
+                        value={customExpirationMinutes}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                            setCustomExpirationMinutes(e.target.value);
+                            if (minutesError) setMinutesError('');
+                        }}
+                        error={minutesError}
+                        assistContainerClassName={minutesError ? undefined : 'hidden'}
+                        rootClassName="mb-4"
+                    />
+                )}
 
                 <div className="flex items-start justify-space-between gap-4 mb-4">
                     <div className="flex-1">
