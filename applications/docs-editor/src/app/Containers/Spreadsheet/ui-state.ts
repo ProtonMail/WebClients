@@ -574,7 +574,9 @@ export function useProtonSheetsUIState(
       const value = `=${formula}(`
       const cell = state.activeCell
 
-      state.grid.makeEditable?.(state.activeSheetId, cell, value, true)
+      state.grid.makeEditable?.(state.activeSheetId, cell, value, {
+        autoFocus: true,
+      })
       state.grid.setEditorValue?.(value, undefined, state.activeSheetId, cell)
     }),
     link: useEvent(() => view.insertLinkDialog.open()),
