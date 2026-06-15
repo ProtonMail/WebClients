@@ -6,7 +6,12 @@ import { APPS } from '@proton/shared/lib/constants';
 
 window.addEventListener('message', async (message) => {
     try {
-        if (message.data && message.data?.type !== undefined && message.data?.app === APPS.PROTONPASSBROWSEREXTENSION) {
+        if (
+            message.origin === window.location.origin &&
+            message.data &&
+            message.data?.type !== undefined &&
+            message.data?.app === APPS.PROTONPASSBROWSEREXTENSION
+        ) {
             switch (message.data.type) {
                 case WorkerMessageType.ACCOUNT_FORK:
                     return await sendMessage.on(
