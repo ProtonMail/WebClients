@@ -30,6 +30,14 @@
 	--recovery-score-shield-score-text: color-mix(in srgb, var(--recovery-score-accent-color) 55%, var(--text-norm));
 	--recovery-score-shield-score-outline: var(--text-invert);
 
+	path {
+		transition: fill var(--transition-duration) var(--transition-easing);
+	}
+
+	&--color-none {
+		--recovery-score-accent-color: var(--text-hint);
+	}
+
 	&--color-success {
 		--recovery-score-accent-color: var(--signal-success);
 	}

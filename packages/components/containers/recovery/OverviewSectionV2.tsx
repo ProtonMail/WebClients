@@ -7,10 +7,8 @@ import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
 import RecoverDataBanner from './RecoverDataBanner';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';
-import RecoveryScoreBannerV1 from './RecoveryScoreBanner/RecoveryScoreBanner';
-import RecoveryScoreBannerV2 from './RecoveryScoreBanner/RecoveryScoreBannerV2';
+import RecoveryScoreBanner from './RecoveryScoreBanner/RecoveryScoreBanner';
 import SentinelBanner from './SentinelBanner/SentinelBanner';
-import { useRecoveryScoreBannerVariant } from './useRecoveryScoreBannerVariant';
 
 export const OverviewSectionV2 = () => {
     const keyReactivationRequests = useInactiveKeys();
@@ -32,8 +30,6 @@ export const OverviewSectionV2 = () => {
     );
 
     const [{ isSentinelUser }] = useIsSentinelUser();
-    const scoreBannerVariant = useRecoveryScoreBannerVariant();
-    const RecoveryScoreBanner = scoreBannerVariant === 'B1' ? RecoveryScoreBannerV1 : RecoveryScoreBannerV2;
 
     return (
         <div className="flex flex-column gap-8">

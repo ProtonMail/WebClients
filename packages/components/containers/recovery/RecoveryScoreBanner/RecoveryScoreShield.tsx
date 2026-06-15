@@ -10,9 +10,17 @@ export interface RecoveryScoreShieldProps extends Omit<SVGProps<SVGSVGElement>, 
     score: number;
     maxScore: number;
     toneClass: string;
+    loading?: boolean;
 }
 
-export const RecoveryScoreShield = ({ score, maxScore, toneClass, className, ...props }: RecoveryScoreShieldProps) => {
+export const RecoveryScoreShield = ({
+    score,
+    maxScore,
+    toneClass,
+    className,
+    loading,
+    ...props
+}: RecoveryScoreShieldProps) => {
     const badgeNudgeX = score === maxScore ? 4 : 0;
 
     return (
@@ -23,7 +31,11 @@ export const RecoveryScoreShield = ({ score, maxScore, toneClass, className, ...
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             focusable="false"
-            className={clsx('recovery-score-shield user-select-none', `recovery-score-shield--${toneClass}`, className)}
+            className={clsx(
+                'recovery-score-shield user-select-none',
+                `recovery-score-shield--${loading ? 'color-none' : toneClass}`,
+                className
+            )}
             {...props}
         >
             <title>{c('Recovery score').t`Score: ${score} / ${maxScore}`}</title>
@@ -46,43 +58,47 @@ export const RecoveryScoreShield = ({ score, maxScore, toneClass, className, ...
                     strokeOpacity="0.5"
                 />
             </g>
-            <g transform={`translate(${badgeNudgeX} 0)`}>
-                <path
-                    d="M41 20.25H48C52.2802 20.25 55.75 23.7198 55.75 28V29C55.75 33.2802 52.2802 36.75 48 36.75H41C36.7198 36.75 33.25 33.2802 33.25 29V28C33.25 23.7198 36.7198 20.25 41 20.25Z"
-                    fill="url(#paint3_radial_10148_123993)"
-                    fillOpacity="0.9"
-                />
-                <path
-                    d="M41 20.25H48C52.2802 20.25 55.75 23.7198 55.75 28V29C55.75 33.2802 52.2802 36.75 48 36.75H41C36.7198 36.75 33.25 33.2802 33.25 29V28C33.25 23.7198 36.7198 20.25 41 20.25Z"
-                    stroke="url(#paint4_linear_10148_123993)"
-                    strokeWidth="0.5"
-                />
-                <g filter="url(#recovery-shield-score-shadow)">
-                    <path
-                        d="M39.8748 24.8864L37.5311 33.5938H36.2278L38.5716 24.8864H39.8748Z"
-                        fill="var(--recovery-score-shield-badge-text)"
-                    />
-                </g>
-                <g filter="url(#recovery-shield-score-shadow)">
-                    <path
-                        d="M44.5558 24.2727V33H42.9748V25.8111H42.9237L40.8825 27.1151V25.6662L43.0515 24.2727H44.5558ZM48.9975 33.1662C46.8924 33.1662 45.6353 31.5043 45.6353 28.6449C45.6396 25.794 46.9009 24.1534 48.9975 24.1534C51.0941 24.1534 52.3597 25.7983 52.3597 28.6449C52.3597 31.5085 51.1026 33.1705 48.9975 33.1662ZM48.9975 31.8324C50.0884 31.8324 50.766 30.7415 50.766 28.6449C50.7617 26.5653 50.0842 25.4702 48.9975 25.4702C47.9151 25.4702 47.2376 26.5653 47.2333 28.6449C47.229 30.7415 47.9109 31.8324 48.9975 31.8324Z"
-                        fill="var(--recovery-score-shield-badge-text)"
-                    />
-                </g>
-            </g>
-            <text
-                x={28}
-                y={26.5}
-                textAnchor="middle"
-                dominantBaseline="central"
-                fill="var(--recovery-score-shield-score-text)"
-                fontSize={24}
-                fontWeight={500}
-                fontStyle="normal"
-                filter="url(#recovery-shield-score-shadow)"
-            >
-                {score}
-            </text>
+            {!loading && (
+                <>
+                    <g transform={`translate(${badgeNudgeX} 0)`}>
+                        <path
+                            d="M41 20.25H48C52.2802 20.25 55.75 23.7198 55.75 28V29C55.75 33.2802 52.2802 36.75 48 36.75H41C36.7198 36.75 33.25 33.2802 33.25 29V28C33.25 23.7198 36.7198 20.25 41 20.25Z"
+                            fill="url(#paint3_radial_10148_123993)"
+                            fillOpacity="0.9"
+                        />
+                        <path
+                            d="M41 20.25H48C52.2802 20.25 55.75 23.7198 55.75 28V29C55.75 33.2802 52.2802 36.75 48 36.75H41C36.7198 36.75 33.25 33.2802 33.25 29V28C33.25 23.7198 36.7198 20.25 41 20.25Z"
+                            stroke="url(#paint4_linear_10148_123993)"
+                            strokeWidth="0.5"
+                        />
+                        <g filter="url(#recovery-shield-score-shadow)">
+                            <path
+                                d="M39.8748 24.8864L37.5311 33.5938H36.2278L38.5716 24.8864H39.8748Z"
+                                fill="var(--recovery-score-shield-badge-text)"
+                            />
+                        </g>
+                        <g filter="url(#recovery-shield-score-shadow)">
+                            <path
+                                d="M44.5558 24.2727V33H42.9748V25.8111H42.9237L40.8825 27.1151V25.6662L43.0515 24.2727H44.5558ZM48.9975 33.1662C46.8924 33.1662 45.6353 31.5043 45.6353 28.6449C45.6396 25.794 46.9009 24.1534 48.9975 24.1534C51.0941 24.1534 52.3597 25.7983 52.3597 28.6449C52.3597 31.5085 51.1026 33.1705 48.9975 33.1662ZM48.9975 31.8324C50.0884 31.8324 50.766 30.7415 50.766 28.6449C50.7617 26.5653 50.0842 25.4702 48.9975 25.4702C47.9151 25.4702 47.2376 26.5653 47.2333 28.6449C47.229 30.7415 47.9109 31.8324 48.9975 31.8324Z"
+                                fill="var(--recovery-score-shield-badge-text)"
+                            />
+                        </g>
+                    </g>
+                    <text
+                        x={28}
+                        y={26.5}
+                        textAnchor="middle"
+                        dominantBaseline="central"
+                        fill="var(--recovery-score-shield-score-text)"
+                        fontSize={24}
+                        fontWeight={500}
+                        fontStyle="normal"
+                        filter="url(#recovery-shield-score-shadow)"
+                    >
+                        {score}
+                    </text>
+                </>
+            )}
             <defs>
                 <filter
                     id="filter0_d_10148_123993"

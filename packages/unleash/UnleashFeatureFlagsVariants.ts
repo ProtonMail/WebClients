@@ -18,7 +18,6 @@ export const FLAGS_WITH_VARIANT = [
     'OlesM1',
     'Vpn2024AddonsExperiment',
     'MeetSpotlightType',
-    'RecoverySettingsScoreBanner',
 ] satisfies FeatureFlag[];
 
 /**
@@ -43,7 +42,6 @@ export type EnableVpn2024AddonsExperimentVariant =
     | 'meet-addon-only'
     | 'pass-addon-only'
     | 'no-addon';
-export type RecoverySettingsScoreBannerVariant = 'B1' | 'B2';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -74,7 +72,6 @@ type FeatureFlagVariantMap = {
     OlesM1: VariantReturnType<OlesM1Variant>;
     Vpn2024AddonsExperiment: VariantReturnType<EnableVpn2024AddonsExperimentVariant>;
     MeetSpotlightType: VariantReturnType<MeetSpotlightTypeVariant>;
-    RecoverySettingsScoreBanner: VariantReturnType<RecoverySettingsScoreBannerVariant>;
 };
 
 /**
