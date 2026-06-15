@@ -6,6 +6,10 @@ type ImporterContact = {
     error?: string;
 };
 
+type ImporterDrive = {
+    error?: string;
+};
+
 export type ImporterCalendar = {
     source: string;
     description: string;
@@ -21,6 +25,7 @@ export type ImporterData = {
     emails?: { error?: string; fields?: MailImportFields; readonly initialFields?: MailImportFields };
     calendars?: { error?: string; calendars?: ImporterCalendar[]; readonly initialFields?: ImporterCalendar[] };
     contacts?: ImporterContact;
+    drive?: ImporterDrive;
 };
 
 export type MailImportState = {

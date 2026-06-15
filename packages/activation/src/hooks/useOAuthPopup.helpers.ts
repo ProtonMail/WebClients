@@ -18,6 +18,9 @@ export const getEasySwitchFeaturesFromProducts = (importTypes: ImportType[]) => 
             case ImportType.CONTACTS:
                 features.push(EASY_SWITCH_FEATURES.IMPORT_CONTACTS);
                 break;
+            case ImportType.DRIVE:
+                features.push(EASY_SWITCH_FEATURES.IMPORT_DRIVE);
+                break;
             default:
                 break;
         }

@@ -13,6 +13,7 @@ export const getImportProductName = (apiProvider: ApiImportProvider, type: Impor
         [ImportType.MAIL]: c('Import type').t`Mail`,
         [ImportType.CALENDAR]: c('Import type').t`Calendar`,
         [ImportType.CONTACTS]: c('Import type').t`Contacts`,
+        [ImportType.DRIVE]: c('Import type').t`Drive`,
     };
 
     return `${capitalize(provider)} ${importTypeLabels[type]}${isForwardingOnly ? ' (forwarding only)' : ''}`;
@@ -26,5 +27,7 @@ export const getImportIconNameByProduct = (type: ImportType): IconName => {
             return 'calendar-grid';
         case ImportType.CONTACTS:
             return 'users';
+        case ImportType.DRIVE:
+            return 'brand-proton-drive';
     }
 };
