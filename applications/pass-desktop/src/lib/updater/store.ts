@@ -44,5 +44,5 @@ export const initUpdateStore = () => {
     });
 };
 
-export const isUpdatePending = () =>
-    [UpdateStatus.Checking, UpdateStatus.Downloading, UpdateStatus.UpdateReady].includes(getUpdateStore().status);
+export const isUpdateInProgress = () =>
+    [UpdateStatus.Checking, UpdateStatus.Downloading].includes(getUpdateStore().status);
