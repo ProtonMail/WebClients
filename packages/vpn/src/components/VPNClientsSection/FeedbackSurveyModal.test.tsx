@@ -103,4 +103,13 @@ describe('FeedbackSurveyModal', () => {
         });
         expect(onClose).toHaveBeenCalled();
     });
+    it('should disable submit button when Podcast option is selected but there is podcast value selected', async () => {
+        const onClose = vi.fn();
+
+        render(<FeedbackSurveyModal open onClose={onClose} />);
+
+        await userEvent.click(screen.getByText('Podcast'));
+
+        expect(screen.getByText('Submit')).toBeDisabled();
+    });
 });
