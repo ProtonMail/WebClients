@@ -5,6 +5,7 @@ import { ResizeDimensionEditorDialog } from './ResizeDimensionEditorDialog'
 import { SpreadsheetSettingsDialog } from './SpreadsheetSettingsDialog'
 import { CustomCurrencyFormatDialog } from './CustomCurrencyFormatDialog'
 import { CustomNumberFormatDialog } from './CustomNumberFormatDialog/CustomNumberFormatDialog'
+import { CustomDateAndTimeFormatDialog } from './CustomDateAndTimeFormatDialog/CustomDateAndTimeFormatDialog'
 
 export function Dialogs() {
   return (
@@ -16,6 +17,7 @@ export function Dialogs() {
       <SpreadsheetSettingsDialog />
       <CustomCurrencyFormatDialog />
       <CustomNumberFormatDialog />
+      <CustomDateAndTimeFormatDialog />
     </>
   )
 }
