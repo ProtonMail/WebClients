@@ -1492,6 +1492,7 @@ const SingleSignupContainerV2 = ({
                                     };
                                     const userCreationResult = await handleCreateUser({
                                         invite: signupParameters.invite,
+                                        visitorId: signupParameters.visitorId,
                                         cache: tmpCache,
                                         api: silentApi,
                                         hvMode: SignupHumanVerification.DEFERRED,
@@ -1514,6 +1515,7 @@ const SingleSignupContainerV2 = ({
                                 } else {
                                     const result = await handleCreateUser({
                                         invite: signupParameters.invite,
+                                        visitorId: signupParameters.visitorId,
                                         cache,
                                         api: silentApi,
                                         hvMode:
