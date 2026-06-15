@@ -350,6 +350,7 @@ enum LumoFeatureFlag {
     LumoNewMarketingLinks = 'LumoNewMarketingLinks',
     LumoMeowmory = 'LumoMeowmory',
     LumoCustomAgents = 'LumoCustomAgents',
+    LumoAiPaperTrail = 'LumoAiPaperTrail',
 }
 
 export type FeatureFlag =

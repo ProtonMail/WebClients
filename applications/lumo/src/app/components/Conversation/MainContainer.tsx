@@ -2,7 +2,9 @@ import { useCallback, useRef, useState } from 'react';
 
 import { useModalStateObject } from '@proton/components';
 
+import PaperTrailPanel from '../../features/aiPaperTrail/PaperTrailPanel';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -33,6 +35,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const { handleSendMessage } = useConversationActions();
     // const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
+    const { aiPaperTrail } = useLumoFlags();
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
@@ -118,7 +121,23 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             <LumoCatAnimation isGhostMode={isGhostChatMode} />
                             <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
                         </div>
+                        {aiPaperTrail && <PaperTrailPanel />}
+
                         <div className="composer-container md:px-4 w-full relative">
+                            {/* {aiPaperTrail && isEditorEmpty && (
+                                <button
+                                    type="button"
+                                    className="ai-paper-trail-spotlight flex flex-row flex-nowrap items-center gap-2 mb-3 px-4 py-2 rounded-full"
+                                    onClick={() => navigate('/ai-paper-trail')}
+                                >
+                                    <IcMagicWand size={4} className="color-primary shrink-0" />
+                                    <span className="text-sm text-semibold">
+                                        {c('collider_2025:Action').t`See your AI paper trail`}
+                                    </span>
+                                    <IcArrowRight size={4} className="shrink-0" />
+                                </button>
+                            )} */}
+
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}
                                 handleSendMessage={handleSendMessage}
