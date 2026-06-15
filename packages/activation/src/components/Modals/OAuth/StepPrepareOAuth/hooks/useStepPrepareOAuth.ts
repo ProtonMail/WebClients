@@ -40,14 +40,17 @@ const useStepPrepare = () => {
     const emailSelected = products.includes(ImportType.MAIL);
     const contactSelected = products.includes(ImportType.CONTACTS);
     const calendarSelected = products.includes(ImportType.CALENDAR);
+    const driveSelected = products.includes(ImportType.DRIVE);
 
     const emailsHasError = !!importerData.emails?.error;
     const contactsHasError = !!importerData.contacts?.error;
     const calendarsHasError = !!importerData.calendars?.error;
+    const driveHasError = !!importerData.drive?.error;
 
     const [emailChecked, setEmailChecked] = useState(emailSelected && !emailsHasError);
     const [contactChecked, setContactChecked] = useState(contactSelected && !contactsHasError);
     const [calendarChecked, setCalendarChecked] = useState(calendarSelected && !calendarsHasError);
+    const [driveChecked, setDriveChecked] = useState(driveSelected && !driveHasError);
 
     const isLabelMapping = provider === ImportProvider.GOOGLE;
 
@@ -69,6 +72,7 @@ const useStepPrepare = () => {
             emailChecked && ImportType.MAIL,
             contactChecked && ImportType.CONTACTS,
             calendarChecked && ImportType.CALENDAR,
+            driveChecked && ImportType.DRIVE,
         ].filter(isTruthy);
 
         dispatch(submitProducts(products));
@@ -87,12 +91,14 @@ const useStepPrepare = () => {
         setContactChecked,
         calendarChecked,
         setCalendarChecked,
+        driveChecked,
+        setDriveChecked,
         importerData,
         handleCancel,
         handleSubmit,
         emailTitle,
         hasErrors,
-        allCheckboxUnselected: !emailChecked && !contactChecked && !calendarChecked,
+        allCheckboxUnselected: !emailChecked && !contactChecked && !calendarChecked && !driveChecked,
     };
 };
 
