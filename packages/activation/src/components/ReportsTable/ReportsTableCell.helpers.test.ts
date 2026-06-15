@@ -13,6 +13,7 @@ describe('ReportsTableCell.helpers', () => {
             const mail = getImportProductName(provider, ImportType.MAIL);
             const calendar = getImportProductName(provider, ImportType.CALENDAR);
             const contact = getImportProductName(provider, ImportType.CONTACTS);
+            const drive = getImportProductName(provider, ImportType.DRIVE);
             const mailForwarding = getImportProductName(provider, ImportType.MAIL, true);
 
             const providerName = getImportProviderFromApiProvider(provider);
@@ -21,6 +22,7 @@ describe('ReportsTableCell.helpers', () => {
             expect(mail).toStrictEqual(`${capitalizedProvider} Mail`);
             expect(calendar).toStrictEqual(`${capitalizedProvider} Calendar`);
             expect(contact).toStrictEqual(`${capitalizedProvider} Contacts`);
+            expect(drive).toStrictEqual(`${capitalizedProvider} Drive`);
             expect(mailForwarding).toStrictEqual(`${capitalizedProvider} Mail (forwarding only)`);
         });
     });
@@ -29,9 +31,11 @@ describe('ReportsTableCell.helpers', () => {
         const mail = getImportIconNameByProduct(ImportType.MAIL);
         const calendar = getImportIconNameByProduct(ImportType.CALENDAR);
         const contact = getImportIconNameByProduct(ImportType.CONTACTS);
+        const drive = getImportIconNameByProduct(ImportType.DRIVE);
 
         expect(mail).toStrictEqual('envelope');
         expect(calendar).toStrictEqual('calendar-grid');
         expect(contact).toStrictEqual('users');
+        expect(drive).toStrictEqual('brand-proton-drive');
     });
 });

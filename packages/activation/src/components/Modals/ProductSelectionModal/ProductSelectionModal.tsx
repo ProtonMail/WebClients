@@ -23,17 +23,26 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 const importProviders = [ImportProvider.DEFAULT, ImportProvider.GOOGLE, ImportProvider.OUTLOOK, ImportProvider.YAHOO];
 const importProducts = [ImportType.MAIL, ImportType.CONTACTS, ImportType.CALENDAR];
 
-const getDefaultProducts = (provider: ImportProvider, hasCalendar: boolean) => {
+const getIsDriveSelectable = (provider: ImportProvider, isDriveEnabled: boolean) =>
+    isDriveEnabled && provider === ImportProvider.GOOGLE;
+
+const getDefaultProducts = (provider: ImportProvider, hasCalendar: boolean, hasDrive: boolean) => {
     if (provider === ImportProvider.DEFAULT || provider === ImportProvider.YAHOO) {
         return [ImportType.MAIL];
     }
 
-    return [ImportType.MAIL, hasCalendar ? ImportType.CALENDAR : undefined, ImportType.CONTACTS].filter(isTruthy);
+    return [
+        ImportType.MAIL,
+        hasCalendar ? ImportType.CALENDAR : undefined,
+        ImportType.CONTACTS,
+        hasDrive ? ImportType.DRIVE : undefined,
+    ].filter(isTruthy);
 };
 
 interface Props extends ModalProps {
@@ -51,15 +60,21 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
 
     const hasCalendar = !isBYOEAccount && writeableCalendars.length > 0;
 
+    const isDriveFlagEnabled = useFlag('EasySwitchB2CForDriveWeb');
+
     const [selectedProvider, setSelectedProvider] = useState(provider);
-    const [selectedProducts, setSelectedProducts] = useState<ImportType[]>(getDefaultProducts(provider, hasCalendar));
+    const [selectedProducts, setSelectedProducts] = useState<ImportType[]>(
+        getDefaultProducts(provider, hasCalendar, getIsDriveSelectable(provider, isDriveFlagEnabled))
+    );
+
+    const isDriveSelectable = getIsDriveSelectable(selectedProvider, isDriveFlagEnabled);
 
     const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
         useModalState();
     const getOrCreateCalendarAndSettings = useGetOrCreateCalendarAndSettings();
 
     const handleProviderChange = (value: ImportProvider) => {
-        setSelectedProducts(getDefaultProducts(value, hasCalendar));
+        setSelectedProducts(getDefaultProducts(value, hasCalendar, getIsDriveSelectable(value, isDriveFlagEnabled)));
         setSelectedProvider(value);
     };
 
@@ -151,6 +166,16 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
                                             disabledText={getCalendarDisabledText()}
                                         />
                                     </BorderedContainerItem>
+                                    {isDriveSelectable && (
+                                        <BorderedContainerItem>
+                                            <ProductCheckbox
+                                                product={ImportType.DRIVE}
+                                                onToggleProduct={handleSelectProductCheckbox}
+                                                checked={selectedProducts.includes(ImportType.DRIVE)}
+                                                disabledText={disabledProductText}
+                                            />
+                                        </BorderedContainerItem>
+                                    )}
                                 </BorderedContainer>
                             )}
                             {(selectedProvider === ImportProvider.YAHOO ||

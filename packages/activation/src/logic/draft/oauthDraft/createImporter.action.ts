@@ -99,6 +99,10 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
             createImportPayload[ImportType.CONTACTS] = {};
         }
 
+        if (Features.includes(EASY_SWITCH_FEATURES.IMPORT_DRIVE)) {
+            createImportPayload[ImportType.DRIVE] = {};
+        }
+
         const { ImporterID } = await thunkAPI.extra.api(createImport(createImportPayload));
 
         const importsRawData: ImportRawData[] = await Promise.all(
@@ -199,12 +203,21 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                         }
                     }
                 }
+
+                if (product === ImportType.DRIVE) {
+                    // TODO(DRVWEB-5512): Create Drive volume using Drive SDK before starting drive operations.
+
+                    // TODO(DRVBE-1687): Call Drive import data endpoint to get import data/errors.
+                    return { importType: product };
+                }
+
                 return { importType: product };
             })
         );
         const emailData = importsRawData.find((item) => item.importType === ImportType.MAIL);
         const contactData = importsRawData.find((item) => item.importType === ImportType.CONTACTS);
         const calendarData = importsRawData.find((item) => item.importType === ImportType.CALENDAR);
+        const driveData = importsRawData.find((item) => item.importType === ImportType.DRIVE);
 
         const calendarResponse: ImporterCalendar[] | undefined = calendarData?.Calendars?.map(
             (item: APICalendar): ImporterCalendar => {
@@ -239,6 +252,9 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
             calendars: { error: calendarData?.error, calendars: calendarResponse, initialFields: calendarResponse },
             contacts: {
                 error: contactData?.error,
+            },
+            drive: {
+                error: driveData?.error,
             },
         };
     }

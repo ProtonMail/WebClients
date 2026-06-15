@@ -169,6 +169,12 @@ export const getContactsImportData = (importerID: string) => ({
     method: 'GET',
 });
 
+export const getDriveImportData = (importerID: string) => ({
+    // TODO(DRVBE-1687): Implement this endpoint.
+    url: `importer/v1/drive/importers/${importerID}`,
+    method: 'GET',
+});
+
 export const deleteImportReport = (reportID: string, importType: ImportType) => {
     const method = 'delete';
 
@@ -179,6 +185,9 @@ export const deleteImportReport = (reportID: string, importType: ImportType) => 
             return { url: `importer/v1/calendar/importers/reports/${reportID}`, method };
         case ImportType.CONTACTS:
             return { url: `importer/v1/contacts/importers/reports/${reportID}`, method };
+        case ImportType.DRIVE:
+            // TODO(DRVBE-1686): Implement delete drive report route.
+            return { url: `importer/v1/drive/importers/reports/${reportID}`, method };
     }
 };
 

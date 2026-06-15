@@ -71,6 +71,8 @@ describe('StepPrepare test the product display, only selected products should be
         setContactChecked: () => {},
         calendarChecked: true,
         setCalendarChecked: () => {},
+        driveChecked: true,
+        setDriveChecked: () => {},
         importerData: prepareState.mailImport!.importerData!,
         handleCancel: () => {},
         handleSubmit: () => {},
@@ -142,6 +144,8 @@ describe('Render errors on products', () => {
         setContactChecked: () => {},
         calendarChecked: true,
         setCalendarChecked: () => {},
+        driveChecked: true,
+        setDriveChecked: () => {},
         importerData: prepareState.mailImport!.importerData!,
         handleCancel: () => {},
         handleSubmit: () => {},
@@ -172,6 +176,7 @@ describe('Render errors on products', () => {
             emailChecked: false,
             contactChecked: false,
             calendarChecked: false,
+            driveChecked: false,
             allCheckboxUnselected: true,
         };
 

@@ -246,15 +246,18 @@ describe('OAuth url generation', () => {
             const productsMail = [ImportType.MAIL];
             const productsCalendar = [ImportType.CALENDAR];
             const productsContacts = [ImportType.CONTACTS];
-            const productsAll = [...productsMail, ...productsCalendar, ...productsContacts];
+            const productsDrive = [ImportType.DRIVE];
+            const productsAll = [...productsMail, ...productsCalendar, ...productsContacts, ...productsDrive];
 
             expect(getEasySwitchFeaturesFromProducts(productsMail)).toEqual([EASY_SWITCH_FEATURES.IMPORT_MAIL]);
             expect(getEasySwitchFeaturesFromProducts(productsCalendar)).toEqual([EASY_SWITCH_FEATURES.IMPORT_CALENDAR]);
             expect(getEasySwitchFeaturesFromProducts(productsContacts)).toEqual([EASY_SWITCH_FEATURES.IMPORT_CONTACTS]);
+            expect(getEasySwitchFeaturesFromProducts(productsDrive)).toEqual([EASY_SWITCH_FEATURES.IMPORT_DRIVE]);
             expect(getEasySwitchFeaturesFromProducts(productsAll)).toEqual([
                 EASY_SWITCH_FEATURES.IMPORT_MAIL,
                 EASY_SWITCH_FEATURES.IMPORT_CALENDAR,
                 EASY_SWITCH_FEATURES.IMPORT_CONTACTS,
+                EASY_SWITCH_FEATURES.IMPORT_DRIVE,
             ]);
         });
     });
