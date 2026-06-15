@@ -14,6 +14,7 @@ import { useConversationCounts } from '@proton/mail/store/counts/conversationCou
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+// eslint-disable-next-line no-restricted-imports
 import { loggerManager } from '@proton/shared/lib/logger';
 
 import {
