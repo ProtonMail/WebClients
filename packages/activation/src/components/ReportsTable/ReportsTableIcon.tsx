@@ -27,6 +27,7 @@ const productLogos: Partial<Record<ImportType, ReactNode>> = {
         <Logo appName={APPS.PROTONCALENDAR} variant="glyph-only" size={5} className="self-center mr-4" />
     ),
     [ImportType.CONTACTS]: <img src={contactsLogo} alt="" className="self-center mr-4" width={20} />,
+    [ImportType.DRIVE]: <Logo appName={APPS.PROTONDRIVE} variant="glyph-only" size={5} className="self-center mr-4" />,
 };
 
 export const ReportsTableIcon = ({ provider: apiProvider, product }: Props) => {

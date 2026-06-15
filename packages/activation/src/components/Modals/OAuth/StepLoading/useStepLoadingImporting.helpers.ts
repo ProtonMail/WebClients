@@ -230,6 +230,10 @@ export const createImporterTask = async ({
         importPayload.Contacts = {};
     }
 
+    if (products.includes(ImportType.DRIVE)) {
+        importPayload.Drive = {};
+    }
+
     try {
         setIsCreatingImportTask(true);
         await api(startImportTask(importPayload));
