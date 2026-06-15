@@ -1,5 +1,7 @@
 import { type MouseEvent, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -75,29 +77,29 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
 
     const handleCopy = (e: MouseEvent<HTMLButtonElement>, value: string) => {
         textToClipboard(value, e.currentTarget);
-        createNotification({ text: 'Copied to clipboard' });
+        createNotification({ text: c('Info').t`Copied to clipboard` });
     };
 
     const tabs: Tab[] = [
         {
-            title: 'Information',
+            title: c('Label').t`Information`,
             content: (
                 <div className="text-sm">
-                    <InfoRow title="Label ID" value={labelID} />
-                    <InfoRow title="Sort" value={JSON.stringify(sort)} />
-                    <InfoRow title="Filter" value={JSON.stringify(filter)} />
-                    <InfoRow title="URL" value={window.location.href} />
-                    <InfoRow title="Current context" value={currentContext} />
-                    <InfoRow title="Context total" value={ctxTotal} />
-                    <InfoRow title="Context page" value={ctxPage} />
-                    <InfoRow title="Elements in store" value={el.length} />
-                    <InfoRow title="Tab age" value={`${Math.floor(performance.now() / 1000)}s`} />
+                    <InfoRow title={c('Label').t`Label ID`} value={labelID} />
+                    <InfoRow title={c('Label').t`Sort`} value={JSON.stringify(sort)} />
+                    <InfoRow title={c('Label').t`Filter`} value={JSON.stringify(filter)} />
+                    <InfoRow title={c('Label').t`URL`} value={window.location.href} />
+                    <InfoRow title={c('Label').t`Current context`} value={currentContext} />
+                    <InfoRow title={c('Label').t`Context total`} value={ctxTotal} />
+                    <InfoRow title={c('Label').t`Context page`} value={ctxPage} />
+                    <InfoRow title={c('Label').t`Elements in store`} value={el.length} />
+                    <InfoRow title={c('Label').t`Tab age`} value={`${Math.floor(performance.now() / 1000)}s`} />
                 </div>
             ),
         },
-        { title: 'Mail logs', content: <DebugModalLogs /> },
+        { title: c('Label').t`Mail logs`, content: <DebugModalLogs /> },
         {
-            title: 'Store state',
+            title: c('Label').t`Store state`,
             content: (
                 <div className="flex flex-column gap-2">
                     <div className="flex gap-2 items-center">
@@ -113,7 +115,7 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
 
     return (
         <ModalTwo {...rest} onClose={rest.onClose} size="large">
-            <ModalTwoHeader title="Mail debugging information" />
+            <ModalTwoHeader title={c('Label').t`Mail debugging information`} />
             <ModalTwoContent className="h-custom" style={{ '--h-custom': '30rem' }}>
                 <Tabs tabs={tabs} variant="modern" value={index} onChange={setIndex} />
             </ModalTwoContent>
