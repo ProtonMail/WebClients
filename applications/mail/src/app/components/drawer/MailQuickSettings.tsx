@@ -53,6 +53,7 @@ import {
     type MailSettings,
     type UserSettings,
 } from '@proton/shared/lib/interfaces';
+// eslint-disable-next-line no-restricted-imports
 import { loggerManager } from '@proton/shared/lib/logger';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash/useFlag';

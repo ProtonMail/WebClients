@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { loggerManager } from '@proton/shared/lib/logger';
 
 const logger = loggerManager.getLogger('mail');
