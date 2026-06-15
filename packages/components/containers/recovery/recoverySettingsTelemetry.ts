@@ -10,8 +10,6 @@ import { TelemetryMeasurementGroups, TelemetryRecoverySettingsEvents } from '@pr
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 
-import { useRecoveryScoreBannerVariant } from './useRecoveryScoreBannerVariant';
-
 export type RecoverySettingsTelemetryVariant = 'A' | 'B';
 
 const RecoverySettingsTelemetryVariantContext = createContext<RecoverySettingsTelemetryVariant>('A');
@@ -22,7 +20,6 @@ export const RecoverySettingsTelemetryVariantProvider = RecoverySettingsTelemetr
 export const useRecoverySettingsTelemetry = () => {
     const api = useApi();
     const variant = useContext(RecoverySettingsTelemetryVariantContext);
-    const scoreBannerVariant = useRecoveryScoreBannerVariant();
     const store = useStore();
     const { loading: recoveryStateLoading } = useSelector(selectRecoveryState);
     const { loading: securityCheckupLoading } = useSecurityCheckup();
@@ -39,7 +36,7 @@ export const useRecoverySettingsTelemetry = () => {
     const commonDimensions = {
         variant,
         app_name: appName,
-        ...(variant === 'B' && { score_banner_variant: scoreBannerVariant }),
+        ...(variant === 'B' && { score_banner_variant: 'B2' }),
     };
     const loading = recoveryStateLoading || securityCheckupLoading;
 
