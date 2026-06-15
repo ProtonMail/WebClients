@@ -31,7 +31,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 interface Props extends ModalProps {}
 
-const reduxLogger = loggerManager.getLogger('redux');
+const mailLogger = loggerManager.getLogger('mail');
 
 const InfoRow = ({ title, value }: { title: string; value: any }) => (
     <div className="flex flex-nowrap items-baseline py-1 border-bottom border-weak">
@@ -67,7 +67,7 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
 
     useEffect(() => {
         const getReduxLogInfo = async () => {
-            const logs = await reduxLogger.getLogs();
+            const logs = await mailLogger.getLogs();
             setReduxLogs(logs);
 
             const logsize = new Blob([logs]).size;
@@ -92,13 +92,13 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
     const stringData = JSON.stringify(data, null, 2);
 
     const handleClearLog = () => {
-        void reduxLogger.clearLogs();
+        void mailLogger.clearLogs();
         setReduxLogs(undefined);
         setReduxLogSize(undefined);
     };
 
     const handleRefreshLog = async () => {
-        const logs = await reduxLogger.getLogs();
+        const logs = await mailLogger.getLogs();
         setReduxLogs(logs);
 
         const logsize = new Blob([logs]).size;
@@ -136,7 +136,7 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
                     <Button size="small" onClick={handleRefreshLog}>
                         Refresh logs
                     </Button>
-                    <Button size="small" onClick={() => reduxLogger.downloadLogs()}>
+                    <Button size="small" onClick={() => mailLogger.downloadLogs()}>
                         Download Redux logs
                     </Button>
                     <Button size="small" onClick={(e) => handleCopy(e, reduxLogs || '')}>
