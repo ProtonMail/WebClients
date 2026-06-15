@@ -425,6 +425,7 @@ export const InnerSignupContextProvider = ({
                 humanVerificationResult: undefined,
                 inviteData: undefined,
                 invite: undefined,
+                visitorId: undefined,
                 hvMode,
             });
 
