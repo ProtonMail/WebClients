@@ -1,3 +1,4 @@
+// NOTE: This should be removed from the codebase once Inbox Desktop App 1.14+ reaches a significant adoption threshold.
 import { isMac } from '../../helpers/browser';
 import { isElectronMail } from '../../helpers/desktop';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '../ipcHelpers';

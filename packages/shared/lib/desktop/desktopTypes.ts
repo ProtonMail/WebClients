@@ -40,6 +40,9 @@ export type IPCInboxDesktopFeature =
     | 'ClearAppModal'
     | 'SnapSupport'
     | 'BugReportLogAttachments'
+    /**
+     * @deprecated on Desktop clients running Electron 41+
+     */
     | 'PrintDialog'
     | 'UserLogoutV2'
     | 'MailtoBannerPermanentDismiss'
@@ -90,6 +93,9 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'reportTestingError'; payload?: undefined }
     | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' }
     | { type: 'toggleAppCache'; payload: boolean }
+    /**
+     * @deprecated for Desktop Clients with Electron 41+
+     */
     | { type: 'togglePrintDialog'; payload: string }
     | { type: 'userLogoutV2'; payload: string }
     | { type: 'logoutAllUsers'; payload?: undefined }
