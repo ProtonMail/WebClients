@@ -67,3 +67,6 @@ export function getWrappingIcon(wrapping: WrapStrategy | undefined): IconData {
       return Icons.textOverflow
   }
 }
+
+// Forces TS to fully expand the type in IDE hovers, so we see the resolved union instead of the raw conditional-type expression.
+export type ExpandType<T> = T extends infer U ? { [K in keyof U]: U[K] } : never
