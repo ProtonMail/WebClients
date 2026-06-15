@@ -21,12 +21,19 @@ export const toggleQrCodeSignIn = ({
 
 export const toggleSignedInReset = ({
     value,
+    persistPasswordScope = false,
 }: {
     value: boolean;
+    persistPasswordScope?: boolean;
 }): ThunkAction<Promise<void>, UserSettingsState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const newValue = value ? 1 : 0;
-        await extra.api(updateSessionAccountRecovery({ SessionAccountRecovery: newValue }));
+        await extra.api(
+            updateSessionAccountRecovery({
+                SessionAccountRecovery: newValue,
+                PersistPasswordScope: persistPasswordScope,
+            })
+        );
         dispatch(userSettingsActions.update({ UserSettings: { SessionAccountRecovery: newValue } }));
     };
 };

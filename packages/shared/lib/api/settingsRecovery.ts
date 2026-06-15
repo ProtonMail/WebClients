@@ -2,7 +2,7 @@ interface NewRecoverySecretPayload {
     RecoverySecret: string;
     Signature: string;
 }
-export const setNewRecoverySecret = (data: NewRecoverySecretPayload) => ({
+export const setNewRecoverySecret = (data: NewRecoverySecretPayload & { PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/recovery/secret',
     method: 'post',
     data,
