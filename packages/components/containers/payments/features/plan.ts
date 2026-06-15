@@ -58,9 +58,9 @@ import {
     FREE_MAX_PARTICIPANTS,
     PAID_MAX_PARTICIPANTS,
     PAID_PREMIUM_MAX_PARTICIPANTS,
-    PAID_STANDARD_MAX_PARTICIPANTS,
     getMeetAppFeature,
     getMeetBusinessFeatures,
+    getMeetFreeFeatures,
 } from './meet';
 import {
     FREE_PASS_ALIASES,
@@ -525,21 +525,25 @@ export const getMailBusinessPlan = (plan: Plan): ShortPlan => {
 export const getBundleProPlan = ({
     plan,
     prioritizeMeetFeatures,
+    isLegacy = false,
 }: {
     plan: Plan;
     prioritizeMeetFeatures?: boolean;
+    isLegacy?: boolean;
 }): ShortPlan => {
+    const meetFeatures = isLegacy
+        ? getMeetFreeFeatures()
+        : getMeetBusinessFeatures({ maxParticipants: PAID_MAX_PARTICIPANTS });
+
     return {
-        plan: PLANS.BUNDLE_PRO_2024,
+        plan: isLegacy ? PLANS.BUNDLE_PRO : PLANS.BUNDLE_PRO_2024,
         title: plan.Title,
         label: '',
         description: c('new_plans: info')
             .t`All ${BRAND_NAME} business apps and premium features to protect your entire business.`,
         cta: getCTA(plan.Title),
         features: [
-            ...(prioritizeMeetFeatures
-                ? getMeetBusinessFeatures({ maxParticipants: PAID_STANDARD_MAX_PARTICIPANTS })
-                : []),
+            ...(prioritizeMeetFeatures ? meetFeatures : []),
             getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
@@ -841,6 +845,7 @@ export const getShortPlan = (
         case PLANS.BUNDLE:
             return getBundlePlan({ plan: planData, freePlan });
         case PLANS.BUNDLE_PRO:
+            return getBundleProPlan({ plan: planData, prioritizeMeetFeatures, isLegacy: true });
         case PLANS.BUNDLE_PRO_2024:
             return getBundleProPlan({ plan: planData, prioritizeMeetFeatures });
         case PLANS.BUNDLE_BIZ_2025:
