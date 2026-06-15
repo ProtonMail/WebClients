@@ -40,6 +40,8 @@
     --background-weak: #292733;
     --background-strong: #3F3B4C;
     --background-invert: white;
+    --background-light: var(--background-weak);
+
      /* composer background for small screens */
       --background-composer-mobile: #292733;
      /* lumo plus upsell sidebar button background */
