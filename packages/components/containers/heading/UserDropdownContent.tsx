@@ -358,7 +358,7 @@ const UserDropdownContent = () => {
                             <Tooltip
                                 title={
                                     isZendeskAIAgentEnabled
-                                        ? c('Tooltip').t`Instant AI assistance, human expert on hand!`
+                                        ? c('Tooltip').t`Instant assistance with AI and human experts.`
                                         : ''
                                 }
                             >
