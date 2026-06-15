@@ -24,8 +24,9 @@ export const store = new Store<RootStore>({
             s.set('update', { distribution });
         },
         '>=1.38.0': (s) => {
-            const beta = s.get('optInForBeta') === true;
-            const distribution = s.get('update')?.distribution ?? calculateUpdateDistribution();
+            const existing = s.get('update');
+            const beta = existing?.beta ?? s.get('optInForBeta') === true;
+            const distribution = existing?.distribution ?? calculateUpdateDistribution();
             s.set<'update'>('update', {
                 distribution,
                 beta,
