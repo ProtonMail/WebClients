@@ -557,6 +557,12 @@ export function* refreshFilledAttachmentFromRemote({
     }
     const cleanRemote = cleanAttachment(deserializedRemoteAttachment);
     const localAttachment: Attachment | undefined = yield select(selectAttachmentById(localId));
+
+    // Always persist the local->remote id mapping, even when the attachment object itself is
+    // unchanged (equal in Redux/IDB) or dirty. Otherwise the mapping can be missing from IDB after
+    // a reload, which makes subsequent remote fetches fail with "Remote ID not found".
+    yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
+
     if (localAttachment) {
         const cleanLocal = cleanAttachment(localAttachment);
         if (isEqual(cleanRemote, cleanLocal)) {
@@ -584,7 +590,6 @@ export function* refreshFilledAttachmentFromRemote({
 
     // Update locally
     yield put(addAttachment(cleanRemote)); // Redux
-    yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
     yield call([dbApi, dbApi.updateAttachment], remoteAttachment, { dirty: false }); // IDB
     yield put(indexAttachmentRequest(cleanRemote)); // Index
 }
