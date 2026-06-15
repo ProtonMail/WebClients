@@ -37,7 +37,6 @@ import metrics from "../utils/metrics";
 import telemetry from "../utils/telemetry";
 import { toggleAppCache } from "../utils/appCache";
 import { getLogs } from "../utils/log/getLogsIPC";
-import { showPrintDialog } from "../utils/printing/print";
 import { handleLogoutIPC } from "../utils/logout/logout";
 import { profiler } from "../utils/profiler/profiler";
 import { startOAuthSession, clearOAuthSession } from "../utils/oauthProcess";
@@ -277,9 +276,6 @@ export const handleIPCCalls = () => {
                     break;
                 case "toggleAppCache":
                     toggleAppCache({ enabled: payload });
-                    break;
-                case "togglePrintDialog":
-                    showPrintDialog(payload);
                     break;
                 default:
                     ipcLogger.error(`unknown message type: ${type}`);

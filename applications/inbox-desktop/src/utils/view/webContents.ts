@@ -38,7 +38,6 @@ import {
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, rendererLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
-import { PRINT_DATA_URL_PREFIX } from "../printing/print";
 import { isDynamicOAuthURL, isOAuthWindow, registerOAuthWindow, unregisterOAuthWindow } from "../oauthProcess";
 import { sentryReport } from "../sentryReport";
 import { enableAppSwitcherMenuItems } from "../menus/menuApplication";
@@ -64,9 +63,7 @@ export function handleWebContents(contents: WebContents) {
     };
 
     contents.on("did-navigate", async (_ev, url) => {
-        if (url.startsWith(PRINT_DATA_URL_PREFIX))
-            logger().info("did-navigate", `data:text/html (${url.length} bytes)`);
-        else logger().info("did-navigate", url);
+        logger().info("did-navigate", url);
 
         updateViewURL(contents, url);
 
