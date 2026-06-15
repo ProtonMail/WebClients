@@ -231,15 +231,17 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
 
     useEffect(() => {
         void (async () => {
-            if (!model.domain) {
+            if (!model.domain?.ID) {
                 model.update({ domainRegistrarId: undefined });
                 return;
             }
 
-            const { RegistrarID } = await api<DomainRegistrar>(getDomainRegistrar(model.domain.ID));
-            model.update({ domainRegistrarId: RegistrarID ?? undefined });
+            const registrarResult = await api<DomainRegistrar>(getDomainRegistrar(model.domain.ID)).catch(noop);
+            // API response can be null
+            const domainRegistrarId = registrarResult?.RegistrarID ?? undefined;
+            model.update({ domainRegistrarId });
         })();
-    }, [model.domain]);
+    }, [model.domain?.ID]);
 
     const stepConfigs: Record<StepId, StepConfig> = {
         'configure-migration': {
