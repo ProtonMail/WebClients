@@ -326,9 +326,45 @@ describe('Electron updater', () => {
             expect(getUpdateStore().status).toBe(UpdateStatus.UpdateReady);
         });
 
-        it('should skip check if update already downloaded', async () => {
-            // Updated downloaded but not yet installed
+        it('should re-check and supersede a staged update when a newer one is available', async () => {
+            // Download staged but not yet installed: a re-check (eg. after toggling beta) must still run
             store.set('update', { status: UpdateStatus.UpdateReady });
+            (autoUpdater.checkForUpdates as jest.Mock).mockImplementation(() => {
+                setUpdateStore({ status: UpdateStatus.UpdateReady });
+            });
+
+            const update = await check([
+                {
+                    Version: '1.1.0',
+                    RolloutPercentage: 1.0,
+                    CategoryName: 'Stable',
+                    File: [],
+                },
+            ]);
+
+            expect(update).toBe(true);
+            expect(autoUpdater.checkForUpdates).toHaveBeenCalled();
+        });
+
+        it('should keep the staged update when a re-check finds nothing newer', async () => {
+            store.set('update', { status: UpdateStatus.UpdateReady });
+
+            const update = await check([
+                {
+                    Version: '1.0.0',
+                    RolloutPercentage: 1.0,
+                    CategoryName: 'Stable',
+                    File: [],
+                },
+            ]);
+
+            expect(update).toBe(false);
+            expect(getUpdateStore().status).toBe(UpdateStatus.UpdateReady);
+            expect(autoUpdater.checkForUpdates).not.toHaveBeenCalled();
+        });
+
+        it('should skip check while a download is in progress', async () => {
+            store.set('update', { status: UpdateStatus.Downloading });
 
             const update = await check([
                 {
