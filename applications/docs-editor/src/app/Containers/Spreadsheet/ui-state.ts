@@ -194,6 +194,7 @@ export function useProtonSheetsUIState(
   const spreadsheetSettingsDialogStore = Ariakit.useDialogStore()
   const customCurrencyFormatDialogStore = Ariakit.useDialogStore()
   const customNumberFormatDialogStore = Ariakit.useDialogStore()
+  const customDateAndTimeFormatDialogStore = Ariakit.useDialogStore()
 
   const view = {
     formulaBar: {
@@ -237,6 +238,9 @@ export function useProtonSheetsUIState(
     },
     customNumberFormatDialog: {
       store: customNumberFormatDialogStore,
+    },
+    customDateAndTimeFormatDialog: {
+      store: customDateAndTimeFormatDialogStore,
     },
     deleteSheetConfirmation: {
       sheetId: deleteSheetId,
