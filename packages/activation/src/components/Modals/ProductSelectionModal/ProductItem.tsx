@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ImportType } from '@proton/activation/src/interface';
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
@@ -19,6 +20,10 @@ const productMap = {
     [ImportType.CONTACTS]: {
         getLabel: () => c('Label').t`Contacts`,
         icon: <IcUsers className="shrink-0" />,
+    },
+    [ImportType.DRIVE]: {
+        getLabel: () => c('Label').t`Drive`,
+        icon: <IcBrandProtonDrive className="shrink-0" />,
     },
 };
 

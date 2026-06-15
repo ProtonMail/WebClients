@@ -76,6 +76,7 @@ export enum CommonFeatureFlag {
     PasswordReminders = 'PasswordReminders',
     MeetSpotlightType = 'MeetSpotlightType',
     DisablePostSubscriptionB2BOnboarding = 'DisablePostSubscriptionB2BOnboarding',
+    EasySwitchB2CForDriveWeb = 'EasySwitchB2CForDriveWeb',
 }
 
 enum AccountFlag {

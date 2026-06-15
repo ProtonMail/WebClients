@@ -26,7 +26,7 @@ export enum ImportType {
     MAIL = 'Mail',
     CALENDAR = 'Calendar',
     CONTACTS = 'Contacts',
-    // DRIVE = 'Drive',
+    DRIVE = 'Drive',
 }
 
 export interface CreateImportPayload {
@@ -43,6 +43,7 @@ export interface CreateImportPayload {
     };
     [ImportType.CALENDAR]?: {};
     [ImportType.CONTACTS]?: {};
+    [ImportType.DRIVE]?: {};
 }
 
 export interface LaunchImportPayload {
@@ -50,6 +51,7 @@ export interface LaunchImportPayload {
     [ImportType.MAIL]?: MailImporterPayload;
     [ImportType.CALENDAR]?: CalendarImporterPayload;
     [ImportType.CONTACTS]?: ContactsImporterPayload;
+    [ImportType.DRIVE]?: DriveImporterPayload;
 }
 
 /* Token */
@@ -184,8 +186,10 @@ export interface ImportedCalendar {
 }
 
 /* Contacts Specific */
-
 export interface ContactsImporterPayload {}
+
+/* Drive Specific */
+export interface DriveImporterPayload {}
 
 /* Imports and Reports from Server */
 
@@ -257,6 +261,7 @@ export enum EASY_SWITCH_FEATURES {
     IMPORT_MAIL = 'import_mail',
     IMPORT_CALENDAR = 'import_calendar',
     IMPORT_CONTACTS = 'import_contacts',
+    IMPORT_DRIVE = 'import_drive',
     MANAGE_MEETINGS = 'manage_meetings',
     BYOE = 'byoe',
     OLES = 'oles',
