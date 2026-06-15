@@ -9,6 +9,7 @@ import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo_short.sv
 
 import { ImportProvider, MailImportGmailCategories, OAUTH_PROVIDER, TIME_PERIOD } from './interface';
 
+// Outlook oauth scopes.
 export const O_OAUTH_SCOPE_DEFAULT = ['email', 'openid', 'User.Read', 'offline_access'];
 export const O_OAUTH_SCOPE_MAIL = ['Mail.read'];
 export const O_OAUTH_SCOPE_CONTACTS = ['Contacts.read'];

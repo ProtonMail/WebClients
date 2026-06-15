@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 import StepPrepareDisabledCheckbox from '../StepPrepareOAuth/StepPrepareOAuthDisabledCheckbox';
 
 interface Props {
-    id: 'mail' | 'contact' | 'calendar';
+    id: 'mail' | 'contact' | 'calendar' | 'drive';
     label: string;
     disabled?: boolean;
     value: boolean;
