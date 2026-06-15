@@ -78,6 +78,7 @@
   --background-weak: #292733;
   --background-strong: #3f3b4c;
   --background-invert: white;
+  --background-light: var(--background-weak);
   --background-composer-mobile: #292733;
   --background-upsell-button: #292733;
   --background-upsell-toggle: rgba(91, 87, 107, 0.6);
