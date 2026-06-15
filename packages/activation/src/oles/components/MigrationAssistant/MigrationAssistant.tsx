@@ -13,13 +13,11 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { isMemberAddon } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
@@ -48,7 +46,6 @@ const getMigrationStartedText = (n: number) =>
     c('BOSS').ngettext(msgid`Migration started for ${n} user`, `Migration started for ${n} users`, n);
 
 const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
-    const api = useApi();
     const { createNotification } = useNotifications();
     const [organization] = useOrganization();
     const [members] = useMembers();
@@ -100,8 +97,6 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
         }
 
         try {
-            await api(unlockPasswordChanges());
-
             setMigrating(true);
 
             let { joiningLink } = model;
