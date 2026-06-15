@@ -1,7 +1,7 @@
+import { type AesGcmCryptoKey, decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import log, { type Logger as LogLevelLogger } from 'loglevel';
 
-import { type AesGcmCryptoKey, decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { DAY } from '@proton/shared/lib/constants';
 
 import {
@@ -519,8 +519,9 @@ export class Logger {
                             ).then(uint8ArrayToUtf8String)
                         )
                     );
-                    const argsStr = decryptedArgs.length > 0 ? ' ' + decryptedArgs.join(' ') : '';
-                    return `[${timestamp}] ${level}: ${message}${argsStr}`;
+
+                    const argsStr = decryptedArgs.length > 0 ? `${message} ${decryptedArgs.join(' ')}` : message;
+                    return `${timestamp} ${level} [${this.loggerName}]: ${argsStr}`;
                 })
             );
             return serializedLogs.join('\n');
@@ -625,7 +626,7 @@ export class Logger {
         try {
             const a = document.createElement('a');
             a.href = url;
-            a.download = filename || `${this.loggerName}-logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
+            a.download = filename || `${this.loggerName}-logs-${new Date().toISOString().replace(/[:.]/g, '-')}.log`;
             a.style.display = 'none';
             document.body.appendChild(a);
             a.click();
@@ -820,9 +821,7 @@ class LoggerManager {
             if (logger.isInitialized()) {
                 const logs = await logger.getLogs();
                 if (logs.trim()) {
-                    allLogs.push(
-                        `=== Logger: ${logger.getName()} (${logger.getEncryptionContextString()}) ===\n${logs}`
-                    );
+                    allLogs.push(logs);
                 }
             }
         }
@@ -851,9 +850,7 @@ class LoggerManager {
             if (logger.isInitialized()) {
                 const logs = await logger.getCachedLogs();
                 if (logs.trim()) {
-                    allLogs.push(
-                        `=== Logger: ${logger.getName()} (${logger.getEncryptionContextString()}) ===\n${logs}`
-                    );
+                    allLogs.push(logs);
                 }
             }
         }
@@ -884,7 +881,7 @@ class LoggerManager {
         try {
             const a = document.createElement('a');
             a.href = url;
-            a.download = filename || `all-logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
+            a.download = filename || `all-logs-${new Date().toISOString().replace(/[:.]/g, '-')}.log`;
             a.style.display = 'none';
             document.body.appendChild(a);
             a.click();
