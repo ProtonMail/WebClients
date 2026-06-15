@@ -171,8 +171,9 @@ const BreachAlertsSecurityCenter = () => {
 
     // translator: this learn more link is at the end of several sentences (all the same structure), like: Get notified if your password or other data was leaked from a third-party service. <Learn more>
     const learnMoreLink = (
-        <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} className="inline-block">{c('Link')
-            .t`Learn more`}</Href>
+        <Href key="learn-more-link" href={getKnowledgeBaseUrl('/dark-web-monitoring')} className="inline-block">{c(
+            'Link'
+        ).t`Learn more`}</Href>
     );
 
     return (
