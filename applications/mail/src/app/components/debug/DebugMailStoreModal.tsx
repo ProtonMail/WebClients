@@ -1,4 +1,4 @@
-import { type MouseEvent, useEffect, useState } from 'react';
+import { type MouseEvent, useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -13,9 +13,6 @@ import { useConversationCounts } from '@proton/mail/store/counts/conversationCou
 // eslint-disable-next-line no-restricted-imports
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
-// eslint-disable-next-line no-restricted-imports
-import { loggerManager } from '@proton/shared/lib/logger';
 
 import {
     contextPages,
@@ -30,9 +27,9 @@ import {
 } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-interface Props extends ModalProps {}
+import { DebugModalLogs } from './DebugModalLogs';
 
-const mailLogger = loggerManager.getLogger('mail');
+interface Props extends ModalProps {}
 
 const InfoRow = ({ title, value }: { title: string; value: any }) => (
     <div className="flex flex-nowrap items-baseline py-1 border-bottom border-weak">
@@ -63,22 +60,6 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
     const { createNotification } = useNotifications();
 
     const [index, setIndex] = useState(0);
-    const [reduxLogs, setReduxLogs] = useState<string>();
-    const [reduxLogSize, setReduxLogSize] = useState<number>();
-
-    useEffect(() => {
-        const getReduxLogInfo = async () => {
-            const logs = await mailLogger.getLogs();
-            setReduxLogs(logs);
-
-            const logsize = new Blob([logs]).size;
-            if (logsize > 0) {
-                setReduxLogSize(logsize);
-            }
-        };
-
-        void getReduxLogInfo();
-    }, []);
 
     const data = {
         params,
@@ -91,22 +72,6 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
     };
 
     const stringData = JSON.stringify(data, null, 2);
-
-    const handleClearLog = () => {
-        void mailLogger.clearLogs();
-        setReduxLogs(undefined);
-        setReduxLogSize(undefined);
-    };
-
-    const handleRefreshLog = async () => {
-        const logs = await mailLogger.getLogs();
-        setReduxLogs(logs);
-
-        const logsize = new Blob([logs]).size;
-        if (logsize > 0) {
-            setReduxLogSize(logsize);
-        }
-    };
 
     const handleCopy = (e: MouseEvent<HTMLButtonElement>, value: string) => {
         textToClipboard(value, e.currentTarget);
@@ -130,27 +95,7 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
                 </div>
             ),
         },
-        {
-            title: 'Redux logs',
-            content: (
-                <div className="flex gap-2 items-center">
-                    <Button size="small" onClick={handleRefreshLog}>
-                        Refresh logs
-                    </Button>
-                    <Button size="small" onClick={() => mailLogger.downloadLogs()}>
-                        Download Redux logs
-                    </Button>
-                    <Button size="small" onClick={(e) => handleCopy(e, reduxLogs || '')}>
-                        Copy
-                    </Button>
-                    <Button size="small" onClick={handleClearLog}>
-                        Clear logs
-                    </Button>
-                    {reduxLogSize && <span>{`${humanSize({ bytes: reduxLogSize, unit: 'KB' })}`}</span>}
-                    {reduxLogs && <pre className="text-sm m-0 p-2 bg-weak rounded overflow-auto">{reduxLogs}</pre>}
-                </div>
-            ),
-        },
+        { title: 'Mail logs', content: <DebugModalLogs /> },
         {
             title: 'Store state',
             content: (
