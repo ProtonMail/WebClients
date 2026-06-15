@@ -7,11 +7,13 @@ export const RecoveryScoreBar = ({
     maxScore,
     scoreTone,
     style,
+    loading,
 }: {
     score: number;
     maxScore: number;
     scoreTone: RecoveryScoreTone;
     style?: React.CSSProperties;
+    loading?: boolean;
 }) => {
     return (
         <div className="mb-3 flex gap-1 h-custom" style={{ '--h-custom': '0.1875rem', ...style }}>
@@ -19,8 +21,8 @@ export const RecoveryScoreBar = ({
                 <div
                     key={index}
                     className={clsx(
-                        'h-full flex-1 rounded-full',
-                        index < score ? SCORE_TONE_BG_CLASS[scoreTone] : 'bg-strong'
+                        'h-full flex-1 rounded-full transition-all',
+                        index < score && !loading ? SCORE_TONE_BG_CLASS[scoreTone] : 'bg-strong'
                     )}
                 />
             ))}
