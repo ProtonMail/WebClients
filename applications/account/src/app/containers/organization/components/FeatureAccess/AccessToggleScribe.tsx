@@ -4,13 +4,15 @@ import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { SUBSCRIPTION_STEPS, SettingsLink, useApi, useNotifications, useSubscriptionModal } from '@proton/components';
+import { getWritingAssistantTitle } from '@proton/components/helpers/assistant';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
+import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { AccessToggle } from './AccessToggle';
@@ -64,6 +66,7 @@ export const AccessToggleScribe = () => {
     const { createNotification } = useNotifications();
 
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
+    const scribeToLumo = useFlag('ScribeToLumo');
     const { paymentsEnabled } = useAssistantFeatureEnabled();
 
     const [scribeLoading, withScribeLoading] = useLoading();
@@ -89,8 +92,14 @@ export const AccessToggleScribe = () => {
     return (
         <AccessToggle
             id="scribe-toggle"
-            icon={<IcPenSparks className="color-weak" size={6} />}
-            title={c('Title').t`${BRAND_NAME} Scribe writing assistant`}
+            icon={
+                scribeToLumo ? (
+                    <img src={lumoIcon} alt="" width={24} height={24} />
+                ) : (
+                    <IcPenSparks className="color-weak" size={6} />
+                )
+            }
+            title={getWritingAssistantTitle(scribeToLumo)}
             checked={!!organization?.Settings.ShowScribeWritingAssistant}
             loading={scribeLoading}
             onChange={() => withScribeLoading(handleToggleScribe())}
