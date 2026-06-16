@@ -1401,8 +1401,8 @@
       "Save": [
         "Salvare"
       ],
-      "Save & exit": [
-        "Salvare și ieșire"
+      "Save & finish": [
+        "Salvare și finalizare"
       ],
       "Save address": [
         "Salvare adresă"
@@ -3004,6 +3004,9 @@
       "Configure your domain": [
         "Configurați-vă domeniul"
       ],
+      "Confirm": [
+        "Confirmare"
+      ],
       "Contact your administrator to start a migration.": [
         "Contactați-vă administratorul pentru a începe o migrare."
       ],
@@ -3012,9 +3015,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Copiați codul de mai jos și inserați-l în secțiunea DNS a gazdei domeniului."
-      ],
-      "Creating accounts. Going private": [
-        "Se creează conturile. Se confidențializează."
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
@@ -3066,6 +3066,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Obțineți ajutor și sfaturi utile de la alți furnizori de domenii ${ here }"
+      ],
+      "Going private": [
+        "Privatizare"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicația Google Marketplace pentru a copia datele în ${ BRAND_NAME }"
@@ -3294,8 +3297,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Am observat că unii utilizatori nu și-au revendicat conturile ${ BRAND_NAME }."
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Se creează conturile și se importă datele. Fiecare e-mail, fiecare eveniment vă aparține doar dumneavoastră. Vizibil doar pentru echipa proprie. Nu pentru noi, nu pentru nimeni altcineva."
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Activăm criptarea bilaterală pentru toată lumea. Fiecare mesaj, fiecare eveniment vă aparține. Vizibil doar pentru echipa proprie. Nu pentru noi, nu pentru nimeni altcineva."
       ],
       "What are you migrating?": [
         "Ce migrați?"
@@ -7346,6 +7349,9 @@
       ],
       "Invalid private key file": [
         "Fișier cheie privată nevalid."
+      ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Cod de resetare nevalid. Actualizați pagina și reîncercați."
       ],
       "Invalid Sieve code": [
         "Cod Sieve nevalid."
@@ -12220,6 +12226,9 @@
       "Request a phone call": [
         "Solicitați un apel telefonic"
       ],
+      "Required to complete the migration": [
+        "Necesar pentru finalizarea migrării"
+      ],
       "Resend verification email": [
         "Retrimitere e-mail de verificare"
       ],
@@ -14608,6 +14617,9 @@
       "Calendar": [
         "Calendar"
       ],
+      "Calendars": [
+        "Calendare"
+      ],
       "Capitalize words": [
         "Cuvinte cu majuscule"
       ],
@@ -14885,6 +14897,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail cu domeniu @companiamea.com"
+      ],
+      "Emails": [
+        "Mesaje"
       ],
       "Emails (all messages)": [
         "Mesaje (toate mesajele)"
@@ -20802,17 +20817,8 @@
       "${ score } / ${ maxScore } completed": [
         "${ score }/${ maxScore } finalizat"
       ],
-      "Account protection": [
-        "Protecție cont"
-      ],
       "Add more options for stronger protection": [
         "Adăugați mai multe opțiuni pentru o protecție mai puternică"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Adăugați mai multe opțiuni pentru a evita blocarea accesului la cont."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Minunat. Mențineți opțiunile actualizate pentru o protecție mai puternică."
       ],
       "Check your access to your recovery options": [
         "Verificați accesul la opțiunile de recuperare"
@@ -20822,12 +20828,6 @@
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "Nu vă blocați accesul la contul ${ BRAND_NAME }"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Un început bun. Adăugați mai multe opțiuni pentru o protecție mai puternică."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Grozav. Adăugați mai multe opțiuni pentru o protecție mai puternică."
       ],
       "How you increased your account protection": [
         "Cum v-ați sporit protecția contului"
@@ -20858,9 +20858,6 @@
       ],
       "Take precautions to avoid losing access": [
         "Luați măsuri de precauție pentru a evita pierderea accesului"
-      ],
-      "Unprotected": [
-        "Neprotejat"
       ],
       "Weak": [
         "Slabă"
@@ -27264,9 +27261,6 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Include e-mail profesional la @domeniulmeu.com, stocare în cloud cu editare colaborativă a documentelor, planificare și videoconferințe, gestionarea parolelor, o aplicație securizată ${ VPN_SHORT_APP_NAME } și multe altele."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistență instantanee prin IA, expert uman la îndemână!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Membrii care nu folosesc A2F vor primi un e-mail prin care li se va cere să îl activeze cât mai curând posibil. Utilizatorii cu autentificare unică nu vor primi acest mesajul."
