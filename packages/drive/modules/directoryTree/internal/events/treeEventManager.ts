@@ -17,7 +17,6 @@ export class TreeEventManager {
     private expandedSections: Set<Section> = new Set();
     private expandedTreeEventScopeIds: Set<string> = new Set();
 
-    private isDriveSubscribed = false;
     private subscribedTreeEventScopeIds = new Set<string>();
     private unsubBusDriver: (() => void) | null = null;
 
@@ -69,16 +68,7 @@ export class TreeEventManager {
     }
 
     private reconcile() {
-        const wantShared = this.expandedSections.has('sharedWithMe');
         const desiredScopes = new Set(this.expandedTreeEventScopeIds);
-
-        if (wantShared && !this.isDriveSubscribed) {
-            this.isDriveSubscribed = true;
-            void getBusDriver().subscribeSdkDriveEvents(this.context);
-        } else if (!wantShared && this.isDriveSubscribed) {
-            this.isDriveSubscribed = false;
-            void getBusDriver().unsubscribeSdkDriveEvents(this.context);
-        }
 
         for (const scope of desiredScopes) {
             if (!this.subscribedTreeEventScopeIds.has(scope)) {

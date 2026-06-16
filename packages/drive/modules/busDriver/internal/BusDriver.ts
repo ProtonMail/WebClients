@@ -1,6 +1,7 @@
-import type { DriveEvent } from '@protontech/drive-sdk';
+import type { CoreApiEvent, DriveEvent } from '@protontech/drive-sdk';
 import type { EventSubscription } from '@protontech/drive-sdk/dist/internal/events/interface';
 
+import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
@@ -105,7 +106,7 @@ class BusDriver {
 
     private driveEventSubscription:
         | {
-              subscription: Promise<EventSubscription>;
+              unsubscribeCoreEventManager: () => void;
               contexts: Set<string>;
           }
         | undefined;
@@ -447,10 +448,16 @@ class BusDriver {
     }
 
     /**
-     * Subscribe to general drive sdk events
+     * Subscribe to general drive sdk events.
+     *
+     * Accepts the host application's core event manager so the SDK does not
+     * open a second polling connection. Raw core events are fed into both the
+     * drive and photos SDK instances via their push-based experimental API.
+     *
      * @param context - A unique context identifier (e.g., 'trashContainer', 'folderView')
+     * @param coreEventManager - The host application's core event manager
      */
-    async subscribeSdkDriveEvents(context: string): Promise<void> {
+    async subscribeSdkDriveEvents(context: string, coreEventManager: EventManager<unknown>): Promise<void> {
         if (this.driveEventSubscription) {
             if (this.driveEventSubscription.contexts.has(context)) {
                 if (this.debugMode) {
@@ -472,11 +479,22 @@ class BusDriver {
             }
         } else {
             const drive = getDrive();
-            const subscription = drive.subscribeToDriveEvents(async (event: DriveEvent) => {
-                await this.handleSdkEvent(event, drive);
+            const photosClient = getDriveForPhotos();
+
+            const unsubscribeCoreEventManager = coreEventManager.subscribe(async (rawEvent) => {
+                // General core EventManager loop contains all CoreApiEvent fields (Refresh, EventID, DriveShareRefresh)
+                // plus extras the sdk ignores, so the cast is safe.
+                const event = rawEvent as CoreApiEvent;
+                const driveEvents = await drive.experimental.processCoreEvent(event);
+                const photosEvents = await photosClient.experimental.processCoreEvent(event);
+                await Promise.all([
+                    ...driveEvents.map((event) => this.handleSdkEvent(event, drive)),
+                    ...photosEvents.map((event) => this.handleSdkEvent(event, photosClient)),
+                ]);
             });
+
             this.driveEventSubscription = {
-                subscription,
+                unsubscribeCoreEventManager,
                 contexts: new Set([context]),
             };
             if (this.debugMode) {
@@ -508,7 +526,7 @@ class BusDriver {
         existing.contexts.delete(context);
 
         if (existing.contexts.size === 0) {
-            await existing.subscription.then(({ dispose }) => dispose());
+            existing.unsubscribeCoreEventManager();
             this.driveEventSubscription = undefined;
             if (this.debugMode) {
                 logDebug('[BusDriver] Unsubscribed from SDK drive events');

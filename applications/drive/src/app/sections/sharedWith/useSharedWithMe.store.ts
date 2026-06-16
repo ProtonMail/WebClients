@@ -420,7 +420,6 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                 }
 
                 const eventManager = getBusDriver();
-                await eventManager.subscribeSdkDriveEvents(context);
 
                 const deleteBookmarksSubscription = eventManager.subscribe(
                     BusDriverEventName.DELETE_BOOKMARKS,
@@ -551,9 +550,6 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
             },
 
             unsubscribeToEvents: async (context: string) => {
-                const eventManager = getBusDriver();
-                await eventManager.unsubscribeSdkDriveEvents(context);
-
                 const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
                 const newActiveContexts = new Set(activeContexts);
                 newActiveContexts.delete(context);
