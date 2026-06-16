@@ -1016,6 +1016,27 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Zdieľanie je end-to-end šifrované"
+      ],
+      "Continue with Free": [
+        "Pokračovať s Free"
+      ],
+      "Later": [
+        "Neskôr"
+      ],
+      "Manage addresses": [
+        "Spravovať adresy"
+      ],
+      "Maybe later": [
+        "Možno neskôr"
+      ],
+      "New folder": [
+        "Nový priečinok"
+      ],
+      "Try Workspace": [
+        "Vyskúšajte Workspace"
+      ],
+      "Verify now": [
+        "Overiť teraz"
       ]
     },
     "Action subscription": {
@@ -2566,6 +2587,9 @@
       ],
       "Åland Islands": [
         "Alandské ostrovy"
+      ],
+      "Canary Islands": [
+        "Kanárske ostrovy"
       ]
     },
     "Cycle": {
@@ -2749,6 +2773,36 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
+      ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložisko: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Emaily odoslané na adresu ${ connectedAddressText } sa teraz zobrazia v ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatok miesta na roky emailov, príloh a ďalších súborov."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Aby sa váš tím bez problémov zapojil do ${ BRAND_NAME }, importujte svoje údaje z Google, Outlooku a ďalších zdrojov."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Získajte 15 GB úložného priestoru len za ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len ${ newUserStorageText } vašich najnovších správ z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len vašich najnovších emailov z Gmailu."
       ]
     },
     "description": {
@@ -3581,6 +3635,63 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } položku sa nepodarilo presunúť",
+        "${ failureItems.length } položky sa nepodarilo presunúť",
+        "${ failureItems.length } položiek sa nepodarilo presunúť",
+        "${ failureItems.length } položiek sa nepodarilo presunúť"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Všetok úložný priestor bol pridelený. Zmenšite prosím úložný priestor pridelený iným používateľom."
+      ],
+      "Cannot find move target": [
+        "Cieľ presunu nebol nájdený"
+      ],
+      "Failed to create folder": [
+        "Nepodarilo sa vytvoriť priečinok"
+      ],
+      "Failed to expand folder": [
+        "Nepodarilo sa rozbaliť priečinok"
+      ],
+      "Failed to load 'My files' folder": [
+        "Nepodarilo sa načítať priečinok „Moje súbory“"
+      ],
+      "Failed to load document details": [
+        "Nepodarilo sa načítať podrobnosti dokumentu"
+      ],
+      "Failed to load recent documents": [
+        "Nepodarilo sa načítať nedávne dokumenty"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Na vytvorenie pozvaných používateľov musí byť aktivovaný kľúč organizácie"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Pred pridaním adries nastavte vlastnú doménu."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Pred pridaním používateľov do svojej organizácie nakonfigurujte vlastnú doménu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Pred pridaním používateľov do organizácie povoľte podporu viacerých používateľov."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
+      ],
+      "Some trashed documents could not be loaded": [
+        "Niektoré odstránené dokumenty sa nepodarilo načítať"
+      ],
+      "Unknown location": [
+        "Neznáma poloha"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili ste všetky adresy vo vašom pláne. Navýšte, prosím, svoj plán, aby ste mohli pridať novú adresu alebo deaktivujte nejakú adresu vo vašom účte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
       ]
     },
     "Error importing calendar": {
@@ -6163,6 +6274,66 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Po zmene prístupu na prehliadač nebudete môcť zdieľať \"${ fileName }\". Iba vlastník môže znova zmeniť váš prístup."
+      ],
+      "${ total } user found": [
+        "${ total } nájdený používateľ",
+        "${ total } nájdení používatelia",
+        "${ total } nájdených používateľov",
+        "${ total } nájdených používateľov"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "Ak sa prihlásia k odberu, získajú **${ refereeRewardAmount }** kreditov."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "Za každého priateľa, ktorý sa prihlási k odberu, získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "Already in this folder": [
+        "Už sa nachádza v priečinku"
+      ],
+      "Can't move a folder into itself": [
+        "Priečinok nie je možné presunúť sám do seba"
+      ],
+      "Can't write into folder": [
+        "Do priečinka nie je možné zapisovať"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamätáte si svoje heslo? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Zabudli ste heslo?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Získajte profesionálny email @vaša-spoločnosť.sk, 1 TB bezpečného úložiska na používateľa, dlhšie videohovory a ďalšie výhody s ${ BRAND_NAME } Workspace."
+      ],
+      "Included": [
+        "Zahrnuté"
+      ],
+      "Password verified": [
+        "Heslo overené"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, ktoré chcete importovať:"
+      ],
+      "Select a destination folder": [
+        "Vyberte cieľový priečinok"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Aby sme vám pomohli nezabudnúť heslo, budeme vás pravidelne žiadať o jeho zadanie. Časom vás o to budeme žiadať čoraz menej."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dôverovať kľúču „${ activeSignerText }“ pri overovaní nových správ od tohto kontaktu."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Kedykoľvek si môžete zvýšiť úroveň a preniesť aj zvyšok"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kedykoľvek môžete zvýšiť úroveň alebo uvoľniť miesto, aby ste mohli preniesť zvyšok"
+      ],
+      "We'll remind you to verify your password again later": [
+        "Neskôr vám pripomenieme, aby ste si heslo overili ešte raz"
       ]
     },
     "info": {
@@ -6259,6 +6430,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktívny signatár"
+      ],
+      "Fallback": [
+        "záložný"
       ]
     },
     "Label": {
@@ -6849,6 +7026,9 @@
       ],
       "Set a password to limit access via link": [
         "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
       ]
     },
     "Label for contact group color": {
@@ -7995,6 +8175,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Dedikované servery optimalizované na rýchlosť"
+      ],
+      "Access all countries": [
+        "Prístup ku všetkým krajinám"
+      ],
+      "No streaming support": [
+        "Žiadna podpora zabezpečeného streamovania"
+      ],
+      "Unlock streaming": [
+        "Odomknite streamovanie"
       ]
     },
     "new_plans: feature highlight": {
@@ -8443,6 +8632,12 @@
         "Podpora pre ${ n } vlastné emailové domény",
         "Podpora pre ${ n } vlastných emailových domén",
         "Podpora pre ${ n } vlastných emailových domén"
+      ],
+      "${ n } country": [
+        "${ n } krajina",
+        "${ n } krajiny",
+        "${ n } krajín",
+        "${ n } krajín"
       ]
     },
     "Notification": {
@@ -8745,6 +8940,21 @@
       ],
       "Setting updated. Editors can't change permissions or share.": [
         "Nastavenie aktualizované. Editori nemôžu meniť oprávnenia ani zdieľať."
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ úspešne vytvorené"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }“ sa nepodarilo vytvoriť"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" presunutý"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } položka presunutá",
+        "${ numberOfItems } položky presunuté",
+        "${ numberOfItems } položiek presunutých",
+        "${ numberOfItems } položiek presunutých"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9081,6 +9291,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Odporúčame, aby ste pri tomto kľúči zvolili \"Nedôverovať\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v súčasnosti podpisuje správy týmto kľúčom"
+      ],
+      "This key is used for message verification": [
+        "Tento kľúč slúži na overenie správy"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento kľúč sa používa na šifrovanie správ tomuto kontaktu v starších aplikáciách"
       ]
     },
     "PGP key warning": {
@@ -9178,6 +9397,12 @@
       ],
       "Your organization name": [
         "Názov vašej organizácie"
+      ],
+      "Search": [
+        "Hľadať"
+      ],
+      "Search for users or addresses": [
+        "Hľadať používateľov alebo adresy"
       ]
     },
     "Placeholder for contact group name": {
@@ -11124,6 +11349,30 @@
       ],
       "Share \"${ fileName }\"": [
         "Zdieľať \"${ fileName }\""
+      ],
+      "Computers": [
+        "Počítače"
+      ],
+      "Continue with free storage": [
+        "Pokračovať s bezplatným úložiskom"
+      ],
+      "Devices": [
+        "Zariadenia"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získajte väčšie úložisko s ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Presuňte svoju organizáciu do ${ BRAND_NAME }"
+      ],
+      "Shared with me": [
+        "Zdieľané so mnou"
+      ],
+      "Verify your password": [
+        "Overte svoje heslo"
+      ],
+      "You are all set": [
+        "Všetko je nastavené"
       ]
     },
     "Title subscription": {
@@ -11262,6 +11511,9 @@
       ],
       "Name must not be empty": [
         "Názov nemôže byť prázdny"
+      ],
+      "Name must not contain slashes (/)": [
+        "Názov nesmie obsahovať lomky (/)"
       ]
     },
     "Video control": {
@@ -11740,6 +11992,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
+      ],
+      "10+ premium features": [
+        "10+ prémiových funkcií"
+      ],
+      "Custom email domain": [
+        "Vlastná emailová doména"
+      ],
+      "Email addresses": [
+        "Emailové adresy"
+      ],
+      "Storage": [
+        "Úložisko"
       ]
     },
     "Features": {
@@ -12355,6 +12619,185 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ],
+      "Member activation incomplete": [
+        "Aktivácia člena nie je dokončená"
+      ],
+      "Organization key must be activated to request data access": [
+        "Kľúč organizácie musí byť aktivovaný, aby bolo možné požiadať o prístup k údajom"
+      ],
+      "The user must have an address to request data access": [
+        "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktivované"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
+      ],
+      "All": [
+        "Všetko"
+      ],
+      "Calendar": [
+        "Kalendár"
+      ],
+      "Configure migration": [
+        "Nastaviť migráciu"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Emaily"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "Estimated size": [
+        "Odhadovaná veľkosť"
+      ],
+      "Find out what can be migrated.": [
+        "Zistite, čo je možné preniesť."
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Prebieha"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
+      ],
+      "Migrate": [
+        "Migrovať"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ],
+      "Migration status": [
+        "Stav migrácie"
+      ],
+      "Missing organization private key": [
+        "Chýba súkromný kľúč organizácie"
+      ],
+      "Missing organization public key": [
+        "Chýba verejný kľúč organizácie"
+      ],
+      "No users to display": [
+        "Nie sú žiadni používatelia na zobrazenie"
+      ],
+      "Not activated": [
+        "Neaktivované"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizaícia nemá dostatok voľných licencií"
+      ],
+      "Organization does not have enough storage available": [
+        "Organzácia nemá dostatok úložného priestoru"
+      ],
+      "Pending": [
+        "Čakajúce"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
+      ],
+      "Select users to migrate": [
+        "Vyberte používateľov na presun"
+      ],
+      "Size": [
+        "Veľkosť"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "User": [
+        "Používateľ"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
+      ],
+      "What are you migrating?": [
+        "Čo migrujete?"
+      ],
+      "You": [
+        "Vy"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Využite ponuku"
+      ],
+      "Summer Sale": [
+        "Letný výpredaj"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesačným"
+      ],
+      "15 GB storage": [
+        "15 GB úložisko"
+      ],
+      "2 TB data storage": [
+        "2 TB dátové úložisko"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložisko: 40x váš súčasný plán"
+      ],
+      "3 TB data storage": [
+        "3 TB dátové úložisko"
+      ],
+      "500 GB storage": [
+        "500 GB úložisko"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy vychádzajú zo štandardných mesačných cien. Po skončení fakturačného obdobia sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Plný prístup k službe ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Samostatné účty pre 6 používateľov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Samostatné účty pre vás a partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online editor dokumentov a tabuliek"
+      ],
+      "Recover previous file versions": [
+        "Obnovte predchádzajúce verzie súborov"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnejšia ochrana pred kybernetickými hrozbami"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Prejdite na náš ročný plán a ušetrite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Use your own email domain": [
+        "Používajte vlastnú emailovú doménu"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "SUMMER SALE": [
+        "LETNÝ VÝPREDAJ"
       ]
     }
   }

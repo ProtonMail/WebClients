@@ -1006,6 +1006,27 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Delen is end-to-end versleuteld"
+      ],
+      "Continue with Free": [
+        "Doorgaan met gratis"
+      ],
+      "Later": [
+        "Later"
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
+      "Maybe later": [
+        "Misschien later"
+      ],
+      "New folder": [
+        "Nieuwe map"
+      ],
+      "Try Workspace": [
+        "Probeer Workspace"
+      ],
+      "Verify now": [
+        "Nu verifiëren"
       ]
     },
     "Action subscription": {
@@ -2526,6 +2547,9 @@
       ],
       "Åland Islands": [
         "Aland Eilanden"
+      ],
+      "Canary Islands": [
+        "Canarische Eilanden"
       ]
     },
     "Cycle": {
@@ -2709,6 +2733,36 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "We hebben geen toegang meer tot ${ boldEmails }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Beschikbare opslagruimte: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails die naar ${ connectedAddressText } worden verzonden, verschijnen nu in ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Genoeg ruimte voor jarenlang e-mails, bijlagen en meer."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze introductie van uw team bij ${ BRAND_NAME } importeert u uw gegevens uit Google, Outlook en anderen."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ontgrendel 15 GB opslagruimte voor slechts ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "We pauzeren de import bij 80% opslagruimte om ruimte te reserveren voor nieuwe berichten."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "We zijn begonnen met het importeren van uw e-mails uit Gmail. We laten het u weten als het klaar is."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "U kunt nu e-mails versturen vanuit ${ BRAND_NAME } via dit adres."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen ${ newUserStorageText } van uw meest recente Gmail-berichten"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen uw meest recente Gmail-e-mails."
       ]
     },
     "description": {
@@ -3525,6 +3579,61 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Onversleutelbare naam"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item kon niet verplaatst worden",
+        "${ failureItems.length } items konden niet verplaatst worden"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
+      ],
+      "Cannot find move target": [
+        "Kan geen doel voor verplaatsings vinden"
+      ],
+      "Failed to create folder": [
+        "Mislukt om map aan te maken"
+      ],
+      "Failed to expand folder": [
+        "Map uitvouwen mislukt"
+      ],
+      "Failed to load 'My files' folder": [
+        "Kan de map 'Mijn bestanden' niet laden"
+      ],
+      "Failed to load document details": [
+        "Kan documentdetails niet laden"
+      ],
+      "Failed to load recent documents": [
+        "Kan recente documenten niet laden"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisatiesleutel moet geactiveerd zijn om uitgenodigde gebruikers aan te maken."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureer eerst een eigen domein voordat u adressen toevoegt."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureer een eigen domein om gebruikers aan uw organisatie toe te voegen."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
+      ],
+      "Some trashed documents could not be loaded": [
+        "Sommige in de prullenbak geplaatste documenten konden niet worden geladen"
+      ],
+      "Unknown location": [
+        "Onbekende locatie"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen of schakel een adres in uw account uit."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
       ]
     },
     "Error importing calendar": {
@@ -6010,6 +6119,64 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "U kunt \"${ fileName }\" niet delen na het wijzigen van de toegang tot 'alleen-lezer'. Alleen de eigenaar kan uw toegang opnieuw wijzigen."
+      ],
+      "${ total } user found": [
+        "${ total } gebruiker gevonden",
+        "${ total } gebruikers gevonden"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ze krijgen ${ refereeRewardAmount }** aan credits als ze zich abonneren."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**U krijgt ${ referrerRewardAmount }** aan credits voor elke vriend die zich abonneert."
+      ],
+      "Already in this folder": [
+        "Bestaat al in deze map"
+      ],
+      "Can't move a folder into itself": [
+        "Een map kan niet naar zichzelf worden verplaatst"
+      ],
+      "Can't write into folder": [
+        "Kan niet naar map schrijven"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Weet u uw wachtwoord nog? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Ontvang een professionele @uw-bedrijf.com e-mail, 1 TB beveiligde opslag per gebruiker, langere videogesprekken en meer met ${ BRAND_NAME } Workspace."
+      ],
+      "Included": [
+        "inbegrepen"
+      ],
+      "Password verified": [
+        "Wachtwoord is geverifieerd"
+      ],
+      "Please select the labels you would like to import:": [
+        "Selecteer de labels die u wilt importeren:"
+      ],
+      "Select a destination folder": [
+        "Selecteer een doelmap"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Om u te helpen uw wachtwoord te onthouden, vragen wij u dit periodiek in te voeren. We vragen u in de loop van de tijd minder."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Vertrouw op de sleutel \"${ activeSignerText }\" om nieuwe berichten van dit contact te verifiëren."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Upgrade op elk gewenst moment om de rest over te brengen"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
+      ],
+      "We'll remind you to verify your password again later": [
+        "We herinneren u er later aan om uw wachtwoord opnieuw te controleren"
       ]
     },
     "info": {
@@ -6102,6 +6269,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Actieve ondertekenaar"
+      ],
+      "Fallback": [
+        "Terugval"
       ]
     },
     "Label": {
@@ -6690,6 +6863,9 @@
       ],
       "Set a password to limit access via link": [
         "Stel een wachtwoord in om toegang via een koppeling te beperken"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tekens"
       ]
     },
     "Label for contact group color": {
@@ -7776,6 +7952,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Gereserveerde servers geoptimaliseerd voor snelheid"
+      ],
+      "Access all countries": [
+        "Toegang tot alle landen"
+      ],
+      "No streaming support": [
+        "Geen streaming-ondersteuning"
+      ],
+      "Unlock streaming": [
+        "Deblokkeer streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -8214,6 +8399,10 @@
       "Support for ${ n } custom email domain": [
         "Ondersteuning voor ${ n } aangepast e-maildomein",
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
+      ],
+      "${ n } country": [
+        "${ n } land",
+        "${ n } landen"
       ]
     },
     "Notification": {
@@ -8479,7 +8668,20 @@
         "Instelling bijgewerkt. Bewerkers kunnen geen machtigingen wijzigen of delen."
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
-        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
+        "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" succesvol aangemaakt"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kon niet aangemaakt worden"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verplaatst"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item verplaatst",
+        "${ numberOfItems } items verplaatst"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8798,6 +9000,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "We adviseren u deze sleutel niet meer te vertrouwen."
+      ],
+      "This contact currently signs messages with this key": [
+        "Dit contact ondertekent momenteel berichten met deze sleutel"
+      ],
+      "This key is used for message verification": [
+        "Deze sleutel wordt gebruikt voor berichtverificatie"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Deze sleutel wordt gebruikt om berichten naar dit contact in oudere apps te coderen"
       ]
     },
     "PGP key warning": {
@@ -8895,6 +9106,12 @@
       ],
       "Your organization name": [
         "Uw organisatienaam"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Search for users or addresses": [
+        "Naar gebruikers of adressen zoeken"
       ]
     },
     "Placeholder for contact group name": {
@@ -10767,6 +10984,30 @@
       ],
       "Share \"${ fileName }\"": [
         "Deel \"${ fileName }\""
+      ],
+      "Computers": [
+        "Computers"
+      ],
+      "Continue with free storage": [
+        "Ga door met gratis opslag"
+      ],
+      "Devices": [
+        "Apparaten"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Krijg meer opslagruimte met ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreer uw organisatie naar ${ BRAND_NAME }"
+      ],
+      "Shared with me": [
+        "Gedeeld met mij"
+      ],
+      "Verify your password": [
+        "Controleer uw wachtwoord"
+      ],
+      "You are all set": [
+        "U bent helemaal klaar"
       ]
     },
     "Title subscription": {
@@ -10899,6 +11140,9 @@
       ],
       "Name must not be empty": [
         "Naam mag niet leeg zijn"
+      ],
+      "Name must not contain slashes (/)": [
+        "Naam mag geen schuine strepen (/) bevatten"
       ]
     },
     "Video control": {
@@ -11342,6 +11586,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "10+ premium features": [
+        "10+ premium functies"
+      ],
+      "Custom email domain": [
+        "Aangepast e-maildomein"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
+      "Storage": [
+        "Opslagruimte"
       ]
     },
     "Features": {
@@ -12011,6 +12267,185 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
+      ],
+      "Member activation incomplete": [
+        "Gebruikersactivatie onvolledig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisatiesleutel moet worden geactiveerd om gegevenstoegang te vragen"
+      ],
+      "The user must have an address to request data access": [
+        "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
+      "Contacts": [
+        "Contacten"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Fouten"
+      ],
+      "Estimated size": [
+        "Geschatte grootte."
+      ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "In progress": [
+        "Bezig"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Migrate": [
+        "Migreer"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ],
+      "Migration status": [
+        "Migratiestatus"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
+      ],
+      "No users to display": [
+        "Geen gebruikers om weer te geven"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisatie heeft onvoldoende licenties beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
+      ],
+      "Pending": [
+        "In behandeling"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
+      ],
+      "Select users to migrate": [
+        "Selecteer gebruikers om te migreren"
+      ],
+      "Size": [
+        "Grootte"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Gebruiker"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
+      ],
+      "What are you migrating?": [
+        "Wat migreert u?"
+      ],
+      "You": [
+        "U"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Pak de aanbieding"
+      ],
+      "Summer Sale": [
+        "Zomer Sale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/maandelijks"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 TB data storage": [
+        "2 TB dataopslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB dataopslag"
+      ],
+      "500 GB storage": [
+        "500 GB opslag"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Volledige toegang tot ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Afzonderlijke accounts voor 6 gebruikers"
+      ],
+      "Individual accounts for you and a partner": [
+        "Afzonderlijke accounts voor u en een partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online document- en spreadsheetbewerker"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Krachtigere bescherming tegen cyberdreigingen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Onbeperkte mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "gedurende 12 maanden"
+      ],
+      "SUMMER SALE": [
+        "ZOMER SALE"
       ]
     }
   }

@@ -916,6 +916,27 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Deling er ende-til-ende-kryptert"
+      ],
+      "Continue with Free": [
+        "Fortsett med gratis"
+      ],
+      "Later": [
+        "Senere"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
+      "Maybe later": [
+        "Kanskje senere"
+      ],
+      "New folder": [
+        "Ny mappe"
+      ],
+      "Try Workspace": [
+        "Prøv Workspace"
+      ],
+      "Verify now": [
+        "Verifiser nå"
       ]
     },
     "Actions message": {
@@ -2394,6 +2415,9 @@
       ],
       "Åland Islands": [
         "Åland"
+      ],
+      "Canary Islands": [
+        "Kanariøyene"
       ]
     },
     "customer_support.feature.all": {
@@ -2584,6 +2608,36 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Vi får ikke lenger tilgang til ${ boldEmails }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tilgjengelig lagringsplass: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-poster sendt til ${ connectedAddressText } vil nå vises i ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plass til årevis med e-poster, vedlegg og mer."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "For en sømløs overgang til ${ BRAND_NAME }, importer dataene dine fra Google, Outlook og andre."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås opp 15 GB lagringsplass for kun ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nå sende e-poster fra ${ BRAND_NAME } ved å bruke denne adressen."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare ${ newUserStorageText } av de nyeste Gmail-meldingene dine."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare de nyeste Gmail-e-postene dine."
       ]
     },
     "description": {
@@ -3321,6 +3375,61 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } element kunne ikke flyttes",
+        "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
+      ],
+      "Cannot find move target": [
+        "Finner ikke flyttemålet"
+      ],
+      "Failed to create folder": [
+        "Kunne ikke opprette mappe"
+      ],
+      "Failed to expand folder": [
+        "Kunne ikke utvide mappen"
+      ],
+      "Failed to load 'My files' folder": [
+        "Kunne ikke laste inn mappen \"Mine filer\""
+      ],
+      "Failed to load document details": [
+        "Kunne ikke laste inn dokumentdetaljer"
+      ],
+      "Failed to load recent documents": [
+        "Kunne ikke laste inn nylige dokumenter"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Konfigurer et egendefinert domene før du legger til adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktiver støtte for flere brukere før du legger brukere til din organisasjon."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
+      ],
+      "Some trashed documents could not be loaded": [
+        "Kunne ikke laste inn enkelte dokumenter i papirkurven"
+      ],
+      "Unknown location": [
+        "Ukjent plassering"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har brukt alle adressene i planen. Oppgrader planen for å legge til en ny adresse eller deaktiver en adresse i kontoen din."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
       ]
     },
     "error": {
@@ -3694,6 +3803,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "10+ premium features": [
+        "10+ premiumfunksjoner"
+      ],
+      "Custom email domain": [
+        "Egendefinert e-postdomene"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Storage": [
+        "Lagring"
       ]
     },
     "Features": {
@@ -5536,6 +5657,64 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Du vil ikke kunne dele \"${ fileName }\" etter at tilgangen din endres til kun visning. Bare eieren kan endre tilgangen din igjen."
+      ],
+      "${ total } user found": [
+        "${ total } bruker funnet",
+        "${ total } brukere funnet"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter vennene dine** til ${ BRAND_NAME } med vervekoblingen."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i kreditter hvis de abonnerer."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "** Du får ${ referrerRewardAmount }** i kreditter for hver venn som abonnerer."
+      ],
+      "Already in this folder": [
+        "Allerede i denne mappen"
+      ],
+      "Can't move a folder into itself": [
+        "Kan ikke flytte en mappe inn i seg selv"
+      ],
+      "Can't write into folder": [
+        "Kan ikke skrive inn i mappen"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Husker du passordet ditt? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Skaff deg en profesjonell e-post med @din-bedrift.com-adresse, 1 TB sikker lagringsplass per bruker, lengre videosamtaler og mer med ${ BRAND_NAME } Workspace."
+      ],
+      "Included": [
+        "Inkludert"
+      ],
+      "Password verified": [
+        "Passord bekreftet"
+      ],
+      "Please select the labels you would like to import:": [
+        "Velg etikettene du vil importere:"
+      ],
+      "Select a destination folder": [
+        "Velg en målmappe"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For å hjelpe deg med å huske passordet ditt, ber vi deg om å skrive det inn med jevne mellomrom. Vi ber deg færre ganger over tid."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Stol på \"${ activeSignerText }\"-nøkkelen for å bekrefte nye meldinger fra denne kontakten."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Oppgrader når som helst for å få med deg resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Oppgrader eller frigjør plass når som helst for å ta med resten"
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi minner deg på å bekrefte passordet ditt igjen senere."
       ]
     },
     "info": {
@@ -5613,6 +5792,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiv underskriver"
+      ],
+      "Fallback": [
+        "Reserve"
       ]
     },
     "Label": {
@@ -6092,6 +6277,15 @@
       ],
       "Set a password to limit access via link": [
         "Angi et passord for å begrense tilgang via kobling"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
+      ],
+      "Calendars": [
+        "Kalendere"
+      ],
+      "Emails": [
+        "E-poster"
       ]
     },
     "Label for contact group color": {
@@ -7190,6 +7384,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Dedikerte servere optimalisert for hastighet"
+      ],
+      "Access all countries": [
+        "Få tilgang til alle land"
+      ],
+      "No streaming support": [
+        "Ingen strømmestøtte"
+      ],
+      "Unlock streaming": [
+        "Lås opp strømming"
       ]
     },
     "new_plans: feature highlight": {
@@ -7595,6 +7798,10 @@
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
         "Støtte for ${ n } egendefinerte e-postdomener"
+      ],
+      "${ n } country": [
+        "${ n } land",
+        "${ n } land"
       ]
     },
     "Notification": {
@@ -7847,6 +8054,19 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Din ${ BRAND_NAME }-adresse er klar til bruk"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" opprettet"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kunne ikke opprettes"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8234,6 +8454,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler at du \"ikke stoler på\" denne nøkkelen."
+      ],
+      "This contact currently signs messages with this key": [
+        "Denne kontakten signerer for øyeblikket meldinger med denne nøkkelen"
+      ],
+      "This key is used for message verification": [
+        "Denne nøkkelen brukes til meldingsverifisering"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denne nøkkelen brukes til å kryptere meldinger til denne kontakten i eldre apper"
       ]
     },
     "PGP key warning": {
@@ -8322,6 +8551,12 @@
       ],
       "Your organization name": [
         "Organisasjonsnavnet ditt"
+      ],
+      "Search": [
+        "Søk"
+      ],
+      "Search for users or addresses": [
+        "Søk etter brukere eller adresser"
       ]
     },
     "Placeholder for contact group name": {
@@ -10267,6 +10502,30 @@
       ],
       "Share \"${ fileName }\"": [
         "Del \"${ fileName }}\""
+      ],
+      "Computers": [
+        "Datamaskiner"
+      ],
+      "Continue with free storage": [
+        "Fortsett med gratis lagring"
+      ],
+      "Devices": [
+        "Enheter"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer organisasjonen din til ${ BRAND_NAME }"
+      ],
+      "Shared with me": [
+        "Delt med meg"
+      ],
+      "Verify your password": [
+        "Bekreft passordet ditt"
+      ],
+      "You are all set": [
+        "Du er klar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10373,6 +10632,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufullstendig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisasjonsnøkkel må være aktivert for å be om datatilgang"
+      ],
+      "The user must have an address to request data access": [
+        "Brukeren må ha en adresse for å be om datatilgang"
       ]
     },
     "Validation": {
@@ -10392,6 +10660,9 @@
       ],
       "Name must not be empty": [
         "Navnet kan ikke være tomt"
+      ],
+      "Name must not contain slashes (/)": [
+        "Navn må ikke inneholde skråstreker (/)"
       ]
     },
     "Video control": {
@@ -10555,6 +10826,176 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktivert"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-poster"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Finn ut hva som kan migreres."
+      ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrated": [
+        "Migrert"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
+      ],
+      "No users to display": [
+        "Ingen brukere å vise"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasjonen har ikke nok ledige lisenser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
+      ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruker"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
+      ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
+      ],
+      "You": [
+        "Du"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ],
+      "Summer Sale": [
+        "Sommersalg"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagring"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagring: 40 ganger ditt nåværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagring"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsplass"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full tilgang til ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle kontoer for 6 brukere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle kontoer for deg og en partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Pålogget redigeringsprogram for dokumenter og regneark"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere beskyttelse mot cybertrusler"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrensede mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SUMMER SALE": [
+        "SOMMERSALG"
       ]
     }
   }

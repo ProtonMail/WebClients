@@ -1006,6 +1006,27 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Η κοινοποίηση είναι, διατερματικά κρυπτογραφημένη"
+      ],
+      "Continue with Free": [
+        "Συνέχεια με Free"
+      ],
+      "Later": [
+        "Αργότερα"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
+      ],
+      "New folder": [
+        "Νέος φάκελος"
+      ],
+      "Try Workspace": [
+        "Δοκιμάστε το Workspace"
+      ],
+      "Verify now": [
+        "Επαλήθευση τώρα"
       ]
     },
     "Action subscription": {
@@ -2526,6 +2547,9 @@
       ],
       "Åland Islands": [
         "Νήσοι Άλαντ"
+      ],
+      "Canary Islands": [
+        "Κανάρια Νησιά"
       ]
     },
     "Cycle": {
@@ -2706,6 +2730,36 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
+      ],
+      "Available storage: ${ storageText }": [
+        "Διαθέσιμος χώρος αποθήκευσης: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ connectedAddressText } θα εμφανίζονται πλέον στο ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Αρκετός χώρος για χρόνια από μηνύματα ηλεκτρονικού ταχυδρομείου , συνημμένα και άλλα."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Για απρόσκοπτη ενσωμάτωση της ομάδας σας στο ${ BRAND_NAME }, εισαγάγετε τα δεδομένα σας από το Google, το Outlook και άλλα."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ξεκλειδώστε 15 GB αποθηκευτικού χώρου μόνο με ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Τώρα μπορείτε να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου από το ${ BRAND_NAME } χρησιμοποιώντας αυτή τη διεύθυνση."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο ${ newUserStorageText } από τα πιο πρόσφατα μηνύματά σας στο Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
       ]
     },
     "description": {
@@ -3519,6 +3573,61 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Αποτυχία μετακίνησης ${ failureItems.length } στοιχείου",
+        "Αποτυχία μετακίνησης ${ failureItems.length } στοιχείων"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Έχει κατανεμηθεί όλος ο αποθηκευτικός χώρος. Παρακαλούμε μειώστε την κατανομή του σε άλλους χρήστες."
+      ],
+      "Cannot find move target": [
+        "Δεν είναι δυνατή η εύρεση προορισμού μετακίνησης"
+      ],
+      "Failed to create folder": [
+        "Αποτυχία δημιουργίας φακέλου"
+      ],
+      "Failed to expand folder": [
+        "Αποτυχία ανάπτυξης φακέλου"
+      ],
+      "Failed to load 'My files' folder": [
+        "Αποτυχία φόρτωσης του φακέλου \"Τα αρχεία μου\""
+      ],
+      "Failed to load document details": [
+        "Αποτυχία φόρτωσης λεπτομερειών εγγράφου"
+      ],
+      "Failed to load recent documents": [
+        "Αποτυχία φόρτωσης πρόσφατων εγγράφων"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία προσκεκλημένων χρηστών"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Διαμορφώστε έναν προσαρμοσμένο τομέα (custom domain) πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
+      ],
+      "Some trashed documents could not be loaded": [
+        "Δεν ήταν δυνατή η φόρτωση ορισμένων εγγράφων στον κάδο απορριμμάτων"
+      ],
+      "Unknown location": [
+        "Άγνωστη τοποθεσία"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις του πλάνου σας. Αναβαθμίστε το πλάνο σας για να προσθέσετε μια νέα διεύθυνση ή απενεργοποιήστε μια διεύθυνση από τον λογαριασμό σας."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
       ]
     },
     "Error importing calendar": {
@@ -5996,6 +6105,67 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Δεν θα μπορείτε να μοιραστείτε το \"${ fileName }\" μετά την αλλαγή της πρόσβασης σε προβολέα. Μόνο ο ιδιοκτήτης μπορεί να αλλάξει ξανά την πρόσβασή σας."
+      ],
+      "${ total } user found": [
+        "${ total } χρήστης βρέθηκε",
+        "${ total } χρήστες βρέθηκαν"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Λαμβάνουν ${ refereeRewardAmount }** σε πιστώσεις εάν εγγραφούν."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Λαμβάνετε ${ referrerRewardAmount }** σε πιστώσεις για κάθε φίλο που εγγράφεται."
+      ],
+      "All your files will be imported": [
+        "Όλα τα αρχεία σας θα εισαχθούν"
+      ],
+      "Already in this folder": [
+        "Ήδη σε αυτόν το φάκελο"
+      ],
+      "Can't move a folder into itself": [
+        "Δεν είναι δυνατή η μετακίνηση ενός φακέλου μέσα στον ίδιο τον φάκελο"
+      ],
+      "Can't write into folder": [
+        "Δεν είναι δυνατή η εγγραφή στον φάκελο"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Θυμάστε τον κωδικό πρόσβασής σας; ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Αποκτήστε ένα επαγγελματικό email @your-company.com, 1 TB ασφαλούς αποθηκευτικού χώρου ανά χρήστη, βιντεοκλήσεις μεγαλύτερης διάρκειας και πολλά άλλα με το ${ BRAND_NAME } Workspace."
+      ],
+      "Included": [
+        "Περιλαμβάνονται"
+      ],
+      "Password verified": [
+        "Ο Κωδικός πρόσβασης επαληθεύτηκε"
+      ],
+      "Please select the labels you would like to import:": [
+        "Επιλέξτε τις ετικέτες που θέλετε να εισάγετε:"
+      ],
+      "Select a destination folder": [
+        "Επιλέξτε φάκελο προορισμού"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε να τον εισάγετε περιοδικά. Με την πάροδο του χρόνου, θα σας ζητάμε λιγότερο."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Εμπιστευτείτε το κλειδί \"${ activeSignerText }\" για να επαληθεύσετε νέα μηνύματα από αυτήν την επαφή."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Αναβαθμίστε οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
+      "We'll remind you to verify your password again later": [
+        "Θα σας υπενθυμίσουμε να επαληθεύσετε ξανά τον κωδικό πρόσβασής σας αργότερα"
       ]
     },
     "info": {
@@ -6088,6 +6258,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Ενεργός Υπογράφων"
+      ],
+      "Fallback": [
+        "Εφεδρικό"
       ]
     },
     "Label": {
@@ -6667,6 +6843,12 @@
       ],
       "Set a password to limit access via link": [
         "Ορίστε έναν κωδικό πρόσβασης για να περιορίσετε την πρόσβαση μέσω συνδέσμου"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } χαρακτήρες"
+      ],
+      "Drive": [
+        "Drive"
       ]
     },
     "Label for contact group color": {
@@ -7753,6 +7935,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ταχύτητα"
+      ],
+      "Access all countries": [
+        "Πρόσβαση σε όλες τις χώρες"
+      ],
+      "No streaming support": [
+        "Δεν υπάρχει υποστήριξη ροής"
+      ],
+      "Unlock streaming": [
+        "Ξεκλειδώστε τη ροή"
       ]
     },
     "new_plans: feature highlight": {
@@ -8191,6 +8382,10 @@
       "Support for ${ n } custom email domain": [
         "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
         "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } country": [
+        "${ n } χώρα",
+        "${ n } χώρες"
       ]
     },
     "Notification": {
@@ -8457,6 +8652,19 @@
       ],
       "Setting updated. Editors can't change permissions or share.": [
         "Η ρύθμιση ενημερώθηκε. Οι συντάκτες δε μπορούν να αλλάξουν τα δικαιώματα ή να κοινοποιήσουν."
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "Το \"${ ellipsedName }\" δημιουργήθηκε επιτυχώς"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Αποτυχία δημιουργίας του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Το \"${ ellipsedName }\" μετακινήθηκε"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } στοιχείο μετακινήθηκε",
+        "${ numberOfItems } στοιχεία μετακινήθηκαν"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8754,6 +8962,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Συνιστάται να \"μην εμπιστεύεστε\" αυτό το κλειδί."
+      ],
+      "This contact currently signs messages with this key": [
+        "Αυτή η επαφή υπογράφει μηνύματα με αυτό το κλειδί"
+      ],
+      "This key is used for message verification": [
+        "Αυτό το κλειδί χρησιμοποιείται για την επαλήθευση μηνυμάτων"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Αυτό το κλειδί χρησιμοποιείται για την κρυπτογράφηση μηνυμάτων σε αυτήν την επαφή σε παλαιότερες εφαρμογές"
       ]
     },
     "PGP key warning": {
@@ -8851,6 +9068,12 @@
       ],
       "Your organization name": [
         "Το όνομα του οργανισμού σας"
+      ],
+      "Search": [
+        "Αναζήτηση"
+      ],
+      "Search for users or addresses": [
+        "Αναζήτηση χρηστών ή διευθύνσεων"
       ]
     },
     "Placeholder for contact group name": {
@@ -10707,6 +10930,30 @@
       ],
       "Share \"${ fileName }\"": [
         "Κοινοποίηση \"${ fileName }\""
+      ],
+      "Computers": [
+        "Υπολογιστές"
+      ],
+      "Continue with free storage": [
+        "Συνέχεια με δωρεάν αποθηκευτικό χώρο"
+      ],
+      "Devices": [
+        "Συσκευές"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης με το ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Μετεγκαταστήσετε τον οργανισμό σας στο ${ BRAND_NAME }"
+      ],
+      "Shared with me": [
+        "Κοινή χρήση με εμένα"
+      ],
+      "Verify your password": [
+        "Επαληθεύστε τον κωδικό πρόσβασής σας"
+      ],
+      "You are all set": [
+        "Είστε έτοιμοι"
       ]
     },
     "Title subscription": {
@@ -10812,6 +11059,9 @@
       ],
       "Change shared item settings": [
         "Αλλαγή ρυθμίσεων κοινόχρηστου στοιχείου"
+      ],
+      "Instant assistance with AI and human experts.": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη και ανθρώπινους εμπειρογνώμονες."
       ]
     },
     "tooltip": {
@@ -10839,6 +11089,9 @@
       ],
       "Name must not be empty": [
         "Το όνομα δεν πρέπει να είναι κενό"
+      ],
+      "Name must not contain slashes (/)": [
+        "Το όνομα δεν πρέπει να περιέχει κάθετες γραμμές (/)"
       ]
     },
     "Video control": {
@@ -11287,6 +11540,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "10+ premium features": [
+        "10+ premium χαρακτηριστικά"
+      ],
+      "Custom email domain": [
+        "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ]
     },
     "Features": {
@@ -11881,6 +12146,185 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
+      ],
+      "Member activation incomplete": [
+        "Μη ολοκληρωμένη ενεργοποίηση μέλους"
+      ],
+      "Organization key must be activated to request data access": [
+        "Το κλειδί οργανισμού πρέπει να είναι ενεργοποιημένο για να ζητήσετε πρόσβαση σε δεδομένα"
+      ],
+      "The user must have an address to request data access": [
+        "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Ενεργοποιήθηκε"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
+      ],
+      "All": [
+        "Όλοι"
+      ],
+      "Calendar": [
+        "Ημερολόγιο"
+      ],
+      "Configure migration": [
+        "Διαμόρφωση μετεγκατάστασης"
+      ],
+      "Contacts": [
+        "Επαφές"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Μηνύματα"
+      ],
+      "Errors": [
+        "Σφάλματα"
+      ],
+      "Estimated size": [
+        "Εκτιμώμενος χρόνος"
+      ],
+      "Find out what can be migrated.": [
+        "Μάθετε τι μπορεί να μετεγκατασταθεί."
+      ],
+      "Has errors": [
+        "Έχει σφάλματα"
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
+      ],
+      "Migrate": [
+        "Μετεγκατάσταση"
+      ],
+      "Migrated": [
+        "Μετεγκαταστάθηκε"
+      ],
+      "Migration status": [
+        "Κατάσταση μετεγκατάστασης"
+      ],
+      "Missing organization private key": [
+        "Λείπει το ιδιωτικό κλειδί του οργανισμού"
+      ],
+      "Missing organization public key": [
+        "Λείπει το δημόσιο κλειδί του οργανισμού"
+      ],
+      "No users to display": [
+        "Δεν υπάρχουν χρήστες για εμφάνιση"
+      ],
+      "Not activated": [
+        "Δεν έχει ενεργοποιηθεί"
+      ],
+      "Organization does not have enough seats available": [
+        "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
+      ],
+      "Organization does not have enough storage available": [
+        "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Επιλέξτε ακριβώς αυτό που θέλετε να μετεγκαταστήσετε. Θα εφαρμοστεί για όλους τους χρήστες του οργανισμού."
+      ],
+      "Select users to migrate": [
+        "Επιλογή χρηστών για μετεγκατάσταση"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "User": [
+        "Χρήστης"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Τι μεταφέρετε;"
+      ],
+      "You": [
+        "Εσείς"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Summer Sale": [
+        "Καλοκαιρινές εκπτώσεις"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/μήνας"
+      ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "2 TB data storage": [
+        "Χώρος αποθήκευσης δεδομένων 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
+      ],
+      "3 TB data storage": [
+        "Χώρος αποθήκευσης δεδομένων 3 TB"
+      ],
+      "500 GB storage": [
+        "500 GB αποθηκευτικός χώρος"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια τιμή όταν λήξει ο κύκλος χρέωσης."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Πλήρης πρόσβαση στο ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Ατομικοί λογαριασμοί για 6 χρήστες"
+      ],
+      "Individual accounts for you and a partner": [
+        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online πρόγραμμα επεξεργασίας εγγράφων και υπολογιστικών φύλλων"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
+      ],
+      "Stronger protection against cyber threats": [
+        "Ισχυρότερη προστασία από κυβερνοαπειλές"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Μεταβείτε στο ετήσιο πρόγραμμά μας και εξοικονομήστε ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+      ],
+      "Use your own email domain": [
+        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "για 12 μήνες"
+      ],
+      "SUMMER SALE": [
+        "ΚΑΛΟΚΑΙΡΙΝΕΣ ΕΚΠΤΩΣΕΙΣ"
       ]
     }
   }

@@ -844,6 +844,24 @@
       ],
       "Copy link": [
         "Hivatkozás másolása"
+      ],
+      "Continue with Free": [
+        "Folytatás az ingyenes verzióval"
+      ],
+      "Later": [
+        "Később"
+      ],
+      "Manage addresses": [
+        "Címek kezelése"
+      ],
+      "Maybe later": [
+        "Talán később"
+      ],
+      "New folder": [
+        "Új mappa"
+      ],
+      "Reconnect to Gmail": [
+        "Kapcsolódjon újra a Gmailhez"
       ]
     },
     "Actions message": {
@@ -875,6 +893,10 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
       ]
     },
     "Alert": {
@@ -1141,6 +1163,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra gyors és privát VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
       ]
     },
     "Checkout row": {
@@ -2325,6 +2351,45 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Már létrehozott 10 e-mail álnevet. Szerezzen korlátlan e-mail álnevet és 500 GB tárhelyet a ${ BRAND_NAME } Unlimited szolgáltatással."
+      ],
+      "Available storage: ${ storageText }": [
+        "Elérhető tárhely: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "A(z) ${ connectedAddressText } címre küldött e-mailek mostantól megjelennek a ${ MAIL_APP_NAME } alkalmazásban."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Több évnyi e-mail számára elegendő hely, mellékletekkel és további lehetőségek."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Ez olyankor fordulhat elő, ha az engedélyeket eltávolították, vagy megváltozott a jelszava."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókját."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókjait."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Oldjon fel 15 GB tárhelyet mindössze ${ config.offerPrice } áron."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Már nincs hozzáférésünk a következőhöz: ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Az importálást 80%-os tárhelytelítettségnél szüneteltetjük, hogy helyet biztosítsunk az új üzeneteknek."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Elindítottuk az e-mailjei importálását a Gmailből. Értesíteni fogjuk, ha befejeződött."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Mostantól küldhet e-maileket a ${ BRAND_NAME } szolgáltatásból erről a címről."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail-üzeneteiből importálunk ${ newUserStorageText } mennyiséget"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail e-mailjeit importáljuk."
       ]
     },
     "description": {
@@ -3002,6 +3067,45 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nem dekódolható név"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
+      ],
+      "Failed to create folder": [
+        "Nem sikerült létrehozni a mappát"
+      ],
+      "Invalid coupon": [
+        "Érvénytelen kupon"
+      ],
+      "Organization key must be activated to create invited users": [
+        "A szervezeti kulcsot aktiválni kell, meghívott felhasználók létrehozásához"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A szervezeti kulcsot aktiválni kell, nem-privát felhasználók létrehozásához"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Címek létrehozása előtt, állítson be egy saját domain nevet."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Vegyen fel egy saját domain nevet, mielőtt felhasználókat venne fel a szervezethez."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Engedélyezze a többfelhasználós módot, mielőtt felhasználókat venne fel a szervezethez."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Hiba történt az elérhető domainnevek lekérése közben"
+      ],
+      "This field is invalid": [
+        "Ez a mező érvénytelen"
+      ],
+      "Unknown location": [
+        "Ismeretlen hely"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
       ]
     },
     "error": {
@@ -3322,6 +3426,10 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A fiókja ${ usedSpace } tárhelyet foglal el, ami túllépi az önnek biztosított ${ inviteSpace } helyet. Töröljön adatokat vagy kérje meg a csomag adminisztrátorát, hogy növelje a tárhelyét."
+      ],
+      "View the invitation": [
+        "Meghívás megtekintése",
+        "Meghívások megtekintése"
       ]
     },
     "familyOffer_2023:Label": {
@@ -3368,6 +3476,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Korlátlan számú hide-my-email álnév"
+      ],
+      "10+ premium features": [
+        "10+ prémium funkció"
+      ],
+      "Custom email domain": [
+        "Egyéni e-mail-domainnév"
+      ],
+      "Email addresses": [
+        "E-mail-címek"
+      ],
+      "Storage": [
+        "Tárhely"
       ]
     },
     "Features": {
@@ -5057,6 +5177,23 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig"
+      ],
+      "Included": [
+        "Tartalmazza"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Frissítsen bármikor a többi áthozatalához"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Bármikor frissíthet nagyobb csomagra vagy szabadíthat fel helyet a többi áthozatalához"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja.",
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja."
       ]
     },
     "info": {
@@ -5538,6 +5675,12 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Calendars": [
+        "Naptárak"
+      ],
+      "Emails": [
+        "E-mailek"
       ]
     },
     "Label for contact group color": {
@@ -7119,6 +7262,9 @@
       ],
       "Your settings have been changed successfully": [
         "A beállítások módosítása sikeresen megtörtént"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "A(z) ${ BRAND_NAME }-címe használatra kész"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7448,6 +7594,18 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja.",
         "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
       ]
     },
     "PGP key encryption warning": {
@@ -7552,6 +7710,9 @@
       ],
       "Your organization name": [
         "A szervezet neve"
+      ],
+      "Search": [
+        "Keresés"
       ]
     },
     "Placeholder for contact group name": {
@@ -9214,6 +9375,27 @@
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"
+      ],
+      "Computers": [
+        "Számítógépek"
+      ],
+      "Continue with free storage": [
+        "Folytatás az ingyenes tárhellyel"
+      ],
+      "Devices": [
+        "Eszköz"
+      ],
+      "Disconnected from Gmail": [
+        "Leválasztva a Gmailről"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Szerezzen több tárhelyet a ${ MAIL_APP_NAME } Plus segítségével"
+      ],
+      "Shared with me": [
+        "Velem megosztva"
+      ],
+      "You are all set": [
+        "Minden készen áll"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9317,6 +9499,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz, és nem állíthatják vissza jelszavukat."
+      ],
+      "Member activation incomplete": [
+        "A tag aktiválása nem teljes"
+      ],
+      "Organization key must be activated to request data access": [
+        "A szervezeti kulcsot aktiválni kell az adathozzáférés igényléséhez"
+      ],
+      "The user must have an address to request data access": [
+        "A felhasználónak rendelkeznie kell egy címmel az adathozzáférés igényléséhez."
       ]
     },
     "Validation": {
@@ -9336,6 +9527,9 @@
       ],
       "Name must not be empty": [
         "A név nem lehet üres"
+      ],
+      "Name must not contain slashes (/)": [
+        "A név nem tartalmazhat perjeleket (/)"
       ]
     },
     "Video control": {
@@ -9491,6 +9685,89 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "A próbaidőszak vége: ${ textDate }. Nem kerül díj felszámításra, ha ennél korábban lemondja: ${ textDate }. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Szerezze meg az ajánlatot"
+      ],
+      "Summer Sale": [
+        "Nyári akció"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/hónap"
+      ],
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "2 TB data storage": [
+        "2 TB adattárhely"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB tárhely: a jelenlegi csomag negyvenszerese"
+      ],
+      "3 TB data storage": [
+        "3 TB adattárhely"
+      ],
+      "500 GB storage": [
+        "500 GB tárhely"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "A kedvezmények a standard havi árakon alapulnak. Az előfizetése a standard éves díjjal fog megújulni, amikor a számlázási ciklus véget ér."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Teljes hozzáférés a ${ VPN_APP_NAME } szolgáltatáshoz"
+      ],
+      "Individual accounts for 6 users": [
+        "Egyéni fiókok 6 felhasználó számára"
+      ],
+      "Individual accounts for you and a partner": [
+        "Egyéni fiókok Önnek és partnerének"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online dokumentum- és táblázatszerkesztő"
+      ],
+      "Recover previous file versions": [
+        "Régebbi fájlverziók helyreállítása"
+      ],
+      "Stronger protection against cyber threats": [
+        "Erősebb védelem a kiberfenyegetésekkel szemben"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Váltson éves csomagunkra, és takarítson meg ${ toYearlyDiscountAmount } összeget!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ],
+      "Use your own email domain": [
+        "Saját e-mail domain használata"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 hónapra"
+      ],
+      "SUMMER SALE": [
+        "NYÁRI AKCIÓ"
       ]
     }
   }
