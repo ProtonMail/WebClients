@@ -15,13 +15,17 @@ import {
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
     getIsSentinelPlan,
+    getPlanIDs,
     getSubscriptionPlanTitle,
     hasDeprecatedVPN,
     hasDriveBusiness,
     hasLumo,
+    hasLumoAddonFromPlanIDs,
     hasLumoBusiness,
+    hasMeetAddonFromPlanIDs,
     hasPass,
     hasPassFamily,
+    hasScribeAddon,
     hasVPN2024,
     hasVPNPassBundle,
     hasVPNPassProfessional,
@@ -274,6 +278,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
             icon: 'speech-bubble' as const,
             text: lumoText,
             actionElement,
+            isAddon: hasLumoAddonFromPlanIDs(getPlanIDs(subscription)),
         };
     })();
 
@@ -288,6 +293,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
             icon: 'meet-camera' as const,
             text: meetText,
             actionElement,
+            isAddon: hasMeetAddonFromPlanIDs(getPlanIDs(subscription)),
         };
     })();
 
@@ -303,6 +309,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
             icon: 'pen-sparks' as const,
             text: writingAssistantText,
             actionElement,
+            isAddon: hasScribeAddon(subscription),
         };
     })();
 

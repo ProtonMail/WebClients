@@ -1,3 +1,6 @@
+import { c } from 'ttag';
+
+import { Badge } from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
@@ -34,6 +37,7 @@ export const SubscriptionItems = ({ items, user }: Props) => {
                     tooltip,
                     actionElement,
                     dataTestId,
+                    isAddon,
                 }) => {
                     if (!included) {
                         return null;
@@ -47,12 +51,16 @@ export const SubscriptionItems = ({ items, user }: Props) => {
                             className={clsx(status === 'coming-soon' && 'color-weak')}
                             left={<Icon className={clsx(included && 'color-success')} size={5} name={icon} />}
                         >
-                            <div className="flex justify-space-between items-baseline" data-testid={dataTestId}>
+                            <div
+                                className="flex justify-space-between items-baseline flex-nowrap"
+                                data-testid={dataTestId}
+                            >
                                 <span>
                                     {text}
                                     {tooltip && <Info className="align-middle ml-2" title={tooltip} />}
+                                    {isAddon && <Badge type="origin" className="ml-2">{c('Addon').t`Add-on`}</Badge>}
                                 </span>
-                                {actionElement}
+                                <span className="shrink-0">{actionElement}</span>
                             </div>
                         </StripedItem>
                     );
