@@ -82,7 +82,8 @@ export const loadSharedByMeNodes = async (abortSignal: AbortSignal) => {
             fetchSharedByMeNodes(abortSignal, getDriveForPhotos()),
         ]);
         const allLoadedUids = new Set([...driveUids, ...photosUids]);
-        useSharedByMeStore.getState().cleanupStaleItems(allLoadedUids);
+        const { cleanupStaleItems } = useSharedByMeStore.getState();
+        cleanupStaleItems(allLoadedUids);
     } catch (e) {
         handleSdkError(e, {
             showNotification: true,

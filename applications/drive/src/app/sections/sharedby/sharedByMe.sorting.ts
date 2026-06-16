@@ -1,5 +1,13 @@
-import { SortField } from '../../modules/sorting/types';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+
+import { nodeTypeComparator, stringComparator } from '../../modules/sorting/comparators';
+import { type SortConfig, SortField } from '../../modules/sorting/types';
 import type { SharedByMeItem } from './useSharedByMe.store';
+
+export const defaultSharedByMeSortConfig: SortConfig = [
+    { field: SortField.nodeType, comparator: nodeTypeComparator, direction: SORT_DIRECTION.ASC },
+    { field: SortField.name, comparator: stringComparator },
+];
 
 export function getSharedByMeSortValue(item: SharedByMeItem, field: SortField) {
     switch (field) {
