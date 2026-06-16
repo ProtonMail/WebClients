@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { usePaymentOptimistic } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { Aside } from '../../components/Layout/Aside';
@@ -13,11 +14,16 @@ import Layout from '../../components/Layout/Layout';
 import { Main } from '../../components/Layout/Main';
 import { Wrapper } from '../../components/Layout/Wrapper';
 import { PricingCard } from '../../components/PricingCard/PricingCard';
+import { useIsVPNPlanWithoutTrialVariant } from '../../helpers/useIsVPNPlanWithoutTrialVariant';
 import AccountDetailsForm from './AccountDetailsForm';
 
 const AccountDetailsStep = ({ onSuccess }: { onSuccess: () => Promise<void> }) => {
     const history = useHistory();
     const location = useLocation();
+    const payments = usePaymentOptimistic();
+    const { selectedPlan } = payments;
+
+    const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(selectedPlan.name);
 
     return (
         <Layout>
@@ -44,7 +50,7 @@ const AccountDetailsStep = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
                     <AccountDetailsForm onSuccess={onSuccess} />
                 </Main>
                 <Aside>
-                    <PricingCard step="account-details" />
+                    <PricingCard step={isVPNPlanWithoutTrial ? 'payment' : 'account-details'} />
                 </Aside>
             </Wrapper>
 

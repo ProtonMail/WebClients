@@ -227,6 +227,7 @@ interface PlanCardProps {
 
 function FreePlanCard({ isSelected, isHighlighted, handlePlanCTAClick, selectedTitle }: PlanCardProps) {
     const plan = PLANS.FREE;
+    const planName = PLAN_NAMES[plan];
 
     const payments = usePaymentOptimistic();
     const maxSpace = getDriveMaxSpaceMap(payments)[plan];
@@ -236,9 +237,9 @@ function FreePlanCard({ isSelected, isHighlighted, handlePlanCTAClick, selectedT
 
     return (
         <PlanCard
-            title={`${BRAND_NAME} ${PLAN_NAMES[plan]}`}
+            title={`${BRAND_NAME} ${planName}`}
             description={c('Plan description').t`Perfect for getting started with secure cloud storage.`}
-            ctaCopy={c('Signup').t`Continue with ${PLAN_NAMES[plan]}`}
+            ctaCopy={c('Signup').t`Continue with ${planName}`}
             features={
                 <>
                     <FeatureItem
