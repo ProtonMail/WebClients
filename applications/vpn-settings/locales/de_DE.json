@@ -2001,6 +2001,12 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-Mails"
+      ],
       "Estimated size": [
         "Geschätzte Größe"
       ],
@@ -2012,6 +2018,9 @@
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
+      "Migrate": [
+        "Migrieren"
       ],
       "Migration status": [
         "Migrationsstatus"
@@ -2028,11 +2037,17 @@
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
       "Status": [
         "Status"
       ],
       "User": [
         "Benutzer"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
@@ -3668,7 +3683,7 @@
         "Wir holen deine alten E-Mails und verbinden dein Gmail mit ${ MAIL_APP_NAME }, damit neue Nachrichten automatisch angezeigt werden"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Wir importieren deine alten E-Mails, überspringen Duplikate und verbinden uns mit deinem Gmail, damit neue Nachrichten automatisch erscheinen. Du kannst den Import in den Easy Switch-Einstellungen jederzeit rückgängig machen."
+        "Wir importieren deine alten E-Mails, überspringen doppelte Nachrichten und verbinden uns mit deinem Gmail-Konto, damit neue Nachrichten automatisch angezeigt werden. Du kannst den Import jederzeit in den Einstellungen von Easy Switch rückgängig machen."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Wir haben mit dem Import deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
@@ -4433,6 +4448,9 @@
       ],
       "Invalid private key file": [
         "Ungültige private Schlüsseldatei"
+      ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ungültiges Token zum Zurücksetzen. Bitte aktualisiere die Seite und versuche es erneut."
       ],
       "Invalid VAT number": [
         "Ungültige USt-IdNr."
@@ -7049,6 +7067,9 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Editing requires permission": [
+        "Zum Bearbeiten ist eine Berechtigung erforderlich"
+      ],
       "eduGAIN configuration saved": [
         "eduGAIN-Konfiguration gespeichert"
       ],
@@ -8840,6 +8861,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kannst keine ${ MAIL_APP_NAME }-Benutzer empfehlen."
       ],
+      "You do not have permission to create users.": [
+        "Du hast keine Berechtigung, Benutzer anzulegen."
+      ],
       "You don't have any referrals.": [
         "Du hast keine Empfehlungen."
       ],
@@ -9396,6 +9420,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalender"
+      ],
       "Card details": [
         "Kartendaten"
       ],
@@ -9570,6 +9597,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-Mail-Adresse mit einer @yourcompany.com Domain"
+      ],
+      "Emails": [
+        "E-Mails"
       ],
       "Emails (all messages)": [
         "E-Mails (alle Nachrichten)"
@@ -14007,6 +14037,28 @@
         "Aufbewahrungsregel bearbeiten"
       ]
     },
+    "Role": {
+      "Organization Admin": [
+        "Organisationsadministrator"
+      ],
+      "Security Admin": [
+        "Sicherheitsadministrator"
+      ],
+      "User Admin": [
+        "Benutzeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
+      ]
+    },
     "Safety review": {
       "Check account security": [
         "Kontosicherheit überprüfen"
@@ -17649,9 +17701,6 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Beinhaltet professionelle E-Mail-Adressen unter @yourdomain.com, Cloud-Speicher mit Funktionen zur gemeinsamen Dokumentbearbeitung, Terminplanung und Videokonferenzen, Passwortverwaltung, ein sicheres ${ VPN_SHORT_APP_NAME } und vieles mehr."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail, in der sie aufgefordert werden, diese so bald wie möglich zu aktivieren. Single Sign-On-Benutzer, erhalten diese Aufforderung nicht."
       ],
@@ -17752,6 +17801,9 @@
       ],
       "User is a group": [
         "Benutzer ist eine Gruppe"
+      ],
+      "via ${ groupNames }": [
+        "über ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
