@@ -1117,8 +1117,8 @@
       "Error reporting problem": [
         "Chyba pri nahlasovaní problému"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Exspirácia musí byť medzi 60 minútami a 1 rokom"
+      "Expiration must be between 1 hour and 1 year": [
+        "Exspirácia musí byť medzi 1 hodinou a 1 rokom"
       ],
       "Failed loading group members": [
         "Chyba pri načítavaní členov skupiny"
@@ -2000,26 +2000,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Zakaždým, keď váš alias dostane od niekoho email, automaticky sa vytvorí nový kontakt."
       ],
-      "Expired ${ abs } hour ago": [
-        "Exspiroval pred ${ abs } hodinou",
-        "Exspiroval pred ${ abs } hodinami",
-        "Exspiroval pred ${ abs } hodinami",
-        "Exspiroval pred ${ abs } hodinami"
+      "Expired on ${ formattedDate }": [
+        "Platnosť skončí o ${ formattedDate }"
       ],
       "Expires in": [
         "Vyprší za"
       ],
-      "Expires in ${ hours } hour": [
-        "Exspiruje o ${ hours } hodinu",
-        "Exspiruje o ${ hours } hodiny",
-        "Exspiruje o ${ hours } hodín",
-        "Exspiruje o ${ hours } hodín"
-      ],
       "Expires in ${ remainingTime }": [
         "Vyprší o ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Exspiruje o menej ako hodinu"
+      "Expires on ${ formattedDate }": [
+        "Vyprší o ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Exportujeme vaše údaje..."
@@ -3036,11 +3027,23 @@
         "${ years } rokov",
         "${ years } rokov"
       ],
+      "1 day": [
+        "1 deň"
+      ],
       "1 hour": [
         "1 hodine"
       ],
       "1 minute": [
         "1 minúte"
+      ],
+      "1 month": [
+        "1 mesiac"
+      ],
+      "1 week": [
+        "1 týždeň"
+      ],
+      "1 year": [
+        "1 rok"
       ],
       "10 minutes": [
         "10 minútach"
@@ -3270,6 +3273,12 @@
       "Crypto Wallet": [
         "Krypto peňaženka"
       ],
+      "Custom": [
+        "Vlastné"
+      ],
+      "Custom expiration (minutes)": [
+        "Vlastná exspirácia (minúty)"
+      ],
       "Custom Items": [
         "Vlastné položky"
       ],
@@ -3360,8 +3369,8 @@
       "Expired tokens (${ expired.length })": [
         "Exspirované tokeny (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Vyprší o (minúty)"
+      "Expires in": [
+        "Vyprší o"
       ],
       "Expiry Date": [
         "Dátum exspirácie"
