@@ -7,6 +7,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { SettingsLink } from '@proton/components';
 
 import { useGuestMigration } from '../../hooks/useGuestMigration';
+import { useLumoAuthAction } from '../../hooks/useLumoAuthAction';
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 
 export interface BaseAuthProps {
@@ -49,22 +50,32 @@ export const AuthActionButton = ({
     const config = AUTH_ACTIONS[action];
 
     const { captureGuestState } = useGuestMigration();
+    const { isEnabled: isNativeAuthEnabled, trigger: triggerAuthAction } = useLumoAuthAction();
 
-    const handleClick = useCallback(async () => {
-        onClick?.();
-        setNativeComposerVisibility(false);
-        try {
-            const captured = await captureGuestState();
-            if (captured) {
-                console.log('Guest state captured and encrypted from header sign-up');
+    const handleClick = useCallback(
+        async (event: React.MouseEvent) => {
+            if (isNativeAuthEnabled) {
+                event.preventDefault();
             }
-        } catch (error) {
-            console.error('Failed to capture guest state:', error);
-        }
-    }, [captureGuestState, onClick]);
+            onClick?.();
+            setNativeComposerVisibility(false);
+            try {
+                const captured = await captureGuestState();
+                if (captured) {
+                    console.log('Guest state captured and encrypted from header sign-up');
+                }
+            } catch (error) {
+                console.error('Failed to capture guest state:', error);
+            }
+            if (isNativeAuthEnabled) {
+                triggerAuthAction(action);
+            }
+        },
+        [captureGuestState, onClick, isNativeAuthEnabled, triggerAuthAction, action]
+    );
 
     const text = config.getButtonText();
-    const path = config.path;
+    const path = isNativeAuthEnabled ? '' : config.path;
 
     if (variant === 'link') {
         return (
@@ -73,11 +84,12 @@ export const AuthActionButton = ({
             </SettingsLink>
         );
     }
+
     return (
         <ButtonLike
             as={SettingsLink}
             path={path}
-            className={className}
+            className={clsx(className)}
             color={color}
             shape={shape}
             size={size}

@@ -17,8 +17,9 @@ import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { APPS } from '@proton/shared/lib/constants';
+import { cleanupInactivePersistedSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getPersistedSession, getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -29,6 +30,7 @@ import noop from '@proton/utils/noop';
 import { GUEST_MIGRATION_STORAGE_KEYS } from './constants/guestMigration';
 import { DbApi } from './indexedDb/db';
 import locales from './locales';
+import { lumoEventLoop } from './redux/eventLoop';
 import { createLumoListenerMiddleware } from './redux/listeners';
 import { rootSaga } from './redux/sagas';
 import { importGuestDataRequest } from './redux/slices/guestMigration';
@@ -38,11 +40,12 @@ import { setStoreRef } from './redux/storeRef';
 import { extraThunkArguments } from './redux/thunk';
 import { LumoApi } from './remote/api';
 import { LUMO_ELIGIBILITY } from './types';
+import { maybeMigrateLegacySessionToNative } from './util/legacySessionMigration';
 import { initializeConsoleOverride } from './util/logging';
-import { lumoEventLoop } from './redux/eventLoop';
 import { type UserAndAddressKeys, initializeLumoBackground, initializeLumoCritical } from './util/lumoBootstrap';
 import { setLumoTelemetryEnabled } from './util/telemetry';
 import { lumoTelemetryConfig } from './util/telemetryConfig';
+import { isNativeMobileApp } from './util/userAgent';
 
 const checkForGuestMigration = async (dispatch: any) => {
     try {
@@ -96,17 +99,30 @@ const checkForGuestMigration = async (dispatch: any) => {
     }
 };
 
-export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
-    // Check if there are any existing sessions on lumo.proton.me, if not redirect to lumo.proton.me/guest where user then has the option to signin
+const hasOptimisticSessions = async ({ api }: { api: ReturnType<typeof getSilentApi> }) => {
+    // First ensure all inactive persisted sessions are cleared.
+    await cleanupInactivePersistedSessions({ api, persistedSessions: getPersistedSessions(), delay: 50 }).catch(noop);
+    // Then read session cookie from account.
     const accountSessions = readAccountSessions();
-    if (!accountSessions) {
-        return replaceUrl(getAppHref('/guest', APPS.PROTONLUMO));
-    }
+    // If account reports any sessions, that value takes precedence. Otherwise, the locally persisted sessions do.
+    return accountSessions ? accountSessions.length > 0 : getPersistedSessions().length > 0;
+};
 
+export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const pathname = window.location.pathname;
-    const searchParams = new URLSearchParams(window.location.search);
     const api = createApi({ config });
     const silentApi = getSilentApi(api);
+
+    // Check if there are any existing sessions on lumo.proton.me, if not redirect to lumo.proton.me/guest where user then has the option to signin.
+    const isGuestOrForkPathname = pathname === '/guest' || pathname === SSO_PATHS.LOGIN;
+    if (!isGuestOrForkPathname && !(await hasOptimisticSessions({ api: silentApi }))) {
+        // Reload to guest path.
+        replaceUrl(getAppHref('/guest', APPS.PROTONLUMO));
+        // Promise that never resolves to wait for the redirect.
+        await new Promise(noop);
+    }
+
+    const searchParams = new URLSearchParams(window.location.search);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
     initializeConsoleOverride();
@@ -122,12 +138,15 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             searchParams,
             unauthenticatedReturnUrl: '/guest',
         });
+
         const uid = authentication.getUID();
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
+
+        void maybeMigrateLegacySessionToNative({ api, authentication, pathname });
 
         const persistedSession = sessionResult.session?.persistedSession || getPersistedSession(authentication.localID);
         const persistedState = await getDecryptedPersistedState<Partial<LumoState>>({
@@ -233,8 +252,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const userData = await userPromise;
 
-        // Needs everything to be loaded.
-        await bootstrap.postLoad({ appName, authentication, ...userData, history });
+        // don't call this on native mobile as early access (which refreshes the page) prevents login from working
+        if (!isNativeMobileApp()) {
+            // Needs everything to be loaded.
+            await bootstrap.postLoad({ appName, authentication, ...userData, history });
+        }
 
         extendStore({ eventManager, lumoEventManager });
         const unsubscribeEventManager = eventManager.subscribe((event) => {
