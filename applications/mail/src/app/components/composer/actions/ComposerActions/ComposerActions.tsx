@@ -10,6 +10,7 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
+import { getWritingAssistantTitle } from '@proton/components/helpers/assistant';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
@@ -20,11 +21,12 @@ import { IcTextStyle } from '@proton/icons/icons/IcTextStyle';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
+import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
@@ -102,6 +104,7 @@ const ComposerActions = ({
     displayToolbar,
 }: Props) => {
     const dispatch = useMailDispatch();
+    const scribeToLumo = useFlag('ScribeToLumo');
     const { viewportWidth } = useActiveBreakpoint();
     const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight, !viewportWidth['<=small']);
     const disabled = opening;
@@ -181,9 +184,8 @@ const ComposerActions = ({
             return '';
         }
 
-        return isAssistantOpened
-            ? c('Action').t`Hide ${BRAND_NAME} Scribe writing assistant`
-            : c('Action').t`Show ${BRAND_NAME} Scribe writing assistant`;
+        const title = getWritingAssistantTitle(scribeToLumo);
+        return isAssistantOpened ? c('Action').t`Hide ${title}` : c('Action').t`Show ${title}`;
     })();
 
     return (
@@ -282,10 +284,19 @@ const ComposerActions = ({
                                                 aria-pressed={isAssistantOpened}
                                                 className="flex"
                                             >
-                                                <IcPenSparks
-                                                    alt={c('Action').t`Your email writing assistant`}
-                                                    style={{ color: '#D132EA' }}
-                                                />
+                                                {scribeToLumo ? (
+                                                    <img
+                                                        src={lumoIcon}
+                                                        alt={c('Action').t`Your email writing assistant`}
+                                                        width={18}
+                                                        height={18}
+                                                    />
+                                                ) : (
+                                                    <IcPenSparks
+                                                        alt={c('Action').t`Your email writing assistant`}
+                                                        style={{ color: '#D132EA' }}
+                                                    />
+                                                )}
                                             </Button>
                                         </ComposerAssistantSpotlight>
                                     </div>

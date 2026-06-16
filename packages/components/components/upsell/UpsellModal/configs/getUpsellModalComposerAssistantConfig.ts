@@ -4,6 +4,8 @@ import { memberThunk } from '@proton/account/member';
 import { organizationThunk } from '@proton/account/organization';
 import { getAssistantUpsellConfigPlanAndCycle } from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import { CYCLE, PLANS, SelectedPlan } from '@proton/payments';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 import { getIsB2CUserAbleToRunScribe } from '../../modals/ComposerAssistantUpsellModal.helpers';
@@ -15,6 +17,7 @@ import type { UpsellModalConfigCase } from '../interface';
 export const getUpsellModalComposerAssistantConfig: UpsellModalConfigCase = async ({
     currency,
     dispatch,
+    getFlag,
     paymentsApi,
     plans,
     subscription,
@@ -23,11 +26,14 @@ export const getUpsellModalComposerAssistantConfig: UpsellModalConfigCase = asyn
     const [organization, member] = await Promise.all([dispatch(organizationThunk()), dispatch(memberThunk())]);
     const isB2CUser = getIsB2CUserAbleToRunScribe(subscription, organization, member);
     const isOrgUser = isOrganization(organization) && !isSuperAdmin(member ? [member] : []);
-    const submitText = c('Action').t`Get the writing assistant`;
+    const scribeToLumo = getFlag('ScribeToLumo');
+    const submitText = scribeToLumo
+        ? getPlanOrAppNameText(LUMO_SHORT_APP_NAME)
+        : c('Action').t`Get the writing assistant`;
 
-    /** B2C user is upsell to DUO plan */
+    /** B2C user is upsell to Lumo plan (or Duo when the rebrand is disabled) */
     if (isB2CUser) {
-        const planIDs = { [PLANS.DUO]: 1 };
+        const planIDs = scribeToLumo ? { [PLANS.LUMO]: 1 } : { [PLANS.DUO]: 1 };
         const cycle = CYCLE.YEARLY;
         const monthlyPrice = await getUpsellPlanMonthlyPrice({
             currency,
@@ -49,7 +55,7 @@ export const getUpsellModalComposerAssistantConfig: UpsellModalConfigCase = asyn
     const latestSubscription = subscription?.UpcomingSubscription ?? subscription;
     const isOrgAdmin = user.isAdmin;
     const selectedPlan = SelectedPlan.createFromSubscription(latestSubscription, plans);
-    const assistantUpsellConfig = getAssistantUpsellConfigPlanAndCycle(user, isOrgAdmin, selectedPlan);
+    const assistantUpsellConfig = getAssistantUpsellConfigPlanAndCycle(user, isOrgAdmin, selectedPlan, scribeToLumo);
 
     if (assistantUpsellConfig?.planIDs && assistantUpsellConfig.cycle) {
         const { planIDs, cycle, minimumCycle, maximumCycle } = assistantUpsellConfig;
