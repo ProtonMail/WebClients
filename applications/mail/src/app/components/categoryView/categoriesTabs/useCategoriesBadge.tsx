@@ -2,8 +2,10 @@ import { useEffect, useSyncExternalStore } from 'react';
 
 import { useEventManager } from '@proton/components/index';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
+import { updateLastUnseenEventId } from '@proton/mail/store/labels/actions';
 import { useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getVisibilityStateSingleton } from '@proton/shared/lib/eventManager/VisibilityState';
 
 import { TabState } from './tabsInterface';
@@ -17,6 +19,7 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
     const [systemFolders] = useSystemFolders();
 
+    const dispatch = useDispatch();
     const { getEventID } = useEventManager();
 
     const visibility = getVisibilityStateSingleton();
@@ -31,24 +34,25 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
     const shouldShowNewBadge = eventID !== null;
 
     useEffect(() => {
-        if (eventID === null || !isVisible) {
+        const lastEventID = getEventID();
+        if (eventID === null || !isVisible || !lastEventID) {
             return;
         }
 
         const timer = setTimeout(() => {
-            // TODO dispatch the action that will update the LastUnseenMessageEventID
-            // dispatch(markCategorySeen(category.id, eventID, lastEventID));
+            void dispatch(updateLastUnseenEventId({ labelID: category.id, lastEventID }));
         }, 10_000);
+
         return () => clearTimeout(timer);
-    }, [category.id, eventID, isVisible, getEventID]);
+    }, [category.id, eventID, isVisible, getEventID, dispatch]);
 
     const handleTabClick = () => {
-        if (eventID === null) {
+        const lastEventID = getEventID();
+        if (eventID === null || !lastEventID) {
             return;
         }
 
-        // TODO dispatch the action that will update the LastUnseenMessageEventID
-        // dispatch(markCategorySeen(category.id, eventID, lastEventID));
+        void dispatch(updateLastUnseenEventId({ labelID: category.id, lastEventID }));
     };
 
     return {
