@@ -6,7 +6,6 @@ import {
     MemberRole,
     type NodeEntity,
     NodeType,
-    NonProtonInvitationState,
     type Result,
     type ShareNodeSettings,
     type ShareResult,
@@ -295,25 +294,8 @@ export const useSharingModalState = ({
             try {
                 const sharingResult = await drive.getSharingInfo(nodeUid);
                 if (sharingResult) {
-                    // TODO: This is temporary fix until we have proper way to convert invitation in background
-                    const protonInvitations = [...sharingResult.protonInvitations];
-                    let nonProtonInvitations = [...sharingResult.nonProtonInvitations];
-                    for await (const nonProtonInvitation of sharingResult.nonProtonInvitations) {
-                        try {
-                            if (nonProtonInvitation.state === NonProtonInvitationState.UserRegistered) {
-                                const invitation = await drive.convertNonProtonInvitation(nodeUid, nonProtonInvitation);
-                                protonInvitations.push(invitation);
-                                nonProtonInvitations = nonProtonInvitations.filter(
-                                    (item) => item.uid !== nonProtonInvitation.uid
-                                );
-                            }
-                        } catch (e) {
-                            handleSdkError(e, { showNotification: false });
-                        }
-                    }
-                    const snapshot = { ...sharingResult, protonInvitations, nonProtonInvitations };
-                    setSharingInfo(snapshot);
-                    onShareSnapshot?.(resultOk(snapshot));
+                    setSharingInfo(sharingResult);
+                    onShareSnapshot?.(resultOk(sharingResult));
                 }
             } catch (e) {
                 handleSdkError(e, {
