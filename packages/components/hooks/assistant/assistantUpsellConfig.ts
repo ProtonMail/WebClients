@@ -11,18 +11,22 @@ const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({
 export const getAssistantUpsellConfigPlanAndCycle = (
     user: UserModel,
     isOrgAdmin: boolean,
-    selectedPlan: SelectedPlan
+    selectedPlan: SelectedPlan,
+    useLumo: boolean
 ): Pick<OpenCallbackProps, 'planIDs' | 'cycle' | 'minimumCycle' | 'maximumCycle'> | undefined => {
     const cycles = getUpgradeCycles(selectedPlan.cycle);
 
     if (isOrgAdmin) {
-        // if we already have scribe addons, then we will use the current number of scribes as starting addon number
+        // if we already have addons, then we will use the current number of addons as starting addon number
         // in the upsell
-        // if we don't, then we will use the number of members as starting number for scribe addons
-        const addonsValue = selectedPlan.getTotalScribes() || selectedPlan.getTotalUsers();
+        // if we don't, then we will use the number of members as starting number for addons
+        const addonsValue =
+            (useLumo ? selectedPlan.getTotalLumos() : selectedPlan.getTotalScribes()) || selectedPlan.getTotalUsers();
 
-        // Update the selected plan with the new scribe count
-        const updatedSelectedPlan = selectedPlan.setScribeCount(addonsValue);
+        // Update the selected plan with the new addon count
+        const updatedSelectedPlan = useLumo
+            ? selectedPlan.setLumoCount(addonsValue)
+            : selectedPlan.setScribeCount(addonsValue);
 
         return {
             planIDs: updatedSelectedPlan.planIDs,
@@ -31,7 +35,7 @@ export const getAssistantUpsellConfigPlanAndCycle = (
     }
 
     if (user.isPaid) {
-        const updatedSelectedPlan = selectedPlan.setScribeCount(1);
+        const updatedSelectedPlan = useLumo ? selectedPlan.setLumoCount(1) : selectedPlan.setScribeCount(1);
 
         return {
             planIDs: updatedSelectedPlan.planIDs,

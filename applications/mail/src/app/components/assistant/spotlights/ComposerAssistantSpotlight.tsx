@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/illustrations/ai-assistant-spotlight.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 
 interface Props {
     children: ReactNode;
@@ -16,6 +17,7 @@ interface Props {
 
 const ComposerAssistantSpotlight = ({ children, show, onClose, onDisplayed }: Props) => {
     const shouldShowSpotlight = useSpotlightShow(show);
+    const scribeToLumo = useFlag('ScribeToLumo');
     return (
         <Spotlight
             originalPlacement="top"
@@ -30,7 +32,10 @@ const ComposerAssistantSpotlight = ({ children, show, onClose, onDisplayed }: Pr
                     <div>
                         <b>{c('Info').t`Your private writing assistant`}</b>
                         <br />
-                        {c('Info').t`${BRAND_NAME} Scribe helps you craft better emails quickly and effortlessly.`}
+                        {scribeToLumo
+                            ? c('Info')
+                                  .t`${LUMO_SHORT_APP_NAME} helps you craft better emails quickly and effortlessly.`
+                            : c('Info').t`${BRAND_NAME} Scribe helps you craft better emails quickly and effortlessly.`}
                     </div>
                 </div>
             }

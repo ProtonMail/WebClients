@@ -5,13 +5,14 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 const useAssistantFeatureEnabled = () => {
     const accessToAssistant = useFlag('ComposerAssistant');
+    const scribeToLumo = useFlag('ScribeToLumo');
 
     const user = baseUseSelector(selectUser)?.value;
 
     const organization = baseUseSelector(selectOrganization)?.value;
     const organizationScribeEnabled =
         !!organization?.Settings.ShowScribeWritingAssistant || !!user?.isAdmin || !!user?.isFree;
-    const planSupportsScribe = isScribeSupported(organization, user);
+    const planSupportsScribe = isScribeSupported(organization, user, scribeToLumo);
 
     const paymentsEnabled = accessToAssistant;
 

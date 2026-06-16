@@ -233,6 +233,7 @@ export enum MailFeatureFlag {
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     ComposerAssistant = 'ComposerAssistant',
+    ScribeToLumo = 'ScribeToLumo',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     MailWebListTelemetry = 'MailWebListTelemetry',
