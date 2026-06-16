@@ -13,6 +13,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import {
+    getCheckoutRenewNoticeTextFromCheckResult,
     getTrialRenewalAmountDueNoticeText,
     getTrialRenewalNoticeTextWithTermsAndConditions,
 } from '@proton/payments/ui/components/RenewalNotice';
@@ -22,7 +23,14 @@ import clsx from '@proton/utils/clsx';
 
 import { getReferrerName } from '../../../../helpers/signupSearchParams';
 import { getPlanIconPath } from '../../helpers/planIcons';
+import { useIsVPNPlanWithoutTrialVariant } from '../../helpers/useIsVPNPlanWithoutTrialVariant';
+import { useShouldStartTrial } from '../../helpers/useShouldStartTrial';
+import { BundleFeatures } from '../Features/BundleFeatures';
+import { DriveFeatures } from '../Features/DriveFeatures';
 import { FreeFeatures } from '../Features/FreeFeatures';
+import { MailFeatures } from '../Features/MailFeatures';
+import { PassFeatures } from '../Features/PassFeatures';
+import { VPNFeatures } from '../Features/VPNFeatures';
 import { NoCreditCardBadge } from '../Layout/NoCreditCardBadge';
 import { PlanLogo } from '../Layout/PlanLogo';
 import { TaxRow } from './TaxRow';
@@ -34,6 +42,7 @@ const PricingHeader = () => {
     const searchParams = new URLSearchParams(location.search);
 
     const referrerName = getReferrerName(searchParams);
+    const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(selectedPlan.name);
 
     return (
         <>
@@ -42,7 +51,9 @@ const PricingHeader = () => {
                     <span
                         className="rounded text-semibold py-0.5 px-1 color-primary shrink-0"
                         style={{ backgroundColor: 'rgb(109 74 255 / 0.08)' }}
-                    >{c('Signup').t`Your trial`}</span>
+                    >
+                        {isVPNPlanWithoutTrial ? c('Signup').t`Your plan` : c('Signup').t`Your trial`}
+                    </span>
                     {referrerName && (
                         <span className="text-ellipsis">
                             {getBoldFormattedText(c('Signup').t`Gifted by **${referrerName}**`, 'text-semibold')}
@@ -103,12 +114,30 @@ const TrialExplanation = () => {
 
 export type PricingStep = 'account-details' | 'payment';
 
+const getPlanFeatures = (plan: PLANS) => {
+    switch (plan) {
+        case PLANS.BUNDLE:
+            return <BundleFeatures />;
+        case PLANS.MAIL:
+            return <MailFeatures />;
+        case PLANS.DRIVE:
+            return <DriveFeatures />;
+        case PLANS.PASS:
+            return <PassFeatures />;
+        case PLANS.VPN2024:
+            return <VPNFeatures />;
+        default:
+            return <FreeFeatures />;
+    }
+};
+
 const PricingFooter = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
     const isPaidPlan = selectedPlan.name !== PLANS.FREE;
     const { eligibleTrials } = useEligibleTrials();
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
+    const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(selectedPlan.name);
 
     const planToCheck = {
         planIDs: { [payments.selectedPlan.name]: 1 },
@@ -168,6 +197,9 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
         if (!hasFullCheckoutDetails) {
             return <SkeletonLoader width="100%" height="1.25rem" />;
         }
+        if (isVPNPlanWithoutTrial) {
+            return null;
+        }
         if (willAutoRenew) {
             return <p className="m-0">{c('Signup').t`Then ${priceWithDiscountPerMonth} per month. Cancel anytime.`}</p>;
         }
@@ -178,6 +210,9 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
         if (!hasFullCheckoutDetails) {
             return <SkeletonLoader width="100%" height="1.25rem" />;
         }
+        if (isVPNPlanWithoutTrial) {
+            return null;
+        }
         return (
             <div className="flex justify-space-between gap-2 text-rg">
                 <span className="w-1/2">{getTrialRenewalAmountDueNoticeText()}</span>
@@ -186,24 +221,37 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
         );
     };
 
+    const copyTotal = () => {
+        if (isVPNPlanWithoutTrial) {
+            return (
+                <>
+                    <span className="text-semibold">{c('Signup').t`Total`}</span>
+                    <span className="text-semibold">{priceWithDiscountPerCycle}</span>
+                </>
+            );
+        }
+        if (willAutoRenew && step === 'payment') {
+            return (
+                <>
+                    <span className="text-semibold">{c('Signup').t`Amount due now`}</span>
+                    <span className="text-semibold">{getSimplePriceString(checkoutUi.currency, 0)}</span>
+                </>
+            );
+        }
+        return (
+            <>
+                <span className="text-semibold">{c('Signup').t`Total`}</span>
+                <span className="text-semibold">{
+                    // translator: full sentence "Free for 14 days"
+                    c('Signup').t`Free for ${TRIAL_DURATION_DAYS} days`
+                }</span>
+            </>
+        );
+    };
+
     const total = (
         <>
-            <div className="flex justify-space-between gap-2 text-lg">
-                {willAutoRenew && step === 'payment' ? (
-                    <>
-                        <span className="text-semibold">{c('Signup').t`Amount due now`}</span>
-                        <span className="text-semibold">{getSimplePriceString(checkoutUi.currency, 0)}</span>
-                    </>
-                ) : (
-                    <>
-                        <span className="text-semibold">{c('Signup').t`Total`}</span>
-                        <span className="text-semibold">{
-                            // translator: full sentence "Free for 14 days"
-                            c('Signup').t`Free for ${TRIAL_DURATION_DAYS} days`
-                        }</span>
-                    </>
-                )}
-            </div>
+            <div className="flex justify-space-between gap-2 text-lg">{copyTotal()}</div>
             <div>{step === 'payment' && willAutoRenew ? copyAfterTrialPayment() : copyAfterTrial()}</div>
         </>
     );
@@ -267,6 +315,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
     const { eligibleTrials } = useEligibleTrials();
     const isPaidPlan = selectedPlan.name !== PLANS.FREE;
     const willAutoRenew = eligibleTrials.creditCardRequiredPlans.includes(payments.selectedPlan.name);
+    const startTrial = useShouldStartTrial(payments.selectedPlan.name);
 
     const planToCheck = {
         planIDs: { [payments.selectedPlan.name]: 1 },
@@ -286,12 +335,21 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
     const showRenewalNotice = willAutoRenew && step === 'payment';
     const renewalNotice = showRenewalNotice && (
         <p className="mb-0 mt-6 color-weak text-sm">
-            {getTrialRenewalNoticeTextWithTermsAndConditions({
-                renewCycle: checkoutUi.renewCycle,
-                app: getAppFromPathnameSafe(location.pathname) || APPS.PROTONMAIL,
-            })}
+            {startTrial
+                ? getTrialRenewalNoticeTextWithTermsAndConditions({
+                      renewCycle: checkoutUi.renewCycle,
+                      app: getAppFromPathnameSafe(location.pathname) || APPS.PROTONMAIL,
+                  })
+                : getCheckoutRenewNoticeTextFromCheckResult({
+                      checkResult: payments.checkResult,
+                      plansMap: payments.plansMap,
+                      planIDs: planToCheck.planIDs,
+                      app: getAppFromPathnameSafe(location.pathname) || APPS.PROTONMAIL,
+                  })}
         </p>
     );
+
+    const features = getPlanFeatures(selectedPlan.name);
 
     return (
         <section className={clsx('referral-signup-pricing-card w-full flex flex-column')}>
@@ -299,7 +357,13 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
                 {isPaidPlan ? (
                     <>
                         <PricingHeader />
-                        <TrialExplanation />
+                        {startTrial ? (
+                            <TrialExplanation />
+                        ) : (
+                            <div className="px-4 lg:px-8">
+                                <ul className="unstyled flex flex-column gap-2 m-0">{features}</ul>
+                            </div>
+                        )}
                         <PricingFooter step={step} />
                     </>
                 ) : (
