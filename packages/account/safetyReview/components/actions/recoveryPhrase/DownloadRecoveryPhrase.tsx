@@ -64,7 +64,7 @@ export const DownloadRecoveryPhrase = (props: Props) => {
         void withLoading(
             (async () => {
                 try {
-                    const newRecoveryKitData = await dispatch(setRecoveryPhrase(recoveryKitData));
+                    const newRecoveryKitData = await dispatch(setRecoveryPhrase(recoveryKitData, true));
                     setRecoveryKitData(newRecoveryKitData);
                     handleSave().catch(noop);
                 } catch (e) {

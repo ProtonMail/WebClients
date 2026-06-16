@@ -213,27 +213,27 @@ export const getAddDelegatedAccessPayloadThunk = ({
     };
 };
 
-const addDelegatedAccess = (data: AddDelegatedAccessPayload) => ({
+const addDelegatedAccess = (data: AddDelegatedAccessPayload & { PersistPasswordScope?: boolean }) => ({
     url: 'account/v1/access',
     method: 'post',
     data,
 });
 
-export const addDelegatedAccessThunk = ({
-    targetEmail,
-    triggerDelay,
-    types,
-}: {
+interface DelegatedAccessContact {
     targetEmail: string;
     triggerDelay: number;
     types: DelegatedAccessTypeEnum;
-}): ThunkAction<Promise<OutgoingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+}
+export const addDelegatedAccessThunk = (
+    { targetEmail, triggerDelay, types }: DelegatedAccessContact,
+    persistPasswordScope: boolean = false
+): ThunkAction<Promise<OutgoingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
         const payload = await dispatch(getAddDelegatedAccessPayloadThunk({ api, targetEmail, triggerDelay, types }));
         const { DelegatedAccess } = await api<{
             DelegatedAccess: OutgoingDelegatedAccessOutput;
-        }>(addDelegatedAccess(payload));
+        }>(addDelegatedAccess({ ...payload, PersistPasswordScope: persistPasswordScope }));
         dispatch(delegatedAccessActions.upsertOutgoingItem(DelegatedAccess));
         return DelegatedAccess;
     };
@@ -241,12 +241,10 @@ export const addDelegatedAccessThunk = ({
 
 export const addDelegatedAccessesThunk = ({
     contacts,
+    persistPasswordScope = false,
 }: {
-    contacts: {
-        targetEmail: string;
-        triggerDelay: number;
-        types: DelegatedAccessTypeEnum;
-    }[];
+    contacts: DelegatedAccessContact[];
+    persistPasswordScope?: boolean;
 }): ThunkAction<
     Promise<OutgoingDelegatedAccessOutput[]>,
     DelegatedAccessState,
@@ -259,7 +257,7 @@ export const addDelegatedAccessesThunk = ({
             if (!contact.targetEmail) {
                 continue;
             }
-            const data = await dispatch(addDelegatedAccessThunk(contact));
+            const data = await dispatch(addDelegatedAccessThunk(contact, persistPasswordScope));
             result.push(data);
         }
         return result;

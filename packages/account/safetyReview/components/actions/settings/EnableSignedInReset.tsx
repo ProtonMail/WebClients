@@ -30,7 +30,7 @@ export const EnableSignedInReset = (props: Props) => {
                 event.preventDefault();
                 withLoading(
                     (async function () {
-                        await dispatch(toggleSignedInReset({ value: true }));
+                        await dispatch(toggleSignedInReset({ value: true, persistPasswordScope: true }));
                         props.safetyReview.actions.next('completed', props.recoveryItem);
                     })()
                 ).catch(noop);

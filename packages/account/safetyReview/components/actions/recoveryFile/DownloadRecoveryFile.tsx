@@ -30,7 +30,7 @@ export const DownloadRecoveryFile = (props: Props) => {
                 event.preventDefault();
                 withLoading(
                     (async function () {
-                        await dispatch(downloadRecoveryFileThunk());
+                        await dispatch(downloadRecoveryFileThunk(true));
                         props.safetyReview.actions.next('completed', props.recoveryItem);
                     })()
                 ).catch(noop);

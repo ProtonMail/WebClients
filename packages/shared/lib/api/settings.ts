@@ -251,7 +251,7 @@ export const updateEarlyAccess = (data: { EarlyAccess: number }) => ({
     data,
 });
 
-export const updateFlags = (data: Partial<Flags>) => ({
+export const updateFlags = (data: Partial<Flags> & { PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/flags',
     method: 'put',
     data,
