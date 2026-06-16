@@ -993,6 +993,9 @@
       "Error reporting problem": [
         "Virheraportoinnin ongelma"
       ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Voimassaoloajan on oltava 1 tunnin ja 1 vuoden välillä"
+      ],
       "Failed loading group members": [
         "Ryhmän jäsenten lataaminen epäonnistui"
       ],
@@ -1818,11 +1821,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Uusi yhteystieto luodaan automaattisesti joka kerta, kun aliaksesi vastaanottaa sähköpostia."
       ],
+      "Expired on ${ formattedDate }": [
+        "Erääntyi ${ formattedDate }"
+      ],
       "Expires in": [
         "Erääntymiseen:"
       ],
       "Expires in ${ remainingTime }": [
         "Erääntymiseen: ${ remainingTime }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Erääntyy ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Viedään tietojasi..."
@@ -2007,10 +2016,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2741,11 +2746,23 @@
         "${ years } vuosi",
         "${ years } vuotta"
       ],
+      "1 day": [
+        "1 päivä"
+      ],
       "1 hour": [
         "Tunnin kuluttua"
       ],
       "1 minute": [
         "Minuutin kuluttua"
+      ],
+      "1 month": [
+        "1 kuukausi"
+      ],
+      "1 week": [
+        "1 viikko"
+      ],
+      "1 year": [
+        "1 vuosi"
       ],
       "10 minutes": [
         "10 minuutin kuluttua"
@@ -2980,6 +2997,12 @@
       ],
       "Crypto Wallet": [
         "Kryptolompakko"
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Custom expiration (minutes)": [
+        "Mukautettu erääntyminen (minuuttia)"
       ],
       "Custom Items": [
         "Mukautetut kohteet"

@@ -1081,8 +1081,8 @@
       "Error reporting problem": [
         "Erro ao relatar o problema"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "O prazo de expiração deve ser entre 60 minutos e 1 ano"
+      "Expiration must be between 1 hour and 1 year": [
+        "O prazo de expiração deve ser entre 1 hora e 1 ano"
       ],
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
@@ -1116,6 +1116,9 @@
       ],
       "Failed to create the contact": [
         "Não foi possível criar o contato"
+      ],
+      "Failed to delete access token": [
+        "Falha ao excluir o token de acesso"
       ],
       "Failed to delete domain": [
         "Não foi possível excluir o domínio"
@@ -1984,22 +1987,14 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vez que seu alias receber um e-mail de alguém, um contato será criado automaticamente."
       ],
-      "Expired ${ abs } hour ago": [
-        "Expirou há ${ abs } hora",
-        "Expirou há ${ abs } horass"
-      ],
       "Expires in": [
         "Expira em"
-      ],
-      "Expires in ${ hours } hour": [
-        "Expira em ${ hours } hora",
-        "Expira em ${ hours } horas"
       ],
       "Expires in ${ remainingTime }": [
         "Expira em ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Expira em menos de uma hora"
+      "Expires on ${ formattedDate }": [
+        "Expira em ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Exportando seus dados..."
@@ -2195,8 +2190,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -3020,11 +3014,23 @@
         "${ years } ano",
         "${ years } anos"
       ],
+      "1 day": [
+        "1 dia"
+      ],
       "1 hour": [
         "1 hora"
       ],
       "1 minute": [
         "1 minuto"
+      ],
+      "1 month": [
+        "1 mês"
+      ],
+      "1 week": [
+        "1 semana"
+      ],
+      "1 year": [
+        "1 ano"
       ],
       "10 minutes": [
         "10 minutos"
@@ -3269,6 +3275,9 @@
       "Crypto Wallet": [
         "Carteira de criptomoedas"
       ],
+      "Custom": [
+        "Personalizado"
+      ],
       "Custom Items": [
         "Itens personalizados"
       ],
@@ -3353,8 +3362,8 @@
       "Expired tokens (${ expired.length })": [
         "Tokens expirados (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Expira em (minutos)"
+      "Expires in": [
+        "Expira em"
       ],
       "Expiry Date": [
         "Data de validade"
@@ -4283,6 +4292,9 @@
       ],
       "The file you are trying to import is empty": [
         "O arquivo que você está tentando importar está vazio"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Esse recurso não é suportado no seu plano. ${ upgradeLink }"
       ],
       "Total files: ": [
         "Total de arquivos: "
