@@ -30,6 +30,7 @@ import {
     isInternal,
     isScheduled,
 } from '@proton/shared/lib/mail/messages';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -52,6 +53,7 @@ import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
 import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
+import ExtraOneTimeCode from './components/ExtraOneTimeCode';
 
 interface Props {
     labelID: string;
@@ -101,6 +103,7 @@ const HeaderExpanded = ({
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
+    const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
 
     const isSendingMessage = message.draftFlags?.sending;
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
@@ -353,40 +356,43 @@ const HeaderExpanded = ({
                             filterDropdownToggleRef={filterDropdownToggleRef}
                         />
                     </div>
-                    {!isScheduledMessage && (
-                        <ButtonGroup className="mb-2">
-                            <Tooltip title={titleReply}>
-                                <Button
-                                    icon
-                                    disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                                    onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
-                                    data-testid="message-view:reply"
-                                >
-                                    <IcArrowUpAndLeftBig className="rtl:mirror" alt={c('Title').t`Reply`} />
-                                </Button>
-                            </Tooltip>
-                            <Tooltip title={titleReplyAll}>
-                                <Button
-                                    icon
-                                    disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                                    onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
-                                    data-testid="message-view:reply-all"
-                                >
-                                    <IcArrowsUpAndLeftBig className="rtl:mirror" alt={c('Title').t`Reply all`} />
-                                </Button>
-                            </Tooltip>
-                            <Tooltip title={titleForward}>
-                                <Button
-                                    icon
-                                    disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                                    onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
-                                    data-testid="message-view:forward"
-                                >
-                                    <IcArrowUpAndRightBig className="rtl:mirror" alt={c('Title').t`Forward`} />
-                                </Button>
-                            </Tooltip>
-                        </ButtonGroup>
-                    )}
+                    <div className="mb-2 flex items-center gap-2 empty:hidden">
+                        {isOneTimePasscodeEnabled && <ExtraOneTimeCode message={message} />}
+                        {!isScheduledMessage && (
+                            <ButtonGroup>
+                                <Tooltip title={titleReply}>
+                                    <Button
+                                        icon
+                                        disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                        onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
+                                        data-testid="message-view:reply"
+                                    >
+                                        <IcArrowUpAndLeftBig className="rtl:mirror" alt={c('Title').t`Reply`} />
+                                    </Button>
+                                </Tooltip>
+                                <Tooltip title={titleReplyAll}>
+                                    <Button
+                                        icon
+                                        disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                        onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
+                                        data-testid="message-view:reply-all"
+                                    >
+                                        <IcArrowsUpAndLeftBig className="rtl:mirror" alt={c('Title').t`Reply all`} />
+                                    </Button>
+                                </Tooltip>
+                                <Tooltip title={titleForward}>
+                                    <Button
+                                        icon
+                                        disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                        onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
+                                        data-testid="message-view:forward"
+                                    >
+                                        <IcArrowUpAndRightBig className="rtl:mirror" alt={c('Title').t`Forward`} />
+                                    </Button>
+                                </Tooltip>
+                            </ButtonGroup>
+                        )}
+                    </div>
                 </div>
             )}
             {modals}
