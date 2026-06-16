@@ -1149,6 +1149,9 @@
       "Verify account": [
         "계정 인증"
       ],
+      "Verify now": [
+        "지금 인증"
+      ],
       "View": [
         "보기"
       ],
@@ -2151,6 +2154,9 @@
       "Canada": [
         "캐나다"
       ],
+      "Canary Islands": [
+        "카나리아 제도"
+      ],
       "Cape Verde": [
         "카보베르데"
       ],
@@ -2929,7 +2935,7 @@
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+        "${ connectedAddressText }(으)로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
@@ -3864,6 +3870,9 @@
       ],
       "Validation error": [
         "검증 오류"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "부가가치세(VAT)번호는 ${ prefixes }(으)로 시작해야 합니다."
       ],
       "We cannot retrieve this item": [
         "해당 항목을 가져올 수 없습니다"
@@ -4955,8 +4964,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**자동 연결**: 기기를 켜자마자 VPN이 실행되며 연결됩니다."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "회원님의 리퍼럴 링크를 통해 ${ BRAND_NAME }으로 **친구들을 초대하세요.**"
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**킬 스위치**: VPN이 예기치 않게 끊길 경우 인터넷을 차단하여 데이터 유출을 차단합니다."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "만약 초대한 친구가 플랜을 구독한다면 **${ refereeRewardAmount }를 받게 됩니다.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
@@ -5222,6 +5240,9 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
       "Create in": [
         "만들기"
       ],
@@ -5416,6 +5437,9 @@
       ],
       "for ${ price }": [
         "${ price }으로"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
       ],
       "Free 5GB encrypted storage to get started": [
         "시작하기 위한 5GB 무료 암호화 스토리지"
@@ -5815,6 +5839,9 @@
       ],
       "Photo is set as album cover": [
         "해당 사진이 앨범 커버로서 설정되었습니다."
+      ],
+      "Photo saved to your Drive": [
+        "Drive에 사진이 저장되었습니다"
       ],
       "Photo was copied to stream and marked favorite there.": [
         "사진은 스트림에 복사 및 즐겨찾기로 표시되었습니다."
@@ -6757,6 +6784,9 @@
       "${ nbYear } year": [
         "${ nbYear } 년"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength }자"
+      ],
       "(Expired)": [
         "(만료됨)"
       ],
@@ -6848,6 +6878,9 @@
         "BTC 금액"
       ],
       "Calendar": [
+        "캘린더"
+      ],
+      "Calendars": [
         "캘린더"
       ],
       "can edit": [
@@ -6984,6 +7017,9 @@
       ],
       "Email format": [
         "이메일 형식"
+      ],
+      "Emails": [
+        "이메일"
       ],
       "Emails (all messages)": [
         "이메일 (모든 메시지)"
@@ -8157,6 +8193,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -8827,6 +8866,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n }개 국가"
+      ],
       "Access advanced VPN features": [
         "향상된 VPN 기능 접근"
       ],
@@ -9622,6 +9664,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
+      ],
+      "Edit billing address": [
+        "청구 주소 수정"
       ],
       "Got it": [
         "확인했습니다"
@@ -11294,6 +11339,9 @@
       ],
       "Version history": [
         "버전 기록"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "최대 ${ PAID_PREMIUM_MAX_PARTICIPANTS }명 참가자의 화상 회의"
       ],
       "Watch the interview": [
         "인터뷰 보기"
