@@ -214,7 +214,7 @@
         "Pokračovat na ${ planOrAppName }"
       ],
       "Continue with Free": [
-        "Pokračovat zdarma"
+        "Pokračovat s tarifem Free"
       ],
       "Continue with Google": [
         "Pokračovat skrze Google"
@@ -551,6 +551,9 @@
       ],
       "New document": [
         "Nový dokument"
+      ],
+      "New folder": [
+        "Nová složka"
       ],
       "New message": [
         "Nová zpráva"
@@ -2921,6 +2924,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } položku se nepodařilo přesunout",
+        "${ failureItems.length } položky se nepodařilo přesunout",
+        "${ failureItems.length } položek se nepodařilo přesunout",
+        "${ failureItems.length } položek se nepodařilo přesunout"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Identita a adresy > Krátká doména (pm.me)"
       ],
@@ -2990,6 +2999,9 @@
       "Cannot export this contact": [
         "Nelze exportovat tento kontakt"
       ],
+      "Cannot find move target": [
+        "Nelze najít cíl přesunu"
+      ],
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
       ],
@@ -3056,8 +3068,14 @@
       "Failed to copy photo to album": [
         "Kopírování fotky do alba selhalo"
       ],
+      "Failed to create folder": [
+        "Vytvoření složky selhalo"
+      ],
       "Failed to create public share node": [
         "Nepodařilo se vytvořit veřejný uzel sdílení"
+      ],
+      "Failed to expand folder": [
+        "Rozbalení složky selhalo"
       ],
       "Failed to fetch node": [
         "Nepodařilo se stáhnout uzel"
@@ -4568,6 +4586,9 @@
         "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
         "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }"
       ],
+      "Already in this folder": [
+        "Již v této složce"
+      ],
       "an anonymous user": [
         "anonymní uživatel"
       ],
@@ -4621,6 +4642,12 @@
       ],
       "Can view only": [
         "Může pouze zobrazovat"
+      ],
+      "Can't move a folder into itself": [
+        "Složku nelze přesunout do sebe"
+      ],
+      "Can't write into folder": [
+        "Nelze zapisovat do složky"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
@@ -4935,7 +4962,7 @@
         "V restriktivních zemích"
       ],
       "Included": [
-        "Zahrnuto"
+        "Včetně"
       ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
@@ -5231,6 +5258,9 @@
       "Scan the QR code with your mobile device": [
         "Naskenujte kód QR pomocí mobilního zařízení"
       ],
+      "Select a destination folder": [
+        "Vyberte cílovou složku"
+      ],
       "Select a folder to move to.": [
         "Vyberte složku, do níž chcete přesunout."
       ],
@@ -5251,6 +5281,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
+      ],
+      "Settings update failed": [
+        "Aktualizace nastavení selhala"
+      ],
+      "Settings updated": [
+        "Nastavení aktualizováno"
       ],
       "Share via link settings": [
         "Sdílet nastavení pomocí odkazu"
@@ -5905,6 +5941,9 @@
       "Calendar": [
         "Kalendář"
       ],
+      "Calendars": [
+        "Kalendáře"
+      ],
       "can edit": [
         "může upravovat"
       ],
@@ -5991,6 +6030,9 @@
       ],
       "Email format": [
         "Formát e-mailu"
+      ],
+      "Emails": [
+        "E-maily"
       ],
       "Emails (all messages)": [
         "E-maily (všechny zprávy)"
@@ -7818,20 +7860,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" úspěšně vytvořena"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" se nepodařilo vytvořit"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" přesunuto"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" sdíleno"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" úspěšně vytvořen"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" smazáno"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" trvale odstraněno z koše"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" se nepodařilo vytvořit"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" se nepodařilo smazat"
@@ -10164,6 +10209,9 @@
       "Collaborate on documents": [
         "Spolupracovat na dokumentech"
       ],
+      "Computers": [
+        "Počítače"
+      ],
       "Confirm downgrade": [
         "Potvrzení snížení"
       ],
@@ -10846,6 +10894,9 @@
       ],
       "Name must not be empty": [
         "Název nesmí být prázdný"
+      ],
+      "Name must not contain slashes (/)": [
+        "Název nesmí obsahovat lomítka (/)"
       ]
     },
     "Video control": {

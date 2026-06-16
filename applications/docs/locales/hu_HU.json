@@ -519,6 +519,9 @@
       "New document": [
         "Új dokumentum"
       ],
+      "New folder": [
+        "Új mappa"
+      ],
       "New message": [
         "Új üzenet"
       ],
@@ -2738,6 +2741,9 @@
       "Failed to copy photo to album": [
         "Nem sikerült a fénykép másolása az albumba"
       ],
+      "Failed to create folder": [
+        "Nem sikerült létrehozni a mappát"
+      ],
       "Failed to create public share node": [
         "Nem sikerült létrehozni a nyilvános megosztási csomópontot"
       ],
@@ -4710,6 +4716,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
+      "Settings update failed": [
+        "Beállítások módosítása sikertelen"
+      ],
+      "Settings updated": [
+        "Beállítások frissítve lettek"
+      ],
       "Share via link settings": [
         "Megosztás a hivatkozás beállításain keresztül"
       ],
@@ -5295,6 +5307,9 @@
       "Calendar": [
         "Naptár"
       ],
+      "Calendars": [
+        "Naptárak"
+      ],
       "Cancel download": [
         "Letöltés megszakítása"
       ],
@@ -5363,6 +5378,9 @@
       ],
       "Email format": [
         "E-mail formátum"
+      ],
+      "Emails": [
+        "E-mailek"
       ],
       "Emails (all messages)": [
         "E-mailek (összes üzenet)"
@@ -6986,17 +7004,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" sikeresen létrehozva"
-      ],
       "\"${ name }\" deleted": [
         "\"${ name } törölve"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" véglegesen törölve a lomtárból"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" létrehozása nem sikerült"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" törlése nem sikerült"
@@ -8918,6 +8930,9 @@
       "Collaborate on documents": [
         "Együttműködés dokumentumokon"
       ],
+      "Computers": [
+        "Számítógépek"
+      ],
       "Confirm downgrade": [
         "Lemondás megerősítése"
       ],
@@ -9546,6 +9561,9 @@
       ],
       "Name must not be empty": [
         "A név nem lehet üres"
+      ],
+      "Name must not contain slashes (/)": [
+        "A név nem tartalmazhat perjeleket (/)"
       ]
     },
     "Video control": {

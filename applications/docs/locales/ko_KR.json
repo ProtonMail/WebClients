@@ -543,6 +543,9 @@
       "New document": [
         "새 문서"
       ],
+      "New folder": [
+        "새 폴더"
+      ],
       "New message": [
         "새 메시지"
       ],
@@ -884,6 +887,9 @@
       ],
       "Verify account": [
         "계정 인증"
+      ],
+      "Verify now": [
+        "지금 인증"
       ],
       "View": [
         "보기"
@@ -1747,6 +1753,9 @@
       "Canada": [
         "캐나다"
       ],
+      "Canary Islands": [
+        "카나리아 제도"
+      ],
       "Cape Verde": [
         "카보베르데"
       ],
@@ -2517,7 +2526,7 @@
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+        "${ connectedAddressText }(으)로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
@@ -2942,6 +2951,9 @@
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
       ],
+      "Cannot find move target": [
+        "이동 대상을 찾을 수 없음"
+      ],
       "Contact could not be saved": [
         "연락처를 저장할 수 없습니다"
       ],
@@ -3002,8 +3014,14 @@
       "Failed to copy photo to album": [
         "사진을 앨범에 복사하지 못했습니다."
       ],
+      "Failed to create folder": [
+        "폴더 생성 실패"
+      ],
       "Failed to create public share node": [
         "공개 공유 노드 생성 실패"
+      ],
+      "Failed to expand folder": [
+        "폴더 확장 실패"
       ],
       "Failed to fetch node": [
         "노드 가져오기 실패"
@@ -4322,8 +4340,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**자동 연결**: 기기를 켜자마자 VPN이 실행되며 연결됩니다."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "회원님의 리퍼럴 링크를 통해 ${ BRAND_NAME }으로 **친구들을 초대하세요.**"
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**킬 스위치**: VPN이 예기치 않게 끊길 경우 인터넷을 차단하여 데이터 유출을 차단합니다."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "만약 초대한 친구가 플랜을 구독한다면 **${ refereeRewardAmount }를 받게 됩니다.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
@@ -4375,6 +4402,9 @@
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "최대 ${ maxContact }개까지 연락처가 불러오기됩니다."
+      ],
+      "Already in this folder": [
+        "폴더에 이미 존재함"
       ],
       "an anonymous user": [
         "익명의 사용자"
@@ -4429,6 +4459,12 @@
       ],
       "Can view only": [
         "보기만 가능"
+      ],
+      "Can't move a folder into itself": [
+        "폴더를 자기자신 안으로 옮길 수 없습니다."
+      ],
+      "Can't write into folder": [
+        "폴더에 쓸 수 없습니다."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
@@ -4666,6 +4702,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
       ],
       "Free 5GB encrypted storage to get started": [
         "시작하기 위한 5GB 무료 암호화 스토리지"
@@ -5021,6 +5060,9 @@
       "Scan the QR code with your mobile device": [
         "모바일 기기로 QR 코드를 스캔해보세요"
       ],
+      "Select a destination folder": [
+        "대상 폴더 선택"
+      ],
       "Select a folder to move to.": [
         "이동할 폴더 선택"
       ],
@@ -5041,6 +5083,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
+      ],
+      "Settings update failed": [
+        "설정 업데이트 실패"
+      ],
+      "Settings updated": [
+        "설정 업데이트 완료"
       ],
       "Share via link settings": [
         "링크로 공유 설정"
@@ -5599,6 +5647,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength }자"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
@@ -5672,6 +5723,9 @@
         "브라우저 버전"
       ],
       "Calendar": [
+        "캘린더"
+      ],
+      "Calendars": [
         "캘린더"
       ],
       "can edit": [
@@ -5760,6 +5814,9 @@
       ],
       "Email format": [
         "이메일 형식"
+      ],
+      "Emails": [
+        "이메일"
       ],
       "Emails (all messages)": [
         "이메일 (모든 메시지)"
@@ -6753,6 +6810,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -7414,6 +7474,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n }개 국가"
+      ],
       "Access advanced VPN features": [
         "향상된 VPN 기능 접근"
       ],
@@ -7464,17 +7527,11 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
       ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\"이(가) 성공적으로 생성되었습니다"
-      ],
       "\"${ name }\" deleted": [
         "\"${ name }\" 삭제됨"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" 이(가) 휴지통에서 완전히 삭제되었습니다"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\"을(를) 생성할 수 없습니다"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" 삭제 실패"
@@ -9600,6 +9657,9 @@
       "Collaborate on documents": [
         "문서에서 협업하기"
       ],
+      "Computers": [
+        "컴퓨터"
+      ],
       "Confirm downgrade": [
         "다운그레이드 확인"
       ],
@@ -10264,6 +10324,9 @@
       ],
       "Name must not be empty": [
         "이름은 비워둘 수 없습니다"
+      ],
+      "Name must not contain slashes (/)": [
+        "이름에 슬래시(/)를 포함할 수 없습니다."
       ]
     },
     "Video control": {
