@@ -36,6 +36,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import useGroupKeys from './useGroupKeys';
 
+import './GroupMemberItemDropdown.scss';
+
 interface PermissionOption {
     label: string;
     value: GROUP_MEMBER_PERMISSIONS;
@@ -72,20 +74,6 @@ interface Props {
     isFrozen: boolean;
     canChangeVisibility: boolean;
 }
-
-// Did not find an already existing implementation of jsxJoin
-const jsxJoin = (array: ReactNode[], separator: ReactNode): ReactNode[] => {
-    const [first, ...rest] = array;
-    return rest.reduce(
-        (acc: ReactNode[], val: ReactNode, i: number) => [
-            ...acc,
-            // eslint-disable-next-line react/no-array-index-key
-            <Fragment key={i}>{separator}</Fragment>,
-            val,
-        ],
-        [first] as ReactNode[]
-    );
-};
 
 const GroupMemberItemDropdown = ({ groupMember, member, group, isFrozen, canChangeVisibility }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -293,7 +281,7 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, isFrozen, canChan
                 originalPlacement="bottom-start"
                 size={{ width: DropdownSizeUnit.Dynamic, maxWidth: DropdownSizeUnit.Viewport }}
             >
-                <DropdownMenu>{jsxJoin(sections, <hr className="mt-2 mb-0" />)}</DropdownMenu>
+                <DropdownMenu className="group-member-dropdown-menu">{sections}</DropdownMenu>
             </Dropdown>
         </>
     );

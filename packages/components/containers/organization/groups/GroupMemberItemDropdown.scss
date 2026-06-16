@@ -1,0 +1,10 @@
+.group-member-dropdown-menu {
+	> *:not(:last-child) {
+		padding-block-end: 0.25rem;
+		border-block-end: 1px solid var(--border-norm);
+	}
+
+	> *:not(:first-child) {
+		padding-block-start: 0.25rem;
+	}
+}
