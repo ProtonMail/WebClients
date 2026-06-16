@@ -62,6 +62,7 @@ const config: ForgeConfig = {
         {
             name: "@electron-forge/maker-squirrel",
             config: {
+                authors: "Proton AG",
                 name: "proton_mail", // Avoids clash with ProtonMail folder used by Bridge in appData
                 iconUrl: `${__dirname}/assets/icons/${getIco()}`,
                 setupIcon: `${__dirname}/assets/icons/${getIco()}`,
