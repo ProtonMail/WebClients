@@ -5,38 +5,39 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { ThemeColor } from '@proton/colors/types';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
 import { AppSwitcher } from '@proton/components/containers/heading/AppSwitcher';
-import { SchedulePhoneCall } from '@proton/components/containers/heading/SchedulePhoneCall';
 import { SecurityCheckup } from '@proton/components/containers/heading/SecurityCheckup';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPassShieldOk } from '@proton/icons/icons/IcPassShieldOk';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { ForkType } from '@proton/shared/lib/authentication/fork';
-import { APPS, APPS_CONFIGURATION, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { getShopURL } from '@proton/shared/lib/helpers/url';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import { useTheme } from '../themes/ThemeProvider';
 import { UserDropdownContext, type UserDropdownValue } from './UserDropdownContext';
+import { UserDropdownFooter } from './UserDropdownFooter';
 
 import './UserDropdown.scss';
 
-const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgrade: UserDropdownValue['upgrade'] }) => {
+export const UserSection = ({
+    info,
+    upgrade,
+}: {
+    info: UserDropdownValue['info'];
+    upgrade: UserDropdownValue['upgrade'];
+}) => {
     const { createNotification } = useNotifications();
     const { viewportWidth } = useActiveBreakpoint();
     const currentTheme = useTheme();
@@ -222,13 +223,11 @@ const SwitchAccountButton = () => {
 
 const UserDropdownContent = () => {
     const { APP_NAME } = useConfig();
-    const isZendeskAIAgentEnabled = useFlag('EnableZenDeskAIAgent');
     const [uid] = useState(generateUID('dropdown'));
     const { viewportWidth } = useActiveBreakpoint();
     const {
         info,
         closeUserDropdown,
-        referral,
         onSignOut,
         onOpenSignoutAll,
         isOpen,
@@ -236,10 +235,8 @@ const UserDropdownContent = () => {
         anchorRef,
         accountSessions,
         hasAppLinks,
-        onOpenChat,
         showSwitchAccountButton,
         sessionOptions,
-        onOpenHelpModal,
         upgrade,
     } = useContext(UserDropdownContext);
 
@@ -339,71 +336,7 @@ const UserDropdownContent = () => {
 
                 {hasAppLinks && <AppSwitcher app={app} hasBorder={accountSessions.hasList} />}
 
-                <div className="text-sm text-center flex flex-column gap-2">
-                    <div className="block">
-                        <button
-                            type="button"
-                            className="px-1 link link-focus color-weak text-no-decoration hover:color-norm"
-                            onClick={() => onOpenHelpModal()}
-                            data-testid="userdropdown:help:button:help-and-feedback"
-                        >
-                            {c('Action').t`Help and feedback`}
-                        </button>
-                    </div>
-
-                    <SchedulePhoneCall />
-
-                    {onOpenChat && (
-                        <div className="block">
-                            <Tooltip
-                                title={
-                                    isZendeskAIAgentEnabled
-                                        ? c('Tooltip').t`Instant assistance with AI and human experts.`
-                                        : ''
-                                }
-                            >
-                                <button
-                                    type="button"
-                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
-                                    onClick={() => {
-                                        closeUserDropdown();
-                                        onOpenChat();
-                                    }}
-                                >
-                                    {c('Action').t`Chat with us`}
-                                    {isZendeskAIAgentEnabled && <IcInfoCircle className="ml-2 color-primary" />}
-                                </button>
-                            </Tooltip>
-                        </div>
-                    )}
-
-                    <div className="flex justify-center">
-                        {referral.visible && (
-                            <>
-                                <SettingsLink
-                                    className="px-2 link link-focus color-weak text-no-decoration hover:color-norm"
-                                    path="/referral"
-                                    onClick={closeUserDropdown}
-                                    data-testid="userdropdown:button:referral"
-                                >
-                                    {c('Action').t`Refer a friend`}
-                                    {referral.redDotReferral ? <NotificationDot color={ThemeColor.Danger} /> : <span />}
-                                </SettingsLink>
-                                <span className="self-center color-weak" aria-hidden="true">
-                                    •
-                                </span>
-                            </>
-                        )}
-                        <a
-                            className="px-2 link link-focus color-weak text-no-decoration hover:color-norm"
-                            href={getShopURL()}
-                            target="_blank"
-                            data-testid="userdropdown:link:shop"
-                        >
-                            {c('Action').t`${BRAND_NAME} shop`}
-                        </a>
-                    </div>
-                </div>
+                <UserDropdownFooter />
             </div>
         </Dropdown>
     );
