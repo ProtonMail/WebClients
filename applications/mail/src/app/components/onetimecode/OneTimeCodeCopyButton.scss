@@ -1,0 +1,19 @@
+.otp-key-icon {
+	// Orient the diagonal key so the bow (big part) sits on the left and the teeth
+	// point right. At rest the key is rolled so the teeth face down; on hover it
+	// unwinds so the teeth face up — "turning in a lock", bow staying on the left.
+	transform: perspective(400px) rotateX(180deg) rotate(-135deg);
+	transition: transform 0.4s ease-out;
+}
+
+.otp-copy-button:hover .otp-key-icon {
+	transform: perspective(400px) rotateX(0deg) rotate(-135deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.otp-key-icon,
+	.otp-copy-button:hover .otp-key-icon {
+		transition: none;
+		transform: rotateX(180deg) rotate(-135deg); // bow left, teeth down, no roll
+	}
+}
