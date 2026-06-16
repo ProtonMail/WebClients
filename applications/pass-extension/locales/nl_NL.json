@@ -1087,8 +1087,8 @@
       "Error reporting problem": [
         "Fout bij melden van het probleem"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "De vervaldatum moet tussen 60 minuten en 1 jaar liggen"
+      "Expiration must be between 1 hour and 1 year": [
+        "De vervaldatum moet tussen 1 uur en 1 jaar liggen"
       ],
       "Failed loading group members": [
         "Kon geen groepslid toevoegen."
@@ -2008,22 +2008,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Telkens als uw alias een e-mail van iemand ontvangt, wordt automatisch een nieuwe contactpersoon aangemaakt."
       ],
-      "Expired ${ abs } hour ago": [
-        "${ abs } uur geleden verlopen",
-        "${ abs } uren geleden verlopen"
+      "Expired on ${ formattedDate }": [
+        "Verlopen op ${ formattedDate }"
       ],
       "Expires in": [
         "Verloopt over"
       ],
-      "Expires in ${ hours } hour": [
-        "Verloopt over ${ hours } uur",
-        "Verloopt over ${ hours } uren"
-      ],
       "Expires in ${ remainingTime }": [
         "Verloopt over ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Verloopt over minder dan een uur"
+      "Expires on ${ formattedDate }": [
+        "Verloopt op ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Uw gegevens exporteren..."
@@ -2219,8 +2214,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -3053,11 +3047,23 @@
         "${ years } jaar",
         "${ years } jaren"
       ],
+      "1 day": [
+        "1 dag"
+      ],
       "1 hour": [
         "1 uur"
       ],
       "1 minute": [
         "1 minuut"
+      ],
+      "1 month": [
+        "1 maand"
+      ],
+      "1 week": [
+        "1 week"
+      ],
+      "1 year": [
+        "1 jaar"
       ],
       "10 minutes": [
         "10 minuten"
@@ -3302,6 +3308,12 @@
       "Crypto Wallet": [
         "Crypto Wallet"
       ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Custom expiration (minutes)": [
+        "Aangepaste vervaldatum (minuten)"
+      ],
       "Custom Items": [
         "Aangepaste items"
       ],
@@ -3386,8 +3398,8 @@
       "Expired tokens (${ expired.length })": [
         "Verlopen tokens (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Verloopt over (minuten)"
+      "Expires in": [
+        "Verloopt over"
       ],
       "Expiry Date": [
         "Vervaldatum"
@@ -4380,6 +4392,9 @@
       ],
       "e.g. 60": [
         "Bijv. 60"
+      ],
+      "e.g. My automation script": [
+        "bijv. Mijn automatiseringsscript"
       ],
       "E.g., ": [
         "Bijv., "

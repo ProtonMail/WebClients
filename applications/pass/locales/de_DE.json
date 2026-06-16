@@ -187,6 +187,9 @@
       "Copy forwarding address": [
         "Weiterleitungsadresse kopieren"
       ],
+      "Copy instructions": [
+        "Anweisungen kopieren"
+      ],
       "Copy link": [
         "Link kopieren"
       ],
@@ -204,6 +207,9 @@
       ],
       "Copy to clipboard": [
         "In die Zwischenablage kopieren"
+      ],
+      "Copy token": [
+        "Token kopieren"
       ],
       "Copy username": [
         "Benutzername kopieren"
@@ -240,6 +246,9 @@
       ],
       "Create note": [
         "Notiz erstellen"
+      ],
+      "Create token": [
+        "Token erstellen"
       ],
       "Create vault": [
         "Tresor erstellen"
@@ -442,6 +451,9 @@
       "Manage access": [
         "Zugriff verwalten"
       ],
+      "Manage vault access": [
+        "Zugriff auf den Tresor verwalten"
+      ],
       "Manually sync your data": [
         "Daten manuell synchronisieren"
       ],
@@ -477,6 +489,9 @@
       ],
       "Multiple select": [
         "Mehrfachauswahl"
+      ],
+      "New token": [
+        "Neues Token"
       ],
       "Next month": [
         "Nächster Monat"
@@ -735,6 +750,9 @@
       "Via secure link": [
         "Über sicheren Link"
       ],
+      "View agent activity": [
+        "Agentenaktivität anzeigen"
+      ],
       "View details": [
         "Details anzeigen"
       ],
@@ -758,6 +776,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivität"
+      ],
+      "Activity details could not be loaded.": [
+        "Aktivitätsdetail konnten nicht geladen werden."
+      ],
+      "Folder": [
+        "Ordner"
+      ],
+      "Item": [
+        "Eintrag"
+      ],
+      "Reason": [
+        "Begründung"
+      ],
+      "Vault": [
+        "Tresor"
       ]
     },
     "Browser": {
@@ -976,6 +1014,9 @@
       "Could not validate addresses at the moment.": [
         "Die Adressen können zurzeit nicht überprüft werden."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Die Anweisungen zum Einrichten des Agenten konnten nicht geladen werden. Bitte kopiere das unten stehende Token; es wird nicht erneut angezeigt."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "In der CSV-Datei fehlen erwartete Kopfzeilen: ${ missingHeaders }"
       ],
@@ -1040,6 +1081,9 @@
       "Failed to change mailbox": [
         "Postfach konnte nicht geändert werden"
       ],
+      "Failed to create access token": [
+        "Die Erstellung des Zugangstokens ist fehlgeschlagen"
+      ],
       "Failed to create domain": [
         "Fehler beim Erstellen der Domain."
       ],
@@ -1048,6 +1092,9 @@
       ],
       "Failed to create the contact": [
         "Fehler beim Erstellen des Kontakts"
+      ],
+      "Failed to delete access token": [
+        "Das Löschen des Zugangstokens ist fehlgeschlagen"
       ],
       "Failed to delete domain": [
         "Fehler beim Löschen der Domain."
@@ -1067,6 +1114,9 @@
       "Failed to edit user's access.": [
         "Fehler beim Bearbeiten des Benutzerzugriffs."
       ],
+      "Failed to load access tokens": [
+        "Das Laden der Zugangstoken ist fehlgeschlagen"
+      ],
       "Failed to load breaches for this address": [
         "Fehler beim Laden der Datenlecks für diese Adresse."
       ],
@@ -1078,6 +1128,9 @@
       ],
       "Failed to load item history": [
         "Fehler beim Laden des Eintragsverlaufs."
+      ],
+      "Failed to load token actions": [
+        "Das Laden der Tokenaktivitäten ist fehlgeschlagen"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Fehler beim Verschieben der Einträge von \"${ payload.content.name }\"."
@@ -1136,6 +1189,9 @@
       "Failed to update random prefix generation setting.": [
         "ehler beim Aktualisieren der Einstellung zur zufälligen Präfixgenerierung"
       ],
+      "Failed to update vault access": [
+        "Der Zugriff auf den Tresor konnte nicht aktualisiert werden"
+      ],
       "Failed to verify domain": [
         "Fehler beim Verifizieren der Domain."
       ],
@@ -1189,6 +1245,9 @@
       ],
       "Name is required": [
         "Name ist erforderlich"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Name darf maximal 191 Zeichen lang sein"
       ],
       "Network error": [
         "Netzwerkfehler"
@@ -1494,6 +1553,9 @@
         "${ row.breachCount } Datendiebstahl entdeckt",
         "${ row.breachCount } Datendiebstähle entdeckt"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } ausgewählt"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
@@ -1530,6 +1592,12 @@
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
         "Zugangstoken \"${ action.token.Name }\" ist bereits abgelaufen. Wenn gelöscht, wird es nicht länger angezeigt."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Zugangstoken \"${ action.token.Name }\" wird sofort ungültig. Dieser Vorgang kann nicht rückgängig gemacht werden."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Mit Zugangstoken, die zusammen mit ${ passCliLink } verwendet werden, kannst du CI/CD automatisieren oder deinem KI-Agenten einen begrenzten Zugriff auf die Ressourcen gewähren, die er zur Ausführung seiner Aufgabe benötigt."
       ],
       "Add your custom email address to monitor:": [
         "Füge deine eigene E-Mail-Adresse zur Überwachung hinzu:"
@@ -1606,6 +1674,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Bevor du deine Daten in diesem Format exportierst, öffne bitte die Safari-Einstellungen -> Registerkarte „Allgemein“ -> deaktiviere die Option „Sichere Dateien nach dem Herunterladen öffnen“. Dadurch wird verhindert, dass Safari die exportierte Datei fälschlicherweise extrahiert."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Zwischen 60 (1 Stunde) und 525600 (1 Jahr)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Biometrische Sperre erfolgreich registriert. Verwende es, um ${ PASS_APP_NAME } zu entsperren."
       ],
@@ -1669,14 +1740,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "In die Zwischenablage kopiert (läuft ab in ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopiere den folgenden Markdown-Code und sende ihn an deinen KI-Agenten. Das Token wird nur dieses eine Mal angezeigt."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopiere dieses Token jetzt. Aus Sicherheitsgründen wird es nicht erneut angezeigt."
+      ],
       "Coupon successfully applied!": [
         "Gutschein erfolgreich angewendet"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Token erstellen, um ${ PASS_APP_NAME } in deine Skripte und Tools zu integrieren."
       ],
       "Create contact illustration": [
         "Kontaktillustration erstellen"
       ],
+      "Created ${ createdDate }": [
+        "Erstellt ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Erstellt ${ time }."
+      ],
+      "Created item": [
+        "Erstellter Eintrag"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV bietet ein praktisches Format zur Anzeige deiner Daten. Aufgrund seiner Einfachheit werden jedoch einige Daten nicht berücksichtigt (benutzerdefinierte Felder, Passkeys...). Für einen vollständigen Export empfehlen wir die Verwendung eines anderen Formats."
@@ -1689,6 +1775,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Standard-Anzeigename für Aliase, die mit ${ domainDisplay } erstellt wurden, sofern er nicht durch den Anzeigenamen des Alias überschrieben wird."
+      ],
+      "Deleted item": [
+        "Gelöschter Eintrag"
       ],
       "Deleted items will be moved here first": [
         "Gelöschte Einträge werden zuerst hierhin verschoben."
@@ -1710,6 +1799,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domain: ${ domainPath } oder @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Pass-cli über ${ passCliLink } herunterladen"
       ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
@@ -1785,6 +1877,9 @@
       ],
       "Enter your PIN code": [
         "PIN-Code eingeben"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Alle Aktionen, die dieses Agenten-Token ausgeführt hat, beginnend mit der neuesten."
       ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Jedes Mal, wenn dein Alias eine E-Mail von einer Person erhält, wird automatisch ein neuer Kontakt erstellt."
@@ -1948,6 +2043,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } wird geladen"
       ],
+      "Log out of any existing session:": [
+        "Aus allen laufenden Sitzungen abmelden:"
+      ],
       "Logging you out...": [
         "Du wirst abgemeldet..."
       ],
@@ -1975,6 +2073,9 @@
       "Move ${ count } item": [
         "${ count } Element verschieben",
         "${ count } Elemente verschieben"
+      ],
+      "Moved item to trash": [
+        "Eintrag in den Papierkorb verschoben"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
@@ -2004,14 +2105,23 @@
       "New": [
         "Neu"
       ],
+      "No activity recorded yet.": [
+        "Noch keine Aktivität aufgezeichnet."
+      ],
       "No breaches detected": [
         "Keine Datenlecks entdeckt"
       ],
       "No network connection": [
         "Keine Netzwerkverbindung"
       ],
+      "No vaults available.": [
+        "Keine Tresore verfügbar."
+      ],
       "None": [
         "Keine Sperre"
+      ],
+      "None selected": [
+        "Nichts ausgewählt"
       ],
       "Not recommended": [
         "Nicht empfohlen"
@@ -2200,6 +2310,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
       ],
+      "Read item": [
+        "Gelesener Eintrag"
+      ],
       "Reconnect": [
         "Erneut verbinden"
       ],
@@ -2233,6 +2346,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Den Verlauf zurückzusetzen, löscht alle früheren Versionen endgültig und kann nicht rückgängig gemacht werden."
       ],
+      "Restored item from trash": [
+        "Eintrag aus dem Papierkorb wiederhergestellt"
+      ],
       "Restoring items from trash": [
         "Einträge vom Papierkorb werden wiederhergestellt"
       ],
@@ -2247,6 +2363,9 @@
       ],
       "Select destination vault": [
         "Zieltresor auswählen:"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Tresore auswählen, auf die „${ token.Name }“ Zugriff haben soll."
       ],
       "Select vault to share": [
         "Zu teilenden Tresor auswählen"
@@ -2323,8 +2442,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Tippe auf das Symbol ${ gearIcon }, um den Alias nach deinen Wünschen zu gestalten."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Teste das Token, indem du dich anmeldest und die Tresore auflistest:"
+      ],
       "Thank you, the problem has been reported": [
         "Vielen Dank, das Problem wurde gemeldet."
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Der Agent muss für jede von ihm ausgeführte Aktion eine Begründung angeben, und jede Aktion wird in einem Prüfprotokoll festgehalten, das du einsehen kannst. Nach der Erstellung des Tokens erhältst du Anweisungen, die du in deinen KI-Agenten einfügen kannst."
       ],
       "The display name when sending an email from this alias.": [
         "Der Anzeigename, wenn eine E-Mail von diesem Alias versendet wird."
@@ -2356,6 +2481,9 @@
       ],
       "The user did not accept the invitation yet.": [
         "Der Benutzer hat die Einladung noch nicht angenommen."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Dann kannst du die Seite ${ url } aufrufen, um die Anweisungen zu kopieren, die du an deinen KI-Agenten senden möchtest."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
@@ -2389,6 +2517,9 @@
       ],
       "This setting is enforced by your organization": [
         "Diese Einstellung wird von deiner Organisation erzwungen."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Dieses Token erhält Lesezugriff auf die von dir ausgewählten Tresore. Es kann Elemente lesen, aber nicht bearbeiten, Tresore nicht freigeben und keine anderen Personen einladen. Du kannst dies später ändern."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Tresor wird derzeit mit niemandem geteilt. Lade Personen ein, um ihn mit diesen zu teilen."
@@ -2456,11 +2587,17 @@
       "Unverified": [
         "Nicht verifiziert"
       ],
+      "Updated item": [
+        "Aktualisierter Eintrag"
+      ],
       "Updating vault organization...": [
         "Tresor-Organisation wird aktualisiert..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Upgrade jetzt zum Freischalten von Premiumfunktionen"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Wechsle zu ${ PASS_APP_NAME } Plus, um Zugangstoken zu erstellen und ${ PASS_APP_NAME } programmgesteuert zu nutzen."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade auf ein kostenpflichtiges Abonnement, um mehrere Tresore zu erstellen."
@@ -2485,6 +2622,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Tresor \"${ share.content.name }\" wurde entfernt."
+      ],
+      "Vault access granted": [
+        "Zugriff auf den Tresor gewährt"
       ],
       "Vault organization successfully updated": [
         "Tresor-Organisation erfolgreich aktualisiert"
@@ -2754,6 +2894,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Zugangstoken"
+      ],
       "Account": [
         "Konto"
       ],
@@ -3014,6 +3157,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Abgelaufene Token (${ expired.length })"
+      ],
+      "Expires in": [
+        "Läuft ab in"
       ],
       "Expiry Date": [
         "Ablaufdatum"
@@ -3720,6 +3866,9 @@
       "Update": [
         "Aktualisieren"
       ],
+      "Use for AI agent": [
+        "Für KI-Agenten verwenden"
+      ],
       "Used in": [
         "Verwendet in"
       ],
@@ -3731,6 +3880,9 @@
       ],
       "Value:": [
         "Wert:"
+      ],
+      "Vault access": [
+        "Tresor-Zugriff"
       ],
       "Vault ID": [
         "Tresor-ID"
@@ -3856,6 +4008,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } wurde aktiviert."
+      ],
+      "Access token deleted": [
+        "Zugangstoken gelöscht"
       ]
     },
     "Option": {
@@ -4042,6 +4197,9 @@
       "Coupon": [
         "Gutschein"
       ],
+      "e.g. 60": [
+        "Z. B. 60"
+      ],
       "e.g. My automation script": [
         "z. B. Mein Automatisierungsskript"
       ],
@@ -4202,6 +4360,20 @@
         "Unbekannt"
       ]
     },
+    "Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Abgelaufen"
+      ],
+      "Expiring soon": [
+        "Läuft bald ab"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Die Synchronisierung der Aliasse wurde erfolgreich aktiviert. Die Synchronisierung der SimpleLogin-Aliasse kann einige Zeit in Anspruch nehmen."
@@ -4290,6 +4462,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Zugangstoken erfordern ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Kontoschutz"
       ],
@@ -4299,11 +4474,17 @@
       "Activity": [
         "Aktivität"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitäten für \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Eigene Domain hinzufügen"
       ],
       "Add mailbox": [
         "Postfach hinzufügen"
+      ],
+      "Agent setup instructions": [
+        "Anleitung zur Einrichtung des Agenten"
       ],
       "Alias contacts": [
         "Alias-Kontakte"
@@ -4365,6 +4546,9 @@
       "Create contact": [
         "Kontakt erstellen"
       ],
+      "Create new access token": [
+        "Neuer Zugangstoken erstellen"
+      ],
       "Create PIN code": [
         "PIN-Code erstellen"
       ],
@@ -4395,6 +4579,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "${ deletedItemsCount } Eintrag löschen?",
         "${ deletedItemsCount } Einträge löschen?"
+      ],
+      "Delete access token?": [
+        "Zugangstoken löschen?"
       ],
       "Delete domain": [
         "Domain löschen"
@@ -4510,6 +4697,9 @@
       "Mailbox": [
         "Postfach"
       ],
+      "Manage vault access": [
+        "Tresorzugriff verwalten"
+      ],
       "Mark as resolved?": [
         "Als gelöst markieren?"
       ],
@@ -4544,6 +4734,9 @@
       ],
       "Next": [
         "Weiter"
+      ],
+      "No access tokens yet": [
+        "Noch kein Zugangstoken"
       ],
       "No excluded items": [
         "Keine ausgeschlossenen Einträge"
@@ -4762,6 +4955,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Your new access token": [
+        "Deine neuer Zugangstoken"
       ],
       "Your vault is empty": [
         "Dein Tresor ist leer."

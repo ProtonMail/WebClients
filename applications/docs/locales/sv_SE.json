@@ -549,6 +549,9 @@
       "New document": [
         "Nytt dokument"
       ],
+      "New folder": [
+        "Ny mapp"
+      ],
       "New message": [
         "Nytt meddelande"
       ],
@@ -2947,6 +2950,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } objekt misslyckades att flyttas",
+        "${ failureItems.length } objekt misslyckades att flyttas"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
@@ -3016,6 +3023,9 @@
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
       ],
+      "Cannot find move target": [
+        "Kan inte hitta mål för flytt"
+      ],
       "Contact could not be saved": [
         "Kontakten kunde inte sparas"
       ],
@@ -3078,8 +3088,14 @@
       "Failed to copy photo to album": [
         "Misslyckades att kopiera foto till album"
       ],
+      "Failed to create folder": [
+        "Misslyckades att skapa mapp"
+      ],
       "Failed to create public share node": [
         "Misslyckades att skapa offentlig delningsnod"
+      ],
+      "Failed to expand folder": [
+        "Misslyckades att expandera mapp"
       ],
       "Failed to fetch node": [
         "Misslyckades att hämta nod"
@@ -4509,6 +4525,12 @@
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
       ],
+      "All your files will be imported": [
+        "Alla dina filer kommer att importeras"
+      ],
+      "Already in this folder": [
+        "Redan i denna mapp"
+      ],
       "an anonymous user": [
         "en anonym användare"
       ],
@@ -4562,6 +4584,12 @@
       ],
       "Can view only": [
         "Kan endast visa"
+      ],
+      "Can't move a folder into itself": [
+        "Kan inte flytta en mapp in i sig själv"
+      ],
+      "Can't write into folder": [
+        "Kan inte skriva till mapp"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kommer du inte ihåg ditt lösenord? Vi kan hjälpa dig att rensa krypterad data från alla kontakter krypterade med denna nyckel och samtidigt avfärda varningen."
@@ -5197,6 +5225,9 @@
       "Scan the QR code with your mobile device": [
         "Skanna QR-koden med din mobila enhet"
       ],
+      "Select a destination folder": [
+        "Välj en målmapp"
+      ],
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
       ],
@@ -5217,6 +5248,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
+      ],
+      "Settings update failed": [
+        "Misslyckades uppdatera inställningar"
+      ],
+      "Settings updated": [
+        "Inställningar uppdaterade"
       ],
       "Share via link settings": [
         "Inställningar för delning via länk"
@@ -5859,6 +5896,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendrar"
+      ],
       "can edit": [
         "kan redigera"
       ],
@@ -5928,6 +5968,9 @@
       "Download anyway": [
         "Ladda ner ändå"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Duplikat hittades"
       ],
@@ -5945,6 +5988,9 @@
       ],
       "Email format": [
         "E-postformat"
+      ],
+      "Emails": [
+        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -7750,20 +7796,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "”${ ellipsedName }” skapades utan problem"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "“${ ellipsedName }“ misslyckades att skapas"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "”${ ellipsedName }” flyttad"
+      ],
       "\"${ fileName }\" shared": [
         "”${ fileName }” delad"
-      ],
-      "\"${ name }\" created successfully": [
-        "“${ name }“ skapades utan problem"
       ],
       "\"${ name }\" deleted": [
         "“${ name }“ borttagen"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "“${ name }“ togs bort permanent från papperskorg"
-      ],
-      "\"${ name }\" failed to be created": [
-        "“${ name }“ misslyckades att skapas"
       ],
       "\"${ name }\" failed to be deleted": [
         "“${ name }“ misslyckades att tas bort"
@@ -7782,9 +7831,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "”${ name }” kunde inte sparas"
-      ],
-      "\"${ name }\" moved": [
-        "”${ name }” flyttad"
       ],
       "\"${ name }\" moved to trash": [
         "“${ name }“ flyttades till papperskorgen"
@@ -9973,6 +10019,9 @@
       "Collaborate on documents": [
         "Samarbeta på dokument"
       ],
+      "Computers": [
+        "Datorer"
+      ],
       "Confirm downgrade": [
         "Bekräfta nedgradering"
       ],
@@ -10640,6 +10689,9 @@
       ],
       "Name must not be empty": [
         "Namn kan inte vara tomt"
+      ],
+      "Name must not contain slashes (/)": [
+        "Namn får inte innehålla snedstreck (/)"
       ]
     },
     "Video control": {

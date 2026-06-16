@@ -56,6 +56,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Añadir dirección de ${ BRAND_NAME }"
       ],
@@ -209,6 +212,9 @@
       "Connect apps and devices": [
         "Conectar aplicaciones y dispositivos"
       ],
+      "Connect Gmail address": [
+        "Conectar una dirección de Gmail"
+      ],
       "Connect to video conferencing": [
         "Conectarte a la videoconferencia"
       ],
@@ -220,6 +226,9 @@
       ],
       "Contact support": [
         "Contactar con soporte"
+      ],
+      "Contact Support Center": [
+        "Contacta con el centro de soporte"
       ],
       "Contact us": [
         "Contacta con nosotros"
@@ -238,6 +247,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Ir a ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "Continuar para iniciar sesión"
       ],
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -458,6 +470,9 @@
       "Enable multi-user support": [
         "Activar soporte multiusuario"
       ],
+      "Enter code": [
+        "Introduce el código"
+      ],
       "Explore ${ target }": [
         "Descubre ${ target }"
       ],
@@ -580,6 +595,18 @@
       ],
       "Hide plan features": [
         "Ocultar las funciones del plan"
+      ],
+      "I don't have my 2FA device": [
+        "No tengo mi dispositivo 2FA"
+      ],
+      "I don't have my key": [
+        "No tengo mi clave"
+      ],
+      "I don't have my phrase": [
+        "No tengo mi frase"
+      ],
+      "I don’t have my backup codes": [
+        "No tengo mis códigos de recuperación"
       ],
       "Import": [
         "Importar"
@@ -716,6 +743,9 @@
       "Or": [
         "O"
       ],
+      "Or remove forwarding address": [
+        "O eliminar la dirección de reenvío"
+      ],
       "Or use a different Gmail address": [
         "O usa otra dirección de Gmail"
       ],
@@ -748,6 +778,9 @@
       ],
       "Reconnect to Gmail": [
         "Reconectar a Gmail"
+      ],
+      "Recover account": [
+        "Recuperar cuenta"
       ],
       "Recover data": [
         "Recuperar datos"
@@ -848,6 +881,9 @@
       "Return to sign in": [
         "Volver a iniciar sesión"
       ],
+      "Return to sign-in": [
+        "Volver a iniciar sesión"
+      ],
       "Review": [
         "Verificar"
       ],
@@ -925,6 +961,9 @@
       ],
       "Send my username": [
         "Enviar mi nombre de usuario"
+      ],
+      "Send new code": [
+        "Enviar código nuevo"
       ],
       "Send new invite": [
         "Enviar una invitación nueva"
@@ -1070,6 +1109,9 @@
       "Try another method": [
         "Intenta con otro método"
       ],
+      "Try another way": [
+        "Inténtalo de otra manera"
+      ],
       "Try for free": [
         "Pruébalo gratis"
       ],
@@ -1159,6 +1201,9 @@
       ],
       "Verify account": [
         "Verificar cuenta"
+      ],
+      "Verify another way": [
+        "Verificar de otra manera"
       ],
       "Verify code": [
         "Verificar código"
@@ -1436,6 +1481,9 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 nuevos roles de administrador"
+      ],
       "3 new admin roles": [
         "3 nuevos roles de administrador"
       ],
@@ -1444,6 +1492,9 @@
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Delega la gestión asignando roles de administrador específicos. Da a cada administrador solo el acceso que necesita. De esta forma se aplica el principio de mínimo privilegio, lo que protege a tu organización frente a cuentas comprometidas y errores accidentales."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delega la gestión de múltiples usuarios a la vez. Asigna roles de administración específicos a los grupos para que los permisos se asignen de forma automática. Esto sigue el principio de mínimo privilegio para ahorrar tiempo en las altas y bajas a la vez que se reducen los errores."
       ],
       "Delegate management with the appropriate admin role.": [
         "Delega la gestión con el rol de administrador adecuado."
@@ -1456,6 +1507,9 @@
       ],
       "New: Control admin access for individual users": [
         "Nuevo: controla el acceso de administrador para usuarios individuales"
+      ],
+      "New: Control admin access for many users at once": [
+        "Nuevo: controla el acceso de administración de múltiples usuarios a la vez"
       ],
       "Organization admin:": [
         "Administrador de la organización:"
@@ -1918,6 +1972,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Activado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "La dirección ya está siendo utilizada por un usuario ajeno a tu organización. Ponte en contacto con el servicio de atención al cliente para resolverlo."
+      ],
+      "All": [
+        "Todo"
+      ],
       "Calendar": [
         "Calendario"
       ],
@@ -1933,8 +1996,14 @@
       "Emails": [
         "Correos electrónicos"
       ],
+      "Errors": [
+        "Errores"
+      ],
       "Estimated size": [
         "Tamaño estimado"
+      ],
+      "Find out what can be migrated.": [
+        "Descubre qué se puede migrar"
       ],
       "Has errors": [
         "Tiene errores"
@@ -1942,11 +2011,29 @@
       "In progress": [
         "En progreso"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No se ha encontrado la dirección del miembro. Contacta con el servicio de atención al cliente para solucionarlo."
+      ],
       "Migrate": [
         "Migrar"
       ],
+      "Migrated": [
+        "Migrado"
+      ],
       "Migration status": [
         "Estado de la migración"
+      ],
+      "Missing organization private key": [
+        "Falta la clave privada de la organización"
+      ],
+      "Missing organization public key": [
+        "Falta la clave pública de la organización"
+      ],
+      "No users to display": [
+        "No hay usuarios que mostrar"
+      ],
+      "Not activated": [
+        "No activado"
       ],
       "Organization does not have enough seats available": [
         "La organización no tiene suficientes licencias disponibles"
@@ -1954,8 +2041,17 @@
       "Organization does not have enough storage available": [
         "La organización no tiene suficiente espacio de almacenamiento disponible"
       ],
+      "Pending": [
+        "Pendiente"
+      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Selecciona exactamente lo que quieres migrar. Se aplica a todo el equipo de la organización."
+      ],
+      "Select users to migrate": [
+        "Seleccionar usuarios para migrar"
+      ],
+      "Size": [
+        "Tamaño"
       ],
       "Status": [
         "Estado"
@@ -1968,6 +2064,9 @@
       ],
       "What are you migrating?": [
         "¿Qué estás migrando?"
+      ],
+      "You": [
+        "Tú"
       ]
     },
     "Browser": {
@@ -3307,6 +3406,9 @@
       "/month": [
         "/mes"
       ],
+      "/user /month": [
+        "/usuario /mes"
+      ],
       "/user per month": [
         "/usuario por mes"
       ]
@@ -3364,6 +3466,14 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "¿Estás seguro de que quieres eliminar este grupo?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Ten en cuenta que si eliminas el grupo ${ displayGroupName }, se elimina de forma permanente."
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Ten en cuenta que si eliminas el grupo ${ displayGroupName } (con la dirección ${ displayGroupAddressEmail }), ya no puedes recibir correos electrónicos con su dirección."
       ]
     },
     "Delinquent modal title": {
@@ -3492,6 +3602,13 @@
       "This may happen if permissions were removed or your password changed.": [
         "Esto puede ocurrir si se eliminaron los permisos o si cambió tu contraseña."
       ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Para conectar una dirección de Gmail diferente, elimina las direcciones de Gmail adicionales que reenvían a ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Para conectar hasta ${ MAX_SYNC_PAID_USER } dirección de Gmail, actualiza a ${ planName }.",
+        "Para conectar hasta ${ MAX_SYNC_PAID_USER } direcciones de Gmail, actualiza a ${ planName }."
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "Para seguir recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, vuelve a conectar tu cuenta."
       ],
@@ -3512,6 +3629,9 @@
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Desbloquea 15 GB de almacenamiento por solo ${ config.offerPrice }."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Actualiza a ${ planName } para conectar hasta ${ MAX_SYNC_PAID_USER } cuentas"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa esta guía para que tu organización se beneficie rápidamente del cifrado y el ecosistema de privacidad líderes del sector de ${ BRAND_NAME }."
@@ -3558,11 +3678,30 @@
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
         "Ya no podrás usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Ten en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
       ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Estás reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
+        "Estás reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Has conectado ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, desactiva primero una de tus cuentas conectadas.",
+        "Has conectado ${ MAX_SYNC_PAID_USER } direcciones de Gmail. Para añadir otra, desactiva primero una de tus cuentas conectadas."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Has conectado una dirección de cuenta externa a ${ MAIL_APP_NAME }."
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importa ${ newUserStorageText } de tus mensajes de Gmail más recientes."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importan tus correos electrónicos de Gmail más recientes."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Tu plan admite ${ MAX_SYNC_FREE_USER } dirección de Gmail.",
+        "Tu plan admite ${ MAX_SYNC_FREE_USER } direcciones de Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail.",
+        "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail."
       ]
     },
     "description": {
@@ -4060,6 +4199,9 @@
       "Select recovery contact ${ name }": [
         "Seleccionar contacto de recuperación: ${ name }"
       ],
+      "Start recovery": [
+        "Iniciar recuperación"
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desactivar este método de recuperación, elimina todos tus contactos."
       ],
@@ -4087,6 +4229,9 @@
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
+      ],
+      "Address could not be added.": [
+        "No se ha podido añadir la dirección."
       ],
       "Address is already added to your account": [
         "La dirección ya está añadida a tu cuenta"
@@ -4219,6 +4364,9 @@
       "Incorrect password": [
         "Contraseña incorrecta"
       ],
+      "Incorrect recovery code. Please try again.": [
+        "Código de recuperación incorrecto. Inténtalo de nuevo."
+      ],
       "Incorrect second password. Please try again.": [
         "La segunda contraseña no es correcta. Inténtalo de nuevo."
       ],
@@ -4257,6 +4405,9 @@
       ],
       "Invalid postal code": [
         "Código postal no válido"
+      ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Token de restablecimiento no válido. Actualiza la página e inténtalo de nuevo."
       ],
       "Invalid VAT number": [
         "Número de IVA incorrecto"
@@ -4514,6 +4665,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en tu cuenta externa. Personaliza la importación para eliminar algunas carpetas."
+      ],
+      "There was an error, please try again.": [
+        "Se ha producido un error. Vuelve a intentarlo."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -5491,6 +5645,17 @@
         "Servicios"
       ]
     },
+    "Group detail label": {
+      "Description:": [
+        "Descripción:"
+      ],
+      "Group address:": [
+        "Dirección del grupo:"
+      ],
+      "Roles and permission:": [
+        "Perfiles y permisos:"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } miembro",
@@ -5500,6 +5665,12 @@
     "group_modal": {
       "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Añade roles delegados a un grupo para conceder a sus integrantes solo los permisos específicos que necesitan, lo que mantiene separado el control de administración total y tu entorno seguro."
+      ],
+      "General": [
+        "General"
+      ],
+      "Roles and permissions": [
+        "Perfiles y permisos"
       ]
     },
     "Header": {
@@ -5983,11 +6154,17 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continúas perderás el acceso a todos los datos cifrados actuales en tu cuenta."
       ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } se financia de manera independiente y funciona sin publicidad. A continuación se muestran ejemplos de cómo se ha utilizado esta independencia en la práctica."
+      ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nunca comparte tu información con terceros. Los datos provienen de los propios análisis de ${ BRAND_NAME } y de Constella Intelligence."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "`${ BRAND_NAME } envía un código de verificación a ${ phoneNumber }. Se pueden aplicar las tarifas estándar de mensajes."
       ],
       "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
         "${ BRAND_NAME } envía un código de verificación a tu teléfono de recuperación. Se pueden aplicar las tarifas estándar de mensajes."
@@ -6009,6 +6186,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } país activado",
         "${ countriesCount } países activados"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, pero recuperables con tus ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descuento"
@@ -6162,6 +6342,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } actualizado"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta tu tráfico. ${ PASS_SHORT_APP_NAME } oculta tu identidad — **alias de «hide-my-email»** ilimitados y **alertas de la Dark Web** si tus datos se filtran alguna vez."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Se requiere ${ vpnPlus } para conectarte a un país específico."
       ],
@@ -6210,6 +6393,9 @@
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
         "**Consiguen ${ refereeRewardAmount }** en créditos si se suscriben."
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Esto desactiva la autenticación de dos factores.**"
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Consigues ${ referrerRewardAmount }** en créditos por cada persona que se suscriba."
@@ -6270,6 +6456,9 @@
       "Activity Monitor": [
         "Monitor de actividad"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Añade ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -6289,11 +6478,18 @@
         "Añadir servidor (${ availableAddedCount } disponible)",
         "Añadir servidor (${ availableAddedCount } disponibles)"
       ],
+      "Add users by name or email to this group.": [
+        "Añade usuarios por nombre o correo electrónico a este grupo."
+      ],
       "Add video conferencing links to calendar invitations": [
         "Añadir enlaces de videoconferencia a las invitaciones del calendario"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Añade tu nombre y logo para crear una experiencia más personalizada para tu organización."
+      ],
+      "Adding ${ total } gateway server": [
+        "Añadiendo ${ total } servidor de puerta de enlace",
+        "Añadiendo ${ total } servidores de puerta de enlace"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Al añadir una dirección de correo electrónico externa, se desactivará el cifrado de extremo a extremo para todas las comunicaciones por correo electrónico dentro de este grupo. ¿Deseas continuar?"
@@ -6345,6 +6541,9 @@
         "Se importarán todos tus contactos, hasta un límite de ${ maxContact }.",
         "Se importarán todos tus contactos, hasta un máximo de ${ maxContact }."
       ],
+      "All your files will be imported": [
+        "Todos tus archivos se importan"
+      ],
       "Allocated": [
         "Asignado"
       ],
@@ -6375,6 +6574,12 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene tu dirección e identidad real ocultas."
       ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Se ha enviado un correo electrónico con un código de verificación a ${ emailAddress }. Si no encuentras el mensaje en tu bandeja de entrada, revisa la carpeta de correo no deseado."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Se ha enviado un SMS con un código de verificación a ${ phoneNumber }."
+      ],
       "and": [
         "y"
       ],
@@ -6404,6 +6609,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "¿Seguro de que quieres revocar el certificado **${ name }**?"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Pídeles que inicien sesión en su ${ ACCOUNT_APP_NAME } en el navegador y vayan a **Ajustes → Todos los ajustes → Recuperación → Acceso de emergencia → Personas que confían en mí.**"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Pregunta al administrador de la organización para configurar puertas de enlace."
@@ -6447,6 +6655,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Antes de enviar un nuevo código de verificación, revisa la carpeta de correo no deseado de ${ EmailOrPhoneNumber }."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Antes de poder recibir correos para tus direcciones de dominio personalizadas en ${ MAIL_APP_NAME }, debes añadir los siguientes dos registros MX en tu panel de DNS (en la plataforma donde has comprado el dominio personalizado). Puedes encontrar un ejemplo y algunos consejos útiles ${ kbLink }."
       ],
@@ -6468,6 +6679,15 @@
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados."
       ],
+      "Can you access your active session?": [
+        "¿Puedes acceder a tu sesión activa?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "¿Puedes acceder a tu sesión web activa en otro navegador?"
+      ],
+      "Can you reach out to your contact?": [
+        "¿Puedes comunicarte con tu contacto?"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -6488,6 +6708,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Haz clic en **Solicitar restablecimiento de contraseña** y sigue las indicaciones."
       ],
       "Close this screen to exit.": [
         "Cierra esta pantalla para salir."
@@ -6512,6 +6735,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Los datos de conexión estarán disponible en aproximadamente 1 hora."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Contacta con nuestro equipo de soporte para desactivar la autenticación de dos factores de tu cuenta, o recupera tu cuenta de otra forma."
       ],
       "Continue": [
         "Continuar"
@@ -6555,6 +6781,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las etiquetas que te gustaría importar."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea y administra subcuentas y asígnales direcciones de correo electrónico en tu dominio personalizado."
@@ -6603,6 +6833,9 @@
       "Data recoverable on this device": [
         "Datos recuperables en este dispositivo"
       ],
+      "Data recoverable with recovery phrase": [
+        "Datos recuperables con la frase de recuperación"
+      ],
       "dedicated servers": [
         "servidores dedicados"
       ],
@@ -6624,6 +6857,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
         "Eliminando ${ deletedServerCount } servidores de puerta de enlace"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Según tus ajustes, pueden recibir acceso de inmediato o después de un **periodo de espera**."
       ],
       "Did you know?": [
         "¿Lo sabías?"
@@ -6719,6 +6955,9 @@
       "Drop to import": [
         "Suelta aquí para importar"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Debido al cifrado de extremo a extremo, puedes restablecer tu contraseña, pero ${ DataLockedText } hasta que uses un ${ DataRecoveryOptionsLink }:"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada dominio solo puede tener un registro SPF (TXT). Si deseas mantener el registro SPF (TXT) existente, puedes añadir ${ spf } a tu registro actual (colóquelo después de ${ spfValue })."
       ],
@@ -6788,11 +7027,17 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asegura una comunicación totalmente privada y cifrada. Reclama tu dirección de correo electrónico ${ BRAND_NAME } gratis ahora."
       ],
+      "Enter code": [
+        "Introduce el código"
+      ],
       "Enter key manually instead": [
         "Introduce la clave manualmente"
       ],
       "Enter new password for user ${ userName }.": [
         "Introduce la nueva contraseña para ${ userName }."
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
       ],
       "Enter the code from your authenticator app": [
         "Ingresa el código de la aplicación de autenticación."
@@ -6839,6 +7084,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Introduce la frase de recuperación para cambiar tu contraseña."
       ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Introduce tu frase de recuperación para verificar tu identidad y desactivar la autenticación de dos factores."
+      ],
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
       ],
@@ -6872,6 +7120,9 @@
       "for choosing ${ product }": [
         "por elegir ${ product }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Por solo ${ bundlePlanPriceInline }"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, selecciona la pestaña ${ boldAddresses } y añade todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
       ],
@@ -6883,6 +7134,9 @@
       ],
       "Friends and family": [
         "Familiares y amigos"
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Desde ahí, pueden solicitar acceso de emergencia a tu cuenta al hacer clic en **Solicitar acceso.**"
       ],
       "Gateway couldn't be deleted. Please try again": [
         "No se ha podido eliminar la puerta de enlace. Vuelve a intentarlo."
@@ -6901,6 +7155,9 @@
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obtén ${ AUTHENTICATOR_APP_NAME } para todos tus dispositivos."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Comunícate con tus contactos de emergencia para ver si pueden ayudarte. Tras solicitar el acceso de emergencia a tu cuenta, pueden cambiar tu contraseña **una vez que ha transcurrido el tiempo de espera para el acceso**."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Recibe notificaciones si tu contraseña u otro dato personal fue filtrado. ${ learnMoreLinkNoBreach }"
@@ -6935,11 +7192,20 @@
       "High Priority": [
         "Prioridad alta"
       ],
+      "How to perform a signed-in reset": [
+        "Cómo realizar un restablecimiento con la sesión iniciada"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Cómo tu contacto de emergencia puede cambiar tu contraseña por ti:"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Clave pública del proveedor de identidad para firmar aserciones de autenticación. Debería haber un lugar para descargar o copiar el hash del certificado del proveedor de identidad. Simplemente pega el hash del certificado en el campo del área de texto."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si otro administrador ha cambiado esta contraseña, necesitarás pedir la nueva contraseña de la organización."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Si es posible, al iniciar sesión usa un dispositivo o navegador en el que hayas iniciado sesión antes."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si esto se debe a un restablecimiento de contraseña anterior, puedes evitar que el mensaje se vuelva a mostrar."
@@ -6949,6 +7215,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "Si has iniciado sesión en otro lugar, es posible que puedas ${ signedInPasswordResetLink }."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Si has iniciado sesión en una aplicación web de ${ BRAND_NAME } en **otro navegador**, puedes restablecer la contraseña desde tu sesión activa."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si crees que esto es un error, contáctanos ${ contactLink }."
@@ -6968,8 +7237,14 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Si tienes un código promocional, introdúcelo abajo para aplicar tu descuento."
       ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Si tienes contactos de emergencia, comunícate con ellos para ver si pueden ayudarte. Tras solicitar el acceso de emergencia a tu cuenta, pueden cambiar tu contraseña **una vez que ha transcurrido el tiempo de espera para el acceso**."
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si pierdes tu dispositivo activado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -7055,6 +7330,9 @@
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Código no válido. ${ RequestNewCodeLink } y vuelve a intentarlo."
       ],
       "Invite deleted": [
         "Se ha eliminado la invitación."
@@ -7342,6 +7620,9 @@
       "On": [
         "Activado"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Una vez que se ha concedido el acceso a tu cuenta, pueden acceder a tus ajustes de **Recuperación** y **cambiar tu contraseña de ${ ACCOUNT_APP_NAME }** por ti."
+      ],
       "Once you reset your password:": [
         "Después de restablecer tu contraseña:"
       ],
@@ -7350,6 +7631,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Abre la guía para ver las acciones recomendadas y los enlaces útiles."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Abre tu sesión activa en el navegador y ve a **Ajustes → Todos los ajustes → Recuperación → Ajustes de restablecimiento de contraseña.**"
       ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
@@ -7556,6 +7840,9 @@
       "Recently used servers:": [
         "Servidores usados recientemente:"
       ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -7604,6 +7891,9 @@
       "Resend verification email": [
         "Reenviar el correo electrónico de verificación"
       ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Restablecer tu contraseña en la sesión web activa garantiza que **tus datos cifrados sigan siendo accesibles** después de cambiarla."
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -7642,6 +7932,9 @@
       ],
       "Securing your account": [
         "Protegiendo tu cuenta"
+      ],
+      "Select a group to view its members and settings.": [
+        "Selecciona un grupo para ver sus miembros y ajustes."
       ],
       "Select one or multiple user affiliations": [
         "Selecciona una o varias afiliaciones para el usuario"
@@ -7804,6 +8097,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por TechRadar Pro con una calificación de 4,2 sobre 5 estrellas"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "No disponible temporalmente debido a la alta demanda. Vuelve a intentarlo más tarde."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -7864,6 +8160,9 @@
       "The name will be visible to your users while they are signed in.": [
         "Tus usuarios verán el nombre mientras estén conectados."
       ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "El crédito por recomendación se puede conceder hasta 2 meses después de que el periodo de prueba de tu amigo haya terminado, solo si tu amigo se ha suscrito a un plan."
+      ],
       "The securest way to browse, stream, and be online.": [
         "La manera más segura de navegar, hacer streaming y estar en línea."
       ],
@@ -7920,6 +8219,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Este mensaje no llegará al equipo de soporte. Si tienes algún problema con nuestro servicio o necesitas más asistencia de nuestra parte ${ supportLink }."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Esta contraseña se usa para iniciar sesión en tu cuenta de ${ BRAND_NAME }"
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Este servicio no está disponible para los usuarios que inician sesión con inicio de sesión único (SSO)."
@@ -8014,6 +8316,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
       ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Para ayudar a mantener tu cuenta segura, se verifica que realmente eres tú quien intenta iniciar sesión."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Para ayudarte a recordar tu contraseña, te pedimos que la introduzcas periódicamente. Con el tiempo, te la pedimos con menos frecuencia."
       ],
@@ -8028,6 +8333,9 @@
       ],
       "To proceed, we must verify the request.": [
         "Debemos verificar la solicitud para continuar."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Para recuperar el acceso a tu cuenta y a tus datos, introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para asegurar tu conexión a internet, descarga e instala la aplicación ${ VPN_APP_NAME } en tu dispositivo y conéctate a un servidor."
@@ -8059,6 +8367,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prueba ${ productName } totalmente sin riesgos. Si por cualquier motivo cambias de opinión, recibirás un reembolso completo. Sin preguntas."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Intenta recuperar tu cuenta desde un **dispositivo o navegador en el que hayas iniciado sesión antes**, ya que puede ser posible desde ahí:"
+      ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
       ],
@@ -8073,6 +8384,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No se ha podido verificar la firma del archivo de recuperación. Póngate en contacto con el servicio de asistencia."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Lamentablemente, no hay ningún método de recuperación disponible para esta cuenta."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Lamentablemente no hay ningún método de recuperación configurado para esta cuenta."
@@ -8224,6 +8538,9 @@
       "We couldn’t process your payment.": [
         "No hemos podido procesar tu pago."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Se ha detectado que ya has iniciado sesión en una aplicación web de ${ BRAND_NAME } en **otro navegador**. Puedes restablecer la contraseña desde tu sesión activa."
+      ],
       "We generated a strong password for you": [
         "Hemos generado una contraseña segura para ti."
       ],
@@ -8277,6 +8594,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
+      ],
+      "Web sessions detected:": [
+        "Se han detectado sesiones web:"
       ],
       "Week": [
         "Semana"
@@ -8413,8 +8733,14 @@
       "You can now access and manage the account as an administrator.": [
         "Ahora puedes acceder y gestionar la cuenta como administrador."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Ya puedes restablecer tu contraseña para recuperar el acceso a tu cuenta."
+      ],
       "You can now return to the application to continue": [
         "Ahora puedes regresar a la aplicación para continuar."
+      ],
+      "You can now sign in to your account again.": [
+        "Ya puedes volver a iniciar sesión en tu cuenta."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Solo puedes tener una instancia de chat abierta a la vez. Cierra las conversaciones anteriores antes de empezar una nueva."
@@ -8491,6 +8817,12 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necesitarás una dirección ${ BRAND_NAME } para utilizar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
+      "You will not be asked for a one-time code or a security key.": [
+        "No se te solicita un código de un solo uso ni una clave de seguridad."
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Recuperas el acceso completo o parcial a tus datos cifrados."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
@@ -8552,6 +8884,12 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
+      ],
+      "Your encrypted data will be locked": [
+        "Tus datos cifrados se bloquean"
+      ],
+      "your encrypted data will be locked": [
+        "tus datos cifrados se bloquean"
       ],
       "Your feedback": [
         "Tus comentarios"
@@ -8820,6 +9158,9 @@
         "${ nbDay } día",
         "${ nbDay } días"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
       ],
@@ -8939,6 +9280,9 @@
       ],
       "Calendar": [
         "Calendario"
+      ],
+      "Calendars": [
+        "Calendarios"
       ],
       "Card details": [
         "Detalles de la tarjeta"
@@ -9078,6 +9422,9 @@
       "Don't show this again": [
         "No mostrar esto de nuevo"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g. example.com": [
         "por ejemplo ejemplo.es"
       ],
@@ -9089,6 +9436,9 @@
       ],
       "Email or username": [
         "Dirección de correo electrónico o nombre de usuario"
+      ],
+      "Emails": [
+        "Correos electrónicos"
       ],
       "Emails (all messages)": [
         "Correos electrónicos (todos los mensajes)"
@@ -9110,6 +9460,12 @@
       ],
       "Enabled": [
         "Activado"
+      ],
+      "Enter code": [
+        "Introducir código"
+      ],
+      "Enter name or email address": [
+        "Introducir el nombre o la dirección de correo electrónico"
       ],
       "Enter password": [
         "Introduce la contraseña"
@@ -9203,6 +9559,9 @@
       ],
       "Interval": [
         "Intervalo"
+      ],
+      "Invite people": [
+        "Invitar a personas"
       ],
       "Invite via email": [
         "Invitar por correo electrónico"
@@ -9761,11 +10120,20 @@
       "Contact support": [
         "Contacte con Soporte"
       ],
+      "contacts’ assistance": [
+        "Ayuda de tus contactos"
+      ],
       "Create account": [
         "Crear cuenta"
       ],
       "Create an alias": [
         "Crear un alias"
+      ],
+      "data recovery option": [
+        "Opción de recuperación de datos"
+      ],
+      "Details": [
+        "Detalles"
       ],
       "Encryption and keys": [
         "Cifrado y claves"
@@ -10181,11 +10549,26 @@
       "Built-in chat": [
         "Chat integrado"
       ],
+      "Cloud storage and file sharing": [
+        "Almacenamiento en la nube y compartición de archivos"
+      ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor de documentos y hojas de cálculo"
+      ],
+      "Email writing assistant": [
+        "Asistente de redacción de correos"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
       "Hosts can record meetings locally on their computers": [
         "Los anfitriones pueden grabar reuniones localmente en sus ordenadores"
+      ],
+      "Includes Meet Professional": [
+        "Incluye Meet Professional"
       ],
       "Meeting recording": [
         "Grabación de la reunión"
@@ -10193,8 +10576,17 @@
       "One active meeting at a time": [
         "Una reunión activa a la vez"
       ],
+      "Password manager with team vaults": [
+        "Gestor de contraseñas con cajas fuertes compartidas"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Compartir pantalla"
+      ],
+      "Secure mail and calendar": [
+        "Correo y calendario seguros"
       ],
       "Unlimited meetings per day": [
         "Reuniones ilimitadas al día"
@@ -10210,6 +10602,9 @@
       "Video meetings, ${ n } participant": [
         "Videollamadas, ${ n } participante",
         "Videollamadas, ${ n } participantes"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ]
     },
     "meet_2025: Info": {
@@ -10316,6 +10711,38 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Inicia sesión para acceder a tu cuenta de ${ appName }"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Echa un vistazo a las últimas actualizaciones del producto"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
+      "Explore the latest news": [
+        "Descubre las últimas novedades"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Make your voice heard": [
+        "Haz que tu voz se escuche"
+      ],
+      "Request a feature": [
+        "Solicitar una función"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Solicita una función o vota las ideas de otros usuarios en nuestro foro de comentarios."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Mira cómo evolucionan las aplicaciones de ${ BRAND_NAME } con tus comentarios."
+      ],
+      "Submit your ideas": [
+        "Envía tus ideas"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Tus comentarios ayudan a mejorar. Tanto si has encontrado un fallo, quieres una nueva función o crees que algo puede funcionar de otra manera, nos encanta conocer tu opinión."
       ]
     },
     "Modal title": {
@@ -10567,6 +10994,9 @@
       "99.95% SLA": [
         "SLA del 99,95 %"
       ],
+      "Access all countries": [
+        "Accede a todos los países"
+      ],
       "Activity logs and policy": [
         "Registros de actividad y política"
       ],
@@ -10596,6 +11026,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificar citas con ${ n } página de reservas",
+        "Planificar citas con ${ n } páginas de reservas"
       ],
       "Apps for": [
         "Aplicaciones para"
@@ -10735,6 +11172,9 @@
       ],
       "Multiple admin roles": [
         "Distintos roles de administración"
+      ],
+      "No streaming support": [
+        "Sin soporte para streaming"
       ],
       "No-logs policy": [
         "Política de cero registros"
@@ -10898,6 +11338,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda ilimitado"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
@@ -11352,6 +11795,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -12637,6 +13084,9 @@
       ],
       "Search for an email or IP address": [
         "Buscar un correo electrónico o una dirección IP"
+      ],
+      "Search for users or addresses": [
+        "Buscar usuarios o direcciones"
       ],
       "Search parent folder": [
         "Buscar en la carpeta principal"
@@ -14183,6 +14633,32 @@
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
       ]
     },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Asignar roles delegados"
+      ],
+      "Assign roles": [
+        "Asignar roles"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Haz clic en el nombre de un usuario para gestionar su rol y permisos."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Haz clic en «Editar» para asignar roles a este grupo y gestionar el acceso de los miembros automáticamente."
+      ],
+      "New: Roles and permissions tab": [
+        "Nuevo: pestaña de roles y permisos"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Abre esta pestaña para conceder permisos específicos sin acceso completo de administración."
+      ],
+      "User roles available": [
+        "Roles de usuario disponibles"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Ya puedes asignar roles a cada usuario desde esta pestaña."
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } está solicitando tu ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
@@ -15334,6 +15810,14 @@
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
       ]
     },
+    "Tab": {
+      "For personal use": [
+        "Para uso personal"
+      ],
+      "For professional use": [
+        "Para uso profesional"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Direcciones"
@@ -15636,6 +16120,9 @@
       "Apply gift code": [
         "Aplicar código de regalo"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "¿Ya has iniciado sesión en ${ BRAND_NAME } en un navegador?"
+      ],
       "Are you sure you want to close the preview?": [
         "¿Estás seguro de que quieres cerrar la previsualización?"
       ],
@@ -15644,6 +16131,9 @@
       ],
       "Are you sure?": [
         "¿Estás seguro?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Pide ayuda a tus contactos de emergencia"
       ],
       "Auto-deletion is active": [
         "La eliminación automática está activa."
@@ -15656,6 +16146,12 @@
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Trae tu Gmail a ${ MAIL_APP_NAME }"
+      ],
+      "Can you access your session in the browser?": [
+        "¿Puedes acceder a tu sesión en el navegador?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "¿Puedes comunicarte con tus contactos de emergencia?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
@@ -15756,6 +16252,9 @@
       "Couldn’t create accounts": [
         "No se han podido crear las cuentas."
       ],
+      "Couldn’t recover your account": [
+        "No se ha podido recuperar tu cuenta"
+      ],
       "Coupon": [
         "Cupón"
       ],
@@ -15771,6 +16270,9 @@
       ],
       "Create Gateway": [
         "Crear una puerta de enlace"
+      ],
+      "Create group": [
+        "Crear grupo"
       ],
       "Create multiple user accounts": [
         "Crear varias cuentas de usuario"
@@ -15943,6 +16445,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Editar la puerta de enlace ${ currentName }"
+      ],
+      "Edit group": [
+        "Editar grupo"
       ],
       "Edit invoice note": [
         "Editar la nota de la factura"
@@ -16279,6 +16784,9 @@
       "Reconnect your account": [
         "Reconectar tu cuenta"
       ],
+      "Recover account": [
+        "Recuperar cuenta"
+      ],
       "Recover data": [
         "Recuperar datos"
       ],
@@ -16329,6 +16837,9 @@
       ],
       "Request new code": [
         "Solicitar un nuevo código"
+      ],
+      "Request new code?": [
+        "¿Solicitar un código nuevo?"
       ],
       "Request sent": [
         "Solicitud enviada"
@@ -16532,11 +17043,17 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prueba ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Intenta cambiar tu contraseña en tu sesión web activa"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Two-factor authentication disabled": [
+        "Autenticación de dos factores deshabilitados"
       ],
       "Two-factor authentication enforcement": [
         "Autenticación de dos factores requerida"
@@ -16583,6 +17100,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
+      "Use backup recovery code": [
+        "Usar código de recuperación"
+      ],
       "Use one account for all your addresses": [
         "Utiliza una sola cuenta para todas tus direcciones"
       ],
@@ -16600,6 +17120,9 @@
       ],
       "Verification failed": [
         "Error de verificación"
+      ],
+      "Verify it’s you": [
+        "Verifica que eres tú"
       ],
       "Verify your password": [
         "Verifica tu contraseña"
@@ -16780,6 +17303,9 @@
       "Each imported email will have this label": [
         "Cada correo electrónico importado tendrá esta etiqueta."
       ],
+      "Early access to new apps and features.": [
+        "Acceso anticipado a nuevas aplicaciones y funciones."
+      ],
       "Edit folder names": [
         "Editar nombres de carpetas"
       ],
@@ -16813,8 +17339,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia de IA al instante y un experto humano a tu disposición."
+      "Instant assistance with AI and human experts.": [
+        "Asistencia instantánea con IA y expertos humanos."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."
@@ -17149,6 +17675,15 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(vía ${ groupName })"
+      ],
+      "(via group)": [
+        "(vía grupo)"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Añade roles delegados a un usuario para concederle solo los permisos específicos que necesita, manteniendo el poder de administración total separado y tu entorno seguro."
+      ],
       "Add multiple users": [
         "Añadir varios usuarios"
       ],
@@ -17176,6 +17711,9 @@
       "Email": [
         "Correo electrónico"
       ],
+      "General": [
+        "General"
+      ],
       "Invitation email": [
         "Correo de invitación"
       ],
@@ -17190,6 +17728,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Recuerda compartir los detalles de inicio de sesión con el usuario."
+      ],
+      "Roles and permissions": [
+        "Perfiles y permisos"
+      ],
+      "Save": [
+        "Guardar"
       ],
       "Send invite link via email instead": [
         "Enviar el enlace de invitación por correo en su lugar"

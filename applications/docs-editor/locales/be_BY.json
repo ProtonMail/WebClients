@@ -720,6 +720,16 @@
         "Колеры тэмы"
       ]
     },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "Панэль формул"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "Выбар дыяпазону"
+      ]
+    },
     "sheets_2025:Range selector menu": {
       "Add new": [
         "Дадаць новы"
@@ -759,7 +769,7 @@
     },
     "sheets_2025:Spreadsheet border editor menu": {
       "All borders": [
-        "Усе рамкі"
+        "Усе межы"
       ],
       "Bottom border": [
         "Ніжняя рамка"
@@ -777,7 +787,7 @@
         "Гарызантальныя межы"
       ],
       "Inner borders": [
-        "Унутраныя рамкі"
+        "Унутраныя межы"
       ],
       "Left border": [
         "Рамка злева"
@@ -786,7 +796,7 @@
         "Без рамкі"
       ],
       "Outer borders": [
-        "Знешнія рамкі"
+        "Знешнія межы"
       ],
       "Right border": [
         "Рамка справа"
@@ -801,7 +811,7 @@
         "Суцэльны тоўсты"
       ],
       "Top border": [
-        "Верхняя рамка"
+        "Верхняя мяжа"
       ],
       "Vertical borders": [
         "Вертыкальныя межы"
@@ -1023,6 +1033,43 @@
         "справа"
       ]
     },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Прымяніць"
+      ],
+      "Format": [
+        "Фармат"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "Duration": [
+        "Працягласць"
+      ],
+      "Elapsed minutes": [
+        "Прайшло хвілін"
+      ],
+      "First letter of the month": [
+        "Першая літара месяца"
+      ],
+      "Full": [
+        "Поўны"
+      ],
+      "Full numeric year": [
+        "Поўны лікавы год"
+      ],
+      "Hour without leading zero": [
+        "Гадзіна без пачатковага нуля"
+      ],
+      "Minute with leading zero": [
+        "Хвіліна з пачатковы нулём"
+      ],
+      "Month": [
+        "Месяц"
+      ],
+      "Precision to 1/1000 of a second": [
+        "З дакладнасцю 1/1000 секунды"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Вы сапраўды хочаце выдаліць ${ sheetName }?"
@@ -1048,7 +1095,7 @@
         "Наша каманда працуе над тым, каб гэта функцыя неўзабаве стала даступна нашым карыстальнікам. У цяперашні час аркушы можна рэдагаваць толькі на камп'ютары"
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
-        "Памер вашага экрана занадта малы, каб рэдагаваць гэту электронную табліцу. Вы знаходзіцеся ў рэжыме прагляду. Адкрыйце гэту электронную табліцу на прыладзе з большым экранам або разгарніце акно браўзера, каб зрабіць змены."
+        "Памер вашага экрана занадта маленькі, каб рэдагаваць гэту электронную табліцу. Вы знаходзіцеся ў рэжыме прагляду. Адкрыйце гэту электронную табліцу на прыладзе з большым экранам або разгарніце акно браўзера, каб зрабіць змены."
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1433,8 +1480,8 @@
       "Custom currency": [
         "Карыстальніцкая валюта"
       ],
-      "Custom number format": [
-        "Карыстальніцкі фармат лічбы"
+      "Custom number": [
+        "Карыстальніцкі лік"
       ],
       "Date": [
         "Дата"
@@ -1732,10 +1779,10 @@
         "Тоўсты"
       ],
       "Border": [
-        "Рамка"
+        "Мяжа"
       ],
       "Border style": [
-        "Стыль рамкі"
+        "Стыль мяжы"
       ],
       "Cancel": [
         "Скасаваць"
@@ -1872,7 +1919,7 @@
         "Выберыце дыяпазон"
       ],
       "Series": [
-        "Шэраг"
+        "Серыі"
       ],
       "Show data in hidden rows and columns": [
         "Паказаць даныя ў схаваных радках і слупках"

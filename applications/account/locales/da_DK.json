@@ -1401,7 +1401,7 @@
       "Save": [
         "Gem"
       ],
-      "Save & exit": [
+      "Save & finish": [
         "Gem og afslut"
       ],
       "Save address": [
@@ -2969,6 +2969,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Collapse invitation message": [
+        "Skjul invitationsbesked"
+      ],
       "Collapse step": [
         "Skjul trin"
       ],
@@ -2984,6 +2987,9 @@
       "Configure your domain": [
         "Konfigurer dit domæne"
       ],
+      "Confirm": [
+        "Bekræft"
+      ],
       "Contact your administrator to start a migration.": [
         "Kontakt din administrator for at starte en migration."
       ],
@@ -2992,9 +2998,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Kopiér den nedenstående kode og indsæt den i DNS-sektionen hos din domæneudbyder."
-      ],
-      "Creating accounts. Going private": [
-        "Opretter konti. Går privat"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
@@ -3029,6 +3032,9 @@
       "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
         "Alle får det samme invitationslink. De besøger siden, indtaster deres e-mail, og får en bekræftelseskode i deres Gmail-indbakke. Derfra angiver de deres adgangskode til ${ BRAND_NAME }."
       ],
+      "Expand invitation message": [
+        "Vis invitationsbesked"
+      ],
       "Expand step": [
         "Udvid trin"
       ],
@@ -3043,6 +3049,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Få hjælp og brugbare tips til andre domæneudbydere ${ here }"
+      ],
+      "Going private": [
+        "Bliver privat"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app til at kopiere data til ${ BRAND_NAME }"
@@ -3267,8 +3276,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har bemærket at nogle brugere ikke har oprettet deres ${ BRAND_NAME }-konti."
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Vi opretter dine konti og importerer din data nu. Hver e-mail, hver begivenhed er din og kun din. Kun synligt til dit team. Ikke os, ikke nogle andre."
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Vi skifter til end-to-end kryptering til alle. Hver e-mail, og hver begivenhed er nu din og kun din. Kun synligt til dit team. Ikke os, ikke nogle andre."
       ],
       "What are you migrating?": [
         "Hvad migrerer du?"
@@ -7291,6 +7300,9 @@
       "Invalid private key file": [
         "Ugyldig privatnøglefil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ugyldigt nulstillingstoken. Opdater siden og prøv igen."
+      ],
       "Invalid Sieve code": [
         "Ugyldig Sieve-kode"
       ],
@@ -9636,6 +9648,9 @@
       ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Mail": [
         "E-mail"
@@ -12091,6 +12106,9 @@
       "Request a phone call": [
         "Anmod om et telefonopkald"
       ],
+      "Required to complete the migration": [
+        "Krævet for at færdiggøre migrationen"
+      ],
       "Resend verification email": [
         "Gensend bekræftelsesmail"
       ],
@@ -13255,6 +13273,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
+      ],
+      "You do not have permission to create users.": [
+        "Du har ikke tilladelse til at oprette brugere."
       ],
       "You do not have permission to perform this action": [
         "Du har ikke tilladelse til at udføre denne handling"
@@ -14451,6 +14472,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendere"
+      ],
       "Capitalize words": [
         "Skriv ord med store begyndelsesbogstaver"
       ],
@@ -14727,6 +14751,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail med @dinvirksomhed.com domæne"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle beskeder)"
@@ -16012,6 +16039,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Få ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjælp fra ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupper"
@@ -20573,17 +20603,8 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } gennemført"
       ],
-      "Account protection": [
-        "Kontobeskyttelse"
-      ],
       "Add more options for stronger protection": [
         "Tilføj flere muligheder for bedre beskyttelse"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Tilføj flere muligheder for at undgå at blive låst ude af din konto."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Fantastisk. Hold dine muligheder opdateret løbende for stærkere beskyttelse."
       ],
       "Check your access to your recovery options": [
         "Tjek adgangen til dine gendannelsesmuligheder"
@@ -20593,12 +20614,6 @@
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "Undgå at blive låst ude af din ${ BRAND_NAME }-konto"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Det er en god start. Tilføj flere muligheder for bedre beskyttelse."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Super. Tilføj flere muligheder for bedre beskyttelse."
       ],
       "How you increased your account protection": [
         "Sådan forbedrede du din kontobeskyttelse"
@@ -20629,9 +20644,6 @@
       ],
       "Take precautions to avoid losing access": [
         "Tag foranstaltninger for at undgå at miste adgang"
-      ],
-      "Unprotected": [
-        "Ubeskyttet"
       ],
       "Weak": [
         "Svag"
@@ -21117,6 +21129,28 @@
       ],
       "Edit retention rule": [
         "Ret opbevaringsregel"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Organisationsadmin"
+      ],
+      "Security Admin": [
+        "Sikkerhedsadmin"
+      ],
+      "User Admin": [
+        "Brugeradmin"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
       ]
     },
     "Safety review": {
@@ -26924,9 +26958,6 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inkluderer professionelle e-mails med @ditdomæne.com, lagerplads i skyen med dokumenter der kan samarbejdes om, planlægning og afholdelse af videomøder, adgangskodehåndtering, en sikker ${ VPN_SHORT_APP_NAME }, og mere."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer, der ikke bruger tofaktorgodkendelse, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Enkeltlogonbrugere vil ikke modtage e-mailpåmindelsen."
       ],
@@ -27117,6 +27148,9 @@
       ],
       "User is a group": [
         "Brugeren er en gruppe"
+      ],
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"

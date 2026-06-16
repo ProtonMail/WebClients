@@ -952,9 +952,6 @@
       "Add to active": [
         "Ajouter aux éléments actifs"
       ],
-      "Agents": [
-        "Agents"
-      ],
       "Already in KB": [
         "Déjà dans la base de connaissances"
       ],
@@ -987,6 +984,9 @@
       ],
       "Create image": [
         "Créer une image"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME }s personnalisés"
       ],
       "Dark": [
         "Sombre"
@@ -2932,8 +2932,8 @@
       "More options": [
         "Plus d'options"
       ],
-      "New agent": [
-        "Nouvel agent"
+      "New ${ LUMO_SHORT_APP_NAME }": [
+        "Nouveau ${ LUMO_SHORT_APP_NAME }"
       ],
       "Next message": [
         "Message suivant"
@@ -3051,8 +3051,11 @@
       ]
     },
     "collider_2025:Badge": {
-      "Default": [
-        "Défaut"
+      "Built-in": [
+        "Intégré"
+      ],
+      "Selected": [
+        "Sélectionné"
       ]
     },
     "collider_2025:Button": {
@@ -3173,7 +3176,7 @@
         "Le dossier Drive n'a pas pu être associé."
       ],
       "Failed to load image": [
-        "L'image n'a pas pu être chargée."
+        "Le chargement de l'image n'a pas abouti."
       ],
       "Failed to load images. Please try again.": [
         "Les images n'ont pas pu être chargées. Veuillez réessayer."
@@ -3226,8 +3229,8 @@
       "All": [
         "Tous"
       ],
-      "Default": [
-        "Défaut"
+      "Built-in": [
+        "Intégré"
       ],
       "Mine": [
         "Les miens"
@@ -3556,11 +3559,11 @@
       "Holiday planner": [
         "Planificateur de vacances"
       ],
-      "Search agents": [
-        "Rechercher des agents"
-      ],
       "Search chats": [
         "Rechercher des chats"
+      ],
+      "Search custom ${ LUMO_SHORT_APP_NAME }": [
+        "Chercher un ${ LUMO_SHORT_APP_NAME } personnalisé"
       ],
       "Sign in required": [
         "Connexion requise"
@@ -3850,9 +3853,6 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } ne peut pas démarrer"
       ],
-      "Agents": [
-        "Agents"
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Un assistant IA devrait vous autonomiser, et non vous exploiter pour vos données. C'est pourquoi nous avons créé ${ LUMO_SHORT_APP_NAME } : pour vous apporter tous les avantages de l'IA, sans compromettre votre vie privée et la sécurité de vos données."
       ],
@@ -3867,6 +3867,9 @@
       ],
       "Create new project": [
         "Créer un nouveau projet"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME }s personnalisés"
       ],
       "Delete project?": [
         "Supprimer le projet ?"
@@ -9163,8 +9166,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Une assistance IA immédiate, avec un expert à votre disposition !"
+      "Instant assistance with AI and human experts.": [
+        "Assistance immédiate grâce à l'IA et à des experts humains."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."

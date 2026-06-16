@@ -1401,7 +1401,7 @@
       "Save": [
         "Uložiť"
       ],
-      "Save & exit": [
+      "Save & finish": [
         "Uložiť a ukončiť"
       ],
       "Save address": [
@@ -3003,6 +3003,9 @@
       "Calendar": [
         "Kalendár"
       ],
+      "Collapse invitation message": [
+        "Zatvoriť text pozvánky"
+      ],
       "Collapse step": [
         "Zbaliť krok"
       ],
@@ -3018,6 +3021,9 @@
       "Configure your domain": [
         "Nakonfigurujte si doménu"
       ],
+      "Confirm": [
+        "Potvrdiť"
+      ],
       "Contact your administrator to start a migration.": [
         "Ak chcete začať s presunom, kontaktujte svojho správcu."
       ],
@@ -3026,9 +3032,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Skopírujte nasledujúci kód a vložte ho do sekcie DNS u vášho poskytovateľa doménových služieb."
-      ],
-      "Creating accounts. Going private": [
-        "Vytváranie účtov. Prechod do súkromného režimu"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
@@ -3063,6 +3066,9 @@
       "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
         "Všetci dostanú rovnaký pozývací odkaz. Navštívia stránku, zadajú svoj email a do ich Gmailovej schránky dorazí overovací kód. Na základe toho si nastavia heslo pre ${ BRAND_NAME }."
       ],
+      "Expand invitation message": [
+        "Otvoriť text pozvánky"
+      ],
       "Expand step": [
         "Rozbaliť krok"
       ],
@@ -3077,6 +3083,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Pomoc a užitočné tipy pre iných poskytovateľov domén nájdete ${ here }"
+      ],
+      "Going private": [
+        "Prechod do súkromia"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplikácia Google Marketplace na kopírovanie údajov do ${ BRAND_NAME }"
@@ -3309,8 +3318,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Zistili sme, že niektorí používatelia si ešte neaktivovali svoje ${ BRAND_NAME } účty."
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Práve vám vytvárame účty a importujeme vaše údaje. Každý email, každá udalosť patrí výlučne vám. Vidí ich len váš tím. Ani my, ani nikto iný."
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Aktivujeme end-to-end šifrovanie pre všetkých. Každý email, každá udalosť je teraz len vaša. Vidí ich len váš tím. Ani my, ani nikto iný."
       ],
       "What are you migrating?": [
         "Čo migrujete?"
@@ -7391,6 +7400,9 @@
       "Invalid private key file": [
         "Neplatný súbor súkromného kľúča"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Neplatný token na obnovenie. Obnovte stránku a skúste to znova, prosím."
+      ],
       "Invalid Sieve code": [
         "Neplatný Sieve kód"
       ],
@@ -9789,6 +9801,9 @@
       ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Mail": [
         "Pošta"
@@ -12340,6 +12355,9 @@
       "Request a phone call": [
         "Požiadať o telefonický hovor"
       ],
+      "Required to complete the migration": [
+        "Potrebné na dokončenie migrácie"
+      ],
       "Resend verification email": [
         "Znovu zaslať overovací email"
       ],
@@ -14753,6 +14771,9 @@
       "Calendar": [
         "Kalendár"
       ],
+      "Calendars": [
+        "Kalendáre"
+      ],
       "Capitalize words": [
         "Slová veľkými písmenami"
       ],
@@ -15031,6 +15052,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "Email s doménou @vasafirma.sk"
+      ],
+      "Emails": [
+        "Emaily"
       ],
       "Emails (all messages)": [
         "Emaily (všetky správy)"
@@ -16320,6 +16344,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Získať ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Získajte pomoc od ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Skupiny"
@@ -20917,17 +20944,8 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } dokončené"
       ],
-      "Account protection": [
-        "Ochrana účtu"
-      ],
       "Add more options for stronger protection": [
         "Pridajte ďalšie možnosti pre lepšiu ochranu"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Pridajte ďalšie možnosti, aby ste sa vyhli zablokovaniu prístupu k vášmu účtu."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Skvelé. Nezabudnite aktualizovať svoje nastavenia, aby ste mali lepšiu ochranu."
       ],
       "Check your access to your recovery options": [
         "Skontrolujte si prístup k možnostiam obnovenia"
@@ -20937,12 +20955,6 @@
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "Nenechajte sa odhlásiť zo svojho účtu ${ BRAND_NAME }"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Dobrý začiatok. Pridajte ďalšie možnosti pre lepšiu ochranu."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Skvelé. Pridajte ďalšie možnosti pre lepšiu ochranu."
       ],
       "How you increased your account protection": [
         "Ako ste zvýšili ochranu vášho účtu"
@@ -20973,9 +20985,6 @@
       ],
       "Take precautions to avoid losing access": [
         "Prijmite opatrenia, aby ste neprišli o prístup"
-      ],
-      "Unprotected": [
-        "Nechránené"
       ],
       "Weak": [
         "Slabé"
@@ -27469,9 +27478,6 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Zahŕňa profesionálnu emailovú adresu v tvare @vasadomena.sk, cloudové úložisko s možnosťou spoločnej úpravy dokumentov, plánovanie a videokonferencie, správu hesiel, bezpečnú službu ${ VPN_SHORT_APP_NAME } a ďalšie funkcie."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Okamžitá pomoc AI, k dispozícii je aj ľudský odborník!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Členovia, ktorí nepoužívajú 2FA, dostanú email s výzvou, aby si ho čo najskôr aktivovali. Používatelia s jedným prihlásením nedostanú emailovú pripomienku."

@@ -1401,8 +1401,8 @@
       "Save": [
         "Αποθήκευση"
       ],
-      "Save & exit": [
-        "Αποθήκευση & έξοδος"
+      "Save & finish": [
+        "Αποθήκευση & ολοκλήρωση"
       ],
       "Save address": [
         "Αποθήκευση διεύθυνσης"
@@ -2987,6 +2987,9 @@
       "Configure your domain": [
         "Ρυθμίστε τον τομέα σας"
       ],
+      "Confirm": [
+        "Επιβεβαίωση"
+      ],
       "Contact your administrator to start a migration.": [
         "Επικοινωνήστε με τον διαχειριστή σας για να ξεκινήσετε μια μετεγκατάσταση."
       ],
@@ -2995,9 +2998,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Αντιγράψτε τον παρακάτω κώδικα και επικολλήστε τον στην ενότητα DNS του κεντρικού υπολογιστή του τομέα σας."
-      ],
-      "Creating accounts. Going private": [
-        "Δημιουργία λογαριασμών. Μετάβαση σε ιδιωτικότητα"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
@@ -3049,6 +3049,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Λάβετε βοήθεια και χρήσιμες συμβουλές για άλλους παρόχους τομέων ${ here }"
+      ],
+      "Going private": [
+        "Μετάβαση σε ιδιωτικό"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Εφαρμογή Google Marketplace για αντιγραφή δεδομένων στο ${ BRAND_NAME }"
@@ -3273,8 +3276,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Παρατηρήσαμε ότι ορισμένοι χρήστες δεν έχουν διεκδικήσει τους λογαριασμούς τους ${ BRAND_NAME }."
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Δημιουργούμε τους λογαριασμούς σας και εισάγουμε τα δεδομένα σας τώρα. Κάθε ηλεκτρονικό μήνυμα, κάθε εκδήλωση είναι μόνο δική σας. Ορατό μόνο στην ομάδα σας. Ούτε εμείς, ούτε κανένας άλλος."
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Ενεργοποιούμε τη διατερματική κρυπτογράφηση για όλους. Κάθε μήνυμα ηλεκτρονικού ταχυδρομείου, κάθε εκδήλωση είναι πλέον μόνο δική σας. Ορατό μόνο στην ομάδα σας. Ούτε εμείς, ούτε κανένας άλλος."
       ],
       "What are you migrating?": [
         "Τι μεταφέρετε;"
@@ -7297,6 +7300,9 @@
       "Invalid private key file": [
         "Μη έγκυρο αρχείο ιδιωτικού κλειδιού"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Μη έγκυρο διακριτικό επαναφοράς. Παρακαλούμε ανανεώστε τη σελίδα και δοκιμάστε ξανά."
+      ],
       "Invalid Sieve code": [
         "Μη έγκυρος κωδικός Sieve"
       ],
@@ -9640,6 +9646,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Mail": [
         "Ταχυδρομείο"
       ]
@@ -10181,6 +10190,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
+      ],
+      "All your files will be imported": [
+        "Όλα τα αρχεία σας θα εισαχθούν"
       ],
       "Allocated": [
         "Κατανεμημένος"
@@ -12093,6 +12105,9 @@
       ],
       "Request a phone call": [
         "Ζητήστε τηλεφωνική επικοινωνία"
+      ],
+      "Required to complete the migration": [
+        "Απαιτείται για την ολοκλήρωση της μετεγκατάστασης"
       ],
       "Resend verification email": [
         "Επανάληψη αποστολής μηνύματος επαλήθευσης"
@@ -14457,6 +14472,9 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
       "Capitalize words": [
         "Κεφαλαιοποίηση λέξεων"
       ],
@@ -14707,6 +14725,9 @@
       "Donation amount": [
         "Ποσό δωρεάς"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duration": [
         "Διάρκεια"
       ],
@@ -14733,6 +14754,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "Ηλεκτρονικό ταχυδρομείο με τομέα @yourcompany.com"
+      ],
+      "Emails": [
+        "Μηνύματα"
       ],
       "Emails (all messages)": [
         "Μηνύματα (όλα τα μηνύματα)"
@@ -20486,17 +20510,8 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } ολοκληρώθηκε"
       ],
-      "Account protection": [
-        "Προστασία λογαριασμού"
-      ],
       "Add more options for stronger protection": [
         "Προσθέστε περισσότερες επιλογές για ισχυρότερη προστασία"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Προσθέστε περισσότερες επιλογές για να αποφύγετε το κλείδωμα του λογαριασμού σας."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Τέλεια. Διατηρήστε τις επιλογές σας ενημερωμένες για ισχυρότερη προστασία."
       ],
       "Check your access to your recovery options": [
         "Ελέγξτε την πρόσβασή σας στις επιλογές ανάκτησης"
@@ -20506,12 +20521,6 @@
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "Μην κλειδωθείτε έξω από τον ${ BRAND_NAME } Λογαριασμό σας"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Καλή αρχή. Προσθέστε περισσότερες επιλογές για ισχυρότερη προστασία."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Τέλεια. Προσθέστε περισσότερες επιλογές για ισχυρότερη προστασία."
       ],
       "How you increased your account protection": [
         "Πώς αυξήσατε την προστασία του λογαριασμού σας"
@@ -20542,9 +20551,6 @@
       ],
       "Take precautions to avoid losing access": [
         "Λάβετε προφυλάξεις για να μη χάσετε την πρόσβαση"
-      ],
-      "Unprotected": [
-        "Χωρίς προστασία"
       ],
       "Weak": [
         "Ασθενής"
@@ -26859,8 +26865,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Περιλαμβάνει επαγγελματικό ηλεκτρονικό ταχυδρομείο στο @yourdomain.com, αποθήκευση στο cloud με συνεργατική επεξεργασία εγγράφων, προγραμματισμό και βιντεοδιάσκεψη, διαχείριση κωδικών πρόσβασης, ένα ασφαλές ${ VPN_SHORT_APP_NAME } και πολλά άλλα."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
+      "Instant assistance with AI and human experts.": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη και ανθρώπινους εμπειρογνώμονες."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα μήνυμα ηλεκτρονικού ταχυδρομείου που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό. Οι χρήστες καθολικής σύνδεσης δε θα λάβουν την υπενθύμιση ηλεκτρονικού ταχυδρομείου."

@@ -1398,8 +1398,8 @@
       "Save": [
         "Spara"
       ],
-      "Save & exit": [
-        "Spara och avsluta"
+      "Save & finish": [
+        "Spara och slutför"
       ],
       "Save address": [
         "Spara adress"
@@ -2888,6 +2888,9 @@
       "Account disconnected": [
         "Konto frånkopplat"
       ],
+      "Accounts migrated": [
+        "Konton migrerade"
+      ],
       "Activated": [
         "Aktiverat"
       ],
@@ -2915,6 +2918,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Collapse invitation message": [
+        "Minimera inbjudningsmeddelande"
+      ],
       "Collapse step": [
         "Minimera steg"
       ],
@@ -2930,14 +2936,14 @@
       "Configure your domain": [
         "Konfigurera din domän"
       ],
+      "Confirm": [
+        "Bekräfta"
+      ],
       "Contact your administrator to start a migration.": [
         "Kontakta din administratör för att starta en migrering."
       ],
       "Contacts": [
         "Kontakter"
-      ],
-      "Creating accounts. Going private": [
-        "Skapar konton. Blir privat"
       ],
       "Domain added": [
         "Domän tillagd"
@@ -2957,6 +2963,9 @@
       "Estimated size": [
         "Beräknad storlek"
       ],
+      "Expand invitation message": [
+        "Expandera inbjudningsmeddelande"
+      ],
       "Expand step": [
         "Expandera steg"
       ],
@@ -2971,6 +2980,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Få hjälp och användbara tips för andra domänleverantörer ${ here }"
+      ],
+      "Going private": [
+        "Blir privat"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
@@ -3113,6 +3125,14 @@
       ],
       "Skip": [
         "Hoppa över"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Hoppade över ${ count } kontakt på grund av inkompatibiliteter",
+        "Hoppade över ${ count } kontakter på grund av inkompatibiliteter"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Hoppade över ${ count } händelse på grund av inkompatibiliteter",
+        "Hoppade över ${ count } händelser på grund av inkompatibiliteter"
       ],
       "Status": [
         "Status"
@@ -6431,6 +6451,9 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } kommer inte att kunna komma åt ditt konto förrän nästa nödåtkomst."
       ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** är nu din återställningskontakt. De kan hjälpa dig att låsa upp dina data efter du återställt ditt lösenord."
+      ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Om de bekräftar**, klicka **Godkänn återställning**. Detta kommer låsa upp deras krypterade data."
       ],
@@ -7111,6 +7134,9 @@
       "Invalid private key file": [
         "Ogiltig privat nyckelfil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ogiltig återställningstoken. Uppdatera sidan och försök igen."
+      ],
       "Invalid Sieve code": [
         "Ogiltig Sieve-kod"
       ],
@@ -7698,6 +7724,9 @@
       ],
       "Ask your administrator to enable Account monitor.": [
         "Be din administratör att aktivera kontoövervakning."
+      ],
+      "Enable account monitor to start loading event.": [
+        "Aktivera kontoövervakare för att starta ladda händelse."
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -9430,6 +9459,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Mail": [
         "E-post"
       ]
@@ -9944,6 +9976,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
+      ],
+      "All your files will be imported": [
+        "Alla dina filer kommer att importeras"
       ],
       "Allocated": [
         "Tilldelad"
@@ -12382,6 +12417,9 @@
       "To proceed, we must verify the request.": [
         "För att fortsätta måste vi verifiera begäran."
       ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "För att återfå åtkomst till ditt konto och dina data, ange återställningsfrasen på 12 ord associerad med ditt konto."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "För att säkra din internetanslutning, ladda ner och installera ${ VPN_APP_NAME }-applikationen för din enhet och anslut till en server."
       ],
@@ -12913,6 +12951,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har inte angett en återställningsmetod så kontoåterställning är omöjlig om du glömmer ditt lösenord. Fortsätt utan återställningsmetod?"
+      ],
+      "You do not have permission to create users.": [
+        "Du har inte behörighet att skapa användare."
       ],
       "You do not have permission to perform this action": [
         "Du har inte behörighet att utföra denna åtgärd"
@@ -14068,6 +14109,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendrar"
+      ],
       "Capitalize words": [
         "Versalisera ord"
       ],
@@ -14312,6 +14356,9 @@
       "Donation amount": [
         "Donationsbelopp"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duration": [
         "Varaktighet"
       ],
@@ -14338,6 +14385,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-post med @yourcompany.com-domän"
+      ],
+      "Emails": [
+        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -15611,6 +15661,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Skaffa ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjälp från ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupper"
@@ -20090,17 +20143,8 @@
       "${ score } / ${ maxScore } completed": [
         "${ score }/${ maxScore } slutfört"
       ],
-      "Account protection": [
-        "Kontoskydd"
-      ],
       "Add more options for stronger protection": [
         "Lägg till fler alternativ för starkare skydd"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Lägg till fler alternativ för att undvika att bli utelåst från ditt konto."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Fantastiskt. Håll dina alternativ uppdaterade för starkare skydd."
       ],
       "Check your access to your recovery options": [
         "Kontrollera din åtkomst till dina återställningsalternativ"
@@ -20108,11 +20152,8 @@
       "Critical": [
         "Kritiskt"
       ],
-      "Good start. Add more options for a stronger protection.": [
-        "Bra start. Lägg till fler alternativ för ett starkare skydd."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Bra. Lägg till fler alternativ för ett starkare skydd."
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Bli inte utelåst från ditt ${ BRAND_NAME }-konto"
       ],
       "How you increased your account protection": [
         "Hur du ökade ditt kontoskydd"
@@ -20126,14 +20167,17 @@
       "Partial": [
         "Delvis"
       ],
+      "Recovery score: ${ score }": [
+        "Återställningspoäng: ${ score }"
+      ],
       "Score: ${ score } / ${ maxScore }": [
         "Poäng: ${ score }/${ maxScore }"
       ],
       "Strong": [
         "Stark"
       ],
-      "Unprotected": [
-        "Oskyddad"
+      "Take precautions to avoid losing access": [
+        "Vidta försiktighetsåtgärder för att undvika förlora åtkomst."
       ],
       "Weak": [
         "Svag"
@@ -20594,6 +20638,11 @@
       ],
       "User Admin": [
         "Användaradministratör"
+      ]
+    },
+    "Role description": {
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
       ]
     },
     "Safety review": {
@@ -25057,6 +25106,9 @@
       ],
       "Free": [
         "Gratis"
+      ],
+      "Free plan": [
+        "Free-paket"
       ],
       "Gateway": [
         "Gateway"

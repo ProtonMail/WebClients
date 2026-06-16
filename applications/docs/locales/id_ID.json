@@ -537,6 +537,9 @@
       "New document": [
         "Dokumen baru"
       ],
+      "New folder": [
+        "Folder baru"
+      ],
       "New message": [
         "Pesan baru"
       ],
@@ -2890,8 +2893,14 @@
       "Failed to copy photo to album": [
         "Gagal menyalin foto ke album"
       ],
+      "Failed to create folder": [
+        "Folder gagal dibuat"
+      ],
       "Failed to create public share node": [
         "Gagal membuat node berbagi publik"
+      ],
+      "Failed to expand folder": [
+        "Folder gagal diperluas"
       ],
       "Failed to fetch node": [
         "Gagal mengambil node"
@@ -4880,6 +4889,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
+      "Settings update failed": [
+        "Pembaruan pengaturan gagal"
+      ],
+      "Settings updated": [
+        "Pengaturan diperbarui"
+      ],
       "Share via link settings": [
         "Bagikan melalui pengaturan tautan"
       ],
@@ -5482,6 +5497,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalender"
+      ],
       "can edit": [
         "dapat menyunting"
       ],
@@ -5559,6 +5577,9 @@
       ],
       "Email format": [
         "Format email"
+      ],
+      "Emails": [
+        "Email"
       ],
       "Emails (all messages)": [
         "Email (seluruh pesan)"
@@ -7258,17 +7279,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" berhasil dibuat"
-      ],
       "\"${ name }\" deleted": [
         "\"${ name }\" dihapus"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" dihapus secara permanen dari sampah"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" gagal dibuat"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" gagal dihapus"
@@ -9207,6 +9222,9 @@
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
       ],
+      "Computers": [
+        "Komputer"
+      ],
       "Confirm downgrade": [
         "Konfirmasi penurunan akun"
       ],
@@ -9850,6 +9868,9 @@
       ],
       "Name must not be empty": [
         "Nama tidak boleh kosong"
+      ],
+      "Name must not contain slashes (/)": [
+        "Nama tidak boleh mengandung garis miring (\\/)"
       ]
     },
     "Video control": {

@@ -519,6 +519,9 @@
       "New document": [
         "Novo documento"
       ],
+      "New folder": [
+        "Nova pasta"
+      ],
       "New message": [
         "Nova mensagem"
       ],
@@ -2781,6 +2784,9 @@
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
       ],
+      "Failed to create folder": [
+        "Erro na criação da pasta"
+      ],
       "Failed to create public share node": [
         "Erro ao criar o nó de partilha público"
       ],
@@ -4762,6 +4768,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A configuração do PGP permite o envio de e-mails encriptados de ponta a ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
       ],
+      "Settings update failed": [
+        "Erro de atualização das definições"
+      ],
+      "Settings updated": [
+        "As definições foram atualizadas."
+      ],
       "Share via link settings": [
         "Partilhar através das definições da ligação"
       ],
@@ -5359,6 +5371,9 @@
       "Calendar": [
         "Calendário"
       ],
+      "Calendars": [
+        "Calendários"
+      ],
       "Cancel download": [
         "Cancelar transferência"
       ],
@@ -5430,6 +5445,9 @@
       ],
       "Email format": [
         "Formato do e-mail"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "Emails (todas as mensagens)"
@@ -7119,17 +7137,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" criado"
-      ],
       "\"${ name }\" deleted": [
         "«${ name }» foi eliminado."
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanentemente eliminado do lixo"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Erro ao criar \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted": [
         "Erro ao eliminar «${ name }»"
@@ -9139,6 +9151,9 @@
       "Collaborate on documents": [
         "Colabore em documentos"
       ],
+      "Computers": [
+        "Computadores"
+      ],
       "Confirm downgrade": [
         "Confirmar a alteração da conta"
       ],
@@ -9767,6 +9782,9 @@
       ],
       "Name must not be empty": [
         "O nome não pode estar vazio"
+      ],
+      "Name must not contain slashes (/)": [
+        "O nome não deve conter barras (/)"
       ]
     },
     "Video control": {

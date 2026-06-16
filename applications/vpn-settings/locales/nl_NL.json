@@ -890,6 +890,9 @@
       "Return to sign in": [
         "Terug naar inloggen"
       ],
+      "Return to sign-in": [
+        "Terug naar inloggen"
+      ],
       "Review": [
         "Bekijken"
       ],
@@ -1117,6 +1120,9 @@
       ],
       "Try another method": [
         "Andere methode proberen"
+      ],
+      "Try another way": [
+        "Probeer een andere manier"
       ],
       "Try for free": [
         "Probeer het gratis"
@@ -1667,6 +1673,11 @@
         "Uw gratis proefversie eindigt over ${ timeRemaining }"
       ]
     },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "Bespaar ${ discountRate }%"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Uitgeschakeld"
@@ -1984,6 +1995,9 @@
       "Activated": [
         "Geactiveerd"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
       "All": [
         "Alle"
       ],
@@ -2002,8 +2016,14 @@
       "Emails": [
         "E-mails"
       ],
+      "Errors": [
+        "Fouten"
+      ],
       "Estimated size": [
         "Geschatte grootte."
+      ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
       ],
       "Has errors": [
         "Bevat fouten"
@@ -3610,6 +3630,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Hoe ons klantenservice-team onze VPN app rechtstreeks in de handen van mensen kreeg."
+      ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
         "Hoe we terugvochten toen ${ BRAND_NAME } werd geblokkeerd in een agressieve campagne."
       ],
@@ -4461,6 +4484,9 @@
       ],
       "Invalid private key file": [
         "Ongeldig privé-sleutel bestand"
+      ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ongeldige reset token. Vraag een andere token aan en probeer het opnieuw."
       ],
       "Invalid VAT number": [
         "Ongeldig btw-nummer"
@@ -5365,6 +5391,9 @@
       "3 email domains": [
         "3 e-mail domeinen"
       ],
+      "3 folders, labels and filters": [
+        "3 mappen, labels en aangepaste filters"
+      ],
       "500 GB storage": [
         "500 GB opslagruimte"
       ],
@@ -5408,6 +5437,9 @@
       ],
       "Premium features in Mail, Calendar, Drive, Pass and VPN": [
         "Premiumfuncties in Mail, Agenda, Drive, Pass en VPN"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
       ],
       "Remove": [
         "Verwijderen"
@@ -6252,6 +6284,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
+      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } Business abonnementen bieden uw team alle samenwerkingstools die ze nodig hebben om productief en georganiseerd te werken, terwijl uw bedrijf wordt beschermd."
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } wordt onafhankelijk gefinancierd en werkt zonder advertenties. Hieronder vindt u voorbeelden van hoe deze onafhankelijkheid in de praktijk is toegepast."
       ],
@@ -6762,6 +6797,9 @@
       "Beta": [
         "Bèta"
       ],
+      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
+        "De eerste 6 maanden wordt het abonnement gefactureerd tegen ${ monthlyDiscountedPrice }, waarna het wordt verlengd tegen ${ monthlyRenewalPrice }."
+      ],
       "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
         "De eerste 12 maanden wordt het abonnement gefactureerd tegen ${ yearlyDiscountedPrice }, waarna het wordt verlengd tegen ${ yearlyRenewalPrice }."
       ],
@@ -6776,6 +6814,12 @@
       ],
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
+      ],
+      "Can you access your active session?": [
+        "Heeft u toegang tot uw actieve sessie?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kunt u uw actieve web sessie in een andere browser openen?"
       ],
       "Can you reach out to your contact?": [
         "Kunt u contact opnemen met uw contactpersoon?"
@@ -7046,6 +7090,9 @@
       ],
       "Drop to import": [
         "Neerzetten om te importeren"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Dankzij end-to-end versleuteling kunt u uw wachtwoord opnieuw instellen, maar ${ DataLockedText } totdat u gebruik maakt van een ${ DataRecoveryOptionsLink }:"
       ],
       "Each code can only be used once": [
         "Elke code kan slechts één keer worden gebruikt"
@@ -7711,6 +7758,9 @@
       ],
       "On": [
         "Aan"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Zodra zij toegang tot uw account hebben gekregen, kunnen zij uw **herstelinstellingen** bekijken en **uw wachtwoord voor ${ ACCOUNT_APP_NAME }** voor u wijzigen."
       ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
@@ -8456,6 +8506,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Probeer ${ productName } volledig risicoloos - als u om een andere reden van gedachten verandert, krijgt u een volledige terugbetaling. Zonder vragen."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Probeer uw account te herstellen vanaf een **apparaat of browser waarop u eerder bent ingelogd**, want misschien lukt het daar wel:"
+      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
@@ -8470,6 +8523,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan de handtekening van het herstelbestand niet verifiëren. Neem contact op met ondersteuning."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Helaas is er geen herstelmethode beschikbaar voor dit account."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
@@ -8840,6 +8896,9 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "U kan geen ${ MAIL_APP_NAME }-gebruikers doorverwijzen"
+      ],
+      "You do not have permission to create users.": [
+        "U heeft geen toestemming om gebruikers aan te maken."
       ],
       "You don't have any referrals.": [
         "U heeft geen doorverwijzingen."
@@ -9397,6 +9456,9 @@
       "Calendar": [
         "Agenda"
       ],
+      "Calendars": [
+        "Agenda's"
+      ],
       "Card details": [
         "Kaart details"
       ],
@@ -9408,6 +9470,9 @@
       ],
       "Cash": [
         "Contant"
+      ],
+      "Catch-all email address": [
+        "Catch-all e-mailadres"
       ],
       "Category": [
         "Categorie"
@@ -9548,6 +9613,9 @@
       "e.g. example.com": [
         "bv. voorbeeld.com"
       ],
+      "Early access": [
+        "Early access"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -9565,6 +9633,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail met @uwbedrijf.com domein"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle berichten)"
@@ -9589,6 +9660,9 @@
       ],
       "End-to-end encryption": [
         "End-to-end-encryptie"
+      ],
+      "Enter code": [
+        "Voer code in"
       ],
       "Enter name or email address": [
         "Voer een naam of e-mailadres in"
@@ -10001,6 +10075,9 @@
       "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
         "Gedeeld tussen ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ WALLET_SHORT_APP_NAME }."
       ],
+      "Short domain @pm.me": [
+        "Kort domein @pm.me"
+      ],
       "Show ${ n } administrator": [
         "Toon ${ n } beheerder",
         "Toon ${ n } beheerders"
@@ -10106,6 +10183,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Version history": [
+        "Versiegeschiedenis"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -10306,6 +10386,9 @@
       "Create an alias": [
         "Alias aanmaken"
       ],
+      "data recovery option": [
+        "optie voor gegevensherstel"
+      ],
       "Details": [
         "Details"
       ],
@@ -10335,6 +10418,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Kies ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Krijg hulp van ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Groepen"
@@ -13993,6 +14079,28 @@
         "Bewaarregel bewerken"
       ]
     },
+    "Role": {
+      "Organization Admin": [
+        "Organisatie Beheerder"
+      ],
+      "Security Admin": [
+        "Beveiligingsbeheerder"
+      ],
+      "User Admin": [
+        "Gebruiker Beheerder"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Beheer alle gebruikers, groepen, opslag, beveiliging, facturering, auditlogboeken en systeemconfiguraties."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Beheer gebruikers, groepen en opslagruimte voor alle leden, wijs rollen toe en deel licenties uit."
+      ]
+    },
     "Safety review": {
       "Check account security": [
         "Controleer accountbeveiliging"
@@ -16035,6 +16143,9 @@
       ],
       "/user per month": [
         "/gebruiker per maand"
+      ],
+      "/year": [
+        "/jaar"
       ]
     },
     "Suffix for price": {
@@ -17626,11 +17737,11 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "Inclusief aangepaste e-maildomeinen en een onbeperkt aantal 'hide-my-email' aliassen in ${ MAIL_APP_NAME }, toegang tot servers in meer dan 120 landen in ${ VPN_SHORT_APP_NAME }, ingebouwde tweefactorauthenticatie en veilig delen in ${ PASS_SHORT_APP_NAME }, en nog veel meer."
+      ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclusief professioneel e-mailadres bij @yourdomain.com, cloudopslag met mogelijkheden voor gezamenlijke documentbewerking, planning en videoconferenties, wachtwoordbeheer, een beveiligde ${ VPN_SHORT_APP_NAME } en meer."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Directe AI-hulp, menselijke expert bij de hand!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Leden die geen 2FA gebruiken krijgen een e-mail met het verzoek om deze zo snel mogelijk in te schakelen. Single sign-on gebruikers zullen de e-mail herinnering niet ontvangen."
@@ -17732,6 +17843,9 @@
       ],
       "User is a group": [
         "Gebruiker is een groep"
+      ],
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Wachten tot gebruiker de uitnodiging accepteert"

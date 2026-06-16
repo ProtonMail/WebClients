@@ -1657,6 +1657,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Åtkomsttoken ”${ action.token.Name }” har löpt ut. Om den är borttagen kommer den inte längre att visas."
+      ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "Åtkomsttoken “${ action.token.Name }“ kommer att sluta fungera omedelbart. Denna åtgärd kan inte ångras."
       ],
@@ -1963,22 +1966,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Varje gång ditt alias tar emot ett e-postmeddelande från någon skapas en ny kontakt automatiskt."
       ],
-      "Expired ${ abs } hour ago": [
-        "Löpte ut för ${ abs } timme sedan",
-        "Löpte ut för ${ abs } timmar sedan"
+      "Expired on ${ formattedDate }": [
+        "Löpte ut den ${ formattedDate }"
       ],
       "Expires in": [
         "Löper ut om"
       ],
-      "Expires in ${ hours } hour": [
-        "Löper ut om ${ hours } timme",
-        "Löper ut om ${ hours } timmar"
-      ],
       "Expires in ${ remainingTime }": [
         "Löper ut om ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Löper ut om mindre än timme"
+      "Expires on ${ formattedDate }": [
+        "Löper ut den ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Exporterar din data …"
@@ -2173,10 +2171,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2239,6 +2233,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Endast tokens som löpt ut under de senaste 30 dagarna visas. Äldre tokens tas bort automatiskt."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Öppna ${ PASS_APP_NAME } i ett större fönster"
@@ -2608,6 +2605,9 @@
       "The user did not accept the invitation yet.": [
         "Användaren har inte accepterat inbjudan ännu."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Sedan kan du gå till ${ url } för att kopiera instruktionerna som ska skickas till din AI-agent."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
       ],
@@ -2972,11 +2972,23 @@
         "${ years } år",
         "${ years } år"
       ],
+      "1 day": [
+        "1 dag"
+      ],
       "1 hour": [
         "1 timme"
       ],
       "1 minute": [
         "1 minut"
+      ],
+      "1 month": [
+        "1 månad"
+      ],
+      "1 week": [
+        "1 vecka"
+      ],
+      "1 year": [
+        "1 år"
       ],
       "10 minutes": [
         "10 minuter"
@@ -3218,6 +3230,9 @@
       "Crypto Wallet": [
         "Kryptoplånbok"
       ],
+      "Custom": [
+        "Anpassad"
+      ],
       "Custom Items": [
         "Anpassade objekt"
       ],
@@ -3302,8 +3317,8 @@
       "Expired tokens (${ expired.length })": [
         "Utlöpta tokens (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Löper ut om (minuter)"
+      "Expires in": [
+        "Löper ut om"
       ],
       "Expiry Date": [
         "Utgångsdatum"
@@ -4229,6 +4244,12 @@
       ],
       "The file you are trying to import is empty": [
         "Filen du försöker importera är tom"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Denna funktion stöds inte i ditt paket. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Denna funktion stöds inte i ditt paket. Kontakta din administratör för att få åtkomst."
       ],
       "Total files: ": [
         "Totalt antal filer: "

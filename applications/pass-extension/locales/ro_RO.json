@@ -1092,9 +1092,6 @@
       "Error reporting problem": [
         "Problemă de raportare a erorii."
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Timpul de expirare trebuie să fie cuprins între 60 de minute și un an."
-      ],
       "Failed loading group members": [
         "Eroare la încărcarea membrilor grupului."
       ],
@@ -2031,24 +2028,11 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "De fiecare dată când aliasul primește un mesaj de la cineva, este creat automat un contact."
       ],
-      "Expired ${ abs } hour ago": [
-        "Expirat acum ${ abs } oră",
-        "Expirat acum ${ abs } ore",
-        "Expirat acum ${ abs } de ore"
-      ],
       "Expires in": [
         "Expiră peste"
       ],
-      "Expires in ${ hours } hour": [
-        "Expiră peste ${ hours } oră",
-        "Expiră peste ${ hours } ore",
-        "Expiră peste ${ hours } de ore"
-      ],
       "Expires in ${ remainingTime }": [
         "Expiră peste ${ remainingTime }"
-      ],
-      "Expires in less than an hour": [
-        "Expiră în mai puțin de o oră"
       ],
       "Exporting your data...": [
         "Se exportă datele..."
@@ -2246,11 +2230,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3436,8 +3415,8 @@
       "Expired tokens (${ expired.length })": [
         "Coduri de acces expirate (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Expiră peste (minute)"
+      "Expires in": [
+        "Expiră în"
       ],
       "Expiry Date": [
         "Dată expirare"

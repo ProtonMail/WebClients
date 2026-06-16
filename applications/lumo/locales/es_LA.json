@@ -27,7 +27,7 @@
         "Aplicar"
       ],
       "Are you sure you want to delete ${ count } conversation?": [
-        "¿Confirma que desea eliminar ${ count } conversación?",
+        "¿En verdad desea eliminar ${ count } conversación?",
         "¿En verdad desea eliminar ${ count } conversaciones?"
       ],
       "Are you sure you want to delete all conversations?": [
@@ -124,8 +124,8 @@
         "Eliminar"
       ],
       "Delete ${ count } conversation?": [
-        "Eliminar ${ count } conversación?",
-        "Eliminar ${ count } conversaciones?"
+        "¿Eliminar ${ count } conversación?",
+        "¿Eliminar ${ count } conversaciones?"
       ],
       "Delete ${ token.Name }": [
         "Eliminar ${ token.Name }"
@@ -952,9 +952,6 @@
       "Add to active": [
         "Añadir a activos"
       ],
-      "Agents": [
-        "Agentes"
-      ],
       "Already in KB": [
         "Ya en la base de conocimiento"
       ],
@@ -987,6 +984,9 @@
       ],
       "Create image": [
         "Crear imagen"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME } personalizados"
       ],
       "Dark": [
         "Oscuro"
@@ -2932,8 +2932,8 @@
       "More options": [
         "Más opciones"
       ],
-      "New agent": [
-        "Agente nuevo"
+      "New ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } nuevo"
       ],
       "Next message": [
         "Mensaje siguiente"
@@ -3051,8 +3051,11 @@
       ]
     },
     "collider_2025:Badge": {
-      "Default": [
-        "Predeterminado"
+      "Built-in": [
+        "Integrado"
+      ],
+      "Selected": [
+        "Seleccionado"
       ]
     },
     "collider_2025:Button": {
@@ -3226,8 +3229,8 @@
       "All": [
         "Todo"
       ],
-      "Default": [
-        "Predeterminado"
+      "Built-in": [
+        "Integrado"
       ],
       "Mine": [
         "Mío"
@@ -3556,11 +3559,11 @@
       "Holiday planner": [
         "Planificador de vacaciones"
       ],
-      "Search agents": [
-        "Buscar agentes"
-      ],
       "Search chats": [
         "Buscar chats"
+      ],
+      "Search custom ${ LUMO_SHORT_APP_NAME }": [
+        "Buscar ${ LUMO_SHORT_APP_NAME } personalizados"
       ],
       "Sign in required": [
         "Se requiere iniciar sesión"
@@ -3850,9 +3853,6 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } no se puede iniciar"
       ],
-      "Agents": [
-        "Agentes"
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Un asistente de IA debería empoderarle, no aprovecharse de sus datos. Por eso creamos ${ LUMO_SHORT_APP_NAME }: para ofrecerle todos los beneficios de la IA, sin comprometer su privacidad ni la seguridad de sus datos."
       ],
@@ -3867,6 +3867,9 @@
       ],
       "Create new project": [
         "Crear nuevo proyecto"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME } personalizados"
       ],
       "Delete project?": [
         "¿Eliminar proyecto?"
@@ -9162,9 +9165,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"

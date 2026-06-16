@@ -555,6 +555,9 @@
       "New document": [
         "Nový dokument"
       ],
+      "New folder": [
+        "Nový priečinok"
+      ],
       "New message": [
         "Nová správa"
       ],
@@ -2999,6 +3002,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } položku sa nepodarilo presunúť",
+        "${ failureItems.length } položky sa nepodarilo presunúť",
+        "${ failureItems.length } položiek sa nepodarilo presunúť",
+        "${ failureItems.length } položiek sa nepodarilo presunúť"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
       ],
@@ -3068,6 +3077,9 @@
       "Cannot export this contact": [
         "Nie je možné exportovať tento kontakt"
       ],
+      "Cannot find move target": [
+        "Cieľ presunu nebol nájdený"
+      ],
       "Contact could not be saved": [
         "Kontakt sa nepodarilo uložiť"
       ],
@@ -3134,8 +3146,14 @@
       "Failed to copy photo to album": [
         "Nepodarilo sa skopírovať fotografiu do albumu"
       ],
+      "Failed to create folder": [
+        "Nepodarilo sa vytvoriť priečinok"
+      ],
       "Failed to create public share node": [
         "Nepodarilo sa vytvoriť uzol verejného zdieľania"
+      ],
+      "Failed to expand folder": [
+        "Nepodarilo sa rozbaliť priečinok"
       ],
       "Failed to fetch node": [
         "Načítanie uzla zlyhalo"
@@ -4667,6 +4685,9 @@
         "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
         "Všetky vaše kontakty budú importované až do limitu ${ maxContact }"
       ],
+      "Already in this folder": [
+        "Už sa nachádza v priečinku"
+      ],
       "an anonymous user": [
         "anonymný používateľ"
       ],
@@ -4720,6 +4741,12 @@
       ],
       "Can view only": [
         "Môže len zobraziť"
+      ],
+      "Can't move a folder into itself": [
+        "Priečinok nie je možné presunúť sám do seba"
+      ],
+      "Can't write into folder": [
+        "Do priečinka nie je možné zapisovať"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
@@ -5369,6 +5396,9 @@
       "Scan the QR code with your mobile device": [
         "Naskenujte QR kód pomocou mobilného zariadenia"
       ],
+      "Select a destination folder": [
+        "Vyberte cieľový priečinok"
+      ],
       "Select a folder to move to.": [
         "Vyberte priečinok na presun."
       ],
@@ -5389,6 +5419,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavenie PGP vám umožní odosielať end-to-end šifrované emaily používateľom, ktorí nemajú ${ BRAND_NAME } a používajú službu kompatibilnú s PGP."
+      ],
+      "Settings update failed": [
+        "Aktualizácia nastavenia zlyhala"
+      ],
+      "Settings updated": [
+        "Nastavenie aktualizované"
       ],
       "Share via link settings": [
         "Zdieľať cez nastavenia odkazu"
@@ -6064,6 +6100,9 @@
       "Calendar": [
         "Kalendár"
       ],
+      "Calendars": [
+        "Kalendáre"
+      ],
       "can edit": [
         "môže upravovať"
       ],
@@ -6150,6 +6189,9 @@
       ],
       "Email format": [
         "Formát emailu"
+      ],
+      "Emails": [
+        "Emaily"
       ],
       "Emails (all messages)": [
         "Emaily (všetky správy)"
@@ -7998,20 +8040,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ úspešne vytvorené"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }“ sa nepodarilo vytvoriť"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" presunutý"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" zdieľané"
-      ],
-      "\"${ name }\" created successfully": [
-        "„${ name }“ úspešne vytvorené"
       ],
       "\"${ name }\" deleted": [
         "\"${ name } bol vymazaný"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }“ trvalo zmazané z koša"
-      ],
-      "\"${ name }\" failed to be created": [
-        "„${ name }“ sa nepodarilo vytvoriť"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" sa nepodarilo vymazať"
@@ -8030,9 +8075,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "„${ name }“ sa nepodarilo uložiť"
-      ],
-      "\"${ name }\" moved": [
-        "\"${ name }\" presunutý"
       ],
       "\"${ name }\" moved to trash": [
         "„${ name }“ presunuté do koša"
@@ -10266,6 +10308,9 @@
       "Collaborate on documents": [
         "Spolupráca na dokumentoch"
       ],
+      "Computers": [
+        "Počítače"
+      ],
       "Confirm downgrade": [
         "Potvrďte zníženie"
       ],
@@ -10864,9 +10909,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky triedi niektoré emaily do kategórií ako Siete alebo Reklamy. Môžete si vybrať, kam chcete importovať tieto emaily."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Okamžitá pomoc AI, k dispozícii je aj ľudský odborník!"
-      ],
       "Load image": [
         "Načítať obrázok"
       ],
@@ -10957,6 +10999,9 @@
       ],
       "Name must not be empty": [
         "Názov nemôže byť prázdny"
+      ],
+      "Name must not contain slashes (/)": [
+        "Názov nesmie obsahovať lomky (/)"
       ]
     },
     "Video control": {

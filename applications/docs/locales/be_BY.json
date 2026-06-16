@@ -558,6 +558,9 @@
       "New document": [
         "Новы дакумент"
       ],
+      "New folder": [
+        "Новая папка"
+      ],
       "New message": [
         "Новае паведамленне"
       ],
@@ -3002,6 +3005,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Не ўдалося перамясціць ${ failureItems.length } элемент",
+        "Не ўдалося перамясціць ${ failureItems.length } элементы",
+        "Не ўдалося перамясціць ${ failureItems.length } элементаў",
+        "Не ўдалося перамясціць ${ failureItems.length } элементаў"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
@@ -3071,6 +3080,9 @@
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
+      "Cannot find move target": [
+        "Немагчыма знайсці мэтавую папку для перамяшчэння"
+      ],
       "Contact could not be saved": [
         "Не ўдалося захаваць кантакт"
       ],
@@ -3137,8 +3149,14 @@
       "Failed to copy photo to album": [
         "Не ўдалося скапіяваць фатаграфію ў альбом"
       ],
+      "Failed to create folder": [
+        "Не ўдалося стварыць папку"
+      ],
       "Failed to create public share node": [
         "Не ўдалося стварыць публічны вузел абагульвання"
+      ],
+      "Failed to expand folder": [
+        "Не ўдалося разгарнуць папку"
       ],
       "Failed to fetch node": [
         "Не ўдалося атрымаць вузел"
@@ -3300,7 +3318,7 @@
         "Запампоўванне фатаграфій часова адключана. Паспрабуйце яшчэ раз пазней"
       ],
       "Please configure a custom domain before adding addresses.": [
-        "Перад дадаваннем адрасоў неабходна сканфігураваць карыстальніцкі дамен."
+        "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Cканфігурыруйце свой карыстальніцкі дамен перад тым, як дадаваць карыстальнікаў у вашу арганізацыю."
@@ -4670,6 +4688,9 @@
         "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
         "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }"
       ],
+      "Already in this folder": [
+        "Ужо ў гэтай папцы"
+      ],
       "an anonymous user": [
         "ананімны карыстальнік"
       ],
@@ -4723,6 +4744,12 @@
       ],
       "Can view only": [
         "Можа толькі праглядаць"
+      ],
+      "Can't move a folder into itself": [
+        "Немагчыма перамясціць папку ў саму сябе"
+      ],
+      "Can't write into folder": [
+        "Немагчыма запісаць у папку"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
@@ -5372,6 +5399,9 @@
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
+      "Select a destination folder": [
+        "Выберыце папку прызначэння"
+      ],
       "Select a folder to move to.": [
         "Выберыце папку, у якую хочаце перамясціць."
       ],
@@ -5392,6 +5422,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
+      ],
+      "Settings update failed": [
+        "Збой абнаўлення налад"
+      ],
+      "Settings updated": [
+        "Налады абноўлены"
       ],
       "Share via link settings": [
         "Налады для абагулення праз спасылку"
@@ -6067,6 +6103,9 @@
       "Calendar": [
         "Каляндар"
       ],
+      "Calendars": [
+        "Календары"
+      ],
       "can edit": [
         "можа рэдагаваць"
       ],
@@ -6153,6 +6192,9 @@
       ],
       "Email format": [
         "Фармат ліста"
+      ],
+      "Emails": [
+        "Лісты"
       ],
       "Emails (all messages)": [
         "Лісты (усе паведамленні)"
@@ -8052,20 +8094,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" паспяхова створаны"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Не ўдалося стварыць \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" перамешчаны"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" абагулены"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" паспяхова створана"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" выдалена"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" незваротна выдалены са сметніцы"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Не ўдалося стварыць \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted": [
         "Не ўдалося выдаліць \"${ name }\""
@@ -8084,9 +8129,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "Не ўдалося захаваць\"${ name }\""
-      ],
-      "\"${ name }\" moved": [
-        "\"${ name }\" перамешчана"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" перамешчаны ў сметніцу"
@@ -10320,6 +10362,9 @@
       "Collaborate on documents": [
         "Сумесная праца над дакументамі"
       ],
+      "Computers": [
+        "Камп'ютары"
+      ],
       "Confirm downgrade": [
         "Пацвердзіць паніжэнне тарыфнага плана"
       ],
@@ -10918,9 +10963,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Пошта Gmail аўтаматычна класіфікуе некаторыя лісты, такія як \"Сацыяльныя\" і \"Рэклама\". Вы можаце выбраць куды імпартаваць гэтыя лісты."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Імгненная дапамога ШІ і нашых экспертаў!"
-      ],
       "Load image": [
         "Загрузіць відарыс"
       ],
@@ -11011,6 +11053,9 @@
       ],
       "Name must not be empty": [
         "Назва не можа быць пустой"
+      ],
+      "Name must not contain slashes (/)": [
+        "Назва не павінна змяшчаць слэшы (/)"
       ]
     },
     "Video control": {

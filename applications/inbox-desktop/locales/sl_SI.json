@@ -38,11 +38,23 @@
       "Delete": [
         "Izbriši"
       ],
+      "Disable": [
+        "Onemogoči"
+      ],
+      "Disable Hardware Acceleration": [
+        "Onemogoči strojno pospeševanje"
+      ],
+      "Enable": [
+        "Omogoči"
+      ],
       "Enable diagnostic logs": [
         "Omogoči diagnostične dnevnike"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
         "Omogočite diagnostične dnevnike iz Chromiumovega mehanizma."
+      ],
+      "Enable Hardware Acceleration": [
+        "Omogoči strojno pospeševanje"
       ],
       "Force Reload": [
         "Vsili ponovno nalaganje"
@@ -107,6 +119,9 @@
       "Stop Speaking": [
         "Nehaj govoriti"
       ],
+      "Switch to ${ appName }": [
+        "Preklopi na ${ appName }"
+      ],
       "These logs help us diagnose issues. The app will restart to apply the change.": [
         "Ti dnevniki nam pomagajo pri ugotavljanju težav. Aplikacija se bo ponovno zagnala, da se sprememba uporabi."
       ],
@@ -122,6 +137,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Odstrani ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.": [
+        "Ko je strojno pospeševanje onemogočeno, se aplikacija vrne k programskemu upodabljanju. To lahko povzroči nestabilne animacije, izpade sličic, počasnejše predvajanje videa, večjo obremenitev procesorja in zmanjšano grafično zmogljivost."
+      ],
+      "When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Ko je omogočeno strojno pospeševanje, aplikacija uporablja namensko grafično strojno opremo vaše naprave. To lahko povzroči težave z združljivostjo na nekaterih sistemih."
+      ],
       "Zoom": [
         "Povečaj"
       ],
@@ -133,6 +154,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Onemogoči strojno pospeševanje"
+      ],
+      "Enable Hardware Acceleration": [
+        "Omogoči strojno pospeševanje"
+      ],
       "Services": [
         "Storitve"
       ]
