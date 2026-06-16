@@ -1,7 +1,7 @@
 import { useNotifications } from '@proton/components'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { DegradedNode, DriveEvent, DriveListener, NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk'
+import type { DriveEvent, DriveListener, NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk'
 import { NodeType } from '@protontech/drive-sdk'
 import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
@@ -39,8 +39,7 @@ export function useRecents(drive: ProtonDriveClient) {
 
     const promises = responseValue.RecentDocuments.map(async (document) => {
       try {
-        const maybeNode = await drive.getNode(generateNodeUid(document.VolumeID, document.LinkID))
-        const node = maybeNode.ok ? maybeNode.value : maybeNode.error
+        const node = await drive.getNode(generateNodeUid(document.VolumeID, document.LinkID))
         const { path, ancestry } = await getFullPath(drive, node.uid)
         const ancestorsNodeUids = ancestry.map(extractNodeUid)
         const effectiveRole = await getNodeEffectiveRole(drive, node)
@@ -105,16 +104,14 @@ export function useRecents(drive: ProtonDriveClient) {
     const { setDocument, removeChildrenOf, removeDocument, addresses } = useRecentsStore.getState()
 
     if (event.type === 'node_created') {
-      const maybeNode = await drive.getNode(event.nodeUid)
-      const node = maybeNode.ok ? maybeNode.value : maybeNode.error
+      const node = await drive.getNode(event.nodeUid)
       if (mimeTypeToProtonDocumentType(node.mediaType)) {
         setDocument(await buildDocument(drive, addresses, node))
       }
     }
 
     if (event.type === 'node_updated') {
-      const maybeNode = await drive.getNode(event.nodeUid)
-      const node = maybeNode.ok ? maybeNode.value : maybeNode.error
+      const node = await drive.getNode(event.nodeUid)
 
       if (event.isTrashed) {
         if (node.type === NodeType.Folder) {
@@ -169,17 +166,12 @@ async function reloadDocument(
   document: { volumeId: string; linkId: string },
   addresses: Address[] | undefined,
 ) {
-  const maybeDocument = await drive.getNode(generateNodeUid(document.volumeId, document.linkId))
-  const documentNode = maybeDocument.ok ? maybeDocument.value : maybeDocument.error
+  const documentNode = await drive.getNode(generateNodeUid(document.volumeId, document.linkId))
   const freshDocument = await buildDocument(drive, addresses, documentNode)
   return freshDocument
 }
 
-async function buildDocument(
-  drive: ProtonDriveClient,
-  addresses: Address[] | undefined,
-  documentNode: NodeEntity | DegradedNode,
-) {
+async function buildDocument(drive: ProtonDriveClient, addresses: Address[] | undefined, documentNode: NodeEntity) {
   const { path, shareId, ancestorsNodeUids } = await getDocumentDetails(drive, documentNode.uid)
   const isSharedWithMe = getIsSharedWithMe(documentNode, addresses)
   const effectiveRole = await getNodeEffectiveRole(drive, documentNode)
@@ -188,16 +180,15 @@ async function buildDocument(
 
 async function getDocumentDetails(drive: ProtonDriveClient, nodeUid: string) {
   const { path, ancestry } = await getFullPath(drive, nodeUid)
-  const shareId = ancestry[0].ok ? ancestry[0].value.deprecatedShareId : ancestry[0].error.deprecatedShareId
+  const shareId = ancestry[0].deprecatedShareId
   const ancestorsNodeUids = ancestry.map(extractNodeUid)
   return { shareId, path, ancestry, ancestorsNodeUids }
 }
 
 async function getAllDocumentsRecursively(drive: ProtonDriveClient, startFolderUid: string) {
-  const documents: (NodeEntity | DegradedNode)[] = []
+  const documents: NodeEntity[] = []
 
-  for await (const maybeNode of drive.iterateFolderChildren(startFolderUid)) {
-    const node = maybeNode.ok ? maybeNode.value : maybeNode.error
+  for await (const node of drive.iterateFolderChildren(startFolderUid)) {
     if (mimeTypeToProtonDocumentType(node.mediaType)) {
       documents.push(node)
     } else if (node.type === NodeType.Folder) {
