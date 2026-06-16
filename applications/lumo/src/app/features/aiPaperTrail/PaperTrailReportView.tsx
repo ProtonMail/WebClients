@@ -408,10 +408,10 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                         {c('collider_2025:Action').t`Analyse another export`}
                     </Button>
                 </div>
-                <p className="pt-cta__title">{c('collider_2025:Title').t`Ready to go private?`}</p>
+                <p className="pt-cta__title">{c('collider_2025:Title').t`You saw the profile?`}</p>
                 <p className="pt-cta__sub">
                     {c('collider_2025:Info')
-                        .t`With ${LUMO_SHORT_APP_NAME}, none of this is harvested. Your chats stay yours.`}
+                        .t`Now protect the person behind it.`}
                 </p>
                 <Button color="norm" size="large" pill className="mt-4" onClick={onTryLumo}>
                     {c('collider_2025:Action').t`Try ${LUMO_SHORT_APP_NAME} free`}

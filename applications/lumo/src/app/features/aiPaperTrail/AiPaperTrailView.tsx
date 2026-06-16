@@ -30,9 +30,9 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
 
     const steps = [
         {
-            title: c('collider_2025:Title').t`Export your history`,
+            title: c('collider_2025:Title').t`Export your data`,
             detail: c('collider_2025:Info')
-                .t`Download your data from ChatGPT (Settings → Data Controls → Export) or Claude (Settings → Privacy → Export data).`,
+                .t`Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).`,
         },
         {
             title: c('collider_2025:Title').t`Upload it privately`,
@@ -40,19 +40,19 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
                 .t`Your file is analysed on the spot to build your report. Nothing is uploaded to our servers or stored.`,
         },
         {
-            title: c('collider_2025:Title').t`Meet your AI profile`,
+            title: c('collider_2025:Title').t`Get your AI Paper Trail`,
             detail: c('collider_2025:Info')
-                .t`See the person Big Tech AI could reconstruct from your words — plus a privacy score you can share.`,
+                .t`See the profile an AI company can piece together from your conversations alone.`,
         },
     ];
 
     return (
         <div className="ai-paper-trail__inner ai-paper-trail__landing">
             <span className="ai-paper-trail__eyebrow">{c('collider_2025:Title').t`AI Paper Trail`}</span>
-            <h1 className="ai-paper-trail__title">{c('collider_2025:Title').t`See what AI knows about you`}</h1>
+            <h1 className="ai-paper-trail__title">{c('collider_2025:Title').t`AI knows more about you than you think`}</h1>
             <p className="ai-paper-trail__subtitle">
                 {c('collider_2025:Info')
-                    .t`Every prompt you type into ChatGPT or Claude gives something away — your job, your health, your relationships, where you live. Over time it builds into a detailed profile. Upload your chat history and we'll show you the person Big Tech AI could piece together from your words alone, and score how much you've revealed.`}
+                    .t`Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.`}
             </p>
             {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <div
@@ -89,10 +89,10 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
                 <div className="flex flex-column items-center gap-3 text-center">
                     <IcFileArrowInUp size={8} className="ai-paper-trail__upload-icon" />
                     <span className="text-lg text-semibold">
-                        {c('collider_2025:Action').t`Drop your export here or click to browse`}
+                        {c('collider_2025:Action').t`Upload your AI export`}
                     </span>
                     <span className="ai-paper-trail__muted text-sm">
-                        {c('collider_2025:Info').t`Supports the .zip or conversations.json from ChatGPT and Claude`}
+                        {c('collider_2025:Info').t`Choose or drop .zip or conversations.json from Chat GPT or Claude.`}
                     </span>
                 </div>
             </div>
@@ -108,7 +108,7 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
                 <IcLockFilled size={4} className="shrink-0" />
                 <span className="text-sm">
                     {c('collider_2025:Info')
-                        .t`Your file never leaves your device — it's read locally and is never stored.`}
+                        .t`Your file never leaves your device. It's read locally and is never stored.`}
                 </span>
             </div>
 
