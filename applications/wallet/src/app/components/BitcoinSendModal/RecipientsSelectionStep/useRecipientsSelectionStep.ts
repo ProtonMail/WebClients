@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import type { WasmInviteNotificationType } from '@proton/andromeda';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PublicKeyReference } from '@protontech/crypto';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/constants/settings';
 import { useWalletApiClients } from '@proton/wallet/contexts';
@@ -174,7 +174,7 @@ export const useRecipientsSelectionStep = ({ recipientHelpers, txBuilderHelpers 
 
     const handleRemoveRecipient = useCallback(
         (recipient: Recipient) => {
-            const recipientToRemove = recipientEmailMap[recipient.Address];
+            const recipientToRemove = recipientEmailMap[canonicalizeEmailByGuess(recipient.Address)];
             const indexToRemove = txBuilder
                 .getRecipients()
                 .findIndex((r) => r[1] === recipientToRemove?.btcAddress.value);
