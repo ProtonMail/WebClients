@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { SkeletonLoader } from '@proton/components';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
-import { PLANS } from '@proton/payments';
+import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -20,6 +20,7 @@ import clubic from '../../assets/images/clubic.svg';
 import pcmag from '../../assets/images/pcmag.svg';
 import wired from '../../assets/images/wired.svg';
 import Terms from '../../components/Terms';
+import { useIsVPNPlanWithoutTrialVariant } from '../../helpers/useIsVPNPlanWithoutTrialVariant';
 
 type Step = 'email' | 'password';
 
@@ -79,7 +80,7 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
 
-    const isPaidPlan = selectedPlan.name !== PLANS.FREE;
+    const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(selectedPlan.name);
 
     const handleRequestSubmit = () => {
         signup.accountForm.refs.form.current?.requestSubmit();
@@ -122,9 +123,13 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
         }
     };
 
-    const headline = isPaidPlan
-        ? c('Signup').t`Try ${BRAND_NAME} for 14 days free`
-        : c('Signup').t`Sign up to get everything ${BRAND_NAME} has to offer`;
+    const headline = isVPNPlanWithoutTrial
+        ? c('Signup').t`Sign up and get ${referralInfo.uiData.refereeRewardAmount} in credits`
+        : c('Signup').t`Try ${BRAND_NAME} for ${TRIAL_DURATION_DAYS} days free`;
+
+    const description = isVPNPlanWithoutTrial
+        ? undefined
+        : c('Signup').t`Sign up and get ${referralInfo.uiData.refereeRewardAmount} in credits`;
 
     return (
         <form
@@ -142,19 +147,20 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
             noValidate
             className="w-full"
         >
-            <h1 className="font-arizona text-semibold text-8xl lh120">
-                {step === 'email' ? headline : c('Signup').t`Set your password`}
-            </h1>
+            {loadingReferralInfo ? (
+                <SkeletonLoader width="70%" height="1.4rem" />
+            ) : (
+                <h1 className="font-arizona text-semibold text-8xl lh120">
+                    {step === 'email' ? headline : c('Signup').t`Set your password`}
+                </h1>
+            )}
 
-            {isPaidPlan && (
+            {description && (
                 <div className="mt-0 mb-6">
                     {loadingReferralInfo ? (
                         <SkeletonLoader width="70%" height="1.4rem" />
                     ) : (
-                        <p className="m-0 text-lg">
-                            {c('Signup')
-                                .t`And get ${referralInfo.uiData.refereeRewardAmount} in credits, if you subscribe.`}
-                        </p>
+                        <p className="m-0 text-lg">{description}</p>
                     )}
                 </div>
             )}
