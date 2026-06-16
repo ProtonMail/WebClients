@@ -61,7 +61,9 @@ jest.mock('@proton/components', () => ({
 jest.mock('@proton/drive', () => ({
     ...jest.requireActual('@proton/drive'),
     getDriveForPhotos: jest.fn(() => ({
-        getMyPhotosRootFolder: jest.fn().mockResolvedValue({}),
+        getMyPhotosRootFolder: jest
+            .fn()
+            .mockResolvedValue({ uid: 'volumeId~rootLinkId', deprecatedShareId: 'shareId' }),
     })),
 }));
 

@@ -18,17 +18,18 @@ describe('traverseNodeStructure', () => {
     it('completes traversal when unsupported nodes are skipped', async () => {
         const supportedNode = createMockNodeEntity({
             uid: 'supported',
-            name: 'supported.txt',
+            name: { ok: true, value: 'supported.txt' },
             mediaType: 'text/plain',
             type: NodeType.File,
         });
         const unsupportedNode = createMockNodeEntity({
             uid: 'unsupported',
-            name: 'unsupported.protondoc',
+            name: { ok: true, value: 'unsupported.protondoc' },
             mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE,
             type: NodeType.File,
         });
-        const supportedSize = supportedNode.activeRevision?.storageSize ?? 0;
+        const supportedRevision = supportedNode.activeRevision?.ok ? supportedNode.activeRevision.value : undefined;
+        const supportedSize = supportedRevision?.storageSize ?? 0;
 
         const { nodesQueue, traversalCompletedPromise, parentPathByUid } = traverseNodeStructure(
             [supportedNode, unsupportedNode],

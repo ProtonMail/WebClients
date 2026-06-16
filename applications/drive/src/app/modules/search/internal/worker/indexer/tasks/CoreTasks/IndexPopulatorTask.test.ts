@@ -1,5 +1,5 @@
 import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import type { MaybeNode, NodeEntity } from '@protontech/drive-sdk';
+import type { NodeEntity } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
@@ -21,8 +21,13 @@ setupRealSearchLibraryWasm();
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 
-const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode =>
-    ({ ok: true, value: createMockNodeEntity(overrides) }) as unknown as MaybeNode;
+const makeMaybeNode = (overrides: Omit<Partial<NodeEntity>, 'name'> & { name?: string } = {}): NodeEntity => {
+    const { name, ...rest } = overrides;
+    return createMockNodeEntity({
+        ...rest,
+        ...(name !== undefined ? { name: { ok: true, value: name } } : {}),
+    });
+};
 
 class TestPopulator extends NodeTreeIndexPopulator {
     constructor(version = 1) {

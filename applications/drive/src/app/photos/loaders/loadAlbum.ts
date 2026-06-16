@@ -34,12 +34,12 @@ export const refreshAlbumMetadata = async (albumNodeUid: string) => {
 
     // The shareId is on the top root node; we need to climb from the current node to get it.
     const ancestry = await getNodeAncestry(node.uid, getDriveForPhotos());
-    if (!ancestry.ok || !ancestry.value[0]?.ok) {
+    if (!ancestry.ok) {
         sendErrorReport(new Error('[loadAlbum] Failed to resolve node ancestry'));
         return;
     }
 
-    const rootNodeSharedId = ancestry.value[0].value.deprecatedShareId;
+    const rootNodeSharedId = ancestry.value[0].deprecatedShareId;
     const album = {
         nodeUid: node.uid,
         coverNodeUid: albumAttributes.coverPhotoNodeUid,

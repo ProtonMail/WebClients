@@ -1,5 +1,6 @@
 import { getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { isMissingNode } from '@proton/drive/modules/nodes';
 
 import { createDebouncedBuffer } from '../../../utils/createDebouncedBuffer';
 import { type PhotoItem, usePhotosStore } from '../../usePhotos.store';
@@ -10,11 +11,11 @@ const { push: pushPhotoItem, drain: drainPhotoItems } = createDebouncedBuffer<Ph
 });
 
 const loadAdditionalInfo = async (uids: string[]) => {
-    for await (const maybeNode of getDriveForPhotos().iterateNodes(uids)) {
-        if (!maybeNode.ok) {
+    for await (const node of getDriveForPhotos().iterateNodes(uids)) {
+        if (isMissingNode(node)) {
             continue;
         }
-        const photoItem = mapNodeToPhotoItem(maybeNode);
+        const photoItem = mapNodeToPhotoItem(node);
         if (photoItem) {
             pushPhotoItem(photoItem);
         }

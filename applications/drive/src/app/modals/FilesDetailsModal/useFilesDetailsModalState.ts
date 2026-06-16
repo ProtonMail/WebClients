@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import type { ModalStateProps } from '@proton/components';
 import { getDrive } from '@proton/drive/index';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import useLoading from '@proton/hooks/useLoading';
 
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
@@ -21,11 +20,7 @@ export function useFilesDetailsModalState({ nodeUids, open, onClose, onExit }: U
         try {
             const fetchNodes = async () => {
                 const maybeNodes = await Promise.all(nodeUids.map((uid) => getDrive().getNode(uid)));
-                const nodes = maybeNodes.map((mnode) => {
-                    const { node } = getNodeEntity(mnode);
-                    return node;
-                });
-                const totalSize = nodes.reduce((acc, node) => getNodeStorageSize(node) + acc, 0);
+                const totalSize = maybeNodes.reduce((acc, mnode) => getNodeStorageSize(mnode) + acc, 0);
                 setTotalSize(totalSize);
                 setHasError(false);
             };

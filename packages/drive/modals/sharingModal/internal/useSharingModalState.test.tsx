@@ -2,7 +2,6 @@ import {
     MemberRole,
     type NodeEntity,
     NodeType,
-    type Result,
     ValidationError,
     generateNodeUid,
     resultError,
@@ -84,14 +83,11 @@ const mockShareResult = {
     ],
 };
 
-const mockNodeInfo: Result<Partial<NodeEntity>, any> = {
-    ok: true,
-    value: {
-        name: 'Test File',
-        type: NodeType.File,
-        ownedBy: {
-            email: 'owner@proton.me',
-        },
+const mockNodeInfo: Partial<NodeEntity> = {
+    name: { ok: true, value: 'Test File' },
+    type: NodeType.File,
+    ownedBy: {
+        email: 'owner@proton.me',
     },
 };
 
@@ -640,13 +636,8 @@ describe('useSharingModalState', () => {
         expect(mockBusEmit).toHaveBeenCalled();
     });
 
-    it('should handle case when node info is not ok', async () => {
-        const failedNodeInfo = {
-            ok: false,
-            value: null,
-        };
-
-        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(failedNodeInfo);
+    it('should handle case when getNode fails', async () => {
+        when(mockDrive.getNode).calledWith(mockNodeUid).mockRejectedValue(new Error('Node not found'));
 
         const { result } = renderHook(() => useSharingModalState(mockProps));
 
@@ -662,13 +653,10 @@ describe('useSharingModalState', () => {
         ];
 
         const nodeInfoWithDifferentOwner = {
-            ok: true,
-            value: {
-                name: 'Test File',
-                type: 1,
-                ownedBy: {
-                    email: 'owner@proton.me',
-                },
+            name: { ok: true, value: 'Test File' },
+            type: 1,
+            ownedBy: {
+                email: 'owner@proton.me',
             },
         };
 
@@ -688,13 +676,10 @@ describe('useSharingModalState', () => {
         const contactEmails = [{ Email: 'other@proton.me', Name: 'Other User' }];
 
         const nodeInfoWithDifferentOwner = {
-            ok: true,
-            value: {
-                name: 'Test File',
-                type: 1,
-                ownedBy: {
-                    email: 'owner@proton.me',
-                },
+            name: { ok: true, value: 'Test File' },
+            type: 1,
+            ownedBy: {
+                email: 'owner@proton.me',
             },
         };
 
@@ -712,13 +697,10 @@ describe('useSharingModalState', () => {
 
     it('should not set owner display name when contactEmails is empty', async () => {
         const nodeInfoWithDifferentOwner = {
-            ok: true,
-            value: {
-                name: 'Test File',
-                type: 1,
-                ownedBy: {
-                    email: 'owner@proton.me',
-                },
+            name: { ok: true, value: 'Test File' },
+            type: 1,
+            ownedBy: {
+                email: 'owner@proton.me',
             },
         };
 

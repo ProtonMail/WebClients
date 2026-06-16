@@ -5,7 +5,6 @@ import isEqual from 'lodash/isEqual';
 import { useApi } from '@proton/components';
 import { type NodeEntity, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { queryDeletePhotosShare } from '@proton/shared/lib/api/drive/photos';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -62,11 +61,10 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
         void getDriveForPhotos()
             .getMyPhotosRootFolder()
             .then((maybeNode) => {
-                const { node } = getNodeEntity(maybeNode);
-                if (!node.deprecatedShareId) {
+                if (!maybeNode.deprecatedShareId) {
                     return Promise.reject('Missing deprecatedShareId for recovery');
                 }
-                setRootPhotoNode(node);
+                setRootPhotoNode(maybeNode);
             });
     }, []);
 

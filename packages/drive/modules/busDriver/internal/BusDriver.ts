@@ -220,12 +220,9 @@ class BusDriver {
         let treeEventScopeId = this.myFilesRootFolderTreeEventScopeId;
         try {
             if (!treeEventScopeId) {
-                const rootFolderResult = await drive.getMyFilesRootFolder();
-                treeEventScopeId = rootFolderResult.ok
-                    ? rootFolderResult.value.treeEventScopeId
-                    : rootFolderResult.error.treeEventScopeId;
-
-                this.myFilesRootFolderTreeEventScopeId = treeEventScopeId;
+                const rootFolder = await drive.getMyFilesRootFolder();
+                treeEventScopeId = rootFolder.treeEventScopeId;
+                this.myFilesRootFolderTreeEventScopeId = rootFolder.treeEventScopeId;
             }
             this.subscribeSdkEventsScope(treeEventScopeId, context);
         } catch (error) {
@@ -241,10 +238,8 @@ class BusDriver {
         let treeEventScopeId = this.photosRootFolderTreeEventScopeId;
         try {
             if (!treeEventScopeId) {
-                const rootFolderResult = await drive.getMyPhotosRootFolder();
-                treeEventScopeId = rootFolderResult.ok
-                    ? rootFolderResult.value.treeEventScopeId
-                    : rootFolderResult.error.treeEventScopeId;
+                const rootFolder = await drive.getMyPhotosRootFolder();
+                treeEventScopeId = rootFolder.treeEventScopeId;
 
                 this.photosRootFolderTreeEventScopeId = treeEventScopeId;
             }

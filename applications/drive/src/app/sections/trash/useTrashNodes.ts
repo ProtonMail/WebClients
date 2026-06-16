@@ -23,7 +23,7 @@ export const useTrashNodes = () => {
                     const location = await getFormattedNodeLocation(drive, trashNode);
                     const { node } = getNodeEntity(trashNode);
                     const haveSignatureIssues = !getSignatureIssues(trashNode).ok;
-                    setItem(await createTrashItem(node, location, drive, haveSignatureIssues));
+                    setItem(await createTrashItem(trashNode, node, location, drive, haveSignatureIssues));
                     onItemsLoadedToState(1);
                 } catch (e) {
                     handleSdkError(e, { showNotification: !shownErrorNotification });
@@ -49,7 +49,7 @@ export const useTrashNodes = () => {
                     const location = await getFormattedNodeLocation(drive, trashNode);
                     const { node } = getNodeEntity(trashNode);
                     const haveSignatureIssues = !getSignatureIssues(trashNode).ok;
-                    setItem(await createTrashItem(node, location, drive, haveSignatureIssues));
+                    setItem(await createTrashItem(trashNode, node, location, drive, haveSignatureIssues));
                 } catch (e) {
                     handleSdkError(e, { showNotification: !shownErrorNotification });
                     shownErrorNotification = true;

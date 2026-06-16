@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type MaybeNode, MemberRole, type ProtonDriveClient } from '../../../index';
+import { MemberRole, type NodeEntity, type ProtonDriveClient } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
-import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { getNodeEffectiveRole } from '../../../modules/nodes';
 
 type SelectedItemsConfig = {
@@ -38,14 +37,14 @@ export const useMoveEligibility = (
             }
 
             // Check: Can't move a folder into itself.
-            let hierarchy: MaybeNode[];
+            let hierarchy: NodeEntity[];
             try {
                 hierarchy = await drive.getNodeHierarchy(targetFolderUid);
             } catch (e) {
                 handleSdkError(e, { showNotification: false });
                 return;
             }
-            const ancestryNodeUids = hierarchy.map((maybeNode) => getNodeEntity(maybeNode).node.uid);
+            const ancestryNodeUids = hierarchy.map((node) => node.uid);
             const selectedItemUids = selectedItemConfigs.map((config) => config.nodeUid);
             const isMovingIntoDescendant = ancestryNodeUids.some((ancestorUid) =>
                 selectedItemUids.includes(ancestorUid)
@@ -59,8 +58,7 @@ export const useMoveEligibility = (
 
             try {
                 const targetNode = await drive.getNode(targetFolderUid);
-                const targetNodeEntity = getNodeEntity(targetNode).node;
-                const targetEffectiveRole = await getNodeEffectiveRole(targetNodeEntity, drive);
+                const targetEffectiveRole = await getNodeEffectiveRole(targetNode, drive);
                 const isReadOnly = targetEffectiveRole === MemberRole.Viewer;
 
                 if (isReadOnly) {

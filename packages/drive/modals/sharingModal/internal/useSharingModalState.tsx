@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import type { DegradedNode, ProtonDriveClient } from '@protontech/drive-sdk';
+import type { ProtonDriveClient } from '@protontech/drive-sdk';
 import {
-    type MaybeNode,
     MemberRole,
     type NodeEntity,
     NodeType,
@@ -80,7 +79,7 @@ export const useSharingModalState = ({
 
     const [isLoading, withLoading] = useLoading();
 
-    const [nodeInfo, setNodeInfo] = useState<NodeEntity | DegradedNode>();
+    const [nodeInfo, setNodeInfo] = useState<NodeEntity>();
 
     const [sharingInfo, setSharingInfo] = useState<ShareResult>(defaultSharingInfo);
 
@@ -308,15 +307,13 @@ export const useSharingModalState = ({
         };
         const fetchNodeInfo = async () => {
             try {
-                const node = await drive.getNode(nodeUid);
-                const nodeInfo = node.ok ? node.value : node.error;
+                const nodeInfo = await drive.getNode(nodeUid);
 
-                setFileName(getNodeName(node));
+                setFileName(getNodeName(nodeInfo));
                 setNodeInfo(nodeInfo);
 
                 if (nodeInfo.parentUid) {
-                    const parent = await drive.getNode(nodeInfo.parentUid);
-                    const parentNodeInfo = parent.ok ? parent.value : parent.error;
+                    const parentNodeInfo = await drive.getNode(nodeInfo.parentUid);
                     const effectiveRoleOnParent = await getNodeEffectiveRole(parentNodeInfo, drive);
                     setRoleOnParentNode(effectiveRoleOnParent);
                 }
@@ -444,7 +441,7 @@ function usePublicLinkEnabled({
     return !isAlbum;
 }
 
-function getMediaType(nodeInfo?: NodeEntity | DegradedNode): string | undefined {
+function getMediaType(nodeInfo?: NodeEntity): string | undefined {
     if (nodeInfo?.type) {
         if (nodeInfo.type === NodeType.Folder) {
             return 'Folder';
@@ -457,7 +454,7 @@ function getMediaType(nodeInfo?: NodeEntity | DegradedNode): string | undefined 
 }
 
 async function isShareInMyFiles(nodeUid: string, drive: ProtonDriveClient): Promise<boolean> {
-    let hierarchy: MaybeNode[];
+    let hierarchy: NodeEntity[];
     try {
         hierarchy = await drive.getNodeHierarchy(nodeUid);
     } catch (e) {
@@ -470,6 +467,5 @@ async function isShareInMyFiles(nodeUid: string, drive: ProtonDriveClient): Prom
         return false;
     }
     // If node has "membership" it means it is a direct share
-    const shareTopmostParent = firstAncestor.ok ? firstAncestor.value : firstAncestor.error;
-    return !Boolean(shareTopmostParent.membership);
+    return !Boolean(firstAncestor.membership);
 }

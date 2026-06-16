@@ -26,9 +26,8 @@ export function PreviewContainer({ shareId, nodeUid }: PreviewContainerProps) {
             return;
         }
         void drive.getNode(nodeUid).then((node) => {
-            const parentFolderUid = node.ok ? node.value.parentUid : node.error.parentUid;
-            if (parentFolderUid) {
-                const { nodeId } = splitNodeUid(parentFolderUid);
+            if (node.parentUid) {
+                const { nodeId } = splitNodeUid(node.parentUid);
                 setParentFolderId(nodeId);
             }
         });

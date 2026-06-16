@@ -1,12 +1,10 @@
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
-import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { EventCallback, UploadTask } from '../types';
 import { FolderCreationExecutor } from './FolderCreationExecutor';
 
 jest.mock('../UploadDriveClientRegistry');
-jest.mock('../../../legacy/sdkUtils/getNodeEntity');
 
 describe('FolderCreationExecutor', () => {
     let executor: FolderCreationExecutor;
@@ -23,12 +21,7 @@ describe('FolderCreationExecutor', () => {
             createFolder: mockCreateFolder,
         } as any);
 
-        jest.mocked(getNodeEntity).mockReturnValue({
-            node: {
-                uid: 'created-folder-123',
-                name: 'MyFolder',
-            },
-        } as any);
+        mockCreateFolder.mockResolvedValue({ uid: 'created-folder-123', parentUid: 'parent123' });
 
         executor = new FolderCreationExecutor();
         executor.setEventCallback(mockEventCallback);
@@ -62,7 +55,6 @@ describe('FolderCreationExecutor', () => {
     describe('execute', () => {
         it('should create folder successfully', async () => {
             const task = createFolderTask();
-            mockCreateFolder.mockResolvedValue({});
 
             await executor.execute(task);
 
@@ -72,6 +64,7 @@ describe('FolderCreationExecutor', () => {
                 type: 'folder:complete',
                 uploadId: 'task123',
                 nodeUid: 'created-folder-123',
+                parentUid: 'parent123',
             });
         });
 
@@ -112,18 +105,17 @@ describe('FolderCreationExecutor', () => {
             expect(calls[2]).toEqual(modTime);
         });
 
-        it('should extract node UID from created folder', async () => {
+        it('should use uid from created folder', async () => {
             const task = createFolderTask();
-            const folderResult = { someData: 'value' };
-            mockCreateFolder.mockResolvedValue(folderResult);
+            mockCreateFolder.mockResolvedValue({ uid: 'specific-folder-456', parentUid: 'parent123' });
 
             await executor.execute(task);
 
-            expect(getNodeEntity).toHaveBeenCalledWith(folderResult);
             expect(mockEventCallback).toHaveBeenCalledWith({
                 type: 'folder:complete',
                 uploadId: 'task123',
-                nodeUid: 'created-folder-123',
+                nodeUid: 'specific-folder-456',
+                parentUid: 'parent123',
             });
         });
 

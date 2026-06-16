@@ -49,18 +49,15 @@ const createMockDevice = (rootFolderUid: string, name: string) => ({
 });
 
 const createMockNode = (uid: string, name: string, type: NodeType) => ({
-    ok: true,
-    value: {
-        uid,
-        name,
-        type,
-        directRole: MemberRole.Viewer,
-        isShared: false,
-        deprecatedShareId: `share-${uid}`,
-        membership: {},
-        keyAuthor: { ok: true },
-        nameAuthor: { ok: true },
-    },
+    uid,
+    name: { ok: true as const, value: name },
+    type,
+    directRole: MemberRole.Viewer,
+    isShared: false,
+    deprecatedShareId: `share-${uid}`,
+    membership: {},
+    keyAuthor: { ok: true },
+    nameAuthor: { ok: true },
 });
 
 const createMockIterator = async function* <T>(items: T[]) {
@@ -92,10 +89,7 @@ describe('useDirectoryTree', () => {
     };
 
     const createMyFilesRoot = (uid = MY_FILES_ROOT_UID) => {
-        mockGetMyFilesRootFolder.mockResolvedValue({
-            ok: true,
-            value: { uid, type: NodeType.Folder },
-        });
+        mockGetMyFilesRootFolder.mockResolvedValue({ uid, type: NodeType.Folder, name: { ok: true, value: 'root' } });
     };
 
     beforeEach(() => {
@@ -172,12 +166,9 @@ describe('useDirectoryTree', () => {
 
         it('should handle degraded My files root node', async () => {
             mockGetMyFilesRootFolder.mockResolvedValue({
-                ok: false,
-                error: {
-                    uid: 'degraded-root-uid',
-                    type: NodeType.Folder,
-                    name: { ok: true, value: 'My files' },
-                },
+                uid: 'degraded-root-uid',
+                type: NodeType.Folder,
+                name: { ok: true, value: 'My files' },
             });
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
@@ -316,16 +307,15 @@ describe('useDirectoryTree', () => {
             const sharedNodes = [
                 createMockNode('shared-1', 'Shared Folder 1', NodeType.Folder),
                 {
-                    ok: false,
-                    error: {
-                        uid: 'degraded-shared',
-                        type: NodeType.Folder,
-                        name: { ok: true, value: 'Degraded Name' },
-                        deprecatedShareId: 'share-degraded',
-                        membership: {},
-                        keyAuthor: { ok: true },
-                        nameAuthor: { ok: true },
-                    },
+                    uid: 'degraded-shared',
+                    type: NodeType.Folder,
+                    name: { ok: true as const, value: 'Degraded Name' },
+                    deprecatedShareId: 'share-degraded',
+                    membership: {},
+                    keyAuthor: { ok: true },
+                    nameAuthor: { ok: true },
+                    directRole: MemberRole.Viewer,
+                    isShared: false,
                 },
             ];
 
@@ -464,12 +454,14 @@ describe('useDirectoryTree', () => {
             const children = [
                 createMockNode('child-1', 'Child 1', NodeType.Folder),
                 {
-                    ok: false,
-                    error: {
-                        uid: 'degraded-child',
-                        type: NodeType.File,
-                        name: { ok: true, value: 'Degraded File' },
-                    },
+                    uid: 'degraded-child',
+                    type: NodeType.File,
+                    name: { ok: true as const, value: 'Degraded File' },
+                    directRole: MemberRole.Viewer,
+                    isShared: false,
+                    membership: {},
+                    keyAuthor: { ok: true },
+                    nameAuthor: { ok: true },
                 },
             ];
 
@@ -820,18 +812,9 @@ describe('useDirectoryTree', () => {
 
             const sharedNodes = [
                 {
-                    ok: true,
-                    value: {
-                        uid: 'admin-node',
-                        name: 'Admin Folder',
-                        type: NodeType.Folder,
-                        directRole: MemberRole.Admin,
-                        parentUid: null,
-                        deprecatedShareId: 'share-admin',
-                        membership: {},
-                        keyAuthor: { ok: true },
-                        nameAuthor: { ok: true },
-                    },
+                    ...createMockNode('admin-node', 'Admin Folder', NodeType.Folder),
+                    directRole: MemberRole.Admin,
+                    parentUid: null,
                 },
             ];
 
@@ -856,32 +839,14 @@ describe('useDirectoryTree', () => {
             // Child with Viewer role, parent with Editor role
             const sharedNodes = [
                 {
-                    ok: true,
-                    value: {
-                        uid: 'child-viewer',
-                        name: 'Child Viewer',
-                        type: NodeType.Folder,
-                        directRole: MemberRole.Viewer,
-                        parentUid: 'parent-editor',
-                        deprecatedShareId: 'share-child',
-                        membership: {},
-                        keyAuthor: { ok: true },
-                        nameAuthor: { ok: true },
-                    },
+                    ...createMockNode('child-viewer', 'Child Viewer', NodeType.Folder),
+                    directRole: MemberRole.Viewer,
+                    parentUid: 'parent-editor',
                 },
             ];
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
-            mockGetNode.mockResolvedValue({
-                ok: true,
-                value: {
-                    uid: 'parent-editor',
-                    name: 'Parent Editor',
-                    type: NodeType.Folder,
-                    directRole: MemberRole.Editor,
-                    parentUid: null,
-                },
-            });
+            mockGetNode.mockResolvedValue({ uid: 'parent-editor', directRole: MemberRole.Editor, parentUid: null });
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
@@ -901,43 +866,16 @@ describe('useDirectoryTree', () => {
 
             const sharedNodes = [
                 {
-                    ok: true,
-                    value: {
-                        uid: 'child',
-                        name: 'Child',
-                        type: NodeType.Folder,
-                        directRole: MemberRole.Viewer,
-                        parentUid: 'parent',
-                        deprecatedShareId: 'share-child',
-                        membership: {},
-                        keyAuthor: { ok: true },
-                        nameAuthor: { ok: true },
-                    },
+                    ...createMockNode('child', 'Child', NodeType.Folder),
+                    directRole: MemberRole.Viewer,
+                    parentUid: 'parent',
                 },
             ];
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
             mockGetNode
-                .mockResolvedValueOnce({
-                    ok: true,
-                    value: {
-                        uid: 'parent',
-                        name: 'Parent',
-                        type: NodeType.Folder,
-                        directRole: MemberRole.Viewer,
-                        parentUid: 'grandparent',
-                    },
-                })
-                .mockResolvedValueOnce({
-                    ok: true,
-                    value: {
-                        uid: 'grandparent',
-                        name: 'Grandparent',
-                        type: NodeType.Folder,
-                        directRole: MemberRole.Editor,
-                        parentUid: null,
-                    },
-                });
+                .mockResolvedValueOnce({ uid: 'parent', directRole: MemberRole.Viewer, parentUid: 'grandparent' })
+                .mockResolvedValueOnce({ uid: 'grandparent', directRole: MemberRole.Editor, parentUid: null });
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
@@ -958,32 +896,14 @@ describe('useDirectoryTree', () => {
 
             const sharedNodes = [
                 {
-                    ok: true,
-                    value: {
-                        uid: 'editor-child',
-                        name: 'Editor Child',
-                        type: NodeType.Folder,
-                        directRole: MemberRole.Editor,
-                        parentUid: 'viewer-parent',
-                        deprecatedShareId: 'share-editor',
-                        membership: {},
-                        keyAuthor: { ok: true },
-                        nameAuthor: { ok: true },
-                    },
+                    ...createMockNode('editor-child', 'Editor Child', NodeType.Folder),
+                    directRole: MemberRole.Editor,
+                    parentUid: 'viewer-parent',
                 },
             ];
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
-            mockGetNode.mockResolvedValue({
-                ok: true,
-                value: {
-                    uid: 'viewer-parent',
-                    name: 'Viewer Parent',
-                    type: NodeType.Folder,
-                    directRole: MemberRole.Viewer,
-                    parentUid: null,
-                },
-            });
+            mockGetNode.mockResolvedValue({ uid: 'viewer-parent', directRole: MemberRole.Viewer, parentUid: null });
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
@@ -1002,32 +922,14 @@ describe('useDirectoryTree', () => {
 
             const sharedNodes = [
                 {
-                    ok: true,
-                    value: {
-                        uid: 'child-viewer',
-                        name: 'Child Viewer',
-                        type: NodeType.Folder,
-                        directRole: MemberRole.Viewer,
-                        parentUid: 'degraded-parent',
-                        deprecatedShareId: 'share-child',
-                        membership: {},
-                        keyAuthor: { ok: true },
-                        nameAuthor: { ok: true },
-                    },
+                    ...createMockNode('child-viewer', 'Child Viewer', NodeType.Folder),
+                    directRole: MemberRole.Viewer,
+                    parentUid: 'degraded-parent',
                 },
             ];
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
-            mockGetNode.mockResolvedValue({
-                ok: false,
-                error: {
-                    uid: 'degraded-parent',
-                    name: 'Degraded Parent',
-                    type: NodeType.Folder,
-                    directRole: MemberRole.Editor,
-                    parentUid: null,
-                },
-            });
+            mockGetNode.mockResolvedValue({ uid: 'degraded-parent', directRole: MemberRole.Editor, parentUid: null });
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
@@ -1051,15 +953,13 @@ describe('useDirectoryTree', () => {
             const localMockGetNode = jest.fn().mockImplementation((uid) => {
                 if (uid === 'middle-non-shared') {
                     return Promise.resolve({
-                        ok: true,
-                        value: { uid: 'middle-non-shared', directRole: MemberRole.Editor, parentUid: 'shared-parent' },
+                        uid: 'middle-non-shared',
+                        directRole: MemberRole.Editor,
+                        parentUid: 'shared-parent',
                     });
                 }
                 if (uid === 'shared-parent') {
-                    return Promise.resolve({
-                        ok: true,
-                        value: { uid: 'shared-parent', directRole: MemberRole.Editor, parentUid: null },
-                    });
+                    return Promise.resolve({ uid: 'shared-parent', directRole: MemberRole.Editor, parentUid: null });
                 }
             });
             mockDrive.getNode = localMockGetNode;
@@ -1068,19 +968,9 @@ describe('useDirectoryTree', () => {
                 createMockIterator([
                     createMockNode('shared-parent', 'Shared Parent', NodeType.Folder),
                     {
-                        ok: true,
-                        value: {
-                            uid: 'leaf-shared',
-                            name: 'Leaf Shared',
-                            type: NodeType.Folder,
-                            directRole: MemberRole.Viewer,
-                            isShared: false,
-                            parentUid: 'middle-non-shared',
-                            deprecatedShareId: 'share-leaf',
-                            membership: {},
-                            keyAuthor: { ok: true },
-                            nameAuthor: { ok: true },
-                        },
+                        ...createMockNode('leaf-shared', 'Leaf Shared', NodeType.Folder),
+                        directRole: MemberRole.Viewer,
+                        parentUid: 'middle-non-shared',
                     },
                 ])
             );
@@ -1100,18 +990,7 @@ describe('useDirectoryTree', () => {
 
             // Expand parent shows middle folder (not shared)
             mockIterateFolderChildren.mockReturnValue(
-                createMockIterator([
-                    {
-                        ok: true,
-                        value: {
-                            uid: 'middle-non-shared',
-                            name: 'Middle Non-Shared',
-                            type: NodeType.Folder,
-                            directRole: MemberRole.Editor,
-                            isShared: false,
-                        },
-                    },
-                ])
+                createMockIterator([createMockNode('middle-non-shared', 'Middle Non-Shared', NodeType.Folder)])
             );
             await act(async () => {
                 await result.current.toggleExpand(makeTreeItemId(SHARED_WITH_ME_ROOT_ID, 'shared-parent'));
@@ -1127,16 +1006,7 @@ describe('useDirectoryTree', () => {
             // Expand middle shows leaf again
             mockIterateFolderChildren.mockReturnValue(
                 createMockIterator([
-                    {
-                        ok: true,
-                        value: {
-                            uid: 'leaf-shared',
-                            name: 'Leaf Shared',
-                            type: NodeType.Folder,
-                            directRole: MemberRole.Viewer,
-                            isShared: true,
-                        },
-                    },
+                    { ...createMockNode('leaf-shared', 'Leaf Shared', NodeType.Folder), isShared: true },
                 ])
             );
             await act(async () => {
@@ -1213,19 +1083,8 @@ describe('useDirectoryTree', () => {
         const SCOPE_ID = 'scope-123';
 
         const createSharedFolderNode = (uid: string, name: string) => ({
-            ok: true as const,
-            value: {
-                uid,
-                name,
-                type: NodeType.Folder,
-                directRole: MemberRole.Viewer,
-                isShared: false,
-                treeEventScopeId: SCOPE_ID,
-                deprecatedShareId: `share-${uid}`,
-                membership: {},
-                keyAuthor: { ok: true },
-                nameAuthor: { ok: true },
-            },
+            ...createMockNode(uid, name, NodeType.Folder),
+            treeEventScopeId: SCOPE_ID,
         });
 
         it('should resync subscriptions when MyFiles root is expanded and collapsed', async () => {

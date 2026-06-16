@@ -12,18 +12,17 @@ jest.mock('@proton/drive/legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 
-// A minimal MaybeNode that satisfies getNodeEntity and getNodeDisplaySize without mocking them.
+// A minimal NodeEntity that satisfies getNodeEntity and getNodeDisplaySize without mocking them.
 const mockMaybeNode = {
-    ok: true as const,
-    value: {
-        uid: 'node-uid',
-        name: 'file.pdf',
-        type: NodeType.File,
-        mediaType: 'application/pdf',
-        totalStorageSize: 1024,
-        activeRevision: undefined,
-    } as any,
-};
+    uid: 'node-uid',
+    name: { ok: true as const, value: 'file.pdf' },
+    type: NodeType.File,
+    mediaType: 'application/pdf',
+    totalStorageSize: 1024,
+    activeRevision: undefined,
+    keyAuthor: { ok: true as const },
+    nameAuthor: { ok: true as const },
+} as any;
 
 const buildProps = (overrides?: Partial<UseReportAbuseModalProps>): UseReportAbuseModalProps => ({
     nodeUid: 'node-uid',

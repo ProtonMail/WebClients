@@ -51,7 +51,7 @@ const ITEM_CONFIG_FOLDER2 = {
 };
 
 const createMockHierarchy = (...uids: string[]) => {
-    return uids.map((uid) => ({ ok: true as const, value: createMockNodeEntity({ uid }) }));
+    return uids.map((uid) => createMockNodeEntity({ uid }));
 };
 
 const mockAncestryForTarget = ({ target, targetAncestors }: { target: string; targetAncestors: string[] }) => {
@@ -64,7 +64,7 @@ const mockAncestryForTarget = ({ target, targetAncestors }: { target: string; ta
 describe('useMoveEligibility', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-        mockGetNode.mockResolvedValue({ ok: true, value: createMockNodeEntity() });
+        mockGetNode.mockResolvedValue(createMockNodeEntity());
         mockGetNodeEffectiveRole.mockResolvedValue(MemberRole.Editor);
     });
 
