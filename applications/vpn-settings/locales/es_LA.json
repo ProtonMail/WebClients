@@ -4485,6 +4485,9 @@
       "Invalid private key file": [
         "Archivo de clave privada inválido"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Token de restablecimiento no válido. Actualice la página e inténtelo de nuevo."
+      ],
       "Invalid VAT number": [
         "Número de IVA incorrecto"
       ],
@@ -4680,7 +4683,7 @@
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong while converting the address": [
-        "Se ha producido un error al convertir la dirección"
+        "Ocurrió un error al convertir la dirección"
       ],
       "Something went wrong while creating the address": [
         "Algo salió mal al crear la dirección"
@@ -8894,6 +8897,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "No puede referir usuarios de ${ MAIL_APP_NAME }"
       ],
+      "You do not have permission to create users.": [
+        "No tiene permisos para crear usuarios."
+      ],
       "You don't have any referrals.": [
         "Aún no tiene referidos."
       ],
@@ -9450,6 +9456,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Calendars": [
+        "Calendarios"
+      ],
       "Card details": [
         "Detalles de la tarjeta"
       ],
@@ -9624,6 +9633,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "Correo con el dominio @sunegocio.com"
+      ],
+      "Emails": [
+        "Correos"
       ],
       "Emails (all messages)": [
         "Correos (todos los mensajes)"
@@ -10406,6 +10418,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obtener ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtener ayuda de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupos"
@@ -14064,6 +14079,28 @@
         "Editar regla de retención"
       ]
     },
+    "Role": {
+      "Organization Admin": [
+        "Administrador de la organización"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
+      ]
+    },
     "Safety review": {
       "Check account security": [
         "Verificar la seguridad de la cuenta"
@@ -17706,9 +17743,6 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Incluye correo electrónico profesional en @sudominio.com, almacenamiento en la nube con edición colaborativa de documentos, programación y videoconferencias, gestión de contraseñas, una VPN segura de ${ VPN_SHORT_APP_NAME } y más."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."
       ],
@@ -17809,6 +17843,9 @@
       ],
       "User is a group": [
         "El usuario es un grupo"
+      ],
+      "via ${ groupNames }": [
+        "vía ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."

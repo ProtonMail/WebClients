@@ -4047,6 +4047,9 @@
       "Invalid postal code": [
         "Virheellinen postinumero"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Virheellinen palautustunniste. Päivitä sivu ja yritä uudelleen."
+      ],
       "Invalid VAT number": [
         "Virheellinen VAT-numero"
       ],
@@ -6074,6 +6077,9 @@
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
       ],
+      "All your files will be imported": [
+        "Kaikki tiedostosi tuodaan"
+      ],
       "Allocated": [
         "Varattu"
       ],
@@ -8087,6 +8093,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Et voi suositella ${ MAIL_APP_NAME } -käyttäjälle"
       ],
+      "You do not have permission to create users.": [
+        "Sinulla ei ole oikeuksia luoda käyttäjiä."
+      ],
       "You don't have any referrals.": [
         "Sinulla ei ole suositteluja."
       ],
@@ -8569,6 +8578,9 @@
       "Calendar": [
         "Kalenterin"
       ],
+      "Calendars": [
+        "Kalenterit"
+      ],
       "Card details": [
         "Kortin tiedot"
       ],
@@ -8704,6 +8716,9 @@
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g. example.com": [
         "esim. esimerkki.fi"
       ],
@@ -8715,6 +8730,9 @@
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
+      ],
+      "Emails": [
+        "Viestit"
       ],
       "Emails (all messages)": [
         "Sähköpostit (kaikki viestit)"
@@ -12673,6 +12691,28 @@
         "Muokkaa säilytyssääntöä"
       ]
     },
+    "Role": {
+      "Organization Admin": [
+        "Organisaation järjestelmänvalvoja"
+      ],
+      "Security Admin": [
+        "Turvallisuusvastaava"
+      ],
+      "User Admin": [
+        "Käyttäjähallinta"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Määritä tietoturvakäytännöt, tietojen säilytysajat ja VPN-infrastruktuuri sekä hallinnoi tarkastuslokeja."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
+      ]
+    },
     "Safety review": {
       "Check account security": [
         "Tarkista tilin turvallisuus"
@@ -15983,8 +16023,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
+      "Instant assistance with AI and human experts.": [
+        "Välitöntä apua tekoälyn ja ihmisasiantuntijoiden avulla."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian. Kertakirjautumisen käyttäjät eivät saa sähköpostimuistutusta."
@@ -16077,6 +16117,9 @@
       ],
       "User is a group": [
         "Käyttäjä on ryhmä"
+      ],
+      "via ${ groupNames }": [
+        "${ groupNames } kautta"
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"

@@ -6608,6 +6608,9 @@
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }",
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }"
       ],
+      "All your files will be imported": [
+        "Todos os seus arquivos serão importados"
+      ],
       "Allocated": [
         "Alocado"
       ],
@@ -8771,6 +8774,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Você não pode indicar usuários do ${ MAIL_APP_NAME }."
       ],
+      "You do not have permission to create users.": [
+        "Você não tem permissão para criar usuários."
+      ],
       "You don't have any referrals.": [
         "Você não tem nenhuma indicação"
       ],
@@ -9324,6 +9330,9 @@
       "Calendar": [
         "Calendário"
       ],
+      "Calendars": [
+        "Calendários"
+      ],
       "Card details": [
         "Detalhes do cartão"
       ],
@@ -9475,6 +9484,9 @@
       "Don't show this again": [
         "Não mostrar isso novamente"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g. example.com": [
         "por exemplo exemplo.com"
       ],
@@ -9498,6 +9510,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail com domínio @yourcompany.com"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (todas as mensagens)"
@@ -9916,6 +9931,9 @@
       "See your team's availability": [
         "Veja a sua disponibilidade da equipe"
       ],
+      "Select an identity provider to start": [
+        "Selecione um provedor de identidade para começar"
+      ],
       "Select which Gmail address to connect": [
         "Selecione o endereço do Gmail que deseja conectar"
       ],
@@ -10277,6 +10295,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obter ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtenha ajuda do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupos"
@@ -12671,6 +12692,9 @@
       ]
     },
     "password_reminder": {
+      "Turn off password reminders?": [
+        "Desativar lembretes de senha?"
+      ],
       "Turn off reminders": [
         "Desativar lembretes"
       ]
@@ -13916,6 +13940,25 @@
       ],
       "Edit retention rule": [
         "Editar regra de retenção"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Administrador da organização"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
       ]
     },
     "Safety review": {
