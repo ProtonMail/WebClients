@@ -10,9 +10,9 @@ import { loadImporters } from '@proton/activation/src/logic/importers/importers.
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
 import { getAllSync } from '@proton/activation/src/logic/sync/sync.selectors';
+import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useApi } from '@proton/components/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';

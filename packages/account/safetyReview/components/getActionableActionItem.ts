@@ -3,7 +3,13 @@ import type { RecoveryStateResult } from '@proton/account/safetyReview/recoveryS
 
 export const getActionableActionItem = (
     value: RecoveryStateResult['recoveryActionItems'][number],
-    actionsHistoryMap: SafetyReviewContainerState['actionsHistoryMap']
+    actionsHistoryMap: SafetyReviewContainerState['actionsHistoryMap'],
+    isPasswordReminderInASREnabled: boolean
 ) => {
+    // We always show password verification as the first step
+    if (value.id === 'passwordVerification' && value.recoveryItem.isAvailable) {
+        return isPasswordReminderInASREnabled ? !actionsHistoryMap.has(value.id) : false;
+    }
+
     return value.recoveryItem.isAvailable && !value.recoveryItem.isEnabled && !actionsHistoryMap.has(value.id);
 };
