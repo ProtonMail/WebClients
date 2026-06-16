@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { ContextMenu, ContextSeparator, DropdownSizeUnit } from '@proton/components'
 import { OpenButton } from './buttons/OpenButton'
 import type { RecentDocumentsItem } from '@proton/docs-core'
+import { rawPermissionToRole } from '@proton/docs-core'
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu'
 import { OpenFolderButton } from './buttons/OpenFolderButton'
 import { ShareButton } from './buttons/ShareButton'
@@ -14,8 +15,7 @@ import { useEvent } from '~/utils/misc'
 import { useHomepageView } from '../../../__utils/homepage-view'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
-import { useLoadRecentsWithSdkEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
-import { MemberRole } from '@proton/drive'
+import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
   currentDocument: RecentDocumentsItem | undefined
@@ -26,7 +26,6 @@ export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
 }
 
 export function DocContextMenu({ anchorRef, isOpen, position, open, close, currentDocument }: DocContextMenuProps) {
-  const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
   const sdkSharingModalEnabled = useSharingModalDriveSdkEnabled()
 
   // NOTE: this effect was copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
@@ -74,10 +73,9 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
 
   const separator = <ContextSeparator className="my-1" />
 
-  // When "editors can share" is ON the editor role in internally converted to admin
   const canShare =
-    loadRecentsWithSdkEnabled && sdkSharingModalEnabled
-      ? currentDocument.effectiveRole === MemberRole.Admin
+    sdkSharingModalEnabled && currentDocument.permissions
+      ? rawPermissionToRole(currentDocument.permissions).canShare()
       : !currentDocument.isSharedWithMe
 
   return (
