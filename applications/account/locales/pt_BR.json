@@ -1380,6 +1380,9 @@
       "Review": [
         "Revisão"
       ],
+      "Review recovery options": [
+        "Revisar opções de recuperação"
+      ],
       "Revoke": [
         "Revogar"
       ],
@@ -1398,8 +1401,8 @@
       "Save": [
         "Salvar"
       ],
-      "Save & exit": [
-        "Salvar e sair"
+      "Save & finish": [
+        "Salvar e finalizar"
       ],
       "Save address": [
         "Salvar endereço"
@@ -2960,6 +2963,9 @@
       "Configure your domain": [
         "Configure seu domínio"
       ],
+      "Confirm": [
+        "Confirmar"
+      ],
       "Contact your administrator to start a migration.": [
         "Contate seu administrador para iniciar a migração."
       ],
@@ -3037,6 +3043,9 @@
       ],
       "Migrate accounts": [
         "Migrar contas"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrar contas para ${ BRAND_NAME }"
       ],
       "Migrate from Google Workspace": [
         "Migrar do Google Workspace"
@@ -9485,6 +9494,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Mail": [
         "E-mail"
       ]
@@ -10014,6 +10026,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }",
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }"
+      ],
+      "All your files will be imported": [
+        "Todos os seus arquivos serão importados"
       ],
       "Allocated": [
         "Alocado"
@@ -12992,6 +13007,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
       ],
+      "You do not have permission to create users.": [
+        "Você não tem permissão para criar usuários."
+      ],
       "You do not have permission to perform this action": [
         "Você não tem permissão para realizar esta ação"
       ],
@@ -13750,6 +13768,9 @@
       "Composer shortcuts": [
         "Atalhos do editor"
       ],
+      "Desktop app navigation": [
+        "Navegação do aplicativo para computador"
+      ],
       "Folder shortcuts": [
         "Atalhos da pasta"
       ],
@@ -14178,6 +14199,9 @@
       "Calendar": [
         "Calendário"
       ],
+      "Calendars": [
+        "Calendários"
+      ],
       "Capitalize words": [
         "Palavras em maiúscula"
       ],
@@ -14428,6 +14452,9 @@
       "Donation amount": [
         "Valor da doação"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duration": [
         "Duração"
       ],
@@ -14454,6 +14481,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail com domínio @yourcompany.com"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (todas as mensagens)"
@@ -15090,6 +15120,9 @@
       ],
       "See your team's availability": [
         "Veja a sua disponibilidade da equipe"
+      ],
+      "Select an identity provider to start": [
+        "Selecione um provedor de identidade para começar"
       ],
       "Select Linux package format": [
         "Selecione o formato do pacote Linux"
@@ -15733,6 +15766,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obter ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtenha ajuda do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupos"
@@ -19134,6 +19170,9 @@
       ]
     },
     "password_reminder": {
+      "Turn off password reminders?": [
+        "Desativar lembretes de senha?"
+      ],
       "Turn off reminders": [
         "Desativar lembretes"
       ]
@@ -20259,9 +20298,6 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } concluído"
       ],
-      "Account protection": [
-        "Proteção de conta"
-      ],
       "Add more options for stronger protection": [
         "Adicione mais opções para uma proteção mais eficaz"
       ],
@@ -20270,12 +20306,6 @@
       ],
       "Critical": [
         "Crítico"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Bom começo. Adicione mais opções para uma proteção mais eficaz."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Ótimo. Adicione mais opções para uma proteção mais eficaz."
       ],
       "How you increased your account protection": [
         "Como você aumentou a segurança da sua conta"
@@ -20306,9 +20336,6 @@
       ],
       "Take precautions to avoid losing access": [
         "Previna-se para evitar perda de acessos"
-      ],
-      "Unprotected": [
-        "Desprotegido"
       ],
       "Weak": [
         "Fraco"
@@ -20758,6 +20785,25 @@
       ],
       "Edit retention rule": [
         "Editar regra de retenção"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Administrador da organização"
+      ],
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
       ]
     },
     "Safety review": {
@@ -21233,6 +21279,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Você deve ter uma conta da ${ BRAND_NAME }"
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Isso permitirá que você acesse sua conta da ${ BRAND_NAME } de forma rápida para alterar sua senha."
       ],
       "Verified password": [
         "Senha verificada"
@@ -21821,6 +21870,9 @@
     "Setting": {
       "Get updates about comments via email": [
         "Receba atualizações sobre comentários por e-mail"
+      ],
+      "Include document name in email notifications": [
+        "Incluir nome do documento em notificações por e-mail"
       ]
     },
     "Settings description": {
@@ -26375,6 +26427,9 @@
       ],
       "Allow recovering your account with a one-time code sent to your recovery email": [
         "Permite recuperar sua conta com um código de uso único enviado no seu e-mail de recuperação"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "Permite recuperar sua conta com um código de uso único enviado no seu telefone de recuperação"
       ],
       "Allow resetting your password from the account settings": [
         "Permite redefinir sua senha a partir das configurações da conta"

@@ -108,6 +108,9 @@
       "Create folder": [
         "Maak map"
       ],
+      "Create key": [
+        "Maak sleutel"
+      ],
       "Current plan": [
         "Huidig abonnement"
       ],
@@ -118,7 +121,7 @@
         "Verwijderen"
       ],
       "Delete ${ count } conversation?": [
-        "${ count } conversatie verwijderen?",
+        "${ count } gesprek verwijderen?",
         "${ count } gesprekken verwijderen?"
       ],
       "Delete all conversations?": [
@@ -126,6 +129,9 @@
       ],
       "Delete conversation?": [
         "Gesprek verwijderen?"
+      ],
+      "Delete key": [
+        "Sleutel wissen"
       ],
       "Dismiss": [
         "Negeren"
@@ -228,6 +234,9 @@
       ],
       "More options for accounts": [
         "Meer opties voor accounts"
+      ],
+      "New key": [
+        "Nieuwe sleutel"
       ],
       "Next page": [
         "Volgende pagina"
@@ -937,9 +946,6 @@
       "Add to active": [
         "Toevoegen aan actief"
       ],
-      "Agents": [
-        "Agents"
-      ],
       "Already in KB": [
         "Al in KB"
       ],
@@ -972,6 +978,9 @@
       ],
       "Create image": [
         "Maak afbeelding"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Aangepaste ${ LUMO_SHORT_APP_NAME }'s"
       ],
       "Dark": [
         "Donker"
@@ -1266,6 +1275,9 @@
       "Include project conversations in the main chat history": [
         "Neem projectgesprekken op in de hoofdchatgeschiedenis"
       ],
+      "Keep it safe — it won't be shown again": [
+        "Bewaar het goed — het wordt niet nog een keer getoond"
+      ],
       "Last updated on ${ formattedDate }": [
         "Laatst bijgewerkt op ${ formattedDate }"
       ],
@@ -1325,11 +1337,17 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not retrieve your encryption key": [
+        "Uw versleutelingssleutel kon niet worden opgehaald"
+      ],
       "Describe what you want the workflow to do.": [
         "Beschrijf wat de workflow moet doen."
       ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Fout bij het verwerken van ${ result.fileName }: ${ result.errorMessage }"
+      ],
+      "Failed to delete API key": [
+        "Verwijderen van de API-sleutel is mislukt"
       ],
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Het verwerken van het ${ DRIVE_SHORT_APP_NAME } bestand is mislukt: ${ file.name }"
@@ -1348,6 +1366,9 @@
       ],
       "File uploaded but failed to add to knowledge base": [
         "Bestand geüpload, maar kon niet aan de kennisbank worden toegevoegd."
+      ],
+      "Name is required": [
+        "Naam is vereist"
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Selecteer een categorie om te beschrijven wat er misging met de gegenereerde tekst"
@@ -1684,6 +1705,15 @@
       "Excluded": [
         "Uitgesloten"
       ],
+      "Expired ": [
+        "Verlopen "
+      ],
+      "Expires ": [
+        "Verloopt "
+      ],
+      "Expires tomorrow": [
+        "Verloopt morgen"
+      ],
       "Extract, analyse, and summarise documents, PDFs, and images.": [
         "Documenten, pdf's en afbeeldingen extraheren, analyseren en samenvatten."
       ],
@@ -1735,6 +1765,9 @@
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
         "Neem een klantbericht op, classificeer urgentie en onderwerp met ${ LUMO_SHORT_APP_NAME }, kies afhankelijk van of escalatie nodig is, en stel vervolgens een antwoord op of geef het door aan een medewerker."
       ],
+      "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
+        "Laad twee versies van een beleid, vraag ${ LUMO_SHORT_APP_NAME } om de verschillen en risico's weer te geven en stel vervolgens een kort advies op over welke versie moet worden gekozen."
+      ],
       "Loading": [
         "Laden"
       ],
@@ -1777,6 +1810,9 @@
       "No supported files in this folder": [
         "Geen ondersteunde bestanden in deze map"
       ],
+      "No usage yet": [
+        "Nog niet gebruikt"
+      ],
       "Partial content": [
         "Gedeeltelijke inhoud"
       ],
@@ -1815,6 +1851,9 @@
       ],
       "Removed from future questions": [
         "Verwijderd uit toekomstige vragen"
+      ],
+      "Required on all POST requests with a JSON body.": [
+        "Vereist bij alle POST verzoeken met een JSON-body"
       ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Sla al uw gesprekken op in een gespreksgeschiedenis die alleen u kunt zien. Meld u aan of maak een account aan."
@@ -1866,6 +1905,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Om later naar dit gesprek te kunnen verwijzen, meldt u zich aan of maakt u een account aan."
+      ],
+      "tokens / 30d": [
+        "tokens / 30d"
       ],
       "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
         "Probeer de slimste versie van ${ LUMO_SHORT_APP_NAME } met geavanceerde mogelijkheden."
@@ -1953,6 +1995,9 @@
       "Compare two drafts": [
         "Vergelijk twee conceptversies"
       ],
+      "Context": [
+        "Context"
+      ],
       "Description": [
         "Beschrijving"
       ],
@@ -1980,6 +2025,9 @@
       "optional": [
         "optioneel"
       ],
+      "Other": [
+        "Overige"
+      ],
       "Path": [
         "Pad"
       ],
@@ -2003,6 +2051,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Support ticket triage": [
+        "Prioritering van supportticket"
       ],
       "Thinking": [
         "Denken"
@@ -2082,6 +2133,11 @@
     "collider_2025: Notification": {
       "Create an account or sign in to save your chats and increase limits.": [
         "Maak een account aan of log in om uw chats op te slaan en de limieten te verhogen."
+      ]
+    },
+    "collider_2025: Option": {
+      "180 days": [
+        "180 dagen"
       ]
     },
     "collider_2025: Personality": {
@@ -2169,6 +2225,12 @@
       "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
         "${ LUMO_SHORT_APP_NAME }+ is inbegrepen in uw Visionary abonnement en u heeft toegang tot deze functies:"
       ],
+      "Active": [
+        "Actief"
+      ],
+      "Expired": [
+        "Verlopen"
+      ],
       "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
         "U bent geabonneerd op ${ LUMO_SHORT_APP_NAME }+ en heeft toegang tot de volgende functies:"
       ]
@@ -2244,6 +2306,9 @@
       "API calls per day": [
         "API-aanroepen per dag"
       ],
+      "API documentation": [
+        "API-documentatie"
+      ],
       "API endpoints overview": [
         "Overzicht van API-endpoints"
       ],
@@ -2268,6 +2333,9 @@
       "Clear chat-based memories?": [
         "Op chat gebaseerde herinneringen wissen?"
       ],
+      "Create new API key": [
+        "Maak nieuwe API-sleutel"
+      ],
       "Delete everything": [
         "Alles verwijderen"
       ],
@@ -2279,6 +2347,9 @@
       ],
       "End-to-end encrypted": [
         "End-to-end versleuteld"
+      ],
+      "Generated code": [
+        "Gegenereerde code"
       ],
       "Guest": [
         "Gast"
@@ -2337,6 +2408,9 @@
       "Tokens per call (daily)": [
         "Tokens per aanroep (dagelijks)"
       ],
+      "Tokens per day": [
+        "Tokens per dag"
+      ],
       "Turn off memory?": [
         "Schakel het geheugen uit?"
       ],
@@ -2351,6 +2425,9 @@
       ],
       "What you can build": [
         "Wat u kunt bouwen"
+      ],
+      "Workflow automation": [
+        "Workflowautomatisering"
       ],
       "Workflow graph": [
         "Workflow-grafiek"
@@ -2521,6 +2598,9 @@
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
         "Dit gesprek is te lang om verder te gaan. Start een nieuwe chat om ${ LUMO_SHORT_APP_NAME } actief en responsief te houden."
       ],
+      "This is the only time you'll see this key. Copy it now.": [
+        "Dit is de enige keer dat u deze sleutel te zien krijgt. Kopieer het nu."
+      ],
       "This project is filling up": [
         "Dit project loopt vol"
       ],
@@ -2678,8 +2758,8 @@
       "More options": [
         "Meer opties"
       ],
-      "New agent": [
-        "Nieuwe agent"
+      "New ${ LUMO_SHORT_APP_NAME }": [
+        "Nieuwe ${ LUMO_SHORT_APP_NAME }"
       ],
       "Next message": [
         "Volgend bericht"
@@ -2797,8 +2877,11 @@
       ]
     },
     "collider_2025:Badge": {
-      "Default": [
-        "Standaard"
+      "Built-in": [
+        "Ingebouwd"
+      ],
+      "Selected": [
+        "Geselecteerd"
       ]
     },
     "collider_2025:Button": {
@@ -2919,7 +3002,7 @@
         "Kon Drive-map niet koppelen"
       ],
       "Failed to load image": [
-        "Laden afbeelding mislukt"
+        "Laden van de afbeelding is mislukt"
       ],
       "Failed to load images. Please try again.": [
         "Kan de afbeeldingen niet laden. Probeer het opnieuw."
@@ -2972,8 +3055,8 @@
       "All": [
         "Alle"
       ],
-      "Default": [
-        "Standaard"
+      "Built-in": [
+        "Ingebouwd"
       ],
       "Mine": [
         "Mijn"
@@ -3125,6 +3208,9 @@
       ],
       "File \"${ file.name }\" is already in this project": [
         "Bestand \"${ file.name }\" is al in dit project"
+      ],
+      "File \"${ file.name }\" is already mentioned": [
+        "Bestand \"${ file.name }\" is al benoemd"
       ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Bestanden die naar dit project worden geüpload, worden opgeslagen in de gekoppelde Drive-map."
@@ -3299,11 +3385,11 @@
       "Holiday planner": [
         "Vakantieplanner"
       ],
-      "Search agents": [
-        "Agents zoeken"
-      ],
       "Search chats": [
         "Gesprekken doorzoeken"
+      ],
+      "Search custom ${ LUMO_SHORT_APP_NAME }": [
+        "Zoek op aangepaste ${ LUMO_SHORT_APP_NAME }"
       ],
       "Sign in required": [
         "Aanmelden vereist"
@@ -3593,9 +3679,6 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } kan niet starten"
       ],
-      "Agents": [
-        "Agents"
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Een AI-assistent moet u versterken, niet uitbuiten voor uw gegevens. Daarom hebben we ${ LUMO_SHORT_APP_NAME } gebouwd: om u alle voordelen van AI te bieden, zonder uw privacy en gegevensbeveiliging in gevaar te brengen."
       ],
@@ -3610,6 +3693,9 @@
       ],
       "Create new project": [
         "Nieuw project aanmaken"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Aangepaste ${ LUMO_SHORT_APP_NAME }'s"
       ],
       "Delete project?": [
         "Project verwijderen?"
@@ -5961,6 +6047,9 @@
       "Expires": [
         "Verloopt"
       ],
+      "Expires in": [
+        "Verloopt over"
+      ],
       "First name": [
         "Voornaam"
       ],
@@ -7839,6 +7928,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "e.g. My automation script": [
+        "bijv. Mijn automatiseringsscript"
+      ],
       "Enter a name": [
         "Voer een naam in"
       ],
@@ -8893,9 +8985,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Directe AI-hulp, menselijke expert bij de hand!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"

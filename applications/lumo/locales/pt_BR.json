@@ -26,6 +26,10 @@
       "Apply": [
         "Aplicar"
       ],
+      "Are you sure you want to delete ${ count } conversation?": [
+        "Tem certeza de que deseja excluir a ${ count } conversa?",
+        "Tem certeza de que deseja excluir as ${ count } conversas?"
+      ],
       "Are you sure you want to delete all conversations?": [
         "Tem certeza de que deseja excluir todas as conversas?"
       ],
@@ -115,6 +119,10 @@
       ],
       "Delete": [
         "Excluir"
+      ],
+      "Delete ${ count } conversation?": [
+        "Excluir ${ count } conversa?",
+        "Excluir ${ count } conversas?"
       ],
       "Delete ${ token.Name }": [
         "Excluir ${ token.Name }"
@@ -940,9 +948,6 @@
       ],
       "Add to active": [
         "Adicionar a ativos"
-      ],
-      "Agents": [
-        "Agentes"
       ],
       "Already in KB": [
         "Já na KB"
@@ -2745,8 +2750,8 @@
       "More options": [
         "Mais opções"
       ],
-      "New agent": [
-        "Novo agente"
+      "New ${ LUMO_SHORT_APP_NAME }": [
+        "Novo ${ LUMO_SHORT_APP_NAME }"
       ],
       "Next message": [
         "Próxima mensagem"
@@ -2855,8 +2860,11 @@
       ]
     },
     "collider_2025:Badge": {
-      "Default": [
-        "Padrão"
+      "Built-in": [
+        "Integrado"
+      ],
+      "Selected": [
+        "Selecionado"
       ]
     },
     "collider_2025:Button": {
@@ -2973,9 +2981,6 @@
       "Failed to link Drive folder": [
         "Falha ao vincular a pasta do Drive"
       ],
-      "Failed to load image": [
-        "Falha ao carregar a imagem"
-      ],
       "Failed to load images. Please try again.": [
         "Erro ao carregar as imagens.Tente novamente."
       ],
@@ -3027,8 +3032,8 @@
       "All": [
         "Todos"
       ],
-      "Default": [
-        "Padrão"
+      "Built-in": [
+        "Integrado"
       ]
     },
     "collider_2025:Finance": {
@@ -3164,6 +3169,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Vincule arquivos do ${ DRIVE_APP_NAME } ou envie do seu computador."
       ],
+      "Lockdown Mode is enabled on your device": [
+        "Modo de isolamento está ativado no seu dispositivo"
+      ],
       "No projects yet": [
         "Nenhum projeto ainda"
       ],
@@ -3294,9 +3302,6 @@
       ],
       "Holiday planner": [
         "Planejador de feriados"
-      ],
-      "Search agents": [
-        "Pesquisar agentes"
       ],
       "Search chats": [
         "Pesquisar bate-papos"
@@ -3585,9 +3590,6 @@
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } não pode iniciar"
-      ],
-      "Agents": [
-        "Agentes"
       ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Um assistente de IA deve empoderar você, não explorá-lo por seus dados. É por isso que desenvolvemos o ${ LUMO_SHORT_APP_NAME }: para proporcionar a você todos os benefícios da IA, sem comprometer sua privacidade e segurança de dados."

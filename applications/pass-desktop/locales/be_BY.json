@@ -1117,8 +1117,8 @@
       "Error reporting problem": [
         "Памылка адпраўкі справаздачы аб праблеме"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Тэрмін дзеянне павінен быць у інтэрвале паміж 60 хвілінамі і 1 годам"
+      "Expiration must be between 1 hour and 1 year": [
+        "Тэрмін дзеянне павінен быць паміж 1 гадзінай і 1 годам"
       ],
       "Failed loading group members": [
         "Збой загрузкі ўдзельнікаў групы"
@@ -1373,7 +1373,7 @@
         "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
       ],
       "The session has expired. Please sign in again.": [
-        "Час сеансу пратэрмінаваны. Увайдзіце яшчэ раз."
+        "Час сеанса пратэрмінаваны. Увайдзіце яшчэ раз."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Адбылася памылка падчас выдалення бяспечнай спасылкі. Паспрабуйце яшчэ раз праз некалькі хвілін."
@@ -2000,26 +2000,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Новы кантакт ствараецца аўтаматычна. Гэта адбываецца кожны раз, калі ваш псеўданім атрымлівае ліст ад каго-небудзь."
       ],
-      "Expired ${ abs } hour ago": [
-        "Мінуў ${ abs } гадзіну таму",
-        "Мінуў ${ abs } гадзіны таму",
-        "Мінуў ${ abs } гадзін таму",
-        "Мінуў ${ abs } гадзін таму"
+      "Expired on ${ formattedDate }": [
+        "Мінуў ${ formattedDate }"
       ],
       "Expires in": [
         "Тэрмін дзеяння міне"
       ],
-      "Expires in ${ hours } hour": [
-        "Міне праз ${ hours } хвіліну",
-        "Міне праз ${ hours } хвіліны",
-        "Міне праз ${ hours } хвілін",
-        "Міне праз ${ hours } хвілін"
-      ],
       "Expires in ${ remainingTime }": [
         "Тэрмін дзеяння міне праз ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Тэрмін дзеяння міне менш чым праз гадзіну"
+      "Expires on ${ formattedDate }": [
+        "Тэрмін дзеяння міне ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Экспартаванне вашых даных..."
@@ -3036,11 +3027,23 @@
         "${ years } гадоў",
         "${ years } гадоў"
       ],
+      "1 day": [
+        "1 дзень"
+      ],
       "1 hour": [
         "1 гадзіна"
       ],
       "1 minute": [
         "1 хвіліна"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "1 week": [
+        "1 тыдзень"
+      ],
+      "1 year": [
+        "1 год"
       ],
       "10 minutes": [
         "10 хвілін"
@@ -3270,6 +3273,12 @@
       "Crypto Wallet": [
         "Крыптакашалёк"
       ],
+      "Custom": [
+        "Карыстальніцкая"
+      ],
+      "Custom expiration (minutes)": [
+        "Карыстальніцкі тэрмін дзеяння (у хвілінах)"
+      ],
       "Custom Items": [
         "Карыстальніцкія элементы"
       ],
@@ -3360,8 +3369,8 @@
       "Expired tokens (${ expired.length })": [
         "Пратэрмінаваныя токены (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Міне праз (хвілін)"
+      "Expires in": [
+        "Тэрмін дзеяння міне"
       ],
       "Expiry Date": [
         "Тэрмін дзеяння"

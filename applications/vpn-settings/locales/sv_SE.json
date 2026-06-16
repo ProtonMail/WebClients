@@ -4440,6 +4440,9 @@
       "Invalid private key file": [
         "Ogiltig privat nyckelfil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ogiltig återställningstoken. Uppdatera sidan och försök igen."
+      ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
@@ -4948,6 +4951,9 @@
       ],
       "Ask your administrator to enable Account monitor.": [
         "Be din administratör att aktivera kontoövervakning."
+      ],
+      "Enable account monitor to start loading event.": [
+        "Aktivera kontoövervakare för att starta ladda händelse."
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -6577,6 +6583,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
+      ],
+      "All your files will be imported": [
+        "Alla dina filer kommer att importeras"
       ],
       "Allocated": [
         "Tilldelad"
@@ -8329,6 +8338,9 @@
       "To proceed, we must verify the request.": [
         "För att fortsätta måste vi verifiera begäran."
       ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "För att återfå åtkomst till ditt konto och dina data, ange återställningsfrasen på 12 ord associerad med ditt konto."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "För att säkra din internetanslutning, ladda ner och installera ${ VPN_APP_NAME }-applikationen för din enhet och anslut till en server."
       ],
@@ -8740,6 +8752,9 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan inte hänvisa ${ MAIL_APP_NAME }-användare"
+      ],
+      "You do not have permission to create users.": [
+        "Du har inte behörighet att skapa användare."
       ],
       "You don't have any referrals.": [
         "Du har inga hänvisningar."
@@ -9271,6 +9286,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendrar"
+      ],
       "Card details": [
         "Kortdetaljer"
       ],
@@ -9416,6 +9434,9 @@
       "Don't show this again": [
         "Visa inte detta igen"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g. example.com": [
         "t.ex. exempel.se"
       ],
@@ -9439,6 +9460,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-post med @yourcompany.com-domän"
+      ],
+      "Emails": [
+        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -10215,6 +10239,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Skaffa ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjälp från ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupper"
@@ -13818,6 +13845,11 @@
         "Användaradministratör"
       ]
     },
+    "Role description": {
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ]
+    },
     "Safety review": {
       "Check account security": [
         "Kontrollera kontosäkerhet"
@@ -16594,6 +16626,9 @@
       ],
       "Forgot recovery method": [
         "Glömt återställningsmetod"
+      ],
+      "Free plan": [
+        "Free-paket"
       ],
       "Gateway": [
         "Gateway"

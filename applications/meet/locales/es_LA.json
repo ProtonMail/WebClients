@@ -1497,14 +1497,23 @@
       "Failed to delete event": [
         "Error al eliminar el evento"
       ],
+      "Failed to delete recording": [
+        "Error al eliminar la grabación"
+      ],
       "Failed to delete room": [
         "Error al eliminar la sala"
+      ],
+      "Failed to download recording": [
+        "Error al descargar grabaciones"
       ],
       "Failed to edit room name": [
         "Error al editar el nombre de la sala"
       ],
       "Failed to join meeting. Please try again later.": [
         "Error al unirse a la reunión. Intente de nuevo más tarde."
+      ],
+      "Failed to load recordings": [
+        "Error al cargar grabaciones"
       ],
       "Failed to lock meeting": [
         "Error al bloquear la reunión"
@@ -2095,6 +2104,9 @@
       "Microphone permission denied": [
         "Permiso de micrófono denegado"
       ],
+      "Mute microphone": [
+        "Silenciar micrófono"
+      ],
       "My meetings": [
         "Mis reuniones"
       ],
@@ -2124,6 +2136,9 @@
       ],
       "No publications": [
         "Sin publicaciones"
+      ],
+      "No recordings found on this device.": [
+        "No se encontraron grabaciones en este dispositivo."
       ],
       "No remote participants": [
         "No hay participantes remotos"
@@ -2191,6 +2206,9 @@
       "Recording": [
         "Grabando"
       ],
+      "Recording deleted": [
+        "Grabación eliminada"
+      ],
       "Recording in progress": [
         "Grabación en curso"
       ],
@@ -2199,6 +2217,9 @@
       ],
       "Recording will begin and attendees will be notified.": [
         "La grabación comenzará y se notificará a los invitados."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Las grabaciones se almacenan localmente en su navegador. Descargue cualquiera que desee mantener, se eliminarán automáticamente después de 30 días."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
@@ -2290,6 +2311,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión fue abierta en la aplicación de escritorio de ${ MEET_APP_NAME }."
       ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Esta grabación será eliminada permanentemente de este dispositivo. Esta acción no se puede deshacer."
+      ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Esto finalizará la reunión para todos los participantes y detendrá el uso compartido de su pantalla."
       ],
@@ -2331,6 +2355,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Desbloquee ${ unlimitedMeeting } y funciones premium"
+      ],
+      "Unmute microphone": [
+        "Activar micrófono"
       ],
       "Upgrade to record your meetings locally.": [
         "Actualice para grabar sus reuniones localmente."
@@ -2526,6 +2553,9 @@
       ],
       "Last used": [
         "Último uso"
+      ],
+      "Manage recordings": [
+        "Gestionar grabaciones"
       ],
       "Meeting ID": [
         "ID de la reunión"
@@ -2889,8 +2919,14 @@
       "Actions": [
         "Acciones"
       ],
+      "Date": [
+        "Fecha"
+      ],
       "Name": [
         "Nombre"
+      ],
+      "Size": [
+        "Tamaño"
       ]
     },
     "Title": {
@@ -2947,6 +2983,9 @@
       ],
       "Debug Overlay": [
         "Superposición de depuración"
+      ],
+      "Delete recording?": [
+        "¿Eliminar grabación?"
       ],
       "Enter your password": [
         "Ingrese su contraseña"
@@ -3045,6 +3084,9 @@
       "Record this meeting": [
         "Grabar esta reunión"
       ],
+      "Recordings": [
+        "Grabaciones"
+      ],
       "Remote Participants": [
         "Participantes remotos"
       ],
@@ -3120,9 +3162,6 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generar un nuevo enlace para la reunión. El enlace actual dejará de funcionar."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Recurring meeting": [
         "Reunión recurrente"

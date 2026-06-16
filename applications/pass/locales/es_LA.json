@@ -1060,9 +1060,6 @@
       "Error reporting problem": [
         "Error al reportar el problema"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "La expiración debe estar entre 60 minutos y 1 año"
-      ],
       "Failed loading group members": [
         "Error al cargar los miembros del grupo"
       ],
@@ -1887,22 +1884,11 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vez que su alias reciba un correo de alguien, se creará automáticamente un contacto."
       ],
-      "Expired ${ abs } hour ago": [
-        "Expiró hace ${ abs } hora",
-        "Expiró hace ${ abs } horas"
-      ],
       "Expires in": [
         "Expira en"
       ],
-      "Expires in ${ hours } hour": [
-        "Expira en ${ hours } hora",
-        "Expira en ${ hours } horas"
-      ],
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
-      ],
-      "Expires in less than an hour": [
-        "Expira en menos de una hora"
       ],
       "Exporting your data...": [
         "Exportando sus datos..."
@@ -3172,8 +3158,8 @@
       "Expired tokens (${ expired.length })": [
         "Tokens expirados (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Expira en (minutos)"
+      "Expires in": [
+        "Expira en"
       ],
       "Expiry Date": [
         "Fecha de expiración"

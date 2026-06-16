@@ -546,6 +546,9 @@
       "New document": [
         "Uusi dokumentti"
       ],
+      "New folder": [
+        "Uusi kansio"
+      ],
       "New message": [
         "Uusi viesti"
       ],
@@ -2809,6 +2812,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lisäksi voit tarkastaa ${ statusPageLink }."
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } kohteen siirto epäonnistui",
+        "${ failureItems.length } kohteen siirto epäonnistui"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Identiteetti ja osoitteet > Lyhytosoite (pm.me)"
       ],
@@ -2939,6 +2946,9 @@
       ],
       "Failed to copy photo to album": [
         "Kuvan kopiointi albumiin epäonnistui"
+      ],
+      "Failed to create folder": [
+        "Kansion luominen epäonnistui"
       ],
       "Failed to fetch sharing info": [
         "Jakotietojen nouto epäonnistui"
@@ -4359,6 +4369,12 @@
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
       ],
+      "All your files will be imported": [
+        "Kaikki tiedostosi tuodaan"
+      ],
+      "Already in this folder": [
+        "Jo tässä kansiossa"
+      ],
       "an anonymous user": [
         "anonyymi käyttäjä"
       ],
@@ -4409,6 +4425,9 @@
       ],
       "Can view only": [
         "Vain katseluoikeus"
+      ],
+      "Can't move a folder into itself": [
+        "Kansiota ei voi siirtää itseensä"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
@@ -4999,6 +5018,9 @@
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
       ],
+      "Select a destination folder": [
+        "Valitse kohdekansio"
+      ],
       "Select a folder to move to.": [
         "Valitse kohdekansio."
       ],
@@ -5019,6 +5041,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
+      ],
+      "Settings update failed": [
+        "Asetusmuutos epäonnistui"
+      ],
+      "Settings updated": [
+        "Asetukset on muutettu"
       ],
       "Share via link settings": [
         "Jakolinkin asetukset"
@@ -5635,6 +5663,9 @@
       "Calendar": [
         "Kalenterin"
       ],
+      "Calendars": [
+        "Kalenterit"
+      ],
       "can edit": [
         "voi muokata"
       ],
@@ -5701,6 +5732,9 @@
       "Download anyway": [
         "Lataa silti"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Löydettiin kaksoiskappale"
       ],
@@ -5718,6 +5752,9 @@
       ],
       "Email format": [
         "Viestien muoto"
+      ],
+      "Emails": [
+        "Viestit"
       ],
       "Emails (all messages)": [
         "Sähköpostit (kaikki viestit)"
@@ -7411,20 +7448,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" luotiin"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Kohteen \"${ ellipsedName }\" luonti epäonnistui"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" siirretty"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" jaettiin"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" luotiin"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" poistettiin"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" poistettiin roskakorista pysyvästi"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Kohteen \"${ name }\" luonti epäonnistui"
       ],
       "\"${ name }\" failed to be deleted": [
         "Kohteen \"${ name }\" poisto epäonnistui"
@@ -9498,6 +9538,9 @@
       "Collaborate on documents": [
         "Yhteiskäytä dokumentteja"
       ],
+      "Computers": [
+        "Tietokoneet"
+      ],
       "Confirm downgrade": [
         "Vahvista alennus"
       ],
@@ -10069,8 +10112,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
+      "Instant assistance with AI and human experts.": [
+        "Välitöntä apua tekoälyn ja ihmisasiantuntijoiden avulla."
       ],
       "Load image": [
         "Lataa kuva"
@@ -10156,6 +10199,9 @@
       ],
       "Name must not be empty": [
         "Nimi ei voi olla tyhjä"
+      ],
+      "Name must not contain slashes (/)": [
+        "Nimi ei saa sisältää kauttaviivoja (/)"
       ]
     },
     "Video control": {

@@ -319,6 +319,9 @@
       "Do not show again when I press": [
         "No volver a mostrar cuando pulse"
       ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
+      ],
       "Download this CSV template": [
         "Descargar esta plantilla CSV"
       ],
@@ -1003,6 +1006,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Error de autenticación. Confirma tu segunda contraseña para continuar con la exportación"
       ],
+      "Biometric authentication failed.": [
+        "Error en la autenticación biométrica."
+      ],
       "Biometric lock credentials do not match.": [
         "Las credenciales del bloqueo biométrico no coinciden."
       ],
@@ -1089,14 +1095,17 @@
       "Emptying trash failed": [
         "Error al vaciar la papelera"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicación cifrada con la aplicación de escritorio de ${ PASS_APP_NAME } ha fallado."
+      ],
       "Encrypted JSON not supported": [
         "JSON cifrado no soportado"
       ],
       "Error reporting problem": [
         "Error al notificar el problema"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "La caducidad debe estar entre 60 minutos y 1 año"
+      "Expiration must be between 1 hour and 1 year": [
+        "La caducidad debe estar entre 1 hora y 1 año"
       ],
       "Failed loading group members": [
         "Error al cargar los miembros del grupo"
@@ -1332,6 +1341,9 @@
       "Something went wrong. Please sign in again.": [
         "Se ha producido un error. Inicia sesión de nuevo."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } no ha respondido a tiempo."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "La aplicación de escritorio de ${ PASS_APP_NAME } está bloqueada; debes desbloquearla."
       ],
@@ -1340,6 +1352,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } ha iniciado sesión con una cuenta diferente."
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Se debe haber iniciado sesión en la aplicación de escritorio de ${ PASS_APP_NAME }."
@@ -1938,22 +1953,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vez que tu alias reciba un correo de alguien, se creará automáticamente un contacto."
       ],
-      "Expired ${ abs } hour ago": [
-        "Caducó hace ${ abs } hora",
-        "Caducó hace ${ abs } horas"
+      "Expired on ${ formattedDate }": [
+        "Ha caducado el ${ formattedDate }"
       ],
       "Expires in": [
         "Expira en"
       ],
-      "Expires in ${ hours } hour": [
-        "Caduca en ${ hours } hora",
-        "Caduca en ${ hours } horas"
-      ],
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Caduca en menos de una hora"
+      "Expires on ${ formattedDate }": [
+        "Caduca el ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Exportando tus datos..."
@@ -2380,6 +2390,9 @@
       "Press Enter to copy": [
         "Presiona Enter para copiar"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa avanzado de protección de la cuenta"
+      ],
       "Read item": [
         "Leer elemento"
       ],
@@ -2644,6 +2657,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloquea ${ PASS_SHORT_APP_NAME } con tu segunda contraseña"
+      ],
+      "Unlock with biometrics": [
+        "Desbloquear con biometría"
       ],
       "Unpinning item...": [
         "Desanclando el elemento..."
@@ -2919,11 +2935,23 @@
         "${ years } año",
         "${ years } años"
       ],
+      "1 day": [
+        "1 día"
+      ],
       "1 hour": [
         "1 hora"
       ],
       "1 minute": [
         "1 minuto"
+      ],
+      "1 month": [
+        "1 mes"
+      ],
+      "1 week": [
+        "1 semana"
+      ],
+      "1 year": [
+        "1 año"
       ],
       "10 minutes": [
         "10 minutos"
@@ -3153,6 +3181,12 @@
       "Crypto Wallet": [
         "Cartera de criptomonedas"
       ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Custom expiration (minutes)": [
+        "Caducidad personalizada (minutos)"
+      ],
       "Custom Items": [
         "Elementos personalizados"
       ],
@@ -3243,8 +3277,8 @@
       "Expired tokens (${ expired.length })": [
         "Tokens expirados (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Caduca en (minutos)"
+      "Expires in": [
+        "Caduca en"
       ],
       "Expiry Date": [
         "Fecha de expiración"

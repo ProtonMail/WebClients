@@ -11,6 +11,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Añadir una cuenta"
       ],
@@ -910,17 +913,39 @@
       ]
     },
     "collider_2025: Action": {
-      "Agents": [
-        "Agentes"
+      "Add": [
+        "Añadir"
+      ],
+      "Add ${ selectedCount } sheet": [
+        "Añadir ${ selectedCount } hoja",
+        "Añadir ${ selectedCount } hojas"
       ],
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel (Esc)": [
+        "Cancelar (Esc)"
+      ],
+      "Clear": [
+        "Limpiar"
+      ],
+      "Clear all": [
+        "Borrar todo"
+      ],
+      "Clear auto-generated": [
+        "Borrar los generados automáticamente"
+      ],
       "Continue": [
         "Continuar"
       ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME } personalizados"
+      ],
       "Dark": [
         "Oscuro"
+      ],
+      "Delete memory": [
+        "Borrar recuerdo"
       ],
       "Disable ghost mode": [
         "Activar modo fantasma"
@@ -928,8 +953,17 @@
       "Draw a sketch": [
         "Dibujar un boceto"
       ],
+      "Edit": [
+        "Editar"
+      ],
+      "Edit memory": [
+        "Editar recuerdo"
+      ],
       "Enable ghost mode": [
         "Activar modo fantasma"
+      ],
+      "Generate from chats": [
+        "Generar desde los chats"
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
         "Obtén ${ LUMO_SHORT_APP_NAME } Plus desde solo ${ price }"
@@ -958,6 +992,15 @@
       "Report an issue": [
         "Notificar un problema"
       ],
+      "Save": [
+        "Guardar"
+      ],
+      "Save (⌘+Enter)": [
+        "Guardar (⌘+Intro)"
+      ],
+      "Select all": [
+        "Seleccionar todo"
+      ],
       "Send message": [
         "Enviar mensaje"
       ],
@@ -978,6 +1021,16 @@
       ],
       "Try again": [
         "Reintentar"
+      ],
+      "Turn off and delete": [
+        "Desactivar y borrar"
+      ],
+      "Update from chats": [
+        "Actualizar desde los chats"
+      ],
+      "Update from chats (${ newPromptsSinceLastUpdate } new)": [
+        "Actualización de los chats (${ newPromptsSinceLastUpdate } nuevo)",
+        "Actualización de los chats (${ newPromptsSinceLastUpdate } nuevos)"
       ],
       "Upload files": [
         "Subir archivos"
@@ -1103,9 +1156,23 @@
         "Hablé con mi patito de goma para obtener ayuda al depurar"
       ]
     },
+    "collider_2025: Date": {
+      "Today": [
+        "Hoy"
+      ],
+      "Yesterday": [
+        "Ayer"
+      ]
+    },
     "collider_2025: Description": {
       "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
         "${ BRAND_NAME } está realizando un estudio de investigación remunerado sobre asistentes de IA. ¿Te interesa? Solo te lleva 2 minutos. Si se te selecciona, ganas 80 £."
+      ],
+      "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
+        "${ LUMO_SHORT_APP_NAME } consulta tus recuerdos guardados para personalizar las respuestas — estilo de comunicación, experiencia, herramientas recurrentes y proyectos a largo plazo."
+      ],
+      "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
+        "Añade tus propios recuerdos, edita cualquier entrada generada automáticamente o borra todo en cualquier momento. Los recuerdos generados que edites se convierten en propios."
       ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Las claves de API permiten acceder a ${ LUMO_SHORT_APP_NAME } de forma programática. Cada clave solo se muestra una vez al crearla."
@@ -1122,11 +1189,32 @@
       "Last updated on ${ formattedDate }": [
         "Última actualización el ${ formattedDate }"
       ],
+      "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
+        "Más información sobre cómo usar ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Memories are stored encrypted.": [
+        "Los recuerdos se almacenan cifrados."
+      ],
+      "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
+        "La memoria permite que ${ LUMO_SHORT_APP_NAME } recuerde preferencias y contexto estables en los chats generales para que no tengas que repetirte."
+      ],
+      "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
+        "Los chats de proyecto se mantienen totalmente aislados. Dependen de sus propias instrucciones y archivos, e ignoran tus recuerdos globales por completo."
+      ],
+      "Report a bug or feature request": [
+        "Informar de un error o solicitar una función"
+      ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicia sesión para acceder a tu cuenta y desbloquear más funciones. ¿No tienes una? ${ createLink }"
       ],
       "Switch between light and dark mode": [
         "Cambiar entre modo claro y oscuro"
+      ],
+      "This removes memories generated from your chats. Memories you added yourself will be kept.": [
+        "Esto elimina los recuerdos generados desde tus chats. Los recuerdos que has añadido tú mismo se conservan."
+      ],
+      "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
+        "Esto elimina permanentemente todos los recuerdos guardados. ${ LUMO_SHORT_APP_NAME } ya no los usa en futuros chats."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1191,6 +1279,9 @@
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Regístrate gratis para seguir chateando y desbloquear el acceso al historial de chat, a los chats destacados y a más funciones."
       ],
+      "Something went wrong. Please try again.": [
+        "Algo salió mal. Inténtalo de nuevo."
+      ],
       "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some from this chat before uploading new ones to keep things purring.": [
         "Son muchos archivos a la vez para ${ LUMO_SHORT_APP_NAME }. Elimina algunos de este chat antes de subir otros nuevos para que todo funcione a la perfección."
       ],
@@ -1219,7 +1310,33 @@
         "Puedes adjuntar hasta ${ MAX_PROVISIONAL_ATTACHMENTS } archivos a la vez. Elimina algunos para añadir más."
       ]
     },
+    "collider_2025: Error (file processing)": {
+      "Error processing file: ${ file.name }": [
+        "Error al procesar el archivo: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (local processing)": {
+      "Error processing file: ${ file.name }": [
+        "Error al procesar el archivo: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (processing)": {
+      "File format not supported: ${ result.fileName }": [
+        "Formato de archivo no compatible: ${ result.fileName }"
+      ]
+    },
+    "collider_2025: Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Formato de archivo no compatible: ${ file.name }"
+      ]
+    },
     "collider_2025: Error Message": {
+      "If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.": [
+        "Si reintentarlo no funciona, vuelve a comprobarlo en unos minutos. Mientras tanto, se hace todo lo posible para garantizar que tu experiencia sea fluida."
+      ],
+      "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
+        "Si reintentarlo no funciona, vuelve a comprobarlo más tarde o considera pasarte a ${ LUMO_SHORT_APP_NAME } Plus para ponerte al principio de la cola durante las horas punta."
+      ],
       "Please try asking a different question or making a different request.": [
         "Intenta hacer una pregunta diferente o una solicitud diferente."
       ],
@@ -1340,8 +1457,19 @@
       ]
     },
     "collider_2025: Header": {
+      "Choose sheets to add": [
+        "Elige las hojas que añadir"
+      ],
       "Tell us more": [
         "Cuéntanos más"
+      ]
+    },
+    "collider_2025: Hint": {
+      "Memory is only used in general chats — never inside projects. Stored end-to-end encrypted.": [
+        "La memoria solo se utiliza en los chats generales — nunca en los proyectos. Se almacena con cifrado de extremo a extremo."
+      ],
+      "You can turn it off again at any time.": [
+        "Puedes desactivarlo de nuevo en cualquier momento."
       ]
     },
     "collider_2025: Info": {
@@ -1359,6 +1487,9 @@
       ],
       " talk to your admin.": [
         " habla con tu administrador."
+      ],
+      "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
+        "\"${ fileName }\" tiene varias hojas. Selecciona las hojas que incluir en el contexto de la conversación."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "El almacenamiento de ${ DRIVE_SHORT_APP_NAME } aún no está configurado."
@@ -1438,6 +1569,9 @@
       "Files you've added to this conversation.": [
         "Archivos que has agregado a esta conversación"
       ],
+      "Generate them from your recent chats, or add your own below.": [
+        "Genéralos desde tus chats recientes, o añade los tuyos abajo."
+      ],
       "High-speed chats and advanced AI features.": [
         "Chats de alta velocidad y funciones de IA avanzadas."
       ],
@@ -1461,6 +1595,9 @@
       ],
       "No files available": [
         "No hay archivos disponibles"
+      ],
+      "No new memories were found in your recent chats.": [
+        "No se han encontrado recuerdos nuevos en tus chats recientes."
       ],
       "No usage yet": [
         "Aún no se ha usado"
@@ -1545,6 +1682,9 @@
       ],
       "You are about to visit an external website:": [
         "Estás a punto de visitar un sitio web externo:"
+      ],
+      "Your memories are already up to date.": [
+        "Tus recuerdos ya están actualizados."
       ]
     },
     "collider_2025: Job": {
@@ -1571,11 +1711,17 @@
       "Don't like the style": [
         "No me gusta el estilo"
       ],
+      "From chats": [
+        "Desde los chats"
+      ],
       "Not factually correct": [
         "Los hechos no son correctos"
       ],
       "Unsafe or problematic": [
         "No seguro o problemático"
+      ],
+      "You": [
+        "Tú"
       ]
     },
     "collider_2025: Legal disclaimer": {
@@ -1684,6 +1830,9 @@
       ]
     },
     "collider_2025: Placeholder": {
+      "e.g. I prefer concise, bullet-point answers": [
+        "Prefiero respuestas concisas y con viñetas"
+      ],
       "New chat": [
         "Nuevo chat"
       ],
@@ -1692,11 +1841,17 @@
       ]
     },
     "collider_2025: Settings Item": {
+      "About": [
+        "Acerca de"
+      ],
       "Account": [
         "Cuenta"
       ],
       "General": [
         "General"
+      ],
+      "Memory": [
+        "Memoria"
       ]
     },
     "collider_2025: Status": {
@@ -1720,6 +1875,10 @@
       ]
     },
     "collider_2025: Success": {
+      "Added ${ added } memory from your chats": [
+        "Se ha añadido ${ added } recuerdo de tus chats",
+        "Se han añadido ${ added } recuerdos de tus chats"
+      ],
       "All chats deleted successfully": [
         "Todos los chats han sido eliminados"
       ],
@@ -1733,6 +1892,20 @@
         "¡Gracias por los comentarios!"
       ]
     },
+    "collider_2025: Tip": {
+      "Avoid passwords, tokens, or sensitive personal identifiers.": [
+        "Evita contraseñas, tokens o identificadores personales confidenciales."
+      ],
+      "Include how you like to communicate (tone, format, language).": [
+        "Incluye cómo prefieres comunicarte (tono, formato, idioma)."
+      ],
+      "Keep each memory short - one preference or fact per line.": [
+        "Mantén cada recuerdo breve - una preferencia o dato por línea."
+      ],
+      "Write stable facts, not one-off questions.": [
+        "Escribe hechos estables, no preguntas puntuales."
+      ]
+    },
     "collider_2025: Title": {
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Negocios"
@@ -1743,8 +1916,20 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Acerca de ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Add your own memory": [
+        "Añadir tu propio recuerdo"
+      ],
+      "Auto update memory": [
+        "Actualizar la memoria automáticamente"
+      ],
       "Automatic web search": [
         "Búsqueda web automática"
+      ],
+      "Clear all memories?": [
+        "¿Borrar todos los recuerdos?"
+      ],
+      "Clear chat-based memories?": [
+        "¿Borrar los recuerdos basados en chats?"
       ],
       "Create new API key": [
         "Crear nueva clave de API"
@@ -1755,20 +1940,41 @@
       "Don't lose the thread": [
         "No pierdas el hilo"
       ],
+      "End-to-end encrypted": [
+        "Cifrado de extremo a extremo"
+      ],
       "Guest": [
         "Invitado"
+      ],
+      "Help and support": [
+        "Ayuda y soporte"
       ],
       "Invalid Link": [
         "Enlace no válido"
       ],
+      "Never used inside projects": [
+        "Nunca se utiliza en los proyectos"
+      ],
       "No API keys yet": [
         "Aún no hay claves de API"
+      ],
+      "No memories yet": [
+        "Aún no hay recuerdos"
       ],
       "Opening External Link": [
         "Abriendo enlace externo"
       ],
+      "Personalizes general chats": [
+        "Personaliza los chats generales"
+      ],
+      "Report a bug": [
+        "Informa de un fallo"
+      ],
       "Save your favorites": [
         "Guarda tus favoritos"
+      ],
+      "Saved memories": [
+        "Recuerdos guardados"
       ],
       "Search Index": [
         "Índice de búsqueda"
@@ -1779,6 +1985,9 @@
       "Theme": [
         "Tema"
       ],
+      "Turn off memory?": [
+        "¿Desactivar la memoria?"
+      ],
       "Upload files": [
         "Cargar archivos"
       ],
@@ -1788,13 +1997,26 @@
       "We'd love your feedback!": [
         "¡Nos encantaría conocer tu opinión!"
       ],
+      "You stay in control": [
+        "Tú mantienes el control"
+      ],
       "Your new API key": [
         "Tu nueva clave API"
       ]
     },
     "collider_2025: Tooltip": {
+      "${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages. ${ promptsUntilAutoSave } message left until the next update.": [
+        "${ LUMO_SHORT_APP_NAME } actualiza los recuerdos basados en chats cada ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD }mensajes. Queda ${ promptsUntilAutoSave } mensaje para la próxima actualización.",
+        "${ LUMO_SHORT_APP_NAME } actualiza los recuerdos basados en chats cada ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } mensajes. Quedan ${ promptsUntilAutoSave } mensajes para la próxima actualización."
+      ],
       "Contact your admin to upgrade": [
         "Ponte en contacto con tu administrador para mejorar el plan"
+      ],
+      "Every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats, ${ LUMO_SHORT_APP_NAME } extracts short excerpts and adds new chat-based memories in the background.": [
+        "Cada ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } mensajes en los chats generales, ${ LUMO_SHORT_APP_NAME } extrae fragmentos breves y añade nuevos recuerdos basados en chats en segundo plano."
+      ],
+      "When enabled, ${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats. Only short excerpts are sent.": [
+        "Cuando se activa, ${ LUMO_SHORT_APP_NAME } actualiza los recuerdos basados en chats cada ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } mensajes en los chats generales. Solo se envían fragmentos cortos."
       ]
     },
     "collider_2025: Top nav link": {
@@ -2021,8 +2243,8 @@
       "More concise": [
         "Más conciso"
       ],
-      "New agent": [
-        "Nuevo agente"
+      "New ${ LUMO_SHORT_APP_NAME }": [
+        "Nuevo ${ LUMO_SHORT_APP_NAME }"
       ],
       "Next message": [
         "Mensaje siguiente"
@@ -2047,6 +2269,9 @@
       ],
       "Request a shorter, more focused response": [
         "Solicita una respuesta más corta y enfocada"
+      ],
+      "Retry": [
+        "Volver a intentar"
       ],
       "Retry with the same prompt": [
         "Reintentar con la misma indicación"
@@ -2116,8 +2341,11 @@
       ]
     },
     "collider_2025:Badge": {
-      "Default": [
-        "Por defecto"
+      "Built-in": [
+        "Integrado"
+      ],
+      "Selected": [
+        "Seleccionado"
       ]
     },
     "collider_2025:Button": {
@@ -2222,6 +2450,9 @@
       "Failed to link Drive folder": [
         "Error al enlazar la carpeta de Drive"
       ],
+      "Failed to load image": [
+        "Fallo al cargar la imagen"
+      ],
       "Failed to unlink Drive folder": [
         "Error al desvincular la carpeta de Drive"
       ],
@@ -2247,8 +2478,8 @@
       "All": [
         "Todo"
       ],
-      "Default": [
-        "Por defecto"
+      "Built-in": [
+        "Integrado"
       ],
       "Mine": [
         "Mis agentes"
@@ -2319,6 +2550,9 @@
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "En el iPhone o iPad, abre Ajustes → Apps → Safari y asegúrate de que «Bloquear todas las cookies» está desactivado. Después recarga."
+      ],
+      "PASTED": [
+        "Pegado"
       ],
       "Processing file...": [
         "Procesando archivo..."
@@ -2430,11 +2664,11 @@
       "Holiday planner": [
         "Planificador de vacaciones"
       ],
-      "Search agents": [
-        "Agentes de búsqueda"
-      ],
       "Search chats": [
         "Buscar chats"
+      ],
+      "Search custom ${ LUMO_SHORT_APP_NAME }": [
+        "Buscar ${ LUMO_SHORT_APP_NAME } personalizados"
       ],
       "Sign in required": [
         "Se requiere iniciar sesión"
@@ -2579,9 +2813,6 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } no puede iniciarse"
       ],
-      "Agents": [
-        "Agentes"
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Un asistente de IA debería empoderarte, no explotar tus datos. Por eso creamos ${ LUMO_SHORT_APP_NAME }: para ofrecerte todos los beneficios de la IA, sin comprometer la privacidad y la seguridad de tus datos."
       ],
@@ -2596,6 +2827,9 @@
       ],
       "Create new project": [
         "Crear nuevo proyecto"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME } personalizados"
       ],
       "Earlier": [
         "Anterior"
@@ -4201,6 +4435,9 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta tu tráfico. ${ PASS_SHORT_APP_NAME } oculta tu identidad — **alias de «hide-my-email»** ilimitados y **alertas de la Dark Web** si tus datos se filtran alguna vez."
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mes)"
       ],
@@ -4225,6 +4462,9 @@
       ],
       "Account successfully updated": [
         "Cuenta actualizada"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Añade ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -4276,6 +4516,10 @@
       ],
       "Country code": [
         "Código de país"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
@@ -4331,6 +4575,9 @@
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
       ],
+      "Enter code": [
+        "Introduce el código"
+      ],
       "Enter the code from your authenticator app": [
         "Ingresa el código de la aplicación de autenticación."
       ],
@@ -4361,6 +4608,9 @@
       "for ${ price }": [
         "por ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Por solo ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "marca de Google Pay"
       ],
@@ -4372,6 +4622,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -4483,6 +4736,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
@@ -4728,6 +4984,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accede a ${ PASS_APP_NAME } de forma segura desde el terminal; ideal para scripts, automatización y flujos de trabajo de desarrollo."
@@ -5068,8 +5327,23 @@
       "Close preview": [
         "Cerrar vista previa"
       ],
+      "Conversations": [
+        "Conversaciones"
+      ],
       "Create Test Chats": [
         "Crear chats de prueba"
+      ],
+      "Export all chats (JSON)": [
+        "Exportar todos los chats (JSON)"
+      ],
+      "Export current conversation (JSON)": [
+        "Exportar conversación actual (JSON)"
+      ],
+      "Export unsynced only (JSON)": [
+        "Exportar solo no sincronizados (JSON)"
+      ],
+      "Generation errors": [
+        "Errores de generación"
       ],
       "IndexedDB available": [
         "IndexedDB disponible"
@@ -5077,23 +5351,65 @@
       "Last token": [
         "Último token"
       ],
+      "Local storage (IndexedDB)": [
+        "Almacenamiento local (IndexedDB)"
+      ],
+      "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
+        "Los mensajes rechazados por el backend (p. ej., límites) permanecen localmente en IndexedDB con un indicador dirty. Las exportaciones descifran el contenido del estado de Redux en memoria y etiquetan los mensajes no sincronizados con _dirty: true. Las claves de cifrado del espacio se eliminan."
+      ],
       "No": [
         "No"
+      ],
+      "Open a conversation to enable generation error testing.": [
+        "Abre una conversación para activar las pruebas de errores de generación."
       ],
       "Preview \"IndexedDB unavailable\" screen": [
         "Visualizar la pantalla 'IndexedDB no disponible'"
       ],
+      "Refresh": [
+        "Actualizar"
+      ],
       "Render time": [
         "Tiempo de renderizado"
       ],
+      "Spaces": [
+        "Espacios"
+      ],
       "Status": [
         "Estado"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ],
       "Test Renderer": [
         "Renderizador de prueba"
       ],
       "Tokens/sec": [
         "Tokens por segundo"
+      ],
+      "Trigger generation rejected": [
+        "Activar generación rechazada"
+      ],
+      "Trigger harmful content": [
+        "Activar contenido nocivo"
+      ],
+      "Trigger high demand": [
+        "Activar alta demanda"
+      ],
+      "Trigger stream disconnected": [
+        "Activar transmisión desconectada"
+      ],
+      "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
+        "Activa mensajes de error de generación con mensajes específicos del nivel. Tipo de usuario: ${ lumoUserType }"
+      ],
+      "Unsynced conversations": [
+        "Conversaciones no sincronizadas"
+      ],
+      "Unsynced messages": [
+        "Mensajes no sincronizados"
+      ],
+      "Unsynced spaces": [
+        "Espacios no sincronizados"
       ],
       "Yes": [
         "Sí"
@@ -5368,6 +5684,9 @@
       "99.95% SLA": [
         "SLA del 99,95 %"
       ],
+      "Access all countries": [
+        "Accede a todos los países"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -5382,6 +5701,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificar citas con ${ n } página de reservas",
+        "Planificar citas con ${ n } páginas de reservas"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -5509,6 +5835,9 @@
       ],
       "Multiple admin roles": [
         "Distintos roles de administración"
+      ],
+      "No streaming support": [
+        "Sin soporte para streaming"
       ],
       "Online document editor": [
         "Editor de documentos online"
@@ -5641,6 +5970,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda ilimitado"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
@@ -6022,6 +6354,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -7565,8 +7901,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia de IA al instante y un experto humano a tu disposición."
+      "Instant assistance with AI and human experts.": [
+        "Asistencia instantánea con IA y expertos humanos."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"

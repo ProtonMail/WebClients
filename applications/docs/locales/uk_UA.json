@@ -450,6 +450,9 @@
       "New document": [
         "Новий документ"
       ],
+      "New folder": [
+        "Нова тека"
+      ],
       "New message": [
         "Нове повідомлення"
       ],
@@ -4357,6 +4360,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
       ],
+      "Settings update failed": [
+        "Не вдалося оновити налаштування"
+      ],
+      "Settings updated": [
+        "Налаштування оновлено"
+      ],
       "Share via link settings": [
         "Налаштування посилання для спільного доступу"
       ],
@@ -4809,6 +4818,9 @@
       "Calendar": [
         "Календар"
       ],
+      "Calendars": [
+        "Календарі"
+      ],
       "Cancel download": [
         "Скасувати завантаження"
       ],
@@ -4877,6 +4889,9 @@
       ],
       "Email format": [
         "Формат повідомлень"
+      ],
+      "Emails": [
+        "Листи"
       ],
       "Emails (all messages)": [
         "Е-пошта (усі повідомлення)"
@@ -6436,17 +6451,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" успішно створено"
-      ],
       "\"${ name }\" deleted": [
         "\"${ name }\" видалено"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" видалено зі смітника остаточно"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" не вдалося створити"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" не вдалося видалити"
@@ -8170,6 +8179,9 @@
       ],
       "Collaborate on documents": [
         "Сумісна робота на документах"
+      ],
+      "Computers": [
+        "Комп'ютери"
       ],
       "Confirm downgrade": [
         "Підтвердити перехід"

@@ -1060,9 +1060,6 @@
       "Error reporting problem": [
         "Problem med feilrapportering"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Utløpstiden må være mellom 60 minutter og 1 år"
-      ],
       "Failed loading group members": [
         "Kunne ikke laste inn gruppemedlemmer"
       ],
@@ -1887,22 +1884,11 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Hver gang aliaset ditt mottar en e-post fra noen, opprettes det automatisk en ny kontakt."
       ],
-      "Expired ${ abs } hour ago": [
-        "Utløp for ${ abs } time siden",
-        "Utløp for ${ abs } timer siden"
-      ],
       "Expires in": [
         "Utløper om"
       ],
-      "Expires in ${ hours } hour": [
-        "Utløper om ${ hours } time",
-        "Utløper om ${ hours } timer"
-      ],
       "Expires in ${ remainingTime }": [
         "Utløper om ${ remainingTime }"
-      ],
-      "Expires in less than an hour": [
-        "Utløper om mindre enn en time"
       ],
       "Exporting your data...": [
         "Eksporterer dataene dine..."
@@ -3172,8 +3158,8 @@
       "Expired tokens (${ expired.length })": [
         "Utløpte tokener (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Utløper om (minutter)"
+      "Expires in": [
+        "Utløper om"
       ],
       "Expiry Date": [
         "Utløpsdato"
@@ -4144,6 +4130,12 @@
       ],
       "The file you are trying to import is empty": [
         "Filen du prøver å importere er tom"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Denne funksjonen støttes ikke i planen din. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Denne funksjonen støttes ikke i planen din. Kontakt administratoren din for å få tilgang."
       ],
       "Total files: ": [
         "Totalt antall filer: "

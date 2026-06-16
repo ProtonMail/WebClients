@@ -4485,6 +4485,9 @@
       "Invalid private key file": [
         "Fichier de clé privée invalide"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Le jeton de réinitialisation n'est pas valide. Veuillez actualiser la page et réessayer."
+      ],
       "Invalid VAT number": [
         "Numéro de TVA incorrect."
       ],
@@ -6670,6 +6673,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }",
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
+      ],
+      "All your files will be imported": [
+        "Tous vos fichiers seront importés."
       ],
       "Allocated": [
         "Alloué"
@@ -9453,6 +9459,9 @@
       "Calendar": [
         "Calendrier"
       ],
+      "Calendars": [
+        "Calendriers"
+      ],
       "Card details": [
         "Informations de carte"
       ],
@@ -9604,6 +9613,9 @@
       "Don't show this again": [
         "Ne plus afficher"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g. example.com": [
         "ex. : exemple.fr"
       ],
@@ -9627,6 +9639,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail avec le domaine @votre-entreprise.com"
+      ],
+      "Emails": [
+        "Messages"
       ],
       "Emails (all messages)": [
         "Messages (tous les messages)"
@@ -17737,8 +17752,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclut un e-mail professionnel en @votre-entreprise.fr, de l'espace de stockage distant permettant l'édition collaborative de documents, la planification et les vidéoconférences, la gestion des mots de passe, un ${ VPN_SHORT_APP_NAME } sécurisé, et bien plus."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Une assistance IA immédiate, avec un expert à votre disposition !"
+      "Instant assistance with AI and human experts.": [
+        "Assistance immédiate grâce à l'IA et à des experts humains."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Les membres qui n'utilisent pas l'A2F recevront un e-mail leur demandant de l'activer dès que possible. Les utilisateurs avec authentification unique ne recevront pas d'e-mail de rappel."
