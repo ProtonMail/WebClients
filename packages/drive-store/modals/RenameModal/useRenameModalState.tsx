@@ -59,8 +59,8 @@ export const useRenameModalState = ({
     useEffect(() => {
         const fetchNode = async () => {
             const tmpNode = await drive.getNode(generateNodeUid(volumeId, linkId));
-            if (tmpNode?.ok) {
-                setNode(tmpNode.value);
+            if (tmpNode) {
+                setNode(tmpNode);
             } else {
                 // TODO: handle the DegradedNode case, we might still have the data we need to rename
                 createNotification({ type: 'error', text: c('Notification').jt`Cannot load file or folder info` });

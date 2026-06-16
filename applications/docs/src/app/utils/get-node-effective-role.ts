@@ -1,5 +1,5 @@
 // Copied from Drive application
-import { type DegradedNode, MemberRole, type NodeEntity, type ProtonDriveClient } from '@proton/drive'
+import { MemberRole, type NodeEntity, type ProtonDriveClient } from '@proton/drive'
 
 const MemberHierarchy = {
   [MemberRole.Inherited]: 0,
@@ -15,7 +15,7 @@ export type EffectiveRole = Exclude<MemberRole, MemberRole.Inherited>
 
 export async function getNodeEffectiveRole(
   drive: Drive,
-  node: NodeEntity | DegradedNode,
+  node: NodeEntity,
   role: MemberRole = MemberRole.Inherited,
 ): Promise<EffectiveRole> {
   role = getHigherRole(node.directRole, role)
@@ -25,8 +25,7 @@ export async function getNodeEffectiveRole(
   }
 
   if (node.parentUid) {
-    const parent = await drive.getNode(node.parentUid)
-    const parentNode = parent.ok ? parent.value : parent.error
+    const parentNode = await drive.getNode(node.parentUid)
     role = await getNodeEffectiveRole(drive, parentNode, role)
   }
 
