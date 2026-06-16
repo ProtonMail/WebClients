@@ -7,19 +7,10 @@ import { driveMetrics } from '@proton/drive/modules/metrics';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
-import { defaultSharedOnCellConfig } from '../driveExplorerCells/SharedOnCell';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 
 export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
-    const {
-        isLoadingNodes,
-        setLoadingNodes,
-        setSharedWithMeItem,
-        cleanupStaleItems,
-        setSorting,
-        sortField,
-        direction,
-    } = useSharedWithMeStore.getState();
+    const { isLoadingNodes, setLoadingNodes, setSharedWithMeItem, cleanupStaleItems } = useSharedWithMeStore.getState();
     if (isLoadingNodes) {
         return;
     }
@@ -155,14 +146,6 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
             getNotificationsManager().createNotification({
                 type: 'error',
                 text: c('Error').t`We were not able to load some items shared with you`,
-            });
-        }
-
-        if (defaultSharedOnCellConfig.sortConfig) {
-            setSorting({
-                sortField,
-                direction,
-                sortConfig: defaultSharedOnCellConfig.sortConfig,
             });
         }
 

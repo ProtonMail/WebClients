@@ -8,7 +8,7 @@ import type { SortConfig } from '../../modules/sorting';
 import { SortField, sortItems } from '../../modules/sorting';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
 import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
-import { getTrashSortValue } from './trash.sorting';
+import { defaultTrashSortConfig, getTrashSortValue } from './trash.sorting';
 
 export interface TrashItem {
     uid: string;
@@ -54,7 +54,7 @@ interface TrashStore {
 
     sortField: SortField;
     direction: SORT_DIRECTION;
-    sortConfig: SortConfig | undefined;
+    sortConfig: SortConfig;
 
     isLoading: boolean;
     hasEverLoaded: boolean;
@@ -80,7 +80,7 @@ export const useTrashStore = create<TrashStore>((set, get) => {
 
         sortField: SortField.name,
         direction: SORT_DIRECTION.ASC,
-        sortConfig: undefined,
+        sortConfig: defaultTrashSortConfig,
 
         isLoading: false,
         hasEverLoaded: false,
@@ -91,9 +91,14 @@ export const useTrashStore = create<TrashStore>((set, get) => {
             set((state) => {
                 const items = new Map(state.items);
                 items.set(item.uid, item);
-                const sortedItemUids = new Set(state.sortedItemUids);
-                sortedItemUids.add(item.uid);
-                return { items, sortedItemUids };
+                const sortedUids = sortItems(
+                    Array.from(items.values()),
+                    state.sortConfig,
+                    state.direction,
+                    getTrashSortValue,
+                    (i) => i.uid
+                );
+                return { items, sortedItemUids: new Set(sortedUids) };
             }),
 
         updateItem: (uid: string, updates: Partial<TrashItem>) =>
@@ -139,6 +144,6 @@ export const useTrashStore = create<TrashStore>((set, get) => {
             set({ sortField, direction, sortConfig, sortedItemUids: new Set(sortedUids) });
         },
 
-        clearAll: () => set({ items: new Map(), sortedItemUids: new Set(), sortConfig: undefined }),
+        clearAll: () => set({ items: new Map(), sortedItemUids: new Set(), sortConfig: defaultTrashSortConfig }),
     };
 });

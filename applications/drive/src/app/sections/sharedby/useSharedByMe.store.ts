@@ -7,7 +7,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortConfig } from '../../modules/sorting';
 import { SortField, sortItems } from '../../modules/sorting';
-import { getSharedByMeSortValue } from './sharedByMe.sorting';
+import { defaultSharedByMeSortConfig, getSharedByMeSortValue } from './sharedByMe.sorting';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
 
 export type SharedByMeItem = {
@@ -35,7 +35,7 @@ interface SharedByMeStore {
 
     sortField: SortField;
     direction: SORT_DIRECTION;
-    sortConfig: SortConfig | undefined;
+    sortConfig: SortConfig;
 
     isLoading: boolean;
     hasEverLoaded: boolean;
@@ -69,7 +69,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
 
             sortField: SortField.name,
             direction: SORT_DIRECTION.ASC,
-            sortConfig: undefined,
+            sortConfig: defaultSharedByMeSortConfig,
 
             isLoading: false,
             hasEverLoaded: false,
@@ -80,14 +80,18 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
 
             setSharedByMeItem: (item: SharedByMeItem) => {
                 set((state) => {
-                    const newSortedItemUids = new Set(state.sortedItemUids);
-                    newSortedItemUids.add(item.nodeUid);
-
                     const newSharedByMeItems = new Map(state.sharedByMeItems);
                     newSharedByMeItems.set(item.nodeUid, item);
+                    const sortedUids = sortItems(
+                        Array.from(newSharedByMeItems.values()),
+                        state.sortConfig,
+                        state.direction,
+                        getSharedByMeSortValue,
+                        (i) => i.nodeUid
+                    );
                     return {
                         sharedByMeItems: newSharedByMeItems,
-                        sortedItemUids: newSortedItemUids,
+                        sortedItemUids: new Set(sortedUids),
                     };
                 });
             },
@@ -131,7 +135,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                 set({
                     sharedByMeItems: new Map(),
                     sortedItemUids: new Set(),
-                    sortConfig: undefined,
+                    sortConfig: defaultSharedByMeSortConfig,
                 });
             },
 
