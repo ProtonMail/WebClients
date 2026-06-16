@@ -58,6 +58,7 @@ const createAsyncIterable = <T>(items: T[]) =>
 describe('useTrashNodes', () => {
     const setItem = jest.fn();
     const setLoading = jest.fn();
+    const setSorting = jest.fn();
     const iterateTrashedNodes = jest.fn();
     const iterateTrashedPhotoNodes = jest.fn();
     const handleError = jest.fn();
@@ -69,7 +70,15 @@ describe('useTrashNodes', () => {
         mockUseTrashStore.mockImplementation((selector: (state: any) => any) =>
             selector({ setItem, items: new Map(), isLoading: false })
         );
-        mockUseTrashStore.getState.mockReturnValue({ setLoading, isLoading: false, setItem });
+        mockUseTrashStore.getState.mockReturnValue({
+            setLoading,
+            isLoading: false,
+            setItem,
+            setSorting,
+            sortConfig: undefined,
+            sortField: 'name',
+            direction: 'asc',
+        });
 
         mockGetDrive.mockReturnValue({
             iterateTrashedNodes,
