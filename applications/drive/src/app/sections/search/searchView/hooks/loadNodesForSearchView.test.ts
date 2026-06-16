@@ -1,10 +1,10 @@
 import { when } from 'jest-when';
 
-import type { MaybeNode, ProtonDriveClient } from '@proton/drive/index';
+import type { ProtonDriveClient } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
 import { type EffectiveRole, getFormattedNodeLocation, getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
-import { createMockDegradedNode, createMockNodeEntity } from '@proton/drive/modules/testing';
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { useSearchViewStore } from '../../searchView/store';
 import { loadNodesForSearchView } from './loadNodesForSearchView';
@@ -76,10 +76,9 @@ describe('loadNodesForSearchView', () => {
 
     it('should successfully load nodes and add them to the store', async () => {
         const mockNode = createMockNodeEntity({ uid: 'node-1' });
-        const mockMaybeNode = { ok: true, value: mockNode };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockMaybeNode;
+            yield mockNode;
         });
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
@@ -88,11 +87,11 @@ describe('loadNodesForSearchView', () => {
         expect(mockSetSearchResultItems).toHaveBeenCalledWith([
             expect.objectContaining({
                 nodeUid: 'node-1',
-                name: mockNode.name,
+                name: 'mock-file.txt',
                 type: mockNode.type,
                 role: 'viewer',
                 mediaType: mockNode.mediaType,
-                activeRevisionUid: mockNode.activeRevision?.uid,
+                activeRevisionUid: expect.any(String),
                 size: mockNode.totalStorageSize,
                 modificationTime: mockNode.modificationTime,
                 location: '/some/location',
@@ -106,10 +105,9 @@ describe('loadNodesForSearchView', () => {
 
     it('should filter out nodes that are trashed', async () => {
         const trashedNode = createMockNodeEntity({ uid: 'node-1', trashTime: new Date() });
-        const mockMaybeNode = { ok: true, value: trashedNode };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockMaybeNode;
+            yield trashedNode;
         });
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
@@ -122,16 +120,14 @@ describe('loadNodesForSearchView', () => {
     it('should filter out nodes whose parent is trashed', async () => {
         const childNode = createMockNodeEntity({ uid: 'child-1', parentUid: 'parent-1' });
         const parentNode = createMockNodeEntity({ uid: 'parent-1', trashTime: new Date() });
-        const mockChildMaybeNode = { ok: true, value: childNode };
-        const mockParentMaybeNode = { ok: true, value: parentNode };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockChildMaybeNode;
+            yield childNode;
         });
 
         when(mockDrive.getNode as jest.Mock)
             .calledWith('parent-1')
-            .mockResolvedValue(mockParentMaybeNode);
+            .mockResolvedValue(parentNode);
 
         await loadNodesForSearchView(['child-1'], mockAbortSignal);
 
@@ -145,20 +141,16 @@ describe('loadNodesForSearchView', () => {
         const parentNode = createMockNodeEntity({ uid: 'parent-1', parentUid: 'grandparent-1' });
         const grandparentNode = createMockNodeEntity({ uid: 'grandparent-1', trashTime: new Date() });
 
-        const mockChildMaybeNode = { ok: true, value: childNode };
-        const mockParentMaybeNode = { ok: true, value: parentNode };
-        const mockGrandparentMaybeNode = { ok: true, value: grandparentNode };
-
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockChildMaybeNode;
+            yield childNode;
         });
 
         when(mockDrive.getNode as jest.Mock)
             .calledWith('parent-1')
-            .mockResolvedValue(mockParentMaybeNode);
+            .mockResolvedValue(parentNode);
         when(mockDrive.getNode as jest.Mock)
             .calledWith('grandparent-1')
-            .mockResolvedValue(mockGrandparentMaybeNode);
+            .mockResolvedValue(grandparentNode);
 
         await loadNodesForSearchView(['child-1'], mockAbortSignal);
 
@@ -168,10 +160,7 @@ describe('loadNodesForSearchView', () => {
     });
 
     it('should handle missing nodes and skip them', async () => {
-        const missingNode = {
-            ok: false,
-            error: { missingUid: 'missing-1' },
-        };
+        const missingNode = { missingUid: 'missing-1' };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
             yield missingNode;
@@ -188,14 +177,11 @@ describe('loadNodesForSearchView', () => {
     it('should handle multiple nodes including some missing and some trashed', async () => {
         const validNode = createMockNodeEntity({ uid: 'node-1' });
         const trashedNode = createMockNodeEntity({ uid: 'node-2', trashTime: new Date() });
-        const missingNode = {
-            ok: false,
-            error: { missingUid: 'node-3' },
-        };
+        const missingNode = { missingUid: 'node-3' };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield { ok: true, value: validNode };
-            yield { ok: true, value: trashedNode };
+            yield validNode;
+            yield trashedNode;
             yield missingNode;
         });
 
@@ -226,20 +212,16 @@ describe('loadNodesForSearchView', () => {
     });
 
     it('should handle nodes with signature issues', async () => {
-        const mockNode = createMockDegradedNode({ uid: 'node-1' });
-        const mockMaybeNode = {
-            ok: false,
-            error: {
-                ...mockNode,
-                keyAuthor: {
-                    ok: false,
-                    error: { error: 'Unverified author error' },
-                },
+        const mockNode = createMockNodeEntity({
+            uid: 'node-1',
+            keyAuthor: {
+                ok: false,
+                error: { claimedAuthor: 'author@test.com', error: 'Unverified author error' },
             },
-        } satisfies MaybeNode;
+        });
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockMaybeNode;
+            yield mockNode;
         });
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
@@ -254,10 +236,9 @@ describe('loadNodesForSearchView', () => {
 
     it('should use modificationTime or fallback to creationTime', async () => {
         const mockNode = createMockNodeEntity({ uid: 'node-1', modificationTime: undefined });
-        const mockMaybeNode = { ok: true, value: mockNode };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockMaybeNode;
+            yield mockNode;
         });
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
@@ -274,8 +255,8 @@ describe('loadNodesForSearchView', () => {
         const mockNode2 = createMockNodeEntity({ uid: 'node-2' });
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield { ok: true, value: mockNode1 };
-            yield { ok: true, value: mockNode2 };
+            yield mockNode1;
+            yield mockNode2;
         });
 
         await loadNodesForSearchView(['node-1', 'node-2'], mockAbortSignal);
@@ -289,14 +270,11 @@ describe('loadNodesForSearchView', () => {
     it('should not include trashed or missing nodes in cleanup', async () => {
         const validNode = createMockNodeEntity({ uid: 'node-1' });
         const trashedNode = createMockNodeEntity({ uid: 'node-2', trashTime: new Date() });
-        const missingNode = {
-            ok: false,
-            error: { missingUid: 'node-3' },
-        };
+        const missingNode = { missingUid: 'node-3' };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield { ok: true, value: validNode };
-            yield { ok: true, value: trashedNode };
+            yield validNode;
+            yield trashedNode;
             yield missingNode;
         });
 
@@ -325,10 +303,9 @@ describe('loadNodesForSearchView', () => {
 
     it('should include admin role when node has admin role', async () => {
         const mockNode = createMockNodeEntity({ uid: 'node-1' });
-        const mockMaybeNode = { ok: true, value: mockNode };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockMaybeNode;
+            yield mockNode;
         });
 
         mockedGetNodeEffectiveRole.mockResolvedValue('admin' as EffectiveRole);
@@ -345,10 +322,9 @@ describe('loadNodesForSearchView', () => {
 
     it('should include editor role when node has editor role', async () => {
         const mockNode = createMockNodeEntity({ uid: 'node-1' });
-        const mockMaybeNode = { ok: true, value: mockNode };
 
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockMaybeNode;
+            yield mockNode;
         });
 
         mockedGetNodeEffectiveRole.mockResolvedValue('editor' as EffectiveRole);

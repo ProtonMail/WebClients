@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom-v5-compat';
 import { useActiveBreakpoint, useAppTitle, useTheme } from '@proton/components';
 import { NodeType, useDrive } from '@proton/drive';
 import { logging } from '@proton/drive/modules/logging';
+import { getNodeName } from '@proton/drive/modules/nodes';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import config from '../../config';
@@ -35,7 +36,7 @@ const PublicPageContent = () => {
     const { handleReportAbuse, modals } = usePublicActions();
     const { viewportWidth } = useActiveBreakpoint();
 
-    useAppTitle(rootNode?.name);
+    useAppTitle(rootNode ? getNodeName(rootNode) : undefined);
 
     useEffect(() => {
         if (!drive) {

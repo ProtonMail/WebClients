@@ -12,14 +12,11 @@ const mockedGetDrive = jest.mocked(getDrive);
 const mockedSendErrorReport = jest.mocked(sendErrorReport);
 
 const makeNode = (overrides = {}) => ({
-    ok: true as const,
-    value: {
-        uid: 'node-1',
-        name: 'Folder',
-        type: NodeType.Folder,
-        isShared: false,
-        ...overrides,
-    },
+    uid: 'node-1',
+    name: 'Folder',
+    type: NodeType.Folder,
+    isShared: false,
+    ...overrides,
 });
 
 async function* makeIterator(nodes: ReturnType<typeof makeNode>[]) {

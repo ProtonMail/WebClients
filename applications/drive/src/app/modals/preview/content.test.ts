@@ -1,4 +1,4 @@
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import { isHEICSupported } from '@proton/shared/lib/helpers/mimetype';
@@ -23,7 +23,7 @@ beforeEach(() => {
 
 describe('getContentPreviewMethod', () => {
     const baseDate = new Date();
-    const baseNodeProps = {
+    const baseNodeProps: NodeEntity = {
         uid: 'test-uid',
         parentUid: 'parent-uid',
         directRole: MemberRole.Viewer,
@@ -37,36 +37,33 @@ describe('getContentPreviewMethod', () => {
         folder: undefined,
         treeEventScopeId: 'test-scope',
         activeRevision: {
-            uid: 'revision-uid',
-            state: RevisionState.Active,
-            creationTime: baseDate,
-            storageSize: 100,
-            claimedSize: 100,
-            claimedModificationTime: baseDate,
-            claimedDigests: {
-                sha1: 'abc123',
-                sha1Verified: false,
+            ok: true,
+            value: {
+                uid: 'revision-uid',
+                state: RevisionState.Active,
+                creationTime: baseDate,
+                storageSize: 100,
+                claimedSize: 100,
+                claimedModificationTime: baseDate,
+                claimedDigests: {
+                    sha1: 'abc123',
+                    sha1Verified: false,
+                },
+                claimedAdditionalMetadata: {},
+                contentAuthor: { ok: true as const, value: 'content@proton.me' },
             },
-            claimedAdditionalMetadata: {},
-            contentAuthor: { ok: true as const, value: 'content@proton.me' },
         },
-    };
-
-    const baseValidNodeProps = {
-        ...baseNodeProps,
-        name: 'test-name',
+        name: { ok: true, value: 'test-name' },
         keyAuthor: { ok: true as const, value: 'test@proton.me' },
         nameAuthor: { ok: true as const, value: 'test@proton.me' },
         ownedBy: {},
+        mediaType: 'text/plain',
     };
 
     it('should return Streaming for video', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'video/mp4',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'video/mp4',
         };
 
         const result = getContentPreviewMethod(node);
@@ -77,12 +74,9 @@ describe('getContentPreviewMethod', () => {
     it('should return Thumbnail for video the browser cannot decode (e.g. AVI)', () => {
         mockedCanHtmlVideoPlay.mockReturnValue(false);
 
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'video/x-msvideo',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'video/x-msvideo',
         };
 
         const result = getContentPreviewMethod(node);
@@ -91,12 +85,9 @@ describe('getContentPreviewMethod', () => {
     });
 
     it('should return Buffer for image/jpeg', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'image/jpeg',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'image/jpeg',
         };
 
         const result = getContentPreviewMethod(node);
@@ -105,12 +96,9 @@ describe('getContentPreviewMethod', () => {
     });
 
     it('should return Buffer for text/plain', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'text/plain',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'text/plain',
         };
 
         const result = getContentPreviewMethod(node);
@@ -119,12 +107,9 @@ describe('getContentPreviewMethod', () => {
     });
 
     it('should return Buffer for IWAD', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'application/x-doom',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'application/x-doom',
         };
 
         const result = getContentPreviewMethod(node);
@@ -133,12 +118,9 @@ describe('getContentPreviewMethod', () => {
     });
 
     it('should return Thumbnail for application/octet-stream', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'application/octet-stream',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'application/octet-stream',
         };
 
         const result = getContentPreviewMethod(node);
@@ -147,12 +129,9 @@ describe('getContentPreviewMethod', () => {
     });
 
     it('should return Thumbnail for unsupported mimeType', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'application/x-unknown',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'application/x-unknown',
         };
 
         const result = getContentPreviewMethod(node);
@@ -163,12 +142,9 @@ describe('getContentPreviewMethod', () => {
     it('should return Buffer for image/heic on Safari 17+', () => {
         mockedIsHEICSupported.mockReturnValue(true);
 
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'image/heic',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'image/heic',
         };
 
         const result = getContentPreviewMethod(node);
@@ -179,12 +155,9 @@ describe('getContentPreviewMethod', () => {
     it('should return Thumbnail for image/heic on non-Safari browsers', () => {
         mockedIsHEICSupported.mockReturnValue(false);
 
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                mediaType: 'image/heic',
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: 'image/heic',
         };
 
         const result = getContentPreviewMethod(node);

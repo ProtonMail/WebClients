@@ -4,7 +4,6 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 import { MemberRole, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
@@ -112,7 +111,7 @@ export const DirectShareActions = ({
             }
 
             const drive = getDrivePerNodeType(singleItem.type);
-            const { node } = await drive.getNode(singleItem.nodeUid).then(getNodeEntity);
+            const node = await drive.getNode(singleItem.nodeUid);
             const role = await getNodeEffectiveRole(node, drive);
             setHasAdminRole(role === MemberRole.Admin);
         }

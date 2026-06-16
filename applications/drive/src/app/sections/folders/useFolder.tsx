@@ -67,7 +67,7 @@ export function useFolder() {
                 const folderItem = await mapNodeToFolderViewItem(maybeNode, folderShareId, drive);
                 const isDeviceRoot = !node.parentUid && !!getByRootFolderUid(folderNodeUid);
                 const isDeviceFolder = isDeviceRoot || (folderItem.rootUid && !!getByRootFolderUid(folderItem.rootUid));
-                const role = await getNodeEffectiveRole(node, drive);
+                const role = await getNodeEffectiveRole(maybeNode, drive);
                 const canEdit = role !== MemberRole.Viewer && !isDeviceRoot;
                 const canTrash = role !== MemberRole.Viewer;
                 const isRoot = !node.parentUid;
@@ -128,7 +128,7 @@ export function useFolder() {
                                 return;
                             }
 
-                            const item = await mapNodeToFolderViewItem(maybeNode, folderShareId, drive, node);
+                            const item = await mapNodeToFolderViewItem(maybeNode, folderShareId, drive);
                             itemsBatch.push(item);
                         } catch (e) {
                             handleSdkError(e, {

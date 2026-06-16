@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useNotifications } from '@proton/components';
-import { type NodeEntity, NodeType, getDrive } from '@proton/drive';
+import { NodeType, getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { type NormalizedNode, getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
@@ -53,7 +53,7 @@ export const useRenameModalState = ({
     ...modalProps
 }: UseRenameModalProps): RenameModalViewProps => {
     const { createNotification } = useNotifications();
-    const [node, setNode] = useState<null | NodeEntity>(null);
+    const [node, setNode] = useState<null | NormalizedNode>(null);
     // The initial name for the rename modal. this can be different from the node name
     // in case of node errors (e.g. decryption errors).
     const [initialName, setInitialName] = useState<null | string>(null);
@@ -61,13 +61,10 @@ export const useRenameModalState = ({
     useEffect(() => {
         const fetchNode = async () => {
             try {
-                const maybeNode = await drive.getNode(nodeUid);
-                const nodeEntity = getNodeEntity(maybeNode);
+                const nodeEntityRaw = await drive.getNode(nodeUid);
+                const nodeEntity = getNodeEntity(nodeEntityRaw);
 
-                const hasNameDecryptionError =
-                    maybeNode.ok === false &&
-                    maybeNode.error.name.ok === false &&
-                    maybeNode.error.name.error instanceof Error;
+                const hasNameDecryptionError = !nodeEntityRaw.name.ok && nodeEntityRaw.name.error instanceof Error;
 
                 let initialName = nodeEntity.node.name;
                 setNode(nodeEntity.node);

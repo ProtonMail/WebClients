@@ -1,17 +1,17 @@
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 import { parseAdditionalMetadata } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import type { PhotoItem } from '../../usePhotos.store';
 
-export const mapNodeToPhotoItem = (maybeNode: MaybeNode): PhotoItem | null => {
-    const { node, photoAttributes } = getNodeEntity(maybeNode);
+export const mapNodeToPhotoItem = (nodeEntityRaw: NodeEntity): PhotoItem | null => {
+    const { node, photoAttributes } = getNodeEntity(nodeEntityRaw);
     if (!photoAttributes) {
         return null;
     }
 
-    const signatureResult = getSignatureIssues(maybeNode);
+    const signatureResult = getSignatureIssues(nodeEntityRaw);
     const parsedClaimedAdditionalMetadata = node.activeRevision?.claimedAdditionalMetadata
         ? parseAdditionalMetadata(node.activeRevision.claimedAdditionalMetadata)
         : undefined;

@@ -1,4 +1,4 @@
-import type { MaybeNode, NodeEntity, PhotoNode } from '@proton/drive';
+import type { NodeEntity, PhotoNode } from '@proton/drive';
 import { NodeType, getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
@@ -20,8 +20,8 @@ const isPhotoNode = (node: NodeEntity): node is PhotoNode => {
     return [NodeType.Photo, NodeType.Album].includes(node.type);
 };
 
-const nodeToAlbumItem = (maybeNode: MaybeNode, item: { isShared?: boolean }): AlbumItem => {
-    const { node, albumAttributes } = getNodeEntity(maybeNode);
+const nodeToAlbumItem = (nodeEntity: NodeEntity, item: { isShared?: boolean }): AlbumItem => {
+    const { node, albumAttributes } = getNodeEntity(nodeEntity);
     if (!albumAttributes) {
         throw new Error('nodeToAlbumItem called on non-album node');
     }
@@ -36,7 +36,7 @@ const nodeToAlbumItem = (maybeNode: MaybeNode, item: { isShared?: boolean }): Al
         isShared: Boolean(item.isShared),
         directRole: node.directRole,
         isOwner: !Boolean(node.membership),
-        hasSignatureIssues: !getSignatureIssues(maybeNode).ok,
+        hasSignatureIssues: !getSignatureIssues(nodeEntity).ok,
         ownedBy: node.ownedBy.email,
         treeEventScopeId: node.treeEventScopeId,
         deprecatedShareId: node.deprecatedShareId,
@@ -59,8 +59,8 @@ const onCreatedOrRestoredNodes =
                 if (!isMyPhotos && item.parentUid !== undefined) {
                     continue;
                 }
-                const maybeNode = await driveClient.getNode(item.uid);
-                const { node, photoAttributes, albumAttributes } = getNodeEntity(maybeNode);
+                const node = await driveClient.getNode(item.uid);
+                const { photoAttributes, albumAttributes } = getNodeEntity(node);
                 if (isPhotoNode(node) && !photoAttributes && !albumAttributes) {
                     logger.warn(
                         `[subscribeToPhotosEvents] A photo/album element doesn't have photo/album attributes: ${JSON.stringify(item)}`
@@ -90,7 +90,7 @@ const onCreatedOrRestoredNodes =
                         }
                     }
                 } else if (node.type === NodeType.Album && albumAttributes) {
-                    useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(maybeNode, item));
+                    useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(node, item));
                 }
             } catch (e) {
                 handleSdkError(e);
@@ -125,8 +125,8 @@ const onUpdatedNodes =
                     }
                     continue;
                 }
-                const maybeNode = await driveClient.getNode(item.uid);
-                const { node, photoAttributes, albumAttributes } = getNodeEntity(maybeNode);
+                const node = await driveClient.getNode(item.uid);
+                const { photoAttributes, albumAttributes } = getNodeEntity(node);
                 if (isPhotoNode(node) && !photoAttributes && !albumAttributes) {
                     logger.warn(
                         `[subscribeToPhotosEvents] A photo/album element doesn't have photo/album attributes: ${JSON.stringify(item)}`
@@ -141,7 +141,7 @@ const onUpdatedNodes =
                                 .addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
                         } else {
                             const existing = usePhotosStore.getState().getPhotoItem(node.uid);
-                            const mapped = mapNodeToPhotoItem(maybeNode);
+                            const mapped = mapNodeToPhotoItem(node);
                             usePhotosStore.getState().setPhotoItem({
                                 nodeUid: node.uid,
                                 captureTime: photoAttributes.captureTime,
@@ -161,7 +161,7 @@ const onUpdatedNodes =
                         }
                     }
                 } else if (node.type === NodeType.Album && albumAttributes) {
-                    useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(maybeNode, item));
+                    useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(node, item));
                     if (!isMyPhotos || isCurrentAlbum) {
                         await loadCurrentAlbum(item.uid);
                     }
@@ -189,10 +189,10 @@ const onDeletedOrTrashedNodes = async (event: { uids: string[] }) => {
 const onInvitationAccepted = async (event: { uids: string[] }, driveClient: BusDriverClient) => {
     for (const uid of event.uids) {
         try {
-            const maybeNode = await driveClient.getNode(uid);
-            const { node, albumAttributes } = getNodeEntity(maybeNode);
+            const node = await driveClient.getNode(uid);
+            const { albumAttributes } = getNodeEntity(node);
             if (node.type === NodeType.Album && albumAttributes) {
-                useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(maybeNode, { isShared: true }));
+                useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(node, { isShared: true }));
             }
         } catch (e) {
             handleSdkError(e);
@@ -202,7 +202,7 @@ const onInvitationAccepted = async (event: { uids: string[] }, driveClient: BusD
 
 export const subscribeToPhotosEvents = async () => {
     const rootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
-    const photosRootNodeUid = rootFolder.ok ? rootFolder.value.uid : undefined;
+    const photosRootNodeUid = rootFolder.uid;
 
     const createdOrRestoredHandler = onCreatedOrRestoredNodes(photosRootNodeUid);
     const unsubCreated = getBusDriver().subscribe(BusDriverEventName.CREATED_NODES, createdOrRestoredHandler);

@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 import type { NodeEntity, NodeType } from '@proton/drive';
+import type { NormalizedNode } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { BusDriverClient } from '@proton/drive/modules/busDriver';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
@@ -26,12 +27,13 @@ export interface TrashItem {
 }
 
 export const createTrashItem = async (
-    node: NodeEntity,
+    rawNode: NodeEntity,
+    node: NormalizedNode,
     location: string,
     client: BusDriverClient,
     haveSignatureIssues?: boolean
 ): Promise<TrashItem> => {
-    const rootNode = await getRootNode(node, client);
+    const rootNode = await getRootNode(rawNode, client);
     return {
         uid: node.uid,
         name: node.name,
@@ -44,7 +46,7 @@ export const createTrashItem = async (
         rootShareId: rootNode.deprecatedShareId,
         haveSignatureIssues,
         location,
-        size: getNodeStorageSize(node),
+        size: getNodeStorageSize(rawNode),
     };
 };
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
-import type { Author, MaybeNode, ProtonDriveClient, Revision } from '@proton/drive';
+import type { Author, NodeEntity, ProtonDriveClient, Revision } from '@proton/drive';
 import { MemberRole, NodeType, getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getFormattedNodeLocation, getNodeName } from '@proton/drive/modules/nodes';
@@ -74,64 +74,50 @@ export function useFileDetailsModalState({
                 const node = await drive.getNode(nodeUid);
                 setTitle(getTitle(node));
 
-                const fileType = node.ok ? node.value.type : node.error.type;
+                const activeRevision = revision ?? (node.activeRevision?.ok ? node.activeRevision.value : undefined);
                 const location = await getFormattedNodeLocation(drive, node);
-                const nodeEntity = node.ok ? node.value : node.error;
-                let activeRevision;
-
-                if (revision) {
-                    activeRevision = revision;
-                } else {
-                    // eslint-disable-next-line no-nested-ternary
-                    activeRevision = node.ok
-                        ? node.value.activeRevision
-                        : node.error.activeRevision?.ok
-                          ? node.error.activeRevision.value
-                          : undefined;
-                }
 
                 const numberOfDownloads =
-                    nodeEntity.directRole === MemberRole.Admin ? await getNumberOfDownloads(drive, nodeUid) : undefined;
+                    node.directRole === MemberRole.Admin ? await getNumberOfDownloads(drive, nodeUid) : undefined;
 
                 setDetails({
-                    uid: nodeEntity.uid,
+                    uid: node.uid,
                     hasDecryptionError: hasDecryptionError(node),
                     authorshipStatus: getAuthorshipStatus(node),
                     name: getNodeName(node),
                     location,
                     safeEntityInJson: JSON.stringify({
-                        ok: node.ok,
-                        uid: nodeEntity.uid,
-                        parentUid: nodeEntity.parentUid,
-                        keyAuthor: nodeEntity.keyAuthor,
-                        nameAuthor: nodeEntity.nameAuthor,
-                        directRole: nodeEntity.directRole,
-                        type: nodeEntity.type,
-                        mediaType: nodeEntity.mediaType,
-                        isShared: nodeEntity.isShared,
-                        creationTime: nodeEntity.creationTime,
-                        totalStorageSize: nodeEntity.totalStorageSize,
+                        uid: node.uid,
+                        parentUid: node.parentUid,
+                        keyAuthor: node.keyAuthor,
+                        nameAuthor: node.nameAuthor,
+                        directRole: node.directRole,
+                        type: node.type,
+                        mediaType: node.mediaType,
+                        isShared: node.isShared,
+                        creationTime: node.creationTime,
+                        totalStorageSize: node.totalStorageSize,
                         activeRevision: activeRevision && {
                             uid: activeRevision.uid,
                             contentAuthor: activeRevision.contentAuthor,
                             storageSize: activeRevision.storageSize,
                         },
-                        errors: !node.ok ? node.error.errors : undefined,
+                        errors: node.errors,
                     }),
                     fullEntityInJson: JSON.stringify(node),
-                    createdBy: getAuthorTitle(nodeEntity.keyAuthor),
+                    createdBy: getAuthorTitle(node.keyAuthor),
                     lastUploadedBy: activeRevision?.contentAuthor
                         ? getAuthorTitle(activeRevision.contentAuthor)
                         : undefined,
-                    uploadedTime: nodeEntity.creationTime,
+                    uploadedTime: node.creationTime,
                     claimedModifiedTime: activeRevision?.claimedModificationTime,
-                    isShared: nodeEntity.directRole === MemberRole.Admin ? nodeEntity.isShared : undefined,
+                    isShared: node.directRole === MemberRole.Admin ? node.isShared : undefined,
                     numberOfDownloads,
                     file:
-                        fileType === NodeType.File
+                        node.type === NodeType.File
                             ? {
                                   descriptiveMediaType: getDescriptiveMediaType(node),
-                                  mediaType: nodeEntity.mediaType,
+                                  mediaType: node.mediaType,
                                   storageSize: activeRevision?.storageSize,
                                   claimedSize: activeRevision?.claimedSize,
                                   claimedSha1: activeRevision?.claimedDigests?.sha1,
@@ -157,19 +143,18 @@ export function useFileDetailsModalState({
     };
 }
 
-function getTitle(node?: MaybeNode): string {
+function getTitle(node?: NodeEntity): string {
     if (node === undefined) {
         return c('Title').t`Item details`;
     }
 
-    const type = node.ok ? node.value.type : node.error.type;
-    if (type === NodeType.File) {
+    if (node.type === NodeType.File) {
         return c('Title').t`File details`;
     }
-    if (type === NodeType.Folder) {
+    if (node.type === NodeType.Folder) {
         return c('Title').t`Folder details`;
     }
-    if (type === NodeType.Album) {
+    if (node.type === NodeType.Album) {
         return c('Title').t`Album details`;
     }
     return c('Title').t`Item details`;
@@ -188,23 +173,16 @@ function getAuthorTitle(author: Author): string {
     return c('Title').t`Unknown user`;
 }
 
-function hasDecryptionError(node: MaybeNode): boolean {
-    if (node.ok) {
-        return false;
-    }
-
-    if (node.error.name.ok === false && node.error.name.error instanceof Error) {
+function hasDecryptionError(node: NodeEntity): boolean {
+    if (node.name.ok === false && node.name.error instanceof Error) {
         return true;
     }
-
-    if (node.error.activeRevision?.ok === false) {
+    if (node.activeRevision?.ok === false) {
         return true;
     }
-
-    if ((node.error.errors?.length || 0) > 0) {
+    if ((node.errors?.length || 0) > 0) {
         return true;
     }
-
     return false;
 }
 
@@ -225,14 +203,12 @@ async function getNumberOfDownloads(drive: Drive, nodeUid: string): Promise<numb
     }
 }
 
-function getDescriptiveMediaType(node: MaybeNode): string {
-    const nodeType = node.ok ? node.value.type : node.error.type;
-    if (nodeType === NodeType.Folder) {
+function getDescriptiveMediaType(node: NodeEntity): string {
+    if (node.type === NodeType.Folder) {
         return c('Title').t`Folder`;
     }
-    if (nodeType === NodeType.Album) {
+    if (node.type === NodeType.Album) {
         return c('Title').t`Album`;
     }
-    const mediaType = node.ok ? node.value.mediaType : node.error.mediaType;
-    return getMimeTypeDescription(mediaType || '');
+    return getMimeTypeDescription(node.mediaType || '');
 }
