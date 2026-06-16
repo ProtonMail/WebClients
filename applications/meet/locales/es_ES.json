@@ -1456,6 +1456,11 @@
         "Renovando la clave de cifrado de grupo para una seguridad óptima"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Cargando…"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contacto de confianza"
@@ -1567,6 +1572,9 @@
       "The meeting password is incorrect": [
         "La contraseña de la reunión es incorrecta"
       ],
+      "The meeting password is invalid": [
+        "La contraseña de la reunión no es válida"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
@@ -1590,6 +1598,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o un número."
+      ],
+      "Your device's clock appears to be out of sync. Please check your system time and try again.": [
+        "Parece que el reloj de tu dispositivo no está sincronizado. Comprueba la hora del sistema e inténtalo de nuevo."
       ]
     },
     "Error message": {
@@ -1772,6 +1783,12 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualiza tu navegador o dispositivo a una versión que sea compatible con WebRTC, prueba con otro navegador o desactiva cualquier extensión que pueda estar bloqueándolo."
       ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } y ${ otherParticipantsCount } personas más están grabando"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } está grabando"
+      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (tú) está presentando"
       ],
@@ -1896,6 +1913,12 @@
       "Edit email address": [
         "Editar la dirección de correo electrónico"
       ],
+      "End Meeting for everyone?": [
+        "¿Finalizar la reunión para todos?"
+      ],
+      "End the meeting for everyone?": [
+        "¿Finalizar la reunión para todos?"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "El cifrado de extremo a extremo está activo para audio y vídeo."
       ],
@@ -1904,6 +1927,9 @@
       ],
       "End-to-end encryption is active for this chat.": [
         "El cifrado de extremo a extremo está activo para este chat."
+      ],
+      "Enter code": [
+        "Introduce el código"
       ],
       "Enter the code from your authenticator app": [
         "Ingresa el código de la aplicación de autenticación."
@@ -1962,6 +1988,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
+      ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Si usas Firefox, asegúrate de que PeerConnection esté activado."
       ],
@@ -1973,6 +2002,12 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "Leave meeting and stop sharing?": [
+        "¿Salir de la reunión y dejar de compartir?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Al salir de la reunión, se deja de compartir la pantalla."
       ],
       "Left ${ roomNameLabel }": [
         "Ha salido de ${ roomNameLabel }"
@@ -2106,6 +2141,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Nuestras reuniones cifradas de extremo a extremo protegen la privacidad y facilitan la verdadera libertad de expresión."
       ],
+      "Participant": [
+        "Participante"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Pega tu enlace de ${ MEET_APP_NAME } para unirte a una reunión segura"
       ],
@@ -2141,6 +2179,12 @@
       ],
       "Record your meetings": [
         "Grabar tus reuniones"
+      ],
+      "Recording": [
+        "Grabando"
+      ],
+      "Recording in progress": [
+        "Grabación en curso"
       ],
       "Recording saved": [
         "Grabación guardada"
@@ -2237,6 +2281,9 @@
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión se ha abierto en la aplicación de escritorio de ${ MEET_APP_NAME }."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Esto finaliza la reunión para todos los participantes y deja de compartir pantalla."
       ],
       "This will end the meeting for all participants.": [
         "Esto finalizará la reunión para todos los participantes."
@@ -3066,8 +3113,8 @@
       "Generate a new meeting link. The current link will stop working.": [
         "Generar un nuevo enlace de reunión. El enlace actual dejará de funcionar."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia de IA al instante y un experto humano a tu disposición."
+      "Instant assistance with AI and human experts.": [
+        "Asistencia instantánea con IA y expertos humanos."
       ],
       "Recurring meeting": [
         "Reunión periódica"

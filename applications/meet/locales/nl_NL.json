@@ -1497,14 +1497,23 @@
       "Failed to delete event": [
         "Afspraak verwijderen mislukt"
       ],
+      "Failed to delete recording": [
+        "Kon opname niet verwijderen"
+      ],
       "Failed to delete room": [
         "Fout bij het verwijderen van de ruimte"
+      ],
+      "Failed to download recording": [
+        "Kon opname niet downloaden"
       ],
       "Failed to edit room name": [
         "Naam van de ruimte bewerken mislukt"
       ],
       "Failed to join meeting. Please try again later.": [
         "Deelnemen aan de vergadering is mislukt. Probeer het later opnieuw."
+      ],
+      "Failed to load recordings": [
+        "Kon opname niet opladen"
       ],
       "Failed to lock meeting": [
         "Vergrendelen van vergadering is mislukt"
@@ -2089,6 +2098,9 @@
       "Microphone permission denied": [
         "Microfoontoegang geweigerd"
       ],
+      "Mute microphone": [
+        "Microfoon dempen"
+      ],
       "My meetings": [
         "Mijn vergaderingen"
       ],
@@ -2118,6 +2130,9 @@
       ],
       "No publications": [
         "Geen publicaties"
+      ],
+      "No recordings found on this device.": [
+        "Geen opnames gevonden op dit apparaat."
       ],
       "No remote participants": [
         "Geen deelnemers op afstand"
@@ -2182,11 +2197,17 @@
       "Record your meetings": [
         "Neem uw vergaderingen op"
       ],
+      "Recording deleted": [
+        "Opname verwijderd"
+      ],
       "Recording saved": [
         "Opname opgeslagen"
       ],
       "Recording will begin and attendees will be notified.": [
         "Opname wordt gestart en deelnemers worden hiervan op de hoogte gesteld."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Opnames worden lokaal in uw browser opgeslagen. Download de bestanden die u wilt behouden. Ze worden na 30 dagen automatisch verwijderd."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
@@ -2278,6 +2299,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Deze vergadering is geopend in de desktop-app ${ MEET_APP_NAME }."
       ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Deze opname wordt definitief van dit apparaat verwijderd. Deze actie kan niet ongedaan worden gemaakt."
+      ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Dit beëindigt de vergadering voor alle deelnemers en stopt uw scherm delen."
       ],
@@ -2319,6 +2343,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Ontgrendel ${ unlimitedMeeting } en premiumfuncties"
+      ],
+      "Unmute microphone": [
+        "Dempen microfoon opheffen"
       ],
       "Upgrade to record your meetings locally.": [
         "Upgrade om uw vergaderingen lokaal op te nemen."
@@ -2514,6 +2541,9 @@
       ],
       "Last used": [
         "Laatst gebruikt"
+      ],
+      "Manage recordings": [
+        "Beheer opnames"
       ],
       "Meeting ID": [
         "Vergaderingsnummer"
@@ -2877,8 +2907,14 @@
       "Actions": [
         "Acties"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Name": [
         "Naam"
+      ],
+      "Size": [
+        "Grootte"
       ]
     },
     "Title": {
@@ -2935,6 +2971,9 @@
       ],
       "Debug Overlay": [
         "Foutopsporing overlay"
+      ],
+      "Delete recording?": [
+        "Opname verwijderen?"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -3033,6 +3072,9 @@
       "Record this meeting": [
         "Neem deze vergadering op"
       ],
+      "Recordings": [
+        "Opnames"
+      ],
       "Remote Participants": [
         "Deelnemers op afstand"
       ],
@@ -3108,9 +3150,6 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Genereer een nieuwe vergaderlink. De huidige link zal niet meer werken."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Directe AI-hulp, menselijke expert bij de hand!"
       ],
       "Recurring meeting": [
         "Terugkerende vergadering"
