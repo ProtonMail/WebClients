@@ -31,6 +31,8 @@ import Layout from '../components/Layout/Layout';
 import { Main } from '../components/Layout/Main';
 import { Wrapper } from '../components/Layout/Wrapper';
 import { PricingCard } from '../components/PricingCard/PricingCard';
+import { useIsVPNPlanWithoutTrialVariant } from '../helpers/useIsVPNPlanWithoutTrialVariant';
+import { useShouldStartTrial } from '../helpers/useShouldStartTrial';
 
 interface Props {
     onPaymentTokenProcessed: () => Promise<void>;
@@ -51,13 +53,15 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const { options } = payments;
 
-    const startTrial = true;
+    const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(payments.selectedPlan.name);
+    const startTrial = useShouldStartTrial(payments.selectedPlan.name);
 
     const paymentFacade = usePaymentFacade({
-        // since we are not charging anything and we just want to validate the credit card, we set the amount to 0.
+        // since we are not charging anything when starting a trial and we just want to validate the credit card, we set the amount to 0.
         // Chargebee might still create an authorization transaction typically 0.01$ or 0.5$ which will be immediately
         // refunded.
-        amount: 0,
+        // If the plan has no trial, we charge the full amount.
+        amount: startTrial ? 0 : payments.checkResult.AmountDue,
         isTrial: startTrial,
 
         currency: options.currency,
@@ -136,6 +140,14 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const showAlert3ds = selectedMethodCard;
 
+    const headline = isVPNPlanWithoutTrial
+        ? c('Signup').t`Sign up and get ${referralInfo.uiData.refereeRewardAmount} in credits`
+        : c('Signup').t`Try ${BRAND_NAME} for ${TRIAL_DURATION_DAYS} days free`;
+
+    const description = isVPNPlanWithoutTrial
+        ? undefined
+        : c('Signup').t`And get ${referralInfo.uiData.refereeRewardAmount} in credits, if you subscribe.`;
+
     const paymentsForm = (
         <>
             <form
@@ -148,23 +160,17 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                 method="post"
                 className="w-full"
             >
-                <h1 className="font-arizona text-semibold text-8xl lh120 mb-2">
-                    {
-                        // translator: full sentence "Try Proton for 14 days free"
-                        c('Signup').t`Try ${BRAND_NAME} for ${TRIAL_DURATION_DAYS} days free`
-                    }
-                </h1>
+                <h1 className="font-arizona text-semibold text-8xl lh120 mb-2">{headline}</h1>
 
-                <div className="mt-0 mb-6">
-                    {signup.loading?.init ? (
-                        <SkeletonLoader width="70%" height="1.4rem" />
-                    ) : (
-                        <p className="m-0 text-lg">
-                            {c('Signup')
-                                .t`And get ${referralInfo.uiData.refereeRewardAmount} in credits, if you subscribe.`}
-                        </p>
-                    )}
-                </div>
+                {description && (
+                    <div className="mt-0 mb-6">
+                        {signup.loading?.init ? (
+                            <SkeletonLoader width="70%" height="1.4rem" />
+                        ) : (
+                            <p className="m-0 text-lg">{description}</p>
+                        )}
+                    </div>
+                )}
 
                 <PaymentWrapper
                     {...paymentFacade}
@@ -189,14 +195,16 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     product={signup.app}
                     telemetryContext={payments.telemetryContext}
                     suffix={
-                        <div className="text-center mt-4">
-                            <span className="color-success text-semibold">
-                                <span>{c('Info').t`Zero charge today`}</span>
-                            </span>
-                        </div>
+                        startTrial && (
+                            <div className="text-center mt-4">
+                                <span className="color-success text-semibold">
+                                    <span>{c('Info').t`Zero charge today`}</span>
+                                </span>
+                            </div>
+                        )
                     }
                 >
-                    {c('Action').t`Start free trial`}
+                    {startTrial ? c('Action').t`Start free trial` : c('Action').t`Confirm purchase`}
                 </PayButton>
                 {showAlert3ds && <Alert3ds />}
             </form>
