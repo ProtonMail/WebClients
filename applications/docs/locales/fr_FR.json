@@ -552,6 +552,9 @@
       "New document": [
         "Nouveau document"
       ],
+      "New folder": [
+        "Nouveau dossier"
+      ],
       "New message": [
         "Nouveau message"
       ],
@@ -2968,6 +2971,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } élément n'a pas pu être déplacé.",
+        "${ failureItems.length } éléments n'ont pas pu être déplacés."
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
@@ -3037,6 +3044,9 @@
       "Cannot export this contact": [
         "Impossible d'exporter ce contact"
       ],
+      "Cannot find move target": [
+        "Impossible de trouver la cible du déplacement"
+      ],
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
       ],
@@ -3099,8 +3109,14 @@
       "Failed to copy photo to album": [
         "La copie de la photo dans l’album n'a pas abouti."
       ],
+      "Failed to create folder": [
+        "La création du dossier n'a pas abouti."
+      ],
       "Failed to create public share node": [
         "La création du nœud de partage public n'a pas abouti."
+      ],
+      "Failed to expand folder": [
+        "Impossible de développer le dossier"
       ],
       "Failed to fetch node": [
         "La récupération du nœud n'a pas abouti."
@@ -4542,6 +4558,12 @@
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }",
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
       ],
+      "All your files will be imported": [
+        "Tous vos fichiers seront importés."
+      ],
+      "Already in this folder": [
+        "Déjà dans ce dossier"
+      ],
       "an anonymous user": [
         "un utilisateur anonyme"
       ],
@@ -4595,6 +4617,12 @@
       ],
       "Can view only": [
         "Peut voir seulement"
+      ],
+      "Can't move a folder into itself": [
+        "Impossible de déplacer un dossier dans lui-même"
+      ],
+      "Can't write into folder": [
+        "Impossible d'écrire dans le dossier"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -5236,6 +5264,9 @@
       "Scan the QR code with your mobile device": [
         "Scannez le QR code avec votre appareil mobile."
       ],
+      "Select a destination folder": [
+        "Sélectionner un dossier de destination"
+      ],
       "Select a folder to move to.": [
         "Sélectionnez un dossier de destination."
       ],
@@ -5256,6 +5287,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuration de PGP vous permet d'envoyer des messages chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
+      ],
+      "Settings update failed": [
+        "La mise à jour des paramètres n'a pas abouti."
+      ],
+      "Settings updated": [
+        "Les paramètres ont été mis à jour."
       ],
       "Share via link settings": [
         "Paramètres de partage avec un lien"
@@ -5917,6 +5954,9 @@
       "Calendar": [
         "Calendrier"
       ],
+      "Calendars": [
+        "Calendriers"
+      ],
       "can edit": [
         "peut modifier"
       ],
@@ -5986,6 +6026,9 @@
       "Download anyway": [
         "Télécharger quand même"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Un doublon a été trouvé."
       ],
@@ -6003,6 +6046,9 @@
       ],
       "Email format": [
         "Format du message"
+      ],
+      "Emails": [
+        "Messages"
       ],
       "Emails (all messages)": [
         "Messages (tous les messages)"
@@ -7828,20 +7874,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "« ${ ellipsedName } » a été créé."
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "« ${ ellipsedName } » n'a pas pu être créé."
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "« ${ ellipsedName } » a été déplacé"
+      ],
       "\"${ fileName }\" shared": [
         "« ${ fileName } » partagé"
-      ],
-      "\"${ name }\" created successfully": [
-        "« ${ name } » a été créé."
       ],
       "\"${ name }\" deleted": [
         "« ${ name } » a été supprimé."
       ],
       "\"${ name }\" deleted permanently from trash": [
         "« ${ name } » a été définitivement supprimé du dossier Corbeille."
-      ],
-      "\"${ name }\" failed to be created": [
-        "« ${ name } » n'a pas pu être créé."
       ],
       "\"${ name }\" failed to be deleted": [
         "La suppression de « ${ name } » n'a pas abouti."
@@ -7860,9 +7909,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "« ${ name } » n'a pas pu être enregistré."
-      ],
-      "\"${ name }\" moved": [
-        "« ${ name } » a été déplacé"
       ],
       "\"${ name }\" moved to trash": [
         "« ${ name } » a été déplacé dans le dossier Corbeille."
@@ -10054,6 +10100,9 @@
       "Collaborate on documents": [
         "Collaborer sur des documents"
       ],
+      "Computers": [
+        "Ordinateurs"
+      ],
       "Confirm downgrade": [
         "Confirmer le passage à un abonnement inférieur"
       ],
@@ -10646,8 +10695,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Une assistance IA immédiate, avec un expert à votre disposition !"
+      "Instant assistance with AI and human experts.": [
+        "Assistance immédiate grâce à l'IA et à des experts humains."
       ],
       "Load image": [
         "Charger l'image"
@@ -10733,6 +10782,9 @@
       ],
       "Name must not be empty": [
         "Le nom ne doit pas être vide."
+      ],
+      "Name must not contain slashes (/)": [
+        "Le nom ne doit pas contenir de barres obliques (/)"
       ]
     },
     "Video control": {

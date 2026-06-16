@@ -552,6 +552,9 @@
       "New document": [
         "Novo documento"
       ],
+      "New folder": [
+        "Nova pasta"
+      ],
       "New message": [
         "Nova mensagem"
       ],
@@ -2953,6 +2956,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Erro ao mover ${ failureItems.length } item",
+        "Erro ao mover ${ failureItems.length } itens"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Identidade e endereços > Domínio curto (pm.me)"
       ],
@@ -3022,6 +3029,9 @@
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
+      "Cannot find move target": [
+        "Não foi possível encontrar o destino do movimento"
+      ],
       "Contact could not be saved": [
         "Não foi possível salvar o contato."
       ],
@@ -3084,8 +3094,14 @@
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
       ],
+      "Failed to create folder": [
+        "Falha ao criar a pasta"
+      ],
       "Failed to create public share node": [
         "Erro ao criar o nó de compartilhamento público"
+      ],
+      "Failed to expand folder": [
+        "Falha ao expandir a pasta"
       ],
       "Failed to fetch node": [
         "Erro ao obter o nó"
@@ -4512,6 +4528,12 @@
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }",
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }"
       ],
+      "All your files will be imported": [
+        "Todos os seus arquivos serão importados"
+      ],
+      "Already in this folder": [
+        "Já nesta pasta"
+      ],
       "an anonymous user": [
         "um usuário anônimo"
       ],
@@ -4565,6 +4587,12 @@
       ],
       "Can view only": [
         "Pode somente visualização"
+      ],
+      "Can't move a folder into itself": [
+        "Não é possível mover uma pasta para si mesma"
+      ],
+      "Can't write into folder": [
+        "Não é possível escrever na pasta"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
@@ -5197,6 +5225,9 @@
       "Scan the QR code with your mobile device": [
         "Escaneie o código QR com seu dispositivo móvel"
       ],
+      "Select a destination folder": [
+        "Selecione uma pasta de destino"
+      ],
       "Select a folder to move to.": [
         "Selecione uma pasta para onde deseja mover."
       ],
@@ -5217,6 +5248,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
+      ],
+      "Settings update failed": [
+        "Erro ao atualizar configurações"
+      ],
+      "Settings updated": [
+        "Configurações atualizadas"
       ],
       "Share via link settings": [
         "Compartilhar por meio de configurações de link"
@@ -5863,6 +5900,9 @@
       "Calendar": [
         "Calendário"
       ],
+      "Calendars": [
+        "Calendários"
+      ],
       "can edit": [
         "pode editar"
       ],
@@ -5932,6 +5972,9 @@
       "Download anyway": [
         "Baixar mesmo assim"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Duplicado encontrado"
       ],
@@ -5949,6 +5992,9 @@
       ],
       "Email format": [
         "Formato do e-mail"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (todas as mensagens)"
@@ -7768,20 +7814,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" criado com sucesso"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" falhou ao ser criado"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartilhado"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" criado"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" excluído"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" excluído permanentemente da lixeira"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Não foi possível criar \"${ name }\"."
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" não foi excluído"
@@ -7800,9 +7849,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "Não foi possível salvar \"${ name }\"."
-      ],
-      "\"${ name }\" moved": [
-        "\"${ name }\" movido"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
@@ -8401,6 +8447,9 @@
       ],
       "This key is used to encrypt messages to this contact": [
         "Esta chave é usada para criptografar mensagens para este contato"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Esta chave é usada para criptografar mensagens para este contato em aplicativos antigos"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que você \"desconfie\" dessa chave."
@@ -9988,6 +10037,9 @@
       "Collaborate on documents": [
         "Colaborar em documentos"
       ],
+      "Computers": [
+        "Computadores"
+      ],
       "Confirm downgrade": [
         "Confirmar downgrade"
       ],
@@ -10664,6 +10716,9 @@
       ],
       "Name must not be empty": [
         "O nome não pode estar vazio"
+      ],
+      "Name must not contain slashes (/)": [
+        "Nome não deve conter barras (/)"
       ]
     },
     "Video control": {

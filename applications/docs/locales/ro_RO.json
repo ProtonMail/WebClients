@@ -552,6 +552,9 @@
       "New document": [
         "Document nou"
       ],
+      "New folder": [
+        "Folder nou"
+      ],
       "New message": [
         "Mesaj nou"
       ],
@@ -2982,6 +2985,11 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage } Puteți verifica situația și pe ${ statusPageLink }."
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
@@ -3051,6 +3059,9 @@
       "Cannot export this contact": [
         "Acest contact nu se poate exporta."
       ],
+      "Cannot find move target": [
+        "Nu s-a putut găsi ținta mutării"
+      ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
@@ -3115,8 +3126,14 @@
       "Failed to copy photo to album": [
         "Fotografia nu s-a putut copia în album."
       ],
+      "Failed to create folder": [
+        "Crearea folderului a eșuat."
+      ],
       "Failed to create public share node": [
         "Nu s-a putut crea nodul de partajare publică."
+      ],
+      "Failed to expand folder": [
+        "Extinderea folderului a eșuat"
       ],
       "Failed to fetch node": [
         "Eșuare preluare nod."
@@ -4603,6 +4620,9 @@
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }."
       ],
+      "Already in this folder": [
+        "Deja în acest folder"
+      ],
       "an anonymous user": [
         "un utilizator anonim"
       ],
@@ -4656,6 +4676,12 @@
       ],
       "Can view only": [
         "Poate doar vedea"
+      ],
+      "Can't move a folder into itself": [
+        "Nu se poate muta un folder în el însuși."
+      ],
+      "Can't write into folder": [
+        "Nu se poate scrie în folder."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
@@ -5301,6 +5327,9 @@
       "Scan the QR code with your mobile device": [
         "Scanați codul QR cu dispozitivul mobil"
       ],
+      "Select a destination folder": [
+        "Selectați un folder de destinație"
+      ],
       "Select a folder to move to.": [
         "Selectați folderul sursă."
       ],
@@ -5321,6 +5350,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
+      ],
+      "Settings update failed": [
+        "Actualizarea setărilor a eșuat."
+      ],
+      "Settings updated": [
+        "Setările s-au actualizat."
       ],
       "Share via link settings": [
         "Setări partajare prin legătură web"
@@ -5989,6 +6024,9 @@
       "Calendar": [
         "Calendar"
       ],
+      "Calendars": [
+        "Calendare"
+      ],
       "can edit": [
         "poate edita"
       ],
@@ -6075,6 +6113,9 @@
       ],
       "Email format": [
         "Format e-mail"
+      ],
+      "Emails": [
+        "Mesaje"
       ],
       "Emails (all messages)": [
         "Mesaje (toate mesajele)"
@@ -7883,20 +7924,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }” a fost creat."
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }” nu a putut fi creat."
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "„${ ellipsedName }” s-a mutat."
+      ],
       "\"${ fileName }\" shared": [
         "„${ fileName }” s-a partajat"
-      ],
-      "\"${ name }\" created successfully": [
-        "„${ name }” a fost creat cu succes."
       ],
       "\"${ name }\" deleted": [
         "S-a șters „${ name }”"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }” a fost eliminat permanent din «Gunoi»."
-      ],
-      "\"${ name }\" failed to be created": [
-        "„${ name }” nu a putut fi creat."
       ],
       "\"${ name }\" failed to be deleted": [
         "Nu s-a putut șterge „${ name }”"
@@ -7915,9 +7959,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "„${ name }” nu s-a putut salva."
-      ],
-      "\"${ name }\" moved": [
-        "„${ name }” s-a mutat."
       ],
       "\"${ name }\" moved to trash": [
         "„${ name }” a fost mutat în «Gunoi»."
@@ -10178,6 +10219,9 @@
       "Collaborate on documents": [
         "Colaborați la documente"
       ],
+      "Computers": [
+        "Calculatoare"
+      ],
       "Confirm downgrade": [
         "Confirmare modificare la plan inferior"
       ],
@@ -10773,9 +10817,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistență instantanee prin IA, expert uman la îndemână!"
-      ],
       "Load image": [
         "Încărcare imagine"
       ],
@@ -10863,6 +10904,9 @@
       ],
       "Name must not be empty": [
         "Numele nu poate fi gol."
+      ],
+      "Name must not contain slashes (/)": [
+        "Numele nu trebuie să conțină bare oblice (/)"
       ]
     },
     "Video control": {

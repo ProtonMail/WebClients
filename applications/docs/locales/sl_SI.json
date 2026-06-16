@@ -537,6 +537,9 @@
       "New document": [
         "Nov dokument"
       ],
+      "New folder": [
+        "Nova mapa"
+      ],
       "New message": [
         "Novo sporočilo"
       ],
@@ -2845,6 +2848,9 @@
       "Cannot export this contact": [
         "Tega stika ni mogoče izvoziti"
       ],
+      "Cannot find move target": [
+        "Ciljna lokacija za premikanje ni najdena"
+      ],
       "Contact could not be saved": [
         "Stika ni bilo mogoče shraniti"
       ],
@@ -2913,6 +2919,9 @@
       ],
       "Failed to create public share node": [
         "Ni uspelo ustvariti vozlišča javne povezave"
+      ],
+      "Failed to expand folder": [
+        "Ni uspelo razširiti mape"
       ],
       "Failed to open to contact": [
         "Ni mogoče odpreti stika."
@@ -4372,6 +4381,9 @@
         "Vse (${ totalFoldersCount } oznake)",
         "Vse (${ totalFoldersCount } oznak)"
       ],
+      "Already in this folder": [
+        "Že v tej mapi"
+      ],
       "an anonymous user": [
         "anonimni uporabnik"
       ],
@@ -4419,6 +4431,9 @@
       ],
       "Can view only": [
         "Možen je samo ogled"
+      ],
+      "Can't write into folder": [
+        "Ne morete pisati v mapo"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Se ne spomnite gesla? Lahko vam pomagamo izbrisati šifrirane podatke vseh stikov, šifriranih s tem ključem, in s tem odpraviti opozorilo."
@@ -5014,6 +5029,9 @@
       "Scan the QR code with your mobile device": [
         "Skenirajte kodo QR z mobilno napravo."
       ],
+      "Select a destination folder": [
+        "Izberite ciljno mapo"
+      ],
       "Select a folder to move to.": [
         "Izberite mapo, v katero se želite premakniti."
       ],
@@ -5034,6 +5052,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavitev PGP vam omogoča pošiljanje šifriranih e-poštnih sporočil od konca do konca z ne-uporabnikom ${ BRAND_NAME }, ki uporablja združljivo storitev PGP."
+      ],
+      "Settings update failed": [
+        "Napaka pri posodobitvi nastavitev"
+      ],
+      "Settings updated": [
+        "Nastavitve posodobljene"
       ],
       "Share via link settings": [
         "Nastavitve za skupno rabo prek povezave"
@@ -5652,6 +5676,9 @@
       "Calendar": [
         "Koledar"
       ],
+      "Calendars": [
+        "Koledarje"
+      ],
       "can edit": [
         "lahko ureja"
       ],
@@ -5732,6 +5759,9 @@
       ],
       "Email format": [
         "Oblika e-pošte"
+      ],
+      "Emails": [
+        "E-pošto"
       ],
       "Emails (all messages)": [
         "E-pošto (vsa sporočila)"
@@ -7461,17 +7491,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "»${ name }« je bil uspešno ustvarjen"
-      ],
       "\"${ name }\" deleted": [
         "'${ name }' izbrisano"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name } je trajno izbrisan iz smetnjaka"
-      ],
-      "\"${ name }\" failed to be created": [
-        "»${ name }« ni bilo mogoče ustvariti"
       ],
       "\"${ name }\" failed to be deleted": [
         "${ name } ni bilo mogoče izbrisati"
@@ -9527,6 +9551,9 @@
       "Collaborate on documents": [
         "Sodelujte pri dokumentih"
       ],
+      "Computers": [
+        "Računalniki"
+      ],
       "Confirm downgrade": [
         "Potrdite zmanjšanje paketa"
       ],
@@ -10174,6 +10201,9 @@
       ],
       "Name must not be empty": [
         "Ime ne sme biti prazno"
+      ],
+      "Name must not contain slashes (/)": [
+        "Ime ne sme vsebovati poševnic (/)"
       ]
     },
     "Video control": {

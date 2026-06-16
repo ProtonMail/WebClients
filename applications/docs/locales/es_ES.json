@@ -90,6 +90,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Ask me next time": [
+        "Preguntarme la próxima vez"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
@@ -549,6 +552,9 @@
       "New document": [
         "Nuevo documento"
       ],
+      "New folder": [
+        "Nueva carpeta"
+      ],
       "New message": [
         "Nuevo mensaje"
       ],
@@ -699,6 +705,9 @@
       "Save changes": [
         "Guardar los cambios"
       ],
+      "Save preferences": [
+        "Guardar las preferencias"
+      ],
       "Search": [
         "Buscar"
       ],
@@ -827,6 +836,9 @@
       ],
       "Try another method": [
         "Intenta con otro método"
+      ],
+      "Try Workspace": [
+        "Probar Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
@@ -1206,6 +1218,15 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Activado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "La dirección ya está siendo utilizada por un usuario ajeno a tu organización. Ponte en contacto con el servicio de atención al cliente para resolverlo."
+      ],
+      "All": [
+        "Todo"
+      ],
       "Calendar": [
         "Calendario"
       ],
@@ -1221,8 +1242,14 @@
       "Emails": [
         "Correos electrónicos"
       ],
+      "Errors": [
+        "Errores"
+      ],
       "Estimated size": [
         "Tamaño estimado"
+      ],
+      "Find out what can be migrated.": [
+        "Descubre qué se puede migrar"
       ],
       "Has errors": [
         "Tiene errores"
@@ -1230,11 +1257,29 @@
       "In progress": [
         "En progreso"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No se ha encontrado la dirección del miembro. Contacta con el servicio de atención al cliente para solucionarlo."
+      ],
       "Migrate": [
         "Migrar"
       ],
+      "Migrated": [
+        "Migrado"
+      ],
       "Migration status": [
         "Estado de la migración"
+      ],
+      "Missing organization private key": [
+        "Falta la clave privada de la organización"
+      ],
+      "Missing organization public key": [
+        "Falta la clave pública de la organización"
+      ],
+      "No users to display": [
+        "No hay usuarios que mostrar"
+      ],
+      "Not activated": [
+        "No activado"
       ],
       "Organization does not have enough seats available": [
         "La organización no tiene suficientes licencias disponibles"
@@ -1242,8 +1287,17 @@
       "Organization does not have enough storage available": [
         "La organización no tiene suficiente espacio de almacenamiento disponible"
       ],
+      "Pending": [
+        "Pendiente"
+      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Selecciona exactamente lo que quieres migrar. Se aplica a todo el equipo de la organización."
+      ],
+      "Select users to migrate": [
+        "Seleccionar usuarios para migrar"
+      ],
+      "Size": [
+        "Tamaño"
       ],
       "Status": [
         "Estado"
@@ -1256,6 +1310,9 @@
       ],
       "What are you migrating?": [
         "¿Qué estás migrando?"
+      ],
+      "You": [
+        "Tú"
       ]
     },
     "Browser": {
@@ -2914,6 +2971,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Error al mover ${ failureItems.length } elemento",
+        "Error al mover ${ failureItems.length } elementos"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
@@ -2922,6 +2983,9 @@
       ],
       "Account does not exist": [
         "La cuenta no existe."
+      ],
+      "Address could not be added.": [
+        "No se ha podido añadir la dirección."
       ],
       "Address primary private key not found": [
         "No se ha encontrado la clave primaria de la dirección."
@@ -2979,6 +3043,9 @@
       ],
       "Cannot export this contact": [
         "No se puede exportar este contacto"
+      ],
+      "Cannot find move target": [
+        "No se puede encontrar el destino"
       ],
       "Contact could not be saved": [
         "No se ha podido guardar el contacto."
@@ -3042,8 +3109,14 @@
       "Failed to copy photo to album": [
         "Error al copiar la foto al álbum"
       ],
+      "Failed to create folder": [
+        "Error al crear la carpeta"
+      ],
       "Failed to create public share node": [
         "Error al crear el nodo compartido"
+      ],
+      "Failed to expand folder": [
+        "Error al expandir la carpeta"
       ],
       "Failed to fetch node": [
         "Error al obtener nodo"
@@ -3053,6 +3126,12 @@
       ],
       "Failed to load 'My files' folder": [
         "No se ha podido cargar la carpeta 'Mis archivos'"
+      ],
+      "Failed to load document details": [
+        "Error al cargar los detalles del documento."
+      ],
+      "Failed to load recent documents": [
+        "No se han podido cargar los documentos recientes"
       ],
       "Failed to open to contact": [
         "Error al abrir el contacto"
@@ -3274,6 +3353,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Modifica la importación para editar estos nombres."
+      ],
+      "Some trashed documents could not be loaded": [
+        "No se han podido cargar algunos documentos de la papelera"
       ],
       "Something went wrong while fetching available domains": [
         "Algo salió mal al obtener los dominios disponibles"
@@ -4465,6 +4547,12 @@
         "Se importarán todos tus contactos, hasta un límite de ${ maxContact }.",
         "Se importarán todos tus contactos, hasta un máximo de ${ maxContact }."
       ],
+      "All your files will be imported": [
+        "Todos tus archivos se importan"
+      ],
+      "Already in this folder": [
+        "Ya está en esta carpeta"
+      ],
       "an anonymous user": [
         "un usuario anónimo"
       ],
@@ -4519,6 +4607,12 @@
       "Can view only": [
         "Solo lectura"
       ],
+      "Can't move a folder into itself": [
+        "No se puede mover una carpeta dentro de sí misma"
+      ],
+      "Can't write into folder": [
+        "No se puede escribir en la carpeta"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave y desactivar la alerta al mismo tiempo."
       ],
@@ -4557,6 +4651,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Converting document...": [
+        "Convirtiendo el documento..."
       ],
       "Copied to clipboard": [
         "Copiada al portapapeles"
@@ -4606,6 +4703,9 @@
       ],
       "Creating link to folder": [
         "Creando enlace a la carpeta"
+      ],
+      "Creating new document...": [
+        "Creando nuevo documento..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4682,6 +4782,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asegura una comunicación totalmente privada y cifrada. Reclama tu dirección de correo electrónico ${ BRAND_NAME } gratis ahora."
       ],
+      "Enter code": [
+        "Introduce el código"
+      ],
       "Enter password": [
         "Introduce la contraseña"
       ],
@@ -4702,6 +4805,12 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Introduce tu propia contraseña (como contacto de confianza)."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Error al convertir el documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Error al cargar el documento: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error al sincronizar"
@@ -4766,6 +4875,15 @@
       "Geoblocking": [
         "Bloqueo geográfico"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Consigue un correo profesional @tu-empresa.es, 1 TB de almacenamiento seguro por usuario, videollamadas más largas y más con ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Recibe actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a tus documentos."
+      ],
+      "Get Notified About Comments": [
+        "Recibir notificaciones sobre los comentarios"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear tu actividad en línea. Ocultando tu IP real y cifrando tu actividad de navegación se vuelve privada."
       ],
@@ -4786,6 +4904,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -4914,6 +5035,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Making a copy...": [
+        "Haciendo una copia..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carácter",
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
@@ -4944,6 +5068,9 @@
       ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "No se ha especificado ningún documento en la URL. Vuelve a ${ DRIVE_APP_NAME } y selecciona uno."
       ],
       "No email address": [
         "No hay dirección de correo electrónico."
@@ -5123,6 +5250,9 @@
       "Scan the QR code with your mobile device": [
         "Escanea el código QR con tu dispositivo móvil."
       ],
+      "Select a destination folder": [
+        "Selecciona una carpeta de destino"
+      ],
       "Select a folder to move to.": [
         "Selecciona una carpeta para mover."
       ],
@@ -5143,6 +5273,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP te permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
+      ],
+      "Settings update failed": [
+        "Error al actualizar los ajustes"
+      ],
+      "Settings updated": [
+        "Se han actualizado los ajustes."
       ],
       "Share via link settings": [
         "Ajustes de uso compartido con un enlace"
@@ -5228,6 +5364,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Parece que la URL que has introducido se ha copiado de Slack de forma incorrecta. Al copiar enlaces largos de Slack, haz clic derecho en el enlace y elige «Copiar enlace» en lugar de copiar directamente el texto truncado de la URL."
       ],
       "There are no documents in the trash.": [
         "No hay documentos en la papelera."
@@ -5342,6 +5481,9 @@
       ],
       "Trash": [
         "Papelera"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confía en la clave «${ activeSignerText }» para verificar los nuevos mensajes de este contacto."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
@@ -5685,11 +5827,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Firmante activo"
+      ],
       "Compromised": [
         "Comprometido"
       ],
       "Expired": [
         "Expirada"
+      ],
+      "Fallback": [
+        "Alternativa"
       ],
       "KOO": [
         "KOO"
@@ -5713,6 +5861,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
@@ -5789,6 +5940,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Calendars": [
+        "Calendarios"
+      ],
       "can edit": [
         "se puede editar"
       ],
@@ -5858,6 +6012,9 @@
       "Download anyway": [
         "Descargar de todos modos"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Duplicado encontrado"
       ],
@@ -5876,6 +6033,9 @@
       "Email format": [
         "Formato de correo electrónico"
       ],
+      "Emails": [
+        "Correos electrónicos"
+      ],
       "Emails (all messages)": [
         "Correos electrónicos (todos los mensajes)"
       ],
@@ -5890,6 +6050,9 @@
       ],
       "Emails (last month)": [
         "Correos electrónicos (último mes)"
+      ],
+      "Enable email notifications": [
+        "Activar las notificaciones de correo electrónico"
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
@@ -5941,6 +6104,9 @@
       ],
       "Include application logs in bug report": [
         "Incluir los registros de la aplicación en el informe de errores"
+      ],
+      "Include document name in notification": [
+        "Incluir el nombre del documento en las notificaciones"
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
@@ -6927,6 +7093,9 @@
       "99.95% SLA": [
         "SLA del 99,95 %"
       ],
+      "Access all countries": [
+        "Accede a todos los países"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -6947,6 +7116,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificar citas con ${ n } página de reservas",
+        "Planificar citas con ${ n } páginas de reservas"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -7077,6 +7253,9 @@
       ],
       "Multiple admin roles": [
         "Distintos roles de administración"
+      ],
+      "No streaming support": [
+        "Sin soporte para streaming"
       ],
       "Online document editor": [
         "Editor de documentos online"
@@ -7227,6 +7406,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda ilimitado"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
@@ -7621,6 +7803,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -7670,20 +7856,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" creado"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Error al crear \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" se ha movido"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartido"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"Se ha creado ${ name }\"."
       ],
       "\"${ name }\" deleted": [
         "«${ name }» está eliminado."
       ],
       "\"${ name }\" deleted permanently from trash": [
         "Se ha eliminado permanentemente \"${ name }\" de la papelera."
-      ],
-      "\"${ name }\" failed to be created": [
-        "Error al crear \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted": [
         "Error al eliminar «${ name }»"
@@ -7702,9 +7891,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "Error al guardar \"${ name }\""
-      ],
-      "\"${ name }\" moved": [
-        "«${ name }» se ha movido"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" se ha movido a la papelera."
@@ -7752,6 +7938,10 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "Error al restaurar ${ numberOfItems } elemento de la papelera",
         "Error al restaurar ${ numberOfItems } elementos de la papelera"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } elemento movido",
+        "${ numberOfItems } elementos movidos"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } elemento movido a la papelera",
@@ -8294,8 +8484,17 @@
       "External key automatically fetched via WKD.": [
         "Se ha obtenido la clave externa obtenida automáticamente mediante WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Este contacto firma actualmente los mensajes con esta clave"
+      ],
+      "This key is used for message verification": [
+        "Esta clave se usa para la verificación de mensajes"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Se usa esta clave para cifrar los mensajes a este contacto"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Esta clave se usa para cifrar mensajes para este contacto en aplicaciones más antiguas"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Te recomendamos que consideres esta clave \"no fiable\"."
@@ -8369,6 +8568,9 @@
       ],
       "Search for name or email": [
         "Buscar por nombre o correo electrónico"
+      ],
+      "Search for users or addresses": [
+        "Buscar usuarios o direcciones"
       ],
       "Search parent folder": [
         "Buscar en la carpeta principal"
@@ -9058,6 +9260,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Creando nueva hoja de cálculo..."
+      ],
       "Detect automatically": [
         "Detectar automáticamente"
       ],
@@ -9877,6 +10082,9 @@
       "Collaborate on documents": [
         "Colabora en documentos"
       ],
+      "Computers": [
+        "Ordenadores"
+      ],
       "Confirm downgrade": [
         "Confirmar el paso a un plan inferior"
       ],
@@ -10469,8 +10677,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como Redes Sociales o Promociones. Puedes seleccionar a dónde importar estos correos."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia de IA al instante y un experto humano a tu disposición."
+      "Instant assistance with AI and human experts.": [
+        "Asistencia instantánea con IA y expertos humanos."
       ],
       "Load image": [
         "Cargar la imagen"
@@ -10556,6 +10764,9 @@
       ],
       "Name must not be empty": [
         "El nombre no debe estar vacío."
+      ],
+      "Name must not contain slashes (/)": [
+        "El nombre no debe contener barras inclinadas (/)"
       ]
     },
     "Video control": {

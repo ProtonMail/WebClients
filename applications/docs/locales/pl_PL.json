@@ -522,6 +522,9 @@
       "New document": [
         "Nowy dokument"
       ],
+      "New folder": [
+        "Nowy folder"
+      ],
       "New message": [
         "Nowa wiadomość"
       ],
@@ -2726,6 +2729,9 @@
       "Failed to copy photo to album": [
         "Nie udało się skopiować zdjęcia do albumu"
       ],
+      "Failed to create folder": [
+        "Nie udało się utworzyć folderu"
+      ],
       "Failed to create public share node": [
         "Nie udało się utworzyć publicznego węzła udostępniania"
       ],
@@ -4776,6 +4782,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
       ],
+      "Settings update failed": [
+        "Aktualizacja ustawień nie powiodła się"
+      ],
+      "Settings updated": [
+        "Ustawienia zostały zaktualizowane"
+      ],
       "Share via link settings": [
         "Ustawienia linku"
       ],
@@ -5366,6 +5378,9 @@
       "Calendar": [
         "Kalendarz"
       ],
+      "Calendars": [
+        "Kalendarze"
+      ],
       "Cancel download": [
         "Anuluj pobieranie"
       ],
@@ -5434,6 +5449,9 @@
       ],
       "Email format": [
         "Format wiadomości"
+      ],
+      "Emails": [
+        "Wiadomości"
       ],
       "Emails (all messages)": [
         "Wiadomości (wszystkie)"
@@ -7166,17 +7184,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "Folder \"${ name }\" został utworzony"
-      ],
       "\"${ name }\" deleted": [
         "Usunięto \"${ name }\""
       ],
       "\"${ name }\" deleted permanently from trash": [
         "Element \"${ name }\" został trwale usunięty"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Utworzenie folderu \"${ name }\" nie powiodło się"
       ],
       "\"${ name }\" failed to be deleted": [
         "Usunięcie elementu \"${ name }\" nie powiodło się"
@@ -9256,6 +9268,9 @@
       "Collaborate on documents": [
         "Współpracuj nad dokumentami"
       ],
+      "Computers": [
+        "Urządzenia"
+      ],
       "Confirm downgrade": [
         "Potwierdź obniżenie planu"
       ],
@@ -9893,6 +9908,9 @@
       ],
       "Name must not be empty": [
         "Nazwa nie może być pusta"
+      ],
+      "Name must not contain slashes (/)": [
+        "Nazwa nie może zawierać ukośników (/)"
       ]
     },
     "Video control": {
