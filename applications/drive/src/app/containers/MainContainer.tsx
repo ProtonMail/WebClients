@@ -13,10 +13,12 @@ import {
     SubscriptionModalProvider,
     useApi,
     useDrawerWidth,
+    useEventManager,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getBusDriver } from '@proton/drive/modules/busDriver';
 import { logging } from '@proton/drive/modules/logging';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import { useInitEncryptedThumbnailCache } from '@proton/drive/modules/thumbnails';
@@ -250,6 +252,17 @@ const MainContainer: FunctionComponent = () => {
     const { init } = useDrive();
     const [user] = useUser();
     const [loading, setLoading] = useState(true);
+    const coreEventManager = useEventManager();
+
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
+        void getBusDriver().subscribeSdkDriveEvents('mainContainer', coreEventManager);
+        return () => {
+            void getBusDriver().unsubscribeSdkDriveEvents('mainContainer');
+        };
+    }, [coreEventManager, loading]);
 
     useEffect(() => {
         let drive = getDrive();

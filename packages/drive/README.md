@@ -89,6 +89,36 @@ Only the public interface of each module is guaranteed to be stable. The team de
 
 To use only the public interface, import only directly from the `@proton/drive` package, or from the public module entry points (e.g., `@proton/drive/public/thumbnails`). See [External API](#external-api) above.
 
+## Core Events
+
+The Drive SDK relies on core events (account-level Proton event loop) to keep sharing state up to date — for example, detecting when an external invitee registers as a Proton user so their invitation can be auto-converted.
+
+The SDK does **not** subscribe to core events on its own. The host application must pass its `EventManager` instance when calling `subscribeSdkDriveEvents`. This avoids duplicate polling connections when multiple SDK clients (drive and photos) are in use.
+
+This should be done once at app bootstrap, typically in `MainContainer`:
+
+```javascript
+import { useEventManager } from '@proton/components';
+import { getBusDriver } from '@proton/drive/modules/busDriver';
+
+function MainContainer() {
+    const coreEventManager = useEventManager();
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
+        void getBusDriver().subscribeSdkDriveEvents('mainContainer', coreEventManager);
+        return () => {
+            void getBusDriver().unsubscribeSdkDriveEvents('mainContainer');
+        };
+    }, [coreEventManager, loading]);
+}
+```
+
+**Note:** Core event integration is planned to be removed once Drive migrates to events v3.
+
 ## Metrics, Logs & Error Reporting
 
 The Drive SDK includes automatic Sentry and metrics integration for error monitoring. It is automatically enabled when you initialize the Drive SDK and requires no additional configuration. It includes only errors and warnings from the logs and metrics. You still should handle and report any unexpected errors coming from the Drive SDK calls.
