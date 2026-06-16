@@ -11,6 +11,7 @@ import { AddEmergencyContacts } from '@proton/account/safetyReview/components/ac
 import { AddRecoveryContacts } from '@proton/account/safetyReview/components/actions/delegatedAccess/AddRecoveryContacts';
 import { UpsellEmergencyContacts } from '@proton/account/safetyReview/components/actions/delegatedAccess/UpsellEmergencyContacts';
 import { EnableDeviceRecovery } from '@proton/account/safetyReview/components/actions/deviceRecovery/EnableDeviceRecovery';
+import { PasswordVerification } from '@proton/account/safetyReview/components/actions/password/PasswordVerification';
 import { DownloadRecoveryFile } from '@proton/account/safetyReview/components/actions/recoveryFile/DownloadRecoveryFile';
 import { DownloadRecoveryPhrase } from '@proton/account/safetyReview/components/actions/recoveryPhrase/DownloadRecoveryPhrase';
 import { EnableQrCodeSignIn } from '@proton/account/safetyReview/components/actions/settings/EnableQrCodeSignIn';
@@ -35,7 +36,7 @@ export const renderActionItem = (
 
     switch (recoveryItem.id) {
         case 'passwordVerification':
-            return null;
+            return <PasswordVerification {...allProps} recoveryItem={recoveryItem} />;
         case 'setRecoveryEmail':
             return <SetRecoveryEmail {...allProps} recoveryItem={recoveryItem} />;
         case 'verifyRecoveryEmail':
