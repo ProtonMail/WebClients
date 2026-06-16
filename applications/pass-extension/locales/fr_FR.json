@@ -1087,8 +1087,8 @@
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "La durée de validité doit être comprise entre 60 minutes et 1 an."
+      "Expiration must be between 1 hour and 1 year": [
+        "La durée de validité doit être comprise entre 1 heure et 1 an."
       ],
       "Failed loading group members": [
         "Le chargement des membres du groupe n'a pas abouti."
@@ -2008,22 +2008,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Chaque fois que votre alias reçoit un email de quelqu’un, un contact est automatiquement créé."
       ],
-      "Expired ${ abs } hour ago": [
-        "Expiré il y a ${ abs } heure",
-        "Expiré il y a ${ abs } heures"
+      "Expired on ${ formattedDate }": [
+        "Expiré le ${ formattedDate }"
       ],
       "Expires in": [
         "Expire dans"
       ],
-      "Expires in ${ hours } hour": [
-        "Expire dans ${ hours } heure",
-        "Expire dans ${ hours } heures"
-      ],
       "Expires in ${ remainingTime }": [
         "Expire dans ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Expire dans moins d'une heure"
+      "Expires on ${ formattedDate }": [
+        "Expire le ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Exportation de vos données..."
@@ -2219,8 +2214,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -3053,11 +3047,23 @@
         "${ years } an",
         "${ years } ans"
       ],
+      "1 day": [
+        "1 jour"
+      ],
       "1 hour": [
         "1 heure"
       ],
       "1 minute": [
         "1 minute"
+      ],
+      "1 month": [
+        "1 mois"
+      ],
+      "1 week": [
+        "1 semaine"
+      ],
+      "1 year": [
+        "1 an"
       ],
       "10 minutes": [
         "10 minutes"
@@ -3302,6 +3308,12 @@
       "Crypto Wallet": [
         "Portefeuille de cryptomonnaies"
       ],
+      "Custom": [
+        "Personnalisé"
+      ],
+      "Custom expiration (minutes)": [
+        "Expiration personnalisée (minutes)"
+      ],
       "Custom Items": [
         "Éléments personnalisés"
       ],
@@ -3386,8 +3398,8 @@
       "Expired tokens (${ expired.length })": [
         "Jetons expirés (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Expire dans (minutes)"
+      "Expires in": [
+        "Expire dans"
       ],
       "Expiry Date": [
         "Date d'expiration"
