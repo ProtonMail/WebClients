@@ -1,0 +1,101 @@
+@use '~@proton/styles/scss/lib/config' as *;
+
+.sieve-lumo {
+	block-size: 100%;
+	min-block-size: 0;
+	background-color: var(--background-weak);
+
+	&-avatar {
+		inline-size: 1.75rem;
+	}
+
+	&-avatar-icon {
+		inline-size: 1.1rem;
+	}
+
+	&-messages {
+		min-block-size: 0;
+	}
+
+	&-message {
+		flex-shrink: 0;
+		max-inline-size: 90%;
+		padding-block: 0.5rem;
+		padding-inline: 0.75rem;
+		border-radius: var(--border-radius-lg);
+		word-break: break-word;
+
+		&--user {
+			align-self: flex-end;
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
+			white-space: pre-wrap;
+		}
+
+		&--assistant {
+			align-self: flex-start;
+			background-color: var(--background-norm);
+		}
+	}
+
+	&-text {
+		white-space: pre-wrap;
+
+		& + & {
+			margin-block-start: 0.5rem;
+		}
+	}
+
+	&-code {
+		max-inline-size: 100%;
+		overflow: hidden; // clip square inner corners to the rounded border
+		background-color: var(--background-strong);
+
+		pre {
+			white-space: pre;
+			overflow-x: auto;
+		}
+	}
+
+	&-error {
+		align-self: stretch;
+		padding-block: 0.5rem;
+		padding-inline: 0.75rem;
+	}
+
+	&-textarea {
+		// Field styling (border, padding, focus) comes from the design-system `.textarea` class.
+		resize: none;
+	}
+}
+
+// Two-pane layout: when the helper is open the modal widens and the editor + chat sit side by side.
+.advanced-filter-modal {
+	.sieve-lumo-layout {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 1rem;
+		flex: 1 1 auto;
+		min-block-size: 0;
+	}
+
+	.sieve-lumo-editor-pane {
+		display: flex;
+		flex-flow: column nowrap;
+		flex: 1 1 60%;
+		min-inline-size: 0;
+	}
+
+	.sieve-lumo-pane {
+		flex: 1 1 40%;
+		min-inline-size: 22rem;
+		min-block-size: 0;
+		display: flex;
+
+		// The `.hidden` utility (specificity 0,1,0) loses to the scoped `display: flex` above, so
+		// scope the hidden state here to keep the panel collapsible via the toggle/close button.
+		&.hidden {
+			display: none;
+		}
+	}
+}
