@@ -234,7 +234,6 @@ export enum MailFeatureFlag {
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     ComposerAssistant = 'ComposerAssistant',
-    ScribeToLumo = 'ScribeToLumo',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     MailWebListTelemetry = 'MailWebListTelemetry',
@@ -248,6 +247,8 @@ export enum MailFeatureFlag {
     OnlyInsertNewDataOnFetch = 'OnlyInsertNewDataOnFetch',
     //ML R&D
     LumoSieveHelper = 'LumoSieveHelper',
+    ScribeToLumo = 'ScribeToLumo',
+    OneTimePasscode = 'OneTimePasscode',
 }
 
 enum MailKillSwitchFlag {

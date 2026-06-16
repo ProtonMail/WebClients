@@ -26,6 +26,7 @@ import ItemDate from './ItemDate';
 import ItemHoverButtons from './ItemHoverButtons';
 import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
+import ItemOneTimeCode from './ItemOneTimeCode';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 import ItemExpiration from './item-expiration/ItemExpiration';
@@ -42,6 +43,7 @@ interface Props {
     unread: boolean;
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
+    oneTimeCode?: string | null;
 }
 
 const ItemRowLayout = ({
@@ -56,6 +58,7 @@ const ItemRowLayout = ({
     unread,
     onBack = () => {},
     attachmentsMetadata = [],
+    oneTimeCode,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -156,6 +159,9 @@ const ItemRowLayout = ({
                         )}
                     </div>
                 </div>
+
+                {/* Placed inline right after the subject so it sits with the text and does not shift when the hover action buttons appear on the right. */}
+                {oneTimeCode && <ItemOneTimeCode code={oneTimeCode} element={element} className="ml-2 shrink-0" />}
 
                 <span className="m-auto"></span>
 
