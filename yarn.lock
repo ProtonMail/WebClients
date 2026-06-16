@@ -10669,7 +10669,7 @@ __metadata:
     cross-fetch: "npm:^4.1.0"
     date-fns: "npm:^2.30.0"
     docx-preview: "npm:^0.3.7"
-    dompurify: "npm:^3.4.2"
+    dompurify: "npm:^3.4.7"
     emoji-mart: "npm:^5.1.0"
     eslint: "npm:^9.39.4"
     fast-xml-parser: "npm:^5.8.0"
@@ -11586,7 +11586,7 @@ __metadata:
     "@vitest/browser-playwright": "npm:^4.1.6"
     "@webgpu/types": "npm:^0.1.70"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.4.2"
+    dompurify: "npm:^3.4.7"
     eslint: "npm:^9.39.4"
     file-saver: "npm:^2.0.5"
     ical.js: "npm:^1.5.0"
@@ -25773,15 +25773,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.3.1, dompurify@npm:^3.3.3, dompurify@npm:^3.4.2":
-  version: 3.4.2
-  resolution: "dompurify@npm:3.4.2"
+"dompurify@npm:^3.3.1, dompurify@npm:^3.3.3, dompurify@npm:^3.4.2, dompurify@npm:^3.4.7":
+  version: 3.4.10
+  resolution: "dompurify@npm:3.4.10"
   dependencies:
     "@types/trusted-types": "npm:^2.0.7"
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 10/8681a27f17412e754b38d080e39abb36fb14dbf58194d520eedd45b47986323966a0391df540a2011bce72dd37d67f2a015246a58f39d48e3e8f6051274fb974
+  checksum: 10/e051c70e7a0729d8cc04d40d7863dc8977495140857e81dc668fb548b7a43c7f80cfc973e3c9c0a6cd18b8eaa94ea7de9603daa02d38c8b15a9b32cc25a6f440
   languageName: node
   linkType: hard
 
@@ -41746,7 +41746,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     d3-array: "npm:^3.2.4"
     d3-scale: "npm:^4.0.2"
-    dompurify: "npm:^3.4.2"
+    dompurify: "npm:^3.4.7"
     eslint: "npm:^9.39.4"
     eslint-config-prettier: "npm:^10.1.8"
     exceljs: "npm:^4.4.0"
