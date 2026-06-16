@@ -16,10 +16,12 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useLoading } from '@proton/hooks';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
+import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import PasswordReminderInput from './PasswordReminderInput';
@@ -34,11 +36,13 @@ interface PasswordReminderModalProps extends ModalProps<'form'> {
 }
 
 const PasswordReminderModal = ({ onClose, source, disableDismiss, ...rest }: PasswordReminderModalProps) => {
+    const api = useSilentApi();
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const dispatch = useDispatch();
     const { sendOpen, sendSuccess, sendWrongPassword, sendApiError, sendClose, sendDismiss, sendForgotPasswordExit } =
         usePasswordReminderTelemetry();
+
     useEffect(() => {
         sendOpen(source);
     }, []);
@@ -75,7 +79,8 @@ const PasswordReminderModal = ({ onClose, source, disableDismiss, ...rest }: Pas
 
     const handleSubmit = async () => {
         try {
-            await dispatch(submitPasswordReminder({ password }));
+            const info = await api<InfoAuthedResponse>(getInfo({}));
+            await dispatch(submitPasswordReminder({ api, password, info, credentials: null }));
 
             sendSuccess();
 

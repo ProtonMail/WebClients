@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tabs } from '@proton/components';
 import type { AuthTypes } from '@proton/components/containers/login/interface';
-import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
+import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
+import type { Fido2Response } from '@proton/shared/lib/authentication/interface';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -13,7 +14,7 @@ import Fido2Form from './Fido2Form';
 import LoginTOTPForm, { LoginTOTPFormWithRecoveryCodeInputForm } from './LoginTOTPForm';
 
 interface Props {
-    onSubmit: (data: { type: 'code'; payload: string } | { type: 'fido2'; payload: Fido2Data }) => Promise<void>;
+    onSubmit: (data: TwoFactorCredentials) => Promise<void>;
     fido2?: Fido2Response | null;
     authTypes: AuthTypes;
     onLost2FAClick: () => void;

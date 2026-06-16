@@ -13,6 +13,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -34,12 +35,13 @@ import type {
 
 const getSafetyReviewState = (
     store: ReturnType<typeof useStore>,
-    actionsHistoryMap: SafetyReviewContainerState['actionsHistoryMap']
+    actionsHistoryMap: SafetyReviewContainerState['actionsHistoryMap'],
+    isPasswordReminderInASREnabled: boolean
 ): PartialSafetyReviewContainerState => {
     // Intentionally taking snapshots of the recovery state to avoid cards appearing/disappearing while performing specific actions.
     const recoveryState = selectRecoveryState(store.getState());
     const actionableRecoveryActionItems = recoveryState.recoveryActionItems.filter((item) =>
-        getActionableActionItem(item, actionsHistoryMap)
+        getActionableActionItem(item, actionsHistoryMap, isPasswordReminderInASREnabled)
     );
     const visibleActionableRecoveryActionItems = actionableRecoveryActionItems.slice(0, 3);
     return {
@@ -54,6 +56,7 @@ const getSafetyReviewState = (
 export const SafetyReviewContainer = ({ backLink }: { backLink: SafetyReviewBackLink }) => {
     const api = useApi();
     const store = useStore();
+    const isPasswordReminderInASREnabled = useFlag('PasswordReminderASR');
 
     useAppTitle(c('Safety review').t`Safety review`);
 
@@ -65,7 +68,7 @@ export const SafetyReviewContainer = ({ backLink }: { backLink: SafetyReviewBack
     }, []);
 
     const [state, setState] = useState<PartialSafetyReviewContainerState>(() => {
-        return getSafetyReviewState(store, new Map());
+        return getSafetyReviewState(store, new Map(), isPasswordReminderInASREnabled);
     });
     const [stackContentReady, setStackContentReady] = useState(false);
     const [footerEl, setFooterEl] = useState<HTMLElement | null>(null);
@@ -106,7 +109,7 @@ export const SafetyReviewContainer = ({ backLink }: { backLink: SafetyReviewBack
                         oldState.actionsHistoryMap.set(item.id, {
                             type,
                         });
-                        return getSafetyReviewState(store, oldState.actionsHistoryMap);
+                        return getSafetyReviewState(store, oldState.actionsHistoryMap, isPasswordReminderInASREnabled);
                     });
                 },
             });
@@ -115,7 +118,7 @@ export const SafetyReviewContainer = ({ backLink }: { backLink: SafetyReviewBack
             setStackContentReady(false);
             removeIntroTransition();
             introTransition(() => {
-                setState(getSafetyReviewState(store, new Map()));
+                setState(getSafetyReviewState(store, new Map(), isPasswordReminderInASREnabled));
                 setStackContentReady(true);
             });
         },

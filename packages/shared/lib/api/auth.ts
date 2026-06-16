@@ -1,4 +1,4 @@
-import type { ChallengePayload } from '../authentication/interface';
+import type { ChallengePayload, Fido2Data } from '../authentication/interface';
 import type { APP_CLIENT_IDS } from '../constants';
 import { HTTP_ERROR_CODES } from '../errors';
 import type { AuthenticationCredentialsPayload } from '../webauthn/interface';
@@ -222,11 +222,15 @@ interface AuthReminderPayload {
     ClientEphemeral: string;
     ClientProof: string;
     SRPSession: string;
+    TwoFactorCode?: string;
+    FIDO2?: Fido2Data;
 }
 
 export interface AuthReminderResponse {
     ServerProof: string;
 }
+
+export type TwoFactorCredentials = { type: 'code'; payload: string } | { type: 'fido2'; payload: Fido2Data };
 
 export const authReminder = (data: AuthReminderPayload) => ({
     method: 'post',

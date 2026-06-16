@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components/index';
+import useApi from '@proton/components/hooks/useApi';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
