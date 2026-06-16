@@ -25,7 +25,7 @@ describe('getAssistantUpsellConfig', () => {
         });
         const selectedPlan = new SelectedPlan({}, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
-        const config = getAssistantUpsellConfigPlanAndCycle(user, false, selectedPlan);
+        const config = getAssistantUpsellConfigPlanAndCycle(user, false, selectedPlan, false);
 
         expect(config).toEqual(undefined);
     });
@@ -35,7 +35,7 @@ describe('getAssistantUpsellConfig', () => {
             isPaid: true,
         });
         const selectedPlan = new SelectedPlan({ [PLANS.MAIL_BUSINESS]: 1 }, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-        const config = getAssistantUpsellConfigPlanAndCycle(user, false, selectedPlan);
+        const config = getAssistantUpsellConfigPlanAndCycle(user, false, selectedPlan, false);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -51,7 +51,7 @@ describe('getAssistantUpsellConfig', () => {
         });
         const selectedPlan = new SelectedPlan({ [PLANS.MAIL_BUSINESS]: 1 }, PLANS_MAP, CYCLE.YEARLY, 'EUR');
 
-        const config = getAssistantUpsellConfigPlanAndCycle(user, false, selectedPlan);
+        const config = getAssistantUpsellConfigPlanAndCycle(user, false, selectedPlan, false);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -68,7 +68,7 @@ describe('getAssistantUpsellConfig', () => {
 
         const selectedPlan = new SelectedPlan({ [PLANS.MAIL_BUSINESS]: 1 }, PLANS_MAP, CYCLE.TWO_YEARS, 'EUR');
 
-        const config = getAssistantUpsellConfigPlanAndCycle(user, false, selectedPlan);
+        const config = getAssistantUpsellConfigPlanAndCycle(user, false, selectedPlan, false);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -93,7 +93,7 @@ describe('getAssistantUpsellConfig', () => {
             'EUR'
         );
 
-        const config = getAssistantUpsellConfigPlanAndCycle(user, true, selectedPlan);
+        const config = getAssistantUpsellConfigPlanAndCycle(user, true, selectedPlan, false);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -120,7 +120,7 @@ describe('getAssistantUpsellConfig', () => {
             'EUR'
         );
 
-        const config = getAssistantUpsellConfigPlanAndCycle(user, true, selectedPlan);
+        const config = getAssistantUpsellConfigPlanAndCycle(user, true, selectedPlan, false);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -148,7 +148,7 @@ describe('getAssistantUpsellConfig', () => {
             'EUR'
         );
 
-        const config = getAssistantUpsellConfigPlanAndCycle(user, true, selectedPlan);
+        const config = getAssistantUpsellConfigPlanAndCycle(user, true, selectedPlan, false);
 
         expect(config).toEqual({
             ...baseConfig,

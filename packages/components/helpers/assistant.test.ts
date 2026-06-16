@@ -41,6 +41,21 @@ describe('assistant helpers', () => {
             const user = { isFree: false } as UserModel;
             expect(isScribeSupported(undefined, user)).toBeFalsy();
         });
+
+        it('should be true when user has a Lumo subscription (NumLumo > 0)', () => {
+            const user = { isFree: false, NumLumo: 1 } as UserModel;
+            expect(isScribeSupported(undefined, user)).toBeTruthy();
+        });
+
+        it('should be true for existing Scribe add-on holders (NumAI > 0) when scribeToLumo is enabled', () => {
+            const user = { isFree: false, NumAI: 1 } as UserModel;
+            expect(isScribeSupported(undefined, user, true)).toBeTruthy();
+        });
+
+        it('should be false for Scribe add-on holders (NumAI > 0) when scribeToLumo is disabled', () => {
+            const user = { isFree: false, NumAI: 1 } as UserModel;
+            expect(isScribeSupported(undefined, user, false)).toBeFalsy();
+        });
     });
 
     describe('isB2bPlanSupportingScribe', () => {

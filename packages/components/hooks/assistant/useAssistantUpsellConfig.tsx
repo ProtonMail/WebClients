@@ -3,6 +3,7 @@ import { useUser } from '@proton/account/user/hooks';
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { type Plan, SelectedPlan } from '@proton/payments';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getAssistantUpsellConfigPlanAndCycle } from './assistantUpsellConfig';
 
@@ -15,13 +16,14 @@ interface Props {
 const useAssistantUpsellConfig = ({ upsellRef, plans }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
+    const scribeToLumo = useFlag('ScribeToLumo');
     const latestSubscription = subscription?.UpcomingSubscription ?? subscription;
     const isOrgAdmin = user.isAdmin;
 
     const selectedPlan = SelectedPlan.createFromSubscription(latestSubscription, plans);
 
     const assistantUpsellConfig: OpenCallbackProps = {
-        ...getAssistantUpsellConfigPlanAndCycle(user, isOrgAdmin, selectedPlan),
+        ...getAssistantUpsellConfigPlanAndCycle(user, isOrgAdmin, selectedPlan, scribeToLumo),
         upsellRef,
         cycle: selectedPlan.cycle,
         planIDs: selectedPlan.planIDs,

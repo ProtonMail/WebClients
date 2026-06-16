@@ -13,6 +13,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcArrowLeftAndUp } from '@proton/icons/icons/IcArrowLeftAndUp';
 import type { IconName } from '@proton/icons/types';
 import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { ComposerAssistantSelection } from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
 
@@ -40,6 +42,7 @@ const ComposerAssistantCustomInput = ({
     canExpandAssistant,
 }: Props) => {
     const [showPopover, setShowPopover] = useState(false);
+    const scribeToLumo = useFlag('ScribeToLumo');
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -69,21 +72,18 @@ const ComposerAssistantCustomInput = ({
     const { viewportWidth } = useActiveBreakpoint();
 
     const randomPlaceholder = useMemo(() => {
+        const subject = scribeToLumo ? LUMO_SHORT_APP_NAME : c('Placeholder').t`the writing assistant`;
         const placeholderPrompts = [
-            c('Placeholder').t`Tell the writing assistant what to write. Example: “Invite Jane to my party”`,
-            c('Placeholder')
-                .t`Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”`,
-            c('Placeholder')
-                .t`Tell the writing assistant what to write. Example: “Write a cover letter for an internship”`,
-            c('Placeholder').t`Tell the writing assistant what to write. Example: “Cancel my gym membership”`,
-            c('Placeholder')
-                .t`Tell the writing assistant what to write. Example: “Write a follow-up email to a client”`,
-            c('Placeholder')
-                .t`Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”`,
+            c('Placeholder').t`Tell ${subject} what to write. Example: “Invite Jane to my party”`,
+            c('Placeholder').t`Tell ${subject} what to write. Example: “Announce upcoming events in a newsletter”`,
+            c('Placeholder').t`Tell ${subject} what to write. Example: “Write a cover letter for an internship”`,
+            c('Placeholder').t`Tell ${subject} what to write. Example: “Cancel my gym membership”`,
+            c('Placeholder').t`Tell ${subject} what to write. Example: “Write a follow-up email to a client”`,
+            c('Placeholder').t`Tell ${subject} what to write. Example: “Thank my coworker for help on a project”`,
         ];
 
         return placeholderPrompts[Math.floor(Math.random() * placeholderPrompts.length)];
-    }, []);
+    }, [scribeToLumo]);
 
     const handleSubmit = async () => {
         onSubmit();
