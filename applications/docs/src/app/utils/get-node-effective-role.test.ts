@@ -15,7 +15,7 @@ describe('getNodeEffectiveRole', () => {
     uid,
     parentUid,
     directRole,
-    name: `node-${uid}`,
+    name: { ok: true as const, value: `node-${uid}` },
     keyAuthor: { ok: true, value: 'test@proton.me' },
     nameAuthor: { ok: true, value: 'test@proton.me' },
     type,
@@ -41,7 +41,7 @@ describe('getNodeEffectiveRole', () => {
   describe('short circuit when role is Admin', () => {
     it('without calling drive.getNode when role argument is Admin', async () => {
       const node = createMockNode('node', MemberRole.Viewer, 'parent-uid')
-      mockDrive.getNode.mockResolvedValue({ ok: true, value: createMockNode('parent', MemberRole.Editor) })
+      mockDrive.getNode.mockResolvedValue(createMockNode('parent', MemberRole.Editor))
 
       const result = await getNodeEffectiveRole(mockDrive, node, MemberRole.Admin)
 
@@ -62,7 +62,7 @@ describe('getNodeEffectiveRole', () => {
       const parentNode = createMockNode('parent-node', MemberRole.Admin, 'grandparent-node')
       const childNode = createMockNode('child-node', MemberRole.Viewer, 'parent-node')
 
-      mockDrive.getNode.mockResolvedValueOnce({ ok: true, value: parentNode })
+      mockDrive.getNode.mockResolvedValueOnce(parentNode)
 
       const result = await getNodeEffectiveRole(mockDrive, childNode)
 
@@ -80,10 +80,7 @@ describe('getNodeEffectiveRole', () => {
       const parent1 = createMockNode('p1', MemberRole.Editor, 'p2')
       const node = createMockNode('node', MemberRole.Viewer, 'p1')
 
-      mockDrive.getNode
-        .mockResolvedValueOnce({ ok: true, value: parent1 })
-        .mockResolvedValueOnce({ ok: true, value: parent2 })
-        .mockResolvedValueOnce({ ok: true, value: parent3 })
+      mockDrive.getNode.mockResolvedValueOnce(parent1).mockResolvedValueOnce(parent2).mockResolvedValueOnce(parent3)
 
       const result = await getNodeEffectiveRole(mockDrive, node)
 

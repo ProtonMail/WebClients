@@ -1,6 +1,6 @@
 import { RecentDocumentsItem } from '@proton/docs-core'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
-import type { DegradedNode, NodeEntity } from '@proton/drive'
+import type { NodeEntity } from '@proton/drive'
 import { getDrive } from '@proton/drive'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
@@ -68,12 +68,12 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
   )
 
   // Loading it once here to avoid doing it every time we subscribe
-  const [myFilesNode, setMyFilesNode] = useState<NodeEntity | DegradedNode>()
+  const [myFilesNode, setMyFilesNode] = useState<NodeEntity>()
   useEffect(() => {
     drive
       .getMyFilesRootFolder()
       .then((maybeMyFiles) => {
-        setMyFilesNode(maybeMyFiles.ok ? maybeMyFiles.value : maybeMyFiles.error)
+        setMyFilesNode(maybeMyFiles)
       })
       .catch(() => {
         createNotification({
