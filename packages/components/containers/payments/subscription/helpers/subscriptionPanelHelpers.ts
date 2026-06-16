@@ -116,46 +116,64 @@ const getMaxVPNDevicesText = () => {
     );
 };
 
-const getWritingAssistantText = (organization?: Organization) => {
+const getWritingAssistantText = (organization: Organization | undefined, maxMembers: number) => {
     const maxAi = organization?.MaxAI ?? 0;
 
     if (maxAi === 0) {
         return null;
     }
 
-    return c('Subscription attribute').ngettext(
-        msgid`${BRAND_NAME} Scribe writing assistant for ${maxAi} user`,
-        `${BRAND_NAME} Scribe writing assistant for ${maxAi} users`,
-        maxAi
-    );
+    if (maxMembers === 1) {
+        return c('Subscription attribute').t`${BRAND_NAME} Scribe writing assistant`;
+    } else {
+        return c('Subscription attribute').ngettext(
+            msgid`${BRAND_NAME} Scribe writing assistant for ${maxAi} user`,
+            `${BRAND_NAME} Scribe writing assistant for ${maxAi} users`,
+            maxAi
+        );
+    }
 };
 
-const getLumoText = (organization?: Organization) => {
+const getLumoText = (organization: Organization | undefined, maxMembers: number) => {
     const maxLumo = organization?.MaxLumo ?? 0;
 
     if (maxLumo === 0) {
         return null;
     }
 
-    return getProductForUsersSubscriptionAttributeText(LUMO_APP_NAME, maxLumo);
+    if (maxMembers === 1) {
+        return c('Addon').t`${LUMO_APP_NAME} AI assistant`;
+    } else {
+        return getProductForUsersSubscriptionAttributeText(LUMO_APP_NAME, maxLumo);
+    }
 };
 
-const getMeetText = (organization?: Organization) => {
+const getMeetText = (organization: Organization | undefined, maxMembers: number) => {
     const maxMeet = organization?.MaxMeet ?? 0;
 
     if (maxMeet === 0) {
         return null;
     }
 
-    return getProductForUsersSubscriptionAttributeText(MEET_APP_NAME, maxMeet);
+    if (maxMembers === 1) {
+        return MEET_APP_NAME;
+    } else {
+        return getProductForUsersSubscriptionAttributeText(MEET_APP_NAME, maxMeet);
+    }
 };
 
 /**
  * Delinquant organizations have some different text for the subscription panel to avoid confusion
- * @param organization Organization to get the subscription panel text
- * @returns Object with the subscription, address and domains text for both delinquant and non-delinquant organizations
+ * @param user - Logged-in user
+ * @param organization - Organization to get the subscription panel text
+ * @param addresses - Addresses of the logged-in users
+ * @returns Object with the subscription, address and domains text for both delinquent and non-delinquent organizations
  */
-export const getSubscriptionPanelText = (user: UserModel, organization?: Organization, addresses?: Address[]) => {
+export const getSubscriptionPanelText = (
+    user: UserModel,
+    organization: Organization | undefined,
+    addresses: Address[] | undefined
+) => {
     const {
         MaxDomains = 0,
         UsedAddresses: OrganizationUsedAddresses,
@@ -179,8 +197,8 @@ export const getSubscriptionPanelText = (user: UserModel, organization?: Organiz
         vpnText: getVPNText(user, MaxMembers),
         serverText: getServersText(organization),
         maxVPNDevicesText: getMaxVPNDevicesText(),
-        writingAssistantText: getWritingAssistantText(organization),
-        lumoText: getLumoText(organization),
-        meetText: getMeetText(organization),
+        writingAssistantText: getWritingAssistantText(organization, MaxMembers),
+        lumoText: getLumoText(organization, MaxMembers),
+        meetText: getMeetText(organization, MaxMembers),
     };
 };
