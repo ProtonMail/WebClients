@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { selectEnrichedOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/shared/outgoing/selector';
+import { selectPasswordReminder } from '@proton/account/passwordReminder';
 import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery';
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
@@ -78,6 +79,7 @@ export const selectRecoveryState = createSelector(
         selectAccountRecovery,
         selectMnemonicData,
         selectRecoveryFileData,
+        selectPasswordReminder,
         selectSessionRecoveryData,
         selectEnrichedOutgoingDelegatedAccess,
     ],
@@ -87,6 +89,7 @@ export const selectRecoveryState = createSelector(
         accountRecoveryData,
         mnemonicData,
         recoveryFileData,
+        passwordReminder,
         sessionRecoveryData,
         outgoingDelegatedAccess
     ): RecoveryStateResult => {
@@ -100,10 +103,8 @@ export const selectRecoveryState = createSelector(
         const recoveryItems: RecoveryItems = [
             {
                 id: 'passwordVerification',
-                // Pending API support
-                isAvailable: false,
-                isEnabled: true,
-                countsTowardScore: true,
+                isAvailable: passwordReminder.isAvailable,
+                isEnabled: !passwordReminder.messageCadenceHasExpired,
             },
             {
                 id: 'recoveryEmail',
@@ -256,18 +257,22 @@ export const selectRecoveryState = createSelector(
         });
 
         const recoveryScore = calculateRecoveryScore(
-            recoveryItems.map((item) => {
-                if (item.id === 'passwordVerification') {
-                    return {
-                        ...item,
-                        // Pretend that passwordVerification is available for the recovery score computation
-                        // to have the baseline be at 1.
-                        // This ensures it's not available as an action item because that's not supported in either the FE or BE.
-                        isAvailable: true,
-                    };
-                }
-                return item;
-            })
+            // If password reminder is available, use the recovery items as is. Remove after FF is enabled.
+            passwordReminder.isAvailable
+                ? recoveryItems
+                : recoveryItems.map((item) => {
+                      if (item.id === 'passwordVerification') {
+                          return {
+                              ...item,
+                              // Pretend that passwordVerification is available for the recovery score computation
+                              // to have the baseline be at 1.
+                              // This ensures it's not available as an action item because that's not supported in either the FE or BE.
+                              isAvailable: true,
+                              isEnabled: true,
+                          };
+                      }
+                      return item;
+                  })
         );
 
         const loading =

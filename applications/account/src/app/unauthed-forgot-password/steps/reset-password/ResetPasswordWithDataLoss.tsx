@@ -28,7 +28,7 @@ export const ResetPasswordWithDataLoss = () => {
     }, []);
 
     const multiFAEnabled = resetResponse?.['2FA']?.Enabled;
-    const hasTOTPEnabled = getHasTOTPEnabled();
+    const hasTOTPEnabled = getHasTOTPEnabled(multiFAEnabled);
     const hasFIDO2Enabled = getHasFIDO2Enabled(multiFAEnabled);
 
     const has2FA = hasTOTPEnabled || hasFIDO2Enabled;

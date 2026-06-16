@@ -16,6 +16,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -25,7 +26,7 @@ import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import Tabs from '../../components/tabs/Tabs';
+import { Tabs } from '../../components/tabs/Tabs';
 import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
 import { TotpInputField, TotpRecoveryCodeInputField } from '../account/totp/TotpInputs';
 import type { OnLoginCallback } from '../app/interface';
@@ -227,6 +228,8 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
                                 );
                             } catch (error) {
                                 setFidoError(true);
+                                // Ignore console.error to help with debugging
+                                // eslint-disable-next-line no-console
                                 console.error(error);
                                 return;
                             } finally {
@@ -246,7 +249,7 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
 };
 
 interface TwoFactorStepProps {
-    onSubmit: (data: { type: 'code'; payload: string } | { type: 'fido2'; payload: Fido2Data }) => Promise<void>;
+    onSubmit: (data: TwoFactorCredentials) => Promise<void>;
     fido2?: Fido2Response | null;
     authTypes: AuthTypes;
     cancelButton: ReactNode;
