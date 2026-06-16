@@ -6,13 +6,13 @@
     "sideEffects": false,
     "scripts": {
         "check-types": "tsc",
+        "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && prettier --write lib/i18n/dateFnsLocaleMap.ts",
         "i18n:validate": "proton-i18n validate lint-functions lib",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "TZ=UTC vitest",
         "test:ci": "yarn test --run --silent=passed-only",
-        "test:watch": "yarn test --watch",
-        "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && prettier --write lib/i18n/dateFnsLocaleMap.ts"
+        "test:watch": "yarn test --watch"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
@@ -33,7 +33,7 @@
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
         "date-fns": "^2.30.0",
-        "dompurify": "^3.4.2",
+        "dompurify": "^3.4.7",
         "file-saver": "^2.0.5",
         "ical.js": "^1.5.0",
         "idb": "^8.0.3",
