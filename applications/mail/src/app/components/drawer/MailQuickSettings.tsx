@@ -40,7 +40,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { DENSITY, LUMO_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
@@ -97,6 +97,7 @@ const MailQuickSettings = () => {
     const [loadingComposerSize, withLoadingComposerSize] = useLoading();
     const [loadingDownloadLogs, withLoadingDownloadLogs] = useLoading();
     const collectLogs = useFlag('CollectLogs');
+    const scribeToLumo = useFlag('ScribeToLumo');
     const [clearBrowserDataProps, setClearBrowserDataModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
@@ -377,7 +378,11 @@ const MailQuickSettings = () => {
             {assistantFeatureEnabled.enabled && (
                 <DrawerAppSection>
                     <QuickSettingsSectionRow
-                        label={c('Label').t`Writing assistant`}
+                        label={
+                            scribeToLumo
+                                ? c('Label').t`${LUMO_SHORT_APP_NAME} writing assistant`
+                                : c('Label').t`Writing assistant`
+                        }
                         labelInfo={
                             aiFlag === AI_ASSISTANT_ACCESS.OFF ? (
                                 <Info

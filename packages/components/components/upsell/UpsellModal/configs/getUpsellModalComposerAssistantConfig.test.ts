@@ -3,6 +3,7 @@ import * as organizationModule from '@proton/account/organization';
 import * as assistantUpsellConfigModule from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import { CYCLE, type Currency, PLANS, PLAN_TYPES, type PaymentsApi, type Plan } from '@proton/payments';
 import * as checkoutModule from '@proton/payments/core/checkout';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import * as organizationHelperModule from '@proton/shared/lib/organization/helper';
 
 import * as composerAssistantUpsellModalHelpersModule from '../../modals/ComposerAssistantUpsellModal.helpers';
@@ -37,8 +38,9 @@ const NON_MAIN_CURRENCY_MOCK_AMOUNT = 20 * 12;
 const NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT = 30 * 12;
 
 const PROTON_DUO_YEARLY_PRICE = 100;
+const PROTON_LUMO_YEARLY_PRICE = 60;
 
-async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin?: boolean) {
+async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin?: boolean, scribeToLumo = false) {
     jest.spyOn(organizationModule, 'organizationThunk').mockImplementation(organisationThunkMock);
     jest.spyOn(memberModule, 'memberThunk').mockImplementation(memberThunkMock);
 
@@ -83,7 +85,7 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
         // @ts-expect-error - fake user for test purposes
         user: { isAdmin: !!isOrgAdmin },
         currency,
-        getFlags: jest.fn(),
+        getFlag: (flag) => flag === 'ScribeToLumo' && scribeToLumo,
         paymentsApi: paymentsApiMock,
         plans: [
             {
@@ -96,6 +98,18 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
                     [CYCLE.MONTHLY]: 10,
                     [CYCLE.YEARLY]: PROTON_DUO_YEARLY_PRICE,
                     [CYCLE.TWO_YEARS]: 150,
+                },
+            } as unknown as Plan,
+            {
+                ID: PLANS.LUMO,
+                Type: PLAN_TYPES.PLAN,
+                Name: PLANS.LUMO,
+                Currency: 'USD',
+                Amount: 6,
+                Pricing: {
+                    [CYCLE.MONTHLY]: 6,
+                    [CYCLE.YEARLY]: PROTON_LUMO_YEARLY_PRICE,
+                    [CYCLE.TWO_YEARS]: 90,
                 },
             } as unknown as Plan,
         ],
@@ -116,8 +130,8 @@ describe('getUpsellModalComposerAssistantConfig', () => {
         jest.clearAllMocks();
     });
 
-    describe('B2C users', () => {
-        it('B2C users - When main currency it should return correct config', async () => {
+    describe('B2C users - ScribeToLumo flag OFF', () => {
+        it('B2C users - When main currency it should upsell Duo', async () => {
             const { config } = await setupTest('USD', 'B2C');
 
             // Check that the organization and member thunks are called once
@@ -130,7 +144,7 @@ describe('getUpsellModalComposerAssistantConfig', () => {
 
             expect(config).toHaveProperty('planIDs', { [PLANS.DUO]: 1 });
             expect(config).toHaveProperty('cycle', CYCLE.YEARLY);
-            expect(config).toHaveProperty('submitText', `Get the writing assistant`);
+            expect(config).toHaveProperty('submitText', 'Get the writing assistant');
 
             const footerText = config.footerText as any;
             expect(footerText).not.toBeNull();
@@ -138,7 +152,7 @@ describe('getUpsellModalComposerAssistantConfig', () => {
             expect(footerText[1].props.children).toBe(PROTON_DUO_YEARLY_PRICE / 12);
         });
 
-        it('B2C users - When non main currency it should return correct config', async () => {
+        it('B2C users - When non main currency it should upsell Duo', async () => {
             const { config } = await setupTest('BRL', 'B2C');
 
             // Check that the organization and member thunks are called once
@@ -151,12 +165,40 @@ describe('getUpsellModalComposerAssistantConfig', () => {
 
             expect(config).toHaveProperty('planIDs', { [PLANS.DUO]: 1 });
             expect(config).toHaveProperty('cycle', CYCLE.YEARLY);
-            expect(config).toHaveProperty('submitText', `Get the writing assistant`);
+            expect(config).toHaveProperty('submitText', 'Get the writing assistant');
 
             const footerText = config.footerText as any;
             expect(footerText).not.toBeNull();
             expect(footerText[1].props.currency).toBe('BRL');
             // The second pricing displayed in the footer text is the regular price, not the coupon price
+            expect(footerText[1].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT / 12);
+        });
+    });
+
+    describe('B2C users - ScribeToLumo flag ON', () => {
+        it('B2C users - When main currency it should upsell Lumo', async () => {
+            const { config } = await setupTest('USD', 'B2C', false, true);
+
+            expect(config).toHaveProperty('planIDs', { [PLANS.LUMO]: 1 });
+            expect(config).toHaveProperty('cycle', CYCLE.YEARLY);
+            expect(config).toHaveProperty('submitText', `Get ${LUMO_SHORT_APP_NAME}`);
+
+            const footerText = config.footerText as any;
+            expect(footerText).not.toBeNull();
+            expect(footerText[1].props.currency).toBe('USD');
+            expect(footerText[1].props.children).toBe(PROTON_LUMO_YEARLY_PRICE / 12);
+        });
+
+        it('B2C users - When non main currency it should upsell Lumo', async () => {
+            const { config } = await setupTest('BRL', 'B2C', false, true);
+
+            expect(config).toHaveProperty('planIDs', { [PLANS.LUMO]: 1 });
+            expect(config).toHaveProperty('cycle', CYCLE.YEARLY);
+            expect(config).toHaveProperty('submitText', `Get ${LUMO_SHORT_APP_NAME}`);
+
+            const footerText = config.footerText as any;
+            expect(footerText).not.toBeNull();
+            expect(footerText[1].props.currency).toBe('BRL');
             expect(footerText[1].props.children).toBe(NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT / 12);
         });
     });
@@ -208,7 +250,7 @@ describe('getUpsellModalComposerAssistantConfig', () => {
     });
 
     describe('B2B org admin users', () => {
-        it('B2B org admin users - When main currency it should return correct config', async () => {
+        it('B2B org admin users - flag OFF returns "Get the writing assistant"', async () => {
             const { config } = await setupTest('USD', 'B2B', true);
 
             // Check that the organization and member thunks are called once
@@ -228,23 +270,13 @@ describe('getUpsellModalComposerAssistantConfig', () => {
             expect(config.footerText).toBeNull();
         });
 
-        it('B2B org admin users - When non main currency it should return correct config', async () => {
-            const { config } = await setupTest('BRL', 'B2B');
-
-            // Check that the organization and member thunks are called once
-            expect(organisationThunkMock).toHaveBeenCalledTimes(1);
-            expect(memberThunkMock).toHaveBeenCalledTimes(1);
-            expect(getIsB2CUserAbleToRunScribeMock).toHaveBeenCalledTimes(1);
-            expect(getIsOrganizationUserMock).toHaveBeenCalledTimes(1);
-            // Should not be reached
-            expect(getIsSuperAdminMock).toHaveBeenCalledTimes(1);
+        it('B2B org admin users - flag ON returns "Get Lumo"', async () => {
+            const { config } = await setupTest('USD', 'B2B', true, true);
 
             expect(config).toHaveProperty('planIDs', 'FAKE_PLAN_IDS');
             expect(config).toHaveProperty('cycle', 'FAKE_CYCLE');
             expect(config.configOverride).toBeDefined();
-            // Should be react component
-            expect(typeof config.submitText).toBe('function');
-            expect(config.submitText).toBe(UpsellModalComposerAssistantSubmitButton);
+            expect(config.submitText).toBe(`Get ${LUMO_SHORT_APP_NAME}`);
 
             // Should be react component
             expect(config.footerText).toBeNull();
