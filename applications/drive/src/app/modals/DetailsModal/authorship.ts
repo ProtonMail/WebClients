@@ -1,38 +1,30 @@
 import { c } from 'ttag';
 
-import { type MaybeNode, NodeType } from '@proton/drive';
+import { type NodeEntity, NodeType } from '@proton/drive';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-export function getAuthorshipStatus(node: MaybeNode): {
+export function getAuthorshipStatus(node: NodeEntity): {
     ok: boolean;
     message: string;
     details: string[];
 } {
-    const nodeEntity = node.ok ? node.value : node.error;
+    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
+    const isFile = node.type === NodeType.File;
 
-    let activeRevision;
-    if (node.ok) {
-        activeRevision = node.value.activeRevision;
-    } else {
-        activeRevision = node.error.activeRevision?.ok ? node.error.activeRevision.value : undefined;
-    }
-
-    const isFile = node.ok ? node.value.type === NodeType.File : node.error.type === NodeType.File;
-
-    if (nodeEntity.keyAuthor.ok && nodeEntity.nameAuthor.ok && !activeRevision) {
+    if (node.keyAuthor.ok && node.nameAuthor.ok && !activeRevision) {
         return {
             ok: true,
             message: getAuthorshipMessage({
                 isOk: true,
                 isFile,
                 type: 'created',
-                emailAddress: nodeEntity.keyAuthor.value,
+                emailAddress: node.keyAuthor.value,
             }),
             details: [],
         };
     }
 
-    if (nodeEntity.keyAuthor.ok && nodeEntity.nameAuthor.ok && activeRevision?.contentAuthor?.ok) {
+    if (node.keyAuthor.ok && node.nameAuthor.ok && activeRevision?.contentAuthor?.ok) {
         return {
             ok: true,
             message: getAuthorshipMessage({
@@ -59,9 +51,7 @@ export function getAuthorshipStatus(node: MaybeNode): {
         };
     }
 
-    const emailAddress = nodeEntity.keyAuthor.ok
-        ? nodeEntity.keyAuthor.value
-        : nodeEntity.keyAuthor.error.claimedAuthor;
+    const emailAddress = node.keyAuthor.ok ? node.keyAuthor.value : node.keyAuthor.error.claimedAuthor;
     return {
         ok: false,
         message: getAuthorshipMessage({ isOk: false, isFile, type: 'created', emailAddress }),
@@ -141,32 +131,23 @@ function getAuthorshipMessage({
         : c('Title').jt`We couldn’t verify that <strong>${emailAddress}</strong> uploaded this folder.`.join('');
 }
 
-function getAuthorshipDetails(node: MaybeNode): string[] {
-    const nodeEntity = node.ok ? node.value : node.error;
-
-    let activeRevision;
-    if (node.ok) {
-        activeRevision = node.value.activeRevision;
-    } else if (node.error.activeRevision?.ok) {
-        activeRevision = node.error.activeRevision.value;
-    } else {
-        activeRevision = undefined;
-    }
+function getAuthorshipDetails(node: NodeEntity): string[] {
+    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
 
     const details = [];
 
-    if (!nodeEntity.keyAuthor.ok) {
-        const claimedKeyAuthor = nodeEntity.keyAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
+    if (!node.keyAuthor.ok) {
+        const claimedKeyAuthor = node.keyAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
         details.push(
             c('Title')
-                .t`We weren’t able to confirm that the node was created by ${claimedKeyAuthor}. The reason is: ${nodeEntity.keyAuthor.error.error}`
+                .t`We weren’t able to confirm that the node was created by ${claimedKeyAuthor}. The reason is: ${node.keyAuthor.error.error}`
         );
     }
-    if (!nodeEntity.nameAuthor.ok) {
-        const claimedNameAuthor = nodeEntity.nameAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
+    if (!node.nameAuthor.ok) {
+        const claimedNameAuthor = node.nameAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
         details.push(
             c('Title')
-                .t`We weren’t able to confirm that the name was created or modified by ${claimedNameAuthor}. The reason is: ${nodeEntity.nameAuthor.error.error}`
+                .t`We weren’t able to confirm that the name was created or modified by ${claimedNameAuthor}. The reason is: ${node.nameAuthor.error.error}`
         );
     }
     if (activeRevision?.contentAuthor.ok === false) {

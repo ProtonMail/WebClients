@@ -1,5 +1,4 @@
 import { ValidationError } from '@proton/drive';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { uploadManager } from '@proton/drive/modules/upload';
@@ -12,8 +11,7 @@ export const subscribeToUploadEvents = (): (() => void) => {
     uploadManager.subscribeToEvents('transfer-manager', async (event, driveClient) => {
         if (event.type === 'file:complete') {
             const maybeNode = await driveClient.getNode(event.nodeUid);
-            const { node } = getNodeEntity(maybeNode);
-            const role = await getNodeEffectiveRole(node, driveClient);
+            const role = await getNodeEffectiveRole(maybeNode, driveClient);
             useTransferManagerStore.getState().addItem(event.uploadId, { role, type: 'upload' });
 
             await busDriver.emit(

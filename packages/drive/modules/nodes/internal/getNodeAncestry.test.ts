@@ -23,7 +23,7 @@ describe('getNodeAncestry', () => {
         uid,
         parentUid,
         directRole: MemberRole.Viewer,
-        name: `node-${uid}`,
+        name: { ok: true, value: `node-${uid}` },
         keyAuthor: { ok: true, value: 'test@proton.me' },
         nameAuthor: { ok: true, value: 'test@proton.me' },
         type: NodeType.Folder,
@@ -44,36 +44,34 @@ describe('getNodeAncestry', () => {
 
     it('should return the just the current node when no parent', async () => {
         const node1 = createMockNode('uid1', NO_PARENT_UID);
-        mockDrive.getNode.mockResolvedValue({ ok: true, value: node1 });
+        mockDrive.getNode.mockResolvedValue(node1);
 
         const result = await getNodeAncestry(node1.uid, mockDrive);
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
 
-        const nodes = result.value.map((maybeNode) => (maybeNode.ok ? maybeNode.value : maybeNode.error));
-        expect(nodes).toEqual([node1]);
+        expect(result.value).toEqual([node1]);
         expect(mockDrive.getNode).toHaveBeenCalledWith('uid1');
         expect(mockDrive.getNode).toHaveBeenCalledTimes(1);
     });
 
-    it('should get the ancestrors and the current node', async () => {
+    it('should get the ancestors and the current node', async () => {
         const node1 = createMockNode('uid1', NO_PARENT_UID);
         const node2 = createMockNode('uid2', 'uid1');
         const node3 = createMockNode('uid3', 'uid2');
         const lastNode = createMockNode('uid4', 'uid3');
 
         mockDrive.getNode
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: node3 })
-            .mockResolvedValueOnce({ ok: true, value: node2 })
-            .mockResolvedValueOnce({ ok: true, value: node1 });
+            .mockResolvedValueOnce(lastNode)
+            .mockResolvedValueOnce(node3)
+            .mockResolvedValueOnce(node2)
+            .mockResolvedValueOnce(node1);
 
         const result = await getNodeAncestry(lastNode.uid, mockDrive);
         expect(result.ok).toEqual(true);
         assertOk(result); // Narrow TS type for rest of the test.
 
-        const nodes = result.value.map((maybeNode) => (maybeNode.ok ? maybeNode.value : maybeNode.error));
-        expect(nodes).toEqual([node1, node2, node3, lastNode]);
+        expect(result.value).toEqual([node1, node2, node3, lastNode]);
         expect(mockDrive.getNode).toHaveBeenCalledTimes(4);
     });
 

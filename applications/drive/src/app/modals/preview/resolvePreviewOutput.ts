@@ -1,4 +1,4 @@
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { ContentPreviewMethod } from './content';
@@ -13,7 +13,7 @@ export type VideoStreamingResult = {
 
 export interface PreviewRawState {
     previewMethod: ContentPreviewMethod | undefined;
-    node: MaybeNode | undefined;
+    node: NodeEntity | undefined;
     videoStreaming: VideoStreamingResult | undefined;
     nodeData: { contents: Uint8Array<ArrayBuffer>[]; hasSignatureIssues: boolean } | undefined;
     largeThumbnail: { url: string } | undefined;
@@ -46,7 +46,7 @@ export interface PreviewResolvedOutput {
  */
 export function getEffectivePreviewMethod(
     previewMethod: ContentPreviewMethod | undefined,
-    node: MaybeNode | undefined,
+    node: NodeEntity | undefined,
     videoStreaming: VideoStreamingResult | undefined
 ): ContentPreviewMethod | undefined {
     if (previewMethod === ContentPreviewMethod.Streaming && node !== undefined && videoStreaming === undefined) {

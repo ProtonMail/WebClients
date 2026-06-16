@@ -7,7 +7,7 @@ import type { NodeEntity, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { MemberRole, NodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getNodeAncestry } from '@proton/drive/modules/nodes';
+import { getNodeAncestry, getNodeName } from '@proton/drive/modules/nodes';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -350,7 +350,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                     conditions={conditions}
                     sort={sort}
                     loading={isLoading}
-                    caption={folder?.uid || rootNode.name}
+                    caption={folder?.uid || getNodeName(rootNode)}
                     config={{ itemHeight: 52 }}
                     contextMenuControls={{
                         isOpen: contextMenuControls.isOpen,

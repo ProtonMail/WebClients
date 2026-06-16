@@ -1,39 +1,25 @@
-import type { MaybeNode, Result } from '@protontech/drive-sdk';
+import type { NodeEntity, Result } from '@protontech/drive-sdk';
 
 type DriveClient = {
-    getNode: (uid: string) => Promise<MaybeNode>;
-};
-
-const getParentUid = (node: MaybeNode): string | undefined => {
-    return node.ok ? node.value.parentUid : node.error.parentUid;
-};
-
-const getNodeParent = async (maybeNode: MaybeNode, drive: DriveClient): Promise<MaybeNode | null> => {
-    const parentUid = getParentUid(maybeNode);
-    if (!parentUid) {
-        return null;
-    }
-    return drive.getNode(parentUid);
+    getNode: (uid: string) => Promise<NodeEntity>;
 };
 
 export const getNodeAncestry = async (
     nodeUid: string,
     drive: DriveClient,
     includeSelf: boolean = true
-): Promise<Result<MaybeNode[], Error>> => {
-    const ancestors: MaybeNode[] = [];
+): Promise<Result<NodeEntity[], Error>> => {
+    const ancestors: NodeEntity[] = [];
     try {
-        const maybeNode = await drive.getNode(nodeUid);
-        let currentNode = maybeNode;
+        const node = await drive.getNode(nodeUid);
+        let currentNode = node;
         if (includeSelf) {
-            ancestors.push(maybeNode);
+            ancestors.push(node);
         }
-        while (getParentUid(currentNode)) {
-            const parent = await getNodeParent(currentNode, drive);
-            if (parent !== null) {
-                ancestors.unshift(parent);
-                currentNode = parent;
-            }
+        while (currentNode.parentUid) {
+            const parent = await drive.getNode(currentNode.parentUid);
+            ancestors.unshift(parent);
+            currentNode = parent;
         }
     } catch (e) {
         return { ok: false, error: e as Error };

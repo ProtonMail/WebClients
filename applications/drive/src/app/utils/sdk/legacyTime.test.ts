@@ -1,5 +1,6 @@
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
-import type { Author, NodeEntity, Revision } from '@proton/drive';
+import type { Author, Revision } from '@proton/drive';
+import type { NormalizedNode } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';
 
@@ -14,7 +15,7 @@ describe('legacyTime utilities', () => {
     const claimedModificationTime = new Date('2023-01-02T12:00:00.000Z');
     const trashTime = new Date('2023-01-03T15:30:00.000Z');
 
-    const createMockNode = (overrides: Partial<NodeEntity> = {}): NodeEntity => ({
+    const createMockNode = (overrides: Partial<NormalizedNode> = {}): NormalizedNode => ({
         uid: 'vol~link',
         parentUid: 'vol~parent',
         deprecatedShareId: 'share123',

@@ -1,4 +1,4 @@
-import type { DegradedNode, NodeEntity, ProtonDriveClient } from '../../../index';
+import type { NodeEntity, ProtonDriveClient } from '../../../index';
 import { MemberRole } from '../../../index';
 import { findEffectiveRole } from './helpers';
 
@@ -11,22 +11,9 @@ const createMockNode = (
         uid: 'test-uid',
         parentUid: parentUid ?? null,
         directRole,
-        name: 'Test Node',
+        name: { ok: true, value: 'Test Node' },
         ...overrides,
     }) as NodeEntity;
-
-const createMockDegradedNode = (
-    directRole: MemberRole,
-    parentUid?: string | null,
-    overrides?: Partial<DegradedNode>
-): DegradedNode =>
-    ({
-        uid: 'test-uid',
-        parentUid: parentUid ?? null,
-        directRole,
-        name: { ok: false, error: new Error('Encrypted') },
-        ...overrides,
-    }) as DegradedNode;
 
 describe('findEffectiveRole', () => {
     describe('early return for Admin role', () => {
@@ -75,7 +62,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(MemberRole.Viewer, 'parent-1');
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue({ ok: true, value: parentNode }),
+                getNode: jest.fn().mockResolvedValue(parentNode),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -90,10 +77,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(MemberRole.Viewer, 'parent-1');
 
             const mockDrive = {
-                getNode: jest
-                    .fn()
-                    .mockResolvedValueOnce({ ok: true, value: parentNode })
-                    .mockResolvedValueOnce({ ok: true, value: rootNode }),
+                getNode: jest.fn().mockResolvedValueOnce(parentNode).mockResolvedValueOnce(rootNode),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -108,7 +92,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(MemberRole.Editor, 'parent-1');
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue({ ok: true, value: parentNode }),
+                getNode: jest.fn().mockResolvedValue(parentNode),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -121,7 +105,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(MemberRole.Editor, 'root-1');
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue({ ok: true, value: rootNode }),
+                getNode: jest.fn().mockResolvedValue(rootNode),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -134,7 +118,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(MemberRole.Viewer, 'root-1');
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue({ ok: true, value: rootNode }),
+                getNode: jest.fn().mockResolvedValue(rootNode),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -147,7 +131,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(MemberRole.Inherited, 'root-1');
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue({ ok: true, value: rootNode }),
+                getNode: jest.fn().mockResolvedValue(rootNode),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -156,30 +140,36 @@ describe('findEffectiveRole', () => {
         });
     });
 
-    describe('degraded node handling', () => {
-        it('should work with degraded nodes', async () => {
-            const parentDegradedNode = createMockDegradedNode(MemberRole.Editor, null);
-            const childDegradedNode = createMockDegradedNode(MemberRole.Viewer, 'parent-1');
+    describe('nodes with name errors', () => {
+        it('should work with nodes that have name errors (previously degraded nodes)', async () => {
+            const parentNode = createMockNode(MemberRole.Editor, null, {
+                name: { ok: false, error: new Error('Encrypted') },
+            });
+            const childNode = createMockNode(MemberRole.Viewer, 'parent-1', {
+                name: { ok: false, error: new Error('Encrypted') },
+            });
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue({ ok: false, error: parentDegradedNode }),
+                getNode: jest.fn().mockResolvedValue(parentNode),
             } as unknown as ProtonDriveClient;
 
-            const result = await findEffectiveRole(mockDrive, childDegradedNode);
+            const result = await findEffectiveRole(mockDrive, childNode);
 
             expect(mockDrive.getNode).toHaveBeenCalledWith('parent-1');
             expect(result).toBe(MemberRole.Editor);
         });
 
-        it('should handle mix of regular and degraded nodes', async () => {
+        it('should handle mix of regular and name-error nodes', async () => {
             const parentNode = createMockNode(MemberRole.Admin, null);
-            const childDegradedNode = createMockDegradedNode(MemberRole.Viewer, 'parent-1');
+            const childNode = createMockNode(MemberRole.Viewer, 'parent-1', {
+                name: { ok: false, error: new Error('Encrypted') },
+            });
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue({ ok: true, value: parentNode }),
+                getNode: jest.fn().mockResolvedValue(parentNode),
             } as unknown as ProtonDriveClient;
 
-            const result = await findEffectiveRole(mockDrive, childDegradedNode);
+            const result = await findEffectiveRole(mockDrive, childNode);
 
             expect(result).toBe(MemberRole.Admin);
         });
@@ -195,9 +185,9 @@ describe('findEffectiveRole', () => {
             const mockDrive = {
                 getNode: jest
                     .fn()
-                    .mockResolvedValueOnce({ ok: true, value: level1Node })
-                    .mockResolvedValueOnce({ ok: true, value: level2Node })
-                    .mockResolvedValueOnce({ ok: true, value: level3Node }),
+                    .mockResolvedValueOnce(level1Node)
+                    .mockResolvedValueOnce(level2Node)
+                    .mockResolvedValueOnce(level3Node),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, level0Node);
@@ -212,10 +202,7 @@ describe('findEffectiveRole', () => {
             const level0Node = createMockNode(MemberRole.Viewer, 'level-1');
 
             const mockDrive = {
-                getNode: jest
-                    .fn()
-                    .mockResolvedValueOnce({ ok: true, value: level1Node })
-                    .mockResolvedValueOnce({ ok: true, value: level2Node }),
+                getNode: jest.fn().mockResolvedValueOnce(level1Node).mockResolvedValueOnce(level2Node),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, level0Node);

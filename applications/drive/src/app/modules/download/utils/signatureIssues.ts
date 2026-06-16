@@ -2,6 +2,7 @@ import type { UnverifiedAuthorError } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import type { NodeEntity } from '@proton/drive/index';
+import { getNodeName } from '@proton/drive/modules/nodes';
 
 import { IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import type { UserDecision } from './waitForUserDecision';
@@ -27,14 +28,15 @@ export const addAndWaitForManifestIssueDecision = (downloadId: string, node: Nod
     let nameAuthor = node.nameAuthor.ok ? node.nameAuthor.value : node.nameAuthor.error.claimedAuthor;
     nameAuthor = !!nameAuthor ? `${that} ${nameAuthor}` : c('Info').t`who`;
 
+    const nodeName = getNodeName(node);
     addSignatureIssue(downloadId, {
-        name: node.name,
+        name: nodeName,
         nodeType: node.type,
         message: c('Info')
-            .t`We couldn't verify ${nameAuthor} uploaded ${node.name}. The following may have been tampered with: file data order. Only open if you trust it.`,
+            .t`We couldn't verify ${nameAuthor} uploaded ${nodeName}. The following may have been tampered with: file data order. Only open if you trust it.`,
         issueStatus: IssueStatus.Detected,
     });
-    return waitForSignatureIssueDecision(downloadId, node.name);
+    return waitForSignatureIssueDecision(downloadId, nodeName);
 };
 
 export const detectMetadataSignatureIssue = (node: NodeEntity): UnverifiedAuthorError | undefined => {
@@ -45,8 +47,9 @@ export const detectMetadataSignatureIssue = (node: NodeEntity): UnverifiedAuthor
     if (!node.nameAuthor.ok) {
         error = node.nameAuthor.error;
     }
-    if (node.activeRevision && !node.activeRevision.contentAuthor.ok) {
-        error = node.activeRevision.contentAuthor.error;
+    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
+    if (activeRevision && !activeRevision.contentAuthor.ok) {
+        error = activeRevision.contentAuthor.error;
     }
     return error;
 };
@@ -64,11 +67,12 @@ export const addAndWaitForMetadataIssueDecision = (
         return Promise.resolve(allDecision);
     }
 
+    const nodeName = getNodeName(node);
     addSignatureIssue(downloadId, {
-        name: node.name,
+        name: nodeName,
         nodeType: node.type,
         message: error.error,
         issueStatus: IssueStatus.Detected,
     });
-    return waitForSignatureIssueDecision(downloadId, node.name);
+    return waitForSignatureIssueDecision(downloadId, nodeName);
 };

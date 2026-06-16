@@ -1,4 +1,4 @@
-import type { MaybeNode, NodeEntity, NodeType } from '@protontech/drive-sdk';
+import type { NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
@@ -14,8 +14,13 @@ import { MyFilesIndexPopulator } from './MyFilesIndexPopulator';
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 
-const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode =>
-    ({ ok: true, value: createMockNodeEntity(overrides) }) as unknown as MaybeNode;
+const makeMaybeNode = (overrides: Omit<Partial<NodeEntity>, 'name'> & { name?: string } = {}): NodeEntity => {
+    const { name, ...rest } = overrides;
+    return createMockNodeEntity({
+        ...rest,
+        ...(name !== undefined ? { name: { ok: true, value: name } } : {}),
+    });
+};
 
 async function collectEntries(gen: AsyncIterableIterator<IndexEntry>): Promise<IndexEntry[]> {
     const entries: IndexEntry[] = [];
@@ -146,17 +151,12 @@ describe('MyFilesIndexPopulator', () => {
         );
         bridge.setChildren(myFilesRootNideUid, []);
 
-        const degradedTrashedNode: MaybeNode = {
-            ok: false,
-            error: {
-                uid: 'trashed-bad',
-                name: { ok: false, error: new Error('decrypt failed') },
-                type: 'file' as NodeType,
-                creationTime: new Date(),
-                modificationTime: new Date(),
-                trashTime: new Date('2025-06-01'),
-            },
-        } as unknown as MaybeNode;
+        const degradedTrashedNode: NodeEntity = createMockNodeEntity({
+            uid: 'trashed-bad',
+            name: { ok: false, error: new Error('decrypt failed') },
+            type: 'file' as NodeType,
+            trashTime: new Date('2025-06-01'),
+        });
         bridge.setTrashedNodes([degradedTrashedNode]);
 
         const populator = new MyFilesIndexPopulator(SCOPE_ID);

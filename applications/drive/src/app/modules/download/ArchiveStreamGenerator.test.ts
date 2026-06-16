@@ -116,7 +116,7 @@ describe('ArchiveStreamGenerator', () => {
 
         const node = createMockNodeEntity({
             uid: 'file-1',
-            name: 'file.txt',
+            name: { ok: true, value: 'file.txt' },
         });
 
         async function* entries() {
@@ -137,14 +137,15 @@ describe('ArchiveStreamGenerator', () => {
         await flushAsync();
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
         const scheduledTask = schedulerInstance._tasks[0];
-        expect(scheduledTask.storageSizeEstimate).toBe(node.activeRevision?.storageSize ?? 0);
+        const revision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
+        expect(scheduledTask.storageSizeEstimate).toBe(revision?.storageSize ?? 0);
 
         const completion = scheduledTask.start();
 
         const { value, done } = await generatorInstance.generator.next();
         expect(done).toBe(false);
         expect(value?.isFile).toBe(true);
-        expect(value?.name).toBe(node.name);
+        expect(value?.name).toBe('file.txt');
         expect(value?.parentPath).toEqual(['folder']);
         expect(value?.claimedSize).toBe(1024);
 
@@ -179,7 +180,7 @@ describe('ArchiveStreamGenerator', () => {
 
         const folderNode = createMockNodeEntity({
             uid: 'folder-1',
-            name: 'Folder',
+            name: { ok: true, value: 'Folder' },
             type: NodeType.Folder,
         });
 
@@ -209,7 +210,7 @@ describe('ArchiveStreamGenerator', () => {
         const { value, done } = await generatorInstance.generator.next();
         expect(done).toBe(false);
         expect(value?.isFile).toBe(false);
-        expect(value?.name).toBe('Folder');
+        expect(value?.name).toBe('Folder'); // folder name from getNodeName
 
         const finalIteration = await generatorInstance.generator.next();
         expect(finalIteration.done).toBe(true);
@@ -235,7 +236,7 @@ describe('ArchiveStreamGenerator', () => {
             })),
         }));
 
-        const node = createMockNodeEntity({ uid: 'file-wait', name: 'wait.txt' });
+        const node = createMockNodeEntity({ uid: 'file-wait', name: { ok: true, value: 'wait.txt' } });
         async function* entries() {
             yield node;
         }
@@ -282,7 +283,7 @@ describe('ArchiveStreamGenerator', () => {
             getFileDownloader,
         }));
 
-        const node = createMockNodeEntity({ uid: 'file-error', name: 'error.txt' });
+        const node = createMockNodeEntity({ uid: 'file-error', name: { ok: true, value: 'error.txt' } });
         async function* entries() {
             yield node;
         }

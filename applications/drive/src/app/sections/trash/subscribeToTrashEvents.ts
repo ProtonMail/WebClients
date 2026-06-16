@@ -10,11 +10,11 @@ import { createTrashItem, useTrashStore } from './useTrash.store';
 
 const getNode = async (uid: string, client: BusDriverClient) => {
     try {
-        const maybeNode = await client.getNode(uid);
-        const location = await getFormattedNodeLocation(client, maybeNode);
-        const { node } = getNodeEntity(maybeNode);
-        const haveSignatureIssues = !getSignatureIssues(maybeNode).ok;
-        return { node, location, haveSignatureIssues };
+        const node = await client.getNode(uid);
+        const location = await getFormattedNodeLocation(client, node);
+        const { node: normalizedNode } = getNodeEntity(node);
+        const haveSignatureIssues = !getSignatureIssues(node).ok;
+        return { rawNode: node, node: normalizedNode, location, haveSignatureIssues };
     } catch (error) {
         handleSdkError(error, { showNotification: false, fallbackMessage: 'Unhandled Error', extra: { uid } });
     }
@@ -36,9 +36,9 @@ export const subscribeToTrashEvents = () => {
                 break;
             case BusDriverEventName.TRASHED_NODES:
                 for (const uid of event.uids) {
-                    const { node, location, haveSignatureIssues } = await getNode(uid, client);
-                    if (node) {
-                        store.setItem(await createTrashItem(node, location, client, haveSignatureIssues));
+                    const { rawNode, node, location, haveSignatureIssues } = await getNode(uid, client);
+                    if (rawNode && node) {
+                        store.setItem(await createTrashItem(rawNode, node, location, client, haveSignatureIssues));
                     }
                 }
                 break;

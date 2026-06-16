@@ -1,4 +1,4 @@
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 
 export type SignatureIssuesResult =
     | { ok: true }
@@ -15,20 +15,11 @@ export type SignatureIssuesResult =
  * Checks for signature verification issues in a node.
  * Returns success for anonymous nodes as we can't verify the signature author.
  */
-export function getSignatureIssues(node: MaybeNode): SignatureIssuesResult {
-    const nodeEntity = node.ok ? node.value : node.error;
+export function getSignatureIssues(node: NodeEntity): SignatureIssuesResult {
+    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
 
-    let activeRevision;
-    if (node.ok) {
-        activeRevision = node.value.activeRevision;
-    } else if (node.error.activeRevision?.ok) {
-        activeRevision = node.error.activeRevision.value;
-    } else {
-        activeRevision = undefined;
-    }
-
-    const hasKeyIssues = !nodeEntity.keyAuthor.ok;
-    const hasNameIssues = !nodeEntity.nameAuthor.ok;
+    const hasKeyIssues = !node.keyAuthor.ok;
+    const hasNameIssues = !node.nameAuthor.ok;
     const hasContentIssues = Boolean(activeRevision && !activeRevision.contentAuthor.ok);
 
     const hasAnyIssues = hasKeyIssues || hasNameIssues || hasContentIssues;

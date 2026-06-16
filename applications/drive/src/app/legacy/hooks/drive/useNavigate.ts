@@ -1,10 +1,8 @@
 import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
-import type { MaybeNode } from '@proton/drive/index';
-import { NodeType, splitNodeUid } from '@proton/drive/index';
+import { type NodeEntity, NodeType, splitNodeUid } from '@proton/drive/index';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeAncestry } from '@proton/drive/modules/nodes';
 import generateUID from '@proton/utils/generateUID';
 
@@ -18,7 +16,7 @@ interface NavigationEvenListener {
 let listeners: NavigationEvenListener[] = [];
 
 export type DriveClient = {
-    getNode: (uid: string) => Promise<MaybeNode>;
+    getNode: (uid: string) => Promise<NodeEntity>;
 };
 
 function useDriveNavigation() {
@@ -65,19 +63,19 @@ function useDriveNavigation() {
             const { nodeId: targetNodeLinkId } = splitNodeUid(nodeUid);
             // The shareId is on the top root node; we need to climb from the current node to get it.
             const ancestry = await getNodeAncestry(nodeUid, drive);
-            if (!ancestry.ok || !ancestry.value[0]?.ok) {
+            if (!ancestry.ok) {
                 sendErrorReport(new Error('[navigateToNodeUid] Failed to resolve node ancestry for navigation'));
                 return;
             }
 
-            const rootNodeSharedId = ancestry.value[0].value.deprecatedShareId;
+            const rootNodeSharedId = ancestry.value[0].deprecatedShareId;
             if (!rootNodeSharedId) {
                 sendErrorReport(new Error('[navigateToNodeUid] Root node is missing deprecatedShareId for navigation'));
                 return;
             }
 
             const destinationNode = ancestry.value[ancestry.value.length - 1];
-            const nodeType = getNodeEntity(destinationNode).node.type;
+            const nodeType = destinationNode.type;
 
             if (nodeType === NodeType.Album) {
                 return navigateToAlbum(rootNodeSharedId, targetNodeLinkId, options);

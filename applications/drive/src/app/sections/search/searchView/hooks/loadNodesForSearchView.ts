@@ -1,10 +1,14 @@
 import { c } from 'ttag';
 
-import type { MaybeNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
+import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
 import { handleSdkError, shouldTrackError } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getFormattedNodeLocation, getNodeEffectiveRole, isMissingNode } from '@proton/drive/modules/nodes';
+import {
+    getFormattedNodeLocation,
+    getNodeEffectiveRole,
+    getNodeName,
+    isMissingNode,
+} from '@proton/drive/modules/nodes';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
 import { getSignatureIssues } from '../../../../utils/sdk/getSignatureIssues';
@@ -21,19 +25,16 @@ const isNodeOrAncestorTrashed = async (node: NodeEntity, drive: ProtonDriveClien
     let currentNodeToCheckForTrash: NodeEntity = node;
     while (currentNodeToCheckForTrash.parentUid) {
         const parentUid = currentNodeToCheckForTrash.parentUid;
-        const parentMaybeNode = await drive.getNode(parentUid);
-        const { node: parentNodeEntity } = getNodeEntity(parentMaybeNode);
-        if (parentNodeEntity.trashTime) {
+        const parentNode = await drive.getNode(parentUid);
+        if (parentNode.trashTime) {
             return true;
         }
-        currentNodeToCheckForTrash = parentNodeEntity;
+        currentNodeToCheckForTrash = parentNode;
     }
     return false;
 };
 
-const resolveNode = async (maybeNode: MaybeNode, drive: ProtonDriveClient): Promise<SearchResultItemUI | null> => {
-    const { node } = getNodeEntity(maybeNode);
-
+const resolveNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<SearchResultItemUI | null> => {
     // The legacy search library indexes trashed items.
     // We need to filter them out after loading since trash information
     // is only available after fetching the metadata.
@@ -43,20 +44,20 @@ const resolveNode = async (maybeNode: MaybeNode, drive: ProtonDriveClient): Prom
     }
 
     const [location, role] = await Promise.all([
-        getFormattedNodeLocation(drive, maybeNode),
+        getFormattedNodeLocation(drive, node),
         getNodeEffectiveRole(node, drive),
     ]);
 
-    const signatureResult = getSignatureIssues(maybeNode);
+    const signatureResult = getSignatureIssues(node);
 
     return {
         nodeUid: node.uid,
         parentUid: node.parentUid,
-        name: node.name,
+        name: getNodeName(node),
         type: node.type,
         role,
         mediaType: node.mediaType,
-        activeRevisionUid: node.activeRevision?.uid,
+        activeRevisionUid: node.activeRevision?.ok ? node.activeRevision.value?.uid : undefined,
         size: node.totalStorageSize,
         modificationTime: node.modificationTime || node.creationTime,
         location,
@@ -83,8 +84,7 @@ export const loadNodesForSearchView = async (nodeUids: string[], abortSignal: Ab
                     // we should
                     continue;
                 }
-                const maybeNode = maybeMissingNode satisfies MaybeNode;
-                const item = await resolveNode(maybeNode, drive);
+                const item = await resolveNode(maybeMissingNode, drive);
                 if (item) {
                     collectedItems.push(item);
                     loadedUids.add(item.nodeUid);

@@ -1,5 +1,5 @@
 import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import type { MaybeNode, NodeEntity, NodeType } from '@protontech/drive-sdk';
+import type { NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
@@ -41,8 +41,15 @@ jest.mock('../../shared/errors', () => {
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 
-const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode =>
-    ({ ok: true, value: createMockNodeEntity(overrides) }) as unknown as MaybeNode;
+const makeMaybeNode = (
+    overrides: { uid?: string; name?: string; type?: NodeType; trashTime?: Date; treeEventScopeId?: string } = {}
+): NodeEntity => {
+    const { name, ...rest } = overrides;
+    return createMockNodeEntity({
+        ...rest,
+        ...(name !== undefined ? { name: { ok: true as const, value: name } } : {}),
+    });
+};
 
 /**
  * Wraps IndexerTaskQueue.onStateChange into an awaitable stream with named wait helpers.

@@ -48,7 +48,7 @@ jest.mock('../../..', () => ({
 
 const mockNodeEntity: NodeEntity = {
     uid: 'test-node-uid',
-    name: 'test-node',
+    name: { ok: true, value: 'test-node' },
     type: 'folder',
 } as NodeEntity;
 

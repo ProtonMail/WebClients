@@ -135,13 +135,12 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
             const { nodeUid } = await controller.completion();
 
             const photosRoot = await drivePhotos.getMyPhotosRootFolder();
-            const photosRootUid = photosRoot.ok ? photosRoot.value.uid : undefined;
 
             void this.eventCallback?.({
                 type: 'file:complete',
                 uploadId: task.uploadId,
                 nodeUid,
-                parentUid: photosRootUid,
+                parentUid: photosRoot.uid,
                 isUpdatedNode: false,
                 isForPhotos: true,
             });
