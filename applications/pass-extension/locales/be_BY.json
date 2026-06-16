@@ -1097,8 +1097,8 @@
       "Error reporting problem": [
         "Памылка адпраўкі справаздачы аб праблеме"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Тэрмін дзеянне павінен быць у інтэрвале паміж 60 хвілінамі і 1 годам"
+      "Expiration must be between 1 hour and 1 year": [
+        "Тэрмін дзеянне павінен быць паміж 1 гадзінай і 1 годам"
       ],
       "Failed loading group members": [
         "Збой загрузкі ўдзельнікаў групы"
@@ -2054,26 +2054,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Новы кантакт ствараецца аўтаматычна. Гэта адбываецца кожны раз, калі ваш псеўданім атрымлівае ліст ад каго-небудзь."
       ],
-      "Expired ${ abs } hour ago": [
-        "Мінуў ${ abs } гадзіну таму",
-        "Мінуў ${ abs } гадзіны таму",
-        "Мінуў ${ abs } гадзін таму",
-        "Мінуў ${ abs } гадзін таму"
+      "Expired on ${ formattedDate }": [
+        "Мінуў ${ formattedDate }"
       ],
       "Expires in": [
         "Тэрмін дзеяння міне"
       ],
-      "Expires in ${ hours } hour": [
-        "Міне праз ${ hours } хвіліну",
-        "Міне праз ${ hours } хвіліны",
-        "Міне праз ${ hours } хвілін",
-        "Міне праз ${ hours } хвілін"
-      ],
       "Expires in ${ remainingTime }": [
         "Тэрмін дзеяння міне праз ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Тэрмін дзеяння міне менш чым праз гадзіну"
+      "Expires on ${ formattedDate }": [
+        "Тэрмін дзеяння міне ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Экспартаванне вашых даных..."
@@ -2275,12 +2266,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -3153,11 +3138,23 @@
         "${ years } гадоў",
         "${ years } гадоў"
       ],
+      "1 day": [
+        "1 дзень"
+      ],
       "1 hour": [
         "1 гадзіна"
       ],
       "1 minute": [
         "1 хвіліна"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "1 week": [
+        "1 тыдзень"
+      ],
+      "1 year": [
+        "1 год"
       ],
       "10 minutes": [
         "10 хвілін"
@@ -3402,6 +3399,12 @@
       "Crypto Wallet": [
         "Крыптакашалёк"
       ],
+      "Custom": [
+        "Карыстальніцкая"
+      ],
+      "Custom expiration (minutes)": [
+        "Карыстальніцкі тэрмін дзеяння (у хвілінах)"
+      ],
       "Custom Items": [
         "Карыстальніцкія элементы"
       ],
@@ -3486,8 +3489,8 @@
       "Expired tokens (${ expired.length })": [
         "Пратэрмінаваныя токены (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Міне праз (хвілін)"
+      "Expires in": [
+        "Тэрмін дзеяння міне"
       ],
       "Expiry Date": [
         "Тэрмін дзеяння"
