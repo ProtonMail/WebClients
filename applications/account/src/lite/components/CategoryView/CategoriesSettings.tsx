@@ -98,7 +98,7 @@ export const CategoriesSettings = () => {
                     </>
                 )}
             </div>
-            {renderModal && <PromptDisableCategories open={modal.open} onClose={modal.onClose} onExit={modal.onExit} />}
+            {renderModal && <PromptDisableCategories {...modal} />}
         </>
     );
 };
