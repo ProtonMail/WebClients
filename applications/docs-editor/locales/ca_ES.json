@@ -1027,6 +1027,151 @@
         "a la dreta"
       ]
     },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Aplicar"
+      ],
+      "Cancel": [
+        "Cancel·lar"
+      ],
+      "Custom date and time formats": [
+        "Formats de data i hora personalitzats"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Sample": [
+        "Mostra"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Day": [
+        "Dia"
+      ],
+      "Day as abbreviation": [
+        "Abreviatura del dia"
+      ],
+      "Day as full name": [
+        "Nom complet del dia"
+      ],
+      "Day with leading zero": [
+        "Dia amb zero inicial"
+      ],
+      "Day without leading zero": [
+        "Dia sense zero inicial"
+      ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Duration": [
+        "Durada"
+      ],
+      "Elapsed hours": [
+        "Hores transcorregudes"
+      ],
+      "Elapsed hours with leading zero": [
+        "Hores transcorregudes amb zero inicial"
+      ],
+      "Elapsed hours without leading zero": [
+        "Hores transcorregudes sense zero inicial"
+      ],
+      "Elapsed minutes": [
+        "Minuts transcorreguts"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Minuts transcorreguts amb zero inicial"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Minuts transcorreguts sense zero inicial"
+      ],
+      "Elapsed seconds": [
+        "Segons transcorreguts"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Segons transcorreguts amb zero inicial"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Segons transcorreguts sense zero inicial"
+      ],
+      "First letter of the month": [
+        "Primera lletra del mes"
+      ],
+      "Full": [
+        "Complet"
+      ],
+      "Full numeric year": [
+        "Any numèric complet"
+      ],
+      "Hour": [
+        "Hora"
+      ],
+      "Hour with leading zero": [
+        "Hora amb zero inicial"
+      ],
+      "Hour without leading zero": [
+        "Hora sense zero inicial"
+      ],
+      "Millisecond": [
+        "Mil·lisegons"
+      ],
+      "Minute": [
+        "Minut"
+      ],
+      "Minute with leading zero": [
+        "Minuts amb zero inicial"
+      ],
+      "Minute without leading zero": [
+        "Minuts sense zero inicial"
+      ],
+      "Month": [
+        "Mes"
+      ],
+      "Month as abbreviation": [
+        "Abreviatura del mes"
+      ],
+      "Month as full name": [
+        "Nom complet del mes"
+      ],
+      "Month with leading zero": [
+        "Mes amb zero inicial"
+      ],
+      "Month without leading zero": [
+        "Mes sense zero inicial"
+      ],
+      "Precision to 1/10 of a second": [
+        "Precisió d'1/10 de segon"
+      ],
+      "Precision to 1/100 of a second": [
+        "Precisió d'1/100 de segon"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Precisió fins a 1/1000 de segon"
+      ],
+      "Second": [
+        "Segon"
+      ],
+      "Second with leading zero": [
+        "Segons amb zero inicial"
+      ],
+      "Second without leading zero": [
+        "Segons sense zero inicial"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "Two digit year": [
+        "Any de dos dígits"
+      ],
+      "Year": [
+        "Any"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Esteu segur que voleu eliminar \"${ sheetName }\"?"
@@ -1433,8 +1578,11 @@
       "Custom currency": [
         "Moneda personalitzada"
       ],
-      "Custom number format": [
-        "Format numèric personalitzat"
+      "Custom date and time": [
+        "Data i hora personalitzades"
+      ],
+      "Custom number": [
+        "Número personalitzat"
       ],
       "Date": [
         "Data"
