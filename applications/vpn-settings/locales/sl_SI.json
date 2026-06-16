@@ -852,6 +852,9 @@
       "Send email reminder": [
         "Pošlji opomnik po elektronski pošti."
       ],
+      "Send feedback": [
+        "Pošlji povratne informacije"
+      ],
       "Send my username": [
         "Pošlji moje uporabniško ime"
       ],
@@ -890,6 +893,9 @@
       ],
       "Share": [
         "Deli"
+      ],
+      "Share feedback": [
+        "Delite povratne informacije"
       ],
       "Share via link": [
         "Deli prek povezave"
@@ -5923,6 +5929,9 @@
       "Copy your referral link": [
         "Kopirajte svojo povezavo za priporočilo"
       ],
+      "Couldn´t send feedback": [
+        "Ni bilo mogoče poslati povratnih informacij"
+      ],
       "Country code": [
         "Koda države"
       ],
@@ -6406,6 +6415,9 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Poskrbite, da bodo vaši podatki bolj varni in zasebni s temi vodniki in nasveti."
       ],
+      "Key sections reorganized for faster access.": [
+        "Ključni razdelki so preurejeni za hitrejši dostop."
+      ],
       "Keys created": [
         "Ključi so bili ustvarjeni."
       ],
@@ -6519,6 +6531,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Zbirajo podatkov o dejavnosti se bo ustavilo in podatki ne bodo več prikazani."
+      ],
+      "New sidebar": [
+        "Nova stranska vrstica"
+      ],
+      "New sidebar layout": [
+        "Nova postavitev stranske vrstice"
       ],
       "News or media article": [
         "Novice ali medijski članki"
@@ -6865,6 +6883,9 @@
       "Setting up your organization": [
         "Nastavljam vašo organizacijo"
       ],
+      "Share your thoughts...": [
+        "Delite svoje mnenje ..."
+      ],
       "Shared server country (${ countriesCount })": [
         "Država z deljenim strežnikom (${ countriesCount })",
         "Državi z deljenim strežnikom (${ countriesCount })",
@@ -6940,6 +6961,9 @@
       "Swiss based": [
         "S sedežem v Švici"
       ],
+      "Switch sidebars": [
+        "Preklopi stranske vrstice"
+      ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
       ],
@@ -6951,6 +6975,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Hvala, ker ste se naročili. Varno brskanje se prične zdaj."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Hvala – vaše povratne informacije so bile poslane."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Hvala, ker podpirate naše poslanstvo za izgradnjo boljšega interneta, kjer sta zasebnost in svoboda na prvem mestu."
@@ -7453,6 +7480,9 @@
       "You can now return to the application to continue": [
         "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
       ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Naenkrat je lahko odprta samo ena seja klepeta. Preden začnete novo, zaprite prejšnje pogovore."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vklopite lahko obvestila o prispetju novih e-poštnih sporočil v to mapo."
       ],
@@ -7563,6 +7593,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
+      ],
+      "Your feedback": [
+        "Vaše povratne informacije"
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
@@ -7911,6 +7944,9 @@
       "Calendar": [
         "Koledar"
       ],
+      "Calendars": [
+        "Koledarje"
+      ],
       "Card details": [
         "Podatki o kartici"
       ],
@@ -8057,6 +8093,9 @@
       ],
       "Email or username": [
         "E-pošta ali uporabniško ime"
+      ],
+      "Emails": [
+        "E-pošto"
       ],
       "Emails (all messages)": [
         "E-pošto (vsa sporočila)"
@@ -8807,6 +8846,20 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ]
+    },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "Klepet v živo je na voljo z ${ planName }"
+      ],
+      "Open support form": [
+        "Odprite obrazec za podporo"
+      ],
+      "Upgrade subscription": [
+        "Nadgradite naročnino"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Nadgradite za odklepanje podpore za klepet in drugih premijskih funkcij, ali uporabite naš brezplačni obrazec za podporo, da prijavite svojo težavo."
       ]
     },
     "Loading info": {
@@ -13529,6 +13582,11 @@
         "Svetla"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Teme"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dan",
@@ -13574,6 +13632,9 @@
         "${ friendsSubscribed } naročeni prijatelji",
         "${ friendsSubscribed } naročenih prijateljev"
       ],
+      "${ VPN_APP_NAME } clients": [
+        "Odjemalci ${ VPN_APP_NAME }"
+      ],
       "(active)": [
         "(aktivno)"
       ],
@@ -13600,6 +13661,9 @@
       ],
       "Access control": [
         "Nadzor dostopa"
+      ],
+      "Account": [
+        "Račun"
       ],
       "Account and password": [
         "Račun in geslo"
@@ -13952,6 +14016,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
       ],
+      "Download apps": [
+        "Prenesite aplikacije"
+      ],
       "Downloads": [
         "Prenosi"
       ],
@@ -13999,6 +14066,9 @@
       ],
       "Email": [
         "E-pošta"
+      ],
+      "Email subscriptions": [
+        "E-poštne naročnine"
       ],
       "Enable advanced account protection": [
         "Omogoči napredno zaščito računa"
@@ -14075,6 +14145,9 @@
       "Help center": [
         "Središče za pomoč"
       ],
+      "Help us improve": [
+        "Pomagajte nam izboljšati"
+      ],
       "Home": [
         "Začetek"
       ],
@@ -14144,8 +14217,17 @@
       "Minicalendar": [
         "Mini koledar"
       ],
+      "Monitoring": [
+        "Nadzor"
+      ],
       "Multi-user support": [
         "Podpora za več uporabnikov"
+      ],
+      "My account": [
+        "Moj račun"
+      ],
+      "My VPN": [
+        "Moj VPN"
       ],
       "Name": [
         "Ime"
@@ -14177,8 +14259,17 @@
       "OpenVPN configuration files": [
         "OpenVPN nastavitvene datoteke"
       ],
+      "OpenVPN username": [
+        "Uporabniško ime za OpenVPN"
+      ],
       "Org setup": [
         "Nastavitev organizacije"
+      ],
+      "Organization": [
+        "Organizacija"
+      ],
+      "Organization and people": [
+        "Organizacija in ljudje"
       ],
       "Organization filters": [
         "Filtri organizacije"
@@ -14221,6 +14312,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plans": [
+        "Paketi"
       ],
       "Preview": [
         "Predogled"
@@ -14315,6 +14409,9 @@
       "Schedule meetings in one click": [
         "Načrtujte sestanke z enim klikom"
       ],
+      "Security and compliance": [
+        "Varnost in skladnost"
+      ],
       "Security and privacy": [
         "Varnost in zasebnost"
       ],
@@ -14399,6 +14496,9 @@
       "Single sign-on": [
         "Enotna prijava"
       ],
+      "Single-sign on (SSO)": [
+        "Enotna prijava (SSO)"
+      ],
       "Something went wrong": [
         "Nekaj je šlo narobe."
       ],
@@ -14474,6 +14574,9 @@
       "Upgrade to keep your premium benefits.": [
         "Nadgradite za ohranitev vaših premijskih ugodnosti."
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "Nadgradite zaščito omrežja z namenskimi strežniki"
+      ],
       "Upgrade your privacy": [
         "Nadgradite svojo zasebnost"
       ],
@@ -14509,6 +14612,9 @@
       ],
       "Verifying your payment...": [
         "Preverjanje vašega plačila ..."
+      ],
+      "VPN": [
+        "VPN"
       ],
       "VPN apps": [
         "VPN aplikacije"
@@ -14548,6 +14654,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše spremembe se še niso sinhronizirale"
+      ],
+      "Your current plan": [
+        "Vaš trenutni paket"
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"

@@ -2010,6 +2010,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
+      ],
       "Emails": [
         "E-poster"
       ],
@@ -2061,6 +2064,9 @@
       "Pending": [
         "Venter"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
+      ],
       "Select users to migrate": [
         "Velg brukere som skal migreres"
       ],
@@ -2072,6 +2078,9 @@
       ],
       "User": [
         "Bruker"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
       ],
       "What are you migrating?": [
         "Hva migrerer du?"
@@ -4476,6 +4485,9 @@
       "Invalid private key file": [
         "Ugyldig privat nøkkelfil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ugyldig tilbakestillingstoken. Oppdater siden og prøv på nytt."
+      ],
       "Invalid VAT number": [
         "Ugyldig MVA-nummer"
       ],
@@ -5781,6 +5793,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Legg til delegerte roller i en gruppe for å gi medlemmene kun de spesifikke tillatelsene de trenger, slik at full administratorrettighet holdes separat og miljøet ditt er sikkert."
+      ],
       "General": [
         "Generelt"
       ],
@@ -7087,6 +7102,9 @@
       ],
       "Edit email address": [
         "Rediger e-postadresse"
+      ],
+      "Editing requires permission": [
+        "Redigering krever tillatelse"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfigurasjon lagret"
@@ -8879,6 +8897,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan ikke verve ${ MAIL_APP_NAME }-brukere"
       ],
+      "You do not have permission to create users.": [
+        "Du har ikke tillatelse til å opprette brukere."
+      ],
       "You don't have any referrals.": [
         "Du har ingen vervinger."
       ],
@@ -9435,6 +9456,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendere"
+      ],
       "Card details": [
         "Kortopplysninger"
       ],
@@ -9609,6 +9633,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-post med @dittfirma.com-domene"
+      ],
+      "Emails": [
+        "E-poster"
       ],
       "Emails (all messages)": [
         "E-poster (alle meldinger)"
@@ -9909,6 +9936,9 @@
       ],
       "Password": [
         "Passord"
+      ],
+      "Password reminders": [
+        "Passordpåminnelser"
       ],
       "Password strength": [
         "Passordstyrke"
@@ -10388,6 +10418,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Skaff deg ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjelp fra ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupper"
@@ -12795,6 +12828,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Sørg for at du husker eller lagrer passordet ditt sikkert, da det er nøkkelen til å dekryptere dataene dine."
+      ],
+      "Turn off password reminders?": [
+        "Slå av passordpåminnelser?"
+      ],
+      "Turn off reminders": [
+        "Slå av påminnelser"
       ]
     },
     "password_reset: info": {
@@ -13770,6 +13809,9 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
       ],
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Gi ${ refereeRewardAmount }, få ${ referrerRewardAmount }"
+      ],
       "How your free trial works:": [
         "Hvordan din gratis prøveperiode fungerer:"
       ],
@@ -14035,6 +14077,28 @@
       ],
       "Edit retention rule": [
         "Rediger oppbevaringsregel"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Organisasjonsadministrator"
+      ],
+      "Security Admin": [
+        "Sikkerhetsadministrator"
+      ],
+      "User Admin": [
+        "Brukeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
       ]
     },
     "Safety review": {
@@ -17016,6 +17080,9 @@
       "Open pagination": [
         "Åpne sidenummerering"
       ],
+      "OpenVpn": [
+        "OpenVPN"
+      ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurasjonsfiler"
       ],
@@ -17358,6 +17425,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Feilsøk med ${ LUMO_SHORT_APP_NAME }"
       ],
       "Troubleshoot your issue": [
         "Feilsøk problemet ditt"
@@ -17773,6 +17843,9 @@
       ],
       "User is a group": [
         "Brukeren er en gruppe"
+      ],
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"

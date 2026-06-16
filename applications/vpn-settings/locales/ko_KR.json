@@ -714,7 +714,7 @@
         "혹은 포워딩 주소 삭제"
       ],
       "Or use a different Gmail address": [
-        "또는 다른 Gmail 주소를 사용하세요"
+        "또는 다른 Gmail 주소를 사용하기"
       ],
       "Organization": [
         "조직"
@@ -1165,6 +1165,9 @@
       ],
       "Verify domain": [
         "도메인 소유권 인증"
+      ],
+      "Verify now": [
+        "지금 인증"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "${ unverifiedSSODomain.DomainName } 도메인 인증하기"
@@ -2485,6 +2488,9 @@
       "Canada": [
         "캐나다"
       ],
+      "Canary Islands": [
+        "카나리아 제도"
+      ],
       "Cape Verde": [
         "카보베르데"
       ],
@@ -3315,7 +3321,7 @@
         "사용 가능한 저장공간: ${ storageText }"
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Google의 염탐 가능성을 차단하세요. Gmail 은 사용자가 ${ MAIL_APP_NAME }에서 무엇을 하는지 볼 수 없습니다."
+        "Google의 염탐 가능성을 차단하세요. Gmail은 사용자가 ${ MAIL_APP_NAME }에서 무엇을 하는지 볼 수 없습니다."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
@@ -3339,7 +3345,7 @@
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+        "${ connectedAddressText }(으)로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
@@ -3426,7 +3432,7 @@
         "시작하려면 먼저 조직의 이름을 지정하세요."
       ],
       "Track the status and activity of your referrals": [
-        "추천인 상태와 활동 추적하기"
+        "추천인 상태와 활동을 추적하세요."
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "단 ${ config.offerPrice }의 비용으로 15 GB 저장공간을 이용해 보세요."
@@ -3444,7 +3450,7 @@
         "지난 이메일을 불러오고 Gmail을 ${ MAIL_APP_NAME }에 연결하여 새 메세지가 자동으로 표시되도록 합니다."
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "이전 이메일을 불러오고 중복 항목은 건너뛴 뒤 귀하의 Gmail에 연결하여 새 메시지가 자동으로 나타나도록 합니다. Easy Switch 설정에서 언제든지 불러오기를 실행 취소할 수 있습니다"
+        "이전 이메일을 불러오고 중복 항목은 건너뛴 뒤 회원님의 Gmail에 연결하여 새 메시지가 자동으로 나타나도록 합니다. Easy Switch 설정에서 언제든지 불러오기를 실행 취소할 수 있습니다"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
@@ -4485,6 +4491,9 @@
       "Username must end with a letter or digit": [
         "사용자 이름은 문자로 시작하여야 합니다."
       ],
+      "VAT number must start with ${ prefixes }": [
+        "부가가치세(VAT)번호는 ${ prefixes }(으)로 시작해야 합니다."
+      ],
       "Verification did not succeed, please try again in an hour.": [
         "인증에 성공하지 못했습니다. 한 시간 후에 다시 시도해주십시오."
       ],
@@ -5042,6 +5051,9 @@
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN 연결"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "${ PROTON_SENTINEL_NAME } 계정 보호"
       ],
       "10+ premium features": [
         "10개 이상의 premium 기능"
@@ -6052,8 +6064,17 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator과 같은 다른 2단계 인증 앱으로부터 **기존 코드를 불러올 수 있어요**"
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "회원님의 리퍼럴 링크를 통해 ${ BRAND_NAME }으로 **친구들을 초대하세요.**"
+      ],
       "**Sync codes** to all your devices": [
         "가지고 계신 모든 기기와 **코드를 동기화할 수 있어요**"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "만약 초대한 친구가 플랜을 구독한다면 **${ refereeRewardAmount }를 받게 됩니다.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount }명 더"
@@ -6394,6 +6415,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "가져온 메시지의 라벨, 이 가져오기의 시간 범위, 그리고 가져오고자 하는 라벨을 생성하세요."
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "하위 계정을 생성 및 관리하고 커스텀 도메인에 이메일 주소를 할당하세요."
       ],
@@ -6711,6 +6735,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
       ],
       "Free trial": [
         "무료 체험"
@@ -7614,6 +7641,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro가 5점 만점 중 4.2점으로 추천합니다"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "높은 수요로 인해 일시적으로 사용이 불가합니다. 나중에 다시 시도하세요."
       ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
@@ -8619,6 +8649,12 @@
       "${ nbDay } day": [
         "${ nbDay }일"
       ],
+      "${ PROTON_SENTINEL_NAME } protection": [
+        "${ PROTON_SENTINEL_NAME } 보호"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength }자"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
@@ -8737,6 +8773,9 @@
         "BTC 금액"
       ],
       "Calendar": [
+        "캘린더"
+      ],
+      "Calendars": [
         "캘린더"
       ],
       "Card details": [
@@ -8886,8 +8925,14 @@
       "Email address": [
         "이메일 주소"
       ],
+      "Email addresses": [
+        "이메일 주소"
+      ],
       "Email or username": [
         "이메일 또는 사용자 이름"
+      ],
+      "Emails": [
+        "이메일"
       ],
       "Emails (all messages)": [
         "이메일 (모든 메시지)"
@@ -10345,6 +10390,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
       "Apps for": [
         "전용 앱"
       ],
@@ -11084,6 +11132,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n }개 국가"
+      ],
       "Access advanced VPN features": [
         "향상된 VPN 기능 접근"
       ],
@@ -11137,6 +11188,9 @@
       "${ app } product updates": [
         "${ app } 제품 업데이트"
       ],
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } for Business 커뮤니케이션"
+      ],
       "${ BRAND_NAME } important announcements": [
         "${ BRAND_NAME } 중요 발표"
       ],
@@ -11187,6 +11241,9 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME } 제품의 첫 달 사용 중"
+      ],
+      "Email communications": [
+        "이메일 커뮤니케이션"
       ],
       "In-app notifications": [
         "앱 내 알림"
@@ -11970,6 +12027,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
       ],
+      "Edit billing address": [
+        "청구 주소 수정"
+      ],
       "Got it": [
         "확인했습니다"
       ],
@@ -12739,7 +12799,7 @@
         "지금 인증"
       ],
       "Verify recovery phone?": [
-        "복구 휴대전화 인증?"
+        "복구 휴대폰을 인증하시겠어요?"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
@@ -12766,6 +12826,9 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ textDate }**까지 **${ planTitle }**을(를) 무료로 즐겨보세요."
+      ],
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "${ refereeRewardAmount } 주고 ${ referrerRewardAmount } 받기"
       ],
       "How your free trial works:": [
         "무료 체험 작동 방식:"
@@ -14584,6 +14647,9 @@
       "Version history": [
         "버전 기록"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "최대 ${ PAID_PREMIUM_MAX_PARTICIPANTS }명 참가자의 화상 회의"
+      ],
       "Watch the interview": [
         "인터뷰 보기"
       ],
@@ -14956,6 +15022,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "개인용"
       ]
     },
     "Tab in domain modal": {
@@ -15340,6 +15411,9 @@
       ],
       "Connect your custom domain": [
         "커스텀 도메인 연결하기"
+      ],
+      "Connected emails": [
+        "연결된 이메일"
       ],
       "Connection status": [
         "연결 상태"
