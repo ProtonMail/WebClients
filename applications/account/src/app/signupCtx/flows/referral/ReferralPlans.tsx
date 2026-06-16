@@ -7,6 +7,7 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getReferrerName } from '../../helpers/signupSearchParams';
 import * as signupSearchParams from '../../helpers/signupSearchParams';
@@ -23,6 +24,7 @@ const ReferralPlans = () => {
     const history = useHistory();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
+    const isVPNReferralWithoutTrialEnabled = useFlag('VPNReferralWithoutTrial');
 
     const referrerName = getReferrerName(searchParams);
     const [referralInfo] = useReferralInfo();
@@ -51,11 +53,11 @@ const ReferralPlans = () => {
             <Wrapper>
                 <main className="flex flex-column justify-center items-center w-full">
                     <h1 className="font-arizona text-semibold text-8xl text-center mb-4">
-                        {
-                            // translator: full sentence "Try Proton Drive for 14 days free, and get US$20 in credits"
-                            c('Signup')
-                                .jt`Try ${BRAND_NAME} for ${TRIAL_DURATION_DAYS} days free,${br} and get ${referralInfo.uiData.refereeRewardAmount} in credits`
-                        }
+                        {isVPNReferralWithoutTrialEnabled
+                            ? c('Signup').jt`Sign up and get ${referralInfo.uiData.refereeRewardAmount} in credits`
+                            : // translator: full sentence "Try Proton Drive for 14 days free, and get US$20 in credits"
+                              c('Signup')
+                                  .jt`Try ${BRAND_NAME} for ${TRIAL_DURATION_DAYS} days free,${br} and get ${referralInfo.uiData.refereeRewardAmount} in credits`}
                     </h1>
 
                     <p className="mt-0 mb-10 text-center max-w-custom" style={{ '--max-w-custom': '30rem' }}>

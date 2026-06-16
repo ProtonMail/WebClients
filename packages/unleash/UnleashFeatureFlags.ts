@@ -133,6 +133,7 @@ enum AccountFlag {
     SystemGroupFlag = 'SystemGroupFlag',
     UnauthLost2FA = 'UnauthLost2FA',
     UnauthedForgotPassword = 'UnauthedForgotPassword',
+    VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
 }

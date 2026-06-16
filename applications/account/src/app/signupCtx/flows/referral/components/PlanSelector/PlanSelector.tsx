@@ -21,6 +21,7 @@ import clsx from '@proton/utils/clsx';
 
 import { getPlanIconPath } from '../../helpers/planIcons';
 import { type SupportedReferralPlans, getReferralSelectedPlan } from '../../helpers/plans';
+import { useIsVPNPlanWithoutTrialVariant } from '../../helpers/useIsVPNPlanWithoutTrialVariant';
 import { BundleFeatures } from '../Features/BundleFeatures';
 import { DriveFeatures } from '../Features/DriveFeatures';
 import { MailFeatures } from '../Features/MailFeatures';
@@ -208,6 +209,8 @@ interface PlanCardProps {
 
 function BundlePlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.BUNDLE;
+    const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(plan);
+    const planName = PLAN_NAMES[plan];
 
     if (!isSelected(plan) || !isEligible(plan)) {
         return null;
@@ -215,19 +218,24 @@ function BundlePlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
 
     return (
         <PlanCard
-            planName={PLAN_NAMES[plan]}
             header={<PlanLogo logoSrc={getPlanIconPath(plan)} planName={getNormalizedPlanTitleToPlus(plan)} />}
             headerTrailing={<NoCreditCardBadge plan={plan} />}
             footer={<Pricing plan={plan} />}
             description={c('Plan description').t`Comprehensive privacy and security suite.`}
             features={<BundleFeatures />}
             onCTAClick={onCTAClick}
+            ctaCopy={
+                isVPNPlanWithoutTrial
+                    ? c('Signup').t`Continue with ${planName}`
+                    : c('Signup').t`Try ${planName} for free`
+            }
         />
     );
 }
 
 function MailPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.MAIL;
+    const planName = PLAN_NAMES[plan];
 
     if (!isSelected(plan) || !isEligible(plan)) {
         return null;
@@ -235,7 +243,6 @@ function MailPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
 
     return (
         <PlanCard
-            planName={PLAN_NAMES[plan]}
             header={<PlanLogo logoSrc={getPlanIconPath(plan)} planName={getNormalizedPlanTitleToPlus(plan)} />}
             headerTrailing={<NoCreditCardBadge plan={plan} />}
             footer={<Pricing plan={plan} />}
@@ -243,12 +250,14 @@ function MailPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
                 .t`Defeat spam, tracking, and ads with encrypted email and a secure calendar.`}
             features={<MailFeatures />}
             onCTAClick={onCTAClick}
+            ctaCopy={c('Signup').t`Try ${planName} for free`}
         />
     );
 }
 
 function DrivePlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.DRIVE;
+    const planName = PLAN_NAMES[plan];
 
     if (!isSelected(plan) || !isEligible(plan)) {
         return null;
@@ -256,19 +265,20 @@ function DrivePlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
 
     return (
         <PlanCard
-            planName={PLAN_NAMES[plan]}
             header={<PlanLogo logoSrc={getPlanIconPath(plan)} planName={getNormalizedPlanTitleToPlus(plan)} />}
             headerTrailing={<NoCreditCardBadge plan={plan} />}
             footer={<Pricing plan={plan} />}
             description={c('Plan description').t`Cloud storage and file sharing, secured by end-to-end encryption.`}
             features={<DriveFeatures />}
             onCTAClick={onCTAClick}
+            ctaCopy={c('Signup').t`Try ${planName} for free`}
         />
     );
 }
 
 function PassPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.PASS;
+    const planName = PLAN_NAMES[plan];
 
     if (!isSelected(plan) || !isEligible(plan)) {
         return null;
@@ -276,19 +286,21 @@ function PassPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
 
     return (
         <PlanCard
-            planName={PLAN_NAMES[plan]}
             header={<PlanLogo logoSrc={getPlanIconPath(plan)} planName={getNormalizedPlanTitleToPlus(plan)} />}
             headerTrailing={<NoCreditCardBadge plan={plan} />}
             footer={<Pricing plan={plan} />}
             description={c('Plan description').t`For next-level password management and identity protection.`}
             features={<PassFeatures />}
             onCTAClick={onCTAClick}
+            ctaCopy={c('Signup').t`Try ${planName} for free`}
         />
     );
 }
 
 function VPNPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.VPN2024;
+    const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(plan);
+    const planName = PLAN_NAMES[plan];
 
     if (!isSelected(plan) || !isEligible(plan)) {
         return null;
@@ -296,7 +308,6 @@ function VPNPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
 
     return (
         <PlanCard
-            planName={PLAN_NAMES[plan]}
             header={<PlanLogo logoSrc={getPlanIconPath(plan)} planName={getNormalizedPlanTitleToPlus(plan)} />}
             headerTrailing={<NoCreditCardBadge plan={plan} />}
             footer={<Pricing plan={plan} />}
@@ -304,6 +315,11 @@ function VPNPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
                 .t`A VPN solution that provides secure, high-speed access to the internet.`}
             features={<VPNFeatures />}
             onCTAClick={onCTAClick}
+            ctaCopy={
+                isVPNPlanWithoutTrial
+                    ? c('Signup').t`Continue with ${planName}`
+                    : c('Signup').t`Try ${planName} for free`
+            }
         />
     );
 }

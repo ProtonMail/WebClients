@@ -1,25 +1,23 @@
 import type { ReactNode } from 'react';
 
-import { c } from 'ttag';
-
 import { Button } from '@proton/atoms/Button/Button';
 
 const PlanCard = ({
-    planName,
     headerTrailing,
     header,
     description,
     features,
     footer,
     onCTAClick,
+    ctaCopy,
 }: {
-    planName: string;
     headerTrailing: ReactNode;
     header: ReactNode;
     description: ReactNode;
     features: ReactNode;
     footer: ReactNode;
     onCTAClick: () => void;
+    ctaCopy: string;
 }) => {
     return (
         <div className="w-full flex flex-column">
@@ -43,7 +41,9 @@ const PlanCard = ({
                 fullWidth
                 pill
                 className="mt-2 py-4 text-semibold"
-            >{c('Signup').t`Try ${planName} for free`}</Button>
+            >
+                {ctaCopy}
+            </Button>
 
             <div className="text-center mt-2">{footer}</div>
         </div>
