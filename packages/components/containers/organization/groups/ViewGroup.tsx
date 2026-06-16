@@ -1,5 +1,6 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
+import { getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
@@ -12,18 +13,21 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { KEY_FLAG, SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Group } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_STATE, type Group } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import AddUsersToGroupModal from './AddUsersToGroupModal';
 import DeleteGroupPrompt from './DeleteGroupPrompt';
 import E2EEDisabledWarning from './E2EEDisabledWarning';
+import GroupInfoBanner from './GroupInfoBanner';
 import GroupMemberList from './GroupMemberList';
 import { useGroupsManagement } from './context/GroupsManagementContext';
 import shouldShowMail from './shouldShowMail';
@@ -72,6 +76,10 @@ const ViewGroup = () => {
     const isE2eeEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 
     const roleNames = groupRolesMap[group.ID]?.map((assignment) => assignment.Role.Name).join(', ');
+
+    const isScimGroupPendingKeys = getIsScimGroupPendingKeys(group);
+    const pendingAdminMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING_ADMIN).length;
+    const invitedMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING).length;
 
     return (
         <>
@@ -138,14 +146,37 @@ const ViewGroup = () => {
                     />
                 </div>
                 <div className="flex flex-column text-left pl-6 py-3 gap-4">
+                    {isScimGroupPendingKeys && (
+                        <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0 color-weak" />}>
+                            {c('Info').t`New group created via your identity provider and pending review.`}
+                        </GroupInfoBanner>
+                    )}
+
+                    {pendingAdminMemberCount > 0 && (
+                        <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0 color-weak" />}>
+                            {c('Info').ngettext(
+                                msgid`${pendingAdminMemberCount} new member added via your identity provider and pending review.`,
+                                `${pendingAdminMemberCount} new members added via your identity provider and pending review.`,
+                                pendingAdminMemberCount
+                            )}
+                        </GroupInfoBanner>
+                    )}
+
+                    {invitedMemberCount > 0 && (
+                        <GroupInfoBanner icon={<IcEnvelopeDot size={4.5} className="shrink-0 color-weak" />}>
+                            {c('Info').ngettext(
+                                msgid`${invitedMemberCount} user needs to accept their invite to start receiving group emails.`,
+                                `${invitedMemberCount} users need to accept their invite to start receiving group emails.`,
+                                invitedMemberCount
+                            )}
+                        </GroupInfoBanner>
+                    )}
+
                     {showMailFeatures && !isE2eeEnabled && (
                         <E2EEDisabledWarning groupMembers={groupMembers} loadingGroupMembers={loadingGroupMembers} />
                     )}
 
-                    <div className="text-ellipsis-two-lines text-break">
-                        <span className="text-bold mr-1">{c('Group detail label').t`Description:`}</span>
-                        {Description}
-                    </div>
+                    {Description && <div className="text-ellipsis-two-lines text-break">{Description}</div>}
 
                     {roleNames && (
                         <div className="text-ellipsis-two-lines text-break">
