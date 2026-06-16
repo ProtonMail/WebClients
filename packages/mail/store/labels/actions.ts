@@ -10,10 +10,12 @@ import {
     create as createConfig,
     deleteLabel as deleteLabelConfig,
     updateLabel as updateLabelConfig,
+    updateLastEventID,
 } from '@proton/shared/lib/api/labels';
 import type { Category, Label } from '@proton/shared/lib/interfaces';
 
-import { categoriesActions, getCategory } from './index';
+import type { CategoriesState } from './index';
+import { categoriesActions, getCategory, selectCategories } from './index';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 
@@ -72,5 +74,28 @@ export const deleteLabel = ({
     return async (dispatch, getState, extra) => {
         await extra.api(deleteLabelConfig(label.ID));
         dispatch(categoriesActions.deleteCategory(label));
+    };
+};
+
+export const updateLastUnseenEventId = ({
+    labelID,
+    lastEventID,
+}: {
+    labelID: string;
+    lastEventID: string;
+}): ThunkAction<Promise<void>, RequiredState & CategoriesState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState, extra) => {
+        const folder = selectCategories(getState()).value?.find((label) => label.ID === labelID);
+        if (!folder) {
+            return;
+        }
+
+        dispatch(categoriesActions.upsertCategory({ ...folder, LastUnseenMessageEventID: null }));
+        try {
+            await extra.api(updateLastEventID(labelID, { LastEventID: lastEventID }));
+        } catch (error) {
+            dispatch(categoriesActions.upsertCategory(folder));
+            throw error;
+        }
     };
 };
