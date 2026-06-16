@@ -381,6 +381,7 @@ export enum SentryMailInitiatives {
     MAIL_REDUX_ERRORS = 'mail-redux-errors',
     MIGRATION_TOOL = 'migration-tool',
     MOVE_ACTIONS = 'move-actions',
+    LUMO_IN_MAIL = 'lumo-in-mail',
     REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
     UPSELL_MODALS = 'upsell-modals',
 }
