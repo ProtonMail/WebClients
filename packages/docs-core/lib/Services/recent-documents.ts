@@ -7,12 +7,13 @@ import type { CacheService } from './CacheService'
 import { nodeMetaUniqueId } from '@proton/drive-store/lib/NodeMeta'
 import { isProtonDocsDocument, type ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { MemberRole } from '@proton/drive'
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 
 // Please remember to bump this number if you make changes to the format of
 // serialized data stored in cache (either directly or indirectly) in a way
 // that could potentially break the app. The cache will be automatically
 // invalidated if the version differs.
-const CACHE_VERSION = 1
+const CACHE_VERSION = 2
 const CACHE_VERSION_KEY = 'recent-documents-cache-version'
 
 // store
@@ -225,6 +226,15 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
         location = { type: 'path', path: dirPath.map((pathItem) => pathItem.name) }
       }
 
+      let permissions: SHARE_MEMBER_PERMISSIONS | undefined
+      if (isSharedWithMe) {
+        try {
+          permissions = await this.#driveCompat.getNodePermissions({ volumeId, linkId })
+        } catch (error) {
+          this.#logger.error('Failed to get node permissions for shared document', { error })
+        }
+      }
+
       const record = RecentDocumentsItem.create({
         type,
         name,
@@ -237,6 +247,7 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
         location,
         isSharedWithMe,
         shareId,
+        permissions,
       })
 
       this.#lastResolvedIds?.add(record.uniqueId())
@@ -312,6 +323,8 @@ export type RecentDocumentsItemValue = {
   shareId: string
   // Available (and used) only when RecentDocumentsItem is used with SDK
   effectiveRole?: MemberRole
+  // Available only for shared-with-me docs in the legacy (non-SDK) path
+  permissions?: SHARE_MEMBER_PERMISSIONS
 }
 
 export class RecentDocumentsItem implements RecentDocumentsItemValue {
@@ -387,6 +400,9 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
   }
   get effectiveRole() {
     return this.#value.effectiveRole
+  }
+  get permissions() {
+    return this.#value.permissions
   }
 }
 
