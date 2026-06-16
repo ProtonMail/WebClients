@@ -24,6 +24,24 @@ export const canShowWebComposer = (nativeComposerEnabled: boolean): boolean => {
     return true;
 };
 
+export const canUseNativeAuth = (): boolean => {
+    const appInfo = getNativeAppInfo();
+    if (appInfo) {
+        const { version, platform } = appInfo;
+        let targetVersion: string | null = null;
+
+        if (platform === 'ios') {
+            targetVersion = '2.0.0';
+        } else if (platform === 'android') {
+            targetVersion = '2.0.0';
+        }
+
+        return targetVersion !== null && !isNativeVersionOlderThan(version, targetVersion);
+    }
+
+    return false;
+};
+
 /**
  * Returns true if the native app supports edit mode via the native composer (>= 1.5.0).
  * Older versions fall back to web-side editing.
@@ -88,20 +106,20 @@ export const getNativeAppInfo = (): {
 };
 
 /**
- * Compares two version strings
- * @param version - Current version (e.g., "1.2.5" or "1.2.14-gms")
- * @param targetVersion - Version to compare against (e.g., "1.2.0")
- * @returns true if version is older than targetVersion
+ * Compares two version strings. Returns true (i.e. "older / unsafe") when the
+ * input cannot be parsed — feature gates that wrap this with `!` must read as
+ * fail-closed when the native UA is malformed.
+ *
  */
 export const isNativeVersionOlderThan = (version: string | null, targetVersion: string): boolean => {
-    if (!version) return false;
+    if (!version) return true;
 
-    // Extract numeric version, ignoring suffixes like -gms
-    const currentMatch = version.match(/^(\d+\.\d+\.\d+)/);
-    if (!currentMatch) return false;
+    const currentMatch = version.match(/^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?$/);
+    const targetMatch = targetVersion.match(/^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?$/);
+    if (!currentMatch || !targetMatch) return true;
 
-    const currentParts = currentMatch[1].split('.').map(Number);
-    const targetParts = targetVersion.split('.').map(Number);
+    const currentParts = [Number(currentMatch[1]), Number(currentMatch[2]), Number(currentMatch[3])];
+    const targetParts = [Number(targetMatch[1]), Number(targetMatch[2]), Number(targetMatch[3])];
 
     for (let i = 0; i < 3; i++) {
         if (currentParts[i] < targetParts[i]) return true;
