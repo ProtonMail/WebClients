@@ -1261,6 +1261,9 @@
       "Save": [
         "Tallenna"
       ],
+      "Save & finish": [
+        "Tallenna ja lopeta"
+      ],
       "Save address": [
         "Tallenna osoite"
       ],
@@ -2402,6 +2405,9 @@
       "Configure migration": [
         "Määritä siirto"
       ],
+      "Confirm": [
+        "Vahvista"
+      ],
       "Contacts": [
         "Yhteystiedot"
       ],
@@ -2413,6 +2419,9 @@
       ],
       "Failed to load OAuth": [
         "OAuthin lataaminen epäonnistui"
+      ],
+      "Going private": [
+        "Yksityiseksi meneminen"
       ],
       "Has errors": [
         "Virheitä"
@@ -2471,6 +2480,9 @@
       ],
       "Verify your domain to start a migration": [
         "Varmista verkkotunnuksesi aloittaaksesi siirron"
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Otamme käyttöön päästä päähän -salauksen kaikille käyttäjille. Jokainen sähköposti ja jokainen tapahtuma on nyt yksin sinun. Vain tiimisi voi nähdä ne. Emme me, eikä kukaan muu."
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
@@ -5811,6 +5823,9 @@
       "Invalid postal code": [
         "Virheellinen postinumero"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Virheellinen palautustunniste. Päivitä sivu ja yritä uudelleen."
+      ],
       "Invalid Sieve code": [
         "Virheellinen Sieve-koodi"
       ],
@@ -7984,6 +7999,9 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Mail": [
         "Posti"
       ]
@@ -8426,6 +8444,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
+      ],
+      "All your files will be imported": [
+        "Kaikki tiedostosi tuodaan"
       ],
       "Allocated": [
         "Varattu"
@@ -10018,6 +10039,9 @@
       "Request a phone call": [
         "Pyydä puhelinkeskustelua"
       ],
+      "Required to complete the migration": [
+        "Vaaditaan siirron suorittamiseksi"
+      ],
       "Resend verification email": [
         "Lähetä vahvistusviesti uudelleen"
       ],
@@ -11015,6 +11039,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Varoitus: Et määrittänyt palautustapaa, joten tilin palautus on mahdotonta mikäli kadotat salasanasi. Jatketaanko ilman palautustapaa?"
       ],
+      "You do not have permission to create users.": [
+        "Sinulla ei ole oikeuksia luoda käyttäjiä."
+      ],
       "You do not have permission to perform this action": [
         "Sinulla ei ole oikeuksia tämän toiminnon suorittamiseen"
       ],
@@ -12004,6 +12031,9 @@
       "Calendar": [
         "Kalenterin"
       ],
+      "Calendars": [
+        "Kalenterit"
+      ],
       "Card details": [
         "Kortin tiedot"
       ],
@@ -12220,6 +12250,9 @@
       "Donation amount": [
         "Lahjoitussumma"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duration": [
         "Kesto"
       ],
@@ -12234,6 +12267,9 @@
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
+      ],
+      "Emails": [
+        "Viestit"
       ],
       "Emails (all messages)": [
         "Sähköpostit (kaikki viestit)"
@@ -17663,6 +17699,28 @@
         "Muokkaa säilytyssääntöä"
       ]
     },
+    "Role": {
+      "Organization Admin": [
+        "Organisaation järjestelmänvalvoja"
+      ],
+      "Security Admin": [
+        "Turvallisuusvastaava"
+      ],
+      "User Admin": [
+        "Käyttäjähallinta"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Määritä tietoturvakäytännöt, tietojen säilytysajat ja VPN-infrastruktuuri sekä hallinnoi tarkastuslokeja."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
+      ]
+    },
     "Safety review": {
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Ota käyttöön palautus puhelimitse** päästäksesi takaisin tilillesi, jos unohdat salasanasi."
@@ -22345,8 +22403,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
+      "Instant assistance with AI and human experts.": [
+        "Välitöntä apua tekoälyn ja ihmisasiantuntijoiden avulla."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian. Kertakirjautumisen käyttäjät eivät saa sähköpostimuistutusta."
@@ -22463,6 +22521,9 @@
       ],
       "User is a group": [
         "Käyttäjä on ryhmä"
+      ],
+      "via ${ groupNames }": [
+        "${ groupNames } kautta"
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"

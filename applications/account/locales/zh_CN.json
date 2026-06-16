@@ -156,6 +156,9 @@
       "Add public holidays": [
         "添加公众假期"
       ],
+      "Add recovery options": [
+        "添加恢复选项"
+      ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "将推荐链接添加到 ${ MAIL_APP_NAME } 签名中"
       ],
@@ -1377,6 +1380,9 @@
       "Review": [
         "评论"
       ],
+      "Review recovery options": [
+        "检查恢复选项"
+      ],
       "Revoke": [
         "吊销"
       ],
@@ -1395,8 +1401,8 @@
       "Save": [
         "保存"
       ],
-      "Save & exit": [
-        "保存并退出"
+      "Save & finish": [
+        "保存并完成"
       ],
       "Save address": [
         "保存地址"
@@ -1535,6 +1541,9 @@
       ],
       "Set up a custom domain": [
         "设置自定义域名"
+      ],
+      "Set up account recovery": [
+        "设置账户恢复"
       ],
       "Set up auto-forwarding from Gmail": [
         "设置从 Gmail 自动转发邮件"
@@ -2502,7 +2511,7 @@
         "不限量文件夹、标签和筛选规则"
       ],
       "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "无限制登录、信用卡、hide-my-email 别名等功能"
+        "无限制登录、信用卡、Hide-my-email 别名等功能"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
@@ -2524,16 +2533,16 @@
         "在所有设备上安全登录。包括无限制 Hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 hide-my-email  别名等功能。"
+        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 Hide-my-email  别名等功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 hide-my-email邮箱别名等高级功能。"
+        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 hide-my-email 别名等功能。"
+        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 Hide-my-email 别名等功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "使用加密云存储保护您的文件。包含在线文档编辑器、照片备份、版本历史记录、加密文件共享等功能。"
@@ -2774,7 +2783,7 @@
         "了解如何通过 ${ PASS_APP_NAME } 分享单个项目、加密链接或保险库。"
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
-        "在充斥着数据经纪人、垃圾邮件、诈骗和恶意软件的互联网中穿梭，感觉越来越困难。正因如此，${ PASS_APP_NAME } 不仅帮助您管理、存储和自动填充密码。我们还为您提供掌控隐私、使用 hide-my-email 别名保护收件箱的工具。"
+        "在充斥着数据经纪人、垃圾邮件、诈骗和恶意软件的互联网中穿梭，感觉越来越困难。正因如此，${ PASS_APP_NAME } 不仅帮助您管理、存储和自动填充密码。我们还为您提供掌控隐私、使用 Hide-my-email 别名保护收件箱的工具。"
       ],
       "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "使用 ${ PLAN_NAMES[PLANS.BUNDLE] } 套餐同时保护您家中所有设备！"
@@ -2943,6 +2952,9 @@
       "Calendar": [
         "日历"
       ],
+      "Collapse invitation message": [
+        "收起邀请消息"
+      ],
       "Collapse step": [
         "收起步骤"
       ],
@@ -2958,6 +2970,9 @@
       "Configure your domain": [
         "配置域名"
       ],
+      "Confirm": [
+        "确认"
+      ],
       "Contact your administrator to start a migration.": [
         "请联系您的管理员开始迁移"
       ],
@@ -2966,9 +2981,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "复制下方代码并将其粘贴到您的域名提供商的 DNS 区域中！"
-      ],
-      "Creating accounts. Going private": [
-        "正在创建账户，正在切换至私密模式！"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "从 Google Workspace 到 ${ BRAND_NAME } 的数据迁移状态"
@@ -3003,6 +3015,9 @@
       "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
         "每位成员都会收到相同的邀请链接。他们访问页面、输入邮箱后，验证码将发送至其 Gmail 收件箱。然后，他们即可设置自己的 ${ BRAND_NAME } 密码。"
       ],
+      "Expand invitation message": [
+        "展开邀请消息"
+      ],
       "Expand step": [
         "展开步骤"
       ],
@@ -3017,6 +3032,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "获取其他域名提供商的帮助和实用技巧 ${ here }"
+      ],
+      "Going private": [
+        "正在设为私密"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "用于将数据复制到 ${ BRAND_NAME } 的 Google Marketplace 应用"
@@ -3237,8 +3255,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "我们注意到部分用户尚未领取其 ${ BRAND_NAME } 账户！"
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "我们正在为您创建账户并导入数据。每封邮件、每个日程都只属于您自己，仅您的团队可见。我们看不到，其他任何人也都看不到。"
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "我们正在为所有人启用端到端加密。每封邮件、每个日程现在都只属于您自己。仅您的团队可见。我们或任何其他人都无法看到。"
       ],
       "What are you migrating?": [
         "您需要迁移什么？"
@@ -4277,6 +4295,9 @@
       ],
       "Canada": [
         "加拿大"
+      ],
+      "Canary Islands": [
+        "加纳利群岛"
       ],
       "Cape Verde": [
         "佛得角"
@@ -7229,6 +7250,9 @@
       "Invalid private key file": [
         "无效的私钥文件"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "重置令牌无效，请刷新页面后重试。"
+      ],
       "Invalid Sieve code": [
         "Sieve 代码无效"
       ],
@@ -8323,7 +8347,7 @@
         "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
+        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 Hide-my-email 别名、日历共享等功能的支持。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -8421,7 +8445,7 @@
         "无限文件夹、标签和筛选器"
       ],
       "Unlimited hide-my-email aliases": [
-        "无限制地 hide-my-email"
+        "无限 Hide-my-email 别名"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
@@ -11794,6 +11818,9 @@
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
       ],
+      "Please select the labels you would like to import:": [
+        "请选择要导入的标签："
+      ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "选择链接类型并填写相关信息。"
       ],
@@ -11946,6 +11973,9 @@
       ],
       "Request a phone call": [
         "请求呼叫"
+      ],
+      "Required to complete the migration": [
+        "完成迁移所必需"
       ],
       "Resend verification email": [
         "重新发送验证邮件"
@@ -13099,6 +13129,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
       ],
+      "You do not have permission to create users.": [
+        "您没有创建用户的权限！"
+      ],
       "You do not have permission to perform this action": [
         "您没有执行此操作的权限"
       ],
@@ -13998,7 +14031,7 @@
         "1 个邮箱地址可用"
       ],
       "10 hide-my-email aliases": [
-        "10 个 hide-my-email 别名"
+        "10 个 Hide-my-email 别名"
       ],
       "10 minutes": [
         "10 分钟"
@@ -14282,6 +14315,9 @@
       "Calendar": [
         "日历"
       ],
+      "Calendars": [
+        "日历"
+      ],
       "Capitalize words": [
         "单词首字母大写"
       ],
@@ -14557,6 +14593,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "使用 @yourcompany.com 域名的邮箱"
+      ],
+      "Emails": [
+        "电子邮件"
       ],
       "Emails (all messages)": [
         "所有邮件"
@@ -15197,6 +15236,9 @@
       "See your team's availability": [
         "查看您的团队忙闲状态"
       ],
+      "Select an identity provider to start": [
+        "请选择身份提供商以开始"
+      ],
       "Select Linux package format": [
         "选择 Linux 软件包格式"
       ],
@@ -15402,7 +15444,7 @@
         "无限制"
       ],
       "Unlimited hide-my-email aliases": [
-        "无限 hide-my-email 别名"
+        "无限 Hide-my-email 别名"
       ],
       "Unlimited logins and devices": [
         "无限登录和设备数"
@@ -15826,6 +15868,9 @@
       "Forgot username?": [
         "忘记用户名"
       ],
+      "Frequent sign-in problems": [
+        "频繁的登录问题"
+      ],
       "General": [
         "常规"
       ],
@@ -15834,6 +15879,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "开通 ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "获取 ${ LUMO_SHORT_APP_NAME } 的帮助"
       ],
       "Groups": [
         "群组"
@@ -16952,7 +17000,7 @@
         "${ n } 个文件夹和标签"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } 个 hide-my-email 别名"
+        "${ n } 个 Hide-my-email 别名"
       ],
       "${ n } label": [
         "${ n } 个标签"
@@ -16976,10 +17024,10 @@
         "${ PASS_APP_NAME } + SimpleLogin 终身"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } 带有 ${ n } 个 hide-my-email 别名"
+        "${ PASS_APP_NAME } 带有 ${ n } 个 Hide-my-email 别名"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } 以及无限量的 hide-my-email 邮箱别名"
+        "${ PASS_APP_NAME } 以及无限量的 Hide-my-email 邮箱别名"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 计划"
@@ -17627,7 +17675,7 @@
         "${ DRIVE_APP_NAME }：使用加密云存储保护您的文件。包括自动同步、加密文件共享等功能。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }：采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 hide-my-email 别名等高级功能。"
+        "${ MAIL_APP_NAME }：采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 别名等高级功能。"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }：访问被屏蔽的内容，私密浏览。包括 ${ serversAndCountries }、最快 VPN 速度、访问全球流媒体服务、恶意软件和广告拦截器、快速 BitTorrent 下载等。"
@@ -20233,23 +20281,17 @@
       "${ score } / ${ maxScore } completed": [
         "已完成 ${ score } / ${ maxScore }"
       ],
-      "Account protection": [
-        "账户保护"
-      ],
       "Add more options for stronger protection": [
         "添加更多选项以获得更强的保护"
       ],
-      "Add more options to avoid getting locked out of your account.": [
-        "添加更多选项以避免无法访问您的账户。"
+      "Check your access to your recovery options": [
+        "检查您对恢复选项的访问权限"
       ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "太棒了。请保持您的选项为最新，以获得更强的保护。"
+      "Critical": [
+        "严重"
       ],
-      "Good start. Add more options for a stronger protection.": [
-        "不错的开始。添加更多选项以获得更强的保护。"
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "很好。添加更多选项以获得更强的保护。"
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "避免无法登录您的 ${ BRAND_NAME } 账户"
       ],
       "How you increased your account protection": [
         "您如何加强了账户保护"
@@ -20263,6 +20305,9 @@
       "Partial": [
         "部分"
       ],
+      "Recoverability": [
+        "可恢复性"
+      ],
       "Recovery score: ${ score }": [
         "恢复评分：${ score }"
       ],
@@ -20275,11 +20320,44 @@
       "Strong": [
         "强"
       ],
-      "Unprotected": [
-        "未受保护"
+      "Take precautions to avoid losing access": [
+        "采取预防措施以避免无法访问"
       ],
       "Weak": [
         "弱"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "您已获得全面保护。随着您的设备和联系人随时间变化，定期检查可确保一切正常运作。"
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "您已迈出一步，但尚未安全。忘记密码仍可能导致您丢失邮件、文件和密码。"
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "您仍处于高风险状态。如果忘记密码，您可能会永久丢失邮件、文件和密码。"
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "您已覆盖良好，但仍存在缺口。更多的恢复选项可以在您忘记密码时提供更强大的安全网。"
+      ],
+      "Your account and data can be recovered": [
+        "您的账户和数据可以恢复"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "您的账户未设置任何恢复选项。如果忘记密码，您将永久无法访问您的邮件、文件和密码。"
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "您的账户未获得全面保护。忘记密码仍可能导致您无法访问邮件、文件和密码。"
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "您的恢复设置几乎为零。如果忘记密码，您可能会永久丢失邮件、文件和密码。"
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "您的恢复设置非常出色。请保持您的选项为最新状态，以便在需要时仍能正常使用。"
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "您的恢复设置不完整。忘记密码仍可能导致您无法访问邮件、文件和密码。"
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "您的恢复设置较为完善，但仍有少量缺口待补充。每添加一个选项，您的安全网就会更牢固。"
       ]
     },
     "Recovery score item": {
@@ -20723,6 +20801,28 @@
       ],
       "Edit retention rule": [
         "编辑保留规则"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "组织管理员"
+      ],
+      "Security Admin": [
+        "安全管理员"
+      ],
+      "User Admin": [
+        "用户管理员"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "管理所有用户、群组、安全、计费和系统配置。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成员的账户、群组和存储空间，分配角色和许可证。"
       ]
     },
     "Safety review": {
@@ -21935,7 +22035,7 @@
         "${ DRIVE_APP_NAME } for Business"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email alias": [
-        "${ FREE_PASS_ALIASES } 个 hide-my-email 别名"
+        "${ FREE_PASS_ALIASES } 个 Hide-my-email 别名"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "适用于打击垃圾邮件的 ${ FREE_PASS_ALIASES } Hide-my-email 别名邮箱"
@@ -22550,7 +22650,7 @@
         "升级账户"
       ],
       "Upgrade for ${ pricingTitle }": [
-        "升级至 ${ pricingTitle }"
+        "升级仅需 ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -22655,10 +22755,10 @@
         "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
+        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  Hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
+        "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 Hide-my-email 别名、日历共享等功能的支持。"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
@@ -23161,7 +23261,7 @@
         "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "您将失去无限次登录和笔记、无限次 hide-my-email 别名、20个保险库以及优先支持的特权。"
+        "您将失去无限次登录和笔记、无限次 Hide-my-email别名、20个保险库以及优先支持的特权。"
       ]
     },
     "Subscribe to calendar modal": {
@@ -23884,6 +23984,12 @@
       ],
       "Password copied to clipboard": [
         "密码已复制到剪贴板"
+      ],
+      "Password reminders disabled": [
+        "密码提醒已禁用"
+      ],
+      "Password reminders enabled": [
+        "已启用密码提醒"
       ],
       "Password updated": [
         "密码已更新"
@@ -25916,7 +26022,7 @@
         "概览"
       ],
       "Summer Sale": [
-        "夏季大促"
+        "夏季特惠"
       ],
       "Support ticket closed": [
         "支持工单已关闭"
@@ -26628,6 +26734,9 @@
       "User is a group": [
         "用户是群组"
       ],
+      "via ${ groupNames }": [
+        "通过 ${ groupNames }"
+      ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
       ]
@@ -26868,7 +26977,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "升级至 ${ passPlusPlanName } 套餐，获取无限的“hide-my-email ”别名"
+        "升级至 ${ passPlusPlanName } 套餐，获取无限的“Hide-my-email”别名"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "升级到 ${ planName } 套餐，可同时连接最多 ${ n } 台设备至 VPN"
