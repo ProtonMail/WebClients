@@ -1401,8 +1401,8 @@
       "Save": [
         "Guardar"
       ],
-      "Save & exit": [
-        "Guardar y salir"
+      "Save & finish": [
+        "Guardar y terminar"
       ],
       "Save address": [
         "Guardar dirección"
@@ -1543,7 +1543,7 @@
         "Configurar un dominio personalizado"
       ],
       "Set up account recovery": [
-        "Configurar recuperación de cuenta"
+        "Configurar recuperación de la cuenta"
       ],
       "Set up auto-forwarding from Gmail": [
         "Configurar el reenvío automático desde Gmail"
@@ -2969,6 +2969,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Collapse invitation message": [
+        "Contraer mensaje de invitación"
+      ],
       "Collapse step": [
         "Contraer paso"
       ],
@@ -2984,6 +2987,9 @@
       "Configure your domain": [
         "Configure su dominio"
       ],
+      "Confirm": [
+        "Confirmar"
+      ],
       "Contact your administrator to start a migration.": [
         "Contáctese con la administración para iniciar una migración."
       ],
@@ -2992,9 +2998,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Copie el siguiente código y péguelo en la sección DNS de su proveedor de dominio."
-      ],
-      "Creating accounts. Going private": [
-        "Creando cuentas. Haciéndolas privadas."
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Estado de migración de datos desde Google Workspace a ${ BRAND_NAME }"
@@ -3029,6 +3032,9 @@
       "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
         "Todos obtienen el mismo enlace de invitación. Ellos visitarán la página, ingresarán su correos electrónicos y les llegará un código de verificación a sus bandejas de entrada de Gmail. Desde ese correo establecerán una contraseña de ${ BRAND_NAME }."
       ],
+      "Expand invitation message": [
+        "Expandir mensaje de invitación"
+      ],
       "Expand step": [
         "Expandir paso"
       ],
@@ -3043,6 +3049,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Obtenga ayuda y consejos útiles para otros proveedores de dominio ${ here }"
+      ],
+      "Going private": [
+        "Hacerlo privado"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicación de Google Marketplace para copiar datos a ${ BRAND_NAME }"
@@ -3267,8 +3276,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Hemos notado que algunos usuarios no han reclamado sus cuentas de ${ BRAND_NAME }."
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Estamos creando las cuentas e importando sus datos. Cada correo electrónico, cada evento es solo suyo. Visible solo por su equipo. No por nosotros ni nadie más."
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Estamos activando el cifrado de extremo a extremo para todos. Cada correo electrónico, cada evento es ahora solo suyo. Visible solo para su equipo. Ni para nosotros ni para nadie más."
       ],
       "What are you migrating?": [
         "¿Qué está migrando?"
@@ -7291,6 +7300,9 @@
       "Invalid private key file": [
         "Archivo de clave privada inválido"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Token de restablecimiento no válido. Actualice la página e inténtelo de nuevo."
+      ],
       "Invalid Sieve code": [
         "Código Sieve inválido"
       ],
@@ -7532,7 +7544,7 @@
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong while converting the address": [
-        "Se ha producido un error al convertir la dirección"
+        "Ocurrió un error al convertir la dirección"
       ],
       "Something went wrong while creating the address": [
         "Algo salió mal al crear la dirección"
@@ -12091,6 +12103,9 @@
       "Request a phone call": [
         "Solicite una llamada telefónica"
       ],
+      "Required to complete the migration": [
+        "Necesario para completar la migración"
+      ],
       "Resend verification email": [
         "Reenviar correo de verificación"
       ],
@@ -13255,6 +13270,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No definió un método de recuperación por lo que la recuperación de cuentas es imposible si olvida la contraseña. ¿Proceder sin método de recuperación?"
+      ],
+      "You do not have permission to create users.": [
+        "No tiene permisos para crear usuarios."
       ],
       "You do not have permission to perform this action": [
         "No tiene permisos para realizar esta acción"
@@ -14451,6 +14469,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Calendars": [
+        "Calendarios"
+      ],
       "Capitalize words": [
         "Palabras en mayúsculas"
       ],
@@ -14727,6 +14748,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "Correo con el dominio @sunegocio.com"
+      ],
+      "Emails": [
+        "Correos"
       ],
       "Emails (all messages)": [
         "Correos (todos los mensajes)"
@@ -16012,6 +16036,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obtener ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtener ayuda de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupos"
@@ -20573,17 +20600,8 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } completado"
       ],
-      "Account protection": [
-        "Protección de la cuenta"
-      ],
       "Add more options for stronger protection": [
         "Añada más opciones para una protección más robusta"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Añada más opciones para evitar que se bloquee su cuenta."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Magnifico. Mantenga sus opciones actualizadas para una protección robusta."
       ],
       "Check your access to your recovery options": [
         "Revise el acceso a sus opciones de recuperación."
@@ -20593,12 +20611,6 @@
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "No se quede sin acceso a su cuenta de ${ BRAND_NAME }"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Buen comienzo. Añada más opciones para una protección más robusta."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Excelente. Añada más opciones para una protección más robusta."
       ],
       "How you increased your account protection": [
         "Cómo incrementó la seguridad de su cuenta"
@@ -20630,9 +20642,6 @@
       "Take precautions to avoid losing access": [
         "¡Tome precauciones para evitar pérdida de acceso!"
       ],
-      "Unprotected": [
-        "Sin protección"
-      ],
       "Weak": [
         "Débil"
       ],
@@ -20643,7 +20652,7 @@
         "Casi, pero su cuenta aún no es segura. Una contraseña olvidada aún puede significar perder sus correos electrónicos, archivos y contraseñas."
       ],
       "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
-        "Tiene un alto riesgo. Si olvida su contraseña, puede perder permanentemente sus correos electrónicos, archivos y contraseñas."
+        "Tiene un alto riesgo. Si olvida la contraseña, puede perder permanentemente sus correos electrónicos, archivos y contraseñas."
       ],
       "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
         "Su cuenta está cubierta, pero tiene algunas brechas. Más opciones de recuperación le brindan una red de seguridad más sólida en caso de perder su contraseña."
@@ -20652,13 +20661,13 @@
         "La cuenta y sus datos pueden recuperarse"
       ],
       "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
-        "Su cuenta no tiene opciones de recuperación configuradas. Si pierde su contraseña, perderá el acceso permanentemente a sus correos electrónicos, archivos y contraseñas."
+        "Su cuenta no tiene opciones de recuperación configuradas. Si pierde la contraseña, perderá el acceso permanentemente a sus correos electrónicos, archivos y contraseñas."
       ],
       "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
         "Su cuenta no está totalmente protegida. Una contraseña olvidada aún puede significar perder el acceso a sus correos electrónicos, archivos y contraseñas."
       ],
       "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
-        "Apenas tiene opciones de recuperación configuradas. Si pierde su contraseña, puede perder el acceso permanentemente a sus correos electrónicos, archivos y contraseñas."
+        "Apenas tiene opciones de recuperación configuradas. Si pierde la contraseña, puede perder el acceso permanentemente a sus correos electrónicos, archivos y contraseñas."
       ],
       "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
         "Su configuración de recuperación es excelente. Mantenga sus opciones actualizadas para que funcionen sin problemas en caso de que lo necesite."
@@ -21117,6 +21126,28 @@
       ],
       "Edit retention rule": [
         "Editar regla de retención"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Administrador de la organización"
+      ],
+      "Security Admin": [
+        "Administrador de seguridad"
+      ],
+      "User Admin": [
+        "Administrador de usuarios"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
       ]
     },
     "Safety review": {
@@ -26924,9 +26955,6 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Incluye correo electrónico profesional en @sudominio.com, almacenamiento en la nube con edición colaborativa de documentos, programación y videoconferencias, gestión de contraseñas, una VPN segura de ${ VPN_SHORT_APP_NAME } y más."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."
       ],
@@ -27117,6 +27145,9 @@
       ],
       "User is a group": [
         "El usuario es un grupo"
+      ],
+      "via ${ groupNames }": [
+        "vía ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."

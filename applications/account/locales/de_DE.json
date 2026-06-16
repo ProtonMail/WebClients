@@ -1398,6 +1398,9 @@
       "Save": [
         "Speichern"
       ],
+      "Save & finish": [
+        "Speichern und abschließen"
+      ],
       "Save address": [
         "E-Mail-Adresse speichern"
       ],
@@ -1595,6 +1598,9 @@
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Abmelden von ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Von ${ tokens[0].Account } abmelden"
       ],
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
@@ -2909,6 +2915,24 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } von ${ totalCount }"
+      ],
+      "Accounts migrated": [
+        "Konto migriert"
+      ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "E-Mail-Domain deiner Organisation zu ${ BRAND_NAME } hinzufügen."
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alle migrierten Benutzerkonten können nun in deine ${ BRAND_NAME }-Organisation eingeladen werden."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Ein unbekannter Fehler ist aufgetreten. Lade die Seite neu und versuche es erneut."
+      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -2921,8 +2945,17 @@
       "Collapse invitation message": [
         "Einladungsnachricht einklappen"
       ],
+      "Collapse step": [
+        "Schritt einklappen"
+      ],
       "Configure migration": [
         "Übernahme konfigurieren"
+      ],
+      "Configure users": [
+        "Benutzer konfigurieren"
+      ],
+      "Confirm": [
+        "Bestätigen"
       ],
       "Contact your administrator to start a migration.": [
         "Kontaktiere deinen Administrator um, eine Migration zu starten."
@@ -2930,20 +2963,53 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Kopiere den folgenden Code und füge ihn im DNS-Bereich deines Domain-Hosts ein."
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
+      ],
+      "Domain provider": [
+        "Domain-Anbieter"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Du weißt nicht, wo du anfangen sollst? Sieh dir an, wie du deine DNS-Einstellungen auf ${ registrarLink } aktualisieren kannst."
+      ],
+      "Emails": [
+        "E-Mails"
+      ],
       "Estimated size": [
         "Geschätzte Größe"
+      ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Jeder erhält denselben Einladungslink. Sie rufen die Seite auf, geben ihre E-Mail-Adresse ein und erhalten einen Bestätigungscode in ihrem Gmail-Posteingang. Dort legen sie dann ihr Passwort für ${ BRAND_NAME } fest."
       ],
       "Expand invitation message": [
         "Einladungsnachricht erweitern"
       ],
+      "Expand step": [
+        "Schritt erweitern"
+      ],
       "Failed to load OAuth": [
         "OAuth konnte nicht geladen werden"
+      ],
+      "Final step": [
+        "Letzter Schritt"
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "${ here } findest du Hilfe und nützliche Tipps zu anderen Domain-Anbietern"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-App zum Kopieren von Daten nach ${ BRAND_NAME }"
       ],
       "Has errors": [
         "Hat Fehler"
+      ],
+      "Import completed successfully": [
+        "Import erfolgreich abgeschlossen"
+      ],
+      "Import details": [
+        "Importdetails"
       ],
       "In progress": [
         "In Bearbeitung"
@@ -2954,14 +3020,38 @@
       "Install migration app": [
         "Übernahme-App installieren"
       ],
+      "Invitation link": [
+        "Einladungslink"
+      ],
+      "Invitation message": [
+        "Einladungsnachricht"
+      ],
+      "invite link": [
+        "Einladungslink"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Es kann bis zu 24 Stunden dauern, bis diese Änderungen wirksam werden."
+      ],
       "Mail": [
         "E-Mail"
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
       ],
+      "Migrate": [
+        "Migrieren"
+      ],
+      "Migrate accounts": [
+        "Konto migrieren"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Konten nach ${ BRAND_NAME } migrieren"
+      ],
       "Migrate from Google Workspace": [
         "Von Google Workspace übernehmen"
+      ],
+      "Migrated accounts": [
+        "Migrierte Konten"
       ],
       "Migration includes": [
         "Übernahme beinhaltet"
@@ -2973,11 +3063,23 @@
       "Migration status": [
         "Migrationsstatus"
       ],
+      "Migration summary": [
+        "Migrationsübersicht"
+      ],
       "Missing organization private key": [
         "Privater Schlüssel der Organisation fehlt"
       ],
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "Need help?": [
+        "Brauchst du Hilfe?"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Nicht richtig erkannt? Wähle deinen Anbieter aus der Liste aus."
+      ],
+      "Onboard your team": [
+        "Dein Team einführen"
       ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
@@ -2985,8 +3087,20 @@
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
+      "Please don’t close or refresh this window.": [
+        "Bitte schließe dieses Fenster nicht und aktualisiere es nicht."
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Melde dich erneut bei deinem Google Workspace-Konto an, um die Migration zu starten"
+      ],
       "Select at least one user to start a migration": [
         "Wähle mindestens einen Benutzer aus, um eine Migration zu starten"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Konten auswählen, die du zu ${ BRAND_NAME } übertragen möchtest. Du kannst entweder gleich deine gesamte Organisation migrieren oder klein anfangen und den Rest später hinzufügen, wenn du bereit bist."
       ],
       "Settings": [
         "Einstellungen"
@@ -2994,14 +3108,44 @@
       "Sign in to Google Workspace": [
         "Bei Google Workspace anmelden"
       ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Melde dich mit einem Google Workspace-Administratorkonto für ${ BRAND_NAME } an, um die Migration einzurichten."
+      ],
+      "Skip": [
+        "Überspringen"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "${ count } Kontakt aufgrund von Inkompatibilitäten übersprungen",
+        "${ count } Kontakte aufgrund von Inkompatibilitäten übersprungen"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "${ count } E-Mail aufgrund von Inkompatibilitäten übersprungen",
+        "${ count } E-Mails aufgrund von Inkompatibilitäten übersprungen"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "${ count } Termin aufgrund von Inkompatibilitäten übersprungen",
+        "${ count } Termine aufgrund von Inkompatibilitäten übersprungen"
+      ],
       "Status": [
         "Status"
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Um die Daten deines Unternehmens auf ${ BRAND_NAME } zu übertragen, installiere „${ BRAND_NAME } Easy Switch“ aus dem Google Workspace Marketplace. Kehren nach der Installation hierher zurück, um fortzufahren."
       ],
       "User": [
         "Benutzer"
       ],
+      "Users activated": [
+        "Benutzer aktiviert"
+      ],
       "Users migrated": [
         "Benutzer übernommen"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Benutzer, die ihr Konto nicht vor Abschluss der Migration beansprucht haben, müssen beim Administrator ihrer ${ BRAND_NAME }-Organisation eine Passwortzurücksetzung beantragen."
       ],
       "Verify installation": [
         "Installation überprüfen"
@@ -3012,11 +3156,23 @@
       "Verify your domain to start a migration": [
         "Überprüfe deine Domain, um eine Migration zu starten"
       ],
+      "Waiting for MX...": [
+        "Auf MX warten..."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Wir konnten die Installation nicht überprüfen. Bitte stelle sicher, dass du sie in deinem Google Workspace-Konto installiert hast, und versuche es erneut."
       ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Wir wechseln zu ${ BRAND_NAME }, dem sicheren E-Mail-Dienst.\nUnd dein ${ BRAND_NAME }-Konto steht bereit.\nKlicke auf ${ inviteLink }.\nGib deine E-Mail-Adresse ein, wir senden dir einen Code an deine Gmail-Adresse.\nVerwende diesen, um dein Passwort festzulegen – und schon gehört dein ${ BRAND_NAME }-Konto dir.\nFür eine kurze Zeit werden beide Dienste parallel funktionieren: ${ BRAND_NAME } und Gmail.\nSobald alle den Wechsel vollzogen haben, werden wir Gmail einstellen. Wir werden dich rechtzeitig daran erinnern."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Wir schalten die End-to-End-Verschlüsselung für alle ein. Jede E-Mail, jeder Termin gehört nun ganz allein dir. Nur dein Team kann sie einsehen. Weder wir noch sonst jemand."
+      ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Du bist fast fertig. Du musst deine Domain so konfigurieren, dass du deine E-Mails direkt in ${ BRAND_NAME } erhältst. Sobald dies bestätigt ist, wird dein Team keine neuen E-Mails mehr in Gmail erhalten und die Migration ist abgeschlossen."
       ]
     },
     "breadcrumb": {
@@ -5203,7 +5359,7 @@
         "Wir holen deine alten E-Mails und verbinden dein Gmail mit ${ MAIL_APP_NAME }, damit neue Nachrichten automatisch angezeigt werden"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Wir importieren deine alten E-Mails, überspringen Duplikate und verbinden uns mit deinem Gmail, damit neue Nachrichten automatisch erscheinen. Du kannst den Import in den Easy Switch-Einstellungen jederzeit rückgängig machen."
+        "Wir importieren deine alten E-Mails, überspringen doppelte Nachrichten und verbinden uns mit deinem Gmail-Konto, damit neue Nachrichten automatisch angezeigt werden. Du kannst den Import jederzeit in den Einstellungen von Easy Switch rückgängig machen."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Wir haben mit dem Import deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
@@ -7000,6 +7156,9 @@
       ],
       "Invalid private key file": [
         "Ungültige private Schlüsseldatei"
+      ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ungültiges Token zum Zurücksetzen. Bitte aktualisiere die Seite und versuche es erneut."
       ],
       "Invalid Sieve code": [
         "Ungültiger Sieve-Code"
@@ -10501,6 +10660,9 @@
       "Edit link": [
         "Link bearbeiten"
       ],
+      "Editing requires permission": [
+        "Zum Bearbeiten ist eine Berechtigung erforderlich"
+      ],
       "eduGAIN configuration saved": [
         "eduGAIN-Konfiguration gespeichert"
       ],
@@ -11759,6 +11921,9 @@
       "Request a phone call": [
         "Einen Anruf anfordern"
       ],
+      "Required to complete the migration": [
+        "Für den Abschluss der Migration erforderlich"
+      ],
       "Resend verification email": [
         "Verifizierungs-E-Mail erneut senden"
       ],
@@ -12908,6 +13073,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
+      ],
+      "You do not have permission to create users.": [
+        "Du hast keine Berechtigung, Benutzer anzulegen."
       ],
       "You do not have permission to perform this action": [
         "Du hast keine Berechtigung, diese Aktion durchzuführen"
@@ -14095,6 +14263,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalender"
+      ],
       "Capitalize words": [
         "Wörter großschreiben"
       ],
@@ -14368,6 +14539,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-Mail-Adresse mit einer @yourcompany.com Domain"
+      ],
+      "Emails": [
+        "E-Mails"
       ],
       "Emails (all messages)": [
         "E-Mails (alle Nachrichten)"
@@ -15423,6 +15597,17 @@
         "Bitte füge den folgenden TXT-Eintrag hinzu. Beachte: Die Aktualisierung von DNS-Einträgen kann mehrere Stunden dauern."
       ]
     },
+    "Label for domain setup": {
+      "Priority": [
+        "Priorität"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Standardwert verwenden (z. B. “@”)"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Admin"
@@ -15627,6 +15812,9 @@
       ],
       "Help": [
         "Hilfe"
+      ],
+      "Help & support": [
+        "Hilfe und Support"
       ],
       "Help translate": [
         "Beim Übersetzen helfen"
@@ -20167,14 +20355,8 @@
       "${ score } / ${ maxScore } completed": [
         "${ score }/${ maxScore } abgeschlossen"
       ],
-      "Account protection": [
-        "Kontoschutz"
-      ],
       "Add more options for stronger protection": [
         "Weitere Optionen für einen besseren Schutz hinzufügen"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Füge weitere Optionen hinzu, um zu vermeiden, dass du aus deinem Konto ausgesperrt wirst."
       ],
       "Check your access to your recovery options": [
         "Überprüfe, ob du Zugriff auf deine Wiederherstellungsoptionen hast"
@@ -20208,9 +20390,6 @@
       ],
       "Take precautions to avoid losing access": [
         "Vorkehrungen treffen, um einen Zugriffsverlust zu vermeiden"
-      ],
-      "Unprotected": [
-        "Ungeschützt"
       ],
       "Weak": [
         "Schwach"
@@ -20672,6 +20851,28 @@
       ],
       "Edit retention rule": [
         "Aufbewahrungsregel bearbeiten"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Organisationsadministrator"
+      ],
+      "Security Admin": [
+        "Sicherheitsadministrator"
+      ],
+      "User Admin": [
+        "Benutzeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
       ]
     },
     "Safety review": {
@@ -26161,9 +26362,6 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Beinhaltet professionelle E-Mail-Adressen unter @yourdomain.com, Cloud-Speicher mit Funktionen zur gemeinsamen Dokumentbearbeitung, Terminplanung und Videokonferenzen, Passwortverwaltung, ein sicheres ${ VPN_SHORT_APP_NAME } und vieles mehr."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail, in der sie aufgefordert werden, diese so bald wie möglich zu aktivieren. Single Sign-On-Benutzer, erhalten diese Aufforderung nicht."
       ],
@@ -26351,6 +26549,9 @@
       ],
       "User is a group": [
         "Benutzer ist eine Gruppe"
+      ],
+      "via ${ groupNames }": [
+        "über ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"

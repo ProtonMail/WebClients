@@ -1374,6 +1374,9 @@
       "Return to sign in": [
         "Terug naar inloggen"
       ],
+      "Return to sign-in": [
+        "Terug naar inloggen"
+      ],
       "Review": [
         "Bekijken"
       ],
@@ -1398,8 +1401,8 @@
       "Save": [
         "Opslaan"
       ],
-      "Save & exit": [
-        "Opslaan & afsluiten"
+      "Save & finish": [
+        "Opslaan en gereed"
       ],
       "Save address": [
         "Adres opslaan"
@@ -1688,6 +1691,9 @@
       ],
       "Try another method": [
         "Andere methode proberen"
+      ],
+      "Try another way": [
+        "Probeer een andere manier"
       ],
       "Try for free": [
         "Probeer het gratis"
@@ -2378,6 +2384,11 @@
         "Uw gratis proefversie eindigt over ${ timeRemaining }"
       ]
     },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "Bespaar ${ discountRate }%"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Uitgeschakeld"
@@ -2916,6 +2927,9 @@
       "Account connected": [
         "Account verbonden"
       ],
+      "Account disconnected": [
+        "Account niet verbonden"
+      ],
       "Accounts migrated": [
         "Accounts zijn gemigreerd"
       ],
@@ -2925,8 +2939,14 @@
       "Add domain": [
         "Domein toevoegen"
       ],
+      "Add users": [
+        "Gebruikers toevoegen"
+      ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Voeg het e-maildomein van uw organisatie toe aan ${ BRAND_NAME }."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
       ],
       "All": [
         "Alle"
@@ -2937,6 +2957,9 @@
       "An unknown error ocurred. Please refresh the page and try again": [
         "Er is een onbekende fout opgetreden. Vernieuw de pagina en probeer het opnieuw"
       ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Weet u zeker dat u door wilt gaan? Gebruikers die hun account nog niet hebben geclaimd voordat de migratie is voltooid, moeten een wachtwoordreset aanvragen bij hun ${ BRAND_NAME } organisatiebeheerder."
+      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -2946,8 +2969,14 @@
       "Calendar": [
         "Agenda"
       ],
+      "Collapse invitation message": [
+        "Uitnodigingsbericht inklappen"
+      ],
       "Collapse step": [
         "Stap samenvouwen"
+      ],
+      "Configure domain": [
+        "Configureer domein"
       ],
       "Configure migration": [
         "Migratie configureren"
@@ -2958,6 +2987,9 @@
       "Configure your domain": [
         "Configureer uw domein"
       ],
+      "Confirm": [
+        "Bevestigen"
+      ],
       "Contact your administrator to start a migration.": [
         "Neem contact op met uw beheerder om een ​​migratie te starten."
       ],
@@ -2966,9 +2998,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Kopieer de onderstaande code en plak deze in het DNS-sectie van uw domeinhost."
-      ],
-      "Creating accounts. Going private": [
-        "Accounts aanmaken. Privé gaan"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
@@ -2994,11 +3023,17 @@
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Zorg ervoor dat uw e-mails in de inbox terechtkomen en niet in de spammap. Door SPF bij te werken, kunnen gebruikers gedurende de migratieperiode gelijktijdig e-mails verzenden vanaf ${ BRAND_NAME } en Google."
       ],
+      "Errors": [
+        "Fouten"
+      ],
       "Estimated size": [
         "Geschatte grootte."
       ],
       "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
         "Iedereen krijgt dezelfde uitnodigingslink. Ze bezoeken de pagina, voeren hun e-mailadres in en er verschijnt een verificatiecode in hun Gmail-inbox. Van daaruit stelden ze hun ${ BRAND_NAME }-wachtwoord in."
+      ],
+      "Expand invitation message": [
+        "Uitnodigingsbericht uitklappen"
       ],
       "Expand step": [
         "Stap uitvouwen"
@@ -3009,8 +3044,14 @@
       "Final step": [
         "Laatste stap"
       ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
+      ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Krijg ${ here } hulp en handige tips voor andere domeinproviders"
+      ],
+      "Going private": [
+        "Privé gaan"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app om gegevens naar ${ BRAND_NAME } te kopiëren"
@@ -3047,6 +3088,9 @@
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "Het kan tot 24 uur duren voordat deze wijzigingen zijn doorgevoerd."
+      ],
+      "Loading your organization data": [
+        "Uw organisatiegegevens laden"
       ],
       "Mail": [
         "Mail"
@@ -3093,6 +3137,9 @@
       ],
       "Need help?": [
         "Hulp nodig?"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Er zijn geen fout details beschikbaar .neem contact op met de klantenservice voor meer informatie."
       ],
       "No users to display": [
         "Geen gebruikers om weer te geven"
@@ -3142,6 +3189,12 @@
       "Select users to migrate": [
         "Selecteer gebruikers om te migreren"
       ],
+      "Set up secure sending (DKIM)": [
+        "Beveiligd verzenden (DKIM) instellen"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Beveiligd verzenden (DMARC) instellen"
+      ],
       "Set up secure sending (SPF)": [
         "Beveiligd verzenden (SPF) instellen"
       ],
@@ -3171,6 +3224,9 @@
       "Skipped ${ count } event due to incompatibilities": [
         "${ count } gebeurtenis werd overgeslagen vanwege onverenigbaarheden",
         "${ count } gebeurtenissen zijn overgeslagen vanwege onverenigbaarheden"
+      ],
+      "Some accounts are not claimed": [
+        "Sommige accounts zijn niet geclaimd"
       ],
       "Status": [
         "Status"
@@ -3220,8 +3276,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "We hebben gemerkt dat sommige gebruikers hun ${ BRAND_NAME } profiel nog niet hebben geactiveerd."
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "We maken nu uw accounts aan en importeren uw gegevens. Elke e-mail, elk evenement is alleen van u. Alleen zichtbaar voor uw team. Wij niet, en niemand anders."
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "We schakelen end-to-end versleuteling in voor iedereen. Elke e-mail en elke afspraak is nu alleen van u. Niet van ons, en ook niet van iemand anders."
       ],
       "What are you migrating?": [
         "Wat migreert u?"
@@ -3234,6 +3290,10 @@
       ],
       "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
         "U bent bijna klaar. U moet uw domein configureren om uw e-mails rechtstreeks op ${ BRAND_NAME } te ontvangen. Na bevestiging ontvangt uw team geen nieuwe e-mails meer op Gmail en wordt de migratie voltooid."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Uw huidige abonnemnt staat tot ${ maxMembers } gebruiker toe. Om meer gebruikers te migreren, moet u extra licenties toevoegen aan uw abonnement.",
+        "Uw huidige abonnement staat tot ${ maxMembers } gebruikers toe. Om meer gebruikers te migreren, moet u extra licenties toevoegen aan uw abonnement."
       ]
     },
     "breadcrumb": {
@@ -5310,6 +5370,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Hoe ons klantenservice-team onze VPN app rechtstreeks in de handen van mensen kreeg."
+      ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
         "Hoe we terugvochten toen ${ BRAND_NAME } werd geblokkeerd in een agressieve campagne."
       ],
@@ -7237,6 +7300,9 @@
       "Invalid private key file": [
         "Ongeldig privé-sleutel bestand"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ongeldige reset token. Vraag een andere token aan en probeer het opnieuw."
+      ],
       "Invalid Sieve code": [
         "Ongeldige Sieve code"
       ],
@@ -8367,6 +8433,9 @@
       "3 email domains": [
         "3 e-mail domeinen"
       ],
+      "3 folders, labels and filters": [
+        "3 mappen, labels en aangepaste filters"
+      ],
       "500 GB storage": [
         "500 GB opslagruimte"
       ],
@@ -8410,6 +8479,9 @@
       ],
       "Premium features in Mail, Calendar, Drive, Pass and VPN": [
         "Premiumfuncties in Mail, Agenda, Drive, Pass en VPN"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
       ],
       "Remove": [
         "Verwijderen"
@@ -9574,6 +9646,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Mail": [
         "Mail"
       ]
@@ -9617,6 +9692,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
+      ],
+      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } Business abonnementen bieden uw team alle samenwerkingstools die ze nodig hebben om productief en georganiseerd te werken, terwijl uw bedrijf wordt beschermd."
       ],
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
@@ -10338,6 +10416,9 @@
       "Beta": [
         "Bèta"
       ],
+      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
+        "De eerste 6 maanden wordt het abonnement gefactureerd tegen ${ monthlyDiscountedPrice }, waarna het wordt verlengd tegen ${ monthlyRenewalPrice }."
+      ],
       "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
         "De eerste 12 maanden wordt het abonnement gefactureerd tegen ${ yearlyDiscountedPrice }, waarna het wordt verlengd tegen ${ yearlyRenewalPrice }."
       ],
@@ -10367,6 +10448,12 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze agenda te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
+      ],
+      "Can you access your active session?": [
+        "Heeft u toegang tot uw actieve sessie?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kunt u uw actieve web sessie in een andere browser openen?"
       ],
       "Can you reach out to your contact?": [
         "Kunt u contact opnemen met uw contactpersoon?"
@@ -10721,6 +10808,9 @@
       ],
       "Drop to import": [
         "Neerzetten om te importeren"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Dankzij end-to-end versleuteling kunt u uw wachtwoord opnieuw instellen, maar ${ DataLockedText } totdat u gebruik maakt van een ${ DataRecoveryOptionsLink }:"
       ],
       "Each code can only be used once": [
         "Elke code kan slechts één keer worden gebruikt"
@@ -11664,6 +11754,9 @@
       "On Ubuntu?": [
         "Op Ubuntu?"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Zodra zij toegang tot uw account hebben gekregen, kunnen zij uw **herstelinstellingen** bekijken en **uw wachtwoord voor ${ ACCOUNT_APP_NAME }** voor u wijzigen."
+      ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
       ],
@@ -12009,6 +12102,9 @@
       ],
       "Request a phone call": [
         "Telefoongesprek aanvragen"
+      ],
+      "Required to complete the migration": [
+        "Vereist om de migratie te voltooien"
       ],
       "Resend verification email": [
         "Verificatie e-mail opnieuw versturen"
@@ -12673,6 +12769,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Probeer ${ productName } volledig risicoloos - als u om een andere reden van gedachten verandert, krijgt u een volledige terugbetaling. Zonder vragen."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Probeer uw account te herstellen vanaf een **apparaat of browser waarop u eerder bent ingelogd**, want misschien lukt het daar wel:"
+      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
@@ -12687,6 +12786,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan de handtekening van het herstelbestand niet verifiëren. Neem contact op met ondersteuning."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Helaas is er geen herstelmethode beschikbaar voor dit account."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
@@ -13168,6 +13270,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
+      ],
+      "You do not have permission to create users.": [
+        "U heeft geen toestemming om gebruikers aan te maken."
       ],
       "You do not have permission to perform this action": [
         "U heeft geen rechten om deze actie uit te voeren"
@@ -14364,6 +14469,9 @@
       "Calendar": [
         "Agenda"
       ],
+      "Calendars": [
+        "Agenda's"
+      ],
       "Capitalize words": [
         "Zet woorden om maar hoofdletters"
       ],
@@ -14378,6 +14486,9 @@
       ],
       "Cash": [
         "Contant"
+      ],
+      "Catch-all email address": [
+        "Catch-all e-mailadres"
       ],
       "Categories": [
         "Categorieën"
@@ -14617,6 +14728,9 @@
       "e.g. example.com": [
         "bv. voorbeeld.com"
       ],
+      "Early access": [
+        "Early access"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -14634,6 +14748,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail met @uwbedrijf.com domein"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle berichten)"
@@ -14673,6 +14790,9 @@
       ],
       "End-to-end encryption": [
         "End-to-end-encryptie"
+      ],
+      "Enter code": [
+        "Voer code in"
       ],
       "Enter name or email address": [
         "Voer een naam of e-mailadres in"
@@ -15307,6 +15427,9 @@
       "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
         "Gedeeld tussen ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ WALLET_SHORT_APP_NAME }."
       ],
+      "Short domain @pm.me": [
+        "Kort domein @pm.me"
+      ],
       "Show ${ n } administrator": [
         "Toon ${ n } beheerder",
         "Toon ${ n } beheerders"
@@ -15539,6 +15662,9 @@
       "Verify keys with Key Transparency": [
         "Verifieer sleutels met Key Transparency"
       ],
+      "Version history": [
+        "Versiegeschiedenis"
+      ],
       "Video conferencing with Zoom": [
         "Videovergadering met Zoom"
       ],
@@ -15710,6 +15836,9 @@
       ],
       "Use default value (e.g. “@”)": [
         "Gebruik standaardwaarde (bijvoorbeeld “@”)"
+      ],
+      "Valid ${ group.name } record found": [
+        "Geldig ${ group.name } record gevonden"
       ]
     },
     "Label for new member": {
@@ -15869,6 +15998,9 @@
       "Create an alias": [
         "Alias aanmaken"
       ],
+      "data recovery option": [
+        "optie voor gegevensherstel"
+      ],
       "Details": [
         "Details"
       ],
@@ -15904,6 +16036,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Kies ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Krijg hulp van ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Groepen"
@@ -20465,17 +20600,8 @@
       "${ score } / ${ maxScore } completed": [
         "${ score }/${ maxScore } voltooid"
       ],
-      "Account protection": [
-        "Account beveiliging"
-      ],
       "Add more options for stronger protection": [
         "Voeg meer opties toe voor een betere bescherming"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Voeg meer opties toe om te voorkomen dat uw account wordt geblokkeerd."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Fantastisch. Zorg dat uw opties up-to-date zijn voor een betere bescherming."
       ],
       "Check your access to your recovery options": [
         "Controleer uw toegang tot uw herstelopties"
@@ -20485,12 +20611,6 @@
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "Zorg ervoor dat de toegang tot uw ${ BRAND_NAME }-account niet verliest"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Een goed begin. Voeg meer opties toe voor een betere bescherming."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Prima. Voeg meer opties toe voor een betere bescherming."
       ],
       "How you increased your account protection": [
         "Hoe u de beveiliging van uw account hebt verbeterd"
@@ -20521,9 +20641,6 @@
       ],
       "Take precautions to avoid losing access": [
         "Neem voorzorgsmaatregelen om te voorkomen dat u de toegang verliest"
-      ],
-      "Unprotected": [
-        "Onbeschermd"
       ],
       "Weak": [
         "Zwak"
@@ -21009,6 +21126,28 @@
       ],
       "Edit retention rule": [
         "Bewaarregel bewerken"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Organisatie Beheerder"
+      ],
+      "Security Admin": [
+        "Beveiligingsbeheerder"
+      ],
+      "User Admin": [
+        "Gebruiker Beheerder"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Beheer alle gebruikers, groepen, opslag, beveiliging, facturering, auditlogboeken en systeemconfiguraties."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Beheer gebruikers, groepen en opslagruimte voor alle leden, wijs rollen toe en deel licenties uit."
       ]
     },
     "Safety review": {
@@ -24426,6 +24565,9 @@
       ],
       "/user per month": [
         "/gebruiker per maand"
+      ],
+      "/year": [
+        "/jaar"
       ]
     },
     "Suffix for price": {
@@ -26804,11 +26946,11 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "Inclusief aangepaste e-maildomeinen en een onbeperkt aantal 'hide-my-email' aliassen in ${ MAIL_APP_NAME }, toegang tot servers in meer dan 120 landen in ${ VPN_SHORT_APP_NAME }, ingebouwde tweefactorauthenticatie en veilig delen in ${ PASS_SHORT_APP_NAME }, en nog veel meer."
+      ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclusief professioneel e-mailadres bij @yourdomain.com, cloudopslag met mogelijkheden voor gezamenlijke documentbewerking, planning en videoconferenties, wachtwoordbeheer, een beveiligde ${ VPN_SHORT_APP_NAME } en meer."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Directe AI-hulp, menselijke expert bij de hand!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Leden die geen 2FA gebruiken krijgen een e-mail met het verzoek om deze zo snel mogelijk in te schakelen. Single sign-on gebruikers zullen de e-mail herinnering niet ontvangen."
@@ -27000,6 +27142,9 @@
       ],
       "User is a group": [
         "Gebruiker is een groep"
+      ],
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Wachten tot gebruiker de uitnodiging accepteert"

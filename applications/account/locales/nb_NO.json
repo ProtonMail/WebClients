@@ -1086,6 +1086,9 @@
       "Manage labels": [
         "Behandle etiketter"
       ],
+      "Manage migration": [
+        "Administrer migrering"
+      ],
       "Manage subscription": [
         "Behandle abonnement"
       ],
@@ -1377,6 +1380,9 @@
       "Review": [
         "Gjennomgå"
       ],
+      "Review recovery options": [
+        "Se gjennom gjenopprettingsalternativer"
+      ],
       "Revoke": [
         "Tilbakekall"
       ],
@@ -1395,8 +1401,8 @@
       "Save": [
         "Lagre"
       ],
-      "Save & exit": [
-        "Lagre og avslutt"
+      "Save & finish": [
+        "Lagre og fullfør"
       ],
       "Save address": [
         "Lagre adresse"
@@ -1535,6 +1541,9 @@
       ],
       "Set up a custom domain": [
         "Konfigurer et egendefinert domene"
+      ],
+      "Set up account recovery": [
+        "Konfigurer kontogjenoppretting"
       ],
       "Set up auto-forwarding from Gmail": [
         "Konfigurer automatisk videresending fra Gmail"
@@ -2909,6 +2918,9 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
       "${ relevantCount } of ${ totalCount }": [
         "${ relevantCount } av ${ totalCount }"
       ],
@@ -2917,6 +2929,9 @@
       ],
       "Account disconnected": [
         "Konto frakoblet"
+      ],
+      "Accounts migrated": [
+        "Kontoer migrert"
       ],
       "Activated": [
         "Aktivert"
@@ -2927,11 +2942,20 @@
       "Add users": [
         "Legg til brukere"
       ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Legg til organisasjonens e-postdomene til ${ BRAND_NAME }."
+      ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
       ],
       "All": [
         "Alle"
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alle migrerte brukerkontoer er klare til å bli invitert til ${ BRAND_NAME }-organisasjonen din."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "En ukjent feil oppstod. Oppdater siden og prøv igjen."
       ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Er du sikker på at du vil fortsette? Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
@@ -2945,14 +2969,26 @@
       "Calendar": [
         "Kalender"
       ],
+      "Collapse invitation message": [
+        "Skjul invitasjonsmelding"
+      ],
+      "Collapse step": [
+        "Skjul trinn"
+      ],
       "Configure domain": [
         "Konfigurer domene"
       ],
       "Configure migration": [
         "Konfigurer migrering"
       ],
+      "Configure users": [
+        "Konfigurer brukere"
+      ],
       "Configure your domain": [
         "Konfigurer domenet ditt"
+      ],
+      "Confirm": [
+        "Bekreft"
       ],
       "Contact your administrator to start a migration.": [
         "Kontakt administratoren din for å starte en migrering."
@@ -2962,6 +2998,9 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Kopier koden nedenfor og lim den inn i DNS-delen av domeneverten din."
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM legger til en digital signatur i hver e-post, slik at mottakerne kan bekrefte at meldingen faktisk kom fra domenet ditt og ikke ble endret underveis. Uten den kan meldinger bli behandlet som mindre pålitelige."
@@ -2990,6 +3029,15 @@
       "Estimated size": [
         "Estimert størrelse"
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Alle får den samme invitasjonskoblingen. De besøker siden, skriver inn e-postadressen sin, og en bekreftelseskode kommer til Gmail-innboksen deres. Derfra angir de ${ BRAND_NAME }-passordet sitt."
+      ],
+      "Expand invitation message": [
+        "Vis invitasjonsmelding"
+      ],
+      "Expand step": [
+        "Vis trinn"
+      ],
       "Failed to load OAuth": [
         "Kunne ikke laste inn OAuth"
       ],
@@ -2998,6 +3046,12 @@
       ],
       "Find out what can be migrated.": [
         "Finn ut hva som kan migreres."
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Få hjelp og nyttige tips fra andre domeneleverandører ${ here }"
+      ],
+      "Going private": [
+        "Går privat"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app for å kopiere data til ${ BRAND_NAME }"
@@ -3010,6 +3064,9 @@
       ],
       "Import completed successfully": [
         "Import fullført uten problemer"
+      ],
+      "Import details": [
+        "Importdetaljer"
       ],
       "In progress": [
         "Pågår"
@@ -3047,6 +3104,9 @@
       "Migrate accounts": [
         "Migrer kontoer"
       ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrer kontoer til ${ BRAND_NAME }"
+      ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
       ],
@@ -3065,6 +3125,9 @@
       ],
       "Migration status": [
         "Migreringsstatus"
+      ],
+      "Migration summary": [
+        "Migreringssammendrag"
       ],
       "Missing organization private key": [
         "Mangler privat nøkkel for organisasjonen"
@@ -3105,6 +3168,9 @@
       "Pending": [
         "Venter"
       ],
+      "Please don’t close or refresh this window.": [
+        "Ikke lukk eller oppdater dette vinduet"
+      ],
       "Reauthenticate your Google Workspace account to start a migration": [
         "Autentiser Google Workspace-kontoen din på nytt for å starte en overføring"
       ],
@@ -3113,6 +3179,12 @@
       ],
       "Select at least one user to start a migration": [
         "Velg minst én bruker for å starte en migrering"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Velg kontoene du vil overføre til ${ BRAND_NAME }. Du kan migrere hele organisasjonen din i dag, eller starte i det små og ta med resten når du er klar."
       ],
       "Select users to migrate": [
         "Velg brukere som skal migreres"
@@ -3174,6 +3246,12 @@
       "Users migrated": [
         "Brukere migrert"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
+      ],
       "Verified": [
         "Verifisert"
       ],
@@ -3197,6 +3275,9 @@
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har lagt merke til at noen brukere ikke har gjort krav på ${ BRAND_NAME }-kontoene sine."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Vi slår på ende-til-ende-kryptering for alle. Hver e-post, hver hendelse er nå bare din. Synlig kun for teamet ditt. Ikke oss, ikke noen andre."
       ],
       "What are you migrating?": [
         "Hva migrerer du?"
@@ -7219,6 +7300,9 @@
       "Invalid private key file": [
         "Ugyldig privat nøkkelfil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ugyldig tilbakestillingstoken. Oppdater siden og prøv på nytt."
+      ],
       "Invalid Sieve code": [
         "Ugyldig Sieve-kode"
       ],
@@ -8950,6 +9034,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Legg til delegerte roller i en gruppe for å gi medlemmene kun de spesifikke tillatelsene de trenger, slik at full administratorrettighet holdes separat og miljøet ditt er sikkert."
+      ],
       "General": [
         "Generelt"
       ],
@@ -9532,6 +9619,9 @@
       ],
       "Imported": [
         "Importert"
+      ],
+      "In progress": [
+        "Pågår"
       ],
       "In progress...": [
         "Pågår..."
@@ -10733,6 +10823,9 @@
       ],
       "Edit link": [
         "Rediger kobling"
+      ],
+      "Editing requires permission": [
+        "Redigering krever tillatelse"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfigurasjon lagret"
@@ -12007,6 +12100,9 @@
       "Request a phone call": [
         "Be om en telefonsamtale"
       ],
+      "Required to complete the migration": [
+        "Kreves for å fullføre migreringen"
+      ],
       "Resend verification email": [
         "Send verifiserings-e-post på nytt"
       ],
@@ -13171,6 +13267,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angitt en gjenopprettingsmetode så kontogjenoppretting er umulig hvis du glemmer passordet ditt. Fortsette uten gjenopprettingsmetode?"
+      ],
+      "You do not have permission to create users.": [
+        "Du har ikke tillatelse til å opprette brukere."
       ],
       "You do not have permission to perform this action": [
         "Du har ikke rettigheter til å utføre denne handlingen"
@@ -14367,6 +14466,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendere"
+      ],
       "Capitalize words": [
         "Storskriv ord"
       ],
@@ -14643,6 +14745,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-post med @dittfirma.com-domene"
+      ],
+      "Emails": [
+        "E-poster"
       ],
       "Emails (all messages)": [
         "E-poster (alle meldinger)"
@@ -15123,6 +15228,9 @@
       ],
       "Password": [
         "Passord"
+      ],
+      "Password reminders": [
+        "Passordpåminnelser"
       ],
       "Password strength": [
         "Passordstyrke"
@@ -15717,8 +15825,14 @@
       "Priority": [
         "Prioritet"
       ],
+      "Status": [
+        "Status"
+      ],
       "Type": [
         "Type"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Bruk standardverdi (f.eks. \"@\")"
       ],
       "Valid ${ group.name } record found": [
         "Gyldig ${ group.name }-post funnet"
@@ -15919,6 +16033,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Skaff deg ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjelp fra ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupper"
@@ -16653,6 +16770,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt brukernavnet for ${ BRAND_NAME }-kontoen? Finn det ved hjelp av e-postadressen eller telefonnummeret for gjenoppretting, og få tilgang til ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer."
+      ],
+      "Join ${ BRAND_NAME } and get ${ refereeRewardAmount } in credits": [
+        "Bli med i ${ BRAND_NAME } og få ${ refereeRewardAmount } i kreditter"
       ],
       "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
         "Gjenopprett tilgangen til den private e-postadressen ${ BRAND_NAME } som er reservert for barnet ditt."
@@ -19336,6 +19456,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Sørg for at du husker eller lagrer passordet ditt sikkert, da det er nøkkelen til å dekryptere dataene dine."
+      ],
+      "Turn off password reminders?": [
+        "Slå av passordpåminnelser?"
+      ],
+      "Turn off reminders": [
+        "Slå av påminnelser"
       ]
     },
     "password_reset: info": {
@@ -20471,29 +20597,17 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } fullført"
       ],
-      "Account protection": [
-        "Kontobeskyttelse"
-      ],
       "Add more options for stronger protection": [
         "Legg til flere alternativer for sterkere beskyttelse"
       ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Legg til flere alternativer for å unngå å bli låst ute av kontoen din."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Fantastisk. Hold alternativene dine oppdatert for sterkere beskyttelse."
+      "Check your access to your recovery options": [
+        "Sjekk tilgangen til gjenopprettingsalternativene dine"
       ],
       "Critical": [
         "Kritisk"
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "Ikke bli utestengt fra ${ BRAND_NAME }-kontoen din"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "God start. Legg til flere alternativer for sterkere beskyttelse."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Flott. Legg til flere alternativer for sterkere beskyttelse."
       ],
       "How you increased your account protection": [
         "Hvordan du økte kontobeskyttelsen din"
@@ -20506,6 +20620,9 @@
       ],
       "Partial": [
         "Delvis"
+      ],
+      "Recoverability": [
+        "Gjenopprettbarhet"
       ],
       "Recovery score: ${ score }": [
         "Gjenopprettingspoengsum: ${ score }"
@@ -20522,9 +20639,6 @@
       "Take precautions to avoid losing access": [
         "Ta forholdsregler for å unngå å miste tilgang"
       ],
-      "Unprotected": [
-        "Ubeskyttet"
-      ],
       "Weak": [
         "Svak"
       ],
@@ -20537,8 +20651,23 @@
       "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
         "Du har fortsatt høy risiko. Hvis du glemmer passordet ditt, kan du miste e-poster, filer og passord permanent."
       ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Du er godt dekket, men det er fortsatt hull. Flere gjenopprettingsalternativer gir deg et sterkere sikkerhetsnett hvis du noen gang mister passordet ditt."
+      ],
+      "Your account and data can be recovered": [
+        "Kontoen din og dataene dine kan gjenopprettes"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Kontoen din har ingen gjenopprettingsalternativer konfigurert. Hvis du mister passordet ditt, mister du permanent tilgang til e-postene, filene og passordene dine."
+      ],
       "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
         "Kontoen din er ikke fullstendig beskyttet. Et glemt passord kan fortsatt bety at du mister tilgangen til e-postene, filene og passordene dine."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Gjenopprettingsoppsettet ditt er knapt der. Hvis du mister passordet ditt, kan du miste tilgangen til e-postene, filene og passordene dine permanent."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Gjenopprettingsoppsettet ditt er utmerket. Hold alternativene dine oppdatert, slik at de fortsatt fungerer når du trenger dem."
       ],
       "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
         "Gjenopprettingsoppsettet ditt er ufullstendig. Et glemt passord kan fortsatt bety at du mister tilgangen til e-postene, filene og passordene dine."
@@ -20687,6 +20816,9 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
+      ],
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Gi ${ refereeRewardAmount }, få ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Hvordan din gratis prøveperiode fungerer:"
@@ -20991,6 +21123,28 @@
       ],
       "Edit retention rule": [
         "Rediger oppbevaringsregel"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Organisasjonsadministrator"
+      ],
+      "Security Admin": [
+        "Sikkerhetsadministrator"
+      ],
+      "User Admin": [
+        "Brukeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
       ]
     },
     "Safety review": {
@@ -24082,6 +24236,9 @@
       "View VPN session details for your organization.": [
         "Vis VPN-øktdetaljer for organisasjonen din."
       ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Med administrerte selskaper kan du legge til, redigere og fjerne tilgang for organisasjoner du fører tilsyn med."
+      ],
       "Your total monthly cost for all managed companies.": [
         "Din totale månedlige kostnad for alle administrerte selskaper."
       ]
@@ -24990,6 +25147,9 @@
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
       ],
+      "Companies": [
+        "Foretak"
+      ],
       "Compare plans": [
         "Sammenlign planer"
       ],
@@ -25813,6 +25973,9 @@
       "Open pagination": [
         "Åpne sidenummerering"
       ],
+      "OpenVpn": [
+        "OpenVPN"
+      ],
       "OpenVPN": [
         "OpenVPN"
       ],
@@ -26318,6 +26481,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Feilsøk med ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Troubleshoot your issue": [
         "Feilsøk problemet ditt"
       ],
@@ -26575,6 +26741,9 @@
       ]
     },
     "Title header": {
+      "Date": [
+        "Dato"
+      ],
       "Organization migrations": [
         "Organisasjonsmigreringer"
       ],
@@ -26973,6 +27142,9 @@
       ],
       "User is a group": [
         "Brukeren er en gruppe"
+      ],
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"
