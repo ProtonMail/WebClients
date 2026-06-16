@@ -939,6 +939,9 @@
       ]
     },
     "collider_2025: Action": {
+      "Add": [
+        "Hinzufügen"
+      ],
       "Add ${ selectedCount } sheet": [
         "${ selectedCount } Tabellenblatt hinzufügen",
         "${ selectedCount } Tabellenblätter hinzufügen"
@@ -949,9 +952,6 @@
       "Add to active": [
         "Zu Aktiven hinzufügen"
       ],
-      "Agents": [
-        "Agenten"
-      ],
       "Already in KB": [
         "Bereits in der Wissensdatenbank"
       ],
@@ -960,6 +960,15 @@
       ],
       "Cancel": [
         "Abbrechen"
+      ],
+      "Cancel (Esc)": [
+        "Abbrechen (Esc)"
+      ],
+      "Clear": [
+        "Leeren"
+      ],
+      "Clear all": [
+        "Alle löschen"
       ],
       "Close": [
         "Schließen"
@@ -972,6 +981,9 @@
       ],
       "Create image": [
         "Bild erstellen"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s"
       ],
       "Dark": [
         "Dunkel"
@@ -1053,6 +1065,9 @@
       ],
       "Turn off": [
         "Ausschalten"
+      ],
+      "Turn off and delete": [
+        "Ausschalten und löschen"
       ],
       "Turn on memory": [
         "Speicherfunktion einschalten"
@@ -1209,6 +1224,14 @@
       ],
       "I'm powered by caffeine and existential dread": [
         "Ich werde von Koffein und existenzieller Angst angetrieben."
+      ]
+    },
+    "collider_2025: Date": {
+      "Today": [
+        "Heute"
+      ],
+      "Yesterday": [
+        "Gestern"
       ]
     },
     "collider_2025: Description": {
@@ -1395,6 +1418,9 @@
       ]
     },
     "collider_2025: Error Message": {
+      "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
+        "Wenn ein erneuter Versuch nicht funktioniert, schau später noch einmal vorbei oder erwäge ein Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um in Spitzenzeiten Priorität zu genießen."
+      ],
       "Please try asking a different question or making a different request.": [
         "Versuche bitte, eine andere Frage zu stellen oder eine andere Anfrage zu formulieren."
       ],
@@ -1523,6 +1549,11 @@
       ],
       "Tell us more": [
         "Erzähl uns mehr"
+      ]
+    },
+    "collider_2025: Hint": {
+      "You can turn it off again at any time.": [
+        "Du kannst es jederzeit wieder ausschalten."
       ]
     },
     "collider_2025: Info": {
@@ -1970,6 +2001,9 @@
       "File upload": [
         "Datei-Upload"
       ],
+      "From chats": [
+        "Aus Unterhaltungen"
+      ],
       "Loop": [
         "Schleife"
       ],
@@ -2035,6 +2069,9 @@
       ],
       "Unsafe or problematic": [
         "Unsicher oder problematisch"
+      ],
+      "You": [
+        "Du"
       ],
       "Your workflow": [
         "Dein Workflow"
@@ -2178,6 +2215,9 @@
       ]
     },
     "collider_2025: Placeholder": {
+      "e.g. I prefer concise, bullet-point answers": [
+        "Z. B. bevorzuge ich prägnante Antworten in Stichpunkten"
+      ],
       "New chat": [
         "Neuer Chat"
       ],
@@ -2253,6 +2293,14 @@
         "Workflow-Generator"
       ]
     },
+    "collider_2025: Tip": {
+      "Avoid passwords, tokens, or sensitive personal identifiers.": [
+        "Vermeide Passwörter, Tokens oder sensible persönliche Identifikationsmerkmale."
+      ],
+      "Write stable facts, not one-off questions.": [
+        "Schreibe fundierte Fakten auf, keine einmaligen Fragen."
+      ]
+    },
     "collider_2025: Title": {
       "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }": [
         "${ LUMO_SHORT_APP_NAME }-API · ${ spec.versionLabel }"
@@ -2305,6 +2353,9 @@
       "Don't lose the thread": [
         "Verliere nicht den Faden"
       ],
+      "End-to-end encrypted": [
+        "Ende-zu-Ende-verschlüsselt"
+      ],
       "Generated code": [
         "Generierter Code"
       ],
@@ -2322,6 +2373,9 @@
       ],
       "Models": [
         "Modelle"
+      ],
+      "Never used inside projects": [
+        "Wird niemals in Projekten verwendet"
       ],
       "No API keys yet": [
         "Noch keine API-Schlüssel"
@@ -2394,6 +2448,9 @@
       ],
       "Workflow output": [
         "Workflow-Ausgabe"
+      ],
+      "You stay in control": [
+        "Du hast die Kontrolle"
       ],
       "Your new API key": [
         "Dein neuer API-Schlüssel"
@@ -2703,8 +2760,8 @@
       "More options": [
         "Weitere Optionen"
       ],
-      "New agent": [
-        "Neuer Agent"
+      "New ${ LUMO_SHORT_APP_NAME }": [
+        "Neue ${ LUMO_SHORT_APP_NAME }"
       ],
       "Next message": [
         "Nächste Nachricht"
@@ -2819,8 +2876,11 @@
       ]
     },
     "collider_2025:Badge": {
-      "Default": [
-        "Standard"
+      "Built-in": [
+        "Integriert"
+      ],
+      "Selected": [
+        "Ausgewählt"
       ]
     },
     "collider_2025:Button": {
@@ -2940,6 +3000,9 @@
       "Failed to link Drive folder": [
         "Drive-Ordner konnte nicht verknüpft werden"
       ],
+      "Failed to load image": [
+        "Bild konnte nicht geladen werden"
+      ],
       "Failed to process file: ${ file.name }": [
         "Fehler beim Verarbeiten der Datei: ${ file.name }"
       ],
@@ -2988,8 +3051,8 @@
       "All": [
         "Alle"
       ],
-      "Default": [
-        "Standard"
+      "Built-in": [
+        "Integriert"
       ]
     },
     "collider_2025:Finance": {
@@ -3237,11 +3300,11 @@
       "Holiday planner": [
         "Urlaubsplaner"
       ],
-      "Search agents": [
-        "Agenten suchen"
-      ],
       "Search chats": [
         "Chats durchsuchen"
+      ],
+      "Search custom ${ LUMO_SHORT_APP_NAME }": [
+        "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME } suchen"
       ],
       "Sign in required": [
         "Anmeldung erforderlich"
@@ -3480,9 +3543,6 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } kann nicht gestartet werden"
       ],
-      "Agents": [
-        "Agenten"
-      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Ein KI-Assistent sollte dich stärken, nicht deine Daten ausnutzen. Deshalb haben wir ${ LUMO_SHORT_APP_NAME } entwickelt: Um dir alle Vorteile der KI zu bieten, ohne deine Privatsphäre und Datensicherheit zu gefährden."
       ],
@@ -3497,6 +3557,9 @@
       ],
       "Create new project": [
         "Neues Projekt erstellen"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s"
       ],
       "Delete project?": [
         "Projekt löschen?"
@@ -6101,6 +6164,9 @@
       "FPS": [
         "FPS"
       ],
+      "Generation errors": [
+        "Generierungsfehler"
+      ],
       "Idle": [
         "Inaktiv"
       ],
@@ -6190,6 +6256,12 @@
       ],
       "Tokens/sec": [
         "Tokens/Sek."
+      ],
+      "Trigger harmful content": [
+        "Schädlichen Inhalt auslösen"
+      ],
+      "Trigger high demand": [
+        "Hohe Nachfrage auslösen"
       ],
       "Unsynced conversations": [
         "Nicht synchronisierte Unterhaltungen"
@@ -8700,9 +8772,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
