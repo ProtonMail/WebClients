@@ -46,7 +46,6 @@ export enum CommonFeatureFlag {
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
     InboxBringYourOwnEmailClient = 'InboxBringYourOwnEmailClient',
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
-    InboxImportDedupByAddressKillSwitch = 'InboxImportDedupByAddressKillSwitch',
     CreateInboxBringYourOwnEmailDisabled = 'CreateInboxBringYourOwnEmailDisabled',
     ReferralExpansionDiscover = 'ReferralExpansionDiscover',
     ReferralFreeUsersDiscover = 'ReferralFreeUsersDiscover',
