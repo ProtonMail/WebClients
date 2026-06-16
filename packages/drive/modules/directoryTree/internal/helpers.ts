@@ -1,4 +1,4 @@
-import type { DegradedNode, NodeEntity, ProtonDriveClient } from '../../../index';
+import type { NodeEntity, ProtonDriveClient } from '../../../index';
 import { MemberRole } from '../../../index';
 
 export const DEVICES_ROOT_ID = 'devices-root';
@@ -12,11 +12,7 @@ export function getNodeUidFromTreeItemId(treeItemId: string) {
     return treeItemId.split('___').at(-1);
 }
 
-export async function findEffectiveRole(
-    drive: ProtonDriveClient,
-    node: NodeEntity | DegradedNode,
-    previousHighestRole?: MemberRole
-) {
+export async function findEffectiveRole(drive: ProtonDriveClient, node: NodeEntity, previousHighestRole?: MemberRole) {
     if (node.directRole === MemberRole.Admin) {
         return MemberRole.Admin;
     }
@@ -34,13 +30,13 @@ export async function findEffectiveRole(
         }
 
         const parent = await drive.getNode(node.parentUid);
-        return findEffectiveRole(drive, parent.ok ? parent.value : parent.error, newHighest);
+        return findEffectiveRole(drive, parent, newHighest);
     }
 
     // No previous highest role = current one is the highest
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
-        return findEffectiveRole(drive, parent.ok ? parent.value : parent.error, node.directRole);
+        return findEffectiveRole(drive, parent, node.directRole);
     } else {
         // No parent, stop traversing
         return node.directRole;

@@ -1,4 +1,4 @@
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 
 import { getSignatureIssues } from './getSignatureIssues';
@@ -20,6 +20,7 @@ describe('getSignatureIssues', () => {
         folder: undefined,
         treeEventScopeId: 'test-scope',
         ownedBy: {},
+        name: { ok: true as const, value: 'test-name' },
     };
 
     const baseRevision = {
@@ -29,25 +30,14 @@ describe('getSignatureIssues', () => {
         storageSize: 100,
     };
 
-    const baseErrorNodeProps = {
-        ...baseNodeProps,
-        name: { ok: true as const, value: 'test-name' },
-        errors: [],
-    };
-
-    const baseValidNodeProps = {
-        ...baseNodeProps,
-        name: 'test-name',
-    };
-
     it('should return no signature issues when all signatures are valid', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                keyAuthor: { ok: true, value: 'test@proton.me' },
-                nameAuthor: { ok: true, value: 'test@proton.me' },
-                activeRevision: {
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            keyAuthor: { ok: true, value: 'test@proton.me' },
+            nameAuthor: { ok: true, value: 'test@proton.me' },
+            activeRevision: {
+                ok: true,
+                value: {
                     ...baseRevision,
                     contentAuthor: { ok: true, value: 'content@proton.me' },
                 },
@@ -62,14 +52,11 @@ describe('getSignatureIssues', () => {
     });
 
     it('should return no signature issues when no active revision', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                keyAuthor: { ok: true, value: 'test@proton.me' },
-                nameAuthor: { ok: true, value: 'test@proton.me' },
-                activeRevision: undefined,
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            keyAuthor: { ok: true, value: 'test@proton.me' },
+            nameAuthor: { ok: true, value: 'test@proton.me' },
+            activeRevision: undefined,
         };
 
         const result = getSignatureIssues(node);
@@ -80,21 +67,18 @@ describe('getSignatureIssues', () => {
     });
 
     it('should detect keyAuthor signature issues', () => {
-        const node: MaybeNode = {
-            ok: false,
-            error: {
-                ...baseErrorNodeProps,
-                keyAuthor: {
-                    ok: false,
-                    error: { claimedAuthor: 'claimed@proton.me', error: 'Key verification failed' },
-                },
-                nameAuthor: { ok: true, value: 'test@proton.me' },
-                activeRevision: {
-                    ok: true,
-                    value: {
-                        ...baseRevision,
-                        contentAuthor: { ok: true, value: 'content@proton.me' },
-                    },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            keyAuthor: {
+                ok: false,
+                error: { claimedAuthor: 'claimed@proton.me', error: 'Key verification failed' },
+            },
+            nameAuthor: { ok: true, value: 'test@proton.me' },
+            activeRevision: {
+                ok: true,
+                value: {
+                    ...baseRevision,
+                    contentAuthor: { ok: true, value: 'content@proton.me' },
                 },
             },
         };
@@ -112,21 +96,18 @@ describe('getSignatureIssues', () => {
     });
 
     it('should detect nameAuthor signature issues', () => {
-        const node: MaybeNode = {
-            ok: false,
-            error: {
-                ...baseErrorNodeProps,
-                keyAuthor: { ok: true, value: 'test@proton.me' },
-                nameAuthor: {
-                    ok: false,
-                    error: { claimedAuthor: 'name@proton.me', error: 'Name verification failed' },
-                },
-                activeRevision: {
-                    ok: true,
-                    value: {
-                        ...baseRevision,
-                        contentAuthor: { ok: true, value: 'content@proton.me' },
-                    },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            keyAuthor: { ok: true, value: 'test@proton.me' },
+            nameAuthor: {
+                ok: false,
+                error: { claimedAuthor: 'name@proton.me', error: 'Name verification failed' },
+            },
+            activeRevision: {
+                ok: true,
+                value: {
+                    ...baseRevision,
+                    contentAuthor: { ok: true, value: 'content@proton.me' },
                 },
             },
         };
@@ -144,13 +125,13 @@ describe('getSignatureIssues', () => {
     });
 
     it('should detect contentAuthor signature issues', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                keyAuthor: { ok: true, value: 'test@proton.me' },
-                nameAuthor: { ok: true, value: 'test@proton.me' },
-                activeRevision: {
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            keyAuthor: { ok: true, value: 'test@proton.me' },
+            nameAuthor: { ok: true, value: 'test@proton.me' },
+            activeRevision: {
+                ok: true,
+                value: {
                     ...baseRevision,
                     contentAuthor: {
                         ok: false,
@@ -173,13 +154,13 @@ describe('getSignatureIssues', () => {
     });
 
     it('should detect contentAuthor signature issues for anonymous content author', () => {
-        const node: MaybeNode = {
-            ok: true,
-            value: {
-                ...baseValidNodeProps,
-                keyAuthor: { ok: true, value: 'test@proton.me' },
-                nameAuthor: { ok: true, value: 'test@proton.me' },
-                activeRevision: {
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            keyAuthor: { ok: true, value: 'test@proton.me' },
+            nameAuthor: { ok: true, value: 'test@proton.me' },
+            activeRevision: {
+                ok: true,
+                value: {
                     ...baseRevision,
                     contentAuthor: {
                         ok: false,
@@ -202,26 +183,23 @@ describe('getSignatureIssues', () => {
     });
 
     it('should detect multiple signature issues', () => {
-        const node: MaybeNode = {
-            ok: false,
-            error: {
-                ...baseErrorNodeProps,
-                keyAuthor: {
-                    ok: false,
-                    error: { claimedAuthor: 'key@proton.me', error: 'Key verification failed' },
-                },
-                nameAuthor: {
-                    ok: false,
-                    error: { claimedAuthor: 'name@proton.me', error: 'Name verification failed' },
-                },
-                activeRevision: {
-                    ok: true,
-                    value: {
-                        ...baseRevision,
-                        contentAuthor: {
-                            ok: false,
-                            error: { claimedAuthor: 'content@proton.me', error: 'Content verification failed' },
-                        },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            keyAuthor: {
+                ok: false,
+                error: { claimedAuthor: 'key@proton.me', error: 'Key verification failed' },
+            },
+            nameAuthor: {
+                ok: false,
+                error: { claimedAuthor: 'name@proton.me', error: 'Name verification failed' },
+            },
+            activeRevision: {
+                ok: true,
+                value: {
+                    ...baseRevision,
+                    contentAuthor: {
+                        ok: false,
+                        error: { claimedAuthor: 'content@proton.me', error: 'Content verification failed' },
                     },
                 },
             },
@@ -240,14 +218,11 @@ describe('getSignatureIssues', () => {
     });
 
     it('should handle node error with activeRevision error', () => {
-        const node: MaybeNode = {
-            ok: false,
-            error: {
-                ...baseErrorNodeProps,
-                keyAuthor: { ok: true, value: 'test@proton.me' },
-                nameAuthor: { ok: true, value: 'test@proton.me' },
-                activeRevision: { ok: false, error: new Error('Active revision error') },
-            },
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            keyAuthor: { ok: true, value: 'test@proton.me' },
+            nameAuthor: { ok: true, value: 'test@proton.me' },
+            activeRevision: { ok: false, error: new Error('Active revision error') },
         };
 
         const result = getSignatureIssues(node);

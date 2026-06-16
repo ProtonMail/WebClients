@@ -1,5 +1,6 @@
 import type { NodeEntity, ProtonDriveClient, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { AbortError, NodeType, SDKEvent } from '@proton/drive';
+import { getNodeName } from '@proton/drive/modules/nodes';
 import { TransferSpeedMetrics } from '@proton/drive/modules/transferPerformance';
 import metrics from '@proton/metrics';
 
@@ -181,7 +182,7 @@ export class DownloadManager {
 
         const { addDownloadItem } = useDownloadManagerStore.getState();
         const downloadId = addDownloadItem({
-            name: node.name,
+            name: getNodeName(node),
             storageSize,
             status: DownloadStatus.Finished,
             nodeUids: [node.uid],
@@ -191,7 +192,7 @@ export class DownloadManager {
 
         await fileSaver.saveAsFile(stream, {
             downloadId,
-            filename: node.name,
+            filename: getNodeName(node),
             mimeType: mimeType ?? DEFAULT_MIME_TYPE,
             size: storageSize,
         });
@@ -301,7 +302,7 @@ export class DownloadManager {
             const savePromise = streamWrapperPromise.then((streamForSaver) =>
                 fileSaver.saveAsFile(streamForSaver, {
                     downloadId,
-                    filename: node.name,
+                    filename: getNodeName(node),
                     mimeType: DEFAULT_MIME_TYPE,
                     size: storageSize,
                 })
@@ -559,7 +560,7 @@ export class DownloadManager {
 
     private getArchiveName(nodes: NodeEntity[]): string {
         if (nodes.length === 1) {
-            return `${nodes[0].name}.zip`;
+            return `${getNodeName(nodes[0])}.zip`;
         }
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
         return `Download ${timestamp}.zip`;

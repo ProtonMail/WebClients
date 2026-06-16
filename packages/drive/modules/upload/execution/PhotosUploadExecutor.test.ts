@@ -124,7 +124,7 @@ describe('PhotosUploadExecutor', () => {
         jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient).mockReturnValue({
             getFileUploader: mockGetFileUploader,
             findPhotoDuplicates: mockFindPhotoDuplicates,
-            getMyPhotosRootFolder: jest.fn().mockResolvedValue({ ok: true, value: { uid: 'photos-root-uid' } }),
+            getMyPhotosRootFolder: jest.fn().mockResolvedValue({ uid: 'photos-root-uid' }),
         } as any);
 
         executor = new PhotosUploadExecutor();

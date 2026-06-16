@@ -1,4 +1,5 @@
 import { type NodeEntity, NodeType } from '@proton/drive';
+import { getNodeName } from '@proton/drive/modules/nodes';
 
 import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { DownloadStatus, IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
@@ -28,7 +29,7 @@ export function queueFailedDownloadRequest({
 
     const node = nodes[0];
     const downloadId = addDownloadItem({
-        name: node.name,
+        name: getNodeName(node),
         storageSize: getNodeStorageSize(node),
         downloadedBytes: 0,
         status: DownloadStatus.Failed,
@@ -67,7 +68,7 @@ export function queueDownloadRequest({
         }
         const node = nodes[0];
         const downloadId = addDownloadItem({
-            name: node.name,
+            name: getNodeName(node),
             storageSize: getNodeStorageSize(node),
             downloadedBytes: 0,
             status: DownloadStatus.Pending,

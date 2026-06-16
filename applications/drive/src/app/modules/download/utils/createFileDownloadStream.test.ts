@@ -18,7 +18,7 @@ const mockGetState = useDownloadManagerStore.getState as jest.MockedFunction<typ
 
 describe('createFileDownloadStream', () => {
     const downloadId = 'test-id';
-    const node = { uid: 'node-uid', name: 'test.txt' } as NodeEntity;
+    const node = { uid: 'node-uid', name: { ok: true as const, value: 'test.txt' } } as unknown as NodeEntity;
     const abortSignal = new AbortController().signal;
     const onProgress = jest.fn();
     const malwareDetection = {

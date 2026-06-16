@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { MaybeNode, ProtonDriveClient, Result } from '@proton/drive/index';
+import type { NodeEntity, ProtonDriveClient, Result } from '@proton/drive/index';
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { NodeLocation, getNodeLocation } from '@proton/drive/modules/nodes';
@@ -21,7 +21,7 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
 
     const computeCrumbs = useCallback(
         async (nodeUid: string, driveClient: ProtonDriveClient): Promise<Result<CrumbDefinition[], Error>> => {
-            let hierarchy: MaybeNode[];
+            let hierarchy: NodeEntity[];
             try {
                 hierarchy = await driveClient.getNodeHierarchy(nodeUid);
             } catch (e) {
@@ -38,12 +38,12 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
                 };
             }
 
-            const pathItems: CrumbDefinition[] = hierarchy.map((maybeNode) => {
-                const nodeEntity = getNodeEntity(maybeNode).node;
-                const signatureIssuesResult = getSignatureIssues(maybeNode);
+            const pathItems: CrumbDefinition[] = hierarchy.map((nodeEntity) => {
+                const normalizedNode = getNodeEntity(nodeEntity).node;
+                const signatureIssuesResult = getSignatureIssues(nodeEntity);
                 return {
-                    uid: nodeEntity.uid,
-                    name: nodeEntity.name,
+                    uid: normalizedNode.uid,
+                    name: normalizedNode.name,
                     haveSignatureIssues: !signatureIssuesResult.ok,
                     supportDropOperations: true,
                 };

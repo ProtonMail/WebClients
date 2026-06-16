@@ -32,7 +32,7 @@ jest.mock('./useTrash.store', () => {
     hook.getState = jest.fn();
     return {
         useTrashStore: hook,
-        createTrashItem: async (node: any, location?: string) => ({ ...node, location }),
+        createTrashItem: async (rawNode: any, node: any, location?: string) => ({ ...node, location }),
     };
 });
 

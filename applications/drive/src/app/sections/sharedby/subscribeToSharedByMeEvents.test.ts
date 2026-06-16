@@ -51,18 +51,15 @@ const mockStore = {
 const createMockNode = (overrides = {}) =>
     ({
         uid: 'node-uid-123',
-        name: 'Test File.pdf',
+        name: { ok: true as const, value: 'Test File.pdf' },
         type: 'file',
         mediaType: 'application/pdf',
         deprecatedShareId: 'share-123',
         parentUid: 'parent-uid',
-        activeRevision: {
-            uid: 'revision-uid-123',
-            storageSize: 1024,
-        },
+        activeRevision: { ok: true as const, value: { uid: 'revision-uid-123', storageSize: 1024 } },
         totalStorageSize: 2048,
         ...overrides,
-    }) as NodeEntity;
+    }) as unknown as NodeEntity;
 
 const createMockSharedByMeItem = (overrides = {}) => ({
     nodeUid: 'node-uid-123',
@@ -100,11 +97,18 @@ describe('subscribeToSharedByMeEvents', () => {
             return mockUnsubscribeFunctions[index];
         });
 
-        mockGetNodeEntity.mockReturnValue({ node: createMockNode(), errors: new Map() });
+        mockGetNodeEntity.mockReturnValue({
+            node: {
+                ...createMockNode(),
+                name: 'Test File.pdf',
+                activeRevision: { uid: 'revision-uid-123', storageSize: 1024 },
+            } as any,
+            errors: new Map(),
+        });
         mockGetSignatureIssues.mockReturnValue({ ok: true });
         mockGetNodeLocation.mockResolvedValue('/My files');
         mockGetOldestShareCreationTime.mockReturnValue(new Date('2023-01-15T10:00:00Z'));
-        mockDrive.getNode.mockResolvedValue({ ok: true, value: createMockNode() });
+        mockDrive.getNode.mockResolvedValue(createMockNode());
         mockDrive.getSharingInfo.mockResolvedValue({
             publicLink: {
                 numberOfInitializedDownloads: 5,

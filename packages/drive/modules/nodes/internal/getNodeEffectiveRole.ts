@@ -1,10 +1,4 @@
-import {
-    type DegradedNode,
-    MemberRole,
-    type NodeEntity,
-    NodeType,
-    type ProtonDriveClient,
-} from '@protontech/drive-sdk';
+import { MemberRole, type NodeEntity, NodeType, type ProtonDriveClient } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 
 import { EnrichedError, sendErrorReport } from '../../../legacy/errorHandling';
@@ -22,7 +16,7 @@ type Drive = Pick<ProtonDriveClient, 'getNode'>;
 export type EffectiveRole = Exclude<MemberRole, MemberRole.Inherited>;
 
 export async function getNodeEffectiveRole(
-    node: NodeEntity | DegradedNode,
+    node: NodeEntity,
     drive: Drive,
     role: MemberRole = MemberRole.Inherited
 ): Promise<EffectiveRole> {
@@ -34,8 +28,7 @@ export async function getNodeEffectiveRole(
 
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
-        const parentNode = parent.ok ? parent.value : parent.error;
-        role = await getNodeEffectiveRole(parentNode, drive, role);
+        role = await getNodeEffectiveRole(parent, drive, role);
     }
 
     if (node.type === NodeType.Photo && drive instanceof ProtonDrivePhotosClient) {
@@ -56,20 +49,15 @@ export async function getNodeEffectiveRole(
     return role;
 }
 
-async function getHighestAlbumRole(
-    node: NodeEntity | DegradedNode,
-    drive: ProtonDrivePhotosClient
-): Promise<MemberRole> {
+async function getHighestAlbumRole(node: NodeEntity, drive: ProtonDrivePhotosClient): Promise<MemberRole> {
     let role = MemberRole.Inherited;
 
-    const maybeNode = await drive.getNode(node.uid);
-    const nodeEntity = maybeNode.ok ? maybeNode.value : maybeNode.error;
+    const nodeEntity = await drive.getNode(node.uid);
     const albumsUids = (nodeEntity.photo?.albums || []).map((album) => album.nodeUid);
 
     for (const albumUid of albumsUids) {
-        const album = await drive.getNode(albumUid);
-        const albumNodeEntity = album.ok ? album.value : album.error;
-        role = getHigherRole(albumNodeEntity.directRole, role);
+        const albumNode = await drive.getNode(albumUid);
+        role = getHigherRole(albumNode.directRole, role);
 
         if (role === MemberRole.Admin) {
             return MemberRole.Admin;

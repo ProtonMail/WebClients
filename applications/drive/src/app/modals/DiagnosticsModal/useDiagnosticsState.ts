@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom-v5-compat';
 
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 import { useDrive } from '@proton/drive';
 import {
     type Diagnostic,
@@ -44,7 +44,7 @@ const CRITICAL_TYPES = [
 
 export const useDiagnosticsState = () => {
     const [state, setState] = useState<State>(State.LOADING);
-    const [currentNode, setCurrentNode] = useState<MaybeNode | undefined>(undefined);
+    const [currentNode, setCurrentNode] = useState<NodeEntity | undefined>(undefined);
     const [diagnostics, setDiagnostics] = useState<Diagnostic>();
     const [error, setError] = useState<unknown>();
     const [results, setResults] = useState<Results | undefined>(undefined);
@@ -102,7 +102,7 @@ export const useDiagnosticsState = () => {
     }, []);
 
     const runDiagnostics = (options: {
-        node?: MaybeNode;
+        node?: NodeEntity;
         verifyContent?: boolean;
         verifyThumbnails?: boolean;
         expectedStructure?: ExpectedTreeNode;

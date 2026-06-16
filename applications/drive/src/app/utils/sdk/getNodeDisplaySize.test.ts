@@ -1,4 +1,4 @@
-import type { Author, MaybeNode, NodeEntity, Revision } from '@proton/drive';
+import type { Author, NodeEntity, Revision } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 
 import { getNodeDisplaySize } from './getNodeDisplaySize';
@@ -24,7 +24,7 @@ describe('getNodeDisplaySize', () => {
     const mockNodeEntity: NodeEntity = {
         uid: 'node-uid-1',
         parentUid: 'parent-uid-1',
-        name: 'test-file.txt',
+        name: { ok: true, value: 'test-file.txt' },
         keyAuthor: mockAuthor,
         nameAuthor: mockAuthor,
         directRole: MemberRole.Admin,
@@ -36,89 +36,64 @@ describe('getNodeDisplaySize', () => {
         modificationTime: new Date('2023-01-01'),
         trashTime: undefined,
         totalStorageSize: 3000,
-        activeRevision: mockRevision,
+        activeRevision: { ok: true, value: mockRevision },
         folder: undefined,
         treeEventScopeId: 'tree-event-scope-id',
         ownedBy: {},
     };
 
     it('should return claimedSize when available', () => {
-        const maybeNode: MaybeNode = {
-            ok: true,
-            value: mockNodeEntity,
-        };
-
-        const result = getNodeDisplaySize(maybeNode);
+        const result = getNodeDisplaySize(mockNodeEntity);
 
         expect(result).toBe(1500);
     });
 
     it('should return storageSize when claimedSize is not available', () => {
-        const maybeNode: MaybeNode = {
-            ok: true,
-            value: {
-                ...mockNodeEntity,
-                activeRevision: { ...mockRevision, claimedSize: undefined },
-            },
+        const node: NodeEntity = {
+            ...mockNodeEntity,
+            activeRevision: { ok: true, value: { ...mockRevision, claimedSize: undefined } },
         };
 
-        const result = getNodeDisplaySize(maybeNode);
+        const result = getNodeDisplaySize(node);
 
         expect(result).toBe(2048);
     });
 
     it('should return totalStorageSize when activeRevision is undefined', () => {
-        const maybeNode: MaybeNode = {
-            ok: true,
-            value: {
-                ...mockNodeEntity,
-                activeRevision: undefined,
-            },
+        const node: NodeEntity = {
+            ...mockNodeEntity,
+            activeRevision: undefined,
         };
 
-        const result = getNodeDisplaySize(maybeNode);
+        const result = getNodeDisplaySize(node);
 
         expect(result).toBe(3000);
     });
 
     it('should handle error nodes with activeRevision', () => {
-        const maybeNode: MaybeNode = {
-            ok: false,
-            error: {
-                ...mockNodeEntity,
-                name: {
-                    ok: true,
-                    value: mockNodeEntity.name,
-                },
-                activeRevision: {
-                    ok: true,
-                    value: mockRevision,
-                },
+        const node: NodeEntity = {
+            ...mockNodeEntity,
+            activeRevision: {
+                ok: true,
+                value: mockRevision,
             },
         };
 
-        const result = getNodeDisplaySize(maybeNode);
+        const result = getNodeDisplaySize(node);
 
         expect(result).toBe(1500);
     });
 
     it('should return totalStorageSize when activeRevision has error', () => {
-        const maybeNode: MaybeNode = {
-            ok: false,
-            error: {
-                ...mockNodeEntity,
-                name: {
-                    ok: true,
-                    value: mockNodeEntity.name,
-                },
-                activeRevision: {
-                    ok: false,
-                    error: new Error('Revision error'),
-                },
+        const node: NodeEntity = {
+            ...mockNodeEntity,
+            activeRevision: {
+                ok: false,
+                error: new Error('Revision error'),
             },
         };
 
-        const result = getNodeDisplaySize(maybeNode);
+        const result = getNodeDisplaySize(node);
 
         expect(result).toBe(3000);
     });
