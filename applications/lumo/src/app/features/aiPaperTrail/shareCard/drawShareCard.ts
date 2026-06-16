@@ -48,8 +48,8 @@ const PALETTES: Record<ShareCardTheme, Palette> = {
         panel: 'rgba(28, 19, 64, 0.045)',
         panelLabel: '#6b6a7b',
         callout: ['#6d4aff', '#8f6bff'],
-        calloutText: '#ffffff',
-        calloutSub: 'rgba(255, 255, 255, 0.88)',
+        calloutText: '#d6443a',
+        calloutSub: '#6b6a7b',
         divider: 'rgba(28, 19, 64, 0.1)',
     },
 };
@@ -73,7 +73,7 @@ const exposureColor = (score: number, theme: ShareCardTheme): string => {
         if (score >= 40) {
             return '#d99500';
         }
-        return '#1aa67a';
+        return '#b9a7ff';
     }
     if (score >= 70) {
         return '#ff7a7a';
@@ -81,7 +81,7 @@ const exposureColor = (score: number, theme: ShareCardTheme): string => {
     if (score >= 40) {
         return '#ffcf5c';
     }
-    return '#5be0a0';
+    return '#b9a7ff';
 };
 
 const roundRect = (
@@ -161,30 +161,19 @@ const drawShareCard = (
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, CARD_WIDTH, CARD_HEIGHT);
 
-    // ---- Header (centred) ----
-    ctx.textAlign = 'center';
-    if (logo) {
-        const logoSize = 62;
-        ctx.drawImage(logo, cx - logoSize / 2, 50, logoSize, logoSize);
-    }
-
-    ctx.fillStyle = palette.eyebrow;
-    ctx.font = `700 26px ${FONT_STACK}`;
-    ctx.fillText('LUMO · AI PAPER TRAIL', cx, 154);
-
     ctx.fillStyle = palette.title;
     ctx.font = `800 56px ${FONT_STACK}`;
-    ctx.fillText('My AI exposure score', cx, 212);
+    ctx.fillText('My AI Paper Trail', cx, 80);
 
     // ---- Hero: score ring (left) + grade & worth callouts (right) ----
     const ringCx = 296;
-    const ringCy = 426;
+    const ringCy = 280;
     const ringRadius = 128;
     const startAngle = -Math.PI / 2;
     const fraction = Math.max(0, Math.min(1, data.exposureScore / 100));
     const ringColor = exposureColor(data.exposureScore, theme);
 
-    ctx.lineWidth = 32;
+    ctx.lineWidth = 16;
     ctx.lineCap = 'round';
     ctx.beginPath();
     ctx.arc(ringCx, ringCy, ringRadius, 0, Math.PI * 2);
@@ -202,14 +191,14 @@ const drawShareCard = (
     ctx.fillText(String(data.exposureScore), ringCx, ringCy - 12);
     ctx.font = `600 27px ${FONT_STACK}`;
     ctx.fillStyle = palette.subtle;
-    ctx.fillText('OUT OF 100', ringCx, ringCy + 60);
+    ctx.fillText('OUT OF 100', ringCx, ringCy + 55);
     ctx.textBaseline = 'alphabetic';
 
     // Right-hand callout cards.
     const cardX = 540;
     const cardW = CARD_WIDTH - MARGIN - cardX;
     const cardH = 116;
-    const card1Y = 308;
+    const card1Y = 150;
     const card2Y = card1Y + cardH + 20;
 
     // Grade card (neutral panel).
@@ -228,17 +217,18 @@ const drawShareCard = (
     const callout = ctx.createLinearGradient(cardX, card2Y, cardX + cardW, card2Y + cardH);
     callout.addColorStop(0, palette.callout[0]);
     callout.addColorStop(1, palette.callout[1]);
-    ctx.fillStyle = callout;
+    ctx.fillStyle = palette.panel;
+    // ctx.fillStyle = callout;
     roundRect(ctx, cardX, card2Y, cardW, cardH, 26);
     ctx.fill();
-    drawLabel(ctx, 'Worth to Big Tech AI', cardX + 32, card2Y + 44, palette.calloutSub);
-    ctx.font = `800 64px ${FONT_STACK}`;
+    drawLabel(ctx, 'My Data Value', cardX + 32, card2Y + 44, palette.calloutSub);
+    ctx.font = `800 56px ${FONT_STACK}`;
     ctx.fillStyle = palette.calloutText;
     ctx.textAlign = 'left';
-    ctx.fillText(formatValue(data.estimatedValueUsd), cardX + 32, card2Y + 96);
+    ctx.fillText(formatValue(data.estimatedValueUsd), cardX + 32, card2Y + 100);
 
     // ---- Divider ----
-    const dividerY = 596;
+    const dividerY = 450;
     ctx.strokeStyle = palette.divider;
     ctx.lineWidth = 2;
     ctx.beginPath();
@@ -250,14 +240,14 @@ const drawShareCard = (
     ctx.fillStyle = palette.eyebrow;
     ctx.font = `700 24px ${FONT_STACK}`;
     ctx.textAlign = 'left';
-    ctx.fillText('HOW EXPOSED EACH AREA IS', MARGIN, dividerY + 48);
+    ctx.fillText('What AI knows about me', MARGIN, dividerY + 48);
 
     const areas = data.areas.slice(0, 8);
     const half = Math.ceil(areas.length / 2);
     const colGap = 48;
     const colW = (CARD_WIDTH - 2 * MARGIN - colGap) / 2;
     const barHeight = 16;
-    const rowGap = 64;
+    const rowGap = 75;
     const firstRowY = dividerY + 106;
 
     areas.forEach((area, i) => {
@@ -289,10 +279,15 @@ const drawShareCard = (
     ctx.textAlign = 'center';
     ctx.fillStyle = palette.title;
     ctx.font = `800 36px ${FONT_STACK}`;
-    ctx.fillText('Lower is better. How exposed are you?', cx, CARD_HEIGHT - 96);
+    ctx.fillText('Lower is better. How exposed are you?', cx, CARD_HEIGHT - 200);
     ctx.fillStyle = palette.eyebrow;
     ctx.font = `600 30px ${FONT_STACK}`;
-    ctx.fillText('Try Lumo free · lumo.proton.me', cx, CARD_HEIGHT - 50);
+    ctx.fillText("What's your AI Paper Trail? · lumo.proton.me/ai-paper-trail", cx, CARD_HEIGHT - 144);
+
+    if (logo) {
+        const logoSize = 72;
+        ctx.drawImage(logo, cx - logoSize / 2, CARD_HEIGHT - 110, logoSize, logoSize);
+    }
 };
 
 /** Load the Lumo logo (best-effort) and render the card onto a canvas. */
