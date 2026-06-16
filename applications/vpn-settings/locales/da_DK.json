@@ -4485,6 +4485,9 @@
       "Invalid private key file": [
         "Ugyldig privatnøglefil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ugyldigt nulstillingstoken. Opdater siden og prøv igen."
+      ],
       "Invalid VAT number": [
         "Ugyldigt VAT-/momsnummer"
       ],
@@ -8894,6 +8897,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan ikke henvise ${ MAIL_APP_NAME }-brugere"
       ],
+      "You do not have permission to create users.": [
+        "Du har ikke tilladelse til at oprette brugere."
+      ],
       "You don't have any referrals.": [
         "De har ingen henvisninger."
       ],
@@ -9450,6 +9456,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendere"
+      ],
       "Card details": [
         "Kortoplysninger"
       ],
@@ -9624,6 +9633,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail med @dinvirksomhed.com domæne"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle beskeder)"
@@ -10406,6 +10418,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Få ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjælp fra ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupper"
@@ -14064,6 +14079,28 @@
         "Ret opbevaringsregel"
       ]
     },
+    "Role": {
+      "Organization Admin": [
+        "Organisationsadmin"
+      ],
+      "Security Admin": [
+        "Sikkerhedsadmin"
+      ],
+      "User Admin": [
+        "Brugeradmin"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
+      ]
+    },
     "Safety review": {
       "Check account security": [
         "Tjek kontosikkerhed"
@@ -17706,9 +17743,6 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inkluderer professionelle e-mails med @ditdomæne.com, lagerplads i skyen med dokumenter der kan samarbejdes om, planlægning og afholdelse af videomøder, adgangskodehåndtering, en sikker ${ VPN_SHORT_APP_NAME }, og mere."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer, der ikke bruger tofaktorgodkendelse, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Enkeltlogonbrugere vil ikke modtage e-mailpåmindelsen."
       ],
@@ -17809,6 +17843,9 @@
       ],
       "User is a group": [
         "Brugeren er en gruppe"
+      ],
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"

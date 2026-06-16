@@ -4485,6 +4485,9 @@
       "Invalid private key file": [
         "Μη έγκυρο αρχείο ιδιωτικού κλειδιού"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Μη έγκυρο διακριτικό επαναφοράς. Παρακαλούμε ανανεώστε τη σελίδα και δοκιμάστε ξανά."
+      ],
       "Invalid VAT number": [
         "Μη έγκυρος αριθμός ΦΠΑ"
       ],
@@ -6670,6 +6673,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
+      ],
+      "All your files will be imported": [
+        "Όλα τα αρχεία σας θα εισαχθούν"
       ],
       "Allocated": [
         "Κατανεμημένος"
@@ -9453,6 +9459,9 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
       "Card details": [
         "Στοιχεία κάρτας"
       ],
@@ -9604,6 +9613,9 @@
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g. example.com": [
         "π.χ. example.com"
       ],
@@ -9627,6 +9639,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "Ηλεκτρονικό ταχυδρομείο με τομέα @yourcompany.com"
+      ],
+      "Emails": [
+        "Μηνύματα"
       ],
       "Emails (all messages)": [
         "Μηνύματα (όλα τα μηνύματα)"
@@ -17638,8 +17653,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Περιλαμβάνει επαγγελματικό ηλεκτρονικό ταχυδρομείο στο @yourdomain.com, αποθήκευση στο cloud με συνεργατική επεξεργασία εγγράφων, προγραμματισμό και βιντεοδιάσκεψη, διαχείριση κωδικών πρόσβασης, ένα ασφαλές ${ VPN_SHORT_APP_NAME } και πολλά άλλα."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
+      "Instant assistance with AI and human experts.": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη και ανθρώπινους εμπειρογνώμονες."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα μήνυμα ηλεκτρονικού ταχυδρομείου που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό. Οι χρήστες καθολικής σύνδεσης δε θα λάβουν την υπενθύμιση ηλεκτρονικού ταχυδρομείου."

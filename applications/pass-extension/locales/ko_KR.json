@@ -2035,7 +2035,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2276,6 +2276,9 @@
       ],
       "Press Enter to copy": [
         "복사하기 위해 엔터 키를 누르세요"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }로 계정 보호 중"
       ],
       "Quickly autofill your 2FA tokens.": [
         "2단계 인증 토큰을 빠르게 자동 완성합니다."
@@ -3111,6 +3114,9 @@
       ],
       "Expired": [
         "만료됨"
+      ],
+      "Expires in": [
+        "만료 시까지:"
       ],
       "Expiry Date": [
         "만료 날짜"

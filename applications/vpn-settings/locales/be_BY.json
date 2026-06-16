@@ -4547,6 +4547,9 @@
       "Invalid private key file": [
         "Памылковы файл закрытага ключа"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Памылковы токен скідання. Абнавіце старонку і паспрабуйце яшчэ раз."
+      ],
       "Invalid VAT number": [
         "Памылковы нумар ПДВ"
       ],
@@ -4635,7 +4638,7 @@
         "Запоўніце плацежныя звесткі"
       ],
       "Please configure a custom domain before adding addresses.": [
-        "Перад дадаваннем адрасоў неабходна сканфігураваць карыстальніцкі дамен."
+        "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Cканфігурыруйце свой карыстальніцкі дамен перад тым, як дадаваць карыстальнікаў у вашу арганізацыю."
@@ -5061,7 +5064,7 @@
         "Адбылася памылка пры запампоўванні вашага файла. Ніводны файл не выбраны."
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
-        "Запампуйце файл CSV з не больш чым ${ MAX_NUMBER_OF_USER_ROWS } уліковым запісам карыстальніка."
+        "Запампуйце файл CSV з не больш чым ${ MAX_NUMBER_OF_USER_ROWS } уліковымі запісамі карыстальніка."
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "Ваш файл \"${ formattedFilename }\" пусты."
@@ -8113,7 +8116,7 @@
         "Выберыце меткі для імпартавання:"
       ],
       "Please specify...": [
-        "Вызначыце..."
+        "Пазначце..."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
@@ -8923,7 +8926,7 @@
         "Замест гэтага мы рэкамендуем выкарыстоўваць фразу аднаўлення."
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Мы надзейна захоўваем інфармацыю для аднаўлення на вашай даверанай прыладзе, каб прадухіліць страту вашых даных"
+        "Ваша інфармацыя надзейна захоўваецца для аднаўлення на даверанай прыладзе. Гэта дазваляе прадухіліць страту вашых даных."
       ],
       "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
         "Мы захавалі рэзервовы файл у гэтым браўзеры, бо вы дазволілі аднаўленне даных на гэтай ${ deviceLink }. Калі рэзервовы файл з'яўляецца сапраўдным, то вы неадкладна атрымаеце поўны або частковы доступ да сваіх зашыфраваных даных."
@@ -9707,6 +9710,9 @@
       "Calendar": [
         "Каляндар"
       ],
+      "Calendars": [
+        "Календары"
+      ],
       "Card details": [
         "Падрабязнасці карткі"
       ],
@@ -9883,6 +9889,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "Электронная пошта з даменам @yourcompany.com"
+      ],
+      "Emails": [
+        "Лісты"
       ],
       "Emails (all messages)": [
         "Лісты (усе паведамленні)"
@@ -10669,6 +10678,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Атрымаць ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Атрымаць дапамогу ад ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Групы"
@@ -11601,7 +11613,7 @@
         "Пашыраная бяспека сеткі"
       ],
       "Advanced workspace security": [
-        "Пашыранае бяспека працоўнай прасторы"
+        "Пашыраная бяспека працоўнай прасторы"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Усе прадукты і функцыі ${ BRAND_NAME }"
@@ -12392,7 +12404,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "Пастаўляецца з ${ plus }, ${ bundle } i ${ BRAND_NAME } для бізнесу."
+        "Пастаўляецца з ${ plus }, ${ bundle } i ${ BRAND_NAME } for Business."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "Тарыфныя планы ${ BRAND_NAME } for Business уключаюць падтрымку некалькіх карыстальнікаў."
@@ -17030,7 +17042,7 @@
         "Стварэнне шлюза"
       ],
       "Create group": [
-        "Стварэнне групу"
+        "Стварэнне групы"
       ],
       "Create multiple user accounts": [
         "Стварэнне некалькіх уліковых запісаў карыстальніка"
@@ -17384,7 +17396,7 @@
         "Імпарт груп"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Імпартаванне праз ${ PRODUCT_NAMES.EASY_SWITCH }"
+        "Імпарт праз ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Імпартуйце свае даныя ў ${ BRAND_NAME }"
@@ -18141,9 +18153,6 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Уключае прафесійную электронную пошту @yourdomain.com, воблачнае сховішча з сумесным рэдагаваннем дакументаў, расклад і відэаканферэнцыі, менеджар пароляў, а таксама бяспечны ${ VPN_SHORT_APP_NAME } і многае іншае."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Імгненная дапамога ШІ і нашых экспертаў!"
-      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Удзельнікі, якія не выкарыстоўваюць 2ФА, атрымаюць ліст з просьбай уключыць яе як мага хутчэй. Карыстальнікі з адзіным уваходам напамін на сваю электронную пошту не атрымаюць."
       ],
@@ -18865,7 +18874,7 @@
         "Выдаліўшы гэты адрас, вы больш не зможаце аднавіць доступ да свайго ўліковага запісу."
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
-        "Выдаліўшы гэты нумар тэлефона, вы больш не зможаце аднавіць свой ўліковы запіс."
+        "Выдаліўшы гэты нумар тэлефона, вы больш не зможаце аднавіць свой уліковы запіс."
       ],
       "Please add at least one recipient.": [
         "Дадайце прынамсі аднаго атрымальніка."

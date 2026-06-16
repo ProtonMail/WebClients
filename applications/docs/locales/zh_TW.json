@@ -504,6 +504,9 @@
       "New document": [
         "建立新文件"
       ],
+      "New folder": [
+        "新資料夾"
+      ],
       "New message": [
         "撰寫"
       ],
@@ -2750,6 +2753,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 個項目移動失敗"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「身分 \n及地址」>「短網域名稱 (pm.me)」裡面去設定。"
       ],
@@ -2819,6 +2825,9 @@
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
+      "Cannot find move target": [
+        "找不到移動目標"
+      ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
@@ -2872,6 +2881,12 @@
       ],
       "Failed to copy photo to album": [
         "複製照片至相簿失敗"
+      ],
+      "Failed to create folder": [
+        "建立資料夾失敗"
+      ],
+      "Failed to expand folder": [
+        "展開資料夾失敗"
       ],
       "Failed to fetch node": [
         "擷取節點失敗"
@@ -4182,6 +4197,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "所有聯絡人將被匯入，至多 ${ maxContact }"
       ],
+      "Already in this folder": [
+        "已經在此資料夾"
+      ],
       "an anonymous user": [
         "一位未知使用者"
       ],
@@ -4232,6 +4250,12 @@
       ],
       "Can view only": [
         "僅供檢視"
+      ],
+      "Can't move a folder into itself": [
+        "無法將資料夾移動到自身"
+      ],
+      "Can't write into folder": [
+        "無法寫入資料夾"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
@@ -4779,6 +4803,9 @@
       "Scan the QR code with your mobile device": [
         "透過行動裝置掃描此 QR Code"
       ],
+      "Select a destination folder": [
+        "選擇一個目的文件夾"
+      ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
       ],
@@ -4799,6 +4826,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
+      ],
+      "Settings update failed": [
+        "設定更新失敗"
+      ],
+      "Settings updated": [
+        "已更新設定"
       ],
       "Share via link settings": [
         "請用連結設定共享"
@@ -5348,6 +5381,9 @@
       "Calendar": [
         "行事曆"
       ],
+      "Calendars": [
+        "行事曆"
+      ],
       "can edit": [
         "可以編輯"
       ],
@@ -5431,6 +5467,9 @@
       ],
       "Email format": [
         "電郵格式"
+      ],
+      "Emails": [
+        "電郵"
       ],
       "Emails (all messages)": [
         "電子郵件（全部訊息）"
@@ -7120,20 +7159,20 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "「${ ellipsedName }」已成功創建"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "「${ ellipsedName }」創建失敗"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" 已共享"
-      ],
-      "\"${ name }\" created successfully": [
-        "「${ name }」已成功創建"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\"已刪除"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "檔案 \"${ name }\" 已經從垃圾桶被永久刪除"
-      ],
-      "\"${ name }\" failed to be created": [
-        "「${ name }」創建失敗"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\"創建失敗"
@@ -9109,6 +9148,9 @@
       ],
       "Collaborate on documents": [
         "於文件上合作"
+      ],
+      "Computers": [
+        "電腦"
       ],
       "Confirm downgrade": [
         "確認降級"

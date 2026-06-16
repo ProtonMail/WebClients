@@ -1401,8 +1401,8 @@
       "Save": [
         "Desa"
       ],
-      "Save & exit": [
-        "Deseu i sortiu"
+      "Save & finish": [
+        "Desar i finalitzar"
       ],
       "Save address": [
         "Desa l'adreça"
@@ -2987,6 +2987,9 @@
       "Configure your domain": [
         "Configureu el vostre domini"
       ],
+      "Confirm": [
+        "Confirmar"
+      ],
       "Contact your administrator to start a migration.": [
         "Contacteu amb el vostre administrador per iniciar una migració."
       ],
@@ -2995,9 +2998,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Copieu el codi següent i enganxeu-lo a la secció DNS del vostre proveïdor de domini."
-      ],
-      "Creating accounts. Going private": [
-        "S'estan creant els comptes. S'estan passant a privats"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
@@ -3049,6 +3049,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Obtingueu ajuda i consells útils per a altres proveïdors de dominis ${ here }"
+      ],
+      "Going private": [
+        "Passar a privat"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
@@ -3273,8 +3276,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Ara mateix estem creant els vostres comptes i important les vostres dades. Cada correu electrònic, cada esdeveniment és exclusivament vostre. Visible només per al vostre equip. Ni per a nosaltres, ni per a ningú més."
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Estem activant el xifratge d'extrem a extrem per a tothom. Ara cada correu electrònic i cada esdeveniment és exclusivament vostre. Només és visible per al vostre equip. Ni per a nosaltres, ni per a ningú més."
       ],
       "What are you migrating?": [
         "Què esteu migrant?"
@@ -7297,6 +7300,9 @@
       "Invalid private key file": [
         "El fitxer de clau privada no és vàlid"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "El testimoni de restabliment no és vàlid. Actualitzeu la pàgina i torneu-ho a provar."
+      ],
       "Invalid Sieve code": [
         "El codi Sieve no és vàlid"
       ],
@@ -9640,6 +9646,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Drive": [
+        "Unitat"
+      ],
       "Mail": [
         "Correu"
       ]
@@ -10181,6 +10190,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
         "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
+      ],
+      "All your files will be imported": [
+        "S'importaran tots els vostres fitxers"
       ],
       "Allocated": [
         "Assignat"
@@ -12090,6 +12102,9 @@
       ],
       "Request a phone call": [
         "Sol·liciteu una trucada telefònica"
+      ],
+      "Required to complete the migration": [
+        "Cal per completar la migració"
       ],
       "Resend verification email": [
         "Reenvia el correu electrònic de verificació"
@@ -14454,6 +14469,9 @@
       "Calendar": [
         "Calendari"
       ],
+      "Calendars": [
+        "Calendaris"
+      ],
       "Capitalize words": [
         "Poseu les paraules en majúscules"
       ],
@@ -14704,6 +14722,9 @@
       "Donation amount": [
         "Import del donatiu"
       ],
+      "Drive": [
+        "Unitat"
+      ],
       "Duration": [
         "Durada"
       ],
@@ -14730,6 +14751,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "Correu electrònic amb el domini @lavostracompanyia.com"
+      ],
+      "Emails": [
+        "Correus electrònics"
       ],
       "Emails (all messages)": [
         "Correus electrònics (tots els missatges)"
@@ -20483,17 +20507,8 @@
       "${ score } / ${ maxScore } completed": [
         "S'ha completat ${ score } / ${ maxScore }"
       ],
-      "Account protection": [
-        "Protecció del compte"
-      ],
       "Add more options for stronger protection": [
         "Afegiu més opcions per a una protecció més robusta"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Afegiu més opcions per evitar perdre l'accés al vostre compte."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Genial. Mantingueu les vostres opcions actualitzades per una protecció més robusta."
       ],
       "Check your access to your recovery options": [
         "Comproveu l'accés a les opcions de recuperació"
@@ -20503,12 +20518,6 @@
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "No us quedeu sense accés al vostre compte de ${ BRAND_NAME }"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Bon inici. Afegiu més opcions per una protecció més robusta."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Fantàstic. Afegiu més opcions per una protecció més robusta."
       ],
       "How you increased your account protection": [
         "Com heu augmentat la protecció del vostre compte"
@@ -20539,9 +20548,6 @@
       ],
       "Take precautions to avoid losing access": [
         "Preneu precaucions per evitar perdre l'accés"
-      ],
-      "Unprotected": [
-        "S'ha desprotegit"
       ],
       "Weak": [
         "Feble"
@@ -26859,8 +26865,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclou correu electrònic professional a @elvostredomini.com, emmagatzematge al núvol amb edició col·laborativa de documents, calendaris i videoconferències, gestió de contrasenyes, una ${ VPN_SHORT_APP_NAME } segura i molt més."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
+      "Instant assistance with AI and human experts.": [
+        "Assistència instantània amb IA i persones expertes."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Els membres que no utilitzin l'autenticació de doble factor (2FA) rebran un correu electrònic per demanar-los que l'habilitin com més aviat millor. Els usuaris de l'inici de sessió únic no rebran el recordatori."

@@ -534,6 +534,9 @@
       "New document": [
         "Nuovo documento"
       ],
+      "New folder": [
+        "Nuova cartella"
+      ],
       "New message": [
         "Scrivi un messaggio"
       ],
@@ -2811,6 +2814,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Spostamento di ${ failureItems.length } elemento non riuscito",
+        "Spostamento di ${ failureItems.length } elementi non riuscito"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai su Impostazioni > Identità e indirizzi > Dominio breve (pm.me)"
       ],
@@ -2939,8 +2946,14 @@
       "Failed to copy photo to album": [
         "Impossibile copiare la foto nell'album"
       ],
+      "Failed to create folder": [
+        "Impossibile creare la cartella"
+      ],
       "Failed to create public share node": [
         "Impossibile creare il nodo di condivisione pubblico"
+      ],
+      "Failed to expand folder": [
+        "Impossibile espandere la cartella"
       ],
       "Failed to fetch node": [
         "Impossibile recuperare il nodo"
@@ -4344,6 +4357,9 @@
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }",
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }"
       ],
+      "Already in this folder": [
+        "Questa cartella è già piena"
+      ],
       "an anonymous user": [
         "un utente anonimo"
       ],
@@ -4385,6 +4401,9 @@
       ],
       "Calendar side panel": [
         "Pannello laterale del calendario"
+      ],
+      "Can't move a folder into itself": [
+        "Non puoi spostare una cartella in se stessa"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
@@ -4969,6 +4988,9 @@
       "Scan the QR code with your mobile device": [
         "Scansiona il codice QR con il tuo dispositivo mobile"
       ],
+      "Select a destination folder": [
+        "Seleziona una cartella di destinazione"
+      ],
       "Select a folder to move to.": [
         "Seleziona la cartella di destinazione."
       ],
@@ -4989,6 +5011,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
+      ],
+      "Settings update failed": [
+        "Aggiornamento delle impostazioni non riuscito"
+      ],
+      "Settings updated": [
+        "Impostazioni aggiornate"
       ],
       "Share via link settings": [
         "Impostazioni per la condivisione via link"
@@ -5614,6 +5642,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Calendars": [
+        "Calendari"
+      ],
       "can edit": [
         "può modificare"
       ],
@@ -5694,6 +5725,9 @@
       ],
       "Email format": [
         "Formato email"
+      ],
+      "Emails": [
+        "Email"
       ],
       "Emails (all messages)": [
         "Email (tutti i messaggi)"
@@ -7452,17 +7486,20 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" creato con successo"
+      "\"${ ellipsedName }\" created successfully": [
+        "Creato con successo \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "É fallita la creazione di \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Spostamento di \"${ ellipsedName }\""
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" eliminato"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" eliminato definitivamente dal cestino"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Creazione di \"${ name }\" non riuscita"
       ],
       "\"${ name }\" failed to be deleted": [
         "Eliminazione di \"${ name }\" non riuscita"
@@ -9548,6 +9585,9 @@
       "Collaborate on documents": [
         "Collabora sui documenti"
       ],
+      "Computers": [
+        "Computer"
+      ],
       "Confirm downgrade": [
         "Conferma il downgrade"
       ],
@@ -10200,6 +10240,9 @@
       ],
       "Name must not be empty": [
         "Il nome non può essere vuoto"
+      ],
+      "Name must not contain slashes (/)": [
+        "Il nome non deve contenere barre (/)"
       ]
     },
     "Video control": {

@@ -549,6 +549,9 @@
       "New document": [
         "Yeni belge"
       ],
+      "New folder": [
+        "Yeni klasör"
+      ],
       "New message": [
         "Yeni ileti"
       ],
@@ -2965,6 +2968,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } öge taşınamadı",
+        "${ failureItems.length } öge taşınamadı"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
@@ -3034,6 +3041,9 @@
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
       ],
+      "Cannot find move target": [
+        "Taşıma hedefi bulunamadı"
+      ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
@@ -3096,8 +3106,14 @@
       "Failed to copy photo to album": [
         "Fotoğraf albüme kopyalanamadı"
       ],
+      "Failed to create folder": [
+        "Klasör oluşturulamadı."
+      ],
       "Failed to create public share node": [
         "Herkese açık paylaşım noktası oluşturulamadı"
+      ],
+      "Failed to expand folder": [
+        "Klasör genişletilemedi"
       ],
       "Failed to fetch node": [
         "Nokta alınamadı"
@@ -4539,6 +4555,12 @@
         "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak",
         "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak"
       ],
+      "All your files will be imported": [
+        "Tüm dosyalarınız içe aktarılacak"
+      ],
+      "Already in this folder": [
+        "Zaten bu klasörde var"
+      ],
       "an anonymous user": [
         "isimsiz bir kullanıcı"
       ],
@@ -4593,8 +4615,14 @@
       "Can view only": [
         "Yalnızca görüntüleyebilir"
       ],
+      "Can't move a folder into itself": [
+        "Klasör kendi içine taşınamaz"
+      ],
+      "Can't write into folder": [
+        "Klasöre yazılamadı"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
+        "Parolanızı anımsayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
       "Change your password": [
         "Parolanızı değiştirin"
@@ -4706,7 +4734,7 @@
         "Sözcük sayısı görüntülensin"
       ],
       "Do you remember your password? ${ verifyButton }": [
-        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
+        "Parolanızı anımsıyor musunuz? ${ verifyButton }"
       ],
       "Document is in trash": [
         "Belge çöp kutusunda"
@@ -5233,6 +5261,9 @@
       "Scan the QR code with your mobile device": [
         "Mobil aygıtınızla kare kodu tarayın"
       ],
+      "Select a destination folder": [
+        "Hedef klasörü seçin"
+      ],
       "Select a folder to move to.": [
         "Taşınacak bir klasör seçin."
       ],
@@ -5253,6 +5284,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
+      ],
+      "Settings update failed": [
+        "Ayarlar güncellenemedi"
+      ],
+      "Settings updated": [
+        "Ayarlar güncellendi"
       ],
       "Share via link settings": [
         "Bağlantı ayarları ile paylaş"
@@ -5520,7 +5557,7 @@
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
       "We'll remind you to verify your password again later": [
-        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
+        "Daha sonra yeniden parolanızı doğrulamanızı anımsatacağız."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -5914,6 +5951,9 @@
       "Calendar": [
         "Takvim"
       ],
+      "Calendars": [
+        "Takvimler"
+      ],
       "can edit": [
         "düzenleyebilir"
       ],
@@ -5983,6 +6023,9 @@
       "Download anyway": [
         "Yine de indir"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Kopya bulundu"
       ],
@@ -6000,6 +6043,9 @@
       ],
       "Email format": [
         "E-posta biçimi"
+      ],
+      "Emails": [
+        "E-postalar"
       ],
       "Emails (all messages)": [
         "E-postalar (tüm iletiler)"
@@ -7533,7 +7579,7 @@
         "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
+        "Bir e-posta anımsatıcısı ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
@@ -7768,20 +7814,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" eklendi"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" oluşturulamadı"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" taşındı"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" paylaşıldı"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" eklendi"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" silindi"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" eklenemedi"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" silinemedi"
@@ -7800,9 +7849,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kaydedilemedi"
-      ],
-      "\"${ name }\" moved": [
-        "\"${ name }\" taşındı"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" çöpe atıldı"
@@ -9994,6 +10040,9 @@
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
       ],
+      "Computers": [
+        "Bilgisayarlar"
+      ],
       "Confirm downgrade": [
         "Tarife düşürmeyi onayla"
       ],
@@ -10586,8 +10635,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
+      "Instant assistance with AI and human experts.": [
+        "Yapay zeka ve insan uzmanlar ile anında yardım."
       ],
       "Load image": [
         "Görsel yükle"
@@ -10673,6 +10722,9 @@
       ],
       "Name must not be empty": [
         "Ad boş olamaz"
+      ],
+      "Name must not contain slashes (/)": [
+        "Ad içinde bölü karakteri bulunmamalıdır (/)"
       ]
     },
     "Video control": {
@@ -10787,7 +10839,7 @@
         "Kişiler birleştirilemedi"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+        "Parolanızı anımsamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

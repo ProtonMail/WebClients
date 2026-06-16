@@ -546,6 +546,9 @@
       "New document": [
         "新建文档"
       ],
+      "New folder": [
+        "新建文件夹"
+      ],
       "New message": [
         "撰写邮件"
       ],
@@ -1110,7 +1113,7 @@
         "不限量文件夹、标签和筛选规则"
       ],
       "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "无限制登录、信用卡、hide-my-email 别名等功能"
+        "无限制登录、信用卡、Hide-my-email 别名等功能"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
@@ -1132,16 +1135,16 @@
         "在所有设备上安全登录。包括无限制 Hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 hide-my-email  别名等功能。"
+        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 Hide-my-email  别名等功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 hide-my-email邮箱别名等高级功能。"
+        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 hide-my-email 别名等功能。"
+        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 Hide-my-email 别名等功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "使用加密云存储保护您的文件。包含在线文档编辑器、照片备份、版本历史记录、加密文件共享等功能。"
@@ -1815,6 +1818,9 @@
       ],
       "Canada": [
         "加拿大"
+      ],
+      "Canary Islands": [
+        "加纳利群岛"
       ],
       "Cape Verde": [
         "佛得角"
@@ -2945,6 +2951,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 个项目移动失败"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
       ],
@@ -3014,6 +3023,9 @@
       "Cannot export this contact": [
         "无法导出此联系人"
       ],
+      "Cannot find move target": [
+        "找不到移动目标"
+      ],
       "Contact could not be saved": [
         "无法保存联系人"
       ],
@@ -3074,14 +3086,23 @@
       "Failed to copy photo to album": [
         "无法将照片复制到相册"
       ],
+      "Failed to create folder": [
+        "创建文件夹失败"
+      ],
       "Failed to create public share node": [
         "未能创建公开共享节点"
+      ],
+      "Failed to expand folder": [
+        "展开文件夹失败"
       ],
       "Failed to fetch node": [
         "获取节点失败"
       ],
       "Failed to fetch sharing info": [
         "无法获取共享信息"
+      ],
+      "Failed to load 'My files' folder": [
+        "加载“我的文件”文件夹失败"
       ],
       "Failed to load document details": [
         "加载文档详情失败"
@@ -3831,7 +3852,7 @@
         "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
+        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 Hide-my-email 别名、日历共享等功能的支持。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -3857,7 +3878,7 @@
         "存储空间"
       ],
       "Unlimited hide-my-email aliases": [
-        "无限制地 hide-my-email"
+        "无限 Hide-my-email 别名"
       ]
     },
     "Features": {
@@ -4469,6 +4490,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
       ],
+      "Already in this folder": [
+        "已在此文件夹中"
+      ],
       "an anonymous user": [
         "匿名用户"
       ],
@@ -4522,6 +4546,12 @@
       ],
       "Can view only": [
         "只能查看"
+      ],
+      "Can't move a folder into itself": [
+        "无法将文件夹移动到其自身内部"
+      ],
+      "Can't write into folder": [
+        "无法写入文件夹"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
@@ -5087,6 +5117,9 @@
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
       ],
+      "Please select the labels you would like to import:": [
+        "请选择要导入的标签："
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "请选择将哪些邮箱地址加入这 ${ groupCount } 个群组。"
       ],
@@ -5156,6 +5189,9 @@
       "Scan the QR code with your mobile device": [
         "请使用移动设备扫描二维码"
       ],
+      "Select a destination folder": [
+        "选择目标文件夹"
+      ],
       "Select a folder to move to.": [
         "选择要移动到的文件夹。"
       ],
@@ -5176,6 +5212,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
+      ],
+      "Settings update failed": [
+        "设置更新失败"
+      ],
+      "Settings updated": [
+        "设置已更新"
       ],
       "Share via link settings": [
         "通过链接设置共享"
@@ -5830,6 +5872,9 @@
       "Calendar": [
         "日历"
       ],
+      "Calendars": [
+        "日历"
+      ],
       "can edit": [
         "可以编辑"
       ],
@@ -5916,6 +5961,9 @@
       ],
       "Email format": [
         "邮件格式"
+      ],
+      "Emails": [
+        "电子邮件"
       ],
       "Emails (all messages)": [
         "所有邮件"
@@ -6823,7 +6871,7 @@
         "${ n } 个文件夹和标签"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } 个 hide-my-email 别名"
+        "${ n } 个 Hide-my-email 别名"
       ],
       "${ n } label": [
         "${ n } 个标签"
@@ -6847,10 +6895,10 @@
         "${ PASS_APP_NAME } + SimpleLogin 终身"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } 带有 ${ n } 个 hide-my-email 别名"
+        "${ PASS_APP_NAME } 带有 ${ n } 个 Hide-my-email 别名"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } 以及无限量的 hide-my-email 邮箱别名"
+        "${ PASS_APP_NAME } 以及无限量的 Hide-my-email 邮箱别名"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 计划"
@@ -7383,7 +7431,7 @@
         "${ DRIVE_APP_NAME }：使用加密云存储保护您的文件。包括自动同步、加密文件共享等功能。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }：采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 hide-my-email 别名等高级功能。"
+        "${ MAIL_APP_NAME }：采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 别名等高级功能。"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }：访问被屏蔽的内容，私密浏览。包括 ${ serversAndCountries }、最快 VPN 速度、访问全球流媒体服务、恶意软件和广告拦截器、快速 BitTorrent 下载等。"
@@ -7644,20 +7692,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "“${ ellipsedName }”创建成功"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "“${ ellipsedName }”创建失败"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "“${ ellipsedName }”已移动"
+      ],
       "\"${ fileName }\" shared": [
         "“${ fileName }”已共享"
-      ],
-      "\"${ name }\" created successfully": [
-        "“${ name }”创建成功"
       ],
       "\"${ name }\" deleted": [
         "“${ name }” 已删除"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" 已从回收站永久删除"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" 创建失败"
       ],
       "\"${ name }\" failed to be deleted": [
         "“${ name }” 删除失败"
@@ -7676,9 +7727,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "${ name } 保存失败"
-      ],
-      "\"${ name }\" moved": [
-        "“${ name }”已移动"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 已移动到回收站"
@@ -8653,10 +8701,10 @@
         "随时生成邮箱别名，轻松管理您的别名和密码。"
       ],
       "Hide-my-email aliases": [
-        "个hide-my-email别名"
+        "个 Hide-my-email 别名"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "您可以使用 hide-my-email 邮箱别名注册各类网络账户，避免暴露真实邮箱。${ learnMoreLink }"
+        "您可以使用 Hide-my-email 邮箱别名注册各类网络账户，避免暴露真实邮箱。${ learnMoreLink }"
       ],
       "New alias": [
         "新增别名"
@@ -9077,7 +9125,7 @@
         "升级账户"
       ],
       "Upgrade for ${ pricingTitle }": [
-        "升级至 ${ pricingTitle }"
+        "升级仅需 ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9182,10 +9230,10 @@
         "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
+        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  Hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
+        "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 Hide-my-email 别名、日历共享等功能的支持。"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
@@ -9330,7 +9378,7 @@
         "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "您将失去无限次登录和笔记、无限次 hide-my-email 别名、20个保险库以及优先支持的特权。"
+        "您将失去无限次登录和笔记、无限次 Hide-my-email别名、20个保险库以及优先支持的特权。"
       ]
     },
     "Subscription attribute": {
@@ -9704,6 +9752,9 @@
       ],
       "Collaborate on documents": [
         "协作处理文件"
+      ],
+      "Computers": [
+        "电脑"
       ],
       "Confirm downgrade": [
         "确认降级"
@@ -10375,6 +10426,9 @@
       ],
       "Name must not be empty": [
         "名称不能为空"
+      ],
+      "Name must not contain slashes (/)": [
+        "名称不能包含斜杠 (/)"
       ]
     },
     "Video control": {

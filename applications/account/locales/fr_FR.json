@@ -1395,8 +1395,8 @@
       "Save": [
         "Enregistrer"
       ],
-      "Save & exit": [
-        "Enregistrer et quitter"
+      "Save & finish": [
+        "Sauvegarder et terminer"
       ],
       "Save address": [
         "Enregistrer l'adresse"
@@ -2981,6 +2981,9 @@
       "Configure your domain": [
         "Configurez votre domaine"
       ],
+      "Confirm": [
+        "Confirmer"
+      ],
       "Contact your administrator to start a migration.": [
         "Contactez votre administrateur pour commencer une migration."
       ],
@@ -2989,9 +2992,6 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Copiez le code ci-dessous et collez-le dans la section DNS de votre hôte de domaine."
-      ],
-      "Creating accounts. Going private": [
-        "Création des comptes. Passage en mode privé."
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "État de migration des données depuis Google Workspace vers ${ BRAND_NAME }"
@@ -3043,6 +3043,9 @@
       ],
       "Get help and useful tips for other domain providers ${ here }": [
         "Obtenez de l'aide et des conseils utiles pour d'autres fournisseurs de domaines ${ here }"
+      ],
+      "Going private": [
+        "Vers une meilleure vie privée"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Application Google Marketplace pour copier des données vers ${ BRAND_NAME }"
@@ -3267,8 +3270,8 @@
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Nous avons remarqué que certains utilisateurs n'ont pas encore activé leur compte ${ BRAND_NAME }."
       ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Nous sommes en train de créer vos comptes et d'importer vos données. Chaque e-mail, chaque événement vous appartient en totalité. Seule votre équipe y a accès. Pas nous, ni personne d'autre."
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Nous activons le chiffrement de bout en bout pour tous nos utilisateurs. Chaque e-mail, chaque événement n'appartient désormais qu'à vous. Seule votre équipe peut y accéder. Ni nous, ni personne d'autre."
       ],
       "What are you migrating?": [
         "Que migrez-vous ?"
@@ -7291,6 +7294,9 @@
       "Invalid private key file": [
         "Fichier de clé privée invalide"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Le jeton de réinitialisation n'est pas valide. Veuillez actualiser la page et réessayer."
+      ],
       "Invalid Sieve code": [
         "Code Sieve invalide"
       ],
@@ -9637,6 +9643,9 @@
       "Contacts": [
         "Contacts"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Mail": [
         "Message"
       ]
@@ -10178,6 +10187,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }",
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
+      ],
+      "All your files will be imported": [
+        "Tous vos fichiers seront importés."
       ],
       "Allocated": [
         "Alloué"
@@ -12090,6 +12102,9 @@
       ],
       "Request a phone call": [
         "Demandez un appel téléphonique"
+      ],
+      "Required to complete the migration": [
+        "Nécessaire pour terminer la migration"
       ],
       "Resend verification email": [
         "Envoyer à nouveau le message de vérification"
@@ -14454,6 +14469,9 @@
       "Calendar": [
         "Calendrier"
       ],
+      "Calendars": [
+        "Calendriers"
+      ],
       "Capitalize words": [
         "Mettre en majuscules"
       ],
@@ -14704,6 +14722,9 @@
       "Donation amount": [
         "Montant du don"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duration": [
         "Durée"
       ],
@@ -14730,6 +14751,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail avec le domaine @votre-entreprise.com"
+      ],
+      "Emails": [
+        "Messages"
       ],
       "Emails (all messages)": [
         "Messages (tous les messages)"
@@ -20579,29 +20603,14 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } complétés"
       ],
-      "Account protection": [
-        "Protection du compte"
-      ],
       "Add more options for stronger protection": [
         "Ajoutez plus d'options de sécurité pour une protection renforcée"
-      ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Ajouter davantage d'options pour éviter d'être bloqué de votre compte."
-      ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Génial ! Assurez-vous que vos paramètres sont à jour pour une protection renforcée."
       ],
       "Critical": [
         "Critique"
       ],
       "Don’t get locked out of your ${ BRAND_NAME } Account": [
         "Ne risquez pas de ne plus pouvoir accéder à votre compte ${ BRAND_NAME }"
-      ],
-      "Good start. Add more options for a stronger protection.": [
-        "Bon début. Ajoutez plus d'options de sécurité pour une protection renforcée."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Génial ! Ajoutez plus d'options de sécurité pour une protection renforcée."
       ],
       "How you increased your account protection": [
         "Comment vous avez amélioré la protection de votre compte"
@@ -20626,9 +20635,6 @@
       ],
       "Strong": [
         "Fort"
-      ],
-      "Unprotected": [
-        "Sans protection"
       ],
       "Weak": [
         "Faible"
@@ -26916,8 +26922,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclut un e-mail professionnel en @votre-entreprise.fr, de l'espace de stockage distant permettant l'édition collaborative de documents, la planification et les vidéoconférences, la gestion des mots de passe, un ${ VPN_SHORT_APP_NAME } sécurisé, et bien plus."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Une assistance IA immédiate, avec un expert à votre disposition !"
+      "Instant assistance with AI and human experts.": [
+        "Assistance immédiate grâce à l'IA et à des experts humains."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Les membres qui n'utilisent pas l'A2F recevront un e-mail leur demandant de l'activer dès que possible. Les utilisateurs avec authentification unique ne recevront pas d'e-mail de rappel."

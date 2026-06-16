@@ -269,6 +269,9 @@
       "Resend code": [
         "Code erneut senden"
       ],
+      "Return to dashboard": [
+        "Zurück zum Dashboard"
+      ],
       "Room": [
         "Raum"
       ],
@@ -1494,14 +1497,23 @@
       "Failed to delete event": [
         "Fehler beim Löschen des Termins"
       ],
+      "Failed to delete recording": [
+        "Aufzeichnung konnte nicht gelöscht werden"
+      ],
       "Failed to delete room": [
         "Fehler beim Löschen des Raums"
+      ],
+      "Failed to download recording": [
+        "Aufnahme konnte nicht heruntergeladen werden"
       ],
       "Failed to edit room name": [
         "Fehler beim Bearbeiten des Raumnamens"
       ],
       "Failed to join meeting. Please try again later.": [
         "Beitritt zum Meeting fehlgeschlagen. Bitte versuche es später erneut."
+      ],
+      "Failed to load recordings": [
+        "Aufnahme konnte nicht geladen werden"
       ],
       "Failed to lock meeting": [
         "Fehler beim Sperren des Meetings"
@@ -1954,6 +1966,9 @@
       "Enter your own password (as trusted contact).": [
         "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
       ],
+      "Everyone has been disconnected from the call.": [
+        "Alle wurden vom Anfruf getrennt."
+      ],
       "Failed to update meeting name": [
         "Fehler beim Aktualisieren der Besprechungsbezeichnung"
       ],
@@ -2122,6 +2137,9 @@
       "No publications": [
         "Keine Veröffentlichungen"
       ],
+      "No recordings found on this device.": [
+        "Keine Aufnahmen auf diesem Gerät gefunden."
+      ],
       "No remote participants": [
         "Keine Fernteilnehmer"
       ],
@@ -2188,6 +2206,9 @@
       "Recording": [
         "Aufnahme"
       ],
+      "Recording deleted": [
+        "Aufnahme gelöscht"
+      ],
       "Recording in progress": [
         "Aufnahme läuft"
       ],
@@ -2196,6 +2217,9 @@
       ],
       "Recording will begin and attendees will be notified.": [
         "Die Aufzeichnung beginnt und die Teilnehmer werden benachrichtigt."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Aufnahmen werden lokal in deinem Browser gespeichert. Lade alle herunter, die du behalten möchtest, andernfalls werden sie nach 30 Tagen automatisch gelöscht."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
@@ -2286,6 +2310,9 @@
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Dieses Meeting wurde in der Desktop-App ${ MEET_APP_NAME } geöffnet."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Diese Aufnahme wird von diesem Gerät dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Dies beendet das Meeting für alle Teilnehmer und beendet das Teilen des Bildschirms"
@@ -2527,6 +2554,9 @@
       "Last used": [
         "Zuletzt genutzt"
       ],
+      "Manage recordings": [
+        "Aufnahmen verwalten"
+      ],
       "Meeting ID": [
         "Meeting-ID"
       ],
@@ -2565,6 +2595,9 @@
       ],
       "Repeat event": [
         "Termin wiederholen"
+      ],
+      "Return to dashboard": [
+        "Zurück zum Dashboard"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -2886,8 +2919,14 @@
       "Actions": [
         "Aktionen"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Name": [
         "Name"
+      ],
+      "Size": [
+        "Größe"
       ]
     },
     "Title": {
@@ -2944,6 +2983,9 @@
       ],
       "Debug Overlay": [
         "Debug-Overlay"
+      ],
+      "Delete recording?": [
+        "Aufnahme löschen?"
       ],
       "Enter your password": [
         "Passwort eingeben"
@@ -3042,6 +3084,9 @@
       "Record this meeting": [
         "Dieses Meeting aufzeichnen"
       ],
+      "Recordings": [
+        "Aufnahmen"
+      ],
       "Remote Participants": [
         "Fernteilnehmer"
       ],
@@ -3117,9 +3162,6 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Erstelle einen neuen Meeting-Link. Der aktuelle Link wird ungültig."
-      ],
-      "Instant AI assistance, human expert on hand!": [
-        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
       "Recurring meeting": [
         "Wiederkehrendes Meeting"
