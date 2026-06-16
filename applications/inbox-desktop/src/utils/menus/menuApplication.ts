@@ -57,11 +57,12 @@ export const setApplicationMenu = () => {
                     type: "normal",
                     click: () => shell.openPath(app.getPath("logs")),
                 },
+                { type: "separator" },
                 {
                     label: hardwareAccelerationDisabled
                         ? c("App Menu").t`Enable Hardware Acceleration`
                         : c("App Menu").t`Disable Hardware Acceleration`,
-                    type: "checkbox",
+                    type: "normal",
                     click: () => {
                         dialog
                             .showMessageBox({
@@ -80,9 +81,9 @@ export const setApplicationMenu = () => {
                                     : c("App menu").t`Disable Hardware Acceleration`,
                                 detail: hardwareAccelerationDisabled
                                     ? c("App menu")
-                                          .t`When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.`
+                                          .t`When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.`
                                     : c("App menu")
-                                          .t`When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.`,
+                                          .t`Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.`,
                             })
                             .then(({ response }) => {
                                 if (response == 0) {
@@ -94,7 +95,6 @@ export const setApplicationMenu = () => {
                             });
                     },
                 },
-                { type: "separator" },
                 {
                     label: c("App menu").t`Enable diagnostic logs`,
                     type: "normal",
