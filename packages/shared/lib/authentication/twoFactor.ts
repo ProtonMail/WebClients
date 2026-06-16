@@ -60,11 +60,11 @@ export const getHasAnyTwoFactorEnabled = (Enabled?: number) => {
     return (Enabled || 0) > 0;
 };
 
-export const getHasTOTPEnabled = (Enabled?: number) => {
+export const getHasTOTPEnabled = (Enabled: number | undefined) => {
     return hasBit(Enabled || 0, SETTINGS_2FA_ENABLED.OTP);
 };
 
-export const getHasFIDO2Enabled = (Enabled?: number) => {
+export const getHasFIDO2Enabled = (Enabled: number | undefined) => {
     return hasBit(Enabled || 0, SETTINGS_2FA_ENABLED.FIDO2);
 };
 

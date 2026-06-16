@@ -135,6 +135,7 @@ enum AccountFlag {
     VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
+    PasswordReminderASR = 'PasswordReminderASR',
 }
 
 enum PaymentsFlag {

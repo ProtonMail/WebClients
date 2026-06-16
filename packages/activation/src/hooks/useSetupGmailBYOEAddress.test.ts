@@ -25,8 +25,9 @@ jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
 }));
 
 const mockApi = jest.fn();
-jest.mock('@proton/components/index', () => ({
-    useApi: () => mockApi,
+jest.mock('@proton/components/hooks/useApi', () => ({
+    __esModule: true,
+    default: () => mockApi,
 }));
 
 jest.mock('@proton/account/addresses/hooks');
