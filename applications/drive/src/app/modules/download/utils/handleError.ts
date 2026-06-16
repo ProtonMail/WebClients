@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { NodeEntity } from '@proton/drive/index';
 import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { getNodeName } from '@proton/drive/modules/nodes';
 import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
 import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
@@ -21,7 +22,7 @@ function trackError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
                 component: 'download-manager',
             },
             extra: {
-                filesTypes: nodes.map((f) => getFileExtension(f.name)),
+                filesTypes: nodes.map((f) => getFileExtension(getNodeName(f))),
                 storageSize: nodes.reduce((acc, node) => getNodeStorageSize(node) + acc, 0),
             },
         })

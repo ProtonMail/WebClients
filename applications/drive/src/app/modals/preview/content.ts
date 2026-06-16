@@ -1,4 +1,4 @@
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import { isIWAD, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
@@ -33,7 +33,7 @@ interface DownloadController {
     isDownloadCompleteWithSignatureIssues: () => boolean;
 }
 
-export function getContentPreviewMethod(node: MaybeNode): ContentPreviewMethod {
+export function getContentPreviewMethod(node: NodeEntity): ContentPreviewMethod {
     const mimeType = getNodeMimeType(node);
 
     if (!mimeType) {

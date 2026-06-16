@@ -1,4 +1,5 @@
 import type { Author, NodeEntity } from '@proton/drive';
+import { getNodeName } from '@proton/drive/modules/nodes';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 
 import { Logger } from '../../shared/Logger';
@@ -95,9 +96,10 @@ function resolveAuthor(author: Author): string {
 }
 
 export function toCoreNodeFields(node: NodeEntity): CoreNodeFields {
+    const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
     return {
         uid: node.uid,
-        name: node.name,
+        name: getNodeName(node),
         type: node.type,
         creationTime: node.creationTime,
         modificationTime: node.modificationTime,
@@ -107,9 +109,9 @@ export function toCoreNodeFields(node: NodeEntity): CoreNodeFields {
         isSharedPublicly: node.isSharedPublicly,
         keyAuthor: node.keyAuthor,
         trashTime: node.trashTime,
-        activeRevisionContentAuthor: node.activeRevision?.contentAuthor,
-        activeRevisionCreationTime: node.activeRevision?.creationTime,
-        activeRevisionStorageSize: node.activeRevision?.storageSize,
+        activeRevisionContentAuthor: activeRevision?.contentAuthor,
+        activeRevisionCreationTime: activeRevision?.creationTime,
+        activeRevisionStorageSize: activeRevision?.storageSize,
     };
 }
 

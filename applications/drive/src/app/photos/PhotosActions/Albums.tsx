@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { type NodeEntity, PhotoTag, getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getEllipsedName } from '@proton/drive/modules/intl';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
@@ -12,7 +11,7 @@ import { usePhotosStore } from '../usePhotos.store';
 export const createAlbum = async (name: string): Promise<NodeEntity | undefined> => {
     const ellipsedName = getEllipsedName(name);
     try {
-        const { node } = getNodeEntity(await getDriveForPhotos().createAlbum(name));
+        const node = await getDriveForPhotos().createAlbum(name);
         await getBusDriver().emit(
             {
                 type: BusDriverEventName.CREATED_NODES,
@@ -37,10 +36,10 @@ export const createAlbum = async (name: string): Promise<NodeEntity | undefined>
 
 export const renameAlbum = async (nodeUid: string, name: string): Promise<void> => {
     try {
-        const maybeNode = await getDriveForPhotos().updateAlbum(nodeUid, {
+        const node = await getDriveForPhotos().updateAlbum(nodeUid, {
             name,
         });
-        const { node } = getNodeEntity(maybeNode);
+
         await getBusDriver().emit(
             {
                 type: BusDriverEventName.UPDATED_NODES,
@@ -80,7 +79,7 @@ export const toggleFavorite = async (nodeUid: string) => {
             ])
         );
         const photosRootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
-        const photosRootFolderUid = photosRootFolder.ok ? photosRootFolder.value.uid : undefined;
+        const photosRootFolderUid = photosRootFolder.uid;
 
         await getBusDriver().emit(
             {

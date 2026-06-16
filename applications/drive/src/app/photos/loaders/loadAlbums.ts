@@ -40,12 +40,12 @@ const loadAlbumsFromIterator = async (iterator: AsyncIterable<MaybeMissingNode>)
             continue;
         }
         const ancestry = await getNodeAncestry(albumNode.uid, drive);
-        if (!ancestry.ok || !ancestry.value[0]?.ok) {
+        if (!ancestry.ok || !ancestry.value[0]) {
             sendErrorReport(new Error('[loadAlbums] Failed to resolve node ancestry'));
             continue;
         }
 
-        const rootNodeSharedId = ancestry.value[0].value.deprecatedShareId;
+        const rootNodeSharedId = ancestry.value[0].deprecatedShareId;
         fetchedUids.add(albumNode.uid);
         push({
             nodeUid: albumNode.uid,

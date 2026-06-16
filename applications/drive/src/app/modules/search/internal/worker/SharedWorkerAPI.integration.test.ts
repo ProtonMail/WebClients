@@ -1,4 +1,3 @@
-import type { MaybeNode, NodeEntity } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
@@ -40,15 +39,14 @@ const STATE_CHANNEL = `search-state-${USER_ID}`;
 
 // --- Node helpers ---
 
-const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode =>
-    ({ ok: true, value: createMockNodeEntity(overrides) }) as unknown as MaybeNode;
-
-const folder = (uid: string, name: string) => makeMaybeNode({ uid, name, type: 'folder' as any });
+const folder = (uid: string, name: string) =>
+    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'folder' as any });
 const trashedFolder = (uid: string, name: string) =>
-    makeMaybeNode({ uid, name, type: 'folder' as any, trashTime: new Date() });
-const file = (uid: string, name: string) => makeMaybeNode({ uid, name, type: 'file' as any });
+    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'folder' as any, trashTime: new Date() });
+const file = (uid: string, name: string) =>
+    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'file' as any });
 const trashedFile = (uid: string, name: string) =>
-    makeMaybeNode({ uid, name, type: 'file' as any, trashTime: new Date() });
+    createMockNodeEntity({ uid, name: { ok: true, value: name }, type: 'file' as any, trashTime: new Date() });
 
 // --- State stream ---
 
@@ -253,7 +251,12 @@ function buildComplexTree(bridge: FakeMainThreadBridge) {
     //           └── deep-deleted.pdf
 
     bridge.setMyFilesRootNode(
-        makeMaybeNode({ uid: 'root-uid', name: 'My Files', type: 'folder' as any, treeEventScopeId: SCOPE_ID })
+        createMockNodeEntity({
+            uid: 'root-uid',
+            name: { ok: true, value: 'My Files' },
+            type: 'folder' as any,
+            treeEventScopeId: SCOPE_ID,
+        })
     );
     bridge.setChildren('root-uid', [
         folder('folder-projects', 'Projects'),
@@ -443,9 +446,9 @@ describe('SharedWorkerAPI integration', () => {
             // Boot 1: small tree rooted at SCOPE_OLD.
             const bridge1 = new FakeMainThreadBridge();
             bridge1.setMyFilesRootNode(
-                makeMaybeNode({
+                createMockNodeEntity({
                     uid: 'root-1',
-                    name: 'Root 1',
+                    name: { ok: true, value: 'Root 1' },
                     type: 'folder' as any,
                     treeEventScopeId: SCOPE_OLD,
                 })
@@ -465,9 +468,9 @@ describe('SharedWorkerAPI integration', () => {
 
             const bridge2 = new FakeMainThreadBridge();
             bridge2.setMyFilesRootNode(
-                makeMaybeNode({
+                createMockNodeEntity({
                     uid: 'root-2',
-                    name: 'Root 2',
+                    name: { ok: true, value: 'Root 2' },
                     type: 'folder' as any,
                     treeEventScopeId: SCOPE_NEW,
                 })

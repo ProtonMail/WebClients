@@ -43,25 +43,25 @@ const CURRENT_FILE_NODE_UID = 'file-node-uid';
 
 const myFileRootNode = createMockNodeEntity({
     uid: 'uid-volume1Root',
-    name: 'volume1Root',
+    name: { ok: true, value: 'volume1Root' },
     type: NodeType.Folder,
 });
 
 const folder1Node = createMockNodeEntity({
     uid: 'uid-folder1',
-    name: 'folder1',
+    name: { ok: true, value: 'folder1' },
     type: NodeType.Folder,
 });
 
 const folder2Node = createMockNodeEntity({
     uid: 'uid-folder2',
-    name: 'folder2',
+    name: { ok: true, value: 'folder2' },
     type: NodeType.Folder,
 });
 
 const deviceNode = createMockNodeEntity({
     uid: 'uid-device',
-    name: 'My personal computer',
+    name: { ok: true, value: 'My personal computer' },
     type: NodeType.Folder,
 });
 
@@ -74,7 +74,7 @@ const mockNodeAncestry = (nodes: NodeEntity[]) => {
     mockGetNodeHierarchy.mockImplementation((nodeUid: string) => {
         expect(nodeUid).toBe(CURRENT_FILE_NODE_UID);
 
-        return Promise.resolve(nodes.map((node) => ({ ok: true, value: node })));
+        return Promise.resolve(nodes);
     });
 };
 

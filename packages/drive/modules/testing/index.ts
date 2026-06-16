@@ -1,1 +1,1 @@
-export { createMockNodeEntity, createMockDegradedNode } from './internal/nodeEntity';
+export { createMockNodeEntity } from './internal/nodeEntity';

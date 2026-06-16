@@ -1,5 +1,6 @@
 import type { NodeEntity, ProtonDrivePhotosClient } from '@proton/drive/index';
 import { AbortError, NodeType } from '@proton/drive/index';
+import { getNodeName } from '@proton/drive/modules/nodes';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { createDeferred, createEmptyAsyncGenerator, flushAsync, trackInstances, waitForCondition } from './testUtils';
@@ -310,9 +311,9 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'file-1',
-            name: 'file.txt',
+            name: { ok: true as const, value: 'file.txt' },
         });
-        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
         const controllerCompletion = createDeferred<void>();
@@ -344,7 +345,7 @@ describe('DownloadManager', () => {
         await manager.download([node.uid]);
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
-            name: node.name,
+            name: getNodeName(node),
             storageSize: nodeSize,
             downloadedBytes: 0,
             status: DownloadStatus.Pending,
@@ -380,7 +381,7 @@ describe('DownloadManager', () => {
 
         expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(readableStream, {
             downloadId: 'download-1',
-            filename: node.name,
+            filename: getNodeName(node),
             mimeType: 'application/octet-stream',
             size: nodeSize,
         });
@@ -407,7 +408,7 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'file-cancel',
-            name: 'file-cancel.txt',
+            name: { ok: true as const, value: 'file-cancel.txt' },
         });
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
@@ -419,7 +420,9 @@ describe('DownloadManager', () => {
             isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
+            getClaimedSizeInBytes: jest.fn(
+                () => (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0
+            ),
             downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
                 onProgress(32);
                 return controller;
@@ -466,7 +469,7 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'file-2',
-            name: 'broken.txt',
+            name: { ok: true as const, value: 'broken.txt' },
         });
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
@@ -489,7 +492,7 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'file-retry',
-            name: 'retry-me.txt',
+            name: { ok: true as const, value: 'retry-me.txt' },
         });
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
@@ -520,8 +523,8 @@ describe('DownloadManager', () => {
         const manager = DownloadManager.getInstance();
 
         const nodes: NodeEntity[] = [
-            createMockNodeEntity({ uid: 'file-a', name: 'a.txt' }),
-            createMockNodeEntity({ uid: 'file-b', name: 'b.txt' }),
+            createMockNodeEntity({ uid: 'file-a', name: { ok: true as const, value: 'a.txt' } }),
+            createMockNodeEntity({ uid: 'file-b', name: { ok: true as const, value: 'b.txt' } }),
         ];
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
@@ -571,8 +574,13 @@ describe('DownloadManager', () => {
         storeMockState.getQueueItem.mockReturnValue(undefined);
 
         const nodes: NodeEntity[] = [
-            createMockNodeEntity({ uid: 'folder-1', name: 'folder', type: NodeType.Folder, activeRevision: undefined }),
-            createMockNodeEntity({ uid: 'file-3', name: 'photo.jpg' }),
+            createMockNodeEntity({
+                uid: 'folder-1',
+                name: { ok: true as const, value: 'folder' },
+                type: NodeType.Folder,
+                activeRevision: undefined,
+            }),
+            createMockNodeEntity({ uid: 'file-3', name: { ok: true as const, value: 'photo.jpg' } }),
         ];
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
@@ -662,8 +670,8 @@ describe('DownloadManager', () => {
         storeMockState.getQueueItem.mockReturnValue(undefined);
 
         const nodes: NodeEntity[] = [
-            createMockNodeEntity({ uid: 'file-1', name: 'first.txt' }),
-            createMockNodeEntity({ uid: 'file-2', name: 'second.txt' }),
+            createMockNodeEntity({ uid: 'file-1', name: { ok: true as const, value: 'first.txt' } }),
+            createMockNodeEntity({ uid: 'file-2', name: { ok: true as const, value: 'second.txt' } }),
         ];
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
@@ -769,7 +777,10 @@ describe('DownloadManager', () => {
         storeMockState.addDownloadItem.mockReturnValue('download-cancel-active');
         storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
 
-        const node: NodeEntity = createMockNodeEntity({ uid: 'file-cancel-active', name: 'active.txt' });
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'file-cancel-active',
+            name: { ok: true as const, value: 'active.txt' },
+        });
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
         const controllerCompletion = createDeferred<void>();
@@ -780,7 +791,9 @@ describe('DownloadManager', () => {
             isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
+            getClaimedSizeInBytes: jest.fn(
+                () => (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0
+            ),
             downloadToStream: jest.fn(() => controller),
         };
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
@@ -822,7 +835,10 @@ describe('DownloadManager', () => {
 
         storeMockState.addDownloadItem.mockReturnValue('download-race');
 
-        const node: NodeEntity = createMockNodeEntity({ uid: 'file-race', name: 'race.txt' });
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'file-race',
+            name: { ok: true as const, value: 'race.txt' },
+        });
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
         const controllerCompletion = createDeferred<void>();
@@ -833,7 +849,9 @@ describe('DownloadManager', () => {
             isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
+            getClaimedSizeInBytes: jest.fn(
+                () => (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0
+            ),
             downloadToStream: jest.fn(() => controller),
         };
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
@@ -921,9 +939,9 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'buffer-file-1',
-            name: 'video.mp4',
+            name: { ok: true as const, value: 'video.mp4' },
         });
-        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
 
         const buffer: Uint8Array<ArrayBuffer>[] = [new Uint8Array([1, 2, 3, 4])];
         const mimeType = 'video/mp4';
@@ -934,13 +952,13 @@ describe('DownloadManager', () => {
 
         expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(expect.any(ReadableStream), {
             downloadId: 'buffer-download',
-            filename: node.name,
+            filename: getNodeName(node),
             mimeType,
             size: nodeSize,
         });
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
-            name: node.name,
+            name: getNodeName(node),
             storageSize: nodeSize,
             status: DownloadStatus.Finished,
             nodeUids: [node.uid],
@@ -987,10 +1005,10 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'photo-1',
-            name: 'photo.jpg',
+            name: { ok: true as const, value: 'photo.jpg' },
             type: NodeType.Photo,
         });
-        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
         hydrateAndCheckPhotosMock.mockResolvedValue({ nodes: [node] });
 
         const controllerCompletion = createDeferred<void>();
@@ -1025,7 +1043,7 @@ describe('DownloadManager', () => {
         expect(mockDrivePhotosClient.onMessage).toHaveBeenCalledTimes(2);
         expect(sdkMock.driveMock.onMessage).not.toHaveBeenCalled();
         expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
-            name: node.name,
+            name: getNodeName(node),
             storageSize: nodeSize,
             downloadedBytes: 0,
             status: DownloadStatus.Pending,
@@ -1054,9 +1072,9 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'file-1',
-            name: 'file.txt',
+            name: { ok: true as const, value: 'file.txt' },
         });
-        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
         const revisionUid = 'revision-123';
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
@@ -1095,7 +1113,7 @@ describe('DownloadManager', () => {
         await manager.downloadRevision(node.uid, revisionUid);
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
-            name: node.name,
+            name: getNodeName(node),
             storageSize: nodeSize,
             downloadedBytes: 0,
             status: DownloadStatus.Pending,
@@ -1128,9 +1146,9 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'file-1',
-            name: 'file.txt',
+            name: { ok: true as const, value: 'file.txt' },
         });
-        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
         const revisionUid = 'revision-456';
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
@@ -1183,7 +1201,7 @@ describe('DownloadManager', () => {
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'file-retry-revision',
-            name: 'retry-revision.txt',
+            name: { ok: true as const, value: 'retry-revision.txt' },
         });
         const revisionUid = 'revision-789';
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
@@ -1218,8 +1236,11 @@ describe('DownloadManager', () => {
             const schedulerInstance = getSchedulerInstance();
             storeMockState.addDownloadItem.mockReturnValue('download-1');
 
-            const node: NodeEntity = createMockNodeEntity({ uid: 'file-1', name: 'signed.txt' });
-            const nodeSize = node.activeRevision?.storageSize ?? 0;
+            const node: NodeEntity = createMockNodeEntity({
+                uid: 'file-1',
+                name: { ok: true as const, value: 'signed.txt' },
+            });
+            const nodeSize = (node.activeRevision?.ok ? node.activeRevision.value.storageSize : undefined) ?? 0;
             hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
             const controllerCompletion = createDeferred<void>();
@@ -1305,7 +1326,10 @@ describe('DownloadManager', () => {
 
         storeMockState.addDownloadItem.mockReturnValue('download-pending-cancel');
 
-        const node: NodeEntity = createMockNodeEntity({ uid: 'file-pending', name: 'pending.txt' });
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'file-pending',
+            name: { ok: true as const, value: 'pending.txt' },
+        });
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
         // Block createFileDownloadStream so the download stays pending (not in activeDownloads)

@@ -24,7 +24,7 @@ describe('getNodeEffectiveRole', () => {
         uid,
         parentUid,
         directRole,
-        name: `node-${uid}`,
+        name: { ok: true, value: `node-${uid}` },
         keyAuthor: { ok: true, value: 'test@proton.me' },
         nameAuthor: { ok: true, value: 'test@proton.me' },
         type,
@@ -51,7 +51,7 @@ describe('getNodeEffectiveRole', () => {
     describe('short circuit when role is Admin', () => {
         it('without calling drive.getNode when role argument is Admin', async () => {
             const node = createMockNode('node', MemberRole.Viewer, 'parent-uid');
-            mockDrive.getNode.mockResolvedValue({ ok: true, value: createMockNode('parent', MemberRole.Editor) });
+            mockDrive.getNode.mockResolvedValue(createMockNode('parent', MemberRole.Editor));
 
             const result = await getNodeEffectiveRole(node, mockDrive, MemberRole.Admin);
 
@@ -72,7 +72,7 @@ describe('getNodeEffectiveRole', () => {
             const parentNode = createMockNode('parent-node', MemberRole.Admin, 'grandparent-node');
             const childNode = createMockNode('child-node', MemberRole.Viewer, 'parent-node');
 
-            mockDrive.getNode.mockResolvedValueOnce({ ok: true, value: parentNode });
+            mockDrive.getNode.mockResolvedValueOnce(parentNode);
 
             const result = await getNodeEffectiveRole(childNode, mockDrive);
 
@@ -91,9 +91,9 @@ describe('getNodeEffectiveRole', () => {
             const node = createMockNode('node', MemberRole.Viewer, 'p1');
 
             mockDrive.getNode
-                .mockResolvedValueOnce({ ok: true, value: parent1 })
-                .mockResolvedValueOnce({ ok: true, value: parent2 })
-                .mockResolvedValueOnce({ ok: true, value: parent3 });
+                .mockResolvedValueOnce(parent1)
+                .mockResolvedValueOnce(parent2)
+                .mockResolvedValueOnce(parent3);
 
             const result = await getNodeEffectiveRole(node, mockDrive);
 
@@ -129,10 +129,10 @@ describe('getNodeEffectiveRole', () => {
             const album2Node = createMockNode('album-2', MemberRole.Editor);
 
             mockPhotosDrive.getNode
-                .mockResolvedValueOnce({ ok: true, value: parentNode })
-                .mockResolvedValueOnce({ ok: true, value: photoNodeWithAlbums })
-                .mockResolvedValueOnce({ ok: true, value: album1Node })
-                .mockResolvedValueOnce({ ok: true, value: album2Node });
+                .mockResolvedValueOnce(parentNode)
+                .mockResolvedValueOnce(photoNodeWithAlbums)
+                .mockResolvedValueOnce(album1Node)
+                .mockResolvedValueOnce(album2Node);
 
             const result = await getNodeEffectiveRole(photoNode, mockPhotosDrive);
 

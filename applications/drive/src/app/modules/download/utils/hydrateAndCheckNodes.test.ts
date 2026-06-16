@@ -1,16 +1,11 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { hydrateAndCheckNodes } from './hydrateAndCheckNodes';
 
 jest.mock('@proton/drive/index', () => ({
     getDrive: jest.fn(),
-}));
-
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
-    getNodeEntity: jest.fn(),
 }));
 
 jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
@@ -26,7 +21,6 @@ const createAsyncIterable = <T>(items: T[]) =>
     })();
 
 const mockGetDrive = getDrive as jest.MockedFunction<typeof getDrive>;
-const mockGetNodeEntity = getNodeEntity as jest.MockedFunction<typeof getNodeEntity>;
 const mockIsProtonDocsDocument = isProtonDocsDocument as jest.MockedFunction<typeof isProtonDocsDocument>;
 const mockIsProtonDocsSpreadsheet = isProtonDocsSpreadsheet as jest.MockedFunction<typeof isProtonDocsSpreadsheet>;
 
@@ -40,16 +34,9 @@ describe('hydrateAndCheckNodes', () => {
         const drive = { iterateNodes };
         mockGetDrive.mockReturnValue(drive as unknown as ReturnType<typeof getDrive>);
 
-        const maybeNodeA = { ok: true, value: Symbol('maybe-node-a') } as unknown;
-        const maybeNodeB = { ok: true, value: Symbol('maybe-node-b') } as unknown;
-        iterateNodes.mockReturnValue(createAsyncIterable([maybeNodeA, maybeNodeB]));
-
         const nodeA = { uid: 'uid-a', mediaType: 'image/png' } as unknown as NodeEntity;
         const nodeB = { uid: 'uid-b', mediaType: 'image/jpeg' } as unknown as NodeEntity;
-        mockGetNodeEntity.mockReturnValueOnce({ node: nodeA, errors: new Map() }).mockReturnValueOnce({
-            node: nodeB,
-            errors: new Map(),
-        });
+        iterateNodes.mockReturnValue(createAsyncIterable([nodeA, nodeB]));
 
         mockIsProtonDocsDocument.mockReturnValue(false);
         mockIsProtonDocsSpreadsheet.mockReturnValue(false);
@@ -57,8 +44,6 @@ describe('hydrateAndCheckNodes', () => {
         const result = await hydrateAndCheckNodes(['uid-a', 'uid-b']);
 
         expect(iterateNodes).toHaveBeenCalledWith(['uid-a', 'uid-b']);
-        expect(mockGetNodeEntity).toHaveBeenNthCalledWith(1, maybeNodeA);
-        expect(mockGetNodeEntity).toHaveBeenNthCalledWith(2, maybeNodeB);
         expect(result).toEqual({ nodes: [nodeA, nodeB], containsUnsupportedFile: undefined });
     });
 
@@ -67,14 +52,9 @@ describe('hydrateAndCheckNodes', () => {
         const drive = { iterateNodes };
         mockGetDrive.mockReturnValue(drive as unknown as ReturnType<typeof getDrive>);
 
-        const maybeNode = { ok: true, value: Symbol('maybe-node') } as unknown;
-        iterateNodes.mockReturnValue(createAsyncIterable([maybeNode, maybeNode]));
-
         const supportedNode = { uid: 'uid-1', mediaType: 'image/png' } as unknown as NodeEntity;
         const unsupportedNode = { uid: 'uid-2', mediaType: 'application/proton-docs' } as unknown as NodeEntity;
-        mockGetNodeEntity
-            .mockReturnValueOnce({ node: supportedNode, errors: new Map() })
-            .mockReturnValueOnce({ node: unsupportedNode, errors: new Map() });
+        iterateNodes.mockReturnValue(createAsyncIterable([supportedNode, unsupportedNode]));
 
         mockIsProtonDocsDocument.mockImplementation((mediaType: string) => mediaType === 'application/proton-docs');
         mockIsProtonDocsSpreadsheet.mockReturnValue(false);
@@ -92,10 +72,9 @@ describe('hydrateAndCheckNodes', () => {
         const drive = { iterateNodes };
         mockGetDrive.mockReturnValue(drive as unknown as ReturnType<typeof getDrive>);
 
-        const missingNode = { ok: false, error: { missingUid: 'missing-uid' } };
+        const missingNode = { missingUid: 'missing-uid' };
         iterateNodes.mockReturnValue(createAsyncIterable([missingNode]));
 
-        await expect(hydrateAndCheckNodes(['missing-uid'])).rejects.toThrow(`Requested item doesn't exist anymore`);
-        expect(mockGetNodeEntity).not.toHaveBeenCalled();
+        await expect(hydrateAndCheckNodes(['missing-uid'])).rejects.toThrow("Requested item doesn't exist anymore");
     });
 });

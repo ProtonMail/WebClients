@@ -1,5 +1,3 @@
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-
 import type { TreeEventScopeId } from '../../../shared/types';
 import { IndexKind } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';
@@ -20,8 +18,7 @@ export class MyFilesIndexPopulator extends NodeTreeIndexPopulator {
 
     protected async getRootNodeUid(ctx: TaskContext): Promise<string> {
         const maybeNode = await ctx.bridge.driveSdk.getMyFilesRootFolder();
-        const { node } = getNodeEntity(maybeNode);
-        return node.uid;
+        return maybeNode.uid;
     }
 
     async *visitAndProduceIndexEntries(ctx: TaskContext): AsyncIterableIterator<IndexEntry> {
@@ -38,10 +35,9 @@ export class MyFilesIndexPopulator extends NodeTreeIndexPopulator {
         for (const maybeNode of trashedNodes) {
             ctx.signal.throwIfAborted();
 
-            const { node } = getNodeEntity(maybeNode);
-            this.maybeWarnForUndecryptableNodeName(maybeNode, node.uid);
+            this.maybeWarnForUndecryptableNodeName(maybeNode, maybeNode.uid);
 
-            yield this.createEntryForNode(node, '', generation);
+            yield this.createEntryForNode(maybeNode, '', generation);
         }
     }
 }

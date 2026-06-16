@@ -2,9 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 import { AbortError, MemberRole, ProtonDriveError } from '@proton/drive';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import useLoading from '@proton/hooks/useLoading';
@@ -36,7 +35,7 @@ export function usePreviewState({
     const nodeUidRef = useRef<string>(nodeUid);
     nodeUidRef.current = nodeUid;
 
-    const [node, setNode] = useState<MaybeNode | undefined>(undefined);
+    const [node, setNode] = useState<NodeEntity | undefined>(undefined);
     const [isLoading, withIsLoading] = useLoading(true);
     const [isContentLoading, withIsContentLoading] = useLoading(false);
     const [nodeData, setNodeData] = useState<
@@ -67,7 +66,7 @@ export function usePreviewState({
                 .getNode(nodeUid)
                 .then(async (node) => {
                     setNode(node);
-                    const effectiveRole = await getNodeEffectiveRole(getNodeEntity(node).node, drive);
+                    const effectiveRole = await getNodeEffectiveRole(node, drive);
                     setRole(effectiveRole);
                 })
                 .catch((error) => {
@@ -131,7 +130,7 @@ export function usePreviewState({
         };
     }, [loadContents]);
 
-    const directRole = node?.ok ? node.value.directRole : node?.error.directRole;
+    const directRole = node?.directRole;
     const canShare = directRole === MemberRole.Admin;
 
     const navigation = getNavigation(nodeUid, previewableNodeUids, (newNodeUid) => {

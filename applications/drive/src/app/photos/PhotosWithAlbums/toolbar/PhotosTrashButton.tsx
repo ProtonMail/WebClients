@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { DropdownMenuButton, ToolbarButton } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive/index';
-import { getNodeName, getNodeNameFallback } from '@proton/drive/modules/nodes';
+import { getNodeName, getNodeNameFallback, isMissingNode } from '@proton/drive/modules/nodes';
 import { useLoading } from '@proton/hooks';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
@@ -39,10 +39,10 @@ const PhotosTrashButton = ({ selectedPhotos, showIconOnly, dropDownMenuButton }:
 
         const missingUids = selectedPhotos.filter((p) => !p.additionalInfo).map((p) => p.nodeUid);
         if (missingUids.length > 0) {
-            for await (const maybeNode of drive.iterateNodes(missingUids)) {
-                if (maybeNode.ok) {
-                    const uid = maybeNode.value.uid;
-                    itemsMap[uid] = { uid, parentUid: undefined, name: getNodeName(maybeNode) };
+            for await (const node of drive.iterateNodes(missingUids)) {
+                if (!isMissingNode(node)) {
+                    const uid = node.uid;
+                    itemsMap[uid] = { uid, parentUid: undefined, name: getNodeName(node) };
                 }
             }
         }

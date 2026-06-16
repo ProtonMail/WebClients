@@ -7,9 +7,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { FileInput, InputFieldTwo, Tabs, Toggle } from '@proton/components';
-import type { MaybeNode } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 import type { ExpectedTreeNode } from '@proton/drive/diagnostic';
 import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
+import { getNodeName } from '@proton/drive/modules/nodes';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 
 import { withHoc } from '../modalUtils/withHoc';
@@ -20,9 +21,9 @@ type Props = {
     state: State;
     error?: unknown;
     results?: Results;
-    currentNode?: MaybeNode;
+    currentNode?: NodeEntity;
     runDiagnostics: (options: {
-        node?: MaybeNode;
+        node?: NodeEntity;
         verifyContent?: boolean;
         verifyThumbnails?: boolean;
         expectedStructure?: ExpectedTreeNode;
@@ -69,9 +70,9 @@ function DiagnosticsModalViewOptions({
     currentNode,
     runDiagnostics,
 }: {
-    currentNode?: MaybeNode;
+    currentNode?: NodeEntity;
     runDiagnostics: (options: {
-        node?: MaybeNode;
+        node?: NodeEntity;
         verifyContent?: boolean;
         verifyThumbnails?: boolean;
         expectedStructure?: ExpectedTreeNode;
@@ -92,7 +93,7 @@ function DiagnosticsModalViewOptions({
         });
     };
 
-    const name = currentNode?.ok ? currentNode.value.name : undefined;
+    const name = currentNode ? getNodeName(currentNode) : undefined;
 
     return (
         <Card>

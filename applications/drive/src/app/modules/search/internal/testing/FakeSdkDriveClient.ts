@@ -1,27 +1,27 @@
-import type { MaybeNode, NodeType } from '@protontech/drive-sdk';
+import type { NodeEntity, NodeType } from '@protontech/drive-sdk';
 
 import type { SdkDriveClient } from '../mainThread/MainThreadBridge';
 
 export class FakeSdkDriveClient implements SdkDriveClient {
-    private rootNode: MaybeNode | undefined;
-    private nodes = new Map<string, MaybeNode>();
-    private tree = new Map<string, MaybeNode[]>();
-    private trashedNodes: MaybeNode[] = [];
+    private rootNode: NodeEntity | undefined;
+    private nodes = new Map<string, NodeEntity>();
+    private tree = new Map<string, NodeEntity[]>();
+    private trashedNodes: NodeEntity[] = [];
     private iterateError: Error | undefined;
 
-    setNode(nodeUid: string, node: MaybeNode): void {
+    setNode(nodeUid: string, node: NodeEntity): void {
         this.nodes.set(nodeUid, node);
     }
 
-    setMyFilesRootNode(node: MaybeNode): void {
+    setMyFilesRootNode(node: NodeEntity): void {
         this.rootNode = node;
     }
 
-    setChildren(parentUid: string, children: MaybeNode[]): void {
+    setChildren(parentUid: string, children: NodeEntity[]): void {
         this.tree.set(parentUid, children);
     }
 
-    setTrashedNodes(nodes: MaybeNode[]): void {
+    setTrashedNodes(nodes: NodeEntity[]): void {
         this.trashedNodes = nodes;
     }
 
@@ -29,7 +29,7 @@ export class FakeSdkDriveClient implements SdkDriveClient {
         this.iterateError = error;
     }
 
-    async getNode(nodeUid: string): Promise<MaybeNode> {
+    async getNode(nodeUid: string): Promise<NodeEntity> {
         const node = this.nodes.get(nodeUid);
         if (node === undefined) {
             throw new Error(`FakeSdkDriveClient: node "${nodeUid}" not set. Call setNode() first.`);
@@ -37,7 +37,7 @@ export class FakeSdkDriveClient implements SdkDriveClient {
         return node;
     }
 
-    async getMyFilesRootFolder(): Promise<MaybeNode> {
+    async getMyFilesRootFolder(): Promise<NodeEntity> {
         if (this.rootNode === undefined) {
             throw new Error('FakeSdkDriveClient: rootNode not set. Call setMyFilesRootNode() first.');
         }
@@ -47,7 +47,7 @@ export class FakeSdkDriveClient implements SdkDriveClient {
     async *iterateFolderChildren(
         parentNodeUid: string,
         _filterOptions?: { type?: NodeType }
-    ): AsyncIterable<MaybeNode> {
+    ): AsyncIterable<NodeEntity> {
         if (this.iterateError) {
             throw this.iterateError;
         }
@@ -57,7 +57,7 @@ export class FakeSdkDriveClient implements SdkDriveClient {
         }
     }
 
-    async *iterateTrashedNodes(): AsyncIterable<MaybeNode> {
+    async *iterateTrashedNodes(): AsyncIterable<NodeEntity> {
         for (const node of this.trashedNodes) {
             yield node;
         }
