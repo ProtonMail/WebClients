@@ -63,7 +63,8 @@ const config: ForgeConfig = {
             name: "@electron-forge/maker-squirrel",
             config: {
                 name: "proton_mail", // Avoids clash with ProtonMail folder used by Bridge in appData
-                iconUrl: `${__dirname}/assets/icons/${getIco()}`,
+                // Windows fetches this URL at install time for the Apps & Features icon, do not move the asset.
+                iconUrl: `https://raw.githubusercontent.com/ProtonMail/WebClients/refs/heads/main/applications/inbox-desktop/assets/icons/${getIco()}`,
                 setupIcon: `${__dirname}/assets/icons/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
                 vendorDirectory: `${__dirname}/../../packages/shared/lib/squirrel/assets`,
