@@ -13290,6 +13290,18 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Ao ativar o início de sessão por código QR, você poderá fazer o início de sessão digitalizando um código QR caso esqueça sua senha. Basta estar conectado a um serviço da ${ BRAND_NAME } em outro dispositivo."
+      ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Ativando o backup de dados nesse dispositivo restaurará o acesso a e-mails, contatos, arquivos, senhas e qualquer dados criptografados na sua conta depois da redefinição de senha, simplificando o início sessão"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "A geração de uma nova frase de recuperação desativará sua frase de recuperação atual."
+      ],
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Sua frase de recuperação permitirá que você faça o início de sessão e recupere seus dados caso perca o acesso à sua conta da ${ BRAND_NAME }. É composta por 12 palavras e funciona como uma senha de segurança."
       ]
     },
     "info": {
@@ -14035,7 +14047,7 @@
         "Permitir a recuperação por telefone"
       ],
       "Allow recovery by recovery phrase": [
-        "Permita a recuperação através de uma frase de recuperação"
+        "Permitir a recuperação através de uma frase de recuperação"
       ],
       "Allow recovery using a trusted device": [
         "Permitir recuperação usando dispositivo confiável"
@@ -15487,6 +15499,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "Certifique-se de ter acesso a um e-mail ou número de telefone de recuperação e de dispor de uma opção de recuperação de dados."
       ]
     },
     "label": {
