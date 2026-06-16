@@ -9,7 +9,8 @@ jest.useFakeTimers().setSystemTime(now);
 const makeUnleash = (flags: Record<string, boolean> = { PasswordReminders: true }) =>
     ({ isEnabled: jest.fn((flag: string) => flags[flag] || false) }) as unknown as UnleashClient;
 
-const makeUser = (overrides: Partial<UserModel> = {}): UserModel => ({ isPrivate: true, ...overrides }) as UserModel;
+const makeUser = (overrides: Partial<UserModel> = {}): UserModel =>
+    ({ isPrivate: true, Flags: { sso: false }, ...overrides }) as UserModel;
 
 const secondsFromNow = (offsetSeconds: number) => Math.floor(now.getTime() / 1000) + offsetSeconds;
 

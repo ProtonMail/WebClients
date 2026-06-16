@@ -3,13 +3,14 @@ import { useCallback, useEffect, useMemo } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMeasurementGroups, TelemetrySafetyReviewCtrEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { RecoveryActionItem, RecoveryActionItemsIds } from '../recoveryState/recoveryState';
 
-const variant = 'A';
-
 export const useSafetyReviewCtrTelemetry = ({ activeStep }: { activeStep: RecoveryActionItem }) => {
     const api = useApi();
+    const isPasswordReminderInASREnabled = useFlag('PasswordReminderASR');
+    const variant = isPasswordReminderInASREnabled ? 'B' : 'A';
 
     const commonProps = useMemo(
         () => ({

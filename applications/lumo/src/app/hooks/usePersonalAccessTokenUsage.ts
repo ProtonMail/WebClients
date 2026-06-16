@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { useApi } from '@proton/components/index';
+import useApi from '@proton/components/hooks/useApi';
 
 import type { PersonalAccessTokenUsageDay } from '../remote/personalAccessToken';
 import { getPersonalAccessTokenUsageRequest } from '../remote/personalAccessToken';
@@ -138,20 +138,20 @@ export const getLoadingUsageState = (): TokenUsageState => ({
  * Fetches LLM token usage for a single Personal Access Token over the given
  * window (default 30 days). Returns per-day counts and totals.
  */
-export const usePersonalAccessTokenUsage = (
-    tokenId: string,
-    windowDays = 30
-): TokenUsageState => {
+export const usePersonalAccessTokenUsage = (tokenId: string, windowDays = 30): TokenUsageState => {
     const api = useApi();
     const apiRef = useRef(api);
     apiRef.current = api;
 
     const [state, setState] = useState<TokenUsageState>(EMPTY_STATE);
 
-    const load = useCallback(async (onDone: (result: TokenUsageState) => void) => {
-        const result = await fetchPersonalAccessTokenUsage(apiRef.current, tokenId, windowDays);
-        onDone(result);
-    }, [tokenId, windowDays]);
+    const load = useCallback(
+        async (onDone: (result: TokenUsageState) => void) => {
+            const result = await fetchPersonalAccessTokenUsage(apiRef.current, tokenId, windowDays);
+            onDone(result);
+        },
+        [tokenId, windowDays]
+    );
 
     // React.StrictMode double-invokes effects in development. The ignore flag
     // ensures the first (simulated) unmount discards its result so only the second
