@@ -1060,8 +1060,8 @@
       "Error reporting problem": [
         "S'ha produït un error en informar del problema"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "La caducitat ha de ser d'entre 60 minuts i 1 any"
+      "Expiration must be between 1 hour and 1 year": [
+        "La caducitat ha d'estar entre 1 hora i 1 any"
       ],
       "Failed loading group members": [
         "No s'han pogut carregar els membres del grup"
@@ -1887,22 +1887,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vegada que el vostre àlies rep un correu electrònic d'algú, es crea automàticament un contacte."
       ],
-      "Expired ${ abs } hour ago": [
-        "Ha caducat fa ${ abs } hora",
-        "Ha caducat fa ${ abs } hores"
+      "Expired on ${ formattedDate }": [
+        "Va caducar el ${ formattedDate }"
       ],
       "Expires in": [
         "Caduca en"
       ],
-      "Expires in ${ hours } hour": [
-        "Caduca en ${ hours } hora",
-        "Caduca en ${ hours } hores"
-      ],
       "Expires in ${ remainingTime }": [
         "Caduca en ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Caduca en menys d'una hora"
+      "Expires on ${ formattedDate }": [
+        "Caduca el ${ formattedDate }"
       ],
       "Exporting your data...": [
         "S'estan exportant les dades..."
@@ -2860,11 +2855,23 @@
         "${ years } any",
         "${ years } anys"
       ],
+      "1 day": [
+        "1 dia"
+      ],
       "1 hour": [
         "1 hora"
       ],
       "1 minute": [
         "1 minut"
+      ],
+      "1 month": [
+        "1 mes"
+      ],
+      "1 week": [
+        "1 setmana"
+      ],
+      "1 year": [
+        "1 any"
       ],
       "10 minutes": [
         "10 minuts"
@@ -3091,6 +3098,12 @@
       "Crypto Wallet": [
         "Cartera de criptomonedes"
       ],
+      "Custom": [
+        "Personalitzat"
+      ],
+      "Custom expiration (minutes)": [
+        "Caducitat personalitzada (minuts)"
+      ],
       "Custom Items": [
         "Elements personalitzats"
       ],
@@ -3172,8 +3185,8 @@
       "Expired tokens (${ expired.length })": [
         "Testimonis caducats (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Caducarà en (minuts)"
+      "Expires in": [
+        "Caducarà d'aquí a"
       ],
       "Expiry Date": [
         "Data d'expiració"
