@@ -1,5 +1,5 @@
 import { ServerTime } from '@proton/docs-shared/lib/ServerTime'
-import { type DegradedNode, type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive'
+import { type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
@@ -15,7 +15,7 @@ export function createItemValue({
   ancestorsNodeUids,
   effectiveRole,
 }: {
-  sdkData: NodeEntity | DegradedNode
+  sdkData: NodeEntity
   apiData: RecentDocumentAPIItem
   isSharedWithMe: boolean
   path: string[]
@@ -60,7 +60,7 @@ function getLocation(path: string[], isSharedWithMe: boolean) {
   return { type: 'root' } as const
 }
 
-export function getNodeName(sdkData: NodeEntity | DegradedNode) {
+export function getNodeName(sdkData: NodeEntity) {
   if (typeof sdkData.name === 'string') {
     return sdkData.name
   }
@@ -69,13 +69,13 @@ export function getNodeName(sdkData: NodeEntity | DegradedNode) {
   }
 }
 
-export function getAuthorName(sdkData: NodeEntity | DegradedNode) {
+export function getAuthorName(sdkData: NodeEntity) {
   if (sdkData.keyAuthor.ok) {
     return sdkData.keyAuthor.value ?? undefined
   }
 }
 
-export function nodeToTrashedItemValue(node: NodeEntity | DegradedNode): RecentDocumentsItemValue {
+export function nodeToTrashedItemValue(node: NodeEntity): RecentDocumentsItemValue {
   const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
   const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
 
@@ -101,7 +101,7 @@ export function nodeToTrashedItemValue(node: NodeEntity | DegradedNode): RecentD
  * Unlike createItemValue, this uses only SDK data (node argument)
  */
 export function nodeToRecentItemValue(
-  node: NodeEntity | DegradedNode,
+  node: NodeEntity,
   isSharedWithMe: boolean,
   path: string[],
   ancestorsNodeUids: string[],
