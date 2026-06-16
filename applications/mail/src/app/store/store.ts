@@ -6,7 +6,7 @@ import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedS
 import { errorMiddleware } from 'proton-mail/store/middleware';
 
 import { start } from './listener';
-import { loggerMiddleware } from './loggerMiddleware';
+import { mailboxActionLogger } from './mailboxActionLogger';
 import { type MailState, rootReducer } from './rootReducer';
 import { mailIgnoredActionPaths, mailIgnoredPaths } from './serializable';
 import { type MailThunkArguments, extraThunkArguments } from './thunk';
@@ -44,7 +44,7 @@ export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailSt
             })
                 .prepend(listenerMiddleware.middleware)
                 .concat(errorMiddleware)
-                .concat(loggerMiddleware);
+                .concat(mailboxActionLogger);
         },
     });
 
