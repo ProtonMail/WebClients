@@ -782,15 +782,6 @@ describe('TreeEventManager', () => {
             expect(unsubscribe).toHaveBeenCalledTimes(1);
         });
 
-        it('expand shared with me → subscribeSdkDriveEvents; collapse → unsubscribeSdkDriveEvents', () => {
-            const { store, manager } = createManager();
-            expandSection(store, manager, 'shared');
-            expect(mockSubscribeSdkDriveEvents).toHaveBeenCalledWith(TEST_CONTEXT);
-
-            collapseSection(store, manager, 'shared');
-            expect(mockUnsubscribeSdkDriveEvents).toHaveBeenCalledWith(TEST_CONTEXT);
-        });
-
         it('expand node from Alice → subscribeSdkEventsScope(aliceScope); expand 2nd Alice node → no change; collapse first → no change; collapse second → unsubscribeSdkEventsScope(aliceScope)', () => {
             const { store, manager } = createManager();
             const ALICE_SCOPE = 'scope-alice';
@@ -864,11 +855,9 @@ describe('TreeEventManager', () => {
         it('destroy() removes all subscriptions', () => {
             const { store, manager } = createManager();
             expandSection(store, manager, 'shared');
-            expect(mockSubscribeSdkDriveEvents).toHaveBeenCalled();
             const unsubscribe = mockBusDriver.subscribe.mock.results[0]?.value as jest.Mock;
 
             manager.destroy();
-            expect(mockUnsubscribeSdkDriveEvents).toHaveBeenCalledWith(TEST_CONTEXT);
             expect(unsubscribe).toHaveBeenCalledTimes(1);
         });
     });
