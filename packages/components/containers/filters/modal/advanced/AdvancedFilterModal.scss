@@ -5,6 +5,11 @@
 	// Special case for the Sieve editor
 	--size: #{rem(1200)};
 
+	// Widen the modal when the Lumo helper panel is docked to the right of the editor.
+	&--with-helper {
+		--size: #{rem(1600)};
+	}
+
 	block-size: 100%;
 
 	.scroll-inner,
