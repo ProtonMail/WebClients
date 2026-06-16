@@ -18,7 +18,7 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 }));
 
 jest.mock('@proton/pass/lib/core/ui.proxy');
-jest.mock('loglevel');
+jest.mock('loglevel', () => require('@proton/pass/utils/logger/loglevel.mock'));
 
 /* JSDom does not include webcrypto */
 global.crypto.subtle = require('crypto').webcrypto.subtle;
