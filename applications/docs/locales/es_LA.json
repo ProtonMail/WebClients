@@ -552,6 +552,9 @@
       "New document": [
         "Documento nuevo"
       ],
+      "New folder": [
+        "Carpeta nueva"
+      ],
       "New message": [
         "Mensaje nuevo"
       ],
@@ -2968,6 +2971,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } elemento no se pudo mover",
+        "${ failureItems.length } elementos no se pudieron mover"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
@@ -3037,6 +3044,9 @@
       "Cannot export this contact": [
         "No se puede exportar este contacto"
       ],
+      "Cannot find move target": [
+        "No se puede encontrar el destino"
+      ],
       "Contact could not be saved": [
         "El contacto no se pudo guardar"
       ],
@@ -3099,8 +3109,14 @@
       "Failed to copy photo to album": [
         "Error al copiar la foto al álbum"
       ],
+      "Failed to create folder": [
+        "Error al crear carpeta"
+      ],
       "Failed to create public share node": [
         "Error al crear el nodo compartido público"
+      ],
+      "Failed to expand folder": [
+        "Error al expandir carpeta"
       ],
       "Failed to fetch node": [
         "Error al obtener nodo"
@@ -3109,7 +3125,7 @@
         "Error al obtener información para compartir"
       ],
       "Failed to load 'My files' folder": [
-        "Error al cargar la carpeta \"Mis archivos\""
+        "Error al cargar la carpeta «Mis archivos»"
       ],
       "Failed to load document details": [
         "Error al cargar los detalles de documento"
@@ -4542,6 +4558,9 @@
         "Se importarán todos sus contactos, hasta un máximo de ${ maxContact }",
         "Se importarán todos sus contactos, hasta un máximo de ${ maxContact }"
       ],
+      "Already in this folder": [
+        "Ya está en esta carpeta"
+      ],
       "an anonymous user": [
         "un usuario anónimo"
       ],
@@ -4595,6 +4614,12 @@
       ],
       "Can view only": [
         "Solo lectura"
+      ],
+      "Can't move a folder into itself": [
+        "No puede mover una carpeta dentro de sí misma"
+      ],
+      "Can't write into folder": [
+        "No se puede escribir en la carpeta"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No recuerda la contraseña? Podemos ayudarle a limpiar los datos cifrados de todos los contactos cifrados con esta clave y en el proceso descartar la alerta."
@@ -5236,6 +5261,9 @@
       "Scan the QR code with your mobile device": [
         "Escanee el código QR con su dispositivo móvil."
       ],
+      "Select a destination folder": [
+        "Seleccione una carpeta de destino"
+      ],
       "Select a folder to move to.": [
         "Seleccione una carpeta para mover."
       ],
@@ -5256,6 +5284,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
+      ],
+      "Settings update failed": [
+        "Error al actualizar los ajustes"
+      ],
+      "Settings updated": [
+        "Ajustes actualizados"
       ],
       "Share via link settings": [
         "Ajustes de compartir vía enlace"
@@ -5917,6 +5951,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Calendars": [
+        "Calendarios"
+      ],
       "can edit": [
         "puede editar"
       ],
@@ -6003,6 +6040,9 @@
       ],
       "Email format": [
         "Formato de correo electrónico"
+      ],
+      "Emails": [
+        "Correos"
       ],
       "Emails (all messages)": [
         "Correos (todos los mensajes)"
@@ -7828,20 +7868,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "«${ ellipsedName }» creado con éxito"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Error al crear «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "«${ ellipsedName }» movido"
+      ],
       "\"${ fileName }\" shared": [
         "«${ fileName }» compartido"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" creado"
       ],
       "\"${ name }\" deleted": [
         "«${ name }» está eliminado."
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" eliminado permanentemente de la papelera"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Error al crear \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted": [
         "Error al eliminar «${ name }»"
@@ -7860,9 +7903,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "Error al guardar \"${ name }\""
-      ],
-      "\"${ name }\" moved": [
-        "«${ name }» movido"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido a la papelera"
@@ -10054,6 +10094,9 @@
       "Collaborate on documents": [
         "Colabore en documentos"
       ],
+      "Computers": [
+        "Dispositivos"
+      ],
       "Confirm downgrade": [
         "Confirmar el paso a un plan inferior"
       ],
@@ -10646,9 +10689,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como redes sociales o promociones. Puede seleccionar adónde importar estos correos."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
-      ],
       "Load image": [
         "Cargar imagen"
       ],
@@ -10733,6 +10773,9 @@
       ],
       "Name must not be empty": [
         "El nombre no debe estar vacío"
+      ],
+      "Name must not contain slashes (/)": [
+        "El nombre no debe contener barras inclinadas (/)"
       ]
     },
     "Video control": {

@@ -549,6 +549,9 @@
       "New document": [
         "Neues Dokument"
       ],
+      "New folder": [
+        "Neuer Ordner"
+      ],
       "New message": [
         "Neue Nachricht"
       ],
@@ -1221,6 +1224,12 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-Mails"
+      ],
       "Estimated size": [
         "Geschätzte Größe"
       ],
@@ -1232,6 +1241,9 @@
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
+      "Migrate": [
+        "Migrieren"
       ],
       "Migration status": [
         "Migrationsstatus"
@@ -1248,11 +1260,17 @@
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
       "Status": [
         "Status"
       ],
       "User": [
         "Benutzer"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
@@ -2914,6 +2932,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } Eintrag konnte nicht verschoben werden",
+        "${ failureItems.length } Einträge konnten nicht verschoben werden"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
       ],
@@ -2983,6 +3005,9 @@
       "Cannot export this contact": [
         "Dieser Kontakt kann nicht exportiert werden."
       ],
+      "Cannot find move target": [
+        "Ziel konnte nicht gefunden werden"
+      ],
       "Contact could not be saved": [
         "Der Kontakt konnte nicht gespeichert werden"
       ],
@@ -3045,8 +3070,14 @@
       "Failed to copy photo to album": [
         "Das Kopieren des Fotos in das Album ist fehlgeschlagen"
       ],
+      "Failed to create folder": [
+        "Ordner konnte nicht erstellt werden."
+      ],
       "Failed to create public share node": [
         "Fehler beim Erstellen des öffentlich geteilten Knotens"
+      ],
+      "Failed to expand folder": [
+        "Ordner konnte nicht aufgeklappt werden."
       ],
       "Failed to fetch node": [
         "Fehler beim Abrufen des Knotens"
@@ -4488,6 +4519,9 @@
         "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }.",
         "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }."
       ],
+      "Already in this folder": [
+        "Bereits in diesem Ordner"
+      ],
       "an anonymous user": [
         "anonymer Benutzer"
       ],
@@ -4541,6 +4575,12 @@
       ],
       "Can view only": [
         "Nur anzeigen möglich"
+      ],
+      "Can't move a folder into itself": [
+        "Ein Ordner kann nicht in sich selbst verschoben werden."
+      ],
+      "Can't write into folder": [
+        "Darf nicht in Ordner schreiben"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
@@ -5182,6 +5222,9 @@
       "Scan the QR code with your mobile device": [
         "Scanne den QR-Code mit deinem Mobilgerät."
       ],
+      "Select a destination folder": [
+        "Zielordner auswählen"
+      ],
       "Select a folder to move to.": [
         "Wähle ein Zielverzeichnis für das Verschieben aus."
       ],
@@ -5202,6 +5245,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
+      ],
+      "Settings update failed": [
+        "Fehler beim Aktualisieren der Einstellungen."
+      ],
+      "Settings updated": [
+        "Einstellungen aktualisiert"
       ],
       "Share via link settings": [
         "Einstellungen für das Teilen via Link"
@@ -5863,6 +5912,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalender"
+      ],
       "can edit": [
         "Kann bearbeiten"
       ],
@@ -5949,6 +6001,9 @@
       ],
       "Email format": [
         "E-Mail-Format"
+      ],
+      "Emails": [
+        "E-Mails"
       ],
       "Emails (all messages)": [
         "E-Mails (alle Nachrichten)"
@@ -7774,20 +7829,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ erfolgreich erstellt"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" konnte nicht erstellt werden"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verschoben"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" geteilt"
-      ],
-      "\"${ name }\" created successfully": [
-        "„${ name }“ erfolgreich erstellt"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" gelöscht"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }“ dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" konnte nicht erstellt werden"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" konnte nicht gelöscht werden"
@@ -7806,9 +7864,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "„${ name }“ konnte nicht gespeichert werden."
-      ],
-      "\"${ name }\" moved": [
-        "\"${ name }\" verschoben"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" in den Papierkorb verschoben"
@@ -9997,6 +10052,9 @@
       "Collaborate on documents": [
         "Gemeinsam an Dokumenten arbeiten"
       ],
+      "Computers": [
+        "Computer"
+      ],
       "Confirm downgrade": [
         "Zurückstufen bestätigen"
       ],
@@ -10589,9 +10647,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
-      ],
       "Load image": [
         "Bild laden"
       ],
@@ -10676,6 +10731,9 @@
       ],
       "Name must not be empty": [
         "Name darf nicht leer sein"
+      ],
+      "Name must not contain slashes (/)": [
+        "Name darf keine Schrägstriche (/) enthalten."
       ]
     },
     "Video control": {

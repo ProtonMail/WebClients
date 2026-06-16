@@ -552,6 +552,9 @@
       "New document": [
         "Nou document"
       ],
+      "New folder": [
+        "Crea una carpeta"
+      ],
       "New message": [
         "Missatge nou"
       ],
@@ -2968,6 +2971,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "No s'ha pogut moure ${ failureItems.length } element",
+        "No s'han pogut moure ${ failureItems.length } elements"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
@@ -3037,6 +3044,9 @@
       "Cannot export this contact": [
         "No es pot exportar aquest contacte."
       ],
+      "Cannot find move target": [
+        "No s'ha trobat la destinació del moviment"
+      ],
       "Contact could not be saved": [
         "El contacte no pot ser desat"
       ],
@@ -3099,8 +3109,14 @@
       "Failed to copy photo to album": [
         "No s'ha pogut copiar la foto a l'àlbum."
       ],
+      "Failed to create folder": [
+        "No s'ha pogut crear la carpeta"
+      ],
       "Failed to create public share node": [
         "No s\"ha pogut crear el node de compartició públic"
+      ],
+      "Failed to expand folder": [
+        "No s'ha pogut expandir la carpeta"
       ],
       "Failed to fetch node": [
         "No s'ha pogut obtenir el node"
@@ -4542,6 +4558,12 @@
         "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
         "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
       ],
+      "All your files will be imported": [
+        "S'importaran tots els vostres fitxers"
+      ],
+      "Already in this folder": [
+        "Ja és en aquesta carpeta"
+      ],
       "an anonymous user": [
         "un usuari anònim"
       ],
@@ -4595,6 +4617,12 @@
       ],
       "Can view only": [
         "Només es pot visualitzar"
+      ],
+      "Can't move a folder into itself": [
+        "No es pot moure una carpeta dins d'ella mateixa"
+      ],
+      "Can't write into folder": [
+        "No es pot escriure a la carpeta"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i, en el procés, desactivar l'alerta."
@@ -5236,6 +5264,9 @@
       "Scan the QR code with your mobile device": [
         "Escanegeu el codi QR amb el vostre dispositiu mòbil"
       ],
+      "Select a destination folder": [
+        "Seleccioneu una carpeta de destinació"
+      ],
       "Select a folder to move to.": [
         "Seleccioneu la carpeta de destinació."
       ],
@@ -5256,6 +5287,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
+      ],
+      "Settings update failed": [
+        "No s'han pogut actualitzar les preferències."
+      ],
+      "Settings updated": [
+        "S'han actualitzat les preferències."
       ],
       "Share via link settings": [
         "Preferències de compartició mitjançant un enllaç"
@@ -5917,6 +5954,9 @@
       "Calendar": [
         "Calendari"
       ],
+      "Calendars": [
+        "Calendaris"
+      ],
       "can edit": [
         "es pot editar"
       ],
@@ -5986,6 +6026,9 @@
       "Download anyway": [
         "Baixa igualment"
       ],
+      "Drive": [
+        "Unitat"
+      ],
       "Duplicate found": [
         "S'ha trobat un duplicat"
       ],
@@ -6003,6 +6046,9 @@
       ],
       "Email format": [
         "Format de correu electrònic"
+      ],
+      "Emails": [
+        "Correus electrònics"
       ],
       "Emails (all messages)": [
         "Correus electrònics (tots els missatges)"
@@ -7828,20 +7874,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "S'ha creat \"${ ellipsedName }\" correctament"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "No s'ha pogut crear \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "S'ha mogut \"${ ellipsedName }\""
+      ],
       "\"${ fileName }\" shared": [
         "S'ha compartit \"${ fileName }\""
-      ],
-      "\"${ name }\" created successfully": [
-        "S'ha creat \"${ name }\""
       ],
       "\"${ name }\" deleted": [
         "S'ha eliminat «${ name }»."
       ],
       "\"${ name }\" deleted permanently from trash": [
         "S'ha eliminat \"${ name }\" de manera permanent de la paperera"
-      ],
-      "\"${ name }\" failed to be created": [
-        "No s'ha pogut crear \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted": [
         "No s'ha pogut eliminar «${ name }»."
@@ -7860,9 +7909,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "No s'ha pogut desar \"${ name }\""
-      ],
-      "\"${ name }\" moved": [
-        "S'ha mogut \"${ name }\""
       ],
       "\"${ name }\" moved to trash": [
         "S'ha mogut «${ name }» a la paperera"
@@ -9958,6 +10004,9 @@
       "Collaborate on documents": [
         "Col·laboració en documents"
       ],
+      "Computers": [
+        "Ordinadors"
+      ],
       "Confirm downgrade": [
         "Confirma el pas a un pla inferior"
       ],
@@ -10550,8 +10599,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
+      "Instant assistance with AI and human experts.": [
+        "Assistència instantània amb IA i persones expertes."
       ],
       "Load image": [
         "Carrega la imatge"
@@ -10637,6 +10686,9 @@
       ],
       "Name must not be empty": [
         "El nom no pot estar buit"
+      ],
+      "Name must not contain slashes (/)": [
+        "El nom no pot contenir barres (/)"
       ]
     },
     "Video control": {

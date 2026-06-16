@@ -549,6 +549,9 @@
       "New document": [
         "Νέο έγγραφο"
       ],
+      "New folder": [
+        "Νέος φάκελος"
+      ],
       "New message": [
         "Νέο μήνυμα"
       ],
@@ -2965,6 +2968,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε την ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Αποτυχία μετακίνησης ${ failureItems.length } στοιχείου",
+        "Αποτυχία μετακίνησης ${ failureItems.length } στοιχείων"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Ταυτότητα και διευθύνσεις > Σύντομος τομέας (pm.me)"
       ],
@@ -3034,6 +3041,9 @@
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
       ],
+      "Cannot find move target": [
+        "Δεν είναι δυνατή η εύρεση προορισμού μετακίνησης"
+      ],
       "Contact could not be saved": [
         "Η αποθήκευση της επαφής απέτυχε"
       ],
@@ -3096,8 +3106,14 @@
       "Failed to copy photo to album": [
         "Αποτυχία αντιγραφής της φωτογραφίας στο άλμπουμ"
       ],
+      "Failed to create folder": [
+        "Αποτυχία δημιουργίας φακέλου"
+      ],
       "Failed to create public share node": [
         "Αποτυχία δημιουργίας δημόσιου κόμβου κοινοποίησης"
+      ],
+      "Failed to expand folder": [
+        "Αποτυχία ανάπτυξης φακέλου"
       ],
       "Failed to fetch node": [
         "Αποτυχία ανάκτησης κόμβου"
@@ -4539,6 +4555,12 @@
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
       ],
+      "All your files will be imported": [
+        "Όλα τα αρχεία σας θα εισαχθούν"
+      ],
+      "Already in this folder": [
+        "Ήδη σε αυτόν το φάκελο"
+      ],
       "an anonymous user": [
         "ένας ανώνυμος χρήστης"
       ],
@@ -4592,6 +4614,12 @@
       ],
       "Can view only": [
         "Δυνατότητα προβολής μόνο"
+      ],
+      "Can't move a folder into itself": [
+        "Δεν είναι δυνατή η μετακίνηση ενός φακέλου μέσα στον ίδιο τον φάκελο"
+      ],
+      "Can't write into folder": [
+        "Δεν είναι δυνατή η εγγραφή στον φάκελο"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
@@ -5233,6 +5261,9 @@
       "Scan the QR code with your mobile device": [
         "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
       ],
+      "Select a destination folder": [
+        "Επιλέξτε φάκελο προορισμού"
+      ],
       "Select a folder to move to.": [
         "Επιλέξτε έναν φάκελο στον οποίο θέλετε να μετακινήσετε τα δεδομένα."
       ],
@@ -5253,6 +5284,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
+      ],
+      "Settings update failed": [
+        "Αποτυχία ενημέρωσης ρυθμίσεων"
+      ],
+      "Settings updated": [
+        "Οι ρυθμίσεις ενημερώθηκαν"
       ],
       "Share via link settings": [
         "Κοινοποίηση μέσω ρυθμίσεων συνδέσμου"
@@ -5914,6 +5951,9 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
       "can edit": [
         "μπορεί να επεξεργαστεί"
       ],
@@ -5983,6 +6023,9 @@
       "Download anyway": [
         "Λήψη οπωσδήποτε"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Βρέθηκε διπλότυπο"
       ],
@@ -6000,6 +6043,9 @@
       ],
       "Email format": [
         "Μορφή μηνύματος"
+      ],
+      "Emails": [
+        "Μηνύματα"
       ],
       "Emails (all messages)": [
         "Μηνύματα (όλα τα μηνύματα)"
@@ -7768,20 +7814,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "Το \"${ ellipsedName }\" δημιουργήθηκε επιτυχώς"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Αποτυχία δημιουργίας του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Το \"${ ellipsedName }\" μετακινήθηκε"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" κοινοποιήθηκε"
-      ],
-      "\"${ name }\" created successfully": [
-        "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" διαγράφηκε"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "Το \"${ name }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Αποτυχία δημιουργίας του \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" απέτυχε να διαγραφεί"
@@ -7800,9 +7849,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "Το \"${ name }\" απέτυχε να αποθηκευτεί"
-      ],
-      "\"${ name }\" moved": [
-        "Το \"${ name }\" μετακινήθηκε"
       ],
       "\"${ name }\" moved to trash": [
         "Το \"${ name }\" μετακινήθηκε στα Διαγραμμένα"
@@ -9898,6 +9944,9 @@
       "Collaborate on documents": [
         "Συνεργαστείτε σε έγγραφα"
       ],
+      "Computers": [
+        "Υπολογιστές"
+      ],
       "Confirm downgrade": [
         "Επιβεβαιώστε την υποβάθμιση"
       ],
@@ -10490,8 +10539,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
+      "Instant assistance with AI and human experts.": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη και ανθρώπινους εμπειρογνώμονες."
       ],
       "Load image": [
         "Φόρτωση εικόνας"
@@ -10577,6 +10626,9 @@
       ],
       "Name must not be empty": [
         "Το όνομα δεν πρέπει να είναι κενό"
+      ],
+      "Name must not contain slashes (/)": [
+        "Το όνομα δεν πρέπει να περιέχει κάθετες γραμμές (/)"
       ]
     },
     "Video control": {

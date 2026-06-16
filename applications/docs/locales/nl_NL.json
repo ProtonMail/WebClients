@@ -549,6 +549,9 @@
       "New document": [
         "Nieuw document"
       ],
+      "New folder": [
+        "Nieuwe map"
+      ],
       "New message": [
         "Nieuw bericht"
       ],
@@ -1215,6 +1218,9 @@
       "Activated": [
         "Geactiveerd"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
       "All": [
         "Alle"
       ],
@@ -1233,8 +1239,14 @@
       "Emails": [
         "E-mails"
       ],
+      "Errors": [
+        "Fouten"
+      ],
       "Estimated size": [
         "Geschatte grootte."
+      ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
       ],
       "Has errors": [
         "Bevat fouten"
@@ -2956,6 +2968,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item kon niet verplaatst worden",
+        "${ failureItems.length } items konden niet verplaatst worden"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
@@ -3025,6 +3041,9 @@
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
       ],
+      "Cannot find move target": [
+        "Kan geen doel voor verplaatsings vinden"
+      ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
       ],
@@ -3087,8 +3106,14 @@
       "Failed to copy photo to album": [
         "Kopiëren van foto naar album is mislukt."
       ],
+      "Failed to create folder": [
+        "Mislukt om map aan te maken"
+      ],
       "Failed to create public share node": [
         "Aanmaken van openbaar gedeelde node is mislukt"
+      ],
+      "Failed to expand folder": [
+        "Map uitvouwen mislukt"
       ],
       "Failed to fetch node": [
         "Fout bij het ophalen van knooppunt"
@@ -4530,6 +4555,9 @@
         "Al uw contacten worden geïmporteerd, met een limiet van ${ maxContact }",
         "Al uw contacten worden geïmporteerd, met een maximum van ${ maxContact }."
       ],
+      "Already in this folder": [
+        "Bestaat al in deze map"
+      ],
       "an anonymous user": [
         "een anonieme gebruiker"
       ],
@@ -4583,6 +4611,12 @@
       ],
       "Can view only": [
         "Kan alleen bekijken"
+      ],
+      "Can't move a folder into itself": [
+        "Een map kan niet naar zichzelf worden verplaatst"
+      ],
+      "Can't write into folder": [
+        "Kan niet naar map schrijven"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -5224,6 +5258,9 @@
       "Scan the QR code with your mobile device": [
         "Scan de QR-code met uw mobiele apparaat"
       ],
+      "Select a destination folder": [
+        "Selecteer een doelmap"
+      ],
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
       ],
@@ -5244,6 +5281,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
+      ],
+      "Settings update failed": [
+        "Bijwerken instellingen mislukt"
+      ],
+      "Settings updated": [
+        "Instellingen bijgewerkt"
       ],
       "Share via link settings": [
         "Deel via linkinstellingen"
@@ -5905,6 +5948,9 @@
       "Calendar": [
         "Agenda"
       ],
+      "Calendars": [
+        "Agenda's"
+      ],
       "can edit": [
         "kan bewerken"
       ],
@@ -5991,6 +6037,9 @@
       ],
       "Email format": [
         "E-mailformaat"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle berichten)"
@@ -7759,20 +7808,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" succesvol aangemaakt"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kon niet aangemaakt worden"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verplaatst"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" gedeeld"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" succesvol aangemaakt"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" verwijderd"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kon niet aangemaakt worden"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" kon niet verwijderd worden"
@@ -7791,9 +7843,6 @@
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kon niet worden opgeslagen"
-      ],
-      "\"${ name }\" moved": [
-        "\"${ name }\" verplaatst"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" verplaatst naar de prullenbak"
@@ -9985,6 +10034,9 @@
       "Collaborate on documents": [
         "Samenwerken aan documenten"
       ],
+      "Computers": [
+        "Computers"
+      ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
       ],
@@ -10577,9 +10629,6 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
-      "Instant AI assistance, human expert on hand!": [
-        "Directe AI-hulp, menselijke expert bij de hand!"
-      ],
       "Load image": [
         "Laad foto"
       ],
@@ -10664,6 +10713,9 @@
       ],
       "Name must not be empty": [
         "Naam mag niet leeg zijn"
+      ],
+      "Name must not contain slashes (/)": [
+        "Naam mag geen schuine strepen (/) bevatten"
       ]
     },
     "Video control": {
