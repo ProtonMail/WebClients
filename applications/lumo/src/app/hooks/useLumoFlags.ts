@@ -35,6 +35,7 @@ export const useLumoFlags = () => {
     const apiKeyManagement = useFlag('LumoAPIKeyManagement');
     const lumoSurvey = useFlag('LumoSurveys');
     const memory = useFlag('LumoMeowmory');
+    const lumoNativeAuth = useFlag('LumoNativeAuth');
     const customAgents = useFlag('LumoCustomAgents');
 
     return {
@@ -52,5 +53,6 @@ export const useLumoFlags = () => {
         nativeComposerModelSelection,
         apiKeyManagement,
         lumoSurvey,
+        lumoNativeAuth,
     };
 };
