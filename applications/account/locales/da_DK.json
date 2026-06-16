@@ -1880,6 +1880,15 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Copy": [
+        "Kopiér"
+      ],
+      "Send": [
+        "Send"
+      ],
+      "Undo": [
+        "Fortryd"
       ]
     },
     "action": {
@@ -3294,6 +3303,12 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Din nuværende plan tillader op til ${ maxMembers } bruger. Tilføj flere pladser til dit abonnement for at migrere flere brugere.",
         "Din nuværende plan tillader op til ${ maxMembers } brugere. Tilføj flere pladser til dit abonnement for at migrere flere brugere."
+      ],
+      "Creating accounts": [
+        "Opretter konti"
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vi opretter dine konti og importerer dine data nu, så dit team har alt, hvad de behøver, når de begynder at bruge deres sikre ${ BRAND_NAME }-konto."
       ]
     },
     "breadcrumb": {
@@ -18318,6 +18333,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Indstillingerne for Zoom-videokonferencer er blevet opdateret"
+      ],
+      "Copied to clipboard": [
+        "Kopieret til udklipsholder"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

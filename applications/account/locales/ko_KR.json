@@ -1772,6 +1772,21 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Copy": [
+        "복사"
+      ],
+      "Save and verify": [
+        "저장 및 인증"
+      ],
+      "Send": [
+        "보내기"
+      ],
+      "Undo": [
+        "되돌리기"
+      ],
+      "Verify another way": [
+        "다른 방법 시도"
       ]
     },
     "action": {
@@ -2842,6 +2857,9 @@
       ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "사용자의 도메인 호스트의 DNS 섹션에서 아래 코드를 복사 및 붙여놓기하새요."
       ]
     },
     "breadcrumb": {
@@ -7097,6 +7115,9 @@
       ],
       "Zero keys reactivated": [
         "제로 키 재활성화됨"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
       ]
     },
     "error": {
@@ -12467,6 +12488,9 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "비밀번호가 기억 나시나요? ${ verifyButton }"
       ]
     },
     "info": {
@@ -16882,6 +16906,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "줌 화상 회의 설정이 업데이트 되었습니다"
+      ],
+      "Copied to clipboard": [
+        "클립보드로 복사함"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -19055,6 +19082,9 @@
       ],
       "Your recovery email has been successfully removed.": [
         "복구 이메일이 성공적으로 삭제되었습니다."
+      ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "이 복구 이메일 주소를 인증하세요: ${ emailData.value }"
       ]
     },
     "Recovery method": {
@@ -19089,6 +19119,9 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
+      ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "이 복구 전화번호를 인증하세요: ${ phoneData.value }"
       ]
     },
     "Recovery score": {
@@ -19130,6 +19163,12 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "현재 복구 방법 설정이 견고하나, 여전히 조금의 틈이 남아있어요. 추가되는 복구 방법이 많을수록 데이터 복구 가능성도 더 높아집니다."
+      ],
+      "Critical": [
+        "매우 위험"
+      ],
+      "How you increased your account protection": [
+        "회원님의 계정을 보호하기 위해 추가된 복구 방법들입니다"
       ]
     },
     "Recovery score item": {
@@ -19180,6 +19219,15 @@
       ],
       "Sign-in with QR code allowed": [
         "QR코드로 로그인이 허용됨."
+      ],
+      "Verify password": [
+        "비밀번호 확인"
+      ],
+      "Verify recovery email": [
+        "복구 이메일 인증"
+      ],
+      "Verify recovery phone": [
+        "복구 휴대폰 인증"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -19878,6 +19926,9 @@
       ],
       "Your recovery phrase is set": [
         "복구 키가 준비되었습니다"
+      ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "복구 키 생성 중 오류가 발생했습니다. 나중에 다시 시도하거나 문제가 재발하는 경우 지원팀에 문의하세요."
       ]
     },
     "safety_review": {
@@ -20075,6 +20126,24 @@
       ],
       "Your security setup": [
         "복구 방법 설정 상태"
+      ],
+      "Allow": [
+        "허용"
+      ],
+      "Allow recovery by phone": [
+        "휴대폰을 통한 복구 허용"
+      ],
+      "Later": [
+        "나중에"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "이메일 주소가 본인의 것인지 여부를 확인하기 위해, ${ boldEmail }(으)로 전송된 인증 코드를 입력하세요."
+      ],
+      "Verify": [
+        "인증"
+      ],
+      "Verify your recovery email": [
+        "복구 이메일 인증"
       ]
     },
     "saml: Action": {
@@ -21754,6 +21823,9 @@
       ],
       "Verified": [
         "인증됨"
+      ],
+      "Verify ${ value }": [
+        "${ value } 인증"
       ]
     },
     "Step in filter modal": {
@@ -24677,6 +24749,12 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Verify your email": [
+        "이메일 인증"
+      ],
+      "Verify your password": [
+        "비밀번호 확인"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25043,6 +25121,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "사용자의 외부 계정이 24시간 대역폭 제한에 도달했습니다. ${ BRAND_NAME }이 불러오기를 계속하도록 시도할 것입니다."
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "계정 접근 권한을 요쳥하려면 신뢰하는 연락처를 허용하세요"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "비밀번호 재설정 이후 암호화된 데이터를 잠금 해제하려면 신뢰하는 연락처를 허용하세요"
       ]
     },
     "tooltip": {
