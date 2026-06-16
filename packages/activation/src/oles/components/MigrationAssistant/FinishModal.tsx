@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import type { FC } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,6 +14,8 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import DNSGroupRecords, { type DNSGroup } from '../MigrationSetup/DNSGroupRecords';
 import allSetGraphic from '../all-set.svg';
+
+import './FinishModal.scss';
 
 type FinishModalView = 'warning' | 'instructions' | 'all-set';
 
@@ -88,7 +90,13 @@ const FinishModal: FC<{
         <>
             <ModalTwoHeader />
             <ModalTwoContent>
-                <img width={189} height={189} src={allSetGraphic} alt="" className="block mx-auto" />
+                <img
+                    width={189}
+                    height={189}
+                    src={allSetGraphic}
+                    alt=""
+                    className="block mx-auto oles-finish-modal-check"
+                />
                 <h3 className="text-bold text-2xl text-center my-4">{c('BOSS').t`You're all set!`}</h3>
                 <p className="mt-0 mb-4 color-weak text-center">{c('BOSS')
                     .t`Once we have confirmed that emails are routed to ${BRAND_NAME} the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.`}</p>
