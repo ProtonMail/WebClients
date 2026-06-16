@@ -1006,6 +1006,30 @@
       ],
       "Sharing is end-to-end encrypted": [
         "El contenido compartido tiene cifrado de extremo a extremo"
+      ],
+      "Continue with Free": [
+        "Seguir con el plan gratuito"
+      ],
+      "Later": [
+        "Más tarde"
+      ],
+      "Manage addresses": [
+        "Administrar direcciones"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
+      ],
+      "New folder": [
+        "Nueva carpeta"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectar a Gmail"
+      ],
+      "Try Workspace": [
+        "Probar Workspace"
+      ],
+      "Verify now": [
+        "Verificar ahora"
       ]
     },
     "Action subscription": {
@@ -2526,6 +2550,9 @@
       ],
       "Åland Islands": [
         "Islas Aland"
+      ],
+      "Canary Islands": [
+        "Islas Canarias"
       ]
     },
     "Cycle": {
@@ -2697,6 +2724,48 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que te vayas. Si tienes un momento, te agradeceríamos mucho que nos contaras por qué quieres cancelar. Tus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todo el mundo."
+      ],
+      "Available storage: ${ storageText }": [
+        "Almacenamiento disponible: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Los correos electrónicos enviados a ${ connectedAddressText } ahora se mostrarán en ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espacio de sobra para años de correos electrónicos, archivos adjuntos y mucho más."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Esto puede ocurrir si se eliminaron los permisos o si cambió tu contraseña."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para seguir recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, vuelve a conectar tu cuenta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para seguir recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, vuelve a conectar tus cuentas."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquea 15 GB de almacenamiento por solo ${ config.offerPrice }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ya no podemos acceder a ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos las importaciones al llegar al 80 % de almacenamiento para reservar espacio para nuevos mensajes."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Hemos empezado a importar tus correos electrónicos de Gmail. Te avisaremos cuando haya terminado."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ya puedes enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importa ${ newUserStorageText } de tus mensajes de Gmail más recientes."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importan tus correos electrónicos de Gmail más recientes."
       ]
     },
     "description": {
@@ -3504,6 +3573,67 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Error al mover ${ failureItems.length } elemento",
+        "Error al mover ${ failureItems.length } elementos"
+      ],
+      "Address could not be added.": [
+        "No se ha podido añadir la dirección."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Se ha asignado todo el espacio de almacenamiento. Reduce el almacenamiento asignado a otros usuarios."
+      ],
+      "Cannot find move target": [
+        "No se puede encontrar el destino"
+      ],
+      "Failed to create folder": [
+        "Error al crear la carpeta"
+      ],
+      "Failed to expand folder": [
+        "Error al expandir la carpeta"
+      ],
+      "Failed to load 'My files' folder": [
+        "No se ha podido cargar la carpeta 'Mis archivos'"
+      ],
+      "Failed to load document details": [
+        "Error al cargar los detalles del documento."
+      ],
+      "Failed to load recent documents": [
+        "No se han podido cargar los documentos recientes"
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clave de la organización debe activarse para crear usuarios invitados."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clave de la organización debe activarse para crear usuarios no privados."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configura un dominio personalizado antes de añadir direcciones."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configura un dominio personalizado antes de añadir usuarios a tu organización."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Pasa a un plan para empresa con más de 1 usuario para administrar varios usuarios."
+      ],
+      "Some trashed documents could not be loaded": [
+        "No se han podido cargar algunos documentos de la papelera"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Algo salió mal al obtener los dominios disponibles"
+      ],
+      "Unknown location": [
+        "Ubicación desconocida"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Has agotado todas las direcciones disponibles. Actualiza tu plan para añadir una nueva o desactiva alguna de las que tienes en tu cuenta."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
       ]
     },
     "Error importing calendar": {
@@ -5983,6 +6113,73 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Ya no podrás compartir «${ fileName }» si cambias el acceso a lector. Solo el propietario podrá volver a modificar tus permisos."
+      ],
+      "${ total } user found": [
+        "${ total } usuario encontrado",
+        "${ total } usuarios encontrados"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invita a tus amigos** a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Consiguen ${ refereeRewardAmount }** en créditos si se suscriben."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Consigues ${ referrerRewardAmount }** en créditos por cada persona que se suscriba."
+      ],
+      "All your files will be imported": [
+        "Todos tus archivos se importan"
+      ],
+      "Already in this folder": [
+        "Ya está en esta carpeta"
+      ],
+      "Can't move a folder into itself": [
+        "No se puede mover una carpeta dentro de sí misma"
+      ],
+      "Can't write into folder": [
+        "No se puede escribir en la carpeta"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "¿Recuerdas tu contraseña? ${ verifyButton }"
+      ],
+      "Enter code": [
+        "Introduce el código"
+      ],
+      "Forgot password?": [
+        "¿Has olvidado la contraseña?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Consigue un correo profesional @tu-empresa.es, 1 TB de almacenamiento seguro por usuario, videollamadas más largas y más con ${ BRAND_NAME } Workspace."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
+      ],
+      "Included": [
+        "Incluido"
+      ],
+      "Password verified": [
+        "Contraseña verificada"
+      ],
+      "Please select the labels you would like to import:": [
+        "Selecciona las etiquetas que quieres importar:"
+      ],
+      "Select a destination folder": [
+        "Selecciona una carpeta de destino"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ayudarte a recordar tu contraseña, te pedimos que la introduzcas periódicamente. Con el tiempo, te la pedimos con menos frecuencia."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confía en la clave «${ activeSignerText }» para verificar los nuevos mensajes de este contacto."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Mejora tu plan en cualquier momento para traer el resto."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Mejora tu plan o libera espacio en cualquier momento para traer el resto."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Te recordamos que vuelvas a verificar tu contraseña más tarde"
       ]
     },
     "info": {
@@ -6075,6 +6272,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Firmante activo"
+      ],
+      "Fallback": [
+        "Alternativa"
       ]
     },
     "Label": {
@@ -6663,6 +6866,12 @@
       ],
       "Set a password to limit access via link": [
         "Establece una contraseña para limitar el acceso mediante enlace"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
+      ],
+      "Drive": [
+        "Drive"
       ]
     },
     "Label for contact group color": {
@@ -7799,6 +8008,22 @@
       ],
       "Dedicated servers optimized for speed": [
         "Servidores dedicados optimizados para la velocidad"
+      ],
+      "Access all countries": [
+        "Accede a todos los países"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificar citas con ${ n } página de reservas",
+        "Planificar citas con ${ n } páginas de reservas"
+      ],
+      "No streaming support": [
+        "Sin soporte para streaming"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -8237,6 +8462,10 @@
       "Support for ${ n } custom email domain": [
         "Soporte para ${ n } dominio de correo electrónico personalizado",
         "Soporte para ${ n } dominios de correo electrónico personalizado"
+      ],
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
       ]
     },
     "Notification": {
@@ -8500,6 +8729,22 @@
       ],
       "Setting updated. Editors can't change permissions or share.": [
         "Configuración actualizada. Los editores no pueden cambiar los permisos ni compartir."
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" creado"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Error al crear \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" se ha movido"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } elemento movido",
+        "${ numberOfItems } elementos movidos"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Tu dirección de ${ BRAND_NAME } ya está lista para usar"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8818,6 +9063,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Te recomendamos que consideres esta clave \"no fiable\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Este contacto firma actualmente los mensajes con esta clave"
+      ],
+      "This key is used for message verification": [
+        "Esta clave se usa para la verificación de mensajes"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Esta clave se usa para cifrar mensajes para este contacto en aplicaciones más antiguas"
       ]
     },
     "PGP key warning": {
@@ -8915,6 +9169,12 @@
       ],
       "Your organization name": [
         "El nombre de tu organización"
+      ],
+      "Search": [
+        "Buscar"
+      ],
+      "Search for users or addresses": [
+        "Buscar usuarios o direcciones"
       ]
     },
     "Placeholder for contact group name": {
@@ -10787,6 +11047,30 @@
       ],
       "Share \"${ fileName }\"": [
         "Compartir «${ fileName }»"
+      ],
+      "Computers": [
+        "Ordenadores"
+      ],
+      "Continue with free storage": [
+        "Continúa con el almacenamiento gratuito"
+      ],
+      "Devices": [
+        "Dispositivos"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Consigue más almacenamiento con ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migra tu organización a ${ BRAND_NAME }."
+      ],
+      "Shared with me": [
+        "Compartido conmigo"
+      ],
+      "Verify your password": [
+        "Verifica tu contraseña"
+      ],
+      "You are all set": [
+        "Ya está todo listo"
       ]
     },
     "Title subscription": {
@@ -10892,6 +11176,9 @@
       ],
       "Change shared item settings": [
         "Cambiar ajustes de archivos compartidos"
+      ],
+      "Instant assistance with AI and human experts.": [
+        "Asistencia instantánea con IA y expertos humanos."
       ]
     },
     "tooltip": {
@@ -10919,6 +11206,9 @@
       ],
       "Name must not be empty": [
         "El nombre no debe estar vacío."
+      ],
+      "Name must not contain slashes (/)": [
+        "El nombre no debe contener barras inclinadas (/)"
       ]
     },
     "Video control": {
@@ -11362,6 +11652,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
+      ],
+      "10+ premium features": [
+        "Más de 10 funciones prémium"
+      ],
+      "Custom email domain": [
+        "Dominio de correo electrónico personalizado"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ]
     },
     "Features": {
@@ -12031,6 +12333,185 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
+      ],
+      "Member activation incomplete": [
+        "La activación del miembro está incompleta."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clave de la organización debe activarse para solicitar acceso a los datos."
+      ],
+      "The user must have an address to request data access": [
+        "El usuario debe tener una dirección para solicitar acceso a los datos"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "La dirección ya está siendo utilizada por un usuario ajeno a tu organización. Ponte en contacto con el servicio de atención al cliente para resolverlo."
+      ],
+      "All": [
+        "Todo"
+      ],
+      "Calendar": [
+        "Calendario"
+      ],
+      "Configure migration": [
+        "Configurar migración"
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estado de la migración de datos de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Correos electrónicos"
+      ],
+      "Errors": [
+        "Errores"
+      ],
+      "Estimated size": [
+        "Tamaño estimado"
+      ],
+      "Find out what can be migrated.": [
+        "Descubre qué se puede migrar"
+      ],
+      "Has errors": [
+        "Tiene errores"
+      ],
+      "In progress": [
+        "En progreso"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No se ha encontrado la dirección del miembro. Contacta con el servicio de atención al cliente para solucionarlo."
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Migration status": [
+        "Estado de la migración"
+      ],
+      "Missing organization private key": [
+        "Falta la clave privada de la organización"
+      ],
+      "Missing organization public key": [
+        "Falta la clave pública de la organización"
+      ],
+      "No users to display": [
+        "No hay usuarios que mostrar"
+      ],
+      "Not activated": [
+        "No activado"
+      ],
+      "Organization does not have enough seats available": [
+        "La organización no tiene suficientes licencias disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "La organización no tiene suficiente espacio de almacenamiento disponible"
+      ],
+      "Pending": [
+        "Pendiente"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecciona exactamente lo que quieres migrar. Se aplica a todo el equipo de la organización."
+      ],
+      "Select users to migrate": [
+        "Seleccionar usuarios para migrar"
+      ],
+      "Size": [
+        "Tamaño"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "User": [
+        "Usuario"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Quienes han accedido a su cuenta de ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "¿Qué estás migrando?"
+      ],
+      "You": [
+        "Tú"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ],
+      "Summer Sale": [
+        "Descuento de verano"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/meses"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 TB data storage": [
+        "2 TB de almacenamiento de datos"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "500 GB storage": [
+        "500 GB de almacenamiento"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acceso completo a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para ti y otra persona"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor online de documentos y hojas de cálculo"
+      ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mayor protección contra las ciberamenazas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cámbiate a nuestro plan anual y ahorra ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "SUMMER SALE": [
+        "DESCUENTO DE VERANO"
       ]
     }
   }
