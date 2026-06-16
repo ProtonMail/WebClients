@@ -244,6 +244,8 @@ export enum MailFeatureFlag {
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     MailStoreDebugMode = 'MailStoreDebugMode',
     OnlyInsertNewDataOnFetch = 'OnlyInsertNewDataOnFetch',
+    //ML R&D
+    LumoSieveHelper = 'LumoSieveHelper',
 }
 
 enum MailKillSwitchFlag {
