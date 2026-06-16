@@ -941,6 +941,24 @@
         "Pokaż ${ pendingCount } zaproszenia",
         "Pokaż ${ pendingCount } zaproszeń",
         "Pokaż ${ pendingCount } zaproszenia"
+      ],
+      "Continue with Free": [
+        "Kontynuuj z wersją bezpłatną"
+      ],
+      "Later": [
+        "Później"
+      ],
+      "Manage addresses": [
+        "Zarządzaj adresami"
+      ],
+      "Maybe later": [
+        "Może później"
+      ],
+      "New folder": [
+        "Nowy folder"
+      ],
+      "Reconnect to Gmail": [
+        "Połącz ponownie z Gmailem"
       ]
     },
     "Action subscription": {
@@ -2596,6 +2614,45 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Skorzystaj z przewodnika, aby Twoja organizacja zaczęła szybko czerpać korzyści z wiodącego w branży ekosystemu szyfrowania i prywatności ${ BRAND_NAME }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Dostępna przestrzeń dyskowa: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Wiadomości wysyłane na adres ${ connectedAddressText } będą teraz pojawiać się w ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Wystarczająco dużo miejsca na lata wiadomości, załączników i nie tylko."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Może się tak zdarzyć, jeśli uprawnienia zostały usunięte lub zmieniło się Twoje hasło."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Aby nadal odbierać i wysyłać wiadomości Gmail w ${ BRAND_NAME }, połącz ponownie swoje konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Aby nadal odbierać i wysyłać wiadomości Gmail w ${ BRAND_NAME }, połącz ponownie swoje konta."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odblokuj 15 GB przestrzeni dyskowej za jedyne ${ config.offerPrice }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nie mamy już dostępu do ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Wstrzymamy importowanie przy 80% zapełnienia przestrzeni dyskowej, aby zarezerwować miejsce na nowe wiadomości."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Rozpoczęliśmy importowanie Twoich wiadomości z Gmaila. Damy Ci znać, gdy się zakończy."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Możesz teraz wysyłać wiadomości z ${ BRAND_NAME }, używając tego adresu."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko ${ newUserStorageText } najnowszych wiadomości z Gmaila"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko najnowsze wiadomości z Gmaila."
       ]
     },
     "description": {
@@ -3371,6 +3428,39 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Zaszyfrowana nazwa"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
+      ],
+      "Failed to create folder": [
+        "Nie udało się utworzyć folderu"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Musisz aktywować klucz organizacji, aby utworzyć zaproszonych użytkowników"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Ustaw niestandardową domenę przed dodaniem adresów."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Coś poszło nie tak podczas pobierania dostępnych domen"
+      ],
+      "Unknown location": [
+        "Nieznana lokalizacja"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ]
     },
     "Error importing calendar": {
@@ -5817,6 +5907,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Nadal będziesz mógł przeglądać dane konta, ale wszystkie konta użytkowników zostaną usunięte z organizacji."
+      ],
+      "Included": [
+        "W pakiecie"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Ulepsz konto w dowolnym momencie, aby przenieść resztę"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Ulepsz konto lub zwolnij miejsce w dowolnym momencie, aby przenieść resztę"
       ]
     },
     "info": {
@@ -8330,6 +8429,9 @@
       ],
       "The spreadsheet failed to be created": [
         "Utworzenie arkusza kalkulacyjnego nie powiodło się"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Twój adres ${ BRAND_NAME } jest gotowy do użycia"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8715,6 +8817,9 @@
       ],
       "Your organization name": [
         "Twoja nazwa organizacji"
+      ],
+      "Search": [
+        "Szukaj"
       ]
     },
     "Placeholder for contact group name": {
@@ -10614,6 +10719,27 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Zawiera plik ${ DOCS_APP_NAME }"
+      ],
+      "Computers": [
+        "Urządzenia"
+      ],
+      "Continue with free storage": [
+        "Kontynuuj z bezpłatną przestrzenią dyskową"
+      ],
+      "Devices": [
+        "Urządzenia"
+      ],
+      "Disconnected from Gmail": [
+        "Rozłączono z Gmailem"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Zyskaj więcej przestrzeni dyskowej dzięki ${ MAIL_APP_NAME } Plus"
+      ],
+      "Shared with me": [
+        "Udostępnione dla mnie"
+      ],
+      "You are all set": [
+        "Wszystko gotowe"
       ]
     },
     "Title subscription": {
@@ -10746,6 +10872,9 @@
       ],
       "Name must not be empty": [
         "Nazwa nie może być pusta"
+      ],
+      "Name must not contain slashes (/)": [
+        "Nazwa nie może zawierać ukośników (/)"
       ]
     },
     "Video control": {
@@ -11049,6 +11178,18 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Nieograniczona liczba aliasów hide-my-email"
+      ],
+      "10+ premium features": [
+        "Ponad 10 funkcji premium"
+      ],
+      "Custom email domain": [
+        "Niestandardowa domena e-mail"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
       ]
     },
     "Features": {
@@ -11530,6 +11671,101 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
+      ],
+      "Member activation incomplete": [
+        "Aktywacja użytkowników nie została zakończona"
+      ],
+      "Organization key must be activated to request data access": [
+        "Musisz aktywować klucz organizacji, aby uzyskać dostęp do danych"
+      ],
+      "The user must have an address to request data access": [
+        "Użytkownik musi mieć adres, aby żądać dostępu do danych"
+      ]
+    },
+    "BOSS": {
+      "Migration status": [
+        "Status migracji"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "You": [
+        "Ty"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Summer Sale": [
+        "Letnie promocje"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "2 TB data storage": [
+        "2 TB przestrzeni dyskowej na dane"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB przestrzeni dyskowej: 40 × Twój obecny plan"
+      ],
+      "3 TB data storage": [
+        "3 TB przestrzeni dyskowej na dane"
+      ],
+      "500 GB storage": [
+        "500 GB przestrzeni dyskowej"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Pełny dostęp do ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Indywidualne konta dla 6 użytkowników"
+      ],
+      "Individual accounts for you and a partner": [
+        "Indywidualne konta dla Ciebie i partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Edytor dokumentów i arkuszy kalkulacyjnych online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Przejdź na nasz roczny plan i zaoszczędź ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 miesięcy"
+      ],
+      "SUMMER SALE": [
+        "LETNIE PROMOCJE"
       ]
     }
   }

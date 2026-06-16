@@ -1000,6 +1000,21 @@
       ],
       "Sharing is end-to-end encrypted": [
         "გაზიარება გამჭოლად დაშიფრულია"
+      ],
+      "Later": [
+        "მოგვიანებით"
+      ],
+      "Manage addresses": [
+        "მისამართების მართვა"
+      ],
+      "Maybe later": [
+        "მოგვიანებით"
+      ],
+      "New folder": [
+        "ახალი საქაღალდე"
+      ],
+      "Verify now": [
+        "ახლა გადამოწმება"
       ]
     },
     "Action subscription": {
@@ -3461,6 +3476,42 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ არგაშიფვრადი სახელი"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
+      ],
+      "Cannot find move target": [
+        "გადატანის სამიზნე აღმოჩენილი არაა"
+      ],
+      "Failed to create folder": [
+        "საქაღალდის შექმნა ჩავარდა"
+      ],
+      "Failed to expand folder": [
+        "საქაღალდის ჩამოშლა ჩავარდა"
+      ],
+      "Organization key must be activated to create invited users": [
+        "მოწვეული მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
+      ],
+      "Unknown location": [
+        "უცნობი მდებარეობა"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ]
     },
     "Error importing calendar": {
@@ -5816,6 +5867,28 @@
       ],
       "Who has access": [
         "ვის აქვს წვდომა"
+      ],
+      "${ total } user found": [
+        "აღმოჩენილია ${ total } მომხმარებელი",
+        "აღმოჩენილია ${ total } მომხმარებელი"
+      ],
+      "Already in this folder": [
+        "უკვე ამ საქაღალდეშია"
+      ],
+      "Can't move a folder into itself": [
+        "საქაღალდეს თავის თავში ვერ გადაიტანთ"
+      ],
+      "Can't write into folder": [
+        "საქაღალდეში ჩაწერა შეუძლებელია"
+      ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
+      ],
+      "Included": [
+        "შეიცავს"
+      ],
+      "Select a destination folder": [
+        "აირჩიეთ სამიზნე საქაღალდე"
       ]
     },
     "info": {
@@ -5908,6 +5981,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "აქტიური ხელმომწერი"
+      ],
+      "Fallback": [
+        "სარეზერვო ვარიანტი"
       ]
     },
     "Label": {
@@ -8629,6 +8708,9 @@
       ],
       "Your organization name": [
         "თქვენი ორგანიზაციის სახელი"
+      ],
+      "Search": [
+        "ძებნა"
       ]
     },
     "Placeholder for contact group name": {
@@ -10486,6 +10568,15 @@
       ],
       "Settings for ${ sharedFileName }": [
         "პარამეტრები ${ sharedFileName }-ისთვის"
+      ],
+      "Computers": [
+        "კომპიუტერები"
+      ],
+      "Devices": [
+        "მოწყობილობები"
+      ],
+      "Shared with me": [
+        "ჩემთვის გაზიარებული"
       ]
     },
     "Title subscription": {
@@ -10615,6 +10706,9 @@
       ],
       "Name must not be empty": [
         "სახელი არ შეიძლება, იყოს ცარიელი"
+      ],
+      "Name must not contain slashes (/)": [
+        "სახელი არ უნდა შეიცავდეს დახრილ ხაზებს (/)"
       ]
     },
     "Video control": {
@@ -11018,6 +11112,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
+      ],
+      "Storage": [
+        "საცავი"
       ]
     },
     "Features": {
@@ -11530,6 +11627,152 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
+      ],
+      "Member activation incomplete": [
+        "წევრის გააქტიურება დასრულებული არაა"
+      ],
+      "Organization key must be activated to request data access": [
+        "მონაცემებთან წვდომის გამოსათხოვად ორგანიზაციის გასაღები აქტიური უნდა იყოს"
+      ],
+      "The user must have an address to request data access": [
+        "მომხმარებელს მონაცემებზე წვდომის მოსათხოვად მისამართი უნდა გააჩნდეს"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "აქტიურია"
+      ],
+      "All": [
+        "ყველა"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Configure migration": [
+        "მიგრაციის მორგება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Emails": [
+        "ელფოსტები"
+      ],
+      "Errors": [
+        "შეცდომები"
+      ],
+      "Estimated size": [
+        "სავარაუდო ზომა"
+      ],
+      "Has errors": [
+        "აქვს შეცდომები"
+      ],
+      "In progress": [
+        "მიმდინარეობს"
+      ],
+      "Migrate": [
+        "მიგრაცია"
+      ],
+      "Migrated": [
+        "მიგრირებულია"
+      ],
+      "Migration status": [
+        "მიგრაციის სტატუსი"
+      ],
+      "Organization does not have enough seats available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization does not have enough storage available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Pending": [
+        "რიგში"
+      ],
+      "Size": [
+        "ზომა"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "User": [
+        "მომხმარებელი"
+      ],
+      "What are you migrating?": [
+        "რის მიგრაციას ახდენთ?"
+      ],
+      "You": [
+        "თქვენ"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
+      "Summer Sale": [
+        "ზაფხულის ფასდაკლება"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/თვე"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "2 TB data storage": [
+        "2 ტბ მონაცემთა საცავი"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: 40-ჯერ მეტი მიმდინარე სატარიფო გეგმაზე"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მონაცემთა საცავი"
+      ],
+      "500 GB storage": [
+        "500 გბ საცავი"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ფასდაკლებები ეფუძნება სტანდარტულ ყოველთვიურ ტარიფს. თქვენი გამოწერა განახლდება სტანდარტული წლიური ტარიფით, როდესაც გადახდის ციკლი დასრულდება."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "სრული წვდომა ${ VPN_APP_NAME }-ზე"
+      ],
+      "Individual accounts for 6 users": [
+        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
+      ],
+      "Individual accounts for you and a partner": [
+        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+      ],
+      "Online document and spreadsheet editor": [
+        "დოკუმენტებისა და ელექტრონული ცხრილების ონლაინ რედაქტორი"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "გადადით ჩვენს წლიურ პაკეტზე და დაზოგეთ ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 თვით"
+      ],
+      "SUMMER SALE": [
+        "ზაფხულის ფასდაკლება"
       ]
     }
   }

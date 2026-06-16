@@ -1001,6 +1001,24 @@
       ],
       "Sharing is end-to-end encrypted": [
         "공유가 종단간 암호화됩니다"
+      ],
+      "Continue with Free": [
+        "무료로 계속하기"
+      ],
+      "Later": [
+        "나중에"
+      ],
+      "Manage addresses": [
+        "주소 관리"
+      ],
+      "Maybe later": [
+        "나중에"
+      ],
+      "New folder": [
+        "새 폴더"
+      ],
+      "Verify now": [
+        "지금 인증"
       ]
     },
     "Action subscription": {
@@ -2506,6 +2524,9 @@
       ],
       "Åland Islands": [
         "올란드 제도"
+      ],
+      "Canary Islands": [
+        "카나리아 제도"
       ]
     },
     "Cycle": {
@@ -2689,6 +2710,33 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
+      ],
+      "Available storage: ${ storageText }": [
+        "사용 가능한 저장공간: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }(으)로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "수년 치의 이메일과 첨부 파일 등을 보관하기에 충분한 공간입니다."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "단 ${ config.offerPrice }의 비용으로 15 GB 저장공간을 이용해 보세요."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ]
     },
     "description": {
@@ -3494,6 +3542,45 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "모든 저장 공간이 할당되었습니다. 다른 사용자에게 할당 된 저장공간을 줄이십시오."
+      ],
+      "Cannot find move target": [
+        "이동 대상을 찾을 수 없음"
+      ],
+      "Failed to create folder": [
+        "폴더 생성 실패"
+      ],
+      "Failed to expand folder": [
+        "폴더 확장 실패"
+      ],
+      "Organization key must be activated to create invited users": [
+        "초대한 사용자를 생성하려면 조직 키를 활성화해야만 합니다."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "조직에 사용자를 추가하기 전에 커스텀 도메인을 구성하세요."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
+      ],
+      "Unknown location": [
+        "알 수 없는 위치"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "플랜에서 사용 가능한 모든 주소를 사용했습니다. 새 주소를 사용하려면 계정에서 주소를 비활성화하거나 플랜을 업그레이드하세요."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "현재 플랜에서 추가 가능한 모든 사용자를 추가했습니다. 새 사용자를 추가하려면 플랜을 업그레이드해 주세요."
       ]
     },
     "Error importing calendar": {
@@ -5922,6 +6009,42 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "접근 권한을 뷰어로 변경하면 \"${ fileName }\"을(를) 공유할 수 없게 됩니다. 소유자만 사용자의 접근 범위를 다시 변경할 수 있습니다."
+      ],
+      "${ total } user found": [
+        "${ total }명 사용자 찾음"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "회원님의 리퍼럴 링크를 통해 ${ BRAND_NAME }으로 **친구들을 초대하세요.**"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "만약 초대한 친구가 플랜을 구독한다면 **${ refereeRewardAmount }를 받게 됩니다.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
+      ],
+      "Already in this folder": [
+        "폴더에 이미 존재함"
+      ],
+      "Can't move a folder into itself": [
+        "폴더를 자기자신 안으로 옮길 수 없습니다."
+      ],
+      "Can't write into folder": [
+        "폴더에 쓸 수 없습니다."
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
+      ],
+      "Included": [
+        "포함됨"
+      ],
+      "Select a destination folder": [
+        "대상 폴더 선택"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "언제든지 업그레이드하여 남은 메일을 모두 가져오세요"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "언제든지 업그레이드하거나 공간을 비워 남은 메일을 모두 가져오세요"
       ]
     },
     "info": {
@@ -6599,6 +6722,9 @@
       ],
       "Set a password to limit access via link": [
         "링크로 접근을 제한하도록 비밀번호를 설정하세요"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength }자"
       ]
     },
     "Label for contact group color": {
@@ -7646,6 +7772,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "광고 차단과 멀웨어 보호 기느이 포함된 VPN"
+      ],
+      "Appointment scheduling": [
+        "일정 예약"
       ]
     },
     "new_plans: feature highlight": {
@@ -8079,6 +8208,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "${ n }개 커스텀 이메일 도메인 지원"
+      ],
+      "${ n } country": [
+        "${ n }개 국가"
       ]
     },
     "Notification": {
@@ -8636,6 +8768,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "이 키를 \"신뢰하지 않는 것을\" 권장합니다."
+      ],
+      "This key is used for message verification": [
+        "이 키는 메시지 검증에 사용됩니다."
       ]
     },
     "PGP key warning": {
@@ -8733,6 +8868,9 @@
       ],
       "Your organization name": [
         "조직 이름"
+      ],
+      "Search": [
+        "검색"
       ]
     },
     "Placeholder for contact group name": {
@@ -10560,6 +10698,24 @@
       ],
       "Share \"${ fileName }\"": [
         "\"${ fileName }\" 공유"
+      ],
+      "Computers": [
+        "컴퓨터"
+      ],
+      "Continue with free storage": [
+        "무료 저장공간으로 계속하기"
+      ],
+      "Devices": [
+        "기기"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus로 더 많은 저장공간을 확보하세요"
+      ],
+      "Shared with me": [
+        "나와 공유됨"
+      ],
+      "You are all set": [
+        "모든 준비가 완료되었어요"
       ]
     },
     "Title subscription": {
@@ -10689,6 +10845,9 @@
       ],
       "Name must not be empty": [
         "이름은 비워둘 수 없습니다"
+      ],
+      "Name must not contain slashes (/)": [
+        "이름에 슬래시(/)를 포함할 수 없습니다."
       ]
     },
     "Video control": {
@@ -11117,6 +11276,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
+      ],
+      "10+ premium features": [
+        "10개 이상의 premium 기능"
+      ],
+      "Custom email domain": [
+        "사용자 지정 이메일 도메인"
+      ],
+      "Email addresses": [
+        "이메일 주소"
+      ],
+      "Storage": [
+        "저장공간"
       ]
     },
     "Features": {
@@ -11773,6 +11944,128 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
+      ],
+      "Member activation incomplete": [
+        "구성원 활성화 미완료"
+      ],
+      "Organization key must be activated to request data access": [
+        "데이터 접근을 요청하려면 조직 키가 반드시 활성화되어야 합니다."
+      ],
+      "The user must have an address to request data access": [
+        "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "캘린더"
+      ],
+      "Configure migration": [
+        "이전 작업 구성"
+      ],
+      "Contacts": [
+        "연락처"
+      ],
+      "Estimated size": [
+        "예상 용량"
+      ],
+      "Has errors": [
+        "오류 있음"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Migration status": [
+        "마이그레이션 상태"
+      ],
+      "Not activated": [
+        "활성화되지 않음"
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Status": [
+        "상태"
+      ],
+      "User": [
+        "사용자"
+      ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "할인 받기"
+      ],
+      "Summer Sale": [
+        "여름 세일"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15 GB 저장공간"
+      ],
+      "2 TB data storage": [
+        "2 TB 데이터 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB data storage": [
+        "3 TB 데이터 저장공간"
+      ],
+      "500 GB storage": [
+        "500 GB 저장공간"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }에 대한 완전한 접근"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Online document and spreadsheet editor": [
+        "온라인 문서 및 스프레드시트 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 도메인 사용"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12개월 동안"
+      ],
+      "SUMMER SALE": [
+        "여름 세일"
       ]
     }
   }

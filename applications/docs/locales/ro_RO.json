@@ -921,6 +921,27 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Partajarea este criptată bilateral"
+      ],
+      "Continue with Free": [
+        "Continuare cu Free"
+      ],
+      "Later": [
+        "Mai târziu"
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
+      ],
+      "New folder": [
+        "Folder nou"
+      ],
+      "Try Workspace": [
+        "Încercați Workspace"
+      ],
+      "Verify now": [
+        "Verificare acum"
       ]
     },
     "Actions message": {
@@ -2411,6 +2432,9 @@
       ],
       "Åland Islands": [
         "Insulele Åland"
+      ],
+      "Canary Islands": [
+        "Insulele Canare"
       ]
     },
     "customer_support.feature.all": {
@@ -2601,6 +2625,36 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Spațiu disponibil: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Mesajele trimise către ${ connectedAddressText } vor apărea acum în ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Spațiu suficient pentru ani mulți de mesaje, atașamente și altele."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pentru o înrolare fără probleme a echipei la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Deblocați 15 GiB de spațiu pentru doar ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar ${ newUserStorageText } dintre cele mai recente mesaje din Gmail."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
       ]
     },
     "description": {
@@ -3346,6 +3400,62 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
+      ],
+      "Cannot find move target": [
+        "Nu s-a putut găsi ținta mutării"
+      ],
+      "Failed to create folder": [
+        "Crearea folderului a eșuat."
+      ],
+      "Failed to expand folder": [
+        "Extinderea folderului a eșuat"
+      ],
+      "Failed to load 'My files' folder": [
+        "Nu s-a putut încărca folderul „Fișierele mele”"
+      ],
+      "Failed to load document details": [
+        "Încărcarea detaliilor documentului a eșuat."
+      ],
+      "Failed to load recent documents": [
+        "Încărcarea documentelor recente a eșuat."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configurația un domeniu personal înainte de a adăuga adrese."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configurați un nume de domeniu personal înainte de a adăuga utilizatori la organizație."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
+      ],
+      "Some trashed documents could not be loaded": [
+        "Nu s-au putut încărca unele documente din gunoi."
+      ],
+      "Unknown location": [
+        "Loc necunoscut"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ați folosit toate adresele disponibile în plan. Modificați-vă planul pentru a adăuga o adresă nouă sau dezactivați o adresă din cont."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
       ]
     },
     "error": {
@@ -3721,6 +3831,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
+      ],
+      "10+ premium features": [
+        "Peste 10 funcții premium"
+      ],
+      "Custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ]
     },
     "Features": {
@@ -5608,6 +5730,68 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Nu veți putea partaja „${ fileName }” după modificarea accesului la „utilizator”. Doar proprietarul vă poate modifica din nou accesul."
+      ],
+      "${ total } user found": [
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Aceștia primesc ${ refereeRewardAmount }** în credite dacă se abonează."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
+      ],
+      "All your files will be imported": [
+        "Vor fi importate toate fișierele."
+      ],
+      "Already in this folder": [
+        "Deja în acest folder"
+      ],
+      "Can't move a folder into itself": [
+        "Nu se poate muta un folder în el însuși."
+      ],
+      "Can't write into folder": [
+        "Nu se poate scrie în folder."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Vă amintiți parola? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Obțineți o adresă de e-mail profesională la adresa @companiamea.com, 1 TiB de spațiu de stocare securizat per utilizator, apeluri video mai lungi și multe altele cu ${ BRAND_NAME } Workspace."
+      ],
+      "Included": [
+        "Inclus"
+      ],
+      "Password verified": [
+        "Parolă verificată"
+      ],
+      "Please select the labels you would like to import:": [
+        "Selectați etichetele pe care doriți să le importați:"
+      ],
+      "Select a destination folder": [
+        "Selectați un folder de destinație"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Pentru a vă ajuta să vă amintiți parola, vă vom solicita să o introduceți periodic. Vi se va solicita mai rar în timp."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Cheia „${ activeSignerText }” este aprobată pentru a verifica mesajele noi de la acest contact."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Modificați oricând abonamentul pentru a obține și restul"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vă vom reaminti să vă verificați din nou parola mai târziu."
       ]
     },
     "info": {
@@ -5687,6 +5871,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Semnatar activ"
+      ],
+      "Fallback": [
+        "Alternativă"
       ]
     },
     "Label": {
@@ -6166,6 +6356,18 @@
       ],
       "Set a password to limit access via link": [
         "Setare parolă pentru a limita accesarea prin legătura web"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
+      ],
+      "Calendars": [
+        "Calendare"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "Mesaje"
       ]
     },
     "Label for contact group color": {
@@ -7241,6 +7443,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Servere dedicate optimizate pentru viteză"
+      ],
+      "Access all countries": [
+        "Accesați toate țările"
+      ],
+      "No streaming support": [
+        "Fără suport transmisii în flux"
+      ],
+      "Unlock streaming": [
+        "Deblocare transmisii în flux"
       ]
     },
     "new_plans: feature highlight": {
@@ -7411,7 +7622,7 @@
         "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Transferați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
+        "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -7651,6 +7862,11 @@
         "Domenii de e-mail personal acceptate: ${ n }",
         "Domenii de e-mail personal acceptate: ${ n }",
         "Domenii de e-mail personal acceptate: ${ n }"
+      ],
+      "${ n } country": [
+        "${ n } țară",
+        "${ n } țări",
+        "${ n } de țări"
       ]
     },
     "Notification": {
@@ -7919,6 +8135,20 @@
       ],
       "Setting updated. Editors can't change permissions or share.": [
         "Setare actualizată. Editorii nu pot schimba permisiunile sau partaja."
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }” a fost creat."
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }” nu a putut fi creat."
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "„${ ellipsedName }” s-a mutat."
+      ],
+      "${ numberOfItems } item moved": [
+        "Articole mutate: ${ numberOfItems }",
+        "Articole mutate: ${ numberOfItems }",
+        "Articole mutate: ${ numberOfItems }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8251,7 +8481,7 @@
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
       ],
       "terms and conditions": [
-        "termenii și condițiile"
+        "termeni și condiții"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
@@ -8313,6 +8543,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vă recomandăm să „nu aprobați” această cheie."
+      ],
+      "This contact currently signs messages with this key": [
+        "Acest contact semnează în prezent mesajele cu această cheie."
+      ],
+      "This key is used for message verification": [
+        "Această cheie este utilizată pentru verificarea mesajelor."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Această cheie este folosită pentru a cripta mesajele către acest contact în aplicațiile mai vechi."
       ]
     },
     "PGP key warning": {
@@ -8401,6 +8640,12 @@
       ],
       "Your organization name": [
         "Numele organizației"
+      ],
+      "Search": [
+        "Căutare"
+      ],
+      "Search for users or addresses": [
+        "Căutare utilizator sau adresă"
       ]
     },
     "Placeholder for contact group name": {
@@ -10395,6 +10640,30 @@
       ],
       "Share \"${ fileName }\"": [
         "Partajare „${ fileName }\""
+      ],
+      "Computers": [
+        "Calculatoare"
+      ],
+      "Continue with free storage": [
+        "Continuare cu spațiu gratuit"
+      ],
+      "Devices": [
+        "Dispozitive"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrați-vă organizația la ${ BRAND_NAME }"
+      ],
+      "Shared with me": [
+        "Partajate cu mine"
+      ],
+      "Verify your password": [
+        "Verificați-vă parola"
+      ],
+      "You are all set": [
+        "Totul este pregătit"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10480,6 +10749,9 @@
       ],
       "Change shared item settings": [
         "Modificare setări articol partajat"
+      ],
+      "Instant assistance with AI and human experts.": [
+        "Asistență instantă cu IA și experți umani."
       ]
     },
     "tooltip": {
@@ -10501,6 +10773,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ],
+      "Member activation incomplete": [
+        "Activarea membrului nu este completă"
+      ],
+      "Organization key must be activated to request data access": [
+        "Cheia organizației trebuie activată pentru a solicita accesul la date."
+      ],
+      "The user must have an address to request data access": [
+        "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
       ]
     },
     "Validation": {
@@ -10523,6 +10804,9 @@
       ],
       "Name must not be empty": [
         "Numele nu poate fi gol."
+      ],
+      "Name must not contain slashes (/)": [
+        "Numele nu trebuie să conțină bare oblice (/)"
       ]
     },
     "Video control": {
@@ -10698,6 +10982,176 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "All": [
+        "Toate"
+      ],
+      "Calendar": [
+        "Calendar"
+      ],
+      "Configure migration": [
+        "Configurare migrare"
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Mesaje"
+      ],
+      "Errors": [
+        "Erori"
+      ],
+      "Estimated size": [
+        "Mărime estimată"
+      ],
+      "Find out what can be migrated.": [
+        "Aflați ce poate fi migrat."
+      ],
+      "Has errors": [
+        "Are erori"
+      ],
+      "In progress": [
+        "În derulare"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "Migrated": [
+        "Migrat"
+      ],
+      "Migration status": [
+        "Stare migrare"
+      ],
+      "Missing organization private key": [
+        "Cheia privată a organizației lipsește."
+      ],
+      "Missing organization public key": [
+        "Cheia publică a organizației lipsește."
+      ],
+      "No users to display": [
+        "Nu există utilizatori de afișat."
+      ],
+      "Not activated": [
+        "Neactivat"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizația nu dispune de suficiente licențe disponibile."
+      ],
+      "Organization does not have enough storage available": [
+        "Organizația nu are suficient spațiu de stocare disponibil."
+      ],
+      "Pending": [
+        "În așteptare"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
+      ],
+      "Select users to migrate": [
+        "Selectați utilizatorii pentru migrare"
+      ],
+      "Size": [
+        "Mărime"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "User": [
+        "Utilizator"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Ce migrați?"
+      ],
+      "You": [
+        "Eu"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Valorificați oferta"
+      ],
+      "Summer Sale": [
+        "Reduceri de vară"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "15 GB storage": [
+        "15 GB de spațiu de stocare"
+      ],
+      "2 TB data storage": [
+        "2 TB de spațiu de stocare pentru date"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de spațiu de stocare: de 40 de ori planul actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de spațiu de stocare pentru date"
+      ],
+      "500 GB storage": [
+        "500 GB de spațiu de stocare"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acces complet la ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Conturi individuale pentru 6 utilizatori"
+      ],
+      "Individual accounts for you and a partner": [
+        "Conturi individuale pentru dvs. și un partener"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor conectat de documente și foi de calcul"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Număr nelimitat de foldere, etichete și filtre"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "SUMMER SALE": [
+        "REDUCERI DE VARĂ"
       ]
     }
   }

@@ -1010,6 +1010,21 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Sdílení je koncově šifrované"
+      ],
+      "Continue with Free": [
+        "Pokračovat s tarifem Free"
+      ],
+      "Later": [
+        "Později"
+      ],
+      "Manage addresses": [
+        "Spravovat adresy"
+      ],
+      "Maybe later": [
+        "Možná později"
+      ],
+      "New folder": [
+        "Nová složka"
       ]
     },
     "Action subscription": {
@@ -2743,6 +2758,33 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
+      ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložiště: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-maily odeslané na ${ connectedAddressText } se nyní budou zobrazovat v ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatek místa pro e-maily, přílohy a další na dlouhé roky."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odemkněte si 15 GB úložiště za pouhých ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Při zaplnění úložiště na 80 % importy pozastavíme, abychom vyhradili místo pro nové zprávy."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Zahájili jsme import vašich e-mailů z Gmailu. Jakmile bude dokončen, dáme vám vědět."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Nyní můžete odesílat e-maily z ${ BRAND_NAME } pomocí této adresy."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze ${ newUserStorageText } vašich nejnovějších zpráv z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze vaše nejnovější e-maily z Gmailu."
       ]
     },
     "description": {
@@ -3575,6 +3617,51 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovatelný název"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } položku se nepodařilo přesunout",
+        "${ failureItems.length } položky se nepodařilo přesunout",
+        "${ failureItems.length } položek se nepodařilo přesunout",
+        "${ failureItems.length } položek se nepodařilo přesunout"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
+      ],
+      "Cannot find move target": [
+        "Nelze najít cíl přesunu"
+      ],
+      "Failed to create folder": [
+        "Vytvoření složky selhalo"
+      ],
+      "Failed to expand folder": [
+        "Rozbalení složky selhalo"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Před přidáním adres nastavte vlastní doménu."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
+      ],
+      "Unknown location": [
+        "Neznámé umístění"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ]
     },
     "Error importing calendar": {
@@ -6150,6 +6237,33 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Odměnu v podobě kreditů získáte 1 měsíc poté, co si vaši přátelé předplatí roční tarif, a 2 měsíce poté, co si předplatí měsíční tarif."
+      ],
+      "${ total } user found": [
+        "Nalezen ${ total } uživatel",
+        "Nalezeni ${ total } uživatelé",
+        "Nalezeno ${ total } uživatelů",
+        "Nalezeno ${ total } uživatelů"
+      ],
+      "Already in this folder": [
+        "Již v této složce"
+      ],
+      "Can't move a folder into itself": [
+        "Složku nelze přesunout do sebe"
+      ],
+      "Can't write into folder": [
+        "Nelze zapisovat do složky"
+      ],
+      "Included": [
+        "Včetně"
+      ],
+      "Select a destination folder": [
+        "Vyberte cílovou složku"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Kdykoli upgradujte, abyste přenesli i zbytek"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
       ]
     },
     "info": {
@@ -8726,6 +8840,21 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Vaše adresa ${ BRAND_NAME } je připravena k použití"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" úspěšně vytvořena"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" se nepodařilo vytvořit"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" přesunuto"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } položka přesunuta",
+        "${ numberOfItems } položky přesunuty",
+        "${ numberOfItems } položek přesunuto",
+        "${ numberOfItems } položek přesunuto"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9159,6 +9288,9 @@
       ],
       "Select a provider": [
         "Vyberte poskytovatele"
+      ],
+      "Search": [
+        "Vyhledat"
       ]
     },
     "Placeholder for contact group name": {
@@ -11121,6 +11253,24 @@
       ],
       "Share \"${ fileName }\"": [
         "Sdílet \"${ fileName }\""
+      ],
+      "Computers": [
+        "Počítače"
+      ],
+      "Continue with free storage": [
+        "Pokračovat s bezplatným úložištěm"
+      ],
+      "Devices": [
+        "Zařízení"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získejte více úložiště s ${ MAIL_APP_NAME } Plus"
+      ],
+      "Shared with me": [
+        "Sdíleno se mnou"
+      ],
+      "You are all set": [
+        "Vše je nastaveno"
       ]
     },
     "Title subscription": {
@@ -11259,6 +11409,9 @@
       ],
       "Name must not be empty": [
         "Název nesmí být prázdný"
+      ],
+      "Name must not contain slashes (/)": [
+        "Název nesmí obsahovat lomítka (/)"
       ]
     },
     "Video control": {
@@ -11732,6 +11885,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
+      ],
+      "10+ premium features": [
+        "10+ prémiových funkcí"
+      ],
+      "Custom email domain": [
+        "Vlastní e-mailová doména"
+      ],
+      "Email addresses": [
+        "E-mailové adresy"
+      ],
+      "Storage": [
+        "Úložiště"
       ]
     },
     "Features": {
@@ -12390,6 +12555,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
+      ],
+      "Member activation incomplete": [
+        "Nekompletní aktivace člena"
+      ],
+      "Organization key must be activated to request data access": [
+        "Pro žádost o přístup k datům musíte aktivovat klíč organizace"
+      ],
+      "The user must have an address to request data access": [
+        "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
       ]
     },
     "meet_2025: Addon": {
@@ -12424,6 +12598,116 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalendář"
+      ],
+      "Configure migration": [
+        "Nastavte migraci"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Estimated size": [
+        "Odhadovaná velikost"
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Probíhá"
+      ],
+      "Migration status": [
+        "Stav migrace"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizace nemá dostatek volných licencí"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizace nemá dostatečně velké úložiště"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "User": [
+        "Uživatel"
+      ],
+      "What are you migrating?": [
+        "Co migrujete?"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Summer Sale": [
+        "Letní výprodej"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "15 GB storage": [
+        "15GB úložiště"
+      ],
+      "2 TB data storage": [
+        "2TB datové úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB úložiště: 40× váš současný plán"
+      ],
+      "3 TB data storage": [
+        "3TB datové úložiště"
+      ],
+      "500 GB storage": [
+        "500GB úložiště"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy vycházejí ze standardních měsíčních cen. Vaše předplatné se na konci fakturačního cyklu obnoví za standardní roční sazbu."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Plný přístup k ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online editor dokumentů a tabulek"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Přejděte na náš roční plán a ušetřete ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Používejte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "SUMMER SALE": [
+        "LETNÍ VÝPRODEJ"
       ]
     }
   }

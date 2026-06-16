@@ -977,6 +977,24 @@
       ],
       "Shared": [
         "Dibagikan"
+      ],
+      "Continue with Free": [
+        "Lanjutkan dengan Gratis"
+      ],
+      "Later": [
+        "Nanti"
+      ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
+      ],
+      "New folder": [
+        "Folder baru"
+      ],
+      "Reconnect to Gmail": [
+        "Hubungkan ulang ke Gmail"
       ]
     },
     "Action subscription": {
@@ -2623,6 +2641,45 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gunakan panduan ini agar organisasi Anda dapat menikmati ekosistem enkripsi dan privasi ${ BRAND_NAME } yang terdepan di industri dengan segera."
+      ],
+      "Available storage: ${ storageText }": [
+        "Penyimpanan tersedia: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Email yang dikirim ke ${ connectedAddressText } kini akan muncul di ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Ruang yang cukup untuk email, lampiran, dan lainnya selama bertahun-tahun."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Hal ini dapat terjadi jika izin dihapus atau kata sandi Anda diubah."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Untuk terus menerima dan mengirim pesan Gmail di ${ BRAND_NAME }, silakan hubungkan ulang akun Anda."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Untuk terus menerima dan mengirim pesan Gmail di ${ BRAND_NAME }, silakan hubungkan ulang akun Anda."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Buka kapasitas penyimpanan sebesar 15 GB hanya dengan ${ config.offerPrice }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Tidak dapat lagi mengakses ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Impor akan dijeda saat penyimpanan mencapai 80% untuk menyisakan ruang bagi pesan baru."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Impor email dari Gmail telah dimulai. Anda akan diberi tahu setelah selesai."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Kini dapat mengirim email dari ${ BRAND_NAME } menggunakan alamat ini."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya ${ newUserStorageText } pesan Gmail terbaru Anda yang akan diimpor"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya email Gmail terbaru Anda yang akan diimpor."
       ]
     },
     "description": {
@@ -3401,6 +3458,42 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nama tidak dapat didekripsi"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
+      ],
+      "Failed to create folder": [
+        "Folder gagal dibuat"
+      ],
+      "Failed to expand folder": [
+        "Folder gagal diperluas"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Kunci organisasi harus diaktifkan untuk membuat pengguna yang diundang"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Kunci organisasi harus diaktifkan untuk membuat pengguna non-privat"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Silakan atur domain kustom sebelum menambahkan alamat"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Terjadi kesalahan saat mengambil domain yang tersedia"
+      ],
+      "Unknown location": [
+        "Lokasi tidak diketahui"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ]
     },
     "Error importing calendar": {
@@ -5772,6 +5865,15 @@
       ],
       "owner": [
         "pemilik"
+      ],
+      "Included": [
+        "Termasuk"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Tingkatkan kapan saja untuk memindahkan sisanya"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Tingkatkan atau bersihkan ruang penyimpanan kapan saja untuk memindahkan sisanya"
       ]
     },
     "info": {
@@ -8162,6 +8264,9 @@
       ],
       "The spreadsheet failed to be created": [
         "Spreadsheet gagal dibuat"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Alamat ${ BRAND_NAME } Anda siap digunakan"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8556,6 +8661,9 @@
       ],
       "Your organization name": [
         "Nama organisasi Anda"
+      ],
+      "Search": [
+        "Pencarian"
       ]
     },
     "Placeholder for contact group name": {
@@ -10350,6 +10458,27 @@
       ],
       "Public link": [
         "Tautan publik"
+      ],
+      "Computers": [
+        "Komputer"
+      ],
+      "Continue with free storage": [
+        "Lanjutkan dengan penyimpanan gratis"
+      ],
+      "Devices": [
+        "Perangkat"
+      ],
+      "Disconnected from Gmail": [
+        "Terputus dari Gmail"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Dapatkan penyimpanan lebih besar dengan ${ MAIL_APP_NAME } Plus"
+      ],
+      "Shared with me": [
+        "Dibagikan dengan saya"
+      ],
+      "You are all set": [
+        "Semua sudah siap"
       ]
     },
     "Title subscription": {
@@ -10476,6 +10605,9 @@
       ],
       "Name must not be empty": [
         "Nama tidak boleh kosong"
+      ],
+      "Name must not contain slashes (/)": [
+        "Nama tidak boleh mengandung garis miring (\\/)"
       ]
     },
     "Video control": {
@@ -10855,6 +10987,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Tanpa batasan jumlah alias hide-my-email"
+      ],
+      "10+ premium features": [
+        "10+ fitur premium"
+      ],
+      "Custom email domain": [
+        "Domain email khusus"
+      ],
+      "Email addresses": [
+        "Alamat email"
+      ],
+      "Storage": [
+        "Penyimpanan"
       ]
     },
     "Features": {
@@ -11343,6 +11487,122 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
+      ],
+      "Member activation incomplete": [
+        "Aktivasi anggota belum rampung"
+      ],
+      "Organization key must be activated to request data access": [
+        "Kunci organisasi harus diaktifkan untuk meminta pengaksesan data"
+      ],
+      "The user must have an address to request data access": [
+        "Pengguna harus memiliki alamat untuk meminta pengaksesan data"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Atur migrasi"
+      ],
+      "Contacts": [
+        "Kontak"
+      ],
+      "Estimated size": [
+        "Perkiraan ukuran"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Migration status": [
+        "Status migrasi"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasi tidak memiliki jumlah kuota yang memadai"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Pengguna"
+      ],
+      "What are you migrating?": [
+        "Apa yang ingin Anda migrasikan?"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
+      "Summer Sale": [
+        "Promo Musim Panas"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "2 TB data storage": [
+        "Penyimpanan data 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Ruang penyimpanan 200 GB: 40x lebih besar dari paket Anda saat ini"
+      ],
+      "3 TB data storage": [
+        "Penyimpanan data 3 TB"
+      ],
+      "500 GB storage": [
+        "Penyimpanan 500 GB"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskon didasarkan pada harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar setelah siklus tagihan berakhir."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Akses penuh ke ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Akun individu untuk 6 pengguna"
+      ],
+      "Individual accounts for you and a partner": [
+        "Akun individu untuk Anda dan pasangan"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor dokumen dan spreadsheet daring"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi file sebelumnya"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Beralih ke paket tahunan dan hemat ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Tanpa batasan jumlah folder, label, dan saringan"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "untuk 12 bulan"
+      ],
+      "SUMMER SALE": [
+        "PROMO MUSIM PANAS"
       ]
     }
   }

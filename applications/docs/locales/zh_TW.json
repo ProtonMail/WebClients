@@ -842,6 +842,24 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
+      "Continue with Free": [
+        "繼續使用免費方案"
+      ],
+      "Later": [
+        "稍後"
+      ],
+      "Manage addresses": [
+        "管理電郵位址"
+      ],
+      "Maybe later": [
+        "稍後再考慮"
+      ],
+      "New folder": [
+        "新資料夾"
+      ],
+      "Verify now": [
+        "立即驗證"
       ]
     },
     "Actions message": {
@@ -1087,6 +1105,9 @@
       ],
       "Individual accounts for 6 users": [
         "給 6 位使用者的個人帳戶"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版服 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2025: Tooltip": {
@@ -2456,6 +2477,36 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "我們無法再存取至 ${ boldEmails }"
+      ],
+      "Available storage: ${ storageText }": [
+        "可用儲存空間: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "電子郵件傳送至 ${ connectedAddressText } 將顯示於 ${ MAIL_APP_NAME }。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "足夠超過年的電子郵件、附件和更多"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "只要 ${ config.offerPrice } 解鎖 15 GB 的儲存空間"
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "使用此指南以讓貴組織快速地受益於 ${ BRAND_NAME } 的業界領先加密和隱私生態系。"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我們已匯入來自於 Gmail 的電子郵件。完成時我們將讓您知道。"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您可透過 ${ BRAND_NAME } 用此位址傳送電子郵件。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
       ]
     },
     "description": {
@@ -3137,6 +3188,48 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️無法解密的名字"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 個項目移動失敗"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
+      ],
+      "Cannot find move target": [
+        "找不到移動目標"
+      ],
+      "Failed to create folder": [
+        "建立資料夾失敗"
+      ],
+      "Failed to expand folder": [
+        "展開資料夾失敗"
+      ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
+      ],
+      "Unknown location": [
+        "未知的位置"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ]
     },
     "error": {
@@ -3508,6 +3601,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
+      ],
+      "10+ premium features": [
+        "10 + 頂級質子版功能"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
+      ],
+      "Storage": [
+        "儲存空間"
       ]
     },
     "fido2: Info": {
@@ -5109,6 +5214,36 @@
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "您將拒絕此加入至 ${ invitationName } 資料夾的邀請。若您繼續，您將無法存取至它除非擁有者再次邀請您。您確定要繼續嗎?"
+      ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
+      ],
+      "Already in this folder": [
+        "已經在此資料夾"
+      ],
+      "Can't move a folder into itself": [
+        "無法將資料夾移動到自身"
+      ],
+      "Can't write into folder": [
+        "無法寫入資料夾"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
+      "Included": [
+        "包含"
+      ],
+      "Select a destination folder": [
+        "選擇一個目的文件夾"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "隨時升級或清理空間以帶入更多"
       ]
     },
     "info": {
@@ -5639,6 +5774,15 @@
       ],
       "Set a password to limit access via link": [
         "設定密碼以限制透過連結的存取"
+      ],
+      "Anyone on the Internet with the link": [
+        "網路上的任何有連結的人"
+      ],
+      "Calendars": [
+        "行事曆"
+      ],
+      "Emails": [
+        "電郵"
       ]
     },
     "Label for contact group color": {
@@ -6637,6 +6781,12 @@
       ],
       "Dedicated servers optimized for speed": [
         "針對速度的獨立伺服器"
+      ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ]
     },
     "new_plans: feature highlight": {
@@ -6738,6 +6888,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "一次性付款，永久保護您的密碼和身分。"
       ]
     },
     "new_plans: Subtext": {
@@ -7019,6 +7172,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "支援 ${ n } 組自訂電子郵件網域"
+      ],
+      "${ n } country": [
+        "${ n } 個國家"
       ]
     },
     "Notification": {
@@ -7237,6 +7393,18 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" 已共享"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "「${ ellipsedName }」已成功創建"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "「${ ellipsedName }」創建失敗"
+      ],
+      "${ numberOfItems } item moved": [
+        "已移動 ${ numberOfItems } 個項目"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 位址已就緒"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7596,6 +7764,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "我們建議您「取消信任」此金鑰。"
+      ],
+      "This key is used for message verification": [
+        "此金鑰用於訊息驗證"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "此金鑰是用於舊版的應用程式以加密通訊錄"
       ]
     },
     "PGP key warning": {
@@ -7684,6 +7858,9 @@
       ],
       "Select a provider": [
         "選擇一個供應商"
+      ],
+      "Search": [
+        "搜尋"
       ]
     },
     "Placeholder for contact group name": {
@@ -8408,6 +8585,9 @@
       ],
       "Get 500 GB to securely store all your files and photos": [
         "取得 500 GB 以安全地儲存您的檔案和照片"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "保持您的密碼安全和整齊於多個保管庫"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9420,6 +9600,27 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
+      "Computers": [
+        "電腦"
+      ],
+      "Continue with free storage": [
+        "繼續使用免費儲存空間"
+      ],
+      "Devices": [
+        "個裝置"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "透過 ${ MAIL_APP_NAME } 取得更多儲存空間"
+      ],
+      "Shared with me": [
+        "與我共享"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
+      ],
+      "You are all set": [
+        "你已就緒"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9686,6 +9887,89 @@
     "sheets_2025:Action": {
       "New spreadsheet": [
         "新增工作表"
+      ]
+    },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Summer Sale": [
+        "夏季特賣"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 TB data storage": [
+        "2 TB 資料儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：您目前方案的 40 倍"
+      ],
+      "3 TB data storage": [
+        "3 TB 資料儲存空間"
+      ],
+      "500 GB storage": [
+        "500 GB 儲存空間"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "完整存取 ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "6 位使用者的個人帳號"
+      ],
+      "Individual accounts for you and a partner": [
+        "供您與夥伴使用的個人帳號"
+      ],
+      "Online document and spreadsheet editor": [
+        "線上文件和試算表編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Use your own email domain": [
+        "使用您自己的電子郵件網域"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
+      ],
+      "SUMMER SALE": [
+        "夏季特賣"
       ]
     }
   }

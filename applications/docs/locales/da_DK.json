@@ -1009,6 +1009,27 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Deling er end-to-end-krypteret"
+      ],
+      "Continue with Free": [
+        "Fortsæt med Free"
+      ],
+      "Later": [
+        "Senere"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
+      "Maybe later": [
+        "Måske senere"
+      ],
+      "New folder": [
+        "Ny mappe"
+      ],
+      "Try Workspace": [
+        "Prøv Workspace"
+      ],
+      "Verify now": [
+        "Bekræft nu"
       ]
     },
     "Action subscription": {
@@ -2475,6 +2496,9 @@
       ],
       "Åland Islands": [
         "Ålandsøerne"
+      ],
+      "Canary Islands": [
+        "De Kanariske Øer"
       ]
     },
     "Cycle": {
@@ -2655,6 +2679,36 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tilgængelig lagerplads: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails der er sendt til ${ connectedAddressText } vil nu blive vist i ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plads til flere år værd af e-mails, vedhæftninger og mere."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Importér dine data fra Google, Outlook og andre for at sikre en smidig onboarding af dit team til ${ BRAND_NAME }."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås op for 15 GB lagerplads til kun ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun ${ newUserStorageText } af dine seneste Gmail-beskeder"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun dine seneste Gmail-beskeder."
       ]
     },
     "description": {
@@ -3465,6 +3519,61 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } element kunne ikke flyttes",
+        "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
+      ],
+      "Cannot find move target": [
+        "Kan ikke finde mål for flytningen"
+      ],
+      "Failed to create folder": [
+        "Kunne ikke oprette mappe"
+      ],
+      "Failed to expand folder": [
+        "Kunne ikke udvide mappe"
+      ],
+      "Failed to load 'My files' folder": [
+        "Kunne ikke indlæse 'Mine filer'-mappen"
+      ],
+      "Failed to load document details": [
+        "Kunne ikke indlæse dokument-detaljer"
+      ],
+      "Failed to load recent documents": [
+        "Kunne ikke indlæse de seneste dokumenter"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnøglen skal aktiveres for at oprette inviterede brugere"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Sæt et brugerdomæne op, før du tilføjer adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et brugerdomæne, inden du tilføjer brugere til din organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Opgradér venligst til et erhvervsabonnement med mere end 1 bruger for at administrere flere brugere."
+      ],
+      "Some trashed documents could not be loaded": [
+        "Nogle elementer i papirkurven kunne ikke indlæses"
+      ],
+      "Unknown location": [
+        "Ukendt placering"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har opbrugt alle adresser i dit abonnement. Opgradér dit abonnement for at tilføje en ny adresse, eller deaktivér en adresse på din konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
       ]
     },
     "Error importing calendar": {
@@ -5939,6 +6048,64 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Du vil ikke kunne dele \"${ fileName }\" efter du har ændret adgangen til seer. Kun ejeren kan ændre din adgang igen."
+      ],
+      "${ total } user found": [
+        "${ total } bruger fundet",
+        "${ total } brugere fundet"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter dine venner** til ${ BRAND_NAME } med dit henvisningslink."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får${ refereeRewardAmount }** i kredit, hvis de tegner et abonnement."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
+      ],
+      "Already in this folder": [
+        "Allerede i denne mappe"
+      ],
+      "Can't move a folder into itself": [
+        "Kan ikke flytte en mappe ind i sig selv"
+      ],
+      "Can't write into folder": [
+        "Kan ikke skrive i mappen"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kan du huske din adgangskode? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Glemt din adgangskode?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Få en professionel @din-virksomhed.com e-mail, 1 TB sikker lagerplads per bruger, længere videoopkald, og mere med ${ BRAND_NAME } Workspace."
+      ],
+      "Included": [
+        "Inkluderet"
+      ],
+      "Password verified": [
+        "Adgangskode bekræftet"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vælg venligst de labels, du ønsker at importere:"
+      ],
+      "Select a destination folder": [
+        "Vælg en destinationsmappe"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For at hjælpe dig med at huske din adgangskode, beder vi dig om at indtaste den en gang imellem. Vi spørger dig mindre og mindre efterhånden."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Stol på \"${ activeSignerText }\"-nøglen for at verificere nye beskeder fra denne kontakt."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Opgrader når som helst for at overføre resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Opgrader eller frigør lagerplads når som helst for at overføre resten"
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi minder dig om at bekræfte din adgangskode igen senere"
       ]
     },
     "info": {
@@ -6031,6 +6198,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiv signerende part"
+      ],
+      "Fallback": [
+        "Reserve"
       ]
     },
     "Label": {
@@ -6604,6 +6777,9 @@
       ],
       "Set a password to limit access via link": [
         "Indstil en adgangskode for at begrænse adgang via link"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
       ]
     },
     "Label for contact group color": {
@@ -7683,6 +7859,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Dedikerede hastighedsoptimerede servere"
+      ],
+      "Access all countries": [
+        "Få adgang til alle lande"
+      ],
+      "No streaming support": [
+        "Understøtter ikke streaming"
+      ],
+      "Unlock streaming": [
+        "Lås op for streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -8115,6 +8300,10 @@
       "Support for ${ n } custom email domain": [
         "Mulighed for ${ n } brugerdefineret e-mail-domæne",
         "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
+      ],
+      "${ n } country": [
+        "${ n } land",
+        "${ n } lande"
       ]
     },
     "Notification": {
@@ -8381,6 +8570,19 @@
       ],
       "Setting updated. Editors can't change permissions or share.": [
         "Indstilling opdateret. Redaktører kan ikke ændre tilladelser eller dele."
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" oprettet"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kunne ikke oprettes"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8655,6 +8857,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
+      ],
+      "This contact currently signs messages with this key": [
+        "På nuværende tidspunkt signerer denne kontakt beskeder med denne nøgle"
+      ],
+      "This key is used for message verification": [
+        "Denne nøgle bruges til at verificere beskeder"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denne nøgle bruges til at kryptere beskeder til denne kontakt på ældre apps"
       ]
     },
     "PGP key warning": {
@@ -8752,6 +8963,12 @@
       ],
       "Your organization name": [
         "Dit organisationsnavn"
+      ],
+      "Search": [
+        "Søg"
+      ],
+      "Search for users or addresses": [
+        "Søg efter brugere eller adresser"
       ]
     },
     "Placeholder for contact group name": {
@@ -10608,6 +10825,30 @@
       ],
       "Share \"${ fileName }\"": [
         "Del \"${ fileName }\""
+      ],
+      "Computers": [
+        "Computere"
+      ],
+      "Continue with free storage": [
+        "Fortsæt med gratis lagerplads"
+      ],
+      "Devices": [
+        "Enheder"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Flyt din organisation til ${ BRAND_NAME }"
+      ],
+      "Shared with me": [
+        "Delt med mig"
+      ],
+      "Verify your password": [
+        "Bekræft din adgangskode"
+      ],
+      "You are all set": [
+        "Så er du klar"
       ]
     },
     "Title subscription": {
@@ -10740,6 +10981,9 @@
       ],
       "Name must not be empty": [
         "Navn må ikke være tomt"
+      ],
+      "Name must not contain slashes (/)": [
+        "Navnet må ikke indeholde skråstreger (/)"
       ]
     },
     "Video control": {
@@ -11234,6 +11478,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
+      ],
+      "10+ premium features": [
+        "10+ premium-funktioner"
+      ],
+      "Custom email domain": [
+        "Brugerdefineret e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
+      "Storage": [
+        "Lagerplads"
       ]
     },
     "Features": {
@@ -11944,11 +12200,190 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer kan ikke tilgå private brugeres data eller nulstille deres adgangskode."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufuldstændig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnøglen skal aktiveres for at anmode om dataadgang"
+      ],
+      "The user must have an address to request data access": [
+        "Brugeren skal have en adresse for at anmode om dataadgang"
       ]
     },
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktiveret"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "Estimated size": [
+        "Anslået størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Find ud af hvad der kan migreres."
+      ],
+      "Has errors": [
+        "Fejlbehæftet"
+      ],
+      "In progress": [
+        "I gang"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrated": [
+        "Migreret"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
+      ],
+      "No users to display": [
+        "Ingen brugere at vise"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige pladser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
+      ],
+      "Pending": [
+        "Afventer"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vælg præcis det du gerne vil migrere. Det vil gælde for brugere i organisationen."
+      ],
+      "Select users to migrate": [
+        "Vælg brugere at migrere"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruger"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
+      ],
+      "What are you migrating?": [
+        "Hvad migrerer du?"
+      ],
+      "You": [
+        "Dig"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Tag imod tilbuddet"
+      ],
+      "Summer Sale": [
+        "Sommerudsalg"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagerplads"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40x dit nuværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagerplads"
+      ],
+      "500 GB storage": [
+        "500 GB lagerplads"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Fuld adgang til ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle konti til 6 brugere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle konti til dig og en partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online-editor til dokumenter og regneark"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stærkere beskyttelse mod cybertrusler"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænset antal mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SUMMER SALE": [
+        "SOMMERUDSALG"
       ]
     }
   }

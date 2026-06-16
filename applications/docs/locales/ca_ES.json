@@ -1009,6 +1009,27 @@
       ],
       "Sharing is end-to-end encrypted": [
         "La compartició està xifrada d’extrem a extrem"
+      ],
+      "Continue with Free": [
+        "Continuar amb el pla gratuït"
+      ],
+      "Later": [
+        "Més tard"
+      ],
+      "Manage addresses": [
+        "Gestionar adreces"
+      ],
+      "Maybe later": [
+        "Potser més endavant"
+      ],
+      "New folder": [
+        "Crea una carpeta"
+      ],
+      "Try Workspace": [
+        "Proveu Workspace"
+      ],
+      "Verify now": [
+        "Verifiqueu-ho ara"
       ]
     },
     "Action subscription": {
@@ -2524,6 +2545,9 @@
       ],
       "Åland Islands": [
         "Illes Aland"
+      ],
+      "Canary Islands": [
+        "Illes Canàries"
       ]
     },
     "Cycle": {
@@ -2704,6 +2728,36 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Emmagatzematge disponible: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Els correus enviats a ${ connectedAddressText } apareixeran ara a ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per a una incorporació fluida del vostre equip a ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i d'altres."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquegeu 15 GB d'emmagatzematge per només ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem ${ newUserStorageText } dels vostres missatges més recents de Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
       ]
     },
     "description": {
@@ -3509,6 +3563,61 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "No s'ha pogut moure ${ failureItems.length } element",
+        "No s'han pogut moure ${ failureItems.length } elements"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
+      ],
+      "Cannot find move target": [
+        "No s'ha trobat la destinació del moviment"
+      ],
+      "Failed to create folder": [
+        "No s'ha pogut crear la carpeta"
+      ],
+      "Failed to expand folder": [
+        "No s'ha pogut expandir la carpeta"
+      ],
+      "Failed to load 'My files' folder": [
+        "No s'ha pogut carregar la carpeta «Els meus fitxers»"
+      ],
+      "Failed to load document details": [
+        "No s'han pogut carregar els detalls del document"
+      ],
+      "Failed to load recent documents": [
+        "No s'han pogut carregar els documents recents"
+      ],
+      "Organization key must be activated to create invited users": [
+        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureu un domini personalitzat abans d'afegir adreces."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureu un domini personalitzat abans d'afegir usuaris a la seva organització."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Habiliteu el suport multiusuari abans d'afegir usuaris a la vostra organització."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
+      ],
+      "Some trashed documents could not be loaded": [
+        "No s'han pogut carregar alguns documents de la paperera"
+      ],
+      "Unknown location": [
+        "Ubicació desconeguda"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Heu utilitzat totes les adreces del vostre pla. Actualitzeu-lo per afegir-ne una de nova o desactiveu una adreça al vostre compte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
       ]
     },
     "Error importing calendar": {
@@ -5979,6 +6088,67 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "No podreu compartir \"${ fileName }\" un cop canvieu l'accés a visualitzador. Només el propietari podrà tornar a canviar el vostre accés."
+      ],
+      "${ total } user found": [
+        "S'ha trobat ${ total } usuari",
+        "S'han trobat ${ total } usuaris"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ells reben ${ refereeRewardAmount }** en crèdits si es subscriuen."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
+      ],
+      "All your files will be imported": [
+        "S'importaran tots els vostres fitxers"
+      ],
+      "Already in this folder": [
+        "Ja és en aquesta carpeta"
+      ],
+      "Can't move a folder into itself": [
+        "No es pot moure una carpeta dins d'ella mateixa"
+      ],
+      "Can't write into folder": [
+        "No es pot escriure a la carpeta"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Recordeu la vostra contrasenya? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Obtingueu una adreça de correu electrònic professional @lavostra-empresa.com, 1 TB d'emmagatzematge segur per usuari, trucades de vídeo més llargues i molt més amb el Workspace de ${ BRAND_NAME }."
+      ],
+      "Included": [
+        "Inclòs"
+      ],
+      "Password verified": [
+        "S'ha verificat la contrasenya"
+      ],
+      "Please select the labels you would like to import:": [
+        "Seleccioneu les etiquetes que voleu importar:"
+      ],
+      "Select a destination folder": [
+        "Seleccioneu una carpeta de destinació"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Milloreu el pla en qualsevol moment per portar la resta"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
+      ],
+      "We'll remind you to verify your password again later": [
+        "Us recordarem més tard que torneu a verificar la contrasenya"
       ]
     },
     "info": {
@@ -6071,6 +6241,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signant actiu"
+      ],
+      "Fallback": [
+        "Recursos alternatius"
       ]
     },
     "Label": {
@@ -6656,6 +6832,12 @@
       ],
       "Set a password to limit access via link": [
         "Establiu una contrasenya per limitar l'accés mitjançant l'enllaç"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
+      ],
+      "Drive": [
+        "Unitat"
       ]
     },
     "Label for contact group color": {
@@ -7799,6 +7981,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Servidors dedicats optimitzats per més rapidesa"
+      ],
+      "Access all countries": [
+        "Accediu a tots els països"
+      ],
+      "No streaming support": [
+        "No hi ha suport per la reproducció en continu"
+      ],
+      "Unlock streaming": [
+        "Desbloquegeu la reproducció en continu"
       ]
     },
     "new_plans: feature highlight": {
@@ -8231,6 +8422,10 @@
       "Support for ${ n } custom email domain": [
         "Suport per a ${ n } domini de correu electrònic personalitzat",
         "Suport per a ${ n } dominis de correu electrònic personalitzats"
+      ],
+      "${ n } country": [
+        "${ n } país",
+        "${ n } països"
       ]
     },
     "Notification": {
@@ -8497,6 +8692,19 @@
       ],
       "Setting updated. Editors can't change permissions or share.": [
         "S'ha actualitzat les preferències. Els editors no poden canviar els permisos ni compartir-los."
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "S'ha creat \"${ ellipsedName }\" correctament"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "No s'ha pogut crear \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "S'ha mogut \"${ ellipsedName }\""
+      ],
+      "${ numberOfItems } item moved": [
+        "S'ha mogut ${ numberOfItems } element",
+        "S'han mogut ${ numberOfItems } elements"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8803,6 +9011,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Aquest contacte actualment signa els missatges amb aquesta clau"
+      ],
+      "This key is used for message verification": [
+        "Aquesta clau s'utilitza per la verificació de missatges"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
       ]
     },
     "PGP key warning": {
@@ -8900,6 +9117,12 @@
       ],
       "Your organization name": [
         "El nom de la vostra organització"
+      ],
+      "Search": [
+        "Cerca"
+      ],
+      "Search for users or addresses": [
+        "Cercar un usuari o adreça"
       ]
     },
     "Placeholder for contact group name": {
@@ -10767,6 +10990,30 @@
       ],
       "Share \"${ fileName }\"": [
         "Compartir \"${ fileName }\""
+      ],
+      "Computers": [
+        "Ordinadors"
+      ],
+      "Continue with free storage": [
+        "Continueu amb l'emmagatzematge gratuït"
+      ],
+      "Devices": [
+        "Dispositius"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Aconseguiu més emmagatzematge amb ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreu la vostra organització a ${ BRAND_NAME }"
+      ],
+      "Shared with me": [
+        "Compartit amb mi"
+      ],
+      "Verify your password": [
+        "Verifiqueu la vostra contrasenya"
+      ],
+      "You are all set": [
+        "Ja esteu a punt"
       ]
     },
     "Title subscription": {
@@ -10872,6 +11119,9 @@
       ],
       "Change shared item settings": [
         "Canviar les preferències dels elements compartits"
+      ],
+      "Instant assistance with AI and human experts.": [
+        "Assistència instantània amb IA i persones expertes."
       ]
     },
     "tooltip": {
@@ -10899,6 +11149,9 @@
       ],
       "Name must not be empty": [
         "El nom no pot estar buit"
+      ],
+      "Name must not contain slashes (/)": [
+        "El nom no pot contenir barres (/)"
       ]
     },
     "Video control": {
@@ -11334,6 +11587,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "10+ premium features": [
+        "Més de 10 característiques prèmium"
+      ],
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Storage": [
+        "Emmagatzematge"
       ]
     },
     "Features": {
@@ -11912,6 +12177,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
+      ],
+      "Member activation incomplete": [
+        "L'activació del membre no s'ha completat."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clau d'organització ha d'estar activada per sol·licitar accés a les dades."
+      ],
+      "The user must have an address to request data access": [
+        "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ]
     },
     "vpn_2step: tooltip": {
@@ -11922,6 +12196,176 @@
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
         "Una manera més segura de guardar Bitcoin"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "All": [
+        "Tots"
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Correus electrònics"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
+      "Has errors": [
+        "Té errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "S'ha migrat"
+      ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organització no té prou llicències disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organització no té prou espai d'emmagatzematge disponible"
+      ],
+      "Pending": [
+        "Està pendent"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccioneu exactament què voleu migrar. S'aplicarà a tots els usuaris de l'organització."
+      ],
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "User": [
+        "Usuari"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
+      ],
+      "You": [
+        "Tú"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ],
+      "Summer Sale": [
+        "Rebaixes d'estiu"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesos"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "2 TB data storage": [
+        "2 TB d'emmagatzematge de dades"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB d'emmagatzematge: 40 vegades el vostre pla actual"
+      ],
+      "3 TB data storage": [
+        "3 TB d'emmagatzematge de dades"
+      ],
+      "500 GB storage": [
+        "500 GB d'emmagatzematge"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en els preus mensuals estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan acabi el cicle de facturació."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accés complet a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuals per a 6 usuaris"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuals per a vós i la vostra parella"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor de documents i fulls de càlcul en línia"
+      ],
+      "Recover previous file versions": [
+        "Recupereu versions anteriors dels fitxers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecció més robusta contra les ciberamenaces"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Canvieu al nostre pla anual i estalvieu ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nombre il·limitat de carpetes, etiquetes i filtres"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
+      ],
+      "SUMMER SALE": [
+        "REBAIXES D'ESTIU"
       ]
     }
   }
