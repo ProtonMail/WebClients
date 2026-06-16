@@ -25,11 +25,10 @@ const E2EEDisabledWarning = ({
 
     return (
         <Banner
-            className="e2ee-disabled-banner"
-            icon={<IcExclamationTriangleFilled size={4.5} className="shrink-0" />}
+            icon={<IcExclamationTriangleFilled size={4.5} className="color-weak" />}
             contentWrapperClassName="flex items-center"
         >
-            <span>{message}</span>
+            <span className="color-weak">{message}</span>
         </Banner>
     );
 };
