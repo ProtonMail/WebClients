@@ -10,7 +10,6 @@ import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/c
 
 import { getDrive } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
-import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';
 import { getEllipsedName } from '../../../modules/intl';
 import { validateNodeName } from '../../../modules/validation';
@@ -75,16 +74,22 @@ export const useCreateFolderModalState = ({
             // Needs to pass nodeId because the same callback is called by the legacy app component
             // in public pages we don't have the ability to get the uid from the shareId
 
-            const { node } = getNodeEntity(newFolder);
-            const { nodeId } = splitNodeUid(node.uid);
+            const { nodeId } = splitNodeUid(newFolder.uid);
             await getBusDriver().emit(
                 {
                     type: BusDriverEventName.CREATED_NODES,
-                    items: [{ uid: node.uid, parentUid: node.parentUid, isShared: node.isShared, isTrashed: false }],
+                    items: [
+                        {
+                            uid: newFolder.uid,
+                            parentUid: newFolder.parentUid,
+                            isShared: newFolder.isShared,
+                            isTrashed: false,
+                        },
+                    ],
                 },
                 drive
             );
-            onSuccess?.({ uid: node.uid, parentUid: node.parentUid, nodeId, name });
+            onSuccess?.({ uid: newFolder.uid, parentUid: newFolder.parentUid, nodeId, name });
             const ellipsedName = getEllipsedName(name);
             createNotification({
                 type: 'success',

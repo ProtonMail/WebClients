@@ -1,4 +1,4 @@
-import type { MaybeNode, NodeEntity } from '@protontech/drive-sdk';
+import type { NodeEntity } from '@protontech/drive-sdk';
 
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
@@ -11,8 +11,13 @@ import { NodeTreeIndexPopulator } from './NodeTreeIndexPopulator';
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 
-const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode =>
-    ({ ok: true, value: createMockNodeEntity(overrides) }) as unknown as MaybeNode;
+const makeMaybeNode = (overrides: Omit<Partial<NodeEntity>, 'name'> & { name?: string } = {}): NodeEntity => {
+    const { name, ...rest } = overrides;
+    return createMockNodeEntity({
+        ...rest,
+        ...(name !== undefined ? { name: { ok: true, value: name } } : {}),
+    });
+};
 
 class TestNodeTreePopulator extends NodeTreeIndexPopulator {
     constructor(private readonly rootUid: string) {
@@ -201,16 +206,11 @@ describe('NodeTreeIndexPopulator integration', () => {
     });
 
     it('indexes nodes without indexable filenames using fallback name', async () => {
-        const degradedNoName: MaybeNode = {
-            ok: false,
-            error: {
-                uid: 'bad-node',
-                name: { ok: false, error: new Error('decrypt failed') },
-                type: 'file' as any,
-                creationTime: new Date(),
-                modificationTime: new Date(),
-            },
-        } as unknown as MaybeNode;
+        const degradedNoName: NodeEntity = createMockNodeEntity({
+            uid: 'bad-node',
+            name: { ok: false, error: new Error('decrypt failed') },
+            type: 'file' as any,
+        });
 
         bridge.setChildren('root', [
             makeMaybeNode({ uid: 'file-ok', name: 'ok.txt', type: 'file' as any }),

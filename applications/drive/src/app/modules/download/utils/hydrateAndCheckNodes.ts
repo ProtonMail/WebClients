@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { MaybeNode, NodeEntity } from '@proton/drive/index';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import type { NodeEntity } from '@proton/drive/index';
+import { isMissingNode } from '@proton/drive/modules/nodes';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
@@ -17,12 +17,11 @@ export const hydrateAndCheckNodes = async (uids: string[]) => {
     const nodes: NodeEntity[] = [];
     let containsUnsupportedFile;
     for await (const maybeNode of driveClient.iterateNodes(uids)) {
-        if (!maybeNode.ok && 'missingUid' in maybeNode.error) {
+        if (isMissingNode(maybeNode)) {
             throw new Error(missingNodeErrorMessage);
         }
-        const { node } = getNodeEntity(maybeNode as MaybeNode);
-        nodes.push(node);
-        if (checkUnsupportedNode(node)) {
+        nodes.push(maybeNode);
+        if (checkUnsupportedNode(maybeNode)) {
             containsUnsupportedFile = true;
         }
     }
@@ -35,15 +34,14 @@ export const hydratePhotos = async (uids: string[]) => {
     const drivePhotosClient = DownloadDriveClientRegistry.getDrivePhotosClient();
     const nodes: NodeEntity[] = [];
     for await (const maybeNode of drivePhotosClient.iterateNodes(uids)) {
-        if (!maybeNode.ok && 'missingUid' in maybeNode.error) {
+        if (isMissingNode(maybeNode)) {
             throw new Error(missingNodeErrorMessage);
         }
-        const { node, photoAttributes } = getNodeEntity(maybeNode as MaybeNode);
-        nodes.push(node);
-        if (photoAttributes?.relatedPhotoNodeUids) {
-            for (const relatedUid of photoAttributes.relatedPhotoNodeUids) {
-                const relatedMaybeNode = await drivePhotosClient.getNode(relatedUid);
-                const { node: relatedNode } = getNodeEntity(relatedMaybeNode);
+        nodes.push(maybeNode);
+        const photoNode = maybeNode;
+        if (photoNode.photo?.relatedPhotoNodeUids) {
+            for (const relatedUid of photoNode.photo.relatedPhotoNodeUids) {
+                const relatedNode = await drivePhotosClient.getNode(relatedUid);
                 nodes.push(relatedNode);
             }
         }

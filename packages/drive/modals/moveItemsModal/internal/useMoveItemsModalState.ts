@@ -6,7 +6,7 @@ import { type ModalStateProps, useNotifications } from '@proton/components';
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
-import type { MaybeNode, ProtonDriveClient, Result } from '../../../index';
+import type { NodeEntity, ProtonDriveClient, Result } from '../../../index';
 import { NodeType, getDrive } from '../../../index';
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
 import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
@@ -52,7 +52,7 @@ const resolveTreeScopeRootUid = async (
     let commonRootUid: string | undefined;
 
     for (const nodeUid of nodeUids) {
-        let hierarchy: MaybeNode[];
+        let hierarchy: NodeEntity[];
         try {
             hierarchy = await drive.getNodeHierarchy(nodeUid);
         } catch (e) {
@@ -62,10 +62,9 @@ const resolveTreeScopeRootUid = async (
         if (!topRoot) {
             return { ok: false, error: new Error(`No ancestry found for node ${nodeUid}`) };
         }
-        const { node } = getNodeEntity(topRoot);
         if (commonRootUid === undefined) {
-            commonRootUid = node.uid;
-        } else if (commonRootUid !== node.uid) {
+            commonRootUid = topRoot.uid;
+        } else if (commonRootUid !== topRoot.uid) {
             return { ok: false, error: new Error('Nodes do not share a common root') };
         }
     }
@@ -174,8 +173,7 @@ export const useMoveItemsModalState = ({ onClose, nodeUids, ...modalProps }: Use
                         });
                         continue;
                     }
-                    const maybeNode = maybeMissingNode satisfies MaybeNode;
-                    const { node } = getNodeEntity(maybeNode);
+                    const { node } = getNodeEntity(maybeMissingNode);
                     fetchedNodes.push(node);
                 }
                 setNodes(fetchedNodes);

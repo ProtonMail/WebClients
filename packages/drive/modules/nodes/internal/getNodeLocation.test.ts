@@ -1,4 +1,4 @@
-import type { MaybeNode, NodeEntity, Result } from '@protontech/drive-sdk';
+import type { NodeEntity, Result } from '@protontech/drive-sdk';
 import { MemberRole, NodeType } from '@protontech/drive-sdk';
 
 import { NodeLocation, formatNodeLocation, getFormattedNodeLocation, getNodeLocation } from './getNodeLocation';
@@ -12,7 +12,7 @@ const createMockNode = (
     uid,
     parentUid,
     directRole: role,
-    name: `node-${uid}`,
+    name: { ok: true, value: `node-${uid}` },
     keyAuthor: { ok: true, value: 'test@proton.me' },
     nameAuthor: { ok: true, value: 'test@proton.me' },
     type: NodeType.Folder,
@@ -38,13 +38,6 @@ const createMockNode = (
 
 const NO_PARENT_UID = undefined;
 
-const createMaybeNode = (node: NodeEntity): MaybeNode => {
-    return {
-        ok: true,
-        value: node,
-    };
-};
-
 const createDriveStub = (isPrivateDefaultClient: boolean, rootNode: NodeEntity) => {
     const baseStub = {
         getNode: jest.fn(),
@@ -54,7 +47,7 @@ const createDriveStub = (isPrivateDefaultClient: boolean, rootNode: NodeEntity) 
         isPrivateDefaultClient && rootNode
             ? {
                   getMyFilesRootFolder: () => {
-                      return Promise.resolve({ ok: true, value: rootNode } satisfies MaybeNode);
+                      return Promise.resolve(rootNode);
                   },
                   iterateDevices: jest.fn(),
               }
@@ -83,12 +76,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2');
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
+        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+        const result = await getNodeLocation(drive, lastNode);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -102,12 +92,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, true);
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
+        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+        const result = await getNodeLocation(drive, lastNode);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -121,12 +108,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, false);
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
+        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+        const result = await getNodeLocation(drive, lastNode);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -140,12 +124,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, false);
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
+        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+        const result = await getNodeLocation(drive, lastNode);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -158,9 +139,9 @@ describe('getNodeLocation', () => {
         rootNode.type = NodeType.Album;
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce({ ok: true, value: rootNode });
+        drive.getNode.mockResolvedValueOnce(rootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: rootNode });
+        const result = await getNodeLocation(drive, rootNode);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -175,11 +156,9 @@ describe('getNodeLocation', () => {
         photoNode.type = NodeType.Photo;
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: photoNode })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
+        drive.getNode.mockResolvedValueOnce(photoNode).mockResolvedValueOnce(rootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: photoNode });
+        const result = await getNodeLocation(drive, photoNode);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -193,11 +172,9 @@ describe('getNodeLocation', () => {
 
         const myFilesRootNode = createMockNode('uid1', NO_PARENT_UID);
         const drive = createDriveStub(true /* isPrivateDefaultClient */, myFilesRootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: deviceRootNode });
+        drive.getNode.mockResolvedValueOnce(childNode1).mockResolvedValueOnce(deviceRootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: childNode1 });
+        const result = await getNodeLocation(drive, childNode1);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -211,12 +188,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2');
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
+        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+        const result = await getNodeLocation(drive, lastNode);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -230,12 +204,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, true);
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
+        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
 
-        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+        const result = await getNodeLocation(drive, lastNode);
 
         expect(result.ok).toBe(true);
         assertOk(result); // Narrow TS type for rest of the test.
@@ -250,29 +221,23 @@ describe('formatNodeLocation', () => {
         const childNode1 = createMockNode('uid2', 'uid1');
         const lastNode = createMockNode('uid3', 'uid2');
 
-        rootNode.name = 'volume1Root';
-        childNode1.name = 'folder1';
-        lastNode.name = 'folder2';
+        rootNode.name = { ok: true, value: 'volume1Root' };
+        childNode1.name = { ok: true, value: 'folder1' };
+        lastNode.name = { ok: true, value: 'folder2' };
 
-        expect(
-            formatNodeLocation(NodeLocation.MY_FILES, [
-                createMaybeNode(rootNode),
-                createMaybeNode(childNode1),
-                createMaybeNode(lastNode),
-            ])
-        ).toBe('/My files/folder1/folder2');
+        expect(formatNodeLocation(NodeLocation.MY_FILES, [rootNode, childNode1, lastNode])).toBe(
+            '/My files/folder1/folder2'
+        );
     });
 
-    describe('It hould render leading slash for one folder deep path', () => {
+    describe('It should render leading slash for one folder deep path', () => {
         it('should render leading slash for "/My files"', async () => {
             const rootNode = createMockNode('uid1', NO_PARENT_UID);
-            rootNode.name = 'volume1Root';
-            expect(formatNodeLocation(NodeLocation.MY_FILES, [createMaybeNode(rootNode)])).toBe('/My files');
+            rootNode.name = { ok: true, value: 'volume1Root' };
+            expect(formatNodeLocation(NodeLocation.MY_FILES, [rootNode])).toBe('/My files');
         });
 
         it('should render leading slash for "/Shared with me"', async () => {
-            const rootNode = createMockNode('uid1', NO_PARENT_UID);
-            rootNode.name = 'volume1Root';
             expect(formatNodeLocation(NodeLocation.SHARED_WITH_ME, [])).toBe('/Shared with me');
         });
 
@@ -286,44 +251,36 @@ describe('formatNodeLocation', () => {
         const childNode1 = createMockNode('uid2', 'uid1');
         const lastNode = createMockNode('uid3', 'uid2');
 
-        rootNode.name = 'folder1';
-        childNode1.name = 'folder2';
-        lastNode.name = 'folder3';
+        rootNode.name = { ok: true, value: 'folder1' };
+        childNode1.name = { ok: true, value: 'folder2' };
+        lastNode.name = { ok: true, value: 'folder3' };
 
-        expect(
-            formatNodeLocation(NodeLocation.SHARED_WITH_ME, [
-                createMaybeNode(rootNode),
-                createMaybeNode(childNode1),
-                createMaybeNode(lastNode),
-            ])
-        ).toBe('/Shared with me/folder1/folder2/folder3');
+        expect(formatNodeLocation(NodeLocation.SHARED_WITH_ME, [rootNode, childNode1, lastNode])).toBe(
+            '/Shared with me/folder1/folder2/folder3'
+        );
     });
 
     it('should format public page location', async () => {
         const childNode1 = createMockNode('uid2', NO_PARENT_UID);
         const lastNode = createMockNode('uid3', 'uid2');
 
-        childNode1.name = 'folder1';
-        lastNode.name = 'folder2';
+        childNode1.name = { ok: true, value: 'folder1' };
+        lastNode.name = { ok: true, value: 'folder2' };
 
-        expect(
-            formatNodeLocation(NodeLocation.PUBLIC_PAGE, [createMaybeNode(childNode1), createMaybeNode(lastNode)])
-        ).toBe('/folder1/folder2');
+        expect(formatNodeLocation(NodeLocation.PUBLIC_PAGE, [childNode1, lastNode])).toBe('/folder1/folder2');
     });
 
     it('should format photos location', async () => {
         const albumNode = createMockNode('uid1', NO_PARENT_UID);
         const photoNode = createMockNode('uid2', 'uid1');
 
-        albumNode.name = 'album';
+        albumNode.name = { ok: true, value: 'album' };
         albumNode.type = NodeType.Album;
-        photoNode.name = 'photo';
+        photoNode.name = { ok: true, value: 'photo' };
         photoNode.type = NodeType.Photo;
 
         // We never show the sub path for Photos assets only /Photos
-        expect(formatNodeLocation(NodeLocation.PHOTOS, [createMaybeNode(albumNode), createMaybeNode(photoNode)])).toBe(
-            '/Photos'
-        );
+        expect(formatNodeLocation(NodeLocation.PHOTOS, [albumNode, photoNode])).toBe('/Photos');
     });
 
     it('should format devices location', async () => {
@@ -331,17 +288,13 @@ describe('formatNodeLocation', () => {
         const childNode1 = createMockNode('uid1', 'rootDevice');
         const lastNode = createMockNode('uid2', 'uid1');
 
-        rootDevice.name = 'Computer #1';
-        childNode1.name = 'folder1';
-        lastNode.name = 'folder2';
+        rootDevice.name = { ok: true, value: 'Computer #1' };
+        childNode1.name = { ok: true, value: 'folder1' };
+        lastNode.name = { ok: true, value: 'folder2' };
 
-        expect(
-            formatNodeLocation(NodeLocation.DEVICES, [
-                createMaybeNode(rootDevice),
-                createMaybeNode(childNode1),
-                createMaybeNode(lastNode),
-            ])
-        ).toBe('/Devices/Computer #1/folder1/folder2');
+        expect(formatNodeLocation(NodeLocation.DEVICES, [rootDevice, childNode1, lastNode])).toBe(
+            '/Devices/Computer #1/folder1/folder2'
+        );
     });
 });
 
@@ -354,15 +307,15 @@ describe('getFormattedNodeLocation', () => {
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
         drive.getNode
             // First getNodeAncestry call
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode })
+            .mockResolvedValueOnce(lastNode)
+            .mockResolvedValueOnce(childNode1)
+            .mockResolvedValueOnce(rootNode)
             // Second getNodeAncestry call
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
+            .mockResolvedValueOnce(lastNode)
+            .mockResolvedValueOnce(childNode1)
+            .mockResolvedValueOnce(rootNode);
 
-        const formattedLocation = await getFormattedNodeLocation(drive, { ok: true, value: lastNode });
+        const formattedLocation = await getFormattedNodeLocation(drive, lastNode);
 
         expect(formattedLocation).toBe('/My files/node-uid2');
     });

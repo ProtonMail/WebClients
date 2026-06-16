@@ -35,7 +35,7 @@ const seedItem = (item: DownloadItem) => {
 
 const makeNode = (name: string): NodeEntity =>
     ({
-        name,
+        name: { ok: true, value: name },
         type: NodeType.File,
         nameAuthor: { ok: true, value: 'alice@proton.me' },
     }) as unknown as NodeEntity;

@@ -30,7 +30,7 @@ const mockDrive = {
 const createMockNode = (param: { uid: string; name: string; type: NodeType; mediaType: string }): NodeEntity =>
     ({
         uid: param.uid,
-        name: param.name,
+        name: { ok: true, value: param.name },
         type: param.type,
         mediaType: param.mediaType,
     }) as NodeEntity;
@@ -68,18 +68,6 @@ const expectNameAndNameToFocus = (props: RenameModalViewProps, name: string, nam
     });
 };
 
-const baseError = {
-    name: {
-        ok: true,
-        value: 'myimage.png',
-    },
-    activeRevision: {
-        ok: true,
-        value: {},
-    },
-    errors: undefined,
-};
-
 describe('useRenameModalState', () => {
     beforeEach(() => {
         jest.clearAllMocks();
@@ -97,7 +85,7 @@ describe('useRenameModalState', () => {
                 mediaType: 'image/png',
                 type: NodeType.File,
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -110,14 +98,6 @@ describe('useRenameModalState', () => {
         });
 
         it('should set entire name for degraded nodes with no name related errors', async () => {
-            const error = {
-                ...baseError,
-                activeRevision: {
-                    ok: false,
-                    error: 'activeRevision error',
-                },
-            };
-
             const degradedNode = {
                 ...createMockNode({
                     uid: DEFAULT_UID,
@@ -125,10 +105,13 @@ describe('useRenameModalState', () => {
                     mediaType: 'image/png',
                     type: NodeType.File,
                 }),
-                ...error,
+                activeRevision: {
+                    ok: false,
+                    error: 'activeRevision error',
+                },
             };
 
-            mockedGetNode.mockResolvedValueOnce({ ok: false, error: degradedNode });
+            mockedGetNode.mockResolvedValueOnce(degradedNode);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -146,14 +129,6 @@ describe('useRenameModalState', () => {
                 error: 'Invalid name error',
             };
 
-            const error = {
-                ...baseError,
-                name: {
-                    ok: false,
-                    error: invalidNameError,
-                },
-            };
-
             const degradedNode = {
                 ...createMockNode({
                     uid: DEFAULT_UID,
@@ -161,10 +136,13 @@ describe('useRenameModalState', () => {
                     mediaType: 'image/png',
                     type: NodeType.File,
                 }),
-                ...error,
+                name: {
+                    ok: false,
+                    error: invalidNameError,
+                },
             };
 
-            mockedGetNode.mockResolvedValueOnce({ ok: false, error: degradedNode });
+            mockedGetNode.mockResolvedValueOnce(degradedNode);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -177,14 +155,6 @@ describe('useRenameModalState', () => {
         });
 
         it('should set empty name for degraded nodes with name errors that are not invalid', async () => {
-            const error = {
-                ...baseError,
-                name: {
-                    ok: false,
-                    error: new Error('Name error'),
-                },
-            };
-
             const degradedNode = {
                 ...createMockNode({
                     uid: DEFAULT_UID,
@@ -192,10 +162,13 @@ describe('useRenameModalState', () => {
                     mediaType: 'image/png',
                     type: NodeType.File,
                 }),
-                ...error,
+                name: {
+                    ok: false,
+                    error: new Error('Name error'),
+                },
             };
 
-            mockedGetNode.mockResolvedValueOnce({ ok: false, error: degradedNode });
+            mockedGetNode.mockResolvedValueOnce(degradedNode);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -216,7 +189,7 @@ describe('useRenameModalState', () => {
                 mediaType: 'image/png',
                 type: NodeType.File,
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -235,7 +208,7 @@ describe('useRenameModalState', () => {
                 mediaType: 'text/vcard',
                 type: NodeType.File,
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -254,7 +227,7 @@ describe('useRenameModalState', () => {
                 mediaType: 'plain/text',
                 type: NodeType.File,
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -273,7 +246,7 @@ describe('useRenameModalState', () => {
                 mediaType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
                 type: NodeType.File,
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -292,7 +265,7 @@ describe('useRenameModalState', () => {
                 type: NodeType.Folder,
                 mediaType: '',
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -311,7 +284,7 @@ describe('useRenameModalState', () => {
                 type: NodeType.Folder,
                 mediaType: '',
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -330,7 +303,7 @@ describe('useRenameModalState', () => {
                 type: NodeType.File,
                 mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE,
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -353,7 +326,7 @@ describe('useRenameModalState', () => {
                 type: NodeType.File,
                 mediaType: PROTON_DOCS_SPREADSHEET_MIMETYPE,
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -376,7 +349,7 @@ describe('useRenameModalState', () => {
                 type: NodeType.File,
                 mediaType: '',
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
 
             const { result } = renderHook(() => useRenameModalState(defaultProps));
 
@@ -410,7 +383,7 @@ describe('useRenameModalState', () => {
                 mediaType: 'image/png',
                 type: NodeType.File,
             });
-            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            mockedGetNode.mockResolvedValueOnce(node);
             const error = new Error('rename error');
             mockDrive.renameNode.mockRejectedValueOnce(error);
 

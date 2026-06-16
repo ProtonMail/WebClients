@@ -1,4 +1,4 @@
-import type { DriveEvent, MaybeNode } from '@protontech/drive-sdk';
+import type { DriveEvent, NodeEntity } from '@protontech/drive-sdk';
 
 import { type EventIdStorage, MainThreadBridge } from '../mainThread/MainThreadBridge';
 import type { TreeEventScopeId } from '../shared/types';
@@ -50,22 +50,22 @@ export class FakeMainThreadBridge {
     }
 
     /** Set the root node returned by getMyFilesRootFolder. */
-    setMyFilesRootNode(node: MaybeNode): void {
+    setMyFilesRootNode(node: NodeEntity): void {
         this.fakeDriveClient.setMyFilesRootNode(node);
     }
 
     /** Register a node returned by getNode(). */
-    setNode(nodeUid: string, node: MaybeNode): void {
+    setNode(nodeUid: string, node: NodeEntity): void {
         this.fakeDriveClient.setNode(nodeUid, node);
     }
 
     /** Set children for a given parent node UID. */
-    setChildren(parentUid: string, children: MaybeNode[]): void {
+    setChildren(parentUid: string, children: NodeEntity[]): void {
         this.fakeDriveClient.setChildren(parentUid, children);
     }
 
     /** Set the list of trashed nodes returned by iterateTrashedNodes. */
-    setTrashedNodes(nodes: MaybeNode[]): void {
+    setTrashedNodes(nodes: NodeEntity[]): void {
         this.fakeDriveClient.setTrashedNodes(nodes);
     }
 

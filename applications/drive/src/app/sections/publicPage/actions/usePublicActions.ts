@@ -142,9 +142,10 @@ export const usePublicActions = () => {
                         if (result.ok && item) {
                             successItems.push({ name: item.name, uid: result.uid });
                         } else if (!result.ok && item) {
+                            // TODO: We need to better handle error management, check for ProtonDriveError instance
                             failureItems.push({
                                 uid: result.uid,
-                                error: result.error || c('Error').t`Unknown error`,
+                                error: result.error?.message || c('Error').t`Unknown error`,
                             });
                         }
                     });

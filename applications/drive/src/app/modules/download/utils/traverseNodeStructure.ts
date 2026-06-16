@@ -1,6 +1,6 @@
 import type { NodeEntity } from '@proton/drive';
 import { NodeType } from '@proton/drive';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getNodeName } from '@proton/drive/modules/nodes';
 
 import type { AsyncQueue } from '../../../utils/asyncQueue';
 import { createAsyncQueue } from '../../../utils/asyncQueue';
@@ -57,10 +57,9 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
                 if (node.type !== NodeType.Folder) {
                     totalEncryptedSize += getNodeStorageSize(node);
                 } else {
-                    const childrenParentPath = [...(parentPathByUid.get(node.uid) ?? []), node.name];
+                    const childrenParentPath = [...(parentPathByUid.get(node.uid) ?? []), getNodeName(node)];
                     for await (const maybeNode of driveClient.iterateFolderChildren(node.uid, undefined, signal)) {
-                        const { node: child } = getNodeEntity(maybeNode);
-                        enqueueForFetch(child, childrenParentPath);
+                        enqueueForFetch(maybeNode, childrenParentPath);
                     }
                 }
 

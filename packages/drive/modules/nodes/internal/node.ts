@@ -1,14 +1,12 @@
-import type { MaybeMissingNode, MaybeNode } from '@protontech/drive-sdk';
+import type { MaybeMissingNode, MissingNode } from '@protontech/drive-sdk';
 
-export const isMissingNode = (
-    maybeMissingNode: MaybeMissingNode
-): maybeMissingNode is Exclude<MaybeMissingNode, MaybeNode> => {
-    return maybeMissingNode.ok === false && maybeMissingNode.error && 'missingUid' in maybeMissingNode.error;
+export const isMissingNode = (maybeMissingNode: MaybeMissingNode): maybeMissingNode is MissingNode => {
+    return 'missingUid' in maybeMissingNode;
 };
 
 export const getMissingUid = (maybeMissingNode: MaybeMissingNode): string => {
-    if (maybeMissingNode.ok === false && 'missingUid' in maybeMissingNode.error) {
-        return maybeMissingNode.error.missingUid;
+    if ('missingUid' in maybeMissingNode) {
+        return maybeMissingNode.missingUid;
     }
     return 'missing-uid';
 };

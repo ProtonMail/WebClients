@@ -1,5 +1,4 @@
-import { type MaybeNode, MemberRole } from '@proton/drive';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { MemberRole, type NodeEntity } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet, isSupportedText } from '@proton/shared/lib/helpers/mimetype';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -18,7 +17,7 @@ export default function usePreviewActions({
 }: {
     drive: Drive;
     nodeUid: string;
-    node?: MaybeNode;
+    node?: NodeEntity;
     nodeData?: Uint8Array<ArrayBuffer>[];
     role?: MemberRole;
 }) {
@@ -45,8 +44,7 @@ export default function usePreviewActions({
               // TODO: Add support for Live photos and Burst (related photos)
               // In case we have related photos we should use the standard download
               if (nodeData) {
-                  const { node: nodeEntity } = getNodeEntity(node);
-                  await downloadManager.downloadFromBuffer(nodeEntity, nodeData, mimeType);
+                  await downloadManager.downloadFromBuffer(node, nodeData, mimeType);
                   return;
               }
 

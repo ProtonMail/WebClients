@@ -1,4 +1,4 @@
-import type { DriveEvent, MaybeNode, NodeType } from '@protontech/drive-sdk';
+import type { DriveEvent, NodeEntity, NodeType } from '@protontech/drive-sdk';
 
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
@@ -17,10 +17,10 @@ export type FetchLastEventIdForTreeScopeId = (
 
 /** Subset of ProtonDriveClient used by DriveSdkBridge. */
 export interface SdkDriveClient {
-    getMyFilesRootFolder(): Promise<MaybeNode>;
-    getNode(nodeUid: string): Promise<MaybeNode>;
-    iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): AsyncIterable<MaybeNode>;
-    iterateTrashedNodes(): AsyncIterable<MaybeNode>;
+    getMyFilesRootFolder(): Promise<NodeEntity>;
+    getNode(nodeUid: string): Promise<NodeEntity>;
+    iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): AsyncIterable<NodeEntity>;
+    iterateTrashedNodes(): AsyncIterable<NodeEntity>;
 }
 
 /** Subset of ProtonDriveClient used by DriveSdkForSearchBridge. */
@@ -37,10 +37,10 @@ export interface EventIdStorage {
 }
 
 export interface DriveSdkBridgeInterface {
-    getMyFilesRootFolder(): Promise<MaybeNode>;
-    getNode(nodeUid: string): Promise<MaybeNode>;
-    iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): Promise<MaybeNode[]>;
-    iterateTrashedNodes(): Promise<MaybeNode[]>;
+    getMyFilesRootFolder(): Promise<NodeEntity>;
+    getNode(nodeUid: string): Promise<NodeEntity>;
+    iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): Promise<NodeEntity[]>;
+    iterateTrashedNodes(): Promise<NodeEntity[]>;
 }
 
 // Bridge for operations that require main-thread APIs (e.g. ProtonDriveClient).
@@ -104,7 +104,7 @@ export class DriveSdkBridge {
 
     async iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }) {
         Logger.info('MainThreadBridge: iterateFolderChildren');
-        const nodes: MaybeNode[] = [];
+        const nodes: NodeEntity[] = [];
         for await (const node of this.driveClient.iterateFolderChildren(parentNodeUid, filterOptions)) {
             nodes.push(node);
         }
@@ -113,7 +113,7 @@ export class DriveSdkBridge {
 
     async iterateTrashedNodes() {
         Logger.info('MainThreadBridge: iterateTrashedNodes');
-        const nodes: MaybeNode[] = [];
+        const nodes: NodeEntity[] = [];
         for await (const node of this.driveClient.iterateTrashedNodes()) {
             nodes.push(node);
         }

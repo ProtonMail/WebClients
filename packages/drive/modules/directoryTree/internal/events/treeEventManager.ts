@@ -1,7 +1,7 @@
 import { NodeType, getDrive } from '../../../../index';
 import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '../../../../modules/busDriver';
-import { getDeviceName } from '../../../nodes';
+import { getDeviceName, getNodeName } from '../../../nodes';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, getNodeUidFromTreeItemId, makeTreeItemId } from '../helpers';
 import { DirectoryTreeRootType } from '../types';
 import type { DirectoryTreeStore, TreeStoreItem } from '../types';
@@ -204,12 +204,12 @@ export class TreeEventManager {
                         // TODO: one improvement would be if events had rootScopeId
                         let isSharedWithMe = true;
                         if (!item.parentUid) {
-                            const { node: rootNode } = getNodeEntity(await getDrive().getMyFilesRootFolder());
+                            const rootNode = await getDrive().getMyFilesRootFolder();
                             if (item.uid === rootNode.uid) {
                                 // This is myfiles root
                                 isSharedWithMe = false;
                             } else {
-                                const { node } = getNodeEntity(await getDrive().getNode(item.uid));
+                                const node = await getDrive().getNode(item.uid);
                                 if (node.treeEventScopeId === rootNode.treeEventScopeId) {
                                     // This is a device root
                                     isSharedWithMe = false;
@@ -260,10 +260,10 @@ export class TreeEventManager {
                     if (this.expandedSections.has('sharedWithMe')) {
                         const newShared = (await iterateSharedWithMeNodes())
                             .filter(({ node: { type } }) => !this.onlyFolders || type === NodeType.Folder)
-                            .map(({ node: { uid, name, type } }) => ({
-                                nodeUid: uid,
-                                name,
-                                type,
+                            .map(({ node }) => ({
+                                nodeUid: node.uid,
+                                name: getNodeName(node),
+                                type: node.type,
                             }));
                         const currentShared = this.store.getState().getItemsByParentUid(SHARED_WITH_ME_ROOT_ID);
                         this.sharedRootsReconciliation(currentShared, newShared);

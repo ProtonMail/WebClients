@@ -1,6 +1,5 @@
 import { NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
-import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { FolderCreationTask } from '../types';
 import { TaskExecutor } from './TaskExecutor';
@@ -15,13 +14,12 @@ export class FolderCreationExecutor extends TaskExecutor<FolderCreationTask> {
 
         try {
             const folder = await drive.createFolder(task.parentUid, task.name, task.modificationTime);
-            const { node } = getNodeEntity(folder);
 
             void this.eventCallback?.({
                 type: 'folder:complete',
                 uploadId: task.uploadId,
-                nodeUid: node.uid,
-                parentUid: node.parentUid,
+                nodeUid: folder.uid,
+                parentUid: folder.parentUid,
             });
         } catch (error) {
             if (error instanceof NodeWithSameNameExistsValidationError) {

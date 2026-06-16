@@ -3,15 +3,12 @@ import type { PreviewRawState, VideoStreamingResult } from './resolvePreviewOutp
 import { getEffectivePreviewMethod, resolvePreviewOutput } from './resolvePreviewOutput';
 
 const node = {
-    ok: true,
-    value: {
-        name: 'test-file',
-        mediaType: undefined,
-        isShared: false,
-        trashTime: undefined,
-        activeRevision: undefined,
-        totalStorageSize: undefined,
-    },
+    name: { ok: true, value: 'test-file' },
+    mediaType: undefined,
+    isShared: false,
+    trashTime: undefined,
+    activeRevision: undefined,
+    totalStorageSize: undefined,
 } as any;
 const nodeData = { contents: [], hasSignatureIssues: false };
 const largeThumbnail = { url: 'large-thumb-url' };

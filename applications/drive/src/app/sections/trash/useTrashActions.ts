@@ -84,18 +84,19 @@ export const useTrashActions = () => {
 
         try {
             setLoading('restore', true);
+            // TODO: We need to better handle error management, check for ProtonDriveError instance
             for await (const result of drive.restoreNodes(driveUids)) {
                 if (result.ok) {
                     successDriveUids.push(result.uid);
                 } else {
-                    failureItems.push({ uid: result.uid, error: result.error });
+                    failureItems.push({ uid: result.uid, error: result.error.message });
                 }
             }
             for await (const result of photos.restoreNodes(photoUids)) {
                 if (result.ok) {
                     successPhotoUids.push(result.uid);
                 } else {
-                    failureItems.push({ uid: result.uid, error: result.error });
+                    failureItems.push({ uid: result.uid, error: result.error.message });
                 }
             }
         } catch (e) {
@@ -172,7 +173,7 @@ export const useTrashActions = () => {
         const deleted = [...filesDeleted, ...photoDeleted];
         const successUids = deleted.filter((t) => t.ok).map((t) => t.uid);
         const successItems = successUids.map((uid) => nodesMap.get(uid)).filter(isTruthy);
-        const failureItems = deleted.filter((t) => !t.ok);
+        const failureItems = deleted.filter((t) => !t.ok).map((t) => ({ uid: t.uid, error: t.error.message }));
 
         createTrashDeleteNotification(successItems, failureItems);
     };

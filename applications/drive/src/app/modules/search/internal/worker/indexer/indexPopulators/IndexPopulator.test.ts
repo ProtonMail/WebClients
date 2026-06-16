@@ -1,9 +1,9 @@
 import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import type { DriveEvent, MaybeNode, NodeEntity, NodeEvent, NodeType } from '@protontech/drive-sdk';
+import type { DriveEvent, NodeEntity, NodeEvent, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { createMockDegradedNode, createMockNodeEntity } from '@proton/drive/modules/testing';
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../../../shared/SearchDB';
 import type { TreeEventScopeId } from '../../../shared/types';
@@ -28,18 +28,19 @@ jest.mock('../../../shared/errors', () => ({
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 
-const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode => ({
-    ok: true,
-    value: createMockNodeEntity(overrides),
-});
+const makeMaybeNode = (overrides: Omit<Partial<NodeEntity>, 'name'> & { name?: string } = {}): NodeEntity => {
+    const { name, ...rest } = overrides;
+    return createMockNodeEntity({
+        ...rest,
+        ...(name !== undefined ? { name: { ok: true, value: name } } : {}),
+    });
+};
 
-const makeUndecryptableNode = (overrides: Omit<Partial<NodeEntity>, 'name' | 'activeRevision'> = {}): MaybeNode => ({
-    ok: false,
-    error: createMockDegradedNode({
+const makeUndecryptableNode = (overrides: Omit<Partial<NodeEntity>, 'name'> = {}): NodeEntity =>
+    createMockNodeEntity({
         ...overrides,
         name: { ok: false, error: new Error('decryption failed') },
-    }),
-});
+    });
 
 const makeNodeEvent = (
     type: 'node_created' | 'node_updated' | 'node_deleted',
