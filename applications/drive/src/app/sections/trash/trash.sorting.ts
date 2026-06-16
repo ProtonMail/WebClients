@@ -1,5 +1,13 @@
-import { SortField } from '../../modules/sorting/types';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+
+import { nodeTypeComparator, stringComparator } from '../../modules/sorting/comparators';
+import { type SortConfig, SortField } from '../../modules/sorting/types';
 import type { TrashItem } from './useTrash.store';
+
+export const defaultTrashSortConfig: SortConfig = [
+    { field: SortField.nodeType, comparator: nodeTypeComparator, direction: SORT_DIRECTION.ASC },
+    { field: SortField.name, comparator: stringComparator },
+];
 
 export function getTrashSortValue(item: TrashItem, field: SortField) {
     switch (field) {
