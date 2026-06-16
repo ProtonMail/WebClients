@@ -1,12 +1,7 @@
 import { type MouseEvent, useCallback, useEffect, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
 
-import { useAccountSessions } from '@proton/account/accountSessions';
 import { getLoginHref, getSwitchHref, handleSwitchAccountFork } from '@proton/account/accountSessions/sessionsHelper';
-import { useOrganization } from '@proton/account/organization/hooks';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import ConfirmSignOutModal, {
     shouldShowConfirmSignOutModal,
 } from '@proton/components/components/confirmSignOutModal/ConfirmSignOutModal';
@@ -15,30 +10,23 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import SessionRecoverySignOutConfirmPrompt from '@proton/components/containers/account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import type AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
-import { useReferral } from '@proton/components/containers/heading/useReferral';
 import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
-import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
-import { getSubscriptionPlanTitles, isTrial } from '@proton/payments';
-import { useIsB2BTrial } from '@proton/payments/ui';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
 import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
-import { APPS, type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
-import { getInitials } from '@proton/shared/lib/helpers/string';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { useFlag } from '@proton/unleash/useFlag';
-import isTruthy from '@proton/utils/isTruthy';
 
 import HelpModal from '../support/HelpModal';
 import SelfHelpModal from '../support/SelfHelpModal';
 import UserDropdownButton, { type Props as UserDropdownButtonProps } from './UserDropdownButton';
 import UserDropdownContent from './UserDropdownContent';
 import { UserDropdownContext, type UserDropdownValue } from './UserDropdownContext';
+import { useUserDropdownInfo } from './useUserDropdownInfo';
 
 interface UserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
@@ -67,13 +55,7 @@ const UserDropdown = ({
     reportDescriptionContext,
     ...rest
 }: UserDropdownProps) => {
-    const { APP_NAME } = useConfig();
-    const [user] = useUser();
-    const [subscription] = useSubscription();
-    const [organization] = useOrganization();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
-    const location = useLocation();
-    const referral = useReferral(location);
+    const { APP_NAME, user, info, upgrade, referral, accountSessions } = useUserDropdownInfo({ app });
     const authentication = useAuthentication();
 
     const { anchorRef, isOpen, toggle, close: closeUserDropdown } = usePopperAnchor<HTMLButtonElement>();
@@ -92,8 +74,6 @@ const UserDropdown = ({
         renderSessionRecoverySignOutConfirmPrompt,
     ] = useModalState();
     const [helpModal, setHelpModal, renderHelpModal] = useModalState();
-
-    const accountSessions = useAccountSessions();
 
     const handleSignOut = (clearDeviceRecovery: boolean) => {
         accountSessions.actions.signOut({ clearDeviceRecovery, logoutRedirectUrl });
@@ -145,44 +125,9 @@ const UserDropdown = ({
             ? inboxDesktopMultiAccountSupport && hasInboxDesktopFeature('MultiAccount')
             : authentication.mode === 'sso';
 
-    const upgradePathname = getUpgradePath({ user, subscription, app: APP_NAME });
-    const upsellRef = getUpsellRefFromApp({
-        app: APP_NAME,
-        feature: SHARED_UPSELL_PATHS.USER_DROPDOWN,
-        component: UPSELL_COMPONENT.BUTTON,
-        fromApp: app,
-    });
-
-    const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
-
-    const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
-    const displayUpgradeButton =
-        (user.isFree || (isTrial(subscription) && !hasTrialPaymentMethods)) &&
-        !isB2BTrial &&
-        !location.pathname.endsWith(upgradePathname) &&
-        !user.hasPassLifetime;
-
-    // nameToDisplay can be falsy for external account
-    const nameToDisplay = user.DisplayName || user.Name || '';
-    const info: UserDropdownValue['info'] = {
-        planNames: user.isMember
-            ? []
-            : getSubscriptionPlanTitles(user, subscription)
-                  .map((it) => it.planTitle)
-                  .filter(isTruthy),
-        name: nameToDisplay,
-        email: user.Email,
-        // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
-        initials: getInitials(nameToDisplay || user.Email || ''),
-        organizationName: organization?.Name || '',
-    };
-
     const value: UserDropdownValue = {
         referral,
-        upgrade: {
-            display: displayUpgradeButton,
-            url: upgradeUrl,
-        },
+        upgrade,
         info,
         onSignOut: handleSignOutClick,
         onOpenBugReportModal: () => {
