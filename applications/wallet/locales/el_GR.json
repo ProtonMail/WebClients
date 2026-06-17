@@ -5587,8 +5587,14 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "${ feature } is now active": [
         "Το ${ feature } είναι πλέον ενεργό"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ],
       "Account restricted": [
         "Ο λογαριασμός περιορίστηκε"
@@ -5817,9 +5823,6 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
-      ],
-      "Instant assistance with AI and human experts.": [
-        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη και ανθρώπινους εμπειρογνώμονες."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"
