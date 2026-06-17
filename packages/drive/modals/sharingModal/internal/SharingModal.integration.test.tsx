@@ -67,6 +67,8 @@ describe('SharingModal', () => {
             ...DRIVE_BASE,
             getNode: (uid: string): Promise<NodeEntity> =>
                 Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
+            // parentNode has no membership → isShareInMyFiles returns true → isResharing=false → public link visible
+            getNodeHierarchy: (): Promise<NodeEntity[]> => Promise.resolve([parentNode]),
         };
 
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
@@ -75,6 +77,25 @@ describe('SharingModal', () => {
             const publicSharing = screen.getByTestId('share-modal-shareWithAnyoneSection');
             expect(publicSharing).toBeInTheDocument();
         });
+    });
+
+    it('should show loading placeholder while data is being fetched', async () => {
+        let resolveNode!: (value: NodeEntity) => void;
+        const nodePromise = new Promise<NodeEntity>((resolve) => {
+            resolveNode = resolve;
+        });
+
+        const drive = {
+            ...DRIVE_BASE,
+            getNode: () => nodePromise,
+        };
+
+        renderWithProviders(<SharingModalTestBed nodeUid="qwe~456" drive={drive} />);
+
+        expect(await screen.findAllByText('Loading')).toHaveLength(3);
+
+        // Unblock loading so the test can clean up
+        resolveNode({ ...commonNodeProperties, uid: 'qwe~456', name: { ok: true, value: 'test' } } as NodeEntity);
     });
 
     it('should hide public link section from admins', async () => {
