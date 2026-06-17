@@ -132,9 +132,14 @@ export const PrivateMainSettingsAreaBase = ({
                     <SettingsPageTitle
                         className={clsx(
                             'flex items-center gap-2',
-                            variant === 'default' && 'mt-14',
-                            variant === 'card' && 'text-5xl',
-                            description || variant === 'card' ? 'mb-5' : 'mb-14'
+                            variant === SettingsLayoutVariant.Mobile && 'text-xl',
+                            variant === SettingsLayoutVariant.Default && 'mt-14',
+                            variant === SettingsLayoutVariant.Card && 'text-5xl',
+                            description ||
+                                variant === SettingsLayoutVariant.Card ||
+                                variant === SettingsLayoutVariant.Mobile
+                                ? 'mb-5'
+                                : 'mb-14'
                         )}
                     >
                         {backButton}

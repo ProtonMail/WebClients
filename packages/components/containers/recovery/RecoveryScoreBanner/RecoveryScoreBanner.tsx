@@ -3,9 +3,12 @@ import { c } from 'ttag';
 import { selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import useConfig from '@proton/components/hooks/useConfig';
 import { SkeletonLoader } from '@proton/components/index';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { RecoveryScoreBar } from './RecoveryScoreBar';
@@ -22,7 +25,11 @@ import {
 
 import './RecoveryScoreBanner.scss';
 
-const RecoveryScoreBanner = () => {
+interface Props {
+    variant: SettingsLayoutVariant;
+}
+const RecoveryScoreBanner = ({ variant }: Props) => {
+    const { APP_NAME } = useConfig();
     const {
         loading,
         recoveryScore: { score, maxScore },
@@ -35,7 +42,12 @@ const RecoveryScoreBanner = () => {
     const isMaximumScore = score >= maxScore;
 
     return (
-        <section className="rounded-xl bg-elevated shadow-norm flex flex-column relative overflow-hidden">
+        <section
+            className={clsx(
+                'rounded-xl bg-elevated flex flex-column relative overflow-hidden',
+                variant !== SettingsLayoutVariant.Mobile && 'shadow-norm'
+            )}
+        >
             {renderModal && <RecoveryScoreModal {...modalProps} />}
             <div className="flex flex-row justify-start items-center gap-4 flex-nowrap p-4">
                 <div className="shrink-0">
@@ -95,17 +107,19 @@ const RecoveryScoreBanner = () => {
                     ) : (
                         <p className="m-0 text-sm fade-in">{scoreHint}</p>
                     )}
-                    <div className="shrink-0 mt-1 fade-in">
-                        {loading ? (
-                            <SkeletonLoader width="11.085rem" height="2.25rem" />
-                        ) : (
-                            <SecureAccountButton
-                                scoreTone={scoreTone}
-                                label={getRecoveryScoreCta(score)}
-                                className="w-full lg:w-auto"
-                            />
-                        )}
-                    </div>
+                    {APP_NAME !== APPS.PROTONACCOUNTLITE && (
+                        <div className="shrink-0 mt-1 fade-in">
+                            {loading ? (
+                                <SkeletonLoader width="11.085rem" height="2.25rem" />
+                            ) : (
+                                <SecureAccountButton
+                                    scoreTone={scoreTone}
+                                    label={getRecoveryScoreCta(score)}
+                                    className="w-full lg:w-auto"
+                                />
+                            )}
+                        </div>
+                    )}
                 </div>
             )}
         </section>
