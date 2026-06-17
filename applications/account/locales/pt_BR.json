@@ -399,6 +399,9 @@
       "Continue with this password": [
         "Continuar com essa senha"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copiar o endereço"
       ],
@@ -941,6 +944,9 @@
       ],
       "Hide": [
         "Ocultar"
+      ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Ocultar o ${ LUMO_SHORT_APP_NAME }"
       ],
       "Hide more benefits": [
         "Ocultar mais benefícios"
@@ -1485,6 +1491,9 @@
       "Select time zone": [
         "Selecionar fuso horário"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "send auto-reply email": [
         "enviar e-mail de resposta automática"
       ],
@@ -1647,6 +1656,9 @@
       "Stay": [
         "Permanecer"
       ],
+      "Stop": [
+        "Parar"
+      ],
       "Stop using single sign-on": [
         "Parar de usar início de sessão único"
       ],
@@ -1709,6 +1721,9 @@
       ],
       "Underline": [
         "Sublinhado"
+      ],
+      "Undo": [
+        "Desfazer"
       ],
       "Undo import": [
         "Desfazer importação"
@@ -1986,6 +2001,9 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "Add-on": [
+        "Complemento"
       ],
       "Dedicated VPN servers": [
         "Servidores de VPN dedicados"
@@ -2971,6 +2989,9 @@
       ],
       "Contacts": [
         "Contatos"
+      ],
+      "Creating accounts": [
+        "Criando contas"
       ],
       "Domain added": [
         "Domínio adicionado"
@@ -5360,9 +5381,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Vamos importar seus e-mails antigos, pular duplicatas e conectar ao seu Gmail para que as novas mensagens apareçam automaticamente. Você pode desfazer a importação a qualquer momento nas configurações do Easy Switch."
@@ -8817,9 +8835,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descrição:"
-      ],
       "Group address:": [
         "Endereço do grupo:"
       ],
@@ -10039,6 +10054,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permitir que os usuários se conectem a servidores compartilhados seguros na seção **Países** do aplicativo ${ VPN_APP_NAME }."
       ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Ao ativar o início de sessão por código QR, você poderá fazer o início de sessão digitalizando um código QR caso esqueça sua senha. Basta estar conectado a um serviço da ${ BRAND_NAME } em outro dispositivo."
+      ],
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Permitir a redefinição de senha nas configurações permite que você altere sua senha caso a tenha perdido, mas ainda esteja conectado à conta ${ BRAND_NAME }."
       ],
@@ -10705,6 +10723,9 @@
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Habilitar recuperação por frase novamente irá gerar uma nova frase de recuperação."
       ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Ativando o backup de dados nesse dispositivo restaurará o acesso a e-mails, contatos, arquivos, senhas e qualquer dados criptografados na sua conta depois da redefinição de senha, simplificando o início sessão"
+      ],
       "Encryption setting updated": [
         "Configuração de criptografia atualizada"
       ],
@@ -10905,6 +10926,9 @@
       ],
       "Gateways": [
         "Gateways"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "A geração de uma nova frase de recuperação desativará sua frase de recuperação atual."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Gerar uma nova frase de recuperação desativará a antiga."
@@ -12280,6 +12304,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Essas credenciais não podem ser usadas para fazer login em nossos aplicativos oficiais ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "Thinking…": [
+        "Pensando…"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -13245,6 +13272,9 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Sua frase de recuperação é uma sequência de 12 palavras geradas aleatoriamente em uma ordem específica."
       ],
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Sua frase de recuperação permitirá que você faça o início de sessão e recupere seus dados caso perca o acesso à sua conta da ${ BRAND_NAME }. É composta por 12 palavras e funciona como uma senha de segurança."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Seu plano começa em ${ renewalTime } e será renovado automaticamente a cada ${ cycle } mês.",
         "Seu plano começa em ${ renewalTime } e será renovado automaticamente a cada ${ cycle } meses."
@@ -14035,7 +14065,7 @@
         "Permitir a recuperação por telefone"
       ],
       "Allow recovery by recovery phrase": [
-        "Permita a recuperação através de uma frase de recuperação"
+        "Permitir a recuperação através de uma frase de recuperação"
       ],
       "Allow recovery using a trusted device": [
         "Permitir recuperação usando dispositivo confiável"
@@ -14769,6 +14799,9 @@
       ],
       "Main reason for cancelling": [
         "Motivo principal para cancelar"
+      ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "Certifique-se de ter acesso a um e-mail ou número de telefone de recuperação e de dispor de uma opção de recuperação de dados."
       ],
       "Manage categories": [
         "Gerenciar categorias"
@@ -17967,6 +18000,9 @@
       ],
       "An external address cannot be default": [
         "Um endereço externo não pode ser padrão."
+      ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
       ],
       "Downloaded 2FA recovery codes": [
         "Baixar código de recuperação de A2F"
@@ -21304,6 +21340,9 @@
       "Verify recovery phone": [
         "Verificar telefone de recuperação"
       ],
+      "Verify your password": [
+        "Verificar sua senha"
+      ],
       "Verify your recovery email": [
         "Verificar seu e-mail de recuperação"
       ],
@@ -22113,8 +22152,8 @@
       "Connect all your devices": [
         "Conectar todos os seus dispositivos"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Continuar com ${ PLAN_NAMES[plan] }"
+      "Continue with ${ planName }": [
+        "Continuar com ${ planName }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Criar uma conta na ${ BRAND_NAME }"
@@ -22142,6 +22181,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Grátis por ${ TRIAL_DURATION_DAYS } dias"
+      ],
+      "From ${ priceElement }": [
+        "A partir de ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Receba ${ referralInfo.uiData.refereeRewardAmount } em créditos"
@@ -22287,9 +22329,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Experimente a ${ BRAND_NAME } por ${ TRIAL_DURATION_DAYS } dias grátis e ganhe ${ br }${ referralInfo.uiData.refereeRewardAmount } em créditos"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Experimente a ${ BRAND_NAME } por 14 dias grátis"
       ],
       "Try ${ planName } for free": [
         "Experimente ${ planName } gratuitamente"
@@ -23282,6 +23321,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuário",
         "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuários"

@@ -1097,6 +1097,9 @@
       "Select time zone": [
         "Időzóna kiválasztása"
       ],
+      "Send": [
+        "Küldés"
+      ],
       "send auto-reply email": [
         "automatikus válasz küldése"
       ],
@@ -1279,6 +1282,9 @@
       ],
       "Underline": [
         "Aláhúzott"
+      ],
+      "Undo": [
+        "Visszavonás"
       ],
       "Undo import": [
         "Importálás visszavonása"
@@ -3778,9 +3784,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Az importálást 80%-os tárhelytelítettségnél szüneteltetjük, hogy helyet biztosítsunk az új üzeneteknek."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Áthozzuk a régi e-mailjeit, és összekapcsoljuk a Gmailjét a ${ MAIL_APP_NAME } alkalmazással, így az új üzenetek automatikusan megjelennek"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Importáljuk a régi e-mailjeit, átugorjuk a duplikátumokat, és kapcsolódunk a Gmail-fiókjához, hogy az új üzenetek automatikusan megjelenjenek. Az importálást bármikor visszavonhatja az Easy Switch beállításaiban"
@@ -15568,9 +15571,6 @@
       ],
       "Connect all your devices": [
         "Kapcsolja össze az összes eszközét"
-      ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Folytatás ezzel: ${ PLAN_NAMES[plan] }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók létrehozása"

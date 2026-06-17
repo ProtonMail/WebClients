@@ -399,6 +399,9 @@
       "Continue with this password": [
         "Continuar con la misma contraseña"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copiar la dirección"
       ],
@@ -1485,6 +1488,9 @@
       "Select time zone": [
         "Seleccione la zona horaria"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "send auto-reply email": [
         "enviar correo de respuesta automática"
       ],
@@ -1709,6 +1715,9 @@
       ],
       "Underline": [
         "Subrayado"
+      ],
+      "Undo": [
+        "Deshacer"
       ],
       "Undo import": [
         "Deshacer importación"
@@ -5482,9 +5491,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos la importación al 80% de almacenamiento para reservar espacio para nuevos mensajes"
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Importaremos sus correos electrónicos antiguos y conectaremos su Gmail a ${ MAIL_APP_NAME } para que los nuevos mensajes aparezcan automáticamente"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Importaremos sus correos electrónicos anteriores, omitiremos los duplicados y nos conectaremos a su Gmail para que los nuevos mensajes aparezcan automáticamente. Puede deshacer la importación en cualquier momento en los ajustes de Easy Switch."
       ],
@@ -8969,9 +8975,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descripción:"
-      ],
       "Group address:": [
         "Dirección del grupo:"
       ],
@@ -18244,6 +18247,9 @@
       "An external address cannot be default": [
         "Una dirección externa no puede ser principal"
       ],
+      "Copied to clipboard": [
+        "Copiado al portapapeles"
+      ],
       "Downloaded 2FA recovery codes": [
         "Códigos de recuperación 2FA descargados"
       ],
@@ -22505,9 +22511,6 @@
       "Connect all your devices": [
         "Conectar todos sus dispositivos"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Continuar con ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Crear cuenta de ${ BRAND_NAME }"
       ],
@@ -22679,9 +22682,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Pruebe ${ BRAND_NAME } gratis por ${ TRIAL_DURATION_DAYS } días${ br }y obtenga ${ referralInfo.uiData.refereeRewardAmount } en créditos"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Pruebe ${ BRAND_NAME } gratis durante 14 días"
       ],
       "Try ${ planName } for free": [
         "Pruebe ${ planName } gratis"

@@ -387,6 +387,9 @@
       "Continue with this password": [
         "Pokračovat s tímto heslem"
       ],
+      "Copy": [
+        "Kopírovat"
+      ],
       "Copy address": [
         "Kopírovat adresu"
       ],
@@ -1449,6 +1452,9 @@
       "Select time zone": [
         "Vybrat časové pásmo"
       ],
+      "Send": [
+        "Odeslat"
+      ],
       "send auto-reply email": [
         "odeslat automatickou odpověď"
       ],
@@ -1664,6 +1670,9 @@
       ],
       "Underline": [
         "Podtržení"
+      ],
+      "Undo": [
+        "Zpět"
       ],
       "Undo import": [
         "Vzít zpět import"
@@ -5182,9 +5191,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Při zaplnění úložiště na 80 % importy pozastavíme, abychom vyhradili místo pro nové zprávy."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Načteme vaše staré e-maily a propojíme váš účet Gmail s aplikací ${ MAIL_APP_NAME }, aby se nové zprávy zobrazovaly automaticky"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Naimportujeme vaše staré e-maily, přeskočíme duplikáty a připojíme se k vašemu Gmailu, aby se nové zprávy zobrazovaly automaticky. Import můžete kdykoli vzít zpět v nastavení Easy Switch."
       ],
@@ -8681,9 +8687,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Popis:"
-      ],
       "Group address:": [
         "Adresa skupiny:"
       ]
@@ -17948,6 +17951,9 @@
       "An external address cannot be default": [
         "Externí adresa nemůže být výchozí"
       ],
+      "Copied to clipboard": [
+        "Zkopírováno do schránky"
+      ],
       "Downloaded 2FA recovery codes": [
         "Stažené obnovovací kódy 2FA"
       ],
@@ -21910,9 +21916,6 @@
       "Connect all your devices": [
         "Připojte všechna svá zařízení"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Pokračovat s ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvořte účet ${ BRAND_NAME }"
       ],
@@ -22086,9 +22089,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Vyzkoušejte ${ BRAND_NAME } na ${ TRIAL_DURATION_DAYS } dní zdarma ${ br } a získejte ${ referralInfo.uiData.refereeRewardAmount } kreditů"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Vyzkoušejte ${ BRAND_NAME } na 14 dní zdarma"
       ],
       "Try ${ planName } for free": [
         "Vyzkoušejte ${ planName } zdarma"

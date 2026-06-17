@@ -396,6 +396,9 @@
       "Continue with this password": [
         "Continuer avec ce mot de passe"
       ],
+      "Copy": [
+        "Copier"
+      ],
       "Copy address": [
         "Copier l'adresse"
       ],
@@ -939,6 +942,9 @@
       "Hide": [
         "Masquer"
       ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Masquer ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Hide more benefits": [
         "Masquer plus d'avantages"
       ],
@@ -1479,6 +1485,9 @@
       "Select time zone": [
         "Sélectionner le fuseau horaire"
       ],
+      "Send": [
+        "Envoyer"
+      ],
       "send auto-reply email": [
         "envoyer un message de réponse automatique"
       ],
@@ -1641,6 +1650,9 @@
       "Stay": [
         "Rester"
       ],
+      "Stop": [
+        "Arrêter"
+      ],
       "Stop using single sign-on": [
         "Arrêter d'utiliser l'authentification unique"
       ],
@@ -1703,6 +1715,9 @@
       ],
       "Underline": [
         "Souligner"
+      ],
+      "Undo": [
+        "Annuler"
       ],
       "Undo import": [
         "Annuler l'importation"
@@ -1980,6 +1995,9 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "Add-on": [
+        "Module complémentaire"
       ],
       "Dedicated VPN servers": [
         "Serveurs VPN dédiés"
@@ -2992,6 +3010,9 @@
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Copiez le code ci-dessous et collez-le dans la section DNS de votre hôte de domaine."
+      ],
+      "Creating accounts": [
+        "Création des comptes en cours"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "État de migration des données depuis Google Workspace vers ${ BRAND_NAME }"
@@ -5475,9 +5496,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Nous allons importer vos anciens messages, ignorer les doublons et nous connecter à votre compte Gmail afin que vos nouveaux messages s'affichent automatiquement. Vous pouvez annuler l'importation à tout moment dans les paramètres d'Easy Switch."
@@ -8963,9 +8981,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Description :"
-      ],
       "Group address:": [
         "Adresse du groupe :"
       ],
@@ -11160,6 +11175,9 @@
       "here": [
         "ici"
       ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Bonjour ! Décrivez-moi le filtre que vous souhaitez et je rédigerai le script Sieve. Je peux également modifier ce qui se trouve déjà dans l'éditeur."
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Masque les informations d'identification en chargeant le contenu distant à travers un proxy. Possibilité de conserver le contenu sous forme de pièces jointes."
       ],
@@ -12513,6 +12531,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ces identifiants ne peuvent pas être utilisés pour se connecter aux applications ${ VPN_APP_NAME } officielles. ${ learnMore }"
+      ],
+      "Thinking…": [
+        "Réflexion en cours…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
@@ -14796,6 +14817,9 @@
       ],
       "Enter code": [
         "Saisissez le code"
+      ],
+      "Enter current password": [
+        "Saisissez votre mot de passe actuel"
       ],
       "Enter name or email address": [
         "Saisissez un nom ou une adresse e-mail."
@@ -18247,6 +18271,9 @@
       "An external address cannot be default": [
         "Une adresse externe ne peut pas être une adresse par défaut."
       ],
+      "Copied to clipboard": [
+        "Copié dans le presse-papiers"
+      ],
       "Downloaded 2FA recovery codes": [
         "Les codes de récupération A2F ont été téléchargés."
       ],
@@ -18294,6 +18321,9 @@
       ],
       "Reminder has been sent": [
         "Le rappel a été envoyé."
+      ],
+      "Sieve script inserted": [
+        "Script Sieve inséré"
       ],
       "The key has been deleted.": [
         "La clé a été supprimée."
@@ -19961,6 +19991,9 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
+      ],
+      "Describe the filter you want…": [
+        "Décrivez le filtre que vous souhaitez…"
       ],
       "domain.com": [
         "domaine.fr"
@@ -21648,6 +21681,9 @@
       "Verify recovery phone": [
         "Vérifiez le téléphone de récupération "
       ],
+      "Verify your password": [
+        "Vérifiez votre mot de passe"
+      ],
       "Verify your recovery email": [
         "Vérifiez votre e-mail de récupération"
       ],
@@ -22472,8 +22508,8 @@
       "Connect all your devices": [
         "Connectez tous vos appareils"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Continuer avec ${ PLAN_NAMES[plan] }"
+      "Continue with ${ planName }": [
+        "Continuer avec ${ planName }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Créer un compte ${ BRAND_NAME }"
@@ -22501,6 +22537,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratuit pendant ${ TRIAL_DURATION_DAYS } jours"
+      ],
+      "From ${ priceElement }": [
+        "À partir de ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Obtenez ${ referralInfo.uiData.refereeRewardAmount } en crédits"
@@ -22602,6 +22641,9 @@
       "Share and collaborate of files": [
         "Partage de fichiers et collaboration"
       ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Inscrivez-vous et obtenez ${ referralInfo.uiData.refereeRewardAmount } en crédits"
+      ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "Inscrivez-vous à ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
@@ -22646,9 +22688,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Essayez ${ BRAND_NAME } pendant ${ TRIAL_DURATION_DAYS } jours gratuitement, ${ br } et obtenez ${ referralInfo.uiData.refereeRewardAmount } en crédits"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Essayez ${ BRAND_NAME } gratuitement pendant 14 jours"
       ],
       "Try ${ planName } for free": [
         "Essayez ${ planName } gratuitement"
@@ -23653,6 +23692,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe pour ${ maxAi } utilisateur",
         "Assistant d'écriture ${ BRAND_NAME } Scribe pour ${ maxAi } utilisateurs"
@@ -24774,6 +24816,9 @@
         "${ friendsSubscribed } ami abonné",
         "${ friendsSubscribed } amis abonnés"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"
       ],
@@ -25719,6 +25764,9 @@
       ],
       "Help center": [
         "Aide & Support"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtenir de l'aide avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Help us improve": [
         "Aidez-nous à nous améliorer"
@@ -26922,8 +26970,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclut un e-mail professionnel en @votre-entreprise.fr, de l'espace de stockage distant permettant l'édition collaborative de documents, la planification et les vidéoconférences, la gestion des mots de passe, un ${ VPN_SHORT_APP_NAME } sécurisé, et bien plus."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Assistance immédiate grâce à l'IA et à des experts humains."
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Les membres qui n'utilisent pas l'A2F recevront un e-mail leur demandant de l'activer dès que possible. Les utilisateurs avec authentification unique ne recevront pas d'e-mail de rappel."

@@ -1085,6 +1085,9 @@
       "Select time zone": [
         "Выберите часовой пояс"
       ],
+      "Send": [
+        "Отправить"
+      ],
       "send auto-reply email": [
         "отправить автоответ"
       ],
@@ -1264,6 +1267,9 @@
       ],
       "Underline": [
         "Подчёркнутый"
+      ],
+      "Undo": [
+        "Отменить"
       ],
       "Undo import": [
         "Отменить импорт данных"
@@ -3817,9 +3823,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Мы приостановим импорт при заполнении хранилища на 80%, чтобы зарезервировать место для новых сообщений."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Мы перенесем ваши старые письма и подключим ваш Gmail к ${ MAIL_APP_NAME }, чтобы новые сообщения появлялись автоматически"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Мы импортируем ваши старые электронные письма, пропустим дубликаты и подключим ваш Gmail, чтобы новые сообщения появлялись автоматически. Вы можете отменить импорт в любое время в настройках Easy Switch"
@@ -12929,6 +12932,9 @@
       "An external address cannot be default": [
         "Внешний адрес не может быть адресом по умолчанию"
       ],
+      "Copied to clipboard": [
+        "Скопировано в буфер обмена"
+      ],
       "Downloaded 2FA recovery codes": [
         "Скачать коды восстановления двухфакторной аутентификации"
       ],
@@ -15540,9 +15546,6 @@
       ],
       "Connect all your devices": [
         "Подключите все свои устройства"
-      ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Продолжить с ${ PLAN_NAMES[plan] }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
