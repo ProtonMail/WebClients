@@ -26,6 +26,7 @@ import {
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { TaxCountryHook } from '@proton/payments/ui';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -33,7 +34,6 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import Checkout from '../../Checkout';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
-import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { AddonTooltip } from './helpers/AddonTooltip';
 import CheckoutRow from './helpers/CheckoutRow';
 import { PlanDescription } from './helpers/PlanDescription';
@@ -342,7 +342,7 @@ const SubscriptionCheckout = ({
     const bodyItems = checkoutView.getVisibleItems({
         exclude: ['amountDue', 'discount', 'renewalNotice', 'taxInclusive', 'billingCycle', 'vatReverseCharge'],
     });
-    const planAmountValue = checkoutView.checkoutData.getItem('planAmount').amount;
+    const planAmountValue = checkoutView.getItem('planAmount').amount;
 
     return (
         <Checkout
