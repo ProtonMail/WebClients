@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { RampInstantEventTypes } from '@ramp-network/ramp-instant-sdk';
 import { c } from 'ttag';
@@ -66,17 +66,29 @@ export const Checkout = ({
     onPurchaseCancelled,
 }: Props) => {
     const [isLoading, setIsLoading] = useState(true);
+    const iframeRef = useRef<HTMLIFrameElement>(null);
+    const popupRef = useRef<Window | null>(null);
 
     const handleEvent = (event?: MessageEvent<any>) => {
-        if ([RampInstantEventTypes.WIDGET_CLOSE, 'onCloseOverlay'].includes(event?.data.type)) {
+        if (!event) {
+            return;
+        }
+
+        const isFromIframe = event.source !== null && event.source === iframeRef.current?.contentWindow;
+        const isFromPopup = event.source !== null && event.source === popupRef.current;
+        if (!isFromIframe && !isFromPopup) {
+            return;
+        }
+
+        if ([RampInstantEventTypes.WIDGET_CLOSE, 'onCloseOverlay'].includes(event.data?.type)) {
             onBack();
         }
 
-        if (event?.data.type === StripeWidgetEventTypes.CHECKOUT_COMPLETED) {
+        if (event.data?.type === StripeWidgetEventTypes.CHECKOUT_COMPLETED) {
             onPurchaseComplete();
         }
 
-        if (event?.data.type === StripeWidgetEventTypes.CHECKOUT_CANCELLED) {
+        if (event.data?.type === StripeWidgetEventTypes.CHECKOUT_CANCELLED) {
             onPurchaseCancelled();
         }
     };
@@ -87,6 +99,7 @@ export const Checkout = ({
         }
 
         const popup = window.open(checkoutUrl, '_blank');
+        popupRef.current = popup;
         const timer = setInterval(() => {
             if (!popup || popup.closed) {
                 clearInterval(timer);
@@ -99,6 +112,7 @@ export const Checkout = ({
             clearInterval(timer);
             window.removeEventListener('message', handleEvent);
             popup?.close();
+            popupRef.current = null;
         };
     }, [checkoutUrl, onBack]);
 
@@ -134,6 +148,7 @@ export const Checkout = ({
                     </p>
                 ) : (
                     <iframe
+                        ref={iframeRef}
                         className="onramp-iframe"
                         allow="camera *; microphone *"
                         src={
