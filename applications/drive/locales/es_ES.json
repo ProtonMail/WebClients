@@ -7300,6 +7300,9 @@
       ],
       "All your files will be imported": [
         "Todos tus archivos se importan"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "No se pudo verificar que ${ nameAuthor } subiera ${ nodeName }. El orden de los datos del archivo podría haber sido manipulado. Ábrelo solo si confías en él."
       ]
     },
     "info": {
@@ -13806,6 +13809,15 @@
       ],
       "You are all set": [
         "Ya está todo listo"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "No hemos podido confirmar que ${ claimedNameAuthor } haya creado o modificado el nombre. El motivo es el siguiente: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "No hemos podido confirmar que ${ claimedKeyAuthor } haya creado el nodo. El motivo es el siguiente: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
