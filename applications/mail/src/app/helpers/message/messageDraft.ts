@@ -72,7 +72,7 @@ const newCopy = (
 export const reply = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
     const Subject = formatSubject(
         useEncrypted ? referenceMessage.decryption?.decryptedSubject : referenceMessage.data?.Subject,
-        RE_PREFIX
+        RE_PREFIX()
     );
     const ToList =
         isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)
@@ -97,7 +97,7 @@ export const replyAll = (
 ): PartialMessageState => {
     const { data = {}, decryption: { decryptedSubject = '' } = {} } = referenceMessage;
 
-    const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX);
+    const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX());
 
     const { Attachments, messageImages } = keepImages(referenceMessage);
 
@@ -126,7 +126,7 @@ export const replyAll = (
  */
 const forward = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
     const { data, decryption: { decryptedSubject = '' } = {} } = referenceMessage;
-    const Subject = formatSubject(useEncrypted ? decryptedSubject : data?.Subject, FW_PREFIX);
+    const Subject = formatSubject(useEncrypted ? decryptedSubject : data?.Subject, FW_PREFIX());
     const Attachments = data?.Attachments;
 
     const { messageImages } = keepImages(referenceMessage);
