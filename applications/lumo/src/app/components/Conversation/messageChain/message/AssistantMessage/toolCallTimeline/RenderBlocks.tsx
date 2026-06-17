@@ -1,13 +1,20 @@
-import { useCallback, useState } from 'react';
+import { Suspense, lazy, useCallback, useState } from 'react';
 
 import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
-import { type FinanceComparisonItem, FinanceComparisonResult } from './FinanceComparisonResult';
-import { FinanceToolResult, parseFinanceResult } from './FinanceToolResult';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 import { WeatherToolResult, parseWeatherResult } from './WeatherToolResult';
+import { type FinanceComparisonItem, parseFinanceResult } from './financeUtils';
+
+// Recharts (~341KB) lives only inside these two components. Lazy-load them so a finance
+// chart is fetched on demand (when a stock/crypto tool result renders) instead of sitting
+// on the conversation-view first-paint critical path.
+const FinanceComparisonResult = lazy(() =>
+    import('./FinanceComparisonResult').then((m) => ({ default: m.FinanceComparisonResult }))
+);
+const FinanceToolResult = lazy(() => import('./FinanceToolResult').then((m) => ({ default: m.FinanceToolResult })));
 
 const TurndownServiceModule = require('turndown');
 // Handle both CommonJS and ES module exports
@@ -416,21 +423,24 @@ export const RenderBlocks = ({
                             <ThinkingPath steps={preCardSteps} message={message} handleLinkClick={handleLinkClick} />
                             {hasCards && (
                                 <>
-                                    {hasFinanceCards &&
-                                        (globalFinanceItems.length >= 2 ? (
-                                            <FinanceComparisonResult
-                                                items={globalFinanceItems}
-                                                onReady={handleFinanceReady}
-                                            />
-                                        ) : (
-                                            globalFinanceItems.map((finance, i) => (
-                                                <FinanceToolResult
-                                                    key={i}
-                                                    data={finance.data}
+                                    {hasFinanceCards && (
+                                        <Suspense fallback={null}>
+                                            {globalFinanceItems.length >= 2 ? (
+                                                <FinanceComparisonResult
+                                                    items={globalFinanceItems}
                                                     onReady={handleFinanceReady}
                                                 />
-                                            ))
-                                        ))}
+                                            ) : (
+                                                globalFinanceItems.map((finance, i) => (
+                                                    <FinanceToolResult
+                                                        key={i}
+                                                        data={finance.data}
+                                                        onReady={handleFinanceReady}
+                                                    />
+                                                ))
+                                            )}
+                                        </Suspense>
+                                    )}
                                     {weatherCards.map((data, i) => (
                                         <WeatherToolResult key={i} data={data!} />
                                     ))}

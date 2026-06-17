@@ -1,19 +1,21 @@
-import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, createContext, lazy, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
-import OfferModal from '@proton/components/containers/offers/components/OfferModal';
-import useOfferModal from '@proton/components/containers/offers/hooks/useOfferModal';
-import type { OfferConfig } from '@proton/components/containers/offers/interface';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
-import LumoPlusBackdropOverlay from '../LumoPlusBackdropOverlay';
-import LumoPlusUpsellModal from '../LumoPlusUpsellModal';
 import useGuestSafeOfferConfig from '../hooks/useGuestSafeOfferConfig';
 
 import './OfferModal.scss';
+
+// The upsell/offer modals pull the heavy @proton/components payments + offers UI
+// (subscription modal, plans, offer modal — ~payments stack). They only ever render after
+// a user action (clicking upgrade) or when an offer is available, so lazy-load them to keep
+// that UI off the first-paint (guest/composer) critical path.
+const LumoPlusUpsellModal = lazy(() => import('../LumoPlusUpsellModal'));
+const OfferModalRenderer = lazy(() => import('./OfferModalRenderer'));
 
 // Optimized context that separates concerns
 interface OfferFlagsContextValue {
@@ -33,63 +35,6 @@ interface OpenLumoUpsellModalEvent extends CustomEvent {
 interface LumoUpsellModalProviderProps {
     children: React.ReactNode;
 }
-
-// Separate component to handle offer modal to avoid calling useOfferModal unnecessarily
-const OfferModalRenderer: React.FC<{
-    offerConfig: OfferConfig;
-    showModal: boolean;
-    onClose: () => void;
-    specialBackdrop?: boolean;
-}> = ({ offerConfig, showModal, onClose, specialBackdrop = true }) => {
-    const { offer, renderOfferModal, offerModalProps, setOfferModalOpen, currency, onChangeCurrency, setFetchOffer } =
-        useOfferModal(offerConfig);
-
-    React.useEffect(() => {
-        if (showModal) {
-            // Start fetching immediately when modal should be shown
-            setFetchOffer(true);
-
-            if (specialBackdrop) {
-                const timer = setTimeout(() => {
-                    setOfferModalOpen(true);
-                }, 100);
-                return () => clearTimeout(timer);
-            } else {
-                setOfferModalOpen(true);
-            }
-        } else {
-            // Close modal and stop fetching when modal should be hidden
-            setOfferModalOpen(false);
-            setFetchOffer(false);
-        }
-    }, [showModal, setOfferModalOpen, setFetchOffer, specialBackdrop]);
-
-    const handleBackdropAnimationComplete = React.useCallback(() => {}, []);
-
-    return (
-        <>
-            {specialBackdrop && showModal && (
-                <LumoPlusBackdropOverlay show={true} onAnimationComplete={handleBackdropAnimationComplete} />
-            )}
-            {renderOfferModal && offer && (
-                <OfferModal
-                    currency={currency}
-                    onChangeCurrency={onChangeCurrency}
-                    offer={{ ...offer, canBeDisabled: false }}
-                    offerConfig={offerConfig}
-                    modalProps={{
-                        ...offerModalProps,
-                        onClose: () => {
-                            offerModalProps.onClose?.();
-                            setFetchOffer(false);
-                            onClose(); // Notify parent to close modal
-                        },
-                    }}
-                />
-            )}
-        </>
-    );
-};
 
 export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = ({ children }) => {
     const { APP_NAME } = useConfig();
@@ -167,19 +112,23 @@ export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = (
 
             {/* Render Lumo Plus upsell modal when no offer is available */}
             {renderLumoPlusUpsellModal && lumoPlusUpsellModalProps.data && (
-                <LumoPlusUpsellModal
-                    modalProps={lumoPlusUpsellModalProps}
-                    upsellRef={lumoPlusUpsellModalProps.data.upsellRef}
-                    specialBackdrop
-                />
+                <Suspense fallback={null}>
+                    <LumoPlusUpsellModal
+                        modalProps={lumoPlusUpsellModalProps}
+                        upsellRef={lumoPlusUpsellModalProps.data.upsellRef}
+                        specialBackdrop
+                    />
+                </Suspense>
             )}
 
             {offerConfig && (
-                <OfferModalRenderer
-                    offerConfig={offerConfig}
-                    showModal={showOfferModal}
-                    onClose={() => setShowOfferModal(false)}
-                />
+                <Suspense fallback={null}>
+                    <OfferModalRenderer
+                        offerConfig={offerConfig}
+                        showModal={showOfferModal}
+                        onClose={() => setShowOfferModal(false)}
+                    />
+                </Suspense>
             )}
         </OfferFlagsContext.Provider>
     );

@@ -1,25 +1,20 @@
 import { useEffect, useMemo } from 'react';
 
-import {
-    CartesianGrid,
-    Line,
-    LineChart,
-    ReferenceLine,
-    ResponsiveContainer,
-    Tooltip,
-    XAxis,
-    YAxis,
-} from 'recharts';
+import { CartesianGrid, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { c } from 'ttag';
 
-import type { FinanceData } from './FinanceToolResult';
-import { formatCurrency, formatPercent, formatPrice, formatShortDate } from './FinanceToolResult';
+import {
+    type FinanceComparisonItem,
+    type FinanceData,
+    formatCurrency,
+    formatPercent,
+    formatPrice,
+    formatShortDate,
+} from './financeUtils';
+
 import './FinanceComparisonResult.scss';
 
-export interface FinanceComparisonItem {
-    data: FinanceData;
-    symbol: string;
-}
+export type { FinanceComparisonItem };
 
 const LINE_COLORS = ['#6d4aff', '#1ea885', '#239ece', '#ff9900', '#dc3251', '#4c34b3'];
 
@@ -43,8 +38,7 @@ const STAT_ROWS: { label: string; getValue: (d: FinanceData) => string }[] = [
     },
     {
         label: c('collider_2025:Reasoning').t`Dividend Yield`,
-        getValue: (d) =>
-            d.company_info?.dividend_yield != null ? formatPercent(d.company_info.dividend_yield) : '—',
+        getValue: (d) => (d.company_info?.dividend_yield != null ? formatPercent(d.company_info.dividend_yield) : '—'),
     },
 ];
 
@@ -65,7 +59,11 @@ const ComparisonTooltip = ({ active, payload, label, items }: TooltipProps) => {
                 const symbol = items[idx]?.symbol ?? `#${idx + 1}`;
                 const sign = entry.value >= 0 ? '+' : '';
                 return (
-                    <p key={i} className="finance-comparison__tooltip-row m-0 text-semibold" style={{ color: entry.color }}>
+                    <p
+                        key={i}
+                        className="finance-comparison__tooltip-row m-0 text-semibold"
+                        style={{ color: entry.color }}
+                    >
                         {symbol}: {sign}
                         {entry.value.toFixed(2)}%
                     </p>
@@ -118,7 +116,8 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
     return (
         <div className="finance-comparison mb-2">
             <div className="flex items-center justify-space-between flex-wrap gap-3 py-3 px-4">
-                <span className="finance-comparison__title">{c('collider_2025:Reasoning').t`Performance comparison`}</span>
+                <span className="finance-comparison__title">{c('collider_2025:Reasoning')
+                    .t`Performance comparison`}</span>
                 <div className="flex items-center gap-4">
                     {items.map((item, i) => (
                         <span key={i} className="finance-comparison__legend-item flex items-center gap-1.5">
@@ -207,7 +206,9 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
             <table className="finance-comparison__table w-full">
                 <thead>
                     <tr>
-                        <th className="py-2 px-4 text-left" />
+                        <th scope="col" className="py-2 px-4 text-left">
+                            <span className="sr-only">{c('collider_2025:Finance').t`Metric`}</span>
+                        </th>
                         {items.map((item, i) => (
                             <th
                                 scope="col"
