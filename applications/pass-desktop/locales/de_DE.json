@@ -1107,6 +1107,9 @@
       "Error reporting problem": [
         "Fehler beim Melden des Problems."
       ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Die Gültigkeitsdauer muss zwischen 1 Stunde und 1 Jahr liegen"
+      ],
       "Failed loading group members": [
         "Gruppenmitglieder konnten nicht geladen werden"
       ],
@@ -1953,11 +1956,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Jedes Mal, wenn dein Alias eine E-Mail von einer Person erhält, wird automatisch ein neuer Kontakt erstellt."
       ],
+      "Expired on ${ formattedDate }": [
+        "Am ${ formattedDate } abgelaufen"
+      ],
       "Expires in": [
         "Läuft ab in"
       ],
       "Expires in ${ remainingTime }": [
         "Läuft ab in ${ remainingTime }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Läuft am ${ formattedDate } ab"
       ],
       "Exporting your data...": [
         "Exportieren deiner Daten..."
@@ -2926,11 +2935,23 @@
         "${ years } Jahr",
         "${ years } Jahre"
       ],
+      "1 day": [
+        "1 Tag"
+      ],
       "1 hour": [
         "1 Stunde"
       ],
       "1 minute": [
         "1 Minute"
+      ],
+      "1 month": [
+        "1 Monat"
+      ],
+      "1 week": [
+        "1 Woche"
+      ],
+      "1 year": [
+        "1 Jahr"
       ],
       "10 minutes": [
         "10 Minuten"
@@ -3159,6 +3180,12 @@
       ],
       "Crypto Wallet": [
         "Krypto-Wallet"
+      ],
+      "Custom": [
+        "Benutzerdefiniert"
+      ],
+      "Custom expiration (minutes)": [
+        "Benutzerdefinierte Ablaufzeit (Minuten)"
       ],
       "Custom Items": [
         "Benutzerdefinierte Einträge"
