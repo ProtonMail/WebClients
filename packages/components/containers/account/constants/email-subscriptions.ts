@@ -46,6 +46,7 @@ export const getEmailSubscriptions = (
 ): {
     general: EmailSubscriptionData;
     product: EmailSubscriptionData;
+    accountUpdates: EmailSubscriptionData;
     notifications: EmailSubscriptionData;
 } => {
     const general = [
@@ -146,6 +147,15 @@ export const getEmailSubscriptions = (
         .filter(isTruthy)
         .filter(filter);
 
+    const accountUpdates = [
+        {
+            id: 'account_recovery',
+            flag: NEWSLETTER_SUBSCRIPTIONS_BITS.ACCOUNT_RECOVERY,
+            title: c('news').t`Recovery checklist`,
+            frequency: c('news').t`1-4 emails per year. Reminders to keep your recovery methods up to date.`,
+        },
+    ].filter(filter);
+
     const notifications = [
         {
             id: 'in_app_notifications',
@@ -159,14 +169,23 @@ export const getEmailSubscriptions = (
 
     return {
         general: { title: c('news').t`Email communications`, toggles: general },
-        product: { title: c('news').t`Product updates`, toggles: product },
+        product: { title: c('news').t`Product email updates`, toggles: product },
+        accountUpdates: { title: c('news').t`Account email updates`, toggles: accountUpdates },
         notifications: { title: c('news').t`Application notifications`, toggles: notifications },
     };
 };
 
 export const getEmailSubscriptionsMap = () => {
     const result = getEmailSubscriptions(() => true);
-    return toMap([...result.general.toggles, ...result.product.toggles, ...result.notifications.toggles], 'flag');
+    return toMap(
+        [
+            ...result.general.toggles,
+            ...result.product.toggles,
+            ...result.accountUpdates.toggles,
+            ...result.notifications.toggles,
+        ],
+        'flag'
+    );
 };
 
 export const filterNews = ({
