@@ -1,20 +1,10 @@
-import type { Participant, Track } from 'livekit-client';
+import type { RecordingCodec } from './codec/types';
 
-export interface RecordingTrackInfo {
-    track: Track | null;
-    participant: Participant;
-    isScreenShare: boolean;
-    participantIndex: number;
+// Runtime surface that RecordingSession drives, shared by both recording
+// orchestrators: the legacy MediaRecorder-based MeetMediaRecorder and the WebCodecs
+export interface RecorderAPI {
+    start(): Promise<void>;
+    stop(): Promise<void>;
+    getActiveCodec(): RecordingCodec;
+    getRecorderState(): RecordingState;
 }
-
-export interface FrameReaderInfo {
-    reader: ReadableStreamDefaultReader<VideoFrame> | null;
-    participantKey: string;
-}
-
-export type RecordingCodec = {
-    mimeType: string;
-    extension: string;
-};
-
-export type CodecProbeOutcome = 'unsupported' | 'data' | 'flush' | 'timeout' | 'error' | 'throw';

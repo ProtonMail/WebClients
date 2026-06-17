@@ -29,7 +29,7 @@ import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/Open
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorderNew/recordingStorage/purge';
+import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorder/recordingStorage/purge';
 import { LoadingState } from '../../types';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 
