@@ -122,7 +122,7 @@ export const ANIMATED_BACKGROUND_SHADER_CONFIG: WebglShaderBgConfig = {
 
 export const ANIMATED_BACKGROUND_PARTICLE_CONFIG: Partial<GridParticleFieldOptions> = {
     spacing: 14,
-    size: 1.75,
+    size: 1.65,
     alpha: 0.72,
     interactionRadius: 80,
     mouseBrighten: 0.38,
