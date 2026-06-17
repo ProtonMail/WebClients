@@ -11,6 +11,7 @@ import { RightPanelProvider, useRightPanel } from '../providers/RightPanelProvid
 import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
 import { SidebarProvider } from '../providers/SidebarProvider';
 import LumoSidebar from './sidebar/LumoSidebar';
+import { MainLayoutAnimatedBackground } from './MainLayoutAnimatedBackground';
 
 import './MainLayout.scss';
 
@@ -35,7 +36,8 @@ const MainLayoutContent = ({ children }: Props) => {
                 <div className="flex flex-column flex-nowrap h-full flex-1 reset4print">
                     <div className="main-layout-component flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative md:p-2 md:gap-2">
                         <LumoSidebar />
-                        <main className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative">
+                        <main className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative overflow-hidden">
+                            <MainLayoutAnimatedBackground />
                             <HighLoadWarning />
                             {children}
                         </main>
