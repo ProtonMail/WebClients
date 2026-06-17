@@ -1,8 +1,6 @@
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
-import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
 import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
@@ -25,7 +23,6 @@ export const CategoriesTabsList = () => {
 
     const { sendReportRecategorizeEmail } = useCategoriesTelemetry();
 
-    const { counterMap } = useMailboxCounter();
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
         if (selectAll) {
             return;
@@ -70,11 +67,7 @@ export const CategoriesTabsList = () => {
                             onDrop={handleDrop(category.id)}
                         >
                             <ErrorBoundary component={<CategoryTabError />}>
-                                <Tab
-                                    category={category}
-                                    tabState={tabState}
-                                    count={getRawLocationCount(counterMap, category.id).Unread}
-                                />
+                                <Tab category={category} tabState={tabState} />
                             </ErrorBoundary>
                         </div>
                     );
