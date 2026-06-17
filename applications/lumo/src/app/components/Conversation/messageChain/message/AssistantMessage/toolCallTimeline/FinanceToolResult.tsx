@@ -1,89 +1,21 @@
 import { useEffect, useMemo } from 'react';
 
-import {
-    Area,
-    Bar,
-    CartesianGrid,
-    ComposedChart,
-    ResponsiveContainer,
-    Tooltip,
-    XAxis,
-    YAxis,
-} from 'recharts';
-
+import { Area, Bar, CartesianGrid, ComposedChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { c } from 'ttag';
+
+import {
+    type FinanceData,
+    formatCurrency,
+    formatLastUpdated,
+    formatPercent,
+    formatPrice,
+    formatShortDate,
+    formatVolume,
+} from './financeUtils';
 
 import './FinanceToolResult.scss';
 
-interface MonthlyPoint {
-    date: string;
-    price: number;
-    volume: number;
-}
-
-interface CompanyInfo {
-    name: string;
-    description?: string;
-    exchange?: string;
-    industry?: string;
-    sector?: string;
-    market_cap?: number;
-    pe_ratio?: number;
-    profit_margin?: number;
-    dividend_yield?: number;
-    revenue_ttm?: number;
-}
-
-export interface FinanceData {
-    type: 'Stock' | 'Cryptocurrency' | string;
-    current_price: number;
-    monthly_trend: MonthlyPoint[];
-    company_info?: CompanyInfo;
-}
-
-export const formatCurrency = (value: number): string => {
-    if (value >= 1_000_000_000_000) {
-        return `$${(value / 1_000_000_000_000).toFixed(2)}T`;
-    }
-    if (value >= 1_000_000_000) {
-        return `$${(value / 1_000_000_000).toFixed(2)}B`;
-    }
-    if (value >= 1_000_000) {
-        return `$${(value / 1_000_000).toFixed(2)}M`;
-    }
-    return `$${value.toLocaleString()}`;
-};
-
-const formatVolume = (value: number): string => {
-    if (value >= 1_000_000) {
-        return `${(value / 1_000_000).toFixed(1)}M`;
-    }
-    if (value >= 1_000) {
-        return `${(value / 1_000).toFixed(0)}K`;
-    }
-    return `${value}`;
-};
-
-export const formatPercent = (value: number): string => {
-    return `${(value * 100).toFixed(2)}%`;
-};
-
-export const formatPrice = (value: number): string => {
-    if (value >= 1000) {
-        return `$${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-    }
-    return `$${value.toFixed(2)}`;
-};
-
-export const formatShortDate = (dateStr: string): string => {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-};
-
-const formatLastUpdated = (dateStr: string): string => {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-};
+export type { FinanceData };
 
 interface CustomTooltipProps {
     active?: boolean;
@@ -101,9 +33,7 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
         <div className="finance-chart-tooltip">
             <p className="finance-chart-tooltip__date">{label}</p>
             {priceEntry && <p className="finance-chart-tooltip__price">{formatPrice(priceEntry.value)}</p>}
-            {volumeEntry && (
-                <p className="finance-chart-tooltip__volume">Vol: {formatVolume(volumeEntry.value)}</p>
-            )}
+            {volumeEntry && <p className="finance-chart-tooltip__volume">Vol: {formatVolume(volumeEntry.value)}</p>}
         </div>
     );
 };
@@ -240,11 +170,7 @@ export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => 
                                 />
                             </linearGradient>
                         </defs>
-                        <CartesianGrid
-                            strokeDasharray="3 3"
-                            stroke="var(--border-weak)"
-                            vertical={false}
-                        />
+                        <CartesianGrid strokeDasharray="3 3" stroke="var(--border-weak)" vertical={false} />
                         <XAxis
                             dataKey="dateLabel"
                             tick={{ fontSize: 10, fill: 'var(--text-weak)' }}
@@ -262,7 +188,10 @@ export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => 
                             width={45}
                         />
                         <YAxis yAxisId="volume" domain={volumeYDomain} hide />
-                        <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'var(--border-norm)', strokeWidth: 1 }} />
+                        <Tooltip
+                            content={<CustomTooltip />}
+                            cursor={{ stroke: 'var(--border-norm)', strokeWidth: 1 }}
+                        />
                         <Bar
                             yAxisId="volume"
                             dataKey="volume"
@@ -295,20 +224,4 @@ export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => 
             )}
         </div>
     );
-};
-
-export const parseFinanceResult = (result: string): FinanceData | null => {
-    try {
-        const parsed = JSON.parse(result);
-        if (
-            typeof parsed.current_price === 'number' &&
-            Array.isArray(parsed.monthly_trend) &&
-            parsed.monthly_trend.length > 0
-        ) {
-            return parsed as FinanceData;
-        }
-    } catch {
-        // Not valid JSON or not finance format
-    }
-    return null;
 };
