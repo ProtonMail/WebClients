@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { IcPen } from '@proton/icons/icons/IcPen';
 
+import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
+import { injectNativeImageGenerationHelper } from '../../remote/nativeComposerBridgeHelpers';
 import { isImeComposing } from '../../util/keyboard';
 import { Canvas } from './Canvas';
 import { Toolbar } from './Toolbar';
@@ -39,6 +41,7 @@ export const SketchCanvas = ({
     const [strokeWidth] = useState(DEFAULT_STROKE_WIDTH);
     const [description, setDescription] = useState('');
     const containerRef = useRef<HTMLDivElement>(null);
+    useNativeComposerVisibilityApi({ isBlocking: true });
 
     const { strokes, addStroke, undo, redo, clear, canUndo, canRedo } = useHistory();
 
@@ -52,6 +55,8 @@ export const SketchCanvas = ({
         }
         const exportOptions: ExportOptions = { format: 'png', quality: 1 };
         const imageData = exportCanvasAsDataURL(canvas, exportOptions);
+        const text = description.trim();
+        injectNativeImageGenerationHelper(text);
         onExport?.(imageData, mode, description.trim());
     };
 
