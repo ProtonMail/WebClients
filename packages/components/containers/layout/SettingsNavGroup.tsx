@@ -1,13 +1,17 @@
 import { Children, type ReactNode, isValidElement } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import { getIsSubsectionAvailable } from './helper';
 import type { SubSectionConfig } from './interface';
+import { SettingsLayoutVariant } from './interface';
 
 interface Props {
     title?: string;
     description?: string;
     subsections?: SubSectionConfig[];
     children: ReactNode;
+    variant?: SettingsLayoutVariant;
 }
 
 /**
@@ -16,7 +20,7 @@ interface Props {
  * positionally using `getIsSubsectionAvailable`, mirroring `PrivateMainSettingsArea`.
  * Renders nothing if all children are unavailable.
  */
-const SettingsNavGroup = ({ title, description, subsections, children }: Props) => {
+const SettingsNavGroup = ({ title, description, subsections, children, variant }: Props) => {
     const visibleChildren = Children.toArray(children).map((child, i) => {
         if (!isValidElement(child)) {
             return null;
@@ -36,7 +40,14 @@ const SettingsNavGroup = ({ title, description, subsections, children }: Props) 
         <div>
             {title && <h2 className="text-lg text-semibold m-0 mb-2">{title}</h2>}
             {description && <p className="color-weak m-0 mb-4">{description}</p>}
-            <div className={'flex flex-column overflow-hidden shadow-norm rounded-lg'}>{visibleChildren}</div>
+            <div
+                className={clsx(
+                    'flex flex-column overflow-hidden rounded-lg',
+                    variant !== SettingsLayoutVariant.Mobile && 'shadow-norm'
+                )}
+            >
+                {visibleChildren}
+            </div>
         </div>
     );
 };

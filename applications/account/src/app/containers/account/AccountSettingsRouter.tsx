@@ -160,7 +160,7 @@ const AccountSettingsRouter = ({
                         <CreditsSection app={app} />
                         <GiftCodeSection />
                         <InvoicesSection app={app} />
-                        <EmailSubscriptionSection />
+                        <EmailSubscriptionSection toggleContainerClassName="gap-4" />
                         <CancelSubscriptionSection app={app} />
                         <CancelSubscriptionViaSupportSection />
                         <DowngradeSubscriptionSection app={app} />
@@ -180,7 +180,7 @@ const AccountSettingsRouter = ({
                         <CreditsSection app={app} />
                         <GiftCodeSection />
                         <InvoicesSection app={app} />
-                        <EmailSubscriptionSection />
+                        <EmailSubscriptionSection toggleContainerClassName="gap-4" />
                         <CancelSubscriptionSection app={app} />
                         <CancelSubscriptionViaSupportSection />
                         <DowngradeSubscriptionSection app={app} />

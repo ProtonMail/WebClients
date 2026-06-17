@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import { ButtonLikeSizeEnum } from '@proton/atoms/Button/ButtonLike';
 import { useZoomOAuth } from '@proton/calendar/zoomIntegration/useZoomOAuth';
 import { Badge } from '@proton/components/components/badge/Badge';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
@@ -35,7 +37,15 @@ export const ProviderReason = ({ provider }: { provider: SupportedProviders }) =
     return <span />;
 };
 
-export const ProviderAction = ({ provider, connected }: { provider: SupportedProviders; connected?: boolean }) => {
+export const ProviderAction = ({
+    provider,
+    connected,
+    buttonSize = ButtonLikeSizeEnum.Small,
+}: {
+    provider: SupportedProviders;
+    connected?: boolean;
+    buttonSize?: ButtonLikeSize;
+}) => {
     const [user] = useUser();
 
     const { triggerZoomOAuth } = useZoomOAuth();
@@ -49,7 +59,7 @@ export const ProviderAction = ({ provider, connected }: { provider: SupportedPro
         if (!user.hasPaidMail && !connected) {
             return (
                 <>
-                    <Button size="small" onClick={() => zoomUpsellModal.openModal(true)} className="sm:ml-auto">
+                    <Button size={buttonSize} onClick={() => zoomUpsellModal.openModal(true)} className="sm:ml-auto">
                         <IcUpgrade className="mr-1" />
                         {c('Action').t`Connect`}
                     </Button>
@@ -58,7 +68,7 @@ export const ProviderAction = ({ provider, connected }: { provider: SupportedPro
             );
         }
 
-        return <Button size="small" onClick={() => triggerZoomOAuth()}>{c('Action').t`Connect`}</Button>;
+        return <Button size={buttonSize} onClick={() => triggerZoomOAuth()}>{c('Action').t`Connect`}</Button>;
     }
 
     return <span />;

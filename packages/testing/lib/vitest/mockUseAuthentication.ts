@@ -11,6 +11,7 @@ export const mockUseAuthentication = (value?: Partial<PrivateAuthenticationStore
         hasSession: vi.fn(),
         setPassword: vi.fn(),
         getPassword: vi.fn(),
+        hasPassword: vi.fn(),
         setPersistent: vi.fn(),
         getPersistent: vi.fn(),
         setClientKey: vi.fn(),

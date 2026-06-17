@@ -18,10 +18,12 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useConfig from '@proton/components/hooks/useConfig';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { SECOND } from '@proton/shared/lib/constants';
+import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -32,6 +34,7 @@ import {
 } from '../../shared/OutgoingDelegatedAccessProvider';
 import { getMetaOutgoingDelegatedAccess } from '../../shared/outgoing/helper';
 import type { MetaIncomingDelegatedAccess } from '../../shared/outgoing/interface';
+import shieldPurple from '../../shared/shield-purple.svg';
 import { DateCountdown } from '../DateCountdown';
 import { getFormattedAccessibleAtDate, getFormattedTriggerDelay } from '../date';
 import OutgoingEmergencyContactBanners from './OutgoingEmergencyContactBanners';
@@ -241,6 +244,7 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
 export const OutgoingEmergencyContactSettings = () => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
+    const { APP_NAME } = useConfig();
 
     if (!controller.outgoingDelegatedAccess.isAvailable) {
         return null;
@@ -272,16 +276,33 @@ export const OutgoingEmergencyContactSettings = () => {
                         </div>
                     )}
 
-                {controller.outgoingDelegatedAccess.emergencyContacts.hasUpsell && (
-                    <div>
-                        <PromotionButton
-                            iconName="upgrade"
-                            onClick={() => {
-                                controller.notify({ type: 'upsell' });
+                {controller.outgoingDelegatedAccess.emergencyContacts.hasUpsell &&
+                    (APP_NAME === APPS.PROTONACCOUNTLITE ? (
+                        <div
+                            className="rounded-xl bg-elevated p-4 flex flex-row items-center flex-nowrap gap-4 text-left"
+                            style={{
+                                background:
+                                    'linear-gradient(30.74deg, rgba(109, 74, 255, 0.15) 16.88%, rgba(70, 26, 255, 0.04) 79.59%)',
                             }}
-                        >{c('emergency_access').t`Add emergency contact`}</PromotionButton>
-                    </div>
-                )}
+                        >
+                            <img src={shieldPurple} alt="" width={35} height={40} />
+                            <div className="color-primary">
+                                {getBoldFormattedText(
+                                    c('emergency_access')
+                                        .t`**Protect your legacy.** Upgrade your plan to add emergency contacts.`
+                                )}
+                            </div>
+                        </div>
+                    ) : (
+                        <div>
+                            <PromotionButton
+                                iconName="upgrade"
+                                onClick={() => {
+                                    controller.notify({ type: 'upsell' });
+                                }}
+                            >{c('emergency_access').t`Add emergency contact`}</PromotionButton>
+                        </div>
+                    ))}
 
                 {controller.outgoingDelegatedAccess.emergencyContacts.items.length > 0 && (
                     <DashboardCard>

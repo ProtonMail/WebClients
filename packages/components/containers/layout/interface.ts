@@ -6,6 +6,7 @@ import type { IconName } from '@proton/icons/types';
 export enum SettingsLayoutVariant {
     Default = 'default',
     Card = 'card',
+    Mobile = 'mobile',
 }
 
 export enum SettingsCardMaxWidth {
