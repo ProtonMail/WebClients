@@ -6899,9 +6899,6 @@
         "Немагчыма захаваць некалькі фатаграфій на вашым Drive",
         "Немагчыма захаваць некалькі фатаграфій на вашым Drive"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Немагчыма спраўдзіць, што ${ nameAuthor } запампаваў ${ node.name }. Наступныя элементы могуць быць падробленымі: парадак даных файла. Адкрывайце іх толькі тады, калі давяраеце гэтаму змесціву."
-      ],
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
       ],
@@ -12711,6 +12708,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрас электроннай пошты",
         "${ emailsCount } адрасы электроннай пошты",
@@ -13676,12 +13676,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Не ўдалося пацвердзіць, што змесціва файла было запампавана ${ claimedContentAuthor }. Прычына: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Не ўдалося пацвердзіць, што назва была створана або зменена ${ claimedNameAuthor }. Прычына: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Не ўдалося пацвердзіць, што вузел быў створаны ${ claimedKeyAuthor }. Прычына: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Прывітальная прапанова"

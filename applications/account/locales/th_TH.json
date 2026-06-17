@@ -351,6 +351,9 @@
       "Continue with this password": [
         "ดำเนินการต่อด้วยรหัสผ่านนี้"
       ],
+      "Copy": [
+        "คัดลอก"
+      ],
       "Copy address": [
         "คัดลอกที่อยู่"
       ],
@@ -1317,6 +1320,9 @@
       "Select time zone": [
         "เลือกเขตเวลา"
       ],
+      "Send": [
+        "ส่ง"
+      ],
       "send auto-reply email": [
         "ส่งอีเมลตอบกลับอัตโนมัติ"
       ],
@@ -1517,6 +1523,9 @@
       ],
       "Underline": [
         "ขีดเส้นใต้"
+      ],
+      "Undo": [
+        "ยกเลิก"
       ],
       "Undo import": [
         "เลิกทำการนำเข้า"
@@ -4631,9 +4640,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "จะหยุดการนำเข้าชั่วคราวเมื่อพื้นที่จัดเก็บถึง 80% เพื่อสำรองพื้นที่สำหรับข้อความใหม่"
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "จะนำเข้าอีเมลเก่าและเชื่อมต่อ Gmail กับ ${ MAIL_APP_NAME } เพื่อให้ข้อความใหม่แสดงขึ้นโดยอัตโนมัติ"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "จะนำเข้าอีเมลเก่า ข้ามรายการซ้ำ และเชื่อมต่อไปยัง Gmail เพื่อให้ข้อความใหม่ปรากฏขึ้นโดยอัตโนมัติ สามารถเลิกทำการนำเข้าได้ทุกเมื่อในการตั้งค่า Easy Switch"
@@ -15550,6 +15556,9 @@
       "An external address cannot be default": [
         "ที่อยู่ภายนอกไม่สามารถเป็นค่าเริ่มต้นได้"
       ],
+      "Copied to clipboard": [
+        "คัดลอกไปที่คลิปบอร์ดแล้ว"
+      ],
       "Downloaded 2FA recovery codes": [
         "ดาวน์โหลดรหัสกู้คืน 2FA แล้ว"
       ],
@@ -18967,9 +18976,6 @@
       "Connect all your devices": [
         "เชื่อมต่ออุปกรณ์ทั้งหมดของคุณ"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "ดำเนินการต่อด้วย ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "สร้างบัญชี ${ BRAND_NAME }"
       ],
@@ -19119,9 +19125,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "ลองใช้ ${ BRAND_NAME } ฟรี ${ TRIAL_DURATION_DAYS } วัน"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "ลองใช้ ${ BRAND_NAME } ฟรี 14 วัน"
       ],
       "Try ${ planName } for free": [
         "ลองใช้ ${ planName } ฟรี"

@@ -6716,9 +6716,6 @@
         "Δεν μπορέσαμε να αποθηκεύσουμε αυτή τη φωτογραφία στο Drive σας",
         "Δεν μπορέσαμε να αποθηκεύσουμε αυτές τις φωτογραφίες στο Drive σας"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο/η ${ nameAuthor } ανέβασε το ${ node.name }. Το ακόλουθο ενδέχεται να έχει παραποιηθεί: σειρά δεδομένων αρχείου. Ανοίξτε το μόνο αν το εμπιστεύεστε."
-      ],
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
@@ -12218,6 +12215,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } ηλεκτρονική διεύθυνση",
         "${ emailsCount } ηλεκτρονικές διευθύνσεις"
@@ -12227,6 +12227,9 @@
       ],
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } δωρεάν μεταφορτώσεις."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
@@ -13166,12 +13169,6 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Δεν μπορέσαμε να επιβεβαιώσουμε ότι το περιεχόμενο του αρχείου μεταφορτώθηκε από τον ${ claimedContentAuthor }. Ο λόγος είναι: ${ activeRevision.contentAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Δεν μπορέσαμε να επιβεβαιώσουμε ότι το όνομα δημιουργήθηκε ή τροποποιήθηκε από τον ${ claimedNameAuthor }. Ο λόγος είναι: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Δεν μπορέσαμε να επιβεβαιώσουμε ότι ο κόμβος δημιουργήθηκε από τον ${ claimedKeyAuthor }. Ο λόγος είναι: ${ nodeEntity.keyAuthor.error.error }"
-      ],
       "Welcome offer": [
         "Προσφορά καλωσορίσματος"
       ],
@@ -13286,9 +13283,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
-      ],
-      "Instant assistance with AI and human experts.": [
-        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη και ανθρώπινους εμπειρογνώμονες."
       ],
       "Load image": [
         "Φόρτωση εικόνας"

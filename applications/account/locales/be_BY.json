@@ -399,6 +399,9 @@
       "Continue with this password": [
         "Працягнуць з гэтым паролем"
       ],
+      "Copy": [
+        "Скапіяваць"
+      ],
       "Copy address": [
         "Скапіяваць адрас"
       ],
@@ -1485,6 +1488,9 @@
       "Select time zone": [
         "Выберыце часавы пояс"
       ],
+      "Send": [
+        "Адправіць"
+      ],
       "send auto-reply email": [
         "адправіць ліст з аўтаматычным адказам"
       ],
@@ -1709,6 +1715,9 @@
       ],
       "Underline": [
         "Падкрэслены"
+      ],
+      "Undo": [
+        "Адрабіць"
       ],
       "Undo import": [
         "Адрабіць імпартаванне"
@@ -5554,9 +5563,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Мы імпартуем вашы старыя лісты, прапусцім дублікаты і падключым ваш Gmail, каб новыя паведамленні з'яўляліся аўтаматычна. Вы можаце адрабіць імпарт у любы час у наладах Easy Switch."
       ],
@@ -9106,9 +9112,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Апісанне:"
-      ],
       "Group address:": [
         "Адрас групы:"
       ],
@@ -18648,6 +18651,9 @@
       "An external address cannot be default": [
         "Знешні адрас не можа быць прадвызначаным"
       ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
+      ],
       "Downloaded 2FA recovery codes": [
         "Спампаваныя коды аднаўлення 2ФА"
       ],
@@ -22910,9 +22916,6 @@
       "Connect all your devices": [
         "Падключыце ўсе свае прылады"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Працягнуць з тарыфным планам ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
@@ -23086,9 +23089,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Паспрабуйце ${ BRAND_NAME } бясплатна на працягу ${ TRIAL_DURATION_DAYS } дзён ${ br } і атрымайце ${ referralInfo.uiData.refereeRewardAmount } у крэдытах"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Паспрабуйце ${ BRAND_NAME } на працягу 14 дзён бясплатна"
       ],
       "Try ${ planName } for free": [
         "Паспрабуйце ${ planName } бясплатна"

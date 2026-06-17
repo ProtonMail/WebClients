@@ -3245,9 +3245,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos la importación al 80% de almacenamiento para reservar espacio para nuevos mensajes"
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Importaremos sus correos electrónicos antiguos y conectaremos su Gmail a ${ MAIL_APP_NAME } para que los nuevos mensajes aparezcan automáticamente"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Importaremos sus correos electrónicos anteriores, omitiremos los duplicados y nos conectaremos a su Gmail para que los nuevos mensajes aparezcan automáticamente. Puede deshacer la importación en cualquier momento en los ajustes de Easy Switch."
       ],
@@ -5713,9 +5710,6 @@
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
       ],
-      "Insert image": [
-        "Insertar imagen"
-      ],
       "Insert link": [
         "Insertar enlace"
       ],
@@ -6976,6 +6970,9 @@
       "Don't show this again": [
         "No mostrar esto de nuevo"
       ],
+      "Download logs": [
+        "Descargar registros"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "p. ej., Amazon, eBay, Mercado Libre"
       ],
@@ -7341,6 +7338,9 @@
       ],
       "Upload picture": [
         "Cargar imagen"
+      ],
+      "URL": [
+        "URL"
       ],
       "Username": [
         "Nombre de usuario"
@@ -11440,6 +11440,9 @@
     "Title": {
       "${ appName } keyboard shortcuts": [
         "Atajos de teclado ${ appName }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } dirección de correo",

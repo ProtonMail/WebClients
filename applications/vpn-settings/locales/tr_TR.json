@@ -1365,6 +1365,9 @@
         "${ users } kullanıcı",
         "${ users } kullanıcı"
       ],
+      "Add-on": [
+        "Eklenti"
+      ],
       "Dedicated VPN servers": [
         "Size ayrılmış VPN sunucuları"
       ],
@@ -3715,9 +3718,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Eski e-postalarınızı içe aktaracağız, yinelenenleri atlayacağız ve Gmail hesabınızla bağlantı kurarak yeni iletilerin otomatik olarak görünmesini sağlayacağız. Easy Switch ayarlarından istediğiniz zaman içe aktarma işlemini geri alabilirsiniz"
       ],
@@ -5776,9 +5776,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Açıklama:"
-      ],
       "Group address:": [
         "Grup adresi:"
       ],
@@ -6347,6 +6344,10 @@
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } kullanıcının grup e-postalarını almaya başlaması için daveti kabul etmesi gerekiyor.",
+        "${ invitedMemberCount } kullanıcının grup e-postalarını almaya başlamaları için davetlerini kabul etmeleri gerekiyor."
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
@@ -6390,6 +6391,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır. ${ planTitle } aboneliğinizin yenileme ücreti ve tarihi değişmeden kalır."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } yeni üye kimlik sağlayıcınız aracılığıyla eklendi ve inceleme aşamasında.",
+        "${ pendingAdminMemberCount } yeni üye kimlik sağlayıcınız aracılığıyla eklendi ve inceleme aşamasında."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
@@ -7701,6 +7706,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Yeni etkinlik verilerinin toplanması ve görüntülenmesi durdurulacak."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Kimlik sağlayıcınız aracılığıyla yeni bir grup oluşturuldu ve inceleme aşamasında."
       ],
       "New sidebar": [
         "Yeni kenar çubuğu"
@@ -15364,6 +15372,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı",
         "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -16336,6 +16347,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } arkadaş abone oldu",
         "${ friendsSubscribed } arkadaş abone oldu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "Kuruluşlar için ${ PROTON_SENTINEL_NAME }"
@@ -17749,8 +17763,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "@etkialaniniz.com adresinden profesyonel e-posta, iş birlikli belge düzenleme, zamanlama ve görüntülü görüşme ile bulut depolama alanı, parola yönetimi, güvenli bir ${ VPN_SHORT_APP_NAME } ve diğer şeyleri sağlar."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Yapay zeka ve insan uzmanlar ile anında yardım."
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "İki adımlı doğrulama kullanmayan üyelere, bunu en kısa sürede açmaları için bir e-posta gönderilecek. Bu bildirim e-postası, tek oturum açma kullanıcılarına gönderilmeyecek."

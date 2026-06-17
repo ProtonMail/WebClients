@@ -5587,8 +5587,14 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "Account restricted": [
         "Hesap kısıtlandı"
@@ -5818,8 +5824,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Yapay zeka ve insan uzmanlar ile anında yardım."
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"

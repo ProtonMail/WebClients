@@ -6221,9 +6221,6 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bravo, pravkar ste povečali prostor za shranjevanje na 5 GB!"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Nismo mogli preveriti, ali je ${ nameAuthor } naložil ${ node.name }. Naslednje je bilo morda spremenjeno: vrstni red podatkov v datoteki. Odprite samo, če ji zaupate."
-      ],
       "We couldn’t process your payment.": [
         "Vašega plačila ni bilo mogoče obdelati."
       ],
@@ -11283,6 +11280,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-poštni naslov",
         "${ emailsCount } e-poštna naslova",
@@ -12155,12 +12155,6 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Nismo mogli preveriti, ali je anonimni uporabnik naložil to mapo."
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Nismo mogli potrditi, da je ime ustvaril ali spremenil ${ claimedNameAuthor }. Razlog: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Nismo mogli potrditi, da je vozlišče ustvaril ${ claimedKeyAuthor }. Razlog: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Ponudba dobrodošlice"

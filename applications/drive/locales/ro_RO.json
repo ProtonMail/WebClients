@@ -5329,6 +5329,9 @@
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }."
       ],
+      "All your files will be imported": [
+        "Vor fi importate toate fișierele."
+      ],
       "Already in this folder": [
         "Deja în acest folder"
       ],
@@ -6806,9 +6809,6 @@
         "Câteva fotografii nu au putut fi salvate în Drive.",
         "Câteva fotografii nu au putut fi salvate în Drive."
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ node.name }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
-      ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
@@ -7456,6 +7456,9 @@
       ],
       "Download anyway": [
         "Descărcare așa"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Duplicate found": [
         "S-a găsit o dublură."
@@ -12532,6 +12535,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "Adrese de e-mail: ${ emailsCount }",
         "Adrese de e-mail: ${ emailsCount }",
@@ -12542,6 +12548,9 @@
       ],
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } încărcări gratuite."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperare cont"
@@ -13488,12 +13497,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Nu s-a putut confirma că fișierul a fost încărcat de către ${ claimedContentAuthor }. Motiv: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Nu s-a putut confirma că numele a fost creat sau modificat de către ${ claimedNameAuthor }. Motiv: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Nu s-a putut confirma că nodul a fost creat de către ${ claimedKeyAuthor }. Motiv: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Ofertă de bun venit"

@@ -396,6 +396,9 @@
       "Continue with this password": [
         "Fortsätt med detta lösenord"
       ],
+      "Copy": [
+        "Kopiera"
+      ],
       "Copy address": [
         "Kopiera adress"
       ],
@@ -1482,6 +1485,9 @@
       "Select time zone": [
         "Välj tidszon"
       ],
+      "Send": [
+        "Skicka"
+      ],
       "send auto-reply email": [
         "skicka automatiskt svar"
       ],
@@ -1703,6 +1709,9 @@
       ],
       "Underline": [
         "Understreck"
+      ],
+      "Undo": [
+        "Ångra"
       ],
       "Undo import": [
         "Ångra import"
@@ -5333,9 +5342,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Vi importerar dina gamla e-postmeddelanden, hoppar över dubbletter och ansluter till ditt Gmail så att nya meddelanden visas automatiskt. Du kan ångra importen när som helst i inställningarna för Easy Switch."
       ],
@@ -8785,9 +8791,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Beskrivning:"
-      ],
       "Group address:": [
         "Gruppadress:"
       ],
@@ -17825,6 +17828,9 @@
       "An external address cannot be default": [
         "En extern adress kan inte vara standard"
       ],
+      "Copied to clipboard": [
+        "Kopierat till urklipp"
+      ],
       "Downloaded 2FA recovery codes": [
         "Laddade ner 2FA-återställningskoder"
       ],
@@ -21973,9 +21979,6 @@
       "Connect all your devices": [
         "Anslut alla dina enheter"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Fortsätt med ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
@@ -22147,9 +22150,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Prova ${ BRAND_NAME } i ${ TRIAL_DURATION_DAYS } dagar gratis${ br } och få ${ referralInfo.uiData.refereeRewardAmount } in krediter"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Prova ${ BRAND_NAME } gratis i 14 dagar"
       ],
       "Try ${ planName } for free": [
         "Prova ${ planName } gratis"

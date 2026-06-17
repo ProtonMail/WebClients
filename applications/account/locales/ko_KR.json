@@ -372,6 +372,9 @@
       "Continue with this password": [
         "이 비밀번호로 계속"
       ],
+      "Copy": [
+        "복사"
+      ],
       "Copy address": [
         "주소 복사하기"
       ],
@@ -1326,6 +1329,9 @@
       "Save and continue": [
         "저장 및 계속"
       ],
+      "Save and verify": [
+        "저장 및 인증"
+      ],
       "Save changes": [
         "변경 사항 저장"
       ],
@@ -1394,6 +1400,9 @@
       ],
       "Select time zone": [
         "시간대 선택"
+      ],
+      "Send": [
+        "보내기"
       ],
       "send auto-reply email": [
         "자동 회신 이메일 보내기"
@@ -1608,6 +1617,9 @@
       "Underline": [
         "밑줄"
       ],
+      "Undo": [
+        "되돌리기"
+      ],
       "Undo import": [
         "처리 되돌리기"
       ],
@@ -1706,6 +1718,9 @@
       ],
       "Verify account": [
         "계정 인증"
+      ],
+      "Verify another way": [
+        "다른 방법 시도"
       ],
       "Verify code": [
         "코드 인증"
@@ -2761,6 +2776,12 @@
       ],
       "Contacts": [
         "연락처"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "사용자의 도메인 호스트의 DNS 섹션에서 아래 코드를 복사 및 붙여놓기하새요."
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM은 각 이메일에 첨부되는 디지털 서명으로서, 수신자가 메시지를 보낸 사람이 정말 본인인지와 전송 중에 변경된 사항은 없는지 검증할 수 있습니다. DKIM 없이는 메시지의 신뢰성이 떨어질 수 있습니다."
       ],
       "Estimated size": [
         "예상 용량"
@@ -4919,9 +4940,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "지난 이메일을 불러오고 Gmail을 ${ MAIL_APP_NAME }에 연결하여 새 메세지가 자동으로 표시되도록 합니다."
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "이전 이메일을 불러오고 중복 항목은 건너뛴 뒤 회원님의 Gmail에 연결하여 새 메시지가 자동으로 나타나도록 합니다. Easy Switch 설정에서 언제든지 불러오기를 실행 취소할 수 있습니다"
       ],
@@ -6566,6 +6584,9 @@
       ],
       "Failed to load OAuth modal.": [
         "OAuth 창을 불러오지 못했습니다."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
       ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
@@ -8937,6 +8958,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME }이 회원님의 복구 휴대폰으로 인증 코드를 보내드립니다. 표준 메시지 요금이 부과될 수 있습니다."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
@@ -9845,6 +9869,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "이 비밀번호를 잊지 마세요. 잊을 경우 조직을 관리할 수 없습니다."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "비밀번호가 기억 나시나요? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "현재 세션이 아닌 다른 모든 세션을 취소하시겠습니까?"
@@ -11990,6 +12017,9 @@
       ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
+      ],
+      "We'll remind you to verify your password again later": [
+        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -16811,6 +16841,9 @@
       "An external address cannot be default": [
         "외부 주소를 기본으로 할 수 없음"
       ],
+      "Copied to clipboard": [
+        "클립보드로 복사함"
+      ],
       "Downloaded 2FA recovery codes": [
         "다운로드한 2FA 복구 코드"
       ],
@@ -19044,6 +19077,9 @@
       "Verify now": [
         "지금 인증"
       ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "이 복구 이메일 주소를 인증하세요: ${ emailData.value }"
+      ],
       "Verify recovery email?": [
         "복구 이메일을 인증할까요?"
       ],
@@ -19087,6 +19123,9 @@
       "Verify recovery phone?": [
         "복구 휴대폰을 인증하시겠어요?"
       ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "이 복구 전화번호를 인증하세요: ${ phoneData.value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
       ]
@@ -19097,6 +19136,15 @@
       ],
       "Add more options for stronger protection": [
         "더욱 강력한 보호를 위해 복구 방법을 추가하세요"
+      ],
+      "Critical": [
+        "매우 위험"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } 계정이 잠기지 않도록 조치를 취하세요"
+      ],
+      "How you increased your account protection": [
+        "회원님의 계정을 보호하기 위해 추가된 복구 방법들입니다"
       ],
       "Recoverability": [
         "복구 가능성"
@@ -19112,6 +19160,9 @@
       ],
       "Weak": [
         "약함"
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "아직 계정이 위험해요. 비밀번호를 잊어버린 경우, 회원님의 이메일, 파일 및 비밀번호에 영구적으로 접근하지 못할 가능성이 있습니다."
       ],
       "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
         "잘 보호되고 있지만, 여전히 빈틈이 존재합니다. 비밀번호를 잊어버린 경우 추가적인 복구 방법을 통해 더욱 안전하게 회원님의 데이터를 보호할 수 있습니다."
@@ -19180,6 +19231,15 @@
       ],
       "Sign-in with QR code allowed": [
         "QR코드로 로그인이 허용됨."
+      ],
+      "Verify password": [
+        "비밀번호 확인"
+      ],
+      "Verify recovery email": [
+        "복구 이메일 인증"
+      ],
+      "Verify recovery phone": [
+        "복구 휴대폰 인증"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -19753,6 +19813,9 @@
       "Verify your recovery phone number": [
         "복구 전화번호로 인증하세요"
       ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "복구 키 생성 중 오류가 발생했습니다. 나중에 다시 시도하거나 문제가 재발하는 경우 지원팀에 문의하세요."
+      ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "이메일 주소를 확인하는 동안 오류가 발생했습니다. 나중에 다시 시도하거나 문제가 계속되면 지원팀에 문의하시기 바랍니다."
       ],
@@ -19923,11 +19986,17 @@
       "Added recovery phone": [
         "복구 휴대폰 추가"
       ],
+      "Allow": [
+        "허용"
+      ],
       "Allow data recovery from this device": [
         "이 기기에서 데이터 복구 허용"
       ],
       "Allow password reset from the settings": [
         "설정에서 비밀번호 재설정 허용"
+      ],
+      "Allow recovery by phone": [
+        "휴대폰을 통한 복구 허용"
       ],
       "Allow scanning a QR code to sign in": [
         "QR코드로 로그인 허용"
@@ -19998,6 +20067,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
         "만약 ${ BRAND_NAME } 계정이 잠긴 경우, 복구 키가 데이터 복구와 다시 로그인하는 데 도움이 됩니다. 이 방법은 즉시 모든 정보를 복구할 수 있는 유일한 방법이므로, 반드시 접근 가능하고 안전한 곳에 보관해야 합니다."
       ],
+      "Later": [
+        "나중에"
+      ],
       "Protect your legacy with Emergency Access": [
         "긴급 접근으로 나의 유산을 보호하기"
       ],
@@ -20022,6 +20094,9 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "복구 파일은 비밀번호 재설정 이후 이메일, 연락처, 파일, 비밀번호 등의 암호화된 데이터의 접근 권한을 복구하는데 사용됩니다."
       ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "이메일 주소가 본인의 것인지 여부를 확인하기 위해, ${ boldEmail }(으)로 전송된 인증 코드를 입력하세요."
+      ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "해당 휴대폰 번호가 본인의 것인지 확인하기 위해, ${ boldPhoneNumber }(으)로 전송된 인증 코드를 입력해 주세요."
       ],
@@ -20040,6 +20115,9 @@
       "Verified recovery phone": [
         "복구 휴대폰 인증됨"
       ],
+      "Verify": [
+        "인증"
+      ],
       "Verify password": [
         "비밀번호 확인"
       ],
@@ -20048,6 +20126,9 @@
       ],
       "Verify recovery phone": [
         "복구 휴대폰 인증"
+      ],
+      "Verify your recovery email": [
+        "복구 이메일 인증"
       ],
       "Verify your recovery phone": [
         "복구 휴대폰 인증"
@@ -20815,9 +20896,6 @@
       "Connect all your devices": [
         "내 모든 기기와 연결"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "${ PLAN_NAMES[plan] }(으)로 계속"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
@@ -20985,9 +21063,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "${ TRIAL_DURATION_DAYS }일간 무료로 ${ BRAND_NAME }을(를) 체험하고,${ br } ${ referralInfo.uiData.refereeRewardAmount } 상당의 크레딧을 받아보세요"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "14일 동안 무료로 ${ BRAND_NAME } 체험하기"
       ],
       "Try ${ planName } for free": [
         "무료로 ${ planName } 체험하기"
@@ -21754,6 +21829,9 @@
       ],
       "Verified": [
         "인증됨"
+      ],
+      "Verify ${ value }": [
+        "${ value } 인증"
       ]
     },
     "Step in filter modal": {
@@ -24573,6 +24651,12 @@
       "Verify it’s you": [
         "본인 여부 확인"
       ],
+      "Verify your email": [
+        "이메일 인증"
+      ],
+      "Verify your password": [
+        "비밀번호 확인"
+      ],
       "Verifying your card...": [
         "카드 인증 중..."
       ],
@@ -24803,6 +24887,12 @@
       ],
       "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
         "${ BRAND_NAME } 모바일 앱에서 QR코드로 로그인 허용"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "계정 접근 권한을 요쳥하려면 신뢰하는 연락처를 허용하세요"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "비밀번호 재설정 이후 암호화된 데이터를 잠금 해제하려면 신뢰하는 연락처를 허용하세요"
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "캘린더 초대장에 줌 화상 회의 링크를 손쉽게 추가할 수 있습니다."
