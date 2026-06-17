@@ -61,20 +61,20 @@ describe('messageDraft', () => {
 
         it('should add the RE only if id does not start with it', () => {
             const [subject, reply, forward, fwreply, reforward] = listRe;
-            expect(formatSubject(subject, RE_PREFIX)).toBe(`${RE_PREFIX} ${subject}`);
-            expect(formatSubject(reply, RE_PREFIX)).toBe(reply);
-            expect(formatSubject(forward, RE_PREFIX)).toBe(`${RE_PREFIX} ${forward}`);
-            expect(formatSubject(fwreply, RE_PREFIX)).toBe(`${RE_PREFIX} ${fwreply}`);
-            expect(formatSubject(reforward, RE_PREFIX)).toBe(reforward);
+            expect(formatSubject(subject, RE_PREFIX())).toBe(`${RE_PREFIX()} ${subject}`);
+            expect(formatSubject(reply, RE_PREFIX())).toBe(reply);
+            expect(formatSubject(forward, RE_PREFIX())).toBe(`${RE_PREFIX()} ${forward}`);
+            expect(formatSubject(fwreply, RE_PREFIX())).toBe(`${RE_PREFIX()} ${fwreply}`);
+            expect(formatSubject(reforward, RE_PREFIX())).toBe(reforward);
         });
 
         it('should add the Fw only if id does not start with it', () => {
             const [subject, reply, forward, fwreply, reforward] = listFw;
-            expect(formatSubject(subject, FW_PREFIX)).toBe(`${FW_PREFIX} ${subject}`);
-            expect(formatSubject(reply, FW_PREFIX)).toBe(`${FW_PREFIX} ${reply}`);
-            expect(formatSubject(forward, FW_PREFIX)).toBe(forward);
-            expect(formatSubject(fwreply, FW_PREFIX)).toBe(fwreply);
-            expect(formatSubject(reforward, FW_PREFIX)).toBe(`${FW_PREFIX} ${reforward}`);
+            expect(formatSubject(subject, FW_PREFIX())).toBe(`${FW_PREFIX()} ${subject}`);
+            expect(formatSubject(reply, FW_PREFIX())).toBe(`${FW_PREFIX()} ${reply}`);
+            expect(formatSubject(forward, FW_PREFIX())).toBe(forward);
+            expect(formatSubject(fwreply, FW_PREFIX())).toBe(fwreply);
+            expect(formatSubject(reforward, FW_PREFIX())).toBe(`${FW_PREFIX()} ${reforward}`);
         });
     });
 
@@ -110,7 +110,7 @@ describe('messageDraft', () => {
                 },
             } as MessageStateWithData);
 
-            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient4]);
         });
 
@@ -122,7 +122,7 @@ describe('messageDraft', () => {
                 },
             } as MessageStateWithData);
 
-            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient1]);
         });
 
@@ -134,7 +134,7 @@ describe('messageDraft', () => {
                 },
             } as MessageStateWithData);
 
-            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient1]);
         });
 
@@ -146,7 +146,7 @@ describe('messageDraft', () => {
                 },
             } as MessageStateWithData);
 
-            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient4]);
             expect(result.data?.CCList).toEqual([recipient1, recipient2]);
             expect(result.data?.BCCList).toEqual(undefined);
@@ -160,7 +160,7 @@ describe('messageDraft', () => {
                 },
             } as MessageStateWithData);
 
-            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient1]);
             expect(result.data?.CCList).toEqual([recipient2]);
             expect(result.data?.BCCList).toEqual([recipient3]);
@@ -174,7 +174,7 @@ describe('messageDraft', () => {
                 },
             } as MessageStateWithData);
 
-            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient1]);
             expect(result.data?.CCList).toEqual([recipient2]);
             expect(result.data?.BCCList).toEqual([recipient3]);
@@ -209,7 +209,7 @@ describe('messageDraft', () => {
                 ] as Address[]
             );
 
-            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient4]);
             expect(result.data?.CCList).toEqual([recipient5, recipient2]);
             expect(result.data?.BCCList).toEqual(undefined);
@@ -243,7 +243,7 @@ describe('messageDraft', () => {
                 [{ ID: addressID, Email: recipient1.Address } as Address] as Address[]
             );
 
-            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient4Alias]);
             expect(result.data?.CCList).toEqual([recipient2Alias]);
             expect(result.data?.BCCList).toEqual(undefined);
@@ -252,7 +252,7 @@ describe('messageDraft', () => {
         it('should prepare a forward', () => {
             const result = handleActions(MESSAGE_ACTIONS.FORWARD, { data: message } as MessageStateWithData);
 
-            expect(result.data?.Subject).toEqual(`${FW_PREFIX} ${Subject}`);
+            expect(result.data?.Subject).toEqual(`${FW_PREFIX()} ${Subject}`);
             expect(result.data?.ToList).toEqual([]);
             expect(result.data?.CCList).toEqual(undefined);
             expect(result.data?.BCCList).toEqual(undefined);
@@ -317,7 +317,7 @@ describe('messageDraft', () => {
                     addresses,
                     getAttachment: jest.fn(),
                 });
-                expect(result.data?.Subject).toBe(`${RE_PREFIX} ${Subject}`);
+                expect(result.data?.Subject).toBe(`${RE_PREFIX()} ${Subject}`);
                 expect(result.data?.ToList).toEqual([recipient4]);
                 expect(result.data?.CCList).toEqual([recipient1, recipient2]);
                 expect(result.data?.BCCList).toEqual([]);

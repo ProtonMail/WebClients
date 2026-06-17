@@ -154,6 +154,7 @@ export const getParsedHeadersFirstValue = (message: Partial<Message> | undefined
 };
 export const getParsedHeadersAsArray = (message: Partial<Message> | undefined, parameter: string) => {
     const value = getParsedHeaders(message, parameter);
+    // eslint-disable-next-line no-nested-ternary
     return value === undefined ? undefined : Array.isArray(value) ? value : [value];
 };
 export const getOriginalTo = (message?: Partial<Message>) => {
@@ -171,7 +172,7 @@ export const requireReadReceipt = (message?: Partial<Message>) => {
 export const getListUnsubscribe = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe');
 export const getListUnsubscribePost = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe-Post');
 export const getAttachments = (message?: Partial<Message>) => message?.Attachments || [];
-export const numAttachments = (message?: Partial<Message>, includeInlineCount  = true) => {
+export const numAttachments = (message?: Partial<Message>, includeInlineCount = true) => {
     if (message?.NumAttachments) {
         return message.NumAttachments;
     } else if (message?.AttachmentInfo) {
@@ -185,7 +186,7 @@ export const numAttachments = (message?: Partial<Message>, includeInlineCount  =
         return 0;
     }
 };
-export const hasAttachments = (message?: Partial<Message>, includeInlineCount  = true) => {
+export const hasAttachments = (message?: Partial<Message>, includeInlineCount = true) => {
     return numAttachments(message, includeInlineCount) > 0;
 };
 export const attachmentsSize = (message?: Partial<Message>) =>
@@ -238,8 +239,12 @@ export const formatSubject = (subject = '', prefix = '') => {
 export const DRAFT_ID_PREFIX = 'draft';
 export const ORIGINAL_MESSAGE = `------- Original Message -------`;
 export const FORWARDED_MESSAGE = `------- Forwarded Message -------`;
-export const RE_PREFIX = c('Message').t`Re:`;
-export const FW_PREFIX = c('Message').t`Fw:`;
+export const RE_PREFIX = () => {
+    return c('Message').t`Re:`;
+};
+export const FW_PREFIX = () => {
+    return c('Message').t`Fw:`;
+};
 
 export const isNewsLetter = (message?: Pick<Message, 'ParsedHeaders'>) => {
     const ParsedHeaders = message?.ParsedHeaders || {};
