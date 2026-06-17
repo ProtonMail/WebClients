@@ -26,6 +26,7 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/lib/mail/messages';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
@@ -96,6 +97,8 @@ const Composer = (
     const composerContentRef = useRef<HTMLElement>(null);
     const composerContainerRef = useRef<HTMLDivElement>(null);
     const composerMetaRef = useRef<HTMLDivElement>(null);
+
+    const isInlineImageReuploadDisabled = useFlag('ComposerInlineImageReuploadDisabled');
 
     const setAssistantStateRef = useRef(noop);
 
@@ -475,6 +478,7 @@ const Composer = (
                         toolbarWrapperRef={toolbarWrapperRef}
                         isAssistantExpanded={isAssistantExpanded}
                         onExpandBlockquotes={handleExpandBlockquotes}
+                        isInlineImageReuploadDisabled={isInlineImageReuploadDisabled}
                     />
                 </div>
 
