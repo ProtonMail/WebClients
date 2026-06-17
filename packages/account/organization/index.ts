@@ -3,13 +3,10 @@ import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { CacheType } from '@proton/redux-utilities/interface';
-import {
-    cacheHelper,
-    createPromiseStore,
-} from '@proton/redux-utilities/promiseStore';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import type { CacheType } from '@proton/redux-utilities/interface';
+import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
@@ -177,7 +174,10 @@ const modelThunk = (options?: {
             };
 
             const getSettingsPromise = () => {
-                return extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE
+                // In the lite app, some actions use JWT for authentication and have limited access. Calling organization settings with such tokens will fail.
+                // Some pages like Privacy and Recovery get a forked session with full access and can call the API to fetch organization settings.
+                return extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE &&
+                    !extraArgument.authentication.hasPassword()
                     ? getDefaultOrganizationSettings()
                     : getOrganizationSettings({ api: extraArgument.api });
             };

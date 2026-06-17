@@ -1,14 +1,19 @@
 import { c } from 'ttag';
 
 import { selectSentinelRecoveryBannerDisplay } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import SentinelShieldDark from './SentinelShield-dark.svg';
 import SentinelShield from './SentinelShield.svg';
 
-const SentinelBanner = () => {
+interface Props {
+    variant: SettingsLayoutVariant;
+}
+const SentinelBanner = ({ variant: layoutVariant }: Props) => {
     const theme = useTheme();
     const isDarkTheme = theme.information.dark;
     const { loading, variant } = useSelector(selectSentinelRecoveryBannerDisplay);
@@ -25,7 +30,12 @@ const SentinelBanner = () => {
                   .t`To make sure that you can always access your ${BRAND_NAME} Account, download your recovery phrase.`;
 
     return (
-        <section className="rounded-xl bg-elevated p-4 shadow-norm flex items-center gap-4">
+        <section
+            className={clsx(
+                'rounded-xl bg-elevated p-4 flex items-center gap-4',
+                layoutVariant !== SettingsLayoutVariant.Mobile && 'shadow-norm'
+            )}
+        >
             <div className="shrink-0">
                 <img src={isDarkTheme ? SentinelShieldDark : SentinelShield} alt="" width={56} height={56} />
             </div>
