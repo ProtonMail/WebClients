@@ -2231,6 +2231,21 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-Mails"
+      ],
+      "Migrate": [
+        "Migrieren"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
       ]
     },
     "Browser": {
@@ -4316,7 +4331,7 @@
         "Wir holen deine alten E-Mails und verbinden dein Gmail mit ${ MAIL_APP_NAME }, damit neue Nachrichten automatisch angezeigt werden"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Wir importieren deine alten E-Mails, überspringen Duplikate und verbinden uns mit deinem Gmail, damit neue Nachrichten automatisch erscheinen. Du kannst den Import in den Easy Switch-Einstellungen jederzeit rückgängig machen."
+        "Wir importieren deine alten E-Mails, überspringen doppelte Nachrichten und verbinden uns mit deinem Gmail-Konto, damit neue Nachrichten automatisch angezeigt werden. Du kannst den Import jederzeit in den Einstellungen von Easy Switch rückgängig machen."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Wir haben mit dem Import deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
@@ -10275,6 +10290,18 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "Download logs": [
+        "Protokolle herunterladen"
+      ],
+      "Emails": [
+        "E-Mails"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16347,6 +16374,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -2276,6 +2276,15 @@
       ],
       "You": [
         "U"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Errors": [
+        "Fouten"
+      ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
       ]
     },
     "Browser": {
@@ -6141,8 +6150,8 @@
         "${ remainingDaysCount } dagen"
       ],
       "${ remainingDaysCount } day left": [
-        "${ remainingDaysCount } dag over",
-        "${ remainingDaysCount } dagen over"
+        "${ remainingDaysCount } dag resterend",
+        "${ remainingDaysCount } dagen resterend"
       ],
       "Block email communications from scammers permanently.": [
         "Blokkeer e-mailcommunicatie van oplichters permanent."
@@ -6758,7 +6767,7 @@
         "${ elementsCount } gesprekken zal niet gelabeld zijn van:"
       ],
       "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } berichten worden gelabeld als:",
+        "${ elementsCount } bericht worden gelabeld als:",
         "${ elementsCount } berichten worden gelabeld als:"
       ],
       "${ elementsCount } message will be marked as read.": [
@@ -6766,8 +6775,8 @@
         "${ elementsCount } berichten worden als gelezen gemarkeerd"
       ],
       "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } bericht wordt als gelezen gemarkeerd.",
-        "${ elementsCount } berichten worden gemarkeerd als gelezen."
+        "${ elementsCount } bericht wordt gemarkeerd als ongelezen.",
+        "${ elementsCount } berichten worden gemarkeerd als ongelezen."
       ],
       "${ elementsCount } message will be moved": [
         "${ elementsCount } bericht wordt verplaatst",
@@ -6904,7 +6913,7 @@
         "${ trackersCount } e-mail trackers geblokkeerd"
       ],
       "${ trackersCount } tracker blocked": [
-        "${ trackersCount } trackers geblokkeerd",
+        "${ trackersCount } tracker geblokkeerd",
         "${ trackersCount } trackers geblokkeerd"
       ],
       "${ unreadCount } newsletter": [
@@ -9032,8 +9041,8 @@
         "U heeft **${ count } gesprekken** gemarkeerd met dit label"
       ],
       "You have **${ count } message** stored in this folder": [
-        "U heeft **${ count } bericht** uit deze map opgeslagen",
-        "U heeft **${ count } berichten** uit deze map opgeslagen"
+        "U heeft **${ count } bericht** in deze map opgeslagen",
+        "U heeft **${ count } berichten** in deze map opgeslagen"
       ],
       "You have **${ count } message** tagged with this label": [
         "U heeft **${ count } bericht** gemarkeerd met dit label",
@@ -9077,16 +9086,16 @@
         "U heeft **${ count } berichten** geselecteerd met dit label"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "U selecteerde **${ elementsCount } gesprek **in ${ location }",
-        "U selecteerde **${ elementsCount } gesprekken **in ${ location }"
+        "U selecteerde **${ elementsCount } gesprek ** in ${ location }",
+        "U selecteerde **${ elementsCount } gesprekken ** in ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
         "U selecteerde **${ elementsCount } gesprekken**."
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
-        "U selecteerde ** ${ elementsCount }bericht**in${ location }",
-        "U selecteerde **${ elementsCount }berichten**in${ location }"
+        "U selecteerde ** ${ elementsCount }bericht** in${ location }",
+        "U selecteerde **${ elementsCount }berichten** in${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
@@ -10320,6 +10329,18 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Calendars": [
+        "Agenda's"
+      ],
+      "Download logs": [
+        "Logboeken downloaden"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "URL": [
+        "Website"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13634,8 +13655,8 @@
         "Wilt u de e-mail toch versturen?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar het e-mailadres dat is ingevoerd vanwege de volgende redenen:",
-        "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar de e-mailadressen die zijn ingevoerd vanwege de volgende redenen:"
+        "We hebben fouten ontdekt. Uw e-mail kan om de volgende reden niet naar het opgegeven e-mailadres worden verzonden:",
+        "We hebben fouten ontdekt. Uw e-mail kan om de volgende redenen niet naar een van de ingevoerde e-mailadressen worden verzonden:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar één of meerdere e-mailadressen die zijn ingevoerd vanwege de volgende redenen:"
@@ -14839,8 +14860,8 @@
         "${ elementsCount } gesprekken verplaatst naar ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } gesprek is verplaatst naar spam en afzender toegevoegd aan de spamlijst.",
-        "${ elementsCount } gesprekken zijn verplaatst naar spam en afzenders toegevoegd aan uw spamlijst."
+        "${ elementsCount } gesprek verplaatst naar spam en afzender toegevoegd aan uw spamlijst.",
+        "${ elementsCount } gesprekken verplaatst naar spam en afzender toegevoegd aan uw spamlijst."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } gesprek verwijderd van ${ labelName }.",
@@ -14855,8 +14876,8 @@
         "${ elementsCount } gesprekken gesnoozed"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } gesprek ontsnoozed",
-        "${ elementsCount } gesprekken ontsnoozed"
+        "${ elementsCount } gesprek niet op snooze gezet",
+        "${ elementsCount } gesprekken niet op snooze gezet"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } bericht toegevoegd aan ${ labelName }.",
@@ -14879,8 +14900,8 @@
         "${ elementsCount } berichten verplaatst naar ${ labelName } en afzenders toegevoegd aan uw niet-Spamlijst."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } bericht is verplaatst naar ${ labelName }.",
-        "${ elementsCount } berichten zijn verplaatst naar ${ labelName }."
+        "${ elementsCount } bericht verplaatst naar ${ labelName }.",
+        "${ elementsCount } berichten verplaatst naar ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount } bericht is verplaatst naar spam en afzender werd toegevoegd aan de spamlijst.",
@@ -15585,7 +15606,7 @@
       ],
       "Delete ${ count } draft": [
         "Verwijder ${ count } concept",
-        "${ count } concepten verwijderen"
+        "Verwijder ${ count } concepten"
       ],
       "Delete ${ count } message": [
         "${ count } bericht verwijderen",
@@ -16395,6 +16416,9 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16677,8 +16701,8 @@
         "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Verificatie van de bijlage is mislukt.\nU kunt deze bijlage nog steeds downloaden, maar het kan zijn veranderd.",
-        "Sommige handtekeningen van de bijlagen zijn niet geverifieerd.\nU kunt deze bijlagen nog steeds downloaden, maar ze kunnen eventueel zijn gewijzigd."
+        "De handtekening van de bijlage is niet geverifieerd.\nU kunt deze bijlage nog steeds downloaden, maar er is mogelijk mee geknoeid.",
+        "Sommige handtekeningen van de bijlagen zijn niet geverifieerd.\nU kunt deze bijlagen nog steeds downloaden, maar er is mogelijk mee geknoeid."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "De gegevens van de contactpersoon zijn beschadigd en kunnen niet worden weergegeven."

@@ -46,7 +46,7 @@
         "Activer la récupération"
       ],
       "Active": [
-        "Active"
+        "Actif"
       ],
       "Add": [
         "Ajouter"
@@ -386,7 +386,7 @@
         "Abonnement actuel"
       ],
       "Custom": [
-        "Personnaliser"
+        "Personnalisé"
       ],
       "Customize": [
         "Personnaliser"
@@ -794,7 +794,7 @@
         "Conserver mon abonnement"
       ],
       "Label as": [
-        "Labelliser"
+        "Labelliser comme"
       ],
       "Label as...": [
         "Labelliser comme..."
@@ -1061,7 +1061,7 @@
         "Phrase secrète"
       ],
       "Pause": [
-        "Suspendre"
+        "Pause"
       ],
       "Pay": [
         "Payer"
@@ -1433,7 +1433,7 @@
         "Ignorer la vérification"
       ],
       "Snooze": [
-        "Mise en attente"
+        "Mettre en attente"
       ],
       "Star": [
         "Favori"
@@ -1718,6 +1718,18 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Copier '${ code }' dans le presse-papier"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Copier '${ code }' dans le presse-papier et déplacer dans la corbeille"
+      ],
+      "Hide ${ title }": [
+        "Masquer ${ title }"
+      ],
+      "Show ${ title }": [
+        "Afficher ${ title }"
       ]
     },
     "action": {
@@ -3046,7 +3058,7 @@
         "Nouveau message"
       ],
       "Search": [
-        "Recherche"
+        "Rechercher"
       ]
     },
     "Composer email icon": {
@@ -3080,7 +3092,7 @@
         "Agrandi"
       ],
       "Normal": [
-        "Normale"
+        "Normal"
       ]
     },
     "Condition for custom filter": {
@@ -4442,6 +4454,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Pour un accès illimité à l'assistant d'écriture et plus encore, passez à l'abonnement ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Pour continuer à utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, ajoutez-le à votre abonnement."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Pour continuer à utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, demandez l'accès à votre administrateur."
       ]
     },
     "description": {
@@ -5957,7 +5978,7 @@
         "Contient des pièces jointes"
       ],
       "Read": [
-        "Lus"
+        "Lu"
       ],
       "Reset": [
         "Réinitialiser"
@@ -6319,6 +6340,9 @@
       ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Configurez l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -8017,7 +8041,7 @@
         "Aucune des clés téléchargées n'est valide pour le chiffrement. Pour pouvoir envoyer des messages à cette adresse, veuillez télécharger une clé valide ou désactiver l'option Chiffrer les messages."
       ],
       "Normal": [
-        "Normale"
+        "Normal"
       ],
       "Not a valid URL": [
         "L'URL n'est pas valide."
@@ -9239,6 +9263,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } vous aide à rédiger des meilleurs messages, rapidement et sans effort."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panneau ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "All your files will be imported": [
+        "Tous vos fichiers seront importés."
       ]
     },
     "info": {
@@ -9959,7 +9992,7 @@
         "Nom"
       ],
       "Layout": [
-        "Disposition"
+        "Mise en page"
       ],
       "Location": [
         "Lieu"
@@ -10244,7 +10277,7 @@
         "Heure"
       ],
       "To:": [
-        "À :"
+        "À :"
       ],
       "To: ${ toEmail }": [
         "À : ${ toEmail }"
@@ -10329,6 +10362,66 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Calendars": [
+        "Calendriers"
+      ],
+      "Clear logs": [
+        "Vider les journaux"
+      ],
+      "Context page": [
+        "Page du contexte"
+      ],
+      "Context total": [
+        "Total du contexte"
+      ],
+      "Current context": [
+        "Contexte actuel"
+      ],
+      "Download logs": [
+        "Télécharger les journaux"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Elements in store": [
+        "Éléments en stockage"
+      ],
+      "Emails": [
+        "Messages"
+      ],
+      "Filter": [
+        "Filtrer"
+      ],
+      "Information": [
+        "Informations"
+      ],
+      "Label ID": [
+        "Label ID"
+      ],
+      "Mail debugging information": [
+        "Informations de débogage d'e-mail"
+      ],
+      "Mail logs": [
+        "Journaux d'e-mails"
+      ],
+      "Refresh logs": [
+        "Actualiser les journaux"
+      ],
+      "Sort": [
+        "Trier"
+      ],
+      "Store state": [
+        "État du stockage"
+      ],
+      "Tab age": [
+        "Âge de l'onglet"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10450,7 +10543,7 @@
         "Tous les messages"
       ],
       "Archive": [
-        "Archives"
+        "Déplacer vers les archives"
       ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
@@ -10546,7 +10639,7 @@
         "si vos données sont divulguées"
       ],
       "Inbox": [
-        "Boite de réception"
+        "Boîte de réception"
       ],
       "Labels": [
         "Labels"
@@ -10576,7 +10669,7 @@
         "Ou vous pouvez supprimer l'un de vos calendriers et en créer un nouveau lié à une adresse e-mail active."
       ],
       "Outbox": [
-        "Boite d'envoi"
+        "Boîte d'envoi"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -10606,7 +10699,7 @@
         "Programmés"
       ],
       "Sent": [
-        "Envoyés"
+        "Envoyée"
       ],
       "settings": [
         "paramètres"
@@ -10615,13 +10708,13 @@
         "Inscrivez-vous gratuitement"
       ],
       "Snooze": [
-        "Mise en attente"
+        "Mettre en attente"
       ],
       "Snoozed": [
         "Mis en attente"
       ],
       "Spam": [
-        "Indésirable/spam"
+        "Indésirables/spam"
       ],
       "Starred": [
         "Favoris"
@@ -10645,7 +10738,7 @@
         "Types de méthodes de récupération"
       ],
       "Views": [
-        "Vues"
+        "Affichages"
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
@@ -10783,7 +10876,7 @@
         "Boite de réception"
       ],
       "Spam": [
-        "Indésirable/spam"
+        "Indésirables/spam"
       ],
       "Trash": [
         "Déplacer vers la corbeille"
@@ -12450,7 +12543,7 @@
         "Ajouter à un groupe existant"
       ],
       "All": [
-        "Tous"
+        "Tout"
       ],
       "Automatic (${ value })": [
         "Automatique (${ value })"
@@ -13097,6 +13190,27 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Annoncer des événements à venir dans une newsletter »"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Annuler mon abonnement à la salle de sport »"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Indiquez à ${ subject } ce qu’il faut écrire. Exemple : « Inviter Jeanne à ma fête »"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Remercie mon collègue pour son aide sur un projet »"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Rédiger une lettre de motivation pour un stage »"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Écrire un e-mail de relance à un client »"
+      ],
+      "the writing assistant": [
+        "l'assistant d'écriture"
       ]
     },
     "Placeholder for contact group name": {
@@ -15126,6 +15240,9 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Le code '${ code }' a été copié dans le presse-papier."
       ]
     },
     "Success notification": {
@@ -15827,7 +15944,7 @@
         "Masquer cette bannière ?"
       ],
       "Label as": [
-        "Labelliser"
+        "Labelliser comme"
       ],
       "Label options": [
         "Options de label"
@@ -16224,7 +16341,7 @@
         "Simplifiez la gestion des mots de passe"
       ],
       "Snooze": [
-        "Mise en attente"
+        "Mettre en attente"
       ],
       "Snooze message": [
         "Mise en attente d'un message"
@@ -16404,6 +16521,15 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Rédigez des meilleurs e-mails avec ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

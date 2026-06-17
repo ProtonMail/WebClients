@@ -6935,7 +6935,7 @@
       "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } správa bude označená ako prečítaná.",
         "${ elementsCount } správy budú označené ako prečítané.",
-        "${ elementsCount } správ bude označené ako prečítané.",
+        "${ elementsCount } správ bude označených ako prečítané.",
         "${ elementsCount } správ bude označených ako prečítané."
       ],
       "${ elementsCount } message will be marked as unread.": [
@@ -6993,8 +6993,8 @@
         "${ n } neprečítaných konverzácií"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } odkaz vyčistený ",
-        "${ numberOfUTMTrackers } odkazy vyčistené ",
+        "${ numberOfUTMTrackers } odkaz vyčistený",
+        "${ numberOfUTMTrackers } odkazy vyčistené",
         "${ numberOfUTMTrackers } odkazov vyčistených",
         "${ numberOfUTMTrackers } odkazov vyčistených"
       ],
@@ -7755,10 +7755,10 @@
         "Emaily označené štítkom ${ nameDeleted } nebudú vymazané a je možné ich stále nájsť v príslušnom priečinku."
       ],
       "embedded image": [
-        "pripojený obrázok",
-        "pripojené obrázky",
-        "pripojených obrázkov",
-        "pripojených obrázkov"
+        "vložený obrázok",
+        "vložené obrázky",
+        "vložených obrázkov",
+        "vložených obrázkov"
       ],
       "Enabling auto-deletion…": [
         "Zapínanie automatického mazania…"
@@ -9547,6 +9547,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "All your files will be imported": [
+        "Všetky vaše súbory budú importované"
       ]
     },
     "info": {
@@ -10653,6 +10656,21 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Calendars": [
+        "Kalendáre"
+      ],
+      "Download logs": [
+        "Stiahnuť záznamy"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "Emaily"
+      ],
+      "URL": [
+        "Odkaz"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15344,10 +15362,10 @@
         "${ elementsCount } správ bolo presunutých do ${ labelName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } správa presunutá do priečinka ${ labelName }.",
-        "${ elementsCount } správ presunutých do priečinka ${ labelName }.",
-        "${ elementsCount } správy presunuté do priečinka ${ labelName }.",
-        "${ elementsCount } správy presunuté do priečinka ${ labelName }."
+        "${ elementsCount } správa presunutá do ${ labelName }.",
+        "${ elementsCount } správy presunuté do ${ labelName }.",
+        "${ elementsCount } správ presunutých do ${ labelName }.",
+        "${ elementsCount } správ presunutých do ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount } správa bola presunutá do spamu a odosielateľ bol pridaný do vášho zoznamu spamov.",
@@ -16095,10 +16113,10 @@
         "Zmazať ${ count } skupín kontaktov"
       ],
       "Delete ${ count } conversation": [
-        "Odstrániť ${ count } konverzáciu",
-        "Odstrániť ${ count } konverzácie",
-        "Odstrániť ${ count } konverzácií",
-        "Odstrániť ${ count } konverzácií"
+        "Vymazať ${ count } konverzáciu",
+        "Vymazať ${ count } konverzácie",
+        "Vymazať ${ count } konverzácií",
+        "Vymazať ${ count } konverzácií"
       ],
       "Delete ${ count } draft": [
         "Odstrániť ${ count } koncept",
@@ -16924,6 +16942,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
       ]
     },
     "Today icon tooltip in mini calendar": {

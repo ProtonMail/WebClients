@@ -5243,7 +5243,7 @@
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong while converting the address": [
-        "Se ha producido un error al convertir la dirección"
+        "Ocurrió un error al convertir la dirección"
       ],
       "Something went wrong while creating the address": [
         "Algo salió mal al crear la dirección"
@@ -10329,6 +10329,18 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Download logs": [
+        "Descargar registros"
+      ],
+      "Emails": [
+        "Correos"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16404,6 +16416,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
       ]
     },
     "Today icon tooltip in mini calendar": {
