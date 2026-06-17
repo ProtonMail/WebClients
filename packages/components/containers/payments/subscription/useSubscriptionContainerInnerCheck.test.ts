@@ -94,7 +94,7 @@ function buildDeps(
             setVatReverseChargeErrorModal: jest.fn(),
         },
         callbacks: {
-            runAdditionalChecks: jest.fn().mockResolvedValue(undefined),
+            runAdditionalEstimations: jest.fn().mockResolvedValue(undefined),
             shouldPassIsTrial: jest.fn().mockReturnValue(false),
             onPlusToPlusTransition: jest.fn(),
             onVisionaryDowngradeWarning: jest.fn().mockResolvedValue(undefined),
@@ -498,7 +498,7 @@ describe('useSubscriptionCheck', () => {
 
             const deps = withoutPlanTransitionChecks({
                 callbacks: {
-                    runAdditionalChecks: jest.fn().mockResolvedValue(undefined),
+                    runAdditionalEstimations: jest.fn().mockResolvedValue(undefined),
                     shouldPassIsTrial: jest.fn().mockReturnValue(false),
                     onPlusToPlusTransition: jest.fn(),
                     onVisionaryDowngradeWarning: jest.fn().mockRejectedValue(new Error('cancelled')),
@@ -589,7 +589,7 @@ describe('useSubscriptionCheck', () => {
                     checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
                 callbacks: {
-                    runAdditionalChecks: jest.fn().mockRejectedValue(new Error('additional check failed')),
+                    runAdditionalEstimations: jest.fn().mockRejectedValue(new Error('additional check failed')),
                     shouldPassIsTrial: jest.fn().mockReturnValue(false),
                     onPlusToPlusTransition: jest.fn(),
                     onVisionaryDowngradeWarning: jest.fn().mockResolvedValue(undefined),

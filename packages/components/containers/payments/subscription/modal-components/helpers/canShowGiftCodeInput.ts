@@ -1,7 +1,6 @@
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { type SubscriptionCheckForbiddenReason, SubscriptionMode } from '@proton/payments/index';
-
-import type { CouponConfigRendered } from '../../coupon-config/useCouponConfig';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
 export function canShowGiftCodeInput({
     paymentForbiddenReason,
