@@ -1157,6 +1157,9 @@
       "Verify account": [
         "계정 인증"
       ],
+      "Verify another way": [
+        "다른 방법 시도"
+      ],
       "Verify code": [
         "코드 인증"
       ],
@@ -3446,9 +3449,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "지난 이메일을 불러오고 Gmail을 ${ MAIL_APP_NAME }에 연결하여 새 메세지가 자동으로 표시되도록 합니다."
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "이전 이메일을 불러오고 중복 항목은 건너뛴 뒤 회원님의 Gmail에 연결하여 새 메시지가 자동으로 나타나도록 합니다. Easy Switch 설정에서 언제든지 불러오기를 실행 취소할 수 있습니다"
       ],
@@ -4088,6 +4088,9 @@
       ],
       "Failed to load OAuth modal.": [
         "OAuth 창을 불러오지 못했습니다."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
       ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
@@ -5878,6 +5881,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME }이 회원님의 복구 휴대폰으로 인증 코드를 보내드립니다. 표준 메시지 요금이 부과될 수 있습니다."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
@@ -6516,6 +6522,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "이 비밀번호를 잊지 마세요. 잊을 경우 조직을 관리할 수 없습니다."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "비밀번호가 기억 나시나요? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "현재 세션이 아닌 다른 모든 세션을 취소하시겠습니까?"
@@ -8112,6 +8121,9 @@
       ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
+      ],
+      "We'll remind you to verify your password again later": [
+        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -12761,6 +12773,9 @@
       "Verify now": [
         "지금 인증"
       ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "이 복구 이메일 주소를 인증하세요: ${ emailData.value }"
+      ],
       "Verify recovery email?": [
         "복구 이메일을 인증할까요?"
       ],
@@ -12800,6 +12815,9 @@
       ],
       "Verify recovery phone?": [
         "복구 휴대폰을 인증하시겠어요?"
+      ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "이 복구 전화번호를 인증하세요: ${ phoneData.value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
@@ -16227,6 +16245,9 @@
       ],
       "Verify it’s you": [
         "본인 여부 확인"
+      ],
+      "Verify your password": [
+        "비밀번호 확인"
       ],
       "Verifying your card...": [
         "카드 인증 중..."

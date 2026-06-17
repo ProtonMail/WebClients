@@ -1365,6 +1365,9 @@
         "${ users } χρήστης",
         "${ users } χρήστες"
       ],
+      "Add-on": [
+        "Πρόσθετο"
+      ],
       "Dedicated VPN servers": [
         "Αποκλειστικοί διακομιστές VPN"
       ],
@@ -3715,9 +3718,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Θα εισαγάγουμε τα παλιά σας email, θα παραλείψουμε τα διπλότυπα και θα συνδεθούμε στο Gmail σας, ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα. Μπορείτε να αναιρέσετε την εισαγωγή ανά πάσα στιγμή στις ρυθμίσεις του Easy Switch."
       ],
@@ -5776,9 +5776,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Περιγραφή:"
-      ],
       "Group address:": [
         "Διεύθυνση ομάδας:"
       ],
@@ -15268,6 +15265,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe βοηθός γραφής για ${ maxAi } χρήστη",
         "${ BRAND_NAME } Scribe βοηθός γραφής για ${ maxAi } χρήστες"
@@ -16240,6 +16240,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } Φίλος εγγράφηκε",
         "${ friendsSubscribed } Φίλοι εγγεγράφηκαν"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } για οργανισμούς"
@@ -17652,9 +17655,6 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Περιλαμβάνει επαγγελματικό ηλεκτρονικό ταχυδρομείο στο @yourdomain.com, αποθήκευση στο cloud με συνεργατική επεξεργασία εγγράφων, προγραμματισμό και βιντεοδιάσκεψη, διαχείριση κωδικών πρόσβασης, ένα ασφαλές ${ VPN_SHORT_APP_NAME } και πολλά άλλα."
-      ],
-      "Instant assistance with AI and human experts.": [
-        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη και ανθρώπινους εμπειρογνώμονες."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα μήνυμα ηλεκτρονικού ταχυδρομείου που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό. Οι χρήστες καθολικής σύνδεσης δε θα λάβουν την υπενθύμιση ηλεκτρονικού ταχυδρομείου."

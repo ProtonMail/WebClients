@@ -3642,9 +3642,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos las importaciones al llegar al 80 % de almacenamiento para reservar espacio para nuevos mensajes."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Traeremos tus correos electrónicos antiguos y conectaremos tu Gmail a ${ MAIL_APP_NAME } para que los nuevos mensajes aparezcan automáticamente"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Importaremos tus correos electrónicos antiguos, omitiremos los duplicados y nos conectaremos a tu Gmail para que los nuevos mensajes aparezcan automáticamente. Puedes deshacer la importación en cualquier momento en los ajustes de Easy Switch."
       ],
@@ -5646,9 +5643,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descripción:"
-      ],
       "Group address:": [
         "Dirección del grupo:"
       ],
@@ -6214,6 +6208,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de tus miembros que no son de SSO usa la autenticación de dos factores para iniciar sesión en tu organización.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de tus miembros que no son de SSO usan la autenticación de dos factores para iniciar sesión en tu organización."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "Es necesario que ${ invitedMemberCount } persona acepte su invitación para empezar a recibir correos grupales.",
+        "Es necesario que ${ invitedMemberCount } personas acepten su invitación para empezar a recibir correos grupales."
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
       ],
@@ -6257,6 +6255,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "Se ha añadido ${ pendingAdminMemberCount } nuevo miembro a través de tu proveedor de identidad y está pendiente de revisión.",
+        "Se han añadido ${ pendingAdminMemberCount } nuevos miembros a través de tu proveedor de identidad y están pendientes de revisión."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -7559,6 +7561,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Los nuevos datos de actividad dejarán de recopilarse y mostrarse."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Se ha creado un nuevo grupo a través de tu proveedor de identidad y está pendiente de revisión."
       ],
       "New sidebar": [
         "Nueva barra lateral"
@@ -17339,8 +17344,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Asistencia instantánea con IA y expertos humanos."
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia de IA al instante y un experto humano a tu disposición."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."
