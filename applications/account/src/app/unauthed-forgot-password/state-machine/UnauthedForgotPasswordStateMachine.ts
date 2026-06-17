@@ -30,6 +30,7 @@ interface UnauthedForgotPasswordMachineContext {
     resetResponse: ValidateResetTokenResponse | undefined;
     deviceRecoveryLevel: DeviceRecoveryLevel;
     recoveryMethods: RecoveryMethod[];
+    hasEmergencyContacts: boolean;
     errorCode: UnauthedForgotPasswordErrorCode | undefined;
     resetWithDataLoss: boolean;
     mnemonicData: MnemonicDataWithoutAPI | undefined;
@@ -48,6 +49,7 @@ interface RecoverySelectedPayload {
     accountType: AccountType | '';
     redactedEmail: string | undefined;
     redactedPhoneNumber: string | undefined;
+    hasEmergencyContacts: boolean;
 }
 
 interface OwnershipRecoveryValidatedPayload {
@@ -115,6 +117,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
         hasSocialContacts: ({ context }) =>
             context.delegatedAccessContacts?.some(({ Types }) => hasBit(Types, DelegatedAccessTypeEnum.SocialRecovery)),
         hasEmergencyContacts: ({ context }) =>
+            context.hasEmergencyContacts ||
             context.delegatedAccessContacts?.some(({ Types }) =>
                 hasBit(Types, DelegatedAccessTypeEnum.EmergencyAccess)
             ),
@@ -143,6 +146,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
         resetResponse: undefined,
         deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
         recoveryMethods: [],
+        hasEmergencyContacts: false,
         errorCode: undefined,
         apiErrorMessage: undefined,
         resetWithDataLoss: false,
@@ -167,6 +171,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         accountType: event.payload.accountType,
                         redactedRecoveryEmail: event.payload.redactedEmail,
                         redactedRecoveryPhoneNumber: event.payload.redactedPhoneNumber,
+                        hasEmergencyContacts: event.payload.hasEmergencyContacts,
                     })),
                 },
                 'help.opened': {
@@ -493,9 +498,15 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         'decision.yes': {
                             target: 'activeSessionInstructions',
                         },
-                        'decision.no': {
-                            target: 'emergencyAccessOffer',
-                        },
+                        'decision.no': [
+                            {
+                                guard: 'hasEmergencyContacts',
+                                target: 'emergencyAccessOffer',
+                            },
+                            {
+                                target: '#forgotPassword.recoveryFailed',
+                            },
+                        ],
                         'decision.back': {
                             target: '#forgotPassword.entry',
                         },
@@ -503,9 +514,15 @@ export const UnauthedForgotPasswordStateMachine = setup({
                 },
                 activeSessionInstructions: {
                     on: {
-                        'decision.skip': {
-                            target: 'emergencyAccessOffer',
-                        },
+                        'decision.skip': [
+                            {
+                                guard: 'hasEmergencyContacts',
+                                target: 'emergencyAccessOffer',
+                            },
+                            {
+                                target: '#forgotPassword.recoveryFailed',
+                            },
+                        ],
                         'decision.back': {
                             target: 'otherSessionsPrompt',
                         },
@@ -567,9 +584,15 @@ export const UnauthedForgotPasswordStateMachine = setup({
 
         recoveryFailed: {
             on: {
-                'decision.back': {
-                    target: '#forgotPassword.unauthenticatedRecovery.emergencyAccessOffer',
-                },
+                'decision.back': [
+                    {
+                        guard: 'hasEmergencyContacts',
+                        target: '#forgotPassword.unauthenticatedRecovery.emergencyAccessOffer',
+                    },
+                    {
+                        target: '#forgotPassword.unauthenticatedRecovery.otherSessionsPrompt',
+                    },
+                ],
             },
         },
 

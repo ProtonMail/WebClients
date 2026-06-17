@@ -64,6 +64,7 @@ describe('UnauthedForgotPasswordWizard', () => {
             username: 'user@example.com',
             redactedEmail: methods.includes('email') ? 'u***@example.com' : '',
             redactedPhoneNumber: methods.includes('sms') ? '+1***5678' : '',
+            hasEmergencyContacts: false,
         });
         await user.type(screen.getByRole('textbox'), 'user@example.com');
         await user.click(screen.getByRole('button', { name: 'Next' }));
