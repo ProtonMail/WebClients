@@ -64,7 +64,7 @@ export function createCheckoutViewFromHeadlessCheckout(
         /** Raw headless checkout data (plan info, items, flags, etc.) */
         checkoutData,
         getItem: checkoutData.getItem,
-
+        getAddonItem: checkoutData.getAddonItem,
         /**
          * Render a single checkout line item by type.
          *

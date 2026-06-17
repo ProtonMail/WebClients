@@ -1,8 +1,8 @@
 import type { PlanIDs, PlansMap } from '@proton/payments';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
-import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import CycleItemView from './CycleItemView';
 
 const SubscriptionCheckoutCycleItem = ({

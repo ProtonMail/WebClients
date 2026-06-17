@@ -18,11 +18,11 @@ import {
     isTrial,
 } from '@proton/payments';
 import { PayButton, type TaxCountryHook, type VatNumberHook } from '@proton/payments/ui';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
 import { getVisionaryDowngradeWarningTextElement } from '../VisionaryDowngradeWarningModal';
-import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { InfoBanner } from './InfoBanner';
 
 export type Props = {

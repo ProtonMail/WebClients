@@ -5,7 +5,9 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getCheckoutUi } from '../../core/checkout';
 import { getCheckoutModifiers } from '../../core/checkout-modifiers';
 import { computeOptimisticCheckResult } from '../../core/computeOptimisticCheckResult';
+import type { ADDON_PREFIXES } from '../../core/constants';
 import type { FreeSubscription, PlanIDs } from '../../core/interface';
+import { getAddonType } from '../../core/plan/addons';
 import { getIsB2BAudienceFromPlan, isLifetimePlanSelected } from '../../core/plan/helpers';
 import type { PlansMap } from '../../core/plan/interface';
 import { hasPlanIDs } from '../../core/planIDs';
@@ -208,6 +210,10 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
         items,
 
         getItem: <T extends CheckoutLineItem['type']>(type: T): CheckoutLineItems[T] => items[type],
+        getAddonItem: (addonType: ADDON_PREFIXES) => {
+            const addonsItem = items.addons;
+            return addonsItem.addons.find((addon) => getAddonType(addon.addonName) === addonType);
+        },
 
         checkoutUi: ctx.checkoutUi,
         checkResult: ctx.checkResult,

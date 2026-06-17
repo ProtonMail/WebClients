@@ -1,4 +1,4 @@
-import type { Coupon } from '@proton/payments';
+import type { Coupon } from '../../core/subscription/interface';
 
 import type { CouponConfig } from './interface';
 import type { CouponConfigRendered } from './useCouponConfig';

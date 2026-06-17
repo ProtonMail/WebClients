@@ -3,6 +3,7 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { getModelState } from '@proton/account/test';
 import { PLANS, SubscriptionPlatform } from '@proton/payments';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import format from '@proton/shared/lib/subscription/format';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
@@ -25,6 +26,10 @@ jest.mock('@proton/components/components/portal/Portal');
 jest.mock('@proton/components/containers/payments/subscription/SubscriptionContainer');
 jest.mock('@proton/features/useFeature', () => () => ({}));
 
+// userSettings has no default in the shared preloaded state; without it the model auto-fetches
+// (on a timer) and throws because the test store has no thunk `api`. Preload it so it never fetches.
+const userSettingsPreloadedState = { userSettings: getModelState({} as UserSettings) };
+
 beforeEach(() => {
     mockSubscriptionApi();
     mockOrganizationApi();
@@ -37,6 +42,7 @@ it('should render', async () => {
         <SubscriptionModalProvider app="proton-account">My content</SubscriptionModalProvider>,
         {
             preloadedState: {
+                ...userSettingsPreloadedState,
                 user: getModelState(userDefault),
             },
         }
@@ -59,7 +65,8 @@ it('should render <SubscriptionContainer> if there is no legacy plans', async ()
     renderWithProviders(
         <SubscriptionModalProvider app="proton-account">
             <ContextReaderComponent />
-        </SubscriptionModalProvider>
+        </SubscriptionModalProvider>,
+        { preloadedState: userSettingsPreloadedState }
     );
 
     await waitFor(() => {
@@ -84,7 +91,8 @@ it('should render <SubscriptionContainer> with B2B default audience if it was se
     const { container } = renderWithProviders(
         <SubscriptionModalProvider app="proton-account">
             <ContextReaderComponent />
-        </SubscriptionModalProvider>
+        </SubscriptionModalProvider>,
+        { preloadedState: userSettingsPreloadedState }
     );
 
     await waitFor(() => {
@@ -117,7 +125,8 @@ it('should render <SubscriptionContainer> with B2B default audience if plan is a
     const { container } = renderWithProviders(
         <SubscriptionModalProvider app="proton-account">
             <ContextReaderComponent />
-        </SubscriptionModalProvider>
+        </SubscriptionModalProvider>,
+        { preloadedState: userSettingsPreloadedState }
     );
 
     await waitFor(() => {
@@ -158,7 +167,8 @@ it('should render <SubscriptionContainer> with B2B default audience if subscript
     const { container } = renderWithProviders(
         <SubscriptionModalProvider app="proton-account">
             <ContextReaderComponent />
-        </SubscriptionModalProvider>
+        </SubscriptionModalProvider>,
+        { preloadedState: userSettingsPreloadedState }
     );
 
     await waitFor(() => {
@@ -191,7 +201,8 @@ it('should render <SubscriptionContainer> with FAMILY default audience if it is 
     const { container } = renderWithProviders(
         <SubscriptionModalProvider app="proton-account">
             <ContextReaderComponent />
-        </SubscriptionModalProvider>
+        </SubscriptionModalProvider>,
+        { preloadedState: userSettingsPreloadedState }
     );
 
     await waitFor(() => {
@@ -230,6 +241,7 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
         </SubscriptionModalProvider>,
         {
             preloadedState: {
+                ...userSettingsPreloadedState,
                 subscription: getSubscriptionState(
                     format(subscription.Subscription, subscription.UpcomingSubscription, undefined)
                 ),

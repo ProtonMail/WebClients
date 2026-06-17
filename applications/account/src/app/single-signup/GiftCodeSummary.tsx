@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Input } from '@proton/atoms/Input/Input';
 import { Info, Price, useNotifications } from '@proton/components';
-import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import type { Currency, PlanIDs, PlansMap } from '@proton/payments';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
 interface Props {
     coupon?: {

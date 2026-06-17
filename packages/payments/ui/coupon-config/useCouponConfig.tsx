@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react';
 
-import { getPlanNameFromIDs } from '@proton/payments';
-
-import { cancellationFlow } from './cancellation-flow';
+import { getPlanNameFromIDs } from '../../core/plan/helpers';
+import { defaultCouponConfigs } from './default-coupon-configs';
 import { hasAlikeCoupon } from './helpers';
 import {
     type CouponConfig,
@@ -13,20 +12,6 @@ import {
     type CycleTitleReturnType,
     isCouponConfigRequiredProps,
 } from './interface';
-import { monthlyNudgeConfig } from './monthlyNudge';
-import { summerSale2026Config } from './summerSale2026';
-import { summerSale2026BundleConfig } from './summerSale2026bundle';
-import { tryMailPlus0724Config } from './tryMailPlus0724';
-import { vpn15mConfig } from './vpn15m';
-
-const defaultCouponConfigs: CouponConfig[] = [
-    monthlyNudgeConfig,
-    vpn15mConfig,
-    cancellationFlow,
-    summerSale2026Config,
-    summerSale2026BundleConfig,
-    tryMailPlus0724Config,
-];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
@@ -95,20 +80,4 @@ export const useCouponConfig = (
 
         renderPayCTA: payCTA ? () => payCTA(checkoutProps) : undefined,
     } satisfies CouponConfigRendered;
-};
-
-/**
- * This function is helpful when you need a certain coupon config before the coupon is actually applied.
- */
-export const getStaticCouponConfig = (coupon: string): CouponConfig | undefined => {
-    const uppercaseCoupon = coupon.trim().toUpperCase();
-
-    const config = defaultCouponConfigs.find((it) => {
-        if (Array.isArray(it.coupons)) {
-            return it.coupons.includes(uppercaseCoupon);
-        }
-        return it.coupons === uppercaseCoupon;
-    });
-
-    return config;
 };

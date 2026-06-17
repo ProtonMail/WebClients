@@ -1,5 +1,4 @@
-import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
-
+import { COUPON_CODES, CYCLE } from '../../core/constants';
 import type { CouponConfig } from './interface';
 
 // Hide distractions for users checking out with the Mail Plus intro pricing coupon
