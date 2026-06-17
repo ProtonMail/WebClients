@@ -9,8 +9,11 @@ export interface WebglShaderBgMouseConfig {
 }
 
 export interface WebglShaderBgBlobConfig {
+    /** Required when `xOffsetFromCenter` is omitted. */
     x: number;
     y: number;
+    /** Horizontal offset from the gravity center (aspect-corrected UV); overrides `x` when set. */
+    xOffsetFromCenter?: number;
     radius: number;
     radiusX?: number;
     radiusY?: number;
@@ -19,6 +22,21 @@ export interface WebglShaderBgBlobConfig {
     color: [number, number, number];
     mixStrength?: number;
     driftY?: number;
+    driftX?: number;
+    /** Radial in/out motion toward viewport center (UV amplitude). */
+    driftToCenter?: number;
+    /** Full in/out cycle toward center in seconds. */
+    driftToCenterPeriodSec?: number;
+    /** Phase offset in seconds within the center-drift cycle. */
+    driftToCenterPhaseSec?: number;
+    /** Independent wander cycle in seconds. */
+    floatPeriodSec?: number;
+    /** Phase offset in seconds for the wander cycle. */
+    floatPhaseSec?: number;
+    /** Ellipse shape-morph cycle in seconds. */
+    radiusMorphPeriodSec?: number;
+    /** Phase offset in seconds for ellipse shape morph. */
+    radiusMorphPhaseSec?: number;
     /** Full fade-in/fade-out cycle length in seconds (sinusoidal 0–1 opacity). Omit for always visible. */
     pulsePeriodSec?: number;
     /** Time offset in seconds within the pulse cycle (e.g. half the period for opposite phase). */
@@ -46,6 +64,12 @@ export interface WebglShaderBgConfig {
     waveSpeedY?: number;
     mouse?: WebglShaderBgMouseConfig;
     blobs?: WebglShaderBgBlobConfig[];
+    /** Vertical anchor for center gravity (UV 0–1, default 0.5). */
+    centerY?: number;
+    /** Horizontal anchor in aspect-corrected UV; defaults to viewport center + sidebar offset. */
+    centerX?: number;
+    /** Lumo sidebar width in px — shifts the gravity center into the main content area. */
+    sidebarOffsetPx?: number;
 }
 
 export type WebglShaderBgMount = 'viewport' | 'content';

@@ -70,7 +70,7 @@ export const Blobs: FC = () => {
 
     useEffect(() => {
         const canvas = ref.current;
-        if (!canvas) {
+        if (!canvas || isAnimatedBackgroundEnabled) {
             return;
         }
 
@@ -83,10 +83,14 @@ export const Blobs: FC = () => {
         return () => {
             observer.disconnect();
         };
-    }, [theme]);
+    }, [theme, isAnimatedBackgroundEnabled]);
+
+    if (isAnimatedBackgroundEnabled) {
+        return null;
+    }
 
     return (
-        <div className={clsx('lumo--blobs', !isAnimatedBackgroundEnabled && 'lumo--blobs--static')} aria-hidden="true">
+        <div className={clsx('lumo--blobs', 'lumo--blobs--static')} aria-hidden="true">
             <canvas className="lumo--blobs-overlay" ref={ref} />
             <div className="lumo--blobs-gradient" />
         </div>

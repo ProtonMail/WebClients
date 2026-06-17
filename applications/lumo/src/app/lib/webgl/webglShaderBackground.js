@@ -14,6 +14,7 @@ export const WEBGL_SHADER_BG_MAX_BLOBS = 8;
  * @typedef {object} WebglShaderBgBlobConfig
  * @property {number} x
  * @property {number} y
+ * @property {number} [xOffsetFromCenter] when set, horizontal position is gravity center + this offset (aspect-corrected UV)
  * @property {number} radius fallback for {@link radiusX} / {@link radiusY}
  * @property {number} [radiusX] half-extent along aspect-corrected x (defaults to `radius`)
  * @property {number} [radiusY] half-extent along y (defaults to `radius`)
@@ -21,7 +22,15 @@ export const WEBGL_SHADER_BG_MAX_BLOBS = 8;
  * @property {number} [weight]
  * @property {[number, number, number]} color RGB 0–1
  * @property {number} [mixStrength]
- * @property {number} [driftY] amplitude for `sin(time * speed + i)` vertical wobble (UV space)
+ * @property {number} [driftY] amplitude for vertical float (UV space)
+ * @property {number} [driftX] amplitude for horizontal float (UV space)
+ * @property {number} [driftToCenter] amplitude for radial in/out motion toward the viewport center (UV space)
+ * @property {number} [driftToCenterPeriodSec] full in/out cycle toward center in seconds (default 12)
+ * @property {number} [driftToCenterPhaseSec] phase offset in seconds within the center-drift cycle
+ * @property {number} [floatPeriodSec] independent wander cycle in seconds (defaults to 1.35× center period)
+ * @property {number} [floatPhaseSec] phase offset in seconds for the wander cycle
+ * @property {number} [radiusMorphPeriodSec] ellipse shape-morph cycle in seconds (defaults to radius pulse period)
+ * @property {number} [radiusMorphPhaseSec] phase offset for ellipse shape morph
  * @property {number} [pulsePeriodSec] full fade cycle in seconds; omit for always visible
  * @property {number} [pulsePhaseSec] phase offset in seconds within the pulse cycle
  * @property {number} [radiusPulsePeriodSec] breathe cycle (full → min scale → full)
@@ -172,6 +181,9 @@ function framebufferToPngBlob(gl, width, height) {
  * @property {number} [waveSpeedY]
  * @property {WebglShaderBgMouseConfig} [mouse]
  * @property {WebglShaderBgBlobConfig[]} [blobs]
+ * @property {number} [centerY] vertical gravity anchor in UV space (default 0.5)
+ * @property {number} [centerX] horizontal gravity anchor in aspect-corrected UV (default: viewport center + sidebar offset)
+ * @property {number} [sidebarOffsetPx] fixed left sidebar width in px; shifts gravity center right (default 0)
  */
 
 const MAX_BLOBS = WEBGL_SHADER_BG_MAX_BLOBS;
@@ -196,6 +208,9 @@ function mergeConfig(partial) {
             color: [0, 0.9, 1],
             mixStrength: 0.7,
         },
+        centerY: 0.5,
+        centerX: undefined,
+        sidebarOffsetPx: 0,
         blobs: [
             {
                 x: 0.45,
@@ -254,6 +269,22 @@ function buildFragmentSource() {
       uniform vec3 u_blobColor[MAX_BLOBS];
       uniform float u_blobMix[MAX_BLOBS];
       uniform float u_blobDriftY[MAX_BLOBS];
+      uniform float u_blobDriftX[MAX_BLOBS];
+      uniform float u_blobDriftCenter[MAX_BLOBS];
+      uniform float u_blobDriftCenterPeriod[MAX_BLOBS];
+      uniform float u_blobDriftCenterPhase[MAX_BLOBS];
+      uniform float u_blobFloatPeriod[MAX_BLOBS];
+      uniform float u_blobFloatPhase[MAX_BLOBS];
+      uniform float u_blobMorphPeriod[MAX_BLOBS];
+      uniform float u_blobMorphPhase[MAX_BLOBS];
+      uniform float u_centerX;
+      uniform float u_centerY;
+
+      const float TAU = 6.2831853;
+
+      float blobAngle(float elapsedSec, float periodSec, float phaseSec) {
+        return TAU * (elapsedSec + phaseSec) / max(periodSec, 0.001);
+      }
 
       float blobEllip(vec2 uv, vec2 pos, vec2 radii) {
         vec2 d = (uv - pos) / max(radii, vec2(0.0001));
@@ -268,6 +299,7 @@ function buildFragmentSource() {
         m.x *= resolution.x / resolution.y;
 
         float t = time * u_speed;
+        vec2 gravityCenter = vec2(u_centerX, u_centerY);
         float wave =
           sin((uv.x * u_waveFreq.x) + t * u_waveSpeed.x) * u_waveAmp +
           cos((uv.y * u_waveFreq.y) - t * u_waveSpeed.y) * u_waveAmp;
@@ -281,8 +313,43 @@ function buildFragmentSource() {
           float fi = float(i);
           float active = 1.0 - step(float(u_blobCount), fi);
           vec2 pos = u_blobPos[i];
-          pos.y += sin(t + fi * 0.7) * u_blobDriftY[i];
+
+          float centerAngle = blobAngle(
+            time * u_speed,
+            u_blobDriftCenterPeriod[i],
+            u_blobDriftCenterPhase[i]
+          );
+          float centerDrift = sin(centerAngle);
+          // Bidirectional radial breathe: full pull inward, softer push outward to avoid corner blowout.
+          float radialMove = centerDrift >= 0.0 ? centerDrift : centerDrift * 0.55;
+
+          float floatAngle = blobAngle(
+            time * u_speed,
+            u_blobFloatPeriod[i],
+            u_blobFloatPhase[i]
+          );
+          pos.x += sin(floatAngle + fi * 1.17) * u_blobDriftX[i];
+          pos.y += cos(floatAngle * 0.93 + fi * 0.81) * u_blobDriftY[i];
+          pos.x += cos(floatAngle * 1.31 + fi * 2.03) * u_blobDriftX[i] * 0.45;
+          pos.y += sin(floatAngle * 0.71 + fi * 1.49) * u_blobDriftY[i] * 0.45;
+
+          if (u_blobDriftCenter[i] > 0.0) {
+            vec2 toCenter = gravityCenter - pos;
+            float dist = length(toCenter);
+            if (dist > 0.0001) {
+              pos += (toCenter / dist) * u_blobDriftCenter[i] * radialMove;
+            }
+          }
+
           vec2 radii = vec2(u_blobRadiusX[i], u_blobRadiusY[i]);
+          float morphAngle = blobAngle(
+            time * u_speed,
+            u_blobMorphPeriod[i],
+            u_blobMorphPhase[i]
+          );
+          radii.x *= 0.84 + 0.16 * sin(morphAngle + fi * 0.41);
+          radii.y *= 0.84 + 0.16 * cos(morphAngle * 1.19 + fi * 0.67);
+
           float b =
             blobEllip(uvd, pos, radii) * u_blobWeight[i] * active;
           shape += b;
@@ -296,7 +363,10 @@ function buildFragmentSource() {
           color = mix(color, u_mouseColor, bMouse * u_mouseMix);
         }
 
-        color += pow(max(shape, 0.0001), u_glowPower) * u_glowIntensity;
+        // Soft-limit overlap, then add glow in the blob tint direction (not white).
+        float glowShape = shape / (1.0 + shape);
+        vec3 tint = max(color - u_baseColor, vec3(0.0));
+        color += pow(max(glowShape, 0.0001), u_glowPower) * u_glowIntensity * tint;
 
         gl_FragColor = vec4(color, 1.0);
       }
@@ -348,7 +418,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         antialias: false,
         depth: false,
         stencil: false,
-        preserveDrawingBuffer: false,
+        preserveDrawingBuffer: true,
     });
 
     const noop = () => {};
@@ -426,6 +496,16 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     const uBlobColor = [];
     const uBlobMix = [];
     const uBlobDriftY = [];
+    const uBlobDriftX = [];
+    const uBlobDriftCenter = [];
+    const uBlobDriftCenterPeriod = [];
+    const uBlobDriftCenterPhase = [];
+    const uBlobFloatPeriod = [];
+    const uBlobFloatPhase = [];
+    const uBlobMorphPeriod = [];
+    const uBlobMorphPhase = [];
+    const uCenterX = gl.getUniformLocation(program, 'u_centerX');
+    const uCenterY = gl.getUniformLocation(program, 'u_centerY');
     for (let i = 0; i < MAX_BLOBS; i++) {
         uBlobPos.push(gl.getUniformLocation(program, `u_blobPos[${i}]`));
         uBlobRadiusX.push(gl.getUniformLocation(program, `u_blobRadiusX[${i}]`));
@@ -434,6 +514,14 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         uBlobColor.push(gl.getUniformLocation(program, `u_blobColor[${i}]`));
         uBlobMix.push(gl.getUniformLocation(program, `u_blobMix[${i}]`));
         uBlobDriftY.push(gl.getUniformLocation(program, `u_blobDriftY[${i}]`));
+        uBlobDriftX.push(gl.getUniformLocation(program, `u_blobDriftX[${i}]`));
+        uBlobDriftCenter.push(gl.getUniformLocation(program, `u_blobDriftCenter[${i}]`));
+        uBlobDriftCenterPeriod.push(gl.getUniformLocation(program, `u_blobDriftCenterPeriod[${i}]`));
+        uBlobDriftCenterPhase.push(gl.getUniformLocation(program, `u_blobDriftCenterPhase[${i}]`));
+        uBlobFloatPeriod.push(gl.getUniformLocation(program, `u_blobFloatPeriod[${i}]`));
+        uBlobFloatPhase.push(gl.getUniformLocation(program, `u_blobFloatPhase[${i}]`));
+        uBlobMorphPeriod.push(gl.getUniformLocation(program, `u_blobMorphPeriod[${i}]`));
+        uBlobMorphPhase.push(gl.getUniformLocation(program, `u_blobMorphPhase[${i}]`));
     }
 
     const mouse = { x: 0, y: 0 };
@@ -511,6 +599,28 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         return canvas.height > 0 ? canvas.width / canvas.height : 1;
     }
 
+    /** CSS pixel height of the canvas (stable across devicePixelRatio / browser zoom). */
+    function cssCanvasHeight() {
+        const dpr = window.devicePixelRatio || 1;
+        return canvas.height / dpr;
+    }
+
+    /** @param {ReturnType<typeof mergeConfig>} cfg */
+    function resolveGravityCenter(cfg) {
+        const aspect = aspectUvWidth();
+        if (mount === 'content') {
+            return {
+                x: cfg.centerX ?? aspect * 0.5,
+                y: cfg.centerY ?? 0.5,
+            };
+        }
+        const sidebarUv = (cfg.sidebarOffsetPx ?? 0) / Math.max(cssCanvasHeight(), 1);
+        return {
+            x: cfg.centerX ?? (aspect + sidebarUv) * 0.5,
+            y: cfg.centerY ?? 0.5,
+        };
+    }
+
     /** @param {WebglShaderBgBlobConfig} blob */
     function resolveBlobPlacement(blob) {
         const rx = blob.radiusX ?? blob.radius;
@@ -529,8 +639,21 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         };
     }
 
-    /** @param {ReturnType<typeof mergeConfig>} cfg @param {number} timeSec */
-    function pushBlobUniforms(cfg, timeSec) {
+    /** @param {WebglShaderBgBlobConfig} blob */
+    function resolveBlobMotionPeriods(blob) {
+        const centerPeriod = blob.driftToCenterPeriodSec ?? 12;
+        const floatPeriod = blob.floatPeriodSec ?? centerPeriod * 1.35;
+        const morphPeriod =
+            blob.radiusMorphPeriodSec ?? blob.radiusPulsePeriodSec ?? centerPeriod * 0.85;
+        return {
+            centerPeriod,
+            floatPeriod,
+            morphPeriod,
+        };
+    }
+
+    /** @param {ReturnType<typeof mergeConfig>} cfg @param {number} timeSec @param {{ x: number; y: number }} gravity */
+    function pushBlobUniforms(cfg, timeSec, gravity) {
         const blobs = cfg.blobs.slice(0, MAX_BLOBS);
         const count = blobs.length;
         gl.uniform1i(uBlobCount, count);
@@ -551,7 +674,8 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
                     }
                 }
                 const p = resolveBlobPlacement(b);
-                gl.uniform2f(uBlobPos[i], p.x, p.y);
+                const blobX = b.xOffsetFromCenter != null ? gravity.x + b.xOffsetFromCenter : p.x;
+                gl.uniform2f(uBlobPos[i], blobX, p.y);
                 gl.uniform1f(uBlobRadiusX[i], p.radiusX * radiusScale);
                 gl.uniform1f(uBlobRadiusY[i], p.radiusY * radiusScale);
                 gl.uniform1f(uBlobWeight[i], (b.weight ?? 1) * opacity);
@@ -559,6 +683,15 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
                 gl.uniform3f(uBlobColor[i], c[0], c[1], c[2]);
                 gl.uniform1f(uBlobMix[i], (b.mixStrength ?? 0.6) * opacity);
                 gl.uniform1f(uBlobDriftY[i], b.driftY ?? 0);
+                gl.uniform1f(uBlobDriftX[i], b.driftX ?? 0);
+                gl.uniform1f(uBlobDriftCenter[i], b.driftToCenter ?? 0);
+                const motion = resolveBlobMotionPeriods(b);
+                gl.uniform1f(uBlobDriftCenterPeriod[i], motion.centerPeriod);
+                gl.uniform1f(uBlobDriftCenterPhase[i], b.driftToCenterPhaseSec ?? 0);
+                gl.uniform1f(uBlobFloatPeriod[i], motion.floatPeriod);
+                gl.uniform1f(uBlobFloatPhase[i], b.floatPhaseSec ?? 0);
+                gl.uniform1f(uBlobMorphPeriod[i], motion.morphPeriod);
+                gl.uniform1f(uBlobMorphPhase[i], b.radiusMorphPhaseSec ?? b.radiusPulsePhaseSec ?? 0);
             } else {
                 gl.uniform2f(uBlobPos[i], 0, 0);
                 gl.uniform1f(uBlobRadiusX[i], 0.0001);
@@ -567,6 +700,14 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
                 gl.uniform3f(uBlobColor[i], 0, 0, 0);
                 gl.uniform1f(uBlobMix[i], 0);
                 gl.uniform1f(uBlobDriftY[i], 0);
+                gl.uniform1f(uBlobDriftX[i], 0);
+                gl.uniform1f(uBlobDriftCenter[i], 0);
+                gl.uniform1f(uBlobDriftCenterPeriod[i], 12);
+                gl.uniform1f(uBlobDriftCenterPhase[i], 0);
+                gl.uniform1f(uBlobFloatPeriod[i], 16);
+                gl.uniform1f(uBlobFloatPhase[i], 0);
+                gl.uniform1f(uBlobMorphPeriod[i], 10);
+                gl.uniform1f(uBlobMorphPhase[i], 0);
             }
         }
     }
@@ -585,7 +726,10 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         gl.uniform1f(uMouseWeight, cfg.mouse.weight);
         gl.uniform3f(uMouseColor, mc[0], mc[1], mc[2]);
         gl.uniform1f(uMouseMix, cfg.mouse.mixStrength);
-        pushBlobUniforms(cfg, timeSec);
+        const gravity = resolveGravityCenter(cfg);
+        gl.uniform1f(uCenterX, gravity.x);
+        gl.uniform1f(uCenterY, gravity.y);
+        pushBlobUniforms(cfg, timeSec, gravity);
     }
 
     if (config.blobs.length > MAX_BLOBS) {
