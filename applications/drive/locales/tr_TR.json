@@ -6716,8 +6716,8 @@
         "Bu fotoğraf Drive depolama alanınıza kaydedilemedi",
         "Bazı fotoğraflar Drive depolama alanınıza kaydedilemedi"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "${ nameAuthor } tarafından yüklenen ${ node.name } dosyası doğrulanamadı. Şu ögeler üzerinde oynanmış olabilir: Dosya verileri sıralaması. Yalnızca güveniyorsanız açın."
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "${ nameAuthor } tarafından yüklenen ${ nodeName } dosyasını doğrulayamadık. Aşağıdakilerde değişiklik yapılmış olabilir: dosya verilerinin sırası. Yalnızca güvenilir olduğunu düşünüyorsanız açın."
       ],
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
@@ -12314,6 +12314,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-posta adresi",
         "${ emailsCount } e-posta adresi"
@@ -12323,6 +12326,9 @@
       ],
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } ücretsiz yükleme."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "Account recovery": [
         "Hesap kurtarma"
@@ -13262,11 +13268,11 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Dosya içeriğinin ${ claimedContentAuthor } tarafından yüklendiği doğrulanamadı. Nedeni: ${ activeRevision.contentAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Adın ${ claimedNameAuthor } tarafından oluşturulduğu veya değiştirildiği doğrulanamadı. Nedeni: ${ nodeEntity.nameAuthor.error.error }"
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Bu adın ${ claimedNameAuthor } tarafından oluşturulduğunu veya değiştirildiğini doğrulayamadık. Nedeni ise: ${ node.nameAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Düğümün ${ claimedKeyAuthor } tarafından oluşturulduğu doğrulanamadı. Nedeni: ${ nodeEntity.keyAuthor.error.error }"
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Düğümün ${ claimedKeyAuthor } tarafından oluşturulduğunu doğrulayamadık. Nedeni ise: ${ node.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Karşılama teklifi"
@@ -13383,8 +13389,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Yapay zeka ve insan uzmanlar ile anında yardım."
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
       ],
       "Load image": [
         "Görsel yükle"

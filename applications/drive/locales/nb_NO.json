@@ -6713,9 +6713,6 @@
         "Vi kunne ikke lagre dette bildet på din Drive",
         "Vi kunne ikke lagre flere bilder på din Drive"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Vi kunne ikke bekrefte at ${ nameAuthor } lastet opp ${ node.name }. Følgende kan ha blitt tuklet med: fildatarekkefølge. Åpne bare hvis du stoler på den."
-      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
@@ -12365,6 +12362,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadresse",
         "${ emailsCount } e-postadresser"
@@ -13312,12 +13312,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Vi klarte ikke å bekrefte at filinnholdet ble lastet opp av ${ claimedContentAuthor }. Årsaken er: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Vi klarte ikke å bekrefte at navnet ble opprettet eller endret av ${ claimedNameAuthor }. Årsaken er: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Vi klarte ikke å bekrefte at noden ble opprettet av ${ claimedKeyAuthor }. Årsaken er: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Velkomsttilbud"

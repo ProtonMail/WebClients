@@ -6695,9 +6695,6 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Výborně, právě jste si navýšili úložný prostor na 5 GB!"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Nemohli jsme ověřit, zda ${ nameAuthor } nahrál(a) ${ node.name }. S následujícím mohlo být manipulováno: pořadí dat souboru. Otevřete pouze v případě, že souboru důvěřujete."
-      ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
@@ -12441,6 +12438,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailová adresa",
         "${ emailsCount } e-mailové adresy",
@@ -13397,12 +13397,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Nepodařilo se nám potvrdit, že obsah souboru nahrál uživatel ${ claimedContentAuthor }. Důvod: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Nepodařilo se nám potvrdit, že název byl vytvořen nebo upraven uživatelem ${ claimedNameAuthor }. Důvod: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Nepodařilo se nám potvrdit, že objekt byl vytvořen uživatelem ${ claimedKeyAuthor }. Důvod: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Uvítací nabídka"

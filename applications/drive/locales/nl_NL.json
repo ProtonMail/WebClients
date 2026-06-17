@@ -6713,9 +6713,6 @@
         "We kunnen deze foto niet opslaan op uw Drive",
         "We kunnen niet meerdere foto's op uw Drive opslaan"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "We konden niet verifiëren dat ${ nameAuthor } ${ node.name } heeft geüpload. Het volgende kan onrechtmatig zijn bewerkt: volgorde van de bestandsgegevens. Open alleen als u het vertrouwt."
-      ],
       "We couldn’t process your payment.": [
         "We konden uw betaling niet verwerken."
       ],
@@ -12308,6 +12305,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
@@ -13255,12 +13255,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "We konden niet bevestigen dat het bestand is geüpload door ${ claimedContentAuthor }. De reden is: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "We konden niet bevestigen dat de naam is aangemaakt of gewijzigd door ${ claimedNameAuthor }. De reden is: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "We konden niet bevestigen dat de node is aangemaakt door ${ claimedKeyAuthor }. De reden is: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Welkomstaanbieding"
