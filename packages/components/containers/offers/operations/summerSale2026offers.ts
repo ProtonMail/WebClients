@@ -25,7 +25,7 @@ interface SummerOffer {
 const freeToDrivePlus: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-free-to-drive-plus`,
     featureCode: FeatureCode.OfferSummerSale2026FreeToDrivePlus,
-    ref: 'offer_26_june_drive_free_driveplus_web',
+    ref: 'offer_26_june_free_driveplus_web',
     dealName: `${DRIVE_SHORT_APP_NAME} Plus`,
     couponCode: COUPON_CODES.JUNE26SALE,
     features: () => [
@@ -38,7 +38,7 @@ const freeToDrivePlus: SummerOffer = {
 const freeToMailPlus: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-free-to-mail-plus`,
     featureCode: FeatureCode.OfferSummerSale2026FreeToMailPlus,
-    ref: 'offer_26_june_mail_free_mailplus_web',
+    ref: 'offer_26_june_free_mailplus_web',
     dealName: `${MAIL_SHORT_APP_NAME} Plus`,
     couponCode: COUPON_CODES.JUNE26SALE,
     features: () => [
@@ -51,7 +51,7 @@ const freeToMailPlus: SummerOffer = {
 const mailPlusMonthlyToYearly: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-mail-plus-monthly-to-yearly`,
     featureCode: FeatureCode.OfferSummerSale2026MailPlusMonthlyToYearly,
-    ref: 'offer_26_june_mail_mailplus_mailplus_web',
+    ref: 'offer_26_june_mailplus_mailplus_web',
     dealName: `${MAIL_SHORT_APP_NAME} Plus`,
     couponCode: COUPON_CODES.JUNE26SALE,
     features: () => [
@@ -64,7 +64,7 @@ const mailPlusMonthlyToYearly: SummerOffer = {
 const freeInboxToUnlimited: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-free-inbox-to-unlimited`,
     featureCode: FeatureCode.OfferSummerSale2026FreeInboxToUnlimited,
-    ref: 'offer_26_june_mail_free_unlimited_web',
+    ref: 'offer_26_june_free_unlimited_web',
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.JUNE26BUNDLESALE,
     features: () => [
@@ -80,7 +80,7 @@ const freeInboxToUnlimited: SummerOffer = {
 const freeDriveToUnlimited: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-free-drive-to-unlimited`,
     featureCode: FeatureCode.OfferSummerSale2026FreeDriveToUnlimited,
-    ref: 'offer_26_june_drive_free_unlimited_web',
+    ref: 'offer_26_june_free_unlimited_web',
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.JUNE26BUNDLESALE,
     features: () => [
@@ -96,7 +96,7 @@ const freeDriveToUnlimited: SummerOffer = {
 const plusToUnlimited: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-plus-to-unlimited`,
     featureCode: FeatureCode.OfferSummerSale2026PlusToUnlimited,
-    ref: 'offer_26_june_mail_mailplus_unlimited_web',
+    ref: 'offer_26_june_mailplus_unlimited_web',
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.JUNE26BUNDLESALE,
     features: () => [
@@ -112,7 +112,7 @@ const plusToUnlimited: SummerOffer = {
 const unlimitedToDuo: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-unlimited-to-duo`,
     featureCode: FeatureCode.OfferSummerSale2026UnlimitedToDuo,
-    ref: 'offer_26_june_proton_unlimited_duo_web',
+    ref: 'offer_26_june_unlimited_duo_web',
     dealName: PLAN_NAMES[PLANS.DUO],
     couponCode: COUPON_CODES.JUNE26BUNDLESALE,
     features: () => [
@@ -128,7 +128,7 @@ const unlimitedToDuo: SummerOffer = {
 const duoToFamily: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-duo-to-family`,
     featureCode: FeatureCode.OfferSummerSale2026DuoToFamily,
-    ref: 'offer_26_june_proton_duo_family_web',
+    ref: 'offer_26_june_duo_family_web',
     dealName: PLAN_NAMES[PLANS.FAMILY],
     couponCode: COUPON_CODES.JUNE26BUNDLESALE,
     features: () => [
@@ -144,7 +144,7 @@ const duoToFamily: SummerOffer = {
 const drivePlusToUnlimited: SummerOffer = {
     ID: `${SUMMER_SALE_2026_PREFIX}-drive-plus-to-unlimited`,
     featureCode: FeatureCode.OfferSummerSale2026DrivePlusToUnlimited,
-    ref: 'offer_26_june_drive_driveplus_unlimited_web',
+    ref: 'offer_26_june_driveplus_unlimited_web',
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.JUNE26BUNDLESALE,
     features: () => [
