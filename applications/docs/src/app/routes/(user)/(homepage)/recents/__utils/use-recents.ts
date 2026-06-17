@@ -1,8 +1,13 @@
 import { useNotifications } from '@proton/components'
-import { generateNodeUid, getDrive } from '@proton/drive'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { DriveEvent, DriveListener, NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk'
-import { NodeType } from '@protontech/drive-sdk'
+import {
+  type DriveEvent,
+  type NodeEntity,
+  type ProtonDriveClient,
+  NodeType,
+  generateNodeUid,
+  getDrive,
+} from '@proton/drive'
 import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
@@ -12,6 +17,7 @@ import { useRecentsStore } from './use-recents-store'
 import { getNodeEffectiveRole } from '~/utils/get-node-effective-role'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
+import type { SDKEventListener } from './manage-events-subscription'
 
 export function useRecents(drive: ProtonDriveClient) {
   const [addresses] = useAddresses()
@@ -99,7 +105,7 @@ export function useRecents(drive: ProtonDriveClient) {
     return Promise.resolve() // For backwards compatibility
   }, [])
 
-  const recentsListener: DriveListener = useCallback(async (event: DriveEvent) => {
+  const recentsListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
     const drive = getDrive()
     const { setDocument, removeChildrenOf, removeDocument, addresses } = useRecentsStore.getState()
 

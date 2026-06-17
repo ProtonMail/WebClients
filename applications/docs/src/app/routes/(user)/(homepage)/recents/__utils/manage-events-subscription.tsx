@@ -1,8 +1,10 @@
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { EventSubscription, ProtonDriveClient, DriveListener } from '@protontech/drive-sdk'
+import type { DriveEvent, ProtonDriveClient } from '@proton/drive'
+
+export type SDKEventListener = (event: DriveEvent) => Promise<void>
 
 export function manageEventsSubscription() {
-  let subscription: EventSubscription | undefined
+  let subscription: { dispose: () => void } | undefined
 
   function dispose() {
     if (subscription) {
@@ -15,8 +17,8 @@ export function manageEventsSubscription() {
     drive: ProtonDriveClient,
     treeEventScopeId: string,
     logger: LoggerInterface,
-    recentsListener: DriveListener,
-    trashedListener: DriveListener,
+    recentsListener: SDKEventListener,
+    trashedListener: SDKEventListener,
   ) {
     // In case useEffect calls cleanup (onUnmount) this should prevent multiple subscriptions
     let shouldAbort = false
