@@ -21,7 +21,7 @@ import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/Wra
 import { ProviderContainer } from './containers/ProviderContainer';
 import { getPublicToken } from './hooks/srp/usePublicToken';
 import { useMeetFunnelTelemetry } from './hooks/useMeetFunnelTelemetry';
-import { useIsRecordingSupported } from './hooks/useMeetingRecorderNew/hooks/useIsRecordingSupported';
+import { useIsRecordingSupported } from './hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
