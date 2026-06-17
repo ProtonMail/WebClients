@@ -1,4 +1,4 @@
-import { type RefObject, useCallback, useMemo } from 'react';
+import { type ReactNode, type RefObject, useCallback, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -23,6 +23,7 @@ interface DriveExplorerHeaderProps {
     loading: boolean;
     showCheckboxColumn?: boolean;
     showContextMenuButton?: boolean;
+    headerActions?: ReactNode;
 }
 
 export const DriveExplorerHeader = ({
@@ -37,6 +38,7 @@ export const DriveExplorerHeader = ({
     loading,
     showCheckboxColumn = true,
     showContextMenuButton = true,
+    headerActions,
 }: DriveExplorerHeaderProps) => {
     const selectedCount = selection?.selectedItems.size;
 
@@ -116,6 +118,7 @@ export const DriveExplorerHeader = ({
                             headerCheckboxState={headerCheckboxState}
                             onHeaderCheckboxClick={handleHeaderCheckboxClick}
                             loading={loading}
+                            headerActions={headerActions}
                         />
                     ) : (
                         <>
@@ -167,14 +170,16 @@ export const DriveExplorerHeader = ({
                                         />
                                     );
                                 })}
-                            {/* Empty space for context menu */}
-                            {showContextMenuButton && !(selectedCount && selectedCount > 0) && (
+                            {/* Trailing column: holds header actions (e.g. layout toggle) or reserves space for the row context menu */}
+                            {(showContextMenuButton || headerActions) && !(selectedCount && selectedCount > 0) && (
                                 <TableHeaderCell
-                                    className="m-0 w-custom"
+                                    className="m-0 w-custom flex items-center justify-center"
                                     style={{
                                         '--w-custom': '2.75rem',
                                     }}
-                                />
+                                >
+                                    {headerActions}
+                                </TableHeaderCell>
                             )}
                         </>
                     )}

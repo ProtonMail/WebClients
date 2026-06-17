@@ -3,6 +3,7 @@ import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { sortItems } from '../../modules/sorting';
 import { nodeTypeComparator, stringComparator } from '../../modules/sorting/comparators';
@@ -42,11 +43,14 @@ interface PublicFolderStore {
     direction: SORT_DIRECTION;
     sortConfig: SortConfig | undefined;
 
+    layout: LayoutSetting;
+
     setFolder: (folderData: PublicFolderViewData) => void;
 
     setLoading: (loading: boolean) => void;
     setHasEverLoaded: () => void;
     setSorting: (params: { sortField: SortField; direction: SORT_DIRECTION; sortConfig: SortConfig }) => void;
+    setLayout: (layout: LayoutSetting) => void;
 
     setItem: (item: PublicFolderItem) => void;
     updateItem: (uid: string, updates: Partial<PublicFolderItem>) => void;
@@ -75,6 +79,8 @@ export const usePublicFolderStore = create<PublicFolderStore>()(
             sortField: SortField.name,
             direction: SORT_DIRECTION.ASC,
             sortConfig: defaultSortConfig,
+
+            layout: LayoutSetting.List,
 
             setSorting: ({ sortField, direction, sortConfig }) => {
                 const state = get();
@@ -184,6 +190,7 @@ export const usePublicFolderStore = create<PublicFolderStore>()(
 
             setHasEverLoaded: () => set({ hasEverLoaded: true }),
             setFolder: (folder) => set({ folder }),
+            setLayout: (layout: LayoutSetting) => set({ layout }),
         }),
         {
             name: 'public-folder-store',
