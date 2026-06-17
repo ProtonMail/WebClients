@@ -4,6 +4,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Portal from '@proton/components/components/portal/Portal';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
+import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
@@ -59,8 +60,13 @@ const ItemAttachmentThumbnails = ({
                 return previewing;
             }
 
-            // Don't preview unverified attachment
-            if (download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            // Don't preview unverified attachments, and never render SVGs: rendering an SVG
+            // (even sanitized) in a browsing context is a security risk. Blanking the MIME
+            // type makes FilePreview fall back to the "no preview available" screen.
+            if (
+                download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID ||
+                couldPotentiallyBeRenderedAsSVG(attachmentsMetadata.MIMEType || '')
+            ) {
                 return {
                     // Overriding mime type to prevent opening any visualizer with empty data, especially needed for pdfs
                     attachment: { ...attachmentsMetadata, MIMEType: '' },
@@ -131,6 +137,7 @@ const ItemAttachmentThumbnails = ({
 
             {previewing && (
                 // Need an additional div to:
+                //eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
                 <div
                     // 1. prevent the event propagation (a click inside the portal would open the message)
                     onClick={(e) => {

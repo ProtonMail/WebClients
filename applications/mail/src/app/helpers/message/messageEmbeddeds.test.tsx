@@ -10,7 +10,6 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import {
     createBlob,
     createEmbeddedImageFromUpload,
-    embeddableTypes,
     findCIDsInContent,
     findEmbedded,
     generateCid,
@@ -56,7 +55,7 @@ describe('messageEmbeddeds', () => {
 
     describe('isEmbeddable', () => {
         it('should be an embeddable file', () => {
-            const types = embeddableTypes;
+            const types = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
             types.forEach((type) => {
                 expect(isEmbeddable(type)).toBeTruthy();
@@ -64,7 +63,8 @@ describe('messageEmbeddeds', () => {
         });
 
         it('should not be an embeddable file', () => {
-            const types = ['something', 'application/json', 'image/webp'];
+            // SVG is intentionally excluded (it can carry scripts), as is anything not in the allowlist.
+            const types = ['something', 'application/json', 'image/svg+xml', 'image/svg'];
 
             types.forEach((type) => {
                 expect(isEmbeddable(type)).toBeFalsy();
@@ -163,9 +163,14 @@ describe('messageEmbeddeds', () => {
     });
 
     describe('createBlob', () => {
+        let createObjectURL: jest.Mock;
+
         beforeEach(() => {
-            global.URL.createObjectURL = jest.fn(() => 'url');
+            createObjectURL = jest.fn(() => 'url');
+            global.URL.createObjectURL = createObjectURL;
         });
+
+        const getBlobType = (callIndex = 0) => (createObjectURL.mock.calls[callIndex][0] as Blob).type;
 
         it('should create a blob', () => {
             const data = stringToUint8Array('data');
@@ -174,6 +179,30 @@ describe('messageEmbeddeds', () => {
             const blob = createBlob(attachment, data);
 
             expect(blob).toEqual('url');
+        });
+
+        it('should keep the attachment mime type for non-SVG attachments', () => {
+            createBlob({ MIMEType: 'image/png' } as Attachment, stringToUint8Array('data'));
+
+            expect(getBlobType()).toEqual('image/png');
+        });
+
+        it('should force application/octet-stream for SVG attachments so they cannot be rendered', () => {
+            // Includes legacy/alternative spellings and an appended charset, which is exactly
+            // what couldPotentiallyBeRenderedAsSVG guards against.
+            const svgMimeTypes = [
+                'image/svg+xml',
+                'image/svg',
+                'application/svg+xml',
+                'image/svg+xml; charset=utf-8',
+                'IMAGE/SVG+XML',
+            ];
+
+            svgMimeTypes.forEach((MIMEType, index) => {
+                createBlob({ MIMEType } as Attachment, stringToUint8Array('data'));
+
+                expect(getBlobType(index)).toEqual('application/octet-stream');
+            });
         });
     });
 
