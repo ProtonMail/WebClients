@@ -86,7 +86,7 @@ function waitForState(actor: ReturnType<typeof startActor>, state: StateValue) {
 function sendRecoveryStarted(
     actor: ReturnType<typeof startActor>,
     methods: RecoveryMethod[] = [],
-    extras: { redactedEmail?: string; redactedPhoneNumber?: string } = {}
+    extras: { redactedEmail?: string; redactedPhoneNumber?: string; hasEmergencyContacts?: boolean } = {}
 ) {
     actor.send({
         type: 'recovery.started',
@@ -96,12 +96,17 @@ function sendRecoveryStarted(
             accountType: 'internal',
             redactedEmail: extras.redactedEmail,
             redactedPhoneNumber: extras.redactedPhoneNumber,
+            hasEmergencyContacts: extras.hasEmergencyContacts ?? false,
         },
     });
 }
 
-async function navigatePastLoadRecoveryMethods(actor: ReturnType<typeof startActor>, methods: RecoveryMethod[] = []) {
-    sendRecoveryStarted(actor, methods);
+async function navigatePastLoadRecoveryMethods(
+    actor: ReturnType<typeof startActor>,
+    methods: RecoveryMethod[] = [],
+    extras: { hasEmergencyContacts?: boolean } = {}
+) {
+    sendRecoveryStarted(actor, methods, extras);
     return waitUntilLeft(actor, 'loadRecoveryMethods');
 }
 
@@ -156,8 +161,11 @@ async function navigatePastAuthenticatedInvokeChain(
     return waitUntilLeft(actor, { authenticatedRecovery: 'checkSocialRecovery' });
 }
 
-async function navigateToUnauthenticatedRecovery(actor: ReturnType<typeof startActor>) {
-    await navigatePastLoadRecoveryMethods(actor, []);
+async function navigateToUnauthenticatedRecovery(
+    actor: ReturnType<typeof startActor>,
+    extras: { hasEmergencyContacts?: boolean } = {}
+) {
+    await navigatePastLoadRecoveryMethods(actor, [], extras);
     return waitForState(actor, { unauthenticatedRecovery: 'otherSessionsPrompt' });
 }
 
@@ -704,11 +712,18 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'activeSessionInstructions' })).toBe(true);
         });
 
-        it('decision.no → emergencyAccessOffer', async () => {
+        it('decision.no with emergencyContacts → emergencyAccessOffer', async () => {
             const actor = startActor();
-            await navigateToUnauthenticatedRecovery(actor);
+            await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: true });
             actor.send({ type: 'decision.no' });
             expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'emergencyAccessOffer' })).toBe(true);
+        });
+
+        it('decision.no without emergencyContacts → recoveryFailed', async () => {
+            const actor = startActor();
+            await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: false });
+            actor.send({ type: 'decision.no' });
+            expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
         });
 
         it('decision.back → entry', async () => {
@@ -720,17 +735,23 @@ describe('UnauthedForgotPasswordStateMachine', () => {
     });
 
     describe('unauthenticatedRecovery.activeSessionInstructions', () => {
-        async function navigateToUnauthActiveSession() {
+        async function navigateToUnauthActiveSession(extras: { hasEmergencyContacts?: boolean } = {}) {
             const actor = startActor();
-            await navigateToUnauthenticatedRecovery(actor);
+            await navigateToUnauthenticatedRecovery(actor, extras);
             actor.send({ type: 'decision.yes' });
             return actor;
         }
 
-        it('decision.skip → emergencyAccessOffer', async () => {
-            const actor = await navigateToUnauthActiveSession();
+        it('decision.skip with emergencyContacts → emergencyAccessOffer', async () => {
+            const actor = await navigateToUnauthActiveSession({ hasEmergencyContacts: true });
             actor.send({ type: 'decision.skip' });
             expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'emergencyAccessOffer' })).toBe(true);
+        });
+
+        it('decision.skip without emergencyContacts → recoveryFailed', async () => {
+            const actor = await navigateToUnauthActiveSession({ hasEmergencyContacts: false });
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
         });
 
         it('decision.back → otherSessionsPrompt', async () => {
@@ -743,7 +764,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
     describe('unauthenticatedRecovery.emergencyAccessOffer', () => {
         async function navigateToUnauthEmergencyOffer() {
             const actor = startActor();
-            await navigateToUnauthenticatedRecovery(actor);
+            await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: true });
             actor.send({ type: 'decision.no' });
             return actor;
         }
@@ -776,7 +797,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
                 await waitForState(actor, { authenticatedRecovery: 'emergencyAccessOffer' });
                 actor.send({ type: 'decision.yes' });
             } else {
-                await navigateToUnauthenticatedRecovery(actor);
+                await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: true });
                 actor.send({ type: 'decision.no' });
                 actor.send({ type: 'decision.yes' });
             }
@@ -829,14 +850,23 @@ describe('UnauthedForgotPasswordStateMachine', () => {
     });
 
     describe('recoveryFailed', () => {
-        it('decision.back → unauthenticatedRecovery.emergencyAccessOffer', async () => {
+        it('decision.back with emergencyContacts → unauthenticatedRecovery.emergencyAccessOffer', async () => {
             const actor = startActor();
-            await navigateToUnauthenticatedRecovery(actor);
+            await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: true });
             actor.send({ type: 'decision.no' });
             actor.send({ type: 'decision.no' });
             expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
             actor.send({ type: 'decision.back' });
             expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'emergencyAccessOffer' })).toBe(true);
+        });
+
+        it('decision.back without emergencyContacts → unauthenticatedRecovery.otherSessionsPrompt', async () => {
+            const actor = startActor();
+            await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: false });
+            actor.send({ type: 'decision.no' });
+            expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
         });
     });
 

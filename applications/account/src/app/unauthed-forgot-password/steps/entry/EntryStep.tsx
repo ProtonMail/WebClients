@@ -85,6 +85,7 @@ export const EntryStep = () => {
                         username,
                         redactedEmail: '',
                         redactedPhoneNumber: '',
+                        hasEmergencyContacts: false,
                     },
                 });
             } else {
