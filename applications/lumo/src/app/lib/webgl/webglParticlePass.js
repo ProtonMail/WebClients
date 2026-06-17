@@ -55,6 +55,11 @@ const FRAGMENT_SHADER = `
   }
 
   void main() {
+    vec2 pointCoord = gl_PointCoord - vec2(0.5);
+    float roundDist = length(pointCoord);
+    float roundMask = 1.0 - smoothstep(0.46, 0.5, roundDist);
+    if (roundMask <= 0.001) discard;
+
     vec2 texUv = vec2(
       v_position.x / u_resolution.x,
       1.0 - v_position.y / u_resolution.y
@@ -70,7 +75,7 @@ const FRAGMENT_SHADER = `
       mouseBoost = t * t * (3.0 - 2.0 * t) * u_mouseBrighten;
     }
 
-    float alpha = reveal * v_breatheMul * u_maxAlpha + mouseBoost * reveal;
+    float alpha = (reveal * v_breatheMul * u_maxAlpha + mouseBoost * reveal) * roundMask;
     if (alpha <= 0.001) discard;
 
     gl_FragColor = vec4(u_dotColor, alpha);
