@@ -15,6 +15,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
 import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -23,7 +24,6 @@ import { TabState, categoryColorClassName } from './tabsInterface';
 interface Props {
     category: CategoryTab;
     tabState: TabState;
-    count: number;
 }
 
 const navClasses: Record<TabState, string> = {
@@ -33,13 +33,14 @@ const navClasses: Record<TabState, string> = {
     [TabState.INACTIVE]: 'border border-transparent',
 };
 
-export const Tab = ({ category, count, tabState }: Props) => {
+export const Tab = ({ category, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
 
     const history = useHistory();
-    const labelID = useMailSelector(selectLabelID);
     const { call } = useEventManager();
 
+    const labelID = useMailSelector(selectLabelID);
+    const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id));
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const [refreshing, withRefreshing] = useLoading(false);
