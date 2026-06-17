@@ -158,7 +158,11 @@ export const createClientController = ({
 
             const unsubscribe = observer.subscribe(async (evt) => {
                 if (controller.instance) return controller.deferredUnsubscribe?.();
-                if (await isDeferredStartTrigger(evt)) void controller.start();
+                if (await isDeferredStartTrigger(evt)) {
+                    /** start & flush immediately when deferred */
+                    void controller.start();
+                    void controller.start.flush();
+                }
             });
 
             controller.deferredUnsubscribe = () => {
