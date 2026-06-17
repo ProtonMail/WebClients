@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon } from '@proton/components/index';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useIsRecordingSupported } from '../../hooks/useMeetingRecorderNew/hooks/useIsRecordingSupported';
+import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 
 export const SettingsDropdown = () => {
     const isRecordingRecoveryUIEnabled = useFlag('MeetRecordingRecoveryUI');
