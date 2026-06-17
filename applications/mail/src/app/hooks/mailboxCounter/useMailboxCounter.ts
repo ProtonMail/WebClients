@@ -1,4 +1,6 @@
 // We need the counters in this file because this is where we compute their values
+import { useMemo } from 'react';
+
 // eslint-disable-next-line no-restricted-imports
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 // eslint-disable-next-line no-restricted-imports
@@ -13,7 +15,7 @@ import { useCategoriesView } from 'proton-mail/components/categoryView/useCatego
 import { selectCategoryIDs, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import type { MailboxCounterReturn } from './interface';
+import type { LocationCountMap, MailboxCounterReturn } from './interface';
 import { getCounterMap, getRawLocationCount } from './useMailboxCounter.helpers';
 
 export const useMailboxCounter = (): MailboxCounterReturn => {
@@ -35,16 +37,28 @@ export const useMailboxCounter = (): MailboxCounterReturn => {
         labelsLoading || foldersLoading || systemFoldersLoading || conversationCountsLoading || messageCountsLoading;
     const hasAllData = mailSettings && labels && folders && systemFolders && conversationCounts && messageCounts;
 
-    let counterMap = {};
-    if (!loading && hasAllData) {
-        counterMap = getCounterMap({
+    const counterMap = useMemo<LocationCountMap>(() => {
+        if (loading || !hasAllData) {
+            return {};
+        }
+        return getCounterMap({
             labels: [...labels, ...folders, ...systemFolders],
             conversationCounts,
             messageCounts,
             mailSettings,
             disabledCategoryIDs,
         });
-    }
+    }, [
+        loading,
+        hasAllData,
+        labels,
+        folders,
+        systemFolders,
+        conversationCounts,
+        messageCounts,
+        mailSettings,
+        disabledCategoryIDs,
+    ]);
 
     const getLocationCount = (labelID: string): SafeLabelCount => {
         if (labelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess) {
