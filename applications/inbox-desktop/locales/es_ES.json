@@ -125,11 +125,11 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Desinstalar ${ MAIL_APP_NAME }"
       ],
-      "When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.": [
-        "Cuando se desactiva la aceleración por hardware, la aplicación recurre al renderizado por software. Esto puede causar animaciones entrecortadas, pérdida de fotogramas, una reproducción de vídeo más lenta, un mayor uso de la CPU y un rendimiento gráfico reducido."
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Cuando se habilita la aceleración por hardware, la aplicación usa el hardware gráfico dedicado de tu dispositivo para el renderizado. Esto puede causar problemas de compatibilidad en algunos sistemas."
       ],
-      "When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
-        "Cuando se activa la aceleración por hardware, la aplicación usa el hardware gráfico dedicado de tu dispositivo para el renderizado. Esto puede causar problemas de compatibilidad en algunos sistemas."
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Sin aceleración por hardware, la aplicación usa el renderizado por software en lugar de tu tarjeta gráfica. Puedes notar animaciones más lentas y un mayor uso de la CPU."
       ],
       "Zoom": [
         "Aumentar"

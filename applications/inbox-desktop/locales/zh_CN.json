@@ -6,7 +6,7 @@
   "contexts": {
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
-        "\"立即重启并分析\"将立即重启应用并捕获启动过程的分析数据。\n\n\"下次启动时分析\"将在您下次打开应用时进行分析，该选项用于测量重启设备后的启动速度。"
+        "“立即重启并分析”将立即重启应用并捕获启动过程的分析数据。\n\n“下次启动时分析”将在您下次打开应用时进行分析，该选项用于测量重启设备后的启动速度。"
       ],
       "About ${ MAIL_APP_NAME }": [
         "关于 ${ MAIL_APP_NAME }"
@@ -123,7 +123,7 @@
         "切换到 ${ appName }"
       ],
       "These logs help us diagnose issues. The app will restart to apply the change.": [
-        "这些日志有助于我们诊断问题，应用将重启以应用更改。"
+        "这些日志有助于我们诊断问题，软件将重启以应用更改。"
       ],
       "This will measure how long the app takes to start and save a report to your logs folder.": [
         "此项将测量应用启动所需时间，并将报告保存到您的日志文件夹中。"
@@ -137,11 +137,11 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "卸载 ${ MAIL_APP_NAME }"
       ],
-      "When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.": [
-        "当禁用硬件加速时，应用将回退到软件渲染模式。这可能导致动画卡顿、丢帧、视频播放变慢、CPU 占用升高以及图形性能下降。"
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "当启用硬件加速时，该应用将使用设备专用的图形硬件进行渲染。这可能在部分系统上引发兼容性问题。"
       ],
-      "When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
-        "当启用硬件加速时，应用将使用设备专用的图形硬件进行渲染。这可能在部分系统上引发兼容性问题。"
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "如果没有硬件加速，该应用将使用软件渲染而不是您的显卡渲染。您可能会注意到动画速度变慢，CPU 使用率升高。"
       ],
       "Zoom": [
         "缩放"
