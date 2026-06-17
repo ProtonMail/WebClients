@@ -8401,8 +8401,8 @@
         "Afsenderen har anmodet om en læsekvittering."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Bekræftelsen af ${ contactNames } mislykkedes: Kontakten er ikke signeret korrekt.\nDette kan være resultatet af en nulstilling af adgangskoden.\nDu skal gensignere kontakten for at sende en besked til ${ contactAddresses } eller redigere kontakten.",
-        "Bekræftelsen af ${ contactNames } mislykkedes: Kontakterne er ikke signeret korrekt.\nDette kan være resultatet af en nulstilling af adgangskoden.\nDu skal gensignere kontakterne for at sende en besked til ${ contactAddresses } eller redigere kontakterne."
+        "Bekræftelsen af ${ contactNames } mislykkedes: Kontakten er ikke signeret korrekt.\nDette kan være resultatet af en nulstilling af adgangskoden.\nDu skal signere kontakten igen for at sende en besked til ${ contactAddresses } eller redigere kontakten.",
+        "Bekræftelsen af ${ contactNames } mislykkedes: Kontakterne er ikke signeret korrekt.\nDette kan være resultatet af en nulstilling af adgangskoden.\nDu skal signere kontakterne igen for at sende en besked til ${ contactAddresses } eller redigere kontakterne."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
@@ -8444,8 +8444,8 @@
         "Denne samtale indeholder kasserede beskeder."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne samtale vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?",
-        "Disse samtaler vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?"
+        "Denne samtale vil blive markeret som spam. Vil du også afmelde fremtidige e-mails?",
+        "Disse samtaler vil blive markeret som spam. Vil du også afmelde fremtidige e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Denne e-mail bestod ikke sit domænes godkendelseskrav. Den kan være falsk eller ukorrekt videresendt."
@@ -8934,8 +8934,8 @@
         "Du har **${ count } beskeder** gemt i denne mappe"
       ],
       "You have **${ count } message** tagged with this label": [
-        "Du har **${ count } besked** mærket med denne etiket",
-        "Du har **${ count } beskeder** mærket med denne etiket"
+        "Du har **${ count } besked** markeret med denne etiket",
+        "Du har **${ count } beskeder** markeret med denne etiket"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -9248,8 +9248,8 @@
         "Ønsker du at stole på de primære offentlige nøgler med følgende fingeraftryk?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Du har aktiveret adresseverifikation med betroede nøgler for denne e-mailadresse, men ingen aktive krypteringsnøgler er betroet.\nDu skal vælge en nøgle som betroet for at kunne sende en besked til denne e-mailadresse.",
-        "Du har aktiveret adresseverifikation med betroede nøgler for disse e-mailadresser, men ingen aktive krypteringsnøgler er betroet.\nDu skal vælge nøgler som betroet for at kunne sende en besked til disse e-mailadresser."
+        "Du har aktiveret adresseverifikation med betroede nøgler for denne e-mailadresse, men ingen aktive krypteringsnøgler er betroede.\nDu skal angive en nøgle som betroet for at kunne sende en besked til denne e-mailadresse.",
+        "Du har aktiveret adresseverifikation med betroede nøgler for disse e-mailadresser, men ingen aktive krypteringsnøgler er betroede.\nDu skal angive nøgler som betroede for at kunne sende en meddelelse til disse e-mailadresser."
       ]
     },
     "Key validation warning": {
@@ -10242,6 +10242,18 @@
       ],
       "Email categories": [
         "E-mailkategorier"
+      ],
+      "Calendars": [
+        "Kalendere"
+      ],
+      "Download logs": [
+        "Hent logfiler"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13484,8 +13496,8 @@
         "Vil du alligevel sende e-mailen?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Vi har opdaget fejl. Din e-mail kan ikke sendes til den indtastede e-mailadresse af følgende årsag:",
-        "Vi har opdaget fejl. Din e-mail kan ikke sendes til nogen af de indtastede e-mailadresser af følgende årsager:"
+        "Vi har registreret fejl. Din e-mail kan ikke sendes til den indtastede e-mailadresse af følgende årsag:",
+        "Vi har registreret fejl. Din e-mail kan ikke sendes til nogen af de indtastede e-mailadresser af følgende årsager:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Vi har opdaget nogle fejl. Din e-mail kan ikke sendes til en eller flere af de indtastede e-mailadresser af de følgende årsager:"
@@ -14722,7 +14734,7 @@
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } besked markeret som ulæst.",
-        "${ elementsCount } beskeder markeret som ulæste"
+        "${ elementsCount } beskeder markeret som ulæste."
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } besked flyttet til ${ labelName } og afsender tilføjet til din ikke-spam-liste.",
@@ -16245,6 +16257,9 @@
       ],
       "Verify your password": [
         "Bekræft din adgangskode"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {

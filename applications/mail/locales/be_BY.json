@@ -5414,7 +5414,7 @@
         "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
       ],
       "Please configure a custom domain before adding addresses.": [
-        "Перад дадаваннем адрасоў неабходна сканфігураваць карыстальніцкі дамен."
+        "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Cканфігурыруйце свой карыстальніцкі дамен перад тым, як дадаваць карыстальнікаў у вашу арганізацыю."
@@ -6809,9 +6809,9 @@
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "Будзе пазначана прачытанай ${ elementsCount } размова",
-        "Будзе пазначана прачытанай ${ elementsCount } размовы",
-        "Будзе пазначана прачытанай ${ elementsCount } размоў",
-        "Будзе пазначана як прачытаная ${ elementsCount } размоў"
+        "Будуць пазначаны прачытанымі ${ elementsCount } размовы",
+        "Будуць пазначаны прачытанымі ${ elementsCount } размоў.",
+        "Будуць пазначаны прачытанымі ${ elementsCount } размоў."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "Будзе пазначана непрачытанай ${ elementsCount } размова",
@@ -6839,9 +6839,9 @@
       ],
       "${ elementsCount } message will be marked as read.": [
         "Будзе пазначана як прачытанае ${ elementsCount } паведамленне.",
-        "Будзе пазначана як прачытанае ${ elementsCount } паведамленні.",
-        "Будзе пазначана як прачытанае ${ elementsCount } паведамленняў.",
-        "Будзе пазначана як прачытанае ${ elementsCount } паведамленняў."
+        "Будуць пазначаны як прачытаныя ${ elementsCount } паведамленні.",
+        "Будуць пазначаны як прачытаныя ${ elementsCount } паведамленняў.",
+        "Будуць пазначаны як прачытаныя ${ elementsCount } паведамленняў."
       ],
       "${ elementsCount } message will be marked as unread.": [
         "Будзе пазначана як непрачытанае ${ elementsCount } паведамленне",
@@ -6851,9 +6851,9 @@
       ],
       "${ elementsCount } message will be moved": [
         "Будзе перамешчана ${ elementsCount } паведамленне",
-        "Будзе перамешчана ${ elementsCount } паведамленні",
-        "Будзе перамешчана ${ elementsCount } паведамленняў",
-        "Будзе перамешчана ${ elementsCount } паведамленняў"
+        "Будуць перамешчаны ${ elementsCount } паведамленні",
+        "Будуць перамешчаны ${ elementsCount } паведамленняў",
+        "Будуць перамешчаны ${ elementsCount } паведамленняў"
       ],
       "${ elementsCount } message will be unlabelled from:": [
         "З ${ elementsCount } паведамлення будзе знята пазнака:",
@@ -9215,9 +9215,9 @@
       ],
       "You have **${ count } message** tagged with this label": [
         "У вас **${ count } паведамленне** пазначана гэтай меткай",
-        "У вас **${ count } паведамленні** пазначана гэтай меткай",
-        "У вас **${ count } паведамленняў** пазначана гэтай меткай",
-        "У вас **${ count } паведамленняў** пазначана гэтай меткай"
+        "У вас **${ count } паведамленні** пазначаны гэтай меткай",
+        "У вас **${ count } паведамленняў** пазначаны гэтай меткай",
+        "У вас **${ count } паведамленняў** пазначаны гэтай меткай"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. Дадайце спосаб аплаты, калі вы хочаце працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
@@ -10566,6 +10566,18 @@
       ],
       "Email categories": [
         "Катэгорыі электроннай пошты"
+      ],
+      "Calendars": [
+        "Календары"
+      ],
+      "Download logs": [
+        "Спампаваць журналы"
+      ],
+      "Emails": [
+        "Лісты"
+      ],
+      "URL": [
+        "URL-адрас"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15108,15 +15120,15 @@
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } размова пазначана як непрачытаная.",
-        "Пазначана як непрачытанае ${ elementsCount } размовы.",
-        "Пазначана як непрачытанае ${ elementsCount } размоў.",
-        "Пазначана як непрачытанае ${ elementsCount } размоў."
+        "${ elementsCount } размовы пазначаны як непрачытаныя.",
+        "${ elementsCount } размоў пазначаны як непрачытаныя.",
+        "${ elementsCount } размоў пазначаны як непрачытаныя."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } размова перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
-        "${ elementsCount } размовы перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
-        "${ elementsCount } размоў перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
-        "${ elementsCount } размоў перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам."
+        "${ elementsCount } размовы перамешчаны ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размоў перамешчаны ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размоў перамешчаны ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
         "${ elementsCount } размова перамешчана ў ${ labelName }.",
@@ -15132,15 +15144,15 @@
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "Выдалена ${ elementsCount } размова з ${ labelName }.",
-        "Выдалена ${ elementsCount } размовы з ${ labelName }.",
-        "Выдалена ${ elementsCount } размоў з ${ labelName }.",
-        "Выдалена ${ elementsCount } размоў з ${ labelName }."
+        "Выдалены ${ elementsCount } размовы з ${ labelName }.",
+        "Выдалены ${ elementsCount } размоў з ${ labelName }.",
+        "Выдалены ${ elementsCount } размоў з ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
         "З пазначаных зорачкай выдалена ${ elementsCount } размова.",
         "З пазначаных зорачкай выдалена ${ elementsCount } размовы.",
         "З пазначаных зорачкай выдалена ${ elementsCount } размоў.",
-        "З пазначаных зорачкай выдалена ${ elementsCount } размоў."
+        "З пазначаных зорачкай выдалена ${ elementsCount } размовы."
       ],
       "${ elementsCount } conversation snoozed": [
         "Адкладзена ${ elementsCount } размова",
@@ -15155,10 +15167,10 @@
         "У ${ elementsCount } размовах скасавана адкладанне"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
-        "Дададзена да ${ labelName } ${ elementsCount } паведамленне.",
-        "Дададзена да ${ labelName } ${ elementsCount } паведамленні.",
-        "Дададзена да ${ labelName } ${ elementsCount } паведамленняў.",
-        "Дададзена да ${ labelName } ${ elementsCount } паведамленняў."
+        "${ elementsCount } паведамленне дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленні дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленняў дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленняў дададзена да ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
         "Пазначана як прачытанае ${ elementsCount } паведамленне.",
@@ -15173,10 +15185,10 @@
         "Пазначана зорачкай ${ elementsCount } паведамленняў."
       ],
       "${ elementsCount } message marked as unread.": [
-        "Пазначана як непрачытанае ${ elementsCount } паведамленне",
-        "Пазначана як непрачытанае ${ elementsCount } паведамленні",
-        "Пазначана як непрачытанае ${ elementsCount } паведамленняў",
-        "Пазначана як непрачытанае ${ elementsCount } паведамленняў"
+        "Пазначана як непрачытана ${ elementsCount } паведамленне",
+        "Пазначана як непрачытана ${ elementsCount } паведамленні",
+        "Пазначана як непрачытана ${ elementsCount } паведамленняў",
+        "Пазначана як непрачытана ${ elementsCount } паведамленняў"
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } паведамленне перамешчана ў ${ labelName }, а адпраўнік дададзены ў ваш спіс не спам.",
@@ -16698,10 +16710,10 @@
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "Мы абаранілі вас ад ${ trackersCount } праграмы сачэння",
-        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння",
-        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння",
-        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння"
+        "Вы абаронены ад ${ trackersCount } праграмы сачэння",
+        "Вы абаронены ад ${ trackersCount } праграм сачэння",
+        "Вы абаронены ад ${ trackersCount } праграм сачэння",
+        "Вы абаронены ад ${ trackersCount } праграм сачэння"
       ],
       "We'd love to hear from you!": [
         "Нам было б прыемна пачуць гэта!"
@@ -16765,6 +16777,9 @@
       ],
       "Verify your password": [
         "Спраўджанне вашага пароля"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ]
     },
     "Today icon tooltip in mini calendar": {

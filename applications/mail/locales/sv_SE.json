@@ -478,7 +478,7 @@
         "Ladda ner ${ DRIVE_APP_NAME } appen"
       ],
       "Download all attachments": [
-        "Ladda ner alla bilagor"
+        "Ladda ned alla bilagor"
       ],
       "Download application logs": [
         "Ladda ner applikationsloggar"
@@ -908,10 +908,10 @@
         "Minimera redigeringsfönster"
       ],
       "Modify": [
-        "Modifiera"
+        "Ändra"
       ],
       "Modify selection": [
-        "Modifiera val"
+        "Ändra val"
       ],
       "Monday": [
         "Måndag"
@@ -1031,7 +1031,7 @@
         "Inte nu"
       ],
       "Not saved": [
-        "Inte sparad"
+        "Inte sparat"
       ],
       "OK": [
         "OK"
@@ -1064,7 +1064,7 @@
         "Lösenfras"
       ],
       "Pause": [
-        "Pausa"
+        "Paus"
       ],
       "Pay": [
         "Betala"
@@ -1118,7 +1118,7 @@
         "Läskvitto skickat"
       ],
       "Recently read": [
-        "Nyligen läst"
+        "Nyligen lästa"
       ],
       "Recently received": [
         "Nyligen mottaget"
@@ -1439,7 +1439,7 @@
         "Snooza"
       ],
       "Star": [
-        "Stjärnmärk"
+        "Stjärna"
       ],
       "Start import": [
         "Starta import"
@@ -1454,10 +1454,10 @@
         "Stanna"
       ],
       "Stop downloading assistant": [
-        "Stoppa nedladdning av assistent"
+        "Stoppa ladda ner assistent"
       ],
       "Stop generating result": [
-        "Sluta generera resultat"
+        "Stoppa generera resultat"
       ],
       "Stop marking as read": [
         "Sluta markera som läst"
@@ -1563,7 +1563,7 @@
         "Osorterad lista"
       ],
       "Unsnooze": [
-        "Avsnooza"
+        "Stäng av snooze"
       ],
       "Unstar": [
         "Ta bort stjärnmärkning"
@@ -1638,7 +1638,7 @@
         "Använd återställningskod"
       ],
       "Use this": [
-        "Använd denna"
+        "Använd detta"
       ],
       "Use this Gmail address": [
         "Använd denna Gmail-adress"
@@ -1721,6 +1721,12 @@
       ],
       "Verify now": [
         "Verifiera nu"
+      ],
+      "Hide ${ title }": [
+        "Dölj ${ title }"
+      ],
+      "Show ${ title }": [
+        "Visa ${ title }"
       ]
     },
     "action": {
@@ -2435,7 +2441,7 @@
         "${ participantName } hade tidigare avböjt din inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } har tidigare avböjt din inbjudan."
+        "${ participantName } hade tidigare avböjt din inbjudan."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
         "${ participantName } hade tidigare preliminärt accepterat din inbjudan till en förekomst av händelsen."
@@ -2543,7 +2549,7 @@
         "Denna inbjudan är inaktuell. Händelsen har uppdaterats."
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Detta nya tidsförslag matchar inte dina inbjudningsdetaljer. Verifiera inbjudningsdetaljerna i din kalender."
+        "Det här nya tidsförslaget matchar inte dina inbjudningsdetaljer. Verifiera inbjudningsdetaljerna i din kalender."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Detta svar matchar inte dina inbjudningsdetaljer. Verifiera inbjudningsdetaljerna i din kalender."
@@ -2944,7 +2950,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "End-to-end-krypterad"
+        "End-to-end-krypterat"
       ],
       "End-to-end encrypted to verified recipient": [
         "End-to-end-krypterat till verifierad mottagare"
@@ -2953,7 +2959,7 @@
         "End-to-end-krypterat. ${ warningsText }"
       ],
       "PGP-encrypted": [
-        "PGP-krypterad"
+        "PGP-krypterat"
       ],
       "PGP-encrypted to verified recipient": [
         "PGP-krypterad till verifierad mottagare"
@@ -2962,7 +2968,7 @@
         "PGP-krypterad. ${ warningsText }"
       ],
       "PGP-signed": [
-        "PGP-signerad"
+        "PGP-signerat"
       ],
       "The address might be misspelled": [
         "Adressen kan vara felstavad"
@@ -3959,7 +3965,7 @@
         "Bilaga"
       ],
       "Filter on": [
-        "Filtrera på"
+        "Filter på"
       ],
       "Next": [
         "Nästa"
@@ -4587,7 +4593,7 @@
         "Händelsen blev inställd"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        "Händelsen uppdaterades. Denna påminnelse är inaktuell."
+        "Händelse uppdaterades. Denna påminnelse är inaktuell."
       ]
     },
     "Email subject": {
@@ -4861,7 +4867,7 @@
         "Ogiltigt förfallodatum"
       ],
       "Invalid expiration time": [
-        "Ogiltig förfallotid"
+        "Ogiltig utgångstid"
       ],
       "Invalid IBAN": [
         "Ogiltigt IBAN"
@@ -5130,7 +5136,7 @@
         "Text är för lång för att finjustera"
       ],
       "Thanks for the feedback!": [
-        "Tack för din feedback!"
+        "Tack för feedbacken!"
       ],
       "That action can't be performed on emails in this folder": [
         "Denna åtgärd kan inte utföras på e-post i denna mapp"
@@ -6095,7 +6101,7 @@
         "Använd din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
       ],
       "We stop advertisers and data collectors from profiling you.": [
-        "Vi hindrar annonsörer och datainsamlare från att profilera dig."
+        "Vi stoppar annonsörer och datainsamlare från att profilera dig."
       ],
       "You've unlocked 1 GB": [
         "Du har låst upp 1 GB"
@@ -6980,7 +6986,7 @@
         "Arkivera befintliga meddelanden"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "Är du säker på att du vill ta bort alla meddelanden i denna mapp?"
+        "Är du säker på att du vill radera alla meddelanden i denna mapp?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Är du säker på att du vill ta bort alla meddelanden med denna etikett?"
@@ -7246,7 +7252,7 @@
         "Visste du att du har krypterad molnlagring inkluderat med ditt ${ BRAND_NAME }-konto? Gå till ${ DRIVE_APP_NAME } och få ut det mesta av ditt utrymme. Det är gratis."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
-        "Visste du detta ? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
+        "Visste du detta? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Upptäck nya funktioner upplåsta och börja använda dem direkt!"
@@ -7768,7 +7774,7 @@
         "Meddelandelista"
       ],
       "Message sent": [
-        "Meddelande skickat"
+        "Meddelandet skickat"
       ],
       "Message sent.": [
         "Meddelande skickat."
@@ -8051,7 +8057,7 @@
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
       ],
       "Proofread selection": [
-        "Korrekturläs markering"
+        "Korrekturläs urval"
       ],
       "Proofread text": [
         "Korrekturläs text"
@@ -8166,7 +8172,7 @@
         "Skicka meddelanden vid rätt tidpunkt"
       ],
       "Sender has been blocked.": [
-        "Avsändaren har blockerats."
+        "Avsändare har blockerats."
       ],
       "Sending": [
         "Skickar"
@@ -8208,7 +8214,7 @@
         "Ställer in din nya adress…"
       ],
       "Shorten selection": [
-        "Förkorta markering"
+        "Förkorta val"
       ],
       "Shorten text": [
         "Förkorta text"
@@ -8384,10 +8390,10 @@
         "Denna konversation innehåller ett schemalagt meddelande. Sändningen av detta meddelande kommer att avbrytas."
       ],
       "This conversation contains non-trashed messages.": [
-        "Denna konversation innehåller icke kastade meddelanden."
+        "Denna konversation innehåller meddelanden utanför papperskorgen."
       ],
       "This conversation contains one or more expiring messages": [
-        "Denna konversation innehåller ett eller flera utlöpta meddelanden"
+        "Denna konversation innehåller ett eller fler utlöpta meddelanden"
       ],
       "This conversation contains trashed messages.": [
         "Denna konversation innehåller kastade meddelanden."
@@ -9091,6 +9097,9 @@
       ],
       "We'll remind you to verify your password again later": [
         "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
+      ],
+      "All your files will be imported": [
+        "Alla dina filer kommer att importeras"
       ]
     },
     "info": {
@@ -10162,6 +10171,36 @@
       ],
       "Personal and work emails, plus important updates and notifications": [
         "Personlig och arbetsrelaterad e-post, plus viktiga uppdateringar och aviseringar"
+      ],
+      "Calendars": [
+        "Kalendrar"
+      ],
+      "Clear logs": [
+        "Rensa loggar"
+      ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "E-postmeddelanden"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Information": [
+        "Information"
+      ],
+      "Refresh logs": [
+        "Uppdatera loggar"
+      ],
+      "Sort": [
+        "Sortera"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10283,7 +10322,7 @@
         "All e-post"
       ],
       "Archive": [
-        "Arkivera"
+        "Arkiv"
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
@@ -10388,7 +10427,7 @@
         "Lär dig mer"
       ],
       "Less": [
-        "Färre"
+        "Mindre"
       ],
       "Manage blocked email addresses": [
         "Hantera blockerade e-postadresser"
@@ -12119,7 +12158,7 @@
         "Njut av en snabbare, fokuserad e-postupplevelse med appen för stationär dator."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
-        "För åtkomst när som helst till e-post och en optimerad mobil upplevelse ladda ner vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }-app."
+        "För åtkomst när som helst till e-post och en optimerad mobilupplevelse, ladda ner vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Bli aviserad om ditt lösenord är komprometterat."
@@ -13141,7 +13180,7 @@
         "PGP-signerat meddelande från verifierad avsändare"
       ],
       "PGP-signed message. Sender verification failed": [
-        "PGP-signerat meddelande. Avsändarverifieringen misslyckades"
+        "PGP-signerat meddelande. Avsändarverifiering misslyckades"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst"
@@ -13414,7 +13453,7 @@
         "Krypterad av ${ MAIL_APP_NAME } till verifierad mottagare"
       ],
       "End-to-end encrypted": [
-        "End-to-end-krypterad"
+        "End-to-end-krypterat"
       ],
       "End-to-end encrypted to PGP recipient": [
         "End-to-end-krypterat till PGP-mottagare"
@@ -13426,7 +13465,7 @@
         "End-to-end-krypterat till verifierad mottagare"
       ],
       "PGP-signed": [
-        "PGP-signerad"
+        "PGP-signerat"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst"
@@ -13698,7 +13737,7 @@
     },
     "Sort option": {
       "Largest first": [
-        "Största först"
+        "Störst först"
       ],
       "Newest first": [
         "Nyast först"
@@ -13707,7 +13746,7 @@
         "Äldsta först"
       ],
       "Smallest first": [
-        "Minsta först"
+        "Minst först"
       ],
       "Sort by": [
         "Sortera efter"
@@ -13990,7 +14029,7 @@
     },
     "Status": {
       "Alias disabled": [
-        "Alias inaktiverat"
+        "Alias inaktiverad"
       ],
       "Unsubscribed": [
         "Prenumeration avslutad"
@@ -14566,7 +14605,7 @@
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } konversation markerad som oläst.",
-        "${ elementsCount } konversationer markerade som olästa."
+        "${ elementsCount } konversationer markerad som olästa."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } meddelande flyttades till ${ labelName } och avsändaren lades till på Tillåt-listan.",
@@ -15348,7 +15387,7 @@
         "Ta bort etikett?"
       ],
       "Delete message": [
-        "Radera meddelande"
+        "Ta bort meddelande"
       ],
       "Deleting contacts": [
         "Tar bort kontakter"
@@ -15453,7 +15492,7 @@
         "Mappalternativ"
       ],
       "Forward": [
-        "Vidarebefordrad"
+        "Vidarebefordra"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i krediter med ${ planTitle }"
@@ -15532,7 +15571,7 @@
         "Importera din data till ${ BRAND_NAME }"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
-        "Öka säkerheten med ${ VPN_APP_NAME }"
+        "Öka säkerhet med ${ VPN_APP_NAME }"
       ],
       "Increase your privacy with more addresses": [
         "Öka din integritet med fler adresser"
@@ -15878,7 +15917,7 @@
         "Skicka och ta emot Gmail med ${ MAIL_APP_NAME }"
       ],
       "Send email": [
-        "Skicka e-post"
+        "Skicka epost"
       ],
       "Send with changed preferences?": [
         "Skicka med ändrade preferenser?"
@@ -16130,6 +16169,9 @@
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migrera din organisation till ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16448,7 +16490,7 @@
     },
     "WeekDay": {
       "Mon, ${ formatTime }": [
-        "Mån. ${ formatTime }"
+        "Mån, ${ formatTime }"
       ],
       "Sat, ${ formatTime }": [
         "Lör. ${ formatTime }"

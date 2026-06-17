@@ -179,7 +179,7 @@
         "Blocca mittente"
       ],
       "Block senders": [
-        "Blocca il mittente"
+        "Blocca mittenti"
       ],
       "Bold": [
         "Grassetto"
@@ -439,7 +439,7 @@
         "Disabilita l'alias"
       ],
       "Disabling alias": [
-        "Disabilitazione dell'alias"
+        "Disattivazione dell’alias"
       ],
       "Discard": [
         "Scarta"
@@ -2386,7 +2386,7 @@
         "${ participantName } aveva proposto un nuovo orario per una occorrenza di questo evento. Questa proposta è scaduta."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } aveva proposto un nuovo orario per una occorrenza di questo evento. Questa proposta è scaduta. L'evento non esiste più nel tuo calendario."
+        "${ participantName } ha proposto un nuovo orario per una sola occorrenza di questo evento. Questa proposta non è più valida. L’evento non esiste più nel tuo calendario."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } aveva proposto un nuovo orario per una occorrenza di questo evento. Questa proposta è scaduta. Non hai calendari."
@@ -4187,7 +4187,7 @@
         "Con i gruppi di contatti, puoi inviare email a tutte le persone nel gruppo con un solo click."
       ],
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
-        "Con il posticipo personalizzato, puoi nascondere le email e fare in modo che riappaiano in un momento migliore."
+        "Con la posticipazione personalizzata puoi nascondere le email e impostare la loro ricomparsa in un momento più opportuno."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Hai già un indirizzo Gmail che inoltra a ${ MAIL_APP_NAME }. Collegalo qui sotto per inviare e ricevere email direttamente da ${ MAIL_APP_NAME }."
@@ -8091,7 +8091,7 @@
         "Alcuni siti web e servizi di streaming bloccano i contenuti in base alla regione. Una VPN ti consente di aggirare queste restrizioni e accedere a Internet liberamente."
       ],
       "Sorry, this message does not exist or has already expired.": [
-        "Siamo spiacenti, questo messaggio non esiste o è già scaduto."
+        "Spiacenti, questo messaggio non esiste o è già scaduto."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
@@ -8479,7 +8479,7 @@
         "Effettua l'upgrade per aumentare il livello della tua privacy."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Effettua l'upgrade per inviare email dagli indirizzi @pm.me"
+        "Passa a un piano superiore per inviare email dagli indirizzi @pm.me."
       ],
       "Upgrade to send emails from your custom email domain.": [
         "Effettua l'upgrade per inviare email dal tuo dominio email personalizzato."
@@ -8765,8 +8765,8 @@
         "Hai selezionato **${ count } messaggi** con questa etichetta"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Hai selezionato** ${ elementsCount }conversazione** in${ location }",
-        "Hai selezionato**${ elementsCount } conversazioni** in${ location }"
+        "Hai selezionato **${ elementsCount } conversazione** in ${ location }",
+        "Hai selezionato **${ elementsCount } conversazioni** in ${ location }\""
       ],
       "You selected **${ elementsCount } conversation**.": [
         "Hai selezionato **${ elementsCount } conversazione**.",
@@ -9982,6 +9982,18 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Condividi le tue disponibilità con le pagine di prenotazione in ${ CALENDAR_APP_NAME }, e organizza riunioni sicure con ${ MEET_APP_NAME }."
+      ],
+      "Calendars": [
+        "Calendari"
+      ],
+      "Download logs": [
+        "Scarica i log"
+      ],
+      "Emails": [
+        "Email"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14745,7 +14757,7 @@
         "Crea un nuovo indirizzo email"
       ],
       "Create “${ suggestedFolderName }“ folder": [
-        "Crea la cartella \"${ suggestedFolderName }\""
+        "Crea la cartella “${ suggestedFolderName }”"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Scarica ${ VPN_APP_NAME }"
@@ -15021,8 +15033,8 @@
         "Elimina ${ count } conversazioni"
       ],
       "Delete ${ count } draft": [
-        "Elimina${ count } bozza",
-        "Elimina${ count } bozze"
+        "Elimina ${ count } bozza",
+        "Elimina ${ count } bozze"
       ],
       "Delete ${ count } message": [
         "Elimina ${ count } messaggio",
@@ -15810,6 +15822,9 @@
       ],
       "Summer Sale": [
         "Saldi estivi"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ]
     },
     "Today icon tooltip in mini calendar": {

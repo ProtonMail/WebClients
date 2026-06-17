@@ -1712,6 +1712,12 @@
       ],
       "Start testing": [
         "Comenzar las pruebas"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Or remove forwarding address": [
+        "O eliminar la dirección de reenvío"
       ]
     },
     "action": {
@@ -4305,6 +4311,35 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importan tus correos electrónicos de Gmail más recientes."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Para conectar una dirección de Gmail diferente, elimina las direcciones de Gmail adicionales que reenvían a ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Para conectar hasta ${ MAX_SYNC_PAID_USER } dirección de Gmail, actualiza a ${ planName }.",
+        "Para conectar hasta ${ MAX_SYNC_PAID_USER } direcciones de Gmail, actualiza a ${ planName }."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Actualiza a ${ planName } para conectar hasta ${ MAX_SYNC_PAID_USER } cuentas"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Estás reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
+        "Estás reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Has conectado ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, desactiva primero una de tus cuentas conectadas.",
+        "Has conectado ${ MAX_SYNC_PAID_USER } direcciones de Gmail. Para añadir otra, desactiva primero una de tus cuentas conectadas."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Has conectado una dirección de cuenta externa a ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Tu plan admite ${ MAX_SYNC_FREE_USER } dirección de Gmail.",
+        "Tu plan admite ${ MAX_SYNC_FREE_USER } direcciones de Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail.",
+        "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail."
       ]
     },
     "description": {
@@ -5293,6 +5328,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Algo salió mal al obtener los dominios disponibles"
+      ],
+      "Address could not be added.": [
+        "No se ha podido añadir la dirección."
       ]
     },
     "error": {
@@ -9069,6 +9107,37 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Mejora tu plan o libera espacio en cualquier momento para traer el resto."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta tu tráfico. ${ PASS_SHORT_APP_NAME } oculta tu identidad — **alias de «hide-my-email»** ilimitados y **alertas de la Dark Web** si tus datos se filtran alguna vez."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "All your files will be imported": [
+        "Todos tus archivos se importan"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
+      ],
+      "Enter code": [
+        "Introduce el código"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Por solo ${ bundlePlanPriceInline }"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "No disponible temporalmente debido a la alta demanda. Vuelve a intentarlo más tarde."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confía en la clave «${ activeSignerText }» para verificar los nuevos mensajes de este contacto."
       ]
     },
     "info": {
@@ -9135,6 +9204,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Firmante activo"
+      ],
+      "Fallback": [
+        "Alternativa"
       ]
     },
     "Key pinning": {
@@ -10137,6 +10212,66 @@
       ],
       "Select which Gmail address to connect": [
         "Selecciona qué dirección de Gmail conectar"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Clear logs": [
+        "Borrar registros"
+      ],
+      "Context page": [
+        "Página de contexto"
+      ],
+      "Context total": [
+        "Contexto total"
+      ],
+      "Current context": [
+        "Contexto actual"
+      ],
+      "Download logs": [
+        "Descargar los registros"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Elements in store": [
+        "Elementos en el almacén"
+      ],
+      "Emails": [
+        "Correos electrónicos"
+      ],
+      "Filter": [
+        "Filtro"
+      ],
+      "Information": [
+        "Información"
+      ],
+      "Label ID": [
+        "ID de la etiqueta"
+      ],
+      "Mail debugging information": [
+        "Información de depuración de correo"
+      ],
+      "Mail logs": [
+        "Registros de correo"
+      ],
+      "Refresh logs": [
+        "Refrescar logs"
+      ],
+      "Sort": [
+        "Ordenar"
+      ],
+      "Store state": [
+        "Estado del almacén"
+      ],
+      "Tab age": [
+        "Antigüedad de la pestaña"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11388,6 +11523,22 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "Access all countries": [
+        "Accede a todos los países"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificar citas con ${ n } página de reservas",
+        "Planificar citas con ${ n } páginas de reservas"
+      ],
+      "No streaming support": [
+        "Sin soporte para streaming"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -11804,6 +11955,10 @@
       "Support for ${ n } custom email domain": [
         "Soporte para ${ n } dominio de correo electrónico personalizado",
         "Soporte para ${ n } dominios de correo electrónico personalizado"
+      ],
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
       ]
     },
     "Notification": {
@@ -12661,6 +12816,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Te recomendamos que consideres esta clave \"no fiable\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Este contacto firma actualmente los mensajes con esta clave"
+      ],
+      "This key is used for message verification": [
+        "Esta clave se usa para la verificación de mensajes"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Esta clave se usa para cifrar mensajes para este contacto en aplicaciones más antiguas"
       ]
     },
     "PGP key warning": {
@@ -12857,6 +13021,9 @@
       ],
       "Search": [
         "Buscar"
+      ],
+      "Search for users or addresses": [
+        "Buscar usuarios o direcciones"
       ]
     },
     "Placeholder for contact group name": {
@@ -16082,6 +16249,9 @@
       ],
       "You are all set": [
         "Ya está todo listo"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16727,6 +16897,51 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Quienes han accedido a su cuenta de ${ BRAND_NAME }"
+      ],
+      "Activated": [
+        "Activado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "La dirección ya está siendo utilizada por un usuario ajeno a tu organización. Ponte en contacto con el servicio de atención al cliente para resolverlo."
+      ],
+      "All": [
+        "Todo"
+      ],
+      "Errors": [
+        "Errores"
+      ],
+      "Find out what can be migrated.": [
+        "Descubre qué se puede migrar"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No se ha encontrado la dirección del miembro. Contacta con el servicio de atención al cliente para solucionarlo."
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Missing organization private key": [
+        "Falta la clave privada de la organización"
+      ],
+      "Missing organization public key": [
+        "Falta la clave pública de la organización"
+      ],
+      "No users to display": [
+        "No hay usuarios que mostrar"
+      ],
+      "Not activated": [
+        "No activado"
+      ],
+      "Pending": [
+        "Pendiente"
+      ],
+      "Select users to migrate": [
+        "Seleccionar usuarios para migrar"
+      ],
+      "Size": [
+        "Tamaño"
+      ],
+      "You": [
+        "Tú"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
