@@ -3,6 +3,7 @@ import type {
     MessageEmbeddedImage,
     MessageState,
 } from '@proton/mail/store/messages/messagesTypes';
+import { couldPotentiallyBeRenderedAsSVG, isSupportedImage } from '@proton/shared/lib/helpers/mimetype';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasShowEmbedded } from '@proton/shared/lib/mail/images';
@@ -50,6 +51,18 @@ export const transformEmbedded = async (
                 }
 
                 const matches = findEmbedded(cid, cloc, document);
+                // NOTE: we remove inline images for SVG and any formats that are not common for security reasons.
+                // Especially SVG is risky, since any script will run when loaded outside of an img tag.
+                // CSP usually prevents inline scripts from loading, but if the initiator is not the current tab,
+                // like when a blob url is copied and pasted in the url bar, the CSP policy is lost,
+                // and scripts have access to the same origin without the CSP policy applied.
+                // Drafts are kept as-is since they hold the user's own content.
+                // Any attachments that are not used to display inline images will be shown in the attachment list to download.
+                const mimeType = attachment.MIMEType || '';
+                if (!draft && (couldPotentiallyBeRenderedAsSVG(mimeType) || !isSupportedImage(mimeType))) {
+                    matches.forEach((match) => match.remove());
+                    return [];
+                }
 
                 return matches.map((match) => {
                     const id = generateUID('embedded');
