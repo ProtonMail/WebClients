@@ -72,6 +72,8 @@ export interface WebglShaderBgConfig {
     sidebarOffsetPx?: number;
 }
 
+import type { GridParticleFieldOptions } from './gridParticleField';
+
 export type WebglShaderBgMount = 'viewport' | 'content';
 
 export interface WebglShaderBgRuntime {
@@ -81,7 +83,9 @@ export interface WebglShaderBgRuntime {
     maxDpr?: number;
     /** Throttle animation updates (default: 60). */
     targetFps?: number;
-    /** Called after each rendered shader frame (e.g. to drive the particle layer). */
+    /** Dot-grid reveal pass rendered after blobs on the same canvas. */
+    particleOptions?: Partial<GridParticleFieldOptions>;
+    /** Optional hook after each rendered frame (time in milliseconds). */
     onAfterRender?: (timeMs: number) => void;
 }
 
