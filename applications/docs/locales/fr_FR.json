@@ -10026,9 +10026,15 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Récupération du compte"
@@ -10695,8 +10701,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Assistance immédiate grâce à l'IA et à des experts humains."
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "Load image": [
         "Charger l'image"
