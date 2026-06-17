@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import metrics from '@proton/metrics';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -39,6 +40,7 @@ const Step2 = ({
     }, []);
 
     useEffect(() => {
+        telemetry.sendCustomEvent('creating_account_loading_step');
         metrics.core_vpn_single_signup_pageLoad_2_total.increment({
             step: 'account_setup',
             flow: isB2bPlan ? 'b2b' : 'b2c',

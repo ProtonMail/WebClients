@@ -29,6 +29,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -55,6 +56,7 @@ const CopyPasswordModal = ({
     isB2bPlan: boolean;
 }) => {
     useEffect(() => {
+        telemetry.sendCustomEvent('password_selection_step');
         metrics.core_vpn_single_signup_passwordSelection_step_2_total.increment({
             step: 'copy_password_modal',
             flow: isB2bPlan ? 'b2b' : 'b2c',
