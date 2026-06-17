@@ -40,10 +40,12 @@ import type {
     Address,
     Api,
     Domain,
+    EnhancedMember,
     KTUserContext,
     Member,
     MemberReadyForAutomaticUnprivatization,
     Organization,
+    RoleAssignment,
 } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import {
@@ -71,10 +73,14 @@ import { organizationKeyThunk } from '../organizationKey';
 import {
     type MemberKeyPayload,
     type PromoteGlobalSSOPayload,
+    getMemberEditPayload,
     getMemberKeyPayload,
     getPrivateAdminError,
     setAdminRoles,
 } from '../organizationKey/actions';
+import { classifyRoleChange } from '../organizationKey/classifyRoleChange';
+import { type OrganizationRolesState, organizationRolesThunk } from '../organizationRoles';
+import { isOrgKeyRequired } from '../organizationRoles/helpers';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import InvalidAddressesError from './errors/InvalidAddressesError';
@@ -85,6 +91,7 @@ import {
     type MembersState,
     getMemberAddresses,
     membersThunk,
+    updateMemberRoles,
     upsertMember,
 } from './index';
 import validateAddUser from './validateAddUser';
@@ -329,6 +336,55 @@ export const setRole = ({
         }
 
         await dispatch(setAdminRoles({ memberKeyPayloads: [payload], api }));
+    };
+};
+
+export const assignMemberRoles = ({
+    member,
+    currentRoles,
+    desiredRoleIds,
+    payload,
+    api,
+}: {
+    member: EnhancedMember;
+    currentRoles: RoleAssignment[];
+    desiredRoleIds: Set<string>;
+    payload: PromoteGlobalSSOPayload | MemberKeyPayload | null;
+    api: Api;
+}): ThunkAction<
+    Promise<RoleAssignment[]>,
+    KtState & OrganizationKeyState & MembersState & OrganizationRolesState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        const organizationRoles = await dispatch(organizationRolesThunk());
+
+        const desiredRolesRequireOrgKey = organizationRoles.some(
+            (role) => desiredRoleIds.has(role.OrganizationRoleID) && isOrgKeyRequired(role)
+        );
+        const currentRolesRequireOrgKey = currentRoles.some(({ Role }) => isOrgKeyRequired(Role));
+
+        if (!desiredRolesRequireOrgKey || currentRolesRequireOrgKey || member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+            return dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
+        }
+
+        const organizationKey = await dispatch(organizationKeyThunk());
+        const classification = classifyRoleChange({
+            member,
+            targetRole: MEMBER_ROLE.ORGANIZATION_ADMIN,
+            isPasswordlessOrg: getIsPasswordless(organizationKey?.Key),
+        });
+
+        const requiresPayload = classification.kind === 'promote' && classification.via !== 'no-payload';
+        if (requiresPayload && payload === null) {
+            payload = await dispatch(getMemberEditPayload({ member, classification, api }));
+        }
+
+        // The order is IMPORTANT here: set admin roles first, promote second
+        const roleAssignments = await dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
+        await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
+        return roleAssignments;
     };
 };
 

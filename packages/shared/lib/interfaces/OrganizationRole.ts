@@ -1,5 +1,5 @@
 export enum PREDEFINED_ROLE_NAME {
-    ORGANIZATION_ADMIN = 'Organization Admin',
+    OWNER = 'Owner',
     USER_ADMIN = 'User Admin',
     SECURITY_ADMIN = 'Security Admin',
 }
@@ -33,6 +33,6 @@ export interface RoleAssignment {
  * This hard-coded value will be removed soon after BE returns required permissions for each admin role.
  */
 export const ROLE_NAMES_REQUIRING_ORG_KEY: Set<string> = new Set<string>([
-    PREDEFINED_ROLE_NAME.ORGANIZATION_ADMIN,
+    PREDEFINED_ROLE_NAME.OWNER,
     PREDEFINED_ROLE_NAME.USER_ADMIN,
 ]);
