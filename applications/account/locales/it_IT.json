@@ -363,6 +363,9 @@
       "Continue with this password": [
         "Continua con questa password"
       ],
+      "Copy": [
+        "Copia"
+      ],
       "Copy address": [
         "Copia l'indirizzo"
       ],
@@ -1371,6 +1374,9 @@
       "Select time zone": [
         "Seleziona il fuso orario"
       ],
+      "Send": [
+        "Invia"
+      ],
       "send auto-reply email": [
         "invia email di risposta automatica"
       ],
@@ -1577,6 +1583,9 @@
       ],
       "Underline": [
         "Sottolineato"
+      ],
+      "Undo": [
+        "Annulla"
       ],
       "Undo import": [
         "Annulla importazione"
@@ -4820,9 +4829,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Metteremo in pausa le importazioni all'80% dell'archiviazione per riservare spazio per i nuovi messaggi."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Importeremo le tue vecchie email e connetteremo il tuo Gmail a ${ MAIL_APP_NAME } in modo che i nuovi messaggi appaiano automaticamente"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Importeremo le tue vecchie email, ignoreremo i duplicati e ci connetteremo al tuo Gmail in modo che i nuovi messaggi appaiano automaticamente. Puoi annullare l'importazione in qualsiasi momento nelle impostazioni di Easy Switch."
@@ -8080,9 +8086,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descrizione:"
-      ],
       "Group address:": [
         "Indirizzo del gruppo:"
       ]
@@ -16442,6 +16445,9 @@
       "An external address cannot be default": [
         "Un indirizzo esterno non può essere l'indirizzo predefinito."
       ],
+      "Copied to clipboard": [
+        "Copiato negli appunti"
+      ],
       "Downloaded 2FA recovery codes": [
         "Codici di ripristino A2F scaricati"
       ],
@@ -20034,9 +20040,6 @@
       "Connect all your devices": [
         "Connetti tutti i tuoi dispositivi"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Continua con ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Crea un account ${ BRAND_NAME }"
       ],
@@ -20190,9 +20193,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Prova ${ BRAND_NAME } per ${ TRIAL_DURATION_DAYS } giorni gratis"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Prova ${ BRAND_NAME } gratuitamente per 14 giorni"
       ],
       "Try ${ planName } for free": [
         "Prova ${ planName } gratis"

@@ -399,6 +399,9 @@
       "Continue with this password": [
         "使用此密码继续"
       ],
+      "Copy": [
+        "复制"
+      ],
       "Copy address": [
         "复制邮箱地址"
       ],
@@ -1485,6 +1488,9 @@
       "Select time zone": [
         "选择时区"
       ],
+      "Send": [
+        "发送​​"
+      ],
       "send auto-reply email": [
         "自动回复"
       ],
@@ -1709,6 +1715,9 @@
       ],
       "Underline": [
         "下划线"
+      ],
+      "Undo": [
+        "撤销"
       ],
       "Undo import": [
         "撤消导入"
@@ -2982,6 +2991,9 @@
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "复制下方代码并将其粘贴到您的域名提供商的 DNS 区域中！"
       ],
+      "Creating accounts": [
+        "正在创建账户"
+      ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "从 Google Workspace 到 ${ BRAND_NAME } 的数据迁移状态"
       ],
@@ -3254,6 +3266,9 @@
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "我们注意到部分用户尚未领取其 ${ BRAND_NAME } 账户！"
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "我们正在为您创建账户并导入数据，以便您的团队在开始使用安全的 ${ BRAND_NAME } 账户时能获得所需的一切。"
       ],
       "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
         "我们正在为所有人启用端到端加密。每封邮件、每个日程现在都只属于您自己。仅您的团队可见。我们或任何其他人都无法看到。"
@@ -5445,9 +5460,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "我们将导入您的旧电子邮件、跳过重复项，并连接到您的 Gmail，以便自动显示新消息。您可以随时在 Easy Switch 设置中撤消导入。"
@@ -8896,9 +8908,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "描述："
-      ],
       "Group address:": [
         "群组地址："
       ],
@@ -9568,6 +9577,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Drive": [
+        "云盘"
+      ],
       "Mail": [
         "邮件"
       ]
@@ -10074,6 +10086,9 @@
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
+      ],
+      "All your files will be imported": [
+        "您所有的文件将被导入"
       ],
       "Allocated": [
         "分配量"
@@ -14567,6 +14582,9 @@
       "Donation amount": [
         "捐赠金额"
       ],
+      "Drive": [
+        "云盘"
+      ],
       "Duration": [
         "持续时间"
       ],
@@ -18038,6 +18056,9 @@
       ],
       "An external address cannot be default": [
         "其他邮箱的地址不能作为首选地址"
+      ],
+      "Copied to clipboard": [
+        "已复制到剪贴板"
       ],
       "Downloaded 2FA recovery codes": [
         "下载 2FA 恢复码"
@@ -22151,9 +22172,6 @@
       "Connect all your devices": [
         "连接您的所有设备"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "使用 ${ PLAN_NAMES[plan] } 继续"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
@@ -22324,9 +22342,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "免费试用 ${ BRAND_NAME } ${ TRIAL_DURATION_DAYS } 天，${ br } 并获得 ${ referralInfo.uiData.refereeRewardAmount } 积分奖励"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "免费试用 ${ BRAND_NAME } 14 天"
       ],
       "Try ${ planName } for free": [
         "免费试用 ${ planName }"

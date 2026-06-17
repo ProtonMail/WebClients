@@ -1204,6 +1204,9 @@
       "Select time zone": [
         "حدد المنطقة الزمنية"
       ],
+      "Send": [
+        "أرسل"
+      ],
       "send auto-reply email": [
         "إرسال بريد إلكتروني للرد التلقائي"
       ],
@@ -1404,6 +1407,9 @@
       ],
       "Underline": [
         "تسطير"
+      ],
+      "Undo": [
+        "تراجع"
       ],
       "Undo import": [
         "التراجع عن الاستيراد"
@@ -4480,9 +4486,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "سنقوم بإيقاف الواردات مؤقتا عند 80٪ من التخزين لحجز مساحة للرسائل الجديدة."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "سيتم جلب رسائل البريد الإلكتروني القديمة وتوصيل حساب Gmail بـ ${ MAIL_APP_NAME } لتظهر الرسائل الجديدة تلقائيًا."
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "سنستورد رسائل بريدك الإلكتروني القديمة، ونتخطى الرسائل المكررة، ونتصل بحسابك على Gmail لتظهر الرسائل الجديدة تلقائيًا. ويمكن التراجع عن الاستيراد في أي وقت من إعدادات Easy Switch."
@@ -8131,6 +8134,9 @@
       ],
       "Contacts": [
         "جهات الإتصال"
+      ],
+      "Drive": [
+        "التخزين السحابي"
       ],
       "Mail": [
         "البريد"
@@ -15486,6 +15492,9 @@
       "An external address cannot be default": [
         "لا يمكن أن يكون العنوان الخارجي هو العنوان الافتراضي"
       ],
+      "Copied to clipboard": [
+        "تم النسخ إلى الحافظة"
+      ],
       "Downloaded 2FA recovery codes": [
         "تم تنزيل رموز استرداد المصادقة الثنائية (2FA)"
       ],
@@ -18996,9 +19005,6 @@
       "Connect all your devices": [
         "اربط جميع أجهزتك"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "المتابعة مع ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "إنشاء حساب ${ BRAND_NAME }"
       ],
@@ -19168,9 +19174,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "جرّب ${ BRAND_NAME } مجانًا لمدة ${ TRIAL_DURATION_DAYS } يومًا،${ br }واحصل على ${ referralInfo.uiData.refereeRewardAmount } كرصيد."
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "جرِّب ${ BRAND_NAME } مجانًا لمدة 14 يومًا"
       ],
       "Try ${ planName } for free": [
         "جرِّب ${ planName } مجانًا"

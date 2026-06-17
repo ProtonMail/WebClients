@@ -399,6 +399,9 @@
       "Continue with this password": [
         "Continuare cu această parolă"
       ],
+      "Copy": [
+        "Copiere"
+      ],
       "Copy address": [
         "Copiere adresă"
       ],
@@ -941,6 +944,9 @@
       ],
       "Hide": [
         "Ascundere"
+      ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Ascundere ${ LUMO_SHORT_APP_NAME }"
       ],
       "Hide more benefits": [
         "Ascundere mai multe beneficii"
@@ -1485,6 +1491,9 @@
       "Select time zone": [
         "Selectare fus orar"
       ],
+      "Send": [
+        "Trimitere"
+      ],
       "send auto-reply email": [
         "trimitere răspuns automat"
       ],
@@ -1647,6 +1656,9 @@
       "Stay": [
         "Nu închide"
       ],
+      "Stop": [
+        "Oprire"
+      ],
       "Stop using single sign-on": [
         "Oprire utilizare conectare unică"
       ],
@@ -1709,6 +1721,9 @@
       ],
       "Underline": [
         "Subliniat"
+      ],
+      "Undo": [
+        "Anulare"
       ],
       "Undo import": [
         "Anulare importare"
@@ -1996,6 +2011,9 @@
         "${ users } utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "Add-on": [
+        "Supliment"
       ],
       "Dedicated VPN servers": [
         "Servere VPN dedicate"
@@ -3016,6 +3034,9 @@
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Copiați codul de mai jos și inserați-l în secțiunea DNS a gazdei domeniului."
       ],
+      "Creating accounts": [
+        "Se creează conturile"
+      ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
       ],
@@ -3296,6 +3317,9 @@
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Am observat că unii utilizatori nu și-au revendicat conturile ${ BRAND_NAME }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vă creăm conturile și vă importăm datele acum, astfel încât utilizatorii din echipă să aibă tot ce au nevoie atunci când vor începe să-și utilizeze contul securizat ${ BRAND_NAME }."
       ],
       "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
         "Activăm criptarea bilaterală pentru toată lumea. Fiecare mesaj, fiecare eveniment vă aparține. Vizibil doar pentru echipa proprie. Nu pentru noi, nu pentru nimeni altcineva."
@@ -5517,9 +5541,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Se vor importa mesajele, se vor omite duplicatele și se va efectua conexiunea la contul Gmail, astfel încât mesajele noi să apară automat. Puteți reveni asupra importării oricând din setările Easy Switch."
@@ -9036,9 +9057,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descriere:"
-      ],
       "Group address:": [
         "Adresă grup:"
       ],
@@ -9724,6 +9742,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Mail": [
         "E-mail"
       ]
@@ -10300,6 +10321,9 @@
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }."
+      ],
+      "All your files will be imported": [
+        "Vor fi importate toate fișierele."
       ],
       "Allocated": [
         "Alocat"
@@ -11275,6 +11299,9 @@
       ],
       "here": [
         "aici"
+      ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Salut! Descrie filtrul pe care îl dorești și eu voi scrie scriptul Sieve. Pot să modific și ce este deja în editor."
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Ascunde informațiile de identificare încărcând conținutul de la distanță prin intermediul unui proxy. Opțiunea de stocare conținut ca atașament."
@@ -12642,6 +12669,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aceste acreditări nu pot fi utilizate pentru autentificarea în aplicațiile ${ VPN_APP_NAME } oficiale. ${ learnMore }"
+      ],
+      "Thinking…": [
+        "Mă gândesc…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
@@ -14870,6 +14900,9 @@
       ],
       "Donation amount": [
         "Sumă donație"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Duration": [
         "Durata"
@@ -18443,6 +18476,9 @@
       "An external address cannot be default": [
         "O adresă externă nu poate fi implicită."
       ],
+      "Copied to clipboard": [
+        "S-a copiat în memorie."
+      ],
       "Downloaded 2FA recovery codes": [
         "Codurile de recuperare A2F s-au descărcat."
       ],
@@ -18490,6 +18526,9 @@
       ],
       "Reminder has been sent": [
         "Notificările au fost trimise"
+      ],
+      "Sieve script inserted": [
+        "Script Sieve inserat"
       ],
       "The key has been deleted.": [
         "Cheia a fost ștearsă."
@@ -20173,6 +20212,9 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
+      ],
+      "Describe the filter you want…": [
+        "Descrieți filtrul dorit…"
       ],
       "domain.com": [
         "domeniu.com"
@@ -22754,8 +22796,8 @@
       "Connect all your devices": [
         "Conectați toate dispozitivele"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Continuare cu ${ PLAN_NAMES[plan] }"
+      "Continue with ${ planName }": [
+        "Continuare cu ${ planName }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Creați un cont ${ BRAND_NAME }"
@@ -22783,6 +22825,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
+      ],
+      "From ${ priceElement }": [
+        "De la ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Obțineți ${ referralInfo.uiData.refereeRewardAmount } în credite"
@@ -22885,6 +22930,9 @@
       "Share and collaborate of files": [
         "Partajare și colaborare de fișiere"
       ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Înscrieți-vă ți obțineți ${ referralInfo.uiData.refereeRewardAmount } în credite"
+      ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "Înregistrare în ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
@@ -22929,9 +22977,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Încercați ${ BRAND_NAME } gratuit timp de ${ TRIAL_DURATION_DAYS } zile,${ br } și primiți ${ referralInfo.uiData.refereeRewardAmount } în credite"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Încercați ${ BRAND_NAME } gratuit timp de 14 zile"
       ],
       "Try ${ planName } for free": [
         "Încercați ${ planName } gratuit"
@@ -23952,6 +23997,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizator",
         "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizatori",
@@ -25108,6 +25156,9 @@
         "Persoane abonate: ${ friendsSubscribed }",
         "Persoane abonate: ${ friendsSubscribed }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -26057,6 +26108,9 @@
       ],
       "Help center": [
         "Centru de ajutor"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Ajutor de la ${ LUMO_SHORT_APP_NAME }"
       ],
       "Help us improve": [
         "Ajutați la îmbunătățire"

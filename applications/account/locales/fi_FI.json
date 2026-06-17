@@ -358,6 +358,9 @@
       "Continue with this password": [
         "Jatka tällä salasanalla"
       ],
+      "Copy": [
+        "Kopioi"
+      ],
       "Copy address": [
         "Kopioi osoite"
       ],
@@ -1336,6 +1339,9 @@
       "Select time zone": [
         "Valitse aikavyöhyke"
       ],
+      "Send": [
+        "Lähetä"
+      ],
       "send auto-reply email": [
         "lähetä automaattivastaus"
       ],
@@ -1536,6 +1542,9 @@
       ],
       "Underline": [
         "Alleviivaus"
+      ],
+      "Undo": [
+        "Kumoa"
       ],
       "Undo import": [
         "Kumoa tuonti"
@@ -4473,9 +4482,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pysäytämme tuonnit, kun tallennustilasta on käytössä 80 %, varataksemme tilaa uusille viesteille."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Tuomme vanhat sähköpostinne, ohitamme kaksoiskappaleet ja yhdistämme Gmail-tiliinne, jotta uudet viestit tulevat näkyviin automaattisesti. Voitte kumota tuonnin milloin tahansa Easy Switch -asetuksissa"
@@ -15352,6 +15358,9 @@
       "An external address cannot be default": [
         "Ulkoinen osoite ei voi olla oletusosoite"
       ],
+      "Copied to clipboard": [
+        "Kopioitu leikepöydälle"
+      ],
       "Downloaded 2FA recovery codes": [
         "Lataa 2FA-palautuskoodit"
       ],
@@ -18716,9 +18725,6 @@
       ],
       "Connect all your devices": [
         "Yhdistä kaikki laitteesi"
-      ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Jatka ${ PLAN_NAMES[plan] } käyttäen"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
@@ -22402,9 +22408,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
-      ],
-      "Instant assistance with AI and human experts.": [
-        "Välitöntä apua tekoälyn ja ihmisasiantuntijoiden avulla."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian. Kertakirjautumisen käyttäjät eivät saa sähköpostimuistutusta."
