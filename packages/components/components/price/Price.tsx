@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 
-import { type Currency, CurrencySymbols } from '@proton/payments';
+import { CurrencySymbols } from '@proton/payments/core/constants';
 import { getCurrencyFormattingConfigWithoutFallback } from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 
 import { defaultSymbolPosition, formatPriceWithoutCurrency } from './helper';

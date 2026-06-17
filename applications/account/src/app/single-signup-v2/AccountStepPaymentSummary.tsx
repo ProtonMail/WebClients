@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { Info, Price, Time } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import type { CouponConfigRendered } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import {
     COUPON_CODES,
@@ -18,6 +17,7 @@ import {
 import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { InclusiveVatText } from '@proton/payments/ui';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import {
     getVatReverseChargeText,
     isVatReverseChargeApplicable,

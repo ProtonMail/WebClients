@@ -20,7 +20,6 @@ import {
     useModalState,
 } from '@proton/components';
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
-import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -59,6 +58,7 @@ import type {
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
+import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';

@@ -1,8 +1,9 @@
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
 import type { CheckSubscriptionData } from '../api/api';
+import type { ADDON_NAMES, PLANS } from '../constants';
 import type { InvalidCouponError, WrongBillingAddressError } from '../errors';
-import type { Currency, Cycle, PlanIDs } from '../interface';
+import type { Currency, Cycle } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
 import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
 
@@ -84,9 +85,25 @@ export type Coupon = Nullable<CouponBase>;
 
 export type EnrichedCoupon = Nullable<
     CouponBase & {
-        Targets?: PlanIDs;
+        CouponDiscountBreakdown?: CouponDiscountBreakdownBE | null;
     }
 >;
+
+export type CouponDiscountBreakdownElementBE = {
+    Name: PLANS | ADDON_NAMES;
+    Amount: number;
+};
+
+/**
+ * Per-line coupon discount returned by the check response: how much of the coupon discount applies to the base
+ * plan vs. each individual addon. The backend returns it for any valid coupon, covering whatever plan
+ * configuration was checked.
+ *
+ * Note: the breakdown only describes what was in *that* check. To learn the discount for an addon the user hasn't
+ * selected yet (comparing the base plan against the same plan *with* the addon), a *secondary* check that
+ * includes the addon must be run — see {@link runSecondarySubscriptionEstimation} (core/secondary-estimation.ts).
+ */
+export type CouponDiscountBreakdownBE = CouponDiscountBreakdownElementBE[];
 
 interface SubscriptionCheckResponse {
     /**
