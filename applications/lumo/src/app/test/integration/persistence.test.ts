@@ -42,6 +42,7 @@ import {
     newSpaceId,
     pullSpaceRequest,
     pullSpacesRequest,
+    pullSpacesSuccess,
     pushSpaceRequest,
 } from '../../redux/slices/core/spaces';
 import { LumoApi } from '../../remote/api';
@@ -703,7 +704,7 @@ describe('Lumo Persistence Integration Tests', () => {
         }, 20000);
 
         it('should handle complex space deletion with multiple conversations and messages', async () => {
-            const { store, dispatch, dbApi, lumoApi } = await setupTestEnvironment();
+            const { store, dispatch, dbApi, lumoApi, actionHistory } = await setupTestEnvironment();
 
             try {
                 // Create test data structure
@@ -741,6 +742,18 @@ describe('Lumo Persistence Integration Tests', () => {
                     await waitForSpaceSyncWithServer(dbApi, space.id);
                 }
 
+                // Wait for all messages to finish syncing (no dirty flags)
+                console.log('Wait for all messages to sync with server');
+                for (const message of testData.messages) {
+                    await waitForMessageSyncWithServer(dbApi, message.id);
+                }
+
+                // Wait for all conversations to finish syncing
+                console.log('Wait for all conversations to sync with server');
+                for (const conversation of testData.conversations) {
+                    await waitForConversationSyncWithServer(dbApi, conversation.id);
+                }
+
                 // Wait for spaces to appear in remote list
                 console.log('Wait for spaces to appear in remote list');
                 await waitForCondition(async () => {
@@ -750,23 +763,19 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Refresh spaces from remote to verify sync
                 console.log('Refresh spaces from remote to verify sync');
+                actionHistory.clear();
                 dispatch(pullSpacesRequest());
-                await sleep(1000);
-                // todo: waitForCondition of the next block instead
-
-                await waitForCondition(async () => {
-                    const stateAfterSync = store.getState();
-                    for (const space of testData.spaces) {
-                        if (!stateAfterSync.spaces[space.id]) {
-                            console.log(
-                                `waiting for all spaces to be deleted from redux: space ${space.id} is not yet deleted`
-                            );
-                            return false;
-                        }
-                    }
-                    console.log(`waiting for all spaces to be deleted from redux: all test spaces are deleted`);
-                    return true;
+                await waitForCondition(async () => actionHistory.hasAction(pullSpacesSuccess.type), {
+                    message: 'Waiting for pullSpacesRequest to complete',
                 });
+
+                await waitForCondition(
+                    async () => {
+                        const stateAfterSync = store.getState();
+                        return testData.spaces.every((space) => stateAfterSync.spaces[space.id] !== undefined);
+                    },
+                    { message: 'Waiting for all spaces to be loaded into Redux after pull' }
+                );
 
                 // Verify all spaces are in Redux
                 console.log('Verify all spaces are in Redux');
@@ -778,14 +787,21 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Delete the first space
                 console.log('Delete the first space');
                 const spaceToDelete = testData.spaces[0];
+                const deletedSpaceConversations = testData.conversations.filter((c) => c.spaceId === spaceToDelete.id);
                 dispatch(locallyDeleteSpaceFromLocalRequest(spaceToDelete.id));
-                await sleep(1000); // tbr - this doesn't guarantee good behavior since we don't to this in prod code
-                dispatch(pushSpaceRequest({ id: spaceToDelete.id }));
 
-                // Verify the space is removed from Redux
-                console.log('Verify the space is removed from Redux');
-                const stateAfterDeletion = store.getState();
-                expect(stateAfterDeletion.spaces[spaceToDelete.id]).toBeUndefined();
+                // Wait for the deletion cascade to complete in Redux
+                console.log('Wait for the deletion cascade to complete in Redux');
+                await waitForCondition(
+                    async () => {
+                        const state = store.getState();
+                        if (state.spaces[spaceToDelete.id]) {
+                            return false;
+                        }
+                        return deletedSpaceConversations.every((conversation) => !state.conversations[conversation.id]);
+                    },
+                    { message: 'Waiting for deleted space cascade in Redux' }
+                );
 
                 // Wait for the deletion to be processed by IndexedDB
                 console.log('Wait for the deletion to be processed by IndexedDB');
@@ -821,8 +837,11 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Refresh spaces from remote to verify deletion is synced
                 console.log('Refresh spaces from remote to verify deletion is synced');
+                actionHistory.clear();
                 dispatch(pullSpacesRequest());
-                await sleep(1000);
+                await waitForCondition(async () => actionHistory.hasAction(pullSpacesSuccess.type), {
+                    message: 'Waiting for pullSpacesRequest after deletion to complete',
+                });
 
                 // Check the space is deleted:true in IndexedDB and wrappedSpaceKey is undefined
                 console.log('Check the space is deleted:true in IndexedDB and wrappedSpaceKey is undefined');
@@ -833,12 +852,18 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Verify the space is not loaded into Redux when loading from IndexedDB
                 console.log('Verify the space is not loaded into Redux when loading from IndexedDB');
-                // await dispatch(unloadReduxState);
-                // await dispatch(loadReduxStateFromIndexedDb(dbApi, masterKey));
+                const otherSpaceConversations = testData.conversations.filter((c) => c.spaceId !== spaceToDelete.id);
                 dispatch(reloadReduxRequest());
-                await sleep(500);
-                const stateAfterFinalReload = store.getState();
-                expect(stateAfterFinalReload.spaces[spaceToDelete.id]).toBeUndefined();
+                await waitForCondition(
+                    async () => {
+                        const state = store.getState();
+                        if (state.spaces[spaceToDelete.id]) {
+                            return false;
+                        }
+                        return otherSpaceConversations.every((conversation) => state.conversations[conversation.id]);
+                    },
+                    { message: 'Waiting for Redux reload from IndexedDB' }
+                );
 
                 // Verify only the deleted space is removed from Redux
                 console.log('Verify only the deleted space is removed from Redux');
@@ -847,7 +872,6 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Verify conversations and messages from deleted space are gone
                 console.log('Verify conversations and messages from deleted space are gone');
-                const deletedSpaceConversations = testData.conversations.filter((c) => c.spaceId === spaceToDelete.id);
                 for (const conversation of deletedSpaceConversations) {
                     expect(finalState.conversations[conversation.id]).toBeUndefined();
                     const conversationMessages = testData.messages.filter((m) => m.conversationId === conversation.id);
@@ -858,7 +882,6 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Verify conversations and messages from other spaces still exist
                 console.log('Verify conversations and messages from other spaces still exist');
-                const otherSpaceConversations = testData.conversations.filter((c) => c.spaceId !== spaceToDelete.id);
                 for (const conversation of otherSpaceConversations) {
                     expect(finalState.conversations[conversation.id]).toBeDefined();
                     const conversationMessages = testData.messages.filter((m) => m.conversationId === conversation.id);
