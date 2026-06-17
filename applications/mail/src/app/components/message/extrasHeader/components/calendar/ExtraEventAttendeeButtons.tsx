@@ -208,7 +208,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
         calendarEvent: invitationApi?.calendarEvent,
         attendee,
         organizer,
-        subject: formatSubject(message.data?.Subject, RE_PREFIX),
+        subject: formatSubject(message.data?.Subject, RE_PREFIX()),
         messageID: message.data?.ID,
         calendarData,
         pmData: isProtonInvite || (pmData && isReinvite) ? pmData : undefined,
