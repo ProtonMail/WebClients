@@ -12497,6 +12497,15 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**2단계 인증이 비활성화됩니다.**"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "설정에 따라 접근 권한을 즉시 회복할 수도, 혹은 설정된 **대기 기간**에 따라 일정 시간 이후에 다시 회복할 수 있습니다."
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "회원님의 계정과 연계된 12자리 복구 키를 입력해 주세요."
       ]
     },
     "info": {
@@ -14938,6 +14947,9 @@
       ],
       "What’s this?": [
         "복구 관련 정보란?"
+      ],
+      "data recovery option": [
+        "데이터 복구 방법"
       ]
     },
     "Link (Scribe)": {
@@ -19181,6 +19193,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "현재 복구 방법 설정이 견고하나, 여전히 조금의 틈이 남아있어요. 추가되는 복구 방법이 많을수록 데이터 복구 가능성도 더 높아집니다."
+      ],
+      "Inactive recovery options": [
+        "비활성화된 복구 방법"
       ]
     },
     "Recovery score item": {
@@ -20156,6 +20171,9 @@
       ],
       "Your security setup": [
         "복구 방법 설정 상태"
+      ],
+      "Got it": [
+        "확인"
       ]
     },
     "saml: Action": {
@@ -24761,6 +24779,30 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "브라우저에서 ${ BRAND_NAME }에 로그인된 상태로 유지되어 있나요?"
+      ],
+      "Ask your emergency contacts for help": [
+        "비상 연락처의 사람들에게 도움을 요쳥하세요"
+      ],
+      "Can you access your session in the browser?": [
+        "브라우저에 사용자 계정의 활성화된 세션에 접근할 수 있나요?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "복구 연락처의 사람들과 연락할 수 있나요?"
+      ],
+      "Couldn’t recover your account": [
+        "계정을 복구할 수 없습니다"
+      ],
+      "Recover account": [
+        "계정 복구"
+      ],
+      "Request new code?": [
+        "새로운 코드를 요청합니까?"
+      ],
+      "Try changing your password in your active web session": [
+        "활성 웹 세션에서 비밀번호를 재설정하세요"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25133,6 +25175,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "사용자의 외부 계정이 24시간 대역폭 제한에 도달했습니다. ${ BRAND_NAME }이 불러오기를 계속하도록 시도할 것입니다."
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "만약 비밀번호를 분실한 경우 즉시 계정과 암호화된 데이터를 잠금 해제할 수 있도록 12개의 긴 단어로 이루어진 복구 키를 저장하세요."
       ]
     },
     "tooltip": {
