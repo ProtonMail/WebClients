@@ -9,11 +9,6 @@ import { plansThunk, selectPlans } from '@proton/account/plans';
 import { selectSubscription, subscriptionThunk } from '@proton/account/subscription';
 import { selectUser } from '@proton/account/user';
 import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
-import {
-    type CouponConfigRendered,
-    getStaticCouponConfig,
-    useCouponConfig,
-} from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useHandler } from '@proton/components/hooks/useHandler';
@@ -56,6 +51,8 @@ import { isFreeSubscription } from '../../core/type-guards';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import type { EstimationChangeAction } from '../../telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
+import { getStaticCouponConfig } from '../coupon-config/get-static-coupon-config';
+import { type CouponConfigRendered, useCouponConfig } from '../coupon-config/useCouponConfig';
 import { loadInitialBillingAddress } from '../helpers/load-initial-billing-address';
 import { checkMultiplePlans, getPlanToCheck, getSubscriptionDataFromPlanToCheck } from './helpers';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';

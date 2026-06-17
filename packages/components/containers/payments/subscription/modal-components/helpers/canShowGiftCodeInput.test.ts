@@ -1,8 +1,8 @@
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { SubscriptionCheckForbiddenReason } from '@proton/payments/index';
 import { SubscriptionMode } from '@proton/payments/index';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
-import type { CouponConfigRendered } from '../../coupon-config/useCouponConfig';
 import { canShowGiftCodeInput } from './canShowGiftCodeInput';
 
 const allowed: SubscriptionCheckForbiddenReason = { forbidden: false };

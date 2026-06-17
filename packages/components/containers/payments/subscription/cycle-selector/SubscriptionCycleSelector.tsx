@@ -8,10 +8,10 @@ import { InputField } from '@proton/components/components/v2/field/InputField';
 import type { CYCLE, Currency, PlanIDs, PlansMap } from '@proton/payments';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useCouponConfig } from '../coupon-config/useCouponConfig';
 import { getDiscountPrice, getShortBillingText } from '../helpers';
 import CycleItemView from './CycleItemView';
 

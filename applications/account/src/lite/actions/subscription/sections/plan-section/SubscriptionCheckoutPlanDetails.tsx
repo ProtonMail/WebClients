@@ -65,9 +65,9 @@ const SubscriptionCheckoutFixedPlanSectionHeader = ({
     showDiscountItem,
 }: CheckoutViewProps & { showDiscountItem: boolean }) => {
     const { checkoutData } = checkoutView;
-    const discountItem = checkoutData.getItem('discount');
-    const planAmountItem = checkoutData.getItem('planAmount');
-    const membersItem = checkoutData.getItem('members');
+    const discountItem = checkoutView.getItem('discount');
+    const planAmountItem = checkoutView.getItem('planAmount');
+    const membersItem = checkoutView.getItem('members');
 
     return (
         <div className="fixed shadow-norm border-weak bg-norm top-0 left-0 w-full flex justify-space-between p-4 lite-app-fixed-plan-header z-up fade-in">
@@ -117,7 +117,7 @@ const SubscriptionCheckoutPlanPriceSection = ({
     showDiscountItem,
 }: SubscriptionCheckoutPlanPriceSectionProps) => {
     const { checkoutData } = checkoutView;
-    const discountItem = checkoutData.getItem('discount');
+    const discountItem = checkoutView.getItem('discount');
 
     return (
         <div className="flex bg-weak p-4 w-full justify-space-between" ref={planSectionRef}>
@@ -218,8 +218,8 @@ const SubscriptionCheckoutBillingDate = ({
 }: BillingDetailsProps) => {
     const { checkoutData } = checkoutView;
     const trial = isTrial(subscription);
-    const amountDueItem = checkoutData.getItem('amountDue');
-    const planAmountItem = checkoutData.getItem('planAmount');
+    const amountDueItem = checkoutView.getItem('amountDue');
+    const planAmountItem = checkoutView.getItem('planAmount');
     const hasValidCoupon = checkoutData.checkResult.Coupon?.Code || checkoutData.checkResult.Gift;
 
     const amountDuePrice = (
@@ -356,7 +356,7 @@ const SubscriptionCheckoutProration = ({ checkoutView, paymentForbiddenReason }:
 
     const adjustmentTypes = ['proration', 'unusedCredit', 'coupon', 'gift', 'credit', 'taxExclusive'] as const;
 
-    const hasVisibleAdjustments = adjustmentTypes.some((type) => checkoutData.getItem(type).visible);
+    const hasVisibleAdjustments = adjustmentTypes.some((type) => checkoutView.getItem(type).visible);
     const isSectionVisible = hasVisibleAdjustments || checkoutData.isTrial;
 
     if (!isSectionVisible && !paymentForbiddenReason?.reason) {
