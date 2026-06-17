@@ -288,7 +288,9 @@ const ComposerComponentInner = ({
             e.preventDefault();
             for (const item of imageItems) {
                 const file = item.getAsFile();
-                if (file) await handleFileProcessing(file);
+                // Pasted clipboard images are all named image.png by the browser,
+                // so auto-rename on collision (image (2).png) instead of rejecting.
+                if (file) await handleFileProcessing(file, true);
             }
         };
 
