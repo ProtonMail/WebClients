@@ -5,6 +5,7 @@ import type {
     PartialMessageState,
 } from '@proton/mail/store/messages/messagesTypes';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
+import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
@@ -15,7 +16,18 @@ import { getEmbeddedImages, updateImages } from './messageImages';
 
 const urlCreator = () => window.URL || window.webkitURL;
 
-export const embeddableTypes = ['image/gif', 'image/svg+xml', 'image/jpeg', 'image/png', 'image/bmp'];
+const embeddableTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
+/**
+ * Is a file type embeddable in the composer or not
+ * NOTE: we filter out SVG as rendering SVGs through blob urls is a security risk that can allow XSS attacks.
+ * We filter out embedded SVG images in received e-mails because of this reason.
+ * Here, in the composer, the user provides the SVG themselves, so the risk of a malicious SVG is lower, but not inexistant.
+ * And this also makes it consistent with receiving SVGs.
+ * They are not inlined both for receiving and sending.
+ * We filter out SVG as an extra (reduntant) step so it is clear that we purposely remove it, independent of the allow list above.
+ */
+export const isEmbeddable = (fileType: string) =>
+    embeddableTypes.includes(fileType) && !couldPotentiallyBeRenderedAsSVG(fileType);
 
 /**
  * Removes enclosing quotes ("", '', &lt;&gt;) from a string
@@ -29,11 +41,6 @@ export const trimQuotes = (input: string) => {
 
     return value;
 };
-
-/**
- * Is a file type embeddable or not
- */
-export const isEmbeddable = (fileType: string) => embeddableTypes.includes(fileType);
 
 /**
  * Read CID of the attachment (through its header)
@@ -78,7 +85,10 @@ export const setEmbeddedAttr = (cid: string, cloc: string, element: Element) => 
  * Create a Blob and its URL for an attachment
  */
 export const createBlob = (attachment: Attachment, data: Uint8Array<ArrayBuffer> | string) => {
-    const blob = new Blob([data], { type: attachment.MIMEType });
+    const mimeType = couldPotentiallyBeRenderedAsSVG(attachment.MIMEType || '')
+        ? 'application/octet-stream'
+        : attachment.MIMEType;
+    const blob = new Blob([data], { type: mimeType });
     return urlCreator().createObjectURL(blob);
 };
 

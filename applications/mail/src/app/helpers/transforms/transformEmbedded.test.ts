@@ -35,12 +35,12 @@ describe('transformEmbedded', () => {
             data: {
                 ID: 'messageID',
                 Attachments: [
-                    { Headers: { 'content-id': cids[0] } } as Attachment,
-                    { Headers: { 'content-id': cids[1] } } as Attachment,
-                    { Headers: { 'content-id': cids[2] } } as Attachment,
-                    { Headers: { 'content-id': cids[3] } } as Attachment,
-                    { Headers: { 'content-id': cids[4] } } as Attachment,
-                    { Headers: { 'content-id': cids[5] } } as Attachment,
+                    { Headers: { 'content-id': cids[0] }, MIMEType: 'image/png' } as Attachment,
+                    { Headers: { 'content-id': cids[1] }, MIMEType: 'image/png' } as Attachment,
+                    { Headers: { 'content-id': cids[2] }, MIMEType: 'image/png' } as Attachment,
+                    { Headers: { 'content-id': cids[3] }, MIMEType: 'image/png' } as Attachment,
+                    { Headers: { 'content-id': cids[4] }, MIMEType: 'image/png' } as Attachment,
+                    { Headers: { 'content-id': cids[5] }, MIMEType: 'image/png' } as Attachment,
                 ],
             } as Message,
             messageDocument: { document: parseDOMStringToBodyElement(content) },
@@ -59,6 +59,29 @@ describe('transformEmbedded', () => {
         });
     });
 
+    it('should not embed SVG attachments and should remove their img from the body', async () => {
+        const cid = 'svgCID';
+        const content = `<div><img src='cid:${cid}'/></div>`;
+        const document = parseDOMStringToBodyElement(content);
+
+        const message: MessageState = {
+            localID: 'messageWithSVG',
+            data: {
+                ID: 'messageID',
+                Attachments: [{ Headers: { 'content-id': cid }, MIMEType: 'image/svg+xml' } as Attachment],
+            } as Message,
+            messageDocument: { document },
+        };
+
+        const { embeddedImages, hasEmbeddedImages } = await setup(message);
+
+        // The SVG is not embedded...
+        expect(hasEmbeddedImages).toBeFalsy();
+        expect(embeddedImages.length).toEqual(0);
+        // ...and its <img> has been removed from the message body (so it can't render).
+        expect(document.querySelectorAll('img').length).toEqual(0);
+    });
+
     it('should detect cloc embedded images', async () => {
         const cloc = 'imageCLOC';
         const content = `<div><img src='${cloc}' proton-src='${cloc}'/></div>`;
@@ -67,7 +90,7 @@ describe('transformEmbedded', () => {
             localID: 'messageWithEmbedded',
             data: {
                 ID: 'messageID',
-                Attachments: [{ Headers: { 'content-location': cloc } } as Attachment],
+                Attachments: [{ Headers: { 'content-location': cloc }, MIMEType: 'image/png' } as Attachment],
             } as Message,
             messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
@@ -90,7 +113,7 @@ describe('transformEmbedded', () => {
             localID: 'messageWithEmbedded',
             data: {
                 ID: 'messageID',
-                Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
+                Attachments: [{ Headers: { 'content-id': cid }, MIMEType: 'image/png' } as Attachment],
             } as Message,
             messageDocument: { document: parseDOMStringToBodyElement(content) },
             messageImages: {
@@ -104,7 +127,7 @@ describe('transformEmbedded', () => {
                         type: 'embedded',
                         cid,
                         cloc: '',
-                        attachment: { Headers: { 'content-id': cid } } as Attachment,
+                        attachment: { Headers: { 'content-id': cid }, MIMEType: 'image/png' } as Attachment,
                     } as MessageImage,
                 ],
             },
@@ -129,7 +152,7 @@ describe('transformEmbedded', () => {
             data: {
                 ID: 'messageID',
                 Flags: 12, // Flag as draft
-                Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
+                Attachments: [{ Headers: { 'content-id': cid }, MIMEType: 'image/png' } as Attachment],
             } as Message,
             messageDocument: { document: parseDOMStringToBodyElement(content) },
         };
@@ -153,7 +176,7 @@ describe('transformEmbedded', () => {
             localID: 'messageWithEmbedded',
             data: {
                 ID: 'messageID',
-                Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
+                Attachments: [{ Headers: { 'content-id': cid }, MIMEType: 'image/png' } as Attachment],
                 Sender: {
                     Name: 'Verified address',
                     Address: 'verified@proton.me',
@@ -184,7 +207,7 @@ describe('transformEmbedded', () => {
             localID: 'messageWithEmbedded',
             data: {
                 ID: 'messageID',
-                Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
+                Attachments: [{ Headers: { 'content-id': cid }, MIMEType: 'image/png' } as Attachment],
                 Sender: {
                     Name: 'Normal address',
                     Address: 'normal@proton.me',
