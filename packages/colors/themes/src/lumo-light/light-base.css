@@ -86,8 +86,9 @@
     --link-hover: var(--interaction-norm-hover);
     --link-active: var(--interaction-norm-active);
 
-    --composer-glow-shadow: #e9eafc;
     --composer-glow-border: #dddefb;
+    --composer-hover-border: #a9acfa;
+    --composer-focus-outer-ring: #e9eafc;
 
     --optional-promotion-background-start: rgb(109 74 255 / 0.15);
     --optional-promotion-background-end: rgb(70 26 255 / 0.04);

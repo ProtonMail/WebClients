@@ -5,16 +5,49 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
+.composer-input-glow-wrapper {
+	padding: #{rem(6)};
+	margin: #{rem(-6)};
+	overflow: visible;
+}
+
 .lumo-input-container {
 	// Base styles
-	--border-norm: var(--composer-glow-border);
-
-	border-color: var(--primary-contrast);
+	position: relative;
+	border: 0.5px solid var(--composer-glow-border) !important;
 	border-radius: #{rem(22)};
 	padding: #{rem(6)};
-	transition: all 0.3s ease-out;
-	border-width: 0.5px !important;
-	background: white;
+	transition:
+		border-color 0.3s ease-out,
+		border-radius 0.3s ease-out;
+	background: var(--background-norm);
+
+	// Second outer ring — only visible on focus
+	&::before {
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		inset: #{rem(-4)};
+		border: #{rem(2)} solid transparent;
+		border-radius: #{rem(26)};
+		transition:
+			border-color 0.3s ease-out,
+			border-radius 0.3s ease-out;
+	}
+
+	&:hover {
+		border-color: var(--composer-hover-border) !important;
+	}
+
+	&:focus-within {
+		border-radius: #{rem(28)};
+		border-color: var(--composer-hover-border) !important;
+
+		&::before {
+			border-color: var(--composer-focus-outer-ring);
+			border-radius: #{rem(32)};
+		}
+	}
 
 	// Mobile styles
 	@include im.media('<=small') {
@@ -31,10 +64,8 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-	&.--glowing-composer {
-		box-shadow:
-			0 1px 4px 0 rgb(0 0 0 / 0.05),
-			0 7px 214px 0 var(--composer-glow-shadow);
+	&.--glowing-composer::before {
+		border-color: var(--composer-focus-outer-ring);
 	}
 
 	&.shadow-lifted-composer {

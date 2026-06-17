@@ -2,6 +2,10 @@
 // 	margin-block-start: -1.188rem;
 // }
 
+.composer-container {
+	overflow: visible;
+}
+
 // .lumo-cat-container {
 // 	&.special-theme-variant {
 // 		margin-block-end: 7px;
@@ -10,7 +14,7 @@
 
 .main-container-component {
 	position: relative;
-	overflow: hidden;
+	overflow: visible;
 }
 
 .main-container-content {
