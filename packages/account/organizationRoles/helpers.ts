@@ -16,15 +16,15 @@ export const getUserSourcedRoleIds = (roles: RoleAssignment[]): Set<string> =>
 export const getGroupSourcedRoleIds = (roles: RoleAssignment[]): Set<string> =>
     getRoleIdsBySource(roles, ROLE_SOURCE.GROUP);
 
-export const isOrgKeyRequiring = (role: OrganizationRole): boolean => ROLE_NAMES_REQUIRING_ORG_KEY.has(role.Name);
+export const isOrgKeyRequired = (role: OrganizationRole): boolean => ROLE_NAMES_REQUIRING_ORG_KEY.has(role.Name);
 
 export const isLegacyOrgAdminState = (isLegacyOrgAdmin: boolean, adminRolesIds: Set<string>): boolean =>
     isLegacyOrgAdmin && adminRolesIds.size === 0;
 
 export const getTranslatedRoleName = (name: string): string => {
     switch (name) {
-        case PREDEFINED_ROLE_NAME.ORGANIZATION_ADMIN:
-            return c('Role').t`Organization Admin`;
+        case PREDEFINED_ROLE_NAME.OWNER:
+            return c('Role').t`Owner`;
         case PREDEFINED_ROLE_NAME.USER_ADMIN:
             return c('Role').t`User Admin`;
         case PREDEFINED_ROLE_NAME.SECURITY_ADMIN:
@@ -36,7 +36,7 @@ export const getTranslatedRoleName = (name: string): string => {
 
 export const getTranslatedRoleDescription = (name: string): string => {
     switch (name) {
-        case PREDEFINED_ROLE_NAME.ORGANIZATION_ADMIN:
+        case PREDEFINED_ROLE_NAME.OWNER:
             return c('Role description').t`Manage all users, groups, security, billing, and system configurations.`;
         case PREDEFINED_ROLE_NAME.USER_ADMIN:
             return c('Role description')
