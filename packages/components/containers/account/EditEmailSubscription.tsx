@@ -60,7 +60,7 @@ const EditEmailSubscription = ({ wrapperClassName }: Props) => {
             userSettings,
         });
 
-    const { general, product, notifications } = getEmailSubscriptions(filter);
+    const { general, product, accountUpdates, notifications } = getEmailSubscriptions(filter);
 
     const sharedProps = {
         onChange: handleChange,
@@ -72,6 +72,11 @@ const EditEmailSubscription = ({ wrapperClassName }: Props) => {
         <div className={clsx('flex flex-column', wrapperClassName)}>
             <EmailSubscriptionToggleWithHeader title={general.title} subscriptions={general.toggles} {...sharedProps} />
             <EmailSubscriptionToggleWithHeader title={product.title} subscriptions={product.toggles} {...sharedProps} />
+            <EmailSubscriptionToggleWithHeader
+                title={accountUpdates.title}
+                subscriptions={accountUpdates.toggles}
+                {...sharedProps}
+            />
             <EmailSubscriptionToggleWithHeader
                 title={notifications.title}
                 subscriptions={notifications.toggles}
