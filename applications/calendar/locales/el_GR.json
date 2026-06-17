@@ -6795,6 +6795,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your files will be imported": [
+        "Όλα τα αρχεία σας θα εισαχθούν"
       ]
     },
     "info": {
@@ -7553,6 +7556,15 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "Μηνύματα"
       ]
     },
     "label": {
@@ -12702,6 +12714,12 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

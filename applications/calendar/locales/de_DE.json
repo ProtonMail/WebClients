@@ -1040,6 +1040,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "${ MEET_SHORT_APP_NAME } entdecken"
       ]
     },
     "action": {
@@ -1512,6 +1515,21 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-Mails"
+      ],
+      "Migrate": [
+        "Migrieren"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
       ]
     },
     "Browser": {
@@ -7499,6 +7517,12 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "Emails": [
+        "E-Mails"
       ]
     },
     "label": {
@@ -12741,6 +12765,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

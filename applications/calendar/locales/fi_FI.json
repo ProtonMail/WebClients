@@ -6511,6 +6511,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "All your files will be imported": [
+        "Kaikki tiedostosi tuodaan"
       ]
     },
     "info": {
@@ -7229,6 +7232,15 @@
       ],
       "Zoom meeting": [
         "Zoom-kokous"
+      ],
+      "Calendars": [
+        "Kalenterit"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "Viestit"
       ]
     },
     "label": {
@@ -12265,6 +12277,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

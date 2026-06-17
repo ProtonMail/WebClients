@@ -1030,6 +1030,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Verify now": [
+        "지금 인증"
       ]
     },
     "action": {
@@ -2938,6 +2941,9 @@
       ],
       "Åland Islands": [
         "올란드 제도"
+      ],
+      "Canary Islands": [
+        "카나리아 제도"
       ]
     },
     "Country select label": {
@@ -3128,7 +3134,7 @@
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+        "${ connectedAddressText }(으)로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
@@ -4141,6 +4147,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "부가가치세(VAT)번호는 ${ prefixes }(으)로 시작해야 합니다."
       ]
     },
     "error": {
@@ -5631,7 +5643,7 @@
         "얼마나 미리 예약할 수 있나요?"
       ],
       "How long should an appointment last?": [
-        "일정 소요시간이 얼마입니까?"
+        "일정 소요시간이 얼마나 되나요?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "키보드 단축키가 활성화되면, 다음 키를 사용하여 빠른 작업을 수행하거나 다른 보기로 이동할 수 있습니다. ${ metaKey } + K는 항상 활성화되어 있습니다."
@@ -5739,7 +5751,7 @@
         "대처법에 대해 알아보세요 ${ dataLeakedLink }"
       ],
       "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
-        "다른 사람이 사용자와 자동으로 시간을 예약하도록 허용합니다. 이메일을 주고받을 필요가 없습니다. 링크를 공유하여 예약 가능 여부를 직접 관리하세요."
+        "다른 사럼이 회원님의 일정에 맞춰 시간을 예약할 수 있습니다. 이메일을 주고받을 필요가 없습니다. 링크를 공유하여 예약 가능 여부를 직접 관리하세요."
       ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
@@ -6571,6 +6583,30 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "회원님의 리퍼럴 링크를 통해 ${ BRAND_NAME }으로 **친구들을 초대하세요.**"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "만약 초대한 친구가 플랜을 구독한다면 **${ refereeRewardAmount }를 받게 됩니다.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "비밀번호가 기억 나시나요? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "이 연럭처로부터 산규 매시지를 인증하려면 키 \"${ activeSignerText }\"을(를) 신뢰하세요."
+      ],
+      "We'll remind you to verify your password again later": [
+        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
       ]
     },
     "info": {
@@ -7301,6 +7337,18 @@
       ],
       "Zoom meeting": [
         "Zoom 화상 회의"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength }자"
+      ],
+      "Calendars": [
+        "캘린더"
+      ],
+      "Emails": [
+        "이메일"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "누구에게나 보낼 수 있는 예약 페이지로 나의 스케쥴을 안전하게 공유해 보세요."
       ]
     },
     "label": {
@@ -8364,6 +8412,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "Appointment scheduling": [
+        "일정 예약"
       ]
     },
     "new_plans: feature highlight": {
@@ -8775,6 +8826,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "${ n }개 커스텀 이메일 도메인 지원"
+      ],
+      "${ n } country": [
+        "${ n }개 국가"
       ]
     },
     "Note": {
@@ -9494,6 +9548,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "Edit billing address": [
+        "청구 주소 수정"
       ]
     },
     "Payments.Error": {
@@ -11180,6 +11237,9 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "최대 ${ PAID_PREMIUM_MAX_PARTICIPANTS }명 참가자의 화상 회의"
       ]
     },
     "subscription reminder": {
@@ -12366,6 +12426,12 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "Verify your password": [
+        "비밀번호 확인"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12904,6 +12970,11 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }로 전환하기"
       ]
     }
   }

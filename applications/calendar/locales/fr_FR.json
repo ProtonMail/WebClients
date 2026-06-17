@@ -6795,6 +6795,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "All your files will be imported": [
+        "Tous vos fichiers seront importés."
       ]
     },
     "info": {
@@ -7553,6 +7556,15 @@
       ],
       "Zoom meeting": [
         "Réunion Zoom"
+      ],
+      "Calendars": [
+        "Calendriers"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "Messages"
       ]
     },
     "label": {
@@ -12798,6 +12810,12 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

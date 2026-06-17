@@ -6795,6 +6795,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your files will be imported": [
+        "S'importaran tots els vostres fitxers"
       ]
     },
     "info": {
@@ -7553,6 +7556,15 @@
       ],
       "Zoom meeting": [
         "Reunió per Zoom"
+      ],
+      "Calendars": [
+        "Calendaris"
+      ],
+      "Drive": [
+        "Unitat"
+      ],
+      "Emails": [
+        "Correus electrònics"
       ]
     },
     "label": {
@@ -12702,6 +12714,12 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
