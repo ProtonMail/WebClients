@@ -29,6 +29,10 @@ export interface GridParticleFieldOptions {
     revealGain: number;
     revealThreshold: number;
     dotRgb: GridParticleFieldRgb;
+    maskSampleScale: number;
+    maskUpdateInterval: number;
+    drivenExternally: boolean;
+    maxDpr: number;
     colorCssVar: string;
     colorCssVarChat: string;
 }
@@ -42,12 +46,14 @@ export declare function mergeGridParticleFieldOptions(
 export declare class GridParticleField {
     constructor(el: HTMLCanvasElement, options?: Partial<GridParticleFieldOptions>);
     setChatColorMode(chat: boolean): void;
+    tick(): void;
     destroy(): void;
 }
 
 export interface GridParticleFieldHandle {
     init: () => void;
     setChatColorMode: (chat: boolean) => void;
+    tick: () => void;
     destroy: () => void;
 }
 
