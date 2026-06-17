@@ -2212,9 +2212,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Upotrijebite povlačenje i ispuštanje da biste rangirali prioritet među kontaktima. Odznačite kontakte koje ne želite spojiti."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Prenijet ćemo vašu staru e-poštu i povezati vaš Gmail s ${ MAIL_APP_NAME } kako bi se nove poruke automatski prikazivale."
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Uvest ćemo vašu staru e-poštu, preskočiti duplikate i povezati se s vašim Gmailom kako bi se nove poruke automatski prikazivale. Uvoz možete poništiti u bilo kojem trenutku u postavkama Easy Switch."
       ],
@@ -3581,9 +3578,6 @@
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
-      "Insert image": [
-        "Umetni sliku"
-      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -4583,6 +4577,9 @@
       ],
       "Upload picture": [
         "Učitaj sliku"
+      ],
+      "URL": [
+        "URL"
       ],
       "Username": [
         "Korisničko ime"
@@ -6586,6 +6583,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresa e-pošte",
         "${ emailsCount } adrese e-pošte",

@@ -960,12 +960,6 @@
       "Trust": [
         "Давяраць"
       ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
-      ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
       ],
@@ -3301,9 +3295,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Мы імпартуем вашы старыя лісты, прапусцім дублікаты і падключым ваш Gmail, каб новыя паведамленні з'яўляліся аўтаматычна. Вы можаце адрабіць імпарт у любы час у наладах Easy Switch."
       ],
@@ -4763,6 +4754,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } дзень",
+        "${ remainingDaysCount } дні",
+        "${ remainingDaysCount } дзён",
+        "${ remainingDaysCount } дзён"
+      ],
       "${ remainingDaysCount } day left": [
         "Застаўся ${ remainingDaysCount } дзень",
         "Засталося ${ remainingDaysCount } дні",
@@ -5276,6 +5273,18 @@
         "${ currentProgress } з ${ totalProgress }",
         "${ currentProgress } з ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } размова будзе пазначана як:",
+        "${ elementsCount } размовы будзе пазначана як:",
+        "${ elementsCount } размоў будзе пазначана як:",
+        "${ elementsCount } размоў будзе пазначана як:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "Будзе пазначана прачытанай ${ elementsCount } размова",
+        "Будуць пазначаны прачытанымі ${ elementsCount } размовы",
+        "Будуць пазначаны прачытанымі ${ elementsCount } размоў.",
+        "Будуць пазначаны прачытанымі ${ elementsCount } размоў."
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } паведамленне будзе пазначана як:",
         "${ elementsCount } паведамленні будуць пазначаны як:",
@@ -5299,6 +5308,12 @@
         "Будуць перамешчаны ${ elementsCount } паведамленні",
         "Будуць перамешчаны ${ elementsCount } паведамленняў",
         "Будуць перамешчаны ${ elementsCount } паведамленняў"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } убудаваны відарыс",
+        "${ embeddedAttachmentsCount } убудаваныя відарысы",
+        "${ embeddedAttachmentsCount } убудаваных відарысаў",
+        "${ embeddedAttachmentsCount } убудаваных відарысаў"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
@@ -5326,6 +5341,18 @@
         "Ачышчана ${ numberOfUTMTrackers } спасылкі",
         "Ачышчана ${ numberOfUTMTrackers } спасылак",
         "Ачышчана ${ numberOfUTMTrackers } спасылак"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "Знойдзена ${ numOccurrences } паўтарэнне",
+        "Знойдзена ${ numOccurrences } паўтарэнні",
+        "Знойдзена ${ numOccurrences } паўтарэнняў",
+        "Знойдзена ${ numOccurrences } паўтарэнняў"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "Знойдзена ${ numOccurrences } паўтарэнне ў змесціве пошты",
+        "Знойдзена ${ numOccurrences } паўтарэнні ў змесціве пошты",
+        "Знойдзена ${ numOccurrences } паўтарэнняў у змесціве пошты",
+        "Знойдзена ${ numOccurrences } паўтарэнняў у змесціве пошты"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } дазваляе вам захоўваць паролі, нататкі і іншыя канфідэнцыяльныя звесткі з дапамогай скразнога шыфравання. Праграмы даступны для ${ ios }, ${ android } і ў вашым браўзеры ${ browser }."
@@ -5390,6 +5417,18 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } непрачытанае",
+        "${ subscription.UnreadMessageCount } непрачытаныя",
+        "${ subscription.UnreadMessageCount } непрачытаных",
+        "${ subscription.UnreadMessageCount } непрачытаных"
+      ],
+      "${ total } message": [
+        "${ total } паведамленне",
+        "${ total } паведамленні",
+        "${ total } паведамленняў",
+        "${ total } паведамленняў"
+      ],
       "${ total } user found": [
         "Знойдзены ${ total } карыстальнік",
         "Знойдзена ${ total } карыстальнікі",
@@ -5401,6 +5440,18 @@
         "Заблакіравана ${ trackersCount } праграмы сачэння",
         "Заблакіравана ${ trackersCount } праграм сачэння",
         "Заблакіравана ${ trackersCount } праграм сачэння"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } рассылка",
+        "${ unreadCount } рассылкі",
+        "${ unreadCount } рассылак",
+        "${ unreadCount } рассылак"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } запланаванае паведамленне",
+        "${ unreadCount } запланаваныя паведамленні",
+        "${ unreadCount } запланаваных паведамленняў",
+        "${ unreadCount } запланаваных паведамленняў"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
@@ -5428,6 +5479,12 @@
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Фільтраваць, калі выканана ЛЮБАЯ з наступных умоў)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** вынік знойдзены ў ${ labelName }",
+        "**${ total }** вынікі знойдзены ў ${ labelName }",
+        "**${ total }** вынікаў знойдзены ў ${ labelName }",
+        "**${ total }** вынікаў знойдзены ў ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Аўтаматычнае падключэнне**: падключэнне да сервера VPN адбываецца адразу пасля ўключэння прылады."
@@ -5861,6 +5918,18 @@
       "Expired": [
         "Пратэрмінавана"
       ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіну",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіны",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзін",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзін"
+      ],
+      "file attached": [
+        "файл далучаны",
+        "файлы далучаны",
+        "файлаў далучаны",
+        "файлаў далучаны"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтры працуюць для ўсіх лістоў, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
       ],
@@ -5884,6 +5953,12 @@
       ],
       "Forgot password?": [
         "Забылі пароль?"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дня",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён"
       ],
       "Geoblocking": [
         "Геаблакіроўка"
@@ -5974,9 +6049,6 @@
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
-      ],
-      "Insert image": [
-        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -6464,6 +6536,12 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасцю ў інтэрнэце."
       ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Гэта паведамленне будзе пазначана як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?"
+      ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
       ],
@@ -6673,6 +6751,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "У вас **${ count } размова** пазначана гэтай меткай",
+        "У вас **${ count } размовы** пазначаны гэтай меткай",
+        "У вас **${ count } размоў** пазначаны гэтай меткай",
+        "У вас **${ count } размоў** пазначаны гэтай меткай"
       ],
       "You have **${ count } message** stored in this folder": [
         "У гэтай папцы ў вас захоўваецца **${ count } паведамленне**",
@@ -6934,6 +7018,12 @@
       ]
     },
     "Key pinning": {
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Вы сапраўды хочаце давяраць асноўнаму адкрытаму ключу з наступным адбіткам?",
+        "Вы сапраўды хочаце давяраць асноўным адкрытым ключам з наступнымі адбіткамі?",
+        "Вы сапраўды хочаце давяраць асноўным адкрытым ключам з наступнымі адбіткамі?",
+        "Вы сапраўды хочаце давяраць асноўным адкрытым ключам з наступнымі адбіткамі?"
+      ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Вы ўключылі праверку адраса з даверанымі ключамі для гэтага адраса электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўднаму ключу для адпраўкі, каб адпраўляць паведамленні на гэты адрас электроннай пошты.",
         "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты.",
@@ -7334,6 +7424,9 @@
       "Don't show this again": [
         "Больш не паказваць"
       ],
+      "Download logs": [
+        "Спампаваць журналы"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "напрыклад, Amazon, eBay, Etsy"
       ],
@@ -7699,6 +7792,9 @@
       ],
       "Upload picture": [
         "Запампаваць малюнак"
+      ],
+      "URL": [
+        "URL-адрас"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -11625,17 +11721,41 @@
       ]
     },
     "Success": {
+      "${ count } message deleted": [
+        "Выдалена ${ count } паведамленне",
+        "Выдалена ${ count } паведамленні",
+        "Выдалена ${ count } паведамленняў",
+        "Выдалена ${ count } паведамленняў"
+      ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
         "${ countMergeableContacts } кантакты выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна."
       ],
+      "${ elementsCount } conversation marked as read.": [
+        "Пазначана як прачытанае ${ elementsCount } размова",
+        "Пазначана як прачытанае ${ elementsCount } размовы",
+        "Пазначана як прачытанае ${ elementsCount } размоў",
+        "Пазначана як прачытанае ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "Пазначана зорачкай ${ elementsCount } размова",
+        "Пазначана зорачкай ${ elementsCount } размовы",
+        "Пазначана зорачкай ${ elementsCount } размоў",
+        "Пазначана зорачкай ${ elementsCount } размоў"
+      ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } размова пазначана як непрачытаная.",
         "${ elementsCount } размовы пазначаны як непрачытаныя.",
         "${ elementsCount } размоў пазначаны як непрачытаныя.",
         "${ elementsCount } размоў пазначаны як непрачытаныя."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } размова перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размовы перамешчаны ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размоў перамешчаны ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размоў перамешчаны ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
         "${ elementsCount } размова перамешчана ў ${ labelName }.",
@@ -11673,6 +11793,12 @@
         "У ${ elementsCount } размовах скасавана адкладанне",
         "У ${ elementsCount } размовах скасавана адкладанне"
       ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } паведамленне дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленні дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленняў дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленняў дададзена да ${ labelName }."
+      ],
       "${ elementsCount } message marked as read.": [
         "Пазначана як прачытанае ${ elementsCount } паведамленне.",
         "Пазначана як прачытанае ${ elementsCount } паведамленні.",
@@ -11680,16 +11806,28 @@
         "Пазначана як прачытанае ${ elementsCount } паведамленняў."
       ],
       "${ elementsCount } message marked as unread.": [
-        "Пазначана як непрачытанае ${ elementsCount } паведамленне",
-        "Пазначана як непрачытанае ${ elementsCount } паведамленні",
-        "Пазначана як непрачытанае ${ elementsCount } паведамленняў",
-        "Пазначана як непрачытанае ${ elementsCount } паведамленняў"
+        "Пазначана як непрачытана ${ elementsCount } паведамленне",
+        "Пазначана як непрачытана ${ elementsCount } паведамленні",
+        "Пазначана як непрачытана ${ elementsCount } паведамленняў",
+        "Пазначана як непрачытана ${ elementsCount } паведамленняў"
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } паведамленне перамешчана ў ${ labelName }, а адпраўнік дададзены ў ваш спіс не спам.",
+        "${ elementsCount } паведамленні перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } паведамленняў перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } паведамленняў перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } паведамленне перамешчана ў ${ labelName }.",
         "${ elementsCount } паведамленні перамешчана ў ${ labelName }.",
         "${ elementsCount } паведамленняў перамешчана ў ${ labelName }.",
         "${ elementsCount } паведамленняў перамешчана ў ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "Перамешчана ў спам ${ elementsCount } паведамленне, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } паведамленні, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } паведамленняў, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } паведамленняў, а адпраўнік дададзены ў ваш спіс са спамам."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "Выдалена ${ elementsCount } паведамленне з ${ labelName }.",
@@ -11763,6 +11901,12 @@
       "Last modified aliases stored in your oldest vault": [
         "Апошнія змененыя псеўданімы захоўваюцца ў вашым самым старым сховішчы"
       ],
+      "Move ${ selectionCount } conversation": [
+        "Перамясціць ${ selectionCount } размову",
+        "Перамясціць ${ selectionCount } размовы",
+        "Перамясціць ${ selectionCount } размоў",
+        "Перамясціць ${ selectionCount } размоў"
+      ],
       "Move ${ selectionCount } message": [
         "Перамясціць ${ selectionCount } паведамленне",
         "Перамясціць ${ selectionCount } паведамленні",
@@ -11789,6 +11933,12 @@
       ],
       "Problem reported": [
         "Паведамлена аб праблеме"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Перакласіфікавана ${ elementsCount } паведамленне.",
+        "Перакласіфікавана ${ elementsCount } паведамленні.",
+        "Перакласіфікавана ${ elementsCount } паведамленняў.",
+        "Перакласіфікавана ${ elementsCount } паведамленняў."
       ],
       "Secret passphrase updated": [
         "Сакрэтная парольная фраза абноўлена"
@@ -11999,6 +12149,9 @@
       "${ appName } keyboard shortcuts": [
         "Спалучэнні клавіш ${ appName }"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрас электроннай пошты",
         "${ emailsCount } адрасы электроннай пошты",
@@ -12007,6 +12160,12 @@
       ],
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } паведамленне",
+        "${ numMessages } паведамленні",
+        "${ numMessages } паведамленняў",
+        "${ numMessages } паведамленняў"
       ],
       "${ unreads } unread message": [
         "${ unreads } непрачытанае паведамленне",
@@ -12214,6 +12373,12 @@
         "Выдаліць ${ count } чарнавікі",
         "Выдаліць ${ count } чарнавікоў",
         "Выдаліць ${ count } чарнавікоў"
+      ],
+      "Delete ${ count } message": [
+        "Выдаліць ${ count } паведамленне",
+        "Выдаліць ${ count } паведамленні",
+        "Выдаліць ${ count } паведамленняў",
+        "Выдаліць ${ count } паведамленняў"
       ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"
@@ -12667,6 +12832,12 @@
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Вы абаронены ад ${ trackersCount } праграмы сачэння",
+        "Вы абаронены ад ${ trackersCount } праграм сачэння",
+        "Вы абаронены ад ${ trackersCount } праграм сачэння",
+        "Вы абаронены ад ${ trackersCount } праграм сачэння"
       ],
       "We'd love to hear from you!": [
         "Нам было б прыемна пачуць гэта!"

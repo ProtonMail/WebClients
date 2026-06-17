@@ -3079,9 +3079,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "我們將匯入您的舊電子郵件、略過重複項目，並連線至您的 Gmail，以便新訊息自動出現。您可以隨時在 Easy Switch 設定中復原匯入"
       ],
@@ -5409,9 +5406,6 @@
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
-      "Insert image": [
-        "插入圖像"
-      ],
       "Insert link": [
         "插入連結"
       ],
@@ -6610,6 +6604,9 @@
       "Don't show this again": [
         "不再顯示此內容"
       ],
+      "Download logs": [
+        "下載記錄檔"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "如 Amazon, eBay, Etsy"
       ],
@@ -6972,6 +6969,9 @@
       ],
       "Upload picture": [
         "上載圖像"
+      ],
+      "URL": [
+        "網址"
       ],
       "Username": [
         "使用者名稱"
@@ -10830,6 +10830,9 @@
     "Title": {
       "${ appName } keyboard shortcuts": [
         "${ appName }鍵盤快捷鍵"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
