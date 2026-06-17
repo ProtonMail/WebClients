@@ -411,7 +411,7 @@ const MainContainer: FunctionComponent = () => {
                                         <LanguageSection locales={locales} />
                                         <TwoFactorSection />
                                         <OpenVPNCredentialsSection />
-                                        <EmailSubscriptionSection />
+                                        <EmailSubscriptionSection toggleContainerClassName="gap-4" />
                                         <DeleteSection />
                                     </PrivateMainSettingsArea>
                                 </Route>

@@ -7,6 +7,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import { mockUseConfig } from '@proton/testing/lib/mockUseConfig';
 
 import EditEmailSubscription from './EditEmailSubscription';
 
@@ -45,6 +46,7 @@ describe('EditEmailSubscription', () => {
         mockedUseApi.mockReturnValue(mockedApi);
         mockedUseUserSettings.mockReturnValue([{ EarlyAccess: 1, News: 0 }]);
         mockedUseUser.mockReturnValue([user]);
+        mockUseConfig();
     });
 
     it('should have all expected toggles as a paid user', () => {

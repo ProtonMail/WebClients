@@ -1,4 +1,5 @@
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 
@@ -84,6 +85,8 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
         return uint8ArrayToUtf8String(Uint8Array.fromBase64(value));
     };
 
+    const hasPassword = () => !!getPassword();
+
     const getLocalID = () => get(LOCAL_ID_KEY);
 
     const setLocalID = (LocalID: number | undefined) => {
@@ -162,6 +165,7 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
         hasSession,
         setPassword,
         getPassword,
+        hasPassword,
         setPersistent,
         getPersistent,
         setClientKey,

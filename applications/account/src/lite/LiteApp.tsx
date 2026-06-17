@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Fragment, Suspense, lazy, useMemo, useState } from 'react';
-import { BrowserRouter, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import {
@@ -38,6 +38,28 @@ import LiteLayout from './components/LiteLayout';
 import LiteLoaderPage from './components/LiteLoaderPage';
 import { SupportedActions, getApp } from './helper';
 
+const LazyLegacyLiteAppBaseRoute = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "LegacyLiteAppBaseRoute" */
+            /* webpackPrefetch: true */
+            /* webpackPreload: true */
+            /* webpackFetchPriority: "high" */
+            './LegacyLiteAppBaseRoute'
+        )
+);
+
+const LazyLiteAppRouter = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "LiteAppRouter" */
+            /* webpackPrefetch: true */
+            /* webpackPreload: true */
+            /* webpackFetchPriority: "high" */
+            './LiteAppRouter'
+        )
+);
+
 const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: ProductParam }) => {
     const defaultHeaders = appVersion ? getAppVersionHeader(appVersion) : undefined;
     const config = {
@@ -70,17 +92,6 @@ const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: Pro
         authentication,
     };
 };
-
-const LazyMainContainer = lazy(
-    () =>
-        import(
-            /* webpackChunkName: "MainContainer" */
-            /* webpackPrefetch: true */
-            /* webpackPreload: true */
-            /* webpackFetchPriority: "high" */
-            './MainContainer'
-        )
-);
 
 const App = () => {
     const location = useLocation();
@@ -175,14 +186,21 @@ const App = () => {
                                                             loader={loader}
                                                         >
                                                             <Suspense fallback={loader}>
-                                                                <LazyMainContainer
-                                                                    layout={layout}
-                                                                    loader={loader}
-                                                                    action={action}
-                                                                    redirect={redirect}
-                                                                    app={app}
-                                                                    searchParams={searchParams}
-                                                                />
+                                                                <Switch>
+                                                                    <Route path={'/lite'} exact>
+                                                                        <LazyLegacyLiteAppBaseRoute
+                                                                            layout={layout}
+                                                                            loader={loader}
+                                                                            action={action}
+                                                                            redirect={redirect}
+                                                                            app={app}
+                                                                            searchParams={searchParams}
+                                                                        />
+                                                                    </Route>
+                                                                    <Route path={'*'}>
+                                                                        <LazyLiteAppRouter loader={loader} />
+                                                                    </Route>
+                                                                </Switch>
                                                             </Suspense>
                                                         </Setup>
                                                     )}

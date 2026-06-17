@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -14,7 +16,14 @@ import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscri
 import DeleteAccountModal from './DeleteAccountModal';
 import SettingsParagraph from './SettingsParagraph';
 
-const DeleteSection = () => {
+interface Props {
+    deleteButtonFullWidth?: boolean;
+    deleteButtonText?: ReactNode;
+}
+
+const DeleteSection = (props: Props) => {
+    const { deleteButtonFullWidth = false, deleteButtonText = c('Action').t`Delete your account` } = props;
+
     const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
     const { APP_NAME } = useConfig();
@@ -77,6 +86,7 @@ const DeleteSection = () => {
                 color="danger"
                 shape="outline"
                 id="deleteButton"
+                fullWidth={deleteButtonFullWidth}
                 onClick={() => {
                     if (hasMigrationDiscount(subscription)) {
                         setMigrationDiscountModal(true);
@@ -89,7 +99,7 @@ const DeleteSection = () => {
                     setDeleteAccountModalOpen(true);
                 }}
             >
-                {c('Action').t`Delete your account`}
+                {deleteButtonText}
             </Button>
         </>
     );

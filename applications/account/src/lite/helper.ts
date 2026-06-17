@@ -16,6 +16,15 @@ export enum SupportedActions {
     VPNLite = 'vpn-lite',
 }
 
+export const LITE_APP_BASE_PATH = '/lite/space';
+
+export const LiteAppPaths = {
+    Recovery: `${LITE_APP_BASE_PATH}/recovery`,
+    Privacy: `${LITE_APP_BASE_PATH}/privacy`,
+    Notifications: `${LITE_APP_BASE_PATH}/notifications`,
+    Referral: `${LITE_APP_BASE_PATH}/referral`,
+} as const;
+
 const list: { value: string; product: ProductParam }[] = [
     { value: 'vpn', product: APPS.PROTONVPN_SETTINGS },
     { value: 'mail', product: APPS.PROTONMAIL },
