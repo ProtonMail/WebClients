@@ -989,6 +989,9 @@
       "Select time zone": [
         "समय क्षेत्र चुनें"
       ],
+      "Send": [
+        "भेजें"
+      ],
       "send auto-reply email": [
         "ऑटो-रिप्लाई ईमेल भेजें"
       ],
@@ -1147,6 +1150,9 @@
       ],
       "Underline": [
         "नीचे रेखा खीचें"
+      ],
+      "Undo": [
+        "अंडू करें"
       ],
       "Undo import": [
         "आयात पूर्ववत करें"
@@ -3255,9 +3261,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "नए संदेशों के लिए जगह आरक्षित रखने के लिए हम 80% स्टोरेज पर आयात रोक देंगे।"
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "हम आपके पुराने ईमेल लाएंगे और आपके Gmail को ${ MAIL_APP_NAME } से कनेक्ट करेंगे ताकि नए संदेश अपने आप दिखाई दें"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "हम आपके पुराने ईमेल आयात करेंगे, डुप्लिकेट छोड़ेंगे और आपके Gmail से कनेक्ट करेंगे ताकि नए संदेश अपने आप दिखाई दें। आप Easy Switch सेटिंग में किसी भी समय आयात को अनडू कर सकते हैं"
@@ -13278,9 +13281,6 @@
       ],
       "Collaborative documents and spreadsheets": [
         "सहयोगात्मक दस्तावेज़ और स्प्रेडशीट"
-      ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "${ PLAN_NAMES[plan] } के साथ जारी रखें"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "${ totalMailStorageSize } स्टोरेज के साथ एन्क्रिप्टेड ईमेल"

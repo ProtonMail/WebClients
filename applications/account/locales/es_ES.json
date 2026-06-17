@@ -379,6 +379,9 @@
       "Continue with this password": [
         "Continuar con esta contraseña"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copiar la dirección"
       ],
@@ -873,6 +876,9 @@
       ],
       "Hide": [
         "Ocultar"
+      ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Ocultar ${ LUMO_SHORT_APP_NAME }"
       ],
       "Hide more benefits": [
         "Ocultar más ventajas"
@@ -1384,6 +1390,9 @@
       "Select time zone": [
         "Seleccionar la zona horaria"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "send auto-reply email": [
         "enviar un correo de respuesta automática"
       ],
@@ -1543,6 +1552,9 @@
       "Stay": [
         "Permanecer"
       ],
+      "Stop": [
+        "Parar"
+      ],
       "Stop using single sign-on": [
         "Dejar de usar el inicio de sesión único"
       ],
@@ -1602,6 +1614,9 @@
       ],
       "Underline": [
         "Subrayado"
+      ],
+      "Undo": [
+        "Deshacer"
       ],
       "Undo import": [
         "Deshacer importación"
@@ -2845,6 +2860,9 @@
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Copia el siguiente código y pégalo en la sección DNS del proveedor de tu dominio."
       ],
+      "Creating accounts": [
+        "Crear cuentas"
+      ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Estado de la migración de datos de Google Workspace a ${ BRAND_NAME }"
       ],
@@ -3121,6 +3139,9 @@
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Se ha detectado que algunos usuarios no han reclamado sus cuentas de ${ BRAND_NAME }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Se están creando tus cuentas y se están importando tus datos ahora para que tu equipo tenga todo lo necesario cuando empiece a usar su cuenta segura de ${ BRAND_NAME }."
       ],
       "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
         "Estamos activando el cifrado de extremo a extremo para todos. Cada correo electrónico, cada evento es ahora solo tuyo. Visible solo para tu equipo. Ni para nosotros ni para nadie más."
@@ -5201,9 +5222,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos las importaciones al llegar al 80 % de almacenamiento para reservar espacio para nuevos mensajes."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Traeremos tus correos electrónicos antiguos y conectaremos tu Gmail a ${ MAIL_APP_NAME } para que los nuevos mensajes aparezcan automáticamente"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Importaremos tus correos electrónicos antiguos, omitiremos los duplicados y nos conectaremos a tu Gmail para que los nuevos mensajes aparezcan automáticamente. Puedes deshacer la importación en cualquier momento en los ajustes de Easy Switch."
@@ -8472,9 +8490,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descripción:"
-      ],
       "Group address:": [
         "Dirección del grupo:"
       ],
@@ -9242,6 +9257,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de tus miembros que no son de SSO usa la autenticación de dos factores para iniciar sesión en tu organización.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de tus miembros que no son de SSO usan la autenticación de dos factores para iniciar sesión en tu organización."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "Es necesario que ${ invitedMemberCount } persona acepte su invitación para empezar a recibir correos grupales.",
+        "Es necesario que ${ invitedMemberCount } personas acepten su invitación para empezar a recibir correos grupales."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quiere compartir información contigo en ${ PASS_APP_NAME }."
       ],
@@ -9315,6 +9334,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "Se ha añadido ${ pendingAdminMemberCount } nuevo miembro a través de tu proveedor de identidad y está pendiente de revisión.",
+        "Se han añadido ${ pendingAdminMemberCount } nuevos miembros a través de tu proveedor de identidad y están pendientes de revisión."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -10544,6 +10567,9 @@
       "here": [
         "aquí"
       ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Hola. Describe el filtro que quieres y escribo el script de Sieve. También puedo modificar lo que ya está en el editor."
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Oculta la información de identificación cargando el contenido remoto a través de un proxy. Existe una opción para almacenar el contenido como archivos adjuntos."
       ],
@@ -11008,6 +11034,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Los nuevos datos de actividad dejarán de recopilarse y mostrarse."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Se ha creado un nuevo grupo a través de tu proveedor de identidad y está pendiente de revisión."
       ],
       "New sidebar": [
         "Nueva barra lateral"
@@ -11831,6 +11860,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Estas credenciales no pueden utilizarse para iniciar sesión en nuestras aplicaciones oficiales de ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
+      "Thinking…": [
+        "Pensando…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
@@ -13897,6 +13929,9 @@
       ],
       "Enter code": [
         "Introducir código"
+      ],
+      "Enter current password": [
+        "Introduce la contraseña actual"
       ],
       "Enter name or email address": [
         "Introducir el nombre o la dirección de correo electrónico"
@@ -17206,6 +17241,9 @@
       "An external address cannot be default": [
         "Una dirección externa no puede ser la dirección por defecto.."
       ],
+      "Copied to clipboard": [
+        "Copiada al portapapeles"
+      ],
       "Downloaded 2FA recovery codes": [
         "Códigos de recuperación 2FA descargados"
       ],
@@ -17250,6 +17288,9 @@
       ],
       "Reminder has been sent": [
         "Se ha enviado un recordatorio"
+      ],
+      "Sieve script inserted": [
+        "Se ha insertado el script de Sieve"
       ],
       "The key has been deleted.": [
         "Se ha eliminado la clave."
@@ -18814,6 +18855,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Describe the filter you want…": [
+        "Describe el filtro que quieres…"
+      ],
       "domain.com": [
         "dominio.es"
       ],
@@ -20373,6 +20417,9 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Esto restaura el acceso a los correos electrónicos, contactos, archivos, contraseñas y a cualquier otro dato cifrado de tu cuenta después de un restablecimiento de contraseña."
       ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Para ayudarte a recordar tu contraseña, se te pide que la introduzcas periódicamente."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Para comprobar que la dirección de correo electrónico es tuya, introduce el código de verificación enviado a ${ boldEmail }."
       ],
@@ -20405,6 +20452,9 @@
       ],
       "Verify recovery phone": [
         "Verificar el teléfono de recuperación"
+      ],
+      "Verify your password": [
+        "Verifica tu contraseña"
       ],
       "Verify your recovery email": [
         "Verificar tu correo electrónico de recuperación"
@@ -21216,9 +21266,6 @@
       "Connect all your devices": [
         "Conecta todos tus dispositivos"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Continuar con ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
@@ -21390,9 +21437,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Prueba ${ BRAND_NAME } gratis por ${ TRIAL_DURATION_DAYS } días${ br }y obtén ${ referralInfo.uiData.refereeRewardAmount } en créditos"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Prueba ${ BRAND_NAME } gratis por 14 días"
       ],
       "Try ${ planName } for free": [
         "Prueba ${ planName } gratis"
@@ -24280,6 +24324,9 @@
       "Help center": [
         "Centro de ayuda"
       ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Ayuda de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Help us improve": [
         "Ayúdanos a mejorar"
       ],
@@ -25353,8 +25400,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Asistencia instantánea con IA y expertos humanos."
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia de IA al instante y un experto humano a tu disposición."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."

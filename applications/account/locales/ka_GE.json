@@ -357,6 +357,9 @@
       "Continue with this password": [
         "ამ პაროლის გამოყენება"
       ],
+      "Copy": [
+        "კოპირება"
+      ],
       "Copy address": [
         "მისამართის კოპირება"
       ],
@@ -1362,6 +1365,9 @@
       "Select time zone": [
         "დროის სარტყლის არჩევა"
       ],
+      "Send": [
+        "გაგზავნა"
+      ],
       "send auto-reply email": [
         "ელ-ფოსტაზე პასუხის ავტომატურად გაცემა"
       ],
@@ -1562,6 +1568,9 @@
       ],
       "Underline": [
         "ხაზგასმა"
+      ],
+      "Undo": [
+        "დაბრუნება"
       ],
       "Undo import": [
         "შემოტანის დაბრუნება"
@@ -4769,9 +4778,6 @@
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "ასწიეთ ტრაფიკი, რომ მიიღოთ ${ activatePmUser } უფრო მოკლე და ადვილად დასამახსოვრებელი ელფოსტის მისამართი იმასთან ერთად, რაც ახლა გაქვთ."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "ჩვენ გადმოვიტანთ თქვენს ძველ ელფოსტას და დავაკავშირებთ თქვენს Gmail-ს ${ MAIL_APP_NAME }-თან, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "ჩვენ მოვახდენთ თქვენი ძველი ელფოსტის იმპორტს, გამოვტოვებთ დუბლიკატებს და დავუკავშირდებით თქვენს Gmail-ს, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს. იმპორტის დაბრუნება ნებისმიერ დროს შეგიძლიათ Easy Switch-ის პარამეტრებში"
       ],
@@ -7905,11 +7911,6 @@
       ],
       "Services": [
         "სერვისები"
-      ]
-    },
-    "Group detail label": {
-      "Description:": [
-        "აღწერა:"
       ]
     },
     "Group member count": {
@@ -16007,6 +16008,9 @@
       "An external address cannot be default": [
         "გარე მისამართი ნაგულისხმები ვერ იქნება"
       ],
+      "Copied to clipboard": [
+        "დაკოპირდა გაცვლის ბუფერში"
+      ],
       "Downloaded 2FA recovery codes": [
         "2FA აღდგენის კოდების გადმოწერა"
       ],
@@ -19498,9 +19502,6 @@
       "Connect all your devices": [
         "დააკავშირეთ თქვენი ყველა მოწყობილობა"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "გაგრძელება ${ PLAN_NAMES[plan] }-ით"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-ის ანგარიშის შექმნა"
       ],
@@ -19654,9 +19655,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "სცადეთ ${ BRAND_NAME } უფასოდ ${ TRIAL_DURATION_DAYS } დღით"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "სცადეთ ${ BRAND_NAME } 14 დღით უფასოდ"
       ],
       "Try ${ planName } for free": [
         "სცადეთ ${ planName } უფასოდ"

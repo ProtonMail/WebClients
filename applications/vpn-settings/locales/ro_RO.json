@@ -1375,6 +1375,9 @@
         "${ users } utilizatori",
         "${ users } de utilizatori"
       ],
+      "Add-on": [
+        "Supliment"
+      ],
       "Dedicated VPN servers": [
         "Servere VPN dedicate"
       ],
@@ -3739,9 +3742,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Se vor importa mesajele, se vor omite duplicatele și se va efectua conexiunea la contul Gmail, astfel încât mesajele noi să apară automat. Puteți reveni asupra importării oricând din setările Easy Switch."
       ],
@@ -5825,9 +5825,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descriere:"
-      ],
       "Group address:": [
         "Adresă grup:"
       ],
@@ -6765,6 +6762,9 @@
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }."
+      ],
+      "All your files will be imported": [
+        "Vor fi importate toate fișierele."
       ],
       "Allocated": [
         "Alocat"
@@ -9737,6 +9737,9 @@
       ],
       "Don't show this again": [
         "Nu mai arăta asta"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "e.g. example.com": [
         "ex. exemplu.com"
@@ -15576,6 +15579,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizator",
         "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizatori",
@@ -16577,6 +16583,9 @@
         "Persoane abonate: ${ friendsSubscribed }",
         "Persoane abonate: ${ friendsSubscribed }",
         "Persoane abonate: ${ friendsSubscribed }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } pentru organizații"

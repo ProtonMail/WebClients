@@ -396,6 +396,9 @@
       "Continue with this password": [
         "Mit diesem Passwort fortfahren"
       ],
+      "Copy": [
+        "Kopieren"
+      ],
       "Copy address": [
         "Adresse kopieren"
       ],
@@ -938,6 +941,9 @@
       ],
       "Hide": [
         "Ausblenden"
+      ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } ausblenden"
       ],
       "Hide more benefits": [
         "Mehr Vorteile ausblenden"
@@ -1482,6 +1488,9 @@
       "Select time zone": [
         "Zeitzone auswählen"
       ],
+      "Send": [
+        "Senden"
+      ],
       "send auto-reply email": [
         "automatische E-Mail-Antwort senden"
       ],
@@ -1644,6 +1653,9 @@
       "Stay": [
         "Nicht schließen"
       ],
+      "Stop": [
+        "Stoppen"
+      ],
       "Stop using single sign-on": [
         "Single Sign-on nicht mehr verwenden"
       ],
@@ -1706,6 +1718,9 @@
       ],
       "Underline": [
         "Unterstreichen"
+      ],
+      "Undo": [
+        "Rückgängig"
       ],
       "Undo import": [
         "Import widerrufen"
@@ -2966,6 +2981,9 @@
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Kopiere den folgenden Code und füge ihn im DNS-Bereich deines Domain-Hosts ein."
       ],
+      "Creating accounts": [
+        "Konten werden erstellt"
+      ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Status der Datenmigration von Google Workspace zu ${ BRAND_NAME }"
       ],
@@ -3164,6 +3182,9 @@
       ],
       "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
         "Wir wechseln zu ${ BRAND_NAME }, dem sicheren E-Mail-Dienst.\nUnd dein ${ BRAND_NAME }-Konto steht bereit.\nKlicke auf ${ inviteLink }.\nGib deine E-Mail-Adresse ein, wir senden dir einen Code an deine Gmail-Adresse.\nVerwende diesen, um dein Passwort festzulegen – und schon gehört dein ${ BRAND_NAME }-Konto dir.\nFür eine kurze Zeit werden beide Dienste parallel funktionieren: ${ BRAND_NAME } und Gmail.\nSobald alle den Wechsel vollzogen haben, werden wir Gmail einstellen. Wir werden dich rechtzeitig daran erinnern."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Wir richten gerade deine Konten ein und importieren deine Daten, damit dein Team über alles verfügt, was es benötigt, wenn es mit der Nutzung seines sicheren ${ BRAND_NAME }-Kontos beginnt."
       ],
       "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
         "Wir schalten die End-to-End-Verschlüsselung für alle ein. Jede E-Mail, jeder Termin gehört nun ganz allein dir. Nur dein Team kann sie einsehen. Weder wir noch sonst jemand."
@@ -5354,9 +5375,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Wir werden die Importe bei 80 % der Speicherplatzbelegung anhalten, damit genügend Platz für neue Nachrichten bleibt."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Wir holen deine alten E-Mails und verbinden dein Gmail mit ${ MAIL_APP_NAME }, damit neue Nachrichten automatisch angezeigt werden"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Wir importieren deine alten E-Mails, überspringen doppelte Nachrichten und verbinden uns mit deinem Gmail-Konto, damit neue Nachrichten automatisch angezeigt werden. Du kannst den Import jederzeit in den Einstellungen von Easy Switch rückgängig machen."
@@ -8823,9 +8841,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Beschreibung:"
-      ],
       "Group address:": [
         "E-Mail-Adresse der Gruppe:"
       ],
@@ -9502,6 +9517,9 @@
       ],
       "Contacts": [
         "Kontakte"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Mail": [
         "E-Mail"
@@ -10987,6 +11005,9 @@
       "here": [
         "hier"
       ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Hallo, beschreibe mir den gewünschten Filter, dann schreibe ich das Sieve-Skript. Ich kann auch bereits im Editor vorhandene Inhalte anpassen."
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Verbirgt identifizierende Informationen, indem Remote-Inhalte über einen Proxy geladen werden. Option zum Speichern von Inhalten als Anhänge."
       ],
@@ -12331,6 +12352,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Diese Anmeldedaten können nicht zur Anmeldung in unseren offiziellen ${ VPN_APP_NAME }-Apps verwendet werden. ${ learnMore }"
+      ],
+      "Thinking…": [
+        "Denkt nach…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
@@ -18011,6 +18035,9 @@
       "An external address cannot be default": [
         "Eine externe Adresse kann nicht als Standardadresse verwendet werden."
       ],
+      "Copied to clipboard": [
+        "In die Zwischenablage kopiert"
+      ],
       "Downloaded 2FA recovery codes": [
         "2FA-Wiederherstellungscodes heruntergeladen."
       ],
@@ -18058,6 +18085,9 @@
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
+      ],
+      "Sieve script inserted": [
+        "Sieve-Skript eingefügt"
       ],
       "The key has been deleted.": [
         "Der Schlüssel wurde gelöscht."
@@ -19719,6 +19749,9 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
+      ],
+      "Describe the filter you want…": [
+        "Beschreibe den gewünschten Filter…"
       ],
       "domain.com": [
         "beispiel.de"
@@ -21972,9 +22005,6 @@
       "Connect all your devices": [
         "Alle deine Geräte verbinden"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Mit ${ PLAN_NAMES[plan] } fortfahren"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
@@ -22146,9 +22176,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Probiere ${ BRAND_NAME } für ${ TRIAL_DURATION_DAYS } Tage kostenlos,${ br } und erhalte ${ referralInfo.uiData.refereeRewardAmount } an Guthaben"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Probiere ${ BRAND_NAME } 14 Tage kostenlos aus"
       ],
       "Try ${ planName } for free": [
         "Probiere ${ planName } kostenlos aus"
@@ -25192,6 +25219,9 @@
       ],
       "Help center": [
         "Hilfezentrum"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Hilfe von ${ LUMO_SHORT_APP_NAME }"
       ],
       "Help us improve": [
         "Hilf uns, besser zu werden"

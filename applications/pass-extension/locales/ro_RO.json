@@ -1092,6 +1092,9 @@
       "Error reporting problem": [
         "Problemă de raportare a erorii."
       ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Timpul de expirare trebuie să fie cuprins între o oră și un an."
+      ],
       "Failed loading group members": [
         "Eroare la încărcarea membrilor grupului."
       ],
@@ -2028,11 +2031,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "De fiecare dată când aliasul primește un mesaj de la cineva, este creat automat un contact."
       ],
+      "Expired on ${ formattedDate }": [
+        "Expirat la data de ${ formattedDate }"
+      ],
       "Expires in": [
         "Expiră peste"
       ],
       "Expires in ${ remainingTime }": [
         "Expiră peste ${ remainingTime }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Expiră la data de ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Se exportă datele..."
@@ -2230,6 +2239,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3082,11 +3096,23 @@
         "${ years } ani",
         "${ years } de ani"
       ],
+      "1 day": [
+        "O zi"
+      ],
       "1 hour": [
         "o oră"
       ],
       "1 minute": [
         "1 minut"
+      ],
+      "1 month": [
+        "O lună"
+      ],
+      "1 week": [
+        "O săptămână"
+      ],
+      "1 year": [
+        "Un an"
       ],
       "10 minutes": [
         "10 minute"
@@ -3330,6 +3356,12 @@
       ],
       "Crypto Wallet": [
         "Portofel cripto"
+      ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Custom expiration (minutes)": [
+        "Expirare personalizată (minute)"
       ],
       "Custom Items": [
         "Articole personale"
