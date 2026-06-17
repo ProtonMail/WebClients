@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { getCheckoutUi } from '@proton/payments/core/checkout';
-import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
-import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
+import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
 
-import { getShortBillingText } from '../helpers';
+import { getCheckoutUi } from '../../core/checkout';
+import { COUPON_CODES, CYCLE } from '../../core/constants';
+import { getPlanFromPlanIDs } from '../../core/plan/helpers';
 import type { CouponConfig } from './interface';
 
-export const summerSale2026BundleConfig: CouponConfig = {
-    coupons: [COUPON_CODES.JUNE26BUNDLESALE, COUPON_CODES.MAR26BUNDLESALECS],
+export const summerSale2026Config: CouponConfig = {
+    coupons: [COUPON_CODES.JUNE26SALE, COUPON_CODES.MAR26SALECS, COUPON_CODES.MAR26OFFERCS],
     checkoutSubtitle: () => c('Title').t`Summer Sale`,
     payCTA: () => c('Action').t`Get the deal`,
     hidden: true,

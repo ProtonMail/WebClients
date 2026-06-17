@@ -1,4 +1,4 @@
-import { COUPON_CODES } from '@proton/payments/index';
+import { COUPON_CODES } from '../../core/constants';
 
 import type { CouponConfig } from './interface';
 
