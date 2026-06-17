@@ -1,6 +1,6 @@
 import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 
-import type { RecordingCodec } from '../useMeetingRecorder/types';
+import type { RecordingCodec } from './codec/types';
 import type { RecordingArtifact } from './recordingStorage/types';
 
 const streamToDisk = async (recordingArtifact: RecordingArtifact, fileName: string): Promise<boolean> => {

@@ -26,7 +26,7 @@ import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMeetingRecorderContext } from '../../contexts/MeetingRecorderContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { useIsRecordingSupported } from '../../hooks/useMeetingRecorderNew/hooks/useIsRecordingSupported';
+import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { ScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/ScreenRecordingUpsell';
 import { SubUserScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/SubUserScreenRecordingUpsell';
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';

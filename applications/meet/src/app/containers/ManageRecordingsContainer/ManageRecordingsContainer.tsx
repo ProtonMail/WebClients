@@ -21,7 +21,7 @@ import {
     deleteOpfsRecording,
     downloadOpfsRecording,
     listOpfsRecordings,
-} from '../../hooks/useMeetingRecorderNew/recordingStorage/recordingFiles';
+} from '../../hooks/useMeetingRecorder/recordingStorage/recordingFiles';
 
 const formatDate = (timestamp: number) =>
     new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(timestamp));
