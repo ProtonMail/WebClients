@@ -1,3 +1,9 @@
+export interface GridParticleFieldRgb {
+    r: number;
+    g: number;
+    b: number;
+}
+
 export interface GridParticleFieldOptions {
     spacing: number;
     size: number;
@@ -6,12 +12,23 @@ export interface GridParticleFieldOptions {
     interactionRadius: number;
     repelStrength: number;
     denseAroundInput: boolean;
-    focusTarget: 'lumo-input-wrapper' | 'input-container';
+    sparseAroundInput: boolean;
+    focusTarget: 'lumo-input-wrapper' | 'input-container' | 'lumo-input-container';
     focusPadding: number;
     focusSpacing: number;
     transitionPadding: number;
     opacityNoiseSize: number;
     opacityNoiseContrast: number;
+    maskSourceCanvas: HTMLCanvasElement | null;
+    baseColorCssVar: string;
+    mouseBrighten: number;
+    breatheSpeedMin: number;
+    breatheSpeedMax: number;
+    breatheOpacityMin: number;
+    breatheOpacityMax: number;
+    revealGain: number;
+    revealThreshold: number;
+    dotRgb: GridParticleFieldRgb;
     colorCssVar: string;
     colorCssVarChat: string;
 }
