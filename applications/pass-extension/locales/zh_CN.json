@@ -1082,6 +1082,9 @@
       "Error reporting problem": [
         "错误报告"
       ],
+      "Expiration must be between 1 hour and 1 year": [
+        "过期时间必须在 1 小时至 1 年之间"
+      ],
       "Failed loading group members": [
         "加载群组成员失败"
       ],
@@ -1982,11 +1985,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "每次您的别名收到某人的电子邮件时，就会自动创建一个新的联系人。"
       ],
+      "Expired on ${ formattedDate }": [
+        "过期时间 ${ formattedDate }"
+      ],
       "Expires in": [
         "到期于"
       ],
       "Expires in ${ remainingTime }": [
         "在 ${ remainingTime } 后过期"
+      ],
+      "Expires on ${ formattedDate }": [
+        "过期于 ${ formattedDate }"
       ],
       "Exporting your data...": [
         "正在导出您的数据..."
@@ -2178,7 +2187,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2991,11 +3000,23 @@
       "${ years } year": [
         "${ years } 年"
       ],
+      "1 day": [
+        "1 天"
+      ],
       "1 hour": [
         "1 小时"
       ],
       "1 minute": [
         "1 分钟"
+      ],
+      "1 month": [
+        "1 个月"
+      ],
+      "1 week": [
+        "1 周"
+      ],
+      "1 year": [
+        "1 年"
       ],
       "10 minutes": [
         "10 分钟"
@@ -3239,6 +3260,12 @@
       ],
       "Crypto Wallet": [
         "加密钱包"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Custom expiration (minutes)": [
+        "自定义过期时间 (分钟)"
       ],
       "Custom Items": [
         "自定义项目"
