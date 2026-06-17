@@ -1,3 +1,6 @@
+import { effectiveDpr } from './canvasUtils';
+import { createWebglParticlePass } from './webglParticlePass';
+
 /** Max blobs compiled into the fragment shader (see `MAX_BLOBS` in shader source). */
 export const WEBGL_SHADER_BG_MAX_BLOBS = 8;
 
@@ -398,15 +401,6 @@ function compileShader(gl, type, source) {
     return shader;
 }
 
-/** @param {number} rawDpr @param {number} maxDpr */
-function effectiveDpr(rawDpr, maxDpr) {
-    const cap = Number(maxDpr);
-    if (!Number.isFinite(cap) || cap <= 0) {
-        return rawDpr;
-    }
-    return Math.min(rawDpr, cap);
-}
-
 /** @typedef {"viewport" | "content"} WebglShaderBgMount */
 
 /**
@@ -415,7 +409,8 @@ function effectiveDpr(rawDpr, maxDpr) {
  * @property {string | null} [baseCssVar]
  * @property {number} [maxDpr] cap device pixel ratio (default: uncapped)
  * @property {number} [targetFps] throttle renders (default: 60)
- * @property {(timeMs: number) => void} [onAfterRender] called after each rendered frame
+ * @property {import('./gridParticleField.d.ts').GridParticleFieldOptions} [particleOptions] dot-grid pass after blobs
+ * @property {(timeMs: number) => void} [onAfterRender] optional hook after each frame
  */
 
 /**
@@ -434,6 +429,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     const maxDpr = runtime.maxDpr ?? 0;
     const targetFps = Math.max(1, runtime.targetFps ?? 60);
     const onAfterRender = runtime.onAfterRender ?? null;
+    const particleOptions = runtime.particleOptions ?? null;
     const minFrameIntervalMs = 1000 / targetFps;
     const gl = canvas.getContext('webgl', {
         alpha: false,
@@ -495,6 +491,8 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     gl.enableVertexAttribArray(positionLoc);
     gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
 
+    const particlePass = particleOptions ? createWebglParticlePass(gl, particleOptions) : null;
+
     const uResolution = gl.getUniformLocation(program, 'resolution');
     const uMouse = gl.getUniformLocation(program, 'mouse');
     const uTime = gl.getUniformLocation(program, 'time');
@@ -547,6 +545,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     }
 
     const mouse = { x: 0, y: 0 };
+    const mouseCss = { x: 0, y: 0 };
     /** @type {((blob: Blob | null) => void)[]} */
     const captureResolvers = [];
     let raf = 0;
@@ -583,9 +582,13 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         const dpr = effectiveDpr(window.devicePixelRatio || 1, maxDpr);
         if (mount === 'content') {
             const rect = canvas.getBoundingClientRect();
-            mouse.x = (event.clientX - rect.left) * dpr;
+            mouseCss.x = event.clientX - rect.left;
+            mouseCss.y = event.clientY - rect.top;
+            mouse.x = mouseCss.x * dpr;
             mouse.y = (rect.bottom - event.clientY) * dpr;
         } else {
+            mouseCss.x = event.clientX;
+            mouseCss.y = event.clientY;
             mouse.x = event.clientX * dpr;
             mouse.y = (window.innerHeight - event.clientY) * dpr;
         }
@@ -604,6 +607,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
             cssH = host.clientHeight;
             if (cssW < 2 || cssH < 2) {
                 canvas.style.visibility = 'hidden';
+                particlePass?.resize(0, 0, dpr);
                 return;
             }
             canvas.style.visibility = 'visible';
@@ -624,6 +628,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
             canvas.height = h;
         }
         gl.viewport(0, 0, w, h);
+        particlePass?.resize(cssW, cssH, dpr);
         if (sizeChanged) {
             baseColorDirty = true;
             renderFrame(performance.now());
@@ -785,6 +790,10 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     function renderFrame(/** @type {number} */ now) {
         const t = reducedMotion ? 0 : now * 0.001;
         const base = resolveBaseColor();
+        gl.useProgram(program);
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.enableVertexAttribArray(positionLoc);
+        gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
         gl.clearColor(base[0], base[1], base[2], 1);
         gl.clear(gl.COLOR_BUFFER_BIT);
         gl.uniform3f(uBaseColor, base[0], base[1], base[2]);
@@ -793,6 +802,14 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         gl.uniform1f(uTime, t);
         applyShaderUniforms(config, t);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
+
+        particlePass?.render({
+            timeSec: t,
+            mouseX: mouseCss.x,
+            mouseY: mouseCss.y,
+            baseColor: base,
+        });
+
         const w = gl.drawingBufferWidth;
         const h = gl.drawingBufferHeight;
         while (captureResolvers.length > 0) {
@@ -848,6 +865,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
                 r?.(null);
             }
             removeThemeColorProbe();
+            particlePass?.destroy();
             gl.deleteBuffer(buffer);
             gl.deleteProgram(program);
         },
