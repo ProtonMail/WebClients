@@ -1034,6 +1034,9 @@
       ],
       "Verify now": [
         "Verifiera nu"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Utforska ${ MEET_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2911,6 +2914,9 @@
       ],
       "Åland Islands": [
         "Åland"
+      ],
+      "Canary Islands": [
+        "Kanarieöarna"
       ]
     },
     "Country select label": {
@@ -3221,6 +3227,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tillräckligt med plats för åratal av e-post, bilagor och mer."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Tråkigt att du lämnar oss. Om du har en stund över skulle vi verkligen uppskatta att höra varför du vill avbryta Din feedback hjälper oss att göra ${ BRAND_NAME } bättre för alla."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera ${ newUserStorageText } av dina senaste Gmail-meddelanden"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera dina senaste Gmail-e-postmeddelanden."
       ]
     },
     "description": {
@@ -6597,6 +6615,24 @@
       ],
       "Password verified": [
         "Lösenord verifierat"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i krediter om de prenumererar."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
+      ],
+      "All your files will be imported": [
+        "Alla dina filer kommer att importeras"
+      ],
+      "Please select the labels you would like to import:": [
+        "Välj etiketterna du vill importera:"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
       ]
     },
     "info": {
@@ -7336,6 +7372,15 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Calendars": [
+        "Kalendrar"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "E-postmeddelanden"
       ]
     },
     "label": {
@@ -9739,6 +9784,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
+      ],
+      "This key is used for message verification": [
+        "Denna nyckel används för meddelandeverifiering"
       ]
     },
     "PGP key warning": {
@@ -12462,6 +12510,12 @@
       ],
       "Verify your password": [
         "Verifiera ditt lösenord"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrera din organisation till ${ BRAND_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13130,6 +13184,9 @@
       ],
       "You": [
         "Du"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {

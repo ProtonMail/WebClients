@@ -1012,6 +1012,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Verify now": [
+        "立即驗證"
       ]
     },
     "action": {
@@ -3157,6 +3160,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
       ]
     },
     "description": {
@@ -4014,6 +4020,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
       ]
     },
     "error": {
@@ -6379,6 +6388,15 @@
       ],
       "${ total } user found": [
         "找到 ${ total } 位使用者"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
       ]
     },
     "info": {
@@ -7097,6 +7115,12 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Calendars": [
+        "行事曆"
+      ],
+      "Emails": [
+        "電郵"
       ]
     },
     "label": {
@@ -10794,6 +10818,9 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe撰寫幫手"
       ]
     },
     "subscription reminder": {
@@ -11962,6 +11989,15 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
+      ],
+      "Summer Sale": [
+        "夏季特賣"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12563,6 +12599,16 @@
       ],
       "SUMMER SALE": [
         "夏季特賣"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "切換至 ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "切換至 ${ MAIL_APP_NAME }"
       ]
     }
   }

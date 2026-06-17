@@ -2929,6 +2929,9 @@
       ],
       "Åland Islands": [
         "Ilhas Åland"
+      ],
+      "Canary Islands": [
+        "Ilhas Canárias"
       ]
     },
     "Country select label": {
@@ -3245,6 +3248,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espaço suficiente para anos de e-mails, anexos e muito mais."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isso pode acontecer se as permissões foram removidas ou se a sua senha foi alterada."
       ]
     },
     "description": {
@@ -6670,6 +6679,18 @@
       ],
       "Password verified": [
         "Senha verificada"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convide seus amigos** para ${ BRAND_NAME } com seu link de indicação."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Eles ganham ${ refereeRewardAmount }** em créditos se se inscreverem."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Ganhe ${ referrerRewardAmount }** créditos para cada amigo que se inscrever."
+      ],
+      "All your files will be imported": [
+        "Todos os seus arquivos serão importados"
       ]
     },
     "info": {
@@ -6836,6 +6857,9 @@
       ],
       "View options": [
         "Ver opções"
+      ],
+      "Desktop app navigation": [
+        "Navegação do aplicativo para computador"
       ]
     },
     "Knowledge base link label": {
@@ -7412,6 +7436,15 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "E-mails"
       ]
     },
     "label": {
@@ -9850,6 +9883,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que você \"desconfie\" dessa chave."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Esta chave é usada para criptografar mensagens para este contato em aplicativos antigos"
       ]
     },
     "PGP key warning": {
@@ -12581,10 +12617,13 @@
         "Migre sua organização para a ${ BRAND_NAME }"
       ],
       "Summer Sale": [
-        "Promoção de verão"
+        "Oferta Especial"
       ],
       "Verify your password": [
         "Verificar sua senha"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

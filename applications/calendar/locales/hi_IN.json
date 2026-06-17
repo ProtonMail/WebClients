@@ -768,6 +768,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल ${ formattedEndDate } को समाप्त होता है ${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "इस पते पर दावा करें"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "अपने मुफ़्त ${ BRAND_NAME } पते पर दावा करें"
+      ],
+      "Continue with Free": [
+        "मुफ़्त के साथ जारी रखें"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail से फिर से कनेक्ट करें"
       ]
     },
     "action": {
@@ -2379,6 +2391,45 @@
       ],
       "Your account and data recovery methods are set.": [
         "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं।"
+      ],
+      "Available storage: ${ storageText }": [
+        "उपलब्ध स्टोरेज: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText } पर भेजे गए ईमेल अब ${ MAIL_APP_NAME } में दिखाई देंगे।"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "वर्षों के ईमेल, अटैचमेंट और बहुत कुछ के लिए पर्याप्त जगह।"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "ऐसा तब हो सकता है यदि अनुमतियाँ हटा दी गई हों या आपका पासवर्ड बदल गया हो।"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } में Gmail संदेश प्राप्त करना और भेजना जारी रखने के लिए, कृपया अपना खाता फिर से कनेक्ट करें।"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } में Gmail संदेश प्राप्त करना और भेजना जारी रखने के लिए, कृपया अपने खाते फिर से कनेक्ट करें।"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "केवल ${ config.offerPrice } में 15 जीबी स्टोरेज अनलॉक करें।"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "हम अब ${ boldEmails } को एक्सेस नहीं कर सकते।"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "नए संदेशों के लिए जगह आरक्षित रखने के लिए हम 80% स्टोरेज पर आयात रोक देंगे।"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "हमने Gmail से आपके ईमेल आयात करना शुरू कर दिया है। पूरा होने पर हम आपको सूचित करेंगे।"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "अब आप इस पते का उपयोग करके ${ BRAND_NAME } से ईमेल भेज सकते हैं।"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "आपका मुफ़्त ${ MAIL_APP_NAME } खाता सीमित स्टोरेज के साथ आता है इसलिए हम आपके सबसे हाल के Gmail संदेशों में से केवल ${ newUserStorageText } ही आयात करेंगे"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "आपका मुफ़्त ${ MAIL_APP_NAME } खाता सीमित स्टोरेज के साथ आता है इसलिए हम केवल आपके सबसे हाल के Gmail ईमेल ही आयात करेंगे।"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2974,6 +3025,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
+      ],
+      "Something went wrong while fetching available domains": [
+        "उपलब्ध डोमेन लाते समय कुछ गलत हो गया"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3329,6 +3383,18 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "असीमित Hide-my-email नकलीनाम"
+      ],
+      "10+ premium features": [
+        "10+ प्रीमियम खासियतें"
+      ],
+      "Custom email domain": [
+        "कस्टम ईमेल डोमेन"
+      ],
+      "Email addresses": [
+        "ईमेल पते"
+      ],
+      "Storage": [
+        "स्टोरेज"
       ]
     },
     "Features": {
@@ -4800,6 +4866,18 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "आपका सिस्टम समय क्षेत्र ${ timezone } में बदल गया है। अपने समय क्षेत्र पसंद को अपडेट करें?"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "पूरी तरह से निजी और एन्क्रिप्ट किया गया संचार सुनिश्चित करें। अपने मुफ़्त ${ BRAND_NAME } ईमेल पते पर अभी दावा करें।"
+      ],
+      "Included": [
+        "शामिल है"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "बाकी को लाने के लिए किसी भी समय अपग्रेड करें"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "बाकी को लाने के लिए किसी भी समय अपग्रेड करें या जगह खाली करें"
       ]
     },
     "info": {
@@ -5396,6 +5474,12 @@
       ],
       "ZIP code": [
         "ज़िप कोड"
+      ],
+      "Calendars": [
+        "कैलेंडर"
+      ],
+      "Emails": [
+        "ईमेल"
       ]
     },
     "Label for contact group color": {
@@ -6490,6 +6574,9 @@
       ],
       "Link copied to clipboard": [
         "लिंक क्लिपबोर्ड पर कॉपी किया गया"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "आपका ${ BRAND_NAME } पता उपयोग करने के लिए तैयार है"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -8681,6 +8768,27 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe लेखन सहायक"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "अपने ${ MAIL_APP_NAME } पते पर दावा करें"
+      ],
+      "Continue with free storage": [
+        "मुफ़्त स्टोरेज के साथ जारी रखें"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail से डिस्कनेक्ट हो गया"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus के साथ अधिक स्टोरेज प्राप्त करें"
+      ],
+      "Summer Sale": [
+        "समर सेल"
+      ],
+      "You are all set": [
+        "आप पूरी तरह तैयार हैं"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

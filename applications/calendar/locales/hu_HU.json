@@ -944,6 +944,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue with Free": [
+        "Folytatás az ingyenes verzióval"
+      ],
+      "Reconnect to Gmail": [
+        "Kapcsolódjon újra a Gmailhez"
       ]
     },
     "action": {
@@ -2930,6 +2936,42 @@
       ],
       "Enough room for years of emails, attachments and more.": [
         "Több évnyi e-mail számára elegendő hely, mellékletekkel és további lehetőségek."
+      ],
+      "Available storage: ${ storageText }": [
+        "Elérhető tárhely: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "A(z) ${ connectedAddressText } címre küldött e-mailek mostantól megjelennek a ${ MAIL_APP_NAME } alkalmazásban."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Ez olyankor fordulhat elő, ha az engedélyeket eltávolították, vagy megváltozott a jelszava."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókját."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókjait."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Oldjon fel 15 GB tárhelyet mindössze ${ config.offerPrice } áron."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Már nincs hozzáférésünk a következőhöz: ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Az importálást 80%-os tárhelytelítettségnél szüneteltetjük, hogy helyet biztosítsunk az új üzeneteknek."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Elindítottuk az e-mailjei importálását a Gmailből. Értesíteni fogjuk, ha befejeződött."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Mostantól küldhet e-maileket a ${ BRAND_NAME } szolgáltatásból erről a címről."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail-üzeneteiből importálunk ${ newUserStorageText } mennyiséget"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail e-mailjeit importáljuk."
       ]
     },
     "description": {
@@ -3744,6 +3786,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Hiba történt az elérhető domainnevek lekérése közben"
       ]
     },
     "error": {
@@ -4193,6 +4238,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Korlátlan számú hide-my-email álnév"
+      ],
+      "10+ premium features": [
+        "10+ prémium funkció"
+      ],
+      "Custom email domain": [
+        "Egyéni e-mail-domainnév"
+      ],
+      "Email addresses": [
+        "E-mail-címek"
+      ],
+      "Storage": [
+        "Tárhely"
       ]
     },
     "Features": {
@@ -5991,6 +6048,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja.",
         "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja."
+      ],
+      "Included": [
+        "Tartalmazza"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Frissítsen bármikor a többi áthozatalához"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Bármikor frissíthet nagyobb csomagra vagy szabadíthat fel helyet a többi áthozatalához"
       ]
     },
     "info": {
@@ -6664,6 +6730,12 @@
       ],
       "Zoom meeting": [
         "Zoom találkozó"
+      ],
+      "Calendars": [
+        "Naptárak"
+      ],
+      "Emails": [
+        "E-mailek"
       ]
     },
     "Label for contact group color": {
@@ -8082,6 +8154,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Jelszó a vágólapra másolva"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "A(z) ${ BRAND_NAME }-címe használatra kész"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11255,6 +11330,21 @@
       ],
       "Disconnected from Gmail": [
         "Leválasztva a Gmailről"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe írási segéd"
+      ],
+      "Continue with free storage": [
+        "Folytatás az ingyenes tárhellyel"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Szerezzen több tárhelyet a ${ MAIL_APP_NAME } Plus segítségével"
+      ],
+      "Summer Sale": [
+        "Nyári akció"
+      ],
+      "You are all set": [
+        "Minden készen áll"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

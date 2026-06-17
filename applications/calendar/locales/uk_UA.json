@@ -841,6 +841,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "Отримати цю адресу"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Отримайте безкоштовну адресу ${ BRAND_NAME }"
+      ],
+      "Continue with Free": [
+        "Продовжити безкоштовно"
+      ],
+      "Reconnect to Gmail": [
+        "Повторно підключитися до Gmail"
       ]
     },
     "action": {
@@ -2665,6 +2677,45 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Доступне сховище: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Електронні листи, надіслані на ${ connectedAddressText }, тепер з'являтимуться в ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Достатньо місця для електронних листів, вкладень та багато чого іншого на роки вперед."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Це може статися, якщо дозволи було вилучено або ваш пароль змінився."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свій обліковий запис."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свої облікові записи."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Розблокуйте 15 ГБ сховища всього за ${ config.offerPrice }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ми більше не маємо доступу до ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Ми призупинимо імпорт, коли сховище буде заповнено на 80%, щоб зберегти місце для нових повідомлень."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ми почали імпортувати ваші електронні листи з Gmail. Ми повідомимо вас, коли процес завершиться."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Тепер ви можете надсилати електронні листи з ${ BRAND_NAME }, використовуючи цю адресу."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ${ newUserStorageText } ваших найновіших повідомлень Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ваші найновіші електронні листи з Gmail."
       ]
     },
     "description": {
@@ -3418,6 +3469,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Під час отримання доступних доменів сталася помилка"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3852,6 +3906,18 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Необмежена кількість псевдонімів Hide-my-email"
+      ],
+      "10+ premium features": [
+        "Понад 10 преміумфункцій"
+      ],
+      "Custom email domain": [
+        "Власний домен електронної пошти"
+      ],
+      "Email addresses": [
+        "Адреси електронної пошти"
+      ],
+      "Storage": [
+        "Сховище"
       ]
     },
     "fido2: Info": {
@@ -5480,6 +5546,18 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Схоже, системний часовий пояс змінено на ${ timezone }. Хочете оновити налаштування часового поясу?"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Забезпечте повністю приватне й зашифроване спілкування. Отримайте безкоштовну адресу електронної пошти ${ BRAND_NAME } просто зараз."
+      ],
+      "Included": [
+        "Включено"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Покращте тарифний план у будь-який час, щоб перенести решту"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Покращте тарифний план або очистьте місце в будь-який час, щоб перенести решту"
       ]
     },
     "info": {
@@ -6085,6 +6163,12 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Calendars": [
+        "Календарі"
+      ],
+      "Emails": [
+        "Листи"
       ]
     },
     "Label for contact group color": {
@@ -7469,6 +7553,9 @@
       ],
       "Passcode copied to clipboard": [
         "Код доступу скопійовано в буфер обміну"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваша адреса ${ BRAND_NAME } готова до використання"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10303,6 +10390,27 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помічник у написанні ${ BRAND_NAME } Scribe"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Отримайте адресу ${ MAIL_APP_NAME }"
+      ],
+      "Continue with free storage": [
+        "Продовжити з безкоштовним сховищем"
+      ],
+      "Disconnected from Gmail": [
+        "Від'єднано від Gmail"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
+      ],
+      "Summer Sale": [
+        "Літній розпродаж"
+      ],
+      "You are all set": [
+        "Усе готово"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1587,7 +1587,7 @@
         "Belki sonra"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Set up other features": [
         "Diğer özellikleri ayarlayın"
@@ -2929,6 +2929,9 @@
       ],
       "Åland Islands": [
         "Aland Adaları"
+      ],
+      "Canary Islands": [
+        "Kanarya Adaları"
       ]
     },
     "Country select label": {
@@ -5459,7 +5462,7 @@
         "Geçmişte bir aralık oluşturulamaz."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
+        "Parolanızı anımsayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
       "Change your password": [
         "Parolanızı değiştirin"
@@ -6696,7 +6699,7 @@
         "Abone olan her arkadaşınız için **${ referrerRewardAmount } tutarında kredi kazanırsınız**."
       ],
       "Do you remember your password? ${ verifyButton }": [
-        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
+        "Parolanızı anımsıyor musunuz? ${ verifyButton }"
       ],
       "Forgot password?": [
         "Parolamı unuttum"
@@ -6708,7 +6711,13 @@
         "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
       ],
       "We'll remind you to verify your password again later": [
-        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
+        "Daha sonra yeniden parolanızı doğrulamanızı anımsatacağız."
+      ],
+      "All your files will be imported": [
+        "Tüm dosyalarınız içe aktarılacak"
+      ],
+      "Please select the labels you would like to import:": [
+        "İçe aktarmak istediğiniz etiketleri seçin:"
       ]
     },
     "info": {
@@ -7457,6 +7466,15 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Calendars": [
+        "Takvimler"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Emails": [
+        "E-postalar"
       ]
     },
     "label": {
@@ -8764,7 +8782,7 @@
         "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
+        "Bir e-posta anımsatıcısı ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
@@ -11884,7 +11902,7 @@
         "Özel logo ekle"
       ],
       "Add another notification to remind you of this event": [
-        "Bu etkinliği hatırlatacak başka bir bildirim ekleyin"
+        "Bu etkinliği anımsatacak başka bir bildirim ekleyin"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
@@ -12497,7 +12515,7 @@
         "Özet"
       ],
       "Summer Sale": [
-        "Yaz indirimi"
+        "Yaz İndirimi"
       ],
       "The booking feature is currently unavailable.": [
         "Rezervasyon özelliği şu anda kullanılamıyor."
@@ -12633,6 +12651,12 @@
       ],
       "Verify your password": [
         "Parolanızı doğrulayın"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12733,6 +12757,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
       ]
     },
     "tooltip": {
@@ -12903,7 +12930,7 @@
         "Kişiler birleştirilemedi"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+        "Parolanızı anımsamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
