@@ -50,13 +50,13 @@
         "@proton/i18n": "workspace:^",
         "@proton/types": "workspace:^",
         "@types/file-saver": "^2.0.5",
-        "@vitest/browser-playwright": "^4.1.6",
+        "@vitest/browser-playwright": "^4.1.8",
         "@webgpu/types": "^0.1.70",
         "eslint": "^9.39.4",
         "playwright": "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch",
         "prettier": "^3.8.3",
         "ttag": "^1.8.12",
         "typescript": "^6.0.2",
-        "vitest": "^4.1.6"
+        "vitest": "^4.1.8"
     }
 }
