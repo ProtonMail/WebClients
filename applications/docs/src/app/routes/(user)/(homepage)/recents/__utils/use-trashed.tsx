@@ -2,11 +2,12 @@ import useNotifications from '@proton/components/hooks/useNotifications'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { DriveEvent, DriveListener, NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk'
+import type { DriveEvent, NodeEntity, ProtonDriveClient } from '@proton/drive'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { nodeToTrashedItemValue } from './create-document-items'
+import type { SDKEventListener } from './manage-events-subscription'
 
 export function useTrashed(drive: ProtonDriveClient) {
   const app = useApplication()
@@ -39,7 +40,7 @@ export function useTrashed(drive: ProtonDriveClient) {
     setIsTrashLoading(false)
   }, [createNotification, drive, logger])
 
-  const trashedListener: DriveListener = useCallback(async (event: DriveEvent) => {
+  const trashedListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
     const drive = getDrive()
 
     if (event.type === 'node_updated') {
