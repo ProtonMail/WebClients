@@ -243,7 +243,7 @@ function mergeConfig(partial) {
 
 function buildFragmentSource() {
     return `
-      precision highp float;
+      precision mediump float;
       #define MAX_BLOBS ${MAX_BLOBS}
 
       uniform vec2 resolution;
@@ -398,12 +398,30 @@ function compileShader(gl, type, source) {
     return shader;
 }
 
+/** @param {number} rawDpr @param {number} maxDpr */
+function effectiveDpr(rawDpr, maxDpr) {
+    const cap = Number(maxDpr);
+    if (!Number.isFinite(cap) || cap <= 0) {
+        return rawDpr;
+    }
+    return Math.min(rawDpr, cap);
+}
+
 /** @typedef {"viewport" | "content"} WebglShaderBgMount */
+
+/**
+ * @typedef {object} WebglShaderBgRuntimeOptions
+ * @property {WebglShaderBgMount} [mount]
+ * @property {string | null} [baseCssVar]
+ * @property {number} [maxDpr] cap device pixel ratio (default: uncapped)
+ * @property {number} [targetFps] throttle renders (default: 60)
+ * @property {(timeMs: number) => void} [onAfterRender] called after each rendered frame
+ */
 
 /**
  * @param {HTMLCanvasElement} canvas
  * @param {WebglShaderBgConfig} [userConfig]
- * @param {{ mount?: WebglShaderBgMount; baseCssVar?: string | null }} [runtime]
+ * @param {WebglShaderBgRuntimeOptions} [runtime]
  * @returns {{
  *   destroy: () => void;
  *   capturePng: () => Promise<Blob | null>;
@@ -413,6 +431,10 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     const config = mergeConfig(userConfig);
     const mount = runtime.mount === 'content' ? 'content' : 'viewport';
     const baseCssVar = runtime.baseCssVar ?? null;
+    const maxDpr = runtime.maxDpr ?? 0;
+    const targetFps = Math.max(1, runtime.targetFps ?? 60);
+    const onAfterRender = runtime.onAfterRender ?? null;
+    const minFrameIntervalMs = 1000 / targetFps;
     const gl = canvas.getContext('webgl', {
         alpha: false,
         antialias: false,
@@ -529,6 +551,11 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     const captureResolvers = [];
     let raf = 0;
     let reducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let paused = typeof document !== 'undefined' && document.hidden;
+    let lastFrameMs = 0;
+    let baseColorDirty = true;
+    /** @type {[number, number, number] | null} */
+    let cachedBaseColor = null;
 
     /** @param {MediaQueryListEvent} e */
     function onMotionPreference(e) {
@@ -536,8 +563,24 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     }
     const motionMq = typeof window !== 'undefined' ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
 
+    function onVisibilityChange() {
+        paused = document.hidden;
+        if (!paused) {
+            baseColorDirty = true;
+            lastFrameMs = 0;
+        }
+    }
+
+    function resolveBaseColor() {
+        if (baseColorDirty || !cachedBaseColor) {
+            cachedBaseColor = readCssVarRgb01(baseCssVar, themeBaseColorFallback(config.baseColor));
+            baseColorDirty = false;
+        }
+        return cachedBaseColor;
+    }
+
     function onMouseMove(/** @type {MouseEvent} */ event) {
-        const dpr = window.devicePixelRatio || 1;
+        const dpr = effectiveDpr(window.devicePixelRatio || 1, maxDpr);
         if (mount === 'content') {
             const rect = canvas.getBoundingClientRect();
             mouse.x = (event.clientX - rect.left) * dpr;
@@ -551,7 +594,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     let resizeRaf = 0;
 
     function resize() {
-        const dpr = window.devicePixelRatio || 1;
+        const dpr = effectiveDpr(window.devicePixelRatio || 1, maxDpr);
         let cssW;
         let cssH;
         if (mount === 'content') {
@@ -582,6 +625,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         }
         gl.viewport(0, 0, w, h);
         if (sizeChanged) {
+            baseColorDirty = true;
             renderFrame(performance.now());
         }
     }
@@ -740,7 +784,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
 
     function renderFrame(/** @type {number} */ now) {
         const t = reducedMotion ? 0 : now * 0.001;
-        const base = readCssVarRgb01(baseCssVar, themeBaseColorFallback(config.baseColor));
+        const base = resolveBaseColor();
         gl.clearColor(base[0], base[1], base[2], 1);
         gl.clear(gl.COLOR_BUFFER_BIT);
         gl.uniform3f(uBaseColor, base[0], base[1], base[2]);
@@ -760,7 +804,15 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
 
     function render(/** @type {number} */ now) {
         raf = window.requestAnimationFrame(render);
+        if (paused) {
+            return;
+        }
+        if (now - lastFrameMs < minFrameIntervalMs) {
+            return;
+        }
+        lastFrameMs = now;
         renderFrame(now);
+        onAfterRender?.(now);
     }
 
     /** @type {ResizeObserver | null} */
@@ -775,6 +827,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
 
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('resize', scheduleResize);
+    document.addEventListener('visibilitychange', onVisibilityChange);
     motionMq?.addEventListener('change', onMotionPreference);
     resize();
     raf = window.requestAnimationFrame(render);
@@ -787,7 +840,8 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
             resizeObserver?.disconnect();
             resizeObserver = null;
             window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('resize', resize);
+            window.removeEventListener('resize', scheduleResize);
+            document.removeEventListener('visibilitychange', onVisibilityChange);
             motionMq?.removeEventListener('change', onMotionPreference);
             while (captureResolvers.length > 0) {
                 const r = captureResolvers.shift();
