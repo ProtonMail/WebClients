@@ -77,6 +77,13 @@ export const isSupportedImage = (mimeType: string) =>
         .includes(mimeType as SupportedMimeTypes);
 
 export const isSVG = (mimeType: string) => mimeType === SupportedMimeTypes.svg;
+/**
+ * This function should be used when deciding to EXCLUDE mimetypes, never to INCLUDE!.
+ * E.g. to NOT preview an attachment for security reasons.
+ * It also checks for legacy mimetypes for svg that olders browser still might accept,
+ */
+export const couldPotentiallyBeRenderedAsSVG = (mimeType: string) =>
+    [SupportedMimeTypes.svg, 'image/svg', 'application/svg+xml'].some((mt) => mimeType.toLowerCase().startsWith(mt));
 
 export const isHEIC = (mimeType: string) =>
     mimeType === SupportedMimeTypes.heic || mimeType === SupportedMimeTypes.heif;

@@ -16,6 +16,7 @@ import { isDummyAttachmentUpload } from 'proton-mail/hooks/composer/useAttachmen
 import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
 import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
 
+import { canPreviewAttachment } from '../../../../helpers/attachment/attachment';
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { useDownload, useDownloadAll } from '../../../../hooks/attachments/useDownload';
 import AttachmentItem from './AttachmentItem';
@@ -261,17 +262,33 @@ const AttachmentList = ({
                         hasVerticalScroll && 'border-top border-bottom border-weak',
                     ])}
                 >
-                    {attachmentsToShow.map((attachment) => (
-                        <AttachmentItem
-                            key={attachment.ID}
-                            attachment={attachment}
-                            attachmentVerified={verifiedAttachments[attachment.ID || '']}
-                            primaryAction={primaryAction}
-                            secondaryAction={secondaryAction}
-                            onPrimary={actions[primaryAction]}
-                            onSecondary={actions[secondaryAction]}
-                        />
-                    ))}
+                    {attachmentsToShow.map((attachment) => {
+                        // Only offer preview for attachments we can actually preview. Everything
+                        // else — executables, archives, and SVGs (which we refuse to render for
+                        // security) — gets a download action instead of a preview that would only
+                        // show "no preview available".
+                        const itemPrimaryAction =
+                            primaryAction === AttachmentAction.Preview && !canPreviewAttachment(attachment.MIMEType)
+                                ? AttachmentAction.Download
+                                : primaryAction;
+                        // Avoid showing two identical download actions on the same row.
+                        const itemSecondaryAction =
+                            itemPrimaryAction === AttachmentAction.Download &&
+                            secondaryAction === AttachmentAction.Download
+                                ? AttachmentAction.None
+                                : secondaryAction;
+                        return (
+                            <AttachmentItem
+                                key={attachment.ID}
+                                attachment={attachment}
+                                attachmentVerified={verifiedAttachments[attachment.ID || '']}
+                                primaryAction={itemPrimaryAction}
+                                secondaryAction={itemSecondaryAction}
+                                onPrimary={actions[itemPrimaryAction]}
+                                onSecondary={actions[itemSecondaryAction]}
+                            />
+                        );
+                    })}
                     {pendingUploads?.map((pendingUpload) => (
                         <AttachmentItem
                             key={`${pendingUpload.file.name}-${isDummyAttachmentUpload(pendingUpload) ? 'dummy' : 'real'}`}
