@@ -36,7 +36,7 @@ import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
 import debounce from 'lodash/debounce'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
-import type { Transaction } from 'yjs'
+import type { Doc as YDoc, Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 import { CURRENCY_SYMBOL } from './constants'
 import { minutes_to_ms, seconds_to_ms } from '@proton/docs-core/lib/Util/time-utils'
@@ -45,6 +45,9 @@ import { useApplication } from '../ApplicationProvider'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
 import { applyPatches as applyPatchesImmer } from 'immer'
 import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
+import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
+import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './yjs-local-update-audit'
+import { formatSpreadsheetYjsDriftLogDetails } from './yjs-drift-log'
 
 // local state
 // -----------
@@ -102,51 +105,57 @@ type LocalStateWithoutActions = Omit<
 function getValueFromUpdateAction<T>(updateAction: UpdateAction<T>, prevValue: T): T {
   return typeof updateAction === 'function' ? (updateAction as (state: T) => T)(prevValue) : updateAction
 }
+type LocalStateStoreSetter = (partial: (state: LocalState) => Partial<LocalState>) => void
+function createAuditedLocalStateSetter<Key extends SpreadsheetLocalYjsAuditKey>(
+  key: Key,
+  set: LocalStateStoreSetter,
+): SetState<LocalState[Key]> {
+  return (updateAction) => {
+    set((state) => {
+      const previousValue = state[key]
+      const nextValue = getValueFromUpdateAction(updateAction, previousValue)
+      recordSpreadsheetLocalStateChange(key, previousValue, nextValue)
+      return { [key]: nextValue } as Partial<LocalState>
+    })
+  }
+}
 // TODO: this shouldn't be a singleton
-const useLocalSpreadsheetState = create<LocalState>()((set) => ({
-  sheets: [],
-  sheetData: {},
-  theme: defaultSpreadsheetTheme,
-  tables: [],
-  namedRanges: [],
-  conditionalFormats: [],
-  embeds: [],
-  dataValidations: [],
-  charts: [],
-  protectedRanges: [],
-  cellXfs: new Map(),
-  scale: 1,
-  userDefinedColors: [],
-  sharedStrings: new Map(),
+const useLocalSpreadsheetState = create<LocalState>()((set) => {
+  const auditedSet = set as LocalStateStoreSetter
 
-  onChangeSheets: (sheets) => set((state) => ({ sheets: getValueFromUpdateAction(sheets, state.sheets) })),
-  onChangeSheetData: (sheetData) =>
-    set((state) => ({ sheetData: getValueFromUpdateAction(sheetData, state.sheetData) })),
-  onChangeTheme: (theme) => set((state) => ({ theme: getValueFromUpdateAction(theme, state.theme) })),
-  onChangeTables: (tables) => set((state) => ({ tables: getValueFromUpdateAction(tables, state.tables) })),
-  onChangeNamedRanges: (namedRanges) =>
-    set((state) => ({ namedRanges: getValueFromUpdateAction(namedRanges, state.namedRanges) })),
-  onChangeConditionalFormats: (conditionalFormats) =>
-    set((state) => ({
-      conditionalFormats: getValueFromUpdateAction(conditionalFormats, state.conditionalFormats),
-    })),
-  onChangeEmbeds: (embeds) => set((state) => ({ embeds: getValueFromUpdateAction(embeds, state.embeds) })),
-  onChangeDataValidations: (dataValidations) =>
-    set((state) => ({
-      dataValidations: getValueFromUpdateAction(dataValidations, state.dataValidations),
-    })),
-  onChangeCharts: (charts) => set((state) => ({ charts: getValueFromUpdateAction(charts, state.charts) })),
-  onChangeProtectedRanges: (protectedRanges) =>
-    set((state) => ({
-      protectedRanges: getValueFromUpdateAction(protectedRanges, state.protectedRanges),
-    })),
-  onChangeCellXfs: (cellXfs) => set((state) => ({ cellXfs: getValueFromUpdateAction(cellXfs, state.cellXfs) })),
-  onChangeScale: (scale) => set((state) => ({ scale: getValueFromUpdateAction(scale, state.scale) })),
-  onChangeUserDefinedColors: (userDefinedColors) =>
-    set((state) => ({ userDefinedColors: getValueFromUpdateAction(userDefinedColors, state.userDefinedColors) })),
-  onChangeSharedStrings: (sharedStrings) =>
-    set((state) => ({ sharedStrings: getValueFromUpdateAction(sharedStrings, state.sharedStrings) })),
-}))
+  return {
+    sheets: [],
+    sheetData: {},
+    theme: defaultSpreadsheetTheme,
+    tables: [],
+    namedRanges: [],
+    conditionalFormats: [],
+    embeds: [],
+    dataValidations: [],
+    charts: [],
+    protectedRanges: [],
+    cellXfs: new Map(),
+    scale: 1,
+    userDefinedColors: [],
+    sharedStrings: new Map(),
+
+    onChangeSheets: createAuditedLocalStateSetter('sheets', auditedSet),
+    onChangeSheetData: createAuditedLocalStateSetter('sheetData', auditedSet),
+    onChangeTheme: (theme) => set((state) => ({ theme: getValueFromUpdateAction(theme, state.theme) })),
+    onChangeTables: createAuditedLocalStateSetter('tables', auditedSet),
+    onChangeNamedRanges: createAuditedLocalStateSetter('namedRanges', auditedSet),
+    onChangeConditionalFormats: createAuditedLocalStateSetter('conditionalFormats', auditedSet),
+    onChangeEmbeds: createAuditedLocalStateSetter('embeds', auditedSet),
+    onChangeDataValidations: createAuditedLocalStateSetter('dataValidations', auditedSet),
+    onChangeCharts: createAuditedLocalStateSetter('charts', auditedSet),
+    onChangeProtectedRanges: createAuditedLocalStateSetter('protectedRanges', auditedSet),
+    onChangeCellXfs: createAuditedLocalStateSetter('cellXfs', auditedSet),
+    onChangeScale: (scale) => set((state) => ({ scale: getValueFromUpdateAction(scale, state.scale) })),
+    onChangeUserDefinedColors: (userDefinedColors) =>
+      set((state) => ({ userDefinedColors: getValueFromUpdateAction(userDefinedColors, state.userDefinedColors) })),
+    onChangeSharedStrings: createAuditedLocalStateSetter('sharedStrings', auditedSet),
+  }
+})
 
 // spreadsheet state
 // -----------------
@@ -215,9 +224,12 @@ type YjsStateDependencies = {
   localState: LocalState
   spreadsheetState: SpreadsheetState
   docState: DocStateInterface
+  // Fires (via the y-spreadsheet onAfterBroadcastPatch hook) inside the broadcast
+  // transaction once local patches are applied to the doc; used to detect drift.
+  onAfterBroadcastPatch?: (patches: unknown, doc: YDoc) => void
 }
 
-function useYjsState({ localState, spreadsheetState, docState }: YjsStateDependencies) {
+function useYjsState({ localState, spreadsheetState, docState, onAfterBroadcastPatch }: YjsStateDependencies) {
   const { userName, receivedEverythingFromRTS } = useSyncedState()
   const provider = useMemo(() => {
     const provider = new DocProvider(docState)
@@ -278,6 +290,7 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
 
     skipInitialSync: true,
     supportLegacySharedStringsArray: true,
+    onAfterBroadcastPatch,
   })
 
   const usersWithCorrectColor = useMemo(() => {
@@ -363,10 +376,38 @@ type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDeps
     isConversionFlow: boolean
     pushPatches: (patches: unknown, updateHash: string, type?: SheetsPatchesType) => void
     hasBasePatchesStored: () => Promise<boolean>
+    // Gates the Yjs drift detection (SheetsDriftDetectionEnabled feature flag). When false,
+    // local updates propagate without the dry-run audit/guard (original behavior).
+    isDriftDetectionEnabled: boolean
+    onYjsDriftDetected?: (result: SpreadsheetLocalYjsUpdateAuditResult) => void
   }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
+  const { application } = useApplication()
   const kv = useKeyValueState()
+  const hasBlockedYjsDrift = useRef(false)
+
+  // Drift detection: the y-spreadsheet onAfterBroadcastPatch hook fires inside the broadcast
+  // transaction (patches applied to the doc). We compute the local-vs-doc drift there and stash
+  // it so onChangeHistory's update guard can block propagation before it reaches RTS.
+  const pendingDriftResult = useRef<SpreadsheetLocalYjsUpdateAuditResult | null>(null)
+  const auditNextBroadcast = useRef(false)
+  const handleAfterBroadcastPatch = useEvent((patches: unknown, doc: YDoc) => {
+    if (!auditNextBroadcast.current) {
+      return
+    }
+    try {
+      pendingDriftResult.current = detectLocalYjsUpdateDrift({
+        doc,
+        getLocalState: () => useLocalSpreadsheetState.getState(),
+        patches,
+      })
+    } catch (error) {
+      pendingDriftResult.current = null
+      console.error('[sheets-yjs-drift] failed to audit outgoing Yjs update', error)
+      application.logger.error('[sheets-yjs-drift] failed to audit outgoing Yjs update')
+    }
+  })
 
   const localeAccount = useAccountLocale()
   const localeAuto = useLocaleAuto()
@@ -382,14 +423,116 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   }
 
   const latestPatches = useRef<Parameters<NonNullable<UseSpreadsheetProps['onChangeHistory']>>[0][]>([])
+  const { pushPatches, hasBasePatchesStored } = deps
+  const wroteBasePatch = useRef(false)
+  const writeBasePatchIfNecessary = useCallback(async () => {
+    // Only the first caller that sees no base patch claims the write.
+    if (!wroteBasePatch.current) {
+      const hasBasePatches = await hasBasePatchesStored()
+      // Re-check the ref after the await in case another update claimed it
+      // while we were waiting on the IndexedDB round-trip.
+      if (!hasBasePatches && !wroteBasePatch.current) {
+        wroteBasePatch.current = true // set synchronously before the async write
+        const baseState = { ...useLocalSpreadsheetState.getState() }
+        for (const key of Object.keys(baseState)) {
+          if (typeof baseState[key as keyof LocalState] === 'function') {
+            delete baseState[key as keyof LocalState]
+          }
+          if ((key === 'cellXfs' || key === 'sharedStrings') && baseState[key]) {
+            ;(baseState as any)[key] = Object.fromEntries(baseState[key].entries()) as unknown as
+              | CellXfs
+              | SharedStrings
+          }
+        }
+        pushPatches([[structuredClone(baseState), null]], '', SheetsPatchesType.Base)
+      }
+    }
+  }, [hasBasePatchesStored, pushPatches])
+  const pushLatestPatches = useEvent(async (update?: Uint8Array<ArrayBuffer>, type?: SheetsPatchesType) => {
+    const patches = structuredClone(latestPatches.current.shift())
+    if (patches) {
+      await writeBasePatchIfNecessary()
+      let hash = ''
+      if (update) {
+        hash = await getBufferHash(update)
+      }
+      pushPatches(patches, hash, type)
+    }
+  })
+
   const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) => {
     if (deps.isReadonly && !deps.isConversionFlow) {
       console.error('Attempted to modify readonly spreadsheet')
       return
     }
     latestPatches.current.push(patches)
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
-    yjsState.onBroadcastPatch(patches)
+
+    if (!deps.isDriftDetectionEnabled) {
+      // SheetsDriftDetectionEnabled is off: propagate the local Yjs update without the
+      // dry-run audit/guard. The audit never begins, so no setter/observer enters audit mode.
+      // eslint-disable-next-line @typescript-eslint/no-use-before-define
+      yjsState.onBroadcastPatch(patches)
+      return
+    }
+
+    if (hasBlockedYjsDrift.current) {
+      return
+    }
+
+    // The onAfterBroadcastPatch hook (fired inside the broadcast transaction below) computes
+    // the drift result into pendingDriftResult; the update guard then reads it to decide
+    // whether the resulting Yjs update may propagate to RTS.
+    pendingDriftResult.current = null
+    auditNextBroadcast.current = true
+    let didRunGuardCheck = false
+
+    const shouldPropagateCurrentUpdate = () => {
+      didRunGuardCheck = true
+      if (hasBlockedYjsDrift.current) {
+        return false
+      }
+
+      const driftResult = pendingDriftResult.current
+      if (!driftResult || driftResult.differences.length === 0) {
+        return true
+      }
+
+      const driftLogDetails = formatSpreadsheetYjsDriftLogDetails({
+        differences: driftResult.differences,
+        localChangedKeys: driftResult.localChangedKeys,
+        observedYjsKeys: driftResult.observedYjsKeys,
+        patches,
+      })
+      console.error(
+        '[sheets-yjs-drift] blocked outgoing Yjs update because local state and the broadcast Yjs doc drifted',
+        {
+          ...driftLogDetails,
+        },
+      )
+      console.error('[sheets-yjs-drift] local Yjs drift details', JSON.stringify(driftLogDetails, null, 2))
+      hasBlockedYjsDrift.current = true
+      application.logger.error(
+        '[sheets-yjs-drift] blocked outgoing Yjs update because local state and the broadcast Yjs doc drifted',
+      )
+      deps.onYjsDriftDetected?.(driftResult)
+      pushLatestPatches(undefined, SheetsPatchesType.Drifted).catch(console.error)
+      return false
+    }
+
+    try {
+      deps.docState.runWithDocumentUpdateGuard(shouldPropagateCurrentUpdate, () => {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        yjsState.onBroadcastPatch(patches)
+      })
+
+      // If the broadcast produced no Yjs update the guard never ran; run the check once so
+      // omitted-key drift the hook surfaced is still handled.
+      if (!didRunGuardCheck) {
+        shouldPropagateCurrentUpdate()
+      }
+    } finally {
+      auditNextBroadcast.current = false
+    }
   }
 
   /**
@@ -429,45 +572,15 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const spreadsheetState = useSpreadsheetState({ ...depsWithLocalState, locale: localeResolved })
   const canvasGridMethods = useSpreadsheet()
 
-  const { pushPatches, hasBasePatchesStored } = deps
-  const wroteBasePatch = useRef(false)
-  const writeBasePatchIfNecessary = useCallback(async () => {
-    // Only the first caller that sees no base patch claims the write.
-    if (!wroteBasePatch.current) {
-      const hasBasePatches = await hasBasePatchesStored()
-      // Re-check the ref after the await in case another update claimed it
-      // while we were waiting on the IndexedDB round-trip.
-      if (!hasBasePatches && !wroteBasePatch.current) {
-        wroteBasePatch.current = true // set synchronously before the async write
-        const baseState = { ...useLocalSpreadsheetState.getState() }
-        for (const key of Object.keys(baseState)) {
-          if (typeof baseState[key as keyof LocalState] === 'function') {
-            delete baseState[key as keyof LocalState]
-          }
-          if ((key === 'cellXfs' || key === 'sharedStrings') && baseState[key]) {
-            ;(baseState as any)[key] = Object.fromEntries(baseState[key].entries()) as unknown as
-              | CellXfs
-              | SharedStrings
-          }
-        }
-        pushPatches([[structuredClone(baseState), null]], '', SheetsPatchesType.Base)
-      }
-    }
-  }, [hasBasePatchesStored, pushPatches])
   useEffect(() => {
     async function handleUpdatePropagation(update: Uint8Array<ArrayBuffer>) {
-      const patches = structuredClone(latestPatches.current.shift())
-      if (patches) {
-        await writeBasePatchIfNecessary()
-        const hash = await getBufferHash(update)
-        pushPatches(patches, hash)
-      }
+      await pushLatestPatches(update)
     }
     deps.docState.addUpdatePropagationListener(handleUpdatePropagation)
     return () => {
       deps.docState.removeUpdatePropagationListener(handleUpdatePropagation)
     }
-  }, [deps.docState, hasBasePatchesStored, pushPatches, writeBasePatchIfNecessary])
+  }, [deps.docState, hasBasePatchesStored, pushLatestPatches, pushPatches, writeBasePatchIfNecessary])
 
   const previousLocaleResolved = useRef(localeResolved)
   const { receivedEverythingFromRTS } = useSyncedState()
@@ -527,7 +640,11 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   )
   const computedValues = { currentCellFormat }
 
-  const depsWithBaseState = { spreadsheetState, ...depsWithLocalState }
+  const depsWithBaseState = {
+    spreadsheetState,
+    ...depsWithLocalState,
+    onAfterBroadcastPatch: handleAfterBroadcastPatch,
+  }
   const chartsState = useChartsState(depsWithBaseState)
   const searchState = useSearchState(depsWithBaseState)
   const yjsState = useYjsState(depsWithBaseState)
