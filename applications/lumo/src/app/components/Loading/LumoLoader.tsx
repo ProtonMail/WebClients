@@ -1,32 +1,37 @@
-import type {SyntheticEvent} from 'react';
-import {useMemo} from 'react';
+import type { SyntheticEvent } from 'react';
+import { useMemo } from 'react';
 
-import Lottie from 'lottie-react';
-import {c} from 'ttag';
+import { c } from 'ttag';
 
 import TextLoader from '@proton/components/components/loader/TextLoader';
 import useConfig from '@proton/components/hooks/useConfig';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
-import {getAppShortName} from '@proton/shared/lib/apps/helper';
-import {ThemeTypes} from '@proton/shared/lib/themes/constants';
+import { getAppShortName } from '@proton/shared/lib/apps/helper';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
-import {LUMO_FULL_APP_TITLE} from '../../constants';
+import { LUMO_FULL_APP_TITLE } from '../../constants';
 import {
+    getDefaultSettings,
+    getLumoSettings,
     getLumoThemeFromSettings,
     getThemeConfig,
     matchDarkTheme,
-    getDefaultSettings,
-    getLumoSettings
 } from '../../providers';
-import animationData from '../Animations/loader.json';
+import { LazyLottie } from '../LazyLottie';
 
 interface Props {
     documentTitle?: string;
     text?: string;
 }
 
-const LumoLoader = ({documentTitle = '', text}: Props) => {
-    const {APP_NAME} = useConfig();
+// Lazy-load the loader animation + lottie-react so neither sits on the first-paint
+// critical path. lottie-web (~298KB) was being pulled into the initial GuestApp/AuthApp
+// chunk solely to render this spinner — heavy on slow networks (and invisible on mobile,
+// where a native placeholder covers the web view until the app signals it is ready).
+const getLoaderAnimationData = () => import('../Animations/loader.json');
+
+const LumoLoader = ({ documentTitle = '', text }: Props) => {
+    const { APP_NAME } = useConfig();
 
     const appName = getAppShortName(APP_NAME);
     const textToDisplay = text || c('Info').t`Loading ${appName}`;
@@ -74,8 +79,7 @@ const LumoLoader = ({documentTitle = '', text}: Props) => {
                 onDrop={preventDefaultEvent}
             >
                 <div className="absolute inset-center text-center">
-                    {/* <LazyLottie getAnimationData={lumoLoader} loop={true} style={{ width: 180 }} /> */}
-                    <Lottie animationData={animationData} loop={true} style={{width: 180}}/>
+                    <LazyLottie getAnimationData={getLoaderAnimationData} loop={true} style={{ width: 180 }} />
                     <TextLoader className="color-weak ml-5">{textToDisplay}</TextLoader>
                 </div>
             </div>
