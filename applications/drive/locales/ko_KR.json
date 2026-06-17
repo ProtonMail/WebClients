@@ -3493,6 +3493,9 @@
       "Failed to load signature details, please try again later": [
         "서명 상세 정보를 불러올 수 없습니다. 나중에 다시 시도해 주세요."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
+      ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
       ],
@@ -5291,6 +5294,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "비밀번호가 기억 나시나요? ${ verifyButton }"
+      ],
       "Done": [
         "완료"
       ],
@@ -6305,6 +6311,9 @@
       "Trash is empty": [
         "휴지통이 비어있음"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "이 연럭처로부터 산규 매시지를 인증하려면 키 \"${ activeSignerText }\"을(를) 신뢰하세요."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
       ],
@@ -6410,9 +6419,6 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "잘 하셨습니다. 이제 저장공간이 5GB로 확장되었습니다!"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "${ nameAuthor }님이 ${ node.name } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
-      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -6433,6 +6439,9 @@
       ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
+      ],
+      "We'll remind you to verify your password again later": [
+        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -11719,6 +11728,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount }개 이메일 주소"
       ],
@@ -12601,6 +12613,9 @@
       "Verification failed": [
         "인증 실패"
       ],
+      "Verify your password": [
+        "비밀번호 확인"
+      ],
       "Verifying your card...": [
         "카드 인증 중..."
       ],
@@ -12645,12 +12660,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "${ claimedContentAuthor }님이 파일을 업로드했는지 확인할 수 없었습니다. 원인: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "${ claimedNameAuthor }님이 해당 이름이 생성되거나 수정되었는지 확인할 수 없습니다. 원인: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "${ claimedKeyAuthor }님이 해당 노드를 생성했는지 확인할 수 없습니다. 원인: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "환영 혜택"

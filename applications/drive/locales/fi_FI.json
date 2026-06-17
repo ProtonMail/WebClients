@@ -6344,9 +6344,6 @@
         "Emme voineet tallentaa tätä kuvaa Driveesi",
         "Emme voineet tallentaa näitä kuvia Driveesi"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Emme voineet varmistaa, että ${ nameAuthor } on ladannut ${ node.name }. Seuraavaa on mahdollisesti muutettu: tiedostojen tietojen järjestys. Avaa vain, jos luotat siihen."
-      ],
       "We couldn’t process your payment.": [
         "Maksuasi ei voitu käsitellä."
       ],
@@ -11648,6 +11645,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
         "${ emailsCount } sähköpostiosoitetta"
@@ -12551,12 +12551,6 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Emme pystyneet vahvistamaan, että ${ claimedContentAuthor } latasi tiedoston sisällön. Syy on: ${ activeRevision.contentAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Emme pystyneet vahvistamaan, että ${ claimedNameAuthor } loi tai muokkasi nimeä. Syy on: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Emme pystyneet vahvistamaan, että ${ claimedKeyAuthor } loi solmun. Syy on: ${ nodeEntity.keyAuthor.error.error }"
-      ],
       "Welcome offer": [
         "Tervetuliaistarjous"
       ],
@@ -12668,9 +12662,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
-      ],
-      "Instant assistance with AI and human experts.": [
-        "Välitöntä apua tekoälyn ja ihmisasiantuntijoiden avulla."
       ],
       "Load image": [
         "Lataa kuva"

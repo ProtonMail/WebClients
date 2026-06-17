@@ -6716,8 +6716,8 @@
         "No s'ha pogut desar aquesta foto al Drive",
         "No s'han pogut desar aquestes fotos al Drive"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "No hem pogut verificar que ${ nameAuthor } hagi pujat ${ node.name }. És possible que s'hagi manipulat el següent: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu. "
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "No hem pogut verificar que ${ nameAuthor } hagi pujat ${ nodeName }. És possible que s'hagi manipulat el següent: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu."
       ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
@@ -12278,6 +12278,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adreça de correu electrònic",
         "${ emailsCount } adreces de correu electrònic"
@@ -12287,6 +12290,9 @@
       ],
       "${ freeUploadLength } of free uploads.": [
         "Teniu ${ freeUploadLength } de càrregues gratuïtes."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperació de compte"
@@ -13226,11 +13232,11 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "No hem pogut confirmar que el contingut del fitxer hagi estat carregat per ${ claimedContentAuthor }. El motiu és: ${ activeRevision.contentAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "No hem pogut confirmar que el nom hagi estat creat o modificat per ${ claimedNameAuthor }. El motiu és: ${ nodeEntity.nameAuthor.error.error }"
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "No hem pogut confirmar que el nom hagi estat creat o modificat per ${ claimedNameAuthor }. El motiu és: ${ node.nameAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "No hem pogut confirmar que el node hagi estat creat per ${ claimedKeyAuthor }. El motiu és: ${ nodeEntity.keyAuthor.error.error }"
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "No hem pogut confirmar que el node hagi estat creat per ${ claimedKeyAuthor }. El motiu és: ${ node.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Oferta de benvinguda"
@@ -13347,8 +13353,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Assistència instantània amb IA i persones expertes."
+      "Instant AI assistance, human expert on hand!": [
+        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
       ],
       "Load image": [
         "Carrega la imatge"

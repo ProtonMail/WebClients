@@ -5934,9 +5934,6 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Przestrzeń dyskowa została zwiększona do 5 GB!"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Nie udało się zweryfikować, czy ${ nameAuthor } przesłał ${ node.name }. Następujące elementy mogły zostać naruszone: kolejność danych w pliku. Otwórz tylko jeśli im ufasz."
-      ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
@@ -11034,6 +11031,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adres e-mail",
         "${ emailsCount } adresy e-mail",
