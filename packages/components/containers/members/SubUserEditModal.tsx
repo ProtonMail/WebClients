@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import {
     type MemberKeyPayload,
     type PromoteGlobalSSOPayload,
+    assignMemberRoles,
     classifyRoleChange,
     editMember,
     getMemberAddresses,
@@ -617,6 +618,17 @@ const SubUserEditModal = ({
                     const handleSubmit = async () => {
                         const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
                         await handleUpdateMember(memberDiff);
+                        if (showRolesTab) {
+                            await dispatch(
+                                assignMemberRoles({
+                                    member,
+                                    currentRoles: member.UserOrganizationRoles ?? [],
+                                    desiredRoleIds: selectedRoles,
+                                    payload: null,
+                                    api: silentApi,
+                                })
+                            );
+                        }
                         rest.onClose?.();
                     };
 
