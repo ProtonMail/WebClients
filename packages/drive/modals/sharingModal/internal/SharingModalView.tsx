@@ -1,7 +1,7 @@
 import type { MouseEvent } from 'react';
 import { useMemo, useState } from 'react';
 
-import { MemberRole, type ProtonDriveClient, type ShareNodeSettings } from '@protontech/drive-sdk';
+import { MemberRole, type ProtonDriveClient, type ShareNodeSettings, type ShareResult } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -32,7 +32,6 @@ import { DirectSharingFooter } from './DirectSharing/DirectSharingFooter';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
 import { DirectSharingListing } from './DirectSharing/DirectSharingListing';
 import { useShareInvitees } from './DirectSharing/useShareInvitees';
-import ErrorState from './ErrorState';
 import { PublicSharing } from './PublicSharing/PublicSharing';
 import { useSharingSettingsModal } from './SharingSettingsModal';
 import type { DirectMember, DirectSharingRole } from './interfaces';
@@ -42,6 +41,7 @@ import './SharingModalView.scss';
 
 export interface SharingModalViewProps extends ModalStateProps {
     isLoading: boolean;
+    initialized: boolean;
 
     drive: Pick<ProtonDriveClient, 'shareNode'>;
     nodeUid: string;
@@ -53,10 +53,7 @@ export interface SharingModalViewProps extends ModalStateProps {
     ownerDisplayName?: string;
     directMembers: DirectMember[];
     existingEmails: string[];
-    sharingInfo: any;
-
-    errorMessage?: string;
-    loadingMessage?: string;
+    sharingInfo: ShareResult;
 
     isShared: boolean;
 
@@ -103,8 +100,7 @@ export const SharingModalView = ({
     sharingInfo,
     isPublicLinkEnabled,
     publicLink,
-    errorMessage,
-    loadingMessage,
+    initialized,
     actions,
     isShared,
 }: SharingModalViewProps) => {
@@ -122,6 +118,7 @@ export const SharingModalView = ({
 
     const [publicLinkUpdating, withPublicLinkUpdating] = useLoading();
     const [publicLinkStateChanging, withPublicLinkStateChanging] = useLoading();
+    const publicLinkBusy = publicLinkUpdating || publicLinkStateChanging;
 
     const [selectedRole, setRole] = useState<DirectSharingRole>(MemberRole.Editor);
     const [inviteMessage, setInviteMessage] = useState('');
@@ -144,8 +141,7 @@ export const SharingModalView = ({
     const isSettingsVisible =
         !isInvitationWorkflow && !publicLinkStateChanging && !publicLinkUpdating && isShared && canChangePermissions;
 
-    const isShareWithAnyoneLoading = publicLinkStateChanging || isLoading;
-    const isClosedButtonDisabled = publicLinkStateChanging || publicLinkUpdating || isAdding;
+    const isClosedButtonDisabled = publicLinkBusy || isAdding;
 
     const cleanFields = () => {
         setInviteMessage('');
@@ -231,12 +227,9 @@ export const SharingModalView = ({
     };
 
     const renderModalContent = () => {
-        if (errorMessage) {
-            return <ErrorState onClose={onClose}>{errorMessage}</ErrorState>;
-        }
-
-        if (loadingMessage) {
-            return <ModalContentLoader>{loadingMessage}</ModalContentLoader>;
+        // Only show loader while open — during close animation "initialized" resets to "false" but we still want the content visible
+        if (!initialized) {
+            return <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>;
         }
 
         return (
@@ -339,17 +332,16 @@ export const SharingModalView = ({
             >
                 <div className="double-modal-content shadow-lifted mb-3">{renderModalContent()}</div>
 
-                {!isInvitationWorkflow && isPublicLinkEnabled && (
+                {!isInvitationWorkflow && isPublicLinkEnabled && !isLoading && initialized && (
                     <div className="double-modal-content shadow-lifted shrink-0">
                         <PublicSharing
                             publicLink={publicLink}
                             viewOnly={!isPublicEditModeEnabled}
                             onCreate={handleCreatePublicLink}
-                            isLoading={isShareWithAnyoneLoading}
+                            isLoading={publicLinkBusy}
                             onUpdate={handleUpdatePublicLink}
                             onDelete={handleDeletePublicLink}
                             onToggle={actions.onPublicLinkToggle}
-                            disabledToggle={publicLinkUpdating}
                         />
                     </div>
                 )}
