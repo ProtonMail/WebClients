@@ -99,8 +99,6 @@ im.$media-expressions: $media-expressions;
 }
 
 html:is(
-		[lang^='ja'],
-		[lang^='ko'],
 		[lang^='zh'],
 		[lang^='id'],
 		[lang^='kab'],
@@ -108,11 +106,14 @@ html:is(
 		[lang='pt-PT'],
 		[lang^='vi'],
 		[lang^='th'],
-		[lang^='fil'],
-		[lang^='tr']
+		[lang^='fil']
 	)
 	.summerSaleTitle {
 	font-size: 2rem;
+}
+
+html:is([lang^='ja'], [lang^='ko'], [lang^='th'], [lang^='fil'], [lang^='hi']) .summerSaleTitle {
+	inline-size: auto;
 }
 
 .summerSalePlanName {
@@ -152,6 +153,7 @@ html:is(
 
 .summerSaleText {
 	color: #372580;
+	text-wrap: pretty;
 }
 
 .offer-modal[class*='offer-summer-sale-2026-'] {
