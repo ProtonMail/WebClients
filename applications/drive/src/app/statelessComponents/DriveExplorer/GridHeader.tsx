@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -27,6 +27,7 @@ interface GridHeaderProps {
     headerCheckboxState: { checked: boolean; indeterminate: boolean };
     onHeaderCheckboxClick: () => void;
     loading: boolean;
+    headerActions?: ReactNode;
 }
 
 export function GridHeader({
@@ -37,6 +38,7 @@ export function GridHeader({
     headerCheckboxState,
     onHeaderCheckboxClick,
     loading,
+    headerActions,
 }: GridHeaderProps) {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -164,6 +166,7 @@ export function GridHeader({
                                 ))}
                             </DropdownMenu>
                         </Dropdown>
+                        {headerActions && <span className="ml-auto flex items-center">{headerActions}</span>}
                     </TableHeaderCell>
                 </>
             )}
