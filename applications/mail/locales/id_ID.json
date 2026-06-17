@@ -3037,9 +3037,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Impor akan dijeda saat penyimpanan mencapai 80% untuk menyisakan ruang bagi pesan baru."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Email lama Anda akan diimpor dan Gmail akan dihubungkan ke ${ MAIL_APP_NAME } agar pesan baru muncul secara otomatis"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Email lama akan diimpor, duplikat akan dilewati, dan dihubungkan ke Gmail agar pesan baru muncul secara otomatis. Impor dapat diurungkan kapan saja di pengaturan Easy Switch."
       ],
@@ -5302,9 +5299,6 @@
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
       ],
-      "Insert image": [
-        "Sisipkan gambar"
-      ],
       "Insert link": [
         "Sisipkan tautan"
       ],
@@ -6490,6 +6484,9 @@
       "Don't show this again": [
         "Jangan tampilkan lagi"
       ],
+      "Download logs": [
+        "Unduh log"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "mis., Amazon, eBay, Etsy"
       ],
@@ -6840,6 +6837,9 @@
       ],
       "Upload picture": [
         "Unggah gambar"
+      ],
+      "URL": [
+        "URL"
       ],
       "Username": [
         "Nama pengguna"
@@ -10572,6 +10572,9 @@
     "Title": {
       "${ appName } keyboard shortcuts": [
         "Pintasan keyboard ${ appName }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } alamat email"

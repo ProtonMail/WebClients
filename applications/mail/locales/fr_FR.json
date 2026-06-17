@@ -256,6 +256,12 @@
       "Continue with Outlook": [
         "Continuer avec Outlook"
       ],
+      "Copy '${ code }' to clipboard": [
+        "Copier '${ code }' dans le presse-papier"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Copier '${ code }' dans le presse-papier et déplacer dans la corbeille"
+      ],
       "Copy address": [
         "Copier l'adresse"
       ],
@@ -506,6 +512,9 @@
       ],
       "Hide": [
         "Masquer"
+      ],
+      "Hide ${ title }": [
+        "Masquer ${ title }"
       ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
@@ -920,6 +929,9 @@
       ],
       "Show": [
         "Afficher"
+      ],
+      "Show ${ title }": [
+        "Afficher ${ title }"
       ],
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
@@ -3259,6 +3271,9 @@
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Pour une intégration transparente de votre équipe à ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Pour un accès illimité à l'assistant d'écriture et plus encore, passez à l'abonnement ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
@@ -3308,6 +3323,12 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter vos comptes."
       ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Pour continuer à utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, ajoutez-le à votre abonnement."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Pour continuer à utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, demandez l'accès à votre administrateur."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
@@ -3340,9 +3361,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Nous allons importer vos anciens messages, ignorer les doublons et nous connecter à votre compte Gmail afin que vos nouveaux messages s'affichent automatiquement. Vous pouvez annuler l'importation à tout moment dans les paramètres d'Easy Switch."
@@ -4836,6 +4854,9 @@
       "Security Center": [
         "Centre de sécurité"
       ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Configurez l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Username": [
         "Nom d'utilisateur"
       ]
@@ -5237,6 +5258,12 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } vous aide à rédiger des meilleurs messages, rapidement et sans effort."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panneau ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } est une solution de visioconférence chiffrée de bout en bout. Ajoutez-la à votre abonnement pour organiser des réunions sécurisées."
@@ -5840,9 +5867,6 @@
       ],
       "Inherited from parent folder": [
         "Similaire au dossier principal"
-      ],
-      "Insert image": [
-        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -6935,6 +6959,9 @@
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
@@ -7062,6 +7089,9 @@
       "Cleaned": [
         "Nettoyé"
       ],
+      "Clear logs": [
+        "Vider les journaux"
+      ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
       ],
@@ -7089,6 +7119,12 @@
       "Contacts": [
         "Contacts"
       ],
+      "Context page": [
+        "Page du contexte"
+      ],
+      "Context total": [
+        "Total du contexte"
+      ],
       "Continue cancelling": [
         "Continuer l'annulation"
       ],
@@ -7109,6 +7145,9 @@
       ],
       "Credits": [
         "Crédits"
+      ],
+      "Current context": [
+        "Contexte actuel"
       ],
       "Date": [
         "Date"
@@ -7134,11 +7173,17 @@
       "Don't show this again": [
         "Ne plus afficher"
       ],
+      "Download logs": [
+        "Télécharger les journaux"
+      ],
       "Drive": [
         "Drive"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "par exemple Amazon, eBay ou Etsy"
+      ],
+      "Elements in store": [
+        "Éléments en stockage"
       ],
       "Email": [
         "Adresse e-mail"
@@ -7181,6 +7226,9 @@
       ],
       "Extremely Satisfied": [
         "Extrêmement satisfait"
+      ],
+      "Filter": [
+        "Filtrer"
       ],
       "Filter Name": [
         "Nom du filtre"
@@ -7257,6 +7305,9 @@
       "Include application logs in bug report": [
         "Inclure les journaux d'application dans le rapport de bug"
       ],
+      "Information": [
+        "Informations"
+      ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
       ],
@@ -7271,6 +7322,9 @@
       ],
       "Label as": [
         "Labelliser"
+      ],
+      "Label ID": [
+        "Label ID"
       ],
       "Label messages as": [
         "Labelliser les messages"
@@ -7295,6 +7349,12 @@
       ],
       "Location": [
         "Lieu"
+      ],
+      "Mail debugging information": [
+        "Informations de débogage d'e-mail"
+      ],
+      "Mail logs": [
+        "Journaux d'e-mails"
       ],
       "Mail Server (IMAP)": [
         "Serveur de messagerie (IMAP)"
@@ -7431,6 +7491,9 @@
       "Read": [
         "Lus"
       ],
+      "Refresh logs": [
+        "Actualiser les journaux"
+      ],
       "Region": [
         "Région"
       ],
@@ -7470,6 +7533,9 @@
       "Social media updates and activity": [
         "Mises à jour et activité des réseaux sociaux"
       ],
+      "Sort": [
+        "Trier"
+      ],
       "Starred": [
         "Favoris"
       ],
@@ -7481,6 +7547,9 @@
       ],
       "Statement": [
         "Requête"
+      ],
+      "Store state": [
+        "État du stockage"
       ],
       "Street address": [
         "Adresse postale"
@@ -7502,6 +7571,9 @@
       ],
       "System information": [
         "Informations système"
+      ],
+      "Tab age": [
+        "Âge de l'onglet"
       ],
       "Tell us more about your experience": [
         "Faites-nous part de votre expérience"
@@ -7535,6 +7607,9 @@
       ],
       "Upload picture": [
         "Importer une image"
+      ],
+      "URL": [
+        "URL"
       ],
       "Username": [
         "Nom d'utilisateur"
@@ -10021,8 +10096,29 @@
       "Subject": [
         "Objet"
       ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Annoncer des événements à venir dans une newsletter »"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Annuler mon abonnement à la salle de sport »"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Indiquez à ${ subject } ce qu’il faut écrire. Exemple : « Inviter Jeanne à ma fête »"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Remercie mon collègue pour son aide sur un projet »"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Rédiger une lettre de motivation pour un stage »"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Indiquez à ${ subject } ce qu'il doit écrire. Exemple : « Écrire un e-mail de relance à un client »"
+      ],
       "Text": [
         "Texte"
+      ],
+      "the writing assistant": [
+        "l'assistant d'écriture"
       ],
       "Thomas": [
         "Camille"
@@ -11531,6 +11627,9 @@
       "Conversation deleted": [
         "La conversation a été supprimée."
       ],
+      "Copied '${ code }' to clipboard": [
+        "Le code '${ code }' a été copié dans le presse-papier."
+      ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
@@ -11770,12 +11869,18 @@
       "${ appName } keyboard shortcuts": [
         "Raccourcis clavier ${ appName }"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
       ],
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "(active)": [
         "(active)"
@@ -11927,6 +12032,9 @@
       ],
       "Coupon": [
         "Code promo"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Rédigez des meilleurs e-mails avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Create contact": [
         "Créer un contact"
@@ -12526,8 +12634,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Assistance immédiate grâce à l'IA et à des experts humains."
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "Load image": [
         "Charger l'image"
