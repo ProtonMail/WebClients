@@ -16,7 +16,6 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
@@ -64,6 +63,8 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     onExpandBlockquotes?: () => void;
     onUploadAttachments?: (data: AddAttachmentsParams) => void;
     getStoreState?: () => MailState;
+    // Kill switch to prevent the re-upload of inline images on undo
+    isInlineImageReuploadDisabled: boolean;
 }
 
 const EditorWrapper = ({
@@ -85,11 +86,11 @@ const EditorWrapper = ({
     toolbarCustomRender,
     hasAttachments,
     onExpandBlockquotes,
+    isInlineImageReuploadDisabled,
 }: Props) => {
     const isMounted = useIsMounted();
     const skipNextInputRef = useRef(false); // Had trouble by using a state here
 
-    const isInlineImageReuploadDisabled = useFlag('ComposerInlineImageReuploadDisabled');
     // Re-upload of inline images on undo is only possible when the composer exposes
     // onUploadAttachments (not in EO), and can be turned off via kill switch. When disabled,
     // the missed CIDs are ignored and we fall back to the pre-re-upload behaviour.

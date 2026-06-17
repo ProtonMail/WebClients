@@ -42,6 +42,8 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     onExpandBlockquotes?: () => void;
     onUploadAttachments?: (data: AddAttachmentsParams) => void;
     getStoreState?: () => MailState;
+    // Kill switch to prevent the re-upload of inline images on undo
+    isInlineImageReuploadDisabled: boolean;
 }
 
 const ComposerContent = (
@@ -70,6 +72,7 @@ const ComposerContent = (
         isAssistantExpanded,
         toolbarWrapperRef,
         onExpandBlockquotes,
+        isInlineImageReuploadDisabled,
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
@@ -122,6 +125,7 @@ const ComposerContent = (
                     toolbarCustomRender={toolbarCustomRender}
                     hasAttachments={attachments.length > 0}
                     onExpandBlockquotes={onExpandBlockquotes}
+                    isInlineImageReuploadDisabled={isInlineImageReuploadDisabled}
                 />
             </div>
 
