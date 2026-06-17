@@ -6659,9 +6659,6 @@
         "Wir konnten dieses Foto nicht in deinem Drive speichern",
         "Wir konnten diese Fotos nicht in deinem Drive speichern"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Wir konnten nicht verifizieren, dass ${ nameAuthor } ${ node.name } hochgeladen hat. Möglicherweise wurden folgende Daten manipuliert: Reihenfolge der Dateidaten. Öffne die Datei nur, wenn du ihr vertraust."
-      ],
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
       ],
@@ -12308,6 +12305,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } E-Mail-Adresse",
         "${ emailsCount } E-Mail-Adressen"
@@ -13255,12 +13255,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Wir konnten nicht bestätigen, dass der Dateiinhalt von ${ claimedContentAuthor } hochgeladen wurde. Der Grund dafür ist: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Wir konnten nicht bestätigen, dass der Name von ${ claimedNameAuthor } erstellt oder geändert wurde. Der Grund dafür ist: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Wir konnten nicht bestätigen, dass der Knoten von ${ claimedKeyAuthor } erstellt wurde. Der Grund dafür ist: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Willkommensangebot"

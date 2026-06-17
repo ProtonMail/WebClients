@@ -6713,9 +6713,6 @@
         "Vi kunne ikke gemme dette foto til dit drev",
         "Vi kunne ikke gemme flere forskellige fotos til dit drev"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ node.name }. Der kan være blevet manipuleret med fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
-      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
@@ -12308,6 +12305,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
@@ -13255,12 +13255,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Vi kunne ikke bekræfte, at filens indhold blev uploadet af ${ claimedContentAuthor }. Årsagen er: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Vi kunne ikke bekræfte, at navnet blev oprettet eller ændret af ${ claimedNameAuthor }. Årsagen er: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Vi kunne ikke bekræfte, at noden blev oprettet af ${ claimedKeyAuthor }. Årsagen er: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Velkomsttilbud"
