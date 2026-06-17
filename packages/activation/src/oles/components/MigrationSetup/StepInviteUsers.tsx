@@ -1,4 +1,4 @@
-import { type FC, useRef, useState } from 'react';
+import { type FC, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,10 +9,12 @@ import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Copy from '@proton/components/components/button/Copy';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
 import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { useProviderUsers } from '../../useProviderUsers';
@@ -35,9 +37,25 @@ const StepInviteUsers: FC<StepComponentProps> = ({ model, onNext }) => {
           })
         : '';
 
-    const users = (providerUsers ?? []).filter((u) => u.ImporterOrganizationUser);
+    const inviteLink = useMemo(() => {
+        // INDA-711 - on next release handle this as all other external links.
+        if (isElectronApp) {
+            return (
+                // eslint-disable-next-line
+                <button
+                    className="link"
+                    key="invite-link"
+                    role="link"
+                    onClick={() => openLinkInBrowser(activationLink)}
+                >
+                    {c('BOSS').t`invite link`}
+                </button>
+            );
+        }
+        return <a key="invite-link" href={activationLink} target="_blank">{c('BOSS').t`invite link`}</a>;
+    }, [activationLink, isElectronApp]);
 
-    const inviteLink = <a key="invite-link" href={activationLink} target="_blank">{c('BOSS').t`invite link`}</a>;
+    const users = (providerUsers ?? []).filter((u) => u.ImporterOrganizationUser);
 
     const messageTemplate = (() => {
         const translated = c('BOSS').jt`We're moving to ${BRAND_NAME}, the secure email service.
