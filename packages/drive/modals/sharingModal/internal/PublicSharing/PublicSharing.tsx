@@ -43,18 +43,8 @@ interface Props {
     isLoading: boolean;
     viewOnly: boolean;
     onToggle?: (enabled: boolean) => void;
-    disabledToggle?: boolean;
 }
-export const PublicSharing = ({
-    publicLink,
-    onUpdate,
-    onCreate,
-    onDelete,
-    isLoading,
-    viewOnly,
-    onToggle,
-    disabledToggle,
-}: Props) => {
+export const PublicSharing = ({ publicLink, onUpdate, onCreate, onDelete, isLoading, viewOnly, onToggle }: Props) => {
     const { url, role } = publicLink ?? {};
 
     const contentRef = useRef<HTMLDivElement>(null);
@@ -129,7 +119,7 @@ export const PublicSharing = ({
                         <span className="color-weak mr-2">
                             {!!url ? c('Label').t`Active` : c('Label').t`Not active`}
                         </span>
-                        <Toggle disabled={disabledToggle} checked={!!url} loading={isLoading} onChange={handleToggle} />
+                        <Toggle checked={!!url} loading={isLoading} onChange={handleToggle} />
                     </div>
                 </div>
 
@@ -165,7 +155,7 @@ export const PublicSharing = ({
                         </div>
                     </div>
 
-                    <CopyPublicLink url={url} onClick={handleCopyURLClick} disabled={!url} />
+                    <CopyPublicLink url={url} onClick={handleCopyURLClick} disabled={!url || isLoading} />
                 </div>
 
                 {/* Footer */}
@@ -184,6 +174,7 @@ export const PublicSharing = ({
                                     onPublicLinkSettingsChange: onUpdate,
                                 })
                             }
+                            disabled={isLoading}
                         >
                             <div className="flex items-center gap-3">
                                 <div

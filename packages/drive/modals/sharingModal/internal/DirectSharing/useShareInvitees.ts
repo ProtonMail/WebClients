@@ -72,6 +72,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
             type: 'warning',
         });
     };
+
     const add = async (newInvitee: ShareInvitee[]) => {
         const { filteredInvitees, duplicateInvitees, badInvitees } = newInvitee.reduce<{
             filteredInvitees: Map<string, ShareInvitee>;
