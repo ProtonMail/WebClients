@@ -1,8 +1,8 @@
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
 import { PAYMENT_METHOD_TYPES, PLANS, type PlanIDs } from '@proton/payments';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import type { CouponConfigRendered } from '../../coupon-config/useCouponConfig';
 import { getDisableCurrencySelector } from './getDisableCurrencySelector';
 
 const makePaymentMethods = (type?: PAYMENT_METHOD_TYPES): MethodsHook =>

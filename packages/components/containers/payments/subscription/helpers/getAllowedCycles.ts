@@ -13,9 +13,9 @@ import {
     notHigherThanAvailableOnBackend,
 } from '@proton/payments';
 import { isBF2025Offer } from '@proton/payments/core/checkout';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
-import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 
 type CycleCapper = (
