@@ -1,4 +1,5 @@
 import { type ReactNode, lazy } from 'react';
+import { useRouteMatch } from 'react-router-dom';
 
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
 import { RightDrawer } from '../components/RightDrawer';
@@ -22,6 +23,7 @@ interface Props {
 }
 
 const MainLayoutContent = ({ children }: Props) => {
+    const isHomepage = !!useRouteMatch({ path: '/', exact: true });
     const { openSearchModal } = useSearchModal();
     const { isOpen, toggle } = useRightPanel();
 
@@ -37,7 +39,7 @@ const MainLayoutContent = ({ children }: Props) => {
                     <div className="main-layout-component flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative md:p-2 md:gap-2">
                         <LumoSidebar />
                         <main className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative overflow-hidden">
-                            <MainLayoutAnimatedBackground />
+                            {isHomepage && <MainLayoutAnimatedBackground />}
                             <HighLoadWarning />
                             {children}
                         </main>
