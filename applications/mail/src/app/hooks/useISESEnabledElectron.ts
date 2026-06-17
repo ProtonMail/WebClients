@@ -23,7 +23,7 @@ const useIsESEnabledElectron = () => {
         }
 
         const conversationCount = counterMap[MAILBOX_LABEL_IDS.INBOX];
-        if (typeof conversationCount.Total !== 'number') {
+        if (!conversationCount || typeof conversationCount.Total !== 'number') {
             setIsInboxEnabledInbox(false);
             return;
         }
