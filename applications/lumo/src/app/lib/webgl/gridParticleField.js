@@ -169,9 +169,26 @@ export const DEFAULT_GRID_PARTICLE_FIELD_OPTIONS = {
     colorCssVar: '--surface-foreground',
     /** Chat mode dot color token (see `CONTENT_GRID_CHAT_COLOR_CSS_VAR` in `site.js`). */
     colorCssVarChat: '--border-default',
+    /** Sample the blob mask at this fraction of layout size (0–1). */
+    maskSampleScale: 0.5,
+    /** Refresh cached blob reveal every N animation frames. */
+    maskUpdateInterval: 2,
+    /** When true, `tick()` must be called externally (single shared animation loop). */
+    drivenExternally: false,
+    /** Cap `devicePixelRatio` for the particle canvas (default: no cap). */
+    maxDpr: 0,
 };
 
 const D = DEFAULT_GRID_PARTICLE_FIELD_OPTIONS;
+
+/** @param {number} rawDpr @param {number} maxDpr */
+function effectiveDpr(rawDpr, maxDpr) {
+    const cap = Number(maxDpr);
+    if (!Number.isFinite(cap) || cap <= 0) {
+        return rawDpr;
+    }
+    return Math.min(rawDpr, cap);
+}
 
 /**
  * @param {Partial<typeof DEFAULT_GRID_PARTICLE_FIELD_OPTIONS>} [partial]
@@ -208,6 +225,10 @@ export function mergeGridParticleFieldOptions(partial = {}) {
         revealGain: Math.max(0, coerceSetting(o.revealGain, D.revealGain)),
         revealThreshold: clamp(coerceSetting(o.revealThreshold, D.revealThreshold), 0, 1),
         dotRgb: o.dotRgb ?? D.dotRgb,
+        maskSampleScale: clamp(coerceSetting(o.maskSampleScale, D.maskSampleScale), 0.25, 1),
+        maskUpdateInterval: Math.max(1, Math.round(coerceSetting(o.maskUpdateInterval, D.maskUpdateInterval))),
+        drivenExternally: Boolean(o.drivenExternally),
+        maxDpr: Math.max(0, coerceSetting(o.maxDpr, D.maxDpr)),
         colorCssVar: String(o.colorCssVar || D.colorCssVar).trim(),
         colorCssVarChat: String(o.colorCssVarChat || D.colorCssVarChat).trim(),
     };
@@ -224,9 +245,10 @@ export class GridParticleField {
 
         this.root = this.canvas.parentElement;
         this.context = this.canvas.getContext('2d');
-        this.dpr = window.devicePixelRatio || 1;
         this.settings = mergeGridParticleFieldOptions(options);
         this.revealMode = Boolean(this.settings.maskSourceCanvas);
+        this.drivenExternally = this.settings.drivenExternally || this.revealMode;
+        this.dpr = effectiveDpr(window.devicePixelRatio || 1, this.settings.maxDpr);
         /** @type {boolean} */
         this._chatColorMode = false;
         this.points = [];
@@ -234,6 +256,9 @@ export class GridParticleField {
         this.canvasSize = { w: 0, h: 0 };
         this.rafId = 0;
         this._disposed = false;
+        this._paused = typeof document !== 'undefined' && document.hidden;
+        this._maskFrame = 0;
+        this._baseColorDirty = true;
         this._resizeObserver = null;
         this._resizeRaf = 0;
         /** @type {{ r: number; g: number; b: number } | null} */
@@ -264,14 +289,27 @@ export class GridParticleField {
         this.animateReveal = this.animateReveal.bind(this);
         this.animateLegacy = this.animateLegacy.bind(this);
         this.animate = this.animate.bind(this);
+        this.tick = this.tick.bind(this);
+        this.onVisibilityChange = this.onVisibilityChange.bind(this);
 
         this.init();
+    }
+
+    onVisibilityChange() {
+        this._paused = document.hidden;
+        if (!this._paused) {
+            this._baseColorDirty = true;
+            this._maskFrame = 0;
+        }
     }
 
     init() {
         if (!this.canvas) return;
         this.initCanvas();
-        this.animate();
+        if (!this.drivenExternally) {
+            this.animate();
+        }
+        document.addEventListener('visibilitychange', this.onVisibilityChange);
         /** Programmatic `window.dispatchEvent(new Event("resize"))` and viewport changes. */
         window.addEventListener('resize', this.onContentResize);
         if (typeof ResizeObserver !== 'undefined' && this.root) {
@@ -301,8 +339,11 @@ export class GridParticleField {
     }
 
     initCanvas() {
+        this.dpr = effectiveDpr(window.devicePixelRatio || 1, this.settings.maxDpr);
         this.resizeCanvas();
         this.buildGrid();
+        this._baseColorDirty = true;
+        this._maskFrame = 0;
     }
 
     onMouseMove(event) {
@@ -368,26 +409,14 @@ export class GridParticleField {
 
     /** @returns {{ r: number; g: number; b: number }} */
     getBaseRgb255() {
-        const raw = getComputedStyle(document.documentElement)
-            .getPropertyValue(this.settings.baseColorCssVar)
-            .trim();
-        return parseCssColorToRgb255(raw) ?? { r: 255, g: 255, b: 255 };
-    }
-
-    /**
-     * @param {number} r @param {number} g @param {number} b
-     * @param {{ r: number; g: number; b: number }} base
-     */
-    computeReveal(r, g, b, base) {
-        const dr = (r - base.r) / 255;
-        const dg = (g - base.g) / 255;
-        const db = (b - base.b) / 255;
-        const diff = Math.sqrt(dr * dr + dg * dg + db * db);
-        const { revealThreshold, revealGain } = this.settings;
-        if (diff <= revealThreshold) {
-            return 0;
+        if (this._baseColorDirty) {
+            const raw = getComputedStyle(document.documentElement)
+                .getPropertyValue(this.settings.baseColorCssVar)
+                .trim();
+            this._baseRgb255 = parseCssColorToRgb255(raw) ?? { r: 255, g: 255, b: 255 };
+            this._baseColorDirty = false;
         }
-        return clamp((diff - revealThreshold) * revealGain, 0, 1);
+        return this._baseRgb255;
     }
 
     updateMaskSample() {
@@ -402,29 +431,70 @@ export class GridParticleField {
             return;
         }
 
-        if (this._maskReadCanvas.width !== w || this._maskReadCanvas.height !== h) {
-            this._maskReadCanvas.width = w;
-            this._maskReadCanvas.height = h;
+        const scale = this.settings.maskSampleScale;
+        const sampleW = Math.max(1, Math.round(w * scale));
+        const sampleH = Math.max(1, Math.round(h * scale));
+
+        if (this._maskReadCanvas.width !== sampleW || this._maskReadCanvas.height !== sampleH) {
+            this._maskReadCanvas.width = sampleW;
+            this._maskReadCanvas.height = sampleH;
         }
 
-        this._maskReadCtx.drawImage(src, 0, 0, w, h);
-        this._maskImageData = this._maskReadCtx.getImageData(0, 0, w, h);
-        this._baseRgb255 = this.getBaseRgb255();
+        this._maskReadCtx.drawImage(src, 0, 0, sampleW, sampleH);
+        this._maskImageData = this._maskReadCtx.getImageData(0, 0, sampleW, sampleH);
+        this._maskSampleW = sampleW;
+        this._maskSampleH = sampleH;
+        const base = this.getBaseRgb255();
+        const { revealThreshold, revealGain } = this.settings;
+        const data = this._maskImageData.data;
+
+        for (const point of this.points) {
+            const ix = clamp(Math.floor((point.x / w) * sampleW), 0, sampleW - 1);
+            const iy = clamp(Math.floor((point.y / h) * sampleH), 0, sampleH - 1);
+            const i = (iy * sampleW + ix) * 4;
+            point.reveal = this.computeReveal(data[i], data[i + 1], data[i + 2], base, revealThreshold, revealGain);
+        }
     }
 
-    /** @param {number} x @param {number} y */
+    /**
+     * @param {number} r @param {number} g @param {number} b
+     * @param {{ r: number; g: number; b: number }} base
+     * @param {number} revealThreshold
+     * @param {number} revealGain
+     */
+    computeReveal(r, g, b, base, revealThreshold, revealGain) {
+        const dr = (r - base.r) / 255;
+        const dg = (g - base.g) / 255;
+        const db = (b - base.b) / 255;
+        const diff = Math.sqrt(dr * dr + dg * dg + db * db);
+        if (diff <= revealThreshold) {
+            return 0;
+        }
+        return clamp((diff - revealThreshold) * revealGain, 0, 1);
+    }
+
+    /** @deprecated use point.reveal updated in updateMaskSample */
     getRevealAt(x, y) {
-        if (!this._maskImageData) {
+        if (!this._maskImageData || !this._maskSampleW || !this._maskSampleH) {
             return 0;
         }
 
         const w = this.canvasSize.w;
         const h = this.canvasSize.h;
-        const ix = clamp(Math.floor(x), 0, w - 1);
-        const iy = clamp(Math.floor(y), 0, h - 1);
-        const i = (iy * w + ix) * 4;
+        const sampleW = this._maskSampleW;
+        const sampleH = this._maskSampleH;
+        const ix = clamp(Math.floor((x / w) * sampleW), 0, sampleW - 1);
+        const iy = clamp(Math.floor((y / h) * sampleH), 0, sampleH - 1);
+        const i = (iy * sampleW + ix) * 4;
         const data = this._maskImageData.data;
-        return this.computeReveal(data[i], data[i + 1], data[i + 2], this._baseRgb255);
+        return this.computeReveal(
+            data[i],
+            data[i + 1],
+            data[i + 2],
+            this._baseRgb255,
+            this.settings.revealThreshold,
+            this.settings.revealGain
+        );
     }
 
     /** @param {{ breathePhase: number; breatheSpeed: number; breatheMin: number; breatheMax: number }} point @param {number} timeSec */
@@ -606,6 +676,7 @@ export class GridParticleField {
                     );
                     point.breatheMin = floor;
                     point.breatheMax = Math.max(ceiling, floor + 0.12);
+                    point.reveal = 0;
                 }
 
                 this.points.push(point);
@@ -614,22 +685,76 @@ export class GridParticleField {
     }
 
     animateReveal() {
-        this.updateMaskSample();
+        this._maskFrame += 1;
+        if (this._maskFrame === 1 || this._maskFrame % this.settings.maskUpdateInterval === 0) {
+            this.updateMaskSample();
+        }
+
         this._particleRgb = this.getParticleRgb();
         if (!this._particleRgb) {
             return;
         }
 
-        const timeSec = performance.now() * 0.001;
+        this.drawRevealDots(performance.now() * 0.001);
+    }
+
+    /** @param {number} timeSec */
+    drawRevealDots(timeSec) {
+        const rgb = /** @type {{ r: number; g: number; b: number }} */ (this._particleRgb);
         const maxAlpha = this.settings.alpha;
+        const size = this.settings.size;
+        const radius = this.settings.interactionRadius;
+        const radiusSq = (radius + size) * (radius + size);
+        const mouseActive = this.mouse.active;
+        const mx = this.mouse.x;
+        const my = this.mouse.y;
+        const mouseBrighten = this.settings.mouseBrighten;
+        /** @type {Map<number, { x: number; y: number }[]>} */
+        const buckets = new Map();
 
         for (const point of this.points) {
-            const reveal = this.getRevealAt(point.x, point.y);
+            const reveal = point.reveal ?? 0;
+            if (reveal <= 0.001) {
+                continue;
+            }
+
             const breathe = this.getBreatheMul(point, timeSec);
-            const mouseBoost = this.getMouseBrighten(point.x, point.y);
+            let mouseBoost = 0;
+            if (mouseActive) {
+                const dx = point.x - mx;
+                const dy = point.y - my;
+                const distSq = dx * dx + dy * dy;
+                if (distSq < radiusSq) {
+                    mouseBoost =
+                        smoothstep01(1 - Math.sqrt(distSq) / radius) * mouseBrighten;
+                }
+            }
+
             const alpha = clamp(reveal * breathe * maxAlpha + mouseBoost * reveal, 0, 1);
-            this.drawDot(point, alpha);
+            if (alpha <= 0.001) {
+                continue;
+            }
+
+            const bucketKey = Math.round(alpha * 24) / 24;
+            let bucket = buckets.get(bucketKey);
+            if (!bucket) {
+                bucket = [];
+                buckets.set(bucketKey, bucket);
+            }
+            bucket.push(point);
         }
+
+        const ctx = this.context;
+        ctx.fillStyle = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
+        for (const [bucketAlpha, pts] of buckets) {
+            ctx.globalAlpha = bucketAlpha;
+            ctx.beginPath();
+            for (const p of pts) {
+                ctx.rect(p.x - size, p.y - size, size * 2, size * 2);
+            }
+            ctx.fill();
+        }
+        ctx.globalAlpha = 1;
     }
 
     animateLegacy() {
@@ -663,14 +788,24 @@ export class GridParticleField {
         }
     }
 
-    animate() {
-        if (this._disposed || !this.canvas) return;
+    tick() {
+        if (this._disposed || !this.canvas || this._paused) {
+            return;
+        }
 
         this.clearContext();
         if (this.revealMode) {
             this.animateReveal();
         } else {
             this.animateLegacy();
+        }
+    }
+
+    animate() {
+        if (this._disposed || !this.canvas) return;
+
+        if (!this._paused) {
+            this.tick();
         }
 
         this.rafId = window.requestAnimationFrame(this.animate);
@@ -688,6 +823,7 @@ export class GridParticleField {
         this._resizeObserver = null;
         window.removeEventListener('resize', this.onContentResize);
         window.removeEventListener('mousemove', this.onMouseMove);
+        document.removeEventListener('visibilitychange', this.onVisibilityChange);
         this.points.length = 0;
     }
 }
@@ -709,6 +845,9 @@ export function createGridParticleField(canvas, options) {
         /** @param {boolean} chat */
         setChatColorMode(chat) {
             animation?.setChatColorMode(chat);
+        },
+        tick() {
+            animation?.tick();
         },
         destroy() {
             animation?.destroy();

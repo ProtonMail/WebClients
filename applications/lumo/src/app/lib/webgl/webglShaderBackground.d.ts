@@ -77,6 +77,12 @@ export type WebglShaderBgMount = 'viewport' | 'content';
 export interface WebglShaderBgRuntime {
     mount?: WebglShaderBgMount;
     baseCssVar?: string | null;
+    /** Cap device pixel ratio for the shader canvas (default: uncapped). */
+    maxDpr?: number;
+    /** Throttle animation updates (default: 60). */
+    targetFps?: number;
+    /** Called after each rendered shader frame (e.g. to drive the particle layer). */
+    onAfterRender?: (timeMs: number) => void;
 }
 
 export interface WebglShaderBgInstance {

@@ -5,7 +5,12 @@ import { createGridParticleField } from './gridParticleField';
 import type { WebglShaderBgConfig } from './webglShaderBackground';
 import { createWebglShaderBackground } from './webglShaderBackground';
 
-// Blobs use xOffsetFromCenter so they stay centered in the main content column at any zoom/DPR.
+/** Cap device pixel ratio for background canvases (shader + particles). */
+export const ANIMATED_BACKGROUND_MAX_DPR = 1.1;
+
+/** Ambient animation target; slow blob motion reads fine below 60fps. */
+export const ANIMATED_BACKGROUND_TARGET_FPS = 24;
+
 const SHADER_CONFIG: WebglShaderBgConfig = {
     /** Linear RGB 0–1; fallback when CSS var unreadable (dark; light uses `[1,1,1]` in code). */
     baseColor: [1.0, 1.0, 1.0],
@@ -180,15 +185,23 @@ export function useAnimatedBackground() {
             return;
         }
 
-        const shaderInstance = createWebglShaderBackground(shaderCanvas, SHADER_CONFIG, {
-            mount: 'content',
-            baseCssVar: '--background-main-canvas',
-        });
         const field = createGridParticleField(particleCanvas, {
             ...PARTICLE_CONFIG,
             maskSourceCanvas: shaderCanvas,
+            drivenExternally: true,
+            maxDpr: ANIMATED_BACKGROUND_MAX_DPR,
         });
         field.init();
+
+        const shaderInstance = createWebglShaderBackground(shaderCanvas, SHADER_CONFIG, {
+            mount: 'content',
+            baseCssVar: '--background-main-canvas',
+            maxDpr: ANIMATED_BACKGROUND_MAX_DPR,
+            targetFps: ANIMATED_BACKGROUND_TARGET_FPS,
+            onAfterRender: () => {
+                field.tick();
+            },
+        });
 
         return () => {
             shaderInstance.destroy();
