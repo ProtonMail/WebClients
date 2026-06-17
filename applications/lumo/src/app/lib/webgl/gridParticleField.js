@@ -25,6 +25,34 @@ function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
 }
 
+function smoothstep01(t) {
+    const x = clamp(t, 0, 1);
+    return x * x * (3 - 2 * x);
+}
+
+/** @param {string} raw */
+function parseCssColorToRgb255(raw) {
+    const s = String(raw).trim();
+    if (!s) return null;
+    if (s.startsWith('#')) {
+        const h = s.slice(1);
+        const full = h.length === 3 ? [...h].map((c) => c + c).join('') : h.padEnd(6, '0');
+        return {
+            r: parseInt(full.slice(0, 2), 16),
+            g: parseInt(full.slice(2, 4), 16),
+            b: parseInt(full.slice(4, 6), 16),
+        };
+    }
+    const m = s.match(/^rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/);
+    if (!m) return null;
+    return { r: Number(m[1]), g: Number(m[2]), b: Number(m[3]) };
+}
+
+/** @param {number} min @param {number} max */
+function randomInRange(min, max) {
+    return min + Math.random() * (max - min);
+}
+
 /** @type {number[] | null} */
 let perlinPerm = null;
 
@@ -99,6 +127,7 @@ export const DEFAULT_GRID_PARTICLE_FIELD_OPTIONS = {
     interactionRadius: 240,
     repelStrength: 8,
     denseAroundInput: false,
+    sparseAroundInput: false,
     focusTarget: 'lumo-input-wrapper',
     focusPadding: 4,
     focusSpacing: 6,
@@ -114,7 +143,29 @@ export const DEFAULT_GRID_PARTICLE_FIELD_OPTIONS = {
      * `alpha`, many near invisible). Only applies when `opacityNoiseSize` > 0.
      */
     opacityNoiseContrast: 2,
-    /** Intro: design token on `:root` (from `tokens.css`). */
+    /**
+     * When set, dots are revealed only where this canvas (blob layer) has color
+     * beneath them — white dots, per-dot breathe, mouse brighten (no fisheye repel).
+     */
+    maskSourceCanvas: null,
+    /** CSS var for the plain background color (used to measure blob tint for reveal). */
+    baseColorCssVar: '--background-main-canvas',
+    /** Peak extra opacity added near the cursor (smooth falloff). */
+    mouseBrighten: 0.55,
+    /** Per-dot breathe speed range (rad/s); keep slow so motion stays ambient. */
+    breatheSpeedMin: 0.12,
+    breatheSpeedMax: 0.26,
+    /** Per-dot opacity floor during breathe (near-invisible at the trough). */
+    breatheOpacityMin: 0.03,
+    /** Per-dot opacity ceiling during breathe (soft peak, not full strength). */
+    breatheOpacityMax: 0.58,
+    /** Multiplier on color distance from base before clamping to [0, 1]. */
+    revealGain: 5.5,
+    /** Ignore tiny compression/noise on the plain background. */
+    revealThreshold: 0.012,
+    /** Dot color when `maskSourceCanvas` is set (defaults to white). */
+    dotRgb: { r: 255, g: 255, b: 255 },
+    /** Legacy mode dot color token on `:root`. */
     colorCssVar: '--surface-foreground',
     /** Chat mode dot color token (see `CONTENT_GRID_CHAT_COLOR_CSS_VAR` in `site.js`). */
     colorCssVarChat: '--border-default',
@@ -135,12 +186,28 @@ export function mergeGridParticleFieldOptions(partial = {}) {
         interactionRadius: Math.max(1, coerceSetting(o.interactionRadius, D.interactionRadius)),
         repelStrength: Math.max(0, coerceSetting(o.repelStrength, D.repelStrength)),
         denseAroundInput: Boolean(o.denseAroundInput),
-        focusTarget: o.focusTarget === 'input-container' ? 'input-container' : 'lumo-input-wrapper',
+        sparseAroundInput: Boolean(o.sparseAroundInput),
+        focusTarget:
+            o.focusTarget === 'input-container'
+                ? 'input-container'
+                : o.focusTarget === 'lumo-input-container'
+                  ? 'lumo-input-container'
+                  : 'lumo-input-wrapper',
         focusPadding: Math.max(0, coerceSetting(o.focusPadding, D.focusPadding)),
         focusSpacing: Math.max(4, coerceSetting(o.focusSpacing, D.focusSpacing)),
         transitionPadding: Math.max(0, coerceSetting(o.transitionPadding, D.transitionPadding)),
         opacityNoiseSize: Math.max(0, coerceSetting(o.opacityNoiseSize, D.opacityNoiseSize)),
         opacityNoiseContrast: Math.max(1, coerceSetting(o.opacityNoiseContrast, D.opacityNoiseContrast)),
+        maskSourceCanvas: o.maskSourceCanvas ?? null,
+        baseColorCssVar: String(o.baseColorCssVar || D.baseColorCssVar).trim(),
+        mouseBrighten: clamp(coerceSetting(o.mouseBrighten, D.mouseBrighten), 0, 1),
+        breatheSpeedMin: Math.max(0.05, coerceSetting(o.breatheSpeedMin, D.breatheSpeedMin)),
+        breatheSpeedMax: Math.max(0.05, coerceSetting(o.breatheSpeedMax, D.breatheSpeedMax)),
+        breatheOpacityMin: clamp(coerceSetting(o.breatheOpacityMin, D.breatheOpacityMin), 0, 1),
+        breatheOpacityMax: clamp(coerceSetting(o.breatheOpacityMax, D.breatheOpacityMax), 0, 1),
+        revealGain: Math.max(0, coerceSetting(o.revealGain, D.revealGain)),
+        revealThreshold: clamp(coerceSetting(o.revealThreshold, D.revealThreshold), 0, 1),
+        dotRgb: o.dotRgb ?? D.dotRgb,
         colorCssVar: String(o.colorCssVar || D.colorCssVar).trim(),
         colorCssVarChat: String(o.colorCssVarChat || D.colorCssVarChat).trim(),
     };
@@ -159,6 +226,7 @@ export class GridParticleField {
         this.context = this.canvas.getContext('2d');
         this.dpr = window.devicePixelRatio || 1;
         this.settings = mergeGridParticleFieldOptions(options);
+        this.revealMode = Boolean(this.settings.maskSourceCanvas);
         /** @type {boolean} */
         this._chatColorMode = false;
         this.points = [];
@@ -170,6 +238,12 @@ export class GridParticleField {
         this._resizeRaf = 0;
         /** @type {{ r: number; g: number; b: number } | null} */
         this._particleRgb = null;
+        /** @type {ImageData | null} */
+        this._maskImageData = null;
+        /** @type {{ r: number; g: number; b: number }} */
+        this._baseRgb255 = { r: 255, g: 255, b: 255 };
+        this._maskReadCanvas = typeof document !== 'undefined' ? document.createElement('canvas') : null;
+        this._maskReadCtx = this._maskReadCanvas?.getContext('2d', { willReadFrequently: true }) ?? null;
 
         this.onMouseMove = this.onMouseMove.bind(this);
         this.initCanvas = this.initCanvas.bind(this);
@@ -183,6 +257,12 @@ export class GridParticleField {
         this.distanceToRect = this.distanceToRect.bind(this);
         this.getDensityMix = this.getDensityMix.bind(this);
         this.shouldKeepDensePoint = this.shouldKeepDensePoint.bind(this);
+        this.updateMaskSample = this.updateMaskSample.bind(this);
+        this.getRevealAt = this.getRevealAt.bind(this);
+        this.getBreatheMul = this.getBreatheMul.bind(this);
+        this.getMouseBrighten = this.getMouseBrighten.bind(this);
+        this.animateReveal = this.animateReveal.bind(this);
+        this.animateLegacy = this.animateLegacy.bind(this);
         this.animate = this.animate.bind(this);
 
         this.init();
@@ -227,17 +307,9 @@ export class GridParticleField {
 
     onMouseMove(event) {
         const rect = this.canvas.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        const inside = x >= 0 && x <= this.canvasSize.w && y >= 0 && y <= this.canvasSize.h;
-
-        if (inside) {
-            this.mouse.x = x;
-            this.mouse.y = y;
-            this.mouse.active = true;
-        } else {
-            this.mouse.active = false;
-        }
+        this.mouse.x = event.clientX - rect.left;
+        this.mouse.y = event.clientY - rect.top;
+        this.mouse.active = true;
     }
 
     resizeCanvas() {
@@ -248,7 +320,7 @@ export class GridParticleField {
         this.canvas.height = this.canvasSize.h * this.dpr;
         this.canvas.style.width = `${this.canvasSize.w}px`;
         this.canvas.style.height = `${this.canvasSize.h}px`;
-        this.context.scale(this.dpr, this.dpr);
+        this.context.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
     }
 
     clearContext() {
@@ -276,32 +348,106 @@ export class GridParticleField {
         return this.mapOpacityNoise(perlin2d01(x / size, y / size));
     }
 
-    drawDot(point) {
+    drawDot(point, alphaOverride) {
         const rgb = this._particleRgb;
         if (!rgb) {
-            console.warn('Debug: No RGB color available for particles');
             return;
         }
-        const alpha = this.settings.alpha * (point.opacityMul ?? 1);
-        const fillColor = `rgba(${rgb.r},${rgb.g},${rgb.b},${alpha})`;
-
-        // Debug first few particles
-        if (this._debugCount === undefined) this._debugCount = 0;
-        if (this._debugCount < 3) {
-            console.log(`Debug: Drawing particle ${this._debugCount}:`, {
-                rgb,
-                alpha,
-                fillColor,
-                position: { x: point.x + point.translateX, y: point.y + point.translateY },
-                size: this.settings.size,
-            });
-            this._debugCount++;
+        const alpha = alphaOverride ?? this.settings.alpha * (point.opacityMul ?? 1);
+        if (alpha <= 0.001) {
+            return;
         }
 
-        this.context.fillStyle = fillColor;
+        this.context.fillStyle = `rgba(${rgb.r},${rgb.g},${rgb.b},${alpha})`;
         this.context.beginPath();
-        this.context.arc(point.x + point.translateX, point.y + point.translateY, this.settings.size, 0, 2 * Math.PI);
+        const x = point.x + (point.translateX ?? 0);
+        const y = point.y + (point.translateY ?? 0);
+        this.context.arc(x, y, this.settings.size, 0, 2 * Math.PI);
         this.context.fill();
+    }
+
+    /** @returns {{ r: number; g: number; b: number }} */
+    getBaseRgb255() {
+        const raw = getComputedStyle(document.documentElement)
+            .getPropertyValue(this.settings.baseColorCssVar)
+            .trim();
+        return parseCssColorToRgb255(raw) ?? { r: 255, g: 255, b: 255 };
+    }
+
+    /**
+     * @param {number} r @param {number} g @param {number} b
+     * @param {{ r: number; g: number; b: number }} base
+     */
+    computeReveal(r, g, b, base) {
+        const dr = (r - base.r) / 255;
+        const dg = (g - base.g) / 255;
+        const db = (b - base.b) / 255;
+        const diff = Math.sqrt(dr * dr + dg * dg + db * db);
+        const { revealThreshold, revealGain } = this.settings;
+        if (diff <= revealThreshold) {
+            return 0;
+        }
+        return clamp((diff - revealThreshold) * revealGain, 0, 1);
+    }
+
+    updateMaskSample() {
+        const src = this.settings.maskSourceCanvas;
+        if (!src || !this._maskReadCtx || !this._maskReadCanvas) {
+            return;
+        }
+
+        const w = this.canvasSize.w;
+        const h = this.canvasSize.h;
+        if (w < 1 || h < 1) {
+            return;
+        }
+
+        if (this._maskReadCanvas.width !== w || this._maskReadCanvas.height !== h) {
+            this._maskReadCanvas.width = w;
+            this._maskReadCanvas.height = h;
+        }
+
+        this._maskReadCtx.drawImage(src, 0, 0, w, h);
+        this._maskImageData = this._maskReadCtx.getImageData(0, 0, w, h);
+        this._baseRgb255 = this.getBaseRgb255();
+    }
+
+    /** @param {number} x @param {number} y */
+    getRevealAt(x, y) {
+        if (!this._maskImageData) {
+            return 0;
+        }
+
+        const w = this.canvasSize.w;
+        const h = this.canvasSize.h;
+        const ix = clamp(Math.floor(x), 0, w - 1);
+        const iy = clamp(Math.floor(y), 0, h - 1);
+        const i = (iy * w + ix) * 4;
+        const data = this._maskImageData.data;
+        return this.computeReveal(data[i], data[i + 1], data[i + 2], this._baseRgb255);
+    }
+
+    /** @param {{ breathePhase: number; breatheSpeed: number; breatheMin: number; breatheMax: number }} point @param {number} timeSec */
+    getBreatheMul(point, timeSec) {
+        const osc = 0.5 + 0.5 * Math.sin(timeSec * point.breatheSpeed + point.breathePhase);
+        return point.breatheMin + (point.breatheMax - point.breatheMin) * osc;
+    }
+
+    /** @param {number} x @param {number} y */
+    getMouseBrighten(x, y) {
+        if (!this.mouse.active) {
+            return 0;
+        }
+
+        const dx = x - this.mouse.x;
+        const dy = y - this.mouse.y;
+        const distance = Math.hypot(dx, dy);
+        const radius = this.settings.interactionRadius;
+        if (distance >= radius) {
+            return 0;
+        }
+
+        return smoothstep01(1 - distance / radius) * this.settings.mouseBrighten;
     }
 
     /** @param {boolean} [chat] */
@@ -315,25 +461,16 @@ export class GridParticleField {
 
     /** @returns {{ r: number; g: number; b: number } | null} */
     getParticleRgb() {
-        const raw = getComputedStyle(document.documentElement).getPropertyValue(this.activeColorCssVar()).trim();
-        if (!raw) return null;
-        const s = String(raw).trim();
-        if (s.startsWith('#')) {
-            const h = s.slice(1);
-            const full = h.length === 3 ? [...h].map((c) => c + c).join('') : h.padEnd(6, '0');
-            return {
-                r: parseInt(full.slice(0, 2), 16),
-                g: parseInt(full.slice(2, 4), 16),
-                b: parseInt(full.slice(4, 6), 16),
-            };
+        if (this.revealMode) {
+            return this.settings.dotRgb ?? { r: 255, g: 255, b: 255 };
         }
-        const m = s.match(/^rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/);
-        if (!m) return null;
-        return { r: Number(m[1]), g: Number(m[2]), b: Number(m[3]) };
+
+        const raw = getComputedStyle(document.documentElement).getPropertyValue(this.activeColorCssVar()).trim();
+        return parseCssColorToRgb255(raw);
     }
 
     getFocusRect() {
-        if (!this.settings.denseAroundInput || !this.root) {
+        if ((!this.settings.denseAroundInput && !this.settings.sparseAroundInput) || !this.root) {
             return null;
         }
 
@@ -423,6 +560,14 @@ export class GridParticleField {
         return noise < mix;
     }
 
+    shouldSkipSparsePoint(x, y, focusRect) {
+        if (!this.settings.sparseAroundInput || !focusRect) {
+            return false;
+        }
+
+        return this.distanceToRect(x, y, focusRect) < this.settings.transitionPadding;
+    }
+
     buildGrid() {
         this.points = [];
         const focusRect = this.getFocusRect();
@@ -433,15 +578,88 @@ export class GridParticleField {
                 if (this.settings.denseAroundInput && !this.shouldKeepDensePoint(x, y, focusRect)) {
                     continue;
                 }
+                if (this.shouldSkipSparsePoint(x, y, focusRect)) {
+                    continue;
+                }
 
-                this.points.push({
+                const point = {
                     x,
                     y,
                     translateX: 0,
                     translateY: 0,
-                    opacityMul: this.getOpacityNoiseMul(x, y),
-                });
+                    opacityMul: this.revealMode ? 1 : this.getOpacityNoiseMul(x, y),
+                };
+
+                if (this.revealMode) {
+                    point.breathePhase = Math.random() * Math.PI * 2;
+                    point.breatheSpeed = randomInRange(
+                        this.settings.breatheSpeedMin,
+                        this.settings.breatheSpeedMax
+                    );
+                    const floor = randomInRange(
+                        this.settings.breatheOpacityMin,
+                        this.settings.breatheOpacityMin + 0.04
+                    );
+                    const ceiling = randomInRange(
+                        this.settings.breatheOpacityMax - 0.1,
+                        this.settings.breatheOpacityMax
+                    );
+                    point.breatheMin = floor;
+                    point.breatheMax = Math.max(ceiling, floor + 0.12);
+                }
+
+                this.points.push(point);
             }
+        }
+    }
+
+    animateReveal() {
+        this.updateMaskSample();
+        this._particleRgb = this.getParticleRgb();
+        if (!this._particleRgb) {
+            return;
+        }
+
+        const timeSec = performance.now() * 0.001;
+        const maxAlpha = this.settings.alpha;
+
+        for (const point of this.points) {
+            const reveal = this.getRevealAt(point.x, point.y);
+            const breathe = this.getBreatheMul(point, timeSec);
+            const mouseBoost = this.getMouseBrighten(point.x, point.y);
+            const alpha = clamp(reveal * breathe * maxAlpha + mouseBoost * reveal, 0, 1);
+            this.drawDot(point, alpha);
+        }
+    }
+
+    animateLegacy() {
+        this._particleRgb = this.getParticleRgb();
+        if (!this._particleRgb) {
+            return;
+        }
+
+        for (const point of this.points) {
+            let targetX = 0;
+            let targetY = 0;
+
+            if (this.mouse.active) {
+                const renderedX = point.x + point.translateX;
+                const renderedY = point.y + point.translateY;
+                const dx = renderedX - this.mouse.x;
+                const dy = renderedY - this.mouse.y;
+                const distance = Math.hypot(dx, dy);
+
+                if (distance > 0.001 && distance < this.settings.interactionRadius) {
+                    const falloff = 1 - distance / this.settings.interactionRadius;
+                    const strength = falloff * falloff * this.settings.repelStrength;
+                    targetX = (dx / distance) * strength;
+                    targetY = (dy / distance) * strength;
+                }
+            }
+
+            point.translateX += (targetX - point.translateX) / this.settings.ease;
+            point.translateY += (targetY - point.translateY) / this.settings.ease;
+            this.drawDot(point);
         }
     }
 
@@ -449,32 +667,10 @@ export class GridParticleField {
         if (this._disposed || !this.canvas) return;
 
         this.clearContext();
-        this._particleRgb = this.getParticleRgb();
-
-        if (this._particleRgb) {
-            for (const point of this.points) {
-                let targetX = 0;
-                let targetY = 0;
-
-                if (this.mouse.active) {
-                    const renderedX = point.x + point.translateX;
-                    const renderedY = point.y + point.translateY;
-                    const dx = renderedX - this.mouse.x;
-                    const dy = renderedY - this.mouse.y;
-                    const distance = Math.hypot(dx, dy);
-
-                    if (distance > 0.001 && distance < this.settings.interactionRadius) {
-                        const falloff = 1 - distance / this.settings.interactionRadius;
-                        const strength = falloff * falloff * this.settings.repelStrength;
-                        targetX = (dx / distance) * strength;
-                        targetY = (dy / distance) * strength;
-                    }
-                }
-
-                point.translateX += (targetX - point.translateX) / this.settings.ease;
-                point.translateY += (targetY - point.translateY) / this.settings.ease;
-                this.drawDot(point);
-            }
+        if (this.revealMode) {
+            this.animateReveal();
+        } else {
+            this.animateLegacy();
         }
 
         this.rafId = window.requestAnimationFrame(this.animate);

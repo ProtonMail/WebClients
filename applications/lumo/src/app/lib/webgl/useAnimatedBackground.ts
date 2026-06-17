@@ -5,353 +5,168 @@ import { createGridParticleField } from './gridParticleField';
 import type { WebglShaderBgConfig } from './webglShaderBackground';
 import { createWebglShaderBackground } from './webglShaderBackground';
 
-// color: [0.55, 1, 0.93] ≈ rgb(142, 255, 238)
-// color: [0.91, 0.31, 0.8] -> rgb(232, 79, 205)
-
-// latest try: less intense orbs, slower, take up less space
+// Blobs use xOffsetFromCenter so they stay centered in the main content column at any zoom/DPR.
 const SHADER_CONFIG: WebglShaderBgConfig = {
     /** Linear RGB 0–1; fallback when CSS var unreadable (dark; light uses `[1,1,1]` in code). */
-    baseColor: [0.078, 0.078, 0.078],
-    speed: 0.3,
-    glowPower: 3,
-    glowIntensity: 0.3,
-    waveAmp: 0,
-    waveFreqX: 6,
-    waveFreqY: 8,
-    waveSpeedX: 0.8,
-    waveSpeedY: 0.6,
+    baseColor: [1.0, 1.0, 1.0],
+    speed: 0.82,
+    glowPower: 3.4,
+    glowIntensity: 0.52,
+    waveAmp: 0.016,
+    waveFreqX: 2,
+    waveFreqY: 2.5,
+    waveSpeedX: 0.24,
+    waveSpeedY: 0.2,
+    centerY: 0.5,
     mouse: {
         enabled: false,
         radius: 0.28,
         weight: 0.8,
-        color: [0, 0.9, 1], // ≈ rgb(0, 230, 255)
+        color: [0, 0.9, 1],
         mixStrength: 0.7,
     },
     blobs: [
         {
-            // Cyan — outer left; fades in/out on a 10s cycle
-            x: 0.2,
-            y: 0.7,
-            radius: 0.1,
-            weight: 0.6,
-            color: [0.55, 1, 0.93], // Cyan ≈ rgb(142, 255, 238)
-            mixStrength: 0.7,
-            driftY: 0,
-            pulsePeriodSec: 10,
-            pulsePhaseSec: 0,
+            // Sky blue — left of composer
+            x: 0,
+            xOffsetFromCenter: -0.26,
+            y: 0.44,
+            radius: 0.34,
+            radiusX: 0.38,
+            radiusY: 0.26,
+            weight: 0.72,
+            color: [0.58, 0.74, 0.99],
+            mixStrength: 0.64,
+            driftX: 0.07,
+            driftY: 0.06,
+            driftToCenter: 0.09,
+            driftToCenterPeriodSec: 9,
+            driftToCenterPhaseSec: 0,
+            floatPeriodSec: 10,
+            floatPhaseSec: 1,
+            radiusPulsePeriodSec: 11,
+            radiusPulsePhaseSec: 0,
+            radiusPulseMinScale: 0.88,
+            radiusMorphPeriodSec: 7,
+            radiusMorphPhaseSec: 2,
         },
         {
-            // Purple — center-left; contracts to 60% size (dimmest), then expands on a 12s cycle
-            x: 0.35,
-            y: 0.7,
-            radius: 0.2,
-            weight: 0.6,
-            color: [0.45, 0.3, 1], // Purple ≈ rgb(140, 64, 255)
-            mixStrength: 0.4,
-            driftY: 0.1,
+            // Blue — lower-right of composer
+            x: 0,
+            xOffsetFromCenter: 0.1,
+            y: 0.42,
+            radius: 0.32,
+            radiusX: 0.36,
+            radiusY: 0.24,
+            weight: 0.76,
+            color: [0.38, 0.68, 0.96],
+            mixStrength: 0.65,
+            driftX: 0.065,
+            driftY: 0.07,
+            driftToCenter: 0.1,
+            driftToCenterPeriodSec: 8,
+            driftToCenterPhaseSec: 2.5,
+            floatPeriodSec: 11,
+            floatPhaseSec: 3,
             radiusPulsePeriodSec: 12,
-            radiusPulsePhaseSec: 0,
-            radiusPulseMinScale: 0.6,
+            radiusPulsePhaseSec: 1,
+            radiusPulseMinScale: 0.88,
+            radiusMorphPeriodSec: 10,
+            radiusMorphPhaseSec: 4,
         },
         {
-            // Pink — center-right; contracts to 60% size (dimmest), then expands on an 8s cycle
-            x: 0.5,
-            y: 0.7,
-            radius: 0.2,
-            weight: 0.6,
-            color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-            mixStrength: 0.4,
-            driftY: 0,
-            radiusPulsePeriodSec: 8,
-            radiusPulsePhaseSec: 0,
-            radiusPulseMinScale: 0.6,
+            // Indigo — purple behind composer
+            x: 0,
+            xOffsetFromCenter: 0,
+            y: 0.56,
+            radius: 0.36,
+            radiusX: 0.4,
+            radiusY: 0.28,
+            weight: 0.82,
+            color: [0.58, 0.52, 0.92],
+            mixStrength: 0.66,
+            driftX: 0.06,
+            driftY: 0.065,
+            driftToCenter: 0.08,
+            driftToCenterPeriodSec: 10,
+            driftToCenterPhaseSec: 5,
+            floatPeriodSec: 12,
+            floatPhaseSec: 2,
+            radiusPulsePeriodSec: 13,
+            radiusPulsePhaseSec: 3,
+            radiusPulseMinScale: 0.9,
+            radiusMorphPeriodSec: 11,
+            radiusMorphPhaseSec: 1,
         },
         {
-            // Orange — outer right; same 10s cycle, 5s phase offset from cyan
-            x: 0.6,
-            y: 0.8,
-            radius: 0.1,
-            weight: 0.6,
-            color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-            mixStrength: 0.6,
-            driftY: 0,
-            pulsePeriodSec: 10,
-            pulsePhaseSec: 5,
+            // Magenta — right of composer
+            x: 0,
+            xOffsetFromCenter: 0.22,
+            y: 0.48,
+            radius: 0.32,
+            radiusX: 0.36,
+            radiusY: 0.24,
+            weight: 0.78,
+            color: [0.88, 0.52, 0.74],
+            mixStrength: 0.64,
+            driftX: 0.07,
+            driftY: 0.06,
+            driftToCenter: 0.09,
+            driftToCenterPeriodSec: 9,
+            driftToCenterPhaseSec: 8,
+            floatPeriodSec: 10.5,
+            floatPhaseSec: 5,
+            radiusPulsePeriodSec: 10,
+            radiusPulsePhaseSec: 2,
+            radiusPulseMinScale: 0.88,
+            radiusMorphPeriodSec: 8,
+            radiusMorphPhaseSec: 6,
+        },
+        {
+            // Peach — upper-right of composer
+            x: 0,
+            xOffsetFromCenter: 0.14,
+            y: 0.54,
+            radius: 0.3,
+            radiusX: 0.34,
+            radiusY: 0.22,
+            weight: 0.74,
+            color: [0.99, 0.68, 0.54],
+            mixStrength: 0.62,
+            driftX: 0.065,
+            driftY: 0.07,
+            driftToCenter: 0.085,
+            driftToCenterPeriodSec: 11,
+            driftToCenterPhaseSec: 10,
+            floatPeriodSec: 11.5,
+            floatPhaseSec: 7,
+            radiusPulsePeriodSec: 14,
+            radiusPulsePhaseSec: 4,
+            radiusPulseMinScale: 0.88,
+            radiusMorphPeriodSec: 12,
+            radiusMorphPhaseSec: 3,
         },
     ],
 };
 
-// very light and neutral - takes up full screen with purple dominating
-// const SHADER_CONFIG: WebglShaderBgConfig = {
-//     /** Linear RGB 0–1; fallback when CSS var unreadable (dark; light uses `[1,1,1]` in code). */
-//     baseColor: [0.078, 0.078, 0.078],
-//     speed: 1,
-//     glowPower: 3,
-//     glowIntensity: 0.3,
-//     waveAmp: 0.08,
-//     waveFreqX: 6,
-//     waveFreqY: 8,
-//     waveSpeedX: 0.8,
-//     waveSpeedY: 0.6,
-//     mouse: {
-//         enabled: false,
-//         radius: 0.28,
-//         weight: 0.8,
-//         color: [0, 0.9, 1], // ≈ rgb(0, 230, 255)
-//         mixStrength: 0.7,
-//     },
-//     blobs: [
-//         {
-//             // Cyan blob - FAR LEFT
-//             x: -0.05,
-//             y: 0.7, // TOP of screen (WebGL: 0=bottom, 1=top)
-//             radius: 0.3,
-//             weight: 0.45,
-//             color: [0.55, 1, 0.93], // Cyan ≈ rgb(142, 255, 238)
-//             mixStrength: 0.6,
-//             driftY: 0,
-//         },
-//         {
-//             // Purple blob - CENTER-LEFT
-//             x: 0.3,
-//             y: 0.7, // TOP of screen
-//             radius: 0.4,
-//             weight: 0.6,
-//             color: [0.45, 0.3, 1], // Purple ≈ rgb(140, 64, 255)
-//             mixStrength: 0.5,
-//             driftY: 0.1,
-//         },
-//         {
-//             // Orange blob - CENTER-RIGHT
-//             x: 0.7,
-//             y: 0.7, // TOP of screen
-//             radius: 0.3,
-//             weight: 0.5,
-//             // color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-//             color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-//             mixStrength: 0.4,
-//             driftY: 0,
-//         },
-//         {
-//             // Pink blob - FAR RIGHT
-//             x: 0.95,
-//             y: 0.8, // TOP of screen
-//             radius: 0.3,
-//             weight: 0.6,
-//             // color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-//             color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-
-//             mixStrength: 0.5,
-//             driftY: 0.1,
-//         },
-//     ],
-// };
-
-// 2nd try: more subtle with lower mix strength
-// const SHADER_CONFIG: WebglShaderBgConfig = {
-//     /** Linear RGB 0–1; fallback when CSS var unreadable (dark; light uses `[1,1,1]` in code). */
-//     baseColor: [0.078, 0.078, 0.078],
-//     speed: 1,
-//     glowPower: 3,
-//     glowIntensity: 0.3,
-//     waveAmp: 0.08,
-//     waveFreqX: 6,
-//     waveFreqY: 8,
-//     waveSpeedX: 0.8,
-//     waveSpeedY: 0.6,
-//     mouse: {
-//         enabled: false,
-//         radius: 0.28,
-//         weight: 0.8,
-//         color: [0, 0.9, 1], // ≈ rgb(0, 230, 255)
-//         mixStrength: 0.7,
-//     },
-//     blobs: [
-//         {
-//             // Cyan blob - FAR LEFT
-//             x: -0.05,
-//             y: 0.7, // TOP of screen (WebGL: 0=bottom, 1=top)
-//             radius: 0.3,
-//             weight: 0.3,
-//             color: [0.55, 1, 0.93], // Cyan ≈ rgb(142, 255, 238)
-//             mixStrength: 0.6,
-//             driftY: 0,
-//         },
-//         {
-//             // Purple blob - CENTER-LEFT
-//             x: 0.3,
-//             y: 0.7, // TOP of screen
-//             radius: 0.4,
-//             weight: 0.3,
-//             color: [0.45, 0.3, 1], // Purple ≈ rgb(140, 64, 255)
-//             mixStrength: 0.5,
-//             driftY: 0.1,
-//         },
-//         {
-//             // Orange blob - CENTER-RIGHT
-//             x: 0.7,
-//             y: 0.7, // TOP of screen
-//             radius: 0.3,
-//             weight: 0.3,
-//             // color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-//             color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-//             mixStrength: 0.4,
-//             driftY: 0,
-//         },
-//         {
-//             // Pink blob - FAR RIGHT
-//             x: 0.95,
-//             y: 0.8, // TOP of screen
-//             radius: 0.3,
-//             weight: 0.3,
-//             // color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-//             color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-//             mixStrength: 0.5,
-//             driftY: 0.1,
-//         },
-//     ],
-// };
-
-// 3rd try, brighter more orb like and slower
-// const SHADER_CONFIG: WebglShaderBgConfig = {
-//     /** Linear RGB 0–1; fallback when CSS var unreadable (dark; light uses `[1,1,1]` in code). */
-//     baseColor: [0.078, 0.078, 0.078],
-//     speed: 1,
-//     glowPower: 3,
-//     glowIntensity: 0.3,
-//     waveAmp: 0.02,
-//     waveFreqX: 6,
-//     waveFreqY: 8,
-//     waveSpeedX: 0.8,
-//     waveSpeedY: 0.6,
-//     mouse: {
-//         enabled: false,
-//         radius: 0.28,
-//         weight: 0.8,
-//         color: [0, 0.9, 1], // ≈ rgb(0, 230, 255)
-//         mixStrength: 0.7,
-//     },
-//     blobs: [
-//         {
-//             // Cyan blob - FAR LEFT
-//             x: -0.05,
-//             y: 0.7, // TOP of screen (WebGL: 0=bottom, 1=top)
-//             radius: 0.3,
-//             weight: 0.6,
-//             color: [0.55, 1, 0.93], // Cyan ≈ rgb(142, 255, 238)
-//             mixStrength: 0.6,
-//             driftY: 0,
-//         },
-//         {
-//             // Purple blob - CENTER-LEFT
-//             x: 0.3,
-//             y: 0.7, // TOP of screen
-//             radius: 0.3,
-//             weight: 0.6,
-//             color: [0.45, 0.3, 1], // Purple ≈ rgb(140, 64, 255)
-//             mixStrength: 0.5,
-//             driftY: 0.1,
-//         },
-//         {
-//             // Orange blob - CENTER-RIGHT
-//             x: 0.7,
-//             y: 0.7, // TOP of screen
-//             radius: 0.3,
-//             weight: 0.6,
-//             // color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-//             color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-//             mixStrength: 0.4,
-//             driftY: 0,
-//         },
-//         {
-//             // Pink blob - FAR RIGHT
-//             x: 0.95,
-//             y: 0.8, // TOP of screen
-//             radius: 0.3,
-//             weight: 0.6,
-//             // color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-//             color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-//             mixStrength: 0.5,
-//             driftY: 0.1,
-//         },
-//     ],
-// };
-
-// 4th try - more contained and closer together but bright
-// const SHADER_CONFIG: WebglShaderBgConfig = {
-//     /** Linear RGB 0–1; fallback when CSS var unreadable (dark; light uses `[1,1,1]` in code). */
-//     baseColor: [0.078, 0.078, 0.078],
-//     speed: 0.7,
-//     glowPower: 3,
-//     glowIntensity: 0.3,
-//     waveAmp: 0,
-//     waveFreqX: 6,
-//     waveFreqY: 8,
-//     waveSpeedX: 0.8,
-//     waveSpeedY: 0.6,
-//     mouse: {
-//         enabled: false,
-//         radius: 0.28,
-//         weight: 0.8,
-//         color: [0, 0.9, 1], // ≈ rgb(0, 230, 255)
-//         mixStrength: 0.7,
-//     },
-//     blobs: [
-//         {
-//             // Cyan blob - FAR LEFT
-//             // x: -0.05,
-//             x: 0.05,
-//             y: 0.7, // TOP of screen (WebGL: 0=bottom, 1=top)
-//             radius: 0.2,
-//             weight: 0.6,
-//             color: [0.55, 1, 0.93], // Cyan ≈ rgb(142, 255, 238)
-//             mixStrength: 0.7,
-//             driftY: 0,
-//         },
-//         {
-//             // Purple blob - CENTER-LEFT
-//             x: 0.3,
-//             y: 0.7, // TOP of screen
-//             radius: 0.25,
-//             weight: 0.8,
-//             color: [0.45, 0.3, 1], // Purple ≈ rgb(140, 64, 255)
-//             mixStrength: 0.6,
-//             driftY: 0.1,
-//         },
-//         {
-//             // Orange blob - CENTER-RIGHT
-//             x: 0.6,
-//             y: 0.7, // TOP of screen
-//             radius: 0.25,
-//             weight: 0.8,
-//             // color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-//             color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-//             mixStrength: 0.6,
-//             driftY: 0,
-//         },
-//         {
-//             // Pink blob - FAR RIGHT
-//             x: 0.85,
-//             y: 0.8, // TOP of screen
-//             radius: 0.2,
-//             weight: 0.7,
-//             // color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
-//             color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
-//             mixStrength: 0.6,
-//             driftY: 0.1,
-//         },
-//     ],
-// };
-
 const PARTICLE_CONFIG: Partial<GridParticleFieldOptions> = {
-    spacing: 18,
-    size: 2,
-    alpha: 0.98,
-    interactionRadius: 200, // Larger area of effect (was 120)
-    repelStrength: 10, // Stronger push effect (was 6)
-    opacityNoiseSize: 120,
-    opacityNoiseContrast: 3,
-    colorCssVar: '--surface-foreground',
+    spacing: 14,
+    size: 1.75,
+    alpha: 0.72,
+    interactionRadius: 80,
+    mouseBrighten: 0.38,
+    repelStrength: 0,
+    opacityNoiseSize: 0,
+    denseAroundInput: false,
+    sparseAroundInput: false,
+    baseColorCssVar: '--background-main-canvas',
+    dotRgb: { r: 255, g: 255, b: 255 },
+    breatheSpeedMin: 0.12,
+    breatheSpeedMax: 0.26,
+    breatheOpacityMin: 0.03,
+    breatheOpacityMax: 0.58,
+    revealGain: 5.5,
+    revealThreshold: 0.012,
 };
 
 export function useAnimatedBackground() {
@@ -359,27 +174,24 @@ export function useAnimatedBackground() {
     const particleCanvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        const canvas = shaderCanvasRef.current;
-        if (!canvas) {
+        const shaderCanvas = shaderCanvasRef.current;
+        const particleCanvas = particleCanvasRef.current;
+        if (!shaderCanvas || !particleCanvas) {
             return;
         }
-        const instance = createWebglShaderBackground(canvas, SHADER_CONFIG, {
-            mount: 'viewport',
+
+        const shaderInstance = createWebglShaderBackground(shaderCanvas, SHADER_CONFIG, {
+            mount: 'content',
             baseCssVar: '--background-main-canvas',
         });
-        return () => {
-            instance.destroy();
-        };
-    }, []);
-
-    useEffect(() => {
-        const canvas = particleCanvasRef.current;
-        if (!canvas) {
-            return;
-        }
-        const field = createGridParticleField(canvas, PARTICLE_CONFIG);
+        const field = createGridParticleField(particleCanvas, {
+            ...PARTICLE_CONFIG,
+            maskSourceCanvas: shaderCanvas,
+        });
         field.init();
+
         return () => {
+            shaderInstance.destroy();
             field.destroy();
         };
     }, []);
