@@ -1,5 +1,5 @@
-import { CYCLE, PLANS } from '@proton/payments';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { CYCLE, PLANS } from '../../core/constants';
+import type { SubscriptionEstimation } from '../../core/subscription/interface';
 
 import type { CouponConfig, CouponConfigProps } from './interface';
 import { matchCouponConfig } from './useCouponConfig';

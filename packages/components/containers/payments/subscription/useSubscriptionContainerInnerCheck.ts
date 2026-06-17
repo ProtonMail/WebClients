@@ -8,6 +8,7 @@ import {
     type FreeSubscription,
     type FullPlansMap,
     PAYMENT_METHOD_TYPES,
+    type PaymentsApi,
     type PlainPaymentMethodType,
     type Plan,
     type Subscription,
@@ -57,12 +58,7 @@ export interface UseSubscriptionContainerInnerCheckProps {
     checkResult: SubscriptionEstimation;
     subscriptionCouponCode: string | undefined;
     subscription: Subscription | FreeSubscription;
-    paymentsApi: {
-        checkSubscription: (
-            data: CheckSubscriptionData,
-            options: { signal: AbortSignal; silence: boolean; previousEstimation: SubscriptionEstimation }
-        ) => Promise<SubscriptionEstimation>;
-    };
+    paymentsApi: PaymentsApi;
     paymentFacadeSelectedMethodType: PlainPaymentMethodType | undefined;
     skipPlanTransitionChecks: boolean;
     refs: {
@@ -75,7 +71,7 @@ export interface UseSubscriptionContainerInnerCheckProps {
         setVatReverseChargeErrorModal: (open: boolean) => void;
     };
     callbacks: {
-        runAdditionalChecks: (
+        runAdditionalEstimations: (
             newModel: Model,
             checkPayload: CheckSubscriptionData,
             checkResult: SubscriptionEstimation,
@@ -184,7 +180,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
             paymentFacadeSelectedMethodType,
             refs: { plansMapRef, giftCodeRef },
             setters: { setCheckResult, setModel, setVatReverseChargeErrorModal },
-            callbacks: { runAdditionalChecks, shouldPassIsTrial, onCheck },
+            callbacks: { runAdditionalEstimations, shouldPassIsTrial, onCheck },
             telemetry,
         } = props;
 
@@ -316,7 +312,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                 });
 
                 try {
-                    await runAdditionalChecks(
+                    await runAdditionalEstimations(
                         copyNewModel,
                         checkPayload,
                         newCheckResult,

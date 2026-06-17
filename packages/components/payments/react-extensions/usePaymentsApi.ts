@@ -46,12 +46,11 @@ import {
     WrongBillingAddressError,
 } from '@proton/payments/core/errors';
 import type { CheckSubscriptionRequestOptions, GetFullBillingAddressOptions } from '@proton/payments/core/interface';
+import { enrichMockCouponDiscountBreakdown } from '@proton/payments/ui/coupon-config/mock-coupon-discount-breakdown';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { enrichCoupon } from './helpers';
 
 const checkSubscriptionQuery = (data: CheckSubscriptionData, version: PaymentsVersion) => {
     const normalizedData: CheckSubscriptionData = {
@@ -328,7 +327,7 @@ export const usePaymentsApi = (
                     requestData: data,
                 };
 
-                enrichCoupon(enrichedCheckResponse);
+                enrichMockCouponDiscountBreakdown(enrichedCheckResponse, data);
 
                 return enrichedCheckResponse;
             } catch (error: any) {

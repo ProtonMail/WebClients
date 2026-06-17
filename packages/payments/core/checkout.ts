@@ -26,7 +26,6 @@ import { INCLUDED_IP_PRICING, getPrice, getPricingPerMember } from './price-help
 import { SubscriptionMode } from './subscription/constants';
 import { customCycles, getHas2025OfferCoupon, getPlanIDs } from './subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from './subscription/interface';
-import { isValidPlanName } from './type-guards';
 
 interface AddonDescription {
     name: ADDON_NAMES;
@@ -229,6 +228,94 @@ const getUserTitle = (users: number) => {
     return c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users);
 };
 
+/**
+ * Checkout-friendly, normalized view of the per-line coupon discount, derived from the check response's
+ * {@link CouponDiscountBreakdown}. The backend returns the breakdown for any valid coupon, covering whatever plan
+ * configuration was checked.
+ *
+ * To show the discount for an addon that isn't in the current check (base plan vs. same plan *with* the addon), a
+ * secondary check including the addon must be run — see {@link runSecondarySubscriptionEstimation}
+ * (core/secondary-estimation.ts). Without it, that not-yet-selected addon line falls back to undiscounted pricing.
+ */
+export type CheckoutCouponDiscountBreakdown = ReturnType<typeof getCouponDiscountBreakdownInfo>;
+
+/**
+ * Normalizes and validates the per-line coupon discount breakdown from the check response. Returns undefined
+ * whenever the breakdown is absent or fails any invariant, so callers fall back to the aggregate coupon
+ * discount and existing behavior is preserved.
+ */
+const getCouponDiscountBreakdownInfo = ({
+    checkResult,
+    planIDs,
+    planName,
+    cycle,
+}: {
+    checkResult: SubscriptionEstimation;
+    planIDs: PlanIDs;
+    planName: PLANS | null;
+    cycle: CYCLE;
+}) => {
+    const couponDiscountBreakdown = checkResult.Coupon?.CouponDiscountBreakdown;
+    const couponDiscount = checkResult.CouponDiscount;
+
+    if (
+        !couponDiscountBreakdown ||
+        couponDiscountBreakdown.length === 0 ||
+        couponDiscount === undefined ||
+        couponDiscount === null
+    ) {
+        return undefined;
+    }
+
+    // This overall block ensures that the breakdown follows the logical contract. It can be helpful while we don't have
+    // a proper backend implementation and rely on the frontend-side mocks. We need to re-evaluate if we still need
+    // these checks when the backend is ready.
+    {
+        const everyNameBelongsToRequest = couponDiscountBreakdown.every(({ Name }) => planIDs[Name] !== undefined);
+        const everyAmountNonPositive = couponDiscountBreakdown.every(({ Amount }) => Amount <= 0);
+
+        if (!everyNameBelongsToRequest || !everyAmountNonPositive) {
+            return undefined;
+        }
+    }
+
+    const basePlanPerCycleDiscount = couponDiscountBreakdown
+        .filter(({ Name }) => Name === planName)
+        .reduce((acc, { Amount }) => acc + Amount, 0);
+
+    const basePlanPerMonthDiscount = basePlanPerCycleDiscount / cycle;
+
+    const perAddonPerCycleDiscount = couponDiscountBreakdown.reduce<Partial<Record<ADDON_NAMES, number>>>(
+        (acc, { Name, Amount }) => {
+            if (Name === planName) {
+                return acc;
+            }
+            const addonName = Name as ADDON_NAMES;
+            acc[addonName] = (acc[addonName] ?? 0) + Amount;
+            return acc;
+        },
+        {}
+    );
+
+    const perAddonPerMonthDiscount = Object.entries(perAddonPerCycleDiscount).reduce<
+        Partial<Record<ADDON_NAMES, number>>
+    >((acc, [addonName, amount]) => {
+        acc[addonName as ADDON_NAMES] = amount / cycle;
+        return acc;
+    }, {});
+
+    return {
+        /** Discount applied to the base plan, per cycle (negative cents). */
+        basePlanPerCycleDiscount,
+        /** Discount applied to the base plan, per month (negative cents). */
+        basePlanPerMonthDiscount,
+        /** Discount applied to each addon, per cycle (negative cents), keyed by raw addon name. */
+        perAddonPerCycleDiscount,
+        /** Discount applied to each addon, per month (negative cents), keyed by raw addon name. */
+        perAddonPerMonthDiscount,
+    };
+};
+
 export const getCheckoutUi = ({
     planIDs,
     plansMap,
@@ -255,7 +342,7 @@ export const getCheckoutUi = ({
     const withoutDiscountPerMonth = getPrice(planIDs, CYCLE.MONTHLY, plansMap);
 
     const withoutDiscountPerCycle = withoutDiscountPerMonth * cycle;
-    const discountPerCycle = Math.min(withoutDiscountPerCycle - withDiscountPerCycle, withoutDiscountPerCycle);
+    const discountPerCycle = withoutDiscountPerCycle - withDiscountPerCycle;
 
     const discountPercent =
         withoutDiscountPerCycle > 0 ? Math.round(100 * (discountPerCycle / withoutDiscountPerCycle)) : 0;
@@ -305,10 +392,7 @@ export const getCheckoutUi = ({
     const viewPricePerMonth = isPricePerMember ? oneMemberPerMonth : withDiscountPerMonth;
     const monthlySuffix = isPricePerMember ? c('Suffix').t`/user per month` : c('Suffix').t`/month`;
 
-    const discountTarget: 'base-users' | undefined =
-        checkResult.Coupon?.Targets && Object.keys(checkResult.Coupon.Targets).every((it) => isValidPlanName(it))
-            ? 'base-users'
-            : undefined;
+    const couponDiscountBreakdown = getCouponDiscountBreakdownInfo({ checkResult, planIDs, planName, cycle });
 
     return {
         regularAmountPerCycleOptimistic: amountOptimistic,
@@ -338,9 +422,9 @@ export const getCheckoutUi = ({
         viewPricePerMonth,
         monthlySuffix,
         checkResult,
-        discountTarget,
         viewUsers: usersAndAddons.viewUsers,
         oneMemberPerMonth,
+        couponDiscountBreakdown,
     };
 };
 

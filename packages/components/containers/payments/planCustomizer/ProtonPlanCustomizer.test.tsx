@@ -22,6 +22,13 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: (...args: any[]) => mockUseFlag(...args),
 }));
 
+jest.mock('@proton/components/hooks/useConfig', () => ({
+    __esModule: true,
+    default: jest.fn().mockReturnValue({
+        APP_NAME: 'proton-account',
+    }),
+}));
+
 beforeEach(() => {
     jest.clearAllMocks();
     mockUseFlag.mockReturnValue(false);
