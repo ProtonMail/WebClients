@@ -1,8 +1,7 @@
 import Price from '@proton/components/components/price/Price';
-import { CYCLE } from '@proton/payments';
-import { getCheckoutUi } from '@proton/payments/core/checkout';
-import { COUPON_CODES } from '@proton/payments/core/constants';
 
+import { getCheckoutUi } from '../../core/checkout';
+import { COUPON_CODES, CYCLE } from '../../core/constants';
 import type { CouponConfig } from './interface';
 
 export const monthlyNudgeConfig: CouponConfig = {

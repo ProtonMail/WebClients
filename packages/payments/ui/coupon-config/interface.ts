@@ -1,8 +1,11 @@
 import type { ReactNode } from 'react';
 
-import type { CYCLE, PLANS, PlanIDs, PlansMap } from '@proton/payments';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { StrictRequired } from '@proton/shared/lib/interfaces';
+
+import type { CYCLE, PLANS } from '../../core/constants';
+import type { Currency, Cycle, PlanIDs } from '../../core/interface';
+import type { PlansMap } from '../../core/plan/interface';
+import type { CouponDiscountBreakdownBE, SubscriptionEstimation } from '../../core/subscription/interface';
 
 export type CouponConfigProps = {
     checkResult: SubscriptionEstimation | undefined;
@@ -34,7 +37,7 @@ export type CouponConfig = {
      * If set to true then the coupon will not be displayed in the UI. It hides the coupon and "coupon discount" number.
      * In addition, it changes the displayed price per user and total. These amounts now include the discount.
      */
-    hidden: boolean;
+    hidden?: boolean;
     /**
      * If this react function is defined then it will render a text right below the "amount due" text. Can be helpful
      * to display some custom promotion messages. If not specified then this component isn't present at all.
@@ -98,6 +101,13 @@ export type CouponConfig = {
      * If set to true then the manual entry of the coupon will be blocked.
      */
     blockManualEntryOfCoupon?: boolean;
+
+    /**
+     * Temporary, optional per-line breakdown of the coupon discount. A developer introducing a CouponConfig may
+     * provide it to supply a detailed {@link CouponDiscountBreakdownBE} for the coupon's discount. It is a stopgap:
+     * it will be removed once the backend returns the breakdown directly in the subscription estimation response.
+     */
+    mockCouponDiscountBreakdown?: Record<Currency, null | Record<Cycle, null | CouponDiscountBreakdownBE>>;
 };
 
 export type CyclePriceCompareFirstParam = Parameters<NonNullable<CouponConfig['cyclePriceCompare']>>[0];

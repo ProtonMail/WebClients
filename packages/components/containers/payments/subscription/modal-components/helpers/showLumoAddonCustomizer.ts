@@ -10,9 +10,8 @@ import {
     type Subscription,
     hasLumoAddonFromPlanIDs,
 } from '@proton/payments/index';
-
-import type { CouponConfig } from '../../coupon-config/interface';
-import type { CouponConfigRendered } from '../../coupon-config/useCouponConfig';
+import type { CouponConfig } from '@proton/payments/ui/coupon-config/interface';
+import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
 export function showLumoAddonCustomizer({
     subscription,
