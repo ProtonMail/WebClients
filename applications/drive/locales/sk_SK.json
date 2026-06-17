@@ -7582,6 +7582,12 @@
       ],
       "Please select the labels you would like to import:": [
         "Vyberte štítky, ktoré chcete importovať:"
+      ],
+      "All your files will be imported": [
+        "Všetky vaše súbory budú importované"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nepodarilo sa nám overiť, či ${ nameAuthor } nahral ${ nodeName }. Mohlo dôjsť k manipulácii s nasledujúcimi údajmi: poradie údajov v súbore. Otvorte len v prípade, ak mu dôverujete."
       ]
     },
     "info": {
@@ -8453,6 +8459,9 @@
       ],
       "Emails": [
         "Emaily"
+      ],
+      "Drive": [
+        "Drive"
       ]
     },
     "Label for contact group color": {
@@ -14224,6 +14233,15 @@
       ],
       "Out of storage space": [
         "Nedostatok ukladacieho priestoru"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Nepodarilo sa nám potvrdiť, že názov vytvoril alebo upravil používateľ ${ claimedNameAuthor }. Dôvod: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Nepodarilo sa nám potvrdiť, že uzol vytvoril používateľ ${ claimedKeyAuthor }. Dôvod: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
