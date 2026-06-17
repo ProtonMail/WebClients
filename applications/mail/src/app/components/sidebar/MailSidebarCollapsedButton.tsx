@@ -22,14 +22,14 @@ export const MailSidebarCollapsedButton = ({ type, onClick, title }: Props) => {
     const [labels] = useLabels();
     const [folders] = useFolders();
 
-    const { counterMap } = useMailboxCounter();
+    const { getLocationCount } = useMailboxCounter();
 
     // We use the mail setting here as we want to know if any custom folder or label contain unread messages.
     // The logic is not tied to any labelID but rather on the state of the list of labels or folders.
     const isConversationMode = mailSettings.ViewMode === VIEW_MODE.GROUP;
 
     const collection = (type === 'folders' ? folders : labels) ?? [];
-    const unread = collection.some((item) => (counterMap[item.ID]?.Unread ?? 0) > 0);
+    const unread = collection.some((item) => getLocationCount(item.ID).Unread > 0);
 
     return (
         <SidebarListItem>

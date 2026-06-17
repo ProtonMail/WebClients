@@ -27,7 +27,6 @@ import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApp
 import { useApplyLabelsToAll } from 'proton-mail/hooks/actions/label/useApplyLabelsToAll';
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
-import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
 
 import { LabelActionsContextProvider } from './EditLabelContext';
 import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';
@@ -59,7 +58,7 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
     const { applyLabelsToAll, applyLabelsToAllModal } = useApplyLabelsToAll();
     const { applyLocation } = useApplyLocation();
     const { moveAllToFolder, selectAllMoveModal } = useMoveAllToFolder();
-    const { counterMap } = useMailboxCounter();
+    const { getLocationCount } = useMailboxCounter();
 
     const numFolders = folders?.length || 0;
     const numLabels = labels?.length || 0;
@@ -127,8 +126,8 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
         scrollIntoView(element, { block: 'nearest' });
     }, []);
 
-    const showScheduled = getRawLocationCount(counterMap, MAILBOX_LABEL_IDS.SCHEDULED).Total > 0;
-    const showSnoozed = getRawLocationCount(counterMap, MAILBOX_LABEL_IDS.SNOOZED).Total > 0;
+    const showScheduled = getLocationCount(MAILBOX_LABEL_IDS.SCHEDULED).Total > 0;
+    const showSnoozed = getLocationCount(MAILBOX_LABEL_IDS.SNOOZED).Total > 0;
     const visibleSystemFolders = systemFolders?.filter((systemFolder) => {
         if (systemFolder.ID === MAILBOX_LABEL_IDS.OUTBOX) {
             return false;
@@ -247,7 +246,6 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
             <div ref={sidebarRef} tabIndex={-1} className="outline-none grow-2">
                 <SidebarList>
                     <MailSidebarSystemFolders
-                        counterMap={counterMap}
                         setFocusedItem={setFocusedItem}
                         displayMoreItems={displayMoreItems}
                         showScheduled={showScheduled}
@@ -307,7 +305,6 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                             />
                             {displayFolders && (
                                 <SidebarFolders
-                                    counterMap={counterMap}
                                     folders={folders || []}
                                     loadingFolders={loadingFolders}
                                     updateFocusItem={updateFocusItem}
@@ -367,7 +364,6 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                             />
                             {displayLabels && (
                                 <SidebarLabels
-                                    counterMap={counterMap}
                                     labels={labels || []}
                                     updateFocusItem={updateFocusItem}
                                     applyLabels={(params) =>
