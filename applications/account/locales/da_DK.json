@@ -399,6 +399,9 @@
       "Continue with this password": [
         "Fortsæt med denne adgangskode"
       ],
+      "Copy": [
+        "Kopiér"
+      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -1485,6 +1488,9 @@
       "Select time zone": [
         "Vælg tidszone"
       ],
+      "Send": [
+        "Send"
+      ],
       "send auto-reply email": [
         "send e-mail med auto-svar"
       ],
@@ -1709,6 +1715,9 @@
       ],
       "Underline": [
         "Understreg"
+      ],
+      "Undo": [
+        "Fortryd"
       ],
       "Undo import": [
         "Annuller import"
@@ -2999,6 +3008,9 @@
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Kopiér den nedenstående kode og indsæt den i DNS-sektionen hos din domæneudbyder."
       ],
+      "Creating accounts": [
+        "Opretter konti"
+      ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
       ],
@@ -3275,6 +3287,9 @@
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har bemærket at nogle brugere ikke har oprettet deres ${ BRAND_NAME }-konti."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vi opretter dine konti og importerer dine data nu, så dit team har alt, hvad de behøver, når de begynder at bruge deres sikre ${ BRAND_NAME }-konto."
       ],
       "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
         "Vi skifter til end-to-end kryptering til alle. Hver e-mail, og hver begivenhed er nu din og kun din. Kun synligt til dit team. Ikke os, ikke nogle andre."
@@ -5481,9 +5496,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Vi importerer dine gamle e-mails og forbinder din Gmail til ${ MAIL_APP_NAME }, så nye beskeder vises automatisk"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Vi importerer Deres gamle e-mails, springer dubletter over og forbinder til Deres Gmail, så nye beskeder vises automatisk. De kan til enhver tid fortryde importen i indstillingerne for Easy Switch."
@@ -8969,9 +8981,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Beskrivelse:"
-      ],
       "Group address:": [
         "Gruppeadresse:"
       ],
@@ -18247,6 +18256,9 @@
       "An external address cannot be default": [
         "En ekstern adresse kan ikke være standard"
       ],
+      "Copied to clipboard": [
+        "Kopieret til udklipsholder"
+      ],
       "Downloaded 2FA recovery codes": [
         "Hentede 2FA-gendannelseskoder"
       ],
@@ -22508,9 +22520,6 @@
       "Connect all your devices": [
         "Forbind alle dine enheder"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Fortsæt med ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
@@ -22682,9 +22691,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Prøv ${ BRAND_NAME } i ${ TRIAL_DURATION_DAYS } dage gratis,${ br } og få ${ referralInfo.uiData.refereeRewardAmount } i kredit"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Prøv ${ BRAND_NAME } gratis i 14 dage"
       ],
       "Try ${ planName } for free": [
         "Få ${ planName } gratis"

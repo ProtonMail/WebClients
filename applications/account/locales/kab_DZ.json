@@ -789,6 +789,9 @@
       "Select time zone": [
         "Fren izḍi usrid"
       ],
+      "Send": [
+        "Azen"
+      ],
       "send auto-reply email": [
         "azen imayl n tririt tawurmant"
       ],
@@ -926,6 +929,9 @@
       ],
       "Underline": [
         "Derrer"
+      ],
+      "Undo": [
+        "Sefsex"
       ],
       "Undo import": [
         "Sefsex akter"
@@ -2632,9 +2638,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "A d-nawi imaylen-ik iqdacen u ad nqqen Gmail-ik ɣer ${ MAIL_APP_NAME } iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "A nsserṛeḥ imaylen-ik iqdacen, ad nezgel ayen yettwalesen, u ad nqqen ɣer Gmail-ik iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut. Tizmired ad tsewtid aserṛeḥ melmi i k-yehwa deg yiɣewwaren n Easy Switch"
@@ -8869,9 +8872,6 @@
       ],
       "Collaborative documents and spreadsheets": [
         "Isemliyen n uttekki d tikaṛḍiwin n usiḍen"
-      ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Kemmel s ${ PLAN_NAMES[plan] }"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Imayl yettwawgelhen s waklas n ${ totalMailStorageSize }"

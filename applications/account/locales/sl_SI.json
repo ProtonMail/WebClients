@@ -1184,6 +1184,9 @@
       "Select time zone": [
         "Izberite časovni pas"
       ],
+      "Send": [
+        "Pošlji"
+      ],
       "send auto-reply email": [
         "pošlji samodejni odgovor"
       ],
@@ -1375,6 +1378,9 @@
       ],
       "Underline": [
         "Podčrtaj"
+      ],
+      "Undo": [
+        "Razveljavi"
       ],
       "Undo import": [
         "Razveljavi uvoz"
@@ -4092,9 +4098,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Uvoz bomo začasno ustavili pri 80 % zasedenosti shrambe, da rezerviramo prostor za nova sporočila."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Uvozili bomo vašo staro e-pošto in povezali vaš Gmail s ${ MAIL_APP_NAME }, tako da se bodo nova sporočila prikazala samodejno"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Uvozili bomo vašo staro e-pošto, preskočili dvojnike in se povezali z vašim Gmailom, da se bodo nova sporočila prikazovala samodejno. Uvoz lahko kadar koli razveljavite v nastavitvah Easy Switch"
@@ -13848,6 +13851,9 @@
       "An external address cannot be default": [
         "Zunanji naslov ne more biti privzeti."
       ],
+      "Copied to clipboard": [
+        "Kopirano na odložišče"
+      ],
       "Email notifications have been disabled": [
         "Obvestila o e-pošti so bila onemogočena"
       ],
@@ -16610,9 +16616,6 @@
       ],
       "Compare plans": [
         "Primerjava paketov"
-      ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Nadaljujte s ${ PLAN_NAMES[plan] }."
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Ustvarite račun ${ BRAND_NAME }"

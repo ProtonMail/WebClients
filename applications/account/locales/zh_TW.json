@@ -1123,6 +1123,9 @@
       "Select time zone": [
         "選取時區"
       ],
+      "Send": [
+        "送出"
+      ],
       "send auto-reply email": [
         "傳送自動回覆電郵"
       ],
@@ -1302,6 +1305,9 @@
       ],
       "Underline": [
         "底線"
+      ],
+      "Undo": [
+        "復原"
       ],
       "Undo import": [
         "復原匯入"
@@ -3942,9 +3948,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "我們將匯入您的舊電子郵件、略過重複項目，並連線至您的 Gmail，以便新訊息自動出現。您可以隨時在 Easy Switch 設定中復原匯入"
@@ -15396,9 +15399,6 @@
       ],
       "Compare plans": [
         "比較方案"
-      ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "繼續使用 ${ PLAN_NAMES[plan] } 支付"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "創建一個${ BRAND_NAME } 帳號"

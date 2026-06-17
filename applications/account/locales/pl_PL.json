@@ -311,6 +311,9 @@
       "Continue with this password": [
         "Kontynuuj z tym hasłem"
       ],
+      "Copy": [
+        "Kopiuj"
+      ],
       "Copy address": [
         "Kopiuj adres"
       ],
@@ -1166,6 +1169,9 @@
       "Select time zone": [
         "Wybierz strefę czasową"
       ],
+      "Send": [
+        "Wyślij"
+      ],
       "send auto-reply email": [
         "wyślij automatyczną odpowiedź"
       ],
@@ -1351,6 +1357,9 @@
       ],
       "Underline": [
         "Podkreślenie"
+      ],
+      "Undo": [
+        "Cofnij"
       ],
       "Undo import": [
         "Cofnij importowanie"
@@ -3990,9 +3999,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Wstrzymamy importowanie przy 80% zapełnienia przestrzeni dyskowej, aby zarezerwować miejsce na nowe wiadomości."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Przeniesiemy Twoje stare wiadomości i połączymy Twój Gmail z ${ MAIL_APP_NAME }, aby nowe wiadomości pojawiały się automatycznie"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Zaimportujemy Twoje stare wiadomości, pominiemy duplikaty i połączymy się z Twoim kontem Gmail, aby nowe wiadomości pojawiały się automatycznie. Możesz cofnąć import w dowolnym momencie w ustawieniach Easy Switch"
@@ -13833,6 +13839,9 @@
       "An external address cannot be default": [
         "Zewnętrzny adres nie może zostać domyślnym adresem"
       ],
+      "Copied to clipboard": [
+        "Skopiowano do schowka"
+      ],
       "Downloaded 2FA recovery codes": [
         "Pobrane kody odzyskiwania"
       ],
@@ -16913,9 +16922,6 @@
       "Connect all your devices": [
         "Połącz wszystkie swoje urządzenia"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Kontynuuj z planem ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
@@ -17044,9 +17050,6 @@
       ],
       "Total": [
         "Razem"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Wypróbuj ${ BRAND_NAME } przez 14 dni za darmo"
       ],
       "Try ${ planName } for free": [
         "Wypróbuj plan ${ planName } za darmo"

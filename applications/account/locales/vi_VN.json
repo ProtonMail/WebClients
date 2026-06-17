@@ -351,6 +351,9 @@
       "Continue with this password": [
         "Tiếp tục với mật khẩu này"
       ],
+      "Copy": [
+        "Sao chép"
+      ],
       "Copy address": [
         "Sao chép địa chỉ"
       ],
@@ -1320,6 +1323,9 @@
       "Select time zone": [
         "Chọn múi giờ"
       ],
+      "Send": [
+        "Gửi"
+      ],
       "send auto-reply email": [
         "gửi email tự động trả lời"
       ],
@@ -1520,6 +1526,9 @@
       ],
       "Underline": [
         "Gạch dưới"
+      ],
+      "Undo": [
+        "Hoàn tác"
       ],
       "Undo import": [
         "Hoàn tác nhập"
@@ -4655,9 +4664,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Quá trình nhập sẽ tạm dừng ở mức 80% dung lượng lưu trữ để dành không gian cho thư mới."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Sẽ chuyển các email cũ sang và kết nối Gmail với ${ MAIL_APP_NAME } để thư mới tự động hiển thị"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Nhập các email cũ, bỏ qua các thư trùng lặp và kết nối với Gmail để thư mới tự động xuất hiện. Có thể hoàn tác việc nhập bất kỳ lúc nào trong cài đặt Easy Switch"
@@ -15791,6 +15797,9 @@
       "An external address cannot be default": [
         "Địa chỉ bên ngoài không thể là mặc định"
       ],
+      "Copied to clipboard": [
+        "Đã sao chép vào bảng tạm"
+      ],
       "Downloaded 2FA recovery codes": [
         "Đã tải xuống mã khôi phục 2FA"
       ],
@@ -19208,9 +19217,6 @@
       "Connect all your devices": [
         "Kết nối tất cả thiết bị"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Tiếp tục với ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Tạo tài khoản ${ BRAND_NAME }"
       ],
@@ -19360,9 +19366,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Dùng thử ${ BRAND_NAME } miễn phí trong ${ TRIAL_DURATION_DAYS } ngày"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Dùng thử ${ BRAND_NAME } miễn phí trong 14 ngày"
       ],
       "Try ${ planName } for free": [
         "Dùng thử ${ planName } miễn phí"
