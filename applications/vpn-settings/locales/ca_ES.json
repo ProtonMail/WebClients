@@ -1365,6 +1365,9 @@
         "${ users } usuari",
         "${ users } usuaris"
       ],
+      "Add-on": [
+        "Complement"
+      ],
       "Dedicated VPN servers": [
         "Servidors VPN dedicats"
       ],
@@ -3715,9 +3718,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Importarem els vostres correus antics i connectarem el vostre Gmail a ${ MAIL_APP_NAME } perquè els missatges nous apareguin automàticament"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Importarem els vostres correus electrònics antics, ometrem els duplicats i ens connectarem al vostre Gmail perquè els missatges nous apareguin automàticament. Podreu desactivar la importació en qualsevol moment a la configuració d'Easy Switch."
       ],
@@ -5776,9 +5776,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descripció:"
-      ],
       "Group address:": [
         "Adreça del grup:"
       ],
@@ -6347,6 +6344,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } usuari ha d'acceptar la invitació per començar a rebre els correus electrònics del grup.",
+        "${ invitedMemberCount } usuaris han d'acceptar la invitació per començar a rebre els correus electrònics del grup."
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
       ],
@@ -6390,6 +6391,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "S'ha afegit ${ pendingAdminMemberCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
+        "S'han afegit ${ pendingAdminMemberCount } membres nous a través del vostre proveïdor d'identitat i estan pendents de revisió."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
@@ -7698,6 +7703,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Les noves dades d'activitat deixaran de ser recopilades i mostrades."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "S'ha creat un grup nou a través del vostre proveïdor d'identitat i està pendent de revisió."
       ],
       "New sidebar": [
         "Nova barra lateral"
@@ -15268,6 +15276,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuari",
         "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuaris"
@@ -16240,6 +16251,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } amistat s'ha subscrit",
         "${ friendsSubscribed } amistats s'han subscrit"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } per organitzacions"
@@ -17653,8 +17667,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclou correu electrònic professional a @elvostredomini.com, emmagatzematge al núvol amb edició col·laborativa de documents, calendaris i videoconferències, gestió de contrasenyes, una ${ VPN_SHORT_APP_NAME } segura i molt més."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Assistència instantània amb IA i persones expertes."
+      "Instant AI assistance, human expert on hand!": [
+        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Els membres que no utilitzin l'autenticació de doble factor (2FA) rebran un correu electrònic per demanar-los que l'habilitin com més aviat millor. Els usuaris de l'inici de sessió únic no rebran el recordatori."

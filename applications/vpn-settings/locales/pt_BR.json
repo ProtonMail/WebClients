@@ -1365,6 +1365,9 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Add-on": [
+        "Complemento"
+      ],
       "Dedicated VPN servers": [
         "Servidores de VPN dedicados"
       ],
@@ -3682,9 +3685,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Vamos importar seus e-mails antigos, pular duplicatas e conectar ao seu Gmail para que as novas mensagens apareçam automaticamente. Você pode desfazer a importação a qualquer momento nas configurações do Easy Switch."
       ],
@@ -5725,9 +5725,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descrição:"
-      ],
       "Group address:": [
         "Endereço do grupo:"
       ],
@@ -9250,7 +9247,7 @@
         "Permitir a recuperação por telefone"
       ],
       "Allow recovery by recovery phrase": [
-        "Permita a recuperação através de uma frase de recuperação"
+        "Permitir a recuperação através de uma frase de recuperação"
       ],
       "Allow recovery using a trusted device": [
         "Permitir recuperação usando dispositivo confiável"
@@ -15209,6 +15206,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuário",
         "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuários"
