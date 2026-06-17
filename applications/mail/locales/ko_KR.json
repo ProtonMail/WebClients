@@ -549,6 +549,9 @@
       "Later": [
         "나중에"
       ],
+      "Later this week": [
+        "이번 주 이후"
+      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -1645,6 +1648,17 @@
     "Calendar invite buttons label": {
       "Attending?": [
         "참석하나요?"
+      ]
+    },
+    "Calendar invite info": {
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } 이(가) 사용자의 초대 세부 사항과 일치하지 않는 이벤트에 대한 최신 업데이트를 요청했습니다. 캘린더에서 초대장 세부 사항을 확인하세요."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "새로운 시간 제안이 초대 세부사항과 맞지 않습니다. 캘린더에서 초대 세부사항을 확인해 주십시오."
+      ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "이 응답이 사용자의 초대 세부 사항과 일치하지 않습니다. 캘린더에서 초대 세부 사항을 확인하세요."
       ]
     },
     "Cancellation reminder": {
@@ -3148,9 +3162,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "지난 이메일을 불러오고 Gmail을 ${ MAIL_APP_NAME }에 연결하여 새 메세지가 자동으로 표시되도록 합니다."
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "이전 이메일을 불러오고 중복 항목은 건너뛴 뒤 회원님의 Gmail에 연결하여 새 메시지가 자동으로 나타나도록 합니다. Easy Switch 설정에서 언제든지 불러오기를 실행 취소할 수 있습니다"
       ],
@@ -3492,6 +3503,9 @@
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "보존 정책이 허용하는 것보다 유효기간을 더 길게 설정할 수 없습니다."
+      ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
       ],
@@ -3563,6 +3577,9 @@
       ],
       "Failed loading group members": [
         "그룹 구성원을 로드하는 데 실패했습니다"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
       ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
@@ -3949,6 +3966,11 @@
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "처음에 연결한 동일한 Gmail 주소로 로그인하세요."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "한 번에 최대 ${ maxAttendees }명의 참가자를 초대할 수 있습니다."
       ]
     },
     "Error importing calendar": {
@@ -5320,6 +5342,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "비밀번호가 기억 나시나요? ${ verifyButton }"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무 화면도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요. Google Pay로 결제하는 경우, 국내에서 지원되지 않는 서비스이므로 결제 진행이 되지 않을 수 있습니다."
       ],
@@ -5523,9 +5548,6 @@
       ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
-      ],
-      "Insert image": [
-        "이미지 삽입"
       ],
       "Insert link": [
         "링크 삽입"
@@ -5959,6 +5981,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
+      "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
+        "연락처 상세 정보를 인증하는데 쓰인 서명에 오류가 발생했습니다. 이는 비밀번호 변경으로 발생했을 수 있습니다."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
       ],
@@ -6025,6 +6050,9 @@
       "Tracking": [
         "트래킹"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "이 연럭처로부터 산규 매시지를 인증하려면 키 \"${ activeSignerText }\"을(를) 신뢰하세요."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
       ],
@@ -6082,6 +6110,9 @@
       "Warning": [
         "경고"
       ],
+      "We could not verify the sender's trusted keys.": [
+        "전송자의 인증 키를 인증할 수 없습니다."
+      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -6105,6 +6136,9 @@
       ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
+      ],
+      "We'll remind you to verify your password again later": [
+        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -6750,6 +6784,9 @@
       "Don't show this again": [
         "다시 보지 않기"
       ],
+      "Download logs": [
+        "로그 다운로드"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "예: Amazon, eBay, Etsy"
       ],
@@ -7112,6 +7149,9 @@
       ],
       "Upload picture": [
         "사진 업로드"
+      ],
+      "URL": [
+        "URL"
       ],
       "Username": [
         "사용자 이름"
@@ -8769,12 +8809,20 @@
         "신원 보호를 위한 무제한 별칭"
       ]
     },
+    "Onboarding List Placeholder": {
+      "Maybe later": [
+        "나중에 하기"
+      ]
+    },
     "Onboarding modal": {
       "browser": [
         "브라우저"
       ],
       "Desktop": [
         "데스크톱"
+      ],
+      "Maybe later": [
+        "나중에 하기"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "시작하려면 나의 계정이 타인에게 표시될 이름을 선택하세요. 이메일을 보내거나 이벤트에 초대 및 파일을 공유할 때 상대방 사용자에게 표시됩니다."
@@ -8862,6 +8910,9 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
+      ],
+      "Remind me later": [
+        "나중에 다시 알림"
       ]
     },
     "Option group": {
@@ -10299,6 +10350,11 @@
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ]
     },
+    "Spotlight": {
+      "You can now schedule your messages to be sent later": [
+        "이제 설정된 시각에 메시지가 전송되도록 설정할 수 있습니다."
+      ]
+    },
     "sso": {
       "Sign in": [
         "로그인"
@@ -10313,6 +10369,11 @@
     "State": {
       "Canceling your subscription, please wait": [
         "구독을 취소하고 있습니다. 기다려 주세요"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "${ MAIL_APP_NAME } 주소를 새로운 주소로 입력하고 변경사항을 저장, 확인 혹은 인증하세요."
       ]
     },
     "Step in filter modal": {
@@ -11081,6 +11142,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } 키보드 단축키"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount }개 이메일 주소"
       ],
@@ -11564,6 +11628,9 @@
       "Same inbox, shorter email address": [
         "같은 받은 편지함, 더 짧은 이메일 주소."
       ],
+      "Schedule now, send later": [
+        "지금 예약하고 나중에 발송하기"
+      ],
       "Schedule send:": [
         "스케줄 발송:"
       ],
@@ -11683,6 +11750,9 @@
       ],
       "Verification failed": [
         "인증 실패"
+      ],
+      "Verify your password": [
+        "비밀번호 확인"
       ],
       "Verifying your card...": [
         "카드 인증 중..."

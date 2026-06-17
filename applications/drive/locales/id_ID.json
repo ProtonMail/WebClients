@@ -6055,9 +6055,6 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Selamat, Anda baru saja meningkatkan kapasitas ruang penyimpanan Anda ke 5 GB!"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Kami tidak dapat memverifikasi bahwa ${ nameAuthor } merupakan pengunggah dari node ${ node.name }. Informasi berikut mungkin telah dimodifikasi: urutan data file. Hanya buka file ini jika Anda memercayai isinya."
-      ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
       ],
@@ -11071,6 +11068,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } alamat email"
       ],
@@ -11958,12 +11958,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Kami tidak dapat mengonfirmasi bahwa isi file ini diunggah oleh ${ claimedContentAuthor }. Alasannya: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Kami tidak dapat mengonfirmasi bahwa nama ini dibuat atau diubah oleh ${ claimedNameAuthor }. Alasannya: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Kami tidak dapat mengonfirmasi bahwa node ini dibuat oleh ${ claimedKeyAuthor }. Alasan: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Penawaran selamat datang"

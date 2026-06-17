@@ -3104,9 +3104,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pysäytämme tuonnit, kun tallennustilasta on käytössä 80 %, varataksemme tilaa uusille viesteille."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Tuomme vanhat sähköpostinne, ohitamme kaksoiskappaleet ja yhdistämme Gmail-tiliinne, jotta uudet viestit tulevat näkyviin automaattisesti. Voitte kumota tuonnin milloin tahansa Easy Switch -asetuksissa"
       ],
@@ -5516,9 +5513,6 @@
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
       ],
-      "Insert image": [
-        "Lisää kuva"
-      ],
       "Insert link": [
         "Lisää linkki"
       ],
@@ -6724,6 +6718,9 @@
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
+      "Download logs": [
+        "Lataa lokitiedot"
+      ],
       "Drive": [
         "Drive"
       ],
@@ -7083,6 +7080,9 @@
       ],
       "Upload picture": [
         "Lataa kuva"
+      ],
+      "URL": [
+        "URL"
       ],
       "Username": [
         "Käyttäjätunnus"
@@ -11004,6 +11004,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName }-pikanäppäimet"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
         "${ emailsCount } sähköpostiosoitetta"
@@ -11702,9 +11705,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
-      ],
-      "Instant assistance with AI and human experts.": [
-        "Välitöntä apua tekoälyn ja ihmisasiantuntijoiden avulla."
       ],
       "Load image": [
         "Lataa kuva"

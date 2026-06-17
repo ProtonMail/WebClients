@@ -6713,9 +6713,6 @@
         "No pudimos guardar esta foto en su Drive",
         "No pudimos guardar múltiples fotos en su Drive"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "No pudimos verificar que ${ nameAuthor } haya cargado ${ node.name }. Es posible que los elementos hayan sido manipulados. Abra el archivo solo si confía en él."
-      ],
       "We couldn’t process your payment.": [
         "No pudimos procesar el pago."
       ],
@@ -12368,6 +12365,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } dirección de correo",
         "${ emailsCount } direcciones de correo"
@@ -13315,12 +13315,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "No hemos podido confirmar que ${ claimedContentAuthor } haya subido el contenido del archivo. El motivo es el siguiente: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "No hemos podido confirmar que ${ claimedNameAuthor } haya creado o modificado el nombre. El motivo es el siguiente: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "No hemos podido confirmar que ${ claimedKeyAuthor } haya creado el nodo. El motivo es el siguiente: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Bienvenida la oferta"

@@ -5171,6 +5171,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
       ],
+      "All your files will be imported": [
+        "您所有的文件将被导入"
+      ],
       "Already in this folder": [
         "已在此文件夹中"
       ],
@@ -6620,9 +6623,6 @@
       "We couldn't save this photo to your Drive": [
         "无法将多张照片保存到您的云端硬盘"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "我们无法验证 ${ nameAuthor } 上传了 ${ node.name }。以下内容可能已被篡改：文件数据顺序。请仅在信任的情况下打开。"
-      ],
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
@@ -7242,6 +7242,9 @@
       ],
       "Download anyway": [
         "仍要下载"
+      ],
+      "Drive": [
+        "云盘"
       ],
       "Duplicate found": [
         "发现重复"
@@ -11985,6 +11988,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } 个邮箱地址"
       ],
@@ -12923,12 +12929,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "我们无法确认此文件内容是由 ${ claimedContentAuthor } 上传的。原因是：${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "我们无法确认此名称是由 ${ claimedNameAuthor } 创建或修改的。原因是：${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "我们无法确认此节点是由 ${ claimedKeyAuthor } 创建的。原因是：${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "迎新优惠"

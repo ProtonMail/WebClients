@@ -6652,9 +6652,6 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Muito bom! Você acaba de aumentar seu armazenamento para 5 GB!"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Não foi possível verificar se ${ nameAuthor } enviou ${ node.name }. Os seguintes dados podem ter sido adulterados: ordem dos dados do arquivo. Abra somente se confiar no conteúdo."
-      ],
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
       ],
@@ -12281,6 +12278,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
@@ -13228,12 +13228,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Não foi possível confirmar que o conteúdo do arquivo foi enviado por ${ claimedContentAuthor }. O motivo é: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Não foi possível confirmar que o nome foi criado ou modificado por ${ claimedNameAuthor }. O motivo é: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Não foi possível confirmar que o nó foi criado por ${ claimedKeyAuthor }. O motivo é: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Oferta de boas-vindas"

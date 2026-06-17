@@ -399,6 +399,9 @@
       "Continue with this password": [
         "Ga verder met dit wachtwoord"
       ],
+      "Copy": [
+        "Kopiëren"
+      ],
       "Copy address": [
         "Adres kopiëren"
       ],
@@ -1485,6 +1488,9 @@
       "Select time zone": [
         "Kies tijdzone"
       ],
+      "Send": [
+        "Verstuur"
+      ],
       "send auto-reply email": [
         "automatisch antwoord versturen"
       ],
@@ -1709,6 +1715,9 @@
       ],
       "Underline": [
         "Onderstreept"
+      ],
+      "Undo": [
+        "Ongedaan maken"
       ],
       "Undo import": [
         "Import ongedaan maken"
@@ -5482,9 +5491,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "We pauzeren de import bij 80% opslagruimte om ruimte te reserveren voor nieuwe berichten."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "We halen uw oude e-mails op en koppelen uw Gmail-account aan ${ MAIL_APP_NAME }, zodat nieuwe berichten automatisch worden weergegeven"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "We importeren uw oude e-mails, slaan duplicaten over en verbinden met uw Gmail, zodat nieuwe berichten automatisch verschijnen. U kunt de import altijd ongedaan maken in de instellingen van Easy Switch."
       ],
@@ -8966,9 +8972,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Beschrijving:"
-      ],
       "Group address:": [
         "Groepsadres:"
       ],
@@ -18244,6 +18247,9 @@
       "An external address cannot be default": [
         "Een extern adres kan niet primair zijn"
       ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
+      ],
       "Downloaded 2FA recovery codes": [
         "Herstelcodes van 2FA gedownload"
       ],
@@ -22502,9 +22508,6 @@
       "Connect all your devices": [
         "Al uw apparaten verbinden"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Ga verder met ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
@@ -22676,9 +22679,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Probeer ${ BRAND_NAME } ${ TRIAL_DURATION_DAYS } dagen gratis,${ br } en ontvang ${ referralInfo.uiData.refereeRewardAmount } aan tegoed"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Probeer ${ BRAND_NAME } 14 dagen gratis"
       ],
       "Try ${ planName } for free": [
         "Probeer ${ planName } gratis"

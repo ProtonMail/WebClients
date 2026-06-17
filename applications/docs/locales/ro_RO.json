@@ -4620,6 +4620,9 @@
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }."
       ],
+      "All your files will be imported": [
+        "Vor fi importate toate fișierele."
+      ],
       "Already in this folder": [
         "Deja în acest folder"
       ],
@@ -6095,6 +6098,9 @@
       ],
       "Download anyway": [
         "Descărcare așa"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Duplicate found": [
         "S-a găsit o dublură."
@@ -10143,10 +10149,16 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "Adrese de e-mail: ${ emailsCount }",
         "Adrese de e-mail: ${ emailsCount }",
         "Adrese de e-mail: ${ emailsCount }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperare cont"

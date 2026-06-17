@@ -399,6 +399,9 @@
       "Continue with this password": [
         "Continua amb aquesta contrasenya"
       ],
+      "Copy": [
+        "Copia"
+      ],
       "Copy address": [
         "Copia l'adreça"
       ],
@@ -941,6 +944,9 @@
       ],
       "Hide": [
         "Amaga"
+      ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Amagar ${ LUMO_SHORT_APP_NAME }"
       ],
       "Hide more benefits": [
         "Amaga més avantatges"
@@ -1485,6 +1491,9 @@
       "Select time zone": [
         "Selecciona el fus horari"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "send auto-reply email": [
         "envia un correu de resposta automàtica"
       ],
@@ -1647,6 +1656,9 @@
       "Stay": [
         "Mantenir"
       ],
+      "Stop": [
+        "Aturar"
+      ],
       "Stop using single sign-on": [
         "Deixa d'utilitzar l'inici de sessió únic"
       ],
@@ -1709,6 +1721,9 @@
       ],
       "Underline": [
         "Subratlla"
+      ],
+      "Undo": [
+        "Desfés"
       ],
       "Undo import": [
         "Desfés la importació"
@@ -1986,6 +2001,9 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Add-on": [
+        "Complement"
       ],
       "Dedicated VPN servers": [
         "Servidors VPN dedicats"
@@ -2999,6 +3017,9 @@
       "Copy the below code and paste it in the DNS section of your domain host.": [
         "Copieu el codi següent i enganxeu-lo a la secció DNS del vostre proveïdor de domini."
       ],
+      "Creating accounts": [
+        "S'estan creant els comptes"
+      ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
       ],
@@ -3275,6 +3296,9 @@
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Estem creant els vostres comptes i important les vostres dades perquè el vostre equip tingui tot el que necessita quan comenci a utilitzar el seu compte segur de ${ BRAND_NAME }."
       ],
       "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
         "Estem activant el xifratge d'extrem a extrem per a tothom. Ara cada correu electrònic i cada esdeveniment és exclusivament vostre. Només és visible per al vostre equip. Ni per a nosaltres, ni per a ningú més."
@@ -5481,9 +5505,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Importarem els vostres correus antics i connectarem el vostre Gmail a ${ MAIL_APP_NAME } perquè els missatges nous apareguin automàticament"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Importarem els vostres correus electrònics antics, ometrem els duplicats i ens connectarem al vostre Gmail perquè els missatges nous apareguin automàticament. Podreu desactivar la importació en qualsevol moment a la configuració d'Easy Switch."
@@ -8966,9 +8987,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descripció:"
-      ],
       "Group address:": [
         "Adreça del grup:"
       ],
@@ -9765,6 +9783,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } usuari ha d'acceptar la invitació per començar a rebre els correus electrònics del grup.",
+        "${ invitedMemberCount } usuaris han d'acceptar la invitació per començar a rebre els correus electrònics del grup."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vol compartir dades amb vós a ${ PASS_APP_NAME }"
       ],
@@ -9838,6 +9860,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "S'ha afegit ${ pendingAdminMemberCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
+        "S'han afegit ${ pendingAdminMemberCount } membres nous a través del vostre proveïdor d'identitat i estan pendents de revisió."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
@@ -11160,6 +11186,9 @@
       "here": [
         "aquí"
       ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Hola! Descriviu el filtre que voleu i escriuré el guió de Sieve. També puc retocar qualsevol cosa que ja estigui a l'editor."
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Amaga la informació d'identificació tot carregant el contingut remot a través d'un servidor intermediari. Hi ha l'opció de desar el contingut com a fitxers adjunts."
       ],
@@ -11660,6 +11689,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Les noves dades d'activitat deixaran de ser recopilades i mostrades."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "S'ha creat un grup nou a través del vostre proveïdor d'identitat i està pendent de revisió."
       ],
       "New sidebar": [
         "Nova barra lateral"
@@ -12513,6 +12545,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aquestes credencials no es poden utilitzar per a iniciar sessió a les nostres aplicacions oficials de ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
+      "Thinking…": [
+        "Pensant…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
@@ -14796,6 +14831,9 @@
       ],
       "Enter code": [
         "Introduïu el codi"
+      ],
+      "Enter current password": [
+        "Introduïu la contrasenya actual"
       ],
       "Enter name or email address": [
         "Introduïu un nom o una adreça electrònica"
@@ -18247,6 +18285,9 @@
       "An external address cannot be default": [
         "Una adreça externa no pot ser una adreça per defecte."
       ],
+      "Copied to clipboard": [
+        "S'ha copiat al porta-retalls."
+      ],
       "Downloaded 2FA recovery codes": [
         "Codis de recuperació 2FA descarregats"
       ],
@@ -18294,6 +18335,9 @@
       ],
       "Reminder has been sent": [
         "S'ha enviat un recordatori"
+      ],
+      "Sieve script inserted": [
+        "S'ha inserit el guió de Sieve"
       ],
       "The key has been deleted.": [
         "S'ha eliminat la clau."
@@ -19962,6 +20006,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Describe the filter you want…": [
+        "Descriviu el filtre que voleu..."
+      ],
       "domain.com": [
         "domini.com"
       ],
@@ -21558,6 +21605,9 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Això restaurarà l'accés a correus electrònics, contactes, fitxers, contrasenyes i qualsevol altra dada xifrada del vostre compte després d'un restabliment de contrasenya."
       ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Per ajudar-vos a recordar la vostra contrasenya, us demanarem periòdicament que la introduïu."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Per assegurar-nos que l'adreça de correu electrònic és vostra, introduïu el codi de verificació enviat a ${ boldEmail }."
       ],
@@ -21590,6 +21640,9 @@
       ],
       "Verify recovery phone": [
         "Verifiqueu el telèfon de recuperació"
+      ],
+      "Verify your password": [
+        "Verifiqueu la vostra contrasenya"
       ],
       "Verify your recovery email": [
         "Verifiqueu el vostre correu electrònic de recuperació"
@@ -22415,8 +22468,8 @@
       "Connect all your devices": [
         "Connecteu tots els vostres dispositius"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Continua amb ${ PLAN_NAMES[plan] }"
+      "Continue with ${ planName }": [
+        "Continuar amb ${ planName }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Creeu un compte de ${ BRAND_NAME }"
@@ -22444,6 +22497,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratuït durant ${ TRIAL_DURATION_DAYS } dies"
+      ],
+      "From ${ priceElement }": [
+        "Des de ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Obtingueu ${ referralInfo.uiData.refereeRewardAmount } en crèdits"
@@ -22545,6 +22601,9 @@
       "Share and collaborate of files": [
         "Compartició de fitxers i col·laboració"
       ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Inscriviu-vos-hi i aconseguiu ${ referralInfo.uiData.refereeRewardAmount } en crèdits"
+      ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "Creeu un compte de ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
@@ -22589,9 +22648,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Proveu ${ BRAND_NAME } durant ${ TRIAL_DURATION_DAYS } dies de franc,${ br } i obtingueu ${ referralInfo.uiData.refereeRewardAmount } en crèdits"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Proveu ${ BRAND_NAME } de franc durant 14 dies"
       ],
       "Try ${ planName } for free": [
         "Proveu ${ planName } de franc"
@@ -23596,6 +23652,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuari",
         "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuaris"
@@ -24717,6 +24776,9 @@
         "${ friendsSubscribed } amistat s'ha subscrit",
         "${ friendsSubscribed } amistats s'han subscrit"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Eina d'exportació de ${ MAIL_APP_NAME }"
       ],
@@ -25662,6 +25724,9 @@
       ],
       "Help center": [
         "Centre d'ajuda"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Ajuda de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Help us improve": [
         "Ajudeu-nos a millorar"
@@ -26865,8 +26930,8 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclou correu electrònic professional a @elvostredomini.com, emmagatzematge al núvol amb edició col·laborativa de documents, calendaris i videoconferències, gestió de contrasenyes, una ${ VPN_SHORT_APP_NAME } segura i molt més."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Assistència instantània amb IA i persones expertes."
+      "Instant AI assistance, human expert on hand!": [
+        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Els membres que no utilitzin l'autenticació de doble factor (2FA) rebran un correu electrònic per demanar-los que l'habilitin com més aviat millor. Els usuaris de l'inici de sessió únic no rebran el recordatori."

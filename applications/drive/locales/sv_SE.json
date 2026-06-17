@@ -12218,6 +12218,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadress",
         "${ emailsCount } e-postadresser"
@@ -13156,12 +13159,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Vi kunde inte bekräfta att filinnehållet laddades upp av ${ claimedContentAuthor }. Orsaken är: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Vi kunde inte bekräfta att namnet skapades eller modifierades av ${ claimedNameAuthor }. Orsaken är: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Vi kunde inte bekräfta att noden skapades av ${ claimedKeyAuthor }. Orsaken är: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Välkomsterbjudande"

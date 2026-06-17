@@ -357,6 +357,9 @@
       "Continue with this password": [
         "このパスワードで続行する"
       ],
+      "Copy": [
+        "コピー"
+      ],
       "Copy address": [
         "アドレスをコピー"
       ],
@@ -1338,6 +1341,9 @@
       "Select time zone": [
         "タイムゾーンを選択"
       ],
+      "Send": [
+        "送信"
+      ],
       "send auto-reply email": [
         "自動返信メールを送信"
       ],
@@ -1538,6 +1544,9 @@
       ],
       "Underline": [
         "下線"
+      ],
+      "Undo": [
+        "取り消し"
       ],
       "Undo import": [
         "インポートを取り消す"
@@ -4784,9 +4793,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "新規メッセージ用の容量を確保するため、ストレージ容量が80%に達した時点でインポートを一時停止します。"
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "お客様の以前のメールを取り込み、Gmailを${ MAIL_APP_NAME }に接続することで、新しいメッセージが自動的に表示されるようになります。"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "古いメールをインポートし、重複をスキップして、新しいメッセージが自動的に表示されるようにお客様のGmailに接続します。インポートは、Easy Switchの設定からいつでも元に戻すことができます。"
@@ -16156,6 +16162,9 @@
       "An external address cannot be default": [
         "外部のアドレスは既定にすることができません"
       ],
+      "Copied to clipboard": [
+        "クリップボードにコピーされました"
+      ],
       "Downloaded 2FA recovery codes": [
         "2要素認証回復コードをダウンロードしました"
       ],
@@ -19795,9 +19804,6 @@
       "Connect all your devices": [
         "すべてのデバイスに接続"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "${ PLAN_NAMES[plan] }で続行"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成する"
       ],
@@ -19959,9 +19965,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "${ BRAND_NAME }を無料で${ TRIAL_DURATION_DAYS }日お試しください"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "${ BRAND_NAME }を14日間無料でお試し"
       ],
       "Try ${ planName } for free": [
         "無料で ${ planName } をお試しください"

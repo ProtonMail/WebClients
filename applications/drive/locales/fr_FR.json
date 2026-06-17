@@ -6716,8 +6716,8 @@
         "Une photo n'a pas été enregistrée dans votre Drive.",
         "Plusieurs photos n'ont pas été enregistrées dans votre Drive."
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Nous n'avons pas pu vérifier que ${ nameAuthor } a importé ${ node.name }. Les éléments suivants pourraient avoir été falsifiés : ordre des données du fichier. Ouvrez uniquement si vous faites confiance à ce fichier."
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nous n'avons pas pu vérifier que ${ nameAuthor } a importé ${ nodeName }. Les éléments suivants pourraient avoir été falsifiés : ordre des données du fichier. Ouvrez uniquement si vous faites confiance à ce fichier."
       ],
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
@@ -12374,6 +12374,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
@@ -12383,6 +12386,9 @@
       ],
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } d'importations gratuites."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Récupération du compte"
@@ -13322,11 +13328,11 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Nous n'avons pas pu confirmer que le contenu du fichier a été importé par ${ claimedContentAuthor }. La raison est la suivante : ${ activeRevision.contentAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Nous n'avons pas pu confirmer que le nom a été créé ou modifié par ${ claimedNameAuthor }. La raison est la suivante : ${ nodeEntity.nameAuthor.error.error }"
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Nous n'avons pas pu confirmer que le nom a été créé ou modifié par ${ claimedNameAuthor }. La raison est la suivante : ${ node.nameAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Nous n'avons pas pu confirmer que le nœud a été créé par ${ claimedKeyAuthor }. La raison est la suivante : ${ nodeEntity.keyAuthor.error.error }"
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Nous n'avons pas pu confirmer que le nœud a été créé par ${ claimedKeyAuthor }. La raison est la suivante : ${ node.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Offre de bienvenue"
@@ -13443,8 +13449,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
-      "Instant assistance with AI and human experts.": [
-        "Assistance immédiate grâce à l'IA et à des experts humains."
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "Load image": [
         "Charger l'image"

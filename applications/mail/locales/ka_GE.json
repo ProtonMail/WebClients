@@ -3081,9 +3081,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "ჩვენ გადმოვიტანთ თქვენს ძველ ელფოსტას და დავაკავშირებთ თქვენს Gmail-ს ${ MAIL_APP_NAME }-თან, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "ჩვენ მოვახდენთ თქვენი ძველი ელფოსტის იმპორტს, გამოვტოვებთ დუბლიკატებს და დავუკავშირდებით თქვენს Gmail-ს, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს. იმპორტის დაბრუნება ნებისმიერ დროს შეგიძლიათ Easy Switch-ის პარამეტრებში"
       ],
@@ -5334,9 +5331,6 @@
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
       ],
-      "Insert image": [
-        "გამოსახულების ჩასმა"
-      ],
       "Insert link": [
         "ბმულის ჩასმა"
       ],
@@ -6498,6 +6492,9 @@
       "Don't show this again": [
         "აღარ მაჩვენო"
       ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "მაგ Amazon, eBay, Etsy"
       ],
@@ -6854,6 +6851,9 @@
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
+      ],
+      "URL": [
+        "URL"
       ],
       "Username": [
         "მომხმარებლის სახელი"
@@ -10644,6 +10644,9 @@
     "Title": {
       "${ appName } keyboard shortcuts": [
         "${ appName }-ის კლავიატურის მალსახმობები"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } ელფოსტის მისამართი",

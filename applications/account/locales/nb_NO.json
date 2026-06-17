@@ -399,6 +399,9 @@
       "Continue with this password": [
         "Fortsett med dette passordet"
       ],
+      "Copy": [
+        "Kopier"
+      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -1485,6 +1488,9 @@
       "Select time zone": [
         "Velg tidssone"
       ],
+      "Send": [
+        "Send"
+      ],
       "send auto-reply email": [
         "send e-post med autosvar"
       ],
@@ -1709,6 +1715,9 @@
       ],
       "Underline": [
         "Understrek"
+      ],
+      "Undo": [
+        "Angre"
       ],
       "Undo import": [
         "Angre import"
@@ -5482,9 +5491,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Vi importerer de gamle e-postene dine, hopper over duplikater og kobler til Gmail slik at nye meldinger dukker opp automatisk. Du kan når som helst angre importen i innstillingene for Easy Switch."
       ],
@@ -8966,9 +8972,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Beskrivelse:"
-      ],
       "Group address:": [
         "Gruppeadresse:"
       ],
@@ -18241,6 +18244,9 @@
       "An external address cannot be default": [
         "Kan ikke angi en ekstern adresse som standard"
       ],
+      "Copied to clipboard": [
+        "Kopiert til utklippstavlen"
+      ],
       "Downloaded 2FA recovery codes": [
         "Nedlastede 2FA-gjenopprettingskoder"
       ],
@@ -22502,9 +22508,6 @@
       "Connect all your devices": [
         "Koble til alle enhetene dine"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Fortsett med ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
@@ -22676,9 +22679,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Prøv ${ BRAND_NAME } i ${ TRIAL_DURATION_DAYS } dager gratis,${ br } og få ${ referralInfo.uiData.refereeRewardAmount } i kreditt"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Prøv ${ BRAND_NAME } gratis i 14 dager"
       ],
       "Try ${ planName } for free": [
         "Prøv ${ planName } gratis"
