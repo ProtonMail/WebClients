@@ -7,11 +7,13 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useConfig from '@proton/components/hooks/useConfig';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import SecureAccountButton from './SecureAccountButton';
@@ -24,6 +26,8 @@ type RecoveryScoreModalItem = {
 };
 
 const RecoveryScoreModal = ({ onClose, ...rest }: ModalProps) => {
+    const { APP_NAME } = useConfig();
+
     const {
         recoveryScore: { score, maxScore },
         recoveryItems,
@@ -123,7 +127,7 @@ const RecoveryScoreModal = ({ onClose, ...rest }: ModalProps) => {
             </ModalContent>
 
             <ModalFooter>
-                {score < maxScore ? (
+                {score < maxScore && APP_NAME !== APPS.PROTONACCOUNTLITE ? (
                     <SecureAccountButton
                         fullWidth
                         onClick={onClose}

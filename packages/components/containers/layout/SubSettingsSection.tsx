@@ -8,6 +8,7 @@ import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -21,7 +22,7 @@ export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'>
     invisibleTitle?: boolean;
     beta?: boolean;
     children: ReactNode;
-    variant?: 'default' | 'card';
+    variant?: SettingsLayoutVariant;
 }
 
 const SubSettingsSection = ({
@@ -32,7 +33,7 @@ const SubSettingsSection = ({
     beta,
     children,
     className,
-    variant = 'default',
+    variant = SettingsLayoutVariant.Default,
     ...rest
 }: SubSettingsSectionProps) => {
     const ref = useRef<HTMLDivElement>(null);

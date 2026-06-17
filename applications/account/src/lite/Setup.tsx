@@ -19,6 +19,8 @@ import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { consumeFork, getConsumeForkParameters } from '@proton/shared/lib/authentication/fork';
+import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork/constants.ts';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
@@ -198,12 +200,26 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
         };
 
         const hashParams = new URLSearchParams(window.location.hash.slice(1));
-        const selector = hashParams.get('selector');
-        const jwtToken = hashParams.get('token');
+        const selector = hashParams.get(ForkSearchParameters.Selector);
+        const jwtToken = hashParams.get(ForkSearchParameters.Token);
 
-        hashParams.delete('selector');
-        hashParams.delete('token');
-        window.location.hash = hashParams.toString();
+        const sessionForkParametersWithPayload = getConsumeForkParameters(hashParams);
+
+        window.location.hash = '';
+
+        if (sessionForkParametersWithPayload) {
+            consumeFork({
+                parameters: sessionForkParametersWithPayload,
+                mode: extraThunkArguments.authentication.mode,
+                api,
+            })
+                .then((result) => {
+                    extraThunkArguments.authentication.login(result.session);
+                    return setupApp(result.session.UID);
+                })
+                .catch(handleSetupError);
+            return;
+        }
 
         if (selector) {
             setupFork(selector)
@@ -226,7 +242,7 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
             return;
         }
 
-        const localIdParam = Number(searchParams.get('u'));
+        const localIdParam = Number(searchParams.get(ForkSearchParameters.LocalID));
         if (localIdParam >= 0) {
             const persistedSession = getPersistedSession(localIdParam);
             if (persistedSession) {

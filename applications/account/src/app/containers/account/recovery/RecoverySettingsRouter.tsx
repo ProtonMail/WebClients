@@ -46,9 +46,17 @@ interface Props {
     app: APP_NAMES;
     recovery: ReturnType<typeof getAccountAppRoutes>['routes']['recovery'];
     path: string;
+    className?: string;
+    variant?: SettingsLayoutVariant;
 }
 
-const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
+export const RedesignRecoverySettingsRouter = ({
+    app,
+    recovery,
+    path,
+    className,
+    variant = SettingsLayoutVariant.Card,
+}: Props) => {
     const recoverySubrouteGroups = recovery.subrouteGroups;
     if (!recoverySubrouteGroups) {
         throw new Error('Missing sub groups');
@@ -61,6 +69,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
         <Switch>
             <Route path={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={passwordReset.subroutes.email.text}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -72,6 +81,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route path={getSubroutePath(recoveryPath, passwordReset.subroutes.phone)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={passwordReset.subroutes.phone.text}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -83,6 +93,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route path={getSubroutePath(recoveryPath, dataRecovery.subroutes.deviceRecovery)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={dataRecovery.subroutes.deviceRecovery.text}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -96,6 +107,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route path={getSubroutePath(recoveryPath, dataRecovery.subroutes.backupFile)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={dataRecovery.subroutes.backupFile.text}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -109,6 +121,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route path={getSubroutePath(recoveryPath, advancedRecovery.subroutes.phrase)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={c('Title').t`Recovery phrase`}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -120,6 +133,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route path={getSubroutePath(recoveryPath, dataRecovery.subroutes.recoveryContacts)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={dataRecovery.subroutes.recoveryContacts.text}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -134,6 +148,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route path={getSubroutePath(recoveryPath, advancedRecovery.subroutes.emergencyContacts)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={advancedRecovery.subroutes.emergencyContacts.text}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -145,6 +160,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route path={getSubroutePath(recoveryPath, advancedRecovery.subroutes.signedInReset)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={c('Title').t`Signed-in reset`}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -156,6 +172,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route path={getSubroutePath(recoveryPath, advancedRecovery.subroutes.qrCode)}>
                 <PrivateMainSubSettingsArea
+                    mainAreaClass={className}
                     title={c('Title').t`QR code sign-in`}
                     backTo={recoveryPath}
                     backLabel={c('Title').t`Recovery`}
@@ -167,6 +184,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
             </Route>
             <Route>
                 <PrivateMainSettingsArea
+                    mainAreaClass={className}
                     config={{
                         ...recovery,
                         subsections: [
@@ -183,11 +201,12 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                     maxWidth={SettingsCardMaxWidth.Medium}
                     variant={SettingsLayoutVariant.Card}
                 >
-                    <OverviewSectionV2 />
+                    <OverviewSectionV2 variant={variant} />
                     <SettingsNavGroup
                         title={passwordReset.title}
                         description={passwordReset.description}
                         subsections={Object.values(passwordReset.subroutes)}
+                        variant={variant}
                     >
                         <RecoveryEmail to={getSubroutePath(recoveryPath, passwordReset.subroutes.email)} />
                         <RecoveryPhone to={getSubroutePath(recoveryPath, passwordReset.subroutes.phone)} />
@@ -196,6 +215,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                         title={dataRecovery.title}
                         description={dataRecovery.description}
                         subsections={Object.values(dataRecovery.subroutes)}
+                        variant={variant}
                     >
                         <PasswordResetOptionRequiredWarningInGroup
                             emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
@@ -208,6 +228,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                         title={advancedRecovery.title}
                         description={advancedRecovery.description}
                         subsections={Object.values(advancedRecovery.subroutes)}
+                        variant={variant}
                     >
                         <RecoveryPhrase to={getSubroutePath(recoveryPath, advancedRecovery.subroutes.phrase)} />
                         <SignedInReset to={getSubroutePath(recoveryPath, advancedRecovery.subroutes.signedInReset)} />

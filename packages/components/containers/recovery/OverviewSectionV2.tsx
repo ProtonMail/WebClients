@@ -1,6 +1,7 @@
 import { useInactiveKeys } from '@proton/account';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import type { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
@@ -10,7 +11,10 @@ import RecoverDataConfirmModal from './RecoverDataConfirmModal';
 import RecoveryScoreBanner from './RecoveryScoreBanner/RecoveryScoreBanner';
 import SentinelBanner from './SentinelBanner/SentinelBanner';
 
-export const OverviewSectionV2 = () => {
+interface Props {
+    variant: SettingsLayoutVariant;
+}
+export const OverviewSectionV2 = ({ variant }: Props) => {
     const keyReactivationRequests = useInactiveKeys();
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();
@@ -43,7 +47,7 @@ export const OverviewSectionV2 = () => {
                     onDismiss={() => setDismissConfirmModalOpen(true)}
                 />
             )}
-            {isSentinelUser ? <SentinelBanner /> : <RecoveryScoreBanner />}
+            {isSentinelUser ? <SentinelBanner variant={variant} /> : <RecoveryScoreBanner variant={variant} />}
         </div>
     );
 };
