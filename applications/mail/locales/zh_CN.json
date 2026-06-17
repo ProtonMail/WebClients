@@ -3220,9 +3220,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "我们将导入您的旧电子邮件、跳过重复项，并连接到您的 Gmail，以便自动显示新消息。您可以随时在 Easy Switch 设置中撤消导入。"
       ],
@@ -5230,6 +5227,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
       ],
+      "All your files will be imported": [
+        "您所有的文件将被导入"
+      ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
       ],
@@ -5634,9 +5634,6 @@
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
-      ],
-      "Insert image": [
-        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -6887,6 +6884,12 @@
       "Don't show this again": [
         "不再显示此内容"
       ],
+      "Download logs": [
+        "下载日志"
+      ],
+      "Drive": [
+        "云盘"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "例如：Amazon, eBay, Etsy"
       ],
@@ -7252,6 +7255,9 @@
       ],
       "Upload picture": [
         "上传图片"
+      ],
+      "URL": [
+        "网址"
       ],
       "Username": [
         "用户名"
@@ -10901,6 +10907,9 @@
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 位联系人信息似乎完全相同。"
       ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } 封邮件已标记为未读"
+      ],
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
@@ -11154,6 +11163,9 @@
     "Title": {
       "${ appName } keyboard shortcuts": [
         "${ appName } 快捷键"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } 个邮箱地址"

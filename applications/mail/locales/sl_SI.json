@@ -96,6 +96,12 @@
       "Alignment": [
         "Poravnava"
       ],
+      "All Read": [
+        "Vsi prebrani"
+      ],
+      "All Unstarred": [
+        "Vse brez zvezdice"
+      ],
       "Apply": [
         "Potrdi"
       ],
@@ -134,6 +140,9 @@
       ],
       "Change password": [
         "Spremeni geslo"
+      ],
+      "Change sorting": [
+        "Spremeni razvrščanje"
       ],
       "Chat with us": [
         "Klepetajte z nami"
@@ -222,6 +231,9 @@
       "Continue import": [
         "Nadaljuj z uvozom"
       ],
+      "Continue with categories": [
+        "Nadaljuj s kategorijami"
+      ],
       "Continue with Free": [
         "Nadaljujte z brezplačnim"
       ],
@@ -300,6 +312,12 @@
       "Delete contact group": [
         "Izbriši skupino stikov"
       ],
+      "Delete draft": [
+        "Izbriši osnutek"
+      ],
+      "Delete folder": [
+        "Izbriši mapo"
+      ],
       "Delete permanently": [
         "Trajno izbriši"
       ],
@@ -335,6 +353,9 @@
       ],
       "Download": [
         "Prenesi"
+      ],
+      "Download ${ attachmentName }": [
+        "Prenesi priponko ${ attachmentName }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
@@ -384,11 +405,23 @@
       "enable desktop notifications": [
         "prikazovanje obvestil na namizju"
       ],
+      "exclude message content": [
+        "izključite vsebino sporočil"
+      ],
       "Expand": [
         "Razširi"
       ],
+      "Expand composer": [
+        "Razširi urejevalnik"
+      ],
       "Expand video conferencing widget": [
         "Razširi gradnik za videokonference"
+      ],
+      "Expiration time": [
+        "Čas izteka veljavnosti"
+      ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Raziščite ${ VPN_APP_NAME }"
       ],
       "Export": [
         "Izvozi"
@@ -398,6 +431,12 @@
       ],
       "Export selection as .vcf": [
         "Izvozi izbor kot .vcf"
+      ],
+      "Fewer search options": [
+        "Manj možnosti iskanja"
+      ],
+      "Filter on...": [
+        "Filter vklopljen ..."
       ],
       "Fit to window": [
         "Prilagodi oknu"
@@ -456,8 +495,14 @@
       "Go to label": [
         "Pojdi na oznako"
       ],
+      "Go to next page": [
+        "Pojdi na naslednjo stran"
+      ],
       "Go to panel ${ index }": [
         "Pojdi na ploščo ${ index }"
+      ],
+      "Go to previous page": [
+        "Pojdi na prejšnjo stran"
       ],
       "Go to settings": [
         "Pojdi v nastavitve"
@@ -477,6 +522,9 @@
       "Hide advanced PGP settings": [
         "Skrij napredne nastavitve PGP"
       ],
+      "Hide details": [
+        "Skrij podrobnosti"
+      ],
       "Hide more benefits": [
         "Skrij več prednosti"
       ],
@@ -485,6 +533,9 @@
       ],
       "Image will be loaded without a proxy": [
         "Slika bo naložena brez uporabe posredniškega strežnika."
+      ],
+      "Images will be loaded without a proxy": [
+        "Slike bodo naložene brez uporabe posredniškega strežnika"
       ],
       "Import": [
         "Uvoz"
@@ -522,6 +573,9 @@
         "Vstavi ${ totalChecked } stike",
         "Vstavi ${ totalChecked } stikov"
       ],
+      "Insert contacts": [
+        "Vstavi stike"
+      ],
       "Insert image": [
         "Vstavi sliko"
       ],
@@ -536,6 +590,9 @@
       ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
+      ],
+      "Label as...": [
+        "Označi kot ..."
       ],
       "label emails as": [
         "označi e-pošto kot"
@@ -552,11 +609,17 @@
       "Load": [
         "Naloži"
       ],
+      "Load embedded images": [
+        "Naloži vdelane slike"
+      ],
       "Load image": [
         "Naloži sliko"
       ],
       "Load more": [
         "Naloži več"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Nastavi ${ MAIL_APP_NAME } kot privzeto aplikacijo za e-pošto"
       ],
       "Manage addresses": [
         "Upravljanje naslovov"
@@ -600,6 +663,12 @@
       "Merge contacts": [
         "Združi stike"
       ],
+      "Messages from this sender": [
+        "Sporočila tega pošiljatelja"
+      ],
+      "Modify selection": [
+        "Spremeni izbrano"
+      ],
       "More": [
         "Več"
       ],
@@ -615,14 +684,29 @@
       "More options for accounts": [
         "Več možnosti za račune"
       ],
+      "Most frequent": [
+        "Najpogostejše"
+      ],
       "Move": [
         "Premakni"
       ],
       "move emails to": [
         "premakni e-pošto v"
       ],
+      "Move to archive": [
+        "Premakni v mapo Arhiv"
+      ],
+      "Move to category...": [
+        "Premakni v kategorijo ..."
+      ],
       "Move to folder": [
         "Premakni v mapo"
+      ],
+      "Move to inbox": [
+        "Premakni v mapo Prejeto"
+      ],
+      "Move to inbox (not spam)": [
+        "Premakni med prejeto (ni neželeno)"
       ],
       "Move to trash": [
         "Premakni v smetnjak"
@@ -690,6 +774,9 @@
       "Previous": [
         "Prejšnje"
       ],
+      "Previous conversation": [
+        "Prejšnji pogovor"
+      ],
       "Previous month": [
         "Prejšnji mesec"
       ],
@@ -708,6 +795,9 @@
       "Re-sign": [
         "Ponovno podpiši"
       ],
+      "Recently read": [
+        "Nazadnje prebrano"
+      ],
       "Reconnect": [
         "Znova poveži"
       ],
@@ -720,11 +810,17 @@
       "Refer a friend": [
         "Priporočite prijatelju"
       ],
+      "Refine it": [
+        "Zožite ga"
+      ],
       "Refresh the page": [
         "Osveži stran"
       ],
       "Remove": [
         "Odstrani"
+      ],
+      "Remove ${ attachmentName }": [
+        "Odstrani priponko ${ attachmentName }"
       ],
       "Remove bonuses": [
         "Odstrani bonuse"
@@ -743,6 +839,12 @@
       ],
       "Remove video conference": [
         "Odstrani videokonferenco"
+      ],
+      "Replaces the selected text in your message": [
+        "Zamenjaj izbrano besedilo v sporočilu"
+      ],
+      "Reply securely": [
+        "Odgovori varno"
       ],
       "Report a problem": [
         "Prijavite težavo"
@@ -765,6 +867,9 @@
       "Reset": [
         "Ponastavi"
       ],
+      "Reset search form": [
+        "Ponastavi obrazec za iskanje"
+      ],
       "Reset to default": [
         "Ponastavi na privzeto"
       ],
@@ -779,6 +884,9 @@
       ],
       "Save": [
         "Shrani"
+      ],
+      "Schedule message": [
+        "Načrtuj sporočilo"
       ],
       "Scroll to bottom": [
         "Pomik na dno"
@@ -810,8 +918,14 @@
       "Select country": [
         "Izberite državo"
       ],
+      "Select date and time": [
+        "Izberite datum in čas"
+      ],
       "Send": [
         "Pošlji"
+      ],
+      "Send anyway": [
+        "Vseeno pošlji"
       ],
       "send auto-reply email": [
         "pošlji samodejni odgovor"
@@ -819,11 +933,17 @@
       "Send Feedback": [
         "Pošlji povratne informacije"
       ],
+      "Set": [
+        "Nastavi"
+      ],
       "Set as album cover": [
         "Nastavi kot naslovnico albuma"
       ],
       "Set as default": [
         "Nastavi kot privzeto"
+      ],
+      "Set encryption": [
+        "Nastavi šifriranje"
       ],
       "Set recovery methods": [
         "Nastavite načine obnovitve"
@@ -894,6 +1014,9 @@
       "Skip verification": [
         "Preskoči preverjanje"
       ],
+      "Snooze": [
+        "Prestavi na kasneje"
+      ],
       "Start import": [
         "Začni uvažati"
       ],
@@ -915,6 +1038,9 @@
       "Take a tour": [
         "Oglejte si"
       ],
+      "This message contains remote content.": [
+        "Sporočilo vsebuje oddaljeno vsebino."
+      ],
       "Toggle Calendar app": [
         "Prikaži/skrij aplikacijo Koledar"
       ],
@@ -927,17 +1053,14 @@
       "Trust": [
         "Zaupaj"
       ],
-      "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
-      ],
       "Try again": [
         "Poskusi znova"
       ],
       "Try another method": [
         "Poskusi z drugim načinom"
+      ],
+      "Try categories": [
+        "Preizkusite kategorije"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Poskusite znova. Shranjevanje ni uspelo iz naslednjega razloga: ${ saveError }"
@@ -959,6 +1082,9 @@
       ],
       "Unordered list": [
         "Neoštevilčen seznam"
+      ],
+      "Unstar": [
+        "Odstrani zvezdico"
       ],
       "Unsubscribe": [
         "Odjavi se"
@@ -1175,6 +1301,11 @@
         "Če prekinete zdaj, nekateri dogodki morda ne bodo uvoženi"
       ]
     },
+    "Alt": {
+      "Unstar message": [
+        "Odstrani zvezdico s sporočila"
+      ]
+    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "Nabiralnik osebe ${ nameToDisplay }"
@@ -1200,7 +1331,15 @@
         "Aplikacije ${ BRAND_NAME }"
       ]
     },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Z oddajo teh povratnih informacij bosta poziv in vaši komentarji vidni moderacijski ekipi ${ BRAND_NAME }."
+      ]
+    },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Podatki ostanejo na napravi za zaščito vaše zasebnosti. Zahteva prenos in združljivo strojno opremo."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Podatki ostanejo na vaši napravi, treba pa je opraviti enkratni prenos ter imeti združljivo strojno opremo."
       ],
@@ -1599,6 +1738,68 @@
         "Udeležba?"
       ]
     },
+    "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } je sprejel/-a povabilo in predlagal/-a nov termin za ta dogodek."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "${ participantName } je sprejel/-a povabilo na eno ponovitev tega dogodka."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } je sprejel/-a vaše povabilo in predlagal/-a nov termin za eno ponovitev tega dogodka."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } je zahteval posodobitev dogodka, ki ne ustreza podrobnostim vašega povabila. Preverite podrobnosti povabila v vašem koledarju."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } je zavrnil/-a povabilo na eno ponovitev tega dogodka."
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } je zavrnil/-a povabilo na ta dogodek."
+      ],
+      "${ participantName } declined your invitation.": [
+        "${ participantName } je zavrnil/-a vaše povabilo."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } je sprejel/-a povabilo na eno ponovitev tega dogodka."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } je sprejel/-a povabilo na ta dogodek."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } je sprejel/-a vaše povabilo in predlagal/-a nov termin za ta dogodek. Odgovor in predlog sta zastarela."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } je zavrnil/-a vaše povabilo in predlagal/-a nov termin za eno ponovitev tega dogodka. Odgovor in predlog sta zastarela."
+      ],
+      "${ participantName } had previously declined your invitation to one occurrence of the event.": [
+        "${ participantName } je prej zavrnil/-a vaše povabilo na eno ponovitev tega dogodka."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
+        "${ participantName } je predlagal nov termin za eno ponovitev tega dogodka. Ta predlog je zastarel."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } je pogojno sprejel/-a povabilo in predlagal/-a nov termin za ta dogodek. Odgovor in predlog sta zastarela."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } je pogojno sprejel/-a povabilo na ta dogodek."
+      ],
+      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } je pogojno sprejel/-a vaše povabilo na eno ponovitev tega dogodka."
+      ],
+      "This invitation is out of date. The event has been canceled.": [
+        "To povabilo je zastarelo. Dogodek je bil odpovedan."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Ta predlog novega datuma se ne ujema s podatki vašega vabila. V koledarju preverite podrobnosti o vabilu."
+      ],
+      "This response is out of date.": [
+        "Ta odziv je zastarel."
+      ],
+      "This response is out of date. You have no calendars.": [
+        "Ta odziv je zastarel. Nimate koledarjev."
+      ]
+    },
     "Cancellation reminder": {
       "Reactivate by ${ formattedEndDate } to keep these features:": [
         "Obnovite naročnino najkasneje do ${ formattedEndDate } in ohranite funkcije:"
@@ -1892,6 +2093,19 @@
         "bela"
       ]
     },
+    "Commander action": {
+      "Go to Sent": [
+        "Pojdi v mapo Poslano"
+      ],
+      "Search": [
+        "Išči"
+      ]
+    },
+    "Composer email icon": {
+      "End-to-end encrypted": [
+        "Šifrirano od konca do konca."
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "se začne z"
@@ -1925,6 +2139,9 @@
       ]
     },
     "Confirm modal title": {
+      "Edit and reschedule": [
+        "Uredite in prestavite"
+      ],
       "Quit import customization?": [
         "Ali želite prekiniti prilagajanje uvoza?"
       ],
@@ -2853,6 +3070,14 @@
         "Za ${ VPN_APP_NAME }"
       ]
     },
+    "CustomFilter": {
+      "Filter on": [
+        "Filter aktiven"
+      ],
+      "Sender": [
+        "Pošiljatelj"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mesec"
@@ -3017,8 +3242,14 @@
       "No ads. No trackers.": [
         "Brez oglasov. Brez sledilnikov."
       ],
+      "No labels": [
+        "Brez oznak"
+      ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Berite, odgovarjajte in bodite na tekočem z Gmailom neposredno v ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Pošiljajte in prejemajte Gmail sporočila neposredno v ${ MAIL_APP_NAME }. Svoj naslov povežite v ${ addressesSettingsLink }."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Nastavite način obnovitve podatkov, da preprečite izgubo podatkov."
@@ -3064,9 +3295,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Uvoz bomo začasno ustavili pri 80 % zasedenosti shrambe, da rezerviramo prostor za nova sporočila."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Uvozili bomo vašo staro e-pošto in povezali vaš Gmail s ${ MAIL_APP_NAME }, tako da se bodo nova sporočila prikazala samodejno"
       ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "Uvozili bomo vašo staro e-pošto, preskočili dvojnike in se povezali z vašim Gmailom, da se bodo nova sporočila prikazovala samodejno. Uvoz lahko kadar koli razveljavite v nastavitvah Easy Switch"
@@ -3303,6 +3531,17 @@
         "${ emailAddress } je pogojno sprejel vaše vabilo na ${ eventTitle }"
       ]
     },
+    "Email reminder banner": {
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Dogodek se začne čez ${ minutesUntilEvent } minuto",
+        "Dogodek se začne čez ${ minutesUntilEvent } minuti",
+        "Dogodek se začne čez ${ minutesUntilEvent } minute",
+        "Dogodek se začne čez ${ minutesUntilEvent } minut"
+      ],
+      "Event starts tomorrow": [
+        "Dogodek se začne jutri"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Preklic dogodka dne ${ formattedStart }"
@@ -3401,6 +3640,9 @@
       "Checkout expired, please try again": [
         "Seja je potekla, poskusite znova."
       ],
+      "Choose a date in the future.": [
+        "Izberite datum, ki je v prihodnosti."
+      ],
       "Choose a date within the next ${ n } day.": [
         "Izberite datum v naslednjem ${ n } dnevu.",
         "Izberite datuma v naslednjih ${ n } dneh.",
@@ -3425,6 +3667,9 @@
       "Contact signature not verified": [
         "Podpis stika ni potrjen"
       ],
+      "Contact your organization’s administrator to resolve this": [
+        "Za rešitev te težave se obrnite na skrbnika organizacije"
+      ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Iskanje vsebine ni mogoče omogočiti v tem brskalniku. Izklopite način zasebnega brskanja ali uporabite drug brskalnik."
       ],
@@ -3436,6 +3681,9 @@
       ],
       "Could not open updated vault": [
         "Ni bilo mogoče odpreti posodobljenega trezorja"
+      ],
+      "Decryption error: decryption of this message's encrypted content failed.": [
+        "Napaka pri dešifriranju: dešifriranje šifrirane vsebine tega sporočila ni uspelo."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Izberite vsaj ${ calendarsToFixCount } koledar manj",
@@ -3526,6 +3774,9 @@
       ],
       "Invalid expiration date": [
         "Neveljaven datum poteka veljavnosti"
+      ],
+      "Invalid expiration time": [
+        "Neveljaven čas izteka veljavnosti"
       ],
       "Invalid IBAN": [
         "Neveljaven IBAN"
@@ -3668,6 +3919,9 @@
       "Please select billing state": [
         "Izberite državo za izstavitev računa"
       ],
+      "Please try generating the text again": [
+        "Poskusite znova ustvariti besedilo"
+      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da boste lahko upravljali več uporabnikov."
       ],
@@ -3686,8 +3940,17 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Pridobljeni primarni ključ za uporabnika ${ BRAND_NAME } ni veljaven za pošiljanje sporočil"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Težava pri nalaganju pomočnika za pisanje. Če uporabljate zasebni način, poskusite uporabiti običajni način brskanja ali zaženite pomočnika za pisanje na strežnikih."
+      ],
       "Process aborted": [
         "Proces je bil prekinjen"
+      ],
+      "re-activate the previous key": [
+        "ponovno aktivirajte prejšnji ključ"
+      ],
+      "re-importing": [
+        "ponovni uvoz"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Odstranjen podvojen prejemnik: ${ recipents }",
@@ -3746,6 +4009,9 @@
       "Tab closed": [
         "Zavihek je zaprt"
       ],
+      "Thanks for the feedback!": [
+        "Hvala za povratne informacije!"
+      ],
       "The amount due has changed. Please try again.": [
         "Znesek, ki ga je treba plačati, se je spremenil. Poskusite znova."
       ],
@@ -3782,6 +4048,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "V vašem zunanjem računu je preveč map. Prilagodite uvoz in izbrišite nekaj map."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Pri dešifriranju sporočila je prišlo do napake. Če se težava ponavlja, se obrnite na našo podporo strankam."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Pri izvozu stikov vCard je prišlo do napake"
       ],
@@ -3802,6 +4071,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "To ime oznake ni na voljo. Izberite drugačno ime."
+      ],
+      "This message has already been sent": [
+        "Sporočilo je že bilo poslano"
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
@@ -3851,6 +4123,9 @@
         "Hkrati so lahko odprta največ ${ maxActiveComposer } okenca urejevalnika",
         "Hkrati je lahko odprtih največ ${ maxActiveComposer } okenc urejevalnika"
       ],
+      "You did not provide a file.": [
+        "Manjka datoteka."
+      ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
       ],
@@ -3868,6 +4143,9 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Vašega sporočila ni mogoče dešifrirati. Če ste izbrisali katerega od svojih naslovnih ključev, jih poskusite ponovno uvoziti prek povezave ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -3881,6 +4159,11 @@
         "Dovoljena sta največ ${ maxAttendees } udeleženca na vabilo",
         "Dovoljeni so največ ${ maxAttendees } udeleženci na vabilo",
         "Dovoljenih je največ ${ maxAttendees } udeležencev na vabilo"
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Sent messages cannot be moved to Spam": [
+        "Poslanih sporočil ni bilo mogoče premakniti v mapo Neželena pošta"
       ]
     },
     "Error importing calendar": {
@@ -4009,6 +4292,9 @@
       ]
     },
     "Error message": {
+      "An error occurred with the categories": [
+        "Prišlo je do napake s kategorijami"
+      ],
       "App currently unavailable": [
         "Aplikacija trenutno ni na voljo"
       ],
@@ -4347,6 +4633,20 @@
         "Terabajtov"
       ]
     },
+    "Filter": {
+      "Filter": [
+        "Filter"
+      ],
+      "Filter and sort emails": [
+        "Filtriraj in razvrsti sporočila"
+      ],
+      "Has attachments": [
+        "S priponkami"
+      ],
+      "Reset": [
+        "Ponastavi"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arhiv"
@@ -4379,6 +4679,9 @@
       ]
     },
     "Filter modal type": {
+      "If the subject": [
+        "Če je zadeva"
+      ],
       "Select…": [
         "Izberi …"
       ],
@@ -4470,6 +4773,12 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
+      ],
+      "Start free trial": [
+        "Začnite brezplačni preizkus"
+      ],
+      "Try the new desktop app": [
+        "Preizkusite novo aplikacijo za namizne računalnike"
       ]
     },
     "Get started checklist instructions": {
@@ -4484,6 +4793,18 @@
         "Še ${ remainingDaysCount } dneva",
         "Še ${ remainingDaysCount } dni",
         "Še ${ remainingDaysCount } dni"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Trajno blokirajte e-poštno komunikacijo prevarantov."
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Pridobi ${ BRAND_NAME } naslov"
+      ],
+      "Discover privacy features": [
+        "Odkrijte funkcije zasebnosti"
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Še naprej uporabljajte ${ MAIL_APP_NAME }, da odkrijete več načinov, kako ${ BRAND_NAME } varuje vašo zasebnost in poenostavlja pošiljanje e-pošte."
       ]
     },
     "Gmail forwarding": {
@@ -4543,6 +4864,9 @@
       ],
       "Drawer": [
         "Obrobni stolpec"
+      ],
+      "Hardware not compatible": [
+        "Strojna oprema ni združljiva"
       ],
       "Password ends with": [
         "Geslo se konča z"
@@ -4635,6 +4959,9 @@
         "${ totalAttendees } udeleženca",
         "${ totalAttendees } udeleženci",
         "${ totalAttendees } udeležencev"
+      ],
+      "Organizer:": [
+        "Organizator:"
       ]
     },
     "Import calendar": {
@@ -5061,6 +5388,12 @@
         "${ groupCounts } najdene skupine",
         "${ groupCounts } najdenih skupin"
       ],
+      "${ n } unread conversation": [
+        "${ n } neprebran pogovor",
+        "${ n } neprebrana pogovora",
+        "${ n } neprebrani pogovori",
+        "${ n } neprebranih pogovorov"
+      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } očiščena povezava",
         "${ numberOfUTMTrackers } očiščeni povezavi",
@@ -5160,6 +5493,12 @@
         "${ subscription.UnreadMessageCount } neprebrana",
         "${ subscription.UnreadMessageCount } neprebranih"
       ],
+      "${ total } conversation": [
+        "${ total } pogovor",
+        "${ total } pogovora",
+        "${ total } pogovori",
+        "${ total } pogovorov"
+      ],
       "${ total } message": [
         "${ total } sporočilo",
         "${ total } sporočili",
@@ -5220,6 +5559,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtriraj, če je izpolnjen KATERIKOLI od naslednjih pogojev)"
       ],
+      "(No Recipient)": [
+        "(brez prejemnika)"
+      ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** rezultat najden v ${ labelName }",
         "**${ total }** rezultata najdena v ${ labelName }",
@@ -5268,6 +5610,9 @@
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
       ],
+      "Activation in progress": [
+        "Aktivacija v teku"
+      ],
       "Active": [
         "Aktivno"
       ],
@@ -5307,6 +5652,9 @@
         "Vse (${ totalFoldersCount } oznake)",
         "Vse (${ totalFoldersCount } oznak)"
       ],
+      "All messages stored with this label will be permanently deleted.": [
+        "Vsa sporočila, shranjena s to oznako, bodo trajno izbrisana."
+      ],
       "All your changes will be lost.": [
         "Vse vaše spremembe bodo izgubljene."
       ],
@@ -5325,6 +5673,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Izbrisane bodo tudi vse podmape. E-poštna sporočila, shranjena v mapi ${ nameDeleted }, ne bodo izbrisana in jih boste našli v mapi Vsa pošta."
       ],
+      "Archive existing messages": [
+        "Arhiviraj obstoječa sporočila"
+      ],
       "Are you sure you want to delete this folder?": [
         "Ali ste prepričani, da želite izbrisati to mapo?"
       ],
@@ -5337,6 +5688,12 @@
       "Are you sure you want to discard your import?": [
         "Ali ste prepričani, da želite zavreči uvoz?"
       ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Ali ste prepričani, da želite trajno izbrisati ${ count } pogovor?",
+        "Ali ste prepričani, da želite trajno izbrisati ${ count } pogovora?",
+        "Ali ste prepričani, da želite trajno izbrisati ${ count } pogovore?",
+        "Ali ste prepričani, da želite trajno izbrisati ${ count } pogovorov?"
+      ],
       "Are you sure you want to permanently delete ${ count } draft?": [
         "Ali ste prepričani, da želite trajno izbrisati ${ count } osnutek?",
         "Ali ste prepričani, da želite trajno izbrisati ${ count } osnutka?",
@@ -5348,6 +5705,12 @@
         "Ali ste prepričani, da želite trajno izbrisati ${ count } sporočili?",
         "Ali ste prepričani, da želite trajno izbrisati ${ count } sporočila?",
         "Ali ste prepričani, da želite trajno izbrisati ${ count } sporočil?"
+      ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "Ali ste prepričani, da želite trajno izbrisati ta pogovor?"
+      ],
+      "Are you sure you want to permanently delete this message?": [
+        "Ali ste prepričani, da želite trajno izbrisati to sporočilo?"
       ],
       "Attention required": [
         "Pozornost!"
@@ -5376,6 +5739,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Okrepite prepoznavnost blagovne znamke vaše organizacije in ustvarite doslednejšo spletno izkušnjo za svoje uporabnike."
       ],
+      "Browse privately and access blocked content.": [
+        "Brskajte zasebno in dostopajte do blokirane vsebine."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
       ],
@@ -5403,11 +5769,20 @@
       "Clear data": [
         "Počisti podatke"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Izbris shranjenih podatkov v brskalniku onemogoči iskanje po vsebini sporočil v tej napravi. Če želite omogočiti to možnost, morate ponovno prenesti vsa sporočila."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Počisti podatke brskalnika (vključno z naloženimi sporočili, …)"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
       ],
       "Close this screen to exit.": [
         "Za izhod zaprite ta zaslon."
+      ],
+      "Composer:": [
+        "Urejevalnik:"
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Povežite se s programom ${ VPN_APP_NAME } za zasebno brskanje"
@@ -5496,6 +5871,12 @@
       "Default email application": [
         "Privzeta aplikacija za e-pošto"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Ali ste vedeli, da imate v ${ BRAND_NAME } računu vključeno šifrirano shranjevanje v oblaku? Pojdite v ${ DRIVE_APP_NAME } in kar najbolje izkoristite svoj prostor. Brezplačen je."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Ste vedeli? Samo za vas smo rezervirali krajši e-poštni naslov. To je vaše uporabniško ime, ki mu sledi »@${ PM_DOMAIN }«."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Odkrijte nove odklenjene funkcije in jih takoj začnite uporabljati!"
       ],
@@ -5510,6 +5891,9 @@
         "Ali želite vseeno prenesti ti priponki?",
         "Ali želite vseeno prenesti te priponke?",
         "Ali želite vseeno prenesti te priponke?"
+      ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "Ali želite ponovno podpisati kontaktne podatke in pri tem zaupati ključem z naslednjimi prstnimi odtisi?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ne vidite ničesar? Ne pozabite izklopiti prepovedi pojavnih oken."
@@ -5526,11 +5910,20 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Prenesite svojo najljubšo aplikacijo in uživajte v svoji zasebnosti povsod."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Prenašanje pomočnika pri pisanju ... ${ progressDisplay } GB"
+      ],
       "Drop file here to upload": [
         "Spusti datoteko tukaj za nalaganje."
       ],
       "Drop to import": [
         "Spusti za uvoz."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Tega sporočila zaradi konfiguracije prejemnika ni mogoče poslati z datumom poteka za ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "Tega sporočila zaradi konfiguracije prejemnika ni mogoče poslati z datumom poteka."
       ],
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
@@ -5538,8 +5931,14 @@
       "Each code can only be used once": [
         "Vsaka koda se lahko uporabi samo enkrat"
       ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Enostavno upravljajte prijave glasil in poštnih seznamov."
+      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
+      ],
+      "Edit expiration time": [
+        "Uredi čas poteka"
       ],
       "Edit link": [
         "Uredi povezavo"
@@ -5552,6 +5951,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-poštno gostovanje je na voljo samo za domene, ki jih že imate. Registracija domene trenutno ni na voljo preko ${ BRAND_NAME }. Lahko pa gostujete e-pošto za domene, registrirane pri kateremkoli registrarju domen."
+      ],
+      "Email tracker protection is disabled": [
+        "Zaščita pred e-poštnimi sledilniki je onemogočena"
       ],
       "Emails are automatically signed": [
         "Sporočila so samodejno podpisana"
@@ -5606,6 +6008,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Vse v ${ planOrAppName }"
+      ],
+      "Expiration time": [
+        "Čas izteka veljavnosti"
       ],
       "Expired": [
         "Poteklo"
@@ -5670,8 +6075,14 @@
       "here": [
         "tukaj"
       ],
+      "Hide original message": [
+        "Skrij originalno sporočilo"
+      ],
       "High Priority": [
         "Visoka pomembnost"
+      ],
+      "How hide-my-email aliases works": [
+        "Kako delujejo vzdevki hide-my-email"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
@@ -5736,14 +6147,17 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V naslednjem koraku boste lahko vložili polog z uporabo Bitcoin naslova."
       ],
+      "Include Spam/Trash.": [
+        "Vključi neželeno pošto in smetnjak."
+      ],
       "Included": [
         "Vključeno"
       ],
+      "Included for free with your plan": [
+        "Vključeno brezplačno v vaš paket"
+      ],
       "Inherited from parent folder": [
         "Podedovano od nadrejene mape"
-      ],
-      "Insert image": [
-        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -5832,6 +6246,18 @@
       "Merged": [
         "Združeno"
       ],
+      "Message download status:": [
+        "Stanje prenosa sporočila:"
+      ],
+      "Message sent": [
+        "Sporočilo poslano"
+      ],
+      "Message sent.": [
+        "Sporočilo poslano."
+      ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Sporočilo bo poslano zjutraj ob ${ formattedTime }"
+      ],
       "Monitor accounts": [
         "Nadzor računov"
       ],
@@ -5864,6 +6290,12 @@
       ],
       "No label selected": [
         "Izbrana ni nobena oznaka"
+      ],
+      "No messages found": [
+        "Ni najdenih sporočil"
+      ],
+      "No more results found": [
+        "Ni najdenih rezultatov"
       ],
       "No payment is required at this time.": [
         "Plačilo ni potrebno."
@@ -5901,6 +6333,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Odprite priročnik za priporočena dejanja in koristne povezave."
       ],
+      "Optional": [
+        "Neobvezno"
+      ],
       "or discover other features:": [
         "ali odkrijte druge funkcije:"
       ],
@@ -5912,6 +6347,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Naša opozorila dajejo prednost varnosti. Če ne prepoznate nobenih informacij o vdorih, lahko to poročilo varno prezrete."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Naš sistem je označil to sporočilo kot poskus lažnega predstavljanja. Preverite, ali je legitimno."
       ],
       "password": [
         "geslo"
@@ -5933,6 +6371,9 @@
       ],
       "Phone number": [
         "Telefonska številka"
+      ],
+      "Please add at least one recipient.": [
+        "Dodajte vsaj enega prejemnika."
       ],
       "Please authenticate your card in the verification tab.": [
         "Prosim, potrdite svojo kartico na zavihku za preverjanje."
@@ -5976,6 +6417,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Izberite, kateri e-poštni naslov ali naslove želite dodati v ${ groupName }."
       ],
+      "Please share what the issue is": [
+        "Zaupajte nam, v čem je težava"
+      ],
       "Please try again in a few moments": [
         "Poskusite znova čez nekaj trenutkov."
       ],
@@ -6018,6 +6462,9 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Zasebno brskanje (ali »način brez beleženja zgodovine«) je uporabno samo za ohranjanje zasebnosti vaše dejavnosti znotraj vaše naprave. Preprečuje, da bi vaš brskalnik shranjeval zgodovino in piškotke, vendar vas ne naredi nevidne. Vaš internetni ponudnik, skrbnik omrežja in spletne strani, ki jih obiskujete, lahko še vedno vidijo, kaj počnete v spletu."
       ],
+      "Proofread text": [
+        "Preveri besedilo"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Javna souporaba dokumentov še ni podprta."
       ],
@@ -6036,14 +6483,26 @@
       "Registering your subscription…": [
         "Registriram vašo naročnino …"
       ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Odstrani vse podatke, povezane z aplikacijo (vključno s prenesenimi sporočili)"
+      ],
       "Restore": [
         "Obnovitev"
       ],
       "Right to Left": [
         "Z desne proti levi"
       ],
+      "Saved at ${ dateString }": [
+        "Shranjeno ob ${ dateString }"
+      ],
       "Scan the QR code with your mobile device": [
         "Skenirajte kodo QR z mobilno napravo."
+      ],
+      "Scheduling message": [
+        "Načrtovanje sporočila ..."
+      ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Še danes zaščitite svoje datoteke z brezplačnim šifriranim shranjevanjem v oblaku."
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Izberite ${ elementsCount } v ${ location }",
@@ -6059,6 +6518,12 @@
       ],
       "Send messages at just the right now": [
         "Pošljite sporočila ob pravem času"
+      ],
+      "Sender has been blocked.": [
+        "Pošiljatelj je blokiran."
+      ],
+      "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
+        "Pošiljanje sporočil z naslova @pm.me je plačljiva možnost. Sporočilo bo poslano z vašega privzetega naslova ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Poslano z varne e-pošte <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6093,6 +6558,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
       ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Dremež do ${ dateString } ob ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Dremež do jutri, ${ formattedTime }"
+      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nekatere vlade blokirajo ali omejujejo dostop do določenih spletnih strani. VPN vam pomaga zaobiti cenzuro, pri tem pa ohranja vašo dejavnost in identiteto zasebno."
       ],
@@ -6107,6 +6578,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
+      ],
+      "Subject: ": [
+        "Stvar: "
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
@@ -6162,6 +6636,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
       ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Prvotni pošiljatelj tega sporočila ni več veljaven. Sporočilo bo poslano z vašega privzetega naslova, ${ defaultEmail }."
+      ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
       ],
@@ -6173,6 +6650,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Postopek preverjanja bo odprl nov zavihek brskalnika. Pred tem onemogočite prepoved pojavnih oken."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "V mapi Prejeto nimate sporočil od tega pošiljatelja."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
@@ -6189,8 +6669,14 @@
       "This file is too large to preview": [
         "Ta datoteka je prevelika za predogled"
       ],
+      "This invitation is saved in a disabled calendar.": [
+        "To povabilo je shranjeno v onemogočenem koledarju."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "To je ime ali vzdevek vaše organizacije, ki ga bodo videli vaši uporabniki. Spremenite ga lahko kadarkoli."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Namenjen je kot pripomoček pri pisanju. Preverite točnost predlaganega besedila. ${ learnMoreResult }"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To je zdaj vaš naslov ${ defaultEmailAddress } za pošiljanje novih sporočil."
@@ -6204,11 +6690,23 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "To pomeni, da vaš ponudnik internetnih storitev in spletne strani, ki jih obiskujete, ne morejo povezati vaših osebnih podatkov z vašo spletno aktivnostjo."
       ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Temu sporočilu je pripet ključ, ki še ni bil zaupanja vreden."
+      ],
+      "This message is from a mailing list.": [
+        "To sporočilo je s poštnega seznama."
+      ],
+      "This message is signed by a key that has not been trusted yet.": [
+        "To sporočilo je podpisano s ključem, ki mu še ni bilo zaupano."
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "To sporočilo bo označeno kot neželena pošta. Ali se želite tudi odjaviti od prihodnje pošte?",
         "Ti sporočili bosta označeni kot neželena pošta. Ali se želite tudi odjaviti od prihodnje pošte?",
         "Ta sporočila bodo označena kot neželena pošta. Ali se želite tudi odjaviti od prihodnje pošte?",
         "Ta sporočila bodo označena kot neželena pošta. Ali se želite tudi odjaviti od prihodnje pošte?"
+      ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Sporočilo se bo premaknilo med osnutke, kjer ga lahko urejate. Čas pošiljanja morate ponovno nastaviti."
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "To edinstveno kodo lahko spletne strani in ponudniki internetnih storitev (ISP) uporabijo za povezavo vaše lokacije in zgodovine brskanja z vašo napravo"
@@ -6234,6 +6732,9 @@
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Če želite odstraniti omejitve, lahko nadgradite na plačljiv paket."
       ],
+      "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
+        "Za odjavo s tega seznama za pošiljanje bo poslano e-poštno sporočilo s strani ${ boldFrom }, z naslednjimi podatki, kot jih je določil pošiljatelj glasila:"
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Za uporabo preverjanja naslova morate zaupati enemu ali več razpoložljivim javnim ključem, vključno s tistim, ki ga želite uporabiti za pošiljanje. To preprečuje ponarejanje šifrirnih ključev."
       ],
@@ -6255,6 +6756,12 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Preizkusite nove zmožnosti, posodobitve in izdelke ${ BRAND_NAME }, preden postanejo dostopni širši javnosti. Aplikacija se bo znova naložila."
       ],
+      "Unread conversations": [
+        "Neprebrani pogovori"
+      ],
+      "Unread messages": [
+        "Neprebrana sporočila"
+      ],
       "Unsaved changes": [
         "Neshranjene spremembe"
       ],
@@ -6270,6 +6777,12 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Nadgradite ali kadar koli počistite prostor, da prenesete preostalo"
       ],
+      "Upgrade to support our mission of privacy for all.": [
+        "Nadgradite naročniški paket in podprite naše poslanstvo zasebnosti za vsakogar."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Nadgradite naročniški paket ${ MAIL_APP_NAME } za uporabo s programi Apple Mail, Outlook ali Thunderbird."
+      ],
       "Upload picture": [
         "Naloži fotografijo"
       ],
@@ -6278,6 +6791,12 @@
       ],
       "URL link": [
         "Povezava URL"
+      ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Uporabite različne e-poštne naslove za različne namene, tako da lahko preprosto ločite e-poštna sporočila glede na službeno, osebno ali druga področja."
       ],
       "User activated": [
         "Uporabnik je aktiviran."
@@ -6305,6 +6824,9 @@
       ],
       "Warning": [
         "Opozorilo"
+      ],
+      "We could not verify the sender's trusted keys.": [
+        "Nismo mogli preveriti pošiljateljevih zaupanja vrednih ključev."
       ],
       "We couldn’t process your payment.": [
         "Vašega plačila ni bilo mogoče obdelati."
@@ -6339,11 +6861,17 @@
       "Week": [
         "Teden"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Ko vpisujete vaš e-poštni naslov, uporabite edinstvene in razpoložljive vzdevke hide-my-email namesto vašega resničnega e-poštnega naslova."
+      ],
       "When working remotely": [
         "Pri delu na daljavo"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
+      ],
+      "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
+        "Ko ste omogočili zaupanja vredne ključe za ${ senderName }, so bili javni ključi dodani kontaktnim podrobnostim."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
@@ -6405,8 +6933,14 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vklopite lahko obvestila o prispetju novih e-poštnih sporočil v to mapo."
       ],
+      "You do not have any messages here": [
+        "Tukaj nimate nobenega sporočila."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
+      ],
+      "You have ${ unread } in your inbox.": [
+        "V mapi Prejeto imate ${ unread }."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "V tej mapi je shranjen **${ count } pogovor**",
@@ -6438,6 +6972,9 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Imate preizkusno naročnino ${ planTitle }. Plačilo trenutno ni potrebno. Vaša naročnina bo ob koncu preizkusnega obdobja samodejno podaljšana."
       ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Sporočilu niste dodali zadeve. Ali ga vseeno želite poslati?"
+      ],
       "You may be redirected to your bank’s website.": [
         "Lahko vas preusmerijo na spletno stran vaše banke."
       ],
@@ -6449,6 +6986,12 @@
         "Izbrali ste **${ count } pogovora** iz te mape",
         "Izbrali ste **${ count } pogovore** iz te mape",
         "Izbrali ste **${ count } pogovorov** iz te mape"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Izbrali ste **${ count } pogovor** s to oznako",
+        "Izbrali ste **${ count } pogovora** s to oznako",
+        "Izbrali ste **${ count } pogovore** s to oznako",
+        "Izbrali ste **${ count } pogovorov** s to oznako"
       ],
       "You selected **${ count } message** from this folder": [
         "Izbrali ste **${ count } sporočilo** iz te mape",
@@ -6587,6 +7130,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Do urejenega poštnega predala vas loči le nekaj klikov."
       ]
     },
     "info": {
@@ -6659,6 +7205,9 @@
       ]
     },
     "Key pinning": {
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Če kliknete »Ključ zaupanja«, boste ustvarili nov stik in ta javni ključ povezali s tem pošiljateljem. E-poštna sporočila s tega naslova bodo samodejno kriptografsko preverjena."
+      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Ali želite zaupati primarnemu javnemu ključu z naslednjim prstnim odtisom?",
         "Ali želite zaupati primarnima javnima ključema z naslednjima prstnima odtisoma?",
@@ -6670,6 +7219,11 @@
         "Za ta e-poštna naslova ste omogočili preverjanje naslova z zaupanja vrednimi ključi,\nvendar nobenemu aktivnemu šifrirnemu ključu ni bilo potrjeno zaupanje.\nČe želite poslati sporočila na te e-poštne naslove, morate zaupati veljavnim ključem za pošiljanje.",
         "Za te e-poštne naslove ste omogočili preverjanje naslova z zaupanja vrednimi ključi,\nvendar nobenemu aktivnemu šifrirnemu ključu ni bilo potrjeno zaupanje.\nČe želite poslati sporočila na te e-poštne naslove, morate zaupati veljavnim ključem za pošiljanje.",
         "Za te e-poštne naslove ste omogočili preverjanje naslova z zaupanja vrednimi ključi,\nvendar nobenemu aktivnemu šifrirnemu ključu ni bilo potrjeno zaupanje.\nČe želite poslati sporočila na te e-poštne naslove, morate zaupati veljavnim ključem za pošiljanje."
+      ]
+    },
+    "Key validation warning": {
+      "Recipient's key validation failed: ${ validationErrorsMessage }": [
+        "Prejemnikovo preverjanje ključa ni uspelo: ${ validationErrorsMessage }"
       ]
     },
     "Keyboard shortcut name": {
@@ -6887,11 +7441,17 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
       ],
+      "/month": [
+        "/mesec"
+      ],
       "Account holder": [
         "Imetnik računa"
       ],
       "Actions": [
         "Dejanja"
+      ],
+      "Active filter:": [
+        "Aktivni filter:"
       ],
       "Add email address": [
         "Dodaj e-poštni naslov"
@@ -6910,6 +7470,9 @@
       ],
       "ALL": [
         "VSE"
+      ],
+      "Also archive": [
+        "Tudi arhiviraj"
       ],
       "AND": [
         "IN"
@@ -6980,6 +7543,9 @@
       "Category": [
         "Vrsta napake"
       ],
+      "Category:": [
+        "Vrsta napake:"
+      ],
       "City": [
         "Mesto"
       ],
@@ -7028,6 +7594,9 @@
       "Date": [
         "Datum"
       ],
+      "Date:": [
+        "Datum:"
+      ],
       "Deals, offers, marketing emails": [
         "Promocije, ponudbe, marketinška e-pošta"
       ],
@@ -7046,6 +7615,9 @@
       "Don't show this again": [
         "Ne prikazuj več"
       ],
+      "Download logs": [
+        "Prenesite dnevnike"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "npr. Amazon, eBay, Etsy"
       ],
@@ -7054,6 +7626,9 @@
       ],
       "Email address": [
         "E-poštni naslov"
+      ],
+      "Email categories": [
+        "E-poštne kategorije"
       ],
       "Email format": [
         "Oblika e-pošte"
@@ -7079,6 +7654,9 @@
       "Enable desktop notifications": [
         "Omogoči obvestila na namizju"
       ],
+      "Enable filter": [
+        "Omogoči filter"
+      ],
       "Encrypt emails": [
         "Šifriraj sporočila"
       ],
@@ -7102,6 +7680,9 @@
       ],
       "Forwards to": [
         "Posreduje na"
+      ],
+      "From": [
+        "Od"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -7169,6 +7750,9 @@
       "Last name": [
         "Priimek"
       ],
+      "Layout": [
+        "Postavitev"
+      ],
       "Location": [
         "Kraj"
       ],
@@ -7183,6 +7767,15 @@
       ],
       "Mark as": [
         "Označi kot"
+      ],
+      "Marked as read": [
+        "Označeno kot prebrano"
+      ],
+      "Message:": [
+        "Sporočilo:"
+      ],
+      "Move messages to": [
+        "Premakni sporočila v"
       ],
       "Move to": [
         "Premakni v"
@@ -7202,11 +7795,17 @@
       "New password": [
         "Novo geslo"
       ],
+      "Newsletter entry deleted": [
+        "Glasilo je bilo izbrisano"
+      ],
       "Newsletters": [
         "Glasila"
       ],
       "No label found": [
         "Ni najdenih oznak"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Nič več manjkajočih pomembnih sporočil! Ta so zdaj prikazana pod ${ primaryCopy }. Vse ostalo je razvrščeno po kategorijah, tako da jih je enostavno najti in ne zapolnijo vaše mape »Prejeto«."
       ],
       "Note": [
         "Opomba"
@@ -7307,6 +7906,9 @@
       "Send auto-reply": [
         "Pošlji samodejni odgovor"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Delite svojo razpoložljivost na straneh za rezervacije v aplikaciji ${ CALENDAR_APP_NAME } in organizirajte varna srečanja z aplikacijo ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Podpiši sporočila"
       ],
@@ -7364,11 +7966,17 @@
       "Transactions": [
         "Transakcije"
       ],
+      "Undisclosed Recipients": [
+        "Nerazkriti prejemniki"
+      ],
       "Updates": [
         "Posodobitve"
       ],
       "Upload picture": [
         "Naloži fotografijo"
+      ],
+      "URL": [
+        "URL"
       ],
       "Username": [
         "Uporabniško ime"
@@ -7399,6 +8007,9 @@
       ],
       "Without attachment": [
         "Brez priponk"
+      ],
+      "Writing assistant": [
+        "Pomočnik pri pisanju"
       ],
       "Your alias": [
         "Vaš vzdevek"
@@ -7432,6 +8043,11 @@
         "Do"
       ]
     },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Datum"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Barva"
@@ -7440,6 +8056,11 @@
     "Label for contact group name": {
       "Name": [
         "Ime"
+      ]
+    },
+    "Label Recipient": {
+      "From": [
+        "Od"
       ]
     },
     "Label, credit card": {
@@ -7477,6 +8098,14 @@
         "Za: ${ to }"
       ]
     },
+    "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Nalaganje vaših naročnin na glasila ..."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Niste naročeni na aktivne novice ali na poštne sezname."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Stranska plošča"
@@ -7502,6 +8131,12 @@
       ],
       "contact us": [
         "stopite v stik z nami"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Za odgovor na to povabilo ustvarite nov koledar"
+      ],
+      "Enable your address again to modify your answer.": [
+        "Za spreminjanje odgovora znova omogočite svoj naslov."
       ],
       "How to add users": [
         "Kako dodati uporabnike"
@@ -7548,8 +8183,23 @@
       "How to use Groups": [
         "Kako uporabljati skupine"
       ],
+      "Labels": [
+        "Nalepke"
+      ],
       "Learn more": [
         "Več o tem"
+      ],
+      "Manage blocked email addresses": [
+        "Upravljanje blokiranih naslovov"
+      ],
+      "More": [
+        "Več"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Odpri posodobljeni dogodek v ${ CALENDAR_APP_NAME }"
+      ],
+      "Outbox": [
+        "Odhodna pošta"
       ],
       "Pay invoice": [
         "Plačilo računa"
@@ -7569,8 +8219,14 @@
       "Resume now": [
         "Obnovi zdaj"
       ],
+      "Scheduled": [
+        "Načrtovano"
+      ],
       "settings": [
         "nastavitve"
+      ],
+      "Sign up for free": [
+        "Registrirajte se brezplačno"
       ],
       "Terms": [
         "Pogoji"
@@ -7581,6 +8237,9 @@
       "terms of service": [
         "pogoji storitve"
       ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Ta datoteka ICS vsebuje več kot en dogodek. Prenesite jo in nato uvozite dogodke v ${ CALENDAR_APP_NAME }"
+      ],
       "Trash": [
         "Smetnjak"
       ],
@@ -7589,6 +8248,9 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Za upravljanje s tem povabilom morate aktivirati vaše ključe glavnega zasebnega koledarja."
       ]
     },
     "Loading info": {
@@ -7691,6 +8353,11 @@
         "za ${ price }"
       ]
     },
+    "Mailbox": {
+      "Inbox": [
+        "Prejeto"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Zaupna video konferenca za pogovore, ki so pomembni"
@@ -7752,6 +8419,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Na voljo je nova različica aplikacije ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Message notification": {
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Načrtovanje je preklicano. Sporočilo je premaknjeno med osnutke."
       ]
     },
     "MIME type": {
@@ -8897,6 +9569,9 @@
       "Passcode copied to clipboard": [
         "Koda za dostop je bila kopirana v odložišče"
       ],
+      "Password has been set successfully": [
+        "Geslo je bilo uspešno nastavljeno"
+      ],
       "Trial started": [
         "Preizkusna doba se je začela"
       ],
@@ -9026,12 +9701,44 @@
         "Shramba"
       ]
     },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Prenesite svoja e-poštna sporočila v ${ MAIL_APP_NAME }"
+      ],
+      "Protect your accounts": [
+        "Zaščitite vaše račune"
+      ]
+    },
     "Onboarding modal": {
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } v Play Store"
+      ],
+      "Advanced encryption": [
+        "Napredno šifriranje"
+      ],
       "browser": [
         "brskalnik"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Po 30 dneh počisti izbrisana in neželena sporočila."
+      ],
+      "Continue": [
+        "Nadaljuj"
+      ],
       "Desktop": [
         "Namizje"
+      ],
+      "Distraction-free emailing": [
+        "Pošiljanje e-pošte brez motenj"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Uživajte v hitrejši in bolj osredotočeni izkušnji e-pošte z namizno aplikacijo."
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Set a display name": [
+        "Nastavi prikazno ime"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Za začetek izberite prikazno ime. To je ime, ki ga bodo uporabniki videli, ko jim pošljete sporočilo, jih povabite na dogodek ali z njimi delite datoteko."
@@ -9104,6 +9811,9 @@
     "Option": {
       "Add to existing group": [
         "Dodaj v obstoječo skupino"
+      ],
+      "All": [
+        "Vse"
       ],
       "Automatic (${ value })": [
         "Samodejno (${ value })"
@@ -9484,6 +10194,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Describe what to change": [
+        "Opišite, kaj naj se spremeni"
+      ],
       "E.g., ": [
         "Npr. "
       ],
@@ -9496,8 +10209,14 @@
       "Enter a name": [
         "Vnesi ime"
       ],
+      "Filter folders": [
+        "Filtriraj mape"
+      ],
       "Filter groups": [
         "Filtriraj skupine"
+      ],
+      "Filter labels": [
+        "Oznake filtrov"
       ],
       "Filter quick actions": [
         "Filtriraj hitra dejanja"
@@ -9559,6 +10278,9 @@
       "Search for name or email": [
         "Poiščite ime ali e-poštni naslov"
       ],
+      "Search messages": [
+        "Išči sporočila"
+      ],
       "Search parent folder": [
         "Iskanje nadrejene mape"
       ],
@@ -9579,6 +10301,9 @@
       ],
       "Start typing an email address": [
         "Začnite pisati e-poštni naslov"
+      ],
+      "Subject": [
+        "Zadeva"
       ],
       "Text": [
         "Besedilo"
@@ -9775,6 +10500,23 @@
         "POLETNA RAZPRODAJA"
       ]
     },
+    "Received email icon": {
+      "End-to-end encrypted and signed message": [
+        "Od konca do konca šifrirano in podpisano sporočilo"
+      ],
+      "End-to-end encrypted message": [
+        "Od konca do konca šifrirano sporočilo"
+      ],
+      "End-to-end encrypted message from verified sender": [
+        "Od konca do konca šifrirano sporočilo preverjenega pošiljatelja"
+      ],
+      "PGP-encrypted and signed message": [
+        "S PGP šifrirano in podpisano sporočilo"
+      ],
+      "PGP-signed message": [
+        "Sporočilo, podpisano s PGP"
+      ]
+    },
     "Referral": {
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Če naročilo oddate pred tem datumom,** prejmete **${ referrerRewardAmount }** dobropisa."
@@ -9815,9 +10557,25 @@
         "${ remainingDays } dni"
       ]
     },
+    "Reply to calendar invitation": {
+      "Calendar event updated": [
+        "Koledarski dogodek posodobljen"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "Ponovno šifriranje vabila ni uspelo. Poskusite znova."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Preglejte varnost računa"
+      ]
+    },
+    "Search - no results": {
+      "No messages scheduled": [
+        "Ni načrtovanih sporočil"
+      ],
+      "No results found": [
+        "Ni rezultatov"
       ]
     },
     "Section": {
@@ -9929,6 +10687,12 @@
       ]
     },
     "Sent email icon": {
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Šifriral ${ MAIL_APP_NAME } za preverjenega prejemnika PGP"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "Šifrirano od konca do konca za preverjenega prejemnika"
+      ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
         "Poslano z ${ MAIL_APP_NAME } s šifriranjem brez dostopa preverjenemu prejemniku",
         "Poslano z ${ MAIL_APP_NAME } s šifriranjem brez dostopa preverjenima prejemnikoma",
@@ -10142,6 +10906,17 @@
         "Odpri v ${ appName } (beta)"
       ]
     },
+    "Signature verification warning": {
+      "Sender could not be verified: Message not signed": [
+        "Pošiljatelja ni bilo mogoče preveriti: sporočilo ni podpisano"
+      ],
+      "Sender verification failed: ${ verificationErrorsMessage }": [
+        "Preverjanje pošiljatelja ni uspelo: ${ verificationErrorsMessage }"
+      ],
+      "Sender's trusted keys verification failed": [
+        "Preverjanje zaupanja vrednih ključev pošiljatelja ni uspelo"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Ne podpiši"
@@ -10166,6 +10941,16 @@
       ],
       "Private, fast, and organized": [
         "Zasebno, hitro in organizirano"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Preloži sporočilo"
+      ]
+    },
+    "Sort option": {
+      "Sort by": [
+        "Razvrsti po"
       ]
     },
     "specialoffer: Action": {
@@ -10381,6 +11166,17 @@
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
       ]
     },
+    "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Oglejte si, kaj je vključeno v vašo naročnino, in to začnite uporabljati."
+      ],
+      "Email tracking protection": [
+        "Zaščita pred sledenjem v sporočilih"
+      ],
+      "Schedule send": [
+        "Načrtuj pošiljanje"
+      ]
+    },
     "sso": {
       "Sign in": [
         "Prijava"
@@ -10395,6 +11191,14 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Preklic vaše naročnine, počakajte"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Vnesite svoj ${ MAIL_APP_NAME } naslov kot novi naslov in shranite, potrdite ali preverite spremembo."
+      ],
+      "Select service to update": [
+        "Izberite storitev, ki jo želite posodobiti"
       ]
     },
     "Step in filter modal": {
@@ -11023,6 +11827,12 @@
         "${ elementsCount } sporočila so označena kot prebrana.",
         "${ elementsCount } sporočil je označenih kot prebranih."
       ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } sporočilo je označeno z zvezdico.",
+        "${ elementsCount } sporočili sta označeni z zvezdico.",
+        "${ elementsCount } sporočila so označena z zvezdico.",
+        "${ elementsCount } sporočil je označenih z zvezdico."
+      ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } sporočilo je označeno kot neprebrano.",
         "${ elementsCount } sporočili sta označeni kot neprebrani.",
@@ -11092,11 +11902,26 @@
       "Contacts deleted": [
         "Stiki izbrisani"
       ],
+      "Conversation added to ${ labelName }.": [
+        "Pogovoru je dodana oznaka ${ labelName }."
+      ],
       "Conversation deleted": [
         "Pogovor izbrisan"
       ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Pogovor je premaknjen v mapo ${ labelName } in pošiljatelj dodan na seznam želenih."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Pogovor je premaknjen v ${ labelName }."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Pogovori pošiljateljev ${ sendersList } bodo označeni kot ${ labelsList }"
+      ],
       "Copied to clipboard": [
         "Kopirano v odložišče"
+      ],
+      "Draft deleted": [
+        "Osnutek izbrisan"
       ],
       "Email address copied to clipboard": [
         "E-poštni naslov kopiran v odložišče"
@@ -11112,6 +11937,9 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "Nastavitve bližnjic na tipkovnici so posodobljene"
+      ],
+      "Labels applied.": [
+        "Označeno."
       ],
       "Last modified aliases stored in your oldest vault": [
         "Zadnji spremenjeni vzdevki, shranjeni v vašem najstarejšem trezorju"
@@ -11136,6 +11964,9 @@
       ],
       "Payment method updated": [
         "Način plačila je bil posodobljen."
+      ],
+      "Phishing reported": [
+        "Lažno predstavljanje je prijavljeno"
       ],
       "Phone number copied to clipboard": [
         "Telefonska številka kopirana v odložišče"
@@ -11354,9 +12185,17 @@
         "${ minutes } minut"
       ]
     },
+    "Tip Action": {
+      "Show me how": [
+        "Pokaži mi kako"
+      ]
+    },
     "Title": {
       "${ appName } keyboard shortcuts": [
         "Bližnjice na tipkovnici za ${ appName }"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-poštni naslov",
@@ -11451,6 +12290,9 @@
       "Auto-deletion is active": [
         "Samodejno brisanje je aktivno"
       ],
+      "BCC": [
+        "Skp"
+      ],
       "Billing cycle": [
         "Cikel obračunavanja"
       ],
@@ -11529,6 +12371,12 @@
       "Create contact": [
         "Ustvari stik"
       ],
+      "Create folder \"${ search }\"": [
+        "Ustvari mapo \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Ustvari oznako \"${ search }\""
+      ],
       "Create new group": [
         "Ustvari novo skupino"
       ],
@@ -11588,6 +12436,9 @@
       ],
       "Delete ${ value }": [
         "Izbriši ${ value }"
+      ],
+      "Delete draft": [
+        "Izbriši osnutek"
       ],
       "Delete folder?": [
         "Želite izbrisati mapo?"
@@ -11673,6 +12524,9 @@
       "Filter name cannot contain only spaces": [
         "Ime filtra ne more biti sestavljeno le iz presledkov"
       ],
+      "Filter on...": [
+        "Filter vklopljen ..."
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Prejmite **${ referralInfo.uiData.refereeRewardAmount }** v dobroimetju z ${ planTitle }"
       ],
@@ -11748,6 +12602,9 @@
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
       ],
+      "Label options": [
+        "Možnosti oznake"
+      ],
       "Limit reached": [
         "Meja je dosežena"
       ],
@@ -11763,6 +12620,15 @@
       "Make a secure connection your default": [
         "Nastavite varno povezavo kot privzeto"
       ],
+      "Mark all messages as read": [
+        "Vsa sporočila označi kot prebrana"
+      ],
+      "Mark email as legitimate": [
+        "Označi e-pošto kot legitimno."
+      ],
+      "Mark messages as unread": [
+        "Označi sporočila kot neprebrana"
+      ],
       "Merge contacts": [
         "Združi stike"
       ],
@@ -11775,6 +12641,15 @@
       "Mobile": [
         "Mobilni"
       ],
+      "More": [
+        "Več"
+      ],
+      "More actions": [
+        "Več dejanj"
+      ],
+      "More options": [
+        "Več možnosti"
+      ],
       "Need more aliases?": [
         "Potrebujete več vzdevkov?"
       ],
@@ -11784,8 +12659,14 @@
       "Network error": [
         "Napaka v omrežju"
       ],
+      "New message": [
+        "Novo sporočilo"
+      ],
       "Next": [
         "Naprej"
+      ],
+      "Next conversation": [
+        "Naslednji pogovor"
       ],
       "Night theme": [
         "Nočna tema"
@@ -11841,6 +12722,9 @@
       "Previous": [
         "Prejšnja stran"
       ],
+      "Previous conversation": [
+        "Prejšnji pogovor"
+      ],
       "Priority support:": [
         "Prednostna podpora:"
       ],
@@ -11853,8 +12737,14 @@
       "Re-sign all contacts": [
         "Ponovno podpiši vse stike"
       ],
+      "Re-sign contact": [
+        "Znova podpiši stik"
+      ],
       "Re-signing contacts": [
         "Ponovno podpisovanje stikov"
+      ],
+      "Recipients": [
+        "Prejemniki"
       ],
       "Recommended": [
         "Priporočeno"
@@ -11868,6 +12758,9 @@
       "Recover data": [
         "Obnovi podatke"
       ],
+      "Remove from list?": [
+        "Odstrani s seznama?"
+      ],
       "Report a problem": [
         "Poročanje o težavi"
       ],
@@ -11879,6 +12772,9 @@
       ],
       "Same inbox, shorter email address": [
         "Isti nabiralnik, krajši e-poštni naslov"
+      ],
+      "Schedule send": [
+        "Načrtuj pošiljanje"
       ],
       "Schedule send:": [
         "Načrtuj pošiljanje:"
@@ -11900,6 +12796,18 @@
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Pošiljajte in prejemajte Gmail z uporabo ${ MAIL_APP_NAME }"
+      ],
+      "Send email": [
+        "Pošlji sporočilo"
+      ],
+      "Send with changed preferences?": [
+        "Pošlji s spremenjenimi nastavitvami?"
+      ],
+      "Send with encryption disabled?": [
+        "Pošlji z onemogočenim šifriranjem?"
+      ],
+      "Sender changed": [
+        "Pošiljatelj spremenjen"
       ],
       "Set recovery methods": [
         "Nastavite načine obnovitve"
@@ -11961,6 +12869,9 @@
       "This field cannot contain only spaces": [
         "To polje ne sme biti izpolnjeno le s presledki"
       ],
+      "To": [
+        "Za"
+      ],
       "To preview this spreadsheet, download it.": [
         "Če želite to preglednico predogledati, jo prenesite."
       ],
@@ -11969,6 +12880,9 @@
         "Zaupaj novima ključema?",
         "Zaupaj novim ključem?",
         "Zaupaj novim ključem?"
+      ],
+      "Trust pinned keys?": [
+        "Zaupam pripetim ključem?"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
@@ -12053,6 +12967,9 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
+      ],
+      "Your free trial has ended": [
+        "Brezplačno preizkusno obdobje se je izteklo."
       ],
       "Your plan": [
         "Vaš paket"
@@ -12386,6 +13303,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Ponedeljek, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

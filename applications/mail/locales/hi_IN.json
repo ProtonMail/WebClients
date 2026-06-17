@@ -2368,9 +2368,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "नए संदेशों के लिए जगह आरक्षित रखने के लिए हम 80% स्टोरेज पर आयात रोक देंगे।"
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "हम आपके पुराने ईमेल लाएंगे और आपके Gmail को ${ MAIL_APP_NAME } से कनेक्ट करेंगे ताकि नए संदेश अपने आप दिखाई दें"
-      ],
       "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
         "हम आपके पुराने ईमेल आयात करेंगे, डुप्लिकेट छोड़ेंगे और आपके Gmail से कनेक्ट करेंगे ताकि नए संदेश अपने आप दिखाई दें। आप Easy Switch सेटिंग में किसी भी समय आयात को अनडू कर सकते हैं"
       ],
@@ -4157,9 +4154,6 @@
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
       ],
-      "Insert image": [
-        "तस्वीर डालें"
-      ],
       "Insert link": [
         "लिंक डालें"
       ],
@@ -5080,6 +5074,9 @@
       "Don't show this again": [
         "फिर से न दिखाएं"
       ],
+      "Download logs": [
+        "लॉग डाउनलोड करें"
+      ],
       "Email": [
         "ईमेल"
       ],
@@ -5352,6 +5349,9 @@
       ],
       "Upload picture": [
         "तसवीर डालें"
+      ],
+      "URL": [
+        "यूआरएल"
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
@@ -7820,6 +7820,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe लेखन सहायक"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } ईमेल पता",
         "${ emailsCount } ईमेल पते"
