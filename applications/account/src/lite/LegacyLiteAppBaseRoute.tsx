@@ -25,7 +25,7 @@ interface Props {
     layout: (children: ReactNode, props?: any) => ReactNode;
 }
 
-const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: Props) => {
+const LegacyLiteAppBaseRoute = ({ action, redirect, app, searchParams, loader, layout }: Props) => {
     if (!action || !Object.values<string>(SupportedActions).includes(action)) {
         return <StandardErrorPage>No action parameter found.</StandardErrorPage>;
     }
@@ -67,4 +67,4 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
     );
 };
 
-export default MainContainer;
+export default LegacyLiteAppBaseRoute;
