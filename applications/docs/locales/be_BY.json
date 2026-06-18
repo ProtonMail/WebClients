@@ -411,6 +411,9 @@
       "Get the apps": [
         "Атрымаць праграмы"
       ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
       "Get the writing assistant": [
         "Атрымаць памочніка ў напісанні"
       ],
@@ -1512,6 +1515,24 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
+      ],
+      "Subtotal": [
+        "Прамежкавы вынік"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Прамежкавы вынік за ${ cycle } месяц",
+        "Прамежкавы вынік за ${ cycle } месяцы",
+        "Прамежкавы вынік за ${ cycle } месяцаў",
+        "Прамежкавы вынік за ${ cycle } месяцаў"
+      ],
+      "Total": [
+        "Агулам"
+      ],
+      "Total for ${ n } month": [
+        "Усяго за ${ n } месяц",
+        "Усяго за ${ n } месяцы",
+        "Усяго за ${ n } месяцаў",
+        "Усяго за ${ n } месяцы"
       ]
     },
     "Collapsible tooltip": {
@@ -6025,6 +6046,12 @@
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "Сімвалаў: ${ value.length }/${ maxLength }"
       ],
@@ -6240,6 +6267,9 @@
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -9987,6 +10017,11 @@
         "Падпіска будзе паніжана ў канцы перыяду аплаты."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Пажыццёва"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховішча"
@@ -10829,6 +10864,9 @@
       ],
       "Subscription canceled": [
         "Падпіска скасавана"
+      ],
+      "Summer Sale": [
+        "Летні распродаж"
       ],
       "The link either does not exist or has expired": [
         "Спасылка не існуе або пратэрмінавана"

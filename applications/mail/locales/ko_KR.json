@@ -525,6 +525,9 @@
       "Insert": [
         "삽입"
       ],
+      "Insert ${ totalChecked } contact": [
+        "${ totalChecked }개의 연락처 삽입"
+      ],
       "Insert image": [
         "이미지 삽입"
       ],
@@ -3189,6 +3192,12 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
       ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Gmail 주소 ${ forwardingCount }(으)로부터 이메일을 전달 받고 있습니다. Gmail과 연결하면 ${ MAIL_APP_NAME }에서 메시지를 주고 받을 수 있게 됩니다."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "${ MAX_SYNC_PAID_USER }개의 Gmail 주소가 이미 연결되어 있습니다. 다른 주소를 추가하려면, 연결된 주소 중 하나를 비활성화하십시오."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "사용자의 계정과 데이터 복구 방법이 설정되어 있으며, 2단계 인증이 활성화 상태입니다."
       ],
@@ -3508,6 +3517,9 @@
       ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "${ n }일 이내의 날짜를 선택하세요."
       ],
       "Company name or personal name is required": [
         "법인명 또는 개인 성명을 입력해야 합니다."
@@ -3937,6 +3949,9 @@
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "동시에 ${ maxActiveComposer }개를 넘는 쓰기 창을 열 수 없습니다."
       ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
@@ -4541,6 +4556,11 @@
         "${ MAIL_APP_NAME } 데스크톱 앱"
       ]
     },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount }일 남음"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "자동으로 Gmail에서 당신의 받은 편지함으로"
@@ -4679,6 +4699,11 @@
       ],
       "Time zone not supported": [
         "시간대 지원되지 않음"
+      ]
+    },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "참석자 ${ totalAttendees }명"
       ]
     },
     "Import calendar": {
@@ -4982,6 +5007,21 @@
       "${ contactsLength } contact": [
         "연락처 ${ contactsLength }개"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } / ${ totalProgress }"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount }개 메시지가 다음으로 라벨됩니다:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount }개 메시지가 읽음으로 표시됩니다."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount }개 메시지가 읽지 않음으로 표시됩니다."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount }개 메시지가 이동됩니다"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
       ],
@@ -4999,6 +5039,15 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }개 시트"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers }개 링크 제거됨"
+      ],
+      "${ NumMessages } message in conversation": [
+        "대화 내 ${ NumMessages }개의 메시지"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences }개 발견됨"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME }를 사용하면 암호, 메모 및 기타 민감한 정보를 종단 간 암호화로 저장할 수 있습니다. ${ ios }, ${ android } 및 ${ browser }에서 지원합니다."
@@ -5180,6 +5229,12 @@
       "Are you sure you want to discard your import?": [
         "정말로 불러오기를 취소하시겠어요?"
       ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "${ count }개 메시지를 휴지통에서 제거하시겠습니까?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "${ count }개 메시지를 영구적으로 삭제하시겠습니까?"
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
@@ -5345,6 +5400,9 @@
       "Do you remember your password? ${ verifyButton }": [
         "비밀번호가 기억 나시나요? ${ verifyButton }"
       ],
+      "Do you want to download this attachment anyway?": [
+        "이 첨부 파일을 다운로드할까요?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무 화면도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요. Google Pay로 결제하는 경우, 국내에서 지원되지 않는 서비스이므로 결제 진행이 되지 않을 수 있습니다."
       ],
@@ -5398,6 +5456,9 @@
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "라벨 ${ nameDeleted }로 태그된 이메일들은 삭제되지 않으며 해당하는 폴더에서 여전히 찾을 수 있습니다."
+      ],
+      "embedded image": [
+        "개 이미지 첨부됨"
       ],
       "Enabling auto-deletion…": [
         "자동 삭제 활성화 중…"
@@ -5548,6 +5609,9 @@
       ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
+      ],
+      "Insert image": [
+        "이미지 삽입"
       ],
       "Insert link": [
         "링크 삽입"
@@ -5858,6 +5922,9 @@
       "Scan the QR code with your mobile device": [
         "모바일 기기로 QR 코드를 스캔해보세요"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "${ location }(에)서 모두 ${ elementsCount } 선택"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
       ],
@@ -5977,6 +6044,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "${ contactNames }가 연락처가 올바르게 서명되지 않았기 때문에 인증에 실패했습니다.\n비밀번호를 변경해야 할 수도 있습니다.\n${ contactAddresses }(으)로 메시지를 보내거나 연락처를 편집하려면 연락처를 다시 서명해야 합니다."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
@@ -6212,6 +6282,15 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ],
+      "You have **${ count } conversation** stored in this folder": [
+        "이 폴더에 **대화 ${ count }**개를 저장했습니다"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "이 폴더에 **메시지 ${ count }**개를 저장했습니다"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "이 라벨로 태그된 **메시지 ${ count }개**가 있습니다"
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "체험판 ${ planTitle } 구독이 있습니다. 체험 기간 이후로도 계속 구독을 사용하려면, 결제 수단을 추가해 주세요."
       ],
@@ -6223,6 +6302,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "다운그레이드하기 전에 모든 ${ MAIL_APP_NAME } 사용자와 주소, 그리고 사용자 지정 도메인을 비활성화해야 합니다."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "이 폴더에 있는 **대화 ${ count }개**를 선택했습니다"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "이 폴더의 **메시지 ${ count }개**를 선택했습니다"
+      ],
+      "You selected **${ count } message** with this label": [
+        "해당 라벨의 **${ count }개 메시지** 선택됨"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "**${ elementsCount }개 메시지**를 선택했습니다."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
@@ -6397,6 +6488,11 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Key pinning": {
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "사용자가 이 이메일 주소에 대해 인증 키를 사용한 주소 인증을 활성화했지만, \n활성 암호화 키가 신뢰되지 않았습니다. \n이 이메일 주소로 메시지를 보내려면, 보내기에 유효한 키를 신뢰해야 합니다."
       ]
     },
     "Keyboard shortcut name": {
@@ -6600,6 +6696,9 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
+      ],
+      "${ count } unread message": [
+        "읽지 않은 메시지 ${ count }개"
       ],
       "${ n } month": [
         "${ n }개월"
@@ -8910,9 +9009,6 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
-      ],
-      "Remind me later": [
-        "나중에 다시 알림"
       ]
     },
     "Option group": {
@@ -9914,6 +10010,19 @@
         "결과를 찾을 수 없음"
       ]
     },
+    "Send email with errors": {
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "오류를 감지했습니다. 사용자의 이메일이 입력한 이메일 주소로 상기된 사유로 인해 전송되지 않을 수 있습니다:"
+      ]
+    },
+    "Send email with warnings": {
+      "The following address is not valid: ${ invalidAddresses }": [
+        "유효하지 않은 주소: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "경고를 감지했습니다. 다음 이메일 주소는 이메일을 받지 못할 수 있습니다:"
+      ]
+    },
     "session_recovery:available:action": {
       "Cancel reset": [
         "재설정 취소하세요"
@@ -10888,6 +10997,27 @@
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
       ],
+      "${ elementsCount } conversation marked as unread.": [
+        "대화 ${ elementsCount }개를 읽지 않음으로 표시했습니다."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "별표 표시됨에서 대화 ${ elementsCount }개를 삭제했습니다."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount }개 항목을 음소거 했습니다."
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount }개 대화 방해 금지 해제됨."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount }개 메시지 읽음으로 마크됨"
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "메시지 ${ elementsCount }개가 ${ labelName }(으)로 이동되었습니다."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ labelName }(에)서 메시지 ${ elementsCount }개를 삭제했습니다."
+      ],
       "Address copied to clipboard": [
         "주소가 클립보드에 복사되었습니다"
       ],
@@ -10941,6 +11071,9 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
+      ],
+      "Move ${ selectionCount } message": [
+        "메시지 ${ selectionCount }개 이동"
       ],
       "Password copied to clipboard": [
         "비밀번호를 클립보드에 복사했습니다"
@@ -11151,6 +11284,9 @@
       "${ feature } is now active": [
         "${ feature }이(가) 이제 활성 상태입니다"
       ],
+      "${ unreads } unread message": [
+        "읽지 않은 메시지 ${ unreads }개"
+      ],
       "(active)": [
         "(활성)"
       ],
@@ -11331,6 +11467,9 @@
       "Delete ${ count } contact group": [
         "${ count }개의 그룹 삭제"
       ],
+      "Delete ${ count } conversation": [
+        "${ count }개의 대화 삭제"
+      ],
       "Delete ${ value }": [
         "${ value }을(를) 삭제"
       ],
@@ -11498,6 +11637,9 @@
       ],
       "Link confirmation": [
         "링크 확인"
+      ],
+      "Mailing list": [
+        "메일링 리스트"
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"
@@ -11720,6 +11862,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
+      ],
+      "Trust new key?": [
+        "이 키를 신뢰하시겠습니까?"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
@@ -12070,6 +12215,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "병합될 연락처 중 일부는 오류를 표시합니다. 이 연락처들을 개별적으로 검토해 주세요."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "첨부 파일의 서명을 인증하는 데 실패했습니다.\n첨부 파일을 다운로드할 수는 있지만, 파일이 위조되었을 수 있습니다."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "연락처 데이터가 손상되어 표시가 불가능 합니다."

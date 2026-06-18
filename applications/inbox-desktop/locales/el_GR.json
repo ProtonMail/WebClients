@@ -137,6 +137,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Απεγκατάσταση ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Όταν είναι ενεργοποιημένη η επιτάχυνση υλικού, η εφαρμογή χρησιμοποιεί το αποκλειστικό υλικό γραφικών της συσκευής σας για απόδοση. Αυτό μπορεί να προκαλέσει προβλήματα συμβατότητας σε ορισμένα συστήματα."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Χωρίς επιτάχυνση υλικού, η εφαρμογή χρησιμοποιεί απόδοση λογισμικού αντί για την κάρτα γραφικών σας. Ενδέχεται να παρατηρήσετε πιο αργές κινούμενες εικόνες και μεγαλύτερη χρήση της CPU."
+      ],
       "Zoom": [
         "Μεγέθυνση"
       ],

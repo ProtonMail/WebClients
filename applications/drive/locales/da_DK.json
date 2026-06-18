@@ -6713,6 +6713,9 @@
         "Vi kunne ikke gemme dette foto til dit drev",
         "Vi kunne ikke gemme flere forskellige fotos til dit drev"
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ nodeName }. Der kan være blevet manipuleret med følgende: fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
@@ -9542,6 +9545,9 @@
       "Failed to convert external invitation": [
         "Ekstern invitation kunne ikke konverteres"
       ],
+      "Failed to load sharing details": [
+        "Kunne ikke indlæse detaljer om deling"
+      ],
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg igen"
       ],
@@ -12318,6 +12324,9 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } af gratis uploads."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -12802,9 +12811,6 @@
       "Make a secure connection your default": [
         "Gør en sikker forbindelse til din standard"
       ],
-      "Manage secure link": [
-        "Administrer sikkert link"
-      ],
       "Media type": [
         "Medietype"
       ],
@@ -13256,6 +13262,12 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Vi kunne ikke bekræfte, at filens indhold blev uploadet af ${ claimedContentAuthor }. Årsagen er: ${ activeRevision.contentAuthor.error.error }"
       ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Vi kunne ikke bekræfte, at navnet blev oprettet eller ændret af ${ claimedNameAuthor }. Årsagen: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Vi kunne ikke bekræfte, at noden blev oprettet af ${ claimedKeyAuthor }. Årsagen: ${ node.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Velkomsttilbud"
       ],
@@ -13370,6 +13382,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Load image": [
         "Indlæs billede"

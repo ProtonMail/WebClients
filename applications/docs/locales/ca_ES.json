@@ -405,6 +405,9 @@
       "Get the apps": [
         "Obtén les aplicacions"
       ],
+      "Get the deal": [
+        "Obteniu l’oferta"
+      ],
       "Get the writing assistant": [
         "Obteniu l'assistent d'escriptura"
       ],
@@ -1478,6 +1481,20 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal per ${ cycle } mes",
+        "Subtotal per ${ cycle } mesos"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total for ${ n } month": [
+        "Total per ${ n } mes",
+        "Total per ${ n } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -5876,6 +5893,10 @@
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caràcters"
       ],
@@ -6094,6 +6115,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Aconseguiu l'oferta"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -8026,6 +8050,9 @@
       "Failed to load invitation details": [
         "No s'han pogut carregar els detalls de l'invitació."
       ],
+      "Failed to load sharing details": [
+        "No s'han pogut carregar els detalls per compartir"
+      ],
       "Failed to reject share invitation": [
         "No s'ha pogut rebutjar la invitació per a compartir."
       ],
@@ -9663,6 +9690,11 @@
         "La subscripció es desactivarà al final del cicle de facturació."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Per sempre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -10468,6 +10500,9 @@
       ],
       "Subscription canceled": [
         "S'ha cancel·lat la subscripció"
+      ],
+      "Summer Sale": [
+        "Rebaixes d'estiu"
       ],
       "The link either does not exist or has expired": [
         "L’enllaç no existeix o bé ha caducat"

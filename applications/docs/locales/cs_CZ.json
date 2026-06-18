@@ -408,6 +408,9 @@
       "Get the apps": [
         "Získat aplikace"
       ],
+      "Get the deal": [
+        "Využít nabídku"
+      ],
       "Get the writing assistant": [
         "Získat asistenta psaní"
       ],
@@ -1437,6 +1440,24 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "Subtotal": [
+        "Mezisoučet"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Mezisoučet za ${ cycle } měsíc",
+        "Mezisoučet za ${ cycle } měsíce",
+        "Mezisoučet za ${ cycle } měsíců",
+        "Mezisoučet za ${ cycle } měsíců"
+      ],
+      "Total": [
+        "Celkem"
+      ],
+      "Total for ${ n } month": [
+        "Celkem za ${ n } měsíc",
+        "Celkem za ${ n } měsíce",
+        "Celkem za ${ n } měsíců",
+        "Celkem za ${ n } měsíců"
       ]
     },
     "Collapsible tooltip": {
@@ -5866,6 +5887,12 @@
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
@@ -6075,6 +6102,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
       ],
       "Hide password": [
         "Skrýt heslo"
@@ -9834,6 +9864,11 @@
         "Na konci fakturačního cyklu bude předplatné sníženo."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Doživotní"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložiště"
@@ -10673,6 +10708,9 @@
       ],
       "Subscription canceled": [
         "Předplatné zrušeno"
+      ],
+      "Summer Sale": [
+        "Letní výprodej"
       ],
       "The link either does not exist or has expired": [
         "Odkaz buď neexistuje, nebo jeho platnost vypršela"
