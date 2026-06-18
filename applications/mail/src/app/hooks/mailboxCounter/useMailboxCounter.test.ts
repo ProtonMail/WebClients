@@ -80,7 +80,8 @@ describe('useMailboxCounter', () => {
 
             const { result } = renderHook(() => useMailboxCounter());
             expect(result.current.loading).toEqual(true);
-            expect(result.current.counterMap).toStrictEqual({});
+            // While loading, the underlying counter map is empty: lookups must still resolve to safe zero counts
+            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.INBOX)).toStrictEqual(getCount('', 0, 0));
         });
 
         it('should return loading as false when all data is available', () => {
@@ -96,7 +97,7 @@ describe('useMailboxCounter', () => {
         });
     });
 
-    describe('counterMap', () => {
+    describe('count resolution', () => {
         beforeEach(() => {
             jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
             jest.mocked(useFolders).mockReturnValue([customSystemFolders, false]);
@@ -108,7 +109,7 @@ describe('useMailboxCounter', () => {
 
         it('should use conversation counts in conversation mode', () => {
             const { result } = renderHook(() => useMailboxCounter());
-            expect(result.current.counterMap[MAILBOX_LABEL_IDS.INBOX]).toStrictEqual(
+            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.INBOX)).toStrictEqual(
                 getCount(MAILBOX_LABEL_IDS.INBOX, 1000, 100)
             );
         });
@@ -116,14 +117,14 @@ describe('useMailboxCounter', () => {
         it('should use message counts in single message mode', () => {
             jest.mocked(useMailSettings).mockReturnValue([{ ViewMode: VIEW_MODE.SINGLE } as MailSettings, false]);
             const { result } = renderHook(() => useMailboxCounter());
-            expect(result.current.counterMap[MAILBOX_LABEL_IDS.INBOX]).toStrictEqual(
+            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.INBOX)).toStrictEqual(
                 getCount(MAILBOX_LABEL_IDS.INBOX, 500, 50)
             );
         });
 
         it('should return zero counts for a label with no data', () => {
             const { result } = renderHook(() => useMailboxCounter());
-            expect(result.current.counterMap[MAILBOX_LABEL_IDS.ARCHIVE]).toStrictEqual(
+            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.ARCHIVE)).toStrictEqual(
                 getCount(MAILBOX_LABEL_IDS.ARCHIVE, 0, 0)
             );
         });
@@ -157,7 +158,7 @@ describe('useMailboxCounter', () => {
             );
 
             const { result } = renderHook(() => useMailboxCounter());
-            expect(result.current.counterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual(
+            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)).toStrictEqual(
                 getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 2000, 200)
             );
         });
@@ -188,7 +189,7 @@ describe('useMailboxCounter', () => {
             );
 
             const { result } = renderHook(() => useMailboxCounter());
-            expect(result.current.counterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual(
+            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)).toStrictEqual(
                 getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 3000, 300)
             );
         });

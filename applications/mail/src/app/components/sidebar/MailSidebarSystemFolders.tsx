@@ -12,8 +12,7 @@ import clsx from '@proton/utils/clsx';
 
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
-import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/interface';
-import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
@@ -22,7 +21,6 @@ import { useCategoriesView } from '../categoryView/useCategoriesView';
 import SidebarItem from './SidebarItem';
 
 interface Props {
-    counterMap: LocationCountMap;
     setFocusedItem: (id: string) => void;
     displayMoreItems: boolean;
     showScheduled: boolean;
@@ -53,7 +51,6 @@ const DnDElementWrapper = ({ isDnDAllowed, children, ...rest }: DnDWrapperProps)
 type HandleDragOver = (elementId: MAILBOX_LABEL_IDS | typeof DND_MORE_FOLDER_ID) => DragEventHandler<HTMLDivElement>;
 
 const MailSidebarSystemFolders = ({
-    counterMap,
     setFocusedItem,
     showScheduled,
     showSnoozed,
@@ -74,6 +71,7 @@ const MailSidebarSystemFolders = ({
 
     const { categoryViewAccess, activeCategoriesTabs } = useCategoriesView();
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
+    const { getLocationCount } = useMailboxCounter();
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -258,7 +256,7 @@ const MailSidebarSystemFolders = ({
                         ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
                         : element.labelID;
 
-                const locationCount = getRawLocationCount(counterMap, labelID);
+                const locationCount = getLocationCount(labelID);
 
                 return (
                     <DnDElementWrapper
@@ -310,7 +308,7 @@ const MailSidebarSystemFolders = ({
 
             {displayMoreItems
                 ? moreElements.map((element) => {
-                      const locationCount = getRawLocationCount(counterMap, element.labelID);
+                      const locationCount = getLocationCount(element.labelID);
 
                       return (
                           <DnDElementWrapper

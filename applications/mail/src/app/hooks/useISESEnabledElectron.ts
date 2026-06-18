@@ -11,26 +11,25 @@ import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';
  */
 const useIsESEnabledElectron = () => {
     const { isElectron } = useIsInboxElectronApp();
-    const { counterMap } = useMailboxCounter();
+    const { getLocationCount, loading } = useMailboxCounter();
     const { feature: inboxThreshold } = useFeature<number>(FeatureCode.ElectronESInboxThreshold);
 
     const [isESEnabledInbox, setIsInboxEnabledInbox] = useState(false);
 
     useEffect(() => {
+        if (loading) {
+            return;
+        }
+
         if (!isElectron) {
             setIsInboxEnabledInbox(false);
             return;
         }
 
-        const conversationCount = counterMap[MAILBOX_LABEL_IDS.INBOX];
-        if (!conversationCount || typeof conversationCount.Total !== 'number') {
-            setIsInboxEnabledInbox(false);
-            return;
-        }
-
+        const conversationCount = getLocationCount(MAILBOX_LABEL_IDS.INBOX);
         const threshold = inboxThreshold?.Value || 0;
         setIsInboxEnabledInbox(threshold >= conversationCount.Total);
-    }, [inboxThreshold, counterMap, isElectron]);
+    }, [inboxThreshold, getLocationCount, loading, isElectron]);
 
     return { isESEnabledInbox };
 };

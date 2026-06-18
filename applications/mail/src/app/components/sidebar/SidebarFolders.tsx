@@ -7,14 +7,12 @@ import { c } from 'ttag';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
-import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/interface';
-import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import SidebarFolder from './SidebarFolder';
 
 interface Props {
-    counterMap: LocationCountMap;
     folders: Folder[];
     loadingFolders: boolean;
     updateFocusItem: (item: string) => void;
@@ -25,7 +23,6 @@ interface Props {
 }
 
 const SidebarFolders = ({
-    counterMap,
     folders,
     loadingFolders,
     updateFocusItem,
@@ -36,6 +33,7 @@ const SidebarFolders = ({
 }: Props) => {
     const onlyOneLevel = foldersTreeview.every((folder) => !folder.subfolders?.length);
     const emptyFolders = !loadingFolders && !folders?.length;
+    const { getLocationCount } = useMailboxCounter();
 
     const treeviewReducer = (acc: ReactNode[], folder: FolderWithSubFolders, level = 0): any[] => {
         acc.push(
@@ -46,7 +44,7 @@ const SidebarFolders = ({
                 level={level}
                 onToggle={handleToggleFolder}
                 expanded={Boolean(folder.Expanded)}
-                unreadCount={getRawLocationCount(counterMap, folder.ID).Unread}
+                unreadCount={getLocationCount(folder.ID).Unread}
                 id={folder.ID}
                 onFocus={updateFocusItem}
                 treeMode={!onlyOneLevel}
