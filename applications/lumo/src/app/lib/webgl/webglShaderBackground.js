@@ -1,4 +1,4 @@
-import { effectiveDpr } from './canvasUtils';
+import { effectiveDpr, parseCssColorToRgb255, rgb255To01 } from './canvasUtils';
 import { createWebglParticlePass } from './webglParticlePass';
 
 /** Max blobs compiled into the fragment shader (see `MAX_BLOBS` in shader source). */
@@ -84,59 +84,42 @@ function blobRadiusBreathe(timeSec, blob, freezePulse) {
     return { scale, opacity: scale };
 }
 
-/** @type {HTMLDivElement | null} */
-let themeColorProbe = null;
+const LUMO_DARK_BASE_COLOR = [11 / 255, 11 / 255, 11 / 255];
+const LUMO_LIGHT_BASE_COLOR = [245 / 255, 246 / 255, 254 / 255];
 
-/** @type {string | null} */
-let themeColorProbeVar = null;
+function isLumoDarkTheme() {
+    if (typeof document === 'undefined') {
+        return false;
+    }
+    return document.getElementById('lumo-dark-theme') != null;
+}
 
 /**
- * Resolves a CSS custom property (e.g. `--surface-foreground`) to RGB 0–1 for the shader.
+ * Resolves a CSS custom property (e.g. `--background-main-canvas`) to RGB 0–1 for the shader.
  * @param {string | null | undefined} cssVar
  * @param {[number, number, number]} fallback
  * @returns {[number, number, number]}
  */
 function readCssVarRgb01(cssVar, fallback) {
-    if (!cssVar || typeof document === 'undefined') return fallback;
-    if (!themeColorProbe || themeColorProbeVar !== cssVar) {
-        if (themeColorProbe) {
-            themeColorProbe.remove();
-            themeColorProbe = null;
-        }
-        const el = document.createElement('div');
-        el.setAttribute('aria-hidden', 'true');
-        el.style.cssText =
-            'position:fixed;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;visibility:hidden;pointer-events:none;';
-        el.style.background = `var(${cssVar})`;
-        document.documentElement.appendChild(el);
-        themeColorProbe = el;
-        themeColorProbeVar = cssVar;
+    if (!cssVar || typeof document === 'undefined') {
+        return themeBaseColorFallback(fallback);
     }
-    const bg = getComputedStyle(themeColorProbe).backgroundColor;
-    const m = bg.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/);
-    if (!m) return fallback;
-    return [
-        Math.min(1, Math.max(0, Number(m[1]) / 255)),
-        Math.min(1, Math.max(0, Number(m[2]) / 255)),
-        Math.min(1, Math.max(0, Number(m[3]) / 255)),
-    ];
-}
 
-function removeThemeColorProbe() {
-    if (themeColorProbe) {
-        themeColorProbe.remove();
-        themeColorProbe = null;
-        themeColorProbeVar = null;
+    const raw = getComputedStyle(document.documentElement).getPropertyValue(cssVar).trim();
+    const parsed = parseCssColorToRgb255(raw);
+    if (parsed) {
+        return rgb255To01(parsed);
     }
+
+    return themeBaseColorFallback(fallback);
 }
 
 /** @param {[number, number, number]} fallback */
 function themeBaseColorFallback(fallback) {
-    if (typeof document === 'undefined') return fallback;
-    if (document.documentElement.getAttribute('data-theme') === 'light') {
-        return [1, 1, 1];
+    if (typeof document === 'undefined') {
+        return fallback;
     }
-    return fallback;
+    return isLumoDarkTheme() ? LUMO_DARK_BASE_COLOR : LUMO_LIGHT_BASE_COLOR;
 }
 
 /**
@@ -842,6 +825,20 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         }
     }
 
+    /** @type {MutationObserver | null} */
+    let themeObserver = null;
+    if (typeof document !== 'undefined' && typeof MutationObserver !== 'undefined') {
+        themeObserver = new MutationObserver(() => {
+            baseColorDirty = true;
+        });
+        themeObserver.observe(document.head, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['id'],
+        });
+    }
+
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('resize', scheduleResize);
     document.addEventListener('visibilitychange', onVisibilityChange);
@@ -856,6 +853,8 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
             resizeRaf = 0;
             resizeObserver?.disconnect();
             resizeObserver = null;
+            themeObserver?.disconnect();
+            themeObserver = null;
             window.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('resize', scheduleResize);
             document.removeEventListener('visibilitychange', onVisibilityChange);
@@ -864,7 +863,6 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
                 const r = captureResolvers.shift();
                 r?.(null);
             }
-            removeThemeColorProbe();
             particlePass?.destroy();
             gl.deleteBuffer(buffer);
             gl.deleteProgram(program);
