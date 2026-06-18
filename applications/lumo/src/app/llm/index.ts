@@ -1,7 +1,7 @@
 import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
-import { createImageAttachment, generateImageMarkdown } from '../lib/imageAttachment';
+import { createImageAttachment, generateImageMarkdown, lumoImageMarker } from '../lib/imageAttachment';
 import { getMessageBlocks } from '../messageHelpers';
 import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import {
@@ -295,10 +295,11 @@ function createGroupedImageTurn(
         const wireImage = tryConvertToWireImage(fullAttachment);
         if (!wireImage) continue;
 
-        const ref =
-            role === Role.Assistant
-                ? `[Assistant generated image: ${shallow.filename} (ID: ${wireImage.image_id})]`
-                : `[Image: ${shallow.filename} (ID: ${wireImage.image_id})]`;
+        const ref = lumoImageMarker(
+            wireImage.image_id,
+            role === Role.Assistant ? 'assistant' : 'user',
+            shallow.filename
+        );
 
         refs.push(ref);
         images.push(wireImage);
@@ -341,7 +342,22 @@ function expandAttachmentsIntoTurns(turn: TurnInProgress, allAttachments: Attach
 
     const imageTurn = createGroupedImageTurn(shallowAttachments, allAttachments, turn.role);
 
-    return [...textTurns, ...(imageTurn ? [imageTurn] : []), baseTurn];
+    if (!imageTurn) {
+        return [...textTurns, baseTurn];
+    }
+
+    // Merge image markers and bytes into the base turn so that each <lumo-image>
+    // marker and its corresponding image_url bytes land in the same Parts content
+    // block. The backend zips markers with image_url parts within a single turn;
+    // putting them in separate turns breaks UUID assignment on replay.
+    const mergedContent = [baseTurn.content, imageTurn.content].filter(Boolean).join('\n');
+    const mergedTurn: Turn = {
+        ...baseTurn,
+        ...(mergedContent ? { content: mergedContent } : {}),
+        images: imageTurn.images,
+    };
+
+    return [...textTurns, mergedTurn];
 }
 
 export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN): Turn[] {

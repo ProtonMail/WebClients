@@ -84,7 +84,7 @@ describe('toChatCompletionsBody', () => {
             turns: [
                 {
                     role: Role.User,
-                    content: '[Image: pic.webp (ID: abc)]',
+                    content: '<lumo-image id="abc" source="user" name="pic.webp" />',
                     images: [{ encrypted: false, image_id: 'abc', data: 'UklGRsAEAAA' }],
                 },
             ],
@@ -94,7 +94,7 @@ describe('toChatCompletionsBody', () => {
             {
                 role: 'user',
                 content: [
-                    { type: 'text', text: '[Image: pic.webp (ID: abc)]' },
+                    { type: 'text', text: '<lumo-image id="abc" source="user" name="pic.webp" />' },
                     { type: 'image_url', image_url: { url: 'data:image/webp;base64,UklGRsAEAAA' } },
                 ],
             },
