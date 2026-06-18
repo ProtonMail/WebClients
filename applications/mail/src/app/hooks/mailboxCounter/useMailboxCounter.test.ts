@@ -81,9 +81,7 @@ describe('useMailboxCounter', () => {
             const { result } = renderHook(() => useMailboxCounter());
             expect(result.current.loading).toEqual(true);
             // While loading, the underlying counter map is empty: lookups must still resolve to safe zero counts
-            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.INBOX)).toStrictEqual(
-                getCount(MAILBOX_LABEL_IDS.INBOX, 0, 0)
-            );
+            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.INBOX)).toStrictEqual(getCount('', 0, 0));
         });
 
         it('should return loading as false when all data is available', () => {

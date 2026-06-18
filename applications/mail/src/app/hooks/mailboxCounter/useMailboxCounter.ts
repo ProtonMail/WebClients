@@ -16,7 +16,10 @@ import { selectCategoryIDs, selectLabelID } from 'proton-mail/store/elements/ele
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import type { LocationCountMap, MailboxCounterReturn } from './interface';
-import { getCounterMap, getRawLocationCount } from './useMailboxCounter.helpers';
+import { getCounterMap } from './useMailboxCounter.helpers';
+
+// Stable reference to avoid unnecessary re-allocations
+const EMPTY_LOCATION_COUNT: SafeLabelCount = { LabelID: '', Total: 0, Unread: 0 };
 
 export const useMailboxCounter = (): MailboxCounterReturn => {
     const [mailSettings] = useMailSettings();
@@ -62,14 +65,14 @@ export const useMailboxCounter = (): MailboxCounterReturn => {
 
     const getLocationCount = (labelID: string): SafeLabelCount => {
         if (labelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess) {
-            return getRawLocationCount(counterMap, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+            return counterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] ?? EMPTY_LOCATION_COUNT;
         }
-        return getRawLocationCount(counterMap, labelID);
+        return counterMap[labelID] ?? EMPTY_LOCATION_COUNT;
     };
 
     const getCurrentLocationCount = (): SafeLabelCount => {
         if (currentLabelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess && categoryIDs.length > 0) {
-            return getRawLocationCount(counterMap, categoryIDs[0]);
+            return counterMap[categoryIDs[0]] ?? EMPTY_LOCATION_COUNT;
         }
         return getLocationCount(currentLabelID);
     };
