@@ -31,31 +31,11 @@ export const IcShareNode = ({ alt, title, size = 4, className = '', viewBox = '0
             >
                 {title ? <title>{title}</title> : null}
 
-                <circle
-                    cx="2.5"
-                    cy="2.5"
-                    r="2"
-                    stroke="currentColor"
-                    fill="none"
-                    transform="matrix(-1 0 0 1 15 5.5)"
-                ></circle>
-                <circle
-                    cx="2.5"
-                    cy="2.5"
-                    r="2"
-                    stroke="currentColor"
-                    fill="none"
-                    transform="matrix(-1 0 0 1 7 1)"
-                ></circle>
-                <circle
-                    cx="2.5"
-                    cy="2.5"
-                    r="2"
-                    stroke="currentColor"
-                    fill="none"
-                    transform="matrix(-1 0 0 1 7 10)"
-                ></circle>
-                <path stroke="currentColor" d="M11 7 6 4.5M10.5 9l-4 2.5"></path>
+                <circle cx="3.5" cy="8" r="2" stroke="currentColor" fill="none"></circle>
+                <circle cx="11.5" cy="3.5" r="2" stroke="currentColor" fill="none"></circle>
+                <circle cx="11.5" cy="12.5" r="2" stroke="currentColor" fill="none"></circle>
+                <path d="M5 7L10 4.5" stroke="currentColor"></path>
+                <path d="M5.5 9L9.5 11.5" stroke="currentColor"></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
