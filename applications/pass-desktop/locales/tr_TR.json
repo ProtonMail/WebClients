@@ -1448,6 +1448,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Geçerlilik süresi 1 saat ile 1 yıl arasında olmalıdır"
       ]
     },
     "Error message": {
@@ -2858,6 +2861,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Expired on ${ formattedDate }": [
+        "${ formattedDate } zamanında geçerlilik süresi doldu"
+      ],
+      "Expires on ${ formattedDate }": [
+        "${ formattedDate } zamanında geçerlilik süresi dolacak"
       ]
     },
     "Keyboard key": {
@@ -3217,7 +3226,7 @@
         "Etki alanları"
       ],
       "Don't remind me again": [
-        "Bir daha hatırlatma"
+        "Bir daha anımsatma"
       ],
       "Download logs": [
         "Günlüğü indir"
@@ -4106,6 +4115,27 @@
       ],
       "ZIP or Postal code": [
         "Posta kodu"
+      ],
+      "1 day": [
+        "1 gün"
+      ],
+      "1 month": [
+        "1 ay"
+      ],
+      "1 week": [
+        "1 hafta"
+      ],
+      "1 year": [
+        "1 yıl"
+      ],
+      "Custom": [
+        "Özel"
+      ],
+      "Custom expiration (minutes)": [
+        "Özel geçerlilik süresi sonu (dakika)"
+      ],
+      "Expires in": [
+        "Geçerlilik sonu"
       ]
     },
     "Link": {
@@ -4183,7 +4213,7 @@
         "Tire"
       ],
       "Memorable Password": [
-        "Hatırlanabilir parola"
+        "Anımsanabilir parola"
       ],
       "Numbers": [
         "Rakamlar"
