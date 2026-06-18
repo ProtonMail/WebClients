@@ -1,8 +1,10 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import SignInWithGoogle from '@proton/activation/src/components/Modals/GmailSyncModal/SignInWithGoogle';
-import { type ModalProps, ModalTwo, ModalTwoHeader } from '@proton/components';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { Checkbox, type ModalProps, ModalTwo, ModalTwoHeader } from '@proton/components';
+import { MAIL_APP_NAME, PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-connect-gmail.svg';
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
 import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
@@ -11,13 +13,18 @@ import stopHandSign from '@proton/styles/assets/img/illustrations/stop-hand-sign
 import './AddBYOEModal.scss';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
-    onSubmit: () => void;
+    onSubmit: (importEmails: boolean) => void;
     submitDisabled?: boolean;
     isLoading: boolean;
+    expectedEmailAddress?: string;
 }
 
-const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, ...rest }: Props) => {
+const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddress, ...rest }: Props) => {
     const { onClose } = rest;
+
+    // The checkbox is ticked by default for everyone, except when the user is converting an
+    // active forwarding to a BYOE address using that same Gmail address.
+    const [importEmails, setImportEmails] = useState(!expectedEmailAddress);
 
     return (
         <ModalTwo
@@ -36,16 +43,31 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, ...rest }: Props) =
                     </h1>
                     <div className="color-weak text-lg text-wrap-balance">
                         {c('Description')
-                            .t`We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings`}
+                            .t`We'll import your old emails and sync new messages from Gmail going forward`}
                     </div>
                     <div className="flex flex-column items-center gap-4">
                         <SignInWithGoogle
-                            onClick={() => onSubmit()}
+                            onClick={() => onSubmit(importEmails)}
                             loading={isLoading}
                             disabled={submitDisabled}
                             fullWidth
                             buttonText={c('Action').t`Connect your email`}
                         />
+                    </div>
+
+                    <div className="mt-8">
+                        <Checkbox
+                            checked={importEmails}
+                            onChange={(e) => setImportEmails(e.target.checked)}
+                            className="self-start"
+                            data-testid="AddBYOEModal:importCheckbox"
+                        >
+                            <span>{c('Label').t`Import your emails`}</span>
+                        </Checkbox>
+                        <div className="color-weak text-sm text-wrap-balance mt-4">
+                            {c('BYOE')
+                                .t`Duplicates from previous imports will be skipped. Undo or import older messages in ${PRODUCT_NAMES.EASY_SWITCH} settings.`}
+                        </div>
                     </div>
                 </div>
                 <div className="lg:block modal-two-addbyoe-aside px-8 md:px-10 relative">
