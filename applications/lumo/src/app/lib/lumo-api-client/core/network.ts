@@ -1,15 +1,15 @@
 import type {Api} from '@proton/shared/lib/interfaces';
 
-import type {ChatEndpointGenerationRequest} from './types';
+import type {ChatCompletionsRequest} from './types';
 
-export const LUMO_CHAT_ENDPOINT = 'ai/v1/chat';
+export const LUMO_CHAT_ENDPOINT = 'ai/v1/chat/completions';
 
 /**
- * Call the appropriate endpoint based on configuration
+ * Call the chat completions endpoint.
  */
 export async function callChatEndpoint(
     api: Api,
-    payload: ChatEndpointGenerationRequest,
+    payload: ChatCompletionsRequest,
     options: {
         endpoint?: string;
         signal?: AbortSignal;

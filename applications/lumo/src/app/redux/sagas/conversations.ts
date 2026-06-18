@@ -153,22 +153,17 @@ export function* deserializeConversationSaga(
         spaceDek_ = yield call(getSpaceDek, space);
     }
 
-    console.log(`deserializeConversationSaga ${localId}: calling deserializeConversation for remote`);
-    const deserializedRemoteConversation: Conversation | null = yield call(
+    console.log(`deserializeConversationSaga ${localId}: deserializing conversation`);
+    const deserializedConversation: Conversation | null = yield call(
         deserializeConversation,
         serializedConversation,
         spaceDek_
     );
-    console.log(
-        `deserializeConversationSaga ${localId}: got deserialized remote conversation result`,
-        deserializedRemoteConversation
-    );
-    if (!deserializedRemoteConversation) {
-        throw new Error(
-            `deserializeConversationSaga ${localId}: cannot deserialize conversation ${localId} from remote`
-        );
+    console.log(`deserializeConversationSaga ${localId}: got deserialized conversation result`, deserializedConversation);
+    if (!deserializedConversation) {
+        throw new Error(`deserializeConversationSaga ${localId}: cannot deserialize conversation ${localId}`);
     }
-    return cleanConversation(deserializedRemoteConversation);
+    return cleanConversation(deserializedConversation);
 }
 
 export function* softDeleteConversationFromRemote({
@@ -391,6 +386,17 @@ export function* refreshConversationFromRemote({
         return;
     }
     const cleanRemote = cleanConversation(deserializedRemoteConversation);
+
+    // Ensure the local<->remote id mapping is recorded before any equality short-circuit below.
+    // The equality checks only compare conversation *content* (cleanConversation/cleanSerializedConversation
+    // both drop the remoteId), so a conversation can exist locally with matching content but with a missing
+    // idmap entry. In that case the early returns would skip persisting the mapping, leaving the conversation
+    // unreachable ("Remote ID not found" on pull). We persist the mapping here, idempotently, regardless of content.
+    const existingRemoteId: RemoteId | undefined = yield select(selectRemoteIdFromLocal(type, localId));
+    if (existingRemoteId !== remoteId) {
+        yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
+    }
+
     const localConversation: Conversation | undefined = yield select(selectConversationById(localId));
 
     // Always persist the local->remote id mapping, even when the conversation object itself is

@@ -194,11 +194,6 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                         )}
 
                         <div className="relative">
-                            {totalFiles > 1 && (
-                                <span className="absolute bg-primary text-white text-xs rounded-full min-w-5 h-5 flex items-center justify-center px-1 file-count">
-                                    {totalFiles > 9 ? '9+' : totalFiles}
-                                </span>
-                            )}
                             <Button
                                 size="medium"
                                 shape="ghost"
@@ -311,11 +306,6 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                     )}
 
                     <div className="relative">
-                        {totalFiles > 1 && (
-                            <span className="absolute bg-primary text-white text-xs rounded-full min-w-5 h-5 flex items-center justify-center px-1 file-count">
-                                {totalFiles > 9 ? '9+' : totalFiles}
-                            </span>
-                        )}
                         <Button
                             size="medium"
                             shape="ghost"
