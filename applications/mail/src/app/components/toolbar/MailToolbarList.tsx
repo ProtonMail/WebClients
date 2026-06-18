@@ -6,7 +6,7 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getLabelName, isLabelIDNewsletterSubscription } from 'proton-mail/helpers/labels';
+import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from 'proton-mail/helpers/labels';
 import { pageFromUrl, setPageInUrl } from 'proton-mail/helpers/mailboxUrl';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
@@ -53,7 +53,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
 
     const [labels] = useLabels();
     const [folders] = useFolders();
-    const labelName = getLabelName(labelID, labels, folders);
+    const labelName = getLabelNameForToolbar(labelID, labels, folders);
 
     const handlePage = (pageNumber: number) => {
         history.push(setPageInUrl(history.location, pageNumber));
