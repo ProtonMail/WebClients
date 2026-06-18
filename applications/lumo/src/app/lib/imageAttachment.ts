@@ -25,6 +25,11 @@ export function createImageAttachment(
     return { attachment, data: imageData };
 }
 
+export function lumoImageMarker(id: string, source: 'user' | 'assistant', name?: string): string {
+    const nameAttr = name ? ` name="${encodeURIComponent(name)}"` : '';
+    return `<lumo-image id="${encodeURIComponent(id)}" source="${encodeURIComponent(source)}"${nameAttr} />`;
+}
+
 export function imageMarkdownFragment(imageId: string): string {
     return `![Generated image](attachment:${imageId})`;
 }
