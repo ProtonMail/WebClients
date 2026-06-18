@@ -1,5 +1,4 @@
 import { MINUTE } from '@proton/shared/lib/constants';
-import { getHostname } from '@proton/shared/lib/helpers/url';
 
 export class ExternalSSOError extends Error {}
 
@@ -23,7 +22,7 @@ export const handleExternalSSOLogin = ({
     }
 
     const handleMessage = (event: MessageEvent) => {
-        if (event.data.action === 'sso' && event.data.payload) {
+        if (event.data?.action === 'sso' && event.data.payload) {
             const uid: string = event.data.payload.uid;
             const token: string = event.data.payload.token;
             return {
@@ -52,7 +51,7 @@ export const handleExternalSSOLogin = ({
         };
 
         const onMessage = (event: MessageEvent) => {
-            if (event.source !== tab && getHostname(event.origin) !== window.location.origin) {
+            if (!tab || event.source !== tab || event.origin !== window.location.origin) {
                 return;
             }
 
