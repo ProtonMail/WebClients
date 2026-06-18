@@ -375,6 +375,9 @@
       "Get the apps": [
         "Получить приложения"
       ],
+      "Get the deal": [
+        "Воспользоваться"
+      ],
       "Get the writing assistant": [
         "Получить помощник по написанию"
       ],
@@ -1170,6 +1173,15 @@
         "${ users } пользователя",
         "${ users } пользователей",
         "${ users } пользователей"
+      ],
+      "Total": [
+        "Итого"
+      ],
+      "Total for ${ n } month": [
+        "Итого за ${ n } месяц",
+        "Итого за ${ n } месяца",
+        "Итого за ${ n } месяцев",
+        "Итого за ${ n } месяцев"
       ]
     },
     "Collapsible tooltip": {
@@ -5147,6 +5159,12 @@
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
       ],
@@ -8506,6 +8524,11 @@
         "Подписка будет понижена в конце платежного периода."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Пожизненная"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилище"
@@ -9294,6 +9317,9 @@
       ],
       "Subscription canceled": [
         "Подписка отменена"
+      ],
+      "Summer Sale": [
+        "Летние скидки"
       ],
       "The link either does not exist or has expired": [
         "Ссылка не существует или просрочена"

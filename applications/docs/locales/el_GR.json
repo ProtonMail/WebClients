@@ -405,6 +405,9 @@
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
       ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
       "Get the writing assistant": [
         "Λάβετε τον βοηθό γραφής"
       ],
@@ -1475,6 +1478,20 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "Subtotal": [
+        "Υποσύνολο"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Υποσύνολο για ${ cycle } μήνα",
+        "Υποσύνολο για ${ cycle } μήνες"
+      ],
+      "Total": [
+        "Σύνολο"
+      ],
+      "Total for ${ n } month": [
+        "Σύνολο για ${ n } μήνα",
+        "Σύνολο για ${ n } μήνες"
       ]
     },
     "Collapsible tooltip": {
@@ -5873,6 +5890,10 @@
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } μήνας",
+        "${ n } μήνες"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } χαρακτήρες"
       ],
@@ -6091,6 +6112,9 @@
       ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
@@ -7966,6 +7990,9 @@
       "Failed to load invitation details": [
         "Αποτυχία φόρτωσης λεπτομερειών πρόσκλησης"
       ],
+      "Failed to load sharing details": [
+        "Αποτυχία φόρτωσης λεπτομερειών κοινής χρήσης"
+      ],
       "Failed to reject share invitation": [
         "Αποτυχία απόρριψης πρόσκλησης κοινής χρήσης"
       ],
@@ -9603,6 +9630,11 @@
         "Η συνδρομή θα υποβαθμιστεί στο τέλος του κύκλου χρέωσης."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Εφ' όρου ζωής"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB αποθηκευτικού χώρου"
@@ -10409,6 +10441,9 @@
       "Subscription canceled": [
         "Η συνδρομή ακυρώθηκε"
       ],
+      "Summer Sale": [
+        "Καλοκαιρινές εκπτώσεις"
+      ],
       "The link either does not exist or has expired": [
         "Ο σύνδεσμος είτε δεν υπάρχει είτε έχει λήξει"
       ],
@@ -10544,6 +10579,9 @@
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
       ],
       "Load image": [
         "Φόρτωση εικόνας"

@@ -396,6 +396,9 @@
       "Get the apps": [
         "Namesti aplikacije"
       ],
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
       "Get the writing assistant": [
         "Pridobite pomočnika pri pisanju"
       ],
@@ -1357,6 +1360,24 @@
         "${ users } uporabnika",
         "${ users } uporabniki",
         "${ users } uporabnikov"
+      ],
+      "Subtotal": [
+        "Vmesni seštevek"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Vmesni seštevek za ${ cycle } mesec",
+        "Vmesni seštevek za ${ cycle } meseca",
+        "Vmesni seštevek za ${ cycle } mesece",
+        "Vmesni seštevek za ${ cycle } mesecev"
+      ],
+      "Total": [
+        "Skupaj"
+      ],
+      "Total for ${ n } month": [
+        "Skupaj za ${ n } mesec",
+        "Skupaj za ${ n } meseca",
+        "Skupaj za ${ n } mesece",
+        "Skupaj za ${ n } mesecev"
       ]
     },
     "Collapsible tooltip": {
@@ -5610,6 +5631,12 @@
       "${ BRAND_NAME } username": [
         "Uporabniško ime za ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mesec",
+        "${ n } meseca",
+        "${ n } mesece",
+        "${ n } mesecv"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
       ],
@@ -5804,6 +5831,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
       ],
       "Hide password": [
         "Skrij geslo"
@@ -9179,6 +9209,11 @@
         "Naročnina bo zmanjšana ob koncu obračunskega cikla."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Za vedno"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
@@ -10003,6 +10038,9 @@
       ],
       "Subscription canceled": [
         "Naročnina preklicana"
+      ],
+      "Summer Sale": [
+        "Poletna razprodaja"
       ],
       "The link either does not exist or has expired": [
         "Povezava ne obstaja ali pa je potekla"

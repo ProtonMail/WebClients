@@ -405,6 +405,9 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
+      "Get the deal": [
+        "Obtener la promoción"
+      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -1478,6 +1481,20 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mes",
+        "Subtotal por ${ cycle } meses"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total for ${ n } month": [
+        "Total por ${ n } mes",
+        "Total por ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -5873,6 +5890,10 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caracteres"
       ],
@@ -6088,6 +6109,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Obtener la oferta"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -9753,6 +9777,11 @@
         "Pasará a un plan inferior al finalizar el ciclo de facturación."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "De por vida"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de almacenamiento"
@@ -10555,6 +10584,9 @@
       ],
       "Subscription canceled": [
         "Se canceló la suscripción."
+      ],
+      "Summer Sale": [
+        "Ofertas de verano"
       ],
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado"

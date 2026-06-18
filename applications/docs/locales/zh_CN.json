@@ -402,6 +402,9 @@
       "Get the apps": [
         "获取应用"
       ],
+      "Get the deal": [
+        "立即享受优惠"
+      ],
       "Get the writing assistant": [
         "获取写作助手"
       ],
@@ -1458,6 +1461,18 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位用户"
+      ],
+      "Subtotal": [
+        "小计"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 个月小计"
+      ],
+      "Total": [
+        "总计"
+      ],
+      "Total for ${ n } month": [
+        "${ n } 月合计"
       ]
     },
     "Collapsible tooltip": {
@@ -5797,6 +5812,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
+      "${ n } month": [
+        "${ n } 个月"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } 个字符"
       ],
@@ -6015,6 +6033,9 @@
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
+      ],
+      "Get the deal": [
+        "获取优惠"
       ],
       "Hide password": [
         "隐藏密码"
@@ -9435,6 +9456,11 @@
         "订阅将在账单周期结束时降级。"
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "终身"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 存储空间"
@@ -10217,6 +10243,9 @@
       ],
       "Subscription canceled": [
         "订阅已取消"
+      ],
+      "Summer Sale": [
+        "夏季特惠"
       ],
       "The link either does not exist or has expired": [
         "该链接不存在或已失效"

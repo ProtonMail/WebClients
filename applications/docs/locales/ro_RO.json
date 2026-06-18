@@ -408,6 +408,9 @@
       "Get the apps": [
         "Luați aplicațiile"
       ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
       "Get the writing assistant": [
         "Luați asistentul de scriere"
       ],
@@ -1492,6 +1495,22 @@
         "un utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal pentru ${ cycle } lună",
+        "Subtotal pentru ${ cycle } luni",
+        "Subtotal pentru ${ cycle } de luni"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total for ${ n } month": [
+        "Total pentru o lună",
+        "Total pentru ${ n } luni",
+        "Total pentru ${ n } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -5949,6 +5968,11 @@
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "O lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } de caractere"
       ],
@@ -6167,6 +6191,9 @@
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Luați oferta"
       ],
       "Hide password": [
         "Ascundere parolă"
@@ -8093,6 +8120,9 @@
       "Failed to load invitation details": [
         "Încărcarea detaliilor invitației a eșuat."
       ],
+      "Failed to load sharing details": [
+        "Încărcarea detaliilor de partajare a eșuat."
+      ],
       "Failed to reject share invitation": [
         "Eșuare refuzare invitație la partajare."
       ],
@@ -9867,6 +9897,11 @@
         "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Pe viață"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GiB spațiu de stocare"
@@ -10693,6 +10728,9 @@
       "Subscription canceled": [
         "Abonament anulat"
       ],
+      "Summer Sale": [
+        "Reduceri de vară"
+      ],
       "The link either does not exist or has expired": [
         "Legătura nu există sau a expirat"
       ],
@@ -10828,6 +10866,9 @@
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistență instantanee prin IA, expert uman la îndemână!"
       ],
       "Load image": [
         "Încărcare imagine"

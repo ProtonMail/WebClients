@@ -402,6 +402,9 @@
       "Get the apps": [
         "Hanki sovellukset"
       ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
       "Get the writing assistant": [
         "Hanki kirjoitusavustaja"
       ],
@@ -1346,6 +1349,17 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Välisumma ${ cycle } kuukaudelle",
+        "Välisumma ${ cycle } kuukaudelle"
+      ],
+      "Total": [
+        "Summa"
+      ],
+      "Total for ${ n } month": [
+        "Summa ${ n } kuukaudelle",
+        "Summa ${ n } kuukaudelle"
       ]
     },
     "Collapsible tooltip": {
@@ -5588,6 +5602,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } merkkiä"
       ],
@@ -5797,6 +5815,9 @@
       ],
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
       ],
       "Hide password": [
         "Piilota salasana"
@@ -7600,6 +7621,9 @@
       "Failed to load invitation details": [
         "Kutsun tietojen lataaminen epäonnistui"
       ],
+      "Failed to load sharing details": [
+        "Jakotietojen lataaminen epäonnistui"
+      ],
       "Failed to reject share invitation": [
         "Jakokutsusta kieltäytyminen epäonnistui"
       ],
@@ -9200,6 +9224,11 @@
         "Tilaus alennetaan laskutusjakson päättyessä."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Elinikäinen"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Gt tallennustilaa"
@@ -9987,6 +10016,9 @@
       ],
       "Subscription canceled": [
         "Tilaus on peruttu"
+      ],
+      "Summer Sale": [
+        "Kesäale"
       ],
       "The link either does not exist or has expired": [
         "Linkkiä ei ole olemassa tai se on vanhentunut"
