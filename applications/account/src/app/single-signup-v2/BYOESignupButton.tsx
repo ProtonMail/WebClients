@@ -27,6 +27,7 @@ import { SignupType } from '../signup/interfaces';
 interface Props {
     provider?: ImportProvider | OAUTH_PROVIDER;
     onEmailValue: (value: string) => void;
+    onImportEmailsValue: (importEmails: boolean) => void;
     signupType: SignupType;
     setSignupType: (signupType: SignupType) => void;
     onUseInternalAddress: () => void;
@@ -36,6 +37,7 @@ interface Props {
 const BYOESignupButton = ({
     provider = OAUTH_PROVIDER.GOOGLE,
     onEmailValue,
+    onImportEmailsValue,
     signupType,
     setSignupType,
     onUseInternalAddress,
@@ -46,7 +48,7 @@ const BYOESignupButton = ({
     const [addBYOEModalProps, setAddBYOEModalOpen, renderAddBYOEModal] = useModalState();
     const [loading, withLoading] = useLoading();
 
-    const callback = async (oauthProps: OAuthProps) => {
+    const callback = async (oauthProps: OAuthProps, importEmails: boolean) => {
         try {
             const result = await withLoading<CreateSignupOAuthTokenResponse>(
                 api(
@@ -60,6 +62,7 @@ const BYOESignupButton = ({
 
             if (result) {
                 onEmailValue(result.ValidatedOAuthTokenOutput.Account);
+                onImportEmailsValue(importEmails);
                 setSignupType(SignupType.BringYourOwnEmail);
             }
         } catch {}
@@ -69,7 +72,7 @@ const BYOESignupButton = ({
         setTimeout(() => passwordInputRef.current?.focus(), 200);
     };
 
-    const handleShowOauthPopup = async () => {
+    const handleShowOauthPopup = async (importEmails: boolean) => {
         const redirectUri = getOAuthRedirectURL(provider);
         const authorizationUrl = generateGoogleOAuthUrl({
             redirectUri,
@@ -78,7 +81,13 @@ const BYOESignupButton = ({
 
         const errorMessage = c('loc_nightly: BYOE').t`Something went wrong while connecting your Gmail address`;
 
-        void openOAuthPopup({ authorizationUrl, redirectUri, provider, callback, errorMessage });
+        void openOAuthPopup({
+            authorizationUrl,
+            redirectUri,
+            provider,
+            callback: (oauthProps: OAuthProps) => callback(oauthProps, importEmails),
+            errorMessage,
+        });
     };
 
     if (variant.name === 'Control') {
