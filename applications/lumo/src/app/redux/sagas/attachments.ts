@@ -556,6 +556,16 @@ export function* refreshFilledAttachmentFromRemote({
         return;
     }
     const cleanRemote = cleanAttachment(deserializedRemoteAttachment);
+
+    // Ensure the local<->remote id mapping is recorded before any equality short-circuit below.
+    // cleanAttachment/cleanAttachmentSerialized drop the remoteId, so an attachment can exist locally
+    // with matching content but a missing idmap entry. Without persisting the mapping here, the noop
+    // early returns would leave the attachment unreachable on the next pull ("Remote ID not found").
+    const existingRemoteId: RemoteId | undefined = yield select(selectRemoteIdFromLocal(type, localId));
+    if (existingRemoteId !== remoteId) {
+        yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
+    }
+
     const localAttachment: Attachment | undefined = yield select(selectAttachmentById(localId));
 
     // Always persist the local->remote id mapping, even when the attachment object itself is

@@ -352,6 +352,55 @@ export type ReasoningChunk = {
     sequence: number; // The count from token_data message
 };
 
+// *** Context compaction ***
+
+export type CompactionStrategyName =
+    | 'clear_tool_results'
+    | 'drop_tool_pairs'
+    | 'strip_context'
+    | 'drop_old_rounds'
+    | 'llm_summary';
+
+export type CompactionStats = {
+    tokensBefore: number; // Estimated tokens of the summarized region before compaction
+    tokensAfter: number; // Estimated tokens of the produced summary
+    tokensRemoved: number; // tokensBefore - tokensAfter (never negative)
+    summarizedMessageCount: number; // Messages collapsed into the summary
+    keptMessageCount: number; // Recent messages preserved verbatim
+    clearedToolResultCount: number; // Tool results cleared/dropped during reduction
+    appliedStrategies: CompactionStrategyName[]; // Strategies that ran, in order
+    usedLlmSummary: boolean; // Whether the final LLM summarization step was needed
+    /** Structured audit trail for trust: which files/tools left active context. */
+    audit?: CompactionAudit;
+};
+
+export type CompactionAudit = {
+    /** Files referenced in the summarized region that no longer count toward context. */
+    removedFiles: string[];
+    /** Tool names whose results were replaced with a placeholder. */
+    clearedTools: string[];
+    /** Tool names whose call/result pairs were removed entirely. */
+    droppedTools: string[];
+};
+
+/**
+ * Metadata stamped on a "compaction boundary" message. The boundary marks the
+ * point where the conversation context was branched: everything in
+ * `summarizedMessageIds` is replaced by `summary` for all subsequent model
+ * requests, while `keptMessageIds` are forwarded verbatim. The original
+ * messages remain in the tree for display/history.
+ */
+export type CompactionMeta = {
+    // 'compacting' while the engine runs, 'done' once the summary is ready.
+    // Absent on older persisted boundaries, which are always considered done.
+    status?: 'compacting' | 'done';
+    summary: string;
+    summarizedMessageIds: MessageId[];
+    keptMessageIds: MessageId[];
+    stats: CompactionStats;
+    createdAt: string; // ISO date
+};
+
 export type MessagePriv = {
     // Legacy fields (kept for backward compatibility)
     context?: string;
@@ -376,6 +425,11 @@ export type MessagePriv = {
 
     // Suggested follow-up questions from the model
     suggestedQuestions?: string[];
+
+    // Context compaction boundary. When set, this message is a "compaction marker"
+    // rather than ordinary content: it records how the conversation was condensed
+    // and is rendered as a divider in the UI. See CompactionMeta.
+    compaction?: CompactionMeta;
 };
 
 export type Message = MessagePub & MessagePriv;
@@ -431,7 +485,8 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.blocks === undefined || (Array.isArray(value.blocks) && value.blocks.every(isContentBlock))) &&
         (value.reasoning === undefined || typeof value.reasoning === 'string') &&
         (value.reasoningChunks === undefined || Array.isArray(value.reasoningChunks)) &&
-        (value.thinkingTimeline === undefined || Array.isArray(value.thinkingTimeline))
+        (value.thinkingTimeline === undefined || Array.isArray(value.thinkingTimeline)) &&
+        (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null))
     );
 }
 
@@ -452,6 +507,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         reasoning,
         reasoningChunks,
         thinkingTimeline,
+        compaction,
     } = m;
     return {
         content,
@@ -464,7 +520,12 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         reasoning,
         reasoningChunks,
         thinkingTimeline,
+        compaction,
     };
+}
+
+export function isCompactionMessage(message: MessagePriv): boolean {
+    return message.compaction !== undefined;
 }
 
 export function splitMessage(m: Message): { messagePriv: MessagePriv; messagePub: MessagePub } {
@@ -493,6 +554,7 @@ export function cleanMessage(message: Message): Message {
         reasoning,
         reasoningChunks,
         thinkingTimeline,
+        compaction,
     } = message;
     return {
         id,
@@ -512,6 +574,7 @@ export function cleanMessage(message: Message): Message {
         ...(reasoning !== undefined && { reasoning }),
         ...(reasoningChunks !== undefined && { reasoningChunks }),
         ...(thinkingTimeline !== undefined && { thinkingTimeline }),
+        ...(compaction !== undefined && { compaction }),
     };
 }
 
@@ -558,7 +621,8 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         (value.blocks === undefined || value.blocks.length === 0) &&
         value.reasoning === undefined &&
         value.reasoningChunks === undefined &&
-        value.thinkingTimeline === undefined
+        value.thinkingTimeline === undefined &&
+        value.compaction === undefined
     );
 }
 
@@ -712,7 +776,9 @@ export type AttachmentPriv = {
 // This contains metadata as well as the complete blob data.
 // It is a decrypted version of what will ultimately go into IndexedDB
 export type Attachment = AttachmentPub & AttachmentPriv;
-export type ShallowAttachment = Omit<Attachment, 'data' | 'markdown'>;
+// `imagePreview` is a Uint8Array (non-serializable) and is excluded so shallow attachments stored
+// in Redux/message state stay serializable. The full preview lives in the attachmentDataCache.
+export type ShallowAttachment = Omit<Attachment, 'data' | 'markdown' | 'imagePreview'>;
 
 // This is how objects are serialized into both IndexedDB and the remote persistence API.
 // The Encrypted part reflects AttachmentPriv and thus contains "heavy" fields like the data blob
@@ -764,7 +830,12 @@ export function isAttachment(value: any): value is Attachment {
 }
 
 export function isShallowAttachment(value: any): value is ShallowAttachment {
-    return isAttachment(value) && value.data === undefined && value.markdown === undefined;
+    return (
+        isAttachment(value) &&
+        value.data === undefined &&
+        value.markdown === undefined &&
+        value.imagePreview === undefined
+    );
 }
 
 export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
@@ -1000,7 +1071,7 @@ export enum LUMO_USER_TYPE {
 }
 
 export enum LUMO_API_ERRORS {
-    // CONTEXT_WINDOW_EXCEEDED = 'ContextWindow',
+    CONTEXT_WINDOW_EXCEEDED = 'ContextWindow',
     HIGH_DEMAND = 'HighDemand',
     GENERATION_ERROR = 'GenerationError', // This is a catch-all for any error that occurs during generation
     TIER_LIMIT = 'TierLimit', //not implemented yet for free and paid tiers - BE needs to be updated

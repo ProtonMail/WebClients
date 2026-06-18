@@ -13,6 +13,7 @@
 import type { AesGcmCryptoKey } from '../../../crypto/types';
 import type { Base64, RequestId, Status } from '../../../types';
 import {
+    type ChatCompletionsRequest,
     type ChatEndpointGenerationRequest,
     type Decrypted,
     type DecryptedImageDataMessage,
@@ -30,6 +31,7 @@ import {
     type ImageDataMessage,
     type IngestingMessage,
     type LumoApiGenerationRequest,
+    type LumoCompletionTarget,
     type QueuedMessage,
     type RejectedMessage,
     type RequestableGenerationTarget,
@@ -62,6 +64,7 @@ import {
 
 // Re-export types with aliases
 export {
+    type ChatCompletionsRequest,
     type ChatEndpointGenerationRequest,
     type Decrypted,
     type DecryptedImageDataMessage,
@@ -78,6 +81,7 @@ export {
     type ImageDataMessage,
     type IngestingMessage,
     type LumoApiGenerationRequest,
+    type LumoCompletionTarget,
     type QueuedMessage,
     type RejectedMessage,
     type RequestableGenerationTarget,

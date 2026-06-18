@@ -346,6 +346,10 @@ export const useLumoActions = ({
                     allAttachments,
                 },
                 uiContext: {
+                    // Pin the freshly created assistant message so the regenerated answer is the
+                    // one displayed. Without this, the new assistant is added as a hidden sibling
+                    // of the failed attempt and the retry does nothing.
+                    updateSibling: preferSibling,
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableReasoning: isThinkingEnabled,
                     navigateCallback,

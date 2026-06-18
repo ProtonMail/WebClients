@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import type { ContextFilter } from '../llm';
+import { getSummarizedMessageIds } from '../llm/compaction';
 import { useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectContextFilters } from '../redux/selectors';
 import { type Attachment, type Message, type SpaceId, isAttachment } from '../types';
@@ -34,6 +35,7 @@ export const useFilteredFiles = (
 ) => {
     const allAttachments = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
+    const summarizedMessageIds = useMemo(() => getSummarizedMessageIds(messageChain), [messageChain]);
 
     // Build a lookup map that includes both Redux attachments AND shallow attachments from messages
     // This is important because auto-retrieved Drive attachments are not pushed to server,
@@ -165,16 +167,27 @@ export const useFilteredFiles = (
         return filter ? filter.excludedFiles.includes(file.filename) : false;
     };
 
-    // Separate active vs excluded files (excluding auto-retrieved which are shown separately)
+    const isFileFromSummarizedMessage = (file: LinkedAttachment) => summarizedMessageIds.has(file.messageId);
+
+    // Separate active, manually excluded, and compacted (summarized) files.
     const activeHistoricalFiles = useMemo(() => {
         if (filterMessage) return allFiles;
-        return allFiles.filter((file) => !isFileExcluded(file) && !(file as any).autoRetrieved);
-    }, [allFiles, filterMessage, contextFilters]);
+        return allFiles.filter(
+            (file) => !isFileExcluded(file) && !(file as any).autoRetrieved && !isFileFromSummarizedMessage(file)
+        );
+    }, [allFiles, filterMessage, contextFilters, summarizedMessageIds]);
 
     const unusedHistoricalFiles = useMemo(() => {
         if (filterMessage) return [];
-        return allFiles.filter((file) => isFileExcluded(file) && !(file as any).autoRetrieved);
-    }, [allFiles, filterMessage, contextFilters]);
+        return allFiles.filter(
+            (file) => isFileExcluded(file) && !(file as any).autoRetrieved && !isFileFromSummarizedMessage(file)
+        );
+    }, [allFiles, filterMessage, contextFilters, summarizedMessageIds]);
+
+    const compactedHistoricalFiles = useMemo(() => {
+        if (filterMessage) return [];
+        return allFiles.filter((file) => !(file as any).autoRetrieved && isFileFromSummarizedMessage(file));
+    }, [allFiles, filterMessage, summarizedMessageIds]);
 
     // Calculate context based on files that will be used for next question
     const nextQuestionFiles = useMemo(() => {
@@ -185,6 +198,7 @@ export const useFilteredFiles = (
         allFiles,
         activeHistoricalFiles,
         unusedHistoricalFiles,
+        compactedHistoricalFiles,
         nextQuestionFiles,
         isFileExcluded,
         contextFilters,

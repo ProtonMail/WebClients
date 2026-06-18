@@ -1,0 +1,66 @@
+.context-usage {
+    $conversation: var(--primary, #6d4aff);
+    $files: var(--signal-info, #239ECE);
+    $buffer: var(--text-hint, #8a8a8a);
+
+    &-bar {
+        display: flex;
+        align-items: stretch;
+        inline-size: 100%;
+        block-size: 0.6rem;
+        overflow: hidden;
+        background: var(--background-strong);
+    }
+
+    &-seg {
+        display: block;
+        block-size: 100%;
+        transition: width 0.3s ease;
+
+        &--conversation {
+            background: $conversation;
+        }
+
+        &--files {
+            background: $files;
+        }
+
+        &--buffer {
+            // Hatched fill to read as "reserved", not occupied.
+            background-color: var(--background-weak);
+            background-image: repeating-linear-gradient(
+                45deg,
+                $buffer 0,
+                $buffer 1px,
+                transparent 1px,
+                transparent 5px
+            );
+            opacity: 0.5;
+        }
+
+        &--free {
+            background: var(--background-strong);
+        }
+    }
+
+    &-dot {
+        inline-size: 0.6rem;
+        block-size: 0.6rem;
+        border-radius: 50%;
+
+        &.context-usage-seg--buffer {
+            opacity: 1;
+            background-color: var(--text-hint, #8a8a8a);
+            background-image: none;
+        }
+
+        &.context-usage-seg--free {
+            border: 1px solid var(--border-norm);
+            background: var(--background-norm);
+        }
+    }
+
+    &-legend-row {
+        line-height: 1.4;
+    }
+}
