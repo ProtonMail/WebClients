@@ -1440,6 +1440,18 @@
       ],
       "Failed to create access token": [
         "Falha ao criar o token de acesso"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "O prazo de expiração deve ser entre 1 hora e 1 ano"
+      ],
+      "Failed to delete access token": [
+        "Falha ao excluir o token de acesso"
+      ],
+      "Failed to load access tokens": [
+        "Falha ao carregar o tokens de acesso"
+      ],
+      "Failed to update vault access": [
+        "Falha ao atualizar o acesso ao cofre"
       ]
     },
     "Error message": {
@@ -2195,8 +2207,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2944,6 +2955,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "É necessária a permissão do navegador"
+      ],
+      "Expired on ${ formattedDate }": [
+        "Expirado em ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Expira em ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4108,6 +4128,27 @@
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
+      ],
+      "1 day": [
+        "1 dia"
+      ],
+      "1 month": [
+        "1 mês"
+      ],
+      "1 week": [
+        "1 semana"
+      ],
+      "1 year": [
+        "1 ano"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Custom expiration (minutes)": [
+        "Expiração personalizada (minutos)"
+      ],
+      "Expires in": [
+        "Expira em"
       ]
     },
     "Link": {
@@ -4301,6 +4342,12 @@
       ],
       "You may close this window after saving the file.": [
         "Você pode fechar esta janela após salvar o arquivo."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Esse recurso não é suportado no seu plano. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Esse recurso não é suportado no seu plano. Entre em contato com seu administrador para obter acesso."
       ]
     },
     "Permission": {
@@ -5134,6 +5181,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ],
+      "Browser permission required": [
+        "É necessária a permissão do navegador"
       ]
     },
     "Title_cloned_item": {
