@@ -1,7 +1,7 @@
 import { useInactiveKeys } from '@proton/account';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import type { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
@@ -12,9 +12,9 @@ import RecoveryScoreBanner from './RecoveryScoreBanner/RecoveryScoreBanner';
 import SentinelBanner from './SentinelBanner/SentinelBanner';
 
 interface Props {
-    variant: SettingsLayoutVariant;
+    variant?: SettingsLayoutVariant;
 }
-export const OverviewSectionV2 = ({ variant }: Props) => {
+export const OverviewSectionV2 = ({ variant = SettingsLayoutVariant.Card }: Props) => {
     const keyReactivationRequests = useInactiveKeys();
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();
