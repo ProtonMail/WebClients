@@ -44,7 +44,7 @@ describe('selectAll', () => {
             it('should return inbox folder name', () => {
                 const res = getSelectAllBannerTextWithLocation({
                     conversationMode: false,
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -56,7 +56,7 @@ describe('selectAll', () => {
             it('should return the category name', () => {
                 const res = getSelectAllBannerTextWithLocation({
                     conversationMode: false,
-                    labelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    currentLabel: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -68,7 +68,7 @@ describe('selectAll', () => {
             it('should return the custom folder name', () => {
                 const res = getSelectAllBannerTextWithLocation({
                     conversationMode: false,
-                    labelID: customFolderID,
+                    currentLabel: customFolderID,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -80,7 +80,7 @@ describe('selectAll', () => {
             it('should return the custom label name', () => {
                 const res = getSelectAllBannerTextWithLocation({
                     conversationMode: false,
-                    labelID: customLabelID,
+                    currentLabel: customLabelID,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -94,7 +94,7 @@ describe('selectAll', () => {
             it('should return inbox folder name', () => {
                 const res = getSelectAllBannerTextWithLocation({
                     conversationMode: true,
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -106,7 +106,7 @@ describe('selectAll', () => {
             it('should return the category name', () => {
                 const res = getSelectAllBannerTextWithLocation({
                     conversationMode: true,
-                    labelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    currentLabel: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -118,7 +118,7 @@ describe('selectAll', () => {
             it('should return the custom folder name', () => {
                 const res = getSelectAllBannerTextWithLocation({
                     conversationMode: true,
-                    labelID: customFolderID,
+                    currentLabel: customFolderID,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -130,7 +130,7 @@ describe('selectAll', () => {
             it('should return the custom label name', () => {
                 const res = getSelectAllBannerTextWithLocation({
                     conversationMode: true,
-                    labelID: customLabelID,
+                    currentLabel: customLabelID,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -146,7 +146,7 @@ describe('selectAll', () => {
             it('should return inbox button text', () => {
                 const res = getSelectAllButtonText({
                     selectAll: false,
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -158,7 +158,7 @@ describe('selectAll', () => {
             it('should return newsletters button text', () => {
                 const res = getSelectAllButtonText({
                     selectAll: false,
-                    labelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    currentLabel: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -170,7 +170,7 @@ describe('selectAll', () => {
             it('should return custom label button text', () => {
                 const res = getSelectAllButtonText({
                     selectAll: false,
-                    labelID: customLabelID,
+                    currentLabel: customLabelID,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -182,7 +182,7 @@ describe('selectAll', () => {
             it('should return custom folder button text', () => {
                 const res = getSelectAllButtonText({
                     selectAll: false,
-                    labelID: customFolderID,
+                    currentLabel: customFolderID,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -196,7 +196,7 @@ describe('selectAll', () => {
             it('should return clear selection copy', () => {
                 const res = getSelectAllButtonText({
                     selectAll: true,
-                    labelID: customLabelID,
+                    currentLabel: customLabelID,
                     elementsCount,
                     customLabels,
                     customFolders,
@@ -229,7 +229,7 @@ describe('selectAll', () => {
                 getCanDisplaySelectAllBanner({
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
                     isSearch: false,
                     hasFilter: false,
                 })
@@ -239,7 +239,7 @@ describe('selectAll', () => {
                 getCanDisplaySelectAllBanner({
                     mailPageSize: MAIL_PAGE_SIZE.TWO_HUNDRED,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.TWO_HUNDRED),
-                    labelID: 'customLabelID',
+                    currentLabel: 'customLabelID',
                     isSearch: false,
                     hasFilter: false,
                 })
@@ -251,7 +251,7 @@ describe('selectAll', () => {
                 getCanDisplaySelectAllBanner({
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY - 1),
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
                     isSearch: false,
                     hasFilter: false,
                 })
@@ -263,7 +263,7 @@ describe('selectAll', () => {
                 getCanDisplaySelectAllBanner({
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
-                    labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    currentLabel: MAILBOX_LABEL_IDS.ALL_MAIL,
                     isSearch: false,
                     hasFilter: false,
                 })
@@ -273,7 +273,7 @@ describe('selectAll', () => {
                 getCanDisplaySelectAllBanner({
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
-                    labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    currentLabel: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     isSearch: false,
                     hasFilter: false,
                 })
@@ -285,7 +285,7 @@ describe('selectAll', () => {
                 getCanDisplaySelectAllBanner({
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
                     isSearch: true,
                     hasFilter: false,
                 })
@@ -297,7 +297,7 @@ describe('selectAll', () => {
                 getCanDisplaySelectAllBanner({
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    currentLabel: MAILBOX_LABEL_IDS.INBOX,
                     isSearch: false,
                     hasFilter: true,
                 })

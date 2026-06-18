@@ -32,7 +32,7 @@ const MailboxListBannersWrapper = ({ columnLayout, checkedIDs, onCheckAll }: Mai
     const canShowSelectAllBanner = getCanDisplaySelectAllBanner({
         mailPageSize: pageSize,
         checkedIDs,
-        labelID,
+        currentLabel: labelID,
         isSearch,
         hasFilter,
     });
