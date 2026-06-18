@@ -8,6 +8,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { isCustomLabel as testIsCustomLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -19,11 +20,16 @@ import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isSearch as testIsSearch } from '../../helpers/elements';
-import { getLabelName } from '../../helpers/labels';
+import { getLabelNameWithCategory } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { contextTotal, loadedEmpty, taskRunningInLabel } from '../../store/elements/elementsSelectors';
+import {
+    contextTotal,
+    loadedEmpty,
+    selectCategoryIDs,
+    taskRunningInLabel,
+} from '../../store/elements/elementsSelectors';
 import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
@@ -65,17 +71,20 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const isLoadedEmpty = useMailSelector(loadedEmpty);
     const checkeds = checkedIDs.length;
 
+    const { hasAccessToCategoryView } = useCategoriesData();
+    const categoryIDs = useMailSelector(selectCategoryIDs);
+
     const count = checkeds || total;
     const labelName = useMemo(() => {
         if (count === 0) {
             if (!isLoadedEmpty) {
-                return getLabelName(labelID, labels, folders);
+                return getLabelNameWithCategory(labelID, labels, folders, categoryIDs, hasAccessToCategoryView);
             }
             return c('Info').t`No messages found`;
         }
 
-        return getLabelName(labelID, labels, folders);
-    }, [labelID, labels, folders, count, isLoadedEmpty]);
+        return getLabelNameWithCategory(labelID, labels, folders, categoryIDs, hasAccessToCategoryView);
+    }, [labelID, labels, folders, count, isLoadedEmpty, categoryIDs, hasAccessToCategoryView]);
 
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(appLocation), [appLocation]);
     const isSearch = testIsSearch(searchParameters);
