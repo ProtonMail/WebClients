@@ -40,6 +40,7 @@ const VerifyRecoveryPhoneModal = ({ onClose, ...rest }: Props) => {
                 ).t`Verify by SMS`}</Button>,
                 <Button onClick={onClose} disabled={loading}>{c('Recovery Phone').t`Cancel`}</Button>,
             ]}
+            onClose={onClose}
             {...rest}
         >
             {c('Recovery Phone')
