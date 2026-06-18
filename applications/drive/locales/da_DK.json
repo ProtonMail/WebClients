@@ -7349,7 +7349,7 @@
         "Vælg venligst de labels, du ønsker at importere:"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ nodeName }. Der kan være blevet manipuleret med fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
+        "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ nodeName }. Der kan være blevet manipuleret med følgende: fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
       ]
     },
     "info": {
@@ -10118,6 +10118,9 @@
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } foto er blevet fjernet fra \"${ albumName }\"",
         "${ removed } fotos er blevet fjernet fra \"${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "Kunne ikke indlæse detaljer om deling"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13813,6 +13816,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Vi kunne ikke bekræfte, at noden blev oprettet af ${ claimedKeyAuthor }. Årsagen: ${ node.keyAuthor.error.error }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13915,7 +13921,7 @@
         "Nyt!"
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øjeblikkelig AI-assistance, menneskelig ekspert der sidder klar!"
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ]
     },
     "tooltip": {

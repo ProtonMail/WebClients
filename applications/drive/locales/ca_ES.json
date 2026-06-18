@@ -10197,6 +10197,9 @@
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "S'ha esborrat ${ removed } foto de \"${ albumName }\"",
         "S'han esborrat ${ removed } fotos de \"${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "No s'han pogut carregar els detalls per compartir"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
