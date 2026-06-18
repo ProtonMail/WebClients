@@ -13,7 +13,8 @@ import { removeEmbeddedImagesFromContent, removeProxyUrlsFromContent } from '@pr
 export const cleanProblematicImagesFromClipboardContent = (
     type: 'copy' | 'drag',
     event: Event,
-    selection: Selection | null | undefined
+    selection: Selection | null | undefined,
+    isInlineImageReuploadDisabled: boolean
 ) => {
     const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
 
@@ -33,8 +34,10 @@ export const cleanProblematicImagesFromClipboardContent = (
         // Replace all proxy images with their original URL
         const updatedContent = removeProxyUrlsFromContent(selectionContent);
 
-        // Remove all embedded images from the content
-        removeEmbeddedImagesFromContent(updatedContent);
+        if (isInlineImageReuploadDisabled) {
+            // Remove all embedded images from the content
+            removeEmbeddedImagesFromContent(updatedContent);
+        }
 
         // Update clipboard data / data transfer with the updated HTML and plaintext
         if (type === 'copy') {

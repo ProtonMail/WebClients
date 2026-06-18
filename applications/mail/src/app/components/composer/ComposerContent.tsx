@@ -13,7 +13,8 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
+import type { AddAttachmentsParams, PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
+import type { MailState } from 'proton-mail/store/store';
 
 import AttachmentList, { AttachmentAction } from '../../components/message/extrasFooter/attachment/AttachmentList';
 import type { MessageChange } from './Composer';
@@ -39,6 +40,10 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     isAssistantExpanded?: boolean;
     toolbarWrapperRef?: RefObject<HTMLDivElement>;
     onExpandBlockquotes?: () => void;
+    onUploadAttachments?: (data: AddAttachmentsParams) => void;
+    getStoreState?: () => MailState;
+    // Kill switch to prevent the re-upload of inline images on undo
+    isInlineImageReuploadDisabled: boolean;
 }
 
 const ComposerContent = (
@@ -52,6 +57,8 @@ const ComposerContent = (
         onChangeContent,
         onFocus,
         onAddAttachments,
+        onUploadAttachments,
+        getStoreState,
         onRemoveAttachment,
         onRemoveUpload,
         pendingUploads,
@@ -65,6 +72,7 @@ const ComposerContent = (
         isAssistantExpanded,
         toolbarWrapperRef,
         onExpandBlockquotes,
+        isInlineImageReuploadDisabled,
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
@@ -106,6 +114,8 @@ const ComposerContent = (
                     onMouseUp={onMouseUp}
                     onKeyUp={onKeyUp}
                     onChangeContent={onChangeContent}
+                    onUploadAttachments={onUploadAttachments}
+                    getStoreState={getStoreState}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     onRemoveAttachment={onRemoveAttachment}
@@ -115,6 +125,7 @@ const ComposerContent = (
                     toolbarCustomRender={toolbarCustomRender}
                     hasAttachments={attachments.length > 0}
                     onExpandBlockquotes={onExpandBlockquotes}
+                    isInlineImageReuploadDisabled={isInlineImageReuploadDisabled}
                 />
             </div>
 

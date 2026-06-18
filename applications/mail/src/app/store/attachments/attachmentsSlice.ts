@@ -1,8 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { globalReset } from '../actions';
-import { addAttachment, updateAttachment } from './attachmentsActions';
-import { globalReset as globalResetReducer, setAttachment as setAttachmentReducer } from './attachmentsReducers';
+import { addAttachment, addImageIdentifierAction, updateAttachment } from './attachmentsActions';
+import {
+    addImageIdentifierReducer,
+    globalReset as globalResetReducer,
+    setAttachment as setAttachmentReducer,
+} from './attachmentsReducers';
 import type { AttachmentsState } from './attachmentsTypes';
 
 const name = 'attachments';
@@ -15,6 +19,7 @@ const attachmentsSlice = createSlice({
         builder.addCase(globalReset, globalResetReducer);
         builder.addCase(addAttachment, setAttachmentReducer);
         builder.addCase(updateAttachment, setAttachmentReducer);
+        builder.addCase(addImageIdentifierAction, addImageIdentifierReducer);
     },
 });
 

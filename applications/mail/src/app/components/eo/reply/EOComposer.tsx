@@ -153,6 +153,8 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
                     userSettings={EO_DEFAULT_USER_SETTINGS}
                     editorMetadata={metadata}
                     isOutside
+                    // We force the value to true to disable inline image reupload on EO composer
+                    isInlineImageReuploadDisabled={true}
                 />
             </div>
             <EOReplyFooter

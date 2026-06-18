@@ -46,7 +46,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after images</p>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection, true);
 
         const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
 <p>Text before images</p>
@@ -66,7 +66,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
     });
 
     it('should do nothing if no range is found [copy event]', () => {
-        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, null);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, null, true);
 
         expect(mockSetData).not.toHaveBeenCalled();
     });
@@ -78,7 +78,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <a href="https://example.com">Link below</a>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection, true);
 
         // A bit strange, but turndown is inserting a space between the line breaks
         const expectedPlainSelection = `First paragraph\n\nSecond paragraph\n\nLink below`;
@@ -99,7 +99,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after images</p>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection, true);
 
         const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
 <p>Text before images</p>
@@ -130,7 +130,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
             },
         } as any;
         const selection = { rangeCount: 0 } as Selection;
-        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection, true);
 
         const expectedHTMLSelection = `<img src="https://image.com/image.png" alt="${imgAlt}">`;
 
@@ -142,7 +142,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
     });
 
     it('should do nothing if no range is found [drag event]', () => {
-        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, null);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, null, true);
 
         expect(mockSetData).not.toHaveBeenCalled();
     });
@@ -154,7 +154,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <a href="https://example.com">Link below</a>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection, true);
 
         // A bit strange, but turndown is inserting a space between the line breaks
         const expectedPlainSelection = `First paragraph\n\nSecond paragraph\n\nLink below`;
@@ -173,7 +173,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after image</p>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection, true);
 
         const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
 <p>Text before image</p>
@@ -197,7 +197,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after image</p>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection, true);
 
         const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
 <p>Text before image</p>
@@ -222,7 +222,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after image</p>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection, true);
 
         const expectedPlainSelection = `Text before image\n\nText after image`;
 
@@ -249,7 +249,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 </div>`;
 
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection, true);
 
         const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
 <img src="${dataURL}" alt="base64">
@@ -270,7 +270,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after image</p>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection, true);
 
         const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
 <p>Text before image</p>
@@ -295,7 +295,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after image</p>
 </div>`;
         const selection = setup(content);
-        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection, true);
 
         const expectedPlainSelection = `Text before image\n\nText after image`;
 
