@@ -173,6 +173,7 @@ export const PasswordVerification = (props: Props) => {
                     onValue={setPassword}
                     error={validator([requiredValidator(password)])}
                     label={c('Label').t`Enter current password`}
+                    bigger
                 />
                 <ButtonLike
                     shape="underline"
