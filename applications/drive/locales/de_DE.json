@@ -10167,6 +10167,9 @@
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } Foto wurde aus \"${ albumName }\" entfernt",
         "${ removed } Fotos wurden aus \"${ albumName }\" entfernt"
+      ],
+      "Failed to load sharing details": [
+        "Die Details zur gemeinsamen Nutzung konnten nicht geladen werden"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

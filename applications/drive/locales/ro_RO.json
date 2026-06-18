@@ -7477,6 +7477,9 @@
       ],
       "All your files will be imported": [
         "Vor fi importate toate fișierele."
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ nodeName }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
       ]
     },
     "info": {
@@ -10326,6 +10329,9 @@
         "Fotografii eliminate din albumul „${ albumName }”: ${ removed }",
         "Fotografii eliminate din albumul „${ albumName }”: ${ removed }",
         "Fotografii eliminate din albumul „${ albumName }”: ${ removed }"
+      ],
+      "Failed to load sharing details": [
+        "Încărcarea detaliilor de partajare a eșuat."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14082,6 +14088,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Nu s-a putut confirma că numele a fost creat sau modificat de către ${ claimedNameAuthor }. Motiv: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Nu s-a putut confirma că nodul a fost creat de către ${ claimedKeyAuthor }. Motiv: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {

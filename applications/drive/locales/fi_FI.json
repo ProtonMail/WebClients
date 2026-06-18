@@ -9628,6 +9628,9 @@
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } valokuva poistettiin albumista \"${ albumName }\"",
         "${ removed } valokuvaa poistettiin albumista \"${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "Jakotietojen lataaminen epäonnistui"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
