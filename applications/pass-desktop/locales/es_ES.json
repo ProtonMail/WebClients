@@ -1413,6 +1413,21 @@
       ],
       "Name must be 191 characters or fewer": [
         "El nombre debe tener 191 caracteres o menos"
+      ],
+      "Biometric authentication failed.": [
+        "Error en la autenticación biométrica."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicación cifrada con la aplicación de escritorio de ${ PASS_APP_NAME } ha fallado."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "La caducidad debe estar entre 1 hora y 1 año"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } no ha respondido a tiempo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } ha iniciado sesión con una cuenta diferente."
       ]
     },
     "Error message": {
@@ -2823,6 +2838,12 @@
       ],
       "Vault access granted": [
         "Se ha concedido el acceso a las cajas fuertes"
+      ],
+      "Expired on ${ formattedDate }": [
+        "Ha caducado el ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Caduca el ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4068,6 +4089,27 @@
       ],
       "Vault access": [
         "Acceso a las cajas fuertes"
+      ],
+      "1 day": [
+        "1 día"
+      ],
+      "1 month": [
+        "1 mes"
+      ],
+      "1 week": [
+        "1 semana"
+      ],
+      "1 year": [
+        "1 año"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Custom expiration (minutes)": [
+        "Caducidad personalizada (minutos)"
+      ],
+      "Expires in": [
+        "Caduca en"
       ]
     },
     "Link": {

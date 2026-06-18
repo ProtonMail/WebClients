@@ -1341,6 +1341,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "La scadenza deve essere compresa tra 1 ora e 1 anno"
       ]
     },
     "Error message": {
@@ -2612,6 +2615,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ],
+      "Expired on ${ formattedDate }": [
+        "Scaduto il ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Scade in ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -3845,6 +3854,24 @@
       ],
       "ZIP or Postal code": [
         "CAP"
+      ],
+      "1 day": [
+        "1 giorno"
+      ],
+      "1 month": [
+        "1 mese"
+      ],
+      "1 week": [
+        "1 settimana"
+      ],
+      "1 year": [
+        "1 anno"
+      ],
+      "Custom": [
+        "Personalizzato"
+      ],
+      "Custom expiration (minutes)": [
+        "Scadenza personalizzata (minuti)"
       ]
     },
     "Link": {
