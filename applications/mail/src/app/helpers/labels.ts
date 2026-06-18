@@ -373,10 +373,6 @@ export const getCustomViewFromLabel = (label: string) => {
 
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
     if (labelID in LABEL_IDS_TO_HUMAN) {
-        if (isCategoryLabel(labelID)) {
-            return getLabelFromCategoryId(labelID);
-        }
-
         const folders = getStandardFolders();
         return folders[labelID]?.name || folders[MAILBOX_LABEL_IDS.INBOX].name;
     }
@@ -396,6 +392,25 @@ export const getLabelName = (labelID: string, labels: Label[] = [], folders: Fol
     }
 
     return labelID;
+};
+
+// Helper to get the label with categories name support
+export const getLabelNameWithCategory = (
+    labelID: string,
+    labels: Label[] = [],
+    folders: Folder[] = [],
+    categoryIDs: string[] = [],
+    hasAccessToCategoryView = false
+) => {
+    const category = categoryIDs[0];
+    if (labelID === MAILBOX_LABEL_IDS.INBOX && hasAccessToCategoryView && category) {
+        const folders = getStandardFolders();
+        const name = folders[MAILBOX_LABEL_IDS.INBOX].name;
+        const categoryLabel = getLabelFromCategoryId(category as CategoryLabelID);
+        return `${name} • ${categoryLabel}`;
+    }
+
+    return getLabelName(labelID, labels, folders);
 };
 
 /**
