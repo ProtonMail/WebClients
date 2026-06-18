@@ -7365,7 +7365,7 @@
         "Tüm dosyalarınız içe aktarılacak"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "${ nameAuthor } tarafından yüklenen ${ nodeName } dosyasını doğrulayamadık. Aşağıdakilerde değişiklik yapılmış olabilir: dosya verilerinin sırası. Yalnızca güvenilir olduğunu düşünüyorsanız açın."
+        "${ nameAuthor } tarafından yüklenen ${ nodeName } dosyası doğrulanamadı. Şu ögeler üzerinde oynanmış olabilir: Dosya verileri sıralaması. Yalnızca güveniyorsanız açın."
       ]
     },
     "info": {
@@ -10137,6 +10137,9 @@
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } fotoğraf \"${ albumName }\" albümünden kaldırıldı",
         "${ removed } fotoğraf \"${ albumName }\" albümünden kaldırıldı"
+      ],
+      "Failed to load sharing details": [
+        "Paylaşım ayrıntıları yüklenemedi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13831,10 +13834,10 @@
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
-        "Bu adın ${ claimedNameAuthor } tarafından oluşturulduğunu veya değiştirildiğini doğrulayamadık. Nedeni ise: ${ node.nameAuthor.error.error }"
+        "Adın ${ claimedNameAuthor } tarafından oluşturulduğu veya değiştirildiği doğrulanamadı. Nedeni: ${ node.nameAuthor.error.error }"
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
-        "Düğümün ${ claimedKeyAuthor } tarafından oluşturulduğunu doğrulayamadık. Nedeni ise: ${ node.keyAuthor.error.error }"
+        "Düğümün ${ claimedKeyAuthor } tarafından oluşturulduğu doğrulanamadı. Nedeni: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13937,7 +13940,7 @@
         "Yeni!"
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "Instant assistance with AI and human experts.": [
         "Yapay zeka ve insan uzmanlar ile anında yardım."

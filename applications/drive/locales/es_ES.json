@@ -10126,6 +10126,9 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "La copia de \"${ ellipsedName }\" se ha movido a la papelera"
+      ],
+      "Failed to load sharing details": [
+        "No se han podido cargar los detalles de uso compartido"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13818,6 +13821,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "No hemos podido confirmar que ${ claimedKeyAuthor } haya creado el nodo. El motivo es el siguiente: ${ node.keyAuthor.error.error }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
