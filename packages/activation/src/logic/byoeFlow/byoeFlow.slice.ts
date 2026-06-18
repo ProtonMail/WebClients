@@ -3,19 +3,19 @@ import { createAction, createSlice } from '@reduxjs/toolkit';
 export interface BYOEFlowState {
     connectedAddress: string | null;
     stepModal: 'moreStorage' | 'success' | null;
-    isConversionFlow: boolean;
+    skipImport: boolean;
 }
 
 const initialState: BYOEFlowState = {
     connectedAddress: null,
     stepModal: null,
-    isConversionFlow: false,
+    skipImport: false,
 };
 
 export const setBYOEFlowResult = createAction<{
     connectedAddress: string;
     isPaid: boolean;
-    isConversionFlow: boolean;
+    skipImport: boolean;
 }>('byoeFlow/setResult');
 
 export const advanceToBYOESuccess = createAction('byoeFlow/advanceToSuccess');
@@ -28,8 +28,8 @@ const byoeFlowSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(setBYOEFlowResult, (state, action) => {
             state.connectedAddress = action.payload.connectedAddress;
-            state.isConversionFlow = action.payload.isConversionFlow;
-            state.stepModal = action.payload.isPaid || action.payload.isConversionFlow ? 'success' : 'moreStorage';
+            state.skipImport = action.payload.skipImport;
+            state.stepModal = action.payload.isPaid || action.payload.skipImport ? 'success' : 'moreStorage';
         });
 
         builder.addCase(advanceToBYOESuccess, (state) => {
@@ -39,7 +39,7 @@ const byoeFlowSlice = createSlice({
         builder.addCase(clearBYOEFlow, (state) => {
             state.connectedAddress = null;
             state.stepModal = null;
-            state.isConversionFlow = false;
+            state.skipImport = false;
         });
     },
 });
