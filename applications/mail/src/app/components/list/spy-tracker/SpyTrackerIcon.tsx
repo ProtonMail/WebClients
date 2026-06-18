@@ -29,9 +29,21 @@ const SpyTrackerIcon = (
         className
     );
     const icon = needsMoreProtection ? (
-        <IcShield2 size={4} alt={title} data-testid="privacy:tracker-icon" className={iconClassName} />
+        <IcShield2
+            size={4}
+            alt={title}
+            data-testid="privacy:tracker-icon"
+            data-protection-enabled="false"
+            className={iconClassName}
+        />
     ) : (
-        <IcShield2CheckFilled size={4} alt={title} data-testid="privacy:tracker-icon" className={iconClassName} />
+        <IcShield2CheckFilled
+            size={4}
+            alt={title}
+            data-testid="privacy:tracker-icon"
+            data-protection-enabled="true"
+            className={iconClassName}
+        />
     );
 
     return (
