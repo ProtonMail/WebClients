@@ -1448,6 +1448,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "De vervaldatum moet tussen 1 uur en 1 jaar liggen"
       ]
     },
     "Error message": {
@@ -2858,6 +2861,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "Expired on ${ formattedDate }": [
+        "Verlopen op ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Verloopt op ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4106,6 +4115,27 @@
       ],
       "ZIP or Postal code": [
         "Postcode"
+      ],
+      "1 day": [
+        "1 dag"
+      ],
+      "1 month": [
+        "1 maand"
+      ],
+      "1 week": [
+        "1 week"
+      ],
+      "1 year": [
+        "1 jaar"
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Custom expiration (minutes)": [
+        "Aangepaste vervaldatum (minuten)"
+      ],
+      "Expires in": [
+        "Verloopt over"
       ]
     },
     "Link": {
@@ -4442,6 +4472,9 @@
       ],
       "Used on ${ url }": [
         "Gebruikt op ${ url }"
+      ],
+      "e.g. My automation script": [
+        "bijv. Mijn automatiseringsscript"
       ]
     },
     "Security Center - Info": {

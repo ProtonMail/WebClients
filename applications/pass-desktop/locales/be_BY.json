@@ -1373,7 +1373,7 @@
         "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
       ],
       "The session has expired. Please sign in again.": [
-        "Час сеансу пратэрмінаваны. Увайдзіце яшчэ раз."
+        "Час сеанса пратэрмінаваны. Увайдзіце яшчэ раз."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Адбылася памылка падчас выдалення бяспечнай спасылкі. Паспрабуйце яшчэ раз праз некалькі хвілін."
@@ -1458,6 +1458,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Тэрмін дзеянне павінен быць паміж 1 гадзінай і 1 годам"
       ]
     },
     "Error message": {
@@ -2929,6 +2932,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Expired on ${ formattedDate }": [
+        "Мінуў ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Тэрмін дзеяння міне ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4205,6 +4214,27 @@
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
+      ],
+      "1 day": [
+        "1 дзень"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "1 week": [
+        "1 тыдзень"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "Custom": [
+        "Карыстальніцкая"
+      ],
+      "Custom expiration (minutes)": [
+        "Карыстальніцкі тэрмін дзеяння (у хвілінах)"
+      ],
+      "Expires in": [
+        "Тэрмін дзеяння міне"
       ]
     },
     "Link": {

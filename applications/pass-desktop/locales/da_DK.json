@@ -1448,6 +1448,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Udløb skal være mellem 1 time og 1 år"
       ]
     },
     "Error message": {
@@ -2859,6 +2862,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "Expired on ${ formattedDate }": [
+        "Udløb den ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Udløber den ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4107,6 +4116,27 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "1 day": [
+        "1 dag"
+      ],
+      "1 month": [
+        "1 måned"
+      ],
+      "1 week": [
+        "1 uge"
+      ],
+      "1 year": [
+        "1 år"
+      ],
+      "Custom": [
+        "Brugerdefineret"
+      ],
+      "Custom expiration (minutes)": [
+        "Brugerdefineret udløb (minutter)"
+      ],
+      "Expires in": [
+        "Udløber om"
       ]
     },
     "Link": {
