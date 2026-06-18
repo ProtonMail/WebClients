@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import { getSummarizedMessageIds } from '../llm/compaction';
 import { useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectContextFilters } from '../redux/selectors';
 import type { Attachment, Message } from '../types';
@@ -17,6 +18,7 @@ export type AutoRetrievedAttachment = Attachment & { messageId: string };
 export const useAutoRetrievedAttachments = (messageChain: Message[]) => {
     const allAttachmentsState = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
+    const summarizedMessageIds = useMemo(() => getSummarizedMessageIds(messageChain), [messageChain]);
 
     const autoRetrievedAttachments = useMemo<AutoRetrievedAttachment[]>(() => {
         const attachmentsByKey = new Map<string, AutoRetrievedAttachment>();
@@ -74,14 +76,19 @@ export const useAutoRetrievedAttachments = (messageChain: Message[]) => {
     };
 
     const activeAutoRetrieved = useMemo(
-        () => autoRetrievedAttachments.filter((f) => !isExcluded(f)),
-        [autoRetrievedAttachments, contextFilters]
+        () => autoRetrievedAttachments.filter((f) => !isExcluded(f) && !summarizedMessageIds.has(f.messageId)),
+        [autoRetrievedAttachments, contextFilters, summarizedMessageIds]
     );
 
     const excludedAutoRetrieved = useMemo(
-        () => autoRetrievedAttachments.filter((f) => isExcluded(f)),
-        [autoRetrievedAttachments, contextFilters]
+        () => autoRetrievedAttachments.filter((f) => isExcluded(f) && !summarizedMessageIds.has(f.messageId)),
+        [autoRetrievedAttachments, contextFilters, summarizedMessageIds]
     );
 
-    return { autoRetrievedAttachments, activeAutoRetrieved, excludedAutoRetrieved };
+    const compactedAutoRetrieved = useMemo(
+        () => autoRetrievedAttachments.filter((f) => summarizedMessageIds.has(f.messageId)),
+        [autoRetrievedAttachments, summarizedMessageIds]
+    );
+
+    return { autoRetrievedAttachments, activeAutoRetrieved, excludedAutoRetrieved, compactedAutoRetrieved };
 };

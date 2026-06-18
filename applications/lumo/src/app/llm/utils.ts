@@ -39,13 +39,21 @@ export const calculateMessageContentTokens = (messageChain: Message[]): number =
 
 // Calculate estimated tokn size for a single attachment
 export const countAttachmentToken = (attachment: Attachment): number => {
-    if (!attachment || attachment.processing || !attachment.markdown || !attachment.filename) {
+    if (!attachment || attachment.processing || !attachment.filename) {
         return 0;
     }
 
-    // Use cached token count if available (for performance)
+    // Prefer the cached token count. This must come before the markdown check:
+    // historical/shallow attachments keep `tokenCount` but have their `markdown`
+    // stripped (it lives in IndexedDB), so guarding on markdown first would make
+    // them report 0 and disappear from context-size estimates.
     if (attachment.tokenCount !== undefined && attachment.tokenCount > 0) {
         return attachment.tokenCount;
+    }
+
+    // Without cached tokens we need the markdown content to estimate.
+    if (!attachment.markdown) {
+        return 0;
     }
 
     try {
@@ -81,9 +89,9 @@ export const calculateAttachmentContextSize = (attachments: Attachment[]): numbe
 
 // Context window limits (approximate)
 export const CONTEXT_LIMITS = {
-    WARNING_THRESHOLD: 90000, // Start warning at ~24K tokens
-    DANGER_THRESHOLD: 100000, // Strong warning at ~48K tokens
-    MAX_CONTEXT: 128000, // Typical context window limit
+    WARNING_THRESHOLD: 100000,
+    DANGER_THRESHOLD: 116000,
+    MAX_CONTEXT: 128000,
 } as const;
 
 export const getContextSizeWarning = (tokenCount: number): 'none' | 'warning' | 'danger' | 'critical' => {

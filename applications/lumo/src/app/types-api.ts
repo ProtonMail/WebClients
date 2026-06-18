@@ -106,8 +106,69 @@ export type LumoApiGenerationRequest = {
 };
 
 /*
- * Payload in the format that the PHP backend expects at `/chat`,
- * with the actual data structure wrapped in a legacy `Prompt` field.
+ * OpenAI-compatible chat completions request body for `POST /ai/v1/chat/completions`.
+ */
+/** Built-in scheduler tools (web_search, weather, etc.) use the name-only shape. */
+export type ChatCompletionsTool = {
+    name: ToolName;
+};
+
+/**
+ * OpenAI content parts. A message's `content` may be a plain string (the common
+ * text-only case) or an array of these parts when images are attached.
+ */
+export type ChatCompletionsTextPart = {
+    type: 'text';
+    text: string;
+};
+
+export type ChatCompletionsImagePart = {
+    type: 'image_url';
+    image_url: {
+        /**
+         * A `data:<mime>;base64,...` URL. When the message is encrypted (see the
+         * message-level `encrypted` flag), the base64 payload is U2L ciphertext
+         * wrapped with a generic MIME type rather than real image bytes.
+         */
+        url: string;
+        detail?: 'auto' | 'low' | 'high';
+    };
+};
+
+export type ChatCompletionsContentPart = ChatCompletionsTextPart | ChatCompletionsImagePart;
+
+export type ChatCompletionsMessage = {
+    role: 'system' | 'user' | 'assistant' | 'tool';
+    content?: string | ChatCompletionsContentPart[];
+    /**
+     * Lumo extension: marks `content` as U2L-encrypted ciphertext. Applies to both
+     * string content and multimodal content-part arrays (text parts hold ciphertext
+     * and image `url`s carry ciphertext wrapped as a `data:` URL).
+     */
+    encrypted?: boolean;
+};
+
+export type LumoCompletionTarget = 'message' | 'title' | 'suggested_questions';
+
+export type ChatCompletionsLumoExtension = {
+    client_type: 'frontend';
+    target?: LumoCompletionTarget;
+    request_key?: string;
+    request_id?: string;
+};
+
+export type ChatCompletionsRequest = {
+    model: string;
+    messages: ChatCompletionsMessage[];
+    stream: boolean;
+    reasoning_effort?: 'none' | 'high';
+    tools?: ChatCompletionsTool[];
+    tool_choice?: 'auto' | 'none' | 'required';
+    lumo?: ChatCompletionsLumoExtension;
+};
+
+/*
+ * @deprecated Legacy payload for `POST /ai/v1/chat` — use ChatCompletionsRequest instead.
  */
 export type ChatEndpointGenerationRequest = {
     Prompt: LumoApiGenerationRequest;
@@ -149,6 +210,24 @@ export type ErrorMessage = { type: 'error' };
 export type RejectedMessage = { type: 'rejected' };
 export type HarmfulMessage = { type: 'harmful' };
 
+/*
+ * Structured tool/upstream error emitted mid-stream. The backend forwards the
+ * upstream provider error verbatim. The most important case for the client is
+ * `code === 'context_length_exceeded'`, which triggers context compaction.
+ *
+ * Wire shape:
+ *   data:{"type":"tool-error","error":{"code":"context_length_exceeded","message":"<verbatim upstream body>"}}
+ */
+export type ToolErrorMessage = {
+    type: 'tool-error';
+    error: {
+        code: string;
+        message?: string;
+    };
+};
+
+export const CONTEXT_LENGTH_EXCEEDED_CODE = 'context_length_exceeded';
+
 export type EncryptedTokenDataMessage = Encrypted<TokenDataMessage>;
 export type DecryptedTokenDataMessage = Decrypted<TokenDataMessage>;
 export type EncryptedImageDataMessage = Encrypted<ImageDataMessage>;
@@ -163,7 +242,8 @@ export type GenerationResponseMessage =
     | TimeoutMessage
     | ErrorMessage
     | RejectedMessage
-    | HarmfulMessage;
+    | HarmfulMessage
+    | ToolErrorMessage;
 
 export type GenerationResponseMessageDecrypted =
     | QueuedMessage
@@ -174,7 +254,8 @@ export type GenerationResponseMessageDecrypted =
     | TimeoutMessage
     | ErrorMessage
     | RejectedMessage
-    | HarmfulMessage;
+    | HarmfulMessage
+    | ToolErrorMessage;
 
 // *** Type Guards ***
 
@@ -240,6 +321,21 @@ export function isHarmfulMessage(obj: any): obj is HarmfulMessage {
     return typeof obj === 'object' && obj !== null && obj.type === 'harmful';
 }
 
+export function isToolErrorMessage(obj: any): obj is ToolErrorMessage {
+    return (
+        typeof obj === 'object' &&
+        obj !== null &&
+        obj.type === 'tool-error' &&
+        typeof obj.error === 'object' &&
+        obj.error !== null &&
+        typeof obj.error.code === 'string'
+    );
+}
+
+export function isContextLengthExceededMessage(obj: any): obj is ToolErrorMessage {
+    return isToolErrorMessage(obj) && obj.error.code === CONTEXT_LENGTH_EXCEEDED_CODE;
+}
+
 export function isEncrypted<T extends { encrypted?: boolean }>(
     obj: any,
     guard: (obj: any) => obj is T
@@ -280,7 +376,8 @@ export function isGenerationResponseMessage(obj: any): obj is GenerationResponse
         isTimeoutMessage(obj) ||
         isErrorMessage(obj) ||
         isRejectedMessage(obj) ||
-        isHarmfulMessage(obj)
+        isHarmfulMessage(obj) ||
+        isToolErrorMessage(obj)
     );
 }
 

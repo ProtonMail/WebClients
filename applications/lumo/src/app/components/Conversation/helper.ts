@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
-import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
+import { runGenerationWithCompaction } from './compactionFlow';
 import { collectContextAttachmentIds, retrieveDocumentContextForProject } from '../../lib/rag';
 import { type ContextFilter, ENABLE_U2L_ENCRYPTION, prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
@@ -320,7 +320,7 @@ export function sendMessage({
                 const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
                     .filter((att) => !existingAttachmentIds.has(att.id))
                     .map((att) => {
-                        const { data, markdown, ...shallow } = att;
+                        const { data, markdown, imagePreview, ...shallow } = att;
                         return shallow as ShallowAttachment;
                     });
 
@@ -373,31 +373,41 @@ export function sendMessage({
                     ? formatMemories(state.lumoUserSettings?.memories)
                     : '';
 
-            const turns = prepareTurns(
-                updatedLinearChain,
-                s.personalization ?? DEFAULT_PERSONALIZATION,
-                projectInstructions,
-                updatedC,
-                memories,
-                agentInstructions
-            );
+            const buildTurns = (chain: Message[]) =>
+                prepareTurns(
+                    chain,
+                    s.personalization ?? DEFAULT_PERSONALIZATION,
+                    projectInstructions,
+                    updatedC,
+                    memories,
+                    agentInstructions
+                );
 
             await dispatch(
-                sendMessageWithRedux(a.api, turns, {
-                    messageId: assistantMessage.id,
+                runGenerationWithCompaction({
+                    api: a.api,
                     conversationId,
                     spaceId,
-                    signal: a.signal,
-                    enableExternalTools: ui.enableExternalTools,
-                    enableImageTools: ui.enableImageTools,
-                    enableReasoning: ui.enableReasoning,
-                    enableSuggestedQuestions: false,
-                    generateTitle,
-                    config: {
-                        enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
-                        enableSmoothing: ui.enableSmoothing,
+                    assistantMessageId: assistantMessage.id,
+                    parentMessageId: userMessage.id,
+                    chain: updatedLinearChain,
+                    buildTurns,
+                    attachments: updatedC.allConversationAttachments,
+                    contextFilters: updatedC.contextFilters,
+                    preferSibling: ui.updateSibling,
+                    sendOptions: {
+                        signal: a.signal,
+                        enableExternalTools: ui.enableExternalTools,
+                        enableImageTools: ui.enableImageTools,
+                        enableReasoning: ui.enableReasoning,
+                        enableSuggestedQuestions: false,
+                        generateTitle,
+                        config: {
+                            enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
+                            enableSmoothing: ui.enableSmoothing,
+                        },
+                        errorHandler: createLumoErrorHandler(),
                     },
-                    errorHandler: createLumoErrorHandler(),
                 })
             );
         } catch (error) {
@@ -501,7 +511,7 @@ export function regenerateMessage({
                 const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
                     .filter((att) => !existingAttachmentIds.has(att.id))
                     .map((att) => {
-                        const { data, markdown, ...shallow } = att;
+                        const { data, markdown, imagePreview, ...shallow } = att;
                         return shallow as ShallowAttachment;
                     });
 
@@ -547,41 +557,59 @@ export function regenerateMessage({
 
             const agentInstructions = dispatch(resolveAgentInstructions(c.conversationId));
 
-            const turns = prepareTurns(
-                updatedMessagesWithContext,
-                s.personalization ?? DEFAULT_PERSONALIZATION,
-                projectInstructions,
-                c,
-                memories,
-                agentInstructions
-            );
+            const buildTurns = (chain: Message[]) => {
+                const builtTurns = prepareTurns(
+                    chain,
+                    s.personalization ?? DEFAULT_PERSONALIZATION,
+                    projectInstructions,
+                    c,
+                    memories,
+                    agentInstructions
+                );
 
-            // Add retry instructions if provided
-            if (r.retryInstructions) {
-                // Insert a system message with retry instructions before the final assistant turn
-                const systemTurn = {
-                    role: Role.System,
-                    content: r.retryInstructions,
-                };
-                // Insert the system turn before the last turn (which should be the empty assistant turn)
-                turns.splice(-1, 0, systemTurn);
-            }
+                // Add retry instructions if provided
+                if (r.retryInstructions) {
+                    // Insert a system message with retry instructions before the final assistant turn
+                    const systemTurn = {
+                        role: Role.System,
+                        content: r.retryInstructions,
+                    };
+                    // Insert the system turn before the last turn (which should be the empty assistant turn)
+                    builtTurns.splice(-1, 0, systemTurn);
+                }
+                return builtTurns;
+            };
+
+            // The regenerated assistant answers its parent user message; the
+            // compaction branch (if any) attaches there.
+            const parentMessageId =
+                assistantMessage?.parentId ??
+                updatedMessagesWithContext.filter((m) => m.role === Role.User).pop()?.id;
 
             await dispatch(
-                sendMessageWithRedux(a.api, turns, {
-                    messageId: r.assistantMessageId,
+                runGenerationWithCompaction({
+                    api: a.api,
                     conversationId: c.conversationId!,
                     spaceId: c.spaceId!,
-                    signal: a.signal,
-                    enableExternalTools: ui.enableExternalTools,
-                    enableImageTools: ui.enableImageTools,
-                    enableReasoning: ui.enableReasoning,
-                    enableSuggestedQuestions: false,
-                    config: {
-                        enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
-                        enableSmoothing: ui.enableSmoothing,
+                    assistantMessageId: r.assistantMessageId,
+                    parentMessageId: parentMessageId!,
+                    chain: updatedMessagesWithContext.filter((m) => m.id !== r.assistantMessageId),
+                    buildTurns,
+                    attachments: c.allConversationAttachments,
+                    contextFilters: c.contextFilters,
+                    preferSibling: ui.updateSibling,
+                    sendOptions: {
+                        signal: a.signal,
+                        enableExternalTools: ui.enableExternalTools,
+                        enableImageTools: ui.enableImageTools,
+                        enableReasoning: ui.enableReasoning,
+                        enableSuggestedQuestions: false,
+                        config: {
+                            enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
+                            enableSmoothing: ui.enableSmoothing,
+                        },
+                        errorHandler: createLumoErrorHandler(),
                     },
-                    errorHandler: createLumoErrorHandler(),
                 })
             );
         } catch (error) {
@@ -640,6 +668,11 @@ export function retrySendMessage({
 
         dispatch(addMessage(assistantMessage));
 
+        // Pin this assistant message as the preferred sibling so it gets displayed instead of the
+        // previous (failed) attempt. Otherwise the regenerated answer streams into a hidden sibling
+        // and the retry looks like it did nothing.
+        ui.updateSibling?.(assistantMessage);
+
         // Call the LLM
         const linearChain = c.messageChain;
         const requestTitle = c.messageChain.length === 1;
@@ -686,7 +719,7 @@ export function retrySendMessage({
             const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
                 .filter((att) => !existingAttachmentIds.has(att.id))
                 .map((att) => {
-                    const { data, markdown, ...shallow } = att;
+                    const { data, markdown, imagePreview, ...shallow } = att;
                     return shallow as ShallowAttachment;
                 });
 
@@ -741,33 +774,43 @@ export function retrySendMessage({
             ? dispatch(resolveAgentInstructions(c.conversationId))
             : undefined;
 
-        const turns = prepareTurns(
-            updatedLinearChain,
-            s.personalization ?? DEFAULT_PERSONALIZATION,
-            p.projectInstructions,
-            c2,
-            memories,
-            agentInstructions
-        );
+        const buildTurns = (chain: Message[]) =>
+            prepareTurns(
+                chain,
+                s.personalization ?? DEFAULT_PERSONALIZATION,
+                p.projectInstructions,
+                c2,
+                memories,
+                agentInstructions
+            );
 
         // Call the LLM
         try {
             await dispatch(
-                sendMessageWithRedux(a.api, turns, {
-                    messageId: assistantMessageId,
+                runGenerationWithCompaction({
+                    api: a.api,
                     conversationId: c.conversationId!,
                     spaceId: c.spaceId!,
-                    signal: a.signal,
-                    enableExternalTools: ui.enableExternalTools,
-                    enableImageTools: ui.enableImageTools,
-                    enableReasoning: ui.enableReasoning,
-                    enableSuggestedQuestions: false,
-                    generateTitle: requestTitle,
-                    config: {
-                        enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
-                        enableSmoothing: ui.enableSmoothing,
+                    assistantMessageId,
+                    parentMessageId: r.lastUserMessage.id,
+                    chain: updatedLinearChain,
+                    buildTurns,
+                    attachments: c2.allConversationAttachments,
+                    contextFilters: c2.contextFilters,
+                    preferSibling: ui.updateSibling,
+                    sendOptions: {
+                        signal: a.signal,
+                        enableExternalTools: ui.enableExternalTools,
+                        enableImageTools: ui.enableImageTools,
+                        enableReasoning: ui.enableReasoning,
+                        enableSuggestedQuestions: false,
+                        generateTitle: requestTitle,
+                        config: {
+                            enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
+                            enableSmoothing: ui.enableSmoothing,
+                        },
+                        errorHandler: createLumoErrorHandler(),
                     },
-                    errorHandler: createLumoErrorHandler(),
                 })
             );
         } catch (error) {
@@ -844,8 +887,9 @@ function createMessagePair(
 function stripDataFromAttachments(attachments: Attachment[]): ShallowAttachment[] {
     return attachments.map((a) => {
         const { processing, ...attachmentPub } = getAttachmentPub(a);
-        // Strip down heavy fields from the attachment priv, keep only the lightweight metadata
-        const { data, markdown, ...attachmentPriv } = getAttachmentPriv(a);
+        // Strip down heavy fields from the attachment priv, keep only the lightweight metadata.
+        // `imagePreview` is a Uint8Array and must be excluded to keep message state serializable.
+        const { data, markdown, imagePreview, ...attachmentPriv } = getAttachmentPriv(a);
         return {
             ...attachmentPub,
             ...attachmentPriv,

@@ -287,9 +287,9 @@ export async function deserializeMessage(
                             `deserializeMessage: Invalid attachment in message ${serializedMessage.id}, attempting recovery`,
                             { attachmentId: att?.id, hasData: !!att?.data, hasMarkdown: !!att?.markdown }
                         );
-                        // Try to recover by removing data and markdown if they exist
+                        // Try to recover by removing data, markdown and imagePreview if they exist
                         if (att && typeof att === 'object' && att.id && att.uploadedAt) {
-                            const { data, markdown, ...shallowAtt } = att;
+                            const { data, markdown, imagePreview, ...shallowAtt } = att;
                             if (isShallowAttachment(shallowAtt)) {
                                 validAttachments.push(shallowAtt);
                             }
