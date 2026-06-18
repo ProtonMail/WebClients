@@ -44,7 +44,6 @@ export const Tab = ({ category, tabState }: Props) => {
 
     const handleClick = () => {
         if (tabState === TabState.ACTIVE && !refreshing) {
-            console.log('refresh');
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
 
