@@ -359,59 +359,87 @@ describe('label', () => {
 
     describe('getLabelNameForSelectionPane', () => {
         it('should return inbox when user in inbox and categories are off', () => {
-            expect(getLabelNameWithCategory(MAILBOX_LABEL_IDS.INBOX, customLabels, customFolders, [], false)).toEqual(
-                'Inbox'
-            );
+            expect(
+                getLabelNameWithCategory({
+                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                    categoryIDs: [],
+                    hasAccessToCategoryView: false,
+                })
+            ).toEqual('Inbox');
         });
 
         it('should return inbox when user in inbox and categories are on but empty', () => {
-            expect(getLabelNameWithCategory(MAILBOX_LABEL_IDS.INBOX, customLabels, customFolders, [], true)).toEqual(
-                'Inbox'
-            );
+            expect(
+                getLabelNameWithCategory({
+                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                    categoryIDs: [],
+                    hasAccessToCategoryView: true,
+                })
+            ).toEqual('Inbox');
         });
 
         it('should return category label when user in category inbox and they are enabled', () => {
             expect(
-                getLabelNameWithCategory(
-                    MAILBOX_LABEL_IDS.INBOX,
-                    customLabels,
-                    customFolders,
-                    [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
-                    true
-                )
+                getLabelNameWithCategory({
+                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                    hasAccessToCategoryView: true,
+                })
             ).toEqual('Inbox • Newsletters');
         });
 
         it('should return inbox when user in category inbox and they are disabled', () => {
             expect(
-                getLabelNameWithCategory(
-                    MAILBOX_LABEL_IDS.INBOX,
-                    customLabels,
-                    customFolders,
-                    [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
-                    false
-                )
+                getLabelNameWithCategory({
+                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                    hasAccessToCategoryView: false,
+                })
             ).toEqual('Inbox');
         });
 
         it('should return the first cartegory of the list', () => {
             expect(
-                getLabelNameWithCategory(
-                    MAILBOX_LABEL_IDS.INBOX,
-                    customLabels,
-                    customFolders,
-                    [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
-                    true
-                )
+                getLabelNameWithCategory({
+                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                    hasAccessToCategoryView: true,
+                })
             ).toEqual('Inbox • Primary');
         });
 
         it('should return custom label name when user has a custom label', () => {
-            expect(getLabelName('customlabel1', customLabels, customFolders)).toEqual('Custom label 1');
+            expect(
+                getLabelNameWithCategory({
+                    labelID: 'customlabel1',
+                    labels: customLabels,
+                    folders: customFolders,
+                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
+                    hasAccessToCategoryView: true,
+                })
+            ).toEqual('Custom label 1');
         });
 
         it('should return custom folder name when user has a custom folder', () => {
-            expect(getLabelName('customfolder1', customLabels, customFolders)).toEqual('Custom folder 1');
+            expect(
+                getLabelNameWithCategory({
+                    labelID: 'customfolder1',
+                    labels: customLabels,
+                    folders: customFolders,
+                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
+                    hasAccessToCategoryView: true,
+                })
+            ).toEqual('Custom folder 1');
         });
     });
 
