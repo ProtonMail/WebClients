@@ -1,4 +1,6 @@
 // We need the counters in this file because this is where we compute their values
+import { useMemo } from 'react';
+
 // eslint-disable-next-line no-restricted-imports
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 // eslint-disable-next-line no-restricted-imports
@@ -13,8 +15,11 @@ import { useCategoriesView } from 'proton-mail/components/categoryView/useCatego
 import { selectCategoryIDs, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import type { MailboxCounterReturn } from './interface';
-import { getCounterMap, getRawLocationCount } from './useMailboxCounter.helpers';
+import type { LocationCountMap, MailboxCounterReturn } from './interface';
+import { getCounterMap } from './useMailboxCounter.helpers';
+
+// Stable reference to avoid unnecessary re-allocations
+const EMPTY_LOCATION_COUNT: SafeLabelCount = { LabelID: '', Total: 0, Unread: 0 };
 
 export const useMailboxCounter = (): MailboxCounterReturn => {
     const [mailSettings] = useMailSettings();
@@ -35,27 +40,39 @@ export const useMailboxCounter = (): MailboxCounterReturn => {
         labelsLoading || foldersLoading || systemFoldersLoading || conversationCountsLoading || messageCountsLoading;
     const hasAllData = mailSettings && labels && folders && systemFolders && conversationCounts && messageCounts;
 
-    let counterMap = {};
-    if (!loading && hasAllData) {
-        counterMap = getCounterMap({
+    const counterMap = useMemo<LocationCountMap>(() => {
+        if (loading || !hasAllData) {
+            return {};
+        }
+        return getCounterMap({
             labels: [...labels, ...folders, ...systemFolders],
             conversationCounts,
             messageCounts,
             mailSettings,
             disabledCategoryIDs,
         });
-    }
+    }, [
+        loading,
+        hasAllData,
+        labels,
+        folders,
+        systemFolders,
+        conversationCounts,
+        messageCounts,
+        mailSettings,
+        disabledCategoryIDs,
+    ]);
 
     const getLocationCount = (labelID: string): SafeLabelCount => {
         if (labelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess) {
-            return getRawLocationCount(counterMap, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+            return counterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] ?? EMPTY_LOCATION_COUNT;
         }
-        return getRawLocationCount(counterMap, labelID);
+        return counterMap[labelID] ?? EMPTY_LOCATION_COUNT;
     };
 
     const getCurrentLocationCount = (): SafeLabelCount => {
         if (currentLabelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess && categoryIDs.length > 0) {
-            return getRawLocationCount(counterMap, categoryIDs[0]);
+            return counterMap[categoryIDs[0]] ?? EMPTY_LOCATION_COUNT;
         }
         return getLocationCount(currentLabelID);
     };
