@@ -15,6 +15,7 @@ import clsx from '@proton/utils/clsx';
 
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 import OneTimeCodeDetector from 'proton-mail/helpers/message/otp/OneTimeCodeDetector';
+import { shouldRunOtpExtraction } from 'proton-mail/helpers/message/otp/shouldRunOtpExtraction';
 import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -39,11 +40,6 @@ const labelsWithIcons = [
     MAILBOX_LABEL_IDS.ALL_SENT,
     MAILBOX_LABEL_IDS.ALL_DRAFTS,
 ] as string[];
-
-// One-time-code extraction in the list is intentionally limited: only very
-// recent emails, and only subjects mentioning a "code".
-const ONE_TIME_CODE_MAX_AGE_MS = 3_600_000;
-const CODE_WORD_RE = /\bcode\b/i;
 
 interface Props {
     conversationMode: boolean;
@@ -140,6 +136,8 @@ const Item = ({
 
     const filteredThumbnails = filterAttachmentToPreview(element.AttachmentsMetadata || []);
 
+    const senderAddress = senders[0]?.Address;
+
     const oneTimeCode = useMemo(() => {
         if (!isOneTimePasscodeEnabled) {
             return null;
@@ -150,14 +148,13 @@ const Item = ({
         // works for conversations too — their time is a per-label context time,
         // not `element.Time`, which can be unset on freshly-arrived elements.
         const time = getDate(element, labelID).getTime();
-        const isRecent = time > 0 && Date.now() - time < ONE_TIME_CODE_MAX_AGE_MS;
 
-        if (!isRecent || !CODE_WORD_RE.test(subject)) {
+        if (!shouldRunOtpExtraction({ subject, sender: senderAddress, timestampMs: time })) {
             return null;
         }
 
         return OneTimeCodeDetector.extractFromTitle({ subject, timestamp: Math.floor(time / 1000) }).code;
-    }, [element, labelID, isOneTimePasscodeEnabled]);
+    }, [element, labelID, isOneTimePasscodeEnabled, senderAddress]);
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
