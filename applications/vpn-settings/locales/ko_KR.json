@@ -3476,6 +3476,9 @@
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
         "귀하는 더 이상 ${ BRAND_NAME }에서 이메일을 수신하고 발신하는 데 ${ address.Email } 주소를 사용하실 수 없습니다. 또한 ${ BRAND_NAME }에서 이 주소로 보내는 메시지는 더 이상 종단간 암호화되지 않으니 유의하시기 바랍니다."
       ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "${ MAX_SYNC_PAID_USER }개의 Gmail 주소가 이미 연결되어 있습니다. 다른 주소를 추가하려면, 연결된 주소 중 하나를 비활성화하십시오."
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
@@ -6079,6 +6082,9 @@
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
         "만약 초대한 친구가 플랜을 구독한다면 **${ refereeRewardAmount }를 받게 됩니다.**"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**2단계 인증이 비활성화됩니다.**"
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
       ],
@@ -6490,6 +6496,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
       ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "설정에 따라 접근 권한을 즉시 회복할 수도, 혹은 설정된 **대기 기간**에 따라 일정 시간 이후에 다시 회복할 수 있습니다."
+      ],
       "Did you know?": [
         "알고 계셨나요?"
       ],
@@ -6660,6 +6669,9 @@
       ],
       "Enter new password for user ${ userName }.": [
         "${ userName } 사용자의 새 비밀번호 입력"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "회원님의 계정과 연계된 12자리 복구 키를 입력해 주세요."
       ],
       "Enter the code from your authenticator app": [
         "인증 앱에서 코드를 입력하세요."
@@ -9609,6 +9621,9 @@
       "Create an alias": [
         "별칭 만들기"
       ],
+      "data recovery option": [
+        "데이터 복구 방법"
+      ],
       "Don't have access to your 2FA?": [
         "회원님의 2단계 인증에 접근할 수 없으신가요?"
       ],
@@ -11262,9 +11277,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "${ BRAND_NAME } 서비스 개선을 위한 설문 조사 참여"
-      ],
-      "Product updates": [
-        "제품 업데이트"
       ]
     },
     "Notification": {
@@ -15328,6 +15340,9 @@
       "Apply gift code": [
         "기프트 코드 적용"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "브라우저에서 ${ BRAND_NAME }에 로그인된 상태로 유지되어 있나요?"
+      ],
       "Are you sure you want to close the preview?": [
         "정말로 미리보기를 닫으시겠습니까?"
       ],
@@ -15336,6 +15351,9 @@
       ],
       "Are you sure?": [
         "확실하신가요?"
+      ],
+      "Ask your emergency contacts for help": [
+        "비상 연락처의 사람들에게 도움을 요쳥하세요"
       ],
       "Auto-deletion is active": [
         "자동 삭제가 이제 활성 상태입니다."
@@ -15348,6 +15366,12 @@
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "당신의 Gmail을 ${ MAIL_APP_NAME }로 가져오세요."
+      ],
+      "Can you access your session in the browser?": [
+        "브라우저에 사용자 계정의 활성화된 세션에 접근할 수 있나요?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "복구 연락처의 사람들과 연락할 수 있나요?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } 구독 취소"
@@ -15447,6 +15471,9 @@
       ],
       "Couldn’t create accounts": [
         "계정을 만들 수 없음"
+      ],
+      "Couldn’t recover your account": [
+        "계정을 복구할 수 없습니다"
       ],
       "Coupon": [
         "쿠폰"
@@ -15934,6 +15961,9 @@
       "Reconnect your account": [
         "계정 재연결"
       ],
+      "Recover account": [
+        "계정 복구"
+      ],
       "Recover data": [
         "데이터 복구"
       ],
@@ -15984,6 +16014,9 @@
       ],
       "Request new code": [
         "새 코드 요청"
+      ],
+      "Request new code?": [
+        "새로운 코드를 요청합니까?"
       ],
       "Request sent": [
         "요청 발송완료"
@@ -16176,6 +16209,9 @@
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "${ AUTHENTICATOR_APP_NAME } 체험하기"
+      ],
+      "Try changing your password in your active web session": [
+        "활성 웹 세션에서 비밀번호를 재설정하세요"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"

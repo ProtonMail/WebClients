@@ -1365,6 +1365,9 @@
         "${ users } bruger",
         "${ users } brugere"
       ],
+      "Add-on": [
+        "Udvidelse"
+      ],
       "Dedicated VPN servers": [
         "Dedikerede VPN-servere"
       ],
@@ -6341,6 +6344,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } bruger skal acceptere sin invitation for at begynde at modtage gruppe-e-mails.",
+        "${ invitedMemberCount } brugere skal acceptere deres invitation for at begynde at modtage gruppe-e-mails."
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
       ],
@@ -6384,6 +6391,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
+        "${ pendingAdminMemberCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
@@ -7692,6 +7703,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Nye aktivitetsdata vil ophøre med at blive indsamlet og vist."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Ny gruppe oprettet via din identitetsudbyder og afventer gennemgang."
       ],
       "New sidebar": [
         "Nyt sidepanel"
@@ -12157,11 +12171,17 @@
       "1-2 emails per month": [
         "1-2 e-mails pr. måned"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 e-mails om året. Påmindelser om at holde dine gendannelsesmetoder opdaterede."
+      ],
       "2-4 emails per year": [
         "2-4 e-mails pr. år"
       ],
       "4-6 emails per year": [
         "4-6 e-mails om året"
+      ],
+      "Account email updates": [
+        "Kontoopdateringer på e-mail"
       ],
       "Application notifications": [
         "Applikationsnotifikationer"
@@ -12187,8 +12207,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Deltag i undersøgelser for at forbedre ${ BRAND_NAME }-tjenester"
       ],
-      "Product updates": [
-        "Produktopdateringer"
+      "Product email updates": [
+        "Produktopdateringer på e-mail"
+      ],
+      "Recovery checklist": [
+        "Gendannelsestjekliste"
       ]
     },
     "Notification": {
@@ -14074,8 +14097,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Organisationsadmin"
+      "Owner": [
+        "Ejer"
       ],
       "Security Admin": [
         "Sikkerhedsadmin"
@@ -15352,6 +15375,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } bruger",
         "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } brugere"
@@ -16324,6 +16350,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } ven har abonneret",
         "${ friendsSubscribed } venner har abonneret"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } til organisationer"
@@ -17736,6 +17765,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inkluderer professionelle e-mails med @ditdomæne.com, lagerplads i skyen med dokumenter der kan samarbejdes om, planlægning og afholdelse af videomøder, adgangskodehåndtering, en sikker ${ VPN_SHORT_APP_NAME }, og mere."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer, der ikke bruger tofaktorgodkendelse, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Enkeltlogonbrugere vil ikke modtage e-mailpåmindelsen."
