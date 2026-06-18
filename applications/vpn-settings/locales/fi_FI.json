@@ -10991,11 +10991,17 @@
       "1-2 emails per month": [
         "1 - 2 sähköpostiä kuukaudessa"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1–4 sähköpostiviestiä vuodessa. Muistutuksia palautusmenetelmien pitämisestä ajan tasalla."
+      ],
       "2-4 emails per year": [
         "2 - 4 sähköpostia vuodessa"
       ],
       "4-6 emails per year": [
         "4 - 6 sähköpostia vuodessa"
+      ],
+      "Account email updates": [
+        "Tilin sähköpostipäivitykset"
       ],
       "Application notifications": [
         "Sovellusilmoitukset"
@@ -11021,8 +11027,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Auta parantamaan ${ BRAND_NAME } -palveluita osallistumalla kyselyihin"
       ],
-      "Product updates": [
-        "Tuotepäivitykset"
+      "Product email updates": [
+        "Tuotesähköpostipäivitykset"
+      ],
+      "Recovery checklist": [
+        "Palautuksen tarkistuslista"
       ]
     },
     "Notification": {
@@ -12689,8 +12698,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Organisaation järjestelmänvalvoja"
+      "Owner": [
+        "Omistaja"
       ],
       "Security Admin": [
         "Turvallisuusvastaava"
