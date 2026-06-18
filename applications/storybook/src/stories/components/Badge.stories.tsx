@@ -1,7 +1,10 @@
+import { useState } from 'react';
+
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Badge, CLASSNAMES } from '@proton/components/components/badge/Badge';
 import type { BadgeType } from '@proton/components/components/badge/Badge';
+import Toggle from '@proton/components/components/toggle/Toggle';
 
 const meta: Meta<typeof Badge> = {
     title: 'Components/Badge',
@@ -54,5 +57,35 @@ export const WithUrl: Story = {
 export const WithClassName: Story = {
     args: {
         className: 'text-bold',
+    },
+};
+
+const items = ['first', 'second', 'third'];
+export const WithAlignedNumbers: Story = {
+    render: () => {
+        const [show, setShow] = useState(false);
+        return (
+            <div className="flex flex-column gap-3">
+                <Toggle
+                    checked={show}
+                    onChange={({ target }) => {
+                        setShow(target.checked);
+                    }}
+                    className="color-weak"
+                >
+                    {"On  -> adds 'text-tabular-nums' helper"}
+                    <br />
+                    {"Off -> without 'text-tabular-nums' helper"}
+                </Toggle>
+                {items.map((item, index) => (
+                    <div key={item} className="flex flex-row gap-2">
+                        <Badge type="light" className={show ? 'text-tabular-nums' : undefined}>
+                            {index + 1}
+                        </Badge>
+                        <span>{item}</span>
+                    </div>
+                ))}
+            </div>
+        );
     },
 };
