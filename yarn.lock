@@ -10144,6 +10144,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@proton-meet/noise-suppression@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@proton-meet/noise-suppression@npm:0.0.1"
+  dependencies:
+    fft.js: "npm:^4.0.4"
+  checksum: 10/e232b64179634dd5659f17d1226396d8e815cd3a17652bab9103290a6c3599af9001c7b620bec4410bc244579d377048589e129d30308b8ab7f4ae1cf08653ea
+  languageName: node
+  linkType: hard
+
 "@proton-meet/proton-meet-core@npm:1.1.6-21":
   version: 1.1.6-21
   resolution: "@proton-meet/proton-meet-core@npm:1.1.6-21"
@@ -18057,15 +18066,6 @@ __metadata:
   version: 0.1.70
   resolution: "@webgpu/types@npm:0.1.70"
   checksum: 10/2cd8e3755eb118f0cf841fd95912d540c5cb1914d5dea3bfcecc40d989c33f7863621aa29874806394a0774e558e22c7d95d06a8f387b9630c1eac4e98953d93
-  languageName: node
-  linkType: hard
-
-"@workadventure/noise-suppression@npm:v0.0.1":
-  version: 0.0.1
-  resolution: "@workadventure/noise-suppression@npm:0.0.1"
-  dependencies:
-    fft.js: "npm:^4.0.4"
-  checksum: 10/50496764af6e937bc4c9051d62badeac41be0436fe812bddcbd09a5ce9e6430661fae67b5496ea14c9ae00ee11149608dfb3567087c7146256e39441d260d999
   languageName: node
   linkType: hard
 
@@ -41747,6 +41747,7 @@ __metadata:
     "@livekit/components-react": "npm:^2.9.21"
     "@livekit/krisp-noise-filter": "npm:^0.4.3"
     "@livekit/track-processors": "npm:^0.7.2"
+    "@proton-meet/noise-suppression": "npm:0.0.1"
     "@proton-meet/proton-meet-core": "npm:1.1.6-21"
     "@proton/atoms": "workspace:packages/atoms"
     "@proton/components": "workspace:packages/components"
@@ -41771,7 +41772,6 @@ __metadata:
     "@vitejs/plugin-react": "npm:^6.0.2"
     "@vitest/coverage-v8": "npm:^4.1.7"
     "@vitest/ui": "npm:3.2.4"
-    "@workadventure/noise-suppression": "npm:v0.0.1"
     cross-env: "npm:^10.1.0"
     date-fns-tz: "npm:^2.0.1"
     eslint: "npm:^9.39.4"
