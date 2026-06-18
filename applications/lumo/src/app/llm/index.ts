@@ -37,6 +37,7 @@ import {
 } from '../types';
 import type { GenerationResponseMessage, WireImage } from '../types-api';
 import { separateAttachmentsByType } from './attachments';
+import { collapseCompactedChain } from './compaction';
 
 export type ContextFilter = {
     messageId: string;
@@ -94,10 +95,16 @@ export function prepareTurns(
     memories?: string,
     agentInstructions?: string
 ): Turn[] {
+    // Step 0: Apply any context-compaction boundary. Summarized messages are
+    // replaced by a single summary turn and dropped from the chain, so the model
+    // only ever receives the compacted view going forward. The full chain remains
+    // untouched for display.
+    const { summaryTurn, chain: effectiveChain } = collapseCompactedChain(linearChain);
+
     // Step 1: Transform messages to turns by iterating over blocks
     let turns: TurnInProgress[] = [];
 
-    for (const message of linearChain) {
+    for (const message of effectiveChain) {
         const blocks = getMessageBlocks(message);
         const filteredAttachments = filterMessageAttachments(message.attachments, message.id, c?.contextFilters ?? []);
 
@@ -125,12 +132,12 @@ export function prepareTurns(
             }
         }
 
-        // Add attachments to the last turn of this message if it's a user message
+        // Add attachments to the last turn of this message if it's a user or assistant message
         if (
             c?.allConversationAttachments &&
             filteredAttachments &&
             filteredAttachments.length > 0 &&
-            message.role === Role.User &&
+            (message.role === Role.User || message.role === Role.Assistant) &&
             turns.length > 0
         ) {
             // Expand attachments into separate turns
@@ -185,6 +192,12 @@ export function prepareTurns(
 
     // Step 4: Remove empty assistant turns
     turns = removeEmptyAssistantTurns(turns);
+
+    // Step 5: Prepend the compaction summary (if any) as the leading turn so it
+    // sits ahead of the preserved messages, enabling prompt-cache coherence.
+    if (summaryTurn) {
+        turns = [summaryTurn, ...turns];
+    }
 
     return turns;
 }
@@ -241,38 +254,59 @@ function formatTextAttachmentContent(attachment: Attachment): string | null {
     return [filename, header, beginMarker, content, endMarker].join('\n');
 }
 
-/**
- * Create a turn for an attachment (either text or image)
- */
-function createAttachmentTurn(shallowAttachment: ShallowAttachment, allAttachments: Attachment[]): Turn | null {
+/** A single text-file turn produced from an attachment. */
+function createTextAttachmentTurn(shallowAttachment: ShallowAttachment, allAttachments: Attachment[]): Turn | null {
     const fullAttachment = allAttachments.find((a) => a.id === shallowAttachment.id);
     if (!fullAttachment) return null;
 
     const { imageAttachments, textAttachments } = separateAttachmentsByType([fullAttachment]);
-
-    if (imageAttachments.length > 0) {
-        // Image attachment turn
-        const wireImage = tryConvertToWireImage(fullAttachment);
-        if (!wireImage) return null;
-
-        return {
-            role: Role.User,
-            content: `[Image: ${shallowAttachment.filename} (ID: ${wireImage.image_id})]`,
-            images: [wireImage],
-        };
-    } else if (textAttachments.length > 0) {
-        // Text attachment turn — skip when there is no usable content so the model
-        // doesn't receive an empty file block (which it interprets as "file is empty").
-        const content = formatTextAttachmentContent(fullAttachment);
-        if (!content) return null;
-
-        return {
-            role: Role.User,
-            content,
-        };
+    if (imageAttachments.length > 0 || textAttachments.length === 0) {
+        return null; // images are handled separately (grouped into one turn)
     }
 
-    return null;
+    // Skip when there is no usable content so the model doesn't receive an empty
+    // file block (which it interprets as "file is empty").
+    const content = formatTextAttachmentContent(fullAttachment);
+    if (!content) return null;
+
+    return { role: Role.User, content };
+}
+
+/**
+ * Build a single user turn carrying every image attachment, so multimodal models
+ * receive all images in one turn instead of one turn per image. Returns null when
+ * there are no usable images.
+ */
+function createGroupedImageTurn(
+    shallowAttachments: ShallowAttachment[],
+    allAttachments: Attachment[],
+    role: Role
+): Turn | null {
+    const refs: string[] = [];
+    const images: WireImage[] = [];
+
+    for (const shallow of shallowAttachments) {
+        const fullAttachment = allAttachments.find((a) => a.id === shallow.id);
+        if (!fullAttachment) continue;
+
+        const { imageAttachments } = separateAttachmentsByType([fullAttachment]);
+        if (imageAttachments.length === 0) continue;
+
+        const wireImage = tryConvertToWireImage(fullAttachment);
+        if (!wireImage) continue;
+
+        const ref =
+            role === Role.Assistant
+                ? `[Assistant generated image: ${shallow.filename} (ID: ${wireImage.image_id})]`
+                : `[Image: ${shallow.filename} (ID: ${wireImage.image_id})]`;
+
+        refs.push(ref);
+        images.push(wireImage);
+    }
+
+    if (images.length === 0) return null;
+
+    return { role, content: refs.join('\n'), images };
 }
 
 /**
@@ -292,19 +326,22 @@ function filterMessageAttachments(
 }
 
 /**
- * Expand a turn with attachments into multiple turns (one per attachment + content)
- * Similar to how tool calls are expanded into separate turns
+ * Expand a turn's attachments into preceding turns: one turn per text file, plus
+ * a single turn carrying all images together (multimodal models expect every
+ * image in one turn, not one turn per image). The user's own message turn comes
+ * last so the attachments are presented as context to it.
  */
 function expandAttachmentsIntoTurns(turn: TurnInProgress, allAttachments: Attachment[]): Turn[] {
     const { attachments, ...baseTurn } = turn;
+    const shallowAttachments = attachments ?? [];
 
-    // Create an additional turn for each attachment
-    const attachmentTurns = (attachments ?? [])
-        .map((att) => createAttachmentTurn(att, allAttachments))
+    const textTurns = shallowAttachments
+        .map((att) => createTextAttachmentTurn(att, allAttachments))
         .filter((t): t is Turn => t !== null);
 
-    // Return: attachments first, then user's message content
-    return [...attachmentTurns, baseTurn];
+    const imageTurn = createGroupedImageTurn(shallowAttachments, allAttachments, turn.role);
+
+    return [...textTurns, ...(imageTurn ? [imageTurn] : []), baseTurn];
 }
 
 export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN): Turn[] {

@@ -3,9 +3,10 @@ import React, { memo } from 'react';
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../..//hooks/useLumoActions';
 import type { SiblingInfo } from '../../../..//hooks/usePreferredSiblings';
 import type { Message } from '../../../../types';
-import { type Attachment, Role } from '../../../../types';
+import { type Attachment, isCompactionMessage, Role } from '../../../../types';
 import ChatContainerItem from '../../../ChatContainerItem';
 import AssistantMessage from './AssistantMessage/AssistantMessage';
+import CompactionMarker from './CompactionMarker/CompactionMarker';
 import UserMessage from './UserMessage/UserMessage';
 
 export type MessageComponentProps = {
@@ -83,6 +84,19 @@ const MessageComponentPure = ({
     const isUser = message.role === Role.User;
     const isRunning = message.placeholder || false;
     const isLoading = message.placeholder && !messageContent && !message.reasoning;
+
+    // A compaction boundary is rendered as an inline divider rather than a chat bubble.
+    if (isCompactionMessage(message)) {
+        return (
+            <ChatContainerItem
+                className="compaction-msg mb-6"
+                data-message-role="compaction"
+                data-message-id={message.id}
+            >
+                <CompactionMarker message={message} />
+            </ChatContainerItem>
+        );
+    }
 
     return (
         <ChatContainerItem

@@ -1,5 +1,6 @@
 import { ENABLE_U2L_ENCRYPTION, prepareTurns } from './index';
 import type { ConversationContext } from '../components/Conversation/helper';
+import { attachmentDataCache } from '../services/attachmentDataCache';
 import type { Attachment, Message } from '../types';
 import { Role } from '../types';
 import type { PersonalizationSettings } from '../redux/slices/personalization';
@@ -77,5 +78,53 @@ describe('prepareTurns — attachment content blocks', () => {
 
         const joined = turns.map((t) => t.content).join('\n');
         expect(joined).toContain('[Contents not available');
+    });
+});
+
+describe('prepareTurns — image attachments', () => {
+    const personalization = {} as PersonalizationSettings;
+
+    const makeContext = (allConversationAttachments: Attachment[]): ConversationContext =>
+        ({
+            spaceId: 'space-1',
+            conversationId: 'conv-1',
+            allConversationAttachments,
+            messageChain: [],
+            contextFilters: [],
+        }) as unknown as ConversationContext;
+
+    const makeImageMessage = (ids: string[]): Message =>
+        ({
+            id: 'msg-1',
+            role: Role.User,
+            content: 'describe these',
+            conversationId: 'conv-1',
+            attachments: ids.map((id) => ({ id, filename: `${id}.png`, mimeType: 'image/png' })),
+        }) as unknown as Message;
+
+    const makeImageAttachment = (id: string): Attachment =>
+        ({ id, filename: `${id}.png`, mimeType: 'image/png' }) as unknown as Attachment;
+
+    beforeEach(() => {
+        jest.spyOn(attachmentDataCache, 'getData').mockImplementation(() => new Uint8Array([1, 2, 3]));
+    });
+
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    it('groups multiple images into a single turn instead of one turn per image', () => {
+        const ids = ['a', 'b', 'c'];
+        const message = makeImageMessage(ids);
+
+        const turns = prepareTurns([message], personalization, undefined, makeContext(ids.map(makeImageAttachment)));
+
+        const imageTurns = turns.filter((t) => Array.isArray(t.images) && t.images.length > 0);
+        expect(imageTurns).toHaveLength(1);
+        expect(imageTurns[0].images).toHaveLength(3);
+        // All image refs are listed in the single grouped turn.
+        expect(imageTurns[0].content).toContain('[Image: a.png');
+        expect(imageTurns[0].content).toContain('[Image: b.png');
+        expect(imageTurns[0].content).toContain('[Image: c.png');
     });
 });
