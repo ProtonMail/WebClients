@@ -5412,6 +5412,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Jos hän ei pyytänyt apuasi**, on mahdollista, että joku muu yrittää käyttää hänen tiliään. Jätä tämä pyyntö tällöin huomiotta."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Suojaa perintösi.** Päivitä tilauksesi lisätäksesi hätäyhteystiedot."
+      ],
       "Access granted": [
         "Käyttöoikeus myönnettiin"
       ],
@@ -15308,11 +15311,17 @@
       "1-2 emails per month": [
         "1 - 2 sähköpostiä kuukaudessa"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1–4 sähköpostiviestiä vuodessa. Muistutuksia palautusmenetelmien pitämisestä ajan tasalla."
+      ],
       "2-4 emails per year": [
         "2 - 4 sähköpostia vuodessa"
       ],
       "4-6 emails per year": [
         "4 - 6 sähköpostia vuodessa"
+      ],
+      "Account email updates": [
+        "Tilin sähköpostipäivitykset"
       ],
       "Application notifications": [
         "Sovellusilmoitukset"
@@ -15338,8 +15347,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Auta parantamaan ${ BRAND_NAME } -palveluita osallistumalla kyselyihin"
       ],
-      "Product updates": [
-        "Tuotepäivitykset"
+      "Product email updates": [
+        "Tuotesähköpostipäivitykset"
+      ],
+      "Recovery checklist": [
+        "Palautuksen tarkistuslista"
       ]
     },
     "Notification": {
@@ -17709,8 +17721,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Organisaation järjestelmänvalvoja"
+      "Owner": [
+        "Omistaja"
       ],
       "Security Admin": [
         "Turvallisuusvastaava"
@@ -18201,6 +18213,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Lisää ${ CALENDAR_APP_NAME }iin"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Voit lisätä Zoom-videoneuvottelun mihin tahansa kalenteritapahtumaasi"
       ]
@@ -21106,6 +21121,9 @@
       "Dashboard": [
         "Hallintapaneeli"
       ],
+      "Data collection": [
+        "Tietojen keräys"
+      ],
       "Data locked": [
         "Tiedot on lukittu"
       ],
@@ -21717,6 +21735,9 @@
       ],
       "Priority support:": [
         "Ensisijainen tuki:"
+      ],
+      "Privacy": [
+        "Yksityisyys"
       ],
       "Privacy and data collection": [
         "Yksityisyys ja tiedonkeruu"

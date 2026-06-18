@@ -6636,6 +6636,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Sizden özellikle yardım istemediyse** başka biri onun hesabına erişmeye çalışıyor olabilir. Bu durumda bu isteği görmezden gelin."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Mirasınızı koruyun.** Acil durum irtibat kişilerini eklemek için tarifenizi yükseltin."
+      ],
       "Access account": [
         "Hesaba eriş"
       ],
@@ -18235,11 +18238,17 @@
       "1-2 emails per month": [
         "Ayda 1-2 e-posta"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "Yılda 1-4 e-posta. Kurtarma yöntemlerinizi güncel tutmanız için hatırlatmalar."
+      ],
       "2-4 emails per year": [
         "1 yılda 2-4 e-posta"
       ],
       "4-6 emails per year": [
         "1 yılda 4-6 e-posta"
+      ],
+      "Account email updates": [
+        "Hesap e-posta güncellemeleri"
       ],
       "Application notifications": [
         "Uygulama bildirimleri"
@@ -18265,8 +18274,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "${ BRAND_NAME } hizmetlerini geliştirmek için anketlere katılın"
       ],
-      "Product updates": [
-        "Ürün güncellemeleri"
+      "Product email updates": [
+        "Ürünlerle ilgili e-posta güncellemeleri"
+      ],
+      "Recovery checklist": [
+        "Kurtarma kontrol listesi"
       ]
     },
     "Notification": {
@@ -21182,8 +21194,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Kuruluş yöneticisi"
+      "Owner": [
+        "Sahibi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"
@@ -22006,6 +22018,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } uygulamasına ekle"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Takvim etkinliklerinize Zoom görüntülü görüşmeleri eklemenizi sağlar"
       ]
@@ -25375,6 +25390,9 @@
       "Dashboard": [
         "Pano"
       ],
+      "Data collection": [
+        "Veri toplama"
+      ],
       "Data locked": [
         "Veriler kilitlendi"
       ],
@@ -26157,6 +26175,9 @@
       ],
       "Priority support:": [
         "Öncelikli destek:"
+      ],
+      "Privacy": [
+        "Gizlilik"
       ],
       "Privacy and data collection": [
         "Gizlilik ve veri toplama"
