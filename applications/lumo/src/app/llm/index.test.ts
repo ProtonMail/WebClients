@@ -122,9 +122,11 @@ describe('prepareTurns — image attachments', () => {
         const imageTurns = turns.filter((t) => Array.isArray(t.images) && t.images.length > 0);
         expect(imageTurns).toHaveLength(1);
         expect(imageTurns[0].images).toHaveLength(3);
-        // All image refs are listed in the single grouped turn.
-        expect(imageTurns[0].content).toContain('[Image: a.png');
-        expect(imageTurns[0].content).toContain('[Image: b.png');
-        expect(imageTurns[0].content).toContain('[Image: c.png');
+        // Image markers and the user's message text are merged into the same turn
+        // so the backend can co-locate each <lumo-image> marker with its image_url bytes.
+        expect(imageTurns[0].content).toContain('describe these');
+        expect(imageTurns[0].content).toContain('<lumo-image id="a" source="user" name="a.png"');
+        expect(imageTurns[0].content).toContain('<lumo-image id="b" source="user" name="b.png"');
+        expect(imageTurns[0].content).toContain('<lumo-image id="c" source="user" name="c.png"');
     });
 });
