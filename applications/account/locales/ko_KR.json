@@ -4984,6 +4984,15 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "최대 ${ MAX_SYNC_PAID_USER }개 계정을 연결하려면 ${ planName }(으)로 업그레이드하세요"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Gmail 주소 ${ numAddressesOrSync }을(를) ${ MAIL_APP_NAME }로 가져오는 중입니다."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME }에 외부 계정 주소가 연결되어 있습니다."
       ]
     },
     "description": {
@@ -6255,7 +6264,7 @@
         "신뢰된 연락처 제거"
       ],
       "Remove your recovery contacts to continue": [
-        "계속하려면 복구 연락처를 제거하세요"
+        "계속하려면 복구 연락처를 삭제하십시오"
       ],
       "Renew to get emergency access again.": [
         "다시 긴급 접근을 얻으려면 갱신하십시오."
@@ -14569,6 +14578,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Automatic email forwarding": [
+        "자동 이메일 전달"
       ]
     },
     "label": {
@@ -15982,7 +15994,7 @@
         "중앙화된 설정 및 납부"
       ],
       "Collaborate and share large files": [
-        "큰 파일을 공동으로 작업하고 공유하세요"
+        "큰 파일을 공동으로 작업하고 공유하기"
       ],
       "Contact groups": [
         "연락처 그룹"
@@ -16286,6 +16298,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "Dedicated servers optimized for speed": [
+        "속도를 위해 최적화된 전용 서버"
       ]
     },
     "new_plans: feature highlight": {
@@ -16733,10 +16748,10 @@
         "자동 연결"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "사용자 당 ${ bundleStorage }으로 저장 공간을 부스트 하세요."
+        "사용자 당 ${ bundleStorage }(으)로 저장 공간 확장하기"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+        "최종 ${ bundleStorage }(으)로 저장 공간을 부스트하기"
       ],
       "Browser extension": [
         "브라우저 확장 프로그램"

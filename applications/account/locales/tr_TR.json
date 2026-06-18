@@ -6637,7 +6637,7 @@
         "**Sizden özellikle yardım istemediyse** başka biri onun hesabına erişmeye çalışıyor olabilir. Bu durumda bu isteği görmezden gelin."
       ],
       "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
-        "**Mirasınızı koruyun.** Acil durum irtibat kişilerini eklemek için tarifenizi yükseltin."
+        "**Mirasınızı koruyun.** Acil durum kişileri eklemek için tarifenizi yükseltin."
       ],
       "Access account": [
         "Hesaba eriş"
@@ -9788,7 +9788,7 @@
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } kullanıcının grup e-postalarını almaya başlaması için daveti kabul etmesi gerekiyor.",
-        "${ invitedMemberCount } kullanıcının grup e-postalarını almaya başlamaları için davetlerini kabul etmeleri gerekiyor."
+        "${ invitedMemberCount } kullanıcının grup e-postalarını almaya başlamaları için davetlerini kabul etmesi gerekiyor."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
@@ -9865,8 +9865,8 @@
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır. ${ planTitle } aboneliğinizin yenileme ücreti ve tarihi değişmeden kalır."
       ],
       "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminMemberCount } yeni üye kimlik sağlayıcınız aracılığıyla eklendi ve inceleme aşamasında.",
-        "${ pendingAdminMemberCount } yeni üye kimlik sağlayıcınız aracılığıyla eklendi ve inceleme aşamasında."
+        "${ pendingAdminMemberCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor.",
+        "${ pendingAdminMemberCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
@@ -11193,7 +11193,7 @@
         "buraya"
       ],
       "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
-        "Merhaba! İstediğin filtreyi tarif et ben de Sieve betiğini yazayım. Ayrıca düzenleyicide halihazırda bulunan herhangi bir şeyi de düzenleyebilirim."
+        "Merhaba! İstediğin süzgeci tarif edebilirsen ben de Sieve betiğini yazabilirim. Ayrıca düzenleyicide zaten bulunan bir şeyi de düzenleyebilirim."
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Uzak içeriği bir vekil sunucu aracılığıyla yükleyerek tanımlayıcı bilgileri gizler. İçeriği ek dosya olarak kaydetme seçeneği."
@@ -11697,7 +11697,7 @@
         "Yeni etkinlik verilerinin toplanması ve görüntülenmesi durdurulacak."
       ],
       "New group created via your identity provider and pending review.": [
-        "Kimlik sağlayıcınız aracılığıyla yeni bir grup oluşturuldu ve inceleme aşamasında."
+        "Kimlik hizmeti sağlayıcınız üzerinden yeni bir grup oluşturuldu ve değerlendirilmeyi bekliyor."
       ],
       "New sidebar": [
         "Yeni kenar çubuğu"
@@ -12553,7 +12553,7 @@
         "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
       ],
       "Thinking…": [
-        "Düşünüyor..."
+        "Düşünüyor…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
@@ -14839,7 +14839,7 @@
         "Kodu yazın"
       ],
       "Enter current password": [
-        "Mevcut parolayı yazın"
+        "Geçerli parolayı yazın"
       ],
       "Enter name or email address": [
         "Adınızı ya da e-posta adresinizi yazın"
@@ -18239,7 +18239,7 @@
         "Ayda 1-2 e-posta"
       ],
       "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "Yılda 1-4 e-posta. Kurtarma yöntemlerinizi güncel tutmanız için hatırlatmalar."
+        "Yılda 1-4 e-posta. Kurtarma yöntemlerinizi güncel tutmanız için anımsatıcılar."
       ],
       "2-4 emails per year": [
         "1 yılda 2-4 e-posta"
@@ -18248,7 +18248,7 @@
         "1 yılda 4-6 e-posta"
       ],
       "Account email updates": [
-        "Hesap e-posta güncellemeleri"
+        "Hesap bilgisi e-postaları"
       ],
       "Application notifications": [
         "Uygulama bildirimleri"
@@ -18275,7 +18275,7 @@
         "${ BRAND_NAME } hizmetlerini geliştirmek için anketlere katılın"
       ],
       "Product email updates": [
-        "Ürünlerle ilgili e-posta güncellemeleri"
+        "Ürün duyuru e-postaları"
       ],
       "Recovery checklist": [
         "Kurtarma kontrol listesi"
@@ -20022,7 +20022,7 @@
         "Cortex Inc."
       ],
       "Describe the filter you want…": [
-        "İstediğiniz filtreyi açıklayın…"
+        "İstediğiniz süzgeci açıklayın…"
       ],
       "domain.com": [
         "etkialani.com"
@@ -21717,7 +21717,7 @@
         "Bununla parola sıfırlama işleminden sonra hesabınızdaki e-postalara, kişilere, dosyalara, parolalara ve diğer tüm şifrelenmiş verilere yeniden erişebileceksiniz."
       ],
       "To help you remember your password, we’ll periodically ask you to enter it.": [
-        "Parolanızı hatırlamanıza yardımcı olmak amacıyla zaman zaman parolanızı girmenizi isteyeceğiz."
+        "Parolanızı anımsamanıza yardımcı olmak için zaman zaman parolanızı yazmanızı isteyeceğiz."
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "E-posta adresinin size ait olduğundan emin olmak için ${ boldEmail } adresine gönderilen doğrulama kodunu yazın."
@@ -21753,7 +21753,7 @@
         "Kurtarma telefon numarasını doğrula"
       ],
       "Verify your password": [
-        "Parolanızı doğrulayın"
+        "Parola onayı"
       ],
       "Verify your recovery email": [
         "Kurtarma e-postanızı doğrulayın"
@@ -22580,7 +22580,7 @@
         "Tüm aygıtlarınızı bağlayın"
       ],
       "Continue with ${ planName }": [
-        "${ planName } ile devam et"
+        "${ planName } ile ilerle"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
@@ -22713,7 +22713,7 @@
         "Dosyaları paylaşın ve iş birliği yapın."
       ],
       "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
-        "Hesap açın ve ${ referralInfo.uiData.refereeRewardAmount } tutarında kredi kazanın"
+        "Hesap açın ve ${ referralInfo.uiData.refereeRewardAmount } kredi kazanın"
       ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } hesabı açın"
@@ -27048,7 +27048,7 @@
         "@etkialaniniz.com adresinden profesyonel e-posta, iş birlikli belge düzenleme, zamanlama ve görüntülü görüşme ile bulut depolama alanı, parola yönetimi, güvenli bir ${ VPN_SHORT_APP_NAME } ve diğer şeyleri sağlar."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "İki adımlı doğrulama kullanmayan üyelere, bunu en kısa sürede açmaları için bir e-posta gönderilecek. Bu bildirim e-postası, tek oturum açma kullanıcılarına gönderilmeyecek."
