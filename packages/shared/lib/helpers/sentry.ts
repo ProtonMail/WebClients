@@ -393,6 +393,7 @@ export enum SentryMailPerformanceInitiatives {
 export enum SentryCommonInitiatives {
     POST_SUBSCRIPTION = 'post-subscription',
     ENCRYPTED_SEARCH = 'encrypted-search',
+    CONTACT_IMPORT = 'contact-import',
 }
 
 export enum SentryCalendarInitiatives {
