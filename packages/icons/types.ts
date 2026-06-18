@@ -419,6 +419,7 @@ export type IconName =
     | 'rocket'
     | 'screenshot'
     | 'servers'
+    | 'share-node'
     | 'shield'
     | 'shield-2'
     | 'shield-2-bolt'
