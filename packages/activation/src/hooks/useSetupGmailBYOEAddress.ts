@@ -21,7 +21,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 
 interface Props {
-    showSuccessModal: (connectedAddress: string) => void;
+    showSuccessModal: (connectedAddress: string, importEmails: boolean) => void;
     onComplete?: () => void;
     source: EASY_SWITCH_SOURCES;
 }
@@ -123,7 +123,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Prop
                 onComplete?.();
                 void easySwitchDispatch(loadSyncList());
                 void easySwitchDispatch(loadImporters());
-                showSuccessModal(address.Email);
+                showSuccessModal(address.Email, importEmails);
             }
         }
     };
