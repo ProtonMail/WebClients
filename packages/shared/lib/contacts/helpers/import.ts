@@ -4,6 +4,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import truncate from '@proton/utils/truncate';
 
 import { CONTACT_CARD_TYPE, FORBIDDEN_LABEL_NAMES } from '../../constants';
+import { SentryCommonInitiatives, traceInitiativeError } from '../../helpers/sentry';
 import { normalize } from '../../helpers/string';
 import type {
     ContactGroup,
@@ -113,6 +114,7 @@ export const getSupportedContact = (vcard: string) => {
             throw error;
         }
         const contactId = getContactId(vcard);
+        traceInitiativeError(SentryCommonInitiatives.CONTACT_IMPORT, error, { tags: { stage: 'parse' } });
         throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
     }
 };
