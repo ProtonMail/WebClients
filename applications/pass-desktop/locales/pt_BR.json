@@ -1158,6 +1158,9 @@
       "Failed to edit user's access.": [
         "Falha ao editar o acesso do usuário."
       ],
+      "Failed to load access tokens": [
+        "Falha ao carregar o tokens de acesso"
+      ],
       "Failed to load breaches for this address": [
         "Falha ao carregar violações para este endereço"
       ],
@@ -1226,6 +1229,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "Não foi possível atualizar a configuração de geração de prefixo aleatório."
+      ],
+      "Failed to update vault access": [
+        "Falha ao atualizar o acesso ao cofre"
       ],
       "Failed to verify domain": [
         "Não foi possível verificar o domínio"
@@ -3160,6 +3166,9 @@
       "Custom": [
         "Personalizado"
       ],
+      "Custom expiration (minutes)": [
+        "Expiração personalizada (minutos)"
+      ],
       "Custom Items": [
         "Itens personalizados"
       ],
@@ -4279,6 +4288,9 @@
       "This feature is not supported in your plan. ${ upgradeLink }": [
         "Esse recurso não é suportado no seu plano. ${ upgradeLink }"
       ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Esse recurso não é suportado no seu plano. Entre em contato com seu administrador para obter acesso."
+      ],
       "Total files: ": [
         "Total de arquivos: "
       ],
@@ -4651,6 +4663,9 @@
       ],
       "Breaches detected for": [
         "Violações detectadas para"
+      ],
+      "Browser permission required": [
+        "É necessária a permissão do navegador"
       ],
       "Cancel changing your email?": [
         "Cancelar a alteração do seu e-mail?"
