@@ -399,6 +399,9 @@
       "Get the apps": [
         "앱 다운로드"
       ],
+      "Get the deal": [
+        "혜택 얻기"
+      ],
       "Get the writing assistant": [
         "글쓰기 도우미 시작하기"
       ],
@@ -1392,6 +1395,18 @@
     "Checkout row": {
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "Subtotal": [
+        "부분합계"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle }개월간 합계"
+      ],
+      "Total": [
+        "합계"
+      ],
+      "Total for ${ n } month": [
+        "${ n }개월의 합계"
       ]
     },
     "Collapsible tooltip": {
@@ -5659,6 +5674,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
       ],
+      "${ n } month": [
+        "${ n }개월"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength }자"
       ],
@@ -5871,6 +5889,9 @@
       ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "특가로 구매"
       ],
       "Hide password": [
         "비밀번호 숨기기"
@@ -9345,6 +9366,11 @@
         "결제 주기 종료일에 구독이 다운그레이드됩니다."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "평생"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 저장 공간"
@@ -10124,6 +10150,9 @@
       ],
       "Subscription canceled": [
         "구독이 취소되었습니다"
+      ],
+      "Summer Sale": [
+        "여름 세일"
       ],
       "The link either does not exist or has expired": [
         "링크가 존재하지 않거나 만료되었습니다."

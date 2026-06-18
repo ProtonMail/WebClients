@@ -378,6 +378,9 @@
       "Get the apps": [
         "Alkalmazások letöltése"
       ],
+      "Get the deal": [
+        "Érdekel az ajánlat"
+      ],
       "Get the writing assistant": [
         "Az írási segéd beszerzése"
       ],
@@ -1173,6 +1176,17 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Összesen, ${ cycle } hónapra",
+        "Összesen, ${ cycle } hónapra"
+      ],
+      "Total": [
+        "Összesen"
+      ],
+      "Total for ${ n } month": [
+        "Összesen ${ n } hónapra",
+        "Összesen ${ n } hónapra"
       ]
     },
     "Collapsible tooltip": {
@@ -5253,6 +5267,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } felhasználónév"
       ],
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
       ],
@@ -5417,6 +5435,9 @@
       ],
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Ajánlat elfogadása"
       ],
       "Hide password": [
         "Jelszó elrejtése"
@@ -8595,6 +8616,11 @@
         "Az előfizetés a számlázási ciklus végén kisebb csomagra lesz váltva."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Élettartam"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB tárhely"
@@ -9352,6 +9378,9 @@
       ],
       "Subscription canceled": [
         "Előfizetés lemondva"
+      ],
+      "Summer Sale": [
+        "Nyári akció"
       ],
       "The link either does not exist or has expired": [
         "A hivatkozás nem létezik vagy leját"

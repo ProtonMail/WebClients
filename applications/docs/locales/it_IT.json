@@ -393,6 +393,9 @@
       "Get the apps": [
         "Ottieni le app"
       ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
+      ],
       "Get the writing assistant": [
         "Ottieni l'assistente alla scrittura"
       ],
@@ -1333,6 +1336,17 @@
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotale per ${ cycle } mese",
+        "Subtotale per ${ cycle } mesi"
+      ],
+      "Total": [
+        "Totale"
+      ],
+      "Total for ${ n } month": [
+        "Totale per ${ n } mese",
+        "Totale per ${ n } mesi"
       ]
     },
     "Collapsible tooltip": {
@@ -5576,6 +5590,10 @@
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
       ],
@@ -5764,6 +5782,9 @@
       ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
       ],
       "Hide password": [
         "Nascondi la password"
@@ -9247,6 +9268,11 @@
         "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "A vita"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB di archiviazione"
@@ -10028,6 +10054,9 @@
       ],
       "Subscription canceled": [
         "Abbonamento annullato"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
       ],
       "The link either does not exist or has expired": [
         "Il link non esiste o è scaduto"

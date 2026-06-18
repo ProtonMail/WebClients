@@ -405,6 +405,9 @@
       "Get the apps": [
         "Uygulamaları edinin"
       ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
       "Get the writing assistant": [
         "Yazma yardımcısını edinin"
       ],
@@ -1475,6 +1478,20 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Subtotal": [
+        "Ara toplam"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } aylık ara toplam",
+        "${ cycle } aylık ara toplam"
+      ],
+      "Total": [
+        "Toplam"
+      ],
+      "Total for ${ n } month": [
+        "${ n } aylık toplam",
+        "${ n } aylık toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -5873,6 +5890,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } karakter"
       ],
@@ -6091,6 +6112,9 @@
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -7966,6 +7990,9 @@
       "Failed to load invitation details": [
         "Davet bilgileri yüklenemedi"
       ],
+      "Failed to load sharing details": [
+        "Paylaşım ayrıntıları yüklenemedi"
+      ],
       "Failed to reject share invitation": [
         "Paylaşma daveti reddedilemedi"
       ],
@@ -9699,6 +9726,11 @@
         "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Lifetime"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -10504,6 +10536,9 @@
       ],
       "Subscription canceled": [
         "Abonelik iptal edildi"
+      ],
+      "Summer Sale": [
+        "Yaz İndirimi"
       ],
       "The link either does not exist or has expired": [
         "Bağlantı bulunamadı ya da geçerlilik süresi dolmuş"

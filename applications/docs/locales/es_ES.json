@@ -405,6 +405,9 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
+      "Get the deal": [
+        "Obtener la promoción"
+      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -1478,6 +1481,20 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mes",
+        "Subtotal por ${ cycle } meses"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total for ${ n } month": [
+        "Total por ${ n } mes",
+        "Total para ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -5862,6 +5879,10 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caracteres"
       ],
@@ -6080,6 +6101,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -8008,6 +8032,9 @@
       "Failed to load invitation details": [
         "No se ha podido cargar los detalles de la invitación."
       ],
+      "Failed to load sharing details": [
+        "No se han podido cargar los detalles de uso compartido"
+      ],
       "Failed to reject share invitation": [
         "Se ha producido un error al rechazar la invitación compartida."
       ],
@@ -9741,6 +9768,11 @@
         "Pasarás a un plan inferior al finalizar el ciclo de facturación."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "De por vida"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -10014,6 +10046,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } dirección de correo electrónico",
         "${ emailsCount } direcciones de correo electrónico"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperación de cuenta"
@@ -10543,6 +10578,9 @@
       ],
       "Subscription canceled": [
         "Se ha cancelado la suscripción."
+      ],
+      "Summer Sale": [
+        "Descuento de verano"
       ],
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado."
