@@ -6636,6 +6636,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Εάν δεν ζήτησαν τη βοήθειά σας**, είναι πιθανό κάποιος άλλος να προσπαθεί να αποκτήσει πρόσβαση στον λογαριασμό τους. Σε αυτή την περίπτωση, αγνοήστε αυτό το αίτημα."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Προστατέψτε την κληρονομιά σας.** Αναβαθμίστε το πλάνο σας για να προσθέσετε επαφές έκτακτης ανάγκης."
+      ],
       "Access account": [
         "Πρόσβαση στον λογαριασμό"
       ],
@@ -9783,6 +9786,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } χρήστης πρέπει να αποδεχτεί την πρόσκλησή του για να αρχίσει να λαμβάνει ομαδικά μηνύματα ηλεκτρονικού ταχυδρομείου.",
+        "${ invitedMemberCount } χρήστες πρέπει να αποδεχτούν την πρόσκλησή τους για να αρχίσουν να λαμβάνουν ομαδικά μηνύματα ηλεκτρονικού ταχυδρομείου."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Ο ${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
       ],
@@ -9856,6 +9863,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } νέο μέλος προστέθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος.",
+        "${ pendingAdminMemberCount } νέα μέλη προστέθηκαν μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -11684,6 +11695,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Νέα δεδομένα δραστηριότητας θα πάψουν να συλλέγονται και να εμφανίζονται."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Νέα ομάδα δημιουργήθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
       ],
       "New sidebar": [
         "Νέα πλαϊνή γραμμή"
@@ -14823,6 +14837,9 @@
       ],
       "Enter code": [
         "Εισαγωγή κωδικού"
+      ],
+      "Enter current password": [
+        "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας"
       ],
       "Enter name or email address": [
         "Εισαγάγετε όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -18221,11 +18238,17 @@
       "1-2 emails per month": [
         "1-2 μηνύματα ανά μήνα"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 μηνύματα ηλεκτρονικού ταχυδρομείου ανά έτος. Υπενθυμίσεις για να διατηρείτε τις μεθόδους ανάκτησής σας ενημερωμένες."
+      ],
       "2-4 emails per year": [
         "2-4 μηνύματα ανά έτος"
       ],
       "4-6 emails per year": [
         "4-6 μηνύματα ανά έτος"
+      ],
+      "Account email updates": [
+        "Ενημερώσεις λογαριασμών μέσω email"
       ],
       "Application notifications": [
         "Ειδοποιήσεις εφαρμογής"
@@ -18251,8 +18274,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Συμμετοχή σε έρευνες για τη βελτίωση των υπηρεσιών ${ BRAND_NAME }"
       ],
-      "Product updates": [
-        "Ενημερώσεις προϊόντος"
+      "Product email updates": [
+        "Ενημερώσεις προϊόντων μέσω email"
+      ],
+      "Recovery checklist": [
+        "Λίστα ελέγχου ανάκτησης"
       ]
     },
     "Notification": {
@@ -21072,8 +21098,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Διαχειριστής Οργανισμού"
+      "Owner": [
+        "Ιδιοκτήτης"
       ],
       "Security Admin": [
         "Διαχειριστής Ασφαλείας"
@@ -21594,6 +21620,9 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Αυτό θα επαναφέρει την πρόσβαση σε ηλεκτρονικά μηνύματα, επαφές, αρχεία, κωδικούς πρόσβασης και οποιαδήποτε άλλα κρυπτογραφημένα δεδομένα στον λογαριασμό σας μετά από επαναφορά κωδικού πρόσβασης."
       ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε περιοδικά να τον εισάγετε."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Για να βεβαιωθούμε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι δική σας, εισαγάγετε τον κωδικό επαλήθευσης που στάλθηκε στο ${ boldEmail }."
       ],
@@ -21626,6 +21655,9 @@
       ],
       "Verify recovery phone": [
         "Επαλήθευση τηλέφωνου ανάκτησης"
+      ],
+      "Verify your password": [
+        "Επαληθεύστε τον κωδικό πρόσβασής σας"
       ],
       "Verify your recovery email": [
         "Επαληθεύστε την ηλεκτρονικής διεύθυνσης ανάκτησης σας"
@@ -21890,6 +21922,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Προσθήκη στο ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Σας επιτρέπει να προσθέσετε μια τηλεδιάσκεψη Zoom σε οποιαδήποτε εκδήλωση ημερολογίου"
       ]
@@ -25259,6 +25294,9 @@
       "Dashboard": [
         "Πίνακας Ελέγχου"
       ],
+      "Data collection": [
+        "Συλλογή Δεδομένων"
+      ],
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
@@ -26041,6 +26079,9 @@
       ],
       "Priority support:": [
         "Υποστήριξη με προτεραιότητα:"
+      ],
+      "Privacy": [
+        "Ιδιωτικότητα"
       ],
       "Privacy and data collection": [
         "Απόρρητο και συλλογή δεδομένων"
@@ -26909,6 +26950,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Περιλαμβάνει επαγγελματικό ηλεκτρονικό ταχυδρομείο στο @yourdomain.com, αποθήκευση στο cloud με συνεργατική επεξεργασία εγγράφων, προγραμματισμό και βιντεοδιάσκεψη, διαχείριση κωδικών πρόσβασης, ένα ασφαλές ${ VPN_SHORT_APP_NAME } και πολλά άλλα."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα μήνυμα ηλεκτρονικού ταχυδρομείου που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό. Οι χρήστες καθολικής σύνδεσης δε θα λάβουν την υπενθύμιση ηλεκτρονικού ταχυδρομείου."
