@@ -20,7 +20,9 @@ export function extractTitleSourceText(turns: Turn[], maxLines = TITLE_MAX_LINES
 
 function isAttachmentTurnContent(content: string): boolean {
     return (
-        content.startsWith('----- BEGIN FILE') || content.startsWith('File contents:') || content.startsWith('[Image:')
+        content.startsWith('----- BEGIN FILE') ||
+        content.startsWith('File contents:') ||
+        content.startsWith('<lumo-image')
     );
 }
 
