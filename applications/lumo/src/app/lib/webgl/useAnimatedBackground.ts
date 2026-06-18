@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { ThemeTypes, useLumoTheme } from '../../providers';
 import { createAnimatedBackground } from './createAnimatedBackground';
 
 export {
@@ -9,6 +10,8 @@ export {
 
 export function useAnimatedBackground() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const { theme } = useLumoTheme();
+    const isDark = theme === ThemeTypes.LumoDark;
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -16,8 +19,8 @@ export function useAnimatedBackground() {
             return;
         }
 
-        return createAnimatedBackground(canvas).destroy;
-    }, []);
+        return createAnimatedBackground(canvas, isDark).destroy;
+    }, [isDark]);
 
     return { canvasRef };
 }
