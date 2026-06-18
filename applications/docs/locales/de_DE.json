@@ -405,6 +405,9 @@
       "Get the apps": [
         "Apps herunterladen"
       ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
       "Get the writing assistant": [
         "Hol dir den Schreibassistenten"
       ],
@@ -1439,6 +1442,20 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "Subtotal": [
+        "Zwischensumme"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Zwischensumme für ${ cycle } Monat",
+        "Zwischensumme für ${ cycle } Monate"
+      ],
+      "Total": [
+        "Insgesamt"
+      ],
+      "Total for ${ n } month": [
+        "Gesamtbetrag für ${ n } Monat",
+        "Gesamtbetrag für ${ n } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -5834,6 +5851,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } Zeichen"
       ],
@@ -6049,6 +6070,9 @@
       ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Zugreifen"
       ],
       "Hide password": [
         "Passwort ausblenden"
@@ -7981,6 +8005,9 @@
       "Failed to load invitation details": [
         "Einladungsdetails konnten nicht geladen werden"
       ],
+      "Failed to load sharing details": [
+        "Die Details zur gemeinsamen Nutzung konnten nicht geladen werden"
+      ],
       "Failed to reject share invitation": [
         "Ablehnung der Einladung zur gemeinsamen Nutzung fehlgeschlagen"
       ],
@@ -9711,6 +9738,11 @@
         "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Lebenslang"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB Speicher"
@@ -10513,6 +10545,9 @@
       ],
       "Subscription canceled": [
         "Abonnement beendet"
+      ],
+      "Summer Sale": [
+        "Sommer Sale"
       ],
       "The link either does not exist or has expired": [
         "Der Link existiert entweder nicht oder ist abgelaufen"

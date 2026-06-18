@@ -405,6 +405,9 @@
       "Get the apps": [
         "Få appsene"
       ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
       "Get the writing assistant": [
         "Hent skriveassistenten"
       ],
@@ -1478,6 +1481,20 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "Subtotal": [
+        "I alt"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Deltotal for ${ cycle } måned",
+        "Deltotal for ${ cycle } måneder"
+      ],
+      "Total": [
+        "I alt"
+      ],
+      "Total for ${ n } month": [
+        "I alt for ${ n } måned",
+        "I alt for ${ n } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -5873,6 +5890,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tegn"
       ],
@@ -6088,6 +6109,9 @@
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Tag imod tilbuddet"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -7963,6 +7987,9 @@
       "Failed to load invitation details": [
         "Kunne ikke indlæse invitationsdetaljer"
       ],
+      "Failed to load sharing details": [
+        "Kunne ikke indlæse detaljer om deling"
+      ],
       "Failed to reject share invitation": [
         "Kunne ikke afvise invitation til at dele"
       ],
@@ -9696,6 +9723,11 @@
         "Abonnementet vil blive nedgraderet ved udgangen af faktureringscyklussen."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagerplads"
@@ -9969,6 +10001,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Account recovery": [
         "Kontogendannelse"
@@ -10499,6 +10534,9 @@
       "Subscription canceled": [
         "Abonnement annulleret"
       ],
+      "Summer Sale": [
+        "Sommerudsalg"
+      ],
       "The link either does not exist or has expired": [
         "Linket findes enten ikke eller er udløbet"
       ],
@@ -10634,6 +10672,9 @@
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Load image": [
         "Indlæs billede"

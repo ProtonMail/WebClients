@@ -137,6 +137,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Afinstaller ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Når hardwareacceleration er aktiveret bruger appen din enheds dedikerede grafikhardware til at rendere. Dette kan skabe problemer med kompatibiliteten på nogle enheder."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Uden hardwareacceleration bruger appen softwarerendering i stedet for dit grafikkort. Det kan betyde langsommere animationer og højere CPU-forbrug."
+      ],
       "Zoom": [
         "Zoom"
       ],

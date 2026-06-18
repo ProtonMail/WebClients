@@ -12174,11 +12174,17 @@
       "1-2 emails per month": [
         "1-2 correus electrònics per mes"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "Entre 1 i 4 correus electrònics l'any. Recordatoris perquè mantingueu actualitzats els mètodes de recuperació."
+      ],
       "2-4 emails per year": [
         "2 a 4 correus electrònics per any"
       ],
       "4-6 emails per year": [
         "4 a 6 correus electrònics per any"
+      ],
+      "Account email updates": [
+        "Actualitzacions del compte per correu electrònic"
       ],
       "Application notifications": [
         "Notificacions de l'aplicació"
@@ -12204,8 +12210,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participeu en enquestes per millorar els serveis de ${ BRAND_NAME }"
       ],
-      "Product updates": [
-        "Actualitzacions de productes"
+      "Product email updates": [
+        "Actualitzacions del producte per correu electrònic"
+      ],
+      "Recovery checklist": [
+        "Llista de verificació de recuperació"
       ]
     },
     "Notification": {
@@ -13995,8 +14004,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Administrador/a de l'organització"
+      "Owner": [
+        "Propietari"
       ],
       "Security Admin": [
         "Administrador/a de seguretat"

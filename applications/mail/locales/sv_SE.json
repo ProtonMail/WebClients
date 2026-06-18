@@ -120,6 +120,9 @@
       "All Read": [
         "Alla lästa"
       ],
+      "All Starred": [
+        "Alla stjärnmärkta"
+      ],
       "All Unread": [
         "Alla olästa"
       ],
@@ -306,6 +309,9 @@
       ],
       "Continue without categories": [
         "Fortsätt utan kategorier"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Kopiera '${ code }' till urklipp"
       ],
       "Copy address": [
         "Kopiera adress"
@@ -1194,6 +1200,9 @@
       ],
       "Retry": [
         "Försök igen"
+      ],
+      "Revert to original display": [
+        "Återgå till originalvisning"
       ],
       "Run on ${ BRAND_NAME } servers": [
         "Kör på ${ BRAND_NAME }-servrar"
@@ -2388,8 +2397,14 @@
       "${ participantName } accepted your invitation.": [
         "${ participantName } accepterade din inbjudan."
       ],
+      "${ participantName } asked for the latest event updates.": [
+        "${ participantName } bad om de senaste händelseuppdateringarna."
+      ],
       "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
         "${ participantName } bad om de senaste uppdateringarna av en händelse som inte finns längre. Du har inga kalendrar."
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
+        "${ participantName } bad om de senaste uppdateringarna av en händelse som inte längre finns i din kalender."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } avböjde en inbjudan och föreslog en ny tid för en förekomst av denna händelse."
@@ -2421,6 +2436,15 @@
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } hade accepterat en inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
       ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hade accepterat en inbjudan till en förekomst av händelsen."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } hade accepterat en inbjudan till denna händelse."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hade accepterat din inbjudan och föreslog en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } har accepterat din inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
       ],
@@ -2436,8 +2460,14 @@
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } har avböjt en inbjudan till denna händelse."
       ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hade avböjt din inbjudan och föreslog en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
+      ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } hade avböjt din inbjudan och föreslog en ny tid för denna händelse. Svar och förslag är inaktuella."
+      ],
+      "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
+        "${ participantName } hade tidigare accepterat din inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } had previously accepted your invitation.": [
         "${ participantName } hade tidigare accepterat din inbjudan."
@@ -2448,14 +2478,23 @@
       "${ participantName } had previously declined your invitation.": [
         "${ participantName } hade tidigare avböjt din inbjudan."
       ],
+      "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } hade tidigare preliminärt accepterat din inbjudan till en förekomst av händelsen."
+      ],
       "${ participantName } had previously tentatively accepted your invitation.": [
         "${ participantName } hade tidigare preliminärt accepterat din inbjudan."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
         "${ participantName } hade föreslagit en ny tid för en förekomst av denna händelse. Detta förslag är inaktuellt."
       ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } hade föreslagit en ny tid för en förekomst av denna händelse. Detta förslag är inaktuellt. Du har inga kalendrar."
+      ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
         "${ participantName } hade föreslagit en ny tid för denna händelse. Detta förslag är inaktuellt."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } hade föreslagit en ny tid för denna händelse. Detta förslag är inaktuellt. Händelsen finns inte längre i din kalender."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } hade föreslagit en ny tid för denna händelse. Detta förslag är inaktuellt. Du har inga kalendrar."
@@ -2463,11 +2502,20 @@
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
         "${ participantName } hade preliminärt accepterat en inbjudan till en förekomst av händelsen."
       ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hade preliminärt accepterat din inbjudan och föreslog en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } har preliminärt accepterat din inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
+      ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } finns inte i deltagarlistan."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } föreslog en ny tid för en förekomst av denna händelse."
+      ],
+      "${ participantName } proposed a new time for this event.": [
+        "${ participantName } föreslog en ny tid för denna händelse."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } accepterade preliminärt en inbjudan och föreslog en ny tid för en förekomst av denna händelse."
@@ -2492,6 +2540,12 @@
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "${ participantName } accepterade preliminärt din inbjudan."
+      ],
+      "Adding occurrences to an event is not supported for the moment": [
+        "Lägga till förekomster till en händelse stöds inte för tillfället"
+      ],
+      "Event refreshing is not supported for the moment": [
+        "Uppdatering av händelse stöds inte för tillfället"
       ],
       "Event rescheduling is not supported for the moment": [
         "Omläggning av schema för händelse stöds inte för tillfället"
@@ -2523,6 +2577,9 @@
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Detta svar är inaktuellt. Händelsen finns inte längre i din kalender."
       ],
+      "This response is out of date. You have no calendars.": [
+        "Detta svar är inaktuellt. Du har inga kalendrar."
+      ],
       "You already accepted this invitation.": [
         "Du har redan accepterat denna inbjudan."
       ],
@@ -2532,11 +2589,17 @@
       "You already tentatively accepted this invitation.": [
         "Du har redan preliminärt accepterat denna inbjudan."
       ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Du kan inte svara på ${ BRAND_NAME }-inbjudningar om du inte finns med på deltagarlistan just nu."
+      ],
       "Your email address is not in the original participants list.": [
         "Din e-postadress finns inte i den ursprungliga deltagarlistan."
       ]
     },
     "Calendar widget banner": {
+      "Event already ended": [
+        "Händelse har redan slutat"
+      ],
       "Event in progress": [
         "Händelse pågår"
       ]
@@ -3926,6 +3989,9 @@
       ],
       "Sender": [
         "Avsändare"
+      ],
+      "Subject": [
+        "Ämne"
       ]
     },
     "Cycle": {
@@ -3971,6 +4037,9 @@
       ]
     },
     "Date label": {
+      "Today": [
+        "Idag"
+      ],
       "Tomorrow": [
         "Imorgon"
       ]
@@ -4088,6 +4157,9 @@
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "För obegränsad åtkomst till skrivassistenten och mer, uppgradera till ${ BRAND_NAME } Duo."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "För obegränsad åtkomst till skrivassistenten och mer, uppgradera till ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
@@ -4127,6 +4199,9 @@
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Skicka och ta emot Gmail-meddelanden direkt i ${ MAIL_APP_NAME }. Anslut din adress i ${ addressesSettingsLink }."
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Ställ in en dataåterställningsmetod för att förhindra dataförlust."
@@ -4801,6 +4876,9 @@
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
       ],
+      "Message needs to be sent first": [
+        "Meddelande måste skickas först"
+      ],
       "Message processing error.": [
         "Meddelandehanteringsfel."
       ],
@@ -4951,6 +5029,9 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Den primära nyckeln för ${ BRAND_NAME } användare är inte giltig för att skicka"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Problem att ladda ner skrivassistenten. Om du använder privat läge, prova använda normalt surfläge eller kör skrivassistenten på servrar."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "Problem att ladda ner skrivassistenten. Försök igen."
       ],
@@ -4972,6 +5053,9 @@
       ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Att skicka bilagor är begränsat tills du uppfyller dina paketgränser eller uppgraderar."
       ],
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "Att skicka bilagor är begränsat medan du överskrider dina paketgränser eller tills du uppgraderar ditt paket."
@@ -6544,6 +6628,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } kan skydda ditt företag också."
+      ],
       "${ n } unread conversation": [
         "${ n } oläst konversation",
         "${ n } olästa konversationer"
@@ -6996,6 +7083,9 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Anslut till ${ VPN_APP_NAME } för att surfa privat"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Fundera på när det är bäst för din mottagare att ta emot din e-post och schemalägg att det ska skickas då."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
       ],
@@ -7187,6 +7277,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "E-post vidarebefordras till din brevlåda, din e-postadress förblir dold."
       ],
       "Email tracker protection is disabled": [
         "Spårningsskydd för e-post är inaktiverad"
@@ -8624,11 +8717,18 @@
         "Du har **${ count } meddelande** lagrat i denna mapp",
         "Du har **${ count } meddelanden** lagrade i denna mapp"
       ],
+      "You have **${ count } message** tagged with this label": [
+        "Du har **${ count } meddelande** märkt med denna etikett",
+        "Du har **${ count } meddelanden** märkta med denna etikett"
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
+      ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Du har inte gett ditt meddelande något ämne. Vill du skicka meddelandet ändå?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Du har nått 100 % av din lagringskapacitet. Överväg att frigöra lite utrymme eller uppgradera ditt konto med ytterligare lagringsutrymme för att skriva nya meddelanden."
@@ -8649,6 +8749,10 @@
       "You selected **${ count } conversation** with this label": [
         "Du valde **${ count } konversation** med denna etikett",
         "Du valde **${ count } konversationer** med denna etikett"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Du valde **${ count } meddelande** från denna mapp",
+        "Du valde **${ count } meddelanden** från denna mapp"
       ],
       "You selected **${ count } message** with this label": [
         "Du valde **${ count } meddelande** med denna etikett",
@@ -9485,6 +9589,9 @@
       "Label as": [
         "Märk som"
       ],
+      "Label ID": [
+        "Etikett-ID"
+      ],
       "Label messages as": [
         "Märk meddelanden som"
       ],
@@ -9715,6 +9822,9 @@
       ],
       "Sender": [
         "Avsändare"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Dela din tillgänglighet med bokningssidor i ${ CALENDAR_APP_NAME } och håll säkra möten med ${ MEET_APP_NAME }."
       ],
       "Sign emails": [
         "Signera e-post"
@@ -9952,6 +10062,9 @@
       ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Nyhetsbrev eller e-postlistor som du avslutar prenumeration på kommer visas här."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du har inga aktiva nyhetsbrev eller prenumerationer på e-postlistor."
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Du har inga prenumerationer på nyhetsbrev eller e-postlistor."
@@ -10317,6 +10430,9 @@
       ],
       "Spam": [
         "Skräppost"
+      ],
+      "Trash": [
+        "Papperskorg"
       ]
     },
     "meet_2025: Addon": {
@@ -11955,9 +12071,6 @@
       ],
       "Remind me later": [
         "Påminn mig senare"
-      ],
-      "Yes, don't show again": [
-        "Ja, visa inte igen"
       ]
     },
     "Option group": {
@@ -13095,6 +13208,10 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "Vill du skicka e-posten ändå?"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Följande adress är inte giltig: ${ invalidAddresses }",
+        "Följande adresser är inte giltiga: ${ invalidAddresses }"
       ]
     },
     "Sender verification details": {
@@ -13139,6 +13256,10 @@
       ],
       "Sent by you with end-to-end encryption": [
         "Skickat av dig med end-to-end-kryptering"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Skickat av dig med end-to-end-kryptering till verifierad mottagare",
+        "Skickat av dig med end-to-end-kryptering till verifierade mottagare"
       ]
     },
     "session_recovery:available:action": {
@@ -14379,6 +14500,9 @@
       "Conversation removed from Starred.": [
         "Konversation borttagen från stjärnmärkt."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Konversationer från ${ sendersList } kommer att märkas som ${ labelsList }"
+      ],
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
         "Konversationer från ${ sendersList } kommer att flyttas till ${ folder }"
       ],
@@ -15145,6 +15269,9 @@
       ],
       "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
         "Hjälp till att forma framtiden för e-postkategorier i ${ MAIL_APP_NAME }"
+      ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Dölj din e-post med ${ PASS_APP_NAME }"
       ],
       "High security for your account": [
         "Hög säkerhet för ditt konto"

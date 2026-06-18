@@ -6680,6 +6680,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Dacă nu v-au solicitat ajutorul**, este posibil ca altcineva să încerce să vă acceseze contul. În acest caz, ignorați această solicitare."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Protejați-vă moștenirea.** Modificați-vă abonamentul pentru a adăuga contacte de urgență."
+      ],
       "Access account": [
         "Accesare cont"
       ],
@@ -9869,6 +9872,11 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "Utilizatori care trebuie să accepte invitația pentru a începe să primească e-mailuri de grup: ${ invitedMemberCount }",
+        "Utilizatori care trebuie să accepte invitația pentru a începe să primească e-mailuri de grup: ${ invitedMemberCount }",
+        "Utilizatori care trebuie să accepte invitația pentru a începe să primească e-mailuri de grup: ${ invitedMemberCount }"
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
       ],
@@ -9947,6 +9955,11 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Oferta pe viață a ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }. Prețul și data de reînnoire a abonamentului ${ planTitle } rămân neschimbate."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }",
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }",
+        "Membri noi adăugați prin intermediul furnizorului de identitate care așteaptă revizuirea: ${ pendingAdminMemberCount }"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
@@ -11806,6 +11819,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Noile date de activitate vor înceta să fie colectate și afișate."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Grup nou creat prin intermediul furnizorului de identitate și în așteptarea revizuirii."
       ],
       "New sidebar": [
         "Bară laterală nouă"
@@ -14975,6 +14991,9 @@
       ],
       "Enter code": [
         "Introduceți codul"
+      ],
+      "Enter current password": [
+        "Introduceți parola curentă"
       ],
       "Enter name or email address": [
         "Introduceți numele sau adresa de e-mail"
@@ -18423,11 +18442,17 @@
       "1-2 emails per month": [
         "1-2 mesaje pe lună"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 mesaje pe an. Mementouri pentru a vă menține metodele de recuperare actualizate."
+      ],
       "2-4 emails per year": [
         "2-4 mesaje pe an"
       ],
       "4-6 emails per year": [
         "4-6 mesaje pe an"
+      ],
+      "Account email updates": [
+        "Actualizări cont e-mail"
       ],
       "Application notifications": [
         "Notificări aplicații"
@@ -18453,8 +18478,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participați la sondaje pentru a îmbunătăți serviciile ${ BRAND_NAME }"
       ],
-      "Product updates": [
-        "Actualizări produs"
+      "Product email updates": [
+        "Actualizări produs e-mail"
+      ],
+      "Recovery checklist": [
+        "Listă acțiuni de recuperare"
       ]
     },
     "Notification": {
@@ -21394,8 +21422,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Administrator organizație"
+      "Owner": [
+        "Proprietar"
       ],
       "Security Admin": [
         "Administrator securitate"
@@ -21916,6 +21944,9 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Acesta va restabili accesul la e-mailuri, contacte, fișiere, parole și orice alte date criptate din cont după resetarea parolei."
       ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Pentru a vă ajuta să vă amintiți parola, vi se va solicita periodic să o introduceți."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Pentru a ne asigura că adresa de e-mail vă aparține, introduceți codul de verificare trimis la ${ boldEmail }."
       ],
@@ -21948,6 +21979,9 @@
       ],
       "Verify recovery phone": [
         "Verificare număr de telefon de recuperare"
+      ],
+      "Verify your password": [
+        "Verificați-vă parola"
       ],
       "Verify your recovery email": [
         "Verificați adresa de e-mail de recuperare"
@@ -22212,6 +22246,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Adăugare la ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Vă permite să adăugați o conferință video Zoom oricărui eveniment din calendar."
       ]
@@ -25661,6 +25698,9 @@
       "Dashboard": [
         "Panou de control"
       ],
+      "Data collection": [
+        "Colectare de date"
+      ],
       "Data locked": [
         "Date blocate"
       ],
@@ -26446,6 +26486,9 @@
       ],
       "Priority support:": [
         "Asistență prioritară:"
+      ],
+      "Privacy": [
+        "Confidențialitate"
       ],
       "Privacy and data collection": [
         "Confidențialitate și colectare de date"
@@ -27315,6 +27358,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Include e-mail profesional la @domeniulmeu.com, stocare în cloud cu editare colaborativă a documentelor, planificare și videoconferințe, gestionarea parolelor, o aplicație securizată ${ VPN_SHORT_APP_NAME } și multe altele."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistență instantanee prin IA, expert uman la îndemână!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Membrii care nu folosesc A2F vor primi un e-mail prin care li se va cere să îl activeze cât mai curând posibil. Utilizatorii cu autentificare unică nu vor primi acest mesajul."

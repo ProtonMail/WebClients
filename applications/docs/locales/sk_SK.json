@@ -411,6 +411,9 @@
       "Get the apps": [
         "Stiahnť aplikácie"
       ],
+      "Get the deal": [
+        "Využiť ponuku"
+      ],
       "Get the writing assistant": [
         "Získajte asistenta písania"
       ],
@@ -1509,6 +1512,24 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "Subtotal": [
+        "Medzisúčet"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Medzisúčet za ${ cycle } mesiac",
+        "Medzisúčet za ${ cycle } mesiace",
+        "Medzisúčet za ${ cycle } mesiacov",
+        "Medzisúčet za ${ cycle } mesiacov"
+      ],
+      "Total": [
+        "Celkom"
+      ],
+      "Total for ${ n } month": [
+        "Celkom za ${ n } mesiac",
+        "Celkom za ${ n } mesiace",
+        "Celkom za ${ n } mesiacov",
+        "Celkom za ${ n } mesiacov"
       ]
     },
     "Collapsible tooltip": {
@@ -6025,6 +6046,12 @@
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } znakov"
       ],
@@ -6243,6 +6270,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
       ],
       "Hide password": [
         "Skryť heslo"
@@ -9939,6 +9969,11 @@
         "Na konci fakturačného cyklu sa predplatné zníži."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Doživotne"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložisko"
@@ -10781,6 +10816,9 @@
       ],
       "Subscription canceled": [
         "Predplatné bolo zrušené"
+      ],
+      "Summer Sale": [
+        "Letný výpredaj"
       ],
       "The link either does not exist or has expired": [
         "Odkaz neexistuje alebo vypršala jeho platnosť"
