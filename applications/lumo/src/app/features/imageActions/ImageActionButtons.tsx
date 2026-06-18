@@ -12,8 +12,13 @@ import { IMAGE_STYLE_OPTIONS } from './styleOptions';
 
 const BUTTON_STYLE = 'flex flex-row gap-2 flex-nowrap items-center w-fit-content';
 
-export const ImageModifyButton = ({ onClick }: { onClick: () => void }) => (
-    <Button className={BUTTON_STYLE} shape="solid" size="medium" onClick={onClick}>
+export const ImageModifyButton = ({ onClick, className }: { onClick: () => void; className?: string }) => (
+    <Button
+        className={[BUTTON_STYLE, className].filter(Boolean).join(' ')}
+        shape="solid"
+        size="medium"
+        onClick={onClick}
+    >
         <IcPen size={3.5} />
         {c('collider_2025:Action').t`Modify...`}
     </Button>
