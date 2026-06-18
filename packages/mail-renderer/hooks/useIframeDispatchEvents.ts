@@ -3,6 +3,7 @@ import { useCallback, useEffect } from 'react';
 
 import { cleanProblematicImagesFromClipboardContent } from '@proton/mail/helpers/message/cleanProblematicImagesFromClipboardContent';
 import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
+import { useFlag } from '@proton/unleash/useFlag';
 
 const IFRAME_EVENTS_LIST: Event['type'][] = ['focus', 'keydown', 'click', 'copy', 'dragstart'];
 
@@ -12,6 +13,8 @@ const useIframeDispatchEvents = (
     onFocus?: () => void,
     isPlainText?: boolean
 ) => {
+    const isInlineImageReuploadDisabled = useFlag('ComposerInlineImageReuploadDisabled');
+
     const bubbleEventCallback = useCallback((event: Event) => {
         if (['click', 'focus'].includes(event.type)) {
             document.dispatchEvent(new CustomEvent('dropdownclose'));
@@ -50,12 +53,12 @@ const useIframeDispatchEvents = (
         if (event.type === 'copy' && !isPlainText) {
             // Get user selection in iframe
             const selection = iframeRef.current?.contentWindow?.getSelection();
-            cleanProblematicImagesFromClipboardContent('copy', event, selection);
+            cleanProblematicImagesFromClipboardContent('copy', event, selection, isInlineImageReuploadDisabled);
         }
 
         if (event.type === 'dragstart') {
             const selection = iframeRef.current?.contentWindow?.getSelection();
-            cleanProblematicImagesFromClipboardContent('drag', event, selection);
+            cleanProblematicImagesFromClipboardContent('drag', event, selection, isInlineImageReuploadDisabled);
         }
     }, []);
 

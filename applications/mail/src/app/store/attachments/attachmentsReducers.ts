@@ -13,3 +13,15 @@ export const setAttachment = (
 ) => {
     state[ID] = attachment;
 };
+
+export const addImageIdentifierReducer = (
+    state: Draft<AttachmentsState>,
+    { payload: { ID, cloc, cid } }: PayloadAction<{ ID: string; cloc: string | undefined; cid: string | undefined }>
+) => {
+    if (!state[ID]) {
+        return;
+    }
+
+    state[ID].cid = cid;
+    state[ID].cloc = cloc;
+};
