@@ -38,14 +38,12 @@
 	}
 }
 
-// ── Inline image card (image left, actions right) ─────────────────────────────
+// ── Inline image card (image with hover-overlay controls) ────────────────────
 
 .inline-image-card {
-	gap: rem(10);
+	position: relative;
+	display: inline-block;
 	vertical-align: top;
-}
-
-.inline-image-card__img {
 	line-height: 0;
 
 	img {
@@ -56,10 +54,42 @@
 	}
 }
 
-.inline-image-card__actions {
-	gap: rem(5);
-	min-inline-size: rem(118);
-	padding-block-start: rem(2);
+.inline-image-card__overlay {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.15s;
+	border-radius: rem(12);
+
+	button {
+		opacity: 0.8;
+	}
+
+	.inline-image-card:hover & {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.inline-image-card__btn {
+	position: absolute;
+	margin: rem(8);
+}
+
+.inline-image-card__btn--expand {
+	inset-block-start: 0;
+	inset-inline-end: 0;
+}
+
+.inline-image-card__btn--modify {
+	inset-block-end: 0;
+	inset-inline-start: 0;
+}
+
+.inline-image-card__btn--download {
+	inset-block-end: 0;
+	inset-inline-end: 0;
 }
 
 .image-style-menu--side {
