@@ -9,7 +9,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 
-export type PasswordReminderSource = 'top_banner' | 'recovery_settings';
+export type PasswordReminderSource = 'top_banner' | 'recovery_settings' | 'password_settings';
 
 export const usePasswordReminderTelemetry = () => {
     const api = useApi();
