@@ -758,6 +758,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ],
+      "Copy instructions": [
+        "Anweisungen kopieren"
+      ],
+      "Copy token": [
+        "Token kopieren"
+      ],
+      "Create token": [
+        "Token erstellen"
+      ],
+      "Manage vault access": [
+        "Zugriff auf den Tresor verwalten"
+      ],
+      "New token": [
+        "Neues Token"
+      ],
+      "View agent activity": [
+        "Agentenaktivität anzeigen"
       ]
     },
     "Browser": {
@@ -1339,6 +1357,30 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Die Anweisungen zum Einrichten des Agenten konnten nicht geladen werden. Bitte kopiere das unten stehende Token; es wird nicht erneut angezeigt."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Die Gültigkeitsdauer muss zwischen 1 Stunde und 1 Jahr liegen"
+      ],
+      "Failed to create access token": [
+        "Die Erstellung des Zugangstokens ist fehlgeschlagen"
+      ],
+      "Failed to delete access token": [
+        "Das Löschen des Zugangstokens ist fehlgeschlagen"
+      ],
+      "Failed to load access tokens": [
+        "Das Laden der Zugangstoken ist fehlgeschlagen"
+      ],
+      "Failed to load token actions": [
+        "Das Laden der Tokenaktivitäten ist fehlgeschlagen"
+      ],
+      "Failed to update vault access": [
+        "Der Zugriff auf den Tresor konnte nicht aktualisiert werden"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Name darf maximal 191 Zeichen lang sein"
       ]
     },
     "Error message": {
@@ -2626,6 +2668,93 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } ausgewählt"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Zugangstoken \"${ action.token.Name }\" wird sofort ungültig. Dieser Vorgang kann nicht rückgängig gemacht werden."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Mit Zugangstoken, die zusammen mit ${ passCliLink } verwendet werden, kannst du CI/CD automatisieren oder deinem KI-Agenten einen begrenzten Zugriff auf die Ressourcen gewähren, die er zur Ausführung seiner Aufgabe benötigt."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Zwischen 60 (1 Stunde) und 525600 (1 Jahr)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopiere den folgenden Markdown-Code und sende ihn an deinen KI-Agenten. Das Token wird nur dieses eine Mal angezeigt."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopiere dieses Token jetzt. Aus Sicherheitsgründen wird es nicht erneut angezeigt."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Token erstellen, um ${ PASS_APP_NAME } in deine Skripte und Tools zu integrieren."
+      ],
+      "Created ${ createdDate }": [
+        "Erstellt ${ createdDate }"
+      ],
+      "Created item": [
+        "Erstellter Eintrag"
+      ],
+      "Deleted item": [
+        "Gelöschter Eintrag"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Pass-cli über ${ passCliLink } herunterladen"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Alle Aktionen, die dieses Agenten-Token ausgeführt hat, beginnend mit der neuesten."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Am ${ formattedDate } abgelaufen"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Läuft am ${ formattedDate } ab"
+      ],
+      "Log out of any existing session:": [
+        "Aus allen laufenden Sitzungen abmelden:"
+      ],
+      "Moved item to trash": [
+        "Eintrag in den Papierkorb verschoben"
+      ],
+      "No activity recorded yet.": [
+        "Noch keine Aktivität aufgezeichnet."
+      ],
+      "No vaults available.": [
+        "Keine Tresore verfügbar."
+      ],
+      "None selected": [
+        "Nichts ausgewählt"
+      ],
+      "Read item": [
+        "Gelesener Eintrag"
+      ],
+      "Restored item from trash": [
+        "Eintrag aus dem Papierkorb wiederhergestellt"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Tresore auswählen, auf die „${ token.Name }“ Zugriff haben soll."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Teste das Token, indem du dich anmeldest und die Tresore auflistest:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Der Agent muss für jede von ihm ausgeführte Aktion eine Begründung angeben, und jede Aktion wird in einem Prüfprotokoll festgehalten, das du einsehen kannst. Nach der Erstellung des Tokens erhältst du Anweisungen, die du in deinen KI-Agenten einfügen kannst."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Dann kannst du die Seite ${ url } aufrufen, um die Anweisungen zu kopieren, die du an deinen KI-Agenten senden möchtest."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Dieses Token erhält Lesezugriff auf die von dir ausgewählten Tresore. Es kann Elemente lesen, aber nicht bearbeiten, Tresore nicht freigeben und keine anderen Personen einladen. Du kannst dies später ändern."
+      ],
+      "Updated item": [
+        "Aktualisierter Eintrag"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Wechsle zu ${ PASS_APP_NAME } Plus, um Zugangstoken zu erstellen und ${ PASS_APP_NAME } programmgesteuert zu nutzen."
+      ],
+      "Vault access granted": [
+        "Zugriff auf den Tresor gewährt"
       ]
     },
     "Keyboard key": {
@@ -3802,6 +3931,36 @@
       ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
+      ],
+      "1 day": [
+        "1 Tag"
+      ],
+      "1 month": [
+        "1 Monat"
+      ],
+      "1 week": [
+        "1 Woche"
+      ],
+      "1 year": [
+        "1 Jahr"
+      ],
+      "Access tokens": [
+        "Zugangstoken"
+      ],
+      "Custom": [
+        "Benutzerdefiniert"
+      ],
+      "Custom expiration (minutes)": [
+        "Benutzerdefinierte Ablaufzeit (Minuten)"
+      ],
+      "Expires in": [
+        "Läuft ab in"
+      ],
+      "Use for AI agent": [
+        "Für KI-Agenten verwenden"
+      ],
+      "Vault access": [
+        "Tresor-Zugriff"
       ]
     },
     "Link": {
@@ -3852,6 +4011,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } wurde aktiviert."
+      ],
+      "Access token deleted": [
+        "Zugangstoken gelöscht"
       ]
     },
     "Option": {
@@ -4121,6 +4283,9 @@
       ],
       "Used on ${ url }": [
         "Verwendet auf ${ url }"
+      ],
+      "e.g. 60": [
+        "Z. B. 60"
       ]
     },
     "Security Center - Info": {
@@ -4768,6 +4933,30 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
         "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Zugangstoken erfordern ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitäten für \"${ token.Name }\""
+      ],
+      "Agent setup instructions": [
+        "Anleitung zur Einrichtung des Agenten"
+      ],
+      "Create new access token": [
+        "Neuer Zugangstoken erstellen"
+      ],
+      "Delete access token?": [
+        "Zugangstoken löschen?"
+      ],
+      "Manage vault access": [
+        "Tresorzugriff verwalten"
+      ],
+      "No access tokens yet": [
+        "Noch kein Zugangstoken"
+      ],
+      "Your new access token": [
+        "Deine neuer Zugangstoken"
       ]
     },
     "Title_cloned_item": {
@@ -5116,6 +5305,40 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivität"
+      ],
+      "Activity details could not be loaded.": [
+        "Aktivitätsdetail konnten nicht geladen werden."
+      ],
+      "Folder": [
+        "Ordner"
+      ],
+      "Item": [
+        "Eintrag"
+      ],
+      "Reason": [
+        "Begründung"
+      ],
+      "Vault": [
+        "Tresor"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Abgelaufen"
+      ],
+      "Expiring soon": [
+        "Läuft bald ab"
       ]
     }
   }
