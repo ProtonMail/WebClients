@@ -405,6 +405,9 @@
       "Get the apps": [
         "De apps downloaden"
       ],
+      "Get the deal": [
+        "Pak deze deal"
+      ],
       "Get the writing assistant": [
         "Verkrijg de schrijfassistent"
       ],
@@ -1475,6 +1478,20 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ],
+      "Subtotal": [
+        "Subtotaal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotaal voor ${ cycle } maand",
+        "Subtotaal voor ${ cycle } maanden"
+      ],
+      "Total": [
+        "Totaal"
+      ],
+      "Total for ${ n } month": [
+        "Totaal voor ${ n } maand",
+        "Totaal voor ${ n } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -5870,6 +5887,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tekens"
       ],
@@ -6085,6 +6106,9 @@
       ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
       ],
       "Hide password": [
         "Wachtwoord verbergen"
@@ -9693,6 +9717,11 @@
         "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Levenslang"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -10495,6 +10524,9 @@
       ],
       "Subscription canceled": [
         "Abonnement opgezegd"
+      ],
+      "Summer Sale": [
+        "Zomer Sale"
       ],
       "The link either does not exist or has expired": [
         "De link bestaat niet of is verlopen"

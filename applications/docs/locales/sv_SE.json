@@ -405,6 +405,9 @@
       "Get the apps": [
         "Skaffa apparna"
       ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
       "Get the writing assistant": [
         "Skaffa skrivassistenten"
       ],
@@ -1466,6 +1469,20 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "Subtotal": [
+        "Delsumma"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Delsumma för ${ cycle } månad",
+        "Delsumma för ${ cycle } månader"
+      ],
+      "Total": [
+        "Totalt"
+      ],
+      "Total for ${ n } month": [
+        "Totalt för ${ n } månad",
+        "Totalt för ${ n } månader"
       ]
     },
     "Collapsible tooltip": {
@@ -5818,6 +5835,10 @@
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tecken"
       ],
@@ -6036,6 +6057,9 @@
       ],
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
       ],
       "Hide password": [
         "Dölj lösenord"
@@ -9681,6 +9705,11 @@
         "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -10474,6 +10503,9 @@
       ],
       "Subscription canceled": [
         "Prenumeration avslutad"
+      ],
+      "Summer Sale": [
+        "Sommarrea"
       ],
       "The link either does not exist or has expired": [
         "Länken finns inte eller har löpt ut"

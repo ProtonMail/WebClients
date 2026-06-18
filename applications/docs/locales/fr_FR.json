@@ -405,6 +405,9 @@
       "Get the apps": [
         "Obtenir les applications"
       ],
+      "Get the deal": [
+        "J'en profite"
+      ],
       "Get the writing assistant": [
         "Obtenir l'assistant d'écriture"
       ],
@@ -1478,6 +1481,20 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "Subtotal": [
+        "Sous-total"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Sous-total pour ${ cycle } mois",
+        "Sous-total pour ${ cycle } mois"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total for ${ n } month": [
+        "Total pour ${ n } mois",
+        "Total pour ${ n } mois"
       ]
     },
     "Collapsible tooltip": {
@@ -5876,6 +5893,10 @@
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caractères"
       ],
@@ -6094,6 +6115,9 @@
       ],
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
       ],
       "Hide password": [
         "Masquer le mot de passe"
@@ -8026,6 +8050,9 @@
       "Failed to load invitation details": [
         "Le chargement des informations de l'invitation n'a pas abouti."
       ],
+      "Failed to load sharing details": [
+        "Les informations du partage n'ont pas pu être chargés"
+      ],
       "Failed to reject share invitation": [
         "L'invitation au partage n'a pas pu être refusée."
       ],
@@ -9759,6 +9786,11 @@
         "Vous passerez à un abonnement inférieur à la fin du cycle de facturation."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Lifetime"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Go d'espace de stockage"
@@ -10564,6 +10596,9 @@
       ],
       "Subscription canceled": [
         "L'abonnement a été annulé."
+      ],
+      "Summer Sale": [
+        "Offre estivale"
       ],
       "The link either does not exist or has expired": [
         "Le lien n'existe pas ou a expiré."
