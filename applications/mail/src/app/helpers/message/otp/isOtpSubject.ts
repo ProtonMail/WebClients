@@ -38,6 +38,10 @@ const COMBINED = new RegExp(
         // EN delivery phrases folded in from the former EXACT_OTP / YOUR_CODE_IS branches.
         "here['’]s\\s+your\\s+code",
         '\\byour\\s+code\\s+is\\b',
+        // Standalone two-factor keyword — no "code"-adjacent term required (the code
+        // is in the body, e.g. "… - 2-Factor-Authentication"). The PROMO veto keeps
+        // "2 factor sale" out. NB: no bare \bmfa\b — it false-matched a newsletter.
+        '\\b(?:two|2)[\\s-]?factor\\b|\\b(?:two|2)[\\s-]?step\\b|\\bmulti[\\s-]?factor\\b|\\bzwei[\\s-]?faktor|\\b2fa\\b',
         // FR
         'code\\s+(?:de\\s+)?(?:v[ée]rification|connexion|s[ée]curit[ée]|confirmation)',
         "code\\s+(?:[àa]\\s+usage\\s+unique|d['’]acc[èe]s)",

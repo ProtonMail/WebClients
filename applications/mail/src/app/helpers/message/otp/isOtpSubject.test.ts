@@ -22,6 +22,7 @@ describe('isOtpSubject', () => {
             'Votre code de validation Orange',
             'Votre code à 6 chiffres afin de vous connecter',
             'votre mot de passe à usage unique',
+            'Votre code à usage unique',
             'Tu código de autenticación',
             'Code zum Anmelden bei Zoom',
             'Code zur Bestätigung Ihrer E-Mail-Adresse',
@@ -36,6 +37,8 @@ describe('isOtpSubject', () => {
             'Passcode is 123456',
             'Your American Express One-Time Access Code',
             'Your Netflix temporary access code',
+            // standalone two-factor keyword (code is in the body, not the subject)
+            'Your code for the Sunrise Connect App - 2-Factor-Authentication',
         ])('%s', (subject) => {
             expect(isOtpSubject(subject)).toBe(true);
         });
