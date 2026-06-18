@@ -58,7 +58,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Prop
         }
     };
 
-    const handleBYOEWithImportCallback = async (hasError: boolean, isConversionFlow: boolean, token?: ImportToken) => {
+    const handleBYOEWithImportCallback = async (hasError: boolean, importEmails: boolean, token?: ImportToken) => {
         // If setting up the token failed or user has no access to BYOE, close the modal
         if (!hasAccessToBYOE || hasError) {
             onComplete?.();
@@ -83,7 +83,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Prop
                         Provider: OAUTH_PROVIDER.GOOGLE,
                         Source: source,
                         Account: token.Account,
-                        AutomaticImport: !isConversionFlow,
+                        AutomaticImport: importEmails,
                         QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
                     })
                 );

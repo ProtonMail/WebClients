@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import type { ImportToken } from '@proton/activation/src/interface';
@@ -67,6 +68,9 @@ jest.mock('@proton/shared/lib/helpers/address', () => ({
 }));
 const mockFindUserAddress = findUserAddress as jest.MockedFunction<typeof findUserAddress>;
 const mockGetIsBYOEAddress = getIsBYOEAddress as jest.MockedFunction<typeof getIsBYOEAddress>;
+const mockStartImportTask = startEasySwitchSignupImportTask as jest.MockedFunction<
+    typeof startEasySwitchSignupImportTask
+>;
 
 const mockToken: ImportToken = {
     ID: 'token-id',
@@ -98,7 +102,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(true, false, mockToken);
+                await result.current.handleBYOEWithImportCallback(true, true, mockToken);
             });
 
             expect(mockDispatch).not.toHaveBeenCalled();
@@ -117,7 +121,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
             });
 
             expect(mockDispatch).not.toHaveBeenCalled();
@@ -135,11 +139,30 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
             });
 
             expect(mockDispatch).toHaveBeenCalled();
             expect(mockApi).toHaveBeenCalled();
+            expect(mockStartImportTask).toHaveBeenCalledWith(expect.objectContaining({ AutomaticImport: true }));
+            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com');
+        });
+
+        it('should create address but not start an automatic import when importEmails is false', async () => {
+            const mockShowSuccessModal = jest.fn();
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
+
+            await act(async () => {
+                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
+            });
+
+            expect(mockApi).toHaveBeenCalled();
+            expect(mockStartImportTask).toHaveBeenCalledWith(expect.objectContaining({ AutomaticImport: false }));
             expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com');
         });
 
@@ -155,7 +178,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
             });
 
             expect(mockCreateNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'error' }));
@@ -178,7 +201,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -200,7 +223,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
             });
 
             expect(mockApi).toHaveBeenCalled();

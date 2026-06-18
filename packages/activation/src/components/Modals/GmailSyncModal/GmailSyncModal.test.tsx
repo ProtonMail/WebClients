@@ -53,7 +53,7 @@ describe('GmailSyncModal', () => {
         screen.getByText('Automatically forward');
     });
 
-    it('should call onBYOECallback', async () => {
+    it('should call onBYOECallback with importEmails true when the checkbox is ticked', async () => {
         const mockSyncCallback = jest.fn();
         const mockBYOEWithImportCallback = jest.fn();
 
@@ -71,7 +71,31 @@ describe('GmailSyncModal', () => {
 
         await waitFor(() => {
             expect(mockSyncCallback).not.toHaveBeenCalled();
-            expect(mockBYOEWithImportCallback).toHaveBeenCalled();
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, true, undefined);
+        });
+    });
+
+    it('should call onBYOECallback with importEmails false when the checkbox is unticked', async () => {
+        const mockSyncCallback = jest.fn();
+        const mockBYOEWithImportCallback = jest.fn();
+
+        easySwitchRender(
+            <GmailSyncModal
+                open
+                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
+                hasAccessToBYOE
+                onSyncCallback={mockSyncCallback}
+                onBYOECallback={mockBYOEWithImportCallback}
+            />
+        );
+
+        // Untick the import checkbox to connect without importing recent emails
+        fireEvent.click(screen.getByTestId('AddBYOEModal:importCheckbox'));
+        fireEvent.click(screen.getByText('Connect your email'));
+
+        await waitFor(() => {
+            expect(mockSyncCallback).not.toHaveBeenCalled();
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, false, undefined);
         });
     });
 });
