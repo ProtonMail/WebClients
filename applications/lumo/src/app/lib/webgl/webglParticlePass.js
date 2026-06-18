@@ -38,7 +38,6 @@ const FRAGMENT_SHADER = `
   uniform sampler2D u_blobTexture;
   uniform vec2 u_resolution;
   uniform vec3 u_baseColor;
-  uniform vec3 u_dotColor;
   uniform float u_maxAlpha;
   uniform float u_revealGain;
   uniform float u_revealThreshold;
@@ -78,7 +77,7 @@ const FRAGMENT_SHADER = `
     float alpha = (reveal * v_breatheMul * u_maxAlpha + mouseBoost * reveal) * roundMask;
     if (alpha <= 0.001) discard;
 
-    gl_FragColor = vec4(u_dotColor, alpha);
+    gl_FragColor = vec4(u_baseColor, alpha);
   }
 `;
 
@@ -100,7 +99,6 @@ export function createWebglParticlePass(gl, options) {
     const uPointSize = gl.getUniformLocation(program, 'u_pointSize');
     const uBlobTexture = gl.getUniformLocation(program, 'u_blobTexture');
     const uBaseColor = gl.getUniformLocation(program, 'u_baseColor');
-    const uDotColor = gl.getUniformLocation(program, 'u_dotColor');
     const uMaxAlpha = gl.getUniformLocation(program, 'u_maxAlpha');
     const uRevealGain = gl.getUniformLocation(program, 'u_revealGain');
     const uRevealThreshold = gl.getUniformLocation(program, 'u_revealThreshold');
@@ -124,8 +122,6 @@ export function createWebglParticlePass(gl, options) {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
     gl.useProgram(program);
-    const dot = settings.dotRgb ?? { r: 255, g: 255, b: 255 };
-    gl.uniform3f(uDotColor, dot.r / 255, dot.g / 255, dot.b / 255);
     gl.uniform1f(uMaxAlpha, settings.alpha ?? 0.72);
     gl.uniform1f(uRevealGain, settings.revealGain ?? 5.5);
     gl.uniform1f(uRevealThreshold, settings.revealThreshold ?? 0.012);
