@@ -1,4 +1,4 @@
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
@@ -16,7 +16,6 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { TabState, categoryColorClassName } from './tabsInterface';
@@ -36,21 +35,22 @@ const navClasses: Record<TabState, string> = {
 export const Tab = ({ category, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
 
-    const history = useHistory();
     const { call } = useEventManager();
 
-    const labelID = useMailSelector(selectLabelID);
     const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id));
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
     const handleClick = () => {
-        if (category.id === labelID && history.location.hash === '' && !refreshing) {
+        if (tabState === TabState.ACTIVE && !refreshing) {
+            console.log('refresh');
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
 
-        sendReportCategoriesNav('tab', category.id);
+        if (tabState !== TabState.ACTIVE) {
+            sendReportCategoriesNav('tab', category.id);
+        }
     };
 
     const navigateTo = setCategoryInUrl(category.id);
