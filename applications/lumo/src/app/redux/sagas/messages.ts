@@ -144,13 +144,13 @@ export function* deserializeMessageSaga(
         spaceDek_ = yield call(getSpaceDek, space);
     }
 
-    console.log(`deserializeMessageSaga ${localId}: calling deserializeMessage for remote`);
-    const deserializedRemoteMessage: Message | null = yield call(deserializeMessage, serializedMessage, spaceDek_);
-    console.log(`deserializeMessageSaga ${localId}: got deserialized remote message result`, deserializedRemoteMessage);
-    if (!deserializedRemoteMessage) {
-        throw new Error(`deserializeMessageSaga ${localId}: cannot deserialize message ${localId} from remote`);
+    console.log(`deserializeMessageSaga ${localId}: deserializing message`);
+    const deserializedMessage: Message | null = yield call(deserializeMessage, serializedMessage, spaceDek_);
+    console.log(`deserializeMessageSaga ${localId}: got deserialized message result`, deserializedMessage);
+    if (!deserializedMessage) {
+        throw new Error(`deserializeMessageSaga ${localId}: cannot deserialize message ${localId}`);
     }
-    return cleanMessage(deserializedRemoteMessage);
+    return cleanMessage(deserializedMessage);
 }
 
 export function* waitForMessage(localId: LocalId): SagaIterator<Message> {

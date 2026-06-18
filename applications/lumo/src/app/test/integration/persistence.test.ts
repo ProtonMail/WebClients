@@ -3219,9 +3219,9 @@ describe('Lumo Persistence Integration Tests', () => {
                     const encoder = new TextEncoder();
                     return new ReadableStream({
                         start(controller) {
-                            controller.enqueue(encoder.encode('data: {"type":"token_data","target":"message","content":"The ","count":0}\n\n'));
-                            controller.enqueue(encoder.encode('data: {"type":"token_data","target":"message","content":"answer is","count":1}\n\n'));
-                            controller.enqueue(encoder.encode('data: {"type":"error"}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"The "}}]}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"answer is"}}]}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"error":{"message":"generation failed"}}\n\n'));
                             controller.close();
                         },
                     });
@@ -3363,9 +3363,9 @@ describe('Lumo Persistence Integration Tests', () => {
                     const encoder = new TextEncoder();
                     return new ReadableStream({
                         start(controller) {
-                            controller.enqueue(encoder.encode('data: {"type":"token_data","target":"message","content":"The answer","count":0}\n\n'));
-                            controller.enqueue(encoder.encode('data: {"type":"token_data","target":"message","content":" is","count":1}\n\n'));
-                            controller.enqueue(encoder.encode('data: {"type":"error"}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"The answer"}}]}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"choices":[{"index":0,"delta":{"content":" is"}}]}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"error":{"message":"generation failed"}}\n\n'));
                             controller.close();
                         },
                     });

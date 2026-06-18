@@ -36,12 +36,17 @@ async function encryptTurn(turn: Turn, encryption: RequestEncryptionParams) {
     // Start encrypting images in parallel if present
     const imagePromises = turn.images?.map((image) => encryptImage(image, encryption)) || [];
 
+    const encryptedImages = await Promise.all(imagePromises);
     const encryptedTurn: EncryptedTurn = {
         ...turn,
         content: await contentPromise,
-        images: await Promise.all(imagePromises),
         encrypted: true,
     };
+
+    if (encryptedImages.length > 0) {
+        encryptedTurn.images = encryptedImages;
+    }
+
     return encryptedTurn;
 }
 
