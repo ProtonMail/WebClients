@@ -8,9 +8,9 @@ import Icon from '@proton/components/components/icon/Icon';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { IconName } from '@proton/icons/types';
-import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
 import { type ModelTier, useModelTier } from '../../providers/ModelTierProvider';
+import { LumoLogoWithTierTag } from '../LumoLogoWithTierTag/LumoLogoWithTierTag';
 import { MenuDropdown, MenuItem } from './components/MenuDropdown';
 import { useNativeComposerModelTierApi } from './hooks/useNativeComposerModelTierApi';
 
@@ -24,8 +24,6 @@ interface ModeOption {
     badge?: React.ReactNode;
     iconSvg?: React.ComponentType;
 }
-
-const LumoPlusBadge = () => <img src={lumoPlusLogo} alt="Lumo+ Logo" className="lumo-plus-badge" />;
 
 const DiamondIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -56,7 +54,7 @@ const getModeOptions = (): ModeOption[] => [
         iconName: 'lightbulb' as IconName,
         getLabel: () => c('collider_2025: Label').t`Thinking`,
         getDescription: () => c('collider_2025: Description').t`Solves complex problems`,
-        badge: <LumoPlusBadge />,
+        badge: <LumoLogoWithTierTag tierTag="plus" height="12px" className="lumo-plus-badge" />,
     },
 ];
 

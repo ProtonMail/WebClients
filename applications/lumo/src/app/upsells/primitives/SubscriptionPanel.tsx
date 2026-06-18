@@ -1,10 +1,9 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
-
-import LumoCatPlusCollarInline from '../../components/Icons/LumoCatPlusCollarInline';
-import LumoPlusLogoInline from '../../components/Icons/LumoPlusLogoInline';
 
 import './SubscriptionPanel.scss';
 
@@ -37,13 +36,13 @@ const lumoCharacteristics: LumoCharacteristic[] = [
 ];
 
 interface SubscriptionPanelProps {
-    children: React.ReactNode;
-    logo?: React.ReactNode;
+    children: ReactNode;
+    heading: ReactNode;
     message?: string;
 }
 
 // Shared component
-export const SubscriptionPanel = ({ message, children, logo }: SubscriptionPanelProps) => (
+export const SubscriptionPanel = ({ message, children, heading }: SubscriptionPanelProps) => (
     <div
         className={
             'lumo-subscription-panel settings-modal-panel w-full lumo-plus-settings-gradient border border-weak overflow-y-auto'
@@ -51,9 +50,7 @@ export const SubscriptionPanel = ({ message, children, logo }: SubscriptionPanel
     >
         <div className="lumo-subscription-panel__body">
             <div className="lumo-subscription-panel__intro">
-                <div className="lumo-subscription-panel__brand">
-                    {logo || <LumoPlusLogoInline height="22px" />}
-                </div>
+                <div className="lumo-subscription-panel__brand">{heading}</div>
 
                 {message && <p className="lumo-subscription-panel__message">{message}</p>}
             </div>
@@ -74,10 +71,6 @@ export const SubscriptionPanel = ({ message, children, logo }: SubscriptionPanel
             </ul>
 
             <div className="lumo-subscription-panel__cta mt-0 md:mt-1 w-fit">{children}</div>
-        </div>
-
-        <div className="lumo-subscription-panel__illustration flex items-end justify-end">
-            <LumoCatPlusCollarInline className="lumo-subscription-panel__cat" />
         </div>
     </div>
 );

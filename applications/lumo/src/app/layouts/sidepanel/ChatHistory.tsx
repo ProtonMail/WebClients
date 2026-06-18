@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 
 import ChatHistorySkeleton from '../../components/ChatHistorySkeleton';
-import { ChatHistoryGuestUserUpsell } from '../../components/Guest/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
 import { useLumoUserSettings } from '../../hooks';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useConversation } from '../../providers/ConversationProvider';
@@ -76,20 +75,21 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     }
 
     if (isGuest) {
-        return (
-            <div className="chat-history-container flex flex-column flex-nowrap gap-2">
-                {/* <Scroll className="flex-1"> */}
-                <ChatHistoryGuestUserUpsell />
-                {/* </Scroll> */}
-            </div>
-        );
+        // return (
+        //     <div className="chat-history-container flex flex-column flex-nowrap gap-2">
+        //         {/* <Scroll className="flex-1"> */}
+        //         <ChatHistoryGuestUserUpsell />
+        //         {/* </Scroll> */}
+        //     </div>
+        // );
+        return null;
     }
 
     return (
         <div className="chat-history-container flex flex-column flex-nowrap gap-2">
             {/* <Scroll className="flex-1"> */}
             {/* Enhanced sign-in section for all guest users */}
-            {isGuest && <ChatHistoryGuestUserUpsell />}
+            {/* {isGuest && <ChatHistoryGuestUserUpsell />} */}
 
             {!isGuest && noConversationAtAll && (
                 <>

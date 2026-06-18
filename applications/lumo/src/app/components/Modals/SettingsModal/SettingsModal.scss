@@ -294,7 +294,9 @@ im.$media-expressions: $media-expressions;
 
 .lumo-plus-settings-gradient {
 	background:
-		linear-gradient(132.7deg, rgb(109 74 255 / 0) 58%, rgb(109 74 255 / 0.2) 100.13%),
+		// linear-gradient(132.7deg, rgb(255 244 231 / 0) 58%, rgb(255 244 231 / 0.2) 100.13%),
+		linear-gradient(180deg, rgb(245 246 254 / 0) 25%, rgb(245 246 254 / 0.3) 65%, rgb(255 244 231 / 0.5) 100%),
+		// linear-gradient(132.7deg, rgb(109 74 255 / 0) 58%, rgb(109 74 255 / 0.2) 100.13%),
 		linear-gradient(0deg, var(--settings-modal-upsell-background), var(--settings-modal-upsell-background));
 	color: #4b5563;
 

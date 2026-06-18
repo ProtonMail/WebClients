@@ -15,9 +15,11 @@ im.$media-expressions: $media-expressions;
 }
 
 // Enhanced sign-in section for guest users in chat history
-.chat-history-signin-section {
+.guest-sidebar-signin-section {
+	background: linear-gradient(180deg, rgb(245 246 254 / 0.5) 0%, rgb(255 244 231 / 0.5) 100%);
 	background-color: var(--background-weak);
-	border: 1px solid var(--border-weak);
+
+	// border: 1px solid var(--border-weak);
 	transition:
 		background-color 0.2s ease-in-out,
 		border-color 0.2s ease-in-out;
@@ -33,7 +35,7 @@ im.$media-expressions: $media-expressions;
 		border-color: var(--border-norm);
 	}
 
-	.chat-history-signin-icon {
-		opacity: 0.7;
-	}
+	// .chat-history-signin-icon {
+	// 	opacity: 0.7;
+	// }
 }
