@@ -7,7 +7,7 @@ const BASE_STATE: Omit<EasySwitchState, 'oauthDraft' | 'imapDraft'> = {
     importers: { importers: {}, activeImporters: {}, loading: 'idle' },
     reports: { reports: {}, summaries: {}, loading: 'idle' },
     sync: { syncs: {}, listLoading: 'idle', creatingLoading: 'idle' },
-    byoeFlow: { connectedAddress: null, isConversionFlow: false, stepModal: null },
+    byoeFlow: { connectedAddress: null, skipImport: false, stepModal: null },
 };
 
 describe('EasySwitch draft selectors', () => {

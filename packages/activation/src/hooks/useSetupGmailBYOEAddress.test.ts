@@ -145,7 +145,7 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockDispatch).toHaveBeenCalled();
             expect(mockApi).toHaveBeenCalled();
             expect(mockStartImportTask).toHaveBeenCalledWith(expect.objectContaining({ AutomaticImport: true }));
-            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com');
+            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com', true);
         });
 
         it('should create address but not start an automatic import when importEmails is false', async () => {
@@ -163,7 +163,7 @@ describe('useSetupGmailBYOEAddress', () => {
 
             expect(mockApi).toHaveBeenCalled();
             expect(mockStartImportTask).toHaveBeenCalledWith(expect.objectContaining({ AutomaticImport: false }));
-            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com');
+            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com', false);
         });
 
         it('should show error notification and not call import API when address already exists and is a BYOE address', async () => {
@@ -206,7 +206,7 @@ describe('useSetupGmailBYOEAddress', () => {
 
             expect(mockApi).toHaveBeenCalled();
             expect(mockDispatch).toHaveBeenCalled();
-            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com');
+            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com', false);
         });
 
         it('should show error notification and not show success modal when conversion fails', async () => {
