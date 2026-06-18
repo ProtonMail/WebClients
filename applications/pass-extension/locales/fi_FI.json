@@ -1325,6 +1325,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Voimassaoloajan on oltava 1 tunnin ja 1 vuoden välillä"
       ]
     },
     "Error message": {
@@ -2665,6 +2668,12 @@
       "Moving an item to another vault will erase its secure links.": [
         "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
         "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Erääntyi ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Erääntyy ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -3793,6 +3802,24 @@
       ],
       "ZIP or Postal code": [
         "Postinumero"
+      ],
+      "1 day": [
+        "1 päivä"
+      ],
+      "1 month": [
+        "1 kuukausi"
+      ],
+      "1 week": [
+        "1 viikko"
+      ],
+      "1 year": [
+        "1 vuosi"
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Custom expiration (minutes)": [
+        "Mukautettu erääntyminen (minuuttia)"
       ]
     },
     "Link": {

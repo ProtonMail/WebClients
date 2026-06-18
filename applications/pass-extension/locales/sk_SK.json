@@ -1468,6 +1468,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Exspirácia musí byť medzi 1 hodinou a 1 rokom"
       ]
     },
     "Error message": {
@@ -3049,6 +3052,12 @@
         "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
         "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
         "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Platnosť skončí o ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Vyprší o ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4241,6 +4250,27 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "1 day": [
+        "1 deň"
+      ],
+      "1 month": [
+        "1 mesiac"
+      ],
+      "1 week": [
+        "1 týždeň"
+      ],
+      "1 year": [
+        "1 rok"
+      ],
+      "Custom": [
+        "Vlastné"
+      ],
+      "Custom expiration (minutes)": [
+        "Vlastná exspirácia (minúty)"
+      ],
+      "Expires in": [
+        "Vyprší o"
       ]
     },
     "Link": {

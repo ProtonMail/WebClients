@@ -1453,6 +1453,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "过期时间必须在 1 小时至 1 年之间"
       ]
     },
     "Error message": {
@@ -1468,7 +1471,7 @@
         "内置 2FA 验证器"
       ],
       "Unlimited hide-my-email aliases": [
-        "无限制地 hide-my-email"
+        "无限 Hide-my-email 别名"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
         "密码分享（最多 ${ MAX_VAULT_MEMBERS } 个人）"
@@ -2190,7 +2193,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2712,7 +2715,7 @@
         "尚未配置"
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
-        "无限制 hide-my-email 别名和高级别名管理"
+        "无限制 Hide-my-email 别名和高级别名管理"
       ],
       "Unlock ${ PASS_APP_NAME } to access your passkeys": [
         "解锁 ${ PASS_APP_NAME } 以访问您的通行密钥"
@@ -2941,6 +2944,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "Expired on ${ formattedDate }": [
+        "过期时间 ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "过期于 ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -3226,7 +3235,7 @@
         "创建自定义项目"
       ],
       "Create a hide-my-email alias": [
-        "创建一个 hide-my-email 别名"
+        "创建一个 Hide-my-email 别名"
       ],
       "Create a login": [
         "创建登录"
@@ -4088,6 +4097,27 @@
       ],
       "ZIP or Postal code": [
         "邮政编码"
+      ],
+      "1 day": [
+        "1 天"
+      ],
+      "1 month": [
+        "1 个月"
+      ],
+      "1 week": [
+        "1 周"
+      ],
+      "1 year": [
+        "1 年"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Custom expiration (minutes)": [
+        "自定义过期时间 (分钟)"
+      ],
+      "Expires in": [
+        "有效期至"
       ]
     },
     "Link": {
@@ -4793,7 +4823,7 @@
         "隐藏我的邮箱"
       ],
       "Hide-my-email aliases": [
-        "个hide-my-email别名"
+        "个 Hide-my-email 别名"
       ],
       "History": [
         "历史记录"

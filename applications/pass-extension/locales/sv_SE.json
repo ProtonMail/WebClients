@@ -2896,6 +2896,21 @@
       "Moving an item to another vault will erase its secure links.": [
         "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
         "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Åtkomsttoken ”${ action.token.Name }” har löpt ut. Om den är borttagen kommer den inte längre att visas."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Löpte ut den ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Löper ut den ${ formattedDate }"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Endast tokens som löpt ut under de senaste 30 dagarna visas. Äldre tokens tas bort automatiskt."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Sedan kan du gå till ${ url } för att kopiera instruktionerna som ska skickas till din AI-agent."
       ]
     },
     "Keyboard key": {
@@ -4054,6 +4069,24 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "1 day": [
+        "1 dag"
+      ],
+      "1 month": [
+        "1 månad"
+      ],
+      "1 week": [
+        "1 vecka"
+      ],
+      "1 year": [
+        "1 år"
+      ],
+      "Custom": [
+        "Anpassad"
+      ],
+      "Expires in": [
+        "Löper ut om"
       ]
     },
     "Link": {
@@ -4247,6 +4280,12 @@
       ],
       "You may close this window after saving the file.": [
         "Du kan stänga detta fönster efter att ha sparat filen."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Denna funktion stöds inte i ditt paket. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Denna funktion stöds inte i ditt paket. Kontakta din administratör för att få åtkomst."
       ]
     },
     "Permission": {

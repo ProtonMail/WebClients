@@ -1458,6 +1458,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Η λήξη πρέπει να είναι μεταξύ 1 ώρας και 1 έτους"
       ]
     },
     "Error message": {
@@ -2977,6 +2980,12 @@
       "Moving an item to another vault will erase its secure links.": [
         "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
         "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Έληξε στις ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Λήγει στις ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4141,6 +4150,27 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
+      ],
+      "1 day": [
+        "1 ημέρα"
+      ],
+      "1 month": [
+        "1 μήνας"
+      ],
+      "1 week": [
+        "1 εβδομάδα"
+      ],
+      "1 year": [
+        "1 έτος"
+      ],
+      "Custom": [
+        "Προσαρμοσμένο"
+      ],
+      "Custom expiration (minutes)": [
+        "Προσαρμοσμένη λήξη (λεπτά)"
+      ],
+      "Expires in": [
+        "Λήγει σε"
       ]
     },
     "Link": {

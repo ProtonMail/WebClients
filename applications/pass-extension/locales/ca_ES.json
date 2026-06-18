@@ -1458,6 +1458,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "La caducitat ha d'estar entre 1 hora i 1 any"
       ]
     },
     "Error message": {
@@ -2219,8 +2222,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2977,6 +2979,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Va caducar el ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Caduca el ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4141,6 +4149,27 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
+      ],
+      "1 day": [
+        "1 dia"
+      ],
+      "1 month": [
+        "1 mes"
+      ],
+      "1 week": [
+        "1 setmana"
+      ],
+      "1 year": [
+        "1 any"
+      ],
+      "Custom": [
+        "Personalitzat"
+      ],
+      "Custom expiration (minutes)": [
+        "Caducitat personalitzada (minuts)"
+      ],
+      "Expires in": [
+        "Caducarà d'aquí a"
       ]
     },
     "Link": {
