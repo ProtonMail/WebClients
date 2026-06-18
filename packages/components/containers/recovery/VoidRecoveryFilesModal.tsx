@@ -34,6 +34,7 @@ const VoidRecoveryFilesModal = ({ deviceRecoveryEnabled, onVoid, onClose, ...res
     return (
         <Prompt
             {...rest}
+            onClose={onClose}
             title={c('Action').t`Void all recovery files?`}
             buttons={[
                 <Button color="danger" loading={revoking} onClick={() => withRevoking(handleVoidClick())}>
