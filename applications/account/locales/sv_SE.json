@@ -942,6 +942,9 @@
       "Hide": [
         "Dölj"
       ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Dölj ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Hide more benefits": [
         "Dölj fler fördelar"
       ],
@@ -1649,6 +1652,9 @@
       ],
       "Stay": [
         "Stanna"
+      ],
+      "Stop": [
+        "Stopp"
       ],
       "Stop using single sign-on": [
         "Sluta använda enkel inloggning"
@@ -2953,6 +2959,9 @@
       ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Creating accounts": [
+        "Skapar konton"
       ],
       "Domain added": [
         "Domän tillagd"
@@ -12219,6 +12228,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Dessa inloggningsuppgifter kan inte användas för att logga in på våra officiella ${ VPN_APP_NAME }-appar. ${ learnMore }"
       ],
+      "Thinking…": [
+        "Tänker …"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Detta konto har stängts av på grund av en potentiell policyöverträdelse."
       ],
@@ -14433,6 +14445,9 @@
       ],
       "Enter code": [
         "Ange kod"
+      ],
+      "Enter current password": [
+        "Ange nuvarande lösenord"
       ],
       "Enter name or email address": [
         "Ange namn eller e-postadress"
@@ -17804,9 +17819,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Delta i undersökningar för att förbättra ${ BRAND_NAME }-tjänsterna"
-      ],
-      "Product updates": [
-        "Produktuppdateringar"
       ]
     },
     "Notification": {
@@ -20636,8 +20648,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Organisationsadministratör"
+      "Owner": [
+        "Ägare"
       ],
       "Security Admin": [
         "Säkerhetsadministratör"
@@ -20649,6 +20661,9 @@
     "Role description": {
       "Manage all users, groups, security, billing, and system configurations.": [
         "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
       ]
     },
     "Safety review": {
@@ -21170,6 +21185,9 @@
       "Verify recovery phone": [
         "Verifiera återställning med telefon"
       ],
+      "Verify your password": [
+        "Verifiera ditt lösenord"
+      ],
       "Verify your recovery email": [
         "Verifiera din e-post för återställning"
       ],
@@ -21421,6 +21439,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Lägg till i ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Låter dig lägga till en Zoom-videokonferens till alla dina kalenderhändelser"
       ]
@@ -21979,6 +22000,9 @@
       "Connect all your devices": [
         "Anslut alla dina enheter"
       ],
+      "Continue with ${ planName }": [
+        "Fortsätt med ${ planName }"
+      ],
       "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
@@ -22005,6 +22029,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratis i ${ TRIAL_DURATION_DAYS } dagar"
+      ],
+      "From ${ priceElement }": [
+        "Från ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Få ${ referralInfo.uiData.refereeRewardAmount } i krediter"
@@ -22105,6 +22132,9 @@
       ],
       "Share and collaborate of files": [
         "Dela och samarbeta på filer"
+      ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Registrera och få upp till ${ referralInfo.uiData.refereeRewardAmount } i krediter"
       ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "Registrera på ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
@@ -25206,6 +25236,9 @@
       "Help center": [
         "Hjälpcenter"
       ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Hjälp från ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Help us improve": [
         "Hjälp oss att förbättra"
       ],
@@ -25542,6 +25575,9 @@
       ],
       "Priority support:": [
         "Prioriterad support:"
+      ],
+      "Privacy": [
+        "Integritet"
       ],
       "Privacy and data collection": [
         "Integritet och datainsamling"

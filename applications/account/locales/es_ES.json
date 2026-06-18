@@ -1876,6 +1876,9 @@
         "${ users } usuario",
         "${ users } usuarios"
       ],
+      "Add-on": [
+        "Complemento"
+      ],
       "Dedicated VPN servers": [
         "Servidores VPN dedicados"
       ],
@@ -6237,6 +6240,9 @@
       ],
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Si no te han pedido ayuda**, es posible que otra persona esté intentando acceder a su cuenta. En ese caso, ignora esta solicitud."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Protege tu legado.** Mejora tu plan para añadir contactos de emergencia."
       ],
       "Access account": [
         "Acceder a la cuenta"
@@ -17188,11 +17194,17 @@
       "1-2 emails per month": [
         "1 a 2 correos al mes"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 correos al año. Recordatorios para mantener actualizados tus métodos de recuperación."
+      ],
       "2-4 emails per year": [
         "2 a 4 correos al año"
       ],
       "4-6 emails per year": [
         "4 a 6 correos al año"
+      ],
+      "Account email updates": [
+        "Actualizaciones de la cuenta por correo electrónico"
       ],
       "Application notifications": [
         "Notificaciones de la aplicación"
@@ -17218,8 +17230,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participa en las encuestas para mejorar los servicios de ${ BRAND_NAME }"
       ],
-      "Product updates": [
-        "Actualizaciones de productos"
+      "Product email updates": [
+        "Actualizaciones del producto por correo electrónico"
+      ],
+      "Recovery checklist": [
+        "Lista de comprobación de recuperación"
       ]
     },
     "Notification": {
@@ -19916,6 +19931,11 @@
         "Editar regla de conservación"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ]
+    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **Desactivar recuperación por teléfono** para evitar que los atacantes tomen el control de tu cuenta."
@@ -20716,6 +20736,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Añadir a ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Te permite añadir una videoconferencia de Zoom a cualquiera de tus eventos del calendario"
       ],
@@ -21266,6 +21289,9 @@
       "Connect all your devices": [
         "Conecta todos tus dispositivos"
       ],
+      "Continue with ${ planName }": [
+        "Continuar con ${ planName }"
+      ],
       "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
@@ -21292,6 +21318,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratis durante ${ TRIAL_DURATION_DAYS } días"
+      ],
+      "From ${ priceElement }": [
+        "Desde ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Consigue ${ referralInfo.uiData.refereeRewardAmount } en créditos"
@@ -21392,6 +21421,9 @@
       ],
       "Share and collaborate of files": [
         "Compartir y colaborar con archivos"
+      ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Regístrate y obtén ${ referralInfo.uiData.refereeRewardAmount } en créditos"
       ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "Regístrate en ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
@@ -22387,6 +22419,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuario",
         "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuarios"
@@ -23429,6 +23464,9 @@
         "${ friendsSubscribed } amigo suscrito",
         "${ friendsSubscribed } amigos suscritos"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"
       ],
@@ -23901,6 +23939,9 @@
       ],
       "Dashboard": [
         "Panel de control"
+      ],
+      "Data collection": [
+        "Recopilación de datos"
       ],
       "Data locked": [
         "Datos bloqueados"
@@ -24627,6 +24668,9 @@
       ],
       "Priority support:": [
         "Soporte prioritario:"
+      ],
+      "Privacy": [
+        "Privacidad"
       ],
       "Privacy and data collection": [
         "Privacidad y recopilación de datos"

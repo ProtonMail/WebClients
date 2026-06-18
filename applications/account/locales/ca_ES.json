@@ -6636,6 +6636,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Si no han demanat la vostra ajuda**, és possible que algú altre estigui intentant accedir al seu compte. En aquest cas, ignoreu aquesta sol·licitud."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Protegiu el vostre llegat.** Actualitzeu el pla per afegir contactes d'emergència."
+      ],
       "Access account": [
         "Accediu al compte"
       ],
@@ -18232,11 +18235,17 @@
       "1-2 emails per month": [
         "1-2 correus electrònics per mes"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "Entre 1 i 4 correus electrònics l'any. Recordatoris perquè mantingueu actualitzats els mètodes de recuperació."
+      ],
       "2-4 emails per year": [
         "2 a 4 correus electrònics per any"
       ],
       "4-6 emails per year": [
         "4 a 6 correus electrònics per any"
+      ],
+      "Account email updates": [
+        "Actualitzacions del compte per correu electrònic"
       ],
       "Application notifications": [
         "Notificacions de l'aplicació"
@@ -18262,8 +18271,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participeu en enquestes per millorar els serveis de ${ BRAND_NAME }"
       ],
-      "Product updates": [
-        "Actualitzacions de productes"
+      "Product email updates": [
+        "Actualitzacions del producte per correu electrònic"
+      ],
+      "Recovery checklist": [
+        "Llista de verificació de recuperació"
       ]
     },
     "Notification": {
@@ -21083,8 +21095,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Administrador/a de l'organització"
+      "Owner": [
+        "Propietari"
       ],
       "Security Admin": [
         "Administrador/a de seguretat"
@@ -21907,6 +21919,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Afegir a ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Us permet afegir una videoconferència de Zoom a qualsevol esdeveniment del vostre calendari."
       ],
@@ -25279,6 +25294,9 @@
       "Dashboard": [
         "Tauler de control"
       ],
+      "Data collection": [
+        "Recopilació de dades"
+      ],
       "Data locked": [
         "Dades bloquejades"
       ],
@@ -26061,6 +26079,9 @@
       ],
       "Priority support:": [
         "Suport prioritari:"
+      ],
+      "Privacy": [
+        "Privacitat"
       ],
       "Privacy and data collection": [
         "Privacitat i recopilació de dades"

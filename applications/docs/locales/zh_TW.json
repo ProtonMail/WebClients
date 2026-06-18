@@ -366,6 +366,9 @@
       "Get the apps": [
         "取得應用程式"
       ],
+      "Get the deal": [
+        "取得優惠"
+      ],
       "Get the writing assistant": [
         "取得寫作幫手"
       ],
@@ -1281,6 +1284,18 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal": [
+        "小計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
+      ],
+      "Total": [
+        "總共"
+      ],
+      "Total for ${ n } month": [
+        " ${ n } 個月總計"
       ]
     },
     "Collapsible tooltip": {
@@ -5309,6 +5324,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
       ],
+      "${ n } month": [
+        "${ n } 月"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
@@ -5509,6 +5527,9 @@
       ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "取得優惠"
       ],
       "Hide password": [
         "隱藏密碼"
@@ -8831,6 +8852,11 @@
         "此訂閱將於繳款單週期末被降級"
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "終身"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 儲存空間"
@@ -9589,6 +9615,9 @@
       ],
       "Subscription canceled": [
         "訂購授權已取消"
+      ],
+      "Summer Sale": [
+        "夏季特賣"
       ],
       "The link either does not exist or has expired": [
         "連結不存在或已失效"

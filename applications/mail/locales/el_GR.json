@@ -108,6 +108,9 @@
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
+      "Adds it above your existing message": [
+        "Το προσθέτει πάνω από το υπάρχον μήνυμά σας"
+      ],
       "Align center": [
         "Στοίχιση στο κέντρο"
       ],
@@ -120,8 +123,17 @@
       "Alignment": [
         "Στοίχιση"
       ],
+      "All Read": [
+        "Όλα τα Διαβασμένα"
+      ],
       "All Starred": [
         "Όλα με Αστέρι"
+      ],
+      "All Unread": [
+        "Όλα μη Αναγνωσμένα"
+      ],
+      "All Unstarred": [
+        "Όλα χωρίς Αστέρι"
       ],
       "Apply": [
         "Εφαρμογή"
@@ -166,6 +178,9 @@
       "Block messages from this sender": [
         "Αποκλεισμός μηνυμάτων από αυτόν τον αποστολέα"
       ],
+      "Block sender": [
+        "Αποκλεισμός αποστολέα"
+      ],
       "Block senders": [
         "Αποκλεισμός αποστολέων"
       ],
@@ -186,6 +201,9 @@
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
+      ],
+      "Change sorting": [
+        "Αλλαγή ταξινόμησης"
       ],
       "Chat with us": [
         "Επικοινωνήστε μαζί μας"
@@ -220,6 +238,9 @@
       "Clear data": [
         "Εκκαθάριση δεδομένων"
       ],
+      "clear it": [
+        "καθάρισε το"
+      ],
       "Clear query": [
         "Απαλοιφή ερωτήματος"
       ],
@@ -232,8 +253,14 @@
       "Click here.": [
         "Κάντε κλικ εδώ."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Κάντε κλικ για να αντιγράψετε το ${ defaultEmailAddress } στο πρόχειρο"
+      ],
       "Close": [
         "Κλείσιμο"
+      ],
+      "Close composer": [
+        "Κλείσιμο συντάκτη"
       ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
@@ -282,6 +309,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Συνέχεια στο ${ planOrAppName }"
+      ],
+      "Continue with categories": [
+        "Συνεχίστε με κατηγορίες"
       ],
       "Continue with Free": [
         "Συνέχεια με Free"
@@ -393,6 +423,12 @@
       "Delete contact group": [
         "Διαγραφή ομάδας επαφών"
       ],
+      "Delete draft": [
+        "Διαγραφή πρόχειρου"
+      ],
+      "Delete folder": [
+        "Διαγραφή φακέλου"
+      ],
       "Delete label": [
         "Διαγραφή ετικέτας"
       ],
@@ -459,6 +495,9 @@
       "Download the desktop app": [
         "Κατεβάστε την εφαρμογή για υπολογιστές"
       ],
+      "Downloading": [
+        "Γίνετε λήψη"
+      ],
       "Edit": [
         "Επεξεργασία"
       ],
@@ -476,6 +515,9 @@
       ],
       "Edit encryption": [
         "Επεξεργασία κρυπτογράφησης"
+      ],
+      "Edit folder": [
+        "Επεξεργασία φακέλου"
       ],
       "Edit label": [
         "Επεξεργασία ετικέτας"
@@ -531,6 +573,9 @@
       "Expiration time": [
         "Χρόνος λήξης"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Ανακαλύψτε το ${ VPN_APP_NAME }"
+      ],
       "Explore other plans": [
         "Εξερευνήστε άλλα πλάνα"
       ],
@@ -549,6 +594,9 @@
       "Fewer search options": [
         "Λιγότερες επιλογές αναζήτησης"
       ],
+      "Filter on...": [
+        "Φίλτρο σε..."
+      ],
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
       ],
@@ -566,6 +614,9 @@
       ],
       "Generate password": [
         "Παραγωγή τυχαίου κωδικού πρόσβασης"
+      ],
+      "Generate text": [
+        "Δημιουργία κειμένου"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Λάβετε το ${ planName } για ${ priceCoupon }"
@@ -609,11 +660,17 @@
       "Go to label": [
         "Μετάβαση στην ετικέτα"
       ],
+      "Go to next page": [
+        "Μετάβαση στην επόμενη σελίδα"
+      ],
       "Go to page ${ page }": [
         "Μετάβαση στη σελίδα ${ page }"
       ],
       "Go to panel ${ index }": [
         "Μετάβαση στο πλαίσιο ${ index }"
+      ],
+      "Go to previous page": [
+        "Μετάβαση στην προηγούμενη σελίδα"
       ],
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
@@ -642,6 +699,9 @@
       "Hide attachment details": [
         "Απόκρυψη λεπτομερειών συνημμένου"
       ],
+      "Hide details": [
+        "Απόκρυψη λεπτομερειών"
+      ],
       "Hide messages": [
         "Απόκρυψη μηνυμάτων"
       ],
@@ -665,6 +725,9 @@
       ],
       "Image will be loaded without a proxy": [
         "Η εικόνα θα φορτωθεί χωρίς διαμεσολαβητή"
+      ],
+      "Images will be loaded without a proxy": [
+        "Οι εικόνες θα φορτωθούν χωρίς διαμεσολαβητή"
       ],
       "Import": [
         "Εισαγωγή"
@@ -702,6 +765,16 @@
       "Insert": [
         "Εισαγωγή"
       ],
+      "Insert ${ totalChecked } contact": [
+        "Εισαγωγή επαφής ${ totalChecked }",
+        "Εισαγάγετε ${ totalChecked } επαφές"
+      ],
+      "Insert contact": [
+        "Εισαγωγή επαφής"
+      ],
+      "Insert contacts": [
+        "Εισαγωγή επαφών"
+      ],
       "Insert image": [
         "Εισαγωγή εικόνας"
       ],
@@ -720,8 +793,17 @@
       "Join with ${ MEET_APP_NAME }": [
         "Συμμετάσχετε με ${ MEET_APP_NAME }"
       ],
+      "Keep inbox as before": [
+        "Διατηρήστε τα εισερχόμενά σας όπως πριν"
+      ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
+      ],
+      "Label as": [
+        "Σήμανση με ετικέτα ως"
+      ],
+      "Label as...": [
+        "Σήμανση με ετικέτα ως..."
       ],
       "label emails as": [
         "ορίστε ετικέτα στα email ως"
@@ -744,11 +826,20 @@
       "Load": [
         "Φόρτωση"
       ],
+      "Load embedded images": [
+        "Φόρτωση ενσωματωμένων εικόνων"
+      ],
       "Load image": [
         "Φόρτωση εικόνας"
       ],
       "Load more": [
         "Φόρτωση περισσοτέρων"
+      ],
+      "Loading${ ellipsis }": [
+        "Γίνεται φόρτωση${ ellipsis }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Κάντε το ${ MAIL_APP_NAME } την προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Make it friendly": [
         "Κάνε το πιο φιλικό"
@@ -792,6 +883,9 @@
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
       ],
+      "Mark legitimate": [
+        "Σήμανση ως αποδεκτού"
+      ],
       "Maximize composer": [
         "Μεγιστοποίηση συντάκτη"
       ],
@@ -819,6 +913,12 @@
       "Modify": [
         "Τροποποίηση"
       ],
+      "Modify selection": [
+        "Τροποποίηση επιλογής"
+      ],
+      "Monday": [
+        "Δευτέρα"
+      ],
       "More": [
         "Περισσότερα"
       ],
@@ -843,11 +943,17 @@
       "More search options": [
         "Περισσότερες επιλογές αναζήτησης"
       ],
+      "Most frequent": [
+        "Πιο συχνά"
+      ],
       "Most read": [
         "Πιο διαβασμένα"
       ],
       "Move": [
         "Μετακίνηση"
+      ],
+      "Move all to archive": [
+        "Μετακίνηση όλων στα Αρχειοθετημένα"
       ],
       "Move all to trash": [
         "Μετακίνηση όλων στα Διαγραμμένα"
@@ -858,14 +964,23 @@
       "Move to": [
         "Μετακίνηση σε"
       ],
+      "Move to archive": [
+        "Αρχειοθέτηση"
+      ],
       "Move to Archive": [
         "Μετακίνηση στα Αρχειοθετημένα"
+      ],
+      "Move to category...": [
+        "Μετακίνηση στην κατηγορία..."
       ],
       "Move to folder": [
         "Μετακίνηση σε φάκελο"
       ],
       "Move to inbox": [
         "Μετακίνηση στα Εισερχόμενα"
+      ],
+      "Move to inbox (not spam)": [
+        "Μετακίνηση στα εισερχόμενα (όχι ανεπιθύμητο)"
       ],
       "Move to spam": [
         "Μετακίνηση στα ανεπιθύμητα"
@@ -945,8 +1060,14 @@
       "Ordered list": [
         "Ταξινομημένη λίστα"
       ],
+      "Page ${ pageNumber }": [
+        "Σελίδα ${ pageNumber }"
+      ],
       "Passphrase": [
         "Φράση πρόσβασης"
+      ],
+      "Pause": [
+        "Παύση"
       ],
       "Pay": [
         "Πληρωμή"
@@ -968,6 +1089,9 @@
       ],
       "Previous conversation": [
         "Προηγούμενη συνομιλία"
+      ],
+      "Previous message": [
+        "Προηγούμενο Μήνυμα"
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
@@ -996,6 +1120,9 @@
       "Read receipt sent": [
         "Έγινε αποστολή αποδεικτικού ανάγνωσης"
       ],
+      "Recently read": [
+        "Πρόσφατα αναγνωσμένα"
+      ],
       "Recently received": [
         "Προσφάτως ληφθέντα"
       ],
@@ -1011,11 +1138,17 @@
       "Refer a friend": [
         "Συστήστε ένα φίλο"
       ],
+      "Refine it": [
+        "Βελτιώστε το"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
       "Remove": [
         "Αφαίρεση"
+      ],
+      "Remove ${ attachmentName }": [
+        "Αφαίρεση ${ attachmentName }"
       ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
@@ -1053,6 +1186,9 @@
       "Replaces the selected text in your message": [
         "Αντικαθιστά το επιλεγμένο κείμενο στο μήνυμά σας"
       ],
+      "Reply securely": [
+        "Απάντηση με ασφάλεια"
+      ],
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
@@ -1077,8 +1213,14 @@
       "Reset": [
         "Επαναφορά"
       ],
+      "Reset search form": [
+        "Επαναφορά της φόρμας αναζήτησης"
+      ],
       "Reset to default": [
         "Επαναφορά των προεπιλογών"
+      ],
+      "Resize panel": [
+        "Αλλαγή μεγέθους πλαισίου"
       ],
       "Restore": [
         "Επαναφορά"
@@ -1134,6 +1276,9 @@
       "Select ${ planOrAppName }": [
         "Επιλογή ${ planOrAppName }"
       ],
+      "Select All": [
+        "Επιλογή όλων"
+      ],
       "Select all": [
         "Επιλογή όλων"
       ],
@@ -1145,6 +1290,9 @@
       ],
       "Select country": [
         "Επιλογή Χώρας"
+      ],
+      "Select date and time": [
+        "Επιλέξτε ημερομηνία και ώρα"
       ],
       "Select rating ${ n } out of ${ to }": [
         "Επιλέξτε βαθμολογία ${ n } από ${ to }"
@@ -1161,6 +1309,9 @@
       "Send": [
         "Αποστολή"
       ],
+      "Send anyway": [
+        "Αποστολή ούτως ή άλλως"
+      ],
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
       ],
@@ -1173,6 +1324,9 @@
       "Send unsubscribe email": [
         "Αποστολή μηνύματος απεγγραφής"
       ],
+      "Set": [
+        "Ρύθμιση"
+      ],
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Ορίστε το ${ MAIL_APP_NAME } ως την προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου σας"
       ],
@@ -1181,6 +1335,9 @@
       ],
       "Set as default": [
         "Ορισμός ως προεπιλογή"
+      ],
+      "Set encryption": [
+        "Ορισμός κρυπτογράφησης"
       ],
       "Set expiration time": [
         "Ορισμός χρόνου λήξης"
@@ -1235,6 +1392,9 @@
       ],
       "Show details": [
         "Εμφάνιση λεπτομερειών"
+      ],
+      "Show fewer search options": [
+        "Εμφάνιση λιγότερων επιλογών αναζήτησης"
       ],
       "Show less": [
         "Εμφάνιση λιγότερων"
@@ -1301,6 +1461,9 @@
       ],
       "Stop generating result": [
         "Διακοπή δημιουργίας αποτελέσματος"
+      ],
+      "Stop marking as read": [
+        "Διακοπή σηματοδότησης ως αναγνωσμένο"
       ],
       "Stop moving to Archive": [
         "Διακοπή μετακίνησης στα Αρχειοθετημένα"
@@ -1371,6 +1534,9 @@
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
+      "Try categories": [
+        "Δοκιμάστε τις κατηγορίες"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
       ],
@@ -1397,6 +1563,9 @@
       ],
       "Unsnooze": [
         "Αφαίρεση αναβολής"
+      ],
+      "Unstar": [
+        "Αφαίρεση αστεριού"
       ],
       "Unsubscribe": [
         "Απεγγραφή"
@@ -1508,6 +1677,9 @@
       ],
       "View message details": [
         "Προβολή λεπτομερειών μηνύματος"
+      ],
+      "View recipients": [
+        "Προβολή παραληπτών"
       ],
       "View rendered HTML": [
         "Προβολή επεξεργασμένου κώδικα HTML"
@@ -1677,6 +1849,9 @@
       "Replied to all": [
         "Απαντήθηκε σε όλους"
       ],
+      "Star conversation": [
+        "Προσθήκη αστεριού στη συνομιλία"
+      ],
       "Star message": [
         "Προσθήκη αστεριού στο μήνυμα"
       ],
@@ -1685,6 +1860,9 @@
       ],
       "Unstar conversation": [
         "Αφαίρεση αστεριού από τη συνομιλία"
+      ],
+      "Unstar message": [
+        "Αφαίρεση αστεριού από το μήνυμα"
       ]
     },
     "Alternative text for conversation image": {
@@ -1715,6 +1893,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } εφαρμογές"
+      ]
+    },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Υποβάλλοντας αυτά τα σχόλια, η προτροπή και τα σχόλιά σας θα είναι ορατά στην ομάδα εποπτείας του ${ BRAND_NAME }."
       ]
     },
     "Assistant option": {
@@ -2252,8 +2435,17 @@
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αποδέχθηκε μια πρόσκλησή και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "Ο/Η ${ participantName } αποδέχθηκε μια πρόσκλησή και πρότεινε μια νέα ώρα για αυτή την εκδήλωση."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "Ο/Η ${ participantName } αποδέχτηκε μια πρόσκλησή σε μία διοργάνωση της εκδήλωσης."
+      ],
       "${ participantName } accepted an invitation to this event.": [
         "Ο/Η ${ participantName } αποδέχτηκε μια πρόσκληση σε αυτήν την εκδήλωση."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "Ο/Η ${ participantName } αποδέχθηκε την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
       "${ participantName } accepted your invitation and proposed a new time for this event.": [
         "Ο/Η ${ participantName } αποδέχθηκε την πρόσκλησή σας και πρότεινε μια νέα ώρα για αυτήν την εκδήλωση."
@@ -2273,11 +2465,17 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "Ο/Η ${ participantName } ζήτησε τις τελευταίες ενημερώσεις για μια εκδήλωση που δεν υπάρχει πλέον στο ημερολόγιό σας."
       ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Ο/Η ${ participantName } ζήτησε την τελευταία ενημέρωση για μια εκδήλωση που δεν ταιριάζει με τα στοιχεία της πρόσκλησής σας. Παρακαλούμε επιβεβαιώστε τα στοιχεία της στο ημερολόγιό σας."
+      ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αρνήθηκε μια πρόσκλησή και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
         "Ο/Η ${ participantName } αρνήθηκε μια πρόσκλησή και πρότεινε μια νέα ώρα για αυτή την εκδήλωση."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "Ο/Η ${ participantName } απέρριψε μια πρόσκλησή σε μία διοργάνωση της εκδήλωσης."
       ],
       "${ participantName } declined an invitation to this event.": [
         "Ο/Η ${ participantName } απέρριψε μια πρόσκληση για αυτήν την εκδήλωση."
@@ -2294,8 +2492,14 @@
       "${ participantName } declined your invitation.": [
         "Ο/Η ${ participantName } αρνήθηκε την πρόσκλησή σας."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "Ο/Η ${ participantName } είχε αποδεχθεί μια πρόσκλησή και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημερομηνία της απάντησης και της πρότασης έχει παρέλθει."
+      ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί μια πρόσκλησή και πρότεινε μια νέα ώρα για αυτή την εκδήλωση. Η ημερομηνία της απάντησης και της πρότασης έχει παρέλθει."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "Ο/Η ${ participantName } είχε αποδέχθηκε μια πρόσκλησή σε μία διοργάνωση της εκδήλωσης."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "Ο/Η ${ participantName } είχε αποδέχθηκε μια πρόσκλησή σε αυτήν την εκδήλωση."
@@ -2303,14 +2507,26 @@
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
       ],
+      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "Ο/Η ${ participantName } είχε αποδεχθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για αυτήν την εκδήλωση. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
+      ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αρνηθεί μια πρόσκληση και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημερομηνία της απάντησης και της πρότασης έχει παρέλθει."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αρνηθεί μια πρόσκλησή και πρότεινε μια νέα ώρα για αυτή την εκδήλωση. Η ημερομηνία της απάντησης και της πρότασης έχει παρέλθει."
       ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "Ο/Η ${ participantName } είχε απορρίψει μια πρόσκλησή σε μία διοργάνωση της εκδήλωσης."
+      ],
       "${ participantName } had declined an invitation to this event.": [
         "Ο/Η ${ participantName } είχε απορρίψει μια πρόσκλησή σε αυτή την εκδήλωση."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "Ο/Η ${ participantName } είχε αρνηθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημερομηνία της απάντησης και της πρότασης έχει παρέλθει."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "Ο/Η ${ participantName } είχε αρνηθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για αυτήν την εκδήλωση. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
         "${ participantName } είχε προηγουμένως αποδεχθεί την πρόσκληση σας σε μια εμφάνιση του γεγονότος."
@@ -2351,8 +2567,14 @@
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί με επιφύλαξη μια πρόσκληση και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημερομηνία της απάντησης και της πρότασης έχει παρέλθει."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "Ο/Η ${ participantName } είχε αποδεχθεί με επιφύλαξη μια πρόσκληση και πρότεινε μια νέα ώρα για αυτήν την εκδήλωση. Η ημερομηνία της απάντησης και της πρότασης έχουν παρέλθει."
+      ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
         "Ο/Η ${ participantName } είχε αποδεχτεί με επιφύλαξη την πρόσκλησή σε μία διοργάνωση της εκδήλωσης."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "Ο/Η ${ participantName } είχε αποδεχτεί με επιφύλαξη μια πρόσκληση σε αυτή την εκδήλωση."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί με επιφύλαξη την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημερομηνία της απάντησης και της πρότασης έχει παρέλθει."
@@ -2378,11 +2600,17 @@
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
         "Ο/Η ${ participantName } αποδέχτηκε με επιφύλαξη την πρόσκλησή σε μία διοργάνωση της εκδήλωσης."
       ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        "Ο/Η ${ participantName } αποδέχτηκε με επιφύλαξη μια πρόσκληση σε αυτήν την εκδήλωση."
+      ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αποδέχθηκε με επιφύλαξη την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
         "${ participantName } δέχθηκε προσωρινά την πρόσκληση σας και πρότεινε μια νέα ώρα για αυτό το γεγονός."
+      ],
+      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } προσωρινά αποδέχθηκε την πρόσκληση σας σε μια εμφάνιση της εκδήλωσης."
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "Ο/Η ${ participantName } αποδέχθηκε με επιφύλαξη την πρόσκλησή σας."
@@ -2411,8 +2639,14 @@
       "This invitation is out of date. The event has been canceled.": [
         "Αυτή η πρόσκληση είναι παρωχημένη. Η εκδήλωση έχει ακυρωθεί."
       ],
+      "This invitation is out of date. The event has been deleted.": [
+        "Αυτή η πρόσκληση είναι παρωχημένη. Η εκδήλωση έχει διαγραφεί."
+      ],
       "This invitation is out of date. The event has been updated.": [
         "Αυτή η πρόσκληση είναι ξεπερασμένη. Η εκδήλωση έχει ενημερωθεί."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Αυτή η νέα πρόταση ώρας δεν ταιριάζει με τα στοιχεία της πρόσκλησής σας. Παρακαλούμε επιβεβαιώστε τα στοιχεία της πρόσκλησης στο ημερολόγιό σας."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Αυτή η απάντηση δεν ταιριάζει με τα στοιχεία της πρόσκλησής σας. Παρακαλούμε επιβεβαιώστε τα στοιχεία της στο ημερολόγιό σας."
@@ -2422,6 +2656,9 @@
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Αυτή η απάντηση είναι εκπρόθεσμη. Η εκδήλωση δεν υπάρχει πλέον στο ημερολόγιό σας."
+      ],
+      "This response is out of date. You have no calendars.": [
+        "Αυτή η απάντηση είναι εκπρόθεσμη. Δεν έχετε ημερολόγια."
       ],
       "You already accepted this invitation.": [
         "Αποδεχθήκατε ήδη αυτή την πρόσκληση."
@@ -2789,8 +3026,14 @@
       "Go to Archive": [
         "Μετάβαση στα Αρχειοθετημένα"
       ],
+      "Go to Drafts": [
+        "Μετάβαση στα Πρόχειρα"
+      ],
       "Go to Inbox": [
         "Μετάβαση στα Εισερχόμενα"
+      ],
+      "Go to Sent": [
+        "Μετάβαση στα Απεσταλμένα"
       ],
       "Go to Spam": [
         "Μετάβαση στα Ανεπιθύμητα"
@@ -2803,9 +3046,15 @@
       ],
       "New message": [
         "Νέο μήνυμα"
+      ],
+      "Search": [
+        "Αναζήτηση"
       ]
     },
     "Composer email icon": {
+      "End-to-end encrypted": [
+        "Διατερματικά κρυπτογραφημένο"
+      ],
       "End-to-end encrypted to verified recipient": [
         "Κρυπτογραφημένο από άκρο σε άκρο στον επαληθευμένο παραλήπτη"
       ],
@@ -2831,6 +3080,9 @@
     "Composer size": {
       "Maximized": [
         "Μεγιστοποιημένο"
+      ],
+      "Normal": [
+        "Κανονικό"
       ]
     },
     "Condition for custom filter": {
@@ -2866,6 +3118,9 @@
       ]
     },
     "Confirm modal title": {
+      "Edit and reschedule": [
+        "Επεξεργασία και επαναπρογραμματισμός"
+      ],
       "Message saved to Drafts": [
         "Το μήνυμα αποθηκεύτηκε στα Πρόχειρα"
       ],
@@ -3815,8 +4070,14 @@
       "Filter on": [
         "Φίλτρο σε"
       ],
+      "Next": [
+        "Επόμενο"
+      ],
       "Recipient": [
         "Παραλήπτης"
+      ],
+      "Sender": [
+        "Αποστολέας"
       ],
       "Subject": [
         "Θέμα"
@@ -3988,6 +4249,9 @@
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Για απεριόριστη πρόσβαση στον βοηθό γραφής και πολλά άλλα, κάντε αναβάθμιση σε ${ BRAND_NAME } Duo."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Για απεριόριστη πρόσβαση στον βοηθό γραφής και πολλά άλλα, κάντε αναβάθμιση σε ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
       ],
@@ -4010,11 +4274,17 @@
         "Νέα μηνύματα από ${ senderEmailAddress } και άλλο ${ otherSendersCount } δεν θα αποσταλούν και θα διαγραφούν οριστικά.",
         "Νέα μηνύματα από ${ senderEmailAddress } και άλλα ${ otherSendersCount } δεν θα αποσταλούν και θα διαγραφούν οριστικά."
       ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Νέα μηνύματα από ${ senderEmailAddress } δεν θα αποσταλούν και θα διαγραφούν οριστικά."
+      ],
       "No ads. No trackers.": [
         "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες."
       ],
       "No folders": [
         "Δεν υπάρχουν φάκελοι"
+      ],
+      "No labels": [
+        "Χωρίς ετικέτες"
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
@@ -4055,6 +4325,9 @@
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
         "Για να συνεχίσετε να χρησιμοποιείτε το ${ LUMO_SHORT_APP_NAME } στο ${ MAIL_APP_NAME }, προσθέστε το στη συνδρομή σας."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Για να συνεχίσετε να χρησιμοποιείτε το ${ LUMO_SHORT_APP_NAME } στο ${ MAIL_APP_NAME }, ζητήστε πρόσβαση από τον διαχειριστή σας."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Για να συνεχίσετε να χρησιμοποιείτε τον βοηθό γραφής, προσθέστε τον στη συνδρομή σας."
@@ -4193,6 +4466,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } νέο μήνυμα",
+        "${ notificationsToShow.length } νέα μηνύματα"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Από: ${ sender } - ${ Subject }"
       ]
@@ -4402,6 +4679,9 @@
       "Event starts in ${ minutesUntilEvent } minute": [
         "Η εκδήλωση ξεκινά σε ${ minutesUntilEvent } λεπτό",
         "Η εκδήλωση ξεκινά σε ${ minutesUntilEvent } λεπτά"
+      ],
+      "Event starts tomorrow": [
+        "Η εκδήλωση ξεκινά αύριο"
       ]
     },
     "Email reminder decryption error": {
@@ -4420,6 +4700,9 @@
     "Email reminder out of date alert": {
       "Event was canceled": [
         "Η εκδήλωση ακυρώθηκε"
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        "Η εκδήλωση ενημερώθηκε. Αυτή η υπενθύμιση είναι εκπρόθεσμη."
       ]
     },
     "Email subject": {
@@ -4518,6 +4801,9 @@
       "An error occurred while saving your alias": [
         "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του ψευδώνυμου σας."
       ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Τα συνημμένα περιορίζονται σε ${ readableAttachmentMaxSize }"
+      ],
       "Authentication canceled.": [
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
       ],
@@ -4530,11 +4816,18 @@
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Δεν είναι δυνατή η ρύθμιση λήξης που υπερβαίνει το χρονικό διάστημα που επιτρέπει η πολιτική διατήρησης."
+      ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
       "Choose a date in the future.": [
         "Επιλέξτε μελλοντική ημερομηνία."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Επιλέξτε μια ημερομηνία εντός της επόμενης ${ n } ημέρας",
+        "Επιλέξτε μια ημερομηνία εντός των επόμενων ${ n } ημερών."
       ],
       "Company name or personal name is required": [
         "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
@@ -4553,6 +4846,9 @@
       ],
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
+      ],
+      "Contact your organization’s administrator to resolve this": [
+        "Για επίλυση, επικοινωνήστε με τον διαχειριστή του οργανισμού σας"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
@@ -4845,6 +5141,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Παρακαλούμε καταχωρήστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Παρακαλούμε επιλέξτε μια κατηγορία και τι πήγε στραβά με το παραγόμενο κείμενο"
+      ],
       "Please select a country": [
         "Παρακαλούμε επιλέξτε μια χώρα"
       ],
@@ -4859,6 +5158,9 @@
       ],
       "Please try again or refresh the page.": [
         "Παρακαλούμε δοκιμάστε ξανά ή ανανεώστε τη σελίδα."
+      ],
+      "Please try generating the text again": [
+        "Παρακαλούμε δοκιμάστε να δημιουργήσετε ξανά το κείμενο"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
@@ -4878,17 +5180,33 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Το πρωτεύον κλειδί που ανακτήθηκε για τον ${ BRAND_NAME } χρήστη δεν είναι έγκυρο για αποστολή"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Πρόβλημα με τη λήψη του βοηθού γραφής. Εάν χρησιμοποιείτε ιδιωτική λειτουργία, δοκιμάστε να χρησιμοποιήσετε την κανονική λειτουργία περιήγησης ή εκτελέστε τον βοηθό γραφής σε διακομιστές."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "Πρόβλημα με τη λήψη του βοηθού γραφής. Παρακαλούμε προσπαθήστε ξανά."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
         "Πρόβλημα με τη φόρτωση του βοηθού γραφής στη συσκευή σας. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Δεν απαιτείται πρόβλημα εκφόρτωσης δεδομένων όταν ο βοηθός γραφής είναι ανενεργός"
+      ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
       ],
       "Public key could not be trusted": [
         "Το δημόσιο κλειδί δεν μπορεί να γίνει έμπιστο"
+      ],
+      "re-activate the previous key": [
+        "επανενεργοποιήστε το προηγούμενο κλειδί"
+      ],
+      "re-importing": [
+        "επαναεισαγωγή"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ recipents }",
+        "Αφαιρέθηκαν διπλότυποι παραλήπτες: ${ recipents }"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -4904,6 +5222,9 @@
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
+      ],
+      "Signature verification error.": [
+        "Σφάλμα επαλήθευσης υπογραφής."
       ],
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
@@ -4953,6 +5274,9 @@
       "Text is too long to refine": [
         "Το κείμενο είναι πολύ μεγάλο για να βελτιωθεί"
       ],
+      "Thanks for the feedback!": [
+        "Ευχαριστούμε για τα σχόλιά σας!"
+      ],
       "That action can't be performed on emails in this folder": [
         "Αυτή η ενέργεια δεν μπορεί να εκτελεστεί σε μηνύματα ηλεκτρονικού ταχυδρομείου σε αυτόν τον φάκελο."
       ],
@@ -4972,11 +5296,17 @@
       "The folder name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος φακέλου. Παρακαλούμε δοκιμάστε ένα συντομότερο."
       ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Δεν ήταν δυνατή η εξαγωγή των ιδιοτήτων κλειδιού για ${ emailAddress }"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "The label name is too long. Please choose a different name.": [
         "Το όνομα της ετικέτας είναι πολύ μεγάλο. Δοκιμάστε ένα διαφορετικό όνομα."
+      ],
+      "The maximum expiration is 4 weeks": [
+        "Η μέγιστη διάρκεια λήξης είναι 4 εβδομάδες."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
@@ -4990,8 +5320,17 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Το σύστημα είναι απασχολημένο αυτή τη στιγμή. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
       ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Ο βοηθός γραφής δεν μπορεί να προχωρήσει με το αίτημά σας. Παρακαλούμε δοκιμάστε μια διαφορετική προτροπή."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
+      ],
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Υπήρξε κάποιο ζήτημα με την αναζήτηση περιεχομένων. Χρησιμοποιήθηκε στη θέση της η προεπιλεγμένη αναζήτηση."
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Παρουσιάστηκε πρόβλημα κατά την αποκρυπτογράφηση του μηνύματός σας. Εάν το πρόβλημα παραμένει, επικοινωνήστε με την εξυπηρέτηση πελατών μας."
       ],
       "There was an error when exporting the contacts vCards": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών σε vCards"
@@ -5016,6 +5355,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
+      ],
+      "This message has already been sent": [
+        "Αυτό το μήνυμα έχει ήδη αποσταλεί"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Αυτό το μήνυμα έχει ήδη αποσταλεί. Αποθηκεύτηκε ένα νέο πρόχειρο."
@@ -5067,6 +5409,9 @@
         "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρο συντάκτη τη φορά",
         "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρα συντάκτη τη φορά"
       ],
+      "You did not provide a file.": [
+        "Δεν έχετε παράσχει ένα αρχείο."
+      ],
       "You have reached the maximum number of calendars.": [
         "Έχετε φτάσει τον μέγιστο αριθμό ημερολογίων."
       ],
@@ -5085,8 +5430,14 @@
       "You've reached the maximum character number. Please shorten your message.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό χαρακτήρων. Παρακαλούμε συντομεύστε το μήνυμά σας."
       ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου σας δεν μπορούν να αποκρυπτογραφηθούν λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης. Εάν θυμάστε τον προηγούμενο κωδικό πρόσβασής σας, μπορείτε να ${ reActivateKeyLink } για να αποκτήσετε πρόσβαση στα μηνύματά σας. ${ learnMoreLink }"
+      ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Το μήνυμά σας δεν μπορεί να αποκρυπτογραφηθεί. Εάν διαγράψατε κάποιο από τα κλειδιά διεύθυνσης σας, δοκιμάστε να τα εισαγάγετε ξανά με το ${ reimportKeyLink }. ${ learnMoreLink }"
       ],
       "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Το μήνυμά σας δεν μπορεί να αποκρυπτογραφηθεί. Το κλειδί που χρησιμοποιήθηκε για την κρυπτογράφηση αυτού του μηνύματος δεν ταιριάζει με κανένα από τα κλειδιά που σχετίζονται με τη διεύθυνσή σας. Εάν διαγράψατε κάποιο από τα κλειδιά της διεύθυνσής σας, δοκιμάστε ${ reimportKeyLink } ξανά. ${ learnMoreLink }"
@@ -5110,8 +5461,17 @@
       ]
     },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "Δεν είναι δυνατή η μετακίνηση των προσχεδίων στα Εισερχόμενα"
+      ],
       "Drafts cannot be moved to Spam": [
         "Τα πρόχειρα δεν γίνεται να μετακινηθούν στα ενοχλητικά"
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        "Αδυναμία μετακίνησης απεσταλμένων μηνυμάτων στα Εισερχόμενα"
+      ],
+      "Sent messages cannot be moved to Spam": [
+        "Τα απεσταλμένα μηνύματα δεν γίνεται να μετακινηθούν στα Ενοχλητικά"
       ],
       "This action cannot be performed": [
         "Αυτή η ενέργεια δεν μπορεί να εφαρμοστεί"
@@ -5244,6 +5604,12 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Τα ψευδώνυμα δεν μπορούν να χρησιμοποιηθούν όταν είναι ενεργοποιημένος ένας επιπλέον κωδικός πρόσβασης στο ${ PASS_APP_NAME }."
+      ],
+      "An error occurred with the categories": [
+        "Παρουσιάστηκε ένα σφάλμα με τις κατηγορίες"
+      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -5586,14 +5952,23 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Φίλτρο"
+      ],
       "Filter (${ activeState.dropdownActiveCount })": [
         "Φίλτρο (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Φιλτράρισμα και ταξινόμηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
       "Has attachments": [
         "Έχει συνημμένα"
       ],
       "Read": [
         "Αναγνωσμένα"
+      ],
+      "Reset": [
+        "Επαναφορά"
       ],
       "Unread": [
         "Μη αναγνωσμένα"
@@ -5639,6 +6014,9 @@
       ],
       "If the sender": [
         "Εάν ο αποστολέας"
+      ],
+      "If the subject": [
+        "Εάν το θέμα"
       ],
       "Select…": [
         "Επιλογή…"
@@ -5737,6 +6115,9 @@
       ],
       "Subject: ${ subject }": [
         "Θέμα: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "Προς: ${ toString }"
       ]
     },
     "Free trial desktop": {
@@ -5749,11 +6130,17 @@
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Απολαύστε γρήγορη, ασφαλή και χωρίς περισπασμούς πρόσβαση στα εισερχόμενα και το ημερολόγιό σας."
       ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Αποκτήστε απεριόριστη πρόσβαση με οποιοδήποτε πλάνο ${ MAIL_APP_NAME }."
+      ],
       "No credit card required.": [
         "Δεν απαιτείται πιστωτική κάρτα."
       ],
       "Start free trial": [
         "Εκκίνηση δωρεάν δοκιμής"
+      ],
+      "Try the new desktop app": [
+        "Δοκιμάστε τη νέα εφαρμογή για υπολογιστές"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
@@ -5766,9 +6153,16 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } στο Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } ημέρα",
+        "${ remainingDaysCount } ημέρες"
+      ],
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } ημέρα απομένει",
         "${ remainingDaysCount } ημέρες απομένουν"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Αποκλείστε μόνιμα επικοινωνίες ηλεκτρονικού ταχυδρομείου από απατεώνες."
       ],
       "Block unsavory senders": [
         "Αποκλεισμός δυσάρεστων αποστολέων"
@@ -5779,14 +6173,23 @@
       "Checklist complete": [
         "Η λίστα ελέγχου ολοκληρώθηκε"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Διεκδικήστε τη ${ BRAND_NAME } διεύθυνση"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Συμπληρώστε αυτήν τη λίστα ελέγχου εντός ${ daysCount } για να διπλασιάσετε τον αποθηκευτικό σας χώρο δωρεάν."
+      ],
+      "Discover privacy features": [
+        "Ανακαλύψτε δυνατότητες απορρήτου"
       ],
       "Download apps": [
         "Λήψη εφαρμογών"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Τόσο ισχυρή κρυπτογράφηση, που μόνο εσείς και οι παραλήπτες για τους οποίους προορίζεστε μπορείτε να δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
+      ],
+      "Finish setup": [
+        "Ολοκλήρωση εγκατάστασης"
       ],
       "For your eyes only": [
         "Μόνο για τα μάτια σας"
@@ -5875,6 +6278,9 @@
       "Default folders": [
         "Προεπιλεγμένοι φάκελοι"
       ],
+      "Labels": [
+        "Ετικέτες"
+      ],
       "Network": [
         "Δίκτυο"
       ],
@@ -5895,6 +6301,9 @@
       "Drawer": [
         "Πλαϊνό πλαίσιο"
       ],
+      "Hardware not compatible": [
+        "Το υλικό δεν είναι συμβατό"
+      ],
       "Password ends with": [
         "Ο κωδικός πρόσβασης τελειώνει με"
       ],
@@ -5909,6 +6318,9 @@
       ],
       "Security Center": [
         "Κέντρο Ασφαλείας"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Ρύθμιση βοηθού γραφής ${ LUMO_SHORT_APP_NAME }"
       ],
       "Set up the writing assistant": [
         "Ρύθμιση του βοηθού γραφής"
@@ -5994,6 +6406,9 @@
       "${ totalAttendees } participant": [
         "${ totalAttendees } συμμετέχων",
         "${ totalAttendees } συμμετέχοντες"
+      ],
+      "Organizer:": [
+        "Διοργανωτής:"
       ]
     },
     "Import calendar": {
@@ -6342,6 +6757,26 @@
         "${ currentProgress } από ${ totalProgress }",
         "${ currentProgress } από ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } συνομιλία θα λάβει την ετικέτα:",
+        "${ elementsCount } συνομιλίες θα λάβουν την ετικέτα:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } συνομιλία θα σημανθεί ως διαβασμένη.",
+        "${ elementsCount } συνομιλίες θα σημανθούν ως διαβασμένες."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } συνομιλία θα σημανθεί ως μη διαβασμένη.",
+        "${ elementsCount } συνομιλίες θα σημανθούν ως μη διαβασμένες."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } συνομιλία θα μετακινηθεί",
+        "${ elementsCount } συνομιλίες θα μετακινηθούν"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } συνομιλία θα χάσει την ετικέτα:",
+        "${ elementsCount } συνομιλίες θα χάσουν την ετικέτα:"
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } μήνυμα θα λάβει την ετικέτα:",
         "${ elementsCount } μηνύματα θα λάβουν την ετικέτα:"
@@ -6382,6 +6817,9 @@
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "Το ${ LUMO_SHORT_APP_NAME } σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου γρήγορα και ξεκούραστα."
       ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME } πίνακας"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να προστατέψει την επιχείρησή σας."
       ],
@@ -6399,9 +6837,17 @@
         "${ numberOfUTMTrackers } σύνδεσμος καθαρίστηκε",
         "${ numberOfUTMTrackers } σύνδεσμοι καθαρίστηκαν"
       ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } μήνυμα στη συνομιλία",
+        "${ NumMessages } μηνύματα στη συνομιλία"
+      ],
       "${ numOccurrences } occurrence found": [
         "βρέθηκε ${ numOccurrences } φορά",
         "βρέθηκε ${ numOccurrences } φορές"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "Βρέθηκε ${ numOccurrences } φορά στο περιεχόμενο του μηνύματος",
+        "Βρέθηκε ${ numOccurrences } φορές στο περιεχόμενο του μηνύματος"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "Το ${ PASS_APP_NAME } σας επιτρέπει να αποθηκεύετε κωδικούς πρόσβασης, σημειώσεις και άλλες ευαίσθητες πληροφορίες με κρυπτογράφηση από άκρο σε άκρο. Διατίθεται σε ${ ios }, ${ android } και στο ${ browser }."
@@ -6463,9 +6909,17 @@
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } μη αναγνωσμένο",
+        "${ subscription.UnreadMessageCount } μη αναγνωσμένα"
+      ],
       "${ total } conversation": [
         "${ total } συνομιλία",
         "${ total } συνομιλίες"
+      ],
+      "${ total } message": [
+        "${ total } μήνυμα",
+        "${ total } μηνύματα"
       ],
       "${ total } user found": [
         "${ total } χρήστης βρέθηκε",
@@ -6478,6 +6932,10 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } ιχνηλάτης εμποδίστηκε",
         "${ trackersCount } ιχνηλάτες εμποδίστηκαν"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } ενημερωτικό δελτίο",
+        "${ unreadCount } ενημερωτικά δελτία"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } προγραμματισμένο μήνυμα",
@@ -6505,6 +6963,13 @@
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΠΟΙΕΣΔΗΠΟΤΕ από τις ακόλουθες συνθήκες)"
+      ],
+      "(No Recipient)": [
+        "(Χωρίς Παραλήπτη)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** αποτέλεσμα βρέθηκε στη ${ labelName }",
+        "**${ total }** αποτελέσματα βρέθηκαν στη ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Αυτόματη σύνδεση**: Ανοίγει και συνδέεται στο VPN μόλις ενεργοποιήσετε τη συσκευή σας."
@@ -6534,6 +6999,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
+      "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
+        "Μια αίτηση διαγραφής από αυτή τη λίστα θα σταλεί στον αποστολέα του ενημερωτικού δελτίου και θα επεξεργαστεί αυτόματα."
+      ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Μια ασφαλής σύνδεση είναι απαραίτητη όταν εργάζεστε εξ αποστάσεως. Ένα VPN προστατεύει εταιρικά δεδομένα από απειλές στον κυβερνοχώρο και διατηρεί την εργασία σας ιδιωτική."
       ],
@@ -6555,6 +7023,9 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
+      "Activation in progress": [
+        "Ενεργοποίηση σε εξέλιξη"
+      ],
       "Active": [
         "Ενεργό"
       ],
@@ -6575,6 +7046,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
+      ],
+      "Addresses settings": [
+        "Ρυθμίσεις διευθύνσεων"
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Οι διαφημιζόμενοι παρακολουθούν την περιήγησή σας για να εμφανίζουν στοχευμένες διαφημίσεις. Το ${ VPN_APP_NAME } αποκλείει ιχνηλάτες και διαφημίσεις, κάνοντας τη σύνδεσή σας ταχύτερη και βελτιώνοντας την εμπειρία σας στο διαδίκτυο."
@@ -6599,11 +7073,20 @@
       "All messages from this mailing list will be marked as read.": [
         "Όλα τα μηνύματα από αυτήν τη λίστα αλληλογραφίας θα επισημαίνονται ως αναγνωσμένα."
       ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Όλα τα μηνύματα από αυτήν τη λίστα αλληλογραφίας θα μετακινηθούν στο Αρχείο."
+      ],
       "All messages from this mailing list will be moved to Trash.": [
         "Όλα τα μηνύματα από αυτήν τη λίστα αλληλογραφίας θα μετακινηθούν στον Κάδο Απορριμάτων."
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Όλα τα μηνύματα που είναι αποθηκευμένα σε αυτόν τον φάκελο θα διαγραφούν οριστικά."
+      ],
+      "All messages stored with this label will be permanently deleted.": [
+        "Όλα τα μηνύματα που είναι αποθηκευμένα με αυτήν την ετικέτα θα διαγραφούν οριστικά."
+      ],
+      "All your calendars are disabled.": [
+        "Όλα τα ημερολόγιά σας είναι απενεργοποιημένα."
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
@@ -6623,6 +7106,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Ποσό χαμηλότερο από το ελάχιστο. (${ amount })."
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Ένα μήνυμα απεγγραφής θα σταλεί εκ μέρους σας."
       ],
       "and": [
         "και"
@@ -6684,14 +7170,23 @@
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } μήνυμα;",
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } μηνύματα;"
       ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "Θέλετε σίγουρα να διαγράψετε οριστικά αυτήν τη συνομιλία;"
+      ],
       "Are you sure you want to permanently delete this draft?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα αυτό το σχέδιο;"
+      ],
+      "Are you sure you want to permanently delete this message?": [
+        "Θέλετε σίγουρα να διαγράψετε οριστικά αυτό το μήνυμα;"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
         "Στο τέλος της δοκιμαστικής περιόδου σας ${ boldCancelDate }, το πλάνο σας θα υποβαθμιστεί σε ${ boldProtonFree }. Όλοι οι λογαριασμοί χρηστών θα αφαιρεθούν από τον οργανισμό σας."
+      ],
+      "Attach public key": [
+        "Επισύναψη δημόσιου κλειδιού"
       ],
       "Attention required": [
         "Απαιτείται προσοχή"
@@ -6701,6 +7196,9 @@
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Αυτόματη οριστική διαγραφή μηνυμάτων που παραμένουν στα Διαγραμμένα ή στα Ανεπιθύμητα για περισσότερες από 30 ημέρες."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Αυτόματη ταξινόμηση εισερχόμενων ηλεκτρονικών μηνυμάτων σε κατηγορίες"
       ],
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
@@ -6728,6 +7226,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Ενισχύστε την εταιρική ταυτότητα του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
+      ],
+      "Browse privately and access blocked content.": [
+        "Περιηγηθείτε ιδιωτικά και αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο."
       ],
       "Browser not supported": [
         "Το πρόγραμμα περιήγησης δεν υποστηρίζεται"
@@ -6779,6 +7280,9 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Η εκκαθάριση δεδομένων περιηγητή επίσης απενεργοποιεί σε αυτήν τη συσκευή την αναζήτηση εντός περιεχομένου μηνυμάτων. Για δυνατότητα αναζήτησης εντός τους, θα πρέπει να τα κατεβάσετε ξανά."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Διαγράφει τα δεδομένα του προγράμματος περιήγησης (συμπεριλαμβανομένων των ληφθέντων μηνυμάτων, …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
@@ -6915,6 +7419,9 @@
         "Θέλετε να κατεβάσετε αυτό το συνημμένο ούτως ή άλλως;",
         "Θέλετε να κατεβάσετε αυτά τα συνημμένα ούτως ή άλλως;"
       ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "Θέλετε να υπογράψετε εκ νέου τα στοιχεία επικοινωνίας και κατά τη διάρκεια της διαδικασίας να εμπιστευτείτε τα κλειδιά με τα ακόλουθα δακτυλικά αποτυπώματα;"
+      ],
       "Do you want to re-sign the contact details?": [
         "Θέλετε να υπογράψετε ξανά τα στοιχεία της επαφής;"
       ],
@@ -6969,6 +7476,9 @@
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης σε ${ firstRecipients }."
+      ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
         "Λόγω της διαμόρφωσης του παραλήπτη σας, αυτό το μήνυμα δεν μπορεί να αποσταλεί με ημερομηνία λήξης."
       ],
@@ -6977,6 +7487,9 @@
       ],
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Διαχειριστείτε εύκολα και καταργήστε την εγγραφή σας από ενημερωτικά δελτία και λίστες αλληλογραφίας."
       ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
@@ -7076,11 +7589,18 @@
       "Expand text": [
         "Ανάπτυξη κειμένου"
       ],
+      "Expiration time": [
+        "Χρόνος λήξης"
+      ],
       "Expired": [
         "Ληγμένο"
       ],
       "Expires in ${ formattedDate }": [
         "Λήγει σε ${ formattedDate }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Λήγει σε ${ minutesDiff } λεπτό",
+        "Λήγουν σε ${ minutesDiff } λεπτά"
       ],
       "Expires in less than ${ hoursDiff } hour": [
         "Λήγει σε λιγότερο από ${ hoursDiff } ώρα",
@@ -7151,11 +7671,21 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
       ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Έχει ${ numAttachments } συνημμένο (${ numAttachmentsSize })",
+        "Έχει ${ numAttachments } συνημμένα (${ numAttachmentsSize })"
+      ],
       "here": [
         "εδώ"
       ],
+      "Hide original message": [
+        "Απόκρυψη αρχικού μηνύματος"
+      ],
       "High Priority": [
         "Υψηλή προτεραιότητα"
+      ],
+      "How hide-my-email aliases works": [
+        "Πώς λειτουργούν τα hide-my-email ψευδώνυμα"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Στέλνω αυτό το μήνυμα σε έναν χρήστη εκτός ${ MAIL_APP_NAME }."
@@ -7227,6 +7757,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
       ],
+      "Include Spam/Trash.": [
+        "Συμπεριλάβετε Ανεπιθύμητα/Διαγραμμένα."
+      ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Συμπεριλάβετε την προτροπή σας και την απάντησή σας για να μας βοηθήσετε να βελτιώσουμε την ακρίβεια."
       ],
@@ -7245,6 +7778,9 @@
       "Includes marketing emails and non-urgent app notifications.": [
         "Περιλαμβάνει διαφημιστικά μηνύματα ηλεκτρονικού ταχυδρομείου και μη επείγουσες ειδοποιήσεις εφαρμογών"
       ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Περιλαμβάνει διαφημιστικά μηνύματα ηλεκτρονικού ταχυδρομείου, όπως προσφορές και ανακοινώσεις προϊόντων."
+      ],
       "Includes news recaps and other non-promotional content. ": [
         "Περιλαμβάνει ανακεφαλαιώσεις ειδήσεων και άλλο μη διαφημιστικό περιεχόμενο. "
       ],
@@ -7256,6 +7792,10 @@
       ],
       "Initializing…": [
         "Προετοιμασία…"
+      ],
+      "Insert image": [
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7284,8 +7824,14 @@
       "JCB logo": [
         "Λογότυπο JCB"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Εγγραφείτε στο πρόγραμμα ${ PROTON_SENTINEL_NAME } για το υψηλότερο επίπεδο ασφάλειας και υποστήριξης λογαριασμού μας."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Διατηρήστε τα στοιχεία σύνδεσης και την πιστωτική σας κάρτα ασφαλή, αλλά πάντα διαθέσιμα προσθέτοντάς τα στο ${ PASS_APP_NAME }. Είναι δωρεάν και περιλαμβάνεται στο λογαριασμό σας ${ BRAND_NAME }."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Διατηρήστε το γραμματοκιβώτιό σας τακτοποιημένο, εκκαθαρίζοντας αυτόματα τα διαγραμμένα και τα ανεπιθύμητα μηνύματα που βρίσκονται εκεί για περισσότερες από 30 ημέρες."
@@ -7377,14 +7923,26 @@
       "Message actions in progress. This may take a while.": [
         "Ενέργειες μηνυμάτων σε εξέλιξη. Αυτό μπορεί να διαρκέσει λίγο."
       ],
+      "Message download status:": [
+        "Κατάσταση λήψης μηνυμάτων:"
+      ],
       "Message headers": [
         "Κεφαλίδες μηνύματος"
       ],
       "Message list": [
         "Λίστα μηνυμάτων"
       ],
+      "Message sent": [
+        "Το μήνυμα εστάλη"
+      ],
+      "Message sent.": [
+        "Το μήνυμα εστάλη."
+      ],
       "Message view": [
         "Προβολή μηνύματος"
+      ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Το μήνυμα θα σταλεί το πρωί στις ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Το μήνυμα θα σταλεί την ${ dateString } στις ${ formattedTime }"
@@ -7455,6 +8013,9 @@
       "No links cleaned": [
         "Κανένας σύνδεσμος δεν καθαρίστηκε"
       ],
+      "No messages found": [
+        "Δεν βρέθηκαν μηνύματα"
+      ],
       "No messages to show": [
         "Δεν υπάρχουν μηνύματα"
       ],
@@ -7466,6 +8027,9 @@
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
+      ],
+      "No trackers found": [
+        "Δεν βρέθηκαν ιχνηλάτες"
       ],
       "non-${ MAIL_APP_NAME }": [
         "μη-${ MAIL_APP_NAME }"
@@ -7506,6 +8070,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Ανοίξτε τον οδηγό για προτεινόμενες ενέργειες και χρήσιμους συνδέσμους."
       ],
+      "Optional": [
+        "Προαιρετικό"
+      ],
       "or discover other features:": [
         "ή ανακαλύψτε άλλες δυνατότητες:"
       ],
@@ -7520,6 +8087,9 @@
       ],
       "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
         "Το σύστημά μας το επισήμανε ως ύποπτο. Εάν δεν πρόκειται για μήνυμα ηλεκτρονικού ψαρέματος (phishing) ή απάτης, επισημάνετέ το ως νόμιμο."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Παρακαλούμε ελέγξτε το για να βεβαιωθείτε ότι είναι νόμιμο."
       ],
       "password": [
         "κωδικός πρόσβασης"
@@ -7547,6 +8117,9 @@
       ],
       "Plain text": [
         "Απλό κείμενο"
+      ],
+      "Please add at least one recipient.": [
+        "Παρακαλούμε προσθέστε τουλάχιστον έναν παραλήπτη."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
@@ -7594,6 +8167,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Παρακαλούμε επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε στην ομάδα ${ groupName }."
       ],
+      "Please share what the issue is": [
+        "Παρακαλούμε μοιραστείτε με μας ποιο είναι το πρόβλημα"
+      ],
       "Please share what you expected": [
         "Παρακαλούμε μοιραστείτε αυτό που περιμένατε"
       ],
@@ -7608,6 +8184,9 @@
       ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
+      ],
+      "Please wait for the action to be completed": [
+        "Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η ενέργεια."
       ],
       "Please wait till your changes are synced with the server.": [
         "Παρακαλούμε περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
@@ -7647,6 +8226,9 @@
       ],
       "Proofread selection": [
         "Διόρθωση επιλογής"
+      ],
+      "Proofread text": [
+        "Διόρθωση κειμένου"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Προστατέψτε τη διεύθυνσή σας από το να διαρρεύσει σε λίστες αλληλογραφίας ή ενοχλητικούς αποστολείς, με ${ hideMyEmailAliasesLink }."
@@ -7696,8 +8278,14 @@
       "Right to Left": [
         "Δεξιά προς Αριστερά"
       ],
+      "Right-click for options": [
+        "Δεξί κλικ για επιλογές"
+      ],
       "Sat, ${ formatTime }": [
         "Σαβ, ${ formatTime }"
+      ],
+      "Saved at ${ dateString }": [
+        "Αποθηκεύτηκε στις ${ dateString }"
       ],
       "Saved yesterday": [
         "Αποθηκεύτηκε χθες"
@@ -7711,11 +8299,23 @@
       "Scan the QR code with your mobile device": [
         "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
       ],
+      "Scheduled send of this message will be canceled.": [
+        "Η προγραμματισμένη αποστολή αυτού του μηνύματος θα ακυρωθεί."
+      ],
+      "Scheduling message": [
+        "Γίνεται προγραμματισμός μηνύματος"
+      ],
       "Scribe panel": [
         "Scribe πλαίσιο"
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Επιλογή αναζήτησης που σας επιτρέπει να αναζητάτε με ασφάλεια λέξεις-κλειδιά στο σώμα των μηνυμάτων ηλεκτρονικού ταχυδρομείου."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Η αναζήτηση διαρκεί πολύ; ${ dropdownButton } ή ${ toggleOffButton } της τρέχουσας αναζήτησης."
+      ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Ασφαλίστε τα αρχεία σας με δωρεάν κρυπτογραφημένο χώρο αποθήκευσης στο νέφος, σήμερα."
       ],
       "Seems like you are all caught up for now": [
         "Φαίνεται ότι όλοι είστε παγιδευμένοι για τώρα"
@@ -7739,11 +8339,17 @@
       "Send messages at just the right now": [
         "Στείλτε μηνύματα ακριβώς την κατάλληλη στιγμή"
       ],
+      "Sender has been blocked.": [
+        "Ο αποστολέας έχει αποκλειστεί."
+      ],
       "Sending": [
         "Γίνεται αποστολή"
       ],
       "Sending message": [
         "Το μήνυμα αποστέλλεται"
+      ],
+      "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
+        "Η αποστολή μηνυμάτων από τη διεύθυνση @ pm.me είναι μια λειτουργία για λογαριασμούς επι πληρωμή. Το μήνυμά σας θα σταλεί από την προεπιλεγμένη διεύθυνση ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Στάλθηκε με <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> διασφαλισμένο ταχυδρομείο."
@@ -7790,6 +8396,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Αναβολή μηνυμάτων για αργότερα, ώστε να βρίσκονται στην κορυφή των εισερχομένων σας όταν θέλετε"
       ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Αναβολή έως ${ dateString } στις ${ formattedTime }"
+      ],
       "Snoozed until today, ${ formattedTime }": [
         "Αναβολή έως σήμερα, ${ formattedTime }"
       ],
@@ -7828,6 +8437,9 @@
       ],
       "Subject:": [
         "Θέμα:"
+      ],
+      "Subject: ": [
+        "Θέμα: "
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
@@ -7899,6 +8511,9 @@
       "The local database is being prepared": [
         "Η τοπική βάση δεδομένων ετοιμάζεται"
       ],
+      "The message has expired": [
+        "Το μήνυμα έχει λήξει"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Το αρχικό μήνυμα το οποίο προσπαθείτε να προωθήσετε / απαντήσετε βρίσκεται στη διαδικασία αποστολής. Εάν συνεχίσετε, δεν θα μπορείτε πλέον να αναιρέσετε την αποστολή του αρχικού μηνύματος."
       ],
@@ -7924,6 +8539,9 @@
       "Themes can give your inbox a new look.": [
         "Τα θέματα μπορούν να δώσουν στα εισερχόμενά σας μια νέα εμφάνιση."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Δεν υπάρχουν μηνύματα από αυτόν τον αποστολέα στα εισερχόμενά σας."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Υπήρξε ένα σφάλμα με την υπογραφή που χρησιμοποιήθηκε για την επαλήθευση των στοιχείων επαφής, το οποίο μπορεί να είναι το αποτέλεσμα επαναφοράς κωδικού πρόσβασης."
       ],
@@ -7942,6 +8560,9 @@
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η αποστολή αυτού του μηνύματος θα ακυρωθεί."
       ],
+      "This conversation contains non-trashed messages.": [
+        "Αυτή η συνομιλία περιέχει μη διαγραμμένα μηνύματα."
+      ],
       "This conversation contains one or more expiring messages": [
         "Αυτή η συνομιλία περιέχει ένα ή περισσότερα μηνύματα που λήγουν"
       ],
@@ -7958,8 +8579,14 @@
       "This file is too large to preview": [
         "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
       ],
+      "This invitation is saved in a disabled calendar.": [
+        "Αυτή η πρόσκληση είναι αποθηκευμένη σε ένα απενεργοποιημένο ημερολόγιο."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Αυτό είναι ένα όνομα ή παρατσούκλι για τον οργανισμό σας, το οποίο θα βλέπουν οι χρήστες σας. Μπορείτε να το αλλάξετε ανά πάσα στιγμή."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Αυτό προορίζεται ως βοήθημα γραφής. Ελέγξτε το προτεινόμενο κείμενο για ακρίβεια. ${ learnMoreResult }"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
@@ -7973,11 +8600,23 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Αυτό σημαίνει ότι ο ISP σας και οι ιστότοποι που επισκέπτεστε δεν μπορούν να συνδέσουν τα προσωπικά σας στοιχεία με τη δραστηριότητά σας στο Internet."
       ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Αυτό το μήνυμα έχει συνημμένο ένα κλειδί, το οποίο δεν έχει ακόμη πιστοποιηθεί."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Αυτό το μήνυμα έχει ρυθμιστεί για εμφάνιση σε σκούρο φόντο."
       ],
+      "This message is automatically generated as a response to a previous message.": [
+        "Αυτό το μήνυμα δημιουργείται αυτόματα ως απάντηση σε ένα προηγούμενο μήνυμα."
+      ],
       "This message is from a ${ PASS_APP_NAME } alias.": [
         "Αυτό το μήνυμα προέρχεται από ένα ${ PASS_APP_NAME } ψευδώνυμο."
+      ],
+      "This message is from a mailing list.": [
+        "Αυτό το μήνυμα προέρχεται από λίστα αλληλογραφίας."
+      ],
+      "This message is signed by a key that has not been trusted yet.": [
+        "Αυτό το μήνυμα υπογράφεται από κλειδί που δεν έχει γίνει εμπιστεύσιμο ακόμη."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Αυτό το μήνυμα υπογράφεται από συνημμένο κλειδί που δεν έχει γίνει εμπιστεύσιμο ακόμη."
@@ -7991,6 +8630,9 @@
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Αυτό το μήνυμα θα σημανθεί ως ενοχλητικό. Θα θέλατε επίσης να απεγγραφείτε από μελλοντικά μηνύματα;",
         "Αυτά τα μηνύματα θα σημανθούν ως ενοχλητικά. Θα θέλατε επίσης να απεγγραφείτε από μελλοντικά μηνύματα;"
+      ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Αυτό το μήνυμα θα μετακινηθεί στα Πρόχειρα, ώστε να μπορείτε να το επεξεργαστείτε. Θα πρέπει να επαναπρογραμματίσετε πότε θα σταλεί."
       ],
       "This message will be purged on ${ value }": [
         "Αυτό το μήνυμα θα εκκαθαριστεί την ${ value }"
@@ -8076,6 +8718,9 @@
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Για να καταργήσετε τους περιορισμούς, μπορείτε να κάνετε αναβάθμιση σε πλάνο επί πληρωμή."
       ],
+      "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
+        "Για να διαγραφείτε από αυτή τη λίστα, ένα μήνυμα ηλεκτρονικού ταχυδρομείου θα αποσταλεί από ${ boldFrom } με τα ακόλουθα στοιχεία όπως ορίζονται από τον αποστολέα του ενημερωτικού δελτίου:"
+      ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "Για να διαγραφείτε από αυτή τη λίστα, θα μεταφερθείτε στο ακόλουθο URL όπου θα παρέχονται οδηγίες από τον αποστολέα του ενημερωτικού δελτίου:"
       ],
@@ -8106,6 +8751,9 @@
       "Tracking": [
         "Παρακολούθηση"
       ],
+      "Trash existing messages": [
+        "Διαγράψτε υπάρχοντα μηνύματα"
+      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Εμπιστευτείτε το κλειδί \"${ activeSignerText }\" για να επαληθεύσετε νέα μηνύματα από αυτήν την επαφή."
       ],
@@ -8127,8 +8775,14 @@
       "Unread conversations": [
         "Μη διαβασμένες συνομιλίες"
       ],
+      "Unread messages": [
+        "Μη αναγνωσμένα μηνύματα"
+      ],
       "Unsaved changes": [
         "Μη αποθηκευμένες αλλαγές"
+      ],
+      "Unsubscribe": [
+        "Κατάργηση συνδρομής"
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
@@ -8175,8 +8829,17 @@
       "Upgrade to support a privacy-first internet.": [
         "Αναβαθμίστε για να υποστηρίξετε ένα διαδίκτυο με το ιδιωτικό απόρρητο σε πρώτη προτεραιότητα."
       ],
+      "Upgrade to support our mission of privacy for all.": [
+        "Αναβαθμίστε για να υποστηρίξετε την αποστολή μας για προστασία απορρήτου για όλους."
+      ],
       "Upgrade to support privacy and get more features.": [
         "Αναβαθμίστε για να υποστηρίξετε το ιδιωτικό απόρρητο και να αποκτήσετε περισσότερες δυνατότητες."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Αναβαθμίστε για να ξεκλειδώσετε premium δυνατότητες."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Αναβαθμίστε για να χρησιμοποιήσετε το ${ MAIL_APP_NAME } με το Apple Mail, το Outlook ή το Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
         "Αναβαθμίστε για να χρησιμοποιήσετε την αυτόματη απάντηση όταν λείπετε."
@@ -8189,6 +8852,15 @@
       ],
       "URL link": [
         "Σύνδεσμος URL"
+      ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Χρησιμοποιήστε διαφορετικές διευθύνσεις ηλεκτρονικού ταχυδρομείου για διαφορετικούς σκοπούς, ώστε να μπορείτε εύκολα να διαχωρίσετε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας ανά εργασία, προσωπικές ή άλλες περιοχές."
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        "Χρησιμοποιήστε συντομεύσεις πληκτρολογίου για να διαχειριστείτε το ηλεκτρονικό ταχυδρομείο σας γρηγορότερα."
       ],
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
@@ -8229,6 +8901,9 @@
       "We cannot enable message content search in this browser.": [
         "Αδυναμία ενεργοποίησης αναζήτησης σε περιεχόμενο μηνυμάτων σε αυτόν τον περιηγητή."
       ],
+      "We could not verify the sender's trusted keys.": [
+        "Δεν μπορούμε να επαληθεύσουμε τα έμπιστα κλειδιά του αποστολέα."
+      ],
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
@@ -8240,6 +8915,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Πρέπει να επαληθεύσουμε την πληρωμή σας με την τράπεζά σας."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Καταργήσαμε τις πληροφορίες παρακολούθησης από τους παρακάτω συνδέσμους, για να σας προστατεύσουμε από διαφημιζόμενους και άλλους που προσπαθούν να παρακολουθήσουν τη δραστηριότητά σας στο διαδίκτυο."
       ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
@@ -8267,6 +8945,9 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Πότε θέλετε να διαγραφεί αυτόματα το μήνυμά σας από τα εισερχόμενα του παραλήπτη και από τον φάκελο των απεσταλμένων σας;"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Πότε θέλετε να αυτοκαταστραφεί το μήνυμά σας;"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "΄Οταν διανέμετε τη διεύθυνσή σας σε άλλους, χρησιμοποιήστε ένα μοναδικό και αναλώσιμο hide-my-email ψευδώνυμο, παρά την πραγματική σας διεύθυνση ηλεκτρονικού ταχυδρομείου."
@@ -8363,8 +9044,18 @@
       "You cannot reply from the invited address.": [
         "Δεν μπορείτε να απαντήσετε από την προσκεκλημένη διεύθυνση."
       ],
+      "You do not have any messages here": [
+        "Δεν έχετε μηνύματα εδώ"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Λαμβάνετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτων."
+      ],
+      "You have ${ unread } in your inbox.": [
+        "Έχετε ${ unread } στα εισερχόμενά σας."
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Έχετε **${ count } συνομιλία** αποθηκευμένη σε αυτόν το φάκελο",
+        "Έχετε **${ count } συνομιλίες** αποθηκευμένες σε αυτόν το φάκελο"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "Έχετε **${ count } συνομιλία** με ετικέτα με αυτή την ετικέτα",
@@ -8384,6 +9075,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Δεν έχετε ορίσει το θέμα του μηνύματός σας. Θέλετε να το αποστείλετε ως έχει;"
+      ],
+      "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
+        "Έχετε φτάσει το 100% της χωρητικότητας αποθήκευσης. Εξετάστε το ενδεχόμενο να ελευθερώσετε χώρο ή να αναβαθμίσετε τον λογαριασμό σας με επιπλέον χώρο αποθήκευσης για να συνθέσετε νέα μηνύματα."
+      ],
       "You have reached the maximum number of 5 replies.": [
         "Έχετε φτάσει το μέγιστο όριο των 5 απαντήσεων."
       ],
@@ -8400,6 +9097,14 @@
       "You selected **${ count } conversation** with this label": [
         "Επιλέξατε **${ count } συνομιλία** με αυτή την ετικέτα",
         "Επιλέξατε **${ count } συνομιλίες** με αυτή την ετικέτα"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Επιλέξατε **${ count } μήνυμα** από αυτόν το φάκελο",
+        "Επιλέξατε **${ count } μηνύματα** από αυτόν το φάκελο"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Επιλέξατε **${ count } μήνυμα** με αυτή την ετικέτα",
+        "Επιλέξατε **${ count } μηνύματα** με αυτή την ετικέτα"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Επιλέξατε **${ elementsCount } συνομιλία** σε ${ location }",
@@ -8630,9 +9335,24 @@
       ]
     },
     "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Κάνοντας κλικ στο \"Αξιόπιστο Κλειδί\" θα συσχετιστεί αυτό το δημόσιο κλειδί με αυτόν τον αποστολέα και τα μηνύματα ηλεκτρονικού ταχυδρομείου από αυτή τη διεύθυνση θα επαληθευτούν αυτόματα κρυπτογραφικά."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Κάνοντας κλικ στο \"Κλειδί Εμπιστοσύνης\" θα δημιουργήσετε μια νέα επαφή και θα συσχετίσετε αυτό το δημόσιο κλειδί με αυτόν τον αποστολέα. Τα email από αυτή τη διεύθυνση θα επαληθευτούν αυτόματα κρυπτογραφικά."
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Θέλετε να εμπιστευθείτε το κύριο δημόσιο κλειδί με το ακόλουθο αποτύπωμα;",
+        "Θέλετε να εμπιστευθείτε τα κύρια δημόσια κλειδιά με τα ακόλουθα αποτυπώματα;"
+      ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Έχετε ενεργοποιήσει την Επαλήθευση Διεύθυνσης με Αξιόπιστα Κλειδιά για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου,\nαλλά δεν έχει αναγνωριστεί αξιόπιστο ενεργό κλειδί κρυπτογράφησης.\nΠρέπει να εμπιστευτείτε ένα κλειδί που είναι έγκυρο για αποστολή, προκειμένου να στείλετε ένα μήνυμα σε αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου.",
         "Έχετε ενεργοποιήσει την Επαλήθευση Διεύθυνσης με Αξιόπιστα Κλειδιά για αυτές τις διευθύνσεις ηλεκτρονικού ταχυδρομείου,\nαλλά δεν έχει αναγνωριστεί αξιόπιστο ενεργό κλειδί κρυπτογράφησης.\nΠρέπει να εμπιστευτείτε ένα κλειδί που είναι έγκυρο για αποστολή, προκειμένου να στείλετε ένα μήνυμα σε αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ]
+    },
+    "Key validation warning": {
+      "Recipient's key validation failed: ${ validationErrorsMessage }": [
+        "Αποτυχία επικύρωσης κλειδιού του παραλήπτη: ${ validationErrorsMessage }"
       ]
     },
     "Keyboard shortcut name": {
@@ -8852,6 +9572,10 @@
         "${ count } μη διαβασμένη συνομιλία",
         "${ count } μη διαβασμένες συνομιλίες"
       ],
+      "${ count } unread message": [
+        "${ count } μη διαβασμένο μήνυμα",
+        "${ count } μη διαβασμένα μηνύματα"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ],
@@ -8864,6 +9588,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
+      ],
+      "/month": [
+        "/μήνα"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
@@ -8900,6 +9627,9 @@
       ],
       "All contacts": [
         "Όλες οι επαφές"
+      ],
+      "Also archive": [
+        "Επίσης αρχειοθετείστε"
       ],
       "Always label sender's emails": [
         "Επισημαίνετε πάντα τα μηνύματα ηλεκτρονικού ταχυδρομείου του αποστολέα"
@@ -8991,6 +9721,9 @@
       "Category": [
         "Κατηγορία"
       ],
+      "Category:": [
+        "Κατηγορία:"
+      ],
       "CC": [
         "Κοιν."
       ],
@@ -9002,6 +9735,9 @@
       ],
       "Cleaned": [
         "Καθαρίστηκαν"
+      ],
+      "Clear logs": [
+        "Εκκαθάριση αρχείων καταγραφής"
       ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
@@ -9033,6 +9769,9 @@
       "Context page": [
         "Σελίδα περιβάλλοντος"
       ],
+      "Context total": [
+        "Σύνολο πλαισίου"
+      ],
       "Continue cancelling": [
         "Συνέχεια ακύρωσης"
       ],
@@ -9060,6 +9799,9 @@
       "Date": [
         "Ημερομηνία"
       ],
+      "Date:": [
+        "Ημερομηνία:"
+      ],
       "Deals, offers, marketing emails": [
         "Συμφωνίες, προσφορές, διαφημιστικά email"
       ],
@@ -9077,6 +9819,9 @@
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
+      ],
+      "Don't like the style": [
+        "Δε μου αρέσει το στυλ"
       ],
       "Don't show again": [
         "Να μην εμφανιστεί ξανά"
@@ -9105,6 +9850,9 @@
       "Email address": [
         "Διεύθυνση email"
       ],
+      "Email categories": [
+        "Κατηγορίες ηλεκτρονικών μηνυμάτων"
+      ],
       "Email format": [
         "Μορφή μηνύματος"
       ],
@@ -9128,6 +9876,9 @@
       ],
       "Enable desktop notifications": [
         "Ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
+      ],
+      "Enable filter": [
+        "Ενεργοποίηση του φίλτρου"
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
@@ -9246,6 +9997,9 @@
       "Label as": [
         "Σήμανση με ετικέτα ως"
       ],
+      "Label ID": [
+        "Αναγνωριστικό ετικέτας"
+      ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
       ],
@@ -9264,8 +10018,14 @@
       "Last name": [
         "Επώνυμο"
       ],
+      "Layout": [
+        "Διάταξη"
+      ],
       "Location": [
         "Τοποθεσία"
+      ],
+      "Mail debugging information": [
+        "Πληροφορίες εντοπισμού σφαλμάτων αλληλογραφίας"
       ],
       "Mail logs": [
         "Αρχεία καταγραφής αλληλογραφίας"
@@ -9291,8 +10051,14 @@
       "Marked as read": [
         "Επισημάνθηκε ως αναγνωσμένο"
       ],
+      "Message:": [
+        "Μήνυμα:"
+      ],
       "Move ${ sidebarElementName }": [
         "Μετακίνηση ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Μετακίνηση μηνυμάτων σε"
       ],
       "Move to": [
         "Μεταφορά σε"
@@ -9332,6 +10098,9 @@
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Δε θα χάσετε πια σημαντικά μηνύματα! Αυτά εμφανίζονται πλέον κάτω από το ${ primaryCopy }. Όλα τα άλλα ταξινομούνται ανά κατηγορία, ώστε να είναι εύκολο να τα βρείτε και να μη γεμίζουν τα εισερχόμενά σας."
       ],
       "Non-promotional content and news": [
         "Μη προωθητικό περιεχόμενο και ειδήσεις"
@@ -9474,6 +10243,9 @@
       "Sender": [
         "Αποστολέας"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Μοιραστείτε τη διαθεσιμότητά σας με σελίδες κράτησης στο ${ CALENDAR_APP_NAME }, και φιλοξενήστε ασφαλείς συσκέψεις με το ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Υπογραφεί ηλεκτρονικών ταχυδρομείων"
       ],
@@ -9534,6 +10306,9 @@
       "Tell us more about your experience": [
         "Πείτε μας περισσότερα για την εμπειρία σας"
       ],
+      "The filter is disabled. ${ enableButton }": [
+        "Το φίλτρο είναι απενεργοποιημένο. ${ enableButton }"
+      ],
       "Theme": [
         "Θέμα"
       ],
@@ -9557,6 +10332,9 @@
       ],
       "Transactions": [
         "Συναλλαγές"
+      ],
+      "Undisclosed Recipients": [
+        "Μη κοινοποιημένοι παραλήπτες"
       ],
       "Unsafe or problematic": [
         "Μη ασφαλές ή προβληματικό"
@@ -9606,6 +10384,9 @@
       "Without attachment": [
         "Χωρίς συνημμένα"
       ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
+      ],
       "Your alias": [
         "Το ψευδώνυμο σας"
       ],
@@ -9641,6 +10422,11 @@
         "Έως"
       ]
     },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Ημερομηνία"
+      ]
+    },
     "Label attach to time input to select hours": {
       "Time": [
         "Ώρα"
@@ -9659,6 +10445,9 @@
     "Label Recipient": {
       "From": [
         "Από"
+      ],
+      "To": [
+        "Προς"
       ]
     },
     "Label, credit card": {
@@ -9697,8 +10486,14 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Φόρτωση των συνδρομών στο ενημερωτικό δελτίο σας..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Ενημερωτικά δελτία ή λίστες αλληλογραφίας από τα οποία κάνετε απεγγραφή θα εμφανίζονται εδώ."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Δεν έχετε ενεργά ενημερωτικά δελτία ή συνδρομές σε λίστες αλληλογραφίας."
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Δεν έχετε ενημερωτικά δελτία ή συνδρομές σε λίστες αλληλογραφίας."
@@ -9744,6 +10539,12 @@
       "contact us": [
         "επικοινωνήστε μαζί μας"
       ],
+      "Create a calendar linked to an active email address.": [
+        "Δημιουργήστε ένα ημερολόγιο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Create a new calendar to add this event": [
+        "Δημιουργήστε ένα νέο ημερολόγιο για να προσθέσετε αυτήν την εκδήλωση"
+      ],
       "Create a new calendar to answer this invitation": [
         "Δημιουργήστε ένα νέο ημερολόγιο για να απαντήσετε σε αυτήν την πρόσκληση"
       ],
@@ -9758,6 +10559,9 @@
       ],
       "Enable an email address linked to one of your calendars.": [
         "Ενεργοποιήστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με ένα από τα ημερολόγιά σας."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Ενεργοποιήστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με το απενεργοποιημένο ημερολόγιο για να ακυρώσετε την εκδήλωση."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
         "Ενεργοποιήστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που συνδέεται με το απενεργοποιημένο ημερολόγιο για να τροποποιήσετε την απάντησή σας."
@@ -9822,11 +10626,20 @@
       "if your data is leaked": [
         "εάν τα δεδομένα σας υποστούν διαρρεύσει"
       ],
+      "Inbox": [
+        "Εισερχόμενα"
+      ],
+      "Labels": [
+        "Ετικέτες"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
       "Less": [
         "Λιγότερα"
+      ],
+      "Manage blocked email addresses": [
+        "Διαχείριση αποκλεισμένων διευθύνσεων ηλεκτρονικού ταχυδρομείου"
       ],
       "Manage your folders": [
         "Διαχειριστείτε τους φακέλους σας"
@@ -9837,8 +10650,14 @@
       "Open in ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα σε ${ CALENDAR_APP_NAME }"
       ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Άνοιγμα ενημερωμένης εκδήλωσης στο ${ CALENDAR_APP_NAME }"
+      ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Ή μπορείτε να διαγράψετε ένα από τα ημερολόγιά σας και να δημιουργήσετε ένα νέο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Outbox": [
+        "Εξερχόμενα"
       ],
       "Pay invoice": [
         "Εξόφληση τιμολογίου"
@@ -9864,11 +10683,17 @@
       "Resume now": [
         "Συνέχιση τώρα"
       ],
+      "Scheduled": [
+        "Προγραμματισμένα"
+      ],
       "Sent": [
         "Απεσταλμένα"
       ],
       "settings": [
         "ρυθμίσεις"
+      ],
+      "Sign up for free": [
+        "Εγγραφείτε δωρεάν"
       ],
       "Snooze": [
         "Αναβολή"
@@ -9891,6 +10716,9 @@
       "terms of service": [
         "όροι χρήσης"
       ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Αυτό το αρχείο ICS περιέχει περισσότερες από μία εκδηλώσεις. Παρακαλούμε κατεβάστε το και εισάγετε τις εκδηλώσεις στο ${ CALENDAR_APP_NAME }"
+      ],
       "Trash": [
         "Διαγραμμένα"
       ],
@@ -9909,6 +10737,12 @@
       "You need to activate your calendar keys to answer this invitation": [
         "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να απαντήσετε σε αυτή την πρόσκληση"
       ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Πρέπει να ενεργοποιήσετε τα κλειδιά ημερολογίου σας για να διαχειριστείτε αυτήν την πρόσκληση"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να δείτε την ενημερωμένη εκδήλωση"
+      ],
       "You need to activate your calendar keys to see the updated invitation": [
         "Πρέπει να ενεργοποιήσετε τα πλήκτρα ημερολογίου σας για να δείτε την ενημερωμένη πρόσκληση"
       ],
@@ -9925,6 +10759,11 @@
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα σε ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link to settings": {
+      "settings": [
+        "ρυθμίσεις"
       ]
     },
     "Loading info": {
@@ -10018,6 +10857,15 @@
       ]
     },
     "Mailbox": {
+      "Archive": [
+        "Αρχειοθέτηση"
+      ],
+      "Inbox": [
+        "Εισερχόμενα"
+      ],
+      "Spam": [
+        "Ανεπιθύμητο"
+      ],
       "Trash": [
         "Διαγραμμένα"
       ]
@@ -10134,6 +10982,12 @@
     "Message notification": {
       "Scheduled sending undone": [
         "Η προγραμματισμένη αποστολή αναιρέθηκε"
+      ],
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Ο προγραμματισμός ακυρώθηκε. Το μήνυμα έχει μεταφερθεί στα Πρόχειρα."
+      ],
+      "Sending undone": [
+        "Η αποστολή αναιρέθηκε"
       ],
       "Undoing send...": [
         "Γίνεται αναίρεση αποστολής..."
@@ -11262,6 +12116,9 @@
       "${ reason } has been enabled": [
         "${ reason } έχει ενεργοποιηθεί"
       ],
+      "Block removed": [
+        "Η φραγή αφαιρέθηκε"
+      ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
       ],
@@ -11282,6 +12139,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Ο φράση πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Password has been set successfully": [
+        "Ο κωδικός πρόσβασης ορίστηκε επιτυχώς"
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "Ο Αποστολέας ${ firstSenderAddress } αποκλείστηκε"
@@ -11455,6 +12315,9 @@
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "Protect your accounts": [
+        "Προστατέψτε τους λογαριασμούς σας"
+      ],
       "Skip for now": [
         "Αγνοήστε για τώρα"
       ],
@@ -11469,11 +12332,17 @@
       "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
         "${ addFreePromiseTitle } σημαίνει ότι δεν θα δείτε ποτέ διαφημίσεις χορηγών στις εφαρμογές μας."
       ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } διασφαλίζει ότι μόνο εσείς και οι προοριζόμενοι παραλήπτες μπορείτε να έχετε πρόσβαση στα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
+      ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } εμποδίζει τα μηνύματα ηλεκτρονικού ταχυδρομείου απάτης να φτάσουν ποτέ στα εισερχόμενά σας."
       ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } στο App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } στο Play Store"
       ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } σημαίνει ότι δεν ακολουθείται πλέον στο διαδίκτυο."
@@ -11487,6 +12356,9 @@
       "Ad-free promise": [
         "Υπόσχεση χωρίς διαφημίσεις"
       ],
+      "Advanced encryption": [
+        "Προηγμένη κρυπτογράφηση"
+      ],
       "Android": [
         "Android"
       ],
@@ -11499,6 +12371,9 @@
       "browser": [
         "πρόγραμμα περιήγησης"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Διαγράψτε τα διαγραμμένα και ανεπιθύμητα μηνύματα ηλεκτρονικού ταχυδρομείου μετά από 30 ημέρες."
+      ],
       "Continue": [
         "Συνέχεια"
       ],
@@ -11508,6 +12383,15 @@
       "Discover ${ MAIL_APP_NAME }": [
         "Ανακαλύψτε ${ MAIL_APP_NAME }"
       ],
+      "Distraction-free emailing": [
+        "Αποστολή μηνυμάτων χωρίς περισπασμούς"
+      ],
+      "Download the desktop app": [
+        "Κατεβάστε την εφαρμογή για υπολογιστές"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Απολαύστε μια ταχύτερη, εστιασμένη εμπειρία αποστολής μηνυμάτων με την εφαρμογή για υπολογιστές."
+      ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
         "Για πρόσβαση ανά πάσα στιγμή στο ηλεκτρονικό ταχυδρομείο και βελτιστοποιημένη εμπειρία κινητής τηλεφωνίας, κατεβάστε την εφαρμογή ${ mobileAppAppStoreLink } ή ${ mobileAppGooglePlayLink }."
       ],
@@ -11516,6 +12400,9 @@
       ],
       "Industry-leading spam protection": [
         "Κορυφαία στον κλάδο προστασία από ανεπιθύμητα μηνύματα"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "Let's get started": [
         "Ας αρχίσουμε"
@@ -11528,6 +12415,9 @@
       ],
       "Next": [
         "Επόμενο"
+      ],
+      "Protection from trackers": [
+        "Προστασία από ιχνηλάτες"
       ],
       "Replay introduction": [
         "Επανάληψη Εισαγωγής"
@@ -11561,6 +12451,9 @@
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Επιλέξτε την εμφάνιση και την αίσθηση που προτιμάτε."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
       ],
@@ -11569,6 +12462,9 @@
       ],
       "Link your domain name and create accounts for all members of your organization.": [
         "Συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για όλα τα μέλη του οργανισμού σας."
+      ],
+      "Make it your own": [
+        "Κάντε το δικό σας"
       ],
       "Pick a theme": [
         "Επιλέξτε ένα θέμα"
@@ -12109,6 +13005,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Describe what to change": [
+        "Περιγράψτε τι πρέπει να αλλάξει"
+      ],
       "E.g., ": [
         "Για παράδειγμα, "
       ],
@@ -12129,6 +13028,9 @@
       ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
+      ],
+      "Filter labels": [
+        "Φιλτράρισμα ετικετών"
       ],
       "Filter quick actions": [
         "Φιλτράρισμα γρήγορων ενεργειών"
@@ -12196,6 +13098,9 @@
       "Search": [
         "Αναζήτηση"
       ],
+      "Search date, name, email address, or subject line": [
+        "Αναζητήστε με ημερομηνία, όνομα, διεύθυνση ηλεκτρονικού ταχυδρομείου ή γραμμή θέματος"
+      ],
       "Search for group name": [
         "Αναζήτηση ονόματος ομάδας"
       ],
@@ -12238,8 +13143,14 @@
       "Subject": [
         "Θέμα"
       ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Ανακοινώστε επερχόμενα γεγονότα σε ένα ενημερωτικό δελτίο\""
+      ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
         "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Ακύρωσε τη συνδρομή μου στο γυμναστήριο\""
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Προσκάλεσε την Ιωάννα στο πάρτι μου\""
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
         "Πείτε στον ${ subject } τι να γράψει. Παράδειγμα: \"Ευχαρίστησε το συνάδελφό μου για τη βοήθειά του σε ένα έργο\""
@@ -12252,6 +13163,9 @@
       ],
       "Text": [
         "Κείμενο"
+      ],
+      "the writing assistant": [
+        "ο βοηθός γραφής"
       ],
       "Thomas": [
         "Θωμάς"
@@ -12458,8 +13372,23 @@
       ]
     },
     "Received email icon": {
+      "End-to-end encrypted and signed message": [
+        "Διατερματικά κρυπτογραφημένο και υπογεγραμμένο μήνυμα"
+      ],
+      "End-to-end encrypted message": [
+        "Διατερματικά κρυπτογραφημένο μήνυμα"
+      ],
+      "End-to-end encrypted message from verified sender": [
+        "Διατερματικά κρυπτογραφημένο μήνυμα από επαληθευμένο αποστολέα"
+      ],
+      "PGP-encrypted and signed message": [
+        "PGP κρυπτογραφημένο και υπογεγραμμένο μήνυμα"
+      ],
       "PGP-encrypted message": [
         "Κρυπτογραφημένο μήνυμα με PGP"
+      ],
+      "PGP-encrypted message from verified sender": [
+        "Μήνυμα με κρυπτογράφηση PGP από επαληθευμένο αποστολέα"
       ],
       "PGP-signed message": [
         "Μήνυμα υπογεγραμμένο PGP"
@@ -12542,6 +13471,15 @@
         "η συνδρομή σας"
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } μ",
+        "${ remainingDays } μ"
+      ],
+      "<1 d": [
+        "<1 η"
+      ]
+    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Η απάντηση εστάλη"
@@ -12557,6 +13495,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Αδυναμία αποστολής στη διεύθυνση του διοργανωτή: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "Αποτυχία επανακρυπτογράφησης της πρόσκλησης. Παρακαλούμε δοκιμάστε ξανά."
       ]
     },
     "Safety review": {
@@ -12575,6 +13516,12 @@
       ],
       "No messages found": [
         "Δεν βρέθηκαν μηνύματα"
+      ],
+      "No messages scheduled": [
+        "Δεν έχουν προγραμματιστεί μηνύματα"
+      ],
+      "No results found": [
+        "Δε βρέθηκαν αποτελέσματα"
       ],
       "No snoozed messages": [
         "Δεν υπάρχουν μηνύματα σε αναβολή"
@@ -12695,6 +13642,10 @@
       "Do you want to send the email anyway?": [
         "Θέλετε να στείλετε το μήνυμα ούτως ή άλλως;"
       ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Η ακόλουθη διεύθυνση δεν είναι έγκυρη: ${ invalidAddresses }",
+        "Οι ακόλουθες διευθύνσεις δεν είναι έγκυρες: ${ invalidAddresses }"
+      ],
       "We have detected some warnings. The following email address may not receive emails:": [
         "Εντοπίσαμε κάποιες προειδοποιήσεις. Η ακόλουθη διεύθυνση ηλεκτρονικού ταχυδρομείου μπορεί να μη λαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου:",
         "Εντοπίσαμε κάποιες προειδοποιήσεις. Οι ακόλουθες διευθύνσεις ηλεκτρονικού ταχυδρομείου μπορεί να μη λάβουν μηνύματα ηλεκτρονικού ταχυδρομείου:"
@@ -12727,14 +13678,25 @@
       "End-to-end encrypted to verified PGP recipient": [
         "Διατερματικά κρυπτογραφημένο προς επαληθευμένο παραλήπτη PGP"
       ],
+      "End-to-end encrypted to verified recipient": [
+        "Κρυπτογραφημένο από άκρο σε άκρο στον επαληθευμένο παραλήπτη"
+      ],
       "PGP-signed": [
         "Υπογεγραμμένο με PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης προς επαληθευμένο παραλήπτη",
+        "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης προς επαληθευμένους παραλήπτες"
+      ],
       "Sent by you with end-to-end encryption": [
         "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένο παραλήπτη",
+        "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένους παραλήπτες"
       ],
       "Stored with zero-access encryption": [
         "Αποθηκεύτηκε με κρυπτογράφηση μηδενικής πρόσβασης"
@@ -12943,11 +13905,17 @@
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Μήνυμα υπογεγραμμένο PGP. Η επαλήθευση αποστολέα απέτυχε: ${ verificationErrorsMessage }"
       ],
+      "Sender could not be verified: Message not signed": [
+        "Ο αποστολέας δεν μπόρεσε να επαληθευτεί: Το μήνυμα δεν υπογράφηκε"
+      ],
       "Sender verification failed": [
         "Η επαλήθευση του αποστολέα απέτυχε"
       ],
       "Sender verification failed: ${ verificationErrorsMessage }": [
         "Αποτυχία επαλήθευσης αποστολέα: ${ verificationErrorsMessage }"
+      ],
+      "Sender's trusted keys verification failed": [
+        "Απέτυχε η επαλήθευση αξιόπιστων κλειδιών του αποστολέα"
       ]
     },
     "Signing preference for emails": {
@@ -12985,6 +13953,9 @@
       ]
     },
     "Sort option": {
+      "Largest first": [
+        "Μεγαλύτερου μεγέθους πρώτα"
+      ],
       "Newest first": [
         "Νεότερα πρώτα"
       ],
@@ -12993,6 +13964,9 @@
       ],
       "Smallest first": [
         "Μικρότερου μεγέθους πρώτα"
+      ],
+      "Sort by": [
+        "Ταξινόμηση κατά"
       ]
     },
     "specialoffer: Action": {
@@ -13226,8 +14200,17 @@
       ]
     },
     "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Δείτε τι περιλαμβάνεται στη συνδρομή σας και αρχίστε να απολαμβάνετε τα οφέλη."
+      ],
       "Discover your subscription benefits": [
         "Ανακαλύψτε τα πλεονεκτήματα της συνδρομής σας"
+      ],
+      "Email tracking protection": [
+        "Προστασία ιχνηλασίας μηνυμάτων"
+      ],
+      "Schedule send": [
+        "Προγραμματισμός αποστολής"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
         "Αυτή είναι τώρα η προεπιλεγμένη διεύθυνσή σας. Ανοίξτε το αναπτυσσόμενο μενού για αποστολή από διαφορετική διεύθυνση. "
@@ -13270,8 +14253,14 @@
       ]
     },
     "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Εισαγάγετε τη ${ MAIL_APP_NAME } διεύθυνση σας ως τη νέα διεύθυνση και αποθηκεύστε, επιβεβαιώστε ή επαληθεύστε την αλλαγή"
+      ],
       "In the account settings, look for the option to edit or change your email address ": [
         "Στις ρυθμίσεις λογαριασμού, αναζητήστε την επιλογή επεξεργασίας ή αλλαγής της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας "
+      ],
+      "Select service to update": [
+        "Επιλέξτε υπηρεσία για ενημέρωση"
       ],
       "Sign in to the service": [
         "Συνδεθείτε στην υπηρεσία"
@@ -13806,6 +14795,14 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } συνομιλία διαγράφηκε",
+        "${ count } συνομιλίες διαγράφηκαν"
+      ],
+      "${ count } draft deleted": [
+        "${ count } πρόχειρο διαγράφηκε",
+        "${ count } πρόχειρα διαγράφηκαν"
+      ],
       "${ count } message deleted": [
         "${ count } μήνυμα διαγράφηκε",
         "${ count } μηνύματα διαγράφηκαν"
@@ -13814,9 +14811,17 @@
         "${ countMergeableContacts } επαφή φαίνεται πανομοιότυπη.",
         "${ countMergeableContacts } επαφές φαίνονται πανομοιότυπες."
       ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } συνομιλία προστέθηκε σε ${ labelName }.",
+        "${ elementsCount } συνομιλίες προστέθηκαν σε ${ labelName }."
+      ],
       "${ elementsCount } conversation marked as read.": [
         "${ elementsCount } συνομιλία σημάνθηκε ως διαβασμένη.",
         "${ elementsCount } συνομιλίες σημάνθηκαν ως διαβασμένες."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } συνομιλία σημάνθηκε με Αστέρι.",
+        "${ elementsCount } συνομιλίες σημάνθηκαν με Αστέρι."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } συνομιλία σημάνθηκε ως μη διαβασμένη.",
@@ -13850,6 +14855,10 @@
         "${ elementsCount } συνομιλία με ακυρωμένη αναβολή",
         "${ elementsCount } συνομιλίες με ακυρωμένη αναβολή"
       ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } μήνυμα προστέθηκε στο ${ labelName }.",
+        "${ elementsCount } μηνύματα προστέθηκαν σε ${ labelName }."
+      ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } μήνυμα σημάνθηκε ως διαβασμένο.",
         "${ elementsCount } μηνύματα σημάνθηκαν ως διαβασμένα."
@@ -13869,6 +14878,10 @@
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } μήνυμα μετακινήθηκε σε ${ labelName }.",
         "${ elementsCount } μηνύματα μετακινήθηκαν σε ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } μήνυμα μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών.",
+        "${ elementsCount } μηνύματα μετακινήθηκαν στα Ενοχλητικά και οι αποστολείς προστέθηκαν στη λίστα ενοχλητικών."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } μήνυμα αφαιρέθηκε από ${ labelName }.",
@@ -13916,6 +14929,9 @@
       "Content copied to clipboard": [
         "Το περιεχόμενο αντιγράφηκε στο πρόχειρο"
       ],
+      "Conversation added to ${ labelName }.": [
+        "Η συνομιλία προστέθηκε σε ${ labelName }."
+      ],
       "Conversation deleted": [
         "Η συνομιλία διαγράφηκε"
       ],
@@ -13928,6 +14944,12 @@
       "Conversation marked as unread.": [
         "Η συνομιλία σημάνθηκε ως μη διαβασμένη."
       ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Η συνομιλία μετακινήθηκε στον φάκελο ${ labelName } και ο αποστολέας προστέθηκε στη λίστα μη ανεπιθύμητων μηνυμάτων."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Η συνομιλία μετακινήθηκε σε ${ labelName }."
+      ],
       "Conversation moved to spam and sender added to your spam list.": [
         "Η συνομιλία μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών."
       ],
@@ -13937,11 +14959,20 @@
       "Conversation removed from Starred.": [
         "Η συνομιλία αφαιρέθηκε από τις Σημασμένες."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Συνομιλίες από ${ sendersList } θα επισημαίνονται ως ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Συνομιλίες από ${ sendersList } θα μετακινηθούν στο φάκελο ${ folder }"
+      ],
       "Copied '${ code }' to clipboard": [
         "Αντιγράφηκε το '${ code }' στο πρόχειρο"
       ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
+      ],
+      "Draft deleted": [
+        "Το πρόχειρο διαγράφηκε"
       ],
       "Email address copied to clipboard": [
         "Η διεύθυνση Email αντιγράφηκε στο πρόχειρο"
@@ -13964,6 +14995,12 @@
       "Last modified aliases stored in your oldest vault": [
         "Πιο πρόσφατα τροποποιημένα ψευδώνυμα της παλαιότερης κρύπτης σας"
       ],
+      "Mail list unsubscribed": [
+        "΄Εγινε απεγγραφή από λίστα αλληλογραφίας"
+      ],
+      "Message added to ${ labelName }.": [
+        "Το μήνυμα προστέθηκε σε ${ labelName }."
+      ],
       "Message content search enabled": [
         "Αναζήτηση σε περιεχόμενο μηνύματος ενεργοποιημένη"
       ],
@@ -13985,11 +15022,20 @@
       "Message marked as unread.": [
         "Μήνυμα σημάνθηκε ως μη διαβασμένο."
       ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Το μήνυμα μετακινήθηκε στον φάκελο ${ labelName } και ο αποστολέας προστέθηκε στη λίστα μη ανεπιθύμητων μηνυμάτων."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Το μήνυμα μετακινήθηκε σε ${ labelName }."
+      ],
       "Message moved to spam and sender added to your spam list.": [
         "Το μήνυμα μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών."
       ],
       "Message removed from ${ labelName }.": [
         "Το μήνυμα αφαιρέθηκε από την ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Μήνυμα αφαιρέθηκε από τα Σημασμένα."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Τα μηνύματα από ${ sendersList } θα επισημαίνονται ως ${ labelsList }"
@@ -14014,6 +15060,9 @@
       "Payment method updated": [
         "Η μέθοδος πληρωμής ενημερώθηκε"
       ],
+      "Phishing reported": [
+        "Το ηλεκτρονικό «ψάρεμα» (phising) αναφέρθηκε"
+      ],
       "Phone number copied to clipboard": [
         "Ο αριθμός τηλεφώνου αντιγράφηκε στο πρόχειρο"
       ],
@@ -14031,6 +15080,10 @@
       ],
       "Read receipt sent": [
         "Έγινε αποστολή αποδεικτικού ανάγνωσης"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Ανακατηγοριοποιήθηκε ${ elementsCount } μήνυμα.",
+        "Ανακατηγοριοποιήθηκε ${ elementsCount } μηνύματα."
       ],
       "Secret passphrase updated": [
         "Η μυστική φράση πρόσβασης ενημερώθηκε"
@@ -14239,6 +15292,9 @@
       ]
     },
     "Tip Action": {
+      "Activate": [
+        "Ενεργοποίηση"
+      ],
       "Create an alias": [
         "Δημιουργία ψευδωνύμου"
       ],
@@ -14265,6 +15321,9 @@
       ],
       "Open ": [
         "Άνοιγμα "
+      ],
+      "Show me how": [
+        "Δείξε μου πώς"
       ]
     },
     "Title": {
@@ -14315,6 +15374,9 @@
       ],
       "Action all conversations": [
         "Εφαρμογή σε όλες τις συνομιλίες"
+      ],
+      "Action all messages": [
+        "Εφαρμογή σε όλα τα μηνύματα"
       ],
       "Add a custom logo": [
         "Προσθήκη προσαρμοσμένου λογότυπου"
@@ -14373,6 +15435,9 @@
       ],
       "Bad time for this email?": [
         "Κακή στιγμή για αυτό το μήνυμα;"
+      ],
+      "BCC": [
+        "Κρυφή κοινοποίηση"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -14473,8 +15538,14 @@
       "Craft better emails": [
         "Δημιουργήστε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου"
       ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Δημιουργήστε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου με το ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Create contact": [
         "Δημιουργία επαφής"
+      ],
+      "Create folder \"${ search }\"": [
+        "Δημιουργία φακέλου \"${ search }\""
       ],
       "Create label \"${ search }\"": [
         "Δημιουργία ετικέτας \"${ search }\""
@@ -14506,6 +15577,9 @@
       "Day theme": [
         "Ανοιχτό θέμα"
       ],
+      "Decryption error": [
+        "Σφάλμα κατά την αποκρυπτογράφηση"
+      ],
       "Delete ${ count } contact": [
         "Διαγραφή ${ count } επαφής",
         "Διαγραφή ${ count } επαφών"
@@ -14522,6 +15596,10 @@
         "Διαγραφή ${ count } πρόχειρου",
         "Διαγραφή ${ count } πρόχειρων"
       ],
+      "Delete ${ count } message": [
+        "Διαγραφή ${ count } μηνύματος",
+        "Διαγραφή ${ count } μηνυμάτων"
+      ],
       "Delete ${ value }": [
         "Διαγραφή ${ value }"
       ],
@@ -14530,6 +15608,9 @@
       ],
       "Delete conversation": [
         "Διαγραφή συνομιλίας"
+      ],
+      "Delete draft": [
+        "Διαγραφή πρόχειρου"
       ],
       "Delete folder?": [
         "Διαγραφή φακέλου;"
@@ -14636,6 +15717,9 @@
       "Filter name cannot contain only spaces": [
         "Το όνομα φίλτρου δεν μπορεί να περιέχει μόνο κενά διαστήματα"
       ],
+      "Filter on...": [
+        "Φίλτρο σε..."
+      ],
       "Folder options": [
         "Επιλογές φακέλων"
       ],
@@ -14739,14 +15823,23 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
+      "Keep this banner hidden?": [
+        "Να κρατηθεί αυτό το πανό κρυφό;"
+      ],
       "Label as": [
         "Σήμανση με ετικέτα ως"
+      ],
+      "Label options": [
+        "Επιλογές ετικέτας"
       ],
       "Limit reached": [
         "Υπέρβαση ορίου"
       ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
+      ],
+      "Load embedded images": [
+        "Φόρτωση ενσωματωμένων εικόνων"
       ],
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
@@ -14761,6 +15854,9 @@
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
       ],
+      "Mark all messages as read": [
+        "Επισήμανση όλων των μηνυμάτων ως αναγνωσμένα"
+      ],
       "Mark as read": [
         "Επισήμανση ως αναγνωσμένο"
       ],
@@ -14770,8 +15866,17 @@
       "Mark conversations as read": [
         "Επισήμανση συνομιλιών ως αναγνωσμένων"
       ],
+      "Mark conversations as unread": [
+        "Επισήμανση συνομιλιών ως μη αναγνωσμένων"
+      ],
+      "Mark email as legitimate": [
+        "Σήμανση μηνύματος ως αποδεκτού"
+      ],
       "Mark messages as read": [
         "Επισήμανση μηνυμάτων ως διαβασμένων"
+      ],
+      "Mark messages as unread": [
+        "Επισήμανση μηνυμάτων ως μη διαβασμένων"
       ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"
@@ -14796,6 +15901,9 @@
       ],
       "Mobile": [
         "Κινητό"
+      ],
+      "More": [
+        "Περισσότερα"
       ],
       "More actions": [
         "Περισσότερες ενέργειες"
@@ -14836,6 +15944,9 @@
       "Moving a scheduled message": [
         "Γίνεται μετακίνηση ενός προγραμματισμένου μηνύματος"
       ],
+      "Moving a snoozed message": [
+        "Μετακίνηση μηνύματος σε αναβολή"
+      ],
       "Multiple accounts, 1 private inbox": [
         "Πολλαπλοί λογαριασμοί, 1 ιδιωτικά εισερχόμενο"
       ],
@@ -14848,6 +15959,9 @@
       "Network error": [
         "Σφάλμα δικτύου"
       ],
+      "New message": [
+        "Νέο μήνυμα"
+      ],
       "Newsletters": [
         "Ενημερωτικά δελτία"
       ],
@@ -14857,11 +15971,17 @@
       "Next": [
         "Επόμενο"
       ],
+      "Next conversation": [
+        "Επόμενη συνομιλία"
+      ],
       "Next message": [
         "Επόμενο μήνυμα"
       ],
       "Night theme": [
         "Σκούρο θέμα"
+      ],
+      "No active newsletters": [
+        "Δεν υπάρχουν ενεργά ενημερωτικά δελτία"
       ],
       "No attachment found": [
         "Δεν βρέθηκε συνημμένο"
@@ -14932,6 +16052,9 @@
       "Previous": [
         "Προηγούμενο"
       ],
+      "Previous conversation": [
+        "Προηγούμενη συνομιλία"
+      ],
       "Previous message": [
         "Προηγούμενο Μήνυμα"
       ],
@@ -14949,6 +16072,9 @@
       ],
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"
+      ],
+      "Re-sign contact": [
+        "Επανυπογραφή επαφής"
       ],
       "Re-signing contacts": [
         "Επανυπογραφή επαφών"
@@ -14977,6 +16103,9 @@
       "Remove forwarding address": [
         "Κατάργηση διεύθυνσης προώθησης"
       ],
+      "Remove from list?": [
+        "Κατάργηση από τη λίστα;"
+      ],
       "Reply": [
         "Απάντηση"
       ],
@@ -14997,6 +16126,9 @@
       ],
       "Schedule now, send later": [
         "Προγραμματίστε τώρα, στείλτε αργότερα"
+      ],
+      "Schedule send": [
+        "Προγραμματισμός αποστολής"
       ],
       "Schedule send:": [
         "Προγραμματισμός αποστολής:"
@@ -15025,8 +16157,14 @@
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Αποστολή και λήψη Gmail χρησιμοποιώντας ${ MAIL_APP_NAME }"
       ],
+      "Send email": [
+        "Αποστολή μηνύματος"
+      ],
       "Send with changed preferences?": [
         "Αποστολή με αλλαγμένες προτιμήσεις;"
+      ],
+      "Send with encryption disabled?": [
+        "Αποστολή με απενεργοποιημένη την κρυπτογράφηση;"
       ],
       "Send without expiration?": [
         "Αποστολή χωρίς λήξη;"
@@ -15100,6 +16238,9 @@
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
       ],
+      "Storage capacity warning": [
+        "Προειδοποίηση χωρητικότητας αποθήκευσης"
+      ],
       "Subject missing": [
         "Λείπει το θέμα"
       ],
@@ -15133,6 +16274,9 @@
       "Trust new key?": [
         "Εμπιστοσύνη στο νέο κλειδί;",
         "Εμπιστοσύνη στα νέα κλειδιά;"
+      ],
+      "Trust pinned keys?": [
+        "Εμπιστοσύνη καρφιτσωμένων κλειδιών;"
       ],
       "Trust public key?": [
         "Εμπιστοσύνη δημόσιου κλειδιού;"
@@ -15203,6 +16347,10 @@
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Σας προστατέψαμε από ${ trackersCount } ιχνηλάτη",
+        "Σας προστατέψαμε από ${ trackersCount } ιχνηλάτες"
+      ],
       "We'd love to hear from you!": [
         "Θα χαρούμε να ακούσουμε τη γνώμη σας!"
       ],
@@ -15244,6 +16392,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your free trial has ended": [
+        "Η δωρεάν δοκιμαστική περίοδος σας έχει λήξει."
       ],
       "Your newsletters in one place": [
         "Τα ενημερωτικά δελτία σας σε ένα μέρος"
@@ -15302,6 +16453,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
       ],
       "Load image": [
         "Φόρτωση εικόνας"
@@ -15573,6 +16727,9 @@
       ]
     },
     "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Δευ, ${ formatTime }"
+      ],
       "Sat, ${ formatTime }": [
         "Σαβ, ${ formatTime }"
       ],
