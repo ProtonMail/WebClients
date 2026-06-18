@@ -5,22 +5,21 @@ import { c } from 'ttag';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
-import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/interface';
-import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
 
 interface LabelProps {
-    counterMap: LocationCountMap;
     label: Label;
+    unreadCount: number;
     updateFocusItem: (item: string) => void;
     moveToFolder: (params: MoveParams) => void;
     applyLabels: (params: ApplyLabelsParams) => void;
 }
 
-const SidebarLabel = ({ counterMap, label, updateFocusItem, moveToFolder, applyLabels }: LabelProps) => {
+const SidebarLabel = ({ label, unreadCount, updateFocusItem, moveToFolder, applyLabels }: LabelProps) => {
     const [isOptionDropdownOpened, setIsOptionDropdownOpened] = useState(false);
 
     return (
@@ -33,7 +32,7 @@ const SidebarLabel = ({ counterMap, label, updateFocusItem, moveToFolder, applyL
             color={label.Color}
             isFolder={false}
             isLabel={true}
-            unreadCount={getRawLocationCount(counterMap, label.ID).Unread}
+            unreadCount={unreadCount}
             id={label.ID}
             onFocus={updateFocusItem}
             moveToFolder={moveToFolder}
@@ -47,14 +46,15 @@ const SidebarLabel = ({ counterMap, label, updateFocusItem, moveToFolder, applyL
 };
 
 interface LabelsProps {
-    counterMap: LocationCountMap;
     labels: Label[];
     updateFocusItem: (item: string) => void;
     moveToFolder: (params: MoveParams) => void;
     applyLabels: (params: ApplyLabelsParams) => void;
 }
 
-const SidebarLabels = ({ counterMap, labels, updateFocusItem, moveToFolder, applyLabels }: LabelsProps) => {
+const SidebarLabels = ({ labels, updateFocusItem, moveToFolder, applyLabels }: LabelsProps) => {
+    const { getLocationCount } = useMailboxCounter();
+
     return labels.length === 0 ? (
         <div className="py-2 ml-7 text-sm color-weak">{c('Description').t`No labels`}</div>
     ) : (
@@ -63,8 +63,8 @@ const SidebarLabels = ({ counterMap, labels, updateFocusItem, moveToFolder, appl
                 <SidebarLabel
                     key={label.ID}
                     label={label}
+                    unreadCount={getLocationCount(label.ID).Unread}
                     updateFocusItem={updateFocusItem}
-                    counterMap={counterMap}
                     moveToFolder={moveToFolder}
                     applyLabels={applyLabels}
                 />
