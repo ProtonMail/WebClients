@@ -6809,6 +6809,9 @@
         "Câteva fotografii nu au putut fi salvate în Drive.",
         "Câteva fotografii nu au putut fi salvate în Drive."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ nodeName }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
+      ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
@@ -9714,6 +9717,9 @@
       ],
       "Failed to convert external invitation": [
         "Nu s-a putut converti invitația externă."
+      ],
+      "Failed to load sharing details": [
+        "Încărcarea detaliilor de partajare a eșuat."
       ],
       "Failed to move, please try again": [
         "Mutarea a eșuat. Reîncercați."
@@ -13043,9 +13049,6 @@
       "Make a secure connection your default": [
         "Faceți o conexiune sigură ca implicită"
       ],
-      "Manage secure link": [
-        "Gestionare legătură web securizată"
-      ],
       "Media type": [
         "Tip media"
       ],
@@ -13498,6 +13501,12 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Nu s-a putut confirma că fișierul a fost încărcat de către ${ claimedContentAuthor }. Motiv: ${ activeRevision.contentAuthor.error.error }"
       ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Nu s-a putut confirma că numele a fost creat sau modificat de către ${ claimedNameAuthor }. Motiv: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Nu s-a putut confirma că nodul a fost creat de către ${ claimedKeyAuthor }. Motiv: ${ node.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Ofertă de bun venit"
       ],
@@ -13612,6 +13621,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistență instantanee prin IA, expert uman la îndemână!"
       ],
       "Load image": [
         "Încărcare imagine"
