@@ -30,7 +30,7 @@ import { selectAttachments, selectConversations, selectMessages } from '../../..
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { SearchService } from '../../../services/search/searchService';
 import type { Conversation, Message, SpaceId } from '../../../types';
-import { LumoSettingsPanelUpsell } from '../../../upsells';
+import { LumoSettingsUpsellSection } from '../../../upsells/composed/LumoSettingsUpsellSection';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
@@ -40,7 +40,6 @@ import { SignInButton } from '../../Guest/SignInLink';
 import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
 import MemoryPanel from './MemoryPanel';
-import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
 import { SettingsSectionItem } from './SettingsSectionItem';
@@ -99,10 +98,7 @@ const LumoSettingsSidebar = ({
             className="flex flex-column gap-6 md:max-w-custom md:w-custom"
             style={{ '--md-max-w-custom': '14rem', '--md-w-custom': '10rem' }}
         >
-            {/* Lumo Logo */}
             <div className="hidden md:flex gap-2">
-                {/* <img src={lumoAvatarNeutral} alt="Lumo" height="50px" />
-                <LumoLogoThemeAware height="32px" /> */}
                 <LumoLogoHeader />
             </div>
 
@@ -348,7 +344,7 @@ const getPlanName = (hasLumoSeat: boolean, isVisionary: boolean, hasLumoB2B: boo
 };
 const AccountSettingsPanel = () => {
     const [user] = useUser();
-    const { hasLumoSeat, isVisionary, hasLumoB2B, hasLumoPlus } = useLumoPlan();
+    const { hasLumoSeat, isVisionary, hasLumoB2B } = useLumoPlan();
     const planName = getPlanName(hasLumoSeat, isVisionary, hasLumoB2B);
 
     return (
@@ -378,7 +374,7 @@ const AccountSettingsPanel = () => {
                 </div>
                 <IcChevronRight className="color-weak shrink-0 mt-2" size={4} />
             </ButtonLike>
-            {hasLumoPlus ? <PaidSubscriptionPanel /> : <LumoSettingsPanelUpsell />}
+            <LumoSettingsUpsellSection />
         </div>
     );
 };
@@ -387,7 +383,7 @@ const AccountSettingsPanelGuest = () => {
     const createLink = <CreateFreeAccountLink key="create-free-account-link" />;
     return (
         <div className="flex flex-column flex-nowrap gap-4 w-full min-w-0">
-            <LumoSettingsPanelUpsell />
+            <LumoSettingsUpsellSection />
             <SettingsSectionItem
                 icon="user"
                 text={c('collider_2025: Title').t`Guest`}

@@ -10,6 +10,7 @@ import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
+import { GuestSidebarSignInSection } from '../../components/Guest/ChatHistoryUpsell.tsx/GuestSidebarSignInSection';
 import { SearchModal } from '../../components/Modals/SearchModal/SearchModal';
 import SettingsModal from '../../components/Modals/SettingsModal/SettingsModal';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -19,7 +20,6 @@ import { useSidebar } from '../../providers/SidebarProvider';
 import { LumoSidebarUpsell } from '../../upsells';
 import LumoLogoHeader from '../header/LumoLogo';
 import { FavoritesSidebarSection } from './FavoritesSidebarSection';
-import ForBusinessSidebarButton from './ForBusinessSidebarButton';
 import { ChatHistorySection } from './components/ChatHistorySection';
 import { GallerySidebarButton } from './components/GallerySidebarButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
@@ -95,11 +95,24 @@ const LumoSidebarContent = () => {
                         <ProjectsSidebarSection onItemClick={closeOnItemClick} isSmallScreen={isSmallScreen} />
                     </Suspense>
                     <FavoritesSidebarSection onItemClick={closeOnItemClick} />
-                    <ChatHistorySection />
+                    {/* <ChatHistorySection /> */}
+                    {!isGuest && <ChatHistorySection />}
                 </div>
 
                 <div className="sidebar-section sidebar-bottom flex flex-column gap-1">
-                    <LumoSidebarUpsell />
+                    {isGuest ? (
+                        <>
+                            <SidebarItem
+                                icon={IcCogWheel}
+                                label={c('collider_2025:Button').t`Settings`}
+                                onClick={() => settingsModal.openModal(true)}
+                            />
+                            {/* <ChatHistoryGuestUserUpsell /> */}
+                            <GuestSidebarSignInSection />
+                        </>
+                    ) : (
+                        <LumoSidebarUpsell />
+                    )}
 
                     {/* <SidebarItem
                         icon="question-circle"
@@ -107,15 +120,15 @@ const LumoSidebarContent = () => {
                         onClick={() => window.open(getKnowledgeBaseUrl('/lumo'), '_blank')}
                     /> */}
 
-                    {isGuest && (
+                    {/* {isGuest && (
                         <SidebarItem
                             icon={IcCogWheel}
                             label={c('collider_2025:Button').t`Settings`}
                             onClick={() => settingsModal.openModal(true)}
                         />
-                    )}
+                    )} */}
 
-                    <ForBusinessSidebarButton isSmallScreen={isSmallScreen} />
+                    {/* <ForBusinessSidebarButton isSmallScreen={isSmallScreen} /> */}
 
                     {/* <Button
                         shape="ghost"
