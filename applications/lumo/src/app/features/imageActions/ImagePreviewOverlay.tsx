@@ -4,7 +4,6 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
@@ -129,7 +128,7 @@ export const ImagePreviewOverlay = ({
                 style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', width: 0, height: 0 }}
             />
 
-            {/* Top-right: back arrow in edit mode, download + close in preview mode */}
+            {/* Top-right: back arrow in edit mode, download + close in preview mode
             <div className="flex gap-2" style={{ position: 'absolute', top: '1rem', right: '1rem', zIndex: 1 }}>
                 {mode === 'preview' && onDownload && (
                     <button
@@ -147,7 +146,7 @@ export const ImagePreviewOverlay = ({
                 >
                     {mode === 'edit' ? <IcArrowLeft size={4} /> : <IcCross size={4} />}
                 </button>
-            </div>
+            </div> */}
 
             {mode === 'preview' ? (
                 <>
