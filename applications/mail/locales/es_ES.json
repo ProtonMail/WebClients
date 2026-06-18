@@ -241,6 +241,12 @@
       "Continue with Outlook": [
         "Continuar con Outlook"
       ],
+      "Copy '${ code }' to clipboard": [
+        "Copiar '${ code }' al portapapeles"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Copiar '${ code }' al portapapeles y mover a la papelera"
+      ],
       "Copy address": [
         "Copiar la dirección"
       ],
@@ -488,6 +494,9 @@
       ],
       "Hide": [
         "Ocultar"
+      ],
+      "Hide ${ title }": [
+        "Ocultar ${ title }"
       ],
       "Hide advanced PGP settings": [
         "Ocultar configuración PGP avanzada"
@@ -878,6 +887,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show ${ title }": [
+        "Mostrar ${ title }"
       ],
       "Show advanced PGP settings": [
         "Mostrar configuración PGP avanzada"
@@ -3163,6 +3175,9 @@
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Para tener acceso ilimitado al asistente de escritura y más, pásate a ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
@@ -3211,6 +3226,12 @@
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Para seguir recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, vuelve a conectar tus cuentas."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a tu suscripción."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicita acceso a tu administrador."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para garantizar el nivel más alto de seguridad, crea una frase de recuperación."
@@ -4709,6 +4730,9 @@
       "Security Center": [
         "Centro de seguridad"
       ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Configurar el asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Username": [
         "Nombre de usuario"
       ]
@@ -5110,6 +5134,12 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } te ayuda a redactar mejores correos de forma rápida y sin esfuerzo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panel de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } es una solución de videoconferencia cifrada de extremo a extremo. Añádelo a tu plan para organizar reuniones seguras."
@@ -5773,6 +5803,9 @@
       ],
       "Low Priority": [
         "Prioridad baja"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establecer ${ MAIL_APP_NAME } como aplicación de correo predeterminada"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -6774,6 +6807,9 @@
       ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } month": [
         "${ n } mes",
@@ -9180,6 +9216,12 @@
       ],
       "No parent folder": [
         "No hay carpeta superior."
+      ],
+      "Remind me later": [
+        "Recordármelo más tarde"
+      ],
+      "Yes, don't show again": [
+        "Sí, no volver a mostrar"
       ]
     },
     "Option group": {
@@ -9740,8 +9782,29 @@
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico."
       ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Anunciar próximos eventos en un boletín”"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Cancelar mi suscripción al gimnasio”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Invitar a Ana a mi fiesta”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Agradecer a mi compañero de trabajo por su ayuda en un proyecto”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Escribir una carta de presentación para unas prácticas”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Escribir un correo de seguimiento a un cliente”"
+      ],
       "Text": [
         "Texto"
+      ],
+      "the writing assistant": [
+        "El asistente de escritura"
       ],
       "Thomas": [
         "Andrea"
@@ -11237,6 +11300,9 @@
       "Conversation deleted": [
         "Se ha eliminado la conversación."
       ],
+      "Copied '${ code }' to clipboard": [
+        "Se ha copiado '${ code }' al portapapeles"
+      ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
@@ -11478,6 +11544,9 @@
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "(active)": [
         "(activo)"
       ],
@@ -11622,6 +11691,9 @@
       ],
       "Coupon": [
         "Cupón"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Redacta mejores correos con ${ LUMO_SHORT_APP_NAME }"
       ],
       "Create contact": [
         "Crear contacto"
@@ -11823,6 +11895,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Keep this banner hidden?": [
+        "¿Mantener oculto este banner?"
       ],
       "Limit reached": [
         "Límite alcanzado"

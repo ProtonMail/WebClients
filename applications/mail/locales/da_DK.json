@@ -241,6 +241,12 @@
       "Continue with Outlook": [
         "Fortsæt med Outlook"
       ],
+      "Copy '${ code }' to clipboard": [
+        "Kopiér '${ code }' til udklipsholderen"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Kopiér '${ code }' til udklipsholderen og flyt til Papirkurven"
+      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -489,6 +495,9 @@
       "Hide": [
         "Skjul"
       ],
+      "Hide ${ title }": [
+        "Skjul ${ title }"
+      ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
       ],
@@ -530,6 +539,10 @@
       ],
       "Insert": [
         "Indsæt"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Indsæt ${ totalChecked } kontakt",
+        "Indsæt ${ totalChecked } kontakter"
       ],
       "Insert image": [
         "Indsæt billede"
@@ -878,6 +891,9 @@
       ],
       "Show": [
         "Vis"
+      ],
+      "Show ${ title }": [
+        "Vis ${ title }"
       ],
       "Show advanced PGP settings": [
         "Vis avancerede PGP-indstillinger"
@@ -3163,6 +3179,9 @@
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Importér dine data fra Google, Outlook og andre for at sikre en smidig onboarding af dit team til ${ BRAND_NAME }."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Opgrader til ${ LUMO_SHORT_APP_NAME } for ubegrænset adgang til skriveassistenten og mere."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
@@ -3211,6 +3230,12 @@
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til dine konti."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Tilføj det til dit abonnement for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Anmod om adgang fra din administrator for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
@@ -3322,6 +3347,12 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Følgende felter er fundet i den CSV-fil, du uploadede. Afkryds dem, du vil importere."
+      ]
+    },
+    "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } ny besked",
+        "${ notificationsToShow.length } nye beskeder"
       ]
     },
     "Downgrade account reason": {
@@ -3611,6 +3642,10 @@
       ],
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Vælg en dato indenfor den næste ${ n } dag.",
+        "Vælg en dato indenfor de næste ${ n } dage."
       ],
       "Company name or personal name is required": [
         "Virksomhedsnavn eller personnavn er påkrævet"
@@ -3905,6 +3940,10 @@
       ],
       "Process aborted": [
         "Proces afbrudt"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Duplikeret modtager fjernet: ${ recipents }",
+        "Duplikerede modtagere fjernet: ${ recipents }"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
@@ -4662,6 +4701,10 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dag",
+        "${ remainingDaysCount } dage"
+      ],
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } dag tilbage",
         "${ remainingDaysCount } dage tilbage"
@@ -4733,6 +4776,9 @@
       ],
       "Security Center": [
         "Sikkerhedscenter"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Konfigurer ${ LUMO_SHORT_APP_NAME }-skriveassistenten"
       ],
       "Username": [
         "Brugernavn"
@@ -5137,6 +5183,26 @@
         "${ currentProgress } ud af ${ totalProgress }",
         "${ currentProgress } ud af ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } samtale vil få etiketten:",
+        "${ elementsCount } samtaler vil få etiketten:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } samtale vil blive markeret som læst.",
+        "${ elementsCount } samtaler vil blive markeret som læst."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } samtale vil blive markeret som ulæst.",
+        "${ elementsCount } samtaler vil blive markeret som ulæste."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } samtale vil blive flyttet",
+        "${ elementsCount } samtaler vil blive flyttet"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } samtale vil ikke længere have etiketten:",
+        "${ elementsCount } samtaler vil ikke længere have etiketten:"
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } besked vil få etiketten:",
         "${ elementsCount } beskeder vil få etiketten:"
@@ -5153,6 +5219,10 @@
         "${ elementsCount } besked vil blive flyttet",
         "${ elementsCount } beskeder vil blive flyttet"
       ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } indlejret billede",
+        "${ embeddedAttachmentsCount } indlejrede billeder"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: billede i fuld størrelse"
       ],
@@ -5166,6 +5236,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } hjælper dig med at skrive bedre e-mails hurtigt og nemt."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME }-panel"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } er et end-to-end krypteret system til videomøder. Tilføj det til dit abonnement for at afholde sikre møder."
       ],
@@ -5175,6 +5251,18 @@
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } link renset",
         "${ numberOfUTMTrackers } links renset"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } besked i samtalen",
+        "${ NumMessages } beskeder i samtalen"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } forekomst fundet",
+        "${ numOccurrences } forekomster fundet"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } forekomst fundet i mailens indhold",
+        "${ numOccurrences } forekomster fundet i mailens indhold"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "Med ${ PASS_APP_NAME } kan du gemme adgangskoder, noter og andre følsomme oplysninger med end-to-end-kryptering. Tilgængelig på ${ ios }, ${ android } og i din ${ browser }."
@@ -5225,6 +5313,14 @@
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ulæst",
+        "${ subscription.UnreadMessageCount } ulæste"
+      ],
+      "${ total } message": [
+        "${ total } besked",
+        "${ total } beskeder"
+      ],
       "${ total } user found": [
         "${ total } bruger fundet",
         "${ total } brugere fundet"
@@ -5232,6 +5328,14 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } tracker blokeret",
         "${ trackersCount } trackere blokeret"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nyhedsbrev",
+        "${ unreadCount } nyhedsbreve"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } planlagt besked",
+        "${ unreadCount } planlagte beskeder"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
@@ -5255,6 +5359,10 @@
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** resultat fundet i ${ labelName }",
+        "**${ total }** resultater fundet i ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Auto-forbindelse**: Åbner og forbinder til VPN, så snart du tænder din enhed."
@@ -5666,6 +5774,18 @@
       "Expired": [
         "Udløbet"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Udløber om ${ minutesDiff } minut",
+        "Udløber om ${ minutesDiff } minutter"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Udløber om mindre end ${ hoursDiff } time",
+        "Udløber om mindre end ${ hoursDiff } timer"
+      ],
+      "file attached": [
+        "fil vedhæftet",
+        "filer vedhæftet"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
       ],
@@ -5690,6 +5810,10 @@
       "Forgot password?": [
         "Glemt din adgangskode?"
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Prøv gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
+        "Prøv gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dage"
+      ],
       "Geoblocking": [
         "Geoblokering"
       ],
@@ -5704,6 +5828,10 @@
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Har ${ numAttachments } vedhæftet fil (${ numAttachmentsSize })",
+        "Har ${ numAttachments } vedhæftede filer (${ numAttachmentsSize })"
       ],
       "here": [
         "her"
@@ -5852,6 +5980,9 @@
       ],
       "Low Priority": [
         "Lav prioritet"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gør ${ MAIL_APP_NAME } til din standard e-mail applikation."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-logo"
@@ -6254,6 +6385,10 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Det betyder, at din internetudbyder og de websteder, du besøger, ikke kan forbinde dine personlige oplysninger med din online-aktivitet."
       ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Denne samtale vil blive markeret som spam. Vil du også afmelde fremtidige e-mails?",
+        "Disse samtaler vil blive markeret som spam. Vil du også afmelde fremtidige e-mails?"
+      ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denne unikke kode kan bruges af websteder og ISPs (internetudbydere) til at forbinde din placering og browserhistorik til din enhed."
       ],
@@ -6460,6 +6595,14 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Du har **${ count } samtale** gemt i denne mappe",
+        "Du har **${ count } samtaler** gemt i denne mappe"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Du har **${ count } samtale** markeret med denne etiket",
+        "Du har **${ count } samtaler** markeret med denne etiket"
+      ],
       "You have **${ count } message** stored in this folder": [
         "Du har **${ count } besked** gemt i denne mappe",
         "Du har **${ count } beskeder** gemt i denne mappe"
@@ -6483,6 +6626,14 @@
       "You selected **${ count } conversation** from this folder": [
         "Du valgte **${ count } samtale** fra denne mappe",
         "Du valgte **${ count } samtaler** fra denne mappe"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Du valgte **${ count } besked** fra denne mappe",
+        "Du valgte **${ count } beskeder** fra denne mappe"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Du valgte **${ count } besked** med denne etiket",
+        "Du valgte **${ count } beskeder** med denne etiket"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Du valgte **${ elementsCount } samtale** i ${ location }",
@@ -6692,6 +6843,10 @@
       ]
     },
     "Key pinning": {
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Vil du stole på den primære offentlige nøgle med følgende fingeraftryk?",
+        "Vil du stole på de primære offentlige nøgler med følgende fingeraftryk?"
+      ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Du har aktiveret adresseverifikation med betroede nøgler for denne e-mailadresse, men ingen aktive krypteringsnøgler er betroede.\nDu skal angive en nøgle som betroet for at kunne sende en besked til denne e-mailadresse.",
         "Du har aktiveret adresseverifikation med betroede nøgler for disse e-mailadresser, men ingen aktive krypteringsnøgler er betroede.\nDu skal angive nøgler som betroede for at kunne sende en meddelelse til disse e-mailadresser."
@@ -6904,6 +7059,13 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
+      "${ count } unread message": [
+        "${ count } ulæst besked",
+        "${ count } ulæste beskeder"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
@@ -7019,6 +7181,9 @@
       "City": [
         "By"
       ],
+      "Clear logs": [
+        "Ryd logs"
+      ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
@@ -7046,6 +7211,12 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Context page": [
+        "Kontekstside"
+      ],
+      "Context total": [
+        "Kontekst total"
+      ],
       "Continue cancelling": [
         "Fortsæt annullering"
       ],
@@ -7066,6 +7237,9 @@
       ],
       "Credits": [
         "Kreditter"
+      ],
+      "Current context": [
+        "Nuværende kontekst"
       ],
       "Date": [
         "Dato"
@@ -7093,6 +7267,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "fx på Amazon, eBay osv."
+      ],
+      "Elements in store": [
+        "Elementer i store"
       ],
       "Email": [
         "E-mail"
@@ -7135,6 +7312,9 @@
       ],
       "Extremely Satisfied": [
         "Yderst tilfreds"
+      ],
+      "Filter": [
+        "Filtrér"
       ],
       "Filter Name": [
         "Filternavn"
@@ -7202,6 +7382,9 @@
       "Include application logs in bug report": [
         "Inkluder applikationslogfiler i fejlrapporten"
       ],
+      "Information": [
+        "Information"
+      ],
       "Integrated 2FA authenticator": [
         "Integreret 2FA-godkendelsesværktøj"
       ],
@@ -7213,6 +7396,9 @@
       ],
       "Label as": [
         "Mærk som"
+      ],
+      "Label ID": [
+        "Label ID"
       ],
       "Label messages as": [
         "Giv beskeder etiketten"
@@ -7234,6 +7420,12 @@
       ],
       "Location": [
         "Placering"
+      ],
+      "Mail debugging information": [
+        "Mail fejlfindingsoplysninger"
+      ],
+      "Mail logs": [
+        "Mail logs"
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
@@ -7367,6 +7559,9 @@
       "Read": [
         "Læst"
       ],
+      "Refresh logs": [
+        "Opdater logs"
+      ],
       "Region": [
         "Region"
       ],
@@ -7400,6 +7595,9 @@
       "Social media updates and activity": [
         "Opdateringer og aktivitet på sociale medier"
       ],
+      "Sort": [
+        "Sortér"
+      ],
       "Starred": [
         "Stjernemarkeret"
       ],
@@ -7411,6 +7609,9 @@
       ],
       "Statement": [
         "Udsagn"
+      ],
+      "Store state": [
+        "Store state"
       ],
       "Street address": [
         "Adresse"
@@ -7429,6 +7630,9 @@
       ],
       "System information": [
         "Systemoplysninger"
+      ],
+      "Tab age": [
+        "Tab alder"
       ],
       "Tell us more about your experience": [
         "Fortæl os mere om din oplevelse"
@@ -9268,6 +9472,12 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
+      ],
+      "Remind me later": [
+        "Mind mig om det senere"
+      ],
+      "Yes, don't show again": [
+        "Ja, vis det ikke igen"
       ]
     },
     "Option group": {
@@ -9831,8 +10041,29 @@
       "Start typing an email address": [
         "Begynd at indtaste en e-mailadresse"
       ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Annoncér kommende begivenheder i et nyhedsbrev\""
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Opsig mit medlemskab i fitnesscentret\""
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Inviter Julie til min fest\""
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Tak min kollega for hjælpe til med et projekt\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Skriv en ansøgning til en praktikplads\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Skriv en opfølgende e-mail til en kunde\""
+      ],
       "Text": [
         "Tekst"
+      ],
+      "the writing assistant": [
+        "skriveassistenten"
       ],
       "Thomas": [
         "Kim"
@@ -10196,6 +10427,12 @@
         "dit abonnement"
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Gennemgå kontoens sikkerhed"
@@ -10299,9 +10536,23 @@
       ]
     },
     "Send email with warnings": {
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Følgende adresse er ikke gyldig: ${ invalidAddresses }",
+        "Følgende adresser er ikke gyldige: ${ invalidAddresses }"
+      ],
       "We have detected some warnings. The following email address may not receive emails:": [
         "Vi har registreret nogle advarsler. Følgende e-mailadresse modtager muligvis ikke e-mails:",
         "Vi har registreret nogle advarsler. Følgende e-mailadresser modtager muligvis ikke e-mails:"
+      ]
+    },
+    "Sent email icon": {
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Sendt af ${ MAIL_APP_NAME } med nuladgangskryptering til en bekræftet modtager",
+        "Sendt af ${ MAIL_APP_NAME } med nuladgangskryptering til bekræftede modtagere"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Sendt af dig med end-to-end-kryptering til en bekræftet modtager",
+        "Sendt af dig med ende-til-ende kryptering til bekræftede modtagere"
       ]
     },
     "session_recovery:available:action": {
@@ -11301,13 +11552,41 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } samtale slettet",
+        "${ count } samtaler slettet"
+      ],
+      "${ count } draft deleted": [
+        "${ count } udkast slettet",
+        "${ count } udkast slettet"
+      ],
+      "${ count } message deleted": [
+        "${ count } besked slettet",
+        "${ count } beskeder slettet"
+      ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ud.",
         "${ countMergeableContacts } kontakter ser identiske ud."
       ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } samtale føjet til ${ labelName }.",
+        "${ elementsCount } samtaler føjet til ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } samtale markeret som læst.",
+        "${ elementsCount } samtaler markeret som læst."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } samtale stjernemarkeret.",
+        "${ elementsCount } samtaler stjernemarkeret."
+      ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } samtale markeret som ulæst.",
         "${ elementsCount } samtaler markeret som ulæst."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } samtale flyttet til ${ labelName } og afsender tilføjet din ikke-spam-liste.",
+        "${ elementsCount } samtaler flyttet til ${ labelName } og afsendere tilføjet din ikke-spam-liste."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
         "${ elementsCount } samtale flyttet til ${ labelName }.",
@@ -11333,6 +11612,10 @@
         "Udsættelse annulleret for ${ elementsCount } samtale",
         "Udsættelse annulleret for ${ elementsCount } samtaler"
       ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } besked føjet til ${ labelName }.",
+        "${ elementsCount } beskeder føjet til ${ labelName }."
+      ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } besked markeret som læst.",
         "${ elementsCount } beskeder markeret som læst."
@@ -11341,9 +11624,17 @@
         "${ elementsCount } besked markeret som ulæst.",
         "${ elementsCount } beskeder markeret som ulæste."
       ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } besked flyttet til ${ labelName } og afsender tilføjet til din ikke-spam-liste.",
+        "${ elementsCount } beskeder flyttet til ${ labelName } og afsendere tilføjet til din ikke-spam-liste."
+      ],
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } besked flyttet til ${ labelName }.",
         "${ elementsCount } beskeder flyttet til ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } besked flyttet til spam og afsender tilføjet din spamliste.",
+        "${ elementsCount } beskeder flyttet til spam og afsendere tilføjet din spamliste."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } besked fjernet fra ${ labelName }.",
@@ -11388,6 +11679,9 @@
       "Conversation deleted": [
         "Samtale slettet"
       ],
+      "Copied '${ code }' to clipboard": [
+        "Kopierede '${ code }' til udklipsholderen"
+      ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
@@ -11408,6 +11702,10 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Sidst ændrede aliasser gemt i din ældste boks"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Flyt ${ selectionCount } samtale",
+        "Flyt ${ selectionCount } samtaler"
       ],
       "Move ${ selectionCount } message": [
         "Flyt ${ selectionCount } besked",
@@ -11433,6 +11731,10 @@
       ],
       "Problem reported": [
         "Problem indberettet"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Omkategoriserede ${ elementsCount } besked.",
+        "Omkategoriserede ${ elementsCount } beskeder."
       ],
       "Secret passphrase updated": [
         "Hemmelig adgangssætning opdateret"
@@ -11633,6 +11935,13 @@
       "${ feature } is now active": [
         "${ feature } er nu aktiv"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } besked",
+        "${ numMessages } beskeder"
+      ],
       "${ unreads } unread message": [
         "${ unreads } ulæst besked",
         "${ unreads } ulæste beskeder"
@@ -11782,6 +12091,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Skriv bedre e-mails med ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Create contact": [
         "Opret kontakt"
       ],
@@ -11827,6 +12139,10 @@
       "Delete ${ count } draft": [
         "Slet ${ count } udkast",
         "Slet ${ count } udkast"
+      ],
+      "Delete ${ count } message": [
+        "Slet ${ count } besked",
+        "Slet ${ count } beskeder"
       ],
       "Delete ${ value }": [
         "Slet ${ value }"
@@ -11990,6 +12306,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "Keep this banner hidden?": [
+        "Skjul fortsat dette banner?"
       ],
       "Limit reached": [
         "Grænse nået"
@@ -12275,6 +12594,10 @@
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Vi beskyttede dig mod ${ trackersCount } tracker",
+        "Vi beskyttede dig mod ${ trackersCount } trackere"
+      ],
       "We'd love to hear from you!": [
         "Vi vil meget gerne høre fra dig"
       ],
@@ -12365,6 +12688,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Load image": [
         "Indlæs billede"
