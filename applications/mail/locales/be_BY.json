@@ -405,6 +405,9 @@
       "Expand video conferencing widget": [
         "Разгарнуць віджэт відэаканферэнцыі"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Даследаваць ${ VPN_APP_NAME }"
+      ],
       "Explore other plans": [
         "Даследаваць іншыя тарыфныя планы"
       ],
@@ -536,6 +539,12 @@
       ],
       "Insert": [
         "Уставіць"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Уставіць ${ totalChecked } кантакт",
+        "Уставіць ${ totalChecked } кантакты",
+        "Уставіць ${ totalChecked } кантактаў",
+        "Уставіць ${ totalChecked } кантактаў"
       ],
       "Insert image": [
         "Уставіць відарыс"
@@ -714,6 +723,9 @@
       "Previous": [
         "Папярэдні"
       ],
+      "Previous conversation": [
+        "Папярэдняя размова"
+      ],
       "Previous month": [
         "Папярэдні месяц"
       ],
@@ -743,6 +755,9 @@
       ],
       "Refer a friend": [
         "Запрасіць сябра"
+      ],
+      "Refine it": [
+        "Удасканальце яго"
       ],
       "Refresh the page": [
         "Абнавіць старонку"
@@ -804,6 +819,9 @@
       "Save": [
         "Захаваць"
       ],
+      "Schedule message": [
+        "Запланаваць паведамленне"
+      ],
       "Scroll to bottom": [
         "Прагартайце ўніз"
       ],
@@ -830,6 +848,9 @@
       ],
       "Select country": [
         "Выберыце краіну"
+      ],
+      "Select date and time": [
+        "Выберыце дату і час"
       ],
       "Select rating ${ n } out of ${ to }": [
         "Выберыце ацэнку ${ n } з ${ to }"
@@ -1240,6 +1261,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Праграмы ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Запыт і вашы каментарыі будуць бачныя камандзе мадэрацыі ${ BRAND_NAME } пры адпраўцы гэтага водгуку."
       ]
     },
     "Assistant option": {
@@ -1756,6 +1782,14 @@
     "Calendar invite buttons label": {
       "Attending?": [
         "Пойдзеце?"
+      ]
+    },
+    "Calendar invite info": {
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } ужо прымаў запрашэнне на адно паўтарэнне падзеі."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } ужо прымаў запрашэнне на гэту падзею."
       ]
     },
     "Cancellation reminder": {
@@ -3226,6 +3260,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўніка не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены.",
+        "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўнікоў не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены.",
+        "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўнікоў не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены.",
+        "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўнікоў не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены."
+      ],
       "No ads. No trackers.": [
         "Без рэкламы і праграм сачэння"
       ],
@@ -3382,6 +3422,14 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Выяўлены наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
+      ]
+    },
+    "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } новае паведамленне",
+        "${ notificationsToShow.length } новыя паведамленні",
+        "${ notificationsToShow.length } новых паведамленняў",
+        "${ notificationsToShow.length } новых паведамленняў"
       ]
     },
     "Downgrade account reason": {
@@ -3574,6 +3622,14 @@
         "${ emailAddress } умоўна прыняў ваша запрашэнне на ${ eventTitle }"
       ]
     },
+    "Email reminder banner": {
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Падзея пачнецца праз ${ minutesUntilEvent } хвіліну",
+        "Падзея пачнецца праз ${ minutesUntilEvent } хвіліны",
+        "Падзея пачнецца праз ${ minutesUntilEvent } хвілін",
+        "Падзея пачнецца праз ${ minutesUntilEvent } хвілін"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Скасаванне падзеі ${ formattedStart }"
@@ -3671,6 +3727,12 @@
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Выберыце дату ў межах наступнага ${ n } дня.",
+        "Выберыце дату ў межах наступных ${ n } дзён.",
+        "Выберыце дату ў межах наступных ${ n } дзён.",
+        "Выберыце дату ў межах наступных ${ n } дзён."
       ],
       "Company name or personal name is required": [
         "Патрабуецца назва кампаніі або асабістае імя"
@@ -3978,6 +4040,15 @@
       "Process aborted": [
         "Працэс перарваны"
       ],
+      "re-importing": [
+        "паўторнае імпартаванне"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Выдалены дублікат атрымальніка: ${ recipents }",
+        "Выдалены дублікаты атрымальнікаў: ${ recipents }",
+        "Выдалены дублікаты атрымальнікаў: ${ recipents }",
+        "Выдалены дублікаты атрымальнікаў: ${ recipents }"
+      ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
@@ -4031,6 +4102,12 @@
       ],
       "The amount due has changed. Please try again.": [
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Не ўдалося расшыфраваць далучэнне.\nКалі ў вас ёсць адпаведны закрыты ключ, вы зможаце расшыфраваць \nфайл з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны закрыты ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны закрыты ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны закрыты ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -4159,6 +4236,14 @@
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Увайдзіце з тым жа адрасам Gmail, які вы першапачаткова падключылі"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікі",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў"
       ]
     },
     "Error importing calendar": {
@@ -4751,6 +4836,12 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
+      "Start free trial": [
+        "Пачаць бясплатны пробны перыяд"
+      ],
+      "Try the new desktop app": [
+        "Паспрабуйце новую праграму для камп'ютара"
       ]
     },
     "Get started checklist instructions": {
@@ -5285,6 +5376,24 @@
         "Будуць пазначаны прачытанымі ${ elementsCount } размоў.",
         "Будуць пазначаны прачытанымі ${ elementsCount } размоў."
       ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "Будзе пазначана непрачытанай ${ elementsCount } размова",
+        "Будзе пазначана непрачытанай ${ elementsCount } размовы",
+        "Будзе пазначана непрачытанай ${ elementsCount } размоў",
+        "Будзе пазначана непрачытанай ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "Будзе перамешчана ${ elementsCount } размова",
+        "Будзе перамешчана ${ elementsCount } размовы",
+        "Будзе перамешчана ${ elementsCount } размоў",
+        "будуць перемешчаны ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "З ${ elementsCount } размовы будзе знята пазнака:",
+        "З ${ elementsCount } размоў будзе знята пазнака:",
+        "З ${ elementsCount } размоў будзе знята пазнака:",
+        "З ${ elementsCount } размоў будзе знята пазнака:"
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } паведамленне будзе пазначана як:",
         "${ elementsCount } паведамленні будуць пазначаны як:",
@@ -5308,6 +5417,12 @@
         "Будуць перамешчаны ${ elementsCount } паведамленні",
         "Будуць перамешчаны ${ elementsCount } паведамленняў",
         "Будуць перамешчаны ${ elementsCount } паведамленняў"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "З ${ elementsCount } паведамлення будзе знята пазнака ад:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака ад:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака ад:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака ад:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } убудаваны відарыс",
@@ -5336,11 +5451,23 @@
       "${ MEET_APP_NAME } seats": [
         "Ліцэнзіі ${ MEET_APP_NAME }"
       ],
+      "${ n } unread conversation": [
+        "${ n } непрачытаная размова",
+        "${ n } непрачытаныя размовы",
+        "${ n } непрачытаных размоў",
+        "${ n } непрачытаных размоў"
+      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "Ачышчана ${ numberOfUTMTrackers } спасылка",
         "Ачышчана ${ numberOfUTMTrackers } спасылкі",
         "Ачышчана ${ numberOfUTMTrackers } спасылак",
         "Ачышчана ${ numberOfUTMTrackers } спасылак"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } паведамленне ў размове",
+        "${ NumMessages } паведамленні ў размове",
+        "${ NumMessages } паведамленняў у размове",
+        "${ NumMessages } паведамленняў у размове"
       ],
       "${ numOccurrences } occurrence found": [
         "Знойдзена ${ numOccurrences } паўтарэнне",
@@ -5390,6 +5517,18 @@
         "У Gmail знойдзена ${ providerFoldersNumLocalized } метак",
         "У Gmail знойдзена ${ providerFoldersNumLocalized } метак"
       ],
+      "${ pureAttachmentsCount } file attached": [
+        "Далучаны ${ pureAttachmentsCount } файл",
+        "Далучаны ${ pureAttachmentsCount } файлы",
+        "Далучаны ${ pureAttachmentsCount } файлаў",
+        "Далучаны ${ pureAttachmentsCount } файлаў"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } ліст у мінулым месяцы",
+        "${ receivedMessagesCount } лісты ў мінулым месяцы",
+        "${ receivedMessagesCount } лістоў у мінулым месяцы",
+        "${ receivedMessagesCount } лістоў у мінулым месяцы"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } каляндар з ${ providerCalendars.length }",
         "${ selectedCalendarsTotal } календары з ${ providerCalendars.length }",
@@ -5423,6 +5562,12 @@
         "${ subscription.UnreadMessageCount } непрачытаных",
         "${ subscription.UnreadMessageCount } непрачытаных"
       ],
+      "${ total } conversation": [
+        "${ total } размова",
+        "${ total } размовы",
+        "${ total } размоў",
+        "${ total } размоў"
+      ],
       "${ total } message": [
         "${ total } паведамленне",
         "${ total } паведамленні",
@@ -5434,6 +5579,12 @@
         "Знойдзена ${ total } карыстальнікі",
         "Знойдзена ${ total } карыстальнікаў",
         "Знойдзена ${ total } карыстальнікаў"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "Заблакіравана ${ trackersCount } праграма сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграмы сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграм сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграм сачэння электроннай пошты"
       ],
       "${ trackersCount } tracker blocked": [
         "Заблакіравана ${ trackersCount } праграма сачэння",
@@ -5618,6 +5769,12 @@
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпарт?"
       ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } размову?",
+        "Вы сапраўды незваротна хочаце выдаліць ${ count } размовы?",
+        "Вы сапраўды незваротна хочаце выдаліць ${ count } размоў?",
+        "Вы сапраўды незваротна хочаце выдаліць ${ count } размоў?"
+      ],
       "Are you sure you want to permanently delete ${ count } draft?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } чарнавік?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } чарнавікі?",
@@ -5689,6 +5846,9 @@
       ],
       "Clear data": [
         "Ачысціць даныя"
+      ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Пры ачышчэнні даных браўзера таксама адключаецца пошук змесціва паведамлення на гэтай прыладзе. Для пошуку ў паведамленнях іх неабходна будзе спампаваць яшчэ раз."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -5825,6 +5985,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Спампоўванне памочніка… ${ progressDisplay } ГБ"
+      ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
       ],
@@ -5918,6 +6081,12 @@
       "Expired": [
         "Пратэрмінавана"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвіліну",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвіліны",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвілін",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвілін"
+      ],
       "Expires in less than ${ hoursDiff } hour": [
         "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіну",
         "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіны",
@@ -5974,6 +6143,12 @@
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Змяшчае ${ numAttachments } далучэнне (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнні (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнняў (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнняў (${ numAttachmentsSize })"
       ],
       "here": [
         "тут"
@@ -6049,6 +6224,12 @@
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
+      ],
+      "Insert image": [
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -6211,6 +6392,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Адкрыйце дапаможнік, дзе можна даведацца пра рэкамендаваныя дзеянні і карысныя спасылкі."
+      ],
+      "Optional": [
+        "Неабавязкова"
       ],
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
@@ -6494,6 +6678,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Пачатковы адпраўнік гэтага паведамлення больш не з'яўляецца сапраўдным. Ваша паведамленне будзе адпраўлена з прадвызначанага адраса ${ defaultEmail }."
+      ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
       ],
@@ -6752,6 +6939,12 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
+      "You have **${ count } conversation** stored in this folder": [
+        "У гэтай папцы ў вас захоўваецца **${ count } размова**",
+        "У гэтай папцы ў вас захоўваецца **${ count } размовы**",
+        "У гэтай папцы ў вас захоўваецца **${ count } размоў**",
+        "У гэтай папцы ў вас захоўваецца **${ count } размоў**"
+      ],
       "You have **${ count } conversation** tagged with this label": [
         "У вас **${ count } размова** пазначана гэтай меткай",
         "У вас **${ count } размовы** пазначаны гэтай меткай",
@@ -6787,6 +6980,24 @@
         "Вы выбралі **${ count } размовы** з гэтай папкі",
         "Вы выбралі **${ count } размоў** з гэтай папкі",
         "Вы выбралі **${ count } размоў** з гэтай папкі"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Вы выбралі **${ count } размову** з гэтай меткай",
+        "Вы выбралі **${ count } размовы** з гэтай меткай",
+        "Вы выбралі **${ count } размоў** з гэтай меткай",
+        "Вы выбралі **${ count } размоў** з гэтай меткай"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Вы выбралі **${ count } паведамленне** з гэтай папкі",
+        "Вы выбралі **${ count } паведамленні** з гэтай папкі",
+        "Вы выбралі **${ count } паведамленняў** з гэтай папкі",
+        "Вы выбралі **${ count } паведамленняў** з гэтай папкі"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Вы выбралі **${ count } паведамленне** з гэтай меткай",
+        "Вы выбралі **${ count } паведамленні** з гэтай меткай",
+        "Вы выбралі **${ count } паведамленняў** з гэтай меткай",
+        "Вы выбралі **${ count } паведамленняў** з гэтай меткай"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Вы выбралі **${ elementsCount } размову** ў ${ location }",
@@ -7238,6 +7449,18 @@
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } непрачытаная размова",
+        "${ count } непрачытаныя размовы",
+        "${ count } непрачытаных размоў",
+        "${ count } непрачытаных размоў"
+      ],
+      "${ count } unread message": [
+        "${ count } непрачытанае паведамленне",
+        "${ count } непрачытаныя паведамленні",
+        "${ count } непрачытаных паведамленняў",
+        "${ count } непрачытаных паведамленняў"
+      ],
       "${ n } month": [
         "${ n } месяц",
         "${ n } месяцы",
@@ -7381,6 +7604,9 @@
       ],
       "Contacts": [
         "Кантакты"
+      ],
+      "Context total": [
+        "Усяго кантэксту"
       ],
       "Continue cancelling": [
         "Працягнуць скасаванне"
@@ -8127,6 +8353,11 @@
       ],
       "for ${ price }": [
         "за ${ price }"
+      ]
+    },
+    "Mailbox": {
+      "Inbox": [
+        "Уваходныя паведамленні"
       ]
     },
     "meet_2025: Addon": {
@@ -9603,6 +9834,9 @@
       "browser": [
         "браўзер"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Выдаленне перамешчаных у сметніцу лістоў і спаму пасля 30 дзён."
+      ],
       "Desktop": [
         "Для камп'ютара"
       ],
@@ -10179,6 +10413,9 @@
       "Filter groups": [
         "Фільтр груп"
       ],
+      "Filter labels": [
+        "Фільтраваць меткі"
+      ],
       "Filter quick actions": [
         "Фільтр хуткіх дзеянняў"
       ],
@@ -10552,6 +10789,14 @@
         "ваша падпіска"
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } дзень",
+        "${ remainingDays } дні",
+        "${ remainingDays } дзён",
+        "${ remainingDays } дзён"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Агляд бяспекі ўліковага запісу"
@@ -10657,11 +10902,34 @@
       ]
     },
     "Send email with warnings": {
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Наступны адрас з'яўляецца несапраўдным: ${ invalidAddresses }",
+        "Наступныя адрасы з'яўляюцца несапраўднымі: ${ invalidAddresses }",
+        "Наступныя адрасы з'яўляюцца несапраўднымі: ${ invalidAddresses }",
+        "Наступныя адрасы з'яўляюцца несапраўднымі: ${ invalidAddresses }"
+      ],
       "We have detected some warnings. The following email address may not receive emails:": [
         "Выяўлены некаторыя папярэджанні. Атрымальнік з наступным адрасам можа не атрымаць ваш ліст:",
         "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
         "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
         "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:"
+      ]
+    },
+    "Sent email icon": {
+      "End-to-end encrypted to verified recipient": [
+        "Зашыфравана скразным метадам для праверанага атрымальніка"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу праверанаму атрымальніку",
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу правераным атрымальнікам",
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу правераным атрымальнікам",
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу правераным атрымальнікам"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Адпраўлена вамі з дапамогай скразнога шыфравання праверанаму атрымальніку",
+        "Адпраўлена вамі з дапамогай скразнога шыфравання правераным атрымальнікам",
+        "Адпраўлена вамі з дапамогай скразнога шыфравання правераным атрымальнікам",
+        "Адпраўлена вамі з дапамогай скразнога шыфравання правераным атрымальнікам"
       ]
     },
     "session_recovery:available:action": {
@@ -11146,6 +11414,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "Spotlight": {
+      "Email tracking protection": [
+        "Абарона ад праграм сачэння электроннай пошты"
       ]
     },
     "sso": {
@@ -11721,6 +11994,18 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "Выдалена ${ count } размова",
+        "Выдалена ${ count } размовы",
+        "Выдалена ${ count } размоў",
+        "Выдалена ${ count } размоў"
+      ],
+      "${ count } draft deleted": [
+        "Выдалены ${ count } чарнавік",
+        "Выдалены ${ count } чарнавікі",
+        "Выдалены ${ count } чарнавікоў",
+        "Выдалены ${ count } чарнавікоў"
+      ],
       "${ count } message deleted": [
         "Выдалена ${ count } паведамленне",
         "Выдалена ${ count } паведамленні",
@@ -11732,6 +12017,12 @@
         "${ countMergeableContacts } кантакты выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна."
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размова.",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размовы.",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размоў.",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размоў."
       ],
       "${ elementsCount } conversation marked as read.": [
         "Пазначана як прачытанае ${ elementsCount } размова",
@@ -11804,6 +12095,12 @@
         "Пазначана як прачытанае ${ elementsCount } паведамленні.",
         "Пазначана як прачытанае ${ elementsCount } паведамленняў.",
         "Пазначана як прачытанае ${ elementsCount } паведамленняў."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "Пазначана зорачкай ${ elementsCount } паведамленне.",
+        "Пазначана зорачкай ${ elementsCount } паведамленні.",
+        "Пазначана зорачкай ${ elementsCount } паведамленняў.",
+        "Пазначана зорачкай ${ elementsCount } паведамленняў."
       ],
       "${ elementsCount } message marked as unread.": [
         "Пазначана як непрачытана ${ elementsCount } паведамленне",
@@ -12689,6 +12986,9 @@
       "Same inbox, shorter email address": [
         "Тая ж паштовая скрыня, карацейшы адрас электроннай пошты"
       ],
+      "Schedule send": [
+        "Запланаваць адпраўку"
+      ],
       "Schedule send:": [
         "Запланаваць адпраўку:"
       ],
@@ -12709,6 +13009,9 @@
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Адпраўка і атрыманне лістоў Gmail з дапамогай ${ MAIL_APP_NAME }"
+      ],
+      "Send with encryption disabled?": [
+        "Адправіць без шыфравання?"
       ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"

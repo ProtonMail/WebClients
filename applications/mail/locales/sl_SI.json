@@ -453,6 +453,9 @@
       "Generate password": [
         "Ustvari geslo"
       ],
+      "Generate text": [
+        "Ustvari besedilo"
+      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Pridobite ${ planName } za ${ priceCoupon }."
       ],
@@ -5652,6 +5655,9 @@
         "Vse (${ totalFoldersCount } oznake)",
         "Vse (${ totalFoldersCount } oznak)"
       ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Vsa sporočila s tega poštnega seznama bodo premaknjena v Arhiv."
+      ],
       "All messages stored with this label will be permanently deleted.": [
         "Vsa sporočila, shranjena s to oznako, bodo trajno izbrisana."
       ],
@@ -6432,6 +6438,9 @@
       "Please use another browser or download the file.": [
         "Prosimo, uporabite drug brskalnik ali prenesite datoteko."
       ],
+      "Please wait for the action to be completed": [
+        "Počakajte, da se dejanje zaključi"
+      ],
       "Please wait till your changes are synced with the server.": [
         "Počakajte, spremembe se sinhronizirajo s strežnikom."
       ],
@@ -6660,6 +6669,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Vaš brskalnik ne omogoča predogleda datotek PDF. Prenesite datoteko."
       ],
+      "This conversation contains non-trashed messages.": [
+        "Ta pogovor vsebuje sporočila, ki niso v smetnjaku."
+      ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Ta pogovor bo označen kot neželena pošta. Ali se želite tudi odjaviti od prihodnje pošte?",
         "Ta pogovora bosta označena kot neželena pošta. Ali se želite tudi odjaviti od prihodnje pošte?",
@@ -6779,6 +6791,9 @@
       ],
       "Upgrade to support our mission of privacy for all.": [
         "Nadgradite naročniški paket in podprite naše poslanstvo zasebnosti za vsakogar."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Nadgradite za odklepanje premijskih funkcij."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
         "Nadgradite naročniški paket ${ MAIL_APP_NAME } za uporabo s programi Apple Mail, Outlook ali Thunderbird."
@@ -8251,6 +8266,9 @@
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Za upravljanje s tem povabilom morate aktivirati vaše ključe glavnega zasebnega koledarja."
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Za ogled posodobljenega dogodka morate aktivirati vaše ključe glavnega zasebnega koledarja"
       ]
     },
     "Loading info": {
@@ -8354,6 +8372,9 @@
       ]
     },
     "Mailbox": {
+      "Archive": [
+        "Arhiv"
+      ],
       "Inbox": [
         "Prejeto"
       ]
@@ -9736,6 +9757,9 @@
       ],
       "iOS": [
         "iOS"
+      ],
+      "Protection from trackers": [
+        "Zaščita pred sledilniki"
       ],
       "Set a display name": [
         "Nastavi prikazno ime"
@@ -12404,6 +12428,9 @@
       "Day theme": [
         "Dnevna tema"
       ],
+      "Decryption error": [
+        "Napaka pri dešifriranju"
+      ],
       "Delete ${ count } contact": [
         "Izbriši ${ count } stik",
         "Izbriši ${ count } stika",
@@ -12622,6 +12649,9 @@
       ],
       "Mark all messages as read": [
         "Vsa sporočila označi kot prebrana"
+      ],
+      "Mark conversations as unread": [
+        "Označite pogovore kot neprebrane"
       ],
       "Mark email as legitimate": [
         "Označi e-pošto kot legitimno."
