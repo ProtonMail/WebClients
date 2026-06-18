@@ -395,13 +395,19 @@ export const getLabelName = (labelID: string, labels: Label[] = [], folders: Fol
 };
 
 // Helper to get the label with categories name support
-export const getLabelNameWithCategory = (
-    labelID: string,
-    labels: Label[] = [],
-    folders: Folder[] = [],
-    categoryIDs: string[] = [],
-    hasAccessToCategoryView = false
-) => {
+export const getLabelNameWithCategory = ({
+    labelID,
+    labels,
+    folders,
+    categoryIDs,
+    hasAccessToCategoryView,
+}: {
+    labelID: string;
+    labels: Label[];
+    folders: Folder[];
+    categoryIDs: string[];
+    hasAccessToCategoryView: boolean;
+}) => {
     const category = categoryIDs[0];
     if (labelID === MAILBOX_LABEL_IDS.INBOX && hasAccessToCategoryView && category) {
         const folders = getStandardFolders();

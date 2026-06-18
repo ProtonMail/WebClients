@@ -76,12 +76,24 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const labelName = useMemo(() => {
         if (count === 0) {
             if (!isLoadedEmpty) {
-                return getLabelNameWithCategory(labelID, labels, folders, categoryIDs, hasAccessToCategoryView);
+                return getLabelNameWithCategory({
+                    labelID,
+                    labels: labels || [],
+                    folders: folders || [],
+                    categoryIDs: categoryIDs,
+                    hasAccessToCategoryView: hasAccessToCategoryView,
+                });
             }
             return c('Info').t`No messages found`;
         }
 
-        return getLabelNameWithCategory(labelID, labels, folders, categoryIDs, hasAccessToCategoryView);
+        return getLabelNameWithCategory({
+            labelID,
+            labels: labels || [],
+            folders: folders || [],
+            categoryIDs,
+            hasAccessToCategoryView,
+        });
     }, [labelID, labels, folders, count, isLoadedEmpty, categoryIDs, hasAccessToCategoryView]);
 
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(appLocation), [appLocation]);
