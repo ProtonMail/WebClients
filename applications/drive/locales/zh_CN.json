@@ -937,7 +937,7 @@
         "扫描并下载 (${ nbSelected })"
       ],
       "Scan and Download": [
-        "扫码下载"
+        "扫描并下载"
       ],
       "Search": [
         "搜索"
@@ -7237,6 +7237,9 @@
       ],
       "All your files will be imported": [
         "您所有的文件将被导入"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "我们无法验证 ${ nameAuthor } 上传了 ${ nodeName }。以下内容可能已被篡改：文件数据顺序。请仅在信任时打开。"
       ]
     },
     "info": {
@@ -9451,7 +9454,7 @@
         "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "查看参会者的空闲时间，节省会议安排时间"
+        "查看参与者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
@@ -9927,6 +9930,9 @@
       ],
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } 张照片已从“${ albumName }”中移除"
+      ],
+      "Failed to load sharing details": [
+        "加载共享详情失败"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13456,6 +13462,12 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "我们无法确认该名称由 ${ claimedNameAuthor } 创建或修改。原因：${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "我们无法确认该节点由 ${ claimedKeyAuthor } 创建。原因：${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13558,7 +13570,7 @@
         "新！"
       ],
       "Instant AI assistance, human expert on hand!": [
-        "即时 AI 协助，真人专家随时支持！"
+        "获取 AI 和人工专家的即时协助！"
       ],
       "Instant assistance with AI and human experts.": [
         "获取 AI 和人工专家的即时协助"
