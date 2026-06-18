@@ -6716,6 +6716,9 @@
         "Δεν μπορέσαμε να αποθηκεύσουμε αυτή τη φωτογραφία στο Drive σας",
         "Δεν μπορέσαμε να αποθηκεύσουμε αυτές τις φωτογραφίες στο Drive σας"
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο/η ${ nameAuthor } ανέβασε το ${ nodeName }. Το ακόλουθο ενδέχεται να έχει παραποιηθεί: σειρά δεδομένων αρχείου. Ανοίξτε το μόνο αν το εμπιστεύεστε."
+      ],
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
@@ -9547,6 +9550,9 @@
       ],
       "Failed to convert external invitation": [
         "Αποτυχία μετατροπής εξωτερικής πρόσκλησης"
+      ],
+      "Failed to load sharing details": [
+        "Αποτυχία φόρτωσης λεπτομερειών κοινής χρήσης"
       ],
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλούμε δοκιμάστε ξανά"
@@ -12715,9 +12721,6 @@
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
       ],
-      "Manage secure link": [
-        "Διαχείριση ασφαλούς συνδέσμου"
-      ],
       "Media type": [
         "Τύπος μέσου"
       ],
@@ -13169,6 +13172,12 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Δεν μπορέσαμε να επιβεβαιώσουμε ότι το περιεχόμενο του αρχείου μεταφορτώθηκε από τον ${ claimedContentAuthor }. Ο λόγος είναι: ${ activeRevision.contentAuthor.error.error }"
       ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Δεν μπορέσαμε να επιβεβαιώσουμε ότι το όνομα δημιουργήθηκε ή τροποποιήθηκε από τον ${ claimedNameAuthor }. Ο λόγος είναι: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Δεν μπορέσαμε να επιβεβαιώσουμε ότι ο κόμβος δημιουργήθηκε από τον ${ claimedKeyAuthor }. Ο λόγος είναι: ${ node.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Προσφορά καλωσορίσματος"
       ],
@@ -13283,6 +13292,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
       ],
       "Load image": [
         "Φόρτωση εικόνας"
