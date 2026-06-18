@@ -54,6 +54,10 @@ im.$media-expressions: $media-expressions;
 		letter-spacing: -0.88px;
 	}
 
+	&--upsells {
+		font-size: rem(26);
+	}
+
 	&.small {
 		font-size: rem(20);
 		line-height: rem(24);

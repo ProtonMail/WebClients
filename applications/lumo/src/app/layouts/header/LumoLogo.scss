@@ -16,18 +16,3 @@ a {
 		text-decoration: none !important;
 	}
 }
-
-.tier-tag {
-	text-decoration: none !important;
-	display: inline-block;
-
-	&.pro {
-		background-color: var(--lumo-logo-tag-pro-background);
-		color: var(--lumo-logo-tag-pro-text);
-	}
-
-	&.plus {
-		background-color: var(--lumo-logo-tag-plus-background);
-		color: var(--lumo-logo-tag-plus-text);
-	}
-}
