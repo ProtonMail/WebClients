@@ -945,6 +945,9 @@
       "Hide": [
         "Skjul"
       ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Skjul ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Hide more benefits": [
         "Skjul flere fordele"
       ],
@@ -1653,6 +1656,9 @@
       "Stay": [
         "Bliv her"
       ],
+      "Stop": [
+        "Stop"
+      ],
       "Stop using single sign-on": [
         "Stop med at bruge enkeltlogon"
       ],
@@ -1995,6 +2001,9 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "Add-on": [
+        "Udvidelse"
       ],
       "Dedicated VPN servers": [
         "Dedikerede VPN-servere"
@@ -6627,6 +6636,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Hvis de ikke bad om din hjælp**, er det muligt, at en anden forsøger at få adgang til deres konto. Ignorer i så fald denne anmodning."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Beskyt din arv.** Opgrader dit abonnement for at tilføje nødkontakter."
+      ],
       "Access account": [
         "Adgangskonto"
       ],
@@ -9777,6 +9789,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } bruger skal acceptere sin invitation for at begynde at modtage gruppe-e-mails.",
+        "${ invitedMemberCount } brugere skal acceptere deres invitation for at begynde at modtage gruppe-e-mails."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker at dele data med dig i ${ PASS_APP_NAME }"
       ],
@@ -9850,6 +9866,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
+        "${ pendingAdminMemberCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
@@ -11172,6 +11192,9 @@
       "here": [
         "her"
       ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Hej! Beskriv det filter, du ønsker, så skriver jeg Sieve-scriptet. Jeg kan også justere det, der allerede er i editoren."
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skjuler identifikationsoplysninger ved at indlæse eksternt indhold via en proxy. Mulighed for at gemme indhold som vedhæftede filer."
       ],
@@ -11672,6 +11695,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Nye aktivitetsdata vil ophøre med at blive indsamlet og vist."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Ny gruppe oprettet via din identitetsudbyder og afventer gennemgang."
       ],
       "New sidebar": [
         "Nyt sidepanel"
@@ -12525,6 +12551,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
+      ],
+      "Thinking…": [
+        "Tænker…"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -14805,6 +14834,9 @@
       ],
       "Enter code": [
         "Indtast kode"
+      ],
+      "Enter current password": [
+        "Indtast nuværende adgangskode"
       ],
       "Enter name or email address": [
         "Tilføj navn eller e-mailadresse"
@@ -18203,11 +18235,17 @@
       "1-2 emails per month": [
         "1-2 e-mails pr. måned"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 e-mails om året. Påmindelser om at holde dine gendannelsesmetoder opdaterede."
+      ],
       "2-4 emails per year": [
         "2-4 e-mails pr. år"
       ],
       "4-6 emails per year": [
         "4-6 e-mails om året"
+      ],
+      "Account email updates": [
+        "Kontoopdateringer på e-mail"
       ],
       "Application notifications": [
         "Applikationsnotifikationer"
@@ -18233,8 +18271,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Deltag i undersøgelser for at forbedre ${ BRAND_NAME }-tjenester"
       ],
-      "Product updates": [
-        "Produktopdateringer"
+      "Product email updates": [
+        "Produktopdateringer på e-mail"
+      ],
+      "Recovery checklist": [
+        "Gendannelsestjekliste"
       ]
     },
     "Notification": {
@@ -18306,6 +18347,9 @@
       ],
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
+      ],
+      "Sieve script inserted": [
+        "Sieve-script indsat"
       ],
       "The key has been deleted.": [
         "Nøglen er blevet slettet."
@@ -19974,6 +20018,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Describe the filter you want…": [
+        "Beskriv det filter du ønsker..."
+      ],
       "domain.com": [
         "domæne.dk"
       ],
@@ -21144,8 +21191,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Organisationsadmin"
+      "Owner": [
+        "Ejer"
       ],
       "Security Admin": [
         "Sikkerhedsadmin"
@@ -21666,6 +21713,9 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Dette genopretter adgangen til e-mails, kontakter, filer, adgangskoder, og alt andet krypteret data på din konto efter adgangskoden er blevet nulstillet."
       ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "For at hjælpe dig med at huske din adgangskode vil vi med jævne mellemrum bede dig om at indtaste den."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Indtast bekræftelseskoden sendt til ${ boldEmail } for at bekræfte at e-mailadressen er din."
       ],
@@ -21698,6 +21748,9 @@
       ],
       "Verify recovery phone": [
         "Bekræft telefon til gendannelse"
+      ],
+      "Verify your password": [
+        "Bekræft din adgangskode"
       ],
       "Verify your recovery email": [
         "Bekræft din e-mail til gendannelse"
@@ -21962,6 +22015,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Føj til ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Giver dig mulighed for at tilføje en Zoom-videokonference til enhver af dine kalenderbegivenheder"
       ]
@@ -22520,6 +22576,9 @@
       "Connect all your devices": [
         "Forbind alle dine enheder"
       ],
+      "Continue with ${ planName }": [
+        "Fortsæt med ${ planName }"
+      ],
       "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
@@ -22546,6 +22605,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratis i ${ TRIAL_DURATION_DAYS } dage"
+      ],
+      "From ${ priceElement }": [
+        "Fra ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Få ${ referralInfo.uiData.refereeRewardAmount } i kreditter"
@@ -22646,6 +22708,9 @@
       ],
       "Share and collaborate of files": [
         "Del og samarbejd om filer"
+      ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Tilmeld dig og få ${ referralInfo.uiData.refereeRewardAmount } i kredit"
       ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "Tilmeld dig ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
@@ -23695,6 +23760,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } bruger",
         "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } brugere"
@@ -24816,6 +24884,9 @@
         "${ friendsSubscribed } ven har abonneret",
         "${ friendsSubscribed } venner har abonneret"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Eksportværktøj til ${ MAIL_APP_NAME }"
       ],
@@ -25316,6 +25387,9 @@
       "Dashboard": [
         "Kontrolpanel"
       ],
+      "Data collection": [
+        "Dataindsamling"
+      ],
       "Data locked": [
         "Data låst"
       ],
@@ -25762,6 +25836,9 @@
       "Help center": [
         "Hjælp-center"
       ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjælp fra ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Help us improve": [
         "Hjælp os med at blive bedre"
       ],
@@ -26095,6 +26172,9 @@
       ],
       "Priority support:": [
         "prioriteret support:"
+      ],
+      "Privacy": [
+        "Privatliv"
       ],
       "Privacy and data collection": [
         "Privatliv og dataindsamling"
@@ -26963,6 +27043,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inkluderer professionelle e-mails med @ditdomæne.com, lagerplads i skyen med dokumenter der kan samarbejdes om, planlægning og afholdelse af videomøder, adgangskodehåndtering, en sikker ${ VPN_SHORT_APP_NAME }, og mere."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer, der ikke bruger tofaktorgodkendelse, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Enkeltlogonbrugere vil ikke modtage e-mailpåmindelsen."

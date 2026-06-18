@@ -6627,6 +6627,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**S'ils n'ont pas demandé votre aide**, il est possible que quelqu'un d'autre essaie d'accéder à leur compte. Dans ce cas, ignorez cette demande."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Protégez votre héritage.** Passez à un abonnement supérieur pour ajouter des contacts d'urgence."
+      ],
       "Access account": [
         "Accéder au compte"
       ],
@@ -18218,11 +18221,17 @@
       "1-2 emails per month": [
         "1 ou 2 messages par mois"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1 à 4 e-mails par an. Des rappels pour vous aider à maintenir à jour vos méthodes de récupération."
+      ],
       "2-4 emails per year": [
         "2 à 4 messages par an"
       ],
       "4-6 emails per year": [
         "4 à 6 messages par an"
+      ],
+      "Account email updates": [
+        "Nouveautés du compte par e-mail"
       ],
       "Application notifications": [
         "Notification de l'application"
@@ -18248,8 +18257,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participez aux enquêtes pour améliorer les services ${ BRAND_NAME }."
       ],
-      "Product updates": [
-        "Nouveautés produits"
+      "Product email updates": [
+        "Nouveautés des produits par e-mail"
+      ],
+      "Recovery checklist": [
+        "Liste de récupération"
       ]
     },
     "Notification": {
@@ -21126,8 +21138,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Administrateur de l'organisation"
+      "Owner": [
+        "Propriétaire"
       ],
       "Security Admin": [
         "Administrateur de sécurité"
@@ -21947,6 +21959,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Ajouter à ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Ceci vous permet d'ajouter une vidéoconférence Zoom à n'importe lequel de vos événements de calendrier."
       ],
@@ -25319,6 +25334,9 @@
       "Dashboard": [
         "Tableau de bord"
       ],
+      "Data collection": [
+        "Collecte de données"
+      ],
       "Data locked": [
         "Les données sont verrouillées."
       ],
@@ -26101,6 +26119,9 @@
       ],
       "Priority support:": [
         "Assistance prioritaire :"
+      ],
+      "Privacy": [
+        "Confidentialité"
       ],
       "Privacy and data collection": [
         "Vie privée et collecte de données"
