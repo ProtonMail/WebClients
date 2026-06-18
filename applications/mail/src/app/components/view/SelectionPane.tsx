@@ -16,6 +16,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -24,12 +25,7 @@ import { getLabelNameWithCategory } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import {
-    contextTotal,
-    loadedEmpty,
-    selectCategoryIDs,
-    taskRunningInLabel,
-} from '../../store/elements/elementsSelectors';
+import { loadedEmpty, selectCategoryIDs, taskRunningInLabel } from '../../store/elements/elementsSelectors';
 import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
@@ -65,16 +61,18 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const [folders] = useFolders();
 
     const taskIsRunningInLabel = useMailSelector((state) => taskRunningInLabel(state, { labelID }));
-
-    const isCustomLabel = testIsCustomLabel(labelID, labels);
-    const total = useMailSelector(contextTotal) || 0;
     const isLoadedEmpty = useMailSelector(loadedEmpty);
-    const checkeds = checkedIDs.length;
-
-    const { hasAccessToCategoryView } = useCategoriesData();
     const categoryIDs = useMailSelector(selectCategoryIDs);
 
+    const { getCurrentLocationCount } = useMailboxCounter();
+
+    const isCustomLabel = testIsCustomLabel(labelID, labels);
+    const total = getCurrentLocationCount().Total;
+    const checkeds = checkedIDs.length;
     const count = checkeds || total;
+
+    const { hasAccessToCategoryView } = useCategoriesData();
+
     const labelName = useMemo(() => {
         if (count === 0) {
             if (!isLoadedEmpty) {

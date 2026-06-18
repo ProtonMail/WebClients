@@ -7,12 +7,14 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import capitalize from '@proton/utils/capitalize';
 
-import { contextTotal } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -41,27 +43,8 @@ const WelcomePane = ({ mailSettings, location }: Props) => {
 
     const [user, loadingUser] = useUser();
 
-    const total = useMailSelector(contextTotal) || 0;
-
-    const userName = (
-        <span key="display-name" className="inline-block max-w-full text-ellipsis align-bottom">
-            {capitalize(user.DisplayName)}
-        </span>
-    );
-
-    const totalLabel = conversationMode ? (
-        <strong key="total-label">
-            {c('Info').ngettext(msgid`${total} conversation`, `${total} conversations`, total)}
-        </strong>
-    ) : (
-        <strong key="total-label">{c('Info').ngettext(msgid`${total} message`, `${total} messages`, total)}</strong>
-    );
-
-    const getUnreadText = (unread: ReactNode) => {
-        return c('Info').jt`You have ${unread} in your inbox.`;
-    };
-
-    const counterMessage = getUnreadText(totalLabel);
+    const categoryIDs = useMailSelector(selectCategoryIDs);
+    const { getCurrentLocationCount } = useMailboxCounter();
 
     if (loadingUser) {
         return (
@@ -71,6 +54,31 @@ const WelcomePane = ({ mailSettings, location }: Props) => {
         );
     }
 
+    const userName = (
+        <span key="display-name" className="inline-block max-w-full text-ellipsis align-bottom">
+            {capitalize(user.DisplayName)}
+        </span>
+    );
+
+    const total = getCurrentLocationCount().Total;
+    const totalLabel = conversationMode ? (
+        <strong key="total-label">
+            {c('Info').ngettext(msgid`${total} conversation`, `${total} conversations`, total)}
+        </strong>
+    ) : (
+        <strong key="total-label">{c('Info').ngettext(msgid`${total} message`, `${total} messages`, total)}</strong>
+    );
+
+    const getUnreadText = (unread: ReactNode) => {
+        if (categoryIDs.length === 0) {
+            return c('Info').jt`You have ${unread} in your inbox.`;
+        } else {
+            const label = getLabelFromCategoryId(categoryIDs[0]);
+            return c('Info').jt`You have ${unread} in ${label}.`;
+        }
+    };
+
+    const counterMessage = getUnreadText(totalLabel);
     return (
         <>
             <Container>
