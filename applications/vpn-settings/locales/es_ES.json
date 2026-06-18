@@ -1350,6 +1350,9 @@
         "${ users } usuario",
         "${ users } usuarios"
       ],
+      "Add-on": [
+        "Complemento"
+      ],
       "Dedicated VPN servers": [
         "Servidores VPN dedicados"
       ],
@@ -11892,11 +11895,17 @@
       "1-2 emails per month": [
         "1 a 2 correos al mes"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 correos al año. Recordatorios para mantener actualizados tus métodos de recuperación."
+      ],
       "2-4 emails per year": [
         "2 a 4 correos al año"
       ],
       "4-6 emails per year": [
         "4 a 6 correos al año"
+      ],
+      "Account email updates": [
+        "Actualizaciones de la cuenta por correo electrónico"
       ],
       "Application notifications": [
         "Notificaciones de la aplicación"
@@ -11922,8 +11931,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participa en las encuestas para mejorar los servicios de ${ BRAND_NAME }"
       ],
-      "Product updates": [
-        "Actualizaciones de productos"
+      "Product email updates": [
+        "Actualizaciones del producto por correo electrónico"
+      ],
+      "Recovery checklist": [
+        "Lista de comprobación de recuperación"
       ]
     },
     "Notification": {
@@ -13788,6 +13800,11 @@
         "Editar regla de conservación"
       ]
     },
+    "Role": {
+      "Owner": [
+        "Propietario"
+      ]
+    },
     "Safety review": {
       "Check account security": [
         "Verificar la seguridad de la cuenta"
@@ -15048,6 +15065,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuario",
         "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuarios"
@@ -15967,6 +15987,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } amigo suscrito",
         "${ friendsSubscribed } amigos suscritos"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para organizaciones"

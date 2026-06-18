@@ -12121,11 +12121,17 @@
       "1-2 emails per month": [
         "1-2 E-Mails pro Monat"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1 – 4 E-Mails pro Jahr. Erinnerungen daran, deine Wiederherstellungsmethoden auf dem neuesten Stand zu halten."
+      ],
       "2-4 emails per year": [
         "2-4 E-Mails pro Jahr"
       ],
       "4-6 emails per year": [
         "4-6 E-Mails pro Jahr"
+      ],
+      "Account email updates": [
+        "E-Mail-Benachrichtigungen zum Konto"
       ],
       "Application notifications": [
         "Anwendungsbenachrichtigungen"
@@ -12151,8 +12157,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Nimm an Umfragen teil, um die Dienstleistungen von ${ BRAND_NAME } zu verbessern."
       ],
-      "Product updates": [
-        "Produkt-Updates"
+      "Product email updates": [
+        "E-Mail-Benachrichtigungen zu Produkten"
+      ],
+      "Recovery checklist": [
+        "Checkliste für die Wiederherstellung"
       ]
     },
     "Notification": {
@@ -14032,8 +14041,8 @@
       ]
     },
     "Role": {
-      "Organization Admin": [
-        "Organisationsadministrator"
+      "Owner": [
+        "Besitzer"
       ],
       "Security Admin": [
         "Sicherheitsadministrator"
