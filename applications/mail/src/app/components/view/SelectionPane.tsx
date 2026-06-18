@@ -8,6 +8,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { isCustomLabel as testIsCustomLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -15,15 +16,16 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isSearch as testIsSearch } from '../../helpers/elements';
-import { getLabelName } from '../../helpers/labels';
+import { getLabelNameWithCategory } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { contextTotal, loadedEmpty, taskRunningInLabel } from '../../store/elements/elementsSelectors';
+import { loadedEmpty, selectCategoryIDs, taskRunningInLabel } from '../../store/elements/elementsSelectors';
 import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
@@ -59,23 +61,40 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const [folders] = useFolders();
 
     const taskIsRunningInLabel = useMailSelector((state) => taskRunningInLabel(state, { labelID }));
+    const isLoadedEmpty = useMailSelector(loadedEmpty);
+    const categoryIDs = useMailSelector(selectCategoryIDs);
+
+    const { getCurrentLocationCount } = useMailboxCounter();
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
-    const total = useMailSelector(contextTotal) || 0;
-    const isLoadedEmpty = useMailSelector(loadedEmpty);
+    const total = getCurrentLocationCount().Total;
     const checkeds = checkedIDs.length;
-
     const count = checkeds || total;
+
+    const { hasAccessToCategoryView } = useCategoriesData();
+
     const labelName = useMemo(() => {
         if (count === 0) {
             if (!isLoadedEmpty) {
-                return getLabelName(labelID, labels, folders);
+                return getLabelNameWithCategory({
+                    labelID,
+                    labels: labels || [],
+                    folders: folders || [],
+                    categoryIDs: categoryIDs,
+                    hasAccessToCategoryView: hasAccessToCategoryView,
+                });
             }
             return c('Info').t`No messages found`;
         }
 
-        return getLabelName(labelID, labels, folders);
-    }, [labelID, labels, folders, count, isLoadedEmpty]);
+        return getLabelNameWithCategory({
+            labelID,
+            labels: labels || [],
+            folders: folders || [],
+            categoryIDs,
+            hasAccessToCategoryView,
+        });
+    }, [labelID, labels, folders, count, isLoadedEmpty, categoryIDs, hasAccessToCategoryView]);
 
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(appLocation), [appLocation]);
     const isSearch = testIsSearch(searchParameters);
