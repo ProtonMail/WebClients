@@ -1,10 +1,69 @@
+import { useEffect, useState } from 'react';
+
 import { Meta, Source } from '@storybook/addon-docs/blocks';
 
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
+
 <Meta title="CSS Utilities/Typography" />
+
+export const BackToTop = () => {
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setVisible(window.scrollY > 500);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    if (!visible) {
+        return null;
+    }
+
+    return (
+        <button
+            type="button"
+            aria-label="Back to top"
+            className="inline-flex items-center gap-1"
+            style={{
+                position: 'fixed',
+                right: '1.5rem',
+                bottom: '1.5rem',
+                zIndex: 1000,
+                padding: '0.5rem 0.75rem',
+                borderRadius: '2rem',
+                border: '1px solid var(--border-norm)',
+                background: 'var(--background-norm)',
+                color: 'var(--text-norm)',
+                boxShadow: '0 0.5rem 1rem rgba(0, 0, 0, 0.15)',
+                cursor: 'pointer',
+            }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+            <IcChevronUp size={3} /> Back to top
+        </button>
+    );
+
+};
 
 # Typography helpers
 
 For a visual overview of all available **[font weights](?path=/docs/core-concepts-typography--font)**, **[sizes](?path=/docs/core-concepts-typography--text)** and **[colors](?path=/docs/core-concepts-typography--colors)**, see [Core Concepts/Typography](?path=/docs/core-concepts-typography--headings#normal-text)
+
+## Table of contents
+
+- **[Overflow & truncation](#overflow--truncation)** — [`text-ellipsis`](#text-ellipsis), [`text-cut`](#text-cut), [`text-hyphens`](#text-hyphens), [`text-break`](#text-break), [`text-no-wrap`](#text-no-wrap), [`text-ellipsis` with `text-pre`](#text-ellipsis-with-text-pre)
+- **[Text transform](#text-transform)** — [`text-uppercase`](#text-uppercase), [`text-capitalize`](#text-capitalize), [`text-capitalize-block`](#text-capitalize-block)
+- **[Font weight & style](#font-weight--style)** — [`text-strong`](#text-strong), [`text-semibold`](#text-semibold), [`text-italic`](#text-italic), [`text-strike`](#text-strike)
+- **[Line height](#line-height)** — [`lh-rg`](#lh-rg)
+- **[Text decoration](#text-decoration)** — [`text-no-decoration`](#text-no-decoration), [`text-underline`](#text-underline), [`hover:text-underline`](#hovertext-underline)
+- **[Text alignment](#text-alignment)** — [`text-left` / `text-center` / `text-right`](#text-left-text-center-text-right), [vertical alignment](#vertical-alignment)
+- **[Whitespace](#whitespace)** — [`text-pre-wrap`](#text-pre-wrap), [`text-pre`](#text-pre), [`text-wrap-balance`](#text-wrap-balance)
+- **[Numeric](#numeric)** — [`text-tabular-nums`](#text-tabular-nums)
+
+## Overflow & truncation
+
+### `text-ellipsis`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -31,8 +90,115 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+### `text-cut`
+
+<div class="flex justify-space-between mb-8 flex-column md:flex-row">
+    <div class="w-1/2 self-center">
+        For browsers that do <strong>not</strong> support <code>hyphens: auto</code>: applies{' '}
+        <code>word-wrap: break-word</code>.<br />
+        For browsers that <strong>do</strong> support <code>hyphens: auto</code>: no <code>word-wrap: break-word</code>,
+        only hyphenation.
+        <br />= to break a text, at any price.
+    </div>
+    <div class="w-1/2">
+        <Source
+            language="html"
+            light
+            format
+            code={`
+<span className="text-cut">…</span>
+`}
+        />
+    </div>
+</div>
+
+### `text-hyphens`
+
+<div class="flex justify-space-between mb-8 flex-column md:flex-row">
+    <div class="w-1/2 self-center">
+        Applies hyphenation only to content (no fallback with <code>word-break</code>).
+    </div>
+    <div class="w-1/2">
+        <Source
+            language="html"
+            light
+            format
+            code={`
+<span className="text-hyphens">…</span>
+`}
+        />
+    </div>
+</div>
+
+### `text-break`
+
+<div class="flex justify-space-between mb-8 flex-column md:flex-row">
+    <div class="w-1/2 self-center">
+        Applies only <code>word-break: break-word;</code> to element (when hyphenation is not needed), if needed, you
+        have also <code>text-break-all</code> (<code>word-break: break-word;</code>).
+    </div>
+    <div class="w-1/2">
+        <Source
+            language="html"
+            light
+            format
+            code={`
+<span className="text-break">…</span>
+`}
+        />
+    </div>
+</div>
+
+### `text-no-wrap`
+
+<div class="flex justify-space-between mb-8 flex-column md:flex-row">
+    <div class="w-1/2 self-center">
+        <p class="text-left">
+            Applies <code>white-space: no-wrap</code>, for some very rare use-cases (better use{' '}
+            <code>text-ellipsis)</code>
+        </p>
+    </div>
+    <div class="w-1/2">
+        <Source
+            language="html"
+            light
+            format
+            code={`
+<p className="text-no-wrap">no wrapping.</p>
+`}
+        />
+    </div>
+</div>
+
+### `text-ellipsis` with `text-pre`
+
+If you want to apply <code>text-ellipsis</code> and <code>pre</code> classes, you need to wrap your content like this:
+
+<div class="flex justify-space-between mb-8 flex-column md:flex-row">
+  <div class="w-1/2 self-center">
+    <span class="text-ellipsis inline-block max-w-1/3" ><span class="text-pre">Lorem    ipsum dolor sit amet</span></span><br />
+    To be used with <code>max-w-full</code> and <code>inline-block</code> (or with flexbox helpers).
+  </div>
+  <div class="w-1/2">
+<Source
+  language='html'
+  light
+  format
+  code={`
+<span className="text-ellipsis">
+  <span className="text-pre">
+  Lorem    ipsum dolor sit amet
+  </span>
+  </span>
+`}
+/>
+
+  </div>
+</div>
+
+## Text transform
+
+### `text-uppercase`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -50,8 +216,7 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+### `text-capitalize`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -69,8 +234,7 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+### `text-capitalize-block`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -89,8 +253,9 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+## Font weight & style
+
+### `text-strong`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -110,8 +275,7 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+### `text-semibold`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
   <div class="w-1/2 self-center">
@@ -130,8 +294,7 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
   </div>
 </div>
 
-<br />
-<br />
+### `text-italic`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -149,8 +312,7 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+### `text-strike`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -168,8 +330,9 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+## Line height
+
+### `lh-rg`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -192,70 +355,9 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+## Text decoration
 
-<div class="flex justify-space-between mb-8 flex-column md:flex-row">
-    <div class="w-1/2 self-center">
-        For browsers that do <strong>not</strong> support <code>hyphens: auto</code>: applies{' '}
-        <code>word-wrap: break-word</code>.<br />
-        For browsers that <strong>do</strong> support <code>hyphens: auto</code>: no <code>word-wrap: break-word</code>,
-        only hyphenation.
-        <br />= to break a text, at any price.
-    </div>
-    <div class="w-1/2">
-        <Source
-            language="html"
-            light
-            format
-            code={`
-<span className="text-cut">…</span>
-`}
-        />
-    </div>
-</div>
-
-<br />
-<br />
-
-<div class="flex justify-space-between mb-8 flex-column md:flex-row">
-    <div class="w-1/2 self-center">
-        Applies hyphenation only to content (no fallback with <code>word-break</code>).
-    </div>
-    <div class="w-1/2">
-        <Source
-            language="html"
-            light
-            format
-            code={`
-<span className="text-hyphens">…</span>
-`}
-        />
-    </div>
-</div>
-
-<br />
-<br />
-
-<div class="flex justify-space-between mb-8 flex-column md:flex-row">
-    <div class="w-1/2 self-center">
-        Applies only <code>word-break: break-word;</code> to element (when hyphenation is not needed), if needed, you
-        have also <code>text-break-all</code> (<code>word-break: break-word;</code>).
-    </div>
-    <div class="w-1/2">
-        <Source
-            language="html"
-            light
-            format
-            code={`
-<span className="text-break">…</span>
-`}
-        />
-    </div>
-</div>
-
-<br />
-<br />
+### `text-no-decoration`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -273,8 +375,7 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+### `text-underline`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -292,8 +393,7 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+### `hover:text-underline`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -311,8 +411,9 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
+## Text alignment
+
+### `text-left` / `text-center` / `text-right`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -330,9 +431,6 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
     </div>
 </div>
 
-<br />
-<br />
-
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
         <p class="text-center">Centered-aligned text</p>
@@ -348,9 +446,6 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
         />
     </div>
 </div>
-
-<br />
-<br />
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -369,6 +464,8 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
 </div>
 
 These 3 text-align helpers are available with `sm`, `md`, `lg`, `xl` variants, you can check the list on the <a href="?path=/docs/css-utilities-responsive--responsive">responsive</a> page.
+
+### Vertical alignment
 
 Other text alignment helpers: <code>align-top</code>,<code>align-bottom</code>, <code>align-middle</code> may be used (<code>align-sub</code> and <code>align-baseline</code> are also available).
 
@@ -397,8 +494,9 @@ Other text alignment helpers: <code>align-top</code>,<code>align-bottom</code>, 
     </div>
 </div>
 
-<br />
-<br />
+## Whitespace
+
+### `text-pre-wrap`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -421,8 +519,7 @@ and long      spaces</p>
     </div>
 </div>
 
-<br />
-<br />
+### `text-pre`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -440,8 +537,7 @@ and long      spaces</p>
     </div>
 </div>
 
-<br />
-<br />
+### `text-wrap-balance`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
@@ -461,15 +557,35 @@ and long      spaces</p>
     </div>
 </div>
 
-<br />
-<br />
+## Numeric
+
+### `text-tabular-nums`
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 self-center">
-        <p class="text-left">
-            Applies <code>white-space: no-wrap</code>, for some very rare use-cases (better use{' '}
-            <code>text-ellipsis)</code>
-        </p>
+        Applies <code>font-variant-numeric: tabular-nums</code> to element. Useful when displaying numbers that should
+        align vertically (e.g. badges, tables, counters, rankings), as all digits occupy the same width.
+        <br />
+        <br />
+        Notice how the digits below line up into clean columns only with the helper applied:
+        <div class="flex gap-4 mt-2">
+            <div>
+                <div class="color-weak text-sm mb-1">Without (default)</div>
+                <div class="text-right">1,111.11</div>
+                <div class="text-right">9,999.00</div>
+                <div class="text-right">404.40</div>
+                <div class="text-right">88,888.88</div>
+            </div>
+            <div>
+                <div class="color-weak text-sm mb-1">
+                    With <code>text-tabular-nums</code>
+                </div>
+                <div class="text-right text-tabular-nums">1,111.11</div>
+                <div class="text-right text-tabular-nums">9,999.00</div>
+                <div class="text-right text-tabular-nums">404.40</div>
+                <div class="text-right text-tabular-nums">88,888.88</div>
+            </div>
+        </div>
     </div>
     <div class="w-1/2">
         <Source
@@ -477,32 +593,21 @@ and long      spaces</p>
             light
             format
             code={`
-<p className="text-no-wrap">no wrapping.</p>
+<!-- Without (default) -->
+<div className="text-right">1,111.11</div>
+<div className="text-right">9,999.00</div>
+<div className="text-right">404.40</div>
+<div className="text-right">88,888.88</div>
+
+<!-- With text-tabular-nums -->
+
+<div className="text-right text-tabular-nums">1,111.11</div>
+<div className="text-right text-tabular-nums">9,999.00</div>
+<div className="text-right text-tabular-nums">404.40</div>
+<div className="text-right text-tabular-nums">88,888.88</div>
 `}
         />
     </div>
 </div>
 
-If you want to apply <code>text-ellipsis</code> and <code>pre</code> classes, you need to wrap your content like this:
-
-<div class="flex justify-space-between mb-8 flex-column md:flex-row">
-  <div class="w-1/2 self-center">
-    <span class="text-ellipsis inline-block max-w-1/3" ><span class="text-pre">Lorem    ipsum dolor sit amet</span></span><br />
-    To be used with <code>max-w-full</code> and <code>inline-block</code> (or with flexbox helpers).
-  </div>
-  <div class="w-1/2">
-<Source
-  language='html'
-  light
-  format
-  code={`
-<span className="text-ellipsis">
-  <span className="text-pre">
-  Lorem    ipsum dolor sit amet
-  </span>
-  </span>
-`}
-/>
-
-  </div>
-</div>
+<BackToTop />
