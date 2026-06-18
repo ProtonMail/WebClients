@@ -1463,6 +1463,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "Timpul de expirare trebuie să fie cuprins între o oră și un an."
       ]
     },
     "Error message": {
@@ -3013,6 +3016,12 @@
         "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
         "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
         "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
+      "Expired on ${ formattedDate }": [
+        "Expirat la data de ${ formattedDate }"
+      ],
+      "Expires on ${ formattedDate }": [
+        "Expiră la data de ${ formattedDate }"
       ]
     },
     "Keyboard key": {
@@ -4191,6 +4200,27 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "1 day": [
+        "O zi"
+      ],
+      "1 month": [
+        "O lună"
+      ],
+      "1 week": [
+        "O săptămână"
+      ],
+      "1 year": [
+        "Un an"
+      ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Custom expiration (minutes)": [
+        "Expirare personalizată (minute)"
+      ],
+      "Expires in": [
+        "Expiră în"
       ]
     },
     "Link": {
