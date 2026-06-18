@@ -25,9 +25,10 @@ export function createImageAttachment(
     return { attachment, data: imageData };
 }
 
-/**
- * Generate markdown reference for inline image
- */
+export function imageMarkdownFragment(imageId: string): string {
+    return `![Generated image](attachment:${imageId})`;
+}
+
 export function generateImageMarkdown(imageId: string): string {
-    return `\n\n![Generated image](attachment:${imageId})\n\n`;
+    return `\n\n${imageMarkdownFragment(imageId)}\n\n`;
 }

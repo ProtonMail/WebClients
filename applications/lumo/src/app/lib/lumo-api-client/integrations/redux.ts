@@ -25,6 +25,12 @@ import { createImageAttachment, generateImageMarkdown } from '../../imageAttachm
 import { LumoApiClient } from '../core/client';
 import type { AssistantCallOptions, GenerationResponseMessage, LumoApiClientConfig, Turn } from '../core/types';
 import { postProcessTitle } from '../utils';
+import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../../../types-api';
+import {
+    ContextLengthExceededError,
+    isContextLengthExceededApiError,
+    isContextLengthExceededError,
+} from '../../../services/errors/contextLengthError';
 
 /**
  * Redux-integrated helper for sending messages with automatic Redux updates
@@ -58,10 +64,27 @@ export function sendMessageWithRedux(
 
         const client = new LumoApiClient(config);
 
-        await client.callAssistant(api, turns, {
+        try {
+            await client.callAssistant(api, turns, {
             ...assistantOptions,
             chunkCallback: async (message: GenerationResponseMessage) => {
                 switch (message.type) {
+                    case 'tool-error':
+                        // The model reported a context-window overflow mid-stream. Surface a
+                        // dedicated, recoverable error so the orchestration layer can compact
+                        // the conversation and retry. Other tool-error codes fall back to the
+                        // generic error handling below.
+                        if (message.error.code === CONTEXT_LENGTH_EXCEEDED_CODE) {
+                            throw new ContextLengthExceededError({
+                                conversationId,
+                                upstreamMessage: message.error.message,
+                            });
+                        }
+                        if (errorHandler && conversationId) {
+                            throw errorHandler({ type: 'error' }, conversationId);
+                        }
+                        throw new Error(`Generation failed: tool-error (${message.error.code})`);
+
                     case 'error':
                     case 'timeout':
                     case 'rejected':
@@ -267,7 +290,15 @@ export function sendMessageWithRedux(
                     await assistantOptions.finishCallback(status);
                 }
             },
-        });
+            });
+        } catch (error) {
+            // A plain HTTP 400 (no SSE stream) can also signal context overflow.
+            // Normalise it so the orchestration layer handles it like the SSE event.
+            if (!isContextLengthExceededError(error) && isContextLengthExceededApiError(error)) {
+                throw new ContextLengthExceededError({ conversationId });
+            }
+            throw error;
+        }
     };
 }
 

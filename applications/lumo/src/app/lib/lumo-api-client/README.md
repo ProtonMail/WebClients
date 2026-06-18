@@ -255,7 +255,7 @@ const client = new LumoApiClient({
 
 // Custom endpoint
 const client = new LumoApiClient({
-    endpoint: 'https://staging-api.proton.me/ai/v1/chat'
+    endpoint: 'https://staging-api.proton.me/ai/v1/chat/completions'
 });
 
 // Legacy endpoint
