@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
-import { isCategoryLabel, labelIncludes } from '@proton/mail/helpers/location';
+import { labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -424,10 +424,6 @@ export const getLabelNameWithCategory = ({
  * It's used to ensure that categories get the "Inbox" name.
  */
 export const getLabelNameForToolbar = (labelID: string, labels: Label[] = [], folders: Folder[] = []) => {
-    if (isCategoryLabel(labelID)) {
-        return getStandardFolders()[MAILBOX_LABEL_IDS.INBOX].name;
-    }
-
     return getLabelName(labelID, labels, folders);
 };
 
