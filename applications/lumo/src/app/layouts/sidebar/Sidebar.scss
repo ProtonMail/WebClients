@@ -43,8 +43,13 @@ im.$media-expressions: $media-expressions;
 		inset-block-start: 0 !important;
 		inset-inline-start: 0 !important;
 		block-size: 100% !important;
+		max-block-size: none !important;
 		z-index: 100 !important;
-		inline-size: 100% !important;
+		// Override global .sidebar max-inline-size (272px) from structure.scss
+		inline-size: 80vw !important;
+		max-inline-size: 80vw !important;
+		padding-block-start: 0 !important;
+		border-radius: 0 !important;
 
 		// White background for clean mobile appearance
 		background-color: var(--background-norm) !important;
