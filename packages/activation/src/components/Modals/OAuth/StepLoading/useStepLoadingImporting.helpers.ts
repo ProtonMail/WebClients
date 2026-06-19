@@ -1,8 +1,9 @@
+import type { ProtonDriveClient } from '@protontech/drive-sdk';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { startImportTask } from '@proton/activation/src/api';
-import type { CalendarImportMapping, LaunchImportPayload } from '@proton/activation/src/interface';
+import type { CalendarImportMapping, DriveImportFolder, LaunchImportPayload } from '@proton/activation/src/interface';
 import { ImportType, IsCustomCalendarMapping } from '@proton/activation/src/interface';
 import { changeOAuthStep, resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import type {
@@ -30,6 +31,7 @@ interface StartImporterProps {
     getAddressKeys: GetAddressKeys;
     availableAddresses: Address[];
     calendars: Calendar[];
+    driveClient: ProtonDriveClient | undefined;
     call: () => Promise<void>;
     dispatch: (val: any) => void;
     errorHandler: (data: any) => void;
@@ -98,11 +100,38 @@ const createCalendars = async ({
     return tempCalendars;
 };
 
+/**
+ * Builds the Drive `ImportFolder` payload for the import start endpoint. The SDK
+ * prepares the crypto material for an orphaned folder under My files (no folder is
+ * created on the server); the volume and parent link come from the My files root.
+ */
+const prepareDriveImportFolder = async (drive: ProtonDriveClient): Promise<DriveImportFolder> => {
+    // getMyFilesRootFolder creates the main volume if none exists yet (new accounts).
+    const rootFolder = await drive.getMyFilesRootFolder();
+    const [volumeId, nodeId] = rootFolder.uid.split('~');
+    const folder = await drive.experimental.prepareImportFolder();
+
+    return {
+        VolumeID: volumeId,
+        ParentLinkID: nodeId,
+        Name: folder.encryptedName,
+        Hash: folder.hash,
+        NodePassphrase: folder.armoredNodePassphrase,
+        NodePassphraseSignature: folder.armoredNodePassphraseSignature,
+        NodeKey: folder.armoredKey,
+        NodeHashKey: folder.armoredHashKey,
+        SignatureAddress: folder.signatureEmail,
+        NodePassphraseClearText: folder.passphrase,
+        ...(folder.armoredExtendedAttributes !== undefined && { XAttr: folder.armoredExtendedAttributes }),
+    };
+};
+
 export const createImporterTask = async ({
     isLabelMapping,
     products,
     importerData,
     api,
+    driveClient,
     getAddressKeys,
     dispatch,
     availableAddresses,
@@ -230,12 +259,13 @@ export const createImporterTask = async ({
         importPayload.Contacts = {};
     }
 
-    if (products.includes(ImportType.DRIVE)) {
-        importPayload.Drive = {};
-    }
-
     try {
         setIsCreatingImportTask(true);
+
+        if (driveClient && products.includes(ImportType.DRIVE)) {
+            importPayload.Drive = { ImportFolder: await prepareDriveImportFolder(driveClient) };
+        }
+
         await api(startImportTask(importPayload));
         await call();
         setIsCreatingImportTask(false);

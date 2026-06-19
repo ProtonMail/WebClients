@@ -8,6 +8,7 @@ import {
     selectOauthImportStateImporterData,
     selectOauthImportStateProducts,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
+import { useDriveSdk } from '@proton/activation/src/logic/driveContext';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useApi, useErrorHandler, useEventManager } from '@proton/components';
@@ -20,6 +21,7 @@ const useStepLoadingImporting = () => {
     const getAddressKeys = useGetAddressKeys();
     const errorHandler = useErrorHandler();
     const { call } = useEventManager();
+    const drive = useDriveSdk();
 
     const dispatch = useEasySwitchDispatch();
 
@@ -46,6 +48,7 @@ const useStepLoadingImporting = () => {
             products,
             importerData,
             api,
+            driveClient: drive,
             dispatch,
             getAddressKeys,
             availableAddresses,

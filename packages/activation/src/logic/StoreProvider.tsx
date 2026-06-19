@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
+import type { ProtonDriveClient } from '@protontech/drive-sdk';
+
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
 
@@ -8,10 +10,12 @@ import BYOEFlowModals from '../components/Modals/BYOEFlowModals';
 import MainModal from '../components/Modals/MainModal';
 import SyncLostListener from './SyncLostListener';
 import { event, eventLoopV6 } from './actions';
+import { DriveSdkContextProvider } from './driveContext';
 import { useEasySwitchDispatch, useGenerateEasySwitchStore } from './store';
 
 interface Props {
     children: JSX.Element | (JSX.Element | null)[] | null;
+    drive?: ProtonDriveClient;
 }
 
 const EasySwitchEventListener = ({ children }: Props) => {
@@ -43,15 +47,17 @@ const EasySwitchEventListener = ({ children }: Props) => {
     );
 };
 
-const EasySwitchStoreProvider = ({ children }: Props) => {
+const EasySwitchStoreProvider = ({ children, drive }: Props) => {
     const easySwitchStore = useGenerateEasySwitchStore();
 
     return (
-        <Provider store={easySwitchStore}>
-            <EasySwitchEventListener>{children}</EasySwitchEventListener>
-            <MainModal />
-            <BYOEFlowModals />
-        </Provider>
+        <DriveSdkContextProvider value={drive}>
+            <Provider store={easySwitchStore}>
+                <EasySwitchEventListener>{children}</EasySwitchEventListener>
+                <MainModal />
+                <BYOEFlowModals />
+            </Provider>
+        </DriveSdkContextProvider>
     );
 };
 
