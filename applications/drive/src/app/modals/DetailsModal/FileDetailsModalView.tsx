@@ -50,7 +50,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                         className="flex mb-4 banner-signature-alert"
                     >
                         {details.authorshipStatus.details.length === 0 ? (
-                            <span dangerouslySetInnerHTML={{ __html: details.authorshipStatus.message }} />
+                            <span>{details.authorshipStatus.message}</span>
                         ) : (
                             <Collapsible>
                                 <CollapsibleHeader
@@ -60,7 +60,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                                         </CollapsibleHeaderIconButton>
                                     }
                                 >
-                                    <span dangerouslySetInnerHTML={{ __html: details.authorshipStatus.message }} />
+                                    <span>{details.authorshipStatus.message}</span>
                                 </CollapsibleHeader>
                                 <CollapsibleContent>
                                     <ul>
