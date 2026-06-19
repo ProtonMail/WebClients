@@ -12,12 +12,17 @@ interface Props {
     className?: string;
     onClose?: () => void;
     'data-testid'?: string;
+    /**
+     * Exposes the banner as an alert (auto-announced live region). Defaults to `true`. Set to
+     * `false` when the event is already announced elsewhere, to avoid a double announcement.
+     */
+    announce?: boolean;
 }
 
-const TopBanner = ({ children, className, onClose, ...rest }: Props) => {
+const TopBanner = ({ children, className, onClose, announce = true, ...rest }: Props) => {
     return (
         <div
-            role="alert"
+            role={announce ? 'alert' : undefined}
             className={clsx([
                 'flex shrink-0 flex-nowrap text-center relative text-bold no-print',
                 className,
