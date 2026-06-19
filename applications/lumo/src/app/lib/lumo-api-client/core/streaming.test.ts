@@ -76,7 +76,7 @@ describe('StreamProcessor', () => {
                 count: 1,
                 content: JSON.stringify({
                     name: 'web_search',
-                    parameters: { search_term: 'weather' },
+                    arguments: { search_term: 'weather' },
                 }),
             },
         ]);
@@ -97,5 +97,97 @@ describe('StreamProcessor', () => {
         );
 
         expect(messages).toEqual([{ type: 'harmful' }]);
+    });
+
+    it('maps chat.tool_call chunks to legacy tool_call token_data', () => {
+        const processor = new StreamProcessor();
+
+        const nameOnly = processor.processChunk(
+            `data: ${JSON.stringify({
+                object: 'chat.tool_call',
+                tool_call: { id: 'call_0', name: 'web_search' },
+            })}\n\n`
+        );
+
+        expect(nameOnly).toEqual([
+            {
+                type: 'token_data',
+                target: 'tool_call',
+                count: 0,
+                content: JSON.stringify({ name: 'web_search' }),
+            },
+        ]);
+
+        const withArgs = processor.processChunk(
+            `data: ${JSON.stringify({
+                object: 'chat.tool_call',
+                tool_call: {
+                    id: 'call_0',
+                    name: 'web_search',
+                    arguments: { query: 'Newcastle United today news latest', topic: 'news' },
+                },
+            })}\n\n`
+        );
+
+        expect(withArgs).toEqual([
+            {
+                type: 'token_data',
+                target: 'tool_call',
+                count: 1,
+                content: JSON.stringify({
+                    name: 'web_search',
+                    arguments: { query: 'Newcastle United today news latest', topic: 'news' },
+                }),
+            },
+        ]);
+    });
+
+    it('maps chat.tool_result chunks to legacy tool_result token_data', () => {
+        const processor = new StreamProcessor();
+
+        const messages = processor.processChunk(
+            `data: ${JSON.stringify({
+                object: 'chat.tool_result',
+                tool_result: {
+                    call_id: 'call_0',
+                    content: {
+                        answer: 'Summary',
+                        results: [{ title: 'Example', url: 'https://example.com' }],
+                        type: 'WebSearch',
+                    },
+                },
+            })}\n\n`
+        );
+
+        expect(messages).toEqual([
+            {
+                type: 'token_data',
+                target: 'tool_result',
+                count: 0,
+                content: JSON.stringify({
+                    results: [{ title: 'Example', url: 'https://example.com' }],
+                }),
+            },
+        ]);
+    });
+
+    it('accepts bare JSON lines without an SSE data prefix', () => {
+        const processor = new StreamProcessor();
+
+        const messages = processor.processChunk(
+            `${JSON.stringify({
+                object: 'chat.tool_call',
+                tool_call: { id: 'call_0', name: 'stock', arguments: { symbol: 'AAPL' } },
+            })}\n\n`
+        );
+
+        expect(messages).toEqual([
+            {
+                type: 'token_data',
+                target: 'tool_call',
+                count: 0,
+                content: JSON.stringify({ name: 'stock', arguments: { symbol: 'AAPL' } }),
+            },
+        ]);
     });
 });

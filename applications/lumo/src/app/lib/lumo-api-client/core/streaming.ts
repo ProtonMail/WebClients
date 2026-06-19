@@ -43,6 +43,30 @@ type LumoImageDataChunk = {
     };
 };
 
+type LumoChatToolCallChunk = {
+    object: 'chat.tool_call';
+    tool_call: {
+        id?: string;
+        name: string;
+        arguments?: Record<string, unknown>;
+    };
+};
+
+type LumoChatToolResultChunk = {
+    object: 'chat.tool_result';
+    tool_result: {
+        call_id?: string;
+        content: unknown;
+    };
+};
+
+type ParsedStreamItem =
+    | OpenAiChunk
+    | GenerationResponseMessage
+    | LumoImageDataChunk
+    | LumoChatToolCallChunk
+    | LumoChatToolResultChunk;
+
 type StreamCounters = {
     message: number;
     title: number;
@@ -125,11 +149,16 @@ export class StreamProcessor {
             return this.processCommentLine(trimmed);
         }
 
-        if (!trimmed.startsWith('data:')) {
+        let payload: string | undefined;
+        if (trimmed.startsWith('data:')) {
+            payload = trimmed.slice(5).trim();
+        } else if (trimmed.startsWith('{')) {
+            // Some endpoints emit bare JSON lines without an SSE `data:` prefix.
+            payload = trimmed;
+        } else {
             return [];
         }
 
-        const payload = trimmed.slice(5).trim();
         if (!payload) {
             return [];
         }
@@ -139,7 +168,7 @@ export class StreamProcessor {
         }
 
         try {
-            const item = JSON.parse(payload) as OpenAiChunk | GenerationResponseMessage | LumoImageDataChunk;
+            const item = JSON.parse(payload) as ParsedStreamItem;
 
             if (isGenerationResponseMessage(item)) {
                 return [this.applyDefaultTarget(item)];
@@ -149,11 +178,43 @@ export class StreamProcessor {
                 return [this.processLumoImageDataChunk(item)];
             }
 
+            if ('object' in item && item.object === 'chat.tool_call') {
+                return [this.processLumoToolCallChunk(item)];
+            }
+
+            if ('object' in item && item.object === 'chat.tool_result') {
+                return [this.processLumoToolResultChunk(item)];
+            }
+
             return this.processOpenAiChunk(item as OpenAiChunk);
         } catch (error) {
             console.warn('Error parsing a data line from chat endpoint', error);
             return [];
         }
+    }
+
+    private processLumoToolCallChunk(chunk: LumoChatToolCallChunk): GenerationResponseMessage {
+        const { name, arguments: args } = chunk.tool_call;
+        const payload: Record<string, unknown> = { name };
+        if (args !== undefined) {
+            payload.arguments = args;
+        }
+
+        return {
+            type: 'token_data',
+            target: 'tool_call',
+            count: this.counters.toolCall++,
+            content: JSON.stringify(payload),
+        };
+    }
+
+    private processLumoToolResultChunk(chunk: LumoChatToolResultChunk): GenerationResponseMessage {
+        return {
+            type: 'token_data',
+            target: 'tool_result',
+            count: this.counters.toolResult++,
+            content: serializeToolResultContent(chunk.tool_result.content),
+        };
     }
 
     private processLumoImageDataChunk(chunk: LumoImageDataChunk): GenerationResponseMessage {
@@ -248,10 +309,10 @@ export class StreamProcessor {
             return null;
         }
 
-        let parameters: Record<string, unknown> = {};
+        let toolArguments: Record<string, unknown> = {};
         if (existing.arguments) {
             try {
-                parameters = JSON.parse(existing.arguments);
+                toolArguments = JSON.parse(existing.arguments);
             } catch {
                 return {
                     type: 'token_data',
@@ -259,7 +320,7 @@ export class StreamProcessor {
                     count: this.counters.toolCall++,
                     content: JSON.stringify({
                         name: existing.name,
-                        parameters: existing.arguments,
+                        arguments: existing.arguments,
                     }),
                 };
             }
@@ -271,7 +332,7 @@ export class StreamProcessor {
             count: this.counters.toolCall++,
             content: JSON.stringify({
                 name: existing.name,
-                parameters,
+                arguments: toolArguments,
             }),
         };
     }
@@ -315,4 +376,24 @@ export class StreamProcessor {
                 return 'message';
         }
     }
+}
+
+/** Serialize backend tool-result payloads into the JSON string stored on message blocks. */
+function serializeToolResultContent(content: unknown): string {
+    if (typeof content === 'string') {
+        return content;
+    }
+
+    if (typeof content !== 'object' || content === null) {
+        return JSON.stringify(content);
+    }
+
+    const obj = content as Record<string, unknown>;
+
+    // Web search results arrive nested under `content.results`.
+    if (Array.isArray(obj.results)) {
+        return JSON.stringify({ results: obj.results });
+    }
+
+    return JSON.stringify(content);
 }
