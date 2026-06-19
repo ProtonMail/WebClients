@@ -7894,7 +7894,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
+        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -9272,6 +9272,9 @@
       ],
       "All your files will be imported": [
         "Tous vos fichiers seront importés."
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Vous avez ${ unread } dans ${ label }."
       ]
     },
     "info": {
@@ -10699,7 +10702,7 @@
         "Programmés"
       ],
       "Sent": [
-        "Envoyée"
+        "Envoyés"
       ],
       "settings": [
         "paramètres"

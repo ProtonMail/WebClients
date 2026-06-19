@@ -151,7 +151,7 @@
         "添加截图"
       ],
       "Attachment": [
-        "上传为附件"
+        "附件"
       ],
       "Attention required": [
         "需要关注"
@@ -505,7 +505,7 @@
         "更改邮箱地址"
       ],
       "Edit encryption": [
-        "更改加密方式"
+        "编辑加密"
       ],
       "Edit folder": [
         "编辑文件夹"
@@ -2666,7 +2666,7 @@
     },
     "Cancel expiration of the message": {
       "Cancel": [
-        "关闭"
+        "取消"
       ],
       "Cancel expiration": [
         "取消有效期"
@@ -2994,22 +2994,22 @@
     },
     "Commander action": {
       "Create a new folder": [
-        "创建新文件夹"
+        "新建文件夹"
       ],
       "Create a new label": [
-        "创建标签"
+        "新建标签"
       ],
       "Go to Archive": [
         "转至归档"
       ],
       "Go to Drafts": [
-        "转至草稿"
+        "转至草稿箱"
       ],
       "Go to Inbox": [
         "转至收件箱"
       ],
       "Go to Sent": [
-        "转至已发送"
+        "转至发件箱"
       ],
       "Go to Spam": [
         "转至垃圾邮件"
@@ -3098,7 +3098,7 @@
         "编辑并重新定时发送"
       ],
       "Message saved to Drafts": [
-        "邮件已保存到草稿箱"
+        "邮件已保存为草稿"
       ],
       "Quit import customization?": [
         "退出导入定制？"
@@ -7353,7 +7353,7 @@
         "编辑邮箱地址"
       ],
       "Edit encryption": [
-        "更改加密方式"
+        "编辑加密"
       ],
       "Edit expiration time": [
         "编辑过期时间"
@@ -9395,7 +9395,7 @@
         "${ count } 个未读会话"
       ],
       "${ count } unread message": [
-        "${ count } 条未读消息"
+        "${ count } 封未读邮件"
       ],
       "${ n } month": [
         "${ n } 个月"
@@ -9407,7 +9407,7 @@
         "（暂时不可用。请稍后再试。）"
       ],
       "/month": [
-        "/每月"
+        "/月"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
@@ -10330,7 +10330,7 @@
         "已删除"
       ],
       "Drafts": [
-        "草稿"
+        "草稿箱"
       ],
       "Enable an email address linked to one of your calendars.": [
         "启用与您日历之一关联的邮箱地址。"
@@ -10637,7 +10637,7 @@
         "垃圾邮件"
       ],
       "Trash": [
-        "移至回收站"
+        "回收站"
       ]
     },
     "meet_2025: Addon": {
@@ -11736,7 +11736,7 @@
         "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "查看参会者的空闲时间，节省会议安排时间"
+        "查看参与者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
@@ -14947,7 +14947,7 @@
         "下载 ${ VPN_APP_NAME }"
       ],
       "Download the desktop app": [
-        "下载桌面应用程序"
+        "下载桌面应用"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
@@ -15225,7 +15225,7 @@
         "刪除所有邮件"
       ],
       "Delete conversation": [
-        "删除对话"
+        "删除会话"
       ],
       "Delete draft": [
         "删除草稿"
@@ -16115,6 +16115,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "获取 AI 和人工专家的即时协助！"
       ]
     },
     "tooltip": {

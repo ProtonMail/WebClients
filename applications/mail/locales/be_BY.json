@@ -1730,6 +1730,18 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Скапіяваць '${ code }' у буфер абмену"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Скапіяваць '${ code }' у буфер абмену і перамясціць у сметніцу"
+      ],
+      "Hide ${ title }": [
+        "Схаваць ${ title }"
+      ],
+      "Show ${ title }": [
+        "Паказаць ${ title }"
       ]
     },
     "action": {
@@ -4508,6 +4520,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Палепшыце да ${ LUMO_SHORT_APP_NAME }, каб атрымаць неабмежаваны доступ да памочніка ў напісанні і іншыя функцыі."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Запытайце доступ у свайго адміністратара, каб працягнуць карыстацца ${ LUMO_SHORT_APP_NAME } у ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -6433,6 +6451,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Наладзьце памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -6918,7 +6939,7 @@
         "Будзе перамешчана ${ elementsCount } размова",
         "Будзе перамешчана ${ elementsCount } размовы",
         "Будзе перамешчана ${ elementsCount } размоў",
-        "Будзе перамешчана ${ elementsCount } размоў"
+        "будуць перемешчаны ${ elementsCount } размоў"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
         "З ${ elementsCount } размовы будзе знята пазнака:",
@@ -6951,10 +6972,10 @@
         "Будуць перамешчаны ${ elementsCount } паведамленняў"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "З ${ elementsCount } паведамлення будзе знята пазнака:",
-        "З ${ elementsCount } паведамленняў будзе знята пазнака:",
-        "З ${ elementsCount } паведамленняў будзе знята пазнака:",
-        "З ${ elementsCount } паведамленняў будзе знята пазнака:"
+        "З ${ elementsCount } паведамлення будзе знята пазнака ад:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака ад:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака ад:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака ад:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } убудаваны відарыс",
@@ -7372,9 +7393,9 @@
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } размову?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ count } размовы?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ count } размоў?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ count } размоў?"
+        "Вы сапраўды незваротна хочаце выдаліць ${ count } размовы?",
+        "Вы сапраўды незваротна хочаце выдаліць ${ count } размоў?",
+        "Вы сапраўды незваротна хочаце выдаліць ${ count } размоў?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } чарнавік?",
@@ -9547,6 +9568,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } дапаможа вам хутка і лёгка ствараць лепшыя электронныя лісты."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Панэль ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "У вас ${ unread } у ${ label }."
       ]
     },
     "info": {
@@ -10665,6 +10695,45 @@
       ],
       "URL": [
         "URL-адрас"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Clear logs": [
+        "Ачысціць журналы"
+      ],
+      "Context page": [
+        "Старонка кантэксту"
+      ],
+      "Context total": [
+        "Усяго кантэксту"
+      ],
+      "Current context": [
+        "Бягучы кантэкст"
+      ],
+      "Filter": [
+        "Фільтр"
+      ],
+      "Information": [
+        "Інфармацыя"
+      ],
+      "Label ID": [
+        "Ідэнтыфікатар меткі"
+      ],
+      "Mail debugging information": [
+        "Інфармацыя аб адладцы пошты"
+      ],
+      "Mail logs": [
+        "Журналы пошты"
+      ],
+      "Refresh logs": [
+        "Абнавіць журналы"
+      ],
+      "Sort": [
+        "Сартаванне"
+      ],
+      "Tab age": [
+        "Укладка ўзросту"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11126,7 +11195,7 @@
         "Архіў"
       ],
       "Inbox": [
-        "Уваходныя"
+        "Уваходныя паведамленні"
       ],
       "Spam": [
         "Спам"
@@ -13387,7 +13456,7 @@
         "Фільтр груп"
       ],
       "Filter labels": [
-        "Фільтр метак"
+        "Фільтраваць меткі"
       ],
       "Filter quick actions": [
         "Фільтр хуткіх дзеянняў"
@@ -13535,6 +13604,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Абвясці аб надыходзячых падзеях у інфармацыйнай рассылцы\""
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Скасуй мой абанемент у спартыўную залю\""
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Запрасі Алесю на маю вечарыну”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст падзякі майму калегу за дапамагу ў праекце\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы суправаджальнае пісьмо на стажыроўку\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст кліенту\""
+      ],
+      "the writing assistant": [
+        "памочніку ў напісанні"
       ]
     },
     "Placeholder for contact group name": {
@@ -14055,7 +14145,7 @@
         "Зашыфравана скразным метадам для спраўджанага атрымальніка PGP"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Зашыфравана скразным метадам для спраўджанага атрымальніка"
+        "Зашыфравана скразным метадам для праверанага атрымальніка"
       ],
       "PGP-signed": [
         "Падпісана з дапамогай PGP"
@@ -14066,8 +14156,8 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
         "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу праверанаму атрымальніку",
         "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу правераным атрымальнікам",
-        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання з нулявым доступам правераным атрымальнікам",
-        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання з нулявым доступам правераным атрымальнікам"
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу правераным атрымальнікам",
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу правераным атрымальнікам"
       ],
       "Sent by you with end-to-end encryption": [
         "Адпраўлена вамі з дапамогай скразнога шыфравання"
@@ -15260,10 +15350,10 @@
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
-        "Да меткі ${ labelName } дададзена ${ elementsCount } размова",
-        "Да меткі ${ labelName } дададзена ${ elementsCount } размовы",
-        "Да меткі ${ labelName } дададзена ${ elementsCount } размоў",
-        "Да меткі ${ labelName } дададзена ${ elementsCount } размоў"
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размова.",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размовы.",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размоў.",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размоў."
       ],
       "${ elementsCount } conversation marked as read.": [
         "Пазначана як прачытанае ${ elementsCount } размова",
@@ -15344,7 +15434,7 @@
         "Пазначана зорачкай ${ elementsCount } паведамленняў."
       ],
       "${ elementsCount } message marked as unread.": [
-        "Пазначана як непрачытана ${ elementsCount } паведамленне",
+        "Пазначана як непрачытанае ${ elementsCount } паведамленне",
         "Пазначана як непрачытана ${ elementsCount } паведамленні",
         "Пазначана як непрачытана ${ elementsCount } паведамленняў",
         "Пазначана як непрачытана ${ elementsCount } паведамленняў"
@@ -15612,6 +15702,9 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' скапіяваны ў буфер абмену"
       ]
     },
     "Success notification": {
@@ -16350,7 +16443,7 @@
         "Памылковы код спраўджання"
       ],
       "Keep this banner hidden?": [
-        "Схаваць гэты банер?"
+        "Пакінуць гэты банер схаваным?"
       ],
       "Label as": [
         "Пазначыць як"
@@ -16939,6 +17032,12 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Стварайце лепшыя лісты з ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

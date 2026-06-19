@@ -1793,6 +1793,12 @@
       ],
       "Writing assistant seats": [
         "Licence za pomočnika pri pisanju"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licenca",
+        "${ seats } ${ MEET_APP_NAME } licenci",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licenc"
       ]
     },
     "Alert": {
@@ -8981,6 +8987,18 @@
       ],
       "Scheduling message": [
         "Načrtovanje sporočila ..."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Vsi vaši stiki bodo uvoženi, do meje ${ maxContact }.",
+        "Vsi vaši stiki bodo uvoženi, do meje ${ maxContact }.",
+        "Vsi vaši stiki bodo uvoženi, do meje ${ maxContact }.",
+        "Vsi vaši stiki bodo uvoženi, do meje ${ maxContact }."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Nato boste vsak ${ renewCycle } mesec prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli.",
+        "Nato boste vsaka ${ renewCycle } meseca prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli.",
+        "Nato boste vsake ${ renewCycle } mesece prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli.",
+        "Nato boste vsakih ${ renewCycle } mesecev prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli."
       ]
     },
     "info": {
@@ -10514,6 +10532,12 @@
         "Do ${ n } udeleženca",
         "Do ${ n } udeleženci",
         "Do ${ n } udeležencev"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Video sestanki, ${ n } udeleženec",
+        "Video sestanki, ${ n } udeleženca",
+        "Video sestanki, ${ n } udeleženci",
+        "Video sestanki, ${ n } udeležencev"
       ]
     },
     "Message": {
@@ -12324,6 +12348,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Kupon velja za ${ renewalsWithCoupon } podaljšanje.",
+        "Kupon velja za ${ renewalsWithCoupon } podaljšanji.",
+        "Kupon velja za ${ renewalsWithCoupon } podaljšanja.",
+        "Kupon velja za ${ renewalsWithCoupon } podaljšanj."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Posebno znižana cena velja ${ couponRedemptions } mesec. Nato se bo samodejno podaljšala za ${ renewPriceStr } za 1 mesec. Prekličete lahko kadarkoli.",
+        "Posebno znižana cena velja ${ couponRedemptions } meseca. Nato se bo samodejno podaljšala za ${ renewPriceStr } za 1 mesec. Prekličete lahko kadarkoli.",
+        "Posebno znižana cena velja ${ couponRedemptions } mesece. Nato se bo samodejno podaljšala za ${ renewPriceStr } vsak mesec. Prekličete lahko kadarkoli.",
+        "Posebno znižana cena velja ${ couponRedemptions } mesecev. Nato se bo samodejno podaljšala za ${ renewPriceStr } vsak mesec. Prekličete lahko kadarkoli."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Izredno znižana cena ${ priceWithDiscount } velja za ${ couponRedemptions } mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete.",
+        "Izredno znižana cena ${ priceWithDiscount } velja za ${ couponRedemptions } meseca. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete.",
+        "Izredno znižana cena ${ priceWithDiscount } velja za ${ couponRedemptions } mesece. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete.",
+        "Izredno znižana cena ${ priceWithDiscount } velja za ${ couponRedemptions } mesecev. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete."
       ]
     },
     "Payments.Error": {
@@ -16493,6 +16535,22 @@
       ],
       "Reset": [
         "Ponastavi"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } sedež ${ MEET_APP_NAME }",
+        "${ seats } sedeža ${ MEET_APP_NAME }",
+        "${ seats } sedeži ${ MEET_APP_NAME }",
+        "${ seats } sedežev ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } sedež vključen",
+        "${ seats } sedeža vključena",
+        "${ seats } sedeži vključeni",
+        "${ seats } sedežev vključenih"
       ]
     }
   }

@@ -1724,6 +1724,9 @@
       ],
       "Show ${ title }": [
         "Visa ${ title }"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Kopiera '${ code }' till urklipp"
       ]
     },
     "action": {
@@ -1766,7 +1769,7 @@
     },
     "Adding expiration to a message will create an expiring message": {
       "Expiring message": [
-        "Utlöpta meddelanden"
+        "Utlöpt meddelande"
       ]
     },
     "Addon": {
@@ -2494,7 +2497,7 @@
         "${ participantName } hade accepterat en inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } har accepterat en inbjudan till en förekomst av händelsen."
+        "${ participantName } hade accepterat en inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } hade accepterat en inbjudan till denna händelse."
@@ -2673,7 +2676,7 @@
     },
     "Calendar widget banner": {
       "Event already ended": [
-        "Händelsen har redan slutat"
+        "Händelse har redan slutat"
       ],
       "Event in progress": [
         "Händelse pågår"
@@ -4430,6 +4433,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "För obegränsad åtkomst till skrivassistenten och mer, uppgradera till ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "description": {
@@ -6774,7 +6780,7 @@
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        "${ MAIL_APP_NAME } kan också skydda ditt företag."
+        "${ MAIL_APP_NAME } kan skydda ditt företag också."
       ],
       "${ n } unread conversation": [
         "${ n } oläst konversation",
@@ -7454,7 +7460,7 @@
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "E-post vidarebefordras till din brevlåda; din e-postadress förblir dold."
+        "E-post vidarebefordras till din brevlåda, din e-postadress förblir dold."
       ],
       "Email tracker protection is disabled": [
         "Spårningsskydd för e-post är inaktiverad"
@@ -7729,8 +7735,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -10283,6 +10288,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Label ID": [
+        "Etikett-ID"
       ]
     },
     "Label (begin date/advanced search)": {

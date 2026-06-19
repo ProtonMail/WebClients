@@ -1715,6 +1715,18 @@
       ],
       "Or remove forwarding address": [
         "O eliminar la dirección de reenvío"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Copiar '${ code }' al portapapeles"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Copiar '${ code }' al portapapeles y mover a la papelera"
+      ],
+      "Hide ${ title }": [
+        "Ocultar ${ title }"
+      ],
+      "Show ${ title }": [
+        "Mostrar ${ title }"
       ]
     },
     "action": {
@@ -4435,6 +4447,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail.",
         "Tu plan admite un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Para tener acceso ilimitado al asistente de escritura y más, pásate a ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a tu suscripción."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicita acceso a tu administrador."
       ]
     },
     "description": {
@@ -6301,6 +6322,9 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Configurar el asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -9221,6 +9245,12 @@
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
         "Establecer ${ MAIL_APP_NAME } como aplicación de correo predeterminada"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } te ayuda a redactar mejores correos de forma rápida y sin esfuerzo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panel de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "info": {
@@ -10365,6 +10395,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13123,6 +13156,27 @@
       ],
       "Search for users or addresses": [
         "Buscar usuarios o direcciones"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Anunciar próximos eventos en un boletín”"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Cancelar mi suscripción al gimnasio”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Invitar a Ana a mi fiesta”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Agradecer a mi compañero de trabajo por su ayuda en un proyecto”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Escribir una carta de presentación para unas prácticas”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Dile a ${ subject } qué escribir. Ejemplo: “Escribir un correo de seguimiento a un cliente”"
+      ],
+      "the writing assistant": [
+        "El asistente de escritura"
       ]
     },
     "Placeholder for contact group name": {
@@ -15152,6 +15206,9 @@
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Se ha copiado '${ code }' al portapapeles"
       ]
     },
     "Success notification": {
@@ -16426,6 +16483,12 @@
       ],
       "Keep this banner hidden?": [
         "¿Mantener oculto este banner?"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Redacta mejores correos con ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

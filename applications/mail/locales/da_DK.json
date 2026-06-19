@@ -1718,6 +1718,18 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Kopiér '${ code }' til udklipsholderen"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Kopiér '${ code }' til udklipsholderen og flyt til Papirkurven"
+      ],
+      "Hide ${ title }": [
+        "Skjul ${ title }"
+      ],
+      "Show ${ title }": [
+        "Vis ${ title }"
       ]
     },
     "action": {
@@ -4442,6 +4454,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Opgrader til ${ LUMO_SHORT_APP_NAME } for ubegrænset adgang til skriveassistenten og mere."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Tilføj det til dit abonnement for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Anmod om adgang fra din administrator for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -6319,6 +6340,9 @@
       ],
       "Username": [
         "Brugernavn"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Konfigurer ${ LUMO_SHORT_APP_NAME }-skriveassistenten"
       ]
     },
     "Hint": {
@@ -6821,8 +6845,8 @@
         "${ numberOfUTMTrackers } links renset"
       ],
       "${ NumMessages } message in conversation": [
-        "${ NumMessages } besked i samtale",
-        "${ NumMessages } beskeder i samtale"
+        "${ NumMessages } besked i samtalen",
+        "${ NumMessages } beskeder i samtalen"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } forekomst fundet",
@@ -8607,8 +8631,8 @@
         "Denne besked bliver automatisk slettet ${ value }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne besked vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?",
-        "Disse beskeder vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?"
+        "Denne samtale vil blive markeret som spam. Vil du også afmelde fremtidige e-mails?",
+        "Disse samtaler vil blive markeret som spam. Vil du også afmelde fremtidige e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Denne besked flyttes til udkast, så du kan redigere den. Du skal igen planlægge, hvornår den skal sendes."
@@ -9037,8 +9061,8 @@
         "Du har **${ count } samtaler** gemt i denne mappe"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Du har **${ count } samtale** mærket med denne etikette",
-        "Du har **${ count } samtaler** mærket med denne etikette"
+        "Du har **${ count } samtale** markeret med denne etiket",
+        "Du har **${ count } samtaler** markeret med denne etiket"
       ],
       "You have **${ count } message** stored in this folder": [
         "Du har **${ count } besked** gemt i denne mappe",
@@ -9239,6 +9263,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } hjælper dig med at skrive bedre e-mails hurtigt og nemt."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME }-panel"
       ]
     },
     "info": {
@@ -9321,8 +9351,8 @@
         "Ved at trykke på \"Stol på nøgle\" knyttes denne offentlige nøgle til denne afsender, og e-mails fra denne adresse vil automatisk blive kryptografisk bekræftet."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
-        "Ønsker du at stole på den primære offentlige nøgle med følgende fingeraftryk?",
-        "Ønsker du at stole på de primære offentlige nøgler med følgende fingeraftryk?"
+        "Vil du stole på den primære offentlige nøgle med følgende fingeraftryk?",
+        "Vil du stole på de primære offentlige nøgler med følgende fingeraftryk?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Du har aktiveret adresseverifikation med betroede nøgler for denne e-mailadresse, men ingen aktive krypteringsnøgler er betroede.\nDu skal angive en nøgle som betroet for at kunne sende en besked til denne e-mailadresse.",
@@ -10341,6 +10371,51 @@
       ],
       "URL": [
         "URL"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Clear logs": [
+        "Ryd logs"
+      ],
+      "Context page": [
+        "Kontekstside"
+      ],
+      "Context total": [
+        "Kontekst total"
+      ],
+      "Current context": [
+        "Nuværende kontekst"
+      ],
+      "Elements in store": [
+        "Elementer i store"
+      ],
+      "Filter": [
+        "Filtrér"
+      ],
+      "Information": [
+        "Information"
+      ],
+      "Label ID": [
+        "Label ID"
+      ],
+      "Mail debugging information": [
+        "Mail fejlfindingsoplysninger"
+      ],
+      "Mail logs": [
+        "Mail logs"
+      ],
+      "Refresh logs": [
+        "Opdater logs"
+      ],
+      "Sort": [
+        "Sortér"
+      ],
+      "Store state": [
+        "Store state"
+      ],
+      "Tab age": [
+        "Tab alder"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13109,6 +13184,27 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Annoncér kommende begivenheder i et nyhedsbrev\""
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Opsig mit medlemskab i fitnesscentret\""
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Inviter Julie til min fest\""
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Tak min kollega for hjælpe til med et projekt\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Skriv en ansøgning til en praktikplads\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Fortæl ${ subject } hvad der skal skrives. Eksempel: \"Skriv en opfølgende e-mail til en kunde\""
+      ],
+      "the writing assistant": [
+        "skriveassistenten"
       ]
     },
     "Placeholder for contact group name": {
@@ -13712,14 +13808,14 @@
         "Sendt af ${ MAIL_APP_NAME } med nuladgangskryptering"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Sendt af ${ MAIL_APP_NAME } med nuladgangskryptering til bekræftet modtager",
+        "Sendt af ${ MAIL_APP_NAME } med nuladgangskryptering til en bekræftet modtager",
         "Sendt af ${ MAIL_APP_NAME } med nuladgangskryptering til bekræftede modtagere"
       ],
       "Sent by you with end-to-end encryption": [
         "Afsendt af dig med end-to-end kryptering"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "Sendt af dig med end-to-end-kryptering til bekræftet modtager",
+        "Sendt af dig med end-to-end-kryptering til en bekræftet modtager",
         "Sendt af dig med ende-til-ende kryptering til bekræftede modtagere"
       ],
       "Stored with zero-access encryption": [
@@ -15138,6 +15234,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Kopierede '${ code }' til udklipsholderen"
       ]
     },
     "Success notification": {
@@ -16419,6 +16518,12 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Skriv bedre e-mails med ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16470,7 +16575,7 @@
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Øjeblikkelig AI-assistance, menneskelig ekspert der sidder klar!"
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Load image": [
         "Indlæs billede"

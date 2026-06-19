@@ -688,7 +688,7 @@
         "첨부 파일 및 상세 정보 숨기기"
       ],
       "Hide details": [
-        "세부사항 숨기기"
+        "세부 정보 숨기기"
       ],
       "Hide messages": [
         "메시지 숨기기"
@@ -1123,7 +1123,7 @@
         "친구 초대"
       ],
       "Refine it": [
-        "정제하기"
+        "정리하기"
       ],
       "Refresh the page": [
         "페이지 새로 고침"
@@ -1231,7 +1231,7 @@
         "저장 중${ ellipsis }"
       ],
       "Schedule message": [
-        "예약 메시지"
+        "메시지 예약"
       ],
       "Scroll to bottom": [
         "맨 아래로 스크롤"
@@ -1838,7 +1838,7 @@
         "별표되지 않은 대화"
       ],
       "Unstar message": [
-        "별표 표시되지 않은 메시지"
+        "메시지 별표 표시 취소"
       ]
     },
     "Alternative text for conversation image": {
@@ -2410,10 +2410,10 @@
         "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 수락했으며 이 이벤트의 새 시간을 제안했습니다. 응답 및 제안이 만료되었습니다."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 수락했습니다."
+        "${ participantName }님이 한 번의 이벤트에 대한 초대를 수락했습니다."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "${ participantName } 이(가) 이 이벤트의 초대를 수락했습니다."
+        "${ participantName }님이 이 이벤트의 초대를 수락했습니다."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 수락했으며 한 번 일어나는 이 이벤트의 새 시간을 제안했습니다. 응답 및 제안이 만료되었습니다."
@@ -4177,7 +4177,7 @@
         "폴더 없음"
       ],
       "No labels": [
-        "레이블 없음"
+        "라벨 없음"
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 안에서 Gmail을 읽고, 답장하고 관리하세요."
@@ -4310,6 +4310,18 @@
       ],
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Gmail 주소 ${ forwardingCount }(으)로부터 이메일을 전달 받고 있습니다. Gmail과 연결하면 ${ MAIL_APP_NAME }에서 메시지를 주고 받을 수 있게 됩니다."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "최대 ${ MAX_SYNC_PAID_USER }개 계정을 연결하려면 ${ planName }(으)로 업그레이드하세요"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Gmail 주소 ${ numAddressesOrSync }을(를) ${ MAIL_APP_NAME }로 가져오는 중입니다."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "${ MAX_SYNC_PAID_USER }개의 Gmail 주소가 이미 연결되어 있습니다. 다른 주소를 추가하려면, 연결된 주소 중 하나를 비활성화하십시오."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME }에 외부 계정 주소가 연결되어 있습니다."
       ]
     },
     "description": {
@@ -4536,7 +4548,7 @@
         "이벤트가 지금 시작합니다"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "이벤트가 ${ minutesUntilEvent }분 내로 시작합니다"
+        "이벤트가 ${ minutesUntilEvent }분 내로 시작됨"
       ],
       "Event starts tomorrow": [
         "이벤트가 내일 시작합니다"
@@ -4585,7 +4597,7 @@
     },
     "email_forwarding_2023: Composer email icon": {
       "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
-        "완전한 비접근화 암호화됨. 수신자가 이 계정에 대해 종단 간 암호화를 비활성화 했습니다."
+        "제로 액세스 암호화됨. 받는 사람이 해당 계정에 대해 종단간 암호화를 비활성화 했습니다."
       ]
     },
     "emergency_access": {
@@ -5447,7 +5459,7 @@
     },
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "${ PASS_APP_NAME } 에서 추가 비밀번호 설정 시, 별칭을 사용할 수 없습니다."
+        "${ PASS_APP_NAME }에서 추가 비밀번호 설정 시, 별칭을 사용할 수 없습니다."
       ],
       "An error occurred with the categories": [
         "카테고리에서 오류가 발생했습니다."
@@ -5943,7 +5955,7 @@
     },
     "forwardmessage": {
       "Date: On ${ date }": [
-        "날짜: ${ date } 에"
+        "날짜: ${ date }"
       ],
       "From: ${ senderString }": [
         "보낸 사람: ${ senderString }"
@@ -6906,7 +6918,7 @@
         "이 위치의 모든 메시지를 휴지통으로 이동하시겠습니까?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "${ count } 개 대화를 영구적으로 삭제하시겠습니까?"
+        "${ count }개 대화를 영구적으로 삭제하시겠습니까?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
         "${ count }개 메시지를 휴지통에서 제거하시겠습니까?"
@@ -7797,7 +7809,7 @@
         "시스템이 이 메시지를 의심스러운 항목으로 확인했습니다. 해당 메일이 피싱, 스캠이 아니라면 합법으로 표시하세요."
       ],
       "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
-        "시스템이 이 메시지를 피싱 시도라고 경고했습니다. 해당 메일이 합법적인 내용인지 확인해 주세요."
+        "시스템이 이 메시지를 피싱 시도로 확인했습니다. 해당 메일이 합법적인 내용인지 확인해 주세요."
       ],
       "password": [
         "비밀번호"
@@ -8214,7 +8226,7 @@
         "전달/답장하려고 하는 원본 메시지가 전송 중입니다. 계속하면, 더 이상 원본 메시지의 전송을 취소할 수 없습니다."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        "원전송자의 메시지가 더 이상 유효하지 않습니다. 사용자의 메시지가 곧 일반 ${ defaultEmail } 로 전송됩니다."
+        "원전송자의 메시지가 더 이상 유효하지 않습니다. 사용자의 메시지가 곧 일반 ${ defaultEmail }(으)로 전송됩니다."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
@@ -8322,7 +8334,7 @@
         "메시지가 ${ value }에 자동으로 삭제됨"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "이 메시지는 스팸으로 마크됩니다. 추후 이메일도 구독하지 않으시겠어요?"
+        "이 메시지는 스팸으로 표시됩니다. 추후 이메일도 구독하지 않으시겠어요?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "이 메시지가 임시보관함으로 이동되었으며, 편집할 수 있습니다. 전송될 때의 다시 예약이 필요합니다."
@@ -10025,6 +10037,12 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Context total": [
+        "컨텍스트 모달"
+      ],
+      "Mail debugging information": [
+        "메일 디버깅 정보"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10329,7 +10347,7 @@
         "서비스 이용약관"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
-        "이 ICS 파일에는 둘 이상의 이벤트가 있어요. 다운로드하여 ${ CALENDAR_APP_NAME }에서 이벤트를 가져오세요."
+        "이 ICS 파일에 두 개 이상의 이벤트가 있습니다. 다운로드하여 ${ CALENDAR_APP_NAME }에서 이벤트를 가져오세요."
       ],
       "Trash": [
         "휴지통"
@@ -10957,7 +10975,7 @@
         "중앙집중화된 결제"
       ],
       "Collaborate and share large files": [
-        "큰 파일을 공동으로 작업하고 공유하세요"
+        "큰 파일을 공동으로 작업하고 공유하기"
       ],
       "Contact groups": [
         "연락처 그룹"
@@ -11243,6 +11261,9 @@
       ],
       "Appointment scheduling": [
         "일정 예약"
+      ],
+      "Dedicated servers optimized for speed": [
+        "속도를 위해 최적화된 전용 서버"
       ]
     },
     "new_plans: feature highlight": {
@@ -11623,10 +11644,10 @@
         "자동 연결"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "사용자 당 ${ bundleStorage }으로 저장 공간을 부스트 하세요."
+        "사용자 당 ${ bundleStorage }(으)로 저장 공간 확장하기"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+        "최종 ${ bundleStorage }(으)로 저장 공간을 부스트하기"
       ],
       "Browser extension": [
         "브라우저 확장 프로그램"
@@ -11682,7 +11703,7 @@
         "링크가 클립보드에 복사됨"
       ],
       "Meeting host copied to clipboard": [
-        "미팅 호스트를 클립보드로 복사했습니다."
+        "회의 주최자를 클립보드로 복사했습니다."
       ],
       "Meeting ID copied to clipboard": [
         "미팅 ID를 클립보드에 복사했습니다"
@@ -12567,7 +12588,7 @@
         "필터 그룹"
       ],
       "Filter labels": [
-        "라벨 필터"
+        "라벨 필터링"
       ],
       "Filter quick actions": [
         "빠른 동작 필터링"
@@ -12712,6 +12733,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "작성하고자 하는 것을 ${ subject }에게 알려주세요. 예시: \"곧 다가오는 이벤트에 대한 뉴스레터를 소개해줘\""
       ]
     },
     "Placeholder for contact group name": {
@@ -13295,7 +13319,7 @@
         "PGP 수신자에게 종단간 암호화로 전송"
       ],
       "End-to-end encrypted to verified recipient": [
-        "검증된 수신자에게 종단간 암호화로 전송"
+        "검증 된 수산자에게 종단간 암호화 전송"
       ],
       "PGP-signed": [
         "PGP로 서명됨"
@@ -14428,7 +14452,7 @@
         "메시지 ${ elementsCount }개에 별표 표시했습니다."
       ],
       "${ elementsCount } message marked as unread.": [
-        "메시지 ${ elementsCount }개가 읽지않음으로 표시되었습니다."
+        "메시지 ${ elementsCount }개가 읽지 않음으로 표시되었습니다."
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } 개의 메시지가 ${ labelName }라벨로 이동되었고 발신자가 스팸 아님 목록에 추가되었습니다."
@@ -14497,7 +14521,7 @@
         "대화를 읽지않음으로 표시했습니다."
       ],
       "Conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "대화가 ${ labelName } 라벨로 이동되었고 발신자가 스팸 아님 목록에 추가되었습니다."
+        "대화가 ${ labelName }(으)로 이동되었으며 보낸 사람이 스팸 아님 목록에 추가되었습니다."
       ],
       "Conversation moved to ${ labelName }.": [
         "대화가 ${ labelName }(으)로 이동되었습니다."
@@ -14548,7 +14572,7 @@
         "매일 리스트가 구독 취소되었습니다"
       ],
       "Message added to ${ labelName }.": [
-        "메시지가 ${ labelName } 으로 추가되었습니다."
+        "메시지가 ${ labelName }(으)로 추가되었습니다."
       ],
       "Message content search enabled": [
         "메시지 콘텐츠 검색 활성화됨"
@@ -15461,7 +15485,7 @@
         "네트워크 오류"
       ],
       "New message": [
-        "새 메시지"
+        "새로운 메시지"
       ],
       "Newsletters": [
         "뉴스레터"
@@ -15629,7 +15653,7 @@
         "지금 예약하고 나중에 발송하기"
       ],
       "Schedule send": [
-        "예약 전송"
+        "일정 전송"
       ],
       "Schedule send:": [
         "스케줄 발송:"
@@ -15909,6 +15933,9 @@
       ],
       "Verify your password": [
         "비밀번호 확인"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME }로 더 나은 글 작성하기"
       ]
     },
     "Today icon tooltip in mini calendar": {
