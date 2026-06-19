@@ -25,6 +25,7 @@ import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
+import metrics from '@proton/metrics/index'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -271,5 +272,11 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     }
 
     return this.editor.hasBasePatches()
+  }
+
+  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void {
+    metrics.docs_sheets_yjs_drift_detected_total.increment({
+      reason,
+    })
   }
 }

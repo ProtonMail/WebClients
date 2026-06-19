@@ -42,6 +42,7 @@ import type { SpreadsheetConversionType } from '@proton/shared/lib/docs/constant
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { c } from 'ttag'
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -92,14 +93,21 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isCreationOrConversion = !!editorInitializationConfig
   const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
   const handleYjsDriftDetected = useCallback(
-    (_result: SpreadsheetLocalYjsUpdateAuditResult) => {
-      void clientInvoker.reportUserInterfaceError(
-        new Error(
-          c('Error')
-            .t`This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.`,
-        ),
-        { irrecoverable: false, lockEditor: true },
+    (result: SpreadsheetLocalYjsUpdateAuditResult) => {
+      for (const difference of result.differences) {
+        void clientInvoker.reportSheetsYjsDriftDetected(difference.reason)
+      }
+      const error = new Error(
+        c('Error')
+          .t`This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.`,
       )
+      reportErrorToSentry(error, undefined, {
+        driftResult: {
+          localChangedKeys: result.localChangedKeys,
+          observedYjsKeys: result.observedYjsKeys,
+        },
+      })
+      void clientInvoker.reportUserInterfaceError(error, { irrecoverable: false, lockEditor: true })
     },
     [clientInvoker],
   )

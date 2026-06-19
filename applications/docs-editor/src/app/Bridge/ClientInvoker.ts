@@ -211,4 +211,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
   async hasBasePatchesStored(): Promise<boolean> {
     return this.invokeClientMethod('hasBasePatchesStored', [])
   }
+
+  async reportSheetsYjsDriftDetected(
+    reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs',
+  ): Promise<void> {
+    return this.invokeClientMethod('reportSheetsYjsDriftDetected', [reason])
+  }
 }
