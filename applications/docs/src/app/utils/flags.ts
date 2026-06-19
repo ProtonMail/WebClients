@@ -10,7 +10,7 @@ export function useMoveModalDriveSdkEnabled() {
 }
 
 export function useLoadRecentsWithSdkEnabled() {
-  return useFlag('DocsLoadRecentsWithDriveSDK') || isDevOrBlack()
+  return useFlag('DocsLoadRecentsWithDriveSDK')
 }
 
 /**
