@@ -5,8 +5,23 @@ import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calenda
 
 import { type BaseMeetingUrls, SEPARATOR_PROTON_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 
-export const isVideoConfOnlyLink = (data: BaseMeetingUrls) => {
-    return data.meetingUrl && !data.joiningInstructions && !data.meetingId && !data.password;
+export const getSafeConferenceUrl = (url: string | undefined): string | undefined => {
+    if (!url) {
+        return undefined;
+    }
+    try {
+        const parsed = new URL(url);
+        if (parsed.protocol === 'http:') {
+            parsed.protocol = 'https:';
+        }
+        return parsed.protocol === 'https:' ? parsed.href : undefined;
+    } catch {
+        return undefined;
+    }
+};
+
+export const isVideoConfOnlyLink = (data: BaseMeetingUrls, safeJoiningInstructionsUrl: string | undefined) => {
+    return data.meetingUrl && !safeJoiningInstructionsUrl && !data.meetingId && !data.password;
 };
 
 export const getVideoConfCopy = (service: VIDEO_CONF_SERVICES) => {
