@@ -15,6 +15,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MX_STATE } from '@proton/shared/lib/interfaces';
 
+import { useErrorHandler } from '../../errors';
 import { completeMigration } from '../../thunk';
 import type { MigrationModel } from '../../types';
 import { useProviderUsers } from '../../useProviderUsers';
@@ -25,6 +26,7 @@ import type { StepComponentProps } from './MigrationSetup';
 const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) => {
     const model = migrationConfiguration as MigrationModel;
     const dispatch = useDispatch();
+    const handleError = useErrorHandler();
 
     const [providerUsers] = useProviderUsers(model.domainName);
     const [loading, withLoading] = useLoading();
@@ -35,14 +37,18 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
             return;
         }
 
-        const { State: state } = await dispatch(
-            completeMigration({
-                importerOrganizationId: model.importerOrganizationId,
-                providerUsers: providerUsers ?? [],
-            })
-        ).unwrap();
+        try {
+            const { State: state } = await dispatch(
+                completeMigration({
+                    importerOrganizationId: model.importerOrganizationId,
+                    providerUsers: providerUsers ?? [],
+                })
+            ).unwrap();
 
-        model.update({ state });
+            model.update({ state });
+        } catch (err: any) {
+            handleError(err);
+        }
     };
 
     const handleSaveAndExit = () => withLoading(handleFinalize());

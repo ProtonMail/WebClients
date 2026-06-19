@@ -14,7 +14,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { KNOWN_REGISTRARS } from '../../domains';
+import { DEFAULT_REGISTRAR_ID, KNOWN_REGISTRARS, getRegistrarByIANAId } from '../../domains';
 import type { StepComponentProps } from './MigrationSetup';
 
 const StepDomain: FC<StepComponentProps> = ({ model, onNext }) => {
@@ -43,6 +43,10 @@ const StepDomain: FC<StepComponentProps> = ({ model, onNext }) => {
         }
         return [...byName.values()];
     })();
+
+    const selectedRegistrarId = getRegistrarByIANAId(model.domainRegistrarId)
+        ? model.domainRegistrarId
+        : DEFAULT_REGISTRAR_ID;
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
@@ -93,7 +97,7 @@ const StepDomain: FC<StepComponentProps> = ({ model, onNext }) => {
                         .t`Not detected correctly? Choose your provider from the list.`}</p>
                     <SelectTwo
                         className="border-weak py-8 rounded-lg"
-                        value={model.domainRegistrarId ?? 0}
+                        value={selectedRegistrarId}
                         onChange={(e) => model.update({ domainRegistrarId: e.value })}
                     >
                         {registrarOptions.map(([id, data]) => (

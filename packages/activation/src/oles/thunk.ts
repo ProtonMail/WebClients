@@ -239,10 +239,15 @@ export const createMigrationBatch = createAsyncThunk<
     'oles/createMigrationBatch',
     async (
         { importerOrganizationId, domain, providerUsers, selectedUsers, oauthToken, password },
-        { dispatch, extra }
+        { dispatch, extra, rejectWithValue }
     ) => {
         const api = getPersistedApi(extra.api);
-        await api(unlockPasswordChanges());
+
+        try {
+            await api(unlockPasswordChanges());
+        } catch (err) {
+            return rejectWithValue(getApiError(err));
+        }
 
         const errors: CreateMigrationBatchResult['errors'] = [];
 
@@ -289,7 +294,11 @@ export const createMigrationBatch = createAsyncThunk<
         // Drop some quota from the admin if safe to do so
         if (selfMember.MaxSpace === organization.MaxSpace && organization.MaxMembers > 1 && usersToCreate.length) {
             const newQuota = Math.floor(organization.MaxSpace / organization.MaxMembers);
-            await api(updateQuota(selfMember.ID, newQuota));
+            try {
+                await api(updateQuota(selfMember.ID, newQuota));
+            } catch (err) {
+                return rejectWithValue(getApiError(err));
+            }
             allocatableStorage = organization.MaxSpace - newQuota;
         }
 
@@ -476,9 +485,14 @@ export const completeMigration = createAsyncThunk<
     ApiImporterOrganization,
     { importerOrganizationId: string; providerUsers: ApiImporterOrganizationUser[] },
     ThunkApi<KtState & OrganizationKeyState>
->('oles/completeMigration', async ({ providerUsers, importerOrganizationId }, { dispatch, extra }) => {
+>('oles/completeMigration', async ({ providerUsers, importerOrganizationId }, { dispatch, extra, rejectWithValue }) => {
     const api = getPersistedApi(extra.api);
-    await api(unlockPasswordChanges());
+
+    try {
+        await api(unlockPasswordChanges());
+    } catch (err) {
+        return rejectWithValue(getApiError(err));
+    }
 
     const [members, orgKey] = await Promise.all([dispatch(membersThunk()), dispatch(organizationKeyThunk())]);
 
