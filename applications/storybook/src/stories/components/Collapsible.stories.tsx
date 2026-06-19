@@ -254,3 +254,40 @@ export const ControlledGroupedCollapsibles: Story = {
         );
     },
 };
+
+export const AnimatedGroup: Story = {
+    render: () => (
+        <CollapsibleGroup defaultValue="0">
+            <Collapsible key="0" className="border rounded-lg mb-2">
+                <CollapsibleHeader
+                    className="p-4"
+                    suffix={
+                        <CollapsibleHeaderIconButton>
+                            <IcChevronDown />
+                        </CollapsibleHeaderIconButton>
+                    }
+                >
+                    First collapsible header
+                </CollapsibleHeader>
+                <CollapsibleContent animated>
+                    <div className="px-4 pb-4">{loremIpsum}</div>
+                </CollapsibleContent>
+            </Collapsible>
+            <Collapsible key="1" className="border rounded-lg">
+                <CollapsibleHeader
+                    className="p-4"
+                    suffix={
+                        <CollapsibleHeaderIconButton>
+                            <IcChevronDown />
+                        </CollapsibleHeaderIconButton>
+                    }
+                >
+                    Second collapsible header
+                </CollapsibleHeader>
+                <CollapsibleContent animated>
+                    <div className="px-4 pb-4">{loremIpsum}</div>
+                </CollapsibleContent>
+            </Collapsible>
+        </CollapsibleGroup>
+    ),
+};
