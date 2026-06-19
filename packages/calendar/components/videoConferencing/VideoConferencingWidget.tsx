@@ -19,7 +19,7 @@ import clsx from '@proton/utils/clsx';
 import { ProtonMeetPassword } from '../protonMeetIntegration/ProtonMeetPassword';
 import { EventDetailsRow } from './EventDetailsRow';
 import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from './constants';
-import { getVideoConfCopy, isVideoConfOnlyLink } from './videoConfHelpers';
+import { getSafeConferenceUrl, getVideoConfCopy, isVideoConfOnlyLink } from './videoConfHelpers';
 
 import './VideoConferencing.scss';
 
@@ -38,11 +38,14 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
 
     const { isDrawerApp } = useDrawer();
 
-    if (!data.meetingUrl) {
+    const safeUrl = getSafeConferenceUrl(data.meetingUrl);
+    const safeJoiningInstructionsUrl = getSafeConferenceUrl(data.joiningInstructions);
+
+    if (!safeUrl) {
         return null;
     }
 
-    const hasOnlyLink = isVideoConfOnlyLink(data);
+    const hasOnlyLink = isVideoConfOnlyLink(data, safeJoiningInstructionsUrl);
     const joinText = getVideoConfCopy(data.service);
 
     const handleOnCopy = () => {
@@ -73,14 +76,14 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                     {overrideJoinButton ? (
                         overrideJoinButton
                     ) : (
-                        <ButtonLike as={Href} href={data.meetingUrl} shape="solid" color="norm">
+                        <ButtonLike as={Href} href={safeUrl} shape="solid" color="norm">
                             {joinText}
                         </ButtonLike>
                     )}
 
                     <div className={clsx('flex flex-nowrap', isDrawerApp ? 'gap-1' : 'gap-2')}>
                         <Copy
-                            value={data.meetingUrl}
+                            value={safeUrl}
                             shape="ghost"
                             size="small"
                             className="group-hover:opacity-100 color-weak"
@@ -146,13 +149,13 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
 
                                 <div>
                                     <p className="m-0">{c('Google Meet').t`Meeting link:`}</p>
-                                    <Href className="block mb-2 text-ellipsis max-w-full" href={data.meetingUrl}>
-                                        {data.meetingUrl}
+                                    <Href className="block mb-2 text-ellipsis max-w-full" href={safeUrl}>
+                                        {safeUrl}
                                     </Href>
                                 </div>
 
-                                {data.joiningInstructions && (
-                                    <Href href={data.joiningInstructions}>{c('Google Meet')
+                                {safeJoiningInstructionsUrl && (
+                                    <Href href={safeJoiningInstructionsUrl}>{c('Google Meet')
                                         .t`Joining instructions`}</Href>
                                 )}
                             </section>
