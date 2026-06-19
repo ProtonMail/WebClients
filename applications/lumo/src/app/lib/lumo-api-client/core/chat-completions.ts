@@ -1,3 +1,4 @@
+import type { LumoModelId } from '../../../features/api-docs/lumoApiDocs.config';
 import type {
     ChatCompletionsContentPart,
     ChatCompletionsImagePart,
@@ -14,7 +15,7 @@ import type {
 import { Role } from '../../../types-api';
 
 export const DEFAULT_CHAT_MODEL = 'lumo';
-export const DEFAULT_REASONING_MODEL = 'lumo-thinking';
+export const DEFAULT_REASONING_MODEL: LumoModelId = 'lumo-plus-v1';
 
 export type ToChatCompletionsOptions = {
     enableReasoning?: boolean;
