@@ -290,6 +290,7 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                             },
                         },
                     ]);
+                    onLoaded();
                 } else {
                     sendMessage([
                         'webWidget',
