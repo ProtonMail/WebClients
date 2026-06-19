@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { LEGACY_FORUM_CATEGORY_ID } from '@proton/mail/helpers/location';
 // eslint-disable-next-line no-restricted-imports
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 // eslint-disable-next-line no-restricted-imports
@@ -266,7 +267,7 @@ export const useElements: UseElements = ({
                 // `23` refers to the forum category ID that we decided to remove
                 // This line needs to be removed once the API team has run the migration
                 // to erase the forum category from already categorised messages and conversations
-                const forumLabelID = '23' as CategoryLabelID;
+                const forumLabelID = LEGACY_FORUM_CATEGORY_ID as CategoryLabelID;
                 categoryIDs.push(...disabledCategoriesIDs, forumLabelID);
             }
         }

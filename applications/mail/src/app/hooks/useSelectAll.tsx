@@ -1,6 +1,7 @@
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import {
@@ -8,6 +9,7 @@ import {
     getSelectAllBannerTextWithLocation,
     getSelectAllButtonText,
 } from 'proton-mail/helpers/selectAll';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
@@ -27,6 +29,10 @@ export const useSelectAll = ({ labelID }: Props) => {
     const dispatch = useMailDispatch();
     const selectAll = useMailSelector(selectSelectAll);
 
+    const categoryIDs = useMailSelector(selectCategoryIDs);
+    // The label must be the category when in inbox and with categories
+    const currentLabel = labelID === MAILBOX_LABEL_IDS.INBOX && categoryIDs.length > 0 ? categoryIDs[0] : labelID;
+
     const { getCurrentLocationCount } = useMailboxCounter();
     const locationCount = getCurrentLocationCount();
 
@@ -40,7 +46,7 @@ export const useSelectAll = ({ labelID }: Props) => {
         return getSelectAllBannerTextWithLocation({
             conversationMode: isConversation,
             elementsCount: selectAll ? locationCount.Total : mailPageSize,
-            labelID,
+            currentLabel,
             customLabels: labels,
             customFolders: folders,
         });
@@ -50,7 +56,7 @@ export const useSelectAll = ({ labelID }: Props) => {
         return getSelectAllButtonText({
             selectAll,
             elementsCount: locationCount.Total,
-            labelID,
+            currentLabel,
             customLabels: labels,
             customFolders: folders,
         });

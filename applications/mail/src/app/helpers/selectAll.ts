@@ -30,19 +30,19 @@ export const getSelectAllBannerText = (conversationMode: boolean, elementsCount:
 export const getSelectAllBannerTextWithLocation = ({
     conversationMode,
     elementsCount,
-    labelID,
+    currentLabel,
     customLabels,
     customFolders,
 }: {
     conversationMode: boolean;
     elementsCount: number;
-    labelID: string;
+    currentLabel: string;
     customLabels: Label[];
     customFolders: Folder[];
 }) => {
-    const location = isCategoryLabel(labelID)
-        ? getLabelFromCategoryId(labelID)
-        : getLabelName(labelID, customLabels, customFolders);
+    const location = isCategoryLabel(currentLabel)
+        ? getLabelFromCategoryId(currentLabel)
+        : getLabelName(currentLabel, customLabels, customFolders);
 
     /* translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code.
      * Here, "{elementsCount} conversations" or "{elementsCount} messages" will be bold. You need to put them in your translation too.
@@ -66,22 +66,22 @@ export const getSelectAllBannerTextWithLocation = ({
 export const getSelectAllButtonText = ({
     selectAll,
     elementsCount,
-    labelID,
+    currentLabel,
     customLabels,
     customFolders,
 }: {
     selectAll: boolean;
     elementsCount: number;
-    labelID: string;
+    currentLabel: string;
     customLabels: Label[];
     customFolders: Folder[];
 }) => {
     if (selectAll) {
         return c('Info').t`Clear selection`;
     }
-    const location = isCategoryLabel(labelID)
-        ? getLabelFromCategoryId(labelID)
-        : getLabelName(labelID, customLabels, customFolders);
+    const location = isCategoryLabel(currentLabel)
+        ? getLabelFromCategoryId(currentLabel)
+        : getLabelName(currentLabel, customLabels, customFolders);
 
     /* translator:
      * ${elementsCount} is the number of elements in the location
@@ -102,13 +102,13 @@ export const getSelectAllNotificationText = (isMessage: boolean) => {
 export const getCanDisplaySelectAllBanner = ({
     mailPageSize,
     checkedIDs,
-    labelID,
+    currentLabel,
     isSearch,
     hasFilter,
 }: {
     mailPageSize: number;
     checkedIDs: string[];
-    labelID: string;
+    currentLabel: string;
     isSearch: boolean;
     hasFilter: boolean;
 }) => {
@@ -116,7 +116,7 @@ export const getCanDisplaySelectAllBanner = ({
 
     return (
         checkedIDs?.length === mailPageSize &&
-        !unauthorizedSelectAllLabelIDs.includes(labelID as MAILBOX_LABEL_IDS) &&
+        !unauthorizedSelectAllLabelIDs.includes(currentLabel as MAILBOX_LABEL_IDS) &&
         !isSearch &&
         !hasFilter
     );
