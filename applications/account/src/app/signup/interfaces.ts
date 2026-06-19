@@ -117,6 +117,8 @@ interface BaseAccountData {
 
 export type AccountData = BaseAccountData & {
     signupType: SignupType;
+    // For BYOE signups: whether to import existing emails from the connected Gmail account.
+    importEmails?: boolean;
 };
 
 interface SetupData {

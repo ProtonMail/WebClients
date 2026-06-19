@@ -25,7 +25,7 @@ interface Props extends ModalProps {
     reduceHeight?: boolean;
     onSyncCallback?: (hasError: boolean, sync?: Sync) => void;
     onSyncSkipCallback?: () => void;
-    onBYOECallback?: (hasError: boolean, isConversionFlow: boolean, token?: ImportToken) => void;
+    onBYOECallback?: (hasError: boolean, importEmails: boolean, token?: ImportToken) => void;
     noSkip?: boolean;
     hasAccessToBYOE?: boolean;
     expectedEmailAddress?: string;
@@ -87,7 +87,7 @@ const GmailSyncModal = ({
         });
     };
 
-    const handleBYOEWithImport = () => {
+    const handleBYOEWithImport = (importEmails: boolean) => {
         void triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
             features: [EASY_SWITCH_FEATURES.BYOE],
@@ -108,8 +108,7 @@ const GmailSyncModal = ({
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
 
                 const hasError = res.type.endsWith('rejected');
-                const isConversionFlow = !!expectedEmailAddress;
-                onBYOECallback?.(hasError, isConversionFlow, payload);
+                onBYOECallback?.(hasError, importEmails, payload);
             },
         });
     };
@@ -127,7 +126,15 @@ const GmailSyncModal = ({
     };
 
     if (hasAccessToBYOE) {
-        return <AddBYOEModal {...rest} onClose={handleClose} onSubmit={handleBYOEWithImport} isLoading={loading} />;
+        return (
+            <AddBYOEModal
+                {...rest}
+                onClose={handleClose}
+                onSubmit={handleBYOEWithImport}
+                expectedEmailAddress={expectedEmailAddress}
+                isLoading={loading}
+            />
+        );
     }
 
     return (

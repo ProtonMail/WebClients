@@ -519,7 +519,7 @@ export const handleSetupUser = async ({
                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SIGNUP,
                 Account: emailAddress,
                 Provider: OAUTH_PROVIDER.GOOGLE,
-                AutomaticImport: true,
+                AutomaticImport: newCache.accountData.importEmails ?? true,
                 QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
             })
         );
