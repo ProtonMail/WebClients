@@ -336,6 +336,7 @@ enum MeetFeatureFlag {
     MeetUseSimpleSegmentation = 'MeetUseSimpleSegmentation',
     MeetCoreWorker = 'MeetCoreWorker',
     MeetEnableScreenShareAudio = 'MeetEnableScreenShareAudio',
+    EnableAccessibilityAnnouncements = 'EnableAccessibilityAnnouncements',
 }
 
 enum LumoFeatureFlag {

@@ -10,9 +10,10 @@ interface CloseButtonProps {
     onClose: () => void;
     className?: string;
     style?: React.CSSProperties;
+    tabIndex?: number;
 }
 
-export const CloseButton = ({ onClose, className, style }: CloseButtonProps) => {
+export const CloseButton = ({ onClose, className, style, tabIndex }: CloseButtonProps) => {
     return (
         <Button
             className={clsx('close-button rounded-full w-custom h-custom shrink-0 p-0', className)}
@@ -24,6 +25,7 @@ export const CloseButton = ({ onClose, className, style }: CloseButtonProps) => 
             shape="ghost"
             aria-label={c('Alt').t`Close`}
             onClick={onClose}
+            tabIndex={tabIndex}
         >
             <IcCross size={4} alt={c('Action').t`Close`} />
         </Button>

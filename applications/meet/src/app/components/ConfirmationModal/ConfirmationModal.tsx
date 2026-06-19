@@ -1,7 +1,9 @@
+import { useContext } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/Modal';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
@@ -21,9 +23,13 @@ interface ConfirmationModalProps {
     onSecondaryAction?: () => void;
     secondaryButtonClass?: MeetButtonClass;
     onClose?: () => void;
+    /** Forwarded to ModalTwo. See its `enableFocusTrap`. */
+    enableFocusTrap?: boolean;
 }
 
-export const ConfirmationModal = ({
+// Rendered inside <ModalTwo> to read its generated `id` from context, wiring the title/message to
+// the dialog's aria-labelledby/aria-describedby for a proper accessible name and description.
+const ConfirmationModalContent = ({
     icon,
     title,
     message,
@@ -36,14 +42,10 @@ export const ConfirmationModal = ({
     onSecondaryAction,
     onClose,
 }: ConfirmationModalProps) => {
+    const { id } = useContext(ModalContext);
+
     return (
-        <ModalTwo
-            open={true}
-            onClose={onClose}
-            rootClassName="confirmation-modal"
-            size="small"
-            className="large-meet-radius border border-norm overflow-y-auto"
-        >
+        <>
             {onClose && (
                 <Button
                     onClick={onClose}
@@ -66,8 +68,14 @@ export const ConfirmationModal = ({
                 }}
             >
                 {icon}
-                <div className="text-3xl text-semibold">{title}</div>
-                {message && <div className="color-weak">{message}</div>}
+                <div id={id} className="text-3xl text-semibold">
+                    {title}
+                </div>
+                {message && (
+                    <div id={`${id}-description`} className="color-weak">
+                        {message}
+                    </div>
+                )}
 
                 <div className="w-full flex flex-column flex-nowrap gap-2 mt-4">
                     <Button
@@ -95,6 +103,21 @@ export const ConfirmationModal = ({
                     )}
                 </div>
             </div>
+        </>
+    );
+};
+
+export const ConfirmationModal = ({ onClose, enableFocusTrap, ...rest }: ConfirmationModalProps) => {
+    return (
+        <ModalTwo
+            open={true}
+            onClose={onClose}
+            enableFocusTrap={enableFocusTrap}
+            rootClassName="confirmation-modal"
+            size="small"
+            className="large-meet-radius border border-norm overflow-y-auto"
+        >
+            <ConfirmationModalContent onClose={onClose} {...rest} />
         </ModalTwo>
     );
 };
