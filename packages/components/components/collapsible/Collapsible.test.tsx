@@ -53,4 +53,24 @@ describe('<Collapsible />', () => {
         fireEvent.click(header);
         expect(content).not.toBeVisible();
     });
+
+    it('keeps animated content mounted and reflects state via data-state instead of hidden', () => {
+        const { getByTestId } = render(
+            <Collapsible>
+                <CollapsibleHeader>Header</CollapsibleHeader>
+                <CollapsibleContent animated>Content</CollapsibleContent>
+            </Collapsible>
+        );
+
+        const header = getByTestId('collapsible-header');
+        const content = getByTestId('collapsible-content');
+
+        expect(content).not.toHaveAttribute('hidden');
+        expect(content).toHaveAttribute('data-state', 'closed');
+        expect(content).toHaveAttribute('aria-hidden', 'true');
+
+        fireEvent.click(header);
+        expect(content).toHaveAttribute('data-state', 'open');
+        expect(content).toHaveAttribute('aria-hidden', 'false');
+    });
 });
