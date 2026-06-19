@@ -20,6 +20,8 @@ const TRACKED_ACTIONS = [
     'elements/eventUpdates/',
     'elements/setParams',
     'elements/reset',
+    'elements/invalidate',
+    'elements/retry',
 ] as const;
 
 const shouldLogAction = (type: string) => {
