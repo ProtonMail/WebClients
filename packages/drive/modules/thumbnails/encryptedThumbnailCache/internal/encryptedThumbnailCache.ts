@@ -1,5 +1,7 @@
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+
 import { sendErrorReport } from '../../../../legacy/errorHandling';
-import type { GetUserKeys } from './crypto';
 import { decryptThumbnail, encryptThumbnail, resolveThumbnailEncryptionKey } from './crypto';
 import { ThumbnailCacheDb } from './thumbnailCacheDb';
 
@@ -14,7 +16,7 @@ import { ThumbnailCacheDb } from './thumbnailCacheDb';
 export type ThumbnailCacheType = 'sd' | 'hd';
 
 interface InitParams {
-    getUserKeys: GetUserKeys;
+    userKeys: DecryptedKey[];
     userId: string;
 }
 
@@ -35,11 +37,15 @@ let initPromise: Promise<void> | undefined;
 const cacheKeyFor = (nodeUidOrRevisionUid: string, type: ThumbnailCacheType): string =>
     `${nodeUidOrRevisionUid}-${type}`;
 
+/** Reports a thumbnail-cache failure to Sentry, tagged so it is identifiable as coming from this module. */
+const sendErrorReportForThumbnailCache = (error: unknown) =>
+    sendErrorReport(error, { tags: { component: 'encrypted-thumbnail-cache' } });
+
 /**
  * Opens the per-user database and resolves (caching in memory) the user's
  * symmetric key. Safe to call repeatedly; re-resolves only when the user changes.
  */
-export const initEncryptedThumbnailCache = ({ getUserKeys, userId }: InitParams): Promise<void> => {
+export const initEncryptedThumbnailCache = ({ userKeys, userId }: InitParams): Promise<void> => {
     if (currentUserId === userId && initPromise) {
         return initPromise;
     }
@@ -61,11 +67,11 @@ export const initEncryptedThumbnailCache = ({ getUserKeys, userId }: InitParams)
         try {
             previous?.db.close();
             const db = await ThumbnailCacheDb.open(userId);
-            const cryptoKey = await resolveThumbnailEncryptionKey(getUserKeys, db);
+            const cryptoKey = await resolveThumbnailEncryptionKey(userKeys, db);
             ready = { db, cryptoKey };
         } catch (e) {
             // Leave the cache disabled — thumbnails still load straight from the SDK.
-            sendErrorReport(e);
+            sendErrorReportForThumbnailCache(e);
             ready = undefined;
         }
     })();
@@ -90,7 +96,7 @@ export const getCachedThumbnail = async (
         }
         return await decryptThumbnail(cache.cryptoKey, ciphertext, cacheKey);
     } catch (e) {
-        sendErrorReport(e);
+        sendErrorReportForThumbnailCache(e);
         return undefined;
     }
 };
@@ -110,7 +116,17 @@ export const setCachedThumbnail = async (
         const ciphertext = await encryptThumbnail(cache.cryptoKey, bytes, cacheKey);
         await cache.db.putEntry(cacheKey, ciphertext);
     } catch (e) {
-        sendErrorReport(e);
+        if (e instanceof DOMException && e.name === 'QuotaExceededError') {
+            const estimate = await navigator.storage?.estimate?.();
+            captureMessage('Encrypted thumbnail cache: storage quota exceeded', {
+                level: 'debug',
+                extra: { usage: estimate?.usage, quota: estimate?.quota },
+            });
+
+            // TODO: Define and send graphana metric to plot.
+            return;
+        }
+        sendErrorReportForThumbnailCache(e);
     }
 };
 
