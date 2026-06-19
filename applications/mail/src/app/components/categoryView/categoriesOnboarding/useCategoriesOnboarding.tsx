@@ -51,7 +51,7 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
     const isUserInWelcomeFlow = welcomeFlags.welcomeFlags.isWelcomeFlow;
 
     // Existing users, created before the release of the category view see the onboarding
-    const isExistingUser = isBefore(fromUnixTime(user.CreateTime), new Date(accountDateThreshold.feature.Value));
+    const isExistingUser = isBefore(fromUnixTime(user.CreateTime), fromUnixTime(accountDateThreshold.feature.Value));
 
     const allMailsElementsCount = getLocationCount(MAILBOX_LABEL_IDS.ALL_MAIL);
 
