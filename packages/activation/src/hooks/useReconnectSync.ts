@@ -11,9 +11,14 @@ import {
     type OAuthProps,
 } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { SyncTokenStrategy, createSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
+import {
+    SyncTokenStrategy,
+    createSyncItem,
+    deleteSyncItem,
+    resumeSyncItem,
+} from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncByEmail } from '@proton/activation/src/logic/sync/sync.selectors';
-import { useApi, useNotifications } from '@proton/components';
+import { useApi, useErrorHandler, useNotifications } from '@proton/components';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -30,6 +35,7 @@ const useReconnectSync = (address: Address) => {
     const easySwitchDispatch = useEasySwitchDispatch();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
+    const handleError = useErrorHandler();
 
     const { activeBYOEAddresses } = useBYOEAddressesCounts();
 
@@ -179,7 +185,15 @@ const useReconnectSync = (address: Address) => {
                     return;
                 }
 
-                await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
+                try {
+                    await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
+                } catch (e) {
+                    await easySwitchDispatch(
+                        deleteSyncItem({ syncId: result.payload.sync.id, showNotification: false })
+                    );
+                    handleError(e);
+                    return;
+                }
 
                 createNotification({ text: c('Notification').t`Address reconnected.` });
             });
@@ -207,7 +221,15 @@ const useReconnectSync = (address: Address) => {
                             return;
                         }
 
-                        await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
+                        try {
+                            await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
+                        } catch (e) {
+                            await easySwitchDispatch(
+                                deleteSyncItem({ syncId: result.payload.sync.id, showNotification: false })
+                            );
+                            handleError(e);
+                            return;
+                        }
 
                         createNotification({ text: c('Notification').t`Address reconnected.` });
                     });
