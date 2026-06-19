@@ -13731,6 +13731,36 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digital signatur verifierad. Denna fil skapades säkert av ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digital signatur verifierad. Denna fil laddades säkert upp av ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digital signatur verifierad. Denna mapp skapades säkert av ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digital signatur verifierad. Denna mapp laddades upp säkert av ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Vi kunde inte verifiera att ${ author } skapade denna fil."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Vi kunde inte verifiera att ${ author } skapade denna mapp."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Vi kunde inte verifiera att ${ author } laddade upp denna fil."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Vi kunde inte verifiera att ${ author } laddade upp denna mapp."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Vi kunde inte bekräfta att namnet skapades eller modifierades av ${ claimedNameAuthor }. Orsaken är: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Vi kunde inte bekräfta att noden skapades av ${ claimedKeyAuthor }. Orsaken är: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {

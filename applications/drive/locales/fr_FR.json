@@ -13890,6 +13890,30 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Nous n'avons pas pu confirmer que le nœud a été créé par ${ claimedKeyAuthor }. La raison est la suivante : ${ node.keyAuthor.error.error }"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "La signature numérique a été vérifiée. Ce fichier a été créé de manière sécurisée par ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "La signature numérique a été vérifiée. Ce fichier a été importé de manière sécurisée par ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "La signature numérique a été vérifiée. Ce dossier a été créé de manière sécurisée par ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "La signature numérique a été vérifiée. Ce dossier a été importé de manière sécurisée par ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Nous n'avons pas pu vérifier que ${ author } a créé ce fichier."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Nous n'avons pas pu vérifier que ${ author } a créé ce dossier."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Nous n'avons pas pu vérifier que ${ author } a importé ce fichier."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Nous n'avons pas pu vérifier que ${ author } a importé ce dossier."
       ]
     },
     "Today icon tooltip in mini calendar": {

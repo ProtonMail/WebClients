@@ -14094,6 +14094,30 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Nu s-a putut confirma că nodul a fost creat de către ${ claimedKeyAuthor }. Motiv: ${ node.keyAuthor.error.error }"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Semnătură digitală verificată. Acest fișier a fost creat în siguranță de către ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Semnătură digitală verificată. Acest folder a fost creat în siguranță de către ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Nu s-a putut verifica dacă ${ author } a creat acest fișier."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Nu s-a putut verifica dacă ${ author } a creat acest folder."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Nu s-a putut verifica dacă ${ author } a încărcat acest fișier."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Nu s-a putut verifica dacă ${ author } a încărcat acest folder."
       ]
     },
     "Today icon tooltip in mini calendar": {
