@@ -60,6 +60,8 @@ interface AccountFormDataState {
     passwordConfirm: string;
     signupType: SignupType | undefined;
     domain: string | undefined;
+    // For BYOE signups: whether to import existing emails from the connected Gmail account.
+    importEmails?: boolean;
 }
 
 interface AccountFormDataStateRequired extends Omit<AccountFormDataState, 'signupType' | 'domain'> {
@@ -351,6 +353,7 @@ const getAccountDataFromState = (state: AccountFormDataStateRequired, payload: C
         domain: state.domain,
         signupType: state.signupType,
         password: state.password,
+        importEmails: state.importEmails,
         payload,
     };
 };
