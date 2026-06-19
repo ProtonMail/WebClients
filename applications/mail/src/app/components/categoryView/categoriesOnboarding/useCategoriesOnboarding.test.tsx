@@ -4,6 +4,7 @@ import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { PLANS } from '@proton/payments';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
@@ -27,7 +28,7 @@ jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
 const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
 
 const janFirst = 1735693200;
-const febFirstMS = 1738371600000;
+const febFirstMS = 1738371600;
 const marchFirst = 1740790800;
 
 const getFeatureValues = (
@@ -62,7 +63,9 @@ const mockGetLocationCount = (total: number) => {
 
 describe('useCategoriesOnboarding', () => {
     beforeAll(() => {
-        mockUseOrganization([{ PlanName: PLANS.MAIL_PRO }]);
+        mockUseOrganization([
+            { PlanName: PLANS.MAIL_PRO, Settings: { MailCategoryViewEnabled: true } as OrganizationSettings },
+        ]);
         mockUseWelcomeFlags.mockReturnValue({ welcomeFlags: { isWelcomeFlow: false } });
     });
 
