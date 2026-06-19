@@ -10397,7 +10397,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.21.0"
     typescript: "npm:^6.0.2"
-    undici: "npm:^7.25.0"
+    undici: "npm:^7.28.0"
     yaml: "npm:^2.9.0"
   languageName: unknown
   linkType: soft
@@ -10446,7 +10446,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.21.0"
     typescript: "npm:^6.0.2"
-    undici: "npm:^7.25.0"
+    undici: "npm:^7.28.0"
   languageName: unknown
   linkType: soft
 
@@ -10567,7 +10567,7 @@ __metadata:
     cross-fetch: "npm:^4.1.0"
     date-fns: "npm:^2.30.0"
     docx-preview: "npm:^0.3.7"
-    dompurify: "npm:^3.4.7"
+    dompurify: "npm:^3.4.11"
     emoji-mart: "npm:^5.1.0"
     eslint: "npm:^9.39.4"
     fast-xml-parser: "npm:^5.8.0"
@@ -11447,7 +11447,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/sanitize@workspace:packages/sanitize"
   dependencies:
-    dompurify: "npm:^3.4.2"
+    dompurify: "npm:^3.4.11"
     eslint: "npm:^9.39.4"
     jest: "npm:^30.4.2"
     jest-environment-jsdom: "npm:^30.4.1"
@@ -11484,7 +11484,7 @@ __metadata:
     "@vitest/browser-playwright": "npm:^4.1.8"
     "@webgpu/types": "npm:^0.1.70"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.4.7"
+    dompurify: "npm:^3.4.11"
     eslint: "npm:^9.39.4"
     file-saver: "npm:^2.0.5"
     ical.js: "npm:^1.5.0"
@@ -25574,15 +25574,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.3.1, dompurify@npm:^3.3.3, dompurify@npm:^3.4.2, dompurify@npm:^3.4.7":
-  version: 3.4.10
-  resolution: "dompurify@npm:3.4.10"
+"dompurify@npm:^3.3.1, dompurify@npm:^3.3.3, dompurify@npm:^3.4.11":
+  version: 3.4.11
+  resolution: "dompurify@npm:3.4.11"
   dependencies:
     "@types/trusted-types": "npm:^2.0.7"
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 10/e051c70e7a0729d8cc04d40d7863dc8977495140857e81dc668fb548b7a43c7f80cfc973e3c9c0a6cd18b8eaa94ea7de9603daa02d38c8b15a9b32cc25a6f440
+  checksum: 10/d0473e1a22ed9cc23d86ef426717bce866913d1a725512a9478985bd917b272e0faba5f1d6ad8b2e37f3f4219206c4385162d7c984cfedcd23396e1e6ae0bc5e
   languageName: node
   linkType: hard
 
@@ -41407,7 +41407,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     d3-array: "npm:^3.2.4"
     d3-scale: "npm:^4.0.2"
-    dompurify: "npm:^3.4.7"
+    dompurify: "npm:^3.4.11"
     eslint: "npm:^9.39.4"
     eslint-config-prettier: "npm:^10.1.8"
     exceljs: "npm:^4.4.0"
@@ -49477,10 +49477,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^7.24.4, undici@npm:^7.25.0":
-  version: 7.27.2
-  resolution: "undici@npm:7.27.2"
-  checksum: 10/d44f730157713fd2d36a1e98f44aa7661af2188a898b57a85c694013da312fd0c188515e64a59c6bbd4b1f5a79c20b6c564134d06b3ec2f574c990726987e73a
+"undici@npm:^7.24.4, undici@npm:^7.25.0, undici@npm:^7.28.0":
+  version: 7.28.0
+  resolution: "undici@npm:7.28.0"
+  checksum: 10/154423b280d623278a61decb437f8a7e581fb18b8c95556ef956b32a58cd668eadbb812d28e20678cb2dc545a566f35a3afc0962307ca801da30f4741117986d
   languageName: node
   linkType: hard
 
