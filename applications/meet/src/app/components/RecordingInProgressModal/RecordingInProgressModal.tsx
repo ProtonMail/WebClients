@@ -35,6 +35,9 @@ export const RecordingInProgressModal = () => {
 
     return (
         <ConfirmationModal
+            // Recording is announced via the live region (useRecordingAnnouncements); opt out of
+            // the focus trap so this modal doesn't also announce itself to screen readers.
+            enableFocusTrap={false}
             icon={
                 <img
                     src={IcCircleRadioFilled}
