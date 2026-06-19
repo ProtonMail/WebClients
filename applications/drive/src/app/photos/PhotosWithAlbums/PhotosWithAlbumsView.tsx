@@ -62,6 +62,19 @@ export const PhotosWithAlbumsView = () => {
 
     const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
         const shouldProcess = () => Boolean(domRef.current);
+        // How many rows the card is from the visible viewport (0 = on screen). The
+        // grid keeps the `data-viewport-distance` attribute in sync as it
+        // re-renders on scroll, so reading it here (re-evaluated by the loader when
+        // it builds each chunk) tracks the current scroll position without forcing
+        // a layout reflow, and lets the loader fetch nearer thumbnails first.
+        const viewportDistance = () => {
+            const el = domRef.current;
+            if (!(el instanceof HTMLElement)) {
+                return Number.MAX_SAFE_INTEGER;
+            }
+            const distance = Number(el.dataset.viewportDistance);
+            return Number.isFinite(distance) ? distance : 0;
+        };
         // Decrypt the node and fetch its metadata.
         enqueueAdditionalInfo(nodeUid, shouldProcess);
 
@@ -71,6 +84,7 @@ export const PhotosWithAlbumsView = () => {
         loadThumbnail(getDriveForPhotos(), {
             nodeUid: nodeUid,
             shouldLoad: shouldProcess,
+            viewportDistance,
             thumbnailTypes: ['sd'],
             usePersistentCache: true,
         });

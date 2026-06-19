@@ -45,6 +45,15 @@ interface BatchState {
 const BATCH_INTERVAL_MS = 100;
 
 /**
+ * How many thumbnails to fetch per chunk while draining a batch. The queue is
+ * re-read between chunks, so thumbnails scrolled out of view (now unmounted)
+ * are dropped and freshly-visible ones are picked up. Kept small (around the
+ * browser's per-origin HTTP/1.1 connection limit) so scrolling re-prioritises
+ * quickly instead of waiting behind one large in-flight request.
+ */
+const PROCESS_CHUNK_SIZE = 10;
+
+/**
  * Produces a unique key used by the `attempted` set to track which
  * (thumbnailKey, thumbnailType) pairs have already been fetched, preventing
  * duplicate requests after a successful or failed load. `thumbnailKey` is the
@@ -87,14 +96,22 @@ type SetThumbnailData = (id: string, data: Partial<ThumbnailData>) => void;
 /**
  * Drains the pending queue for a single (drive, thumbnailType) batch.
  *
+ * The queue is drained in small chunks (PROCESS_CHUNK_SIZE), in queue order.
+ * Because the queue is re-read between chunks, thumbnails scrolled out of view
+ * are dropped (their `shouldLoad` guard fails once unmounted) and freshly
+ * visible ones are picked up - instead of everything waiting behind one large
+ * in-flight request fetching items the user has already scrolled past.
+ *
+ * Per chunk:
  * - Skips items whose `shouldLoad` guard returns false at flush time.
  * - On success, creates a blob URL and updates the store.
  * - On a failed result (ok=false), marks the entry as loaded with no URL.
- * - On a thrown error, marks all items as loaded and reports via handleSdkError.
+ * - On a thrown error, marks the chunk's items as loaded and reports via handleSdkError.
  * - In all cases, records the attempt so the item won't be re-queued.
- * - Clears the interval once the queue is empty after processing.
- * - SD (Type1) batches are prioritised: the HD (Type2) interval only starts
- *   after the SD batch finishes, ensuring lower-resolution previews appear first.
+ *
+ * Once the queue is empty the interval is cleared. SD (Type1) batches are
+ * prioritised: the HD (Type2) interval only starts after the SD batch finishes,
+ * ensuring lower-resolution previews appear first.
  */
 const processBatch = async (
     drive: DriveClient,
@@ -112,68 +129,91 @@ const processBatch = async (
     const cacheType = isHdType(batch.thumbnailType) ? 'hd' : 'sd';
 
     batch.isProcessing = true;
-    const allItems = Array.from(batch.pendingItems.values());
-    allItems.forEach((item) => batch.pendingItems.delete(item.nodeUid));
-    let itemsToProcess = allItems.filter(shouldProcess);
-
-    // Read-through persistent cache: for items that opted in via `usePersistentCache`,
-    // serve them from the encrypted cache and only fetch the misses from the SDK.
-    if (itemsToProcess.some((item) => item.usePersistentCache)) {
-        const lookups = await Promise.all(
-            itemsToProcess.map(async (item) => ({
-                item,
-                cached: item.usePersistentCache ? await getCachedThumbnail(storeKeyOf(item), cacheType) : undefined,
-            }))
-        );
-        const misses: ThumbnailRequest[] = [];
-        for (const { item, cached } of lookups) {
-            if (cached && shouldProcess(item)) {
-                const url = URL.createObjectURL(new Blob([cached], { type: 'image/jpeg' }));
-                attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
-                setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded', [urlKey]: url });
-                logger.debug(`Thumbnail loaded from cache: ${storeKeyOf(item)}`);
-            } else {
-                misses.push(item);
-            }
-        }
-        itemsToProcess = misses;
-    }
-
-    const uidsToProcess = itemsToProcess.map((item) => item.nodeUid);
-
-    logger.debug(`Processing batch of ${uidsToProcess.length} thumbnails (type: ${batch.thumbnailType})`);
 
     try {
-        if (uidsToProcess.length > 0) {
-            for await (const thumbnailResult of drive.iterateThumbnails(uidsToProcess, batch.thumbnailType)) {
-                const item = itemsToProcess.find((item) => item.nodeUid === thumbnailResult.nodeUid);
-                if (!item || !shouldProcess(item)) {
-                    continue;
-                }
+        while (batch.pendingItems.size > 0) {
+            // Order by ascending viewport distance (0 = on screen, 1 = first row
+            // past the edge, ...) so on-screen thumbnails are fetched first and the
+            // pre-render margin rows fill in by proximity. Distance is evaluated
+            // here, so it reflects the latest scroll position rather than where the
+            // item was when it mounted. The sort is stable, so queue order
+            // (top-to-bottom of the view) breaks ties at the same distance. Items
+            // scrolled fully out of view have unmounted, so their `shouldLoad`
+            // guard fails and they're filtered out below before any fetch.
+            // Re-reading the queue each iteration also picks up items queued while
+            // the previous chunk was in-flight.
+            const chunk = Array.from(batch.pendingItems.values())
+                .map((item) => ({ item, distance: item.viewportDistance ? item.viewportDistance() : 0 }))
+                .sort((a, b) => a.distance - b.distance)
+                .slice(0, PROCESS_CHUNK_SIZE)
+                .map((entry) => entry.item);
+            chunk.forEach((item) => batch.pendingItems.delete(item.nodeUid));
 
-                attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
+            let itemsToProcess = chunk.filter(shouldProcess);
 
-                if (thumbnailResult.ok) {
-                    const thumbnailBytes = thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>;
-                    const url = URL.createObjectURL(new Blob([thumbnailBytes], { type: 'image/jpeg' }));
-                    setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded', [urlKey]: url });
-                    if (item.usePersistentCache) {
-                        void setCachedThumbnail(storeKeyOf(item), cacheType, thumbnailBytes);
+            // Read-through persistent cache: for items that opted in via `usePersistentCache`,
+            // serve them from the encrypted cache and only fetch the misses from the SDK.
+            if (itemsToProcess.some((item) => item.usePersistentCache)) {
+                const lookups = await Promise.all(
+                    itemsToProcess.map(async (item) => ({
+                        item,
+                        cached: item.usePersistentCache
+                            ? await getCachedThumbnail(storeKeyOf(item), cacheType)
+                            : undefined,
+                    }))
+                );
+                const misses: ThumbnailRequest[] = [];
+                for (const { item, cached } of lookups) {
+                    if (cached && shouldProcess(item)) {
+                        const url = URL.createObjectURL(new Blob([cached], { type: 'image/jpeg' }));
+                        attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
+                        setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded', [urlKey]: url });
+                        logger.debug(`Thumbnail loaded from cache: ${storeKeyOf(item)}`);
+                    } else {
+                        misses.push(item);
                     }
-                    logger.debug(`Thumbnail loaded: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
-                } else {
-                    setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded' });
-                    logger.debug(`Thumbnail not available: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
                 }
+                itemsToProcess = misses;
+            }
+
+            const uidsToProcess = itemsToProcess.map((item) => item.nodeUid);
+            if (uidsToProcess.length === 0) {
+                continue;
+            }
+
+            logger.debug(`Processing chunk of ${uidsToProcess.length} thumbnails (type: ${batch.thumbnailType})`);
+
+            try {
+                for await (const thumbnailResult of drive.iterateThumbnails(uidsToProcess, batch.thumbnailType)) {
+                    const item = itemsToProcess.find((item) => item.nodeUid === thumbnailResult.nodeUid);
+                    if (!item || !shouldProcess(item)) {
+                        continue;
+                    }
+
+                    attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
+
+                    if (thumbnailResult.ok) {
+                        const thumbnailBytes = thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>;
+                        const url = URL.createObjectURL(new Blob([thumbnailBytes], { type: 'image/jpeg' }));
+                        setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded', [urlKey]: url });
+                        if (item.usePersistentCache) {
+                            void setCachedThumbnail(storeKeyOf(item), cacheType, thumbnailBytes);
+                        }
+                        logger.debug(`Thumbnail loaded: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
+                    } else {
+                        setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded' });
+                        logger.debug(`Thumbnail not available: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
+                    }
+                }
+            } catch (error) {
+                logger.warn(`Chunk processing failed (type: ${batch.thumbnailType}): ${error}`);
+                handleSdkError(error, { showNotification: false });
+                itemsToProcess.filter(shouldProcess).forEach((item) => {
+                    attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
+                    setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded' });
+                });
             }
         }
-    } catch (error) {
-        logger.warn(`Batch processing failed (type: ${batch.thumbnailType}): ${error}`);
-        handleSdkError(error, { showNotification: false });
-        itemsToProcess.filter(shouldProcess).forEach((item) => {
-            attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
-            setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded' });
-        });
     } finally {
         batch.isProcessing = false;
         if (batch.pendingItems.size === 0 && batch.intervalRef) {
@@ -183,10 +223,6 @@ const processBatch = async (
         // SD (Type1) batches are processed first. Only once an SD batch finishes do we
         // kick off the HD (Type2) interval, so lower-resolution previews always appear
         // before their high-resolution counterparts.
-        // TODO: An idea can be, if SD items arrive while HD is already in-flight, the HD batch is not cancelled.
-        // We should pass an AbortSignal to iterateThumbnails and abort HD when new SD items are
-        // queued, re-queuing any unprocessed HD items for after SD finishes.
-        // This will allow faster load while scrolling.
         if (batch.thumbnailType === ThumbnailType.Type1) {
             const hdBatch = batches.get(drive)?.get(ThumbnailType.Type2);
             if (hdBatch && hdBatch.pendingItems.size > 0 && !hdBatch.intervalRef) {
