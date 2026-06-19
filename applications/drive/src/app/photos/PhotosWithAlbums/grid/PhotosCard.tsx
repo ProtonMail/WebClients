@@ -30,6 +30,8 @@ import './PhotosCard.scss';
 type Props = {
     nodeUid: string;
     selected: boolean;
+    /** Rows away from the visible viewport (0 = on screen, 1 = first margin row, ...). Drives thumbnail load priority. */
+    viewportDistance?: number;
     onRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
     onClick: () => void;
@@ -46,6 +48,7 @@ export const PhotosCard: FC<Props> = ({
     style,
     onRender,
     nodeUid,
+    viewportDistance = 0,
     onClick,
     onSelect,
     onFavorite,
@@ -132,6 +135,7 @@ export const PhotosCard: FC<Props> = ({
                     isFavorite && 'photos-card--favorited'
                 )}
                 data-testid="photos-card"
+                data-viewport-distance={viewportDistance}
                 onClick={onClick}
                 onKeyDown={onKeyDown}
                 tabIndex={0}
