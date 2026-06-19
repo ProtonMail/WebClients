@@ -49,6 +49,7 @@ export { generateNodeUid } from '@protontech/drive-sdk';
 
 /* Type export */
 export type {
+    AlbumAttributes,
     Author,
     Bookmark,
     BookmarkOrUid,
@@ -64,7 +65,6 @@ export type {
     NodeEntity,
     NonProtonInvitation,
     PhotoAttributes,
-    AlbumAttributes,
     PhotoNode,
     ProtonDriveClient,
     ProtonInvitation,
@@ -94,6 +94,7 @@ export {
     NodeType,
     NodeWithSameNameExistsValidationError,
     NonProtonInvitationState,
+    PhotoTag,
     ProtonDriveError,
     RateLimitedError,
     RevisionState,
@@ -101,7 +102,6 @@ export {
     ServerError,
     ThumbnailType,
     ValidationError,
-    PhotoTag,
 } from '@protontech/drive-sdk';
 
 // Shared config and telemetry for all SDK instances.
