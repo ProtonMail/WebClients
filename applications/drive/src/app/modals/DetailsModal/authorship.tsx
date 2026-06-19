@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { type NodeEntity, NodeType } from '@proton/drive';
@@ -5,7 +7,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 export function getAuthorshipStatus(node: NodeEntity): {
     ok: boolean;
-    message: string;
+    message: ReactNode;
     details: string[];
 } {
     const activeRevision = node.activeRevision?.ok ? node.activeRevision.value : undefined;
@@ -69,9 +71,9 @@ function getAuthorshipMessage({
     isFile: boolean;
     type: 'created' | 'uploaded';
     emailAddress?: string | null;
-}): string {
+}): ReactNode {
     const isAnonymous = emailAddress === null;
-    emailAddress = emailAddress || c('Title').t`an anonymous user`;
+    const author = <strong key="author">{emailAddress || c('Title').t`an anonymous user`}</strong>;
 
     if (isOk) {
         if (isAnonymous) {
@@ -90,24 +92,12 @@ function getAuthorshipMessage({
         }
         if (isFile) {
             return type === 'created'
-                ? c('Title')
-                      .jt`Digital signature verified. This file was securely created by <strong>${emailAddress}</strong>.`.join(
-                      ''
-                  )
-                : c('Title')
-                      .jt`Digital signature verified. This file was securely uploaded by <strong>${emailAddress}</strong>.`.join(
-                      ''
-                  );
+                ? c('Title').jt`Digital signature verified. This file was securely created by ${author}.`
+                : c('Title').jt`Digital signature verified. This file was securely uploaded by ${author}.`;
         }
         return type === 'created'
-            ? c('Title')
-                  .jt`Digital signature verified. This folder was securely created by <strong>${emailAddress}</strong>.`.join(
-                  ''
-              )
-            : c('Title')
-                  .jt`Digital signature verified. This folder was securely uploaded by <strong>${emailAddress}</strong>.`.join(
-                  ''
-              );
+            ? c('Title').jt`Digital signature verified. This folder was securely created by ${author}.`
+            : c('Title').jt`Digital signature verified. This folder was securely uploaded by ${author}.`;
     }
 
     if (isAnonymous) {
@@ -123,12 +113,12 @@ function getAuthorshipMessage({
 
     if (isFile) {
         return type === 'created'
-            ? c('Title').jt`We couldn’t verify that <strong>${emailAddress}</strong> created this file.`.join('')
-            : c('Title').jt`We couldn’t verify that <strong>${emailAddress}</strong> uploaded this file.`.join('');
+            ? c('Title').jt`We couldn’t verify that ${author} created this file.`
+            : c('Title').jt`We couldn’t verify that ${author} uploaded this file.`;
     }
     return type === 'created'
-        ? c('Title').jt`We couldn’t verify that <strong>${emailAddress}</strong> created this folder.`.join('')
-        : c('Title').jt`We couldn’t verify that <strong>${emailAddress}</strong> uploaded this folder.`.join('');
+        ? c('Title').jt`We couldn’t verify that ${author} created this folder.`
+        : c('Title').jt`We couldn’t verify that ${author} uploaded this folder.`;
 }
 
 function getAuthorshipDetails(node: NodeEntity): string[] {
