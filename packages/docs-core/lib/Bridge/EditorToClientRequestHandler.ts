@@ -199,4 +199,8 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
   async hasBasePatchesStored(): Promise<boolean> {
     return this.docOrchestrator.hasBasePatches()
   }
+
+  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void {
+    this.docOrchestrator.reportSheetsYjsDriftDetected(reason)
+  }
 }
