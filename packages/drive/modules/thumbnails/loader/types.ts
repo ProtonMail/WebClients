@@ -23,6 +23,11 @@ export type ThumbnailData = {
  * - `thumbnailTypes` controls which resolutions to load. Defaults to ['sd'].
  * - `shouldLoad` is an optional guard evaluated lazily at batch time — if it
  *   returns false the item is skipped and no status is set.
+ * - `viewportDistance` is an optional priority hint evaluated lazily when a
+ *   chunk is built. It returns how far the item is from the visible viewport
+ *   (0 = on screen, 1 = first row past the edge, 2 = second, ...); the loader
+ *   fetches lower distances first, so on-screen thumbnails come before the
+ *   pre-render margin rows. Defaults to 0 (highest priority).
  * - `revisionUid` is optional. When omitted the store/cache is keyed by
  *   `nodeUid` instead. This should be used only for single-revision nodes (e.g. photos).
  * - `usePersistentCache` opts the thumbnail into the encrypted IndexedDB cache:
@@ -34,6 +39,7 @@ export interface ThumbnailRequest {
     revisionUid?: string;
     thumbnailTypes?: ('hd' | 'sd')[];
     shouldLoad?: () => boolean;
+    viewportDistance?: () => number;
     usePersistentCache?: boolean;
 }
 
