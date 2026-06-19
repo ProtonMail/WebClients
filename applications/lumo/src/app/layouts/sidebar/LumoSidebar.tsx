@@ -168,7 +168,7 @@ const LumoSidebar = () => {
             {isOverlay && <div className="sidebar-backdrop" onClick={toggle}></div>}
             <div
                 className={clsx(
-                    'sidebar h-full flex flex-nowrap flex-column no-print outline-none bg-norm rounded-xl',
+                    'sidebar h-full flex flex-nowrap flex-column no-print outline-none bg-norm md:rounded-xl',
                     !isVisible && 'sidebar--hidden',
                     isOverlay && 'sidebar-expanded'
                 )}
