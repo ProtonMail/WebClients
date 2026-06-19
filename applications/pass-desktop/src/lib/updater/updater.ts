@@ -12,6 +12,7 @@ import { ARCH } from '../../lib/env';
 import { userAgent } from '../../lib/user-agent';
 import logger from '../../utils/logger';
 import { isMac, isProdEnv, isWindows } from '../../utils/platform';
+import { categorizeUpdaterError } from './error.macos';
 import { calculateUpdateDistribution } from './helpers';
 import { mockDownload } from './mock';
 import { getUpdateStore, initUpdateStore, isUpdateInProgress, setUpdateStore } from './store';
@@ -200,7 +201,7 @@ export const startUpdater = (session: Session) => {
 
     autoUpdater.on('error', (err) => {
         logger.log('[Update] An error occurred', err);
-        setUpdateStore({ status: UpdateStatus.Error, errorType: UpdateErrorType.InstallFailed, progress: null });
+        setUpdateStore({ status: UpdateStatus.Error, errorType: categorizeUpdaterError(err), progress: null });
     });
 
     autoUpdater.on('checking-for-update', () => {
