@@ -210,6 +210,123 @@ describe('useThumbnailsStore', () => {
         });
     });
 
+    describe('chunked draining', () => {
+        it('drains a queue larger than the chunk size across multiple SDK calls', async () => {
+            const total = 14; // > PROCESS_CHUNK_SIZE (10)
+            const results = Array.from({ length: total }, (_, i) => ({
+                nodeUid: `node-${i}`,
+                ok: true,
+                thumbnail: new Uint8Array([i]) as Uint8Array<ArrayBuffer>,
+            }));
+            // Yield only the uids the SDK was actually asked for in each chunk.
+            const drive = {
+                iterateThumbnails: jest.fn(async function* (uids: string[]) {
+                    for (const uid of uids) {
+                        const match = results.find((r) => r.nodeUid === uid);
+                        if (match) {
+                            yield match;
+                        }
+                    }
+                }),
+            } as unknown as DriveClient;
+
+            results.forEach((r) => loadThumbnail(drive, { nodeUid: r.nodeUid, revisionUid: `rev-${r.nodeUid}` }));
+            await flushBatch();
+
+            // 14 items / chunk of 10 => 2 chunks => 2 SDK calls.
+            expect(jest.mocked(drive.iterateThumbnails)).toHaveBeenCalledTimes(2);
+            results.forEach((r) => {
+                expect(useThumbnailsStore.getState().getThumbnail(`rev-${r.nodeUid}`)?.sdStatus).toBe('loaded');
+            });
+        });
+
+        it('processes items in queue order (top-to-bottom of the view)', async () => {
+            const total = 14; // > PROCESS_CHUNK_SIZE (10)
+            const results = Array.from({ length: total }, (_, i) => ({
+                nodeUid: `node-${i}`,
+                ok: true,
+                thumbnail: new Uint8Array([i]) as Uint8Array<ArrayBuffer>,
+            }));
+            const drive = {
+                iterateThumbnails: jest.fn(async function* (uids: string[]) {
+                    for (const uid of uids) {
+                        const match = results.find((r) => r.nodeUid === uid);
+                        if (match) {
+                            yield match;
+                        }
+                    }
+                }),
+            } as unknown as DriveClient;
+
+            results.forEach((r) => loadThumbnail(drive, { nodeUid: r.nodeUid, revisionUid: `rev-${r.nodeUid}` }));
+            await flushBatch();
+
+            const firstChunkUids = jest.mocked(drive.iterateThumbnails).mock.calls[0][0];
+            // Queue order: the first 10 queued (node-0 .. node-9) are fetched before the rest.
+            expect(firstChunkUids).toEqual([
+                'node-0',
+                'node-1',
+                'node-2',
+                'node-3',
+                'node-4',
+                'node-5',
+                'node-6',
+                'node-7',
+                'node-8',
+                'node-9',
+            ]);
+        });
+
+        it('fetches items by ascending viewport distance, queue order breaking ties', async () => {
+            const total = 14; // > PROCESS_CHUNK_SIZE (10)
+            const results = Array.from({ length: total }, (_, i) => ({
+                nodeUid: `node-${i}`,
+                ok: true,
+                thumbnail: new Uint8Array([i]) as Uint8Array<ArrayBuffer>,
+            }));
+            const drive = {
+                iterateThumbnails: jest.fn(async function* (uids: string[]) {
+                    for (const uid of uids) {
+                        const match = results.find((r) => r.nodeUid === uid);
+                        if (match) {
+                            yield match;
+                        }
+                    }
+                }),
+            } as unknown as DriveClient;
+
+            // Distance per node (by queue index): nearer the viewport => fetched sooner.
+            const distances = [3, 1, 0, 0, 2, 0, 1, 0, 2, 1, 0, 3, 0, 1];
+            results.forEach((r, i) =>
+                loadThumbnail(drive, {
+                    nodeUid: r.nodeUid,
+                    revisionUid: `rev-${r.nodeUid}`,
+                    viewportDistance: () => distances[i],
+                })
+            );
+            await flushBatch();
+
+            const firstChunkUids = jest.mocked(drive.iterateThumbnails).mock.calls[0][0];
+            // distance 0 (queue order): node-2, node-3, node-5, node-7, node-10, node-12;
+            // then distance 1: node-1, node-6, node-9, node-13 - filling the chunk of 10.
+            expect(firstChunkUids).toEqual([
+                'node-2',
+                'node-3',
+                'node-5',
+                'node-7',
+                'node-10',
+                'node-12',
+                'node-1',
+                'node-6',
+                'node-9',
+                'node-13',
+            ]);
+            const secondChunkUids = jest.mocked(drive.iterateThumbnails).mock.calls[1][0];
+            // distance 2 (node-4, node-8) then distance 3 (node-0, node-11).
+            expect(secondChunkUids).toEqual(['node-4', 'node-8', 'node-0', 'node-11']);
+        });
+    });
+
     describe('persistent cache (usePersistentCache)', () => {
         it('serves a cache hit without calling the SDK', async () => {
             mockGetCachedThumbnail.mockResolvedValueOnce(new Uint8Array([7, 7, 7]) as Uint8Array<ArrayBuffer>);

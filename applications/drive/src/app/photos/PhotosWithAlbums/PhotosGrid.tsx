@@ -17,6 +17,13 @@ import './PhotosGrid.scss';
 
 const SCROLLBAR_CONTAINER_WIDTH = 48;
 
+/**
+ * Number of extra rows rendered (and pre-loaded) above and below the visible
+ * viewport. Higher values pre-render more rows so thumbnails are warm sooner
+ * when scrolling, at the cost of mounting/fetching more off-screen cards.
+ */
+const MARGIN_ROWS = 5;
+
 type PhotosGridProps = {
     uids: string[];
     onItemRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
@@ -137,10 +144,26 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
         // Item dimensions (scaled)
         const itemHeight = height * scaling;
         const itemWidth = width * scaling;
-        // Helper to know if an item is within the viewport
-        const scrollMargin = (itemHeight + gap) * 2;
+        // Helper to know if an item is rendered (visible viewport + pre-render margin)
+        const scrollMargin = (itemHeight + gap) * MARGIN_ROWS;
         const itemShouldRender = (y: number, scrollPosition: number) =>
             y >= scrollPosition - itemHeight - scrollMargin && y <= scrollPosition + containerHeight + scrollMargin;
+        // How many rows away from the visible viewport an item is: 0 when on
+        // screen (even partially), 1 for the first row past an edge, 2 for the
+        // next, and so on. Used to prioritise thumbnail loading by proximity.
+        const rowHeight = itemHeight + gap;
+        const itemViewportDistance = (y: number, scrollPosition: number) => {
+            const viewportTop = scrollPosition;
+            const viewportBottom = scrollPosition + containerHeight;
+            if (y + itemHeight >= viewportTop && y <= viewportBottom) {
+                return 0;
+            }
+            if (y > viewportBottom) {
+                return Math.floor((y - viewportBottom) / rowHeight) + 1;
+            }
+            // Item sits above the viewport (its bottom edge is past the top).
+            return Math.floor((viewportTop - (y + itemHeight)) / rowHeight) + 1;
+        };
 
         return {
             itemHeight,
@@ -149,6 +172,7 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
             groupHeight,
             itemsPerLine,
             itemShouldRender,
+            itemViewportDistance,
         };
     }, [containerRect, emRatio]);
 
@@ -157,7 +181,8 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
             return [];
         }
 
-        const { gap, itemHeight, itemWidth, groupHeight, itemsPerLine, itemShouldRender } = dimensions;
+        const { gap, itemHeight, itemWidth, groupHeight, itemsPerLine, itemShouldRender, itemViewportDistance } =
+            dimensions;
         const items: ReactNode[] = [];
         let currentX = 0;
         let currentY = 0;
@@ -232,6 +257,7 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
                         <PhotosCard
                             key={item.nodeUid}
                             nodeUid={item.nodeUid}
+                            viewportDistance={itemViewportDistance(y, scrollPosition)}
                             onRender={onItemRender}
                             onClick={() => {
                                 if (hasSelection) {
