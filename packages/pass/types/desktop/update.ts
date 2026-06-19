@@ -13,6 +13,7 @@ export enum UpdateErrorType {
     ManifestInvalid = 1,
     DownloadFailed = 2,
     InstallFailed = 3,
+    NotEnoughDiskSpace = 4,
 }
 
 export type UpdateStore = {
