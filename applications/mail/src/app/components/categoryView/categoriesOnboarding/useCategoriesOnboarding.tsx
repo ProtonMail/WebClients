@@ -58,9 +58,10 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
     // B2B users conditions
     if (isUserB2B) {
         const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
+        const hasCategoryAccess = !!organization?.Settings.MailCategoryViewEnabled;
 
         // The following condition apply for existing and new b2b users
-        const basicEligibility = !allOnboardingSeen && !isUserInWelcomeFlow;
+        const basicEligibility = hasCategoryAccess && !allOnboardingSeen && !isUserInWelcomeFlow;
 
         if (isExistingUser) {
             // Existing users see the spotlight right away
