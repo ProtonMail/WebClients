@@ -50,7 +50,10 @@ describe('getExifInfo', () => {
         const result = await getExifInfo(file, 'image/jpeg');
 
         expect(result).toEqual(mockExifData);
-        expect(mockExifReaderLoad).toHaveBeenCalledWith(expect.any(ArrayBuffer), { expanded: true });
+        expect(mockExifReaderLoad).toHaveBeenCalledWith(expect.any(ArrayBuffer), {
+            expanded: true,
+            domParser: expect.anything(),
+        });
     });
 
     it('should return undefined and warn when ExifReader throws an error', async () => {

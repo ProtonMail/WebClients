@@ -205,8 +205,6 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                 }
 
                 if (product === ImportType.DRIVE) {
-                    // TODO(DRVWEB-5512): Create Drive volume using Drive SDK before starting drive operations.
-
                     // TODO(DRVBE-1687): Call Drive import data endpoint to get import data/errors.
                     return { importType: product };
                 }
