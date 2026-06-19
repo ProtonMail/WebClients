@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
@@ -26,7 +27,7 @@ export type FileDetails = {
     hasDecryptionError: boolean;
     authorshipStatus: {
         ok: boolean;
-        message: string;
+        message: ReactNode;
         details: string[];
     } | null;
     name: string;
