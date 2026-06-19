@@ -189,7 +189,25 @@ export interface ImportedCalendar {
 export interface ContactsImporterPayload {}
 
 /* Drive Specific */
-export interface DriveImporterPayload {}
+// The payload required to create the destination folder that will
+// hold the files imported into Drive.
+export interface DriveImportFolder {
+    VolumeID: string;
+    ParentLinkID: string;
+    Name: string;
+    Hash: string;
+    NodePassphrase: string;
+    NodePassphraseSignature: string;
+    NodeKey: string;
+    NodeHashKey: string;
+    SignatureAddress: string;
+    NodePassphraseClearText: string;
+    XAttr?: string;
+}
+
+export interface DriveImporterPayload {
+    ImportFolder: DriveImportFolder;
+}
 
 /* Imports and Reports from Server */
 

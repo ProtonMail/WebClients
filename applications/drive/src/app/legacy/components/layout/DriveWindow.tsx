@@ -24,8 +24,8 @@ import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DriveSidebar } from '../../../sections/sidebar/DriveSidebar';
 import { useIsActiveLinkReadOnly } from '../../../legacy/store/_views/utils';
+import { DriveSidebar } from '../../../sections/sidebar/DriveSidebar';
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import DriveQuickSettings from '../drawer/DriveQuickSettings';
