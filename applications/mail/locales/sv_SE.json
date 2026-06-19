@@ -2594,6 +2594,9 @@
       ],
       "Your email address is not in the original participants list.": [
         "Din e-postadress finns inte i den ursprungliga deltagarlistan."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } hade föreslagit en ny tid för en förekomst av denna händelse. Detta förslag är inaktuellt. Händelsen finns inte längre i din kalender."
       ]
     },
     "Calendar widget banner": {
@@ -7545,8 +7548,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -16485,6 +16487,11 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Utlöpt meddelande"
       ]
     }
   }

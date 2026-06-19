@@ -329,10 +329,10 @@
         "Oluşturucuyu küçült"
       ],
       "Copy '${ code }' to clipboard": [
-        "'${ code }' ifadesini panoya kopyala"
+        "'${ code }' kodunu panoya kopyala"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "'${ code }' ifadesini panoya kopyala ve Çöp Kutusuna taşı"
+        "'${ code }' kodunu panoya kopyala ve çöpe at"
       ],
       "Copy address": [
         "Adresi kopyala"
@@ -691,7 +691,7 @@
         "Gizle"
       ],
       "Hide ${ title }": [
-        "${ title } öğesini gizle"
+        "${ title } ögesini gizle"
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
@@ -1382,7 +1382,7 @@
         "Görüntüle"
       ],
       "Show ${ title }": [
-        "${ title } öğesini göster"
+        "${ title } ögesini görüntüle"
       ],
       "Show advanced PGP settings": [
         "Gelişmiş PGP ayarlarını görüntüle"
@@ -4250,7 +4250,7 @@
         "Yazma yardımcısına ve diğer hizmetlere sınırsız erişim için ${ BRAND_NAME } Duo tarifesine yükseltin."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Yazma yardımcısına ve diğer özelliklere sınırsız erişim için ${ LUMO_SHORT_APP_NAME } planına yükseltin."
+        "Yazma yardımcısına ve diğer hizmetlere sınırsız erişim için ${ LUMO_SHORT_APP_NAME } tarifesine yükseltin."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alın."
@@ -4324,10 +4324,10 @@
         "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmaya devam edebilmek için onu aboneliğinize ekleyin."
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için aboneliğinize ekleyin."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "${ MAIL_APP_NAME } içerisinde ${ LUMO_SHORT_APP_NAME } kullanmaya devam etmek için yöneticinizden erişim izni isteyin."
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için yöneticinizden erişme izni vermesini isteyin."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
@@ -6815,10 +6815,10 @@
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } e-postaları daha iyi, hızlı ve zahmetsizce hazırlamanıza yardımcı olur."
+        "${ LUMO_SHORT_APP_NAME }, hızlı ve kolayca daha iyi e-postalar oluşturmanızı sağlar."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
-        "${ LUMO_SHORT_APP_NAME } paneli"
+        "${ LUMO_SHORT_APP_NAME } panosu"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kuruluşunuzu da koruyabilir."
@@ -7794,8 +7794,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Resim ekle",
-        "Resimleri ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7891,7 +7890,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız olarak ayarlayın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -9260,6 +9259,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "${ label } etiketinde ${ unread } iletiniz var."
       ]
     },
     "info": {
@@ -9794,7 +9796,7 @@
         "Kredi"
       ],
       "Current context": [
-        "Mevcut bağlam"
+        "Geçerli bağlam"
       ],
       "Date": [
         "Tarih"
@@ -9842,7 +9844,7 @@
         "örneğin, Amazon, eBay, Etsy"
       ],
       "Elements in store": [
-        "Mağazadaki öğeler"
+        "Depolama alanındaki bileşenler"
       ],
       "Email": [
         "E-posta"
@@ -9896,7 +9898,7 @@
         "${ newFolderName } klasörü oluşturulamadı"
       ],
       "Filter": [
-        "Filtre"
+        "Süz"
       ],
       "Filter Name": [
         "Süzgeç adı"
@@ -9998,7 +10000,7 @@
         "Şöyle etiketlensin"
       ],
       "Label ID": [
-        "Etiket Kimliği"
+        "Etiket kimliği"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -10028,7 +10030,7 @@
         "Hata ayıklama bilgilerini e-posta ile gönder"
       ],
       "Mail logs": [
-        "Posta günlükleri"
+        "E-posta günlükleri"
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
@@ -10277,7 +10279,7 @@
         "Değerlendirme"
       ],
       "Store state": [
-        "Durumu kaydet"
+        "Depolama alanı durumu"
       ],
       "Street address": [
         "Sokak adresi"
@@ -12546,10 +12548,10 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Yes, don't show again": [
-        "Evet bir daha gösterme"
+        "Evet, bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -13144,22 +13146,22 @@
         "Konu"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "${ subject } kısmına ne yazması gerektiğini belirtin. Örneğin: “Yaklaşan etkinlikleri bir bülten aracılığıyla duyur”"
+        "${ subject } tarafından ne yazılacağını belirtin. Örneğin: “Yaklaşan etkinlikleri e-posta ile duyur”"
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Spor salonu üyeliğimi iptal et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Spor salonu üyeliğimi iptal et”"
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Jane’i partime davet et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Ayşe'yi partime davet et”"
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Bir projede yardım ettiği için iş arkadaşıma teşekkür et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Bir projede yardım ettiği için iş arkadaşıma teşekkür et”"
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Staj için bir ön yazı yaz”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Staj için bir giriş yazısı yaz”"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Bir müşteriye yanıt e-postası yaz”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Bir müşteriye yanıt e-postası yaz”"
       ],
       "Text": [
         "Yazı"
@@ -15920,7 +15922,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu afişi gizli tutmak ister misiniz?"
+        "Bu duyuru gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"
@@ -16551,7 +16553,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "Load image": [
         "Görsel yükle"

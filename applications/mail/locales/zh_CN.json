@@ -1088,6 +1088,69 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Attachment": [
+        "附件"
+      ],
+      "Block senders": [
+        "屏蔽发件人"
+      ],
+      "clear it": [
+        "清除"
+      ],
+      "Delete draft": [
+        "删除草稿"
+      ],
+      "Delete folder": [
+        "删除文件夹"
+      ],
+      "Disabling alias": [
+        "禁用别名"
+      ],
+      "Edit encryption": [
+        "编辑加密"
+      ],
+      "Encryption": [
+        "加密"
+      ],
+      "External encryption": [
+        "对外加密"
+      ],
+      "Hide details": [
+        "隐藏详情"
+      ],
+      "Modify": [
+        "修改"
+      ],
+      "Never show": [
+        "不再显示"
+      ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "打开 ${ CALENDAR_APP_NAME }"
+      ],
+      "Pause": [
+        "暂停"
+      ],
+      "Remove encryption": [
+        "移除加密"
+      ],
+      "Search in ${ option.text }": [
+        "在 ${ option.text } 中搜索"
+      ],
+      "Select All": [
+        "全选"
+      ],
+      "Set encryption": [
+        "设置加密"
+      ],
+      "Show details": [
+        "显示详情"
+      ],
+      "Try categories": [
+        "尝试分类"
+      ],
+      "View keys": [
+        "查看密钥"
       ]
     },
     "action": {
@@ -2068,6 +2131,9 @@
       ],
       "Quit import?": [
         "退出导入？"
+      ],
+      "Message saved to Drafts": [
+        "邮件已保存为草稿"
       ]
     },
     "Contact field label": {
@@ -4031,6 +4097,9 @@
       ],
       "Your import will not be processed.": [
         "此次导入将不会进行。"
+      ],
+      "re-importing": [
+        "重新导入"
       ]
     },
     "error": {
@@ -4530,6 +4599,9 @@
       ],
       "The subject": [
         "主题"
+      ],
+      "If the recipient": [
+        "如果收件人"
       ]
     },
     "Filter notification": {
@@ -4655,6 +4727,9 @@
       ],
       "Services": [
         "服务"
+      ],
+      "Labels": [
+        "标签"
       ]
     },
     "Header": {
@@ -6423,6 +6498,39 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } 封未读"
+      ],
+      "${ total } conversation": [
+        "${ total } 项会话"
+      ],
+      "${ total } message": [
+        "${ total } 封邮件"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } 份通讯"
+      ],
+      "Bulk delete": [
+        "批量删除"
+      ],
+      "Edit encryption": [
+        "编辑加密"
+      ],
+      "Hide original message": [
+        "隐藏原始邮件"
+      ],
+      "Insert image": [
+        "插入图片"
+      ],
+      "Message download status:": [
+        "邮件下载状态："
+      ],
+      "Message list": [
+        "邮件列表"
+      ],
+      "Subject:": [
+        "主题："
       ]
     },
     "info": {
@@ -7315,6 +7423,24 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "${ count } unread message": [
+        "${ count } 封未读邮件"
+      ],
+      "/month": [
+        "/月"
+      ],
+      "BCC": [
+        "密送"
+      ],
+      "Category:": [
+        "类别："
+      ],
+      "CC": [
+        "抄送"
+      ],
+      "Date:": [
+        "日期："
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7490,6 +7616,18 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "Drafts": [
+        "草稿箱"
+      ],
+      "Folders": [
+        "文件夹"
+      ],
+      "Labels": [
+        "标签"
+      ],
+      "Outbox": [
+        "发件箱"
       ]
     },
     "Loading info": {
@@ -8648,7 +8786,7 @@
         "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "查看参会者的空闲时间，节省会议安排时间"
+        "查看参与者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
@@ -9593,6 +9731,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Hint": [
+        "提示"
       ]
     },
     "Placeholder for contact group name": {
@@ -11008,6 +11149,21 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "${ count } conversation deleted": [
+        "${ count } 项会话已删除"
+      ],
+      "${ count } draft deleted": [
+        "${ count } 份草稿已删除"
+      ],
+      "${ count } message deleted": [
+        "${ count } 封邮件已删除"
+      ],
+      "Draft deleted": [
+        "草稿已删除"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "移动 ${ selectionCount } 项会话"
       ]
     },
     "Success notification": {
@@ -11832,6 +11988,51 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } 封邮件"
+      ],
+      "BCC": [
+        "密送"
+      ],
+      "CC": [
+        "抄送"
+      ],
+      "Conversation list": [
+        "会话列表"
+      ],
+      "Decryption error": [
+        "解密失败"
+      ],
+      "Delete ${ count } message": [
+        "删除 ${ count } 封邮件"
+      ],
+      "Delete conversation": [
+        "删除会话"
+      ],
+      "Delete draft": [
+        "删除草稿"
+      ],
+      "External encryption": [
+        "对外加密"
+      ],
+      "Mailing list": [
+        "邮件列表"
+      ],
+      "Mark as unread": [
+        "标为未读"
+      ],
+      "Message list": [
+        "邮件列表"
+      ],
+      "Previous conversation": [
+        "上一项会话"
+      ],
+      "Schedule send": [
+        "定时发送"
+      ],
+      "Sender changed": [
+        "发件地址已更改"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11923,6 +12124,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "获取 AI 和人工专家的即时协助！"
       ]
     },
     "tooltip": {
@@ -12356,6 +12560,122 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "取消"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "新建文件夹"
+      ],
+      "Create a new label": [
+        "新建标签"
+      ],
+      "Go to Archive": [
+        "转至归档"
+      ],
+      "Go to Drafts": [
+        "转至草稿箱"
+      ],
+      "Go to Inbox": [
+        "转至收件箱"
+      ],
+      "Go to Sent": [
+        "转至发件箱"
+      ],
+      "Go to Spam": [
+        "转至垃圾邮件"
+      ],
+      "Go to Starred": [
+        "转至星标邮件"
+      ],
+      "Go to Trash": [
+        "转至回收站"
+      ],
+      "New message": [
+        "撰写邮件"
+      ],
+      "Search": [
+        "搜索"
+      ]
+    },
+    "CustomFilter": {
+      "Sender": [
+        "发件人"
+      ]
+    },
+    "Date label": {
+      "Today": [
+        "今天"
+      ],
+      "Tomorrow": [
+        "明天"
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "草稿无法移至收件箱"
+      ],
+      "Drafts cannot be moved to Spam": [
+        "草稿无法标为垃圾邮件"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } 天"
+      ]
+    },
+    "ICS widget label for event details": {
+      "Organizer:": [
+        "组织者："
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "日期"
+      ]
+    },
+    "Mailbox": {
+      "Archive": [
+        "归档"
+      ],
+      "Inbox": [
+        "收件箱"
+      ],
+      "Spam": [
+        "垃圾邮件"
+      ],
+      "Trash": [
+        "回收站"
+      ]
+    },
+    "Message notification": {
+      "Undoing send...": [
+        "正在撤销发送..."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } 天"
+      ]
+    },
+    "Tip Action": {
+      "Download the desktop app": [
+        "下载桌面应用"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "周一 ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "周六 ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "周日 ${ formatTime }"
       ]
     }
   }

@@ -1121,6 +1121,18 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Скапіяваць '${ code }' у буфер абмену"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Скапіяваць '${ code }' у буфер абмену і перамясціць у сметніцу"
+      ],
+      "Hide ${ title }": [
+        "Схаваць ${ title }"
+      ],
+      "Show ${ title }": [
+        "Паказаць ${ title }"
       ]
     },
     "action": {
@@ -3409,6 +3421,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Палепшыце да ${ LUMO_SHORT_APP_NAME }, каб атрымаць неабмежаваны доступ да памочніка ў напісанні і іншыя функцыі."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Запытайце доступ у свайго адміністратара, каб працягнуць карыстацца ${ LUMO_SHORT_APP_NAME } у ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -4927,6 +4945,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Наладзьце памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -6226,10 +6247,7 @@
         "Унаследавана ад бацькоўскай папкі"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7148,6 +7166,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } дапаможа вам хутка і лёгка ствараць лепшыя электронныя лісты."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Панэль ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "У вас ${ unread } у ${ label }."
       ]
     },
     "info": {
@@ -8078,6 +8108,42 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Clear logs": [
+        "Ачысціць журналы"
+      ],
+      "Context page": [
+        "Старонка кантэксту"
+      ],
+      "Current context": [
+        "Бягучы кантэкст"
+      ],
+      "Filter": [
+        "Фільтр"
+      ],
+      "Information": [
+        "Інфармацыя"
+      ],
+      "Label ID": [
+        "Ідэнтыфікатар меткі"
+      ],
+      "Mail debugging information": [
+        "Інфармацыя аб адладцы пошты"
+      ],
+      "Mail logs": [
+        "Журналы пошты"
+      ],
+      "Refresh logs": [
+        "Абнавіць журналы"
+      ],
+      "Sort": [
+        "Сартаванне"
+      ],
+      "Tab age": [
+        "Укладка ўзросту"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9926,6 +9992,12 @@
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
+      ],
+      "Remind me later": [
+        "Нагадаць мне пазней"
+      ],
+      "Yes, don't show again": [
+        "Так, больш не паказваць"
       ]
     },
     "Option group": {
@@ -10520,6 +10592,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Абвясці аб надыходзячых падзеях у інфармацыйнай рассылцы\""
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Скасуй мой абанемент у спартыўную залю\""
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Запрасі Алесю на маю вечарыну”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст падзякі майму калегу за дапамагу ў праекце\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы суправаджальнае пісьмо на стажыроўку\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст кліенту\""
+      ],
+      "the writing assistant": [
+        "памочніку ў напісанні"
       ]
     },
     "Placeholder for contact group name": {
@@ -12103,7 +12196,7 @@
         "Пазначана зорачкай ${ elementsCount } паведамленняў."
       ],
       "${ elementsCount } message marked as unread.": [
-        "Пазначана як непрачытана ${ elementsCount } паведамленне",
+        "Пазначана як непрачытанае ${ elementsCount } паведамленне",
         "Пазначана як непрачытана ${ elementsCount } паведамленні",
         "Пазначана як непрачытана ${ elementsCount } паведамленняў",
         "Пазначана як непрачытана ${ elementsCount } паведамленняў"
@@ -12260,6 +12353,9 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' скапіяваны ў буфер абмену"
       ]
     },
     "Success notification": {
@@ -13183,6 +13279,18 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Стварайце лепшыя лісты з ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Keep this banner hidden?": [
+        "Пакінуць гэты банер схаваным?"
+      ],
+      "Mark messages as unread": [
+        "Пазначыць паведамленні як непрачытаныя"
       ]
     },
     "Today icon tooltip in mini calendar": {
