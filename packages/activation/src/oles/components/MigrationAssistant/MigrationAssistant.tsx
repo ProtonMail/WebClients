@@ -17,13 +17,12 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { isMemberAddon } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { useErrorHandler } from '../../errors';
 import { createMigrationBatch, setupJoiningLink } from '../../thunk';
 import { useProviderUsers } from '../../useProviderUsers';
 import type { StepComponentProps } from '../MigrationSetup/MigrationSetup';
@@ -47,6 +46,7 @@ const getMigrationStartedText = (n: number) =>
 
 const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
     const { createNotification } = useNotifications();
+    const handleError = useErrorHandler();
     const [organization] = useOrganization();
     const [members] = useMembers();
     const { value: memberAddressesMap } = useMemberAddresses({ members, partial: true });
@@ -126,23 +126,12 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
 
             await refreshProviderUsers().catch(noop);
         } catch (err: any) {
-            const text: string | undefined = err?.message ?? getFallbackErrorMessage();
-
-            if (getApiError(err)?.status === HTTP_ERROR_CODES.UNLOCK) {
-                return;
-            }
-
             if (err?.name === 'SeatsError') {
                 await handleAddSeats();
                 return;
             }
 
-            if (text?.length) {
-                createNotification({
-                    type: 'error',
-                    text,
-                });
-            }
+            return handleError(err);
         } finally {
             setMigrating(false);
         }
