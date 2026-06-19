@@ -1205,6 +1205,15 @@
       ],
       "Reconnect to Gmail": [
         "Znova se povežite z Gmailom"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Nadaljuj v ${ planOrAppName }"
+      ],
+      "Toggle referral": [
+        "Preklopi priporočila"
+      ],
+      "Verify now": [
+        "Preveri zdaj"
       ]
     },
     "Actions": {
@@ -1805,6 +1814,9 @@
       ],
       "Advanced account and network security in one plan": [
         "Napredna varnost računa in omrežja v enem paketu"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Zasebni video klici za pomembne pogovore."
       ]
     },
     "color": {
@@ -3863,6 +3875,12 @@
       ],
       "Something went wrong while fetching available domains": [
         "Med pridobivanjem razpoložljivih domen je prišlo do napake"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nalaganje podatkov o naročnini uspelo. Prosimo, poizkusite znova kasneje."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Davčna številka se mora začeti z ${ prefixes }"
       ]
     },
     "error": {
@@ -6929,6 +6947,21 @@
         "Nato boste vsaka ${ renewCycle } meseca prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli.",
         "Nato boste vsake ${ renewCycle } mesece prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli.",
         "Nato boste vsakih ${ renewCycle } mesecev prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli."
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Dodaj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Ustvari varen oblak za ${ memberCount } člana",
+        "Ustvari varen oblak za ${ memberCount } člana",
+        "Ustvari varen oblak za ${ memberCount } člane",
+        "Ustvari varen oblak za ${ memberCount } članov"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
+      "RECOMMENDED": [
+        "PRIPOROČENO"
       ]
     },
     "info": {
@@ -7707,6 +7740,9 @@
       ],
       "Emails": [
         "E-pošto"
+      ],
+      "Drive": [
+        "Drive"
       ]
     },
     "Label for contact group color": {
@@ -8788,6 +8824,24 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "Appointment scheduling": [
+        "Načrtovanje sestanka"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Sestanek načrtovan z ${ n } stranjo za rezervacijo",
+        "Sestanek načrtovan z ${ n } stranema za rezervacijo",
+        "Sestanek načrtovan s ${ n } stranmi za rezervacijo",
+        "Sestanek načrtovan s ${ n } stranmi za rezervacijo"
+      ],
+      "Data retention policies": [
+        "Pravilniki hrambe podatkov"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Zasebni pogovor z AI (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN z blokiranjem oglasov in zaščito pred zlonamerno programsko opremo"
       ]
     },
     "new_plans: feature highlight": {
@@ -9203,6 +9257,12 @@
         "Podpora za ${ n } e-poštnih domen po meri",
         "Podpora za ${ n } e-poštnih domen po meri",
         "Podpora za ${ n } e-poštnih domen po meri"
+      ],
+      "${ n } country": [
+        "${ n } država",
+        "${ n } državi",
+        "${ n } države",
+        "${ n } držav"
       ]
     },
     "Notification": {
@@ -10190,6 +10250,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Priporočamo, da temu ključu prekličete zaupanje."
+      ],
+      "This key is used for message verification": [
+        "Ta ključ se uporablja za preverjanje sporočil"
       ]
     },
     "PGP key warning": {
@@ -11437,6 +11500,15 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, in ${ LUMO_APP_NAME } premijskimi funkcijami"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Video sestanki, ${ PAID_PREMIUM_MAX_PARTICIPANTS } udeleženec",
+        "Video sestanki, do ${ PAID_PREMIUM_MAX_PARTICIPANTS } udeleženca",
+        "Video sestanki, do ${ PAID_PREMIUM_MAX_PARTICIPANTS } udeleženci",
+        "Video sestanki, do ${ PAID_PREMIUM_MAX_PARTICIPANTS } udeležencev"
       ]
     },
     "subscription reminder": {

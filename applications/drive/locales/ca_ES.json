@@ -13802,6 +13802,30 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "No hem pogut confirmar que el node hagi estat creat per ${ claimedKeyAuthor }. El motiu és: ${ node.keyAuthor.error.error }"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "S'ha validat la signatura digital. Aquest fitxer va ser creat de manera segura per ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "S'ha validat la signatura digital. Aquest fitxer es va carregar de manera segura per ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "S'ha validat la signatura digital. Aquesta carpeta va ser creada de manera segura per ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "S'ha validat la signatura digital. Aquesta carpeta es va carregar de manera segura per ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "No hem pogut verificar que ${ author } hagi creat aquest fitxer."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "No hem pogut verificar que ${ author } hagi creat aquesta carpeta."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "No hem pogut verificar que ${ author } hagi carregat aquest fitxer."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "No hem pogut verificar que ${ author } hagi carregat aquesta carpeta."
       ]
     },
     "Today icon tooltip in mini calendar": {
