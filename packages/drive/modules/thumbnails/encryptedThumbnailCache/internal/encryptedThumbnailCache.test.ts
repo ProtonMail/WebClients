@@ -37,7 +37,6 @@ jest.mock('../../../../legacy/errorHandling', () => ({
 }));
 
 const fakeUserKeys = [{ publicKey: 'pub', privateKey: 'priv' }] as unknown as DecryptedKey[];
-const getUserKeys = jest.fn(async () => fakeUserKeys);
 
 const bytes = (values: number[]) => new Uint8Array(values) as Uint8Array<ArrayBuffer>;
 
@@ -53,7 +52,7 @@ describe('encryptedThumbnailCache', () => {
     });
 
     it('round-trips thumbnail bytes through encrypt/store/decrypt', async () => {
-        await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+        await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
 
         await setCachedThumbnail('node-1-rev-1', 'sd', bytes([1, 2, 3, 4]));
         const result = await getCachedThumbnail('node-1-rev-1', 'sd');
@@ -62,7 +61,7 @@ describe('encryptedThumbnailCache', () => {
     });
 
     it('stores ciphertext, not the original bytes', async () => {
-        await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+        await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
         await setCachedThumbnail('node-1-rev-1', 'sd', bytes([1, 2, 3, 4]));
 
         const db = await ThumbnailCacheDb.open('user-1');
@@ -81,7 +80,7 @@ describe('encryptedThumbnailCache', () => {
     });
 
     it('returns undefined on a cache miss', async () => {
-        await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+        await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
         expect(await getCachedThumbnail('missing-rev', 'sd')).toBeUndefined();
     });
 
@@ -91,7 +90,7 @@ describe('encryptedThumbnailCache', () => {
         (globalThis as { indexedDB?: unknown }).indexedDB = undefined;
 
         try {
-            await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-no-idb' });
+            await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-no-idb' });
 
             await setCachedThumbnail('node-1-rev-1', 'sd', bytes([1, 2, 3]));
             expect(await getCachedThumbnail('node-1-rev-1', 'sd')).toBeUndefined();
@@ -102,47 +101,47 @@ describe('encryptedThumbnailCache', () => {
     });
 
     it('isolates entries per user (separate databases)', async () => {
-        await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+        await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
         await setCachedThumbnail('node-1-rev-1', 'sd', bytes([1, 2, 3]));
 
         resetEncryptedThumbnailCacheForTest();
-        await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-2' });
+        await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-2' });
         expect(await getCachedThumbnail('node-1-rev-1', 'sd')).toBeUndefined();
     });
 
     describe('key lifecycle', () => {
         it('generates and wraps a key on first init, reuses it on the next', async () => {
-            await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+            await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
             expect(encryptMessage).toHaveBeenCalledTimes(1);
             expect(decryptMessage).not.toHaveBeenCalled();
 
             // Simulate an app reload: in-memory state cleared, wrapped key still in IDB.
             resetEncryptedThumbnailCacheForTest();
-            await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+            await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
 
             expect(encryptMessage).toHaveBeenCalledTimes(1); // not regenerated
             expect(decryptMessage).toHaveBeenCalledTimes(1); // unwrapped instead
         });
 
         it('reuses the same key across reloads (data stays decryptable)', async () => {
-            await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+            await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
             await setCachedThumbnail('node-1-rev-1', 'sd', bytes([9, 8, 7]));
 
             resetEncryptedThumbnailCacheForTest();
-            await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+            await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
 
             const result = await getCachedThumbnail('node-1-rev-1', 'sd');
             expect(result && Array.from(result)).toEqual([9, 8, 7]);
         });
 
         it('regenerates the key and clears stale blobs when unwrap fails', async () => {
-            await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+            await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
             await setCachedThumbnail('node-1-rev-1', 'sd', bytes([1, 2, 3]));
 
             // Next reload: unwrap throws (e.g. key rotation).
             resetEncryptedThumbnailCacheForTest();
             decryptMessage.mockRejectedValueOnce(new Error('cannot decrypt'));
-            await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+            await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
 
             // Stale blob was cleared, and a new key was generated.
             expect(encryptMessage).toHaveBeenCalledTimes(2);
@@ -157,7 +156,7 @@ describe('encryptedThumbnailCache', () => {
             await db.putEntry('node-1-rev-1-sd', bytes([1, 2, 3]));
             db.close();
 
-            await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+            await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
 
             expect(encryptMessage).toHaveBeenCalledTimes(1); // fresh key minted
             const reopened = await ThumbnailCacheDb.open('user-1');
@@ -166,7 +165,7 @@ describe('encryptedThumbnailCache', () => {
     });
 
     it('fails closed (undefined) when stored ciphertext cannot be decrypted', async () => {
-        await initEncryptedThumbnailCache({ getUserKeys, userId: 'user-1' });
+        await initEncryptedThumbnailCache({ userKeys: fakeUserKeys, userId: 'user-1' });
 
         // Plant garbage at the slot the cache would read.
         const db = await ThumbnailCacheDb.open('user-1');
