@@ -25,29 +25,9 @@ export const DiscoverList = ({ onSuggestionClick }: { onSuggestionClick: (s: Gal
     const pool = useMemo(() => getGalleryPromptSuggestions(), []);
     // const [visible, setVisible] = useState<GalleryPromptSuggestion[]>(() => pickSuggestions(pool, []));
     const visible = useMemo(() => pickSuggestions(pool, []), [pool]);
-    // const handleShuffle = useCallback(() => {
-    //     setVisible((prev) => pickSuggestions(pool, prev));
-    // }, [pool]);
-
-    // const canShuffle = pool.length > DISCOVER_PER_PAGE;
 
     return (
         <div className="w-full overflow-x-auto mt-10">
-            {/* <div className="inspiration-discover__header">
-                <h2 className="text-bold text-lg">
-                    {c('collider_2025:Label').t`Discover what ${LUMO_SHORT_APP_NAME} can create`}
-                </h2>
-                {canShuffle && (
-                    <button
-                        className="inspiration-discover__shuffle"
-                        onClick={handleShuffle}
-                        type="button"
-                        title={c('collider_2025:Action').t`Shuffle suggestions`}
-                    >
-                        <IcArrowsRotate size={3.5} />
-                    </button>
-                )}
-            </div> */}
 
             <div className="flex flex-row flex-nowrap gap-4">
                 {visible.map((s) => (

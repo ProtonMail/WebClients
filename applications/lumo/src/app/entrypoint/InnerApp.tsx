@@ -42,7 +42,7 @@ export function InnerApp() {
                                     <Route exact path="/projects" component={ProjectsView}/>
                                     <Route path="/projects/:projectId" component={ProjectDetailView}/>
                                     {imageTools &&
-                                        <Route exact path="/gallery" component={ConversationPage}/>
+                                        <Route exact path="/images" component={ConversationPage}/>
                                     }
                                     { apiKeyManagement &&
                                         <Route exact path="/docs/api" component={ApiDocsPage}/>

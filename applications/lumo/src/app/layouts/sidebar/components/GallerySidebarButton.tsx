@@ -66,17 +66,17 @@ const LucideGalleryIcon = ({ size = 4, className = '' }: LucideGalleryIconProps)
 
 export const GallerySidebarButton = ({ onItemClick }: Props) => {
     const history = useHistory();
-    const isActive = useRouteMatch('/gallery');
+    const isActive = useRouteMatch('/images');
 
     const handleClick = useCallback(() => {
-        history.push('/gallery');
+        history.push('/images');
         onItemClick();
     }, [history, onItemClick]);
 
     return (
         <SidebarItem
             icon={LucideGalleryIcon}
-            label={c('collider_2025:Button').t`Gallery`}
+            label={c('collider_2025:Button').t`Images`}
             onClick={handleClick}
             className={isActive ? 'sidebar-item--active' : undefined}
         />

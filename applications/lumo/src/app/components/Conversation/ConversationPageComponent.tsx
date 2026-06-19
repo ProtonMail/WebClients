@@ -41,7 +41,7 @@ const ConversationPageComponentInner = () => {
     const user = useSafeUser(); // Get user from context (undefined for guests)
     const navigate = useNavigate();
     const dispatch = useLumoDispatch();
-    const isGalleryRoute = !!useRouteMatch({ path: '/gallery', exact: true });
+    const isGalleryRoute = !!useRouteMatch({ path: '/images', exact: true });
     const { conversationId: curConversationId } = useParams<RouteParams>();
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
