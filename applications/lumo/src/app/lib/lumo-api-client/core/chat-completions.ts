@@ -59,9 +59,11 @@ function buildLumoExtension(
         client_type: 'frontend',
     };
 
-    // if (options.target) {
-    //     lumo.target = options.target;
-    // }
+    // For now we keep options out since
+    if (options.target) {
+        console.log('Target set');
+        // lumo.target = options.target;
+    }
 
     if (request.request_key && request.request_id) {
         lumo.request_key = request.request_key;

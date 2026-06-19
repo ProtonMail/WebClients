@@ -317,16 +317,55 @@ export function isToolResultError(data: unknown): data is ToolResultError {
     return typeof data === 'object' && data !== null && 'error' in data && typeof data.error === 'boolean';
 }
 
+/**
+ * Normalize legacy / OpenAI-adapted tool call payloads into the shape expected by
+ * {@link isToolCallData}. The chat-completions stream adapter emits `parameters`
+ * (and sometimes partial JSON strings) while the UI validators expect `arguments`.
+ */
+function normalizeToolCallPayload(parsed: unknown): unknown {
+    if (typeof parsed !== 'object' || parsed === null) {
+        return parsed;
+    }
+
+    const obj = parsed as Record<string, unknown>;
+    const name = obj.name;
+    if (typeof name !== 'string') {
+        return parsed;
+    }
+
+    let args: unknown = obj.arguments ?? obj.parameters ?? {};
+    if (typeof args === 'string' && args.length > 0) {
+        try {
+            args = JSON.parse(args);
+        } catch {
+            // Keep streaming partial argument fragments as-is.
+        }
+    }
+
+    if (typeof args === 'object' && args !== null) {
+        const argsObj = args as Record<string, unknown>;
+        if (name === 'web_search' || name === 'web_extract') {
+            if (typeof argsObj.search_term === 'string' && typeof argsObj.query !== 'string') {
+                args = { ...argsObj, query: argsObj.search_term };
+            } else if (typeof argsObj.query !== 'string') {
+                args = { ...argsObj, query: '' };
+            }
+        }
+    } else if (name === 'web_search' || name === 'web_extract') {
+        args = { query: '' };
+    }
+
+    return { name, arguments: args };
+}
+
 export function tryParseToolCall(toolCall: string): ToolCallData | null {
     if (!toolCall) {
         return null;
     }
     try {
-        console.log('Trying to parse tool call:', toolCall);
-        const parsed = JSON.parse(toolCall);
+        const parsed = normalizeToolCallPayload(JSON.parse(toolCall));
         return isToolCallData(parsed) ? parsed : null;
-    } catch (e) {
-        console.log('Failed to parse tool call: ', e);
+    } catch {
         return null;
     }
 }
@@ -336,11 +375,9 @@ export function tryParseToolResult(toolResult: string): ToolResultData | null {
         return null;
     }
     try {
-        console.log('Trying to parse tool result: ', toolResult);
         const parsed = JSON.parse(toolResult);
         return isToolResultData(parsed) ? parsed : null;
-    } catch (e) {
-        console.log('Failed to parse tool result: ', e);
+    } catch {
         return null;
     }
 }
