@@ -13824,6 +13824,30 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Firma digital verificada. Este archivo fue creado de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Firma digital verificada. Este archivo fue subido de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Firma digital verificada. Esta carpeta ha sido creada de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Firma digital verificada. Esta carpeta ha sido subida de forma segura por ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "No se ha podido verificar que ${ author } haya creado este archivo."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "No se ha podido verificar que ${ author } haya creado esta carpeta."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "No se ha podido verificar que ${ author } haya subido este archivo."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "No pudimos verificar que ${ author } haya subido esta carpeta."
       ]
     },
     "Today icon tooltip in mini calendar": {
