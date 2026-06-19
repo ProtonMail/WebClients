@@ -209,7 +209,7 @@ im.$media-expressions: $media-expressions;
 }
 
 // overrides for UserDropdownButton.scss
-.user-dropdown-button {
+.lumo-sidebar .user-dropdown-button {
 	padding: #{rem(4)};
 	flex-direction: row-reverse;
 	justify-content: flex-end;
@@ -218,6 +218,9 @@ im.$media-expressions: $media-expressions;
 
 	.user-dropdown-text {
 		text-align: start;
+		max-inline-size: none;
+		flex: 1;
+		min-inline-size: 0;
 
 		@include im.media('>=small', '<=large') {
 			display: block;
