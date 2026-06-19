@@ -70,7 +70,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
-import { generateNodeUid } from '@protontech/drive-sdk'
+import { generateNodeUid } from '@proton/drive'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
