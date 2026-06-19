@@ -1,7 +1,7 @@
 import { isAction } from '@reduxjs/toolkit';
 import type { Middleware } from '@reduxjs/toolkit';
 
-import { loggerManager } from '@proton/shared/lib/logger';
+import { MAIL_LOG_COMPONENT, mailLogger } from 'proton-mail/mailLogger';
 
 import { contextTotal, selectCurrentContextIdentifier } from './elements/elementsSelectors';
 import type { MailState } from './rootReducer';
@@ -26,24 +26,24 @@ const shouldLogAction = (type: string) => {
     return TRACKED_ACTIONS.some((p) => type.startsWith(p));
 };
 
-const prepareLogData = (state: MailState) => {
+const prepareLogData = (state: MailState, ctxIdentifier: string) => {
     return {
         ctxTotal: contextTotal(state),
         ctxTotals: state.elements.total,
         elementID: state.elements.params.elementID,
         messageID: state.elements.params.messageID,
-        awaitingStaleRetry: state.elements.awaitingStaleRetry,
+        awaitingStaleRetry: state.elements.awaitingStaleRetry[ctxIdentifier] ?? false,
     };
 };
 
-const prepareContext = (state: MailState) => ({
+const prepareContext = (state: MailState, ctxIdentifier: string) => ({
     labelID: state.elements.params.labelID,
     categoryIDs: state.elements.params.categoryIDs,
     conversationMode: state.elements.params.conversationMode,
     sort: state.elements.params.sort,
     filter: state.elements.params.filter,
     page: state.elements.page,
-    pages: state.elements.pages,
+    pages: state.elements.pages[ctxIdentifier],
     esEnabled: state.elements.params.esEnabled,
     isSearching: state.elements.params.isSearching,
     pendingRequest: state.elements.pendingRequest,
@@ -52,10 +52,8 @@ const prepareContext = (state: MailState) => ({
     bypassFilerLength: state.elements.bypassFilter.length,
 });
 
-const reduxLogger = loggerManager.getLogger('redux');
-
-export const loggerMiddleware: Middleware<{}, MailState> = (store) => (next) => (action) => {
-    if (!isAction(action) || !reduxLogger.isInitialized()) {
+export const mailboxActionLogger: Middleware<{}, MailState> = (store) => (next) => (action) => {
+    if (!isAction(action) || !mailLogger.isInitialized()) {
         return next(action);
     }
 
@@ -63,22 +61,25 @@ export const loggerMiddleware: Middleware<{}, MailState> = (store) => (next) => 
         return next(action);
     }
 
-    const before = prepareLogData(store.getState());
+    const beforeState = store.getState();
+    const ctxIdentifier = selectCurrentContextIdentifier(beforeState);
+
+    const before = prepareLogData(beforeState, ctxIdentifier);
     const result = next(action);
 
     const afterState = store.getState();
-    const after = prepareLogData(afterState);
+    const after = prepareLogData(afterState, ctxIdentifier);
 
-    reduxLogger.debug(
-        action.type,
-        JSON.stringify({
-            ctxIdentifier: selectCurrentContextIdentifier(afterState),
-            context: prepareContext(afterState),
-            tabTime: performance.now() / 1000,
-            before,
-            after,
-        })
-    );
+    mailLogger.debug(MAIL_LOG_COMPONENT.MAILBOX_ACTIONS, action.type, {
+        ...prepareContext(afterState, ctxIdentifier),
+        ctxTotalBefore: before.ctxTotal,
+        ctxTotalAfter: after.ctxTotal,
+        awaitingStaleRetryBefore: before.awaitingStaleRetry,
+        awaitingStaleRetryAfter: after.awaitingStaleRetry,
+        elementID: after.elementID,
+        messageID: after.messageID,
+        tabTimeSeconds: (performance.now() / 1000).toFixed(2),
+    });
 
     return result;
 };
