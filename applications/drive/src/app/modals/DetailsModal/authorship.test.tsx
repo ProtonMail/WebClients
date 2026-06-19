@@ -1,7 +1,14 @@
+import type { ReactNode } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+
 import type { Author, NodeEntity, Revision } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 
 import { getAuthorshipStatus } from './authorship';
+
+function renderMessage(message: ReactNode): string {
+    return renderToStaticMarkup(<>{message}</>);
+}
 
 function createSuccessfulAuthor(email: string | null): Author {
     return { ok: true, value: email };
@@ -55,8 +62,8 @@ describe('getAuthorshipStatus', () => {
         const result = getAuthorshipStatus(node);
 
         expect(result.ok).toBe(true);
-        expect(result.message).toContain('Digital signature verified');
-        expect(result.message).toContain(expectedMessage);
+        expect(renderMessage(result.message)).toContain('Digital signature verified');
+        expect(renderMessage(result.message)).toContain(expectedMessage);
         expect(result.details).toEqual([]);
     }
 
@@ -64,8 +71,8 @@ describe('getAuthorshipStatus', () => {
         const result = getAuthorshipStatus(node);
 
         expect(result.ok).toBe(true);
-        expect(result.message).toContain('Digital signature partially verified');
-        expect(result.message).toContain(expectedMessage);
+        expect(renderMessage(result.message)).toContain('Digital signature partially verified');
+        expect(renderMessage(result.message)).toContain(expectedMessage);
         expect(result.details).toEqual([]);
     }
 
@@ -73,8 +80,8 @@ describe('getAuthorshipStatus', () => {
         const result = getAuthorshipStatus(node);
 
         expect(result.ok).toBe(false);
-        expect(result.message).toContain('We couldn’t verify that');
-        expect(result.message).toContain(expectedMessage);
+        expect(renderMessage(result.message)).toContain('We couldn’t verify that');
+        expect(renderMessage(result.message)).toContain(expectedMessage);
         expect(result.details).toHaveLength(expectedDetails.length + 1); // +1 for the general "this is likely ..."
         for (let i = 0; i < expectedDetails.length; i++) {
             expect(result.details[i]).toContain(expectedDetails[i]);
@@ -264,6 +271,22 @@ describe('getAuthorshipStatus', () => {
             expectVeirificationIssues(node, '<strong>uploader@example.com</strong> uploaded this file', [
                 'Content signature invalid',
             ]);
+        });
+    });
+
+    describe('Untrusted author escaping', () => {
+        it('should escape HTML in a claimed author rather than rendering it as markup', () => {
+            const malicious = '<img src=x onerror=alert(1)>';
+            const node = createNode(
+                createFailedAuthor('Key signature invalid', malicious),
+                createFailedAuthor('Name signature invalid', malicious),
+                createFailedAuthor('Content signature invalid', malicious)
+            );
+
+            const rendered = renderMessage(getAuthorshipStatus(node).message);
+
+            expect(rendered).not.toContain('<img');
+            expect(rendered).toContain('&lt;img src=x onerror=alert(1)&gt;');
         });
     });
 });
