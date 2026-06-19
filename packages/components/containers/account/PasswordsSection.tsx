@@ -17,6 +17,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import ChangeBackupPasswordModal from '@proton/components/containers/account/ChangeBackupPasswordModal';
 import PasswordRemindersSettings from '@proton/components/containers/account/passwordReminders/PasswordRemindersSettings';
 import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
@@ -28,6 +29,7 @@ import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
+import VerifyPasswordButton from './VerifyPasswordButton';
 import InitiateSessionRecoveryModal from './sessionRecovery/InitiateSessionRecoveryModal';
 import PasswordResetAvailableAccountModal from './sessionRecovery/PasswordResetAvailableAccountModal';
 
@@ -227,10 +229,15 @@ const PasswordsSection = () => {
                                     {passwordLabel}
                                 </label>
                             </SettingsLayoutLeft>
-                            <SettingsLayoutRight>
-                                <Button onClick={() => handleChangePassword(changePasswordMode)}>
+                            <SettingsLayoutRight className="flex flex-row flex-wrap gap-2 items-center">
+                                <Button
+                                    className="inline-flex gap-2 items-center"
+                                    onClick={() => handleChangePassword(changePasswordMode)}
+                                >
+                                    <IcPencil className="shrink-0" />
                                     {passwordButtonLabel}
                                 </Button>
+                                <VerifyPasswordButton />
                             </SettingsLayoutRight>
                         </SettingsLayout>
                         {hasTwoPasswordOption && (
