@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import type { GetUserKeys } from './crypto';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+
 import { initEncryptedThumbnailCache } from './encryptedThumbnailCache';
 
 /**
@@ -9,20 +10,24 @@ import { initEncryptedThumbnailCache } from './encryptedThumbnailCache';
  *
  * Provider-bound dependencies (user keys, user id, the feature flag) are passed
  * in by the app so this package stays decoupled from the account/unleash hooks.
+ *
+ * Takes the reactive user keys (not a getter) so initialisation waits for, and
+ * retries once, the keys become available - e.g. on new-user creation, where
+ * they are generated after the app first mounts.
  */
 export const useInitEncryptedThumbnailCache = ({
-    getUserKeys,
+    userKeys,
     userId,
     isEnabled,
 }: {
-    getUserKeys: GetUserKeys;
+    userKeys: DecryptedKey[] | undefined;
     userId: string | undefined;
     isEnabled: boolean;
 }) => {
     useEffect(() => {
-        if (!isEnabled || !userId) {
+        if (!isEnabled || !userId || !userKeys?.length) {
             return;
         }
-        void initEncryptedThumbnailCache({ getUserKeys, userId });
-    }, [isEnabled, getUserKeys, userId]);
+        void initEncryptedThumbnailCache({ userKeys, userId });
+    }, [isEnabled, userKeys, userId]);
 };
