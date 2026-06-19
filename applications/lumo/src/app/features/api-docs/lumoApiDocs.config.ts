@@ -10,7 +10,9 @@ export type EndpointStatus = 'ga' | 'beta';
 
 export type CodeLang = 'curl' | 'python' | 'typescript' | 'rust';
 
-export type ChatExampleVariant = 'basic' | 'tool_call' ;
+export type ChatExampleVariant = 'basic' | 'tool_call';
+
+export type LumoModelId = 'auto' | 'lumo-basic-v1' | 'lumo-plus-v1';
 
 export interface ApiDocParameter {
     name: string;
@@ -38,7 +40,7 @@ export interface ApiDocEndpointGroup {
 }
 
 export interface ApiDocModel {
-    id: string;
+    id: LumoModelId;
     label: string;
     description: string;
     contextWindow: string;
@@ -76,8 +78,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
                             name: 'model',
                             type: 'string',
                             required: true,
-                            description:
-                                'Model ID. Use `auto` to let Lumo route to the best model for your task.',
+                            description: 'Model ID. Use `auto` to let Lumo route to the best model for your task.',
                         },
                         {
                             name: 'messages',
@@ -141,7 +142,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
             tasks: ['chat', 'analysis', 'vision', 'code'],
         },
         {
-            id: 'lumo-fast',
+            id: 'lumo-basic-v1',
             label: 'Lumo Fast',
             description:
                 'Optimised for low-latency, high-throughput workloads. Best for classification, short-form generation, and real-time applications.',
@@ -149,7 +150,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
             tasks: ['chat', 'classification', 'vision', 'extraction'],
         },
         {
-            id: 'lumo-thinking',
+            id: 'lumo-plus-v1',
             label: 'Lumo Thinking',
             description:
                 'Best-in-class reasoning for complex analytical tasks, multi-step code generation, and long-document synthesis.',
