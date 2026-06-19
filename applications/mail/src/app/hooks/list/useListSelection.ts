@@ -54,7 +54,7 @@ export const useListSelection = ({
         return getCanDisplaySelectAllBanner({
             mailPageSize: pageSize,
             checkedIDs,
-            labelID: labelIdString,
+            currentLabel: labelIdString,
             isSearch,
             hasFilter,
         });

@@ -18,6 +18,8 @@ const ALWAYS_MESSAGE_LABELS = [
     MAILBOX_LABEL_IDS.SOFT_DELETED,
 ];
 
+export const LEGACY_FORUM_CATEGORY_ID = '23';
+
 export const isSystemLabel = (labelID: string) => SYSTEM_LABELS.includes(labelID as MAILBOX_LABEL_IDS);
 export const isSystemFolder = (labelID: string) => SYSTEM_FOLDERS.includes(labelID as MAILBOX_LABEL_IDS);
 export const isSystemLocation = (labelID: string) => isSystemFolder(labelID) || isSystemLabel(labelID);
@@ -25,7 +27,7 @@ export const isCategoryLabel = (labelID: string): labelID is CategoryLabelID => 
     // `23` refers to the forum category ID that we decided to remove
     // This test needs to be removed once the API team has run the migration
     // to erase the forum category from already categorised messages and conversations
-    if (labelID === '23') {
+    if (labelID === LEGACY_FORUM_CATEGORY_ID) {
         return true;
     }
 
