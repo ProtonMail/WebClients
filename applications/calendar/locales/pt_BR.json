@@ -4241,6 +4241,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "O número de IVA deve começar por ${ prefixes }"
       ]
     },
     "error": {
@@ -6759,6 +6762,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ajudar você a lembrar sua senha, pediremos que você a digite periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confie na chave \"${ activeSignerText }\" para verificar novas mensagens deste contato."
       ]
     },
     "info": {
