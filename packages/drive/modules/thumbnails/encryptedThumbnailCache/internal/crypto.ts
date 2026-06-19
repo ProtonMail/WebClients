@@ -11,8 +11,6 @@ import type { ThumbnailCacheDb } from './thumbnailCacheDb';
  * encrypting/decrypting thumbnail bytes with it.
  */
 
-export type GetUserKeys = () => Promise<DecryptedKey[]>;
-
 const SIGNATURE_CONTEXT = 'drive.thumbnail-cache.key';
 
 const wrapThumbnailCacheEncryptionKeyWithUserKey = async (
@@ -52,10 +50,9 @@ const unwrapThumbnailCacheEncryptionKeyWithUserKeys = async (
  * is regenerated and stale cached blobs are cleared.
  */
 export const resolveThumbnailEncryptionKey = async (
-    getUserKeys: GetUserKeys,
+    userKeys: DecryptedKey[],
     db: ThumbnailCacheDb
 ): Promise<CryptoKey> => {
-    const userKeys = await getUserKeys();
     const primaryKey = userKeys[0];
     if (!primaryKey) {
         throw new Error('Cannot resolve thumbnail cache key: no user key available');
