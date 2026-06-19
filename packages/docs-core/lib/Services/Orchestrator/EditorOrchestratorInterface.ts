@@ -57,4 +57,6 @@ export interface EditorOrchestratorInterface {
 
   storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void>
   hasBasePatches(): Promise<boolean>
+
+  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void
 }

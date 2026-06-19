@@ -32,6 +32,7 @@ import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from './
 import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV2SchemaJson } from './types/docs_realtime_disconnect_error_total_v2.schema';
 import type { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from './types/docs_realtime_edit_latency_histogram_v1.schema';
 import type { HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson } from './types/docs_realtime_edit_time_to_ack_histogram_v1.schema';
+import type { HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV1SchemaJson } from './types/docs_sheets_yjs_drift_detected_total_v1.schema';
 import type { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/docs_squashes_latency_histogram_v1.schema';
 import type { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_squashes_total_v1.schema';
 import type { HttpsProtonMeDocsSuggestionsCreatedTotalV1SchemaJson } from './types/docs_suggestions_created_total_v1.schema';
@@ -201,6 +202,8 @@ import type { EmailContentRenderTime } from './types/web_mail_performance_email_
 import type { EmailContentRenderTimeSeconds } from './types/web_mail_performance_email_content_render_time_second_histogram_v1.schema';
 import type { EmailListDisplayTime } from './types/web_mail_performance_email_list_display_time_histogram_v1.schema';
 import type { PageTransitionTime } from './types/web_mail_performance_page_transition_time_histogram_v1.schema';
+import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
+import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
     public core_ui_blocking_error_page_total: Counter<HttpsProtonMeCoreUiBlockingErrorPageTotalV1SchemaJson>;
@@ -248,6 +251,8 @@ class Metrics extends MetricsBase {
     public docs_realtime_edit_latency_histogram: Histogram<HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson>;
 
     public docs_realtime_edit_time_to_ack_histogram: Histogram<HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson>;
+
+    public docs_sheets_yjs_drift_detected_total: Counter<HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV1SchemaJson>;
 
     public docs_squashes_latency_histogram: Histogram<HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson>;
 
@@ -587,6 +592,10 @@ class Metrics extends MetricsBase {
 
     public mail_performance_page_transition_time_histogram: Histogram<PageTransitionTime>;
 
+    public payments_subscription_steps_total: Counter<WebPaymentsSubscriptionStepsTotal>;
+
+    public payments_subscription_total: Counter<WebPaymentsSubscriptionTotal>;
+
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
 
@@ -712,6 +721,12 @@ class Metrics extends MetricsBase {
         this.docs_realtime_edit_time_to_ack_histogram =
             new Histogram<HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson>(
                 { name: 'docs_realtime_edit_time_to_ack_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.docs_sheets_yjs_drift_detected_total =
+            new Counter<HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV1SchemaJson>(
+                { name: 'docs_sheets_yjs_drift_detected_total', version: 1 },
                 this.requestService
             );
 
@@ -1622,6 +1637,16 @@ class Metrics extends MetricsBase {
 
         this.mail_performance_page_transition_time_histogram = new Histogram<PageTransitionTime>(
             { name: 'web_mail_performance_page_transition_time_histogram', version: 1 },
+            this.requestService
+        );
+
+        this.payments_subscription_steps_total = new Counter<WebPaymentsSubscriptionStepsTotal>(
+            { name: 'web_payments_subscription_steps_total', version: 1 },
+            this.requestService
+        );
+
+        this.payments_subscription_total = new Counter<WebPaymentsSubscriptionTotal>(
+            { name: 'web_payments_subscription_total', version: 1 },
             this.requestService
         );
     }
