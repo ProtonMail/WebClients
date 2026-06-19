@@ -380,11 +380,9 @@ export function tryParseToolResult(toolResult: string): ToolResultData | null {
         return null;
     }
     try {
-        console.log('Trying to parse tool result: ', toolResult);
         const parsed = JSON.parse(toolResult);
         return isToolResultData(parsed) ? parsed : null;
-    } catch (e) {
-        console.log('Failed to parse tool result: ', e);
+    } catch {
         return null;
     }
 }
