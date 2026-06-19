@@ -68,7 +68,9 @@ export const ChatPreview = () => {
     }
 
     return (
+        // aria-hidden: duplicates MeetingAnnouncer; visual-only. Close button tabIndex -1 avoids focus inside hidden subtree.
         <div
+            aria-hidden="true"
             className={clsx(
                 'absolute bottom-custom left-custom z-up bg-norm border border-norm rounded-xl p-4 max-h-custom flex flex-nowrap justify-space-between items-center overflow-hidden',
                 !isLargerThanMd && 'mb-2 w-full',
@@ -91,7 +93,7 @@ export const ChatPreview = () => {
                 ellipsisOverflow={true}
             />
 
-            <CloseButton onClose={() => setIsOpen(false)} className="ml-auto" />
+            <CloseButton onClose={() => setIsOpen(false)} className="ml-auto" tabIndex={-1} />
         </div>
     );
 };

@@ -29,13 +29,13 @@ import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { SpatialAudioRoomAudioRenderer } from '../../utils/spatialAudio/SpatialAudioRoomAudioRenderer';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Chat } from '../Chat/Chat';
+import { MeetingAnnouncer } from '../MeetingAnnouncer/MeetingAnnouncer';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingName } from '../MeetingName/MeetingName';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
 import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedInfo';
 import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
-// eslint-disable-next-line import/no-cycle
 import { ParticipantControls } from '../ParticipantControls/ParticipantControls';
 import { ParticipantGrid } from '../ParticipantGrid';
 import { ParticipantList } from '../ParticipantList/ParticipantList';
@@ -100,6 +100,13 @@ export const MeetingBody = ({
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
     const screenShareVideoRef = useRef<HTMLVideoElement>(null);
+
+    // Firefox/macOS leaves focus on browser chrome after joining; move it into the page so the
+    // live region is observed immediately without the user having to click first.
+    const mainContainerRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        mainContainerRef.current?.focus();
+    }, []);
 
     const showReloadTrackButton = useFlag('MeetShowReloadTrackButton');
     const [isRefreshingScreenShare, setIsRefreshingScreenShare] = useState(false);
@@ -176,7 +183,14 @@ export const MeetingBody = ({
     };
 
     return (
-        <div className="w-full h-full flex flex-column flex-nowrap">
+        <div ref={mainContainerRef} tabIndex={-1} className="w-full h-full flex flex-column flex-nowrap outline-none">
+            <MeetingAnnouncer
+                isReconnecting={isReconnecting}
+                mlsRetrying={mlsRetrying}
+                isDisconnected={isDisconnected}
+                liveKitConnectionState={liveKitConnectionState}
+                showReconnectedMessage={showReconnectedMessage}
+            />
             <RecordingTopBanner />
             <div
                 className={clsx(
@@ -192,13 +206,14 @@ export const MeetingBody = ({
                     >{c('Banner')
                         .t`Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.`}</TopBanner>
                 )}
+                {/* Visual-only: announced centrally by useConnectionAnnouncements. */}
                 {isReconnecting && (
-                    <TopBanner className="bg-warning meet-radius">
+                    <TopBanner className="bg-warning meet-radius" announce={false}>
                         {c('Info').t`Connection lost. Reconnecting…`}
                     </TopBanner>
                 )}
                 {!isReconnecting && mlsRetrying && (
-                    <TopBanner className="bg-warning meet-radius">
+                    <TopBanner className="bg-warning meet-radius" announce={false}>
                         {c('Info').t`Connection issue detected. Attempting to recover…`}
                     </TopBanner>
                 )}
@@ -210,6 +225,7 @@ export const MeetingBody = ({
                         showReconnectedMessage) && (
                         <TopBanner
                             className={showReconnectedMessage ? 'bg-success meet-radius' : 'bg-warning meet-radius'}
+                            announce={false}
                             onClose={() => {
                                 setShowReconnectedMessage(false);
                                 setLiveKitConnectionState(null);
