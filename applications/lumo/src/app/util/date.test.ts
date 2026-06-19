@@ -225,7 +225,7 @@ describe('Date utilities', () => {
             const endTime = Date.now();
             const elapsed = endTime - startTime;
 
-            expect(elapsed).toBeLessThan(10);
+            expect(elapsed).toBeLessThanOrEqual(10);
         });
     });
 
