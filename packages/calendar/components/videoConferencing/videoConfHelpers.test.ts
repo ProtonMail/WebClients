@@ -3,44 +3,91 @@ import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calenda
 import { SEPARATOR_PROTON_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import {
     addVideoConfInfoToDescription,
+    getSafeConferenceUrl,
     isVideoConfOnlyLink,
     removeVideoConfInfoFromDescription,
 } from './videoConfHelpers';
 
 describe('video conf helpers', () => {
+    describe('getSafeConferenceUrl', () => {
+        it('should return the URL unchanged for valid https URLs', () => {
+            expect(getSafeConferenceUrl('https://zoom.us/j/123456789')).toBe('https://zoom.us/j/123456789');
+            expect(getSafeConferenceUrl('https://meet.google.com/abc-defg-hij')).toBe(
+                'https://meet.google.com/abc-defg-hij'
+            );
+            expect(getSafeConferenceUrl('https://meet.proton.me/join/id-abc123#pwd-xyz')).toBe(
+                'https://meet.proton.me/join/id-abc123#pwd-xyz'
+            );
+        });
+
+        it('should upgrade http URLs to https', () => {
+            expect(getSafeConferenceUrl('http://zoom.us/j/123')).toBe('https://zoom.us/j/123');
+        });
+
+        it('should return undefined for non-https protocols', () => {
+            expect(getSafeConferenceUrl('ftp://zoom.us/files')).toBeUndefined();
+            expect(getSafeConferenceUrl('mailto:attacker@evil.com')).toBeUndefined();
+        });
+
+        it('should return undefined for OS protocol handler exploits', () => {
+            expect(
+                getSafeConferenceUrl('search-ms:query=zoom.us&crumb=location:\\\\attacker-ip\\zoom.us')
+            ).toBeUndefined();
+            expect(getSafeConferenceUrl('calculator://zoom.us/poc')).toBeUndefined();
+            expect(getSafeConferenceUrl('ms-settings:defaultapps')).toBeUndefined();
+            expect(getSafeConferenceUrl('file:///etc/passwd')).toBeUndefined();
+            expect(getSafeConferenceUrl('javascript:alert(1)')).toBeUndefined();
+        });
+
+        it('should return undefined for undefined or empty input', () => {
+            expect(getSafeConferenceUrl(undefined)).toBeUndefined();
+            expect(getSafeConferenceUrl('')).toBeUndefined();
+        });
+
+        it('should return undefined for malformed URLs', () => {
+            expect(getSafeConferenceUrl('not a url')).toBeUndefined();
+            expect(getSafeConferenceUrl('://missing-scheme')).toBeUndefined();
+        });
+    });
+
     describe('isVideoConfOnlyLink', () => {
         it('should return true if only contains meetingURL', () => {
             expect(
-                isVideoConfOnlyLink({
-                    service: VIDEO_CONF_SERVICES.GOOGLE_MEET,
-                    meetingUrl: 'https://example.com/meeting',
-                })
+                isVideoConfOnlyLink(
+                    { service: VIDEO_CONF_SERVICES.GOOGLE_MEET, meetingUrl: 'https://example.com/meeting' },
+                    undefined
+                )
             ).toBe(true);
         });
 
         it('should return false if contains more than meetingURL', () => {
             expect(
-                isVideoConfOnlyLink({
-                    service: VIDEO_CONF_SERVICES.GOOGLE_MEET,
-                    meetingUrl: 'https://example.com/meeting',
-                    password: 'password',
-                })
+                isVideoConfOnlyLink(
+                    {
+                        service: VIDEO_CONF_SERVICES.GOOGLE_MEET,
+                        meetingUrl: 'https://example.com/meeting',
+                        password: 'password',
+                    },
+                    undefined
+                )
             ).toBe(false);
 
             expect(
-                isVideoConfOnlyLink({
-                    service: VIDEO_CONF_SERVICES.GOOGLE_MEET,
-                    meetingUrl: 'https://example.com/meeting',
-                    meetingId: '123456',
-                })
+                isVideoConfOnlyLink(
+                    {
+                        service: VIDEO_CONF_SERVICES.GOOGLE_MEET,
+                        meetingUrl: 'https://example.com/meeting',
+                        meetingId: '123456',
+                    },
+                    undefined
+                )
             ).toBe(false);
 
             expect(
-                isVideoConfOnlyLink({
-                    service: VIDEO_CONF_SERVICES.GOOGLE_MEET,
-                    meetingUrl: 'https://example.com/meeting',
-                    joiningInstructions: 'instructions',
-                })
+                isVideoConfOnlyLink(
+                    { service: VIDEO_CONF_SERVICES.GOOGLE_MEET, meetingUrl: 'https://example.com/meeting' },
+                    'https://support.google.com/a/users/answer/9300131'
+                )
             ).toBe(false);
         });
     });
