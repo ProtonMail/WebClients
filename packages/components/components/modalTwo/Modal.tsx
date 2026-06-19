@@ -82,6 +82,11 @@ export interface ModalOwnProps {
      * Extra hotkeys definition for modals
      */
     hotkeys?: HotkeyTuple[];
+    /**
+     * Traps and moves focus into the dialog on open. Defaults to `true`. Set to `false` to avoid
+     * stealing focus / auto-announcing the dialog (also disables focus containment).
+     */
+    enableFocusTrap?: boolean;
 }
 
 enum ExitState {
@@ -112,6 +117,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     as,
     blurBackdrop,
     hotkeys = [],
+    enableFocusTrap = true,
     ...rest
 }: PolymorphicPropsWithoutRef<ModalOwnProps, E>) => {
     const [key, setKey] = useState(() => generateUID());
@@ -124,7 +130,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     const last = useModalPosition(active || false);
 
     const focusTrapProps = useFocusTrap({
-        active,
+        active: active && enableFocusTrap,
         rootRef: dialogRef,
     });
 
@@ -212,6 +218,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
 
     return (
         <Portal>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
                 ref={backdropRef}
                 className={clsx([

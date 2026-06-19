@@ -21,7 +21,8 @@ export const RecordingTopBanner = () => {
     // Clean up with MeetMultipleRecording ff cleanup
     if (!isMeetMultipleRecordingEnabled) {
         return (
-            <TopBanner className="recording-in-progress-banner text-semibold">
+            // Visual-only: announced centrally by useRecordingAnnouncements.
+            <TopBanner className="recording-in-progress-banner text-semibold" announce={false}>
                 {c('Info').jt`Recording in progress`}
             </TopBanner>
         );
@@ -39,7 +40,8 @@ export const RecordingTopBanner = () => {
     };
 
     return (
-        <TopBanner className="recording-in-progress-banner text-semibold">
+        // Visual-only: announced centrally by useRecordingAnnouncements.
+        <TopBanner className="recording-in-progress-banner text-semibold" announce={false}>
             {c('Info').jt`Recording in progress`} · {getRecordingParticipantNamesMessage()}
         </TopBanner>
     );

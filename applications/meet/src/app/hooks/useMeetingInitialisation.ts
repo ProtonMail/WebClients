@@ -1,3 +1,4 @@
+import { useMeetEventSim } from '../dev/useMeetEventSim';
 import { useBridges } from './bridges/useBridges';
 import { useMeetingTimeout } from './useMeetingTimeout';
 import { usePaginationSizeUpdates } from './usePaginationSizeUpdates';
@@ -8,4 +9,5 @@ export const useMeetingInitialisation = () => {
     usePaginationSizeUpdates();
     useScreenShareUpdates();
     useMeetingTimeout();
+    useMeetEventSim();
 };
