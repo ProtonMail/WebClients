@@ -10,6 +10,7 @@ import { useProductSelectionSubmit } from '@proton/activation/src/components/Mod
 import { EasySwitchProviderName } from '@proton/activation/src/components/ProviderName/EasySwitchProviderName';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import { useDriveSdk } from '@proton/activation/src/logic/driveContext';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -55,26 +56,29 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
     const [addresses] = useAddresses();
     const isBYOEAccount = getIsBYOEOnlyAccount(addresses);
     const [writeableCalendars = []] = useWriteableCalendars();
+    const drive = useDriveSdk();
 
     const { handleSubmit, loadingConfig } = useProductSelectionSubmit();
 
     const hasCalendar = !isBYOEAccount && writeableCalendars.length > 0;
 
     const isDriveFlagEnabled = useFlag('EasySwitchB2CForDriveWeb');
+    // Don't offer Drive unless the Drive SDK has been initialized by the host app.
+    const isDriveAvailable = isDriveFlagEnabled && !!drive;
 
     const [selectedProvider, setSelectedProvider] = useState(provider);
     const [selectedProducts, setSelectedProducts] = useState<ImportType[]>(
-        getDefaultProducts(provider, hasCalendar, getIsDriveSelectable(provider, isDriveFlagEnabled))
+        getDefaultProducts(provider, hasCalendar, getIsDriveSelectable(provider, isDriveAvailable))
     );
 
-    const isDriveSelectable = getIsDriveSelectable(selectedProvider, isDriveFlagEnabled);
+    const isDriveSelectable = getIsDriveSelectable(selectedProvider, isDriveAvailable);
 
     const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
         useModalState();
     const getOrCreateCalendarAndSettings = useGetOrCreateCalendarAndSettings();
 
     const handleProviderChange = (value: ImportProvider) => {
-        setSelectedProducts(getDefaultProducts(value, hasCalendar, getIsDriveSelectable(value, isDriveFlagEnabled)));
+        setSelectedProducts(getDefaultProducts(value, hasCalendar, getIsDriveSelectable(value, isDriveAvailable)));
         setSelectedProvider(value);
     };
 
