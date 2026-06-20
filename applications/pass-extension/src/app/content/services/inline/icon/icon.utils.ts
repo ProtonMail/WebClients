@@ -371,8 +371,16 @@ export const createIcon = ({ tag, zIndex }: CreateIconConfig): IconElement => {
     const icon = createElement<HTMLButtonElement>({ type: 'button', classNames: [] });
 
     icon.tabIndex = -1;
-    icon.style.zIndex = zIndex.toString();
     icon.setAttribute('type', 'button');
+    icon.style.setProperty('z-index', zIndex.toString());
+
+    /** The control's host styles are injected through the shadow root's `adoptedStyleSheets`,
+     * which on safari WebKit can resolve a tick after the element is inserted. The injection
+     * can momentarily render in normal flow at full opacity - before the `:host`/`button` rules
+     * are parsed & applied - shifting the page layout and flashing the icon. Mirror the layout
+     * styles inline so the element is never visible unstyled. */
+    icon.style.setProperty('opacity', '0');
+    control.customElement.style.setProperty('position', 'absolute', 'important');
 
     control.shadowRoot.appendChild(icon);
 
