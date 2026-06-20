@@ -162,17 +162,24 @@ export const createInlineApp = <T extends InlineRequest>({
 
     /** Leverage the unique `iframeID` to validate the `IFRAME_APP_READY_EVENT`. When
      * relocating the `proton-pass-root` custom element to evade focus-traps, we may
-     * intercept post messages from a previous iframe that we will unmount. */
-    const unlisten = listeners.addListener(window, 'message', (event) => {
-        if (
-            event.data.type === IFRAME_APP_READY_EVENT &&
-            event.data.endpoint === id &&
-            event.data.iframe === iframeID
-        ) {
-            state.loaded = true;
-            unlisten();
-        }
-    });
+     * intercept post messages from a previous iframe that we will unmount.
+     * NOTE: we use the capture phase as some hosts mutate `event.data` during bubbling. */
+    const unlisten = listeners.addListener(
+        window,
+        'message',
+        (event) => {
+            if (
+                event.data &&
+                event.data.type === IFRAME_APP_READY_EVENT &&
+                event.data.endpoint === id &&
+                event.data.iframe === iframeID
+            ) {
+                state.loaded = true;
+                unlisten();
+            }
+        },
+        { capture: true }
+    );
 
     /* Securing the posted message's allowed target origins.
      * Ensure the iframe has been correctly loaded before sending
