@@ -3,10 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
+import { CategoryIcon } from '@proton/mail/features/categoriesView/CategoryIcon';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
@@ -71,9 +70,10 @@ export const Tab = ({ category, tabState }: Props) => {
             onClick={handleClick}
             draggable={false}
         >
-            <Icon
+            <CategoryIcon
+                categoryId={category.id}
+                variant="filled"
                 className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
-                name={category.filledIcon}
             />
             <span
                 title={getLabelFromCategoryId(category.id)}
