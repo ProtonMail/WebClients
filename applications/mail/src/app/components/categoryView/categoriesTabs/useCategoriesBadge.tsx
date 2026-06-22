@@ -31,7 +31,7 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
     // The badge is displayed if the category folder exists and has a non-null LastUnseenMessageEventID
     const categoryFolder = systemFolders?.find((folder) => folder.ID === category.id);
     const eventID = categoryFolder?.LastUnseenMessageEventID ?? null;
-    const shouldShowNewBadge = eventID !== null;
+    const shouldShowNewBadge = eventID !== null && tabState !== TabState.ACTIVE;
 
     useEffect(() => {
         const lastEventID = getEventID();
