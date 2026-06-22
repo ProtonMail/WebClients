@@ -14,11 +14,10 @@ export const SecurityCheckupSwitch = () => {
     const { flagsReady } = useFlagsStatus();
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
 
-    const [{ vParamIsNew, backLink }] = useState(() => {
+    const [{ backLink }] = useState(() => {
         const initialSearchParams = new URLSearchParams(location.search);
         const backLink = getSafetyReviewBackLink(decodeURIComponent(initialSearchParams.get('back') ?? ''));
         return {
-            vParamIsNew: initialSearchParams.get('v') === 'new',
             backLink,
         };
     });
@@ -27,10 +26,7 @@ export const SecurityCheckupSwitch = () => {
         return <AccountLoaderPage />;
     }
 
-    const isNewVersion = vParamIsNew || isRecoverySettingsRedesignEnabled;
-    const isEmailSource = location.pathname.includes('safety-review/source/email');
-
-    if (isNewVersion && !isEmailSource) {
+    if (isRecoverySettingsRedesignEnabled) {
         return <SafetyReviewOrRedirect backLink={backLink} loaderPage={<AccountLoaderPage />} />;
     }
 
