@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,22 +12,20 @@ export interface Props extends Omit<TooltipProps, 'children' | 'title'> {
     wrapperClassName?: string;
 }
 
-const PermissionTooltip = ({
-    hasPermission,
-    children,
-    openDelay = 100,
-    className,
-    wrapperClassName,
-    ...rest
-}: Props) => (
-    <Tooltip
-        {...rest}
-        title={hasPermission ? undefined : c('Label').t`You don't have permissions`}
-        openDelay={openDelay}
-        tooltipClassName={className}
-    >
-        <span className={wrapperClassName}>{children}</span>
-    </Tooltip>
+const PermissionTooltip = forwardRef<HTMLElement, Props>(
+    ({ hasPermission, children, openDelay = 100, className, wrapperClassName, ...rest }, ref) => (
+        <Tooltip
+            ref={ref}
+            {...rest}
+            title={hasPermission ? undefined : c('Label').t`You don't have permissions`}
+            openDelay={openDelay}
+            tooltipClassName={className}
+        >
+            <span className={wrapperClassName}>{children}</span>
+        </Tooltip>
+    )
 );
+
+PermissionTooltip.displayName = 'PermissionTooltip';
 
 export default PermissionTooltip;
