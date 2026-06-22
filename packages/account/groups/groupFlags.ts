@@ -5,10 +5,14 @@ export const getIsSystemGroup = (group: Group) => {
     return hasBit(group.Flags, GroupFlags.System);
 };
 
+export const getIsScimGroup = (group: Group | undefined) => {
+    return hasBit(group?.Flags, GroupFlags.Scim);
+};
+
 export const getIsScimGroupPendingKeys = (group: Group | undefined): boolean => {
     if (typeof group === 'undefined') {
         return false;
     }
 
-    return getIsSystemGroup(group) && !group.Address.HasKeys;
+    return getIsScimGroup(group) && !group.Address.HasKeys;
 };
