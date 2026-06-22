@@ -6,6 +6,7 @@ import {
     createToken,
     getCalendarImportData,
     getContactsImportData,
+    getDriveImportData,
     getMailImportData,
 } from '@proton/activation/src/api';
 import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
@@ -30,7 +31,7 @@ import {
 } from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -205,8 +206,44 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                 }
 
                 if (product === ImportType.DRIVE) {
-                    // TODO(DRVBE-1687): Call Drive import data endpoint to get import data/errors.
-                    return { importType: product };
+                    try {
+                        await thunkAPI.extra.api({
+                            ...getDriveImportData(ImporterID),
+                            silence: true,
+                        });
+
+                        return {
+                            importType: product,
+                        };
+                    } catch (e) {
+                        const { code, status, message } = getApiError(e);
+                        if (status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
+                            if (code === IMPORT_ERROR.AUTHENTICATION_ERROR) {
+                                return {
+                                    importType: product,
+                                    error: c('Error').t`${BRAND_NAME} can't connect to your external account`,
+                                };
+                            }
+                            if (code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
+                                return {
+                                    importType: product,
+                                    error: c('Error').t`No drive found to import`,
+                                };
+                            }
+                            if (code === IMPORT_ERROR.TOO_SHORT) {
+                                return {
+                                    importType: product,
+                                    error: c('Error').t`Not enough storage space in your ${DRIVE_APP_NAME}`,
+                                };
+                            }
+                            return {
+                                importType: product,
+                                error: message || c('Error').t`Unexpected error, we can't import the files`,
+                            };
+                        } else {
+                            throw e;
+                        }
+                    }
                 }
 
                 return { importType: product };
