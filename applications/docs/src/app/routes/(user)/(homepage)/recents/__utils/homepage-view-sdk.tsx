@@ -27,7 +27,7 @@ import {
 } from './homepage-view'
 import { useRecents } from './use-recents'
 import { useTrashed } from './use-trashed'
-import { manageEventsSubscription } from './manage-events-subscription'
+import { manageEventsSubscription } from '~/utils/drive-events'
 import { c } from 'ttag'
 import useNotifications from '@proton/components/hooks/useNotifications'
 
@@ -88,7 +88,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
     if (!myFilesNode) {
       return
     }
-    return subscribeToEvents(drive, myFilesNode.treeEventScopeId, logger, recentsListener, trashedListener)
+    return subscribeToEvents(drive, myFilesNode.treeEventScopeId, logger, [recentsListener, trashedListener])
   }, [drive, recentsListener, trashedListener, logger, myFilesNode])
 
   const state = useMemo(() => {
