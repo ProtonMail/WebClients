@@ -163,8 +163,7 @@ export const modelToDescriptionProperties = ({
 
     // Return the description if there is no video conference
     if (description && !modelHasVideoConf) {
-        const cleanedDescription = removeVideoConfInfoFromDescription(description ?? '');
-        return { description: { value: cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) } };
+        return { description: { value: description.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) } };
     }
 
     // We remove the video conferencing info from the description to avoid saving it twice
