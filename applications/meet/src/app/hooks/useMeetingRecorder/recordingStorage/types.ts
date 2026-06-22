@@ -8,7 +8,7 @@ export enum StorageMessageType {
 
 export type StorageWorkerMessage =
     | { type: StorageMessageType.INIT; id: string; data: { fileExtension: string; userId: string } }
-    | { type: StorageMessageType.ADD_CHUNK; id: string; data: { chunkBuffer: ArrayBuffer; position?: number } }
+    | { type: StorageMessageType.ADD_CHUNK; id: string; data: { chunkBuffer: ArrayBuffer } }
     | { type: StorageMessageType.FINALIZE; id: string }
     | { type: StorageMessageType.CLEAR; id: string }
     | { type: StorageMessageType.CLOSE; id: string };
@@ -19,7 +19,7 @@ export enum StorageWorkerResponseType {
     STORAGE_FULL = 'storageFull',
 }
 
-export type FinalizeResponseData = { fileNames: string[] };
+export type FinalizeResponseData = { fileName: string };
 
 export type StorageWorkerResponse =
     | { type: StorageWorkerResponseType.SUCCESS; id: string; data?: FinalizeResponseData }

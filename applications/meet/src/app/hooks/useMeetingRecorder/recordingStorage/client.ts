@@ -95,9 +95,7 @@ export class RecordingStorageClient {
         });
     }
 
-    // `position` is set by the WebCodecs path (mediabunny gives an explicit byte
-    // offset per chunk); the MediaRecorder path omits it and the worker appends.
-    async addChunk(chunk: Blob | Uint8Array<ArrayBuffer>, position?: number): Promise<void> {
+    async addChunk(chunk: Blob | Uint8Array<ArrayBuffer>): Promise<void> {
         if (!this.worker) {
             throw new Error('Worker not initialized');
         }
@@ -116,7 +114,7 @@ export class RecordingStorageClient {
 
         const writePromise = (async () => {
             const chunkBuffer = await getChunkBuffer();
-            await this.send({ type: StorageMessageType.ADD_CHUNK, data: { chunkBuffer, position } }, [chunkBuffer]);
+            await this.send({ type: StorageMessageType.ADD_CHUNK, data: { chunkBuffer } }, [chunkBuffer]);
         })();
 
         this.pendingChunkWrites.add(writePromise);
@@ -135,21 +133,19 @@ export class RecordingStorageClient {
         await Promise.allSettled([...this.pendingChunkWrites]);
     }
 
-    // Closes write handles and returns the recording's files in order.
-    // Today there is always one file; the artifact is plural to keep
-    // multi-file rotation forward-compatible.
+    // Closes the write handle and returns the finalized recording.
     async finalize(): Promise<OpfsRecording | null> {
         await this.drainPendingChunkWrites();
-        const { fileNames } = (await this.send({ type: StorageMessageType.FINALIZE })) as FinalizeResponseData;
+        const { fileName } = (await this.send({ type: StorageMessageType.FINALIZE })) as FinalizeResponseData;
 
         if (isFirefox()) {
-            // Firefox needs the worker to fully release the file handles
-            // before the main thread can read them back from OPFS.
+            // Firefox needs the worker to fully release the file handle
+            // before the main thread can read it back from OPFS.
             this.terminate();
             await new Promise((resolve) => setTimeout(resolve, 50));
         }
 
-        return fileNames[0] ? getOpfsRecording(this.userId, fileNames[0]) : null;
+        return getOpfsRecording(this.userId, fileName);
     }
 
     async clear(): Promise<void> {

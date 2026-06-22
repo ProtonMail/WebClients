@@ -1,12 +1,11 @@
 import {
+    AppendOnlyStreamTarget,
     type AudioCodec,
     AudioSample,
     AudioSampleSource,
     CanvasSource,
     Mp4OutputFormat,
     Output,
-    StreamTarget,
-    type StreamTargetChunk,
 } from 'mediabunny';
 
 import { ENCODER_AUDIO_BITRATE, ENCODER_VIDEO_BITRATE, KEYFRAME_INTERVAL_SEC } from './constants';
@@ -41,22 +40,21 @@ export class EncoderPipeline {
         canvas: OffscreenCanvas,
         fps: number,
         audioCodec: AudioCodec,
-        onChunk: (data: Uint8Array<ArrayBuffer>, position: number) => void,
+        onChunk: (data: Uint8Array<ArrayBuffer>) => void,
         onError: (error: unknown) => void
     ) {
         this.fps = fps;
         this.onError = onError;
 
-        const writable = new WritableStream<StreamTargetChunk>({
+        const writable = new WritableStream<Uint8Array<ArrayBuffer>>({
             write(chunk) {
-                // Copy out of Mediabunny's buffer before handing ownership off.
-                onChunk(chunk.data.slice(), chunk.position);
+                onChunk(chunk.slice());
             },
         });
 
         this.output = new Output({
             format: new Mp4OutputFormat({ fastStart: 'fragmented' }),
-            target: new StreamTarget(writable),
+            target: new AppendOnlyStreamTarget(writable),
         });
 
         this.videoSource = new CanvasSource(canvas, {
