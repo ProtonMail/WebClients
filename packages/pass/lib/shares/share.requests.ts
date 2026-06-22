@@ -1,4 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
+import { isShareRemovedError } from '@proton/pass/lib/api/errors';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import type { SharesState } from '@proton/pass/store/reducers';
 import type {
@@ -49,9 +50,10 @@ export const getShareLatestEventId = async (shareId: string): Promise<string> =>
         .then(({ EventID }) => EventID)
         .catch((err) => {
             logger.info(`[Share] Failed getting latest eventID for share ${logId(shareId)}`);
-            /** Callers should handle `PassErrorCode.DISABLED_SHARE` if the share
-             * is no longer accessible to the user. */
-            throw err;
+            /** Propagate share-removal so callers can clean up the share.
+             * Tolerate transient errors with an empty cursor. */
+            if (isShareRemovedError(err)) throw err;
+            return '';
         });
 
 export const requestShares = async (): Promise<ShareGetResponse[]> =>
