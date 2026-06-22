@@ -9,9 +9,9 @@ import config from '../../app/config';
 import { userAgent } from '../../lib/user-agent';
 import { store } from '../../store';
 import { isLinux, isMac, isProdEnv, isWindows } from '../../utils/platform';
-import { getUpdateStore, setUpdateStore } from './store';
+import { UPDATE_SOURCE_URL, getUpdateStore, setUpdateStore } from './store';
 import type { RemoteManifestResponse } from './updater';
-import { UPDATE_SOURCE_URL, checkForUpdates } from './updater';
+import { checkForUpdates } from './updater';
 
 jest.mock('electron', () => ({
     app: { isPackaged: true, isReady: () => true },

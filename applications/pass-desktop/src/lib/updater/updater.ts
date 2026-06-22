@@ -8,17 +8,15 @@ import noop from '@proton/utils/noop';
 
 import { msix_updater } from '../../../native';
 import config from '../../app/config';
-import { ARCH } from '../../lib/env';
 import { userAgent } from '../../lib/user-agent';
 import logger from '../../utils/logger';
-import { isMac, isProdEnv, isWindows } from '../../utils/platform';
+import { isMac, isWindows } from '../../utils/platform';
 import { categorizeUpdaterError } from './error.macos';
 import { calculateUpdateDistribution } from './helpers';
 import { mockDownload } from './mock';
-import { getUpdateStore, initUpdateStore, isUpdateInProgress, setUpdateStore } from './store';
+import { getUpdateBaseUrl, getUpdateStore, initUpdateStore, isUpdateInProgress, setUpdateStore } from './store';
 
 const SUPPORTED_PLATFORMS = ['darwin', 'win32'];
-export const UPDATE_SOURCE_URL = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`;
 const UPDATE_INTERVAL = 60 * 60 * 1_000; // 1h
 
 type RemoteRelease = {
@@ -30,25 +28,12 @@ type RemoteRelease = {
 
 export type RemoteManifestResponse = { Releases: RemoteRelease[] };
 
-const getFeedURL = (isBeta: boolean) => {
-    let feedURL = UPDATE_SOURCE_URL;
-    let serverType: 'default' | 'json' = 'default';
-
-    if (isBeta) {
-        feedURL += '/beta';
-    }
-
-    if (isMac()) {
-        feedURL += '/RELEASES.json';
-        serverType = 'json';
-    }
-
-    return {
-        url: feedURL,
-        headers: { 'user-agent': userAgent() },
-        serverType,
-    };
-};
+// Mac-only: Windows updates go through the native MSIX binding, not autoUpdater
+const getFeedURL = (isBeta: boolean) => ({
+    url: `${getUpdateBaseUrl()}${isBeta ? '/beta' : ''}/RELEASES.json`,
+    headers: { 'user-agent': userAgent() },
+    serverType: 'json' as const,
+});
 
 const getLatestRelease = async (session: Session): Promise<MaybeNull<RemoteRelease>> => {
     const { currentVersion, status: previousStatus } = getUpdateStore();
@@ -58,7 +43,7 @@ const getLatestRelease = async (session: Session): Promise<MaybeNull<RemoteRelea
 
     setUpdateStore({ status: UpdateStatus.Checking });
 
-    const remoteManifestUrl = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}/version.json`;
+    const remoteManifestUrl = `${getUpdateBaseUrl()}/version.json`;
     const remoteManifest = await session
         .fetch(remoteManifestUrl)
         .then((r) => r.json() as Promise<RemoteManifestResponse>)
@@ -178,7 +163,7 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
     if (isUpdateInProgress()) return false;
     const latestRelease = await getLatestRelease(session);
     if (latestRelease === null) return false;
-    if (!isProdEnv()) {
+    if (getUpdateStore().mockDownload) {
         void mockUpdate(session, latestRelease);
     } else {
         if (isWindows()) void windowsUpdate(latestRelease);

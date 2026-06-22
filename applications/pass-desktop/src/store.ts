@@ -35,6 +35,8 @@ export const store = new Store<RootStore>({
                 currentVersion: config.APP_VERSION,
                 newVersion: null,
                 progress: null,
+                mockUpdateBaseUrl: null,
+                mockDownload: false,
                 mockDoDownloadError: false,
             });
             s.delete('optInForBeta' as any);
