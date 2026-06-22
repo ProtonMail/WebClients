@@ -116,7 +116,7 @@ interface MeetingAnnouncerProviderProps {
     suspendNonCritical?: boolean;
 }
 
-/** Single live region with priority queue, dedupe, and stable focus. */
+/** Live region with priority queue, dedupe, and stable focus. */
 export const MeetingAnnouncerProvider = ({ children, suspendNonCritical = false }: MeetingAnnouncerProviderProps) => {
     const { regions, submit } = useAnnouncementChannel();
 

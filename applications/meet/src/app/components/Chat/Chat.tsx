@@ -33,6 +33,8 @@ export const Chat = () => {
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
+    const isChatOpen = sideBarState[MeetingSideBars.Chat];
+
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
     const sendMessage = useChatMessage();
@@ -68,14 +70,14 @@ export const Chat = () => {
 
     // Handle marking messages as seen
     useEffect(() => {
-        if (sideBarState[MeetingSideBars.Chat] && scrollRef.current) {
+        if (isChatOpen && scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
 
-        if (sideBarState[MeetingSideBars.Chat]) {
+        if (isChatOpen) {
             dispatch(markChatMessagesAsSeen());
         }
-    }, [sideBarState[MeetingSideBars.Chat]]);
+    }, [isChatOpen, dispatch]);
 
     const lowerCaseSearchExpression = searchExpression.toLowerCase();
 
@@ -88,7 +90,7 @@ export const Chat = () => {
 
     const hasNoMessages = !meetingRoomUpdates.length;
 
-    if (!sideBarState[MeetingSideBars.Chat]) {
+    if (!isChatOpen) {
         return null;
     }
 

@@ -1,5 +1,5 @@
 import { useLocalParticipant } from '@livekit/components-react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useMeetSelector } from '@proton/meet/store/hooks';
@@ -68,9 +68,17 @@ export const ChatMessageReactions = ({ messageId, onReact }: ChatMessageReaction
                             )}
                             onClick={() => onReact(emoji)}
                             aria-pressed={hasReacted}
+                            aria-label={c('Action').ngettext(
+                                // translator: {emoji} is the reaction emoji character (e.g. 👍), the number is how many people reacted with it
+                                msgid`React with ${emoji}, ${identities.length} reaction`,
+                                `React with ${emoji}, ${identities.length} reactions`,
+                                identities.length
+                            )}
                         >
-                            <span>{emoji}</span>
-                            <span className="text-xs">{identities.length}</span>
+                            <span aria-hidden="true">{emoji}</span>
+                            <span className="text-xs" aria-hidden="true">
+                                {identities.length}
+                            </span>
                         </button>
                     </Tooltip>
                 );

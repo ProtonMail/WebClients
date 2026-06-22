@@ -4,7 +4,6 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
 import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/sortedParticipantsSlice';
-import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { announcementMessages } from '../messages';
 import { useAnnounce } from '../useAnnounce';
@@ -15,8 +14,6 @@ export const useChatAnnouncements = () => {
     const chatMessages = useMeetSelector(selectChatMessages);
     const nameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const localIdentity = useMeetSelector(selectLocalParticipantIdentity);
-    const sideBarState = useMeetSelector(selectSideBarState);
-    const isChatOpen = sideBarState[MeetingSideBars.Chat];
 
     // null until first run so existing messages are not re-announced on mount.
     const processedCountRef = useRef<number | null>(null);
@@ -30,10 +27,8 @@ export const useChatAnnouncements = () => {
         const newMessages = chatMessages.slice(processedCountRef.current);
         processedCountRef.current = chatMessages.length;
 
-        if (isChatOpen) {
-            return;
-        }
-
+        // Announce incoming messages whether the chat panel is open or closed: when closed this backs
+        // the toast preview, and when open it exposes new messages to screen readers without moving focus.
         for (const message of newMessages) {
             if (message.identity === localIdentity) {
                 continue;
@@ -43,5 +38,5 @@ export const useChatAnnouncements = () => {
                 dedupeKey: `chat-${message.id}`,
             });
         }
-    }, [chatMessages, nameMap, localIdentity, isChatOpen, announce]);
+    }, [chatMessages, nameMap, localIdentity, announce]);
 };
