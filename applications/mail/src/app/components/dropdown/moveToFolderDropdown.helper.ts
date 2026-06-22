@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
+import { getCategoryIconName } from '@proton/mail/features/categoriesView/CategoryIcon';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -28,7 +29,7 @@ export const getInboxCategoriesItems = ({
         return activeCategoriesTabs.map((category) => ({
             ID: category.id,
             Name: getLabelFromCategoryId(category.id),
-            icon: category.filledIcon,
+            icon: getCategoryIconName(category.id, 'filled'),
             folderIconProps: {
                 className: categoryColorClassName,
                 color: category.colorShade,
