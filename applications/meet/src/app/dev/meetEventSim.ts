@@ -18,6 +18,7 @@ export interface MeetEventSim {
     recordingStarted(): void;
     recordingStopped(): void;
     chatMessage(name?: string): void;
+    sendChatMessage(message?: string): Promise<boolean>;
 }
 
 declare global {
@@ -33,10 +34,14 @@ let counter = 0;
 const nextIdentity = () => `${SIM_IDENTITY_PREFIX}${++counter}`;
 
 /**
- * Wires up the `window.meetEventSim` tool with a Redux dispatch function.
+ * Wires up the `window.meetEventSim` tool with a Redux dispatch function and a
+ * `sendMessage` function used to actually publish a chat message to the room.
  * Returns a cleanup function that removes the tool from the window.
  */
-export const initMeetEventSim = (dispatch: Dispatch<UnknownAction>): (() => void) => {
+export const initMeetEventSim = (
+    dispatch: Dispatch<UnknownAction>,
+    sendMessage: (content: string) => Promise<boolean>
+): (() => void) => {
     const sim: MeetEventSim = {
         participantJoined(name = 'Simulated User') {
             const identity = nextIdentity();
@@ -81,11 +86,14 @@ export const initMeetEventSim = (dispatch: Dispatch<UnknownAction>): (() => void
                         identity,
                         message: 'Simulated message',
                         timestamp: Date.now(),
+                        type: 'message',
                     },
                 ])
             );
-            // eslint-disable-next-line no-console
-            console.info('[meetEventSim] chatMessage: announcement only fires when the chat sidebar is closed.');
+        },
+
+        sendChatMessage(message = 'Simulated message') {
+            return sendMessage(message);
         },
     };
 
