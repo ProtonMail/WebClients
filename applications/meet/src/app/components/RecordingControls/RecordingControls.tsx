@@ -30,6 +30,7 @@ import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/us
 import { ScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/ScreenRecordingUpsell';
 import { SubUserScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/SubUserScreenRecordingUpsell';
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
+import { RecordingDownloadModal } from './RecordingDownloadModal/RecordingDownloadModal';
 
 import './RecordingControls.scss';
 
@@ -80,7 +81,7 @@ const RecordingUpsellButton = ({ isSubUser }: { isSubUser?: boolean }) => {
 export const RecordingControls = () => {
     const isMeetingRecordingEnabled = useFlag('MeetingRecording');
 
-    const { startRecording, downloadRecording } = useMeetingRecorderContext();
+    const { startRecording, finishRecording } = useMeetingRecorderContext();
     const { createNotification } = useNotifications();
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -119,9 +120,9 @@ export const RecordingControls = () => {
         }
     };
 
-    const handleStopAndDownload = async () => {
+    const handleStopRecording = async () => {
         setShowStopRecordingConfirmation(false);
-        await downloadRecording();
+        await finishRecording();
     };
 
     const handleStopRecordingConfirmation = () => {
@@ -218,11 +219,12 @@ export const RecordingControls = () => {
                     message={c('Info').t`Are you sure you want to stop recording?`}
                     primaryText={c('Action').t`Stop recording and download video`}
                     primaryButtonClass="primary"
-                    onPrimaryAction={handleStopAndDownload}
+                    onPrimaryAction={handleStopRecording}
                     onSecondaryAction={() => setShowStopRecordingConfirmation(false)}
                     onClose={() => setShowStopRecordingConfirmation(false)}
                 />
             )}
+            <RecordingDownloadModal />
         </>
     );
 };

@@ -12,6 +12,7 @@ import type { NotificationsManager } from '@proton/components/containers/notific
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
+import { selectUserId } from '@proton/meet/store/slices/userSlice';
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
 import { setupStore } from '@proton/meet/store/store';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
@@ -35,6 +36,7 @@ import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthent
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
+import { purgeUserRecordings } from './hooks/useMeetingRecorder/recordingStorage/purge';
 import locales from './locales';
 import { meetTelemetryConfig } from './telemetryConfig';
 import { clearStoredDevices } from './utils/deviceStorage';
@@ -268,9 +270,11 @@ const completeAppBootstrap = async ({
     dispatch(bootstrapEvent({ type: 'complete' }));
 
     // Register callback to clear settings entries on logout
+    const userId = selectUserId(store.getState());
     registerSessionRemovalListener(async () => {
         clearStoredDevices();
         clearDisabledRotatePersonalMeeting();
+        await purgeUserRecordings(userId);
     });
 
     return { userData, wasmApp };

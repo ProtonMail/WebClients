@@ -4,12 +4,12 @@ import { useMeetingRecorder } from '../hooks/useMeetingRecorder';
 
 export interface MeetingRecorderContextType {
     startRecording: () => Promise<void>;
-    downloadRecording: () => Promise<void>;
+    finishRecording: () => Promise<void>;
 }
 
 const defaultValues: MeetingRecorderContextType = {
     startRecording: () => Promise.resolve(),
-    downloadRecording: () => Promise.resolve(),
+    finishRecording: () => Promise.resolve(),
 };
 
 export const MeetingRecorderContext = createContext<MeetingRecorderContextType>(defaultValues);
@@ -23,7 +23,7 @@ export const useMeetingRecorderContext = () => {
 };
 
 export const MeetingRecorderProvider = ({ children }: { children: ReactNode }) => {
-    const { startRecording, downloadRecording } = useMeetingRecorder();
-    const value = useMemo(() => ({ startRecording, downloadRecording }), [startRecording, downloadRecording]);
+    const { startRecording, finishRecording } = useMeetingRecorder();
+    const value = useMemo(() => ({ startRecording, finishRecording }), [startRecording, finishRecording]);
     return <MeetingRecorderContext.Provider value={value}>{children}</MeetingRecorderContext.Provider>;
 };
