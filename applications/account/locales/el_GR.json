@@ -1895,6 +1895,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Verify password": [
+        "Επαλήθευση κωδικού πρόσβασης"
       ]
     },
     "action": {
@@ -5572,6 +5575,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Σημειώστε ότι τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται σε αυτήν τη διεύθυνση, ακόμη και από άλλες διευθύνσεις ${ BRAND_NAME }, δε θα είναι πλέον διατερματικά κρυπτογραφημένα."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Μόλις αποσυνδεθείτε και απενεργοποιηθεί, δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ως ${ address.Email } στο ${ BRAND_NAME }. Τα μηνύματα που αποστέλλονται σε αυτήν τη διεύθυνση θα εξακολουθούν να φτάνουν στο Gmail, αλλά όχι στο ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Μόλις αποσυνδεθείτε, δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ως ${ address.Email } στο ${ BRAND_NAME }. Τα μηνύματα που αποστέλλονται σε αυτήν τη διεύθυνση θα εξακολουθούν να φτάνουν στο Gmail, αλλά όχι στο ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συγχρονίσουμε τα νέα μηνύματα από το Gmail στο εξής"
+      ],
+      "You can reconnect this address at any time.": [
+        "Μπορείτε να επανασυνδέσετε αυτήν τη διεύθυνση ανά πάσα στιγμή."
       ]
     },
     "description": {
@@ -15804,6 +15822,9 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Import your emails": [
+        "Εισαγωγή των ηλεκτρονικών μηνυμάτων σας"
       ]
     },
     "label": {
@@ -26713,6 +26734,9 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Είστε βέβαιοι ότι θέλετε να αποσυνδέσετε και να απενεργοποιήσετε αυτήν τη διεύθυνση;"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28220,6 +28244,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Τα διπλότυπα από προηγούμενες εισαγωγές θα παραλειφθούν. Αναιρέστε ή εισαγάγετε παλαιότερα μηνύματα στις ρυθμίσεις ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

@@ -1698,6 +1698,15 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Piilota ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Stop": [
+        "Pysäytä"
+      ],
+      "Verify password": [
+        "Vahvista salasana"
       ]
     },
     "action": {
@@ -2495,6 +2504,12 @@
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
+      ],
+      "Creating accounts": [
+        "Luodaan tilejä"
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Luomme parhaillaan tilejäsi ja tuomme tietosi järjestelmään, jotta tiimilläsi on kaikki tarvittava käytettävissään, kun he alkavat käyttää suojattua ${ BRAND_NAME } -tiliään."
       ]
     },
     "breadcrumb": {
@@ -4534,6 +4549,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitteen",
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitetta"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Huomaa, että tähän osoitteeseen lähetettyjä sähköposteja, edes muista ${ BRAND_NAME } -osoitteista, ei enää salata päästä päähän."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu ja tili poistettu käytöstä, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Kun yhteys on katkaistu, et voi enää lähettää tai vastaanottaa sähköposteja osoitteesta ${ address.Email } palvelussa ${ BRAND_NAME }. Tähän osoitteeseen lähetetyt sähköpostit saapuvat edelleen Gmailiin, mutta eivät sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Tuomme vanhat sähköpostisi ja synkronoimme jatkossa uudet viestit Gmailista"
+      ],
+      "You can reconnect this address at any time.": [
+        "Voit yhdistää tämän osoitteen uudelleen milloin tahansa."
       ]
     },
     "description": {
@@ -11271,6 +11301,23 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } käyttäjän on hyväksyttävä kutsunsa, jotta hän voi alkaa vastaanottaa ryhmäsähköposteja.",
+        "${ invitedMemberCount } käyttäjän on hyväksyttävä kutsunsa, jotta he voi alkaa vastaanottaa ryhmäsähköposteja."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } uutta jäsen on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä.",
+        "${ pendingAdminMemberCount } uutta jäsentä on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä."
+      ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Hei! Kerro, millaisen suodattimen haluat, niin kirjoitan Sieve-skriptin. Voin myös muokata editorissa jo olevia skriptejä."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Uusi ryhmä on luotu identiteetin tarjoajan kautta ja odottaa tarkastusta."
+      ],
+      "Thinking…": [
+        "Mietitään…"
       ]
     },
     "info": {
@@ -13126,6 +13173,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Enter current password": [
+        "Syötä nykyinen salasana"
+      ],
+      "Import your emails": [
+        "Tuo sähköpostisi"
       ]
     },
     "label": {
@@ -15423,6 +15476,9 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
+      ],
+      "Sieve script inserted": [
+        "Sieve-skripti lisätty"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -17040,6 +17096,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Describe the filter you want…": [
+        "Kuvaile haluamaasi suodatinta…"
       ]
     },
     "placeholder": {
@@ -22240,6 +22299,12 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Haluatko varmasti katkaista yhteyden ja poistaa tämän osoitteen käytöstä?"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Hanki apua ${ LUMO_SHORT_APP_NAME }:sta"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22519,6 +22584,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ulkoinen tililisi on saattanut saavuttaa sille asetetun 24-tunnin tiedonsiirtorajoituksen. ${ BRAND_NAME } pyrkii jatkamaan tuontia mahdollisimman pian."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
       ]
     },
     "tooltip": {
@@ -23516,6 +23584,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Aikaisemmista tuonneista peräisin olevat kaksoiskappaleet ohitetaan. Voit peruuttaa toiminnon tai tuoda vanhempia viestejä ${ PRODUCT_NAMES.EASY_SWITCH } -asetuksissa."
+      ]
+    },
+    "safety_review": {
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Jotta muistat salasanasi, pyydämme sinua syöttämään sen säännöllisin väliajoin."
+      ],
+      "Verify your password": [
+        "Vahvista salasanasi"
       ]
     }
   }

@@ -997,7 +997,7 @@
         "插入"
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -1114,7 +1114,7 @@
         "将邮件标为"
       ],
       "Maybe later": [
-        "稍后再说"
+        "以后再说"
       ],
       "More": [
         "更多"
@@ -1889,6 +1889,15 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "隐藏 ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Stop": [
+        "停止"
+      ],
+      "Verify password": [
+        "验证密码"
       ]
     },
     "action": {
@@ -2003,6 +2012,9 @@
       ],
       "Writing assistant seats": [
         "写作助手席位"
+      ],
+      "Add-on": [
+        "插件"
       ]
     },
     "Address action": {
@@ -5523,6 +5535,21 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "请注意，发送到此地址的邮件，即使来自其他 ${ BRAND_NAME } 地址，也将不再采用端到端加密。"
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接并禁用，您将无法再在 ${ BRAND_NAME } 中以 ${ address.Email } 的身份发送或接收邮件。发送到此地址的邮件仍会到达 Gmail，但不会在 ${ MAIL_APP_NAME } 中显示。"
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "一旦断开连接，您将无法再在 ${ BRAND_NAME } 中以 ${ address.Email } 的身份发送或接收邮件。发送到此地址的邮件仍会到达 Gmail，但不会在 ${ MAIL_APP_NAME } 中显示。"
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "我们将导入您的旧邮件，并同步后续来自 Gmail 的新邮件。"
+      ],
+      "You can reconnect this address at any time.": [
+        "您可以随时重新连接此地址。"
       ]
     },
     "description": {
@@ -6984,6 +7011,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "您的恢复联系人应是您认识并能轻松联系到的人！"
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**保护您的数字遗产**，升级套餐以添加紧急联系人！"
       ]
     },
     "Empty group name": {
@@ -9674,7 +9704,7 @@
         "${ emailAddress } 无效"
       ],
       "${ fileName }: full-size image": [
-        "${ fileName }：完整图片"
+        "${ fileName }：完整图像"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }：小图预览"
@@ -10259,7 +10289,7 @@
         "在指定的时段开启自动回复"
       ],
       "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
-        "当邀请中至少有一位参会者时，自动将 Meet 链接添加到您的日历邀请中"
+        "当邀请中至少有一位参与者时，自动将 Meet 链接添加到您的日历邀请中"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "自动清除 30 天前移至回收站和垃圾邮件的电子邮件。"
@@ -11177,13 +11207,13 @@
         "如果您遇到困难，我们将竭诚为您服务。${ boldPhoneCall } 或 ${ boldZoomMeeting } 与我们的支持专家联系。"
       ],
       "Image description": [
-        "图片描述"
+        "图像描述"
       ],
       "Image URL": [
-        "图像 URL"
+        "图像地址"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "自动回复内容不能包含图片，故图片已移除"
+        "自动回复内容不能包含图像，故图像已移除"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
@@ -11234,7 +11264,7 @@
         "与上层文件夹一致"
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -12959,7 +12989,7 @@
         "关闭后可防止在您不知情的情况下加载图像。"
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
-        "禁用后，可在您不知情时阻止远程图片加载。"
+        "禁用后，可在您不知情时阻止外链图像加载。"
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "启用后，我们将检查 ${ MAIL_APP_NAME } 是否是您的默认邮箱应用，并在非默认时通知您。"
@@ -13428,6 +13458,21 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } 位用户需接受邀请方可开始接收群组邮件"
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } 位通过身份提供商添加的新成员待审核"
+      ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "您好！请描述您想要的筛选器，我来编写 Sieve 脚本。我也可以调整编辑器中已有的内容！"
+      ],
+      "New group created via your identity provider and pending review.": [
+        "通过身份提供商创建的新群组待审核"
+      ],
+      "Thinking…": [
+        "正在思考…"
       ]
     },
     "info": {
@@ -14349,7 +14394,7 @@
         "现金"
       ],
       "Catch-all email address": [
-        "通配邮件地址"
+        "通配邮箱地址"
       ],
       "Categories": [
         "分类"
@@ -15207,7 +15252,7 @@
         "移除"
       ],
       "Remove image metadata": [
-        "移除图片元数据"
+        "移除图像元数据"
       ],
       "Renews at ${ renewalPrice }, cancel anytime.": [
         "以 ${ renewalPrice } 续订，可随时取消"
@@ -15619,6 +15664,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Enter current password": [
+        "请输入当前密码"
+      ],
+      "Import your emails": [
+        "导入您的邮件"
       ]
     },
     "label": {
@@ -17807,7 +17858,7 @@
         "密码管理和身份保护"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
+        "在邮件落款中加入图标、图像、链接、社交网络标识等个性化元素"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
         "对于拥有 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或更多用户的客户，${ BRAND_NAME } 客户支持团队可在欧洲工作时间提供电话支持。"
@@ -17849,10 +17900,10 @@
         "与任何人安全共享单个项目（即使他们不使用 ${ PASS_APP_NAME }）"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
+        "安全存储联系人的电话号码、住址、生日、备注等详细信息，零访问加密技术确保即使是 ${ BRAND_NAME } 也无法解密并访问这些信息。"
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "查看参会者的空闲时间，节省会议安排时间"
+        "查看参与者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
@@ -18033,6 +18084,18 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "参与用户调研，协助改进 ${ BRAND_NAME } 服务"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "每年 1-4 封邮件，提醒您更新恢复方式！"
+      ],
+      "Account email updates": [
+        "账户邮箱更新"
+      ],
+      "Product email updates": [
+        "产品邮件资讯"
+      ],
+      "Recovery checklist": [
+        "恢复清单"
       ]
     },
     "Notification": {
@@ -18128,6 +18191,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Zoom 视频会议设置已更新"
+      ],
+      "Sieve script inserted": [
+        "Sieve 脚本已插入"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -18778,7 +18844,7 @@
     },
     "Organization logo upload modal": {
       "Drop image file here to upload or": [
-        "将图片文件放在此处上传或"
+        "将图像文件放在此处上传或"
       ],
       "File in PNG or JPEG format": [
         "PNG 或 JPEG 格式的文件"
@@ -19896,6 +19962,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Describe the filter you want…": [
+        "请描述您想要的筛选器…"
       ]
     },
     "placeholder": {
@@ -20827,6 +20896,9 @@
       ],
       "User Admin": [
         "用户管理员"
+      ],
+      "Owner": [
+        "所有者"
       ]
     },
     "Role description": {
@@ -21400,6 +21472,12 @@
       ],
       "Your security setup": [
         "您的安全设置"
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "为帮助您记住密码，我们会定期要求您输入！"
+      ],
+      "Verify your password": [
+        "请验证您的密码"
       ]
     },
     "saml: Action": {
@@ -21636,6 +21714,9 @@
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "允许您将 Zoom 视频会议添加到任何日历事件中"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "添加到 ${ CALENDAR_APP_NAME }"
       ]
     },
     "session_recovery:available:action": {
@@ -22396,6 +22477,15 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "您受邀加入 1 亿多名用户的行列，通过 ${ BRAND_NAME } 的加密生态系统掌握自己数据的控制权。"
+      ],
+      "Continue with ${ planName }": [
+        "使用 ${ planName } 继续"
+      ],
+      "From ${ priceElement }": [
+        "来自 ${ priceElement }"
+      ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "注册即可获得 ${ referralInfo.uiData.refereeRewardAmount } 积分"
       ]
     },
     "Signup label": {
@@ -23386,6 +23476,9 @@
       ],
       "VPN connection for ${ n } device per user": [
         "每位用户 ${ n } 个设备的 VPN 连接"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
       ]
     },
     "Subscription change warning": {
@@ -23536,7 +23629,7 @@
         "取消订阅?"
       ],
       "Catch-all email address": [
-        "通配邮件地址"
+        "通配邮箱地址"
       ],
       "Comprehensive privacy and security": [
         "全面的隐私和安全"
@@ -26314,6 +26407,21 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "您确定要断开连接并禁用此地址吗？"
+      ],
+      "Data collection": [
+        "数据收集"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "来自 ${ LUMO_SHORT_APP_NAME } 的帮助"
+      ],
+      "Privacy": [
+        "隐私设置"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26571,7 +26679,7 @@
         "来源 IP 地址和互联网服务提供商 (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
-        "删除图像中的元数据，保护您的隐私。"
+        "移除图像中的元数据，保护您的隐私。"
       ],
       "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
         "保存 12 个单词的短语，以便在忘记密码时立即解锁您的账户和加密数据"
@@ -26716,6 +26824,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "您的第三方账户可能已超过 24 小时内的带宽上限，${ BRAND_NAME } 将尽快继续导入过程。"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "获取 AI 和人工专家的即时协助！"
       ]
     },
     "tooltip": {
@@ -27770,6 +27881,11 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "来自之前导入的重复邮件将被跳过，您可以在 ${ PRODUCT_NAMES.EASY_SWITCH } 设置中撤销或导入更早的邮件。"
       ]
     }
   }

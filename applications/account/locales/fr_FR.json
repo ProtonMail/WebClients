@@ -1889,6 +1889,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Verify password": [
+        "Vérifier le mot de passe"
       ]
     },
     "action": {
@@ -5563,6 +5566,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Veuillez noter que les e-mails envoyés à cette adresse, même s'ils proviennent d'autres adresses ${ BRAND_NAME }, ne feront plus l'objet d'un chiffrement de bout en bout."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Une fois l'adresse déconnectée et désactivée, vous ne pourrez plus envoyer ni recevoir d'e-mails en tant que ${ address.Email } dans ${ BRAND_NAME }. Les e-mails envoyés à cette adresse continueront d'arriver dans Gmail, mais pas dans ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Une fois l'adresse déconnectée, vous ne pourrez plus envoyer ni recevoir d'e-mails en tant que ${ address.Email } dans ${ BRAND_NAME }. Les e-mails envoyés à cette adresse continueront d'arriver dans Gmail, mais pas dans ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Nous importerons vos anciens messages et synchroniserons désormais les nouveaux messages provenant de Gmail."
+      ],
+      "You can reconnect this address at any time.": [
+        "Vous pouvez reconnecter cette adresse à tout moment."
       ]
     },
     "description": {
@@ -15787,6 +15805,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Import your emails": [
+        "Importez vos messages"
       ]
     },
     "label": {
@@ -26753,6 +26774,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Voulez-vous vraiment déconnecter et désactiver cette adresse ?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28260,6 +28284,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

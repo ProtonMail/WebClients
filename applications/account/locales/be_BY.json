@@ -340,7 +340,7 @@
         "Падключыць праграмы і прылады"
       ],
       "Connect Gmail address": [
-        "Падключэнне адраса Gmail"
+        "Падключыць адрас Gmail"
       ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
@@ -27232,6 +27232,9 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28823,6 +28826,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }
