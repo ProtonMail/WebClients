@@ -42,7 +42,8 @@ export function* drainShareEvents(share: Share, options: RootSagaOptions, nextEv
         yield call(processSharePollingEvent, shareId, { Events }, options);
         if (Events.EventsPending) yield call(drainShareEvents, share, options, Events.LatestEventID);
     } catch (err) {
-        if (isShareRemovedError(err)) yield call(processSharePollingError, shareId);
+        if (!isShareRemovedError(err)) throw err;
+        yield call(processSharePollingError, shareId);
     }
 }
 

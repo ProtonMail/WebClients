@@ -48,6 +48,10 @@ export const parseShareResponse = async <T extends ShareType = ShareType>(
             };
         }
     } catch (err) {
+        /** A failure here (eg: from `getAllShareKeys`) means the share's keys
+         * are unavailable, so it couldn't be decrypted anyway. Return `undefined`
+         * and let the caller treat it as inactive. Transient errors should self
+         * correct on the next poll or manual sync. */
         logger.warn(`[share] Failed parsing share ${logId(shareId)}`, err);
     }
 };
