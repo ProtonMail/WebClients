@@ -3966,6 +3966,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
+      ],
+      "Folder not found": [
+        "Kansiota ei löytynyt"
       ]
     },
     "error": {
@@ -7000,6 +7003,34 @@
       ],
       "All your files will be imported": [
         "Kaikki tiedostosi tuodaan"
+      ],
+      "${ albums } album": [
+        "${ albums } albumi",
+        "${ albums } albumia"
+      ],
+      "${ files } file": [
+        "${ files } tiedosto",
+        "${ files } tiedostoa"
+      ],
+      "${ folders } folder": [
+        "${ folders } kansio",
+        "${ folders } kansiota"
+      ],
+      "${ photos } photo": [
+        "${ photos } kuva",
+        "${ photos } kuvaa"
+      ],
+      "Forgot password?": [
+        "Unohtunut salasana?"
+      ],
+      "Password verified": [
+        "Salasana vahvistettu"
+      ],
+      "RECOMMENDED": [
+        "SUOSITELTU"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Emme voineet varmistaa, että ${ nameAuthor } on ladannut ${ nodeName }. Seuraavaa on mahdollisesti muutettu: tiedostojen tietojen järjestys. Avaa vain, jos luotat siihen."
       ]
     },
     "info": {
@@ -7787,6 +7818,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Device: ${ name }": [
+        "Laite: ${ name }"
       ]
     },
     "Label for contact group color": {
@@ -9241,6 +9275,10 @@
       "Support for ${ n } custom email domain": [
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
+      ],
+      "${ n } country": [
+        "${ n } maa",
+        "${ n } maata"
       ]
     },
     "Notification": {
@@ -13153,6 +13191,36 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digitaalinen allekirjoitus vahvistettu. ${ author } loi tämän tiedoston turvallisesti."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digitaalinen allekirjoitus vahvistettu. ${ author } latasi tämän tiedoston turvallisesti."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digitaalinen allekirjoitus vahvistettu. ${ author } loi tämän kansion turvallisesti."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digitaalinen allekirjoitus vahvistettu. ${ author } latasi tämän kansion turvallisesti."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Emme pystyneet vahvistamaan, että ${ author } loi tämän tiedoston."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Emme pystyneet vahvistamaan, että ${ author } loi tämän kansion."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Emme pystyneet vahvistamaan, että ${ author } latasi tämän tiedoston."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Emme pystyneet vahvistamaan, että ${ author } latasi tämän kansion."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Emme pystyneet vahvistamaan, että ${ claimedNameAuthor } loi tai muokkasi nimeä. Syy on: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Emme pystyneet vahvistamaan, että ${ claimedKeyAuthor } loi solmun. Syy on: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13492,6 +13560,9 @@
       ],
       "Microsoft 365": [
         "Microsoft 365"
+      ],
+      "Other": [
+        "Muu"
       ]
     },
     "b2b_trials_Title": {
@@ -13550,6 +13621,12 @@
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
+      ],
+      "All": [
+        "Kaikki"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "q2campaign2026: Action": {

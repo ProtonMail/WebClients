@@ -7350,6 +7350,9 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ nodeName }. Der kan være blevet manipuleret med følgende: fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
+      ],
+      "All your files will be imported": [
+        "Alle dine filer vil blive importeret"
       ]
     },
     "info": {
@@ -8209,6 +8212,9 @@
       ],
       "Emails": [
         "E-mails"
+      ],
+      "Drive": [
+        "Drev"
       ]
     },
     "Label for contact group color": {
@@ -13819,6 +13825,30 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digital signatur verificeret. Denne fil blev oprettet sikkert af ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digital signatur verificeret. Denne fil blev uploadet sikkert af ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digital signatur verificeret. Denne mappe blev oprettet sikkert af ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digital signatur verificeret. Denne mappe blev uploadet sikkert af ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Vi kunne ikke bekræfte, at ${ author } har oprettet denne fil."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Vi kunne ikke bekræfte, at ${ author } har oprettet denne mappe."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Vi kunne ikke bekræfte, at ${ author } uploadede denne fil."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Vi kunne ikke bekræfte, at ${ author } uploadede denne mappe."
       ]
     },
     "Today icon tooltip in mini calendar": {
