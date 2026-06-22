@@ -31,6 +31,11 @@ export type UpdateStore = {
     newVersion: MaybeNull<string>;
     /** Current progress of a new version download */
     progress: MaybeNull<number>;
+    /** Debug only: override the update server root (honored outside prod, or in prod with PASS_DEBUG).
+     * Just the root — the PassDesktop/{platform}/{arch} path is appended by the updater. */
+    mockUpdateBaseUrl: MaybeNull<string>;
+    /** Debug only: use the mock download instead of the real install path */
+    mockDownload: boolean;
     /** Debug only: will trigger an error in mock download */
     mockDoDownloadError: boolean;
 };
