@@ -2,9 +2,8 @@ import { c } from 'ttag';
 
 import { ContextMenuSubButton } from '@proton/components/components/contextMenu/ContextMenuSubButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
+import { CategoryIcon } from '@proton/mail/features/categoriesView/CategoryIcon';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -48,10 +47,11 @@ export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
                     onContextMenu={(e) => e.stopPropagation()}
                     aria-pressed={currentCategory === category.id}
                 >
-                    <Icon
+                    <CategoryIcon
+                        categoryId={category.id}
+                        variant="filled"
                         className="mr-2 shrink-0 mail-category-color"
-                        name={category.filledIcon}
-                        data-color={category.colorShade}
+                        colorShade={category.colorShade}
                     />
                     <span className="mr-8">{getLabelFromCategoryId(category.id)}</span>
                     {currentCategory === category.id && (
