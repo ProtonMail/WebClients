@@ -17,17 +17,16 @@ export function manageEventsSubscription() {
     drive: ProtonDriveClient,
     treeEventScopeId: string,
     logger: LoggerInterface,
-    recentsListener: SDKEventListener,
-    trashedListener: SDKEventListener,
+    listeners: SDKEventListener[],
   ) {
-    // In case useEffect calls cleanup (onUnmount) this should prevent multiple subscriptions
     let shouldAbort = false
 
     drive
       .subscribeToTreeEvents(treeEventScopeId, async (event) => {
         try {
-          await recentsListener(event)
-          await trashedListener(event)
+          for (const listener of listeners) {
+            await listener(event)
+          }
         } catch (error: any) {
           logger.error('Failed to handle SDK event', error)
         }

@@ -58,12 +58,18 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useDocsContext } from '../context'
 import { useDebugMode } from '~/utils/debug-mode-context'
-import { useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import { useDocsDocumentViewerEventsSDK, useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 import { Button } from '@proton/atoms/Button/Button'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { isLocalEnvironment } from '@proton/utils/env'
 import { useChangeAddressWhenPubliclyShared } from '../useChangeAddressWhenPubliclyShared'
+import { manageEventsSubscription } from '../../../utils/drive-events'
+import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
+import { logger } from '@proton/pass/utils/logger'
+import { getNodeName } from '../../../utils/drive-sdk'
+
+const subscribeToEvents = manageEventsSubscription()
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -88,6 +94,7 @@ export function DocumentViewer({
   documentType,
 }: DocumentViewerProps) {
   const application = useApplication()
+  const drive = getDrive()
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
   const { isDebugMode } = useDebugMode()
@@ -113,6 +120,56 @@ export function DocumentViewer({
   const [initializing, setInitializing] = useState(false)
   const [ready, setReady] = useState(false)
   const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
+  const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
+
+  const nodeUid = isPrivateNodeMeta(nodeMeta) ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
+
+  const [currentDocumentNode, setCurrentDocumentNode] = useState<NodeEntity>()
+  useEffect(() => {
+    if (!sdkEventsEnabled || !nodeUid) {
+      return
+    }
+
+    drive
+      .getNode(nodeUid)
+      .then((node) => {
+        setCurrentDocumentNode(node)
+      })
+      .catch((error) => {
+        logger.error('Failed to get node of current document', error)
+      })
+  }, [drive, nodeUid, sdkEventsEnabled])
+
+  const handleEvent = useCallback(
+    async (event: DriveEvent) => {
+      if (event.type === 'node_updated' && event.nodeUid === nodeUid && documentState) {
+        if (event.isTrashed) {
+          documentState.setProperty('documentTrashState', 'trashed')
+          return
+        }
+
+        // Document restored from trash
+        if (documentState.getProperty('documentTrashState') === 'trashed' && event.isTrashed === false) {
+          documentState.setProperty('documentTrashState', 'not_trashed')
+        }
+
+        const updatedNode = await drive.getNode(nodeUid)
+        const nodeName = getNodeName(updatedNode)
+        if (nodeName) {
+          documentState.setProperty('documentName', nodeName)
+        }
+      }
+    },
+    [documentState, drive, nodeUid],
+  )
+
+  useEffect(() => {
+    if (!sdkEventsEnabled || !currentDocumentNode || !documentState) {
+      return
+    }
+    return subscribeToEvents(drive, currentDocumentNode.treeEventScopeId, application.logger, [handleEvent])
+  }, [application.logger, currentDocumentNode, documentState, drive, handleEvent, sdkEventsEnabled])
+
   const [error, setError] = useState<DocumentError | null>(() => {
     if (documentType === 'sheet' && !isSheetsEditorEnabled) {
       return { message: '', code: DocsApiErrorCode.InsufficientPermissions, userUnderstandableMessage: false }

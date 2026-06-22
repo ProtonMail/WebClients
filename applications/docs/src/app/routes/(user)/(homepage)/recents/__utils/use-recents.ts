@@ -17,7 +17,7 @@ import { useRecentsStore } from './use-recents-store'
 import { getNodeEffectiveRole } from '~/utils/get-node-effective-role'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
-import type { SDKEventListener } from './manage-events-subscription'
+import type { SDKEventListener } from '~/utils/drive-events'
 
 export function useRecents(drive: ProtonDriveClient) {
   const [addresses] = useAddresses()

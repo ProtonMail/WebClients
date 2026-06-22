@@ -13,6 +13,10 @@ export function useLoadRecentsWithSdkEnabled() {
   return useFlag('DocsLoadRecentsWithDriveSDK')
 }
 
+export function useDocsDocumentViewerEventsSDK() {
+  return useFlag('DocsDocumentViewerEventsSDK') || isDevOrBlack()
+}
+
 /**
  * Checks if the user is allowed to download logs.
  * It will only be active for alpha and dev/black environments for now.
