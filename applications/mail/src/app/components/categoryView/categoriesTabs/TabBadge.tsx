@@ -14,12 +14,21 @@ interface TabBadgeProps {
     category: CategoryTab;
     tabState: TabState;
     shouldShowCounter: boolean;
+    shouldShowNewBadge: boolean;
 }
 
-export const TabBadge = ({ category, tabState, shouldShowCounter }: TabBadgeProps) => {
+export const TabBadge = ({ category, tabState, shouldShowCounter, shouldShowNewBadge }: TabBadgeProps) => {
     const [mailSettings] = useMailSettings();
 
     const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id));
+
+    if (shouldShowNewBadge) {
+        return (
+            <span className="tag-badge px-1.5 py-0.5 text-sm mail-category-color mail-category-count-bg">
+                {c('Label').t`New`}
+            </span>
+        );
+    }
 
     if (shouldShowCounter && count > 0) {
         const label =

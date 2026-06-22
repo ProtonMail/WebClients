@@ -34,7 +34,7 @@ const navClasses: Record<TabState, string> = {
 export const Tab = ({ category, tabState }: Props) => {
     const { call } = useEventManager();
 
-    const { shouldShowCounter } = useCategoriesBadge({ tabState, category });
+    const { shouldShowCounter, shouldShowNewBadge, handleTabClick } = useCategoriesBadge({ tabState, category });
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const [refreshing, withRefreshing] = useLoading(false);
@@ -47,6 +47,8 @@ export const Tab = ({ category, tabState }: Props) => {
         if (tabState !== TabState.ACTIVE) {
             sendReportCategoriesNav('tab', category.id);
         }
+        sendReportCategoriesNav('tab', category.id);
+        handleTabClick();
     };
 
     const navigateTo = setCategoryInUrl(category.id);
@@ -82,7 +84,12 @@ export const Tab = ({ category, tabState }: Props) => {
                 {getLabelFromCategoryId(category.id)}
             </span>
 
-            <TabBadge category={category} tabState={tabState} shouldShowCounter={shouldShowCounter} />
+            <TabBadge
+                category={category}
+                tabState={tabState}
+                shouldShowCounter={shouldShowCounter}
+                shouldShowNewBadge={shouldShowNewBadge}
+            />
         </NavLink>
     );
 };
