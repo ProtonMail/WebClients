@@ -12,8 +12,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 0,
@@ -30,8 +28,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 0,
@@ -48,8 +44,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 0,
@@ -66,8 +60,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 0,
@@ -84,8 +76,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 0,
@@ -102,8 +92,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 1,
@@ -120,8 +108,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 3,
@@ -138,8 +124,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 0,
@@ -156,8 +140,6 @@ describe('CategoriesTabsHelper', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                outlinedIcon: 'inbox',
-                filledIcon: 'inbox',
             };
             const tabState = getTabState({
                 index: 3,

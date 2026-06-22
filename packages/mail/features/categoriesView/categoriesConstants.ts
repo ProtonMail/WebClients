@@ -1,10 +1,7 @@
-import type { IconName } from '@proton/icons/types';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 
 export interface CategoryTab {
     id: CategoryLabelID;
-    filledIcon: IconName;
-    outlinedIcon: IconName;
     display?: boolean;
     notify?: boolean;
     colorShade: CATEGORIES_COLOR_SHADES;

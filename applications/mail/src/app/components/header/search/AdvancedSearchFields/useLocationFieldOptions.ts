@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import type { IconName } from '@proton/icons/types';
+import { getCategoryIconName } from '@proton/mail/features/categoriesView/CategoryIcon';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -76,7 +77,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
                   value: category.id,
                   text: getLabelFromCategoryId(category.id),
                   url: `/${LABEL_IDS_TO_HUMAN[category.id]}`,
-                  icon: category.filledIcon,
+                  icon: getCategoryIconName(category.id, 'filled'),
                   className: categoryColorClassName,
                   color: category.colorShade,
               };
