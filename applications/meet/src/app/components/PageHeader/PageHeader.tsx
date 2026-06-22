@@ -58,6 +58,10 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
         ? stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
         : undefined;
 
+    const logoutRedirectUrl = location.pathname.includes('manage-recordings')
+        ? '/dashboard'
+        : `${location.pathname}${location.hash}`;
+
     const buttons = (
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
             {showAppSwitcher && !isInstantJoin && (
@@ -121,7 +125,7 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                                 <>
                                     <UserDropdown
                                         app={APPS.PROTONMEET}
-                                        logoutRedirectUrl={`${location.pathname}${location.hash}`}
+                                        logoutRedirectUrl={logoutRedirectUrl}
                                         extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
                                         sessionOptions={
                                             switchAccountReturnPath

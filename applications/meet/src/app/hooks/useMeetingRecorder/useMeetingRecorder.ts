@@ -4,7 +4,7 @@ import { useRoomContext, useTracks } from '@livekit/components-react';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
@@ -16,6 +16,9 @@ import {
     startLocalRecordingTimer,
     stopLocalRecordingTimer,
 } from '@proton/meet/store/slices/recordingStatusSlice';
+import { recordingFailed, recordingProcessing, recordingReady } from '@proton/meet/store/slices/recordingsSlice';
+import { selectUserId } from '@proton/meet/store/slices/userSlice';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useSortedPagedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
@@ -31,7 +34,6 @@ import { useRecordingScene } from './hooks/useRecordingScene';
 import { useRecordingStatusPublish } from './hooks/useRecordingStatusPublish';
 import { useTrackPublishedSubscriber } from './hooks/useTrackPublishedSubscriber';
 import { isWebCodecsRecordingSupported } from './mediaEncoder/capabilities';
-import { downloadRecordingFileToDisk } from './recordingDownload';
 import { RecordingSession } from './recordingSession/recordingSession';
 
 export const useMeetingRecorder = () => {
@@ -51,6 +53,7 @@ export const useMeetingRecorder = () => {
     const { createNotification } = useNotifications();
 
     const isLocalRecording = useMeetSelector(selectIsLocalParticipantRecording);
+    const userId = useMeetSelector(selectUserId);
 
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -118,6 +121,77 @@ export const useMeetingRecorder = () => {
 
     useTrackPublishedSubscriber({ enabled: isLocalRecording, room });
 
+    const stopRecording = useCallback(async () => {
+        const session = sessionRef.current;
+        if (!session || !isLocalRecording) {
+            return null;
+        }
+
+        try {
+            const recording = await session.stop();
+            void publishRecordingStatus(RecordingStatus.Stopped);
+            markRecordingStopped();
+            return recording;
+        } catch (error) {
+            reportMeetError('MeetingRecording Error: Failed to stop recording', {
+                context: {
+                    error: error instanceof Error ? error.message : String(error),
+                    name: error instanceof Error ? error.name : 'UnknownError',
+                },
+            });
+            // eslint-disable-next-line no-console
+            console.error('Failed to stop recording:', error);
+            throw error;
+        }
+    }, [isLocalRecording, publishRecordingStatus, reportMeetError, markRecordingStopped]);
+
+    const finishRecording = useCallback(async () => {
+        if (!isLocalRecording) {
+            return;
+        }
+
+        dispatch(recordingProcessing());
+
+        try {
+            const [recording] = await Promise.all([stopRecording(), wait(1000)]);
+
+            if (!recording || recording.size === 0) {
+                reportMeetError('MeetingRecording Error: empty or missing recording', {
+                    context: {
+                        recordingExists: !!recording,
+                        size: recording?.size ?? 0,
+                    },
+                });
+
+                dispatch(recordingFailed());
+
+                return;
+            }
+
+            dispatch(recordingReady(recording));
+        } catch (error) {
+            reportMeetError('MeetingRecording Error: Failed to finish recording', {
+                context: {
+                    error: error instanceof Error ? error.message : String(error),
+                    name: error instanceof Error ? error.name : 'UnknownError',
+                },
+            });
+            // eslint-disable-next-line no-console
+            console.error('Failed to finish recording:', error);
+            dispatch(recordingFailed());
+        } finally {
+            await cleanupSession();
+        }
+    }, [isLocalRecording, stopRecording, reportMeetError, dispatch, cleanupSession]);
+
+    const handleStorageFull = useStableCallback(() => {
+        createNotification({
+            type: 'warning',
+            text: c('Error').t`Your browser ran out of storage space. We saved the recording up to this point.`,
+        });
+        void finishRecording();
+    });
+
     const startRecording = useCallback(async () => {
         if (!recordingCodec) {
             // eslint-disable-next-line no-console
@@ -130,10 +204,12 @@ export const useMeetingRecorder = () => {
             const session = new RecordingSession({
                 codec: recordingCodec,
                 isWebCodecs: isWebCodecsRecordingEnabled && isWebCodecsRecordingSupported(),
+                userId,
                 reportMeetError,
                 onRuntimeError: () => {
                     void cleanupSession();
                 },
+                onStorageFull: handleStorageFull,
             });
             sessionRef.current = session;
 
@@ -174,88 +250,18 @@ export const useMeetingRecorder = () => {
         cleanupSession,
         isMeetMultipleRecordingEnabled,
         isWebCodecsRecordingEnabled,
+        userId,
         dispatch,
         room,
         publishRecordingStatus,
+        handleStorageFull,
     ]);
 
-    const stopRecording = useCallback(async () => {
-        const session = sessionRef.current;
-        if (!session || !isLocalRecording) {
-            return null;
-        }
-
-        try {
-            const artifact = await session.stop();
-            void publishRecordingStatus(RecordingStatus.Stopped);
-            markRecordingStopped();
-            return artifact;
-        } catch (error) {
-            reportMeetError('MeetingRecording Error: Failed to stop recording', {
-                context: {
-                    error: error instanceof Error ? error.message : String(error),
-                    name: error instanceof Error ? error.name : 'UnknownError',
-                },
-            });
-            // eslint-disable-next-line no-console
-            console.error('Failed to stop recording:', error);
-            throw error;
-        }
-    }, [isLocalRecording, publishRecordingStatus, reportMeetError, markRecordingStopped]);
-
-    const downloadRecording = useCallback(async () => {
-        try {
-            if (!isLocalRecording) {
-                return;
-            }
-
-            const session = sessionRef.current;
-            const codecForDownload = session?.getActiveCodec() ?? recordingCodec;
-
-            const artifact = await stopRecording();
-
-            if (!artifact || artifact.files.length === 0) {
-                reportMeetError('MeetingRecording Error: Recording download failed: empty or missing blob', {
-                    context: {
-                        artifactExists: !!artifact,
-                        fileCount: artifact?.files.length ?? 0,
-                    },
-                });
-                throw new Error('Recording download failed: empty or missing blob');
-            }
-
-            try {
-                await downloadRecordingFileToDisk(artifact, codecForDownload);
-            } catch (error) {
-                reportMeetError('MeetingRecording Error: Failed to download recording', {
-                    context: {
-                        error: error instanceof Error ? error.message : String(error),
-                        name: error instanceof Error ? error.name : 'UnknownError',
-                    },
-                });
-                // eslint-disable-next-line no-console
-                console.error('Failed to download recording:', error);
-                throw error;
-            }
-
-            createNotification({
-                text: c('Info').t`Recording saved`,
-                type: 'success',
-            });
-        } catch {
-            createNotification({
-                text: c('Error').t`Failed to save recording`,
-                type: 'error',
-            });
-        } finally {
-            await cleanupSession();
-        }
-    }, [isLocalRecording, recordingCodec, stopRecording, reportMeetError, createNotification, cleanupSession]);
-
-    // Cleanup the session and download the recording if the session is active
+    // Finalize the recording so the download modal can pick it up, even if the
+    // meeting view unmounts (e.g., the meeting ended).
     const handleUnmount = useStableCallback(async () => {
         if (sessionRef.current?.isActive()) {
-            void downloadRecording();
+            void finishRecording();
         } else {
             void cleanupSession();
         }
@@ -269,6 +275,7 @@ export const useMeetingRecorder = () => {
 
     return {
         startRecording,
-        downloadRecording,
+        stopRecording,
+        finishRecording,
     };
 };

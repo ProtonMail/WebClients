@@ -62,4 +62,9 @@ export const selectSubscriptionStatus = createSelector(
     }
 );
 
+export const selectUserId = createSelector([selectUser], (userState): string => {
+    const user = userState?.value;
+    return user?.ID ?? '';
+});
+
 export const meetUserReducer = { meetUser: slice.reducer };
