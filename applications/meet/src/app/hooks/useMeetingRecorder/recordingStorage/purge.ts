@@ -69,3 +69,16 @@ export const purgeOldRecordings = async (maxAgeMs: number): Promise<void> => {
         console.error('Purge old recordings: Failed to purge recordings', error);
     }
 };
+
+// Removes ALL recordings for a single user (their whole OPFS subdirectory).
+export const purgeUserRecordings = async (userId: string): Promise<void> => {
+    if (!userId || !navigator.storage?.getDirectory) {
+        return;
+    }
+    try {
+        const root = await navigator.storage.getDirectory();
+        await root.removeEntry(userId, { recursive: true });
+    } catch {
+        // No directory for this user (nothing recorded) — nothing to purge.
+    }
+};

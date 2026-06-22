@@ -1,9 +1,10 @@
+import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { forwardWorkerLog } from '../workerLogger';
+import { getOpfsRecording } from './recordingFiles';
 import {
     type FinalizeResponseData,
-    type RecordingArtifact,
     StorageMessageType,
     type StorageWorkerMessage,
     type StorageWorkerResponse,
@@ -29,11 +30,13 @@ export class RecordingStorageClient {
     private pendingMessages: Map<string, PendingMessage> = new Map();
     private pendingChunkWrites: Set<Promise<void>> = new Set();
     private fileExtension: string;
-    private mimeType: string;
+    private userId: string;
+    private onStorageFull?: () => void;
 
-    constructor(fileExtension: string, mimeType: string) {
+    constructor(fileExtension: string, userId: string, onStorageFull?: () => void) {
         this.fileExtension = fileExtension;
-        this.mimeType = mimeType;
+        this.userId = userId;
+        this.onStorageFull = onStorageFull;
     }
 
     async init(): Promise<void> {
@@ -47,6 +50,12 @@ export class RecordingStorageClient {
             }
 
             const response = event.data;
+
+            if (response.type === StorageWorkerResponseType.STORAGE_FULL) {
+                this.onStorageFull?.();
+                return;
+            }
+
             const pending = this.pendingMessages.get(response.id);
 
             if (!pending) {
@@ -82,7 +91,7 @@ export class RecordingStorageClient {
 
         await this.send({
             type: StorageMessageType.INIT,
-            data: { fileExtension: this.fileExtension },
+            data: { fileExtension: this.fileExtension, userId: this.userId },
         });
     }
 
@@ -129,10 +138,9 @@ export class RecordingStorageClient {
     // Closes write handles and returns the recording's files in order.
     // Today there is always one file; the artifact is plural to keep
     // multi-file rotation forward-compatible.
-    async finalize(): Promise<RecordingArtifact> {
+    async finalize(): Promise<OpfsRecording | null> {
         await this.drainPendingChunkWrites();
-        const result = (await this.send({ type: StorageMessageType.FINALIZE })) as FinalizeResponseData;
-        const { fileNames } = result;
+        const { fileNames } = (await this.send({ type: StorageMessageType.FINALIZE })) as FinalizeResponseData;
 
         if (isFirefox()) {
             // Firefox needs the worker to fully release the file handles
@@ -141,15 +149,7 @@ export class RecordingStorageClient {
             await new Promise((resolve) => setTimeout(resolve, 50));
         }
 
-        const directory = await navigator.storage.getDirectory();
-        const files = await Promise.all(
-            fileNames.map(async (name) => {
-                const fileHandle = await directory.getFileHandle(name);
-                return fileHandle.getFile();
-            })
-        );
-
-        return { files, mimeType: this.mimeType };
+        return fileNames[0] ? getOpfsRecording(this.userId, fileNames[0]) : null;
     }
 
     async clear(): Promise<void> {
@@ -218,9 +218,10 @@ export class RecordingStorageClient {
 
 export const createRecordingStorageClient = async (
     fileExtension: string,
-    mimeType: string
+    userId: string,
+    onStorageFull?: () => void
 ): Promise<RecordingStorageClient> => {
-    const client = new RecordingStorageClient(fileExtension, mimeType);
+    const client = new RecordingStorageClient(fileExtension, userId, onStorageFull);
     await client.init();
     return client;
 };

@@ -17,6 +17,9 @@ interface FileSystemSyncAccessHandle {
     truncate(newSize: number): void;
 }
 
+const isQuotaExceededError = (error: unknown): boolean =>
+    error instanceof DOMException && error.name === 'QuotaExceededError';
+
 // Persists recorded chunks into OPFS. Today this writes one file per session.
 // When we add multi-file rotation + recovery, the public API stays the same:
 // `finalize()` returns the ordered list of files for the session.
@@ -28,46 +31,57 @@ class OPFSWorkerStorage {
     private filePosition = 0;
     private fileExtension: string = 'webm';
     private fileName: string = '';
+    private full = false;
 
-    async init(fileExtension: string): Promise<void> {
+    async init(fileExtension: string, userId: string): Promise<void> {
         this.fileExtension = fileExtension;
         this.fileName = `recording-${Date.now()}.${this.fileExtension}`;
 
-        this.root = await navigator.storage.getDirectory();
+        const root = await navigator.storage.getDirectory();
+        // Namespace recordings under a per-user subdirectory.
+        this.root = await root.getDirectoryHandle(userId, { create: true });
 
         this.fileHandle = await this.root.getFileHandle(this.fileName, {
             create: true,
         });
 
-        if (typeof this.fileHandle.createWritable === 'function') {
-            this.writable = await this.fileHandle.createWritable();
-        } else if (
-            typeof (this.fileHandle as unknown as { createSyncAccessHandle: () => Promise<FileSystemSyncAccessHandle> })
-                .createSyncAccessHandle === 'function'
-        ) {
-            this.syncAccessHandle = await (
-                this.fileHandle as unknown as { createSyncAccessHandle: () => Promise<FileSystemSyncAccessHandle> }
-            ).createSyncAccessHandle();
+        if (typeof this.fileHandle.createSyncAccessHandle === 'function') {
+            this.syncAccessHandle = await this.fileHandle.createSyncAccessHandle();
             this.filePosition = 0;
+        } else if (typeof this.fileHandle.createWritable === 'function') {
+            this.writable = await this.fileHandle.createWritable();
         } else {
             throw new Error('No supported OPFS write API available in worker');
         }
     }
 
-    async addChunk(chunkBuffer: ArrayBuffer, position?: number): Promise<void> {
-        if (this.syncAccessHandle) {
-            const at = position ?? this.filePosition;
-            const bytesWritten = this.syncAccessHandle.write(chunkBuffer, { at });
-            this.filePosition = Math.max(this.filePosition, at + bytesWritten);
-            this.syncAccessHandle.flush();
-        } else if (this.writable) {
-            if (position !== undefined) {
-                await this.writable.write({ type: 'write', position, data: chunkBuffer });
+    async addChunk(chunkBuffer: ArrayBuffer, position?: number): Promise<boolean> {
+        if (this.full) {
+            return false;
+        }
+
+        try {
+            if (this.syncAccessHandle) {
+                const at = position ?? this.filePosition;
+                const bytesWritten = this.syncAccessHandle.write(chunkBuffer, { at });
+                this.filePosition = Math.max(this.filePosition, at + bytesWritten);
+                this.syncAccessHandle.flush();
+            } else if (this.writable) {
+                if (position !== undefined) {
+                    await this.writable.write({ type: 'write', position, data: chunkBuffer });
+                } else {
+                    await this.writable.write(chunkBuffer);
+                }
             } else {
-                await this.writable.write(chunkBuffer);
+                throw new Error('No writable stream or sync handle available');
             }
-        } else {
-            throw new Error('No writable stream or sync handle available');
+            return false;
+        } catch (error) {
+            if (isQuotaExceededError(error)) {
+                this.full = true;
+                return true;
+            }
+            throw error;
         }
     }
 
@@ -122,14 +136,18 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
     try {
         switch (message.type) {
             case StorageMessageType.INIT: {
-                await storage.init(message.data.fileExtension);
+                await storage.init(message.data.fileExtension, message.data.userId);
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;
             }
 
             case StorageMessageType.ADD_CHUNK: {
-                await storage.addChunk(message.data.chunkBuffer, message.data.position);
+                const becameFull = await storage.addChunk(message.data.chunkBuffer, message.data.position);
+                if (becameFull) {
+                    const notification: StorageWorkerResponse = { type: StorageWorkerResponseType.STORAGE_FULL };
+                    self.postMessage(notification);
+                }
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;
