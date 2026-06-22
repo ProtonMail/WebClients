@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import { CategoryIcon } from '@proton/mail/features/categoriesView/CategoryIcon';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import {
     getDescriptionFromCategoryId,
@@ -47,10 +47,11 @@ export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onU
             />
 
             <Label htmlFor={`enable-${category.id}`} className="p-0 flex-1 flex gap-3">
-                <Icon
-                    name={category.filledIcon}
+                <CategoryIcon
+                    categoryId={category.id}
+                    colorShade={category.colorShade}
+                    variant="filled"
                     className="mt-0.5 mail-category-color self-center"
-                    data-color={category.colorShade}
                 />
                 <div className="flex flex-column">
                     <span>{categoryLabel}</span>
