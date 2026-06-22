@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { removeVideoConfInfoFromDescription } from '@proton/calendar/videoConferencing/videoConfHelpers';
 import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
@@ -118,7 +119,13 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
         displayNameEmailMap
     );
     const sanitizedLocation = useUrlifyString({ text: model.location });
-    const htmlString = useUrlifyString({ text: model.description });
+
+    // Remove the video conference information from the description if the widget is displayed.
+    // This prevents the same instructions from being shown twice in the description and the widget.
+    const descriptionToDisplay = videoConferencingWidget
+        ? removeVideoConfInfoFromDescription(model.description)
+        : model.description;
+    const htmlString = useUrlifyString({ text: descriptionToDisplay });
 
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
