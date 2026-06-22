@@ -8,8 +8,11 @@ import type { RecordingTrackInfo, SceneState } from '../videoMixer/types';
 export interface RecordingSessionOptions {
     codec: RecordingCodec;
     isWebCodecs: boolean;
+    userId: string;
     reportMeetError: ReportMeetError;
     onRuntimeError: () => void;
+    // Called when OPFS quota is reached during recording
+    onStorageFull: () => void;
 }
 
 export interface RecordingSessionStartOptions {

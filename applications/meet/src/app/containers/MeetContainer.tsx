@@ -140,20 +140,20 @@ export const MeetContainer = ({
 
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
 
-    const { downloadRecording } = useMeetingRecorderContext();
+    const { finishRecording } = useMeetingRecorderContext();
 
     const leaveWithStopRecording = useStableCallback(async () => {
-        await downloadRecording();
+        await finishRecording();
         await handleLeave();
     });
 
     const endMeetingWithStopRecording = useStableCallback(async () => {
-        await downloadRecording();
+        await finishRecording();
         await handleEndMeeting();
     });
 
     const meetingExpiredWithStopRecording = useStableCallback(async () => {
-        await downloadRecording();
+        await finishRecording();
         await handleMeetingExpired();
     });
 
