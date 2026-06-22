@@ -1,6 +1,7 @@
 import type { TrackReference } from '@livekit/components-react';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
+import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 
 import { type AudioMixer, createAudioMixer } from '../audioMixer/audioMixer';
 import { createChunkWatchdog } from '../chunkWatchdog/chunkWatchdog';
@@ -10,7 +11,6 @@ import { WebCodecsRecorder } from '../mediaEncoder/webCodecsRecorder';
 import { type ChunkStats, createChunkStats } from '../mediaRecorder/chunkStats';
 import { MeetMediaRecorder } from '../mediaRecorder/meetMediaRecorder';
 import { type RecordingStorageClient, createRecordingStorageClient } from '../recordingStorage/client';
-import type { RecordingArtifact } from '../recordingStorage/types';
 import type { RecorderAPI } from '../types';
 import { VideoMixerClient } from '../videoMixer/client';
 import type { RecordingTrackInfo, SceneState } from '../videoMixer/types';
@@ -30,15 +30,35 @@ export class RecordingSession {
     private active = false;
     private codec: RecordingCodec;
     private isWebCodecs: boolean;
+    private userId: string;
     private reportMeetError: ReportMeetError;
     private onRuntimeError: () => void;
+    private onStorageFull: () => void;
+    private storageFull = false;
 
-    constructor({ codec, isWebCodecs, reportMeetError, onRuntimeError }: RecordingSessionOptions) {
+    constructor({
+        codec,
+        isWebCodecs,
+        userId,
+        reportMeetError,
+        onRuntimeError,
+        onStorageFull,
+    }: RecordingSessionOptions) {
         this.codec = codec;
         this.isWebCodecs = isWebCodecs;
+        this.userId = userId;
         this.reportMeetError = reportMeetError;
         this.onRuntimeError = onRuntimeError;
+        this.onStorageFull = onStorageFull;
     }
+
+    private handleStorageFull = (): void => {
+        if (this.storageFull) {
+            return;
+        }
+        this.storageFull = true;
+        this.onStorageFull();
+    };
 
     public async start({
         initialScene,
@@ -51,7 +71,7 @@ export class RecordingSession {
             backend: this.isWebCodecs ? 'webcodecs' : 'mediarecorder',
         });
 
-        this.storage = await createRecordingStorageClient(this.codec.extension, this.codec.mimeType);
+        this.storage = await createRecordingStorageClient(this.codec.extension, this.userId, this.handleStorageFull);
 
         this.videoMixer = new VideoMixerClient({
             initialScene,
@@ -181,7 +201,7 @@ export class RecordingSession {
         });
     }
 
-    public async stop(): Promise<RecordingArtifact | null> {
+    public async stop(): Promise<OpfsRecording | null> {
         if (!this.active || !this.mediaRecorder || !this.storage) {
             return null;
         }
@@ -191,8 +211,7 @@ export class RecordingSession {
             this.watchdog?.stop();
             this.watchdog = null;
 
-            const artifact = await this.storage.finalize();
-            return artifact;
+            return await this.storage.finalize();
         } finally {
             const snapshot = this.stats?.snapshot();
             // eslint-disable-next-line no-console

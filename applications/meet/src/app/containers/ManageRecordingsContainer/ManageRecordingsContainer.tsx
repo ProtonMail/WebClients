@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -10,16 +11,23 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { type OpfsRecording, selectRecordings, setRecordings } from '@proton/meet/store/slices/recordingsSlice';
+import { selectUserId } from '@proton/meet/store/slices/userSlice';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConfirmationModal } from '../../components/ConfirmationModal/ConfirmationModal';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import {
-    type OpfsRecording,
     deleteOpfsRecording,
     downloadOpfsRecording,
+    isDownloadAborted,
+    listAllOpfsRecordings,
     listOpfsRecordings,
 } from '../../hooks/useMeetingRecorder/recordingStorage/recordingFiles';
 
@@ -27,23 +35,26 @@ const formatDate = (timestamp: number) =>
     new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(timestamp));
 
 export const ManageRecordingsContainer = () => {
-    const { createNotification } = useNotifications();
+    const dispatch = useMeetDispatch();
 
-    const [recordings, setRecordings] = useState<OpfsRecording[]>([]);
-    const [loading, setLoading] = useState(true);
+    const { createNotification } = useNotifications();
+    const { reportMeetError } = useMeetErrorReporting();
+    const history = useHistory();
+
+    const userId = useMeetSelector(selectUserId);
+
+    const showAllRecordings = useFlag('MeetRecordingShowAllRecordings');
+
+    const recordings = useMeetSelector(selectRecordings);
     const [recordingToDelete, setRecordingToDelete] = useState<OpfsRecording | null>(null);
+    const [loading, setLoading] = useState(true);
     const [deleting, setDeleting] = useState(false);
 
     const refresh = useCallback(async () => {
         setLoading(true);
-        try {
-            setRecordings(await listOpfsRecordings());
-        } catch {
-            createNotification({ type: 'error', text: c('Error').t`Failed to load recordings` });
-        } finally {
-            setLoading(false);
-        }
-    }, [createNotification]);
+        dispatch(setRecordings(showAllRecordings ? await listAllOpfsRecordings() : await listOpfsRecordings(userId)));
+        setLoading(false);
+    }, [dispatch, showAllRecordings, userId]);
 
     useEffect(() => {
         void refresh();
@@ -52,7 +63,16 @@ export const ManageRecordingsContainer = () => {
     const handleDownload = async (recording: OpfsRecording) => {
         try {
             await downloadOpfsRecording(recording);
-        } catch {
+        } catch (error) {
+            if (isDownloadAborted(error)) {
+                return;
+            }
+            reportMeetError('MeetingRecording Error: Failed to download recording', {
+                context: {
+                    error: error instanceof Error ? error.message : String(error),
+                    name: error instanceof Error ? error.name : 'UnknownError',
+                },
+            });
             createNotification({ type: 'error', text: c('Error').t`Failed to download recording` });
         }
     };
@@ -63,7 +83,7 @@ export const ManageRecordingsContainer = () => {
         }
         setDeleting(true);
         try {
-            await deleteOpfsRecording(recordingToDelete.name);
+            await deleteOpfsRecording(recordingToDelete);
             createNotification({ type: 'success', text: c('Info').t`Recording deleted` });
             setRecordingToDelete(null);
             await refresh();
@@ -103,7 +123,7 @@ export const ManageRecordingsContainer = () => {
                 <TableBody>
                     {recordings.map((recording) => (
                         <TableRow
-                            key={recording.name}
+                            key={`${recording.folder ?? 'root'}/${recording.name}`}
                             labels={[
                                 c('Table header').t`Name`,
                                 c('Table header').t`Date`,
@@ -151,6 +171,14 @@ export const ManageRecordingsContainer = () => {
                 <PageHeader showAppSwitcher={!isElectronApp} />
             </div>
             <div className="p-7 max-w-custom mx-auto w-full" style={{ '--max-w-custom': '60rem' }}>
+                <Button
+                    shape="ghost"
+                    className="flex items-center gap-2 mb-4"
+                    onClick={() => history.push('/dashboard')}
+                >
+                    <IcArrowLeft />
+                    {c('Action').t`Back`}
+                </Button>
                 <h1 className="text-bold text-2xl mb-1">{c('Title').t`Recordings`}</h1>
                 <p className="color-weak mb-6">{c('Info')
                     .t`Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.`}</p>
