@@ -136,9 +136,7 @@ describe('toChatCompletionsBody', () => {
             request_id: 'request-id',
         };
 
-        expect(
-            toChatCompletionsBody(request).lumo
-        ).toEqual({
+        expect(toChatCompletionsBody(request).lumo).toEqual({
             client_type: 'frontend',
             request_key: 'encrypted-key',
             request_id: 'request-id',
