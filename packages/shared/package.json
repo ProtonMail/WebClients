@@ -10,7 +10,7 @@
         "i18n:validate": "proton-i18n validate lint-functions lib",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "test": "TZ=UTC vitest",
+        "test": "TZ=UTC vitest run",
         "test:ci": "yarn test --run --silent=passed-only",
         "test:watch": "yarn test --watch"
     },
