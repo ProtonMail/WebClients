@@ -229,6 +229,7 @@ enum DocsFeatureFlag {
     DocsSharingModalDriveSDK = 'DocsSharingModalDriveSDK',
     DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
     DocsLoadRecentsWithDriveSDK = 'DocsLoadRecentsWithDriveSDK',
+    DocsDocumentViewerEventsSDK = 'DocsDocumentViewerEventsSDK',
 }
 
 export enum MailFeatureFlag {
