@@ -1,0 +1,12 @@
+# Release artifacts are too heavy to commit — drop CI-built signed packages here manually.
+# Only the version.json / RELEASES.json fixtures and this folder structure are tracked.
+*.msix
+*.appx
+*.zip
+*.dmg
+*.exe
+*.nupkg
+*.blockmap
+*.deb
+*.rpm
+*.AppImage
