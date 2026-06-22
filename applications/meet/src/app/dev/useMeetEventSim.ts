@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 
+import { useChatMessage } from '../hooks/bridges/useChatMessage';
 import { initMeetEventSim } from './meetEventSim';
 
 /**
@@ -13,11 +14,13 @@ import { initMeetEventSim } from './meetEventSim';
 export const useMeetEventSim = () => {
     const dispatch = useMeetDispatch();
 
+    const sendMessage = useChatMessage();
+
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
             return;
         }
 
-        return initMeetEventSim(dispatch);
-    }, [dispatch]);
+        return initMeetEventSim(dispatch, sendMessage);
+    }, [dispatch, sendMessage]);
 };
