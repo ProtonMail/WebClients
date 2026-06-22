@@ -170,7 +170,6 @@ export const getContactsImportData = (importerID: string) => ({
 });
 
 export const getDriveImportData = (importerID: string) => ({
-    // TODO(DRVBE-1687): Implement this endpoint.
     url: `importer/v1/drive/importers/${importerID}`,
     method: 'GET',
 });
