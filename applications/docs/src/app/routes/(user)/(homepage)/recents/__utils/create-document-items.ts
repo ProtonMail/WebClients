@@ -1,5 +1,6 @@
 import { ServerTime } from '@proton/docs-shared/lib/ServerTime'
 import { type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive'
+import { getAuthorName, getNodeName } from '../../../../../utils/drive-sdk'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
@@ -58,21 +59,6 @@ function getLocation(path: string[], isSharedWithMe: boolean) {
   }
 
   return { type: 'root' } as const
-}
-
-export function getNodeName(sdkData: NodeEntity) {
-  if (typeof sdkData.name === 'string') {
-    return sdkData.name
-  }
-  if (sdkData.name.ok) {
-    return sdkData.name.value
-  }
-}
-
-export function getAuthorName(sdkData: NodeEntity) {
-  if (sdkData.keyAuthor.ok) {
-    return sdkData.keyAuthor.value ?? undefined
-  }
 }
 
 export function nodeToTrashedItemValue(node: NodeEntity): RecentDocumentsItemValue {
