@@ -13742,6 +13742,30 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Δεν μπορέσαμε να επιβεβαιώσουμε ότι ο κόμβος δημιουργήθηκε από τον ${ claimedKeyAuthor }. Ο λόγος είναι: ${ node.keyAuthor.error.error }"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο δημιουργήθηκε διασφαλισμένα από ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος δημιουργήθηκε διασφαλισμένα από ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Αυτός ο φάκελος μεταφορτώθηκε διασφαλισμένα από ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } δημιούργησε αυτό το αρχείο."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } δημιούργησε αυτόν τον φάκελο."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } μεταφόρτωσε αυτό το αρχείο."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } μεταφόρτωσε αυτόν τον φάκελο."
       ]
     },
     "Today icon tooltip in mini calendar": {
