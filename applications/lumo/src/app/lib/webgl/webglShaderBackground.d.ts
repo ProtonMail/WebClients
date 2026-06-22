@@ -50,7 +50,15 @@ export interface WebglShaderBgBlobConfig {
     radiusPulsePhaseSec?: number;
     /** Smallest radius as a fraction of the configured `radius` (default 0.6). */
     radiusPulseMinScale?: number;
+    /** Second tint; animates toward this when `colorShiftPeriodSec` is set. */
+    colorAlt?: [number, number, number];
+    /** Full A→B→A colour cycle in seconds. */
+    colorShiftPeriodSec?: number;
+    /** Phase offset in seconds for the colour cycle. */
+    colorShiftPhaseSec?: number;
 }
+
+export type WebglShaderBgBlobBlendMode = 'soft' | 'metaball';
 
 export interface WebglShaderBgConfig {
     baseColor?: [number, number, number];
@@ -62,6 +70,12 @@ export interface WebglShaderBgConfig {
     waveFreqY?: number;
     waveSpeedX?: number;
     waveSpeedY?: number;
+    /** `soft` = additive ellipses; `metaball` = gooey merge/split (lava lamp). */
+    blobBlendMode?: WebglShaderBgBlobBlendMode;
+    /** Field strength at the metaball surface (default 1). */
+    metaThreshold?: number;
+    /** Edge softness for metaball threshold (default 0.15). */
+    metaSoftness?: number;
     mouse?: WebglShaderBgMouseConfig;
     blobs?: WebglShaderBgBlobConfig[];
     /** Vertical anchor for center gravity (UV 0–1, default 0.5). */

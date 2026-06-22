@@ -6,6 +6,7 @@ export interface LumoLocalSettings {
     theme: ThemeTypes;
     mode: ThemeModeSetting;
     animatedBackgroundEnabled?: boolean;
+    animatedBackgroundBlobMode?: 'ambient' | 'lavaLamp';
 }
 
 const LUMO_SETTINGS_KEY = 'lumo-settings';
@@ -37,6 +38,9 @@ export const getLumoSettings = (): LumoLocalSettings | null => {
                 };
                 if (typeof parsed.animatedBackgroundEnabled === 'boolean') {
                     settings.animatedBackgroundEnabled = parsed.animatedBackgroundEnabled;
+                }
+                if (parsed.animatedBackgroundBlobMode === 'ambient' || parsed.animatedBackgroundBlobMode === 'lavaLamp') {
+                    settings.animatedBackgroundBlobMode = parsed.animatedBackgroundBlobMode;
                 }
                 return settings;
             }

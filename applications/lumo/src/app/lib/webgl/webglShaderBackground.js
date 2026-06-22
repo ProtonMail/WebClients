@@ -39,6 +39,9 @@ export const WEBGL_SHADER_BG_MAX_BLOBS = 8;
  * @property {number} [radiusPulsePeriodSec] breathe cycle (full → min scale → full)
  * @property {number} [radiusPulsePhaseSec] phase offset for radius breathe
  * @property {number} [radiusPulseMinScale] smallest radius fraction (default 0.6)
+ * @property {[number, number, number]} [colorAlt] second tint for animated colour cycling
+ * @property {number} [colorShiftPeriodSec] full A→B→A colour cycle in seconds
+ * @property {number} [colorShiftPhaseSec] phase offset for colour cycle
  */
 
 /**
@@ -167,6 +170,9 @@ function framebufferToPngBlob(gl, width, height) {
  * @property {number} [waveSpeedY]
  * @property {WebglShaderBgMouseConfig} [mouse]
  * @property {WebglShaderBgBlobConfig[]} [blobs]
+ * @property {"soft" | "metaball"} [blobBlendMode] additive ellipses vs gooey merge/split
+ * @property {number} [metaThreshold] metaball isosurface field strength (default 1)
+ * @property {number} [metaSoftness] metaball edge softness (default 0.15)
  * @property {number} [centerY] vertical gravity anchor in UV space (default 0.5)
  * @property {number} [centerX] horizontal gravity anchor in aspect-corrected UV (default: viewport center + sidebar offset)
  * @property {number} [sidebarOffsetPx] fixed left sidebar width in px; shifts gravity center right (default 0)
@@ -194,6 +200,9 @@ function mergeConfig(partial) {
             color: [0, 0.9, 1],
             mixStrength: 0.7,
         },
+        blobBlendMode: 'soft',
+        metaThreshold: 1,
+        metaSoftness: 0.15,
         centerY: 0.5,
         centerX: undefined,
         sidebarOffsetPx: 0,
@@ -263,8 +272,14 @@ function buildFragmentSource() {
       uniform float u_blobFloatPhase[MAX_BLOBS];
       uniform float u_blobMorphPeriod[MAX_BLOBS];
       uniform float u_blobMorphPhase[MAX_BLOBS];
+      uniform vec3 u_blobColorAlt[MAX_BLOBS];
+      uniform float u_blobColorShiftPeriod[MAX_BLOBS];
+      uniform float u_blobColorShiftPhase[MAX_BLOBS];
       uniform float u_centerX;
       uniform float u_centerY;
+      uniform float u_blobBlendMode;
+      uniform float u_metaThreshold;
+      uniform float u_metaSoftness;
 
       const float TAU = 6.2831853;
 
@@ -275,6 +290,12 @@ function buildFragmentSource() {
       float blobEllip(vec2 uv, vec2 pos, vec2 radii) {
         vec2 d = (uv - pos) / max(radii, vec2(0.0001));
         return smoothstep(1.0, 0.0, length(d));
+      }
+
+      float blobMetaballField(vec2 uv, vec2 pos, vec2 radii, float weight) {
+        vec2 d = (uv - pos) / max(radii, vec2(0.0001));
+        float r2 = dot(d, d);
+        return weight / (r2 + 0.32);
       }
 
       void main() {
@@ -294,6 +315,9 @@ function buildFragmentSource() {
 
         float shape = 0.0;
         vec3 color = u_baseColor;
+        vec3 metaColor = vec3(0.0);
+        float metaWeight = 0.0;
+        bool useMetaball = u_blobBlendMode > 0.5;
 
         for (int i = 0; i < MAX_BLOBS; i++) {
           float fi = float(i);
@@ -336,21 +360,52 @@ function buildFragmentSource() {
           radii.x *= 0.84 + 0.16 * sin(morphAngle + fi * 0.41);
           radii.y *= 0.84 + 0.16 * cos(morphAngle * 1.19 + fi * 0.67);
 
-          float b =
-            blobEllip(uvd, pos, radii) * u_blobWeight[i] * active;
-          shape += b;
-          color = mix(color, u_blobColor[i], b * u_blobMix[i]);
+          float colorShift = (sin(blobAngle(
+            time * u_speed,
+            u_blobColorShiftPeriod[i],
+            u_blobColorShiftPhase[i]
+          )) + 1.0) * 0.5;
+          vec3 blobCol = mix(u_blobColor[i], u_blobColorAlt[i], colorShift);
+
+          if (useMetaball) {
+            float field = blobMetaballField(uvd, pos, radii, u_blobWeight[i]) * active;
+            shape += field;
+            metaColor += blobCol * field * u_blobMix[i];
+            metaWeight += field * u_blobMix[i];
+          } else {
+            float b = blobEllip(uvd, pos, radii) * u_blobWeight[i] * active;
+            shape += b;
+            color = mix(color, blobCol, b * u_blobMix[i]);
+          }
         }
 
         if (u_mouseEnabled > 0.5) {
-          float bMouse =
-            blobEllip(uvd, m, vec2(u_mouseRadius)) * u_mouseWeight;
-          shape += bMouse;
-          color = mix(color, u_mouseColor, bMouse * u_mouseMix);
+          if (useMetaball) {
+            float fieldMouse = blobMetaballField(uvd, m, vec2(u_mouseRadius), u_mouseWeight);
+            shape += fieldMouse;
+            metaColor += u_mouseColor * fieldMouse * u_mouseMix;
+            metaWeight += fieldMouse * u_mouseMix;
+          } else {
+            float bMouse = blobEllip(uvd, m, vec2(u_mouseRadius)) * u_mouseWeight;
+            shape += bMouse;
+            color = mix(color, u_mouseColor, bMouse * u_mouseMix);
+          }
         }
 
-        // Soft-limit overlap, then add glow in the blob tint direction (not white).
-        float glowShape = shape / (1.0 + shape);
+        float glowShape;
+        if (useMetaball) {
+          vec3 blobTint = metaWeight > 0.0001 ? metaColor / metaWeight : u_baseColor;
+          glowShape = smoothstep(
+            u_metaThreshold - u_metaSoftness,
+            u_metaThreshold + u_metaSoftness,
+            shape
+          );
+          glowShape = pow(glowShape, 0.68);
+          color = mix(u_baseColor, blobTint, glowShape * 0.72);
+        } else {
+          // Soft-limit overlap, then add glow in the blob tint direction (not white).
+          glowShape = shape / (1.0 + shape);
+        }
         vec3 tint = max(color - u_baseColor, vec3(0.0));
         color += pow(max(glowShape, 0.0001), u_glowPower) * u_glowIntensity * tint;
 
@@ -507,8 +562,14 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
     const uBlobFloatPhase = [];
     const uBlobMorphPeriod = [];
     const uBlobMorphPhase = [];
+    const uBlobColorAlt = [];
+    const uBlobColorShiftPeriod = [];
+    const uBlobColorShiftPhase = [];
     const uCenterX = gl.getUniformLocation(program, 'u_centerX');
     const uCenterY = gl.getUniformLocation(program, 'u_centerY');
+    const uBlobBlendMode = gl.getUniformLocation(program, 'u_blobBlendMode');
+    const uMetaThreshold = gl.getUniformLocation(program, 'u_metaThreshold');
+    const uMetaSoftness = gl.getUniformLocation(program, 'u_metaSoftness');
     for (let i = 0; i < MAX_BLOBS; i++) {
         uBlobPos.push(gl.getUniformLocation(program, `u_blobPos[${i}]`));
         uBlobRadiusX.push(gl.getUniformLocation(program, `u_blobRadiusX[${i}]`));
@@ -525,6 +586,9 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         uBlobFloatPhase.push(gl.getUniformLocation(program, `u_blobFloatPhase[${i}]`));
         uBlobMorphPeriod.push(gl.getUniformLocation(program, `u_blobMorphPeriod[${i}]`));
         uBlobMorphPhase.push(gl.getUniformLocation(program, `u_blobMorphPhase[${i}]`));
+        uBlobColorAlt.push(gl.getUniformLocation(program, `u_blobColorAlt[${i}]`));
+        uBlobColorShiftPeriod.push(gl.getUniformLocation(program, `u_blobColorShiftPeriod[${i}]`));
+        uBlobColorShiftPhase.push(gl.getUniformLocation(program, `u_blobColorShiftPhase[${i}]`));
     }
 
     const mouse = { x: 0, y: 0 };
@@ -712,7 +776,11 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
                 gl.uniform1f(uBlobRadiusY[i], p.radiusY * radiusScale);
                 gl.uniform1f(uBlobWeight[i], (b.weight ?? 1) * opacity);
                 const c = b.color;
+                const cAlt = b.colorAlt ?? c;
                 gl.uniform3f(uBlobColor[i], c[0], c[1], c[2]);
+                gl.uniform3f(uBlobColorAlt[i], cAlt[0], cAlt[1], cAlt[2]);
+                gl.uniform1f(uBlobColorShiftPeriod[i], b.colorShiftPeriodSec ?? 9999);
+                gl.uniform1f(uBlobColorShiftPhase[i], b.colorShiftPhaseSec ?? 0);
                 gl.uniform1f(uBlobMix[i], (b.mixStrength ?? 0.6) * opacity);
                 gl.uniform1f(uBlobDriftY[i], b.driftY ?? 0);
                 gl.uniform1f(uBlobDriftX[i], b.driftX ?? 0);
@@ -730,6 +798,9 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
                 gl.uniform1f(uBlobRadiusY[i], 0.0001);
                 gl.uniform1f(uBlobWeight[i], 0);
                 gl.uniform3f(uBlobColor[i], 0, 0, 0);
+                gl.uniform3f(uBlobColorAlt[i], 0, 0, 0);
+                gl.uniform1f(uBlobColorShiftPeriod[i], 9999);
+                gl.uniform1f(uBlobColorShiftPhase[i], 0);
                 gl.uniform1f(uBlobMix[i], 0);
                 gl.uniform1f(uBlobDriftY[i], 0);
                 gl.uniform1f(uBlobDriftX[i], 0);
@@ -761,6 +832,9 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         const gravity = resolveGravityCenter(cfg);
         gl.uniform1f(uCenterX, gravity.x);
         gl.uniform1f(uCenterY, gravity.y);
+        gl.uniform1f(uBlobBlendMode, cfg.blobBlendMode === 'metaball' ? 1 : 0);
+        gl.uniform1f(uMetaThreshold, cfg.metaThreshold ?? 1);
+        gl.uniform1f(uMetaSoftness, cfg.metaSoftness ?? 0.15);
         pushBlobUniforms(cfg, timeSec, gravity);
     }
 

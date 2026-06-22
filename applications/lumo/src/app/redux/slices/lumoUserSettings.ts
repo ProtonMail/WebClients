@@ -67,6 +67,7 @@ export interface LumoUserSettings {
     showProjectConversationsInHistory?: boolean;
     automaticWebSearch?: boolean;
     animatedBackgroundEnabled?: boolean;
+    animatedBackgroundBlobMode?: 'ambient' | 'lavaLamp';
     showGallerySuggestions: boolean;
     memories?: Memory[];
     isMemoryEnabled?: boolean;
@@ -79,12 +80,16 @@ export interface LumoUserSettings {
 export const createInitialLumoUserSettings = (): LumoUserSettings => {
     let theme: LumoUserSettings['theme'] = 'auto';
     let animatedBackgroundEnabled: boolean | undefined;
+    let animatedBackgroundBlobMode: LumoUserSettings['animatedBackgroundBlobMode'];
 
     try {
         const localSettings = getLumoSettings() || getDefaultSettings();
         theme = localSettingsToUserSettings(localSettings);
         if (typeof localSettings.animatedBackgroundEnabled === 'boolean') {
             animatedBackgroundEnabled = localSettings.animatedBackgroundEnabled;
+        }
+        if (localSettings.animatedBackgroundBlobMode === 'ambient' || localSettings.animatedBackgroundBlobMode === 'lavaLamp') {
+            animatedBackgroundBlobMode = localSettings.animatedBackgroundBlobMode;
         }
     } catch {
         // Fall back to defaults above
@@ -93,6 +98,7 @@ export const createInitialLumoUserSettings = (): LumoUserSettings => {
     return {
         theme,
         ...(animatedBackgroundEnabled !== undefined && { animatedBackgroundEnabled }),
+        ...(animatedBackgroundBlobMode !== undefined && { animatedBackgroundBlobMode }),
         personalization: {
             nickname: '',
             jobRole: '',

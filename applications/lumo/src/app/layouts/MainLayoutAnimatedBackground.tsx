@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
 
 import { useLumoAnimatedBackground } from '../hooks/useLumoAnimatedBackground';
+import type { AnimatedBackgroundBlobMode } from '../lib/webgl/animatedBackgroundConfig';
 import { useAnimatedBackground } from '../lib/webgl/useAnimatedBackground';
 
 import './MainLayoutAnimatedBackground.scss';
@@ -9,9 +10,13 @@ interface Props {
     hidden?: boolean;
 }
 
+interface CanvasProps extends Props {
+    blobMode: AnimatedBackgroundBlobMode;
+}
+
 /** WebGL background (blobs + particles) — only mounted while animations are enabled. */
-const AnimatedBackgroundCanvas = ({ hidden }: Props) => {
-    const { canvasRef } = useAnimatedBackground();
+const AnimatedBackgroundCanvas = ({ hidden, blobMode }: CanvasProps) => {
+    const { canvasRef } = useAnimatedBackground({ blobMode });
 
     return (
         /* eslint-disable-next-line jsx-a11y/no-aria-hidden-on-focusable */
@@ -24,11 +29,17 @@ const AnimatedBackgroundCanvas = ({ hidden }: Props) => {
 };
 
 export const MainLayoutAnimatedBackground = ({ hidden = false }: Props) => {
-    const { isAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
+    const { isAnimatedBackgroundEnabled, animatedBackgroundBlobMode } = useLumoAnimatedBackground();
 
     if (!isAnimatedBackgroundEnabled) {
         return null;
     }
 
-    return <AnimatedBackgroundCanvas hidden={hidden} />;
+    return (
+        <AnimatedBackgroundCanvas
+            key={animatedBackgroundBlobMode}
+            hidden={hidden}
+            blobMode={animatedBackgroundBlobMode}
+        />
+    );
 };

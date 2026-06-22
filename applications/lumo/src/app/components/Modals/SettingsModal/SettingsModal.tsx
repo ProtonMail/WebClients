@@ -129,7 +129,13 @@ const LumoSettingsSidebar = ({
 
 const AppearanceSettingsPanel = () => {
     const { isDarkLumoTheme } = useLumoTheme();
-    const { isAnimatedBackgroundEnabled, isToggleDisabled, setAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
+    const {
+        isAnimatedBackgroundEnabled,
+        isLavaLampMode,
+        isToggleDisabled,
+        setAnimatedBackgroundEnabled,
+        setLavaLampModeEnabled,
+    } = useLumoAnimatedBackground();
 
     return (
         <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
@@ -167,6 +173,40 @@ const AppearanceSettingsPanel = () => {
                     </Tooltip>
                 }
             />
+
+            {isAnimatedBackgroundEnabled && (
+                <SettingsSectionItem
+                    icon="fire"
+                    text={c('collider_2025: Title').t`Lava lamp style`}
+                    subtext={
+                        isLavaLampMode
+                            ? c('collider_2025: Description')
+                                  .t`Slow vertical blobs that merge, split, and shift colour`
+                            : c('collider_2025: Description')
+                                  .t`Switch to gooey merge-and-split blobs instead of the soft ambient style`
+                    }
+                    button={
+                        <Tooltip
+                            title={
+                                isToggleDisabled
+                                    ? c('Tooltip').t`The reduce motion setting is already enabled on this device`
+                                    : undefined
+                            }
+                            closeDelay={0}
+                            openDelay={0}
+                        >
+                            <Toggle
+                                id="animated-background-lava-lamp-toggle"
+                                checked={isLavaLampMode}
+                                disabled={isToggleDisabled}
+                                onChange={(event) => {
+                                    setLavaLampModeEnabled(event.target.checked);
+                                }}
+                            />
+                        </Tooltip>
+                    }
+                />
+            )}
         </div>
     );
 };

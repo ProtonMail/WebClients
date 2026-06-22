@@ -30,26 +30,24 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
         effect: async (action, listenerApi) => {
             const state = listenerApi.getState();
             const masterKey = selectMasterKey(state);
+            const lumoUserSettings = state.lumoUserSettings;
 
-            if (masterKey) {
-                const lumoUserSettings = state.lumoUserSettings;
+            if (lumoUserSettings?.theme) {
+                const systemIsDark = matchDarkTheme().matches;
+                const localSettings = userSettingsToLocalSettings(lumoUserSettings, systemIsDark);
+                setLumoSettings({
+                    ...localSettings,
+                    ...(lumoUserSettings.animatedBackgroundEnabled !== undefined && {
+                        animatedBackgroundEnabled: lumoUserSettings.animatedBackgroundEnabled,
+                    }),
+                    ...(lumoUserSettings.animatedBackgroundBlobMode !== undefined && {
+                        animatedBackgroundBlobMode: lumoUserSettings.animatedBackgroundBlobMode,
+                    }),
+                });
+            }
 
-                if (lumoUserSettings) {
-                    // Save to encrypted localStorage
-                    await saveUserSettingsToStorage(lumoUserSettings, masterKey);
-
-                    // Also sync theme to unencrypted localStorage for theme system
-                    if (lumoUserSettings.theme) {
-                        const systemIsDark = matchDarkTheme().matches;
-                        const localSettings = userSettingsToLocalSettings(lumoUserSettings, systemIsDark);
-                        setLumoSettings({
-                            ...localSettings,
-                            ...(lumoUserSettings.animatedBackgroundEnabled !== undefined && {
-                                animatedBackgroundEnabled: lumoUserSettings.animatedBackgroundEnabled,
-                            }),
-                        });
-                    }
-                }
+            if (masterKey && lumoUserSettings) {
+                await saveUserSettingsToStorage(lumoUserSettings, masterKey);
             }
         },
     });
@@ -63,24 +61,20 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
             const masterKey = selectMasterKey(state);
 
             if (masterKey) {
-                const lumoUserSettings = state.lumoUserSettings;
-                console.log('LumoUserSettingsListener: Current lumoUserSettings state', lumoUserSettings);
-
-                if (lumoUserSettings) {
-                    // Save to remote API (debounced)
-                    console.log('LumoUserSettingsListener: Scheduling remote API save in 1 second');
-                    setTimeout(async () => {
-                        try {
-                            console.log('LumoUserSettingsListener: Executing remote API save', lumoUserSettings);
-                            await listenerApi.dispatch(saveLumoUserSettingsToRemote(lumoUserSettings)).unwrap();
-                            console.log('LumoUserSettingsListener: Remote API save successful');
-                        } catch (error) {
-                            console.error('Failed to auto-save Lumo user settings to remote API:', error);
+                console.log('LumoUserSettingsListener: Scheduling remote API save in 1 second');
+                setTimeout(async () => {
+                    try {
+                        const latestSettings = listenerApi.getState().lumoUserSettings;
+                        if (!latestSettings) {
+                            return;
                         }
-                    }, 1000); // 1 second debounce
-                } else {
-                    console.log('LumoUserSettingsListener: No lumoUserSettings to save');
-                }
+                        console.log('LumoUserSettingsListener: Executing remote API save', latestSettings);
+                        await listenerApi.dispatch(saveLumoUserSettingsToRemote(latestSettings)).unwrap();
+                        console.log('LumoUserSettingsListener: Remote API save successful');
+                    } catch (error) {
+                        console.error('Failed to auto-save Lumo user settings to remote API:', error);
+                    }
+                }, 1000); // 1 second debounce
             } else {
                 console.log('LumoUserSettingsListener: No master key available for remote save');
             }
