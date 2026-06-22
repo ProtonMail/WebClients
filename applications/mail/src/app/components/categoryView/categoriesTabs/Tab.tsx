@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
 import { clsx } from 'clsx';
-import { c, msgid } from 'ttag';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
@@ -12,15 +11,13 @@ import {
     getTitleFromCategoryId,
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
-import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
-import { useMailSelector } from 'proton-mail/store/hooks';
 
+import { TabBadge } from './TabBadge';
 import { TabState, categoryColorClassName } from './tabsInterface';
+import { useCategoriesBadge } from './useCategoriesBadge';
 
 interface Props {
     category: CategoryTab;
@@ -35,11 +32,9 @@ const navClasses: Record<TabState, string> = {
 };
 
 export const Tab = ({ category, tabState }: Props) => {
-    const [mailSettings] = useMailSettings();
-
     const { call } = useEventManager();
 
-    const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id));
+    const { shouldShowCounter } = useCategoriesBadge({ tabState, category });
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const [refreshing, withRefreshing] = useLoading(false);
@@ -55,8 +50,6 @@ export const Tab = ({ category, tabState }: Props) => {
     };
 
     const navigateTo = setCategoryInUrl(category.id);
-    const unreadCount = count > 999 ? '999+' : count;
-    const shouldShowCount = mailSettings.MailCategoryViewCountersEnabled || tabState === TabState.ACTIVE;
 
     return (
         <NavLink
@@ -89,28 +82,7 @@ export const Tab = ({ category, tabState }: Props) => {
                 {getLabelFromCategoryId(category.id)}
             </span>
 
-            {count > 0 && (
-                <span
-                    aria-label={
-                        mailSettings.ViewMode === VIEW_MODE.GROUP
-                            ? c('Label').ngettext(
-                                  msgid`${count} unread conversation`,
-                                  `${count} unread conversations`,
-                                  count
-                              )
-                            : c('Label').ngettext(msgid`${count} unread message`, `${count} unread messages`, count)
-                    }
-                    className={clsx(
-                        'tag-count px-1.5 py-0.5 text-sm',
-                        shouldShowCount ? undefined : 'opacity-0',
-                        tabState === TabState.ACTIVE
-                            ? 'mail-category-color mail-category-count-bg'
-                            : 'bg-weak color-weak'
-                    )}
-                >
-                    {unreadCount}
-                </span>
-            )}
+            <TabBadge category={category} tabState={tabState} shouldShowCounter={shouldShowCounter} />
         </NavLink>
     );
 };
