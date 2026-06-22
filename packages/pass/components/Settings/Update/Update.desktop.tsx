@@ -22,6 +22,8 @@ const DEFAULT_UPDATE_STORE = (currentVersion: string): UpdateStore => ({
     currentVersion,
     newVersion: null,
     progress: null,
+    mockUpdateBaseUrl: null,
+    mockDownload: false,
     mockDoDownloadError: false,
 });
 

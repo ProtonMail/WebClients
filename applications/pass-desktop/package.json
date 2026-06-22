@@ -25,7 +25,8 @@
         "start": "cross-env-shell NODE_ENV=development API_ENV=proton.black 'electron-forge start'",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci --passWithNoTests",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "update:serve": "node update/serve.mjs"
     },
     "dependencies": {
         "@proton/icons": "workspace:^",
