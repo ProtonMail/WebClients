@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
+import { DOCS_APP_NAME, SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
     isSelected: boolean;
@@ -18,9 +19,8 @@ const StepPrepareDriveSummary = ({ isSelected }: Props) => {
 
     return (
         <span className="color-weak" data-testid="StepPrepareDriveSummary:summary">
-            {/* TODO(DRVWEB-5513): This is placeholder text - set the right text when UX/BE is finalized (e.g. 100GB limit total,
-            no photos, 50Gb max per file) */}
-            {c('Info').t`All your files will be imported`}
+            {c('Info')
+                .t`Files only (no photos, ${DOCS_APP_NAME} or ${SHEETS_APP_NAME}) - up to 100 GB total, 100,000 files, and 50 GB per file`}
         </span>
     );
 };
