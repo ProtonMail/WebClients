@@ -64,7 +64,12 @@ export const propertiesToModel = ({
         meetingProvider = VIDEO_CONFERENCE_PROVIDER.PROTON_MEET;
     }
 
-    const cleanDescription = removeVideoConfInfoFromDescription(description?.value ?? '');
+    let cleanDescription = description?.value ?? '';
+
+    // Only clean the description if we have a meeting URL (i.e., the description contains video conferencing info)
+    if (meetingUrl) {
+        cleanDescription = removeVideoConfInfoFromDescription(cleanDescription);
+    }
 
     return {
         uid: uid ? uid.value : undefined,
