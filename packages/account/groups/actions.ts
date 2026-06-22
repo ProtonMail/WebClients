@@ -36,6 +36,39 @@ export const addSubdomain = async (api: Api, domainName: string) => {
 
 const GROUPS_DOMAIN_REGEX = /^groups\.(proton\.me|protonmail\.dev|.+\.proton\.black)$/;
 
+export const createKeysForGroup = ({
+    group,
+    api,
+}: {
+    group: Group;
+    api: Api;
+}): ThunkAction<Promise<Group>, GroupsState & KtState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const cachedOrganizationKey = await dispatch(organizationKeyThunk());
+        const organizationKey = cachedOrganizationKey?.privateKey;
+
+        if (!organizationKey) {
+            throw new Error('Missing organization private key');
+        }
+
+        // TODO: Check if group keys are not commited?
+        const { keyTransparencyVerify /*, keyTransparencyCommit*/ } = createKTVerifier({
+            ktActivation: dispatch(getKTActivation()),
+            api,
+            config: extra.config,
+        });
+
+        const keys = await createGroupAddressKey({
+            api,
+            organizationKey: cachedOrganizationKey,
+            address: group.Address,
+            keyTransparencyVerify,
+        });
+
+        return { ...group, Address: { ...group.Address, Keys: keys, HasKeys: keys.length } };
+    };
+};
+
 const saveGroup =
     ({ editMode = false }: { editMode: boolean }) =>
     ({
@@ -45,7 +78,7 @@ const saveGroup =
         group: SaveGroupPayload;
         api: Api;
     }): ThunkAction<Promise<Group>, GroupsState & KtState, ProtonThunkArguments, UnknownAction> => {
-        return async (dispatch, _, extra) => {
+        return async (dispatch) => {
             const [domains, user] = await Promise.all([dispatch(domainsThunk()), dispatch(userThunk())]);
 
             const isGroupDomain = GROUPS_DOMAIN_REGEX.test(groupPayload.domain);
@@ -64,54 +97,28 @@ const saveGroup =
                 Flags: groupPayload.flags,
             } as const;
 
-            let group: Group;
-
             if (editMode) {
                 if (groupPayload.id === undefined) {
                     throw new Error('Missing group ID');
                 }
-                group = (await api<{ Group: Group }>(editGroupCall(groupPayload.id, groupData))).Group;
-            } else {
-                group = (await api<{ Group: Group }>(createGroupCall(groupData))).Group;
-            }
+                const group = (await api<{ Group: Group }>(editGroupCall(groupPayload.id, groupData))).Group;
 
-            if (isAdmin && !editMode) {
-                const cachedOrganizationKey = await dispatch(organizationKeyThunk());
-                const organizationKey = cachedOrganizationKey?.privateKey;
-
-                if (!organizationKey) {
-                    throw new Error('Missing organization private key');
-                }
-
-                // TODO: Check if group keys are not commited?
-                const { keyTransparencyVerify /*, keyTransparencyCommit*/ } = createKTVerifier({
-                    ktActivation: dispatch(getKTActivation()),
-                    api,
-                    config: extra.config,
-                });
-
-                group.Address.Keys = await createGroupAddressKey({
-                    api,
-                    organizationKey: cachedOrganizationKey,
-                    address: group.Address,
-                    keyTransparencyVerify,
-                });
-                group.Address.HasKeys = 1;
-            }
-
-            if (editMode) {
                 dispatch(updateGroup(group));
-            } else {
-                dispatch(addGroup(group));
-            }
 
-            return group;
+                return group;
+            } else {
+                const createdGroup = (await api<{ Group: Group }>(createGroupCall(groupData))).Group;
+                const group = isAdmin ? await dispatch(createKeysForGroup({ group: createdGroup, api })) : createdGroup;
+
+                dispatch(addGroup(group));
+
+                return group;
+            }
         };
     };
 
 export const createGroup = saveGroup({ editMode: false });
 export const editGroup = saveGroup({ editMode: true });
-
 export const deleteGroup = (
     group: EnhancedGroup
 ): ThunkAction<Promise<void>, GroupsState, ProtonThunkArguments, UnknownAction> => {
