@@ -1273,6 +1273,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Verify password": [
+        "Bekræft adgangskode"
       ]
     },
     "action": {
@@ -3775,6 +3778,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
+        "Bemærk: E-mails sendt til denne adresse, selv fra ${ BRAND_NAME }-adresser, vil ikke længere være end-to-end-krypterede."
+      ],
+      "Once disconnected and disabled, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Når du er blevet afbrudt og deaktiveret, vil du ikke længere være i stand til at sende eller modtage e-mails som ${ address.Email } i ${ BRAND_NAME }. E-mails sendt til denne adresse vil stadig ankomme i Gmail, men ikke i ${ MAIL_APP_NAME }."
+      ],
+      "Once disconnected, you will no longer be able to send or receive emails as ${ address.Email } in ${ BRAND_NAME }. Emails sent to this address will still arrive in Gmail, but not in ${ MAIL_APP_NAME }.": [
+        "Når du er blevet afkoblet vil du ikke længere være i stand til at sende eller modtage e-mails som ${ address.Email } i ${ BRAND_NAME }. E-mails sendt til denne adresse vil stadig ankomme i Gmail, men ikke i ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi importerer dine gamle e-mails og synkroniserer nye beskeder fra Gmail fremover."
+      ],
+      "You can reconnect this address at any time.": [
+        "Du kan til enhver tid tilslutte denne adresse igen."
       ]
     },
     "description": {
@@ -9128,6 +9146,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "All your files will be imported": [
+        "Alle dine filer vil blive importeret"
       ]
     },
     "info": {
@@ -10248,6 +10269,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Drive": [
+        "Drev"
+      ],
+      "Import your emails": [
+        "Importér dine e-mails"
       ]
     },
     "label": {
@@ -17622,6 +17649,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Are you sure you want to disconnect and disable this address?": [
+        "Er du sikker på du vil afbryde og deaktivere forbindelsen til denne adresse?"
       ]
     },
     "Title for payment methods table": {
@@ -18513,6 +18543,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter vellykket verifikation skal du ikke fjerne denne TXT-post, da den er nødvendig for at bekræfte, at du fortsætter med at eje domænet."
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importér ældre beskeder i ${ PRODUCT_NAMES.EASY_SWITCH } indstillinger."
       ]
     }
   }
