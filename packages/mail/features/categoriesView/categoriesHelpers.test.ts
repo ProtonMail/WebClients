@@ -11,8 +11,6 @@ describe('categoriesHelpers', () => {
                 {
                     id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                     colorShade: CATEGORIES_COLOR_SHADES.IRIS,
-                    filledIcon: 'inbox-filled',
-                    outlinedIcon: 'inbox',
                 },
             ],
             [
@@ -20,8 +18,6 @@ describe('categoriesHelpers', () => {
                 {
                     id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                     colorShade: CATEGORIES_COLOR_SHADES.CYAN,
-                    filledIcon: 'person-filled-2',
-                    outlinedIcon: 'person-2',
                 },
             ],
             [
@@ -29,8 +25,6 @@ describe('categoriesHelpers', () => {
                 {
                     id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     colorShade: CATEGORIES_COLOR_SHADES.TEAL,
-                    filledIcon: 'megaphone-filled',
-                    outlinedIcon: 'megaphone',
                 },
             ],
             [
@@ -38,8 +32,6 @@ describe('categoriesHelpers', () => {
                 {
                     id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     colorShade: CATEGORIES_COLOR_SHADES.ORANGE,
-                    filledIcon: 'news-filled',
-                    outlinedIcon: 'news',
                 },
             ],
             [
@@ -47,8 +39,6 @@ describe('categoriesHelpers', () => {
                 {
                     id: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                     colorShade: CATEGORIES_COLOR_SHADES.RED,
-                    filledIcon: 'credit-cards-filled',
-                    outlinedIcon: 'credit-cards',
                 },
             ],
             [
@@ -56,8 +46,6 @@ describe('categoriesHelpers', () => {
                 {
                     id: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
                     colorShade: CATEGORIES_COLOR_SHADES.PINK,
-                    filledIcon: 'bell-filled-2',
-                    outlinedIcon: 'bell-2',
                 },
             ],
         ])('should return proper values for %s', (id, expectedValues) => {

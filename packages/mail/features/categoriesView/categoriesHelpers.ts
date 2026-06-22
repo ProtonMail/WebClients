@@ -8,38 +8,26 @@ const RAW_TO_CATEGORY: Record<string, CategoryTab> = {
     '24': {
         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
         colorShade: CATEGORIES_COLOR_SHADES.IRIS,
-        filledIcon: 'inbox-filled',
-        outlinedIcon: 'inbox',
     },
     '20': {
         id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
         colorShade: CATEGORIES_COLOR_SHADES.CYAN,
-        filledIcon: 'person-filled-2',
-        outlinedIcon: 'person-2',
     },
     '21': {
         id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
         colorShade: CATEGORIES_COLOR_SHADES.TEAL,
-        filledIcon: 'megaphone-filled',
-        outlinedIcon: 'megaphone',
     },
     '25': {
         id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
         colorShade: CATEGORIES_COLOR_SHADES.ORANGE,
-        filledIcon: 'news-filled',
-        outlinedIcon: 'news',
     },
     '26': {
         id: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
         colorShade: CATEGORIES_COLOR_SHADES.RED,
-        filledIcon: 'credit-cards-filled',
-        outlinedIcon: 'credit-cards',
     },
     '22': {
         id: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
         colorShade: CATEGORIES_COLOR_SHADES.PINK,
-        filledIcon: 'bell-filled-2',
-        outlinedIcon: 'bell-2',
     },
 } as const;
 
