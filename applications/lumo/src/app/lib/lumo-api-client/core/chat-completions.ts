@@ -163,7 +163,11 @@ function toOpenAiRole(role: Role): ChatCompletionsMessage['role'] {
         case Role.ToolResult:
             return 'tool';
         case Role.ToolCall:
-            return 'assistant';
+            // Non-standard Lumo role: keeps the tool call's canonical JSON in
+            // `content` so it can be U2L-encrypted. The scheduler re-emits it as
+            // a structured `assistant` `tool_calls` message for vLLM. Using
+            // `assistant` here would leak the raw JSON to the model as text.
+            return 'lumo_tool_call';
         default:
             return 'user';
     }

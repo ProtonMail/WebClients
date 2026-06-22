@@ -135,7 +135,16 @@ export type ChatCompletionsImagePart = {
 export type ChatCompletionsContentPart = ChatCompletionsTextPart | ChatCompletionsImagePart;
 
 export type ChatCompletionsMessage = {
-    role: 'system' | 'user' | 'assistant' | 'tool';
+    /**
+     * `lumo_tool_call` is a non-standard Lumo extension role. The OpenAI schema
+     * carries tool calls in an assistant message's `tool_calls` array with the
+     * name/arguments in cleartext, which is incompatible with U2L encryption
+     * (only `content` is encrypted). Lumo instead sends each tool call as its
+     * own message with this role and the canonical `{"name","arguments"}` JSON
+     * (encrypted in production) in `content`. The scheduler converts it back to
+     * a structured `assistant` `tool_calls` message before reaching vLLM.
+     */
+    role: 'system' | 'user' | 'assistant' | 'tool' | 'lumo_tool_call';
     content?: string | ChatCompletionsContentPart[];
     /**
      * Lumo extension: marks string `content` as U2L-encrypted ciphertext.
