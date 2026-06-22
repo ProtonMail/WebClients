@@ -14,7 +14,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { PLANS_MAP, getLongTestPlans, getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
-import { type PlanCapRule, getAllowedCycles } from './getAllowedCycles';
+import { type PlanCapRule, getAllowedCycles, planSupportsIrregularCycle } from './getAllowedCycles';
 
 const rulesWith24m: PlanCapRule[] = [
     { plan: ADDON_NAMES.MEMBER_MAIL_BUSINESS, cycle: CYCLE.YEARLY },
@@ -1154,5 +1154,78 @@ describe('cap and backend availability', () => {
         });
 
         expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+});
+
+describe('planSupportsIrregularCycle', () => {
+    it.each([
+        { plan: PLANS.VPN2024, cycle: CYCLE.SIX },
+        { plan: PLANS.BUNDLE, cycle: CYCLE.SIX },
+    ])('CAPE promotion: should return true for the default irregular cycle supported by $plan', ({ plan, cycle }) => {
+        const planIDs: PlanIDs = {
+            [plan]: 1,
+        };
+
+        expect(planSupportsIrregularCycle({ cycle, planIDs })).toBe(true);
+    });
+
+    it('should return true when the selected plan supports the requested irregular cycle', () => {
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL]: 1,
+        };
+
+        expect(
+            planSupportsIrregularCycle({ cycle: CYCLE.FIFTEEN, planIDs }, [
+                {
+                    planName: PLANS.MAIL,
+                    cycle: CYCLE.FIFTEEN,
+                },
+            ])
+        ).toBe(true);
+    });
+
+    it.each([
+        {
+            description: 'selected plan supports a different irregular cycle',
+            cycle: CYCLE.FIFTEEN,
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansWithIrregularCycles: [
+                {
+                    planName: PLANS.MAIL,
+                    cycle: CYCLE.SIX,
+                },
+            ],
+        },
+        {
+            description: 'selected plan is not configured for irregular cycles',
+            cycle: CYCLE.SIX,
+            planIDs: { [PLANS.BUNDLE]: 1 },
+            plansWithIrregularCycles: [
+                {
+                    planName: PLANS.MAIL,
+                    cycle: CYCLE.SIX,
+                },
+            ],
+        },
+        {
+            description: 'default-supported plan with a regular cycle',
+            cycle: CYCLE.YEARLY,
+            planIDs: { [PLANS.VPN2024]: 1 },
+            plansWithIrregularCycles: undefined,
+        },
+        {
+            description: 'default-unsupported plan with the 6-month cycle',
+            cycle: CYCLE.SIX,
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansWithIrregularCycles: undefined,
+        },
+        {
+            description: 'default-supported plan with zero quantity',
+            cycle: CYCLE.SIX,
+            planIDs: { [PLANS.BUNDLE]: 0 },
+            plansWithIrregularCycles: undefined,
+        },
+    ])('should return false when $description', ({ cycle, planIDs, plansWithIrregularCycles }) => {
+        expect(planSupportsIrregularCycle({ cycle, planIDs }, plansWithIrregularCycles)).toBe(false);
     });
 });
