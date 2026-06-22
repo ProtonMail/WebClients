@@ -9,7 +9,7 @@ interface WebCodecsRecorderOptions {
     videoMixer: VideoMixerClient;
     audioMixer: AudioMixer;
     codec: RecordingCodec;
-    onChunk: (data: Uint8Array<ArrayBuffer>, position: number) => void;
+    onChunk: (data: Uint8Array<ArrayBuffer>) => void;
 }
 
 // RecorderAPI that drives the WebCodecs/mediabunny pipeline living in the
@@ -19,7 +19,7 @@ export class WebCodecsRecorder implements RecorderAPI {
     private videoMixer: VideoMixerClient;
     private audioMixer: AudioMixer;
     private codec: RecordingCodec;
-    private onChunk: (data: Uint8Array<ArrayBuffer>, position: number) => void;
+    private onChunk: (data: Uint8Array<ArrayBuffer>) => void;
     private recording = false;
 
     constructor({ videoMixer, audioMixer, codec, onChunk }: WebCodecsRecorderOptions) {

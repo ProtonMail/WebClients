@@ -99,8 +99,8 @@ async function startEncoder() {
         state.canvas,
         RECORDING_FPS,
         audioCodec,
-        (data, position) => {
-            self.postMessage({ type: 'encoderChunk', data, position }, [data.buffer]);
+        (data) => {
+            self.postMessage({ type: 'encoderChunk', data }, [data.buffer]);
         },
         (error) => logger.error('audio sample add failed:', error)
     );

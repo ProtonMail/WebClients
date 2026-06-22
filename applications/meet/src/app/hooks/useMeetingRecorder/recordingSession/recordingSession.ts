@@ -93,9 +93,9 @@ export class RecordingSession {
                 videoMixer: this.videoMixer,
                 audioMixer: this.audioMixer,
                 codec: this.codec,
-                onChunk: (data, position) => {
+                onChunk: (data) => {
                     stats.recordChunk(data.byteLength);
-                    void storage.addChunk(data, position).catch((error) => {
+                    void storage.addChunk(data).catch((error) => {
                         reportMeetError('MeetingRecording Error WebCodecs: Failed to store chunk in OPFS', {
                             context: {
                                 error: error instanceof Error ? error.message : String(error),

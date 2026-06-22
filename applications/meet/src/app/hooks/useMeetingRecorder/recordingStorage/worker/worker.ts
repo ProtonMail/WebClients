@@ -8,25 +8,13 @@ import {
 
 const logger = createWorkerLogger('MeetingRecorder/recordingWorker');
 
-interface FileSystemSyncAccessHandle {
-    write(buffer: ArrayBuffer | ArrayBufferView, options?: { at?: number }): number;
-    read(buffer: ArrayBuffer | ArrayBufferView, options?: { at?: number }): number;
-    flush(): void;
-    close(): void;
-    getSize(): number;
-    truncate(newSize: number): void;
-}
-
 const isQuotaExceededError = (error: unknown): boolean =>
     error instanceof DOMException && error.name === 'QuotaExceededError';
 
-// Persists recorded chunks into OPFS. Today this writes one file per session.
-// When we add multi-file rotation + recovery, the public API stays the same:
-// `finalize()` returns the ordered list of files for the session.
+// Persists recorded chunks into a single OPFS file per session.
 class OPFSWorkerStorage {
     private root: FileSystemDirectoryHandle | null = null;
     private fileHandle: FileSystemFileHandle | null = null;
-    private writable: FileSystemWritableFileStream | null = null;
     private syncAccessHandle: FileSystemSyncAccessHandle | null = null;
     private filePosition = 0;
     private fileExtension: string = 'webm';
@@ -45,36 +33,23 @@ class OPFSWorkerStorage {
             create: true,
         });
 
-        if (typeof this.fileHandle.createSyncAccessHandle === 'function') {
-            this.syncAccessHandle = await this.fileHandle.createSyncAccessHandle();
-            this.filePosition = 0;
-        } else if (typeof this.fileHandle.createWritable === 'function') {
-            this.writable = await this.fileHandle.createWritable();
-        } else {
-            throw new Error('No supported OPFS write API available in worker');
+        if (typeof this.fileHandle.createSyncAccessHandle !== 'function') {
+            throw new Error('createSyncAccessHandle is not available in this worker');
         }
+
+        this.syncAccessHandle = await this.fileHandle.createSyncAccessHandle();
+        this.filePosition = 0;
     }
 
-    async addChunk(chunkBuffer: ArrayBuffer, position?: number): Promise<boolean> {
-        if (this.full) {
+    async addChunk(chunkBuffer: ArrayBuffer): Promise<boolean> {
+        if (this.full || !this.syncAccessHandle) {
             return false;
         }
 
         try {
-            if (this.syncAccessHandle) {
-                const at = position ?? this.filePosition;
-                const bytesWritten = this.syncAccessHandle.write(chunkBuffer, { at });
-                this.filePosition = Math.max(this.filePosition, at + bytesWritten);
-                this.syncAccessHandle.flush();
-            } else if (this.writable) {
-                if (position !== undefined) {
-                    await this.writable.write({ type: 'write', position, data: chunkBuffer });
-                } else {
-                    await this.writable.write(chunkBuffer);
-                }
-            } else {
-                throw new Error('No writable stream or sync handle available');
-            }
+            const bytesWritten = this.syncAccessHandle.write(chunkBuffer, { at: this.filePosition });
+            this.filePosition += bytesWritten;
+            this.syncAccessHandle.flush();
             return false;
         } catch (error) {
             if (isQuotaExceededError(error)) {
@@ -85,26 +60,19 @@ class OPFSWorkerStorage {
         }
     }
 
-    // Returns the names of the files that contain this recording, in order.
-    // Closes any pending write handles so the consumer can read them back.
-    async finalize(): Promise<{ fileNames: string[] }> {
-        if (this.writable) {
-            await this.writable.close();
-            this.writable = null;
-        } else if (this.syncAccessHandle) {
+    // Closes the write handle so the consumer can read the file back.
+    async finalize(): Promise<{ fileName: string }> {
+        if (this.syncAccessHandle) {
             this.syncAccessHandle.flush();
             this.syncAccessHandle.close();
             this.syncAccessHandle = null;
         }
 
-        return { fileNames: [this.fileName] };
+        return { fileName: this.fileName };
     }
 
     async clear(): Promise<void> {
-        if (this.writable) {
-            await this.writable.close();
-            this.writable = null;
-        } else if (this.syncAccessHandle) {
+        if (this.syncAccessHandle) {
             this.syncAccessHandle.close();
             this.syncAccessHandle = null;
         }
@@ -143,7 +111,7 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
             }
 
             case StorageMessageType.ADD_CHUNK: {
-                const becameFull = await storage.addChunk(message.data.chunkBuffer, message.data.position);
+                const becameFull = await storage.addChunk(message.data.chunkBuffer);
                 if (becameFull) {
                     const notification: StorageWorkerResponse = { type: StorageWorkerResponseType.STORAGE_FULL };
                     self.postMessage(notification);
@@ -154,11 +122,11 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
             }
 
             case StorageMessageType.FINALIZE: {
-                const { fileNames } = await storage.finalize();
+                const { fileName } = await storage.finalize();
                 const response: StorageWorkerResponse = {
                     type: StorageWorkerResponseType.SUCCESS,
                     id,
-                    data: { fileNames },
+                    data: { fileName },
                 };
                 self.postMessage(response);
                 break;
