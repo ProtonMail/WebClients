@@ -7360,6 +7360,9 @@
       ],
       "Please select the labels you would like to import:": [
         "Seleccione las etiquetas que desee importar:"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "No pudimos verificar que ${ nameAuthor } haya cargado ${ nodeName }. Es posible que los elementos hayan sido manipulados. Abra el archivo solo si confía en él."
       ]
     },
     "info": {
@@ -10188,6 +10191,9 @@
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } foto fue eliminada de «${ albumName }»",
         "${ removed } fotos fueron eliminadas de «${ albumName }»"
+      ],
+      "Failed to load sharing details": [
+        "Error al cargar los detalles de uso compartido"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13877,6 +13883,39 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Firma digital verificada. Este archivo se ha creado de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Firma digital verificada. Este archivo se ha cargado de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Firma digital verificada. Esta carpeta se ha creado de forma segura por ${ author }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Firma digital verificada. Esta carpeta se ha cargado de forma segura por ${ author }."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "No pudimos verificar que ${ author } haya creado este archivo."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "No pudimos verificar que ${ author } haya creado esta carpeta."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "No pudimos verificar que ${ author } haya cargado este archivo."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "No pudimos verificar que ${ author } haya cargado esta carpeta."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "No hemos podido confirmar que el nombre se ha creado o modificado por ${ claimedNameAuthor }. El motivo es el siguiente: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "No hemos podido confirmar que el nodo se ha creado por ${ claimedKeyAuthor }. El motivo es el siguiente: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {

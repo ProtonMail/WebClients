@@ -13838,6 +13838,30 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Düğümün ${ claimedKeyAuthor } tarafından oluşturulduğu doğrulanamadı. Nedeni: ${ node.keyAuthor.error.error }"
+      ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Dijital imza doğrulandı. Bu dosya ${ author } tarafından güvenli olarak oluşturulmuş."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Dijital imza doğrulandı. Bu dosya ${ author } tarafından güvenli olarak yüklenmiş."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Dijital imza doğrulandı. Bu klasör ${ author } tarafından güvenli olarak oluşturulmuş."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Dijital imza doğrulandı. Bu klasör ${ author } tarafından güvenli olarak yüklenmiş."
+      ],
+      "We couldn’t verify that ${ author } created this file.": [
+        "Bu dosyanın ${ author } tarafından oluşturduğu doğrulanamadı."
+      ],
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Bu klasörün ${ author } tarafından oluşturduğu doğrulanamadı."
+      ],
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Bu dosyanın ${ author } tarafından yüklendiği doğrulanamadı."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Bu klasörün ${ author } tarafından yüklendiği doğrulanamadı."
       ]
     },
     "Today icon tooltip in mini calendar": {
