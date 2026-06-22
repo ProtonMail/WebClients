@@ -53,6 +53,7 @@ export * from './groups';
 export * from './groupMembers';
 export * from './groupMemberships';
 export * from './groupMemberships/listener';
+export * from './scimSetup';
 export * from './groupOwnerInvites';
 export * from './initialModelState';
 export * from './paymentMethods';
