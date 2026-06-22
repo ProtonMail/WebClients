@@ -38,7 +38,7 @@ describe('toChatCompletionsBody', () => {
         });
     });
 
-    it('serializes built-in tools as name-only objects and maps Lumo roles to OpenAI roles', () => {
+    it('serializes built-in tools as name-only objects and maps the Lumo ToolCall role to lumo_tool_call and ToolResult to the standard OpenAI tool role', () => {
         const request: LumoApiGenerationRequest = {
             ...baseRequest,
             turns: [
@@ -57,7 +57,7 @@ describe('toChatCompletionsBody', () => {
             messages: [
                 { role: 'system', content: 'Be helpful' },
                 { role: 'tool', content: 'search results' },
-                { role: 'assistant', content: '{"name":"web_search"}' },
+                { role: 'lumo_tool_call', content: '{"name":"web_search"}' },
                 { role: 'user', content: 'Hello' },
             ],
             stream: true,
