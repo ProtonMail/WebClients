@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
+import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import useApi from '@proton/components/hooks/useApi';
+import { IcShareNode } from '@proton/icons/icons/IcShareNode';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
 import type { Group, RoleAssignment } from '@proton/shared/lib/interfaces';
@@ -23,7 +25,15 @@ interface Props {
     groupOrganizationRoles?: RoleAssignment[];
 }
 
-const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGroup, groupOrganizationRoles }: Props) => {
+const GroupItem = ({
+    active,
+    group,
+    serializedGroup,
+    onClick,
+    isNew,
+    onDeleteGroup,
+    groupOrganizationRoles,
+}: Props) => {
     const api = useApi();
     const [organization] = useOrganization();
     const showMailFeatures = shouldShowMail(organization?.PlanName);
@@ -44,6 +54,8 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
     const email = serializedGroup?.payload.email || group?.Address?.Email || '';
     const subtitle = roleNames || (showMailFeatures && email ? email : undefined);
 
+    const GroupIcon = getIsScimGroup(group) ? IcShareNode : IcUsers;
+
     return (
         <div className="relative">
             <Button
@@ -61,7 +73,7 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
                             backgroundColor: 'var(--interaction-norm-minor-1)',
                         }}
                     >
-                        <IcUsers className="m-auto color-primary shrink-0" size={4} />
+                        <GroupIcon className="m-auto color-primary shrink-0" size={4} />
                     </div>
                     <div className="text-left flex flex-column flex-1">
                         <span className="block max-w-full text-bold text-ellipsis" title={name}>
