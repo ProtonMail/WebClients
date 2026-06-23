@@ -11,9 +11,12 @@ import { getJsLoaders } from '@proton/pack/webpack/js.loader.swc';
 import { webpackOptions } from './webpack.options';
 import plugins from './webpack.plugins';
 
-const { browserslistEnv, isProduction } = webpackOptions;
+const { isProduction } = webpackOptions;
 
-const browserslistQuery = webpackOptions.browserslist ?? browserslist(null, { env: browserslistEnv }).join(', ');
+// This renderer ships inside Electron, so it targets the bundled Chromium version
+// (the [electron-applications] section of the root .browserslistrc) rather than the web matrix.
+const browserslistEnv = 'electron-applications';
+const browserslistQuery = browserslist(null, { env: browserslistEnv }).join(', ');
 
 const config: Configuration = {
     target: `browserslist:${browserslistEnv}`,
