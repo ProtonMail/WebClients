@@ -15,7 +15,7 @@ import { notIn } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 
-import { assertMessageVersion, backgroundMessage, errorMessage, successMessage } from './send-message';
+import { assertMessageVersion, backgroundMessage, errorMessage, resolveMessageResponse } from './send-message';
 import { isExtensionMessage } from './utils';
 
 export type MessageHandlerCallback<
@@ -93,14 +93,7 @@ export const createMessageBroker = (options: MessageBrokerOptions) => {
                 }
             }
 
-            const res = await handler(message, sender);
-
-            if (typeof res === 'boolean' || res === undefined) {
-                if (res === false) throw new Error(`Error when processing "${message.type}"`);
-                return successMessage({});
-            }
-
-            return successMessage(res);
+            return resolveMessageResponse(await handler(message, sender));
         } catch (error: any) {
             void browser.runtime.lastError;
             logger.debug(`[MessageBroker::Message] Error "${message.type}"`, getErrorMessage(error));
