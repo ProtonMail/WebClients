@@ -42,7 +42,7 @@ type DropdownFocusManagerState = { willFocus: boolean; willFocusTimer?: NodeJS.T
 /** Checks if an element can receive keyboard focus and potentially trap it.
  * Interactive elements include form controls, links, and any element with
  * tabindex or contentEditable attributes. */
-const isFocusableElement = (el: MaybeNull<Element>): boolean => {
+export const isFocusableElement = (el: MaybeNull<Element>): el is HTMLElement => {
     if (!el || !isHTMLElement(el)) return false;
 
     if (el.matches(kFocusTrapSelector)) return false;
