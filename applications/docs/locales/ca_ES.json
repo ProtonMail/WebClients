@@ -3253,6 +3253,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No drive found to import": [
+        "No s'ha trobat cap unitat per importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
@@ -3261,6 +3264,9 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
@@ -3481,6 +3487,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
+      ],
+      "Unexpected error, we can't import the files": [
+        "S'ha produït un error inesperat, no podem importar els fitxers"
       ],
       "Unknown error": [
         "Error desconegut"
@@ -4575,9 +4584,6 @@
         "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
         "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "S'importaran tots els vostres fitxers"
-      ],
       "Already in this folder": [
         "Ja és en aquesta carpeta"
       ],
@@ -4878,6 +4884,9 @@
       ],
       "File will not be updated": [
         "El fitxer no s'actualitzarà"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
       ],
       "finance": [
         "finances"

@@ -3245,9 +3245,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Vi importerer de gamle e-postene dine, hopper over duplikater og kobler til Gmail slik at nye meldinger dukker opp automatisk. Du kan når som helst angre importen i innstillingene for Easy Switch."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
       ],
@@ -3275,6 +3272,10 @@
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
         "Du videresender ${ numAddressesOrSync } Gmail-adresser til ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Du videresender e-poster fra ${ forwardingCount } Gmail-adresse. Ved å koble den til, vil du kunne både motta og svare i ${ MAIL_APP_NAME }",
+        "Du videresender e-poster fra ${ forwardingCount } Gmail-adresser. Ved å koble dem til, vil du kunne både motta og svare i ${ MAIL_APP_NAME }"
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "Du har koblet til ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere en av de tilkoblede kontoene dine.",
@@ -4653,6 +4654,12 @@
         "${ MAIL_APP_NAME }-skrivebordsapp"
       ]
     },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } dag igjen",
+        "${ remainingDaysCount } dager igjen"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Videresend automatisk"
@@ -4792,6 +4799,12 @@
       ],
       "Time zone not supported": [
         "Tidssone ikke støttet"
+      ]
+    },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } deltaker",
+        "${ totalAttendees } deltakere"
       ]
     },
     "Import calendar": {
@@ -5098,6 +5111,10 @@
         "${ contactEmailsLength } medlem",
         "${ contactEmailsLength } medlemmer"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlem)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlemmer)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } inneholder flere e-postadresser."
       ],
@@ -5127,6 +5144,10 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }-tilganger"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } kobling renset",
+        "${ numberOfUTMTrackers } koblinger renset"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } lar deg lagre passord, notater og annen sensitiv informasjon med ende-til-ende-kryptering. Tilgjengelig på ${ ios }, ${ android } og i din ${ browser }."
@@ -5180,6 +5201,10 @@
       "${ total } user found": [
         "${ total } bruker funnet",
         "${ total } brukere funnet"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } sporer blokkert",
+        "${ trackersCount } sporere blokkert"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt oppdatert",
@@ -5327,6 +5352,14 @@
       ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på at du vil forkaste importen din?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Er du sikker på at du vil slette ${ count } utkast permanent?",
+        "Er du sikker på at du vil slette ${ count } utkast permanent?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Er du sikker på at du vil slette ${ count } melding permanent?",
+        "Er du sikker på at du vil slette ${ count } meldinger permanent?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
@@ -5494,6 +5527,10 @@
       ],
       "Do you remember your password? ${ verifyButton }": [
         "Husker du passordet ditt? ${ verifyButton }"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Vil du laste ned dette vedlegget allikevel?",
+        "Vil du laste ned disse vedleggene allikevel?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser ingenting? Husk å slå av blokkering av sprett-opp-vinduer."
@@ -5709,6 +5746,9 @@
       ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
+      ],
+      "Insert image": [
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -6156,6 +6196,10 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne nettleseren støtter ikke forhåndsvisning av PDF-dokumenter. Last ned filen."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Denne samtalen merkes som søppelpost. Ønsker du også å melde deg av fremtidige e-poster?",
+        "Disse samtalene merkes som søppelpost. Ønsker du også å melde deg av fremtidige e-poster?"
+      ],
       "This file is too large to preview": [
         "Denne filen er for stor til å forhåndsvises"
       ],
@@ -6380,6 +6424,14 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ],
+      "You have **${ count } message** stored in this folder": [
+        "Du har **${ count } melding** lagret i denne mappen",
+        "Du har **${ count } meldinger** lagret i denne mappen"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Du har **${ count } melding** merket med denne etiketten",
+        "Du har **${ count } meldinger** merket med denne etiketten"
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et prøveabonnement på ${ planTitle }. Hvis du vil fortsette abonnementet etter prøveperioden, må du legge til en betalingsmåte."
       ],
@@ -6391,6 +6443,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Du valgte **${ elementsCount } samtale** i ${ location }.",
+        "Du valgte **${ elementsCount } samtaler** i ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Du valgte **${ elementsCount } samtale**.",
+        "Du valgte **${ elementsCount } samtaler**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Du valgte **${ elementsCount } melding** i ${ location }.",
+        "Du valgte **${ elementsCount } meldinger** i ${ location }."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
@@ -6465,6 +6529,10 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Meldingen din utløper om ${ numberOfDays } dag.",
+        "Meldingen din utløper om ${ numberOfDays } dager."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst."
@@ -6577,6 +6645,12 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Key pinning": {
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Du har aktivert adressebekreftelse med klarerte nøkler for denne e-postadressen,\nmen ingen aktiv krypteringsnøkkel er klarert.\nDu må klarére en nøkkel som er gyldig for sending for å sende en melding til denne e-postadressen.",
+        "Du har aktivert adressebekreftelse med klarerte nøkler for disse e-postadressene,\nmen ingen aktive krypteringsnøkler er klarert.\nDu må klarére nøkler som er gyldig for sending for å sende en melding til disse e-postadressene."
       ]
     },
     "Keyboard shortcut name": {
@@ -9845,102 +9919,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Benytt deg av tilbudet"
-      ],
-      "SPRING SALE 2026": [
-        "VÅRSALG 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/måned"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "2 TB data storage": [
-        "2 TB datalagring"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagring: 40 ganger ditt nåværende abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB datalagring"
-      ],
-      "500 GB storage": [
-        "500 GB lagringsplass"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Tilgang til 15 000+ servere i 120+ land"
-      ],
-      "Access advanced AI models": [
-        "Tilgang til avanserte KI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle premiumfunksjonene i Mail, Pass, Drive, VPN og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokker annonser, sporere og skadelig programvare"
-      ],
-      "Built-in 2FA authenticator": [
-        "Innebygd 2FA-autentisering"
-      ],
-      "Connect 10 devices at once": [
-        "Koble til 10 enheter samtidig"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Forleng abonnementet ditt og spar ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Full tilgang til ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Full chatlogg med enkelt søk og favoritter"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle kontoer for 6 brukere"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle kontoer for deg og en partner"
-      ],
-      "Online document editor": [
-        "Dokumentredigerer på nett"
-      ],
-      "Recover previous file versions": [
-        "Gjenopprett tidligere filversjoner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Sterkere beskyttelse mot cybertrusler"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Ubegrenset antall daglige chatter"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrensede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
-      ],
-      "Use your own email domain": [
-        "Bruk ditt eget e-postdomene"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "i 12 måneder"
-      ],
-      "SPRING SALE": [
-        "VÅRSALG"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Benytt deg av tilbudet"
@@ -10172,6 +10150,18 @@
     "Select search results": {
       "No results found": [
         "Ingen resultater funnet"
+      ]
+    },
+    "Send email with errors": {
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Vi har oppdaget feil. E-posten din kan ikke sendes til den oppgitte e-postadressen av følgende årsak:",
+        "Vi har oppdaget feil. E-posten din kan ikke sendes til noen av e-postadressene som er oppgitt av følgende årsaker:"
+      ]
+    },
+    "Send email with warnings": {
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Vi har oppdaget noen advarsler. Følgende e-postadresse mottar kanskje ikke e-post:",
+        "Vi har oppdaget noen advarsler. Følgende e-postadresser mottar kanskje ikke e-post:"
       ]
     },
     "session_recovery:available:action": {
@@ -11175,6 +11165,38 @@
         "${ countMergeableContacts } kontakt ser identisk ut.",
         "${ countMergeableContacts } kontakter ser identiske ut."
       ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } samtale flyttet til ${ labelName }.",
+        "${ elementsCount } samtaler flyttet til ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } samtale er flyttet til søppelpost, og avsenderen er lagt til i søppelpostlisten din.",
+        "${ elementsCount } samtaler er flyttet til søppelpost, og avsenderene er lagt til i søppelpostlisten din."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } samtale fjernet fra ${ labelName }.",
+        "${ elementsCount } samtaler fjernet fra ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } samtale slumret",
+        "${ elementsCount } samtaler slumret"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } samtale hentet ut av slumring",
+        "${ elementsCount } samtaler hentet ut av slumring"
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } melding merket som ulest.",
+        "${ elementsCount } meldinger merket som ulest."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } melding flyttet til ${ labelName }.",
+        "${ elementsCount } meldinger flyttet til ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } melding fjernet fra stjernemerket.",
+        "${ elementsCount } meldinger fjernet fra stjernemerket."
+      ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
       ],
@@ -11633,6 +11655,10 @@
       "Delete ${ count } contact group": [
         "Slett ${ count } kontaktgruppe",
         "Slett ${ count } kontaktgrupper"
+      ],
+      "Delete ${ count } draft": [
+        "Slett ${ count } utkast",
+        "Slett ${ count } utkast"
       ],
       "Delete ${ value }": [
         "Slett ${ value }"

@@ -1639,6 +1639,9 @@
       "View recipients": [
         "Visa mottagare"
       ],
+      "View rendered HTML": [
+        "Visa återgiven HTML"
+      ],
       "What do I get?": [
         "Vad får jag?"
       ],
@@ -1713,6 +1716,11 @@
       ],
       "Participant added": [
         "Deltagare tillagd"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Utlöpt meddelande"
       ]
     },
     "Addon": {
@@ -2486,6 +2494,9 @@
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
         "${ participantName } hade föreslagit en ny tid för en förekomst av denna händelse. Detta förslag är inaktuellt."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } hade föreslagit en ny tid för en förekomst av denna händelse. Detta förslag är inaktuellt. Händelsen finns inte längre i din kalender."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } hade föreslagit en ny tid för en förekomst av denna händelse. Detta förslag är inaktuellt. Du har inga kalendrar."
@@ -4279,9 +4290,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Vi importerar dina gamla e-postmeddelanden, hoppar över dubbletter och ansluter till ditt Gmail så att nya meddelanden visas automatiskt. Du kan ångra importen när som helst i inställningarna för Easy Switch."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
@@ -4612,6 +4620,11 @@
         "Uppdatering av en händelse som börjar den ${ formattedStart }"
       ]
     },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Krypterad med noll åtkomst. Mottagaren har inaktiverat end-to-end-kryptering på sitt konto."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Betrodd kontakt"
@@ -4620,6 +4633,9 @@
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan inte ansluta till ditt externa konto"
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } för <${ email }>. Du kan lägga till en annan nyckel eller inaktivera kryptering för denna kontakt för att lösa problemet."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
@@ -4782,6 +4798,9 @@
       "Error while saving draft. Please try again.": [
         "Fel när utkast sparades. Försök igen."
       ],
+      "Error while sending the message. Message is not sent.": [
+        "Fel när meddelandet skulle skickas. Meddelandet skickades inte."
+      ],
       "Error while uploading attachments. Message is not sent.": [
         "Fel vid uppladdning av bilagor. Meddelandet skickas inte."
       ],
@@ -4868,6 +4887,9 @@
       ],
       "Last name is too long": [
         "Efternamn är för långt"
+      ],
+      "Maximum expiration time reached.": [
+        "Maximal utgångstid uppnådd."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximalt antal bilagor (${ attachmentsCountLimit }) har överskridits"
@@ -5062,6 +5084,9 @@
       ],
       "Signature not verified": [
         "Signatur inte verifierad"
+      ],
+      "Signature verification error.": [
+        "Fel vid signaturverifiering."
       ],
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
@@ -6888,9 +6913,6 @@
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "Alla dina filer kommer att importeras"
-      ],
       "American Express SafeKey logo": [
         "Logga för American Express SafeKey"
       ],
@@ -7545,8 +7567,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8702,6 +8723,9 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
+      "You have ${ unread } in ${ label }.": [
+        "Du har ${ unread } i ${ label }."
+      ],
       "You have ${ unread } in your inbox.": [
         "Du har ${ unread } i din inkorg."
       ],
@@ -9195,6 +9219,9 @@
         "${ count } oläst meddelande",
         "${ count } olästa meddelanden"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
@@ -9328,9 +9355,6 @@
       "Category": [
         "Kategori"
       ],
-      "Category:": [
-        "Kategori:"
-      ],
       "Choose what to do instead": [
         "Välj vad du ska göra istället"
       ],
@@ -9390,6 +9414,9 @@
       ],
       "Credits": [
         "Krediter"
+      ],
+      "Current context": [
+        "Nuvarande kontext"
       ],
       "Date": [
         "Datum"
@@ -10235,6 +10262,9 @@
       ],
       "Privacy policy": [
         "Integritetspolicy"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Återaktivera adressen länkad till denna kalender för att hantera din inbjudan."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Återaktivera adressen länkad till denna kalender för att uppdatera din inbjudan."
@@ -11856,6 +11886,9 @@
       ],
       "Some popular services": [
         "Några populära tjänster"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Växla tjänsterna du använder varje dag till din ${ BRAND_NAME }-adress för bättre säkerhet och integritet."
       ]
     },
     "Onboarding modal": {
@@ -12071,6 +12104,9 @@
       ],
       "Remind me later": [
         "Påminn mig senare"
+      ],
+      "Yes, don't show again": [
+        "Ja, visa inte igen"
       ]
     },
     "Option group": {
@@ -12664,6 +12700,9 @@
       "Text": [
         "Text"
       ],
+      "the writing assistant": [
+        "skrivassistenten"
+      ],
       "Thomas": [
         "Tomas"
       ],
@@ -12796,102 +12835,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
-      "SPRING SALE 2026": [
-        "VÅRREA 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/månad"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "2 TB data storage": [
-        "2 TB lagringsutrymme"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
-      ],
-      "3 TB data storage": [
-        "3 TB lagringsutrymme"
-      ],
-      "500 GB storage": [
-        "500 GB lagringsutrymme"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till 15 000+ servrar i 120+ länder"
-      ],
-      "Access advanced AI models": [
-        "Få åtkomst till avancerade AI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alla premiumfunktioner i Mail, Pass, Drive, VPN och Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockera annonser, spårare och skadlig kod"
-      ],
-      "Built-in 2FA authenticator": [
-        "Inbyggd 2FA-autentiserare"
-      ],
-      "Connect 10 devices at once": [
-        "Anslut 10 enheter samtidigt"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Förläng din prenumeration och spara ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Full åtkomst till ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fullständig chatthistorik med enkelt sök och favoriter"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuella konton för 6 användare"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuella konton för dig och en partner"
-      ],
-      "Online document editor": [
-        "Dokumentredigerare online"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Starkare skydd mot cyberhot"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Obegränsat antal dagliga chattar"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Obegränsade mappar, etiketter och filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsade hide-my-email-alias"
-      ],
-      "Use your own email domain": [
-        "Använd din egen e-postdomän"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "för 12 månader"
-      ],
-      "SPRING SALE": [
-        "VÅRREA"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Ta del av erbjudandet"
@@ -12991,6 +12934,12 @@
       ],
       "PGP-signed message. Sender verification failed": [
         "PGP-signerat meddelande. Avsändarverifiering misslyckades"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst"
+      ],
+      "Stored with zero-access encryption": [
+        "Lagrad med kryptering med noll åtkomst"
       ]
     },
     "Referral": {
@@ -13260,6 +13209,9 @@
       "Sent by you with end-to-end encryption to verified recipient": [
         "Skickat av dig med end-to-end-kryptering till verifierad mottagare",
         "Skickat av dig med end-to-end-kryptering till verifierade mottagare"
+      ],
+      "Stored with zero-access encryption": [
+        "Lagrad med kryptering med noll åtkomst"
       ]
     },
     "session_recovery:available:action": {
@@ -14506,6 +14458,9 @@
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
         "Konversationer från ${ sendersList } kommer att flyttas till ${ folder }"
       ],
+      "Copied '${ code }' to clipboard": [
+        "Kopierade '${ code }' till urklipp"
+      ],
       "Copied to clipboard": [
         "Kopierad till urklipp"
       ],
@@ -15233,6 +15188,9 @@
       ],
       "Filter on...": [
         "Filtrera på …"
+      ],
+      "Folder options": [
+        "Mappalternativ"
       ],
       "Forward": [
         "Vidarebefordra"

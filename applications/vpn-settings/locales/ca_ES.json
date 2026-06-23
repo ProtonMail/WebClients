@@ -1229,6 +1229,9 @@
       "Verify now": [
         "Verifiqueu-ho ara"
       ],
+      "Verify password": [
+        "Verifiqueu la contrasenya"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifica el domini ${ unverifiedSSODomain.DomainName }"
       ],
@@ -2222,6 +2225,11 @@
       ],
       "Take a tour": [
         "Feu una visita guiada"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "S'ometran els duplicats d'importacions anteriors. Desfeu-ho o importeu els missatges més antics a les preferències d'${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -3718,8 +3726,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Importarem els vostres correus electrònics antics, ometrem els duplicats i ens connectarem al vostre Gmail perquè els missatges nous apareguin automàticament. Podreu desactivar la importació en qualsevol moment a la configuració d'Easy Switch."
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Importarem els vostres correus antics i, d'ara endavant, sincronitzarem els missatges nous des de Gmail"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
@@ -3746,10 +3754,10 @@
         "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
       ],
       "You can still login with this address and re-connect at any time.": [
-        "Encara podeu iniciar sessió amb aquesta adreça i reconnectar en qualsevol moment."
+        "Encara podeu iniciar sessió amb aquesta adreça i tornar-vos a connectar en qualsevol moment."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus electrònics a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
+        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Esteu redirigint ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
@@ -4519,6 +4527,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No drive found to import": [
+        "No s'ha trobat cap unitat per importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
@@ -4530,6 +4541,9 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -4786,6 +4800,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
+      ],
+      "Unexpected error, we can't import the files": [
+        "S'ha produït un error inesperat, no podem importar els fitxers"
       ],
       "Unknown error": [
         "Error desconegut"
@@ -6679,9 +6696,6 @@
         "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
         "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "S'importaran tots els vostres fitxers"
-      ],
       "Allocated": [
         "Assignat"
       ],
@@ -7251,6 +7265,9 @@
       ],
       "Failed to fetch logs.": [
         "No s'han pogut obtenir els registres."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
       ],
       "Fill in user details": [
         "Empleneu els detalls de l'usuari"
@@ -9767,6 +9784,9 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Import your emails": [
+        "Importeu els vostres correus electrònics"
       ],
       "Include application logs in bug report": [
         "Inclou els registres de l'aplicació a l'informe d'errors"

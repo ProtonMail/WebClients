@@ -625,7 +625,7 @@
         "载入"
       ],
       "Load image": [
-        "加载图片"
+        "加载图像"
       ],
       "Make a copy": [
         "创建副本"
@@ -916,7 +916,7 @@
         "扫描并下载 (${ nbSelected })"
       ],
       "Scan and Download": [
-        "扫码下载"
+        "扫描并下载"
       ],
       "Search": [
         "搜索"
@@ -3700,6 +3700,9 @@
       "No contacts found to import": [
         "未找到可导入的联系人"
       ],
+      "No drive found to import": [
+        "未找到可导入的云端硬盘"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
@@ -3711,6 +3714,9 @@
       ],
       "Not a valid number": [
         "无效号码"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "您的 ${ DRIVE_APP_NAME } 存储空间不足"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "部分联系人没有邮箱地址：${ noEmailsContactNamesList } "
@@ -3945,6 +3951,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
+      ],
+      "Unexpected error, we can't import the files": [
+        "出现意外错误，无法导入文件"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "未知冲突策略：${ strategy }"
@@ -4983,7 +4992,7 @@
         "${ email } 邀请您加入 ${ albumName }"
       ],
       "${ fileName }: full-size image": [
-        "${ fileName }：完整图片"
+        "${ fileName }：完整图像"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }：小图预览"
@@ -5170,9 +5179,6 @@
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
-      ],
-      "All your files will be imported": [
-        "您所有的文件将被导入"
       ],
       "Already in this folder": [
         "已在此文件夹中"
@@ -5569,6 +5575,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "其他人与您共享的文件和文件夹将显示在此处"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "仅限文件 (不含照片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }) - 总计上限 100 GB，文件数量上限 100,000 个，单文件大小上限 50 GB"
       ],
       "finance": [
         "金融"
@@ -6622,6 +6631,9 @@
       ],
       "We couldn't save this photo to your Drive": [
         "无法将多张照片保存到您的云端硬盘"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "我们无法验证 ${ nameAuthor } 上传了 ${ nodeName }。以下内容可能已被篡改：文件数据顺序。请仅在信任时打开。"
       ],
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
@@ -8170,13 +8182,13 @@
         "图标格式"
       ],
       "Image": [
-        "图片"
+        "图像"
       ],
       "Java Archive (JAR)": [
         "Java 归档 (JAR)"
       ],
       "JPEG image": [
-        "JPEG 图片"
+        "JPEG 图像"
       ],
       "MP3 audio": [
         "MP3 音频"
@@ -9060,7 +9072,7 @@
         "密码管理和身份保护"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
+        "在邮件落款中加入图标、图像、链接、社交网络标识等个性化元素"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
         "对于拥有 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或更多用户的客户，${ BRAND_NAME } 客户支持团队可在欧洲工作时间提供电话支持。"
@@ -9102,10 +9114,10 @@
         "与任何人安全共享单个项目（即使他们不使用 ${ PASS_APP_NAME }）"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
+        "安全存储联系人的电话号码、住址、生日、备注等详细信息，零访问加密技术确保即使是 ${ BRAND_NAME } 也无法解密并访问这些信息。"
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "查看参会者的空闲时间，节省会议安排时间"
+        "查看参与者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
@@ -9377,6 +9389,9 @@
       ],
       "Failed to convert external invitation": [
         "无法转换外部邀请"
+      ],
+      "Failed to load sharing details": [
+        "加载共享详情失败"
       ],
       "Failed to move, please try again": [
         "无法移动，请重试"
@@ -10336,7 +10351,7 @@
         "群组名称"
       ],
       "Image URL": [
-        "图像 URL"
+        "图像地址"
       ],
       "Last name": [
         "姓"
@@ -11481,7 +11496,7 @@
         "使用自己域名的专业邮箱地址，建立信任和品牌的知名度。"
       ],
       "Catch-all email address": [
-        "通配邮件地址"
+        "通配邮箱地址"
       ],
       "Comprehensive privacy and security": [
         "全面的隐私和安全"
@@ -12000,6 +12015,9 @@
       "${ freeUploadLength } of free uploads.": [
         "免费上传 ${ freeUploadLength } 个文件"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "Account recovery": [
         "账户恢复"
       ],
@@ -12255,17 +12273,17 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "数字签名已部分验证。此文件夹是通过公开访问的共享链接由无 ${ BRAND_NAME } 账户的用户上传的，因此无法验证其身份。"
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "数字签名已验证。此文件由 <strong>${ emailAddress }</strong> 安全创建。"
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "数字签名已验证，此文件由 ${ author } 安全创建。"
       ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "数字签名已验证。此文件由 <strong>${ emailAddress }</strong> 安全上传。"
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "数字签名已验证，此文件由 ${ author } 安全上传。"
       ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "数字签名已验证，此文件夹由 <strong>${ emailAddress }</strong> 安全创建。"
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "数字签名已验证，此文件夹由 ${ author } 安全创建。"
       ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "数字签名已验证。此文件夹由 <strong>${ emailAddress }</strong> 安全上传。"
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "数字签名已验证，此文件夹由 ${ author } 安全上传。"
       ],
       "Discard": [
         "放弃"
@@ -12319,7 +12337,7 @@
         "更改邮箱设置"
       ],
       "Edit image": [
-        "更改图片"
+        "编辑图像"
       ],
       "Email addresses": [
         "邮箱地址"
@@ -12550,7 +12568,7 @@
         "无 RAW"
       ],
       "No results found": [
-        "搜索无结果"
+        "未找到结果"
       ],
       "No screenshots": [
         "无屏幕截图"
@@ -12900,17 +12918,17 @@
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "我们无法验证 <strong>${ emailAddress }</strong> 创建了此文件。"
+      "We couldn’t verify that ${ author } created this file.": [
+        "我们无法验证 ${ author } 创建了此文件！"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "我们无法验证此文件夹是由 <strong>${ emailAddress }</strong> 创建的。"
+      "We couldn’t verify that ${ author } created this folder.": [
+        "我们无法验证 ${ author } 创建了此文件夹！"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "我们无法验证此文件是由 <strong>${ emailAddress }</strong> 上传的。"
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "我们无法验证 ${ author } 上传了此文件！"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "我们无法验证此文件夹是由 <strong>${ emailAddress }</strong> 上传的"
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "我们无法验证 ${ author } 上传了此文件夹！"
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "我们无法验证此文件是由匿名用户创建的"
@@ -12926,6 +12944,12 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "我们无法确认此文件内容是由 ${ claimedContentAuthor } 上传的。原因是：${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "我们无法确认该名称由 ${ claimedNameAuthor } 创建或修改。原因：${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "我们无法确认该节点由 ${ claimedKeyAuthor } 创建。原因：${ node.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "迎新优惠"
@@ -13042,8 +13066,11 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "获取 AI 和人工专家的即时协助！"
+      ],
       "Load image": [
-        "加载图片"
+        "加载图像"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "消息和文件名包含在电子邮件中时，将以零访问加密存储"

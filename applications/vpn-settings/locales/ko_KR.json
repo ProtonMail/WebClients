@@ -3440,6 +3440,9 @@
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "단 ${ config.offerPrice }의 비용으로 15 GB 저장공간을 이용해 보세요."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "최대 ${ MAX_SYNC_PAID_USER }개 계정을 연결하려면 ${ planName }(으)로 업그레이드하세요"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
       ],
@@ -3448,9 +3451,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
-      ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "이전 이메일을 불러오고 중복 항목은 건너뛴 뒤 회원님의 Gmail에 연결하여 새 메시지가 자동으로 나타나도록 합니다. Easy Switch 설정에서 언제든지 불러오기를 실행 취소할 수 있습니다"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
@@ -3470,14 +3470,14 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "여전히 이 주소로 로그인하고 언제든지 다시 연결할 수 있습니다."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "귀하는 더 이상 ${ BRAND_NAME }에서 이메일을 수신하고 발신하는 데 ${ address.Email } 주소를 사용하실 수 없습니다. 또한 ${ BRAND_NAME }에서 이 주소로 보내는 메시지는 더 이상 종단간 암호화되지 않으니 유의하시기 바랍니다."
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Gmail 주소 ${ numAddressesOrSync }을(를) ${ MAIL_APP_NAME }로 가져오는 중입니다."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "${ MAX_SYNC_PAID_USER }개의 Gmail 주소가 이미 연결되어 있습니다. 다른 주소를 추가하려면, 연결된 주소 중 하나를 비활성화하십시오."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME }에 외부 계정 주소가 연결되어 있습니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
@@ -3975,7 +3975,7 @@
         "복구 요청 전송됨"
       ],
       "Remove your recovery contacts to continue": [
-        "계속하려면 복구 연락처를 제거하세요"
+        "계속하려면 복구 연락처를 삭제하십시오"
       ],
       "Select recovery contact ${ name }": [
         "복구 연락처 ${ name } 선택"
@@ -8766,6 +8766,9 @@
       "Authenticator app": [
         "인증 앱"
       ],
+      "Automatic email forwarding": [
+        "자동 이메일 전달"
+      ],
       "Awarded": [
         "지급 완료"
       ],
@@ -10451,7 +10454,7 @@
         "중앙화된 설정 및 납부"
       ],
       "Collaborate and share large files": [
-        "큰 파일을 공동으로 작업하고 공유하세요"
+        "큰 파일을 공동으로 작업하고 공유하기"
       ],
       "Contact groups": [
         "연락처 그룹"
@@ -10482,6 +10485,9 @@
       ],
       "Dedicated servers and IP": [
         "전용 서버 및 IP"
+      ],
+      "Dedicated servers optimized for speed": [
+        "속도를 위해 최적화된 전용 서버"
       ],
       "Desktop app": [
         "데스크톱 앱"
@@ -11175,10 +11181,10 @@
         "자동 연결"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "사용자 당 ${ bundleStorage }으로 저장 공간을 부스트 하세요."
+        "사용자 당 ${ bundleStorage }(으)로 저장 공간 확장하기"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+        "최종 ${ bundleStorage }(으)로 저장 공간을 부스트하기"
       ],
       "Browser extension": [
         "브라우저 확장 프로그램"
@@ -11248,11 +11254,17 @@
       "1-2 emails per month": [
         "매월 1-2개 이메일"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "연간 1-4개 이메일. 복구 방법을 최신 상태로 유지하도록 도움을 드립니다."
+      ],
       "2-4 emails per year": [
         "연간 2-4개 이메일"
       ],
       "4-6 emails per year": [
         "연간 4-6개 이메일"
+      ],
+      "Account email updates": [
+        "계정 이메일 업데이트"
       ],
       "Application notifications": [
         "앱 알림"
@@ -11277,6 +11289,12 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "${ BRAND_NAME } 서비스 개선을 위한 설문 조사 참여"
+      ],
+      "Product email updates": [
+        "제품 이메일 업데이트"
+      ],
+      "Recovery checklist": [
+        "복구 방법 체크리스트"
       ]
     },
     "Notification": {
@@ -12602,102 +12620,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "할인 받기"
-      ],
-      "SPRING SALE 2026": [
-        "봄 세일 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/월"
-      ],
-      "15 GB storage": [
-        "15 GB 저장공간"
-      ],
-      "2 TB data storage": [
-        "2 TB 데이터 저장공간"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 저장공간: 현재 요금제의 40배"
-      ],
-      "3 TB data storage": [
-        "3 TB 데이터 저장공간"
-      ],
-      "500 GB storage": [
-        "500 GB 저장공간"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120개국 이상에서 15,000개 이상의 서버에 접근"
-      ],
-      "Access advanced AI models": [
-        "고급 AI 모델 이용"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail, Pass, 드라이브, VPN 및 캘린더의 모든 premium 기능"
-      ],
-      "Block ads, trackers, and malware": [
-        "광고, 트래커 및 멀웨어 차단"
-      ],
-      "Built-in 2FA authenticator": [
-        "내장형 2단계 인증기"
-      ],
-      "Connect 10 devices at once": [
-        "한 번에 기기 10대 연결"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "귀하의 구독을 연장하고 ${ discountPercent }%를 절약하세요!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }에 대한 완전한 접근"
-      ],
-      "Full chat history with easy search and favorites": [
-        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
-      ],
-      "Individual accounts for 6 users": [
-        "6인용 개별 계정"
-      ],
-      "Individual accounts for you and a partner": [
-        "귀하와 파트너를 위한 개별 계정"
-      ],
-      "Online document editor": [
-        "온라인 문서 편집기"
-      ],
-      "Recover previous file versions": [
-        "이전 파일 버전 복구"
-      ],
-      "Stronger protection against cyber threats": [
-        "사이버 위협에 대한 더욱 강력한 보호"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
-      ],
-      "Unlimited daily chats": [
-        "무제한 일일 채팅"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "무제한 폴더, 라벨 및 필터"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "무제한 hide-my-email 별칭"
-      ],
-      "Use your own email domain": [
-        "나만의 이메일 도메인 사용"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "12개월 동안"
-      ],
-      "SPRING SALE": [
-        "봄 세일"
       ]
     },
     "q2campaign2026: Action": {

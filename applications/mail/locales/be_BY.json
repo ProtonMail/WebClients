@@ -102,6 +102,15 @@
       "Alignment": [
         "Выраўноўванне"
       ],
+      "All Read": [
+        "Усе прачытаныя"
+      ],
+      "All Unread": [
+        "Усе непрачытаныя"
+      ],
+      "All Unstarred": [
+        "Усе непазначаныя"
+      ],
       "Apply": [
         "Прымяніць"
       ],
@@ -144,6 +153,9 @@
       "Change password": [
         "Змяніць пароль"
       ],
+      "Change sorting": [
+        "Змяніць сартаванне"
+      ],
       "Chat with us": [
         "Чат з намі"
       ],
@@ -173,6 +185,9 @@
       ],
       "Clear data": [
         "Ачысціць даныя"
+      ],
+      "clear it": [
+        "ачысціць"
       ],
       "Clear query": [
         "Ачысціць запыт"
@@ -234,6 +249,9 @@
       "Continue to ${ planOrAppName }": [
         "Працягнуць у ${ planOrAppName }"
       ],
+      "Continue with categories": [
+        "Працягнуць з катэгорыямі"
+      ],
       "Continue with Free": [
         "Працягнуць з тарыфным планам Free"
       ],
@@ -242,6 +260,12 @@
       ],
       "Continue with Outlook": [
         "Працягнуць з Outlook"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Скапіяваць '${ code }' у буфер абмену"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Скапіяваць '${ code }' у буфер абмену і перамясціць у сметніцу"
       ],
       "Copy address": [
         "Скапіяваць адрас"
@@ -314,6 +338,12 @@
       ],
       "Delete contact group": [
         "Выдаліць групу кантактаў"
+      ],
+      "Delete draft": [
+        "Выдаліць чарнавік"
+      ],
+      "Delete folder": [
+        "Выдаліць папку"
       ],
       "Delete permanently": [
         "Выдаліць незваротна"
@@ -402,6 +432,9 @@
       "Expand": [
         "Разгарнуць"
       ],
+      "Expand composer": [
+        "Разгарнуць рэдактар"
+      ],
       "Expand video conferencing widget": [
         "Разгарнуць віджэт відэаканферэнцыі"
       ],
@@ -420,6 +453,12 @@
       "Export selection as .vcf": [
         "Экспарт вылучэння ў фармат .vcf"
       ],
+      "Fewer search options": [
+        "Менш параметраў пошуку"
+      ],
+      "Filter on...": [
+        "Фільтраваць па..."
+      ],
       "Fit to window": [
         "Па памеры акна"
       ],
@@ -434,6 +473,9 @@
       ],
       "Generate password": [
         "Згенерыраваць пароль"
+      ],
+      "Generate text": [
+        "Згенерыраваць тэкст"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -477,8 +519,14 @@
       "Go to label": [
         "Перайсці ў меткі"
       ],
+      "Go to next page": [
+        "Перайсці да наступнай старонкі"
+      ],
       "Go to panel ${ index }": [
         "Перайсці ў панэль ${ index }"
+      ],
+      "Go to previous page": [
+        "Перайсці на папярэднюю старонку"
       ],
       "Go to settings": [
         "Перайсці ў налады"
@@ -498,8 +546,14 @@
       "Hide": [
         "Схаваць"
       ],
+      "Hide ${ title }": [
+        "Схаваць ${ title }"
+      ],
       "Hide advanced PGP settings": [
         "Схаваць дадатковыя налады PGP"
+      ],
+      "Hide details": [
+        "Схаваць падрабязнасці"
       ],
       "Hide more benefits": [
         "Схаваць больш пераваг"
@@ -509,6 +563,9 @@
       ],
       "Image will be loaded without a proxy": [
         "Відарыс будзе загружаны без проксі"
+      ],
+      "Images will be loaded without a proxy": [
+        "Відарысы будуць загружаны без проксі"
       ],
       "Import": [
         "Імпартаваць"
@@ -561,8 +618,17 @@
       "Join with ${ MEET_APP_NAME }": [
         "Далучыцца пры дапамозе ${ MEET_APP_NAME }"
       ],
+      "Keep inbox as before": [
+        "Пакінуць папярэдні выгляд паштовай скрыні"
+      ],
       "Keep my subscription": [
         "Пакінуць падпіску"
+      ],
+      "Label as": [
+        "Пазначыць як"
+      ],
+      "Label as...": [
+        "Пазначыць як..."
       ],
       "label emails as": [
         "пазначыць лісты як"
@@ -579,11 +645,17 @@
       "Load": [
         "Загрузіць"
       ],
+      "Load embedded images": [
+        "Загружаць убудаваныя відарысы"
+      ],
       "Load image": [
         "Загрузіць відарыс"
       ],
       "Load more": [
         "Загрузіць больш"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты"
       ],
       "Manage addresses": [
         "Кіраванне адрасамі"
@@ -627,6 +699,9 @@
       "Merge contacts": [
         "Аб'яднаць кантакты"
       ],
+      "Modify selection": [
+        "Змяніць выбранае"
+      ],
       "More": [
         "Больш"
       ],
@@ -642,14 +717,23 @@
       "More options for accounts": [
         "Больш параметраў для ўліковых запісаў"
       ],
+      "Most frequent": [
+        "Самыя частыя"
+      ],
       "Move": [
         "Перамясціць"
       ],
       "move emails to": [
         "перамясціць лісты ў"
       ],
+      "Move to archive": [
+        "Перамясціць у архіў"
+      ],
       "Move to folder": [
         "Перамясціць у папку"
+      ],
+      "Move to inbox (not spam)": [
+        "Перамясціць ва ўваходныя (не спам)"
       ],
       "Move to trash": [
         "Перамясціць у сметніцу"
@@ -705,8 +789,14 @@
       "Ordered list": [
         "Упарадкаваны спіс"
       ],
+      "Page ${ pageNumber }": [
+        "Старонка ${ pageNumber }"
+      ],
       "Passphrase": [
         "Парольная фраза"
+      ],
+      "Pause": [
+        "Прыпыніць"
       ],
       "Pay": [
         "Аплаціць"
@@ -744,6 +834,9 @@
       "Re-sign": [
         "Паўторна падпісаць"
       ],
+      "Recently read": [
+        "Нядаўна прачытаныя"
+      ],
       "Reconnect": [
         "Перападключыцца"
       ],
@@ -765,6 +858,9 @@
       "Remove": [
         "Выдаліць"
       ],
+      "Remove ${ attachmentName }": [
+        "Выдаліць ${ attachmentName }"
+      ],
       "Remove bonuses": [
         "Выдаліць бонусы"
       ],
@@ -782,6 +878,9 @@
       ],
       "Remove video conference": [
         "Выдаліць відэаканферэнцыю"
+      ],
+      "Reply securely": [
+        "Бяспечны адказ"
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
@@ -803,6 +902,9 @@
       ],
       "Reset": [
         "Скінуць"
+      ],
+      "Reset search form": [
+        "Скінуць форму пошуку"
       ],
       "Reset to default": [
         "Скінуць да прадвызначаных"
@@ -840,6 +942,9 @@
       "Select ${ planOrAppName }": [
         "Выбраць ${ planOrAppName }"
       ],
+      "Select All": [
+        "Выбраць усе"
+      ],
       "Select all": [
         "Выбраць усе"
       ],
@@ -858,17 +963,26 @@
       "Send": [
         "Адправіць"
       ],
+      "Send anyway": [
+        "Усё роўна адправіць"
+      ],
       "send auto-reply email": [
         "адправіць ліст з аўтаматычным адказам"
       ],
       "Send Feedback": [
         "Адправіць водгук"
       ],
+      "Set": [
+        "Задаць"
+      ],
       "Set as album cover": [
         "Задаць у якасці вокладкі альбома"
       ],
       "Set as default": [
         "Задаць як прадвызначаную"
+      ],
+      "Set encryption": [
+        "Задаць шыфраванне"
       ],
       "Set recovery methods": [
         "Задаць спосабы аднаўлення"
@@ -906,8 +1020,14 @@
       "Show": [
         "Паказаць"
       ],
+      "Show ${ title }": [
+        "Паказаць ${ title }"
+      ],
       "Show advanced PGP settings": [
         "Паказаць дадатковыя налады PGP"
+      ],
+      "Show fewer search options": [
+        "Паказаць менш параметраў пошуку"
       ],
       "Show less": [
         "Паказаць менш"
@@ -941,6 +1061,9 @@
       ],
       "Skip verification": [
         "Прапусціць спраўджанне"
+      ],
+      "Snooze": [
+        "Адкласці"
       ],
       "Start import": [
         "Пачаць імпартаванне"
@@ -987,6 +1110,9 @@
       "Try another method": [
         "Паспрабуйце іншы спосаб"
       ],
+      "Try categories": [
+        "Паспрабуйце катэгорыі"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю з прычыны: ${ saveError }"
       ],
@@ -1007,6 +1133,9 @@
       ],
       "Unordered list": [
         "Неўпарадкаваны спіс"
+      ],
+      "Unstar": [
+        "Зняць пазнаку"
       ],
       "Unsubscribe": [
         "Адпісацца"
@@ -1236,6 +1365,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Калі выйсці цяпер, некаторыя падзеі не будуць імпартаваны"
+      ]
+    },
+    "Alt": {
+      "Unstar message": [
+        "Зняць пазнаку з паведамлення"
       ]
     },
     "Animation": {
@@ -1779,17 +1913,82 @@
         "Пачаць знаёмства"
       ]
     },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Пойдзеце?"
       ]
     },
     "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } прыняў запрашэнне і прапанаваў новы час для гэтай падзеі."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "${ participantName } прыняў запрашэнне на адно паўтарэнне падзеі."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } прыняў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } спытаў аб апошніх абнаўленнях для падзеі, якая не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў сваім календары."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } адхіліў запрашэнне на адно паўтарэнне падзеі."
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } адхіліў запрашэнне на гэту падзею."
+      ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
         "${ participantName } ужо прымаў запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } ужо прымаў запрашэнне на гэту падзею."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } прымае ваша запрашэнне і прапануе новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "${ participantName } ужо адхіляў запрашэнне на адно паўтарэнне падзеі."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } ужо адхіляў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } ужо адхіляў ваша запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+      ],
+      "${ participantName } had previously declined your invitation to one occurrence of the event.": [
+        "${ participantName } ужо адхіляў раней ваша запрашэнне на адно паўтарэнне падзеі."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
+        "${ participantName } ужо прапаноўваў новы час для гэтай падзеі. Гэта прапанова састарэла."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } ужо ўмоўна прымаў запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } умоўна ўжо прымаў запрашэнне на гэту падзею."
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        "${ participantName } умоўна прыняў запрашэнне на гэту падзею."
+      ],
+      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } умоўна прыняў ваша запрашэнне на адно паўтарэнне гэтай падзеі."
+      ],
+      "This invitation is out of date. The event has been canceled.": [
+        "Запрашэнне састарэла. Падзея была скасавана."
+      ],
+      "This invitation is out of date. The event has been deleted.": [
+        "Запрашэнне састарэла. Падзея была выдалена."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Гэта прапанова новага часу не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў сваім календары."
+      ],
+      "This response is out of date. You have no calendars.": [
+        "Гэты адказ састарэў. У вас няма календароў."
       ]
     },
     "Cancellation reminder": {
@@ -2124,6 +2323,19 @@
         "белы"
       ]
     },
+    "Commander action": {
+      "Go to Sent": [
+        "Перайсці ў Адпраўленыя"
+      ],
+      "Search": [
+        "Пошук"
+      ]
+    },
+    "Composer email icon": {
+      "End-to-end encrypted": [
+        "Скразное шыфраванне"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "пачынаецца з"
@@ -2157,6 +2369,9 @@
       ]
     },
     "Confirm modal title": {
+      "Edit and reschedule": [
+        "Рэдагаваць і запланаваць яшчэ раз"
+      ],
       "Quit import customization?": [
         "Выйсці з наладжвання імпартавання?"
       ],
@@ -3096,6 +3311,11 @@
         "За ${ VPN_APP_NAME }"
       ]
     },
+    "CustomFilter": {
+      "Sender": [
+        "Адпраўнік"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/месяц"
@@ -3245,6 +3465,9 @@
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Для лёгкага пераходу вашай каманды ў ${ BRAND_NAME }, імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Палепшыце да ${ LUMO_SHORT_APP_NAME }, каб атрымаць неабмежаваны доступ да памочніка ў напісанні і іншыя функцыі."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
@@ -3266,8 +3489,14 @@
         "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўнікоў не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены.",
         "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўнікоў не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены."
       ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Новыя лісты ад ${ senderEmailAddress } не будуць дастаўляцца, а замест гэтага будуць незваротна выдаляцца."
+      ],
       "No ads. No trackers.": [
         "Без рэкламы і праграм сачэння"
+      ],
+      "No labels": [
+        "Няма метак"
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
@@ -3302,6 +3531,9 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Перападключыце свае ўліковыя запісы, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
       ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Запытайце доступ у свайго адміністратара, каб працягнуць карыстацца ${ LUMO_SHORT_APP_NAME } у ${ MAIL_APP_NAME }."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
       ],
@@ -3334,9 +3566,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
-      ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Мы імпартуем вашы старыя лісты, прапусцім дублікаты і падключым ваш Gmail, каб новыя паведамленні з'яўляліся аўтаматычна. Вы можаце адрабіць імпарт у любы час у наладах Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
@@ -3628,6 +3857,9 @@
         "Падзея пачнецца праз ${ minutesUntilEvent } хвіліны",
         "Падзея пачнецца праз ${ minutesUntilEvent } хвілін",
         "Падзея пачнецца праз ${ minutesUntilEvent } хвілін"
+      ],
+      "Event starts tomorrow": [
+        "Падзея пачнецца заўтра"
       ]
     },
     "Email subject": {
@@ -3725,6 +3957,9 @@
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Немагчыма задаць тэрмін дзеяння, які даўжэйшы за дазволены палітыкай захоўвання."
+      ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
       ],
@@ -3751,6 +3986,9 @@
       ],
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
+      ],
+      "Contact your organization’s administrator to resolve this": [
+        "Звярніцеся да адміністратара вашай арганізацыі, каб вырашыць гэта"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
@@ -4007,6 +4245,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Увядзіце імя, прозвішча або бачнае імя"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Выберыце катэгорыю і напішыце, што пайшло не так з генерацыяй тэксту"
+      ],
       "Please select a country": [
         "Выберыце краіну"
       ],
@@ -4018,6 +4259,9 @@
       ],
       "Please select billing state": [
         "Выберыце штат выстаўлення рахунку"
+      ],
+      "Please try generating the text again": [
+        "Паспрабуйце згенерыраваць тэкст паўторна"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
@@ -4037,11 +4281,17 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Асноўны ключ, атрыманы для карыстальніка ${ BRAND_NAME }, несапраўдны для адпраўкі"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Праблема пры спампоўванні памочніка ў напісанні. Паспрабуйце звычайны рэжым у браўзеры, калі вы выкарыстоўваеце прыватны рэжым або запусціце памочніка ў напісанні на серверы."
+      ],
       "Process aborted": [
         "Працэс перарваны"
       ],
+      "re-activate the previous key": [
+        "паўторна актываваць папярэдні ключ"
+      ],
       "re-importing": [
-        "паўторнае імпартаванне"
+        "паўторна імпартаваць"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Выдалены дублікат атрымальніка: ${ recipents }",
@@ -4057,6 +4307,9 @@
       ],
       "Signature not verified": [
         "Подпіс не спраўджаны"
+      ],
+      "Signature verification error.": [
+        "Памылка спраўджання подпісу."
       ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
@@ -4100,6 +4353,9 @@
       "Tab closed": [
         "Укладка закрыта"
       ],
+      "Thanks for the feedback!": [
+        "Дзякуй за водгук!"
+      ],
       "The amount due has changed. Please try again.": [
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
       ],
@@ -4124,6 +4380,9 @@
       "The label name is too long. Please choose a different name.": [
         "Назва меткі занадта доўгая. Выберыце іншую назву."
       ],
+      "The maximum expiration is 4 weeks": [
+        "Максімальны тэрмін дзеяння складае 4 тыдні"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
       ],
@@ -4133,8 +4392,14 @@
       "The sending key is not valid": [
         "Несапраўдны ключ адпраўкі"
       ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Памочнік у напісанні не можа выканаць ваш запыт. Паспрабуйце змяніць яго."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Узнікла праблема з расшыфроўкай вашага паведамлення. Звярніцеся ў службу падтрымкі кліентаў, калі праблема застанецца."
       ],
       "There was an error when exporting the contacts vCards": [
         "Адбылася памылка пры экспартаванні кантактаў vCard"
@@ -4156,6 +4421,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Гэта назва для меткі недаступна. Выберыце іншую назву."
+      ],
+      "This message has already been sent": [
+        "Гэта паведамленне ўжо было адпраўлена"
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
@@ -4208,6 +4476,9 @@
         "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } вокнаў рэдактара",
         "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } вокнаў рэдактара"
       ],
+      "You did not provide a file.": [
+        "Вы не выбралі файл."
+      ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
       ],
@@ -4228,6 +4499,12 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Немагчыма расшыфраваць ваша паведамленне. Паспрабуйце ${ reimportKeyLink } адрасныя ключы, калі вы выдалілі адзін з іх. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Немагчыма расшыфраваць ваша паведамленне. Ключ, які выкарыстоўваўся для шыфравання гэтага паведамлення, не супадае ні з адным з ключоў, якія звязаны з вашым адрасам. Паспрабуйце ${ reimportKeyLink } адрасныя ключы, калі вы выдалялі якія-небудзь з іх. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -4244,6 +4521,17 @@
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікі",
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў",
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў"
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "Чарнавікі не могуць быць перамешчаны ва Уваходныя"
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        "Адпраўленыя паведамленні не могуць быць перамешчаны ў папку Уваходныя"
+      ],
+      "Sent messages cannot be moved to Spam": [
+        "Адпраўленыя паведамленні не могуць быць перамешчаны ў папку са спамам"
       ]
     },
     "Error importing calendar": {
@@ -4375,6 +4663,12 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
+      ],
+      "An error occurred with the categories": [
+        "Адбылася памылка з катэгорыямі"
+      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -4713,6 +5007,17 @@
         "тэрабайтаў"
       ]
     },
+    "Filter": {
+      "Filter": [
+        "Фільтр"
+      ],
+      "Filter and sort emails": [
+        "Фільтрацыя і сартаванне лістоў"
+      ],
+      "Reset": [
+        "Скінуць"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Архіваваць"
@@ -4745,6 +5050,9 @@
       ]
     },
     "Filter modal type": {
+      "If the subject": [
+        "Калі тэма"
+      ],
       "Select…": [
         "Выбраць…"
       ],
@@ -4856,6 +5164,18 @@
         "Засталося ${ remainingDaysCount } дні",
         "Засталося ${ remainingDaysCount } дзён",
         "Засталося ${ remainingDaysCount } дзён"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Цалкам блакіруйце электронныя лісты ад ашуканцаў."
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Атрымаць адрас ${ BRAND_NAME }"
+      ],
+      "Discover privacy features": [
+        "Пазнаёмцеся з функцыямі прыватнасці"
+      ],
+      "Finish setup": [
+        "Завяршыць наладжванне"
       ]
     },
     "Gmail forwarding": {
@@ -4896,6 +5216,9 @@
       "Apps": [
         "Праграмы"
       ],
+      "Labels": [
+        "Меткі"
+      ],
       "Network": [
         "Сетка"
       ],
@@ -4916,6 +5239,9 @@
       "Drawer": [
         "Высоўнае меню"
       ],
+      "Hardware not compatible": [
+        "Несумяшчальнае абсталяванне"
+      ],
       "Password ends with": [
         "Пароль заканчваецца на"
       ],
@@ -4924,6 +5250,9 @@
       ],
       "Security Center": [
         "Цэнтр бяспекі"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Наладзьце памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -5007,6 +5336,9 @@
         "${ totalAttendees } удзельнікі",
         "${ totalAttendees } удзельнікаў",
         "${ totalAttendees } удзельнікаў"
+      ],
+      "Organizer:": [
+        "Арганізатар:"
       ]
     },
     "Import calendar": {
@@ -5445,6 +5777,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } дапаможа вам хутка і лёгка ствараць лепшыя электронныя лісты."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Панэль ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } — гэта зашыфраванае скразным метадам рашэнне для відэаканферэнцый. Дадайце яго ў свой тарыфны план, каб праводзіць бяспечныя сустрэчы."
       ],
@@ -5631,6 +5969,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Фільтраваць, калі выканана ЛЮБАЯ з наступных умоў)"
       ],
+      "(No Recipient)": [
+        "(Няма атрымальнікаў)"
+      ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** вынік знойдзены ў ${ labelName }",
         "**${ total }** вынікі знойдзены ў ${ labelName }",
@@ -5688,6 +6029,9 @@
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
+      "Activation in progress": [
+        "Выконваецца актывацыя"
+      ],
       "Active": [
         "Актываваць"
       ],
@@ -5733,6 +6077,12 @@
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } метак)"
       ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Усе паведамленні з гэтага спіса рассылкі будуць перамешчаны ў архіў."
+      ],
+      "All messages stored with this label will be permanently deleted.": [
+        "Усе паведамленні, якія захоўваюцца з гэтай меткай будуць незваротна выдалены."
+      ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
@@ -5751,11 +6101,17 @@
       "Amount below minimum (${ amount }).": [
         "Сума ніжэй за мінімум (${ amount })."
       ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Скасаванне падпіскі будзе адпраўлена ад вашага імя."
+      ],
       "and": [
         "і"
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
+      ],
+      "Archive existing messages": [
+        "Архіваваць існуючыя паведамленні"
       ],
       "Are you sure you want to delete this folder?": [
         "Вы сапраўды хочаце выдаліць гэту папку?"
@@ -5787,6 +6143,12 @@
         "Вы сапраўды хочаце незваротна выдаліць ${ count } паведамленняў?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } паведамленняў?"
       ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "Вы сапраўды хочаце незваротна выдаліць гэту размову?"
+      ],
+      "Are you sure you want to permanently delete this message?": [
+        "Вы сапраўды хочаце незваротна выдаліць гэта паведамленне?"
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
       ],
@@ -5798,6 +6160,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Аўтаматычна сартаваць уваходную электронную пошту па катэгорыях"
       ],
       "Awaiting transaction": [
         "Чаканне трансакцыі"
@@ -5819,6 +6184,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Павысце ідэнтычнасць сваёй арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
+      ],
+      "Browse privately and access blocked content.": [
+        "Прыватны агляд і доступ да заблакіраванага змесціва."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
@@ -5850,11 +6218,17 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Пры ачышчэнні даных браўзера таксама адключаецца пошук змесціва паведамлення на гэтай прыладзе. Для пошуку ў паведамленнях іх неабходна будзе спампаваць яшчэ раз."
       ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Ачышчае даныя браўзера (уключаючы спампаваныя паведамленні, …)"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
+      ],
+      "Composer:": [
+        "Рэдактар:"
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
@@ -5949,6 +6323,12 @@
       "Default email application": [
         "Прадвызначаная праграма электроннай пошты"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Ці ведаеце вы, што ў вас ёсць зашыфраванае воблачнае сховішча, якое ўключае ваш уліковы запіс ${ BRAND_NAME }? Пераходзьце ў ${ DRIVE_APP_NAME } і па максімуму выкарыстоўвайце сваю прастору. Гэта абсалютна бясплатна."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Ці ведаеце вы, што мы зарэзервавалі кароткі адрас электроннай пошты адмыслова для вас. Гэта ваша імя карыстальніка перад @${ PM_DOMAIN }”?"
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
       ],
@@ -5966,6 +6346,9 @@
         "Вы сапраўды хочаце спампаваць гэтыя далучэнні?",
         "Вы сапраўды хочаце спампаваць гэтыя далучэнні?",
         "Вы сапраўды хочаце спампаваць гэтыя далучэнні?"
+      ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "Вы сапраўды хочаце паўторна падпісаць кантактныя звесткі і ў працэсе падпісання давяраць ключам з наступнымі адбіткамі?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
@@ -5994,14 +6377,23 @@
       "Drop to import": [
         "Перацягніце, каб імпартаваць"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "З прычыны канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена ${ firstRecipients }."
+      ],
       "Duplicate key updated": [
         "Дублікат ключа абноўлены"
       ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Без намаганняў кіруйце і скасоўвайце падпіску ад інфармацыйнай рассылкі, а таксама на спіс рассылкі."
+      ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
+      ],
+      "Edit expiration time": [
+        "Рэдагаваць тэрмін дзеяння"
       ],
       "Edit link": [
         "Рэдагаваць спасылку"
@@ -6014,6 +6406,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
+      ],
+      "Email tracker protection is disabled": [
+        "Абарона электроннай пошты ад праграм сачэння адключана"
       ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
@@ -6077,6 +6472,9 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Усе функцыі тарыфнага плана ${ planOrAppName }, а яшчэ:"
+      ],
+      "Expiration time": [
+        "Тэрмін дзеяння"
       ],
       "Expired": [
         "Пратэрмінавана"
@@ -6153,8 +6551,14 @@
       "here": [
         "тут"
       ],
+      "Hide original message": [
+        "Схаваць зыходнае паведамленне"
+      ],
       "High Priority": [
         "Высокі прыярытэт"
+      ],
+      "How hide-my-email aliases works": [
+        "Як працуюць псеўданімы Hide-my-email"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
@@ -6219,6 +6623,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
       ],
+      "Include Spam/Trash.": [
+        "Уключыць папкі Спам/Сметніцу"
+      ],
       "Included": [
         "Уключае"
       ],
@@ -6226,10 +6633,7 @@
         "Унаследавана ад бацькоўскай папкі"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -6257,6 +6661,9 @@
       ],
       "JCB logo": [
         "Лагатып JCB"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Далучайцеся да праграмы ${ PROTON_SENTINEL_NAME } для забеспячэння найвышэйшага ўзроўню бяспекі ўліковага запісу і падтрымкі з нашага боку."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а астатнія дзеянні будуць зроблены праграмай."
@@ -6306,6 +6713,9 @@
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
+      ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
       ],
@@ -6317,6 +6727,18 @@
       ],
       "Merged": [
         "Аб'яднана"
+      ],
+      "Message download status:": [
+        "Статус спампоўвання паведамлення:"
+      ],
+      "Message sent": [
+        "Паведамленне адпраўлена"
+      ],
+      "Message sent.": [
+        "Паведамленне адпраўлена."
+      ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Паведамленне будзе адпраўлена раніцай у ${ formattedTime }"
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
@@ -6354,11 +6776,20 @@
       "No label selected": [
         "Метка не выбрана"
       ],
+      "No messages found": [
+        "Паведамленні не знойдзены"
+      ],
+      "No more results found": [
+        "Больш нічога не знойдзена"
+      ],
       "No payment is required at this time.": [
         "У дадзены момант аплата не патрабуецца."
       ],
       "No results found": [
         "Нічога не знойдзена"
+      ],
+      "No trackers found": [
+        "Праграмы сачэння не знойдзены"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ніводны з запампаваных ключоў несапраўдны для шыфравання. Для адпраўкі паведамленняў на гэты адрас, запампуйце сапраўдны ключ або адключыце функцыю \"Шыфраваць лісты\"."
@@ -6408,6 +6839,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
       ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Наша сістэма пазначыла гэта паведамленне як спробу фішынгу. Пераканайце ў яго надзейнасці."
+      ],
       "password": [
         "пароль"
       ],
@@ -6431,6 +6865,9 @@
       ],
       "Phone number": [
         "Нумар тэлефона"
+      ],
+      "Please add at least one recipient.": [
+        "Дадайце прынамсі аднаго атрымальніка."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Папрасіце ўладальніка наўпрост запрасіць вас у дакумент."
@@ -6480,6 +6917,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupName }."
       ],
+      "Please share what the issue is": [
+        "Раскажыце, у чым праблема"
+      ],
       "Please try again in a few moments": [
         "Паўтарыце спробу крыху пазней"
       ],
@@ -6491,6 +6931,9 @@
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
+      ],
+      "Please wait for the action to be completed": [
+        "Пачакайце пакуль дзеянне завершыцца"
       ],
       "Please wait till your changes are synced with the server.": [
         "Пачакайце, пакуль вашы змены сінхранізуюцца з серверам."
@@ -6522,6 +6965,9 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
       ],
+      "Proofread text": [
+        "Вычытка тэксту"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
@@ -6552,6 +6998,15 @@
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
+      "Scheduled send of this message will be canceled.": [
+        "Запланаваная адпраўка гэтага паведамлення будзе скасавана."
+      ],
+      "Scheduling message": [
+        "Планаванне паведамлення"
+      ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Бясплатна абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча."
+      ],
       "Select all ${ elementsCount } in ${ location }": [
         "Выберыце ўсе ${ elementsCount } у ${ location }",
         "Выберыце ўсе ${ elementsCount } у ${ location }",
@@ -6566,6 +7021,12 @@
       ],
       "Send messages at just the right now": [
         "Адправіць паведамленні цяпер"
+      ],
+      "Sender has been blocked.": [
+        "Адпраўнік быў заблакіраваны."
+      ],
+      "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
+        "Адпраўка паведамленняў з адраса @pm.me з'яўляецца платнай функцыяй. Ваша паведамленне будзе адпраўлена з вашага прадвызначанага адраса ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6603,6 +7064,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Адкладайце паведамленні на потым, каб яны знаходзіліся ў верхняй частцы вашай паштовай скрыні, калі вам гэта неабходна"
       ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Адкладзена да ${ dateString } у ${ formattedTime }"
+      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Некаторыя ўрады блакіруюць або абмяжоўваюць доступ да пэўных вэб-сайтаў. VPN дапамагае абысці цэнзуру, захоўваючы вашу актыўнасць і асобу ў таямніцы."
       ],
@@ -6617,6 +7081,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
+      ],
+      "Subject: ": [
+        "Тэма: "
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
@@ -6693,11 +7160,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Няма паведамленняў ад гэтага адпраўніка ў вашай паштовай скрыні."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
+      ],
+      "This conversation contains non-trashed messages.": [
+        "Гэта размова змяшчае паведамленні, якія не былі выдалены."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Гэта размова будзе пазначана як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
@@ -6708,8 +7181,14 @@
       "This file is too large to preview": [
         "Занадта вялікі файл для папярэдняга прагляду"
       ],
+      "This invitation is saved in a disabled calendar.": [
+        "Гэта запрашэнне захавана ў адключаным календары."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Гэта імя або псеўданім для вашай арганізацыі, якое будзе бачнае вашым карыстальнікам. Яго можна змяніць у любы час."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Гэта прызначана для дапамогі ў напісанні. Правярайце дакладнасць прапанаванага тэксту. ${ learnMoreResult }"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
@@ -6722,6 +7201,15 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасцю ў інтэрнэце."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "У гэтага паведамлення ёсць далучаны ключ, якому яшчэ не давяраюць."
+      ],
+      "This message is from a mailing list.": [
+        "Гэта паведамленне са спіса рассылкі."
+      ],
+      "This message is signed by a key that has not been trusted yet.": [
+        "Гэта паведамленне падпісана ключом, які яшчэ не быў давераным."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Гэта паведамленне будзе пазначана як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
@@ -6756,6 +7244,9 @@
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Вы можаце перайсці на платны тарыфны план, каб зняць абмежаванне."
       ],
+      "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
+        "Для таго, каб скасаваць падпіску на гэту рассылку ад ${ boldFrom }, вам будзе накіраваны ліст з наступнымі падрабязнасцямі, якія вызначаюцца адпраўніком рассылкі:"
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных адкрытых ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
       ],
@@ -6774,11 +7265,20 @@
       "Tracking": [
         "Адсочванне"
       ],
+      "Trash existing messages": [
+        "Перамясціць у сметніцу існуючыя паведамленні"
+      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Давяраць ключу \"${ activeSignerText }\", каб спраўдзіць новыя паведамленні ад гэтага кантакту."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
+      ],
+      "Unread conversations": [
+        "Непрачытаныя размовы"
+      ],
+      "Unread messages": [
+        "Непрачытаныя паведамленні"
       ],
       "Unsaved changes": [
         "Незахаваныя змены"
@@ -6798,6 +7298,15 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
+      "Upgrade to support our mission of privacy for all.": [
+        "Палепшыце свой тарыфны план, каб падтрымаць нашу місію прыватнасці для ўсіх."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Палепшыце свой тарыфны план, каб выкарыстоўваць ${ MAIL_APP_NAME } з Apple Mail, Outlook або Thunderbird."
+      ],
       "Upload picture": [
         "Запампоўванне малюнка"
       ],
@@ -6806,6 +7315,12 @@
       ],
       "URL link": [
         "URL-спасылка"
+      ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL-адрас: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Выкарыстоўвайце разнастайныя адрасы электроннай пошты для разнастайных мэт. Такім чынам, вы без намаганняў зможаце размежаваць электронныя лісты на працоўныя, асабістыя і г.д."
       ],
       "User activated": [
         "Карыстальнік актываваны"
@@ -6834,6 +7349,9 @@
       "Warning": [
         "Папярэджанне"
       ],
+      "We could not verify the sender's trusted keys.": [
+        "Не ўдалося спраўдзіць давераныя ключы адпраўніка."
+      ],
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
       ],
@@ -6845,6 +7363,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Выдалены звесткі сачэння з наступных спасылак, каб дапамагчы абараніць вас ад рэкламадаўцаў і іншых асоб, якія спрабуюць адсачыць вашу актыўнасць у інтэрнэце."
       ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
@@ -6875,6 +7396,9 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN выкарыстоўвае тэхналогію шыфравання, каб схаваць ваш IP-адрас пры падключэнні да VPN (унікальны код, які прызначаны вашай прыладзе)."
+      ],
+      "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
+        "Калі вы ўключылі давераныя ключы для ${ senderName }, то гэтыя адкрытыя ключы былі дададзены да кантактных звестак."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы код спраўджання або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -6936,8 +7460,17 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
+      "You do not have any messages here": [
+        "У вас пакуль няма тут паведамленняў"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "У вас ${ unread } у ${ label }."
+      ],
+      "You have ${ unread } in your inbox.": [
+        "У вашай паштовай скрыні ${ unread }."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "У гэтай папцы ў вас захоўваецца **${ count } размова**",
@@ -6968,6 +7501,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
+      ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Вы не вызначылі тэму паведамлення. Усё роўна адправіць паведамленне?"
+      ],
+      "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
+        "Ёмістасць сховішча запоўнена на 100%. Паспрабуйце вызваліць крыху прасторы або павялічце аб'ём сховішча ў сваім уліковым запісе, каб працягнуць ствараць новыя паведамленні."
       ],
       "You may be redirected to your bank’s website.": [
         "Вы будзеце перанакіраваны на вэб-сайт вашага банка."
@@ -7148,6 +7687,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
       ]
     },
     "info": {
@@ -7229,6 +7771,9 @@
       ]
     },
     "Key pinning": {
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Пры націску кнопкі \"Давяраць ключу\" будзе створаны новы кантакт і гэты адкрыты ключ будзе прывязаны да адпраўніка. Лісты з гэтага адраса будуць аўтаматычна крыптаграфічна спраўджаны."
+      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Вы сапраўды хочаце давяраць асноўнаму адкрытаму ключу з наступным адбіткам?",
         "Вы сапраўды хочаце давяраць асноўным адкрытым ключам з наступнымі адбіткамі?",
@@ -7240,6 +7785,11 @@
         "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты.",
         "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты.",
         "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты."
+      ]
+    },
+    "Key validation warning": {
+      "Recipient's key validation failed: ${ validationErrorsMessage }": [
+        "Не ўдалося праверыць ключ атрымальніка: ${ validationErrorsMessage }"
       ]
     },
     "Keyboard shortcut name": {
@@ -7461,6 +8011,9 @@
         "${ count } непрачытаных паведамленняў",
         "${ count } непрачытаных паведамленняў"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ n } month": [
         "${ n } месяц",
         "${ n } месяцы",
@@ -7473,6 +8026,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
+      "/month": [
+        "/месяц"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
       ],
@@ -7481,6 +8037,9 @@
       ],
       "Actions": [
         "Дзеянні"
+      ],
+      "Active filter:": [
+        "Актыўны фільтр:"
       ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
@@ -7502,6 +8061,9 @@
       ],
       "ALL": [
         "УСЕ"
+      ],
+      "Also archive": [
+        "Таксама архіваваць"
       ],
       "AND": [
         "І"
@@ -7578,6 +8140,9 @@
       "City": [
         "Горад"
       ],
+      "Clear logs": [
+        "Ачысціць журналы"
+      ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
       ],
@@ -7605,6 +8170,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Context page": [
+        "Старонка кантэксту"
+      ],
       "Context total": [
         "Усяго кантэксту"
       ],
@@ -7629,8 +8197,14 @@
       "Credits": [
         "Крэдыты"
       ],
+      "Current context": [
+        "Бягучы кантэкст"
+      ],
       "Date": [
         "Дата"
+      ],
+      "Date:": [
+        "Дата:"
       ],
       "Deals, offers, marketing emails": [
         "Акцыі, прапановы, маркетынгавыя лісты"
@@ -7662,6 +8236,9 @@
       "Email address": [
         "Адрас электроннай пошты"
       ],
+      "Email categories": [
+        "Катэгорыі электроннай пошты"
+      ],
       "Email format": [
         "Фармат ліста"
       ],
@@ -7686,6 +8263,9 @@
       "Enable desktop notifications": [
         "Уключыць апавяшчэнні на працоўным стале"
       ],
+      "Enable filter": [
+        "Уключыць фільтр"
+      ],
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
@@ -7698,6 +8278,9 @@
       "Extremely Satisfied": [
         "Вельмі задаволены"
       ],
+      "Filter": [
+        "Фільтр"
+      ],
       "Filter Name": [
         "Назва фільтра"
       ],
@@ -7709,6 +8292,9 @@
       ],
       "Forwards to": [
         "Перасылаць на"
+      ],
+      "From": [
+        "Ад"
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
@@ -7764,6 +8350,9 @@
       "Include application logs in bug report": [
         "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
+      "Information": [
+        "Інфармацыя"
+      ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
       ],
@@ -7775,6 +8364,9 @@
       ],
       "Label as": [
         "Пазначыць меткай"
+      ],
+      "Label ID": [
+        "Ідэнтыфікатар меткі"
       ],
       "Label messages as": [
         "Пазначыць паведамленні як"
@@ -7794,8 +8386,17 @@
       "Last name": [
         "Прозвішча"
       ],
+      "Layout": [
+        "Макет"
+      ],
       "Location": [
         "Месцазнаходжанне"
+      ],
+      "Mail debugging information": [
+        "Інфармацыя аб адладцы пошты"
+      ],
+      "Mail logs": [
+        "Журналы пошты"
       ],
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
@@ -7811,6 +8412,12 @@
       ],
       "Mark as": [
         "Пазначыць як"
+      ],
+      "Message:": [
+        "Паведамленне:"
+      ],
+      "Move messages to": [
+        "Перамясціць паведамленні ў"
       ],
       "Move to": [
         "Перамясціць у"
@@ -7838,6 +8445,9 @@
       ],
       "No label found": [
         "Метка не знойдзена"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Больш вы не прапусціце важныя паведамленні! Цяпер яны адлюстроўваюцца ў раздзеле ${ primaryCopy }. Усё астатняе адсартавана па катэгорыях, таму іх лёгка знайсці і яны не захламляюць вашу паштовую скрыню."
       ],
       "Non-promotional content and news": [
         "Нерэкламны змесціва і навіны"
@@ -7929,6 +8539,9 @@
       "Read": [
         "Прачытаныя"
       ],
+      "Refresh logs": [
+        "Абнавіць журналы"
+      ],
       "Region": [
         "Вобласць"
       ],
@@ -7950,6 +8563,9 @@
       "Send auto-reply": [
         "Адправіць аўтаматычны адказ"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Абагульвайце сваю даступнасць з дапамогай старонак браніравання ў ${ CALENDAR_APP_NAME } і праводзьце бяспечныя сустрэчы з ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Падпісваць лісты"
       ],
@@ -7961,6 +8577,9 @@
       ],
       "Social media updates and activity": [
         "Абнаўленні і актыўнасць у сацыяльных сетках"
+      ],
+      "Sort": [
+        "Сартаванне"
       ],
       "Starred": [
         "З зорачкай"
@@ -7992,6 +8611,9 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
+      "Tab age": [
+        "Укладка ўзросту"
+      ],
       "Tell us more about your experience": [
         "Раскажыце нам больш пра свой досвед"
       ],
@@ -8012,6 +8634,9 @@
       ],
       "Transactions": [
         "Трансакцыі"
+      ],
+      "Undisclosed Recipients": [
+        "Схаваныя атрымальнікі"
       ],
       "Updates": [
         "Абнаўленні"
@@ -8055,6 +8680,9 @@
       "Without attachment": [
         "Без далучэння"
       ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
       "Your alias": [
         "Ваш псеўданім"
       ],
@@ -8090,6 +8718,11 @@
         "Каму"
       ]
     },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Дата"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Колер"
@@ -8098,6 +8731,11 @@
     "Label for contact group name": {
       "Name": [
         "Назва"
+      ]
+    },
+    "Label Recipient": {
+      "To": [
+        "Каму"
       ]
     },
     "Label, credit card": {
@@ -8135,6 +8773,14 @@
         "Каму: ${ to }"
       ]
     },
+    "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Загрузка вашых падпісак на рассылку..."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "У вас адсутнічаюць актыўныя рассылкі або падпіскі на спісы рассылкі."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Бакавая панэль"
@@ -8160,6 +8806,18 @@
       ],
       "contact us": [
         "звязацца з намі"
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Стварыць каляндар, які звязаны з актыўным адрасам электроннай пошты."
+      ],
+      "Create a new calendar to add this event": [
+        "Стварыць новы каляндар, каб дадаць гэту падзею"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Стварыце новы каляндар, каб адказаць на гэта запрашэнне"
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Уключыце адрас электроннай пошты, які звязаны з адключаным календаром, каб скасаваць гэту падзею."
       ],
       "Enforcing 2FA for organizations": [
         "Прымусовае ўключэнне 2ФА для арганізацый"
@@ -8212,8 +8870,20 @@
       "if your data is leaked": [
         "пры ўцечцы вашых даных"
       ],
+      "Labels": [
+        "Меткі"
+      ],
       "Learn more": [
         "Даведацца больш"
+      ],
+      "Manage blocked email addresses": [
+        "Кіраваць заблакіраванымі адрасамі электроннай пошты"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Адкрыць абноўленую падзею ў ${ CALENDAR_APP_NAME }"
+      ],
+      "Outbox": [
+        "Выходныя"
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
@@ -8233,8 +8903,14 @@
       "Resume now": [
         "Узнавіць"
       ],
+      "Scheduled": [
+        "Запланавана"
+      ],
       "settings": [
         "налады"
+      ],
+      "Sign up for free": [
+        "Зарэгіструйцеся бясплатна"
       ],
       "Terms": [
         "Умовы"
@@ -8245,6 +8921,9 @@
       "terms of service": [
         "умовы абслугоўвання"
       ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Дадзены файл ICS змяшчае больш за адну падзею. Спампуйце яго і імпартуйце падзеі ў ${ CALENDAR_APP_NAME }"
+      ],
       "Trash": [
         "Сметніца"
       ],
@@ -8253,6 +8932,12 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Вам неабходна актываваць ключы календара, каб кіраваць гэтым запрашэннем"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Вам неабходна актываваць ключы календара, каб паглядзець абноўленую падзею"
       ]
     },
     "Loading info": {
@@ -8356,8 +9041,14 @@
       ]
     },
     "Mailbox": {
+      "Archive": [
+        "Архіў"
+      ],
       "Inbox": [
         "Уваходныя паведамленні"
+      ],
+      "Spam": [
+        "Спам"
       ]
     },
     "meet_2025: Addon": {
@@ -8470,6 +9161,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Даступна новая версія ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Message notification": {
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Планаванне скасавана. Паведамленне было перамешчана ў чарнавікі."
       ]
     },
     "MIME type": {
@@ -9680,6 +10376,9 @@
       "Passphrase copied to clipboard": [
         "Парольная фраза скапіявана ў буфер абмену"
       ],
+      "Password has been set successfully": [
+        "Пароль быў паспяхова прызначаны"
+      ],
       "Trial started": [
         "Пачаты пробны перыяд"
       ],
@@ -9830,15 +10529,50 @@
         "Неабмежаваная колькасць псеўданімаў, каб абараніць вашу ідэнтычнасць"
       ]
     },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Перанясіце свае лісты ў ${ MAIL_APP_NAME }"
+      ],
+      "Protect your accounts": [
+        "Абараніце свае ўліковыя запісы"
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } гарантуе, што толькі вы і прызначаныя атрымальнікі змогуць атрымаць доступ да вашых лістоў."
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } у Play Store"
+      ],
+      "Advanced encryption": [
+        "Дадатковае шыфраванне"
+      ],
       "browser": [
         "браўзер"
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Выдаленне перамешчаных у сметніцу лістоў і спаму пасля 30 дзён."
       ],
+      "Continue": [
+        "Працягнуць"
+      ],
       "Desktop": [
         "Для камп'ютара"
+      ],
+      "Distraction-free emailing": [
+        "Адпраўка электроннай пошты без адцягнення ўвагі"
+      ],
+      "Download the desktop app": [
+        "Спампаваць праграму для камп'ютара"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Атрымлівайце асалоду ад больш хуткай і мэтанакіраванай адпраўкі электроннай пошты з праграмай для камп'ютара."
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Protection from trackers": [
+        "Абарона ад праграм сачэння"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Для таго, каб пачаць працу выберыце бачнае імя. Менавіта яго ўбачаць карыстальнікі, калі вы адправіце ім ліст, запрашэнне на падзею або абагулены файл."
@@ -9850,6 +10584,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Пазнаёмцеся з усімі сэрвісамі ${ BRAND_NAME }"
+      ],
+      "Make it your own": [
+        "Персаналізуйце выгляд"
       ],
       "Pick a theme": [
         "Выбраць тэму"
@@ -9926,6 +10663,12 @@
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
+      ],
+      "Remind me later": [
+        "Нагадаць мне пазней"
+      ],
+      "Yes, don't show again": [
+        "Так, больш не паказваць"
       ]
     },
     "Option group": {
@@ -10395,6 +11138,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Describe what to change": [
+        "Апішыце, што змяніць"
+      ],
       "E.g., ": [
         "Напрыклад, "
       ],
@@ -10409,6 +11155,9 @@
       ],
       "Enter passphrase": [
         "Увядзіце парольную фразу"
+      ],
+      "Filter folders": [
+        "Фільтр папак"
       ],
       "Filter groups": [
         "Фільтр груп"
@@ -10482,6 +11231,9 @@
       "Search for users or addresses": [
         "Пошук карыстальнікаў або адрасоў"
       ],
+      "Search messages": [
+        "Пошук паведамленняў"
+      ],
       "Search parent folder": [
         "Пошук бацькоўскай папкі"
       ],
@@ -10506,8 +11258,32 @@
       "Start typing an email address": [
         "Пачніце ўводзіць адрас электроннай пошты"
       ],
+      "Subject": [
+        "Тэма"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Абвясці аб надыходзячых падзеях у інфармацыйнай рассылцы\""
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Скасуй мой абанемент у спартыўную залю\""
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Запрасі Алесю на маю вечарыну”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст падзякі майму калегу за дапамагу ў праекце\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы суправаджальнае пісьмо на стажыроўку\""
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Скажыце ${ subject }, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст кліенту\""
+      ],
       "Text": [
         "з тэкстам"
+      ],
+      "the writing assistant": [
+        "памочніку ў напісанні"
       ],
       "Thomas": [
         "Янка"
@@ -10718,6 +11494,23 @@
         "ЛЕТНІ РАСПРОДАЖ"
       ]
     },
+    "Received email icon": {
+      "End-to-end encrypted and signed message": [
+        "Паведамленне падпісана і зашыфравана скразным метадам"
+      ],
+      "End-to-end encrypted message": [
+        "Паведамленне зашыфравана скразным метадам"
+      ],
+      "End-to-end encrypted message from verified sender": [
+        "Паведамленне зашыфравана скразным метадам ад спраўджанага адпраўніка"
+      ],
+      "PGP-encrypted and signed message": [
+        "Паведамленне падпісана і зашыфравана з дапамогай PGP"
+      ],
+      "PGP-encrypted message from verified sender": [
+        "Паведамленне зашыфравана з дапамогай PGP ад спраўджанага адпраўніка"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } за кожнае запрашэнне"
@@ -10797,6 +11590,11 @@
         "${ remainingDays } дзён"
       ]
     },
+    "Reply to calendar invitation": {
+      "Re-encrypting invitation failed. Please try again.": [
+        "Не ўдалося выканаць паўторную спробу шыфравання запрашэння. Паспрабуйце яшчэ раз."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Агляд бяспекі ўліковага запісу"
@@ -10805,6 +11603,14 @@
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Рэгістрацыя завяршылася з памылкай."
+      ]
+    },
+    "Search - no results": {
+      "No messages scheduled": [
+        "Запланаваныя паведамленні адсутнічаюць"
+      ],
+      "No results found": [
+        "Вынікі не знойдзены"
       ]
     },
     "Section": {
@@ -10916,6 +11722,9 @@
       ]
     },
     "Sent email icon": {
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Зашыфравана ${ MAIL_APP_NAME } для праверанага атрымальніка PGP"
+      ],
       "End-to-end encrypted to verified recipient": [
         "Зашыфравана скразным метадам для праверанага атрымальніка"
       ],
@@ -11150,6 +11959,14 @@
         "Адкрыць у ${ appName } (бэта-версія)"
       ]
     },
+    "Signature verification warning": {
+      "Sender could not be verified: Message not signed": [
+        "Не ўдалося праверыць адпраўніка: паведамленне не падпісана"
+      ],
+      "Sender's trusted keys verification failed": [
+        "Не ўдалося спраўдзіць давераныя ключы адпраўніка"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Не падпісваць"
@@ -11174,6 +11991,19 @@
       ],
       "Private, fast, and organized": [
         "Прыватны, хуткі і арганізаваны"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Адкласці паведамленне"
+      ]
+    },
+    "Sort option": {
+      "Largest first": [
+        "Спачатку вялікія"
+      ],
+      "Sort by": [
+        "Сартаваць па"
       ]
     },
     "specialoffer: Action": {
@@ -11417,8 +12247,14 @@
       ]
     },
     "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Даведайцеся, што ўваходзіць у вашу падпіску і атрымлівайце асалоду ад пераваг."
+      ],
       "Email tracking protection": [
         "Абарона ад праграм сачэння электроннай пошты"
+      ],
+      "Schedule send": [
+        "Запланаваць адпраўку"
       ]
     },
     "sso": {
@@ -11435,6 +12271,14 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Увядзіце свой адрас ${ MAIL_APP_NAME } у якасці новага, а потым захавайце, пацвердзіце або спраўдзіце змяненне"
+      ],
+      "Select service to update": [
+        "Выберыце сэрвіс для абнаўлення"
       ]
     },
     "Step in filter modal": {
@@ -12103,7 +12947,7 @@
         "Пазначана зорачкай ${ elementsCount } паведамленняў."
       ],
       "${ elementsCount } message marked as unread.": [
-        "Пазначана як непрачытана ${ elementsCount } паведамленне",
+        "Пазначана як непрачытанае ${ elementsCount } паведамленне",
         "Пазначана як непрачытана ${ elementsCount } паведамленні",
         "Пазначана як непрачытана ${ elementsCount } паведамленняў",
         "Пазначана як непрачытана ${ elementsCount } паведамленняў"
@@ -12174,11 +13018,32 @@
       "Contacts deleted": [
         "Кантакты выдалены"
       ],
+      "Conversation added to ${ labelName }.": [
+        "Размова дададзена да ${ labelName }"
+      ],
       "Conversation deleted": [
         "Размова выдалена"
       ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Размова перамешчана ў ${ labelName }, а адпраўнік дададзены ў ваш спіс не спам."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Размова перамешчана ў ${ labelName }."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Размовы ад ${ sendersList } будуць пазначаны як ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Размовы ад ${ sendersList } будуць перамешчаны ў ${ folder }"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' скапіяваны ў буфер абмену"
+      ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
+      ],
+      "Draft deleted": [
+        "Чарнавік выдалены"
       ],
       "Email address copied to clipboard": [
         "Адрас электроннай пошты скапіяваны ў буфер абмену"
@@ -12197,6 +13062,12 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Апошнія змененыя псеўданімы захоўваюцца ў вашым самым старым сховішчы"
+      ],
+      "Message added to ${ labelName }.": [
+        "Паведамленне дададзена ў ${ labelName }."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Паведамленне перамешчана ў ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Перамясціць ${ selectionCount } размову",
@@ -12442,6 +13313,11 @@
         "${ minutes } хвілін"
       ]
     },
+    "Tip Action": {
+      "Show me how": [
+        "Паказаць як зрабіць гэта"
+      ]
+    },
     "Title": {
       "${ appName } keyboard shortcuts": [
         "Спалучэнні клавіш ${ appName }"
@@ -12457,6 +13333,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ numMessages } message": [
         "${ numMessages } паведамленне",
@@ -12490,6 +13369,9 @@
       ],
       "Account temporarily locked": [
         "Уліковы запіс часова заблакіраваны"
+      ],
+      "Action all messages": [
+        "Дзеянне да ўсіх паведамленняў"
       ],
       "Add a custom logo": [
         "Дадаць карыстальніцкі лагатып"
@@ -12541,6 +13423,9 @@
       ],
       "Auto-deletion is active": [
         "Аўтавыдаленне ў актыўным стане"
+      ],
+      "BCC": [
+        "Схаваная копія"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -12617,8 +13502,17 @@
       "Coupon": [
         "Купон"
       ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Стварайце лепшыя лісты з ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Create contact": [
         "Стварэнне кантакту"
+      ],
+      "Create folder \"${ search }\"": [
+        "Стварыць папку \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Стварэнне меткі \"${ search }\""
       ],
       "Create new group": [
         "Стварэнне новай групы"
@@ -12646,6 +13540,9 @@
       ],
       "Day theme": [
         "Дзённая тэма"
+      ],
+      "Decryption error": [
+        "Памылка расшыфроўкі"
       ],
       "Delete ${ count } contact": [
         "Выдаліць ${ count } кантакт",
@@ -12679,6 +13576,9 @@
       ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"
+      ],
+      "Delete draft": [
+        "Выдаліць чарнавік"
       ],
       "Delete folder?": [
         "Выдаліць папку?"
@@ -12767,6 +13667,9 @@
       "Filter name cannot contain only spaces": [
         "Назва фільтра не можа змяшчаць толькі прабелы"
       ],
+      "Filter on...": [
+        "Фільтраваць па..."
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Атрымайце **${ referralInfo.uiData.refereeRewardAmount }** у крэдытах з ${ planTitle }"
       ],
@@ -12842,6 +13745,12 @@
       "Invalid verification code": [
         "Памылковы код спраўджання"
       ],
+      "Keep this banner hidden?": [
+        "Пакінуць гэты банер схаваным?"
+      ],
+      "Label options": [
+        "Параметры меткі"
+      ],
       "Limit reached": [
         "Дасягнута абмежаванне"
       ],
@@ -12856,6 +13765,15 @@
       ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
+      ],
+      "Mark conversations as unread": [
+        "Пазначыць размовы як непрачытаныя"
+      ],
+      "Mark email as legitimate": [
+        "Пазначыць ліст як надзейны"
+      ],
+      "Mark messages as unread": [
+        "Пазначыць паведамленні як непрачытаныя"
       ],
       "Merge contacts": [
         "Аб'яднанне кантактаў"
@@ -12872,6 +13790,15 @@
       "Mobile": [
         "Для смартфона"
       ],
+      "More": [
+        "Больш"
+      ],
+      "More options": [
+        "Пашыраныя налады"
+      ],
+      "Moving a snoozed message": [
+        "Перамяшчэнне адкладзенага паведамлення"
+      ],
       "Multiple accounts, 1 private inbox": [
         "Некалькі ўліковых запісаў і 1 прыватная паштовая скрыня"
       ],
@@ -12884,8 +13811,14 @@
       "Network error": [
         "Памылка сеткі"
       ],
+      "New message": [
+        "Новае паведамленне"
+      ],
       "Next": [
         "Далей"
+      ],
+      "Next conversation": [
+        "Наступная размова"
       ],
       "Night theme": [
         "Начная тэма"
@@ -12941,6 +13874,9 @@
       "Previous": [
         "Папярэдні"
       ],
+      "Previous conversation": [
+        "Папярэдняя размова"
+      ],
       "Priority support:": [
         "Прыярытэтная падтрымка:"
       ],
@@ -12953,8 +13889,14 @@
       "Re-sign all contacts": [
         "Паўторна падпісаць усе кантакты"
       ],
+      "Re-sign contact": [
+        "Паўторна падпісаць кантакт"
+      ],
       "Re-signing contacts": [
         "Паўторна падпісаць кантакты"
+      ],
+      "Recipients": [
+        "Атрымальнікі"
       ],
       "Recommended": [
         "Рэкамендаваны"
@@ -12973,6 +13915,9 @@
       ],
       "Remove forwarding address": [
         "Выдаліць адрас перасылкі"
+      ],
+      "Remove from list?": [
+        "Выдаліць са спіса?"
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
@@ -13009,6 +13954,12 @@
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Адпраўка і атрыманне лістоў Gmail з дапамогай ${ MAIL_APP_NAME }"
+      ],
+      "Send email": [
+        "Адправіць ліст"
+      ],
+      "Send with changed preferences?": [
+        "Адправіць са змененымі параметрамі?"
       ],
       "Send with encryption disabled?": [
         "Адправіць без шыфравання?"
@@ -13087,6 +14038,9 @@
         "Давяраць новым ключам?",
         "Давяраць новым ключам?",
         "Давяраць новым ключам?"
+      ],
+      "Trust pinned keys?": [
+        "Давяраць замацаваным ключам?"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
@@ -13177,6 +14131,9 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Your free trial has ended": [
+        "Час пробнага перыяду завяршыўся"
       ],
       "Your plan": [
         "Ваш тарыфны план"
@@ -13527,6 +14484,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Панядзелак у ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

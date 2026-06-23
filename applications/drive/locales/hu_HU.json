@@ -10909,18 +10909,6 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitális aláírás részben ellenőrizve. Ezt a mappát egy nyilvánosan elérhető megosztási hivatkozás használatával töltötte fel egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, akinek a személyazonossága nem ellenőrizhető."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Digitális aláírás ellenőrizve. Ezt a fájlt biztonságosan létrehozta <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Digitális aláírás ellenőrizve. Ezt a fájlt biztonságosan feltöltötte <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Digitális aláírás ellenőrizve. Ezt a mappát biztonságosan létrehozta <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Digitális aláírás ellenőrizve. Ezt a mappát biztonságosan feltöltötte <strong>${ emailAddress }</strong>."
-      ],
       "Discard": [
         "Elvetés"
       ],
@@ -11477,18 +11465,6 @@
       ],
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Nem tudtuk megerősíteni, hogy <strong>${ emailAddress }</strong> hozta létre ezt a fájlt."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Nem tudtuk megerősíteni, hogy <strong>${ emailAddress }</strong> hozta létre ezt a mappát."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Nem tudtuk megerősíteni, hogy <strong>${ emailAddress }</strong> töltötte fel ezt a fájlt."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Nem tudtuk megerősíteni, hogy <strong>${ emailAddress }</strong> töltötte fel ezt a mappát."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Nem tudtuk megerősíteni, hogy egy anonim felhasználó hozta létre ezt a fájlt."
