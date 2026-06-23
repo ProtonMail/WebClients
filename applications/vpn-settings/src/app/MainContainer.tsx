@@ -332,32 +332,32 @@ const MainContainer: FunctionComponent = () => {
                                     <Route path={vpnRoutes.dashboardV2.to}>
                                         <DashboardTelemetry app={app} />
                                         <AutomaticSubscriptionModal />
-                                        <PrivateMainSettingsArea
-                                            config={vpnRoutes.dashboardV2}
-                                            mainAreaClass="bg-lowered settings-cards"
-                                            wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
-                                            style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
-                                        >
-                                            <UpsellModalTelemetryProvider context="account-home">
+                                        <UpsellModalTelemetryProvider context="account-home">
+                                            <PrivateMainSettingsArea
+                                                config={vpnRoutes.dashboardV2}
+                                                mainAreaClass="bg-lowered settings-cards"
+                                                wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+                                                style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
+                                            >
                                                 <YourPlanSectionV2 app={app} />
                                                 <YourPlanUpsellsSectionV2 app={app} />
                                                 <VPNDownloadAndInfoSection app={app} />
                                                 <VpnAlsoInYourPlanSection app={app} />
                                                 <VpnBlogSection />
-                                            </UpsellModalTelemetryProvider>
-                                        </PrivateMainSettingsArea>
+                                            </PrivateMainSettingsArea>
+                                        </UpsellModalTelemetryProvider>
                                     </Route>
                                 )}
                                 {getIsSectionAvailable(vpnRoutes.subscription) && (
                                     <Route path={vpnRoutes.subscription.to}>
                                         <AutomaticSubscriptionModal />
-                                        <PrivateMainSettingsArea
-                                            config={vpnRoutes.subscription}
-                                            mainAreaClass="bg-lowered settings-cards"
-                                            wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
-                                            style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
-                                        >
-                                            <UpsellModalTelemetryProvider context="account-home">
+                                        <UpsellModalTelemetryProvider context="account-home">
+                                            <PrivateMainSettingsArea
+                                                config={vpnRoutes.subscription}
+                                                mainAreaClass="bg-lowered settings-cards"
+                                                wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+                                                style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
+                                            >
                                                 <YourPlanSectionV2
                                                     app={app}
                                                     editBillingCycle={true}
@@ -371,8 +371,8 @@ const MainContainer: FunctionComponent = () => {
                                                 <CancelSubscriptionSection app={app} />
                                                 <DowngradeSubscriptionSection app={app} />
                                                 <CancelSubscriptionViaSupportSection />
-                                            </UpsellModalTelemetryProvider>
-                                        </PrivateMainSettingsArea>
+                                            </PrivateMainSettingsArea>
+                                        </UpsellModalTelemetryProvider>
                                     </Route>
                                 )}
                                 {getIsSectionAvailable(vpnRoutes.dashboard) && (
