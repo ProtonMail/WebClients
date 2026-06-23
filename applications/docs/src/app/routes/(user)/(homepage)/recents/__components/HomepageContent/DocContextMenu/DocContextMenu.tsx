@@ -15,7 +15,8 @@ import { useEvent } from '~/utils/misc'
 import { useHomepageView } from '../../../__utils/homepage-view'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
-import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import { useLoadRecentsWithSdkEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import { MemberRole } from '@proton/drive'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
   currentDocument: RecentDocumentsItem | undefined
@@ -26,7 +27,7 @@ export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
 }
 
 export function DocContextMenu({ anchorRef, isOpen, position, open, close, currentDocument }: DocContextMenuProps) {
-  const sdkSharingModalEnabled = useSharingModalDriveSdkEnabled()
+  const canShare = useCanShare(currentDocument)
 
   // NOTE: this effect was copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // I'm not actually sure it's necessary here, but I'm leaving it in for now just in case.
@@ -73,11 +74,6 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
 
   const separator = <ContextSeparator className="my-1" />
 
-  const canShare =
-    sdkSharingModalEnabled && currentDocument.permissions
-      ? rawPermissionToRole(currentDocument.permissions).canShare()
-      : !currentDocument.isSharedWithMe
-
   return (
     <>
       <ContextMenu
@@ -111,4 +107,22 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
       </ContextMenu>
     </>
   )
+}
+
+function useCanShare(currentDocument: RecentDocumentsItem | undefined) {
+  const sdkSharingModalEnabled = useSharingModalDriveSdkEnabled()
+  const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
+
+  if (!currentDocument) {
+    return false
+  }
+
+  if (sdkSharingModalEnabled) {
+    if (loadRecentsWithSdkEnabled) {
+      return currentDocument.effectiveRole === MemberRole.Admin
+    } else if (currentDocument.permissions) {
+      return rawPermissionToRole(currentDocument.permissions).canShare()
+    }
+  }
+  return !currentDocument.isSharedWithMe
 }
