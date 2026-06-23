@@ -122,19 +122,19 @@ const AccountSettingsRouter = ({
                 <Route path={getSectionPath(path, vpnDashboardV2)}>
                     <DashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
-                    <PrivateMainSettingsArea
-                        config={vpnDashboardV2}
-                        variant={SettingsLayoutVariant.Card}
-                        maxWidth={SettingsCardMaxWidth.Wide}
-                    >
-                        <UpsellModalTelemetryProvider context="account-home">
+                    <UpsellModalTelemetryProvider context="account-home">
+                        <PrivateMainSettingsArea
+                            config={vpnDashboardV2}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Wide}
+                        >
                             <YourPlanSectionV2 app={app} />
                             <YourPlanUpsellsSectionV2 app={app} />
                             <VPNDownloadAndInfoSection app={app} />
                             <VpnAlsoInYourPlanSection app={app} />
                             <VpnBlogSection />
-                        </UpsellModalTelemetryProvider>
-                    </PrivateMainSettingsArea>
+                        </PrivateMainSettingsArea>
+                    </UpsellModalTelemetryProvider>
                 </Route>
             )}
             {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboardV2' && (
@@ -147,12 +147,12 @@ const AccountSettingsRouter = ({
             {getIsSectionAvailable(subscription) && (
                 <Route path={getSectionPath(path, subscription)}>
                     <AutomaticSubscriptionModal />
-                    <PrivateMainSettingsArea
-                        config={subscription}
-                        variant={SettingsLayoutVariant.Card}
-                        maxWidth={SettingsCardMaxWidth.Wide}
-                    >
-                        <UpsellModalTelemetryProvider context="account-home">
+                    <UpsellModalTelemetryProvider context="account-home">
+                        <PrivateMainSettingsArea
+                            config={subscription}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Wide}
+                        >
                             <YourPlanSectionV2
                                 app={app}
                                 editBillingCycle={true}
@@ -168,8 +168,8 @@ const AccountSettingsRouter = ({
                             <CancelSubscriptionSection app={app} />
                             <CancelSubscriptionViaSupportSection />
                             <DowngradeSubscriptionSection app={app} />
-                        </UpsellModalTelemetryProvider>
-                    </PrivateMainSettingsArea>
+                        </PrivateMainSettingsArea>
+                    </UpsellModalTelemetryProvider>
                 </Route>
             )}
             {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboard' && (
