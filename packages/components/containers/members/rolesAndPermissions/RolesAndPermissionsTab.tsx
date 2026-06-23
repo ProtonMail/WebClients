@@ -1,5 +1,8 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { OrganizationRole, RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
@@ -34,6 +37,8 @@ interface Props {
     userRoles?: RoleAssignment[];
     loadingRoles: boolean;
     isGroupContext?: boolean;
+    disabled?: boolean;
+    banner?: ReactNode;
 }
 
 const RolesAndPermissionsTab = ({
@@ -43,6 +48,8 @@ const RolesAndPermissionsTab = ({
     userRoles,
     loadingRoles,
     isGroupContext = false,
+    disabled = false,
+    banner,
 }: Props) => {
     const rows = buildRows(organizationRoles, userRoles, selectedRoles);
 
@@ -57,22 +64,23 @@ const RolesAndPermissionsTab = ({
     };
 
     return (
-        <>
-            <p className="color-weak mt-6 mb-8">
+        <div className="flex flex-column gap-4 mt-6">
+            <p className="color-weak m-0">
                 {isGroupContext
                     ? c('group_modal')
                           .t`Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.`
                     : c('user_modal')
                           .t`Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.`}
             </p>
+            {banner && <Banner variant={BannerVariants.INFO}>{banner}</Banner>}
             {loadingRoles ? (
                 <div className="flex justify-center py-4">
                     <CircleLoader />
                 </div>
             ) : (
-                <RoleCheckList rows={rows} onToggle={handleToggle} />
+                <RoleCheckList rows={rows} onToggle={handleToggle} disabled={disabled} />
             )}
-        </>
+        </div>
     );
 };
 
