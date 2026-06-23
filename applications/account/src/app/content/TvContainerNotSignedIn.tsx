@@ -10,7 +10,6 @@ import { TelemetryMeasurementGroups, TelemetryVpnTvEvents } from '@proton/shared
 import { isAndroid } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { setItem } from '@proton/shared/lib/helpers/storage';
-import { useFlag } from '@proton/unleash/useFlag';
 import { TvNotSignedIn } from '@proton/vpn/components/tv';
 import { VPN_TV_USER_TIER } from '@proton/vpn/constants/tvUserTier';
 
@@ -21,7 +20,6 @@ import type { Paths } from './helper';
 
 export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: URLSearchParams; paths: Paths }) => {
     const api = useApi();
-    const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
 
     useEffectOnce(() => {
         void sendTelemetryReport({
@@ -46,7 +44,7 @@ export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: 
                 <TvNotSignedIn searchParams={searchParams} paths={paths} />
                 <SupportDropdown buttonClassName="mx-auto link link-focus" content={c('Link').t`Trouble signing in?`}>
                     <Link
-                        to={`${paths.reset}?variant=${!unauthedForgotPasswordEnabled ? 'a' : 'b'}`}
+                        to={paths.reset}
                         className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                     >
                         <IcKey />
