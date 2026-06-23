@@ -4134,6 +4134,15 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
+      ],
+      "No drive found to import": [
+        "İçe aktarılacak drive bulunamadı"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
       ]
     },
     "error": {
@@ -7366,6 +7375,9 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "${ nameAuthor } tarafından yüklenen ${ nodeName } dosyası doğrulanamadı. Şu ögeler üzerinde oynanmış olabilir: Dosya verileri sıralaması. Yalnızca güveniyorsanız açın."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ]
     },
     "info": {

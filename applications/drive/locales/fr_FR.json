@@ -4134,6 +4134,15 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
+      ],
+      "No drive found to import": [
+        "Aucun lecteur détecté pour l'importation"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
       ]
     },
     "error": {
@@ -7358,6 +7367,9 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nous n'avons pas pu vérifier que ${ nameAuthor } a importé ${ nodeName }. Les éléments suivants pourraient avoir été falsifiés : ordre des données du fichier. Ouvrez uniquement si vous faites confiance à ce fichier."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ]
     },
     "info": {

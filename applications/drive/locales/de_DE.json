@@ -4125,6 +4125,15 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
+      ],
+      "No drive found to import": [
+        "Es wurde kein Laufwerk zum Importieren gefunden"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Nicht genügend Speicherplatz in deinem ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ]
     },
     "error": {
@@ -7342,6 +7351,12 @@
       ],
       "Upgrade to get more storage space": [
         "Upgraden für zusätzlichen Speicherplatz"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Wir konnten nicht verifizieren, dass ${ nameAuthor } ${ nodeName } hochgeladen hat. Möglicherweise wurde Folgendes manipuliert: Reihenfolge der Dateidaten. Öffne die Datei nur, wenn du ihr vertraust."
       ]
     },
     "info": {
@@ -13880,6 +13895,12 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "Wir konnten nicht verifizieren, dass ${ author } diesen Ordner hochgeladen hat."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Wir konnten nicht bestätigen, dass der Name von ${ claimedNameAuthor } erstellt oder geändert wurde. Der Grund dafür ist: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Wir konnten nicht bestätigen, dass der Knoten von ${ claimedKeyAuthor } erstellt wurde. Der Grund dafür ist: ${ node.keyAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
