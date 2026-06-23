@@ -1223,6 +1223,9 @@
       "Verify now": [
         "Verifiera nu"
       ],
+      "Verify password": [
+        "Verifiera lösenord"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifiera domänen ${ unverifiedSSODomain.DomainName }"
       ],
@@ -3670,9 +3673,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Vi importerar dina gamla e-postmeddelanden, hoppar över dubbletter och ansluter till ditt Gmail så att nya meddelanden visas automatiskt. Du kan ångra importen när som helst i inställningarna för Easy Switch."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
@@ -3696,12 +3696,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Du kan fortfarande logga in med denna adress och återansluta när som helst."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Du kommer inte längre att kunna använda ${ address.Email } för att ta emot och skicka e-post i ${ BRAND_NAME }. Observera också att meddelanden som skickas till denna adress från ${ BRAND_NAME } inte längre kommer att vara end-to-end-krypterade."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
@@ -6577,9 +6571,6 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
-      ],
-      "All your files will be imported": [
-        "Alla dina filer kommer att importeras"
       ],
       "Allocated": [
         "Tilldelad"
@@ -10618,6 +10609,9 @@
       "Document and spreadsheet editor": [
         "Dokument- och kalkylbladsredigerare"
       ],
+      "Email writing assistant": [
+        "Skrivassistent för e-post"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
       ],
@@ -13309,102 +13303,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
-      "SPRING SALE 2026": [
-        "VÅRREA 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/månad"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "2 TB data storage": [
-        "2 TB lagringsutrymme"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
-      ],
-      "3 TB data storage": [
-        "3 TB lagringsutrymme"
-      ],
-      "500 GB storage": [
-        "500 GB lagringsutrymme"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till 15 000+ servrar i 120+ länder"
-      ],
-      "Access advanced AI models": [
-        "Få åtkomst till avancerade AI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alla premiumfunktioner i Mail, Pass, Drive, VPN och Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockera annonser, spårare och skadlig kod"
-      ],
-      "Built-in 2FA authenticator": [
-        "Inbyggd 2FA-autentiserare"
-      ],
-      "Connect 10 devices at once": [
-        "Anslut 10 enheter samtidigt"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Förläng din prenumeration och spara ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Full åtkomst till ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fullständig chatthistorik med enkelt sök och favoriter"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuella konton för 6 användare"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuella konton för dig och en partner"
-      ],
-      "Online document editor": [
-        "Dokumentredigerare online"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Starkare skydd mot cyberhot"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Obegränsat antal dagliga chattar"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Obegränsade mappar, etiketter och filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsade hide-my-email-alias"
-      ],
-      "Use your own email domain": [
-        "Använd din egen e-postdomän"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "för 12 månader"
-      ],
-      "SPRING SALE": [
-        "VÅRREA"
       ]
     },
     "q2campaign2026: Action": {
@@ -18129,6 +18027,9 @@
       ],
       "Are you sure you want to remove your notification email?": [
         "Är du säker på att du vill ta bort din e-postavisering?"
+      ],
+      "Are you sure you want to remove your recovery email?": [
+        "Är du säker på att du vill ta bort din e-post för återställning?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna få dagliga e-postaviseringar."

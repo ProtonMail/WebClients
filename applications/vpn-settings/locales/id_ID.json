@@ -3297,9 +3297,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Impor akan dijeda saat penyimpanan mencapai 80% untuk menyisakan ruang bagi pesan baru."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Email lama akan diimpor, duplikat akan dilewati, dan dihubungkan ke Gmail agar pesan baru muncul secara otomatis. Impor dapat diurungkan kapan saja di pengaturan Easy Switch."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Impor email dari Gmail telah dimulai. Anda akan diberi tahu setelah selesai."
       ],
@@ -3314,12 +3311,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Kini dapat mengirim email dari ${ BRAND_NAME } menggunakan alamat ini."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Masih dapat masuk dengan alamat ini dan menghubungkan kembali kapan saja."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Tidak akan dapat lagi menggunakan ${ address.Email } untuk menerima dan mengirim email di ${ BRAND_NAME }. Perlu diperhatikan juga bahwa pesan yang dikirim ke alamat ini dari ${ BRAND_NAME } tidak akan lagi terenkripsi secara end-to-end."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya ${ newUserStorageText } pesan Gmail terbaru Anda yang akan diimpor"

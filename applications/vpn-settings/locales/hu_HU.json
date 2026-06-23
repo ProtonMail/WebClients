@@ -3063,9 +3063,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Az importálást 80%-os tárhelytelítettségnél szüneteltetjük, hogy helyet biztosítsunk az új üzeneteknek."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Importáljuk a régi e-mailjeit, átugorjuk a duplikátumokat, és kapcsolódunk a Gmail-fiókjához, hogy az új üzenetek automatikusan megjelenjenek. Az importálást bármikor visszavonhatja az Easy Switch beállításaiban"
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Elindítottuk az e-mailjei importálását a Gmailből. Értesíteni fogjuk, ha befejeződött."
       ],
@@ -3080,12 +3077,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Mostantól küldhet e-maileket a ${ BRAND_NAME } szolgáltatásból erről a címről."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Ezzel a címmel továbbra is bejelentkezhet, és bármikor újra összekapcsolhatja."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "A továbbiakban nem fogja tudni használni a(z) ${ address.Email } címet e-mailek fogadására és küldésére a ${ BRAND_NAME } szolgáltatásban. Kérjük, vegye figyelembe azt is, hogy a ${ BRAND_NAME } szolgáltatásból erre a címre küldött üzenetek többé nem lesznek végpontok között titkosítva."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail-üzeneteiből importálunk ${ newUserStorageText } mennyiséget"
