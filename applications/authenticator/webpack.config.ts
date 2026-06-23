@@ -33,7 +33,11 @@ const config: Configuration = {
     },
     module: {
         strictExportPresence: true, // Make missing exports an error instead of warning
-        rules: [...getJsLoaders(webpackOptions), ...getCssLoaders(webpackOptions), ...getAssetsLoaders(webpackOptions)],
+        rules: [
+            ...getJsLoaders(webpackOptions),
+            ...getCssLoaders({ browserslist: undefined, noLogicalScss: true }),
+            ...getAssetsLoaders(webpackOptions),
+        ],
     },
     resolve: {
         alias: { 'proton-authenticator': path.resolve(__dirname, 'src/') },
