@@ -1,3 +1,4 @@
+import browserslist from 'browserslist';
 import path from 'path';
 import type { Configuration } from 'webpack';
 import 'webpack-dev-server';
@@ -20,6 +21,14 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
     // This folder is separate from the assets folder because they are special assets which get served through
     // a long-term storage
     const assetsFolder = 'assets/static';
+
+    // The webpack target resolves the env section straight from the root .browserslistrc (see `target`
+    // below). The babel/css loaders need the resolved query, so derive it from the same env to keep them
+    // in sync, unless an app supplied an explicit override. (webpack only accepts an env name or config
+    // path in `browserslist:<...>`, not a raw query, once a .browserslistrc is discoverable.)
+    const browserslistQuery =
+        webpackOptions.browserslist ?? browserslist(null, { env: webpackOptions.browserslistEnv }).join(', ');
+    const loaderOptions = { ...webpackOptions, browserslist: browserslistQuery };
 
     return {
         bail: webpackOptions.isProduction,
@@ -73,9 +82,9 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
         module: {
             rules: [
                 ...(webpackOptions.babelLoader
-                    ? jsBabelLoader.getJsLoaders(webpackOptions)
-                    : jsSwcLoader.getJsLoaders(webpackOptions)),
-                ...getCssLoaders(webpackOptions),
+                    ? jsBabelLoader.getJsLoaders(loaderOptions)
+                    : jsSwcLoader.getJsLoaders(loaderOptions)),
+                ...getCssLoaders(loaderOptions),
                 ...getAssetsLoaders(webpackOptions),
             ],
             strictExportPresence: true, // Make missing exports an error instead of warning
@@ -138,7 +147,7 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
                 stream: false,
             },
         },
-        target: `browserslist:${webpackOptions.browserslist}`,
+        target: `browserslist:${webpackOptions.browserslistEnv}`,
         watchOptions: {
             aggregateTimeout: 600,
             ignored: /dist|node_modules|locales|\.(gif|jpeg|jpg|ico|png|svg)/,

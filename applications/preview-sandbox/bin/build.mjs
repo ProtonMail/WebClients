@@ -18,7 +18,9 @@ esbuild.buildSync({
     bundle: true,
 
     platform: 'browser',
-    target: browserslistToEsbuild('> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14'),
+
+    // Targets come from the root .browserslistrc
+    target: browserslistToEsbuild(undefined, { env: isProd ? 'production' : 'development' }),
 
     entryPoints: [path.join(srcDir, 'index.ts')],
     outfile: outFile,
