@@ -19,7 +19,6 @@ import { PLANS } from '@proton/payments/core/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import IcCircleRadioFilled from '@proton/styles/assets/img/meet/ic-circle-radio-filled.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
@@ -79,8 +78,6 @@ const RecordingUpsellButton = ({ isSubUser }: { isSubUser?: boolean }) => {
 };
 
 export const RecordingControls = () => {
-    const isMeetingRecordingEnabled = useFlag('MeetingRecording');
-
     const { startRecording, finishRecording } = useMeetingRecorderContext();
     const { createNotification } = useNotifications();
     const isLargerThanMd = useIsLargerThanMd();
@@ -99,7 +96,7 @@ export const RecordingControls = () => {
 
     const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin;
 
-    const shouldDisplayRecordingControls = hasAdminPermission && isMeetingRecordingEnabled;
+    const shouldDisplayRecordingControls = hasAdminPermission;
 
     const handleStartRecording = async () => {
         setShowStartRecordingConfirmation(false);
