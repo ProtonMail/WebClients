@@ -14,12 +14,12 @@ import {
     setPasswordGeneratorPolicySettings,
     updateUrlPauseListEntry,
 } from '@proton/pass/lib/organization/organization.requests';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
+import { parseUnpolledShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { createVault } from '@proton/pass/lib/vaults/vault.requests';
-import type { ItemRevision, Api as PassApi } from '@proton/pass/types';
+import type { ItemRevision, Api as PassApi, Share, ShareType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { maxAgeMemoize } from '@proton/pass/utils/fp/memo';
@@ -32,7 +32,6 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { UNIX_DAY, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { epochToMs } from '@proton/pass/utils/time/epoch';
 import type { Api } from '@proton/shared/lib/interfaces';
-import unary from '@proton/utils/unary';
 
 import type { PassBridge, PassBridgeAliasItem } from './types';
 
@@ -65,12 +64,14 @@ export const createPassBridge = (api: Api): PassBridge => {
                     getDefault: maxAgeMemoize(
                         async () => {
                             const encryptedShares = await requestShares();
-                            const shares = (await Promise.all(encryptedShares.map(unary(parseShareResponse)))).filter(
-                                truthy
-                            );
+                            const shares = await Promise.all(encryptedShares.map(parseUnpolledShareResponse));
 
                             const candidates = shares
-                                .filter(and(isActiveVault, isWritableVault, isOwnVault))
+                                .filter(
+                                    (share): share is Share<ShareType.Vault> =>
+                                        /** FIXME: Add support for predicate type narrowing in `and` combinator */
+                                        truthy(share) && and(isActiveVault, isWritableVault, isOwnVault)(share)
+                                )
                                 .sort(sortOn('createTime', 'ASC'));
 
                             return first(candidates);
