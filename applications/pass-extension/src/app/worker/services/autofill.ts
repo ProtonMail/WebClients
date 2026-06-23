@@ -340,18 +340,35 @@ export const createAutoFillService = () => {
         WorkerMessageType.AUTOFILL_LOGIN_QUERY,
         onContextReady(async ({ getState }, { payload }, sender) => {
             const tabId = sender.tab?.id;
-            if (!getState().authorized || tabId === undefined) throw new Error('Invalid autofill query');
+            const frameId = payload.frameId ?? sender.frameId;
 
-            const host = await (async () => {
-                if (payload.domain) return payload.domain;
-                if (tabId) return (await browser.tabs.get(tabId))?.url;
-                else throw new Error('');
-            })();
+            if (!getState().authorized || tabId === undefined || frameId === undefined) {
+                throw new Error('Invalid autofill query');
+            }
+
+            /** Callers that are NOT in the field's frame must pass `frameId`.
+             * Candidates are scoped to the focused field's frame so top-level credentials
+             * are never offered in (and thus filled into) a cross-origin sub-frame:
+             * - `domain`: caller-provided scope (eg: passkey create).
+             * - `frameId`: the caller sits in a different frame than the field (the dropdown
+             *   runs in its own extension frame), so resolve that frame's url worker-side.
+             * - neither: the caller is the field's own content-script, so `sender.url` is
+             *   already the authoritative frame url. */
+            const host =
+                payload.domain ??
+                (payload.frameId === undefined ? sender.url : null) ??
+                (await (async () => {
+                    if (frameId > 0) return (await browser.webNavigation.getFrame({ tabId, frameId }))?.url;
+                    return (await browser.tabs.get(tabId))?.url;
+                })().catch(noop));
 
             const { shareIds, needsUpgrade } = getAutofillOptions(payload.writable);
-
             const items = getLoginCandidates({ url: host, shareIds }).map(intoLoginItemPreview);
-            if (tabId) setPopupIconBadge(tabId, items.length);
+
+            /** Only top-frame queries reflect the tab-level badge count */
+            const shouldUpdateBadge = !payload.domain && frameId === 0;
+            if (shouldUpdateBadge) setPopupIconBadge(tabId, items.length);
+
             return { items, needsUpgrade };
         })
     );
