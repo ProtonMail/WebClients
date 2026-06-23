@@ -9,6 +9,7 @@ import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CategoriesUnreadCountToggle } from './CategoriesUnreadCountToggle';
@@ -23,6 +24,8 @@ export const CategoriesViewSections = () => {
 
     const dispatch = useDispatch();
     const [modal, setModal, renderModal] = useModalState();
+
+    const showBadgeSettings = useFlag('CategoriesUnseenBadge');
 
     const [mailSettings] = useMailSettings();
     const { categoriesStore, activeCategoriesTabs } = useCategoriesData();
@@ -60,7 +63,7 @@ export const CategoriesViewSections = () => {
         <>
             <div className="categories-section">
                 <CategoryViewToggle />
-                {mailSettings.MailCategoryView && <CategoriesUnreadCountToggle />}
+                {showBadgeSettings && mailSettings.MailCategoryView && <CategoriesUnreadCountToggle />}
                 <div
                     className={clsx(
                         'border border-weak rounded-xl',
