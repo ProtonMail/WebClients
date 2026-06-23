@@ -7,6 +7,8 @@ import {
     mockShareId,
     setMockMessageSender,
 } from 'proton-pass-extension/__mocks__/mocks';
+import { expectMessageFailure, expectMessageSuccess } from 'proton-pass-extension/__mocks__/utils';
+import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -17,7 +19,6 @@ import { AutosaveMode, FormEntryStatus } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-import { WorkerContext } from '../context/inject';
 import { createAutoSaveService } from './autosave';
 
 describe('AutosaveService [worker]', () => {
@@ -199,7 +200,7 @@ describe('AutosaveService [worker]', () => {
         test('should handle new item with email', async () => {
             store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
-            const response = sendMessage(
+            const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
@@ -215,19 +216,18 @@ describe('AutosaveService [worker]', () => {
 
             const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
 
+            expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
             expect(created.content.urls).toEqual(['https://proton.me/']);
             expect(deobfuscate(created.content.itemEmail)).toEqual('john@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('123');
-
-            await expect(response).resolves.toBe(true);
         });
 
         test('should handle new item with username', async () => {
             store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
-            const response = sendMessage(
+            const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
@@ -243,20 +243,19 @@ describe('AutosaveService [worker]', () => {
 
             const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
 
+            expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
             expect(created.content.urls).toEqual(['https://proton.me/']);
             expect(deobfuscate(created.content.itemUsername)).toEqual('john');
             expect(deobfuscate(created.content.password)).toEqual('123');
-
-            await expect(response).resolves.toBe(true);
         });
 
         test('should handle new item with passkey', async () => {
             store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
             const passkey = getMockPasskey();
-            const response = sendMessage(
+            const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
@@ -273,14 +272,13 @@ describe('AutosaveService [worker]', () => {
 
             const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
 
+            expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test passkey');
             expect(created.content.urls).toEqual(['https://proton.me/']);
             expect(deobfuscate(created.content.itemEmail)).toEqual(passkey.userName);
             expect(deobfuscate(created.content.password)).toEqual('');
             expect(created.content.passkeys).toEqual([passkey]);
-
-            await expect(response).resolves.toBe(true);
         });
 
         test('should fail if malformed request', async () => {
@@ -291,7 +289,7 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            expect(response).toEqual(false);
+            expectMessageFailure(response);
         });
 
         test('should return error if item to update does not exist', async () => {
@@ -309,11 +307,8 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            expect(response).toEqual({
-                type: 'error',
-                error: 'Item does not exist',
-                critical: false,
-            });
+            expectMessageFailure(response);
+            expect(response.error).toBe('Item does not exist');
         });
 
         test('should handle item update for subdomain', async () => {
@@ -334,7 +329,7 @@ describe('AutosaveService [worker]', () => {
             store.getState.mockReturnValueOnce(state);
             store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
-            const request = sendMessage(
+            const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
@@ -350,14 +345,13 @@ describe('AutosaveService [worker]', () => {
 
             const [actions, updated] = store.dispatchAsyncRequest.mock.lastCall;
 
+            expectMessageSuccess(response);
             expect(actions).toEqual(itemEdit);
             expect(updated.metadata.name).toEqual('Domain.com#Update');
             expect(updated.content.urls).toEqual(['https://domain.com/', 'https://sub.domain.com/']);
             expect(deobfuscate(updated.content.itemEmail)).toEqual('test@proton.me');
             expect(deobfuscate(updated.content.password)).toEqual('new-password');
             expect(updated.content.passkeys).toEqual([passkey]);
-
-            await expect(request).resolves.toBe(true);
         });
 
         test('should handle item update with passkey', async () => {
@@ -381,7 +375,7 @@ describe('AutosaveService [worker]', () => {
             store.getState.mockReturnValueOnce(state);
             store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
-            const request = sendMessage(
+            const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
@@ -398,21 +392,20 @@ describe('AutosaveService [worker]', () => {
 
             const [actions, updated] = store.dispatchAsyncRequest.mock.lastCall;
 
+            expectMessageSuccess(response);
             expect(actions).toEqual(itemEdit);
             expect(updated.metadata.name).toEqual('Domain.com#Update');
             expect(updated.content.urls).toEqual(['https://domain.com/']);
             expect(deobfuscate(updated.content.itemEmail)).toEqual('test@proton.me');
             expect(deobfuscate(updated.content.password)).toEqual('existing-password');
             expect(updated.content.passkeys).toEqual([passkey, newPasskey]);
-
-            await expect(request).resolves.toBe(true);
         });
 
         test('should handle new item in url with port', async () => {
             setMockMessageSender('https://localhost:3000');
             store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
-            const response = sendMessage(
+            const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
@@ -428,13 +421,12 @@ describe('AutosaveService [worker]', () => {
 
             const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
 
+            expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
             expect(created.content.urls).toEqual(['https://localhost:3000/']);
             expect(deobfuscate(created.content.itemEmail)).toEqual('john@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('123');
-
-            await expect(response).resolves.toBe(true);
         });
     });
 });
