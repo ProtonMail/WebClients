@@ -314,7 +314,23 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
             },
             clearItemsWithInvitationPosition: () => {
                 set((state) => {
-                    const nextState = { itemsWithInvitationPosition: new Set<string>() };
+                    // Re-sort all non-invitation items so previously invitation-positioned items
+                    // (e.g. accepted invitations now stored as DIRECT_SHARE) are included in the
+                    // regular sorted list instead of being dropped from sortedItemUids.
+                    const regularItems = Array.from(state.sharedWithMeItems.values()).filter(
+                        (item) => item.itemType !== ItemType.INVITATION
+                    );
+                    const newSortedRegularItemUids = sortItems(
+                        regularItems,
+                        state.sortConfig,
+                        state.direction,
+                        getSharedWithMeSortValue,
+                        getKeyUid
+                    );
+                    const nextState = {
+                        itemsWithInvitationPosition: new Set<string>(),
+                        sortedRegularItemUids: newSortedRegularItemUids,
+                    };
                     return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
                 });
             },
