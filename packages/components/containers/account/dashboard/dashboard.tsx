@@ -8,6 +8,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { SettingsCardMaxWidth } from '../../layout/interface';
+import { UpsellModalTelemetryProvider } from '../../payments/subscription/SubscriptionModalProvider';
 import YourPlanSectionV2 from '../../payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
 import { YourPlanUpsellsSectionV2 } from '../../payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
 import DriveBlogSection from './drive/DriveBlogSection/DriveBlogSection';
@@ -108,7 +109,7 @@ const AccountMeetDashboard = ({ app, config }: Props) => {
     );
 };
 
-const AccountDashboard = ({ app, config }: Props) => {
+const getProductDashboard = ({ app, config }: Props) => {
     switch (app) {
         case APPS.PROTONMAIL:
         case APPS.PROTONCALENDAR:
@@ -120,6 +121,14 @@ const AccountDashboard = ({ app, config }: Props) => {
         case APPS.PROTONMEET:
             return <AccountMeetDashboard app={app} config={config} />;
     }
+};
+
+const AccountDashboard = ({ app, config }: Props) => {
+    return (
+        <UpsellModalTelemetryProvider context="account-home">
+            {getProductDashboard({ app, config })}
+        </UpsellModalTelemetryProvider>
+    );
 };
 
 export default AccountDashboard;

@@ -695,6 +695,7 @@ export { default as DowngradeSubscriptionSection } from './containers/payments/s
 export { default as PlanSelection } from './containers/payments/subscription/PlanSelection';
 export {
     default as SubscriptionModalProvider,
+    UpsellModalTelemetryProvider,
     useSubscriptionModal,
 } from './containers/payments/subscription/SubscriptionModalProvider';
 export type {

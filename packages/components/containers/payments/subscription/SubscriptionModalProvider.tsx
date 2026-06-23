@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +7,9 @@ import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
@@ -22,6 +24,8 @@ import {
     fixPlanName,
 } from '@proton/payments/index';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
+import type { UpsellTelemetryContext } from '@proton/payments/telemetry/shared-checkout-telemetry';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { loadInitialBillingAddress } from '@proton/payments/ui/helpers/load-initial-billing-address';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -59,6 +63,8 @@ export interface OpenCallbackProps extends Pick<
     onClose?: () => void;
     disableCloseOnEscape?: boolean;
     fullscreen?: boolean;
+    // Identifies the upsell surface the modal was opened from.
+    upsellTelemetryContext?: UpsellTelemetryContext;
 }
 
 /** Resolves after subscription data is loaded and the modal is opened (or after an early exit e.g. redirect). */
@@ -76,7 +82,7 @@ export type SubscriptionModalContextValue = readonly [
     isSubscriptionModalAvailable: boolean,
 ];
 
-const SubscriptionModalContext = createContext<SubscriptionModalContextValue>([
+export const SubscriptionModalContext = createContext<SubscriptionModalContextValue>([
     defaultOpenSubscriptionModal,
     false,
     false,
@@ -136,6 +142,9 @@ interface Props {
 
 const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const redirectToAccountApp = useRedirectToAccountApp();
+
+    const [user] = useUser();
+    const { APP_NAME } = useConfig();
 
     const { paymentsApi } = usePaymentsApi();
     const { createNotification } = useNotifications();
@@ -226,6 +235,17 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         };
 
         setModalState(true);
+
+        if (subscriptionModalProps.upsellTelemetryContext) {
+            checkoutTelemetry.reportUpsellModalOpen({
+                context: subscriptionModalProps.upsellTelemetryContext,
+                userCurrency: user?.Currency,
+                subscription,
+                selectedPlanIDs: subscriptionModalProps.planIDs,
+                build: APP_NAME,
+                product: app,
+            });
+        }
     };
 
     const handleClose = () => {
@@ -264,3 +284,24 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
 };
 
 export default SubscriptionModalProvider;
+
+export const UpsellModalTelemetryProvider = ({
+    context,
+    children,
+}: {
+    context: UpsellTelemetryContext;
+    children: ReactNode;
+}) => {
+    const [open, loadingData, isSubscriptionModalAvailable] = useSubscriptionModal();
+
+    const openCallback = useCallback<OpenSubscriptionModalCallback>(
+        (props) => open({ ...props, upsellTelemetryContext: context }),
+        [open, context]
+    );
+
+    return (
+        <SubscriptionModalContext.Provider value={[openCallback, loadingData, isSubscriptionModalAvailable]}>
+            {children}
+        </SubscriptionModalContext.Provider>
+    );
+};
