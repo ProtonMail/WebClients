@@ -27,6 +27,7 @@ import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { SharesState } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShareState } from '@proton/pass/store/selectors';
+import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { InvitesGetResponse, MaybeNull, PassEventListResponse, ShareGetResponse } from '@proton/pass/types';
 import type { Share } from '@proton/pass/types/data/shares';
@@ -59,10 +60,12 @@ export function* drainShares() {
 
 export function* drainInvites() {
     const userInvites: InvitesGetResponse = yield call(getUserInvites);
-    const groupInvites: GroupInvitesGetResponse = yield call(getGroupInvites);
-
     yield call(processUserInvitePollingEvent, userInvites);
-    yield call(processGroupInvitePollingEvent, groupInvites);
+
+    if ((yield select(selectLoadGroupInvites)) as boolean) {
+        const groupInvites: GroupInvitesGetResponse = yield call(getGroupInvites);
+        yield call(processGroupInvitePollingEvent, groupInvites);
+    }
 }
 
 export function* updateSyncStrategy(strategy: SyncStrategy, userEventId: MaybeNull<string>) {
