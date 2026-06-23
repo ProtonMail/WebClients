@@ -1,7 +1,6 @@
 import { getVideoConferencingData } from '@proton/calendar/videoConferencing/helpers';
 import { PROTON_MEET_REGEX_LOCATION, getProtonMeetData } from '@proton/calendar/videoConferencing/protonMeetHelpers';
 import { removeVideoConfInfoFromDescription } from '@proton/calendar/videoConferencing/videoConfHelpers';
-import { ZOOM_REGEX_LOCATION, getZoomFromDescription } from '@proton/calendar/videoConferencing/zoomHelpers';
 import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';
@@ -65,16 +64,12 @@ export const propertiesToModel = ({
         meetingProvider = VIDEO_CONFERENCE_PROVIDER.PROTON_MEET;
     }
 
-    // Fallback: when x-pm-conference-* properties are absent but the description contains an embedded Zoom link
-    if (!meetingUrl && description?.value?.match(ZOOM_REGEX_LOCATION)) {
-        const zoomMeetingData = getZoomFromDescription(description.value);
-        meetingUrl = zoomMeetingData.meetingUrl;
-        meetingId = zoomMeetingData.meetingId;
-        password = zoomMeetingData.password;
-        meetingProvider = VIDEO_CONFERENCE_PROVIDER.ZOOM;
-    }
+    let cleanDescription = description?.value ?? '';
 
-    const cleanDescription = removeVideoConfInfoFromDescription(description?.value ?? '');
+    // Only clean the description if we have a meeting URL (i.e., the description contains video conferencing info)
+    if (meetingUrl) {
+        cleanDescription = removeVideoConfInfoFromDescription(cleanDescription);
+    }
 
     return {
         uid: uid ? uid.value : undefined,

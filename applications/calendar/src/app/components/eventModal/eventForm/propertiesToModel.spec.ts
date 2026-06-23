@@ -160,11 +160,15 @@ describe('properties to model', () => {
         });
     });
 
-    describe('Zoom fallback from description', () => {
+    // Zoom links embedded in the description (e.g. an attendee's copy of a native Zoom event, where the
+    // x-pm-conference-* properties are not present) must NOT be promoted to conference fields: doing so makes the
+    // API try to update a Zoom meeting the user does not own. We also keep the block in the description so the
+    // video conferencing widget can still parse and display it.
+    describe('Zoom embedded in description (non-native, e.g. attendee copy)', () => {
         const ZOOM_URL = 'https://us05web.zoom.us/j/88128811438?pwd=tXBwNj7tnajHLftxrqTkU4DtS2M7Au.1';
         const ZOOM_ID = '88128811438';
         const ZOOM_PASSWORD = '4qNpNK';
-        const EMBEDDED_BLOCK = `\n${SEPARATOR_PROTON_EVENTS}\Join Zoom Meeting: ${ZOOM_URL} (ID: 88128811438, passcode: 4qNpNK)\n${SEPARATOR_PROTON_EVENTS}`;
+        const EMBEDDED_BLOCK = `\n${SEPARATOR_PROTON_EVENTS}\nJoin Zoom Meeting: ${ZOOM_URL} (ID: ${ZOOM_ID}, passcode: ${ZOOM_PASSWORD})\n${SEPARATOR_PROTON_EVENTS}`;
         const DEFAULT_PARAMS = {
             hasDefaultNotifications: false,
             isAllDay: false,
@@ -172,49 +176,50 @@ describe('properties to model', () => {
             tzid: 'Europe/Paris',
         };
 
-        test('extracts conferenceUrl and conferenceId when x-pm-conference-* properties are absent', () => {
+        test('does not extract conference data from an embedded Zoom block', () => {
             const veventComponent: VcalVeventComponent = { ...BASE_VEVENT, description: { value: EMBEDDED_BLOCK } };
             const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
 
-            expect(model.conferenceUrl).toBe(ZOOM_URL);
-            expect(model.conferenceId).toBe(ZOOM_ID);
-            expect(model.conferencePassword).toBe(ZOOM_PASSWORD);
-            expect(model.conferenceProvider).toBe(VIDEO_CONFERENCE_PROVIDER.ZOOM);
+            expect(model.conferenceUrl).toBeUndefined();
+            expect(model.conferenceId).toBeUndefined();
+            expect(model.conferenceProvider).toBeUndefined();
         });
 
-        test('strips the embedded video conf block from the returned description', () => {
+        test('keeps the embedded Zoom block in the description so the widget can parse it', () => {
             const veventComponent: VcalVeventComponent = {
                 ...BASE_VEVENT,
                 description: { value: `Team standup${EMBEDDED_BLOCK}` },
             };
             const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
 
-            expect(model.description).toBe('Team standup');
-            expect(model.conferenceUrl).toBe(ZOOM_URL);
+            expect(model.description).toBe(`Team standup${EMBEDDED_BLOCK}`.trim());
+            expect(model.conferenceUrl).toBeUndefined();
         });
 
-        test('produces an empty description when only the embedded block is present', () => {
+        test('keeps the description intact when only the embedded Zoom block is present', () => {
             const veventComponent: VcalVeventComponent = { ...BASE_VEVENT, description: { value: EMBEDDED_BLOCK } };
             const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
 
-            expect(model.description).toBe('');
+            expect(model.description).toBe(EMBEDDED_BLOCK.trim());
         });
 
-        test('prefers x-pm-conference-url over the description fallback when both are present', () => {
-            const storedUrl = 'https://meet.proton.me/join/id-STORED1234#pwd-storedpwd';
+        test('extracts native Zoom conference data and strips the block when x-pm-conference-* is present', () => {
             const veventComponent: VcalVeventComponent = {
                 ...BASE_VEVENT,
-                'x-pm-conference-id': { value: 'STORED1234', parameters: { 'x-pm-provider': '2' } },
-                'x-pm-conference-url': { value: storedUrl, parameters: {} },
-                description: { value: EMBEDDED_BLOCK },
+                'x-pm-conference-id': { value: ZOOM_ID, parameters: { 'x-pm-provider': '1' } },
+                'x-pm-conference-url': { value: ZOOM_URL, parameters: { 'x-pm-password': ZOOM_PASSWORD } },
+                description: { value: `Team standup${EMBEDDED_BLOCK}` },
             };
             const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
 
-            expect(model.conferenceUrl).toBe(storedUrl);
-            expect(model.conferenceId).toBe('STORED1234');
+            expect(model.conferenceUrl).toBe(ZOOM_URL);
+            expect(model.conferenceId).toBe(ZOOM_ID);
+            expect(model.conferencePassword).toBe(ZOOM_PASSWORD);
+            expect(model.conferenceProvider).toBe(VIDEO_CONFERENCE_PROVIDER.ZOOM);
+            expect(model.description).toBe('Team standup');
         });
 
-        test('sets no conference data when neither x-pm-conference-* nor an embedded Meet link is present', () => {
+        test('sets no conference data when neither x-pm-conference-* nor an embedded link is present', () => {
             const veventComponent: VcalVeventComponent = {
                 ...BASE_VEVENT,
                 description: { value: 'Just a plain description' },
