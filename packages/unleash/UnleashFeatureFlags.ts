@@ -294,7 +294,6 @@ enum MeetFeatureFlag {
     MeetSeamlessKeyRotationEnabled = 'MeetSeamlessKeyRotationEnabled',
     MeetShowUpsellModalAfterMeeting = 'MeetShowUpsellModalAfterMeeting',
     MeetShowMLSLogs = 'MeetShowMLSLogs',
-    MeetingRecording = 'MeetingRecording',
     MeetAllowNewHostAssignment = 'MeetAllowNewHostAssignment',
     MeetAllowMLSLogExport = 'MeetAllowMLSLogExport',
     MeetClientMetricsLog = 'MeetClientMetricsLog',
