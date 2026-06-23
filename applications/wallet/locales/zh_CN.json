@@ -4382,7 +4382,7 @@
         "密码管理和身份保护"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
+        "在邮件落款中加入图标、图像、链接、社交网络标识等个性化元素"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
         "对于拥有 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或更多用户的客户，${ BRAND_NAME } 客户支持团队可在欧洲工作时间提供电话支持。"
@@ -4424,10 +4424,10 @@
         "与任何人安全共享单个项目（即使他们不使用 ${ PASS_APP_NAME }）"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
+        "安全存储联系人的电话号码、住址、生日、备注等详细信息，零访问加密技术确保即使是 ${ BRAND_NAME } 也无法解密并访问这些信息。"
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "查看参会者的空闲时间，节省会议安排时间"
+        "查看参与者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
@@ -5511,6 +5511,9 @@
       "${ feature } is now active": [
         "${ feature } 已激活"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "Account restricted": [
         "账户受限"
       ],
@@ -5738,6 +5741,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "获取 AI 和人工专家的即时协助！"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的计费周期将从 ${ formattedTime } 开始"
