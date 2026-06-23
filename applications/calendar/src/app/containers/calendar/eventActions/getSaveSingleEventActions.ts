@@ -32,7 +32,6 @@ import { withUpdatedDtstamp } from './dtstamp';
 import getChangePartstatActions from './getChangePartstatActions';
 import { createIntermediateEvent } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
-import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 
 interface SaveEventHelperArguments {
     oldEditEventData?: EventOldData;
@@ -209,7 +208,7 @@ const getSaveSingleEventActions = async ({
             const {
                 veventComponent: cleanVeventComponent,
                 inviteActions: cleanInviteActions,
-                sendPreferencesMap,
+                addedAttendeesPublicKeysMap: cleanAddedAttendeesPublicKeysMap,
             } = await sendIcs({
                 inviteActions,
                 vevent: updatedVeventComponent,
@@ -218,11 +217,7 @@ const getSaveSingleEventActions = async ({
             if (cleanVeventComponent) {
                 updatedVeventComponent = cleanVeventComponent;
                 updatedInviteActions = cleanInviteActions;
-                addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
-                    veventComponent: updatedVeventComponent,
-                    inviteActions: updatedInviteActions,
-                    sendPreferencesMap,
-                });
+                addedAttendeesPublicKeysMap = cleanAddedAttendeesPublicKeysMap;
             }
         }
 
@@ -256,7 +251,6 @@ const getSaveSingleEventActions = async ({
     let updatedVeventComponent: VcalVeventComponent | undefined = newVeventComponent;
     let updatedInviteActions = inviteActions;
     let intermediateEvent;
-    let sendPreferencesMap;
     let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
 
     if (inviteType === INVITE_ACTION_TYPES.SEND_INVITATION) {
@@ -286,7 +280,7 @@ const getSaveSingleEventActions = async ({
         ({
             veventComponent: updatedVeventComponent,
             inviteActions: updatedInviteActions,
-            sendPreferencesMap,
+            addedAttendeesPublicKeysMap,
         } = await sendIcs(
             {
                 inviteActions: updatedInviteActions,
@@ -297,12 +291,6 @@ const getSaveSingleEventActions = async ({
             // we pass the calendarID here as we want to call the event manager in case the operation fails
             newCalendarID
         ));
-
-        addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
-            veventComponent: updatedVeventComponent,
-            inviteActions: updatedInviteActions,
-            sendPreferencesMap,
-        });
     }
 
     const createOrUpdateOperation = intermediateEvent

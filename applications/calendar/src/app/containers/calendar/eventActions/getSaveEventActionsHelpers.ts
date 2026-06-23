@@ -17,12 +17,7 @@ import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import { getCreateSyncOperation, getUpdateSyncOperation } from '../getSyncMultipleEventsPayload';
 import { getStartDateTimeMerged } from '../recurrence/getDateTimeMerged';
-import {
-    getAddedAttendeesPublicKeysMap,
-    getAttendeesDiff,
-    getCorrectedSaveInviteActions,
-    getOrganizerDiff,
-} from './inviteActions';
+import { getAttendeesDiff, getCorrectedSaveInviteActions, getOrganizerDiff } from './inviteActions';
 
 export const getOldDataHasVeventComponent = (
     eventData: EventOldData
@@ -185,11 +180,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         onSendPrefsErrors,
         handleSyncActions,
     });
-    const {
-        veventComponent: finalVevent,
-        inviteActions: finalInviteActions,
-        sendPreferencesMap,
-    } = await sendIcs(
+    const { veventComponent: finalVevent, addedAttendeesPublicKeysMap } = await sendIcs(
         {
             inviteActions: intermediateInviteActions,
             vevent: intermediateVevent,
@@ -199,12 +190,6 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         // we pass the calendarID here as we want to call the event manager in case the operation fails
         calendarID
     );
-
-    const addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
-        veventComponent: finalVevent,
-        inviteActions: finalInviteActions,
-        sendPreferencesMap,
-    });
 
     return getUpdateSyncOperation({
         veventComponent: finalVevent,

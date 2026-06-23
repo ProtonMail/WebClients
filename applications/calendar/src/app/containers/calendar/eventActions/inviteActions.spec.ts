@@ -12,7 +12,13 @@ import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { generateTestAddress } from '@proton/testing/lib/builders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
-import { getAttendeesDiff, getHasProtonAttendees, getRoleDiff, getSendIcsAction } from './inviteActions';
+import {
+    getAddedAttendeesPublicKeysMap,
+    getAttendeesDiff,
+    getHasProtonAttendees,
+    getRoleDiff,
+    getSendIcsAction,
+} from './inviteActions';
 
 const generateContact = ({
     mail,
@@ -731,6 +737,74 @@ describe('getHasProtonAttendees()', () => {
                 sendPreferencesMap
             )
         ).toEqual(true);
+    });
+});
+
+describe('getAddedAttendeesPublicKeysMap (auto-add)', () => {
+    const fakePublicKey = { _idx: 1 } as unknown as NonNullable<SendPreferences['publicKeys']>[number];
+
+    const getInviteParams = (email: string) => ({
+        veventComponent: {
+            ...baseVevent,
+            attendee: [{ value: buildMailTo(email), parameters: { cn: email } }],
+        } as VcalVeventComponent,
+        inviteActions: {
+            type: INVITE_ACTION_TYPES.SEND_INVITATION,
+            addedAttendees: [{ value: buildMailTo(email), parameters: { cn: email } }],
+        } as any,
+    });
+
+    it('auto-adds an internal attendee using the key already in the mail send preferences (no extra fetch)', async () => {
+        const email = 'internal@proton.test';
+        const sendPreferencesMap = {
+            [email]: { isInternal: true, encryptionDisabled: false, publicKeys: [fakePublicKey] },
+        } as unknown as SimpleMap<SendPreferences>;
+        const getEncryptionPreferences = jest.fn();
+
+        const result = await getAddedAttendeesPublicKeysMap({
+            ...getInviteParams(email),
+            sendPreferencesMap,
+            getEncryptionPreferences,
+        });
+
+        expect(result[email]).toBe(fakePublicKey);
+        expect(getEncryptionPreferences).not.toHaveBeenCalled();
+    });
+
+    it('auto-adds an E2EE-mail-disabled attendee by refetching internal keys (intendedForEmail: false)', async () => {
+        const email = 'e2ee-disabled@proton.test';
+        // The mail send preferences report this internal address as external without keys.
+        const sendPreferencesMap = {
+            [email]: { isInternal: false, encryptionDisabled: true, publicKeys: undefined },
+        } as unknown as SimpleMap<SendPreferences>;
+        // The intendedForEmail: false fetch resolves the same address as internal, with its address key.
+        const getEncryptionPreferences = jest.fn().mockResolvedValue({ isInternal: true, sendKey: fakePublicKey });
+
+        const result = await getAddedAttendeesPublicKeysMap({
+            ...getInviteParams(email),
+            sendPreferencesMap,
+            getEncryptionPreferences,
+        });
+
+        expect(getEncryptionPreferences).toHaveBeenCalledWith({ email, intendedForEmail: false });
+        expect(result[email]).toBe(fakePublicKey);
+    });
+
+    it('does NOT auto-add a genuine external attendee', async () => {
+        const email = 'test@alien.mars';
+        const sendPreferencesMap = {
+            [email]: { isInternal: false, encryptionDisabled: false, publicKeys: undefined },
+        } as unknown as SimpleMap<SendPreferences>;
+        const getEncryptionPreferences = jest.fn();
+
+        const result = await getAddedAttendeesPublicKeysMap({
+            ...getInviteParams(email),
+            sendPreferencesMap,
+            getEncryptionPreferences,
+        });
+
+        expect(result[email]).toBeUndefined();
+        expect(getEncryptionPreferences).not.toHaveBeenCalled();
     });
 });
 
