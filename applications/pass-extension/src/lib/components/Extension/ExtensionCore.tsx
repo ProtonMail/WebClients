@@ -30,6 +30,7 @@ import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
+import { textareaCopy } from '@proton/pass/lib/clipboard/utils';
 import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
 import { getExtensionLocalStorage } from '@proton/pass/lib/extension/storage';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
@@ -197,19 +198,23 @@ const getPassCoreProviderProps = (
             let granted = !promptForPermissions;
 
             /** Clipboard write is done directly in the view and content script with clipboard async api.
-             * navigator.clipboard.writeText currently doesn't work on Safari content script and
-             * will throw NotAllowedError. So we copy through the native app instead.
              * Chrome needs to wait because requesting permissions will close the popup and
              * the ongoing async write will fail otherwise.
              * Firefox in the contrary requires to not await unless requesting permissions is
              * considered not being in sync with a user interraction. */
             const writePromise = navigator.clipboard.writeText(content).catch(() => {
+                /* navigator.clipboard.writeText currently doesn't work on Safari content script and
+                 * will throw NotAllowedError. So we copy through the native app instead. */
                 if (BUILD_TARGET === 'safari') {
                     void sendSafariMessage({
                         writeToClipboard: {
                             Content: content,
                         },
                     });
+                } else {
+                    /* Workaround for some websites where the autofill dropdown's
+                     * clipboard write is blocked by the host page's permissions policy */
+                    textareaCopy(content);
                 }
             });
             if (BUILD_TARGET === 'chrome') await writePromise;
