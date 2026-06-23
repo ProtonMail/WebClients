@@ -240,5 +240,9 @@ export type PaymentTelemetryContext =
     | 'ctx-email-reservation'
     /** Subscription modification modal for existing users */
     | 'subscription-modification'
+    /** Legacy Upgrade settings page at /{product}/upgrade */
+    | 'settings-upgrade'
+    /** New account Home page / dashboard with the upsell section above the fold */
+    | 'account-home'
     /** Fallback for unmapped contexts */
     | 'other';
