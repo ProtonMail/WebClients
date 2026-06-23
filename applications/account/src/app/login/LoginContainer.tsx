@@ -29,7 +29,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronApp, isElectronPass } from '@proton/shared/lib/helpers/desktop';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { Paths } from '../content/helper';
 import Text from '../public/Text';
@@ -147,7 +146,6 @@ const LoginContainer = ({
 
     useMetaTags(metaTags);
 
-    const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
     const getKtActivation = useGetAccountKTActivation();
@@ -436,9 +434,6 @@ const LoginContainer = ({
                     }}
                     onResetPassword={(username) => {
                         const params = new URLSearchParams({ username });
-                        if (!unauthedForgotPasswordEnabled) {
-                            params.set('variant', 'a');
-                        }
                         window.location.assign(`${paths.reset}?${params.toString()}`);
                     }}
                 />
