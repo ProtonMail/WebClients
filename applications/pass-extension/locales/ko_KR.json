@@ -193,6 +193,9 @@
       "Copy forwarding address": [
         "포워딩 주소 복사"
       ],
+      "Copy instructions": [
+        "지침 복사"
+      ],
       "Copy link": [
         "링크 복사"
       ],
@@ -210,6 +213,9 @@
       ],
       "Copy to clipboard": [
         "클립보드로 복사"
+      ],
+      "Copy token": [
+        "토큰 복사"
       ],
       "Copy username": [
         "시용자 이름 복사"
@@ -246,6 +252,9 @@
       ],
       "Create note": [
         "메모 생성"
+      ],
+      "Create token": [
+        "토큰 생성"
       ],
       "Create vault": [
         "금고 생성"
@@ -451,6 +460,9 @@
       "Manage access": [
         "접근 관리"
       ],
+      "Manage vault access": [
+        "금고 접근 관리"
+      ],
       "Manually sync your data": [
         "수동으로 데이터 동기화"
       ],
@@ -486,6 +498,9 @@
       ],
       "Multiple select": [
         "다중 선택"
+      ],
+      "New token": [
+        "새 토큰"
       ],
       "Next month": [
         "다음 달"
@@ -748,6 +763,9 @@
       "Via secure link": [
         "안전한 링크를 통해 공유"
       ],
+      "View agent activity": [
+        "에이전트 활동 보기"
+      ],
       "View app logs": [
         "앱 로그 보기"
       ],
@@ -774,6 +792,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "활동"
+      ],
+      "Activity details could not be loaded.": [
+        "활동 상세 정보를 불러올 수 없습니다."
+      ],
+      "Folder": [
+        "폴더"
+      ],
+      "Item": [
+        "항목"
+      ],
+      "Reason": [
+        "사유"
+      ],
+      "Vault": [
+        "금고"
       ]
     },
     "Browser": {
@@ -981,6 +1019,9 @@
       "Could not validate addresses at the moment.": [
         "현재 주소를 확인할 수 없습니다."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "에이전트 구성 지침을 불러올 수 없습니다. 아래 토큰을 복사해 주세요. 토큰은 더 이상 표시되지 않습니다."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV 파일이 예상 헤더를 누락합니다: ${ missingHeaders }"
       ],
@@ -1019,6 +1060,9 @@
       ],
       "Error reporting problem": [
         "문제 보고 실패"
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "만료일은 1시간에서 1년 사이여야 합니다."
       ],
       "Failed loading group members": [
         "그룹 구성원을 로드하는 데 실패했습니다"
@@ -1067,6 +1111,9 @@
       ],
       "Failed to edit user's access.": [
         "사용자 접근 수정 실패."
+      ],
+      "Failed to load access tokens": [
+        "액세스 토큰을 불러올 수 없음"
       ],
       "Failed to load breaches for this address": [
         "이 주소의 침해를 불러오지 못했습니다"
@@ -1202,6 +1249,9 @@
       ],
       "Name is required": [
         "이름은 필수입니다"
+      ],
+      "Name must be 191 characters or fewer": [
+        "이름은 191자 이하여야 합니다."
       ],
       "Network error": [
         "네트워크 오류"
@@ -1515,6 +1565,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount }개 침해 사례 감지됨"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size }개 선택됨"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft }일 남음"
       ],
@@ -1556,6 +1609,15 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }에 접근하려면 지문 인식 및 기기 PIN코드가 필요합니다."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "액세스 토큰 \"${ action.token.Name }\"이(가) 이미 만료되었습니다. 만약 삭제하면, 더 이상 표시되지 않습니다."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "액세스 토큰 \"${ action.token.Name }\"이(가) 즉시 중단됩니다. 이 작업은 실행 취소할 수 없습니다."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "${ passCliLink }와 함께 사용되는 액세스 토큰을 통해 CI/CD를 자동화하거나 AI 에이전트가 작업을 실행하는 데 필요한 접근 권한을 부여할 수 있습니다."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "이동 중에 모바일 앱에서도 비밀번호에 쉽게 접근하세요."
@@ -1647,6 +1709,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "이 포맷으로 데이터를 내보내기 전에, Safari 설정-> \"일반\" 탭 ->\" 다운로드 후 '안전한' 파일 열기\"를 비활성화해주세요. 이 설정으로 Safari가 내보낸 파일을 잘못 추출하는 것을 방지할 수 있습니다."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "60(1시간) ~ 52600(1년) 사이"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "생체인증 잠금이 성공적으로 설정되었습니다. ${ PASS_APP_NAME } 잠금해제시 사용하세요."
       ],
@@ -1716,14 +1781,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "클립보드에 복사됨 (${ timeoutDurationHumanReadable } 후 만료)"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "아래 마크다운을 복사하여 AI 에이전트에게 보내주세요. 토큰은 이번만 표시됩니다."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "지금 해당 토큰을 복사하세요. 보안 상의 이유로, 더 이상 표시되지 않습니다."
+      ],
       "Coupon successfully applied!": [
         "쿠폰을 성공적으로 적용했습니다!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "스크립트 및 도구와 ${ PASS_APP_NAME }를 통합하기 위한 토큰을 생성해 보세요."
       ],
       "Create contact illustration": [
         "연락처 일러스트 생성"
       ],
+      "Created ${ createdDate }": [
+        "${ createdDate } 생성됨"
+      ],
       "Created ${ time }.": [
         "${ time } 생성됨."
+      ],
+      "Created item": [
+        "생성된 항목"
       ],
       "Creating alias...": [
         "별칭 생성 중..."
@@ -1739,6 +1819,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "별칭 표시 이름으로 덮어쓰지 않는 한 ${ domainDisplay }(으)로 생성된 별칭의 기본 표시 이름입니다."
+      ],
+      "Deleted item": [
+        "항목이 삭제되었습니다"
       ],
       "Deleted items will be moved here first": [
         "삭제된 항목이 여기에 표시됩니다."
@@ -1763,6 +1846,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "도메인: ${ domainPath } 또는 @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "${ passCliLink }(에)서 pass-cli를 다운로드하세요."
       ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
@@ -1842,14 +1928,23 @@
       "Enter your PIN code": [
         "PIN 코드를 입력하세요"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "이 에이전트 토큰이 수행한 모든 작업, 가장 최근의 작업입니다."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "별칭이 누군가로부터 이메일을 받으면 새 연락처가 자동으로 생성됩니다."
+      ],
+      "Expired on ${ formattedDate }": [
+        "${ formattedDate }에 만료됨"
       ],
       "Expires in": [
         "만료:"
       ],
       "Expires in ${ remainingTime }": [
         "${ remainingTime }에 만료"
+      ],
+      "Expires on ${ formattedDate }": [
+        "${ formattedDate }에 만료"
       ],
       "Exporting your data...": [
         "데이터를 추출하는 중..."
@@ -2004,6 +2099,9 @@
       "Loading...": [
         "불러오는 중..."
       ],
+      "Log out of any existing session:": [
+        "활성 세션에서 로그아웃:"
+      ],
       "Logging you out...": [
         "사용자를 로그아웃하는 중..."
       ],
@@ -2031,11 +2129,11 @@
       "Move ${ count } item": [
         "항목 ${ count }개 이동"
       ],
+      "Moved item to trash": [
+        "항목을 휴지통으로 이동했습니다."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2061,6 +2159,9 @@
       "New": [
         "신규"
       ],
+      "No activity recorded yet.": [
+        "아직 기록된 활동이 없습니다."
+      ],
       "No breaches detected": [
         "감지된 침해사례 없음"
       ],
@@ -2079,6 +2180,9 @@
       "None": [
         "없음"
       ],
+      "None selected": [
+        "선택되지 않음"
+      ],
       "Not configured": [
         "구성되지 않음"
       ],
@@ -2093,6 +2197,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "지난 30일 동안 만료된 토큰만 표시됩니다. 이전 토큰은 자동으로 삭제됩니다."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "더 큰 창에서 ${ PASS_APP_NAME } 열기"
@@ -2289,6 +2396,9 @@
       "Quickly autofill your saved credentials.": [
         "저장된 자격 증명을 빠르게 자동 완성합니다."
       ],
+      "Read item": [
+        "항목 읽기"
+      ],
       "Reconnect": [
         "재연결"
       ],
@@ -2322,6 +2432,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "기록 재설정은 모든 과거 항목들을 삭제하며 되돌릴 수 없습니다."
       ],
+      "Restored item from trash": [
+        "휴지통으로부터 항목이 복구되었습니다"
+      ],
       "Restoring items from trash": [
         "휴지통에서 항목 복구 중"
       ],
@@ -2348,6 +2461,9 @@
       ],
       "Select destination vault": [
         "대상 금고 선택"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "\"${ token.Name }\"이(가) 읽을 수 있는 금고를 선택하세요."
       ],
       "Select where you want your imported vaults to be saved.": [
         "불러온 금고들을 저장할 곳을 선택하세요."
@@ -2421,8 +2537,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "${ gearIcon } 아이콘을 탭해 별칭을 원하는 방식으로 커스터마이징 하세요."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "로그인하여 금고를 나열하여 토큰을 테스트하세요:"
+      ],
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "에이전트는 수행하는 모든 작업에 대한 이유를 제공해야 하며, 각 작업은 검토할 수 있는 감사 로그에 기록됩니다. 토큰을 생성한 후 AI 에이전트에 복사 붙여넣기하라는 지침을 받게 됩니다."
       ],
       "The display name when sending an email from this alias.": [
         "이 별칭으로부터 이메일이 전송되면 표시되는 이름입니다."
@@ -2453,6 +2575,9 @@
       ],
       "The user did not accept the invitation yet.": [
         "이 초대를 아직 수락하지 않았습니다."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "AI 에이전트에 전송하도록 ${ url }(으)로 이동하여 지침을 복사할 수 있습니다."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
@@ -2550,6 +2675,9 @@
       "Update login": [
         "로그인 업데이트"
       ],
+      "Updated item": [
+        "업데이트된 항목"
+      ],
       "Updating vault organization...": [
         "보관함 조직 업데이트 중..."
       ],
@@ -2558,6 +2686,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "프리미엄 기능 잠금해제 하려면 업그레이드"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "${ PASS_APP_NAME } Plus로 업그레이드하여 액세스 토큰을 생성하고 프로그래밍 방식으로 ${ PASS_APP_NAME }을 사용하세요."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "유료 플랜으로 업그레이드하여 여러개의 금고를 생성하세요."
@@ -2582,6 +2713,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "금고 \"${ share.content.name }\"이(가) 삭제되었습니다."
+      ],
+      "Vault access granted": [
+        "금고 접근 권한 부여됨"
       ],
       "Vault organization successfully updated": [
         "보관함 조직이 성공적으로 업데이트되었습니다."
@@ -2794,11 +2928,23 @@
       "${ years } year": [
         "${ years }년"
       ],
+      "1 day": [
+        "1일"
+      ],
       "1 hour": [
         "1시간"
       ],
       "1 minute": [
         "1분"
+      ],
+      "1 month": [
+        "1개월"
+      ],
+      "1 week": [
+        "1주"
+      ],
+      "1 year": [
+        "1년"
       ],
       "10 minutes": [
         "10분"
@@ -2844,6 +2990,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Access tokens": [
+        "액세스 토큰"
       ],
       "Account": [
         "계정"
@@ -3037,6 +3186,12 @@
       "Crypto Wallet": [
         "암호화폐 지갑"
       ],
+      "Custom": [
+        "사용자 지정"
+      ],
+      "Custom expiration (minutes)": [
+        "사용자 지정 만료 (분)"
+      ],
       "Custom Items": [
         "사용자 지정 항목"
       ],
@@ -3117,6 +3272,9 @@
       ],
       "Expired": [
         "만료됨"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "만료된 토큰 (${ expired.length })"
       ],
       "Expires in": [
         "만료 시까지:"
@@ -3793,6 +3951,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "${ PASS_APP_NAME }를 브라우저의 기본 패스워드 관리자로 사용하기"
       ],
+      "Use for AI agent": [
+        "AI 에이전트에 사용"
+      ],
       "Used in": [
         "다음 항목에서 사용됨:"
       ],
@@ -3807,6 +3968,9 @@
       ],
       "Value:": [
         "값:"
+      ],
+      "Vault access": [
+        "금고 접근"
       ],
       "Vault ID": [
         "금고 ID"
@@ -4092,6 +4256,9 @@
       "Coupon": [
         "쿠폰"
       ],
+      "e.g. 60": [
+        "예: 60"
+      ],
       "e.g. My automation script": [
         "예: 나의 자동화된 스크립트"
       ],
@@ -4252,6 +4419,20 @@
         "알 수 없음"
       ]
     },
+    "Status": {
+      "Active": [
+        "활성화"
+      ],
+      "Agent": [
+        "에이전트"
+      ],
+      "Expired": [
+        "만료됨"
+      ],
+      "Expiring soon": [
+        "곧 만료"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "별칭 동기화를 성공적으로 활성화했습니다. SimpleLoin 별칭 동기화에 시간이 조금 소요될 수 있습니다."
@@ -4344,6 +4525,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "액세스 토큰을 사용하려면 ${ PASS_APP_NAME } Plus가 필요합니다"
+      ],
       "Account protection": [
         "계정 보호"
       ],
@@ -4353,11 +4537,17 @@
       "Activity": [
         "활동"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "\"${ token.Name }\"의 활동"
+      ],
       "Add custom domain": [
         "커스텀 도메인 추가"
       ],
       "Add mailbox": [
         "메일함 추가"
+      ],
+      "Agent setup instructions": [
+        "에이전트 설정 지침"
       ],
       "Alias contacts": [
         "별칭 연락처"
@@ -4416,6 +4606,9 @@
       "Create contact": [
         "연락처 추가"
       ],
+      "Create new access token": [
+        "새로운 액세스 토큰 생성"
+      ],
       "Create PIN code": [
         "PIN 코드 생성"
       ],
@@ -4445,6 +4638,9 @@
       ],
       "Delete ${ deletedItemsCount } item?": [
         "${ deletedItemsCount }개의 항목을 삭제 하시겠습니까?"
+      ],
+      "Delete access token?": [
+        "액세스 토큰을 삭제합니까?"
       ],
       "Delete domain": [
         "도메인 삭제"
@@ -4578,6 +4774,9 @@
       "Mailbox": [
         "메일함"
       ],
+      "Manage vault access": [
+        "금고 접근 관리"
+      ],
       "Mark as resolved?": [
         "해결됨으로 표시합니까?"
       ],
@@ -4610,6 +4809,9 @@
       ],
       "Next": [
         "다음"
+      ],
+      "No access tokens yet": [
+        "액세스 토큰이 없습니다"
       ],
       "No excluded items": [
         "제외된 항목 없음"
@@ -4829,6 +5031,9 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
+      ],
+      "Your new access token": [
+        "새로운 액세스 토큰"
       ],
       "Your vault is empty": [
         "금고가 비어있음"
