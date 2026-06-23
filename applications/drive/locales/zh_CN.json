@@ -4096,6 +4096,15 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "增值税号必须以 ${ prefixes } 开头"
+      ],
+      "No drive found to import": [
+        "未找到可导入的云端硬盘"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "您的 ${ DRIVE_APP_NAME } 存储空间不足"
+      ],
+      "Unexpected error, we can't import the files": [
+        "出现意外错误，无法导入文件"
       ]
     },
     "error": {
@@ -7240,6 +7249,9 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "我们无法验证 ${ nameAuthor } 上传了 ${ nodeName }。以下内容可能已被篡改：文件数据顺序。请仅在信任时打开。"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "仅限文件 (不含照片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }) - 总计上限 100 GB，文件数量上限 100,000 个，单文件大小上限 50 GB"
       ]
     },
     "info": {
