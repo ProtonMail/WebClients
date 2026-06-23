@@ -241,6 +241,12 @@
       "Continue with Outlook": [
         "Continuar con Outlook"
       ],
+      "Copy '${ code }' to clipboard": [
+        "Copiar '${ code }' al portapapeles"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Copiar '${ code }' al portapapeles y mover a la papelera"
+      ],
       "Copy address": [
         "Copiar la dirección"
       ],
@@ -489,6 +495,9 @@
       "Hide": [
         "Ocultar"
       ],
+      "Hide ${ title }": [
+        "Ocultar ${ title }"
+      ],
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
       ],
@@ -708,6 +717,9 @@
       "Previous": [
         "Anterior"
       ],
+      "Previous conversation": [
+        "Conversación anterior"
+      ],
       "Previous month": [
         "Mes anterior"
       ],
@@ -878,6 +890,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show ${ title }": [
+        "Mostrar ${ title }"
       ],
       "Show advanced PGP settings": [
         "Mostrar ajustes PGP avanzados"
@@ -1719,6 +1734,11 @@
       ],
       "Take a tour": [
         "Explore ahora"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Se omiten los duplicados de las importaciones anteriores. Deshaga o importe mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar invite buttons label": {
@@ -3163,6 +3183,9 @@
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Para una integración de su equipo sin complicaciones a ${ BRAND_NAME }, importe sus datos de Google, Outlook y otros."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Para tener acceso ilimitado al asistente de escritura y más, actualice a ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Reciba notificaciones si la contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
@@ -3212,6 +3235,12 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Para continuar recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, reconecte sus cuentas."
       ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a su suscripción."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicite acceso a su administración."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
       ],
@@ -3245,8 +3274,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos la importación al 80% de almacenamiento para reservar espacio para nuevos mensajes"
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Importaremos sus correos electrónicos anteriores, omitiremos los duplicados y nos conectaremos a su Gmail para que los nuevos mensajes aparezcan automáticamente. Puede deshacer la importación en cualquier momento en los ajustes de Easy Switch."
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Se importan sus correos antiguos y se sincronizan los nuevos mensajes de Gmail a partir de ahora."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Estamos importando sus correos electrónicos de Gmail. Le avisaremos cuando finalicemos."
@@ -3275,6 +3304,10 @@
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
         "Está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Está reenviando correos electrónicos de ${ forwardingCount } dirección de Gmail. Al conectarla, podrá recibir y responder en ${ MAIL_APP_NAME }.",
+        "Está reenviando correos electrónicos de ${ forwardingCount } direcciones de Gmail. Al conectarlas, podrá recibir y responder en ${ MAIL_APP_NAME }."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "Ha conectado ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para agregar otra, primero desactive una de sus cuentas conectadas.",
@@ -4047,6 +4080,10 @@
         "No puede enviar un correo a más de ${ maxContacts } destinatario.",
         "No puede enviar un correo a más de ${ maxContacts } destinatarios."
       ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "No puede abrir más de ${ maxActiveComposer } ventana de editor a la vez",
+        "No puede abrir más de ${ maxActiveComposer } ventanas de editor a la vez"
+      ],
       "You have reached the maximum number of calendars.": [
         "Ha alcanzado la cantidad máxima de calendarios."
       ],
@@ -4651,6 +4688,19 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación de escritorio ${ MAIL_APP_NAME }"
+      ],
+      "Start free trial": [
+        "Iniciar la prueba gratuita"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } día",
+        "${ remainingDaysCount } días"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } día restante",
+        "${ remainingDaysCount } días restantes"
       ]
     },
     "Gmail forwarding": {
@@ -4719,6 +4769,9 @@
       ],
       "Security Center": [
         "Centro de seguridad"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Configurar el asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Username": [
         "Nombre de usuario"
@@ -4792,6 +4845,12 @@
       ],
       "Time zone not supported": [
         "La zona horaria no está admitida."
+      ]
+    },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } participante",
+        "${ totalAttendees } participantes"
       ]
     },
     "Import calendar": {
@@ -5098,6 +5157,10 @@
         "${ contactEmailsLength } miembro",
         "${ contactEmailsLength } miembros"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembro)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembros)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } contiene múltiples direcciones de correo."
       ],
@@ -5108,6 +5171,34 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } de ${ totalProgress }",
+        "${ currentProgress } de ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } conversación se marcará como leída.",
+        "${ elementsCount } conversaciones se marcarán como leídas."
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } mensaje se etiquetará como:",
+        "${ elementsCount } mensajes se etiquetarán como:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } mensaje se marcará como leído.",
+        "${ elementsCount } mensajes se marcarán como leídos."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } mensaje se marcará como no leído.",
+        "${ elementsCount } mensajes se marcarán como no leídos."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } mensaje será movido",
+        "${ elementsCount } mensajes serán movidos"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } imagen incrustada",
+        "${ embeddedAttachmentsCount } imágenes incrustadas"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
@@ -5122,11 +5213,25 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } le ayuda a redactar mejores correos de forma rápida y sin esfuerzo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panel de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } es una solución de videoconferencia cifrada de extremo a extremo. Agréguela a su plan para organizar reuniones seguras."
       ],
       "${ MEET_APP_NAME } seats": [
         "Licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } enlace limpiado",
+        "${ numberOfUTMTrackers } enlaces limpiados"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } ocurrencia encontrada",
+        "${ numOccurrences } ocurrencias encontradas"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } le permite almacenar contraseñas, notas y otra información sensible con cifrado de extremo a extremo. Disponible en ${ ios }, ${ android } y en su ${ browser }."
@@ -5177,9 +5282,21 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
+      "${ total } message": [
+        "${ total } mensaje",
+        "${ total } mensajes"
+      ],
       "${ total } user found": [
         "${ total } usuario encontrado",
         "${ total } usuarios encontrados"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } rastreador bloqueado",
+        "${ trackersCount } rastreadores bloqueados"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } mensaje programado",
+        "${ unreadCount } mensajes programados"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
@@ -5203,6 +5320,10 @@
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Filtra si se cumple ALGUNA de las siguientes condiciones)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** resultado encontrado en ${ labelName }",
+        "**${ total }** resultados encontrados en ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Conexión automática**: Inicie y conéctese a la VPN en cuanto encienda su dispositivo."
@@ -5327,6 +5448,14 @@
       ],
       "Are you sure you want to discard your import?": [
         "¿En verdad desea descartar su importación?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "¿En verdad desea eliminar permanentemente ${ count } borrador?",
+        "¿En verdad desea eliminar permanentemente ${ count } borradores?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "¿En verdad desea eliminar permanentemente ${ count } mensaje?",
+        "¿En verdad desea eliminar permanentemente ${ count } mensajes?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
@@ -5495,6 +5624,10 @@
       "Do you remember your password? ${ verifyButton }": [
         "¿Recuerda su contraseña? ${ verifyButton }"
       ],
+      "Do you want to download this attachment anyway?": [
+        "¿Desea descargar este archivo adjunto de todos modos?",
+        "¿Desea descargar estos archivos adjuntos de todos modos?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
       ],
@@ -5549,6 +5682,10 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Los correos electrónicos etiquetados con la etiqueta ${ nameDeleted } no se eliminarán y se podrán encontrar en sus respectivas carpetas."
       ],
+      "embedded image": [
+        "imagen incrustada",
+        "imágenes incrustadas"
+      ],
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
       ],
@@ -5598,6 +5735,14 @@
       "Expired": [
         "Expirado"
       ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Expira en menos de ${ hoursDiff } hora",
+        "Expira en menos de ${ hoursDiff } horas"
+      ],
+      "file attached": [
+        "archivo adjunto",
+        "archivos adjuntos"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Los filtros funcionan en todos los correos, incluyendo los entrantes y enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
       ],
@@ -5621,6 +5766,10 @@
       ],
       "Forgot password?": [
         "¿Contraseña olvidada?"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratis para probar durante ${ ASSISTANT_TRIAL_TIME_DAYS } día",
+        "Gratis para probar durante ${ ASSISTANT_TRIAL_TIME_DAYS } días"
       ],
       "Geoblocking": [
         "Bloqueo geográfico"
@@ -5710,6 +5859,9 @@
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
       ],
+      "Insert image": [
+        "Insertar imagen"
+      ],
       "Insert link": [
         "Insertar enlace"
       ],
@@ -5784,6 +5936,9 @@
       ],
       "Low Priority": [
         "Prioridad baja"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establezca ${ MAIL_APP_NAME } como su aplicación de correo electrónico por defecto."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -6026,6 +6181,10 @@
       "Scan the QR code with your mobile device": [
         "Escanee el código QR con su dispositivo móvil."
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Seleccionar ${ elementsCount } elemento en ${ location }",
+        "Seleccionar todos los ${ elementsCount } en ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione el formato de correo que quiere usar por defecto al enviar un correo a esta dirección."
       ],
@@ -6147,6 +6306,10 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
       ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Error al verificar ${ contactNames }: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
+        "Error al verificar ${ contactNames }: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una pestaña nueva en el navegador. Desactive cualquier bloqueador de ventanas emergentes activo."
       ],
@@ -6155,6 +6318,10 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descargue el archivo."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Esta conversación será marcada como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?",
+        "Estas conversaciones serán marcadas como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?"
       ],
       "This file is too large to preview": [
         "Este archivo es demasiado grande para previsualizarlo."
@@ -6173,6 +6340,10 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Esto significa que su proveedor de servicios de internet y los sitios web que visita no pueden conectar su información personal con su actividad en línea."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Este mensaje será marcado como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?",
+        "Estos mensajes serán marcados como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Este código único puede ser usado por sitios web e ISP (proveedores de servicios de Internet) para vincular su ubicación y su historial de navegación a su dispositivo."
@@ -6380,6 +6551,17 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Reciba notificaciones si su contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
+      "You have ${ unread } in ${ label }.": [
+        "Tiene ${ unread } en ${ label }."
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Tiene **${ count } mensaje** guardado en esta carpeta",
+        "Tiene **${ count } mensajes** guardados en esta carpeta"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Seleccionó **${ count } mensaje** etiquetado con esta etiqueta",
+        "Seleccionó **${ count } mensajes** etiquetados con esta etiqueta"
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar la suscripción después del periodo de prueba, agregue un método de pago."
       ],
@@ -6391,6 +6573,26 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Debe desactivar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Seleccionó **${ count } conversación** de esta carpeta",
+        "Seleccionó **${ count } conversaciones** de esta carpeta"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Seleccionó **${ elementsCount } conversación** en ${ location }",
+        "Seleccionó **${ elementsCount } conversaciones** en ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Seleccionó **${ elementsCount } conversación**.",
+        "Seleccionó **${ elementsCount } conversaciones**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Seleccionó **${ elementsCount } mensaje** en ${ location }",
+        "Seleccionó **${ elementsCount } mensajes** en ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Seleccionó **${ elementsCount } mensaje**.",
+        "Seleccionó **${ elementsCount } mensajes**."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderá el acceso a las funciones de ${ planTitle } en esta fecha."
@@ -6465,6 +6667,10 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Su mensaje expirará en ${ numberOfDays } día.",
+        "Su mensaje expirará en ${ numberOfDays } días."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento."
@@ -6577,6 +6783,12 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Key pinning": {
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Ha activado la verificación de direcciones con claves de confianza para esta dirección de correo,\npero no se han confiado claves de cifrado activas.\nDebe confiar en una clave válida para poder enviar mensajes a esta dirección.",
+        "Ha activado la verificación de direcciones con claves de confianza para estas direcciones de correo,\npero no se han confiado claves de cifrado activas.\nDebe confiar en las claves válidas para poder enviar mensajes a estas direcciones."
       ]
     },
     "Keyboard shortcut name": {
@@ -6786,6 +6998,9 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
@@ -6901,6 +7116,9 @@
       "City": [
         "Ciudad"
       ],
+      "Clear logs": [
+        "Borrar registros"
+      ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
       ],
@@ -6928,6 +7146,12 @@
       "Contacts": [
         "Contactos"
       ],
+      "Context page": [
+        "Página de contexto"
+      ],
+      "Context total": [
+        "Contexto total"
+      ],
       "Continue cancelling": [
         "Continuar cancelación"
       ],
@@ -6948,6 +7172,9 @@
       ],
       "Credits": [
         "Créditos"
+      ],
+      "Current context": [
+        "Contexto actual"
       ],
       "Date": [
         "Fecha"
@@ -6975,6 +7202,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "p. ej., Amazon, eBay, Mercado Libre"
+      ],
+      "Elements in store": [
+        "Elementos en el almacén"
       ],
       "Email": [
         "Correo"
@@ -7017,6 +7247,9 @@
       ],
       "Extremely Satisfied": [
         "Extremadamente satisfactoria"
+      ],
+      "Filter": [
+        "Filtro"
       ],
       "Filter Name": [
         "Nombre del filtro"
@@ -7081,8 +7314,14 @@
       "Import to:": [
         "Importar a:"
       ],
+      "Import your emails": [
+        "Importar sus correos electrónicos"
+      ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
+      ],
+      "Information": [
+        "Información"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -7095,6 +7334,9 @@
       ],
       "Label as": [
         "Etiquetar como"
+      ],
+      "Label ID": [
+        "ID de la etiqueta"
       ],
       "Label messages as": [
         "Etiquetar mensajes como"
@@ -7116,6 +7358,12 @@
       ],
       "Location": [
         "Ubicación"
+      ],
+      "Mail debugging information": [
+        "Información de depuración de correo"
+      ],
+      "Mail logs": [
+        "Registros de correo"
       ],
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
@@ -7249,6 +7497,9 @@
       "Read": [
         "Leídos"
       ],
+      "Refresh logs": [
+        "Actualizar registros"
+      ],
       "Region": [
         "Estado"
       ],
@@ -7282,6 +7533,9 @@
       "Social media updates and activity": [
         "Actualizaciones y actividad de redes sociales"
       ],
+      "Sort": [
+        "Ordenar"
+      ],
       "Starred": [
         "Destacados"
       ],
@@ -7293,6 +7547,9 @@
       ],
       "Statement": [
         "Declaración"
+      ],
+      "Store state": [
+        "Estado del almacén"
       ],
       "Street address": [
         "Dirección de calle"
@@ -7311,6 +7568,9 @@
       ],
       "System information": [
         "Información del sistema"
+      ],
+      "Tab age": [
+        "Antigüedad de la pestaña"
       ],
       "Tell us more about your experience": [
         "Cuéntenos más sobre su experiencia."
@@ -9150,6 +9410,12 @@
       ],
       "No parent folder": [
         "No hay carpeta principal"
+      ],
+      "Remind me later": [
+        "Recordarme más tarde"
+      ],
+      "Yes, don't show again": [
+        "Sí, no volver a mostrar"
       ]
     },
     "Option group": {
@@ -9713,8 +9979,29 @@
       "Start typing an email address": [
         "Comience a escribir una dirección de correo"
       ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Anunciar próximos eventos en un boletín”"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Cancelar mi suscripción al gimnasio”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Invitar a Ana a mi fiesta”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Agradecer a mi compañero de trabajo por su ayuda en un proyecto”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Escribir una carta de presentación para unas prácticas”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Escribir un correo de seguimiento a un cliente”"
+      ],
       "Text": [
         "Texto"
+      ],
+      "the writing assistant": [
+        "El asistente de escritura"
       ],
       "Thomas": [
         "Andrea"
@@ -9843,102 +10130,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "SPRING SALE 2026": [
-        "OFERTA DE PRIMAVERA 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/mes"
-      ],
-      "15 GB storage": [
-        "15 GB de almacenamiento"
-      ],
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces su plan actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acceda a más de 15 000 servidores en más de 120 países"
-      ],
-      "Access advanced AI models": [
-        "Acceso a modelos de IA avanzados"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Todas las funciones premium de Mail, Pass, Drive, VPN y Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquee anuncios, rastreadores y malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecte 10 dispositivos a la vez"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acceso completo a ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historial de chat completo con búsqueda fácil y favoritos"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y su pareja"
-      ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
-      "Recover previous file versions": [
-        "Recupere versiones anteriores de archivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Chats diarios ilimitados"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Alias de hide-my-email ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use su propio dominio de correo electrónico"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "SPRING SALE": [
-        "OFERTA DE PRIMAVERA"
       ]
     },
     "q2campaign2026: Action": {
@@ -10172,6 +10363,18 @@
     "Select search results": {
       "No results found": [
         "No se encontraron resultados"
+      ]
+    },
+    "Send email with errors": {
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Hemos detectado errores. El correo no puede ser enviado a la dirección de correo ingresada por el siguiente motivo:",
+        "Hemos detectado errores. El correo no puede ser enviado a ninguna de las direcciones de correo ingresadas por los siguientes motivos:"
+      ]
+    },
+    "Send email with warnings": {
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Hemos detectado algunas advertencias. Es posible que la siguiente dirección de correo electrónico no reciba correos electrónicos:",
+        "Hemos detectado algunas advertencias. Es posible que las siguientes direcciones de correo electrónico no reciban correos electrónicos:"
       ]
     },
     "session_recovery:available:action": {
@@ -11171,9 +11374,81 @@
       ]
     },
     "Success": {
+      "${ count } draft deleted": [
+        "${ count } borrador eliminado",
+        "${ count } borradores eliminados"
+      ],
+      "${ count } message deleted": [
+        "${ count } mensaje eliminado",
+        "${ count } mensajes eliminados"
+      ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacto parece idéntico.",
         "${ countMergeableContacts } contactos parecen idénticos."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } conversación marcada como leída.",
+        "${ elementsCount } conversaciones marcadas como leídas."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } conversación marcada como destacada.",
+        "${ elementsCount } conversaciones marcadas como destacadas."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } conversación marcada como no leída.",
+        "${ elementsCount } conversaciones marcadas como no leídas."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } conversación movida a ${ labelName }.",
+        "${ elementsCount } conversaciones movidas a ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } conversación movida a spam y el remitente agregado a la lista de spam.",
+        "${ elementsCount } conversaciones movidas a spam y los remitentes agregados a la lista de spam."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } conversación borrada de ${ labelName }.",
+        "${ elementsCount } conversaciones borradas de ${ labelName }."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversación borrada de Destacados.",
+        "${ elementsCount } conversaciones borradas de Destacados."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } conversación pausada",
+        "${ elementsCount } conversaciones pausadas"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } conversación con pausa desactivada",
+        "${ elementsCount } conversaciones con pausa desactivadas"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } mensaje agregado a ${ labelName }.",
+        "${ elementsCount } mensajes agregados a ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } mensaje marcado como leído.",
+        "${ elementsCount } mensajes marcados como leídos."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } mensaje marcado como no leído.",
+        "${ elementsCount } mensajes marcados como no leídos."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } mensaje movido a ${ labelName } y remitente agregado a la lista de no spam.",
+        "${ elementsCount } mensajes movidos a ${ labelName } y remitentes agregados a la lista de no spam."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } mensaje movido a ${ labelName }.",
+        "${ elementsCount } mensajes movidos a ${ labelName }."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } mensaje eliminado de ${ labelName }.",
+        "${ elementsCount } mensajes eliminados de ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } mensaje borrado de Destacados.",
+        "${ elementsCount } mensajes borrados de Destacados."
       ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
@@ -11210,6 +11485,9 @@
       "Conversation deleted": [
         "Conversación eliminada"
       ],
+      "Copied '${ code }' to clipboard": [
+        "Se ha copiado '${ code }' al portapapeles"
+      ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
@@ -11230,6 +11508,10 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Los últimos alias modificados están guardados en su bóveda más antigua"
+      ],
+      "Move ${ selectionCount } message": [
+        "Mover ${ selectionCount } mensaje",
+        "Mover ${ selectionCount } mensajes"
       ],
       "Password copied to clipboard": [
         "Contraseña copiada al portapapeles."
@@ -11451,6 +11733,17 @@
       "${ feature } is now active": [
         "La función ${ feature } ya está activada"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } mensaje",
+        "${ numMessages } mensajes"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } mensaje sin leer",
+        "${ unreads } mensajes sin leer"
+      ],
       "(active)": [
         "(activo)"
       ],
@@ -11596,6 +11889,9 @@
       "Coupon": [
         "Cupón"
       ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Redacte mejores correos con ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Create contact": [
         "Crear contacto"
       ],
@@ -11633,6 +11929,18 @@
       "Delete ${ count } contact group": [
         "Eliminar ${ count } grupo de contactos",
         "Eliminar ${ count } grupo de contactos"
+      ],
+      "Delete ${ count } conversation": [
+        "Eliminar ${ count } conversación",
+        "Eliminar ${ count } conversaciones"
+      ],
+      "Delete ${ count } draft": [
+        "Eliminar ${ count } borrador",
+        "Eliminar ${ count } borradores"
+      ],
+      "Delete ${ count } message": [
+        "Eliminar ${ count } mensaje",
+        "Eliminar ${ count } mensajes"
       ],
       "Delete ${ value }": [
         "Eliminar ${ value }"
@@ -11797,11 +12105,18 @@
       "Invalid verification code": [
         "Código de verificación inválido"
       ],
+      "Keep this banner hidden?": [
+        "¿Mantener oculta esta barra?"
+      ],
       "Limit reached": [
         "Límite alcanzado"
       ],
       "Link confirmation": [
         "Confirmación de enlace"
+      ],
+      "Mailing list": [
+        "Lista de correo",
+        "Listas de correo"
       ],
       "Make a secure connection your default": [
         "Elija una conexión segura como opción predeterminada"
@@ -12025,6 +12340,10 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para previsualizar esta hoja de cálculo, ábrala en ${ SHEETS_APP_NAME } o descárguela."
       ],
+      "Trust new key?": [
+        "¿Confiar clave nueva?",
+        "¿Confiar claves nuevas?"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Active ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -12163,6 +12482,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Load image": [
         "Cargar imagen"
@@ -12388,6 +12710,10 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Algunos de los contactos a combinar tienen errores. Revíselos individualmente."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Error en la verificación de la firma del archivo adjunto.\nTodavía puede descargar este archivo adjunto, pero puede haber sido manipulado.",
+        "Error en la verificación de algunas firmas de los archivos adjuntos.\nTodavía puede descargar estos archivos adjuntos, pero pueden haber sido manipulados."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Los datos del contacto están corruptos y no pueden mostrarse."

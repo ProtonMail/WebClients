@@ -1737,6 +1737,11 @@
         "Tag en tour"
       ]
     },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importér ældre beskeder i ${ PRODUCT_NAMES.EASY_SWITCH } indstillinger."
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Deltager?"
@@ -3270,8 +3275,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Vi importerer Deres gamle e-mails, springer dubletter over og forbinder til Deres Gmail, så nye beskeder vises automatisk. De kan til enhver tid fortryde importen i indstillingerne for Easy Switch."
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi importerer dine gamle e-mails og synkroniserer nye beskeder fra Gmail fremover."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
@@ -5906,6 +5911,9 @@
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
+      "Insert image": [
+        "Indsæt billede"
+      ],
       "Insert link": [
         "Indsæt link"
       ],
@@ -6595,6 +6603,9 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
+      "You have ${ unread } in ${ label }.": [
+        "Du har ${ unread } i ${ label }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } samtale** gemt i denne mappe",
         "Du har **${ count } samtaler** gemt i denne mappe"
@@ -7265,6 +7276,9 @@
       "Download logs": [
         "Hent logfiler"
       ],
+      "Drive": [
+        "Drev"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "fx på Amazon, eBay osv."
       ],
@@ -7378,6 +7392,9 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Import your emails": [
+        "Importér dine e-mails"
       ],
       "Include application logs in bug report": [
         "Inkluder applikationslogfiler i fejlrapporten"
@@ -10192,102 +10209,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Tag imod tilbuddet"
-      ],
-      "SPRING SALE 2026": [
-        "FORÅRSALG 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/måned"
-      ],
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "2 TB data storage": [
-        "2 TB datalagerplads"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagerplads: 40x dit nuværende abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB datalagerplads"
-      ],
-      "500 GB storage": [
-        "500 GB lagerplads"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Få adgang til 15.000+ servere i 120+ lande"
-      ],
-      "Access advanced AI models": [
-        "Adgang til avancerede AI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle premiumfunktioner i Mail, Pass, Drive, VPN og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloker annoncer, trackere og malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Indbygget 2FA-godkender"
-      ],
-      "Connect 10 devices at once": [
-        "Forbind 10 enheder på én gang"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Forlæng dit abonnement og spar ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Fuld adgang til ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fuld chathistorik med nem søgning og favoritter"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle konti til 6 brugere"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle konti til dig og en partner"
-      ],
-      "Online document editor": [
-        "Online dokumenteditor"
-      ],
-      "Recover previous file versions": [
-        "Gendan tidligere filversioner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stærkere beskyttelse mod cybertrusler"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Ubegrænset antal daglige chats"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrænset antal mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænset antal hide-my-email-aliasser"
-      ],
-      "Use your own email domain": [
-        "Brug dit eget e-mail-domæne"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "i 12 måneder"
-      ],
-      "SPRING SALE": [
-        "FORÅR SALG"
       ]
     },
     "q2campaign2026: Action": {
