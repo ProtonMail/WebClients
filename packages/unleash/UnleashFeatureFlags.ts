@@ -247,6 +247,7 @@ export enum MailFeatureFlag {
     RemoveReplyStyles = 'RemoveReplyStyles',
     // Category view flags, used to control the whole category view
     CategoryView = 'CategoryView',
+    CategoriesUnseenBadge = 'CategoriesUnseenBadge',
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     MailStoreDebugMode = 'MailStoreDebugMode',

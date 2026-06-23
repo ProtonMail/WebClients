@@ -4,6 +4,7 @@ import { updateLastUnseenEventId } from '@proton/mail/store/labels/actions';
 import { useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { TabState } from './tabsInterface';
 
@@ -18,6 +19,8 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
 
     const dispatch = useDispatch();
     const { getEventID } = useEventManager();
+
+    const showBadge = useFlag('CategoriesUnseenBadge');
 
     // The counter is displayed if the setting is enabled or if the tab is active
     const shouldShowCounter = mailSettings.MailCategoryViewCountersEnabled || tabState === TabState.ACTIVE;
@@ -37,8 +40,8 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
     };
 
     return {
-        shouldShowCounter,
-        shouldShowNewBadge,
+        shouldShowCounter: shouldShowCounter && showBadge,
+        shouldShowNewBadge: shouldShowNewBadge && showBadge,
         handleTabClick,
     };
 };
