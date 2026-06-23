@@ -64,6 +64,10 @@ export const B2B_CATEGORIES_MAPPING: Record<string, CategoryConfig> = {
         flag: CategoriesOnboardingFlags.TRANSACTION,
         checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.TRANSACTION),
     },
+    [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: {
+        flag: CategoriesOnboardingFlags.NEWSLETTER,
+        checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.NEWSLETTER),
+    },
     [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: {
         flag: CategoriesOnboardingFlags.UPDATE,
         checker: (flagValue: number) => hasBit(flagValue, CategoriesOnboardingFlags.UPDATE),
