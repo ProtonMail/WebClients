@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
-import { UnauthedForgotPassword } from './UnauthedForgotPassword';
+import { ResetPasswordPage } from './ResetPasswordPage';
 import { handleRequestRecoveryMethods } from './actions';
 
 jest.mock('./actions', () => ({
@@ -37,7 +37,7 @@ jest.mock('../locales', () => jest.requireActual('../locales'));
 
 function ForgotPasswordHarness() {
     return (
-        <UnauthedForgotPassword
+        <ResetPasswordPage
             onLogin={jest.fn()}
             onPreSubmit={() => Promise.resolve()}
             onStartAuth={() => Promise.resolve()}
@@ -45,6 +45,11 @@ function ForgotPasswordHarness() {
             setupVPN={false}
             toApp={undefined}
             loginUrl="/login"
+            metaTags={{
+                description: '',
+                title: '',
+                ogImage: '',
+            }}
         />
     );
 }

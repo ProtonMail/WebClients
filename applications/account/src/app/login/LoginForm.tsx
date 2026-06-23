@@ -26,9 +26,9 @@ import { useLoading } from '@proton/hooks';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
-import { IcLifeRing } from "@proton/icons/icons/IcLifeRing";
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -40,7 +40,7 @@ import type {
     SSOInfoResponse,
 } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, LUMO_SHORT_APP_NAME} from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -55,7 +55,6 @@ import { openTroubleshootWithLumo } from '../public/TroubleshootWithLumo';
 import { defaultPersistentKey } from '../public/helper';
 import { RememberMode } from './LoginContainer';
 import SignupButton from './SignupButton';
-
 
 export interface LoginFormRef {
     getIsLoading: () => boolean;
@@ -395,15 +394,11 @@ const LoginForm = ({
         setExternalSSOState(undefined);
     };
 
-    const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
     const lumoSignInHelperEnabled = useFlag('LumoSignInHelp');
     const urlParams = new URLSearchParams();
 
     if (username) {
         urlParams.append('username', username);
-    }
-    if (!unauthedForgotPasswordEnabled) {
-        urlParams.append('variant', 'a');
     }
 
     const stringUrlParams = urlParams.toString();

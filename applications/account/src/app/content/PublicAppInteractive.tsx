@@ -64,11 +64,11 @@ import Activation from '../signupCtx/flows/bornPrivate/activation/Activation';
 import Recovery from '../signupCtx/flows/bornPrivate/recovery/Recovery';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import { extraThunkArguments } from '../store/public-thunk';
+import { ResetPasswordPage } from '../unauthed-forgot-password/ResetPasswordPage';
 import type useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { ProductAttribution } from './ProductAttribution';
-import ResetPasswordSwitchContainer from './ResetPasswordSwitchContainer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
 import { TvContainerGetVpnPlus } from './TvContainerGetVpnPlus';
 import { TvContainerNotSignedIn } from './TvContainerNotSignedIn';
@@ -529,7 +529,7 @@ const PublicAppInteractive = ({
                                         </Route>
                                         <Route path={SSO_PATHS.RESET_PASSWORD}>
                                             <UnAuthenticated>
-                                                <ResetPasswordSwitchContainer
+                                                <ResetPasswordPage
                                                     metaTags={resetPasswordPage()}
                                                     toApp={maybePreAppIntent}
                                                     onLogin={handleLogin}
