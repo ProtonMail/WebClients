@@ -38,7 +38,6 @@ import type { UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/inte
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { srpAuth } from '@proton/shared/lib/srp';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';
@@ -116,7 +115,6 @@ const ReAuthContainer = ({
     state: ReAuthState;
     onPreSubmit: () => Promise<void>;
 }) => {
-    const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
     const [data, setData] = useState<{ step: 'initial' | 'unlock'; salts: tsKeySalt[] }>({
         step: 'initial',
         salts: [],
@@ -224,7 +222,7 @@ const ReAuthContainer = ({
                             content={c('Link').t`Trouble signing in?`}
                         >
                             <Link
-                                to={`${paths.reset}?variant=${!unauthedForgotPasswordEnabled ? 'a' : 'b'}`}
+                                to={paths.reset}
                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                             >
                                 <IcKey />
