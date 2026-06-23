@@ -2,6 +2,7 @@ import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'reac
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Prompt, useLocation } from 'react-router';
 
+import { type SessionKey, serverTime } from '@protontech/crypto';
 import { addMinutes, differenceInMinutes, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
@@ -33,7 +34,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import usePreventCloseTab from '@proton/components/hooks/usePreventCloseTab';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { type SessionKey, serverTime } from '@protontech/crypto';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
@@ -178,7 +178,7 @@ import EditRecurringConfirmModal from './confirmationModals/editRecurring/EditRe
 import EditSingleConfirmModal from './confirmationModals/editSingleModal/EditSingleConfirmModal';
 import getDeleteEventActions from './eventActions/getDeleteEventActions';
 import getSaveEventActions from './eventActions/getSaveEventActions';
-import { getSendIcsAction } from './eventActions/inviteActions';
+import { getAddedAttendeesPublicKeysMap, getSendIcsAction } from './eventActions/inviteActions';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
 import {
     deleteConferenceData,
@@ -1234,11 +1234,22 @@ const InteractiveCalendarView = ({
         });
 
         await sendIcsAction();
+
+        const addedAttendeesPublicKeysMap = cleanVevent
+            ? await getAddedAttendeesPublicKeysMap({
+                  veventComponent: cleanVevent,
+                  inviteActions: cleanInviteActions,
+                  sendPreferencesMap,
+                  getEncryptionPreferences,
+              })
+            : {};
+
         return {
             veventComponent: cleanVevent,
             inviteActions: cleanInviteActions,
             timestamp: currentTimestamp,
             sendPreferencesMap,
+            addedAttendeesPublicKeysMap,
         };
     };
 
