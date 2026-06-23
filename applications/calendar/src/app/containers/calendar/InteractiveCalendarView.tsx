@@ -371,6 +371,7 @@ const InteractiveCalendarView = ({
     const [{ hasPaidMail }] = useUser();
     const isSavingEvent = useRef(false);
     const isEditSingleOccurrenceEnabled = useFlag('EditSingleOccurrenceWeb');
+    const canAutoAddDisabledE2EEAttendees = useFlag('AutoAddDisabledE2EEAttendees');
     const [targetEventElement, setTargetEventElement] = useState<HTMLElement | null>(null);
     const [targetMoreElement, setTargetMoreElement] = useState<HTMLDivElement | null>(null);
     const eventInPopoverUniqueIdRef = useRef<string | undefined>(undefined);
@@ -1241,6 +1242,7 @@ const InteractiveCalendarView = ({
                   inviteActions: cleanInviteActions,
                   sendPreferencesMap,
                   getEncryptionPreferences,
+                  canAutoAddDisabledE2EEAttendees,
               })
             : {};
 
