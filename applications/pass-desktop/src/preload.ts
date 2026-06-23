@@ -39,6 +39,10 @@ const contextBridgeApi: ContextBridgeApi = {
     getTheme: () => invoke('theming:getTheme'),
     setTheme: (theme) => invoke('theming:setTheme', theme),
 
+    /* content protection */
+    getContentProtection: () => invoke('contentProtection:get'),
+    setContentProtection: (enabled) => invoke('contentProtection:set', enabled),
+
     /* routing */
     navigate: (href) => invoke('router:navigate', href),
 
