@@ -14,7 +14,7 @@ import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcKey } from '@proton/icons/icons/IcKey';
-import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcShareNode } from '@proton/icons/icons/IcShareNode';
 import { BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
@@ -172,7 +172,7 @@ const GroupInfoRow = ({
                     backgroundColor: 'var(--interaction-norm-minor-1)',
                 }}
             >
-                <IcLink className="m-auto color-primary shrink-0" size={4} />
+                <IcShareNode className="m-auto color-primary shrink-0" size={4} />
             </span>
             <span className="block flex-1 min-w-0">
                 <span className="block text-ellipsis text-bold" title={group.Name}>

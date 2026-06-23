@@ -73,7 +73,7 @@ export const GroupMemberItem = ({
                             className="rounded-sm color-weak"
                             tooltip={c('tooltip').t`User is a group`}
                         >
-                            {c('invitation status').t`Owner`}
+                            {c('invitation status').t`Group Owner`}
                         </Badge>
                     )}
                 </div>

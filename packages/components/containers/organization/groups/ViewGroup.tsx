@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
+import { getIsScimGroup, getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
@@ -17,6 +17,7 @@ import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcShareNode } from '@proton/icons/icons/IcShareNode';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { KEY_FLAG, SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -77,6 +78,7 @@ const ViewGroup = () => {
 
     const roleNames = groupRolesMap[group.ID]?.map((assignment) => assignment.Role.Name).join(', ');
 
+    const isScimGroup = getIsScimGroup(group);
     const isScimGroupPendingKeys = getIsScimGroupPendingKeys(group);
     const pendingAdminMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING_ADMIN).length;
     const invitedMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING).length;
@@ -88,13 +90,21 @@ const ViewGroup = () => {
                     <PanelHeader
                         className="border-bottom pb-4 pt-5 lg:pt-1"
                         title={
-                            <h2
-                                className="text-bold text-4xl text-ellipsis"
-                                style={{ lineHeight: '2rem' }}
-                                title={Name}
-                            >
-                                {Name}
-                            </h2>
+                            <div className="flex flex-column gap-1">
+                                <h2
+                                    className="text-bold text-4xl text-ellipsis"
+                                    style={{ lineHeight: '2rem' }}
+                                    title={Name}
+                                >
+                                    {Name}
+                                </h2>
+                                {isScimGroup && (
+                                    <span className="flex items-center flex-nowrap gap-1 color-weak text-sm">
+                                        <IcShareNode className="shrink-0" size={3} />
+                                        {c('Info').t`Synced from identity provider`}
+                                    </span>
+                                )}
+                            </div>
                         }
                         actions={[
                             <Button
