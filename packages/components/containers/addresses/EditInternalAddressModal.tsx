@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { renameInternalAddressThunk } from '@proton/account/addresses/renameInternalAddress';
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -26,8 +27,11 @@ interface Props extends ModalProps<'form'> {
 }
 
 const EditInternalAddressModal = ({ address, member, ...rest }: Props) => {
+    const [customDomains] = useCustomDomains();
     const [initialEmail] = useState(address.Email);
-    const [[initialLocalEmail, domain]] = useState(getEmailParts(initialEmail));
+    const [initialLocalEmail, parsedDomain] = getEmailParts(initialEmail);
+    const customDomain = customDomains?.find(({ ID }) => ID === address.DomainID);
+    const domain = customDomain?.DomainName ?? parsedDomain;
     const [initialDisplayName] = useState(address.DisplayName);
 
     const [displayName, setDisplayName] = useState(initialDisplayName);
