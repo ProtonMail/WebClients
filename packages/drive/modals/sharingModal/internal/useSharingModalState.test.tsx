@@ -2,9 +2,10 @@ import {
     MemberRole,
     type NodeEntity,
     NodeType,
-    type Result,
     ValidationError,
     generateNodeUid,
+    resultError,
+    resultOk,
 } from '@protontech/drive-sdk';
 import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { waitFor } from '@testing-library/react';
@@ -82,14 +83,11 @@ const mockShareResult = {
     ],
 };
 
-const mockNodeInfo: Result<Partial<NodeEntity>, any> = {
-    ok: true,
-    value: {
-        name: 'Test File',
-        type: NodeType.File,
-        ownedBy: {
-            email: 'owner@proton.me',
-        },
+const mockNodeInfo: Partial<NodeEntity> = {
+    name: { ok: true, value: 'Test File' },
+    type: NodeType.File,
+    ownedBy: {
+        email: 'owner@proton.me',
     },
 };
 
@@ -108,6 +106,8 @@ const mockedUseLoading = jest.mocked(useLoading);
 const mockedUseFlagsDriveDocsPublicSharing = jest.mocked(useFlagsDriveDocsPublicSharing);
 const mockedGetAppHref = jest.mocked(getAppHref);
 const mockedTextToClipboard = jest.mocked(textToClipboard);
+const mockedResultOk = jest.mocked(resultOk);
+const mockedResultError = jest.mocked(resultError);
 
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/components');
@@ -180,6 +180,9 @@ describe('useSharingModalState', () => {
             .mockReturnValue({ shareId: mockShareId, invitationId: mockInvitationId });
 
         mockedGetAppHref.mockReturnValue('https://example.com/invite-link');
+
+        mockedResultOk.mockImplementation((value) => ({ ok: true, value }));
+        mockedResultError.mockImplementation((error) => ({ ok: false, error }));
     });
 
     afterEach(() => {
@@ -448,6 +451,85 @@ describe('useSharingModalState', () => {
         expect(mockBusEmit).toHaveBeenCalled();
     });
 
+    it('should call onShareSnapshot with the updated share result when createSharePublic succeeds', async () => {
+        const onShareSnapshot = jest.fn();
+        const mockShareResultWithoutPublicLink = {
+            ...mockShareResult,
+            publicLink: undefined,
+        };
+        const updatedShareResult = {
+            ...mockShareResult,
+            publicLink: {
+                token: 'new-public-token',
+                url: 'https://example.com/new-public-link',
+                role: MemberRole.Viewer,
+            },
+        };
+
+        when(mockDrive.getSharingInfo).calledWith(mockNodeUid).mockResolvedValue(mockShareResultWithoutPublicLink);
+        when(mockDrive.shareNode)
+            .calledWith(mockNodeUid, { publicLink: { role: MemberRole.Viewer } })
+            .mockResolvedValue(updatedShareResult);
+
+        const { result } = renderHook(() => useSharingModalState({ ...mockProps, onShareSnapshot }));
+
+        await waitFor(() => {
+            expect(result.current.directMembers).toEqual(expectedDirectMembers);
+        });
+
+        await act(async () => {
+            await result.current.actions.createSharePublic();
+        });
+
+        expect(onShareSnapshot).toHaveBeenCalledWith({
+            ok: true,
+            value: updatedShareResult,
+        });
+    });
+
+    it('should call onShareSnapshot for non-public-link mutations', async () => {
+        const onShareSnapshot = jest.fn();
+        const shareNodeSettings = {
+            users: [{ email: 'new@example.com', role: MemberRole.Viewer }],
+        };
+        const updatedShareResult = {
+            ...mockShareResult,
+            members: [
+                ...mockShareResult.members,
+                { uid: 'new-member-uid', inviteeEmail: 'new@example.com', role: MemberRole.Viewer },
+            ],
+        };
+
+        when(mockDrive.shareNode).calledWith(mockNodeUid, shareNodeSettings).mockResolvedValue(updatedShareResult);
+
+        const { result } = renderHook(() => useSharingModalState({ ...mockProps, onShareSnapshot }));
+
+        await waitFor(() => {
+            expect(result.current.directMembers).toEqual(expectedDirectMembers);
+        });
+
+        await act(async () => {
+            await result.current.actions.updateShareDirect(shareNodeSettings);
+        });
+
+        expect(onShareSnapshot).toHaveBeenCalledWith({
+            ok: true,
+            value: updatedShareResult,
+        });
+    });
+
+    it('should call onShareSnapshot with the fetched share result on initial load', async () => {
+        const onShareSnapshot = jest.fn();
+
+        const { result } = renderHook(() => useSharingModalState({ ...mockProps, onShareSnapshot }));
+
+        await waitFor(() => {
+            expect(result.current.directMembers).toEqual(expectedDirectMembers);
+        });
+
+        expect(onShareSnapshot).toHaveBeenCalledWith({ ok: true, value: mockShareResult });
+    });
+
     it('should resend invitation', async () => {
         const { result } = renderHook(() => useSharingModalState(mockProps));
 
@@ -554,13 +636,8 @@ describe('useSharingModalState', () => {
         expect(mockBusEmit).toHaveBeenCalled();
     });
 
-    it('should handle case when node info is not ok', async () => {
-        const failedNodeInfo = {
-            ok: false,
-            value: null,
-        };
-
-        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(failedNodeInfo);
+    it('should handle case when getNode fails', async () => {
+        when(mockDrive.getNode).calledWith(mockNodeUid).mockRejectedValue(new Error('Node not found'));
 
         const { result } = renderHook(() => useSharingModalState(mockProps));
 
@@ -576,13 +653,10 @@ describe('useSharingModalState', () => {
         ];
 
         const nodeInfoWithDifferentOwner = {
-            ok: true,
-            value: {
-                name: 'Test File',
-                type: 1,
-                ownedBy: {
-                    email: 'owner@proton.me',
-                },
+            name: { ok: true, value: 'Test File' },
+            type: 1,
+            ownedBy: {
+                email: 'owner@proton.me',
             },
         };
 
@@ -602,13 +676,10 @@ describe('useSharingModalState', () => {
         const contactEmails = [{ Email: 'other@proton.me', Name: 'Other User' }];
 
         const nodeInfoWithDifferentOwner = {
-            ok: true,
-            value: {
-                name: 'Test File',
-                type: 1,
-                ownedBy: {
-                    email: 'owner@proton.me',
-                },
+            name: { ok: true, value: 'Test File' },
+            type: 1,
+            ownedBy: {
+                email: 'owner@proton.me',
             },
         };
 
@@ -626,13 +697,10 @@ describe('useSharingModalState', () => {
 
     it('should not set owner display name when contactEmails is empty', async () => {
         const nodeInfoWithDifferentOwner = {
-            ok: true,
-            value: {
-                name: 'Test File',
-                type: 1,
-                ownedBy: {
-                    email: 'owner@proton.me',
-                },
+            name: { ok: true, value: 'Test File' },
+            type: 1,
+            ownedBy: {
+                email: 'owner@proton.me',
             },
         };
 
@@ -796,6 +864,26 @@ describe('useSharingModalState', () => {
             });
         });
 
+        it('should call onShareSnapshot with the error when createSharePublic fails', async () => {
+            const onShareSnapshot = jest.fn();
+            const error = new Error('Create public share failed');
+            when(mockDrive.shareNode)
+                .calledWith(mockNodeUid, { publicLink: { role: MemberRole.Viewer } })
+                .mockRejectedValue(error);
+
+            const { result } = renderHook(() => useSharingModalState({ ...mockProps, onShareSnapshot }));
+
+            await waitFor(() => {
+                expect(result.current.publicLink).toBeDefined();
+            });
+
+            await act(async () => {
+                await result.current.actions.createSharePublic();
+            });
+
+            expect(onShareSnapshot).toHaveBeenCalledWith({ ok: false, error });
+        });
+
         it('should show a toast with the SDK message when updateSharePublic fails with ValidationError', async () => {
             const errorMessage = 'Max amount of editable public urls limited to 3 on your plan. Please upgrade.';
             const error = new ValidationError(errorMessage);
@@ -865,6 +953,18 @@ describe('useSharingModalState', () => {
                     },
                     showNotification: false,
                 });
+            });
+        });
+
+        it('should call onShareSnapshot with the error when initial fetch fails', async () => {
+            const onShareSnapshot = jest.fn();
+            const error = new Error('Get sharing info failed');
+            when(mockDrive.getSharingInfo).calledWith(mockNodeUid).mockRejectedValue(error);
+
+            renderHook(() => useSharingModalState({ ...mockProps, onShareSnapshot }));
+
+            await waitFor(() => {
+                expect(onShareSnapshot).toHaveBeenCalledWith({ ok: false, error });
             });
         });
 

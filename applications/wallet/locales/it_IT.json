@@ -455,6 +455,10 @@
         "${ seats } licenza ${ LUMO_APP_NAME }",
         "${ seats } licenze ${ LUMO_APP_NAME }"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } posto dell'assistente alla scrittura",
         "${ seats } posti dell'assistente alla scrittura"
@@ -2112,9 +2116,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
       ],
@@ -2752,6 +2753,10 @@
       ],
       "Country code": [
         "Codice nazione"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un cloud sicuro per ${ memberCount } membro",
+        "Crea un cloud sicuro per ${ memberCount } membri"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
@@ -3572,6 +3577,16 @@
       "Up to ${ n } participant": [
         "Fino a ${ n } partecipante",
         "Fino a ${ n } partecipanti"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferenze, ${ n } partecipante",
+        "Videoconferenze, ${ n } partecipanti"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licenza inclusa",
+        "${ seats } licenze incluse"
       ]
     },
     "New Label form": {
@@ -4373,6 +4388,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } paese",
+        "${ n } paesi"
+      ],
       "Access advanced VPN features": [
         "Accedi a funzionalità VPN avanzate"
       ],
@@ -5354,6 +5373,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
       ],
@@ -5462,9 +5484,6 @@
       "Human verification": [
         "Verifica umana"
       ],
-      "Import emails, calendars, contacts": [
-        "Importa email, calendari, contatti"
-      ],
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
@@ -5524,6 +5543,9 @@
       ],
       "Summary": [
         "Riepilogo"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"

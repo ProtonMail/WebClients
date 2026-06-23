@@ -84,6 +84,11 @@ describe('useSharedByMeNodesLoader', () => {
             setLoading: mockSetLoading,
             setSharedByMeItem: mockSetSharedByMeItem,
             updateSharedByMeItem: mockUpdateSharedByMeItem,
+            cleanupStaleItems: jest.fn(),
+            sortConfig: undefined,
+            sortField: 'name',
+            direction: 'asc',
+            setSorting: jest.fn(),
         });
 
         mockGetNodeEntity.mockReturnValue({ node: createMockNode(), errors: new Map() });
@@ -98,6 +103,11 @@ describe('useSharedByMeNodesLoader', () => {
                 setLoading: mockSetLoading,
                 setSharedByMeItem: mockSetSharedByMeItem,
                 updateSharedByMeItem: mockUpdateSharedByMeItem,
+                cleanupStaleItems: jest.fn(),
+                sortConfig: undefined,
+                sortField: 'name',
+                direction: 'asc',
+                setSorting: jest.fn(),
             });
 
             const abortSignal = new AbortController().signal;

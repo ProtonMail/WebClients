@@ -335,6 +335,9 @@
       "Discard Changes": [
         "放棄修改"
       ],
+      "Disconnect": [
+        "中斷連線"
+      ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
       ],
@@ -563,6 +566,9 @@
       "Keep my subscription": [
         "保持訂閱"
       ],
+      "Later": [
+        "稍後"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -664,6 +670,9 @@
       ],
       "Or remove forwarding address": [
         "或移除轉寄位址"
+      ],
+      "Or use a different Gmail address": [
+        "或使用其他 Gmail 位址"
       ],
       "Organization": [
         "組織"
@@ -1058,6 +1067,9 @@
       "Use recovery code": [
         "使用復原碼"
       ],
+      "Use this Gmail address": [
+        "使用此 Gmail 位址"
+      ],
       "Use your current email instead": [
         "沿用您目前的電郵位址"
       ],
@@ -1078,6 +1090,9 @@
       ],
       "Verify domain": [
         "驗證網域"
+      ],
+      "Verify now": [
+        "立即驗證"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "驗證此網域${ unverifiedSSODomain.DomainName }"
@@ -1254,6 +1269,9 @@
       ],
       "Disabled": [
         "已停用"
+      ],
+      "Disconnected": [
+        "已中斷連線"
       ],
       "External": [
         "外部"
@@ -3011,6 +3029,9 @@
       "Available storage: ${ storageText }": [
         "可用儲存空間: ${ storageText }"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "阻止 Google 建立您的個人檔案。Gmail 無法查看您在 ${ MAIL_APP_NAME } 中的活動"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "設置此以先啟動您的組織和自訂您的電子郵件地址。"
       ],
@@ -3080,6 +3101,9 @@
       "No one in your organization can connect to shared servers.": [
         "於您的組織內無人可連接至於共享伺服器"
       ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "直接在 ${ MAIL_APP_NAME } 中閱讀、回覆並隨時掌握 Gmail 動態"
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "設定所有使用者的帳號，並邀請他們加入 ${ BRAND_NAME }。"
       ],
@@ -3128,14 +3152,14 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "我們已匯入來自於 Gmail 的電子郵件。完成時我們將讓您知道。"
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。請在下方連線一個位址，以便直接從 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -3151,6 +3175,9 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "您已連線一個外部帳號位址至 ${ MAIL_APP_NAME }。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
@@ -3869,6 +3896,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
+      ],
+      "Something went wrong while converting the address": [
+        "轉換位址時發生錯誤"
+      ],
+      "Something went wrong while creating the address": [
+        "建立位址時發生錯誤"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -5432,24 +5468,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "從其他雙重驗證應用程式**匯入您的現有代碼**，例如 Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：使用您的推薦連結**邀請朋友加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**第二步：**您的朋友將取得該方案的 **2 週免費**。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**第二步：**您的朋友將取得該方案的 2 週免費。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**第三步：**每成功推薦一人訂閱方案，您將獲得 **${ referrerRewardAmount } 可用額度**。"
-      ],
       "**Sync codes** to all your devices": [
         "**同步代碼**到您的所有裝置"
       ],
@@ -5813,6 +5831,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "您要撤銷除目前之外所有其它工作階段嗎？"
       ],
@@ -5995,6 +6016,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "只要 ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Gateway monitor": [
         "閘道監控"
@@ -7013,6 +7037,9 @@
       "Unverified email address.": [
         "未經驗證的電子郵件位址。"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
@@ -7707,6 +7734,9 @@
       "Calendar": [
         "行事曆"
       ],
+      "Calendars": [
+        "行事曆"
+      ],
       "Card details": [
         "信用卡資訊"
       ],
@@ -7856,6 +7886,9 @@
       ],
       "Email or username": [
         "電郵位址或使用者名稱"
+      ],
+      "Emails": [
+        "電郵"
       ],
       "Emails (all messages)": [
         "電子郵件（全部訊息）"
@@ -11102,15 +11135,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
       ],
-      "SPRING SALE 2026": [
-        "春季特賣 2026"
+      "Summer Sale": [
+        "夏季特賣"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/每月"
       ],
@@ -11129,35 +11162,17 @@
       "500 GB storage": [
         "500 GB 儲存空間"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "存取位於 120 多個國家/地區的 15,000 台伺服器"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
       ],
-      "Access advanced AI models": [
-        "存取進階 AI 模型"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail、Pass、磁碟、VPN 和行事曆的所有頂級質子版功能"
-      ],
-      "Block ads, trackers, and malware": [
-        "封鎖廣告、追蹤程式和惡意軟體"
-      ],
-      "Built-in 2FA authenticator": [
-        "內建雙重驗證驗證器"
-      ],
-      "Connect 10 devices at once": [
-        "同時連線 10 個裝置"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "延長您的訂閱並節省 ${ discountPercent }%！"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "完整存取 ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "具備輕鬆搜尋與最愛功能的完整聊天記錄"
       ],
       "Individual accounts for 6 users": [
         "6 位使用者的個人帳號"
@@ -11165,8 +11180,8 @@
       "Individual accounts for you and a partner": [
         "供您與夥伴使用的個人帳號"
       ],
-      "Online document editor": [
-        "線上文件編輯器"
+      "Online document and spreadsheet editor": [
+        "線上文件和試算表編輯器"
       ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
@@ -11177,25 +11192,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
       ],
-      "Unlimited daily chats": [
-        "無限每日聊天"
-      ],
       "Unlimited folders, labels, and filters": [
         "資料夾、標籤與篩選器無上限"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無限的 hide-my-email 別名"
       ],
       "Use your own email domain": [
         "使用您自己的電子郵件網域"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "12 個月"
       ],
-      "SPRING SALE": [
-        "春季特賣"
+      "SUMMER SALE": [
+        "夏季特賣"
       ]
     },
     "Recovery Email": {
@@ -12528,6 +12537,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe撰寫幫手"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
       ],
@@ -13355,6 +13367,9 @@
       "Are you sure you want to close the preview?": [
         "您確定要關閉預覽嗎？"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "您確定要中斷此位址的連線嗎？"
+      ],
       "Are you sure?": [
         "您確定嗎？"
       ],
@@ -13742,9 +13757,6 @@
       "Import contacts": [
         "匯入聯絡人"
       ],
-      "Import emails, calendars, contacts": [
-        "匯入電子郵件、行事曆、聯絡人"
-      ],
       "Import events": [
         "匯入事件"
       ],
@@ -13753,6 +13765,9 @@
       ],
       "Import groups": [
         "匯入群組"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "使用${ PRODUCT_NAMES.EASY_SWITCH }匯入"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "匯入您的資料至 ${ BRAND_NAME }"
@@ -14072,6 +14087,9 @@
       "Summary": [
         "總結"
       ],
+      "Summer Sale": [
+        "夏季特賣"
+      ],
       "Switch to one-password mode": [
         "切換為單一密碼模式"
       ],
@@ -14152,6 +14170,9 @@
       ],
       "Verification failed": [
         "驗證失敗"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ],
       "Verifying your card...": [
         "正在驗證您的信用卡..."

@@ -79,7 +79,7 @@ export interface ProductParams {
 }
 
 export const getProductParams = (pathname: string, searchParams: URLSearchParams): ProductParams => {
-    const maybeProductPathname = pathname.match(/\/([^/]*)/)?.[1];
+    const maybeProductPathnames = pathname.split('/').filter(Boolean);
     const maybeProductParam = (
         searchParams.get('service') ||
         searchParams.get('product') ||
@@ -89,10 +89,9 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
         ?.toLowerCase()
         ?.replace('proton-', '');
 
-    let [product] = [maybeProductPathname, maybeProductParam].map((value) => getProduct(value)).filter(Boolean);
-    let [productParam] = [maybeProductPathname, maybeProductParam]
-        .map((value) => getProductParam(product, value))
-        .filter(Boolean);
+    const maybeProducts = [...maybeProductPathnames, maybeProductParam];
+    let [product] = maybeProducts.map((value) => getProduct(value)).filter(Boolean);
+    let [productParam] = maybeProducts.map((value) => getProductParam(product, value)).filter(Boolean);
 
     productParam = productParam || 'generic';
     const planParam = searchParams.get('plan') as any;
@@ -105,13 +104,7 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
     }
 
     if (!product) {
-        const plans = [
-            PLANS.MAIL_PRO,
-            PLANS.MAIL_BUSINESS,
-            PLANS.BUNDLE_PRO,
-            PLANS.BUNDLE_PRO_2024,
-            PLANS.BUNDLE_BIZ_2025,
-        ];
+        const plans = [PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS];
         if (plans.includes(planParam)) {
             product = APPS.PROTONMAIL;
         }
@@ -165,6 +158,8 @@ export const getSignupSearchParams = (
     const city = searchParams.get('city') || undefined;
     const streetAddress = searchParams.get('streetAddress') || undefined;
 
+    const visitorId = searchParams.get('visitorId') || undefined;
+
     return {
         email,
         coupon,
@@ -190,6 +185,7 @@ export const getSignupSearchParams = (
         vatNumber,
         city,
         streetAddress,
+        visitorId,
     };
 };
 

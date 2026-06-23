@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import type { ReactNode } from 'react';
 import { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
@@ -239,6 +240,13 @@ export interface DriveExplorerProps {
      * ```
      */
     a11y?: DriveExplorerA11y;
+
+    /**
+     * Optional content rendered at the trailing (right) edge of the header row,
+     * aligned with the per-row context-menu column. Useful for view controls
+     * such as a layout (list/grid) toggle.
+     */
+    headerActions?: ReactNode;
 }
 
 /**
@@ -290,6 +298,7 @@ const DriveExplorer = ({
     hideSelectionHighlight = false,
     contextMenuControls,
     a11y = defaultA11y,
+    headerActions,
 }: DriveExplorerProps) => {
     const resolvedConditions: DriveExplorerConditions = {
         isDraggable: () => true,
@@ -363,6 +372,7 @@ const DriveExplorer = ({
                 loading={loading}
                 showCheckboxColumn={showCheckboxColumn}
                 showContextMenuButton={Boolean(contextMenuControls)}
+                headerActions={headerActions}
             />
             {grid && layout === LayoutSetting.Grid ? (
                 <DriveExplorerGridBody

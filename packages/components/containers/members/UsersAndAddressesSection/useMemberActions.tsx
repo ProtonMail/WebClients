@@ -22,6 +22,7 @@ import { getSSODomainsSet } from '@proton/account/samlSSO/helper';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import AddressModal from '@proton/components/containers/addresses/AddressModal';
@@ -83,6 +84,7 @@ export const useMemberActions = ({
     const { value: memberRolesMap } = useMemberRoles({ members });
     const api = useSilentApi();
     const dispatch = useDispatch();
+    const [, loadingPermissions] = useOrgPermissions();
 
     const {
         passOnboardingSpotlights: { setupOrgSpotlight },
@@ -167,6 +169,7 @@ export const useMemberActions = ({
         loadingSubscription ||
         loadingOrganization ||
         loadingCustomDomains ||
+        loadingPermissions ||
         (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
 
     const showAddAddress = !hasExternalMemberCapableB2BPlan || hasPassB2BPlan || hasMeetB2BPlanAndVerifiedCustomDomain;
@@ -176,7 +179,8 @@ export const useMemberActions = ({
         loadingSubscription || loadingOrganization || loadingCustomDomains || hasReachedInvitationLimit;
 
     const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
-    const disableAddAddressButton = loadingAddAddresses || organization?.State === ORGANIZATION_STATE.DELINQUENT;
+    const disableAddAddressButton =
+        loadingAddAddresses || loadingPermissions || organization?.State === ORGANIZATION_STATE.DELINQUENT;
 
     const hasSetupActiveOrganizationWithKeys =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);

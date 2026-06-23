@@ -141,6 +141,12 @@
       "Choose a file or drag it here": [
         "कोई फाइल चुनें या उसे यहां खीच के लाएं"
       ],
+      "Claim this address": [
+        "इस पते पर दावा करें"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "अपने मुफ़्त ${ BRAND_NAME } पते पर दावा करें"
+      ],
       "Clear": [
         "साफ करें"
       ],
@@ -197,6 +203,9 @@
       ],
       "Continue transfers": [
         "ट्रांस्फर जारी रखें"
+      ],
+      "Continue with Free": [
+        "मुफ़्त के साथ जारी रखें"
       ],
       "Continue with Google": [
         "Google के साथ जारी रखें"
@@ -596,6 +605,9 @@
       "Reconnect": [
         "वापस जुड़ें"
       ],
+      "Reconnect to Gmail": [
+        "Gmail से फिर से कनेक्ट करें"
+      ],
       "Recover data": [
         "डाटा रिकवर करें"
       ],
@@ -853,9 +865,6 @@
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
-      ],
-      "Upload anyway": [
-        "फिर भी अपलोड करें"
       ],
       "Upload file": [
         "फाइल अपलोड करें"
@@ -2136,14 +2145,23 @@
       ]
     },
     "Description": {
+      "Available storage: ${ storageText }": [
+        "उपलब्ध स्टोरेज: ${ storageText }"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "संपर्कों को डिक्रिप्ट किया जा रहा है… इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप निर्यात किए गए अपने सभी संपर्कों के साथ फ़ाइल डाउनलोड करने में सक्षम होंगे।"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्क मिटाए जा रहे हैं... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText } पर भेजे गए ईमेल अब ${ MAIL_APP_NAME } में दिखाई देंगे।"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "वर्षों के ईमेल, अटैचमेंट और बहुत कुछ के लिए पर्याप्त जगह।"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
@@ -2151,11 +2169,32 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को मर्ज किया जा रहा है... इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "ऐसा तब हो सकता है यदि अनुमतियाँ हटा दी गई हों या आपका पासवर्ड बदल गया हो।"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } में Gmail संदेश प्राप्त करना और भेजना जारी रखने के लिए, कृपया अपना खाता फिर से कनेक्ट करें।"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } में Gmail संदेश प्राप्त करना और भेजना जारी रखने के लिए, कृपया अपने खाते फिर से कनेक्ट करें।"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "आपके खाते की सर्वोत्तम सुरक्षा सुनिश्चित करने के लिए, एक पुनर्प्राप्ति वाक्यांश सेट करें।"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "केवल ${ config.offerPrice } में 15 जीबी स्टोरेज अनलॉक करें।"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "संपर्कों के बीच विलय प्राथमिकता को रैंक करने के लिए ड्रैग एंड ड्रॉप का उपयोग करें। उन संपर्कों को अनचेक करें जिन्हें आप मर्ज नहीं करना चाहते हैं।"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "हम अब ${ boldEmails } को एक्सेस नहीं कर सकते।"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "नए संदेशों के लिए जगह आरक्षित रखने के लिए हम 80% स्टोरेज पर आयात रोक देंगे।"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "हमने Gmail से आपके ईमेल आयात करना शुरू कर दिया है। पूरा होने पर हम आपको सूचित करेंगे।"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "आप iCal फॉर्मैट (ICS फाइल) में इवेंट आयात कर सकते है। फाइल ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_FILE_SIZE_STRING } साइज़ का होना चाहिए और ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_EVENTS_STRING } तक इवेंट रखा हो सकता है। अगर आपका फाइल ज़्यादा बड़ा है, तो उसे छोटे फाइलों में तोड़े।"
@@ -2163,11 +2202,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "आप उन संपर्कों को हटाने के लिए चिह्नित कर सकते हैं जिन्हें आप न तो विलय करने के लिए नहीं चाहते हैं और न ही रखने के लिए। विलय बटन क्लिक करने के बाद ही हटाना होगा"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "अब आप इस पते का उपयोग करके ${ BRAND_NAME } से ईमेल भेज सकते हैं।"
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं और 2FA सक्षम है।"
       ],
       "Your account and data recovery methods are set.": [
         "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं।"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "आपका मुफ़्त ${ MAIL_APP_NAME } खाता सीमित स्टोरेज के साथ आता है इसलिए हम आपके सबसे हाल के Gmail संदेशों में से केवल ${ newUserStorageText } ही आयात करेंगे"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "आपका मुफ़्त ${ MAIL_APP_NAME } खाता सीमित स्टोरेज के साथ आता है इसलिए हम केवल आपके सबसे हाल के Gmail ईमेल ही आयात करेंगे।"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2280,9 +2328,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" पहले से मौजूद है"
-      ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } को अपडेट किया गया है। कृपया पृष्ठ को पुनश्चर्या करें।"
       ],
@@ -2303,6 +2348,9 @@
       ],
       "Aliases could not be loaded": [
         "नकली-नाम लोड नहीं हो सके"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
       ],
       "Already a member of this share": [
         "आप इस साझकरण के पहले से ही सदस्य हैं"
@@ -2386,9 +2434,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "बाहरी आमंत्रण फिलहाल अक्षम हैं। कृपया बाद में फिर से कोशिश करें"
-      ],
-      "File cannot be merged with folder": [
-        "फाइल को फोल्डर के साथ मिलाया नहीं जा सकता है"
       ],
       "First name is too long": [
         "पहला नाम बहुत लंबा है"
@@ -2504,11 +2549,17 @@
       "Payment process not supported": [
         "भुगतान प्रक्रिया समर्थित नहीं है"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "तस्वीर अपलोड अस्थायी रूप से अक्षम किया गया है। कृपया बाद में पुन: प्रयास करें"
-      ],
       "Please activate your search again": [
         "कृपया अपना खोज वापिस सक्षम करें"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "कृपया पता जोड़ने से पहले एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले कृपया एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "कृपया अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले बहु-उपयोगकर्ता समर्थन सक्षम करें।"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
@@ -2516,6 +2567,9 @@
       ],
       "Please select a country": [
         "एक देश चुनें"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "कई-यूज़र संभालने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
       ],
       "Port is required": [
         "पोर्ट चाहिए"
@@ -2569,6 +2623,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
       ],
+      "Something went wrong while fetching available domains": [
+        "उपलब्ध डोमेन लाते समय कुछ गलत हो गया"
+      ],
       "Something went wrong. Please try again.": [
         "कुछ गलती हो गई। कृपया वापिस कोशिश करें।"
       ],
@@ -2605,24 +2662,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "जोड़ने के लिए क्रेडिट रकम कम-से-कम ${ price } होना चाहिए"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "असली फाइल का नया संशोधन अभी तक अपलोड नहीं किया गया है, कृपया बाद में वापिस कोशिश करें"
-      ],
-      "The original file has missing active revision": [
-        "असली फाइल में सक्रिय संशोधन गुम है"
-      ],
-      "The original file has missing hash key": [
-        "असली फाइल में हैश चाबी गुम है"
-      ],
-      "The original file has missing session key": [
-        "असली फाइल में सत्र चाबी गुम है"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "असली फाइल अभी तक अपलोड नहीं की गई है, कृपया बाद में वापिस कोशिश करें"
-      ],
-      "The original folder not found": [
-        "असली फोल्डर नहीं मिला"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "आपके बाहरी खाते में बहुत सारे फ़ोल्डर हैं। कृपया कुछ फ़ोल्डरों को हटाने के लिए आयात को अनुकूलित करें।"
       ],
@@ -2656,9 +2695,6 @@
       "Unknown payment token status": [
         "अज्ञात भुगतान टोकन स्थिति"
       ],
-      "Upload for this folder is temporarily disabled": [
-        "इस फ़ोल्डर में अपलोड फिलहाल अक्षम है"
-      ],
       "Username must begin with a letter or digit": [
         "यूज़रनेम अक्षर या अंकसे शुरु होना चाहिए"
       ],
@@ -2674,6 +2710,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
@@ -2978,6 +3017,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ प्रीमियम खासियतें"
+      ],
+      "Custom email domain": [
+        "कस्टम ईमेल डोमेन"
+      ],
+      "Email addresses": [
+        "ईमेल पते"
+      ],
+      "Storage": [
+        "स्टोरेज"
+      ],
       "Unlimited hide-my-email aliases": [
         "असीमित Hide-my-email नकलीनाम"
       ]
@@ -3810,6 +3861,9 @@
       "End-to-end encrypted": [
         "शुरु-से-अंत तक एन्क्रिप्ट किया"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "पूरी तरह से निजी और एन्क्रिप्ट किया गया संचार सुनिश्चित करें। अपने मुफ़्त ${ BRAND_NAME } ईमेल पते पर अभी दावा करें।"
+      ],
       "Enter password": [
         "पासवर्ड डाले"
       ],
@@ -3855,9 +3909,6 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "आपके कंप्यूटर से सिंक किए फोल्डर इधर दिखेंगे।"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "सबसे बेहतर प्रदर्शन के लिए मेमरी पे भारी काम स्ट्रीम करने से बचे या अपने अपलोड को छोटे हिस्सो में बांट दें।"
       ],
       "Free 5GB encrypted storage to get started": [
         "शुरू करने के लिए Free 5GB एन्क्रिप्ट किया स्टोरेज"
@@ -3922,6 +3973,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
+      ],
+      "Included": [
+        "शामिल है"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow } में से ${ esProgress } चीज़े लिस्ट कर रहे"
@@ -4369,9 +4423,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "यह अब आपके नए संदेश भेजने के लिए आपका ${ defaultEmailAddress } है।"
       ],
-      "This item already exists in your library": [
-        "यह मद पहले से ही आपकी संग्रहण में मौजूद है"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "यह आइटम आपकी Photos लाइब्रेरी में सहेजा नहीं गया है। अगर आप इसे इस एल्बम से हटाते हैं, तो आपको इसकी पहुँच हमेशा के लिए खो जाएगी।",
         "इस एल्बम में चयनित कुछ आइटम आपकी Photos लाइब्रेरी में सहेजे नहीं गए हैं। अगर आप इन्हें इस एल्बम से हटाते हैं, तो आपको इनकी पहुँच हमेशा के लिए खो जाएगी।"
@@ -4397,20 +4448,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "यह आपके द्वारा अपलोड किए गए चयनित आइटमों को स्थायी रूप से मिटा देगा।"
       ],
-      "This will replace the existing file with the folder": [
-        "यह मौजूदा फ़ाइल को फ़ोल्डर के साथ बदल देगा।"
-      ],
-      "This will replace the existing folder with the file": [
-        "यह मौजूदा फ़ोल्डर को फ़ाइल के साथ बदल देगा।"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "इससे आप वर्तमान में लॉग इन सभी खातों से साइन आउट हो जाएंगे।"
-      ],
-      "This will upload a new version of the file": [
-        "ये फ़ाइल का एक नया संस्करण अपलोड करेगा"
-      ],
-      "This will upload a new version of the folder": [
-        "यह फ़ोल्डर का एक नई संस्करण अपलोड करेगा"
       ],
       "Time": [
         "समय"
@@ -4454,18 +4493,6 @@
       "Total VPN connections": [
         "कुल VPN कनेक्शन"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\" फ़ाइल के लिए स्थानांतरण रद्द किया गया"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\" फ़ोल्डर के लिए स्थानांतरण रद्द किया गया"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\" फ़ाइल के लिए स्थानांतरण छोड़ दिया गया"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\" फ़ोल्डर के लिए स्थानांतरण छोड़ दिया गया"
-      ],
       "Trash": [
         "कचरा"
       ],
@@ -4496,8 +4523,14 @@
       "Updating drive search...": [
         "ड्राइव खोज अपडेट कर रहे..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "बाकी को लाने के लिए किसी भी समय अपग्रेड करें"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "बाकी को लाने के लिए किसी भी समय अपग्रेड करें या जगह खाली करें"
       ],
       "upgrade your storage": [
         "स्टोरेज अपग्रेड करें"
@@ -4507,9 +4540,6 @@
       ],
       "Uploading": [
         "अपलोड हो रहा है"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "एक साथ सैकड़ों फ़ाइलें अपलोड करने से कार्यप्रदर्शन प्रभावित हो सकता है।"
       ],
       "Uppercase and lowercase letters": [
         "बड़े और छोटे अक्षर"
@@ -4869,6 +4899,9 @@
       "Calendar": [
         "कैलेंडर"
       ],
+      "Calendars": [
+        "कैलेंडर"
+      ],
       "Cancel download": [
         "डाउनलोड रद्द करें"
       ],
@@ -4981,6 +5014,9 @@
       "Email format": [
         "ईमेल प्रारूप"
       ],
+      "Emails": [
+        "ईमेल"
+      ],
       "Emails (all messages)": [
         "ईमेल (सारे संदेश)"
       ],
@@ -5058,12 +5094,6 @@
       ],
       "Keep both": [
         "दोनों रखें"
-      ],
-      "Keep both files": [
-        "दोनों फ़ाइलें रखें"
-      ],
-      "Keep both folders": [
-        "दोनों फ़ोल्डर रखें"
       ],
       "Label messages as": [
         "संदेशों को लेबल करें"
@@ -5193,12 +5223,6 @@
       ],
       "Region": [
         "क्षेत्र"
-      ],
-      "Replace existing file": [
-        "मौजूदा फ़ाइल को बदलें"
-      ],
-      "Replace existing folder": [
-        "मौजूदा फ़ोल्डर को बदलें"
       ],
       "Reveal password": [
         "पासवर्ड प्रकट"
@@ -6424,14 +6448,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" कचरे में ले जाने में असफल"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" सेव करने में असफल"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" कचरे में ले गए"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" सेव किया गया"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" का नाम बदलने में असफल"
@@ -6539,19 +6557,6 @@
       "Failed to remove the file": [
         "फ़ाइल हटाने में असफल"
       ],
-      "Failed to upload files: ${ err }": [
-        "फाइलें अपलोड करने में असफल: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "फाइल या फोल्डर \"${ filename }\" और ${ count } अन्य पहले से ही अपलोड हो रहे हैं",
-        "फाइल या फोल्डर \"${ filename }\" और ${ count } अन्य पहले से ही अपलोड हो रहे हैं"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "फाइल या फोल्डर \"${ filename }\" पहले से ही अपलोड हो रहा है"
-      ],
-      "File or folder is missing a name": [
-        "फाइल या फोल्डर का कोई नाम नहीं है"
-      ],
       "File removed": [
         "फ़ाइल हटा दी गई"
       ],
@@ -6572,9 +6577,6 @@
       "Move ${ n } item": [
         "${ n } चीज़ ले जाए",
         "${ n } चीज़े ले जाए"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "${ formattedTotal } अपलोड करने के लिए जगह काफी नहीं"
       ],
       "Public link access updated": [
         "सार्वजनिक लिंक एक्सेस अपडेट किया गया"
@@ -6602,6 +6604,9 @@
       ],
       "You stopped sharing this item": [
         "आपने इस चीज़ को साझा करना बंद कर दिया है"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "आपका ${ BRAND_NAME } पता उपयोग करने के लिए तैयार है"
       ],
       "Your old files will be deleted in 72 hours": [
         "आपकी पुरानी फाइलें 72 घंटों में मिटा दी जाएंगी"
@@ -7038,6 +7043,9 @@
       "Postal code": [
         "डाक कोड"
       ],
+      "Search": [
+        "खोजें"
+      ],
       "Search for group name": [
         "समूह का नाम खोजें"
       ],
@@ -7137,6 +7145,78 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "आधिकारिक ईमेल ${ BRAND_NAME } से"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "सौदा पाएं"
+      ],
+      "Summer Sale": [
+        "समर सेल"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/महीना"
+      ],
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "2 TB data storage": [
+        "2 टीबी डेटा स्टोरेज"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 जीबी स्टोरेज: आपके मौजूदा प्लैन से 40 गुना ज़्यादा"
+      ],
+      "3 TB data storage": [
+        "3 टीबी डेटा स्टोरेज"
+      ],
+      "500 GB storage": [
+        "500 जीबी स्टोरेज"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट मानक मासिक कीमतों पर आधारित है। बिल साइकिल समाप्त होने पर आपकी सदस्यता का नवीनीकरण मानक वार्षिक दर पर होगा।"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } का पूरा एक्सेस"
+      ],
+      "Individual accounts for 6 users": [
+        "6 उपयोगकर्ताओं के लिए अलग-अलग खाते"
+      ],
+      "Individual accounts for you and a partner": [
+        "आपके और आपके पार्टनर के लिए अलग-अलग खाते"
+      ],
+      "Online document and spreadsheet editor": [
+        "ऑनलाइन दस्तावेज़ और स्प्रेडशीट एडिटर"
+      ],
+      "Recover previous file versions": [
+        "फ़ाइलों के पिछले वर्शन रिकवर करें"
+      ],
+      "Stronger protection against cyber threats": [
+        "साइबर खतरों से बेहतर सुरक्षा"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "हमारे वार्षिक प्लैन पर स्विच करें और ${ toYearlyDiscountAmount } बचाएं!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "असीमित फोल्डर, लेबल, और फिल्टर"
+      ],
+      "Use your own email domain": [
+        "अपने खुद के ईमेल डोमेन का इस्तेमाल करें"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 महीनों के लिए"
+      ],
+      "SUMMER SALE": [
+        "समर सेल"
       ]
     },
     "saml: Error": {
@@ -7996,6 +8076,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe लेखन सहायक"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } ईमेल पता",
         "${ emailsCount } ईमेल पते"
@@ -8089,6 +8172,9 @@
       "Check for malicious files": [
         "दुर्भावनापूर्ण फाइलों की जांच करें"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "अपने ${ MAIL_APP_NAME } पते पर दावा करें"
+      ],
       "Clearing data": [
         "डेटा साफ़ करना"
       ],
@@ -8109,6 +8195,9 @@
       ],
       "Contacts": [
         "संपर्क"
+      ],
+      "Continue with free storage": [
+        "मुफ़्त स्टोरेज के साथ जारी रखें"
       ],
       "Continue with partial import?": [
         "आंशिक आयात जारी रखें?"
@@ -8181,6 +8270,9 @@
       "Discard changes?": [
         "बदलाव रद्द करें?"
       ],
+      "Disconnected from Gmail": [
+        "Gmail से डिस्कनेक्ट हो गया"
+      ],
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
       ],
@@ -8198,12 +8290,6 @@
       ],
       "Drop to upload": [
         "अपलोड के लिए छोड़े"
-      ],
-      "Duplicate file found": [
-        "एक जैसे फाइल मिले"
-      ],
-      "Duplicate folder found": [
-        "एक जैसे फोल्डर मिले"
       ],
       "Edit billing address": [
         "बिलिंग पता संपादित करें"
@@ -8259,6 +8345,9 @@
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus के साथ अधिक स्टोरेज प्राप्त करें"
+      ],
       "Get the apps": [
         "ऐप प्राप्त करें"
       ],
@@ -8310,9 +8399,6 @@
       ],
       "Logs": [
         "लॉग"
-      ],
-      "Manage secure link": [
-        "सुरक्षित लिंक संभालें"
       ],
       "Merge contacts": [
         "संपर्क मर्ज करें"
@@ -8385,9 +8471,6 @@
       ],
       "PayPal verification failed": [
         "पेपाल सत्यापन विफल रहा"
-      ],
-      "Performance might be affected": [
-        "प्रदर्शन पे असर हो सकता है"
       ],
       "Phone numbers": [
         "फोन नंबर"
@@ -8525,6 +8608,9 @@
       "Summary": [
         "सार"
       ],
+      "Summer Sale": [
+        "समर सेल"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "इस फाइल का हस्ताक्षर गुम या अमान्य हैं। जाएं मेन्यू (⋮) → जानकारी ज़्यादा जानने के लिए।"
       ],
@@ -8561,9 +8647,6 @@
       "Uploaded": [
         "अपलोड किए गए"
       ],
-      "Uploading a large file or folder": [
-        "बड़ी फ़ाइल या फ़ोल्डर अपलोड करना"
-      ],
       "Verification failed": [
         "सत्यापन असफल"
       ],
@@ -8581,6 +8664,9 @@
       ],
       "Warning: suspected fake website": [
         "चेतावनी: संदिग्ध फर्जी वेबसाइट"
+      ],
+      "You are all set": [
+        "आप पूरी तरह तैयार हैं"
       ],
       "You can now create unlimited folders and labels": [
         "अब आप असीमित फोल्डर और लेबल बना सकते हैं"

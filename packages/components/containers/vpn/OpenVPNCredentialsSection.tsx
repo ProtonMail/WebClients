@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Copy from '@proton/components/components/button/Copy';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
@@ -15,6 +14,8 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import { useLoading } from '@proton/hooks';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { resetVPNSettings } from '@proton/shared/lib/api/vpn';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -118,10 +119,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
                             onClick={() => setShow(!show)}
                             title={show ? c('Action').t`Hide` : c('Action').t`Show`}
                         >
-                            <Icon
-                                name={show ? 'eye-slash' : 'eye'}
-                                alt={show ? c('Action').t`Hide` : c('Action').t`Show`}
-                            />
+                            {show ? <IcEyeSlash alt={c('Action').t`Hide`} /> : <IcEye alt={c('Action').t`Show`} />}
                         </Button>
                     </div>
                 </SettingsLayoutRight>

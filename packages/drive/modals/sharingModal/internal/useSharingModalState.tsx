@@ -1,15 +1,16 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import type { DegradedNode, ProtonDriveClient } from '@protontech/drive-sdk';
+import type { ProtonDriveClient } from '@protontech/drive-sdk';
 import {
-    type MaybeNode,
     MemberRole,
     type NodeEntity,
     NodeType,
-    NonProtonInvitationState,
+    type Result,
     type ShareNodeSettings,
     type ShareResult,
     ValidationError,
+    resultError,
+    resultOk,
 } from '@protontech/drive-sdk';
 import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { c } from 'ttag';
@@ -27,7 +28,7 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';
 import { useFlagsDriveDocsPublicSharing } from '../../../modules/flags';
-import { getNodeEffectiveRole, getNodeName } from '../../../modules/nodes';
+import { type EffectiveRole, getNodeEffectiveRole, getNodeName } from '../../../modules/nodes';
 import { getDisplayName } from './DirectSharing/helpers/userNames';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
@@ -40,6 +41,7 @@ type Drive = Pick<
 export type SharingModalInnerProps = {
     nodeUid: string;
     drive: Drive;
+    onShareSnapshot?: (result: Result<ShareResult, Error>) => void;
 };
 
 export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
@@ -67,6 +69,7 @@ export const useSharingModalState = ({
     onClose,
     open,
     onExit,
+    onShareSnapshot,
 }: UseSharingModalProps): SharingModalViewProps => {
     const [contactEmails] = useContactEmails();
 
@@ -75,8 +78,9 @@ export const useSharingModalState = ({
     const [user] = useUser();
 
     const [isLoading, withLoading] = useLoading();
+    const [initialized, setInitialized] = useState(false);
 
-    const [nodeInfo, setNodeInfo] = useState<NodeEntity | DegradedNode>();
+    const [nodeInfo, setNodeInfo] = useState<NodeEntity>();
 
     const [sharingInfo, setSharingInfo] = useState<ShareResult>(defaultSharingInfo);
 
@@ -88,10 +92,23 @@ export const useSharingModalState = ({
     const mediaType = getMediaType(nodeInfo);
     const isAlbum = nodeInfo?.type === NodeType.Album;
     const isPhoto = nodeInfo?.type === NodeType.Photo;
+
     const [isResharing, setIsResharing] = useState(false);
     const isPublicLinkEnabled = usePublicLinkEnabled({ isResharing, mediaType, isAlbum });
 
     const [roleOnParentNode, setRoleOnParentNode] = useState<MemberRole>();
+
+    const closeAndCleanup = useCallback(() => {
+        setSharingInfo(defaultSharingInfo);
+        setNodeInfo(undefined);
+        onClose();
+    }, [onClose]);
+
+    const exitAndCleanup = useCallback(() => {
+        // Executed AFTER closing animation is done to avoid blinking of loading state
+        setInitialized(false);
+        onExit();
+    }, [onExit]);
 
     const updateSharingState = async (updatedShareResult: ShareResult | undefined) => {
         const shareResult = updatedShareResult || defaultSharingInfo;
@@ -109,7 +126,11 @@ export const useSharingModalState = ({
             drive
         );
         setSharingInfo(shareResult);
+        onShareSnapshot?.(resultOk(shareResult));
     };
+
+    const emitShareResultError = (e: unknown) =>
+        onShareSnapshot?.(resultError(e instanceof Error ? e : new Error(String(e))));
 
     const unshareNode: SharingModalViewProps['actions']['unshareNode'] = async (
         email,
@@ -141,6 +162,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -157,6 +179,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -178,6 +201,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -222,6 +246,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -245,6 +270,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -259,6 +285,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -280,23 +307,8 @@ export const useSharingModalState = ({
             try {
                 const sharingResult = await drive.getSharingInfo(nodeUid);
                 if (sharingResult) {
-                    // TODO: This is temporary fix until we have proper way to convert invitation in background
-                    const protonInvitations = [...sharingResult.protonInvitations];
-                    let nonProtonInvitations = [...sharingResult.nonProtonInvitations];
-                    for await (const nonProtonInvitation of sharingResult.nonProtonInvitations) {
-                        try {
-                            if (nonProtonInvitation.state === NonProtonInvitationState.UserRegistered) {
-                                const invitation = await drive.convertNonProtonInvitation(nodeUid, nonProtonInvitation);
-                                protonInvitations.push(invitation);
-                                nonProtonInvitations = nonProtonInvitations.filter(
-                                    (item) => item.uid !== nonProtonInvitation.uid
-                                );
-                            }
-                        } catch (e) {
-                            handleSdkError(e, { showNotification: false });
-                        }
-                    }
-                    setSharingInfo({ ...sharingResult, protonInvitations, nonProtonInvitations });
+                    onShareSnapshot?.(resultOk(sharingResult));
+                    return sharingResult;
                 }
             } catch (e) {
                 handleSdkError(e, {
@@ -304,37 +316,58 @@ export const useSharingModalState = ({
                     extra: { nodeUid },
                     showNotification: false,
                 });
+                onShareSnapshot?.(resultError(e instanceof Error ? e : new Error(String(e))));
+                throw e;
             }
         };
         const fetchNodeInfo = async () => {
             try {
-                const node = await drive.getNode(nodeUid);
-                const nodeInfo = node.ok ? node.value : node.error;
+                const nodeInfo = await drive.getNode(nodeUid);
 
-                setFileName(getNodeName(node));
-                setNodeInfo(nodeInfo);
-
+                let roleOnParentNode: EffectiveRole | undefined;
                 if (nodeInfo.parentUid) {
-                    const parent = await drive.getNode(nodeInfo.parentUid);
-                    const parentNodeInfo = parent.ok ? parent.value : parent.error;
-                    const effectiveRoleOnParent = await getNodeEffectiveRole(parentNodeInfo, drive);
-                    setRoleOnParentNode(effectiveRoleOnParent);
+                    const parentNodeInfo = await drive.getNode(nodeInfo.parentUid);
+                    roleOnParentNode = await getNodeEffectiveRole(parentNodeInfo, drive);
                 }
 
+                let isReSharing;
                 if (nodeInfo?.type !== NodeType.Album && nodeInfo?.type !== NodeType.Photo) {
                     const isMyFile = await isShareInMyFiles(nodeUid, drive as ProtonDriveClient);
-                    setIsResharing(!isMyFile);
+                    isReSharing = !isMyFile;
                 }
+
+                return { nodeInfo, roleOnParentNode, isReSharing };
             } catch (e) {
                 handleSdkError(e, {
                     fallbackMessage: c('Error').t`Failed to fetch node`,
                     extra: { nodeUid },
                     showNotification: false,
                 });
+                throw e;
             }
         };
-        void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));
-    }, [drive, nodeUid, withLoading]);
+        void withLoading(
+            Promise.all([fetchSharingInfo(), fetchNodeInfo()])
+                .then(([sharingResult, { nodeInfo, roleOnParentNode, isReSharing }]) => {
+                    if (sharingResult) {
+                        setSharingInfo(sharingResult);
+                    }
+                    setNodeInfo(nodeInfo);
+                    setFileName(getNodeName(nodeInfo));
+                    if (roleOnParentNode) {
+                        setRoleOnParentNode(roleOnParentNode);
+                    }
+                    if (isReSharing !== undefined) {
+                        setIsResharing(isReSharing);
+                    }
+                    setInitialized(true);
+                })
+                .catch(() => {
+                    createNotification({ type: 'error', text: c('Notification').t`Failed to load sharing details` });
+                    closeAndCleanup();
+                })
+        );
+    }, [drive, nodeUid, withLoading, onShareSnapshot, closeAndCleanup, createNotification]);
 
     const copyInvitationLink = (invitationUid: string, email: string) => {
         const { invitationId } = splitInvitationUid(invitationUid);
@@ -385,8 +418,8 @@ export const useSharingModalState = ({
 
     return {
         open,
-        onExit,
-        onClose,
+        onExit: exitAndCleanup,
+        onClose: closeAndCleanup,
         sharingInfo,
         drive,
         nodeUid,
@@ -397,6 +430,7 @@ export const useSharingModalState = ({
         ownerDisplayName,
         ownerEmail,
         isLoading,
+        initialized,
         isShared: getIsShared(sharingInfo),
         isPublicLinkEnabled,
         publicLink: sharingInfo.publicLink
@@ -427,13 +461,14 @@ function usePublicLinkEnabled({
     mediaType,
     isAlbum,
 }: {
-    isResharing?: boolean;
+    isResharing: boolean;
     mediaType?: string;
     isAlbum: boolean;
 }) {
     const { isDocsPublicSharingEnabled } = useFlagsDriveDocsPublicSharing();
 
-    if (isResharing) {
+    // We don't know mediaType because it's loading -> hide public link to avoid blinking
+    if (mediaType === undefined || isResharing) {
         return false;
     }
 
@@ -444,7 +479,7 @@ function usePublicLinkEnabled({
     return !isAlbum;
 }
 
-function getMediaType(nodeInfo?: NodeEntity | DegradedNode): string | undefined {
+function getMediaType(nodeInfo?: NodeEntity): string | undefined {
     if (nodeInfo?.type) {
         if (nodeInfo.type === NodeType.Folder) {
             return 'Folder';
@@ -457,7 +492,7 @@ function getMediaType(nodeInfo?: NodeEntity | DegradedNode): string | undefined 
 }
 
 async function isShareInMyFiles(nodeUid: string, drive: ProtonDriveClient): Promise<boolean> {
-    let hierarchy: MaybeNode[];
+    let hierarchy: NodeEntity[];
     try {
         hierarchy = await drive.getNodeHierarchy(nodeUid);
     } catch (e) {
@@ -470,6 +505,5 @@ async function isShareInMyFiles(nodeUid: string, drive: ProtonDriveClient): Prom
         return false;
     }
     // If node has "membership" it means it is a direct share
-    const shareTopmostParent = firstAncestor.ok ? firstAncestor.value : firstAncestor.error;
-    return !Boolean(shareTopmostParent.membership);
+    return !Boolean(firstAncestor.membership);
 }

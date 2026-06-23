@@ -15,8 +15,12 @@ const DomainHelp: FC<{ registrarId?: number }> = ({ registrarId }) => {
     const registrar = getRegistrarByIANAId(registrarId) || DEFAULT_REGISTRAR;
 
     const registrarLink = (
-        <Href href={registrar.url || DEFAULT_REGISTRAR.url} key="link-to-registrar">
-            <IcPlay className="border border-primary rounded-full text-no-decoration mr-1" />
+        <Href
+            href={registrar.url || DEFAULT_REGISTRAR.url}
+            key="link-to-registrar"
+            className="inline-flex items-baseline gap-1"
+        >
+            <IcPlay className="border border-primary rounded-full text-no-decoration my-auto" />
             <span>{registrar.name}</span>
         </Href>
     );

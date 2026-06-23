@@ -10,8 +10,8 @@ import {
     Renew,
     type Subscription,
 } from '@proton/payments';
-import { buildSubscription } from '@proton/testing/builders';
-import { PLANS_MAP } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 import { type Props, ProtonPlanCustomizer } from './ProtonPlanCustomizer';
 
@@ -20,6 +20,13 @@ const onChangePlanIDsMock = jest.fn();
 const mockUseFlag = jest.fn().mockReturnValue(false);
 jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: (...args: any[]) => mockUseFlag(...args),
+}));
+
+jest.mock('@proton/components/hooks/useConfig', () => ({
+    __esModule: true,
+    default: jest.fn().mockReturnValue({
+        APP_NAME: 'proton-account',
+    }),
 }));
 
 beforeEach(() => {

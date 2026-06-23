@@ -1,7 +1,7 @@
 import { NodeType, getDrive } from '../../../../index';
 import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '../../../../modules/busDriver';
-import { getDeviceName } from '../../../nodes';
+import { getDeviceName, getNodeName } from '../../../nodes';
 import { directoryTreeStoreFactory } from '../directoryTreeStoreFactory';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from '../helpers';
 import type { TreeStoreItem } from '../types';
@@ -25,6 +25,7 @@ const mockedGetBusDriver = jest.mocked(getBusDriver);
 const mockedGetDrive = jest.mocked(getDrive);
 const mockedGetNodeEntity = jest.mocked(getNodeEntity);
 const mockedGetDeviceName = jest.mocked(getDeviceName);
+const mockedGetNodeName = jest.mocked(getNodeName);
 
 // helpers
 function makeItem(partial: Partial<TreeStoreItem> & { nodeUid: string }): TreeStoreItem {
@@ -321,16 +322,6 @@ describe('TreeEventManager', () => {
         it('CREATED_NODES – new device root node (parentUid=undefined) → add to state', async () => {
             const { store, manager } = createManager();
             mockedGetDeviceName.mockReturnValue('My PC');
-            const rootScopeId = 'root-scope-id';
-            mockedGetNodeEntity
-                .mockReturnValueOnce({
-                    node: { uid: MY_FILES_ROOT_UID, treeEventScopeId: rootScopeId } as any,
-                    errors: new Map(),
-                })
-                .mockReturnValueOnce({
-                    node: { uid: 'new-device', treeEventScopeId: rootScopeId } as any,
-                    errors: new Map(),
-                });
             mockedGetDrive.mockReturnValue({
                 getMyFilesRootFolder: jest.fn().mockResolvedValue({ ok: true, value: { uid: MY_FILES_ROOT_UID } }),
                 getNode: jest.fn().mockResolvedValue({ ok: true, value: { uid: 'new-device' } }),
@@ -450,28 +441,21 @@ describe('TreeEventManager', () => {
 
         it('REFRESH_SHARED_WITH_ME – shared expanded → update list by fetching and comparing', async () => {
             const { store, manager } = createManager();
-            // existing item that should be removed
             store
                 .getState()
                 .addItem(makeItem({ nodeUid: 'old-shared', parentUid: SHARED_WITH_ME_ROOT_ID, isSharedWithMe: true }));
-            mockedGetNodeEntity.mockImplementation((item: any) => ({
-                node: item.value ?? item.error,
-                errors: new Map(),
-            }));
+            mockedGetNodeName.mockImplementation((node: any) => node.name);
             mockedGetDrive.mockReturnValue({
                 iterateSharedNodesWithMe: jest.fn().mockReturnValue(
                     makeAsyncIterator([
                         {
-                            ok: true,
-                            value: {
-                                uid: 'new-shared',
-                                name: 'New Item',
-                                type: NodeType.Folder,
-                                deprecatedShareId: 'share-new',
-                                membership: {},
-                                keyAuthor: { ok: true },
-                                nameAuthor: { ok: true },
-                            },
+                            uid: 'new-shared',
+                            name: 'New Item',
+                            type: NodeType.Folder,
+                            deprecatedShareId: 'share-new',
+                            membership: {},
+                            keyAuthor: { ok: true },
+                            nameAuthor: { ok: true },
                         },
                     ])
                 ),
@@ -486,15 +470,12 @@ describe('TreeEventManager', () => {
 
         it('REFRESH_SHARED_WITH_ME – onlyFolders → shared files filtered out, folders kept', async () => {
             const { store, manager } = createManager(directoryTreeStoreFactory(), true);
-            mockedGetNodeEntity.mockImplementation((item: any) => ({
-                node: item.value ?? item.error,
-                errors: new Map(),
-            }));
+            mockedGetNodeName.mockImplementation((node: any) => node.name);
             mockedGetDrive.mockReturnValue({
                 iterateSharedNodesWithMe: jest.fn().mockReturnValue(
                     makeAsyncIterator([
-                        { ok: true, value: { uid: 'shared-folder', name: 'A Folder', type: NodeType.Folder } },
-                        { ok: true, value: { uid: 'shared-file', name: 'A File', type: NodeType.File } },
+                        { uid: 'shared-folder', name: 'A Folder', type: NodeType.Folder },
+                        { uid: 'shared-file', name: 'A File', type: NodeType.File },
                     ])
                 ),
             } as any);
@@ -508,18 +489,11 @@ describe('TreeEventManager', () => {
 
         it('REFRESH_SHARED_WITH_ME – without onlyFolders → shared files kept', async () => {
             const { store, manager } = createManager();
-            mockedGetNodeEntity.mockImplementation((item: any) => ({
-                node: item.value ?? item.error,
-                errors: new Map(),
-            }));
+            mockedGetNodeName.mockImplementation((node: any) => node.name);
             mockedGetDrive.mockReturnValue({
                 iterateSharedNodesWithMe: jest
                     .fn()
-                    .mockReturnValue(
-                        makeAsyncIterator([
-                            { ok: true, value: { uid: 'shared-file', name: 'A File', type: NodeType.File } },
-                        ])
-                    ),
+                    .mockReturnValue(makeAsyncIterator([{ uid: 'shared-file', name: 'A File', type: NodeType.File }])),
             } as any);
             expandSection(store, manager, 'shared');
 
@@ -782,15 +756,6 @@ describe('TreeEventManager', () => {
             expect(unsubscribe).toHaveBeenCalledTimes(1);
         });
 
-        it('expand shared with me → subscribeSdkDriveEvents; collapse → unsubscribeSdkDriveEvents', () => {
-            const { store, manager } = createManager();
-            expandSection(store, manager, 'shared');
-            expect(mockSubscribeSdkDriveEvents).toHaveBeenCalledWith(TEST_CONTEXT);
-
-            collapseSection(store, manager, 'shared');
-            expect(mockUnsubscribeSdkDriveEvents).toHaveBeenCalledWith(TEST_CONTEXT);
-        });
-
         it('expand node from Alice → subscribeSdkEventsScope(aliceScope); expand 2nd Alice node → no change; collapse first → no change; collapse second → unsubscribeSdkEventsScope(aliceScope)', () => {
             const { store, manager } = createManager();
             const ALICE_SCOPE = 'scope-alice';
@@ -864,11 +829,9 @@ describe('TreeEventManager', () => {
         it('destroy() removes all subscriptions', () => {
             const { store, manager } = createManager();
             expandSection(store, manager, 'shared');
-            expect(mockSubscribeSdkDriveEvents).toHaveBeenCalled();
             const unsubscribe = mockBusDriver.subscribe.mock.results[0]?.value as jest.Mock;
 
             manager.destroy();
-            expect(mockUnsubscribeSdkDriveEvents).toHaveBeenCalledWith(TEST_CONTEXT);
             expect(unsubscribe).toHaveBeenCalledTimes(1);
         });
     });

@@ -35,7 +35,6 @@ export const subscribeToFolderEvents = (treeEventScopeId: string) => {
         const { folder } = store;
 
         if (!folder) {
-            folderLogger.warn(`Event received before folder was loaded ${JSON.stringify(event)}`);
             return;
         }
         switch (event.type) {

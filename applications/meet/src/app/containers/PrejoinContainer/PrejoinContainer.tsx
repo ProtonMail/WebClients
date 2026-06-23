@@ -29,7 +29,7 @@ import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/Open
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorderNew/recordingStorage/purge';
+import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorder/recordingStorage/purge';
 import { LoadingState } from '../../types';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 
@@ -144,7 +144,7 @@ export const PrejoinContainer = ({
 
     return (
         <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
-            {!isGuest && <OpenDesktopAppBanner meetingLink={shareLink} />}
+            <OpenDesktopAppBanner meetingLink={shareLink} />
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="w-full meet-container-padding-x shrink-0">
                 <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />

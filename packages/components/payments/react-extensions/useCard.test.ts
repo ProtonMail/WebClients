@@ -1,7 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { InvalidCardDataError, PAYMENT_TOKEN_STATUS } from '@proton/payments';
-import { addTokensResponse, apiMock } from '@proton/testing';
+import { apiMock } from '@proton/testing/lib/api';
+import { addTokensResponse } from '@proton/testing/lib/payments/api-endpoints';
 
 import { type Props, useCard } from './useCard';
 

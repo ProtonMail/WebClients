@@ -1102,8 +1102,8 @@
       "Error reporting problem": [
         "错误报告"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "过期时间必须在 60 分钟至 1 年之间"
+      "Expiration must be between 1 hour and 1 year": [
+        "过期时间必须在 1 小时至 1 年之间"
       ],
       "Failed loading group members": [
         "加载群组成员失败"
@@ -1241,7 +1241,7 @@
         "无法验证域"
       ],
       "Failed to verify email address": [
-        "验证邮件地址失败"
+        "验证邮箱地址失败"
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "更新 ${ PROTON_SENTINEL_NAME } 设置失败"
@@ -1461,7 +1461,7 @@
         "内置 2FA 验证器"
       ],
       "Unlimited hide-my-email aliases": [
-        "无限制地 hide-my-email"
+        "无限 Hide-my-email 别名"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
         "密码分享（最多 ${ MAX_VAULT_MEMBERS } 个人）"
@@ -1934,20 +1934,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "每次您的别名收到某人的电子邮件时，就会自动创建一个新的联系人。"
       ],
-      "Expired ${ abs } hour ago": [
-        "已过期 ${ abs } 小时"
+      "Expired on ${ formattedDate }": [
+        "过期时间 ${ formattedDate }"
       ],
       "Expires in": [
         "到期于"
       ],
-      "Expires in ${ hours } hour": [
-        "${ hours } 小时后过期"
-      ],
       "Expires in ${ remainingTime }": [
         "在 ${ remainingTime } 后过期"
       ],
-      "Expires in less than an hour": [
-        "不到一小时后过期"
+      "Expires on ${ formattedDate }": [
+        "过期于 ${ formattedDate }"
       ],
       "Exporting your data...": [
         "正在导出您的数据..."
@@ -2619,7 +2616,7 @@
         "尚未配置"
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
-        "无限制 hide-my-email 别名和高级别名管理"
+        "无限制 Hide-my-email 别名和高级别名管理"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "使用生物识别技术解 ${ PASS_SHORT_APP_NAME }"
@@ -2895,11 +2892,23 @@
       "${ years } year": [
         "${ years } 年"
       ],
+      "1 day": [
+        "1 天"
+      ],
       "1 hour": [
         "1 小时"
       ],
       "1 minute": [
         "1 分钟"
+      ],
+      "1 month": [
+        "1 个月"
+      ],
+      "1 week": [
+        "1 周"
+      ],
+      "1 year": [
+        "1 年"
       ],
       "10 minutes": [
         "10 分钟"
@@ -3103,7 +3112,7 @@
         "创建自定义项目"
       ],
       "Create a hide-my-email alias": [
-        "创建一个 hide-my-email 别名"
+        "创建一个 Hide-my-email 别名"
       ],
       "Create a login": [
         "创建登录"
@@ -3128,6 +3137,12 @@
       ],
       "Crypto Wallet": [
         "加密钱包"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Custom expiration (minutes)": [
+        "自定义过期时间 (分钟)"
       ],
       "Custom Items": [
         "自定义项目"
@@ -3216,8 +3231,8 @@
       "Expired tokens (${ expired.length })": [
         "已过期的令牌（${ expired.length } 个）"
       ],
-      "Expires in (minutes)": [
-        "过期时间（分钟）"
+      "Expires in": [
+        "有效期至"
       ],
       "Expiry Date": [
         "截止日期"
@@ -4239,6 +4254,12 @@
       "The file you are trying to import is empty": [
         "您尝试导入的文件是空的"
       ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "您的套餐不支持此功能。${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "您的套餐不支持此功能，请联系您的管理员获取权限。"
+      ],
       "Total files: ": [
         "总文件数： "
       ],
@@ -4746,7 +4767,7 @@
         "隐藏保险库"
       ],
       "Hide-my-email aliases": [
-        "个hide-my-email别名"
+        "个 Hide-my-email 别名"
       ],
       "History": [
         "历史记录"
@@ -5189,7 +5210,7 @@
         "域名不能为空"
       ],
       "Duplicate email addresses.": [
-        "复制邮件地址。"
+        "复制邮箱地址"
       ],
       "Email cannot be empty": [
         "邮箱地址不能为空"

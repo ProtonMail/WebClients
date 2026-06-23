@@ -203,6 +203,9 @@
       "Continue import": [
         "Kontynuuj importowanie"
       ],
+      "Continue with Free": [
+        "Kontynuuj z wersją bezpłatną"
+      ],
       "Continue with Google": [
         "Kontynuuj z Google"
       ],
@@ -637,6 +640,9 @@
       ],
       "Reconnect": [
         "Połącz ponownie"
+      ],
+      "Reconnect to Gmail": [
+        "Połącz ponownie z Gmailem"
       ],
       "Reconnect to Zoom": [
         "Ponowne połączenie z Zoom"
@@ -1260,6 +1266,20 @@
       ],
       "Yearly": [
         "Rocznie"
+      ]
+    },
+    "BOSS": {
+      "Migration status": [
+        "Status migracji"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "You": [
+        "Ty"
       ]
     },
     "Browser": {
@@ -2820,6 +2840,9 @@
       "Availability unknown": [
         "Dostępność jest nieznana"
       ],
+      "Available storage: ${ storageText }": [
+        "Dostępna przestrzeń dyskowa: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Dostosuj kolor wydarzenia, aby lepiej zorganizować dzień, śledzić swój czas i ustawiać priorytety zadań."
       ],
@@ -2847,11 +2870,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Łatwa synchronizacja plików komputera z chmurą i dostęp do danych z urządzenia mobilnego."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Wiadomości wysyłane na adres ${ connectedAddressText } będą teraz pojawiać się w ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Aby zapewnić dodatkowe bezpieczeństwo, zachęcaj do korzystania z uwierzytelniania dwustopniowego w organizacji."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Wystarczająco dużo miejsca na lata wiadomości, załączników i nie tylko."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zapewnij bezpieczny dostęp do danych organizacji, nawet jeśli Twój zespół jest zdalny lub korzysta z publicznej sieci Wi-Fi."
@@ -2861,9 +2890,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Upewnij się, że nadal możesz uzyskać dostęp do konta i danych, nawet jeśli zapomnisz hasła ${ BRAND_NAME }."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Zaimportuj dane z Google, Outlook i innych usług, aby płynnie przejść do ${ BRAND_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
@@ -2898,6 +2924,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Proces może potrwać kilka minut. Możesz nadal korzystać z ${ CALENDAR_APP_NAME }."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Może się tak zdarzyć, jeśli uprawnienia zostały usunięte lub zmieniło się Twoje hasło."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Aby nadal odbierać i wysyłać wiadomości Gmail w ${ BRAND_NAME }, połącz ponownie swoje konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Aby nadal odbierać i wysyłać wiadomości Gmail w ${ BRAND_NAME }, połącz ponownie swoje konta."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Ustaw hasło odzyskiwania, aby zapewnić najwyższe bezpieczeństwo konta."
       ],
@@ -2907,11 +2942,23 @@
       "To start, give your organization a name.": [
         "Rozpocznij od nazwania organizacji."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odblokuj 15 GB przestrzeni dyskowej za jedyne ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Skorzystaj z przewodnika, aby Twoja organizacja zaczęła szybko czerpać korzyści z wiodącego w branży ekosystemu szyfrowania i prywatności ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nie mamy już dostępu do ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Wstrzymamy importowanie przy 80% zapełnienia przestrzeni dyskowej, aby zarezerwować miejsce na nowe wiadomości."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Rozpoczęliśmy importowanie Twoich wiadomości z Gmaila. Damy Ci znać, gdy się zakończy."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Grupy kontaktów umożliwiają wysyłanie wiadomości do wszystkich członków grupy jednym kliknięciem."
@@ -2922,11 +2969,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Możesz oznaczyć do usunięcia te kontakty, których nie chcesz scalić ani zachować. Usunięcie nastąpi dopiero po kliknięciu przycisku Scal"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Możesz teraz wysyłać wiadomości z ${ BRAND_NAME }, używając tego adresu."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Metody odzyskiwania konta i danych oraz uwierzytelnianie dwustopniowe są włączone."
       ],
       "Your account and data recovery methods are set.": [
         "Metody odzyskiwania konta i danych są włączone."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko ${ newUserStorageText } najnowszych wiadomości z Gmaila"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko najnowsze wiadomości z Gmaila."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
@@ -3196,6 +3252,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliasy nie mogły zostać załadowane"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
       ],
       "Already a member of this calendar": [
         "To jest już użytkownik kalendarza"
@@ -3491,8 +3550,17 @@
       "Please activate your search again": [
         "Włącz ponownie wyszukiwanie"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Ustaw niestandardową domenę przed dodaniem adresów."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
+      ],
       "Please create an address first.": [
         "Najpierw utwórz adres."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
       ],
       "Please enter a valid postal code": [
         "Wpisz prawidłowy kod pocztowy"
@@ -3526,6 +3594,9 @@
       ],
       "Please select billing state": [
         "Wybierz stan rozliczeniowy"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
       ],
       "Port is required": [
         "Port jest wymagany"
@@ -3583,6 +3654,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektóre nazwy etykiet przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Coś poszło nie tak podczas pobierania dostępnych domen"
       ],
       "Something went wrong. Please try again.": [
         "Coś poszło nie tak. Spróbuj ponownie."
@@ -3691,6 +3765,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Osiągnięto limit liczby kontaktów na koncie"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
@@ -4132,6 +4209,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Ponad 10 funkcji premium"
+      ],
+      "Custom email domain": [
+        "Niestandardowa domena e-mail"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ],
       "Unlimited hide-my-email aliases": [
         "Nieograniczona liczba aliasów hide-my-email"
       ]
@@ -4801,21 +4890,6 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: Zatrzymuje wycieki danych, blokując dostęp do Internetu w przypadku nieoczekiwanego przerwania połączenia VPN."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1:** Zaproś znajomych do ${ BRAND_NAME } za pomocą linku polecającego."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu ${ BRAND_NAME } za darmo."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu za darmo."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego znajomego, który zasubskrybuje plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego użytkownika, który zasubskrybuje plan."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
       ],
@@ -5247,6 +5321,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "W następnym kroku wyślesz środki za pomocą adresu Bitcoin."
+      ],
+      "Included": [
+        "W pakiecie"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indeksowanie wydarzeń: ${ current }/${ total }"
@@ -5713,8 +5790,14 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Ulepsz konto w dowolnym momencie, aby przenieść resztę"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ulepsz konto w specjalnej cenie, aby uzyskać dostęp do funkcji premium oraz większej przestrzeni dyskowej"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Ulepsz konto lub zwolnij miejsce w dowolnym momencie, aby przenieść resztę"
       ],
       "Uppercase and lowercase letters": [
         "Wielkie i małe litery"
@@ -6266,6 +6349,9 @@
       "Calendar": [
         "Kalendarz"
       ],
+      "Calendars": [
+        "Kalendarze"
+      ],
       "Card details": [
         "Szczegóły karty"
       ],
@@ -6355,6 +6441,9 @@
       ],
       "Email format": [
         "Format wiadomości"
+      ],
+      "Emails": [
+        "Wiadomości"
       ],
       "Emails (all messages)": [
         "Wiadomości (wszystkie)"
@@ -8164,6 +8253,9 @@
       ],
       "Passcode copied to clipboard": [
         "Kod został skopiowany do schowka"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Twój adres ${ BRAND_NAME } jest gotowy do użycia"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9032,6 +9124,9 @@
       "Postal code": [
         "Kod pocztowy"
       ],
+      "Search": [
+        "Szukaj"
+      ],
       "Search events": [
         "Szukaj wydarzeń"
       ],
@@ -9183,15 +9278,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
-      "SPRING SALE 2026": [
-        "WIOSENNA PROMOCJA 2026"
+      "Summer Sale": [
+        "Letnie promocje"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/miesiąc"
       ],
@@ -9210,35 +9305,17 @@
       "500 GB storage": [
         "500 GB przestrzeni dyskowej"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Uzyskaj dostęp do zaawansowanych modeli AI"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Wszystkie funkcje premium usług Mail, Pass, Drive, VPN i Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
-      ],
-      "Built-in 2FA authenticator": [
-        "Wbudowana aplikacja uwierzytelniająca"
-      ],
-      "Connect 10 devices at once": [
-        "Połącz 10 urządzeń jednocześnie"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Przedłuż subskrypcję i zaoszczędź ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Pełny dostęp do ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Pełna historia czatu z łatwym wyszukiwaniem i ulubionymi"
       ],
       "Individual accounts for 6 users": [
         "Indywidualne konta dla 6 użytkowników"
@@ -9246,8 +9323,8 @@
       "Individual accounts for you and a partner": [
         "Indywidualne konta dla Ciebie i partnera"
       ],
-      "Online document editor": [
-        "Edytor dokumentów online"
+      "Online document and spreadsheet editor": [
+        "Edytor dokumentów i arkuszy kalkulacyjnych online"
       ],
       "Recover previous file versions": [
         "Odzyskaj poprzednie wersje pliku"
@@ -9258,25 +9335,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Przejdź na nasz roczny plan i zaoszczędź ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Nieograniczone codzienne czaty"
-      ],
       "Unlimited folders, labels, and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów z funkcją hide-my-email"
       ],
       "Use your own email domain": [
         "Możliwość użycia własnej domeny e-mail"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "na 12 miesięcy"
       ],
-      "SPRING SALE": [
-        "WIOSENNA PROMOCJA"
+      "SUMMER SALE": [
+        "LETNIE PROMOCJE"
       ]
     },
     "Referral": {
@@ -10812,6 +10883,9 @@
       "${ appName } keyboard shortcuts": [
         "Skróty klawiszowe ${ appName }"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adres e-mail",
         "${ emailsCount } adresy e-mail",
@@ -10956,6 +11030,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with free storage": [
+        "Kontynuuj z bezpłatną przestrzenią dyskową"
+      ],
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
       ],
@@ -11021,6 +11098,9 @@
       ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
+      ],
+      "Disconnected from Gmail": [
+        "Rozłączono z Gmailem"
       ],
       "Does not repeat": [
         "Nie powtarza się"
@@ -11109,6 +11189,9 @@
       "Get more from your VPN": [
         "Uzyskaj więcej z VPN"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Zyskaj więcej przestrzeni dyskowej dzięki ${ MAIL_APP_NAME } Plus"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Pobierz aplikacje ${ appName[APP_NAME] }"
       ],
@@ -11153,9 +11236,6 @@
       ],
       "Import contacts": [
         "Importuj kontakty"
-      ],
-      "Import emails, calendars, contacts": [
-        "Importuj wiadomości, kalendarze i kontakty"
       ],
       "Import events": [
         "Importuj wydarzenia"
@@ -11403,6 +11483,9 @@
       "Summary": [
         "Podsumowanie"
       ],
+      "Summer Sale": [
+        "Letnie promocje"
+      ],
       "Time": [
         "Czas"
       ],
@@ -11477,6 +11560,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kiedy korzystanie z VPN jest najważniejsze?"
+      ],
+      "You are all set": [
+        "Wszystko gotowe"
       ],
       "You can now create unlimited folders and labels": [
         "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"

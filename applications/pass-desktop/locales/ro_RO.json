@@ -1112,8 +1112,8 @@
       "Error reporting problem": [
         "Problemă de raportare a erorii."
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Timpul de expirare trebuie să fie cuprins între 60 de minute și un an."
+      "Expiration must be between 1 hour and 1 year": [
+        "Timpul de expirare trebuie să fie cuprins între o oră și un an."
       ],
       "Failed loading group members": [
         "Eroare la încărcarea membrilor grupului."
@@ -1978,24 +1978,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "De fiecare dată când aliasul primește un mesaj de la cineva, este creat automat un contact."
       ],
-      "Expired ${ abs } hour ago": [
-        "Expirat acum ${ abs } oră",
-        "Expirat acum ${ abs } ore",
-        "Expirat acum ${ abs } de ore"
+      "Expired on ${ formattedDate }": [
+        "Expirat la data de ${ formattedDate }"
       ],
       "Expires in": [
         "Expiră peste"
       ],
-      "Expires in ${ hours } hour": [
-        "Expiră peste ${ hours } oră",
-        "Expiră peste ${ hours } ore",
-        "Expiră peste ${ hours } de ore"
-      ],
       "Expires in ${ remainingTime }": [
         "Expiră peste ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Expiră în mai puțin de o oră"
+      "Expires on ${ formattedDate }": [
+        "Expiră la data de ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Se exportă datele..."
@@ -2988,11 +2981,23 @@
         "${ years } ani",
         "${ years } de ani"
       ],
+      "1 day": [
+        "O zi"
+      ],
       "1 hour": [
         "o oră"
       ],
       "1 minute": [
         "1 minut"
+      ],
+      "1 month": [
+        "O lună"
+      ],
+      "1 week": [
+        "O săptămână"
+      ],
+      "1 year": [
+        "Un an"
       ],
       "10 minutes": [
         "10 minute"
@@ -3222,6 +3227,12 @@
       "Crypto Wallet": [
         "Portofel cripto"
       ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Custom expiration (minutes)": [
+        "Expirare personalizată (minute)"
+      ],
       "Custom Items": [
         "Articole personale"
       ],
@@ -3312,8 +3323,8 @@
       "Expired tokens (${ expired.length })": [
         "Coduri de acces expirate (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Expiră peste (minute)"
+      "Expires in": [
+        "Expiră în"
       ],
       "Expiry Date": [
         "Dată expirare"
@@ -4340,6 +4351,12 @@
       ],
       "The file you are trying to import is empty": [
         "Fișierul pe care încercați să îl importați este gol."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Această funcție nu este acceptată în planul actual. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Această funcție nu este acceptată în abonamentul actual. Contactați administratorul pentru a obține acces."
       ],
       "Total files: ": [
         "Total fișiere: "

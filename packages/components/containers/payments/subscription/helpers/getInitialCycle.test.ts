@@ -9,8 +9,8 @@ import {
     getPlansMap,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders';
-import { getLongTestPlans, getTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { getLongTestPlans, getTestPlans } from '@proton/testing/data/payments/data-plans';
 
 import { getInitialCycle } from './getInitialCycle';
 

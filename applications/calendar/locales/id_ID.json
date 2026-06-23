@@ -215,6 +215,9 @@
       "Continue import": [
         "Lanjutkan impor"
       ],
+      "Continue with Free": [
+        "Lanjutkan dengan Gratis"
+      ],
       "Continue with Google": [
         "Lanjut dengan Google"
       ],
@@ -694,6 +697,9 @@
       ],
       "Reconnect": [
         "Hubungkan kembali"
+      ],
+      "Reconnect to Gmail": [
+        "Hubungkan ulang ke Gmail"
       ],
       "Reconnect to Zoom": [
         "Hubungkan ulang ke Zoom"
@@ -1358,6 +1364,41 @@
       ],
       "Yearly": [
         "Tahunan"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Atur migrasi"
+      ],
+      "Contacts": [
+        "Kontak"
+      ],
+      "Estimated size": [
+        "Perkiraan ukuran"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Migration status": [
+        "Status migrasi"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasi tidak memiliki jumlah kuota yang memadai"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Pengguna"
+      ],
+      "What are you migrating?": [
+        "Apa yang ingin Anda migrasikan?"
       ]
     },
     "Browser": {
@@ -2965,6 +3006,9 @@
       "Availability unknown": [
         "Ketersediaan tidak diketahui"
       ],
+      "Available storage: ${ storageText }": [
+        "Penyimpanan tersedia: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Berikan warna pada acara untuk mengatur hari Anda, melacak waktu Anda, dan memprioritaskan tugas dengan lebih mudah."
       ],
@@ -2992,11 +3036,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sinkronkan file ke layanan cloud dari desktop Anda dengan mudah dan akses file dari perangkat seluler Anda."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Email yang dikirim ke ${ connectedAddressText } kini akan muncul di ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Anjurkan penggunaan autentikasi dua faktor di dalam organisasi Anda untuk keamanan ekstra."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Ruang yang cukup untuk email, lampiran, dan lainnya selama bertahun-tahun."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Pastikan data milik organisasi Anda selalu terakses secara aman, bahkan apabila tim Anda bekerja secara jarak jauh atau menggunakan WiFi publik."
@@ -3006,9 +3056,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Pastikan Anda tetap dapat mengakses akun dan data Anda bahkan apabila Anda kehilangan kata sandi ${ BRAND_NAME } Anda."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Untuk transisi ke ${ BRAND_NAME } yang berlangsung tanpa hambatan, impor data Anda dari Google, Outlook, dan layanan lainnya."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dapatkan pemberitahuan apabila kata sandi atau data lain Anda terbocorkan dari layanan pihak ketiga."
@@ -3043,6 +3090,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Proses ini dapat memakan waktu sejenak. Selagi menunggu, Anda dapat lanjut menggunakan ${ CALENDAR_APP_NAME } seperti biasa."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Hal ini dapat terjadi jika izin dihapus atau kata sandi Anda diubah."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Untuk terus menerima dan mengirim pesan Gmail di ${ BRAND_NAME }, silakan hubungkan ulang akun Anda."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Untuk terus menerima dan mengirim pesan Gmail di ${ BRAND_NAME }, silakan hubungkan ulang akun Anda."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Untuk memastikan keamanan yang setinggi mungkin pada akun Anda, tentukanlah frasa pemulihan."
       ],
@@ -3052,11 +3108,23 @@
       "To start, give your organization a name.": [
         "Untuk memulai, beri nama organisasi Anda."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Buka kapasitas penyimpanan sebesar 15 GB hanya dengan ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Gunakan Seret dan Lepas untuk mengatur prioritas penggabungan antar kontak. Hapus centang pada kontak yang tidak ingin Anda gabungkan."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gunakan panduan ini agar organisasi Anda dapat menikmati ekosistem enkripsi dan privasi ${ BRAND_NAME } yang terdepan di industri dengan segera."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Tidak dapat lagi mengakses ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Impor akan dijeda saat penyimpanan mencapai 80% untuk menyisakan ruang bagi pesan baru."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Impor email dari Gmail telah dimulai. Anda akan diberi tahu setelah selesai."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Dengan grup kontak, Anda dapat mengirim email ke seluruh anggota grup hanya dengan sekali klik."
@@ -3067,11 +3135,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Kini dapat mengirim email dari ${ BRAND_NAME } menggunakan alamat ini."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Metode pemulihan akun dan data Anda telah diatur dan 2FA telah diaktifkan."
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya ${ newUserStorageText } pesan Gmail terbaru Anda yang akan diimpor"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya email Gmail terbaru Anda yang akan diimpor."
       ],
       "You’ll get a secure email with the details shortly.": [
         "Anda akan segera memperoleh email dengan rincian pemesanan ini."
@@ -3407,6 +3484,9 @@
       "Aliases could not be loaded": [
         "Alias tidak dapat dimuat"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
+      ],
       "Already a member of this calendar": [
         "Pengguna sudah merupakan anggota kalender"
       ],
@@ -3707,8 +3787,17 @@
       "Please activate your search again": [
         "Silakan aktifkan pencarian Anda kembali"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Silakan atur domain kustom sebelum menambahkan alamat"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
+      ],
       "Please create an address first.": [
         "Silakan buat alamat terlebih dahulu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
       ],
       "Please enter a valid postal code": [
         "Silakan masukkan kode pos yang valid"
@@ -3739,6 +3828,9 @@
       ],
       "Please select billing state": [
         "Silakan pilih negara bagian penagihan"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
       ],
       "Port is required": [
         "Port wajib diisi"
@@ -3793,6 +3885,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Terjadi kesalahan saat mengambil domain yang tersedia"
       ],
       "Something went wrong. Please try again.": [
         "Terjadi kesalahan. Silakan coba lagi."
@@ -3901,6 +3996,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak untuk akun Anda"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ],
       "You must set a name": [
         "Anda harus menetapkan nama"
@@ -4347,11 +4445,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ fitur premium"
+      ],
+      "Custom email domain": [
+        "Domain email khusus"
+      ],
+      "Email addresses": [
+        "Alamat email"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Penyimpanan cloud terenkripsi untuk file, foto, dan dokumen"
       ],
       "More premium features": [
         "Fitur premium lainnya"
+      ],
+      "Storage": [
+        "Penyimpanan"
       ],
       "Unlimited hide-my-email aliases": [
         "Tanpa batasan jumlah alias hide-my-email"
@@ -4938,21 +5048,6 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Menghentikan kebocoran data dengan memblokir internet Anda apabila koneski VPN terputus secara tiba-tiba."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket ${ BRAND_NAME } pilihan mereka."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket mereka."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Langkah 3:** Dapatkan kredit senilai ${ referrerRewardAmount } untuk setiap teman yang berlangganan ke salah satu paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Langkah 3:** Dapatkan kredit senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
@@ -5417,6 +5512,9 @@
       ],
       "In which calendar should bookings appear?": [
         "Pada kalender mana halaman pemesanan akan muncul?"
+      ],
+      "Included": [
+        "Termasuk"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Mengindeks acara: ${ current }/${ total }"
@@ -5955,8 +6053,14 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Tingkatkan kapan saja untuk memindahkan sisanya"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Tingkatkan atau bersihkan ruang penyimpanan kapan saja untuk memindahkan sisanya"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Tingkatkan untuk mempertahankan berbagai manfaat ${ planTitle } Anda."
@@ -6523,6 +6627,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalender"
+      ],
       "Card details": [
         "Rincian kartu"
       ],
@@ -6621,6 +6728,9 @@
       ],
       "Email format": [
         "Format email"
+      ],
+      "Emails": [
+        "Email"
       ],
       "Emails (all messages)": [
         "Email (seluruh pesan)"
@@ -8449,6 +8559,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Frasa sandi disalin ke papan klip"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Alamat ${ BRAND_NAME } Anda siap digunakan"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9339,6 +9452,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Pencarian"
+      ],
       "Search events": [
         "Cari acara"
       ],
@@ -9485,6 +9601,78 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
+      "Summer Sale": [
+        "Promo Musim Panas"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "2 TB data storage": [
+        "Penyimpanan data 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Ruang penyimpanan 200 GB: 40x lebih besar dari paket Anda saat ini"
+      ],
+      "3 TB data storage": [
+        "Penyimpanan data 3 TB"
+      ],
+      "500 GB storage": [
+        "Penyimpanan 500 GB"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskon didasarkan pada harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar setelah siklus tagihan berakhir."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Akses penuh ke ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Akun individu untuk 6 pengguna"
+      ],
+      "Individual accounts for you and a partner": [
+        "Akun individu untuk Anda dan pasangan"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor dokumen dan spreadsheet daring"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi file sebelumnya"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Beralih ke paket tahunan dan hemat ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Tanpa batasan jumlah folder, label, dan saringan"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "untuk 12 bulan"
+      ],
+      "SUMMER SALE": [
+        "PROMO MUSIM PANAS"
       ]
     },
     "Referral": {
@@ -11000,6 +11188,9 @@
       "${ appName } keyboard shortcuts": [
         "Pintasan keyboard ${ appName }"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } alamat email"
       ],
@@ -11150,6 +11341,9 @@
       "Contacts": [
         "Kontak"
       ],
+      "Continue with free storage": [
+        "Lanjutkan dengan penyimpanan gratis"
+      ],
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
       ],
@@ -11215,6 +11409,9 @@
       ],
       "Discard changes?": [
         "Batalkan perubahan?"
+      ],
+      "Disconnected from Gmail": [
+        "Terputus dari Gmail"
       ],
       "Does not repeat": [
         "Tidak berulang"
@@ -11306,6 +11503,9 @@
       "Get more from your VPN": [
         "Dapatkan lebih banyak dari VPN Anda"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Dapatkan penyimpanan lebih besar dengan ${ MAIL_APP_NAME } Plus"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Dapatkan aplikasi ${ appName[APP_NAME] }"
       ],
@@ -11350,9 +11550,6 @@
       ],
       "Import contacts": [
         "Impor kontak"
-      ],
-      "Import emails, calendars, contacts": [
-        "Impor email, kalender, kontak"
       ],
       "Import events": [
         "Impor acara"
@@ -11609,6 +11806,9 @@
       "Summary": [
         "Ikhtisar"
       ],
+      "Summer Sale": [
+        "Promo Musim Panas"
+      ],
       "The booking feature is currently unavailable.": [
         "Fitur pemesanan ini untuk saat ini tidak tersedia."
       ],
@@ -11698,6 +11898,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kapan waktu yang paling tepat untuk menggunakan VPN?"
+      ],
+      "You are all set": [
+        "Semua sudah siap"
       ],
       "You can now create unlimited folders and labels": [
         "Anda kini dapat membuat folder dan label tanpa batasan jumlah"

@@ -216,6 +216,9 @@
       "Continue import": [
         "Continua l'importazione"
       ],
+      "Continue with Free": [
+        "Continua con la versione gratuita"
+      ],
       "Continue with Google": [
         "Continua con Google"
       ],
@@ -1092,6 +1095,10 @@
         "${ seats } licenza ${ LUMO_APP_NAME }",
         "${ seats } licenze ${ LUMO_APP_NAME }"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } posto dell'assistente alla scrittura",
         "${ seats } posti dell'assistente alla scrittura"
@@ -1403,6 +1410,35 @@
       ],
       "Yearly": [
         "Annuale"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Calendario"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
+      ],
+      "Contacts": [
+        "Contatti"
+      ],
+      "Estimated size": [
+        "Dimensioni Stimate"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di licenze sufficienti"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
+      ],
+      "User": [
+        "Utente"
+      ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
       ]
     },
     "Browser": {
@@ -3022,6 +3058,9 @@
       "Availability unknown": [
         "Disponibilità sconosciuta"
       ],
+      "Available storage: ${ storageText }": [
+        "Archiviazione disponibile: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Codifica gli eventi con colori per semplificare l'organizzazione della giornata, tieni traccia del tempo e dai priorità alle attività."
       ],
@@ -3058,6 +3097,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Abbastanza spazio per anni di email, allegati e altro."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Garantisci un accesso sicuro ai dati dell'organizzazione, anche se il tuo team è da remoto o utilizza una rete WiFi pubblica."
       ],
@@ -3066,9 +3108,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
@@ -3124,6 +3163,9 @@
       "To start, give your organization a name.": [
         "Per iniziare, dai un nome alla tua organizzazione."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Sblocca 15 GB di archiviazione a soli ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
       ],
@@ -3132,6 +3174,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Non possiamo più accedere a ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Metteremo in pausa le importazioni all'80% dell'archiviazione per riservare spazio per i nuovi messaggi."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Abbiamo iniziato a importare le tue email da Gmail. Ti faremo sapere quando avremo finito."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con i gruppi di contatti, puoi inviare email a tutte le persone nel gruppo con un solo click."
@@ -3150,6 +3198,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "I tuoi metodi di recupero dell'account e dei dati sono impostati."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo ${ newUserStorageText } dei tuoi messaggi Gmail più recenti"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo le tue email di Gmail più recenti."
       ],
       "You’ll get a secure email with the details shortly.": [
         "Riceverai a breve una email sicura con i dettagli."
@@ -3492,6 +3546,9 @@
       "Aliases could not be loaded": [
         "Impossibile caricare gli alias"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tutto lo spazio di archiviazione è stato allocato. Riduci lo spazio assegnato agli altri utenti."
+      ],
       "Already a member of this calendar": [
         "L'utente è già membro del calendario"
       ],
@@ -3809,8 +3866,17 @@
       "Please complete the billing details": [
         "Completa i dettagli di fatturazione"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configura un dominio personalizzato prima di aggiungere indirizzi."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Per favore configura un dominio personalizzato prima di aggiungere utenti all'organizzazione."
+      ],
       "Please create an address first.": [
         "Per favore prima crea un indirizzo."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
       ],
       "Please enter a valid postal code": [
         "Si prega di inserire un codice postale valido"
@@ -3842,6 +3908,9 @@
       ],
       "Please select billing state": [
         "Seleziona lo stato di fatturazione"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Effettua l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
       ],
       "Port is required": [
         "La porta è obbligatoria"
@@ -4012,6 +4081,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Hai raggiunto il numero limite di contatti per il tuo account"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Hai utilizzato tutti gli indirizzi inclusi nel tuo piano. Effettua l'upgrade del piano per aggiungere un nuovo indirizzo o disattivarne uno dal tuo account."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
       ],
       "You must set a name": [
         "È necessario impostare un nome"
@@ -4465,11 +4540,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ funzionalità premium"
+      ],
+      "Custom email domain": [
+        "Dominio email personalizzato"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Archiviazione cloud crittografata per foto e documenti"
       ],
       "More premium features": [
         "Altre  funzionalità premium"
+      ],
+      "Storage": [
+        "Archiviazione"
       ],
       "Unlimited hide-my-email aliases": [
         "Alias Hide-my-email illimitati"
@@ -5067,6 +5154,10 @@
       "${ storage } storage": [
         "${ storage } di archiviazione"
       ],
+      "${ total } user found": [
+        "${ total } utente trovato",
+        "${ total } utenti trovati"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
         "${ updated } contatti aggiornati con successo."
@@ -5086,21 +5177,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: blocca la fuga di dati bloccando la connessione Internet in caso di interruzione imprevista della VPN."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul piano ${ BRAND_NAME } che hanno scelto."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul loro piano."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni amico che si abbona a un piano."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni persona che si abbona a un piano."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } memoria bonus"
@@ -5340,6 +5416,10 @@
       ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un cloud sicuro per ${ memberCount } membro",
+        "Crea un cloud sicuro per ${ memberCount } membri"
       ],
       "Create in": [
         "Crea in"
@@ -5583,6 +5663,9 @@
       ],
       "In which calendar should bookings appear?": [
         "In quale calendario dovrebbero comparire le prenotazioni?"
+      ],
+      "Included": [
+        "Incluso"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indicizzazione eventi: ${ current }/${ total }"
@@ -6124,8 +6207,14 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Effettua l'upgrade in qualsiasi momento per trasferire il resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Effettua l'upgrade o libera spazio in qualsiasi momento per trasferire il resto"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Effettua l'upgrade per mantenere i tuoi ${ planTitle } vantaggi."
@@ -6713,6 +6802,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Calendars": [
+        "Calendari"
+      ],
       "Card details": [
         "Dettagli della carta"
       ],
@@ -6811,6 +6903,9 @@
       ],
       "Email format": [
         "Formato email"
+      ],
+      "Emails": [
+        "Email"
       ],
       "Emails (all messages)": [
         "Email (tutti i messaggi)"
@@ -7525,6 +7620,16 @@
       "Up to ${ n } participant": [
         "Fino a ${ n } partecipante",
         "Fino a ${ n } partecipanti"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferenze, ${ n } partecipante",
+        "Videoconferenze, ${ n } partecipanti"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licenza inclusa",
+        "${ seats } licenze incluse"
       ]
     },
     "Message": {
@@ -8626,6 +8731,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } paese",
+        "${ n } paesi"
+      ],
       "Access advanced VPN features": [
         "Accedi a funzionalità VPN avanzate"
       ],
@@ -9533,6 +9642,9 @@
       "External key automatically fetched via WKD.": [
         "Chiave esterna caricata automaticamente tramite WKD."
       ],
+      "This key is used for message verification": [
+        "Questa chiave è usata per la verifica dei messaggi"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Questa chiave viene utilizzata per crittografare i messaggi a questo contatto"
       ],
@@ -9644,6 +9756,9 @@
       ],
       "Postal code": [
         "Codice postale"
+      ],
+      "Search": [
+        "Cerca"
       ],
       "Search events": [
         "Cerca eventi"
@@ -9783,15 +9898,15 @@
         "Email ufficiale da ${ BRAND_NAME }"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Ottieni l'offerta"
       ],
-      "SPRING SALE 2026": [
-        "SPRING SALE 2026"
+      "Summer Sale": [
+        "Saldi estivi"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/mese"
       ],
@@ -9810,35 +9925,17 @@
       "500 GB storage": [
         "500 GB di archiviazione"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accedi a oltre 15.000 server in più di 120 Paesi"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Accesso a modelli IA avanzati"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Tutte le funzionalità premium di Mail, Pass, Drive, VPN e Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocca annunci, tracker e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Strumento di autenticazione 2FA integrato"
-      ],
-      "Connect 10 devices at once": [
-        "Connetti 10 dispositivi contemporaneamente"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Estendi il tuo abbonamento e risparmia ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Accesso completo a ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Cronologia chat completa con ricerca facile e preferiti"
       ],
       "Individual accounts for 6 users": [
         "Account individuali per sei utenti"
@@ -9846,8 +9943,8 @@
       "Individual accounts for you and a partner": [
         "Account individuali per te e un'altra persona"
       ],
-      "Online document editor": [
-        "Editor di documenti online"
+      "Online document and spreadsheet editor": [
+        "Editor di documenti e fogli di calcolo online"
       ],
       "Recover previous file versions": [
         "Recupera le versioni precedenti dei file"
@@ -9858,25 +9955,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Passa al nostro piano annuale e risparmia ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Numero illimitato di chat al giorno"
-      ],
       "Unlimited folders, labels, and filters": [
         "Cartelle, etichette e filtri illimitati"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Alias hide-my-email illimitati"
       ],
       "Use your own email domain": [
         "Usa il tuo dominio email personale"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "per 12 mesi"
       ],
-      "SPRING SALE": [
-        "SPRING SALE"
+      "SUMMER SALE": [
+        "SALDI ESTIVI"
       ]
     },
     "Referral": {
@@ -10968,6 +11059,10 @@
       "Version history": [
         "Cronologia delle versioni"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipante",
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipanti"
+      ],
       "Watch the interview": [
         "Guarda l'intervista"
       ],
@@ -11435,6 +11530,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } scorciatoie da tastiera"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } indirizzo email",
         "${ emailsCount } indirizzi email"
@@ -11589,6 +11687,9 @@
       ],
       "Contacts": [
         "Contatti"
+      ],
+      "Continue with free storage": [
+        "Continua con l'archiviazione gratuita"
       ],
       "Continue with partial import?": [
         "Continuare con l'importazione parziale?"
@@ -11751,6 +11852,9 @@
       "Get more from your VPN": [
         "Ottieni di più dalla tua VPN"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Ottieni più archiviazione con ${ MAIL_APP_NAME } Plus"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Ottieni le app ${ appName[APP_NAME] }"
       ],
@@ -11796,9 +11900,6 @@
       ],
       "Import contacts": [
         "Importa i contatti"
-      ],
-      "Import emails, calendars, contacts": [
-        "Importa email, calendari, contatti"
       ],
       "Import events": [
         "Importa eventi"
@@ -12057,6 +12158,9 @@
       ],
       "Summary": [
         "Riepilogo"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
       ],
       "The booking feature is currently unavailable.": [
         "Questa funzionalità non è attualmente disponibile."

@@ -16,7 +16,12 @@ import { type ExcelSheetInfo, createExcelSheetFile, getExcelSheetsFromFile } fro
 import { SearchService } from '../../../services/search/searchService';
 import type { AttachmentId, Message, ProjectSpace } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
-import { isExcelFile, isLargeSpreadsheetFile, isPresentationFile, isSupportedFile } from '../../../util/fileTypeHelpers';
+import {
+    isExcelFile,
+    isLargeSpreadsheetFile,
+    isPresentationFile,
+    isSupportedFile,
+} from '../../../util/fileTypeHelpers';
 import { sendFileUploadFromDriveEvent } from '../../../util/telemetry';
 
 export type FileUploadMode = 'guest' | 'local' | 'linked-drive';
@@ -218,7 +223,7 @@ export const useFileHandling = ({
     );
 
     const processFileLocally = useCallback(
-        async (file: File, selectedExcelSheetNames?: string[]): Promise<void> => {
+        async (file: File, selectedExcelSheetNames?: string[], renameOnConflict: boolean = false): Promise<void> => {
             if (isLargeSpreadsheetFile(file)) {
                 console.log(`Processing large spreadsheet file — this may take a moment...`);
             }
@@ -239,9 +244,15 @@ export const useFileHandling = ({
                 }
 
                 const result = await dispatch(
-                    handleFileAsync(fileToProcess.file, messageChain, fileProcessingService, {
-                        selectedExcelSheetNames: fileToProcess.selectedExcelSheetNames,
-                    })
+                    handleFileAsync(
+                        fileToProcess.file,
+                        messageChain,
+                        fileProcessingService,
+                        {
+                            selectedExcelSheetNames: fileToProcess.selectedExcelSheetNames,
+                        },
+                        renameOnConflict
+                    )
                 );
 
                 if (result.isDuplicate) {
@@ -261,7 +272,8 @@ export const useFileHandling = ({
                         });
                     } else {
                         createNotification({
-                            text: c('collider_2025: Error (processing)').t`File format not supported: ${result.fileName}`,
+                            text: c('collider_2025: Error (processing)')
+                                .t`File format not supported: ${result.fileName}`,
                             type: 'error',
                         });
                     }
@@ -336,7 +348,7 @@ export const useFileHandling = ({
     );
 
     const handleFileProcessing = useCallback(
-        async (file: File): Promise<void> => {
+        async (file: File, renameOnConflict: boolean = false): Promise<void> => {
             try {
                 // The limit only applies to attachments staged in the composer; linked-drive
                 // uploads go straight to Drive and don't occupy a composer slot.
@@ -351,7 +363,7 @@ export const useFileHandling = ({
                 if (fileUploadMode === 'linked-drive') {
                     await uploadFileToDrive(file, selectedExcelSheetNames);
                 } else {
-                    await processFileLocally(file, selectedExcelSheetNames);
+                    await processFileLocally(file, selectedExcelSheetNames, renameOnConflict);
                 }
             } catch (error) {
                 console.error('Error processing file:', error);

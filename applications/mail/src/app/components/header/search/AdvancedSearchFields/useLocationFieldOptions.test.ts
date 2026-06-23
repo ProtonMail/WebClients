@@ -1,5 +1,6 @@
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseFolders, mockUseLabels } from '@proton/testing';
+import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
+import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { mockUseScheduleSendFeature } from 'proton-mail/helpers/test/mockUseScheduleSendFeature';
@@ -35,6 +36,7 @@ describe('useLocationFieldOptions', () => {
                     Color: '#EC3E7C',
                     Order: 2,
                     Display: 1,
+                    LastUnseenMessageEventID: null,
                 },
             ],
         ]);
@@ -49,6 +51,7 @@ describe('useLocationFieldOptions', () => {
                     Order: 1,
                     Notify: 1,
                     Expanded: 0,
+                    LastUnseenMessageEventID: null,
                 },
             ],
         ]);

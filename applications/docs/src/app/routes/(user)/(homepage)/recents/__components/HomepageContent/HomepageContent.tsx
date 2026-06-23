@@ -43,7 +43,6 @@ function HomepageView(): JSX.Element | null {
     // Loading.
     case 'search-loading':
     case 'recents-loading':
-    case 'favorites-loading':
     case 'trash-loading':
       return (
         <div className="flex h-full items-center justify-center">
@@ -60,9 +59,6 @@ function HomepageView(): JSX.Element | null {
           <EmptyState variant="recents" />
         </>
       )
-    case 'favorites-empty':
-      // TODO: implement favorites
-      return null
     case 'trash-empty':
       return <EmptyState variant="trash" />
     // Document lists.
@@ -94,9 +90,6 @@ function HomepageView(): JSX.Element | null {
         </>
       )
     }
-    case 'favorites':
-      // TODO: implement favorites
-      return null
     case 'trash':
       return <DocumentsTable itemsSections={state.itemSections} variant="trash" />
     // This won't happen, it's only here for type safety.

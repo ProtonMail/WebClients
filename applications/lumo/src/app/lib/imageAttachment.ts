@@ -25,9 +25,15 @@ export function createImageAttachment(
     return { attachment, data: imageData };
 }
 
-/**
- * Generate markdown reference for inline image
- */
+export function lumoImageMarker(id: string, source: 'user' | 'assistant', name?: string): string {
+    const nameAttr = name ? ` name="${encodeURIComponent(name)}"` : '';
+    return `<lumo-image id="${encodeURIComponent(id)}" source="${encodeURIComponent(source)}"${nameAttr} />`;
+}
+
+export function imageMarkdownFragment(imageId: string): string {
+    return `![Generated image](attachment:${imageId})`;
+}
+
 export function generateImageMarkdown(imageId: string): string {
-    return `\n\n![Generated image](attachment:${imageId})\n\n`;
+    return `\n\n${imageMarkdownFragment(imageId)}\n\n`;
 }

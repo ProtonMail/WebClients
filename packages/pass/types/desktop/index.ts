@@ -32,6 +32,8 @@ export type ContextBridgeApi = {
     setSecret: (key: string, data: Uint8Array<ArrayBuffer>) => Promise<void>;
     deleteSecret: (key: string) => Promise<void>;
 
+    flushStorageData: () => Promise<void>;
+
     getInstallInfo: () => Promise<MaybeNull<string>>;
     setInstallSourceReported: () => Promise<void>;
 

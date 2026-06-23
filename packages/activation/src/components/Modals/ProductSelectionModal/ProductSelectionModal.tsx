@@ -10,6 +10,7 @@ import { useProductSelectionSubmit } from '@proton/activation/src/components/Mod
 import { EasySwitchProviderName } from '@proton/activation/src/components/ProviderName/EasySwitchProviderName';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import { useDriveSdk } from '@proton/activation/src/logic/driveContext';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -23,17 +24,26 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 const importProviders = [ImportProvider.DEFAULT, ImportProvider.GOOGLE, ImportProvider.OUTLOOK, ImportProvider.YAHOO];
 const importProducts = [ImportType.MAIL, ImportType.CONTACTS, ImportType.CALENDAR];
 
-const getDefaultProducts = (provider: ImportProvider, hasCalendar: boolean) => {
+const getIsDriveSelectable = (provider: ImportProvider, isDriveEnabled: boolean) =>
+    isDriveEnabled && provider === ImportProvider.GOOGLE;
+
+const getDefaultProducts = (provider: ImportProvider, hasCalendar: boolean, hasDrive: boolean) => {
     if (provider === ImportProvider.DEFAULT || provider === ImportProvider.YAHOO) {
         return [ImportType.MAIL];
     }
 
-    return [ImportType.MAIL, hasCalendar ? ImportType.CALENDAR : undefined, ImportType.CONTACTS].filter(isTruthy);
+    return [
+        ImportType.MAIL,
+        hasCalendar ? ImportType.CALENDAR : undefined,
+        ImportType.CONTACTS,
+        hasDrive ? ImportType.DRIVE : undefined,
+    ].filter(isTruthy);
 };
 
 interface Props extends ModalProps {
@@ -46,20 +56,29 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
     const [addresses] = useAddresses();
     const isBYOEAccount = getIsBYOEOnlyAccount(addresses);
     const [writeableCalendars = []] = useWriteableCalendars();
+    const drive = useDriveSdk();
 
     const { handleSubmit, loadingConfig } = useProductSelectionSubmit();
 
     const hasCalendar = !isBYOEAccount && writeableCalendars.length > 0;
 
+    const isDriveFlagEnabled = useFlag('EasySwitchB2CForDriveWeb');
+    // Don't offer Drive unless the Drive SDK has been initialized by the host app.
+    const isDriveAvailable = isDriveFlagEnabled && !!drive;
+
     const [selectedProvider, setSelectedProvider] = useState(provider);
-    const [selectedProducts, setSelectedProducts] = useState<ImportType[]>(getDefaultProducts(provider, hasCalendar));
+    const [selectedProducts, setSelectedProducts] = useState<ImportType[]>(
+        getDefaultProducts(provider, hasCalendar, getIsDriveSelectable(provider, isDriveAvailable))
+    );
+
+    const isDriveSelectable = getIsDriveSelectable(selectedProvider, isDriveAvailable);
 
     const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
         useModalState();
     const getOrCreateCalendarAndSettings = useGetOrCreateCalendarAndSettings();
 
     const handleProviderChange = (value: ImportProvider) => {
-        setSelectedProducts(getDefaultProducts(value, hasCalendar));
+        setSelectedProducts(getDefaultProducts(value, hasCalendar, getIsDriveSelectable(value, isDriveAvailable)));
         setSelectedProvider(value);
     };
 
@@ -151,6 +170,16 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
                                             disabledText={getCalendarDisabledText()}
                                         />
                                     </BorderedContainerItem>
+                                    {isDriveSelectable && (
+                                        <BorderedContainerItem>
+                                            <ProductCheckbox
+                                                product={ImportType.DRIVE}
+                                                onToggleProduct={handleSelectProductCheckbox}
+                                                checked={selectedProducts.includes(ImportType.DRIVE)}
+                                                disabledText={disabledProductText}
+                                            />
+                                        </BorderedContainerItem>
+                                    )}
                                 </BorderedContainer>
                             )}
                             {(selectedProvider === ImportProvider.YAHOO ||

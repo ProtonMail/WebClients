@@ -1360,6 +1360,9 @@
       "Canada": [
         "Canada"
       ],
+      "Canary Islands": [
+        "Îles Canaries"
+      ],
       "Cape Verde": [
         "Cap-Vert"
       ],
@@ -2139,8 +2142,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assurez-vous de pouvoir toujours accéder à votre compte et à vos données même si vous perdez votre mot de passe ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pour une transition en douceur vers ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pour une intégration transparente de votre équipe à ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -2472,7 +2475,7 @@
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "VAT number must start with ${ prefixes }": [
-        "Le numéro de TVA doit commencer avec ${ prefixes }."
+        "Le numéro de TVA doit commencer par ${ prefixes }."
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
@@ -5584,8 +5587,14 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Compte restreint"
@@ -5692,11 +5701,11 @@
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
       ],
-      "Import emails, calendars, contacts": [
-        "Importer des messages, calendriers et contacts"
-      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer votre organisation vers ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Mini calendrier"
@@ -5756,7 +5765,7 @@
         "Résumé"
       ],
       "Summer Sale": [
-        "Soldes d'été"
+        "Offre estivale"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"
@@ -5814,6 +5823,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."

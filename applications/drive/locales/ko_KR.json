@@ -243,6 +243,9 @@
       "Continue transfers": [
         "이동 계속"
       ],
+      "Continue with Free": [
+        "무료로 계속하기"
+      ],
       "Continue with Google": [
         "Google 계정으로 로그인"
       ],
@@ -488,9 +491,6 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "무료 ${ BRAND_NAME } 주소 받기"
-      ],
-      "Get Drive for Business": [
-        "Drive for Business 구매"
       ],
       "Get in touch": [
         "연락하기"
@@ -1101,9 +1101,6 @@
       "Upload and share files": [
         "파일 업로드 및 공유하기"
       ],
-      "Upload anyway": [
-        "무시하고 업로드"
-      ],
       "Upload file": [
         "파일 업로드"
       ],
@@ -1151,6 +1148,9 @@
       ],
       "Verify account": [
         "계정 인증"
+      ],
+      "Verify now": [
+        "지금 인증"
       ],
       "View": [
         "보기"
@@ -1539,6 +1539,47 @@
       ],
       "Yearly": [
         "연간"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "캘린더"
+      ],
+      "Configure migration": [
+        "이전 작업 구성"
+      ],
+      "Contacts": [
+        "연락처"
+      ],
+      "Estimated size": [
+        "예상 용량"
+      ],
+      "Has errors": [
+        "오류 있음"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Migration status": [
+        "마이그레이션 상태"
+      ],
+      "Not activated": [
+        "활성화되지 않음"
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Status": [
+        "상태"
+      ],
+      "User": [
+        "사용자"
+      ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
       ]
     },
     "Browser": {
@@ -2112,6 +2153,9 @@
       ],
       "Canada": [
         "캐나다"
+      ],
+      "Canary Islands": [
+        "카나리아 제도"
       ],
       "Cape Verde": [
         "카보베르데"
@@ -2866,6 +2910,9 @@
       "Automatically forward incoming email to another email address.": [
         "수신 이메일을 다른 이메일 주소로 자동 전달합니다."
       ],
+      "Available storage: ${ storageText }": [
+        "사용 가능한 저장공간: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
       ],
@@ -2888,13 +2935,16 @@
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+        "${ connectedAddressText }(으)로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "수년 치의 이메일과 첨부 파일 등을 보관하기에 충분한 공간입니다."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "팀이 원격으로 있거나 공용 WiFi를 사용하는 경우에도 조직 데이터에 대한 안전한 접근이 보장됩니다."
@@ -2904,9 +2954,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } 비밀번호를 분실한 경우에도 계정과 데이터에 접근 가능한지 여부를 확인하세요."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "원활하게 ${ BRAND_NAME }(으)로 전환하기 위해 Google, Outlook 등에서 데이터를 불러오기 하세요."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
@@ -2956,6 +3003,9 @@
       "To start, give your organization a name.": [
         "시작하려면 먼저 조직의 이름을 지정하세요."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "단 ${ config.offerPrice }의 비용으로 15 GB 저장공간을 이용해 보세요."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "편집 권한으로 파일 공유를 계속하려면 ${ planName }(으)로 업그레이드하세요."
       ],
@@ -2967,6 +3017,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "${ boldEmails }에 더 이상 접근할 수 없습니다."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -2988,6 +3044,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
@@ -3230,9 +3292,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\"이(가) 이미 존재합니다"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } 외부 계정에 연결할 수 없었습니다."
       ],
@@ -3271,6 +3330,9 @@
       ],
       "Aliases could not be loaded": [
         "별칭을 불러올 수 없습니다."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "모든 저장 공간이 할당되었습니다. 다른 사용자에게 할당 된 저장공간을 줄이십시오."
       ],
       "Already a member of this share": [
         "이미 이 공유의 구성원입니다"
@@ -3431,6 +3493,9 @@
       "Failed to load signature details, please try again later": [
         "서명 상세 정보를 불러올 수 없습니다. 나중에 다시 시도해 주세요."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
+      ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
       ],
@@ -3448,9 +3513,6 @@
       ],
       "Failed to update public share node": [
         "공개 공유 노드 업데이트 실패"
-      ],
-      "File cannot be merged with folder": [
-        "파일을 폴더와 병합할 수 없음"
       ],
       "First name is too long": [
         "이름이 너무 깁니다."
@@ -3587,14 +3649,20 @@
       "Payment process not supported": [
         "지원하지 않는 결제수단"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "사진 업로드가 일시적으로 비활성화되었습니다. 나중에 다시 시도해 주십시오."
-      ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
       ],
       "Please complete the billing details": [
         "청구 상세 정보를 입력해 주세요."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "조직에 사용자를 추가하기 전에 커스텀 도메인을 구성하세요."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
       ],
       "Please enter a valid postal code": [
         "유효한 우편 번호를 입력해 주세요"
@@ -3625,6 +3693,9 @@
       ],
       "Please select billing state": [
         "결제 청구 지역을 선택해 주세요"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
       ],
       "Port is required": [
         "포트가 필요함"
@@ -3740,24 +3811,6 @@
       "The minimum donation amount is ${ price }": [
         "최소 기부 금액은 ${ price }입니다."
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "원본 파일의 새로운 리비전이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
-      ],
-      "The original file has missing active revision": [
-        "원본 파일에 활성화된 수정본이 없습니다"
-      ],
-      "The original file has missing hash key": [
-        "원본 파일에 해시 키가 없습니다"
-      ],
-      "The original file has missing session key": [
-        "원본 파일에 세션 키가 없습니다"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "원본 파일이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
-      ],
-      "The original folder not found": [
-        "원본 폴더를 찾을 수 없음"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
       ],
@@ -3812,9 +3865,6 @@
       "Upload failed": [
         "업로드 실패"
       ],
-      "Upload for this folder is temporarily disabled": [
-        "이 폴더에 대한 업로드가 일시적으로 비활성화 되었습니다."
-      ],
       "Username must begin with a letter or digit": [
         "사용자명은 문자로 시작해야 합니다"
       ],
@@ -3823,6 +3873,9 @@
       ],
       "Validation error": [
         "검증 오류"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "부가가치세(VAT)번호는 ${ prefixes }(으)로 시작해야 합니다."
       ],
       "We cannot retrieve this item": [
         "해당 항목을 가져올 수 없습니다"
@@ -3868,6 +3921,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "플랜에서 사용 가능한 모든 주소를 사용했습니다. 새 주소를 사용하려면 계정에서 주소를 비활성화하거나 플랜을 업그레이드하세요."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "현재 플랜에서 추가 가능한 모든 사용자를 추가했습니다. 새 사용자를 추가하려면 플랜을 업그레이드해 주세요."
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
@@ -4263,11 +4322,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10개 이상의 premium 기능"
+      ],
+      "Custom email domain": [
+        "사용자 지정 이메일 도메인"
+      ],
+      "Email addresses": [
+        "이메일 주소"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "파일, 사진 및 문서에 대한 암호화된 클라우드 저장공간"
       ],
       "More premium features": [
         "개 더 많은 프리미엄 기능들"
+      ],
+      "Storage": [
+        "저장공간"
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
@@ -4875,6 +4946,9 @@
       "${ storage } storage": [
         "저장공간 ${ storage }"
       ],
+      "${ total } user found": [
+        "${ total }명 사용자 찾음"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
@@ -4893,23 +4967,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**자동 연결**: 기기를 켜자마자 VPN이 실행되며 연결됩니다."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "회원님의 리퍼럴 링크를 통해 ${ BRAND_NAME }으로 **친구들을 초대하세요.**"
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**킬 스위치**: VPN이 예기치 않게 끊길 경우 인터넷을 차단하여 데이터 유출을 차단합니다."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "만약 초대한 친구가 플랜을 구독한다면 **${ refereeRewardAmount }를 받게 됩니다.**"
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2단계:** 초대한 친구들은 구독한 ${ BRAND_NAME } 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
@@ -5139,12 +5207,6 @@
       "Close this screen to exit.": [
         "이 스크린을 닫아 종료합니다."
       ],
-      "Cloud storage for businesses that take security seriously": [
-        "보안을 중요시하는 기업을 위한 클라우드 스토리지"
-      ],
-      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
-        "보안 사고, 랜섬웨어 및 감시로부터 고객 및 비즈니스 데이터를 보호하며 효율적으로 협업하세요."
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "${ VPN_APP_NAME }으로 연결하여 비공개로 방문하기"
       ],
@@ -5166,6 +5228,9 @@
       "Copy your referral link": [
         "당신의 추천인 링크를 공유하세요"
       ],
+      "Could not scan file for malware": [
+        "파일의 멀웨어 여부를 검사할 수 없음"
+      ],
       "Country code": [
         "국가 코드"
       ],
@@ -5180,6 +5245,9 @@
       ],
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount }명의 구성원을 위한 보안 클라우드 만들기"
       ],
       "Create in": [
         "만들기"
@@ -5228,6 +5296,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "비밀번호가 기억 나시나요? ${ verifyButton }"
       ],
       "Done": [
         "완료"
@@ -5376,8 +5447,8 @@
       "for ${ price }": [
         "${ price }으로"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
+      "Forgot password?": [
+        "비밀번호를 잊으셨나요?"
       ],
       "Free 5GB encrypted storage to get started": [
         "시작하기 위한 5GB 무료 암호화 스토리지"
@@ -5471,6 +5542,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
+      ],
+      "Included": [
+        "포함됨"
       ],
       "Index is empty.": [
         "색인이 비어있습니다."
@@ -5775,6 +5849,9 @@
       "Photo is set as album cover": [
         "해당 사진이 앨범 커버로서 설정되었습니다."
       ],
+      "Photo saved to your Drive": [
+        "Drive에 사진이 저장되었습니다"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "사진은 스트림에 복사 및 즐겨찾기로 표시되었습니다."
       ],
@@ -5883,6 +5960,9 @@
       "Ready to add some photos?": [
         "사진 좀 올려 볼까요?"
       ],
+      "RECOMMENDED": [
+        "권장됨"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
       ],
@@ -5939,6 +6019,9 @@
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "검색이 준비되었습니다. 사용자의 파일이 색인 완료되었습니다."
       ],
       "Search module is not available.": [
         "검색 모듈 사용 불가합니다."
@@ -6123,9 +6206,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
       ],
-      "This item already exists in your library": [
-        "이 항목은 이미 라이브러리에 존재합니다."
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "일부 항목이 사진 라이브러리에 저장되지 않았습니다. 앨범에서 삭제하면 해당 항목에 영구적으로 접근할 수 없게 됩니다."
       ],
@@ -6165,26 +6245,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "이 작업은 선택된 항목을 영구적으로 삭제합니다."
       ],
-      "This will replace the existing file with the folder": [
-        "이는 기존 파일을 폴더로 대체하게 됩니다"
-      ],
       "This will replace the existing folder or file with the file": [
         "기존 폴더 또는 파일을 파일로 대체하게 됩니다"
       ],
       "This will replace the existing folder or file with the folder": [
         "기존 폴더 또는 파일을 폴더로 대체하게 됩니다"
       ],
-      "This will replace the existing folder with the file": [
-        "이는 기존 폴더를 파일로 대체하게 됩니다"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
-      ],
-      "This will upload a new version of the file": [
-        "새로운 버전의 파일로 업로드 됩니다"
-      ],
-      "This will upload a new version of the folder": [
-        "새로운 버전의 폴더로 업로드됩니다"
       ],
       "Time": [
         "시간"
@@ -6240,23 +6308,14 @@
       "Tracking": [
         "트래킹"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "파일 \"${ name }\" 의 이동 취소됨"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "폴더 \"${ name }\" 의 이동 취소됨"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "파일 \"${ file.name }\" 의 이동 생략됨"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "폴더 \"${ folderName }\" 의 이동 생략됨"
-      ],
       "Trash": [
         "휴지통"
       ],
       "Trash is empty": [
         "휴지통이 비어있음"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "이 연럭처로부터 산규 매시지를 인증하려면 키 \"${ activeSignerText }\"을(를) 신뢰하세요."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
@@ -6291,8 +6350,14 @@
       "Updating drive search...": [
         "드라이브 검색을 업데이트하는 중..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "언제든지 업그레이드하여 남은 메일을 모두 가져오세요"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "언제든지 업그레이드하거나 공간을 비워 남은 메일을 모두 가져오세요"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
@@ -6308,9 +6373,6 @@
       ],
       "Uploading": [
         "업로드 중"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "한 번에 수백 개의 파일을 업로드하면 성능에 영향을 미칠 수 있습니다."
       ],
       "Uppercase and lowercase letters": [
         "대소문자"
@@ -6360,9 +6422,6 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "잘 하셨습니다. 이제 저장공간이 5GB로 확장되었습니다!"
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "${ nameAuthor }님이 ${ node.name } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
-      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -6383,6 +6442,9 @@
       ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
+      ],
+      "We'll remind you to verify your password again later": [
+        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -6734,6 +6796,9 @@
       "${ nbYear } year": [
         "${ nbYear } 년"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength }자"
+      ],
       "(Expired)": [
         "(만료됨)"
       ],
@@ -6825,6 +6890,9 @@
         "BTC 금액"
       ],
       "Calendar": [
+        "캘린더"
+      ],
+      "Calendars": [
         "캘린더"
       ],
       "can edit": [
@@ -6962,6 +7030,9 @@
       "Email format": [
         "이메일 형식"
       ],
+      "Emails": [
+        "이메일"
+      ],
       "Emails (all messages)": [
         "이메일 (모든 메시지)"
       ],
@@ -7066,12 +7137,6 @@
       ],
       "Keep both": [
         "둘 다 유지"
-      ],
-      "Keep both files": [
-        "두 파일 유지"
-      ],
-      "Keep both folders": [
-        "두 폴더 유지"
       ],
       "Label messages as": [
         "메시지에 다음으로 라벨 지정"
@@ -7216,12 +7281,6 @@
       ],
       "Region": [
         "시/도"
-      ],
-      "Replace existing file": [
-        "기존 파일 대체"
-      ],
-      "Replace existing folder": [
-        "기존 폴더 대체"
       ],
       "Replace existing folder or file": [
         "기존 폴더 또는 파일 대체"
@@ -8146,6 +8205,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -8171,7 +8233,7 @@
         "중앙집중화된 결제"
       ],
       "Collaborate and share large files": [
-        "큰 파일을 공동으로 작업하고 공유하세요"
+        "큰 파일을 공동으로 작업하고 공유하기"
       ],
       "Contact groups": [
         "연락처 그룹"
@@ -8199,6 +8261,9 @@
       ],
       "Data retention policies": [
         "데이터 보존 정책"
+      ],
+      "Dedicated servers optimized for speed": [
+        "속도를 위해 최적화된 전용 서버"
       ],
       "Desktop app": [
         "데스크톱 앱"
@@ -8816,6 +8881,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n }개 국가"
+      ],
       "Access advanced VPN features": [
         "향상된 VPN 기능 접근"
       ],
@@ -8829,10 +8897,10 @@
         "자동 연결"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "사용자 당 ${ bundleStorage }으로 저장 공간을 부스트 하세요."
+        "사용자 당 ${ bundleStorage }(으)로 저장 공간 확장하기"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+        "최종 ${ bundleStorage }(으)로 저장 공간을 부스트하기"
       ],
       "Browser extension": [
         "브라우저 확장 프로그램"
@@ -8872,14 +8940,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" 를 휴지통으로 이동하는데 실패했습니다"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\"을(를) 생성할 수 없습니다"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 이(가) 휴지통으로 이동됨"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\"이(가) 성공적으로 저장되었습니다"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"의 이름을 변경할 수 없습니다"
@@ -9004,18 +9066,6 @@
       "Failed to rename device": [
         "기기 이름 변경 실패"
       ],
-      "Failed to upload files: ${ err }": [
-        "파일 업로드 실패: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "\"${ filename }\" 및 ${ count }개의 파일 및 폴더가 이미 업로드 중입니다"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "파일 또는 폴더 \"${ filename }\"이(가) 이미 업로드 중입니다"
-      ],
-      "File or folder is missing a name": [
-        "파일 또는 폴더에 이름이 없습니다"
-      ],
       "File removed": [
         "파일 삭제됨"
       ],
@@ -9033,9 +9083,6 @@
       ],
       "Move ${ n } item": [
         "항목 ${ n }개 이동"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
       ],
       "Public link access updated": [
         "공개 링크 접근이 업데이트되었습니다."
@@ -9633,6 +9680,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
       ],
+      "Edit billing address": [
+        "청구 주소 수정"
+      ],
       "Got it": [
         "확인했습니다"
       ],
@@ -9874,6 +9924,9 @@
       "External key automatically fetched via WKD.": [
         "외부 키가 자동적으로 WKD를 통해 가져와졌습니다."
       ],
+      "This key is used for message verification": [
+        "이 키는 메시지 검증에 사용됩니다."
+      ],
       "This key is used to encrypt messages to this contact": [
         "이 키는 이 연락처에 암호화된 메시지를 보내는데 사용했습니다."
       ],
@@ -9976,6 +10029,9 @@
       ],
       "San Francisco": [
         "샌프란시스코"
+      ],
+      "Search": [
+        "검색"
       ],
       "Search for group name": [
         "그룹 이름을 위해 검색"
@@ -10126,15 +10182,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "할인 받기"
       ],
-      "SPRING SALE 2026": [
-        "봄 세일 2026"
+      "Summer Sale": [
+        "여름 세일"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/월"
       ],
@@ -10153,35 +10209,17 @@
       "500 GB storage": [
         "500 GB 저장공간"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120개국 이상에서 15,000개 이상의 서버에 접근"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
       ],
-      "Access advanced AI models": [
-        "고급 AI 모델 이용"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail, Pass, 드라이브, VPN 및 캘린더의 모든 premium 기능"
-      ],
-      "Block ads, trackers, and malware": [
-        "광고, 트래커 및 멀웨어 차단"
-      ],
-      "Built-in 2FA authenticator": [
-        "내장형 2단계 인증기"
-      ],
-      "Connect 10 devices at once": [
-        "한 번에 기기 10대 연결"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "귀하의 구독을 연장하고 ${ discountPercent }%를 절약하세요!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }에 대한 완전한 접근"
-      ],
-      "Full chat history with easy search and favorites": [
-        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
       ],
       "Individual accounts for 6 users": [
         "6인용 개별 계정"
@@ -10189,8 +10227,8 @@
       "Individual accounts for you and a partner": [
         "귀하와 파트너를 위한 개별 계정"
       ],
-      "Online document editor": [
-        "온라인 문서 편집기"
+      "Online document and spreadsheet editor": [
+        "온라인 문서 및 스프레드시트 편집기"
       ],
       "Recover previous file versions": [
         "이전 파일 버전 복구"
@@ -10201,25 +10239,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
       ],
-      "Unlimited daily chats": [
-        "무제한 일일 채팅"
-      ],
       "Unlimited folders, labels, and filters": [
         "무제한 폴더, 라벨 및 필터"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "무제한 hide-my-email 별칭"
       ],
       "Use your own email domain": [
         "나만의 이메일 도메인 사용"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "12개월 동안"
       ],
-      "SPRING SALE": [
-        "봄 세일"
+      "SUMMER SALE": [
+        "여름 세일"
       ]
     },
     "Referral": {
@@ -11227,6 +11259,9 @@
       "Version history": [
         "버전 기록"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "최대 ${ PAID_PREMIUM_MAX_PARTICIPANTS }명 참가자의 화상 회의"
+      ],
       "Watch the interview": [
         "인터뷰 보기"
       ],
@@ -11603,6 +11638,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount }개 이메일 주소"
       ],
@@ -11768,6 +11806,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Continue with free storage": [
+        "무료 저장공간으로 계속하기"
+      ],
       "Continue with partial import?": [
         "일부 불러오기 계속?"
       ],
@@ -11864,18 +11905,6 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "디지털 서명이 인증되었습니다. 이 파일은 <strong>${ emailAddress }</strong>에 의해 안전하게 생성되었습니다."
-      ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "디지털 서명이 인증되었습니다. 이 파일은 <strong>${ emailAddress }</strong>에 의해 안전하게 업로드되었습니다."
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "디지털 서명이 인증되었습니다. 이 폴더는 <strong>${ emailAddress }</strong>에 의해 안전하게 생성되었습니다."
-      ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "디지털 서명이 인증되었습니다. 이 폴더는 <strong>${ emailAddress }</strong>에 의해 안전하게 업로드 되었습니다."
-      ],
       "Discard": [
         "취소"
       ],
@@ -11911,12 +11940,6 @@
       ],
       "Drop to upload": [
         "여기로 끌어서 업로드"
-      ],
-      "Duplicate file found": [
-        "중복 파일 발견됨"
-      ],
-      "Duplicate folder found": [
-        "중복 폴더 발견됨"
       ],
       "Edit billing address": [
         "청구 주소 수정"
@@ -11996,6 +12019,9 @@
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus로 더 많은 저장공간을 확보하세요"
+      ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "무료로 제공하는 10분 업로드로 시작해 보세요."
       ],
@@ -12041,9 +12067,6 @@
       "Import contacts": [
         "연락처 가져오기"
       ],
-      "Import emails, calendars, contacts": [
-        "이메일, 캘린더 및 연락처 불러오기"
-      ],
       "Import events": [
         "이벤트 불러오기"
       ],
@@ -12088,9 +12111,6 @@
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"
-      ],
-      "Manage secure link": [
-        "보안 링크 관리"
       ],
       "Media type": [
         "미디어 유형"
@@ -12220,9 +12240,6 @@
       ],
       "PayPal verification failed": [
         "PayPal 인증 실패"
-      ],
-      "Performance might be affected": [
-        "성능에 영향을 줄 수 있음"
       ],
       "Phone numbers": [
         "전화번호"
@@ -12413,6 +12430,9 @@
       "Summary": [
         "요약"
       ],
+      "Summer Sale": [
+        "여름 세일"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "이 파일이 유효하지 않거나 서명이 존재하지 않습니다. 매뉴(⋮) → 상세 정보에서 자세한 정보를 확인하세요"
       ],
@@ -12482,14 +12502,14 @@
       "Uploaded": [
         "업로드 완료"
       ],
-      "Uploading a large file or folder": [
-        "큰 파일 또는 폴더 업로드 중"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "데이터 개인정보 보호를 위해 ${ VPN_SHORT_APP_NAME } 사용하기"
       ],
       "Verification failed": [
         "인증 실패"
+      ],
+      "Verify your password": [
+        "비밀번호 확인"
       ],
       "Verifying your card...": [
         "카드 인증 중..."
@@ -12509,18 +12529,6 @@
       "Warning: suspected fake website": [
         "경고: 가짜 웹 사이트일 수 있음"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "<strong>${ emailAddress }</strong>가 해당 파일을 생성했는지 확인할 수 없었습니다."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "<strong>${ emailAddress }</strong>이(가) 해당 폴더를 생성했는지 확인할 수 없었습니다."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "<strong>${ emailAddress }</strong>가 이 파일을 업로드했는지 확인할 수 없었습니다."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "<strong>${ emailAddress }</strong>가 이 폴더를 업로드했는지 확인할 수 없었습니다."
-      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "익명의 사용자가 이 파일을 생성했는지 확인할 수 없습니다."
       ],
@@ -12535,12 +12543,6 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "${ claimedContentAuthor }님이 파일을 업로드했는지 확인할 수 없었습니다. 원인: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "${ claimedNameAuthor }님이 해당 이름이 생성되거나 수정되었는지 확인할 수 없습니다. 원인: ${ nodeEntity.nameAuthor.error.error }"
-      ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "${ claimedKeyAuthor }님이 해당 노드를 생성했는지 확인할 수 없습니다. 원인: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "환영 혜택"

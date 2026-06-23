@@ -4,6 +4,71 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } görüşmeye katıldı"
+      ],
+      "${ name } left the meeting": [
+        "${ name } görüşmeden ayrıldı"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } elini indirdi"
+      ],
+      "${ name } raised their hand": [
+        "${ name } elini kaldırdı"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name }, ${ emoji } tepkisini verdi"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } şunu dedi: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Bir katılımcı görüşmeye katıldı"
+      ],
+      "A participant left the meeting": [
+        "Bir katılımcı görüşmeden ayrıldı"
+      ],
+      "A participant lowered their hand": [
+        "Bir katılımcı elini indirdi"
+      ],
+      "A participant raised their hand": [
+        "Bir katılımcı elini kaldırdı"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Bir katılımcı ${ emoji } tepkisi verdi"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Bağlantı kesildi. Yeniden bağlanıyor…"
+      ],
+      "New chat message: ${ message }": [
+        "Yeni sohbet iletisi: ${ message }"
+      ],
+      "Now starting recording": [
+        "Kayıt şimdi başlatılıyor"
+      ],
+      "Reconnected to the meeting": [
+        "Görüşme ile yeniden bağlantı kuruldu"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Kayıt başladı. Görüşmede kalarak kayıt yapılacağını kabul etmiş ve buna rıza vermiş olursunuz."
+      ],
+      "Recording stopped": [
+        "Kayıt durduruldu"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Bu görüşme kaydediliyor. Görüşmeye katılarak kayıt yapılacağını kabul etmiş ve buna rıza vermiş olursunuz."
+      ],
+      "You have been disconnected from the meeting": [
+        "Görüşme bağlantınız kesildi"
+      ],
+      "You have been muted by the host": [
+        "Sesiniz görüşme sahibi tarafından kapatıldı"
+      ],
+      "Your camera has been turned off by the host": [
+        "Kameranız görüşme sahibi tarafından kapatıldı"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
@@ -28,6 +93,9 @@
       ],
       "Authenticate": [
         "Kimliği doğrula"
+      ],
+      "Back": [
+        "Geri"
       ],
       "Background blur": [
         "Arka plan bulanıklığı"
@@ -90,7 +158,7 @@
         "Sil"
       ],
       "Disable ${ participantName }'s video": [
-        "${ participantName } kişisinin görüntüsünü kapat"
+        "${ participantName } katılımcısının görüntüsünü kapat"
       ],
       "Disable camera": [
         "Kamerayı kapat"
@@ -100,6 +168,9 @@
       ],
       "Done": [
         "Tamam"
+      ],
+      "Download": [
+        "İndir"
       ],
       "Download app": [
         "Uygulamayı indir"
@@ -112,6 +183,9 @@
       ],
       "Download participant report": [
         "Katılımcı raporunu indir"
+      ],
+      "Download recording": [
+        "Kaydı indir"
       ],
       "Download room level report": [
         "Oda düzeyi raporunu indir"
@@ -183,7 +257,7 @@
         "Çıkar"
       ],
       "Kick out ${ participantName }": [
-        "${ participantName } kişisini kov"
+        "${ participantName } katılımcısını çıkart"
       ],
       "Leave": [
         "Ayrıl"
@@ -204,7 +278,7 @@
         "Hesaplar için diğer seçenekler"
       ],
       "Mute ${ participantName }": [
-        "${ participantName } kişisinin sesini kapat"
+        "${ participantName } katılımcısının sesini kapat"
       ],
       "Next month": [
         "Sonraki ay"
@@ -232,6 +306,10 @@
       ],
       "React with ${ emoji }": [
         "${ emoji } ile tepki ver"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "${ emoji } ile tepki verin, ${ identities.length } tepki",
+        "${ emoji } ile tepki verin, ${ identities.length } tepki"
       ],
       "Receive video": [
         "Görüntüyü al"
@@ -325,6 +403,9 @@
       ],
       "Start meeting": [
         "Görüşme başlat"
+      ],
+      "Start new meeting": [
+        "Yeni görüşme başlat"
       ],
       "Start recording": [
         "Görüşme kaydını başlat"
@@ -433,6 +514,9 @@
       "Lock meeting": [
         "Görüşmeyi kilitle"
       ],
+      "Lower hand": [
+        "Eli indir"
+      ],
       "Meeting details": [
         "Görüşme ayrıntıları"
       ],
@@ -443,10 +527,13 @@
         "Katılımcı aramayı aç"
       ],
       "Participant host control options": [
-        "Katılımcı sunucu denetimi seçenekleri"
+        "Görüşme sahibi katılımcı yönetimi seçenekleri"
       ],
       "Participants": [
         "Katılımcılar"
+      ],
+      "Raise hand": [
+        "El kaldır"
       ],
       "Rotate camera": [
         "Kamerayı döndür"
@@ -463,9 +550,6 @@
       "Stop recording and download.": [
         "Kaydı durdur ve indir."
       ],
-      "Toggle camera": [
-        "Kamerayı aç/kapat"
-      ],
       "Toggle chat": [
         "Sohbeti aç/kapat"
       ],
@@ -474,9 +558,6 @@
       ],
       "Toggle meeting details": [
         "Görüşme ayrıntılarını aç/kapat"
-      ],
-      "Toggle microphone": [
-        "Mikrofonu aç/kapat"
       ],
       "Toggle participants": [
         "Katılımcıları aç/kapat"
@@ -1491,8 +1572,14 @@
       "Failed to delete event": [
         "Etkinlik silinemedi"
       ],
+      "Failed to delete recording": [
+        "Kayıt silinemedi"
+      ],
       "Failed to delete room": [
         "Oda silinemedi"
+      ],
+      "Failed to download recording": [
+        "Kayıt indirilemedi"
       ],
       "Failed to edit room name": [
         "Oda adı düzenlenemedi"
@@ -1505,9 +1592,6 @@
       ],
       "Failed to rotate personal meeting link": [
         "Kişisel görüşme bağlantısı değiştirilemedi"
-      ],
-      "Failed to save recording": [
-        "Görüşme kaydedilemedi"
       ],
       "Failed to send chat message. Please try again.": [
         "Sohbet iletisi gönderilemedi. Lütfen yeniden deneyin."
@@ -1563,9 +1647,6 @@
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
       ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "Erişmeye çalıştığınız görüşme bağlantısı bulunamadı, silinmiş olabilir."
-      ],
       "The meeting password is incorrect": [
         "Görüşme parolası yanlış"
       ],
@@ -1595,6 +1676,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Tarayıcınızın depolama alanı doldu. Bu noktaya kadar olan kaydı kaydettik."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Aygıtınızın saati eşitlenmemiş gibi görünüyor. Lütfen sistem saatinizi denetleyip yeniden deneyin."
@@ -1647,6 +1731,46 @@
     "fido2: Label": {
       "Security key": [
         "Güvenlik anahtarı"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
       ]
     },
     "Font face option": {
@@ -1749,7 +1873,7 @@
         "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
-        "${ participantName } ve ${ otherParticipantsCount } kişi kaydediyor"
+        "${ participantName } ve ${ otherParticipantsCount } katılımcı kaydediyor"
       ],
       "${ participantName } is recording": [
         "${ participantName } kaydediyor"
@@ -1805,6 +1929,9 @@
       ],
       "camera": [
         "kamera"
+      ],
+      "Camera permission denied": [
+        "Kameraya erişme izni verilmedi"
       ],
       "Chat with everyone": [
         "Herkesle sohbet edin"
@@ -2028,6 +2155,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Firefox üzerinde görüşme kaydı desteklenmiyor."
       ],
+      "Meeting time is up": [
+        "Görüşmenin zamanı doldu"
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Görüşmenin kilidi açıldı. Katılımcılar yine katılabilir"
       ],
@@ -2042,6 +2172,12 @@
       ],
       "Microphone effects": [
         "Mikrofon etkileri"
+      ],
+      "Microphone permission denied": [
+        "Mikrofona erişme izni verilmedi"
+      ],
+      "Mute microphone": [
+        "Mikrofonu kapat"
       ],
       "My meetings": [
         "Görüşmelerim"
@@ -2073,6 +2209,9 @@
       "No publications": [
         "Herhangi bir yayın yok"
       ],
+      "No recordings found on this device.": [
+        "Bu aygıtta bir kayıt bulunamadı."
+      ],
       "No remote participants": [
         "Herhangi bir uzak katılımcı yok"
       ],
@@ -2102,9 +2241,6 @@
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Güvenli bir görüşmeye katılmak için ${ MEET_APP_NAME } bağlantınızı yapıştırın."
-      ],
-      "Permission denied": [
-        "İzin verilmedi"
       ],
       "Permissions not given.": [
         "İzinler verilmemiş."
@@ -2142,14 +2278,17 @@
       "Recording": [
         "Kaydediliyor"
       ],
+      "Recording deleted": [
+        "Kayıt silindi"
+      ],
       "Recording in progress": [
         "Kayıt sürüyor"
       ],
-      "Recording saved": [
-        "Görüşme kaydedildi"
-      ],
       "Recording will begin and attendees will be notified.": [
         "Kayıt başlatılacak ve katılımcılara bildirim gönderilecek."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Kayıtlar tarayıcınızda yerel olarak saklanır. Tutmak istediklerinizi indirin. Yoksa 30 gün sonra otomatik olarak silinirler."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
@@ -2212,13 +2351,16 @@
         "Görüşme silindi"
       ],
       "Thank you for hosting a premium meeting.": [
-        "Ücretli bir toplantıya ev sahipliği yaptığınız için teşekkür ederiz."
+        "Ücretli bir görüşmeye ev sahipliği yaptığınız için teşekkür ederiz."
       ],
       "Thank you for joining.": [
         "Katıldığınız için teşekkürler."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Görüşme sahibi sizi bu görüşmeden çıkardı. Bir yanlışlık olduğunu düşünüyorsanız görüşme sahibinden sizi yeniden davet etmesini isteyin."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Açmaya çalıştığınız görüşme bağlantısı bulunamadı veya süresi dolmuş olabilir. Bağlantının doğru olduğundan emin olun ya da bunun yerine yeni bir güvenli görüşme başlatın."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Bu şifrelenmiş sohbette, çağrı sonunda kaybolacak olan süreli iletiler kullanılıyor."
@@ -2232,8 +2374,14 @@
       "This meeting is password protected": [
         "Bu görüşme parola ile korunuyor"
       ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Bu görüşme ücretsiz tarifenin zaman sınırına ulaştı. Gelecek görüşmelerinizde toplantı süresini uzatmak için tarifenizi yükseltin."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Bu kayıt bu aygıttan kalıcı olarak silinecek. Bu işlem geri alınamaz."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Bu işlem görüşmeyi tüm katılımcılar için sonlandırır ve ekran paylaşımınızı durdurur."
@@ -2265,14 +2413,8 @@
       "Turn off camera": [
         "Kamerayı kapat"
       ],
-      "Turn off microphone": [
-        "Mikrofonu kapat"
-      ],
       "Turn on camera": [
         "Kamerayı aç"
-      ],
-      "Turn on microphone": [
-        "Mikrofonu aç"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Görüşme ile yeniden bağlantı kurulamadı. Lütfen yeniden katılın ya da görüşmeden ayrılın."
@@ -2282,6 +2424,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "${ unlimitedMeeting } ve ücretli özelliklere erişin"
+      ],
+      "Unmute microphone": [
+        "Mikrofonu aç"
       ],
       "Upgrade to record your meetings locally.": [
         "Görüşmelerinizi yerel olarak kaydetmek için tarifenizi yükseltin."
@@ -2363,12 +2508,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your free meeting has ended": [
-        "Ücretsiz görüşmeniz sona erdi"
-      ],
-      "Your meeting has ended": [
-        "Görüşmeniz sona erdi"
       ],
       "Your meeting is ready": [
         "Görüşmeniz hazır"
@@ -2484,6 +2623,9 @@
       "Last used": [
         "Son kullanılan"
       ],
+      "Manage recordings": [
+        "Kayıt yönetimi"
+      ],
       "Meeting ID": [
         "Görüşme kimliği"
       ],
@@ -2518,7 +2660,7 @@
         "Telefon numarası"
       ],
       "Remember my name on this device": [
-        "Bu aygıtta adımı hatırla"
+        "Bu aygıtta adım anımsansın"
       ],
       "Repeat event": [
         "Etkinliği yinele"
@@ -2842,6 +2984,20 @@
         "Doğrulandı"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Date": [
+        "Tarih"
+      ],
+      "Name": [
+        "Ad"
+      ],
+      "Size": [
+        "Boyut"
+      ]
+    },
     "Title": {
       "Account restricted": [
         "Hesap kısıtlandı"
@@ -2888,6 +3044,9 @@
       "Chat": [
         "Sohbet"
       ],
+      "Couldn't prepare the recording": [
+        "Kayıt hazırlanamadı"
+      ],
       "Create new room": [
         "Yeni oda oluştur"
       ],
@@ -2896,6 +3055,9 @@
       ],
       "Debug Overlay": [
         "Hata ayıklama katmanı"
+      ],
+      "Delete recording?": [
+        "Kayıt silinsin mi?"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -2920,6 +3082,9 @@
       ],
       "Info": [
         "Bilgiler"
+      ],
+      "Invalid meeting link": [
+        "Görüşme bağlantısı geçersiz"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -2982,6 +3147,9 @@
       "Personal meeting room": [
         "Kişisel görüşme odası"
       ],
+      "Preparing your recording…": [
+        "Kaydınız hazırlanıyor…"
+      ],
       "Publications": [
         "Yayınlar"
       ],
@@ -2990,6 +3158,9 @@
       ],
       "Record this meeting": [
         "Bu görüşmeyi kaydet"
+      ],
+      "Recordings": [
+        "Kayıtlar"
       ],
       "Remote Participants": [
         "Uzak katılımcılar"
@@ -3053,6 +3224,9 @@
       ],
       "Your feedback has been submitted": [
         "Geri bildiriminiz gönderildi"
+      ],
+      "Your recording is ready": [
+        "Kaydınız hazır"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -3066,6 +3240,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Yeni bir görüşme bağlantısı oluşturun. Var olan bağlantı artık çalışmayacak."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "Recurring meeting": [
         "Yinelenen görüşme"

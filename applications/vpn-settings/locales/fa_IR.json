@@ -80,6 +80,9 @@
       "Choose a file or drag it here": [
         "فایلی را انتخاب کنید یا آن را به اینجا بکشید"
       ],
+      "Claim this address": [
+        "دریافت این نشانی"
+      ],
       "Close": [
         "بستن"
       ],
@@ -175,6 +178,9 @@
       ],
       "Discard changes": [
         "لغو تغییرات"
+      ],
+      "Disconnect": [
+        "قطع اتصال"
       ],
       "Dismiss": [
         "رد کردن"
@@ -287,6 +293,9 @@
       "Keep editing": [
         "ادامه ویرایش"
       ],
+      "Later": [
+        "بعدا"
+      ],
       "Learn more": [
         "بیشتر بدانید"
       ],
@@ -346,6 +355,9 @@
       ],
       "Or": [
         "یا"
+      ],
+      "Or use a different Gmail address": [
+        "یا استفاده از یک نشانی Gmail دیگر"
       ],
       "Organization": [
         "سازمان"
@@ -608,6 +620,9 @@
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
       ],
+      "Use this Gmail address": [
+        "استفاده از این نشانی Gmail"
+      ],
       "Use your current email instead": [
         "در عوض از ایمیل فعلی خود استفاده کنید"
       ],
@@ -703,6 +718,9 @@
       ],
       "Disabled": [
         "غیرفعال"
+      ],
+      "Disconnected": [
+        "قطع‌شده"
       ],
       "Inactive": [
         "غیرفعال"
@@ -4182,6 +4200,9 @@
       "Calendar": [
         "تقویم"
       ],
+      "Calendars": [
+        "تقویم‌ها"
+      ],
       "Card details": [
         "جزئیات کارت"
       ],
@@ -4298,6 +4319,9 @@
       ],
       "Email or username": [
         "رایانامه یا نام‌کاربری"
+      ],
+      "Emails": [
+        "ایمیل‌ها"
       ],
       "Enabled": [
         "فعال"
@@ -4622,6 +4646,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "به"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } از ${ maxBYOEAddresses } نشانی ایمیل در دسترس است",
+        "${ byoeAddressesAvailableCount } از ${ maxBYOEAddresses } نشانی ایمیل در دسترس است"
       ]
     },
     "Label for adding a new custom domain": {
@@ -5774,6 +5804,78 @@
         "ناشناخته"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "خرید پیشنهاد"
+      ],
+      "Summer Sale": [
+        "حراج تابستانه"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/ماه"
+      ],
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
+      ],
+      "2 TB data storage": [
+        "2 ترابایت ذخیره‌سازی داده"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB ذخیره‌سازی: 40 برابر طرح سرویس فعلی شما"
+      ],
+      "3 TB data storage": [
+        "3 ترابایت ذخیره‌سازی داده"
+      ],
+      "500 GB storage": [
+        "۵۰۰ گیگابایت فضای ذخیره"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "تمام قابلیت‌های ویژه ${ MAIL_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME }، ${ DRIVE_SHORT_APP_NAME }، ${ VPN_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "تمام قابلیت‌های ویژه ${ MAIL_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME }، ${ DRIVE_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "تخفیف‌ها بر اساس قیمت‌گذاری ماهانه استاندارد اعمال می‌شوند. با پایان یافتن دوره صورتحساب، اشتراک شما با نرخ سالانه استاندارد تمدید خواهد شد."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "دسترسی کامل به ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "حساب‌های کاربری مجزا برای 6 کاربر"
+      ],
+      "Individual accounts for you and a partner": [
+        "حساب‌های کاربری مجزا برای شما و یک شریک"
+      ],
+      "Online document and spreadsheet editor": [
+        "ویرایشگر آنلاین سند و صفحه گسترده"
+      ],
+      "Recover previous file versions": [
+        "بازیابی نسخه‌های قبلی فایل"
+      ],
+      "Stronger protection against cyber threats": [
+        "محافظت قوی‌تر در برابر تهدیدات سایبری"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "با تغییر به طرح سرویس سالانه ما، ${ toYearlyDiscountAmount } صرفه‌جویی کنید!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
+      ],
+      "Use your own email domain": [
+        "استفاده از دامنه ایمیل خودتان"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "برای 12 ماه"
+      ],
+      "SUMMER SALE": [
+        "حراج تابستانه"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "انصراف"
@@ -6651,6 +6753,9 @@
       "Apply gift code": [
         "اعمال کد هدیه"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "آیا مطمئن هستید که می‌خواهید اتصال این نشانی را قطع کنید؟"
+      ],
       "Billing cycle": [
         "دوره صورت‌حساب"
       ],
@@ -6853,6 +6958,9 @@
       "Import failed": [
         "واردسازی ناموفق بود"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "واردسازی از طریق ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Invalid verification code": [
         "کد تایید نامعتبر است"
       ],
@@ -7026,6 +7134,9 @@
       ],
       "Subscription": [
         "اشتراک"
+      ],
+      "Summer Sale": [
+        "حراج تابستانه"
       ],
       "Switch to one-password mode": [
         "گذر به حالت تک‌گذرواژه"

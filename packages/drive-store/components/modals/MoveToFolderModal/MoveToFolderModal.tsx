@@ -130,7 +130,6 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
     );
 };
 
-export default MoveToFolderModal;
 export const useMoveToFolderModal = () => {
     const [moveToFolderModal, showMoveToFolderModal] = useModalTwoStatic(MoveToFolderModal);
 

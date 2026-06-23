@@ -37,7 +37,18 @@ const bootstrapApp = () => {
     handleLogoutFromURL({ api });
     const authentication = createAuthentication({ initialAuth: false });
     init({ config, authentication, locales });
-    telemetry.init({ config, uid: authentication.UID });
+    telemetry.init({
+        config,
+        uid: authentication.UID,
+        eventOptions: {
+            pageView: true,
+            click: true,
+            form: true,
+            performance: true,
+            modal: true,
+            exit: true,
+        },
+    });
     initMainHost();
     initElectronClassnames();
     initSafariFontFixClassnames();

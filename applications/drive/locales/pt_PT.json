@@ -155,6 +155,12 @@
       "Choose a file or drag it here": [
         "Escolha um ficheiro ou arraste-o para aqui"
       ],
+      "Claim this address": [
+        "Pedir este endereço"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Peça o seu endereço ${ BRAND_NAME } gratuito"
+      ],
       "Clear": [
         "Limpar"
       ],
@@ -221,8 +227,14 @@
       "Continue import": [
         "Continuar a importação"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar para ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Continuar as transferências"
+      ],
+      "Continue with Free": [
+        "Continuar com a versão gratuita"
       ],
       "Continue with Google": [
         "Continuar com o Google"
@@ -700,6 +712,9 @@
       "Reconnect": [
         "Religar"
       ],
+      "Reconnect to Gmail": [
+        "Voltar a ligar-se ao Gmail"
+      ],
       "Recover data": [
         "Recuperar dados"
       ],
@@ -952,6 +967,9 @@
       "Toggle Contacts app": [
         "Alternar a aplicação de contactos"
       ],
+      "Toggle referral": [
+        "Ativar/desativar recomendação"
+      ],
       "Toggle settings": [
         "Alternar definições"
       ],
@@ -996,9 +1014,6 @@
       ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
-      ],
-      "Upload anyway": [
-        "Enviar de qualquer forma"
       ],
       "Upload file": [
         "Enviar o ficheiro"
@@ -1047,6 +1062,9 @@
       ],
       "Verify account": [
         "Verificar conta"
+      ],
+      "Verify now": [
+        "Verificar agora"
       ],
       "View": [
         "Ver"
@@ -1101,6 +1119,9 @@
         "${ domains } domínio personalizado adicional",
         "${ domains } domínios personalizados adicionais"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } licença IA"
+      ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
       ],
@@ -1117,6 +1138,10 @@
         "${ seats } licença do ${ LUMO_APP_NAME }",
         "${ seats } licenças do ${ LUMO_APP_NAME }"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
         "${ seats } licenças de assistente de escrita"
@@ -1124,6 +1149,15 @@
       "${ users } user": [
         "${ users } utilizador",
         "${ users } utilizadores"
+      ],
+      "Domains": [
+        "Domínios"
+      ],
+      "Users": [
+        "Utilizadores"
+      ],
+      "Writing assistant seats": [
+        "Licenças de assistente de escrita"
       ]
     },
     "Alert": {
@@ -1162,6 +1196,32 @@
       ],
       "Unsupported event": [
         "Evento não suportado"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "One\nMais ${ hiddenResultsCount } resultado não exibido",
+        "Mais ${ hiddenResultsCount } resultados não exibidos"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Após o período de avaliação terminar em ${ formattedDate1 }, torna-se uma subscrição paga que será renovada automaticamente a cada ${ renewCycle } meses. Não será cobrado se cancelar antes de ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Após o período de avaliação terminar em ${ formattedDate1 }, torna-se uma subscrição paga que será renovada automaticamente mensalmente. Não será cobrado se cancelar antes de ${ formattedDate2 }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças Scribe durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Pode ter até ${ TRIAL_MAX_USERS } utilizadores durante o período de avaliação."
+      ],
+      "You have reached the trial limit.": [
+        "Atingiu o limite da avaliação."
       ]
     },
     "b2b_trials_Action": {
@@ -1253,7 +1313,37 @@
         "Proteja seus e-mails e agendamentos com encriptação ponta a ponta. Inclui 15 endereços de e-mail, suporte a domínios de e-mail personalizados, aliases de hide-my-email ilimitados e mais."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB de armazenamento"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloqueie anúncios, rastreadores e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador A2F integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Ligue 10 dispositivos em simultâneo"
+      ],
+      "Unlimited daily chats": [
+        "Conversas diárias ilimitadas"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Especialmente projetado, foi especialmente concebido para proteger os seus dispositivos e acelerar a sua navegação, bloqueando anúncios, rastreadores e malware."
+      ]
+    },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } ano",
+        "${ n } anos"
+      ],
       "1 month": [
         "1 mês"
       ],
@@ -1262,6 +1352,9 @@
       ],
       "Annually": [
         "Anualmente"
+      ],
+      "Billed monthly": [
+        "Faturação mensal"
       ],
       "Lifetime": [
         "Acesso vitalício"
@@ -1323,6 +1416,9 @@
       ],
       "Manual setup problem": [
         "Problema de configuração manual"
+      ],
+      "Meet problem": [
+        "Problema do Meet"
       ],
       "Other": [
         "Outro"
@@ -1408,6 +1504,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } de armazenamento"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilizador",
+        "Até ${ numberOfUsers } utilizadores"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } de armazenamento para os seus e-mails"
       ],
@@ -1453,6 +1553,10 @@
         "${ users } utilizador",
         "${ users } utilizadores"
       ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mês",
+        "Subtotal por ${ cycle } meses"
+      ],
       "Total": [
         "Total"
       ],
@@ -1467,6 +1571,49 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acesso a modelos de IA avançados"
+      ],
+      "Basic chat history": [
+        "Histórico básico de conversas"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformidade com os regulamentos de proteção de dados"
+      ],
+      "Data never used for AI training": [
+        "Dados nunca utilizados para treino de IA"
+      ],
+      "Strict no-logs policy": [
+        "Política rigorosa de não registo de atividade"
+      ],
+      "Unlimited daily chats": [
+        "Conversas diárias ilimitadas"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para acesso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Carregamento e consulta de vários ficheiros grandes"
+      ],
+      "Web search access": [
+        "Acesso à pesquisa na Web"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } é uma IA que dá prioridade à privacidade e ajuda-o a fazer mais, mantendo os seus dados seguros. Desbloqueie todo o seu potencial e tenha acesso antecipado a novas funcionalidades à medida que forem sendo lançadas."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de alta velocidade e recursos avançados de IA."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Chamadas de vídeo privadas para as conversas que importam."
       ]
     },
     "color": {
@@ -2507,6 +2654,9 @@
       "Automatically forward incoming email to another email address.": [
         "Reencaminhe automaticamente o e-mail recebido para outro endereço de e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Armazenamento disponível: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configure isto primeiro para ativar a sua organização e personalizar o seu endereço de e-mail."
       ],
@@ -2528,11 +2678,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronize facilmente os ficheiros para a nuvem a partir do seu computador e aceda aos mesmos a partir do seu dispositivo móvel."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Os e-mails enviados para ${ connectedAddressText } serão agora mostrados no ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Incentive o uso da autenticação em dois fatores na sua organização para garantir uma segurança adicional."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espaço suficiente para anos de e-mails, anexos e muito mais."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Garanta o acesso seguro aos dados da organização, mesmo que a sua equipa esteja remota ou a usar WiFi público."
@@ -2542,9 +2698,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Certifique-se de que ainda consegue aceder à sua conta e aos seus dados, mesmo que perca a sua palavra-passe da ${ BRAND_NAME } ."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Para uma transição perfeita para o ${ BRAND_NAME }, importe os seus dados do Google, Outlook e outros serviços."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros."
@@ -2573,14 +2726,29 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique a sincronização e o agendamento com calendários partilhados."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isto pode acontecer se as permissões tiverem sido removidas ou se a sua palavra-passe tiver sido alterada."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar a receber e a enviar mensagens do Gmail no ${ BRAND_NAME }, volte a ligar a sua conta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para continuar a receber e enviar mensagens Gmail no ${ BRAND_NAME }, volte a ligar as suas contas."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para garantir a maior segurança possível da sua conta, defina uma frase de recuperação."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar através de um ficheiro CSV ou VCF, certifique-se de que o ficheiro não excede ${ MAX_IMPORT_FILE_SIZE_STRING } nem ${ maxContactString } contactos. Se o ficheiro for maior, divida-o em ficheiros mais pequenos. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
       ],
       "To start, give your organization a name.": [
         "Para começar, dê um nome à sua organização."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloqueie 15 GB de armazenamento por apenas ${ config.offerPrice }."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Melhore o seu plano para o ${ planName } para continuar a partilhar ficheiros com acesso de edição."
@@ -2591,6 +2759,18 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use este guia para que a sua organização beneficie rapidamente da encriptação e do ecossistema de privacidade líderes do setor da ${ BRAND_NAME } ."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Já não conseguimos aceder a ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Iremos colocar as importações em pausa aos 80% de armazenamento para reservar espaço para novas mensagens."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Começámos a importar os seus e-mails do Gmail. Avisá-lo-emos quando estiver concluído."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos vê-lo partir. Se tiver um momento, gostaríamos muito de saber por que motivo pretende cancelar. O seu feedback ajuda-nos a tornar o ${ BRAND_NAME } melhor para todos."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Com os grupos de contactos, pode enviar e-mails para todos os membros do grupo com um clique."
       ],
@@ -2600,11 +2780,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Pode marcar para eliminação os contactos que não deseja unir nem manter. A eliminação só ocorrerá depois de clicar no botão de união"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Agora pode enviar e-mails através do ${ BRAND_NAME } utilizando este endereço."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "A sua conta e os métodos de recuperação de dados estão definidos e a A2F está ativada."
       ],
       "Your account and data recovery methods are set.": [
         "A sua conta e os métodos de recuperação de dados estão definidos."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "A sua conta gratuita do ${ MAIL_APP_NAME }inclui armazenamento limitado, pelo que importaremos apenas ${ newUserStorageText }das suas mensagens Gmail mais recentes"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "A sua conta gratuita do ${ MAIL_APP_NAME } tem armazenamento limitado, pelo que apenas iremos importar os seus e-mails mais recentes do Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
@@ -2718,6 +2907,33 @@
         "Apoio ao cliente prioritário"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mês"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de armazenamento para partilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de utilizador"
+      ],
+      "All premium features from your current plan": [
+        "Todas as funcionalidades premium do seu plano atual"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Obter 4x mais espaço de armazenamento"
+      ],
+      "Share your plan": [
+        "Partilhe o seu plano"
+      ]
+    },
+    "Duo offer: Title": {
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Partilhe os benefícios do seu plano com ${ BRAND_NAME } Duo"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Os campos de texto são opcionais. As informações fornecidas neste formulário só aparecerão nas faturas emitidas no futuro e não afetarão as faturas existentes."
@@ -2729,6 +2945,9 @@
       ],
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
+      ],
+      "DESCRIPTION:": [
+        "DESCRIÇÃO:"
       ],
       "Here's what changed:": [
         "Aqui está o que mudou:"
@@ -2793,10 +3012,12 @@
         "Actualização para um evento começando em ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacto de Confiança"
+      ]
+    },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» já existe."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } não se consegue conectar à sua conta externa"
       ],
@@ -2832,6 +3053,9 @@
       ],
       "Aliases could not be loaded": [
         "Não foi possível carregar os aliases"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
       ],
       "Already a member of this share": [
         "Já é membro desta partilha."
@@ -2931,6 +3155,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Os convites externos estão temporariamente desativados. Tente novamente mais tarde."
       ],
+      "Failed loading group members": [
+        "Falha ao carregar membros do grupo"
+      ],
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
       ],
@@ -2946,8 +3173,14 @@
       "Failed to fetch sharing info": [
         "Erro ao obter as informações para partilhar"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Não foi possível carregar os dados da subscrição. Tente novamente mais tarde."
+      ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
+      ],
+      "Failed to open to contact": [
+        "Erro ao abrir o contacto"
       ],
       "Failed to resend invitation": [
         "Erro ao reenviar o convite"
@@ -2960,9 +3193,6 @@
       ],
       "Failed to update public share node": [
         "Erro ao atualizar o nó de partilha público"
-      ],
-      "File cannot be merged with folder": [
-        "O ficheiro não pode ser unido à pasta."
       ],
       "First name is too long": [
         "O primeiro nome é muito longo"
@@ -2994,6 +3224,9 @@
       "Invalid code": [
         "O código é inválido."
       ],
+      "Invalid coupon": [
+        "Cupão inválido"
+      ],
       "Invalid email address": [
         "Endereço de email inválido"
       ],
@@ -3011,6 +3244,9 @@
       ],
       "Invalid public key file": [
         "O ficheiro da chave pública não é válido."
+      ],
+      "Invalid VAT number": [
+        "NIF inválido"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -3090,11 +3326,20 @@
       "Payment process not supported": [
         "Processo de pagamento não suportado"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "O envio de fotos está temporariamente desativado. Tente novamente mais tarde."
-      ],
       "Please activate your search again": [
         "Ative a pesquisa novamente."
+      ],
+      "Please complete the billing details": [
+        "Preencha os dados de faturação"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configure um domínio personalizado antes de adicionar endereços."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Defina um domínio personalizado antes de adicionar utilizadores à sua organização."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Ative o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
       ],
       "Please enter a valid postal code": [
         "Introduza um código postal válido"
@@ -3126,6 +3371,9 @@
       ],
       "Please select billing state": [
         "Selecionar o estado de faturação"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Subscreva um plano empresarial com mais de 1 utilizador para gerir vários utilizadores."
       ],
       "Port is required": [
         "A porta é obrigatória."
@@ -3179,6 +3427,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao obter os domínios disponíveis"
+      ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente mais tarde."
       ],
@@ -3224,23 +3475,8 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "O montante mínimo de crédito que pode ser adicionado é ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "A nova revisão do ficheiro original ainda não foi enviada. Tente novamente mais tarde."
-      ],
-      "The original file has missing active revision": [
-        "O ficheiro original tem uma revisão ativa em falta."
-      ],
-      "The original file has missing hash key": [
-        "O ficheiro original tem uma chave hash em falta."
-      ],
-      "The original file has missing session key": [
-        "O ficheiro original tem uma chave de sessão em falta."
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "O ficheiro original ainda não foi enviado. Tente novamente mais tarde"
-      ],
-      "The original folder not found": [
-        "A pasta original não foi encontrada."
+      "The minimum donation amount is ${ price }": [
+        "O valor mínimo do donativo é ${ price }"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
@@ -3250,6 +3486,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
+      "This field is invalid": [
+        "Este campo é inválido"
       ],
       "This field is required": [
         "Este campo é obrigatório"
@@ -3281,9 +3520,6 @@
       "Unknown payment token status": [
         "Estado do símbolo de pagamento desconhecido"
       ],
-      "Upload for this folder is temporarily disabled": [
-        "O envio para esta pasta está temporariamente desativado."
-      ],
       "Username must begin with a letter or digit": [
         "O nome de utilizador deve começar com uma letra ou um algarismo"
       ],
@@ -3292,6 +3528,9 @@
       ],
       "Validation error": [
         "Erro de validação"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "O número de IVA deve começar por ${ prefixes }"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
@@ -3303,11 +3542,19 @@
       "You have reached the number of contacts limit for your account": [
         "Atingiu o limite do número de contactos da sua conta"
       ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Usou todos os utilizadores do seu plano. Subscreva um plano superior para adicionar um utilizador."
+      ],
       "You must set a name": [
         "Tem de definir um nome"
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Inicie sessão com um endereço Gmail que já reencaminhe para o ${ MAIL_APP_NAME }"
       ]
     },
     "Error importing calendar": {
@@ -3588,6 +3835,9 @@
       "customer support": [
         "apoio ao cliente"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Os planos familiares não suportam atualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ link }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, mudá-lo-emos do seu plano actual e creditaremos na sua conta qualquer saldo remanescente."
       ],
@@ -3611,6 +3861,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "A subscrição será cobrada ao administrador primário deste plano."
+      ],
+      "View the invitation": [
+        "Ver convite",
+        "Ver convites"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Está convidado a juntar-se a ${ invite.OrganizationName }"
@@ -3676,6 +3930,21 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Mais de 10 funcionalidades premium"
+      ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "More premium features": [
+        "Funcionalidades premium adicionais"
+      ],
+      "Storage": [
+        "Armazenamento"
+      ],
       "Unlimited hide-my-email aliases": [
         "Aliases ilimitados do Hide-my-email"
       ]
@@ -3792,8 +4061,14 @@
       "Create new shared album": [
         "Criar um álbum partilhado"
       ],
+      "Domain": [
+        "Domínio"
+      ],
       "Drawer": [
         "Painel lateral"
+      ],
+      "Password ends with": [
+        "A palavra-passe termina com"
       ],
       "Rename album": [
         "Alterar o nome do álbum"
@@ -4162,6 +4437,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "O ${ CALENDAR_APP_NAME } requer um endereço ${ BRAND_NAME } para a sincronização segura de eventos e para a encriptação. Crie já o seu endereço ${ MAIL_APP_NAME } gratuito."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
@@ -4214,6 +4492,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação. É um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
@@ -4292,6 +4573,12 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: impede fugas de dados bloqueando a sua ligação à internet caso a a VPN se desligar inesperadamente."
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Obtêm ${ refereeRewardAmount }** em créditos se subscreverem."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Obtém ${ referrerRewardAmount }** em créditos por cada amigo que suscreva."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
       ],
@@ -4332,6 +4619,12 @@
       "Ad targeting": [
         "Segmentação de anúncios"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência."
       ],
@@ -4354,6 +4647,10 @@
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Todos os seus contactos serão importados, até ao limite de ${ maxContact }",
+        "Todos os seus contactos serão importados, até ao limite de ${ maxContact }"
       ],
       "Also try looking in Trash.": [
         "Tente também procurar no Lixo."
@@ -4484,6 +4781,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "O contacto foi desvinculado do grupo ${ contactGroupName }."
       ],
+      "Continue": [
+        "Continuar"
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continue a utilizar ${ DRIVE_APP_NAME } e desbloqueie a unidade mais tarde."
       ],
@@ -4508,6 +4808,10 @@
       ],
       "Create a new contact group": [
         "Criar um grupo de contactos"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Criar uma nuvem segura para ${ memberCount } membro",
+        "Criar uma nuvem segura para ${ memberCount } membros"
       ],
       "Create in": [
         "Criar em"
@@ -4630,6 +4934,9 @@
       "End-to-end encrypted": [
         "Encriptado de ponta a ponta"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garanta comunicações totalmente privadas e encriptadas. Crie já o seu endereço de e-mail ${ BRAND_NAME } gratuito."
+      ],
       "Enter password": [
         "Inserir a palavra-passe"
       ],
@@ -4658,6 +4965,9 @@
       "Everything in ${ planOrAppName }": [
         "Tudo no ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tudo o que está incluído no ${ planOrAppName }, mais:"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -4682,8 +4992,11 @@
       "Folders you sync from your computer will appear here.": [
         "As pastas que sincronizar a partir do seu computador aparecerão aqui."
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Para obter melhores resultados, evite atividades de streaming e de memória intensiva ou divida o envio em lotes menores."
+      "for ${ price }": [
+        "por ${ price }"
+      ],
+      "Forgot password?": [
+        "Esqueceu-se da palavra-passe?"
       ],
       "Free 5GB encrypted storage to get started": [
         "5 GB de armazenagem encriptado grátis para começar"
@@ -4766,6 +5079,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
+      ],
+      "Included": [
+        "Incluído"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexação de itens: ${ esProgress } de ${ totalProgressToShow }"
@@ -5141,6 +5457,9 @@
       "Ready to add some photos?": [
         "Pronto para adicionar algumas fotos?"
       ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informação de recuperação ficará neste aparelho a não ser que escolha apagá-lo."
       ],
@@ -5283,6 +5602,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "A subscrição termina: Reative até ${ byDate } para manter os seus benefícios ${ planName }. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Subscrição a terminar: para manter os benefícios do ${ planName }, reative a sua subscrição na Apple App Store até ${ byDate }. ${ reactivateLink }"
+      ],
       "Surveillance": [
         "Vigilância"
       ],
@@ -5349,9 +5671,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Este agora é o seu ${ defaultEmailAddress } para enviar novas mensagens."
       ],
-      "This item already exists in your library": [
-        "Este item já existe na sua biblioteca."
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Este item não está guardado na sua biblioteca de fotos. Se o remover deste álbum, perderá o acesso a ele permanentemente.",
         "Alguns dos itens selecionados não estão guardados na sua biblioteca de fotos. Se os remover deste álbum, perderá o acesso a eles permanentemente."
@@ -5383,20 +5702,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Isto eliminará permanentemente os itens selecionados que enviou."
       ],
-      "This will replace the existing file with the folder": [
-        "Isto irá substituir o ficheiro existente pela pasta."
-      ],
-      "This will replace the existing folder with the file": [
-        "Isto substituirá a pasta existente pelo ficheiro."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Esta ação irá terminar a sessão de todas as contas atualmente conectadas."
-      ],
-      "This will upload a new version of the file": [
-        "Isto enviará uma nova versão do ficheiro."
-      ],
-      "This will upload a new version of the folder": [
-        "Isto enviará uma nova versão da pasta."
       ],
       "Time": [
         "Hora"
@@ -5412,6 +5719,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ajudar a lembrar-se da sua palavra-passe, pedimos que a introduza periodicamente. Aos poucos vamos pedindo cada vez menos."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, crie primeiro um calendário em ${ CALENDAR_APP_NAME }. É aqui que os eventos vão aparecer depois da importação."
@@ -5443,23 +5753,14 @@
       "Tracking": [
         "Rastreamento"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "A transferência foi cancelada para o ficheiro \"${ name }\"."
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "A transferência foi cancelada para a pasta \"${ name }\"."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "A transferência foi ignorada para o ficheiro \"${ file.name }\"."
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "A transferência foi ignorada para a pasta \"${ folderName }\"."
-      ],
       "Trash": [
         "Lixo"
       ],
       "Trash is empty": [
         "O lixo está vazio"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Utilize a chave \"${ activeSignerText }\" para verificar novas mensagens deste contacto."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
@@ -5485,8 +5786,14 @@
       "Updating drive search...": [
         "Atualização da pesquisa na unidade..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Atualize a qualquer momento para importar o resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Atualize ou limpe espaço a qualquer momento para trazer o resto"
       ],
       "upgrade your storage": [
         "atualize o seu armazenamento"
@@ -5496,9 +5803,6 @@
       ],
       "Uploading": [
         "A enviar"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Enviar centenas de ficheiros de uma só vez pode ter impacto no desempenho."
       ],
       "Uppercase and lowercase letters": [
         "Letras maiúsculas e minúsculas"
@@ -5700,6 +6004,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Não lhe será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Receberá o crédito de recompensa 1 mês após o seu amigo subscrever um plano anual e 2 meses após subscrever um plano mensal."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Posteriormente, ser-lhe-á cobrado o valor de ${ renewAmountStr } a cada ${ renewCycle } mês. Pode cancelar a qualquer momento.",
+        "Posteriormente, ser-lhe-á cobrado o valor de ${ renewAmountStr } a cada ${ renewCycle } meses. Pode cancelar a qualquer momento."
+      ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Está prestes a recusar o convite para aderir ao álbum ${ invitationName }. Se prosseguir, não poderá aceder, a menos que o proprietário o convide novamente. Tem a certeza de que quer continuar?"
       ],
@@ -5765,6 +6076,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "A informação de início de sessão não será guardada após concluir a importação."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "A sua próxima data de faturação é ${ renewalTime }. Pode cancelar a qualquer momento."
       ],
       "Your online activity is protected": [
         "A sua atividade online está protegida."
@@ -5900,6 +6214,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Tente mais tarde.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Aceda ao ${ PASS_APP_NAME } de forma segura a partir do terminal, ideal para scripting, automação e fluxos de trabalho de desenvolvimento."
+      ],
       "Account holder": [
         "Titular da conta"
       ],
@@ -5963,6 +6280,9 @@
       "Calendar": [
         "Calendário"
       ],
+      "Calendars": [
+        "Calendários"
+      ],
       "Cancel download": [
         "Cancelar transferência"
       ],
@@ -5992,6 +6312,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Command line interface (CLI)": [
+        "Interface de linha de comandos (CLI)"
       ],
       "Comment": [
         "Comentário"
@@ -6081,6 +6404,9 @@
       "Email format": [
         "Formato do e-mail"
       ],
+      "Emails": [
+        "E-mails"
+      ],
       "Emails (all messages)": [
         "Emails (todas as mensagens)"
       ],
@@ -6165,12 +6491,6 @@
       "Keep both": [
         "Manter ambos"
       ],
-      "Keep both files": [
-        "Conservar ambos os ficheiros"
-      ],
-      "Keep both folders": [
-        "Manter ambas as pastas"
-      ],
       "Label messages as": [
         "Etiquetar mensagens como"
       ],
@@ -6179,6 +6499,9 @@
       ],
       "Last 3 months only": [
         "Últimos 3 meses"
+      ],
+      "Last 6 months only": [
+        "Últimos 6 meses"
       ],
       "Last month only": [
         "Último mês"
@@ -6302,12 +6625,6 @@
       ],
       "Region": [
         "Região"
-      ],
-      "Replace existing file": [
-        "Substituir o ficheiro existente"
-      ],
-      "Replace existing folder": [
-        "Substituir a pasta existente"
       ],
       "Reveal password": [
         "Mostrar a palavra-passe"
@@ -6606,8 +6923,14 @@
       "Reactivate now": [
         "Reativar"
       ],
+      "Reactivate subscription": [
+        "Reativar subscrição"
+      ],
       "Request an invite": [
         "Pedir um convite"
+      ],
+      "Resume now": [
+        "Retomar agora"
       ],
       "settings": [
         "definições"
@@ -6617,6 +6940,9 @@
       ],
       "Shared with me": [
         "Partilhado comigo"
+      ],
+      "Terms and conditions": [
+        "Termos e condições"
       ],
       "Trash": [
         "Lixo"
@@ -6660,6 +6986,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Mais informação"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para continuar a utilizar o ${ BRAND_NAME }, certifique-se de que as funcionalidades premium já não estão a ser utilizadas ou atualize o seu plano."
       ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
@@ -6718,6 +7047,55 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas que realmente importam"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunião ativa em simultâneo",
+        "${ n } reuniões ativas em simultâneo"
+      ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunião"
+      ],
+      "Meeting recording": [
+        "Gravação de reuniões"
+      ],
+      "Screen-sharing": [
+        "Partilha de ecrã"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Até ${ n } reunião por dia",
+        "Até ${ n } reuniões por dia"
+      ],
+      "Up to ${ n } participant": [
+        "Até ${ n } participante",
+        "Até ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Reuniões por vídeo para ${ n } participante",
+        "Reuniões por vídeo para ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licença incluída",
+        "${ seats } licenças incluídas"
       ]
     },
     "Message": {
@@ -7117,6 +7495,9 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
+      "Access all countries": [
+        "Aceda a todos os países"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção de malware"
       ],
@@ -7137,6 +7518,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de marcações com ${ n } página de marcação",
+        "Agendamento de marcações com ${ n } páginas de marcação"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminação automática das pastas Spam e Lixo"
@@ -7188,6 +7576,12 @@
       ],
       "Data breach monitoring": [
         "Monitoramento dos incidentes de dados"
+      ],
+      "Data retention policies": [
+        "Políticas de retenção de dados"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados otimizados para velocidade"
       ],
       "Desktop app": [
         "Aplicação de desktop"
@@ -7288,6 +7682,9 @@
       ],
       "Priority support & live chat": [
         "Apoio prioritário e chat em direto"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat IA Privado (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Cópia de segurança de fotos privada"
@@ -7400,6 +7797,9 @@
       "Unlimited volume/bandwidth": [
         "Largura de banda e volume ilimitados"
       ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
+      ],
       "Up to ${ n } user": [
         "Até ${ n } utilizador",
         "Até ${ n } utilizadores"
@@ -7427,6 +7827,13 @@
       "Vault sharing (up to ${ n } person)": [
         "Partilha de cofre (até ${ n } pessoa)",
         "Partilha de cofre (até ${ n } pessoas)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Partilhar cofre com até ${ n } pessoa",
+        "Partilhar cofre com até ${ n } pessoas"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN com bloqueador de anúncios e proteção de malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nós analisamos a dark web para verificar se os seus endereços ou aliases ${ BRAND_NAME } foram vazados e alertamo-lo imediatamente se encontrarmos algo."
@@ -7792,6 +8199,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Aceda a funcionalidades VPN avançadas"
       ],
@@ -7844,14 +8255,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Erro ao mover \"${ name }\" para o lixo"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Erro ao guardar \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para o lixo"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" guardado"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Erro ao renomear \"${ newName }\""
@@ -7971,19 +8376,6 @@
       "Failed to rename device": [
         "Erro ao renomear o dispositivo."
       ],
-      "Failed to upload files: ${ err }": [
-        "Erro ao enviar ficheiros: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "O ficheiro ou pasta «${ filename }» e ${ count } outro já são enviados.",
-        "O ficheiro ou pasta «${ filename }» e ${ count } outros já são enviados."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "O ficheiro ou pasta “${ filename }” já está a ser carregado"
-      ],
-      "File or folder is missing a name": [
-        "Ficheiro ou pasta sem nome"
-      ],
       "File removed": [
         "Ficheiro removido"
       ],
@@ -8004,9 +8396,6 @@
       "Move ${ n } item": [
         "Mover ${ n } item",
         "Mover ${ n } itens"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Não há espaço suficiente para enviar ${ formattedTotal }."
       ],
       "Public link access updated": [
         "O acesso à ligação pública foi atualizada."
@@ -8034,6 +8423,9 @@
       ],
       "You stopped sharing this item": [
         "Parou de partilhar este item."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "O seu endereço do ${ BRAND_NAME } está pronto a usar"
       ],
       "Your old files will be deleted in 72 hours": [
         "Os seus ficheiros antigos serão eliminados em 72 horas."
@@ -8077,6 +8469,9 @@
       ],
       "Don’t show this offer again": [
         "Não mostrar esta oferta novamente"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtenha o ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenha o ${ BRAND_NAME } Unlimited"
@@ -8481,6 +8876,9 @@
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
       ]
@@ -8494,6 +8892,12 @@
       ]
     },
     "Payments": {
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% IVA: ${ taxAmountElement }"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Valor a pagar após a avaliação em ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de faturação"
       ],
@@ -8515,11 +8919,23 @@
       "I'm purchasing as a business": [
         "Estou a comprar como empresa"
       ],
+      "Including ${ rate }% tax": [
+        "Incluindo ${ rate }% de IVA"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Incluindo ${ rate }% IVA: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluindo ${ rate }% IVA: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Método de pagamento necessário para que a subscrição seja ativada após o término do período de avaliação."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative primeiro a sua subscrição antes para diminuir o número de complementos."
@@ -8529,6 +8945,28 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
+      ],
+      "Tax ${ rate }%": [
+        "IVA ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "IVA ${ rate }%"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "O desconto é válido para ${ renewalsWithCoupon } renovação.",
+        "O desconto é válido para ${ renewalsWithCoupon } renovações."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial é válido durante ${ couponRedemptions } mês. Em seguida, a subscrição será renovada automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento.",
+        "O preço com desconto especial é válido durante ${ couponRedemptions } meses. Em seguida, a subscrição será renovada automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "O preço com desconto especial é válido para ${ subscriptionLength } mês.",
+        "O preço com desconto especial é válido para ${ subscriptionLength } meses."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço especial com desconto de ${ priceWithDiscount } é válido durante ${ couponRedemptions } mês. Depois disso, a subscrição será renovada automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento.",
+        "O preço especial com desconto de ${ priceWithDiscount } é válido durante ${ couponRedemptions } meses. Depois disso, a subscrição será renovada automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "O preço especialmente descontado de ${ priceWithDiscount } é válido para o primeiro ${ subscriptionLength } mês.",
@@ -8541,17 +8979,29 @@
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } mês. Pode cancelar a qualquer momento.",
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta não está disponível com o seu plano atual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este tornar-se-á o seu novo método de pagamento predefinido para todas as renovações futuras."
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
       ],
+      "You already have a subscription to this plan.": [
+        "Já tem uma subscrição deste plano."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Será brevemente redirecionado para o PayPal para verificar o pagamento."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
       ],
       "Your payment is still being processed": [
         "O seu pagamento ainda está a ser processado."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "A sua subscrição beneficia atualmente de um desconto. Ao aderir a esta nova promoção, o desconto atual deixará de ser aplicado."
       ]
     },
     "Payments.Error": {
@@ -8574,9 +9024,47 @@
         "O seu cartão foi recusado. Tente com outro cartão ou contacte o seu banco para autorizar esta compra."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Ocorreu um erro. A verificação do Google Pay falhou."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito pela parte não utilizada no plano anterior da sua subscrição"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Tem certeza que deseja continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Se optar por modificar o seu plano ${ planTitle }, pode perder o acesso a algumas funcionalidades."
+      ],
+      "Keep ${ planTitle }": [
+        "Manter ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sim, tenho certeza"
+      ],
+      "Your plan includes this feature already.": [
+        "O seu plano já inclui esta funcionalidade."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "O preço de renovação depende da região de faturação e do ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "O preço de renovação depende da região de faturação e do EIN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "O preço de renovação depende da região de faturação e do EIN."
       ]
     },
     "Payments.Saved payment method details": {
@@ -8630,6 +9118,9 @@
       "External key automatically fetched via WKD.": [
         "A chave externa é recuperada automaticamente através do WKD."
       ],
+      "This key is used for message verification": [
+        "Esta chave é utilizada para verificação de mensagens"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Esta chave é usada para encriptar mensagens para este contato."
       ],
@@ -8648,6 +9139,9 @@
       ],
       "Anderson": [
         "Ferreira"
+      ],
+      "Anything you'd like us to know": [
+        "Mais alguma informação que queira partilhar connosco?"
       ],
       "Anytown": [
         "Porto Verde"
@@ -8721,6 +9215,9 @@
       "Postal code": [
         "Código postal"
       ],
+      "Search": [
+        "Pesquisar"
+      ],
       "Search for group name": [
         "Pesquisar grupo pelo nome"
       ],
@@ -8735,6 +9232,9 @@
       ],
       "Select a reason": [
         "Selecione um motivo"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Select state": [
         "Selecionar estado"
@@ -8834,15 +9334,23 @@
         "E-mail oficial de ${ BRAND_NAME }"
       ]
     },
-    "q1campaign: Action": {
+    "Provider option": {
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Aproveite a oferta"
       ],
-      "SPRING SALE 2026": [
-        "PROMO DE PRIMAVERA 2026"
+      "Summer Sale": [
+        "Saldos de Verão"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/mês"
       ],
@@ -8861,35 +9369,17 @@
       "500 GB storage": [
         "500 GB de armazenamento"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Aceda a mais de 15.000 servidores em mais de 120 países"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas as funcionalidades premium do ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Aceda a modelos de IA avançados"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Todas as funcionalidades premium do Mail, Pass, Drive, VPN e Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloqueie anúncios, rastreadores e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador 2FA integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Ligue 10 dispositivos de uma só vez"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas as funcionalidades premium do ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Os descontos baseiam-se no preço mensal padrão. A sua subscrição será renovada à taxa anual padrão quando o ciclo de faturação terminar."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Prolongue a sua subscrição e poupe ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acesso total ao ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Histórico completo de conversas com pesquisa fácil e favoritos"
       ],
       "Individual accounts for 6 users": [
         "Contas individuais para 6 utilizadores"
@@ -8897,8 +9387,8 @@
       "Individual accounts for you and a partner": [
         "Contas individuais para si e mais uma pessoa"
       ],
-      "Online document editor": [
-        "Editor de documentos online"
+      "Online document and spreadsheet editor": [
+        "Editor online de documentos e folhas de cálculo"
       ],
       "Recover previous file versions": [
         "Recupere as versões anteriores do ficheiro"
@@ -8909,28 +9399,45 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Mude para o nosso plano anual e poupe ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Conversas diárias ilimitadas"
-      ],
       "Unlimited folders, labels, and filters": [
         "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases hide-my-email ilimitados"
       ],
       "Use your own email domain": [
         "Utilize o seu próprio domínio de e-mail"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "por 12 meses"
       ],
-      "SPRING SALE": [
-        "PROMO DE PRIMAVERA"
+      "SUMMER SALE": [
+        "SALDOS DE VERÃO"
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } por cada recomendação"
+      ],
+      "Friend joined": [
+        "Amigo entrou",
+        "Amigos entraram"
+      ],
+      "Friend subscribed": [
+        "Amigo subscreveu",
+        "Amigos subscreveram"
+      ],
+      "Invite friends. Get credits.": [
+        "Convide amigos. Ganhe créditos."
+      ],
+      "More sharing options": [
+        "Mais opções de partilha"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Quando a sua subscrição completa entrar em vigor, poderá ainda cancelar no prazo de 30 dias e receber um reembolso proporcional."
+      ],
+      "Refer friends": [
+        "Indique um amigo"
+      ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Tem **${ daysRemaining } dia restante** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer.",
         "Tem **${ daysRemaining } dias restantes** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer."
@@ -9206,6 +9713,14 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Partilhado por ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Abrir no ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Abrir no ${ appName } (Beta)"
       ]
     },
     "Signing preference for emails": {
@@ -9501,6 +10016,9 @@
       "${ app } storage": [
         "${ app } de armazenamento"
       ],
+      "${ app } storage used": [
+        "${ app } de armazenamento usado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
       ],
@@ -9512,6 +10030,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos os serviços da ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Espaço utilizado"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar a enviar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
@@ -9637,6 +10158,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, e ${ LUMO_APP_NAME } com funcionalidades premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
       ],
@@ -9864,6 +10388,10 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reuniões por vídeo, até ${ PAID_PREMIUM_MAX_PARTICIPANTS } participante",
+        "Reuniões por vídeo, até ${ PAID_PREMIUM_MAX_PARTICIPANTS } participantes"
       ],
       "Watch the interview": [
         "Assistir à entrevista"
@@ -10246,6 +10774,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
@@ -10351,6 +10882,12 @@
       "Check for malicious files": [
         "Procurar ficheiros maliciosos"
       ],
+      "Choose a provider": [
+        "Escolha um fornecedor"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Peça o seu endereço ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "A limpar os dados"
       ],
@@ -10387,6 +10924,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue with free storage": [
+        "Continuar com o armazenamento gratuito"
+      ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
@@ -10410,6 +10950,9 @@
       ],
       "Currency": [
         "Moeda"
+      ],
+      "Custom": [
+        "Personalizar"
       ],
       "Customize and confirm": [
         "Personalize e confirme"
@@ -10474,6 +11017,9 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
+      "Disconnected from Gmail": [
+        "Desligado do Gmail"
+      ],
       "Downgrade account": [
         "Optar por um plano inferior"
       ],
@@ -10497,12 +11043,6 @@
       ],
       "Drop to upload": [
         "Solte para enviar"
-      ],
-      "Duplicate file found": [
-        "Encontrado ficheiro duplicado"
-      ],
-      "Duplicate folder found": [
-        "Encontrada pasta duplicada"
       ],
       "Edit billing address": [
         "Editar o endereço da fatura"
@@ -10564,8 +11104,14 @@
       "Folder details": [
         "Detalhes da pasta"
       ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obter acesso total ao ${ CALENDAR_APP_NAME }"
+      ],
       "Get more from your VPN": [
         "Obtenha mais da sua VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenha mais armazenamento com o ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Obter as aplicações"
@@ -10604,9 +11150,6 @@
       "Import contacts": [
         "Importar contactos"
       ],
-      "Import emails, calendars, contacts": [
-        "Importar e-mails, calendários, contactos"
-      ],
       "Import events": [
         "Importar eventos"
       ],
@@ -10642,9 +11185,6 @@
       ],
       "Make a secure connection your default": [
         "Escolha uma ligação segura como opção predeterminada"
-      ],
-      "Manage secure link": [
-        "Gerir ligação segura"
       ],
       "Merge contacts": [
         "Unir contactos"
@@ -10766,9 +11306,6 @@
       "PayPal verification failed": [
         "Erro na verificação PayPal"
       ],
-      "Performance might be affected": [
-        "O desempenho pode ser afetado."
-      ],
       "Phone numbers": [
         "Números de telefone"
       ],
@@ -10830,6 +11367,9 @@
       "Restore your files": [
         "Restaurar os seus ficheiros"
       ],
+      "Reverse charge not supported": [
+        "Autoliquidação não suportada"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Guarde-o para mais tarde no ${ DRIVE_APP_NAME }"
       ],
@@ -10874,6 +11414,9 @@
       ],
       "Share your calendar with your team": [
         "Partilhe o seu calendário com a sua equipa"
+      ],
+      "Share your link": [
+        "Partilhe a sua ligação"
       ],
       "Shared": [
         "Partilhado"
@@ -10923,6 +11466,9 @@
       "Summary": [
         "Resumo"
       ],
+      "Summer Sale": [
+        "Saldos de Verão"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Este ficheiro tem uma assinatura em falta ou inválida. Vá a Menu (⋮) → Detalhes para obter informações."
       ],
@@ -10968,20 +11514,23 @@
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "Atualize para manter os seus benefícios premium."
+      ],
       "Upload and share files": [
         "Enviar e partilhar ficheiros"
       ],
       "Uploaded": [
         "Enviado"
       ],
-      "Uploading a large file or folder": [
-        "Envio de um ficheiro ou pasta grande"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Use o ${ VPN_SHORT_APP_NAME } para a privacidade dos dados"
       ],
       "Verification failed": [
         "Erro na verificação"
+      ],
+      "Verify your password": [
+        "Verifique a sua palavra-passe"
       ],
       "Verifying your card...": [
         "Verificação do seu cartão..."
@@ -11013,6 +11562,9 @@
       "When is it most important to use a VPN?": [
         "Quando é mais importante utilizar uma VPN?"
       ],
+      "You are all set": [
+        "Está tudo pronto"
+      ],
       "You can now create unlimited folders and labels": [
         "Agora pode criar pastas e etiquetas ilimitadas."
       ],
@@ -11021,6 +11573,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "A sua subscrição do ${ planTitle } começou."
       ],
       "Your 3 GB bonus": [
         "O seu bónus de 3 GB"
@@ -11142,6 +11697,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Assistente de IA que respeita a sua privacidade"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
@@ -11344,6 +11902,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "O seu teste gratuito termina em ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "O seu período experimental termina em ${ textDate }. Não lhe será cobrado qualquer valor se cancelar antes de ${ textDate }. ${ action }"
       ]
     }
   }

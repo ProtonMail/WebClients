@@ -51,7 +51,9 @@ export const AddRecoveryContacts = (props: Props) => {
                             types: DelegatedAccessTypeEnum.SocialRecovery,
                         }));
                         try {
-                            await dispatch(addDelegatedAccessesThunk({ contacts: payload }));
+                            await dispatch(
+                                addDelegatedAccessesThunk({ contacts: payload, persistPasswordScope: true })
+                            );
                             props.safetyReview.actions.next('completed', props.recoveryItem);
                         } catch (e) {
                             if (e instanceof ValidationError) {

@@ -2,11 +2,12 @@ import useNotifications from '@proton/components/hooks/useNotifications'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { DegradedNode, DriveEvent, DriveListener, NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk'
+import type { DriveEvent, NodeEntity, ProtonDriveClient } from '@proton/drive'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { nodeToTrashedItemValue } from './create-document-items'
+import type { SDKEventListener } from '~/utils/drive-events'
 
 export function useTrashed(drive: ProtonDriveClient) {
   const app = useApplication()
@@ -19,10 +20,9 @@ export function useTrashed(drive: ProtonDriveClient) {
   const fetchTrashed = useCallback(async () => {
     setIsTrashLoading(true)
 
-    const nodes: (NodeEntity | DegradedNode)[] = []
+    const nodes: NodeEntity[] = []
     try {
-      for await (const maybeNode of drive.iterateTrashedNodes()) {
-        const node = maybeNode.ok ? maybeNode.value : maybeNode.error
+      for await (const node of drive.iterateTrashedNodes()) {
         if (!mimeTypeToProtonDocumentType(node.mediaType)) {
           continue
         }
@@ -40,13 +40,12 @@ export function useTrashed(drive: ProtonDriveClient) {
     setIsTrashLoading(false)
   }, [createNotification, drive, logger])
 
-  const trashedListener: DriveListener = useCallback(async (event: DriveEvent) => {
+  const trashedListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
     const drive = getDrive()
 
     if (event.type === 'node_updated') {
       if (event.isTrashed) {
-        const maybeNode = await drive.getNode(event.nodeUid)
-        const node = maybeNode.ok ? maybeNode.value : maybeNode.error
+        const node = await drive.getNode(event.nodeUid)
         if (!mimeTypeToProtonDocumentType(node.mediaType)) {
           return
         }
@@ -69,7 +68,7 @@ export function useTrashed(drive: ProtonDriveClient) {
   }
 }
 
-function createOrUpdateItem(previousItems: RecentDocumentsItemValue[], node: NodeEntity | DegradedNode) {
+function createOrUpdateItem(previousItems: RecentDocumentsItemValue[], node: NodeEntity) {
   const existingItemIndex = previousItems.findIndex((item) => node.uid === generateNodeUid(item.volumeId, item.linkId))
   if (existingItemIndex >= 0) {
     const updatedItems = [...previousItems]

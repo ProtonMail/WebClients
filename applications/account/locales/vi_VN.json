@@ -315,6 +315,9 @@
       "Connect your ${ BRAND_NAME } Account": [
         "Kết nối tài khoản ${ BRAND_NAME }"
       ],
+      "Connect your email": [
+        "Kết nối email"
+      ],
       "Connected": [
         "Đã kết nối"
       ],
@@ -336,6 +339,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Tiếp tục với ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "Tiếp tục miễn phí"
+      ],
       "Continue with Google": [
         "Tiếp tục với Google"
       ],
@@ -344,6 +350,9 @@
       ],
       "Continue with this password": [
         "Tiếp tục với mật khẩu này"
+      ],
+      "Copy": [
+        "Sao chép"
       ],
       "Copy address": [
         "Sao chép địa chỉ"
@@ -407,9 +416,6 @@
       ],
       "Create new policy": [
         "Tạo chính sách mới"
-      ],
-      "Create organization": [
-        "Tạo tổ chức"
       ],
       "Create users": [
         "Tạo người dùng"
@@ -521,6 +527,9 @@
       ],
       "Discard Changes": [
         "Hủy bỏ thay đổi"
+      ],
+      "Disconnect": [
+        "Ngắt kết nối"
       ],
       "Discover ${ planName }": [
         "Khám phá ${ planName }"
@@ -1101,6 +1110,9 @@
       "Reconnect": [
         "Kết nối lại"
       ],
+      "Reconnect to Gmail": [
+        "Kết nối lại với Gmail"
+      ],
       "Recover data": [
         "Khôi phục dữ liệu"
       ],
@@ -1311,6 +1323,9 @@
       "Select time zone": [
         "Chọn múi giờ"
       ],
+      "Send": [
+        "Gửi"
+      ],
       "send auto-reply email": [
         "gửi email tự động trả lời"
       ],
@@ -1511,6 +1526,9 @@
       ],
       "Underline": [
         "Gạch dưới"
+      ],
+      "Undo": [
+        "Hoàn tác"
       ],
       "Undo import": [
         "Hoàn tác nhập"
@@ -2169,93 +2187,12 @@
         "Ưu đãi không khả dụng"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Bao gồm hỗ trợ cho 1 miền email tùy chỉnh, 10 địa chỉ email, 10 biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Ứng dụng ${ MAIL_APP_NAME } trên máy tính để bàn"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } và ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } dung lượng lưu trữ"
-      ],
-      "1 user account": [
-        "1 tài khoản người dùng"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lưu trữ: gấp 40 lần gói hiện tại"
-      ],
-      "6 user accounts": [
-        "6 tài khoản người dùng"
-      ],
-      "Admin panel to manage your family": [
-        "Bảng quản trị để quản lý gia đình"
-      ],
-      "Advanced account protection": [
-        "Bảo vệ tài khoản nâng cao"
-      ],
-      "Easily add or remove users": [
-        "Dễ dàng thêm hoặc xóa người dùng"
-      ],
-      "One-time payment, lifetime deal": [
-        "Thanh toán một lần, ưu đãi trọn đời"
-      ],
-      "Online document editor": [
-        "Trình chỉnh sửa tài liệu trực tuyến"
-      ],
-      "Password health alerts": [
-        "Cảnh báo tình trạng mật khẩu"
-      ],
-      "Recover previous file versions": [
-        "Khôi phục các phiên bản tệp trước đó"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Thư mục, nhãn và bộ lọc không giới hạn"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Không giới hạn đăng nhập, thẻ tín dụng, biệt danh hide-my-email và hơn thế nữa"
-      ],
       "Use your own email domain": [
         "Sử dụng miền email của riêng bạn"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Thanh toán ${ amount } một lần"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Gia hạn sau 1 tháng với giá ${ regularAmount }."
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm hơn 8.500 máy chủ tại hơn 110 quốc gia, 10 thiết bị, phát trực tuyến tốc độ cao, trình chặn quảng cáo và bảo vệ khỏi phần mềm độc hại, VPN Accelerator và hơn thế nữa."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Đăng nhập an toàn trên tất cả thiết bị. Bao gồm không giới hạn biệt danh hide-my-email, chia sẻ, tích hợp 2FA, ${ DARK_WEB_MONITORING_NAME } và nhiều hơn nữa."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Bảo mật email và lịch trình bằng mã hóa đầu cuối. Bao gồm địa chỉ email ${ addresses }, hỗ trợ miền email tùy chỉnh, trợ lý soạn thảo ${ BRAND_NAME } Scribe, biệt danh hide-my-email không giới hạn và các dịch vụ khác."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Bảo mật email và lịch trình bằng mã hóa đầu cuối. Bao gồm địa chỉ email ${ addresses }, hỗ trợ cho các miền email tùy chỉnh, biệt danh hide-my-email không giới hạn và nhiều hơn nữa."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Bảo vệ email và lịch trình bằng mã hóa đầu cuối. Bao gồm 15 địa chỉ email, hỗ trợ miền email tùy chỉnh, trợ lý soạn thảo ${ BRAND_NAME } Scribe, biệt danh hide-my-email không giới hạn và các dịch vụ khác."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Bảo vệ email và lịch trình bằng mã hóa đầu cuối. Bao gồm 15 địa chỉ email, hỗ trợ miền email tùy chỉnh, biệt danh hide-my-email không giới hạn và hơn thế nữa."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm trình chỉnh sửa tài liệu trực tuyến, sao lưu ảnh, lịch sử phiên bản, chia sẻ tệp đã mã hóa và hơn thế nữa."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Không gian lưu trữ được chia sẻ trên tất cả các dịch vụ ${ BRAND_NAME }."
       ]
     },
     "Billing cycle": {
@@ -2556,12 +2493,6 @@
       "Calendar": [
         "Lịch"
       ],
-      "Change": [
-        "Thay đổi"
-      ],
-      "Configure": [
-        "Cấu hình"
-      ],
       "Configure migration": [
         "Cấu hình chuyển dữ liệu"
       ],
@@ -2598,26 +2529,11 @@
       "Organization does not have enough storage available": [
         "Tổ chức không có đủ dung lượng lưu trữ khả dụng"
       ],
-      "Required to create user accounts": [
-        "Bắt buộc để tạo tài khoản người dùng"
-      ],
       "Select at least one user to start a migration": [
         "Chọn ít nhất một người dùng để bắt đầu chuyển dữ liệu"
       ],
-      "Set up": [
-        "Thiết lập"
-      ],
-      "Set up billing information": [
-        "Thiết lập thông tin thanh toán"
-      ],
-      "Set up two-factor authentication": [
-        "Thiết lập xác thực hai yếu tố"
-      ],
       "Sign in to Google Workspace": [
         "Đăng nhập vào Google Workspace"
-      ],
-      "Start migration": [
-        "Bắt đầu chuyển dữ liệu"
       ],
       "User": [
         "Người dùng"
@@ -4527,8 +4443,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Tự động sắp xếp thư đến trước khi vào hộp thư đến."
       ],
+      "Available storage: ${ storageText }": [
+        "Dung lượng lưu trữ khả dụng: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Có sẵn với ${ title }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Chặn khả năng lập hồ sơ của Google. Gmail không thể xem hoạt động trên ${ MAIL_APP_NAME }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Cấu hình mục này trước để kích hoạt tổ chức và tùy chỉnh địa chỉ email."
@@ -4554,6 +4476,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Dễ dàng đồng bộ tệp lên đám mây từ máy tính và truy cập từ thiết bị di động."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Email gửi đến ${ connectedAddressText } giờ đây sẽ hiển thị trong ${ MAIL_APP_NAME }."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Kích hoạt ${ PROTON_SENTINEL_NAME } để truy cập các tính năng này"
       ],
@@ -4569,6 +4494,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Đang mã hóa và nhập liên hệ... Quá trình này có thể mất vài phút. Khi hoàn tất, có thể đóng hộp thoại này."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Đủ không gian cho nhiều năm lưu trữ email, tập tin đính kèm và hơn thế nữa."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Đảm bảo truy cập an toàn vào dữ liệu tổ chức, ngay cả khi nhóm làm việc từ xa hoặc sử dụng WiFi công cộng."
       ],
@@ -4580,9 +4508,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Mọi người trong tổ chức đều có thể kết nối với các máy chủ được chia sẻ ở tất cả các quốc gia."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Để chuyển đổi liền mạch sang ${ BRAND_NAME }, hãy nhập dữ liệu từ Google, Outlook và những nguồn khác."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nhận thông báo nếu mật khẩu hoặc dữ liệu khác bị rò rỉ từ một dịch vụ bên thứ ba."
@@ -4608,8 +4533,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Tạo chân trang email của riêng bạn — thể hiện thương hiệu độc đáo, không phải của chúng tôi."
       ],
+      "No ads. No trackers.": [
+        "Không quảng cáo. Không trình theo dõi."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Không ai trong tổ chức có thể kết nối với các máy chủ này."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Đọc, trả lời và quản lý Gmail ngay trong ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Thiết lập tài khoản cho tất cả người dùng và mời họ tham gia ${ BRAND_NAME }."
@@ -4620,6 +4551,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Đơn giản hóa việc đồng bộ và lên lịch với các lịch được chia sẻ."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Điều này có thể xảy ra nếu quyền truy cập bị xóa hoặc mật khẩu bị thay đổi."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Để tiếp tục nhận và gửi thư Gmail trong ${ BRAND_NAME }, vui lòng kết nối lại tài khoản."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Để tiếp tục nhận và gửi thư Gmail trong ${ BRAND_NAME }, vui lòng kết nối lại các tài khoản."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Để nhập liên hệ từ Google hoặc Outlook, ${ easySwitchLink }."
       ],
@@ -4629,11 +4569,32 @@
       "Track the status and activity of your referrals": [
         "Theo dõi trạng thái và hoạt động của các lời giới thiệu"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Mở khóa 15 GB dung lượng lưu trữ chỉ với ${ config.offerPrice }."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Nâng cấp để nhận ${ activatePmUser } cho địa chỉ email ngắn hơn, dễ nhớ ngoài địa chỉ hiện tại."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Sử dụng hướng dẫn này để tổ chức nhanh chóng được hưởng lợi từ hệ sinh thái quyền riêng tư và mã hóa hàng đầu trong ngành của ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Không thể truy cập ${ boldEmails } nữa."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Quá trình nhập sẽ tạm dừng ở mức 80% dung lượng lưu trữ để dành không gian cho thư mới."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Đã bắt đầu nhập email từ Gmail. Hệ thống sẽ thông báo khi hoàn tất."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Với các danh mục email mới, chỉ những thư quan trọng mới được chuyển đến hộp thư đến chính. Các danh mục hoạt động giống như bộ lọc thư rác. ${ MAIL_APP_NAME } không bao giờ đọc email hoặc chia sẻ dữ liệu."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Đã có địa chỉ Gmail chuyển tiếp đến ${ MAIL_APP_NAME }. Hãy kết nối bên dưới để gửi và nhận email trực tiếp từ ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Đã có các địa chỉ Gmail chuyển tiếp đến ${ MAIL_APP_NAME }. Hãy kết nối một địa chỉ bên dưới để gửi và nhận email trực tiếp từ ${ MAIL_APP_NAME }."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Có thể tùy chỉnh danh sách miền mà tại đó một số chức năng tự động trong phần mở rộng trình duyệt ${ PASS_APP_NAME } (Tự động điền, Tự động đề xuất, Tự động lưu) không nên chạy."
@@ -4643,6 +4604,15 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Có thể nhập sự kiện ở định dạng iCal (tệp ICS). Tệp nên có kích thước tối đa là ${ MAX_IMPORT_FILE_SIZE_STRING } và có tối đa ${ MAX_IMPORT_EVENTS_STRING } sự kiện. Nếu tệp lớn hơn, vui lòng chia nhỏ thành các tệp nhỏ hơn."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Hiện đã có thể gửi email từ ${ BRAND_NAME } bằng địa chỉ này."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Tài khoản ${ MAIL_APP_NAME } miễn phí có dung lượng lưu trữ giới hạn, vì vậy hệ thống sẽ chỉ nhập ${ newUserStorageText } các thư Gmail gần đây nhất"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Tài khoản ${ MAIL_APP_NAME } miễn phí có dung lượng lưu trữ giới hạn, vì vậy hệ thống sẽ chỉ nhập các email Gmail gần đây nhất."
       ]
     },
     "description": {
@@ -5008,14 +4978,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Các giải pháp được thiết kế riêng cho các tổ chức lớn có nhu cầu tùy chỉnh"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Lịch sử phiên bản mở rộng"
-      ],
-      "Priority support": [
-        "Hỗ trợ ưu tiên"
       ]
     },
     "Duo offer": {
@@ -6029,6 +5991,9 @@
       "Address cannot be yours": [
         "Địa chỉ không thể là của bạn"
       ],
+      "Address is already added to your account": [
+        "Địa chỉ đã được thêm vào tài khoản"
+      ],
       "Address primary private key not found": [
         "Không tìm thấy địa chỉ khóa riêng tư chính"
       ],
@@ -6460,6 +6425,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Một số tên nhãn vượt quá giới hạn ký tự tối đa của ${ MAIL_APP_NAME }. Vui lòng tùy chỉnh nhập khẩu để chỉnh sửa các tên này."
+      ],
+      "Something went wrong while converting the address": [
+        "Đã xảy ra lỗi khi chuyển đổi địa chỉ"
+      ],
+      "Something went wrong while creating the address": [
+        "Đã xảy ra lỗi khi tạo địa chỉ"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Đã xảy ra lỗi khi tìm nạp các miền khả dụng"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Đã xảy ra sự cố, vui lòng ${ refresh } để tiếp tục. Nếu vẫn thấy thông báo lỗi này, vui lòng liên hệ với ${ supportTeam } của chúng tôi."
@@ -6973,19 +6947,9 @@
         "Có thể lưu tệp ICS của các sự kiện đã xuất thành công."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "Tổng dung lượng lưu trữ 3 TB"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Lợi ích của tài khoản"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Không gian lưu trữ được chia sẻ giữa các thành viên gia đình trên ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } và ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -7018,11 +6982,6 @@
       ],
       "View invitation": [
         "Xem lời mời"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Tối đa 6 người dùng"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7271,20 +7230,12 @@
         "Thiết lập tên gia đình"
       ]
     },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Bao gồm 2.700 máy chủ tại hơn 65 quốc gia, kết nối tối đa 10 thiết bị, truy cập dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Bao gồm hỗ trợ cho 3 miền email tùy chỉnh, 90 địa chỉ email, không giới hạn biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Bảo vệ tệp với bộ lưu trữ đám mây đã mã hóa. Bao gồm đồng bộ tự động, chia sẻ tệp mã hóa, v.v."
-      ]
-    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } kết nối VPN"
+      ],
+      "10+ premium features": [
+        "Hơn 10 tính năng cao cấp"
       ],
       "Access to all countries": [
         "Truy cập vào tất cả các quốc gia"
@@ -7300,6 +7251,12 @@
       ],
       "Continue": [
         "Tiếp tục"
+      ],
+      "Custom email domain": [
+        "Miền email tùy chỉnh"
+      ],
+      "Email addresses": [
+        "Các địa chỉ email"
       ],
       "Encrypted cloud storage for files, photos and documents": [
         "Lưu trữ đám mây đã mã hóa cho tệp, ảnh và tài liệu"
@@ -7318,6 +7275,9 @@
       ],
       "Secure streaming support": [
         "Hỗ trợ phát trực tuyến bảo mật"
+      ],
+      "Storage": [
+        "Dung lượng lưu trữ"
       ],
       "Torrenting support (P2P)": [
         "Hỗ trợ torrent (P2P)"
@@ -8622,24 +8582,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Nhập mã hiện có** từ các ứng dụng 2FA khác, như Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Bước 1: Mời bạn bè** dùng ${ BRAND_NAME } bằng liên kết giới thiệu."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Bước 1:** Mời bạn bè tham gia ${ BRAND_NAME } bằng liên kết giới thiệu."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Bước 2:** Bạn bè nhận được **2 tuần miễn phí** cho gói của họ."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Bước 2:** Bạn bè nhận được 2 tuần miễn phí cho gói của mình."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Bước 3:** Nhận ${ referrerRewardAmount } tín dụng cho mỗi người đăng ký gói."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Bước 3:** Nhận **${ referrerRewardAmount } tín dụng** cho mỗi người đăng ký gói."
-      ],
       "**Sync codes** to all your devices": [
         "**Đồng bộ mã** tới tất cả thiết bị"
       ],
@@ -9695,6 +9637,9 @@
       ],
       "Include device, location, and IP details": [
         "Bao gồm chi tiết thiết bị, vị trí và IP"
+      ],
+      "Included": [
+        "Đã bao gồm"
       ],
       "Increase your account security by verifying your email address.": [
         "Tăng cường bảo mật tài khoản bằng cách xác minh địa chỉ email."
@@ -10977,8 +10922,14 @@
       "Unverified email address.": [
         "Địa chỉ email chưa được xác minh."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Nâng cấp bất kỳ lúc nào để chuyển phần còn lại sang"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nâng cấp ngay bây giờ để nhận các tính năng, sản phẩm và dung lượng lưu trữ cao cấp với mức giá đặc biệt"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Nâng cấp hoặc giải phóng dung lượng bất kỳ lúc nào để chuyển phần còn lại sang"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Nâng cấp để thêm địa chỉ @pm.me ngắn hơn vào tài khoản, giúp chia sẻ dễ dàng hơn. Đây là viết tắt của “${ MAIL_APP_NAME } cho tôi” hoặc “Nhắn tin riêng cho tôi”."
@@ -11676,11 +11627,6 @@
         "Chỉ xem"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Đây là cách tổ chức sẽ hiển thị với người dùng. Có thể thay đổi bất cứ lúc nào."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Địa chỉ email không hợp lệ"
@@ -11694,11 +11640,6 @@
     "Input placeholder": {
       "Add label": [
         "Thêm nhãn"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Tên tổ chức là gì?"
       ]
     },
     "invitation status": {
@@ -12439,6 +12380,9 @@
       "Calendar": [
         "Lịch"
       ],
+      "Calendars": [
+        "Lịch"
+      ],
       "Capitalize words": [
         "Viết hoa các từ"
       ],
@@ -12678,6 +12622,9 @@
       ],
       "Email or username": [
         "Email hoặc tên người dùng"
+      ],
+      "Emails": [
+        "Email"
       ],
       "Emails (all messages)": [
         "Email (tất cả thư)"
@@ -13255,6 +13202,9 @@
       "Select Linux platform": [
         "Chọn nền tảng Linux"
       ],
+      "Select which Gmail address to connect": [
+        "Chọn địa chỉ Gmail muốn kết nối"
+      ],
       "Send auto-reply": [
         "Gửi tự động trả lời"
       ],
@@ -13712,11 +13662,6 @@
       ],
       "To: ${ to }": [
         "Đến: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Chọn một nhà cung cấp danh tính để bắt đầu"
       ]
     },
     "Limit of calendars reached": {
@@ -15704,9 +15649,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Tham gia khảo sát để cải thiện dịch vụ ${ BRAND_NAME }"
-      ],
-      "Product updates": [
-        "Cập nhật sản phẩm"
       ]
     },
     "Notification": {
@@ -15727,6 +15669,9 @@
       ],
       "An external address cannot be default": [
         "Địa chỉ bên ngoài không thể là mặc định"
+      ],
+      "Copied to clipboard": [
+        "Đã sao chép vào bảng tạm"
       ],
       "Downloaded 2FA recovery codes": [
         "Đã tải xuống mã khôi phục 2FA"
@@ -15790,6 +15735,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Không còn yêu cầu xác thực hai yếu tố bắt buộc nữa"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Địa chỉ ${ BRAND_NAME } đã sẵn sàng để sử dụng"
       ],
       "Zoom video conferencing settings have been updated": [
         "Cài đặt hội nghị truyền hình Zoom đã được cập nhật"
@@ -17338,9 +17286,6 @@
       "End date": [
         "Ngày kết thúc"
       ],
-      "Enter name": [
-        "Nhập tên"
-      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -17653,6 +17598,78 @@
         "Không xác định"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Nhận ưu đãi"
+      ],
+      "Summer Sale": [
+        "Khuyến mãi mùa hè"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/tháng"
+      ],
+      "15 GB storage": [
+        "15 GB dung lượng lưu trữ"
+      ],
+      "2 TB data storage": [
+        "Lưu trữ dữ liệu 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Dung lượng lưu trữ 200 GB: gấp 40 lần gói hiện tại"
+      ],
+      "3 TB data storage": [
+        "Lưu trữ dữ liệu 3 TB"
+      ],
+      "500 GB storage": [
+        "500 GB dung lượng lưu trữ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tất cả tính năng cao cấp của ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tất cả tính năng cao cấp của ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Giảm giá dựa trên mức giá hàng tháng tiêu chuẩn. Gói đăng ký sẽ gia hạn theo mức giá hàng năm tiêu chuẩn khi chu kỳ thanh toán kết thúc."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Quyền truy cập đầy đủ vào ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Tài khoản cá nhân cho 6 người dùng"
+      ],
+      "Individual accounts for you and a partner": [
+        "Tài khoản cá nhân dành cho bản thân và đối tác"
+      ],
+      "Online document and spreadsheet editor": [
+        "Trình chỉnh sửa tài liệu và bảng tính trực tuyến"
+      ],
+      "Recover previous file versions": [
+        "Khôi phục các phiên bản tệp trước đó"
+      ],
+      "Stronger protection against cyber threats": [
+        "Bảo vệ mạnh mẽ hơn trước các mối đe dọa mạng"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Chuyển sang gói hàng năm và tiết kiệm ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Không giới hạn thư mục, nhãn dán và bộ lọc"
+      ],
+      "Use your own email domain": [
+        "Sử dụng tên miền email của riêng bạn"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "cho 12 tháng"
+      ],
+      "SUMMER SALE": [
+        "KHUYẾN MÃI MÙA HÈ"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Quay lại ${ signIn }."
@@ -17783,14 +17800,8 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Tận hưởng **${ planTitle }** miễn phí cho đến **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Tặng 2 tuần, nhận ${ referrerRewardAmount }"
-      ],
       "How your free trial works:": [
         "Cách hoạt động của bản dùng thử miễn phí:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Tôi đã sử dụng ${ BRAND_NAME } và nghĩ rằng có thể thích. Đây là dịch vụ email bảo mật, lưu trữ đám mây, trình quản lý mật khẩu và VPN giúp bảo vệ quyền riêng tư. Đăng ký qua liên kết này để nhận miễn phí 14 ngày sử dụng các tính năng cao cấp: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Nếu hủy trước thời điểm đó, bạn sẽ bị hạ cấp xuống ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } khi thời gian dùng thử kết thúc. Nếu không hủy, gói đầy đủ sẽ bắt đầu và bạn sẽ nhận được **${ referrerRewardAmount }** tín dụng."
@@ -17824,9 +17835,6 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Còn **${ daysRemaining } ngày** để khám phá tất cả các tính năng mạnh mẽ mà **${ planTitle }** mang lại."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Bạn bè cũng sẽ nhận được ${ refereeRewardAmount } để đổi vào hóa đơn tiếp theo!"
       ],
       "your subscription": [
         "gói đăng ký của bạn"
@@ -19082,9 +19090,6 @@
       "Connect all your devices": [
         "Kết nối tất cả thiết bị"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Tiếp tục với ${ PLAN_NAMES[plan] }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Tạo tài khoản ${ BRAND_NAME }"
       ],
@@ -19234,9 +19239,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Dùng thử ${ BRAND_NAME } miễn phí trong ${ TRIAL_DURATION_DAYS } ngày"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Dùng thử ${ BRAND_NAME } miễn phí trong 14 ngày"
       ],
       "Try ${ planName } for free": [
         "Dùng thử ${ planName } miễn phí"
@@ -19445,18 +19447,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 người dùng"
-      ],
-      "All paid Mail and Calendar features": [
-        "Tất cả các tính năng Mail và Lịch trả phí"
-      ],
-      "High speed VPN": [
-        "VPN Tốc độ cao"
-      ],
       "Highest VPN speed": [
         "Tốc độ VPN cao nhất"
       ],
@@ -19469,17 +19459,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "Quyền truy cập sớm bản Premium"
-      ],
-      "Secure cloud storage": [
-        "Lưu trữ đám mây bảo mật"
-      ],
       "Secure streaming": [
         "Phát trực tuyến bảo mật"
-      ],
-      "Support online privacy": [
-        "Ủng hộ bảo vệ quyền riêng tư trực tuyến"
       ]
     },
     "specialoffer: Footer": {
@@ -19523,71 +19504,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } tháng"
-      ],
       "/ month": [
         "/ tháng"
       ],
       "/month": [
         "/tháng"
       ],
-      "1 year": [
-        "1 năm"
-      ],
-      "15 months": [
-        "15 tháng"
-      ],
-      "2 years": [
-        "2 năm"
-      ],
-      "30 months": [
-        "30 tháng"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Thanh toán ${ amount } cho 1 tháng"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Thanh toán ${ amount } cho 12 tháng"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Thanh toán ${ amount } cho 15 tháng"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Thanh toán ${ amount } cho 24 tháng"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Thanh toán ${ amount } cho 30 tháng"
-      ],
       "Get the deal": [
         "Nhận ưu đãi"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Gia hạn sau 1 năm với giá ưu đãi ${ discountedAmount } thay vì ${ regularAmount } (giảm ${ discount }%)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Gia hạn sau 2 năm với giá ưu đãi ${ discountedAmount } thay vì ${ regularAmount } (giảm ${ discount }%)"
-      ],
       "Save ${ discount }%": [
         "Tiết kiệm ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Giá tiêu chuẩn ${ amount } cho 1 tháng"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Giá tiêu chuẩn ${ amount } cho 12 tháng"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Giá tiêu chuẩn ${ amount } cho 15 tháng"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Giá tiêu chuẩn ${ amount } cho 24 tháng"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Giá tiêu chuẩn ${ amount } cho 30 tháng"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Ưu đãi đặc biệt có hiệu lực trong 2 năm đầu"
       ]
     },
     "specialoffer: Title": {
@@ -19611,29 +19538,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Nâng cấp và tiết kiệm hơn với 2 năm gói ${ planName }"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm 1700 máy chủ tại hơn 60 quốc gia, tốc độ VPN cao nhất, 10 kết nối VPN cho mỗi người dùng, dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm 1700 máy chủ tại hơn 60 quốc gia, tốc độ VPN cao nhất, 10 kết nối VPN, dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tất cả dịch vụ cao cấp của chúng tôi với giới hạn cao nhất: 100 địa chỉ email, hỗ trợ 10 miền tùy chỉnh, không giới hạn biệt danh hide-my-email, chia sẻ lịch, lưu trữ đám mây mã hóa và chia sẻ tệp, v.v."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Bao gồm hỗ trợ cho 3 miền email tùy chỉnh, 15 địa chỉ email, không giới hạn biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Phù hợp cho gia đình hoặc nhóm nhỏ, mỗi người có thể sở hữu hộp thư đến và biệt danh riêng. Yêu cầu miền tùy chỉnh."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Nhận miễn phí phiên bản trả phí của tất cả các dịch vụ bảo mật mới chúng tôi phát hành trong tương lai, cùng với quyền truy cập sớm vào tất cả các tính năng và sản phẩm tương lai."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm đồng bộ tự động, chia sẻ tệp mã hóa, v.v."
       ]
     },
     "Spotlight": {
@@ -20894,20 +20798,6 @@
         "Chi tiết về các sự kiện không thể xuất"
       ]
     },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Tạo thông tin đăng nhập bảo mật trên mọi thiết bị. Bao gồm không giới hạn biệt danh, 20 kho lưu trữ, tích hợp 2FA, tự động điền thẻ tín dụng và nhiều tính năng khác."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Bao gồm hơn 2.950 máy chủ tại hơn 65 quốc gia, kết nối tối đa 10 thiết bị, truy cập dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Bao gồm hỗ trợ cho 1 miền email tùy chỉnh, 10 địa chỉ email, 10 biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm lịch sử phiên bản, chia sẻ tệp mã hóa, v.v."
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Địa chỉ"
@@ -21274,6 +21164,9 @@
       "Are you sure you want to close?": [
         "Chắc chắn muốn đóng không?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Chắc chắn muốn ngắt kết nối địa chỉ này?"
+      ],
       "Are you sure?": [
         "Bạn có chắc không?"
       ],
@@ -21297,6 +21190,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge cho ${ platform }"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Đưa Gmail vào ${ MAIL_APP_NAME }"
       ],
       "Browser extensions": [
         "Phần mở rộng trình duyệt"
@@ -21402,6 +21298,9 @@
       ],
       "Contact us": [
         "Liên hệ"
+      ],
+      "Continue with free storage": [
+        "Tiếp tục với dung lượng lưu trữ miễn phí"
       ],
       "Continue with partial import?": [
         "Tiếp tục nhập một phần?"
@@ -21588,6 +21487,9 @@
       ],
       "Discard changes?": [
         "Hủy bỏ thay đổi?"
+      ],
+      "Disconnected from Gmail": [
+        "Đã ngắt kết nối khỏi Gmail"
       ],
       "Display name and signature": [
         "Tên hiển thị và chữ ký"
@@ -21846,6 +21748,9 @@
       ],
       "Get more from your VPN": [
         "Nhận thêm lợi ích từ VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Nhận thêm dung lượng lưu trữ với ${ MAIL_APP_NAME } Plus"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Tải ứng dụng trên tất cả thiết bị và tận hưởng quyền truy cập an toàn, liền mạch ở bất cứ đâu."
@@ -22297,6 +22202,9 @@
       "Select when you want this notification to be sent": [
         "Chọn khi nào bạn muốn thông báo này được gửi đi"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gửi và nhận Gmail bằng ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "Gửi lời nhắc qua email?"
       ],
@@ -22440,6 +22348,9 @@
       ],
       "Summary": [
         "Tóm tắt"
+      ],
+      "Summer Sale": [
+        "Khuyến mãi mùa hè"
       ],
       "Support ticket closed": [
         "Đã đóng phiếu hỗ trợ"
@@ -22597,9 +22508,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Chào mừng đến với ${ BRAND_NAME } dành cho Doanh nghiệ"
       ],
-      "Welcome to ${ planName }": [
-        "Chào mừng đến với ${ planName }"
-      ],
       "Welcome to your new password manager!": [
         "Chào mừng đến trình quản lý mật khẩu mới!"
       ],
@@ -22614,6 +22522,9 @@
       ],
       "WireGuard configuration": [
         "Cấu hình WireGuard"
+      ],
+      "You are all set": [
+        "Đã thiết lập xong"
       ],
       "You can now create unlimited folders and labels": [
         "Hiện có thể tạo không giới hạn thư mục và nhãn"

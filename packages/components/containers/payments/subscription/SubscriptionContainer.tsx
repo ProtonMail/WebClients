@@ -75,6 +75,9 @@ import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import { VatReverseChargeErrorModal } from '@proton/payments/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
+import { getStaticCouponConfig } from '@proton/payments/ui/coupon-config/get-static-coupon-config';
+import { isCSCoupon } from '@proton/payments/ui/coupon-config/helpers';
+import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -104,8 +107,6 @@ import { useVisionaryDowngradeWarningModal } from './VisionaryDowngradeWarningMo
 import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscriptionFlow';
 import { SubscriptionConfirmButton } from './confirm-button/SubscriptionConfirmButton';
 import { SUBSCRIPTION_STEPS } from './constants';
-import { isCSCoupon } from './coupon-config/helpers';
-import { getStaticCouponConfig, useCouponConfig } from './coupon-config/useCouponConfig';
 import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import { type SelectedProductPlans, getDefaultSelectedProductPlans } from './helpers';
@@ -118,6 +119,7 @@ import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
 import { showLumoAddonCustomizer } from './modal-components/helpers/showLumoAddonCustomizer';
+import { showMeetAddonCustomizer } from './modal-components/helpers/showMeetAddonCustomizer';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import { getCodes, useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
@@ -303,7 +305,8 @@ const SubscriptionContainerInner = ({
     const [blockCycleSelector, withBlockCycleSelector] = useLoading();
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
-    const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionEstimation[]>();
+    const [subscriptionEstimationsForNonSelectedCycles, setSubscriptionEstimationsForNonSelectedCycles] =
+        useState<SubscriptionEstimation[]>();
     const scribeEnabled = useAssistantFeatureEnabled();
     const meetAddonFlag = useFlag('MeetAddonCustomizer');
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
@@ -442,6 +445,7 @@ const SubscriptionContainerInner = ({
         cycle: model.cycle,
         hideLumoAddonForVpn2024,
     });
+    const meetAddonEnabled = showMeetAddonCustomizer({ meetAddonFlag, couponConfig });
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
             getDefaultSelectedProductPlans({
@@ -678,13 +682,18 @@ const SubscriptionContainerInner = ({
      * Runs subscriptionCheck for all allowed cycles, if coupon is present. That allows to display the discount for
      * all cycles at once, so it's easier for the user to compare the prices and decide what cycle is the best for them.
      */
-    const runAdditionalChecks = async (
-        newModel: Model,
-        checkPayload: CheckSubscriptionData,
-        checkResult: SubscriptionEstimation,
-        signal: AbortSignal
-    ) => {
-        setAdditionalCheckResults([]);
+    const estimateNonSelectedCycles = async ({
+        newModel,
+        checkPayload,
+        checkResult,
+        signal,
+    }: {
+        newModel: Model;
+        checkPayload: CheckSubscriptionData;
+        checkResult: SubscriptionEstimation;
+        signal: AbortSignal;
+    }) => {
+        setSubscriptionEstimationsForNonSelectedCycles([]);
 
         const allAllowedCycles = computeAllowedCycles(newModel.planIDs);
 
@@ -758,7 +767,22 @@ const SubscriptionContainerInner = ({
             plansMap: plansMapRef.current,
         });
 
-        setAdditionalCheckResults([...additionalChecks, checkResult]);
+        setSubscriptionEstimationsForNonSelectedCycles([...additionalChecks, checkResult]);
+    };
+
+    /**
+     * Runs the non-essential estimations that accompany the primary check but aren't required to complete it.
+     * These power optional UI affordances (e.g. showing discounts across all cycles) and are kept separate so the
+     * primary check result is never blocked on them. The set of additional estimations may grow over time; right now
+     * it runs {@link estimateNonSelectedCycles}.
+     */
+    const runAdditionalEstimations = async (
+        newModel: Model,
+        checkPayload: CheckSubscriptionData,
+        checkResult: SubscriptionEstimation,
+        signal: AbortSignal
+    ) => {
+        await estimateNonSelectedCycles({ newModel, checkPayload, checkResult, signal });
     };
 
     const shouldPassIsTrial = (newModel: Model, downgradeIsTrial: boolean) => {
@@ -789,7 +813,7 @@ const SubscriptionContainerInner = ({
         refs: { plansMapRef, giftCodeRef },
         setters: { setCheckResult, setModel, setVatReverseChargeErrorModal },
         callbacks: {
-            runAdditionalChecks,
+            runAdditionalEstimations,
             shouldPassIsTrial,
             onPlusToPlusTransition: (unlockPlan) => {
                 setPlusToPlusUpsell({ unlockPlan });
@@ -1168,12 +1192,12 @@ const SubscriptionContainerInner = ({
                                 const selectedPlanIDs = optimisticPlanIDs ?? model.planIDs;
 
                                 const {
-                                    noAddonVariant,
-                                    displayLumoOnly,
-                                    displayMeetOnly,
-                                    displayPassAsFakeAddonOnly,
+                                    displayLumo,
+                                    displayMeet,
+                                    displayPassAsFakeAddon,
                                     isVPNPass2023,
                                     overrideAddonsBehaviour,
+                                    canDisplayAddonCustomizer,
                                 } = vpn2024AddonsExperiment;
 
                                 return (
@@ -1183,32 +1207,30 @@ const SubscriptionContainerInner = ({
                                                 ? couponConfig?.checkoutSubtitle()
                                                 : c('Label').t`Subscription options`}
                                         </h2>
-                                        {!displayPassAsFakeAddonOnly &&
-                                            !noAddonVariant &&
-                                            getHasPlanCustomizer(model.planIDs) && (
-                                                <ProtonPlanCustomizer
-                                                    addonFlags={{
-                                                        scribeAddonEnabled: scribeEnabled.paymentsEnabled,
-                                                        lumoAddonEnabled: overrideAddonsBehaviour
-                                                            ? displayLumoOnly
-                                                            : lumoAddonEnabled,
-                                                        meetAddonEnabled: overrideAddonsBehaviour
-                                                            ? displayMeetOnly
-                                                            : meetAddonFlag,
-                                                    }}
-                                                    loading={blockAccountSizeSelector}
-                                                    currency={model.currency}
-                                                    cycle={model.cycle}
-                                                    plansMap={plansMapRef.current}
-                                                    selectedPlanIDs={selectedPlanIDs}
-                                                    onChangePlanIDs={handleOptimisticPlanIDs}
-                                                    latestSubscription={latestSubscription}
-                                                    allowedAddonTypes={allowedAddonTypes}
-                                                    className="subscription-container-plan-customizer"
-                                                    telemetryContext={telemetryContext}
-                                                />
-                                            )}
-                                        {displayPassAsFakeAddonOnly && (
+                                        {canDisplayAddonCustomizer && getHasPlanCustomizer(model.planIDs) && (
+                                            <ProtonPlanCustomizer
+                                                addonFlags={{
+                                                    scribeAddonEnabled: scribeEnabled.paymentsEnabled,
+                                                    lumoAddonEnabled: overrideAddonsBehaviour
+                                                        ? displayLumo
+                                                        : lumoAddonEnabled,
+                                                    meetAddonEnabled: overrideAddonsBehaviour
+                                                        ? displayMeet
+                                                        : meetAddonEnabled,
+                                                }}
+                                                loading={blockAccountSizeSelector}
+                                                currency={model.currency}
+                                                cycle={model.cycle}
+                                                plansMap={plansMapRef.current}
+                                                selectedPlanIDs={selectedPlanIDs}
+                                                onChangePlanIDs={handleOptimisticPlanIDs}
+                                                latestSubscription={latestSubscription}
+                                                allowedAddonTypes={allowedAddonTypes}
+                                                className="subscription-container-plan-customizer"
+                                                telemetryContext={telemetryContext}
+                                            />
+                                        )}
+                                        {displayPassAsFakeAddon && (
                                             <div className="subscription-container-plan-customizer">
                                                 <PassFakeAddon
                                                     currency={model.currency}
@@ -1255,7 +1277,7 @@ const SubscriptionContainerInner = ({
                                                     currency={model.currency}
                                                     onChangeCycle={handleChangeCycle}
                                                     faded={blockCycleSelector}
-                                                    additionalCheckResults={additionalCheckResults}
+                                                    additionalCheckResults={subscriptionEstimationsForNonSelectedCycles}
                                                     loading={loadingCheck || initialLoading}
                                                     allowedCycles={computeAllowedCycles(model.planIDs)}
                                                     checkResult={checkResult}

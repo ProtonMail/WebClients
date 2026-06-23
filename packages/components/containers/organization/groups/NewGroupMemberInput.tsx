@@ -35,6 +35,7 @@ export const NewGroupMemberInput = ({
     const existingGroupMembers = convertGroupMemberToRecipient(groupMembers);
     const recipients = [...existingGroupMembers, ...newGroupMembers];
     const [processing, setProcessing] = useState(false);
+
     const [query, setQuery] = useState('');
     const [contactEmails, loading] = useMemberContactEmailsRemote(query, groupId);
 

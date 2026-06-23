@@ -23,8 +23,10 @@ import { AuthType, type AuthTypeData, ExternalSSOFlow } from '@proton/components
 import { handleLogin } from '@proton/components/containers/login/loginActions';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
 import { useLoading } from '@proton/hooks';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
@@ -38,7 +40,7 @@ import type {
     SSOInfoResponse,
 } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -49,10 +51,10 @@ import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';
 import SupportDropdown from '../public/SupportDropdown';
+import { openTroubleshootWithLumo } from '../public/TroubleshootWithLumo';
 import { defaultPersistentKey } from '../public/helper';
 import { RememberMode } from './LoginContainer';
 import SignupButton from './SignupButton';
-import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 
 export interface LoginFormRef {
     getIsLoading: () => boolean;
@@ -392,14 +394,11 @@ const LoginForm = ({
         setExternalSSOState(undefined);
     };
 
-    const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
+    const lumoSignInHelperEnabled = useFlag('LumoSignInHelp');
     const urlParams = new URLSearchParams();
 
     if (username) {
         urlParams.append('username', username);
-    }
-    if (!unauthedForgotPasswordEnabled) {
-        urlParams.append('variant', 'a');
     }
 
     const stringUrlParams = urlParams.toString();
@@ -717,13 +716,22 @@ const LoginForm = ({
                                                     </Link>
                                                 )
                                             }
-                                            <hr className='m-0'/>
+                                            {lumoSignInHelperEnabled && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => openTroubleshootWithLumo()}
+                                                    className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
+                                                >
+                                                    <IcLifeRing />
+                                                    {c('Link').t`Get help from ${LUMO_SHORT_APP_NAME}`}
+                                                </button>
+                                            )}
+                                            <hr className="m-0" />
                                             <Href
                                                 href={getKnowledgeBaseUrl('/common-login-problems')}
                                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                             >
-                                                
-                                                {c('Link').t`Sign-in help`}
+                                                {c('Link').t`Frequent sign-in problems`}
                                                 <IcArrowOutSquare className="color-weak ml-auto" />
                                             </Href>
                                         </SupportDropdown>

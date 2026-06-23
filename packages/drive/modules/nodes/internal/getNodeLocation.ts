@@ -1,8 +1,7 @@
-import { type Device, type MaybeNode, NodeType, type Result } from '@protontech/drive-sdk';
+import { type Device, type NodeEntity, NodeType, type Result } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
-import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { getNodeAncestry } from './getNodeAncestry';
 import { getNodeName } from './getNodeName';
 
@@ -15,25 +14,23 @@ export enum NodeLocation {
 }
 
 export type ProtonDriveClientOrPublicDriveClient = {
-    getNode: (uid: string) => Promise<MaybeNode>;
-    getMyFilesRootFolder?: () => Promise<MaybeNode>;
+    getNode: (uid: string) => Promise<NodeEntity>;
+    getMyFilesRootFolder?: () => Promise<NodeEntity>;
     iterateDevices?: (signal?: AbortSignal) => AsyncGenerator<Device>;
 };
 
 export async function getNodeLocation(
     drive: ProtonDriveClientOrPublicDriveClient,
-    node: MaybeNode
+    node: NodeEntity
 ): Promise<Result<NodeLocation, Error>> {
-    const currentNodeEntity = getNodeEntity(node).node;
-
-    if (currentNodeEntity.type === NodeType.Album || currentNodeEntity.type === NodeType.Photo) {
+    if (node.type === NodeType.Album || node.type === NodeType.Photo) {
         return {
             ok: true,
             value: NodeLocation.PHOTOS,
         };
     }
 
-    const nodesResult = await getNodeAncestry(currentNodeEntity.uid, drive);
+    const nodesResult = await getNodeAncestry(node.uid, drive);
     if (!nodesResult.ok) {
         return {
             ok: false,
@@ -41,10 +38,10 @@ export async function getNodeLocation(
         };
     }
     const nodes = nodesResult.value;
-    const rootNodeEntity = getNodeEntity(nodes[0]).node;
+    const rootNode = nodes[0];
     // If node have a membership it means it is a direct share
     // We also check the getMyFilesRootFolder presence to exclude public page
-    if (Boolean(rootNodeEntity.membership && drive.getMyFilesRootFolder)) {
+    if (Boolean(rootNode.membership && drive.getMyFilesRootFolder)) {
         return {
             ok: true,
             value: NodeLocation.SHARED_WITH_ME,
@@ -54,10 +51,10 @@ export async function getNodeLocation(
     let myFilesRootFolderUid: string | undefined;
     if (drive.getMyFilesRootFolder) {
         const myFilesRootFolder = await drive.getMyFilesRootFolder();
-        myFilesRootFolderUid = myFilesRootFolder.ok ? myFilesRootFolder.value.uid : myFilesRootFolder.error.uid;
+        myFilesRootFolderUid = myFilesRootFolder.uid;
     }
 
-    if (rootNodeEntity.uid === myFilesRootFolderUid) {
+    if (rootNode.uid === myFilesRootFolderUid) {
         return {
             ok: true,
             value: NodeLocation.MY_FILES,
@@ -90,7 +87,7 @@ const BreadcrumbsTopitemLabels = {
     PHOTOS: c('Title').t`Photos`,
 };
 
-export const formatNodeLocation = (nodeLocationRoot: NodeLocation, path: MaybeNode[]) => {
+export const formatNodeLocation = (nodeLocationRoot: NodeLocation, path: NodeEntity[]) => {
     const pathItems = path.map(getNodeName);
     switch (nodeLocationRoot) {
         case NodeLocation.PHOTOS:
@@ -114,7 +111,7 @@ export const formatNodeLocation = (nodeLocationRoot: NodeLocation, path: MaybeNo
 
 export async function getFormattedNodeLocation(
     drive: ProtonDriveClientOrPublicDriveClient,
-    node: MaybeNode
+    node: NodeEntity
 ): Promise<string> {
     const location = await getNodeLocation(drive, node);
 
@@ -126,9 +123,9 @@ export async function getFormattedNodeLocation(
     const nodeLocation = location.value;
     const needsPath = nodeLocation !== NodeLocation.PHOTOS;
 
-    let path: MaybeNode[] = [];
+    let path: NodeEntity[] = [];
     if (needsPath) {
-        const ancestryResult = await getNodeAncestry(getNodeEntity(node).node.uid, drive, false);
+        const ancestryResult = await getNodeAncestry(node.uid, drive, false);
         if (!ancestryResult.ok) {
             handleSdkError(ancestryResult.error);
             return formattedLocationError;

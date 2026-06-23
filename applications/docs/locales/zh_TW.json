@@ -366,6 +366,9 @@
       "Get the apps": [
         "取得應用程式"
       ],
+      "Get the deal": [
+        "取得優惠"
+      ],
       "Get the writing assistant": [
         "取得寫作幫手"
       ],
@@ -431,6 +434,9 @@
       ],
       "Keep my subscription": [
         "保持訂閱"
+      ],
+      "Later": [
+        "稍後"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -500,6 +506,9 @@
       ],
       "New document": [
         "建立新文件"
+      ],
+      "New folder": [
+        "新資料夾"
       ],
       "New message": [
         "撰寫"
@@ -825,6 +834,9 @@
       "Verify account": [
         "驗證帳號"
       ],
+      "Verify now": [
+        "立即驗證"
+      ],
       "View": [
         "檢視"
       ],
@@ -1103,6 +1115,17 @@
         "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }桌面應用程式"
@@ -1261,6 +1284,18 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal": [
+        "小計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
+      ],
+      "Total": [
+        "總共"
+      ],
+      "Total for ${ n } month": [
+        " ${ n } 個月總計"
       ]
     },
     "Collapsible tooltip": {
@@ -2487,6 +2522,9 @@
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
       ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
       ],
@@ -2730,6 +2768,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 個項目移動失敗"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「身分 \n及地址」>「短網域名稱 (pm.me)」裡面去設定。"
       ],
@@ -2756,6 +2797,9 @@
       ],
       "Aliases could not be loaded": [
         "無法載入別名"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
       ],
       "Already a member of this share": [
         "已經是這個分享的成員了"
@@ -2795,6 +2839,9 @@
       ],
       "Cannot export this contact": [
         "無法匯出通訊名片"
+      ],
+      "Cannot find move target": [
+        "找不到移動目標"
       ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
@@ -2849,6 +2896,12 @@
       ],
       "Failed to copy photo to album": [
         "複製照片至相簿失敗"
+      ],
+      "Failed to create folder": [
+        "建立資料夾失敗"
+      ],
+      "Failed to expand folder": [
+        "展開資料夾失敗"
       ],
       "Failed to fetch node": [
         "擷取節點失敗"
@@ -2973,6 +3026,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "照片上載暫時停用。請稍後再試"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
+      ],
       "Please enter a valid postal code": [
         "請輸入有效的郵遞區號"
       ],
@@ -2996,6 +3058,9 @@
       ],
       "Please select a state": [
         "請選擇一個州"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
       ],
       "Port is required": [
         "通訊埠為必填"
@@ -3041,6 +3106,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
       ],
       "Something went wrong. Please try again.": [
         "發生錯誤，請稍後再試。"
@@ -3138,6 +3206,9 @@
       "Unknown error": [
         "未知錯誤"
       ],
+      "Unknown location": [
+        "未知的位置"
+      ],
       "Update Too Large": [
         "更新內容超過大小限制"
       ],
@@ -3167,6 +3238,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -4078,6 +4152,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
+      ],
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
@@ -4092,21 +4169,6 @@
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**第二步：**您的朋友將取得該方案的 2 週免費。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -4149,6 +4211,9 @@
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "所有聯絡人將被匯入，至多 ${ maxContact }"
+      ],
+      "Already in this folder": [
+        "已經在此資料夾"
       ],
       "an anonymous user": [
         "一位未知使用者"
@@ -4200,6 +4265,12 @@
       ],
       "Can view only": [
         "僅供檢視"
+      ],
+      "Can't move a folder into itself": [
+        "無法將資料夾移動到自身"
+      ],
+      "Can't write into folder": [
+        "無法寫入資料夾"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
@@ -4294,6 +4365,9 @@
       "Display word count": [
         "顯示字數統計"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "文件位於垃圾桶"
       ],
@@ -4384,9 +4458,6 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "開啟安全連結失敗。原因：${ error }"
       ],
-      "Favorites": [
-        "收藏夾"
-      ],
       "File \"${ name }\" was deleted during download": [
         "檔案 \"${ name }\" 在下載過程中被刪除"
       ],
@@ -4416,6 +4487,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Free5GB加密的儲存空間以開始"
@@ -4744,6 +4818,9 @@
       "Scan the QR code with your mobile device": [
         "透過行動裝置掃描此 QR Code"
       ],
+      "Select a destination folder": [
+        "選擇一個目的文件夾"
+      ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
       ],
@@ -4935,6 +5012,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "不幸的是，該檔案或其部份資料似乎無法解密。"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
@@ -5244,6 +5324,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
       ],
+      "${ n } month": [
+        "${ n } 月"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
@@ -5314,6 +5397,9 @@
         "瀏覽器版本"
       ],
       "Calendar": [
+        "行事曆"
+      ],
+      "Calendars": [
         "行事曆"
       ],
       "can edit": [
@@ -5400,6 +5486,9 @@
       "Email format": [
         "電郵格式"
       ],
+      "Emails": [
+        "電郵"
+      ],
       "Emails (all messages)": [
         "電子郵件（全部訊息）"
       ],
@@ -5438,6 +5527,9 @@
       ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "取得優惠"
       ],
       "Hide password": [
         "隱藏密碼"
@@ -7088,20 +7180,20 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "「${ ellipsedName }」已成功創建"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "「${ ellipsedName }」創建失敗"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" 已共享"
-      ],
-      "\"${ name }\" created successfully": [
-        "「${ name }」已成功創建"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\"已刪除"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "檔案 \"${ name }\" 已經從垃圾桶被永久刪除"
-      ],
-      "\"${ name }\" failed to be created": [
-        "「${ name }」創建失敗"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\"創建失敗"
@@ -7129,9 +7221,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "「${ name }」已成功儲存"
-      ],
-      "\"${ name }\" successfully moved": [
-        "「${ name }」已成功移動"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」重新命名失敗"
@@ -7163,14 +7252,14 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } 個項目未能從垃圾中被復原"
       ],
+      "${ numberOfItems } item moved": [
+        "已移動 ${ numberOfItems } 個項目"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } 個項目已移動到垃圾桶"
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } 個項目已從垃圾桶中還原"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } 個項目已成功移動"
       ],
       "${ reason } has been disabled": [
         "${ reason } 已停用。"
@@ -7518,9 +7607,6 @@
       ]
     },
     "Page title": {
-      "Favorites": [
-        "收藏夾"
-      ],
       "Recents": [
         "最近使用"
       ],
@@ -7733,6 +7819,9 @@
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
       ],
+      "Search": [
+        "搜尋"
+      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
@@ -7854,15 +7943,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
       ],
-      "SPRING SALE 2026": [
-        "春季特賣 2026"
+      "Summer Sale": [
+        "夏季特賣"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/每月"
       ],
@@ -7881,35 +7970,17 @@
       "500 GB storage": [
         "500 GB 儲存空間"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "存取位於 120 多個國家/地區的 15,000 台伺服器"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
       ],
-      "Access advanced AI models": [
-        "存取進階 AI 模型"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail、Pass、磁碟、VPN 和行事曆的所有頂級質子版功能"
-      ],
-      "Block ads, trackers, and malware": [
-        "封鎖廣告、追蹤程式和惡意軟體"
-      ],
-      "Built-in 2FA authenticator": [
-        "內建雙重驗證驗證器"
-      ],
-      "Connect 10 devices at once": [
-        "同時連線 10 個裝置"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "延長您的訂閱並節省 ${ discountPercent }%！"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "完整存取 ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "具備輕鬆搜尋與最愛功能的完整聊天記錄"
       ],
       "Individual accounts for 6 users": [
         "6 位使用者的個人帳號"
@@ -7917,8 +7988,8 @@
       "Individual accounts for you and a partner": [
         "供您與夥伴使用的個人帳號"
       ],
-      "Online document editor": [
-        "線上文件編輯器"
+      "Online document and spreadsheet editor": [
+        "線上文件和試算表編輯器"
       ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
@@ -7929,25 +8000,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
       ],
-      "Unlimited daily chats": [
-        "無限每日聊天"
-      ],
       "Unlimited folders, labels, and filters": [
         "資料夾、標籤與篩選器無上限"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無限的 hide-my-email 別名"
       ],
       "Use your own email domain": [
         "使用您自己的電子郵件網域"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "12 個月"
       ],
-      "SPRING SALE": [
-        "春季特賣"
+      "SUMMER SALE": [
+        "夏季特賣"
       ]
     },
     "Recent documents table header": {
@@ -8691,6 +8756,11 @@
         "此訂閱將於繳款單週期末被降級"
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "終身"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 儲存空間"
@@ -8940,6 +9010,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
       ],
@@ -9008,6 +9081,9 @@
       ],
       "Collaborate on documents": [
         "於文件上合作"
+      ],
+      "Computers": [
+        "電腦"
       ],
       "Confirm downgrade": [
         "確認降級"
@@ -9101,6 +9177,9 @@
       ],
       "Desktop": [
         "電腦版應用程式"
+      ],
+      "Devices": [
+        "個裝置"
       ],
       "Discard": [
         "捨棄"
@@ -9224,9 +9303,6 @@
       ],
       "Import contacts": [
         "匯入聯絡人"
-      ],
-      "Import emails, calendars, contacts": [
-        "匯入電子郵件、行事曆、聯絡人"
       ],
       "Import events": [
         "匯入事件"
@@ -9411,6 +9487,9 @@
       "Share your link": [
         "共享您的連結"
       ],
+      "Shared with me": [
+        "與我共享"
+      ],
       "Sign in and grant access": [
         "登入並授予存取權"
       ],
@@ -9440,6 +9519,9 @@
       ],
       "Subscription canceled": [
         "訂購授權已取消"
+      ],
+      "Summer Sale": [
+        "夏季特賣"
       ],
       "The link either does not exist or has expired": [
         "連結不存在或已失效"
@@ -9473,6 +9555,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ],
       "VPN explained": [
         "VPN 說明"

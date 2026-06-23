@@ -36,7 +36,7 @@ import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } 
 import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useOnCompose } from '../../../../containers/ComposeProvider';
@@ -82,7 +82,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         return c('Info').t`This message is from a mailing list.`;
     }, [isSimpleLoginAlias]);
 
-    const params = useMailSelector(selectParams);
+    const labelID = useMailSelector(selectLabelID);
 
     const actionText = useMemo(() => {
         if (isUnsubscribed(message)) {
@@ -108,7 +108,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     }, [loading, message]);
 
     // We don't want to show the unsubscribe button in the newsletter subscriptions view
-    if (!hasUnsubscribeMethods || !address || params.labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
+    if (!hasUnsubscribeMethods || !address || labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
         return null;
     }
 

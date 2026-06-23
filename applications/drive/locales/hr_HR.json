@@ -115,6 +115,9 @@
       "Claim this address": [
         "Preuzmi ovu adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Zatražite svoju besplatnu ${ BRAND_NAME } adresu"
+      ],
       "Clear": [
         "Očisti"
       ],
@@ -730,9 +733,6 @@
       ],
       "Upgrade now": [
         "Nadogradi sada"
-      ],
-      "Upload anyway": [
-        "Učitaj svejedno"
       ],
       "Upload file": [
         "Učitaj datoteku"
@@ -2177,6 +2177,9 @@
       "Aliases could not be loaded": [
         "Nije moguće učitati pseudonime"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
+      ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
       ],
@@ -2313,8 +2316,20 @@
       "Please activate your search again": [
         "Ponovno aktivirajte svoje pretraživanje"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Molimo, konfigurirajte prilagođenu domenu prije dodavanja adresa."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
+      ],
       "Please select a country": [
         "Molimo odaberite državu"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Molimo nadogradite na poslovnu pretplatu s više od jednog korisnika kako biste upravljali višestrukim korisnicima."
       ],
       "Process aborted": [
         "Proces je prekinut"
@@ -2410,6 +2425,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste maksimalan broj kalendara."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
       ],
       "You must set a name": [
         "Morate postaviti naziv"
@@ -3090,9 +3108,6 @@
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
       ],
@@ -3628,9 +3643,6 @@
       "This will permanently delete the file you uploaded.": [
         "Ovo će trajno izbrisati datoteku koju ste prenijeli."
       ],
-      "This will replace the existing file with the folder": [
-        "Ovo će zamijeniti postojeću datoteku s mapom"
-      ],
       "Time": [
         "Vrijeme"
       ],
@@ -3684,9 +3696,6 @@
       ],
       "Uploading": [
         "Učitavanje"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Učitavanje stotina datoteka odjednom može utjecati na performanse."
       ],
       "Uppercase and lowercase letters": [
         "Velika i mala slova"
@@ -3943,6 +3952,9 @@
       "Calendar": [
         "Kalendar"
       ],
+      "Calendars": [
+        "Kalendari"
+      ],
       "Cancel download": [
         "Zaustavi preuzimanje"
       ],
@@ -4040,6 +4052,9 @@
       ],
       "Email format": [
         "Format e-pošte"
+      ],
+      "Emails": [
+        "E-pošta"
       ],
       "Encrypt emails": [
         "Šifriraj e-poštu"
@@ -4211,9 +4226,6 @@
       ],
       "Region": [
         "Regija"
-      ],
-      "Replace existing file": [
-        "Zamijeni postojeću datoteku"
       ],
       "Reveal password": [
         "Prikaži lozinku"
@@ -5097,9 +5109,6 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" premješten u Otpad"
       ],
-      "\"${ name }\" saved successfully": [
-        "Stavka „${ name }” je uspješno spremljena"
-      ],
       "${ count } item failed to be decrypted": [
         "Nije uspjelo dešifriranje ${ count } stavke",
         "Nije uspjelo dešifriranje ${ count } stavki",
@@ -5154,17 +5163,6 @@
       ],
       "Failed to rename device": [
         "Preimenovanje uređaja nije uspjelo"
-      ],
-      "Failed to upload files: ${ err }": [
-        "Prijenos datoteka nije uspio: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Datoteka ili mapa „${ filename }” i ${ count } druga već se prenosi",
-        "Datoteka ili mapa „${ filename }” i ${ count } druge već se prenose",
-        "Datoteka ili mapa „${ filename }” i ${ count } drugih već se prenosi"
-      ],
-      "File or folder is missing a name": [
-        "Datoteci ili mapi nedostaje naziv"
       ],
       "Invitation's email was sent again": [
         "Pozivnica je ponovno poslana e-poštom"
@@ -5539,6 +5537,9 @@
       "Postal code": [
         "Poštanski broj"
       ],
+      "Search": [
+        "Pretraga"
+      ],
       "Search for group name": [
         "Pretraga po nazivu grupe"
       ],
@@ -5625,6 +5626,78 @@
     "protonbadge": {
       "Official": [
         "Službeno"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "2 TB data storage": [
+        "2 TB pohrane podataka"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB pohrane: 40x više od vašeg trenutnog plana"
+      ],
+      "3 TB data storage": [
+        "3 TB pohrane podataka"
+      ],
+      "500 GB storage": [
+        "500 GB prostora za pohranu"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnim mjesečnim cijenama. Vaša će se pretplata obnoviti po standardnoj godišnjoj cijeni nakon završetka ciklusa naplate."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Potpuni pristup usluzi ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Pojedinačni korisnički računi za 6 korisnika"
+      ],
+      "Individual accounts for you and a partner": [
+        "Pojedinačni korisnički računi za vas i partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Uređivač dokumenata i proračunskih tablica na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Snažnija zaštita od kibernetičkih prijetnji"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Pređite na naš godišnji plan i uštedite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničen broj mapa, oznaka i filtara"
+      ],
+      "Use your own email domain": [
+        "Upotrijebite vlastitu domenu e-pošte"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mjeseci"
+      ],
+      "SUMMER SALE": [
+        "LJETNA RASPRODAJA"
       ]
     },
     "Referral": {
@@ -6346,6 +6419,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresa e-pošte",
         "${ emailsCount } adrese e-pošte",
@@ -6541,12 +6617,6 @@
       "Drop to upload": [
         "Ispustite za prijenos"
       ],
-      "Duplicate file found": [
-        "Pronađen je duplikat datoteke"
-      ],
-      "Duplicate folder found": [
-        "Pronađen je duplikat mape"
-      ],
       "Edit billing address": [
         "Uredite adresu naplate"
       ],
@@ -6648,9 +6718,6 @@
       ],
       "Logs": [
         "Zapisnici"
-      ],
-      "Manage secure link": [
-        "Upravljanje sigurnom poveznicom"
       ],
       "Merge contacts": [
         "Spoji kontakte"
@@ -6867,6 +6934,9 @@
       "Summary": [
         "Sažetak"
       ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
+      ],
       "Time": [
         "Vrijeme"
       ],
@@ -6896,9 +6966,6 @@
       ],
       "Uploaded": [
         "Učitano"
-      ],
-      "Uploading a large file or folder": [
-        "Prijenos velike datoteke ili mape"
       ],
       "Verification failed": [
         "Neuspješna provjera"

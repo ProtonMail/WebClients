@@ -156,6 +156,9 @@
       "Add public holidays": [
         "Tilføj nationale helligdage"
       ],
+      "Add recovery options": [
+        "Tilføj gendannelsesmuligheder"
+      ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Tilføj henvisningslink til ${ MAIL_APP_NAME }-signatur"
       ],
@@ -260,6 +263,9 @@
       ],
       "Check import progress": [
         "Kontroller importforløbet"
+      ],
+      "Check now": [
+        "Tjek nu"
       ],
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
@@ -393,6 +399,9 @@
       "Continue with this password": [
         "Fortsæt med denne adgangskode"
       ],
+      "Copy": [
+        "Kopiér"
+      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -455,9 +464,6 @@
       ],
       "Create new policy": [
         "Opret ny politik"
-      ],
-      "Create organization": [
-        "Opret organisation"
       ],
       "Create recovery phrase": [
         "Opret gendannelsessætning"
@@ -939,6 +945,9 @@
       "Hide": [
         "Skjul"
       ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Skjul ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Hide more benefits": [
         "Skjul flere fordele"
       ],
@@ -1082,6 +1091,9 @@
       ],
       "Manage labels": [
         "Administrer etiketter"
+      ],
+      "Manage migration": [
+        "Administrer migration"
       ],
       "Manage subscription": [
         "Administrer abonnement"
@@ -1374,6 +1386,9 @@
       "Review": [
         "Gennemse"
       ],
+      "Review recovery options": [
+        "Gennemgå gendannelsesmuligheder"
+      ],
       "Revoke": [
         "Tilbagekald"
       ],
@@ -1392,7 +1407,7 @@
       "Save": [
         "Gem"
       ],
-      "Save & exit": [
+      "Save & finish": [
         "Gem og afslut"
       ],
       "Save address": [
@@ -1476,6 +1491,9 @@
       "Select time zone": [
         "Vælg tidszone"
       ],
+      "Send": [
+        "Send"
+      ],
       "send auto-reply email": [
         "send e-mail med auto-svar"
       ],
@@ -1532,6 +1550,9 @@
       ],
       "Set up a custom domain": [
         "Konfigurer et brugerdomæne"
+      ],
+      "Set up account recovery": [
+        "Indstil kontogendannelse"
       ],
       "Set up auto-forwarding from Gmail": [
         "Konfigurer automatisk videresendelse fra Gmail"
@@ -1590,6 +1611,9 @@
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Log ud fra ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Log ud af ${ tokens[0].Account }"
+      ],
       "Sign out of all accounts": [
         "Log ud af alle konti"
       ],
@@ -1631,6 +1655,9 @@
       ],
       "Stay": [
         "Bliv her"
+      ],
+      "Stop": [
+        "Stop"
       ],
       "Stop using single sign-on": [
         "Stop med at bruge enkeltlogon"
@@ -1694,6 +1721,9 @@
       ],
       "Underline": [
         "Understreg"
+      ],
+      "Undo": [
+        "Fortryd"
       ],
       "Undo import": [
         "Annuller import"
@@ -1805,6 +1835,12 @@
       ],
       "Verify domain": [
         "Bekræft domæne"
+      ],
+      "Verify now": [
+        "Bekræft nu"
+      ],
+      "Verify password": [
+        "Bekræft adgangskode"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Bekræft domænet ${ unverifiedSSODomain.DomainName }"
@@ -1968,6 +2004,9 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "Add-on": [
+        "Udvidelse"
       ],
       "Dedicated VPN servers": [
         "Dedikerede VPN-servere"
@@ -2456,141 +2495,12 @@
         "Tilbud ikke tilgængeligt"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagerplads"
-      ],
-      "1 user account": [
-        "1 brugerkonto"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagerplads: 40x din nuværende plan"
-      ],
-      "6 user accounts": [
-        "6 brugerkonti"
-      ],
-      "Admin panel to manage your family": [
-        "Adminpanel til at administrere din familie"
-      ],
-      "Advanced account protection": [
-        "Avanceret kontobeskyttelse"
-      ],
-      "Easily add or remove users": [
-        "Tilføj eller fjern nemt brugere"
-      ],
-      "One-time payment, lifetime deal": [
-        "Engangsbetaling, livstidsaftale"
-      ],
-      "Online document editor": [
-        "Online dokumenteditor"
-      ],
-      "Password health alerts": [
-        "Adgangskode-sundhed advarsler"
-      ],
-      "Recover previous file versions": [
-        "Gendan tidligere filversioner"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Ubegrænsede indlogninger, betalingskort, hide-my-email-aliasser og mere"
-      ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Faktureret med ${ amount } én gang"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Fornyes efter 1 måned til ${ regularAmount }."
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Tilgå blokeret indhold og browse privat. Det inkluderer 8.500+ servere fordelt på 110+ lande, 10 enheder, streaming med høj hastighed, annonceblokering og malware-beskyttelse, VPN Accelerator og meget mere."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede hide-my-email-aliasser, deling, integreret 2FA, ${ DARK_WEB_MONITORING_NAME } og mere."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
-        "Beskyt dine e-mails og tidsplan med end-to-end-kryptering. Det inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere.",
-        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Det inkluderer 15 e-mailadresser, understøttelse af brugerdefinerede e-mail-domæner, ubegrænsede hide-my-email-aliasser og mere."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Beskyt dine filer med krypteret lagring i skyen. Det inkluderer en online dokumenteditor, sikkerhedskopiering af billeder, versionshistorik, krypteret fildeling og meget mere."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB lagerplads"
-      ],
-      "3 TB data storage": [
-        "3 TB lagerplads"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Få adgang til 15.000+ servere i 120+ lande"
-      ],
-      "Access advanced AI models": [
-        "Få adgang til avancerede AI-modeller"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloker annoncer, trackere og malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Indbygget tofaktorgodkendelse"
-      ],
-      "Connect 10 devices at once": [
-        "Forbind 10 enheder på én gang"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fuld chathistorik med nem søgning og favoritter"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle konti til 6 brugere"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle konti til dig og en partner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stærkere beskyttelse mod cybertrusler"
-      ],
-      "Unlimited daily chats": [
-        "Ubegrænsede daglige chats"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Det specialdesignede NetShield beskytter dine enheder og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
       ]
     },
     "Billing cycle": {
@@ -2900,17 +2810,23 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } af ${ totalCount }"
+      ],
       "Account connected": [
         "Konto forbundet"
       ],
       "Account disconnected": [
         "Kontoen er afbrudt"
       ],
+      "Accounts migrated": [
+        "Konti migreret"
+      ],
       "Activated": [
         "Aktiveret"
-      ],
-      "Add a domain": [
-        "Tilføj et domæne"
       ],
       "Add domain": [
         "Tilføj domæne"
@@ -2918,8 +2834,8 @@
       "Add users": [
         "Tilføj brugere"
       ],
-      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
-        "Tilføj brugere og konfigurer dit domæne manuelt til at sende og modtage mail. Idealt til mindre teams og for at starte på en frisk."
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Tilføj din organisations e-maildomæne til ${ BRAND_NAME }."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
@@ -2927,14 +2843,17 @@
       "All": [
         "Alle"
       ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alle migrerede brugerkonti er klar til at blive inviteret til din ${ BRAND_NAME }-organisation."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Der opstod en ukendt fejl. Prøv at genindlæse siden og prøv igen"
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Er du sikker på, at du vil fortsætte? Brugere, som ikke har indløst deres konto før migrationen er færdiggjort, vil skulle anmode om at nulstille adgangskoden fra deres ${ BRAND_NAME } organisationsadministrator."
       ],
       "Authenticate": [
         "Godkend"
-      ],
-      "Authenticate to Google Workspace": [
-        "Log ind på Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Godkend din Google Workspace-konto"
@@ -2942,14 +2861,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Change": [
-        "Skift"
+      "Collapse invitation message": [
+        "Skjul invitationsbesked"
       ],
-      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
-        "Vælg hvordan du vil overføre dit team- og e-mail-setup til ${ BRAND_NAME }."
-      ],
-      "Configure": [
-        "Opsæt"
+      "Collapse step": [
+        "Skjul trin"
       ],
       "Configure domain": [
         "Konfigurer domæne"
@@ -2957,14 +2873,29 @@
       "Configure migration": [
         "Konfigurer migrering"
       ],
+      "Configure users": [
+        "Konfigurér brugere"
+      ],
       "Configure your domain": [
         "Konfigurer dit domæne"
+      ],
+      "Confirm": [
+        "Bekræft"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Kontakt din administrator for at starte en migration."
       ],
       "Contacts": [
         "Kontakter"
       ],
-      "Continue migration": [
-        "Fortsæt migration"
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Kopiér den nedenstående kode og indsæt den i DNS-sektionen hos din domæneudbyder."
+      ],
+      "Creating accounts": [
+        "Opretter konti"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM tilføjer en digital signatur til hver e-mail, så modtagerne kan verificere at beskeden virkelig kom fra dit domæne, og ikke blev ændret undervejs. Beskeder kan blive betragtet som mindre troværdige uden den."
@@ -2975,6 +2906,15 @@
       "Domain added": [
         "Domæne tilføjet"
       ],
+      "Domain provider": [
+        "Domæneudbyder"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Ved du ikke hvor du skal begynde? Se hvordan man opdaterer din DNS på ${ registrarLink }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Sørg for at dine e-mails når indbakken, og ikke spammappen. Ved at opdatere SPF kan brugere sende e-mails fra ${ BRAND_NAME } og Google på samme tid under hele migrationen."
       ],
@@ -2984,20 +2924,29 @@
       "Estimated size": [
         "Anslået størrelse"
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Alle får det samme invitationslink. De besøger siden, indtaster deres e-mail, og får en bekræftelseskode i deres Gmail-indbakke. Derfra angiver de deres adgangskode til ${ BRAND_NAME }."
+      ],
+      "Expand invitation message": [
+        "Vis invitationsbesked"
+      ],
+      "Expand step": [
+        "Udvid trin"
+      ],
       "Failed to load OAuth": [
         "Kunne ikke indlæse OAuth"
       ],
-      "Finalize your migration": [
-        "Færdiggør din migration"
+      "Final step": [
+        "Sidste trin"
       ],
       "Find out what can be migrated.": [
         "Find ud af hvad der kan migreres."
       ],
-      "Finish setting up your business account": [
-        "Færdiggør konfigurationen af din virksomhedskonto"
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Få hjælp og brugbare tips til andre domæneudbydere ${ here }"
       ],
-      "Go to Domain names": [
-        "Gå til domænenavne"
+      "Going private": [
+        "Bliver privat"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app til at kopiere data til ${ BRAND_NAME }"
@@ -3008,6 +2957,12 @@
       "Has errors": [
         "Fejlbehæftet"
       ],
+      "Import completed successfully": [
+        "Import lykkedes"
+      ],
+      "Import details": [
+        "Importoplysninger"
+      ],
       "In progress": [
         "I gang"
       ],
@@ -3017,8 +2972,17 @@
       "Install migration app": [
         "Installer migrations app."
       ],
-      "Install Migration assistant": [
-        "Installer migrationsassistenten"
+      "Invitation link": [
+        "Invitationslink"
+      ],
+      "Invitation message": [
+        "Invitationsbesked"
+      ],
+      "invite link": [
+        "invitationslink"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Det kan tage op til 24 timer for ændringerne at gå igennem."
       ],
       "Loading your organization data": [
         "Indlæser din organisationsdata"
@@ -3029,14 +2993,23 @@
       "Member address not found. Please contact customer support to resolve this": [
         "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
       ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrate accounts": [
+        "Migrer konti"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrer konti til ${ BRAND_NAME }"
+      ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
       ],
-      "Migrate users to ${ BRAND_NAME }": [
-        "Migrer brugere til ${ BRAND_NAME }"
-      ],
       "Migrated": [
         "Migreret"
+      ],
+      "Migrated accounts": [
+        "Migrerede konti"
       ],
       "Migration includes": [
         "Migreringen omfatter"
@@ -3048,14 +3021,17 @@
       "Migration status": [
         "Migrationsstatus"
       ],
+      "Migration summary": [
+        "Opsummering af migrationen"
+      ],
       "Missing organization private key": [
         "Mangler organisationens private nøgle"
       ],
       "Missing organization public key": [
         "Mangler organisationens offentlige nøgle"
       ],
-      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
-        "Flyt dine brugere, e-mails og indstillinger fra Google Workspace automatisk. Vi vejleder dig igennem at tilslutte din konto, bekræfte dine domæner og sikkert migrere brugere."
+      "Need help?": [
+        "Har du brug for hjælp?"
       ],
       "No error details available. Please contact customer support for more information": [
         "Ingen tilgængelige fejloplysninger. Kontakt kundesupport for mere information"
@@ -3069,6 +3045,12 @@
       "Not confirmed": [
         "Ikke bekræftet"
       ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Er det ikke rigtigt registeret? Vælg din udbyder fra listen."
+      ],
+      "Onboard your team": [
+        "Onboard dit team"
+      ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Når vi har bekræftet at e-mails bliver dirigeret til ${ BRAND_NAME }, så færdiggøres migrationen. Du vil modtage en bekræftelse på e-mail der fortæller dig hvornår dette sker. Processen kan tage op til 24 timer."
       ],
@@ -3081,26 +3063,26 @@
       "Pending": [
         "Afventer"
       ],
+      "Please don’t close or refresh this window.": [
+        "Luk eller opdater ikke dette vindue"
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Log ind igen på din Google Workspace-konto igen for at starte en migration"
+      ],
       "Refresh": [
         "Opdater"
-      ],
-      "Required to create user accounts": [
-        "Påkrævet for at oprette brugerkonti"
       ],
       "Select at least one user to start a migration": [
         "Vælg mindst én bruger for at starte en migrering"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vælg præcis det du gerne vil migrere. Det vil gælde for brugere i organisationen."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Vælg de konti du vil overføre til ${ BRAND_NAME }. Du kan migrere hele din organisation i dag, eller starte med nogle stykker og flytte resten når du er klar."
+      ],
       "Select users to migrate": [
         "Vælg brugere at migrere"
-      ],
-      "Set up": [
-        "Opsætning"
-      ],
-      "Set up billing information": [
-        "Konfigurer faktureringsoplysninger"
-      ],
-      "Set up manually": [
-        "Konfigurer manuelt"
       ],
       "Set up secure sending (DKIM)": [
         "Konfigurer sikker afsendelse (DKIM)"
@@ -3111,26 +3093,41 @@
       "Set up secure sending (SPF)": [
         "Konfigurer sikker afsendelse (SPF)"
       ],
-      "Set up two-factor authentication": [
-        "Opsæt to-faktor-godkendelse"
-      ],
       "Settings": [
         "Indstillinger"
       ],
       "Sign in to Google Workspace": [
         "Log ind på Google Workspace"
       ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Log ind med en Google Workspace-administratorkonto til ${ BRAND_NAME } for at konfigurere migrationen."
+      ],
       "Size": [
         "Størrelse"
+      ],
+      "Skip": [
+        "Spring over"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Sprang ${ count } kontakt over på grund af inkompatibilitet",
+        "Sprang ${ count } kontakter over på grund af inkompatibilitet"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Sprang ${ count } e-mail over på grund af inkompatibilitet",
+        "Sprang ${ count } e-mails over på grund af inkompatibilitet"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Sprang ${ count } begivenhed over på grund af inkompatibilitet",
+        "Sprang ${ count } begivenheder over på grund af inkompatibilitet"
       ],
       "Some accounts are not claimed": [
         "Nogle konti er ikke indløst"
       ],
-      "Start migration": [
-        "Start migrering"
-      ],
       "Status": [
         "Status"
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Installer ${ BRAND_NAME } Easy Switch fra Google Workspace Marketplace for at overføre din organisations data til ${ BRAND_NAME }. Kom tilbage her efter det er installeret for at fortsætte."
       ],
       "Update records for receiving": [
         "Opdater records for modtagelse"
@@ -3138,14 +3135,20 @@
       "User": [
         "Bruger"
       ],
+      "Users activated": [
+        "Brugere aktiveret"
+      ],
       "Users migrated": [
         "Brugere migreret"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Brugere, som ikke har indløst deres konto før migrationen er færdiggjort, vil skulle anmode om at nulstille adgangskoden fra deres ${ BRAND_NAME } organisationsadministrator."
+      ],
       "Verified": [
         "Bekræftet"
-      ],
-      "Verify domain ownership": [
-        "Bekræft domæneejerskab"
       ],
       "Verify installation": [
         "Bekræft installationen"
@@ -3156,11 +3159,23 @@
       "Verify your domain to start a migration": [
         "Bekræft dit domæne for at starte en migrering"
       ],
+      "Waiting for MX...": [
+        "Venter på MX..."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunne ikke verificere installationen. Kontrollér, at du har installeret den i din Google Workspace-konto, og prøv igen."
       ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Vi flytter til ${ BRAND_NAME }, en sikker e-mailtjeneste.\nOg din ${ BRAND_NAME }-konto er klar til at blive indløst.\nKlik på ${ inviteLink }.\nIndtast din e-mailadresse, og så sender vi dig en kode til din Gmail.\nBrug koden til at angive dit kodeord – og derefter har du din egen ${ BRAND_NAME }-konto.\nI en kort periode, vil begge kunne bruges samtidig. ${ BRAND_NAME } og Gmail.\nDerefter, når alle er flyttet, udfases Gmail. Vi giver dig besked før det sker."
+      ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har bemærket at nogle brugere ikke har oprettet deres ${ BRAND_NAME }-konti."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vi opretter dine konti og importerer dine data nu, så dit team har alt, hvad de behøver, når de begynder at bruge deres sikre ${ BRAND_NAME }-konto."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Vi skifter til end-to-end kryptering til alle. Hver e-mail, og hver begivenhed er nu din og kun din. Kun synligt til dit team. Ikke os, ikke nogle andre."
       ],
       "What are you migrating?": [
         "Hvad migrerer du?"
@@ -3170,6 +3185,9 @@
       ],
       "You're all set!": [
         "Så er du klar!"
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Du er næsten færdig. Du skal bare konfigurere dit domæne til at modtage e-mails direkte på ${ BRAND_NAME }. Når det er blevet bekræftet vil dit team ikke længere modtage nye e-mails på Gmail, og dermed er migrationen slut."
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Din nuværende plan tillader op til ${ maxMembers } bruger. Tilføj flere pladser til dit abonnement for at migrere flere brugere.",
@@ -3281,17 +3299,11 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Tilføj brugere manuelt"
-      ],
       "Cancel": [
         "Annuller"
       ],
       "Close": [
         "Luk"
-      ],
-      "Configure your network": [
-        "Konfigurer dit netværk"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
@@ -3314,12 +3326,6 @@
       "Got it": [
         "Forstået"
       ],
-      "Invite your team": [
-        "Inviter dit team"
-      ],
-      "Manage global VPN permissions": [
-        "Administrer globale VPN-tilladelser"
-      ],
       "Maybe later": [
         "Måske senere"
       ],
@@ -3329,23 +3335,22 @@
       "Remind me later": [
         "Påmind mig senere"
       ],
-      "Secure your organization": [
-        "Beskyt din organisation"
-      ],
       "Send": [
         "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funktioner"
       ],
-      "Set up SSO": [
-        "Konfigurer SSO"
-      ],
       "Sign in": [
         "Log ind"
       ],
       "Take a tour": [
         "Tag en tour"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importér ældre beskeder i ${ PRODUCT_NAMES.EASY_SWITCH } indstillinger."
       ]
     },
     "Calendar access select label": {
@@ -4224,6 +4229,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "De Kanariske Øer"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -5202,9 +5210,6 @@
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Opret en gateway for at give dine brugere adgang til dine IT-ressourcer via dedikerede servere."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Opret et Zoom-møde, og tilføj deltageroplysninger til din begivenhed med et enkelt klik."
       ],
@@ -5214,14 +5219,8 @@
       "Create groups you can email with a single address.": [
         "Opret grupper, som du kan sende e-mails til med én enkelt adresse."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Opret nye brugerkonti eller importér brugere med SSO (single sign-on) SCIM-provisionering."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Opret politikker for at afgøre, hvem der kan forbinde til delte servere i hvert land."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Bestem hvilke brugere der kan forbinde til hver af vores 120+ delte serverplaceringer."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Tilgå nemt din e-mail og kalender på desktop og mobil."
@@ -5262,8 +5261,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Alle i din organisation kan forbinde til delte servere i alle lande."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "For en smidig overgang til ${ BRAND_NAME }, importér dine data fra Google, Outlook og andre."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Importér dine data fra Google, Outlook og andre for at sikre en smidig onboarding af dit team til ${ BRAND_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
@@ -5285,9 +5284,6 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Sådan låser du op for din krypterede data hvis du mister din adgangskode."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Hvis du ikke allerede har gjort det kan du aktivere nogle gendannelsesmetoder for at sikre, at du aldrig mister adgangen til ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
@@ -5389,8 +5385,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Vi importerer dine gamle e-mails og forbinder din Gmail til ${ MAIL_APP_NAME }, så nye beskeder vises automatisk"
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi importerer dine gamle e-mails og synkroniserer nye beskeder fra Gmail fremover."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
@@ -5424,12 +5420,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Du kan stadig logge ind med denne adresse og genoprette forbindelsen når som helst."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Du vil ikke længere kunne bruge ${ address.Email } til at modtage og sende e-mails i ${ BRAND_NAME }. Bemærk at beskeder sendt til denne adresse fra ${ BRAND_NAME } ikke længere vil være end-to-end-krypteret."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
@@ -5835,14 +5825,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Skræddersyede løsninger til større organisationer med tilpassede behov"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Udvidet versionshistorik"
-      ],
-      "Priority support": [
-        "Prioriteret support"
       ]
     },
     "Duo offer": {
@@ -6518,6 +6500,9 @@
       ],
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Hvis de ikke bad om din hjælp**, er det muligt, at en anden forsøger at få adgang til deres konto. Ignorer i så fald denne anmodning."
+      ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Beskyt din arv.** Opgrader dit abonnement for at tilføje nødkontakter."
       ],
       "Access account": [
         "Adgangskonto"
@@ -7204,6 +7189,9 @@
       "Invalid private key file": [
         "Ugyldig privatnøglefil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ugyldigt nulstillingstoken. Opdater siden og prøv igen."
+      ],
       "Invalid Sieve code": [
         "Ugyldig Sieve-kode"
       ],
@@ -7443,6 +7431,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong while converting the address": [
+        "Noget gik galt under konverteringen af adressen"
       ],
       "Something went wrong while creating the address": [
         "Noget gik galt under oprettelsen af adressen"
@@ -7994,19 +7985,9 @@
         "Du kan gemme en ICS-fil med de begivenheder, der blev eksporteret korrekt."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB samlet lagerplads"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Din kontos fordele"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagerplads er delt mellem familiemedlemmer på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -8039,11 +8020,6 @@
       ],
       "View invitation": [
         "Vis invitation"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Op til 6 brugere"
       ]
     },
     "familyOffer_2023:Error": {
@@ -8301,17 +8277,6 @@
       ],
       "Set family name": [
         "Angiv familienavn"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2700 servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inkluderer support til 3 bruger-e-maildomæner, 90 e-mailadresser, ubegrænsede hide-my-email-aliasser, kalenderdeling med mere."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
       ]
     },
     "Feature": {
@@ -8867,9 +8832,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Beskrivelse:"
-      ],
       "Group address:": [
         "Gruppeadresse:"
       ],
@@ -8935,6 +8897,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Tilføj delegerede roller til en gruppe for kun at give dens medlemmer de specifikke tilladelser de har brug for, og dermed holde fuld admin-adgang separat og dit miljø sikkert."
+      ],
       "General": [
         "Generelt"
       ],
@@ -9518,8 +9483,14 @@
       "Imported": [
         "Importeret"
       ],
+      "In progress": [
+        "I gang"
+      ],
       "In progress...": [
         "I gang..."
+      ],
+      "Migrated": [
+        "Migreret"
       ],
       "Paused": [
         "Sat på pause"
@@ -9537,6 +9508,9 @@
       ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Mail": [
         "E-mail"
@@ -9654,6 +9628,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } bruger skal acceptere sin invitation for at begynde at modtage gruppe-e-mails.",
+        "${ invitedMemberCount } brugere skal acceptere deres invitation for at begynde at modtage gruppe-e-mails."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker at dele data med dig i ${ PASS_APP_NAME }"
       ],
@@ -9727,6 +9705,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
+        "${ pendingAdminMemberCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
@@ -9876,32 +9858,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importér dine eksisterende adgangskoder** fra andre 2FA-apps, så som Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Trin 1: Inviter dine venner** til ${ BRAND_NAME } med dit henvisningslink."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Trin 1:** Inviter dine venner til ${ BRAND_NAME } med dit henvisningslink."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Trin 2:** Dine venner får **2 uger gratis** i deres abonnement."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Trin 2:** Dine venner får 2 uger gratis på deres abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver person, der opretter et abonnement."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Trin 3:** Få **${ referrerRewardAmount } i kredit** for hver person, der opretter et abonnement."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter dine venner** til ${ BRAND_NAME } med dit henvisningslink."
       ],
       "**Sync codes** to all your devices": [
         "**Synkroniser koder** med alle dine enheder"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får${ refereeRewardAmount }** i kredit, hvis de tegner et abonnement."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Dette deaktiverer 2-faktor-godkendelse.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Dette vil deaktivere end-to-end krypterede e-mail-videresendelser:** Du kan sætte dem op igen senere."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Din e-mail til gendannelse alene giver dig ikke adgang til at gendanne dine krypterede data** efter du har nulstillet din adgangskode."
@@ -10640,6 +10613,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kan du huske din adgangskode? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vil du tilbagekalde alle andre sessioner end den nuværende?"
       ],
@@ -10721,6 +10697,9 @@
       ],
       "Edit link": [
         "Rediger link"
+      ],
+      "Editing requires permission": [
+        "Du skal have tilladelse til at redigere"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfiguration gemt"
@@ -10956,6 +10935,9 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
       ],
+      "Forgot password?": [
+        "Glemt din adgangskode?"
+      ],
       "Free forever": [
         "Gratis for evigt"
       ],
@@ -11007,9 +10989,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Få besked, hvis din adgangskode eller øvrige personlige data er blevet lækket. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Kom i gang"
-      ],
       "Get started with the referral link above.": [
         "Kom i gang med henvisningslinket ovenfor."
       ],
@@ -11051,6 +11030,9 @@
       ],
       "here": [
         "her"
+      ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Hej! Beskriv det filter, du ønsker, så skriver jeg Sieve-scriptet. Jeg kan også justere det, der allerede er i editoren."
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skjuler identifikationsoplysninger ved at indlæse eksternt indhold via en proxy. Mulighed for at gemme indhold som vedhæftede filer."
@@ -11553,6 +11535,9 @@
       "New activity data will stop being collected and shown.": [
         "Nye aktivitetsdata vil ophøre med at blive indsamlet og vist."
       ],
+      "New group created via your identity provider and pending review.": [
+        "Ny gruppe oprettet via din identitetsudbyder og afventer gennemgang."
+      ],
       "New sidebar": [
         "Nyt sidepanel"
       ],
@@ -11759,6 +11744,9 @@
       "Password must have:": [
         "Adgangskoden skal have:"
       ],
+      "Password verified": [
+        "Adgangskode bekræftet"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
       ],
@@ -11770,6 +11758,9 @@
       ],
       "per month, billed at ${ price }": [
         "per måned, faktureret til ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Beder dig om at bekræfte din ${ BRAND_NAME }-adgangskode en gang imellem for at sikre, at du ikke glemmer den. Du vil blive spurgt mindre og mindre efterhånden."
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP-klienter er mere tilbøjelige til automatisk at registrere dine PGP-nøgler, hvis udgående beskeder er signerede."
@@ -11832,6 +11823,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Vælg venligst de mapper, du ønsker at importere:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vælg venligst de labels, du ønsker at importere:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Vælg den type link du ønsker at indsætte og udfyld alle felterne."
@@ -11986,6 +11980,9 @@
       "Request a phone call": [
         "Anmod om et telefonopkald"
       ],
+      "Required to complete the migration": [
+        "Krævet for at færdiggøre migrationen"
+      ],
       "Resend verification email": [
         "Gensend bekræftelsesmail"
       ],
@@ -12087,9 +12084,6 @@
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Konfigurer din organisation, og begynd at beskytte dine data med få enkle trin."
       ],
       "Setting successfully saved": [
         "Indstillingen er gemt"
@@ -12397,6 +12391,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
       ],
+      "Thinking…": [
+        "Tænker…"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -12591,6 +12588,9 @@
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "For at holde din konto sikker skal vi sikre os at det faktisk er dig der prøver at logge ind."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For at hjælpe dig med at huske din adgangskode, beder vi dig om at indtaste den en gang imellem. Vi spørger dig mindre og mindre efterhånden."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
@@ -12925,6 +12925,9 @@
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
       ],
+      "We'll remind you to verify your password again later": [
+        "Vi minder dig om at bekræfte din adgangskode igen senere"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
@@ -13147,6 +13150,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
+      ],
+      "You do not have permission to create users.": [
+        "Du har ikke tilladelse til at oprette brugere."
       ],
       "You do not have permission to perform this action": [
         "Du har ikke tilladelse til at udføre denne handling"
@@ -13524,11 +13530,6 @@
         "Kun visning"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Sådan vises din organisation for brugerne. Du kan altid ændre det."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Ikke en gyldig e-mailadresse"
@@ -13542,11 +13543,6 @@
     "Input placeholder": {
       "Add label": [
         "Tilføj etiket"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Hvad er navnet på din organisation?"
       ]
     },
     "invitation status": {
@@ -13899,6 +13895,16 @@
         "Ugevisning"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Skift til ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Skift til ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Genveje til handling"
@@ -13911,6 +13917,9 @@
       ],
       "Composer shortcuts": [
         "Skrivevinduegenveje"
+      ],
+      "Desktop app navigation": [
+        "Navigering på skrivebordsappen"
       ],
       "Folder shortcuts": [
         "Mappegenveje"
@@ -14340,6 +14349,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendere"
+      ],
       "Capitalize words": [
         "Skriv ord med store begyndelsesbogstaver"
       ],
@@ -14590,6 +14602,9 @@
       "Donation amount": [
         "Donationsbeløb"
       ],
+      "Drive": [
+        "Drev"
+      ],
       "Duration": [
         "Varighed"
       ],
@@ -14616,6 +14631,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail med @dinvirksomhed.com domæne"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle beskeder)"
@@ -14658,6 +14676,9 @@
       ],
       "Enter code": [
         "Indtast kode"
+      ],
+      "Enter current password": [
+        "Indtast nuværende adgangskode"
       ],
       "Enter name or email address": [
         "Tilføj navn eller e-mailadresse"
@@ -14811,6 +14832,9 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Import your emails": [
+        "Importér dine e-mails"
       ],
       "Inbox": [
         "Indbakke"
@@ -15097,6 +15121,9 @@
       "Password": [
         "Adgangskode"
       ],
+      "Password reminders": [
+        "Adgangskodepåmindelser"
+      ],
       "Password strength": [
         "Adgangskodestyrke"
       ],
@@ -15252,6 +15279,9 @@
       ],
       "See your team's availability": [
         "Se dit teams tilgængelighed"
+      ],
+      "Select an identity provider to start": [
+        "Vælg en identitetsudbyder for at begynde"
       ],
       "Select Linux package format": [
         "Vælg Linux-pakkeformat"
@@ -15684,8 +15714,17 @@
       "Invalid ${ group.name } record found": [
         "Ugyldigt ${ group.name }-record fundet"
       ],
+      "Priority": [
+        "Prioritet"
+      ],
+      "Status": [
+        "Status"
+      ],
       "Type": [
         "Type"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Brug standardværdi (f.eks. “@”)"
       ],
       "Valid ${ group.name } record found": [
         "Gyldigt ${ group.name }-record fundet"
@@ -15788,11 +15827,6 @@
         "Til: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Vælg en identitetsudbyder for at starte"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "For at tilføje en ny kalender, skal du fjerne en eksisterende kalender."
@@ -15880,6 +15914,9 @@
       "Forgot username?": [
         "Glemt brugernavn?"
       ],
+      "Frequent sign-in problems": [
+        "Typiske login-problemer"
+      ],
       "General": [
         "Generelt"
       ],
@@ -15889,11 +15926,17 @@
       "Get ${ VPN_APP_NAME }": [
         "Få ${ VPN_APP_NAME }"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjælp fra ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Groups": [
         "Grupper"
       ],
       "Help": [
         "Hjælp"
+      ],
+      "Help & support": [
+        "Hjælp & Support"
       ],
       "Help translate": [
         "Hjælp med at oversætte"
@@ -16008,9 +16051,6 @@
       ],
       "Sign in": [
         "Log ind"
-      ],
-      "Sign-in help": [
-        "Hjælp til login"
       ],
       "Snap store": [
         "Snap store"
@@ -16608,6 +16648,9 @@
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Nyd to uger med ${ BRAND_NAME } gratis"
       ],
+      "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
+        "Oplev et reelt online privatliv med en sikker e-mail, cloud-lagring, adgangskodeadministrator, og VPN. Bliv en del af ${ BRAND_NAME } i dag, og få ${ refereeRewardAmount } i rabat på dit næste abonnement."
+      ],
       "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
         "Oplev ægte online privatlivsbeskyttelse. Beskyt dine data med ${ BRAND_NAME } gratis de næste 14 dage."
       ],
@@ -16619,6 +16662,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Har du glemt brugernavnet til ${ BRAND_NAME }-kontoen? Find det ved hjælp af din e-mail eller dit telefonnummer til gendannelse, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
+      ],
+      "Join ${ BRAND_NAME } and get ${ refereeRewardAmount } in credits": [
+        "Bliv en del af ${ BRAND_NAME } og få ${ refereeRewardAmount } i kredit"
       ],
       "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
         "Gendan adgangen til den private ${ BRAND_NAME } e-mailadresse, der er reserveret til dit barn."
@@ -18034,11 +18080,17 @@
       "1-2 emails per month": [
         "1-2 e-mails pr. måned"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 e-mails om året. Påmindelser om at holde dine gendannelsesmetoder opdaterede."
+      ],
       "2-4 emails per year": [
         "2-4 e-mails pr. år"
       ],
       "4-6 emails per year": [
         "4-6 e-mails om året"
+      ],
+      "Account email updates": [
+        "Kontoopdateringer på e-mail"
       ],
       "Application notifications": [
         "Applikationsnotifikationer"
@@ -18064,8 +18116,11 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Deltag i undersøgelser for at forbedre ${ BRAND_NAME }-tjenester"
       ],
-      "Product updates": [
-        "Produktopdateringer"
+      "Product email updates": [
+        "Produktopdateringer på e-mail"
+      ],
+      "Recovery checklist": [
+        "Gendannelsestjekliste"
       ]
     },
     "Notification": {
@@ -18086,6 +18141,9 @@
       ],
       "An external address cannot be default": [
         "En ekstern adresse kan ikke være standard"
+      ],
+      "Copied to clipboard": [
+        "Kopieret til udklipsholder"
       ],
       "Downloaded 2FA recovery codes": [
         "Hentede 2FA-gendannelseskoder"
@@ -18134,6 +18192,9 @@
       ],
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
+      ],
+      "Sieve script inserted": [
+        "Sieve-script indsat"
       ],
       "The key has been deleted.": [
         "Nøglen er blevet slettet."
@@ -19288,6 +19349,28 @@
         "Tidsbegrænset tilbud."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Kan du huske din ${ BRAND_NAME }-adgangskode?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Den bedste måde at undgå at miste adgangen til din konto og dine data er ved at huske dine legitimationsoplysninger."
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Du kan miste adgang til dine krypterede data, hvis du glemmer din adgangskode."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Sørg for at du husker din adgangskode eller opbevarer den sikkert, da den er nøglen til at dekryptere dine data."
+      ],
+      "Turn off password reminders?": [
+        "Slå adgangskodepåmindelser fra?"
+      ],
+      "Turn off reminders": [
+        "Slå påmindelser fra"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Alle dine eksisterende data** (e-mails, events, kontakter, filer, ${ PASS_APP_NAME }-poster osv.) **bliver låst** og kan kun låses op med din **gamle adgangskode**."
@@ -19780,6 +19863,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Describe the filter you want…": [
+        "Beskriv det filter du ønsker..."
+      ],
       "domain.com": [
         "domæne.dk"
       ],
@@ -19806,9 +19892,6 @@
       ],
       "Enter a name": [
         "Indtast et navn"
-      ],
-      "Enter name": [
-        "Indtast navn"
       ],
       "example@domain.com": [
         "eksempel@domæne.dk"
@@ -20177,15 +20260,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
       ],
-      "SPRING SALE 2026": [
-        "FORÅRSALG 2026"
+      "Summer Sale": [
+        "Sommerudsalg"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/måned"
       ],
@@ -20204,35 +20287,17 @@
       "500 GB storage": [
         "500 GB lagerplads"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Få adgang til 15.000+ servere i 120+ lande"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Adgang til avancerede AI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle premiumfunktioner i Mail, Pass, Drive, VPN og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloker annoncer, trackere og malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Indbygget 2FA-godkender"
-      ],
-      "Connect 10 devices at once": [
-        "Forbind 10 enheder på én gang"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Forlæng dit abonnement og spar ${ discountPercent } %!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Fuld adgang til ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fuld chathistorik med nem søgning og favoritter"
       ],
       "Individual accounts for 6 users": [
         "Individuelle konti til 6 brugere"
@@ -20240,8 +20305,8 @@
       "Individual accounts for you and a partner": [
         "Individuelle konti til dig og en partner"
       ],
-      "Online document editor": [
-        "Online dokumenteditor"
+      "Online document and spreadsheet editor": [
+        "Online-editor til dokumenter og regneark"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -20252,25 +20317,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Ubegrænset antal daglige chats"
-      ],
       "Unlimited folders, labels, and filters": [
         "Ubegrænset antal mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænset antal hide-my-email-aliasser"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "i 12 måneder"
       ],
-      "SPRING SALE": [
-        "FORÅR SALG"
+      "SUMMER SALE": [
+        "SOMMERUDSALG"
       ]
     },
     "Recovery Email": {
@@ -20352,23 +20411,17 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } gennemført"
       ],
-      "Account protection": [
-        "Kontobeskyttelse"
-      ],
       "Add more options for stronger protection": [
         "Tilføj flere muligheder for bedre beskyttelse"
       ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Tilføj flere muligheder for at undgå at blive låst ude af din konto."
+      "Check your access to your recovery options": [
+        "Tjek adgangen til dine gendannelsesmuligheder"
       ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Fantastisk. Hold dine muligheder opdateret løbende for stærkere beskyttelse."
+      "Critical": [
+        "Kritisk"
       ],
-      "Good start. Add more options for a stronger protection.": [
-        "Det er en god start. Tilføj flere muligheder for bedre beskyttelse."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Super. Tilføj flere muligheder for bedre beskyttelse."
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Undgå at blive låst ude af din ${ BRAND_NAME }-konto"
       ],
       "How you increased your account protection": [
         "Sådan forbedrede du din kontobeskyttelse"
@@ -20382,6 +20435,9 @@
       "Partial": [
         "Delvis"
       ],
+      "Recoverability": [
+        "Gendannelighed"
+      ],
       "Recovery score: ${ score }": [
         "Gendannelses-score: ${ score }"
       ],
@@ -20394,11 +20450,44 @@
       "Strong": [
         "Stærk"
       ],
-      "Unprotected": [
-        "Ubeskyttet"
+      "Take precautions to avoid losing access": [
+        "Tag foranstaltninger for at undgå at miste adgang"
       ],
       "Weak": [
         "Svag"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Du er helt beskyttet. En periodisk gennemgang sikrer at alting stadig fungerer efterhånden som dine enheder og kontakter ændrer sig over tid."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Du er der delvist, men du er stadig ikke sikker. En glemt adgangskode kan stadig betyde, at du mister dine e-mails, filer og adgangskoder."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Du er stadig i fare. Du kan permanent miste dine e-mails, filer og adgangskoder, hvis du glemmer din adgangskode."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Du er godt beskyttet, men der er stadig mangler. Flere gendannelsesmuligheder giver dig et stærkere sikkerhedsnet, hvis du skulle miste din adgangskode."
+      ],
+      "Your account and data can be recovered": [
+        "Din konto og dine data kan gendannes"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Din konto har ingen gendannelsesmuligheder konfigureret. Hvis du mister din adgangskode, mister du permanent adgang til dine e-mails, filer og adgangskoder."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Din konto er ikke helt beskyttet. En glemt adgangskode kan stadig betyde, at du mister dine e-mails, filer og adgangskoder."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Din gendannelseskonfiguration er mangelfuld. Du kan permanent miste adgang til dine e-mails, filer og adgangskoder, hvis du glemmer din adgangskode."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Din gendannelseskonfiguration er strålende. Hold dine muligheder opdateret, så de stadig virker når du har brug for dem."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Din gendannelseskonfiguration er ufærdig. En glemt adgangskode kan stadig betyde, at du mister dine e-mails, filer og adgangskoder."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Din gendannelseskonfiguration er solid med nogle små mangler. Hver mulighed du tilføjer gør dit sikkerhedsnet stærkere."
       ]
     },
     "Recovery score item": {
@@ -20542,14 +20631,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Nyd **${ planTitle }** gratis indtil **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Giv 2 uger, få ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Giv ${ refereeRewardAmount }, få ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Sådan fungerer din gratis prøveperiode:"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Jeg har brugt ${ BRAND_NAME }, og jeg tænkte, at du måske vil kunne lide det. Det er en sikker e-mail, sky-lagring, adgangskodeadministrator og VPN, der beskytter dit privatliv. Tilmeld dig med dette link for at få 14 dages premium-funktioner gratis: ${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Jeg har brugt ${ BRAND_NAME }, og jeg tænkte, at du måske vil kunne lide det. Det er en sikker e-mail, sky-lagring, adgangskodeadministrator og VPN, der beskytter dit privatliv. Tilmeld dig med dette link for at få ${ refereeRewardAmount } i rabat på dit næste abonnement: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Hvis du annullerer inden da, nedgraderes du til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, når prøveversionen udløber. Hvis du ikke annullerer, starter dit fulde abonnement, og du modtager **${ referrerRewardAmount }** i kreditter."
@@ -20584,9 +20673,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Du har **${ daysRemaining } dag tilbage** til at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde.",
         "Du har **${ daysRemaining } dage tilbage** til at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Din ven vil også modtage ${ refereeRewardAmount } til indløsning på deres næste regning!"
       ],
       "your subscription": [
         "dit abonnement"
@@ -20851,6 +20937,28 @@
       ],
       "Edit retention rule": [
         "Ret opbevaringsregel"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ejer"
+      ],
+      "Security Admin": [
+        "Sikkerhedsadmin"
+      ],
+      "User Admin": [
+        "Brugeradmin"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
       ]
     },
     "Safety review": {
@@ -21354,6 +21462,9 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Dette genopretter adgangen til e-mails, kontakter, filer, adgangskoder, og alt andet krypteret data på din konto efter adgangskoden er blevet nulstillet."
       ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "For at hjælpe dig med at huske din adgangskode vil vi med jævne mellemrum bede dig om at indtaste den."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Indtast bekræftelseskoden sendt til ${ boldEmail } for at bekræfte at e-mailadressen er din."
       ],
@@ -21386,6 +21497,9 @@
       ],
       "Verify recovery phone": [
         "Bekræft telefon til gendannelse"
+      ],
+      "Verify your password": [
+        "Bekræft din adgangskode"
       ],
       "Verify your recovery email": [
         "Bekræft din e-mail til gendannelse"
@@ -22208,8 +22322,8 @@
       "Connect all your devices": [
         "Forbind alle dine enheder"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Fortsæt med ${ PLAN_NAMES[plan] }"
+      "Continue with ${ planName }": [
+        "Fortsæt med ${ planName }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
@@ -22237,6 +22351,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratis i ${ TRIAL_DURATION_DAYS } dage"
+      ],
+      "From ${ priceElement }": [
+        "Fra ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Få ${ referralInfo.uiData.refereeRewardAmount } i kreditter"
@@ -22338,6 +22455,9 @@
       "Share and collaborate of files": [
         "Del og samarbejd om filer"
       ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Tilmeld dig og få ${ referralInfo.uiData.refereeRewardAmount } i kredit"
+      ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "Tilmeld dig ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
@@ -22382,9 +22502,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Prøv ${ BRAND_NAME } i ${ TRIAL_DURATION_DAYS } dage gratis,${ br } og få ${ referralInfo.uiData.refereeRewardAmount } i kredit"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Prøv ${ BRAND_NAME } gratis i 14 dage"
       ],
       "Try ${ planName } for free": [
         "Få ${ planName } gratis"
@@ -22639,18 +22756,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 brugere"
-      ],
-      "All paid Mail and Calendar features": [
-        "Alle betalte Mail og Kalender funktioner"
-      ],
-      "High speed VPN": [
-        "Højhastigheds-VPN"
-      ],
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
       ],
@@ -22663,17 +22768,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "Premium tidlig adgang"
-      ],
-      "Secure cloud storage": [
-        "Sikker Cloud-lagerplads"
-      ],
       "Secure streaming": [
         "Sikker streaming"
-      ],
-      "Support online privacy": [
-        "Støt online privatlivsbeskyttelse"
       ]
     },
     "specialoffer: Footer": {
@@ -22717,72 +22813,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
       "/ month": [
         "/måned"
       ],
       "/month": [
         "/måned"
       ],
-      "1 year": [
-        "1 år"
-      ],
-      "15 months": [
-        "15 måneder"
-      ],
-      "2 years": [
-        "2 år"
-      ],
-      "30 months": [
-        "30 måneder"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Faktureret med ${ amount } for 1 måned"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Faktureret med ${ amount } for 12 måneder"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Faktureret med ${ amount } for 15 måneder"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Faktureret med ${ amount } for 24 måneder"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Faktureret med ${ amount } for 30 måneder"
-      ],
       "Get the deal": [
         "Tag imod tilbuddet"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Fornyes efter 1 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Fornyes efter 2 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
-      ],
       "Save ${ discount }%": [
         "Spar ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Standard pris ${ amount } for 1 måned"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Standard pris ${ amount } for 12 måneder"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Standard pris ${ amount } for 15 måneder"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Standard pris ${ amount } for 24 måneder"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Standard pris ${ amount } for 30 måneder"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Dette særtilbud gælder i de første 2 år"
       ]
     },
     "specialoffer: Title": {
@@ -22809,29 +22850,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få adgang til blokeret indhold og browse privat. Inkluderer 1700 servere i 60+ lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og mere."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få adgang til blokeret indhold, og browse privat. Inkluderer 1700 servere i mere end 60 lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdomæne."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Modtag betalingsversioner af alle nye privatlivstjenester, vi frigiver i fremtiden, uden ekstra omkostninger, samt forhåndsadgang til alle fremtidige funktioner og produkter."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
       ]
     },
     "Spotlight": {
@@ -23389,6 +23407,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } bruger",
         "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } brugere"
@@ -24082,6 +24103,12 @@
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
       ],
+      "Password reminders disabled": [
+        "Adgangskodepåmindelser deaktiveret"
+      ],
+      "Password reminders enabled": [
+        "Adgangskodepåmindelser aktiveret"
+      ],
       "Password updated": [
         "Adgangskode opdateret"
       ],
@@ -24281,20 +24308,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detaljer om begivenheder der ikke kunne eksporteres"
-      ]
-    },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Opret sikre login-oplysninger på alle dine enheder. Inkluderer ubegrænsede aliasser, 20 bokse, integreret 2FA, betalingskort-autofyld og meget mere."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2950+ servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og meget mere."
       ]
     },
     "Tab": {
@@ -24503,6 +24516,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } ven har abonneret",
         "${ friendsSubscribed } venner har abonneret"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Eksportværktøj til ${ MAIL_APP_NAME }"
@@ -25004,6 +25020,9 @@
       "Dashboard": [
         "Kontrolpanel"
       ],
+      "Data collection": [
+        "Dataindsamling"
+      ],
       "Data locked": [
         "Data låst"
       ],
@@ -25130,9 +25149,6 @@
       ],
       "Disconnected from Gmail": [
         "Forbindelsen til Gmail er afbrudt"
-      ],
-      "Dismiss setup checklist": [
-        "Skjul konfigurationstjekliste"
       ],
       "Display name and signature": [
         "Visningsnavn og signatur"
@@ -25423,9 +25439,6 @@
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
       ],
-      "Get started": [
-        "Kom i gang"
-      ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Få appen på alle dine enheder, og nyd sikker, problemfri adgang overalt."
       ],
@@ -25455,6 +25468,9 @@
       ],
       "Help center": [
         "Hjælp-center"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjælp fra ${ LUMO_SHORT_APP_NAME }"
       ],
       "Help us improve": [
         "Hjælp os med at blive bedre"
@@ -25598,6 +25614,9 @@
       "Messages and composing": [
         "Beskeder og skrivning"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Flyt din organisation til ${ BRAND_NAME }"
+      ],
       "Migration assistant": [
         "Migrationsassistent"
       ],
@@ -25675,6 +25694,9 @@
       ],
       "Open pagination": [
         "Åbn sidenummerering"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN": [
         "OpenVPN"
@@ -25783,6 +25805,9 @@
       ],
       "Priority support:": [
         "prioriteret support:"
+      ],
+      "Privacy": [
+        "Privatliv"
       ],
       "Privacy and data collection": [
         "Privatliv og dataindsamling"
@@ -26130,6 +26155,9 @@
       "Summary": [
         "Sammenfatning"
       ],
+      "Summer Sale": [
+        "Sommerudsalg"
+      ],
       "Support ticket closed": [
         "Supportsag lukket"
       ],
@@ -26286,6 +26314,9 @@
       "Verify your email": [
         "Bekræft din e-mail"
       ],
+      "Verify your password": [
+        "Bekræft din adgangskode"
+      ],
       "Verifying your card...": [
         "Bekræfter dit kort..."
       ],
@@ -26324,9 +26355,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Velkommen til ${ planName }."
       ],
       "Welcome to your new password manager!": [
         "Velkommen til din nye adgangskodeadministrator!"
@@ -26438,6 +26466,15 @@
       ]
     },
     "Title header": {
+      "Date": [
+        "Dato"
+      ],
+      "Organization migrations": [
+        "Migrationer af organisationer"
+      ],
+      "Personal accounts": [
+        "Personlige konti"
+      ],
       "Size": [
         "Størrelse"
       ]
@@ -26640,6 +26677,9 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inkluderer professionelle e-mails med @ditdomæne.com, lagerplads i skyen med dokumenter der kan samarbejdes om, planlægning og afholdelse af videomøder, adgangskodehåndtering, en sikker ${ VPN_SHORT_APP_NAME }, og mere."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer, der ikke bruger tofaktorgodkendelse, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Enkeltlogonbrugere vil ikke modtage e-mailpåmindelsen."
       ],
@@ -26831,8 +26871,8 @@
       "User is a group": [
         "Brugeren er en gruppe"
       ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
@@ -27164,7 +27204,7 @@
         "(via gruppe)"
       ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
-        "Tilføj delegerede roller til en bruger for kun at give dem de specifikke tilladelser de har brug for, og dermed holde fuld admin-adgang seperat og dit miljø sikkert."
+        "Tilføj delegerede roller til en bruger for kun at give dem de specifikke tilladelser de har brug for, og dermed holde fuld admin-adgang separat og dit miljø sikkert."
       ],
       "Add multiple users": [
         "Tilføj flere brugere"

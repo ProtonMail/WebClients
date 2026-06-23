@@ -287,9 +287,6 @@
       "Create new policy": [
         "Criar uma política"
       ],
-      "Create organization": [
-        "Criar organização"
-      ],
       "Create users": [
         "Criar usuários"
       ],
@@ -533,6 +530,9 @@
       "Get Deal": [
         "Obter desconto"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtenha ajuda do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Get in touch": [
         "Entre em contato"
       ],
@@ -643,6 +643,9 @@
       ],
       "Keep my subscription": [
         "Manter minha assinatura"
+      ],
+      "Later": [
+        "Mais tarde"
       ],
       "Learn about recovery options": [
         "Saiba mais sobre as opções de recuperação"
@@ -907,9 +910,6 @@
       ],
       "Save": [
         "Salvar"
-      ],
-      "Save & exit": [
-        "Salvar e sair"
       ],
       "Save address": [
         "Salvar endereço"
@@ -1226,6 +1226,9 @@
       "Verify domain": [
         "Verificar domínio"
       ],
+      "Verify now": [
+        "Verificar agora"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificar o domínio ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1361,6 +1364,9 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "Add-on": [
+        "Complemento"
       ],
       "Dedicated VPN servers": [
         "Servidores de VPN dedicados"
@@ -1983,20 +1989,8 @@
       ]
     },
     "BOSS": {
-      "Account connected": [
-        "Conta conectada"
-      ],
-      "Account disconnected": [
-        "Conta desconectada"
-      ],
       "Activated": [
         "Ativado"
-      ],
-      "Add domain": [
-        "Adicionar domínio"
-      ],
-      "Add users": [
-        "Adicionar usuários"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
@@ -2004,29 +1998,17 @@
       "All": [
         "Todos"
       ],
-      "Authenticate": [
-        "Autenticar"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentique sua conta do Google Workspace"
-      ],
       "Calendar": [
         "Calendário"
-      ],
-      "Configure domain": [
-        "Configurar domínio"
       ],
       "Configure migration": [
         "Configurar migração"
       ],
-      "Configure your domain": [
-        "Configure seu domínio"
-      ],
       "Contacts": [
         "Contatos"
       ],
-      "Domain added": [
-        "Domínio adicionado"
+      "Emails": [
+        "E-mails"
       ],
       "Errors": [
         "Errors"
@@ -2034,17 +2016,8 @@
       "Estimated size": [
         "Tempo estimado"
       ],
-      "Failed to load OAuth": [
-        "Falha ao carregar o OAuth"
-      ],
       "Find out what can be migrated.": [
         "Descubra o que pode ser migrado."
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplicativo do Google Marketplace para copiar dados para a ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Conta do Google Workspace"
       ],
       "Has errors": [
         "Tem erros"
@@ -2052,30 +2025,11 @@
       "In progress": [
         "Em processo"
       ],
-      "Install app": [
-        "Instalar aplicativo"
-      ],
-      "Install migration app": [
-        "Instalar aplicativo de migração"
-      ],
-      "Loading your organization data": [
-        "Carregando os dados da sua organização"
-      ],
-      "Mail": [
-        "E-mail"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrar do Google Workspace"
+      "Migrate": [
+        "Migrar"
       ],
       "Migrated": [
         "Migrado"
-      ],
-      "Migration includes": [
-        "A migração foi concluída"
-      ],
-      "Migration started for ${ n } user": [
-        "Migração iniciada para ${ n } usuário",
-        "Migração iniciada para ${ n } usuários"
       ],
       "Migration status": [
         "Status da migração"
@@ -2092,9 +2046,6 @@
       "Not activated": [
         "Não ativado"
       ],
-      "Not confirmed": [
-        "Não confirmado"
-      ],
       "Organization does not have enough seats available": [
         "A organização não tem licenças suficientes disponíveis"
       ],
@@ -2104,71 +2055,23 @@
       "Pending": [
         "Pendente"
       ],
-      "Refresh": [
-        "Atualizar"
-      ],
-      "Select at least one user to start a migration": [
-        "Selecione pelo menos um usuário para iniciar uma migração"
-      ],
       "Select users to migrate": [
         "Selecione os usuários a serem migrados"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Configurar envio seguro (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Configurar envio seguro (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Configurar envio seguro (SPF)"
-      ],
-      "Settings": [
-        "Configurações"
-      ],
-      "Sign in to Google Workspace": [
-        "Iniciar sessão do Google Workspace"
       ],
       "Size": [
         "Tamanho"
       ],
-      "Some accounts are not claimed": [
-        "Algumas contas não foram reivindicadas"
-      ],
       "Status": [
         "Status"
       ],
-      "Update records for receiving": [
-        "Atualize os registros para recener"
-      ],
       "User": [
         "Usuário"
-      ],
-      "Users migrated": [
-        "Usuários migrados"
-      ],
-      "Verified": [
-        "Verificado"
-      ],
-      "Verify installation": [
-        "Verificar instalação"
-      ],
-      "Verify your domain": [
-        "Verifique seu domínio"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifique seu domínio para iniciar uma migração"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Não foi possível verificar a instalação. Verifique se você a instalou na sua conta do Google Workspace e tente novamente."
       ],
       "What are you migrating?": [
         "O que você está migrando?"
       ],
       "You": [
         "Você"
-      ],
-      "You're all set!": [
-        "Tudo pronto!"
       ]
     },
     "Browser": {
@@ -2266,14 +2169,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Adicionar usuários manualmente"
-      ],
       "Close": [
         "Fechar"
-      ],
-      "Configure your network": [
-        "Configurar sua rede"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
@@ -2293,29 +2190,17 @@
       "Discover and set up features": [
         "Descubra e configure os recursos"
       ],
-      "Invite your team": [
-        "Convidar sua equipe"
-      ],
-      "Manage global VPN permissions": [
-        "Gerenciar permissões globais da VPN"
-      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
       "Remind me later": [
         "Lembre-me mais tarde"
       ],
-      "Secure your organization": [
-        "Proteja sua organização"
-      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configure outros recursos"
-      ],
-      "Set up SSO": [
-        "Configurar SSO"
       ],
       "Take a tour": [
         "Faça um tour"
@@ -2805,6 +2690,9 @@
       ],
       "Canada": [
         "Canadá"
+      ],
+      "Canary Islands": [
+        "Ilhas Canárias"
       ],
       "Cape Verde": [
         "Cabo Verde"
@@ -3658,23 +3546,14 @@
       "Connect your CRM, website, printers, and more.": [
         "\"Conecte seu CRM, site, impressoras e outros dispositivos."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Crie um Gateway para dar aos seus usuários acesso aos seus recursos de TI através de servidores dedicados."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crie uma reunião no Zoom e adicione detalhes de participação ao seu evento com um clique."
       ],
       "Create groups you can email with a single address.": [
         "Crie grupos que podem ser contatados por meio de um único endereço de e-mail."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Criar novas contas de usuário ou importar usuários com provisionamento SCIM de SSO (autenticação única)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode se conectar a servidores compartilhados em cada país."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decida quais usuários podem conectar a cada uma das nossas mais de 120 localizações de servidor compartilhadas."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Tenha acesso facilitado ao seu e-mail e calendário, tanto no computador quanto em dispositivos móveis."
@@ -3700,6 +3579,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espaço suficiente para anos de e-mails, anexos e muito mais."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Garanta o acesso seguro aos dados da organização, mesmo que sua equipe esteja trabalhando remotamente ou utilizando redes Wi-Fi públicas."
       ],
@@ -3711,9 +3593,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Todos na sua organização podem se conectar a servidores compartilhados em todos os países."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Para uma transição sem interrupções para o ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
@@ -3733,9 +3612,6 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Como apoiamos ativistas locais quando a privacidade e a liberdade de expressão foram ameaçadas."
       ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Se você ainda não tiver feito isso, ative alguns métodos de recuperação para garantir que você nunca perca acesso ao ${ VPN_APP_NAME }."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
       ],
@@ -3754,6 +3630,9 @@
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode se conectar a servidores compartilhados."
       ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Leia, responda e fique por dentro do Gmail de dentro do ${ MAIL_APP_NAME }"
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configure contas para todos os usuários e convide-os a ingressar no ${ BRAND_NAME }."
       ],
@@ -3762,6 +3641,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Precisa de ajuda? Nossa equipe de suporte está aqui para você."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isso pode acontecer se as permissões foram removidas ou se a sua senha foi alterada."
       ],
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "Para conectar um endereço Gmail diferente, remova os endereços extras do Gmail que estão sendo encaminhados para ${ BRAND_NAME }."
@@ -3802,9 +3684,6 @@
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
-      ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
@@ -4749,6 +4628,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Something went wrong while converting the address": [
+        "Ocorreu um erro ao converter o endereço"
+      ],
       "Something went wrong while creating the address": [
         "Algo deu errado ao criar o endereço"
       ],
@@ -4868,6 +4750,9 @@
       ],
       "Username must end with a letter or digit": [
         "O nome de usuário deve terminar com uma letra ou dígito"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "O número de IVA deve começar por ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "A verificação não obteve êxito. Tente novamente dentro de uma hora."
@@ -5834,9 +5719,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Descrição:"
-      ],
       "Group address:": [
         "Endereço do grupo:"
       ],
@@ -6561,29 +6443,20 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importe seus códigos existentes** de outros aplicativos de A2F, como o Google Autenticador"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Etapa 1: Convite seus amigos** para a ${ BRAND_NAME } com seu link de indicação."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Passo 1:** Convide seus amigos para a ${ BRAND_NAME } com seu link de indicação."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Passo 2:** Seus amigos ganham **2 semanas grátis** no plano deles."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Passo 2:** Seus amigos ganham 2 semanas grátis no plano deles."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Passo 3:** Ganhe ${ referrerRewardAmount } em créditos para cada pessoa que se inscrever para um plano."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Passo 3:** Ganhe **${ referrerRewardAmount } em créditos** para cada pessoa que se inscrever para um plano."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convide seus amigos** para ${ BRAND_NAME } com seu link de indicação."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** para todos os seus dispositivos"
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Eles ganham ${ refereeRewardAmount }** em créditos se se inscreverem."
+      ],
       "**This will disable 2-factor authentication.**": [
         "**Isso desativará a autenticação de 2 fatores.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Ganhe ${ referrerRewardAmount }** créditos para cada amigo que se inscrever."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } mais",
@@ -7073,6 +6946,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO esqueça essa senha. Se você a esquecer, você não será capaz de gerenciar sua organização."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Você lembra sua senha ? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Você deseja revogar todas as outras sessões deixando apenas a atual?"
       ],
@@ -7299,6 +7175,9 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para usuários que estão migrando de outro serviço de e-mail para ${ MAIL_APP_NAME }, selecione a guia ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registro MX para garantir uma transição tranquila."
       ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
+      ],
       "Free trial": [
         "Avaliação gratuita"
       ],
@@ -7325,9 +7204,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Seja notificado se a sua senha ou outros dados pessoais foram vazados. ${ learnMoreLinkNoBreach }"
-      ],
-      "Get started": [
-        "Começar"
       ],
       "Get started with the referral link above.": [
         "Comece com o link de referência acima."
@@ -7861,6 +7737,9 @@
       "Password must have:": [
         "A senha deve conter:"
       ],
+      "Password verified": [
+        "Senha verificada"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
       ],
@@ -8120,9 +7999,6 @@
       ],
       "Set up your organization": [
         "Configure a sua organização"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configure sua organização e comece a proteger seus dados em poucos passos simples."
       ],
       "Setting up ${ feature }…": [
         "Configurando ${ feature }…"
@@ -8458,6 +8334,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ajudar você a lembrar sua senha, pediremos que você a digite periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
@@ -8886,6 +8765,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Você não pode indicar usuários do ${ MAIL_APP_NAME }."
       ],
+      "You do not have permission to create users.": [
+        "Você não tem permissão para criar usuários."
+      ],
       "You don't have any referrals.": [
         "Você não tem nenhuma indicação"
       ],
@@ -8947,6 +8829,9 @@
       ],
       "You will not be asked for a one-time code or a security key.": [
         "Você não precisará de um código único ou chave de segurança."
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Você recuperará o acesso total ou parcial aos seus dados criptografados."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
@@ -9180,19 +9065,9 @@
         "Somente leitura"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "É assim que sua organização aparecerá para os usuários. Você pode mudar isso a qualquer momento."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Não é um endereço de e-mail válido"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Qual é o nome da sua organização?"
       ]
     },
     "invitation status": {
@@ -9366,7 +9241,7 @@
         "Permitir a recuperação por telefone"
       ],
       "Allow recovery by recovery phrase": [
-        "Permita a recuperação através de uma frase de recuperação"
+        "Permitir a recuperação através de uma frase de recuperação"
       ],
       "Allow recovery using a trusted device": [
         "Permitir recuperação usando dispositivo confiável"
@@ -9446,6 +9321,9 @@
       "Calendar": [
         "Calendário"
       ],
+      "Calendars": [
+        "Calendários"
+      ],
       "Card details": [
         "Detalhes do cartão"
       ],
@@ -9502,9 +9380,6 @@
       ],
       "Confirm login password": [
         "Confirmar nova senha"
-      ],
-      "Confirm MX records added": [
-        "Confirmar os registros MX adicionados"
       ],
       "Confirm new password": [
         "Confirmar nova senha"
@@ -9600,6 +9475,9 @@
       "Don't show this again": [
         "Não mostrar isso novamente"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g. example.com": [
         "por exemplo exemplo.com"
       ],
@@ -9623,6 +9501,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail com domínio @yourcompany.com"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (todas as mensagens)"
@@ -9924,6 +9805,9 @@
       "Password": [
         "Senha"
       ],
+      "Password reminders": [
+        "Lembretes de senha"
+      ],
       "Password strength": [
         "Força da senha"
       ],
@@ -10037,6 +9921,9 @@
       ],
       "See your team's availability": [
         "Veja a sua disponibilidade da equipe"
+      ],
+      "Select an identity provider to start": [
+        "Selecione um provedor de identidade para começar"
       ],
       "Select which Gmail address to connect": [
         "Selecione o endereço do Gmail que deseja conectar"
@@ -10260,23 +10147,6 @@
         "Adicione o seguinte registro TXT. Observação: os registros DNS podem levar várias horas para serem atualizados."
       ]
     },
-    "Label for domain setup": {
-      "${ capitalizedGroup } record not found": [
-        "${ capitalizedGroup } registro não encontrado"
-      ],
-      "Host name": [
-        "Nome do servidor"
-      ],
-      "Invalid ${ group.name } record found": [
-        "Encontrado um registro inválido de ${ group.name }"
-      ],
-      "Type": [
-        "Tipo"
-      ],
-      "Valid ${ group.name } record found": [
-        "Encontrado um registro válido de ${ group.name }"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Administrador"
@@ -10337,11 +10207,6 @@
       ],
       "To: ${ to }": [
         "Para: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Selecione um provedor de identidade para começar"
       ]
     },
     "Limit of calendars reached": {
@@ -10413,11 +10278,17 @@
       "Forgot username?": [
         "Esqueceu o seu nome de usuário?"
       ],
+      "Frequent sign-in problems": [
+        "Problemas frequentes de início de sessão"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "Obter ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obter ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtenha ajuda do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupos"
@@ -10529,9 +10400,6 @@
       ],
       "Sign in": [
         "Iniciar sessão"
-      ],
-      "Sign-in help": [
-        "Ajuda para iniciar sessão"
       ],
       "Terms": [
         "Termos"
@@ -11533,6 +11401,10 @@
       "Send & receive invitations": [
         "Enviar e receber convites"
       ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Servidores em ${ VPN_SERVERS.paid.countries }+ país",
+        "Servidores em ${ VPN_SERVERS.paid.countries }+ países"
+      ],
       "Share files with no size limit": [
         "Compartilhe arquivos sem limite de tamanho"
       ],
@@ -12186,8 +12058,8 @@
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participe de pesquisas para melhorar os serviços da ${ BRAND_NAME }"
       ],
-      "Product updates": [
-        "Atualizações de produtos"
+      "Recovery checklist": [
+        "Lista de verificação de recuperação"
       ]
     },
     "Notification": {
@@ -12810,6 +12682,14 @@
         "Oferta por tempo limitado."
       ]
     },
+    "password_reminder": {
+      "Turn off password reminders?": [
+        "Desativar lembretes de senha?"
+      ],
+      "Turn off reminders": [
+        "Desativar lembretes"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Todos os seus dados existentes** (e-mails, eventos, contatos, arquivos, entradas do ${ PASS_APP_NAME }, etc.) **serão bloqueados** e só poderão ser desbloqueados com sua **senha antiga**."
@@ -13301,9 +13181,6 @@
       "Enter a name": [
         "Insira um nome"
       ],
-      "Enter name": [
-        "Inserir nome"
-      ],
       "example@domain.com": [
         "exemplo@dominio.com"
       ],
@@ -13536,15 +13413,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Aproveitar a oferta"
       ],
-      "SPRING SALE 2026": [
-        "PROMO DE PRIMAVERA 2026"
+      "Summer Sale": [
+        "Oferta Especial"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/mês"
       ],
@@ -13563,35 +13440,17 @@
       "500 GB storage": [
         "500 GB de armazenamento"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acesse mais de 15.000 servidores em mais de 120 países"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Acesso a modelos de IA avançados"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Todos os recursos premium do Mail, Pass, Drive, VPN e Calendário"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloqueie anúncios, rastreadores e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecte 10 dispositivos de uma só vez"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Estenda sua assinatura e economize ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acesso total ao ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Histórico completo de bate-papos com pesquisa fácil e favoritos"
       ],
       "Individual accounts for 6 users": [
         "Contas individuais para 6 usuários"
@@ -13599,8 +13458,8 @@
       "Individual accounts for you and a partner": [
         "Contas individuais para você e um parceiro"
       ],
-      "Online document editor": [
-        "Editor de documentos on-line"
+      "Online document and spreadsheet editor": [
+        "Editor on-line de documentos e planilhas"
       ],
       "Recover previous file versions": [
         "Recupere versões anteriores de arquivos"
@@ -13611,25 +13470,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Bate-papos diários ilimitados"
-      ],
       "Unlimited folders, labels, and filters": [
         "Pastas, marcadores e filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases ilimitados do hide-my-email"
       ],
       "Use your own email domain": [
         "Use seu próprio domínio de e-mail"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "por 12 meses"
       ],
-      "SPRING SALE": [
-        "PROMO DE PRIMAVERA"
+      "SUMMER SALE": [
+        "OFERTA ESPECIAL"
       ]
     },
     "Recovery Email": {
@@ -13717,14 +13570,11 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Dê 2 semanas, obtenha ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Dê ${ refereeRewardAmount }, receba ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Como funciona seu teste gratuito:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Estou usando o ${ BRAND_NAME } e achei que você poderia gostar. É um e-mail seguro, armazenamento em nuvem, gerenciador de senhas e VPN que protege sua privacidade. Inscreva-se com este link para obter 14 dias de recursos premium de graça: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Se você cancelar antes disso, você fará o downgrade para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar. Se você não cancelar, seu plano completo começará e você receberá **${ referrerRewardAmount }** em créditos."
@@ -13759,9 +13609,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Você tem **${ daysRemaining } dia restante** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer.",
         "Você tem **${ daysRemaining } dias restantes** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Seu amigo também receberá ${ refereeRewardAmount } para resgatar em sua próxima fatura!"
       ],
       "your subscription": [
         "sua assinatura"
@@ -13988,6 +13835,22 @@
       ],
       "Edit retention rule": [
         "Editar regra de retenção"
+      ]
+    },
+    "Role": {
+      "Security Admin": [
+        "Administrador de segurança"
+      ],
+      "User Admin": [
+        "Administração de usuário"
+      ]
+    },
+    "Role description": {
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
       ]
     },
     "Safety review": {
@@ -15238,6 +15101,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuário",
         "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuários"
@@ -15877,6 +15743,12 @@
       "Password copied to clipboard": [
         "A senha foi copiada para a área de transferências."
       ],
+      "Password reminders disabled": [
+        "Lembretes de senhas desativados"
+      ],
+      "Password reminders enabled": [
+        "Lembretes de senhas ativados"
+      ],
       "Password updated": [
         "Senha atualizada"
       ],
@@ -16467,6 +16339,9 @@
       "Connect your custom domain": [
         "Conecte seu domínio personalizado"
       ],
+      "Connected emails": [
+        "E-mails conectados"
+      ],
       "Connection status": [
         "Status da conexão"
       ],
@@ -16631,9 +16506,6 @@
       "Disconnected from Gmail": [
         "Desconectado do Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Dispensar lista de verificação de configuração"
-      ],
       "Domain names": [
         "Nome do domínio"
       ],
@@ -16794,9 +16666,6 @@
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Obtenha mais armazenamento com ${ MAIL_APP_NAME } Plus"
       ],
-      "Get started": [
-        "Começar"
-      ],
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
@@ -16846,9 +16715,6 @@
       "Import contacts": [
         "Importar contatos"
       ],
-      "Import emails, calendars, contacts": [
-        "Importar e-mails, calendários e contatos"
-      ],
       "Import events": [
         "Importar eventos"
       ],
@@ -16858,8 +16724,14 @@
       "Import groups": [
         "Importar grupo"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importar via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importe seus dados para a ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importações"
       ],
       "Information exposed in breach": [
         "Informação exposta na violação"
@@ -16891,8 +16763,8 @@
       "Make your business stand out": [
         "Faça sua empresa se destacar"
       ],
-      "Migration assistant": [
-        "Assistente de migração"
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migre sua organização para a ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Mini calendário"
@@ -16944,6 +16816,9 @@
       ],
       "Open pagination": [
         "Abrir paginação"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Arquivos de configuração OpenVPN"
@@ -17255,6 +17130,9 @@
       "Summary": [
         "Resumo"
       ],
+      "Summer Sale": [
+        "Oferta Especial"
+      ],
       "Support your compliance objectives": [
         "Apoie seus objetivos de conformidade"
       ],
@@ -17284,6 +17162,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para pré-visualizar esta planilha, abra-a no ${ SHEETS_APP_NAME } ou faça o download."
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Solucionar problemas do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Troubleshoot your issue": [
         "Solucione seu problema"
@@ -17375,6 +17256,9 @@
       "Verify it’s you": [
         "Verifique se é você"
       ],
+      "Verify your password": [
+        "Verificar sua senha"
+      ],
       "Verifying your card...": [
         "Verificando seu cartão..."
       ],
@@ -17401,9 +17285,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Bem-vindo ao ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "O que muda se você mudar para o plano Free"
@@ -17596,6 +17477,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistência instantânea com IA, com um especialista à disposição!"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Os membros que não usam A2F receberão um e-mail solicitando que o habilitem o mais rápido possível. Os usuários com logon único não receberão o lembrete por e-mail."
       ],
@@ -17697,8 +17581,8 @@
       "User is a group": [
         "Usuário é um grupo"
       ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"

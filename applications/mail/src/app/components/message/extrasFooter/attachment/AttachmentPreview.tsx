@@ -5,6 +5,7 @@ import Portal from '@proton/components/components/portal/Portal';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import type { MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
+import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -48,8 +49,14 @@ const AttachmentPreview = (
                 return previewing;
             }
 
-            // Don't preview unverified attachment
-            if (download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            // Don't preview unverified attachments, and never render SVGs: rendering an SVG
+            // (even sanitized) in a browsing context is a security risk. Blanking the MIME
+            // type makes FilePreview fall back to the "no preview available" screen, exactly
+            // like any other unpreviewable file (e.g. an executable).
+            if (
+                download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID ||
+                couldPotentiallyBeRenderedAsSVG(attachment.MIMEType || '')
+            ) {
                 return {
                     // Overriding mime type to prevent opening any visualizer with empty data, especially needed for pdfs
                     attachment: { ...attachment, MIMEType: '' },

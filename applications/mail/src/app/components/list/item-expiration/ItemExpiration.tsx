@@ -1,4 +1,5 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

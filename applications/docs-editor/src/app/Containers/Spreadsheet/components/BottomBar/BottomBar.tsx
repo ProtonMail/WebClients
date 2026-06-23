@@ -20,6 +20,7 @@ import { useUI } from '../../ui-store'
 import type { ProtonSheetsUIState } from '../../ui-state'
 import { getStringifiedColor } from '@rowsncolumns/spreadsheet'
 import { ColorPicker } from '../shared/ColorPicker'
+import { SheetStatus } from './SheetStatus'
 
 const { s } = createStringifier(strings)
 
@@ -97,7 +98,7 @@ const SheetSwitcher = memo(function SheetSwitcher() {
   const mounted = Ariakit.useStoreState(menu, 'mounted')
 
   return (
-    <div className="py-0.5">
+    <div className="shrink-0 py-0.5">
       <Ariakit.MenuProvider store={menu}>
         <Ariakit.MenuButton render={<IconButton legacyIconName="hamburger">{s('All sheets')}</IconButton>} />
         {mounted && <SheetSwitcherMenu />}
@@ -344,11 +345,18 @@ export interface BottomBarProps extends ComponentPropsWithoutRef<'div'> {}
 
 export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
   return (
-    <div {...props} className="flex items-center gap-2.5 border-t border-[#DEDEDE] bg-[#F9FCFA] pl-3 print:hidden">
+    <div
+      {...props}
+      className="flex items-center gap-2.5 border-t border-[#DEDEDE] bg-[#F9FCFA] pl-3 pr-14 print:hidden"
+    >
       <SheetSwitcher />
       <SheetTabs />
       <div className="shrink-0 py-0.5 pl-2.5 pr-[3.125rem]">
         <NewSheetButton />
+      </div>
+
+      <div className="ml-auto shrink-0">
+        <SheetStatus />
       </div>
     </div>
   )

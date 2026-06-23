@@ -1,6 +1,6 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "vitest/globals"]
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "vitest/globals", "wicg-file-system-access"]
     }
 }

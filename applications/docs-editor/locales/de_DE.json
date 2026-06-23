@@ -451,6 +451,9 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Es gab einen Fehler beim Aktualisierungen des Dokuments. Bitte lade die Seite neu und versuche es erneut."
       ],
+      "This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.": [
+        "In dieser Tabelle wurde eine lokale Synchronisierungsinkonsistenz festgestellt. Bitte lade das Dokument neu, bevor du fortfährst."
+      ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Diese Tabelle ist mit der aktuellen Client-Version inkompatibel. Bitte versuche, den Client neu zu laden. Wenn der Fehler weiterhin besteht, wende dich bitte an den Support."
       ],
@@ -716,6 +719,16 @@
       ],
       "Theme colors": [
         "Themenfarben"
+      ]
+    },
+    "sheets_2025:Formula bar": {
+      "Formula bar": [
+        "Formelleiste"
+      ]
+    },
+    "sheets_2025:Range selector": {
+      "Range selector": [
+        "Bereichsauswahl"
       ]
     },
     "sheets_2025:Range selector menu": {
@@ -1423,9 +1436,6 @@
       "Custom currency": [
         "Benutzerdefinierte Währung"
       ],
-      "Custom number format": [
-        "Benutzerdefiniertes Zahlenformat"
-      ],
       "Date": [
         "Datum"
       ],
@@ -1712,6 +1722,29 @@
       ],
       "row height": [
         "Zeilenhöhe"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Durchschnitt"
+      ],
+      "Count": [
+        "Anzahl"
+      ],
+      "Customize Status Bar": [
+        "Statusleiste anpassen"
+      ],
+      "Max": [
+        "Maximum"
+      ],
+      "Min": [
+        "Minimum"
+      ],
+      "Numerical count": [
+        "Anzahl"
+      ],
+      "Sum": [
+        "Summe"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

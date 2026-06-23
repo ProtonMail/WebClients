@@ -29,12 +29,12 @@ import {
     calendarEventBuilder,
     calendarUserSettingsBuilder,
     messageBuilder,
-    mockApiWithServer,
-    mockDefaultBreakpoints,
-    mockNotifications,
     veventBuilder,
-} from '@proton/testing';
+} from '@proton/testing/lib/builders';
 import { getHandlers } from '@proton/testing/lib/handlers';
+import { mockApiWithServer } from '@proton/testing/lib/mockApiWithServer';
+import { mockNotifications } from '@proton/testing/lib/mockNotifications';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { authentication, getStoreWrapper, tick } from '../../../../../helpers/test/render';

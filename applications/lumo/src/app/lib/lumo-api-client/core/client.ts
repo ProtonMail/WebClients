@@ -2,11 +2,14 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import type { LumoCompletionTarget } from '../../../types-api';
 import { when } from '../../../util/collections';
+import { toChatCompletionsBody } from './chat-completions';
 import { DEFAULT_LUMO_PUB_KEY, encryptTurns } from './encryption';
 import { RequestEncryptionParams } from './encryptionParams';
 import { LUMO_CHAT_ENDPOINT, callChatEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
+import { extractTitleSourceText } from './title-generation';
 import { makeAbortTransformStream } from './transforms/abort';
 import { makeChunkParserTransformStream } from './transforms/chunks';
 import { makeContextUpdaterTransformStream } from './transforms/context';
@@ -17,7 +20,6 @@ import { makeSmoothingTransformStream } from './transforms/smoothing';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import {
     type AssistantCallOptions,
-    type ChatEndpointGenerationRequest,
     type ChunkCallback,
     type FinishCallback,
     type GenerationResponseMessage,
@@ -25,7 +27,6 @@ import {
     type LumoApiGenerationRequest,
     type RequestContext,
     type RequestInterceptor,
-    type RequestableGenerationTarget,
     type ResponseContext,
     type ResponseInterceptor,
     Role,
@@ -88,12 +89,13 @@ export class LumoApiClient {
             autoGenerateEncryption,
         });
 
+        const titleSourceText = generateTitle ? extractTitleSourceText(turns) : null;
+
         let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(turns, encryption, {
             enableExternalTools,
             enableImageTools,
-            generateTitle,
             enableReasoning,
-            enableSuggestedQuestions
+            enableSuggestedQuestions: false,
         });
 
         // Prepare request context and run interceptors
@@ -105,16 +107,63 @@ export class LumoApiClient {
 
         // Prepare response context and call server, then monitor the SSE stream until the end
         const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
-        await this.runSseReceiveLoop(
-            api,
-            request,
-            endpoint,
-            signal,
-            encryption,
-            responseContext,
-            chunkCallback,
-            finishCallback
+        const parallelTasks: Promise<void>[] = [];
+
+        if (titleSourceText !== null) {
+            parallelTasks.push(
+                this.runTargetedGeneration(
+                    api,
+                    turns,
+                    'title',
+                    endpoint,
+                    signal,
+                    chunkCallback,
+                    encryption,
+                    enableU2LEncryption
+                ).catch((error) => {
+                    if (error?.name === 'AbortError') {
+                        return;
+                    }
+                    console.warn('Title generation failed:', error);
+                })
+            );
+        }
+
+        if (enableSuggestedQuestions) {
+            parallelTasks.push(
+                this.runTargetedGeneration(
+                    api,
+                    turns,
+                    'suggested_questions',
+                    endpoint,
+                    signal,
+                    chunkCallback,
+                    encryption,
+                    enableU2LEncryption
+                ).catch((error) => {
+                    if (error?.name === 'AbortError') {
+                        return;
+                    }
+                    console.warn('Suggested questions generation failed:', error);
+                })
+            );
+        }
+
+        parallelTasks.push(
+            this.runSseReceiveLoop(
+                api,
+                request,
+                endpoint,
+                signal,
+                encryption,
+                responseContext,
+                chunkCallback,
+                finishCallback,
+                { target: 'message' }
+            )
         );
+
+        await Promise.all(parallelTasks);
     }
 
     private async runSseReceiveLoop(
@@ -125,15 +174,19 @@ export class LumoApiClient {
         encryption: RequestEncryptionParams | null,
         responseContext: ResponseContext,
         chunkCallback: ChunkCallback | undefined,
-        finishCallback: FinishCallback | undefined
+        finishCallback: FinishCallback | undefined,
+        options: { enableSmoothing?: boolean; target?: LumoCompletionTarget } = {}
     ) {
+        const enableSmoothing = options.enableSmoothing ?? this.config.enableSmoothing;
         const thisNotifyResponse = this.notifyResponse.bind(this);
 
         // Final status will be changed to succeeded on success
         let finalStatus: Status = 'failed';
 
-        // Prepare payload
-        const postData = this.prepareChatEndpointPostData(request);
+        const postData = this.prepareChatEndpointPostData(request, {
+            enableReasoning: Boolean(request.options?.reasoning),
+            target: options.target,
+        });
 
         try {
             const responseBody = await callChatEndpoint(api, postData, {
@@ -145,11 +198,11 @@ export class LumoApiClient {
             await responseBody
                 .pipeThrough(makeAbortTransformStream(signal)) // deals with AbortSignal
                 .pipeThrough(makeUtf8DecodingTransformStream()) // bytes -> utf8
-                .pipeThrough(makeChunkParserTransformStream()) // utf8 -> chunk objects
+                .pipeThrough(makeChunkParserTransformStream(options.target)) // utf8 -> chunk objects
                 .pipeThrough(makeDecryptionTransformStream(encryption)) // U2L decryption
                 .pipeThrough(makeImageLoggerTransformStream()) // noop - logs image_data
                 .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
-                .pipeThrough(makeSmoothingTransformStream(this.config.enableSmoothing))
+                .pipeThrough(makeSmoothingTransformStream(enableSmoothing))
                 .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext)); // calls callbacks with final chunks
 
             // Stream is complete
@@ -177,10 +230,14 @@ export class LumoApiClient {
 
     /******* Request preparation methods *******/
 
-    private prepareChatEndpointPostData(request: LumoApiGenerationRequest): ChatEndpointGenerationRequest {
-        return {
-            Prompt: request,
-        };
+    private prepareChatEndpointPostData(
+        request: LumoApiGenerationRequest,
+        options: { enableReasoning: boolean; target?: LumoCompletionTarget }
+    ) {
+        return toChatCompletionsBody(request, {
+            enableReasoning: options.enableReasoning,
+            target: options.target,
+        });
     }
 
     private async prepareGenerationRequest(
@@ -189,34 +246,61 @@ export class LumoApiClient {
         flags: {
             enableExternalTools: boolean;
             enableImageTools: boolean;
-            generateTitle: boolean;
             enableReasoning: boolean;
             enableSuggestedQuestions: boolean;
         }
     ): Promise<LumoApiGenerationRequest> {
         const { lumoPubKey } = this.config;
-        const { enableExternalTools, enableImageTools, generateTitle, enableReasoning } = flags;
+        const { enableExternalTools, enableImageTools, enableReasoning, enableSuggestedQuestions } = flags;
 
         // Encrypt request if needed
         if (encryption) {
             turns = await encryptTurns(turns, encryption);
         }
-
-        // Determine tools and targets
         const tools = this.getTools(enableExternalTools, enableImageTools);
-        const targets = this.getTargets(generateTitle);
-
         return {
             type: 'generation_request',
             turns,
             options: {
                 tools,
                 reasoning: enableReasoning,
+                suggested_questions: enableSuggestedQuestions,
             },
-            targets,
             request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
             request_id: encryption?.requestId,
         };
+    }
+
+    private async runTargetedGeneration(
+        api: Api,
+        turns: Turn[],
+        target: Exclude<LumoCompletionTarget, 'message'>,
+        endpoint: string,
+        signal: AbortSignal | undefined,
+        chunkCallback: ChunkCallback | undefined,
+        encryption: RequestEncryptionParams | null,
+        enableU2LEncryption: boolean
+    ): Promise<void> {
+        const request = await this.prepareGenerationRequest(turns, encryption, {
+            enableExternalTools: false,
+            enableImageTools: false,
+            enableReasoning: false,
+            enableSuggestedQuestions: false,
+        });
+        const context: ResponseContext = {
+            ...this.initializeRequestContext(endpoint, {
+                enableU2LEncryption,
+                enableExternalTools: false,
+            }),
+            startTime: Date.now(),
+            chunkCount: 0,
+            totalContentLength: 0,
+        };
+
+        await this.runSseReceiveLoop(api, request, endpoint, signal, encryption, context, chunkCallback, undefined, {
+            enableSmoothing: false,
+            target,
+        });
     }
 
     private getTools(enableExternalTools: boolean, enableImageTools: boolean) {
@@ -226,10 +310,6 @@ export class LumoApiClient {
             ...when(enableExternalTools, externalTools),
             ...when(enableImageTools, imageTools),
         ];
-    }
-
-    private getTargets(requestTitle: boolean): RequestableGenerationTarget[] {
-        return requestTitle ? ['message', 'title'] : ['message'];
     }
 
     /******* Interceptor internal methods *******/
@@ -387,6 +467,7 @@ export class LumoApiClient {
 
         await this.callAssistant(api, [{ role: Role.User, content: message }], {
             enableExternalTools: enableWebSearch,
+            enableReasoning: false,
             signal,
             chunkCallback: async (msg) => {
                 if (msg.type === 'token_data' && msg.target === 'message') {

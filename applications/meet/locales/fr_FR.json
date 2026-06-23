@@ -4,6 +4,14 @@
     "language": "fr_FR"
   },
   "contexts": {
+    "Accessibility announcement": {
+      "${ name } lowered their hand": [
+        "${ name } a baissé la main."
+      ],
+      "Your camera has been turned off by the host": [
+        "Votre caméra a été désactivée par l'hôte."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
@@ -28,6 +36,9 @@
       ],
       "Authenticate": [
         "S'authentifier"
+      ],
+      "Back": [
+        "Précédent"
       ],
       "Background blur": [
         "Flou d'arrière-plan"
@@ -101,6 +112,9 @@
       "Done": [
         "Terminé"
       ],
+      "Download": [
+        "Télécharger"
+      ],
       "Download app": [
         "Télécharger l’application"
       ],
@@ -112,6 +126,9 @@
       ],
       "Download participant report": [
         "Télécharger le rapport des participants"
+      ],
+      "Download recording": [
+        "Télécharger l’enregistrement"
       ],
       "Download room level report": [
         "Télécharger le rapport au niveau de la salle"
@@ -233,6 +250,10 @@
       "React with ${ emoji }": [
         "Réagir avec ${ emoji }"
       ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Réagir avec ${ emoji }, ${ identities.length } réaction",
+        "Réagir avec ${ emoji }, ${ identities.length } réactions"
+      ],
       "Receive video": [
         "Recevoir la vidéo"
       ],
@@ -325,6 +346,9 @@
       ],
       "Start meeting": [
         "Démarrer la réunion"
+      ],
+      "Start new meeting": [
+        "Démarrer une nouvelle réunion"
       ],
       "Start recording": [
         "Démarrer l'enregistrement"
@@ -433,6 +457,9 @@
       "Lock meeting": [
         "Verrouiller la réunion"
       ],
+      "Lower hand": [
+        "Baisser la main"
+      ],
       "Meeting details": [
         "Informations de la réunion"
       ],
@@ -447,6 +474,9 @@
       ],
       "Participants": [
         "Participants"
+      ],
+      "Raise hand": [
+        "Lever la main"
       ],
       "Rotate camera": [
         "Faire pivoter la caméra"
@@ -463,9 +493,6 @@
       "Stop recording and download.": [
         "Arrêter l'enregistrement et télécharger."
       ],
-      "Toggle camera": [
-        "Activer/Désactiver la caméra"
-      ],
       "Toggle chat": [
         "Afficher/Masquer le chat"
       ],
@@ -474,9 +501,6 @@
       ],
       "Toggle meeting details": [
         "Afficher/masquer les détails de la réunion"
-      ],
-      "Toggle microphone": [
-        "Activer/Désactiver le microphone"
       ],
       "Toggle participants": [
         "Afficher/Masquer les participants"
@@ -1491,8 +1515,14 @@
       "Failed to delete event": [
         "Impossible de supprimer l'événement"
       ],
+      "Failed to delete recording": [
+        "La suppression de l'enregistrement n'a pas abouti."
+      ],
       "Failed to delete room": [
         "La suppression de la salle n'a pas abouti."
+      ],
+      "Failed to download recording": [
+        "Le téléchargement de l'enregistrement n'a pas abouti."
       ],
       "Failed to edit room name": [
         "Impossible de modifier le nom de la salle"
@@ -1505,9 +1535,6 @@
       ],
       "Failed to rotate personal meeting link": [
         "Échec du renouvellement du lien de réunion personnelle"
-      ],
-      "Failed to save recording": [
-        "La sauvegarde de l'enregistrement a échouée"
       ],
       "Failed to send chat message. Please try again.": [
         "Une erreur est survenue lors de l'envoi du message. Essayez à nouveau."
@@ -1563,9 +1590,6 @@
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
       ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "Le lien de la réunion que vous tentez d'accéder n'existe pas ou a peut-être été supprimé."
-      ],
       "The meeting password is incorrect": [
         "Le mot de passe de la réunion est erroné."
       ],
@@ -1595,6 +1619,9 @@
       ],
       "Username must end with a letter or digit": [
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Votre navigateur n'a plus d'espace de stockage disponible. Nous avons enregistré la vidéo jusqu'à ce moment-là."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "L'horloge de votre appareil semble être désynchronisée. Veuillez vérifier l'heure de votre système puis réessayer."
@@ -1647,6 +1674,46 @@
     "fido2: Label": {
       "Security key": [
         "Clé de sécurité"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "octet",
+        "octets"
+      ],
+      "GB": [
+        "Go"
+      ],
+      "KB": [
+        "Ko"
+      ],
+      "MB": [
+        "Mo"
+      ],
+      "TB": [
+        "To"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Octet",
+        "Octets"
+      ],
+      "Gigabyte": [
+        "Gigaoctet",
+        "Gigaoctets"
+      ],
+      "Kilobyte": [
+        "Kilooctet",
+        "Kilooctets"
+      ],
+      "Megabyte": [
+        "Megaoctet",
+        "Megaoctets"
+      ],
+      "Terabyte": [
+        "Téraoctet",
+        "Téraoctets"
       ]
     },
     "Font face option": {
@@ -1805,6 +1872,9 @@
       ],
       "camera": [
         "Caméra"
+      ],
+      "Camera permission denied": [
+        "L'autorisation d'accéder à la caméra a été refusée."
       ],
       "Chat with everyone": [
         "Discuter avec tout le monde"
@@ -2028,6 +2098,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Les enregistrements de réunions ne sont pas pris en charge dans Firefox."
       ],
+      "Meeting time is up": [
+        "La réunion est terminée."
+      ],
       "Meeting unlocked. Participants can join again.": [
         "La réunion est déverrouillée. Les participants peuvent se reconnecter."
       ],
@@ -2042,6 +2115,12 @@
       ],
       "Microphone effects": [
         "Effets du microphone"
+      ],
+      "Microphone permission denied": [
+        "L'autorisation d'accéder au microphone a été refusée."
+      ],
+      "Mute microphone": [
+        "Couper le microphone"
       ],
       "My meetings": [
         "Mes réunions"
@@ -2073,6 +2152,9 @@
       "No publications": [
         "Aucune publication"
       ],
+      "No recordings found on this device.": [
+        "Aucun enregistrement n'a été trouvé sur cet appareil."
+      ],
       "No remote participants": [
         "Aucun participant distant"
       ],
@@ -2102,9 +2184,6 @@
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Insérez votre lien ${ MEET_APP_NAME } pour rejoindre une réunion sécurisée"
-      ],
-      "Permission denied": [
-        "Permission refusée"
       ],
       "Permissions not given.": [
         "Autorisations non accordées."
@@ -2142,14 +2221,17 @@
       "Recording": [
         "Enregistrement en cours"
       ],
+      "Recording deleted": [
+        "L'enregistrement a été supprimé."
+      ],
       "Recording in progress": [
         "Enregistrement en cours"
       ],
-      "Recording saved": [
-        "L'enregistrement a été enregistré."
-      ],
       "Recording will begin and attendees will be notified.": [
         "L'enregistrement commencera et les participants seront notifiés."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Les enregistrements sont stockés localement dans votre navigateur. Téléchargez ceux que vous souhaitez conserver, car ils sont automatiquement supprimés au bout de 30 jours."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
@@ -2220,6 +2302,9 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'hôte vous a retiré de cette réunion. Si c'est une erreur, demandez à l'hôte de vous inviter à nouveau."
       ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Le lien de réunion que vous avez essayé d'ouvrir n'existe pas ou a expiré. Assurez-vous que ce lien est correct, ou démarrez une nouvelle réunion sécurisée à la place."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Ceci est un chat chiffré de bout en bout avec des messages éphémères, qui disparaissent à la fin de l'appel."
       ],
@@ -2232,8 +2317,14 @@
       "This meeting is password protected": [
         "Cette réunion est protégée par un mot de passe"
       ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Cette réunion a atteint la limite de durée prévue dans le forfait gratuit. Passez à un forfait supérieur pour prolonger la durée de vos prochaines réunions."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Cette réunion a été ouverte dans l'application de bureau ${ MEET_APP_NAME }."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Cet enregistrement sera supprimé définitivement de cet appareil. Cette action est irréversible."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Ceci mettra fin à la réunion pour tous les participants et arrêtera le partage de votre écran."
@@ -2265,14 +2356,8 @@
       "Turn off camera": [
         "Éteindre la caméra"
       ],
-      "Turn off microphone": [
-        "Désactiver le microphone"
-      ],
       "Turn on camera": [
         "Activer la caméra"
-      ],
-      "Turn on microphone": [
-        "Activer le microphone"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Nous n'avons pas vous reconnecter à la réunion. Veuillez rejoindre ou quitter."
@@ -2282,6 +2367,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Débloquez les ${ unlimitedMeeting } et les fonctionnalités premium"
+      ],
+      "Unmute microphone": [
+        "Réactiver le microphone"
       ],
       "Upgrade to record your meetings locally.": [
         "Changer d'abonnement pour enregistrer vos réunions localement."
@@ -2363,12 +2451,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
-      ],
-      "Your free meeting has ended": [
-        "Votre réunion gratuite est terminée."
-      ],
-      "Your meeting has ended": [
-        "Votre réunion est terminée."
       ],
       "Your meeting is ready": [
         "Votre réunion est prête"
@@ -2483,6 +2565,9 @@
       ],
       "Last used": [
         "Dernière utilisation"
+      ],
+      "Manage recordings": [
+        "Gérer les enregistrements"
       ],
       "Meeting ID": [
         "Identifiant de la réunion"
@@ -2842,6 +2927,20 @@
         "La vérification a abouti."
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Actions"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Size": [
+        "Taille"
+      ]
+    },
     "Title": {
       "Account restricted": [
         "Compte restreint"
@@ -2888,6 +2987,9 @@
       "Chat": [
         "Discussion"
       ],
+      "Couldn't prepare the recording": [
+        "Impossible de préparer l'enregistrement"
+      ],
       "Create new room": [
         "Créer une nouvelle salle"
       ],
@@ -2896,6 +2998,9 @@
       ],
       "Debug Overlay": [
         "Superposition de débogage"
+      ],
+      "Delete recording?": [
+        "Supprimer l'enregistrement ?"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe"
@@ -2920,6 +3025,9 @@
       ],
       "Info": [
         "Information"
+      ],
+      "Invalid meeting link": [
+        "Le lien de réunion n'est pas valide."
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
@@ -2982,6 +3090,9 @@
       "Personal meeting room": [
         "Salle de réunion personnelle"
       ],
+      "Preparing your recording…": [
+        "Préparation de votre enregistrement en cours…"
+      ],
       "Publications": [
         "Publications"
       ],
@@ -2990,6 +3101,9 @@
       ],
       "Record this meeting": [
         "Enregistrer cette réunion"
+      ],
+      "Recordings": [
+        "Enregistrements"
       ],
       "Remote Participants": [
         "Participants distants"
@@ -3053,6 +3167,9 @@
       ],
       "Your feedback has been submitted": [
         "Votre commentaire a été envoyé"
+      ],
+      "Your recording is ready": [
+        "Votre enregistrement est prêt"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -3066,6 +3183,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Générer un nouveau lien de réunion. Le lien actuel cessera de fonctionner."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "Recurring meeting": [
         "Réunion récurrente"

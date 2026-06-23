@@ -8,26 +8,19 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import type { Group } from '@proton/shared/lib/interfaces';
 
 import DeleteGroupPrompt from './DeleteGroupPrompt';
 import GroupItemActionPrompt from './GroupItemActionPrompt';
+import { useGroupsManagement } from './context/GroupsManagementContext';
 
 interface Props {
-    group: Group;
     showMailFeatures: boolean;
     handleDeleteGroup: () => Promise<void>;
     handleDeleteAllGroupMembers: () => Promise<void>;
-    canOnlyDelete: boolean;
 }
 
-const GroupItemMoreOptionsDropdown = ({
-    group,
-    showMailFeatures,
-    handleDeleteGroup,
-    handleDeleteAllGroupMembers,
-    canOnlyDelete,
-}: Props) => {
+const GroupItemMoreOptionsDropdown = ({ showMailFeatures, handleDeleteGroup, handleDeleteAllGroupMembers }: Props) => {
+    const { isFrozen, selectedGroup } = useGroupsManagement();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const deleteGroupPrompt = useModalStateObject();
     const removeAllMembersPrompt = useModalStateObject();
@@ -45,13 +38,13 @@ const GroupItemMoreOptionsDropdown = ({
             )}
             {deleteGroupPrompt.render && (
                 <DeleteGroupPrompt
-                    group={group}
+                    group={selectedGroup!}
                     showMailFeatures={showMailFeatures}
                     onConfirm={handleDeleteGroup}
                     modalProps={deleteGroupPrompt.modalProps}
                 />
             )}
-            {!canOnlyDelete && (
+            {!isFrozen && (
                 <Button
                     shape="ghost"
                     size="small"
@@ -64,7 +57,7 @@ const GroupItemMoreOptionsDropdown = ({
                     <IcThreeDotsVertical alt={c('Action').t`More options`} />
                 </Button>
             )}
-            {canOnlyDelete && (
+            {isFrozen && (
                 <Button
                     shape="ghost"
                     size="small"

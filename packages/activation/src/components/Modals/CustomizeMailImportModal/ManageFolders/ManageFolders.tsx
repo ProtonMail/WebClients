@@ -23,7 +23,11 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
 
     return (
         <>
-            <ManageFoldersHeader fromLabel={c('Label').t`From: ${fromEmail}`} toLabel={c('Label').t`To: ${toEmail}`} />
+            <ManageFoldersHeader
+                fromLabel={c('Label').t`From: ${fromEmail}`}
+                toLabel={c('Label').t`To: ${toEmail}`}
+                isLabelMapping={isLabelMapping}
+            />
 
             <div className="flex mb-4">
                 <div className="flex-1 pt-2">

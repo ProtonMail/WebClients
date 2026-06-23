@@ -284,9 +284,6 @@
       "Create new policy": [
         "Skapa ny policy"
       ],
-      "Create organization": [
-        "Skapa organisation"
-      ],
       "Create users": [
         "Skapa användare"
       ],
@@ -434,6 +431,9 @@
       "Edit group": [
         "Redigera grupp"
       ],
+      "Edit invoice details": [
+        "Redigera fakturadetaljer"
+      ],
       "Edit invoice note": [
         "Redigera fakturaanteckning"
       ],
@@ -526,6 +526,9 @@
       ],
       "Get Deal": [
         "Ta erbjudandet"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjälp från ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "Kontakta oss"
@@ -637,6 +640,9 @@
       ],
       "Keep my subscription": [
         "Behåll min prenumeration"
+      ],
+      "Later": [
+        "Senare"
       ],
       "Learn about recovery options": [
         "Lär dig om återställningsalternativ"
@@ -901,9 +907,6 @@
       ],
       "Save": [
         "Spara"
-      ],
-      "Save & exit": [
-        "Spara och avsluta"
       ],
       "Save address": [
         "Spara adress"
@@ -1216,6 +1219,12 @@
       ],
       "Verify domain": [
         "Verifiera domän"
+      ],
+      "Verify now": [
+        "Verifiera nu"
+      ],
+      "Verify password": [
+        "Verifiera lösenord"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifiera domänen ${ unverifiedSSODomain.DomainName }"
@@ -1971,20 +1980,8 @@
       ]
     },
     "BOSS": {
-      "Account connected": [
-        "Konto anslutet"
-      ],
-      "Account disconnected": [
-        "Konto frånkopplat"
-      ],
       "Activated": [
         "Aktiverat"
-      ],
-      "Add domain": [
-        "Lägg till domän"
-      ],
-      "Add users": [
-        "Lägg till användare"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
@@ -1992,29 +1989,17 @@
       "All": [
         "Alla"
       ],
-      "Authenticate": [
-        "Autentisera"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentisera ditt Google Workspace-konto"
-      ],
       "Calendar": [
         "Kalender"
-      ],
-      "Configure domain": [
-        "Konfigurera domän"
       ],
       "Configure migration": [
         "Konfigurera migrering"
       ],
-      "Configure your domain": [
-        "Konfigurera din domän"
-      ],
       "Contacts": [
         "Kontakter"
       ],
-      "Domain added": [
-        "Domän tillagd"
+      "Emails": [
+        "E-post"
       ],
       "Errors": [
         "Fel"
@@ -2022,17 +2007,8 @@
       "Estimated size": [
         "Beräknad storlek"
       ],
-      "Failed to load OAuth": [
-        "Misslyckades att ladda OAuth"
-      ],
       "Find out what can be migrated.": [
         "Ta reda på vad som kan migreras."
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Google Workspace-konto"
       ],
       "Has errors": [
         "Har fel"
@@ -2040,33 +2016,14 @@
       "In progress": [
         "Pågår"
       ],
-      "Install app": [
-        "Installera app"
-      ],
-      "Install migration app": [
-        "Installera migreringsappen"
-      ],
-      "Loading your organization data": [
-        "Laddar din organisationsdata"
-      ],
-      "Mail": [
-        "E-post"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
       ],
-      "Migrate from Google Workspace": [
-        "Migrera från Google Workspace"
+      "Migrate": [
+        "Migrera"
       ],
       "Migrated": [
         "Migrerad"
-      ],
-      "Migration includes": [
-        "Migrering inkluderar"
-      ],
-      "Migration started for ${ n } user": [
-        "Migrering startad för ${ n } användare",
-        "Migrering startad för ${ n } användare"
       ],
       "Migration status": [
         "Migreringsstatus"
@@ -2077,17 +2034,11 @@
       "Missing organization public key": [
         "Saknar organisationens offentliga nyckel"
       ],
-      "No error details available. Please contact customer support for more information": [
-        "Inga feldetaljer tillgängliga. Kontakta kundsupport för mer information."
-      ],
       "No users to display": [
         "Inga användare att visa"
       ],
       "Not activated": [
         "Inte aktiverat"
-      ],
-      "Not confirmed": [
-        "Inte bekräftat"
       ],
       "Organization does not have enough seats available": [
         "Organisation har inte tillräckligt med licenser tillgängligt"
@@ -2098,29 +2049,11 @@
       "Pending": [
         "Väntar"
       ],
-      "Refresh": [
-        "Uppdatera"
-      ],
-      "Select at least one user to start a migration": [
-        "Välj minst en användare för att starta en migrering"
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ],
       "Select users to migrate": [
         "Välj användare att migrera"
-      ],
-      "Set up secure sending (DKIM)": [
-        "Ställ in säker sändning (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Ställ in säker sändning (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Ställ in säker sändning (SPF)"
-      ],
-      "Settings": [
-        "Inställningar"
-      ],
-      "Sign in to Google Workspace": [
-        "Logga in på Google Workspace"
       ],
       "Size": [
         "Storlek"
@@ -2131,35 +2064,11 @@
       "User": [
         "Användare"
       ],
-      "Users migrated": [
-        "Användare migrerade"
-      ],
-      "Verified": [
-        "Verified"
-      ],
-      "Verify installation": [
-        "Verifiera installation"
-      ],
-      "Verify your domain": [
-        "Verifiera din domän"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifiera din domän för att starta en migrering"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Vi har märkt att några användare inte har gjort anspråk på sina ${ BRAND_NAME }-konton."
-      ],
       "What are you migrating?": [
         "Vad migrerar du?"
       ],
       "You": [
         "Du"
-      ],
-      "You're all set!": [
-        "Du är klar!"
       ]
     },
     "Browser": {
@@ -2257,14 +2166,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Lägg till användare manuellt"
-      ],
       "Close": [
         "Stäng"
-      ],
-      "Configure your network": [
-        "Konfigurera ditt nätverk"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
@@ -2284,29 +2187,17 @@
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
       ],
-      "Invite your team": [
-        "Bjud in ditt team"
-      ],
-      "Manage global VPN permissions": [
-        "Hantera globala VPN-behörigheter"
-      ],
       "Maybe later": [
         "Kanske senare"
       ],
       "Remind me later": [
         "Påminn mig senare"
       ],
-      "Secure your organization": [
-        "Säkra din organisation"
-      ],
       "Send": [
         "Skicka"
       ],
       "Set up other features": [
         "Ställ in andra funktioner"
-      ],
-      "Set up SSO": [
-        "Ställ in SSO"
       ],
       "Take a tour": [
         "Ta en rundtur"
@@ -2787,6 +2678,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanarieöarna"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -3640,9 +3534,6 @@
       "Connect your CRM, website, printers, and more.": [
         "Anslut din CRM, webbplats, skrivare och mer."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Skapa en gateway för att ge dina användare åtkomst till dina IT-resurser genom dedikerade servrar."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Skapa ett Zoom-möte och lägg till anslutningsdetaljer till ditt evenemang med ett klick."
       ],
@@ -3651,9 +3542,6 @@
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Bestäm vilka användare som kan ansluta till var och en av våra 120+ delade serverplatser."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
@@ -3679,6 +3567,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tillräckligt med plats för åratal av e-post, bilagor och mer."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Säkerställ säker åtkomst till organisationens data, även om ditt team är på distans eller använder offentligt WiFi."
       ],
@@ -3690,9 +3581,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Alla i din organisation kan ansluta till delade servrar i alla länder."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "För en sömlös övergång till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
@@ -3708,9 +3596,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Hur vi stöttade lokala aktivister när integritet och yttrandefrihet hotades."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Om du inte redan har gjort det, aktivera några återställningsmetoder för att säkerställa att du aldrig förlorar åtkomst till ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
@@ -3788,11 +3673,11 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Tråkigt att du lämnar oss. Om du har en stund över skulle vi verkligen uppskatta att höra varför du vill avbryta Din feedback hjälper oss att göra ${ BRAND_NAME } bättre för alla."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Du har redan en Gmail-adress som vidarebefordras till ${ MAIL_APP_NAME }. Anslut den nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
@@ -3812,9 +3697,6 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Du kan fortfarande logga in med denna adress och återansluta när som helst."
-      ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adresser till ${ MAIL_APP_NAME }."
@@ -3825,6 +3707,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Du har anslutit en extern kontoadress till ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera ${ newUserStorageText } av dina senaste Gmail-meddelanden"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera dina senaste Gmail-e-postmeddelanden."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adress.",
@@ -4543,6 +4431,9 @@
       "Invalid private key file": [
         "Ogiltig privat nyckelfil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ogiltig återställningstoken. Uppdatera sidan och försök igen."
+      ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
@@ -4724,6 +4615,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong while converting the address": [
+        "Något gick fel när adressen konverterades"
       ],
       "Something went wrong while creating the address": [
         "Något gick fel när adressen skapades"
@@ -5048,6 +4942,9 @@
       ],
       "Ask your administrator to enable Account monitor.": [
         "Be din administratör att aktivera kontoövervakning."
+      ],
+      "Enable account monitor to start loading event.": [
+        "Aktivera kontoövervakare för att starta ladda händelse."
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -5807,9 +5704,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Beskrivning:"
-      ],
       "Group address:": [
         "Gruppadress:"
       ],
@@ -6522,29 +6416,20 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importera dina befintliga koder** från andra 2FA-appar, som Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Steg 1: Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Steg 1:** Bjud in dina vänner till ${ BRAND_NAME } med din hänvisningslänk."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Steg 2:** Dina vänner får **2 veckor gratis** på sitt paket."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje person som prenumererar på ett paket."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Steg 3:** Få **${ referrerRewardAmount } krediter** för varje person som prenumererar på ett paket."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
       ],
       "**Sync codes** to all your devices": [
         "**Synkronisera koder** till alla dina enheter"
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i krediter om de prenumererar."
+      ],
       "**This will disable 2-factor authentication.**": [
         "**Detta kommer inaktivera tvåfaktorsautentisering.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mer",
@@ -7025,6 +6910,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kommer du ihåg ditt lösenord? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vill du återkalla alla andra sessioner än den nuvarande?"
       ],
@@ -7254,6 +7142,9 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
+      "Forgot password?": [
+        "Gömt lösenord?"
+      ],
       "Free trial": [
         "Gratis provperiod"
       ],
@@ -7286,9 +7177,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli aviserad om ditt lösenord eller annan personlig data har läckt. ${ learnMoreLinkNoBreach }"
-      ],
-      "Get started": [
-        "Kom igång"
       ],
       "Get started with the referral link above.": [
         "Kom igång med hänvisningslänken ovan."
@@ -7813,6 +7701,9 @@
       "Password must have:": [
         "Lösenord måste innehålla:"
       ],
+      "Password verified": [
+        "Lösenord verifierat"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
       ],
@@ -7824,6 +7715,9 @@
       ],
       "per month, billed at ${ price }": [
         "per månad, faktureras med ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Uppmanar dig regelbundet att verifiera ditt lösenord för ${ BRAND_NAME } för att säkerställa att du inte glömmer det. Du kommer att bli tillfrågad mer sällan med tiden."
       ],
       "Please add a password for the user on row": [
         "Lägg till ett lösenord för användaren på raden",
@@ -7865,6 +7759,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Välj etiketterna du vill importera:"
       ],
       "Please specify...": [
         "Specificera …"
@@ -8075,9 +7972,6 @@
       ],
       "Set up your organization": [
         "Ställ in din organisation"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Ställ in din organisation och börja skydda dina data i några enkla steg."
       ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
@@ -8414,6 +8308,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "För att hjälpa till att hålla ditt konto säkert vill vi se till att det verkligen är du som försöker logga in."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
@@ -8425,6 +8322,9 @@
       ],
       "To proceed, we must verify the request.": [
         "För att fortsätta måste vi verifiera begäran."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "För att återfå åtkomst till ditt konto och dina data, ange återställningsfrasen på 12 ord associerad med ditt konto."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "För att säkra din internetanslutning, ladda ner och installera ${ VPN_APP_NAME }-applikationen för din enhet och anslut till en server."
@@ -8675,6 +8575,9 @@
       "We'll notify you when the import is done.": [
         "Vi aviserar dig när importen är klar."
       ],
+      "We'll remind you to verify your password again later": [
+        "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
       ],
@@ -8834,6 +8737,9 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan inte hänvisa ${ MAIL_APP_NAME }-användare"
+      ],
+      "You do not have permission to create users.": [
+        "Du har inte behörighet att skapa användare."
       ],
       "You don't have any referrals.": [
         "Du har inga hänvisningar."
@@ -9115,19 +9021,9 @@
         "Endast visa"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Så här kommer din organisation att visas för användarna. Du kan ändra det när som helst."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Inte en giltig e-postadress"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Vad heter din organisation?"
       ]
     },
     "invitation status": {
@@ -9375,6 +9271,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendrar"
+      ],
       "Card details": [
         "Kortdetaljer"
       ],
@@ -9428,9 +9327,6 @@
       ],
       "Confirm login password": [
         "Bekräfta inloggningslösenord"
-      ],
-      "Confirm MX records added": [
-        "Bekräfta tillagda MX-poster"
       ],
       "Confirm new password": [
         "Bekräfta nytt lösenord"
@@ -9523,6 +9419,9 @@
       "Don't show this again": [
         "Visa inte detta igen"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g. example.com": [
         "t.ex. exempel.se"
       ],
@@ -9546,6 +9445,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-post med @yourcompany.com-domän"
+      ],
+      "Emails": [
+        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -9844,6 +9746,9 @@
       "Password": [
         "Lösenord"
       ],
+      "Password reminders": [
+        "Lösenordspåminnelser"
+      ],
       "Password strength": [
         "Lösenordsstyrka"
       ],
@@ -9957,6 +9862,9 @@
       ],
       "See your team's availability": [
         "Se ditt teams tillgänglighet"
+      ],
+      "Select an identity provider to start": [
+        "Välj en identitetsleverantör att starta"
       ],
       "Select which Gmail address to connect": [
         "Välj vilken Gmail-adress att ansluta"
@@ -10180,20 +10088,6 @@
         "Lägg till följande TXT-post. Obs! DNS-poster kan ta flera timmar att uppdatera."
       ]
     },
-    "Label for domain setup": {
-      "${ capitalizedGroup } record not found": [
-        "${ capitalizedGroup }-post hittades inte"
-      ],
-      "Invalid ${ group.name } record found": [
-        "Ogiltig ${ group.name }-post hittades"
-      ],
-      "Type": [
-        "Typ"
-      ],
-      "Valid ${ group.name } record found": [
-        "Giltig ${ group.name }-post hittades"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Admin"
@@ -10254,11 +10148,6 @@
       ],
       "To: ${ to }": [
         "Till: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Välj en identitetsleverantör att starta"
       ]
     },
     "Limit of calendars reached": {
@@ -10327,11 +10216,17 @@
       "Forgot username?": [
         "Glömt användarnamn?"
       ],
+      "Frequent sign-in problems": [
+        "Vanliga inloggningsproblem"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "Skaffa ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Skaffa ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjälp från ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupper"
@@ -10713,6 +10608,9 @@
       ],
       "Document and spreadsheet editor": [
         "Dokument- och kalkylbladsredigerare"
+      ],
+      "Email writing assistant": [
+        "Skrivassistent för e-post"
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
@@ -11404,6 +11302,10 @@
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
       ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Servrar i ${ VPN_SERVERS.paid.countries }+ land",
+        "Servrar i ${ VPN_SERVERS.paid.countries }+ länder"
+      ],
       "Share files with no size limit": [
         "Dela filer utan storleksbegränsning"
       ],
@@ -12053,9 +11955,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Delta i undersökningar för att förbättra ${ BRAND_NAME }-tjänsterna"
-      ],
-      "Product updates": [
-        "Produktuppdateringar"
       ]
     },
     "Notification": {
@@ -12678,6 +12577,20 @@
         "Tidsbegränsat erbjudande."
       ]
     },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Om du glömmer ditt lösenord kan du förlora åtkomst till dina krypterade data."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Se till att du memorerar eller förvarar ditt lösenord säkert eftersom det är nyckeln till att dekryptera dina data."
+      ],
+      "Turn off password reminders?": [
+        "Stäng av lösenordspåminnelser?"
+      ],
+      "Turn off reminders": [
+        "Stäng av påminnelser"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med ditt ** gamla lösenord**."
@@ -13163,9 +13076,6 @@
       "Enter a name": [
         "Ange ett namn"
       ],
-      "Enter name": [
-        "Ange namn"
-      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -13395,15 +13305,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
-      "SPRING SALE 2026": [
-        "VÅRREA 2026"
+      "Summer Sale": [
+        "Sommarrea"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/månad"
       ],
@@ -13422,35 +13332,17 @@
       "500 GB storage": [
         "500 GB lagringsutrymme"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till 15 000+ servrar i 120+ länder"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Få åtkomst till avancerade AI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alla premiumfunktioner i Mail, Pass, Drive, VPN och Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockera annonser, spårare och skadlig kod"
-      ],
-      "Built-in 2FA authenticator": [
-        "Inbyggd 2FA-autentiserare"
-      ],
-      "Connect 10 devices at once": [
-        "Anslut 10 enheter samtidigt"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Förläng din prenumeration och spara ${ discountPercent } %!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Full åtkomst till ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fullständig chatthistorik med enkelt sök och favoriter"
       ],
       "Individual accounts for 6 users": [
         "Individuella konton för 6 användare"
@@ -13458,8 +13350,8 @@
       "Individual accounts for you and a partner": [
         "Individuella konton för dig och en partner"
       ],
-      "Online document editor": [
-        "Dokumentredigerare online"
+      "Online document and spreadsheet editor": [
+        "Dokument- och kalkylbladsredigerare online"
       ],
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
@@ -13470,25 +13362,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Obegränsat antal dagliga chattar"
-      ],
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsade hide-my-email-alias"
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "för 12 månader"
       ],
-      "SPRING SALE": [
-        "VÅRREA"
+      "SUMMER SALE": [
+        "SOMMARREA"
       ]
     },
     "Recovery Email": {
@@ -13576,14 +13462,11 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Ge 2 veckor, få ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Ge ${ refereeRewardAmount }, få ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Hur din gratis provperiod fungerar:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Jag har använt ${ BRAND_NAME } och tänkte att du kanske skulle gilla det. Det är en säker e-post, molnlagring, lösenordshanterare och VPN som skyddar din integritet. Registrera dig med denna länk för att få 14 dagars premiumfunktioner gratis: ${ referralLink }"
       ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Om du avbryter, kommer du att förlora din **${ referrerRewardAmount }** kreditbelöning."
@@ -13615,9 +13498,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Du har **${ daysRemaining } dag kvar** att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda.",
         "Du har **${ daysRemaining } dagar kvar** för att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Din vän får också ${ refereeRewardAmount } att lösa in på sin nästa faktura!"
       ],
       "your subscription": [
         "din prenumeration"
@@ -13841,6 +13721,25 @@
       ],
       "Edit retention rule": [
         "Redigera bevaranderegel"
+      ]
+    },
+    "Role": {
+      "Owner": [
+        "Ägare"
+      ],
+      "Security Admin": [
+        "Säkerhetsadministratör"
+      ],
+      "User Admin": [
+        "Användaradministratör"
+      ]
+    },
+    "Role description": {
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
       ]
     },
     "Safety review": {
@@ -15742,6 +15641,12 @@
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
+      "Password reminders disabled": [
+        "Lösenordspåminnelser inaktiverade"
+      ],
+      "Password reminders enabled": [
+        "Lösenordspåminnelser aktiverade"
+      ],
       "Password updated": [
         "Lösenord uppdaterad"
       ],
@@ -16332,6 +16237,9 @@
       "Connect your custom domain": [
         "Anslut din anpassad domän"
       ],
+      "Connected emails": [
+        "Ansluten e-post"
+      ],
       "Connection status": [
         "Anslutningsstatus"
       ],
@@ -16611,6 +16519,9 @@
       "Forgot recovery method": [
         "Glömt återställningsmetod"
       ],
+      "Free plan": [
+        "Free-paket"
+      ],
       "Gateway": [
         "Gateway"
       ],
@@ -16652,9 +16563,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Kom igång"
       ],
       "Get the apps": [
         "Skaffa appen"
@@ -16705,9 +16613,6 @@
       "Import contacts": [
         "Importera kontakter"
       ],
-      "Import emails, calendars, contacts": [
-        "Importera e-post, kalendrar, kontakter"
-      ],
       "Import events": [
         "Importera händelser"
       ],
@@ -16717,8 +16622,14 @@
       "Import groups": [
         "Importera grupper"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importera via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importera din data till ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importer"
       ],
       "Information exposed in breach": [
         "Information exponerad vid intrång"
@@ -16750,8 +16661,8 @@
       "Make your business stand out": [
         "Få ditt företag att sticka ut"
       ],
-      "Migration assistant": [
-        "Migreringsassistent"
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrera din organisation till ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -16803,6 +16714,9 @@
       ],
       "Open pagination": [
         "Öppna sidnumrering"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
@@ -17108,6 +17022,9 @@
       "Summary": [
         "Sammanfattning"
       ],
+      "Summer Sale": [
+        "Sommarrea"
+      ],
       "Support your compliance objectives": [
         "Stöder dina efterlevnadsmål"
       ],
@@ -17137,6 +17054,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "För att förhandsgranska detta kalkylblad, öppna det i ${ SHEETS_APP_NAME } eller ladda ner det."
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Felsök med ${ LUMO_SHORT_APP_NAME }"
       ],
       "Troubleshoot your issue": [
         "Felsök ditt problem"
@@ -17225,6 +17145,9 @@
       "Verify it’s you": [
         "Verifiera att det är du"
       ],
+      "Verify your password": [
+        "Verifiera ditt lösenord"
+      ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
       ],
@@ -17251,9 +17174,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Välkommen till ${ planName }"
       ],
       "What is an alias?": [
         "Vad är ett alias?"
@@ -17538,8 +17458,8 @@
       "User is a group": [
         "Användare är en grupp"
       ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
@@ -18107,6 +18027,9 @@
       ],
       "Are you sure you want to remove your notification email?": [
         "Är du säker på att du vill ta bort din e-postavisering?"
+      ],
+      "Are you sure you want to remove your recovery email?": [
+        "Är du säker på att du vill ta bort din e-post för återställning?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna få dagliga e-postaviseringar."

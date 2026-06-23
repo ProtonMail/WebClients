@@ -95,12 +95,12 @@ export const useSearchResultItems = () => {
             const drive = getDrive();
             const maybeNode = await drive.getNode(item.nodeUid);
             const node = getNodeEntity(maybeNode).node;
-            const rootNode = await getRootNode(node, getDrive());
+            const rootNode = await getRootNode(maybeNode, getDrive());
             const deprecatedShareId = rootNode.deprecatedShareId || '';
 
             if (item.mediaType) {
                 const openInDocInfo = getOpenInDocsInfo(item.mediaType);
-                if (openInDocInfo) {
+                if (openInDocInfo && openInDocInfo.isNative) {
                     void openDocsOrSheetsDocument({
                         uid: node.uid,
                         ...openInDocInfo,

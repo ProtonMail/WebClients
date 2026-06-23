@@ -26,9 +26,6 @@
       "Are you sure you want to delete all conversations?": [
         "Confermi di voler eliminare tutte le conversazioni?"
       ],
-      "Are you sure you want to delete the conversation?": [
-        "Confermi di voler eliminare la conversazione?"
-      ],
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
@@ -245,6 +242,9 @@
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
+      "Reload": [
+        "Ricarica"
+      ],
       "Remove": [
         "Rimuovi"
       ],
@@ -422,6 +422,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licenza ${ LUMO_APP_NAME }",
         "${ seats } licenze ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } posto dell'assistente alla scrittura",
@@ -862,6 +866,9 @@
       ],
       "Create folder": [
         "Crea una cartella"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME } personalizzati"
       ],
       "Dark": [
         "Scura"
@@ -1335,12 +1342,6 @@
       "Excluded": [
         "Escluso"
       ],
-      "File capacity": [
-        "Capacità di archiviazione file"
-      ],
-      "File capacity for this conversation": [
-        "Capacità dei file per questa conversazione"
-      ],
       "File too large for preview (>150k tokens)": [
         "File troppo grande per l'anteprima (>150k token)"
       ],
@@ -1349,9 +1350,6 @@
       ],
       "Files automatically retrieved based on your question.": [
         "File recuperati automaticamente in base alla tua domanda."
-      ],
-      "Files you've added to this conversation.": [
-        "File che hai aggiunto a questa conversazione."
       ],
       "High-speed chats and advanced AI features.": [
         "Chat veloci e funzioni AI avanzate."
@@ -1909,6 +1907,9 @@
       "More options": [
         "Altre opzioni"
       ],
+      "New ${ LUMO_SHORT_APP_NAME }": [
+        "Nuovo ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Next message": [
         "Prossimo messaggio"
       ],
@@ -1932,6 +1933,9 @@
       ],
       "Request a shorter, more focused response": [
         "Richiedi una risposta più breve e concisa."
+      ],
+      "Retry": [
+        "Riprova"
       ],
       "Retry with the same prompt": [
         "Riprova con lo stesso prompt"
@@ -1977,6 +1981,14 @@
       ],
       "What needs changed?": [
         "Cosa c'è da cambiare?"
+      ]
+    },
+    "collider_2025:Badge": {
+      "Built-in": [
+        "Integrato"
+      ],
+      "Selected": [
+        "Seleziona"
       ]
     },
     "collider_2025:Button": {
@@ -2075,6 +2087,9 @@
       "Failed to link Drive folder": [
         "Impossibile collegare la cartella Drive"
       ],
+      "Failed to load image": [
+        "Impossibile caricare l'immagine"
+      ],
       "Failed to process file: ${ file.name }": [
         "Impossibile elaborare il file: ${ file.name }"
       ],
@@ -2108,6 +2123,11 @@
         "Progetti illimitati"
       ]
     },
+    "collider_2025:Filter": {
+      "Built-in": [
+        "Integrato"
+      ]
+    },
     "collider_2025:Icon": {
       "Expiring soon": [
         "Prossima scadenza"
@@ -2138,9 +2158,6 @@
       ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Sei sicuro di voler eliminare \"${ project.name }\"? Questa azione non può essere annullata."
-      ],
-      "Are you sure you want to delete this conversation? This action cannot be undone.": [
-        "Sei sicuro di voler eliminare questa conversazione? Questa azione non può essere annullata."
       ],
       "Auto-retrieved": [
         "Recuperato automaticamente"
@@ -2269,6 +2286,9 @@
       ],
       "Search chats": [
         "Cerca nelle chat"
+      ],
+      "Search custom ${ LUMO_SHORT_APP_NAME }": [
+        "Ricerca personalizzata ${ LUMO_SHORT_APP_NAME }"
       ],
       "Sign in required": [
         "Login richiesto"
@@ -2474,8 +2494,8 @@
       "Create new project": [
         "Crea nuovo oggetto"
       ],
-      "Delete conversation?": [
-        "Elimina la conversazione?"
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Personalizza ${ LUMO_SHORT_APP_NAME }"
       ],
       "Delete project?": [
         "Eliminare il progetto?"
@@ -3541,9 +3561,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
       ],
@@ -4130,6 +4147,10 @@
       ],
       "Country code": [
         "Codice nazione"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un cloud sicuro per ${ memberCount } membro",
+        "Crea un cloud sicuro per ${ memberCount } membri"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
@@ -5061,6 +5082,16 @@
       "Up to ${ n } participant": [
         "Fino a ${ n } partecipante",
         "Fino a ${ n } partecipanti"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferenze, ${ n } partecipante",
+        "Videoconferenze, ${ n } partecipanti"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licenza inclusa",
+        "${ seats } licenze incluse"
       ]
     },
     "New Label form": {
@@ -5862,6 +5893,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } paese",
+        "${ n } paesi"
+      ],
       "Access advanced VPN features": [
         "Accedi a funzionalità VPN avanzate"
       ],
@@ -6401,18 +6436,15 @@
         "Effettua l'upgrade a ${ upsellPlanTitle }"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Ottieni l'offerta"
       ],
-      "Spring Sale": [
-        "Spring Sale"
-      ],
-      "SPRING SALE 2026": [
-        "SPRING SALE 2026"
+      "Summer Sale": [
+        "Saldi estivi"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/mese"
       ],
@@ -6431,35 +6463,17 @@
       "500 GB storage": [
         "500 GB di archiviazione"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accedi a oltre 15.000 server in più di 120 Paesi"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Accesso a modelli IA avanzati"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Tutte le funzionalità premium di Mail, Pass, Drive, VPN e Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocca annunci, tracker e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Strumento di autenticazione 2FA integrato"
-      ],
-      "Connect 10 devices at once": [
-        "Connetti 10 dispositivi contemporaneamente"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Estendi il tuo abbonamento e risparmia ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Accesso completo a ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Cronologia chat completa con ricerca facile e preferiti"
       ],
       "Individual accounts for 6 users": [
         "Account individuali per sei utenti"
@@ -6467,8 +6481,8 @@
       "Individual accounts for you and a partner": [
         "Account individuali per te e un'altra persona"
       ],
-      "Online document editor": [
-        "Editor di documenti online"
+      "Online document and spreadsheet editor": [
+        "Editor di documenti e fogli di calcolo online"
       ],
       "Recover previous file versions": [
         "Recupera le versioni precedenti dei file"
@@ -6479,25 +6493,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Passa al nostro piano annuale e risparmia ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Numero illimitato di chat al giorno"
-      ],
       "Unlimited folders, labels, and filters": [
         "Cartelle, etichette e filtri illimitati"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Alias hide-my-email illimitati"
       ],
       "Use your own email domain": [
         "Usa il tuo dominio email personale"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "per 12 mesi"
       ],
-      "SPRING SALE": [
-        "SPRING SALE"
+      "SUMMER SALE": [
+        "SALDI ESTIVI"
       ]
     },
     "Safety review": {
@@ -7045,6 +7053,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
       ],
@@ -7156,9 +7167,6 @@
       "Human verification": [
         "Verifica umana"
       ],
-      "Import emails, calendars, contacts": [
-        "Importa email, calendari, contatti"
-      ],
       "Indexed Drive documents": [
         "Documenti indicizzati di Drive"
       ],
@@ -7224,6 +7232,9 @@
       ],
       "Summary": [
         "Riepilogo"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"

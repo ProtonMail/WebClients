@@ -35,12 +35,11 @@ describe('getVatPrefix', () => {
         expect(getVatPrefix('CH')).toBe('CHE');
     });
 
-    it('returns CHE for LI (Liechtenstein shares the Swiss VAT system)', () => {
-        expect(getVatPrefix('LI')).toBe('CHE');
-    });
-
-    it('returns null for IS (collected, but Iceland VSK numbers may have no prefix)', () => {
-        expect(getVatPrefix('IS')).toBeNull();
+    it.each([
+        ['IS', 'Iceland VSK numbers have no prefix'],
+        ['LI', 'Liechtenstein numbers are not validated, so we do not prefill CHE'],
+    ])('returns null for collected countries we do not prefix (%s — %s)', (countryCode) => {
+        expect(getVatPrefix(countryCode)).toBeNull();
     });
 });
 
@@ -93,19 +92,17 @@ describe('vatNumberMissingPrefix', () => {
         expect(vatNumberMissingPrefix('123456789', 'GB')).toBe(true);
     });
 
-    it('returns false for CH/LI with the CHE prefix', () => {
+    it('returns false for CH with the CHE prefix', () => {
         expect(vatNumberMissingPrefix('CHE100416306MWST', 'CH')).toBe(false);
-        expect(vatNumberMissingPrefix('CHE100416306MWST', 'LI')).toBe(false);
     });
 
-    it('returns true for CH/LI with the bare CH prefix (must be CHE)', () => {
+    it('returns true for CH with the bare CH prefix (must be CHE)', () => {
         expect(vatNumberMissingPrefix('CH100416306', 'CH')).toBe(true);
-        expect(vatNumberMissingPrefix('LI100416306', 'LI')).toBe(true);
     });
 
-    it('returns false for IS regardless of content (collected, but no prefix)', () => {
-        expect(vatNumberMissingPrefix('123456', 'IS')).toBe(false);
-        expect(vatNumberMissingPrefix('IS123456', 'IS')).toBe(false);
+    it.each(['IS', 'LI'])('returns false for %s regardless of content (collected, but no prefix)', (countryCode) => {
+        expect(vatNumberMissingPrefix('123456', countryCode)).toBe(false);
+        expect(vatNumberMissingPrefix('CHE123456', countryCode)).toBe(false);
     });
 
     it('returns false when the value equals exactly the prefix (boundary case)', () => {

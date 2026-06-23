@@ -13,6 +13,7 @@ import { openAgentPicker } from '../../redux/slices/composerActions';
 import { MenuDropdown, type MenuDropdownProps, MenuItem } from './components/MenuDropdown';
 
 import './ToolMenuDropdown.scss';
+import {LUMO_SHORT_APP_NAME} from "@proton/shared/lib/constants";
 
 interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
     onClickCreateImageOption: () => void;
@@ -50,7 +51,7 @@ export const ToolMenuDropdown = ({
         },
         {
             iconName: 'robot' as IconName,
-            getLabel: () => c('collider_2025: Action').t`Agents`,
+            getLabel: () => c('collider_2025: Action').t`Custom ${LUMO_SHORT_APP_NAME}s`,
             onClick: () => dispatch(openAgentPicker()),
             onClose: onClose,
             canShow: canUseAgents && isCustomAgentsFlagEnabled,

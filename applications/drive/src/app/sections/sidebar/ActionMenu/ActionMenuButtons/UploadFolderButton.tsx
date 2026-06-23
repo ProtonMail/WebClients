@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon } from '@proton/components';
+import { DropdownMenuButton } from '@proton/components';
+import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 
 interface Props {
     onClick: () => void;
@@ -19,7 +20,7 @@ export const UploadFolderButton = ({ onClick }: Props) => {
                 onClick={onClick}
                 data-testid="dropdown-upload-folder"
             >
-                <Icon className="mr-2" name="folder-arrow-up" />
+                <IcFolderArrowUp className="mr-2" />
                 <span>{c('Action').t`Upload folder`}</span>
             </DropdownMenuButton>
         </>

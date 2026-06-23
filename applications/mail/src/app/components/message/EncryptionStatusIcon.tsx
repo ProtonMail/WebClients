@@ -1,5 +1,6 @@
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import clsx from '@proton/utils/clsx';

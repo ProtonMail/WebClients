@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import type { Plan } from '@proton/payments';
 import { ADDON_NAMES } from '@proton/payments';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { PLANS_MAP } from '@proton/testing/data';
+import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 import ScribeAddon from './ScribeAddon';
 

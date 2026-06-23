@@ -7,14 +7,18 @@ import { calculateAttachmentTokenCount, storeAttachmentInRedux } from '../../uti
 import { isImageFile } from '../../util/fileTypeHelpers';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
 import type { FileProcessingOptions, FileProcessingService } from '../fileProcessingService';
-import { findDuplicateAttachment } from './duplicateDetection';
+import { findDuplicateAttachment, generateUniqueFilename } from './duplicateDetection';
 
 export const handleFileAsync =
     (
         file: File,
         messageChain: Message[] = [],
         fileProcessingService: FileProcessingService,
-        processingOptions?: FileProcessingOptions
+        processingOptions?: FileProcessingOptions,
+        // When true, a filename collision is resolved by appending a counter
+        // suffix (e.g. image (2).png) instead of rejecting the file. Used for
+        // pasted clipboard images, which the browser always names image.png.
+        renameOnConflict: boolean = false
     ) =>
     async (
         dispatch: LumoDispatch,
@@ -31,19 +35,29 @@ export const handleFileAsync =
         // Record start time for performance tracking
         const startTime = performance.now();
 
-        // Check for duplicate files before processing - scope to current conversation only
+        // Handle filename collisions within the current conversation. By default
+        // a duplicate is rejected, but for pasted clipboard images (which the
+        // browser always names image.png) we instead append a counter suffix so
+        // the file is added as image (2).png.
         const currentState = getState();
         const allAttachments = selectAttachments(currentState);
-        const duplicate = findDuplicateAttachment(file, messageChain, allAttachments);
-        if (duplicate) {
-            onComposerError('DuplicateFile');
-            console.log(`Duplicate file detected in current conversation: ${file.name} (${file.size} bytes)`);
-            return {
-                success: false,
-                isDuplicate: true,
-                fileName: file.name,
-            };
+
+        if (!renameOnConflict) {
+            const duplicate = findDuplicateAttachment(file, messageChain, allAttachments);
+            if (duplicate) {
+                onComposerError('DuplicateFile');
+                console.log(`Duplicate file detected in current conversation: ${file.name} (${file.size} bytes)`);
+                return {
+                    success: false,
+                    isDuplicate: true,
+                    fileName: file.name,
+                };
+            }
         }
+
+        const uniqueFilename = renameOnConflict
+            ? generateUniqueFilename(file.name, messageChain, allAttachments)
+            : file.name;
 
         const fileData = new Uint8Array(await file.arrayBuffer());
 
@@ -55,7 +69,7 @@ export const handleFileAsync =
             rawBytes: file.size, // size of original binary as sent by user
             processing: true,
             // priv:
-            filename: file.name,
+            filename: uniqueFilename,
             data: fileData, // Keep data for processing
         };
 
@@ -168,7 +182,7 @@ export const handleFileAsync =
 
         return {
             success: !hasError && !isUnsupported,
-            fileName: file.name,
+            fileName: uniqueFilename,
             errorMessage: hasError ? processedAttachment.errorMessage : undefined,
             attachmentId: processedAttachment.id,
             markdown: processedAttachment.markdown,

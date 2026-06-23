@@ -3,8 +3,9 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
 import type { DrawingMode } from '../drawingcanvas/types';
@@ -143,7 +144,7 @@ export const ImagePreviewOverlay = ({
                     onClick={mode === 'edit' ? () => setMode('preview') : onClose}
                     title={mode === 'edit' ? c('collider_2025:Action').t`Back` : c('collider_2025:Action').t`Close`}
                 >
-                    <Icon name={mode === 'edit' ? 'arrow-left' : 'cross'} size={4} />
+                    {mode === 'edit' ? <IcArrowLeft size={4} /> : <IcCross size={4} />}
                 </button>
             </div>
 

@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SearchInput from '@proton/components/components/input/SearchInput';
+import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
@@ -19,6 +19,8 @@ import RetentionPolicyTableRow from './RetentionPolicyTableRow';
 import { getActionLabel, getDaysStringFromLifetime } from './helpers';
 import { useRetentionRuleScopeSuggestion } from './useRetentionRuleScopeSuggestion';
 
+const GuardedCreateButton = withPermissionGuard('account.data_retention.create')(Button);
+
 interface RetentionPolicyTableProps {
     rules: RetentionRule[];
     loading: boolean;
@@ -31,7 +33,6 @@ const RetentionPolicyTable = ({ rules, loading, onEdit, onDelete, onCreateNew }:
     const [searchKeyword, setSearchKeyword] = useState('');
     const { getFullScopeLabel } = useRetentionRuleScopeSuggestion();
     const [permissions] = useOrgPermissions();
-    const canCreate = !!permissions?.['account.data_retention.create'];
     const canUpdate = !!permissions?.['account.data_retention.update'];
     const canDelete = !!permissions?.['account.data_retention.delete'];
 
@@ -71,16 +72,11 @@ const RetentionPolicyTable = ({ rules, loading, onEdit, onDelete, onCreateNew }:
     return (
         <>
             <div className="mb-4 flex items-center gap-4">
-                <Tooltip title={canCreate ? null : c('Label').t`You don't have permissions`} openDelay={100}>
-                    <span>
-                        <Button
-                            color="norm"
-                            data-testid="retention-policies:create-policy"
-                            onClick={onCreateNew}
-                            disabled={!canCreate}
-                        >{c('retention_policy_2025_Action').t`Create retention rule`}</Button>
-                    </span>
-                </Tooltip>
+                <GuardedCreateButton
+                    color="norm"
+                    data-testid="retention-policies:create-policy"
+                    onClick={onCreateNew}
+                >{c('retention_policy_2025_Action').t`Create retention rule`}</GuardedCreateButton>
 
                 <div className="ml-0 lg:ml-auto w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
                     <SearchInput

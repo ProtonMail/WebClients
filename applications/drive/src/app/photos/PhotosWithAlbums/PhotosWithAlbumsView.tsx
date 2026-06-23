@@ -61,20 +61,34 @@ export const PhotosWithAlbumsView = () => {
     });
 
     const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
-        enqueueAdditionalInfo(nodeUid, () => Boolean(domRef.current));
-    }, []);
+        const shouldProcess = () => Boolean(domRef.current);
+        // How many rows the card is from the visible viewport (0 = on screen). The
+        // grid keeps the `data-viewport-distance` attribute in sync as it
+        // re-renders on scroll, so reading it here (re-evaluated by the loader when
+        // it builds each chunk) tracks the current scroll position without forcing
+        // a layout reflow, and lets the loader fetch nearer thumbnails first.
+        const viewportDistance = () => {
+            const el = domRef.current;
+            if (!(el instanceof HTMLElement)) {
+                return Number.MAX_SAFE_INTEGER;
+            }
+            const distance = Number(el.dataset.viewportDistance);
+            return Number.isFinite(distance) ? distance : 0;
+        };
+        // Decrypt the node and fetch its metadata.
+        enqueueAdditionalInfo(nodeUid, shouldProcess);
 
-    const handleItemRenderLoadedLink = useCallback(
-        (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => {
-            loadThumbnail(getDriveForPhotos(), {
-                nodeUid: nodeUid,
-                revisionUid: activeRevisionUid,
-                shouldLoad: () => Boolean(domRef.current),
-                thumbnailTypes: ['sd'],
-            });
-        },
-        []
-    );
+        // Load the thumbnail. Photos are single-revision, so we can request it from the
+        // thumbnail loader by nodeUid alone, without waiting for the revisionUid — which
+        // would otherwise mean waiting on the node to be decrypted and its metadata fetched.
+        loadThumbnail(getDriveForPhotos(), {
+            nodeUid: nodeUid,
+            shouldLoad: shouldProcess,
+            viewportDistance,
+            thumbnailTypes: ['sd'],
+            usePersistentCache: true,
+        });
+    }, []);
 
     // TODO: ALBUMSADDPHOTOS and ALBUMS page types may need their own empty-state logic
     const isPhotosEmpty =
@@ -108,7 +122,6 @@ export const PhotosWithAlbumsView = () => {
                 <PhotosGrid
                     uids={activeUids}
                     onItemRender={handleItemRender}
-                    onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={isPhotosLoading}
                     onItemClick={setPreviewNodeUid}
                     onSelectChange={(i, isSelected) =>

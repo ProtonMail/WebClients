@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,22 +16,36 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useLoading } from '@proton/hooks';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import PasswordReminderInput from './PasswordReminderInput';
 import { dismissPasswordReminder, submitPasswordReminder } from './index';
 import lock from './lock.svg';
+import type { PasswordReminderSource } from './passwordReminderTelemetry';
+import { usePasswordReminderTelemetry } from './passwordReminderTelemetry';
 
 interface PasswordReminderModalProps extends ModalProps<'form'> {
+    source: PasswordReminderSource;
     disableDismiss?: boolean;
 }
 
-const PasswordReminderModal = ({ onClose, disableDismiss, ...rest }: PasswordReminderModalProps) => {
+const PasswordReminderModal = ({ onClose, source, disableDismiss, ...rest }: PasswordReminderModalProps) => {
+    const api = useSilentApi();
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const dispatch = useDispatch();
+    const { sendOpen, sendSuccess, sendWrongPassword, sendApiError, sendClose, sendDismiss, sendForgotPasswordExit } =
+        usePasswordReminderTelemetry();
+
+    useEffect(() => {
+        sendOpen(source);
+    }, []);
 
     const [submitting, withSubmitting] = useLoading();
     const [dismissing, withDismissing] = useLoading();
@@ -42,6 +56,11 @@ const PasswordReminderModal = ({ onClose, disableDismiss, ...rest }: PasswordRem
 
     const emailOrNameToDisplay = user.Email || user.DisplayName || user.Name;
 
+    const handleClose = () => {
+        sendClose();
+        onClose?.();
+    };
+
     const handleDismiss = async () => {
         if (!disableDismiss) {
             await dispatch(dismissPasswordReminder());
@@ -50,19 +69,40 @@ const PasswordReminderModal = ({ onClose, disableDismiss, ...rest }: PasswordRem
                 text: c('Info').t`We'll remind you to verify your password again later`,
                 showCloseButton: false,
             });
+            sendDismiss();
+        } else {
+            sendClose();
         }
 
         onClose?.();
     };
 
     const handleSubmit = async () => {
-        await dispatch(submitPasswordReminder({ password }));
+        try {
+            const info = await api<InfoAuthedResponse>(getInfo({}));
+            await dispatch(submitPasswordReminder({ api, password, info, credentials: null }));
 
-        createNotification({
-            text: c('Info').t`Password verified`,
-            showCloseButton: false,
-        });
+            sendSuccess();
 
+            createNotification({
+                text: c('Info').t`Password verified`,
+                showCloseButton: false,
+            });
+
+            onClose?.();
+        } catch (error) {
+            const { code } = getApiError(error);
+            if (code === PASSWORD_WRONG_ERROR) {
+                sendWrongPassword();
+            } else {
+                sendApiError();
+            }
+            handleError(error);
+        }
+    };
+
+    const handleForgotPasswordClick = () => {
+        sendForgotPasswordExit();
         onClose?.();
     };
 
@@ -76,9 +116,9 @@ const PasswordReminderModal = ({ onClose, disableDismiss, ...rest }: PasswordRem
                 if (!onFormSubmit(event.currentTarget) || loading) {
                     return;
                 }
-                void withSubmitting(handleSubmit().catch(handleError));
+                void withSubmitting(handleSubmit());
             }}
-            onClose={onClose}
+            onClose={handleClose}
             {...rest}
         >
             <ModalHeader
@@ -109,7 +149,7 @@ const PasswordReminderModal = ({ onClose, disableDismiss, ...rest }: PasswordRem
                     color="norm"
                     as={SettingsLink}
                     path="/account-password?action=forgot-password"
-                    onClick={onClose}
+                    onClick={handleForgotPasswordClick}
                 >
                     {c('Info').t`Forgot password?`}
                 </ButtonLike>

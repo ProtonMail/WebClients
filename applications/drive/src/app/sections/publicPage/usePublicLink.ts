@@ -180,7 +180,7 @@ export const usePublicLink = (): UsePublicLinkResult => {
                 }
 
                 setCustomPassword(passwordRef.current);
-                setRootNode(node);
+                setRootNode(maybeNode);
                 setIsPasswordNeeded(false);
                 metrics.drive_public_share_load_success_total.increment({
                     type: [NodeType.File, NodeType.Photo].includes(node.type) ? 'file' : 'folder',

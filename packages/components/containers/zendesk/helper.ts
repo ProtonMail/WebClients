@@ -1,4 +1,8 @@
+import type { PLANS } from '@proton/payments/core/constants';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { isFree } from '@proton/shared/lib/user/helpers';
 
 export interface ZendeskRef {
     run: (data: object) => void;
@@ -16,4 +20,16 @@ export const getZendeskIframeUrl = (isZendeskV2Enabled: boolean) => {
     url.searchParams.set('Key', apiKey);
     url.searchParams.set('Version', zendeskVersion);
     return url;
+};
+
+// Zendesk does some special checks against plan name and `free` is taken. So we have to pass a custom value.
+type ZendeskTags = PLANS | 'free_user';
+export const getZendeskTags = (user: UserModel, organization: OrganizationExtended | undefined) => {
+    const planNames: ZendeskTags[] = [];
+    if (isFree(user)) {
+        planNames.push('free_user');
+    } else if (organization?.PlanName) {
+        planNames.push(organization.PlanName);
+    }
+    return planNames;
 };

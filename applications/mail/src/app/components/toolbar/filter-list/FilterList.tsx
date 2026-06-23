@@ -7,9 +7,11 @@ import Dropdown, { DropdownBorderRadius } from '@proton/components/components/dr
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
+import { IcLinesLongToSmall } from '@proton/icons/icons/IcLinesLongToSmall';
 import type { IconName } from '@proton/icons/types';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
@@ -168,7 +170,7 @@ export const FilterList = () => {
                 data-testid="filter-dropdown:show-filters"
                 title={c('Filter').t`Filter and sort emails`}
             >
-                <Icon size={3} className="mr-1" name="lines-long-to-small" />
+                <IcLinesLongToSmall size={3} className="mr-1" />
                 {activeState.dropdownActiveCount > 0
                     ? c('Filter').t`Filter (${activeState.dropdownActiveCount})`
                     : c('Filter').t`Filter`}

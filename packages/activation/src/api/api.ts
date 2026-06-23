@@ -169,6 +169,11 @@ export const getContactsImportData = (importerID: string) => ({
     method: 'GET',
 });
 
+export const getDriveImportData = (importerID: string) => ({
+    url: `importer/v1/drive/importers/${importerID}`,
+    method: 'GET',
+});
+
 export const deleteImportReport = (reportID: string, importType: ImportType) => {
     const method = 'delete';
 
@@ -179,6 +184,9 @@ export const deleteImportReport = (reportID: string, importType: ImportType) => 
             return { url: `importer/v1/calendar/importers/reports/${reportID}`, method };
         case ImportType.CONTACTS:
             return { url: `importer/v1/contacts/importers/reports/${reportID}`, method };
+        case ImportType.DRIVE:
+            // TODO(DRVBE-1686): Implement delete drive report route.
+            return { url: `importer/v1/drive/importers/reports/${reportID}`, method };
     }
 };
 
@@ -215,6 +223,11 @@ export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; Or
     url: 'mail/v4/byoe-address',
     method: 'POST',
     data: { Email, OrganizationId },
+});
+
+export const convertToBYOEAddress = (addressID: string) => ({
+    url: `mail/v4/byoe-address/${addressID}/convert`,
+    method: 'POST',
 });
 
 export const getOrganizationUsers = (params: { DomainName: string }, useCachedData: boolean = false) => ({

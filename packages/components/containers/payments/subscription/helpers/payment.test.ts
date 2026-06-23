@@ -8,8 +8,8 @@ import {
     subscriptionExpires,
 } from '@proton/payments';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
-import { buildSubscription } from '@proton/testing/builders';
-import { PLANS_MAP } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 describe('subscriptionExpires()', () => {
     it('should handle the case when subscription is free', () => {

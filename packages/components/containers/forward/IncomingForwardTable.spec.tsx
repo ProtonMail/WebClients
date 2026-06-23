@@ -2,15 +2,15 @@ import { useUser } from '@proton/account/user/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
 import {
-    applyHOCs,
     withApi,
     withAuthentication,
     withCache,
     withConfig,
     withEventManager,
     withNotifications,
-} from '@proton/testing';
+} from '@proton/testing/lib/context/providers';
 
 import IncomingForwardTable from './IncomingForwardTable';
 

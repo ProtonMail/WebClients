@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 import '@proton/testing/lib/mockMatchMedia';
+import '@proton/testing/lib/mockTelemetry';
 import '@proton/testing/lib/mockUnleash';
 
 window.ResizeObserver = jest.fn().mockImplementation(() => ({
@@ -13,10 +14,6 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
     loadCryptoWorker: jest.fn(),
-}));
-
-jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
 }));
 
 // Silence JDOM warnings triggered by emoji-mart

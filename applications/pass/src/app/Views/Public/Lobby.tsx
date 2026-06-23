@@ -9,7 +9,7 @@ import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
@@ -95,7 +95,7 @@ export const Lobby: FC = () => {
                                         ref={anchorRef}
                                         shape="ghost"
                                     >
-                                        <Icon name="user" className="shrink-0" />
+                                        <IcUser className="shrink-0" />
                                         <span className="text-ellipsis">{authStore?.getUserEmail()}</span>
                                     </DropdownButton>
                                 </div>

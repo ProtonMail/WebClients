@@ -23,7 +23,7 @@ import type {
     ProtonConfig,
     UserModel,
 } from '@proton/shared/lib/interfaces';
-import { buildUser } from '@proton/testing/builders';
+import { buildUser } from '@proton/testing/builders/user';
 
 import { apiMock } from '../api';
 import { mockCache } from '../cache';
@@ -94,7 +94,6 @@ export const defaultProtonConfig: ProtonConfig = {
     APP_NAME: 'proton-account',
     API_URL: 'https://proton.me/api',
     LOCALES: {},
-    LOCALES_DATE_FNS: [],
     DATE_VERSION: '2020-01-01',
     COMMIT: 'b8a9c0d1e2f3a4b5c6d4e8f9a0b2c2d3e4f5a6b7',
     BRANCH: 'main',

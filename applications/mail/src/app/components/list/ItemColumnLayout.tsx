@@ -29,6 +29,7 @@ import ItemDate from './ItemDate';
 import ItemHoverButtons from './ItemHoverButtons';
 import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
+import ItemOneTimeCode from './ItemOneTimeCode';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 import ItemExpiration from './item-expiration/ItemExpiration';
@@ -45,6 +46,7 @@ interface Props {
     isSelected: boolean;
     attachmentsMetadata?: AttachmentsMetadata[];
     userSettings?: UserSettings;
+    oneTimeCode?: string | null;
 }
 
 const ItemColumnLayout = ({
@@ -59,6 +61,7 @@ const ItemColumnLayout = ({
     senders,
     attachmentsMetadata = [],
     userSettings,
+    oneTimeCode,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -174,6 +177,10 @@ const ItemColumnLayout = ({
                             >
                                 {subjectContent}
                             </span>
+                            {/* Placed inline right after the subject so it sits with the text and does not shift when the hover action buttons appear. */}
+                            {oneTimeCode && (
+                                <ItemOneTimeCode code={oneTimeCode} element={element} className="ml-2 shrink-0" />
+                            )}
                         </div>
 
                         <div className="item-icons shrink-0 flex-nowrap hidden md:flex">

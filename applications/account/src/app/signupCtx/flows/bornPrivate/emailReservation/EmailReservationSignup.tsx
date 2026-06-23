@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import { Redirect, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ChallengeResult } from '@proton/components';
 import { CYCLE } from '@proton/payments/core/constants';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { useFlagsStatus } from '@proton/unleash/proxy';
-import { useFlag } from '@proton/unleash/useFlag';
+import { APPS } from '@proton/shared/lib/constants';
 
 import bornPrivatePage from '../../../../../pages/born-private';
 import { SignupType } from '../../../../signup/interfaces';
@@ -107,21 +104,7 @@ const EmailReservationFlow = () => {
 const EmailReservationSignup = () => {
     useMetaTags(bornPrivatePage());
     const location = useLocation();
-    const { flagsReady } = useFlagsStatus();
-    const isBornPrivateReservationEnabled = useFlag('BornPrivateReservation');
     const searchParams = new URLSearchParams(location.search);
-
-    if (!flagsReady) {
-        return (
-            <div className="flex items-center justify-center h-full w-full">
-                <CircleLoader size="large" />
-            </div>
-        );
-    }
-
-    if (!isBornPrivateReservationEnabled) {
-        return <Redirect to={SSO_PATHS.LOGIN} />;
-    }
 
     return (
         <SignupContextProvider
@@ -144,9 +127,9 @@ const EmailReservationSignup = () => {
             }}
             // Reserved accounts cannot log in until activation is completed using the activation code.
             // Login will be enabled in a separate activation flow.
-            onLogin={async () => {}}
-            onStartAuth={async () => {}}
-            onPreSubmit={async () => {}}
+            onLogin={async () => { }}
+            onStartAuth={async () => { }}
+            onPreSubmit={async () => { }}
             handleLogin={async () => ({ state: 'complete' })}
             loginUrl=""
         >

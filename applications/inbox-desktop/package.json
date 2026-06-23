@@ -1,6 +1,6 @@
 {
     "name": "proton-inbox-desktop",
-    "version": "1.12.1",
+    "version": "1.13.3",
     "description": "Proton official desktop application for Proton Mail and Proton Calendar",
     "license": "GPL-3.0",
     "author": {
@@ -74,7 +74,7 @@
         "cross-env": "^10.1.0",
         "css-loader": "^7.1.4",
         "dotenv": "^17.4.2",
-        "electron": "40.10.2",
+        "electron": "42.3.3",
         "eslint": "^9.39.4",
         "eslint-plugin-import": "^2.32.0",
         "fork-ts-checker-webpack-plugin": "^9.1.0",

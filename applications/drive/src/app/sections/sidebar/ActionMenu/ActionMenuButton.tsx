@@ -2,21 +2,16 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownMenu,
-    DropdownSizeUnit,
-    Icon,
-    SidebarPrimaryButton,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownSizeUnit, SidebarPrimaryButton, usePopperAnchor } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
 import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
+import { uploadManager } from '@proton/drive/modules/upload';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
-import { useFileUploadInput, useFolderUploadInput } from '../../../legacy/store';
+import { useUploadInput } from '../../../legacy/hooks/drive/useUploadInput';
 import { useDocumentActions, useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../legacy/store/_documents';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 import { CreateSheetButton } from './ActionMenuButtons/CreateSheetButton';
@@ -34,21 +29,21 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
     const isDesktop = !getDevice()?.type;
 
     const { activeFolder } = useActiveShare();
+    const parentFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
     const {
         inputRef: fileInput,
         handleClick: fileClick,
         handleChange: fileChange,
-    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, parentFolderUid) });
     const {
         inputRef: folderInput,
         handleClick: folderClick,
         handleChange: folderChange,
-    } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, parentFolderUid), forFolders: true });
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
-    const parentFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
     return (
         <>
             <SidebarPrimaryButton
@@ -61,7 +56,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
                 )}
                 onClick={toggle}
             >
-                <Icon className={clsx(!collapsed && 'mr-2', collapsed && 'flex mx-auto')} name="plus" />
+                <IcPlus className={clsx(!collapsed && 'mr-2', collapsed && 'flex mx-auto')} />
                 {!collapsed && (
                     <>
                         {

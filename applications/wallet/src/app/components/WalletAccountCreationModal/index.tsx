@@ -98,7 +98,9 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                                     <div className="flex flex-row items-center py-2">
                                         {getLabelByScriptType(opt as WasmScriptType)}
                                         <Tooltip title={getDescriptionByScriptType(opt as WasmScriptType)}>
-                                            <IcInfoCircle className="ml-auto color-hint" />
+                                            <span className="ml-auto inline-flex" style={{ pointerEvents: 'auto' }}>
+                                                <IcInfoCircle className="color-hint" />
+                                            </span>
                                         </Tooltip>
                                     </div>
                                 ),

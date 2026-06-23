@@ -8,6 +8,9 @@
       "Actual Size": [
         "Todellinen koko"
       ],
+      "Cancel": [
+        "Peruuta"
+      ],
       "Check spelling while typing": [
         "Tarkista oikeinkirjoitus kirjoittaessa"
       ],
@@ -83,6 +86,9 @@
       "Stop Speaking": [
         "Lopeta puhuminen"
       ],
+      "Switch to ${ appName }": [
+        "Vaihda ${ appName } -sovellukseen"
+      ],
       "These logs help us diagnose issues. The app will restart to apply the change.": [
         "Nämä lokit auttavat meitä diagnosoimaan ongelmia. Sovellus käynnistyy uudelleen muutoksen käyttöönottamiseksi."
       ],
@@ -91,6 +97,12 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Poista ${ MAIL_APP_NAME }"
+      ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Kun laitteistokiihdytys on käytössä, sovellus käyttää laitteen erillistä grafiikkapiiriä kuvan renderointiin. Tämä voi aiheuttaa yhteensopivuusongelmia joissakin järjestelmissä."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Ilman laitteistokiihdytystä sovellus käyttää ohjelmistopohjaista renderointia näytönohjaimen sijaan. Saatat huomata, että animaatiot ovat hitaampia ja prosessorin kuormitus on suurempi."
       ],
       "Zoom": [
         "Suurenna"

@@ -36,6 +36,7 @@ export function getVatPlaceholder(countryCode: string) {
         IE: 'IE1234567T',
         IS: 'IS123456',
         IT: 'IT12345678912',
+        LI: 'CHE123456789',
         LT: 'LT123456789123',
         LU: 'LU12345678',
         LV: 'LV12345678912',

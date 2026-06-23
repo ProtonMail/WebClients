@@ -44,7 +44,9 @@ export const SafetyReviewCta = ({
                             next('skipped', recoveryItem);
                         })
                     }
-                >{c('safety_review').t`Later`}</Button>
+                >
+                    {c('safety_review').t`Later`}
+                </Button>
                 <Button
                     color="norm"
                     fullWidth

@@ -27,6 +27,7 @@
         "@proton/colors": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/cross-storage": "workspace:^",
+        "@proton/drive": "workspace:^",
         "@proton/features": "workspace:^",
         "@proton/hooks": "workspace:^",
         "@proton/icons": "workspace:^",
@@ -82,6 +83,6 @@
         "jest-junit": "^16.0.0",
         "prettier": "^3.8.3",
         "typescript": "^6.0.2",
-        "webpack-dev-server": "^5.2.4"
+        "webpack-dev-server": "^5.2.5"
     }
 }

@@ -6,6 +6,15 @@ import { captureMessage } from '../helpers/sentry';
 import type { ProtonConfig } from '../interfaces';
 
 type EventArgs = Parameters<ReturnType<typeof createTelemetry>['sendCustomEvent']>;
+export interface TelemetryInitOptions {
+    config: ProtonConfig;
+    uid: string;
+    /**
+     * Event options are opt in - each defaults to false
+     */
+    eventOptions?: TelemetryConfig['events'];
+    overridenPageTitle?: string;
+}
 
 class ProtonTelemetry {
     private telemetry: ReturnType<typeof createTelemetry> | undefined;
@@ -22,17 +31,7 @@ class ProtonTelemetry {
      */
     private preInitialisationEventQueue: EventArgs[] = [];
 
-    public init({
-        config,
-        uid,
-        eventOptions,
-        overridenPageTitle,
-    }: {
-        config: ProtonConfig;
-        uid: string;
-        eventOptions?: TelemetryConfig['events'];
-        overridenPageTitle?: string;
-    }) {
+    public init({ config, uid, eventOptions, overridenPageTitle }: TelemetryInitOptions) {
         this.UID = uid;
         this.config = {
             endpoint: `${config.API_URL}/data/v1/telemetry`,

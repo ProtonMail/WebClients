@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
+import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import useApi from '@proton/components/hooks/useApi';
+import { IcShareNode } from '@proton/icons/icons/IcShareNode';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
 import type { Group, RoleAssignment } from '@proton/shared/lib/interfaces';
@@ -18,7 +20,6 @@ interface Props {
     onClick?: () => void;
     isNew?: boolean;
     onDeleteGroup?: () => void;
-    canOnlyDelete: boolean;
     name?: string;
     serializedGroup?: ReturnType<GroupsManagementReturn['getSerializedGroup']>;
     groupOrganizationRoles?: RoleAssignment[];
@@ -31,7 +32,6 @@ const GroupItem = ({
     onClick,
     isNew,
     onDeleteGroup,
-    canOnlyDelete,
     groupOrganizationRoles,
 }: Props) => {
     const api = useApi();
@@ -54,6 +54,8 @@ const GroupItem = ({
     const email = serializedGroup?.payload.email || group?.Address?.Email || '';
     const subtitle = roleNames || (showMailFeatures && email ? email : undefined);
 
+    const GroupIcon = getIsScimGroup(group) ? IcShareNode : IcUsers;
+
     return (
         <div className="relative">
             <Button
@@ -71,7 +73,7 @@ const GroupItem = ({
                             backgroundColor: 'var(--interaction-norm-minor-1)',
                         }}
                     >
-                        <IcUsers className="m-auto color-primary shrink-0" size={4} />
+                        <GroupIcon className="m-auto color-primary shrink-0" size={4} />
                     </div>
                     <div className="text-left flex flex-column flex-1">
                         <span className="block max-w-full text-bold text-ellipsis" title={name}>
@@ -86,11 +88,9 @@ const GroupItem = ({
                     {group && !isNew && handleDeleteAllGroupMembers && (
                         <div className="shrink-0">
                             <GroupItemMoreOptionsDropdown
-                                group={group}
                                 showMailFeatures={showMailFeatures}
                                 handleDeleteGroup={handleDeleteGroup}
                                 handleDeleteAllGroupMembers={handleDeleteAllGroupMembers}
-                                canOnlyDelete={canOnlyDelete}
                             />
                         </div>
                     )}

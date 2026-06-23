@@ -6,14 +6,17 @@ import {
     VideoTransformer,
     type VideoTransformerInitOptions,
 } from '@livekit/track-processors';
-import * as vision from '@mediapipe/tasks-vision';
 
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 
 import {
     DEFAULT_ASSET_PATH,
     DEFAULT_MODEL_PATH,
+    DEFAULT_PERSON_MASK_THRESHOLD,
     FRAGMENT_SHADER_SOURCE,
+    LOW_END_PERSON_MASK_THRESHOLD,
+    MASK_EDGE_BLUR_TEXEL_RADIUS,
+    SEGMENTATION_INPUT_MAX_EDGE,
     TEXTURE_UNIT_MASK,
     TEXTURE_UNIT_OUTPUT,
     VERTEX_SHADER_SOURCE,
@@ -23,17 +26,22 @@ import {
 export interface BackgroundProcessorOptions extends ProcessorWrapperOptions {
     blurRadius?: number;
     segmenterOptions?: SegmenterOptions;
-    /** Run segmentation inference every N frames. Intermediate frames reuse the previous mask. Default: 1 (every frame). */
-    segmentEveryNFrames?: number;
     assetPaths?: {
         tasksVisionFileSet?: string;
         modelAssetPath?: string;
-        /** Model to use when falling back to CPU delegate. Defaults to modelAssetPath. */
-        cpuModelAssetPath?: string;
     };
+    isLowEndDevice?: boolean;
 }
 
 const CACHE_NAME = 'proton-meet-background-blur-v1';
+
+// Safety net for a wedged worker: if a single frame's mask doesn't come back in
+// this long we give up on it (reusing the previous mask) instead of freezing the
+// video. Healthy round-trips are tens of milliseconds, so this never trips in
+// normal operation.
+const SEGMENTATION_TIMEOUT_MS = 2000;
+
+type SegmentationResult = { mask: Float32Array; width: number; height: number };
 
 const fetchWithCache = async (url: string): Promise<Response> => {
     if (!('caches' in window)) {
@@ -58,10 +66,9 @@ const fetchWithCache = async (url: string): Promise<Response> => {
     }
 };
 
-const getCachedModelBuffer = async (modelPath: string): Promise<Uint8Array<ArrayBuffer>> => {
+const getCachedModelBuffer = async (modelPath: string): Promise<ArrayBuffer> => {
     const response = await fetchWithCache(modelPath);
-    const arrayBuffer = await response.arrayBuffer();
-    return new Uint8Array(arrayBuffer) as Uint8Array<ArrayBuffer>;
+    return response.arrayBuffer();
 };
 
 export const preloadBackgroundBlurAssets = async (assetPaths?: {
@@ -118,13 +125,14 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         return isSupported;
     }
 
-    imageSegmenter?: vision.ImageSegmenter;
-
     options: BackgroundProcessorOptions;
 
     isFirstFrame = true;
 
-    private maskImageData?: ImageData;
+    // Person/background decision threshold fed to the mask shader. Raised on
+    // low-end devices to erode the person region and hide the silhouette gap.
+    private readonly personMaskThreshold: number;
+
     private maskTexture?: WebGLTexture | null;
     private maskGl?: WebGL2RenderingContext | null;
     private maskTextureWidth = 0;
@@ -137,20 +145,51 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     private maskOutputTextureHeight = 0;
     private lastCanvasWidth = 0;
     private lastCanvasHeight = 0;
-    private frameCount = 0;
     activeDelegate: 'GPU' | 'CPU' | undefined;
-    private fallbackConfidenceTextures: (WebGLTexture | null)[] = [];
-    private useWebGLTexturePath = true;
-
-    private fallbackPixelBufferObjects: (WebGLBuffer | null)[] = [];
+    private maskInputTexture?: WebGLTexture | null;
+    private maskInputPbo?: WebGLBuffer | null;
     private pixelBufferWidth = 0;
     private pixelBufferHeight = 0;
-    private pendingGpuSync: WebGLSync | null = null;
 
-    constructor(opts: BackgroundOptions) {
+    // Cached GLSL locations. getUniformLocation/getAttribLocation are resolved
+    // once after the program links instead of on every composited frame.
+    private maskUniformLocations: {
+        texelSize: WebGLUniformLocation | null;
+        personThreshold: WebGLUniformLocation | null;
+        mask: WebGLUniformLocation | null;
+    } | null = null;
+
+    private maskAttribLocations: {
+        position: number;
+        texCoord: number;
+    } | null = null;
+
+    // Worker-based inference: the worker owns the MediaPipe ImageSegmenter so
+    // inference runs off the main thread. transform() requests the mask for the
+    // CURRENT frame and awaits it before compositing, so the silhouette always
+    // matches the frame it is applied to (no temporal lag). Stream backpressure
+    // drops intermediate camera frames while we wait, so we always process the
+    // most recent frame instead of queueing stale ones.
+    private worker: Worker | null = null;
+    private workerReady = false;
+    private segmentRequestId = 0;
+    private pendingSegmentation: { id: number; resolve: (result: SegmentationResult | null) => void } | null = null;
+    private hasInitialMask = false;
+
+    // True while a mask request is awaiting the worker. The stream-processor path
+    // (Chrome) applies backpressure so transform() runs strictly serially and this
+    // never blocks a request. The fallback requestAnimationFrame path (Firefox /
+    // Safari, which lack MediaStreamTrackGenerator) calls transform() WITHOUT
+    // awaiting it, so frames overlap; without this guard each overlapping frame
+    // would clobber the single pendingSegmentation slot and flood the worker,
+    // leaving the mask frozen while the video keeps moving. When a request is
+    // already in flight we instead composite with the most recent mask.
+    private maskRequestInFlight = false;
+
+    constructor(opts: BackgroundProcessorOptions) {
         super();
         this.options = opts;
-        void this.update(opts);
+        this.personMaskThreshold = opts.isLowEndDevice ? LOW_END_PERSON_MASK_THRESHOLD : DEFAULT_PERSON_MASK_THRESHOLD;
     }
 
     enable() {
@@ -168,27 +207,28 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     async init({ outputCanvas, inputElement: inputVideo }: VideoTransformerInitOptions) {
         await super.init({ outputCanvas, inputElement: inputVideo });
 
-        await this.initializeSegmenter();
+        await this.initializeWorker();
         if (this.options.blurRadius) {
             this.gl?.setBlurRadius(this.options.blurRadius);
         }
     }
 
-    private async initializeSegmenter(delegateOverride?: 'GPU' | 'CPU') {
-        const filesetPath = this.options.assetPaths?.tasksVisionFileSet ?? DEFAULT_ASSET_PATH;
-        const modelPath =
-            delegateOverride === 'CPU' && this.options.assetPaths?.cpuModelAssetPath
-                ? this.options.assetPaths.cpuModelAssetPath
-                : (this.options.assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH);
+    private async initializeWorker() {
+        // init() may run more than once per instance (e.g. camera switch); tear
+        // down any existing worker so we don't orphan it.
+        this.teardownWorker();
 
-        // Create custom fileset that uses cached wasm files
+        const filesetPath = this.options.assetPaths?.tasksVisionFileSet ?? DEFAULT_ASSET_PATH;
+        const modelPath = this.options.assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH;
         const wasmLoaderPath = `${filesetPath}/vision_wasm_internal.js`;
         const wasmBinaryPath = `${filesetPath}/vision_wasm_internal.wasm`;
 
-        // Fetch wasm files from cache
-        const [wasmLoaderResponse, wasmBinaryResponse] = await Promise.all([
+        // Fetch through the existing cache layer on the main thread so we benefit
+        // from the same cache.match() path the preloader populated.
+        const [wasmLoaderResponse, wasmBinaryResponse, modelBuffer] = await Promise.all([
             fetchWithCache(wasmLoaderPath),
             fetchWithCache(wasmBinaryPath),
+            getCachedModelBuffer(modelPath),
         ]);
 
         const [wasmLoaderBlob, wasmBinaryBlob] = await Promise.all([
@@ -196,47 +236,115 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             wasmBinaryResponse.blob(),
         ]);
 
-        const fileSet = {
-            wasmLoaderPath: URL.createObjectURL(wasmLoaderBlob),
-            wasmBinaryPath: URL.createObjectURL(wasmBinaryBlob),
-        };
-
-        // Get cached model buffer
-        const modelAssetBuffer = await getCachedModelBuffer(modelPath);
+        const wasmLoaderUrl = URL.createObjectURL(wasmLoaderBlob);
+        const wasmBinaryUrl = URL.createObjectURL(wasmBinaryBlob);
 
         const configuredDelegate = this.options.segmenterOptions?.delegate;
-        const normalizedDelegate =
-            configuredDelegate === 'GPU' || configuredDelegate === 'CPU' ? configuredDelegate : undefined;
-        const desiredDelegate = delegateOverride ?? normalizedDelegate ?? 'GPU';
+        const desiredDelegate: 'GPU' | 'CPU' =
+            configuredDelegate === 'GPU' || configuredDelegate === 'CPU' ? configuredDelegate : 'GPU';
+
+        const worker = new Worker(
+            /* webpackChunkName: "background-segmenter-worker" */
+            new URL('./segmenter.worker.ts', import.meta.url),
+            { type: 'module' }
+        );
+
+        this.worker = worker;
 
         try {
-            this.imageSegmenter = await vision.ImageSegmenter.createFromOptions(fileSet, {
-                baseOptions: {
-                    modelAssetBuffer,
-                    ...(this.options.segmenterOptions ?? {}),
-                    delegate: desiredDelegate,
-                },
-                canvas: this.canvas,
-                runningMode: 'VIDEO',
-                outputCategoryMask: false,
-                outputConfidenceMasks: true,
-            });
-            this.activeDelegate = desiredDelegate;
-            // eslint-disable-next-line no-console
-            console.log(`[bg-blur] delegate=${desiredDelegate} model=${modelPath.split('/').pop()}`);
+            await withTimeout(
+                new Promise<void>((resolve, reject) => {
+                    worker.onmessage = (event: MessageEvent) => {
+                        if (event.data?.type === 'ready') {
+                            this.activeDelegate = event.data.delegate;
+                            this.workerReady = true;
+                            worker.onmessage = (e: MessageEvent) => this.handleWorkerMessage(e);
+                            // eslint-disable-next-line no-console
+                            console.log(
+                                `[bg-blur] worker ready delegate=${event.data.delegate} model=${modelPath
+                                    .split('/')
+                                    .pop()}`
+                            );
+                            resolve();
+                        } else if (event.data?.type === 'error') {
+                            reject(new Error(event.data.message ?? 'worker init failed'));
+                        }
+                    };
+                    // Reject on worker failure so a crashed/failed init can't hang forever.
+                    worker.onerror = (event: ErrorEvent) => {
+                        reject(new Error(`Background segmenter worker error: ${event.message}`));
+                    };
+
+                    worker.postMessage(
+                        {
+                            type: 'init',
+                            wasmLoaderUrl,
+                            wasmBinaryUrl,
+                            modelBuffer,
+                            delegate: desiredDelegate,
+                        },
+                        [modelBuffer]
+                    );
+                }),
+                'Background segmenter worker init',
+                10000
+            );
         } catch (error) {
-            if (!delegateOverride && !normalizedDelegate && desiredDelegate === 'GPU') {
-                await this.initializeSegmenter('CPU');
-                return;
-            }
+            this.teardownWorker();
             throw error;
+        } finally {
+            // Safe to revoke: the worker has loaded both blobs by ready/failure.
+            URL.revokeObjectURL(wasmLoaderUrl);
+            URL.revokeObjectURL(wasmBinaryUrl);
         }
+    }
+
+    private handleWorkerMessage(event: MessageEvent) {
+        const msg = event.data;
+        if (!msg) {
+            return;
+        }
+        const pending = this.pendingSegmentation;
+        if (msg.type === 'mask') {
+            // Match by id so a late reply for a superseded or warmup request is
+            // dropped instead of being applied to the wrong frame.
+            if (pending && pending.id === msg.id) {
+                this.pendingSegmentation = null;
+                const mask = new Float32Array(msg.buffer as ArrayBuffer);
+                pending.resolve({ mask, width: msg.width, height: msg.height });
+            }
+        } else if (msg.type === 'mask-failed') {
+            if (pending && pending.id === msg.id) {
+                this.pendingSegmentation = null;
+                pending.resolve(null);
+            }
+        }
+    }
+
+    private teardownWorker() {
+        if (this.pendingSegmentation) {
+            // Unblock any transform() currently awaiting a mask.
+            this.pendingSegmentation.resolve(null);
+            this.pendingSegmentation = null;
+        }
+        if (this.worker) {
+            try {
+                this.worker.postMessage({ type: 'destroy' });
+            } catch {
+                // ignore
+            }
+            this.worker.terminate();
+            this.worker = null;
+        }
+        this.workerReady = false;
     }
 
     async destroy() {
         await super.destroy();
-        await this.imageSegmenter?.close();
+        this.teardownWorker();
+        this.hasInitialMask = false;
         this.isFirstFrame = true;
+        this.maskRequestInFlight = false;
         this.cleanupWebGLResources();
         this.resetMaskState();
     }
@@ -246,68 +354,40 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             return;
         }
 
-        // Clean up pending GPU sync
-        if (this.pendingGpuSync) {
-            this.maskGl.deleteSync(this.pendingGpuSync);
-            this.pendingGpuSync = null;
-        }
-
         this.maskGl.deleteTexture(this.maskTexture as WebGLTexture);
         this.maskGl.deleteProgram(this.maskShaderProgram as WebGLProgram);
         this.maskGl.deleteBuffer(this.maskVertexBuffer as WebGLBuffer);
         this.maskGl.deleteFramebuffer(this.maskFramebuffer as WebGLFramebuffer);
         this.maskGl.deleteTexture(this.maskOutputTexture as WebGLTexture);
 
-        this.fallbackConfidenceTextures.forEach((texture) => {
-            if (texture) {
-                this.maskGl!.deleteTexture(texture);
-            }
-        });
-
-        this.fallbackPixelBufferObjects.forEach((pixelBuffer) => {
-            if (pixelBuffer) {
-                this.maskGl!.deleteBuffer(pixelBuffer);
-            }
-        });
+        if (this.maskInputTexture) {
+            this.maskGl.deleteTexture(this.maskInputTexture);
+        }
+        if (this.maskInputPbo) {
+            this.maskGl.deleteBuffer(this.maskInputPbo);
+        }
 
         this.maskTexture = null;
         this.maskShaderProgram = null;
         this.maskVertexBuffer = null;
         this.maskFramebuffer = null;
         this.maskOutputTexture = null;
-        this.fallbackConfidenceTextures = [];
-        this.fallbackPixelBufferObjects = [];
+        this.maskInputTexture = null;
+        this.maskInputPbo = null;
+        this.maskUniformLocations = null;
+        this.maskAttribLocations = null;
         this.pixelBufferWidth = 0;
         this.pixelBufferHeight = 0;
         this.maskGl = null;
     }
 
     private resetMaskState() {
-        this.maskImageData = undefined;
         this.maskTextureWidth = 0;
         this.maskTextureHeight = 0;
         this.maskOutputTextureWidth = 0;
         this.maskOutputTextureHeight = 0;
         this.lastCanvasWidth = 0;
         this.lastCanvasHeight = 0;
-    }
-
-    private waitForGpuSync(gl: WebGL2RenderingContext, sync: WebGLSync): void {
-        const result = gl.clientWaitSync(sync, gl.SYNC_FLUSH_COMMANDS_BIT, 0);
-
-        if (result === gl.ALREADY_SIGNALED || result === gl.CONDITION_SATISFIED) {
-            // GPU work completed
-            gl.deleteSync(sync);
-            return;
-        }
-
-        if (result === gl.WAIT_FAILED) {
-            // GPU error - clean up and continue
-            gl.deleteSync(sync);
-            return;
-        }
-
-        gl.deleteSync(sync);
     }
 
     async transform(frame: VideoFrame, controller: TransformStreamDefaultController<VideoFrame>) {
@@ -337,9 +417,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
             if (this.isFirstFrame) {
                 this.isFirstFrame = false;
-                // Enqueue a clone for immediate display
                 controller.enqueue(frame.clone());
-                // Original frame is NOT transferred - we still own it and must close it
 
                 if (this.inputVideo) {
                     try {
@@ -360,59 +438,52 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                     }
                 }
 
-                if (this.imageSegmenter) {
-                    try {
-                        this.imageSegmenter.segmentForVideo(frame, performance.now(), (result) => {
-                            this.updateMaskFromConfidences(result.confidenceMasks).catch(() => {
-                                // Ignore errors during warmup
-                            });
-                            result.close();
-                        });
-                    } catch {
-                        // Ignore
-                    }
-                }
-
+                // Prime the segmenter so the first composited frame doesn't pay the
+                // one-off cold-start inference cost. Fire-and-forget on a clone.
+                this.warmUpWorker(frame.clone());
                 return;
             }
 
-            const segmentEveryN = Math.max(1, this.options.segmentEveryNFrames ?? 1);
-            const shouldSegment = this.frameCount++ % segmentEveryN === 0;
-            const segmentationPromise =
-                this.imageSegmenter && shouldSegment
-                    ? new Promise<void>((resolve, reject) => {
-                          try {
-                              this.imageSegmenter!.segmentForVideo(frame, performance.now(), (result) => {
-                                  this.updateMaskFromConfidences(result.confidenceMasks).catch(() => {
-                                      // Ignore mask update errors
-                                  });
-                                  result.close();
-                                  resolve();
-                              });
-                          } catch (e) {
-                              reject(e);
-                          }
-                      })
-                    : Promise.resolve();
+            // Segment THIS frame and wait for its mask before compositing, so the
+            // mask and the frame content are from the same instant — this is what
+            // removes the trailing-blur lag. The await yields the main thread to
+            // the worker; inference never runs here. Stream backpressure means we
+            // always pick up the most recent frame rather than a queued stale one.
+            //
+            // Only one request may be in flight: on the serial stream path this is
+            // always the case, but the fallback render loop overlaps transform()
+            // calls. Overlapping frames skip the request and reuse the latest mask
+            // (drawFrame composites with whatever uploadCombinedMask last set),
+            // which keeps the mask updating at the worker's throughput instead of
+            // freezing it under a backlog.
+            if (!this.maskRequestInFlight) {
+                this.maskRequestInFlight = true;
+                try {
+                    const segmentation = await this.requestMask(frame);
+                    if (segmentation) {
+                        await this.uploadCombinedMask(segmentation.mask, segmentation.width, segmentation.height);
+                        this.hasInitialMask = true;
+                    }
+                } finally {
+                    this.maskRequestInFlight = false;
+                }
+            }
 
-            await this.drawFrame(frame);
-            const canRender = this.canvas && this.canvas.width > 0 && this.canvas.height > 0;
+            this.drawFrame(frame);
+            const canRender = this.canvas && this.canvas.width > 0 && this.canvas.height > 0 && this.hasInitialMask;
 
             if (canRender) {
                 const newFrame = new VideoFrame(this.canvas, {
-                    timestamp: frame.timestamp || frameTimeMs,
+                    // VideoFrame.timestamp is microseconds; convert the Date.now() (ms)
+                    // fallback so units match, and only fall back when it's truly absent.
+                    timestamp: frame.timestamp ?? Math.round(frameTimeMs * 1000),
                 });
                 controller.enqueue(newFrame);
             } else {
+                // No mask yet (worker warming up or a transient failure). Pass the
+                // original frame through unmodified so the user sees video.
                 controller.enqueue(frame);
                 originalFrameTransferred = true;
-            }
-
-            // Add timeout to prevent infinite hang if MediaPipe callback never fires
-            try {
-                await withTimeout(segmentationPromise, 'MediaPipe segmentation callback timeout', 200);
-            } catch {
-                // Timeout or error - continue processing next frame
             }
         } catch {
             // Ignore
@@ -423,15 +494,96 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         }
     }
 
-    async update(opts: BackgroundOptions) {
+    private getResizeOptions(frame: VideoFrame): ImageBitmapOptions | undefined {
+        // Downscale before handing the frame to the worker. The model runs at a
+        // fixed 256x256 tensor regardless of input size, and MediaPipe upsamples
+        // the confidence masks back to the *input* resolution — so a full-res
+        // frame produces full-res masks that are expensive to transfer, upload
+        // and combine. Capping the longest edge keeps inference quality identical
+        // while shrinking all of that downstream work. Aspect ratio is preserved
+        // so the model's internal square-resize behaves as before.
+        const longestEdge = Math.max(frame.displayWidth, frame.displayHeight);
+        const scale = longestEdge > SEGMENTATION_INPUT_MAX_EDGE ? SEGMENTATION_INPUT_MAX_EDGE / longestEdge : 1;
+        if (scale >= 1) {
+            return undefined;
+        }
+        return {
+            resizeWidth: Math.max(1, Math.round(frame.displayWidth * scale)),
+            resizeHeight: Math.max(1, Math.round(frame.displayHeight * scale)),
+            resizeQuality: 'low',
+        };
+    }
+
+    // Run segmentation for a single frame and resolve with its mask. Resolves
+    // null if the worker isn't ready, the bitmap can't be created, or the worker
+    // reports a failure / times out — callers then keep the previous mask.
+    private async requestMask(frame: VideoFrame): Promise<SegmentationResult | null> {
+        const worker = this.worker;
+        if (!this.workerReady || !worker) {
+            return null;
+        }
+
+        let bitmap: ImageBitmap;
+        try {
+            // createImageBitmap on a VideoFrame is cheap (~1ms) and produces a
+            // transferable. Awaiting it here keeps `frame` alive until it's done.
+            bitmap = await createImageBitmap(frame, this.getResizeOptions(frame));
+        } catch {
+            return null;
+        }
+        if (!this.worker) {
+            bitmap.close();
+            return null;
+        }
+
+        const id = ++this.segmentRequestId;
+        const maskPromise = new Promise<SegmentationResult | null>((resolve) => {
+            // Only one request is ever in flight (transform awaits each one), so a
+            // single pending slot suffices; replies are matched by id.
+            this.pendingSegmentation = { id, resolve };
+            worker.postMessage({ type: 'segment', bitmap, timestamp: performance.now(), id }, [bitmap]);
+        });
+
+        try {
+            return await withTimeout(maskPromise, 'Background segmentation', SEGMENTATION_TIMEOUT_MS);
+        } catch {
+            // Timed out: clear the slot so the eventual late reply is ignored.
+            if (this.pendingSegmentation?.id === id) {
+                this.pendingSegmentation = null;
+            }
+            return null;
+        }
+    }
+
+    // Fire-and-forget warmup inference. Takes ownership of the passed frame
+    // (expected to be a clone) and closes it once the bitmap has been created.
+    private warmUpWorker(frame: VideoFrame) {
+        const worker = this.worker;
+        if (!this.workerReady || !worker) {
+            frame.close();
+            return;
+        }
+        createImageBitmap(frame, this.getResizeOptions(frame))
+            .then((bitmap) => {
+                frame.close();
+                if (!this.worker) {
+                    bitmap.close();
+                    return;
+                }
+                // id 0 never matches a real request, so the result is ignored.
+                worker.postMessage({ type: 'segment', bitmap, timestamp: performance.now(), id: 0 }, [bitmap]);
+            })
+            .catch(() => {
+                frame.close();
+            });
+    }
+
+    async update(opts: BackgroundProcessorOptions) {
         this.options = { ...this.options, ...opts };
         this.gl?.setBlurRadius(opts.blurRadius ?? null);
     }
 
-    private async drawFrame(frame: VideoFrame) {
-        if (!this.gl) {
-            return;
-        }
+    private drawFrame(frame: VideoFrame) {
         this.gl?.renderFrame(frame);
     }
 
@@ -485,31 +637,38 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     }
 
     private saveWebGLState(gl: WebGL2RenderingContext) {
+        // Units this pass mutates: 0 (mask input), TEXTURE_UNIT_MASK, TEXTURE_UNIT_OUTPUT.
+        const textureUnits = [0, TEXTURE_UNIT_MASK, TEXTURE_UNIT_OUTPUT];
+        const textures = textureUnits.map((unit) => {
+            gl.activeTexture(gl.TEXTURE0 + unit);
+            return gl.getParameter(gl.TEXTURE_BINDING_2D) as WebGLTexture | null;
+        });
         return {
-            program: gl.getParameter(gl.CURRENT_PROGRAM),
-            framebuffer: gl.getParameter(gl.FRAMEBUFFER_BINDING),
-            arrayBuffer: gl.getParameter(gl.ARRAY_BUFFER_BINDING),
-            texture: gl.getParameter(gl.TEXTURE_BINDING_2D),
-            activeTexture: gl.getParameter(gl.ACTIVE_TEXTURE),
-            viewport: gl.getParameter(gl.VIEWPORT),
+            program: gl.getParameter(gl.CURRENT_PROGRAM) as WebGLProgram | null,
+            framebuffer: gl.getParameter(gl.FRAMEBUFFER_BINDING) as WebGLFramebuffer | null,
+            arrayBuffer: gl.getParameter(gl.ARRAY_BUFFER_BINDING) as WebGLBuffer | null,
+            pixelUnpackBuffer: gl.getParameter(gl.PIXEL_UNPACK_BUFFER_BINDING) as WebGLBuffer | null,
+            activeTexture: gl.getParameter(gl.ACTIVE_TEXTURE) as number,
+            viewport: gl.getParameter(gl.VIEWPORT) as Int32Array,
+            textureUnits,
+            textures,
         };
     }
 
     private restoreWebGLState(
         gl: WebGL2RenderingContext,
-        state: {
-            program: any;
-            framebuffer: any;
-            arrayBuffer: any;
-            texture: any;
-            activeTexture: any;
-            viewport: any;
-        }
+        state: ReturnType<MulticlassBackgroundProcessor['saveWebGLState']>
     ) {
+        // Set the active unit before each bind so the saved texture lands on the
+        // unit it came from, then restore the originally active unit.
+        state.textureUnits.forEach((unit, i) => {
+            gl.activeTexture(gl.TEXTURE0 + unit);
+            gl.bindTexture(gl.TEXTURE_2D, state.textures[i]);
+        });
+        gl.activeTexture(state.activeTexture);
         gl.bindFramebuffer(gl.FRAMEBUFFER, state.framebuffer);
         gl.bindBuffer(gl.ARRAY_BUFFER, state.arrayBuffer);
-        gl.bindTexture(gl.TEXTURE_2D, state.texture);
-        gl.activeTexture(state.activeTexture);
+        gl.bindBuffer(gl.PIXEL_UNPACK_BUFFER, state.pixelUnpackBuffer);
         gl.useProgram(state.program);
         gl.viewport(state.viewport[0], state.viewport[1], state.viewport[2], state.viewport[3]);
     }
@@ -524,6 +683,21 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             return false;
         }
 
+        // Resolve attribute/uniform locations once at link time rather than every
+        // frame. The combined mask is always sampled from texture unit 0, so its
+        // sampler binding is set here and never changes.
+        gl.useProgram(this.maskShaderProgram);
+        this.maskUniformLocations = {
+            texelSize: gl.getUniformLocation(this.maskShaderProgram, 'u_texelSize'),
+            personThreshold: gl.getUniformLocation(this.maskShaderProgram, 'u_personThreshold'),
+            mask: gl.getUniformLocation(this.maskShaderProgram, 'u_mask'),
+        };
+        this.maskAttribLocations = {
+            position: gl.getAttribLocation(this.maskShaderProgram, 'a_position'),
+            texCoord: gl.getAttribLocation(this.maskShaderProgram, 'a_texCoord'),
+        };
+        gl.uniform1i(this.maskUniformLocations.mask, 0);
+
         // Create vertex buffer for quad
         this.maskVertexBuffer = gl.createBuffer();
         if (this.maskVertexBuffer) {
@@ -535,97 +709,53 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         return true;
     }
 
-    private loadConfidenceTextures(
+    private uploadCombinedMaskTexture(
         gl: WebGL2RenderingContext,
-        masks: vision.MPMask[],
+        mask: Float32Array,
         width: number,
         height: number
-    ): (WebGLTexture | null)[] {
-        if (this.useWebGLTexturePath) {
-            const firstMask = masks[0];
-            const supportsWebGLTexture = typeof firstMask.getAsWebGLTexture === 'function';
-
-            if (supportsWebGLTexture) {
-                try {
-                    const textures = masks.map((mask) => mask.getAsWebGLTexture());
-                    const allValid = textures.length > 0 && textures.every((t) => t !== null);
-                    if (allValid) {
-                        textures.forEach((texture, i) => {
-                            if (texture) {
-                                gl.activeTexture(gl.TEXTURE0 + i);
-                                gl.bindTexture(gl.TEXTURE_2D, texture);
-                            }
-                        });
-                        return textures;
-                    }
-                    this.useWebGLTexturePath = false;
-                } catch (e) {
-                    // eslint-disable-next-line no-console
-                    console.warn('getAsWebGLTexture failed, falling back to Float32Array', e);
-                    this.useWebGLTexturePath = false;
-                }
-            } else {
-                this.useWebGLTexturePath = false;
-            }
-        }
-
-        return this.loadConfidenceTexturesFromFloat32Array(gl, masks, width, height);
-    }
-
-    private loadConfidenceTexturesFromFloat32Array(
-        gl: WebGL2RenderingContext,
-        masks: vision.MPMask[],
-        width: number,
-        height: number
-    ): (WebGLTexture | null)[] {
-        const confidenceMasks = masks.map((mask) => mask.getAsFloat32Array());
-        const numMasks = masks.length;
+    ): boolean {
         const sizeChanged = this.pixelBufferWidth !== width || this.pixelBufferHeight !== height;
 
-        while (this.fallbackConfidenceTextures.length < numMasks) {
-            this.fallbackConfidenceTextures.push(gl.createTexture());
+        if (!this.maskInputTexture) {
+            this.maskInputTexture = gl.createTexture();
         }
-        while (this.fallbackPixelBufferObjects.length < numMasks) {
-            this.fallbackPixelBufferObjects.push(gl.createBuffer());
+        if (!this.maskInputPbo) {
+            this.maskInputPbo = gl.createBuffer();
+        }
+        if (!this.maskInputTexture || !this.maskInputPbo) {
+            return false;
         }
 
-        for (let i = 0; i < confidenceMasks.length; i++) {
-            const texture = this.fallbackConfidenceTextures[i];
-            const pixelBuffer = this.fallbackPixelBufferObjects[i];
-            if (!texture || !pixelBuffer) {
-                continue;
-            }
-
-            const data = confidenceMasks[i];
-
-            gl.bindBuffer(gl.PIXEL_UNPACK_BUFFER, pixelBuffer);
-            if (sizeChanged) {
-                gl.bufferData(gl.PIXEL_UNPACK_BUFFER, data.byteLength, gl.STREAM_DRAW);
-            }
-            gl.bufferSubData(gl.PIXEL_UNPACK_BUFFER, 0, data);
-
-            gl.activeTexture(gl.TEXTURE0 + i);
-            gl.bindTexture(gl.TEXTURE_2D, texture);
-
-            if (sizeChanged || this.maskTextureWidth !== width || this.maskTextureHeight !== height) {
-                gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, width, height, 0, gl.RED, gl.FLOAT, 0);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
-            } else {
-                gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, width, height, gl.RED, gl.FLOAT, 0);
-            }
-
-            gl.bindBuffer(gl.PIXEL_UNPACK_BUFFER, null);
+        gl.bindBuffer(gl.PIXEL_UNPACK_BUFFER, this.maskInputPbo);
+        if (sizeChanged) {
+            gl.bufferData(gl.PIXEL_UNPACK_BUFFER, mask.byteLength, gl.STREAM_DRAW);
         }
+        gl.bufferSubData(gl.PIXEL_UNPACK_BUFFER, 0, mask);
+
+        // The combined person-confidence mask lives on texture unit 0, matching
+        // the u_mask sampler binding configured in initializeShaderResources().
+        gl.activeTexture(gl.TEXTURE0);
+        gl.bindTexture(gl.TEXTURE_2D, this.maskInputTexture);
+
+        if (sizeChanged) {
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, width, height, 0, gl.RED, gl.FLOAT, 0);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+        } else {
+            gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, width, height, gl.RED, gl.FLOAT, 0);
+        }
+
+        gl.bindBuffer(gl.PIXEL_UNPACK_BUFFER, null);
 
         if (sizeChanged) {
             this.pixelBufferWidth = width;
             this.pixelBufferHeight = height;
         }
 
-        return this.fallbackConfidenceTextures;
+        return true;
     }
 
     private initializeMaskTexture(gl: WebGL2RenderingContext, width: number, height: number) {
@@ -656,39 +786,29 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         return true;
     }
 
-    private configureShaderProgram(gl: WebGL2RenderingContext, numMasks: number, isSimpleModel: boolean) {
-        if (!this.maskShaderProgram) {
+    private configureShaderProgram(gl: WebGL2RenderingContext, width: number, height: number) {
+        if (!this.maskShaderProgram || !this.maskUniformLocations || !this.maskAttribLocations) {
             return false;
         }
 
         gl.useProgram(this.maskShaderProgram);
 
-        // Set uniforms
-        const numTexturesLoc = gl.getUniformLocation(this.maskShaderProgram, 'u_numTextures');
-        const isSimpleModelLoc = gl.getUniformLocation(this.maskShaderProgram, 'u_isSimpleModel');
-
-        gl.uniform1i(numTexturesLoc, numMasks);
-        gl.uniform1i(isSimpleModelLoc, isSimpleModel ? 1 : 0);
-
-        // Set texture samplers
-        const samplerNames = ['u_texture0', 'u_texture1', 'u_texture2', 'u_texture3', 'u_texture4', 'u_texture5'];
-        for (let i = 0; i < numMasks && i < samplerNames.length; i++) {
-            const samplerLoc = gl.getUniformLocation(this.maskShaderProgram, samplerNames[i]);
-            if (samplerLoc !== null) {
-                gl.uniform1i(samplerLoc, i);
-            }
-        }
-
-        // Set up vertex attributes
-        const positionLoc = gl.getAttribLocation(this.maskShaderProgram, 'a_position');
-        const texCoordLoc = gl.getAttribLocation(this.maskShaderProgram, 'a_texCoord');
+        // u_texelSize is the per-Gaussian-tap offset in UV space. We fold the
+        // edge-smoothing radius (in mask texels) into it so the shader can step
+        // by a single u_texelSize unit.
+        gl.uniform2f(
+            this.maskUniformLocations.texelSize,
+            MASK_EDGE_BLUR_TEXEL_RADIUS / width,
+            MASK_EDGE_BLUR_TEXEL_RADIUS / height
+        );
+        gl.uniform1f(this.maskUniformLocations.personThreshold, this.personMaskThreshold);
 
         if (this.maskVertexBuffer) {
             gl.bindBuffer(gl.ARRAY_BUFFER, this.maskVertexBuffer);
-            gl.enableVertexAttribArray(positionLoc);
-            gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 16, 0);
-            gl.enableVertexAttribArray(texCoordLoc);
-            gl.vertexAttribPointer(texCoordLoc, 2, gl.FLOAT, false, 16, 8);
+            gl.enableVertexAttribArray(this.maskAttribLocations.position);
+            gl.vertexAttribPointer(this.maskAttribLocations.position, 2, gl.FLOAT, false, 16, 0);
+            gl.enableVertexAttribArray(this.maskAttribLocations.texCoord);
+            gl.vertexAttribPointer(this.maskAttribLocations.texCoord, 2, gl.FLOAT, false, 16, 8);
         }
 
         return true;
@@ -755,32 +875,22 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     }
 
     /**
-     * Combine confidence masks from multiclass segmenter into a single binary mask
+     * Upload the pre-combined person-confidence mask produced by the segmenter
+     * worker and feather/invert it into the texture LiveKit composites with.
      *
-     * Multiclass model - Classes: 0=background, 1=hair, 2=body-skin, 3=face-skin, 4=clothes, 5=others (accessories)
-     * We want to keep classes 1-5 (all person-related) and remove class 0 (background)
-     *
-     * Simple model - Classes: 0=background, 1=person
-     * We want to keep class 1 (person) and remove class 0 (background)
+     * The per-class max() combine (multiclass classes 1-5 = hair/body/face/
+     * clothes/accessories) and the hair-detail confidence boost now happen on the
+     * worker thread, so a single R32F mask arrives here instead of up to six.
      *
      * Reference: https://ai.google.dev/edge/mediapipe/solutions/vision/image_segmenter
      */
-    private async updateMaskFromConfidences(masks: vision.MPMask[] | undefined) {
-        if (!masks || masks.length === 0 || !this.gl || !this.canvas) {
+    private async uploadCombinedMask(mask: Float32Array, width: number, height: number) {
+        if (!mask || mask.length === 0 || !this.gl || !this.canvas || width === 0 || height === 0) {
             return;
         }
 
-        const width = masks[0].width;
-        const height = masks[0].height;
-
-        if (!this.maskImageData || this.maskImageData.width !== width || this.maskImageData.height !== height) {
-            this.maskImageData = new ImageData(width, height);
-            this.maskTextureWidth = 0;
-            this.maskTextureHeight = 0;
-        }
-
-        // Use GPU to combine confidence masks instead of CPU loop
-        // Get the WebGL context from the same canvas LiveKit is using
+        // Use the WebGL context from the same canvas LiveKit is using so the
+        // resulting mask texture can be handed straight to LiveKit's updateMask().
         if (!this.maskGl && typeof (this.canvas as any).getContext === 'function') {
             this.maskGl = (this.canvas as any).getContext('webgl2') as WebGL2RenderingContext | null;
         }
@@ -790,52 +900,33 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             return;
         }
 
-        // Wait for previous frame's GPU operations to complete before modifying shared state
-        // This prevents race conditions when frames are processed faster than GPU can render
-        if (this.pendingGpuSync) {
-            this.waitForGpuSync(gl, this.pendingGpuSync);
-            this.pendingGpuSync = null;
-        }
-
-        // Save WebGL state to restore later (avoid conflicts with LiveKit)
         const savedState = this.saveWebGLState(gl);
 
-        // Initialize shader program and resources if needed
         if (!this.initializeShaderResources(gl)) {
             return;
         }
 
-        const numMasks = masks.length;
-        const isSimpleModel = numMasks <= 2;
+        if (!this.uploadCombinedMaskTexture(gl, mask, width, height)) {
+            return;
+        }
 
-        // Load confidence masks as textures
-        this.loadConfidenceTextures(gl, masks, width, height);
-
-        // Initialize or resize mask texture if needed
         if (!this.initializeMaskTexture(gl, width, height)) {
             return;
         }
 
-        // Set up shader program and uniforms
-        if (!this.configureShaderProgram(gl, numMasks, isSimpleModel)) {
+        if (!this.configureShaderProgram(gl, width, height)) {
             return;
         }
 
-        // Render the combined mask to framebuffer
         if (!this.renderMaskToFramebuffer(gl, width, height)) {
             return;
         }
 
-        // Copy the framebuffer result to output texture and pass to LiveKit
         this.copyMaskToOutputTexture(gl, width, height);
 
-        // Restore WebGL state to avoid conflicts with LiveKit
         this.restoreWebGLState(gl, savedState);
 
-        // Create a fence to track when these GPU operations complete
-        // This allows the next frame to wait without blocking the main thread
-        gl.flush(); // Ensure commands are submitted to GPU
-        this.pendingGpuSync = gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE, 0);
+        gl.flush();
     }
 }
 

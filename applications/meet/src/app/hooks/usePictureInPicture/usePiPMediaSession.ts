@@ -2,13 +2,14 @@ import { useEffect } from 'react';
 
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
+import type { ToggleAudioType, ToggleVideoType } from '../../types';
 import { useLatest } from '../useLatest';
 
 interface UsePiPMediaSessionProps {
     isVideoEnabled: boolean;
     isAudioEnabled: boolean;
-    toggleVideo: (params: { isEnabled: boolean; videoDeviceId: string }) => void;
-    toggleAudio: (params: { isEnabled: boolean; audioDeviceId: string }) => void;
+    toggleVideo: ToggleVideoType;
+    toggleAudio: ToggleAudioType;
     videoDeviceId?: string;
     audioDeviceId?: string;
 }
@@ -73,6 +74,7 @@ export function usePiPMediaSession({
             return;
         }
         void updateMediaSession();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isAudioEnabled, isVideoEnabled]);
 
     return {

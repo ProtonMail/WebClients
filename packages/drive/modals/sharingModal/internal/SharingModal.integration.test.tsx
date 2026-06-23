@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 
-import { type MaybeNode, MemberRole, type NodeEntity, NodeType } from '@protontech/drive-sdk/dist/interface/nodes';
+import { MemberRole, type NodeEntity, NodeType } from '@protontech/drive-sdk/dist/interface/nodes';
 import type { ShareResult } from '@protontech/drive-sdk/dist/interface/sharing';
 import { screen, waitFor, within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
-import { renderWithProviders } from '@proton/testing';
 import { buildAddress } from '@proton/testing/builders/address';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { useSharingModal } from './SharingModal';
 import type { SharingModalInnerProps } from './useSharingModalState';
@@ -51,7 +51,7 @@ describe('SharingModal', () => {
         const parentNode = {
             ...commonNodeProperties,
             uid: 'qwe~123',
-            name: 'root', // a.k.a. "My files"
+            name: { ok: true, value: 'root' }, // a.k.a. "My files"
             directRole: MemberRole.Admin,
             isSharedPublicly: false,
         } as NodeEntity;
@@ -59,17 +59,16 @@ describe('SharingModal', () => {
             ...commonNodeProperties,
             uid: 'qwe~456',
             parentUid: parentNode.uid,
-            name: 'whatever - child',
+            name: { ok: true, value: 'whatever - child' },
             directRole: MemberRole.Admin,
         } as NodeEntity;
 
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
+            // parentNode has no membership → isShareInMyFiles returns true → isResharing=false → public link visible
+            getNodeHierarchy: (): Promise<NodeEntity[]> => Promise.resolve([parentNode]),
         };
 
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
@@ -80,11 +79,30 @@ describe('SharingModal', () => {
         });
     });
 
+    it('should show loading placeholder while data is being fetched', async () => {
+        let resolveNode!: (value: NodeEntity) => void;
+        const nodePromise = new Promise<NodeEntity>((resolve) => {
+            resolveNode = resolve;
+        });
+
+        const drive = {
+            ...DRIVE_BASE,
+            getNode: () => nodePromise,
+        };
+
+        renderWithProviders(<SharingModalTestBed nodeUid="qwe~456" drive={drive} />);
+
+        expect(await screen.findAllByText('Loading')).toHaveLength(3);
+
+        // Unblock loading so the test can clean up
+        resolveNode({ ...commonNodeProperties, uid: 'qwe~456', name: { ok: true, value: 'test' } } as NodeEntity);
+    });
+
     it('should hide public link section from admins', async () => {
         const parentNode = {
             ...commonNodeProperties,
             uid: 'qwe~123',
-            name: 'whatever - parent',
+            name: { ok: true, value: 'whatever - parent' },
             directRole: MemberRole.Admin,
             membership: {
                 role: MemberRole.Admin,
@@ -96,23 +114,20 @@ describe('SharingModal', () => {
             ...commonNodeProperties,
             uid: 'qwe~456',
             parentUid: parentNode.uid,
-            name: 'whatever - child',
+            name: { ok: true, value: 'whatever - child' },
             directRole: MemberRole.Inherited,
         } as NodeEntity;
 
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
         };
 
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
 
         await waitFor(() => {
-            expect(screen.getByText(`Share "${viewedNode.name}"`)).toBeInTheDocument();
+            expect(screen.getByText(`Share "${(viewedNode.name as any).value}"`)).toBeInTheDocument();
         });
 
         const publicSharing = screen.queryByTestId('share-modal-shareWithAnyoneSection');
@@ -123,7 +138,7 @@ describe('SharingModal', () => {
         const parentNode = {
             ...commonNodeProperties,
             uid: 'qwe~123',
-            name: 'root',
+            name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
             isSharedPublicly: false,
         } as NodeEntity;
@@ -131,7 +146,7 @@ describe('SharingModal', () => {
             ...commonNodeProperties,
             uid: 'qwe~456',
             parentUid: parentNode.uid,
-            name: 'whatever - child',
+            name: { ok: true, value: 'whatever - child' },
             directRole: MemberRole.Admin,
         } as NodeEntity;
 
@@ -143,11 +158,8 @@ describe('SharingModal', () => {
         });
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -168,9 +180,9 @@ describe('SharingModal', () => {
 
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         expect(screen.getByText('Sharing is end-to-end encrypted')).toBeInTheDocument();
-        await openSharingSettings(viewedNode.name);
+        await openSharingSettings((viewedNode.name as any).value);
         screen.getByText('Allow editors to change permissions and share');
         const toggle = screen.getByLabelText('Allow editors to change permissions and share');
         expect(toggle).toBeChecked();
@@ -189,7 +201,7 @@ describe('SharingModal', () => {
         const parentNode = {
             ...commonNodeProperties,
             uid: 'qwe~123',
-            name: 'root',
+            name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
             isSharedPublicly: false,
         } as NodeEntity;
@@ -197,18 +209,15 @@ describe('SharingModal', () => {
             ...commonNodeProperties,
             uid: 'qwe~456',
             parentUid: parentNode.uid,
-            name: 'whatever - child',
+            name: { ok: true, value: 'whatever - child' },
             directRole: MemberRole.Admin,
         } as NodeEntity;
 
         const unshareNode = jest.fn();
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -229,8 +238,8 @@ describe('SharingModal', () => {
 
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
-        await openSharingSettings(viewedNode.name);
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
+        await openSharingSettings((viewedNode.name as any).value);
         const stopSharingButton = screen.getByRole('button', { name: 'Stop sharing', hidden: true });
         await userEvent.click(stopSharingButton);
         // Confirmation modal opens
@@ -246,17 +255,13 @@ describe('SharingModal', () => {
         const viewedNode = {
             ...commonNodeProperties,
             uid: 'qwe~999',
-            name: 'tortilla de patatas',
+            name: { ok: true, value: 'tortilla de patatas' },
             directRole: MemberRole.Admin,
         } as NodeEntity;
 
         const drive = {
             ...DRIVE_BASE,
-            getNode: (): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: viewedNode,
-                }),
+            getNode: (): Promise<NodeEntity> => Promise.resolve(viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -276,7 +281,7 @@ describe('SharingModal', () => {
 
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         expect(screen.queryByTestId('share-modal-settings')).not.toBeInTheDocument();
     });
 
@@ -284,7 +289,7 @@ describe('SharingModal', () => {
         const parentNode = {
             ...commonNodeProperties,
             uid: 'qwe~123',
-            name: 'root',
+            name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
             isSharedPublicly: false,
         } as NodeEntity;
@@ -292,7 +297,7 @@ describe('SharingModal', () => {
             ...commonNodeProperties,
             uid: 'qwe~456',
             parentUid: parentNode.uid,
-            name: 'unshared file',
+            name: { ok: true, value: 'unshared file' },
             directRole: MemberRole.Admin,
             isShared: false,
             isSharedPublicly: false,
@@ -300,11 +305,8 @@ describe('SharingModal', () => {
 
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -316,7 +318,7 @@ describe('SharingModal', () => {
 
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         expect(screen.queryByTestId('share-modal-settings')).not.toBeInTheDocument();
     });
 
@@ -324,7 +326,7 @@ describe('SharingModal', () => {
         const parentNode = {
             ...commonNodeProperties,
             uid: 'qwe~123',
-            name: 'root',
+            name: { ok: true, value: 'root' },
             directRole: MemberRole.Admin,
             isSharedPublicly: false,
         } as NodeEntity;
@@ -332,17 +334,14 @@ describe('SharingModal', () => {
             ...commonNodeProperties,
             uid: 'qwe~456',
             parentUid: parentNode.uid,
-            name: 'shared file',
+            name: { ok: true, value: 'shared file' },
             directRole: MemberRole.Admin,
         } as NodeEntity;
 
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -362,7 +361,7 @@ describe('SharingModal', () => {
 
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         expect(await screen.findByTestId('share-modal-settings')).toBeInTheDocument();
     });
 
@@ -370,7 +369,7 @@ describe('SharingModal', () => {
         const currentUserEmail = 'me@myself.com';
         const parentNode = {
             ...commonNodeProperties,
-            name: 'pare',
+            name: { ok: true, value: 'pare' },
             uid: 'qwe~123',
             directRole: MemberRole.Viewer,
             membership: {
@@ -381,7 +380,7 @@ describe('SharingModal', () => {
         } as NodeEntity;
         const viewedNode = {
             ...commonNodeProperties,
-            name: 'filla',
+            name: { ok: true, value: 'filla' },
             uid: 'qwe~456',
             parentUid: parentNode.uid,
             directRole: MemberRole.Admin,
@@ -395,11 +394,8 @@ describe('SharingModal', () => {
         const shareNode = jest.fn();
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -424,7 +420,7 @@ describe('SharingModal', () => {
             },
         });
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         const memberRow = await screen.findByTestId('share-members');
         await userEvent.click(within(memberRow).getByText('can edit'));
         await userEvent.click(screen.getByText('Viewer'));
@@ -435,7 +431,7 @@ describe('SharingModal', () => {
             users: [{ email: currentUserEmail, role: MemberRole.Viewer }],
         });
         await waitFor(() => {
-            const header = screen.getByText(`Share "${viewedNode.name}"`);
+            const header = screen.getByText(`Share "${(viewedNode.name as any).value}"`);
             // Animation starts - modal is closing; jsdom doesn't run CSS animations, so onAnimationEnd never fires
             expect(header.closest('.modal-two--out')).not.toBeNull();
         });
@@ -450,7 +446,7 @@ describe('SharingModal', () => {
         const viewedNode = {
             ...commonNodeProperties,
             uid: 'qwe~456',
-            name: 'shared file',
+            name: { ok: true, value: 'shared file' },
             directRole: MemberRole.Viewer,
             ownedBy: { email: ownerEmail },
             membership: {
@@ -462,11 +458,7 @@ describe('SharingModal', () => {
 
         const drive = {
             ...DRIVE_BASE,
-            getNode: (): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: viewedNode,
-                }),
+            getNode: (): Promise<NodeEntity> => Promise.resolve(viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -494,7 +486,7 @@ describe('SharingModal', () => {
             },
         });
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
 
         const ownerRow = await screen.findByTestId('share-owner');
         expect(within(ownerRow).getByText(ownerDisplayName)).toBeInTheDocument();
@@ -509,7 +501,7 @@ describe('SharingModal', () => {
         const currentUserEmail = 'me@myself.com';
         const parentNode = {
             ...commonNodeProperties,
-            name: 'pare',
+            name: { ok: true, value: 'pare' },
             uid: 'qwe~123',
             directRole: MemberRole.Admin,
             membership: {
@@ -520,7 +512,7 @@ describe('SharingModal', () => {
         } as NodeEntity;
         const viewedNode = {
             ...commonNodeProperties,
-            name: 'filla',
+            name: { ok: true, value: 'filla' },
             uid: 'qwe~456',
             parentUid: parentNode.uid,
             directRole: MemberRole.Admin,
@@ -534,11 +526,8 @@ describe('SharingModal', () => {
         const shareNode = jest.fn();
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -563,7 +552,7 @@ describe('SharingModal', () => {
             },
         });
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         const memberRow = await screen.findByTestId('share-members');
         await userEvent.click(within(memberRow).getByText('can edit'));
         await userEvent.click(screen.getByText('Viewer'));
@@ -572,7 +561,7 @@ describe('SharingModal', () => {
         expect(shareNode).toHaveBeenCalledWith(viewedNode.uid, {
             users: [{ email: currentUserEmail, role: MemberRole.Viewer }],
         });
-        const header = screen.getByText(`Share "${viewedNode.name}"`);
+        const header = screen.getByText(`Share "${(viewedNode.name as any).value}"`);
         expect(header.closest('.modal-two--out')).toBeNull();
     });
 
@@ -581,7 +570,7 @@ describe('SharingModal', () => {
         const viewedNode = {
             ...commonNodeProperties,
             uid: 'qwe~456',
-            name: 'shared file',
+            name: { ok: true, value: 'shared file' },
             directRole: MemberRole.Viewer,
             ownedBy: { email: 'owner@example.com' },
             membership: {
@@ -594,11 +583,7 @@ describe('SharingModal', () => {
         const unshareNode = jest.fn().mockResolvedValue(undefined);
         const drive = {
             ...DRIVE_BASE,
-            getNode: (): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: viewedNode,
-                }),
+            getNode: (): Promise<NodeEntity> => Promise.resolve(viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -623,7 +608,7 @@ describe('SharingModal', () => {
             },
         });
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         const memberRow = await screen.findByTestId('share-members');
         await userEvent.click(within(memberRow).getByText('can view'));
         await userEvent.click(screen.getByText('Remove access'));
@@ -642,7 +627,7 @@ describe('SharingModal', () => {
         const parentNode = {
             ...commonNodeProperties,
             uid: 'qwe~123',
-            name: 'pare',
+            name: { ok: true, value: 'pare' },
             directRole: MemberRole.Viewer,
             membership: {
                 role: MemberRole.Viewer,
@@ -654,7 +639,7 @@ describe('SharingModal', () => {
             ...commonNodeProperties,
             uid: 'qwe~456',
             parentUid: parentNode.uid,
-            name: 'shared file',
+            name: { ok: true, value: 'shared file' },
             directRole: MemberRole.Viewer,
             membership: {
                 role: MemberRole.Viewer,
@@ -666,11 +651,8 @@ describe('SharingModal', () => {
         const unshareNode = jest.fn().mockResolvedValue(undefined);
         const drive = {
             ...DRIVE_BASE,
-            getNode: (uid: string): Promise<MaybeNode> =>
-                Promise.resolve({
-                    ok: true,
-                    value: uid === parentNode.uid ? parentNode : viewedNode,
-                }),
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
             getSharingInfo: (): Promise<ShareResult> =>
                 Promise.resolve({
                     protonInvitations: [],
@@ -695,7 +677,7 @@ describe('SharingModal', () => {
             },
         });
 
-        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        await waitFor(() => screen.getByText(`Share "${(viewedNode.name as any).value}"`));
         const memberRow = await screen.findByTestId('share-members');
         await userEvent.click(within(memberRow).getByText('can view'));
         await userEvent.click(screen.getByText('Remove access'));

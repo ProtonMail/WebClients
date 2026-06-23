@@ -91,6 +91,9 @@
       "Add photos": [
         "Lägg till foton"
       ],
+      "Add storage": [
+        "Lägg till lagringsutrymme"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Lägg till i ”${ name }” (${ photoCount } foto)",
         "Lägg till i ”${ name }” (${ photoCount } foton)"
@@ -503,9 +506,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Skaffa en gratis ${ BRAND_NAME }-adress"
       ],
-      "Get Drive for Business": [
-        "Skaffa Drive for Business"
-      ],
       "Get in touch": [
         "Kontakta oss"
       ],
@@ -622,6 +622,9 @@
       ],
       "Let's talk": [
         "Låt oss prata!"
+      ],
+      "List layout": [
+        "Listlayout"
       ],
       "Load": [
         "Ladda"
@@ -1088,6 +1091,9 @@
       "Trust": [
         "Lita på"
       ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Prova ${ BRAND_NAME } Workspace"
+      ],
       "Try again": [
         "Försök igen"
       ],
@@ -1129,9 +1135,6 @@
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"
-      ],
-      "Upload anyway": [
-        "Ladda upp ändå"
       ],
       "Upload file": [
         "Ladda upp fil"
@@ -1180,6 +1183,9 @@
       ],
       "Verify account": [
         "Verifiera konto"
+      ],
+      "Verify now": [
+        "Verifiera nu"
       ],
       "View": [
         "Visa"
@@ -1578,6 +1584,98 @@
       ],
       "Yearly": [
         "Årsvis"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Emails": [
+        "E-post"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
+      "Has errors": [
+        "Har fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
+      ],
+      "Migrate": [
+        "Migrera"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "Not activated": [
+        "Inte aktiverat"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation har inte tillräckligt med licenser tillgängligt"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "Pending": [
+        "Väntar"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
+      "Size": [
+        "Storlek"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Användare"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -2149,6 +2247,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanarieöarna"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -2936,6 +3037,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tillräckligt med plats för åratal av e-post, bilagor och mer."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Säkerställ säker åtkomst till organisationens data, även om ditt team är på distans eller använder offentligt WiFi."
       ],
@@ -2944,9 +3048,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Se till att du fortfarande kan komma åt ditt konto och dina data även om du förlorar ditt ${ BRAND_NAME }-lösenord."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "För en sömlös övergång till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
@@ -3017,6 +3118,9 @@
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Tråkigt att du lämnar oss. Om du har en stund över skulle vi verkligen uppskatta att höra varför du vill avbryta Din feedback hjälper oss att göra ${ BRAND_NAME } bättre för alla."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
       ],
@@ -3034,6 +3138,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dataåterställningsmetoder är inställda."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera ${ newUserStorageText } av dina senaste Gmail-meddelanden"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera dina senaste Gmail-e-postmeddelanden."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -3276,9 +3386,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "”${ sanitizedName }” finns redan"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan inte ansluta till ditt externa konto"
       ],
@@ -3321,6 +3428,9 @@
       ],
       "Aliases could not be loaded": [
         "Alias kunde inte läsas in"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
       ],
       "Already a member of this share": [
         "Redan medlem av denna delning"
@@ -3504,9 +3614,6 @@
       "Failed to update public share node": [
         "Misslyckades att uppdatera offentlig delningsnod"
       ],
-      "File cannot be merged with folder": [
-        "Fil kan inte slås samman med mapp"
-      ],
       "First name is too long": [
         "Förnamn är för långt"
       ],
@@ -3645,11 +3752,17 @@
       "Payment process not supported": [
         "Betalningsprocessen stöds inte"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Fotouppladdning är tillfälligt inaktiverad. Försök igen senare"
-      ],
       "Please activate your search again": [
         "Aktivera din sökning igen"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Konfigurera en anpassad domän innan du lägger till adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurera en anpassad domän innan du lägger till användare till din organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivera stöd för flera användare innan du lägger till användare till din organisation."
       ],
       "Please enter a valid postal code": [
         "Ange ett giltigt postnummer"
@@ -3681,6 +3794,9 @@
       ],
       "Please select billing state": [
         "Välj delstat för fakturering"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
       "Port is required": [
         "Port är obligatoriskt"
@@ -3740,6 +3856,9 @@
       "Something went wrong with search. Please try again later.": [
         "Något gick fel med sökning. Försök igen senare."
       ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Något gick fel med sök: Inte tillräckligt lagringsutrymme."
+      ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."
       ],
@@ -3787,24 +3906,6 @@
       ],
       "The minimum donation amount is ${ price }": [
         "Minsta donationsbelopp är ${ price }"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Den nya versionen av originalfilen är inte uppladdad ännu, försök igen senare"
-      ],
-      "The original file has missing active revision": [
-        "Originalfilen saknar aktiv version"
-      ],
-      "The original file has missing hash key": [
-        "Originalfilen saknar hashnyckel"
-      ],
-      "The original file has missing session key": [
-        "Originalfilen saknar sessionsnyckel"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Originalfilen har inte laddats upp ännu, försök igen senare"
-      ],
-      "The original folder not found": [
-        "Originalmappen hittades inte"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
@@ -3860,9 +3961,6 @@
       "Upload failed": [
         "Uppladdning misslyckades"
       ],
-      "Upload for this folder is temporarily disabled": [
-        "Uppladdning för denna mapp är tillfälligt inaktiverad"
-      ],
       "Username must begin with a letter or digit": [
         "Användarnamn måste börja med en bokstav eller siffra"
       ],
@@ -3917,6 +4015,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nått gränsen för antalet kontakter för ditt konto"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress eller inaktivera en adress i ditt konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
       ],
       "You must set a name": [
         "Du måste ange ett namn"
@@ -4974,6 +5078,10 @@
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
       ],
+      "${ total } user found": [
+        "${ total } användare hittades",
+        "${ total } användare hittades"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt uppdaterades.",
         "${ updated } kontakter uppdaterades."
@@ -4994,23 +5102,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Anslut automatiskt**: Öppnar och ansluter till VPN så snart du slår på din enhet."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill-switch**: Stoppar dataläckage genom att blockera ditt internet om VPN:et oväntat slutar fungera."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Steg 1:** Bjud in dina vänner till ${ BRAND_NAME } med din hänvisningslänk."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i krediter om de prenumererar."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt valda ${ BRAND_NAME }-paket."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje vän som prenumererar på ett paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje person som prenumererar på ett paket."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -5247,9 +5349,6 @@
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
       ],
-      "Cloud storage for businesses that take security seriously": [
-        "Molnlagring för företag som tar säkerhet på allvar"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Anslut till ${ VPN_APP_NAME } för att surfa privat"
       ],
@@ -5342,6 +5441,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kommer du ihåg ditt lösenord? ${ verifyButton }"
       ],
       "Done": [
         "Klar"
@@ -5500,11 +5602,11 @@
       "for ${ price }": [
         "för ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "För endast ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Gömt lösenord?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypterat lagringsutrymme för att komma igång"
@@ -5904,6 +6006,9 @@
       "Password must have:": [
         "Lösenord måste innehålla:"
       ],
+      "Password verified": [
+        "Lösenord verifierat"
+      ],
       "Paused": [
         "Pausad"
       ],
@@ -5967,6 +6072,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Välj etiketterna du vill importera:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupCount } grupp.",
@@ -6303,9 +6411,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Detta är nu din ${ defaultEmailAddress } för att skicka nya meddelanden."
       ],
-      "This item already exists in your library": [
-        "Detta objekt finns redan i ditt bibliotek"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Detta objekt är inte sparat i ditt fotobibliotek. Om du tar bort det från detta album förlorar du åtkomst till det permanent.",
         "Några av de valda objekten sparas inte i ditt fotobibliotek. Om du tar bort dem från detta album förlorar du åtkomsten till dem permanent."
@@ -6346,26 +6451,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Detta kommer ta bort de valda objekten du laddade upp permanent."
       ],
-      "This will replace the existing file with the folder": [
-        "Detta kommer ersätta den befintliga filen med mappen"
-      ],
       "This will replace the existing folder or file with the file": [
         "Detta kommer ersätta den befintliga mappen eller filen med filen"
       ],
       "This will replace the existing folder or file with the folder": [
         "Detta kommer ersätta den befintliga mappen eller filen med mappen"
       ],
-      "This will replace the existing folder with the file": [
-        "Detta kommer ersätta den befintliga mappen med filen"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
-      ],
-      "This will upload a new version of the file": [
-        "Detta kommer ladda upp en ny version av filen"
-      ],
-      "This will upload a new version of the folder": [
-        "Detta kommer ladda upp en ny version av mappen"
       ],
       "Time": [
         "Tid"
@@ -6387,6 +6480,9 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor. "
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
@@ -6417,18 +6513,6 @@
       ],
       "Tracking": [
         "Spårning"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Överföringen avbröts för filen \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Överföringen avbröts för mapp ”${ name }”"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Överföringen hoppades över för filen \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Överföring hoppades över för mapp ”${ folderName }”"
       ],
       "Trash": [
         "Papperskorg"
@@ -6481,6 +6565,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ],
+      "Upgrade to get more storage space": [
+        "Uppgradera för att skaffa mer lagringsutrymme"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
       ],
@@ -6495,9 +6582,6 @@
       ],
       "Uploading": [
         "Laddar upp"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Att ladda upp hundratals filer på samma gång kan påverka prestandan."
       ],
       "Uppercase and lowercase letters": [
         "Stora och små bokstäver"
@@ -6575,6 +6659,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Vi aviserar dig när importen är klar."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
@@ -6991,6 +7078,9 @@
       "Apply to all unverified items": [
         "Tillämpa på alla overifierade objekt"
       ],
+      "Asset": [
+        "Tillgångar"
+      ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
       ],
@@ -7017,6 +7107,9 @@
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "Calendars": [
+        "Kalendrar"
       ],
       "can edit": [
         "kan redigera"
@@ -7148,6 +7241,9 @@
       "Download anyway": [
         "Ladda ner ändå"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Duplikat hittades"
       ],
@@ -7165,6 +7261,9 @@
       ],
       "Email format": [
         "E-postformat"
+      ],
+      "Emails": [
+        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -7279,12 +7378,6 @@
       ],
       "Keep both": [
         "Behåll båda"
-      ],
-      "Keep both files": [
-        "Behåll båda filerna"
-      ],
-      "Keep both folders": [
-        "Behåll båda mapparna"
       ],
       "Label messages as": [
         "Märk meddelanden som"
@@ -7438,12 +7531,6 @@
       ],
       "Region": [
         "Region"
-      ],
-      "Replace existing file": [
-        "Ersätt befintlig fil"
-      ],
-      "Replace existing folder": [
-        "Ersätt befintlig mapp"
       ],
       "Replace existing folder or file": [
         "Ersätt befintlig mapp eller fil"
@@ -9232,14 +9319,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "“${ name }“ misslyckades att flyttas till papperskorg"
       ],
-      "\"${ name }\" failed to be saved": [
-        "”${ name }” kunde inte sparas"
-      ],
       "\"${ name }\" moved to trash": [
         "“${ name }“ flyttades till papperskorgen"
-      ],
-      "\"${ name }\" saved successfully": [
-        "”${ name }” har sparats"
       ],
       "\"${ newName }\" failed to be renamed": [
         "“${ newName }“ misslyckades att namnändras"
@@ -9383,6 +9464,9 @@
       "Failed to convert external invitation": [
         "Misslyckades att konvertera extern inbjudan"
       ],
+      "Failed to load sharing details": [
+        "Misslyckades att ladda delningsdetaljer"
+      ],
       "Failed to move, please try again": [
         "Misslyckades att flytta, försök igen"
       ],
@@ -9400,19 +9484,6 @@
       ],
       "Failed to rename device": [
         "Misslyckades att byta namn på enhet"
-      ],
-      "Failed to upload files: ${ err }": [
-        "Misslyckades att ladda upp filer: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Filen eller mappen \"${ filename }\" och ${ count } andra laddas redan upp",
-        "Filen eller mappen \"${ filename }\" och ${ count } andra laddas redan upp"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Fil eller mapp ”${ filename }” laddas redan upp"
-      ],
-      "File or folder is missing a name": [
-        "Fil eller mapp saknar ett namn"
       ],
       "File removed": [
         "Fil borttagen"
@@ -9434,9 +9505,6 @@
       "Move ${ n } item": [
         "Flytta ${ n } objekt",
         "Flytta ${ n } objekt"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Inte tillräckligt med utrymme för att ladda upp ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Offentlig länkåtkomst uppdaterad"
@@ -10286,6 +10354,9 @@
       "This contact currently signs messages with this key": [
         "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
       ],
+      "This key is used for message verification": [
+        "Denna nyckel används för meddelandeverifiering"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Denna nyckel används för att kryptera meddelanden till denna kontakt"
       ],
@@ -10392,11 +10463,17 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Sök"
+      ],
       "Search for group name": [
         "Sök efter gruppnamn"
       ],
       "Search for name or email": [
         "Sök efter namn eller e-postadress"
+      ],
+      "Search for users or addresses": [
+        "Sök efter användare eller adresser"
       ],
       "Search parent folder": [
         "Sök överordnad mapp"
@@ -10545,15 +10622,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
-      "SPRING SALE 2026": [
-        "VÅRREA 2026"
+      "Summer Sale": [
+        "Sommarrea"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/månad"
       ],
@@ -10572,35 +10649,17 @@
       "500 GB storage": [
         "500 GB lagringsutrymme"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till 15 000+ servrar i 120+ länder"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Få åtkomst till avancerade AI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alla premiumfunktioner i Mail, Pass, Drive, VPN och Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockera annonser, spårare och skadlig kod"
-      ],
-      "Built-in 2FA authenticator": [
-        "Inbyggd 2FA-autentiserare"
-      ],
-      "Connect 10 devices at once": [
-        "Anslut 10 enheter samtidigt"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Förläng din prenumeration och spara ${ discountPercent } %!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Full åtkomst till ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fullständig chatthistorik med enkelt sök och favoriter"
       ],
       "Individual accounts for 6 users": [
         "Individuella konton för 6 användare"
@@ -10608,8 +10667,8 @@
       "Individual accounts for you and a partner": [
         "Individuella konton för dig och en partner"
       ],
-      "Online document editor": [
-        "Dokumentredigerare online"
+      "Online document and spreadsheet editor": [
+        "Dokument- och kalkylbladsredigerare online"
       ],
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
@@ -10620,25 +10679,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Obegränsat antal dagliga chattar"
-      ],
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsade hide-my-email-alias"
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "för 12 månader"
       ],
-      "SPRING SALE": [
-        "VÅRREA"
+      "SUMMER SALE": [
+        "SOMMARREA"
       ]
     },
     "Referral": {
@@ -12069,6 +12122,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadress",
         "${ emailsCount } e-postadresser"
@@ -12336,17 +12392,17 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digital signatur delvis verifierad. Denna mapp laddades upp med en offentligt åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Digital signatur verifierad. Denna fil skapades säkert av <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digital signatur verifierad. Denna fil skapades säkert av ${ author }."
       ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Digital signatur verifierad. Denna fil laddades säkert upp av <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digital signatur verifierad. Denna fil laddades säkert upp av ${ author }."
       ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Digital signatur verifierad. Denna mapp skapades säkert av <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digital signatur verifierad. Denna mapp skapades säkert av ${ author }."
       ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Digital signatur verifierad. Denna mapp laddades upp säkert av <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digital signatur verifierad. Denna mapp laddades upp säkert av ${ author }."
       ],
       "Discard": [
         "Förkasta"
@@ -12383,12 +12439,6 @@
       ],
       "Drop to upload": [
         "Släpp för att ladda upp"
-      ],
-      "Duplicate file found": [
-        "Dubblettfil hittades"
-      ],
-      "Duplicate folder found": [
-        "Dubblettmapp hittades"
       ],
       "Edit billing address": [
         "Redigera faktureringsadress"
@@ -12518,9 +12568,6 @@
       "Import contacts": [
         "Importera kontakter"
       ],
-      "Import emails, calendars, contacts": [
-        "Importera e-post, kalendrar, kontakter"
-      ],
       "Import events": [
         "Importera händelser"
       ],
@@ -12566,9 +12613,6 @@
       "Make a secure connection your default": [
         "Gör en säker anslutning din standard"
       ],
-      "Manage secure link": [
-        "Hantera säker länk"
-      ],
       "Media type": [
         "Mediatyp"
       ],
@@ -12580,6 +12624,9 @@
       ],
       "Message": [
         "Meddelande"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrera din organisation till ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -12689,6 +12736,9 @@
       "Other names": [
         "Andra namn"
       ],
+      "Out of storage space": [
+        "Slut på lagringsutrymme"
+      ],
       "Payment failed": [
         "Betalning misslyckades"
       ],
@@ -12697,9 +12747,6 @@
       ],
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
-      ],
-      "Performance might be affected": [
-        "Prestanda kan påverkas"
       ],
       "Phone numbers": [
         "Telefonnummer"
@@ -12888,6 +12935,9 @@
       "Summary": [
         "Sammanfattning"
       ],
+      "Summer Sale": [
+        "Sommarrea"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denna fil har en saknad eller ogiltig signatur. Gå till Meny (⋮) → Detaljer för info."
       ],
@@ -12957,14 +13007,14 @@
       "Uploaded": [
         "Uppladdat"
       ],
-      "Uploading a large file or folder": [
-        "Laddar upp en stor fil eller mapp"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
       "Verification failed": [
         "Verifiering misslyckades"
+      ],
+      "Verify your password": [
+        "Verifiera ditt lösenord"
       ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
@@ -12984,17 +13034,17 @@
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Vi kunde inte verifiera att <strong>${ emailAddress }</strong> skapade denna fil."
+      "We couldn’t verify that ${ author } created this file.": [
+        "Vi kunde inte verifiera att ${ author } skapade denna fil."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Vi kunde inte verifiera att <strong>${ emailAddress }</strong> skapade denna mapp."
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Vi kunde inte verifiera att ${ author } skapade denna mapp."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Vi kunde inte verifiera att <strong>${ emailAddress }</strong> laddade upp denna fil."
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Vi kunde inte verifiera att ${ author } laddade upp denna fil."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Vi kunde inte verifiera att <strong>${ emailAddress }</strong> laddade upp denna mapp."
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Vi kunde inte verifiera att ${ author } laddade upp denna mapp."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Vi kunde inte verifiera att en anonym användare skapade denna fil."
@@ -13011,11 +13061,11 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Vi kunde inte bekräfta att filinnehållet laddades upp av ${ claimedContentAuthor }. Orsaken är: ${ activeRevision.contentAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Vi kunde inte bekräfta att namnet skapades eller modifierades av ${ claimedNameAuthor }. Orsaken är: ${ nodeEntity.nameAuthor.error.error }"
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Vi kunde inte bekräfta att namnet skapades eller modifierades av ${ claimedNameAuthor }. Orsaken är: ${ node.nameAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Vi kunde inte bekräfta att noden skapades av ${ claimedKeyAuthor }. Orsaken är: ${ nodeEntity.keyAuthor.error.error }"
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Vi kunde inte bekräfta att noden skapades av ${ claimedKeyAuthor }. Orsaken är: ${ node.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Välkomsterbjudande"

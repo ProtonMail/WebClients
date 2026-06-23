@@ -1107,8 +1107,8 @@
       "Error reporting problem": [
         "Πρόβλημα αναφοράς σφαλμάτων"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Η λήξη πρέπει να είναι μεταξύ 60 λεπτών και 1 έτους"
+      "Expiration must be between 1 hour and 1 year": [
+        "Η λήξη πρέπει να είναι μεταξύ 1 ώρας και 1 έτους"
       ],
       "Failed loading group members": [
         "Αποτυχία φόρτωσης μελών ομάδας"
@@ -1956,22 +1956,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Κάθε φορά που το ψευδώνυμό σας λαμβάνει ένα μήνυμα ηλεκτρονικού ταχυδρομείου από κάποιον, μια νέα επαφή δημιουργείται αυτόματα."
       ],
-      "Expired ${ abs } hour ago": [
-        "Έληξε πριν από ${ abs } ώρα",
-        "Έληξε πριν από ${ abs } ώρες"
+      "Expired on ${ formattedDate }": [
+        "Έληξε στις ${ formattedDate }"
       ],
       "Expires in": [
         "Λήγει σε"
       ],
-      "Expires in ${ hours } hour": [
-        "Λήγει σε ${ hours } ώρα",
-        "Λήγει σε ${ hours } ώρες"
-      ],
       "Expires in ${ remainingTime }": [
         "Λήγει σε ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Λήγει σε λιγότερο από μία ώρα"
+      "Expires on ${ formattedDate }": [
+        "Λήγει στις ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Γίνεται εξαγωγή των δεδομένων σας..."
@@ -2940,11 +2935,23 @@
         "${ years } έτος",
         "${ years } έτη"
       ],
+      "1 day": [
+        "1 ημέρα"
+      ],
       "1 hour": [
         "1 ώρα"
       ],
       "1 minute": [
         "1 λεπτό"
+      ],
+      "1 month": [
+        "1 μήνας"
+      ],
+      "1 week": [
+        "1 εβδομάδα"
+      ],
+      "1 year": [
+        "1 έτος"
       ],
       "10 minutes": [
         "10 λεπτά"
@@ -3174,6 +3181,12 @@
       "Crypto Wallet": [
         "Crypto Wallet"
       ],
+      "Custom": [
+        "Προσαρμοσμένο"
+      ],
+      "Custom expiration (minutes)": [
+        "Προσαρμοσμένη λήξη (λεπτά)"
+      ],
       "Custom Items": [
         "Προσαρμοσμένα Στοιχεία"
       ],
@@ -3264,8 +3277,8 @@
       "Expired tokens (${ expired.length })": [
         "Ληγμένα διακριτικά (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Λήγει σε (λεπτά)"
+      "Expires in": [
+        "Λήγει σε"
       ],
       "Expiry Date": [
         "Ημερομηνία Λήξης"

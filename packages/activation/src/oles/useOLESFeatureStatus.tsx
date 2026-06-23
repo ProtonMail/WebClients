@@ -12,7 +12,7 @@ const useOLESFeatureStatus = () => {
     const backendFlag: boolean = useFlag('OlesM1');
     const clientFlag: boolean = useFlag('OrganizationLevelEasySwitch');
 
-    const featureSupported = Boolean(backendFlag) && isOrganizationOLESEligible({ organization, subscription });
+    const featureSupported = Boolean(backendFlag) && isOrganizationOLESEligible({ organization });
     const creatingEnabled = featureSupported && Boolean(clientFlag);
     const allowedForUser = isUserOLESEligible({ user, organization, subscription });
     const loading = userLoading || organizationLoading || subscriptionLoading;

@@ -1,3 +1,6 @@
+// We are working on removing the barrel re-export file from the payments package.
+// Please do not add new exports to this file.
+
 export {
     ADDON_NAMES,
     ADDON_PREFIXES,
@@ -253,6 +256,7 @@ export {
     getCanSubscriptionAccessDuoPlan,
     getCanSubscriptionAccessPassFamilyPlan,
     getHas2025OfferCoupon,
+    hasSummerSale2026Coupon,
     getHasConsumerVpnPlan,
     getHasDriveB2BPlan,
     getHasExternalMemberCapableB2BPlan,

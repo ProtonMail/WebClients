@@ -1,8 +1,7 @@
-import type { DriveEvent, MaybeNode, NodeEvent } from '@protontech/drive-sdk';
+import type { DriveEvent, NodeEvent } from '@protontech/drive-sdk';
 
 import type { NodeEntity } from '@proton/drive';
 import { NodeType } from '@proton/drive';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../shared/Logger';
@@ -238,9 +237,6 @@ export abstract class IndexPopulator {
         generation: number
     ): Promise<void> {
         const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
-        // getNodeEntity backfills undecryptable names with a placeholder,
-        // so the node is always indexable even if the filename couldn't be decrypted.
-        const { node } = getNodeEntity(maybeNode);
         this.maybeWarnForUndecryptableNodeName(maybeNode, event.nodeUid);
 
         const parentPathResult = await this.resolveParentPath(event.parentNodeUid, ctx);
@@ -249,7 +245,7 @@ export abstract class IndexPopulator {
             throw parentPathResult.error;
         }
 
-        const entry = this.createEntryForNode(node, parentPathResult.parentPath, generation);
+        const entry = this.createEntryForNode(maybeNode, parentPathResult.parentPath, generation);
 
         const { indexWriter } = await ctx.indexRegistry.get(this.indexKind, ctx.db);
         const session = indexWriter.startWriteSession();
@@ -268,7 +264,6 @@ export abstract class IndexPopulator {
         generation: number
     ): Promise<void> {
         const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
-        const { node } = getNodeEntity(maybeNode);
         this.maybeWarnForUndecryptableNodeName(maybeNode, event.nodeUid);
 
         const parentPathResult = await this.resolveParentPath(event.parentNodeUid, ctx);
@@ -277,7 +272,7 @@ export abstract class IndexPopulator {
             throw parentPathResult.error;
         }
 
-        const entry = this.createEntryForNode(node, parentPathResult.parentPath, generation);
+        const entry = this.createEntryForNode(maybeNode, parentPathResult.parentPath, generation);
 
         // Remove old entry + descendants, then insert the updated entry and
         // re-index the subtree (if folder) — all in a single write session.
@@ -300,7 +295,7 @@ export abstract class IndexPopulator {
             // TODO(DRVWEB-5396): Classify diffs by whether they require a full descendant tree refresh.
             //  - Structural changes (untrashing, path changes) should trigger a full subtree refresh;
             //  - Non-structural updates (rename, revisions, etc.) should not.
-            if (!event.isTrashed && node.type === NodeType.Folder) {
+            if (!event.isTrashed && maybeNode.type === NodeType.Folder) {
                 const subtreeEntries = this.walkFolderTreeFromSdk(
                     event.nodeUid,
                     `${parentPathResult.parentPath}/${event.nodeUid}`,
@@ -362,9 +357,8 @@ export abstract class IndexPopulator {
         });
     }
 
-    protected maybeWarnForUndecryptableNodeName(maybeNode: MaybeNode, nodeUid: string): void {
-        const hasIndexableFilename = maybeNode.ok || (maybeNode.error.name && maybeNode.error.name.ok);
-        if (!hasIndexableFilename) {
+    protected maybeWarnForUndecryptableNodeName(node: NodeEntity, nodeUid: string): void {
+        if (!node.name.ok) {
             Logger.warn(`${this.getUid()}: using fallback name for ${nodeUid}, no indexable filename`);
             // TODO: The name was not decryptable and a fallback name (⚠️ Undecryptable name) will be used, we
             // might want to add this node to a "repair name" service.
@@ -415,20 +409,19 @@ export abstract class IndexPopulator {
             const children = await ctx.bridge.driveSdk.iterateFolderChildren(item.folderUid);
 
             for (const child of children) {
-                const { node } = getNodeEntity(child);
-                this.maybeWarnForUndecryptableNodeName(child, node.uid);
+                this.maybeWarnForUndecryptableNodeName(child, child.uid);
 
-                if (node.trashTime) {
+                if (child.trashTime) {
                     Logger.warn('Unexpected trashed node found while visiting folders');
 
                     // Skip trashed nodes and descendants.
                     continue;
                 }
 
-                yield this.createEntryForNode(node, item.parentPath, generation);
+                yield this.createEntryForNode(child, item.parentPath, generation);
 
-                if (node.type === NodeType.Folder) {
-                    queue.push({ folderUid: node.uid, parentPath: `${item.parentPath}/${node.uid}` });
+                if (child.type === NodeType.Folder) {
+                    queue.push({ folderUid: child.uid, parentPath: `${item.parentPath}/${child.uid}` });
                 }
             }
         }
@@ -483,15 +476,14 @@ export abstract class IndexPopulator {
 
         while (currentUid) {
             const maybeNode = await ctx.bridge.driveSdk.getNode(currentUid);
-            const { node } = getNodeEntity(maybeNode);
 
             // If the node has no parentUid it is the root — don't include it in the path.
-            if (!node.parentUid) {
+            if (!maybeNode.parentUid) {
                 break;
             }
 
             segments.unshift(currentUid);
-            currentUid = node.parentUid;
+            currentUid = maybeNode.parentUid;
         }
 
         return segments.length > 0 ? `/${segments.join('/')}` : '';

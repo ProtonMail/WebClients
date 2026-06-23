@@ -141,6 +141,12 @@
       "Choose my own password": [
         "Обрати власний пароль"
       ],
+      "Claim this address": [
+        "Отримати цю адресу"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Отримайте безкоштовну адресу ${ BRAND_NAME }"
+      ],
       "Close": [
         "Закрити"
       ],
@@ -162,6 +168,9 @@
       "Connect": [
         "З'єднатися"
       ],
+      "Connect your email": [
+        "Підключіть свою електронну пошту"
+      ],
       "Connected": [
         "Під'єднано"
       ],
@@ -179,6 +188,9 @@
       ],
       "Continue import": [
         "Продовжити імпорт"
+      ],
+      "Continue with Free": [
+        "Продовжити безкоштовно"
       ],
       "Continue with this password": [
         "Продовжити з цим паролем"
@@ -281,6 +293,9 @@
       ],
       "Discard Changes": [
         "Відхилити зміни"
+      ],
+      "Disconnect": [
+        "Від'єднати"
       ],
       "Discover ${ planName }": [
         "Ознайомтеся з ${ planName }"
@@ -477,6 +492,9 @@
       "Keep my subscription": [
         "Зберегти передплату"
       ],
+      "Later": [
+        "Пізніше"
+      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -558,6 +576,9 @@
       "Or": [
         "Або"
       ],
+      "Or use a different Gmail address": [
+        "Або використовувати іншу адресу Gmail"
+      ],
       "Organization": [
         "Організація"
       ],
@@ -581,6 +602,9 @@
       ],
       "Reconnect": [
         "Відновити з'єднання"
+      ],
+      "Reconnect to Gmail": [
+        "Повторно підключитися до Gmail"
       ],
       "Recover data": [
         "Відновити дані"
@@ -912,6 +936,9 @@
       "Use recovery code": [
         "Використати код відновлення"
       ],
+      "Use this Gmail address": [
+        "Використовувати цю адресу Gmail"
+      ],
       "Use your current email instead": [
         "Використати натомість вашу поточну адресу е-пошти"
       ],
@@ -1079,6 +1106,9 @@
       ],
       "Disabled": [
         "Вимкнена"
+      ],
+      "Disconnected": [
+        "Від'єднано"
       ],
       "External": [
         "Зовнішня"
@@ -2608,6 +2638,12 @@
       "Also included": [
         "Також включено"
       ],
+      "Available storage: ${ storageText }": [
+        "Доступне сховище: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Заблокуйте можливість Google аналізувати ваші дані. Gmail не бачитиме, що ви робите в ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
       ],
@@ -2620,6 +2656,9 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "Створити політику, щоби визначити, хто може під'єднуватися до спільних серверів у кожній країні."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Електронні листи, надіслані на ${ connectedAddressText }, тепер з'являтимуться в ${ MAIL_APP_NAME }."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Увімкніть ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
       ],
@@ -2631,6 +2670,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Достатньо місця для електронних листів, вкладень та багато чого іншого на роки вперед."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Кожен із вашої організації може під'єднуватися до спільних серверів у всіх країнах."
@@ -2650,8 +2692,23 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Тримайте різні частини свого життя окремо, а поштову скриньку організуйте за допомогою додаткових адрес."
       ],
+      "No ads. No trackers.": [
+        "Жодної реклами. Жодних вистежувачів."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ніхто з вашої організації не може під'єднуватися до спільних серверів."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Читайте, відповідайте та керуйте Gmail безпосередньо в ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Це може статися, якщо дозволи було вилучено або ваш пароль змінився."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свій обліковий запис."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свої облікові записи."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
@@ -2659,8 +2716,35 @@
       "Track the status and activity of your referrals": [
         "Відстежуйте стан і активність ваших запрошень"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Розблокуйте 15 ГБ сховища всього за ${ config.offerPrice }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ми більше не маємо доступу до ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Ми призупинимо імпорт, коли сховище буде заповнено на 80%, щоб зберегти місце для нових повідомлень."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ми почали імпортувати ваші електронні листи з Gmail. Ми повідомимо вас, коли процес завершиться."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас уже є адреса Gmail, з якої налаштовано пересилання до ${ MAIL_APP_NAME }. Підключіть її нижче, щоб надсилати й отримувати електронні листи безпосередньо з ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас уже є адреси Gmail, з яких налаштовано пересилання до ${ MAIL_APP_NAME }. Підключіть одну з них нижче, щоб надсилати й отримувати електронні листи безпосередньо з ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Тепер ви можете надсилати електронні листи з ${ BRAND_NAME }, використовуючи цю адресу."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ${ newUserStorageText } ваших найновіших повідомлень Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ваші найновіші електронні листи з Gmail."
       ]
     },
     "description": {
@@ -2949,6 +3033,9 @@
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
+      ],
+      "Address is already added to your account": [
+        "Адресу вже додано до вашого облікового запису"
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -3255,6 +3342,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      ],
+      "Something went wrong while converting the address": [
+        "Під час конвертації адреси сталася помилка"
+      ],
+      "Something went wrong while creating the address": [
+        "Під час створення адреси сталася помилка"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Під час отримання доступних доменів сталася помилка"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
@@ -3896,6 +3992,9 @@
         "${ MaxVPN } VPN-з'єднань",
         "${ MaxVPN } VPN-з'єднання"
       ],
+      "10+ premium features": [
+        "Понад 10 преміумфункцій"
+      ],
       "Access to all countries": [
         "Доступ до всіх країн"
       ],
@@ -3917,6 +4016,12 @@
       "Continue": [
         "Продовжити"
       ],
+      "Custom email domain": [
+        "Власний домен електронної пошти"
+      ],
+      "Email addresses": [
+        "Адреси електронної пошти"
+      ],
       "Fastest VPN servers": [
         "Швидші сервери VPN"
       ],
@@ -3928,6 +4033,9 @@
       ],
       "Secure streaming support": [
         "Підтримка безпечної потокової трансляції"
+      ],
+      "Storage": [
+        "Сховище"
       ],
       "Torrenting support (P2P)": [
         "Підтримка торентів (P2P)"
@@ -5319,6 +5427,9 @@
       "Enhance your network security": [
         "Посильте безпеку вашої мережі"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Забезпечте повністю приватне й зашифроване спілкування. Отримайте безкоштовну адресу електронної пошти ${ BRAND_NAME } просто зараз."
+      ],
       "Enter key manually instead": [
         "Ввести ключ вручну"
       ],
@@ -5501,6 +5612,9 @@
       ],
       "inactive": [
         "неактивний"
+      ],
+      "Included": [
+        "Включено"
       ],
       "Increase your account security by verifying your email address.": [
         "Покращте безпеку вашого облікового запису підтвердивши адресу електронної пошти."
@@ -6357,8 +6471,14 @@
       "Unverified email address.": [
         "Непідтверджена адреса електронної пошти."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Покращте тарифний план у будь-який час, щоб перенести решту"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Покращте тарифний план або очистьте місце в будь-який час, щоб перенести решту"
       ],
       "Upload your completed CSV file to create accounts": [
         "Вивантажте заповнений файл CSV для створення облікових записів"
@@ -7034,6 +7154,9 @@
       "Calendar": [
         "Календар"
       ],
+      "Calendars": [
+        "Календарі"
+      ],
       "Card details": [
         "Подробиці картки"
       ],
@@ -7171,6 +7294,9 @@
       ],
       "Email or username": [
         "Е-пошта чи ім'я користувача"
+      ],
+      "Emails": [
+        "Листи"
       ],
       "Emails (all messages)": [
         "Е-пошта (усі повідомлення)"
@@ -7487,6 +7613,9 @@
       "Second password": [
         "Другий пароль"
       ],
+      "Select which Gmail address to connect": [
+        "Виберіть, яку адресу Gmail підключити"
+      ],
       "Send crash reports": [
         "Надсилати звіти про збої"
       ],
@@ -7629,6 +7758,14 @@
         "Кому"
       ]
     },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "Доступна ${ byoeAddressesAvailableCount } з ${ maxBYOEAddresses } адрес електронної пошти",
+        "Доступні ${ byoeAddressesAvailableCount } з ${ maxBYOEAddresses } адрес електронної пошти",
+        "Доступно ${ byoeAddressesAvailableCount } з ${ maxBYOEAddresses } адрес електронної пошти",
+        "Доступно ${ byoeAddressesAvailableCount } з ${ maxBYOEAddresses } адрес електронної пошти"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Додайте домен, яким ви володієте, до облікового запису ${ MAIL_APP_NAME }."
@@ -7699,11 +7836,6 @@
       ],
       "To: ${ to }": [
         "До: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Виберіть постачальника ідентифікації, щоб почати"
       ]
     },
     "Limit of calendars reached": {
@@ -9153,9 +9285,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Беріть участь в опитуваннях для покращення послуг ${ BRAND_NAME }"
-      ],
-      "Product updates": [
-        "Оновлення продукту"
       ]
     },
     "Notification": {
@@ -9209,6 +9338,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Двоетапна перевірка більше не обов'язкова"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваша адреса ${ BRAND_NAME } готова до використання"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10042,6 +10174,78 @@
       ],
       "Unknown": [
         "Невідомий"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Summer Sale": [
+        "Літній розпродаж"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/місячний"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "2 TB data storage": [
+        "Сховище даних на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Сховище на 200 ГБ: у 40 разів більше за ваш поточний тарифний план"
+      ],
+      "3 TB data storage": [
+        "Сховище даних на 3 ТБ"
+      ],
+      "500 GB storage": [
+        "500 ГБ сховища"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Знижки розраховуються на основі стандартної щомісячної ціни. Вашу передплату буде подовжено за стандартним річним тарифом після закінчення платіжного циклу."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Повний доступ до ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Окремі облікові записи для 6 користувачів"
+      ],
+      "Individual accounts for you and a partner": [
+        "Окремі облікові записи для вас і вашого партнера"
+      ],
+      "Online document and spreadsheet editor": [
+        "Онлайн-редактор документів та електронних таблиць"
+      ],
+      "Recover previous file versions": [
+        "Відновити попередні версії файлів"
+      ],
+      "Stronger protection against cyber threats": [
+        "Надійніший захист від кіберзагроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перейдіть на наш річний тарифний план і заощадьте ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Use your own email domain": [
+        "Використовуйте свій власний домен електронної пошти"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "за 12 місяців"
+      ],
+      "SUMMER SALE": [
+        "ЛІТНІЙ РОЗПРОДАЖ"
       ]
     },
     "Recovery Email": {
@@ -12344,6 +12548,9 @@
       "Are you sure you want to close the preview?": [
         "Ви впевнені, що хочете закрити попередній перегляд?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Ви впевнені, що хочете від'єднати цю адресу?"
+      ],
       "Are you sure?": [
         "Ви впевнені?"
       ],
@@ -12352,6 +12559,9 @@
       ],
       "Block trackers and malware": [
         "Блокування стеження і зловмисних програм"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Перенесіть свій Gmail до ${ MAIL_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
@@ -12392,6 +12602,9 @@
       "Choose user affiliations": [
         "Виберіть приналежність користувачів"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Отримайте адресу ${ MAIL_APP_NAME }"
+      ],
       "Close": [
         "Закрити"
       ],
@@ -12415,6 +12628,9 @@
       ],
       "Contact us": [
         "Зв'яжіться з нами"
+      ],
+      "Continue with free storage": [
+        "Продовжити з безкоштовним сховищем"
       ],
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
@@ -12542,6 +12758,9 @@
       "Discard changes?": [
         "Відхилити зміни?"
       ],
+      "Disconnected from Gmail": [
+        "Від'єднано від Gmail"
+      ],
       "Domain names": [
         "Домени"
       ],
@@ -12647,6 +12866,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Отримайте ${ vpnPlus } для доступу до всіх серверів"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
+      ],
       "Get the apps": [
         "Отримати програми"
       ],
@@ -12688,6 +12910,9 @@
       ],
       "Import groups": [
         "Імпорт груп"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Імпорт через ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Integrations": [
         "Інтеграції"
@@ -12884,6 +13109,9 @@
       "Select contact group": [
         "Вибрати групу контактів"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Надсилайте та отримуйте Gmail за допомогою ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "Надіслати нагадування поштою?"
       ],
@@ -12971,6 +13199,9 @@
       "Summary": [
         "Підсумок"
       ],
+      "Summer Sale": [
+        "Літній розпродаж"
+      ],
       "Switch to one-password mode": [
         "Перемкнутися на однопарольний режим"
       ],
@@ -13057,6 +13288,9 @@
       ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
+      ],
+      "You are all set": [
+        "Усе готово"
       ],
       "You have no open alerts": [
         "У вас немає відкритих попереджень"

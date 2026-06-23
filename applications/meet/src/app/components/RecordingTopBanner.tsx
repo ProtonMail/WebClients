@@ -6,25 +6,13 @@ import {
     selectIsRecordingInProgress,
     selectRecordingParticipantNames,
 } from '@proton/meet/store/slices/recordingStatusSlice';
-import { useFlag } from '@proton/unleash/useFlag';
 
 export const RecordingTopBanner = () => {
-    const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
-
     const isRecordingInProgress = useMeetSelector(selectIsRecordingInProgress);
     const recordingParticipantNames = useMeetSelector(selectRecordingParticipantNames);
 
     if (!isRecordingInProgress) {
         return null;
-    }
-
-    // Clean up with MeetMultipleRecording ff cleanup
-    if (!isMeetMultipleRecordingEnabled) {
-        return (
-            <TopBanner className="recording-in-progress-banner text-semibold">
-                {c('Info').jt`Recording in progress`}
-            </TopBanner>
-        );
     }
 
     const getRecordingParticipantNamesMessage = () => {
@@ -39,7 +27,8 @@ export const RecordingTopBanner = () => {
     };
 
     return (
-        <TopBanner className="recording-in-progress-banner text-semibold">
+        // Visual-only: announced centrally by useRecordingAnnouncements.
+        <TopBanner className="recording-in-progress-banner text-semibold" announce={false}>
             {c('Info').jt`Recording in progress`} · {getRecordingParticipantNamesMessage()}
         </TopBanner>
     );

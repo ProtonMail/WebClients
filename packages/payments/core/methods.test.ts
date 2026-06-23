@@ -1,5 +1,6 @@
 import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
-import { buildSubscription, buildUser } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildUser } from '@proton/testing/builders/user';
 
 import { getMinApplePayAmount, getMinBitcoinAmount, getMinPaypalAmountChargebee } from './amount-limits';
 import {

@@ -13,6 +13,7 @@ import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useNativeComposerPromptApi } from '../../components/Composer/hooks/useNativeComposerPromptApi';
 import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
+import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { type ConversationGroup, SelectableConversationList } from '../../components/SelectableConversationList';
 import { usePersonalization } from '../../hooks';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
@@ -45,7 +46,6 @@ import { ProjectEmptyState } from './components/ProjectEmptyState';
 import { getProjectCategory, getPromptSuggestionsForCategory } from './constants';
 import { useNativeComposerProjectDetailVisibilityApi } from './hooks/useNativeComposerProjectDetailVisibilityApi';
 import { useProjectActions } from './hooks/useProjectActions';
-import { DeleteConversationModal } from './modals/DeleteConversationModal';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
 import { ProjectInstructionsModal } from './modals/ProjectInstructionsModal';
 import type { Project } from './types';
@@ -208,7 +208,10 @@ const ProjectDetailViewInner = () => {
         () => {} // todo: abort handler missing at this point, known bug
     );
 
-    useNativeComposerProjectDetailVisibilityApi(sidebarModal.render);
+    // Hide the native composer while these modals are open on mobile, so it
+    // doesn't overlap them when the keyboard shows. Only on mobile: on larger
+    // screens the composer's own logic decides when to show it.
+    useNativeComposerProjectDetailVisibilityApi(sidebarModal.render || (isMobileViewport && instructionsModal.render));
 
     const handleSaveTitle = useCallback(
         (newTitle: string) => {
@@ -438,9 +441,12 @@ const ProjectDetailViewInner = () => {
             )}
 
             {deleteConversationModal.render && (
-                <DeleteConversationModal
+                <ConfirmDeleteModal
                     {...deleteConversationModal.modalProps}
-                    onConfirm={confirmDeleteConversation}
+                    handleDelete={() => {
+                        confirmDeleteConversation();
+                        deleteConversationModal.openModal(false);
+                    }}
                 />
             )}
 

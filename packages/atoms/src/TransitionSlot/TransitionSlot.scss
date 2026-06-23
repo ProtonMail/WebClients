@@ -1,0 +1,21 @@
+.transition-slot {
+	display: inline-grid;
+	place-items: center;
+
+	&-item {
+		grid-area: 1 / 1;
+		display: inline-flex;
+		opacity: 0;
+		transform: scale(var(--transition-slot-scale-transition-ratio, 0.6));
+		transition:
+			opacity var(--transition-slot-duration, 0.25s) ease,
+			transform var(--transition-slot-duration, 0.25s) ease;
+		pointer-events: none;
+
+		&--active {
+			opacity: 1;
+			transform: none;
+			pointer-events: auto;
+		}
+	}
+}

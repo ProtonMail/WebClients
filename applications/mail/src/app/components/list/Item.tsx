@@ -9,15 +9,19 @@ import type { Label, MailSettings, UserSettings } from '@proton/shared/lib/inter
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
+import OneTimeCodeDetector from 'proton-mail/helpers/message/otp/OneTimeCodeDetector';
+import { shouldRunOtpExtraction } from 'proton-mail/helpers/message/otp/shouldRunOtpExtraction';
 import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
-import { isElementMessage, isUnread } from '../../helpers/elements';
+import { getDate, isElementMessage, isUnread } from '../../helpers/elements';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
@@ -88,6 +92,7 @@ const Item = ({
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
+    const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
 
     const elementRef = useRef<HTMLDivElement>(null);
 
@@ -130,6 +135,26 @@ const Item = ({
     const firstRecipient = firstRecipients[0];
 
     const filteredThumbnails = filterAttachmentToPreview(element.AttachmentsMetadata || []);
+
+    const senderAddress = senders[0]?.Address;
+
+    const oneTimeCode = useMemo(() => {
+        if (!isOneTimePasscodeEnabled) {
+            return null;
+        }
+
+        const subject = element.Subject ?? '';
+        // Use `getDate` (same source as the displayed date) so the recency check
+        // works for conversations too — their time is a per-label context time,
+        // not `element.Time`, which can be unset on freshly-arrived elements.
+        const time = getDate(element, labelID).getTime();
+
+        if (!shouldRunOtpExtraction({ subject, sender: senderAddress, timestampMs: time })) {
+            return null;
+        }
+
+        return OneTimeCodeDetector.extractFromTitle({ subject, timestamp: Math.floor(time / 1000) }).code;
+    }, [element, labelID, isOneTimePasscodeEnabled, senderAddress]);
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
@@ -240,6 +265,7 @@ const Item = ({
                     isSelected={isSelected}
                     attachmentsMetadata={filteredThumbnails}
                     userSettings={userSettings}
+                    oneTimeCode={oneTimeCode}
                 />
             </div>
         </div>

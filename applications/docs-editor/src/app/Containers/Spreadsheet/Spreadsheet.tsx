@@ -11,12 +11,13 @@ import type {
 } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportDestination, SheetImportEvent, TranslatedResult } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
+import { isDevOrBlack } from '@proton/utils/env'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { splitExtension } from '@proton/shared/lib/helpers/file'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react'
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useApplication } from '../ApplicationProvider'
@@ -40,11 +41,15 @@ import { EditingDisabledDialog } from './components/misc/EditingDisabledDialog'
 import type { SpreadsheetConversionType } from '@proton/shared/lib/docs/constants'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { c } from 'ttag'
+import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
   replaceLocalSpreadsheetState: (state: object, broadcastPatches: boolean) => void
   focusSheet: (() => void) | undefined
+  generatePatches: () => Promise<unknown>
+  applyPatches: (patches: unknown) => void
 }
 
 export type SpreadsheetProps = {
@@ -87,12 +92,47 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   const isCreationOrConversion = !!editorInitializationConfig
   const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
+  const handleYjsDriftDetected = useCallback(
+    (result: SpreadsheetLocalYjsUpdateAuditResult) => {
+      for (const difference of result.differences) {
+        void clientInvoker.reportSheetsYjsDriftDetected(difference.reason)
+      }
+      const error = new Error(
+        c('Error')
+          .t`This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.`,
+      )
+      reportErrorToSentry(error, undefined, {
+        driftResult: {
+          localChangedKeys: result.localChangedKeys,
+          observedYjsKeys: result.observedYjsKeys,
+        },
+      })
+      void clientInvoker.reportUserInterfaceError(error, { irrecoverable: false, lockEditor: true })
+    },
+    [clientInvoker],
+  )
+
+  const pushPatches = useMemo(() => clientInvoker.storeSpreadsheetPatches.bind(clientInvoker), [clientInvoker])
+  const hasBasePatchesStored = useMemo(() => clientInvoker.hasBasePatchesStored.bind(clientInvoker), [clientInvoker])
+  // On dev/black the detector is always on (like other Sheets features); in prod it is gated by
+  // the SheetsDriftDetectionEnabled flag.
+  const [isDriftDetectionEnabled, setIsDriftDetectionEnabled] = useState(isDevOrBlack())
+  useEffect(() => {
+    void clientInvoker
+      .checkIfFeatureFlagIsEnabled('SheetsDriftDetectionEnabled')
+      .then((enabled) => setIsDriftDetectionEnabled(enabled || isDevOrBlack()))
+      .catch(console.error)
+  }, [clientInvoker])
 
   const state = useProtonSheetsState({
     docState,
     functions,
     isReadonly,
     isConversionFlow: editorInitializationConfig?.mode === 'conversion',
+    pushPatches,
+    hasBasePatchesStored,
+    isDriftDetectionEnabled,
+    onYjsDriftDetected: handleYjsDriftDetected,
   })
   const didSetInitialVersion = useRef(false)
   const { setInitialVersion } = useVersioning(
@@ -156,13 +196,29 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     }
     throw new Error(`Spreadsheet cannot be exported to format ${format}`)
   }
-  useImperativeHandle(ref, (): SpreadsheetRef => ({ exportData, replaceLocalSpreadsheetState, focusSheet }))
+
+  const { generateStatePatches } = state
+  const getInitialSpreadsheetPatches = useCallback(async () => {
+    const patches = await generateStatePatches()
+    return patches
+  }, [generateStatePatches])
+
+  useImperativeHandle(
+    ref,
+    (): SpreadsheetRef => ({
+      exportData,
+      replaceLocalSpreadsheetState,
+      focusSheet,
+      generatePatches: getInitialSpreadsheetPatches,
+      applyPatches: state.applyPatches,
+    }),
+  )
 
   useEffect(() => {
     onEditorLoadResult(TranslatedResult.ok())
   }, [onEditorLoadResult])
 
-  const { onInsertFile, importExcelFile, importCSVFile, generateStatePatches, calculateNow } = state
+  const { onInsertFile, importExcelFile, importCSVFile, calculateNow, writeBasePatchIfNecessary } = state
   const handleExcelFileImport = useCallback(
     async (file: File, type: 'excel' | 'ods') => {
       setImportType(type)
@@ -182,8 +238,9 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         disableEvaluation: requiresRecalc,
         shouldResetCellDependencyGraph: true,
       })
+      void writeBasePatchIfNecessary().catch(console.error)
     },
-    [calculateNow, docState, generateStatePatches, importExcelFile, state.yjsState],
+    [calculateNow, docState, generateStatePatches, importExcelFile, state.yjsState, writeBasePatchIfNecessary],
   )
   useEffect(() => {
     if (!editorInitializationConfig) {

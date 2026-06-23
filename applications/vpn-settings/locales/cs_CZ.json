@@ -248,6 +248,9 @@
       "Continue to sign in": [
         "Pokračujte v přihlášení"
       ],
+      "Continue with Free": [
+        "Pokračovat s tarifem Free"
+      ],
       "Continue with this password": [
         "Pokračovat s tímto heslem"
       ],
@@ -277,9 +280,6 @@
       ],
       "Create new policy": [
         "Vytvořit novou zásadu"
-      ],
-      "Create organization": [
-        "Vytvořit organizaci"
       ],
       "Create users": [
         "Vytvořit uživatele"
@@ -631,6 +631,9 @@
       ],
       "Keep my subscription": [
         "Zachovat mé předplatné"
+      ],
+      "Later": [
+        "Později"
       ],
       "Learn about recovery options": [
         "Zjistěte více o možnostech obnovy"
@@ -1999,12 +2002,6 @@
       ]
     },
     "BOSS": {
-      "Authenticate": [
-        "Ověřit"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Ověřte svůj účet Google Workspace"
-      ],
       "Calendar": [
         "Kalendář"
       ],
@@ -2017,38 +2014,11 @@
       "Estimated size": [
         "Odhadovaná velikost"
       ],
-      "Failed to load OAuth": [
-        "Nepodařilo se načíst OAuth"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplikace Google Marketplace pro kopírování dat do ${ BRAND_NAME }"
-      ],
       "Has errors": [
         "Má chyby"
       ],
       "In progress": [
         "Probíhá"
-      ],
-      "Install app": [
-        "Nainstalujte aplikaci"
-      ],
-      "Install migration app": [
-        "Nainstalujte migrační aplikaci"
-      ],
-      "Mail": [
-        "Mail"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrovat z Google Workspace"
-      ],
-      "Migration includes": [
-        "Migrace zahrnuje"
-      ],
-      "Migration started for ${ n } user": [
-        "Migrace zahájena pro ${ n } uživatele",
-        "Migrace zahájena pro ${ n } uživatele",
-        "Migrace zahájena pro ${ n } uživatelů",
-        "Migrace zahájena pro ${ n } uživatelů"
       ],
       "Migration status": [
         "Stav migrace"
@@ -2059,35 +2029,11 @@
       "Organization does not have enough storage available": [
         "Organizace nemá dostatečně velké úložiště"
       ],
-      "Select at least one user to start a migration": [
-        "Pro zahájení migrace vyberte alespoň jednoho uživatele"
-      ],
-      "Settings": [
-        "Nastavení"
-      ],
-      "Sign in to Google Workspace": [
-        "Přihlaste se do Google Workspace"
-      ],
       "Status": [
         "Stav"
       ],
       "User": [
         "Uživatel"
-      ],
-      "Users migrated": [
-        "Uživatelé migrováni"
-      ],
-      "Verify installation": [
-        "Ověřte instalaci"
-      ],
-      "Verify your domain": [
-        "Ověřte svou doménu"
-      ],
-      "Verify your domain to start a migration": [
-        "Ověřte svou doménu a spusťte migraci"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Instalaci se nám nepodařilo ověřit. Zkontrolujte prosím, zda jste aplikaci nainstalovali ve svém účtu Google Workspace, a zkuste to znovu."
       ],
       "What are you migrating?": [
         "Co migrujete?"
@@ -2188,14 +2134,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Přidejte uživatele ručně"
-      ],
       "Close": [
         "Zavřít"
-      ],
-      "Configure your network": [
-        "Nastavte svou síť"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
@@ -2215,29 +2155,17 @@
       "Discover and set up features": [
         "Objevit a nastavit funkce"
       ],
-      "Invite your team": [
-        "Pozvěte svůj tým"
-      ],
-      "Manage global VPN permissions": [
-        "Správa globálních oprávnění VPN"
-      ],
       "Maybe later": [
         "Možná později"
       ],
       "Remind me later": [
         "Připomenout později"
       ],
-      "Secure your organization": [
-        "Zabezpečte svou organizaci"
-      ],
       "Send": [
         "Odeslat"
       ],
       "Set up other features": [
         "Nastavit další funkce"
-      ],
-      "Set up SSO": [
-        "Nastavit SSO"
       ],
       "Take a tour": [
         "Absolvovat prohlídku"
@@ -3583,6 +3511,9 @@
       "Automatically forward incoming email to another email address.": [
         "Automatické přeposílání příchozích e-mailů na jinou e-mailovou adresu."
       ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložiště: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokujte možnosti Googlu sledovat vaše aktivity. Gmail nemůže vidět, do děláte v ${ MAIL_APP_NAME }"
       ],
@@ -3595,23 +3526,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Propojte svůj CRM, webové stránky, tiskárny a další."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Vytvořte bránu, která vašim uživatelům umožní přístup k vašim IT zdrojům prostřednictvím dedikovaných serverů."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Vytvořte schůzku na Zoomu a jedním kliknutím přidejte podrobnosti o připojení k události."
       ],
       "Create groups you can email with a single address.": [
         "Vytvářejte skupiny, kterým můžete posílat e-maily pomocí jediné adresy."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Vytvářejte nové uživatelské účty nebo importujte uživatele pomocí SSO (jednotného přihlášení) a zajištění SCIM."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvořte zásady, které určují, kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Rozhodněte, kteří uživatelé se mohou připojit ke každému z našich více než 120 umístění sdílených serverů."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Snadný přístup k e-mailu a kalendáři na počítači i v mobilu."
@@ -3637,6 +3559,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatek místa pro e-maily, přílohy a další na dlouhé roky."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zajistěte bezpečný přístup k datům organizace, i když je váš tým vzdálený nebo používá veřejnou Wi-Fi."
       ],
@@ -3648,9 +3573,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Každý člen vaší organizace se může připojit ke sdíleným serverům ve všech zemích."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pro bezproblémový přechod na ${ BRAND_NAME } importujte data ze služeb Google, Outlook a dalších."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -3669,9 +3591,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Jak jsme podpořili místní aktivisty, když bylo ohroženo soukromí a svoboda projevu."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Pokud jste tak ještě neučinili, povolte některé metody obnovení, abyste se ujistili, že nikdy neztratíte přístup k ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
@@ -3736,6 +3655,9 @@
       "Track the status and activity of your referrals": [
         "Sledujte stav a aktivitu vámi doporučených"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odemkněte si 15 GB úložiště za pouhých ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Navyšte na ${ planName } pro připojení až ${ MAX_SYNC_PAID_USER } účtů"
       ],
@@ -3745,8 +3667,11 @@
       "We can't access ${ boldEmails } anymore.": [
         "Již nemáme přístup k ${ boldEmails }."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Načteme vaše staré e-maily a propojíme váš účet Gmail s aplikací ${ MAIL_APP_NAME }, aby se nové zprávy zobrazovaly automaticky"
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Při zaplnění úložiště na 80 % importy pozastavíme, abychom vyhradili místo pro nové zprávy."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Zahájili jsme import vašich e-mailů z Gmailu. Jakmile bude dokončen, dáme vám vědět."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
@@ -3769,12 +3694,6 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Nyní můžete odesílat e-maily z ${ BRAND_NAME } pomocí této adresy."
       ],
-      "You can still login with this address and re-connect at any time.": [
-        "Pořád se můžete kdykoliv přihlásit pomocí této adresy a znovu se připojit."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Na adrese ${ address.Email } již nebudete moci přijímat ani odesílat e-maily v rámci služby ${ BRAND_NAME }. Upozorňujeme také, že zprávy odeslané na tuto adresu ze služby ${ BRAND_NAME } již nebudou koncově šifrovány."
-      ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Přeposíláte ${ numAddressesOrSync } adresu Gmail na ${ MAIL_APP_NAME }.",
         "Přeposíláte ${ numAddressesOrSync } adresy Gmail na ${ MAIL_APP_NAME }.",
@@ -3789,6 +3708,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Připojili jste jednu adresu externího účtu k ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze ${ newUserStorageText } vašich nejnovějších zpráv z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze vaše nejnovější e-maily z Gmailu."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Váš tarif podporuje ${ MAX_SYNC_FREE_USER } adresu Gmail.",
@@ -4709,6 +4634,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
       ],
+      "Something went wrong while converting the address": [
+        "Při převodu adresy došlo k chybě"
+      ],
       "Something went wrong while creating the address": [
         "Při vytváření adresy se něco pokazilo"
       ],
@@ -5414,6 +5342,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Ochrana účtu ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "10+ prémiových funkcí"
+      ],
       "15 GB storage": [
         "15 GB úložiště"
       ],
@@ -5453,6 +5384,12 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Custom email domain": [
+        "Vlastní e-mailová doména"
+      ],
+      "Email addresses": [
+        "E-mailové adresy"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Šifrované cloudové úložiště pro soubory, fotky a dokumenty"
       ],
@@ -5482,6 +5419,9 @@
       ],
       "Short domain @pm.me": [
         "Krátká doména @pm.me"
+      ],
+      "Storage": [
+        "Úložiště"
       ],
       "Torrenting support (P2P)": [
         "Podpora Torrentu (P2P)"
@@ -5814,9 +5754,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Popis:"
-      ],
       "Group address:": [
         "Adresa skupiny:"
       ]
@@ -6604,24 +6541,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importovat vaše stávající kódy** z jiných 2FA aplikací, například Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1: Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1:** Pozvěte své přátele do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Krok 2:** Vaši přátelé získají **2 týdny zdarma** na svém tarifu."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na svém tarifu."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každou osobu, která se přihlásí k odběru tarifu."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Krok 3:** Získejte **${ referrerRewardAmount } v kreditech** za každou osobu, která si předplatí tarif."
-      ],
       "**Sync codes** to all your devices": [
         "**Synchronizovat kódy** na všechny vaše zařízení"
       ],
@@ -7393,9 +7312,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Dostanete upozornění, pokud došlo k úniku vašeho hesla nebo jiných osobních údajů. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Začněme"
-      ],
       "Get started with the referral link above.": [
         "Začněte s doporučujícím odkazem výše."
       ],
@@ -7533,6 +7449,9 @@
       ],
       "Include device, location, and IP details": [
         "Zahrnout detaily zařízení, polohu a IP"
+      ],
+      "Included": [
+        "Včetně"
       ],
       "Increase your account security by verifying your email address.": [
         "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
@@ -8209,9 +8128,6 @@
       "Set up your organization": [
         "Nastavte svou organizaci"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Nastavte svou organizaci a začněte chránit svá data v několika snadných krocích."
-      ],
       "Setting up ${ feature }…": [
         "Nastavování ${ feature }…"
       ],
@@ -8650,8 +8566,14 @@
       "Unverified email address.": [
         "Neověřená e-mailová adresa."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Kdykoli upgradujte, abyste přenesli i zbytek"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -9315,19 +9237,9 @@
         "Pouze zobrazení"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Takto se vaše organizace bude zobrazovat uživatelům. Můžete to kdykoli změnit."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Nejde o platnou e-mailovou adresu"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Jaký je název vaší organizace?"
       ]
     },
     "invitation status": {
@@ -9586,6 +9498,9 @@
       "Calendar": [
         "Kalendář"
       ],
+      "Calendars": [
+        "Kalendáře"
+      ],
       "Card details": [
         "Podrobnosti karty"
       ],
@@ -9762,6 +9677,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail s doménou @vasefirma.cz"
+      ],
+      "Emails": [
+        "E-maily"
       ],
       "Emails (all messages)": [
         "E-maily (všechny zprávy)"
@@ -10460,11 +10378,6 @@
       ],
       "To: ${ to }": [
         "Komu: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Začněte výběrem poskytovatele identity"
       ]
     },
     "Limit of calendars reached": {
@@ -12344,9 +12257,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Účastněte se průzkumů ke zlepšení služeb ${ BRAND_NAME }"
-      ],
-      "Product updates": [
-        "Aktualizace produktu"
       ]
     },
     "Notification": {
@@ -13482,9 +13392,6 @@
       "Enter a name": [
         "Zadejte jméno"
       ],
-      "Enter name": [
-        "Zadejte název"
-      ],
       "example@domain.com": [
         "priklad@domena.cz"
       ],
@@ -13718,15 +13625,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Využít nabídku"
       ],
-      "SPRING SALE 2026": [
-        "JARNÍ VÝPRODEJ 2026"
+      "Summer Sale": [
+        "Letní výprodej"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/měsíčně"
       ],
@@ -13745,35 +13652,17 @@
       "500 GB storage": [
         "500GB úložiště"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Přístup k 15 000+ serverům ve 120+ zemích"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Přístup k pokročilým modelům AI"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Všechny prémiové funkce služeb Mail, Pass, Drive, VPN a Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokování reklam, sledovacích prvků a malwaru"
-      ],
-      "Built-in 2FA authenticator": [
-        "Vestavěné 2FA ověřování"
-      ],
-      "Connect 10 devices at once": [
-        "Připojte 10 zařízení najednou"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Slevy vycházejí ze standardních měsíčních cen. Vaše předplatné se na konci fakturačního cyklu obnoví za standardní roční sazbu."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Prodlužte si předplatné a ušetřete ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Plný přístup k ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Úplná historie konverzací se snadným vyhledáváním a oblíbenými položkami"
       ],
       "Individual accounts for 6 users": [
         "Individuální účty pro 6 uživatelů"
@@ -13781,8 +13670,8 @@
       "Individual accounts for you and a partner": [
         "Individuální účty pro vás a partnera"
       ],
-      "Online document editor": [
-        "Online editor dokumentů"
+      "Online document and spreadsheet editor": [
+        "Online editor dokumentů a tabulek"
       ],
       "Recover previous file versions": [
         "Obnova předchozích verzí souborů"
@@ -13793,25 +13682,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Přejděte na náš roční plán a ušetřete ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Neomezený denní limit konverzací"
-      ],
       "Unlimited folders, labels, and filters": [
         "Neomezený počet složek, štítků a filtrů"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neomezený počet aliasů hide-my-email"
       ],
       "Use your own email domain": [
         "Používejte svou vlastní e-mailovou doménu"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "na 12 měsíců"
       ],
-      "SPRING SALE": [
-        "JARNÍ VÝPRODEJ"
+      "SUMMER SALE": [
+        "LETNÍ VÝPRODEJ"
       ]
     },
     "Recovery Email": {
@@ -13899,14 +13782,8 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užívejte si **${ planTitle }** zdarma až do **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Dejte 2 týdny, získejte ${ referrerRewardAmount }"
-      ],
       "How your free trial works:": [
         "Jak funguje bezplatná zkušební verze:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Používám ${ BRAND_NAME } a myslím, že by se vám to mohlo líbit. Jedná se o zabezpečený e-mail, cloudové úložiště, správce hesel a VPN, které chrání vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte 14 dnů prémiových funkcí zdarma: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Pokud zrušíte před tímto datem, po skončení zkušební doby bude váš tarif snížen na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }. Pokud nezrušíte, začne platit váš plný tarif a získáte **${ referrerRewardAmount }** v kreditech."
@@ -13943,9 +13820,6 @@
         "Zbývají vám **${ daysRemaining } dny** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
         "Zbývá vám **${ daysRemaining } dní** na to, abyste prozkoumali všechny výkonné funkce, které **${ planTitle }** nabízí.",
         "Zbývá vám **${ daysRemaining } dní** na to, abyste prozkoumali všechny výkonné funkce, které **${ planTitle }** nabízí."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Váš přítel také získá ${ refereeRewardAmount } k uplatnění při svém příštím vyúčtování!"
       ],
       "your subscription": [
         "vaše předplatné"
@@ -16759,11 +16633,17 @@
       "Connect your custom domain": [
         "Připojení vlastní domény"
       ],
+      "Connected emails": [
+        "Propojené e-maily"
+      ],
       "Connection status": [
         "Stav připojení"
       ],
       "Contact us": [
         "Kontaktujte nás"
+      ],
+      "Continue with free storage": [
+        "Pokračovat s bezplatným úložištěm"
       ],
       "Continue with partial import?": [
         "Pokračovat s částečným importem?"
@@ -16924,9 +16804,6 @@
       "Disconnected from Gmail": [
         "Odpojeno od služby Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Odmítnout kontrolní seznam nastavení"
-      ],
       "Domain names": [
         "Názvy domén"
       ],
@@ -17086,8 +16963,8 @@
       "Get more from your VPN": [
         "Získejte více ze své VPN"
       ],
-      "Get started": [
-        "Začněme"
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získejte více úložiště s ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Získat aplikace"
@@ -17140,9 +17017,6 @@
       "Import contacts": [
         "Importovat kontakty"
       ],
-      "Import emails, calendars, contacts": [
-        "Importovat e-maily, kalendáře a kontakty"
-      ],
       "Import events": [
         "Import událostí"
       ],
@@ -17152,8 +17026,14 @@
       "Import groups": [
         "Importovat skupiny"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importovat přes ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importujte svá data do ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importy"
       ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"
@@ -17184,9 +17064,6 @@
       ],
       "Make your business stand out": [
         "Dejte vaší firmě vyniknout"
-      ],
-      "Migration assistant": [
-        "Asistent migrace"
       ],
       "Minicalendar": [
         "Minikalendář"
@@ -17551,6 +17428,9 @@
       "Summary": [
         "Shrnutí"
       ],
+      "Summer Sale": [
+        "Letní výprodej"
+      ],
       "Support your compliance objectives": [
         "Podpořte své cíle v oblasti dodržování předpisů"
       ],
@@ -17697,9 +17577,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vítejte v ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Vítejte v ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "Co se změní, pokud přejdete na tarif Free"

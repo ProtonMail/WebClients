@@ -13,20 +13,37 @@ export interface MembersLineItem
 function formatMembers(ctx: HeadlessCheckoutContextInner) {
     const { checkoutUi, couponConfig, isPaidPlan, currency } = ctx;
 
-    // The displayed members amount depends on whether the coupon targets only
-    // the base plan users, and whether the coupon is hidden with no addons.
+    const { couponDiscountBreakdown } = checkoutUi;
+
     const pricePerAllPerMonth = (() => {
-        if (checkoutUi.discountTarget === 'base-users') {
-            return checkoutUi.withDiscountMembersPerMonth;
+        // If coupon is hidden from the user, then we need to inline the discount calculation to the addons, including
+        // members
+        if (!!couponConfig?.hidden) {
+            // legacy flow - will be removed once backend supports coupon breakdown
+            if (checkoutUi.addons.length === 0) {
+                return checkoutUi.withDiscountPerMonth;
+            } else if (couponDiscountBreakdown) {
+                // Warning: this code implicitly assumes that the discount for the base plan and for the member addons
+                // is the same. When we create the coupons, we are following this structure, so the assumption holds.
+                // This comment highlights it in case we every need to make it more flexible.
+                return checkoutUi.membersPerMonth - Math.abs(couponDiscountBreakdown.basePlanPerMonthDiscount);
+            }
         }
-        const noAddonsAndCouponIsHidden = !!couponConfig?.hidden && checkoutUi.addons.length === 0;
-        if (noAddonsAndCouponIsHidden) {
-            return checkoutUi.withDiscountPerMonth;
-        }
+
+        // If the coupon isn't configured as hidden from the user then we don't display the discounted amounts for
+        // members and other addons, and display only the cumulative discount as a separate line item.
         return checkoutUi.membersPerMonth;
     })();
 
-    const pricePerOnePerMonth = checkoutUi.oneMemberPerMonth;
+    // When a hidden coupon inlines its discount into the members line, `pricePerAllPerMonth` is discounted but
+    // `oneMemberPerMonth` is still the full per-seat price. Scale the per-seat price by the same ratio the total
+    // was discounted by, so `pricePerOnePerMonth * users` still reconciles with `pricePerAllPerMonth`. Without a
+    // breakdown the ratio is 1 (no-op); the `membersPerMonth !== 0` guard avoids a divide-by-zero. Only the VPN
+    // single-signup PaymentSummary consumes this, on its B2B (users > 1) branch.
+    const pricePerOnePerMonth =
+        couponDiscountBreakdown && checkoutUi.membersPerMonth !== 0
+            ? checkoutUi.oneMemberPerMonth * (pricePerAllPerMonth / checkoutUi.membersPerMonth)
+            : checkoutUi.oneMemberPerMonth;
     const pricePerOnePerMonthElement = <Price currency={currency}>{pricePerOnePerMonth}</Price>;
 
     return {

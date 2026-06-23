@@ -138,6 +138,12 @@
       "Choose a file or drag it here": [
         "Виберіть файл або перетягніть його сюди"
       ],
+      "Claim this address": [
+        "Отримати цю адресу"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Отримайте безкоштовну адресу ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Очистити"
       ],
@@ -197,6 +203,9 @@
       ],
       "Continue transfers": [
         "Продовжити передавання"
+      ],
+      "Continue with Free": [
+        "Продовжити безкоштовно"
       ],
       "Continue with Google": [
         "Продовжити з Google"
@@ -594,6 +603,9 @@
       "Reconnect": [
         "Відновити з'єднання"
       ],
+      "Reconnect to Gmail": [
+        "Повторно підключитися до Gmail"
+      ],
       "Recover data": [
         "Відновити дані"
       ],
@@ -839,9 +851,6 @@
       ],
       "Upgrade now": [
         "Покращити"
-      ],
-      "Upload anyway": [
-        "Все одно вивантажити"
       ],
       "Upload file": [
         "Вивантажити файл"
@@ -2318,6 +2327,9 @@
       "Also included": [
         "Також включено"
       ],
+      "Available storage: ${ storageText }": [
+        "Доступне сховище: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
       ],
@@ -2330,8 +2342,14 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Електронні листи, надіслані на ${ connectedAddressText }, тепер з'являтимуться в ${ MAIL_APP_NAME }."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Достатньо місця для електронних листів, вкладень та багато чого іншого на роки вперед."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
@@ -2351,14 +2369,35 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Це може статися, якщо дозволи було вилучено або ваш пароль змінився."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свій обліковий запис."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свої облікові записи."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Для гарантування максимальної безпеки вашого облікового запису налаштуйте фразу відновлення."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Розблокуйте 15 ГБ сховища всього за ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ми більше не маємо доступу до ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Ми призупинимо імпорт, коли сховище буде заповнено на 80%, щоб зберегти місце для нових повідомлень."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ми почали імпортувати ваші електронні листи з Gmail. Ми повідомимо вас, коли процес завершиться."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "З контактними групами ви можете відправляти листи всім у групі одним натисканням."
@@ -2369,11 +2408,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Тепер ви можете надсилати електронні листи з ${ BRAND_NAME }, використовуючи цю адресу."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ваш обліковий запис і способи відновлення налаштовано, а двоетапну автентифікацію ввімкнено."
       ],
       "Your account and data recovery methods are set.": [
         "Ваш обліковий запис і способи відновлення налаштовано."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ${ newUserStorageText } ваших найновіших повідомлень Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ваші найновіші електронні листи з Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
@@ -2549,9 +2597,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" вже існує"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
       ],
@@ -2587,6 +2632,9 @@
       ],
       "Aliases could not be loaded": [
         "Не вдалося завантажити псевдоніми"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Увесь обсяг сховища розподілено. Зменште простір, наданий іншим користувачам."
       ],
       "Already a member of this share": [
         "Вже є учасником цього спільного доступу"
@@ -2680,9 +2728,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Зовнішні запрошення тимчасово вимкнені. Спробуйте ще раз пізніше"
-      ],
-      "File cannot be merged with folder": [
-        "Не можна об'єднувати файл з текою"
       ],
       "First name is too long": [
         "Ім'я занадто довге"
@@ -2816,11 +2861,17 @@
       "Payment process not supported": [
         "Обробка платежу не підтримується"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Вивантаження фотографій тимчасово вимкнено. Повторіть спробу пізніше"
-      ],
       "Please activate your search again": [
         "Повторно активуйте пошук"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Налаштуйте власний домен, щоб мати можливість додавати адреси."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Налаштуйте власний домен, перш ніж додавати користувачів до вашої організації."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Будь ласка, увімкніть підтримку декількох користувачів, перш ніж додавати користувачів до вашої організації."
       ],
       "Please enter a valid postal code": [
         "Будь ласка, введіть коректний поштовий індекс"
@@ -2854,6 +2905,9 @@
       ],
       "Please select billing state": [
         "Будь ласка, виберіть штат для виставлення рахунку"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
       ],
       "Port is required": [
         "Порт обов'язковий"
@@ -2909,6 +2963,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
+      "Something went wrong while fetching available domains": [
+        "Під час отримання доступних доменів сталася помилка"
+      ],
       "Something went wrong. Please try again.": [
         "Сталася помилка. Повторіть спробу пізніше."
       ],
@@ -2954,24 +3011,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Нову версію оригінального файлу ще не вивантажено. Спробуйте знову пізніше"
-      ],
-      "The original file has missing active revision": [
-        "Оригінальний файл не має активної редакції"
-      ],
-      "The original file has missing hash key": [
-        "Оригінальний файл не має ключа хешу"
-      ],
-      "The original file has missing session key": [
-        "Оригінальний файл не має ключа сеансу"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Оригінальний файл ще не вивантажено. Спробуйте знову пізніше"
-      ],
-      "The original folder not found": [
-        "Оригінальну теку не знайдено"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашому зовнішньому обліковому записі надто багато тек. Будь ласка, налаштуйте імпорт для видалення деяких тек."
       ],
@@ -3008,9 +3047,6 @@
       "Unknown payment token status": [
         "Невідомий стан платіжного токена"
       ],
-      "Upload for this folder is temporarily disabled": [
-        "Вивантаження для цієї теки тимчасово вимкнено"
-      ],
       "Username must begin with a letter or digit": [
         "Ім'я користувача повинно починатися з літери або цифри"
       ],
@@ -3031,6 +3067,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Ви досягли ліміту кількості контактів для вашого облікового запису"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -3409,6 +3448,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Понад 10 преміумфункцій"
+      ],
+      "Custom email domain": [
+        "Власний домен електронної пошти"
+      ],
+      "Email addresses": [
+        "Адреси електронної пошти"
+      ],
+      "Storage": [
+        "Сховище"
+      ],
       "Unlimited hide-my-email aliases": [
         "Необмежена кількість псевдонімів Hide-my-email"
       ]
@@ -4335,6 +4386,9 @@
       "End-to-end encrypted": [
         "Наскрізно зашифровано"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Забезпечте повністю приватне й зашифроване спілкування. Отримайте безкоштовну адресу електронної пошти ${ BRAND_NAME } просто зараз."
+      ],
       "Enter password": [
         "Введіть пароль"
       ],
@@ -4382,9 +4436,6 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Тут з'являться теки, які ви синхронізуєте з комп'ютера."
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Щоб досягти найкращих результатів, уникайте потокової трансляції та інших дій, які потребують багато пам'яті, або розбивайте вивантаження на менші частини."
       ],
       "Free 5GB encrypted storage to get started": [
         "Безплатно 5Гб зашифрованого сховища для початку"
@@ -4457,6 +4508,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Наступним кроком ви зможете внести депозит за допомогою адреси Bitcoin."
+      ],
+      "Included": [
+        "Включено"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Індексування елементів ${ esProgress } з ${ totalProgressToShow }"
@@ -4929,9 +4983,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Тепер це ваша ${ defaultEmailAddress } для надсилання нових повідомлень."
       ],
-      "This item already exists in your library": [
-        "Цей елемент вже існує у вашій бібліотеці"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
@@ -4941,20 +4992,8 @@
       "This month": [
         "Цього місяця"
       ],
-      "This will replace the existing file with the folder": [
-        "Це призведе до заміни наявного файлу текою"
-      ],
-      "This will replace the existing folder with the file": [
-        "Це призведе до заміни наявної теки файлом"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ви вийдете з усіх облікових записів, до яких наразі увійшли."
-      ],
-      "This will upload a new version of the file": [
-        "Це призведе до вивантаження нової версії файлу"
-      ],
-      "This will upload a new version of the folder": [
-        "Це вивантажить нову версію теки"
       ],
       "Time": [
         "Час"
@@ -4998,18 +5037,6 @@
       "Total VPN connections": [
         "Усього VPN-з'єднань"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Передавання скасовано для файлу \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Передавання скасовано для теки \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Пропущено передавання для файлу \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Пропущено передавання для теки \"${ folderName }\""
-      ],
       "Trash": [
         "Смітник"
       ],
@@ -5040,8 +5067,14 @@
       "Updating drive search...": [
         "Оновлення пошуку на диску..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Покращте тарифний план у будь-який час, щоб перенести решту"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Покращте тарифний план або очистьте місце в будь-який час, щоб перенести решту"
       ],
       "upgrade your storage": [
         "покращте своє сховище"
@@ -5051,9 +5084,6 @@
       ],
       "Uploading": [
         "Вивантаження"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Скористайтеся цією формою, щоб повідомити нас про невідповідні, незаконні,\nабо іншим чином шкідливі спільні файли. Ви збираєтеся повідомити:"
@@ -5451,6 +5481,9 @@
       "Calendar": [
         "Календар"
       ],
+      "Calendars": [
+        "Календарі"
+      ],
       "Cancel download": [
         "Скасувати завантаження"
       ],
@@ -5571,6 +5604,9 @@
       "Email format": [
         "Формат повідомлень"
       ],
+      "Emails": [
+        "Листи"
+      ],
       "Emails (all messages)": [
         "Е-пошта (усі повідомлення)"
       ],
@@ -5654,12 +5690,6 @@
       ],
       "Keep both": [
         "Зберегти обидва"
-      ],
-      "Keep both files": [
-        "Зберегти обидва файли"
-      ],
-      "Keep both folders": [
-        "Зберегти обидві теки"
       ],
       "Label messages as": [
         "Позначити повідомлення"
@@ -5783,12 +5813,6 @@
       ],
       "Region": [
         "Область"
-      ],
-      "Replace existing file": [
-        "Замінити наявний файл"
-      ],
-      "Replace existing folder": [
-        "Замінити наявну теку"
       ],
       "Reveal password": [
         "Показати пароль"
@@ -7286,14 +7310,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" не вдалося перемістити до смітника"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Не вдалося зберегти \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" переміщено до смітника"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" успішно збережено"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" не вдалося перейменувати"
@@ -7421,21 +7439,6 @@
       "Failed to remove the file": [
         "Не вдалося вилучити файл"
       ],
-      "Failed to upload files: ${ err }": [
-        "Не вдалося вивантажити файли: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Файл чи тека \"${ filename }\" вже вивантажується"
-      ],
-      "File or folder is missing a name": [
-        "Файл чи тека не мають назви"
-      ],
       "File removed": [
         "Файл вилучено"
       ],
@@ -7463,9 +7466,6 @@
         "Перемістити ${ n } елементів",
         "Перемістити ${ n } елементів"
       ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Недостатньо місця для вивантаження ${ formattedTotal }"
-      ],
       "Public link access updated": [
         "Доступ до публічного посилання оновлено"
       ],
@@ -7492,6 +7492,9 @@
       ],
       "You stopped sharing this item": [
         "Ви припинили спільний доступ для цього елемента"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваша адреса ${ BRAND_NAME } готова до використання"
       ],
       "Your old files will be deleted in 72 hours": [
         "Ваші старі файли будуть видалені протягом 72 годин"
@@ -8046,6 +8049,9 @@
       "Postal code": [
         "Поштовий індекс"
       ],
+      "Search": [
+        "Пошук"
+      ],
       "Search for group name": [
         "Шукати назву групи"
       ],
@@ -8159,6 +8165,78 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Офіційний лист від ${ BRAND_NAME }"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Summer Sale": [
+        "Літній розпродаж"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/місячний"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "2 TB data storage": [
+        "Сховище даних на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Сховище на 200 ГБ: у 40 разів більше за ваш поточний тарифний план"
+      ],
+      "3 TB data storage": [
+        "Сховище даних на 3 ТБ"
+      ],
+      "500 GB storage": [
+        "500 ГБ сховища"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Знижки розраховуються на основі стандартної щомісячної ціни. Вашу передплату буде подовжено за стандартним річним тарифом після закінчення платіжного циклу."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Повний доступ до ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Окремі облікові записи для 6 користувачів"
+      ],
+      "Individual accounts for you and a partner": [
+        "Окремі облікові записи для вас і вашого партнера"
+      ],
+      "Online document and spreadsheet editor": [
+        "Онлайн-редактор документів та електронних таблиць"
+      ],
+      "Recover previous file versions": [
+        "Відновити попередні версії файлів"
+      ],
+      "Stronger protection against cyber threats": [
+        "Надійніший захист від кіберзагроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перейдіть на наш річний тарифний план і заощадьте ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Use your own email domain": [
+        "Використовуйте свій власний домен електронної пошти"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "за 12 місяців"
+      ],
+      "SUMMER SALE": [
+        "ЛІТНІЙ РОЗПРОДАЖ"
       ]
     },
     "saml: Error": {
@@ -9400,6 +9478,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помічник у написанні ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адреса е-пошти",
         "${ emailsCount } адреси е-пошти",
@@ -9496,6 +9577,9 @@
       "Check for malicious files": [
         "Перевірити на наявність шкідливих файлів"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Отримайте адресу ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Стирання даних"
       ],
@@ -9522,6 +9606,9 @@
       ],
       "Contacts": [
         "Контакти"
+      ],
+      "Continue with free storage": [
+        "Продовжити з безкоштовним сховищем"
       ],
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
@@ -9613,6 +9700,9 @@
       "Discard changes?": [
         "Відхилити зміни?"
       ],
+      "Disconnected from Gmail": [
+        "Від'єднано від Gmail"
+      ],
       "Downgrade account": [
         "Понизити тарифний план"
       ],
@@ -9630,12 +9720,6 @@
       ],
       "Drop to upload": [
         "Перетягніть для вивантаження"
-      ],
-      "Duplicate file found": [
-        "Знайдено дублікат файлу"
-      ],
-      "Duplicate folder found": [
-        "Знайдено дублікат теки"
       ],
       "Edit contact": [
         "Змінити контакт"
@@ -9687,6 +9771,9 @@
       ],
       "Folder details": [
         "Подробиці теки"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Отримати програми"
@@ -9753,9 +9840,6 @@
       ],
       "Logs": [
         "Журнали"
-      ],
-      "Manage secure link": [
-        "Керувати захищеним посиланням"
       ],
       "Merge contacts": [
         "Об'єднати контакти"
@@ -9831,9 +9915,6 @@
       ],
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
-      ],
-      "Performance might be affected": [
-        "Може знизитися швидкодія"
       ],
       "Phone numbers": [
         "Номери телефонів"
@@ -9967,6 +10048,9 @@
       "Summary": [
         "Підсумок"
       ],
+      "Summer Sale": [
+        "Літній розпродаж"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У цьому файлі відсутній або недійсний підпис. Перейдіть до Меню (⋮) → Подробиці для отримання інформації."
       ],
@@ -10003,9 +10087,6 @@
       "Uploaded": [
         "Вивантажено"
       ],
-      "Uploading a large file or folder": [
-        "Вивантаження великого файлу або теки"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
@@ -10029,6 +10110,9 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
+      ],
+      "You are all set": [
+        "Усе готово"
       ],
       "You have inaccessible files": [
         "Ви маєте недоступні файли"

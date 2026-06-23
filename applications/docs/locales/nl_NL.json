@@ -405,6 +405,9 @@
       "Get the apps": [
         "De apps downloaden"
       ],
+      "Get the deal": [
+        "Pak deze deal"
+      ],
       "Get the writing assistant": [
         "Verkrijg de schrijfassistent"
       ],
@@ -473,6 +476,9 @@
       ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
+      ],
+      "Later": [
+        "Later"
       ],
       "Learn more": [
         "Meer informatie"
@@ -545,6 +551,9 @@
       ],
       "New document": [
         "Nieuw document"
+      ],
+      "New folder": [
+        "Nieuwe map"
       ],
       "New message": [
         "Nieuw bericht"
@@ -894,6 +903,9 @@
       "Verify account": [
         "Verifieer account"
       ],
+      "Verify now": [
+        "Nu verifiëren"
+      ],
       "View": [
         "Bekijken"
       ],
@@ -1205,6 +1217,104 @@
         "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
       ]
     },
+    "BOSS": {
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Het adres is al in gebruik voor een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
+      "Contacts": [
+        "Contacten"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Fouten"
+      ],
+      "Estimated size": [
+        "Geschatte grootte."
+      ],
+      "Find out what can be migrated.": [
+        "Ontdek wat er gemigreerd kan worden."
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "In progress": [
+        "Bezig"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Migrate": [
+        "Migreer"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ],
+      "Migration status": [
+        "Migratiestatus"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
+      ],
+      "No users to display": [
+        "Geen gebruikers om weer te geven"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisatie heeft onvoldoende licenties beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
+      ],
+      "Pending": [
+        "In behandeling"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
+      ],
+      "Select users to migrate": [
+        "Selecteer gebruikers om te migreren"
+      ],
+      "Size": [
+        "Grootte"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Gebruiker"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
+      ],
+      "What are you migrating?": [
+        "Wat migreert u?"
+      ],
+      "You": [
+        "U"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } desktop-app"
@@ -1368,6 +1478,20 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ],
+      "Subtotal": [
+        "Subtotaal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotaal voor ${ cycle } maand",
+        "Subtotaal voor ${ cycle } maanden"
+      ],
+      "Total": [
+        "Totaal"
+      ],
+      "Total for ${ n } month": [
+        "Totaal voor ${ n } maand",
+        "Totaal voor ${ n } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -1728,6 +1852,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Canarische Eilanden"
       ],
       "Cape Verde": [
         "Kaapverdië"
@@ -2519,8 +2646,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Zorg ervoor dat u nog steeds toegang hebt tot uw account en gegevens, zelfs als u uw ${ BRAND_NAME } wachtwoord verliest."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Voor een naadloze overgang naar ${ BRAND_NAME } kunt u uw gegevens importeren vanuit Google, Outlook en andere."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze introductie van uw team bij ${ BRAND_NAME } importeert u uw gegevens uit Google, Outlook en anderen."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
@@ -2858,6 +2985,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item kon niet verplaatst worden",
+        "${ failureItems.length } items konden niet verplaatst worden"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
@@ -2884,6 +3015,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliassen konden niet worden geladen."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
       ],
       "Already a member of this share": [
         "Al lid van deze share"
@@ -2923,6 +3057,9 @@
       ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
+      ],
+      "Cannot find move target": [
+        "Kan geen doel voor verplaatsings vinden"
       ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
@@ -2986,14 +3123,23 @@
       "Failed to copy photo to album": [
         "Kopiëren van foto naar album is mislukt."
       ],
+      "Failed to create folder": [
+        "Mislukt om map aan te maken"
+      ],
       "Failed to create public share node": [
         "Aanmaken van openbaar gedeelde node is mislukt"
+      ],
+      "Failed to expand folder": [
+        "Map uitvouwen mislukt"
       ],
       "Failed to fetch node": [
         "Fout bij het ophalen van knooppunt"
       ],
       "Failed to fetch sharing info": [
         "Fout bij het ophalen van informatie over delen"
+      ],
+      "Failed to load 'My files' folder": [
+        "Kan de map 'Mijn bestanden' niet laden"
       ],
       "Failed to load document details": [
         "Kan documentdetails niet laden"
@@ -3139,6 +3285,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Foto-upload is tijdelijk uitgeschakeld. Probeer het later opnieuw"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureer eerst een eigen domein voordat u adressen toevoegt."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureer een eigen domein om gebruikers aan uw organisatie toe te voegen."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
+      ],
       "Please enter a valid postal code": [
         "Voer een geldige postcode in."
       ],
@@ -3163,6 +3318,9 @@
       ],
       "Please select a state": [
         "Selecteer een staat"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
       "Port is required": [
         "Poort is vereist"
@@ -3324,6 +3482,9 @@
       "Unknown error": [
         "Onbekende fout"
       ],
+      "Unknown location": [
+        "Onbekende locatie"
+      ],
       "Update Too Large": [
         "Update te groot"
       ],
@@ -3360,6 +3521,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "U heeft de limiet van het aantal contacten bereikt voor dit account"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen of schakel een adres in uw account uit."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -4317,6 +4484,10 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
+      "${ total } user found": [
+        "${ total } gebruiker gevonden",
+        "${ total } gebruikers gevonden"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -4334,23 +4505,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**IP-beveiliging**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ze krijgen ${ refereeRewardAmount }** aan credits als ze zich abonneren."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun gekozen ${ BRAND_NAME } abonnement."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke vriend die zich inschrijft voor een abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke persoon die zich inschrijft voor een abonnement."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**U krijgt ${ referrerRewardAmount }** aan credits voor elke vriend die zich abonneert."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
@@ -4407,6 +4572,9 @@
         "Al uw contacten worden geïmporteerd, met een limiet van ${ maxContact }",
         "Al uw contacten worden geïmporteerd, met een maximum van ${ maxContact }."
       ],
+      "Already in this folder": [
+        "Bestaat al in deze map"
+      ],
       "an anonymous user": [
         "een anonieme gebruiker"
       ],
@@ -4460,6 +4628,12 @@
       ],
       "Can view only": [
         "Kan alleen bekijken"
+      ],
+      "Can't move a folder into itself": [
+        "Een map kan niet naar zichzelf worden verplaatst"
+      ],
+      "Can't write into folder": [
+        "Kan niet naar map schrijven"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -4573,6 +4747,9 @@
       "Display word count": [
         "Woordenaantal weergeven"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Weet u uw wachtwoord nog? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "Document is in de prullenbak"
       ],
@@ -4684,9 +4861,6 @@
       "Failing signatures will be re-signed by you": [
         "Mislukte handtekeningen zullen opnieuw worden ondertekend door u."
       ],
-      "Favorites": [
-        "Favorieten"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
       ],
@@ -4716,6 +4890,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5GB versleutelde opslag om te beginnen"
@@ -4989,6 +5166,9 @@
       "Password must have:": [
         "Het wachtwoord moet:"
       ],
+      "Password verified": [
+        "Wachtwoord is geverifieerd"
+      ],
       "Pending invitations": [
         "Openstaande uitnodigingen"
       ],
@@ -5021,6 +5201,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Selecteer de labels die u wilt importeren:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecteer welk e-mailadres u wilt toevoegen aan ${ groupCount } groep.",
@@ -5091,6 +5274,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Scan de QR-code met uw mobiele apparaat"
+      ],
+      "Select a destination folder": [
+        "Selecteer een doelmap"
       ],
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
@@ -5288,6 +5474,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Om u te helpen uw wachtwoord te onthouden, vragen wij u dit periodiek in te voeren. We vragen u in de loop van de tijd minder."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
       ],
@@ -5380,6 +5569,9 @@
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
+      ],
+      "We'll remind you to verify your password again later": [
+        "We herinneren u er later aan om uw wachtwoord opnieuw te controleren"
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
@@ -5695,6 +5887,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tekens"
       ],
@@ -5772,6 +5968,9 @@
       ],
       "Calendar": [
         "Agenda"
+      ],
+      "Calendars": [
+        "Agenda's"
       ],
       "can edit": [
         "kan bewerken"
@@ -5860,6 +6059,9 @@
       "Email format": [
         "E-mailformaat"
       ],
+      "Emails": [
+        "E-mails"
+      ],
       "Emails (all messages)": [
         "E-mails (alle berichten)"
       ],
@@ -5904,6 +6106,9 @@
       ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
       ],
       "Hide password": [
         "Wachtwoord verbergen"
@@ -7627,20 +7832,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" succesvol aangemaakt"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kon niet aangemaakt worden"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verplaatst"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" gedeeld"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" succesvol aangemaakt"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" verwijderd"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kon niet aangemaakt worden"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" kon niet verwijderd worden"
@@ -7668,9 +7876,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" succesvol aangemaakt"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" succesvol verplaatst"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kon niet worden hernoemd"
@@ -7710,6 +7915,10 @@
         "${ numberOfItems } item kon niet hersteld worden uit prullenbak",
         "${ numberOfItems } items konden niet hersteld worden uit prullenbak"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item verplaatst",
+        "${ numberOfItems } items verplaatst"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item verplaatst naar de prullenbak",
         "${ numberOfItems } items verplaatst naar de prullenbak"
@@ -7717,10 +7926,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item hersteld uit prullenbak",
         "${ numberOfItems } items hersteld uit prullenbak"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } item succesvol verplaatst",
-        "${ numberOfItems } items succesvol verplaatst"
       ],
       "${ reason } has been disabled": [
         "${ reason } is uitgezet"
@@ -8094,9 +8299,6 @@
       ]
     },
     "Page title": {
-      "Favorites": [
-        "Favorieten"
-      ],
       "Recents": [
         "Laatst gebruikte"
       ],
@@ -8334,11 +8536,17 @@
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
       ],
+      "Search": [
+        "Zoeken"
+      ],
       "Search for group name": [
         "Zoeken naar groepsnaam"
       ],
       "Search for name or email": [
         "Naam of e-mailadres zoeken"
+      ],
+      "Search for users or addresses": [
+        "Naar gebruikers of adressen zoeken"
       ],
       "Search parent folder": [
         "Zoek in bovenliggende map"
@@ -8458,17 +8666,17 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Pak de aanbieding"
       ],
-      "SPRING SALE 2026": [
-        "LENTE SALE 2026"
+      "Summer Sale": [
+        "Zomer Sale"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
-        "/maand"
+        "/maandelijks"
       ],
       "15 GB storage": [
         "15 GB opslag"
@@ -8485,35 +8693,17 @@
       "500 GB storage": [
         "500 GB opslag"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Toegang tot 15.000+ servers in 120+ landen"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Toegang tot geavanceerde AI-modellen"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle premium functies van Mail, Pass, Drive, VPN en Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokkeer advertenties, trackers en malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Ingebouwde 2FA-authenticator"
-      ],
-      "Connect 10 devices at once": [
-        "Verbind 10 apparaten tegelijkertijd"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Verleng uw abonnement en bespaar ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Volledige toegang tot ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Volledige chatgeschiedenis met eenvoudig zoeken en favorieten"
       ],
       "Individual accounts for 6 users": [
         "Afzonderlijke accounts voor 6 gebruikers"
@@ -8521,8 +8711,8 @@
       "Individual accounts for you and a partner": [
         "Afzonderlijke accounts voor u en een partner"
       ],
-      "Online document editor": [
-        "Online documenteditor"
+      "Online document and spreadsheet editor": [
+        "Online document- en spreadsheetbewerker"
       ],
       "Recover previous file versions": [
         "Herstel vorige bestandsversies"
@@ -8533,25 +8723,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Onbeperkt aantal dagelijkse gesprekken"
-      ],
       "Unlimited folders, labels, and filters": [
         "Onbeperkte mappen, labels en filters"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkte hide-my-email-aliassen"
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "gedurende 12 maanden"
       ],
-      "SPRING SALE": [
-        "LENTE SALE"
+      "SUMMER SALE": [
+        "ZOMER SALE"
       ]
     },
     "Recent documents table header": {
@@ -9437,6 +9621,11 @@
         "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Levenslang"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -9704,6 +9893,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
@@ -9777,6 +9969,9 @@
       ],
       "Collaborate on documents": [
         "Samenwerken aan documenten"
+      ],
+      "Computers": [
+        "Computers"
       ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
@@ -9872,6 +10067,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Devices": [
+        "Apparaten"
       ],
       "Discard": [
         "Weggooien"
@@ -10006,9 +10204,6 @@
       "Import contacts": [
         "Contactpersonen importeren"
       ],
-      "Import emails, calendars, contacts": [
-        "Importeer e-mails, agenda's, contacten"
-      ],
       "Import events": [
         "Afspraken importeren"
       ],
@@ -10047,6 +10242,9 @@
       ],
       "Merging contacts": [
         "Contacten worden samengevoegd"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreer uw organisatie naar ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Mini-agenda"
@@ -10198,6 +10396,9 @@
       "Share your link": [
         "Deel uw snelkoppeling"
       ],
+      "Shared with me": [
+        "Gedeeld met mij"
+      ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
       ],
@@ -10227,6 +10428,9 @@
       ],
       "Subscription canceled": [
         "Abonnement opgezegd"
+      ],
+      "Summer Sale": [
+        "Zomer Sale"
       ],
       "The link either does not exist or has expired": [
         "De link bestaat niet of is verlopen"
@@ -10269,6 +10473,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
+      ],
+      "Verify your password": [
+        "Controleer uw wachtwoord"
       ],
       "VPN explained": [
         "VPN uitgelegd"
@@ -10445,6 +10652,9 @@
       ],
       "Name must not be empty": [
         "Naam mag niet leeg zijn"
+      ],
+      "Name must not contain slashes (/)": [
+        "Naam mag geen schuine strepen (/) bevatten"
       ]
     },
     "Video control": {

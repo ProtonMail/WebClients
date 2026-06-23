@@ -1107,8 +1107,8 @@
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Geçerlilik süresi 60 dakika ile 1 yıl arasında olmalıdır"
+      "Expiration must be between 1 hour and 1 year": [
+        "Geçerlilik süresi 1 saat ile 1 yıl arasında olmalıdır"
       ],
       "Failed loading group members": [
         "Grup üyeleri yüklenemedi"
@@ -1956,22 +1956,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Takma adınız birinden bir e-posta aldığında otomatik olarak yeni bir kişi oluşturulur."
       ],
-      "Expired ${ abs } hour ago": [
-        "Geçerlilik süresi ${ abs } saat önce doldu",
-        "Geçerlilik süresi ${ abs } saat önce doldu"
+      "Expired on ${ formattedDate }": [
+        "${ formattedDate } zamanında geçerlilik süresi doldu"
       ],
       "Expires in": [
         "Geçerlilik sonu"
       ],
-      "Expires in ${ hours } hour": [
-        "Geçerlilik süresi ${ hours } saat sonra dolacak",
-        "Geçerlilik süresi ${ hours } saat sonra dolacak"
-      ],
       "Expires in ${ remainingTime }": [
         "${ remainingTime } sonra geçerlilik süresi dolacak"
       ],
-      "Expires in less than an hour": [
-        "Geçerlilik süresi bir saatten kısa sürede dolacak"
+      "Expires on ${ formattedDate }": [
+        "${ formattedDate } zamanında geçerlilik süresi dolacak"
       ],
       "Exporting your data...": [
         "Verileriniz dışa aktarılıyor..."
@@ -2943,11 +2938,23 @@
         "${ years } yıl",
         "${ years } yıl"
       ],
+      "1 day": [
+        "1 gün"
+      ],
       "1 hour": [
         "1 saat"
       ],
       "1 minute": [
         "1 dakika"
+      ],
+      "1 month": [
+        "1 ay"
+      ],
+      "1 week": [
+        "1 hafta"
+      ],
+      "1 year": [
+        "1 yıl"
       ],
       "10 minutes": [
         "10 dakika"
@@ -3177,6 +3184,12 @@
       "Crypto Wallet": [
         "Kripto cüzdan"
       ],
+      "Custom": [
+        "Özel"
+      ],
+      "Custom expiration (minutes)": [
+        "Özel geçerlilik süresi sonu (dakika)"
+      ],
       "Custom Items": [
         "Özel ögeler"
       ],
@@ -3217,7 +3230,7 @@
         "Etki alanları"
       ],
       "Don't remind me again": [
-        "Bir daha hatırlatma"
+        "Bir daha anımsatma"
       ],
       "Download logs": [
         "Günlüğü indir"
@@ -3267,8 +3280,8 @@
       "Expired tokens (${ expired.length })": [
         "Süresi dolmuş kodlar (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Geçerlilik süresi (dakika) içinde dolacak"
+      "Expires in": [
+        "Geçerlilik sonu"
       ],
       "Expiry Date": [
         "Son geçerlilik tarihi"
@@ -4183,7 +4196,7 @@
         "Tire"
       ],
       "Memorable Password": [
-        "Hatırlanabilir parola"
+        "Anımsanabilir parola"
       ],
       "Numbers": [
         "Rakamlar"

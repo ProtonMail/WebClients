@@ -1,14 +1,6 @@
 import type { ProtonDriveClient } from '@proton/drive';
-import {
-    type MaybeNode,
-    type NodeEntity,
-    NodeType,
-    RevisionState,
-    getDrive,
-    splitNodeRevisionUid,
-    splitNodeUid,
-} from '@proton/drive';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { type NodeEntity, NodeType, RevisionState, getDrive, splitNodeRevisionUid, splitNodeUid } from '@proton/drive';
+import { type NormalizedNode, getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import type { FileBrowserBaseItem } from '../../legacy/components/FileBrowser';
 import type { EncryptedLink, LinkShareUrl } from '../../legacy/store';
@@ -67,7 +59,7 @@ export type LegacyItem = FileBrowserBaseItem & {
     type: NodeType;
 };
 
-const getLegacyIsAnonymous = (node: NodeEntity) => {
+const getLegacyIsAnonymous = (node: NormalizedNode) => {
     if (node.type === NodeType.Folder) {
         return node.keyAuthor.ok && node.keyAuthor.value === null;
     }
@@ -77,31 +69,24 @@ const getLegacyIsAnonymous = (node: NodeEntity) => {
 export const getRootNode = async (node: NodeEntity, drive: Pick<ProtonDriveClient, 'getNode'>): Promise<NodeEntity> => {
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
-        const { node: parentNode } = getNodeEntity(parent);
-        return getRootNode(parentNode, drive);
+        return getRootNode(parent, drive);
     }
 
     return node;
 };
 
 export const mapNodeToLegacyItem = async (
-    maybeNode: MaybeNode,
+    rawNode: NodeEntity,
     defaultShareId: string,
     drive: Pick<ProtonDriveClient, 'getNode'> = getDrive(),
     loadedRootNode?: NodeEntity
 ): Promise<LegacyItem> => {
-    let node: NodeEntity;
-    if ('ok' in maybeNode) {
-        const nodeEntity = getNodeEntity(maybeNode);
-        node = nodeEntity.node;
-    } else {
-        node = maybeNode;
-    }
+    const { node } = getNodeEntity(rawNode);
 
     let activeRevision;
     const nodeRevision = node.activeRevision;
-    const rootNode = loadedRootNode || (await getRootNode(node, drive));
-    const size = getNodeDisplaySize(maybeNode) ?? 0;
+    const rootNode = loadedRootNode || (await getRootNode(rawNode, drive));
+    const size = getNodeDisplaySize(rawNode) ?? 0;
     if (nodeRevision) {
         activeRevision = {
             id: splitNodeRevisionUid(nodeRevision.uid).revisionId,
@@ -114,7 +99,7 @@ export const mapNodeToLegacyItem = async (
         };
     }
 
-    const sdkSignatureIssues = getSignatureIssues(maybeNode);
+    const sdkSignatureIssues = getSignatureIssues(rawNode);
 
     return {
         uid: node.uid,

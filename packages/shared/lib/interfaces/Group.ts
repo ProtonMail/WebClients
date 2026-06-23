@@ -39,6 +39,6 @@ export interface Group {
 }
 
 export type EnhancedGroup = Group & {
-    roleState?: 'stale' | 'pending' | 'rejected' | 'full';
-    GroupOrganizationRoles?: RoleAssignment[];
+    roleState: 'initial' | 'stale' | 'pending' | 'rejected' | 'full';
+    GroupOrganizationRoles: RoleAssignment[];
 };

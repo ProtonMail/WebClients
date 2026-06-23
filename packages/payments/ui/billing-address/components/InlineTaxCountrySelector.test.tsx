@@ -3,7 +3,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { APPS } from '@proton/shared/lib/constants';
-import { renderWithProviders } from '@proton/testing/index';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { WrongBillingAddressError } from '../../../core/errors';

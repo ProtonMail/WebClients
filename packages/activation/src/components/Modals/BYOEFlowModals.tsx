@@ -5,7 +5,7 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 
 const BYOEFlowModals = () => {
     const dispatch = useEasySwitchDispatch();
-    const { connectedAddress, stepModal, isConversionFlow } = useEasySwitchSelector((state) => state.byoeFlow);
+    const { connectedAddress, stepModal, skipImport } = useEasySwitchSelector((state) => state.byoeFlow);
 
     if (stepModal === 'moreStorage') {
         return <BYOEMoreStorageModal open onComplete={() => dispatch(advanceToBYOESuccess())} />;
@@ -16,7 +16,7 @@ const BYOEFlowModals = () => {
             <BYOESetupSuccessModal
                 open
                 connectedAddress={connectedAddress}
-                isConversionFlow={isConversionFlow}
+                skipImport={skipImport}
                 onClose={() => dispatch(clearBYOEFlow())}
             />
         );

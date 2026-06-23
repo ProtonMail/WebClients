@@ -405,6 +405,9 @@
       "Get the apps": [
         "Få appsene"
       ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
       "Get the writing assistant": [
         "Hent skriveassistenten"
       ],
@@ -473,6 +476,9 @@
       ],
       "Keep my subscription": [
         "Bevar mit abonnement"
+      ],
+      "Later": [
+        "Senere"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -548,6 +554,9 @@
       ],
       "New document": [
         "Nyt dokument"
+      ],
+      "New folder": [
+        "Ny mappe"
       ],
       "New message": [
         "Ny besked"
@@ -897,6 +906,9 @@
       "Verify account": [
         "Bekræft konto"
       ],
+      "Verify now": [
+        "Bekræft nu"
+      ],
       "View": [
         "Vis"
       ],
@@ -1208,6 +1220,104 @@
         "Det specialdesignede NetShield beskytter dine enheder og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
       ]
     },
+    "BOSS": {
+      "Activated": [
+        "Aktiveret"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "Estimated size": [
+        "Anslået størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Find ud af hvad der kan migreres."
+      ],
+      "Has errors": [
+        "Fejlbehæftet"
+      ],
+      "In progress": [
+        "I gang"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrated": [
+        "Migreret"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
+      ],
+      "No users to display": [
+        "Ingen brugere at vise"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige pladser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
+      ],
+      "Pending": [
+        "Afventer"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vælg præcis det du gerne vil migrere. Det vil gælde for brugere i organisationen."
+      ],
+      "Select users to migrate": [
+        "Vælg brugere at migrere"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruger"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
+      ],
+      "What are you migrating?": [
+        "Hvad migrerer du?"
+      ],
+      "You": [
+        "Dig"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } skrivebordsapp"
@@ -1371,6 +1481,20 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "Subtotal": [
+        "I alt"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Deltotal for ${ cycle } måned",
+        "Deltotal for ${ cycle } måneder"
+      ],
+      "Total": [
+        "I alt"
+      ],
+      "Total for ${ n } month": [
+        "I alt for ${ n } måned",
+        "I alt for ${ n } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -1731,6 +1855,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "De Kanariske Øer"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -2522,8 +2649,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Sørg for, at du stadig kan få adgang til din konto og data, selv hvis du mister din ${ BRAND_NAME }-adgangskode."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "For en smidig overgang til ${ BRAND_NAME }, importér dine data fra Google, Outlook og andre."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Importér dine data fra Google, Outlook og andre for at sikre en smidig onboarding af dit team til ${ BRAND_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
@@ -2861,6 +2988,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } element kunne ikke flyttes",
+        "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
       ],
@@ -2887,6 +3018,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliasser kunne ikke indlæses"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
       ],
       "Already a member of this share": [
         "Allerede medlem af denne deling"
@@ -2926,6 +3060,9 @@
       ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakt"
+      ],
+      "Cannot find move target": [
+        "Kan ikke finde mål for flytningen"
       ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
@@ -2989,14 +3126,23 @@
       "Failed to copy photo to album": [
         "Kunne ikke kopiere foto til album"
       ],
+      "Failed to create folder": [
+        "Kunne ikke oprette mappe"
+      ],
       "Failed to create public share node": [
         "Det lykkedes ikke at oprette offentlig delingsknude"
+      ],
+      "Failed to expand folder": [
+        "Kunne ikke udvide mappe"
       ],
       "Failed to fetch node": [
         "Kunne ikke hente knude"
       ],
       "Failed to fetch sharing info": [
         "Kunne ikke hente delingsoplysninger"
+      ],
+      "Failed to load 'My files' folder": [
+        "Kunne ikke indlæse 'Mine filer'-mappen"
       ],
       "Failed to load document details": [
         "Kunne ikke indlæse dokument-detaljer"
@@ -3142,6 +3288,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Upload af fotos er midlertidigt deaktiveret. Prøv igen senere"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Sæt et brugerdomæne op, før du tilføjer adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et brugerdomæne, inden du tilføjer brugere til din organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
+      ],
       "Please enter a valid postal code": [
         "Indtast et gyldigt postnummer"
       ],
@@ -3166,6 +3321,9 @@
       ],
       "Please select a state": [
         "Vælg en stat"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Opgradér venligst til et erhvervsabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -3327,6 +3485,9 @@
       "Unknown error": [
         "Ukendt fejl"
       ],
+      "Unknown location": [
+        "Ukendt placering"
+      ],
       "Update Too Large": [
         "For stor opdatering"
       ],
@@ -3363,6 +3524,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nået grænsen for antallet af kontakter på din konto"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har opbrugt alle adresser i dit abonnement. Opgradér dit abonnement for at tilføje en ny adresse, eller deaktivér en adresse på din konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -4320,6 +4487,10 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
+      "${ total } user found": [
+        "${ total } bruger fundet",
+        "${ total } brugere fundet"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
@@ -4337,23 +4508,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Auto-forbindelse**: Åbner og forbinder til VPN, så snart du tænder din enhed."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter dine venner** til ${ BRAND_NAME } med dit henvisningslink."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Stopper datalækager ved at blokere din internetadgang, hvis VPN-forbindelsen afbrydes uventet."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Trin 1:** Inviter dine venner til ${ BRAND_NAME } med dit henvisningslink."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får${ refereeRewardAmount }** i kredit, hvis de tegner et abonnement."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Trin 2:** Dine venner får 2 uger gratis på deres valgte ${ BRAND_NAME }-abonnement."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Trin 2:** Dine venner får 2 uger gratis på deres abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver ven, der opretter et abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver person, der opretter et abonnement."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagerplads"
@@ -4410,6 +4575,9 @@
         "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret",
         "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret"
       ],
+      "Already in this folder": [
+        "Allerede i denne mappe"
+      ],
       "an anonymous user": [
         "en anonym bruger"
       ],
@@ -4463,6 +4631,12 @@
       ],
       "Can view only": [
         "Kan kun se"
+      ],
+      "Can't move a folder into itself": [
+        "Kan ikke flytte en mappe ind i sig selv"
+      ],
+      "Can't write into folder": [
+        "Kan ikke skrive i mappen"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
@@ -4576,6 +4750,9 @@
       "Display word count": [
         "Vis antal ord"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kan du huske din adgangskode? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "Dokumentet er i papirkurven"
       ],
@@ -4687,9 +4864,6 @@
       "Failing signatures will be re-signed by you": [
         "Manglende signaturer vil blive genunderskrevet af dig."
       ],
-      "Favorites": [
-        "Favoritter"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Filen \"${ name }\" blev slettet under download"
       ],
@@ -4719,6 +4893,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For de bedste resultater bør du undgå streaming og hukommelsesintensive aktiviteter eller dele dit upload op i mindre bidder."
+      ],
+      "Forgot password?": [
+        "Glemt din adgangskode?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypteret lagerplads til at starte med"
@@ -4992,6 +5169,9 @@
       "Password must have:": [
         "Adgangskoden skal have:"
       ],
+      "Password verified": [
+        "Adgangskode bekræftet"
+      ],
       "Pending invitations": [
         "Afventende invitationer"
       ],
@@ -5024,6 +5204,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Vælg venligst de mapper, du ønsker at importere:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vælg venligst de labels, du ønsker at importere:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } gruppe.",
@@ -5094,6 +5277,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Scan QR-koden med din mobilenhed"
+      ],
+      "Select a destination folder": [
+        "Vælg en destinationsmappe"
       ],
       "Select a folder to move to.": [
         "Vælg en mappe at flytte til."
@@ -5291,6 +5477,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For at hjælpe dig med at huske din adgangskode, beder vi dig om at indtaste den en gang imellem. Vi spørger dig mindre og mindre efterhånden."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
       ],
@@ -5383,6 +5572,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi minder dig om at bekræfte din adgangskode igen senere"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
@@ -5698,6 +5890,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tegn"
       ],
@@ -5776,6 +5972,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendere"
+      ],
       "can edit": [
         "kan redigere"
       ],
@@ -5845,6 +6044,9 @@
       "Download anyway": [
         "Download alligevel"
       ],
+      "Drive": [
+        "Drev"
+      ],
       "Duplicate found": [
         "Dublet fundet"
       ],
@@ -5862,6 +6064,9 @@
       ],
       "Email format": [
         "E-mailformattering"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle beskeder)"
@@ -5907,6 +6112,9 @@
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Tag imod tilbuddet"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -7630,20 +7838,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" oprettet"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kunne ikke oprettes"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" delt"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" oprettet"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" slettet"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent slettet fra papirkurven"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kunne ikke oprettes"
       ],
       "\"${ name }\" failed to be deleted": [
         "\"${ name }\" kunne ikke slettes"
@@ -7671,9 +7882,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" gemt"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" blev flyttet"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kunne ikke omdøbes"
@@ -7713,6 +7921,10 @@
         "${ numberOfItems } element kunne ikke gendannes fra papirkurven",
         "${ numberOfItems } elementer kunne ikke gendannes fra papirkurven"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } element flyttet til papirkurven",
         "${ numberOfItems } elementer flyttet til papirkurven"
@@ -7720,10 +7932,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gendannet fra papirkurven",
         "${ numberOfItems } elementer gendannet fra papirkurven"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } element flyttet",
-        "${ numberOfItems } elementer flyttet"
       ],
       "${ reason } has been disabled": [
         "${ reason } er blevet deaktiveret"
@@ -7781,6 +7989,9 @@
       ],
       "Failed to load invitation details": [
         "Kunne ikke indlæse invitationsdetaljer"
+      ],
+      "Failed to load sharing details": [
+        "Kunne ikke indlæse detaljer om deling"
       ],
       "Failed to reject share invitation": [
         "Kunne ikke afvise invitation til at dele"
@@ -8097,9 +8308,6 @@
       ]
     },
     "Page title": {
-      "Favorites": [
-        "Favoritter"
-      ],
       "Recents": [
         "Seneste"
       ],
@@ -8337,11 +8545,17 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og medtag evt. fejlmeddelelser"
       ],
+      "Search": [
+        "Søg"
+      ],
       "Search for group name": [
         "Søg efter gruppenavn"
       ],
       "Search for name or email": [
         "Søg efter navn eller e-mail"
+      ],
+      "Search for users or addresses": [
+        "Søg efter brugere eller adresser"
       ],
       "Search parent folder": [
         "Søg i overordnet mappe"
@@ -8461,15 +8675,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
       ],
-      "SPRING SALE 2026": [
-        "FORÅRSALG 2026"
+      "Summer Sale": [
+        "Sommerudsalg"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/måned"
       ],
@@ -8488,35 +8702,17 @@
       "500 GB storage": [
         "500 GB lagerplads"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Få adgang til 15.000+ servere i 120+ lande"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Adgang til avancerede AI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle premiumfunktioner i Mail, Pass, Drive, VPN og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloker annoncer, trackere og malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Indbygget 2FA-godkender"
-      ],
-      "Connect 10 devices at once": [
-        "Forbind 10 enheder på én gang"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Forlæng dit abonnement og spar ${ discountPercent } %!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Fuld adgang til ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fuld chathistorik med nem søgning og favoritter"
       ],
       "Individual accounts for 6 users": [
         "Individuelle konti til 6 brugere"
@@ -8524,8 +8720,8 @@
       "Individual accounts for you and a partner": [
         "Individuelle konti til dig og en partner"
       ],
-      "Online document editor": [
-        "Online dokumenteditor"
+      "Online document and spreadsheet editor": [
+        "Online-editor til dokumenter og regneark"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -8536,25 +8732,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Ubegrænset antal daglige chats"
-      ],
       "Unlimited folders, labels, and filters": [
         "Ubegrænset antal mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænset antal hide-my-email-aliasser"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "i 12 måneder"
       ],
-      "SPRING SALE": [
-        "FORÅR SALG"
+      "SUMMER SALE": [
+        "SOMMERUDSALG"
       ]
     },
     "Recent documents table header": {
@@ -9440,6 +9630,11 @@
         "Abonnementet vil blive nedgraderet ved udgangen af faktureringscyklussen."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagerplads"
@@ -9707,9 +9902,15 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Account recovery": [
         "Kontogendannelse"
@@ -9780,6 +9981,9 @@
       ],
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
+      ],
+      "Computers": [
+        "Computere"
       ],
       "Confirm downgrade": [
         "Bekræft nedgradering"
@@ -9875,6 +10079,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Devices": [
+        "Enheder"
       ],
       "Discard": [
         "Kassér"
@@ -10009,9 +10216,6 @@
       "Import contacts": [
         "Importér kontakter"
       ],
-      "Import emails, calendars, contacts": [
-        "Importer e-mails, kalendere, kontakter"
-      ],
       "Import events": [
         "Importer begivenheder"
       ],
@@ -10050,6 +10254,9 @@
       ],
       "Merging contacts": [
         "Fletter kontakter"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Flyt din organisation til ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -10201,6 +10408,9 @@
       "Share your link": [
         "Del dit link"
       ],
+      "Shared with me": [
+        "Delt med mig"
+      ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
       ],
@@ -10230,6 +10440,9 @@
       ],
       "Subscription canceled": [
         "Abonnement annulleret"
+      ],
+      "Summer Sale": [
+        "Sommerudsalg"
       ],
       "The link either does not exist or has expired": [
         "Linket findes enten ikke eller er udløbet"
@@ -10272,6 +10485,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
+      ],
+      "Verify your password": [
+        "Bekræft din adgangskode"
       ],
       "VPN explained": [
         "VPN forklaret"
@@ -10364,6 +10580,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
+      ],
       "Load image": [
         "Indlæs billede"
       ],
@@ -10448,6 +10667,9 @@
       ],
       "Name must not be empty": [
         "Navn må ikke være tomt"
+      ],
+      "Name must not contain slashes (/)": [
+        "Navnet må ikke indeholde skråstreger (/)"
       ]
     },
     "Video control": {

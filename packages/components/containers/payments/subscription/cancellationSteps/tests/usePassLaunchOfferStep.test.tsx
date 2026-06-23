@@ -1,7 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { usePassLaunchOfferStep } from '../usePassLaunchOfferStep';
 

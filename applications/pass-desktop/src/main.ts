@@ -1,4 +1,15 @@
-import { BrowserWindow, Menu, type Session, Tray, app, nativeImage, nativeTheme, session, shell } from 'electron';
+import {
+    BrowserWindow,
+    Menu,
+    type Session,
+    Tray,
+    app,
+    autoUpdater,
+    nativeImage,
+    nativeTheme,
+    session,
+    shell,
+} from 'electron';
 import { join } from 'path';
 
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -121,6 +132,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         show: false,
         opacity: 1,
         autoHideMenuBar: true,
+        icon: join(app.isPackaged ? process.resourcesPath : app.getAppPath(), 'assets', 'logo.png'),
         webPreferences: {
             session: session,
             sandbox: true,
@@ -163,6 +175,13 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     });
 
     ctx.window.on('closed', () => (ctx.window = null));
+
+    // Flush DOMStorage (the persisted session blob) to disk before the OS
+    // reboots/shuts down, as a safeguard against losing the latest write.
+    ctx.window.on('session-end', () => {
+        logger.info('[storage] session-end: flushing DOMStorage before shutdown');
+        ctx.session?.flushStorageData();
+    });
 
     await ctx.window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
@@ -314,8 +333,11 @@ app.addListener('activate', handleActivate);
 // or create the main window of the existing process
 app.addListener('second-instance', handleActivate);
 
-// Prevent hiding windows when explicitly quitting
+// Prevent hiding windows when explicitly quitting. `quitAndInstall()` does not emit `before-quit`
+// before closing windows, so `before-quit-for-update` must be handled too — otherwise the
+// hide-to-tray close handler keeps the app alive and the update install never completes.
 app.addListener('before-quit', () => (ctx.quitting = true));
+autoUpdater.addListener('before-quit-for-update', () => (ctx.quitting = true));
 
 await createWindow(ctx.session);
 

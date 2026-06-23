@@ -9,6 +9,7 @@ import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/li
 import { extractContactImportCategories, getContactId, splitErrors } from '@proton/shared/lib/contacts/helpers/import';
 import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
 import { prepareForSaving } from '@proton/shared/lib/contacts/surgery';
+import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Api, KeyPair, Label, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { ImportCategories, ImportedContact } from '@proton/shared/lib/interfaces/contacts';
 import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts';
@@ -41,6 +42,7 @@ const encryptContact = async (contact: VCardContact, { privateKey, publicKey }: 
         };
     } catch (error: any) {
         const contactId = getContactId(contact);
+        traceInitiativeError(SentryCommonInitiatives.CONTACT_IMPORT, error, { tags: { stage: 'encrypt' } });
         return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.ENCRYPTION_ERROR, contactId);
     }
 };

@@ -1,8 +1,8 @@
 import { CYCLE, PLANS } from '@proton/payments';
 import type { Currency } from '@proton/payments';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
-import { buildSubscription } from '@proton/testing/builders';
-import { getTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { getTestPlans } from '@proton/testing/data/payments/data-plans';
 
 import type { Feature } from './helpers/getPlanFeatures';
 import { useUpsellModal } from './useUpsellModal';

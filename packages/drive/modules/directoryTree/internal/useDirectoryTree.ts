@@ -5,8 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { MemberRole, NodeType, useDrive } from '../../../index';
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
-import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
-import { getDeviceName } from '../../nodes';
+import { getDeviceName, getNodeName } from '../../nodes';
 import { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 import { iterateSharedWithMeNodes } from './events/iterateSharedWithMeNodes';
 import { TreeEventManager } from './events/treeEventManager';
@@ -53,13 +52,11 @@ function useDirectoryTree(
 
     const addNode = useCallback(
         async (nodeUid: string, parentFolderUid: string, name: string) => {
-            const maybeNode = await drive.getNode(nodeUid);
+            const node = await drive.getNode(nodeUid);
 
-            const { type, deprecatedShareId } = getNodeEntity(maybeNode).node;
+            const { type, deprecatedShareId } = node;
 
-            const highestEffectiveRole = options?.loadPermissions
-                ? await findEffectiveRole(drive, maybeNode.ok ? maybeNode.value : maybeNode.error)
-                : undefined;
+            const highestEffectiveRole = options?.loadPermissions ? await findEffectiveRole(drive, node) : undefined;
 
             addItem({
                 nodeUid,
@@ -102,7 +99,8 @@ function useDirectoryTree(
     const loadSharedWithMe = useCallback(
         async (abortSignal: AbortSignal) => {
             for (const { node } of await iterateSharedWithMeNodes(abortSignal)) {
-                const { uid, name, type, treeEventScopeId, deprecatedShareId } = node;
+                const { uid, type, treeEventScopeId, deprecatedShareId } = node;
+                const name = getNodeName(node);
 
                 if (options?.onlyFolders && type !== NodeType.Folder) {
                     continue;
@@ -159,9 +157,10 @@ function useDirectoryTree(
             try {
                 const iterateOptions = options?.onlyFolders ? { type: NodeType.Folder } : undefined;
                 for await (const node of drive.iterateFolderChildren(parentUid, iterateOptions, abortSignal)) {
-                    const { uid, name, type, treeEventScopeId, deprecatedShareId } = getNodeEntity(node).node;
+                    const { uid, type, treeEventScopeId, deprecatedShareId } = node;
+                    const name = getNodeName(node);
                     const highestEffectiveRole = options?.loadPermissions
-                        ? await findEffectiveRole(drive, node.ok ? node.value : node.error)
+                        ? await findEffectiveRole(drive, node)
                         : undefined;
                     const existingItem = useDirectoryTreeStore.getState().items.get(uid);
                     addItem({
@@ -246,14 +245,14 @@ function useDirectoryTree(
     const initializeFromNode = useCallback(
         async (rootNodeUid: string, myFilesRootUid: string) => {
             try {
-                const maybeNode = await drive.getNode(rootNodeUid);
-                const { uid, name, type } = getNodeEntity(maybeNode).node;
+                const node = await drive.getNode(rootNodeUid);
+                const { uid, type } = node;
                 const nodeRootTreeItemId = makeTreeItemId(null, uid);
                 addItem({
                     nodeUid: uid,
                     treeItemId: nodeRootTreeItemId,
                     parentUid: null,
-                    name: uid === myFilesRootUid ? c('Title').t`My files` : name,
+                    name: uid === myFilesRootUid ? c('Title').t`My files` : getNodeName(node),
                     type,
                     expandable: type === NodeType.Folder,
                     isSharedWithMe: false,
@@ -320,7 +319,7 @@ function useDirectoryTree(
     const initializeTree = useCallback(async () => {
         const strategy = options?.treeRootsStrategy ?? { type: 'ALL_ROOTS' };
         const myFilesRoot = await drive.getMyFilesRootFolder();
-        const { uid: myFilesRootUid } = getNodeEntity(myFilesRoot).node;
+        const myFilesRootUid = myFilesRoot.uid;
 
         if (strategy.type === 'FROM_NODE') {
             await initializeFromNode(strategy.rootNodeUid, myFilesRootUid);

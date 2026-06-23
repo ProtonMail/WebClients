@@ -44,7 +44,7 @@ import type {
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
 import type { FileMenuAction, SheetImportData } from '@proton/docs-shared'
 import { type DocTrashState, FileMenuActionEvent, isWordCountSupported } from '@proton/docs-shared'
-import { isPrivateNodeMeta, type DocumentAction } from '@proton/drive-store'
+import { isPrivateNodeMeta, type DocumentAction, type NodeMeta } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { isDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultDocumentName'
@@ -61,7 +61,12 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useSheetImportModal } from './SheetImportModal'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import { useEvent } from '~/utils/misc'
-import { useIsSheetsEnabled, useIsDownloadLogsAllowed } from '~/utils/flags'
+import {
+  useIsSheetsEnabled,
+  useIsDownloadLogsAllowed,
+  useMoveModalDriveSdkEnabled,
+  useRenameWithSDK,
+} from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
@@ -69,6 +74,8 @@ import * as UI from '@proton/docs-shared/components/ui/ui'
 import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
+import { generateNodeUid, getDrive } from '@proton/drive'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -95,6 +102,20 @@ export function DocumentTitleDropdown({
   const user = privateContext?.user || publicContext?.user
   const { getLocalID } = useAuthentication()
   const wordCount = useWordCount()
+  const { toggleDebugMode } = useDebugMode()
+  const isDownloadLogsAllowed = useIsDownloadLogsAllowed()
+  const { APP_VERSION } = useConfig()
+  const appVersion = getAppVersion(APP_VERSION)
+  const { createNotification } = useNotifications()
+  const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
+  const renameWithSDK = useRenameWithSDK()
+  const isSheetsEnabled = useIsSheetsEnabled()
+
+  const [pdfModal, openPdfModal] = useExportToPDFModal()
+  const [historyModal, showHistoryModal] = useHistoryViewerModal()
+  const [sheetImportModal, showSheetImportModal] = useSheetImportModal()
+  const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
+
   const [title, setTitle] = useState<string | undefined>(documentState.getProperty('documentName'))
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
   const [trashState, setTrashState] = useState<DocTrashState | undefined>(
@@ -102,18 +123,8 @@ export function DocumentTitleDropdown({
   )
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [isMakingNewSheetDocument, setIsMakingNewSheetDocument] = useState<boolean>(false)
-  const [pdfModal, openPdfModal] = useExportToPDFModal()
-  const [historyModal, showHistoryModal] = useHistoryViewerModal()
-  const [sheetImportModal, showSheetImportModal] = useSheetImportModal()
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const [showDebugToggle, setShowDebugToggle] = useState(false)
-  const { toggleDebugMode } = useDebugMode()
-  const isDownloadLogsAllowed = useIsDownloadLogsAllowed()
-  const { APP_VERSION } = useConfig()
-  const appVersion = getAppVersion(APP_VERSION)
-  const isSheetsEnabled = useIsSheetsEnabled()
-  const { createNotification } = useNotifications()
-
   const [isRenaming, setIsRenaming] = useState(false)
   const [renameInputValue, setRenameInputValue] = useState(title)
   useEffect(() => {
@@ -165,12 +176,30 @@ export function DocumentTitleDropdown({
       setIsRenaming(false)
 
       if (oldName !== newName) {
-        void renameController.renameDocument(newName).then((result) => {
-          if (result.isFailed()) {
-            PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
-            setTitle(oldName)
-          }
-        })
+        if (renameWithSDK) {
+          const drive = getDrive()
+          const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
+          drive
+            .renameNode(generateNodeUid(volumeId, linkId), newName)
+            .then(() => {
+              const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
+              createNotification({
+                text: <span className="text-pre-wrap">{successNotificationText}</span>,
+              })
+            })
+            .catch((error) => {
+              application.logger.error('Failed to rename document', error)
+              PostApplicationError(application.eventBus, { translatedError: c('Error').t`Failed to rename document` })
+              setTitle(oldName)
+            })
+        } else {
+          void renameController.renameDocument(newName).then((result) => {
+            if (result.isFailed()) {
+              PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
+              setTitle(oldName)
+            }
+          })
+        }
       }
       setTitle(newName)
     } else {
@@ -310,8 +339,13 @@ export function DocumentTitleDropdown({
   }, [handleSheetImportData, showSheetImportModal])
 
   const openMoveToFolderModal = useCallback(() => {
-    authenticatedController?.openMoveToFolderModal()
-  }, [authenticatedController])
+    if (moveModalDriveSdkEnabled && !isPublicMode) {
+      const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
+      showMoveItemsModal({ nodeUids: [generateNodeUid(volumeId, linkId)] })
+    } else {
+      authenticatedController?.openMoveToFolderModal()
+    }
+  }, [authenticatedController, documentState, isPublicMode, moveModalDriveSdkEnabled, showMoveItemsModal])
 
   const trashDocument = useCallback(async () => {
     if (!authenticatedController) {
@@ -929,6 +963,7 @@ export function DocumentTitleDropdown({
       {historyModal}
       {pdfModal}
       {sheetImportModal}
+      {moveItemsModal}
       {authenticatedController && isDocumentState(documentState) && (
         <TrashedDocumentModal
           documentTitle={title}

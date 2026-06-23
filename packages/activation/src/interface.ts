@@ -26,7 +26,7 @@ export enum ImportType {
     MAIL = 'Mail',
     CALENDAR = 'Calendar',
     CONTACTS = 'Contacts',
-    // DRIVE = 'Drive',
+    DRIVE = 'Drive',
 }
 
 export interface CreateImportPayload {
@@ -43,6 +43,7 @@ export interface CreateImportPayload {
     };
     [ImportType.CALENDAR]?: {};
     [ImportType.CONTACTS]?: {};
+    [ImportType.DRIVE]?: {};
 }
 
 export interface LaunchImportPayload {
@@ -50,6 +51,7 @@ export interface LaunchImportPayload {
     [ImportType.MAIL]?: MailImporterPayload;
     [ImportType.CALENDAR]?: CalendarImporterPayload;
     [ImportType.CONTACTS]?: ContactsImporterPayload;
+    [ImportType.DRIVE]?: DriveImporterPayload;
 }
 
 /* Token */
@@ -126,6 +128,7 @@ export enum IMPORT_ERROR {
     TEMP_PROVIDER_ERROR = 2902,
     RATE_LIMIT_EXCEEDED = 429,
     ACCOUNT_DOES_NOT_EXIST = 2011,
+    TOO_SHORT = 2023,
     TOO_LARGE = 2024,
 }
 
@@ -184,8 +187,28 @@ export interface ImportedCalendar {
 }
 
 /* Contacts Specific */
-
 export interface ContactsImporterPayload {}
+
+/* Drive Specific */
+// The payload required to create the destination folder that will
+// hold the files imported into Drive.
+export interface DriveImportFolder {
+    VolumeID: string;
+    ParentLinkID: string;
+    Name: string;
+    Hash: string;
+    NodePassphrase: string;
+    NodePassphraseSignature: string;
+    NodeKey: string;
+    NodeHashKey: string;
+    SignatureAddress: string;
+    NodePassphraseClearText: string;
+    XAttr?: string;
+}
+
+export interface DriveImporterPayload {
+    ImportFolder: DriveImportFolder;
+}
 
 /* Imports and Reports from Server */
 
@@ -257,6 +280,7 @@ export enum EASY_SWITCH_FEATURES {
     IMPORT_MAIL = 'import_mail',
     IMPORT_CALENDAR = 'import_calendar',
     IMPORT_CONTACTS = 'import_contacts',
+    IMPORT_DRIVE = 'import_drive',
     MANAGE_MEETINGS = 'manage_meetings',
     BYOE = 'byoe',
     OLES = 'oles',

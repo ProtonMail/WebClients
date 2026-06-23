@@ -13,11 +13,6 @@ import { PhotosGroup } from './grid/PhotosGroup';
 type Props = {
     uids: string[];
     onItemRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
-    onItemRenderLoadedLink: (
-        nodeUid: string,
-        activeRevisionUid: string,
-        domRef: React.MutableRefObject<unknown>
-    ) => void;
     selectedCount: number;
     isLoading: boolean;
     onItemClick: (nodeUid: string) => void;
@@ -31,7 +26,6 @@ type Props = {
 export const PhotosInsideAlbumsGrid: FC<Props> = ({
     uids,
     onItemRender,
-    onItemRenderLoadedLink,
     isLoading,
     onItemClick,
     onSelectChange,
@@ -169,7 +163,6 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
                             key={item.nodeUid}
                             nodeUid={item.nodeUid}
                             onRender={onItemRender}
-                            onRenderLoadedLink={onItemRenderLoadedLink}
                             onClick={() => {
                                 if (hasSelection) {
                                     onSelectChange(i, !isSelected);
@@ -227,7 +220,6 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
         onSelectChange,
         isItemSelected,
         onItemRender,
-        onItemRenderLoadedLink,
         hasSelection,
         onFavorite,
         onItemClick,

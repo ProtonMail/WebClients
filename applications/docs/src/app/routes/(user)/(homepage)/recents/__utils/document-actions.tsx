@@ -5,10 +5,11 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
-import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import { useMoveModalDriveSdkEnabled, useRenameWithSDK, useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import { useEvent } from '~/utils/misc'
 import { getDrive, generateNodeUid } from '@proton/drive'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
+import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
@@ -49,8 +50,14 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const [currentlyTrashingId, setCurrentlyTrashingId] = useState<string | undefined>(undefined)
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
   const { getLocalID } = useAuthentication()
+
+  const drive = getDrive()
   const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
+  const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
+  const renameWithSDK = useRenameWithSDK()
+
   const { showSharingModal, sharingModal } = useSharingModal()
+  const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
 
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
@@ -66,7 +73,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const share = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
     if (sharingModalDriveSdkEnabled) {
       showSharingModal({
-        drive: getDrive(),
+        drive,
         nodeUid: generateNodeUid(volumeId, linkId),
       })
     } else {
@@ -76,7 +83,11 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   })
 
   const move = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    void driveCompat.openMoveToFolderModal({ linkId, volumeId })
+    if (moveModalDriveSdkEnabled) {
+      showMoveItemsModal({ nodeUids: [generateNodeUid(volumeId, linkId)] })
+    } else {
+      void driveCompat.openMoveToFolderModal({ linkId, volumeId })
+    }
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_moved)
   })
 
@@ -96,7 +107,11 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
   const rename = useEvent(async (document: RecentDocumentsItem, newName: string) => {
     setRenameSaving(true)
-    await driveCompat.renameDocument(document, newName)
+    if (renameWithSDK) {
+      await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
+    } else {
+      await driveCompat.renameDocument(document, newName)
+    }
     cancelRename(true)
     setRenameSaving(false)
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_renamed)
@@ -192,6 +207,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     <DocumentActionsContext.Provider value={value}>
       {children}
       {sharingModal}
+      {moveItemsModal}
     </DocumentActionsContext.Provider>
   )
 }

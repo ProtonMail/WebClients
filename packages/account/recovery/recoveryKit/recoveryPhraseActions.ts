@@ -37,14 +37,17 @@ export const generateRecoveryKitData = (): ThunkAction<
 };
 
 export const setRecoveryPhrase = (
-    recoveryPhraseData: DeferredMnemonicData
+    recoveryPhraseData: DeferredMnemonicData,
+    persistPasswordScope: boolean = false
 ): ThunkAction<Promise<DeferredMnemonicData>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
         const api = extra.api;
         const createMnemonicData = selectMnemonicData(getState());
 
         if (!createMnemonicData.callReactivateEndpoint) {
-            await api(updateMnemonicPhrase(recoveryPhraseData.payload));
+            await api(
+                updateMnemonicPhrase({ ...recoveryPhraseData.payload, PersistPasswordScope: persistPasswordScope })
+            );
         } else {
             await api(reactivateMnemonicPhrase(recoveryPhraseData.payload));
         }

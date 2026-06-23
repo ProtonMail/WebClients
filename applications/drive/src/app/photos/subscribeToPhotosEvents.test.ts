@@ -71,10 +71,10 @@ const resetStores = () => {
 // --- Node cache (simulates SDK in-memory cache) ---
 
 const toMaybeNode = ({ uid, type, albumUids, isTrashed, isShared }: CachedNode) => {
-    const baseNode = {
+    return {
         uid,
         type,
-        name: `node-${uid}`,
+        name: { ok: true as const, value: `node-${uid}` },
         creationTime: new Date(0),
         directRole: 'admin' as const,
         membership: undefined,
@@ -84,28 +84,21 @@ const toMaybeNode = ({ uid, type, albumUids, isTrashed, isShared }: CachedNode) 
         nameAuthor: { ok: true } as const,
         activeRevision: undefined,
         treeEventScopeId: type === NodeType.Album ? `${uid}-scope` : MY_PHOTOS_SCOPE_ID,
-    };
-
-    return {
-        ok: true,
-        value: {
-            ...baseNode,
-            photo:
-                type === NodeType.Photo
-                    ? {
-                          captureTime: new Date(0),
-                          tags: [],
-                          relatedPhotoNodeUids: [],
-                          albums: (albumUids ?? []).map((nodeUid) => ({ nodeUid, additionTime: new Date(0) })),
-                      }
-                    : undefined,
-            album:
-                type === NodeType.Album
-                    ? { photoCount: 0, lastActivityTime: new Date(0), coverPhotoNodeUid: undefined }
-                    : undefined,
-            isTrashed,
-            isShared,
-        },
+        photo:
+            type === NodeType.Photo
+                ? {
+                      captureTime: new Date(0),
+                      tags: [],
+                      relatedPhotoNodeUids: [],
+                      albums: (albumUids ?? []).map((nodeUid) => ({ nodeUid, additionTime: new Date(0) })),
+                  }
+                : undefined,
+        album:
+            type === NodeType.Album
+                ? { photoCount: 0, lastActivityTime: new Date(0), coverPhotoNodeUid: undefined }
+                : undefined,
+        isTrashed,
+        isShared,
     } as unknown as Awaited<ReturnType<ProtonDrivePhotosClient['getMyPhotosRootFolder']>>;
 };
 
@@ -113,8 +106,8 @@ const makeDrive = (nodes: CachedNode[] = [], rootUid = PHOTOS_ROOT_UID) => {
     const cache = new Map(nodes.map((n) => [n.uid, n]));
     return {
         getMyPhotosRootFolder: async () => ({
-            ok: true,
-            value: { uid: rootUid, treeEventScopeId: MY_PHOTOS_SCOPE_ID },
+            uid: rootUid,
+            treeEventScopeId: MY_PHOTOS_SCOPE_ID,
         }),
         getNode: async (uid: string) => toMaybeNode(cache.get(uid) ?? photo(uid)),
         getSharingInfo: async () => ({}),
@@ -472,23 +465,20 @@ describe('subscribeToPhotosEvents', () => {
             const brokenDrive = {
                 ...makeDrive([]),
                 getNode: async () => ({
-                    ok: true,
-                    value: {
-                        uid: 'broken-node',
-                        type: NodeType.Photo,
-                        photo: undefined,
-                        album: undefined,
-                        name: 'broken',
-                        creationTime: new Date(0),
-                        directRole: 'admin',
-                        membership: undefined,
-                        ownedBy: { email: 'test@proton.ch' },
-                        deprecatedShareId: undefined,
-                        keyAuthor: { ok: true },
-                        nameAuthor: { ok: true },
-                        activeRevision: undefined,
-                        treeEventScopeId: MY_PHOTOS_SCOPE_ID,
-                    },
+                    uid: 'broken-node',
+                    type: NodeType.Photo,
+                    photo: undefined,
+                    album: undefined,
+                    name: { ok: true as const, value: 'broken' },
+                    creationTime: new Date(0),
+                    directRole: 'admin',
+                    membership: undefined,
+                    ownedBy: { email: 'test@proton.ch' },
+                    deprecatedShareId: undefined,
+                    keyAuthor: { ok: true },
+                    nameAuthor: { ok: true },
+                    activeRevision: undefined,
+                    treeEventScopeId: MY_PHOTOS_SCOPE_ID,
                 }),
             } as unknown as BusDriverClient;
 

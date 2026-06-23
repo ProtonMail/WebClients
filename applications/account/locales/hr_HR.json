@@ -158,6 +158,9 @@
       "Claim this address": [
         "Preuzmi ovu adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Zatražite svoju besplatnu ${ BRAND_NAME } adresu"
+      ],
       "Clear all formatting": [
         "Očisti sva oblikovanja"
       ],
@@ -346,6 +349,9 @@
       ],
       "Discard Changes": [
         "Odbaci promjene"
+      ],
+      "Disconnect": [
+        "Odspoji"
       ],
       "Dismiss": [
         "Odbaci"
@@ -665,6 +671,9 @@
       "Or": [
         "Ili"
       ],
+      "Or use a different Gmail address": [
+        "Ili upotrijebite drugu Gmail adresu"
+      ],
       "Ordered list": [
         "Numerirani popis"
       ],
@@ -851,6 +860,9 @@
       "Select time zone": [
         "Odaberite vremensku zonu"
       ],
+      "Send": [
+        "Pošalji"
+      ],
       "send auto-reply email": [
         "pošalji automatski odgovor"
       ],
@@ -986,6 +998,9 @@
       "Underline": [
         "Podvučeno"
       ],
+      "Undo": [
+        "Poništi"
+      ],
       "Undo import": [
         "Poništi uvoz"
       ],
@@ -1048,6 +1063,9 @@
       ],
       "Use recovery code": [
         "Koristi kȏd za oporavak"
+      ],
+      "Use this Gmail address": [
+        "Upotrijebite ovu Gmail adresu"
       ],
       "User": [
         "Korisnik"
@@ -1375,12 +1393,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
-      ],
-      "One-time payment, lifetime deal": [
-        "Jednokratno plaćanje, doživotna ponuda"
-      ],
-      "Online document editor": [
-        "Online uređivač dokumenata"
       ]
     },
     "Billing cycle": {
@@ -2907,6 +2919,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Popis kontakata koji uvozite sadrži neke grupe. Pregledajte kako bi ove grupe trebalo uvesti."
       ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Uz nove kategorije e-pošte, samo važne poruke stižu u vašu primarnu pristiglu poštu. Kategorije rade baš kao i filtri neželjene pošte. ${ MAIL_APP_NAME } nikada ne čita vašu e-poštu niti dijeli vaše podatke."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
       ]
@@ -3081,11 +3096,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Rješenja po mjeri za veće organizacije s prilagođenim potrebama."
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Prioritetna podrška"
       ]
     },
     "Duo offer": {
@@ -3921,11 +3931,6 @@
         "(bez naslova)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB prostora za pohranu"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Pogodnosti Vašeg korisničkog računa"
@@ -3943,11 +3948,6 @@
       ],
       "Switch plans": [
         "Promijeni pretplatu"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Do 6 korisnika"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4070,11 +4070,6 @@
       ],
       "Set family name": [
         "Postavite prezime"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
       ]
     },
     "Feature": {
@@ -4841,6 +4836,11 @@
         "Yahoo"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Jeste li sigurni da želite uvesti privatni ključ? Uvoz nesigurno generiranog ili procurjelog privatnog ključa može ugroziti sigurnost vaše e-pošte.\n\nTakođer imajte na umu da će javni ključ koji odgovara ovom privatnom ključu biti javno dostupan na našem poslužitelju ključeva. Ako ključ sadrži osobne pojedinosti (kao što je vaše puno ime) koje ne želite objaviti, uredite ključ prije njegova uvoza."
+      ]
+    },
     "Import status": {
       "Active": [
         "Aktivno"
@@ -4973,9 +4973,6 @@
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Filtriraj ako su ispunjeni BILO KOJI sljedeći uvjeti)"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
       ],
       "**Sync codes** to all your devices": [
         "**Sinkronizirajte kôdove** na sve Vaše uređaje"
@@ -6912,6 +6909,9 @@
       "Calendar": [
         "Kalendar"
       ],
+      "Calendars": [
+        "Kalendari"
+      ],
       "Card details": [
         "Detalji kartice"
       ],
@@ -7076,6 +7076,9 @@
       ],
       "Email or username": [
         "Adresa e-pošte ili korisničko ime"
+      ],
+      "Emails": [
+        "E-pošta"
       ],
       "Enabled": [
         "Omogućeno"
@@ -7615,6 +7618,13 @@
         "Za"
       ]
     },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "Dostupna je ${ byoeAddressesAvailableCount } od ${ maxBYOEAddresses } adresa e-pošte",
+        "Dostupne su ${ byoeAddressesAvailableCount } od ${ maxBYOEAddresses } adrese e-pošte",
+        "Dostupno je ${ byoeAddressesAvailableCount } od ${ maxBYOEAddresses } adresa e-pošte"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Dodajte domenu koju posjedujete na Vaš ${ MAIL_APP_NAME } korisnički račun."
@@ -7691,11 +7701,6 @@
       ],
       "To: ${ to }": [
         "Za: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Odaberite davatelja identiteta kako biste započeli"
       ]
     },
     "Link": {
@@ -8821,9 +8826,6 @@
       ],
       "In-app notifications": [
         "Obavijesti unutar aplikacije"
-      ],
-      "Product updates": [
-        "Ažuriranja proizvoda"
       ]
     },
     "Notification": {
@@ -9780,6 +9782,78 @@
         "Nepoznato"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "2 TB data storage": [
+        "2 TB pohrane podataka"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB pohrane: 40x više od vašeg trenutnog plana"
+      ],
+      "3 TB data storage": [
+        "3 TB pohrane podataka"
+      ],
+      "500 GB storage": [
+        "500 GB prostora za pohranu"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnim mjesečnim cijenama. Vaša će se pretplata obnoviti po standardnoj godišnjoj cijeni nakon završetka ciklusa naplate."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Potpuni pristup usluzi ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Pojedinačni korisnički računi za 6 korisnika"
+      ],
+      "Individual accounts for you and a partner": [
+        "Pojedinačni korisnički računi za vas i partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Uređivač dokumenata i proračunskih tablica na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Snažnija zaštita od kibernetičkih prijetnji"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Pređite na naš godišnji plan i uštedite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničen broj mapa, oznaka i filtara"
+      ],
+      "Use your own email domain": [
+        "Upotrijebite vlastitu domenu e-pošte"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mjeseci"
+      ],
+      "SUMMER SALE": [
+        "LJETNA RASPRODAJA"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Poništi"
@@ -10726,15 +10800,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 korisnika"
-      ],
-      "High speed VPN": [
-        "Visoka brzina VPN"
-      ],
       "Highest VPN speed": [
         "Najviša VPN brzina"
       ],
@@ -10754,63 +10819,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
       "/ month": [
         "/ mjesec"
       ],
       "/month": [
         "/mjesec"
       ],
-      "1 year": [
-        "1 godina"
-      ],
-      "15 months": [
-        "15 mjeseci"
-      ],
-      "2 years": [
-        "2 godine"
-      ],
-      "30 months": [
-        "30 mjeseci"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Naplaćeno ${ amount } za 12 mjeseci"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Naplaćeno ${ amount } za 15 mjeseci"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Naplaćeno ${ amount } za 24 mjeseca"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Naplaćeno ${ amount } za 30 mjeseci"
-      ],
       "Get the deal": [
         "Ugrabite ponudu"
       ],
       "Save ${ discount }%": [
         "Uštedite ${ discount } %"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Standardna cijena ${ amount } za 12 mjeseci"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Standardna cijena ${ amount } za 15 mjeseci"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Standardna cijena ${ amount } za 24 mjeseca"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Standardna cijena ${ amount } za 30 mjeseci"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
       ]
     },
     "Spotlight": {
@@ -11764,6 +11783,9 @@
       "Are you sure you want to close?": [
         "Jeste li sigurni da želite zatvoriti?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Jeste li sigurni da želite odspojiti ovu adresu?"
+      ],
       "Are you sure?": [
         "Jeste li sigurni?"
       ],
@@ -12491,6 +12513,9 @@
       ],
       "Summary": [
         "Sažetak"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
       ],
       "Switch account": [
         "Promijeni korisnički račun"

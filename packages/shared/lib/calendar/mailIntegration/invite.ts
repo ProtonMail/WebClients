@@ -519,8 +519,8 @@ export const generateEmailSubject = ({
 
     if (method === REPLY) {
         return isSingleAllDay
-            ? formatSubject(c('Email subject').t`Invitation for an event on ${formattedStart}`, RE_PREFIX)
-            : formatSubject(c('Email subject').t`Invitation for an event starting on ${formattedStart}`, RE_PREFIX);
+            ? formatSubject(c('Email subject').t`Invitation for an event on ${formattedStart}`, RE_PREFIX())
+            : formatSubject(c('Email subject').t`Invitation for an event starting on ${formattedStart}`, RE_PREFIX());
     }
 
     throw new Error('Unexpected method');

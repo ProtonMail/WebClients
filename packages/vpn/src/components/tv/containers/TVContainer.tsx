@@ -99,10 +99,10 @@ export const TVContainer = () => {
     };
 
     return (
-        <div className="tv-container-bg h-full flex flex-column items-center">
+        <div className={`tv-container h-full flex flex-column items-center`}>
             <div className="flex justify-center items-center pt-7 w-custom" style={{ '--w-custom': '9.375rem' }}>
                 <Href href="https://protonvpn.com" target="_self">
-                    <VpnLogo />
+                    <VpnLogo color="rgb(12, 12, 20)" />
                 </Href>
             </div>
             <div

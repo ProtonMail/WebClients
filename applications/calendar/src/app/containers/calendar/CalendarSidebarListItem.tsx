@@ -8,12 +8,12 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import SidebarListItemLabel from '@proton/components/components/sidebar/SidebarListItemLabel';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,
@@ -133,8 +133,7 @@ const CalendarSidebarListItem = ({
                                 style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
                                 loading={isSubscribedCalendar && loadingSubscriptionParameters}
                                 content={
-                                    <Icon
-                                        name="three-dots-horizontal"
+                                    <IcThreeDotsHorizontal
                                         alt={c('Sidebar calendar edit tooltip').t`Manage calendar`}
                                     />
                                 }

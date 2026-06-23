@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
-import { isCategoryLabel, labelIncludes } from '@proton/mail/helpers/location';
+import { labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -373,10 +373,6 @@ export const getCustomViewFromLabel = (label: string) => {
 
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
     if (labelID in LABEL_IDS_TO_HUMAN) {
-        if (isCategoryLabel(labelID)) {
-            return getLabelFromCategoryId(labelID);
-        }
-
         const folders = getStandardFolders();
         return folders[labelID]?.name || folders[MAILBOX_LABEL_IDS.INBOX].name;
     }
@@ -398,15 +394,36 @@ export const getLabelName = (labelID: string, labels: Label[] = [], folders: Fol
     return labelID;
 };
 
+// Helper to get the label with categories name support
+export const getLabelNameWithCategory = ({
+    labelID,
+    labels,
+    folders,
+    categoryIDs,
+    hasAccessToCategoryView,
+}: {
+    labelID: string;
+    labels: Label[];
+    folders: Folder[];
+    categoryIDs: string[];
+    hasAccessToCategoryView: boolean;
+}) => {
+    const category = categoryIDs[0];
+    if (labelID === MAILBOX_LABEL_IDS.INBOX && hasAccessToCategoryView && category) {
+        const folders = getStandardFolders();
+        const name = folders[MAILBOX_LABEL_IDS.INBOX].name;
+        const categoryLabel = getLabelFromCategoryId(category as CategoryLabelID);
+        return `${name} • ${categoryLabel}`;
+    }
+
+    return getLabelName(labelID, labels, folders);
+};
+
 /**
  * Only use this method when the label name in the toolbar.
  * It's used to ensure that categories get the "Inbox" name.
  */
 export const getLabelNameForToolbar = (labelID: string, labels: Label[] = [], folders: Folder[] = []) => {
-    if (isCategoryLabel(labelID)) {
-        return getStandardFolders()[MAILBOX_LABEL_IDS.INBOX].name;
-    }
-
     return getLabelName(labelID, labels, folders);
 };
 

@@ -216,6 +216,7 @@ export const setup = async ({
                 pages: {},
                 retry: { payload: null, count: 0, error: undefined },
                 taskRunning: { labelIDs: [], timeoutID: undefined },
+                awaitingStaleRetry: {},
             },
             paymentStatus: getModelState({
                 VendorStates: {

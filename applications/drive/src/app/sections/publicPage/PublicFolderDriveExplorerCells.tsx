@@ -5,7 +5,9 @@ import { MemberRole, NodeType } from '@proton/drive';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import type { CellDefinition } from '../../statelessComponents/DriveExplorer/types';
+import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
+import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
+import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
 import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
 import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
 import { DownloadCell, defaultDownloadCellConfig } from './driveExplorerCells/DownloadCell';
@@ -104,3 +106,42 @@ export const getPublicFolderCells = ({
 
     return cells;
 };
+
+export const getPublicFolderGrid = (): GridDefinition => ({
+    name: (uid) => {
+        const NameComponent = () => {
+            const item = usePublicFolderStore(useShallow((state) => state.getFolderItem(uid)));
+            if (!item) {
+                return null;
+            }
+            return (
+                <GridItemName
+                    name={item.name}
+                    haveSignatureIssues={item.haveSignatureIssues || false}
+                    type={item.type}
+                />
+            );
+        };
+        return <NameComponent />;
+    },
+    mainContent: (uid) => {
+        const MainContentComponent = () => {
+            const item = usePublicFolderStore((state) => state.getFolderItem(uid));
+            const thumbnail = useThumbnail(item?.activeRevisionUid);
+
+            if (!item) {
+                return null;
+            }
+
+            return (
+                <GridItemContent
+                    type={item.type}
+                    name={item.name}
+                    mediaType={item.mediaType}
+                    thumbnailUrl={thumbnail?.sdUrl}
+                />
+            );
+        };
+        return <MainContentComponent />;
+    },
+});

@@ -6,6 +6,8 @@ import { useOrganization } from '@proton/pass/components/Organization/Organizati
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { TitlebarDragRegion } from './TitlebarDragRegion';
+
 import './Sidebar.scss';
 
 export const Sidebar: FC<PropsWithChildren> = ({ children }) => {
@@ -13,6 +15,7 @@ export const Sidebar: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <div id="pass-sidebar" className="sidebar hidden lg:flex flex-nowrap flex-column outline-none bg-strong">
+            <TitlebarDragRegion />
             <h1 className="sr-only">{getAppName(APPS.PROTONPASS)}</h1>
             <div className="w-full logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
                 {organization ? <PassForBusinessLogo /> : <PassLogo />}

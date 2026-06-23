@@ -25,7 +25,8 @@ export const useCopyItems = () => {
                 if (ok) {
                     deleted.push({ uid, name: itemsByUid[uid].name });
                 } else {
-                    errors.push({ error: result.error });
+                    // TODO: Improve error handling, we need to check if it's ProtonDriveError
+                    errors.push({ error: result.error.message });
                 }
             }
         } catch (error) {
@@ -77,7 +78,10 @@ export const useCopyItems = () => {
                 }
             }
         } catch (error) {
-            handleSdkError(error, { showNotification: false, extra: { itemsToCopy, targetFolderUid, errors } });
+            handleSdkError(error, {
+                showNotification: false,
+                extra: { itemsToCopy: itemsToCopy.map((item) => item.uid), targetFolderUid, errors },
+            });
         }
 
         const copiesList = Object.values(copies);

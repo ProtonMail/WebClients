@@ -107,6 +107,9 @@
       "Claim this address": [
         "Preuzmi ovu adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Zatražite svoju besplatnu ${ BRAND_NAME } adresu"
+      ],
       "Close": [
         "Zatvori"
       ],
@@ -244,6 +247,9 @@
       ],
       "Discard Changes": [
         "Odbaci promjene"
+      ],
+      "Disconnect": [
+        "Odspoji"
       ],
       "Dismiss": [
         "Odbaci"
@@ -404,6 +410,9 @@
       "Keep logo": [
         "Zadrži logo"
       ],
+      "Later": [
+        "Kasnije"
+      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -478,6 +487,9 @@
       ],
       "Or": [
         "Ili"
+      ],
+      "Or use a different Gmail address": [
+        "Ili upotrijebite drugu Gmail adresu"
       ],
       "Organization": [
         "Organizacija"
@@ -787,6 +799,9 @@
       ],
       "Use recovery code": [
         "Koristi kȏd za oporavak"
+      ],
+      "Use this Gmail address": [
+        "Upotrijebite ovu Gmail adresu"
       ],
       "User": [
         "Korisnik"
@@ -3821,9 +3836,6 @@
       "(default)": [
         "(zadano)"
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
-      ],
       "**Sync codes** to all your devices": [
         "**Sinkronizirajte kôdove** na sve Vaše uređaje"
       ],
@@ -5131,6 +5143,9 @@
       "Calendar": [
         "Kalendar"
       ],
+      "Calendars": [
+        "Kalendari"
+      ],
       "Card details": [
         "Detalji kartice"
       ],
@@ -5250,6 +5265,9 @@
       ],
       "Email or username": [
         "Adresa e-pošte ili korisničko ime"
+      ],
+      "Emails": [
+        "E-pošta"
       ],
       "Enabled": [
         "Omogućeno"
@@ -5627,6 +5645,13 @@
         "Za"
       ]
     },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "Dostupna je ${ byoeAddressesAvailableCount } od ${ maxBYOEAddresses } adresa e-pošte",
+        "Dostupne su ${ byoeAddressesAvailableCount } od ${ maxBYOEAddresses } adrese e-pošte",
+        "Dostupno je ${ byoeAddressesAvailableCount } od ${ maxBYOEAddresses } adresa e-pošte"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Dodajte domenu koju posjedujete na Vaš ${ MAIL_APP_NAME } korisnički račun."
@@ -5697,11 +5722,6 @@
       ],
       "To: ${ to }": [
         "Za: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Odaberite davatelja identiteta kako biste započeli"
       ]
     },
     "Link": {
@@ -6534,9 +6554,6 @@
       ],
       "In-app notifications": [
         "Obavijesti unutar aplikacije"
-      ],
-      "Product updates": [
-        "Ažuriranja proizvoda"
       ]
     },
     "Notification": {
@@ -7154,6 +7171,78 @@
       ],
       "Unknown": [
         "Nepoznato"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "2 TB data storage": [
+        "2 TB pohrane podataka"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB pohrane: 40x više od vašeg trenutnog plana"
+      ],
+      "3 TB data storage": [
+        "3 TB pohrane podataka"
+      ],
+      "500 GB storage": [
+        "500 GB prostora za pohranu"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnim mjesečnim cijenama. Vaša će se pretplata obnoviti po standardnoj godišnjoj cijeni nakon završetka ciklusa naplate."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Potpuni pristup usluzi ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Pojedinačni korisnički računi za 6 korisnika"
+      ],
+      "Individual accounts for you and a partner": [
+        "Pojedinačni korisnički računi za vas i partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Uređivač dokumenata i proračunskih tablica na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Snažnija zaštita od kibernetičkih prijetnji"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Pređite na naš godišnji plan i uštedite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničen broj mapa, oznaka i filtara"
+      ],
+      "Use your own email domain": [
+        "Upotrijebite vlastitu domenu e-pošte"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mjeseci"
+      ],
+      "SUMMER SALE": [
+        "LJETNA RASPRODAJA"
       ]
     },
     "Recovery Email": {
@@ -8615,6 +8704,9 @@
       "Apply gift code": [
         "Primijeni darovni kôd"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Jeste li sigurni da želite odspojiti ovu adresu?"
+      ],
       "Are you sure?": [
         "Jeste li sigurni?"
       ],
@@ -8876,6 +8968,9 @@
       "Import groups": [
         "Uvoz grupa"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Uvoz iz ${ PRODUCT_NAMES.EASY_SWITCH }a"
+      ],
       "Integrations": [
         "Integracije"
       ],
@@ -9111,6 +9206,9 @@
       ],
       "Summary": [
         "Sažetak"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
       ],
       "Switch to one-password mode": [
         "Prijeđite na način rada s jednom lozinkom"

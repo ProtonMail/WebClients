@@ -54,6 +54,7 @@ const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
                 ).t`Verify with email`}</Button>,
                 <Button onClick={onClose} disabled={loading}>{c('Recovery Email').t`Cancel`}</Button>,
             ]}
+            onClose={onClose}
             {...rest}
         >
             {c('Recovery Email')

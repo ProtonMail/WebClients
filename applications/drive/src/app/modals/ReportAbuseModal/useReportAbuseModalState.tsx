@@ -41,6 +41,10 @@ export const ABUSE_CATEGORIES = [
         getText: () => c('Label').t`Child sexual abuse material`,
     },
     {
+        type: AbuseCategoryType.NonConsensualIntimate,
+        getText: () => c('Label').t`Non-consensual intimate imagery`,
+    },
+    {
         type: AbuseCategoryType.StolenData,
         getText: () => c('Label').t`Stolen data`,
     },

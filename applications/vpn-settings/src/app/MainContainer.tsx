@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
 
@@ -65,6 +65,7 @@ import {
     TwoFactorSection,
     UnAuthenticated,
     UpgradeVpnSection,
+    UpsellModalTelemetryProvider,
     UserDropdown,
     UsernameSection,
     VpnAlsoInYourPlanSection,
@@ -88,6 +89,7 @@ import { useReferralUserEligible } from '@proton/components/containers/referral/
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
+import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useCanEnableChat } from '@proton/components/containers/zendesk/useCanEnableChat';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
@@ -101,10 +103,21 @@ import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 import { TVContainer } from '@proton/vpn/components/tv';
-import { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
+import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import { VPNSidebar } from './VPNSidebar';
 import { getRoutes } from './routes';
+
+const SettingsSearchArea = () => {
+    const { viewportWidth } = useActiveBreakpoint();
+    const adminSidebarFeature = useB2BAdminNavigation();
+
+    if (!(adminSidebarFeature.enabled && adminSidebarFeature.sidebar.status && viewportWidth['>=large'])) {
+        return null;
+    }
+
+    return <AutocompleteSettingsSearch options={adminSidebarFeature.settings} />;
+};
 
 const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
@@ -183,9 +196,6 @@ const MainContainer: FunctionComponent = () => {
     });
 
     const canEnableChat = useCanEnableChat(user);
-    const chatTags = useMemo(() => {
-        return organization?.PlanName ? [organization?.PlanName] : [];
-    }, [organization?.PlanName]);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
     const [freeUserLiveChatModal, setFreeUserLiveChatModal, renderFreeUserLiveChatModal] = useModalState();
@@ -237,9 +247,6 @@ const MainContainer: FunctionComponent = () => {
           }
         : undefined;
 
-    const navigationRef = useRef<HTMLDivElement>(null);
-    const adminSidebarFeature = useB2BAdminSidebarFeature({ navigationRef });
-
     const header = (
         <PrivateHeader
             app={app}
@@ -249,11 +256,7 @@ const MainContainer: FunctionComponent = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
-            actionArea={
-                adminSidebarFeature.enabled &&
-                adminSidebarFeature.sidebar.status &&
-                viewportWidth['>=large'] && <AutocompleteSettingsSearch options={adminSidebarFeature.settings} />
-            }
+            actionArea={<SettingsSearchArea />}
             onBoardingButton={<GetStartedOnboarding />}
         />
     );
@@ -311,179 +314,183 @@ const MainContainer: FunctionComponent = () => {
                     </UnAuthenticated>
                 </Route>
                 <Route path="*">
-                    <PrivateAppContainer
-                        top={top}
-                        header={header}
-                        sidebar={
-                            <VPNSidebar
-                                routes={vpnRoutes}
-                                organizationRoutes={organizationAppRoutes}
-                                sidebarExpanded={expanded}
-                                onSidebarToggle={onToggleExpand}
-                                adminSidebarFeature={adminSidebarFeature}
-                                navigationRef={navigationRef}
-                            />
-                        }
-                    >
-                        <Switch>
-                            {getIsSectionAvailable(vpnRoutes.dashboardV2) && (
-                                <Route path={vpnRoutes.dashboardV2.to}>
-                                    <DashboardTelemetry app={app} />
-                                    <AutomaticSubscriptionModal />
-                                    <PrivateMainSettingsArea
-                                        config={vpnRoutes.dashboardV2}
-                                        mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
-                                        style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
-                                    >
-                                        <YourPlanSectionV2 app={app} />
-                                        <YourPlanUpsellsSectionV2 app={app} />
-                                        <VPNDownloadAndInfoSection app={app} />
-                                        <VpnAlsoInYourPlanSection app={app} />
-                                        <VpnBlogSection />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(vpnRoutes.subscription) && (
-                                <Route path={vpnRoutes.subscription.to}>
-                                    <AutomaticSubscriptionModal />
-                                    <PrivateMainSettingsArea
-                                        config={vpnRoutes.subscription}
-                                        mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
-                                        style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
-                                    >
-                                        <YourPlanSectionV2
-                                            app={app}
-                                            editBillingCycle={true}
-                                            cta={<DashboardComparePlansCTA app={app} />}
-                                        />
-                                        <SubscriptionsSection />
-                                        <PaymentMethodsSection app={app} />
-                                        <CreditsSection app={app} />
-                                        <GiftCodeSection />
-                                        <InvoicesSection app={app} />
-                                        <CancelSubscriptionSection app={app} />
-                                        <DowngradeSubscriptionSection app={app} />
-                                        <CancelSubscriptionViaSupportSection />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(vpnRoutes.dashboard) && (
-                                <Route path={vpnRoutes.dashboard.to}>
-                                    <DashboardTelemetry app={app} />
-                                    <AutomaticSubscriptionModal />
-                                    <PrivateMainSettingsArea config={vpnRoutes.dashboard}>
-                                        <PlansSection app={app} />
-                                        <YourPlanSection app={app} />
-                                        <UpgradeVpnSection app={app} />
-                                        <SubscriptionsSection />
-                                        <PaymentMethodsSection app={app} />
-                                        <CreditsSection app={app} />
-                                        <GiftCodeSection />
-                                        <InvoicesSection app={app} />
-                                        <CancelSubscriptionSection app={app} />
-                                        <DowngradeSubscriptionSection app={app} />
-                                        <CancelSubscriptionViaSupportSection />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(vpnRoutes.recovery) && (
-                                <Route path={vpnRoutes.recovery.to}>
-                                    <PrivateMainSettingsArea config={vpnRoutes.recovery}>
-                                        <OverviewSection />
-                                        <AccountRecoverySection />
-                                        <DataRecoverySection />
-                                        <SessionRecoverySection />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
-                            <Route path="/account">
-                                <Redirect to={vpnRoutes.account.to} />
-                            </Route>
-                            <Route path={vpnRoutes.account.to}>
-                                <PrivateMainSettingsArea config={vpnRoutes.account}>
-                                    <>
-                                        <UsernameSection app={app} />
-                                        <PasswordsSection />
-                                    </>
-                                    <LanguageSection locales={locales} />
-                                    <TwoFactorSection />
-                                    <OpenVPNCredentialsSection />
-                                    <EmailSubscriptionSection />
-                                    <DeleteSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            <Route path={vpnRoutes.appearance.to}>
-                                <PrivateMainSettingsArea config={vpnRoutes.appearance}>
-                                    <ThemesSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            <Route path={vpnRoutes.vpnSecurity.to}>
-                                <AutomaticSubscriptionModal />
-                                <PrivateMainSettingsArea config={vpnRoutes.vpnSecurity}>
-                                    <SentinelSection app={app} />
-                                    <CredentialLeakSection />
-                                    <AuthDevicesSettings />
-                                    <SessionsSection />
-                                    <LogsSection />
-                                    <ThirdPartySection />
-                                    <PrivacySection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            <Route path={vpnRoutes.downloads.to}>
-                                <PrivateMainSettingsArea config={vpnRoutes.downloads}>
-                                    <VPNClientsSection />
-                                    <WireGuardConfigurationSection />
-                                    <OpenVPNConfigurationSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            {getIsSectionAvailable(vpnRoutes.referral) && (
-                                <Route path={vpnRoutes.referral.to}>
-                                    <ReferralPageTelemetry />
-                                    <ReferralInvitesContextProvider>
-                                        <PrivateMainSettingsArea config={vpnRoutes.referral}>
-                                            <InviteSection />
-                                            <RewardSection />
-                                        </PrivateMainSettingsArea>
-                                    </ReferralInvitesContextProvider>
-                                </Route>
-                            )}
-                            <Route path={anyOrganizationAppRoute}>
-                                <OrganizationSettingsRouter
-                                    app={app}
-                                    path=""
-                                    organizationAppRoutes={organizationAppRoutes}
-                                    redirect={redirect}
-                                    onOpenChat={openChat}
-                                    user={user}
-                                    organization={organization}
-                                    subscription={subscription}
+                    <NavigationProvider>
+                        <PrivateAppContainer
+                            top={top}
+                            header={header}
+                            sidebar={
+                                <VPNSidebar
+                                    routes={vpnRoutes}
+                                    organizationRoutes={organizationAppRoutes}
+                                    sidebarExpanded={expanded}
+                                    onSidebarToggle={onToggleExpand}
                                 />
-                            </Route>
-                            <Route path={`${CANCEL_ROUTE}`}>
-                                <CancellationReminderSection app={APPS.PROTONVPN_SETTINGS} />
-                            </Route>
-                            {redirect}
-                        </Switch>
-                        {showChat.render && canEnableChat ? (
-                            <LiveChatZendesk
-                                tags={chatTags}
-                                zendeskRef={zendeskRef}
-                                name={name || ''}
-                                email={email || ''}
-                                onLoaded={() => {
-                                    if (showChat.autoLaunch) {
-                                        zendeskRef.current?.open();
-                                    }
-                                }}
-                                onUnavailable={() => {
-                                    openAuthenticatedBugReportModal('chat-no-agents');
-                                }}
-                                locale={localeCode.replace('_', '-')}
-                            />
-                        ) : null}
-                    </PrivateAppContainer>
+                            }
+                        >
+                            <Switch>
+                                {getIsSectionAvailable(vpnRoutes.dashboardV2) && (
+                                    <Route path={vpnRoutes.dashboardV2.to}>
+                                        <DashboardTelemetry app={app} />
+                                        <AutomaticSubscriptionModal />
+                                        <UpsellModalTelemetryProvider context="account-home">
+                                            <PrivateMainSettingsArea
+                                                config={vpnRoutes.dashboardV2}
+                                                mainAreaClass="bg-lowered settings-cards"
+                                                wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+                                                style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
+                                            >
+                                                <YourPlanSectionV2 app={app} />
+                                                <YourPlanUpsellsSectionV2 app={app} />
+                                                <VPNDownloadAndInfoSection app={app} />
+                                                <VpnAlsoInYourPlanSection app={app} />
+                                                <VpnBlogSection />
+                                            </PrivateMainSettingsArea>
+                                        </UpsellModalTelemetryProvider>
+                                    </Route>
+                                )}
+                                {getIsSectionAvailable(vpnRoutes.subscription) && (
+                                    <Route path={vpnRoutes.subscription.to}>
+                                        <AutomaticSubscriptionModal />
+                                        <UpsellModalTelemetryProvider context="account-home">
+                                            <PrivateMainSettingsArea
+                                                config={vpnRoutes.subscription}
+                                                mainAreaClass="bg-lowered settings-cards"
+                                                wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+                                                style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
+                                            >
+                                                <YourPlanSectionV2
+                                                    app={app}
+                                                    editBillingCycle={true}
+                                                    cta={<DashboardComparePlansCTA app={app} />}
+                                                />
+                                                <SubscriptionsSection />
+                                                <PaymentMethodsSection app={app} />
+                                                <CreditsSection app={app} />
+                                                <GiftCodeSection />
+                                                <InvoicesSection app={app} />
+                                                <CancelSubscriptionSection app={app} />
+                                                <DowngradeSubscriptionSection app={app} />
+                                                <CancelSubscriptionViaSupportSection />
+                                            </PrivateMainSettingsArea>
+                                        </UpsellModalTelemetryProvider>
+                                    </Route>
+                                )}
+                                {getIsSectionAvailable(vpnRoutes.dashboard) && (
+                                    <Route path={vpnRoutes.dashboard.to}>
+                                        <DashboardTelemetry app={app} />
+                                        <AutomaticSubscriptionModal />
+                                        <PrivateMainSettingsArea config={vpnRoutes.dashboard}>
+                                            <PlansSection app={app} />
+                                            <YourPlanSection app={app} />
+                                            <UpgradeVpnSection app={app} />
+                                            <SubscriptionsSection />
+                                            <PaymentMethodsSection app={app} />
+                                            <CreditsSection app={app} />
+                                            <GiftCodeSection />
+                                            <InvoicesSection app={app} />
+                                            <CancelSubscriptionSection app={app} />
+                                            <DowngradeSubscriptionSection app={app} />
+                                            <CancelSubscriptionViaSupportSection />
+                                        </PrivateMainSettingsArea>
+                                    </Route>
+                                )}
+                                {getIsSectionAvailable(vpnRoutes.recovery) && (
+                                    <Route path={vpnRoutes.recovery.to}>
+                                        <PrivateMainSettingsArea config={vpnRoutes.recovery}>
+                                            <OverviewSection />
+                                            <AccountRecoverySection />
+                                            <DataRecoverySection />
+                                            <SessionRecoverySection />
+                                        </PrivateMainSettingsArea>
+                                    </Route>
+                                )}
+                                <Route path="/account">
+                                    <Redirect to={vpnRoutes.account.to} />
+                                </Route>
+                                <Route path={vpnRoutes.account.to}>
+                                    <PrivateMainSettingsArea config={vpnRoutes.account}>
+                                        <>
+                                            <UsernameSection app={app} />
+                                            <PasswordsSection />
+                                        </>
+                                        <LanguageSection locales={locales} />
+                                        <TwoFactorSection />
+                                        <OpenVPNCredentialsSection />
+                                        <EmailSubscriptionSection toggleContainerClassName="gap-4" />
+                                        <DeleteSection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                                <Route path={vpnRoutes.appearance.to}>
+                                    <PrivateMainSettingsArea config={vpnRoutes.appearance}>
+                                        <ThemesSection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                                <Route path={vpnRoutes.vpnSecurity.to}>
+                                    <AutomaticSubscriptionModal />
+                                    <PrivateMainSettingsArea config={vpnRoutes.vpnSecurity}>
+                                        <SentinelSection app={app} />
+                                        <CredentialLeakSection />
+                                        <AuthDevicesSettings />
+                                        <SessionsSection />
+                                        <LogsSection />
+                                        <ThirdPartySection />
+                                        <PrivacySection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                                <Route path={vpnRoutes.downloads.to}>
+                                    <PrivateMainSettingsArea config={vpnRoutes.downloads}>
+                                        <VPNClientsSection />
+                                        <WireGuardConfigurationSection />
+                                        <OpenVPNConfigurationSection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                                {getIsSectionAvailable(vpnRoutes.referral) && (
+                                    <Route path={vpnRoutes.referral.to}>
+                                        <ReferralPageTelemetry />
+                                        <ReferralInvitesContextProvider>
+                                            <PrivateMainSettingsArea config={vpnRoutes.referral}>
+                                                <InviteSection />
+                                                <RewardSection />
+                                            </PrivateMainSettingsArea>
+                                        </ReferralInvitesContextProvider>
+                                    </Route>
+                                )}
+                                <Route path={anyOrganizationAppRoute}>
+                                    <OrganizationSettingsRouter
+                                        app={app}
+                                        path=""
+                                        organizationAppRoutes={organizationAppRoutes}
+                                        redirect={redirect}
+                                        onOpenChat={openChat}
+                                        user={user}
+                                        organization={organization}
+                                        subscription={subscription}
+                                    />
+                                </Route>
+                                <Route path={`${CANCEL_ROUTE}`}>
+                                    <CancellationReminderSection app={APPS.PROTONVPN_SETTINGS} />
+                                </Route>
+                                {redirect}
+                            </Switch>
+                            {showChat.render && canEnableChat ? (
+                                <LiveChatZendesk
+                                    tags={getZendeskTags(user, organization)}
+                                    zendeskRef={zendeskRef}
+                                    name={name || ''}
+                                    email={email || ''}
+                                    onLoaded={() => {
+                                        if (showChat.autoLaunch) {
+                                            zendeskRef.current?.open();
+                                        }
+                                    }}
+                                    onUnavailable={() => {
+                                        openAuthenticatedBugReportModal('chat-no-agents');
+                                    }}
+                                    locale={localeCode.replace('_', '-')}
+                                />
+                            ) : null}
+                        </PrivateAppContainer>
+                    </NavigationProvider>
                 </Route>
             </Switch>
         </SubscriptionModalProvider>

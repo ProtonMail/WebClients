@@ -8,7 +8,7 @@ import { isValidPlanName } from '@proton/payments/core/type-guards';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import type { EitherOr } from '@proton/shared/lib/interfaces';
 
-import { getTestPlans } from '../data';
+import { getTestPlans } from '../data/payments/data-plans';
 
 const innerBuildSubscription = (value?: Partial<Subscription>): Subscription => {
     const Cycle = value?.Cycle ?? CYCLE.YEARLY;

@@ -1,23 +1,20 @@
-import type { Device, MaybeBookmark, MaybeNode } from '@protontech/drive-sdk';
+import type { Device, MaybeBookmark, NodeEntity } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 export function getNodeNameFallback() {
     return c('Error').t`⚠️ Undecryptable name`;
 }
 
-export function getNodeName(node: MaybeNode): string {
-    if (node.ok) {
-        return node.value.name;
+export function getNodeName(node: NodeEntity): string {
+    const name = node.name;
+    if (name.ok) {
+        return name.value;
     }
-    const maybeName = node.error.name;
-    if (maybeName.ok) {
-        return maybeName.value;
-    }
-    if (maybeName.error instanceof Error || !maybeName.error.name) {
+    if (name.error instanceof Error || !name.error.name) {
         return getNodeNameFallback();
     }
     // Invalid name can still be used to display the node.
-    return maybeName.error.name;
+    return name.error.name;
 }
 
 export function getBookmarkNodeName(bookmark: MaybeBookmark): string {

@@ -287,9 +287,6 @@
       "Create new policy": [
         "Opprett ny retningslinje"
       ],
-      "Create organization": [
-        "Opprett organisasjon"
-      ],
       "Create users": [
         "Opprett brukere"
       ],
@@ -437,6 +434,9 @@
       "Edit group": [
         "Rediger gruppe"
       ],
+      "Edit invoice details": [
+        "Rediger fakturadetaljer"
+      ],
       "Edit invoice note": [
         "Rediger fakturamerknad"
       ],
@@ -529,6 +529,9 @@
       ],
       "Get Deal": [
         "Benytt deg av tilbudet"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjelp fra ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "Ta kontakt"
@@ -640,6 +643,9 @@
       ],
       "Keep my subscription": [
         "Behold mitt abonnement"
+      ],
+      "Later": [
+        "Senere"
       ],
       "Learn about recovery options": [
         "Lær om gjenopprettingsalternativer"
@@ -904,9 +910,6 @@
       ],
       "Save": [
         "Lagre"
-      ],
-      "Save & exit": [
-        "Lagre og avslutt"
       ],
       "Save address": [
         "Lagre adresse"
@@ -1222,6 +1225,9 @@
       ],
       "Verify domain": [
         "Verifiser domene"
+      ],
+      "Verify now": [
+        "Verifiser nå"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifiser domenet ${ unverifiedSSODomain.DomainName }"
@@ -1986,20 +1992,8 @@
       ]
     },
     "BOSS": {
-      "Account connected": [
-        "Konto tilkoblet"
-      ],
-      "Account disconnected": [
-        "Konto frakoblet"
-      ],
       "Activated": [
         "Aktivert"
-      ],
-      "Add domain": [
-        "Legg til domene"
-      ],
-      "Add users": [
-        "Legg til brukere"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
@@ -2007,41 +2001,20 @@
       "All": [
         "Alle"
       ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Er du sikker på at du vil fortsette? Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
-      ],
-      "Authenticate": [
-        "Autentiser"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentiser Google Workspace-kontoen din"
-      ],
       "Calendar": [
         "Kalender"
-      ],
-      "Configure domain": [
-        "Konfigurer domene"
       ],
       "Configure migration": [
         "Konfigurer migrering"
       ],
-      "Configure your domain": [
-        "Konfigurer domenet ditt"
-      ],
       "Contacts": [
         "Kontakter"
       ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM legger til en digital signatur i hver e-post, slik at mottakerne kan bekrefte at meldingen faktisk kom fra domenet ditt og ikke ble endret underveis. Uten den kan meldinger bli behandlet som mindre pålitelige."
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
       ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC bygger på SPF og DKIM ved å fortelle mottakerserverne hvordan de skal håndtere meldinger som ikke består disse kontrollene. Det bidrar til å beskytte domenet ditt mot etterligning og forbedrer den generelle leveringspåliteligheten."
-      ],
-      "Domain added": [
-        "Domene lagt til"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Sørg for at e-postene dine havner i innboksen, ikke i søppelpostmappen. Hvis du oppdaterer SPF, kan brukere sende fra ${ BRAND_NAME } og Google samtidig under migreringen."
+      "Emails": [
+        "E-poster"
       ],
       "Errors": [
         "Feil"
@@ -2049,17 +2022,8 @@
       "Estimated size": [
         "Estimert størrelse"
       ],
-      "Failed to load OAuth": [
-        "Kunne ikke laste inn OAuth"
-      ],
       "Find out what can be migrated.": [
         "Finn ut hva som kan migreres."
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace-app for å kopiere data til ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Google Workspace-konto"
       ],
       "Has errors": [
         "Inneholder feil"
@@ -2067,33 +2031,14 @@
       "In progress": [
         "Pågår"
       ],
-      "Install app": [
-        "Installer app"
-      ],
-      "Install migration app": [
-        "Installer migreringsappen"
-      ],
-      "Loading your organization data": [
-        "Laster inn organisasjonsdataene dine"
-      ],
-      "Mail": [
-        "E-post"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
       ],
-      "Migrate from Google Workspace": [
-        "Migrer fra Google Workspace"
+      "Migrate": [
+        "Migrer"
       ],
       "Migrated": [
         "Migrert"
-      ],
-      "Migration includes": [
-        "Migrering inkluderer"
-      ],
-      "Migration started for ${ n } user": [
-        "Migrering startet for ${ n } bruker",
-        "Migrering startet for ${ n } brukere"
       ],
       "Migration status": [
         "Migreringsstatus"
@@ -2104,20 +2049,11 @@
       "Missing organization public key": [
         "Mangler offentlig nøkkel for organisasjonen"
       ],
-      "No error details available. Please contact customer support for more information": [
-        "Ingen feilinformasjon tilgjengelig. Ta kontakt med kundestøtte for mer informasjon."
-      ],
       "No users to display": [
         "Ingen brukere å vise"
       ],
       "Not activated": [
         "Ikke aktivert"
-      ],
-      "Not confirmed": [
-        "Ikke bekreftet"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Når vi har bekreftet at e-postene er sendt til ${ BRAND_NAME }, vil overføringen være fullført. Du vil motta en bekreftelses-e-post som gir deg beskjed når dette skjer. Denne prosessen kan ta opptil 24 timer."
       ],
       "Organization does not have enough seats available": [
         "Organisasjonen har ikke nok ledige lisenser"
@@ -2128,78 +2064,29 @@
       "Pending": [
         "Venter"
       ],
-      "Refresh": [
-        "Oppdater"
-      ],
-      "Select at least one user to start a migration": [
-        "Velg minst én bruker for å starte en migrering"
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
       ],
       "Select users to migrate": [
         "Velg brukere som skal migreres"
       ],
-      "Set up secure sending (DKIM)": [
-        "Konfigurer sikker sending (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Konfigurer sikker sending (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Konfigurer sikker sending (SPF)"
-      ],
-      "Settings": [
-        "Innstillinger"
-      ],
-      "Sign in to Google Workspace": [
-        "Logg på Google Workspace"
-      ],
       "Size": [
         "Størrelse"
-      ],
-      "Some accounts are not claimed": [
-        "Noen kontoer er ikke gjort krav på"
       ],
       "Status": [
         "Status"
       ],
-      "Update records for receiving": [
-        "Oppdater poster for mottak"
-      ],
       "User": [
         "Bruker"
       ],
-      "Users migrated": [
-        "Brukere migrert"
-      ],
-      "Verified": [
-        "Verifisert"
-      ],
-      "Verify installation": [
-        "Verifiser installasjon"
-      ],
-      "Verify your domain": [
-        "Verifiser domenet ditt"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifiser domenet ditt for å starte en migrering"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Vi kunne ikke bekrefte installasjonen. Sjekk at du har installert den i Google Workspace-kontoen din, og prøv på nytt."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Vi har lagt merke til at noen brukere ikke har gjort krav på ${ BRAND_NAME }-kontoene sine."
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
       ],
       "What are you migrating?": [
         "Hva migrerer du?"
       ],
       "You": [
         "Du"
-      ],
-      "You're all set!": [
-        "Nå er du klar!"
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere plasser i abonnementet ditt.",
-        "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere plasser i abonnementet ditt."
       ]
     },
     "Browser": {
@@ -2297,14 +2184,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Legg til brukere manuelt"
-      ],
       "Close": [
         "Lukk"
-      ],
-      "Configure your network": [
-        "Konfigurer nettverket ditt"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
@@ -2324,29 +2205,17 @@
       "Discover and set up features": [
         "Oppdag og konfigurer funksjoner"
       ],
-      "Invite your team": [
-        "Inviter teamet ditt"
-      ],
-      "Manage global VPN permissions": [
-        "Administrer globale VPN-tillatelser"
-      ],
       "Maybe later": [
         "Kanskje senere"
       ],
       "Remind me later": [
         "Påminn meg senere"
       ],
-      "Secure your organization": [
-        "Sikre organisasjonen din"
-      ],
       "Send": [
         "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funksjoner"
-      ],
-      "Set up SSO": [
-        "Konfigurer SSO"
       ],
       "Take a tour": [
         "Få en omvisning"
@@ -2842,6 +2711,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Kanariøyene"
       ],
       "Cape Verde": [
         "Kapp Verde"
@@ -3698,23 +3570,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Koble til CRM-en, nettstedet, skriverne dine og mer."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Opprett en gateway for å gi brukerne dine tilgang til IT-ressurser via dedikerte servere."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Opprett et Zoom-møte og legg til deltakelsesdetaljer til hendelsen din med ett klikk."
       ],
       "Create groups you can email with a single address.": [
         "Opprett grupper du kan sende e-post til med én enkelt adresse."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Opprett nye brukerkontoer eller importer brukere med SSO (enkeltpålogging) SCIM-klargjøring."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Bestem hvilke brukere som kan koble til hver av våre 120+ delte serverplasseringer."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Få enkel tilgang til e-posten og kalenderen din på datamaskin og mobil."
@@ -3755,7 +3618,7 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Alle i organisasjonen kan koble til delte tjenere i alle land."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "For en sømløs overgang til ${ BRAND_NAME }, importer dataene dine fra Google, Outlook og andre."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
@@ -3775,9 +3638,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Hvordan vi støttet lokale aktivister da personvern og ytringsfrihet ble truet."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Hvis du ikke allerede har gjort det, aktiver noen gjenopprettingsmetoder for å forsikre deg om at du aldri mister tilgang til ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
@@ -3855,9 +3715,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
       ],
@@ -3881,12 +3738,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nå sende e-poster fra ${ BRAND_NAME } ved å bruke denne adressen."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Du kan fortsatt logge på med denne adressen og koble til igjen når som helst."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Du vil ikke lenger kunne bruke ${ address.Email } til å motta og sende e-poster i ${ BRAND_NAME }. Merk også at meldinger sendt til denne adressen fra ${ BRAND_NAME } ikke lenger vil bli ende-til-ende-kryptert."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
@@ -4622,6 +4473,9 @@
       "Invalid private key file": [
         "Ugyldig privat nøkkelfil"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Ugyldig tilbakestillingstoken. Oppdater siden og prøv på nytt."
+      ],
       "Invalid VAT number": [
         "Ugyldig MVA-nummer"
       ],
@@ -4700,6 +4554,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Legg til en betalingsmåte før du reaktiverer abonnementet ditt"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Sjekk om ABN-nummeret ditt er registrert for grenseoverskridende merverdiavgift"
       ],
       "Please complete the billing details": [
         "Fyll ut faktureringsdetaljene"
@@ -4812,6 +4669,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Something went wrong while converting the address": [
+        "Noe gikk galt under konvertering av adressen"
       ],
       "Something went wrong while creating the address": [
         "Noe gikk galt ved oppretting av adressen"
@@ -4932,6 +4792,9 @@
       ],
       "Username must end with a letter or digit": [
         "Brukernavn må ende med en bokstav eller ett tall"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MVA-nummeret må starte med ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Verifisering lyktes ikke, prøv igjen om en time."
@@ -5901,9 +5764,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Beskrivelse:"
-      ],
       "Group address:": [
         "Gruppeadresse:"
       ],
@@ -5918,6 +5778,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Legg til delegerte roller i en gruppe for å gi medlemmene kun de spesifikke tillatelsene de trenger, slik at full administratorrettighet holdes separat og miljøet ditt er sikkert."
+      ],
       "General": [
         "Generelt"
       ],
@@ -6640,29 +6503,20 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importer dine eksisterende koder** fra andre 2FA-apper, som Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Trinn 1: Inviter vennene dine** til ${ BRAND_NAME } med vervekoblingen."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Trinn 2:** Vennene dine får **2 uker gratis** på planene deres."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Trinn 2:** Vennene dine får 2 uker gratis på planene deres."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Trinn 3:** Få ${ referrerRewardAmount } i kreditter for hver person som abonnerer på en plan."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Trinn 3:** Få **${ referrerRewardAmount } i kreditter** for hver person som abonnerer på en plan."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter vennene dine** til ${ BRAND_NAME } med vervekoblingen."
       ],
       "**Sync codes** to all your devices": [
         "**Synkroniser koder** til alle enhetene dine"
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i kreditter hvis de abonnerer."
+      ],
       "**This will disable 2-factor authentication.**": [
         "**Dette vil deaktivere 2-faktor-autentisering.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "** Du får ${ referrerRewardAmount }** i kreditter for hver venn som abonnerer."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } til",
@@ -7161,6 +7015,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Ikke glem dette passordet. Hvis du glemmer det vil du ikke være i stand til å håndtere organisasjonen."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Husker du passordet ditt? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Ønsker du å oppheve alle andre økter utenom den gjeldende?"
       ],
@@ -7230,6 +7087,9 @@
       ],
       "Edit email address": [
         "Rediger e-postadresse"
+      ],
+      "Editing requires permission": [
+        "Redigering krever tillatelse"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfigurasjon lagret"
@@ -7390,6 +7250,9 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brukere som bytter til ${ MAIL_APP_NAME } fra en annen e-posttjeneste, velger du ${ boldAddresses }-fanen og legger til alle aktive e-postadresser før du endrer MX-posten for å sikre en jevn overgang."
       ],
+      "Forgot password?": [
+        "Glemt passord?"
+      ],
       "Free trial": [
         "Gratis prøveperiode"
       ],
@@ -7422,9 +7285,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli varslet hvis passordet ditt eller andre personlige data ble lekket. ${ learnMoreLinkNoBreach }."
-      ],
-      "Get started": [
-        "Kom i gang"
       ],
       "Get started with the referral link above.": [
         "Kom i gang med vervekoblingen ovenfor."
@@ -7970,6 +7830,9 @@
       "Password must have:": [
         "Passordet må ha:"
       ],
+      "Password verified": [
+        "Passord bekreftet"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
       ],
@@ -7981,6 +7844,9 @@
       ],
       "per month, billed at ${ price }": [
         "per måned, fakturert til ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Ber deg med jevne mellomrom om å bekrefte ${ BRAND_NAME }-passordet ditt for å sikre at du ikke glemmer det. Du vil bli spurt sjeldnere over tid."
       ],
       "Please add a password for the user on row": [
         "Legg til et passord for brukeren på rad",
@@ -8022,6 +7888,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Velg mappene du vil importere:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Velg etikettene du vil importere:"
       ],
       "Please specify...": [
         "Vennligst spesifiser..."
@@ -8232,9 +8101,6 @@
       ],
       "Set up your organization": [
         "Konfigurer organisasjonen din"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Konfigurer organisasjonen og begynn å beskytte dataene i noen få enkle trinn."
       ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
@@ -8577,6 +8443,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "For å holde kontoen din trygg, vil vi forsikre oss om at det virkelig er du som prøver å logge på."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For å hjelpe deg med å huske passordet ditt, ber vi deg om å skrive det inn med jevne mellomrom. Vi ber deg færre ganger over tid."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
       ],
@@ -8844,6 +8713,9 @@
       "We'll notify you when the import is done.": [
         "Vi varsler deg når importen er ferdig."
       ],
+      "We'll remind you to verify your password again later": [
+        "Vi minner deg på å bekrefte passordet ditt igjen senere."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
       ],
@@ -9009,6 +8881,9 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan ikke verve ${ MAIL_APP_NAME }-brukere"
+      ],
+      "You do not have permission to create users.": [
+        "Du har ikke tillatelse til å opprette brukere."
       ],
       "You don't have any referrals.": [
         "Du har ingen vervinger."
@@ -9310,19 +9185,9 @@
         "Vis bare"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Slik vil organisasjonen vises for brukere. Du kan endre det når som helst."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Ikke en gyldig e-postadresse"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Hva er navnet på organisasjonen din?"
       ]
     },
     "invitation status": {
@@ -9576,6 +9441,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendars": [
+        "Kalendere"
+      ],
       "Card details": [
         "Kortopplysninger"
       ],
@@ -9632,9 +9500,6 @@
       ],
       "Confirm login password": [
         "Bekreft påloggingspassord"
-      ],
-      "Confirm MX records added": [
-        "Bekreft at MX-poster er lagt til"
       ],
       "Confirm new password": [
         "Bekreft nytt passord"
@@ -9753,6 +9618,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-post med @dittfirma.com-domene"
+      ],
+      "Emails": [
+        "E-poster"
       ],
       "Emails (all messages)": [
         "E-poster (alle meldinger)"
@@ -10054,6 +9922,9 @@
       "Password": [
         "Passord"
       ],
+      "Password reminders": [
+        "Passordpåminnelser"
+      ],
       "Password strength": [
         "Passordstyrke"
       ],
@@ -10167,6 +10038,9 @@
       ],
       "See your team's availability": [
         "Se teamets tilgjengelighet"
+      ],
+      "Select an identity provider to start": [
+        "Velg en identitetsleverandør for å starte"
       ],
       "Select which Gmail address to connect": [
         "Velg hvilken Gmail-adresse du vil koble til"
@@ -10390,23 +10264,6 @@
         "Legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
       ]
     },
-    "Label for domain setup": {
-      "${ capitalizedGroup } record not found": [
-        "${ capitalizedGroup }-post ikke funnet"
-      ],
-      "Host name": [
-        "Vertsnavn"
-      ],
-      "Invalid ${ group.name } record found": [
-        "Ugyldig ${ group.name }-post funnet"
-      ],
-      "Type": [
-        "Type"
-      ],
-      "Valid ${ group.name } record found": [
-        "Gyldig ${ group.name }-post funnet"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Administrator"
@@ -10467,11 +10324,6 @@
       ],
       "To: ${ to }": [
         "Til: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Velg en identitetsleverandør for å starte"
       ]
     },
     "Limit of calendars reached": {
@@ -10543,11 +10395,17 @@
       "Forgot username?": [
         "Glemt brukernavn?"
       ],
+      "Frequent sign-in problems": [
+        "Hyppige påloggingsproblemer"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "Skaff deg ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Skaff deg ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjelp fra ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grupper"
@@ -11663,6 +11521,10 @@
       "Send & receive invitations": [
         "Send & motta invitasjoner"
       ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Servere i ${ VPN_SERVERS.paid.countries }+ land",
+        "Servere i ${ VPN_SERVERS.paid.countries }+ land"
+      ],
       "Share files with no size limit": [
         "Del filer uten størrelsesbegrensning"
       ],
@@ -12315,9 +12177,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Delta i undersøkelser for å forbedre ${ BRAND_NAME }-tjenester"
-      ],
-      "Product updates": [
-        "Produktoppdateringer"
       ]
     },
     "Notification": {
@@ -12945,6 +12804,20 @@
         "Tidsbegrenset tilbud."
       ]
     },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Hvis du glemmer passordet ditt, kan du miste tilgangen til de krypterte dataene dine."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Sørg for at du husker eller lagrer passordet ditt sikkert, da det er nøkkelen til å dekryptere dataene dine."
+      ],
+      "Turn off password reminders?": [
+        "Slå av passordpåminnelser?"
+      ],
+      "Turn off reminders": [
+        "Slå av påminnelser"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Alle dine eksisterende data** (e-post, hendelser, kontakter, filer, ${ PASS_APP_NAME }-oppføringer, osv.) **vil bli låst** og kan bare låses opp med ditt **gamle passord**."
@@ -13433,9 +13306,6 @@
       "Enter a name": [
         "Skriv inn et navn"
       ],
-      "Enter name": [
-        "Skriv inn navn"
-      ],
       "example@domain.com": [
         "eksempel@domain.no"
       ],
@@ -13668,15 +13538,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Benytt deg av tilbudet"
       ],
-      "SPRING SALE 2026": [
-        "VÅRSALG 2026"
+      "Summer Sale": [
+        "Sommersalg"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/måned"
       ],
@@ -13695,35 +13565,17 @@
       "500 GB storage": [
         "500 GB lagringsplass"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Tilgang til 15 000+ servere i 120+ land"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Tilgang til avanserte KI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle premiumfunksjonene i Mail, Pass, Drive, VPN og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokker annonser, sporere og skadelig programvare"
-      ],
-      "Built-in 2FA authenticator": [
-        "Innebygd 2FA-autentisering"
-      ],
-      "Connect 10 devices at once": [
-        "Koble til 10 enheter samtidig"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Forleng abonnementet ditt og spar ${ discountPercent } %!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Full tilgang til ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Full chatlogg med enkelt søk og favoritter"
       ],
       "Individual accounts for 6 users": [
         "Individuelle kontoer for 6 brukere"
@@ -13731,8 +13583,8 @@
       "Individual accounts for you and a partner": [
         "Individuelle kontoer for deg og en partner"
       ],
-      "Online document editor": [
-        "Dokumentredigerer på nett"
+      "Online document and spreadsheet editor": [
+        "Pålogget redigeringsprogram for dokumenter og regneark"
       ],
       "Recover previous file versions": [
         "Gjenopprett tidligere filversjoner"
@@ -13743,25 +13595,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Ubegrenset antall daglige chatter"
-      ],
       "Unlimited folders, labels, and filters": [
         "Ubegrensede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "i 12 måneder"
       ],
-      "SPRING SALE": [
-        "VÅRSALG"
+      "SUMMER SALE": [
+        "SOMMERSALG"
       ]
     },
     "Recovery Email": {
@@ -13849,14 +13695,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Gi 2 uker, få ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Gi ${ refereeRewardAmount }, få ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Hvordan din gratis prøveperiode fungerer:"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Jeg har brukt ${ BRAND_NAME } og tenkte du kanskje ville like det. Det er en sikker e-post-, skylagrings-, passordbehandlings- og VPN-tjeneste som beskytter personvernet ditt. Registrer deg med denne koblingen for å få 14 dager med premiumfunksjoner gratis: ${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Jeg har brukt ${ BRAND_NAME } og tenkte du kanskje ville like det. Det er en sikker e-post-, skylagrings-, passordbehandlings- og VPN-tjeneste som beskytter personvernet ditt. Registrer deg med denne lenken for å få ${ refereeRewardAmount } i rabatt på ditt neste abonnement: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Hvis du kansellerer før den tid, vil du bli nedgradert til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveperioden er over. Hvis du ikke kansellerer, starter hele abonnementet ditt, og du får **${ referrerRewardAmount }** i kreditter."
@@ -13891,9 +13737,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Du har **${ daysRemaining } dag igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby.",
         "Du har **${ daysRemaining } dager igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Vennen din vil også få ${ refereeRewardAmount } å innløse på sin neste faktura!"
       ],
       "your subscription": [
         "abonnementet ditt"
@@ -14120,6 +13963,25 @@
       ],
       "Edit retention rule": [
         "Rediger oppbevaringsregel"
+      ]
+    },
+    "Role": {
+      "Security Admin": [
+        "Sikkerhetsadministrator"
+      ],
+      "User Admin": [
+        "Brukeradministrator"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
       ]
     },
     "Safety review": {
@@ -16027,6 +15889,12 @@
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
       ],
+      "Password reminders disabled": [
+        "Passordpåminnelser deaktivert"
+      ],
+      "Password reminders enabled": [
+        "Passordpåminnelser aktivert"
+      ],
       "Password updated": [
         "Passord oppdatert"
       ],
@@ -16617,6 +16485,9 @@
       "Connect your custom domain": [
         "Koble til ditt egendefinerte domene"
       ],
+      "Connected emails": [
+        "Tilkoblede e-poster"
+      ],
       "Connection status": [
         "Tilkoblingsstatus"
       ],
@@ -16781,9 +16652,6 @@
       "Disconnected from Gmail": [
         "Frakoblet fra Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Avvis sjekkliste for oppsett"
-      ],
       "Domain names": [
         "Domenenavn"
       ],
@@ -16944,9 +16812,6 @@
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
       ],
-      "Get started": [
-        "Kom i gang"
-      ],
       "Get the apps": [
         "Skaff deg appene"
       ],
@@ -16996,9 +16861,6 @@
       "Import contacts": [
         "Importer kontakter"
       ],
-      "Import emails, calendars, contacts": [
-        "Importer e-poster, kalendere, kontakter"
-      ],
       "Import events": [
         "Importer hendelser"
       ],
@@ -17008,8 +16870,14 @@
       "Import groups": [
         "Importer grupper"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importer dine data til ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importer"
       ],
       "Information exposed in breach": [
         "Informasjon avslørt i brudd"
@@ -17041,8 +16909,8 @@
       "Make your business stand out": [
         "Få bedriften din til å skille seg ut"
       ],
-      "Migration assistant": [
-        "Migreringsassistent"
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer organisasjonen din til ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -17094,6 +16962,9 @@
       ],
       "Open pagination": [
         "Åpne sidenummerering"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurasjonsfiler"
@@ -17405,6 +17276,9 @@
       "Summary": [
         "Sammendrag"
       ],
+      "Summer Sale": [
+        "Sommersalg"
+      ],
       "Support your compliance objectives": [
         "Støtt samsvarsmålene dine"
       ],
@@ -17434,6 +17308,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Feilsøk med ${ LUMO_SHORT_APP_NAME }"
       ],
       "Troubleshoot your issue": [
         "Feilsøk problemet ditt"
@@ -17525,6 +17402,9 @@
       "Verify it’s you": [
         "Bekreft at det er deg"
       ],
+      "Verify your password": [
+        "Bekreft passordet ditt"
+      ],
       "Verifying your card...": [
         "Verifiserer kortet ditt..."
       ],
@@ -17551,9 +17431,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Velkommen til ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "Hva endres hvis du bytter til Free-planen"
@@ -17850,8 +17727,8 @@
       "User is a group": [
         "Brukeren er en gruppe"
       ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"

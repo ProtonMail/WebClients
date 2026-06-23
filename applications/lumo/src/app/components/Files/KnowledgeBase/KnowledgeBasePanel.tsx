@@ -4,8 +4,10 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcFile } from '@proton/icons/icons/IcFile';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
@@ -26,7 +28,7 @@ import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeCo
 import { KnowledgeBaseGuestDriveUpsell } from '../../Guest/KnowledgeBaseGuestDriveUpsell';
 import { FilePreviewPanel } from '../Common/FilePreviewPanel';
 import { DriveBrowser } from '../DriveBrowser';
-import { KnowledgeBaseContextProgressBar } from './KnowledgeBaseContextProgressBar';
+import { ContextUsageBreakdown } from './ContextUsageBreakdown';
 import { KnowledgeBaseFileItem } from './KnowledgeBaseFileItem';
 
 const MEDIUM_SCREEN_BREAK = 1024;
@@ -213,7 +215,7 @@ const ManualAttachmentsSection = ({
                 <span className="color-weak text-normal">{totalManual}</span>
             </h3>
             <p className="text-xs color-weak mb-3">
-                {c('collider_2025: Info').t`Files you've added to this conversation.`}
+                {c('collider_2025: Info').t`Files included in the next model request.`}
             </p>
 
             {nonAutoRetrievedCurrentAttachments.map((attachment) => (
@@ -234,6 +236,56 @@ const ManualAttachmentsSection = ({
                     onView={onView}
                     onExclude={() => onExclude(file)}
                     isActive={true}
+                />
+            ))}
+        </div>
+    );
+};
+
+interface CompactedFilesSectionProps {
+    compactedHistoricalFiles: any[];
+    compactedAutoRetrieved: any[];
+    onView: FileViewHandler;
+}
+
+const CompactedFilesSection = ({
+    compactedHistoricalFiles,
+    compactedAutoRetrieved,
+    onView,
+}: CompactedFilesSectionProps) => {
+    const totalCompacted = compactedHistoricalFiles.length + compactedAutoRetrieved.length;
+    if (totalCompacted === 0) return null;
+
+    return (
+        <div className="mb-4 w-full">
+            <h3 className="text-sm text-bold mb-1">
+                {c('collider_2025: Info').t`Removed when chat was shortened`}{' '}
+                <span className="color-weak text-normal">{totalCompacted}</span>
+            </h3>
+            <p className="text-xs color-weak mb-3">
+                {c('collider_2025: Info')
+                    .t`These files belonged to summarized messages and are no longer sent to the model.`}
+            </p>
+
+            {compactedHistoricalFiles.map((file) => (
+                <KnowledgeBaseFileItem
+                    key={`compacted-${file.messageId}-${file.id}`}
+                    file={file}
+                    onView={onView}
+                    isActive={false}
+                    readonly
+                    showToggle={false}
+                />
+            ))}
+
+            {compactedAutoRetrieved.map((attachment) => (
+                <KnowledgeBaseFileItem
+                    key={`compacted-auto-${attachment.id}`}
+                    file={attachment}
+                    onView={onView}
+                    isActive={false}
+                    readonly
+                    showToggle={false}
                 />
             ))}
         </div>
@@ -333,7 +385,7 @@ export const KnowledgeBasePanel = ({
         notifyOnSuccess: true,
     });
 
-    const { allFiles, activeHistoricalFiles, unusedHistoricalFiles } = useFilteredFiles(
+    const { allFiles, activeHistoricalFiles, unusedHistoricalFiles, compactedHistoricalFiles } = useFilteredFiles(
         messageChain,
         currentAttachments,
         filterMessage,
@@ -343,7 +395,7 @@ export const KnowledgeBasePanel = ({
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
     const { linkedDriveFolder } = getProjectInfo(space);
 
-    const { autoRetrievedAttachments, activeAutoRetrieved, excludedAutoRetrieved } =
+    const { autoRetrievedAttachments, activeAutoRetrieved, excludedAutoRetrieved, compactedAutoRetrieved } =
         useAutoRetrievedAttachments(messageChain);
 
     const handleIncludeHistoricalFile = (file: any) => {
@@ -468,6 +520,8 @@ export const KnowledgeBasePanel = ({
         autoRetrievedAttachments.length === 0 &&
         !linkedDriveFolder;
 
+    const IndicatorIcon = showKnowledgeExplanation ? IcChevronUp : IcChevronDown;
+
     return (
         <>
             <div className={panelClassName} ref={filesContainerRef}>
@@ -543,14 +597,20 @@ export const KnowledgeBasePanel = ({
                                     />
                                 )}
 
-                            <ManualAttachmentsSection
-                                currentAttachments={currentAttachments}
-                                activeHistoricalFiles={activeHistoricalFiles}
-                                onView={handleFileClick}
-                                onViewFile={onViewFile}
-                                onRemove={(id) => dispatch(locallyDeleteAttachmentFromLocalRequest(id))}
-                                onExclude={handleExcludeHistoricalFile}
-                            />
+                                <ManualAttachmentsSection
+                                    currentAttachments={currentAttachments}
+                                    activeHistoricalFiles={activeHistoricalFiles}
+                                    onView={handleFileClick}
+                                    onViewFile={onViewFile}
+                                    onRemove={(id) => dispatch(locallyDeleteAttachmentFromLocalRequest(id))}
+                                    onExclude={handleExcludeHistoricalFile}
+                                />
+
+                                <CompactedFilesSection
+                                    compactedHistoricalFiles={compactedHistoricalFiles}
+                                    compactedAutoRetrieved={compactedAutoRetrieved}
+                                    onView={handleFileClick}
+                                />
 
                                 <ExcludedFilesSection
                                     excludedAutoRetrieved={excludedAutoRetrieved}
@@ -570,41 +630,35 @@ export const KnowledgeBasePanel = ({
                         )}
                     </div>
 
-                    {/* Context capacity info — pinned to bottom, hidden in filter mode */}
+                    {/* Context usage breakdown — pinned to bottom, hidden in filter mode */}
                     {!filterMessage && (
-                        <div
-                            className="shrink-0 mt-2 border border-weak rounded-lg overflow-hidden"
-                            style={{ height: showKnowledgeExplanation ? '8.75rem' : '5rem' }}
-                        >
-                            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                        <div className="shrink-0 mt-2 border border-weak rounded-lg overflow-hidden">
                             <button
                                 type="button"
-                                className="flex flex-row items-center gap-2 cursor-pointer p-3"
+                                className="flex flex-row items-center gap-2 cursor-pointer p-3 w-full"
                                 onClick={() => setShowKnowledgeExplanation(!showKnowledgeExplanation)}
+                                aria-expanded={showKnowledgeExplanation}
                             >
                                 <IcInfoCircle className="shrink-0 color-weak" />
-                                <h4 className="m-0 text-sm text-bold flex-1">
-                                    {c('collider_2025: Info').t`File capacity for this conversation`}
+                                <h4 className="m-0 text-sm text-bold flex-1 text-left">
+                                    {c('collider_2025: Info').t`Context usage for this conversation`}
                                 </h4>
-                                <Icon
-                                    name={showKnowledgeExplanation ? 'chevron-up' : 'chevron-down'}
-                                    size={4}
-                                    className="color-weak shrink-0"
-                                />
+                                <IndicatorIcon size={4} className="color-weak shrink-0" />
                             </button>
 
                             {showKnowledgeExplanation && (
                                 <p className="m-0 text-xs color-weak px-3 pb-2">
                                     {c('collider_2025: Info')
-                                        .t`For each conversation, ${LUMO_SHORT_APP_NAME} has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.`}
+                                        .t`${LUMO_SHORT_APP_NAME} can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.`}
                                 </p>
                             )}
 
                             <div className="px-3 pb-3">
-                                <KnowledgeBaseContextProgressBar
+                                <ContextUsageBreakdown
                                     messageChain={messageChain}
                                     contextFilters={contextFilters}
                                     currentAttachments={currentAttachments}
+                                    showDetails={showKnowledgeExplanation}
                                 />
                             </div>
                         </div>

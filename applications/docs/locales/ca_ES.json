@@ -405,6 +405,9 @@
       "Get the apps": [
         "Obtén les aplicacions"
       ],
+      "Get the deal": [
+        "Obteniu l’oferta"
+      ],
       "Get the writing assistant": [
         "Obteniu l'assistent d'escriptura"
       ],
@@ -473,6 +476,9 @@
       ],
       "Keep my subscription": [
         "Mantén la subscripció"
+      ],
+      "Later": [
+        "Més tard"
       ],
       "Learn more": [
         "Més informació"
@@ -548,6 +554,9 @@
       ],
       "New document": [
         "Nou document"
+      ],
+      "New folder": [
+        "Crea una carpeta"
       ],
       "New message": [
         "Missatge nou"
@@ -897,6 +906,9 @@
       "Verify account": [
         "Verifiqueu el compte"
       ],
+      "Verify now": [
+        "Verifiqueu-ho ara"
+      ],
       "View": [
         "Mostra"
       ],
@@ -1208,6 +1220,104 @@
         "El NetShield està dissenyat especialment per protegir els vostres dispositius i accelerar la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ]
     },
+    "BOSS": {
+      "Activated": [
+        "Activat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "All": [
+        "Tots"
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Correus electrònics"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
+      "Has errors": [
+        "Té errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "S'ha migrat"
+      ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organització no té prou llicències disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organització no té prou espai d'emmagatzematge disponible"
+      ],
+      "Pending": [
+        "Està pendent"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccioneu exactament què voleu migrar. S'aplicarà a tots els usuaris de l'organització."
+      ],
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "User": [
+        "Usuari"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
+      ],
+      "You": [
+        "Tú"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
@@ -1371,6 +1481,20 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal per ${ cycle } mes",
+        "Subtotal per ${ cycle } mesos"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total for ${ n } month": [
+        "Total per ${ n } mes",
+        "Total per ${ n } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -1731,6 +1855,9 @@
       ],
       "Canada": [
         "Canadà"
+      ],
+      "Canary Islands": [
+        "Illes Canàries"
       ],
       "Cape Verde": [
         "Cap Verd"
@@ -2522,8 +2649,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assegureu-vos que encara podeu accedir al vostre compte i a les vostres dades encara que perdeu la contrasenya del ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per a una transició sense problemes al ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i altres."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per a una incorporació fluida del vostre equip a ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i d'altres."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -2861,6 +2988,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "No s'ha pogut moure ${ failureItems.length } element",
+        "No s'han pogut moure ${ failureItems.length } elements"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
@@ -2887,6 +3018,9 @@
       ],
       "Aliases could not be loaded": [
         "No s'han pogut carregar els àlies."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
       ],
       "Already a member of this share": [
         "Ja sou membre d'aquesta compartició"
@@ -2926,6 +3060,9 @@
       ],
       "Cannot export this contact": [
         "No es pot exportar aquest contacte."
+      ],
+      "Cannot find move target": [
+        "No s'ha trobat la destinació del moviment"
       ],
       "Contact could not be saved": [
         "El contacte no pot ser desat"
@@ -2989,14 +3126,23 @@
       "Failed to copy photo to album": [
         "No s'ha pogut copiar la foto a l'àlbum."
       ],
+      "Failed to create folder": [
+        "No s'ha pogut crear la carpeta"
+      ],
       "Failed to create public share node": [
         "No s\"ha pogut crear el node de compartició públic"
+      ],
+      "Failed to expand folder": [
+        "No s'ha pogut expandir la carpeta"
       ],
       "Failed to fetch node": [
         "No s'ha pogut obtenir el node"
       ],
       "Failed to fetch sharing info": [
         "No s'ha pogut obtenir la informació de compartició"
+      ],
+      "Failed to load 'My files' folder": [
+        "No s'ha pogut carregar la carpeta «Els meus fitxers»"
       ],
       "Failed to load document details": [
         "No s'han pogut carregar els detalls del document"
@@ -3107,6 +3253,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No drive found to import": [
+        "No s'ha trobat cap unitat per importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
@@ -3115,6 +3264,9 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
@@ -3142,6 +3294,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "La càrrega de fotos està temporalment desactivada. Torneu a provar més tard."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureu un domini personalitzat abans d'afegir adreces."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureu un domini personalitzat abans d'afegir usuaris a la seva organització."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Habiliteu el suport multiusuari abans d'afegir usuaris a la vostra organització."
+      ],
       "Please enter a valid postal code": [
         "Introduïu un codi postal vàlid"
       ],
@@ -3166,6 +3327,9 @@
       ],
       "Please select a state": [
         "Seleccioneu un estat"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
       ],
       "Port is required": [
         "Es requereix el port"
@@ -3324,8 +3488,14 @@
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
       ],
+      "Unexpected error, we can't import the files": [
+        "S'ha produït un error inesperat, no podem importar els fitxers"
+      ],
       "Unknown error": [
         "Error desconegut"
+      ],
+      "Unknown location": [
+        "Ubicació desconeguda"
       ],
       "Update Too Large": [
         "L'actualització és massa gran."
@@ -3363,6 +3533,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Heu arribat al nombre límit de contactes per al vostre compte."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Heu utilitzat totes les adreces del vostre pla. Actualitzeu-lo per afegir-ne una de nova o desactiveu una adreça al vostre compte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -4320,6 +4496,10 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
+      "${ total } user found": [
+        "S'ha trobat ${ total } usuari",
+        "S'han trobat ${ total } usuaris"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat amb èxit.",
         "${ updated } contactes actualitzats amb èxit."
@@ -4337,23 +4517,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Connexió automàtica**: s'obre i es connecta a la VPN tan bon punt encengueu el dispositiu."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Interruptor de bloqueig (kill switch)**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ells reben ${ refereeRewardAmount }** en crèdits si es subscriuen."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla ${ BRAND_NAME } escollit."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } crèdits per cada amistat que es subscrigui a un pla."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -4410,6 +4584,9 @@
         "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
         "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
       ],
+      "Already in this folder": [
+        "Ja és en aquesta carpeta"
+      ],
       "an anonymous user": [
         "un usuari anònim"
       ],
@@ -4463,6 +4640,12 @@
       ],
       "Can view only": [
         "Només es pot visualitzar"
+      ],
+      "Can't move a folder into itself": [
+        "No es pot moure una carpeta dins d'ella mateixa"
+      ],
+      "Can't write into folder": [
+        "No es pot escriure a la carpeta"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i, en el procés, desactivar l'alerta."
@@ -4576,6 +4759,9 @@
       "Display word count": [
         "Mostra el nombre de paraules"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Recordeu la vostra contrasenya? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "El document és a la paperera."
       ],
@@ -4687,9 +4873,6 @@
       "Failing signatures will be re-signed by you": [
         "Tornareu a signar les signatures amb errors."
       ],
-      "Favorites": [
-        "Preferits"
-      ],
       "File \"${ name }\" was deleted during download": [
         "El fitxer «${ name }» s'ha eliminat durant la descarregada"
       ],
@@ -4701,6 +4884,9 @@
       ],
       "File will not be updated": [
         "El fitxer no s'actualitzarà"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
       ],
       "finance": [
         "finances"
@@ -4719,6 +4905,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Per a obtenir els millors resultats, eviteu activitats d'estríming i que consumeixin molta memòria o dividiu la càrrega en lots més petits."
+      ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Emmagatzematge xifrat gratuït de 5 GB per a començar"
@@ -4992,6 +5181,9 @@
       "Password must have:": [
         "La contrasenya ha de tenir:"
       ],
+      "Password verified": [
+        "S'ha verificat la contrasenya"
+      ],
       "Pending invitations": [
         "Invitacions pendents"
       ],
@@ -5024,6 +5216,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Seleccioneu les etiquetes que voleu importar:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
@@ -5094,6 +5289,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Escanegeu el codi QR amb el vostre dispositiu mòbil"
+      ],
+      "Select a destination folder": [
+        "Seleccioneu una carpeta de destinació"
       ],
       "Select a folder to move to.": [
         "Seleccioneu la carpeta de destinació."
@@ -5291,6 +5489,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
       ],
@@ -5383,6 +5584,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Us recordarem més tard que torneu a verificar la contrasenya"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
@@ -5698,6 +5902,10 @@
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caràcters"
       ],
@@ -5776,6 +5984,9 @@
       "Calendar": [
         "Calendari"
       ],
+      "Calendars": [
+        "Calendaris"
+      ],
       "can edit": [
         "es pot editar"
       ],
@@ -5845,6 +6056,9 @@
       "Download anyway": [
         "Baixa igualment"
       ],
+      "Drive": [
+        "Unitat"
+      ],
       "Duplicate found": [
         "S'ha trobat un duplicat"
       ],
@@ -5862,6 +6076,9 @@
       ],
       "Email format": [
         "Format de correu electrònic"
+      ],
+      "Emails": [
+        "Correus electrònics"
       ],
       "Emails (all messages)": [
         "Correus electrònics (tots els missatges)"
@@ -5907,6 +6124,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Aconseguiu l'oferta"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -7687,20 +7907,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "S'ha creat \"${ ellipsedName }\" correctament"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "No s'ha pogut crear \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "S'ha mogut \"${ ellipsedName }\""
+      ],
       "\"${ fileName }\" shared": [
         "S'ha compartit \"${ fileName }\""
-      ],
-      "\"${ name }\" created successfully": [
-        "S'ha creat \"${ name }\""
       ],
       "\"${ name }\" deleted": [
         "S'ha eliminat «${ name }»."
       ],
       "\"${ name }\" deleted permanently from trash": [
         "S'ha eliminat \"${ name }\" de manera permanent de la paperera"
-      ],
-      "\"${ name }\" failed to be created": [
-        "No s'ha pogut crear \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted": [
         "No s'ha pogut eliminar «${ name }»."
@@ -7728,9 +7951,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "S'ha desat \"${ name }\""
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"S'ha mogut ${ name }"
       ],
       "\"${ newName }\" failed to be renamed": [
         "No s'ha pogut canviar el nom de \"${ newName }\""
@@ -7770,6 +7990,10 @@
         "No s'ha pogut restaurar ${ numberOfItems } element de la paperera",
         "No s'han pogut restaurar ${ numberOfItems } elements de la paperera"
       ],
+      "${ numberOfItems } item moved": [
+        "S'ha mogut ${ numberOfItems } element",
+        "S'han mogut ${ numberOfItems } elements"
+      ],
       "${ numberOfItems } item moved to trash": [
         "S'ha mogut ${ numberOfItems } element a la paperera",
         "S'han mogut ${ numberOfItems } elements a la paperera"
@@ -7777,10 +8001,6 @@
       "${ numberOfItems } item restored from trash": [
         "S'ha restaurat ${ numberOfItems } element de la paperera",
         "S'han restaurat ${ numberOfItems } elements de la paperera"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "S'ha mogut ${ numberOfItems } element",
-        "S'han mogut ${ numberOfItems } elements"
       ],
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
@@ -7838,6 +8058,9 @@
       ],
       "Failed to load invitation details": [
         "No s'han pogut carregar els detalls de l'invitació."
+      ],
+      "Failed to load sharing details": [
+        "No s'han pogut carregar els detalls per compartir"
       ],
       "Failed to reject share invitation": [
         "No s'ha pogut rebutjar la invitació per a compartir."
@@ -8154,9 +8377,6 @@
       ]
     },
     "Page title": {
-      "Favorites": [
-        "Preferits"
-      ],
       "Recents": [
         "Recents"
       ],
@@ -8394,11 +8614,17 @@
       "Please describe the problem and include any error messages": [
         "Descriviu el problema i incloeu qualsevol missatge d'error"
       ],
+      "Search": [
+        "Cerca"
+      ],
       "Search for group name": [
         "Buscar per nom de grup"
       ],
       "Search for name or email": [
         "Cerca per nom o correu electrònic"
+      ],
+      "Search for users or addresses": [
+        "Cercar un usuari o adreça"
       ],
       "Search parent folder": [
         "Cerca la carpeta principal"
@@ -8516,6 +8742,78 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ],
+      "Summer Sale": [
+        "Rebaixes d'estiu"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesos"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "2 TB data storage": [
+        "2 TB d'emmagatzematge de dades"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB d'emmagatzematge: 40 vegades el vostre pla actual"
+      ],
+      "3 TB data storage": [
+        "3 TB d'emmagatzematge de dades"
+      ],
+      "500 GB storage": [
+        "500 GB d'emmagatzematge"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en els preus mensuals estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan acabi el cicle de facturació."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accés complet a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuals per a 6 usuaris"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuals per a vós i la vostra parella"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor de documents i fulls de càlcul en línia"
+      ],
+      "Recover previous file versions": [
+        "Recupereu versions anteriors dels fitxers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecció més robusta contra les ciberamenaces"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Canvieu al nostre pla anual i estalvieu ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nombre il·limitat de carpetes, etiquetes i filtres"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
+      ],
+      "SUMMER SALE": [
+        "REBAIXES D'ESTIU"
       ]
     },
     "Recent documents table header": {
@@ -9401,6 +9699,11 @@
         "La subscripció es desactivarà al final del cicle de facturació."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Per sempre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -9668,9 +9971,15 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adreça de correu electrònic",
         "${ emailsCount } adreces de correu electrònic"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperació de compte"
@@ -9741,6 +10050,9 @@
       ],
       "Collaborate on documents": [
         "Col·laboració en documents"
+      ],
+      "Computers": [
+        "Ordinadors"
       ],
       "Confirm downgrade": [
         "Confirma el pas a un pla inferior"
@@ -9836,6 +10148,9 @@
       ],
       "Desktop": [
         "Escriptori"
+      ],
+      "Devices": [
+        "Dispositius"
       ],
       "Discard": [
         "Descarta"
@@ -9970,9 +10285,6 @@
       "Import contacts": [
         "Importar contactes"
       ],
-      "Import emails, calendars, contacts": [
-        "Importeu correus, calendaris i contactes"
-      ],
       "Import events": [
         "Importar esdeveniments"
       ],
@@ -10011,6 +10323,9 @@
       ],
       "Merging contacts": [
         "Combinant contactes"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreu la vostra organització a ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minicalendari"
@@ -10162,6 +10477,9 @@
       "Share your link": [
         "Compartiu el vostre enllaç"
       ],
+      "Shared with me": [
+        "Compartit amb mi"
+      ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
       ],
@@ -10191,6 +10509,9 @@
       ],
       "Subscription canceled": [
         "S'ha cancel·lat la subscripció"
+      ],
+      "Summer Sale": [
+        "Rebaixes d'estiu"
       ],
       "The link either does not exist or has expired": [
         "L’enllaç no existeix o bé ha caducat"
@@ -10233,6 +10554,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitzeu ${ VPN_SHORT_APP_NAME } per a la privacitat de les dades"
+      ],
+      "Verify your password": [
+        "Verifiqueu la vostra contrasenya"
       ],
       "VPN explained": [
         "Explicacions sobre la VPN"
@@ -10325,6 +10649,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
+      ],
       "Load image": [
         "Carrega la imatge"
       ],
@@ -10409,6 +10736,9 @@
       ],
       "Name must not be empty": [
         "El nom no pot estar buit"
+      ],
+      "Name must not contain slashes (/)": [
+        "El nom no pot contenir barres (/)"
       ]
     },
     "Video control": {

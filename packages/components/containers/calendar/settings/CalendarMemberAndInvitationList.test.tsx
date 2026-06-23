@@ -4,7 +4,7 @@ import { mocked } from 'jest-mock';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
-import { mockNotifications } from '@proton/testing';
+import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
 import CalendarMemberAndInvitationList from './CalendarMemberAndInvitationList';
 

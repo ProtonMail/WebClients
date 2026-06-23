@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
-import type { NodeEntity, ProtonDriveClient, Revision } from '@proton/drive';
+import type { ProtonDriveClient, Revision } from '@proton/drive';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { type NormalizedNode, getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeNameFallback } from '@proton/drive/modules/nodes';
 import { useLoading } from '@proton/hooks';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
@@ -57,7 +57,7 @@ export const useRevisionsModalState = ({
     const [isLoading, withLoading] = useLoading(true);
     const [currentRevision, setCurrentRevision] = useState<Revision | undefined>(undefined);
     const [olderRevisions, setOlderRevisions] = useState<Revision[]>([]);
-    const [node, setNode] = useState<NodeEntity>();
+    const [node, setNode] = useState<NormalizedNode>();
     const [isOwner, setIsOwner] = useState<boolean>(false);
 
     const loadRevisions = async () => {
@@ -78,7 +78,7 @@ export const useRevisionsModalState = ({
         setCurrentRevision(currentRevision);
         setOlderRevisions(olderRevisions);
 
-        const rootNode = await getRootNode(node, drive);
+        const rootNode = await getRootNode(maybeNode, drive);
 
         let isDeviceRoot = false;
         // Not sending an error, if this fails it will have failed in sidebar first

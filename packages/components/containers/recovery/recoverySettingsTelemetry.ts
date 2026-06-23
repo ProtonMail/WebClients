@@ -36,6 +36,7 @@ export const useRecoverySettingsTelemetry = () => {
     const commonDimensions = {
         variant,
         app_name: appName,
+        ...(variant === 'B' && { score_banner_variant: 'B2' }),
     };
     const loading = recoveryStateLoading || securityCheckupLoading;
 

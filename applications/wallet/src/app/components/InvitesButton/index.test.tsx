@@ -2,7 +2,8 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
 
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-import { mockUseAddresses, mockUseNotifications } from '@proton/testing/lib/vitest';
+import { mockUseAddresses } from '@proton/testing/lib/vitest/mockUseAddresses';
+import { mockUseNotifications } from '@proton/testing/lib/vitest/mockUseNotifications';
 import { apiWalletAccountOneA } from '@proton/wallet/tests/fixtures';
 import {
     mockUseFlag,

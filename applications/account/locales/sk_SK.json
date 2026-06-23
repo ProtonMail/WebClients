@@ -156,6 +156,9 @@
       "Add public holidays": [
         "Pridať štátne sviatky"
       ],
+      "Add recovery options": [
+        "Pridať možnosti obnovy"
+      ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Pridať odporúčací odkaz do podpisu ${ MAIL_APP_NAME }"
       ],
@@ -260,6 +263,9 @@
       ],
       "Check import progress": [
         "Skontrolovať stav importu"
+      ],
+      "Check now": [
+        "Skontrolovať teraz"
       ],
       "Choose a file or drag it here": [
         "Vyberte súbor alebo ho sem pretiahnite"
@@ -393,6 +399,9 @@
       "Continue with this password": [
         "Pokračovať s týmto heslom"
       ],
+      "Copy": [
+        "Kopírovať"
+      ],
       "Copy address": [
         "Kopírovať adresu"
       ],
@@ -455,9 +464,6 @@
       ],
       "Create new policy": [
         "Vytvoriť novú politiku"
-      ],
-      "Create organization": [
-        "Vytvoriť organizáciu"
       ],
       "Create recovery phrase": [
         "Vytvorte obnovovaciu frázu"
@@ -939,6 +945,9 @@
       "Hide": [
         "Skryť"
       ],
+      "Hide ${ LUMO_SHORT_APP_NAME }": [
+        "Skryť ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Hide more benefits": [
         "Skryť viac výhod"
       ],
@@ -1082,6 +1091,9 @@
       ],
       "Manage labels": [
         "Spravovať štítky"
+      ],
+      "Manage migration": [
+        "Spravovať presun"
       ],
       "Manage subscription": [
         "Spravovať predplatné"
@@ -1374,6 +1386,9 @@
       "Review": [
         "Skontrolovať"
       ],
+      "Review recovery options": [
+        "Skontrolovať možnosti obnovy"
+      ],
       "Revoke": [
         "Zrušiť"
       ],
@@ -1392,7 +1407,7 @@
       "Save": [
         "Uložiť"
       ],
-      "Save & exit": [
+      "Save & finish": [
         "Uložiť a ukončiť"
       ],
       "Save address": [
@@ -1476,6 +1491,9 @@
       "Select time zone": [
         "Vyberte časové pásmo"
       ],
+      "Send": [
+        "Odoslať"
+      ],
       "send auto-reply email": [
         "odoslať automatickú odpoveď"
       ],
@@ -1532,6 +1550,9 @@
       ],
       "Set up a custom domain": [
         "Nastavte vlastnú doménu"
+      ],
+      "Set up account recovery": [
+        "Nastaviť obnovenie účtu"
       ],
       "Set up auto-forwarding from Gmail": [
         "Nastavte automatické preposielanie z Gmailu"
@@ -1590,6 +1611,9 @@
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Odhlásiť sa z ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Odhlásiť sa z ${ tokens[0].Account }"
+      ],
       "Sign out of all accounts": [
         "Odhlásiť zo všetkých účtov"
       ],
@@ -1631,6 +1655,9 @@
       ],
       "Stay": [
         "Zostať"
+      ],
+      "Stop": [
+        "Zastaviť"
       ],
       "Stop using single sign-on": [
         "Ukončiť používanie jednotného prihlásenia"
@@ -1694,6 +1721,9 @@
       ],
       "Underline": [
         "Podčiarknuť"
+      ],
+      "Undo": [
+        "Vrátiť späť"
       ],
       "Undo import": [
         "Zrušiť import"
@@ -1805,6 +1835,9 @@
       ],
       "Verify domain": [
         "Overiť doménu"
+      ],
+      "Verify now": [
+        "Overiť teraz"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Overiť doménu ${ unverifiedSSODomain.DomainName }"
@@ -1988,6 +2021,9 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "Add-on": [
+        "Doplnok"
       ],
       "Dedicated VPN servers": [
         "Dedikované VPN servery"
@@ -2480,145 +2516,12 @@
         "Ponuka je nedostupná"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } úložisko"
-      ],
-      "1 user account": [
-        "1 používateľský účet"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB úložisko: 40x váš súčasný plán"
-      ],
-      "6 user accounts": [
-        "6 používateľských účtov"
-      ],
-      "Admin panel to manage your family": [
-        "Panel správcu pre správu vašej rodiny"
-      ],
-      "Advanced account protection": [
-        "Pokročilá ochrana účtu"
-      ],
-      "Easily add or remove users": [
-        "Jednoduché pridanie alebo odstránenie používateľov"
-      ],
-      "One-time payment, lifetime deal": [
-        "Jednorazová platba, doživotný prístup"
-      ],
-      "Online document editor": [
-        "Online editor dokumentov"
-      ],
-      "Password health alerts": [
-        "Upozornenia na zdravie hesla"
-      ],
-      "Recover previous file versions": [
-        "Obnovte predchádzajúce verzie súborov"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Neobmedzený počet priečinkov, štítkov a filtrov"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Neobmedzené prihlásenia, hide-my-email aliasy a oveľa viac"
-      ],
       "Use your own email domain": [
         "Používajte vlastnú emailovú doménu"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Účtovaná suma ${ amount } jednorazovo"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Obnoví sa po 1 mesiaci za ${ regularAmount }."
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Prístup k zablokovanému obsahu a súkromné prehliadanie. Zahŕňa viac ako 8 500 serverov vo viac ako 110 krajinách, 10 zariadení, vysokorýchlostné streamovanie, blokovanie reklám a ochranu pred malvérom, VPN Accelerator a ďalšie."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Zabezpečené prihlasovanie na všetkých zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, ${ DARK_WEB_MONITORING_NAME } a ďalšie funkcie."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa online editor dokumentov, zálohu fotografií, históriu verzií, zdieľanie zašifrovaných súborov a ďalšie."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB úložisko dát"
-      ],
-      "3 TB data storage": [
-        "3 TB úložisko dát"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Pristupujte k 15 000+ serverom vo viac ako 120 krajinách"
-      ],
-      "Access advanced AI models": [
-        "Prístup k pokročilým modelom AI"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všetky prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokujte reklamy, sledovače a malvér"
-      ],
-      "Built-in 2FA authenticator": [
-        "Zabudovaný 2FA autentifikátor"
-      ],
-      "Connect 10 devices at once": [
-        "Pripojte 10 zariadení naraz"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Úplná história chatu s jednoduchým vyhľadávaním a obľúbenými položkami"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuálne účty pre 6 používateľov"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuálne účty pre vás a partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silnejšia ochrana pred kybernetickými hrozbami"
-      ],
-      "Unlimited daily chats": [
-        "Neobmedzené denné chaty"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
       ]
     },
     "Billing cycle": {
@@ -2934,17 +2837,23 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } z ${ totalCount }"
+      ],
       "Account connected": [
         "Účet je pripojený"
       ],
       "Account disconnected": [
         "Účet odpojený"
       ],
+      "Accounts migrated": [
+        "Migrované účty"
+      ],
       "Activated": [
         "Aktivované"
-      ],
-      "Add a domain": [
-        "Pridať doménu"
       ],
       "Add domain": [
         "Pridať doménu"
@@ -2952,8 +2861,8 @@
       "Add users": [
         "Pridať používateľov"
       ],
-      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
-        "Pridajte používateľov a ručne nakonfigurujte svoju doménu na odosielanie a prijímanie emailov. Ideálne pre malé tímy, ktoré začínajú od nuly."
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Pridajte emailovú doménu vašej organizácie do ${ BRAND_NAME }."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
@@ -2961,14 +2870,17 @@
       "All": [
         "Všetko"
       ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Všetky presunuté používateľské účty sú pripravené na pozvanie do vašej organizácie ${ BRAND_NAME }."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Došlo k neznámej chybe. Obnovte stránku a skúste to znovu, prosím."
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Naozaj chcete pokračovať? Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
       ],
       "Authenticate": [
         "Autentifikovať"
-      ],
-      "Authenticate to Google Workspace": [
-        "Prihláste sa do služby Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Overte svoj účet Google Workspace"
@@ -2976,14 +2888,11 @@
       "Calendar": [
         "Kalendár"
       ],
-      "Change": [
-        "Zmeniť"
+      "Collapse invitation message": [
+        "Zatvoriť text pozvánky"
       ],
-      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
-        "Vyberte si, ako chcete preniesť svoj tím a nastavenia emailu do ${ BRAND_NAME }."
-      ],
-      "Configure": [
-        "Konfigurovať"
+      "Collapse step": [
+        "Zbaliť krok"
       ],
       "Configure domain": [
         "Nakonfigurovať doménu"
@@ -2991,14 +2900,29 @@
       "Configure migration": [
         "Nastaviť migráciu"
       ],
+      "Configure users": [
+        "Nastaviť používateľov"
+      ],
       "Configure your domain": [
         "Nakonfigurujte si doménu"
+      ],
+      "Confirm": [
+        "Potvrdiť"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Ak chcete začať s presunom, kontaktujte svojho správcu."
       ],
       "Contacts": [
         "Kontakty"
       ],
-      "Continue migration": [
-        "Pokračovanie v presune"
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Skopírujte nasledujúci kód a vložte ho do sekcie DNS u vášho poskytovateľa doménových služieb."
+      ],
+      "Creating accounts": [
+        "Vytváranie účtov"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM pridáva ku každému emailu digitálny podpis, vďaka čomu si príjemcovia môžu overiť, že správa skutočne pochádza z vašej domény a nebola počas prenosu pozmenená. Bez neho môžu byť správy považované za menej dôveryhodné."
@@ -3009,6 +2933,15 @@
       "Domain added": [
         "Doména pridaná"
       ],
+      "Domain provider": [
+        "Poskytovateľ domény"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Neviete, kde začať? Pozrite si, ako aktualizovať svoje DNS na ${ registrarLink }"
+      ],
+      "Emails": [
+        "Emaily"
+      ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Uistite sa, že vaše emaily prichádzajú do doručenej pošty a nie do priečinka so spamom. Aktualizáciou SPF umožníte používateľom počas migrácie odosielať správy súčasne z adresy ${ BRAND_NAME } aj z adresy Google."
       ],
@@ -3018,20 +2951,29 @@
       "Estimated size": [
         "Odhadovaná veľkosť"
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Všetci dostanú rovnaký pozývací odkaz. Navštívia stránku, zadajú svoj email a do ich Gmailovej schránky dorazí overovací kód. Na základe toho si nastavia heslo pre ${ BRAND_NAME }."
+      ],
+      "Expand invitation message": [
+        "Otvoriť text pozvánky"
+      ],
+      "Expand step": [
+        "Rozbaliť krok"
+      ],
       "Failed to load OAuth": [
         "Nepodarilo sa načítať OAuth"
       ],
-      "Finalize your migration": [
-        "Dokončite váš presun"
+      "Final step": [
+        "Posledný krok"
       ],
       "Find out what can be migrated.": [
         "Zistite, čo je možné preniesť."
       ],
-      "Finish setting up your business account": [
-        "Dokončite nastavenie vášho firemného účtu"
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Pomoc a užitočné tipy pre iných poskytovateľov domén nájdete ${ here }"
       ],
-      "Go to Domain names": [
-        "Prejsť k názvom domén"
+      "Going private": [
+        "Prechod do súkromia"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplikácia Google Marketplace na kopírovanie údajov do ${ BRAND_NAME }"
@@ -3042,6 +2984,12 @@
       "Has errors": [
         "Má chyby"
       ],
+      "Import completed successfully": [
+        "Import bol úspešne dokončený"
+      ],
+      "Import details": [
+        "Podrobnosti o importe"
+      ],
       "In progress": [
         "Prebieha"
       ],
@@ -3051,8 +2999,17 @@
       "Install migration app": [
         "Inštalovať migračnú aplikáciu"
       ],
-      "Install Migration assistant": [
-        "Nainštalovať asistenta pre presun"
+      "Invitation link": [
+        "Pozývací odkaz"
+      ],
+      "Invitation message": [
+        "Text pozvánky"
+      ],
+      "invite link": [
+        "pozývací odkaz"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Tieto zmeny sa môžu prejaviť až do 24 hodín."
       ],
       "Loading your organization data": [
         "Načítavanie údajov vašej organizácie"
@@ -3063,14 +3020,23 @@
       "Member address not found. Please contact customer support to resolve this": [
         "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
       ],
+      "Migrate": [
+        "Migrovať"
+      ],
+      "Migrate accounts": [
+        "Migrovať účty"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Preneste účty do ${ BRAND_NAME }"
+      ],
       "Migrate from Google Workspace": [
         "Migrovať z Google Workspace"
       ],
-      "Migrate users to ${ BRAND_NAME }": [
-        "Presuňte používateľov do ${ BRAND_NAME }"
-      ],
       "Migrated": [
         "Presunuté"
+      ],
+      "Migrated accounts": [
+        "Migrované účty"
       ],
       "Migration includes": [
         "Migrácia zahŕňa"
@@ -3084,14 +3050,17 @@
       "Migration status": [
         "Stav migrácie"
       ],
+      "Migration summary": [
+        "Súhrn informácií o migrácii"
+      ],
       "Missing organization private key": [
         "Chýba súkromný kľúč organizácie"
       ],
       "Missing organization public key": [
         "Chýba verejný kľúč organizácie"
       ],
-      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
-        "Preneste svojich používateľov, emaily a nastavenia z Google Workspace automaticky. Pomôžeme vám s pripojením účtu, overením domény a bezpečnou migráciou používateľov."
+      "Need help?": [
+        "Potrebujete pomoc?"
       ],
       "No error details available. Please contact customer support for more information": [
         "Podrobnosti o chybe nie sú k dispozícii. Pre viac informácií kontaktujte zákaznícku podporu."
@@ -3105,6 +3074,12 @@
       "Not confirmed": [
         "Nepotvrdené"
       ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Nenašlo sa to správne? Vyberte si svojho poskytovateľa zo zoznamu."
+      ],
+      "Onboard your team": [
+        "Zapojte svoj tím"
+      ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Akonáhle overíme, že emaily sú smerované na ${ BRAND_NAME }, migrácia bude dokončená. Po dokončení tohto procesu dostanete potvrdzovací email. Tento proces môže trvať až 24 hodín."
       ],
@@ -3117,26 +3092,26 @@
       "Pending": [
         "Čakajúce"
       ],
+      "Please don’t close or refresh this window.": [
+        "Nezatvárajte ani neobnovujte toto okno, prosím."
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Znovu sa prihláste do svojho účtu Google Workspace, aby ste mohli začať s migráciou"
+      ],
       "Refresh": [
         "Obnoviť"
-      ],
-      "Required to create user accounts": [
-        "Potrebné na vytvorenie používateľských účtov"
       ],
       "Select at least one user to start a migration": [
         "Pre spustenie migrácie vyberte aspoň jedného používateľa"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Vyberte účty, ktoré chcete preniesť do ${ BRAND_NAME }. Môžete preniesť celú svoju organizáciu hneď dnes, alebo začať v menšom rozsahu a zvyšok preniesť neskôr, keď budete pripravení."
+      ],
       "Select users to migrate": [
         "Vyberte používateľov na presun"
-      ],
-      "Set up": [
-        "Nastaviť"
-      ],
-      "Set up billing information": [
-        "Nastaviť fakturačné údaje"
-      ],
-      "Set up manually": [
-        "Nastaviť ručne"
       ],
       "Set up secure sending (DKIM)": [
         "Nastavte bezpečné odosielanie (DKIM)"
@@ -3147,26 +3122,47 @@
       "Set up secure sending (SPF)": [
         "Nastavte bezpečné odosielanie (SPF)"
       ],
-      "Set up two-factor authentication": [
-        "Nastaviť dvojfaktorové overenie"
-      ],
       "Settings": [
         "Nastavenia"
       ],
       "Sign in to Google Workspace": [
         "Prihlásiť sa do Google Workspace"
       ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Prihláste sa pomocou účtu správcu služby Google Workspace pre ${ BRAND_NAME } a nastavte migráciu."
+      ],
       "Size": [
         "Veľkosť"
+      ],
+      "Skip": [
+        "Preskočiť"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Vynechaný ${ count } kontakt z dôvodu nekompatibility",
+        "Vynechané ${ count } kontakty z dôvodu nekompatibility",
+        "Vynechaných ${ count } kontaktov z dôvodu nekompatibility",
+        "Vynechaných ${ count } kontaktov z dôvodu nekompatibility"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Vynechaný ${ count } email z dôvodu nekompatibility",
+        "Vynechané ${ count } emaily z dôvodu nekompatibility",
+        "Vynechaných ${ count } emailov z dôvodu nekompatibility",
+        "Vynechaných ${ count } emailov z dôvodu nekompatibility"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Vynechaná ${ count } udalosť z dôvodu nekompatibility",
+        "Vynechané ${ count } udalosti z dôvodu nekompatibility",
+        "Vynechaných ${ count } udalostí z dôvodu nekompatibility",
+        "Vynechaných ${ count } udalostí z dôvodu nekompatibility"
       ],
       "Some accounts are not claimed": [
         "Niektoré účty neboli prevzaté"
       ],
-      "Start migration": [
-        "Spustiť migráciu"
-      ],
       "Status": [
         "Stav"
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Ak chcete preniesť dáta vašej organizácie do ${ BRAND_NAME }, nainštalujte si aplikáciu ${ BRAND_NAME } Easy Switch z obchodu Google Workspace Marketplace. Po inštalácii sa vráťte sem a pokračujte."
       ],
       "Update records for receiving": [
         "Aktualizovať záznamy o príjme"
@@ -3174,14 +3170,20 @@
       "User": [
         "Používateľ"
       ],
+      "Users activated": [
+        "Aktivovaní používatelia"
+      ],
       "Users migrated": [
         "Používatelia zmigrovaní"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
+      ],
       "Verified": [
         "Overené"
-      ],
-      "Verify domain ownership": [
-        "Overte vlastníctvo domény"
       ],
       "Verify installation": [
         "Overiť inštaláciu"
@@ -3192,11 +3194,23 @@
       "Verify your domain to start a migration": [
         "Overte vašu doménu pre spustenie migrácie"
       ],
+      "Waiting for MX...": [
+        "Čakám na MX..."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Inštaláciu sa nám nepodarilo overiť. Skontrolujte, či ste ju nainštalovali do svojho účtu Google Workspace, a skúste to znova."
       ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Prechádzame na ${ BRAND_NAME }, bezpečnú emailovú službu.\nVáš účet na ${ BRAND_NAME } je pripravený na aktiváciu.\nKliknite na odkaz ${ inviteLink }.\nZadajte svoju emailovú adresu a my vám pošleme kód na váš Gmail.\nPomocou neho si nastavte heslo – a účet na ${ BRAND_NAME } je váš.\nEšte chvíľu budú obe služby fungovať súbežne. ${ BRAND_NAME } a Gmail.\nPotom, keď všetci prejdú na novú službu, Gmail ukončíme. Predtým vám to pripomenieme."
+      ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Zistili sme, že niektorí používatelia si ešte neaktivovali svoje ${ BRAND_NAME } účty."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Práve vytvárame vaše účty a importujeme vaše údaje, aby mal váš tím k dispozícii všetko potrebné, keď začne používať svoj zabezpečený účet ${ BRAND_NAME }."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Aktivujeme end-to-end šifrovanie pre všetkých. Každý email, každá udalosť je teraz len vaša. Vidí ich len váš tím. Ani my, ani nikto iný."
       ],
       "What are you migrating?": [
         "Čo migrujete?"
@@ -3206,6 +3220,9 @@
       ],
       "You're all set!": [
         "Všetko je pripravené!"
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Už to máte takmer hotové, stačí nastaviť doménu tak, aby ste emaily dostávali priamo na ${ BRAND_NAME }. Po potvrdení prestane váš tím dostávať nové emaily v Gmaile a migrácia bude dokončená."
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Váš súčasný plán umožňuje ${ maxMembers } používateľa. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
@@ -3319,17 +3336,11 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Pridať používateľov manuálne"
-      ],
       "Cancel": [
         "Zrušiť"
       ],
       "Close": [
         "Zavrieť"
-      ],
-      "Configure your network": [
-        "Nakonfigurujte svoju sieť"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
@@ -3352,12 +3363,6 @@
       "Got it": [
         "Rozumiem"
       ],
-      "Invite your team": [
-        "Pozvite váš tím"
-      ],
-      "Manage global VPN permissions": [
-        "Správa globálnych oprávnení VPN"
-      ],
       "Maybe later": [
         "Možno neskôr"
       ],
@@ -3367,17 +3372,11 @@
       "Remind me later": [
         "Pripomenúť neskôr"
       ],
-      "Secure your organization": [
-        "Zabezpečte svoju organizáciu"
-      ],
       "Send": [
         "Odoslať"
       ],
       "Set up other features": [
         "Nastaviť ďalšie funkcie"
-      ],
-      "Set up SSO": [
-        "Nastaviť SSO"
       ],
       "Sign in": [
         "Prihlásiť sa"
@@ -4280,6 +4279,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanárske ostrovy"
       ],
       "Cape Verde": [
         "Kapverdy"
@@ -5266,9 +5268,6 @@
       "Connect your CRM, website, printers, and more.": [
         "Pripojte svoj CRM, webovú stránku, tlačiarne a ďalšie."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Vytvorte bránu, aby vaši používatelia mali prístup k vašim IT zdrojom prostredníctvom vyhradených serverov."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Vytvorte Zoom stretnutie a jedným kliknutím pridajte podrobnosti o pripojení k udalosti."
       ],
@@ -5278,14 +5277,8 @@
       "Create groups you can email with a single address.": [
         "Vytvorte skupiny, ktorým môžete posielať emaily pomocou jednej adresy."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Vytvorte nové používateľské účty alebo importujte používateľov pomocou SSO (jednotného prihlásenia) SCIM provisioningu."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvorte pravidlá na určenie toho, kto sa môže pripojiť k zdieľaným serverom v jednotlivých krajinách."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Rozhodnite, ktorí používatelia sa môžu pripojiť ku každej z našich viac ako 120 zdieľaných serverových lokalít."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Získajte jednoduchý prístup k svojmu emailu a kalendáru v počítači aj v mobile."
@@ -5326,8 +5319,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Každý člen vašej organizácie sa môže pripojiť k zdieľaným serverom vo všetkých krajinách."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Ak chcete plynule prejsť na ${ BRAND_NAME }, importujte svoje údaje z aplikácií Google, Outlook a ďalších."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Aby sa váš tím bez problémov zapojil do ${ BRAND_NAME }, importujte svoje údaje z Google, Outlooku a ďalších zdrojov."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
@@ -5349,9 +5342,6 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Ako odomknúť zašifrované údaje v prípade straty hesla."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Ak ste tak ešte neurobili, povoľte niektoré metódy obnovy, aby ste sa uistili, že nikdy nestratíte prístup k ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
@@ -5455,9 +5445,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Načítame vaše staré emaily a prepojíme váš Gmail s aplikáciou ${ MAIL_APP_NAME }, aby sa nové správy zobrazovali automaticky"
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
       ],
@@ -5490,12 +5477,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Stále sa môžete prihlásiť pomocou tejto adresy a kedykoľvek sa znova pripojiť."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Na prijímanie a odosielanie emailov v službe ${ BRAND_NAME } už nebudete môcť používať adresu ${ address.Email }. Upozorňujeme tiež, že správy odosielané na túto adresu zo služby ${ BRAND_NAME } už nebudú end-to-end šifrované."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Preposielate ${ numAddressesOrSync } Gmailovú adresu do aplikácie ${ MAIL_APP_NAME }.",
@@ -5909,14 +5890,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Riešenia šité na mieru pre väčšie organizácie s vlastnými potrebami"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Rozšírená história verzií"
-      ],
-      "Priority support": [
-        "Prioritná podpora"
       ]
     },
     "Duo offer": {
@@ -7298,6 +7271,9 @@
       "Invalid private key file": [
         "Neplatný súbor súkromného kľúča"
       ],
+      "Invalid reset token. Please refresh the page and try again.": [
+        "Neplatný token na obnovenie. Obnovte stránku a skúste to znova, prosím."
+      ],
       "Invalid Sieve code": [
         "Neplatný Sieve kód"
       ],
@@ -7543,6 +7519,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Something went wrong while converting the address": [
+        "Pri prevode adresy došlo k chybe"
       ],
       "Something went wrong while creating the address": [
         "Pri vytváraní adresy došlo k chybe"
@@ -8098,19 +8077,9 @@
         "Môžete si uložiť ICS súbor udalostí, ktoré boli úspešne exportované."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB celkového úložiska"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Výhody vášho účtu"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Úložný priestor zdieľajú všetci členovia rodiny medzi aplikáciami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -8143,11 +8112,6 @@
       ],
       "View invitation": [
         "Zobraziť pozvánku"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Až 6 používateľov"
       ]
     },
     "familyOffer_2023:Error": {
@@ -8412,17 +8376,6 @@
       ],
       "Set family name": [
         "Nastaviť meno rodiny"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahŕňa 2700 serverov v 65+ krajinách, pripojenie až 10 zariadení, prístup k streamovacím službám z celého sveta, blokovanie malvéru a reklám a ďalšie funkcie."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Zahŕňa podporu pre 3 vlastné emailové domény, 90 emailových adries, neobmedzený počet hide-my-email aliasov, zdieľanie kalendára a ďalšie."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
     "Feature": {
@@ -8998,9 +8951,6 @@
       ]
     },
     "Group detail label": {
-      "Description:": [
-        "Popis:"
-      ],
       "Group address:": [
         "Skupinová adresa:"
       ],
@@ -9068,6 +9018,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Pridajte do skupiny delegované pozície, aby ste jej členom udelili len konkrétne oprávnenia, ktoré potrebujú, čím zachováte oddelenie práv správcu s plnými oprávneniami a zabezpečíte svoje prostredie."
+      ],
       "General": [
         "Všeobecné"
       ],
@@ -9665,8 +9618,14 @@
       "Imported": [
         "Importované"
       ],
+      "In progress": [
+        "Prebieha"
+      ],
       "In progress...": [
         "Pracujem..."
+      ],
+      "Migrated": [
+        "Presunuté"
       ],
       "Paused": [
         "Pozastavené"
@@ -9684,6 +9643,9 @@
       ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Mail": [
         "Pošta"
@@ -9817,6 +9779,12 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } používateľ musí prijať pozvánku, aby mohol začať dostávať skupinové emaily.",
+        "${ invitedMemberCount } používatelia musia prijať pozvánku, aby mohli začať dostávať skupinové emaily.",
+        "${ invitedMemberCount } používateľov musí prijať pozvánku, aby mohli začať dostávať skupinové emaily.",
+        "${ invitedMemberCount } používateľov musí prijať pozvánku, aby mohli začať dostávať skupinové emaily."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
       ],
@@ -9900,6 +9868,12 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } doživotná služba nemá cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }. Cena a dátum obnovenia vášho predplatného ${ planTitle } zostávajú nezmenené."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "Na schválenie čaká ${ pendingAdminMemberCount } nový člen pridaný prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čakajú ${ pendingAdminMemberCount } noví členovia pridaní prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čaká ${ pendingAdminMemberCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čaká ${ pendingAdminMemberCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
@@ -10075,32 +10049,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importujte svoje existujúce kódy** z iných 2FA aplikácií, ako je Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1: Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1:** Pozvite svojich priateľov do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Krok 2:** Vaši priatelia získajú **2 týždne zadarmo** v rámci svojho plánu."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Krok 2:** Vaši priatelia získajú 2 týždne zadarmo v rámci svojho plánu."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Krok 3:** Získajte ${ referrerRewardAmount } v kreditoch za každú osobu, ktorá si predplatí plán."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Krok 3:** Získajte **${ referrerRewardAmount } v kreditoch** za každú osobu, ktorá si predplatí plán."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
       ],
       "**Sync codes** to all your devices": [
         "**Synchronizovať kódy** do všetkých vašich zariadení"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "Ak sa prihlásia k odberu, získajú **${ refereeRewardAmount }** kreditov."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Týmto sa deaktivuje dvojfaktorové overovanie.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Týmto sa deaktivuje end-to-end šifrované preposielanie emailov:** môžete ich neskôr znovu nastaviť."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "Za každého priateľa, ktorý sa prihlási k odberu, získate kredit v hodnote **${ referrerRewardAmount }**."
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Samotný email na obnovenie hesla vám neumožňuje obnoviť zašifrované údaje** po resetovaní hesla."
@@ -10867,6 +10832,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Toto heslo NEZABUDNITE. Bez neho nebudete môcť spravovať svoju organizáciu."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamätáte si svoje heslo? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušiť všetky ostatné relácie okrem tejto?"
       ],
@@ -10950,6 +10918,9 @@
       ],
       "Edit link": [
         "Upraviť odkaz"
+      ],
+      "Editing requires permission": [
+        "Na úpravu je potrebné povolenie"
       ],
       "eduGAIN configuration saved": [
         "konfigurácia eduGAIN uložená"
@@ -11185,6 +11156,9 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
       ],
+      "Forgot password?": [
+        "Zabudli ste heslo?"
+      ],
       "Free forever": [
         "Navždy zadarmo"
       ],
@@ -11236,9 +11210,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Nechajte sa upozorniť, ak dôjde k úniku vášho hesla alebo iných osobných údajov. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Začíname"
-      ],
       "Get started with the referral link above.": [
         "Začnite s odporúčacím odkazom vyššie."
       ],
@@ -11280,6 +11251,9 @@
       ],
       "here": [
         "tu"
+      ],
+      "Hi! Describe the filter you want and I'll write the Sieve script. I can also tweak whatever is already in the editor.": [
+        "Ahoj! Opíšte mi, aký filter potrebujete, a ja napíšem skript pre Sieve. Môžem tiež vylepšiť čokoľvek, čo už je v editore."
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skryje identifikačné informácie načítaním vzdialeného obsahu cez proxy server. Možnosť ukladať obsah ako prílohy."
@@ -11788,6 +11762,9 @@
       "New activity data will stop being collected and shown.": [
         "Nové údaje o aktivite sa prestanú zhromažďovať a zobrazovať."
       ],
+      "New group created via your identity provider and pending review.": [
+        "Prostredníctvom vášho poskytovateľa identít bola vytvorená nová skupina a čaká na schválenie."
+      ],
       "New sidebar": [
         "Nový bočný panel"
       ],
@@ -11998,6 +11975,9 @@
       "Password must have:": [
         "Heslo musí obsahovať:"
       ],
+      "Password verified": [
+        "Heslo overené"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
       ],
@@ -12009,6 +11989,9 @@
       ],
       "per month, billed at ${ price }": [
         "mesačne, účtované ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Systém vás bude pravidelne vyzývať, aby ste si overili heslo k službe ${ BRAND_NAME }, aby ste ho nezabudli. Časom sa táto výzva bude zobrazovať čoraz menej často."
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Klienti PGP pravdepodobne automaticky rozpoznajú vaše PGP kľúče, pokiaľ sú odchádzajúce správy podpísané."
@@ -12075,6 +12058,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Vyberte priečinky, ktoré chcete importovať:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, ktoré chcete importovať:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Vyberte typ odkazu, ktorý chcete vložiť a vyplňte všetky polia, prosím."
@@ -12229,6 +12215,9 @@
       "Request a phone call": [
         "Požiadať o telefonický hovor"
       ],
+      "Required to complete the migration": [
+        "Potrebné na dokončenie migrácie"
+      ],
       "Resend verification email": [
         "Znovu zaslať overovací email"
       ],
@@ -12330,9 +12319,6 @@
       ],
       "Set up your organization": [
         "Nastavte svoju organizáciu"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Nastavte svoju organizáciu a začnite chrániť svoje údaje v niekoľkých jednoduchých krokoch."
       ],
       "Setting successfully saved": [
         "Nastavenie bolo úspešne uložené"
@@ -12652,6 +12638,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Tieto prihlasovacie údaje nie je možné použiť na prihlásenie do našich oficiálnych aplikácií ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "Thinking…": [
+        "Premýšľam…"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet bol zablokovaný kvôli možnému porušeniu pravidiel."
       ],
@@ -12846,6 +12835,9 @@
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Aby sme pomohli udržať váš účet v bezpečí, chceme sa uistiť, že ste to naozaj vy, kto sa prihlasuje."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Aby sme vám pomohli nezabudnúť heslo, budeme vás pravidelne žiadať o jeho zadanie. Časom vás o to budeme žiadať čoraz menej."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Ak chcete importovať udalosti, najprv vytvorte kalendár v ${ CALENDAR_APP_NAME }. Po importe sa tu zobrazia udalosti."
@@ -13180,6 +13172,9 @@
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovať."
       ],
+      "We'll remind you to verify your password again later": [
+        "Neskôr vám pripomenieme, aby ste si heslo overili ešte raz"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Na adresu ${ strong } pošleme nový overovací kód"
       ],
@@ -13416,6 +13411,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili ste metódu obnovenia, takže obnovenie konta nebude možné, ak zabudnete heslo. Pokračovať bez metódy obnovy?"
+      ],
+      "You do not have permission to create users.": [
+        "Nemáte oprávnenie na vytváranie používateľov."
       ],
       "You do not have permission to perform this action": [
         "Na vykonanie tejto akcie nemáte oprávnenie"
@@ -13807,11 +13805,6 @@
         "Iba zobrazenie"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Takto sa vaša organizácia zobrazí používateľom. Môžete to kedykoľvek zmeniť."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Neplatná emailová adresa"
@@ -13825,11 +13818,6 @@
     "Input placeholder": {
       "Add label": [
         "Pridať štítok"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Ako sa nazýva vaša organizácia?"
       ]
     },
     "invitation status": {
@@ -14182,6 +14170,16 @@
         "Týždenný prehľad"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Prepnúť do ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Prepnúť do ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Skratky činností"
@@ -14194,6 +14192,9 @@
       ],
       "Composer shortcuts": [
         "Editor skratiek"
+      ],
+      "Desktop app navigation": [
+        "Navigácia v desktopovej aplikácii"
       ],
       "Folder shortcuts": [
         "Skratky priečinkov"
@@ -14633,6 +14634,9 @@
       "Calendar": [
         "Kalendár"
       ],
+      "Calendars": [
+        "Kalendáre"
+      ],
       "Capitalize words": [
         "Slová veľkými písmenami"
       ],
@@ -14885,6 +14889,9 @@
       "Donation amount": [
         "Výška daru"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duration": [
         "Trvanie"
       ],
@@ -14911,6 +14918,9 @@
       ],
       "Email with @yourcompany.com domain": [
         "Email s doménou @vasafirma.sk"
+      ],
+      "Emails": [
+        "Emaily"
       ],
       "Emails (all messages)": [
         "Emaily (všetky správy)"
@@ -14953,6 +14963,9 @@
       ],
       "Enter code": [
         "Zadajte kód"
+      ],
+      "Enter current password": [
+        "Zadajte aktuálne heslo"
       ],
       "Enter name or email address": [
         "Zadajte meno alebo emailovú adresu"
@@ -15392,6 +15405,9 @@
       "Password": [
         "Heslo"
       ],
+      "Password reminders": [
+        "Pripomienky hesla"
+      ],
       "Password strength": [
         "Sila hesla"
       ],
@@ -15547,6 +15563,9 @@
       ],
       "See your team's availability": [
         "Pozrite si dostupnosť vášho tímu"
+      ],
+      "Select an identity provider to start": [
+        "Na začiatok vyberte poskytovateľa identity"
       ],
       "Select Linux package format": [
         "Vyberte formát balíka Linux"
@@ -15983,8 +16002,17 @@
       "Invalid ${ group.name } record found": [
         "Bol nájdený neplatný záznam ${ group.name }"
       ],
+      "Priority": [
+        "Priorita"
+      ],
+      "Status": [
+        "Stav"
+      ],
       "Type": [
         "Typ"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Použiť predvolenú hodnotu (napr. “@”)"
       ],
       "Valid ${ group.name } record found": [
         "Bol nájdený platný záznam ${ group.name }"
@@ -16087,11 +16115,6 @@
         "Komu: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Na začiatok vyberte poskytovateľa identity"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Aby ste pridali nový kalendár, odstráňte už existujúci kalendár."
@@ -16179,6 +16202,9 @@
       "Forgot username?": [
         "Zabudli ste používateľské meno?"
       ],
+      "Frequent sign-in problems": [
+        "Časté problémy s prihlásením"
+      ],
       "General": [
         "Všeobecné"
       ],
@@ -16188,11 +16214,17 @@
       "Get ${ VPN_APP_NAME }": [
         "Získať ${ VPN_APP_NAME }"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Získajte pomoc od ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Groups": [
         "Skupiny"
       ],
       "Help": [
         "Nápoveda"
+      ],
+      "Help & support": [
+        "Pomoc a podpora"
       ],
       "Help translate": [
         "Pomôžte s prekladom"
@@ -16307,9 +16339,6 @@
       ],
       "Sign in": [
         "Prihlásiť sa"
-      ],
-      "Sign-in help": [
-        "Pomoc s prihlásením"
       ],
       "Snap store": [
         "Snap Store"
@@ -16937,6 +16966,9 @@
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Užite si dva týždne ${ BRAND_NAME } zadarmo"
       ],
+      "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
+        "Zažite skutočné súkromie na internete vďaka zabezpečenej emailovej schránke, úložisku v cloude, správcovi hesiel a VPN. Zaregistrujte sa ešte dnes na ${ BRAND_NAME } a získajte zľavu ${ refereeRewardAmount } na svoje ďalšie predplatné."
+      ],
       "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
         "Zažite skutočné online súkromie. Chráňte si svoje údaje s ${ BRAND_NAME } zadarmo na ďalších 14 dní."
       ],
@@ -16948,6 +16980,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zabudli ste používateľské meno vášho ${ BRAND_NAME } účtu? Nájdite ho pomocou obnovovacieho emailu alebo telefónneho čísla a získajte opätovný prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
+      ],
+      "Join ${ BRAND_NAME } and get ${ refereeRewardAmount } in credits": [
+        "Pripojte sa k ${ BRAND_NAME } a získajte kredit v hodnote ${ refereeRewardAmount }"
       ],
       "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
         "Obnovte prístup k súkromnej emailovej adrese ${ BRAND_NAME } vyhradenej pre vaše dieťa."
@@ -18458,9 +18493,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Zapojte sa do prieskumov s cieľom zlepšiť služby ${ BRAND_NAME }"
-      ],
-      "Product updates": [
-        "Aktualizácie produktu"
       ]
     },
     "Notification": {
@@ -18481,6 +18513,9 @@
       ],
       "An external address cannot be default": [
         "Externá adresa nemôže byť predvolená"
+      ],
+      "Copied to clipboard": [
+        "Skopírované do schránky"
       ],
       "Downloaded 2FA recovery codes": [
         "Stiahnuté obnovovacie kódy 2FA"
@@ -18529,6 +18564,9 @@
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
+      ],
+      "Sieve script inserted": [
+        "Sieve skript bol vložený"
       ],
       "The key has been deleted.": [
         "Kľúč bol vymazaný."
@@ -19703,6 +19741,28 @@
         "Časovo obmedzená ponuka."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Pamätáte si svoje heslo pre ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Najlepší spôsob, ako sa vyhnúť strate prístupu k vášmu účtu a údajom, je nezabudnúť si prihlasovacie údaje."
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Ak zabudnete heslo, môžete prísť o prístup k svojim šifrovaným údajom."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Heslo si zapamätajte alebo ho bezpečne uložte, pretože je kľúčom k dešifrovaniu vašich údajov."
+      ],
+      "Turn off password reminders?": [
+        "Vypnúť pripomínanie hesla?"
+      ],
+      "Turn off reminders": [
+        "Vypnúť pripomienky"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Všetky vaše existujúce údaje** (emaily, udalosti, kontakty, súbory, položky ${ PASS_APP_NAME } atď.) **budú uzamknuté** a odomknúť ich možno len pomocou vášho **starého hesla**."
@@ -20207,6 +20267,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Describe the filter you want…": [
+        "Popíšte filter, ktorý požadujete…"
+      ],
       "domain.com": [
         "domena.sk"
       ],
@@ -20233,9 +20296,6 @@
       ],
       "Enter a name": [
         "Zadajte meno"
-      ],
-      "Enter name": [
-        "Zadajte názov"
       ],
       "example@domain.com": [
         "priklad@domena.sk"
@@ -20608,6 +20668,78 @@
         "Yahoo"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Využite ponuku"
+      ],
+      "Summer Sale": [
+        "Letný výpredaj"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesačným"
+      ],
+      "15 GB storage": [
+        "15 GB úložisko"
+      ],
+      "2 TB data storage": [
+        "2 TB dátové úložisko"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložisko: 40x váš súčasný plán"
+      ],
+      "3 TB data storage": [
+        "3 TB dátové úložisko"
+      ],
+      "500 GB storage": [
+        "500 GB úložisko"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy vychádzajú zo štandardných mesačných cien. Po skončení fakturačného obdobia sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Plný prístup k službe ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Samostatné účty pre 6 používateľov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Samostatné účty pre vás a partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online editor dokumentov a tabuliek"
+      ],
+      "Recover previous file versions": [
+        "Obnovte predchádzajúce verzie súborov"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnejšia ochrana pred kybernetickými hrozbami"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Prejdite na náš ročný plán a ušetrite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Use your own email domain": [
+        "Používajte vlastnú emailovú doménu"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "SUMMER SALE": [
+        "LETNÝ VÝPREDAJ"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Späť na ${ signIn }."
@@ -20687,23 +20819,17 @@
       "${ score } / ${ maxScore } completed": [
         "${ score } / ${ maxScore } dokončené"
       ],
-      "Account protection": [
-        "Ochrana účtu"
-      ],
       "Add more options for stronger protection": [
         "Pridajte ďalšie možnosti pre lepšiu ochranu"
       ],
-      "Add more options to avoid getting locked out of your account.": [
-        "Pridajte ďalšie možnosti, aby ste sa vyhli zablokovaniu prístupu k vášmu účtu."
+      "Check your access to your recovery options": [
+        "Skontrolujte si prístup k možnostiam obnovenia"
       ],
-      "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Skvelé. Nezabudnite aktualizovať svoje nastavenia, aby ste mali lepšiu ochranu."
+      "Critical": [
+        "Kritické"
       ],
-      "Good start. Add more options for a stronger protection.": [
-        "Dobrý začiatok. Pridajte ďalšie možnosti pre lepšiu ochranu."
-      ],
-      "Great. Add more options for a stronger protection.": [
-        "Skvelé. Pridajte ďalšie možnosti pre lepšiu ochranu."
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Nenechajte sa odhlásiť zo svojho účtu ${ BRAND_NAME }"
       ],
       "How you increased your account protection": [
         "Ako ste zvýšili ochranu vášho účtu"
@@ -20717,6 +20843,9 @@
       "Partial": [
         "Čiastočne"
       ],
+      "Recoverability": [
+        "Obnoviteľnosť"
+      ],
       "Recovery score: ${ score }": [
         "Skóre obnovy: ${ score }"
       ],
@@ -20729,11 +20858,44 @@
       "Strong": [
         "Silné"
       ],
-      "Unprotected": [
-        "Nechránené"
+      "Take precautions to avoid losing access": [
+        "Prijmite opatrenia, aby ste neprišli o prístup"
       ],
       "Weak": [
         "Slabé"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Ste pod polnou ochranou. Pravidelné kontroly zabezpečujú, že všetko funguje tak, ako má, aj keď sa vaše zariadenia a kontakty v priebehu času menia."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Ste na polceste, ale ešte nie ste v bezpečí. Zabudnuté heslo môže stále znamenať stratu vašich emailov, súborov a hesiel."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Stále ste vystavení vysokému riziku. Ak zabudnete heslo, môžete natrvalo prísť o svoje emaily, súbory a heslá."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Máte to dobre zabezpečené, ale stále existujú medzery. Viac možností obnovenia vám poskytne spoľahlivejšiu poistku pre prípad, že by ste niekedy stratili heslo."
+      ],
+      "Your account and data can be recovered": [
+        "Váš účet a údaje je možné obnoviť"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Vo vašom účte nie sú nastavené žiadne možnosti obnovenia. Ak stratíte heslo, natrvalo stratíte prístup k svojim emailom, súborom a heslám."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Váš účet nie je dostatočne chránený. Ak zabudnete heslo, stále vám hrozí strata prístupu k emailom, súborom a heslám."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Vaše nastavenia pre obnovenie takmer neexistujú. Ak stratíte heslo, môžete natrvalo prísť o prístup k svojim emailom, súborom a heslám."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Vaše nastavenie obnovy je vynikajúce. Nezabudnite aktualizovať svoje možnosti, aby fungovali aj vtedy, keď ich budete potrebovať."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Vaše nastavenia pre obnovenie nie sú kompletné. Ak zabudnete heslo, stále vám hrozí strata prístupu k emailom, súborom a heslám."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Váš plán obnovy je dobre nastavený, zostáva však ešte pár medzier, ktoré treba vyplniť. Každá pridaná možnosť posilňuje vašu bezpečnostnú sieť."
       ]
     },
     "Recovery score item": {
@@ -20877,14 +21039,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užite si **${ planTitle }** zadarmo až do **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Darujte 2 týždne, získajte ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Dajte ${ refereeRewardAmount }, získajte ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Ako funguje vaša bezplatná skúšobná verzia:"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Používam ${ BRAND_NAME } a myslím, že by sa vám to mohlo páčiť. Je to zabezpečený email, cloudové úložisko, správca hesiel a VPN, ktoré chránia vaše súkromie. Zaregistrujte sa cez tento odkaz a získajte 14 dní prémiových funkcií zadarmo: ${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Používam službu ${ BRAND_NAME } a napadlo ma, že by sa ti mohla páčiť. Ide o zabezpečenú emailovú službu, cloudové úložisko, správcu hesiel a VPN, ktoré chránia tvoje súkromie. Zaregistruj sa cez tento odkaz a získaš zľavu ${ refereeRewardAmount } na svoje ďalšie predplatné: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Ak zrušíte pred týmto termínom, po skončení skúšobnej doby dôjde k zníženiu na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }. Ak nezrušíte, začne platiť váš plný plán a získate **${ referrerRewardAmount }** v kreditoch."
@@ -20921,9 +21083,6 @@
         "Zostávajú vám **${ daysRemaining } dni** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
         "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
         "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Váš priateľ zároveň získa ${ refereeRewardAmount } na uplatnenie pri najbližšej platbe!"
       ],
       "your subscription": [
         "vaše predplatné"
@@ -21198,6 +21357,25 @@
       ],
       "Edit retention rule": [
         "Upraviť pravidlo uchovávania"
+      ]
+    },
+    "Role": {
+      "Security Admin": [
+        "Bezpečnostný správca"
+      ],
+      "User Admin": [
+        "Správca používateľov"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všetkých používateľov, skupiny, zabezpečenie, fakturáciu a systémové konfigurácie."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Správa používateľov, skupín a úložného priestoru pre všetkých členov, prideľovanie rolí a prideľovanie licencií."
       ]
     },
     "Safety review": {
@@ -21701,6 +21879,9 @@
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Týmto krokom obnovíte prístup k emailom, kontaktom, súborom, heslám a všetkým ostatným šifrovaným údajom vo vašom účte po zresetovaní hesla."
       ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Aby sme vám pomohli zapamätať si heslo, budeme vás pravidelne žiadať o jeho zadanie."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Ak chcete mať istotu, že emailová adresa je vaša, zadajte overovací kód zaslaný na ${ boldEmail }."
       ],
@@ -21733,6 +21914,9 @@
       ],
       "Verify recovery phone": [
         "Overiť číslo na obnovenie"
+      ],
+      "Verify your password": [
+        "Overte svoje heslo"
       ],
       "Verify your recovery email": [
         "Overte váš email na obnovenie"
@@ -22607,8 +22791,8 @@
       "Connect all your devices": [
         "Pripojte všetky vaše zariadenia"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Pokračujte s ${ PLAN_NAMES[plan] }"
+      "Continue with ${ planName }": [
+        "Pokračovať s ${ planName }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvoriť ${ BRAND_NAME } účet"
@@ -22636,6 +22820,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Free na ${ TRIAL_DURATION_DAYS } dní"
+      ],
+      "From ${ priceElement }": [
+        "Od ${ priceElement }"
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Získajte ${ referralInfo.uiData.refereeRewardAmount } v kreditoch"
@@ -22739,6 +22926,9 @@
       "Share and collaborate of files": [
         "Zdieľajte a spolupracujte na súboroch"
       ],
+      "Sign up and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Zaregistrujte sa a získajte ${ referralInfo.uiData.refereeRewardAmount } v kreditoch"
+      ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
         "Zaregistrujte sa do ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
@@ -22783,9 +22973,6 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Vyskúšajte ${ BRAND_NAME } na ${ TRIAL_DURATION_DAYS } dní zadarmo${ br } a získajte ${ referralInfo.uiData.refereeRewardAmount } v kreditoch"
-      ],
-      "Try ${ BRAND_NAME } for 14 days free": [
-        "Vyskúšajte ${ BRAND_NAME } na 14 dní zadarmo"
       ],
       "Try ${ planName } for free": [
         "Vyskúšať ${ planName } zadarmo"
@@ -23050,18 +23237,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 používateľov"
-      ],
-      "All paid Mail and Calendar features": [
-        "Všetky platené funkcie pošty a kalendára"
-      ],
-      "High speed VPN": [
-        "Vysokorýchlostná sieť VPN"
-      ],
       "Highest VPN speed": [
         "Najvyššia rýchlosť VPN"
       ],
@@ -23074,17 +23249,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Prémiové funkcie ${ appName1 }, ${ appName2 } a ${ appName3 }"
       ],
-      "Premium early access": [
-        "Prémiový predbežný prístup"
-      ],
-      "Secure cloud storage": [
-        "Bezpečné cloudové úložisko"
-      ],
       "Secure streaming": [
         "Bezpečné streamovanie"
-      ],
-      "Support online privacy": [
-        "Podporte online súkromie"
       ]
     },
     "specialoffer: Footer": {
@@ -23128,74 +23294,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "${ n } mesiace",
-        "${ n } mesiacov",
-        "${ n } mesiacov"
-      ],
       "/ month": [
         "/ mesiac"
       ],
       "/month": [
         "/mesiac"
       ],
-      "1 year": [
-        "1 rok"
-      ],
-      "15 months": [
-        "15 mesiacov"
-      ],
-      "2 years": [
-        "2 roky"
-      ],
-      "30 months": [
-        "30 mesiacov"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Účtovaná suma ${ amount } za 1 mesiac"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Účtovaná suma ${ amount } za 12 mesiacov"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Účtovaná suma ${ amount } za 15 mesiacov"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Účtovaná suma ${ amount } za 24 mesiacov"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Účtovaná suma ${ amount } za 30 mesiacov"
-      ],
       "Get the deal": [
         "Využiť ponuku"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Obnoví sa po 1 roku za zľavnenú cenu ${ discountedAmount } namiesto ${ regularAmount } (zľava ${ discount }%)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Obnoví sa po 2 rokoch za zľavnenú cenu ${ discountedAmount } namiesto ${ regularAmount } (zľava ${ discount }%)"
-      ],
       "Save ${ discount }%": [
         "Ušetríte ${ discount } %"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Štandardná cena ${ amount } na 1 mesiac"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Štandardná cena ${ amount } na 12 mesiacov"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Štandardná cena ${ amount } na 15 mesiacov"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Štandardná cena ${ amount } na 24 mesiacov"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Štandardná cena ${ amount } na 30 mesiacov"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Špeciálna ponuka platí počas prvých 2 rokov"
       ]
     },
     "specialoffer: Title": {
@@ -23222,29 +23331,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Inovujte a ušetrite viac s 2 rokmi ${ planName }"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Získajte prístup k zablokovanému obsahu a prehliadajte v súkromí. Zahŕňa 1700 serverov vo viac ako 60 krajinách, najvyššiu rýchlosť VPN, 10 pripojení VPN na používateľa, celosvetové streamovacie služby, blokovanie malvéru a reklám a ďalšie."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Získajte prístup k zablokovanému obsahu a prehliadajte v súkromí. Zahŕňa 1700 serverov vo viac ako 60 krajinách, najvyššiu rýchlosť VPN, 10 pripojení VPN, celosvetové streamovacie služby, blokovanie malvéru a reklám a ďalšie."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Všetky naše prémiové služby s najvyššími limitmi: 100 emailových adries, podpora pre 10 vlastných domén, neobmedzený počet hide-my-email aliasov, zdieľanie kalendára, šifrované cloudové úložisko a zdieľanie súborov a ďalšie."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zahŕňa podporu pre 3 vlastné emailové domény, 15 emailových adries, neobmedzený počet hide-my-email aliasov, zdieľanie kalendára a ďalšie."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Ideálne pre rodiny alebo malé tímy, každý môže mať svoj vlastný priečinok doručenej pošty a aliasy. Vyžaduje vlastnú doménu."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Získajte bezplatne platené verzie všetkých nových služieb ochrany súkromia, ktoré v budúcnosti vydáme, vrátane predbežného prístupu ku všetkým budúcim funkciám a produktom."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
     "Spotlight": {
@@ -23822,6 +23908,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľa",
         "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľov",
@@ -24561,6 +24650,12 @@
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
       ],
+      "Password reminders disabled": [
+        "Funkcia pripomenutia hesla je zakázaná"
+      ],
+      "Password reminders enabled": [
+        "Funkcia pripomenutia hesla je povolená"
+      ],
       "Password updated": [
         "Heslo bolo aktualizované"
       ],
@@ -24760,20 +24855,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Podrobnosti o udalostiach, ktoré nemohli byť exportované"
-      ]
-    },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Vytvorte si bezpečné prihlasovacie údaje na všetkých svojich zariadeniach. Zahŕňa neobmedzené aliasy, 20 trezorov, integrované 2FA, automatické dopĺňanie platobných kariet a ďalšie."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahŕňa 2950+ serverov vo viac ako 65 krajinách, pripojenie až 10 zariadení, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám a ďalšie."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
       ]
     },
     "Tab": {
@@ -25640,9 +25721,6 @@
       "Disconnected from Gmail": [
         "Odpojené od Gmailu"
       ],
-      "Dismiss setup checklist": [
-        "Zrušiť kontrolný zoznam nastavení"
-      ],
       "Display name and signature": [
         "Zobrazované meno a podpis"
       ],
@@ -25934,9 +26012,6 @@
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Získajte väčšie úložisko s ${ MAIL_APP_NAME } Plus"
       ],
-      "Get started": [
-        "Začíname"
-      ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Stiahnite si aplikáciu na všetky svoje zariadenia a využívajte bezpečný a plynulý prístup kdekoľvek."
       ],
@@ -25966,6 +26041,9 @@
       ],
       "Help center": [
         "Centrum pomoci"
+      ],
+      "Help from ${ LUMO_SHORT_APP_NAME }": [
+        "Pomoc od ${ LUMO_SHORT_APP_NAME }"
       ],
       "Help us improve": [
         "Pomôž nám zlepšiť sa"
@@ -26111,6 +26189,9 @@
       "Messages and composing": [
         "Správy a písanie"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Presuňte svoju organizáciu do ${ BRAND_NAME }"
+      ],
       "Migration assistant": [
         "Asistent migrácie"
       ],
@@ -26188,6 +26269,9 @@
       ],
       "Open pagination": [
         "Otvoriť stránkovanie"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN": [
         "OpenVPN"
@@ -26645,6 +26729,9 @@
       "Summary": [
         "Zhrnutie"
       ],
+      "Summer Sale": [
+        "Letný výpredaj"
+      ],
       "Support ticket closed": [
         "Požiadavka na podporu uzavretá"
       ],
@@ -26801,6 +26888,9 @@
       "Verify your email": [
         "Overte svoj email"
       ],
+      "Verify your password": [
+        "Overte svoje heslo"
+      ],
       "Verifying your card...": [
         "Overujeme vašu kartu..."
       ],
@@ -26839,9 +26929,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Vitajte v ${ planName }"
       ],
       "Welcome to your new password manager!": [
         "Vitajte vo svojom novom správcovi hesiel!"
@@ -26953,6 +27040,15 @@
       ]
     },
     "Title header": {
+      "Date": [
+        "Dátum"
+      ],
+      "Organization migrations": [
+        "Presuny organizácií"
+      ],
+      "Personal accounts": [
+        "Osobné účty"
+      ],
       "Size": [
         "Veľkosť"
       ]
@@ -27155,6 +27251,9 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Zahŕňa profesionálnu emailovú adresu v tvare @vasadomena.sk, cloudové úložisko s možnosťou spoločnej úpravy dokumentov, plánovanie a videokonferencie, správu hesiel, bezpečnú službu ${ VPN_SHORT_APP_NAME } a ďalšie funkcie."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá pomoc AI, k dispozícii je aj ľudský odborník!"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Členovia, ktorí nepoužívajú 2FA, dostanú email s výzvou, aby si ho čo najskôr aktivovali. Používatelia s jedným prihlásením nedostanú emailovú pripomienku."
       ],
@@ -27346,8 +27445,8 @@
       "User is a group": [
         "Používateľ je skupina"
       ],
-      "via ${ groupName }": [
-        "cez ${ groupName }"
+      "via ${ groupNames }": [
+        "cez ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"

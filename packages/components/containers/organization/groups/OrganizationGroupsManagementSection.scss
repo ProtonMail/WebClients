@@ -18,16 +18,3 @@ section:has(> .groups-management) {
 .groups-management header > div:last-child {
 	gap: 0.75rem;
 }
-
-.groups-dual-pane {
-	> :first-child {
-		flex: 1 1 33.33%;
-		max-inline-size: none;
-	}
-
-	> :last-child {
-		flex: 2 1 66.67%;
-		inline-size: 66.67%;
-		max-inline-size: none;
-	}
-}

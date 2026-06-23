@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { addMonths, format, getUnixTime } from 'date-fns';
 
 import { CYCLE, PLANS, type Subscription } from '@proton/payments';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 

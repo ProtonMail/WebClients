@@ -2,21 +2,13 @@ import { createContext, useContext } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import type { SwitchActiveDevice, ToggleVideoType } from '../../types';
+import type { SwitchActiveDevice, ToggleAudioType, ToggleVideoType } from '../../types';
 
 export interface MediaManagementContextType {
     isVideoEnabled: boolean;
     isAudioEnabled: boolean;
     toggleVideo: ToggleVideoType;
-    toggleAudio: ({
-        isEnabled,
-        audioDeviceId,
-        preserveCache,
-    }: {
-        isEnabled?: boolean;
-        audioDeviceId?: string;
-        preserveCache?: boolean;
-    }) => Promise<boolean | undefined>;
+    toggleAudio: ToggleAudioType;
     backgroundBlur: boolean;
     toggleBackgroundBlur: ReturnType<typeof debounce>;
     isBackgroundBlurSupported: boolean;

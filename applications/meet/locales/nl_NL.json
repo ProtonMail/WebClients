@@ -29,6 +29,9 @@
       "Authenticate": [
         "Authenticeren"
       ],
+      "Back": [
+        "Terug"
+      ],
       "Background blur": [
         "Achtergrondvervaging"
       ],
@@ -100,6 +103,9 @@
       ],
       "Done": [
         "Klaar"
+      ],
+      "Download": [
+        "Downloaden"
       ],
       "Download app": [
         "App downloaden"
@@ -266,6 +272,9 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Return to dashboard": [
+        "Terug naar dashboard"
+      ],
       "Room": [
         "Ruimte"
       ],
@@ -322,6 +331,9 @@
       ],
       "Start meeting": [
         "Start vergadering"
+      ],
+      "Start new meeting": [
+        "Start een nieuwe vergadering"
       ],
       "Start recording": [
         "Start opname"
@@ -430,6 +442,9 @@
       "Lock meeting": [
         "Vergadering vergrendelen"
       ],
+      "Lower hand": [
+        "Laat hand zakken"
+      ],
       "Meeting details": [
         "Vergaderingsgegevens"
       ],
@@ -444,6 +459,9 @@
       ],
       "Participants": [
         "Deelnemers"
+      ],
+      "Raise hand": [
+        "Hand opsteken"
       ],
       "Rotate camera": [
         "Camera roteren"
@@ -460,9 +478,6 @@
       "Stop recording and download.": [
         "Stop met opnemen en download de video."
       ],
-      "Toggle camera": [
-        "Camera in-/uitschakelen"
-      ],
       "Toggle chat": [
         "Chat aan/uit"
       ],
@@ -471,9 +486,6 @@
       ],
       "Toggle meeting details": [
         "Vergaderingsgegevens in-/uitschakelen"
-      ],
-      "Toggle microphone": [
-        "Microfoon in-/uitschakelen"
       ],
       "Toggle participants": [
         "Deelnemers in-/uitschakelen"
@@ -1488,8 +1500,14 @@
       "Failed to delete event": [
         "Afspraak verwijderen mislukt"
       ],
+      "Failed to delete recording": [
+        "Kon opname niet verwijderen"
+      ],
       "Failed to delete room": [
         "Fout bij het verwijderen van de ruimte"
+      ],
+      "Failed to download recording": [
+        "Kon opname niet downloaden"
       ],
       "Failed to edit room name": [
         "Naam van de ruimte bewerken mislukt"
@@ -1502,9 +1520,6 @@
       ],
       "Failed to rotate personal meeting link": [
         "Roteren van de persoonlijke vergadering link is mislukt."
-      ],
-      "Failed to save recording": [
-        "Kon opname niet opslaan"
       ],
       "Failed to send chat message. Please try again.": [
         "Het is niet gelukt om een chat bericht te sturen. Probeer het opnieuw."
@@ -1559,9 +1574,6 @@
       ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
-      ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "De vergadering link waartoe u toegang probeert te krijgen, bestaat niet of is mogelijk verwijderd."
       ],
       "The meeting password is incorrect": [
         "Het wachtwoord voor de vergadering is onjuist."
@@ -1644,6 +1656,46 @@
     "fido2: Label": {
       "Security key": [
         "Beveiligingssleutel"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -1733,6 +1785,15 @@
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } deelnemerslimiet bereikt"
       ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } heeft toegang nodig zodat anderen u kunnen zien en horen tijdens het gesprek. U kunt uw camera of microfoon op elk gewenst moment uitschakelen."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } heeft cameratoegang nodig zodat anderen u kunnen zien tijdens het gesprek. U kunt het op elk gewenst moment uitschakelen."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } heeft microfoontoegang nodig zodat anderen u kunnen horen tijdens het gesprek. U kunt het op elk gewenst moment uitschakelen."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } heeft WebRTC nodig om te functioneren. Update uw browser of apparaat naar een versie die WebRTC ondersteunt, probeer een andere browser, of schakel extensies uit die deze mogelijk blokkeren."
       ],
@@ -1787,6 +1848,9 @@
       ],
       "camera": [
         "camera"
+      ],
+      "Camera permission denied": [
+        "Cameratoegang geweigerd"
       ],
       "Chat with everyone": [
         "Chat met iedereen"
@@ -1892,6 +1956,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "De verbinding met iedereen is verbroken."
       ],
       "Failed to update meeting name": [
         "Naam vergadering bijwerken mislukt"
@@ -2007,6 +2074,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Video-opnames worden niet ondersteund in Firefox."
       ],
+      "Meeting time is up": [
+        "De vergadertijd is voorbij"
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Vergadering ontgrendeld. Deelnemers kunnen opnieuw deelnemen."
       ],
@@ -2021,6 +2091,12 @@
       ],
       "Microphone effects": [
         "Microfoon effecten"
+      ],
+      "Microphone permission denied": [
+        "Microfoontoegang geweigerd"
+      ],
+      "Mute microphone": [
+        "Microfoon dempen"
       ],
       "My meetings": [
         "Mijn vergaderingen"
@@ -2052,6 +2128,9 @@
       "No publications": [
         "Geen publicaties"
       ],
+      "No recordings found on this device.": [
+        "Geen opnames gevonden op dit apparaat."
+      ],
       "No remote participants": [
         "Geen deelnemers op afstand"
       ],
@@ -2081,9 +2160,6 @@
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Plak uw ${ MEET_APP_NAME } link om deel te nemen aan een veilige vergadering"
-      ],
-      "Permission denied": [
-        "Toestemming geweigerd"
       ],
       "Permissions not given.": [
         "Machtigingen niet verleend."
@@ -2118,11 +2194,14 @@
       "Record your meetings": [
         "Neem uw vergaderingen op"
       ],
-      "Recording saved": [
-        "Opname opgeslagen"
+      "Recording deleted": [
+        "Opname verwijderd"
       ],
       "Recording will begin and attendees will be notified.": [
         "Opname wordt gestart en deelnemers worden hiervan op de hoogte gesteld."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Opnames worden lokaal in uw browser opgeslagen. Download de bestanden die u wilt behouden. Ze worden na 30 dagen automatisch verwijderd."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
@@ -2193,6 +2272,9 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "De host heeft u uit deze vergadering verwijderd. Als dit een vergissing was, vraag de host dan om u opnieuw uit te nodigen."
       ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "De vergaderingslink die u probeerde te openen, bestaat niet of is mogelijk verlopen. Zorg ervoor dat de link correct is, of start in plaats daarvan een nieuwe beveiligde vergadering."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Dit is een begin-tot-eind versleutelde chat met vergankelijke berichten, die verdwijnen aan het einde van het gesprek."
       ],
@@ -2205,8 +2287,14 @@
       "This meeting is password protected": [
         "Deze vergadering is beveiligd met een wachtwoord"
       ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Deze bijeenkomst bereikte de tijdslimiet van een gratis plan. Upgrade om de lengte van uw vergadering bij toekomstige gesprekken te verlengen."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Deze vergadering is geopend in de desktop-app ${ MEET_APP_NAME }."
+      ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Deze opname wordt definitief van dit apparaat verwijderd. Deze actie kan niet ongedaan worden gemaakt."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Dit beëindigt de vergadering voor alle deelnemers en stopt uw scherm delen."
@@ -2238,14 +2326,8 @@
       "Turn off camera": [
         "Camera uitschakelen"
       ],
-      "Turn off microphone": [
-        "Microfoon uitschakelen"
-      ],
       "Turn on camera": [
         "Zet camera aan"
-      ],
-      "Turn on microphone": [
-        "Microfoon inschakelen"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Het lukt niet om opnieuw verbinding te maken met de vergadering. Probeer opnieuw deel te nemen of verlaat de vergadering."
@@ -2255,6 +2337,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Ontgrendel ${ unlimitedMeeting } en premiumfuncties"
+      ],
+      "Unmute microphone": [
+        "Dempen microfoon opheffen"
       ],
       "Upgrade to record your meetings locally.": [
         "Upgrade om uw vergaderingen lokaal op te nemen."
@@ -2336,12 +2421,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your free meeting has ended": [
-        "Uw gratis vergadering is afgelopen"
-      ],
-      "Your meeting has ended": [
-        "Uw vergadering is afgelopen"
       ],
       "Your meeting is ready": [
         "Uw vergadering is gereed"
@@ -2457,6 +2536,9 @@
       "Last used": [
         "Laatst gebruikt"
       ],
+      "Manage recordings": [
+        "Beheer opnames"
+      ],
       "Meeting ID": [
         "Vergaderingsnummer"
       ],
@@ -2495,6 +2577,9 @@
       ],
       "Repeat event": [
         "Afspraak herhalen"
+      ],
+      "Return to dashboard": [
+        "Terug naar dashboard"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -2812,6 +2897,20 @@
         "Verificatie gelukt"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Acties"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Size": [
+        "Grootte"
+      ]
+    },
     "Title": {
       "Account restricted": [
         "Account beperkt"
@@ -2821,6 +2920,15 @@
       ],
       "Activity events": [
         "Activiteitsafspraken"
+      ],
+      "Allow camera ": [
+        "Camera toestaan "
+      ],
+      "Allow camera and microphone": [
+        "Camera- en microfoon toestaan"
+      ],
+      "Allow microphone": [
+        "Microfoon toestaan"
       ],
       "Are you sure?": [
         "Weet u het zeker?"
@@ -2858,6 +2966,9 @@
       "Debug Overlay": [
         "Foutopsporing overlay"
       ],
+      "Delete recording?": [
+        "Opname verwijderen?"
+      ],
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
@@ -2881,6 +2992,9 @@
       ],
       "Info": [
         "Informatie"
+      ],
+      "Invalid meeting link": [
+        "Ongeldige vergaderlink"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
@@ -2951,6 +3065,9 @@
       ],
       "Record this meeting": [
         "Neem deze vergadering op"
+      ],
+      "Recordings": [
+        "Opnames"
       ],
       "Remote Participants": [
         "Deelnemers op afstand"

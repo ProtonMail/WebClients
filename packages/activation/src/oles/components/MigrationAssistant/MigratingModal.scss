@@ -1,8 +1,9 @@
 .oles-migrating-modal {
-	background: linear-gradient(
-		90deg,
-		rgb(255 255 255 / 0.9) 0%,
-		rgb(255 255 255 / 1) 50%,
-		rgb(255 255 255 / 0.9) 100%
+	--background-with-alpha: color-mix(in srgb, var(--background-norm) 90%, transparent);
+
+	background: radial-gradient(
+		ellipse farthest-side at center,
+		var(--background-norm) 0%,
+		var(--background-with-alpha) 100%
 	);
 }

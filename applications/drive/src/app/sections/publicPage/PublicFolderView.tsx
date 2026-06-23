@@ -1,15 +1,19 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { useActiveBreakpoint } from '@proton/components';
 import type { NodeEntity, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { MemberRole, NodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getNodeAncestry } from '@proton/drive/modules/nodes';
+import { getNodeAncestry, getNodeName } from '@proton/drive/modules/nodes';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { IcGrid3 } from '@proton/icons/icons/IcGrid3';
+import { IcListBullets } from '@proton/icons/icons/IcListBullets';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -29,7 +33,7 @@ import type {
 } from '../../statelessComponents/DriveExplorer/types';
 import { UploadDragDrop } from '../../statelessComponents/UploadDragDrop/UploadDragDrop';
 import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
-import { getPublicFolderCells } from './PublicFolderDriveExplorerCells';
+import { getPublicFolderCells, getPublicFolderGrid } from './PublicFolderDriveExplorerCells';
 import { PublicFolderEmptyView } from './PublicFolderEmptyView';
 import { PublicFolderItemContextMenu } from './PublicFolderItemContextMenu';
 import { PublicHeader } from './PublicHeader';
@@ -114,7 +118,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
     );
     const canVerifySignature = isLoggedIn && isEditor;
 
-    const { isLoading, hasEverLoaded, sortField, direction, itemUids, folder } = usePublicFolderStore(
+    const { isLoading, hasEverLoaded, sortField, direction, itemUids, folder, layout } = usePublicFolderStore(
         useShallow((state) => ({
             folder: state.folder,
             isLoading: state.isLoading,
@@ -122,17 +126,11 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
             sortField: state.sortField,
             direction: state.direction,
             itemUids: state.itemUids,
+            layout: state.layout,
         }))
     );
 
     const currentFolderUid = folder?.uid || rootNode.uid;
-
-    const handleUpload = useCallback(
-        (files: FileList) => {
-            return uploadManager.upload(files, currentFolderUid);
-        },
-        [currentFolderUid]
-    );
 
     const handleDrop = (dataTransfer: DataTransfer) => {
         void uploadManager.upload(dataTransfer, currentFolderUid);
@@ -142,19 +140,13 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         inputRef: fileInputRef,
         handleClick: handleClickFileUpload,
         handleChange: handleFileChange,
-    } = useUploadInput({
-        onUpload: handleUpload,
-        forFolders: false,
-    });
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, currentFolderUid) });
 
     const {
         inputRef: folderInputRef,
         handleClick: handleClickFolderUpload,
         handleChange: handleFolderChange,
-    } = useUploadInput({
-        onUpload: handleUpload,
-        forFolders: true,
-    });
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, currentFolderUid), forFolders: true });
 
     // TODO: Probably moving it to the store of public folder
     useEffect(() => {
@@ -285,6 +277,14 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         onDownload: (uid: string) => handleDownload([uid]),
     });
 
+    const grid = getPublicFolderGrid();
+
+    const toggleLayout = () => {
+        usePublicFolderStore
+            .getState()
+            .setLayout(layout === LayoutSetting.Grid ? LayoutSetting.List : LayoutSetting.Grid);
+    };
+
     const handleHeaderDownload = (shouldScan?: boolean) => {
         if (selectedItemIds.size > 0) {
             return handleDownload(Array.from(selectedItemIds.values()), shouldScan);
@@ -348,24 +348,45 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
             />
 
             {isEmpty ? (
-                <PublicFolderEmptyView uploadEnabled={isEditor} onUpload={handleUpload} />
+                <PublicFolderEmptyView
+                    uploadEnabled={isEditor}
+                    onUploadFile={handleClickFileUpload}
+                    onUploadFolder={handleClickFolderUpload}
+                />
             ) : (
                 <DriveExplorer
                     itemIds={Array.from(itemUids.values())}
-                    layout={LayoutSetting.List}
+                    layout={layout}
                     cells={cells}
+                    grid={grid}
                     selection={selection}
                     events={events}
                     conditions={conditions}
                     sort={sort}
                     loading={isLoading}
-                    caption={folder?.uid || rootNode.name}
+                    caption={folder?.uid || getNodeName(rootNode)}
                     config={{ itemHeight: 52 }}
                     contextMenuControls={{
                         isOpen: contextMenuControls.isOpen,
                         showContextMenu: contextMenuControls.handleContextMenu,
                         close: contextMenuControls.close,
                     }}
+                    headerActions={
+                        <Button
+                            icon
+                            shape="ghost"
+                            size="small"
+                            onClick={toggleLayout}
+                            title={c('Title').t`Change layout`}
+                            data-testid="public-toolbar-layout"
+                        >
+                            {layout === LayoutSetting.Grid ? (
+                                <IcListBullets alt={c('Action').t`List layout`} />
+                            ) : (
+                                <IcGrid3 alt={c('Action').t`Grid layout`} />
+                            )}
+                        </Button>
+                    }
                 />
             )}
             {modals.previewModal}

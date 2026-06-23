@@ -4,7 +4,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { FileNameDisplay } from '@proton/components/index';
 import { MemberRole, type NodeEntity } from '@proton/drive';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getNodeName } from '@proton/drive/modules/nodes';
 
 import { ContentPreviewMethod, PartialPreview } from '../../modals/preview';
 import { downloadManager } from '../../modules/download/DownloadManager';
@@ -44,8 +44,8 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
     };
     const handleDownload = async (shouldScan?: boolean) => {
         if (contentData && !shouldScan) {
-            const { node } = getNodeEntity(await getPublicLinkClient().getNode(rootNode.uid));
-            await downloadManager.downloadFromBuffer(node, contentData);
+            const publicNode = await getPublicLinkClient().getNode(rootNode.uid);
+            await downloadManager.downloadFromBuffer(publicNode, contentData);
             return;
         }
 
@@ -61,7 +61,7 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
             <PublicHeader
                 breadcrumbOrName={
                     <div className="file-preview-filename flex items-center flex-nowrap">
-                        <FileNameDisplay text={rootNode.name} className="user-select w-100" />
+                        <FileNameDisplay text={getNodeName(rootNode)} className="user-select w-100" />
                     </div>
                 }
                 sharedBy={

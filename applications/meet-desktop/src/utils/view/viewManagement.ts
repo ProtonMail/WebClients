@@ -15,6 +15,7 @@ import {
     trimLocalID,
 } from "../urls/urlTests";
 import { getWindowConfig } from "../view/windowHelpers";
+import { confirmQuitWithActiveDownloads } from "../downloads";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
@@ -99,6 +100,11 @@ export const viewCreationAppStartup = async () => {
         }
 
         event.preventDefault();
+
+        // Mac close event doesn't quit the app
+        if (!isMac && !confirmQuitWithActiveDownloads()) {
+            return;
+        }
 
         if (isMac) {
             macOSExitEvent(mainWindow!);

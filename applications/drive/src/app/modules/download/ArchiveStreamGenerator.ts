@@ -1,5 +1,6 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { AbortError, NodeType } from '@proton/drive/index';
+import { getNodeName } from '@proton/drive/modules/nodes';
 
 import { createAsyncQueue } from '../../utils/asyncQueue';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
@@ -201,7 +202,7 @@ export class ArchiveStreamGenerator {
                     }
                 );
             }
-            return { isFile: false, name: node.name, parentPath };
+            return { isFile: false, name: getNodeName(node), parentPath };
         }
         const { getQueueItem } = useDownloadManagerStore.getState();
 
@@ -259,7 +260,7 @@ export class ArchiveStreamGenerator {
 
         return {
             isFile: true,
-            name: node.name,
+            name: getNodeName(node),
             parentPath,
             stream,
             fileModifyTime: getNodeModifiedTime(node),

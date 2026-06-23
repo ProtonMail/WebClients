@@ -1,4 +1,5 @@
 import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
+import { AGENT_BYLINE_MAX_LENGTH } from './constants';
 import { getDefaultAgents } from './defaultAgents';
 
 /**
@@ -23,10 +24,15 @@ export function isAgentEditable(agent: CustomAgent | undefined): boolean {
  * A short one-line byline for an agent, used in the picker so every row stays balanced.
  * Falls back to a snippet of the instructions when no explicit description is set.
  */
-export function getAgentByline(agent: CustomAgent, maxLength = 90): string {
+
+export function truncateString(str: string, maxLength: number): string {
+    return str.length > maxLength ? `${str.slice(0, maxLength - 1).trimEnd()}…` : str;
+}
+
+export function getAgentByline(agent: CustomAgent, maxLength = AGENT_BYLINE_MAX_LENGTH): string {
     const explicit = agent.description?.trim();
     if (explicit) {
-        return explicit;
+        return truncateString(explicit, maxLength);
     }
     const firstLine = agent.instructions
         ?.split('\n')
@@ -35,7 +41,7 @@ export function getAgentByline(agent: CustomAgent, maxLength = 90): string {
     if (!firstLine) {
         return '';
     }
-    return firstLine.length > maxLength ? `${firstLine.slice(0, maxLength - 1).trimEnd()}…` : firstLine;
+    return truncateString(firstLine, maxLength);
 }
 
 /**

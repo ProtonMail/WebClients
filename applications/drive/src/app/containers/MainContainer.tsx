@@ -2,7 +2,9 @@ import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import {
     GlobalLoader,
     GlobalLoaderProvider,
@@ -11,12 +13,15 @@ import {
     SubscriptionModalProvider,
     useApi,
     useDrawerWidth,
+    useEventManager,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getBusDriver } from '@proton/drive/modules/busDriver';
 import { logging } from '@proton/drive/modules/logging';
 import { driveMetrics } from '@proton/drive/modules/metrics';
+import { useInitEncryptedThumbnailCache } from '@proton/drive/modules/thumbnails';
 import { useLoading } from '@proton/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -84,9 +89,20 @@ function InitContainer() {
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     const drawerWidth = useDrawerWidth();
     const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
+    const [subscription] = useSubscription();
+    const [userKeys] = useUserKeys();
+    const [user] = useUser();
+    const isEncryptedThumbnailCacheEnabled = useFlag('DriveWebEncryptedThumbnailCache');
 
     // Bootstrap search module.
     useSearchModule();
+
+    // Initialise the encrypted thumbnail cache for the current user.
+    useInitEncryptedThumbnailCache({
+        userKeys,
+        userId: user?.ID,
+        isEnabled: isEncryptedThumbnailCacheEnabled,
+    });
 
     useActivePing();
     useReactRouterNavigationLog();
@@ -214,7 +230,11 @@ function InitContainer() {
             <ModalsChildren />
             <FloatingElements>
                 <GiftFloatingButton />
-                <TransferManager drawerWidth={drawerWidth} deprecatedRootShareId={defaultShareRoot.shareId} />
+                <TransferManager
+                    drawerWidth={drawerWidth}
+                    deprecatedRootShareId={defaultShareRoot.shareId}
+                    subscription={subscription}
+                />
             </FloatingElements>
             <DriveWindow>
                 <Routes>
@@ -232,6 +252,17 @@ const MainContainer: FunctionComponent = () => {
     const { init } = useDrive();
     const [user] = useUser();
     const [loading, setLoading] = useState(true);
+    const coreEventManager = useEventManager();
+
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
+        void getBusDriver().subscribeSdkDriveEvents('mainContainer', coreEventManager);
+        return () => {
+            void getBusDriver().unsubscribeSdkDriveEvents('mainContainer');
+        };
+    }, [coreEventManager, loading]);
 
     useEffect(() => {
         let drive = getDrive();

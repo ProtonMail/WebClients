@@ -9,7 +9,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { useInvitationCountStore } from '../../modules/invitations';
 import { type SortConfig, SortField, sortItems } from '../../modules/sorting';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
-import { getSharedWithMeSortValue } from './sharedWithMe.sorting';
+import { defaultSharedWithMeSortConfig, getSharedWithMeSortValue } from './sharedWithMe.sorting';
 import { type BookmarkItem, type DirectShareItem, type InvitationItem, ItemType, type SharedWithMeItem } from './types';
 
 export { ItemType };
@@ -24,6 +24,7 @@ type SharedWithMeStore = {
 
     sortField: SortField;
     direction: SORT_DIRECTION;
+    sortConfig: SortConfig;
     sortedRegularItemUids: string[] | null;
 
     isLoadingNodes: boolean;
@@ -108,7 +109,8 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
 
             sortField: SortField.sharedOn,
             direction: SORT_DIRECTION.DESC,
-            sortedRegularItemUids: null,
+            sortConfig: defaultSharedWithMeSortConfig,
+            sortedRegularItemUids: [],
 
             isLoadingNodes: false,
             isLoadingInvitations: false,
@@ -174,10 +176,22 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
 
                     const newSharedWithMeItems = new Map(state.sharedWithMeItems);
                     newSharedWithMeItems.set(keyUid, item);
+                    const regularItems = Array.from(newSharedWithMeItems.values()).filter((i) => {
+                        const uid = getKeyUid(i);
+                        return i.itemType !== ItemType.INVITATION && !state.itemsWithInvitationPosition.has(uid);
+                    });
+                    const newSortedRegularItemUids = sortItems(
+                        regularItems,
+                        state.sortConfig,
+                        state.direction,
+                        getSharedWithMeSortValue,
+                        getKeyUid
+                    );
                     const nextState = {
                         sharedWithMeItems: newSharedWithMeItems,
                         itemUids: newItemUids,
                         itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                        sortedRegularItemUids: newSortedRegularItemUids,
                     };
                     return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
                 });
@@ -203,10 +217,12 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                     newItemUids.delete(uid);
                     const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
                     newItemsWithInvitationPosition.delete(uid);
+                    const newSortedRegularItemUids = state.sortedRegularItemUids?.filter((id) => id !== uid) ?? null;
                     const nextState = {
                         sharedWithMeItems: newSharedWithMeItems,
                         itemUids: newItemUids,
                         itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                        sortedRegularItemUids: newSortedRegularItemUids,
                     };
 
                     const invitationCount = Array.from(newSharedWithMeItems.values()).filter(
@@ -223,6 +239,7 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                     sharedWithMeItems: new Map(),
                     itemUids: new Set(),
                     itemsWithInvitationPosition: new Set(),
+                    sortConfig: undefined,
                     sortedItemUids: computeSortedItemUids({
                         ...state,
                         sharedWithMeItems: new Map(),
@@ -236,6 +253,7 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                     const newSharedWithMeItems = new Map(state.sharedWithMeItems);
                     const newItemUids = new Set(state.itemUids);
                     const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
+                    const uidsToRemove: string[] = [];
 
                     for (const [uid, item] of state.sharedWithMeItems) {
                         const shouldCleanup = item.itemType === itemType && !loadedUids.has(getKeyUid(item));
@@ -243,13 +261,18 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                             newSharedWithMeItems.delete(uid);
                             newItemUids.delete(uid);
                             newItemsWithInvitationPosition.delete(uid);
+                            uidsToRemove.push(uid);
                         }
                     }
+
+                    const newSortedRegularItemUids =
+                        state.sortedRegularItemUids?.filter((id) => !uidsToRemove.includes(id)) ?? null;
 
                     const nextState = {
                         sharedWithMeItems: newSharedWithMeItems,
                         itemUids: newItemUids,
                         itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                        sortedRegularItemUids: newSortedRegularItemUids,
                     };
 
                     if (itemType === ItemType.INVITATION) {
@@ -291,7 +314,23 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
             },
             clearItemsWithInvitationPosition: () => {
                 set((state) => {
-                    const nextState = { itemsWithInvitationPosition: new Set<string>() };
+                    // Re-sort all non-invitation items so previously invitation-positioned items
+                    // (e.g. accepted invitations now stored as DIRECT_SHARE) are included in the
+                    // regular sorted list instead of being dropped from sortedItemUids.
+                    const regularItems = Array.from(state.sharedWithMeItems.values()).filter(
+                        (item) => item.itemType !== ItemType.INVITATION
+                    );
+                    const newSortedRegularItemUids = sortItems(
+                        regularItems,
+                        state.sortConfig,
+                        state.direction,
+                        getSharedWithMeSortValue,
+                        getKeyUid
+                    );
+                    const nextState = {
+                        itemsWithInvitationPosition: new Set<string>(),
+                        sortedRegularItemUids: newSortedRegularItemUids,
+                    };
                     return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
                 });
             },
@@ -315,6 +354,7 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                         itemsWithInvitationPosition: newItemsWithInvitationPosition,
                         sortField,
                         direction,
+                        sortConfig,
                         sortedRegularItemUids: sortedUids,
                     };
                     return {
@@ -396,7 +436,6 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                 }
 
                 const eventManager = getBusDriver();
-                await eventManager.subscribeSdkDriveEvents(context);
 
                 const deleteBookmarksSubscription = eventManager.subscribe(
                     BusDriverEventName.DELETE_BOOKMARKS,
@@ -527,9 +566,6 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
             },
 
             unsubscribeToEvents: async (context: string) => {
-                const eventManager = getBusDriver();
-                await eventManager.unsubscribeSdkDriveEvents(context);
-
                 const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
                 const newActiveContexts = new Set(activeContexts);
                 newActiveContexts.delete(context);

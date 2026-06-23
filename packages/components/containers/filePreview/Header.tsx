@@ -6,14 +6,19 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
-import Icon from '@proton/components/components/icon/Icon';
 import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcHeart } from '@proton/icons/icons/IcHeart';
+import { IcHeartFilled } from '@proton/icons/icons/IcHeartFilled';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -168,11 +173,11 @@ const Header = ({
                         loading={isSaving}
                         disabled={!isDirty}
                     >
-                        <Icon
-                            name={saveError ? 'exclamation-circle-filled' : 'pen'}
-                            size={5}
-                            alt={c('Action').t`Save`}
-                        />
+                        {saveError ? (
+                            <IcExclamationCircleFilled size={5} alt={c('Action').t`Save`} />
+                        ) : (
+                            <IcPen size={5} alt={c('Action').t`Save`} />
+                        )}
                     </Button>
                 )}
                 {onDownload && (
@@ -208,12 +213,21 @@ const Header = ({
                         className="md:ml-2 md:inline-flex"
                         data-testid="file-preview:actions:share"
                     >
-                        <Icon
-                            name={sharedStatus === 'shared' ? 'users' : 'user-plus'}
-                            size={5}
-                            alt={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
-                            className={SHARED_STATUS_TO_COLOR[sharedStatus || '']}
-                        />
+                        {sharedStatus === 'shared' ? (
+                            <IcUsers
+                                size={5}
+                                alt={c('Action').t`Sharing options`}
+                                className={SHARED_STATUS_TO_COLOR[sharedStatus || '']}
+                            />
+                        ) : (
+                            <IcUserPlus
+                                size={5}
+                                alt={
+                                    sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`
+                                }
+                                className={SHARED_STATUS_TO_COLOR[sharedStatus || '']}
+                            />
+                        )}
                     </Button>
                 )}
                 {onFavorite && typeof isFavorite !== 'undefined' && !isMobileHeaderPreview && (
@@ -227,11 +241,11 @@ const Header = ({
                             isFavorite ? 'file-preview:actions:removefavorite' : 'file-preview:actions:markfavorite'
                         }
                     >
-                        <Icon
-                            name={isFavorite ? 'heart-filled' : 'heart'}
-                            size={5}
-                            alt={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}
-                        />
+                        {isFavorite ? (
+                            <IcHeartFilled size={5} alt={c('Action').t`Remove from favorites`} />
+                        ) : (
+                            <IcHeart size={5} alt={c('Action').t`Mark as favorite`} />
+                        )}
                     </Button>
                 )}
                 {onSelectCover && !isMobileHeaderPreview && (

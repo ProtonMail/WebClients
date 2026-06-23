@@ -6,7 +6,7 @@ import {
     PLANS,
     SubscriptionPlatform,
 } from '@proton/payments/index';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { showLumoAddonCustomizer } from './showLumoAddonCustomizer';
 

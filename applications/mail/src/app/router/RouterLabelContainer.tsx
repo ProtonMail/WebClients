@@ -28,7 +28,7 @@ import { useMailboxHotkeys } from 'proton-mail/hooks/mailbox/useMailboxHotkeys';
 import { useWelcomeFlag } from 'proton-mail/hooks/mailbox/useWelcomeFlag';
 import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
 import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
-import { selectElementID, selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { selectElementID, selectLabelID, selectMessageID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { RouterElementContainer } from './RouterElementContainer';
@@ -52,7 +52,8 @@ export const RouterLabelContainer = ({
     onResizingChange,
 }: Props) => {
     const elementID = useMailSelector(selectElementID);
-    const { labelID, messageID } = useMailSelector(selectParams);
+    const labelID = useMailSelector(selectLabelID);
+    const messageID = useMailSelector(selectMessageID);
     const { handleBack } = navigation;
     const { elementIDs, loading } = elementsData;
     const {

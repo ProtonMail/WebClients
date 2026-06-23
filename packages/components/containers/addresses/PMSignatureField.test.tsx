@@ -2,10 +2,10 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { mockUseOrganization } from '@proton/testing';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
+import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 import { mockUseUserSettings } from '@proton/testing/lib/mockUseUserSettings';
 

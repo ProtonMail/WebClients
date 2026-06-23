@@ -13,6 +13,7 @@ import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagement
 import { setParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { isChrome, isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { screenShareQuality } from '../qualityConstants';
 import { useStableCallback } from './useStableCallback';
@@ -26,6 +27,8 @@ export function useCurrentScreenShare({
     startPiP: () => void;
     preparePictureInPicture: () => void;
 }) {
+    const isMeetEnableScreenShareAudio = useFlag('MeetEnableScreenShareAudio');
+
     const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
 
@@ -70,8 +73,15 @@ export function useCurrentScreenShare({
             await room.localParticipant.setScreenShareEnabled(
                 true,
                 {
-                    audio: !(isElectronApp && isWindows()),
-                    systemAudio: isElectronApp && isWindows() ? undefined : 'include',
+                    audio:
+                        isMeetEnableScreenShareAudio && !(isElectronApp && isWindows())
+                            ? {
+                                  // @ts-expect-error Property exist but livekit types doesn't support it yet https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/restrictOwnAudio
+                                  restrictOwnAudio: true,
+                              }
+                            : false,
+                    systemAudio:
+                        isMeetEnableScreenShareAudio && !(isElectronApp && isWindows()) ? 'include' : undefined,
                     selfBrowserSurface: 'exclude',
                     contentHint: 'detail',
                     resolution: {

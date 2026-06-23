@@ -75,10 +75,10 @@ export enum CommonFeatureFlag {
     PasswordReminders = 'PasswordReminders',
     MeetSpotlightType = 'MeetSpotlightType',
     DisablePostSubscriptionB2BOnboarding = 'DisablePostSubscriptionB2BOnboarding',
+    EasySwitchB2CForDriveWeb = 'EasySwitchB2CForDriveWeb',
 }
 
 enum AccountFlag {
-    AccountSessions = 'AccountSessions',
     AccountSettingsUserDisableFE = 'AccountSettingsUserDisableFE',
     MagicLink = 'MagicLink',
     MailTrialOffer = 'MailTrialOffer',
@@ -125,16 +125,15 @@ enum AccountFlag {
     MspEnabled = 'MspEnabled',
     UseZendeskV2 = 'UseZendeskV2',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
-    BornPrivateReservation = 'BornPrivateReservation',
-    BornPrivateActivationRecovery = 'BornPrivateActivationRecovery',
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
-    BornPrivateEurope = 'BornPrivateEurope',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
     RecoverySettingsRedesign = 'RecoverySettingsRedesign',
     SystemGroupFlag = 'SystemGroupFlag',
     UnauthLost2FA = 'UnauthLost2FA',
-    UnauthedForgotPassword = 'UnauthedForgotPassword',
+    VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
+    EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
+    PasswordReminderASR = 'PasswordReminderASR',
 }
 
 enum PaymentsFlag {
@@ -186,6 +185,7 @@ enum DriveFeatureFlag {
     // Others
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
     DriveWebSDKMismatchDetection = 'DriveWebSDKMismatchDetection',
+    DriveWebEncryptedThumbnailCache = 'DriveWebEncryptedThumbnailCache',
     // SDK rollouts — names should match @protontech/drive-sdk FeatureFlags enum, or have a manual mapping
     DriveCryptoEncryptBlocksWithPgpAead = 'DriveCryptoEncryptBlocksWithPgpAead',
     DriveSmallFileUpload = 'DriveSmallFileUpload',
@@ -213,6 +213,7 @@ enum DocsFeatureFlag {
     SheetsEditorEnabled = 'SheetsEditorEnabled',
     SheetsODSImportEnabled = 'SheetsODSImportEnabled',
     SheetsODSExportEnabled = 'SheetsODSExportEnabled',
+    SheetsDriftDetectionEnabled = 'SheetsDriftDetectionEnabled',
     // Update compression and chunking
     DocsUpdateCompressionEnabled = 'DocsUpdateCompressionEnabled',
     DocsUpdateChunkingEnabled = 'DocsUpdateChunkingEnabled',
@@ -225,6 +226,9 @@ enum DocsFeatureFlag {
     // SDK Migration
     DocsSharingModalDriveSDK = 'DocsSharingModalDriveSDK',
     DocsLoadRecentsWithDriveSDK = 'DocsLoadRecentsWithDriveSDK',
+    DocsDocumentViewerEventsSDK = 'DocsDocumentViewerEventsSDK',
+    DocsRenameWithDriveSDK = 'DocsRenameWithDriveSDK',
+    DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
 }
 
 export enum MailFeatureFlag {
@@ -241,6 +245,11 @@ export enum MailFeatureFlag {
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     MailStoreDebugMode = 'MailStoreDebugMode',
+    OnlyInsertNewDataOnFetch = 'OnlyInsertNewDataOnFetch',
+    //ML R&D
+    LumoSieveHelper = 'LumoSieveHelper',
+    ScribeToLumo = 'ScribeToLumo',
+    OneTimePasscode = 'OneTimePasscode',
 }
 
 enum MailKillSwitchFlag {
@@ -251,6 +260,7 @@ enum MailKillSwitchFlag {
     RefreshedToolbarUIDisabled = 'RefreshedToolbarUIDisabled',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
     CategoryViewConversationPrefetchDisabled = 'CategoryViewConversationPrefetchDisabled',
+    ComposerInlineImageReuploadDisabled = 'ComposerInlineImageReuploadDisabled',
 }
 
 enum AdminFeatureFlag {
@@ -284,10 +294,8 @@ enum MeetFeatureFlag {
     MeetSeamlessKeyRotationEnabled = 'MeetSeamlessKeyRotationEnabled',
     MeetShowUpsellModalAfterMeeting = 'MeetShowUpsellModalAfterMeeting',
     MeetShowMLSLogs = 'MeetShowMLSLogs',
-    MeetingRecording = 'MeetingRecording',
     MeetAllowNewHostAssignment = 'MeetAllowNewHostAssignment',
     MeetAllowMLSLogExport = 'MeetAllowMLSLogExport',
-    MeetAllowDecryptionErrorReporting = 'MeetAllowDecryptionErrorReporting',
     MeetClientMetricsLog = 'MeetClientMetricsLog',
     MeetVp9 = 'MeetVp9',
     MeetHigherBitrate = 'MeetHigherBitrate',
@@ -299,30 +307,27 @@ enum MeetFeatureFlag {
     MeetQualityTelemetry = 'MeetQualityTelemetry',
     MeetWebClientDebug = 'MeetWebClientDebug',
     MeetE2eeDebugStats = 'MeetE2eeDebugStats',
-    MeetE2eeAudioNoiseDetection = 'MeetE2eeAudioNoiseDetection',
-    /** Uses shorter grace periods and lower concealment / stall thresholds (more recoverTrack churn). */
     MeetE2eeRecoveryAggressive = 'MeetE2eeRecoveryAggressive',
-    MeetDashboardV2 = 'MeetDashboardV2',
-    MeetDownloadDesktopAppEnabled = 'MeetDownloadDesktopAppEnabled',
-    MeetDesktopAppBannerEnabled = 'MeetDesktopAppBannerEnabled',
-    MeetFeedback = 'MeetFeedback',
     MeetFeedbackOnSkip = 'MeetFeedbackOnSkip',
     MeetPastMeetings = 'MeetPastMeetings',
     MeetE2eeDisableRecovery = 'MeetE2eeDisableRecovery',
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetH264 = 'MeetH264',
-    MeetMultipleRecording = 'MeetMultipleRecording',
+    MeetRecordingWebCodecs = 'MeetRecordingWebCodecs',
+    MeetRecordingRecoveryUI = 'MeetRecordingRecoveryUI',
+    MeetRecordingShowAllRecordings = 'MeetRecordingShowAllRecordings',
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
-    MeetPreSharedKey = 'MeetPreSharedKey',
     MeetAdminLowerHand = 'MeetAdminLowerHand',
     MeetJoinTelemetry = 'MeetJoinTelemetry',
     MeetAdaptiveStream = 'MeetAdaptiveStream',
     MeetDynacast = 'MeetDynacast',
     MeetSimulcast = 'MeetSimulcast',
     MeetMeetingTimeout = 'MeetMeetingTimeout',
-    MeetingRecorderRefactor = 'MeetingRecorderRefactor',
+    MeetUseSimpleSegmentation = 'MeetUseSimpleSegmentation',
     MeetCoreWorker = 'MeetCoreWorker',
+    MeetEnableScreenShareAudio = 'MeetEnableScreenShareAudio',
+    EnableAccessibilityAnnouncements = 'EnableAccessibilityAnnouncements',
 }
 
 enum LumoFeatureFlag {
@@ -341,6 +346,7 @@ enum LumoFeatureFlag {
     LumoSurveys = 'LumoSurveys',
     LumoNewMarketingLinks = 'LumoNewMarketingLinks',
     LumoMeowmory = 'LumoMeowmory',
+    LumoNativeAuth = 'LumoNativeAuth',
     LumoCustomAgents = 'LumoCustomAgents',
 }
 

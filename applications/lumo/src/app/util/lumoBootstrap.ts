@@ -1,6 +1,7 @@
 // Bootstrap stuff that's specific to Lumo and not common with other apps.
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+
 import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { generateMasterKeyBytes } from '../crypto';
@@ -9,7 +10,9 @@ import { updateEligibilityStatus } from '../redux/slices/meta/eligibilityStatus'
 import type { LumoDispatch } from '../redux/store';
 import { LumoApi } from '../remote/api';
 import { convertMasterKeyToApi } from '../remote/conversion';
+import '../remote/nativeAuthBridge';
 import '../remote/nativeComposerBridge';
+import '../remote/nativeFeatureFlagsBridge';
 import '../remote/paymentBridge';
 import type { Base64 } from '../types';
 import { LUMO_ELIGIBILITY } from '../types';

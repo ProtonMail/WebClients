@@ -28,7 +28,15 @@ export const MembersRemote = ({ app }: { app: APP_NAMES }) => {
 
     // convert raw members to enhanced members with partial addresses to prevent fetching addresses for each member in useMemberAddresses
     const members = useMemo(
-        () => rawMembers.map((member): EnhancedMember => ({ ...member, addressState: 'partial' })),
+        () =>
+            rawMembers.map(
+                (member): EnhancedMember => ({
+                    ...member,
+                    addressState: 'partial',
+                    roleState: 'initial',
+                    UserOrganizationRoles: [],
+                })
+            ),
         [rawMembers]
     );
 

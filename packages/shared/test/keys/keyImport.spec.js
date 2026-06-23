@@ -41,6 +41,6 @@ describe('key import', () => {
 
     it('should handle valid keys', async () => {
         const parsedKeys = await parseKeys([VALID_KEY]);
-        expect(parsedKeys).toEqual([jasmine.any(Object)]);
+        expect(parsedKeys).toEqual([expect.any(Object)]);
     });
 });

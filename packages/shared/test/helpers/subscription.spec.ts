@@ -23,9 +23,7 @@ import {
     regularCycles,
     willTrialExpireInLessThan1Week,
 } from '@proton/payments';
-import { buildSubscription } from '@proton/testing/builders';
-
-// still uses Karma. The payments data specifically don't need jest, so it's safe to impoet it directly
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 let subscription: Subscription;
 let defaultPlan: SubscriptionPlan;
@@ -317,7 +315,7 @@ describe('hasCancellablePlan', () => {
 
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
-            expect(hasCancellablePlan(subscription)).withContext(`plan: ${plan}`).toEqual(true);
+            expect(hasCancellablePlan(subscription), `plan: ${plan}`).toEqual(true);
         });
     });
 
@@ -328,7 +326,7 @@ describe('hasCancellablePlan', () => {
 
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
-            expect(hasCancellablePlan(subscription)).withContext(`plan: ${plan}`).toEqual(false);
+            expect(hasCancellablePlan(subscription), `plan: ${plan}`).toEqual(false);
         });
     });
 
@@ -349,9 +347,7 @@ describe('hasCancellablePlan', () => {
         testCases.forEach((testCase) => {
             subscription.Plans[0].Name = testCase.plan;
             subscription.Plans.push({ Name: testCase.addon, Quantity: 1 } as Plan);
-            expect(hasCancellablePlan(subscription))
-                .withContext(`plan: ${testCase.plan}, addon: ${testCase.addon}`)
-                .toEqual(false);
+            expect(hasCancellablePlan(subscription), `plan: ${testCase.plan}, addon: ${testCase.addon}`).toEqual(false);
         });
     });
 });

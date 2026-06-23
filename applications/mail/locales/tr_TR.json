@@ -46,7 +46,7 @@
         "Kurtarma özelliğini aç"
       ],
       "Active": [
-        "Kullanımda"
+        "Etkin"
       ],
       "Add": [
         "Ekle"
@@ -124,7 +124,7 @@
         "Hizalama"
       ],
       "All Read": [
-        "Tüm okunmuşlar"
+        "Tümü okundu"
       ],
       "All Starred": [
         "Tüm yıldızlılar"
@@ -139,7 +139,7 @@
         "Uygula"
       ],
       "Archive": [
-        "Arşivle"
+        "Arşiv"
       ],
       "As Scheduled": [
         "Zamanlandığı gibi"
@@ -328,14 +328,17 @@
       "Contract composer": [
         "Oluşturucuyu küçült"
       ],
-      "Copy": [
-        "Kopyala"
+      "Copy '${ code }' to clipboard": [
+        "'${ code }' kodunu panoya kopyala"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "'${ code }' kodunu panoya kopyala ve çöpe at"
       ],
       "Copy address": [
         "Adresi kopyala"
       ],
       "Copy addresses": [
-        "Kopya adresleri"
+        "Adresi kopyala"
       ],
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
@@ -356,10 +359,10 @@
         "Yeni bir kişi grubu ekle"
       ],
       "Create a new folder": [
-        "Yeni klasör ekle"
+        "Yeni klasör oluştur"
       ],
       "Create a new label": [
-        "Yeni bir etiket ekle"
+        "Yeni bir etiket oluştur"
       ],
       "Create alias": [
         "Takma ad oluştur"
@@ -687,8 +690,8 @@
       "Hide": [
         "Gizle"
       ],
-      "Hide ${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe yazma yardımcısını gizle"
+      "Hide ${ title }": [
+        "${ title } ögesini gizle"
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
@@ -697,7 +700,7 @@
         "Ek dosya bilgilerini gizle"
       ],
       "Hide details": [
-        "Bilgileri gizle"
+        "Ayrıntıları gizle"
       ],
       "Hide messages": [
         "İletileri gizle"
@@ -757,7 +760,7 @@
         "Artır"
       ],
       "Inline": [
-        "Satır arası"
+        "Satır içi"
       ],
       "Insert": [
         "Ekle"
@@ -770,7 +773,7 @@
         "Kişi ekle"
       ],
       "Insert contacts": [
-        "Kişi ekle"
+        "Kişileri ekle"
       ],
       "Insert image": [
         "Görsel ekle"
@@ -782,7 +785,7 @@
         "Üyeleri davet edin"
       ],
       "Is this private?": [
-        "Bu gizli midir?"
+        "Korunsun mu?"
       ],
       "Italic": [
         "Yatık"
@@ -797,10 +800,10 @@
         "Aboneliğimi sürdür"
       ],
       "Label as": [
-        "Şöyle etiketle"
+        "Etiketle"
       ],
       "Label as...": [
-        "Şöyle etiketle..."
+        "Etiketle..."
       ],
       "label emails as": [
         "e-postaları şöyle etiketle"
@@ -824,7 +827,7 @@
         "Yükle"
       ],
       "Load embedded images": [
-        "Gömülü görselleri yükle"
+        "Gömülü görseller yüklensin"
       ],
       "Load image": [
         "Görsel yükle"
@@ -833,7 +836,7 @@
         "Diğerlerini yükle"
       ],
       "Loading${ ellipsis }": [
-        "Yükleniyor${ ellipsis }"
+        "${ ellipsis } yükleniyor"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın"
@@ -962,10 +965,10 @@
         "Taşı"
       ],
       "Move to archive": [
-        "Arşive taşı"
+        "Arşivle"
       ],
       "Move to Archive": [
-        "Arşivle"
+        "Arşive taşı"
       ],
       "Move to category...": [
         "Kategoriye taşı..."
@@ -998,7 +1001,7 @@
         "Yardım gerekiyor mu?"
       ],
       "Never show": [
-        "Asla gösterme"
+        "Asla görüntüleme"
       ],
       "New message": [
         "Yeni ileti"
@@ -1181,7 +1184,7 @@
         "Değiştir"
       ],
       "Replaces the selected text in your message": [
-        "İletinizde seçilmiş metni değiştirir"
+        "İletinizde seçilmiş yazıyı değiştirir"
       ],
       "Reply securely": [
         "Güvenli yanıtla"
@@ -1232,7 +1235,7 @@
         "Yeniden dene"
       ],
       "Revert to original display": [
-        "Özgün görünüme geri dön"
+        "Özgün görünüme dön"
       ],
       "Run on ${ BRAND_NAME } servers": [
         "${ BRAND_NAME } sunucularında çalışsın"
@@ -1289,7 +1292,7 @@
         "Ülke seçin"
       ],
       "Select date and time": [
-        "Tarih ve saat seçin"
+        "Tarih ve saati seçin"
       ],
       "Select rating ${ n } out of ${ to }": [
         "Değerlendirin ${ n } / ${ to }"
@@ -1378,8 +1381,8 @@
       "Show": [
         "Görüntüle"
       ],
-      "Show ${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe yazma yardımcısını görüntüle"
+      "Show ${ title }": [
+        "${ title } ögesini görüntüle"
       ],
       "Show advanced PGP settings": [
         "Gelişmiş PGP ayarlarını görüntüle"
@@ -1522,10 +1525,6 @@
       "Trust": [
         "Güven"
       ],
-      "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
-      ],
       "Trust public key": [
         "Herkese açık anahtara güven"
       ],
@@ -1575,7 +1574,7 @@
         "Abonelik sonlandırıldı"
       ],
       "Unsubscribing": [
-        "Abonelikten çıkılıyor"
+        "Abonelik sonlandırılıyor"
       ],
       "Untrust": [
         "Güvenme"
@@ -1651,6 +1650,9 @@
       ],
       "Verify account": [
         "Hesabı doğrula"
+      ],
+      "Verify now": [
+        "Şimdi doğrula"
       ],
       "View": [
         "Görüntüle"
@@ -2186,6 +2188,107 @@
         "Yıllık"
       ]
     },
+    "BOSS": {
+      "Activated": [
+        "Etkinleştirildi"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
+      ],
+      "All": [
+        "Tümü"
+      ],
+      "Calendar": [
+        "Takvim"
+      ],
+      "Configure migration": [
+        "Aktarımı yapılandırın"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Aktarma işlemini başlatmak için yöneticiniz ile görüşün."
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace üzerinden ${ BRAND_NAME } üzerine veri aktarımı durumu"
+      ],
+      "Emails": [
+        "E-postalar"
+      ],
+      "Errors": [
+        "Hatalar"
+      ],
+      "Estimated size": [
+        "Öngörülen boyut"
+      ],
+      "Find out what can be migrated.": [
+        "Nelerin aktarılabileceğini öğrenin."
+      ],
+      "Has errors": [
+        "Sorunlar çıktı"
+      ],
+      "In progress": [
+        "İşleniyor"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
+      ],
+      "Migrate": [
+        "Aktar"
+      ],
+      "Migrated": [
+        "Aktarıldı"
+      ],
+      "Migration status": [
+        "Aktarım durumu"
+      ],
+      "Missing organization private key": [
+        "Kuruluşun kişisel anahtarı eksik"
+      ],
+      "Missing organization public key": [
+        "Kuruluşun herkese açık anahtarı bulunamadı"
+      ],
+      "No users to display": [
+        "Görüntülenebilecek bir kullanıcı yok"
+      ],
+      "Not activated": [
+        "Etkinleştirilmemiş"
+      ],
+      "Organization does not have enough seats available": [
+        "Kuruluşun yeterli koltuk sayısı yok"
+      ],
+      "Organization does not have enough storage available": [
+        "Kuruluşun yeterli depolama alanı yok"
+      ],
+      "Pending": [
+        "Bekliyor"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
+      ],
+      "Select users to migrate": [
+        "Aktarılacak kullanıcıları seçin"
+      ],
+      "Size": [
+        "Boyut"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "User": [
+        "Kullanıcı"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
+      ],
+      "What are you migrating?": [
+        "Neyi aktarıyorsunuz?"
+      ],
+      "You": [
+        "Siz"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
@@ -2309,13 +2412,18 @@
         "İlerle"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Set up other features": [
         "Diğer özellikleri ayarlayın"
       ],
       "Take a tour": [
         "Keşfedin"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Önceki içe aktarmalardan gelen yinelenen iletiler atlanacak. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski iletileri içe aktarabilirsiniz."
       ]
     },
     "Calendar attachment tooltip": {
@@ -2519,7 +2627,7 @@
         "Şimdilik bir etkinliğe, yinelenen bir etkinlik eklenmesi desteklenmiyor"
       ],
       "Event refreshing is not supported for the moment": [
-        "Şimdilik etkinlik yenilenmesi desteklenmiyor"
+        "Şimdilik etkinlik yenilemesi desteklenmiyor"
       ],
       "Event rescheduling is not supported for the moment": [
         "Şimdilik etkinlik zamanının değiştirilmesi desteklenmiyor"
@@ -2552,7 +2660,7 @@
         "Bu yanıt güncel değil."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
-        "Bu yanıt güncel değil. Etkinlik artık takviminizde değil."
+        "Bu yanıt güncel değil. Etkinlik artık takviminizde yok."
       ],
       "This response is out of date. You have no calendars.": [
         "Bu yanıt güncel değil. Herhangi bir takviminiz yok."
@@ -2583,7 +2691,7 @@
     },
     "Cancel expiration of the message": {
       "Cancel": [
-        "İptal et"
+        "İptal"
       ],
       "Cancel expiration": [
         "Geçerlilik süresini kaldır"
@@ -2915,16 +3023,16 @@
     },
     "Commander action": {
       "Create a new folder": [
-        "Yeni klasör ekle"
+        "Yeni klasör oluştur"
       ],
       "Create a new label": [
-        "Yeni bir etiket ekle"
+        "Yeni bir etiket oluştur"
       ],
       "Go to Archive": [
         "Arşive git"
       ],
       "Go to Drafts": [
-        "Taslaklar kutusuna git"
+        "Taslaklara git"
       ],
       "Go to Inbox": [
         "Gelen kutusuna git"
@@ -2945,7 +3053,7 @@
         "Yeni ileti"
       ],
       "Search": [
-        "Arama"
+        "Ara"
       ]
     },
     "Composer email icon": {
@@ -3250,6 +3358,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanarya Adaları"
       ],
       "Cape Verde": [
         "Yeşil Burun Adaları"
@@ -3965,7 +4076,7 @@
         "Şuna göre süz"
       ],
       "Next": [
-        "İlerle"
+        "Sonraki"
       ],
       "Recipient": [
         "Alıcı"
@@ -4137,11 +4248,14 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } parolanızı kaybetseniz bile hesabınıza ve verilerinize erişebileceğinizden emin olun."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "${ BRAND_NAME } uygulamasına sorunsuz geçmek için verilerinizi Google, Outlook ve diğer hizmetlerden içe aktarın."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Ekibinizin ${ BRAND_NAME } hizmetlerine sorunsuz bir şekilde uyum sağlaması için verilerinizi Google, Outlook ve diğer kaynaklardan içe aktarın."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Yazma yardımcısına ve diğer hizmetlere sınırsız erişim için ${ BRAND_NAME } Duo tarifesine yükseltin."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Yazma yardımcısına ve diğer hizmetlere sınırsız erişim için ${ LUMO_SHORT_APP_NAME } tarifesine yükseltin."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alın."
@@ -4175,7 +4289,7 @@
         "Henüz bir klasör yok"
       ],
       "No labels": [
-        "Henüz bir etiket yok"
+        "Etiket yok"
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
@@ -4214,6 +4328,12 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
       ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için aboneliğinize ekleyin."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için yöneticinizden erişme izni vermesini isteyin."
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
       ],
@@ -4242,7 +4362,7 @@
         "${ planName } tarifesine geçerek ${ MAX_SYNC_PAID_USER } taneye kadar hesap bağlayın"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
-        "Var olan e-posta adresinize ek olarak, daha kısa ve hatırlaması kolay ${ activatePmUser } e-posta adresini edinmek için tarifenizi yükseltin."
+        "Var olan e-posta adresinize ek olarak, daha kısa ve anımsaması kolay ${ activatePmUser } e-posta adresini edinmek için tarifenizi yükseltin."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Çevrim içi hizmetlerde oturum açmak için ${ MAIL_APP_NAME } adresini kullanın. Diğer e-posta hizmeti sağlayıcılarının aksine, verilerinizi asla izlemeyeceğiz ve üçüncü taraflarla paylaşmayacağız."
@@ -4262,8 +4382,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
       ],
-      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
-        "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Eski e-postalarınız içe aktarılacak ve bundan sonra Gmail üzerine gelen yeni iletiler eşitlenecek"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
@@ -4356,7 +4476,7 @@
         "${ notificationsToShow.length } yeni ileti"
       ],
       "From: ${ sender } - ${ Subject }": [
-        "Kimden: ${ sender } - ${ Subject }"
+        "Gönderici: ${ sender } - ${ Subject }"
       ]
     },
     "Desktop notification title": {
@@ -4671,6 +4791,9 @@
       "Aliases could not be loaded": [
         "Takma adlar yüklenemedi"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
+      ],
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
       ],
@@ -4894,7 +5017,7 @@
         "En uzun geçerlilik süresine ulaşıldı."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
-        "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
+        "Eklenebilecek en fazla dosya sayısı sınırı (${ attachmentsCountLimit }) aşıldı"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -4933,6 +5056,9 @@
       "No contacts found to import": [
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
+      "No drive found to import": [
+        "İçe aktarılacak drive bulunamadı"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
@@ -4944,6 +5070,9 @@
       ],
       "Not a valid number": [
         "Numara geçerli değil"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -4995,6 +5124,15 @@
       "Please complete the billing details": [
         "Lütfen fatura bilgilerini tamamlayın"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
+      ],
       "Please enter a valid postal code": [
         "Lütfen geçerli bir posta kodu yazın"
       ],
@@ -5033,7 +5171,10 @@
         "Sayfayı yenileyip yeniden deneyin."
       ],
       "Please try generating the text again": [
-        "Lütfen metni yeniden oluşturmayı deneyin"
+        "Lütfen yazıyı yeniden oluşturmayı deneyin"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -5060,7 +5201,7 @@
         "Yazma yardımcısı aygıtınıza kurulurken sorun çıktı. Lütfen yeniden deneyin."
       ],
       "Problem unloading data not needed when the writing assistant is inactive": [
-        "Yazma yardımcısı açık değilken gerek duyulmayan veriler kaldırılırken sorun çıktı"
+        "Yazma yardımcısı açık olmadığında gerek duyulmayan veriler kaldırılırken sorun çıktı"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -5120,6 +5261,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
+      "Something went wrong while converting the address": [
+        "Adres dönüştürülürken bir sorun çıktı"
+      ],
       "Something went wrong while creating the address": [
         "Adres oluşturulurken bir sorun çıktı"
       ],
@@ -5139,7 +5283,7 @@
         "Sekme kapatıldı"
       ],
       "Text is too long to refine": [
-        "Yazı, özetlenemeyecek kadar uzun"
+        "Yazı, sadeleştirilemeyecek kadar uzun"
       ],
       "Thanks for the feedback!": [
         "Geri bildiriminiz için teşekkürler!"
@@ -5244,6 +5388,9 @@
       "Unexpected error, we can't import the contacts": [
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
+      "Unexpected error, we can't import the files": [
+        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
+      ],
       "Unknown error": [
         "Bilinmeyen sorun"
       ],
@@ -5277,13 +5424,19 @@
         "Aynı anda en fazla ${ maxActiveComposer } oluşturucu penceresi açabilirsiniz"
       ],
       "You did not provide a file.": [
-        "Bir dosya seçmediniz."
+        "Bir dosya belirtmediniz."
       ],
       "You have reached the maximum number of calendars.": [
         "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
       ],
       "You have reached the number of contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi kullanımdan kaldırmak için lütfen tarifenizi yükseltin."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -5301,10 +5454,10 @@
         "İletinizin şifresi çözülemedi. Adres anahtarlarınızdan herhangi birini sildiyseniz, bunları ${ reimportKeyLink } deneyin. ${ learnMoreLink }"
       ],
       "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
-        "İletinizin şifresi çözülemez. Bu iletiyi şifrelemek için kullanılan anahtar, adresinizle ilişkili anahtarlardan hiçbiriyle eşleşmiyor. Adres anahtarlarınızdan herhangi birini sildiyseniz, bunları ${ reimportKeyLink } deneyin. ${ learnMoreLink }"
+        "İletinizin şifresi çözülemedi. Bu iletiyi şifrelemek için kullanılan anahtar, adresinizle ilişkili anahtarlardan hiçbiriyle eşleşmiyor. Adres anahtarlarınızdan herhangi birini sildiyseniz, bunları ${ reimportKeyLink } deneyin. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+        "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlayarak yeniden deneyin."
       ]
     },
     "error": {
@@ -5698,7 +5851,7 @@
         "Aile hesabınızı yapılandırın ve kullanıcıları davet edin"
       ],
       "Invite members and get everything up and running.": [
-        "Üyeleri davet edin ve her şeyi çalışır duruma getirin."
+        "Üyeleri davet edin ve her şeyi kullanılmaya hazır duruma getirin."
       ],
       "Set up your family": [
         "Aile ayarlarınızı yapın"
@@ -5826,7 +5979,7 @@
         "Ek dosyaları olan"
       ],
       "Read": [
-        "Okunmuş"
+        "Oku"
       ],
       "Reset": [
         "Sıfırla"
@@ -5972,7 +6125,7 @@
         "Tarih: ${ date }"
       ],
       "From: ${ senderString }": [
-        "Kimden: ${ senderString }"
+        "Gönderici: ${ senderString }"
       ],
       "Subject: ${ subject }": [
         "Konu: ${ subject }"
@@ -6035,7 +6188,7 @@
         "Kontrol listesi tamamlandı"
       ],
       "Claim ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } adresini al"
+        "${ BRAND_NAME } adresini alın"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Depolama alanınızı ücretsiz olarak iki katına çıkarmak için bu görev listesini ${ daysCount } içinde tamamlayın."
@@ -6179,6 +6332,9 @@
       ],
       "Security Center": [
         "Güvenlik merkezi"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısını ayarla"
       ],
       "Set up the writing assistant": [
         "Yazma yardımcısını kurun"
@@ -6427,7 +6583,7 @@
     },
     "Import ICS file from Mail": {
       "Calendar event created": [
-        "Takvim etkinliği eklendi"
+        "Takvim etkinliği oluşturuldu"
       ],
       "Creating calendar event failed": [
         "Takvim etkinliği oluşturulamadı"
@@ -6656,8 +6812,8 @@
         "${ elementsCount } iletiden şu etiket kaldırılacak:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } gömülmüş görsel",
-        "${ embeddedAttachmentsCount } gömülmüş görsel"
+        "${ embeddedAttachmentsCount } gömülü görsel",
+        "${ embeddedAttachmentsCount } gömülü görsel"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: tam boyutlu görsel"
@@ -6671,6 +6827,12 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME }, hızlı ve kolayca daha iyi e-postalar oluşturmanızı sağlar."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME } panosu"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kuruluşunuzu da koruyabilir."
@@ -6773,6 +6935,10 @@
         "${ total } ileti",
         "${ total } ileti"
       ],
+      "${ total } user found": [
+        "${ total } kullanıcı bulundu",
+        "${ total } kullanıcı bulundu"
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } e-posta izleyici engellendi",
         "${ trackersCount } e-posta izleyici engellendi"
@@ -6822,23 +6988,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Otomatik bağlan**: Aygıtınızı açar açmaz VPN uygulamasını açar ve bağlanır."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Arkadaşlarınızı** yönlendirme bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Bağlantı kesici**: VPN bağlantısı beklenmedik bir şekilde kesilirse internet erişiminizi engelleyerek veri sızıntısını engeller."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. adım:** Arkadaşlarınızı öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Abone olduklarında ${ refereeRewardAmount }** kredi kazanırlar."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2. Adım:** Arkadaşlarınız, seçtikleri ${ BRAND_NAME } tarifesinde 2 hafta ücretsiz kullanım alacak."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2. adım:** Arkadaşlarınız tarifelerine 2 hafta ücretsiz kullanım alacak."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**3. adım**: Bir tarifeye abone olan her arkadaşınız için ${ referrerRewardAmount } kredi kazanın."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**3. adım**: Bir tarifeye abone olan her kişi için ${ referrerRewardAmount } kredi kazanın."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "Abone olan her arkadaşınız için **${ referrerRewardAmount } tutarında kredi kazanırsınız**."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
@@ -6854,7 +7014,7 @@
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Duyurunun göndericisine, bu e-posta listesinden ayrılma isteği gönderilecek ve bu işlem otomatik olarak yapılacak."
+        "Duyurunun göndericisine, bu e-posta listesi aboneliğini sonlandırma isteği gönderilecek ve bu işlem otomatik olarak yapılacak."
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Uzaktan çalışırken güvenli bir bağlantı kullanmak şarttır. VPN, şirket verilerini siber tehditlerden korur ve işinizin güvende kalmasını sağlar."
@@ -6878,7 +7038,7 @@
         "Hesap güncellendi"
       ],
       "Activation in progress": [
-        "Etkinleştiriliyor"
+        "Etkinleştirme sürüyor"
       ],
       "Active": [
         "Etkin"
@@ -6931,7 +7091,7 @@
         "Bu e-posta listesinden gelen tüm iletiler Arşiv kutusuna taşınacak."
       ],
       "All messages from this mailing list will be moved to Trash.": [
-        "Bu e-posta listesinden gelen tüm iletiler Çöp kutusuna taşınacak."
+        "Bu e-posta listesinden gelen tüm iletiler çöpe atılacak."
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Bu klasöre kaydedilmiş tüm iletiler kalıcı olarak silinecek."
@@ -7007,7 +7167,7 @@
         "Bu klasördeki tüm iletileri arşivlemek istediğinize emin misiniz?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Bu konumdaki tüm iletileri Çöp kutusuna taşımak istediğinize emin misiniz?"
+        "Bu klasördeki tüm iletileri çöpe atmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "${ count } yazışmayı kalıcı olarak silmek istediğinize emin misiniz?",
@@ -7022,7 +7182,7 @@
         "${ count } iletiyi kalıcı olarak silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Bu yazışmayı kalıcı olarak silmek istediğinize emin misiniz?"
+        "Bu yazışmayı silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete this draft?": [
         "Bu taslağı kalıcı olarak silmek istediğinize emin misiniz?"
@@ -7047,6 +7207,9 @@
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletileri otomatik olarak silebilirsiniz."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Gelen e-postalar otomatik olarak kategorilere göre sıralansın"
       ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
@@ -7082,7 +7245,7 @@
         "Tarayıcı desteklenmiyor"
       ],
       "Bulk delete": [
-        "Toplu sil"
+        "Toplu silme"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -7094,7 +7257,7 @@
         "Aradığınızı bulamadınız mı? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
+        "Parolanızı anımsayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
       "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
         "Kategoriler istenmeyen ileti süzgeçleri gibi çalışır. ${ MAIL_APP_NAME } e-postalarınızı asla okumaz veya verilerinizi paylaşmaz."
@@ -7151,7 +7314,7 @@
         "Gizliliğinizi koruyarak gezinmek için ${ VPN_APP_NAME } bağlantısı kurun"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
-        "E-postayı alıcınızın alması için en iyi zamanda gönderilmek üzere ayarlayın."
+        "Alıcınızın e-postanızı alması için en iyi zamanın ne olduğunu düşünün ve o zamanda gönderilmek üzere ayarlayın."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubuna eklendi"
@@ -7167,9 +7330,6 @@
       ],
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
-      ],
-      "Copy to clipboard": [
-        "Panoya kopyala"
       ],
       "Copy your referral link": [
         "Öneri bağlantınızı kopyalayın"
@@ -7263,6 +7423,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Parolanızı anımsıyor musunuz? ${ verifyButton }"
+      ],
       "Do you want to download this attachment anyway?": [
         "Bu ek dosyayı yine de indirmek istiyor musunuz?",
         "Bu ek dosyayı yine de indirmek istiyor musunuz?"
@@ -7271,7 +7434,7 @@
         "Kişi bilgilerini yeniden imzalamak ve bu süreçte belirtilen parmak izine sahip anahtarlara güvenmek istiyor musunuz?"
       ],
       "Do you want to re-sign the contact details?": [
-        "Kişi bilgilerini yeniden imzalamak istiyor musunuz?"
+        "Kişi bilgilerini yeniden imzalamak ister misiniz?"
       ],
       "Don't forget to share the password with the recipient": [
         "Parolayı alıcı ile paylaşmayı unutmayın"
@@ -7325,7 +7488,7 @@
         "İçe aktarmak için bırakın"
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
-        "Alıcının yapılandırması nedeniyle, bu ileti ${ firstRecipients } alıcılarına süreli olarak gönderilemez."
+        "Alıcının yapılandırması nedeniyle, bu ileti ${ firstRecipients } alıcıya süreli olarak gönderilemez."
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
         "Alıcınızın yapılandırması nedeniyle, bu ileti süreli olarak gönderilemez."
@@ -7364,7 +7527,7 @@
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "E-posta, posta kutunuza iletilir. Asıl e-posta adresiniz gizli kalır."
+        "E-posta, gelen kutunuza iletilir. Asıl e-posta adresiniz gizli kalır."
       ],
       "Email tracker protection is disabled": [
         "E-posta izleme koruması kapalı"
@@ -7379,8 +7542,8 @@
         "${ nameDeleted } etiketi ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
       ],
       "embedded image": [
-        "gömülmüş görsel",
-        "gömülmüş görseller"
+        "gömülü görsel",
+        "gömülü görsel"
       ],
       "Enabling auto-deletion…": [
         "Otomatik silme özelliği açılıyor…"
@@ -7435,7 +7598,7 @@
         "Seçimi genişlet"
       ],
       "Expand text": [
-        "Metni genişlet"
+        "Yazıyı genişlet"
       ],
       "Expiration time": [
         "Geçerlilik süresi"
@@ -7457,6 +7620,9 @@
       "file attached": [
         "dosya eklendi",
         "dosya eklendi"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad, bir koşul ve bir işlem bulunmalıdır."
@@ -7488,12 +7654,15 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Daha fazla sonuç bulmak için e-posta iletilerinizin içeriğini bu sözcük ile aramayı deneyin."
       ],
+      "Forgot password?": [
+        "Parolamı unuttum"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "${ ASSISTANT_TRIAL_TIME_DAYS } gün süreyle ücretsiz deneyin",
         "${ ASSISTANT_TRIAL_TIME_DAYS } gün süreyle ücretsiz deneyin"
       ],
       "From": [
-        "Kimden"
+        "Gönderici"
       ],
       "Generate text": [
         "Yazı oluştur"
@@ -7530,7 +7699,7 @@
         "Yüksek öncelik"
       ],
       "How hide-my-email aliases works": [
-        "Hide-my-email adları nasıl çalışır"
+        "Hide-my-email takma adları nasıl çalışır"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir alıcıya gönderiyorum."
@@ -7915,7 +8084,7 @@
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
       ],
       "Optional": [
-        "İsteğe bağlı"
+        "İsteğe bağlı"
       ],
       "or discover other features:": [
         "veya diğer özellikleri keşfedin:"
@@ -7943,6 +8112,9 @@
       ],
       "Password must have:": [
         "Parolada şunlar bulunmalıdır:"
+      ],
+      "Password verified": [
+        "Parola doğrulandı"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -7994,6 +8166,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
+      ],
+      "Please select the labels you would like to import:": [
+        "İçe aktarmak istediğiniz etiketleri seçin:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Lütfen eklemek istediğiniz bağlantı türünü seçin ve tüm alanları doldurun."
@@ -8066,10 +8241,10 @@
         "Seçimi düzelt"
       ],
       "Proofread text": [
-        "Metni düzelt"
+        "Yazıyı düzelt"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
-        "${ hideMyEmailAliasesLink } ile e-posta adresinizin e-posta listelerine veya istenmeyen posta gönderenlere sızdırılmasını önleyin."
+        "${ hideMyEmailAliasesLink } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta göndericilere sızmasından korunun."
       ],
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
@@ -8123,7 +8298,7 @@
         "Cmt, ${ formatTime }"
       ],
       "Saved at ${ dateString }": [
-        "${ dateString } saatinde kaydedildi"
+        "${ dateString } zamanında kaydedildi"
       ],
       "Saved yesterday": [
         "Dün kaydedilmiş"
@@ -8399,7 +8574,7 @@
         "Bu yazışmada zamanlanmış bir ileti var. Bu iletinin gönderimi iptal edilecek."
       ],
       "This conversation contains non-trashed messages.": [
-        "Bu yazışmada çöpe atılmamış iletiler var."
+        "Bu konuşmada çöpe atılmamış iletiler var."
       ],
       "This conversation contains one or more expiring messages": [
         "Bu yazışmada bir ya da birkaç süreli ileti var"
@@ -8412,19 +8587,19 @@
         "Bu yazışmalar istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için aboneliği sonlandırmak da ister misiniz?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Bu e-posta, etki alanının kimlik doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir."
+        "Bu e-posta, etki alanının doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir."
       ],
       "This file is too large to preview": [
         "Bu dosya ön izleme için çok büyük"
       ],
       "This invitation is saved in a disabled calendar.": [
-        "Bu davet, kullanım dışı bırakılmış bir takvime kaydedilmiş."
+        "Bu davet, kullanımdan kaldırılmış bir takvime kaydedilmiş."
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Kullanıcılarınıza görüntülenecek kuruluş adınız veya kısaltmanız. İstediğiniz zaman değiştirebilirsiniz."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
-        "Bu bir yazma yardımcısı olarak tasarlanmıştır. Önerilen metnin doğruluğunu kontrol edin. ${ learnMoreResult }"
+        "Bu bir yazma yardımcısı olarak tasarlanmıştır. Önerilen yazının doğruluğunu kontrol edin. ${ learnMoreResult }"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
@@ -8524,7 +8699,7 @@
         "Bu bilgi, e-posta konu satırınızda parola sıfırlama anahtar sözcükleri bulunduğundan görüntülendi."
       ],
       "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
-        "Bu işlem, duyuru kaydını bu listeden kaldırır. Sizi duyuru aboneliğinden çıkarmaz. Yeni iletiler alırsanız kayıt yeniden görünür."
+        "Bu işlem, duyuru kaydını bu listeden kaldırır. Duyuru aboneliğinizi sonlandırmaz. Yeni iletiler alırsanız kayıt yeniden görünür."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
@@ -8541,6 +8716,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
       ],
@@ -8554,10 +8732,10 @@
         "Kısıtlamaları kaldırmak için ücretli bir tarifeye geçebilirsiniz."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Bu e-posta listesinden ayrılmak için, duyurunun göndericisi tarafından belirtilen ${ boldFrom } adresine şu bilgileri içeren bir e-posta gönderilecek:"
+        "Bu e-posta listesi aboneliğini sonlandırmak için, duyurunun göndericisi tarafından belirtilen ${ boldFrom } adresine şu bilgileri içeren bir e-posta gönderilecek:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Bu e-posta listesinden ayrılmak için, duyuru göndericisinin yönergelerinin bulunduğu şu adrese yönlendirileceksiniz:"
+        "Bu e-posta listesi aboneliğini sonlandırmak için, duyuru göndericisinin yönergelerinin bulunduğu şu adrese yönlendirileceksiniz:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
@@ -8611,7 +8789,7 @@
         "Okunmamış yazışmalar"
       ],
       "Unread messages": [
-        "Okunmamış ileti"
+        "Okunmamış iletiler"
       ],
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
@@ -8656,7 +8834,7 @@
         "@pm.me adreslerinden e-posta göndermek için tarifenizi yükseltin."
       ],
       "Upgrade to send emails from your custom email domain.": [
-        "Özel e-posta etki alanınızı kullanarak e-posta gönderebilmek için tarifenizi yükseltin."
+        "Kendi etki alanınızı kullanarak e-posta gönderebilmek için tarifenizi yükseltin."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Kişi gruplarına kolayca e-posta göndermek için tarifenizi yükseltin."
@@ -8728,7 +8906,7 @@
         "Uyarı"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz misiniz?"
+        "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Şu reklam verenlerin ve kuruluşların bu e-postayı ne zaman açtığınızı, hangi aygıtı kullandığınızı ve nerede bulunduğunuzu görmesini engelledik."
@@ -8765,6 +8943,9 @@
       ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Daha sonra yeniden parolanızı doğrulamanızı anımsatacağız."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -8854,7 +9035,7 @@
         "Arama sorgunuzu güncelleyebilir ya da ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Arama sorgunuzu güncelleyebilir ya da temizleyebilirsiniz"
+        "Arama sorgunuzu güncelleyebilir veya temizleyebilirsiniz"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
@@ -8881,6 +9062,9 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "${ label } etiketinde ${ unread } iletiniz var."
       ],
       "You have ${ unread } in your inbox.": [
         "Gelen kutunuzda ${ unread } var."
@@ -9038,8 +9222,8 @@
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "İletiniz ${ numberOfDays } gün sonra geçersiz olacak.",
-        "İletiniz ${ numberOfDays } gün sonra geçersiz olacak."
+        "İletinizin süresi ${ numberOfDays } gün sonra dolacak.",
+        "İletinizin süresi ${ numberOfDays } gün sonra dolacak."
       ],
       "Your message will expire today.": [
         "İletinizin geçerlilik süresi bugün dolacak."
@@ -9168,7 +9352,7 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "\"Anahtara güven\" üzerine tıklamak bu herkese açık anahtarı bu göndericiyle ilişkilendirir ve bu adresten gelen e-postalar otomatik olarak şifreylemeyle doğrulanır."
+        "\"Anahtara Güven\"e tıklamak, bu ortak anahtarı bu gönderenle ilişkilendirir ve bu adresten gelen e-postalar kendiliğinden şifreli olarak doğrulanır."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "\"Anahtara güven\" üzerine tıklamak yeni bir kişi ekler ve bu herkese açık anahtarı bu göndericiyle ilişkilendirir. Bu adresten gelen e-postalar otomatik olarak şifrelemeyle doğrulanır."
@@ -9348,6 +9532,16 @@
         "Yıldız ekle"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } uygulamasına geç"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } uygulamasına geç"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "İşlem kısayollları"
@@ -9360,6 +9554,9 @@
       ],
       "Composer shortcuts": [
         "Oluşturucu kısayolları"
+      ],
+      "Desktop app navigation": [
+        "Bilgisayar uygulaması gezinmesi"
       ],
       "Folder shortcuts": [
         "Klasör kısayolları"
@@ -9394,6 +9591,9 @@
       "${ count } unread message": [
         "${ count } okunmamış ileti",
         "${ count } okunmamış ileti"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } month": [
         "${ n } ay",
@@ -9516,6 +9716,9 @@
       "Calendar": [
         "Takvim"
       ],
+      "Calendars": [
+        "Takvimler"
+      ],
       "Carbon Copy": [
         "Kopya"
       ],
@@ -9534,9 +9737,6 @@
       "Category": [
         "Kategori"
       ],
-      "Category:": [
-        "Kategori:"
-      ],
       "CC": [
         "Kopya"
       ],
@@ -9548,6 +9748,9 @@
       ],
       "Cleaned": [
         "Temizlendi"
+      ],
+      "Clear logs": [
+        "Günlükleri temizle"
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
@@ -9576,6 +9779,12 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Context page": [
+        "Bağlam sayfası"
+      ],
+      "Context total": [
+        "Bağlam toplamı"
+      ],
       "Continue cancelling": [
         "İptal etmeye geç"
       ],
@@ -9596,6 +9805,9 @@
       ],
       "Credits": [
         "Kredi"
+      ],
+      "Current context": [
+        "Geçerli bağlam"
       ],
       "Date": [
         "Tarih"
@@ -9633,8 +9845,17 @@
       "Don't show this suggestion": [
         "Bu öneriyi gösterme"
       ],
+      "Download logs": [
+        "Günlüğü indir"
+      ],
+      "Drive": [
+        "Drive"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "örneğin, Amazon, eBay, Etsy"
+      ],
+      "Elements in store": [
+        "Depolama alanındaki bileşenler"
       ],
       "Email": [
         "E-posta"
@@ -9642,8 +9863,14 @@
       "Email address": [
         "E-posta adresi"
       ],
+      "Email categories": [
+        "E-posta kategorileri"
+      ],
       "Email format": [
         "E-posta biçimi"
+      ],
+      "Emails": [
+        "E-postalar"
       ],
       "Emails (all messages)": [
         "E-postalar (tüm iletiler)"
@@ -9681,6 +9908,9 @@
       "Failed to create folder ${ newFolderName }": [
         "${ newFolderName } klasörü oluşturulamadı"
       ],
+      "Filter": [
+        "Süz"
+      ],
       "Filter Name": [
         "Süzgeç adı"
       ],
@@ -9697,13 +9927,13 @@
         "Şuraya iletiyor"
       ],
       "Frequency": [
-        "Yinelenme"
+        "Sıklık"
       ],
       "From": [
-        "Kimden"
+        "Gönderici"
       ],
       "From:": [
-        "Kimden"
+        "Gönderici:"
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
@@ -9759,8 +9989,14 @@
       "Import to:": [
         "Şunun içine aktar:"
       ],
+      "Import your emails": [
+        "E-postalarınızı içe aktarın"
+      ],
       "Include application logs in bug report": [
         "Uygulama günlükleri sorun bildirimine eklensin"
+      ],
+      "Information": [
+        "Bilgiler"
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
@@ -9776,6 +10012,9 @@
       ],
       "Label as": [
         "Şöyle etiketlensin"
+      ],
+      "Label ID": [
+        "Etiket kimliği"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -9800,6 +10039,12 @@
       ],
       "Location": [
         "Konum"
+      ],
+      "Mail debugging information": [
+        "Hata ayıklama bilgilerini e-posta ile gönder"
+      ],
+      "Mail logs": [
+        "E-posta günlükleri"
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
@@ -9841,7 +10086,7 @@
         "Gelen kutusuna taşı"
       ],
       "Moved to ${ labelName }": [
-        "${ labelName } içine taşındı"
+        "${ labelName } etiketine taşındı"
       ],
       "Moved to Archive": [
         "Arşive taşındı"
@@ -9978,6 +10223,9 @@
       "Recipient": [
         "Alıcı"
       ],
+      "Refresh logs": [
+        "Günlükleri yenile"
+      ],
       "Region": [
         "Bölge"
       ],
@@ -10029,6 +10277,9 @@
       "Social media updates and activity": [
         "Sosyal ağ güncellemeleri ve etkinlikleri"
       ],
+      "Sort": [
+        "Sırala"
+      ],
       "Starred": [
         "Yıldızlı"
       ],
@@ -10040,6 +10291,9 @@
       ],
       "Statement": [
         "Değerlendirme"
+      ],
+      "Store state": [
+        "Depolama alanı durumu"
       ],
       "Street address": [
         "Sokak adresi"
@@ -10062,6 +10316,9 @@
       "System information": [
         "Sistem bilgileri"
       ],
+      "Tab age": [
+        "Sekme yaşı"
+      ],
       "Tell us more about your experience": [
         "Bize deneyiminiz ile ilgili bilgi verin"
       ],
@@ -10078,10 +10335,10 @@
         "Ali"
       ],
       "Time": [
-        "Saat"
+        "Zaman"
       ],
       "To:": [
-        "Kime:"
+        "Alıcı:"
       ],
       "To: ${ toEmail }": [
         "Kime: ${ toEmail }"
@@ -10099,13 +10356,16 @@
         "Güvenli değil ya da sorunlu"
       ],
       "Unsubscribed from ${ truncatedName }.": [
-        "${ truncatedName } aboneliğinden çıkıldı."
+        "${ truncatedName } aboneliği sonlandırıldı."
       ],
       "Updates": [
         "Güncellemeler"
       ],
       "Upload picture": [
         "Görsel yükle"
+      ],
+      "URL": [
+        "İnternet adresi"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -10200,10 +10460,10 @@
     },
     "Label Recipient": {
       "From": [
-        "Kimden"
+        "Gönderici"
       ],
       "To": [
-        "Kime"
+        "Alıcı"
       ]
     },
     "Label, credit card": {
@@ -10287,7 +10547,7 @@
         "Tüm e-postalar"
       ],
       "Archive": [
-        "Arşivle"
+        "Arşiv"
       ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
@@ -10296,16 +10556,16 @@
         "bizimle görüşün"
       ],
       "Create a calendar linked to an active email address.": [
-        "Etkin bir e-posta adresine bağlı bir takvim ekleyin."
+        "Etkin bir e-posta adresine bağlı bir takvim oluşturun."
       ],
       "Create a new calendar to add this event": [
-        "Bu etkinliği eklemek için yeni bir takvim ekleyin"
+        "Bu etkinliği eklemek için yeni bir takvim oluşturun"
       ],
       "Create a new calendar to answer this invitation": [
-        "Bu daveti yanıtlamak için yeni bir takvim ekleyin"
+        "Bu daveti yanıtlamak için yeni bir takvim oluşturun"
       ],
       "Create a new calendar to manage your invitations": [
-        "Davetlerinizi yönetmek için yeni bir takvim ekleyin"
+        "Davetlerinizi yönetmek için yeni bir takvim oluşturun"
       ],
       "Deleted": [
         "Silinmiş"
@@ -10392,7 +10652,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Less": [
-        "Daha az görüntüle"
+        "Ayrıntıları gizle"
       ],
       "Manage blocked email addresses": [
         "Engellenmiş e-posta adresleri yönetimi"
@@ -10500,10 +10760,10 @@
         "Güncellenen etkinliği görmek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
-        "Güncellenen daveti görmek için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Güncellenmiş daveti görmek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to reactivate your keys to manage this invitation": [
-        "Bu daveti yönetmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
+        "Bu daveti yönetmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
       ],
       "You need to reactivate your keys to see the updated event": [
         "Güncellenen etkinliği görmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
@@ -10514,7 +10774,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } uygulamasında aç"
+        "${ CALENDAR_APP_NAME } ile aç"
       ]
     },
     "Link to settings": {
@@ -10623,7 +10883,7 @@
         "İstenmeyen"
       ],
       "Trash": [
-        "Çöp kutusu"
+        "Çöp"
       ]
     },
     "meet_2025: Addon": {
@@ -11628,7 +11888,7 @@
         "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
+        "Bir e-posta anımsatıcısı ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
@@ -12069,13 +12329,13 @@
         "Bir hizmet sağlayıcı seçin"
       ],
       "Maybe later": [
-        "Belki sonra"
+        "Belki daha sonra"
       ],
       "Protect your accounts": [
         "Hesaplarınızı koruyun"
       ],
       "Skip for now": [
-        "Şimdilik atla"
+        "Şimdi atla"
       ],
       "Some popular services": [
         "Bazı yaygın kullanılan hizmetler"
@@ -12104,7 +12364,7 @@
         "${ protectionFromTrackersTitle } artık internet üzerinde izlenmemenizi sağlar."
       ],
       "Activate premium features": [
-        "Ücretli özelliklere erişin"
+        "Ücretli özellikleri etkinleştir"
       ],
       "Activate selected": [
         "Seçilmişleri kullanıma al"
@@ -12122,7 +12382,7 @@
         "Her zaman, her yerden erişim"
       ],
       "Auto-delete spam and trash": [
-        "İstenmeyen ve çöp otomatik olarak silinsin"
+        "İstenmeyenleri ve çöpü otomatik olarak silin"
       ],
       "browser": [
         "tarayıcı"
@@ -12146,7 +12406,7 @@
         "Bilgisayar uygulamasını indirin"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Bilgisayar uygulamasıyla daha hızlı, odaklanmış bir e-posta gönderme deneyiminin tadını çıkarın."
+        "Bilgisayar uygulamasıyla daha hızlı, odaklanmış bir e-posta deneyiminin tadını çıkarın."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
         "E-postanıza istediğiniz zaman erişebilmek ve en iyi mobil deneyimi elde etmek için ${ mobileAppAppStoreLink } veya ${ mobileAppGooglePlayLink } uygulamamızı indirin."
@@ -12302,7 +12562,7 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Yes, don't show again": [
         "Evet, bir daha görüntülenmesin"
@@ -12851,6 +13111,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Arama"
+      ],
       "Search date, name, email address, or subject line": [
         "Tarihe, ada, e-posta adresine veya konu satırına göre arama yapın"
       ],
@@ -12860,8 +13123,11 @@
       "Search for name or email": [
         "Ad veya e-posta adresi ile arayın"
       ],
+      "Search for users or addresses": [
+        "Kullanıcıları veya adresleri ara"
+      ],
       "Search messages": [
-        "İleti arama"
+        "İleti ara"
       ],
       "Search name, email or group": [
         "Ad, e-posta ya da grup arayın"
@@ -12893,32 +13159,35 @@
       "Subject": [
         "Konu"
       ],
-      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Yazma yardımcısına ne yazacağını söyleyin. Örnek: \"Yaklaşan etkinlikler için bir duyuru hazırla\""
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "${ subject } tarafından ne yazılacağını belirtin. Örneğin: “Yaklaşan etkinlikleri e-posta ile duyur”"
       ],
-      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
-        "Yazma yardımcısına ne yazacağını söyleyin. Örnek: \"Spor salonu üyeliğimi iptal et\""
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Spor salonu üyeliğimi iptal et”"
       ],
-      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
-        "Yazma yardımcısına ne yazacağını söyleyin. Örnek: \"Ayşe'yi partime davet et\""
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Ayşe'yi partime davet et”"
       ],
-      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
-        "Yazma yardımcısına ne yazacağını söyleyin. Örnek: \"İş arkadaşıma bir projedeki yardımları için teşekkür et\""
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Bir projede yardım ettiği için iş arkadaşıma teşekkür et”"
       ],
-      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
-        "Yazma yardımcısına ne yazacağını söyleyin. Örnek: \"Staj için başvuru mektubu yaz\""
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Staj için bir giriş yazısı yaz”"
       ],
-      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
-        "Yazma yardımcısına ne yazacağını söyleyin. Örnek: \"Bir müşteriye takip e-postası yaz\""
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Bir müşteriye yanıt e-postası yaz”"
       ],
       "Text": [
         "Yazı"
+      ],
+      "the writing assistant": [
+        "yazma yardımcısı"
       ],
       "Thomas": [
         "Ali"
       ],
       "To": [
-        "Kime"
+        "Alıcı"
       ],
       "Type text or keyword": [
         "Yazı ya da anahtar sözcük yazın"
@@ -13046,15 +13315,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
       ],
-      "SPRING SALE 2026": [
-        "BAHAR İNDİRİMİ 2026"
+      "Summer Sale": [
+        "Yaz İndirimi"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/ay"
       ],
@@ -13073,35 +13342,17 @@
       "500 GB storage": [
         "500 GB depolama alanı"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
       ],
-      "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail, Pass, Drive, VPN ve Calender'ın tüm ücretli özellikleri"
-      ],
-      "Block ads, trackers, and malware": [
-        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
-      ],
-      "Built-in 2FA authenticator": [
-        "Dahili iki adımlı kimlik doğrulayıcı"
-      ],
-      "Connect 10 devices at once": [
-        "Aynı anda 10 aygıtla bağlanın"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } uygulamasına tam erişim"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Kolay arama ve favoriler ile tüm sohbet geçmişi"
       ],
       "Individual accounts for 6 users": [
         "6 kullanıcı için bireysel hesaplar"
@@ -13109,8 +13360,8 @@
       "Individual accounts for you and a partner": [
         "Siz ve bir partneriniz için bireysel hesaplar"
       ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
+      "Online document and spreadsheet editor": [
+        "Çevrim içi belge ve hesap tablosu düzenleyici"
       ],
       "Recover previous file versions": [
         "Önceki dosya sürümlerini geri yükleyin"
@@ -13121,25 +13372,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
       ],
-      "Unlimited daily chats": [
-        "Sınırsız günlük sohbet"
-      ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız klasör, etiket ve filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "12 aylığına"
       ],
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
+      "SUMMER SALE": [
+        "YAZ İNDİRİMİ"
       ]
     },
     "Received email icon": {
@@ -13259,7 +13504,7 @@
         "Davet yanıtlanamadı"
       ],
       "Calendar event created": [
-        "Takvim etkinliği eklendi"
+        "Takvim etkinliği oluşturuldu"
       ],
       "Calendar event updated": [
         "Takvim etkinliği güncellendi"
@@ -13399,11 +13644,11 @@
     },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
-        "Yine de e-postayı göndermek ister misiniz?"
+        "E-postayı yine de göndermek ister misiniz?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Sorunlar algıladık. E-postanız şu nedenle belirtilen e-posta adresine gönderilemez:",
-        "Sorunlar algıladık. E-postanız şu nedenlerle belirtilen e-posta adreslerine gönderilemez:"
+        "Bazı sorunlar bulundıu. E-postanız şu nedenlerle yazılan e-posta adresine gönderilemiyor:",
+        "Bazı sorunlar bulundıu. E-postanız şu nedenlerle yazılan e-posta adreslerine gönderilemiyor:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Bazı sorunlar bulduk. E-postanız şu nedenlerle belirtilen bir ya da birkaç e-posta adresine gönderilemez:"
@@ -13677,7 +13922,7 @@
         "PGP ile imzalanmış ileti. Gönderici doğrulanamadı: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
-        "Gönderici doğrulanamadı: İleti imzalanmamış"
+        "Gönderen doğrulanamadı: İleti imzalanmadı"
       ],
       "Sender verification failed": [
         "Gönderici doğrulanamadı"
@@ -13987,7 +14232,7 @@
         "Bu adres artık varsayılan adresiniz. Farklı bir adresten göndermek isterseniz açılan kutudan seçin. "
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
-        "Verileriniz bir üçüncü taraf hizmet üzerinden ele geçirilirse bilgilendirilmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın."
+        "Verileriniz bir üçüncü taraf hizmet üzerinden sızdırılırsa bilgilendirilmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık görseller varsayılan olarak yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
@@ -14736,6 +14981,9 @@
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
         "${ sendersList } tarafından gönderilen yazışmalar ${ folder } klasörüne taşınacak"
       ],
+      "Copied '${ code }' to clipboard": [
+        "'${ code }' panoya kopyalandı"
+      ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
@@ -14850,8 +15098,8 @@
         "Okundu bilgisi gönderildi"
       ],
       "Recategorized ${ elementsCount } message.": [
-        "${ elementsCount } ileti yeniden düzenlendi.",
-        "${ elementsCount } ileti yeniden düzenlendi."
+        "${ elementsCount } ileti yeniden sınıflandırıldı.",
+        "${ elementsCount } ileti yeniden sınıflandırıldı."
       ],
       "Secret passphrase updated": [
         "Gizli parola ifadesi güncellendi"
@@ -15061,7 +15309,7 @@
     },
     "Tip Action": {
       "Activate": [
-        "Kullanıma al"
+        "Etkinleştir"
       ],
       "Create an alias": [
         "Takma ad oluştur"
@@ -15098,12 +15346,18 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } klavye kısayolları"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-posta adresi",
         "${ emailsCount } e-posta adresi"
       ],
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ numMessages } message": [
         "${ numMessages } ileti",
@@ -15196,7 +15450,7 @@
         "Otomatik silme özelliği açık"
       ],
       "Bad time for this email?": [
-        "Bu e-postayı göndermek için doğru bir zaman değil mi?"
+        "Bu e-postayı göndermek için uygun bir zaman değil mi?"
       ],
       "BCC": [
         "Gizli kopya"
@@ -15300,6 +15554,9 @@
       "Craft better emails": [
         "Daha iyi e-postalar oluşturun"
       ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } ile daha etkili e-postalar oluşturun"
+      ],
       "Create contact": [
         "Kişi ekle"
       ],
@@ -15307,7 +15564,7 @@
         "\"${ search }\" klasörü ekle"
       ],
       "Create label \"${ search }\"": [
-        "\"${ search }\" etiketi ekle"
+        "\"${ search }\" etiketini oluştur"
       ],
       "Create new group": [
         "Yeni grup ekle"
@@ -15390,7 +15647,7 @@
         "Gmail bağlantısı kesildi"
       ],
       "Discover your subscription benefits": [
-        "Aboneliğinizin avantajlarını keşfedin."
+        "Aboneliğinizin avantajlarını keşfedin"
       ],
       "Distraction-free emailing": [
         "Dikkat dağıtmayan e-posta deneyimi"
@@ -15480,7 +15737,7 @@
         "Şuna göre süz..."
       ],
       "Folder options": [
-        "Klasör ayarları"
+        "Klasör seçenekleri"
       ],
       "Forward": [
         "İlet"
@@ -15583,7 +15840,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu duyuru gizlensin mi?"
+        "Bu duyuru gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"
@@ -15598,7 +15855,7 @@
         "Bağlantı onayı"
       ],
       "Load embedded images": [
-        "Gömülü görselleri yükle"
+        "Gömülü görseller yüklensin"
       ],
       "Load remote content": [
         "Uzak içeriği yükle"
@@ -15644,13 +15901,16 @@
         "Kişileri birleştirme"
       ],
       "Message details": [
-        "İleti bilgileri"
+        "İleti ayrıntıları"
       ],
       "Message list": [
         "İleti listesi"
       ],
       "Message will expire": [
         "İleti geçerlilik süresi"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Kuruluşunuzu ${ BRAND_NAME } üzerine aktarın"
       ],
       "Minicalendar": [
         "Mini takvim"
@@ -15659,7 +15919,7 @@
         "Mobil"
       ],
       "More": [
-        "Diğer"
+        "Ayrıntıları görüntüle"
       ],
       "More actions": [
         "Diğer işlemler"
@@ -15932,7 +16192,7 @@
         "Gönderici değiştirildi"
       ],
       "Sending error": [
-        "Gönderme sorunu"
+        "Gönderim sorunu"
       ],
       "Sending notice": [
         "Gönderildi bildirimi"
@@ -15995,7 +16255,7 @@
         "İçe aktarma işlemini başlatın"
       ],
       "Storage capacity warning": [
-        "Depolama alanı uyarısı"
+        "Depolama kapasitesi uyarısı"
       ],
       "Subject missing": [
         "Konu eksik"
@@ -16007,7 +16267,7 @@
         "Özet"
       ],
       "Summer Sale": [
-        "Yaz indirimi"
+        "Yaz İndirimi"
       ],
       "This field cannot be empty": [
         "Bu alan boş olamaz"
@@ -16016,7 +16276,7 @@
         "Bu alanda yalnızca boşluk bulunamaz"
       ],
       "To": [
-        "Kime"
+        "Alıcı"
       ],
       "To preview this spreadsheet, download it.": [
         "Bu elektronik tabloyu ön izlemek için indirin."
@@ -16047,7 +16307,7 @@
         "Aboneliği sonlandır"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
-        "${ subscription.Name } aboneliğinden çıkılsın mı?"
+        "${ subscription.Name } aboneliği sonlandırılsın mı?"
       ],
       "Unsubscribe not available for this sender": [
         "Bu gönderici için aboneliği sonlandırma özelliği kullanılamıyor."
@@ -16084,6 +16344,9 @@
       ],
       "Verification failed": [
         "Doğrulanamadı"
+      ],
+      "Verify your password": [
+        "Parolanızı doğrulayın"
       ],
       "Verifying your card...": [
         "Kartınız doğrulanıyor..."
@@ -16206,6 +16469,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "Load image": [
         "Görsel yükle"
@@ -16424,7 +16690,7 @@
         "Kişiler birleştirilemedi"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+        "Parolanızı anımsamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

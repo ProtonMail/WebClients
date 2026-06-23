@@ -38,21 +38,18 @@ import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { useFlag } from '@proton/unleash/useFlag';
 
-import { useDeviceData } from '../../hooks/bridges/useDeviceData';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
 import type { SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
-import { isRNNoiseFilterSupported, preloadRNNoiseWorkletAsset } from '../../utils/rnnoiseProcessor';
 import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
 import { useCameraPreview } from './useCameraPreview';
-import { useDeviceListSync } from './useDeviceListSync';
-import { useDevicePermissionChangeListener } from './useDevicePermissionChangeListener';
-import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
+import { useDeviceManagement } from './useDeviceManagement/useDeviceManagement';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
 
 const SWITCH_DEVICE_TIMEOUT_MS = 5000;
@@ -63,8 +60,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const { reportMeetError } = useMeetErrorReporting();
     const dispatch = useMeetDispatch();
     const store = useMeetStore();
-
-    useDeviceListSync();
 
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
@@ -86,6 +81,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const preferredCameraId = useMeetSelector(selectPreferredCameraId);
     const preferredMicrophoneId = useMeetSelector(selectPreferredMicrophoneId);
     const preferredSpeakerId = useMeetSelector(selectPreferredSpeakerId);
+    const isUseSimpleSegmentationEnabled = useFlag('MeetUseSimpleSegmentation');
 
     const { getMicrophoneVolumeAnalysis, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis } =
         useMicrophoneVolumeAnalysis();
@@ -183,15 +179,18 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         isVideoEnabled,
         facingMode,
         isBackgroundBlurSupported,
-    } = useVideoToggle(switchActiveDevice);
+    } = useVideoToggle({ switchActiveDevice, isUseSimpleSegmentationEnabled });
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
+
+    const { permissionsLoading } = useDeviceManagement({ toggleAudio, toggleVideo, switchActiveDevice });
 
     const { handlePreviewCameraToggle, cleanupCameraPreview, cleanupPreviewTrack } = useCameraPreview({
         selectedCameraId: activeCameraDeviceId,
         facingMode: 'user',
         isBackgroundBlurSupported,
         backgroundBlur,
+        isUseSimpleSegmentationEnabled,
         room,
     });
 
@@ -371,16 +370,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         }
     };
 
-    useDeviceData();
-
-    const { permissionsLoading } = useDevicePermissionChangeListener();
-
-    useDynamicDeviceHandling({
-        toggleAudio,
-        toggleVideo,
-        switchActiveDevice,
-    });
-
     const initializedDevices = useRef({
         video: false,
         audio: false,
@@ -515,11 +504,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     }, [cleanupPreviews, room]);
 
     useEffect(() => {
-        void preloadBackgroundProcessorAssets();
-        if (isRNNoiseFilterSupported()) {
-            preloadRNNoiseWorkletAsset();
-        }
-    }, []);
+        void preloadBackgroundProcessorAssets(isUseSimpleSegmentationEnabled);
+    }, [isUseSimpleSegmentationEnabled]);
 
     return (
         <MediaManagementContext.Provider

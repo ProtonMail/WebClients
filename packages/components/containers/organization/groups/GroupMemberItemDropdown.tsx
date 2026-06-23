@@ -36,6 +36,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import useGroupKeys from './useGroupKeys';
 
+import './GroupMemberItemDropdown.scss';
+
 interface PermissionOption {
     label: string;
     value: GROUP_MEMBER_PERMISSIONS;
@@ -69,25 +71,11 @@ interface Props {
     groupMember: GroupMember;
     member?: EnhancedMember;
     group: Group; // needs to be removed once backend doesn't need Group.ID
-    canOnlyDelete: boolean;
+    isFrozen: boolean;
     canChangeVisibility: boolean;
 }
 
-// Did not find an already existing implementation of jsxJoin
-const jsxJoin = (array: ReactNode[], separator: ReactNode): ReactNode[] => {
-    const [first, ...rest] = array;
-    return rest.reduce(
-        (acc: ReactNode[], val: ReactNode, i: number) => [
-            ...acc,
-            // eslint-disable-next-line react/no-array-index-key
-            <Fragment key={i}>{separator}</Fragment>,
-            val,
-        ],
-        [first] as ReactNode[]
-    );
-};
-
-const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, canChangeVisibility }: Props) => {
+const GroupMemberItemDropdown = ({ groupMember, member, group, isFrozen, canChangeVisibility }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const api = useApi();
     const handleError = useErrorHandler();
@@ -236,7 +224,7 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
                         option={option}
                         isSelected={option.value === overrideGroupPermissions}
                         onSelect={handleOverrideGroupPermissions}
-                        disabled={canOnlyDelete}
+                        disabled={isFrozen}
                     />
                 ))}
             </Fragment>
@@ -247,7 +235,7 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
                 key="group-owner"
                 className="text-left flex justify-space-between items-center py-2 pb-3"
                 onClick={isGroupOwner ? handleRemoveGroupOwner : handleSetGroupOwner}
-                disabled={canOnlyDelete}
+                disabled={isFrozen}
                 liClassName="py-0"
             >
                 <span className="flex items-center mr-14">{c('Action').t`Group owner`}</span>
@@ -257,28 +245,16 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
         // Resume membership / Resend invitation / Revoke invitation
         <Fragment key="resume-resend-revoke-invitation">
             {isPaused && (
-                <DropdownMenuButton
-                    className="text-left py-2"
-                    onClick={handleResumeInvitation}
-                    disabled={canOnlyDelete}
-                >
+                <DropdownMenuButton className="text-left py-2" onClick={handleResumeInvitation} disabled={isFrozen}>
                     {c('Action').t`Resume membership`}
                 </DropdownMenuButton>
             )}
             {canResendInvitation && (
-                <DropdownMenuButton
-                    className="text-left py-2"
-                    onClick={handleResendInvitation}
-                    disabled={canOnlyDelete}
-                >
+                <DropdownMenuButton className="text-left py-2" onClick={handleResendInvitation} disabled={isFrozen}>
                     {c('Action').t`Resend invitation`}
                 </DropdownMenuButton>
             )}
-            <DropdownMenuButton
-                className="text-left color-danger"
-                onClick={handleRevokeInvitation}
-                disabled={canOnlyDelete}
-            >
+            <DropdownMenuButton className="text-left color-danger" onClick={handleRevokeInvitation} disabled={isFrozen}>
                 {c('Action').t`Revoke invitation`}
             </DropdownMenuButton>
         </Fragment>,
@@ -305,7 +281,7 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
                 originalPlacement="bottom-start"
                 size={{ width: DropdownSizeUnit.Dynamic, maxWidth: DropdownSizeUnit.Viewport }}
             >
-                <DropdownMenu>{jsxJoin(sections, <hr className="mt-2 mb-0" />)}</DropdownMenu>
+                <DropdownMenu className="group-member-dropdown-menu">{sections}</DropdownMenu>
             </Dropdown>
         </>
     );

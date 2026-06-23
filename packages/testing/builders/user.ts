@@ -1,7 +1,7 @@
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { Key, UserModel } from '@proton/shared/lib/interfaces';
 
-import { privateKeyA } from '../data';
+import { privateKeyA } from '../data/keys';
 
 export const buildUser = (value?: Partial<UserModel>): UserModel => {
     return {

@@ -45,6 +45,7 @@ import {
     ThemesSection,
     ThirdPartySection,
     TwoFactorSection,
+    UpsellModalTelemetryProvider,
     UsernameSection,
     VpnAlsoInYourPlanSection,
     VpnBlogSection,
@@ -121,17 +122,19 @@ const AccountSettingsRouter = ({
                 <Route path={getSectionPath(path, vpnDashboardV2)}>
                     <DashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
-                    <PrivateMainSettingsArea
-                        config={vpnDashboardV2}
-                        variant={SettingsLayoutVariant.Card}
-                        maxWidth={SettingsCardMaxWidth.Wide}
-                    >
-                        <YourPlanSectionV2 app={app} />
-                        <YourPlanUpsellsSectionV2 app={app} />
-                        <VPNDownloadAndInfoSection app={app} />
-                        <VpnAlsoInYourPlanSection app={app} />
-                        <VpnBlogSection />
-                    </PrivateMainSettingsArea>
+                    <UpsellModalTelemetryProvider context="account-home">
+                        <PrivateMainSettingsArea
+                            config={vpnDashboardV2}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Wide}
+                        >
+                            <YourPlanSectionV2 app={app} />
+                            <YourPlanUpsellsSectionV2 app={app} />
+                            <VPNDownloadAndInfoSection app={app} />
+                            <VpnAlsoInYourPlanSection app={app} />
+                            <VpnBlogSection />
+                        </PrivateMainSettingsArea>
+                    </UpsellModalTelemetryProvider>
                 </Route>
             )}
             {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboardV2' && (
@@ -144,27 +147,29 @@ const AccountSettingsRouter = ({
             {getIsSectionAvailable(subscription) && (
                 <Route path={getSectionPath(path, subscription)}>
                     <AutomaticSubscriptionModal />
-                    <PrivateMainSettingsArea
-                        config={subscription}
-                        variant={SettingsLayoutVariant.Card}
-                        maxWidth={SettingsCardMaxWidth.Wide}
-                    >
-                        <YourPlanSectionV2
-                            app={app}
-                            editBillingCycle={true}
-                            cta={<DashboardComparePlansCTA app={app} />}
-                        />
-                        <AssistantToggle />
-                        <SubscriptionsSection />
-                        <PaymentMethodsSection app={app} />
-                        <CreditsSection app={app} />
-                        <GiftCodeSection />
-                        <InvoicesSection app={app} />
-                        <EmailSubscriptionSection />
-                        <CancelSubscriptionSection app={app} />
-                        <CancelSubscriptionViaSupportSection />
-                        <DowngradeSubscriptionSection app={app} />
-                    </PrivateMainSettingsArea>
+                    <UpsellModalTelemetryProvider context="account-home">
+                        <PrivateMainSettingsArea
+                            config={subscription}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Wide}
+                        >
+                            <YourPlanSectionV2
+                                app={app}
+                                editBillingCycle={true}
+                                cta={<DashboardComparePlansCTA app={app} />}
+                            />
+                            <AssistantToggle />
+                            <SubscriptionsSection />
+                            <PaymentMethodsSection app={app} />
+                            <CreditsSection app={app} />
+                            <GiftCodeSection />
+                            <InvoicesSection app={app} />
+                            <EmailSubscriptionSection toggleContainerClassName="gap-4" />
+                            <CancelSubscriptionSection app={app} />
+                            <CancelSubscriptionViaSupportSection />
+                            <DowngradeSubscriptionSection app={app} />
+                        </PrivateMainSettingsArea>
+                    </UpsellModalTelemetryProvider>
                 </Route>
             )}
             {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboard' && (
@@ -180,7 +185,7 @@ const AccountSettingsRouter = ({
                         <CreditsSection app={app} />
                         <GiftCodeSection />
                         <InvoicesSection app={app} />
-                        <EmailSubscriptionSection />
+                        <EmailSubscriptionSection toggleContainerClassName="gap-4" />
                         <CancelSubscriptionSection app={app} />
                         <CancelSubscriptionViaSupportSection />
                         <DowngradeSubscriptionSection app={app} />

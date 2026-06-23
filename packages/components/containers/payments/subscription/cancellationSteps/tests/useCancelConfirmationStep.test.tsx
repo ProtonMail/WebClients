@@ -1,6 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
 import type { CancelSubscriptionResult } from '../../cancelSubscription/types';

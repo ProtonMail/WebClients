@@ -15,10 +15,15 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { type NewsletterSubscriptionUpdateData, getUpdatedNewsBitmap } from '@proton/shared/lib/helpers/newsletter';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { EmailSubscriptionToggleWithHeader } from './EmailSubscriptionToggles';
 
-const EditEmailSubscription = () => {
+interface Props {
+    wrapperClassName?: string;
+}
+const EditEmailSubscription = ({ wrapperClassName }: Props) => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
@@ -41,9 +46,11 @@ const EditEmailSubscription = () => {
 
     const handleChange = async (data: NewsletterSubscriptionUpdateData) => {
         setLoadingMapDiff(data, true);
-        run(data).finally(() => {
-            setLoadingMapDiff(data, false);
-        });
+        run(data)
+            .catch(noop)
+            .finally(() => {
+                setLoadingMapDiff(data, false);
+            });
     };
 
     const filter = (emailSubscription: EmailSubscription) =>
@@ -53,7 +60,7 @@ const EditEmailSubscription = () => {
             userSettings,
         });
 
-    const { general, product, notifications } = getEmailSubscriptions(filter);
+    const { general, product, accountUpdates, notifications } = getEmailSubscriptions(filter);
 
     const sharedProps = {
         onChange: handleChange,
@@ -62,9 +69,14 @@ const EditEmailSubscription = () => {
     };
 
     return (
-        <div className="flex flex-column gap-4">
+        <div className={clsx('flex flex-column', wrapperClassName)}>
             <EmailSubscriptionToggleWithHeader title={general.title} subscriptions={general.toggles} {...sharedProps} />
             <EmailSubscriptionToggleWithHeader title={product.title} subscriptions={product.toggles} {...sharedProps} />
+            <EmailSubscriptionToggleWithHeader
+                title={accountUpdates.title}
+                subscriptions={accountUpdates.toggles}
+                {...sharedProps}
+            />
             <EmailSubscriptionToggleWithHeader
                 title={notifications.title}
                 subscriptions={notifications.toggles}

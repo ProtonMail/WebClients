@@ -115,11 +115,99 @@ export class IndexedDatabase<Schema extends Record<string, any>> {
     })
   }
 
+  public async getRecordCountByIndex<StoreName extends keyof Schema>(
+    storeName: StoreName,
+    indexName: string,
+    value: IDBValidKey | IDBKeyRange,
+  ): Promise<Result<number>> {
+    const dbResult = await this.openDatabase()
+    if (dbResult.isFailed()) {
+      this.logger.error('[IndexedDB] Failed to open database for getRecordsByIndex', { error: dbResult.getError() })
+      return Result.fail(dbResult.getError())
+    }
+    const db = dbResult.getValue()
+
+    return new Promise((resolve) => {
+      const transaction = db.transaction(storeName as string)
+      const objectStore = transaction.objectStore(storeName as string)
+      const index = objectStore.index(indexName)
+
+      const request = index.count(value)
+
+      request.onsuccess = () => {
+        resolve(Result.ok(request.result))
+      }
+
+      request.onerror = () => {
+        this.logger.error('[IndexedDB] Transaction failed in getRecordsByIndex', {
+          error: IndexedDBError.TRANSACTION_FAILED,
+        })
+        resolve(Result.fail(IndexedDBError.TRANSACTION_FAILED))
+      }
+    })
+  }
+
+  public async deleteRecordsByIndex<StoreName extends keyof Schema>(
+    storeName: StoreName,
+    indexName: string,
+    value: IDBValidKey | IDBKeyRange,
+  ): Promise<Result<void>> {
+    const dbResult = await this.openDatabase()
+    if (dbResult.isFailed()) {
+      this.logger.error('[IndexedDB] Failed to open database for deleteRecordsByIndex', { error: dbResult.getError() })
+      return Result.fail(dbResult.getError())
+    }
+    const db = dbResult.getValue()
+
+    return new Promise((resolve) => {
+      const transaction = db.transaction(storeName as string)
+      const objectStore = transaction.objectStore(storeName as string)
+      const index = objectStore.index(indexName)
+
+      const request = index.getAllKeys(value)
+
+      request.onsuccess = (event) => {
+        const keys = request.result
+        if (keys.length === 0) {
+          resolve(Result.ok())
+          return
+        }
+        let completed = 0
+        const total = keys.length
+        const transaction = db.transaction(storeName as string, 'readwrite')
+        keys.forEach((key) => {
+          const request = transaction.objectStore(storeName as string).delete(key)
+          request.onsuccess = () => {
+            completed++
+            if (completed === total) {
+              resolve(Result.ok())
+            }
+          }
+          request.onerror = () => {
+            this.logger.error('[IndexedDB] Transaction failed in deleteRecordsByIndex', {
+              error: IndexedDBError.TRANSACTION_FAILED,
+            })
+            resolve(Result.fail(IndexedDBError.TRANSACTION_FAILED))
+          }
+        })
+      }
+
+      request.onerror = () => {
+        this.logger.error('[IndexedDB] Transaction failed in deleteRecordsByIndex', {
+          error: IndexedDBError.TRANSACTION_FAILED,
+        })
+        resolve(Result.fail(IndexedDBError.TRANSACTION_FAILED))
+      }
+    })
+  }
+
   public async saveRecords<StoreName extends keyof Schema>(
     storeName: StoreName,
     records: Schema[StoreName][],
   ): Promise<Result<void>> {
-    if (records.length === 0) {return Result.ok()}
+    if (records.length === 0) {
+      return Result.ok()
+    }
 
     const dbResult = await this.openDatabase()
     if (dbResult.isFailed()) {
@@ -155,7 +243,9 @@ export class IndexedDatabase<Schema extends Record<string, any>> {
     storeName: StoreName,
     keys: IDBValidKey[],
   ): Promise<Result<void>> {
-    if (keys.length === 0) {return Result.ok()}
+    if (keys.length === 0) {
+      return Result.ok()
+    }
 
     const dbResult = await this.openDatabase()
     if (dbResult.isFailed()) {
@@ -175,7 +265,9 @@ export class IndexedDatabase<Schema extends Record<string, any>> {
           .delete(key)
         request.onsuccess = () => {
           completed++
-          if (completed === total) {resolve(Result.ok())}
+          if (completed === total) {
+            resolve(Result.ok())
+          }
         }
         request.onerror = () => {
           this.logger.error('[IndexedDB] Transaction failed in deleteRecords', {

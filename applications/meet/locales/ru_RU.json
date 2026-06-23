@@ -26,6 +26,9 @@
       "Authenticate": [
         "Аутентификация"
       ],
+      "Back": [
+        "Назад"
+      ],
       "Background blur": [
         "Размытие фона"
       ],
@@ -85,6 +88,9 @@
       ],
       "Done": [
         "Готово"
+      ],
+      "Download": [
+        "Скачать"
       ],
       "Download local participant report": [
         "Скачать отчет о локальном участнике"
@@ -418,9 +424,6 @@
       "Show passphrase": [
         "Показать кодовую фразу"
       ],
-      "Toggle camera": [
-        "Включить/выключить камеру"
-      ],
       "Toggle chat": [
         "Показать/скрыть чат"
       ],
@@ -429,9 +432,6 @@
       ],
       "Toggle meeting details": [
         "Показать/скрыть детали встречи"
-      ],
-      "Toggle microphone": [
-        "Включить/выключить микрофон"
       ],
       "Toggle participants": [
         "Показать/скрыть участников"
@@ -1433,9 +1433,6 @@
       "Failed to rotate personal meeting link": [
         "Не удалось обновить ссылку на личную встречу"
       ],
-      "Failed to save recording": [
-        "Не удалось сохранить запись"
-      ],
       "Failed to send chat message. Please try again.": [
         "Не удалось отправить сообщение в чате. Попробуйте еще раз."
       ],
@@ -1489,9 +1486,6 @@
       ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
-      ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "Ссылка на встречу, к которой вы пытаетесь получить доступ, не существует или, возможно, была удалена."
       ],
       "The meeting password is incorrect": [
         "Неверный пароль встречи"
@@ -1560,6 +1554,58 @@
     "fido2: Label": {
       "Security key": [
         "Ключ безопасности"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "байт",
+        "байта",
+        "байтов",
+        "байтов"
+      ],
+      "GB": [
+        "ГБ"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "TB": [
+        "ТБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байта",
+        "Байтов",
+        "Байтов"
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайтов"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайта",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайтов",
+        "Мегабайтов",
+        "Мегабайтов"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
       ]
     },
     "Font face option": {
@@ -1908,9 +1954,6 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Вставьте ссылку ${ MEET_APP_NAME }, чтобы присоединиться к безопасной встрече"
       ],
-      "Permission denied": [
-        "Доступ запрещен"
-      ],
       "Permissions not given.": [
         "Разрешения не предоставлены."
       ],
@@ -1934,9 +1977,6 @@
       ],
       "Reconnecting to meeting...": [
         "Переподключение к встрече..."
-      ],
-      "Recording saved": [
-        "Запись сохранена"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
@@ -2022,14 +2062,8 @@
       "Turn off camera": [
         "Выключить камеру"
       ],
-      "Turn off microphone": [
-        "Выключить микрофон"
-      ],
       "Turn on camera": [
         "Включить камеру"
-      ],
-      "Turn on microphone": [
-        "Включить микрофон"
       ],
       "unlimited meeting": [
         "неограниченные встречи"
@@ -2535,6 +2569,14 @@
       ],
       "Verification successful": [
         "Проверка прошла успешно"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Действия"
+      ],
+      "Name": [
+        "Имя"
       ]
     },
     "Title": {

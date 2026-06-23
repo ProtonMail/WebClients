@@ -120,6 +120,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                     form: false,
                     performance: false,
                     modal: false,
+                    exit: false,
                 },
                 overridenPageTitle: 'Account',
             });

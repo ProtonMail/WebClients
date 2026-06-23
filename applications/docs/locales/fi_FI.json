@@ -211,6 +211,9 @@
       "Continue to ${ planOrAppName }": [
         "Jatka sovellukseen ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Jatka maksuttomalla"
+      ],
       "Continue with Google": [
         "Jatka Googlella"
       ],
@@ -399,6 +402,9 @@
       "Get the apps": [
         "Hanki sovellukset"
       ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
       "Get the writing assistant": [
         "Hanki kirjoitusavustaja"
       ],
@@ -467,6 +473,9 @@
       ],
       "Keep my subscription": [
         "Pidä tilaukseni"
+      ],
+      "Later": [
+        "Myöhemmin"
       ],
       "Learn more": [
         "Lue lisää"
@@ -539,6 +548,9 @@
       ],
       "New document": [
         "Uusi dokumentti"
+      ],
+      "New folder": [
+        "Uusi kansio"
       ],
       "New message": [
         "Uusi viesti"
@@ -1136,6 +1148,50 @@
         "Rajattomasti päivittäisiä keskusteluja"
       ]
     },
+    "BOSS": {
+      "All": [
+        "Kaikki"
+      ],
+      "Calendar": [
+        "Kalenteri"
+      ],
+      "Configure migration": [
+        "Määritä siirto"
+      ],
+      "Contacts": [
+        "Yhteystiedot"
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "Has errors": [
+        "Virheitä"
+      ],
+      "In progress": [
+        "Käynnissä"
+      ],
+      "Migration status": [
+        "Siirron tila"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisaatiolla ei ole tarpeeksi tallennustilaa"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "User": [
+        "Käyttäjä"
+      ],
+      "What are you migrating?": [
+        "Mitä olet siirtämässä?"
+      ],
+      "You": [
+        "Sinä"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
@@ -1299,6 +1355,17 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Välisumma ${ cycle } kuukaudelle",
+        "Välisumma ${ cycle } kuukaudelle"
+      ],
+      "Total": [
+        "Summa"
+      ],
+      "Total for ${ n } month": [
+        "Summa ${ n } kuukaudelle",
+        "Summa ${ n } kuukaudelle"
       ]
     },
     "Collapsible tooltip": {
@@ -1650,6 +1717,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanariansaaret"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -2396,6 +2466,9 @@
       "Automatically forward incoming email to another email address.": [
         "Välitä saapuva sähköposti automaattisesti toiseen sähköpostiosoitteeseen."
       ],
+      "Available storage: ${ storageText }": [
+        "Käytettävissä oleva tallennustila: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Määritä tämä ensin aktivoidaksesi organisaatiosi ja mukauttaaksesi sähköpostiosoitettasi."
       ],
@@ -2423,14 +2496,14 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tarpeeksi tilaa vuosien sähköposteille, liitteille ja muulle."
+      ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Varmista ensiluokkainen tietoturva tilillesi ${ PROTON_SENTINEL_NAME } -ohjelmalla."
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Varmista, että pääset edelleen käsiksi tiliisi ja tietoihisi, vaikka kadottaisit ${ BRAND_NAME } -salasanasi."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Voit siirtyä ${ BRAND_NAME }iin saumattomasti tuomalla tietosi Googlesta, Outlookista ja muualta."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
@@ -2480,11 +2553,20 @@
       "To start, give your organization a name.": [
         "Aloita antamalla organisaatiollesi nimi."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Avaa 15 Gt tallennustilaa vain hintaan ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Emme voi enää käyttää ${ boldEmails } -osoitteita."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pysäytämme tuonnit, kun tallennustilasta on käytössä 80 %, varataksemme tilaa uusille viesteille."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Olemme aloittaneet sähköpostienne tuomisen Gmailista. Ilmoitamme teille, kun se on valmis."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
@@ -2503,6 +2585,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain ${ newUserStorageText } viimeisimmistä Gmail-viesteistänne"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain viimeisimmät Gmail-sähköpostinne."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
@@ -2744,6 +2832,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lisäksi voit tarkastaa ${ statusPageLink }."
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } kohteen siirto epäonnistui",
+        "${ failureItems.length } kohteen siirto epäonnistui"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Identiteetti ja osoitteet > Lyhytosoite (pm.me)"
       ],
@@ -2770,6 +2862,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliaksia ei voitu ladata"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Kaikki tallennustila on varattu. Vähennä muille käyttäjille varattua tallennustilaa."
       ],
       "Already a member of this share": [
         "On jo tämän jaon jäsen"
@@ -2872,8 +2967,14 @@
       "Failed to copy photo to album": [
         "Kuvan kopiointi albumiin epäonnistui"
       ],
+      "Failed to create folder": [
+        "Kansion luominen epäonnistui"
+      ],
       "Failed to fetch sharing info": [
         "Jakotietojen nouto epäonnistui"
+      ],
+      "Failed to load 'My files' folder": [
+        "Kansiota ”Omat tiedostot” ei voitu ladata"
       ],
       "Failed to load document details": [
         "Asiakirjan tietojen lataaminen epäonnistui"
@@ -3019,6 +3120,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Kuvien lähetys on väliaikaisesti pois käytöstä. Yritä myöhemmin uudelleen"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Määritä oma verkkotunnus ennen kuin lisäät osoitteita."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Määritä oma verkkotunnus ennen kuin lisäät organisaatioosi käyttäjiä."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Ota usean käyttäjän tuki käyttöön ennen kuin lisäät käyttäjiä organisaatioosi."
+      ],
       "Please enter a valid postal code": [
         "Syötä kelvollinen postinumero"
       ],
@@ -3043,6 +3153,9 @@
       ],
       "Please select a state": [
         "Valitse osavaltio"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
       "Port is required": [
         "Portti vaaditaan"
@@ -3201,6 +3314,9 @@
       "Unknown error": [
         "Tuntematon virhe"
       ],
+      "Unknown location": [
+        "Tuntematon sijainti"
+      ],
       "Update Too Large": [
         "Päivitys on liian suuri"
       ],
@@ -3234,6 +3350,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Olet saavuttanut tilisi yhteystietojen enimmäismäärän"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Olet käyttänyt kaikki tilauksesi osoitteet. Päivitä tilauksesi lisätäksesi uuden osoitteen tai ota osoite pois käytöstä tililtäsi."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ],
       "You must set a name": [
         "Nimi on asetettava"
@@ -3608,11 +3730,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Yli 10 premium-ominaisuutta"
+      ],
+      "Custom email domain": [
+        "Mukautettu sähköpostin verkkotunnus"
+      ],
+      "Email addresses": [
+        "Sähköpostiosoitteet"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Salattu pilvipalvelu tiedostoillesi, kuvillesi ja asiakirjoillesi"
       ],
       "More premium features": [
         "Lisää premium-ominaisuuksia"
+      ],
+      "Storage": [
+        "Tallennustila"
       ],
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
@@ -4176,6 +4310,10 @@
         "${ selectedFoldersCountLocalized } tunniste valittu",
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
       ],
+      "${ total } user found": [
+        "Löytyi ${ total } käyttäjä",
+        "${ total } käyttäjää löytyi"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } yhteystieto päivitettiin.",
         "${ updated } yhteystietoa päivitettiin."
@@ -4195,21 +4333,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Vaihe 2:** Kaverisi saavat valitsemansa ${ BRAND_NAME }-tilauksen ilmaiseksi kahdeksi viikoksi."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Vaihe 2:** Kaverisi saavat kahden viikon ilmaisen tilauksen."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediittiä jokaista tilauksen hankkivaa kaveria kohden."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediitteinä jokaista tilauksen hankkivaa kaveria kohden."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } lisätallennustilaa"
@@ -4266,6 +4389,9 @@
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
       ],
+      "Already in this folder": [
+        "Jo tässä kansiossa"
+      ],
       "an anonymous user": [
         "anonyymi käyttäjä"
       ],
@@ -4316,6 +4442,9 @@
       ],
       "Can view only": [
         "Vain katseluoikeus"
+      ],
+      "Can't move a folder into itself": [
+        "Kansiota ei voi siirtää itseensä"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
@@ -4519,9 +4648,6 @@
       "Failing signatures will be re-signed by you": [
         "Epäonnistuneet allekirjoitukset korvataan omalla allekirjoituksellasi"
       ],
-      "Favorites": [
-        "Suosikit"
-      ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" poistettiin latauksen aikana"
       ],
@@ -4551,6 +4677,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Parasta lopputulosta varten, vältä suoratoistoa ja keskusmuistia kuormittavia toimintoja tai jaa tallennuksesi pienempiin eriin."
+      ],
+      "Forgot password?": [
+        "Unohtunut salasana?"
       ],
       "Free 5GB encrypted storage to get started": [
         "5 Gt ilmaista salattua tallennustilaa päästäksesi alkuun"
@@ -4618,6 +4747,9 @@
       ],
       "In restrictive countries": [
         "Rajoittavissa maissa"
+      ],
+      "Included": [
+        "Sisältyy"
       ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
@@ -4806,6 +4938,9 @@
       "Password must have:": [
         "Salasanassa on oltava:"
       ],
+      "Password verified": [
+        "Salasana vahvistettu"
+      ],
       "Pending invitations": [
         "Odottavat kutsut"
       ],
@@ -4838,6 +4973,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Valitse tuotavat kansiot:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Valitse tuotavat nimikkeet:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet.",
@@ -4902,6 +5040,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
+      ],
+      "Select a destination folder": [
+        "Valitse kohdekansio"
       ],
       "Select a folder to move to.": [
         "Valitse kohdekansio."
@@ -5126,8 +5267,14 @@
       "Update recent documents": [
         "Päivitä viimeaikaiset dokumentit"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Päivitä milloin tahansa tuodaksesi loputkin"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Päivitä tai tyhjennä tilaa milloin tahansa tuodaksesi loputkin"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
@@ -5464,6 +5611,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } merkkiä"
       ],
@@ -5539,6 +5690,9 @@
       "Calendar": [
         "Kalenterin"
       ],
+      "Calendars": [
+        "Kalenterit"
+      ],
       "can edit": [
         "voi muokata"
       ],
@@ -5605,6 +5759,9 @@
       "Download anyway": [
         "Lataa silti"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Löydettiin kaksoiskappale"
       ],
@@ -5622,6 +5779,9 @@
       ],
       "Email format": [
         "Viestien muoto"
+      ],
+      "Emails": [
+        "Viestit"
       ],
       "Emails (all messages)": [
         "Sähköpostit (kaikki viestit)"
@@ -5664,6 +5824,9 @@
       ],
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
       ],
       "Hide password": [
         "Piilota salasana"
@@ -7266,6 +7429,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } maa",
+        "${ n } maata"
+      ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
       ],
@@ -7315,20 +7482,23 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" luotiin"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Kohteen \"${ ellipsedName }\" luonti epäonnistui"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" siirretty"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" jaettiin"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" luotiin"
       ],
       "\"${ name }\" deleted": [
         "\"${ name }\" poistettiin"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" poistettiin roskakorista pysyvästi"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Kohteen \"${ name }\" luonti epäonnistui"
       ],
       "\"${ name }\" failed to be deleted": [
         "Kohteen \"${ name }\" poisto epäonnistui"
@@ -7356,9 +7526,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" tallennettiin"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" siirrettiin"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Kohteen \"${ newName }\" uudelleennimeäminen epäonnistui"
@@ -7398,6 +7565,10 @@
         "${ numberOfItems } kohteen palautus roskakorista epäonnistui",
         "${ numberOfItems } kohteen palautus roskakorista epäonnistui"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } kohde siirretty",
+        "${ numberOfItems } kohdetta siirretty"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } kohde siirrettiin roskakoriin",
         "${ numberOfItems } kohdetta siirrettiin roskakoriin"
@@ -7405,10 +7576,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } kohde palautettiin roskakorista",
         "${ numberOfItems } kohdetta palautettiin roskakorista"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } kohde siirrettiin",
-        "${ numberOfItems } kohdetta siirrettiin"
       ],
       "${ reason } has been disabled": [
         "${ reason } poistettiin käytöstä"
@@ -7466,6 +7633,9 @@
       ],
       "Failed to load invitation details": [
         "Kutsun tietojen lataaminen epäonnistui"
+      ],
+      "Failed to load sharing details": [
+        "Jakotietojen lataaminen epäonnistui"
       ],
       "Failed to reject share invitation": [
         "Jakokutsusta kieltäytyminen epäonnistui"
@@ -7743,9 +7913,6 @@
       ]
     },
     "Page title": {
-      "Favorites": [
-        "Suosikit"
-      ],
       "Recents": [
         "Viimeisimmät"
       ],
@@ -7971,6 +8138,9 @@
       "Please describe the problem and include any error messages": [
         "Kuvaile ongelmaa ja sisällytä mahdolliset virheilmoitukset"
       ],
+      "Search": [
+        "Etsi"
+      ],
       "Search for group name": [
         "Etsi ryhmän nimellä"
       ],
@@ -8077,6 +8247,9 @@
       "Microsoft 365": [
         "Microsoft 365"
       ],
+      "Other": [
+        "Muu"
+      ],
       "Outlook": [
         "Outlook"
       ],
@@ -8084,15 +8257,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
-      "SPRING SALE 2026": [
-        "KEVÄTALE 2026"
+      "Summer Sale": [
+        "Kesäale"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/kk"
       ],
@@ -8111,35 +8284,17 @@
       "500 GB storage": [
         "500 Gt tallennustilaa"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
       ],
-      "Access advanced AI models": [
-        "Pääsy kehittyneisiin tekoälymalleihin"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Kaikki Mailin, Passin, Driven, VPN:n ja kalenterin premium-ominaisuudet"
-      ],
-      "Block ads, trackers, and malware": [
-        "Estä mainokset, seuranta ja haittaohjelmat"
-      ],
-      "Built-in 2FA authenticator": [
-        "Sisäänrakennettu 2FA-todentaja"
-      ],
-      "Connect 10 devices at once": [
-        "Yhdistä 10 laitetta kerralla"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Pidennä tilaustasi ja säästä ${ discountPercent } %!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Täysi keskusteluhistoria helpolla haulla ja suosikeilla"
       ],
       "Individual accounts for 6 users": [
         "Henkilökohtaiset tilit 6 käyttäjälle"
@@ -8147,8 +8302,8 @@
       "Individual accounts for you and a partner": [
         "Henkilökohtaiset tilit sinulle ja kumppanille"
       ],
-      "Online document editor": [
-        "Dokumenttieditori verkossa"
+      "Online document and spreadsheet editor": [
+        "Yhdistetty asiakirjojen ja laskentataulukoiden muokkausohjelma"
       ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
@@ -8159,25 +8314,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Rajattomasti päivittäisiä keskusteluja"
-      ],
       "Unlimited folders, labels, and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Rajattomasti hide-my-email-aliaksia"
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostin verkkotunnusta"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "12 kuukaudeksi"
       ],
-      "SPRING SALE": [
-        "KEVÄTALE"
+      "SUMMER SALE": [
+        "KESÄALE"
       ]
     },
     "Recent documents table header": {
@@ -8995,6 +9144,11 @@
         "Tilaus alennetaan laskutusjakson päättyessä."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Elinikäinen"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Gt tallennustilaa"
@@ -9262,6 +9416,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
         "${ emailsCount } sähköpostiosoitetta"
@@ -9333,6 +9490,9 @@
       "Collaborate on documents": [
         "Yhteiskäytä dokumentteja"
       ],
+      "Computers": [
+        "Tietokoneet"
+      ],
       "Confirm downgrade": [
         "Vahvista alennus"
       ],
@@ -9356,6 +9516,9 @@
       ],
       "Contacts": [
         "Yhteystiedot"
+      ],
+      "Continue with free storage": [
+        "Jatka maksuttoman tallennustilan käyttöä"
       ],
       "Continue with partial import?": [
         "Jatketaanko osittaista tuontia?"
@@ -9424,6 +9587,9 @@
       ],
       "Desktop": [
         "Työpöytä"
+      ],
+      "Devices": [
+        "Laitteet"
       ],
       "Discard": [
         "Hylätään"
@@ -9515,6 +9681,9 @@
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Hanki lisää tallennustilaa ${ MAIL_APP_NAME } Plus -tilauksella"
+      ],
       "Get the apps": [
         "Hanki sovellukset"
       ],
@@ -9548,9 +9717,6 @@
       ],
       "Import contacts": [
         "Tuo yhteystietoja"
-      ],
-      "Import emails, calendars, contacts": [
-        "Tuo sähköpostit, kalenterit ja yhteystiedot"
       ],
       "Import events": [
         "Tuo tapahtumia"
@@ -9738,6 +9904,9 @@
       "Share your link": [
         "Jaa linkkisi"
       ],
+      "Shared with me": [
+        "Jaettu minulle"
+      ],
       "Sign in and grant access": [
         "Kirjaudu ja myönnä käyttöoikeus"
       ],
@@ -9767,6 +9936,9 @@
       ],
       "Subscription canceled": [
         "Tilaus on peruttu"
+      ],
+      "Summer Sale": [
+        "Kesäale"
       ],
       "The link either does not exist or has expired": [
         "Linkkiä ei ole olemassa tai se on vanhentunut"
@@ -9895,6 +10067,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
+      ],
       "Load image": [
         "Lataa kuva"
       ],
@@ -9979,6 +10154,9 @@
       ],
       "Name must not be empty": [
         "Nimi ei voi olla tyhjä"
+      ],
+      "Name must not contain slashes (/)": [
+        "Nimi ei saa sisältää kauttaviivoja (/)"
       ]
     },
     "Video control": {

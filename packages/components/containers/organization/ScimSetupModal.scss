@@ -1,0 +1,29 @@
+@keyframes scim-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.scim-spin {
+	animation: scim-spin 1s linear infinite;
+}
+
+.scim-group-meta {
+	.new-member::before {
+		content: '•';
+		margin-inline: 0.5em;
+	}
+}
+
+.scim-setup-list {
+	max-block-size: min(480px, 40vh);
+	overflow: hidden auto;
+
+	// Push the scrollbar towards the modal edge while keeping the content aligned
+	margin-inline-end: calc(var(--margin) * -0.75);
+	padding-inline-end: calc(var(--margin) * 0.75);
+}

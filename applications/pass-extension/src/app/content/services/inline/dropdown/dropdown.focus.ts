@@ -13,7 +13,6 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import noop from '@proton/utils/noop';
 
 import type { DropdownAnchor, DropdownAnchorRef, DropdownRequest } from './dropdown.app';
 
@@ -43,7 +42,7 @@ type DropdownFocusManagerState = { willFocus: boolean; willFocusTimer?: NodeJS.T
 /** Checks if an element can receive keyboard focus and potentially trap it.
  * Interactive elements include form controls, links, and any element with
  * tabindex or contentEditable attributes. */
-const isFocusableElement = (el: MaybeNull<Element>): boolean => {
+export const isFocusableElement = (el: MaybeNull<Element>): el is HTMLElement => {
     if (!el || !isHTMLElement(el)) return false;
 
     if (el.matches(kFocusTrapSelector)) return false;
@@ -146,11 +145,15 @@ export const createDropdownFocusController = ({
         if (!hasFocus()) {
             return waitUntil(() => releaseFocus(anchor.current), 25, DROPDOWN_FOCUS_TRAP_TIMEOUT)
                 .then(() => {
-                    if (!iframe.state.visible) return;
+                    if (!iframe.state.visible) return disconnect();
+                    /** Focus is acquired asynchronously after this dispatch. The
+                     * `willFocus` grace period is left to expire via `willFocusTimer`,
+                     * so the reported `DropdownApp::focused` state stays truthy across
+                     * the handoff and a concurrent focus/blur handler reading it
+                     * (`onFocusChangeFactory`) doesn't close the dropdown. */
                     iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS });
                 })
-                .catch(noop)
-                .finally(disconnect);
+                .catch(disconnect);
         }
     });
 

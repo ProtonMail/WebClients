@@ -1,7 +1,9 @@
+import { SEPARATOR_PROTON_EVENTS } from '@proton/calendar/videoConferencing/constants';
 import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '@proton/shared/lib/calendar/constants';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 
-import { modelToValarmComponents } from './modelToProperties';
+import { modelToDescriptionProperties, modelToValarmComponents } from './modelToProperties';
 
 describe('modelToValarmComponent', () => {
     describe('part day', () => {
@@ -394,5 +396,58 @@ describe('modelToValarmComponent', () => {
                 ])
             );
         });
+    });
+});
+
+describe('modelToDescriptionProperties', () => {
+    const ZOOM_URL = 'https://us05web.zoom.us/j/88128811438?pwd=tXBwNj7tnajHLftxrqTkU4DtS2M7Au.1';
+    const ZOOM_ID = '88128811438';
+    const EMBEDDED_BLOCK = `\n${SEPARATOR_PROTON_EVENTS}\nJoin Zoom Meeting: ${ZOOM_URL} (ID: ${ZOOM_ID}, passcode: 4qNpNK)\n${SEPARATOR_PROTON_EVENTS}`;
+
+    const countBlocks = (value: string) => value.split(SEPARATOR_PROTON_EVENTS).length - 1;
+
+    test('returns an empty object when there is neither description nor conference', () => {
+        expect(modelToDescriptionProperties({ description: '' })).toEqual({});
+    });
+
+    test('returns the description untouched when there is no conference and no embedded block', () => {
+        expect(modelToDescriptionProperties({ description: 'Just a plain description' })).toEqual({
+            description: { value: 'Just a plain description' },
+        });
+    });
+
+    // Regression guard: an attendee's copy carries the embedded block in the description but no conference fields.
+    // Saving must NOT strip that block, otherwise the meeting info is lost for everyone.
+    test('preserves an embedded video conf block when the model has no conference fields', () => {
+        const description = `Team standup${EMBEDDED_BLOCK}`;
+        const result = modelToDescriptionProperties({ description });
+
+        expect(result.description?.value).toBe(description);
+        expect(countBlocks(result.description?.value ?? '')).toBe(2);
+    });
+
+    test('generates a single block for a native conference and does not duplicate it', () => {
+        const result = modelToDescriptionProperties({
+            description: 'Team standup',
+            conferenceId: ZOOM_ID,
+            conferenceUrl: ZOOM_URL,
+            conferenceProvider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
+        });
+
+        expect(result.description?.value).toContain('Team standup');
+        expect(result.description?.value).toContain(ZOOM_URL);
+        expect(countBlocks(result.description?.value ?? '')).toBe(2);
+    });
+
+    test('does not duplicate the block when the description already contains one and the model has a conference', () => {
+        const result = modelToDescriptionProperties({
+            description: `Team standup${EMBEDDED_BLOCK}`,
+            conferenceId: ZOOM_ID,
+            conferenceUrl: ZOOM_URL,
+            conferenceProvider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
+        });
+
+        expect(result.description?.value).toContain('Team standup');
+        expect(countBlocks(result.description?.value ?? '')).toBe(2);
     });
 });

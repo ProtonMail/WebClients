@@ -2,6 +2,7 @@ import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
 import { atomsPackage, componentsPackage, createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel';
+import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
 
 export default defineConfig([
     defaultConfig,
@@ -36,9 +37,16 @@ export default defineConfig([
                             message:
                                 'To get location count, use useMailboxCounter from proton-mail/hooks/mailboxCounter/useMailboxCounter instead.',
                         },
+                        {
+                            name: '@proton/shared/lib/logger',
+                            importNames: ['logger', 'loggerManager'],
+                            message:
+                                'Use mailLogger from proton-mail/mailLogger instead of the shared logger directly.',
+                        },
                     ],
                 },
             ],
+            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
             // TODO: Remove this rule once the cycle dependency is fixed
             'import/no-cycle': 'off',
         },

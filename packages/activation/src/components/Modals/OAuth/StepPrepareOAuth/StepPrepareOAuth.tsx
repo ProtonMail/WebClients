@@ -8,6 +8,7 @@ import StepProductsRowItem from '../StepProducts/StepProductsRowItem';
 import StepPrepareCalendarSummary from './StepPrepareOAuthCalendarSummary';
 import StepPrepareContactsSummary from './StepPrepareOAuthContactsSummary';
 import StepPrepareDescription from './StepPrepareOAuthDescription';
+import StepPrepareDriveSummary from './StepPrepareOAuthDriveSummary';
 import StepPrepareEmailsSummary from './StepPrepareOAuthEmailsSummary';
 import StepPrepareErrorBox from './StepPrepareOAuthErrorBox';
 import useStepPrepare from './hooks/useStepPrepareOAuth';
@@ -20,6 +21,8 @@ const StepPrepare = () => {
         setContactChecked,
         calendarChecked,
         setCalendarChecked,
+        driveChecked,
+        setDriveChecked,
         importerData,
         handleCancel,
         handleSubmit,
@@ -71,6 +74,18 @@ const StepPrepare = () => {
                             error={importerData?.calendars?.error}
                         >
                             <StepPrepareCalendarSummary isSelected={calendarChecked} />
+                        </StepProductsRowItem>
+                    )}
+
+                    {products.includes(ImportType.DRIVE) && (
+                        <StepProductsRowItem
+                            id="drive"
+                            label={c('Label').t`Drive`}
+                            value={driveChecked}
+                            setValue={setDriveChecked}
+                            error={importerData?.drive?.error}
+                        >
+                            <StepPrepareDriveSummary isSelected={driveChecked} />
                         </StepProductsRowItem>
                     )}
                 </div>

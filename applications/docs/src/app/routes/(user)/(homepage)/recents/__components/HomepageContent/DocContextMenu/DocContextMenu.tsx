@@ -3,13 +3,13 @@ import { useEffect } from 'react'
 import { ContextMenu, ContextSeparator, DropdownSizeUnit } from '@proton/components'
 import { OpenButton } from './buttons/OpenButton'
 import type { RecentDocumentsItem } from '@proton/docs-core'
+import { rawPermissionToRole } from '@proton/docs-core'
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu'
 import { OpenFolderButton } from './buttons/OpenFolderButton'
 import { ShareButton } from './buttons/ShareButton'
 import { MoveToTrashButton } from './buttons/MoveToTrashButton'
 import { MoveButton } from './buttons/MoveButton'
 import { RenameButton } from './buttons/RenameButton'
-import { IS_MOVE_ENABLED, IS_RENAME_ENABLED } from '../../../__utils/features'
 import { useDocumentActions } from '../../../__utils/document-actions'
 import { useEvent } from '~/utils/misc'
 import { useHomepageView } from '../../../__utils/homepage-view'
@@ -27,8 +27,7 @@ export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
 }
 
 export function DocContextMenu({ anchorRef, isOpen, position, open, close, currentDocument }: DocContextMenuProps) {
-  const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
-  const sdkSharingModalEnabled = useSharingModalDriveSdkEnabled()
+  const canShare = useCanShare(currentDocument)
 
   // NOTE: this effect was copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // I'm not actually sure it's necessary here, but I'm leaving it in for now just in case.
@@ -75,12 +74,6 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
 
   const separator = <ContextSeparator className="my-1" />
 
-  // When "editors can share" is ON the editor role in internally converted to admin
-  const canShare =
-    loadRecentsWithSdkEnabled && sdkSharingModalEnabled
-      ? currentDocument.effectiveRole === MemberRole.Admin
-      : !currentDocument.isSharedWithMe
-
   return (
     <>
       <ContextMenu
@@ -95,13 +88,9 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
             <OpenButton currentDocument={currentDocument} close={close} />
             {canShare ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
             {separator}
-            {IS_MOVE_ENABLED && !currentDocument.isSharedWithMe ? (
-              <MoveButton currentDocument={currentDocument} close={close} />
-            ) : null}
+            <MoveButton currentDocument={currentDocument} close={close} />
             <OpenFolderButton currentDocument={currentDocument} close={close} />
-            {IS_RENAME_ENABLED && !currentDocument.isSharedWithMe ? (
-              <RenameButton currentDocument={currentDocument} close={close} />
-            ) : null}
+            <RenameButton currentDocument={currentDocument} close={close} />
             {!currentDocument.isSharedWithMe ? (
               <>
                 {separator}
@@ -118,4 +107,22 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
       </ContextMenu>
     </>
   )
+}
+
+function useCanShare(currentDocument: RecentDocumentsItem | undefined) {
+  const sdkSharingModalEnabled = useSharingModalDriveSdkEnabled()
+  const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
+
+  if (!currentDocument) {
+    return false
+  }
+
+  if (sdkSharingModalEnabled) {
+    if (loadRecentsWithSdkEnabled) {
+      return currentDocument.effectiveRole === MemberRole.Admin
+    } else if (currentDocument.permissions) {
+      return rawPermissionToRole(currentDocument.permissions).canShare()
+    }
+  }
+  return !currentDocument.isSharedWithMe
 }

@@ -1,10 +1,7 @@
 import '@testing-library/jest-dom';
 
 import '@proton/testing/lib/mockMatchMedia';
-
-jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-}));
+import '@proton/testing/lib/mockTelemetry';
 
 // Suppress console noise from drive-sdk telemetry during tests.
 jest.spyOn(console, 'debug').mockImplementation(() => {});

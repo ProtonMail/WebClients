@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Info from '@proton/components/components/link/Info';
+import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import { SetupOrgSpotlight } from '@proton/components/containers/account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import {
     getInvitationAcceptLimit,
@@ -11,6 +12,9 @@ import {
 } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import type { UseUserMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+
+const GuardedAddUserButton = withPermissionGuard('account.user.create')(Button);
+const GuardedAddAddressButton = withPermissionGuard('account.user.update')(Button);
 
 export const MembersTableHeader = ({
     app,
@@ -21,40 +25,32 @@ export const MembersTableHeader = ({
     searchInput: ReactNode;
     membersHook: UseUserMemberActions;
 }) => {
+    const createUserButtonWithTooltip = (
+        <GuardedAddUserButton color="norm" disabled={meta.disableAddUserButton} onClick={actions.handleAddUser}>
+            {c('Action').t`Add user`}
+        </GuardedAddUserButton>
+    );
     return (
         <div className="mb-4 flex items-start">
             <div className="mb-2 w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
                 {searchInput}
             </div>
             <div className="flex items-center mb-2 gap-2 ml-0 lg:ml-auto">
-                {!meta.showAddAddress ? (
-                    <>
-                        {meta.hasSetupActiveOrganizationWithKeys && (
-                            <SetupOrgSpotlight app={app}>
-                                <Button
-                                    color="norm"
-                                    disabled={meta.disableAddUserButton}
-                                    onClick={actions.handleAddUser}
-                                >
-                                    {c('Action').t`Add user`}
-                                </Button>
-                            </SetupOrgSpotlight>
-                        )}
-                    </>
-                ) : (
+                {!meta.showAddAddress && meta.hasSetupActiveOrganizationWithKeys && (
+                    <SetupOrgSpotlight app={app}>{createUserButtonWithTooltip}</SetupOrgSpotlight>
+                )}
+                {meta.showAddAddress && (
                     <>
                         {meta.isOrgAFamilyPlan ? (
-                            <Button
+                            <GuardedAddUserButton
                                 color="norm"
                                 disabled={meta.disableInviteUserButton}
                                 onClick={actions.handleInviteUser}
                             >
                                 {c('Action').t`Invite user`}
-                            </Button>
+                            </GuardedAddUserButton>
                         ) : (
-                            <Button color="norm" disabled={meta.disableAddUserButton} onClick={actions.handleAddUser}>
-                                {c('Action').t`Add user`}
-                            </Button>
+                            createUserButtonWithTooltip
                         )}
 
                         {/* Only family and visionary can invite existing Proton users */}
@@ -70,15 +66,15 @@ export const MembersTableHeader = ({
                                 />
                             ))}
 
-                        {meta.hasMaxAddresses ? (
-                            <Button
+                        {meta.hasMaxAddresses && (
+                            <GuardedAddAddressButton
                                 shape="outline"
                                 disabled={meta.disableAddAddressButton}
                                 onClick={() => actions.handleAddAddress()}
                             >
                                 {c('Action').t`Add address`}
-                            </Button>
-                        ) : null}
+                            </GuardedAddAddressButton>
+                        )}
                     </>
                 )}
             </div>

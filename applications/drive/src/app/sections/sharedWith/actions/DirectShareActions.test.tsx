@@ -77,10 +77,11 @@ describe('DirectShareActions', () => {
     it('item can be re-shared if user has admin rights (context menu)', async () => {
         jest.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
         mockGetNode.mockResolvedValue({
-            ok: true,
-            value: {
-                directRole: 'admin',
-            },
+            directRole: 'admin',
+            name: { ok: true, value: 'test-node' },
+            nameAuthor: { ok: true },
+            keyAuthor: { ok: true },
+            activeRevision: undefined,
         });
 
         renderDirectShareActions('admin', 'contextMenu');
@@ -93,10 +94,11 @@ describe('DirectShareActions', () => {
     it('item can be re-shared if user has admin rights (toolbar)', async () => {
         jest.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
         mockGetNode.mockResolvedValue({
-            ok: true,
-            value: {
-                directRole: 'admin',
-            },
+            directRole: 'admin',
+            name: { ok: true, value: 'test-node' },
+            nameAuthor: { ok: true },
+            keyAuthor: { ok: true },
+            activeRevision: undefined,
         });
 
         renderDirectShareActions('admin', 'toolbar');
@@ -109,10 +111,11 @@ describe('DirectShareActions', () => {
     it('item cannot be re-shared if user has admin rights (contextMenu)', async () => {
         jest.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
         mockGetNode.mockResolvedValue({
-            ok: true,
-            value: {
-                directRole: 'viewer',
-            },
+            directRole: 'viewer',
+            name: { ok: true, value: 'test-node' },
+            nameAuthor: { ok: true },
+            keyAuthor: { ok: true },
+            activeRevision: undefined,
         });
 
         renderDirectShareActions('viewer', 'contextMenu');
@@ -125,10 +128,11 @@ describe('DirectShareActions', () => {
     it('item cannot be re-shared if user has admin rights (toolbar)', async () => {
         jest.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
         mockGetNode.mockResolvedValue({
-            ok: true,
-            value: {
-                directRole: 'viewer',
-            },
+            directRole: 'viewer',
+            name: { ok: true, value: 'test-node' },
+            nameAuthor: { ok: true },
+            keyAuthor: { ok: true },
+            activeRevision: undefined,
         });
 
         renderDirectShareActions('viewer', 'toolbar');

@@ -2,8 +2,10 @@ import { getSrp } from '@protontech/crypto/srp';
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { type AuthReminderResponse, authReminder, deleteAuthReminder, getInfo } from '@proton/shared/lib/api/auth';
+import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
+import { type AuthReminderResponse, authReminder, deleteAuthReminder } from '@proton/shared/lib/api/auth';
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { UserState } from '../user';
 import type { UserSettingsState } from '../userSettings';
@@ -84,18 +86,25 @@ export const dismissPasswordReminder = (): ThunkAction<
 
 export const submitPasswordReminder = ({
     password,
+    info,
+    credentials,
+    api,
 }: {
     password: string;
+    info: InfoAuthedResponse;
+    credentials: TwoFactorCredentials | null;
+    api: Api;
 }): ThunkAction<Promise<void>, PasswordReminderReduxState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch, getState, extra) => {
-        const info = await extra.api<InfoAuthedResponse>(getInfo({}));
+    return async (dispatch) => {
         const srp = await getSrp(info, { password }, info.Version);
 
-        const { ServerProof } = await extra.api<AuthReminderResponse>(
+        const { ServerProof } = await api<AuthReminderResponse>(
             authReminder({
                 ClientEphemeral: srp.clientEphemeral,
                 ClientProof: srp.clientProof,
                 SRPSession: info.SRPSession,
+                ...(credentials?.type === 'code' ? { TwoFactorCode: credentials.payload } : undefined),
+                ...(credentials?.type === 'fido2' ? { FIDO2: credentials.payload } : undefined),
             })
         );
 

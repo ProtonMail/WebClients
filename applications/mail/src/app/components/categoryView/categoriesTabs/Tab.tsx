@@ -1,11 +1,11 @@
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
+import { CategoryIcon } from '@proton/mail/features/categoriesView/CategoryIcon';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
@@ -14,7 +14,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { TabState, categoryColorClassName } from './tabsInterface';
@@ -22,7 +22,6 @@ import { TabState, categoryColorClassName } from './tabsInterface';
 interface Props {
     category: CategoryTab;
     tabState: TabState;
-    count: number;
 }
 
 const navClasses: Record<TabState, string> = {
@@ -32,23 +31,24 @@ const navClasses: Record<TabState, string> = {
     [TabState.INACTIVE]: 'border border-transparent',
 };
 
-export const Tab = ({ category, count, tabState }: Props) => {
+export const Tab = ({ category, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
 
-    const history = useHistory();
-    const labelID = useMailSelector(selectLabelID);
     const { call } = useEventManager();
 
+    const count = useMailSelector((state) => selectLabelIDUnreadCount(state, category.id));
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
     const handleClick = () => {
-        if (category.id === labelID && history.location.hash === '' && !refreshing) {
+        if (tabState === TabState.ACTIVE && !refreshing) {
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
 
-        sendReportCategoriesNav('tab', category.id);
+        if (tabState !== TabState.ACTIVE) {
+            sendReportCategoriesNav('tab', category.id);
+        }
     };
 
     const navigateTo = setCategoryInUrl(category.id);
@@ -70,9 +70,10 @@ export const Tab = ({ category, count, tabState }: Props) => {
             onClick={handleClick}
             draggable={false}
         >
-            <Icon
+            <CategoryIcon
+                categoryId={category.id}
+                variant="filled"
                 className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
-                name={category.filledIcon}
             />
             <span
                 title={getLabelFromCategoryId(category.id)}

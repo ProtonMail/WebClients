@@ -19,17 +19,17 @@ import { PLANS } from '@proton/payments/core/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import IcCircleRadioFilled from '@proton/styles/assets/img/meet/ic-circle-radio-filled.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMeetingRecorderContext } from '../../contexts/MeetingRecorderContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { useIsRecordingSupported } from '../../hooks/useMeetingRecorderNew/hooks/useIsRecordingSupported';
+import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { ScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/ScreenRecordingUpsell';
 import { SubUserScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/SubUserScreenRecordingUpsell';
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
+import { RecordingDownloadModal } from './RecordingDownloadModal/RecordingDownloadModal';
 
 import './RecordingControls.scss';
 
@@ -78,9 +78,7 @@ const RecordingUpsellButton = ({ isSubUser }: { isSubUser?: boolean }) => {
 };
 
 export const RecordingControls = () => {
-    const isMeetingRecordingEnabled = useFlag('MeetingRecording');
-
-    const { startRecording, downloadRecording } = useMeetingRecorderContext();
+    const { startRecording, finishRecording } = useMeetingRecorderContext();
     const { createNotification } = useNotifications();
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -98,7 +96,7 @@ export const RecordingControls = () => {
 
     const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin;
 
-    const shouldDisplayRecordingControls = hasAdminPermission && isMeetingRecordingEnabled;
+    const shouldDisplayRecordingControls = hasAdminPermission;
 
     const handleStartRecording = async () => {
         setShowStartRecordingConfirmation(false);
@@ -119,9 +117,9 @@ export const RecordingControls = () => {
         }
     };
 
-    const handleStopAndDownload = async () => {
+    const handleStopRecording = async () => {
         setShowStopRecordingConfirmation(false);
-        await downloadRecording();
+        await finishRecording();
     };
 
     const handleStopRecordingConfirmation = () => {
@@ -218,11 +216,12 @@ export const RecordingControls = () => {
                     message={c('Info').t`Are you sure you want to stop recording?`}
                     primaryText={c('Action').t`Stop recording and download video`}
                     primaryButtonClass="primary"
-                    onPrimaryAction={handleStopAndDownload}
+                    onPrimaryAction={handleStopRecording}
                     onSecondaryAction={() => setShowStopRecordingConfirmation(false)}
                     onClose={() => setShowStopRecordingConfirmation(false)}
                 />
             )}
+            <RecordingDownloadModal />
         </>
     );
 };

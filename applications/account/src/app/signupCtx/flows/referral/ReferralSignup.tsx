@@ -4,10 +4,12 @@ import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { useFlagsStatus } from '@proton/unleash/proxy';
 
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
@@ -143,6 +145,8 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
 
     const { fetchEligibleTrials } = useEligibleTrials();
 
+    const { flagsReady } = useFlagsStatus();
+
     /**
      * Fetch eligible trials from API when referral identifier is available
      */
@@ -152,6 +156,14 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
             void fetchEligibleTrials(referralIdentifier);
         }
     }, []);
+
+    if (!flagsReady) {
+        return (
+            <div className="flex items-center justify-center h-full w-full">
+                <CircleLoader size="large" />
+            </div>
+        );
+    }
 
     return (
         <SignupContextProvider

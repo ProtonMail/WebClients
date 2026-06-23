@@ -92,6 +92,9 @@
       "Add photos": [
         "Adaugă fotografii"
       ],
+      "Add storage": [
+        "Adăugare stocare"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Adăugare în „${ name }” (${ photoCount } fotografie)",
         "Adăugare în „${ name }” (${ photoCount } fotografii)",
@@ -508,9 +511,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Obțineți o adresă gratuită ${ BRAND_NAME }"
       ],
-      "Get Drive for Business": [
-        "Luați Drive for Business"
-      ],
       "Get in touch": [
         "Contactați-ne"
       ],
@@ -627,6 +627,9 @@
       ],
       "Let's talk": [
         "Să discutăm"
+      ],
+      "List layout": [
+        "Aspect listă"
       ],
       "Load": [
         "Încărcare"
@@ -1093,6 +1096,9 @@
       "Trust": [
         "Aprobare"
       ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Încercați ${ BRAND_NAME } Workspace"
+      ],
       "Try again": [
         "Reîncercați"
       ],
@@ -1134,9 +1140,6 @@
       ],
       "Upload and share files": [
         "Încărcați și partajați fișiere"
-      ],
-      "Upload anyway": [
-        "Încărcare așa"
       ],
       "Upload file": [
         "Încărcare fișier"
@@ -1185,6 +1188,9 @@
       ],
       "Verify account": [
         "Verificare cont"
+      ],
+      "Verify now": [
+        "Verificare acum"
       ],
       "View": [
         "Afișare"
@@ -1599,6 +1605,104 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "All": [
+        "Toate"
+      ],
+      "Calendar": [
+        "Calendar"
+      ],
+      "Configure migration": [
+        "Configurare migrare"
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Mesaje"
+      ],
+      "Errors": [
+        "Erori"
+      ],
+      "Estimated size": [
+        "Mărime estimată"
+      ],
+      "Find out what can be migrated.": [
+        "Aflați ce poate fi migrat."
+      ],
+      "Has errors": [
+        "Are erori"
+      ],
+      "In progress": [
+        "În derulare"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "Migrated": [
+        "Migrat"
+      ],
+      "Migration status": [
+        "Stare migrare"
+      ],
+      "Missing organization private key": [
+        "Cheia privată a organizației lipsește."
+      ],
+      "Missing organization public key": [
+        "Cheia publică a organizației lipsește."
+      ],
+      "No users to display": [
+        "Nu există utilizatori de afișat."
+      ],
+      "Not activated": [
+        "Neactivat"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizația nu dispune de suficiente licențe disponibile."
+      ],
+      "Organization does not have enough storage available": [
+        "Organizația nu are suficient spațiu de stocare disponibil."
+      ],
+      "Pending": [
+        "În așteptare"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
+      ],
+      "Select users to migrate": [
+        "Selectați utilizatorii pentru migrare"
+      ],
+      "Size": [
+        "Mărime"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "User": [
+        "Utilizator"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Ce migrați?"
+      ],
+      "You": [
+        "Eu"
       ]
     },
     "Browser": {
@@ -2180,6 +2284,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Insulele Canare"
       ],
       "Cape Verde": [
         "Capul Verde"
@@ -2979,8 +3086,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Asigurați-vă că puteți încă să vă accesați contul și datele chiar dacă vă pierdeți parola ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pentru o tranziție lină la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pentru o înrolare fără probleme a echipei la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
@@ -3319,9 +3426,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "„${ sanitizedName }” există deja"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nu se poate conecta la contul extern."
       ],
@@ -3365,6 +3469,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliasurile nu au putut fi salvate."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
       ],
       "Already a member of this share": [
         "Deja este membru al acestei partajări"
@@ -3550,9 +3657,6 @@
       "Failed to update public share node": [
         "Nu s-a putut actualiza nodul de partajare publică."
       ],
-      "File cannot be merged with folder": [
-        "Fișierul nu poate fi îmbinat cu folderul."
-      ],
       "First name is too long": [
         "Prenumele este prea lung."
       ],
@@ -3697,9 +3801,6 @@
       "Payment process not supported": [
         "Metoda de plată nu este acceptată."
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Încărcarea fotografiilor este momentan dezactivată. Reîncercați mai târziu."
-      ],
       "Please activate your search again": [
         "Reactivați căutarea."
       ],
@@ -3708,6 +3809,15 @@
       ],
       "Please complete the billing details": [
         "Completați detaliile de facturare."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configurația un domeniu personal înainte de a adăuga adrese."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configurați un nume de domeniu personal înainte de a adăuga utilizatori la organizație."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
       ],
       "Please enter a valid postal code": [
         "Introduceți un cod poștal valid."
@@ -3740,6 +3850,9 @@
       ],
       "Please select billing state": [
         "Selectați statul pentru facturare"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
       "Port is required": [
         "Portul este obligatoriu"
@@ -3857,24 +3970,6 @@
       "The minimum donation amount is ${ price }": [
         "Suma minimă de donație este de ${ price }."
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Noua revizie a fișierului original nu a fost încărcată încă,. Reîncercați mai târziu."
-      ],
-      "The original file has missing active revision": [
-        "Fișierul original nu are revizia activă."
-      ],
-      "The original file has missing hash key": [
-        "Fișierul original are cheia hash lipsă."
-      ],
-      "The original file has missing session key": [
-        "Fișierul original nu are cheia de sesiune."
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Fișierul original nu este încă încărcat. Reîncercați mai târziu."
-      ],
-      "The original folder not found": [
-        "Folderul original nu a fost găsit."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
       ],
@@ -3928,9 +4023,6 @@
       ],
       "Upload failed": [
         "Încărcare eșuată."
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Încărcarea pentru acest folder este temporar dezactivată."
       ],
       "Username must begin with a letter or digit": [
         "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
@@ -3990,6 +4082,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Ați atins limita numărului de contacte disponibil pentru acest cont."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ați folosit toate adresele disponibile în plan. Modificați-vă planul pentru a adăuga o adresă nouă sau dezactivați o adresă din cont."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -4937,6 +5035,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace îi permite echipei să colaboreze eficient fără a vă pune vreodată în pericol datele companiei."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
@@ -5106,6 +5207,11 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ total } user found": [
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }"
+      ],
       "${ updated } contact updated successfully.": [
         "Contacte actualizate: ${ updated }",
         "Contacte actualizate: ${ updated }",
@@ -5131,23 +5237,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Autoconectare**: deschide și conectează VPN-ul imediat ce dispozitivul pornește."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Întrerupătorul de conexiune**: oprește divulgările de date prin blocarea conexiunii dacă VPN-ul cade în mod neașteptat."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Aceștia primesc ${ refereeRewardAmount }** în credite dacă se abonează."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pasul 2:** Persoanele invitate vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } în credite pentru fiecare persoană care se abonează la un plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
@@ -5388,12 +5488,6 @@
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
       ],
-      "Cloud storage for businesses that take security seriously": [
-        "Stocare în cloud pentru afaceri care iau securitatea în serios"
-      ],
-      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
-        "Colaborați eficient, protejând în același timp datele clienților și ale afacerii proprii împotriva divulgărilor, a programelor de tip răscumpărare și a supravegherii."
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
       ],
@@ -5489,6 +5583,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Vă amintiți parola? ${ verifyButton }"
       ],
       "Done": [
         "Gata"
@@ -5648,11 +5745,11 @@
       "for ${ price }": [
         "cu ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Pentru cele mai bune rezultate, evitați activitățile de redare în flux și cele care necesită multă memorie sau împărțiți încărcarea în mai puține fișiere."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Pentru doar ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
       ],
       "Free 5GB encrypted storage to get started": [
         "5 GiB spațiu de stocare gratuit pentru început"
@@ -6033,6 +6130,9 @@
       "On public WiFi networks": [
         "Pe rețele Wi-Fi publice"
       ],
+      "One encrypted suite. Full business protection.": [
+        "O suită criptată. Protecție completă pentru afacere."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una din unitățile criptate este blocată. Aceasta se datorează probabil unei resetări recente a parolei."
       ],
@@ -6068,6 +6168,9 @@
       ],
       "Password must have:": [
         "Parola trebuie să conțină:"
+      ],
+      "Password verified": [
+        "Parolă verificată"
       ],
       "Paused": [
         "Suspendat"
@@ -6133,6 +6236,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Selectați etichetele pe care doriți să le importați:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selectați adresa sau adresele de e-mail de adăugat la un grup.",
@@ -6471,9 +6577,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
       ],
-      "This item already exists in your library": [
-        "Articolul există deja în librăria proprie."
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Acest articol nu este salvat în librăria de fotografii. Dacă îl eliminați din acest album, veți pierde definitiv accesul la el.",
         "Unele din articolele selectate nu sunt salvate în librăria de fotografii. Dacă le eliminați din acest album, veți pierde definitiv accesul la ele.",
@@ -6515,26 +6618,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Aceasta va șterge permanent articolele încărcate."
       ],
-      "This will replace the existing file with the folder": [
-        "Aceasta va înlocui fișierul existent cu folderul."
-      ],
       "This will replace the existing folder or file with the file": [
         "Aceasta va înlocui folderul existent sau fișierul cu fișierul"
       ],
       "This will replace the existing folder or file with the folder": [
         "Aceasta va înlocui folderul sau fișierul existent cu folderul"
       ],
-      "This will replace the existing folder with the file": [
-        "Aceasta va înlocui folderul existent cu fișierul."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
-      ],
-      "This will upload a new version of the file": [
-        "Aceasta va încărca o nouă versiune a fișierului."
-      ],
-      "This will upload a new version of the folder": [
-        "Aceasta va încărca o nouă versiune a folderului."
       ],
       "Time": [
         "Ora"
@@ -6559,6 +6650,9 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Pentru a vă proteja, ${ DRIVE_APP_NAME } vă poate scana fișierele într-un mod care să păstreze confidențialitatea și să blocheze fișierele rău intenționate. Cu toate acestea, cel mai bine este să descărcați fișiere numai din surse de încredere. "
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Pentru a vă ajuta să vă amintiți parola, vă vom solicita să o introduceți periodic. Vi se va solicita mai rar în timp."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
@@ -6589,18 +6683,6 @@
       ],
       "Tracking": [
         "Urmăritori"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transfer anulat pentru fișierul „${ name }”."
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Transfer anulat pentru folderul „${ name }”."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer ignorat pentru fișierul „${ file.name }”."
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Transfer ignorat pentru folderul „${ folderName }”."
       ],
       "Trash": [
         "Gunoi"
@@ -6653,6 +6735,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
       ],
+      "Upgrade to get more storage space": [
+        "Treceți la alt plan pentru a avea mai mult spațiu"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
       ],
@@ -6667,9 +6752,6 @@
       ],
       "Uploading": [
         "Se incarcă"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
       ],
       "Uppercase and lowercase letters": [
         "Litere mari și mici"
@@ -6724,8 +6806,8 @@
         "Câteva fotografii nu au putut fi salvate în Drive.",
         "Câteva fotografii nu au putut fi salvate în Drive."
       ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ node.name }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ nodeName }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
       ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
@@ -6752,6 +6834,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vă vom reaminti să vă verificați din nou parola mai târziu."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
@@ -7208,6 +7293,9 @@
       "Apply to all unverified items": [
         "Se aplică tuturor articolelor neverificate"
       ],
+      "Asset": [
+        "Resursă"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -7234,6 +7322,9 @@
       ],
       "Calendar": [
         "Calendar"
+      ],
+      "Calendars": [
+        "Calendare"
       ],
       "can edit": [
         "poate edita"
@@ -7366,6 +7457,9 @@
       "Download anyway": [
         "Descărcare așa"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "S-a găsit o dublură."
       ],
@@ -7383,6 +7477,9 @@
       ],
       "Email format": [
         "Format e-mail"
+      ],
+      "Emails": [
+        "Mesaje"
       ],
       "Emails (all messages)": [
         "Mesaje (toate mesajele)"
@@ -7498,12 +7595,6 @@
       "Keep both": [
         "Păstrare ambele"
       ],
-      "Keep both files": [
-        "Păstrare ambele fișiere"
-      ],
-      "Keep both folders": [
-        "Păstrare ambele foldere"
-      ],
       "Label messages as": [
         "Etichetare mesaje cu"
       ],
@@ -7578,6 +7669,9 @@
       ],
       "New password": [
         "Parola nouă"
+      ],
+      "Non-consensual intimate imagery": [
+        "Imagini intime fără consimțământ"
       ],
       "Not active": [
         "Inactiv"
@@ -7659,12 +7753,6 @@
       ],
       "Region": [
         "Județ"
-      ],
-      "Replace existing file": [
-        "Înlocuire fișier existent"
-      ],
-      "Replace existing folder": [
-        "Înlocuire folder existent"
       ],
       "Replace existing folder or file": [
         "Înlocuire folder sau fișier existent"
@@ -9173,7 +9261,7 @@
         "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Transferați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
+        "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -9463,14 +9551,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "„${ name }” nu a putut fi mutat în «Gunoi»."
       ],
-      "\"${ name }\" failed to be saved": [
-        "„${ name }” nu s-a putut salva."
-      ],
       "\"${ name }\" moved to trash": [
         "„${ name }” a fost mutat în «Gunoi»."
-      ],
-      "\"${ name }\" saved successfully": [
-        "„${ name }” a fost salvat."
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }” nu a reușit să fie redenumit."
@@ -9633,6 +9715,9 @@
       "Failed to convert external invitation": [
         "Nu s-a putut converti invitația externă."
       ],
+      "Failed to load sharing details": [
+        "Încărcarea detaliilor de partajare a eșuat."
+      ],
       "Failed to move, please try again": [
         "Mutarea a eșuat. Reîncercați."
       ],
@@ -9650,20 +9735,6 @@
       ],
       "Failed to rename device": [
         "Redenumirea dispozitivului a eșuat."
-      ],
-      "Failed to upload files: ${ err }": [
-        "Nu s-a reușit încărcarea fișierelor: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Fișierul sau folderul „${ filename }” și încă unul se încarcă deja.",
-        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja.",
-        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Fișierul sau folderul „${ filename }” se încarcă deja."
-      ],
-      "File or folder is missing a name": [
-        "Fișier sau folder fără nume."
       ],
       "File removed": [
         "Fișierul a fost eliminat."
@@ -9688,9 +9759,6 @@
         "Mutare ${ n } element.",
         "Mutare ${ n } articole.",
         "Mutare ${ n } de articole."
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
       ],
       "Public link access updated": [
         "Accesul la legătura web publică s-a actualizat."
@@ -10345,7 +10413,7 @@
         "TVA ${ rate }%"
       ],
       "terms and conditions": [
-        "termenii și condițiile"
+        "termeni și condiții"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
@@ -10667,11 +10735,17 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Căutare"
+      ],
       "Search for group name": [
         "Căutare nume grup"
       ],
       "Search for name or email": [
         "Căutare după nume sau e-mail"
+      ],
+      "Search for users or addresses": [
+        "Căutare utilizator sau adresă"
       ],
       "Search parent folder": [
         "Căutare în folder părinte"
@@ -10824,15 +10898,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Valorificați oferta"
       ],
-      "SPRING SALE 2026": [
-        "OFERTĂ PRIMĂVERII 2026"
+      "Summer Sale": [
+        "Reduceri de vară"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/lună"
       ],
@@ -10851,35 +10925,17 @@
       "500 GB storage": [
         "500 GB de spațiu de stocare"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accesați peste 15.000 de servere din peste 120 de țări"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Acces la modele AI avansate"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Toate caracteristicile premium ale Mail, Pass, Drive, VPN și Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocați reclamele, urmăritorii și malware-ul"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autentificator A2F încorporat"
-      ],
-      "Connect 10 devices at once": [
-        "Conectați 10 dispozitive simultan"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Extindeți-vă abonamentul și economisiți ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acces complet la ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Istoric complet al conversațiilor cu căutare ușoară și favorite"
       ],
       "Individual accounts for 6 users": [
         "Conturi individuale pentru 6 utilizatori"
@@ -10887,8 +10943,8 @@
       "Individual accounts for you and a partner": [
         "Conturi individuale pentru dvs. și un partener"
       ],
-      "Online document editor": [
-        "Editor de documente online"
+      "Online document and spreadsheet editor": [
+        "Editor conectat de documente și foi de calcul"
       ],
       "Recover previous file versions": [
         "Recuperați versiunile anterioare ale fișierelor"
@@ -10899,25 +10955,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Conversații zilnice nelimitate"
-      ],
       "Unlimited folders, labels, and filters": [
         "Număr nelimitat de foldere, etichete și filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Număr nelimitat de aliasuri hide-my-email"
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "pentru 12 luni"
       ],
-      "SPRING SALE": [
-        "OFERTĂ PRIMĂVERII"
+      "SUMMER SALE": [
+        "REDUCERI DE VARĂ"
       ]
     },
     "Referral": {
@@ -12392,6 +12442,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "Adrese de e-mail: ${ emailsCount }",
         "Adrese de e-mail: ${ emailsCount }",
@@ -12402,6 +12455,9 @@
       ],
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } încărcări gratuite."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperare cont"
@@ -12668,17 +12724,17 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Semnătura digitală parțial verificată. Acest folder a fost încărcat folosind o legătură de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Semnătură digitală verificată. Acest fișier a fost creat în siguranță de către <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Semnătură digitală verificată. Acest fișier a fost creat în siguranță de către ${ author }."
       ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ author }."
       ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Semnătură digitală verificată. Acest folder a fost creat în siguranță de către <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Semnătură digitală verificată. Acest folder a fost creat în siguranță de către ${ author }."
       ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către ${ author }."
       ],
       "Discard": [
         "Anulare"
@@ -12715,12 +12771,6 @@
       ],
       "Drop to upload": [
         "Plasați aici pentru încărcare"
-      ],
-      "Duplicate file found": [
-        "S-au găsit fișiere duplicate"
-      ],
-      "Duplicate folder found": [
-        "S-au găsit foldere duplicate"
       ],
       "Edit billing address": [
         "Editare adresă de facturare"
@@ -12852,9 +12902,6 @@
       "Import contacts": [
         "Importare contacte"
       ],
-      "Import emails, calendars, contacts": [
-        "Importați e-mailuri, calendare, contacte"
-      ],
       "Import events": [
         "Importare evenimente"
       ],
@@ -12903,9 +12950,6 @@
       "Make a secure connection your default": [
         "Faceți o conexiune sigură ca implicită"
       ],
-      "Manage secure link": [
-        "Gestionare legătură web securizată"
-      ],
       "Media type": [
         "Tip media"
       ],
@@ -12917,6 +12961,9 @@
       ],
       "Message": [
         "Mesaj"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrați-vă organizația la ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minicalendar"
@@ -13026,6 +13073,9 @@
       "Other names": [
         "Alte nume"
       ],
+      "Out of storage space": [
+        "Spațiu insuficient"
+      ],
       "Payment failed": [
         "Plată eșuată"
       ],
@@ -13034,9 +13084,6 @@
       ],
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
-      ],
-      "Performance might be affected": [
-        "Performanța ar putea fi afectată"
       ],
       "Phone numbers": [
         "Numere de telefon"
@@ -13229,6 +13276,9 @@
       "Summary": [
         "Sumar"
       ],
+      "Summer Sale": [
+        "Reduceri de vară"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Acest fișier are o semnătură lipsă sau nevalidă. Accesați Meniu (⋮) → Detalii pentru informații."
       ],
@@ -13298,14 +13348,14 @@
       "Uploaded": [
         "Încărcat"
       ],
-      "Uploading a large file or folder": [
-        "Se încarcă un fișier sau folder mare"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
       "Verification failed": [
         "Verificarea a eșuat"
+      ],
+      "Verify your password": [
+        "Verificați-vă parola"
       ],
       "Verifying your card...": [
         "Verificare card..."
@@ -13325,17 +13375,17 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Nu am putut verifica dacă <strong>${ emailAddress }</strong> a creat acest fișier."
+      "We couldn’t verify that ${ author } created this file.": [
+        "Nu s-a putut verifica dacă ${ author } a creat acest fișier."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a creat acest folder."
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Nu s-a putut verifica dacă ${ author } a creat acest folder."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a încărcat acest fișier."
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Nu s-a putut verifica dacă ${ author } a încărcat acest fișier."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a încărcat acest folder."
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Nu s-a putut verifica dacă ${ author } a încărcat acest folder."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Nu s-a putut verifica dacă un utilizator anonim a creat acest fișier."
@@ -13352,11 +13402,11 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Nu s-a putut confirma că fișierul a fost încărcat de către ${ claimedContentAuthor }. Motiv: ${ activeRevision.contentAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Nu s-a putut confirma că numele a fost creat sau modificat de către ${ claimedNameAuthor }. Motiv: ${ nodeEntity.nameAuthor.error.error }"
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Nu s-a putut confirma că numele a fost creat sau modificat de către ${ claimedNameAuthor }. Motiv: ${ node.nameAuthor.error.error }"
       ],
-      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Nu s-a putut confirma că nodul a fost creat de către ${ claimedKeyAuthor }. Motiv: ${ nodeEntity.keyAuthor.error.error }"
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Nu s-a putut confirma că nodul a fost creat de către ${ claimedKeyAuthor }. Motiv: ${ node.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Ofertă de bun venit"
@@ -13472,6 +13522,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistență instantanee prin IA, expert uman la îndemână!"
       ],
       "Load image": [
         "Încărcare imagine"

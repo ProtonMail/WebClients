@@ -489,9 +489,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "獲取免費 ${ BRAND_NAME } 電郵位址"
       ],
-      "Get Drive for Business": [
-        "取得 Drive for Business"
-      ],
       "Get in touch": [
         "保持聯絡"
       ],
@@ -1092,9 +1089,6 @@
       "Upload and share files": [
         "上傳並共享檔案"
       ],
-      "Upload anyway": [
-        "仍要上載"
-      ],
       "Upload file": [
         "上載檔案"
       ],
@@ -1142,6 +1136,9 @@
       ],
       "Verify account": [
         "驗證帳號"
+      ],
+      "Verify now": [
+        "立即驗證"
       ],
       "View": [
         "檢視"
@@ -1515,6 +1512,17 @@
       ],
       "Yearly": [
         "每年"
+      ]
+    },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
       ]
     },
     "Browser": {
@@ -2959,6 +2967,9 @@
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
       ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
       ],
@@ -3198,9 +3209,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "「${ sanitizedName }」已存在"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME }無法連接外部帳號"
       ],
@@ -3242,6 +3250,9 @@
       ],
       "Aliases could not be loaded": [
         "無法載入別名"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
       ],
       "Already a member of this share": [
         "已經是這個分享的成員了"
@@ -3387,9 +3398,6 @@
       "Failed to resend invitation": [
         "失敗重新傳送邀請"
       ],
-      "File cannot be merged with folder": [
-        "檔案無法與資料夾合併"
-      ],
       "First name is too long": [
         "名字太長"
       ],
@@ -3528,14 +3536,20 @@
       "Payment process not supported": [
         "不支援此付款程序"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "照片上載暫時停用。請稍後再試"
-      ],
       "Please activate your search again": [
         "請再次啟用搜尋"
       ],
       "Please complete the billing details": [
         "請完成付款詳細資料"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
       ],
       "Please enter a valid postal code": [
         "請輸入有效的郵遞區號"
@@ -3566,6 +3580,9 @@
       ],
       "Please select billing state": [
         "請選擇您的付款州名"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
       ],
       "Port is required": [
         "通訊埠為必填"
@@ -3618,6 +3635,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
       ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
+      ],
       "Something went wrong. Please try again.": [
         "發生錯誤，請稍後再試。"
       ],
@@ -3662,24 +3682,6 @@
       ],
       "The minimum donation amount is ${ price }": [
         "最低捐款金額為 ${ price }"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "原始檔案的新修訂版本尚未上載，請稍後再試"
-      ],
-      "The original file has missing active revision": [
-        "原始檔案缺少檔案修訂"
-      ],
-      "The original file has missing hash key": [
-        "原始檔案缺少雜湊金鑰"
-      ],
-      "The original file has missing session key": [
-        "原始檔案缺少工作階段金鑰"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "原始檔案尚未上載，請稍後再試"
-      ],
-      "The original folder not found": [
-        "找不到原始資料夾"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待匯入的外部帳號裡資料夾過多，請自訂匯入內容並刪除部份資料夾。"
@@ -3732,9 +3734,6 @@
       "Upload failed": [
         "上傳失敗"
       ],
-      "Upload for this folder is temporarily disabled": [
-        "上傳此資料夾已暫時關閉"
-      ],
       "Username must begin with a letter or digit": [
         "使用者名稱的開頭必須為字母或數字"
       ],
@@ -3773,6 +3772,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -4787,6 +4789,9 @@
       "${ storage } storage": [
         "${ storage } 儲存空間"
       ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
+      ],
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
@@ -4807,21 +4812,6 @@
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**第二步：**您的朋友將取得該方案的 2 週免費。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -5120,6 +5110,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 商標"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
       "Done": [
         "完成"
       ],
@@ -5261,11 +5254,11 @@
       "for ${ price }": [
         "為 ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "只要 ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Free5GB加密的儲存空間以開始"
@@ -5999,9 +5992,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "此為您新傳送新電子郵件的${ defaultEmailAddress }"
       ],
-      "This item already exists in your library": [
-        "此項目已存在於資料庫"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
       ],
@@ -6029,20 +6019,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "此將會永久刪除所有選取的上傳項目。"
       ],
-      "This will replace the existing file with the folder": [
-        "這將會使用資料夾取代既有檔案"
-      ],
-      "This will replace the existing folder with the file": [
-        "這將會使用檔案取代既有資料夾"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "這麼做會把您所有已登入的帳號登出。"
-      ],
-      "This will upload a new version of the file": [
-        "這將會上傳新版本的檔案"
-      ],
-      "This will upload a new version of the folder": [
-        "這將會上傳新版本的資料夾"
       ],
       "Time": [
         "時間"
@@ -6089,18 +6067,6 @@
       "Tracking": [
         "追蹤"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "已取消檔案「${ name }」的傳輸"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "已取消資料夾「${ name }」的傳輸"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "已跳過檔案「${ file.name }」的傳輸"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "已跳過資料夾「${ folderName }」的傳輸"
-      ],
       "Trash": [
         "垃圾桶"
       ],
@@ -6137,6 +6103,9 @@
       "Updating drive search...": [
         "正在更新雲端硬碟搜索..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
@@ -6157,9 +6126,6 @@
       ],
       "Uploading": [
         "正在上載"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "同一時間上載數以百計的檔案或會有礙效能。"
       ],
       "Uppercase and lowercase letters": [
         "大寫及小寫字母"
@@ -6640,6 +6606,9 @@
       "Calendar": [
         "行事曆"
       ],
+      "Calendars": [
+        "行事曆"
+      ],
       "can edit": [
         "可以編輯"
       ],
@@ -6781,6 +6750,9 @@
       "Email format": [
         "電郵格式"
       ],
+      "Emails": [
+        "電郵"
+      ],
       "Emails (all messages)": [
         "電子郵件（全部訊息）"
       ],
@@ -6891,12 +6863,6 @@
       ],
       "Keep both": [
         "兩者皆保留"
-      ],
-      "Keep both files": [
-        "保留這兩個檔案"
-      ],
-      "Keep both folders": [
-        "保留這兩個資料夾"
       ],
       "Label messages as": [
         "將郵件加上標籤"
@@ -7047,12 +7013,6 @@
       ],
       "Region": [
         "地區"
-      ],
-      "Replace existing file": [
-        "取代已存在的檔案"
-      ],
-      "Replace existing folder": [
-        "取代已存在的資料夾"
       ],
       "Replace existing folder or file": [
         "取代已存在的資料夾或檔案"
@@ -8730,14 +8690,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "「${ name }」無法移動到垃圾桶"
       ],
-      "\"${ name }\" failed to be saved": [
-        "「${ name }」儲存失敗"
-      ],
       "\"${ name }\" moved to trash": [
         "「${ name }」已移動到垃圾桶"
-      ],
-      "\"${ name }\" saved successfully": [
-        "「${ name }」已成功儲存"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」重新命名失敗"
@@ -8868,18 +8822,6 @@
       "Failed to rename device": [
         "無法重新命名裝置"
       ],
-      "Failed to upload files: ${ err }": [
-        "上載檔案失敗：${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "檔案或資料夾「${ filename }」以及其它 ${ count } 正在上載中"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "檔案或資料夾「${ filename }」正在上載中"
-      ],
-      "File or folder is missing a name": [
-        "檔案或資料夾缺少名稱"
-      ],
       "File removed": [
         "檔案已移除"
       ],
@@ -8897,9 +8839,6 @@
       ],
       "Move ${ n } item": [
         "移動 ${ n } 個項目"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "空間不足，無法上載 ${ formattedTotal }"
       ],
       "Public link access updated": [
         "公開網址已更新存取權"
@@ -9789,6 +9728,9 @@
       "San Francisco": [
         "舊金山"
       ],
+      "Search": [
+        "搜尋"
+      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
@@ -9938,15 +9880,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
       ],
-      "SPRING SALE 2026": [
-        "春季特賣 2026"
+      "Summer Sale": [
+        "夏季特賣"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/每月"
       ],
@@ -9965,35 +9907,17 @@
       "500 GB storage": [
         "500 GB 儲存空間"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "存取位於 120 多個國家/地區的 15,000 台伺服器"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
       ],
-      "Access advanced AI models": [
-        "存取進階 AI 模型"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail、Pass、磁碟、VPN 和行事曆的所有頂級質子版功能"
-      ],
-      "Block ads, trackers, and malware": [
-        "封鎖廣告、追蹤程式和惡意軟體"
-      ],
-      "Built-in 2FA authenticator": [
-        "內建雙重驗證驗證器"
-      ],
-      "Connect 10 devices at once": [
-        "同時連線 10 個裝置"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "延長您的訂閱並節省 ${ discountPercent }%！"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "完整存取 ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "具備輕鬆搜尋與最愛功能的完整聊天記錄"
       ],
       "Individual accounts for 6 users": [
         "6 位使用者的個人帳號"
@@ -10001,8 +9925,8 @@
       "Individual accounts for you and a partner": [
         "供您與夥伴使用的個人帳號"
       ],
-      "Online document editor": [
-        "線上文件編輯器"
+      "Online document and spreadsheet editor": [
+        "線上文件和試算表編輯器"
       ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
@@ -10013,25 +9937,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
       ],
-      "Unlimited daily chats": [
-        "無限每日聊天"
-      ],
       "Unlimited folders, labels, and filters": [
         "資料夾、標籤與篩選器無上限"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無限的 hide-my-email 別名"
       ],
       "Use your own email domain": [
         "使用您自己的電子郵件網域"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "12 個月"
       ],
-      "SPRING SALE": [
-        "春季特賣"
+      "SUMMER SALE": [
+        "夏季特賣"
       ]
     },
     "Referral": {
@@ -10767,6 +10685,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe撰寫幫手"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
       ],
@@ -11344,6 +11265,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
       ],
@@ -11596,12 +11520,6 @@
       "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "電子簽署部分完成驗證。此檔案由無${ BRAND_NAME }帳號的使用者由大眾可共享連結上傳，所以身分無法驗證。"
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "數位簽署已通過驗證。此檔案由 <strong> ${ emailAddress } </strong> 創建。"
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "數位簽署已通過驗證。此資料夾由 <strong> ${ emailAddress } </strong> 安全地創建。"
-      ],
       "Discard": [
         "捨棄"
       ],
@@ -11637,12 +11555,6 @@
       ],
       "Drop to upload": [
         "拖放到此處以上傳"
-      ],
-      "Duplicate file found": [
-        "找到重複檔案"
-      ],
-      "Duplicate folder found": [
-        "找到重複資料夾"
       ],
       "Edit billing address": [
         "編輯帳單地址"
@@ -11764,9 +11676,6 @@
       "Import contacts": [
         "匯入聯絡人"
       ],
-      "Import emails, calendars, contacts": [
-        "匯入電子郵件、行事曆、聯絡人"
-      ],
       "Import events": [
         "匯入事件"
       ],
@@ -11808,9 +11717,6 @@
       ],
       "Make a copy": [
         "創建副本"
-      ],
-      "Manage secure link": [
-        "管理安全連結"
       ],
       "Media type": [
         "媒體類型"
@@ -11928,9 +11834,6 @@
       ],
       "PayPal verification failed": [
         "PayPal 驗證失敗"
-      ],
-      "Performance might be affected": [
-        "效能可能會受到影響"
       ],
       "Phone numbers": [
         "手機號碼"
@@ -12115,6 +12018,9 @@
       "Summary": [
         "總結"
       ],
+      "Summer Sale": [
+        "夏季特賣"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此檔案的簽章遺失或無效。詳見功能表 (⋮) → 詳細資料。"
       ],
@@ -12172,14 +12078,14 @@
       "Uploaded": [
         "已上載"
       ],
-      "Uploading a large file or folder": [
-        "上傳大檔案或資料夾"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ],
       "Verification failed": [
         "驗證失敗"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ],
       "Verifying your card...": [
         "正在驗證您的信用卡..."
@@ -12198,9 +12104,6 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "我們無法驗證此資料夾是由 <strong>${ emailAddress }</strong> 上傳"
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "我們無法驗證創建此檔案的匿名使用者。"

@@ -20,6 +20,7 @@ export const mockCategoriesStore = [
         Type: LABEL_TYPE.SYSTEM_FOLDER,
         Order: 1,
         Path: '',
+        LastUnseenMessageEventID: null,
     },
     {
         ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
@@ -28,6 +29,7 @@ export const mockCategoriesStore = [
         Type: LABEL_TYPE.SYSTEM_FOLDER,
         Order: 1,
         Path: '',
+        LastUnseenMessageEventID: null,
     },
     {
         ID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
@@ -36,6 +38,7 @@ export const mockCategoriesStore = [
         Type: LABEL_TYPE.SYSTEM_FOLDER,
         Order: 1,
         Path: '',
+        LastUnseenMessageEventID: null,
     },
     {
         ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
@@ -44,6 +47,7 @@ export const mockCategoriesStore = [
         Type: LABEL_TYPE.SYSTEM_FOLDER,
         Order: 1,
         Path: '',
+        LastUnseenMessageEventID: null,
     },
     {
         ID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
@@ -52,6 +56,7 @@ export const mockCategoriesStore = [
         Type: LABEL_TYPE.SYSTEM_FOLDER,
         Order: 1,
         Path: '',
+        LastUnseenMessageEventID: null,
     },
     {
         ID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
@@ -60,5 +65,6 @@ export const mockCategoriesStore = [
         Type: LABEL_TYPE.SYSTEM_FOLDER,
         Order: 1,
         Path: '',
+        LastUnseenMessageEventID: null,
     },
 ];

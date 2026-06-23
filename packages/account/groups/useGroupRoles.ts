@@ -33,7 +33,7 @@ export const useGroupRoles = ({ groups }: { groups: EnhancedGroup[] | undefined 
             return;
         }
         groups.forEach((group) => {
-            if (!group.roleState || group.roleState === 'stale') {
+            if (group.roleState === 'initial' || group.roleState === 'stale') {
                 dispatch(getGroupRoles({ group })).catch(noop);
             }
         });

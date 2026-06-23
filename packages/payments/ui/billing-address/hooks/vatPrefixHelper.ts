@@ -6,11 +6,13 @@ const VAT_VALID_PREFIXES: Record<string, string[]> = {
     GR: ['EL'], // Greece uses EL, not GR
     GB: ['GB', 'XI'], // XI = Northern Ireland
     CH: ['CHE'], // Switzerland uses CHE, not CH
-    LI: ['CHE'], // Liechtenstein shares the Swiss VAT system (CHE)
 };
 
-// VAT-collected countries whose number carries no prefix (Iceland's VSK number).
-const COLLECTED_COUNTRIES_WITHOUT_VAT_PREFIX = new Set(['IS']);
+// VAT-collected countries we deliberately don't prefill or enforce a prefix for:
+// - IS: Iceland's VSK number has no prefix.
+// - LI: shares Switzerland's CHE prefix, but its numbers aren't in the validation
+//   library, so prefilling CHE would let a bare "CHE" pass as a valid VAT number.
+const COLLECTED_COUNTRIES_WITHOUT_VAT_PREFIX = new Set(['IS', 'LI']);
 
 /**
  * Returns every valid VAT prefix for a country, or null when the country uses no

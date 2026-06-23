@@ -29,6 +29,9 @@
       "Authenticate": [
         "Autentica"
       ],
+      "Back": [
+        "Indietro"
+      ],
       "Background blur": [
         "Sfondo sfocato"
       ],
@@ -94,6 +97,9 @@
       ],
       "Done": [
         "Fatto"
+      ],
+      "Download": [
+        "Scarica"
       ],
       "Download app": [
         "Scarica l'app"
@@ -430,9 +436,6 @@
       "Show passphrase": [
         "Mostra frase d'accesso"
       ],
-      "Toggle camera": [
-        "Attiva/disattiva fotocamera"
-      ],
       "Toggle chat": [
         "Attiva/disattiva chat."
       ],
@@ -441,9 +444,6 @@
       ],
       "Toggle meeting details": [
         "Attiva/disattiva i dettagli della riunione"
-      ],
-      "Toggle microphone": [
-        "Attiva/disattiva microfono"
       ],
       "Toggle participants": [
         "Attiva/disattiva partecipanti"
@@ -1467,9 +1467,6 @@
       "Failed to rotate personal meeting link": [
         "Impossibile reimpostare il link della riunione personale"
       ],
-      "Failed to save recording": [
-        "Impossibile avviare la registrazione"
-      ],
       "Failed to send chat message. Please try again.": [
         "Impossibile inviare il messaggio della chat. Riprova."
       ],
@@ -1523,9 +1520,6 @@
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
-      ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "Il link alla riunione a cui stai cercando di accedere non esiste o potrebbe essere stato eliminato."
       ],
       "The meeting password is incorrect": [
         "La password della riunione non è corretta"
@@ -1597,6 +1591,46 @@
     "fido2: Label": {
       "Security key": [
         "Chiave di sicurezza"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "byte"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Font face option": {
@@ -1996,9 +2030,6 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Incolla il tuo link di ${ MEET_APP_NAME } per unirti a una riunione sicura"
       ],
-      "Permission denied": [
-        "Autorizzazione negata"
-      ],
       "Permissions not given.": [
         "Autorizzazioni non concesse."
       ],
@@ -2028,9 +2059,6 @@
       ],
       "Recording in progress": [
         "Registrazione in corso"
-      ],
-      "Recording saved": [
-        "Registrazione salvata"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
@@ -2119,14 +2147,8 @@
       "Turn off camera": [
         "Disattiva la webcam"
       ],
-      "Turn off microphone": [
-        "Disattiva microfono"
-      ],
       "Turn on camera": [
         "Attiva la webcam"
-      ],
-      "Turn on microphone": [
-        "Attiva microfono"
       ],
       "unlimited meeting": [
         "riunione illimitata"
@@ -2640,6 +2662,14 @@
       ],
       "Verification successful": [
         "Verifica riuscita"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Name": [
+        "Nome"
       ]
     },
     "Title": {

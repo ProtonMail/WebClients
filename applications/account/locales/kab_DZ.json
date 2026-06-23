@@ -156,6 +156,9 @@
       "Choose my own password": [
         "Fren awal-iw uffir"
       ],
+      "Claim this address": [
+        "Suter tansa-agi"
+      ],
       "Clear all formatting": [
         "Sfeḍ akk imasalen"
       ],
@@ -314,6 +317,9 @@
       ],
       "Discard Changes": [
         "Aggi Isniflen"
+      ],
+      "Disconnect": [
+        "Kkes tuqqna"
       ],
       "Dismiss": [
         "Zgel"
@@ -621,6 +627,9 @@
       "Or": [
         "Neɣ"
       ],
+      "Or use a different Gmail address": [
+        "Neɣ seqdec tansa n Gmail nniḍen"
+      ],
       "Ordered list": [
         "Tabdart n usmizwer"
       ],
@@ -780,6 +789,9 @@
       "Select time zone": [
         "Fren izḍi usrid"
       ],
+      "Send": [
+        "Azen"
+      ],
       "send auto-reply email": [
         "azen imayl n tririt tawurmant"
       ],
@@ -918,6 +930,9 @@
       "Underline": [
         "Derrer"
       ],
+      "Undo": [
+        "Sefsex"
+      ],
       "Undo import": [
         "Sefsex akter"
       ],
@@ -977,6 +992,9 @@
       ],
       "Use recovery code": [
         "Seqdec tangalt n tririt"
+      ],
+      "Use this Gmail address": [
+        "Seqdec tansa-agi n Gmail"
       ],
       "Use your current email instead": [
         "Seqdec tansa-k•m tamirant deg umḍiq"
@@ -1114,6 +1132,9 @@
       "Disabled": [
         "Yensa"
       ],
+      "Disconnected": [
+        "Yekkes tuqqna"
+      ],
       "External": [
         "Azɣaray"
       ],
@@ -1230,11 +1251,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Aɣram ɣef 30 n wussan yettwaḍmen"
-      ]
-    },
-    "BF2024: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } n uḥraz"
       ]
     },
     "Billing cycle option": {
@@ -2618,6 +2634,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
       ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "S tiggayin timaynutin n yimaylen, d izenan yesɛan azal kan i d-yettawḍen ɣer tnakat-ik n unermas tagejdant. Tiggayin xeddment am yimsizdigen n yispamen. ${ MAIL_APP_NAME } leɛmer yeɣra imaylen-ik neɣ ibḍa isefka-ik."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Tzemreḍ ad d-tketreḍ tidyanin s umasal (afaylu ICS).\nAfaylu ilaq ad yesɛu teɣzi tafellayt n ${ MAX_IMPORT_FILE_SIZE_STRING } rnu ad yili deg-s alamma ${ MAX_IMPORT_EVENTS_STRING } n tedyanin.\nMa yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t d ifuyla meẓẓiyen."
       ]
@@ -2751,11 +2770,6 @@
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
         "Rnu ɣer ugar n 50,000 n tuddsiwin yesfaydin yakan seg tɣellist n ${ BRAND_NAME }"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Tallalt yezwaren"
       ]
     },
     "Email": {
@@ -3494,11 +3508,6 @@
         "(ulac azwel)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TAṬ seg uḥraz asemday"
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Gdel tinnubga"
@@ -3514,11 +3523,6 @@
       ],
       "View invitation": [
         "Sken tinnubga"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Armi d 6 n iseqdacen"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4309,6 +4313,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Fren ${ boldExport } i usifeḍ n uwitay am ufaylu ICS."
+      ]
+    },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Tebɣiḍ s tidet ad tserḥeḍ tasarut tusligt? Usserṛeḥ n tsarut tusligt i d-yettwanulfan s war taɣellist neɣ i deg tella tuffɣa n yisali yezmer ad d-yawi axasfay i tɣellist n yimaylen-ik.\n\nTtxil-k, ẓer daɣen d akken tasarut tazayezt icudden ɣer tsarut-a tusligt ad tili i yal yiwen seg uqeddac-nneɣ n tsura. Ma yella tasarut deg-s isalen n yiman-ik (am yisem-ik n tidet) ur tebɣiḍ ara ad d-tessufeḍ, di textiri, ẓreg-itt uqbel ad t-tserḥeḍ."
       ]
     },
     "Import status": {
@@ -6053,6 +6062,9 @@
       "Calendar": [
         "Awitay"
       ],
+      "Calendars": [
+        "Iwitayen"
+      ],
       "Card details": [
         "Talqayt n usmad"
       ],
@@ -6211,6 +6223,9 @@
       ],
       "Email or username": [
         "Imayl neɣ isem n useqdac"
+      ],
+      "Emails": [
+        "Imaylen"
       ],
       "Emails (all messages)": [
         "Imaylen (akk iznan)"
@@ -6709,6 +6724,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "I"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } seg ${ maxBYOEAddresses } n tansa n yimayl i yellan",
+        "${ byoeAddressesAvailableCount } seg ${ maxBYOEAddresses } n tansiwin n yimayl i yellan"
       ]
     },
     "Label for adding a new custom domain": {
@@ -8369,6 +8390,78 @@
         "Arussin"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
+      "Summer Sale": [
+        "Tanzayt n unebdu"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/ayyur"
+      ],
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "2 TB data storage": [
+        "Aklas n isefka n 2 TAṬ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Aklas n 200 GB: 40 n tikkal aɣawas-ik n tura"
+      ],
+      "3 TB data storage": [
+        "Aklas n isefka n 3 TAṬ"
+      ],
+      "500 GB storage": [
+        "500 GAṬ n uḥraz"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Akk timahilin premium n ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, d ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Akk timahilin premium n ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, d ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Isenqasen bnan ɣef watig amagnu n yal aggur. Tajerridt-ik ad tettuɣal s watig amagnu n yal aseggas mi ara tfak tuzya n tfaturt."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Anekcum ummid ɣer ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Imiḍanen iymanen i 6 n yimseqdacen"
+      ],
+      "Individual accounts for you and a partner": [
+        "Imiḍanen iymanen i kečč d umrec-ik"
+      ],
+      "Online document and spreadsheet editor": [
+        "Amaẓrag s tuqqna n isemliyen d tkaṛḍiwin n usiḍen"
+      ],
+      "Recover previous file versions": [
+        "Ssuɣal tilqamin yezrin n ufaylu"
+      ],
+      "Stronger protection against cyber threats": [
+        "Amestan ijehden mgal isgagen isenselkimen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Ssenfel ɣer uɣawas-nneɣ n yal aseggas tessefrit ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ikaramen, tibzimin, d yimsizedgen war tilas"
+      ],
+      "Use your own email domain": [
+        "Seqdec taɣult-ik n yimayl"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "i 12 wayyuren"
+      ],
+      "SUMMER SALE": [
+        "TANZAYT N UNEBDU"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Uɣal ɣer ${ signIn }."
@@ -8751,9 +8844,6 @@
       "Collaborative documents and spreadsheets": [
         "Isemliyen n uttekki d tikaṛḍiwin n usiḍen"
       ],
-      "Continue with ${ PLAN_NAMES[plan] }": [
-        "Kemmel s ${ PLAN_NAMES[plan] }"
-      ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Imayl yettwawgelhen s waklas n ${ totalMailStorageSize }"
       ],
@@ -8941,32 +9031,11 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TAṬ"
-      ],
-      "6 users": [
-        "6 yiseqdacen"
-      ],
-      "All paid Mail and Calendar features": [
-        "Akk timahilin n lexlaṣ i Mail d Calender"
-      ],
-      "High speed VPN": [
-        "VPN arurad ɛlayen"
-      ],
       "Highest VPN speed": [
         "Arured afellay maḍi VPN"
       ],
-      "Premium early access": [
-        "Anekcum Premium uzwir"
-      ],
-      "Secure cloud storage": [
-        "Aḥraz n usigna aɣellsan"
-      ],
       "Secure streaming": [
         "Asuddem aɣellsan"
-      ],
-      "Support online privacy": [
-        "Sefrek tabaḍnit srid"
       ]
     },
     "specialoffer: Link": {
@@ -8981,27 +9050,11 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } wayyur",
-        "${ n } wayyuren"
-      ],
       "/ month": [
         "/ n wayyur"
       ],
       "/month": [
         "/ayyur"
-      ],
-      "1 year": [
-        "1 n useggas"
-      ],
-      "15 months": [
-        "15 wayyuren"
-      ],
-      "2 years": [
-        "2 n yiseggasen"
-      ],
-      "30 months": [
-        "30 wayyuren"
       ],
       "Get the deal": [
         "Faṛes tagnit"
@@ -9694,6 +9747,9 @@
       "Are you sure you want to close?": [
         "D tidet tebɣiḍ ad t-tmedleḍ?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Tettedreḍ tebɣiḍ ad tekkseḍ tuqqna n tansa-agi?"
+      ],
       "Are you sure?": [
         "Tetḥeqqeḍ?"
       ],
@@ -10350,6 +10406,9 @@
       ],
       "Summary": [
         "Agzul"
+      ],
+      "Summer Sale": [
+        "Tanzayt n unebdu"
       ],
       "Switch account": [
         "Beddel amiḍan"

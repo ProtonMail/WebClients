@@ -1,4 +1,4 @@
-import { type FC, useRef, useState } from 'react';
+import { type FC, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,12 +6,15 @@ import { getJoiningLinkHref } from '@proton/account/orgJoiningLink/helpers';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Copy from '@proton/components/components/button/Copy';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
 import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { useProviderUsers } from '../../useProviderUsers';
@@ -34,9 +37,25 @@ const StepInviteUsers: FC<StepComponentProps> = ({ model, onNext }) => {
           })
         : '';
 
-    const users = (providerUsers ?? []).filter((u) => u.ImporterOrganizationUser);
+    const inviteLink = useMemo(() => {
+        // INDA-711 - on next release handle this as all other external links.
+        if (isElectronApp) {
+            return (
+                // eslint-disable-next-line
+                <button
+                    className="link"
+                    key="invite-link"
+                    role="link"
+                    onClick={() => openLinkInBrowser(activationLink)}
+                >
+                    {c('BOSS').t`invite link`}
+                </button>
+            );
+        }
+        return <a key="invite-link" href={activationLink} target="_blank">{c('BOSS').t`invite link`}</a>;
+    }, [activationLink, isElectronApp]);
 
-    const inviteLink = <a key="invite-link" href={activationLink} target="_blank">{c('BOSS').t`invite link`}</a>;
+    const users = (providerUsers ?? []).filter((u) => u.ImporterOrganizationUser);
 
     const messageTemplate = (() => {
         const translated = c('BOSS').jt`We're moving to ${BRAND_NAME}, the secure email service.
@@ -92,17 +111,12 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                     <InputFieldTwo
                         id="invitation-link"
                         value={activationLink}
-                        className="bg-weak flex-1 border-weak pr-6 color-weak"
+                        className="bg-weak flex-1 border-weak color-weak"
                         readOnly
                         assistContainerClassName="assist-container--no-min-height m-0"
-                    />
-                    <Copy
-                        shape="ghost"
-                        color="norm"
-                        value={activationLink}
-                        onCopy={handleCopy}
-                        size="small"
-                        className="absolute right-0 top-0 p-2"
+                        suffix={
+                            <Copy shape="ghost" color="norm" value={activationLink} onCopy={handleCopy} size="small" />
+                        }
                     />
                 </div>
             </div>
@@ -112,34 +126,50 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                     .t`Invitation message`}</label>
                 <div
                     className={clsx(
-                        'relative bg-weak rounded py-2 px-3 border border-weak overflow-hidden',
+                        'relative bg-weak rounded p-2 px-3 border border-weak overflow-hidden',
                         messageExpanded ? 'max-h-auto' : 'max-h-custom'
                     )}
                     style={{ '--max-h-custom': '2.25rem' }}
                 >
-                    {messageTemplate}
-
                     {messageRef.current && (
-                        <div className="absolute right-0 top-0">
-                            <Button
-                                shape="ghost"
-                                color="norm"
-                                icon
-                                className="p-2"
-                                onClick={() => setMessageExpanded(!messageExpanded)}
+                        <div
+                            className="float-right ml-1 mt-custom pt-0.5 mr-custom"
+                            style={{
+                                '--mt-custom': 'calc( -1 * var(--space-2) + (var(--space-0-5) / 2)  )',
+                                '--mr-custom': 'calc( -1 * var(--space-1) )',
+                            }}
+                        >
+                            <Tooltip
+                                title={
+                                    messageExpanded
+                                        ? c('BOSS').t`Collapse invitation message`
+                                        : c('BOSS').t`Expand invitation message`
+                                }
                             >
-                                {messageExpanded ? <IcArrowsToCenter /> : <IcArrowsFromCenter />}
-                            </Button>
+                                <Button
+                                    shape="ghost"
+                                    color="norm"
+                                    icon
+                                    size="small"
+                                    onClick={() => setMessageExpanded(!messageExpanded)}
+                                >
+                                    {messageExpanded ? (
+                                        <IcArrowsToCenter alt={c('BOSS').t`Collapse invitation message`} />
+                                    ) : (
+                                        <IcArrowsFromCenter alt={c('BOSS').t`Expand invitation message`} />
+                                    )}
+                                </Button>
+                            </Tooltip>
                             <Copy
                                 shape="ghost"
                                 color="norm"
                                 value={messageRef.current}
                                 onCopy={handleCopy}
                                 size="small"
-                                className="p-2"
                             />
                         </div>
                     )}
+                    {messageTemplate}
                 </div>
             </div>
 

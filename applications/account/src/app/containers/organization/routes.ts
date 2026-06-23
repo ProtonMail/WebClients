@@ -67,6 +67,7 @@ export const getOrganizationAppRoutes = ({
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
+    const isOrgDelinquent = organization?.State === ORGANIZATION_STATE.DELINQUENT;
     const isOrgConfigured = hasOrganizationKey || hasOrganization;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
     const hasActiveOrganization = isOrgActive && hasOrganization;
@@ -101,6 +102,7 @@ export const getOrganizationAppRoutes = ({
     const hasGroups = (groups?.length ?? 0) > 0;
     const canShowGroupsSection =
         isUserGroupsFeatureEnabled &&
+        (permissions['account.group.read'] || !!isGroupOwner) &&
         !!organization &&
         (hasGroups ||
             (hasActiveOrganizationKey &&
@@ -109,16 +111,20 @@ export const getOrganizationAppRoutes = ({
                     isUserGroupsPassBusinessEnabled,
                     hasGroups,
                 })));
+
+    const hasUsedMembers = (organization?.UsedMembers ?? 0) > 1;
     const canShowUsersAndAddressesSection =
-        // The user must have a plan that supports multi-user
-        hasMemberCapablePlan &&
-        // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
-        (isOrgActive || (organization?.UsedMembers ?? 0) > 1) &&
+        permissions['account.user.read'] &&
         // The org must be setup to allow users to access this page
-        isOrgConfigured;
+        isOrgConfigured &&
+        // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
+        ((isOrgDelinquent && hasUsedMembers) ||
+            // The user must have an active (non-delinquent) plan that supports multi-user
+            (isOrgActive && hasMemberCapablePlan));
 
     const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
 
+    const hasUsedDomains = (organization?.UsedDomains ?? 0) > 0;
     const canShowDomainNamesSection =
         // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
         // NOTE: This configuration is tied with the mail/routes.tsx domains availability
@@ -126,7 +132,7 @@ export const getOrganizationAppRoutes = ({
         // Don't use user.hasPaidMeet otherwise we will show domain names section to every user with Meet addon
         (hasOrganizationKey && hasMeetPlan) ||
         // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete domains
-        (!isOrgActive && (organization?.UsedDomains ?? 0) > 0);
+        (isOrgDelinquent && hasUsedDomains);
 
     const canShowScribeSection = Boolean(
         isScribeEnabled &&
@@ -181,13 +187,19 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
+    const canShowSSOSection =
+        permissions['account.sso_config.read'] &&
+        appSupportsSSO(app) &&
+        (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) || upsellPlanSSO(organization?.PlanName)) &&
+        isOrgConfigured;
+
     const routes = {
         users: {
             id: 'users',
             text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
             to: '/users-addresses',
             icon: 'users',
-            available: canHaveOrganization && canShowUsersAndAddressesSection,
+            available: canShowUsersAndAddressesSection,
             subsections: [
                 {
                     id: 'schedule-call',
@@ -209,7 +221,7 @@ export const getOrganizationAppRoutes = ({
             to: '/user-groups',
             icon: 'pass-group',
             noTitle: true,
-            available: (isAdmin || !!isGroupOwner) && canShowGroupsSection,
+            available: canShowGroupsSection,
             subsections: [
                 {
                     id: 'groups-management',
@@ -382,12 +394,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Single sign-on`,
             to: '/single-sign-on',
             icon: 'key',
-            available:
-                canHaveOrganization &&
-                appSupportsSSO(app) &&
-                (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
-                    upsellPlanSSO(organization?.PlanName)) &&
-                isOrgConfigured,
+            available: canShowSSOSection,
         },
         accessControl: {
             id: 'accessControl',

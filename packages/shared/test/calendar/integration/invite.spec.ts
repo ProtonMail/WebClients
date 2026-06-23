@@ -315,8 +315,8 @@ describe('generateEmailSubject', () => {
     });
 
     it('should return the expected subject for a reply', () => {
-        const expected = `${RE_PREFIX} Invitation for an event starting on Sunday March 22nd, 2020`;
-        const expectedSingleFullDay = `${RE_PREFIX} Invitation for an event on Sunday March 22nd, 2020`;
+        const expected = `${RE_PREFIX()} Invitation for an event starting on Sunday March 22nd, 2020`;
+        const expectedSingleFullDay = `${RE_PREFIX()} Invitation for an event on Sunday March 22nd, 2020`;
         expect(
             generateEmailSubject({
                 vevent: {

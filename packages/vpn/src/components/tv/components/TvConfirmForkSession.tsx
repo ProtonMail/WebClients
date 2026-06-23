@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { Icon } from '@proton/components/index';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import tvLogo from '../assets/tv.svg';
@@ -22,7 +22,7 @@ export const TvConfirmForkSession = ({ onConfirm }: Props) => {
                 </span>
             </div>
             <div className="flex flex-row items-center w-full justify-center gap-5">
-                <Icon className="color-weak" name="info-circle-filled" />
+                <IcInfoCircleFilled className="color-weak" />
                 <span className="color-weak">{c('Info').t`Only sign in on devices you trust`}</span>
             </div>
             <div className="flex flex-column w-full gap-4 items-center">

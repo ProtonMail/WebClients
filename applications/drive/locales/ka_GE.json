@@ -88,6 +88,9 @@
       "Add photos": [
         "დაამატეთ სურათები"
       ],
+      "Add storage": [
+        "საცავის დამატება"
+      ],
       "Add to album": [
         "ალბომში დამატება"
       ],
@@ -490,9 +493,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
       ],
-      "Get Drive for Business": [
-        "მიიღეთ Drive for Business"
-      ],
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
@@ -606,6 +606,9 @@
       ],
       "Let's talk": [
         "ვიბაზროთ"
+      ],
+      "List layout": [
+        "სიის განლაგება"
       ],
       "Load": [
         "ჩატვირთვა"
@@ -759,6 +762,9 @@
       ],
       "Quit": [
         "გასვლა"
+      ],
+      "Re-index": [
+        "რეინდექსაცია"
       ],
       "Re-sign": [
         "ხელახლა ხელმოწერა"
@@ -1099,9 +1105,6 @@
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
       ],
-      "Upload anyway": [
-        "მაინც ატვირთვა"
-      ],
       "Upload file": [
         "ფაილის ატვირთვა"
       ],
@@ -1149,6 +1152,9 @@
       ],
       "Verify account": [
         "ანგარიშის გადამოწმება"
+      ],
+      "Verify now": [
+        "ახლა გადამოწმება"
       ],
       "View": [
         "ნახვა"
@@ -1511,6 +1517,71 @@
       ],
       "Yearly": [
         "წლიურად"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "აქტიურია"
+      ],
+      "All": [
+        "ყველა"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Configure migration": [
+        "მიგრაციის მორგება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Emails": [
+        "ელფოსტები"
+      ],
+      "Errors": [
+        "შეცდომები"
+      ],
+      "Estimated size": [
+        "სავარაუდო ზომა"
+      ],
+      "Has errors": [
+        "აქვს შეცდომები"
+      ],
+      "In progress": [
+        "მიმდინარეობს"
+      ],
+      "Migrate": [
+        "მიგრაცია"
+      ],
+      "Migrated": [
+        "მიგრირებულია"
+      ],
+      "Migration status": [
+        "მიგრაციის სტატუსი"
+      ],
+      "Organization does not have enough seats available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization does not have enough storage available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Pending": [
+        "რიგში"
+      ],
+      "Size": [
+        "ზომა"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "User": [
+        "მომხმარებელი"
+      ],
+      "What are you migrating?": [
+        "რის მიგრაციას ახდენთ?"
+      ],
+      "You": [
+        "თქვენ"
       ]
     },
     "Browser": {
@@ -2865,9 +2936,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "დარწმუნდით, რომ კვლავ შეძლებთ წვდომას თქვენს ანგარიშსა და მონაცემებზე მაშინაც კი, თუ დაკარგავთ თქვენს ${ BRAND_NAME } პაროლს."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "იმისათვის, რომ შეუფერხებლად გადახვიდეთ ${ BRAND_NAME }-ზე, შემოიტანეთ თქვენი მონაცემები Google-დან, Outlook-დან და სხვა წყაროებიდან."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
       ],
@@ -3161,9 +3229,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" უკვე არსებობს"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } თქვენს გარე ანგარიშს ვერ დაუკავშირდა"
       ],
@@ -3196,6 +3261,9 @@
       ],
       "Aliases could not be loaded": [
         "ფსევდონიმების ჩატვირთვა შეუძლებელია"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
       ],
       "Already a member of this share": [
         "უკვე წარმოადგენს ამ გაზიარების წევრს"
@@ -3367,9 +3435,6 @@
       "Failed to update public share node": [
         "საჯარო ზიარის კვანძის განახლება ჩავარდა"
       ],
-      "File cannot be merged with folder": [
-        "ფაილი არ შეიძლება საქაღალდეს შეერწყას"
-      ],
       "First name is too long": [
         "სახელი ძალიან გრძელია"
       ],
@@ -3508,11 +3573,17 @@
       "Payment process not supported": [
         "გადახდის პროცესის მხარდაჭერა არ არსებობს"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "სურათების ატვირთვა დროებით გათიშულია. მოგვიანებით სცადეთ"
-      ],
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
       ],
       "Please enter a valid postal code": [
         "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
@@ -3544,6 +3615,9 @@
       ],
       "Please select billing state": [
         "აირჩიეთ გადახდის მდგომარეობა"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
       ],
       "Port is required": [
         "პორტი აუცილებელია"
@@ -3645,24 +3719,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "საწყისის ფაილი ახალი რევიზია ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
-      ],
-      "The original file has missing active revision": [
-        "საწყის ფაილს აქტიური რევიზია აკლია"
-      ],
-      "The original file has missing hash key": [
-        "პირველად ფაილს აკლია hash გასაღები"
-      ],
-      "The original file has missing session key": [
-        "პირველად ფაილს აკლია სესიის გასაღები"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "საწყისი ფაილი ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
-      ],
-      "The original folder not found": [
-        "საწყისი საქაღალდე ნაპოვნი არაა"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
       ],
@@ -3717,9 +3773,6 @@
       "Upload failed": [
         "ატვირთვა ჩავარდა"
       ],
-      "Upload for this folder is temporarily disabled": [
-        "ამ საქაღალდისთვის ატვირთვა დროებით გათიშულია"
-      ],
       "Username must begin with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
       ],
@@ -3771,6 +3824,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
@@ -4168,6 +4224,9 @@
       ],
       "More premium features": [
         "მეტი ფასიანი ფუნქცია"
+      ],
+      "Storage": [
+        "საცავი"
       ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
@@ -4780,6 +4839,10 @@
       "${ storage } storage": [
         "${ storage } საცავი"
       ],
+      "${ total } user found": [
+        "აღმოჩენილია ${ total } მომხმარებელი",
+        "აღმოჩენილია ${ total } მომხმარებელი"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
@@ -4802,21 +4865,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ ${ BRAND_NAME }-ის სატარიფო გეგმაზე."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი მეგობრისთვის, რომელიც გამოიწერს გეგმას."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
@@ -5023,9 +5071,6 @@
       "Close this screen to exit.": [
         "გასასვლელად დახურეთ ეს ეკრანი."
       ],
-      "Cloud storage for businesses that take security seriously": [
-        "ღრუბლოვანი საცავი ბიზნესებისთვის, რომლებიც სერიოზულად ეკიდებიან უსაფრთხოებას"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "მიუერთდით ${ VPN_APP_NAME } ინტერნეტში უსაფრთხოდ სამუშაოდ"
       ],
@@ -5193,6 +5238,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
       ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
+      ],
       "Enter password": [
         "შეიყვანეთ პაროლი"
       ],
@@ -5250,9 +5298,6 @@
       ],
       "for ${ price }": [
         "${ price }-ისთვის"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "საუკეთესო შედეგისთვის, მოერიდეთ სტრიმინგს და მეხსიერების ინტენსიურ აქტივობებს, ან დაყავით თქვენი ატვირთვა მცირე ნაკრებებად."
       ],
       "Free 5GB encrypted storage to get started": [
         "უფასო 5გბ დაშიფრული საცავი დასაწყისისთვის"
@@ -5341,6 +5386,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
+      ],
+      "Included": [
+        "შეიცავს"
       ],
       "Index is empty.": [
         "ინდექსი ცარიელია."
@@ -5740,6 +5788,9 @@
       "Ready to add some photos?": [
         "მზად ბრძანდებით, სურათები დაამატოთ?"
       ],
+      "RECOMMENDED": [
+        "რეკომენდებულია"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
       ],
@@ -5793,6 +5844,9 @@
       ],
       "Search Enabled": [
         "ძებნა ჩართულია"
+      ],
+      "Search error": [
+        "ძებნის შეცდომა"
       ],
       "Select a destination folder": [
         "აირჩიეთ სამიზნე საქაღალდე"
@@ -5960,9 +6014,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
       ],
-      "This item already exists in your library": [
-        "ეს ელემენტი თქვენს ბიბლიოთეკაში უკვე არსებობს"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
       ],
@@ -5990,26 +6041,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "ეს სამუდამოდ წაშლის თქვენს მიერ ატვირთულ ელემენტებს."
       ],
-      "This will replace the existing file with the folder": [
-        "ეს არსებულ ფაილს საქაღალდით ჩაანაცვლებს"
-      ],
       "This will replace the existing folder or file with the file": [
         "ეს არსებულ საქაღალდეს ან ფაილს ფაილით ჩაანაცვლებს"
       ],
       "This will replace the existing folder or file with the folder": [
         "ეს არსებულ საქაღალდეს ან ფაილს საქაღალდით ჩაანაცვლებს"
       ],
-      "This will replace the existing folder with the file": [
-        "ეს არსებულ საქაღალდეს ფაილით ჩაანაცვლებს"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
-      ],
-      "This will upload a new version of the file": [
-        "ეს ფაილის ახალ ვერსიას ატვირთავს"
-      ],
-      "This will upload a new version of the folder": [
-        "ეს საქაღალდის ახალ ვერსიას ატვირთავს"
       ],
       "Time": [
         "დრო"
@@ -6055,18 +6094,6 @@
       ],
       "Tracking": [
         "ტრეკინგი"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\"-ის გადაცემა გაუქმებულია"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\"-ის გადაცემა გაუქმებულია"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\"-ის გადაცემა გამოტოვებულია"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\"-ის გადაცემა გამოტოვებულია"
       ],
       "Trash": [
         "ნაგვის ყუთი"
@@ -6121,9 +6148,6 @@
       ],
       "Uploading": [
         "იტვირთება"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "ასობით ფაილის ერთდროულ ატვირთვამ შეიძლება, წარმადობაზე გავლენა იქონიოს."
       ],
       "Uppercase and lowercase letters": [
         "დიდი და პატარა ასოები"
@@ -6460,11 +6484,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "აქტიური ხელმომწერი"
+      ],
       "Compromised": [
         "კომპრომეტირებულია"
       ],
       "Expired": [
         "ვადაგასულია"
+      ],
+      "Fallback": [
+        "სარეზერვო ვარიანტი"
       ],
       "KOO": [
         "KOO"
@@ -6570,6 +6600,9 @@
       "Apply to all unverified items": [
         "ყველა შეუმოწმებელ ელემენტზე გადატარება"
       ],
+      "Asset": [
+        "აქტივი"
+      ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
@@ -6596,6 +6629,9 @@
       ],
       "Calendar": [
         "კალენდარი"
+      ],
+      "Calendars": [
+        "კალენდრები"
       ],
       "can edit": [
         "შეუძლია, ჩაასწოროს"
@@ -6733,6 +6769,9 @@
       "Email format": [
         "ელფოსტის ფორმატი"
       ],
+      "Emails": [
+        "ელფოსტები"
+      ],
       "Emails (all messages)": [
         "ელფოსტა (ყველა შეტყობინება)"
       ],
@@ -6834,12 +6873,6 @@
       ],
       "Keep both": [
         "ორივეს შენარჩუნება"
-      ],
-      "Keep both files": [
-        "ორივე ფაილის შენარჩუნება"
-      ],
-      "Keep both folders": [
-        "ორივე საქაღადის შენარჩუნება"
       ],
       "Label messages as": [
         "შეტყობინებების მონიშვნა, როგორც"
@@ -6981,12 +7014,6 @@
       ],
       "Region": [
         "რაიონი"
-      ],
-      "Replace existing file": [
-        "არსებული ფაილის ჩანაცვლება"
-      ],
-      "Replace existing folder": [
-        "არსებული საქაღალდის ჩანაცვლება"
       ],
       "Replace existing folder or file": [
         "არსებული საქაღალდის ან ფაილის ჩანაცვლება"
@@ -8620,14 +8647,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\"-ის ნაგავის ყუთში გადატანის შეცდომა"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\"-ის შენახვის შეცდომა"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" ნაგვის ყუთში ჩავარდა"
-      ],
-      "\"${ name }\" saved successfully": [
-        "${ name } წარმატებით იქნა შენახული"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"-ის გადარქმევის შეცდომა"
@@ -8766,19 +8787,6 @@
       "Failed to rename device": [
         "მოწყობილობის სახელის გადარქმევა ჩავარდა"
       ],
-      "Failed to upload files: ${ err }": [
-        "ფაილების ატვირთვის შეცდომა: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს",
-        "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "ფაილის ან საქაღალდის \"${ filename }\" ატვირთვა უკვე მიმდინარეობს"
-      ],
-      "File or folder is missing a name": [
-        "ფაილს ან საქაღალდეს არ აქვს სახელი"
-      ],
       "File removed": [
         "ფაილი წაიშალა"
       ],
@@ -8799,9 +8807,6 @@
       "Move ${ n } item": [
         "${ n } ელემენტის გადატანა",
         "${ n } ელემენტის გადატანა"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
       ],
       "Public link access updated": [
         "საჯარო ბმულის წვდომა განახლდა"
@@ -9678,6 +9683,9 @@
       "San Francisco": [
         "სან-ფრანცისკო"
       ],
+      "Search": [
+        "ძებნა"
+      ],
       "Search for group name": [
         "ჯგუფის სახელის მოძებნა"
       ],
@@ -9818,6 +9826,78 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
+      "Summer Sale": [
+        "ზაფხულის ფასდაკლება"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/თვე"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "2 TB data storage": [
+        "2 ტბ მონაცემთა საცავი"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: 40-ჯერ მეტი მიმდინარე სატარიფო გეგმაზე"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მონაცემთა საცავი"
+      ],
+      "500 GB storage": [
+        "500 გბ საცავი"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ფასდაკლებები ეფუძნება სტანდარტულ ყოველთვიურ ტარიფს. თქვენი გამოწერა განახლდება სტანდარტული წლიური ტარიფით, როდესაც გადახდის ციკლი დასრულდება."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "სრული წვდომა ${ VPN_APP_NAME }-ზე"
+      ],
+      "Individual accounts for 6 users": [
+        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
+      ],
+      "Individual accounts for you and a partner": [
+        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+      ],
+      "Online document and spreadsheet editor": [
+        "დოკუმენტებისა და ელექტრონული ცხრილების ონლაინ რედაქტორი"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "გადადით ჩვენს წლიურ პაკეტზე და დაზოგეთ ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 თვით"
+      ],
+      "SUMMER SALE": [
+        "ზაფხულის ფასდაკლება"
       ]
     },
     "Referral": {
@@ -11204,6 +11284,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } ელფოსტის მისამართი",
         "${ emailsCount } ელფოსტის მისამართი"
@@ -11456,18 +11539,6 @@
       "Diagnostics": [
         "დიაგნოსტიკა"
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად შექმნა <strong>${ emailAddress }</strong>-მა."
-      ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა <strong>${ emailAddress }</strong>-მა."
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "ციფრული ხელმოწერა შემოწმებულია. ეს საქაღალდე დაცულად შექმნა <strong>${ emailAddress }</strong>-მა."
-      ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "ციფრული ხელმოწერა შემოწმებულია. ეს საქაღალდე დაცულად ატვირთა <strong>${ emailAddress }</strong>-მა."
-      ],
       "Discard": [
         "მოცილება"
       ],
@@ -11500,12 +11571,6 @@
       ],
       "Drop to upload": [
         "ასატვირთად გადმოათრიეთ ზედ"
-      ],
-      "Duplicate file found": [
-        "ნაპოვნია ფაილის ასლი"
-      ],
-      "Duplicate folder found": [
-        "ნაპოვნია საქაღალდის ასლი"
       ],
       "Edit billing address": [
         "გადახდის მისამართის ჩასწორება"
@@ -11632,9 +11697,6 @@
       "Import contacts": [
         "კონტაქტების შემოტანა"
       ],
-      "Import emails, calendars, contacts": [
-        "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
-      ],
       "Import events": [
         "მოვლენების შემოტანა"
       ],
@@ -11676,9 +11738,6 @@
       ],
       "Make a secure connection your default": [
         "დაცული კავშირის გამოყენება ნაგულისხმევად"
-      ],
-      "Manage secure link": [
-        "დაცული ბმულის მორგება"
       ],
       "Media type": [
         "მედიის ტიპი"
@@ -11808,9 +11867,6 @@
       ],
       "PayPal verification failed": [
         "PayPal-ით გადახდის შეცდომა"
-      ],
-      "Performance might be affected": [
-        "გავლენა ექნება წარმადობაზე"
       ],
       "Phone numbers": [
         "ტელეფონის ნომრები"
@@ -11996,6 +12052,9 @@
       "Summary": [
         "შეჯამება"
       ],
+      "Summer Sale": [
+        "ზაფხულის ფასდაკლება"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "ფაილს აკლია ან აქვს არასწორი ხელმოწერა. მეტი ინფორმაციის მისაღებად გადადით მენიუ (:) -> დეტალები."
       ],
@@ -12065,9 +12124,6 @@
       "Uploaded": [
         "ატვირთულია"
       ],
-      "Uploading a large file or folder": [
-        "დიდი ფაილის ან საქაღალდის ატვირთვა"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
       ],
@@ -12091,18 +12147,6 @@
       ],
       "Warning: suspected fake website": [
         "გაფრთხილება: დიდი ალბათობით, ვებგვერდი ყალბია"
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "ჩვენ ვერ გადავამოწმეთ, რომ ეს ფაილი <strong>${ emailAddress }</strong>-მა შექმნა."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "ჩვენ ვერ გადავამოწმეთ, რომ ეს საქაღალდე <strong>${ emailAddress }</strong>-მა შექმნა."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "ჩვენ ვერ გადავამოწმეთ, რომ ეს ფაილი <strong>${ emailAddress }</strong>-მა ატვირთა."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "ჩვენ ვერ გადავამოწმეთ, რომ ეს საქაღალდე <strong>${ emailAddress }</strong>-მა ატვირთა."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "ჩვენ ვერ გადავამოწმეთ, რომ ეს ფაილი ანონიმურმა მომხმარებელმა შექმნა."

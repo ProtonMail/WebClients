@@ -14,6 +14,7 @@ import {
 import type { ModalStateProps } from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
 import type { Space } from '../../../types';
@@ -36,16 +37,16 @@ export const ProjectEditModal = ({
     currentIcon,
     ...modalProps
 }: ProjectEditModalProps) => {
-    const [name, setName] = useState(currentName);
-    const [instructions, setInstructions] = useState(currentInstructions || '');
+    const name = useUncontrolledField<HTMLInputElement>(currentName);
+    const instructions = useUncontrolledField<HTMLTextAreaElement>(currentInstructions || '');
     const [selectedIcon, setSelectedIcon] = useState<string>(currentIcon || DEFAULT_PROJECT_ICON);
     const dispatch = useLumoDispatch();
 
     const handleSave = () => {
         const updatedSpace = {
             ...space,
-            projectName: name || undefined,
-            projectInstructions: instructions || undefined,
+            projectName: name.getValue() || undefined,
+            projectInstructions: instructions.getValue() || undefined,
             projectIcon: selectedIcon || undefined,
         };
 
@@ -55,8 +56,6 @@ export const ProjectEditModal = ({
     };
 
     const handleCancel = () => {
-        setName(currentName);
-        setInstructions(currentInstructions || '');
         modalProps.onClose?.();
     };
 
@@ -72,13 +71,12 @@ export const ProjectEditModal = ({
                     <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
 
                     <InputFieldTwo
+                        {...name.bind}
                         id="project-name"
                         className="unstyled-field"
                         placeholder={c('collider_2025:Placeholder').t`Enter project name`}
                         unstyled
                         dense
-                        value={name}
-                        onValue={setName}
                         onKeyDown={(e) => {
                             // Prevent space key from bubbling up to avoid closing modal
                             if (e.key === ' ') {
@@ -92,12 +90,11 @@ export const ProjectEditModal = ({
                     {c('collider_2025:Label').t`Instructions`}
                 </label>
                 <TextAreaTwo
+                    {...instructions.bind}
                     id="project-instructions"
                     className="border border-weak rounded-lg"
                     placeholder={c('collider_2025:Placeholder')
                         .t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt. These instructions will apply to all chats in this project.`}
-                    value={instructions}
-                    onValue={setInstructions}
                     onKeyDown={(e) => {
                         // Prevent space key from bubbling up to avoid closing modal
                         if (e.key === ' ') {
@@ -115,7 +112,9 @@ export const ProjectEditModal = ({
                     onClick={handleSave}
                     color="norm"
                     disabled={
-                        currentName === name && currentInstructions === instructions && currentIcon === selectedIcon
+                        currentName === name.value &&
+                        (currentInstructions || '') === instructions.value &&
+                        currentIcon === selectedIcon
                     }
                 >
                     {c('collider_2025:Button').t`Save`}

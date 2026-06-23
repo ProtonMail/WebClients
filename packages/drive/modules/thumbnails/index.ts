@@ -13,15 +13,18 @@ export type { ThumbnailError } from './generator/thumbnailError';
 export { generateThumbnail } from './generator/thumbnailGenerator';
 export type { ThumbnailResult } from './generator/utils';
 export { canHtmlVideoPlay } from './generator/handlers/videoHandler';
+export { useInitEncryptedThumbnailCache } from './encryptedThumbnailCache';
 
 export const loadThumbnail = (drive: DriveClient, params: ThumbnailRequest) => {
     return useThumbnailsStore.getState().loadThumbnail(drive, params);
 };
 
-export const getThumbnail = (revisionUid: string) => {
-    return revisionUid ? useThumbnailsStore.getState().getThumbnail(revisionUid) : undefined;
+// `thumbnailKey` is the key the thumbnail is stored under: the revisionUid for
+// generic multi-revision nodes, or the nodeUid for single-revision ones (photos).
+export const getThumbnail = (thumbnailKey: string) => {
+    return thumbnailKey ? useThumbnailsStore.getState().getThumbnail(thumbnailKey) : undefined;
 };
 
-export const useThumbnail = (revisionUid: string | undefined) => {
-    return useThumbnailsStore((state) => (revisionUid ? state.getThumbnail(revisionUid) : undefined));
+export const useThumbnail = (thumbnailKey: string | undefined) => {
+    return useThumbnailsStore((state) => (thumbnailKey ? state.getThumbnail(thumbnailKey) : undefined));
 };

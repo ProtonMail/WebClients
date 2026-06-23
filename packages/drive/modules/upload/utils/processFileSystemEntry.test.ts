@@ -50,11 +50,13 @@ describe('processFileSystemEntry', () => {
         expect((result[0] as any).webkitRelativePath).toBe('test.txt');
     });
 
-    it('should process a file entry with path prefix', async () => {
+    it('should process a file entry nested inside directories', async () => {
         const mockFile = createMockFile('test.txt');
         const fileEntry = createMockFileEntry('test.txt', mockFile);
+        const subDirEntry = createMockDirectoryEntry('subfolder', [fileEntry]);
+        const dirEntry = createMockDirectoryEntry('folder', [subDirEntry]);
 
-        const result = await processFileSystemEntry(fileEntry, 'folder/subfolder/');
+        const result = await processFileSystemEntry(dirEntry);
 
         expect(result).toHaveLength(1);
         expect(result[0].name).toBe('test.txt');
@@ -110,12 +112,30 @@ describe('processFileSystemEntry', () => {
     it('should set webkitRelativePath as non-writable', async () => {
         const mockFile = createMockFile('test.txt');
         const fileEntry = createMockFileEntry('test.txt', mockFile);
+        const dirEntry = createMockDirectoryEntry('folder', [fileEntry]);
 
-        const result = await processFileSystemEntry(fileEntry, 'folder/');
+        const result = await processFileSystemEntry(dirEntry);
 
         const descriptor = Object.getOwnPropertyDescriptor(result[0], 'webkitRelativePath');
         expect(descriptor?.writable).toBe(false);
         expect(descriptor?.value).toBe('folder/test.txt');
+    });
+
+    it('should skip empty directory placeholder when skipEmptyFolders is true', async () => {
+        const dirEntry = createMockDirectoryEntry('emptyFolder', []);
+
+        const result = await processFileSystemEntry(dirEntry, { skipEmptyFolders: true });
+
+        expect(result).toHaveLength(0);
+    });
+
+    it('should skip nested empty directory placeholder when skipEmptyFolders is true', async () => {
+        const emptySubDir = createMockDirectoryEntry('emptySubfolder', []);
+        const dirEntry = createMockDirectoryEntry('parentFolder', [emptySubDir]);
+
+        const result = await processFileSystemEntry(dirEntry, { skipEmptyFolders: true });
+
+        expect(result).toHaveLength(0);
     });
 
     it('should handle file entry errors', async () => {

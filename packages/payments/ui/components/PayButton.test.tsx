@@ -4,8 +4,8 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders';
-import { renderWithProviders } from '@proton/testing/index';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { BILLING_ADDRESS_VALID } from '../../core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '../../core/constants';

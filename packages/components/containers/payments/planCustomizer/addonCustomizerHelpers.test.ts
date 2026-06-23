@@ -10,8 +10,8 @@ import {
     TRIAL_MAX_SCRIBE_SEATS,
     TRIAL_MAX_USERS,
 } from '@proton/payments';
-import { buildSubscription } from '@proton/testing/builders';
-import { PLANS_MAP } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 import { computeAddonCustomizerItems, getAddonCustomizerProperties } from './addonCustomizerHelpers';
 

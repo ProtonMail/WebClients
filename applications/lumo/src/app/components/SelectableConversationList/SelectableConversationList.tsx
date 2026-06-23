@@ -3,10 +3,11 @@ import { useCallback, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Checkbox } from '@proton/components';
+import { Checkbox, useModalStateObject } from '@proton/components';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import type { Conversation, ConversationId } from '../../types';
+import ConfirmDeleteModal from '../Modals/ConfirmDeleteModal';
 
 import './SelectableConversationList.scss';
 
@@ -51,6 +52,7 @@ export const SelectableConversationList = ({
     const [isSelectionMode, setIsSelectionMode] = useState(false);
     const [selectedIds, setSelectedIds] = useState<Set<ConversationId>>(new Set());
     const [isDeleting, setIsDeleting] = useState(false);
+    const confirmDeleteModal = useModalStateObject();
 
     // Get all conversation IDs from all groups
     const allConversationIds = groups.flatMap((group) => group.conversations.map((c) => c.id));
@@ -83,6 +85,11 @@ export const SelectableConversationList = ({
         });
     }, []);
 
+    const requestDeleteSelected = useCallback(() => {
+        if (selectedIds.size === 0) return;
+        confirmDeleteModal.openModal(true);
+    }, [selectedIds, confirmDeleteModal]);
+
     const handleDeleteSelected = useCallback(async () => {
         if (selectedIds.size === 0) return;
 
@@ -91,10 +98,11 @@ export const SelectableConversationList = ({
             await onDeleteSelected(Array.from(selectedIds));
             setSelectedIds(new Set());
             setIsSelectionMode(false);
+            confirmDeleteModal.openModal(false);
         } finally {
             setIsDeleting(false);
         }
-    }, [selectedIds, onDeleteSelected]);
+    }, [selectedIds, onDeleteSelected, confirmDeleteModal]);
 
     const handleConversationClick = useCallback(
         (conversationId: ConversationId) => {
@@ -150,7 +158,7 @@ export const SelectableConversationList = ({
                             size="small"
                             color="danger"
                             shape="ghost"
-                            onClick={handleDeleteSelected}
+                            onClick={requestDeleteSelected}
                             loading={isDeleting}
                             disabled={isDeleting}
                             className="text-sm"
@@ -229,6 +237,15 @@ export const SelectableConversationList = ({
                         )
                 )}
             </div>
+
+            {confirmDeleteModal.render && (
+                <ConfirmDeleteModal
+                    {...confirmDeleteModal.modalProps}
+                    handleDelete={handleDeleteSelected}
+                    count={selectedCount}
+                    loading={isDeleting}
+                />
+            )}
         </div>
     );
 };

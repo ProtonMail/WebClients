@@ -21,11 +21,13 @@ export interface SidebarDialogHeaderProps {
 }
 
 export function SidebarDialogHeader({ title }: SidebarDialogHeaderProps) {
-  const { sidebarDialog } = useSidebarDialogContext()
+  const { sidebarDialog, titleId } = useSidebarDialogContext()
 
   return (
     <div className="flex shrink-0 items-center justify-between gap-2 border-b-[0.5px] border-[#EAE7E4] px-4 pb-2 pt-6">
-      <h1 className="text-lg font-bold">{title}</h1>
+      <h1 id={titleId} className="text-lg font-bold">
+        {title}
+      </h1>
 
       <Button
         type="button"
@@ -59,7 +61,7 @@ export const SidebarDialog = memo(
     }, [closeDialog, id])
 
     const contextValue = useMemo<SidebarDialogContextValue>(() => {
-      return { sidebarDialog: { id, open, setOpen } }
+      return { sidebarDialog: { id, open, setOpen }, titleId: `${id}-title` }
     }, [id, open, setOpen])
 
     return (
@@ -69,6 +71,7 @@ export const SidebarDialog = memo(
           hideOnInteractOutside={false}
           unmountOnHide
           hideOnEscape={false}
+          aria-labelledby={contextValue.titleId}
           className={clsx('absolute inset-0 outline-none', className)}
           ref={ref}
         >

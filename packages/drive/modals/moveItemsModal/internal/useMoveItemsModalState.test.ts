@@ -80,8 +80,8 @@ async function* makeAsyncIterable<T>(items: T[]): AsyncIterable<T> {
  * Builds a mock node hierarchy where the first element is the root.
  */
 const createMockHierarchy = (rootUid: string, ...leafUids: string[]) => [
-    { ok: true as const, value: createMockNodeEntity({ uid: rootUid, parentUid: undefined }) },
-    ...leafUids.map((uid) => ({ ok: true as const, value: createMockNodeEntity({ uid }) })),
+    createMockNodeEntity({ uid: rootUid, parentUid: undefined }),
+    ...leafUids.map((uid) => createMockNodeEntity({ uid })),
 ];
 
 const defaultProps = {
@@ -94,7 +94,7 @@ const defaultProps = {
 const defaultNode = createMockNodeEntity({
     uid: NODE1_UID,
     parentUid: ROOT_UID,
-    name: 'file1.txt',
+    name: { ok: true, value: 'file1.txt' },
 });
 
 const makeFolderItem = (treeItemId: string) => ({
@@ -132,7 +132,7 @@ describe('useMoveItemsModalState', () => {
 
         mockGetNodeHierarchy.mockResolvedValue(createMockHierarchy(ROOT_UID, NODE1_UID));
         mockInitializeTree.mockResolvedValue(undefined);
-        mockIterateNodes.mockImplementation(() => makeAsyncIterable([{ ok: true, value: defaultNode }]));
+        mockIterateNodes.mockImplementation(() => makeAsyncIterable([defaultNode]));
         mockMoveNodes.mockResolvedValue(undefined);
         mockAddNode.mockResolvedValue(undefined);
         mockToggleExpand.mockResolvedValue(undefined);
@@ -192,14 +192,16 @@ describe('useMoveItemsModalState', () => {
             );
             mockIterateNodes.mockImplementation(() =>
                 makeAsyncIterable([
-                    {
-                        ok: true,
-                        value: createMockNodeEntity({ uid: NODE1_UID, parentUid: ROOT_UID, name: 'file1.txt' }),
-                    },
-                    {
-                        ok: true,
-                        value: createMockNodeEntity({ uid: NODE2_UID, parentUid: ROOT_UID, name: 'file2.txt' }),
-                    },
+                    createMockNodeEntity({
+                        uid: NODE1_UID,
+                        parentUid: ROOT_UID,
+                        name: { ok: true, value: 'file1.txt' },
+                    }),
+                    createMockNodeEntity({
+                        uid: NODE2_UID,
+                        parentUid: ROOT_UID,
+                        name: { ok: true, value: 'file2.txt' },
+                    }),
                 ])
             );
 

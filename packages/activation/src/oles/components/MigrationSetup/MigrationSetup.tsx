@@ -3,12 +3,20 @@ import React, { type FC, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { getDomainRegistrar } from '@proton/shared/lib/api/domains';
 import { SECOND } from '@proton/shared/lib/constants';
-import { DKIM_STATE, DMARC_STATE, SPF_STATE, VERIFY_STATE } from '@proton/shared/lib/interfaces/Domain';
+import {
+    DKIM_STATE,
+    DMARC_STATE,
+    type DomainRegistrar,
+    SPF_STATE,
+    VERIFY_STATE,
+} from '@proton/shared/lib/interfaces/Domain';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -172,6 +180,7 @@ const MigrationNavigationListStepButton = ({
 };
 
 const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
+    const api = useSilentApi();
     const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName);
     const [state, setState] = useState<MigrationSetupState>({
         currentStep: model.importerOrganizationId ? 'migrate-accounts' : 'configure-migration',
@@ -219,6 +228,20 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
         refreshAfter(30 * SECOND);
         return () => clearTimeout(timer);
     }, [hasIncompleteUsers, hasInactiveUsers, refreshProviderUsers]);
+
+    useEffect(() => {
+        void (async () => {
+            if (!model.domain?.ID) {
+                model.update({ domainRegistrarId: undefined });
+                return;
+            }
+
+            const registrarResult = await api<DomainRegistrar>(getDomainRegistrar(model.domain.ID)).catch(noop);
+            // API response can be null
+            const domainRegistrarId = registrarResult?.RegistrarID ?? undefined;
+            model.update({ domainRegistrarId });
+        })();
+    }, [model.domain?.ID]);
 
     const stepConfigs: Record<StepId, StepConfig> = {
         'configure-migration': {
@@ -413,17 +436,17 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                                 </MigrationNavigationListStepNumber>
                                 <span
                                     className={clsx(
-                                        'text-semibold flex-1 text-left',
+                                        'text-semibold flex-1 text-left flex flex-nowrap items-center gap-2',
                                         state.currentStep === step.id ? 'color-primary' : 'color-weak'
                                     )}
                                 >
-                                    {stepConfigs[step.id].text}
+                                    <span className="flex-1">{stepConfigs[step.id].text}</span>
                                     {step.steps && (
                                         <Button
                                             icon
                                             size="tiny"
                                             shape="ghost"
-                                            className="p-0 ml-2"
+                                            className="p-0 shrink-0 mr-1"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 toggleStepExpanded(step.id);

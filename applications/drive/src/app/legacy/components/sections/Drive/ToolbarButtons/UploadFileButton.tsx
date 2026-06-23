@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 
 import { useActiveShare } from '../../../../../legacy/hooks/drive/useActiveShare';
-import { useFileUploadInput } from '../../../../../legacy/store';
+import { useUploadInput } from '../../../../../legacy/hooks/drive/useUploadInput';
 
 const UploadFileButton = () => {
     const { activeFolder } = useActiveShare();
@@ -12,7 +14,9 @@ const UploadFileButton = () => {
         inputRef: fileInput,
         handleClick,
         handleChange,
-    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+    } = useUploadInput({
+        onUpload: (files) => uploadManager.upload(files, generateNodeUid(activeFolder.volumeId, activeFolder.linkId)),
+    });
 
     return (
         <>

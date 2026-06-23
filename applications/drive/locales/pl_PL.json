@@ -237,6 +237,9 @@
       "Continue transfers": [
         "Kontynuuj listę transferów"
       ],
+      "Continue with Free": [
+        "Kontynuuj z wersją bezpłatną"
+      ],
       "Continue with Google": [
         "Kontynuuj z Google"
       ],
@@ -735,6 +738,9 @@
       "Reconnect": [
         "Połącz ponownie"
       ],
+      "Reconnect to Gmail": [
+        "Połącz ponownie z Gmailem"
+      ],
       "Recover data": [
         "Odzyskaj dane"
       ],
@@ -1040,9 +1046,6 @@
       ],
       "Upload and share files": [
         "Prześlij i udostępnij pliki"
-      ],
-      "Upload anyway": [
-        "Prześlij mimo to"
       ],
       "Upload file": [
         "Prześlij plik"
@@ -1373,6 +1376,20 @@
       ],
       "Yearly": [
         "Rocznie"
+      ]
+    },
+    "BOSS": {
+      "Migration status": [
+        "Status migracji"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "You": [
+        "Ty"
       ]
     },
     "Browser": {
@@ -2632,6 +2649,9 @@
       "Automatically forward incoming email to another email address.": [
         "Automatyczne przekierowanie wiadomości przychodzących na inny adres e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Dostępna przestrzeń dyskowa: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Skonfiguruj to najpierw, aby aktywować organizację i dostosować adres e-mail."
       ],
@@ -2653,11 +2673,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Łatwa synchronizacja plików komputera z chmurą i dostęp do danych z urządzenia mobilnego."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Wiadomości wysyłane na adres ${ connectedAddressText } będą teraz pojawiać się w ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Aby zapewnić dodatkowe bezpieczeństwo, zachęcaj do korzystania z uwierzytelniania dwustopniowego w organizacji."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Wystarczająco dużo miejsca na lata wiadomości, załączników i nie tylko."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zapewnij bezpieczny dostęp do danych organizacji, nawet jeśli Twój zespół jest zdalny lub korzysta z publicznej sieci Wi-Fi."
@@ -2667,9 +2693,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Upewnij się, że nadal możesz uzyskać dostęp do konta i danych, nawet jeśli zapomnisz hasła ${ BRAND_NAME }."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Zaimportuj dane z Google, Outlook i innych usług, aby płynnie przejść do ${ BRAND_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
@@ -2698,6 +2721,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Uprość synchronizację i planowanie za pomocą udostępnionych kalendarzy."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Może się tak zdarzyć, jeśli uprawnienia zostały usunięte lub zmieniło się Twoje hasło."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Aby nadal odbierać i wysyłać wiadomości Gmail w ${ BRAND_NAME }, połącz ponownie swoje konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Aby nadal odbierać i wysyłać wiadomości Gmail w ${ BRAND_NAME }, połącz ponownie swoje konta."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Ustaw hasło odzyskiwania, aby zapewnić najwyższe bezpieczeństwo konta."
       ],
@@ -2706,6 +2738,9 @@
       ],
       "To start, give your organization a name.": [
         "Rozpocznij od nazwania organizacji."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odblokuj 15 GB przestrzeni dyskowej za jedyne ${ config.offerPrice }."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Ulepsz do planu ${ planName }, aby nadal udostępniać pliki z uprawnieniem do edycji"
@@ -2716,6 +2751,15 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Skorzystaj z przewodnika, aby Twoja organizacja zaczęła szybko czerpać korzyści z wiodącego w branży ekosystemu szyfrowania i prywatności ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nie mamy już dostępu do ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Wstrzymamy importowanie przy 80% zapełnienia przestrzeni dyskowej, aby zarezerwować miejsce na nowe wiadomości."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Rozpoczęliśmy importowanie Twoich wiadomości z Gmaila. Damy Ci znać, gdy się zakończy."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Grupy kontaktów umożliwiają wysyłanie wiadomości do wszystkich członków grupy jednym kliknięciem."
       ],
@@ -2725,11 +2769,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Możesz oznaczyć do usunięcia te kontakty, których nie chcesz scalić ani zachować. Usunięcie nastąpi dopiero po kliknięciu przycisku Scal"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Możesz teraz wysyłać wiadomości z ${ BRAND_NAME }, używając tego adresu."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Metody odzyskiwania konta i danych oraz uwierzytelnianie dwustopniowe są włączone."
       ],
       "Your account and data recovery methods are set.": [
         "Metody odzyskiwania konta i danych są włączone."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko ${ newUserStorageText } najnowszych wiadomości z Gmaila"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko najnowsze wiadomości z Gmaila."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
@@ -2924,9 +2977,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" już istnieje"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym"
       ],
@@ -2962,6 +3012,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliasy nie mogły zostać załadowane"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
       ],
       "Already a member of this share": [
         "To jest już użytkownik elementu"
@@ -3113,9 +3166,6 @@
       "Failed to update public share node": [
         "Nie udało się zaktualizować publicznego węzła udostępniania"
       ],
-      "File cannot be merged with folder": [
-        "Plik nie może zostać scalony z folderem"
-      ],
       "First name is too long": [
         "Imię jest zbyt długie"
       ],
@@ -3248,11 +3298,17 @@
       "Payment process not supported": [
         "Przetwarzanie płatności nie jest obsługiwane"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Przesyłanie zdjęć jest tymczasowo wyłączone. Spróbuj ponownie później"
-      ],
       "Please activate your search again": [
         "Włącz ponownie wyszukiwanie"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Ustaw niestandardową domenę przed dodaniem adresów."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
       ],
       "Please enter a valid postal code": [
         "Wpisz prawidłowy kod pocztowy"
@@ -3286,6 +3342,9 @@
       ],
       "Please select billing state": [
         "Wybierz stan rozliczeniowy"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
       ],
       "Port is required": [
         "Port jest wymagany"
@@ -3341,6 +3400,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektóre nazwy etykiet przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
+      "Something went wrong while fetching available domains": [
+        "Coś poszło nie tak podczas pobierania dostępnych domen"
+      ],
       "Something went wrong. Please try again.": [
         "Coś poszło nie tak. Spróbuj ponownie."
       ],
@@ -3385,24 +3447,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Nowa rewizja oryginalnego pliku nie została przesłana. Spróbuj ponownie później"
-      ],
-      "The original file has missing active revision": [
-        "Oryginalny plik nie posiada aktywnej rewizji"
-      ],
-      "The original file has missing hash key": [
-        "Oryginalny plik nie posiada kryptograficznego skrótu klucza"
-      ],
-      "The original file has missing session key": [
-        "Oryginalny plik nie posiada klucza sesji"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Oryginalny plik nie został przesłany. Spróbuj ponownie później"
-      ],
-      "The original folder not found": [
-        "Oryginalny folder nie został znaleziony"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Posiadasz zbyt wiele folderów na swoim koncie zewnętrznym. Dostosuj proces importowania, aby usunąć niektóre foldery."
@@ -3449,9 +3493,6 @@
       "Unknown payment token status": [
         "Token statusu płatności jest nieznany"
       ],
-      "Upload for this folder is temporarily disabled": [
-        "Przesyłanie tego folderu jest tymczasowo wyłączone"
-      ],
       "Username must begin with a letter or digit": [
         "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
       ],
@@ -3490,6 +3531,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Osiągnięto limit liczby kontaktów na koncie"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
@@ -3871,6 +3915,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Ponad 10 funkcji premium"
+      ],
+      "Custom email domain": [
+        "Niestandardowa domena e-mail"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ],
       "Unlimited hide-my-email aliases": [
         "Nieograniczona liczba aliasów hide-my-email"
       ]
@@ -4585,21 +4641,6 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: Zatrzymuje wycieki danych, blokując dostęp do Internetu w przypadku nieoczekiwanego przerwania połączenia VPN."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1:** Zaproś znajomych do ${ BRAND_NAME } za pomocą linku polecającego."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu ${ BRAND_NAME } za darmo."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu za darmo."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego znajomego, który zasubskrybuje plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego użytkownika, który zasubskrybuje plan."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
       ],
@@ -5014,9 +5055,6 @@
       "Folders you sync from your computer will appear here.": [
         "Tutaj pojawią się foldery zsynchronizowane z urządzeniem."
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
-      ],
       "Free 5GB encrypted storage to get started": [
         "Darmowe 5 GB zaszyfrowanej przestrzeni dyskowej na początek"
       ],
@@ -5103,6 +5141,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "W następnym kroku wyślesz środki za pomocą adresu Bitcoin."
+      ],
+      "Included": [
+        "W pakiecie"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indeksowanie elementów (${ esProgress }/${ totalProgressToShow })"
@@ -5713,9 +5754,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To Twój ${ defaultEmailAddress } do wysyłania nowych wiadomości."
       ],
-      "This item already exists in your library": [
-        "Ten element już istnieje"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Element nie jest zapisany w bibliotece zdjęć. Usunięcie go z albumu spowoduje trwałą utratę dostępu do niego.",
         "Niektóre elementy nie są zapisane w bibliotece zdjęć. Usunięcie ich z albumu spowoduje trwałą utratę dostępu do nich.",
@@ -5749,20 +5787,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Spowoduje to trwałe usunięcie zaznaczonych elementów."
       ],
-      "This will replace the existing file with the folder": [
-        "Spowoduje to zastąpienie obecnego pliku folderem"
-      ],
-      "This will replace the existing folder with the file": [
-        "Spowoduje to zastąpienie obecnego folderu plikiem"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
-      ],
-      "This will upload a new version of the file": [
-        "Spowoduje to przesłanie nowej wersji pliku"
-      ],
-      "This will upload a new version of the folder": [
-        "Spowoduje to przesłanie nowej wersji folderu"
       ],
       "Time": [
         "Czas"
@@ -5812,18 +5838,6 @@
       "Tracking": [
         "Śledzenie"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transfer pliku \"${ name }\" został anulowany"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Transfer folderu \"${ name }\" został anulowany"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer pliku \"${ file.name }\" został pominięty"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Transfer folderu \"${ folderName }\" został pominięty"
-      ],
       "Trash": [
         "Kosz"
       ],
@@ -5854,8 +5868,14 @@
       "Updating drive search...": [
         "Aktualizacja wyszukiwania zawartości dysku..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Ulepsz konto w dowolnym momencie, aby przenieść resztę"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ulepsz konto w specjalnej cenie, aby uzyskać dostęp do funkcji premium oraz większej przestrzeni dyskowej"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Ulepsz konto lub zwolnij miejsce w dowolnym momencie, aby przenieść resztę"
       ],
       "upgrade your storage": [
         "zwiększyć przestrzeń dyskową"
@@ -5865,9 +5885,6 @@
       ],
       "Uploading": [
         "Przesyłanie"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
       ],
       "Uppercase and lowercase letters": [
         "Wielkie i małe litery"
@@ -5916,9 +5933,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Przestrzeń dyskowa została zwiększona do 5 GB!"
-      ],
-      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Nie udało się zweryfikować, czy ${ nameAuthor } przesłał ${ node.name }. Następujące elementy mogły zostać naruszone: kolejność danych w pliku. Otwórz tylko jeśli im ufasz."
       ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
@@ -6363,6 +6377,9 @@
       "Calendar": [
         "Kalendarz"
       ],
+      "Calendars": [
+        "Kalendarze"
+      ],
       "Cancel download": [
         "Anuluj pobieranie"
       ],
@@ -6483,6 +6500,9 @@
       "Email format": [
         "Format wiadomości"
       ],
+      "Emails": [
+        "Wiadomości"
+      ],
       "Emails (all messages)": [
         "Wiadomości (wszystkie)"
       ],
@@ -6566,12 +6586,6 @@
       ],
       "Keep both": [
         "Zachowaj oba"
-      ],
-      "Keep both files": [
-        "Zachowaj oba pliki"
-      ],
-      "Keep both folders": [
-        "Zachowaj oba foldery"
       ],
       "Label messages as": [
         "Oznacz wiadomości etykietą"
@@ -6704,12 +6718,6 @@
       ],
       "Region": [
         "Województwo"
-      ],
-      "Replace existing file": [
-        "Zastąp obecny plik"
-      ],
-      "Replace existing folder": [
-        "Zastąp obecny folder"
       ],
       "Reveal password": [
         "Pokaż hasło"
@@ -8380,14 +8388,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Przenoszenie elementu \"${ name }\" do kosza nie powiodło się"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Nie udało się zapisać pliku \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "Element \"${ name }\" został przeniesiony do kosza"
-      ],
-      "\"${ name }\" saved successfully": [
-        "Plik \"${ name }\" został zapisany"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Zmiana nazwy \"${ newName }\" nie powiodła się"
@@ -8530,21 +8532,6 @@
       "Failed to rename device": [
         "Nie udało się zmienić nazwy urządzenia"
       ],
-      "Failed to upload files: ${ err }": [
-        "Nie udało się przesłać plików: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Plik lub folder \"${ filename }\" i ${ count } inny jest już przesyłany",
-        "Plik lub folder \"${ filename }\" i ${ count } inne są już przesyłane",
-        "Plik lub folder \"${ filename }\" i ${ count } innych są już przesyłane",
-        "Plik lub folder \"${ filename }\" i ${ count } innych są już przesyłane"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Plik lub folder \"${ filename }\" jest już przesyłany"
-      ],
-      "File or folder is missing a name": [
-        "Plik lub folder nie posiada nazwy"
-      ],
       "File removed": [
         "Plik został usunięty"
       ],
@@ -8571,9 +8558,6 @@
         "Przenieś ${ n } elementy",
         "Przenieś ${ n } elementów",
         "Przenieś ${ n } elementów"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Link został zaktualizowany"
@@ -8607,6 +8591,9 @@
       ],
       "You stopped sharing this item": [
         "Zatrzymano udostępnianie elementu"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Twój adres ${ BRAND_NAME } jest gotowy do użycia"
       ],
       "Your old files will be deleted in 72 hours": [
         "Stare pliki zostaną usunięte w ciągu 72 godzin"
@@ -9347,6 +9334,9 @@
       "Postal code": [
         "Kod pocztowy"
       ],
+      "Search": [
+        "Szukaj"
+      ],
       "Search for group name": [
         "Szukaj nazwy grupy"
       ],
@@ -9490,15 +9480,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
-      "SPRING SALE 2026": [
-        "WIOSENNA PROMOCJA 2026"
+      "Summer Sale": [
+        "Letnie promocje"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/miesiąc"
       ],
@@ -9517,35 +9507,17 @@
       "500 GB storage": [
         "500 GB przestrzeni dyskowej"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Uzyskaj dostęp do zaawansowanych modeli AI"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Wszystkie funkcje premium usług Mail, Pass, Drive, VPN i Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
-      ],
-      "Built-in 2FA authenticator": [
-        "Wbudowana aplikacja uwierzytelniająca"
-      ],
-      "Connect 10 devices at once": [
-        "Połącz 10 urządzeń jednocześnie"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Przedłuż subskrypcję i zaoszczędź ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Pełny dostęp do ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Pełna historia czatu z łatwym wyszukiwaniem i ulubionymi"
       ],
       "Individual accounts for 6 users": [
         "Indywidualne konta dla 6 użytkowników"
@@ -9553,8 +9525,8 @@
       "Individual accounts for you and a partner": [
         "Indywidualne konta dla Ciebie i partnera"
       ],
-      "Online document editor": [
-        "Edytor dokumentów online"
+      "Online document and spreadsheet editor": [
+        "Edytor dokumentów i arkuszy kalkulacyjnych online"
       ],
       "Recover previous file versions": [
         "Odzyskaj poprzednie wersje pliku"
@@ -9565,25 +9537,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Przejdź na nasz roczny plan i zaoszczędź ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Nieograniczone codzienne czaty"
-      ],
       "Unlimited folders, labels, and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów z funkcją hide-my-email"
       ],
       "Use your own email domain": [
         "Możliwość użycia własnej domeny e-mail"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "na 12 miesięcy"
       ],
-      "SPRING SALE": [
-        "WIOSENNA PROMOCJA"
+      "SUMMER SALE": [
+        "LETNIE PROMOCJE"
       ]
     },
     "Referral": {
@@ -10969,6 +10935,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adres e-mail",
         "${ emailsCount } adresy e-mail",
@@ -11122,6 +11091,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with free storage": [
+        "Kontynuuj z bezpłatną przestrzenią dyskową"
+      ],
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
       ],
@@ -11224,23 +11196,14 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Podpis cyfrowy został zweryfikowany. Plik został utworzony przez adres <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Podpis cyfrowy został zweryfikowany. Plik został przesłany przez adres <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Podpis cyfrowy został zweryfikowany. Folder został utworzony przez adres <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Podpis cyfrowy został zweryfikowany. Folder został przesłany przez adres <strong>${ emailAddress }</strong>."
-      ],
       "Discard": [
         "Odrzuć"
       ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
+      ],
+      "Disconnected from Gmail": [
+        "Rozłączono z Gmailem"
       ],
       "Downgrade account": [
         "Obniż plan"
@@ -11268,12 +11231,6 @@
       ],
       "Drop to upload": [
         "Upuść, aby przesłać"
-      ],
-      "Duplicate file found": [
-        "Zduplikowany plik został znaleziony"
-      ],
-      "Duplicate folder found": [
-        "Zduplikowany folder został znaleziony"
       ],
       "Edit billing address": [
         "Edytuj adres rozliczeniowy"
@@ -11341,6 +11298,9 @@
       "Get more from your VPN": [
         "Uzyskaj więcej z VPN"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Zyskaj więcej przestrzeni dyskowej dzięki ${ MAIL_APP_NAME } Plus"
+      ],
       "Get the apps": [
         "Pobierz aplikacje"
       ],
@@ -11383,9 +11343,6 @@
       "Import contacts": [
         "Importuj kontakty"
       ],
-      "Import emails, calendars, contacts": [
-        "Importuj wiadomości, kalendarze i kontakty"
-      ],
       "Import events": [
         "Importuj wydarzenia"
       ],
@@ -11424,9 +11381,6 @@
       ],
       "Make a secure connection your default": [
         "Ustaw bezpieczne połączenie jako domyślne"
-      ],
-      "Manage secure link": [
-        "Zarządzaj linkiem"
       ],
       "Media type": [
         "Typ pliku"
@@ -11556,9 +11510,6 @@
       ],
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
-      ],
-      "Performance might be affected": [
-        "Może to wpłynąć na wydajność"
       ],
       "Phone numbers": [
         "Numery telefonów"
@@ -11722,6 +11673,9 @@
       "Summary": [
         "Podsumowanie"
       ],
+      "Summer Sale": [
+        "Letnie promocje"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Brak podpisu lub podpis jest nieprawidłowy. Przejdź do Menu (⋮) → Szczegóły, aby dowiedzieć się więcej."
       ],
@@ -11782,9 +11736,6 @@
       "Uploaded": [
         "Przesłano"
       ],
-      "Uploading a large file or folder": [
-        "Przesyłanie większego pliku lub folderu"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Użyj ${ VPN_SHORT_APP_NAME } dla prywatności danych"
       ],
@@ -11809,18 +11760,6 @@
       "Warning: suspected fake website": [
         "Ostrzeżenie: podejrzana strona internetowa"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Nie mogliśmy zweryfikować czy adres <strong>${ emailAddress }</strong> utworzył ten plik."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Nie mogliśmy zweryfikować czy adres <strong>${ emailAddress }</strong> utworzył ten folder."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Nie mogliśmy zweryfikować czy adres <strong>${ emailAddress }</strong> przesłał ten plik."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Nie mogliśmy zweryfikować czy adres <strong>${ emailAddress }</strong> przesłał ten folder."
-      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Nie mogliśmy zweryfikować czy anonimowy użytkownik utworzył ten plik."
       ],
@@ -11844,6 +11783,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kiedy korzystanie z VPN jest najważniejsze?"
+      ],
+      "You are all set": [
+        "Wszystko gotowe"
       ],
       "You can now create unlimited folders and labels": [
         "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"

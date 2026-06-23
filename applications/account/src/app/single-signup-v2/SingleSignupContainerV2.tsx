@@ -210,6 +210,7 @@ const SingleSignupContainerV2 = ({
                 SSO_PATHS.LUMO_SIGNUP_B2B,
                 SSO_PATHS.MEET_SIGNUP_B2B,
                 SSO_PATHS.BUSINESS_SIGNUP,
+                SSO_PATHS.BUSINESS_SIGNUP_GENERIC,
             ].includes(location.pathname as any)
         ) {
             return Audience.B2B;
@@ -1491,6 +1492,7 @@ const SingleSignupContainerV2 = ({
                                     };
                                     const userCreationResult = await handleCreateUser({
                                         invite: signupParameters.invite,
+                                        visitorId: signupParameters.visitorId,
                                         cache: tmpCache,
                                         api: silentApi,
                                         hvMode: SignupHumanVerification.DEFERRED,
@@ -1513,6 +1515,7 @@ const SingleSignupContainerV2 = ({
                                 } else {
                                     const result = await handleCreateUser({
                                         invite: signupParameters.invite,
+                                        visitorId: signupParameters.visitorId,
                                         cache,
                                         api: silentApi,
                                         hvMode:

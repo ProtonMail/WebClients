@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';

@@ -30,11 +30,6 @@ global.AnimationEvent = class AnimationEvent extends Event implements AnimationE
     }
 };
 
-vi.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-    enUSLocale: { code: 'en-US' },
-}));
-
 Object.defineProperty(window, 'matchMedia', {
     writable: true,
     value: vi.fn().mockImplementation((query: string) => ({

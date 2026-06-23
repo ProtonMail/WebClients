@@ -22,6 +22,8 @@ const DEFAULT_UPDATE_STORE = (currentVersion: string): UpdateStore => ({
     currentVersion,
     newVersion: null,
     progress: null,
+    mockUpdateBaseUrl: null,
+    mockDownload: false,
     mockDoDownloadError: false,
 });
 
@@ -37,6 +39,8 @@ export const getErrorLabel = (type: MaybeNull<UpdateErrorType>): string => {
                 return c('Error').t`could not download the update`;
             case UpdateErrorType.InstallFailed:
                 return c('Error').t`could not install the update`;
+            case UpdateErrorType.NotEnoughDiskSpace:
+                return c('Error').t`not enough disk space`;
         }
     })();
     return c('Error').t`Update failed (${typeLabel}).`;

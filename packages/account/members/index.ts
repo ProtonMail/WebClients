@@ -9,7 +9,7 @@ import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promise
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
-import { getMemberOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
+import { getMemberOrganizationRoles, updateMemberOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
@@ -23,6 +23,7 @@ import { bootstrapEvent } from '../bootstrap/action';
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
 import type { ModelState } from '../interface';
+import { getGroupSourcedRoleIds, getUserSourcedRoleIds } from '../organizationRoles/helpers';
 import { type UserState, userFulfilled, userThunk } from '../user';
 import { getMember } from './getMember';
 
@@ -105,6 +106,8 @@ const slice = createSlice({
                         ...a,
                         // In the event loop v6 we are always fetching individual members and get partial addresses
                         addressState: 'partial',
+                        roleState: 'initial',
+                        UserOrganizationRoles: [],
                     }),
                     merge: (a, b): EnhancedMember => ({
                         ...a,
@@ -145,6 +148,8 @@ const slice = createSlice({
             const newMember = {
                 ...action.payload.member,
                 addressState: 'partial' as const,
+                roleState: 'initial' as const,
+                UserOrganizationRoles: [],
             };
             if (memberIndex === -1) {
                 state.value.push(newMember);
@@ -157,12 +162,10 @@ const slice = createSlice({
                               Addresses: previousMember.Addresses,
                           }
                         : {};
-                const previousRoleState = previousMember.UserOrganizationRoles
-                    ? {
-                          roleState: 'stale' as const,
-                          UserOrganizationRoles: previousMember.UserOrganizationRoles,
-                      }
-                    : {};
+                const previousRoleState = {
+                    roleState: previousMember.roleState,
+                    UserOrganizationRoles: previousMember.UserOrganizationRoles,
+                };
                 const mergedValue: EnhancedMember = {
                     ...newMember,
                     ...previousAddressState,
@@ -267,6 +270,8 @@ const slice = createSlice({
                         return {
                             ...a,
                             addressState: 'partial',
+                            roleState: 'initial',
+                            UserOrganizationRoles: [],
                         };
                     },
                     merge: (a, b): EnhancedMember => {
@@ -310,6 +315,8 @@ const modelThunk = (options?: {
                     return members.map((member) => ({
                         ...member,
                         addressState: 'partial' as const,
+                        roleState: 'initial' as const,
+                        UserOrganizationRoles: [],
                     }));
                 });
                 return {
@@ -419,12 +426,16 @@ export const getMemberRoles = ({
     const map = getTemporaryRolePromiseMap();
 
     return async (dispatch, getState, extra) => {
+        const isAdminRoleEnabled = extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        if (!isAdminRoleEnabled) {
+            return [];
+        }
         const member = getMemberFromState(selectMembers(getState()), targetMember);
         if (!member) {
             return [];
         }
         if (cache !== CacheType.None) {
-            if (member.roleState === 'full' && member.UserOrganizationRoles) {
+            if (member.roleState === 'full') {
                 return member.UserOrganizationRoles;
             }
             if (member.roleState === 'rejected' && !retry) {
@@ -450,6 +461,35 @@ export const getMemberRoles = ({
         } finally {
             map.delete(member.ID);
         }
+    };
+};
+
+export const updateMemberRoles = ({
+    member,
+    currentRoles,
+    desiredRoleIds,
+    api,
+}: {
+    member: Member;
+    currentRoles: RoleAssignment[];
+    desiredRoleIds: Set<string>;
+    api: Api;
+}): ThunkAction<Promise<RoleAssignment[]>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _getState, extra) => {
+        const isAdminRoleEnabled = extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        if (!isAdminRoleEnabled) {
+            return [];
+        }
+        // Only user-sourced roles can be added/removed via this endpoint
+        const groupSourcedRoleIds = getGroupSourcedRoleIds(currentRoles);
+        const previousRoleIds = getUserSourcedRoleIds(currentRoles);
+        const add = [...desiredRoleIds].filter((id) => !previousRoleIds.has(id) && !groupSourcedRoleIds.has(id));
+        const remove = [...previousRoleIds].filter((id) => !desiredRoleIds.has(id));
+        const { RoleAssignments } = await api<{ RoleAssignments: RoleAssignment[] }>(
+            updateMemberOrganizationRoles(member.ID, { add, remove })
+        );
+        dispatch(slice.actions.memberRoleFetchFulfilled({ member, organizationRoles: RoleAssignments }));
+        return RoleAssignments;
     };
 };
 

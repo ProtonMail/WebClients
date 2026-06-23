@@ -26,11 +26,15 @@
       "Apply": [
         "Uygula"
       ],
+      "Are you sure you want to delete ${ count } conversation?": [
+        "${ count } yazışmayı silmek istediğinize emin misiniz?",
+        "${ count } yazışmayı silmek istediğinize emin misiniz?"
+      ],
       "Are you sure you want to delete all conversations?": [
         "Tüm yazışmaları silmek istediğinize emin misiniz?"
       ],
-      "Are you sure you want to delete the conversation?": [
-        "Yazışmayı silmek istediğinize emin misiniz?"
+      "Are you sure you want to delete this conversation?": [
+        "Bu yazışmayı silmek istediğinize emin misiniz?"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -118,6 +122,10 @@
       ],
       "Delete": [
         "Sil"
+      ],
+      "Delete ${ count } conversation?": [
+        "${ count } yazışma silinsin mi?",
+        "${ count } yazışma silinsin mi?"
       ],
       "Delete ${ token.Name }": [
         "${ token.Name } sil"
@@ -277,6 +285,9 @@
       ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "Reload": [
+        "Yenile"
       ],
       "Remove": [
         "Kaldır"
@@ -828,7 +839,7 @@
         "Özellikleri keşfedin ve ayarlayın"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Set up other features": [
         "Diğer özellikleri ayarlayın"
@@ -941,9 +952,6 @@
       "Add to active": [
         "Etkin olana ekle"
       ],
-      "Agents": [
-        "Aracılar"
-      ],
       "Already in KB": [
         "Zaten bilgi bankasında"
       ],
@@ -976,6 +984,9 @@
       ],
       "Create image": [
         "Görsel oluştur"
+      ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Özel ${ LUMO_SHORT_APP_NAME }"
       ],
       "Dark": [
         "Koyu"
@@ -1193,6 +1204,51 @@
         "Kontrol sizde"
       ]
     },
+    "collider_2025: Compaction": {
+      "${ removed } freed": [
+        "${ removed } boşaltıldı"
+      ],
+      "${ stats.summarizedMessageCount } earlier message condensed": [
+        "${ stats.summarizedMessageCount } önceki ileti özetlendi",
+        "${ stats.summarizedMessageCount } önceki ileti özetlendi"
+      ],
+      "Chat shortened to keep going": [
+        "Yazışmayı sürdürebilmek için kısaltıldı"
+      ],
+      "cleared old tool results": [
+        "eski araç sonuçları temizlendi"
+      ],
+      "dropped old messages": [
+        "eski iletiler silindi"
+      ],
+      "Files from summarized messages": [
+        "Özetlenmiş iletilerdeki dosyalar"
+      ],
+      "No longer sent to the model": [
+        "Artık modele gönderilmiyor"
+      ],
+      "removed file context": [
+        "dosya bağlamı kaldırıldı"
+      ],
+      "removed tool calls": [
+        "araç çağrısı kaldırıldı"
+      ],
+      "summarized the conversation": [
+        "yazışmayı özetledi"
+      ],
+      "This chat got long — summarizing earlier messages so we can keep going…": [
+        "Bu sohbet uzadı — İlerleyebilmemiz için önceki iletileri özetliyorum…"
+      ],
+      "Tool calls removed": [
+        "Araç çağrıları kaldırıldı"
+      ],
+      "Tool output cleared": [
+        "Araç çıktısı temizlendi"
+      ],
+      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
+        "${ LUMO_SHORT_APP_NAME } tarafından hatırlanan şeyler"
+      ]
+    },
     "collider_2025: Context": {
       "I believe cereal is a soup and I'm not sorry": [
         "Kahvaltılık gevreğin bir çorba olduğuna inanıyorum ve bundan pişman değilim"
@@ -1295,7 +1351,7 @@
         "Bellekler şifrelenmiş olarak saklanır."
       ],
       "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
-        "Bellek ${ LUMO_SHORT_APP_NAME } uygulamasının genel sohbetlerdeki kalıcı seçimleri ve bağlamı hatırlamasını sağlar. Böylece kendinizi tekrarlamak zorunda kalmazsınız."
+        "Bellek ${ LUMO_SHORT_APP_NAME } uygulamasının genel sohbetlerdeki kalıcı seçimleri ve bağlamı anımsamasını sağlar. Böylece kendinizi tekrarlamak zorunda kalmazsınız."
       ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Projenizi ve sohbetlerinizi kalıcı olarak silin. Bu işlem geri alınamaz."
@@ -1410,35 +1466,38 @@
       "Something went wrong. Please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some from this chat before uploading new ones to keep things purring.": [
+        "${ LUMO_SHORT_APP_NAME } için bu çok fazla dosya demek. Her şeyin sorunsuz çalışması için yeni dosyaları yüklemeden önce bazılarını bu sohbetten silin."
+      ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some from this project before uploading new ones to keep things purring.": [
+        "${ LUMO_SHORT_APP_NAME } için bu çok fazla dosya demek. Her şeyin sorunsuz çalışması için yeni dosyaları yüklemeden önce bazılarını bu projeden silin."
+      ],
+      "That's all the projects ${ LUMO_SHORT_APP_NAME } can keep purring at once. Delete one before creating a new one.": [
+        "${ LUMO_SHORT_APP_NAME } sorun çıkmadan aynı anda bu kadar proje çalıştırabilir. Yeni bir proje oluşturmadan önce var olan birini silin."
+      ],
       "The provided URL is invalid.": [
         "Belirtilen adres geçersiz."
       ],
       "The response could not be parsed. Raw output is shown below.": [
         "Yanıt işlenemedi. Ham çıktı aşağıda görüntüleniyor."
       ],
+      "This chat is full to the whiskers. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Bu sohbet dolup taştı. ${ LUMO_SHORT_APP_NAME } uygulamasının çalışmayı sürdürmesi için yeni bir sohbet başlatın."
+      ],
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Bu yazışma çok uzadı ve daha fazla sürdüremiyoruz. ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz ve hızlı çalışmasını sağlamak için yeni bir yazışma başlatın."
+      ],
+      "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Bu proje ağzına kadar dolu. Yeni bir yazışmaya yer açmak ve ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz çalışmasını sağlamak için bir yazışmayı silin."
+      ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Sınırsız sohbet, genişletilmiş geçmiş, gelişmiş yapay zeka modellerine erişim ve diğer özellikler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
+      "You can attach up to ${ MAX_PROVISIONAL_ATTACHMENTS } files at a time. Remove some to add more.": [
+        "Tek seferde en fazla ${ MAX_PROVISIONAL_ATTACHMENTS } dosya ekleyebilirsiniz. Daha fazlasını eklemek için bazılarını silin."
+      ],
       "You've reached a usage limit. Please try again later.": [
         "Bir kullanım sınırına ulaştınız. Lütfen bir süre sonra yeniden deneyin."
-      ],
-      "You've reached the maximum number of projects. Delete some before creating a new one.": [
-        "Olabilecek en fazla proje sayısına ulaştınız. Yeni bir proje oluşturmadan önce bazılarını silin."
-      ],
-      "You've reached the maximum of ${ limit } conversations in this project. Delete some to create a new one.": [
-        "Bu projede ${ limit } adet sohbet sayısı sınırına ulaştınız. Yeni proje oluşturmak için bazılarını silin."
-      ],
-      "You've reached the maximum of ${ limit } conversations. Delete some to create a new one.": [
-        "Olabilecek en fazla ${ limit } yazışma sınırına ulaştınız. Yeni bir yazışma oluşturmak için bazılarını silin."
-      ],
-      "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
-        "Bu sohbette olabilecek en fazla ${ limit } dosya sınırına ulaştınız. Yeni bir dosya yüklemeden önce bazılarını silin."
-      ],
-      "You've reached the maximum of ${ limit } files in this project. Remove some files before uploading new ones.": [
-        "Bu projede ${ limit } dosya sayısı sınırına ulaştınız. Yeni dosyalar yüklemeden önce bazı dosyaları silin."
-      ],
-      "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Bu sohbetin ${ limit } ileti sayısı sınırına ulaştınız. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeyi sürdürmek için yeni bir sohbet başlatın."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -1634,6 +1693,9 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
+      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
+        "${ LUMO_SHORT_APP_NAME } her yazışmada sınırlı miktarda bilgi işleyebilir. Burada bu alanın şu anda ne kadarının kullanıldığını görebilirsiniz. Alan dolduğunda yazışlmayı sürdürebilmek için eski iletiler otomatik olarak özetlenir."
+      ],
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME }, daha karmaşık sorgulara yardımcı olmak ve daha iyi yanıtlar sunmak için gelişmiş modellere erişim sağlar."
       ],
@@ -1718,6 +1780,12 @@
       "Check this is the site you expect to visit": [
         "Bunun ziyaret etmeyi beklediğiniz site olduğundan emin olun"
       ],
+      "Context usage for this conversation": [
+        "Bu yazışmanın bağlam kullanımı"
+      ],
+      "Conversation": [
+        "Yazışma"
+      ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Programlama ile erişim için API anahtarları oluşturabilir ve geçersiz kılabilirsiniz. Anahtarlar oluşturulduklarında yalnızca bir kez görüntülenir."
       ],
@@ -1732,6 +1800,9 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Dosyalarınızı sohbete eklemek için sürükleyip buraya bırakın."
+      ],
+      "Earlier messages were summarized to make room, so they no longer take up space here.": [
+        "Yer açmak için önceki iletiler özetlendi. Artık burada yer kaplamıyorlar."
       ],
       "Error processing attachment": [
         "Ek dosya işlenirken sorun çıktı"
@@ -1757,17 +1828,14 @@
       "Extract, analyse, and summarise documents, PDFs, and images.": [
         "Belgeleri, PDF dosyalarını ve görselleri ayıklayın, inceleyein ve özetleyin."
       ],
-      "File capacity": [
-        "Dosya kapasitesi"
-      ],
-      "File capacity for this conversation": [
-        "Bu sohbetin dosya kapasitesi"
-      ],
       "File too large for preview (>150k tokens)": [
         "Dosya ön izleme için çok büyük (>150 bin kod)"
       ],
       "files": [
         "dosyalar"
+      ],
+      "Files": [
+        "Dosyalar"
       ],
       "files are not supported for content extraction.": [
         "dosyalarda şu anda içeriklerin ayıklanması desteklenmiyor."
@@ -1778,14 +1846,14 @@
       "Files automatically retrieved based on your questions.": [
         "Sorularınıza göre otomatik olarak alınan dosyalar."
       ],
-      "Files you've added to this conversation.": [
-        "Bu yazışmaya eklediğiniz dosyalar."
-      ],
-      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.": [
-        "Her bir sohbette ${ LUMO_SHORT_APP_NAME } sınırlı miktarda bilgi işleyebilir. İlerleme çubuğu var olan dosyalarınızın ne kadar kapasite kullandığını gösterir."
+      "Files included in the next model request.": [
+        "Bir sonraki model isteğine katılacak dosyalar."
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Günlük API çağrısı başına ortalama kod sayısı (kod sayısı ÷ çağrı sayısı; çağrı yoksa 0)."
+      ],
+      "Free space": [
+        "Boş alan"
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Şu hedef için bir iş akışı çizelgesi ve uygulama kodu oluştur. Kod için hedef dil:"
@@ -1865,6 +1933,9 @@
       "No usage yet": [
         "Henüz kullanılmamış"
       ],
+      "Over capacity": [
+        "Kapasite aşıldı"
+      ],
       "Partial content": [
         "İçeriği bir bölümü"
       ],
@@ -1907,8 +1978,14 @@
       "Removed from future questions": [
         "Gelecekteki sorulardan kaldırıldı"
       ],
+      "Removed when chat was shortened": [
+        "Sohbet kısaltılınca kaldırıldı"
+      ],
       "Required on all POST requests with a JSON body.": [
         "Tüm JSON gövdeli POST isteklerinde gereklidir."
+      ],
+      "Reserved to keep chatting": [
+        "Sohbete ilerlemek için ayrıldı"
       ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Tüm sohbetlerinizi yalnızca sizin görebileceğiniz bir sohbet geçmişine kaydedin. Oturum veya bir hesap açın."
@@ -1958,6 +2035,9 @@
       "There was an error processing this file.": [
         "Bu dosya işlenirken bir sorun çıktı."
       ],
+      "These files belonged to summarized messages and are no longer sent to the model.": [
+        "Bu dosyalar özetlenmiş iletilere aitti ve artık modele gönderilmiyor."
+      ],
       "These files won't be used for future questions.": [
         "Bu dosyalar gelecekteki sorular için kullanılmayacak."
       ],
@@ -1969,6 +2049,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Bu sohbete daha sonra geri dönmek için oturum veya bir hesap açın."
+      ],
+      "tokens": [
+        "kodlar"
       ],
       "tokens / 30d": [
         "kod / 30 gün"
@@ -2733,27 +2816,48 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } meşgul bir kedidir"
       ],
-      "Approaching file limit": [
-        "Dosya sınırına yaklaşılıyor"
-      ],
-      "Approaching message limit": [
-        "İleti sayısı sınırına yaklaşılıyor"
+      "Conversation too long": [
+        "Yazışma çok uzun"
       ],
       "Failed to index file for search: ${ processingResult.message }": [
         "Dosya arama dizinine eklenemedi: ${ processingResult.message }"
       ],
-      "File limit reached": [
-        "Dosya sınırına ulaşıldı"
-      ],
-      "Message limit reached": [
-        "İleti sayısı sınırına ulaşıldı"
+      "Long conversations can slow down responses. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Uzun yazışmalar yanıtların gecikmesine neden olabilir. ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz çalışması için yeni bir yazışma başlatın."
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Şüpheli: ${ urlParts.subdomainCount } alt etki alanı",
         "Şüpheli: ${ urlParts.subdomainCount } alt etki alanı"
       ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some before uploading new ones to keep things purring.": [
+        "${ LUMO_SHORT_APP_NAME } için bu çok fazla dosya demek. Her şeyin sorunsuz çalışması için yenilerini yüklemeden önce bazılarını silin."
+      ],
+      "This conversation is getting long": [
+        "Bu yazışma uzamaya başladı"
+      ],
+      "This conversation is getting long. Start a new chat soon to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Bu yazışma uzamaya başladı. ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz çalışmayı sürdürmesi için yakında yeni bir sohbet başlatmanız iyi olur."
+      ],
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Bu sohbet çok uzadı ve daha fazla sürdüremeyiz. ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz ve hızlı çalışmasını sağlamak için yeni bir sohbet başlatın."
+      ],
       "This is the only time you'll see this key. Copy it now.": [
         "Bu anahtarı yalnızca bir kez göreceksiniz. Hemen kopyalayın."
+      ],
+      "This project is filling up": [
+        "Bu proje dolmaya başladı"
+      ],
+      "This project is filling up. Tidying away conversations you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Bu proje dolup taşıyor. Artık gerek duymadığınız sohbetleri temizlemek ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz çalışmasını sağlar."
+      ],
+      "This project is filling up. Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Bu proje dolup taşıyor. Artık gerek duymadığınız dosyaları temizlemek ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz çalışmasını sağlar."
+      ],
+      "Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Artık gerek duymadığınız dosyaları temizlemek ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz çalışmasını sağlar."
+      ],
+      "Too many files to juggle": [
+        "Çok fazla dosyayla uğraşmak gerekiyor"
       ],
       "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
         "Şu anda yoğun bir trafik var. Ancak bir ${ LUMO_SHORT_APP_NAME } Plus müşterisi olarak önceliklisiniz. İsteklerinize her zamanki gibi öncelik veriyoruz."
@@ -2764,34 +2868,19 @@
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Her zamankinden daha yoğun bir trafik var. Bu nedenle yanıtlar normalden biraz daha yavaş olabilir. Yoğun zamanlarda öncelikli erişim için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
-      "You have ${ remaining } conversations left in this project before reaching the limit.": [
-        "Bu projenin sınırına ulaşmadan önce ${ remaining } sohbet hakkınız kaldı."
-      ],
-      "You have ${ remaining } file uploads left in this project before reaching the limit.": [
-        "Bu projenin sınırına ulaşmadan önce ${ remaining } dosya yükleme hakkınız kaldı."
-      ],
-      "You have ${ remaining } file uploads left in this project.": [
-        "Bu projenin ${ remaining } dosya yükleme hakkı kaldı."
-      ],
-      "You have ${ remaining } messages left in this conversation before reaching the limit.": [
-        "Bu sohbetin sınırına ulaşmadan önce ${ remaining } ileti hakkınız kaldı."
-      ],
-      "You have ${ remaining } messages left in this conversation. Start a new chat for best responses.": [
-        "Bu sohbette ${ remaining } ileti hakkınız kaldı. En iyi yanıtları almak için yeni sohbet başlatın."
-      ],
-      "You have ${ remaining } projects left before reaching the limit.": [
-        "Sınırına ulaşmadan önce ${ remaining } proje hakkınız kaldı."
-      ],
-      "You've hit the ${ assetsStatus.limit }-file limit in this project. Remove some files before uploading new ones.": [
-        "Bu projenin ${ assetsStatus.limit } dosya sayısı sınırına ulaştınız. Yeni bir dosya yüklemeden önce bazı dosyaları silin."
-      ],
-      "You've hit the ${ messagesStatus.limit }-message limit in this conversation. Start a new chat to keep talking with ${ LUMO_SHORT_APP_NAME }.": [
-        "Bu sohbetin ${ messagesStatus.limit } ileti sayısı sınırına ulaştınız. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeyi sürdürmek için yeni bir sohbet başlatın."
+      "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz çalışmayı sürdürebileceği proje sayısına yaklaşıyorsunuz."
       ]
     },
     "collider_2025: Web Search": {
       "Close": [
         "Kapat"
+      ],
+      "Show less": [
+        "Daha az göster"
+      ],
+      "Show more": [
+        "Daha fazla göster"
       ],
       "Sources": [
         "Kaynaklar"
@@ -2836,9 +2925,6 @@
       ],
       "Close": [
         "Kapat"
-      ],
-      "Copy link": [
-        "Bağlantıyı kopyala"
       ],
       "Create": [
         "Oluştur"
@@ -2915,8 +3001,8 @@
       "More options": [
         "Daha fazla seçenek"
       ],
-      "New agent": [
-        "Yeni aracı"
+      "New ${ LUMO_SHORT_APP_NAME }": [
+        "Yeni ${ LUMO_SHORT_APP_NAME }"
       ],
       "Next message": [
         "Sonraki ileti"
@@ -3034,8 +3120,11 @@
       ]
     },
     "collider_2025:Badge": {
-      "Default": [
-        "Varsayılan"
+      "Built-in": [
+        "Yerleşik"
+      ],
+      "Selected": [
+        "Seçilmiş"
       ]
     },
     "collider_2025:Button": {
@@ -3131,11 +3220,11 @@
       ]
     },
     "collider_2025:Error": {
+      "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasının çalışması için yerel veri tabanı depolama alanı (IndexedDB) gereklidir. Ancak bu tarayıcıda bu özellik bulunmuyor. Bu durum tanımlama bilgileri veya site verileri engellendiğinde, gizli gezinme kipinde veya kilitleme kipi açıldığında ortaya çıkabilir. Lütfen bu site için site verilerine izin verin ve sayfayı yeniden yükleyin."
+      ],
       "Cannot link the root folder. Please select a subfolder.": [
         "Kök klasör bağlanamaz. Lütfen bir alt klasör seçin."
-      ],
-      "Could not copy link": [
-        "Bağlantı kopyalanamadı"
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Veri tabanı bağlantısı kesildi. İlerlemek için sayfayı yenileyin."
@@ -3209,14 +3298,11 @@
       "All": [
         "Tümü"
       ],
-      "Default": [
-        "Varsayılan"
+      "Built-in": [
+        "Yerleşik"
       ],
       "Mine": [
         "Benim"
-      ],
-      "Shared": [
-        "Paylaşılmış"
       ]
     },
     "collider_2025:Finance": {
@@ -3228,6 +3314,9 @@
       ],
       "Market Cap": [
         "Piyasa değeri"
+      ],
+      "Metric": [
+        "Ölçümlü"
       ],
       "P/E Ratio": [
         "F/K oranı"
@@ -3300,6 +3389,9 @@
         " Projedeki sohbet",
         " Projedeki sohbetler"
       ],
+      "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasının sohbetlerinizi bu aygıtta tutmak için yerel veri tabanı depolama alanını (IndexedDB) kullanması gerekiyor. Ancak burada kullanılamıyor."
+      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } yazışma"
       ],
@@ -3321,11 +3413,14 @@
       "All messages and chat history": [
         "Tüm iletiler ve sohbet geçmişi"
       ],
+      "Any images generated in these conversations will also be deleted.": [
+        "Bu yazışmalar sırasında oluşturulan tüm görseller de silinecek."
+      ],
+      "Any images generated in this conversation will also be deleted.": [
+        "Bu yazışmada oluşturulan tüm görseller de silinecek."
+      ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "“${ project.name }” dosyasını silmek istediğinize emin misiniz? Bu işlem geri alınamaz."
-      ],
-      "Are you sure you want to delete this conversation? This action cannot be undone.": [
-        "Bu yazışmayı silmek istediğinize emin misiniz? Bu işlem geri alınamaz."
       ],
       "Ask a question to get started. Your conversation is private.": [
         "Başlamak için bir soru sorun. Yazışmanız gizlidir."
@@ -3341,6 +3436,9 @@
       ],
       "Conversation encrypted": [
         "Sohbet şifrelendi"
+      ],
+      "Cookies or website data are blocked in your browser settings": [
+        "Tarayıcı ayarlarınızda tanımlama bilgileri veya site verileri engellenmiş"
       ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Görseller oluşturun, tarzlar uygulayın ve fikirlerinizin taslağını oluşturun. Yaptıklarınızı kaydetmek için oturum veya ücretsiz bir hesap açın."
@@ -3378,14 +3476,17 @@
       "Learn more about how project knowledge works": [
         "Proje bilgisinin nasıl işlediğini öğrenin"
       ],
-      "Link copied": [
-        "Bağlantı kopyalandı"
-      ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Dosyaları ${ DRIVE_APP_NAME } uygulamasından bağlayın veya bilgisayarınızdan yükleyin."
       ],
+      "Lockdown Mode is enabled on your device": [
+        "Aygıtınızda kilitleme kipi açıldı"
+      ],
       "No projects yet": [
         "Henüz bir proje yok"
+      ],
+      "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
+        "iPhone veya iPad üzerinde Ayarlar → Uygulamalar → Safari → İleri Düzey yolunu izleyin ve \"Tüm Çerezleri Engelle\" seçeneğinin kapalı olduğundan emin olun. Ardından sayfayı yeniden yükleyin."
       ],
       "PASTED": [
         "YAPIŞTIRILDI"
@@ -3408,6 +3509,9 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Bu projede zaten dosyalar var. Lütfen bir Drive klasörü bağlamadan önce tüm dosyaları kaldırın."
       ],
+      "This usually happens when:": [
+        "Bu genellikle şu durumlarda ortaya çıkar:"
+      ],
       "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
         "Bu işlem, bu projedeki ${ fileCount } dosyanın tümünü kaldıracak. Bu işlem geri alınamaz."
       ],
@@ -3422,6 +3526,9 @@
       ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "${ DRIVE_APP_NAME } kullanıldığında ${ LUMO_SHORT_APP_NAME } daha büyük dosyalarla çalışabilir."
+      ],
+      "You're using private browsing": [
+        "Gizli gezinme kipini kullanıyorsunuz"
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Dosyalarınız büyük. ${ LUMO_SHORT_APP_NAME } tüm bilgileri işleyemeyebilir."
@@ -3524,11 +3631,11 @@
       "Holiday planner": [
         "Tatil planlayıcı"
       ],
-      "Search agents": [
-        "Aracı ara"
-      ],
       "Search chats": [
         "Sohbetlerde ara"
+      ],
+      "Search custom ${ LUMO_SHORT_APP_NAME }": [
+        "Özel ${ LUMO_SHORT_APP_NAME } araması"
       ],
       "Sign in required": [
         "Oturum açmalısınız"
@@ -3657,7 +3764,7 @@
         "Bu görüşmenin önemli noktalarını özetle"
       ],
       "What are the key points I should remember for this topic?": [
-        "Bu konu ile ilgili hatırlamam gereken önemli noktalar nelerdir?"
+        "Bu konu ile ilgili anımsamam gereken önemli noktalar nelerdir?"
       ],
       "What are the main findings and how do they relate to each other?": [
         "Ana bulgular nelerdir ve bunlar birbirleriyle nasıl ilişkilidir?"
@@ -3815,8 +3922,8 @@
       ]
     },
     "collider_2025:Title": {
-      "Agents": [
-        "Aracılar"
+      "${ LUMO_SHORT_APP_NAME } can't start": [
+        "${ LUMO_SHORT_APP_NAME } başlatılamadı"
       ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Bir yapay zeka asistanı sizi güçlendirmeli, verileriniz için sizi sömürmemeli. Bu nedenle, gizliliğinizden ve veri güvenliğinizden ödün vermeden yapay zekanın tüm faydalarını size sunmak için ${ LUMO_SHORT_APP_NAME } hizmetini geliştirdik."
@@ -3833,8 +3940,8 @@
       "Create new project": [
         "Yeni proje oluştur"
       ],
-      "Delete conversation?": [
-        "Yazışma silinsin mi?"
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Özel ${ LUMO_SHORT_APP_NAME }"
       ],
       "Delete project?": [
         "Proje silinsin mi?"
@@ -4178,6 +4285,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanarya Adaları"
       ],
       "Cape Verde": [
         "Yeşil Burun Adaları"
@@ -4935,8 +5045,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } parolanızı kaybetseniz bile hesabınıza ve verilerinize erişebileceğinizden emin olun."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "${ BRAND_NAME } uygulamasına sorunsuz geçmek için verilerinizi Google, Outlook ve diğer hizmetlerden içe aktarın."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Ekibinizin ${ BRAND_NAME } hizmetlerine sorunsuz bir şekilde uyum sağlaması için verilerinizi Google, Outlook ve diğer kaynaklardan içe aktarın."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alın."
@@ -6429,6 +6539,9 @@
       "Clear overrides": [
         "Değişiklikleri temizle"
       ],
+      "Close preview": [
+        "Ön izlemeyi kapat"
+      ],
       "Composer limit banner preview": [
         "Oluşturucu sınırı bildirimi ön izlemesi"
       ],
@@ -6468,6 +6581,9 @@
       "Idle": [
         "Boşta"
       ],
+      "IndexedDB available": [
+        "IndexedDB kullanılabilir"
+      ],
       "Lag": [
         "Gecikme"
       ],
@@ -6495,6 +6611,9 @@
       "Native composer bridge not detected — calls will be logged but no-op. Open the app inside the iOS/Android wrapper to exercise the bridge.": [
         "Yerel oluşturucu köprüsü algılanmadı. Çağrılar günlüğe kaydedilecek ancak hiçbir işlem yapılmayacak. Köprüyü çalıştırmak için iOS/Android sarmalayıcısı içindeki uygulamayı açın."
       ],
+      "No": [
+        "Hayır"
+      ],
       "Notifications": [
         "Bildirimler"
       ],
@@ -6503,6 +6622,9 @@
       ],
       "Performance": [
         "Başarım"
+      ],
+      "Preview \"IndexedDB unavailable\" screen": [
+        "\"IndexedDB kullanılamıyor\" ekranının ön izlemesi"
       ],
       "Rate": [
         "Oran"
@@ -6614,6 +6736,9 @@
       ],
       "Unsynced spaces": [
         "Eşitlenmemiş alanlar"
+      ],
+      "Yes": [
+        "Evet"
       ]
     },
     "lumo: Test Renderer": {
@@ -7377,7 +7502,7 @@
         "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
+        "Bir e-posta anımsatıcısı ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
@@ -8167,18 +8292,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
       ],
-      "Spring Sale": [
-        "Bahar indirimi"
-      ],
-      "SPRING SALE 2026": [
-        "BAHAR İNDİRİMİ 2026"
+      "Summer Sale": [
+        "Yaz İndirimi"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/ay"
       ],
@@ -8197,35 +8319,17 @@
       "500 GB storage": [
         "500 GB depolama alanı"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
       ],
-      "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail, Pass, Drive, VPN ve Calender'ın tüm ücretli özellikleri"
-      ],
-      "Block ads, trackers, and malware": [
-        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
-      ],
-      "Built-in 2FA authenticator": [
-        "Dahili iki adımlı kimlik doğrulayıcı"
-      ],
-      "Connect 10 devices at once": [
-        "Aynı anda 10 aygıtla bağlanın"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } uygulamasına tam erişim"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Kolay arama ve favoriler ile tüm sohbet geçmişi"
       ],
       "Individual accounts for 6 users": [
         "6 kullanıcı için bireysel hesaplar"
@@ -8233,8 +8337,8 @@
       "Individual accounts for you and a partner": [
         "Siz ve bir partneriniz için bireysel hesaplar"
       ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
+      "Online document and spreadsheet editor": [
+        "Çevrim içi belge ve hesap tablosu düzenleyici"
       ],
       "Recover previous file versions": [
         "Önceki dosya sürümlerini geri yükleyin"
@@ -8245,25 +8349,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
       ],
-      "Unlimited daily chats": [
-        "Sınırsız günlük sohbet"
-      ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız klasör, etiket ve filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "12 aylığına"
       ],
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
+      "SUMMER SALE": [
+        "YAZ İNDİRİMİ"
       ]
     },
     "Safety review": {
@@ -8811,8 +8909,14 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "Account restricted": [
         "Hesap kısıtlandı"
@@ -8922,14 +9026,14 @@
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
-      "Import emails, calendars, contacts": [
-        "E-postaları, takvimleri, kişileri içe aktarın"
-      ],
       "Indexed Drive documents": [
         "Dizine eklenmiş Drive belgeleri"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Kuruluşunuzu ${ BRAND_NAME } üzerine aktarın"
       ],
       "My Files": [
         "Dosyalarım"
@@ -8992,7 +9096,7 @@
         "Özet"
       ],
       "Summer Sale": [
-        "Yaz indirimi"
+        "Yaz İndirimi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
@@ -9040,6 +9144,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"

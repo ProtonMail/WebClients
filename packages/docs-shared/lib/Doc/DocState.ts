@@ -8,7 +8,7 @@ import * as syncProtocol from 'y-protocols/sync'
 import * as awarenessProtocol from 'y-protocols/awareness'
 import type { SafeDocsUserState } from './DocsAwareness'
 import { DocsAwareness } from './DocsAwareness'
-import type { DocStateInterface } from './DocStateInterface'
+import type { DocumentUpdateGuard, DocStateInterface } from './DocStateInterface'
 import type { DocStateCallbacks } from './DocStateCallbacks'
 import type { RtsMessagePayload } from './RtsMessagePayload'
 import { EventTypeEnum } from '@proton/docs-proto'
@@ -46,6 +46,9 @@ export class DocState extends Observable<string> implements DocStateInterface {
   importUpdateUUIDs: string[] = []
   successfullyImportedUpdateUUIDs: string[] = []
   importSubscriptionCallbacks: (() => void)[] = []
+  private documentUpdateGuard: DocumentUpdateGuard | undefined
+
+  updatePropagationListeners: Set<(update: Uint8Array<ArrayBuffer>) => void> = new Set()
 
   constructor(
     readonly callbacks: DocStateCallbacks,
@@ -54,7 +57,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     super()
 
     this.doc = new Doc()
-    this.doc.on('update', this.handleDocBeingUpdatedByLexical)
+    this.doc.on('update', this.handleYDocUpdate)
     this.doc.on(DocWillInitializeWithEmptyNodeEvent, () => {
       this.docWasInitializedWithEmptyNode = true
     })
@@ -91,7 +94,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   destroy(): void {
-    this.doc.off('update', this.handleDocBeingUpdatedByLexical)
+    this.doc.off('update', this.handleYDocUpdate)
     this.awareness.off('update', this.handleAwarenessUpdateOrChange)
     this.awareness.off('change', this.handleAwarenessUpdateOrChange)
     window.removeEventListener('unload', this.handleWindowUnloadEvent)
@@ -108,6 +111,16 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
   public getClientId(): number {
     return this.doc.clientID
+  }
+
+  public runWithDocumentUpdateGuard<T>(guard: DocumentUpdateGuard, callback: () => T): T {
+    const previousGuard = this.documentUpdateGuard
+    this.documentUpdateGuard = guard
+    try {
+      return callback()
+    } finally {
+      this.documentUpdateGuard = previousGuard
+    }
   }
 
   public performOpeningCeremony(): void {
@@ -226,11 +239,26 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-  handleDocBeingUpdatedByLexical = (_update: Uint8Array<ArrayBufferLike>, origin: any) => {
+  handleYDocUpdate = (_update: Uint8Array<ArrayBufferLike>, origin: any) => {
     const update = _update as Uint8Array<ArrayBuffer> /* upcast Uint8Array<ArrayBuffer> to make TS happy */
     const isNonUserInitiatedChange = origin === this || origin === DocUpdateOrigin.BaseCommit
     if (isNonUserInitiatedChange) {
       return
+    }
+
+    if (this.documentUpdateGuard) {
+      try {
+        const shouldPropagateUpdate = this.documentUpdateGuard({ update, origin })
+        if (!shouldPropagateUpdate) {
+          this.logger.warn('Document update guard blocked propagation of local Yjs update')
+          return
+        }
+      } catch (error) {
+        this.logger.error(
+          'Document update guard failed; propagating update',
+          error instanceof Error ? error.message : String(error),
+        )
+      }
     }
 
     if (this.isSheetsExcelImport) {
@@ -270,6 +298,9 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
     const updateMessage = this.createSyncMessagePayload(updateToPropagate, isInConversionFunnel ? 'conversion' : 'du')
     this.callbacks.docStateRequestsPropagationOfUpdate(updateMessage, BroadcastSource.HandleDocBeingUpdatedByLexical)
+    for (const listener of this.updatePropagationListeners) {
+      listener(updateToPropagate)
+    }
 
     this.emptyNodeInitializationUpdate = undefined
   }
@@ -346,5 +377,13 @@ export class DocState extends Observable<string> implements DocStateInterface {
     return new Promise((resolve) => {
       this.importSubscriptionCallbacks.push(resolve)
     })
+  }
+
+  addUpdatePropagationListener(listener: (update: Uint8Array<ArrayBuffer>) => void): void {
+    this.updatePropagationListeners.add(listener)
+  }
+
+  removeUpdatePropagationListener(listener: (update: Uint8Array<ArrayBuffer>) => void): void {
+    this.updatePropagationListeners.delete(listener)
   }
 }

@@ -19,11 +19,12 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { useAssistant } from '@proton/llm/lib';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
 import desktopImg from '@proton/styles/assets/img/illustrations/desktop-screen.svg';
 import serverImg from '@proton/styles/assets/img/illustrations/servers.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
@@ -48,6 +49,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
     const { sendShowAssistantReport } = useAssistantTelemetry();
     const { displayAssistantModal } = useComposerAssistantProvider();
     const { createNotification } = useNotifications();
+    const scribeToLumo = useFlag('ScribeToLumo');
 
     // Default to server only if unset
     const [inputValue, setInputValue] = useState<AI_ASSISTANT_ACCESS>(
@@ -112,7 +114,11 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
 
     return (
         <ComposerInnerModal
-            title={c('Header').t`Set up the writing assistant`}
+            title={
+                scribeToLumo
+                    ? c('Header').t`Set up ${LUMO_SHORT_APP_NAME} writing assistant`
+                    : c('Header').t`Set up the writing assistant`
+            }
             onCancel={handleCancel}
             displayCloseButton
             displayCancel={false}

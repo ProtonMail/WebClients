@@ -26,6 +26,7 @@
         "@livekit/components-react": "^2.9.21",
         "@livekit/krisp-noise-filter": "^0.4.3",
         "@livekit/track-processors": "^0.7.2",
+        "@proton-meet/noise-suppression": "0.0.1",
         "@proton-meet/proton-meet-core": "1.1.6-21",
         "@proton/atoms": "workspace:packages/atoms",
         "@proton/components": "workspace:packages/components",
@@ -42,9 +43,11 @@
         "@types/react": "^18.3.28",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
+        "@types/wicg-file-system-access": "2023.10.7",
         "cross-env": "^10.1.0",
         "date-fns-tz": "^2.0.1",
         "livekit-client": "2.18.9",
+        "mediabunny": "^1.0.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.2.0",
@@ -64,6 +67,6 @@
         "happy-dom": "^20.9.0",
         "prettier": "^3.8.3",
         "typescript": "^6.0.2",
-        "vitest": "^4.1.7"
+        "vitest": "^4.1.8"
     }
 }

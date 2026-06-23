@@ -1060,8 +1060,8 @@
       "Error reporting problem": [
         "Problem med fejlrapportering"
       ],
-      "Expiration must be between 60 minutes and 1 year": [
-        "Udløb skal være mellem 60 minutter og 1 år"
+      "Expiration must be between 1 hour and 1 year": [
+        "Udløb skal være mellem 1 time og 1 år"
       ],
       "Failed loading group members": [
         "Kunne ikke indlæse gruppemedlemmer"
@@ -1887,22 +1887,17 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Hver gang dit alias modtager en e-mail fra nogen, oprettes der automatisk en ny kontakt."
       ],
-      "Expired ${ abs } hour ago": [
-        "Udløb for ${ abs } time siden",
-        "Udløb for ${ abs } timer siden"
+      "Expired on ${ formattedDate }": [
+        "Udløb den ${ formattedDate }"
       ],
       "Expires in": [
         "Udløber om"
       ],
-      "Expires in ${ hours } hour": [
-        "Udløber om ${ hours } time",
-        "Udløber om ${ hours } timer"
-      ],
       "Expires in ${ remainingTime }": [
         "Udløber om ${ remainingTime }"
       ],
-      "Expires in less than an hour": [
-        "Udløber om mindre end en time"
+      "Expires on ${ formattedDate }": [
+        "Udløber den ${ formattedDate }"
       ],
       "Exporting your data...": [
         "Eksporterer dine data..."
@@ -2860,11 +2855,23 @@
         "${ years } år",
         "${ years } år"
       ],
+      "1 day": [
+        "1 dag"
+      ],
       "1 hour": [
         "1 time"
       ],
       "1 minute": [
         "1 minut"
+      ],
+      "1 month": [
+        "1 måned"
+      ],
+      "1 week": [
+        "1 uge"
+      ],
+      "1 year": [
+        "1 år"
       ],
       "10 minutes": [
         "10 minutter"
@@ -3091,6 +3098,12 @@
       "Crypto Wallet": [
         "Wallet til kryptovaluta"
       ],
+      "Custom": [
+        "Brugerdefineret"
+      ],
+      "Custom expiration (minutes)": [
+        "Brugerdefineret udløb (minutter)"
+      ],
       "Custom Items": [
         "Brugerdefinerede elementer"
       ],
@@ -3172,8 +3185,8 @@
       "Expired tokens (${ expired.length })": [
         "Udløbede tokens (${ expired.length })"
       ],
-      "Expires in (minutes)": [
-        "Udløber om (minutter)"
+      "Expires in": [
+        "Udløber om"
       ],
       "Expiry Date": [
         "Udløbsdato"

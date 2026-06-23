@@ -1,8 +1,8 @@
+import { CryptoProxy } from '@protontech/crypto';
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import * as userHooks from '@proton/account/user/hooks';
-import { CryptoProxy } from '@protontech/crypto';
 import * as useContactEmailHooks from '@proton/mail/store/contactEmails/hooks';
 import * as mailLabelHooks from '@proton/mail/store/labels/hooks';
 import * as mailSettingsHooks from '@proton/mail/store/mailSettings/hooks';
@@ -10,7 +10,7 @@ import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import type { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { addApiMock } from '@proton/testing';
+import { addApiMock } from '@proton/testing/lib/api';
 
 import { clearAll, minimalCache, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
 import type { ContactEditModalProps, ContactEditProps } from './ContactEditModal';

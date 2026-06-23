@@ -45,6 +45,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
   const Menu = asSubmenu ? UI.SubMenu : UI.Menu
   const customCurrencyFormatDialogStore = useUI((ui) => ui.view.customCurrencyFormatDialog.store)
   const customNumberFormatDialogStore = useUI((ui) => ui.view.customNumberFormatDialog.store)
+  const customDateAndTimeFormatDialogStore = useUI((ui) => ui.view.customDateAndTimeFormatDialog.store)
 
   return (
     <Menu>
@@ -170,7 +171,10 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         {s('Custom currency')}
       </UI.MenuItem>
       <UI.MenuItem leadingIndent onClick={customNumberFormatDialogStore.show}>
-        {s('Custom number format')}
+        {s('Custom number')}
+      </UI.MenuItem>
+      <UI.MenuItem leadingIndent onClick={customDateAndTimeFormatDialogStore.show}>
+        {s('Custom date and time')}
       </UI.MenuItem>
     </Menu>
   )
@@ -253,6 +257,7 @@ function strings() {
     'Date time': c('sheets_2025:Spreadsheet editor number formats menu').t`Date time`,
     Duration: c('sheets_2025:Spreadsheet editor number formats menu').t`Duration`,
     'Custom currency': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom currency`,
-    'Custom number format': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom number format`,
+    'Custom number': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom number`,
+    'Custom date and time': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom date and time`,
   }
 }

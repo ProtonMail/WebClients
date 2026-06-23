@@ -1,4 +1,4 @@
-import { processFileSystemEntry } from './processFileSystemEntry';
+import { type ProcessFileSystemEntryOptions, processFileSystemEntry } from './processFileSystemEntry';
 
 /**
  * Type guard for DataTransferItemList
@@ -17,7 +17,10 @@ export function isDataTransferList(
  * @param dataTransfer - The DataTransfer object from a drop event
  * @returns Promise resolving to an array of Files with webkitRelativePath set
  */
-export async function processDroppedItems(dataTransfer: DataTransfer): Promise<File[]> {
+export async function processDroppedItems(
+    dataTransfer: DataTransfer,
+    options: ProcessFileSystemEntryOptions = {}
+): Promise<File[]> {
     const { items } = dataTransfer;
     const collectedFiles: File[] = [];
 
@@ -42,7 +45,7 @@ export async function processDroppedItems(dataTransfer: DataTransfer): Promise<F
                     continue;
                 }
             }
-            const promise = processFileSystemEntry(entry).then((files) => {
+            const promise = processFileSystemEntry(entry, options).then((files) => {
                 collectedFiles.push(...files);
             });
             promises.push(promise);

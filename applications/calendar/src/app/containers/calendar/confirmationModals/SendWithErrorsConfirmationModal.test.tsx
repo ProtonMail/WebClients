@@ -6,7 +6,7 @@ import {
     EncryptionPreferencesError,
 } from '@proton/shared/lib/mail/encryptionPreferences';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
-import { veventBuilder } from '@proton/testing/index';
+import { veventBuilder } from '@proton/testing/lib/builders';
 import noop from '@proton/utils/noop';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';

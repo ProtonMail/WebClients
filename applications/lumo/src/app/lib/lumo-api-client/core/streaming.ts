@@ -1,83 +1,318 @@
-import type { GenerationResponseMessage } from './types';
+import type { GenerationResponseMessage, GenerationTarget, LumoCompletionTarget } from './types';
 import { isGenerationResponseMessage } from './types';
 
+type OpenAiDelta = {
+    role?: string;
+    content?: string;
+    reasoning_content?: string;
+    reasoning?: string;
+    target?: GenerationTarget;
+    tool_calls?: OpenAiToolCallDelta[];
+};
+
+type OpenAiToolCallDelta = {
+    index?: number;
+    function?: {
+        name?: string;
+        arguments?: string;
+    };
+};
+
+type OpenAiChunk = {
+    choices?: {
+        index?: number;
+        delta?: OpenAiDelta;
+        finish_reason?: string | null;
+    }[];
+    usage?: Record<string, number>;
+    error?: {
+        message?: string;
+        type?: string;
+        code?: string | number;
+    };
+    target?: GenerationTarget;
+};
+
+type LumoImageDataChunk = {
+    object: 'lumo.image_data';
+    image: {
+        id: string;
+        data: string;
+        seed?: number;
+        encrypted?: boolean;
+    };
+};
+
+type StreamCounters = {
+    message: number;
+    title: number;
+    reasoning: number;
+    toolCall: number;
+    toolResult: number;
+    suggestedQuestions: number;
+};
+
+type ToolCallAccumulator = {
+    name: string;
+    arguments: string;
+};
+
 /**
- * Processes streaming data chunks from the API
+ * Processes OpenAI-compatible SSE chunks from `/ai/v1/chat/completions`
+ * and adapts them to the legacy Lumo GenerationResponseMessage format
+ * consumed by the rest of the client.
  */
 export class StreamProcessor {
-    private leftover = ''; // Remember last line if it was incomplete
+    private leftover = '';
+    private toolCalls = new Map<number, ToolCallAccumulator>();
+    private defaultTarget: GenerationTarget;
+    private counters: StreamCounters = {
+        message: 0,
+        title: 0,
+        reasoning: 0,
+        toolCall: 0,
+        toolResult: 0,
+        suggestedQuestions: 0,
+    };
 
-    /**
-     * Process a chunk of streaming data
-     * @param chunk Raw string chunk from the stream
-     * @returns Array of parsed messages
-     */
+    constructor(defaultTarget: LumoCompletionTarget = 'message') {
+        this.defaultTarget = defaultTarget;
+    }
+
     processChunk(chunk: string): GenerationResponseMessage[] {
         const lines = (this.leftover + chunk).split('\n');
-        const lastLine = lines.pop() || '';
+        this.leftover = lines.pop() || '';
         const parsedData: GenerationResponseMessage[] = [];
 
         for (const line of lines) {
-            if (!line.match(/^data:\s*/)) continue;
-
-            try {
-                const jsonStr = line.replace(/^data:\s*/, '');
-                const item = JSON.parse(jsonStr);
-                console.log('[STREAM] Parsed item:', item.type, item);
-                if (!isGenerationResponseMessage(item)) {
-                    console.warn('Unexpected format for json payload received from API server, ignoring', item);
-                    continue;
-                }
-                parsedData.push(item);
-            } catch (error) {
-                console.warn('Error parsing a data line from chat endpoint', error);
-
-            }
-        }
-
-        if (lastLine.match(/^data:\s*/)) {
-            try {
-                const jsonStr = lastLine.replace(/^data:\s*/, '');
-                const item = JSON.parse(jsonStr);
-                if (isGenerationResponseMessage(item)) {
-                    parsedData.push(item);
-                } else {
-                    console.warn('Unexpected format for json payload received from API server, ignoring');
-                }
-            } catch {
-                this.leftover = lastLine;
-            }
-        } else {
-            this.leftover = lastLine;
+            parsedData.push(...this.processLine(line));
         }
 
         return parsedData;
     }
 
-    /**
-     * Finalize processing and return any remaining messages
-     * @returns Array of any remaining parsed messages
-     */
     finalize(): GenerationResponseMessage[] {
-        if (!this.leftover || !this.leftover.match(/^data:\s*/)) return [];
+        const parsedData: GenerationResponseMessage[] = [];
 
-        try {
-            const jsonStr = this.leftover.replace(/^data:\s*/, '');
-            const item = JSON.parse(jsonStr);
-            if (isGenerationResponseMessage(item)) {
-                return [item];
-            }
-        } catch {
-            // Ignore parse errors in finalize
+        if (this.leftover) {
+            parsedData.push(...this.processLine(this.leftover));
+            this.leftover = '';
         }
 
-        return [];
+        return parsedData;
     }
 
-    /**
-     * Reset the processor state
-     */
     reset(): void {
         this.leftover = '';
+        this.toolCalls.clear();
+        this.counters = {
+            message: 0,
+            title: 0,
+            reasoning: 0,
+            toolCall: 0,
+            toolResult: 0,
+            suggestedQuestions: 0,
+        };
+    }
+
+    private processLine(line: string): GenerationResponseMessage[] {
+        const trimmed = line.trim();
+        if (!trimmed) {
+            return [];
+        }
+
+        if (trimmed.startsWith(':')) {
+            return this.processCommentLine(trimmed);
+        }
+
+        if (!trimmed.startsWith('data:')) {
+            return [];
+        }
+
+        const payload = trimmed.slice(5).trim();
+        if (!payload) {
+            return [];
+        }
+
+        if (payload === '[DONE]') {
+            return [{ type: 'done' }];
+        }
+
+        try {
+            const item = JSON.parse(payload) as OpenAiChunk | GenerationResponseMessage | LumoImageDataChunk;
+
+            if (isGenerationResponseMessage(item)) {
+                return [this.applyDefaultTarget(item)];
+            }
+
+            if ('object' in item && item.object === 'lumo.image_data') {
+                return [this.processLumoImageDataChunk(item)];
+            }
+
+            return this.processOpenAiChunk(item as OpenAiChunk);
+        } catch (error) {
+            console.warn('Error parsing a data line from chat endpoint', error);
+            return [];
+        }
+    }
+
+    private processLumoImageDataChunk(chunk: LumoImageDataChunk): GenerationResponseMessage {
+        return {
+            type: 'image_data',
+            image_id: chunk.image.id,
+            data: chunk.image.data,
+            seed: chunk.image.seed,
+            encrypted: chunk.image.encrypted,
+            is_final: true,
+        };
+    }
+
+    private processCommentLine(line: string): GenerationResponseMessage[] {
+        const comment = line.slice(1).trim();
+
+        switch (comment) {
+            case 'queued':
+                return [{ type: 'queued' }];
+            case 'ingesting':
+                return [{ type: 'ingesting', target: this.defaultTarget }];
+            default:
+                return [];
+        }
+    }
+
+    private processOpenAiChunk(chunk: OpenAiChunk): GenerationResponseMessage[] {
+        if (chunk.error) {
+            console.warn('[STREAM] Stream error:', chunk.error);
+            return [{ type: 'error' }];
+        }
+
+        if (!chunk.choices?.length) {
+            return [];
+        }
+
+        const choice = chunk.choices[0];
+        const messages: GenerationResponseMessage[] = [];
+
+        if (choice.finish_reason === 'content_filter') {
+            messages.push({ type: 'harmful' });
+        }
+
+        if (!choice.delta) {
+            return messages;
+        }
+
+        const target = choice.delta.target ?? chunk.target ?? this.defaultTarget;
+        messages.push(...this.processDelta(choice.delta, target));
+
+        return messages;
+    }
+
+    private processDelta(delta: OpenAiDelta, defaultTarget: GenerationTarget): GenerationResponseMessage[] {
+        const messages: GenerationResponseMessage[] = [];
+
+        if (typeof delta.content === 'string' && delta.content.length > 0) {
+            messages.push(this.createTokenData(defaultTarget, delta.content));
+        }
+
+        const reasoning = delta.reasoning_content ?? delta.reasoning;
+        if (typeof reasoning === 'string' && reasoning.length > 0) {
+            messages.push(this.createTokenData('reasoning', reasoning));
+        }
+
+        if (Array.isArray(delta.tool_calls)) {
+            for (const toolCall of delta.tool_calls) {
+                const toolCallMessage = this.processToolCallDelta(toolCall);
+                if (toolCallMessage) {
+                    messages.push(toolCallMessage);
+                }
+            }
+        }
+
+        return messages;
+    }
+
+    private processToolCallDelta(toolCall: OpenAiToolCallDelta): GenerationResponseMessage | null {
+        const index = toolCall.index ?? 0;
+        const existing = this.toolCalls.get(index) ?? { name: '', arguments: '' };
+
+        if (toolCall.function?.name) {
+            existing.name = toolCall.function.name;
+        }
+        if (toolCall.function?.arguments) {
+            existing.arguments += toolCall.function.arguments;
+        }
+
+        this.toolCalls.set(index, existing);
+
+        if (!existing.name) {
+            return null;
+        }
+
+        let parameters: Record<string, unknown> = {};
+        if (existing.arguments) {
+            try {
+                parameters = JSON.parse(existing.arguments);
+            } catch {
+                return {
+                    type: 'token_data',
+                    target: 'tool_call',
+                    count: this.counters.toolCall++,
+                    content: JSON.stringify({
+                        name: existing.name,
+                        parameters: existing.arguments,
+                    }),
+                };
+            }
+        }
+
+        return {
+            type: 'token_data',
+            target: 'tool_call',
+            count: this.counters.toolCall++,
+            content: JSON.stringify({
+                name: existing.name,
+                parameters,
+            }),
+        };
+    }
+
+    private applyDefaultTarget(message: GenerationResponseMessage): GenerationResponseMessage {
+        if (message.type === 'token_data' && message.target === 'message' && this.defaultTarget !== 'message') {
+            return { ...message, target: this.defaultTarget };
+        }
+
+        if (message.type === 'ingesting' && message.target === 'message' && this.defaultTarget !== 'message') {
+            return { ...message, target: this.defaultTarget };
+        }
+
+        return message;
+    }
+
+    private createTokenData(target: GenerationTarget, content: string): GenerationResponseMessage {
+        const counterKey = this.getCounterKey(target);
+
+        return {
+            type: 'token_data',
+            target,
+            count: this.counters[counterKey]++,
+            content,
+        };
+    }
+
+    private getCounterKey(target: GenerationTarget): keyof StreamCounters {
+        switch (target) {
+            case 'title':
+                return 'title';
+            case 'reasoning':
+                return 'reasoning';
+            case 'tool_call':
+                return 'toolCall';
+            case 'tool_result':
+                return 'toolResult';
+            case 'suggested_questions':
+                return 'suggestedQuestions';
+            default:
+                return 'message';
+        }
     }
 }

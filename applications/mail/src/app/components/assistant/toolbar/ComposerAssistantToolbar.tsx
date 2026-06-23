@@ -10,8 +10,10 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
 import type { ActionType } from '@proton/llm/lib/types';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import type { ComposerAssistantInitialSetupSpotlightRef } from 'proton-mail/components/assistant/spotlights/ComposerAssistantInitialSetupSpotlight';
@@ -51,6 +53,7 @@ const ComposerAssistantToolbar = ({
     canExpandAssistant,
 }: Props) => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const scribeToLumo = useFlag('ScribeToLumo');
     const { assistantRefManager } = useComposerAssistantProvider();
 
     const composerAssistantInitialSetupSpotlightRef = useRef<ComposerAssistantInitialSetupSpotlightRef>(null);
@@ -110,7 +113,9 @@ const ComposerAssistantToolbar = ({
             className="outline-none--at-all mb-2"
             aria-labelledby={`heading-${assistantID}`}
         >
-            <h1 id={`heading-${assistantID}`} className="sr-only">{c('Info').t`Scribe panel`}</h1>
+            <h1 id={`heading-${assistantID}`} className="sr-only">
+                {scribeToLumo ? c('Info').t`${LUMO_SHORT_APP_NAME} panel` : c('Info').t`Scribe panel`}
+            </h1>
             <div>
                 {showGenerationState ? (
                     <div className="inline-flex flex-row flex-nowrap items-center">

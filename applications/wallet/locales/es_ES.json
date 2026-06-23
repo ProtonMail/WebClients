@@ -31,6 +31,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Añadir una cuenta"
       ],
@@ -1357,6 +1360,9 @@
       "Canada": [
         "Canadá"
       ],
+      "Canary Islands": [
+        "Islas Canarias"
+      ],
       "Cape Verde": [
         "Cabo Verde"
       ],
@@ -2136,8 +2142,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Asegúrate de que aún puedes acceder a tu cuenta y a tus datos aunque pierdas tu contraseña de ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Para una transición fluida a ${ BRAND_NAME }, importa tus datos de Google, Outlook y otros servicios."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -2375,6 +2381,9 @@
       "Payment process not supported": [
         "Proceso de pago no soportado"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Comprueba si tu ABN está registrado para el IVA transfronterizo"
+      ],
       "Please complete the billing details": [
         "Completa los detalles de facturación"
       ],
@@ -2461,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o un número."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "El número de IVA debe empezar por ${ prefixes }."
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -2730,6 +2742,9 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta tu tráfico. ${ PASS_SHORT_APP_NAME } oculta tu identidad — **alias de «hide-my-email»** ilimitados y **alertas de la Dark Web** si tus datos se filtran alguna vez."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
         "(${ memberCount } miembros)"
@@ -2755,6 +2770,9 @@
       ],
       "Account successfully updated": [
         "Cuenta actualizada"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Añade ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -2803,6 +2821,10 @@
       ],
       "Country code": [
         "Código de país"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
@@ -2858,6 +2880,9 @@
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
       ],
+      "Enter code": [
+        "Introduce el código"
+      ],
       "Enter the code from your authenticator app": [
         "Ingresa el código de la aplicación de autenticación."
       ],
@@ -2885,6 +2910,9 @@
       "for ${ price }": [
         "por ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Por solo ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "marca de Google Pay"
       ],
@@ -2896,6 +2924,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -2989,6 +3020,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
@@ -3228,6 +3262,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accede a ${ PASS_APP_NAME } de forma segura desde el terminal; ideal para scripts, automatización y flujos de trabajo de desarrollo."
@@ -3815,6 +3852,9 @@
       "99.95% SLA": [
         "SLA del 99,95 %"
       ],
+      "Access all countries": [
+        "Accede a todos los países"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -3829,6 +3869,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificar citas con ${ n } página de reservas",
+        "Planificar citas con ${ n } páginas de reservas"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -3956,6 +4003,9 @@
       ],
       "Multiple admin roles": [
         "Distintos roles de administración"
+      ],
+      "No streaming support": [
+        "Sin soporte para streaming"
       ],
       "Online document editor": [
         "Editor de documentos online"
@@ -4088,6 +4138,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda ilimitado"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
@@ -4469,6 +4522,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -5509,8 +5566,14 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Cuenta restringida"
@@ -5617,11 +5680,11 @@
       "Human verification": [
         "Verificación humana"
       ],
-      "Import emails, calendars, contacts": [
-        "Importar correos electrónicos, calendarios y contactos"
-      ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migra tu organización a ${ BRAND_NAME }."
       ],
       "Minicalendar": [
         "Minicalendario"
@@ -5680,6 +5743,9 @@
       "Summary": [
         "Resumen"
       ],
+      "Summer Sale": [
+        "Descuento de verano"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -5736,6 +5802,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia de IA al instante y un experto humano a tu disposición."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"

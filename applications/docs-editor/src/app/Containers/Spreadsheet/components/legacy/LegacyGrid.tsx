@@ -3,7 +3,7 @@ import { CanvasGrid } from '@rowsncolumns/spreadsheet'
 import { GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { type ProtonSheetsUIStoreSetters, useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
 import { GridFooter } from '../GridFooter/GridFooter'
@@ -14,6 +14,41 @@ const exposeCanvasGrid = (
   instance: CanvasGridMethods | null,
   setters: ProtonSheetsUIStoreSetters['legacy'],
   activeSheetId: number,
+  snapshot: {
+    activeSheetId: number
+    activeCell: unknown
+    selections: unknown
+    merges: unknown
+    frozenColumnCount: number
+    frozenRowCount: number
+    view: {
+      formulaBarEnabled: boolean
+      gridLinesEnabled: boolean
+    }
+    zoomValue: number
+    data: {
+      hasFilter: boolean
+      dataValidations: unknown
+      conditionalFormats: unknown
+    }
+    charts: unknown
+    locale: {
+      account: string
+      auto: string
+      value: string
+      resolved: string
+      currency: unknown
+    }
+    dimensions: {
+      rowMetadata: unknown
+      columnMetadata: unknown
+    }
+    sheets: {
+      activeId: number
+      list: unknown
+      listIncludingHidden: unknown
+    }
+  },
 ) => {
   // Force exposure for e2e testing - always expose in any development-like environment
   const shouldExpose = typeof window !== 'undefined' && instance && isDevOrBlack()
@@ -30,6 +65,7 @@ const exposeCanvasGrid = (
           const effectiveValue = setters.getEffectiveValue(activeSheetId, rowIndex, columnIndex)
           const formattedValue = setters.getFormattedValue(activeSheetId, rowIndex, columnIndex)
           const effectiveFormat = setters.getEffectiveFormat(activeSheetId, rowIndex, columnIndex)
+          const hyperlink = setters.getHyperlink(activeSheetId, rowIndex, columnIndex)
 
           // Return a proper CellData object structure
           const result = {
@@ -37,6 +73,7 @@ const exposeCanvasGrid = (
             effectiveValue,
             formattedValue,
             effectiveFormat,
+            hyperlink,
           }
           return result
         } catch (e) {
@@ -55,6 +92,7 @@ const exposeCanvasGrid = (
           return null
         }
       },
+      getSpreadsheetSnapshot: () => snapshot,
     }
   }
 }
@@ -62,16 +100,86 @@ const exposeCanvasGrid = (
 export function LegacyGrid() {
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
   const activeSheetId = useUI((ui) => ui.legacy.activeSheetId)
+  const activeCell = useUI((ui) => ui.legacy.activeCell)
+  const selections = useUI((ui) => ui.legacy.selections)
+  const merges = useUI((ui) => ui.legacy.merges)
+  const frozenColumnCount = useUI((ui) => ui.legacy.frozenColumnCount ?? 0)
+  const frozenRowCount = useUI((ui) => ui.legacy.frozenRowCount ?? 0)
+  const formulaBarEnabled = useUI((ui) => ui.view.formulaBar.enabled)
+  const gridLinesEnabled = useUI((ui) => ui.view.gridLines.enabled)
+  const zoomValue = useUI((ui) => ui.zoom.value)
+  const hasFilter = useUI((ui) => ui.data.hasFilter)
+  const dataValidations = useUI((ui) => ui.legacy.dataValidations)
+  const charts = useUI((ui) => ui.legacy.charts)
+  const localeAccount = useUI((ui) => ui.locale.account)
+  const localeAuto = useUI((ui) => ui.locale.auto)
+  const localeValue = useUI((ui) => ui.locale.value ?? 'auto')
+  const localeResolved = useUI((ui) => ui.locale.resolved)
+  const localeCurrency = useUI((ui) => ui.locale.currency)
+  const rowMetadata = useUI((ui) => ui.legacy.rowMetadata)
+  const columnMetadata = useUI((ui) => ui.legacy.columnMetadata)
+  const conditionalFormats = useUI((ui) => ui.legacy.conditionalFormats)
+  const sheetList = useUI((ui) => ui.sheets.list)
+  const sheetListIncludingHidden = useUI((ui) => ui.sheets.listIncludingHidden)
+  const activeSheetListId = useUI((ui) => ui.sheets.activeId)
   const isReadonly = useUI((ui) => ui.info.isReadonly)
+  const snapshot = useMemo(
+    () => ({
+      activeSheetId,
+      activeCell,
+      selections,
+      merges,
+      frozenColumnCount,
+      frozenRowCount,
+      view: { formulaBarEnabled, gridLinesEnabled },
+      zoomValue,
+      data: { hasFilter, dataValidations, conditionalFormats },
+      sheets: { activeId: activeSheetListId, list: sheetList, listIncludingHidden: sheetListIncludingHidden },
+      charts,
+      locale: {
+        account: localeAccount,
+        auto: localeAuto,
+        value: localeValue,
+        resolved: localeResolved,
+        currency: localeCurrency,
+      },
+      dimensions: { rowMetadata, columnMetadata },
+    }),
+    [
+      activeCell,
+      activeSheetId,
+      activeSheetListId,
+      charts,
+      conditionalFormats,
+      dataValidations,
+      formulaBarEnabled,
+      frozenColumnCount,
+      frozenRowCount,
+      gridLinesEnabled,
+      hasFilter,
+      localeAccount,
+      localeAuto,
+      localeCurrency,
+      localeResolved,
+      localeValue,
+      columnMetadata,
+      merges,
+      rowMetadata,
+      selections,
+      sheetList,
+      sheetListIncludingHidden,
+      zoomValue,
+    ],
+  )
 
   const setters = useUI.$.legacy
   const ref = (instance: CanvasGridMethods | null) => {
     canvasGridRef.current = instance
-    exposeCanvasGrid(instance, setters, activeSheetId)
+    exposeCanvasGrid(instance, setters, activeSheetId, snapshot)
   }
   useEffect(() => {
-    exposeCanvasGrid(canvasGridRef.current, setters, activeSheetId)
-  }, [setters, activeSheetId])
+    exposeCanvasGrid(canvasGridRef.current, setters, activeSheetId, snapshot)
+  }, [setters, activeSheetId, snapshot])
 
   const getSeriesValuesFromRange = useUI((ui) => ui.legacy.getSeriesValuesFromRange)
   const getDomainValuesFromRange = useUI((ui) => ui.legacy.getDomainValuesFromRange)

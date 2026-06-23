@@ -1,12 +1,13 @@
-import { useState } from 'react';
 import type { FunctionComponent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
-import { Icon } from '@proton/components/index';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import type { GroupedDocument } from './SearchInspectList';
 
@@ -67,6 +68,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                     {chunks.map((chunk, index) => {
                         const isExpanded = expandedChunk === index;
                         const chunkSize = chunk.content ? new TextEncoder().encode(chunk.content).byteLength : 0;
+                        const IndicatorIcon = isExpanded ? IcChevronDown : IcChevronRight;
 
                         return (
                             <div
@@ -79,11 +81,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                                     className="w-full p-3 text-left flex items-center gap-3 hover:bg-norm transition-colors"
                                     onClick={() => setExpandedChunk(isExpanded ? null : index)}
                                 >
-                                    <Icon
-                                        name={isExpanded ? 'chevron-down' : 'chevron-right'}
-                                        size={4}
-                                        className="color-weak shrink-0"
-                                    />
+                                    <IndicatorIcon size={4} className="color-weak shrink-0" />
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
                                             <span className="text-sm text-semibold">

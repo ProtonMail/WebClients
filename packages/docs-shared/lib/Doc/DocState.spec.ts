@@ -33,6 +33,8 @@ describe('DocState', () => {
       {
         debug: jest.fn(),
         info: jest.fn(),
+        warn: jest.fn(),
+        error: jest.fn(),
       } as unknown as LoggerInterface,
     )
   })
@@ -253,7 +255,7 @@ describe('DocState', () => {
     it('should abort if origin is self', () => {
       const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), state)
+      state.handleYDocUpdate(new Uint8Array(), state)
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
     })
@@ -262,7 +264,7 @@ describe('DocState', () => {
     it('should abort if origin is BaseCommit', () => {
       const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), DocUpdateOrigin.BaseCommit)
+      state.handleYDocUpdate(new Uint8Array(), DocUpdateOrigin.BaseCommit)
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
     })
@@ -275,14 +277,14 @@ describe('DocState', () => {
         structs: [{ id: { clock: 0 } }],
       }))
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+      state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
       ;(decodeUpdate as jest.Mock).mockImplementationOnce(() => ({
         structs: [{ id: { clock: 1 } }],
       }))
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+      state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalled()
     })
@@ -292,7 +294,7 @@ describe('DocState', () => {
 
       state.isInConversionFromOtherFormatFlow = true
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+      state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -307,7 +309,7 @@ describe('DocState', () => {
 
       state.isInConversionFromOtherFormatFlow = false
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+      state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -315,6 +317,34 @@ describe('DocState', () => {
         }),
         expect.anything(),
       )
+    })
+
+    it('should not propagate update when document update guard blocks it', () => {
+      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+
+      state.runWithDocumentUpdateGuard(
+        () => false,
+        () => {
+          state.handleYDocUpdate(new Uint8Array(), 'local')
+        },
+      )
+
+      expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
+    })
+
+    it('should restore the previous document update guard after a scoped callback', () => {
+      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const firstGuard = jest.fn(() => true)
+      const secondGuard = jest.fn(() => false)
+
+      state.runWithDocumentUpdateGuard(firstGuard, () => {
+        state.runWithDocumentUpdateGuard(secondGuard, () => undefined)
+        state.handleYDocUpdate(new Uint8Array(), 'local')
+      })
+
+      expect(secondGuard).not.toHaveBeenCalled()
+      expect(firstGuard).toHaveBeenCalled()
+      expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalled()
     })
   })
 })

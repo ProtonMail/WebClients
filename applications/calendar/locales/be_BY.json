@@ -410,6 +410,9 @@
       "Expand video conferencing widget": [
         "Разгарнуць віджэт відэаканферэнцыі"
       ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Даследаваць ${ MEET_SHORT_APP_NAME }"
+      ],
       "Explore other plans": [
         "Даследаваць іншыя тарыфныя планы"
       ],
@@ -1010,6 +1013,9 @@
       "Verify account": [
         "Спраўдзіць уліковы запіс"
       ],
+      "Verify now": [
+        "Спраўдзіць"
+      ],
       "View": [
         "Паглядзець"
       ],
@@ -1494,6 +1500,104 @@
       ],
       "Yearly": [
         "Штогод"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Актывавана"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "Calendar": [
+        "Каляндар"
+      ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
+      ],
+      "Contacts": [
+        "Кантакты"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Статус пераносу даных з Google Workspace у ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Лісты"
+      ],
+      "Errors": [
+        "Памылкі"
+      ],
+      "Estimated size": [
+        "Прыблізны памер"
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
+      ],
+      "Has errors": [
+        "З памылкамі"
+      ],
+      "In progress": [
+        "Выконваецца"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
+      ],
+      "Migrate": [
+        "Перанос"
+      ],
+      "Migrated": [
+        "Перанесена"
+      ],
+      "Migration status": [
+        "Статус пераносу"
+      ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
+      ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
+      "Not activated": [
+        "Не актываваны"
+      ],
+      "Organization does not have enough seats available": [
+        "У арганізацыі недастаткова даступных ліцэнзій"
+      ],
+      "Organization does not have enough storage available": [
+        "У арганізацыі недастаткова даступнага месца для захоўвання"
+      ],
+      "Pending": [
+        "У чаканні"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
+      ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
+      ],
+      "Size": [
+        "Памер"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "User": [
+        "Карыстальнік"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Што вы плануеце перанесці?"
+      ],
+      "You": [
+        "Вы"
       ]
     },
     "Browser": {
@@ -2294,6 +2398,9 @@
       ],
       "Canada": [
         "Канада"
+      ],
+      "Canary Islands": [
+        "Канарскія астравы"
       ],
       "Cape Verde": [
         "Каба-Вердэ"
@@ -3174,7 +3281,7 @@
         "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
+        "Лісты, якія адпраўлены на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
@@ -3194,8 +3301,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Пераканайцеся, што ў вас усё яшчэ ёсць доступ да вашага ўліковага запісу і даных, нават калі вы страціце свой пароль ад ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Для бясшвовага пераходу ў ${ BRAND_NAME } імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Для лёгкага пераходу вашай каманды ў ${ BRAND_NAME }, імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -3648,6 +3755,9 @@
       "Aliases could not be loaded": [
         "Не ўдалося загрузіць псеўданімы"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
+      ],
       "Already a member of this calendar": [
         "Ужо з'яўляецца ўдзельнікам гэтага календара"
       ],
@@ -3982,13 +4092,22 @@
         "Актывуйце пошук яшчэ раз"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
-        "Праверцеце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
+        "Праверце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
       ],
       "Please complete the billing details": [
         "Запоўніце плацежныя звесткі"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Cканфігурыруйце свой карыстальніцкі дамен перад тым, як дадаваць карыстальнікаў у вашу арганізацыю."
+      ],
       "Please create an address first.": [
         "Спачатку стварыце адрас."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Уключыце падтрымку шматкарыстальніцкага рэжыму перад тым, як дадаць карыстальнікаў да вашай арганізацыі."
       ],
       "Please enter a valid postal code": [
         "Увядзіце сапраўдны паштовы індэкс"
@@ -4022,6 +4141,9 @@
       ],
       "Please select billing state": [
         "Выберыце штат выстаўлення рахунку"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -4208,6 +4330,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Вы выкарысталі ўсе адрасы на сваім тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новыя адрасы або адключыце адрас у сваім уліковым запісе."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -5355,6 +5483,12 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
+      "${ total } user found": [
+        "Знойдзены ${ total } карыстальнік",
+        "Знойдзена ${ total } карыстальнікі",
+        "Знойдзена ${ total } карыстальнікаў",
+        "Знойдзена ${ total } карыстальнікаў"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
         "${ updated } кантакты паспяхова абноўлены.",
@@ -5379,23 +5513,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Аўтаматычнае падключэнне**: падключэнне да сервера VPN адбываецца адразу пасля ўключэння прылады."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Запрашайце сваіх сяброў** у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: спыняе ўцечку даных блакіруючы інтэрнэт, калі падключэнне па VPN нечакана знікла."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Крок 1:** Запрашайце сваіх сяброў у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Яны атрымаюць ${ refereeRewardAmount }** у крэдытах, калі падпішуцца."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на тарыфным плане ${ BRAND_NAME }, які яны выбралі."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на сваім тарыфным плане."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожнага сябра, які падпішацца на тарыфны план."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Крок 3:** Вы атрымаеце ${ referrerRewardAmount } у крэдытах за кожную асобу, якая падпішацца на тарыфны план."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Вы атрымаеце ${ referrerRewardAmount }** у крэдытах за кожнага сябра, які падпішацца."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -5718,6 +5846,9 @@
       "Display events for calendar ${ Name }": [
         "Адлюстраванне падзей для календара ${ Name }"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Вы памятаеце свой пароль? ${ verifyButton }"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
       ],
@@ -5837,6 +5968,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Усяго за ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Забылі пароль?"
       ],
       "Frequency modifications will be lost.": [
         "Змяненні перыядычнасці будуць страчаны."
@@ -6144,6 +6278,9 @@
       "Password must have:": [
         "Пароль павінен змяшчаць:"
       ],
+      "Password verified": [
+        "Пароль спраўджаны"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
@@ -6179,6 +6316,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Выберыце меткі для імпартавання:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } групу.",
@@ -6444,6 +6584,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Сістэма перыядычна будзе прасіць вас увесці пароль, каб вы не забылі яго. З цягам часу колькасць такіх запытаў будзе скарачацца."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
       ],
@@ -6542,6 +6685,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Вы атрымаеце апавяшчэнне, калі імпартаванне будзе завершана."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Сістэма нагадае вам спраўдзіць пароль пазней яшчэ раз"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Вам адпраўлены новы код спраўджання на ${ strong }"
@@ -7004,9 +7150,22 @@
         "Выгляд \"Тыдзень\""
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Пераключыцца на ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Пераключыцца на ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Асноўныя дзеянні"
+      ],
+      "Desktop app navigation": [
+        "Праграма навігацыі для камп'ютара"
       ],
       "View options": [
         "Параметры прагляду"
@@ -7104,6 +7263,9 @@
       ],
       "Calendar": [
         "Каляндар"
+      ],
+      "Calendars": [
+        "Календары"
       ],
       "Card details": [
         "Падрабязнасці карткі"
@@ -7206,6 +7368,9 @@
       ],
       "Email format": [
         "Фармат ліста"
+      ],
+      "Emails": [
+        "Лісты"
       ],
       "Emails (all messages)": [
         "Лісты (усе паведамленні)"
@@ -10302,6 +10467,9 @@
       "San Francisco": [
         "Сан-Францыска"
       ],
+      "Search": [
+        "Пошук"
+      ],
       "Search events": [
         "Пошук падзей"
       ],
@@ -10310,6 +10478,9 @@
       ],
       "Search for name or email": [
         "Шукаць імя або электронную пошту"
+      ],
+      "Search for users or addresses": [
+        "Пошук карыстальнікаў або адрасоў"
       ],
       "Search parent folder": [
         "Пошук бацькоўскай папкі"
@@ -10469,6 +10640,78 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Атрымаць прапанову"
+      ],
+      "Summer Sale": [
+        "Летні распродаж"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "2 TB data storage": [
+        "Сховішча даных на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
+      ],
+      "3 TB data storage": [
+        "Сховішча даных на 3 ТБ"
+      ],
+      "500 GB storage": [
+        "500 ГБ сховішча"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на аснове стандартнага штомесячнага кошту. Ваша падпіска будзе падоўжана па стандартным гадавым тарыфе, калі скончыцца перыяд аплаты."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Поўны доступ да ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Асобныя ўліковыя запісы для 6 карыстальнікаў"
+      ],
+      "Individual accounts for you and a partner": [
+        "Асобныя ўліковыя запісы для вас і партнёра"
+      ],
+      "Online document and spreadsheet editor": [
+        "Рэдактар дакументаў і электронных табліц у сетцы"
+      ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
+      "Stronger protection against cyber threats": [
+        "Больш надзейная абарона ад кіберпагроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перайдзіце на наш гадавы тарыфны план і зэканомце ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Use your own email domain": [
+        "Выкарыстоўвайце ўласны дамен электроннай пошты"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "SUMMER SALE": [
+        "ЛЕТНІ РАСПРОДАЖ"
       ]
     },
     "Referral": {
@@ -12146,6 +12389,9 @@
       "${ appName } keyboard shortcuts": [
         "Спалучэнні клавіш ${ appName }"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрас электроннай пошты",
         "${ emailsCount } адрасы электроннай пошты",
@@ -12154,6 +12400,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
@@ -12524,9 +12773,6 @@
       "Import contacts": [
         "Імпартаваць кантакты"
       ],
-      "Import emails, calendars, contacts": [
-        "Імпартаванне лістоў, календароў, кантактаў"
-      ],
       "Import events": [
         "Імпартаванне падзей"
       ],
@@ -12562,6 +12808,9 @@
       ],
       "Merging contacts": [
         "Аб'яднанне кантактаў"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Перанесці вашу арганізацыю ў ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Мінікаляндар"
@@ -12791,6 +13040,9 @@
       "Summary": [
         "Зводка"
       ],
+      "Summer Sale": [
+        "Летні распродаж"
+      ],
       "The booking feature is currently unavailable.": [
         "Функцыя браніравання ў цяперашні час недаступна."
       ],
@@ -12841,6 +13093,9 @@
       ],
       "Verification failed": [
         "Збой праверкі"
+      ],
+      "Verify your password": [
+        "Спраўджанне вашага пароля"
       ],
       "Verifying your card...": [
         "Спраўджанне вашай карткі..."

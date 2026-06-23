@@ -1,7 +1,7 @@
 import type { Subscription } from '@proton/payments';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 describe('onboarding helpers', () => {
     describe('canShowB2BOnboardingButton', () => {
@@ -13,7 +13,7 @@ describe('onboarding helpers', () => {
                 CreateTime: addDays(new Date(), -59).getTime() / 1000,
             } as Subscription;
 
-            expect(canShowB2BOnboardingButton(subscription)).toBeTrue();
+            expect(canShowB2BOnboardingButton(subscription)).toBe(true);
         });
 
         it('should not be possible to show the b2b onboarding button', () => {
@@ -22,8 +22,8 @@ describe('onboarding helpers', () => {
                 CreateTime: addDays(new Date(), -61).getTime() / 1000,
             } as Subscription;
 
-            expect(canShowB2BOnboardingButton(subscription)).toBeFalse();
-            expect(canShowB2BOnboardingButton(undefined)).toBeFalse();
+            expect(canShowB2BOnboardingButton(subscription)).toBe(false);
+            expect(canShowB2BOnboardingButton(undefined)).toBe(false);
         });
     });
 });

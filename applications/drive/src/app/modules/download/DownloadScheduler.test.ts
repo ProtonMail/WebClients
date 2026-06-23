@@ -36,7 +36,7 @@ function makeTask(start: jest.Mock<Promise<void>>, overrides: Partial<DownloadQu
         node ??
         createMockNodeEntity({
             uid: `node-${taskCounter}`,
-            name: `file-${taskCounter}`,
+            name: { ok: true as const, value: `file-${taskCounter}` },
         });
 
     return {
@@ -188,7 +188,7 @@ describe('DownloadScheduler', () => {
             makeTask(firstStart, {
                 node: createMockNodeEntity({
                     uid: 'unknown',
-                    name: 'mystery.bin',
+                    name: { ok: true as const, value: 'mystery.bin' },
                     activeRevision: undefined,
                     totalStorageSize: undefined,
                 }),

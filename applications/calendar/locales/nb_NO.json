@@ -404,6 +404,9 @@
       "Expand video conferencing widget": [
         "Utvid widget for videokonferanser"
       ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Utforsk ${ MEET_SHORT_APP_NAME }"
+      ],
       "Explore other plans": [
         "Utforsk andre planer"
       ],
@@ -1004,6 +1007,9 @@
       "Verify account": [
         "Verifiser konto"
       ],
+      "Verify now": [
+        "Verifiser nå"
+      ],
       "View": [
         "Vis"
       ],
@@ -1462,6 +1468,104 @@
       ],
       "Yearly": [
         "Årlig"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktivert"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for dataoverføring fra Google Workspace til ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-poster"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Finn ut hva som kan migreres."
+      ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrated": [
+        "Migrert"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
+      ],
+      "No users to display": [
+        "Ingen brukere å vise"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasjonen har ikke nok ledige lisenser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
+      ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruker"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
+      ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -2248,6 +2352,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Kanariøyene"
       ],
       "Cape Verde": [
         "Kapp Verde"
@@ -3138,7 +3245,7 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Sørg for at du fortsatt har tilgang til kontoen og dataene dine selv om du mister ${ BRAND_NAME }-passordet ditt."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "For en sømløs overgang til ${ BRAND_NAME }, importer dataene dine fra Google, Outlook og andre."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
@@ -3584,6 +3691,9 @@
       "Aliases could not be loaded": [
         "Aliaser kan ikke lastes inn"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
+      ],
       "Already a member of this calendar": [
         "Allerede medlem av denne kalenderen"
       ],
@@ -3907,11 +4017,23 @@
       "Please activate your search again": [
         "Aktiver søket ditt på nytt"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Sjekk om ABN-nummeret ditt er registrert for grenseoverskridende merverdiavgift"
+      ],
       "Please complete the billing details": [
         "Fyll ut faktureringsdetaljene"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Konfigurer et egendefinert domene før du legger til adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
+      ],
       "Please create an address first.": [
         "Opprett en adresse først."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktiver støtte for flere brukere før du legger brukere til din organisasjon."
       ],
       "Please enter a valid postal code": [
         "Skriv inn et gyldig postnummer"
@@ -3943,6 +4065,9 @@
       ],
       "Please select billing state": [
         "Velg faktureringsstat"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
       ],
       "Port is required": [
         "Port kreves"
@@ -4101,6 +4226,9 @@
       "Validation error": [
         "Valideringsfeil"
       ],
+      "VAT number must start with ${ prefixes }": [
+        "MVA-nummeret må starte med ${ prefixes }"
+      ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
       ],
@@ -4122,6 +4250,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nådd grensen for antall kontakter for kontoen din"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har brukt alle adressene i planen. Oppgrader planen for å legge til en ny adresse eller deaktiver en adresse i kontoen din."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
       ],
       "You must set a name": [
         "Du må angi et navn"
@@ -5203,6 +5337,10 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
+      "${ total } user found": [
+        "${ total } bruker funnet",
+        "${ total } brukere funnet"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt oppdatert",
         "${ updated } kontakter oppdatert"
@@ -5223,23 +5361,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatisk tilkobling**: åpnes og kobles til VPN så snart du slår på enheten."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter vennene dine** til ${ BRAND_NAME } med vervekoblingen."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Nødstopp**: stopper datalekkasjer ved å blokkere internett hvis VPN-en dropper ut uventet."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i kreditter hvis de abonnerer."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Trinn 2:** Vennene dine får 2 uker gratis på den valgte ${ BRAND_NAME }-planen."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Trinn 2:** Vennene dine får 2 uker gratis på planene deres."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Trinn 3:** Få ${ referrerRewardAmount } kreditter for hver venn som abonnerer på en plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Trinn 3:** Få ${ referrerRewardAmount } i kreditter for hver person som abonnerer på en plan."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "** Du får ${ referrerRewardAmount }** i kreditter for hver venn som abonnerer."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -5548,6 +5680,9 @@
       "Display events for calendar ${ Name }": [
         "Vis hendelser for kalender ${ Name }"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Husker du passordet ditt? ${ verifyButton }"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser ingenting? Husk å slå av blokkering av sprett-opp-vinduer."
       ],
@@ -5665,6 +5800,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
       ],
       "Frequency modifications will be lost.": [
         "Frekvensendringer vil gå tapt."
@@ -5970,6 +6108,9 @@
       "Password must have:": [
         "Passordet må ha:"
       ],
+      "Password verified": [
+        "Passord bekreftet"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
       ],
@@ -6005,6 +6146,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Velg mappene du vil importere:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Velg etikettene du vil importere:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Velg hvilke e-postadresser som skal legges til i ${ groupCount } gruppe.",
@@ -6264,6 +6408,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For å hjelpe deg med å huske passordet ditt, ber vi deg om å skrive det inn med jevne mellomrom. Vi ber deg færre ganger over tid."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
       ],
@@ -6362,6 +6509,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Vi varsler deg når importen er ferdig."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi minner deg på å bekrefte passordet ditt igjen senere."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
@@ -6808,9 +6958,22 @@
         "Ukesvisning"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Bytt til ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Bytt til ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Grunnleggende handlinger"
+      ],
+      "Desktop app navigation": [
+        "Skrivebordsapp-navigering"
       ],
       "View options": [
         "Vis alternativer"
@@ -6906,6 +7069,9 @@
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "Calendars": [
+        "Kalendere"
       ],
       "Card details": [
         "Kortopplysninger"
@@ -7008,6 +7174,9 @@
       ],
       "Email format": [
         "E-postformat"
+      ],
+      "Emails": [
+        "E-poster"
       ],
       "Emails (all messages)": [
         "E-poster (alle meldinger)"
@@ -9950,6 +10119,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Søk"
+      ],
       "Search events": [
         "Søk hendelser"
       ],
@@ -9958,6 +10130,9 @@
       ],
       "Search for name or email": [
         "Søk etter navn eller e-post"
+      ],
+      "Search for users or addresses": [
+        "Søk etter brukere eller adresser"
       ],
       "Search parent folder": [
         "Søk i overordnet mappe"
@@ -10111,15 +10286,15 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Benytt deg av tilbudet"
       ],
-      "SPRING SALE 2026": [
-        "VÅRSALG 2026"
+      "Summer Sale": [
+        "Sommersalg"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/måned"
       ],
@@ -10138,35 +10313,17 @@
       "500 GB storage": [
         "500 GB lagringsplass"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Tilgang til 15 000+ servere i 120+ land"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Tilgang til avanserte KI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle premiumfunksjonene i Mail, Pass, Drive, VPN og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokker annonser, sporere og skadelig programvare"
-      ],
-      "Built-in 2FA authenticator": [
-        "Innebygd 2FA-autentisering"
-      ],
-      "Connect 10 devices at once": [
-        "Koble til 10 enheter samtidig"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Forleng abonnementet ditt og spar ${ discountPercent } %!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Full tilgang til ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Full chatlogg med enkelt søk og favoritter"
       ],
       "Individual accounts for 6 users": [
         "Individuelle kontoer for 6 brukere"
@@ -10174,8 +10331,8 @@
       "Individual accounts for you and a partner": [
         "Individuelle kontoer for deg og en partner"
       ],
-      "Online document editor": [
-        "Dokumentredigerer på nett"
+      "Online document and spreadsheet editor": [
+        "Pålogget redigeringsprogram for dokumenter og regneark"
       ],
       "Recover previous file versions": [
         "Gjenopprett tidligere filversjoner"
@@ -10186,25 +10343,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Ubegrenset antall daglige chatter"
-      ],
       "Unlimited folders, labels, and filters": [
         "Ubegrensede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "i 12 måneder"
       ],
-      "SPRING SALE": [
-        "VÅRSALG"
+      "SUMMER SALE": [
+        "SOMMERSALG"
       ]
     },
     "Referral": {
@@ -11788,6 +11939,9 @@
       "${ appName } keyboard shortcuts": [
         "${ appName }-tastatursnarveier"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadresse",
         "${ emailsCount } e-postadresser"
@@ -12156,9 +12310,6 @@
       "Import contacts": [
         "Importer kontakter"
       ],
-      "Import emails, calendars, contacts": [
-        "Importer e-poster, kalendere, kontakter"
-      ],
       "Import events": [
         "Importer hendelser"
       ],
@@ -12194,6 +12345,9 @@
       ],
       "Merging contacts": [
         "Slår sammen kontakter"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer organisasjonen din til ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -12423,6 +12577,9 @@
       "Summary": [
         "Sammendrag"
       ],
+      "Summer Sale": [
+        "Sommersalg"
+      ],
       "The booking feature is currently unavailable.": [
         "Bestillingsfunksjonen er utilgjengelig for øyeblikket."
       ],
@@ -12473,6 +12630,9 @@
       ],
       "Verification failed": [
         "Bekreftelse mislyktes"
+      ],
+      "Verify your password": [
+        "Bekreft passordet ditt"
       ],
       "Verifying your card...": [
         "Verifiserer kortet ditt..."

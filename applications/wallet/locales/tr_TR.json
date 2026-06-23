@@ -979,7 +979,7 @@
         "Özellikleri keşfedin ve ayarlayın"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Set up other features": [
         "Diğer özellikleri ayarlayın"
@@ -1359,6 +1359,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanarya Adaları"
       ],
       "Cape Verde": [
         "Yeşil Burun Adaları"
@@ -2139,8 +2142,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } parolanızı kaybetseniz bile hesabınıza ve verilerinize erişebileceğinizden emin olun."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "${ BRAND_NAME } uygulamasına sorunsuz geçmek için verilerinizi Google, Outlook ve diğer hizmetlerden içe aktarın."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Ekibinizin ${ BRAND_NAME } hizmetlerine sorunsuz bir şekilde uyum sağlaması için verilerinizi Google, Outlook ve diğer kaynaklardan içe aktarın."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alın."
@@ -4355,7 +4358,7 @@
         "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
+        "Bir e-posta anımsatıcısı ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
@@ -5584,8 +5587,14 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "Account restricted": [
         "Hesap kısıtlandı"
@@ -5692,11 +5701,11 @@
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
-      "Import emails, calendars, contacts": [
-        "E-postaları, takvimleri, kişileri içe aktarın"
-      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Kuruluşunuzu ${ BRAND_NAME } üzerine aktarın"
       ],
       "Minicalendar": [
         "Mini takvim"
@@ -5756,7 +5765,7 @@
         "Özet"
       ],
       "Summer Sale": [
-        "Yaz indirimi"
+        "Yaz İndirimi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
@@ -5814,6 +5823,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"

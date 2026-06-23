@@ -144,6 +144,12 @@
       "Choose my own password": [
         "Задать собственный пароль"
       ],
+      "Claim this address": [
+        "Получить этот адрес"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Получите бесплатный адрес ${ BRAND_NAME }"
+      ],
       "Close": [
         "Закрыть"
       ],
@@ -177,6 +183,9 @@
       "Connect to video conferencing": [
         "Подключайтесь к видеоконференциям"
       ],
+      "Connect your email": [
+        "Подключить электронную почту"
+      ],
       "Connected": [
         "Подключено"
       ],
@@ -194,6 +203,9 @@
       ],
       "Continue import": [
         "Продолжить импорт"
+      ],
+      "Continue with Free": [
+        "Продолжить бесплатно"
       ],
       "Continue with this password": [
         "Продолжить с этим паролем"
@@ -302,6 +314,9 @@
       ],
       "Discard Changes": [
         "Сбросить изменения"
+      ],
+      "Disconnect": [
+        "Отключить"
       ],
       "Discover ${ planName }": [
         "Узнать о ${ planName }"
@@ -525,6 +540,9 @@
       "Keep my subscription": [
         "Сохранить подписку"
       ],
+      "Later": [
+        "Позже"
+      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -621,6 +639,9 @@
       "Or": [
         "Или"
       ],
+      "Or use a different Gmail address": [
+        "Или использовать другой адрес Gmail"
+      ],
       "Organization": [
         "Организация"
       ],
@@ -647,6 +668,9 @@
       ],
       "Reconnect": [
         "Переподключиться"
+      ],
+      "Reconnect to Gmail": [
+        "Переподключить Gmail"
       ],
       "Recover data": [
         "Восстановить данные"
@@ -1014,6 +1038,9 @@
       "Use recovery code": [
         "Использовать код восстановлени"
       ],
+      "Use this Gmail address": [
+        "Использовать этот адрес Gmail"
+      ],
       "Use your current email instead": [
         "Вместо этого используйте свой текущий адрес электронной почты"
       ],
@@ -1175,6 +1202,9 @@
       ],
       "Disabled": [
         "Отключено"
+      ],
+      "Disconnected": [
+        "Отключен"
       ],
       "External": [
         "Внешний"
@@ -2857,6 +2887,12 @@
       "Automatically forward incoming email to another email address.": [
         "Автоматически пересылайте входящие сообщения на другой адрес электронной почты."
       ],
+      "Available storage: ${ storageText }": [
+        "Доступный объем хранилища: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Заблокируйте возможность Google составлять ваш профиль. Gmail не увидит, что вы делаете в ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Сначала настройте это, чтобы активировать вашу организацию и настроить ваш адрес электронной почты."
       ],
@@ -2878,6 +2914,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Легко синхронизируйте файлы с облаком с настольного компьютера и получайте к ним доступ с мобильного устройства."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Письма, отправленные на ${ connectedAddressText }, теперь будут появляться в ${ MAIL_APP_NAME }."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Включите ${ PROTON_SENTINEL_NAME } для доступа к этим функциям"
       ],
@@ -2893,6 +2932,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Достаточно места для писем, вложений и многого другого на годы вперед."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Обеспечьте защищенный доступ к данным организации, даже если ваша команда работает удаленно или использует публичный WiFi."
       ],
@@ -2904,9 +2946,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Все в вашей организации могут подключиться к общим серверам во всех странах"
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Для плавного перехода на ${ BRAND_NAME } импортируйте данные из Google, Outlook и других приложений."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
@@ -2926,14 +2965,29 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Позволяет мгновенно добавлять ссылки на встречи к вашим приглашениям на события."
       ],
+      "No ads. No trackers.": [
+        "Без рекламы. Без трекеров."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Никто из вашей организации не может подключиться к общим серверам."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Читайте, отвечайте и управляйте почтой Gmail прямо из ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Настроить аккаунты для всех пользователей и пригласить их присоединиться к ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Упростите синхронизацию и планирование с общими календарями."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Это могло произойти, если были отозваны разрешения или изменился ваш пароль."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Чтобы продолжить получать и отправлять сообщения Gmail в ${ BRAND_NAME }, пожалуйста, переподключите свой аккаунт."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Чтобы продолжить получать и отправлять сообщения Gmail в ${ BRAND_NAME }, пожалуйста, переподключите свои аккаунты."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
@@ -2944,11 +2998,38 @@
       "Track the status and activity of your referrals": [
         "Отлеживайте состояние и активность ваших рефералов"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Получите 15 ГБ пространства всего за ${ config.offerPrice }."
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Воспользуйтесь этим руководством, чтобы ваша организация начала быстро получать выгоду от лучшей в отрасли экосистемы шифрования и приватности ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Мы больше не можем получить доступ к ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Мы приостановим импорт при заполнении хранилища на 80%, чтобы зарезервировать место для новых сообщений."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Мы начали импорт ваших писем из Gmail. Мы сообщим вам, когда он завершится."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас уже настроена пересылка с адреса Gmail в ${ MAIL_APP_NAME }. Подключите его ниже, чтобы отправлять и получать электронные письма непосредственно из ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас уже настроена пересылка с адресов Gmail в ${ MAIL_APP_NAME }. Подключите один из них ниже, чтобы отправлять и получать электронные письма непосредственно из ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можете импортировать события в формате iCal (ICS файл). Размер файла не должен быть более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_EVENTS_STRING } событий. Если ваш файл больше, разделите его на меньшие файлы."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Теперь вы можете отправлять электронные письма из ${ BRAND_NAME }, используя этот адрес."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ваш бесплатный аккаунт ${ MAIL_APP_NAME } имеет ограниченный объем хранилища, поэтому мы импортируем только последние сообщения Gmail общим объемом ${ newUserStorageText }"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ваш бесплатный аккаунт ${ MAIL_APP_NAME } имеет ограниченный объем хранилища, поэтому мы импортируем только ваши самые последние письма из Gmail."
       ]
     },
     "description": {
@@ -3356,6 +3437,9 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
+      "Address is already added to your account": [
+        "Адрес уже добавлен в ваш аккаунт"
+      ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
@@ -3661,6 +3745,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
+      "Something went wrong while converting the address": [
+        "Что-то пошло не так при конвертации адреса"
+      ],
+      "Something went wrong while creating the address": [
+        "Что-то пошло не так при создании адреса"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Что-то пошло не так при получении доступных доменов"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
@@ -4299,6 +4392,9 @@
         "${ MaxVPN } подключений к VPN",
         "${ MaxVPN } подключений к VPN"
       ],
+      "10+ premium features": [
+        "Более 10 платных функций"
+      ],
       "Access to all countries": [
         "Доступ ко всем странам"
       ],
@@ -4320,6 +4416,12 @@
       "Continue": [
         "Продолжить"
       ],
+      "Custom email domain": [
+        "Собственный домен электронной почты"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
+      ],
       "Fastest VPN servers": [
         "Самые быстрые серверы VPN"
       ],
@@ -4331,6 +4433,9 @@
       ],
       "Secure streaming support": [
         "Поддержка защищенных трансляций"
+      ],
+      "Storage": [
+        "Хранилище"
       ],
       "Torrenting support (P2P)": [
         "Поддержка торрентов (P2P)"
@@ -5821,6 +5926,9 @@
       "Enhance your network security": [
         "Повысьте безопасность вашей сети"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Обеспечьте полную конфиденциальность и шифрование переписки. Получите бесплатный адрес электронной почты ${ BRAND_NAME } прямо сейчас."
+      ],
       "Enter key manually instead": [
         "Ввести ключ вручную"
       ],
@@ -6000,6 +6108,9 @@
       ],
       "inactive": [
         "неактивный"
+      ],
+      "Included": [
+        "Включено"
       ],
       "Increase your account security by verifying your email address.": [
         "Повысьте защищенность своего аккаунта, подтвердив адрес вашей электронной почты."
@@ -6943,8 +7054,14 @@
       "Unverified email address.": [
         "Неподтверждённый адрес эл. почты."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Улучшите тарифный план в любое время, чтобы перенести остальное"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Улучшите тарифный план или освободите место в любое время, чтобы перенести остальное"
       ],
       "Upload your completed CSV file to create accounts": [
         "Загрузите завершенный файл CSV для создания учетных записей"
@@ -7675,6 +7792,9 @@
       "Calendar": [
         "Календарь"
       ],
+      "Calendars": [
+        "Календари"
+      ],
       "Card details": [
         "Данные карты"
       ],
@@ -7815,6 +7935,9 @@
       ],
       "Email or username": [
         "Эл. почта или имя пользователя"
+      ],
+      "Emails": [
+        "Электронные письма"
       ],
       "Emails (all messages)": [
         "Письма (все)"
@@ -8158,6 +8281,9 @@
       "Second password": [
         "Второй пароль"
       ],
+      "Select which Gmail address to connect": [
+        "Выберите адрес Gmail для подключения"
+      ],
       "Send crash reports": [
         "Отправлять отчеты об ошибках"
       ],
@@ -8312,6 +8438,14 @@
         "Получатель"
       ]
     },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "Доступен ${ byoeAddressesAvailableCount } из ${ maxBYOEAddresses } адресов электронной почты",
+        "Доступно ${ byoeAddressesAvailableCount } из ${ maxBYOEAddresses } адресов электронной почты",
+        "Доступно ${ byoeAddressesAvailableCount } из ${ maxBYOEAddresses } адресов электронной почты",
+        "Доступно ${ byoeAddressesAvailableCount } из ${ maxBYOEAddresses } адресов электронной почты"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Добавьте принадлежащий вам домен к вашему аккаунту ${ MAIL_APP_NAME }."
@@ -8382,11 +8516,6 @@
       ],
       "To: ${ to }": [
         "Кому: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Выберите поставщика услуг, чтобы начать"
       ]
     },
     "Limit of calendars reached": {
@@ -9905,9 +10034,6 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participate in surveys to improve ${ BRAND_NAME } services"
-      ],
-      "Product updates": [
-        "Обновления продукта"
       ]
     },
     "Notification": {
@@ -9964,6 +10090,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Двухфакторная аутентификация более не требуется"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрес ${ BRAND_NAME } готов к использованию"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10882,15 +11011,15 @@
         "Неизвестное"
       ]
     },
-    "q1campaign: Action": {
+    "q2campaign2026: Action": {
       "Get the deal": [
         "Получить со скидкой"
       ],
-      "SPRING SALE 2026": [
-        "ВЕСЕННИЕ СКИДКИ 2026"
+      "Summer Sale": [
+        "Летние скидки"
       ]
     },
-    "q1campaign: Info": {
+    "q2campaign2026: Info": {
       "/month": [
         "/месяц"
       ],
@@ -10909,35 +11038,17 @@
       "500 GB storage": [
         "500 ГБ для хранения"
       ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Получите доступ к 15 000+ серверам в 120+ странах"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Access advanced AI models": [
-        "Получите доступ к передовым моделям ИИ"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Все платные функции Mail, Pass, хранилища, VPN и календаря"
-      ],
-      "Block ads, trackers, and malware": [
-        "Блокируйте рекламу, трекеры и вредоносные программы"
-      ],
-      "Built-in 2FA authenticator": [
-        "Встроенная функция двухфакторной аутентификации"
-      ],
-      "Connect 10 devices at once": [
-        "Подключите 10 устройств одновременно"
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платежного цикла."
       ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Продлите подписку и сэкономьте ${ discountPercent }%!"
-      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Полный доступ к ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Полная история чата с удобным поиском и избранным"
       ],
       "Individual accounts for 6 users": [
         "Индивидуальные аккаунты для 6 пользователей"
@@ -10945,8 +11056,8 @@
       "Individual accounts for you and a partner": [
         "Индивидуальные аккаунты для вас и партнера"
       ],
-      "Online document editor": [
-        "Онлайн-редактор документов"
+      "Online document and spreadsheet editor": [
+        "Онлайн-редактор документов и электронных таблиц"
       ],
       "Recover previous file versions": [
         "Восстанавливайте предыдущие версии файлов"
@@ -10957,25 +11068,19 @@
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
         "Перейдите на наш годовой тариф и сэкономьте ${ toYearlyDiscountAmount }!"
       ],
-      "Unlimited daily chats": [
-        "Неограниченное количество ежедневных чатов"
-      ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество псевдонимов hide-my-email"
       ],
       "Use your own email domain": [
         "Используйте собственный домен адреса электронной почты"
       ]
     },
-    "q1campaign: Title": {
+    "q2campaign2026: Title": {
       "for 12 months": [
         "на 12 месяцев"
       ],
-      "SPRING SALE": [
-        "ВЕСЕННИЕ СКИДКИ"
+      "SUMMER SALE": [
+        "ЛЕТНИЕ СКИДКИ"
       ]
     },
     "Recovery Email": {
@@ -13345,6 +13450,9 @@
       "Are you sure you want to close the preview?": [
         "Вы уверены, что хотите закрыть предпросмотр?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Вы уверены, что хотите отключить этот адрес?"
+      ],
       "Are you sure?": [
         "Вы уверены?"
       ],
@@ -13356,6 +13464,9 @@
       ],
       "Block trackers and malware": [
         "Блокируйте трекеры и вредоносные программы"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Перенесите Gmail в ${ MAIL_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"
@@ -13399,6 +13510,9 @@
       "Choose user affiliations": [
         "Выберите принадлежности пользователей"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Получите свой адрес ${ MAIL_APP_NAME }"
+      ],
       "Close": [
         "Закрыть"
       ],
@@ -13431,6 +13545,9 @@
       ],
       "Contact us": [
         "Свяжитесь с нами"
+      ],
+      "Continue with free storage": [
+        "Продолжить с бесплатным хранилищем"
       ],
       "Continue with partial import?": [
         "Продолжить частичный импорт?"
@@ -13561,6 +13678,9 @@
       "Discard changes?": [
         "Сбросить изменения?"
       ],
+      "Disconnected from Gmail": [
+        "Соединение с Gmail разорвано"
+      ],
       "Domain names": [
         "Доменные имена"
       ],
@@ -13690,6 +13810,9 @@
       "Get more from your VPN": [
         "Получите больше от VPN"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Получите больше места в хранилище с ${ MAIL_APP_NAME } Plus"
+      ],
       "Get the apps": [
         "Получить приложения"
       ],
@@ -13726,9 +13849,6 @@
       "Import contacts": [
         "Импорт контактов"
       ],
-      "Import emails, calendars, contacts": [
-        "Импорт электронных писем, календарей и контактов"
-      ],
       "Import events": [
         "Импортировать события"
       ],
@@ -13737,6 +13857,9 @@
       ],
       "Import groups": [
         "Импорт групп"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Импорт через ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Information exposed in breach": [
         "Информация, раскрытая при утечке"
@@ -13939,6 +14062,9 @@
       "Select contact group": [
         "Выбор группы контактов"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Отправляйте и получайте почту Gmail в ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "Отправить напоминания по почте?"
       ],
@@ -14038,6 +14164,9 @@
       "Summary": [
         "Сводка"
       ],
+      "Summer Sale": [
+        "Летние скидки"
+      ],
       "Switch to one-password mode": [
         "Переключить в режим с одним паролем"
       ],
@@ -14133,6 +14262,9 @@
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"
+      ],
+      "You are all set": [
+        "Всё готово"
       ],
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."
