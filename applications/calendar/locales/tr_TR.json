@@ -3958,6 +3958,9 @@
       "No contacts found to import": [
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
+      "No drive found to import": [
+        "İçe aktarılacak drive bulunamadı"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
@@ -3972,6 +3975,9 @@
       ],
       "Not a valid number": [
         "Numara geçerli değil"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
       ],
       "Number of occurrences cannot be empty": [
         "Yinelenme sayısı boş olamaz"
@@ -4210,6 +4216,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -5455,9 +5464,6 @@
         "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak",
         "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak"
       ],
-      "All your files will be imported": [
-        "Tüm dosyalarınız içe aktarılacak"
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey logosu"
       ],
@@ -5791,6 +5797,9 @@
       ],
       "Failed to update meeting schedule": [
         "Görüşme zamanlaması güncellenemedi"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "finance": [
         "finans"
@@ -10292,102 +10301,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "SPRING SALE 2026": [
-        "BAHAR İNDİRİMİ 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "2 TB data storage": [
-        "2 TB veri depolama alanı"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
-      ],
-      "3 TB data storage": [
-        "3 TB veri depolama alanı"
-      ],
-      "500 GB storage": [
-        "500 GB depolama alanı"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
-      ],
-      "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail, Pass, Drive, VPN ve Calender'ın tüm ücretli özellikleri"
-      ],
-      "Block ads, trackers, and malware": [
-        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
-      ],
-      "Built-in 2FA authenticator": [
-        "Dahili iki adımlı kimlik doğrulayıcı"
-      ],
-      "Connect 10 devices at once": [
-        "Aynı anda 10 aygıtla bağlanın"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } uygulamasına tam erişim"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Kolay arama ve favoriler ile tüm sohbet geçmişi"
-      ],
-      "Individual accounts for 6 users": [
-        "6 kullanıcı için bireysel hesaplar"
-      ],
-      "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
-      ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Stronger protection against cyber threats": [
-        "Siber tehditlere karşı daha güçlü koruma"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
-      ],
-      "Unlimited daily chats": [
-        "Sınırsız günlük sohbet"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "12 aylığına"
-      ],
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
@@ -12885,7 +12798,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "Load image": [
         "Görsel yükle"
