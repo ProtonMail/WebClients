@@ -4,6 +4,71 @@
     "language": "de_DE"
   },
   "contexts": {
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } ist dem Meeting beigetreten"
+      ],
+      "${ name } left the meeting": [
+        "${ name } hat das Meeting verlassen"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } hat die Hand gesenkt"
+      ],
+      "${ name } raised their hand": [
+        "${ name } hat die Hand erhoben"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } hat mit ${ emoji } reagiert"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } sagt: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Ein Teilnehmer ist dem Meeting beigetreten"
+      ],
+      "A participant left the meeting": [
+        "Ein Teilnehmer hat das Meeting verlassen"
+      ],
+      "A participant lowered their hand": [
+        "Ein Teilnehmer hat die Hand gesenkt"
+      ],
+      "A participant raised their hand": [
+        "Ein Teilnehmer hat die Hand erhoben"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Ein Teilnehmer hat mit ${ emoji } reagiert"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Verbindung verloren. Wiederverbinden…"
+      ],
+      "New chat message: ${ message }": [
+        "Neue Chat-Nachricht: ${ message }"
+      ],
+      "Now starting recording": [
+        "Die Aufzeichnung beginnt jetzt"
+      ],
+      "Reconnected to the meeting": [
+        "Wieder mit dem Meeting verbunden"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Die Aufzeichnung hat begonnen. Indem du am Meeting teilnimmst, bestätigst du, dass du über die Aufzeichnung informiert bist, und erklärst dich damit einverstanden."
+      ],
+      "Recording stopped": [
+        "Aufzeichnung beendet"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Das Meeting wird aufgezeichnet. Mit deiner Teilnahme erklärst du dich damit einverstanden, dass es aufgezeichnet wird."
+      ],
+      "You have been disconnected from the meeting": [
+        "Die Verbindung zum Meeting wurde unterbrochen"
+      ],
+      "You have been muted by the host": [
+        "Der Organisator hat dich stummgeschaltet"
+      ],
+      "Your camera has been turned off by the host": [
+        "Deine Kamera wurde vom Organisator ausgeschaltet"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
@@ -28,6 +93,9 @@
       ],
       "Authenticate": [
         "Authentifizieren"
+      ],
+      "Back": [
+        "Zurück"
       ],
       "Background blur": [
         "Hintergrundunschärfe"
@@ -115,6 +183,9 @@
       ],
       "Download participant report": [
         "Teilnehmerbericht herunterladen"
+      ],
+      "Download recording": [
+        "Aufnahme herunterladen"
       ],
       "Download room level report": [
         "Raum-Level-Bericht herunterladen"
@@ -235,6 +306,10 @@
       ],
       "React with ${ emoji }": [
         "Mit ${ emoji } reagieren"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Mit ${ emoji } reagieren, ${ identities.length } Reaktion",
+        "Mit ${ emoji } reagieren, ${ identities.length } Reaktionen"
       ],
       "Receive video": [
         "Video empfangen"
@@ -1512,17 +1587,11 @@
       "Failed to join meeting. Please try again later.": [
         "Beitritt zum Meeting fehlgeschlagen. Bitte versuche es später erneut."
       ],
-      "Failed to load recordings": [
-        "Aufnahme konnte nicht geladen werden"
-      ],
       "Failed to lock meeting": [
         "Fehler beim Sperren des Meetings"
       ],
       "Failed to rotate personal meeting link": [
         "Fehler beim Neugenerieren des persönlichen Meeting-Links"
-      ],
-      "Failed to save recording": [
-        "Fehler beim Speichern der Aufzeichnung"
       ],
       "Failed to send chat message. Please try again.": [
         "Senden der Chat-Nachricht fehlgeschlagen. Bitte versuche es erneut."
@@ -1607,6 +1676,9 @@
       ],
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Der Speicherplatz deines Browsers ist erschöpft. Wir haben die Aufzeichnung bis zu diesem Zeitpunkt gespeichert."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Die Uhr deines Geräts scheint nicht synchron zu sein. Bitte überprüfe die Systemzeit und versuche es erneut."
@@ -2211,9 +2283,6 @@
       ],
       "Recording in progress": [
         "Aufnahme läuft"
-      ],
-      "Recording saved": [
-        "Aufzeichnung gespeichert"
       ],
       "Recording will begin and attendees will be notified.": [
         "Die Aufzeichnung beginnt und die Teilnehmer werden benachrichtigt."
@@ -2975,6 +3044,9 @@
       "Chat": [
         "Chat"
       ],
+      "Couldn't prepare the recording": [
+        "Die Aufnahme konnte nicht vorbereitet werden"
+      ],
       "Create new room": [
         "Neuen Raum erstellen"
       ],
@@ -3075,6 +3147,9 @@
       "Personal meeting room": [
         "Persönlicher Meeting-Raum"
       ],
+      "Preparing your recording…": [
+        "Deine Aufnahme wird vorbereitet…"
+      ],
       "Publications": [
         "Veröffentlichungen"
       ],
@@ -3149,6 +3224,9 @@
       ],
       "Your feedback has been submitted": [
         "Dein Feedback wurde übermittelt"
+      ],
+      "Your recording is ready": [
+        "Deine Aufnahme ist fertig"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -3162,6 +3240,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Erstelle einen neuen Meeting-Link. Der aktuelle Link wird ungültig."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
       "Recurring meeting": [
         "Wiederkehrendes Meeting"
