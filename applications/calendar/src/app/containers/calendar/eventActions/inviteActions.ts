@@ -190,11 +190,13 @@ export const getAddedAttendeesPublicKeysMap = async ({
     inviteActions,
     sendPreferencesMap,
     getEncryptionPreferences,
+    canAutoAddDisabledE2EEAttendees,
 }: {
     veventComponent: VcalVeventComponent;
     inviteActions: InviteActions;
     sendPreferencesMap: SimpleMap<SendPreferences>;
     getEncryptionPreferences: GetEncryptionPreferences;
+    canAutoAddDisabledE2EEAttendees: boolean;
 }) => {
     const addedAttendeesEmails = extractNewInvitedAttendeeEmails(veventComponent, inviteActions);
 
@@ -214,7 +216,8 @@ export const getAddedAttendeesPublicKeysMap = async ({
             // Internal attendees with E2EE disabled for mail are reported as external (without keys) by the mail
             // send preferences. We refetch their encryption preferences as internal keys (intendedForEmail: false)
             // to retrieve the address public key needed to auto-add the event to their calendar.
-            if (sendPreferences.encryptionDisabled) {
+            // Gated behind a flag as the backend must support auto-adding such attendees first.
+            if (canAutoAddDisabledE2EEAttendees && sendPreferences.encryptionDisabled) {
                 const { isInternal, sendKey } = await getEncryptionPreferences({ email, intendedForEmail: false });
                 return [email, isInternal ? sendKey : undefined];
             }
