@@ -256,7 +256,7 @@ const MemberActions = ({
             },
         },
         canChangePassword && {
-            text: c('Member action').t`Change password`,
+            text: member.SSO ? c('Member action').t`Change backup password` : c('Member action').t`Change password`,
             disabled: isOrganizationDelinquent,
             onClick: () => {
                 onChangePassword(member);
