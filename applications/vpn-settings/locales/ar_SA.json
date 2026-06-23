@@ -3443,9 +3443,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "سنقوم بإيقاف الواردات مؤقتا عند 80٪ من التخزين لحجز مساحة للرسائل الجديدة."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "سنستورد رسائل بريدك الإلكتروني القديمة، ونتخطى الرسائل المكررة، ونتصل بحسابك على Gmail لتظهر الرسائل الجديدة تلقائيًا. ويمكن التراجع عن الاستيراد في أي وقت من إعدادات Easy Switch."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "بدأ استيراد رسائل بريدك الإلكتروني من Gmail. وسيتم إعلامك بمجرد الانتهاء."
       ],
@@ -3469,12 +3466,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "يمكنك الآن إرسال رسائل البريد الإلكتروني من ${ BRAND_NAME } باستخدام هذا العنوان."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "لا يزال بإمكانك تسجيل الدخول باستخدام هذا العنوان وإعادة الاتصال في أي وقت."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "لن يكون بإمكانك بعد الآن استخدام ${ address.Email } لتلقي رسائل البريد الإلكتروني وإرسالها في ${ BRAND_NAME }. يُرجى العلم أيضاً أن الرسائل المرسلة إلى هذا العنوان من ${ BRAND_NAME } لن تكون مشفرة من طرف إلى طرف بعد الآن."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "لقد قمت بتوصيل عنوان حساب خارجي واحد ب ${ MAIL_APP_NAME }."
@@ -11656,11 +11647,17 @@
       "1-2 emails per month": [
         "1-2 بريد الإلكتروني في الشهر"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 رسائل بريد إلكتروني سنويا. تذكيرات للحفاظ على تحديث طرق الاسترداد الخاصة بك."
+      ],
       "2-4 emails per year": [
         "2-4 رسائل بريد إلكتروني سنويًا"
       ],
       "4-6 emails per year": [
         "4-6 رسائل بريد إلكتروني سنويًا"
+      ],
+      "Account email updates": [
+        "تحديثات البريد الإلكتروني للحساب"
       ],
       "Application notifications": [
         "إشعارات التطبيق"
@@ -11682,6 +11679,12 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "شارك في استطلاعات الرأي لتحسين خدمات ${ BRAND_NAME }"
+      ],
+      "Product email updates": [
+        "تحديثات البريد الإلكتروني للمنتج"
+      ],
+      "Recovery checklist": [
+        "قائمة التحقق من الاسترداد"
       ]
     },
     "Notification": {

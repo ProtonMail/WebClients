@@ -216,7 +216,7 @@
         "Падключыць праграмы і прылады"
       ],
       "Connect Gmail address": [
-        "Падключэнне адраса Gmail"
+        "Падключыць адрас Gmail"
       ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
@@ -2255,6 +2255,11 @@
         "Пачаць знаёмства"
       ]
     },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } сховішча"
@@ -3763,9 +3768,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Мы імпартуем вашы старыя лісты, прапусцім дублікаты і падключым ваш Gmail, каб новыя паведамленні з'яўляліся аўтаматычна. Вы можаце адрабіць імпарт у любы час у наладах Easy Switch."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ],
@@ -3789,12 +3791,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Вы ўсё яшчэ можаце ўвайсці з гэтым адрасам і паўторна падключыцца ў любы час."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "У вас больш не будзе магчымасці выкарыстоўваць ${ address.Email } для атрымання і адпраўкі лістоў у ${ BRAND_NAME }. Таксама звярніце ўвагу, што лісты адпраўленыя на гэты адрас з ${ BRAND_NAME }, больш не будуць зашыфраваны скразным метадам."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Вы перасылаеце ${ numAddressesOrSync } адрас Gmail у ${ MAIL_APP_NAME }.",
@@ -16716,6 +16712,9 @@
         "${ friendsSubscribed } сябры падпісалася",
         "${ friendsSubscribed } сяброў падпісалася",
         "${ friendsSubscribed } сяброў падпісалася"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } для арганізацый"
