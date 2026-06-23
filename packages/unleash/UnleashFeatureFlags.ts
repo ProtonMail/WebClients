@@ -225,9 +225,10 @@ enum DocsFeatureFlag {
     SheetsClientSquashingDisabled = 'SheetsClientSquashingDisabled',
     // SDK Migration
     DocsSharingModalDriveSDK = 'DocsSharingModalDriveSDK',
-    DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
     DocsLoadRecentsWithDriveSDK = 'DocsLoadRecentsWithDriveSDK',
     DocsDocumentViewerEventsSDK = 'DocsDocumentViewerEventsSDK',
+    DocsRenameWithDriveSDK = 'DocsRenameWithDriveSDK',
+    DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
 }
 
 export enum MailFeatureFlag {

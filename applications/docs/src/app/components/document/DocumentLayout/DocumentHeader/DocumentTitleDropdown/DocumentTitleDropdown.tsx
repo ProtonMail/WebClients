@@ -61,7 +61,12 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useSheetImportModal } from './SheetImportModal'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import { useEvent } from '~/utils/misc'
-import { useIsSheetsEnabled, useIsDownloadLogsAllowed, useMoveModalDriveSdkEnabled } from '~/utils/flags'
+import {
+  useIsSheetsEnabled,
+  useIsDownloadLogsAllowed,
+  useMoveModalDriveSdkEnabled,
+  useRenameWithSDK,
+} from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
@@ -70,7 +75,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
-import { generateNodeUid } from '@proton/drive'
+import { generateNodeUid, getDrive } from '@proton/drive'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -103,6 +108,7 @@ export function DocumentTitleDropdown({
   const appVersion = getAppVersion(APP_VERSION)
   const { createNotification } = useNotifications()
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
+  const renameWithSDK = useRenameWithSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
 
   const [pdfModal, openPdfModal] = useExportToPDFModal()
@@ -170,12 +176,30 @@ export function DocumentTitleDropdown({
       setIsRenaming(false)
 
       if (oldName !== newName) {
-        void renameController.renameDocument(newName).then((result) => {
-          if (result.isFailed()) {
-            PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
-            setTitle(oldName)
-          }
-        })
+        if (renameWithSDK) {
+          const drive = getDrive()
+          const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
+          drive
+            .renameNode(generateNodeUid(volumeId, linkId), newName)
+            .then(() => {
+              const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
+              createNotification({
+                text: <span className="text-pre-wrap">{successNotificationText}</span>,
+              })
+            })
+            .catch((error) => {
+              application.logger.error('Failed to rename document', error)
+              PostApplicationError(application.eventBus, { translatedError: c('Error').t`Failed to rename document` })
+              setTitle(oldName)
+            })
+        } else {
+          void renameController.renameDocument(newName).then((result) => {
+            if (result.isFailed()) {
+              PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
+              setTitle(oldName)
+            }
+          })
+        }
       }
       setTitle(newName)
     } else {
