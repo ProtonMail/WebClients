@@ -1839,6 +1839,9 @@
       "Verify now": [
         "Verifiqueu-ho ara"
       ],
+      "Verify password": [
+        "Verifiqueu la contrasenya"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifica el domini ${ unverifiedSSODomain.DomainName }"
       ],
@@ -2492,141 +2495,12 @@
         "L'oferta no està disponible."
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'emmagatzematge"
-      ],
-      "1 user account": [
-        "1 compte d'usuari"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB d'emmagatzematge: 40 vegades el vostre pla actual"
-      ],
-      "6 user accounts": [
-        "6 comptes d'usuari"
-      ],
-      "Admin panel to manage your family": [
-        "Panell d'administració per a gestionar la família"
-      ],
-      "Advanced account protection": [
-        "Protecció avançada dels comptes"
-      ],
-      "Easily add or remove users": [
-        "Afegiu o elimineu usuaris fàcilment"
-      ],
-      "One-time payment, lifetime deal": [
-        "Un pagament únic, una oferta de per vida"
-      ],
-      "Online document editor": [
-        "Editor de documents en línia"
-      ],
-      "Password health alerts": [
-        "Alertes d'estat de les contrasenyes"
-      ],
-      "Recover previous file versions": [
-        "Recupereu versions anteriors dels fitxers"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Nombre il·limitat d'inicis de sessió, targetes de crèdit, àlies de hide-my-email i més."
-      ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Facturat a ${ amount } una vegada"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Es renova al cap d'1 mes a ${ regularAmount }"
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming d'alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator, etc."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protegiu els correus electrònics i l'agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
-        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
-        "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, suport per a dominis de correu personalitzats, àlies hide-my-email il·limitats i més."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou editor de documents en línia, còpia de seguretat de fotos, historial de versions, intercanvi de fitxers xifrats i més."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB d'emmagatzematge de dades"
-      ],
-      "3 TB data storage": [
-        "3 TB d'emmagatzematge de dades"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accediu a més de 15.000 servidors en més de 120 països"
-      ],
-      "Access advanced AI models": [
-        "Accediu a models d'IA avançats"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloqueja anuncis, rastrejadors i programari maliciós"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador 2FA integrat"
-      ],
-      "Connect 10 devices at once": [
-        "Connecteu 10 dispositius alhora"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historial complet de xats amb cerca fàcil i preferits"
-      ],
-      "Individual accounts for 6 users": [
-        "Comptes individuals per a 6 usuaris"
-      ],
-      "Individual accounts for you and a partner": [
-        "Comptes individuals per a vós i un company"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protecció més forta contra amenaces cibernètiques"
-      ],
-      "Unlimited daily chats": [
-        "Xats diaris il·limitats"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "El NetShield està dissenyat especialment per protegir els vostres dispositius i accelerar la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ]
     },
     "Billing cycle": {
@@ -3472,6 +3346,11 @@
       ],
       "Take a tour": [
         "Feu una visita guiada"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "S'ometran els duplicats d'importacions anteriors. Desfeu-ho o importeu els missatges més antics a les preferències d'${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -5506,8 +5385,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Importarem els vostres correus electrònics antics, ometrem els duplicats i ens connectarem al vostre Gmail perquè els missatges nous apareguin automàticament. Podreu desactivar la importació en qualsevol moment a la configuració d'Easy Switch."
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Importarem els vostres correus antics i, d'ara endavant, sincronitzarem els missatges nous des de Gmail"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
@@ -5543,10 +5422,10 @@
         "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
       ],
       "You can still login with this address and re-connect at any time.": [
-        "Encara podeu iniciar sessió amb aquesta adreça i reconnectar en qualsevol moment."
+        "Encara podeu iniciar sessió amb aquesta adreça i tornar-vos a connectar en qualsevol moment."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus electrònics a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
+        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Esteu redirigint ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
@@ -5952,14 +5831,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Solucions a mida per a organitzacions més grans amb necessitats personalitzades"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Historial de versions ampliat"
-      ],
-      "Priority support": [
-        "Suport prioritari"
       ]
     },
     "Duo offer": {
@@ -7379,6 +7250,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No drive found to import": [
+        "No s'ha trobat cap unitat per importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
@@ -7396,6 +7270,9 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -7689,6 +7566,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
+      ],
+      "Unexpected error, we can't import the files": [
+        "S'ha produït un error inesperat, no podem importar els fitxers"
       ],
       "Unknown error": [
         "Error desconegut"
@@ -8120,19 +8000,9 @@
         "Podeu desar un fitxer ICS dels esdeveniments que s'han exportat correctament."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        " 3 TB d'emmagatzematge total"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Els avantatges del vostre compte"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'espai d'emmagatzematge es comparteix entre membres de la família per a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -8165,11 +8035,6 @@
       ],
       "View invitation": [
         "Mostra la invitació"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Fins a 6 usuaris"
       ]
     },
     "familyOffer_2023:Error": {
@@ -8424,17 +8289,6 @@
       ],
       "Set family name": [
         "Configura el nom de la família"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis d'estríming en tot el món, bloquejador de programari maliciós i d'anuncis, etc."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 90 adreces de correu electrònic, àlies il·limitats de Hide-my-email, compartició de calendari i més."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ]
     },
     "Feature": {
@@ -10220,9 +10074,6 @@
         "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
         "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "S'importaran tots els vostres fitxers"
-      ],
       "Allocated": [
         "Assignat"
       ],
@@ -11062,6 +10913,9 @@
       ],
       "Featured in ZDNet": [
         "Destacat a ZDNet"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
       ],
       "Fill in user details": [
         "Empleneu els detalls de l'usuari"
@@ -14990,6 +14844,9 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Import your emails": [
+        "Importeu els vostres correus electrònics"
       ],
       "Inbox": [
         "Safata d'entrada"
@@ -22917,18 +22774,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 usuaris"
-      ],
-      "All paid Mail and Calendar features": [
-        "Totes les característiques de pagament de Correu i Calendari"
-      ],
-      "High speed VPN": [
-        "VPN d'alta velocitat"
-      ],
       "Highest VPN speed": [
         "La velocitat VPN més alta"
       ],
@@ -22941,17 +22786,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "${ appName1 }, ${ appName2 } i ${ appName3 } prèmium"
       ],
-      "Premium early access": [
-        "Accés anticipat prèmium"
-      ],
-      "Secure cloud storage": [
-        "Emmagatzematge al núvol segur"
-      ],
       "Secure streaming": [
         "Estríming segur"
-      ],
-      "Support online privacy": [
-        "Doneu suport a la privacitat en línia"
       ]
     },
     "specialoffer: Footer": {
@@ -22995,72 +22831,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
       "/ month": [
         "/ mes"
       ],
       "/month": [
         "/mes"
       ],
-      "1 year": [
-        "1 any"
-      ],
-      "15 months": [
-        "15 mesos"
-      ],
-      "2 years": [
-        "2 anys"
-      ],
-      "30 months": [
-        "30 mesos"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Facturat a ${ amount } durant 1 mes"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Facturat a ${ amount } durant 12 mesos"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Facturat a ${ amount } durant 15 mesos"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Facturat a ${ amount } durant 24 mesos"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Facturat a ${ amount } durant 30 mesos"
-      ],
       "Get the deal": [
         "Aconseguiu l'oferta"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Es renova al cap d'1 any a un preu amb descompte de ${ discountedAmount } en lloc de ${ regularAmount } (${ discount }% de descompte)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Es renova al cap de 2 anys a un preu amb descompte de ${ discountedAmount } en lloc de ${ regularAmount } (${ discount }% de descompte)"
-      ],
       "Save ${ discount }%": [
         "Estalvieu el ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "El preu estàndard és ${ amount } durant 1 mes"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "El preu estàndard és ${ amount } durant 12 mesos"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "El preu estàndard és ${ amount } durant 15 mesos"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "El preu estàndard és ${ amount } durant 24 mesos"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "El preu estàndard és ${ amount } durant 30 mesos"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "L'oferta especial és vàlida durant els primers 2 anys"
       ]
     },
     "specialoffer: Title": {
@@ -23087,29 +22868,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Milloreu i estalvieu més amb 2 anys de ${ planName }"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de transmissió en línia a tot el món, bloquejador de programari maliciós i anuncis, etc."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis d'estríming a tot el món, bloquejador de programari maliciós i anuncis, etc."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol xifrat, compartició de fitxers, etc."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfecte per a famílies o equips petits. Cadascú pot tenir la seva pròpia safata d'entrada i els seus propis àlies. Requereix un domini personalitzat."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Rebeu sense cap cost addicional les versions de pagament de tots els nous serveis de privacitat que publicarem en el futur, juntament amb l'accés anticipat a totes les característiques i productes futurs."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ]
     },
     "Spotlight": {
@@ -24568,20 +24326,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detalls dels esdeveniments que no s'han pogut exportar"
-      ]
-    },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Creeu detalls d'inici de sessió segurs en tots els vostres dispositius. Inclou, entre d'altres, àlies il·limitats, 20 caixes fortes, autenticació de doble factor (2FA) i inserció automàtica de targetes de crèdit."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inclou, entre d'altres, més de 2950 servidors en més de 65 països, connexió fins a 10 dispositius, accés a serveis de transmissió en línia de tot el món i bloqueig de programari maliciós i d'anuncis."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
       ]
     },
     "Tab": {
