@@ -110,6 +110,7 @@ function bundle_extension_from_sources {
         -x "*/node_modules/*" \
         -x "test/*" \
         -x "packages/config/*" \
+        -x "packages/activation/*" \
         -x "packages/drive/*" \
         -x "packages/drive-store/*" \
         -x "packages/docs-proto/*" \
