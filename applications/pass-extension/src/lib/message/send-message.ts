@@ -1,6 +1,5 @@
 import type {
     MessageFailure,
-    MessageSuccess,
     PortFrameForwardingMessage,
     WorkerMessage,
     WorkerMessageResponse,
@@ -86,14 +85,7 @@ sendMessage.onSuccess = async <T extends WorkerMessageWithSender>(
         }
     });
 
-export const successMessage = <T extends {}>(message?: T) =>
-    ({ type: 'success', ...(message ?? {}) }) as MessageSuccess<T>;
-
-export const errorMessage = (error?: string): MessageFailure => ({
-    type: 'error',
-    error: error ?? 'unknown error',
-    payload: error /* needed for Proton Account auth-ext page */,
-});
+export { errorMessage, resolveMessageResponse, successMessage } from './response';
 
 export const resolveMessageFactory =
     (sender: ClientEndpoint): MessageWithSenderFactory =>
