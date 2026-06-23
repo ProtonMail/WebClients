@@ -138,10 +138,10 @@
         "${ MAIL_APP_NAME } uygulamasını kaldır"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
-        "Donanım hızlandırma etkinleştirildiğinde uygulama görüntü işleme için cihazınızın özel grafik donanımını kullanır. Bu durum bazı sistemlerde uyumluluk sorunlarına yol açabilir."
+        "Donanım hızlandırma açıldığında, uygulama görselleştirme için aygıtınızın özel grafik donanımını kullanır. Bu durum bazı sistemlerde uyumluluk sorunlarına yol açabilir."
       ],
       "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
-        "Donanım hızlandırması olmadığında uygulama grafik kartınız yerine yazılım tabanlı görüntü işlemeyi kullanır. Animasyonların daha yavaş olduğunu ve CPU kullanımının daha yüksek olduğunu fark edebilirsiniz."
+        "Donanım hızlandırma kapalıyken görüntüler grafik kartınız yerine yazılım ile oluşturulur. Canlandırmaların daha yavaş ve işlemci kullanımının daha yüksek olduğunu fark edebilirsiniz."
       ],
       "Zoom": [
         "Yakınlaştır"
