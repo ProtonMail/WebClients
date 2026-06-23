@@ -329,10 +329,10 @@
         "Oluşturucuyu küçült"
       ],
       "Copy '${ code }' to clipboard": [
-        "'${ code }' ifadesini panoya kopyala"
+        "'${ code }' kodunu panoya kopyala"
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
-        "'${ code }' ifadesini panoya kopyala ve Çöp Kutusuna taşı"
+        "'${ code }' kodunu panoya kopyala ve çöpe at"
       ],
       "Copy address": [
         "Adresi kopyala"
@@ -691,7 +691,7 @@
         "Gizle"
       ],
       "Hide ${ title }": [
-        "${ title } öğesini gizle"
+        "${ title } ögesini gizle"
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
@@ -1382,7 +1382,7 @@
         "Görüntüle"
       ],
       "Show ${ title }": [
-        "${ title } öğesini göster"
+        "${ title } ögesini görüntüle"
       ],
       "Show advanced PGP settings": [
         "Gelişmiş PGP ayarlarını görüntüle"
@@ -2419,6 +2419,11 @@
       ],
       "Take a tour": [
         "Keşfedin"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Önceki içe aktarmalardan gelen yinelenen iletiler atlanacak. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski iletileri içe aktarabilirsiniz."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4250,7 +4255,7 @@
         "Yazma yardımcısına ve diğer hizmetlere sınırsız erişim için ${ BRAND_NAME } Duo tarifesine yükseltin."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Yazma yardımcısına ve diğer özelliklere sınırsız erişim için ${ LUMO_SHORT_APP_NAME } planına yükseltin."
+        "Yazma yardımcısına ve diğer hizmetlere sınırsız erişim için ${ LUMO_SHORT_APP_NAME } tarifesine yükseltin."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alın."
@@ -4324,10 +4329,10 @@
         "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmaya devam edebilmek için onu aboneliğinize ekleyin."
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için aboneliğinize ekleyin."
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "${ MAIL_APP_NAME } içerisinde ${ LUMO_SHORT_APP_NAME } kullanmaya devam etmek için yöneticinizden erişim izni isteyin."
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için yöneticinizden erişme izni vermesini isteyin."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
@@ -4377,8 +4382,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Eski e-postalarınızı içe aktaracağız, yinelenenleri atlayacağız ve Gmail hesabınızla bağlantı kurarak yeni iletilerin otomatik olarak görünmesini sağlayacağız. Easy Switch ayarlarından istediğiniz zaman içe aktarma işlemini geri alabilirsiniz"
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Eski e-postalarınız içe aktarılacak ve bundan sonra Gmail üzerine gelen yeni iletiler eşitlenecek"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
@@ -5051,6 +5056,9 @@
       "No contacts found to import": [
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
+      "No drive found to import": [
+        "İçe aktarılacak drive bulunamadı"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
@@ -5062,6 +5070,9 @@
       ],
       "Not a valid number": [
         "Numara geçerli değil"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -5376,6 +5387,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -6815,10 +6829,10 @@
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
-        "${ LUMO_SHORT_APP_NAME } e-postaları daha iyi, hızlı ve zahmetsizce hazırlamanıza yardımcı olur."
+        "${ LUMO_SHORT_APP_NAME }, hızlı ve kolayca daha iyi e-postalar oluşturmanızı sağlar."
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
-        "${ LUMO_SHORT_APP_NAME } paneli"
+        "${ LUMO_SHORT_APP_NAME } panosu"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kuruluşunuzu da koruyabilir."
@@ -7094,9 +7108,6 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak",
         "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak"
-      ],
-      "All your files will be imported": [
-        "Tüm dosyalarınız içe aktarılacak"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logosu"
@@ -7610,6 +7621,9 @@
         "dosya eklendi",
         "dosya eklendi"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad, bir koşul ve bir işlem bulunmalıdır."
       ],
@@ -7794,8 +7808,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Resim ekle",
-        "Resimleri ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7891,7 +7904,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız olarak ayarlayın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -9050,6 +9063,9 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
       ],
+      "You have ${ unread } in ${ label }.": [
+        "${ label } etiketinde ${ unread } iletiniz var."
+      ],
       "You have ${ unread } in your inbox.": [
         "Gelen kutunuzda ${ unread } var."
       ],
@@ -9721,9 +9737,6 @@
       "Category": [
         "Kategori"
       ],
-      "Category:": [
-        "Kategori:"
-      ],
       "CC": [
         "Kopya"
       ],
@@ -9794,7 +9807,7 @@
         "Kredi"
       ],
       "Current context": [
-        "Mevcut bağlam"
+        "Geçerli bağlam"
       ],
       "Date": [
         "Tarih"
@@ -9842,7 +9855,7 @@
         "örneğin, Amazon, eBay, Etsy"
       ],
       "Elements in store": [
-        "Mağazadaki öğeler"
+        "Depolama alanındaki bileşenler"
       ],
       "Email": [
         "E-posta"
@@ -9896,7 +9909,7 @@
         "${ newFolderName } klasörü oluşturulamadı"
       ],
       "Filter": [
-        "Filtre"
+        "Süz"
       ],
       "Filter Name": [
         "Süzgeç adı"
@@ -9976,6 +9989,9 @@
       "Import to:": [
         "Şunun içine aktar:"
       ],
+      "Import your emails": [
+        "E-postalarınızı içe aktarın"
+      ],
       "Include application logs in bug report": [
         "Uygulama günlükleri sorun bildirimine eklensin"
       ],
@@ -9998,7 +10014,7 @@
         "Şöyle etiketlensin"
       ],
       "Label ID": [
-        "Etiket Kimliği"
+        "Etiket kimliği"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -10028,7 +10044,7 @@
         "Hata ayıklama bilgilerini e-posta ile gönder"
       ],
       "Mail logs": [
-        "Posta günlükleri"
+        "E-posta günlükleri"
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
@@ -10277,7 +10293,7 @@
         "Değerlendirme"
       ],
       "Store state": [
-        "Durumu kaydet"
+        "Depolama alanı durumu"
       ],
       "Street address": [
         "Sokak adresi"
@@ -12546,10 +12562,10 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Yes, don't show again": [
-        "Evet bir daha gösterme"
+        "Evet, bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -13144,22 +13160,22 @@
         "Konu"
       ],
       "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
-        "${ subject } kısmına ne yazması gerektiğini belirtin. Örneğin: “Yaklaşan etkinlikleri bir bülten aracılığıyla duyur”"
+        "${ subject } tarafından ne yazılacağını belirtin. Örneğin: “Yaklaşan etkinlikleri e-posta ile duyur”"
       ],
       "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Spor salonu üyeliğimi iptal et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Spor salonu üyeliğimi iptal et”"
       ],
       "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Jane’i partime davet et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Ayşe'yi partime davet et”"
       ],
       "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Bir projede yardım ettiği için iş arkadaşıma teşekkür et”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Bir projede yardım ettiği için iş arkadaşıma teşekkür et”"
       ],
       "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Staj için bir ön yazı yaz”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Staj için bir giriş yazısı yaz”"
       ],
       "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
-        "${ subject } kısmına ne yazması gerektiğini söyleyin. Örneğin: “Bir müşteriye yanıt e-postası yaz”"
+        "${ subject } tarafından ne yazılacağını söyleyin. Örneğin: “Bir müşteriye yanıt e-postası yaz”"
       ],
       "Text": [
         "Yazı"
@@ -13297,102 +13313,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "SPRING SALE 2026": [
-        "BAHAR İNDİRİMİ 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "2 TB data storage": [
-        "2 TB veri depolama alanı"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
-      ],
-      "3 TB data storage": [
-        "3 TB veri depolama alanı"
-      ],
-      "500 GB storage": [
-        "500 GB depolama alanı"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
-      ],
-      "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail, Pass, Drive, VPN ve Calender'ın tüm ücretli özellikleri"
-      ],
-      "Block ads, trackers, and malware": [
-        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
-      ],
-      "Built-in 2FA authenticator": [
-        "Dahili iki adımlı kimlik doğrulayıcı"
-      ],
-      "Connect 10 devices at once": [
-        "Aynı anda 10 aygıtla bağlanın"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } uygulamasına tam erişim"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Kolay arama ve favoriler ile tüm sohbet geçmişi"
-      ],
-      "Individual accounts for 6 users": [
-        "6 kullanıcı için bireysel hesaplar"
-      ],
-      "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
-      ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Stronger protection against cyber threats": [
-        "Siber tehditlere karşı daha güçlü koruma"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
-      ],
-      "Unlimited daily chats": [
-        "Sınırsız günlük sohbet"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "12 aylığına"
-      ],
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
       ]
     },
     "q2campaign2026: Action": {
@@ -15920,7 +15840,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu afişi gizli tutmak ister misiniz?"
+        "Bu duyuru gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"
@@ -16551,7 +16471,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "Load image": [
         "Görsel yükle"
