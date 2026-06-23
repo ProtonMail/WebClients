@@ -12,7 +12,6 @@ import {
     addParticipantRecording,
     removeParticipantRecording,
     selectIsLocalParticipantRecording,
-    setIsLocalRecording,
     startLocalRecordingTimer,
     stopLocalRecordingTimer,
 } from '@proton/meet/store/slices/recordingStatusSlice';
@@ -37,7 +36,6 @@ import { isWebCodecsRecordingSupported } from './mediaEncoder/capabilities';
 import { RecordingSession } from './recordingSession/recordingSession';
 
 export const useMeetingRecorder = () => {
-    const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
     const isWebCodecsRecordingEnabled = useFlag('MeetRecordingWebCodecs');
 
     const hasRecordingPermissions = useHaveRecordingPermissions();
@@ -81,12 +79,8 @@ export const useMeetingRecorder = () => {
 
     const markRecordingStopped = useCallback(() => {
         dispatch(stopLocalRecordingTimer());
-        if (isMeetMultipleRecordingEnabled) {
-            dispatch(removeParticipantRecording(room.localParticipant.identity));
-        } else {
-            dispatch(setIsLocalRecording(false));
-        }
-    }, [dispatch, isMeetMultipleRecordingEnabled, room]);
+        dispatch(removeParticipantRecording(room.localParticipant.identity));
+    }, [dispatch, room]);
 
     const cleanupSession = useCallback(async () => {
         const session = sessionRef.current;
@@ -219,11 +213,7 @@ export const useMeetingRecorder = () => {
                 initialRecordedTracks: recordedTracks,
             });
 
-            if (isMeetMultipleRecordingEnabled) {
-                dispatch(addParticipantRecording(room.localParticipant.identity));
-            } else {
-                dispatch(setIsLocalRecording(true));
-            }
+            dispatch(addParticipantRecording(room.localParticipant.identity));
             dispatch(startLocalRecordingTimer());
 
             void publishRecordingStatus(RecordingStatus.Started);
@@ -248,7 +238,6 @@ export const useMeetingRecorder = () => {
         recordedTracks,
         reportMeetError,
         cleanupSession,
-        isMeetMultipleRecordingEnabled,
         isWebCodecsRecordingEnabled,
         userId,
         dispatch,

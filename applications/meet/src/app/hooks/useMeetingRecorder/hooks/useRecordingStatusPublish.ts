@@ -4,37 +4,16 @@ import { useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMLSContext } from '../../../contexts/MLSContext';
 import { PublishableDataTypes, RecordingStatus } from '../../../types';
 
 export const useRecordingStatusPublish = (status: RecordingStatus) => {
-    const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
-
     const room = useRoomContext();
     const mls = useMLSContext();
 
     const publishRecordingStatus = useCallback(
         async (status: RecordingStatus, targetParticipantIdentity?: string) => {
-            if (!isMeetMultipleRecordingEnabled) {
-                const message = {
-                    message: status,
-                    targetParticipantIdentity,
-                    timestamp: Date.now(),
-                    type: PublishableDataTypes.RecordingStatus,
-                };
-
-                const encodedMessage = new TextEncoder().encode(JSON.stringify(message));
-
-                await room.localParticipant.publishData(encodedMessage, {
-                    reliable: true,
-                    destinationIdentities: targetParticipantIdentity ? [targetParticipantIdentity] : undefined,
-                });
-
-                return;
-            }
-
             if (!mls || !room) {
                 return;
             }
@@ -56,7 +35,7 @@ export const useRecordingStatusPublish = (status: RecordingStatus) => {
                 destinationIdentities: targetParticipantIdentity ? [targetParticipantIdentity] : undefined,
             });
         },
-        [isMeetMultipleRecordingEnabled, mls, room]
+        [mls, room]
     );
 
     useEffect(() => {
