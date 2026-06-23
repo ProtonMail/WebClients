@@ -53,7 +53,11 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
                 .on(
                     contentScriptMessage({
                         type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
-                        payload: {},
+                        /** The dropdown lives in a separate frame from the focused field, so
+                         * pass the target `frameId`: the worker resolves its origin to scope
+                         * candidates to that frame (avoids offering top-level credentials in
+                         * an unrelated cross-origin sub-frame). */
+                        payload: { frameId: payload.frameId },
                     }),
                     (res) => {
                         if (res.type === 'success') setState(res);
