@@ -53,6 +53,8 @@ function getMapping(suffix: string): Record<PaymentTelemetryContext, string> {
         'ctx-signup-mail': `ctx_signup_mail_${suffix}`,
         'ctx-signup-referral': `ctx_signup_referral_${suffix}`,
         'ctx-email-reservation': `ctx_email_reservation_${suffix}`,
+        'settings-upgrade': `settings_upgrade_${suffix}`,
+        'account-home': `account_home_${suffix}`,
         'subscription-modification': `subscription_modification_${suffix}`,
         other: `other_${suffix}`,
     } as const satisfies Record<PaymentTelemetryContext, string>;
@@ -468,6 +470,65 @@ export function reportInitialization({
     ...rest
 }: PaymentInitTelemetryPayload) {
     const eventName = INITIALIZATION_CONTEXT_MAPPING[context] ?? 'unknown_context_init';
+    telemetry.sendCustomEvent(eventName, {
+        ...formatPaymentTelemetryPayload(userCurrency, subscription, selectedPlanIDs),
+        ...rest,
+    });
+}
+// #endregion
+
+// ============================================================================
+// #region reportUpsellPageView / reportUpsellModalOpen
+// ============================================================================
+
+/**
+ * Telemetry context for the two symmetric upsell surfaces being compared:
+ * the legacy Upgrade settings page and the new account Home page.
+ */
+export type UpsellTelemetryContext = Extract<PaymentTelemetryContext, 'settings-upgrade' | 'account-home'>;
+
+/**
+ * Payload for the upsell-surface page-view and modal-open events.
+ *
+ * These events describe a surface (which page the user is on), not an in-progress checkout,
+ * so they only carry the "current*" subscription properties plus `build`/`product`.
+ */
+export type UpsellTelemetryPayload = {
+    /** Which upsell surface emitted the event */
+    context: UpsellTelemetryContext;
+    /** User's default currency (from User object) */
+    userCurrency: Currency | undefined;
+    /** Plan and addons being purchased */
+    selectedPlanIDs: PlanIDs | undefined;
+    /** User's current subscription (undefined or FreeSubscription for free users) */
+    subscription: Subscription | FreeSubscription | undefined;
+    /** Application build name (e.g., 'proton-account', 'proton-vpn-settings') */
+    build: APP_NAMES;
+    /** Product context within the app */
+    product: ProductParam;
+};
+
+/** Event name mapping for upsell modal-open events */
+export const UPSELL_MODAL_OPEN_CONTEXT_MAPPING = getMapping('open_modal');
+
+/**
+ * Reports that the subscription modal was opened from an upsell surface.
+ *
+ * **When to call:** Once per modal open, when the modal actually opens from this surface.
+ * **Purpose:** Numerator for the per-page modal-open rate.
+ *
+ * @example
+ * reportUpsellModalOpen({ context: 'account-home', userCurrency, subscription, build, product });
+ * // Sends: account_home_open_modal
+ */
+export function reportUpsellModalOpen({
+    context,
+    userCurrency,
+    subscription,
+    selectedPlanIDs,
+    ...rest
+}: UpsellTelemetryPayload) {
+    const eventName = UPSELL_MODAL_OPEN_CONTEXT_MAPPING[context] ?? 'unknown_context_open_modal';
     telemetry.sendCustomEvent(eventName, {
         ...formatPaymentTelemetryPayload(userCurrency, subscription, selectedPlanIDs),
         ...rest,

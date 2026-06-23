@@ -65,6 +65,7 @@ import {
     TwoFactorSection,
     UnAuthenticated,
     UpgradeVpnSection,
+    UpsellModalTelemetryProvider,
     UserDropdown,
     UsernameSection,
     VpnAlsoInYourPlanSection,
@@ -337,11 +338,13 @@ const MainContainer: FunctionComponent = () => {
                                             wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
                                             style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
                                         >
-                                            <YourPlanSectionV2 app={app} />
-                                            <YourPlanUpsellsSectionV2 app={app} />
-                                            <VPNDownloadAndInfoSection app={app} />
-                                            <VpnAlsoInYourPlanSection app={app} />
-                                            <VpnBlogSection />
+                                            <UpsellModalTelemetryProvider context="account-home">
+                                                <YourPlanSectionV2 app={app} />
+                                                <YourPlanUpsellsSectionV2 app={app} />
+                                                <VPNDownloadAndInfoSection app={app} />
+                                                <VpnAlsoInYourPlanSection app={app} />
+                                                <VpnBlogSection />
+                                            </UpsellModalTelemetryProvider>
                                         </PrivateMainSettingsArea>
                                     </Route>
                                 )}
@@ -354,19 +357,21 @@ const MainContainer: FunctionComponent = () => {
                                             wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
                                             style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
                                         >
-                                            <YourPlanSectionV2
-                                                app={app}
-                                                editBillingCycle={true}
-                                                cta={<DashboardComparePlansCTA app={app} />}
-                                            />
-                                            <SubscriptionsSection />
-                                            <PaymentMethodsSection app={app} />
-                                            <CreditsSection app={app} />
-                                            <GiftCodeSection />
-                                            <InvoicesSection app={app} />
-                                            <CancelSubscriptionSection app={app} />
-                                            <DowngradeSubscriptionSection app={app} />
-                                            <CancelSubscriptionViaSupportSection />
+                                            <UpsellModalTelemetryProvider context="account-home">
+                                                <YourPlanSectionV2
+                                                    app={app}
+                                                    editBillingCycle={true}
+                                                    cta={<DashboardComparePlansCTA app={app} />}
+                                                />
+                                                <SubscriptionsSection />
+                                                <PaymentMethodsSection app={app} />
+                                                <CreditsSection app={app} />
+                                                <GiftCodeSection />
+                                                <InvoicesSection app={app} />
+                                                <CancelSubscriptionSection app={app} />
+                                                <DowngradeSubscriptionSection app={app} />
+                                                <CancelSubscriptionViaSupportSection />
+                                            </UpsellModalTelemetryProvider>
                                         </PrivateMainSettingsArea>
                                     </Route>
                                 )}

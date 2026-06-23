@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,13 +6,16 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
+import useConfig from '@proton/components/hooks/useConfig';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import type { FreeSubscription, FullPlansMap } from '@proton/payments';
 import {
     CYCLE,
+    DEFAULT_CYCLE,
     FREE_PLAN,
     type FreePlanDefault,
     PLANS,
@@ -35,7 +38,8 @@ import {
     hasVPNPassBundle,
     hasVisionary,
 } from '@proton/payments';
-import { isExFamilyTrial } from '@proton/payments/core/subscription/helpers';
+import { getPlanIDs, isExFamilyTrial } from '@proton/payments/core/subscription/helpers';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { PaymentsContextProvider, isPaymentsPreloaded } from '@proton/payments/ui';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -742,12 +746,15 @@ interface YourPlanSectionV2Props {
 
 const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     const [user] = useUser();
+    const { APP_NAME } = useConfig();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const variant = useVariant('VPNDashboard');
+    const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
+    const currentPlanIDs = getPlanIDs(subscription);
 
     useLoad();
 
@@ -760,7 +767,27 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
         variant,
     });
 
-    const loading = loadingSubscription || loadingPlans || plansMapLoading || upsellLoading;
+    const loading = loadingSubscription || loadingPlans || plansMapLoading || upsellLoading || loadingCurrency;
+
+    const hasTrackedPageView = useRef(false);
+    useEffect(() => {
+        if (loading || !subscription || hasTrackedPageView.current) {
+            return;
+        }
+        hasTrackedPageView.current = true;
+        checkoutTelemetry.reportInitialization({
+            context: 'account-home',
+            userCurrency: user?.Currency,
+            subscription,
+            build: APP_NAME,
+            product: app,
+            selectedCoupon: subscription.CouponCode,
+            selectedCurrency: subscription.Currency || preferredCurrency,
+            selectedCycle: subscription.Cycle || DEFAULT_CYCLE,
+            selectedPlanIDs: currentPlanIDs,
+            selectedStep: null,
+        });
+    }, [loading, subscription]);
 
     if (!subscription || !plans || loading) {
         return <Loader />;
