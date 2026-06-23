@@ -35,9 +35,15 @@ const getIframeHtml = ({
     iframeSVG,
 }: Options) => {
     const messageHead = locateHead(messageDocument) || '';
-    const bodyStyles = messageDocument?.querySelector('body')?.getAttribute('style');
+    const body = messageDocument?.querySelector('body');
+    const bodyStyles = body?.getAttribute('style');
 
-    const bodyClasses = messageDocument?.querySelector('body')?.getAttribute('class');
+    const bodyClasses = body?.getAttribute('class');
+
+    const htmlLang = messageDocument?.getAttribute('lang');
+    const bodyLang = body?.getAttribute('lang');
+    const htmlLangAttr = htmlLang ? `lang="${escapeHTMLAttribute(htmlLang)}"` : '';
+    const bodyLangAttr = bodyLang ? `lang="${escapeHTMLAttribute(bodyLang)}"` : '';
 
     /**
      * About this line:
@@ -47,7 +53,7 @@ const getIframeHtml = ({
     // Plain text needs content needs to have no spaces in order to be correctly displayed
     if (isPlainText) {
         const emailHead = `<head><style>${themeCSSVariables}</style><style>${iframeCSSStyles}</style>${messageHead}</head>`;
-        const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text ${
+        const emailBody = `<body ${bodyLangAttr}><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text ${
             isPrint ? MESSAGE_IFRAME_PRINT_CLASS : ''
         }">${
             isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''
@@ -55,7 +61,7 @@ const getIframeHtml = ({
             isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>` : ''
         }</div></body>`;
 
-        return `<html>${emailHead}${emailBody}</html>`;
+        return `<html ${htmlLangAttr}>${emailHead}${emailBody}</html>`;
     }
 
     let htmlContent = emailContent;
@@ -78,13 +84,14 @@ const getIframeHtml = ({
      */
     return `
       <!DOCTYPE html>
-      <html>
+      <html ${htmlLangAttr}>
         <head>
           <style>${themeCSSVariables}</style>
           <meta name="viewport" content="width=device-width">
           <style>${iframeCSSStyles}</style>
           ${messageHead}
         </head>
+        <body ${bodyLangAttr}>
         ${iframeSVG}
         <div id="${MESSAGE_IFRAME_ROOT_ID}" ${isPrint ? `class="${MESSAGE_IFRAME_PRINT_CLASS}"` : ''}>
           ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''}
