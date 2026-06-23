@@ -1,14 +1,20 @@
 import { mockHandlers } from 'proton-pass-extension/__mocks__/app/worker/channel';
 import { sender } from 'proton-pass-extension/__mocks__/mocks';
+import { errorMessage, resolveMessageResponse } from 'proton-pass-extension/lib/message/response';
 
 const browser = {
     runtime: {
         getVersion: jest.fn(() => '0.0.1'),
         getURL: jest.fn((asset: string) => `test://${asset}`),
-        sendMessage: jest.fn((_, message) => {
+        sendMessage: jest.fn(async (_, message) => {
             const handler = mockHandlers.get(message.type);
-            if (handler) return handler(message, sender);
-            return false;
+            if (handler) {
+                try {
+                    return resolveMessageResponse(await handler(message, sender));
+                } catch (error) {
+                    return errorMessage(error instanceof Error ? error.message : undefined);
+                }
+            }
         }),
         getManifest: () => ({}),
         requestUpdateCheck: jest.fn().mockResolvedValue(['no_update']),
@@ -18,13 +24,14 @@ const browser = {
         },
     },
     permissions: {
-        request: jest.fn(async () => true),
-        contains: jest.fn(async () => true),
+        request: jest.fn().mockResolvedValue(true),
+        contains: jest.fn().mockResolvedValue(true),
         onAdded: { addListener: jest.fn() },
         onRemoved: { addListener: jest.fn() },
     },
     action: {
         setBadgeBackgroundColor: jest.fn().mockResolvedValue(undefined),
+        setBadgeText: jest.fn().mockResolvedValue(undefined),
     },
     privacy: {
         services: {
@@ -38,10 +45,17 @@ const browser = {
         get: jest.fn(),
         onAlarm: { addListener: jest.fn() },
     },
-    webNavigation: { getAllFrames: jest.fn(async () => []) },
+    webNavigation: {
+        getAllFrames: jest.fn().mockResolvedValue([]),
+        getFrame: jest.fn().mockResolvedValue({}),
+    },
     tabs: {
-        sendMessage: jest.fn(async () => ({})),
-        query: jest.fn(async () => []),
+        sendMessage: jest.fn().mockResolvedValue({}),
+        query: jest.fn().mockResolvedValue([]),
+        get: jest.fn().mockResolvedValue({}),
+        onUpdated: {
+            addListener: jest.fn(),
+        },
     },
 };
 
@@ -56,6 +70,7 @@ export const clearBrowserMocks = () => {
     browser.permissions.onAdded.addListener.mockClear();
     browser.permissions.onRemoved.addListener.mockClear();
     browser.action.setBadgeBackgroundColor.mockClear();
+    browser.action.setBadgeText.mockClear();
     browser.privacy.services.autofillAddressEnabled.get.mockClear();
     browser.privacy.services.autofillAddressEnabled.set.mockClear();
     browser.privacy.services.passwordSavingEnabled.get.mockClear();
@@ -65,8 +80,11 @@ export const clearBrowserMocks = () => {
     browser.alarms.get.mockClear();
     browser.alarms.onAlarm.addListener.mockClear();
     browser.webNavigation.getAllFrames.mockClear();
+    browser.webNavigation.getFrame.mockClear();
     browser.tabs.sendMessage.mockClear();
     browser.tabs.query.mockClear();
+    browser.tabs.get.mockClear();
+    browser.tabs.onUpdated.addListener.mockClear();
 };
 
 export default browser;
