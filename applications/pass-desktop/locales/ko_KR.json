@@ -777,6 +777,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ],
+      "Copy instructions": [
+        "지침 복사"
+      ],
+      "Copy token": [
+        "토큰 복사"
+      ],
+      "Create token": [
+        "토큰 생성"
+      ],
+      "Manage vault access": [
+        "금고 접근 관리"
+      ],
+      "New token": [
+        "새 토큰"
+      ],
+      "View agent activity": [
+        "에이전트 활동 보기"
       ]
     },
     "App menu": {
@@ -1348,6 +1366,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "타 ${ PASS_APP_NAME } 클라이언트로 인해 사용자의 PIN 코드가 삭제되었습니다."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "에이전트 구성 지침을 불러올 수 없습니다. 아래 토큰을 복사해 주세요. 토큰은 더 이상 표시되지 않습니다."
+      ],
+      "Expiration must be between 1 hour and 1 year": [
+        "만료일은 1시간에서 1년 사이여야 합니다."
+      ],
+      "Failed to load access tokens": [
+        "액세스 토큰을 불러올 수 없음"
+      ],
+      "Name must be 191 characters or fewer": [
+        "이름은 191자 이하여야 합니다."
       ]
     },
     "Error message": {
@@ -1993,7 +2023,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2630,6 +2660,93 @@
       ],
       "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
         "선택한 금고에 대한 이 토큰은 읽기 전용입니다. 금고 내 항목을 읽을 수 있으나 편집하거나 공유하거나 타인을 초대할 수는 없습니다. 이 설정을 추후 변경할 수 있습니다."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size }개 선택됨"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "액세스 토큰 \"${ action.token.Name }\"이(가) 이미 만료되었습니다. 만약 삭제하면, 더 이상 표시되지 않습니다."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "액세스 토큰 \"${ action.token.Name }\"이(가) 즉시 중단됩니다. 이 작업은 실행 취소할 수 없습니다."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "${ passCliLink }와 함께 사용되는 액세스 토큰을 통해 CI/CD를 자동화하거나 AI 에이전트가 작업을 실행하는 데 필요한 접근 권한을 부여할 수 있습니다."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "60(1시간) ~ 52600(1년) 사이"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "아래 마크다운을 복사하여 AI 에이전트에게 보내주세요. 토큰은 이번만 표시됩니다."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "지금 해당 토큰을 복사하세요. 보안 상의 이유로, 더 이상 표시되지 않습니다."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "스크립트 및 도구와 ${ PASS_APP_NAME }를 통합하기 위한 토큰을 생성해 보세요."
+      ],
+      "Created ${ createdDate }": [
+        "${ createdDate } 생성됨"
+      ],
+      "Created item": [
+        "생성된 항목"
+      ],
+      "Deleted item": [
+        "항목이 삭제되었습니다"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "${ passCliLink }(에)서 pass-cli를 다운로드하세요."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "이 에이전트 토큰이 수행한 모든 작업, 가장 최근의 작업입니다."
+      ],
+      "Expired on ${ formattedDate }": [
+        "${ formattedDate }에 만료됨"
+      ],
+      "Expires on ${ formattedDate }": [
+        "${ formattedDate }에 만료"
+      ],
+      "Log out of any existing session:": [
+        "활성 세션에서 로그아웃:"
+      ],
+      "Moved item to trash": [
+        "항목을 휴지통으로 이동했습니다."
+      ],
+      "No activity recorded yet.": [
+        "아직 기록된 활동이 없습니다."
+      ],
+      "None selected": [
+        "선택되지 않음"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "지난 30일 동안 만료된 토큰만 표시됩니다. 이전 토큰은 자동으로 삭제됩니다."
+      ],
+      "Read item": [
+        "항목 읽기"
+      ],
+      "Restored item from trash": [
+        "휴지통으로부터 항목이 복구되었습니다"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "\"${ token.Name }\"이(가) 읽을 수 있는 금고를 선택하세요."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "로그인하여 금고를 나열하여 토큰을 테스트하세요:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "에이전트는 수행하는 모든 작업에 대한 이유를 제공해야 하며, 각 작업은 검토할 수 있는 감사 로그에 기록됩니다. 토큰을 생성한 후 AI 에이전트에 복사 붙여넣기하라는 지침을 받게 됩니다."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "AI 에이전트에 전송하도록 ${ url }(으)로 이동하여 지침을 복사할 수 있습니다."
+      ],
+      "Updated item": [
+        "업데이트된 항목"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "${ PASS_APP_NAME } Plus로 업그레이드하여 액세스 토큰을 생성하고 프로그래밍 방식으로 ${ PASS_APP_NAME }을 사용하세요."
+      ],
+      "Vault access granted": [
+        "금고 접근 권한 부여됨"
       ]
     },
     "Keyboard key": {
@@ -3852,6 +3969,36 @@
       ],
       "Expires in": [
         "만료 시까지:"
+      ],
+      "1 day": [
+        "1일"
+      ],
+      "1 month": [
+        "1개월"
+      ],
+      "1 week": [
+        "1주"
+      ],
+      "1 year": [
+        "1년"
+      ],
+      "Access tokens": [
+        "액세스 토큰"
+      ],
+      "Custom": [
+        "사용자 지정"
+      ],
+      "Custom expiration (minutes)": [
+        "사용자 지정 만료 (분)"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "만료된 토큰 (${ expired.length })"
+      ],
+      "Use for AI agent": [
+        "AI 에이전트에 사용"
+      ],
+      "Vault access": [
+        "금고 접근"
       ]
     },
     "Link": {
@@ -4176,6 +4323,9 @@
       ],
       "Used on ${ url }": [
         "${ url }(애)서 사용됨"
+      ],
+      "e.g. 60": [
+        "예: 60"
       ]
     },
     "Security Center - Info": {
@@ -4812,6 +4962,30 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "액세스 토큰을 사용하려면 ${ PASS_APP_NAME } Plus가 필요합니다"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "\"${ token.Name }\"의 활동"
+      ],
+      "Agent setup instructions": [
+        "에이전트 설정 지침"
+      ],
+      "Create new access token": [
+        "새로운 액세스 토큰 생성"
+      ],
+      "Delete access token?": [
+        "액세스 토큰을 삭제합니까?"
+      ],
+      "Manage vault access": [
+        "금고 접근 관리"
+      ],
+      "No access tokens yet": [
+        "액세스 토큰이 없습니다"
+      ],
+      "Your new access token": [
+        "새로운 액세스 토큰"
       ]
     },
     "Title_cloned_item": {
@@ -5154,6 +5328,40 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "활동"
+      ],
+      "Activity details could not be loaded.": [
+        "활동 상세 정보를 불러올 수 없습니다."
+      ],
+      "Folder": [
+        "폴더"
+      ],
+      "Item": [
+        "항목"
+      ],
+      "Reason": [
+        "사유"
+      ],
+      "Vault": [
+        "금고"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "활성화"
+      ],
+      "Agent": [
+        "에이전트"
+      ],
+      "Expired": [
+        "만료됨"
+      ],
+      "Expiring soon": [
+        "곧 만료"
       ]
     }
   }
