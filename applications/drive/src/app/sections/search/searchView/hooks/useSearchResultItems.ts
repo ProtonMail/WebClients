@@ -100,7 +100,7 @@ export const useSearchResultItems = () => {
 
             if (item.mediaType) {
                 const openInDocInfo = getOpenInDocsInfo(item.mediaType);
-                if (openInDocInfo) {
+                if (openInDocInfo && openInDocInfo.isNative) {
                     void openDocsOrSheetsDocument({
                         uid: node.uid,
                         ...openInDocInfo,
