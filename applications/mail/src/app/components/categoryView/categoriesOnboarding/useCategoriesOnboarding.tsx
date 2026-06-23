@@ -51,16 +51,17 @@ export const useCategoriesOnboarding = (): OnboardingInfo => {
     const isUserInWelcomeFlow = welcomeFlags.welcomeFlags.isWelcomeFlow;
 
     // Existing users, created before the release of the category view see the onboarding
-    const isExistingUser = isBefore(fromUnixTime(user.CreateTime), new Date(accountDateThreshold.feature.Value));
+    const isExistingUser = isBefore(fromUnixTime(user.CreateTime), fromUnixTime(accountDateThreshold.feature.Value));
 
     const allMailsElementsCount = getLocationCount(MAILBOX_LABEL_IDS.ALL_MAIL);
 
     // B2B users conditions
     if (isUserB2B) {
         const allOnboardingSeen = hasSeenAllOnboarding(AudienceType.B2B, b2bOnboardingViewFlag.feature?.Value ?? 0);
+        const hasCategoryAccess = !!organization?.Settings.MailCategoryViewEnabled;
 
         // The following condition apply for existing and new b2b users
-        const basicEligibility = !allOnboardingSeen && !isUserInWelcomeFlow;
+        const basicEligibility = hasCategoryAccess && !allOnboardingSeen && !isUserInWelcomeFlow;
 
         if (isExistingUser) {
             // Existing users see the spotlight right away
