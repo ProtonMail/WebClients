@@ -4,6 +4,71 @@
     "language": "es_LA"
   },
   "contexts": {
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } se ha unido a la reunión"
+      ],
+      "${ name } left the meeting": [
+        "${ name } ha abandonado la reunión"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } bajó la mano"
+      ],
+      "${ name } raised their hand": [
+        "${ name } levantó la mano"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } reaccionó con ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } dijo: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Un participante se ha unido a la reunión"
+      ],
+      "A participant left the meeting": [
+        "Un participante ha abandonado la reunión"
+      ],
+      "A participant lowered their hand": [
+        "Un participante ha bajado la mano"
+      ],
+      "A participant raised their hand": [
+        "Un participante ha levantado la mano"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Un participante ha reaccionado con ${ emoji }"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Conexión perdida. Reconectando…"
+      ],
+      "New chat message: ${ message }": [
+        "Nuevo mensaje de chat: ${ message }"
+      ],
+      "Now starting recording": [
+        "Comenzó la grabación"
+      ],
+      "Reconnected to the meeting": [
+        "Reconectando a la reunión"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Comenzó la grabación. Al continuar en la reunión, usted reconoce y autoriza que se le grabe."
+      ],
+      "Recording stopped": [
+        "Se detuvo la grabación"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Esta reunión está siendo grabada. Al unirse, reconoce y autoriza que se le grabe."
+      ],
+      "You have been disconnected from the meeting": [
+        "Se ha desconectado de la reunión."
+      ],
+      "You have been muted by the host": [
+        "Se ha silenciado su micrófono"
+      ],
+      "Your camera has been turned off by the host": [
+        "Se ha desactivado su cámara"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -28,6 +93,9 @@
       ],
       "Authenticate": [
         "Autenticar"
+      ],
+      "Back": [
+        "Atrás"
       ],
       "Background blur": [
         "Desenfoque de fondo"
@@ -1512,17 +1580,11 @@
       "Failed to join meeting. Please try again later.": [
         "Error al unirse a la reunión. Intente de nuevo más tarde."
       ],
-      "Failed to load recordings": [
-        "Error al cargar grabaciones"
-      ],
       "Failed to lock meeting": [
         "Error al bloquear la reunión"
       ],
       "Failed to rotate personal meeting link": [
         "Error al rotar el enlace de reunión personal"
-      ],
-      "Failed to save recording": [
-        "Error al guardar la grabación"
       ],
       "Failed to send chat message. Please try again.": [
         "Error al enviar el mensaje de chat. Intente de nuevo."
@@ -2211,9 +2273,6 @@
       ],
       "Recording in progress": [
         "Grabación en curso"
-      ],
-      "Recording saved": [
-        "Grabación guardada"
       ],
       "Recording will begin and attendees will be notified.": [
         "La grabación comenzará y se notificará a los invitados."
@@ -3162,6 +3221,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generar un nuevo enlace para la reunión. El enlace actual dejará de funcionar."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Recurring meeting": [
         "Reunión recurrente"

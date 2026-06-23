@@ -4,6 +4,65 @@
     "language": "pt_BR"
   },
   "contexts": {
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } participou da reunião"
+      ],
+      "${ name } left the meeting": [
+        "${ name } saiu da reunião"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } abaixou a mão"
+      ],
+      "${ name } raised their hand": [
+        "${ name } levantaram a mão"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } reagiu com ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } diz: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Um participante entrou na reunião"
+      ],
+      "A participant left the meeting": [
+        "Um participante saiu da reunião"
+      ],
+      "A participant lowered their hand": [
+        "Um participante levantou a mão"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Um participante reagiu com ${ emoji }"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Conexão perdida. Reconectando…"
+      ],
+      "New chat message: ${ message }": [
+        "Nova mensagem no bate-papo: ${ message }"
+      ],
+      "Now starting recording": [
+        "Agora iniciando a gravação"
+      ],
+      "Reconnected to the meeting": [
+        "Reconectado à reunião"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Começou a gravação. Ao continuar na gravação, você reconhece e concorda em ser gravado."
+      ],
+      "Recording stopped": [
+        "Gravação parada"
+      ],
+      "You have been disconnected from the meeting": [
+        "Você foi desconectado da reunião"
+      ],
+      "You have been muted by the host": [
+        "Você foi silenciado pelo organizador"
+      ],
+      "Your camera has been turned off by the host": [
+        "Sua câmera foi desligada pelo organizador"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -28,6 +87,9 @@
       ],
       "Authenticate": [
         "Autenticar"
+      ],
+      "Back": [
+        "Voltar"
       ],
       "Background blur": [
         "Desfoque de fundo"
@@ -1512,17 +1574,11 @@
       "Failed to join meeting. Please try again later.": [
         "Falha ao entrar na reunião. Tente novamente mais tarde."
       ],
-      "Failed to load recordings": [
-        "Erro ao carregar as gravações"
-      ],
       "Failed to lock meeting": [
         "Falha ao bloquear reunião"
       ],
       "Failed to rotate personal meeting link": [
         "Não foi possível redefinir link de reunião pessoal"
-      ],
-      "Failed to save recording": [
-        "Erro ao salvar a gravação"
       ],
       "Failed to send chat message. Please try again.": [
         "Falha ao enviar a mensagem do bate-papo. Tente novamente."
@@ -1791,6 +1847,12 @@
       "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
         "O ${ MEET_APP_NAME } precisa de acesso para que os outros possam ver e ouvir você durante a chamada. Você pode desligar a câmera ou o microfone a qualquer momento."
       ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "O ${ MEET_APP_NAME } precisa de acesso à câmera para que os outros possam ver você durante a chamada. Você pode desativar essa função a qualquer momento."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "O ${ MEET_APP_NAME } precisa de acesso ao microfone para que os outros possam ouvir você durante a chamada. Você pode desativar essa função a qualquer momento."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "O ${ MEET_APP_NAME } precisa do WebRTC para funcionar. Atualize seu navegador ou dispositivo para uma versão que tenha suporte para WebRTC, tente usar outro navegador ou desative todas as extensões que possam estar bloqueando-o."
       ],
@@ -1960,6 +2022,9 @@
       "Enter your own password (as trusted contact).": [
         "Digite sua própria senha (como contato de confiança)."
       ],
+      "Everyone has been disconnected from the call.": [
+        "Todos foram desconectados da chamada."
+      ],
       "Failed to update meeting name": [
         "Não foi possível atualizar o nome da reunião"
       ],
@@ -2073,6 +2138,9 @@
       ],
       "Meeting recordings aren’t supported in Firefox.": [
         "As gravações de reunião não são suportadas no Firefox."
+      ],
+      "Meeting time is up": [
+        "O tempo da reunião acabou"
       ],
       "Meeting unlocked. Participants can join again.": [
         "Reunião desbloqueada. Participantes podem entrar novamente."
@@ -2200,9 +2268,6 @@
       "Recording in progress": [
         "Gravação em andamento"
       ],
-      "Recording saved": [
-        "A gravação foi salva"
-      ],
       "Recording will begin and attendees will be notified.": [
         "A gravação começará e os participantes serão notificados."
       ],
@@ -2274,6 +2339,9 @@
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "O anfitrião removeu você desta reunião. Se isso foi um engano, peça ao anfitrião para convidá-lo novamente."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "O link da reunião que você tentou abrir não existe ou pode ter expirado. Verifique se o link está correto ou, em vez disso, inicie uma nova reunião segura."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Este é um bate-papo com criptografia de ponta a ponta e mensagens efêmeras, que desaparecem ao final da chamada."
@@ -3138,6 +3206,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Gere um novo link de reunião. O link atual deixará de funcionar."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistência instantânea com IA, com um especialista à disposição!"
       ],
       "Recurring meeting": [
         "Reunião recorrente"
