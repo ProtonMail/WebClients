@@ -12,6 +12,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import { useResetPasswordTelemetry } from '../reset/resetPasswordTelemetry';
+import { type MetaTags, useMetaTags } from '../useMetaTags';
 import { UnauthedForgotPasswordWizard } from './UnauthedForgotPasswordWizard';
 import {
     UnauthedForgotPasswordStateMachine,
@@ -26,9 +27,10 @@ interface Props {
     productParam: ProductParam;
     onPreSubmit: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    metaTags: MetaTags;
 }
 
-export const UnauthedForgotPassword = ({
+export const ResetPasswordPage = ({
     toApp,
     loginUrl,
     onPreSubmit,
@@ -36,7 +38,9 @@ export const UnauthedForgotPassword = ({
     onLogin,
     setupVPN,
     productParam,
+    metaTags,
 }: Props) => {
+    useMetaTags(metaTags);
     const history = useHistory();
     const redirectToSignIn = () => history.push(loginUrl);
     const { sendResetPasswordPageLoad, sendResetPasswordPageExit } = useResetPasswordTelemetry({ variant: 'B' });
