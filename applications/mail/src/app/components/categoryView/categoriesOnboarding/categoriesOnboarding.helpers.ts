@@ -90,6 +90,8 @@ export const getOnboardingCardCopy = (audience: AudienceType, categoryID: Catego
                 return c('Info').t`Includes invoices, purchase orders, and payment confirmations.`;
             case MAILBOX_LABEL_IDS.CATEGORY_UPDATES:
                 return c('Info').t`Includes marketing emails and non-urgent app notifications.`;
+            case MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS:
+                return c('Info').t`Includes news recaps and other non-promotional content. `;
         }
     }
 
