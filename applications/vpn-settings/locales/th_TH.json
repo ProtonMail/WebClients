@@ -3264,9 +3264,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "จะหยุดการนำเข้าชั่วคราวเมื่อพื้นที่จัดเก็บถึง 80% เพื่อสำรองพื้นที่สำหรับข้อความใหม่"
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "จะนำเข้าอีเมลเก่า ข้ามรายการซ้ำ และเชื่อมต่อไปยัง Gmail เพื่อให้ข้อความใหม่ปรากฏขึ้นโดยอัตโนมัติ สามารถเลิกทำการนำเข้าได้ทุกเมื่อในการตั้งค่า Easy Switch"
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "เริ่มนำเข้าอีเมลจาก Gmail แล้ว จะแจ้งให้ทราบเมื่อดำเนินการเสร็จสิ้น"
       ],
@@ -3281,12 +3278,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "สามารถส่งอีเมลจาก ${ BRAND_NAME } โดยใช้ที่อยู่นี้ได้แล้ว"
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "ยังคงสามารถเข้าสู่ระบบด้วยที่อยู่นี้และเชื่อมต่อใหม่ได้ทุกเมื่อ"
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "จะไม่สามารถใช้ ${ address.Email } เพื่อรับและส่งอีเมลใน ${ BRAND_NAME } ได้อีกต่อไป นอกจากนี้ โปรดทราบว่าข้อความที่ส่งไปยังที่อยู่นี้จาก ${ BRAND_NAME } จะไม่ได้รับการเข้ารหัสลับจากต้นทางถึงปลายทางอีกต่อไป"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "บัญชี ${ MAIL_APP_NAME } แบบฟรีมีพื้นที่จัดเก็บที่จำกัด ดังนั้นจะนำเข้าเฉพาะข้อความ Gmail ล่าสุดขนาด ${ newUserStorageText } เท่านั้น"

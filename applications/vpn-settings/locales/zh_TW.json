@@ -3152,9 +3152,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "我們將匯入您的舊電子郵件、略過重複項目，並連線至您的 Gmail，以便新訊息自動出現。您可以隨時在 Easy Switch 設定中復原匯入"
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "我們已匯入來自於 Gmail 的電子郵件。完成時我們將讓您知道。"
       ],
@@ -3169,12 +3166,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "您可透過 ${ BRAND_NAME } 用此位址傳送電子郵件。"
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "您隨時仍可使用此位址登入並重新連線。"
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "您將無法再於 ${ BRAND_NAME } 中使用 ${ address.Email } 接收和傳送電子郵件。另請注意，從 ${ BRAND_NAME } 傳送至此位址的訊息將不再進行端對端加密。"
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
@@ -11142,102 +11133,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "取得優惠"
-      ],
-      "SPRING SALE 2026": [
-        "春季特賣 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/每月"
-      ],
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "2 TB data storage": [
-        "2 TB 資料儲存空間"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 儲存空間：您目前方案的 40 倍"
-      ],
-      "3 TB data storage": [
-        "3 TB 資料儲存空間"
-      ],
-      "500 GB storage": [
-        "500 GB 儲存空間"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "存取位於 120 多個國家/地區的 15,000 台伺服器"
-      ],
-      "Access advanced AI models": [
-        "存取進階 AI 模型"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail、Pass、磁碟、VPN 和行事曆的所有頂級質子版功能"
-      ],
-      "Block ads, trackers, and malware": [
-        "封鎖廣告、追蹤程式和惡意軟體"
-      ],
-      "Built-in 2FA authenticator": [
-        "內建雙重驗證驗證器"
-      ],
-      "Connect 10 devices at once": [
-        "同時連線 10 個裝置"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "延長您的訂閱並節省 ${ discountPercent }%！"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "完整存取 ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "具備輕鬆搜尋與最愛功能的完整聊天記錄"
-      ],
-      "Individual accounts for 6 users": [
-        "6 位使用者的個人帳號"
-      ],
-      "Individual accounts for you and a partner": [
-        "供您與夥伴使用的個人帳號"
-      ],
-      "Online document editor": [
-        "線上文件編輯器"
-      ],
-      "Recover previous file versions": [
-        "復原先前的檔案版本"
-      ],
-      "Stronger protection against cyber threats": [
-        "針對網路威脅的更強大保護"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
-      ],
-      "Unlimited daily chats": [
-        "無限每日聊天"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "資料夾、標籤與篩選器無上限"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無限的 hide-my-email 別名"
-      ],
-      "Use your own email domain": [
-        "使用您自己的電子郵件網域"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "12 個月"
-      ],
-      "SPRING SALE": [
-        "春季特賣"
       ]
     },
     "q2campaign2026: Action": {

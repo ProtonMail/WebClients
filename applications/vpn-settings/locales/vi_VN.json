@@ -3270,9 +3270,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Quá trình nhập sẽ tạm dừng ở mức 80% dung lượng lưu trữ để dành không gian cho thư mới."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Nhập các email cũ, bỏ qua các thư trùng lặp và kết nối với Gmail để thư mới tự động xuất hiện. Có thể hoàn tác việc nhập bất kỳ lúc nào trong cài đặt Easy Switch"
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Đã bắt đầu nhập email từ Gmail. Hệ thống sẽ thông báo khi hoàn tất."
       ],
@@ -3287,12 +3284,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Hiện đã có thể gửi email từ ${ BRAND_NAME } bằng địa chỉ này."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Vẫn có thể đăng nhập bằng địa chỉ này và kết nối lại bất kỳ lúc nào."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Sẽ không còn có thể sử dụng ${ address.Email } để nhận và gửi email trong ${ BRAND_NAME }. Ngoài ra, lưu ý rằng thư gửi đến địa chỉ này từ ${ BRAND_NAME } sẽ không còn được mã hóa đầu cuối."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Tài khoản ${ MAIL_APP_NAME } miễn phí có dung lượng lưu trữ giới hạn, vì vậy hệ thống sẽ chỉ nhập ${ newUserStorageText } các thư Gmail gần đây nhất"
