@@ -1204,6 +1204,51 @@
         "Kontrol sizde"
       ]
     },
+    "collider_2025: Compaction": {
+      "${ removed } freed": [
+        "${ removed } boşaltıldı"
+      ],
+      "${ stats.summarizedMessageCount } earlier message condensed": [
+        "${ stats.summarizedMessageCount } önceki ileti özetlendi",
+        "${ stats.summarizedMessageCount } önceki ileti özetlendi"
+      ],
+      "Chat shortened to keep going": [
+        "Yazışmayı sürdürebilmek için kısaltıldı"
+      ],
+      "cleared old tool results": [
+        "eski araç sonuçları temizlendi"
+      ],
+      "dropped old messages": [
+        "eski iletiler silindi"
+      ],
+      "Files from summarized messages": [
+        "Özetlenmiş iletilerdeki dosyalar"
+      ],
+      "No longer sent to the model": [
+        "Artık modele gönderilmiyor"
+      ],
+      "removed file context": [
+        "dosya bağlamı kaldırıldı"
+      ],
+      "removed tool calls": [
+        "araç çağrısı kaldırıldı"
+      ],
+      "summarized the conversation": [
+        "yazışmayı özetledi"
+      ],
+      "This chat got long — summarizing earlier messages so we can keep going…": [
+        "Bu sohbet uzadı — İlerleyebilmemiz için önceki iletileri özetliyorum…"
+      ],
+      "Tool calls removed": [
+        "Araç çağrıları kaldırıldı"
+      ],
+      "Tool output cleared": [
+        "Araç çıktısı temizlendi"
+      ],
+      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
+        "${ LUMO_SHORT_APP_NAME } tarafından hatırlanan şeyler"
+      ]
+    },
     "collider_2025: Context": {
       "I believe cereal is a soup and I'm not sorry": [
         "Kahvaltılık gevreğin bir çorba olduğuna inanıyorum ve bundan pişman değilim"
@@ -1648,6 +1693,9 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
+      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
+        "${ LUMO_SHORT_APP_NAME } her yazışmada sınırlı miktarda bilgi işleyebilir. Burada bu alanın şu anda ne kadarının kullanıldığını görebilirsiniz. Alan dolduğunda yazışlmayı sürdürebilmek için eski iletiler otomatik olarak özetlenir."
+      ],
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME }, daha karmaşık sorgulara yardımcı olmak ve daha iyi yanıtlar sunmak için gelişmiş modellere erişim sağlar."
       ],
@@ -1732,6 +1780,12 @@
       "Check this is the site you expect to visit": [
         "Bunun ziyaret etmeyi beklediğiniz site olduğundan emin olun"
       ],
+      "Context usage for this conversation": [
+        "Bu yazışmanın bağlam kullanımı"
+      ],
+      "Conversation": [
+        "Yazışma"
+      ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Programlama ile erişim için API anahtarları oluşturabilir ve geçersiz kılabilirsiniz. Anahtarlar oluşturulduklarında yalnızca bir kez görüntülenir."
       ],
@@ -1746,6 +1800,9 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Dosyalarınızı sohbete eklemek için sürükleyip buraya bırakın."
+      ],
+      "Earlier messages were summarized to make room, so they no longer take up space here.": [
+        "Yer açmak için önceki iletiler özetlendi. Artık burada yer kaplamıyorlar."
       ],
       "Error processing attachment": [
         "Ek dosya işlenirken sorun çıktı"
@@ -1771,17 +1828,14 @@
       "Extract, analyse, and summarise documents, PDFs, and images.": [
         "Belgeleri, PDF dosyalarını ve görselleri ayıklayın, inceleyein ve özetleyin."
       ],
-      "File capacity": [
-        "Dosya kapasitesi"
-      ],
-      "File capacity for this conversation": [
-        "Bu sohbetin dosya kapasitesi"
-      ],
       "File too large for preview (>150k tokens)": [
         "Dosya ön izleme için çok büyük (>150 bin kod)"
       ],
       "files": [
         "dosyalar"
+      ],
+      "Files": [
+        "Dosyalar"
       ],
       "files are not supported for content extraction.": [
         "dosyalarda şu anda içeriklerin ayıklanması desteklenmiyor."
@@ -1792,14 +1846,14 @@
       "Files automatically retrieved based on your questions.": [
         "Sorularınıza göre otomatik olarak alınan dosyalar."
       ],
-      "Files you've added to this conversation.": [
-        "Bu yazışmaya eklediğiniz dosyalar."
-      ],
-      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.": [
-        "Her bir sohbette ${ LUMO_SHORT_APP_NAME } sınırlı miktarda bilgi işleyebilir. İlerleme çubuğu var olan dosyalarınızın ne kadar kapasite kullandığını gösterir."
+      "Files included in the next model request.": [
+        "Bir sonraki model isteğine katılacak dosyalar."
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Günlük API çağrısı başına ortalama kod sayısı (kod sayısı ÷ çağrı sayısı; çağrı yoksa 0)."
+      ],
+      "Free space": [
+        "Boş alan"
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Şu hedef için bir iş akışı çizelgesi ve uygulama kodu oluştur. Kod için hedef dil:"
@@ -1879,6 +1933,9 @@
       "No usage yet": [
         "Henüz kullanılmamış"
       ],
+      "Over capacity": [
+        "Kapasite aşıldı"
+      ],
       "Partial content": [
         "İçeriği bir bölümü"
       ],
@@ -1921,8 +1978,14 @@
       "Removed from future questions": [
         "Gelecekteki sorulardan kaldırıldı"
       ],
+      "Removed when chat was shortened": [
+        "Sohbet kısaltılınca kaldırıldı"
+      ],
       "Required on all POST requests with a JSON body.": [
         "Tüm JSON gövdeli POST isteklerinde gereklidir."
+      ],
+      "Reserved to keep chatting": [
+        "Sohbete ilerlemek için ayrıldı"
       ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Tüm sohbetlerinizi yalnızca sizin görebileceğiniz bir sohbet geçmişine kaydedin. Oturum veya bir hesap açın."
@@ -1972,6 +2035,9 @@
       "There was an error processing this file.": [
         "Bu dosya işlenirken bir sorun çıktı."
       ],
+      "These files belonged to summarized messages and are no longer sent to the model.": [
+        "Bu dosyalar özetlenmiş iletilere aitti ve artık modele gönderilmiyor."
+      ],
       "These files won't be used for future questions.": [
         "Bu dosyalar gelecekteki sorular için kullanılmayacak."
       ],
@@ -1983,6 +2049,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Bu sohbete daha sonra geri dönmek için oturum veya bir hesap açın."
+      ],
+      "tokens": [
+        "kodlar"
       ],
       "tokens / 30d": [
         "kod / 30 gün"
@@ -3247,7 +3316,7 @@
         "Piyasa değeri"
       ],
       "Metric": [
-        "Metrik"
+        "Ölçümlü"
       ],
       "P/E Ratio": [
         "F/K oranı"
@@ -8223,105 +8292,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Spring Sale": [
-        "Bahar indirimi"
-      ],
-      "SPRING SALE 2026": [
-        "BAHAR İNDİRİMİ 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "2 TB data storage": [
-        "2 TB veri depolama alanı"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
-      ],
-      "3 TB data storage": [
-        "3 TB veri depolama alanı"
-      ],
-      "500 GB storage": [
-        "500 GB depolama alanı"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
-      ],
-      "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Mail, Pass, Drive, VPN ve Calender'ın tüm ücretli özellikleri"
-      ],
-      "Block ads, trackers, and malware": [
-        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
-      ],
-      "Built-in 2FA authenticator": [
-        "Dahili iki adımlı kimlik doğrulayıcı"
-      ],
-      "Connect 10 devices at once": [
-        "Aynı anda 10 aygıtla bağlanın"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } uygulamasına tam erişim"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Kolay arama ve favoriler ile tüm sohbet geçmişi"
-      ],
-      "Individual accounts for 6 users": [
-        "6 kullanıcı için bireysel hesaplar"
-      ],
-      "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
-      ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Stronger protection against cyber threats": [
-        "Siber tehditlere karşı daha güçlü koruma"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
-      ],
-      "Unlimited daily chats": [
-        "Sınırsız günlük sohbet"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "12 aylığına"
-      ],
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
@@ -9176,7 +9146,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
