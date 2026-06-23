@@ -1,12 +1,19 @@
 import { useFlag } from '@proton/unleash/useFlag'
 import { isDevOrBlack } from '@proton/utils/env'
 
+/*
+DocsSharingModalDriveSDK - no dependencies
+
+DocsLoadRecentsWithDriveSDK - no dependencies
+DocsDocumentViewerEventsSDK - no dependencies
+
+DocsRenameWithDriveSDK - needs DocsLoadRecentsWithDriveSDK and DocsDocumentViewerEventsSDK for the events
+
+DocsMoveModalDriveSDK - needs DocsRenameWithDriveSDK because SDK rename updates cache (+ events)
+*/
+
 export function useSharingModalDriveSdkEnabled() {
   return useFlag('DocsSharingModalDriveSDK') || isDevOrBlack()
-}
-
-export function useMoveModalDriveSdkEnabled() {
-  return useFlag('DocsMoveModalDriveSDK') || isDevOrBlack()
 }
 
 export function useLoadRecentsWithSdkEnabled() {
@@ -14,7 +21,15 @@ export function useLoadRecentsWithSdkEnabled() {
 }
 
 export function useDocsDocumentViewerEventsSDK() {
-  return useFlag('DocsDocumentViewerEventsSDK') || isDevOrBlack()
+  return useFlag('DocsDocumentViewerEventsSDK')
+}
+
+export function useRenameWithSDK() {
+  return useFlag('DocsRenameWithDriveSDK')
+}
+
+export function useMoveModalDriveSdkEnabled() {
+  return useFlag('DocsMoveModalDriveSDK')
 }
 
 /**
