@@ -11,6 +11,9 @@ export interface ProtonPackOptions {
     sri: boolean;
     babelLoader: boolean;
     inlineIcons: boolean;
+    /**
+     * Override the loader transpilation targets with an explicit query
+     */
     browserslist: string;
     warningLogs: boolean;
     errorLogs: boolean;
@@ -58,7 +61,14 @@ export interface WebpackOptions {
     featureFlags: string;
     writeSRI: boolean;
     inlineIcons: boolean;
-    browserslist: string;
+    /**
+     * Optional explicit query to override transpilation targets. Falls back to `browserslistEnv` when unset.
+     */
+    browserslist?: string;
+    /**
+     * Name of the env section in the root .browserslistrc the webpack target resolves
+     */
+    browserslistEnv: string;
     warningLogs: boolean;
     errorLogs: boolean;
     overlayWarnings: boolean;
