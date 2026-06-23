@@ -64,7 +64,10 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
             const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
-                    payload: { domain, writable: true },
+                    /** This view runs in an extension frame, so `sender.frameId` is not the
+                     * field's frame. Pin to the top frame (WebAuthn is top-frame only for now)
+                     * so candidate scope can never fallback to this extension frame. */
+                    payload: { domain, frameId: 0, writable: true },
                 })
             );
 
