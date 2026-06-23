@@ -7,6 +7,7 @@ import {
     InvalidAddressesError,
     MemberCreationValidationError,
     UnavailableAddressesError,
+    assignMemberRoles,
     createMember,
     getPrivateAdminError,
     getPrivateText,
@@ -196,6 +197,11 @@ const SubUserCreateModal = ({
         return setModelDiff({ [key]: value });
     };
 
+    const setMode = (mode: CreateMemberMode) => {
+        setModelDiff({ mode });
+        setSelectedRoles(new Set());
+    };
+
     const getNormalizedAddress = () => {
         // In email & invititation mode, the invited address is the same as the created address
         if (useEmail && model.mode === CreateMemberMode.Invitation) {
@@ -251,8 +257,31 @@ const SubUserCreateModal = ({
     };
 
     const handleSubmit = async () => {
-        stop();
-        await save().finally(start);
+        let createdMember: Awaited<ReturnType<typeof save>>;
+        try {
+            stop();
+            createdMember = await save().finally(start);
+        } catch (error) {
+            errorHandler(error);
+            return;
+        }
+
+        if (showRolesTab && model.mode === CreateMemberMode.Password) {
+            try {
+                await dispatch(
+                    assignMemberRoles({
+                        member: createdMember as EnhancedMember,
+                        currentRoles: [],
+                        desiredRoleIds: selectedRoles,
+                        payload: null,
+                        api: silentApi,
+                    })
+                );
+            } catch (error) {
+                errorHandler(error);
+            }
+        }
+
         onClose?.();
         createNotification({ text: c('user_modal').t`User created` });
 
@@ -377,7 +406,7 @@ const SubUserCreateModal = ({
                     {isMagicLinkEnabled && (
                         <SubUserCreateHint className="mb-4 bg-weak">
                             {c('user_modal').t`Remember to share the user's sign in details with them.`}{' '}
-                            <InlineLinkButton onClick={() => setModelDiff({ mode: CreateMemberMode.Invitation })}>
+                            <InlineLinkButton onClick={() => setMode(CreateMemberMode.Invitation)}>
                                 {c('user_modal').t`Send invite link via email instead`}
                             </InlineLinkButton>
                         </SubUserCreateHint>
@@ -411,7 +440,7 @@ const SubUserCreateModal = ({
                                 {c('user_modal').t`An invitation will be sent to this email address.`}&nbsp;
                                 <InlineLinkButton
                                     className="inline-block"
-                                    onClick={() => setModelDiff({ mode: CreateMemberMode.Password })}
+                                    onClick={() => setMode(CreateMemberMode.Password)}
                                 >
                                     {c('user_modal').t`Create password instead`}
                                 </InlineLinkButton>
@@ -566,7 +595,7 @@ const SubUserCreateModal = ({
                 if (!onFormSubmit(event.currentTarget) || passwordPolicyError) {
                     return;
                 }
-                void withLoading(handleSubmit()).catch(errorHandler);
+                void withLoading(handleSubmit());
             }}
         >
             <ModalHeaderWithTabs
@@ -598,6 +627,13 @@ const SubUserCreateModal = ({
                                           onChange={setSelectedRoles}
                                           organizationRoles={organizationRoles}
                                           loadingRoles={loadingRoles}
+                                          disabled={model.mode !== CreateMemberMode.Password}
+                                          banner={
+                                              model.mode !== CreateMemberMode.Password
+                                                  ? c('user_modal')
+                                                        .t`You'll be able to assign roles once the user has accepted the invitation.`
+                                                  : undefined
+                                          }
                                       />
                                   ),
                               },
