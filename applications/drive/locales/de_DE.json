@@ -3681,6 +3681,9 @@
       "No contacts found to import": [
         "Keine Kontakte zum Importieren vorhanden"
       ],
+      "No drive found to import": [
+        "Es wurde kein Laufwerk zum Importieren gefunden"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
@@ -3692,6 +3695,9 @@
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Nicht genügend Speicherplatz in deinem ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Einer der Kontakte hat keine E-Mail-Adresse: ${ noEmailsContactNamesList }",
@@ -3930,6 +3936,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Unbekannte Konfliktstrategie: ${ strategy }"
@@ -5596,6 +5605,9 @@
       "Files and folders that others shared with you will appear here": [
         "Dateien und Ordner, die andere mit dir geteilt haben, werden hier angezeigt."
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
+      ],
       "finance": [
         "Finanzen"
       ],
@@ -6658,6 +6670,9 @@
       "We couldn't save this photo to your Drive": [
         "Wir konnten dieses Foto nicht in deinem Drive speichern",
         "Wir konnten diese Fotos nicht in deinem Drive speichern"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Wir konnten nicht verifizieren, dass ${ nameAuthor } ${ nodeName } hochgeladen hat. Möglicherweise wurde Folgendes manipuliert: Reihenfolge der Dateidaten. Öffne die Datei nur, wenn du ihr vertraust."
       ],
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
@@ -10709,102 +10724,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Deal sichern"
-      ],
-      "SPRING SALE 2026": [
-        "SPRING SALE 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/Monat"
-      ],
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "2 TB data storage": [
-        "2 TB Datenspeicher"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB Datenspeicher"
-      ],
-      "500 GB storage": [
-        "500 GB Speicher"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
-      ],
-      "Access advanced AI models": [
-        "Auf erweiterte KI-Modelle zugreifen"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle Premium-Funktionen von Mail, Pass, Drive, VPN und Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Verbinde 10 Geräte gleichzeitig"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Verlängere dein Abonnement und spare ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Voller Zugriff auf ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
-      ],
-      "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
-      ],
-      "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
-      ],
-      "Online document editor": [
-        "Online-Dokumenteneditor"
-      ],
-      "Recover previous file versions": [
-        "Stelle frühere Dateiversionen wieder her"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Unbegrenzte tägliche Chats"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "für 12 Monate"
-      ],
-      "SPRING SALE": [
-        "SPRING SALE"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Deal sichern"
@@ -12581,17 +12500,17 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitale Signatur teilweise verifiziert. Dieser Ordner wurde über einen öffentlich zugänglichen Teilen-Link von einem Benutzer ohne ein ${ BRAND_NAME }-Konto hochgeladen, weshalb dessen Identität nicht verifiziert werden kann."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Digitale Signatur verifiziert. Diese Datei wurde von <strong>${ emailAddress }</strong> sicher erstellt."
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digitale Signatur verifiziert. Diese Datei wurde von ${ author } sicher erstellt."
       ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Digitale Signatur verifiziert. Diese Datei wurde von <strong>${ emailAddress }</strong> sicher hochgeladen."
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digitale Signatur verifiziert. Diese Datei wurde von ${ author } sicher hochgeladen."
       ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Digitale Signatur verifiziert. Dieser Ordner wurde von <strong>${ emailAddress }</strong> sicher erstellt."
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digitale Signatur verifiziert. Dieser Ordner wurde von ${ author } sicher erstellt."
       ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Digitale Signatur verifiziert. Dieser Ordner wurde von <strong>${ emailAddress }</strong> sicher hochgeladen."
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digitale Signatur verifiziert. Dieser Ordner wurde von ${ author } sicher hochgeladen."
       ],
       "Discard": [
         "Verwerfen"
@@ -13229,17 +13148,17 @@
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Wir konnten nicht verifizieren, dass <strong>${ emailAddress }</strong> diese Datei erstellt hat."
+      "We couldn’t verify that ${ author } created this file.": [
+        "Wir konnten nicht verifizieren, dass ${ author } diese Datei erstellt hat."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Wir konnten nicht verifizieren, dass <strong>${ emailAddress }</strong> diesen Ordner erstellt hat."
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Wir konnten nicht verifizieren, dass ${ author } diesen Ordner erstellt hat."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Wir konnten nicht verifizieren, dass <strong>${ emailAddress }</strong> diese Datei hochgeladen hat."
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Wir konnten nicht verifizieren, dass ${ author } diese Datei hochgeladen hat."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Wir konnten nicht verifizieren, dass <strong>${ emailAddress }</strong> diesen Ordner hochgeladen hat."
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Wir konnten nicht verifizieren, dass ${ author } diesen Ordner hochgeladen hat."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Wir konnten nicht verifizieren, dass ein anonymer Benutzer diese Datei erstellt hat."
@@ -13255,6 +13174,12 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Wir konnten nicht bestätigen, dass der Dateiinhalt von ${ claimedContentAuthor } hochgeladen wurde. Der Grund dafür ist: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Wir konnten nicht bestätigen, dass der Name von ${ claimedNameAuthor } erstellt oder geändert wurde. Der Grund dafür ist: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Wir konnten nicht bestätigen, dass der Knoten von ${ claimedKeyAuthor } erstellt wurde. Der Grund dafür ist: ${ node.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Willkommensangebot"
@@ -13370,6 +13295,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
       "Load image": [
         "Bild laden"

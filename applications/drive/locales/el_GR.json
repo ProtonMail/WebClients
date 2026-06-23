@@ -5250,9 +5250,6 @@
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "Όλα τα αρχεία σας θα εισαχθούν"
-      ],
       "Already in this folder": [
         "Ήδη σε αυτόν το φάκελο"
       ],
@@ -12497,17 +12494,17 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε εν μέρει. Αυτός ο φάκελος μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο δημιουργήθηκε διασφαλισμένα από <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο δημιουργήθηκε διασφαλισμένα από ${ author }."
       ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από ${ author }."
       ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος δημιουργήθηκε διασφαλισμένα από <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος δημιουργήθηκε διασφαλισμένα από ${ author }."
       ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Αυτός ο φάκελος μεταφορτώθηκε διασφαλισμένα από <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Αυτός ο φάκελος μεταφορτώθηκε διασφαλισμένα από ${ author }."
       ],
       "Discard": [
         "Απόρριψη"
@@ -13145,17 +13142,17 @@
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης <strong>${ emailAddress }</strong> δημιούργησε αυτό το αρχείο."
+      "We couldn’t verify that ${ author } created this file.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } δημιούργησε αυτό το αρχείο."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης <strong>${ emailAddress }</strong> δημιούργησε αυτόν τον φάκελο."
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } δημιούργησε αυτόν τον φάκελο."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης <strong>${ emailAddress }</strong> μεταφόρτωσε αυτό το αρχείο."
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } μεταφόρτωσε αυτό το αρχείο."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης <strong>${ emailAddress }</strong> μεταφόρτωσε αυτόν τον φάκελο."
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } μεταφόρτωσε αυτόν τον φάκελο."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι κάποιος ανώνυμος χρήστης δημιούργησε αυτό το αρχείο."
