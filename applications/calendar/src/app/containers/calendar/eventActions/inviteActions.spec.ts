@@ -765,6 +765,7 @@ describe('getAddedAttendeesPublicKeysMap (auto-add)', () => {
             ...getInviteParams(email),
             sendPreferencesMap,
             getEncryptionPreferences,
+            canAutoAddDisabledE2EEAttendees: true,
         });
 
         expect(result[email]).toBe(fakePublicKey);
@@ -784,10 +785,29 @@ describe('getAddedAttendeesPublicKeysMap (auto-add)', () => {
             ...getInviteParams(email),
             sendPreferencesMap,
             getEncryptionPreferences,
+            canAutoAddDisabledE2EEAttendees: true,
         });
 
         expect(getEncryptionPreferences).toHaveBeenCalledWith({ email, intendedForEmail: false });
         expect(result[email]).toBe(fakePublicKey);
+    });
+
+    it('does NOT auto-add an E2EE-mail-disabled attendee when the flag is off', async () => {
+        const email = 'e2ee-disabled@proton.test';
+        const sendPreferencesMap = {
+            [email]: { isInternal: false, encryptionDisabled: true, publicKeys: undefined },
+        } as unknown as SimpleMap<SendPreferences>;
+        const getEncryptionPreferences = jest.fn();
+
+        const result = await getAddedAttendeesPublicKeysMap({
+            ...getInviteParams(email),
+            sendPreferencesMap,
+            getEncryptionPreferences,
+            canAutoAddDisabledE2EEAttendees: false,
+        });
+
+        expect(result[email]).toBeUndefined();
+        expect(getEncryptionPreferences).not.toHaveBeenCalled();
     });
 
     it('does NOT auto-add a genuine external attendee', async () => {
@@ -801,6 +821,7 @@ describe('getAddedAttendeesPublicKeysMap (auto-add)', () => {
             ...getInviteParams(email),
             sendPreferencesMap,
             getEncryptionPreferences,
+            canAutoAddDisabledE2EEAttendees: true,
         });
 
         expect(result[email]).toBeUndefined();
