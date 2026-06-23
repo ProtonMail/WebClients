@@ -1527,6 +1527,9 @@
       ]
     },
     "BOSS": {
+      "All": [
+        "Kaikki"
+      ],
       "Calendar": [
         "Kalenteri"
       ],
@@ -1562,6 +1565,9 @@
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "Browser": {
@@ -3447,6 +3453,9 @@
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
       ],
+      "Folder not found": [
+        "Kansiota ei löytynyt"
+      ],
       "Forward address is required": [
         "Välitysosoite vaaditaan"
       ],
@@ -4755,6 +4764,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } on poistettu"
       ],
+      "${ albums } album": [
+        "${ albums } albumi",
+        "${ albums } albumia"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
@@ -4818,6 +4831,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: matalatarkkuuksinen esikatselu"
       ],
+      "${ files } file": [
+        "${ files } tiedosto",
+        "${ files } tiedostoa"
+      ],
+      "${ folders } folder": [
+        "${ folders } kansio",
+        "${ folders } kansiota"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
@@ -4841,6 +4862,10 @@
       "${ photoCount } item": [
         "${ photoCount } kohde",
         "${ photoCount } kohdetta"
+      ],
+      "${ photos } photo": [
+        "${ photos } kuva",
+        "${ photos } kuvaa"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -4988,9 +5013,6 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
-      ],
-      "All your files will be imported": [
-        "Kaikki tiedostosi tuodaan"
       ],
       "Already in this folder": [
         "Jo tässä kansiossa"
@@ -5374,6 +5396,9 @@
       "for ${ price }": [
         "hintaan ${ price }"
       ],
+      "Forgot password?": [
+        "Unohtunut salasana?"
+      ],
       "Free 5GB encrypted storage to get started": [
         "5 Gt ilmaista salattua tallennustilaa päästäksesi alkuun"
       ],
@@ -5754,6 +5779,9 @@
       "Password must have:": [
         "Salasanassa on oltava:"
       ],
+      "Password verified": [
+        "Salasana vahvistettu"
+      ],
       "Paused": [
         "Pysäytetty"
       ],
@@ -5887,6 +5915,9 @@
       ],
       "Ready to add some photos?": [
         "Oletko valmis lisäämään kuvia?"
+      ],
+      "RECOMMENDED": [
+        "SUOSITELTU"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
@@ -6343,6 +6374,9 @@
       "We couldn't save this photo to your Drive": [
         "Emme voineet tallentaa tätä kuvaa Driveesi",
         "Emme voineet tallentaa näitä kuvia Driveesi"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Emme voineet varmistaa, että ${ nameAuthor } on ladannut ${ nodeName }. Seuraavaa on mahdollisesti muutettu: tiedostojen tietojen järjestys. Avaa vain, jos luotat siihen."
       ],
       "We couldn’t process your payment.": [
         "Maksuasi ei voitu käsitellä."
@@ -6914,6 +6948,9 @@
       ],
       "Device name": [
         "Laitteen nimi"
+      ],
+      "Device: ${ name }": [
+        "Laite: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Poista tämä linkki käytöstä tiettynä päivänä"
@@ -8775,6 +8812,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } maa",
+        "${ n } maata"
+      ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
       ],
@@ -10072,107 +10113,14 @@
       "Microsoft 365": [
         "Microsoft 365"
       ],
+      "Other": [
+        "Muu"
+      ],
       "Outlook": [
         "Outlook"
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ],
-      "SPRING SALE 2026": [
-        "KEVÄTALE 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/kk"
-      ],
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "2 TB data storage": [
-        "2 Tt:n tiedontallennus"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
-      ],
-      "3 TB data storage": [
-        "3 Tt:n tiedontallennus"
-      ],
-      "500 GB storage": [
-        "500 Gt tallennustilaa"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Käytössä yli 15 000 palvelinta yli 120 maassa"
-      ],
-      "Access advanced AI models": [
-        "Pääsy kehittyneisiin tekoälymalleihin"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Kaikki Mailin, Passin, Driven, VPN:n ja kalenterin premium-ominaisuudet"
-      ],
-      "Block ads, trackers, and malware": [
-        "Estä mainokset, seuranta ja haittaohjelmat"
-      ],
-      "Built-in 2FA authenticator": [
-        "Sisäänrakennettu 2FA-todentaja"
-      ],
-      "Connect 10 devices at once": [
-        "Yhdistä 10 laitetta kerralla"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Pidennä tilaustasi ja säästä ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Täysi keskusteluhistoria helpolla haulla ja suosikeilla"
-      ],
-      "Individual accounts for 6 users": [
-        "Henkilökohtaiset tilit 6 käyttäjälle"
-      ],
-      "Individual accounts for you and a partner": [
-        "Henkilökohtaiset tilit sinulle ja kumppanille"
-      ],
-      "Online document editor": [
-        "Dokumenttieditori verkossa"
-      ],
-      "Recover previous file versions": [
-        "Palauta aiempia tiedostoversioita"
-      ],
-      "Stronger protection against cyber threats": [
-        "Vahvempi suoja kyberuhkia vastaan"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Rajattomasti päivittäisiä keskusteluja"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Rajattomasti kansioita, tunnisteita ja suodattimia"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Rajattomasti hide-my-email-aliaksia"
-      ],
-      "Use your own email domain": [
-        "Käytä omaa sähköpostin verkkotunnusta"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "12 kuukaudeksi"
-      ],
-      "SPRING SALE": [
-        "KEVÄTALE"
       ]
     },
     "q2campaign2026: Action": {
@@ -11915,6 +11863,18 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Sähköinen allekirjoitus vahvistettu osittain. Tämä kansio on jaettu julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
       ],
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Digitaalinen allekirjoitus vahvistettu. ${ author } loi tämän tiedoston turvallisesti."
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Digitaalinen allekirjoitus vahvistettu. ${ author } latasi tämän tiedoston turvallisesti."
+      ],
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Digitaalinen allekirjoitus vahvistettu. ${ author } loi tämän kansion turvallisesti."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Digitaalinen allekirjoitus vahvistettu. ${ author } latasi tämän kansion turvallisesti."
+      ],
       "Discard": [
         "Hylätään"
       ],
@@ -12533,14 +12493,17 @@
       "Warning: suspected fake website": [
         "Varoitus: epäilty huijaussivusto"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Emme pystyneet vahvistamaan, että <strong>${ emailAddress }</strong> loi tämän tiedoston."
+      "We couldn’t verify that ${ author } created this file.": [
+        "Emme pystyneet vahvistamaan, että ${ author } loi tämän tiedoston."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Emme pystyneet vahvistamaan, että <strong>${ emailAddress }</strong> loi tämän kansion."
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Emme pystyneet vahvistamaan, että ${ author } loi tämän kansion."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Emme pystyneet vahvistamaan, että <strong>${ emailAddress }</strong> latasi tämän tiedoston."
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Emme pystyneet vahvistamaan, että ${ author } latasi tämän tiedoston."
+      ],
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Emme pystyneet vahvistamaan, että ${ author } latasi tämän kansion."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Emme pystyneet vahvistamaan, että nimetön käyttäjä loi tämän tiedoston."
@@ -12550,6 +12513,12 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Emme pystyneet vahvistamaan, että ${ claimedContentAuthor } latasi tiedoston sisällön. Syy on: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
+        "Emme pystyneet vahvistamaan, että ${ claimedNameAuthor } loi tai muokkasi nimeä. Syy on: ${ node.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
+        "Emme pystyneet vahvistamaan, että ${ claimedKeyAuthor } loi solmun. Syy on: ${ node.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Tervetuliaistarjous"
@@ -12662,6 +12631,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
       ],
       "Load image": [
         "Lataa kuva"

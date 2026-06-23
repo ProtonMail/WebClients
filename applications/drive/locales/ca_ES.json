@@ -3726,6 +3726,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No drive found to import": [
+        "No s'ha trobat cap unitat per importar"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
@@ -3737,6 +3740,9 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
@@ -3975,6 +3981,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
+      ],
+      "Unexpected error, we can't import the files": [
+        "S'ha produït un error inesperat, no podem importar els fitxers"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Estratègia de conflicte desconeguda: ${ strategy }"
@@ -5250,9 +5259,6 @@
         "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
         "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "S'importaran tots els vostres fitxers"
-      ],
       "Already in this folder": [
         "Ja és en aquesta carpeta"
       ],
@@ -5652,6 +5658,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Els fitxers i les carpetes que altres persones han compartit amb vós apareixeran aquí"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
       ],
       "finance": [
         "finances"
@@ -12557,17 +12566,17 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "La signatura digital s'ha verificat parcialment. Aquesta carpeta va ser carregada mitjançant un enllaç compartit accessible públicament per un usuari sense un compte de ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "S'ha validat la signatura digital. Aquest fitxer va ser creat de manera segura per <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "S'ha validat la signatura digital. Aquest fitxer va ser creat de manera segura per ${ author }."
       ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "S'ha validat la signatura digital. Aquest fitxer es va carregar de manera segura per <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "S'ha validat la signatura digital. Aquest fitxer es va carregar de manera segura per ${ author }."
       ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "S'ha validat la signatura digital. Aquesta carpeta va ser creada de manera segura per <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "S'ha validat la signatura digital. Aquesta carpeta va ser creada de manera segura per ${ author }."
       ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "S'ha validat la signatura digital. Aquesta carpeta es va carregar de manera segura per <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "S'ha validat la signatura digital. Aquesta carpeta es va carregar de manera segura per ${ author }."
       ],
       "Discard": [
         "Descarta"
@@ -13205,17 +13214,17 @@
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "No hem pogut verificar que <strong>${ emailAddress }</strong> hagi creat aquest fitxer."
+      "We couldn’t verify that ${ author } created this file.": [
+        "No hem pogut verificar que ${ author } hagi creat aquest fitxer."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "No hem pogut verificar que <strong>${ emailAddress }</strong> hagi creat aquesta carpeta."
+      "We couldn’t verify that ${ author } created this folder.": [
+        "No hem pogut verificar que ${ author } hagi creat aquesta carpeta."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "No hem pogut verificar que <strong>${ emailAddress }</strong> hagi carregat aquest fitxer."
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "No hem pogut verificar que ${ author } hagi carregat aquest fitxer."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "No hem pogut verificar que <strong>${ emailAddress }</strong> hagi carregat aquesta carpeta."
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "No hem pogut verificar que ${ author } hagi carregat aquesta carpeta."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "No hem pogut verificar que un usuari anònim hagi creat aquest fitxer."

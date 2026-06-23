@@ -3979,6 +3979,9 @@
       "Validation error": [
         "Erro de validação"
       ],
+      "VAT number must start with ${ prefixes }": [
+        "O número de IVA deve começar por ${ prefixes }"
+      ],
       "We cannot retrieve this item": [
         "Não foi possível recuperar este item"
       ],
@@ -5216,9 +5219,6 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }",
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }"
-      ],
-      "All your files will be imported": [
-        "Todos os seus arquivos serão importados"
       ],
       "Already in this folder": [
         "Já nesta pasta"
@@ -6511,6 +6511,9 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Para ajudar a te proteger, o ${ DRIVE_APP_NAME } pode escanear seus arquivos de uma forma que preserve a privacidade e bloquear arquivos maliciosos. No entanto, ainda é melhor baixar arquivos somente de fontes confiáveis. "
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ajudar você a lembrar sua senha, pediremos que você a digite periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
       ],
@@ -6546,6 +6549,9 @@
       ],
       "Trash is empty": [
         "A lixeira está vazia"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confie na chave \"${ activeSignerText }\" para verificar novas mensagens deste contato."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
@@ -6654,6 +6660,10 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Muito bom! Você acaba de aumentar seu armazenamento para 5 GB!"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Não foi possível salvar esta foto no seu Drive",
+        "Não foi possível salvar várias fotos no seu Drive"
       ],
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
@@ -10682,102 +10692,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Aproveitar a oferta"
-      ],
-      "SPRING SALE 2026": [
-        "PROMO DE PRIMAVERA 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/mês"
-      ],
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "2 TB data storage": [
-        "2 TB de armazenamento de dados"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de armazenamento: 40x o seu plano atual"
-      ],
-      "3 TB data storage": [
-        "3 TB de armazenamento de dados"
-      ],
-      "500 GB storage": [
-        "500 GB de armazenamento"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acesse mais de 15.000 servidores em mais de 120 países"
-      ],
-      "Access advanced AI models": [
-        "Acesso a modelos de IA avançados"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Todos os recursos premium do Mail, Pass, Drive, VPN e Calendário"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloqueie anúncios, rastreadores e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecte 10 dispositivos de uma só vez"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Estenda sua assinatura e economize ${ discountPercent }%!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acesso total ao ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Histórico completo de bate-papos com pesquisa fácil e favoritos"
-      ],
-      "Individual accounts for 6 users": [
-        "Contas individuais para 6 usuários"
-      ],
-      "Individual accounts for you and a partner": [
-        "Contas individuais para você e um parceiro"
-      ],
-      "Online document editor": [
-        "Editor de documentos on-line"
-      ],
-      "Recover previous file versions": [
-        "Recupere versões anteriores de arquivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Proteção mais forte contra ameaças cibernéticas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Bate-papos diários ilimitados"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, marcadores e filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases ilimitados do hide-my-email"
-      ],
-      "Use your own email domain": [
-        "Use seu próprio domínio de e-mail"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "por 12 meses"
-      ],
-      "SPRING SALE": [
-        "PROMO DE PRIMAVERA"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Aproveitar a oferta"
@@ -12554,18 +12468,6 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Assinatura digital parcialmente verificada. Esta pasta foi enviada usando um link de compartilhamento acessível publicamente por um usuário sem uma conta da ${ BRAND_NAME }, então sua identidade não pode ser verificada."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Assinatura digital verificada. Esse arquivo foi criado seguramente por <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Assinatura digital verificada. Este arquivo foi enviado com segurança por <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Assinatura digital verificada. Esta pasta foi criada com segurança por <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Assinatura digital verificada. Esta pasta foi enviada com segurança por <strong>${ emailAddress }</strong>."
-      ],
       "Discard": [
         "Descartar"
       ],
@@ -13202,18 +13104,6 @@
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Não pudemos verificar que <strong>${ emailAddress }</strong> criou este arquivo."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Não pudemos verificar que <strong>${ emailAddress }</strong> criou esta pasta."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Não pudemos verificar que <strong>${ emailAddress }</strong> enviou este arquivo."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Não pudemos verificar que <strong>${ emailAddress }</strong> enviou esta pasta."
-      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Não pudemos verificar que um usuário anônimo criou este arquivo."
       ],
@@ -13343,6 +13233,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistência instantânea com IA, com um especialista à disposição!"
       ],
       "Load image": [
         "Carregar imagem"
