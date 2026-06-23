@@ -4,6 +4,71 @@
     "language": "es_ES"
   },
   "contexts": {
+    "Accessibility announcement": {
+      "${ name } joined the meeting": [
+        "${ name } se ha unido a la reunión"
+      ],
+      "${ name } left the meeting": [
+        "${ name } ha abandonado la reunión"
+      ],
+      "${ name } lowered their hand": [
+        "${ name } ha bajado la mano"
+      ],
+      "${ name } raised their hand": [
+        "${ name } ha levantado la mano"
+      ],
+      "${ name } reacted with ${ emoji }": [
+        "${ name } ha reaccionado con ${ emoji }"
+      ],
+      "${ name } says: ${ message }": [
+        "${ name } dice: ${ message }"
+      ],
+      "A participant joined the meeting": [
+        "Se ha unido un participante a la reunión"
+      ],
+      "A participant left the meeting": [
+        "Un participante ha abandonado la reunión"
+      ],
+      "A participant lowered their hand": [
+        "Un participante ha bajado la mano"
+      ],
+      "A participant raised their hand": [
+        "Un participante ha levantado la mano"
+      ],
+      "A participant reacted with ${ emoji }": [
+        "Un participante ha reaccionado con ${ emoji }"
+      ],
+      "Connection lost. Reconnecting…": [
+        "Se ha perdido la conexión. Reconectando…"
+      ],
+      "New chat message: ${ message }": [
+        "Nuevo mensaje de chat: ${ message }"
+      ],
+      "Now starting recording": [
+        "Se inicia la grabación"
+      ],
+      "Reconnected to the meeting": [
+        "Te has reconectado a la reunión"
+      ],
+      "Recording started. By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Se ha iniciado la grabación. Al continuar en la reunión, reconoces y aceptas la grabación."
+      ],
+      "Recording stopped": [
+        "Grabación detenida"
+      ],
+      "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
+        "Esta reunión se está grabando. Al unirte, reconoces y aceptas la grabación."
+      ],
+      "You have been disconnected from the meeting": [
+        "Te has desconectado de la reunión"
+      ],
+      "You have been muted by the host": [
+        "El organizador te ha silenciado"
+      ],
+      "Your camera has been turned off by the host": [
+        "El organizador ha desactivado tu cámara"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -28,6 +93,9 @@
       ],
       "Authenticate": [
         "Autenticar"
+      ],
+      "Back": [
+        "Atrás"
       ],
       "Background blur": [
         "Desenfoque de fondo"
@@ -115,6 +183,9 @@
       ],
       "Download participant report": [
         "Descargar informe de participantes"
+      ],
+      "Download recording": [
+        "Descargar grabación"
       ],
       "Download room level report": [
         "Descargar informe de la sala"
@@ -235,6 +306,10 @@
       ],
       "React with ${ emoji }": [
         "Reacciona con ${ emoji }"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Reaccionar con ${ emoji }, ${ identities.length } reacción",
+        "Reaccionar con ${ emoji }, ${ identities.length } reacciones"
       ],
       "Receive video": [
         "Recibir vídeo"
@@ -1512,9 +1587,6 @@
       "Failed to rotate personal meeting link": [
         "No se pudo rotar el enlace de reunión personal"
       ],
-      "Failed to save recording": [
-        "Error al guardar la grabación"
-      ],
       "Failed to send chat message. Please try again.": [
         "No se pudo enviar el mensaje de chat. Inténtalo de nuevo."
       ],
@@ -1598,6 +1670,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o un número."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Tu navegador se ha quedado sin espacio de almacenamiento. Se ha guardado la grabación hasta este momento."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Parece que el reloj de tu dispositivo no está sincronizado. Comprueba la hora del sistema e inténtalo de nuevo."
@@ -2185,9 +2260,6 @@
       ],
       "Recording in progress": [
         "Grabación en curso"
-      ],
-      "Recording saved": [
-        "Grabación guardada"
       ],
       "Recording will begin and attendees will be notified.": [
         "La grabación comenzará y se notificará a los participantes."
@@ -2931,6 +3003,9 @@
       "Chat": [
         "Chat"
       ],
+      "Couldn't prepare the recording": [
+        "No se ha podido preparar la grabación"
+      ],
       "Create new room": [
         "Crear nueva sala"
       ],
@@ -3028,6 +3103,9 @@
       "Personal meeting room": [
         "Sala de reuniones personal"
       ],
+      "Preparing your recording…": [
+        "Preparar tu grabación..."
+      ],
       "Publications": [
         "Publicaciones"
       ],
@@ -3099,6 +3177,9 @@
       ],
       "Your feedback has been submitted": [
         "Tus comentarios han sido enviados"
+      ],
+      "Your recording is ready": [
+        "Tu grabación está lista"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -5408,9 +5408,6 @@
         "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
         "Všetky vaše kontakty budú importované až do limitu ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "Všetky vaše súbory budú importované"
-      ],
       "Already in this folder": [
         "Už sa nachádza v priečinku"
       ],
@@ -12951,18 +12948,6 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Elektronický podpis bol čiastočne overený. Tento priečinok bol nahratý pomocou verejne prístupného zdieľaného odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identita nemôže byť overená."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Elektronický podpis overený. Tento súbor bol bezpečne vytvorený používateľom s adresou <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Elektronický podpis overený. Tento súbor bol bezpečne nahraný používateľom <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Elektronický podpis overený. Tento priečinok bol bezpečne vytvorený používateľom s adresou <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Elektronický podpis overený. Táto zložka bola bezpečne nahraná používateľom <strong>${ emailAddress }</strong>."
-      ],
       "Discard": [
         "Zahodiť"
       ],
@@ -13604,18 +13589,6 @@
       ],
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Nemohli sme overiť, že tento súbor vytvoril používateľ s adresou <strong>${ emailAddress }</strong>."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Nemohli sme overiť, že tento priečinok vytvoril používateľ s adresou <strong>${ emailAddress }</strong>."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Nemohli sme overiť, že tento súbor nahral používateľ s adresou <strong>${ emailAddress }</strong>."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Nemohli sme overiť, že tento priečinok nahral používateľ s adresou <strong>${ emailAddress }</strong>."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Nemohli sme overiť, že tento súbor vytvoril anonymný používateľ."

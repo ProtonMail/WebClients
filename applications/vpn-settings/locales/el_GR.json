@@ -1229,6 +1229,9 @@
       "Verify now": [
         "Επαλήθευση τώρα"
       ],
+      "Verify password": [
+        "Επαλήθευση κωδικού πρόσβασης"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Επαληθεύστε τον τομέα ${ unverifiedSSODomain.DomainName }"
       ],
@@ -2222,6 +2225,11 @@
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Τα διπλότυπα από προηγούμενες εισαγωγές θα παραλειφθούν. Αναιρέστε ή εισαγάγετε παλαιότερα μηνύματα στις ρυθμίσεις ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -3718,8 +3726,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Θα εισαγάγουμε τα παλιά σας email, θα παραλείψουμε τα διπλότυπα και θα συνδεθούμε στο Gmail σας, ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα. Μπορείτε να αναιρέσετε την εισαγωγή ανά πάσα στιγμή στις ρυθμίσεις του Easy Switch."
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συγχρονίσουμε τα νέα μηνύματα από το Gmail στο εξής"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
@@ -6678,9 +6686,6 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
-      ],
-      "All your files will be imported": [
-        "Όλα τα αρχεία σας θα εισαχθούν"
       ],
       "Allocated": [
         "Κατανεμημένος"
@@ -9770,6 +9775,9 @@
       ],
       "Import to:": [
         "Εισαγωγή σε:"
+      ],
+      "Import your emails": [
+        "Εισαγωγή των ηλεκτρονικών μηνυμάτων σας"
       ],
       "Include application logs in bug report": [
         "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"

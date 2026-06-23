@@ -234,6 +234,9 @@
       "Continue import": [
         "Nadaljuj z uvozom"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Nadaljuj v ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Nadaljujte s prenosi"
       ],
@@ -1005,6 +1008,9 @@
       "Toggle Contacts app": [
         "Prikaži/skrij aplikacijo Stiki"
       ],
+      "Toggle referral": [
+        "Preklopi priporočila"
+      ],
       "Toggle settings": [
         "Odpri nastavitve"
       ],
@@ -1097,6 +1103,9 @@
       ],
       "Verify account": [
         "Potrdi račun"
+      ],
+      "Verify now": [
+        "Preveri zdaj"
       ],
       "View": [
         "Pogled"
@@ -1198,6 +1207,12 @@
         "${ seats } sedeža ${ LUMO_APP_NAME }",
         "${ seats } sedeži ${ LUMO_APP_NAME }",
         "${ seats } sedežev ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licenca",
+        "${ seats } ${ MEET_APP_NAME } licenci",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licenc"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licenca za pomočnika pri pisanju",
@@ -1746,6 +1761,9 @@
       ],
       "Advanced account and network security in one plan": [
         "Napredna varnost računa in omrežja v enem paketu"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Zasebni video klici za pomembne pogovore."
       ]
     },
     "color": {
@@ -3322,6 +3340,9 @@
       "Failed to expand folder": [
         "Ni uspelo razširiti mape"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nalaganje podatkov o naročnini uspelo. Prosimo, poizkusite znova kasneje."
+      ],
       "Failed to load the STL preview": [
         "Nalaganje predogleda STL ni uspelo"
       ],
@@ -3690,6 +3711,9 @@
       ],
       "Validation error": [
         "Napaka potrjevanja"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Davčna številka se mora začeti z ${ prefixes }"
       ],
       "We cannot retrieve this item": [
         "Ne moremo pridobiti tega predmeta"
@@ -4895,6 +4919,9 @@
       "Ad targeting": [
         "Ciljno oglaševanje"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Dodaj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
       "Address copied to clipboard": [
         "Naslov kopiran v odložišče"
       ],
@@ -4921,6 +4948,12 @@
       ],
       "All your changes will be lost.": [
         "Vse vaše spremembe bodo izgubljene."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Vsi vaši stiki bodo uvoženi, do meje ${ maxContact }.",
+        "Vsi vaši stiki bodo uvoženi, do meje ${ maxContact }.",
+        "Vsi vaši stiki bodo uvoženi, do meje ${ maxContact }.",
+        "Vsi vaši stiki bodo uvoženi, do meje ${ maxContact }."
       ],
       "Already in this folder": [
         "Že v tej mapi"
@@ -5108,6 +5141,12 @@
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Ustvari varen oblak za ${ memberCount } člana",
+        "Ustvari varen oblak za ${ memberCount } člana",
+        "Ustvari varen oblak za ${ memberCount } člane",
+        "Ustvari varen oblak za ${ memberCount } članov"
+      ],
       "Create in": [
         "Ustvari v"
       ],
@@ -5290,6 +5329,9 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Brezplačna šifrirana shramba v velikosti 5 GB za začetek"
@@ -5791,6 +5833,9 @@
       ],
       "Ready to add some photos?": [
         "Ste pripravljeni dodati nekaj fotografij?"
+      ],
+      "RECOMMENDED": [
+        "PRIPOROČENO"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
@@ -6401,6 +6446,12 @@
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Dobroimetje boste prejeli 1 mesec po tem, ko se bo vaš prijatelj naročil na letni paket, in 2 meseca po tem, ko se bo naročil na mesečni paket."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Nato boste vsak ${ renewCycle } mesec prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli.",
+        "Nato boste vsaka ${ renewCycle } meseca prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli.",
+        "Nato boste vsake ${ renewCycle } mesece prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli.",
+        "Nato boste vsakih ${ renewCycle } mesecev prejeli račun v znesku ${ renewAmountStr }. Prekličete lahko kadarkoli."
+      ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Zavrnili boste povabilo za pridružitev albumu ${ invitationName }. Če boste nadaljevali, do njega ne boste mogli dostopati, razen če vas lastnik ponovno povabi. Ste prepričani, da želite nadaljevati?"
       ],
@@ -6798,6 +6849,9 @@
       ],
       "Download anyway": [
         "Vseeno prenesi"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Duplicate found": [
         "Najden dvojnik"
@@ -7505,6 +7559,14 @@
         "za ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } sedež ${ MEET_APP_NAME }",
+        "${ seats } sedeža ${ MEET_APP_NAME }",
+        "${ seats } sedeži ${ MEET_APP_NAME }",
+        "${ seats } sedežev ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Zaupna video konferenca za pogovore, ki so pomembni"
@@ -7547,6 +7609,20 @@
         "Do ${ n } udeleženca",
         "Do ${ n } udeleženci",
         "Do ${ n } udeležencev"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Video sestanki, ${ n } udeleženec",
+        "Video sestanki, ${ n } udeleženca",
+        "Video sestanki, ${ n } udeleženci",
+        "Video sestanki, ${ n } udeležencev"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } sedež vključen",
+        "${ seats } sedeža vključena",
+        "${ seats } sedeži vključeni",
+        "${ seats } sedežev vključenih"
       ]
     },
     "Message": {
@@ -8006,6 +8082,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Vse osnovne storitve ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Načrtovanje sestanka"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Sestanek načrtovan z ${ n } stranjo za rezervacijo",
+        "Sestanek načrtovan z ${ n } stranema za rezervacijo",
+        "Sestanek načrtovan s ${ n } stranmi za rezervacijo",
+        "Sestanek načrtovan s ${ n } stranmi za rezervacijo"
+      ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
       ],
@@ -8056,6 +8141,9 @@
       ],
       "Data breach monitoring": [
         "Spremljanje vdorov v podatke"
+      ],
+      "Data retention policies": [
+        "Pravilniki hrambe podatkov"
       ],
       "Desktop app": [
         "Namizna aplikacija"
@@ -8158,6 +8246,9 @@
       ],
       "Priority support & live chat": [
         "Prednostna podpora in klepet v živo"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Zasebni pogovor z AI (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Zasebna varnostna kopija fotografij"
@@ -8308,6 +8399,9 @@
         "Delitev trezorja (z do ${ n } osebama)",
         "Delitev trezorja (z do ${ n } osebami)",
         "Delitev trezorja (z do ${ n } osebami)"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN z blokiranjem oglasov in zaščito pred zlonamerno programsko opremo"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
@@ -8673,6 +8767,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } država",
+        "${ n } državi",
+        "${ n } države",
+        "${ n } držav"
+      ],
       "Access advanced VPN features": [
         "Dostop do naprednih funkcij VPN"
       ],
@@ -9448,8 +9548,26 @@
       "terms and conditions": [
         "pravili in pogoji"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Kupon velja za ${ renewalsWithCoupon } podaljšanje.",
+        "Kupon velja za ${ renewalsWithCoupon } podaljšanji.",
+        "Kupon velja za ${ renewalsWithCoupon } podaljšanja.",
+        "Kupon velja za ${ renewalsWithCoupon } podaljšanj."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Posebno znižana cena velja ${ couponRedemptions } mesec. Nato se bo samodejno podaljšala za ${ renewPriceStr } za 1 mesec. Prekličete lahko kadarkoli.",
+        "Posebno znižana cena velja ${ couponRedemptions } meseca. Nato se bo samodejno podaljšala za ${ renewPriceStr } za 1 mesec. Prekličete lahko kadarkoli.",
+        "Posebno znižana cena velja ${ couponRedemptions } mesece. Nato se bo samodejno podaljšala za ${ renewPriceStr } vsak mesec. Prekličete lahko kadarkoli.",
+        "Posebno znižana cena velja ${ couponRedemptions } mesecev. Nato se bo samodejno podaljšala za ${ renewPriceStr } vsak mesec. Prekličete lahko kadarkoli."
+      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Posebno znižana cena velja prvi mesec. Nato se bo samodejno podaljšala za ${ renewPriceStr } vsak mesec. Prekličete lahko kadarkoli."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Izredno znižana cena ${ priceWithDiscount } velja za ${ couponRedemptions } mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete.",
+        "Izredno znižana cena ${ priceWithDiscount } velja za ${ couponRedemptions } meseca. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete.",
+        "Izredno znižana cena ${ priceWithDiscount } velja za ${ couponRedemptions } mesece. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete.",
+        "Izredno znižana cena ${ priceWithDiscount } velja za ${ couponRedemptions } mesecev. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Posebna znižana cena v višini ${ priceWithDiscount } velja za ${ subscriptionLength } mesec.",
@@ -9584,6 +9702,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "Zunanji ključ se samodejno pridobi prek WKD."
+      ],
+      "This key is used for message verification": [
+        "Ta ključ se uporablja za preverjanje sporočil"
       ],
       "This key is used to encrypt messages to this contact": [
         "S tem ključem se šifrirajo sporočila za ta stik"
@@ -10661,6 +10782,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, in ${ LUMO_APP_NAME } premijskimi funkcijami"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
       ],
@@ -10891,6 +11015,12 @@
       ],
       "Version history": [
         "Zgodovina različic"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Video sestanki, ${ PAID_PREMIUM_MAX_PARTICIPANTS } udeleženec",
+        "Video sestanki, do ${ PAID_PREMIUM_MAX_PARTICIPANTS } udeleženca",
+        "Video sestanki, do ${ PAID_PREMIUM_MAX_PARTICIPANTS } udeleženci",
+        "Video sestanki, do ${ PAID_PREMIUM_MAX_PARTICIPANTS } udeležencev"
       ],
       "Watch the interview": [
         "Oglejte si intervju"
@@ -11550,12 +11680,6 @@
       "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitalni podpis je bil delno preverjen. Ta mapa je bila ustvarjena z javno dostopno povezavo za skupno rabo s strani uporabnika brez računa ${ BRAND_NAME }, zato njegove identitete ni mogoče preveriti."
       ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Digitalni podpis preverjen. To datoteko je varno naložil <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Digitalni podpis preverjen. To mapo je varno ustvaril <strong>${ emailAddress }</strong>."
-      ],
       "Discard": [
         "Zavrzi"
       ],
@@ -12131,15 +12255,6 @@
       ],
       "Warning: suspected fake website": [
         "Pozor: morebitno lažno spletno mesto"
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Nismo mogli preveriti, ali je <strong>${ emailAddress }</strong> ustvaril to datoteko."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Nismo mogli preveriti, ali je <strong>${ emailAddress }</strong> ustvaril to mapo."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Nismo mogli preveriti, ali je <strong>${ emailAddress }</strong> naložil to mapo."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Nismo mogli preveriti, ali je anonimni uporabnik ustvaril to datoteko."

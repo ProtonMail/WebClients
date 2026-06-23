@@ -365,6 +365,9 @@
       "Edit billing address": [
         "Muokkaa laskutusosoitetta"
       ],
+      "Edit booking page": [
+        "Muokkaa varaussivua"
+      ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
@@ -1402,6 +1405,9 @@
       ]
     },
     "BOSS": {
+      "All": [
+        "Kaikki"
+      ],
       "Calendar": [
         "Kalenteri"
       ],
@@ -1437,6 +1443,9 @@
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "Browser": {
@@ -5255,9 +5264,6 @@
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
       ],
-      "All your files will be imported": [
-        "Kaikki tiedostosi tuodaan"
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey -logo"
       ],
@@ -5577,6 +5583,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Paremman tietoturvan saamiseksi voit asettaa salalauseen. Sitä ei sisällytetä kalenterikutsuun, joten muistathan jakaa sen vieraille erikseen."
       ],
+      "Forgot password?": [
+        "Unohtunut salasana?"
+      ],
       "Frequency modifications will be lost.": [
         "Toistuvuuden muutokset menetetään."
       ],
@@ -5875,6 +5884,9 @@
       "Password must have:": [
         "Salasanassa on oltava:"
       ],
+      "Password verified": [
+        "Salasana vahvistettu"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
@@ -5968,6 +5980,9 @@
       ],
       "Range overlaps with an existing range.": [
         "Väli on päällekkäin toisen välin kanssa."
+      ],
+      "RECOMMENDED": [
+        "SUOSITELTU"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
@@ -8659,6 +8674,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } maa",
+        "${ n } maata"
+      ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
       ],
@@ -9803,107 +9822,14 @@
       "Microsoft 365": [
         "Microsoft 365"
       ],
+      "Other": [
+        "Muu"
+      ],
       "Outlook": [
         "Outlook"
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ],
-      "SPRING SALE 2026": [
-        "KEVÄTALE 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/kk"
-      ],
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "2 TB data storage": [
-        "2 Tt:n tiedontallennus"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
-      ],
-      "3 TB data storage": [
-        "3 Tt:n tiedontallennus"
-      ],
-      "500 GB storage": [
-        "500 Gt tallennustilaa"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Käytössä yli 15 000 palvelinta yli 120 maassa"
-      ],
-      "Access advanced AI models": [
-        "Pääsy kehittyneisiin tekoälymalleihin"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Kaikki Mailin, Passin, Driven, VPN:n ja kalenterin premium-ominaisuudet"
-      ],
-      "Block ads, trackers, and malware": [
-        "Estä mainokset, seuranta ja haittaohjelmat"
-      ],
-      "Built-in 2FA authenticator": [
-        "Sisäänrakennettu 2FA-todentaja"
-      ],
-      "Connect 10 devices at once": [
-        "Yhdistä 10 laitetta kerralla"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Pidennä tilaustasi ja säästä ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Täysi keskusteluhistoria helpolla haulla ja suosikeilla"
-      ],
-      "Individual accounts for 6 users": [
-        "Henkilökohtaiset tilit 6 käyttäjälle"
-      ],
-      "Individual accounts for you and a partner": [
-        "Henkilökohtaiset tilit sinulle ja kumppanille"
-      ],
-      "Online document editor": [
-        "Dokumenttieditori verkossa"
-      ],
-      "Recover previous file versions": [
-        "Palauta aiempia tiedostoversioita"
-      ],
-      "Stronger protection against cyber threats": [
-        "Vahvempi suoja kyberuhkia vastaan"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Rajattomasti päivittäisiä keskusteluja"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Rajattomasti kansioita, tunnisteita ja suodattimia"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Rajattomasti hide-my-email-aliaksia"
-      ],
-      "Use your own email domain": [
-        "Käytä omaa sähköpostin verkkotunnusta"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "12 kuukaudeksi"
-      ],
-      "SPRING SALE": [
-        "KEVÄTALE"
       ]
     },
     "q2campaign2026: Action": {
@@ -12347,6 +12273,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
       ],
       "Load image": [
         "Lataa kuva"

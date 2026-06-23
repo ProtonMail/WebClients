@@ -184,6 +184,12 @@
       "Copy link": [
         "Kopioi linkki"
       ],
+      "Copy name on card": [
+        "Kopioi kortissa oleva nimi"
+      ],
+      "Copy note content": [
+        "Kopioi muistiinpanon sisältö"
+      ],
       "Copy password": [
         "Kopioi salasana"
       ],
@@ -740,6 +746,17 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ]
+    },
+    "Activity": {
+      "Folder": [
+        "Kansio"
+      ],
+      "Reason": [
+        "Syy"
+      ],
+      "Vault": [
+        "Holvi"
       ]
     },
     "Browser": {
@@ -1910,6 +1927,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -4051,6 +4072,11 @@
       ],
       "Unknown": [
         "Tuntematon"
+      ]
+    },
+    "Status": {
+      "Agent": [
+        "Agentti"
       ]
     },
     "Success": {

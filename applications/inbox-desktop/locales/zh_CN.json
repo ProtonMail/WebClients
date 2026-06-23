@@ -138,10 +138,10 @@
         "卸载 ${ MAIL_APP_NAME }"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
-        "当启用硬件加速时，该应用将使用设备专用的图形硬件进行渲染。这可能在部分系统上引发兼容性问题。"
+        "当启用硬件加速时，应用将使用设备专用的图形硬件进行渲染。这可能在部分系统上引发兼容性问题。"
       ],
       "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
-        "如果没有硬件加速，该应用将使用软件渲染而不是您的显卡渲染。您可能会注意到动画速度变慢，CPU 使用率升高。"
+        "未启用硬件加速时，应用会使用软件渲染而非显卡。您可能会注意到动画变慢和 CPU 占用升高。"
       ],
       "Zoom": [
         "缩放"

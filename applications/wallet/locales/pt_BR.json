@@ -2465,6 +2465,9 @@
       "Username must end with a letter or digit": [
         "O nome de usuário deve terminar com uma letra ou dígito"
       ],
+      "VAT number must start with ${ prefixes }": [
+        "O número de IVA deve começar por ${ prefixes }"
+      ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
       ]
@@ -5808,6 +5811,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistência instantânea com IA, com um especialista à disposição!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de assinatura começa em ${ formattedTime }"

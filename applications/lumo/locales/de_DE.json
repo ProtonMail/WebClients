@@ -1176,6 +1176,51 @@
         "Du hast die Kontrolle"
       ]
     },
+    "collider_2025: Compaction": {
+      "${ removed } freed": [
+        "${ removed } freigegeben"
+      ],
+      "${ stats.summarizedMessageCount } earlier message condensed": [
+        "${ stats.summarizedMessageCount } frühere Nachricht zusammengefasst",
+        "${ stats.summarizedMessageCount } frühere Nachrichten zusammengefasst"
+      ],
+      "Chat shortened to keep going": [
+        "Chat gekürzt, um weiterzumachen"
+      ],
+      "cleared old tool results": [
+        "Alte Tool-Ergebnisse entfernt"
+      ],
+      "dropped old messages": [
+        "Alte Nachrichten fallen gelassen"
+      ],
+      "Files from summarized messages": [
+        "Dateien aus zusammengefassten Nachrichten"
+      ],
+      "No longer sent to the model": [
+        "Wird nicht mehr an das Modell gesendet"
+      ],
+      "removed file context": [
+        "Dateikontext entfernt"
+      ],
+      "removed tool calls": [
+        "Tool-Aufrufe entfernt"
+      ],
+      "summarized the conversation": [
+        "Unterhaltung zusammengefasst"
+      ],
+      "This chat got long — summarizing earlier messages so we can keep going…": [
+        "Dieser Chat ist ziemlich lang geworden – frühere Nachrichten werden zusammengefasst, damit wir weitermachen können…"
+      ],
+      "Tool calls removed": [
+        "Tool-Aufrufe entfernt"
+      ],
+      "Tool output cleared": [
+        "Tool-Ausgabe entfernt"
+      ],
+      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
+        "Was sich ${ LUMO_SHORT_APP_NAME } noch merkt"
+      ]
+    },
     "collider_2025: Context": {
       "I believe cereal is a soup and I'm not sorry": [
         "Ich glaube, Müsli ist eine Suppe und es tut mir nicht leid."
@@ -1584,6 +1629,9 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
+      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
+        "${ LUMO_SHORT_APP_NAME } kann pro Unterhaltung nur eine begrenzte Menge an Informationen verarbeiten. Hier siehst du, was diesen Speicherplatz derzeit belegt; wenn er voll ist, werden ältere Nachrichten automatisch zusammengefasst, damit du weiterchatten kannst."
+      ],
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME } bietet Zugriff auf erweiterte Modelle, um bei komplexeren Anfragen zu helfen und bessere Antworten zu geben."
       ],
@@ -1662,6 +1710,12 @@
       "Check this is the site you expect to visit": [
         "Prüfe, ob dies die Seite ist, die du besuchen möchtest"
       ],
+      "Context usage for this conversation": [
+        "Kontext-Verwendung für diese Unterhaltung"
+      ],
+      "Conversation": [
+        "Unterhaltung"
+      ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Erstelle und widerrufe API-Schlüssel für programmgesteuerten Zugriff. Schlüssel werden nur einmal beim Erstellen angezeigt."
       ],
@@ -1676,6 +1730,9 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Ziehe deine Dateien hierher, um sie dem Chat hinzuzufügen."
+      ],
+      "Earlier messages were summarized to make room, so they no longer take up space here.": [
+        "Frühere Nachrichten wurden zusammengefasst, um Platz zu schaffen, sodass sie hier keinen Platz mehr beanspruchen."
       ],
       "Error processing attachment": [
         "Fehler beim Verarbeiten des Anhangs"
@@ -1701,26 +1758,26 @@
       "Extract, analyse, and summarise documents, PDFs, and images.": [
         "Dokumente, PDFs und Bilder extrahieren, analysieren und zusammenfassen."
       ],
-      "File capacity": [
-        "Dateikapazität"
-      ],
-      "File capacity for this conversation": [
-        "Dateikapazität für diese Unterhaltung"
-      ],
       "File too large for preview (>150k tokens)": [
         "Datei zu groß für die Vorschau (>150.000 Token)"
       ],
       "files": [
         "dateien"
       ],
+      "Files": [
+        "Dateien"
+      ],
       "Files automatically retrieved based on your question.": [
         "Dateien automatisch basierend auf deiner Frage abgerufen."
       ],
-      "Files you've added to this conversation.": [
-        "Dateien, die du zu dieser Unterhaltung hinzugefügt hast."
+      "Files included in the next model request.": [
+        "Dateien, die in der nächsten Modellanfrage enthalten sind."
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Pro Tag werden die durchschnittlichen Token pro API-Aufruf berechnet (Token ÷ Aufrufe, oder 0, wenn keine Aufrufe)."
+      ],
+      "Free space": [
+        "Freier Platz"
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Generiere eine Workflow-Grafik und Implementierungscode für das folgende Ziel. Zielsprache für den Code:"
@@ -1791,6 +1848,9 @@
       "No usage yet": [
         "Noch keine Nutzung"
       ],
+      "Over capacity": [
+        "Überkapazität"
+      ],
       "Partial content": [
         "Teilinhalt"
       ],
@@ -1833,8 +1893,14 @@
       "Removed from future questions": [
         "Aus zukünftigen Fragen entfernt"
       ],
+      "Removed when chat was shortened": [
+        "Entfernt, als der Chat gekürzt wurde"
+      ],
       "Required on all POST requests with a JSON body.": [
         "Erforderlich für alle POST-Anfragen mit einem JSON-Body."
+      ],
+      "Reserved to keep chatting": [
+        "Reserviert, um weiter zu chatten"
       ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Speichere alle deine Unterhaltungen in einem Chatverlauf, den nur du einsehen kannst. Melde dich an oder erstelle ein Konto."
@@ -1875,6 +1941,9 @@
       "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
         "Die ${ LUMO_SHORT_APP_NAME }-API ist für ${ LUMO_SHORT_APP_NAME }+ Abonnenten verfügbar. Aktualisiere dein Abonnement, um API-Schlüssel zu erstellen und die API programmgesteuert zu nutzen."
       ],
+      "These files belonged to summarized messages and are no longer sent to the model.": [
+        "Diese Dateien gehörten zu zusammengefassten Nachrichten und werden nicht mehr an das Modell gesendet."
+      ],
       "These files won't be used for future questions.": [
         "Diese Dateien werden für zukünftige Fragen nicht verwendet."
       ],
@@ -1886,6 +1955,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Um später auf diese Unterhaltung zurückzukommen, melde dich an oder erstelle ein Konto."
+      ],
+      "tokens": [
+        "Token"
       ],
       "tokens / 30d": [
         "Token / 30 Tage"
@@ -7830,105 +7902,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Deal sichern"
-      ],
-      "Spring Sale": [
-        "Spring Sale"
-      ],
-      "SPRING SALE 2026": [
-        "SPRING SALE 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/Monat"
-      ],
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "2 TB data storage": [
-        "2 TB Datenspeicher"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB Datenspeicher"
-      ],
-      "500 GB storage": [
-        "500 GB Speicher"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
-      ],
-      "Access advanced AI models": [
-        "Auf erweiterte KI-Modelle zugreifen"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle Premium-Funktionen von Mail, Pass, Drive, VPN und Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Verbinde 10 Geräte gleichzeitig"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Verlängere dein Abonnement und spare ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Voller Zugriff auf ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
-      ],
-      "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
-      ],
-      "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
-      ],
-      "Online document editor": [
-        "Online-Dokumenteneditor"
-      ],
-      "Recover previous file versions": [
-        "Stelle frühere Dateiversionen wieder her"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Unbegrenzte tägliche Chats"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "für 12 Monate"
-      ],
-      "SPRING SALE": [
-        "SPRING SALE"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Deal sichern"
@@ -8778,6 +8751,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."

@@ -1229,6 +1229,9 @@
       "Verify now": [
         "Verificar ahora"
       ],
+      "Verify password": [
+        "Verificar contraseña"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificar el dominio ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1364,6 +1367,9 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Add-on": [
+        "Complemento"
       ],
       "Dedicated VPN servers": [
         "Servidores VPN dedicados"
@@ -2219,6 +2225,11 @@
       ],
       "Take a tour": [
         "Explore ahora"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Se omiten los duplicados de las importaciones anteriores. Deshaga o importe mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -3715,8 +3726,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos la importación al 80% de almacenamiento para reservar espacio para nuevos mensajes"
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Importaremos sus correos electrónicos anteriores, omitiremos los duplicados y nos conectaremos a su Gmail para que los nuevos mensajes aparezcan automáticamente. Puede deshacer la importación en cualquier momento en los ajustes de Easy Switch."
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Se importan sus correos antiguos y se sincronizan los nuevos mensajes de Gmail a partir de ahora."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Estamos importando sus correos electrónicos de Gmail. Le avisaremos cuando finalicemos."
@@ -3741,12 +3752,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Todavía puede iniciar sesión con esta dirección y volver a conectarse en cualquier momento."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
@@ -6341,6 +6346,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usa autenticación de dos factores para iniciar sesión en su organización.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usan autenticación de dos factores para iniciar sesión en su organización."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "Es necesario que ${ invitedMemberCount } usuario acepte su invitación para empezar a recibir correos grupales.",
+        "Es necesario que ${ invitedMemberCount } usuarios acepten su invitación para empezar a recibir correos grupales."
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
@@ -6384,6 +6393,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de su suscripción ${ planTitle } se mantienen sin cambios."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "Se ha añadido ${ pendingAdminMemberCount } nuevo miembro a través de tu proveedor de identidad y está pendiente de revisión.",
+        "Se han añadido ${ pendingAdminMemberCount } nuevos miembros a través de tu proveedor de identidad y están pendientes de revisión."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -7692,6 +7705,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Los nuevos datos de actividad dejarán de recopilarse y mostrarse."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Se ha creado nuevo grupo a través de su proveedor de identidad y está pendiente de revisión."
       ],
       "New sidebar": [
         "Nueva barra lateral"
@@ -9750,6 +9766,9 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Import your emails": [
+        "Importar sus correos electrónicos"
       ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
@@ -12157,11 +12176,17 @@
       "1-2 emails per month": [
         "1 a 2 correos al mes"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 correos al año. Recordatorios para mantener actualizados sus métodos de recuperación."
+      ],
       "2-4 emails per year": [
         "2 a 4 correos al año"
       ],
       "4-6 emails per year": [
         "4 a 6 correos al año"
+      ],
+      "Account email updates": [
+        "Actualizaciones de la cuenta por correo electrónico"
       ],
       "Application notifications": [
         "Notificaciones de la aplicación"
@@ -12186,6 +12211,12 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participe en las encuestas para mejorar los servicios de ${ BRAND_NAME }"
+      ],
+      "Product email updates": [
+        "Actualizaciones del producto por correo electrónico"
+      ],
+      "Recovery checklist": [
+        "Lista de comprobación de recuperación"
       ]
     },
     "Notification": {
@@ -13547,102 +13578,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "SPRING SALE 2026": [
-        "OFERTA DE PRIMAVERA 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/mes"
-      ],
-      "15 GB storage": [
-        "15 GB de almacenamiento"
-      ],
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces su plan actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acceda a más de 15 000 servidores en más de 120 países"
-      ],
-      "Access advanced AI models": [
-        "Acceso a modelos de IA avanzados"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Todas las funciones premium de Mail, Pass, Drive, VPN y Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquee anuncios, rastreadores y malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecte 10 dispositivos a la vez"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acceso completo a ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historial de chat completo con búsqueda fácil y favoritos"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y su pareja"
-      ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
-      "Recover previous file versions": [
-        "Recupere versiones anteriores de archivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Chats diarios ilimitados"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Alias de hide-my-email ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use su propio dominio de correo electrónico"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "SPRING SALE": [
-        "OFERTA DE PRIMAVERA"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Aproveche la oferta"
@@ -14071,6 +14006,9 @@
       ]
     },
     "Role": {
+      "Owner": [
+        "Propietario"
+      ],
       "Security Admin": [
         "Administrador de seguridad"
       ],
@@ -15346,6 +15284,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuario",
         "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuarios"
@@ -16318,6 +16259,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } amistad suscrita",
         "${ friendsSubscribed } amistades suscritas"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para organizaciones"
@@ -17730,6 +17674,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Incluye correo electrónico profesional en @sudominio.com, almacenamiento en la nube con edición colaborativa de documentos, programación y videoconferencias, gestión de contraseñas, una VPN segura de ${ VPN_SHORT_APP_NAME } y más."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."

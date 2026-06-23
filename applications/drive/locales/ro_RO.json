@@ -5329,9 +5329,6 @@
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }."
       ],
-      "All your files will be imported": [
-        "Vor fi importate toate fișierele."
-      ],
       "Already in this folder": [
         "Deja în acest folder"
       ],
@@ -10901,102 +10898,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Valorificați oferta"
-      ],
-      "SPRING SALE 2026": [
-        "OFERTĂ PRIMĂVERII 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/lună"
-      ],
-      "15 GB storage": [
-        "15 GB de spațiu de stocare"
-      ],
-      "2 TB data storage": [
-        "2 TB de spațiu de stocare pentru date"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de spațiu de stocare: de 40 de ori planul actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de spațiu de stocare pentru date"
-      ],
-      "500 GB storage": [
-        "500 GB de spațiu de stocare"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accesați peste 15.000 de servere din peste 120 de țări"
-      ],
-      "Access advanced AI models": [
-        "Acces la modele AI avansate"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Toate caracteristicile premium ale Mail, Pass, Drive, VPN și Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocați reclamele, urmăritorii și malware-ul"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autentificator A2F încorporat"
-      ],
-      "Connect 10 devices at once": [
-        "Conectați 10 dispozitive simultan"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Extindeți-vă abonamentul și economisiți ${ discountPercent }%!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acces complet la ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Istoric complet al conversațiilor cu căutare ușoară și favorite"
-      ],
-      "Individual accounts for 6 users": [
-        "Conturi individuale pentru 6 utilizatori"
-      ],
-      "Individual accounts for you and a partner": [
-        "Conturi individuale pentru dvs. și un partener"
-      ],
-      "Online document editor": [
-        "Editor de documente online"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protecție mai puternică împotriva amenințărilor cibernetice"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Conversații zilnice nelimitate"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Număr nelimitat de foldere, etichete și filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Număr nelimitat de aliasuri hide-my-email"
-      ],
-      "Use your own email domain": [
-        "Utilizați propriul domeniu de e-mail"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "pentru 12 luni"
-      ],
-      "SPRING SALE": [
-        "OFERTĂ PRIMĂVERII"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Valorificați oferta"
@@ -12823,17 +12724,17 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Semnătura digitală parțial verificată. Acest folder a fost încărcat folosind o legătură de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Semnătură digitală verificată. Acest fișier a fost creat în siguranță de către <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely created by ${ author }.": [
+        "Semnătură digitală verificată. Acest fișier a fost creat în siguranță de către ${ author }."
       ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This file was securely uploaded by ${ author }.": [
+        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ author }."
       ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Semnătură digitală verificată. Acest folder a fost creat în siguranță de către <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely created by ${ author }.": [
+        "Semnătură digitală verificată. Acest folder a fost creat în siguranță de către ${ author }."
       ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către <strong>${ emailAddress }</strong>."
+      "Digital signature verified. This folder was securely uploaded by ${ author }.": [
+        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către ${ author }."
       ],
       "Discard": [
         "Anulare"
@@ -13474,17 +13375,17 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Nu am putut verifica dacă <strong>${ emailAddress }</strong> a creat acest fișier."
+      "We couldn’t verify that ${ author } created this file.": [
+        "Nu s-a putut verifica dacă ${ author } a creat acest fișier."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a creat acest folder."
+      "We couldn’t verify that ${ author } created this folder.": [
+        "Nu s-a putut verifica dacă ${ author } a creat acest folder."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a încărcat acest fișier."
+      "We couldn’t verify that ${ author } uploaded this file.": [
+        "Nu s-a putut verifica dacă ${ author } a încărcat acest fișier."
       ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a încărcat acest folder."
+      "We couldn’t verify that ${ author } uploaded this folder.": [
+        "Nu s-a putut verifica dacă ${ author } a încărcat acest folder."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Nu s-a putut verifica dacă un utilizator anonim a creat acest fișier."

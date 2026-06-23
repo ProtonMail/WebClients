@@ -1253,11 +1253,6 @@
         "Aɣram ɣef 30 n wussan yettwaḍmen"
       ]
     },
-    "BF2024: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } n uḥraz"
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 wayyur"
@@ -2639,20 +2634,11 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "A nsserṛeḥ imaylen-ik iqdacen, ad nezgel ayen yettwalesen, u ad nqqen ɣer Gmail-ik iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut. Tizmired ad tsewtid aserṛeḥ melmi i k-yehwa deg yiɣewwaren n Easy Switch"
-      ],
       "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
         "S tiggayin timaynutin n yimaylen, d izenan yesɛan azal kan i d-yettawḍen ɣer tnakat-ik n unermas tagejdant. Tiggayin xeddment am yimsizdigen n yispamen. ${ MAIL_APP_NAME } leɛmer yeɣra imaylen-ik neɣ ibḍa isefka-ik."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Tzemreḍ ad d-tketreḍ tidyanin s umasal (afaylu ICS).\nAfaylu ilaq ad yesɛu teɣzi tafellayt n ${ MAX_IMPORT_FILE_SIZE_STRING } rnu ad yili deg-s alamma ${ MAX_IMPORT_EVENTS_STRING } n tedyanin.\nMa yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t d ifuyla meẓẓiyen."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Tzemreḍ ad tkecmeḍ s tansa-agi u ad t-id-tqqneḍ tallit i k-yehhwan."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ur ttuɣaleḍ ara ad tzemreḍ ad tseqdceḍ ${ address.Email } i urmes d uzen n yimaylen di ${ BRAND_NAME }. Ẓer daɣen belli iznan yettwaznen ɣer tansa-a seg ${ BRAND_NAME } ur ttuɣalen ara d wid yettwawgelhen seg yixef ɣer yixef."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2784,11 +2770,6 @@
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
         "Rnu ɣer ugar n 50,000 n tuddsiwin yesfaydin yakan seg tɣellist n ${ BRAND_NAME }"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Tallalt yezwaren"
       ]
     },
     "Email": {
@@ -3527,11 +3508,6 @@
         "(ulac azwel)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TAṬ seg uḥraz asemday"
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Gdel tinnubga"
@@ -3547,11 +3523,6 @@
       ],
       "View invitation": [
         "Sken tinnubga"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Armi d 6 n iseqdacen"
       ]
     },
     "familyOffer_2023:Error": {
@@ -9060,32 +9031,11 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TAṬ"
-      ],
-      "6 users": [
-        "6 yiseqdacen"
-      ],
-      "All paid Mail and Calendar features": [
-        "Akk timahilin n lexlaṣ i Mail d Calender"
-      ],
-      "High speed VPN": [
-        "VPN arurad ɛlayen"
-      ],
       "Highest VPN speed": [
         "Arured afellay maḍi VPN"
       ],
-      "Premium early access": [
-        "Anekcum Premium uzwir"
-      ],
-      "Secure cloud storage": [
-        "Aḥraz n usigna aɣellsan"
-      ],
       "Secure streaming": [
         "Asuddem aɣellsan"
-      ],
-      "Support online privacy": [
-        "Sefrek tabaḍnit srid"
       ]
     },
     "specialoffer: Link": {
@@ -9100,27 +9050,11 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } wayyur",
-        "${ n } wayyuren"
-      ],
       "/ month": [
         "/ n wayyur"
       ],
       "/month": [
         "/ayyur"
-      ],
-      "1 year": [
-        "1 n useggas"
-      ],
-      "15 months": [
-        "15 wayyuren"
-      ],
-      "2 years": [
-        "2 n yiseggasen"
-      ],
-      "30 months": [
-        "30 wayyuren"
       ],
       "Get the deal": [
         "Faṛes tagnit"

@@ -1229,6 +1229,9 @@
       "Verify now": [
         "Vérifier maintenant"
       ],
+      "Verify password": [
+        "Vérifier le mot de passe"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Vérifier le domaine ${ unverifiedSSODomain.DomainName }"
       ],
@@ -2222,6 +2225,11 @@
       ],
       "Take a tour": [
         "Laissez-vous guider"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -3718,8 +3726,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Nous allons importer vos anciens messages, ignorer les doublons et nous connecter à votre compte Gmail afin que vos nouveaux messages s'affichent automatiquement. Vous pouvez annuler l'importation à tout moment dans les paramètres d'Easy Switch."
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Nous importerons vos anciens messages et synchroniserons désormais les nouveaux messages provenant de Gmail."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
@@ -3749,7 +3757,7 @@
         "Vous pouvez toujours vous connecter avec cette adresse et vous reconnecter à tout moment."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Vous ne pourrez plus utiliser ${ address.Email } pour recevoir et envoyer des emails dans ${ BRAND_NAME }. Notez également que les messages envoyés à cette adresse depuis ${ BRAND_NAME } ne seront plus chiffrés de bout en bout."
+        "Vous ne pourrez plus utiliser ${ address.Email } pour recevoir et envoyer des e-mails dans ${ BRAND_NAME }. Notez également que les messages envoyés à cette adresse depuis ${ BRAND_NAME } ne seront plus chiffrés de bout en bout."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Vous transférez ${ numAddressesOrSync } adresse Gmail vers ${ MAIL_APP_NAME }.",
@@ -4519,6 +4527,9 @@
       "No contacts found to import": [
         "Aucun contact n'a été trouvé pour l'importation."
       ],
+      "No drive found to import": [
+        "Aucun lecteur détecté pour l'importation"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
@@ -4530,6 +4541,9 @@
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
@@ -4786,6 +4800,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -6671,9 +6688,6 @@
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }",
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "Tous vos fichiers seront importés."
-      ],
       "Allocated": [
         "Alloué"
       ],
@@ -7246,6 +7260,9 @@
       ],
       "Failed to fetch logs.": [
         "Les journaux n'ont pas pu être récupérés."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ],
       "Fill in user details": [
         "Renseignez les informations de l'utilisateur."
@@ -9759,6 +9776,9 @@
       ],
       "Import to:": [
         "Importer dans :"
+      ],
+      "Import your emails": [
+        "Importez vos messages"
       ],
       "Include application logs in bug report": [
         "Inclure les journaux d'application dans le rapport de bug"
@@ -13566,102 +13586,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "SPRING SALE 2026": [
-        "OFFRE DE PRINTEMPS 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/mois"
-      ],
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "2 TB data storage": [
-        "2 To d'espace de stockage de données"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
-      ],
-      "3 TB data storage": [
-        "3 To d'espace de stockage de données"
-      ],
-      "500 GB storage": [
-        "500 Go d'espace de stockage"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
-      ],
-      "Access advanced AI models": [
-        "Accès aux modèles d'IA avancés"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
-      ],
-      "Built-in 2FA authenticator": [
-        "Authentificateur A2F intégré"
-      ],
-      "Connect 10 devices at once": [
-        "Connectez 10 appareils en même temps"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Prolongez votre abonnement et économisez ${ discountPercent } % !"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Accès complet à ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historique complet des discussions avec recherche facile et favoris"
-      ],
-      "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
-      ],
-      "Individual accounts for you and a partner": [
-        "Comptes individuels pour vous et un partenaire"
-      ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
-      "Recover previous file versions": [
-        "Récupérez les versions précédentes des fichiers"
-      ],
-      "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
-      ],
-      "Unlimited daily chats": [
-        "Chats quotidiens illimités"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Des dossiers, labels et filtres illimités"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
-      "Use your own email domain": [
-        "Utilisez votre propre domaine de messagerie"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "pendant 12 mois"
-      ],
-      "SPRING SALE": [
-        "OFFRE DE PRINTEMPS"
       ]
     },
     "q2campaign2026: Action": {

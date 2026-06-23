@@ -3253,6 +3253,9 @@
       "No contacts found to import": [
         "Aucun contact n'a été trouvé pour l'importation."
       ],
+      "No drive found to import": [
+        "Aucun lecteur détecté pour l'importation"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
@@ -3261,6 +3264,9 @@
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "L'un des contacts n'a pas d'adresse e-mail : ${ noEmailsContactNamesList }",
@@ -3481,6 +3487,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -4575,9 +4584,6 @@
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }",
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "Tous vos fichiers seront importés."
-      ],
       "Already in this folder": [
         "Déjà dans ce dossier"
       ],
@@ -4878,6 +4884,9 @@
       ],
       "File will not be updated": [
         "Le fichier ne sera pas mis à jour."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ],
       "finance": [
         "finance"
@@ -8733,102 +8742,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "SPRING SALE 2026": [
-        "OFFRE DE PRINTEMPS 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/mois"
-      ],
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "2 TB data storage": [
-        "2 To d'espace de stockage de données"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
-      ],
-      "3 TB data storage": [
-        "3 To d'espace de stockage de données"
-      ],
-      "500 GB storage": [
-        "500 Go d'espace de stockage"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
-      ],
-      "Access advanced AI models": [
-        "Accès aux modèles d'IA avancés"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
-      ],
-      "Built-in 2FA authenticator": [
-        "Authentificateur A2F intégré"
-      ],
-      "Connect 10 devices at once": [
-        "Connectez 10 appareils en même temps"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Prolongez votre abonnement et économisez ${ discountPercent } % !"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Accès complet à ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historique complet des discussions avec recherche facile et favoris"
-      ],
-      "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
-      ],
-      "Individual accounts for you and a partner": [
-        "Comptes individuels pour vous et un partenaire"
-      ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
-      "Recover previous file versions": [
-        "Récupérez les versions précédentes des fichiers"
-      ],
-      "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
-      ],
-      "Unlimited daily chats": [
-        "Chats quotidiens illimités"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Des dossiers, labels et filtres illimités"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
-      "Use your own email domain": [
-        "Utilisez votre propre domaine de messagerie"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "pendant 12 mois"
-      ],
-      "SPRING SALE": [
-        "OFFRE DE PRINTEMPS"
       ]
     },
     "q2campaign2026: Action": {

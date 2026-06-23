@@ -11320,18 +11320,6 @@
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Tanda tangan digital terverifikasi secara parsial. Folder ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
       ],
-      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Tanda tangan digital berhasil diverifikasi. File ini dibuat secara aman oleh <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Tanda tangan digital berhasil diverifikasi. File ini diunggah secara aman oleh <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
-        "Tanda tangan digital berhasil diverifikasi. Folder ini dibuat secara aman oleh <strong>${ emailAddress }</strong>."
-      ],
-      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Tanda tangan digital berhasil diverifikasi. Folder ini diunggah secara aman oleh <strong>${ emailAddress }</strong>."
-      ],
       "Discard": [
         "Batalkan"
       ],
@@ -11928,18 +11916,6 @@
       ],
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Kami tidak dapat memverifikasi bahwa file ini dibuat oleh <strong>${ emailAddress }</strong>."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
-        "Kami tidak dapat memverifikasi bahwa folder ini dibuat oleh <strong>${ emailAddress }</strong>."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Kami tidak dapat memverifikasi bahwa file ini diunggah oleh <strong>${ emailAddress }</strong>."
-      ],
-      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
-        "Kami tidak dapat memverifikasi bahwa folder ini diunggah oleh <strong>${ emailAddress }</strong>."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Kami tidak dapat memverifikasi bahwa file ini dibuat oleh pengguna anonim."

@@ -4,6 +4,14 @@
     "language": "fr_FR"
   },
   "contexts": {
+    "Accessibility announcement": {
+      "${ name } lowered their hand": [
+        "${ name } a baissé la main."
+      ],
+      "Your camera has been turned off by the host": [
+        "Votre caméra a été désactivée par l'hôte."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
@@ -28,6 +36,9 @@
       ],
       "Authenticate": [
         "S'authentifier"
+      ],
+      "Back": [
+        "Précédent"
       ],
       "Background blur": [
         "Flou d'arrière-plan"
@@ -115,6 +126,9 @@
       ],
       "Download participant report": [
         "Télécharger le rapport des participants"
+      ],
+      "Download recording": [
+        "Télécharger l’enregistrement"
       ],
       "Download room level report": [
         "Télécharger le rapport au niveau de la salle"
@@ -235,6 +249,10 @@
       ],
       "React with ${ emoji }": [
         "Réagir avec ${ emoji }"
+      ],
+      "React with ${ emoji }, ${ identities.length } reaction": [
+        "Réagir avec ${ emoji }, ${ identities.length } réaction",
+        "Réagir avec ${ emoji }, ${ identities.length } réactions"
       ],
       "Receive video": [
         "Recevoir la vidéo"
@@ -1512,17 +1530,11 @@
       "Failed to join meeting. Please try again later.": [
         "Impossible de rejoindre la réunion. Veuillez réessayer plus tard."
       ],
-      "Failed to load recordings": [
-        "Le chargement des enregistrements n'a pas abouti."
-      ],
       "Failed to lock meeting": [
         "La réunion n'a pas pu être verrouillée"
       ],
       "Failed to rotate personal meeting link": [
         "Échec du renouvellement du lien de réunion personnelle"
-      ],
-      "Failed to save recording": [
-        "La sauvegarde de l'enregistrement a échouée"
       ],
       "Failed to send chat message. Please try again.": [
         "Une erreur est survenue lors de l'envoi du message. Essayez à nouveau."
@@ -1607,6 +1619,9 @@
       ],
       "Username must end with a letter or digit": [
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
+      ],
+      "Your browser ran out of storage space. We saved the recording up to this point.": [
+        "Votre navigateur n'a plus d'espace de stockage disponible. Nous avons enregistré la vidéo jusqu'à ce moment-là."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "L'horloge de votre appareil semble être désynchronisée. Veuillez vérifier l'heure de votre système puis réessayer."
@@ -2211,9 +2226,6 @@
       ],
       "Recording in progress": [
         "Enregistrement en cours"
-      ],
-      "Recording saved": [
-        "L'enregistrement a été enregistré."
       ],
       "Recording will begin and attendees will be notified.": [
         "L'enregistrement commencera et les participants seront notifiés."
@@ -2975,6 +2987,9 @@
       "Chat": [
         "Discussion"
       ],
+      "Couldn't prepare the recording": [
+        "Impossible de préparer l'enregistrement"
+      ],
       "Create new room": [
         "Créer une nouvelle salle"
       ],
@@ -3075,6 +3090,9 @@
       "Personal meeting room": [
         "Salle de réunion personnelle"
       ],
+      "Preparing your recording…": [
+        "Préparation de votre enregistrement en cours…"
+      ],
       "Publications": [
         "Publications"
       ],
@@ -3149,6 +3167,9 @@
       ],
       "Your feedback has been submitted": [
         "Votre commentaire a été envoyé"
+      ],
+      "Your recording is ready": [
+        "Votre enregistrement est prêt"
       ]
     },
     "Today icon tooltip in mini calendar": {

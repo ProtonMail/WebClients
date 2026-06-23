@@ -561,7 +561,7 @@
         "载入"
       ],
       "Load image": [
-        "加载图片"
+        "加载图像"
       ],
       "Loading Zoom configuration": [
         "正在加载 Zoom 配置"
@@ -3923,6 +3923,9 @@
       "No contacts found to import": [
         "未找到可导入的联系人"
       ],
+      "No drive found to import": [
+        "未找到可导入的云端硬盘"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
@@ -3937,6 +3940,9 @@
       ],
       "Not a valid number": [
         "无效号码"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "您的 ${ DRIVE_APP_NAME } 存储空间不足"
       ],
       "Number of occurrences cannot be empty": [
         "重复次数不能为空"
@@ -4171,6 +4177,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
+      ],
+      "Unexpected error, we can't import the files": [
+        "出现意外错误，无法导入文件"
       ],
       "Unknown error": [
         "未知错误"
@@ -5375,9 +5384,6 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
       ],
-      "All your files will be imported": [
-        "您所有的文件将被导入"
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
       ],
@@ -5707,6 +5713,9 @@
       ],
       "Failed to update meeting schedule": [
         "更新会议计划失败"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "仅限文件 (不含照片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }) - 总计上限 100 GB，文件数量上限 100,000 个，单文件大小上限 50 GB"
       ],
       "finance": [
         "金融"
@@ -8818,7 +8827,7 @@
         "密码管理和身份保护"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
+        "在邮件落款中加入图标、图像、链接、社交网络标识等个性化元素"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
         "对于拥有 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或更多用户的客户，${ BRAND_NAME } 客户支持团队可在欧洲工作时间提供电话支持。"
@@ -8860,10 +8869,10 @@
         "与任何人安全共享单个项目（即使他们不使用 ${ PASS_APP_NAME }）"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
+        "安全存储联系人的电话号码、住址、生日、备注等详细信息，零访问加密技术确保即使是 ${ BRAND_NAME } 也无法解密并访问这些信息。"
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "查看参会者的空闲时间，节省会议安排时间"
+        "查看参与者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
@@ -9907,7 +9916,7 @@
         "群组名称"
       ],
       "Image URL": [
-        "图像 URL"
+        "图像地址"
       ],
       "Indexing...": [
         "索引中..."
@@ -9925,7 +9934,7 @@
         "名称"
       ],
       "Name of attendee": [
-        "参会者姓名"
+        "参与者姓名"
       ],
       "Name or email address": [
         "用户名或邮箱地址"
@@ -11135,7 +11144,7 @@
         "使用自己域名的专业邮箱地址，建立信任和品牌的知名度。"
       ],
       "Catch-all email address": [
-        "通配邮件地址"
+        "通配邮箱地址"
       ],
       "Comprehensive privacy and security": [
         "全面的隐私和安全"
@@ -11729,6 +11738,9 @@
       "${ feature } is now active": [
         "${ feature } 已激活"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
       "Account recovery": [
         "账户恢复"
       ],
@@ -11982,7 +11994,7 @@
         "更改邮箱设置"
       ],
       "Edit image": [
-        "更改图片"
+        "编辑图像"
       ],
       "Email addresses": [
         "邮箱地址"
@@ -12555,8 +12567,11 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "获取 AI 和人工专家的即时协助！"
+      ],
       "Load image": [
-        "加载图片"
+        "加载图像"
       ],
       "Not all information listed here was exposed for all users.": [
         "并非所有用户都能查看此处列出的全部信息。"

@@ -3351,17 +3351,8 @@
       "Track the status and activity of your referrals": [
         "თქვენი მიმართვების სტატუსისა და აქტივობების ტრეკინგი"
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "ჩვენ მოვახდენთ თქვენი ძველი ელფოსტის იმპორტს, გამოვტოვებთ დუბლიკატებს და დავუკავშირდებით თქვენს Gmail-ს, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს. იმპორტის დაბრუნება ნებისმიერ დროს შეგიძლიათ Easy Switch-ის პარამეტრებში"
-      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "შეგიძლიათ, შემოიტანოთ ფაილები iCAL ფორმატში (ICS ფაილები). ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება შეიცავდეს ${ MAX_IMPORT_EVENTS_STRING }-მდე მოვლენას. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "თქვენ კვლავ შეძლებთ ამ მისამართით შესვლას და ნებისმიერ დროს ხელახლა დაკავშირებას."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "თქვენ ვეღარ შეძლებთ ${ address.Email }-ის გამოყენებას ${ BRAND_NAME }-ში ელფოსტის მისაღებად და გასაგზავნად. ასევე გაითვალისწინეთ, რომ ${ BRAND_NAME }-დან ამ მისამართზე გაგზავნილი შეტყობინებები აღარ იქნება ბოლოდან ბოლომდე დაშიფრული."
       ]
     },
     "description": {
