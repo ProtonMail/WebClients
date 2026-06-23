@@ -45,6 +45,7 @@ import {
     ThemesSection,
     ThirdPartySection,
     TwoFactorSection,
+    UpsellModalTelemetryProvider,
     UsernameSection,
     VpnAlsoInYourPlanSection,
     VpnBlogSection,
@@ -126,11 +127,13 @@ const AccountSettingsRouter = ({
                         variant={SettingsLayoutVariant.Card}
                         maxWidth={SettingsCardMaxWidth.Wide}
                     >
-                        <YourPlanSectionV2 app={app} />
-                        <YourPlanUpsellsSectionV2 app={app} />
-                        <VPNDownloadAndInfoSection app={app} />
-                        <VpnAlsoInYourPlanSection app={app} />
-                        <VpnBlogSection />
+                        <UpsellModalTelemetryProvider context="account-home">
+                            <YourPlanSectionV2 app={app} />
+                            <YourPlanUpsellsSectionV2 app={app} />
+                            <VPNDownloadAndInfoSection app={app} />
+                            <VpnAlsoInYourPlanSection app={app} />
+                            <VpnBlogSection />
+                        </UpsellModalTelemetryProvider>
                     </PrivateMainSettingsArea>
                 </Route>
             )}
@@ -149,21 +152,23 @@ const AccountSettingsRouter = ({
                         variant={SettingsLayoutVariant.Card}
                         maxWidth={SettingsCardMaxWidth.Wide}
                     >
-                        <YourPlanSectionV2
-                            app={app}
-                            editBillingCycle={true}
-                            cta={<DashboardComparePlansCTA app={app} />}
-                        />
-                        <AssistantToggle />
-                        <SubscriptionsSection />
-                        <PaymentMethodsSection app={app} />
-                        <CreditsSection app={app} />
-                        <GiftCodeSection />
-                        <InvoicesSection app={app} />
-                        <EmailSubscriptionSection toggleContainerClassName="gap-4" />
-                        <CancelSubscriptionSection app={app} />
-                        <CancelSubscriptionViaSupportSection />
-                        <DowngradeSubscriptionSection app={app} />
+                        <UpsellModalTelemetryProvider context="account-home">
+                            <YourPlanSectionV2
+                                app={app}
+                                editBillingCycle={true}
+                                cta={<DashboardComparePlansCTA app={app} />}
+                            />
+                            <AssistantToggle />
+                            <SubscriptionsSection />
+                            <PaymentMethodsSection app={app} />
+                            <CreditsSection app={app} />
+                            <GiftCodeSection />
+                            <InvoicesSection app={app} />
+                            <EmailSubscriptionSection toggleContainerClassName="gap-4" />
+                            <CancelSubscriptionSection app={app} />
+                            <CancelSubscriptionViaSupportSection />
+                            <DowngradeSubscriptionSection app={app} />
+                        </UpsellModalTelemetryProvider>
                     </PrivateMainSettingsArea>
                 </Route>
             )}
