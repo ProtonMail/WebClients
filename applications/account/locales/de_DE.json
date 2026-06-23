@@ -1836,6 +1836,9 @@
       "Verify now": [
         "Jetzt verifizieren"
       ],
+      "Verify password": [
+        "Passwort bestätigen"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Die Domain ${ unverifiedSSODomain.DomainName } verifizieren"
       ],
@@ -2486,141 +2489,12 @@
         "Angebot nicht verfügbar"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop-App"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } und ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } Speicherplatz"
-      ],
-      "1 user account": [
-        "1 Benutzerkonto"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB Speicherplatz: 40x dein aktuelles Abonnement"
-      ],
-      "6 user accounts": [
-        "6 Benutzerkonten"
-      ],
-      "Admin panel to manage your family": [
-        "Administrationskonsole zur Verwaltung deiner Familie"
-      ],
-      "Advanced account protection": [
-        "Erweiterter Kontoschutz"
-      ],
-      "Easily add or remove users": [
-        "Benutzer einfach hinzufügen oder entfernen"
-      ],
-      "One-time payment, lifetime deal": [
-        "Einmalige Zahlung, lebenslanges Angebot"
-      ],
-      "Online document editor": [
-        "Editor für Onlinedokumente"
-      ],
-      "Password health alerts": [
-        "Warnungen zur Passwortsicherheit"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Unbegrenzte Logins, Kreditkarten, Hide-my-email-Aliasse und mehr"
-      ],
       "Use your own email domain": [
         "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Zum Preis von einmalig ${ amount }"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Verlängert sich nach 1 Monat zum ${ regularAmount }."
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst mehr als 8.500 Server in über 110 Ländern, 10 Geräte, Hochgeschwindigkeits-Streaming, Werbeblocker und Malware-Schutz, VPN Accelerator und mehr."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, ${ DARK_WEB_MONITORING_NAME } und mehr."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
-        "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sichere deine E-Mails und plane deine Termine mit Ende-zu-Ende-Verschlüsselung. Enthält 15 E-Mail-Adressen, Support für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Editor für Onlinedokumente, Fotosicherung, Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB Datenspeicher"
-      ],
-      "3 TB data storage": [
-        "3 TB Datenspeicher"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Greife auf über 15.000 Server in mehr als 120 Ländern zu"
-      ],
-      "Access advanced AI models": [
-        "Zugriff auf erweiterte KI-Modelle"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Werbung, Tracker und Malware blockieren"
-      ],
-      "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authenticator"
-      ],
-      "Connect 10 devices at once": [
-        "Verbinde 10 Geräte gleichzeitig"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle Konten für 6 Benutzer"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle Konten für dich und einen Partner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyberbedrohungen"
-      ],
-      "Unlimited daily chats": [
-        "Unbegrenzte tägliche Chats"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Das speziell entwickelte NetShield schützt deine Geräte und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
       ]
     },
     "Billing cycle": {
@@ -3348,6 +3222,11 @@
       ],
       "Take a tour": [
         "Rundgang"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikate aus früheren Importen werden übersprungen. In den Einstellungen von ${ PRODUCT_NAMES.EASY_SWITCH } kannst du den Vorgang rückgängig machen oder ältere Nachrichten importieren."
       ]
     },
     "Calendar access select label": {
@@ -5376,8 +5255,8 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Wir werden die Importe bei 80 % der Speicherplatzbelegung anhalten, damit genügend Platz für neue Nachrichten bleibt."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Wir importieren deine alten E-Mails, überspringen doppelte Nachrichten und verbinden uns mit deinem Gmail-Konto, damit neue Nachrichten automatisch angezeigt werden. Du kannst den Import jederzeit in den Einstellungen von Easy Switch rückgängig machen."
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Wir werden deine alten E-Mails importieren und künftig neue Nachrichten aus Gmail synchronisieren."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Wir haben mit dem Import deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
@@ -5822,14 +5701,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Maßgeschneiderte Lösungen für größere Organisationen mit benutzerdefinierten Anforderungen"
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Erweiterter Versionsverlauf"
-      ],
-      "Priority support": [
-        "Priorisierter Support"
       ]
     },
     "Duo offer": {
@@ -7233,6 +7104,9 @@
       "No contacts found to import": [
         "Keine Kontakte zum Importieren vorhanden"
       ],
+      "No drive found to import": [
+        "Es wurde kein Laufwerk zum Importieren gefunden"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
@@ -7250,6 +7124,9 @@
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Nicht genügend Speicherplatz in deinem ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
@@ -7543,6 +7420,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -7974,19 +7854,9 @@
         "Du kannst eine ICS-Datei der von dir erfolgreich exportierten Termine speichern."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB Speicherplatz insgesamt"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Die Vorteile deines Kontos"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Der Speicherplatz wird von Family-Mitgliedern in ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ]
     },
     "familyOffer_2023:Action": {
@@ -8019,11 +7889,6 @@
       ],
       "View invitation": [
         "Einladung ansehen"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Bis zu 6 Benutzer"
       ]
     },
     "familyOffer_2023:Error": {
@@ -8278,17 +8143,6 @@
       ],
       "Set family name": [
         "Family-Name festlegen"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2700 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
       ]
     },
     "Feature": {
@@ -9640,6 +9494,10 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Nicht-SSO-Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Nicht-SSO-Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden."
       ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } Benutzer muss die Einladung annehmen, um Gruppen-E-Mails zu erhalten.",
+        "${ invitedMemberCount } Benutzer müssen die Einladung annehmen, um Gruppen-E-Mails zu erhalten."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } möchte Daten in ${ PASS_APP_NAME } mit dir teilen."
       ],
@@ -9713,6 +9571,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Das ${ PASS_SHORT_APP_NAME } Lifetime-Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf die Überprüfung.",
+        "${ pendingAdminMemberCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf die Überprüfung."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -10885,6 +10747,9 @@
       "Featured in ZDNet": [
         "Vorgestellt in ZDNet"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
+      ],
       "Fill in user details": [
         "Daten des Benutzers ausfüllen"
       ],
@@ -11502,6 +11367,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Neue Aktivitätsdaten werden nicht mehr erfasst und angezeigt."
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Neue Gruppe wurde über deinen Identitätsanbieter hinzugefügt und wartet auf die Überprüfung."
       ],
       "New sidebar": [
         "Neue Seitenleiste"
@@ -14612,6 +14480,9 @@
       "Enter code": [
         "Code eingeben"
       ],
+      "Enter current password": [
+        "Aktuelles Passwort eingeben"
+      ],
       "Enter name or email address": [
         "Namen oder E-Mail-Adresse eingeben"
       ],
@@ -14764,6 +14635,9 @@
       ],
       "Import to:": [
         "Importieren nach:"
+      ],
+      "Import your emails": [
+        "Deine E-Mails importieren"
       ],
       "Inbox": [
         "Posteingang"
@@ -20156,102 +20030,6 @@
         "Yahoo"
       ]
     },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Deal sichern"
-      ],
-      "SPRING SALE 2026": [
-        "SPRING SALE 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/Monat"
-      ],
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "2 TB data storage": [
-        "2 TB Datenspeicher"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB Datenspeicher"
-      ],
-      "500 GB storage": [
-        "500 GB Speicher"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
-      ],
-      "Access advanced AI models": [
-        "Auf erweiterte KI-Modelle zugreifen"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle Premium-Funktionen von Mail, Pass, Drive, VPN und Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Verbinde 10 Geräte gleichzeitig"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Verlängere dein Abonnement und spare ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Voller Zugriff auf ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
-      ],
-      "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
-      ],
-      "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
-      ],
-      "Online document editor": [
-        "Online-Dokumenteneditor"
-      ],
-      "Recover previous file versions": [
-        "Stelle frühere Dateiversionen wieder her"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Unbegrenzte tägliche Chats"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "für 12 Monate"
-      ],
-      "SPRING SALE": [
-        "SPRING SALE"
-      ]
-    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Deal sichern"
@@ -21228,6 +21006,12 @@
       ],
       "They will not be able to see or access your data.": [
         "Sie können deine Daten weder einsehen noch darauf zugreifen."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Damit du dir dein Passwort besser merken kannst, werden wir dich regelmäßig bitten, es einzugeben."
+      ],
+      "Verify your password": [
+        "Passwort bestätigen"
       ]
     },
     "saml: Action": {
@@ -22445,18 +22229,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 Benutzer"
-      ],
-      "All paid Mail and Calendar features": [
-        "Alle kostenpflichtigen Mail- und Calendar-Funktionen"
-      ],
-      "High speed VPN": [
-        "Highspeed-VPN"
-      ],
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
       ],
@@ -22469,17 +22241,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium-${ appName1 }, ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "Premium-frühzeitiger Zugang"
-      ],
-      "Secure cloud storage": [
-        "Sicherer Cloud-Speicher"
-      ],
       "Secure streaming": [
         "Sicheres Streaming"
-      ],
-      "Support online privacy": [
-        "Unterstütze Online-Privatsphäre"
       ]
     },
     "specialoffer: Footer": {
@@ -22523,72 +22286,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
       "/ month": [
         "/ Monat"
       ],
       "/month": [
         "/ Monat"
       ],
-      "1 year": [
-        "1 Jahr"
-      ],
-      "15 months": [
-        "15 Monate"
-      ],
-      "2 years": [
-        "2 Jahre"
-      ],
-      "30 months": [
-        "30 Monate"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Für 1 Monat mit ${ amount } abgerechnet"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Für 12 Monate mit ${ amount } abgerechnet"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Für 15 Monate mit ${ amount } abgerechnet"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Für 24 Monate mit ${ amount } abgerechnet"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Für 30 Monate mit ${ amount } abgerechnet"
-      ],
       "Get the deal": [
         "Zugreifen"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Wird nach einem Jahr zu einem reduzierten Preis von ${ discountedAmount } verlängert, statt ${ regularAmount } (${ discount } % Rabatt)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Wird nach zwei Jahren zu einem reduzierten Preis von ${ discountedAmount } verlängert, statt ${ regularAmount } (${ discount } % Rabatt)"
-      ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Standardpreis: ${ amount } für 1 Monat"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Standardpreis: ${ amount } für 12 Monate"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Standardpreis: ${ amount } für 15 Monate"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Standardpreis: ${ amount } für 24 Monate"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Standardpreis: ${ amount } für 30 Monate"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Das Sonderangebot gilt für die ersten 2 Jahre"
       ]
     },
     "specialoffer: Title": {
@@ -22615,29 +22323,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Führe ein Upgrade durch und spare noch mehr mit 2 Jahren ${ planName }"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 1700 Server in über 60 Ländern, höchste VPN-Geschwindigkeiten, 10 VPN-Verbindungen pro Benutzer, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 1700 Server in über 60 Ländern, höchste VPN-Geschwindigkeiten, 10 VPN-Verbindungen, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfekt geeignet für Familien oder kleine Teams; jeder kann über seinen eigenen Posteingang und Aliase verfügen. Erfordert eine eigene Domain."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Erhalte ohne zusätzliche Kosten die kostenpflichtigen Versionen aller neuen Datenschutzdienste, die wir in Zukunft veröffentlichen, zusammen mit frühzeitigem Zugriff auf alle zukünftigen Funktionen und Produkte."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
       ]
     },
     "Spotlight": {
@@ -24084,20 +23769,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Details zu den Terminen, die nicht exportiert werden konnten"
-      ]
-    },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Erstelle sichere Anmeldedaten auf allen deinen Geräten. Beinhaltet unbegrenzte Aliase, 20 Tresore, integrierte 2FA, automatisches Einfügen von Kreditkartendaten und mehr."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2950 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
       ]
     },
     "Tab": {
@@ -26412,6 +26083,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Beinhaltet professionelle E-Mail-Adressen unter @yourdomain.com, Cloud-Speicher mit Funktionen zur gemeinsamen Dokumentbearbeitung, Terminplanung und Videokonferenzen, Passwortverwaltung, ein sicheres ${ VPN_SHORT_APP_NAME } und vieles mehr."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail, in der sie aufgefordert werden, diese so bald wie möglich zu aktivieren. Single Sign-On-Benutzer, erhalten diese Aufforderung nicht."

@@ -1204,6 +1204,51 @@
         "Vous gardez le contrôle"
       ]
     },
+    "collider_2025: Compaction": {
+      "${ removed } freed": [
+        "${ removed } libérés"
+      ],
+      "${ stats.summarizedMessageCount } earlier message condensed": [
+        "${ stats.summarizedMessageCount } message précédent a été condensé.",
+        "${ stats.summarizedMessageCount } messages précédents ont été condensés."
+      ],
+      "Chat shortened to keep going": [
+        "Chat raccourci pour pouvoir continuer"
+      ],
+      "cleared old tool results": [
+        "les anciens résultats d'outils ont été effacés"
+      ],
+      "dropped old messages": [
+        "anciens messages abandonnés"
+      ],
+      "Files from summarized messages": [
+        "Fichiers issus des messages résumés"
+      ],
+      "No longer sent to the model": [
+        "N'est plus envoyé au modèle"
+      ],
+      "removed file context": [
+        "contexte de fichier retiré"
+      ],
+      "removed tool calls": [
+        "appels d'outil retirés"
+      ],
+      "summarized the conversation": [
+        "la conversation a été résumée"
+      ],
+      "This chat got long — summarizing earlier messages so we can keep going…": [
+        "Cette discussion est longue, je résume les messages précédents pour qu'on puisse continuer…"
+      ],
+      "Tool calls removed": [
+        "Les appels d'outil ont été retirés."
+      ],
+      "Tool output cleared": [
+        "La sortie de l'outil a été effacée."
+      ],
+      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
+        "Ce dont ${ LUMO_SHORT_APP_NAME } se souvient encore"
+      ]
+    },
     "collider_2025: Context": {
       "I believe cereal is a soup and I'm not sorry": [
         "Je crois que les céréales sont une soupe et je ne le regrette pas"
@@ -1648,6 +1693,9 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
       ],
+      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
+        "${ LUMO_SHORT_APP_NAME } ne peut traiter qu'un volume limité d'informations par conversation. Vous pouvez voir ici ce qui occupe actuellement cet espace. Lorsque celui-ci est plein, les messages les plus anciens sont automatiquement résumés afin que vous puissiez continuer à discuter."
+      ],
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME } donne accès à des modèles avancés pour aider à gérer des requêtes plus complexes et fournir de meilleures réponses"
       ],
@@ -1732,6 +1780,12 @@
       "Check this is the site you expect to visit": [
         "Vérifiez qu'il s'agit bien du site que vous souhaitez consulter."
       ],
+      "Context usage for this conversation": [
+        "Utilisation du contexte dans cette conversation"
+      ],
+      "Conversation": [
+        "Conversation"
+      ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Créez et révoquez des clés API pour un accès par programme. Les clés ne sont affichées qu'une seule fois lors de leur création."
       ],
@@ -1746,6 +1800,9 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Faites glisser et déposez vos fichiers ici pour les ajouter au chat."
+      ],
+      "Earlier messages were summarized to make room, so they no longer take up space here.": [
+        "Les messages précédents ont été résumés pour gagner de la place. Ils n'occupent donc plus d'espace ici."
       ],
       "Error processing attachment": [
         "Erreur lors du traitement de la pièce jointe"
@@ -1771,17 +1828,14 @@
       "Extract, analyse, and summarise documents, PDFs, and images.": [
         "Extraire, analyser et résumer des documents, des PDF et des images."
       ],
-      "File capacity": [
-        "Capacité de stockage"
-      ],
-      "File capacity for this conversation": [
-        "Capacité du fichier pour cette conversation"
-      ],
       "File too large for preview (>150k tokens)": [
         "Fichier trop grand pour l'aperçu (>150k jetons)"
       ],
       "files": [
         "fichiers"
+      ],
+      "Files": [
+        "Fichiers"
       ],
       "files are not supported for content extraction.": [
         "fichiers ne sont pas pris en charge pour l'extraction de contenu."
@@ -1792,14 +1846,14 @@
       "Files automatically retrieved based on your questions.": [
         "Les fichiers ont été automatiquement récupérés en fonction de vos questions."
       ],
-      "Files you've added to this conversation.": [
-        "Fichiers que vous avez ajoutés à cette conversation."
-      ],
-      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.": [
-        "Pour chaque conversation, ${ LUMO_SHORT_APP_NAME } a la capacité de traiter une quantité limitée d'informations. La barre de progression montre la capacité que vos fichiers actuels utilisent."
+      "Files included in the next model request.": [
+        "Fichiers inclus dans la prochaine requête au modèle."
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Pour chaque jour, jetons moyens par appel API (jetons ÷ appels, ou 0 si aucun appel)."
+      ],
+      "Free space": [
+        "Espace libre"
       ],
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Générez un graphique de flux de travail et du code d'implémentation pour l'objectif suivant. Langage cible pour le code :"
@@ -1879,6 +1933,9 @@
       "No usage yet": [
         "Aucune utilisation pour l'instant"
       ],
+      "Over capacity": [
+        "Au-dessus de la capacité"
+      ],
       "Partial content": [
         "Contenu partiel"
       ],
@@ -1921,8 +1978,14 @@
       "Removed from future questions": [
         "Retiré pour les questions futures"
       ],
+      "Removed when chat was shortened": [
+        "Supprimé lors de la compression du chat"
+      ],
       "Required on all POST requests with a JSON body.": [
         "Obligatoire pour toutes les requêtes POST avec un corps JSON."
+      ],
+      "Reserved to keep chatting": [
+        "Réservé pour continuer à discuter"
       ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Enregistrez toutes vos conversations dans un historique de chat que vous seul pouvez voir. Connectez-vous ou créez un compte."
@@ -1972,6 +2035,9 @@
       "There was an error processing this file.": [
         "Une erreur s'est produite lors du traitement de ce fichier."
       ],
+      "These files belonged to summarized messages and are no longer sent to the model.": [
+        "Ces fichiers correspondaient à des messages résumés et ne sont plus envoyés au modèle."
+      ],
       "These files won't be used for future questions.": [
         "Ces fichiers ne seront pas utilisés pour les questions futures."
       ],
@@ -1983,6 +2049,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Pour pouvoir consulter cette conversation plus tard, connectez-vous ou créez un compte."
+      ],
+      "tokens": [
+        "jetons"
       ],
       "tokens / 30d": [
         "jetons / 30j"
@@ -8221,105 +8290,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Spring Sale": [
-        "Offre de printemps"
-      ],
-      "SPRING SALE 2026": [
-        "OFFRE DE PRINTEMPS 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/mois"
-      ],
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "2 TB data storage": [
-        "2 To d'espace de stockage de données"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
-      ],
-      "3 TB data storage": [
-        "3 To d'espace de stockage de données"
-      ],
-      "500 GB storage": [
-        "500 Go d'espace de stockage"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
-      ],
-      "Access advanced AI models": [
-        "Accès aux modèles d'IA avancés"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
-      ],
-      "Built-in 2FA authenticator": [
-        "Authentificateur A2F intégré"
-      ],
-      "Connect 10 devices at once": [
-        "Connectez 10 appareils en même temps"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Prolongez votre abonnement et économisez ${ discountPercent } % !"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Accès complet à ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historique complet des discussions avec recherche facile et favoris"
-      ],
-      "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
-      ],
-      "Individual accounts for you and a partner": [
-        "Comptes individuels pour vous et un partenaire"
-      ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
-      "Recover previous file versions": [
-        "Récupérez les versions précédentes des fichiers"
-      ],
-      "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
-      ],
-      "Unlimited daily chats": [
-        "Chats quotidiens illimités"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Des dossiers, labels et filtres illimités"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
-      "Use your own email domain": [
-        "Utilisez votre propre domaine de messagerie"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "pendant 12 mois"
-      ],
-      "SPRING SALE": [
-        "OFFRE DE PRINTEMPS"
       ]
     },
     "q2campaign2026: Action": {

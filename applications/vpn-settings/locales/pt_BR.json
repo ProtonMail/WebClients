@@ -3685,9 +3685,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Vamos importar seus e-mails antigos, pular duplicatas e conectar ao seu Gmail para que as novas mensagens apareçam automaticamente. Você pode desfazer a importação a qualquer momento nas configurações do Easy Switch."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
       ],
@@ -3708,12 +3705,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Você ainda pode fazer login com este endereço e se reconectar a qualquer momento."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Você não poderá mais usar ${ address.Email } para receber e enviar e-mails em ${ BRAND_NAME }. Observe também que as mensagens enviadas para este endereço a partir de ${ BRAND_NAME } não serão mais criptografadas de ponta a ponta."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Você está encaminhando ${ numAddressesOrSync } endereço do Gmail para o ${ MAIL_APP_NAME }.",
@@ -4759,6 +4750,9 @@
       ],
       "Username must end with a letter or digit": [
         "O nome de usuário deve terminar com uma letra ou dígito"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "O número de IVA deve começar por ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "A verificação não obteve êxito. Tente novamente dentro de uma hora."
@@ -6605,9 +6599,6 @@
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }",
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }"
       ],
-      "All your files will be imported": [
-        "Todos os seus arquivos serão importados"
-      ],
       "Allocated": [
         "Alocado"
       ],
@@ -8343,6 +8334,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ajudar você a lembrar sua senha, pediremos que você a digite periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
@@ -12063,6 +12057,9 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participe de pesquisas para melhorar os serviços da ${ BRAND_NAME }"
+      ],
+      "Recovery checklist": [
+        "Lista de verificação de recuperação"
       ]
     },
     "Notification": {
@@ -13414,102 +13411,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Aproveitar a oferta"
-      ],
-      "SPRING SALE 2026": [
-        "PROMO DE PRIMAVERA 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/mês"
-      ],
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "2 TB data storage": [
-        "2 TB de armazenamento de dados"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de armazenamento: 40x o seu plano atual"
-      ],
-      "3 TB data storage": [
-        "3 TB de armazenamento de dados"
-      ],
-      "500 GB storage": [
-        "500 GB de armazenamento"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acesse mais de 15.000 servidores em mais de 120 países"
-      ],
-      "Access advanced AI models": [
-        "Acesso a modelos de IA avançados"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Todos os recursos premium do Mail, Pass, Drive, VPN e Calendário"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloqueie anúncios, rastreadores e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecte 10 dispositivos de uma só vez"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Estenda sua assinatura e economize ${ discountPercent }%!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acesso total ao ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Histórico completo de bate-papos com pesquisa fácil e favoritos"
-      ],
-      "Individual accounts for 6 users": [
-        "Contas individuais para 6 usuários"
-      ],
-      "Individual accounts for you and a partner": [
-        "Contas individuais para você e um parceiro"
-      ],
-      "Online document editor": [
-        "Editor de documentos on-line"
-      ],
-      "Recover previous file versions": [
-        "Recupere versões anteriores de arquivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Proteção mais forte contra ameaças cibernéticas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Bate-papos diários ilimitados"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, marcadores e filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases ilimitados do hide-my-email"
-      ],
-      "Use your own email domain": [
-        "Use seu próprio domínio de e-mail"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "por 12 meses"
-      ],
-      "SPRING SALE": [
-        "PROMO DE PRIMAVERA"
       ]
     },
     "q2campaign2026: Action": {
@@ -17575,6 +17476,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistência instantânea com IA, com um especialista à disposição!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Os membros que não usam A2F receberão um e-mail solicitando que o habilitem o mais rápido possível. Os usuários com logon único não receberão o lembrete por e-mail."

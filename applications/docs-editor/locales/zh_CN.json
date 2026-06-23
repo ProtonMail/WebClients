@@ -132,7 +132,7 @@
         "插入评论"
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert left": [
         "在左侧插入"
@@ -451,6 +451,9 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "更新文件时出错，请重新加载页面并重试。"
       ],
+      "This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.": [
+        "此电子表格检测到本地同步不一致，请重新加载文档后继续。"
+      ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "此电子表格与当前客户端版本不兼容，请尝试重新加载客户端。如果问题仍然存在，请联系技术支持。"
       ],
@@ -603,7 +606,7 @@
         "删除分割线"
       ],
       "Delete image": [
-        "删除图片"
+        "删除图像"
       ],
       "Delete link": [
         "移除链接"
@@ -636,7 +639,7 @@
         "插入分割线"
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert paragraph": [
         "插入段落"
@@ -1457,7 +1460,7 @@
         "函数"
       ],
       "Image": [
-        "图片"
+        "图像"
       ],
       "Insert cells and shift down": [
         "插入单元格并将现有单元格下移"
@@ -1865,6 +1868,29 @@
       ],
       "row height": [
         "行高"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "均值"
+      ],
+      "Count": [
+        "计数"
+      ],
+      "Customize Status Bar": [
+        "自定义状态栏"
+      ],
+      "Max": [
+        "最大"
+      ],
+      "Min": [
+        "最小"
+      ],
+      "Numerical count": [
+        "数值计数"
+      ],
+      "Sum": [
+        "求和"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

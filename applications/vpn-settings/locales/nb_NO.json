@@ -3715,9 +3715,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Vi importerer de gamle e-postene dine, hopper over duplikater og kobler til Gmail slik at nye meldinger dukker opp automatisk. Du kan når som helst angre importen i innstillingene for Easy Switch."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
       ],
@@ -3741,12 +3738,6 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nå sende e-poster fra ${ BRAND_NAME } ved å bruke denne adressen."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "Du kan fortsatt logge på med denne adressen og koble til igjen når som helst."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Du vil ikke lenger kunne bruke ${ address.Email } til å motta og sende e-poster i ${ BRAND_NAME }. Merk også at meldinger sendt til denne adressen fra ${ BRAND_NAME } ikke lenger vil bli ende-til-ende-kryptert."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
@@ -13545,102 +13536,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q1campaign: Action": {
-      "Get the deal": [
-        "Benytt deg av tilbudet"
-      ],
-      "SPRING SALE 2026": [
-        "VÅRSALG 2026"
-      ]
-    },
-    "q1campaign: Info": {
-      "/month": [
-        "/måned"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "2 TB data storage": [
-        "2 TB datalagring"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagring: 40 ganger ditt nåværende abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB datalagring"
-      ],
-      "500 GB storage": [
-        "500 GB lagringsplass"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Tilgang til 15 000+ servere i 120+ land"
-      ],
-      "Access advanced AI models": [
-        "Tilgang til avanserte KI-modeller"
-      ],
-      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
-        "Alle premiumfunksjonene i Mail, Pass, Drive, VPN og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokker annonser, sporere og skadelig programvare"
-      ],
-      "Built-in 2FA authenticator": [
-        "Innebygd 2FA-autentisering"
-      ],
-      "Connect 10 devices at once": [
-        "Koble til 10 enheter samtidig"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
-      ],
-      "Extend your subscription and save ${ discountPercent }%!": [
-        "Forleng abonnementet ditt og spar ${ discountPercent } %!"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Full tilgang til ${ VPN_APP_NAME }"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Full chatlogg med enkelt søk og favoritter"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle kontoer for 6 brukere"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle kontoer for deg og en partner"
-      ],
-      "Online document editor": [
-        "Dokumentredigerer på nett"
-      ],
-      "Recover previous file versions": [
-        "Gjenopprett tidligere filversjoner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Sterkere beskyttelse mot cybertrusler"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited daily chats": [
-        "Ubegrenset antall daglige chatter"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrensede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
-      ],
-      "Use your own email domain": [
-        "Bruk ditt eget e-postdomene"
-      ]
-    },
-    "q1campaign: Title": {
-      "for 12 months": [
-        "i 12 måneder"
-      ],
-      "SPRING SALE": [
-        "VÅRSALG"
       ]
     },
     "q2campaign2026: Action": {

@@ -1393,12 +1393,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
-      ],
-      "One-time payment, lifetime deal": [
-        "Jednokratno plaćanje, doživotna ponuda"
-      ],
-      "Online document editor": [
-        "Online uređivač dokumenata"
       ]
     },
     "Billing cycle": {
@@ -2925,20 +2919,11 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Popis kontakata koji uvozite sadrži neke grupe. Pregledajte kako bi ove grupe trebalo uvesti."
       ],
-      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
-        "Uvest ćemo vašu staru e-poštu, preskočiti duplikate i povezati se s vašim Gmailom kako bi se nove poruke automatski prikazivale. Uvoz možete poništiti u bilo kojem trenutku u postavkama Easy Switch."
-      ],
       "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
         "Uz nove kategorije e-pošte, samo važne poruke stižu u vašu primarnu pristiglu poštu. Kategorije rade baš kao i filtri neželjene pošte. ${ MAIL_APP_NAME } nikada ne čita vašu e-poštu niti dijeli vaše podatke."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
-      ],
-      "You can still login with this address and re-connect at any time.": [
-        "I dalje se možete prijaviti s ovom adresom i ponovno se povezati u bilo kojem trenutku."
-      ],
-      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Više nećete moći koristiti ${ address.Email } za primanje i slanje e-pošte u ${ BRAND_NAME }. Također imajte na umu da poruke poslane na ovu adresu iz ${ BRAND_NAME } više neće biti end-to-end šifrirane."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3111,11 +3096,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Rješenja po mjeri za veće organizacije s prilagođenim potrebama."
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Priority support": [
-        "Prioritetna podrška"
       ]
     },
     "Duo offer": {
@@ -3951,11 +3931,6 @@
         "(bez naslova)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB prostora za pohranu"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Pogodnosti Vašeg korisničkog računa"
@@ -3973,11 +3948,6 @@
       ],
       "Switch plans": [
         "Promijeni pretplatu"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Do 6 korisnika"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4100,11 +4070,6 @@
       ],
       "Set family name": [
         "Postavite prezime"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
       ]
     },
     "Feature": {
@@ -10835,15 +10800,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 korisnika"
-      ],
-      "High speed VPN": [
-        "Visoka brzina VPN"
-      ],
       "Highest VPN speed": [
         "Najviša VPN brzina"
       ],
@@ -10863,63 +10819,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
       "/ month": [
         "/ mjesec"
       ],
       "/month": [
         "/mjesec"
       ],
-      "1 year": [
-        "1 godina"
-      ],
-      "15 months": [
-        "15 mjeseci"
-      ],
-      "2 years": [
-        "2 godine"
-      ],
-      "30 months": [
-        "30 mjeseci"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Naplaćeno ${ amount } za 12 mjeseci"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Naplaćeno ${ amount } za 15 mjeseci"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Naplaćeno ${ amount } za 24 mjeseca"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Naplaćeno ${ amount } za 30 mjeseci"
-      ],
       "Get the deal": [
         "Ugrabite ponudu"
       ],
       "Save ${ discount }%": [
         "Uštedite ${ discount } %"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Standardna cijena ${ amount } za 12 mjeseci"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Standardna cijena ${ amount } za 15 mjeseci"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Standardna cijena ${ amount } za 24 mjeseca"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Standardna cijena ${ amount } za 30 mjeseci"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
       ]
     },
     "Spotlight": {
