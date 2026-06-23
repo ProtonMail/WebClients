@@ -451,6 +451,9 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Hubo un error al procesar las actualizaciones del documento. Actualice la página e inténtelo de nuevo."
       ],
+      "This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.": [
+        "Esta hoja de cálculo ha detectado una inconsistencia de sincronización local. Recargue el documento antes de continuar."
+      ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Esta hoja de cálculo no es compatible con la versión actual de la aplicación. Intente recargarla. Si el error persiste, contacte con el equipo de soporte."
       ],
@@ -1027,6 +1030,151 @@
         "derecha"
       ]
     },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Aplicar"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Custom date and time formats": [
+        "Formatos de fecha y hora personalizados"
+      ],
+      "Format": [
+        "Formato"
+      ],
+      "Sample": [
+        "Ejemplo"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "AM/PM": [
+        "AM/PM"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Day": [
+        "Día"
+      ],
+      "Day as abbreviation": [
+        "Día como abreviatura"
+      ],
+      "Day as full name": [
+        "Día como nombre completo"
+      ],
+      "Day with leading zero": [
+        "Día con cero inicial"
+      ],
+      "Day without leading zero": [
+        "Día sin cero inicial"
+      ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Duration": [
+        "Duración"
+      ],
+      "Elapsed hours": [
+        "Horas transcurridas"
+      ],
+      "Elapsed hours with leading zero": [
+        "Horas transcurridas con cero inicial"
+      ],
+      "Elapsed hours without leading zero": [
+        "Horas transcurridas sin cero inicial"
+      ],
+      "Elapsed minutes": [
+        "Minutos transcurridos"
+      ],
+      "Elapsed minutes with leading zero": [
+        "Minutos transcurridos con cero inicial"
+      ],
+      "Elapsed minutes without leading zero": [
+        "Minutos transcurridos sin cero inicial"
+      ],
+      "Elapsed seconds": [
+        "Segundos transcurridos"
+      ],
+      "Elapsed seconds with leading zero": [
+        "Segundos transcurridos con cero inicial"
+      ],
+      "Elapsed seconds without leading zero": [
+        "Segundos transcurridos sin cero inicial"
+      ],
+      "First letter of the month": [
+        "Primera letra del mes"
+      ],
+      "Full": [
+        "Completo"
+      ],
+      "Full numeric year": [
+        "Año numérico completo"
+      ],
+      "Hour": [
+        "hora"
+      ],
+      "Hour with leading zero": [
+        "Hora con cero inicial"
+      ],
+      "Hour without leading zero": [
+        "Hora sin cero inicial"
+      ],
+      "Millisecond": [
+        "Milisegundo"
+      ],
+      "Minute": [
+        "Minuto"
+      ],
+      "Minute with leading zero": [
+        "Minuto con cero inicial"
+      ],
+      "Minute without leading zero": [
+        "Minuto sin cero inicial"
+      ],
+      "Month": [
+        "Mes"
+      ],
+      "Month as abbreviation": [
+        "Mes como abreviatura"
+      ],
+      "Month as full name": [
+        "Mes como nombre completo"
+      ],
+      "Month with leading zero": [
+        "Mes con cero inicial"
+      ],
+      "Month without leading zero": [
+        "Mes sin cero inicial"
+      ],
+      "Precision to 1/10 of a second": [
+        "Precisión de 1/10 de segundo"
+      ],
+      "Precision to 1/100 of a second": [
+        "Precisión de 1/100 de segundo"
+      ],
+      "Precision to 1/1000 of a second": [
+        "Precisión de 1/1000 de segundo"
+      ],
+      "Second": [
+        "Segundo"
+      ],
+      "Second with leading zero": [
+        "Segundo con cero inicial"
+      ],
+      "Second without leading zero": [
+        "Segundo sin cero inicial"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "Two digit year": [
+        "Año de dos dígitos"
+      ],
+      "Year": [
+        "Año"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "¿En verdad desea eliminar ${ sheetName }?"
@@ -1433,6 +1581,12 @@
       "Custom currency": [
         "Divisa personalizada"
       ],
+      "Custom date and time": [
+        "Fecha y hora personalizadas"
+      ],
+      "Custom number": [
+        "Número personalizado"
+      ],
       "Date": [
         "Fecha"
       ],
@@ -1719,6 +1873,29 @@
       ],
       "row height": [
         "altura de la fila"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Promedio"
+      ],
+      "Count": [
+        "Recuento"
+      ],
+      "Customize Status Bar": [
+        "Personalizar la barra de estado"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Recuento numérico"
+      ],
+      "Sum": [
+        "Suma"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
