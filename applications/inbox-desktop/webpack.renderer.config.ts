@@ -13,6 +13,9 @@ rules.push({
 });
 
 export const rendererConfig: Configuration = {
+    // Runs inside Electron, so target the bundled Chromium version
+    // (the [electron-applications] section of the root .browserslistrc).
+    target: "browserslist:electron-applications",
     module: {
         rules,
     },
