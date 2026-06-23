@@ -51,7 +51,7 @@ import type {
     AutofillCCResult,
     AutofillIdentityResult,
     AutofillLoginResult,
-    AutofillOptions,
+    AutofillQueryFilter,
 } from '@proton/pass/types/worker/autofill';
 import type { AutosaveRequest } from '@proton/pass/types/worker/autosave';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';
@@ -207,7 +207,7 @@ export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, Unloc
 export type AutofillActionMessage = WithPayload<WorkerMessageType.AUTOFILL_ACTION, AutofillActionDTO>;
 export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
-export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillOptions>;
+export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillQueryFilter>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
 export type AutofillSequenceMessage = WithPayload<WorkerMessageType.AUTOFILL_SEQUENCE, AutofillRequest>;
