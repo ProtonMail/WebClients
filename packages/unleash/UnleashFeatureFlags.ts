@@ -313,7 +313,6 @@ enum MeetFeatureFlag {
     MeetE2eeDisableRecovery = 'MeetE2eeDisableRecovery',
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetH264 = 'MeetH264',
-    MeetMultipleRecording = 'MeetMultipleRecording',
     MeetRecordingWebCodecs = 'MeetRecordingWebCodecs',
     MeetRecordingRecoveryUI = 'MeetRecordingRecoveryUI',
     MeetRecordingShowAllRecordings = 'MeetRecordingShowAllRecordings',
