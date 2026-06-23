@@ -4,6 +4,11 @@ import type {
     FrameMessageBroker,
     FrameMessageHandler,
 } from 'proton-pass-extension/app/content/services/client/client.channel';
+import { createFocusGuard } from 'proton-pass-extension/app/content/services/form/field.interactivity';
+import {
+    DROPDOWN_FOCUS_TIMEOUT,
+    isFocusableElement,
+} from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.focus';
 import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -22,15 +27,15 @@ type FormManagerOptions = {
 };
 
 export type FormManagerState = {
-    /* form manager state flag */
+    /** form manager state flag */
     active: boolean;
     /** last detection run */
     detectionAt: number;
     /** number of detections executed */
     detectionCount: number;
-    /* detection request */
+    /** detection request */
     detectionRequest: number;
-    /* tracked forms have been detected */
+    /** tracked forms that have been detected */
     trackedForms: Map<HTMLElement, FormHandle>;
 };
 
@@ -42,6 +47,8 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
         detectionRequest: -1,
         trackedForms: new Map(),
     };
+
+    const focusGuard = createFocusGuard();
 
     const getForms = () => Array.from(state.trackedForms.values());
     const getFormByIds = (formIds: string[]) => getForms().filter((form) => formIds.includes(form.formId));
@@ -175,12 +182,20 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
         const field = form?.getFieldById(payload.fieldId);
         const fields = form?.getFields();
 
+        const activeEl = document.activeElement;
         const wasFocused = Boolean(field && isActiveElement(field.element));
 
-        if (wasFocused && payload.locked) {
-            fields?.forEach((formField) => formField.interactivity.lock());
-            field?.element.blur();
-        } else if (!payload.locked) {
+        if (payload.locked) {
+            if (wasFocused) {
+                fields?.forEach((formField) => formField.interactivity.lock());
+                field?.element.blur();
+            } else if (isFocusableElement(activeEl)) {
+                /** Some focus-trap setups redirect focus to an element outside the
+                 * tracked fields (eg: a sibling button), evading the field locks
+                 * above. Lock that element directly to acquire dropdown focus. */
+                focusGuard.lock(activeEl, DROPDOWN_FOCUS_TIMEOUT);
+            }
+        } else {
             fields?.forEach((formField) => formField.interactivity.unlock());
         }
 
