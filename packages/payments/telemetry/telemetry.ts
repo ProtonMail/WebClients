@@ -29,6 +29,7 @@ import {
     reportInitialization,
     reportPayment,
     reportSubscriptionEstimationChange,
+    reportUpsellModalOpen,
 } from './shared-checkout-telemetry';
 import {
     reportAudienceChange,
@@ -60,6 +61,8 @@ export const checkoutTelemetry = {
     reportAddPass,
     /** Report payment funnel events (attempt, verification, success, etc.) */
     reportPayment,
+    /** Report that the subscription modal opened from an upsell surface. Call once per modal open. */
+    reportUpsellModalOpen,
 
     /**
      * Events specific to the subscription modification modal.

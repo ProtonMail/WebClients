@@ -7,9 +7,11 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -31,6 +33,7 @@ import {
     hasPlanIDs,
     isValidPlanName,
 } from '@proton/payments';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -42,7 +45,7 @@ import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLi
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import { usePlansSectionTelemetry } from './plansSectionTelemetry';
 import PlanSelection from './subscription/PlanSelection';
-import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
+import { UpsellModalTelemetryProvider, useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import { getDefaultSelectedProductPlans } from './subscription/helpers';
 
@@ -66,6 +69,8 @@ type Props = {
 
 const PlansSectionInner = ({ app }: Props) => {
     const [loading, withLoading] = useLoading();
+    const [user] = useUser();
+    const { APP_NAME } = useConfig();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [plansResult, loadingPlans] = usePlans();
@@ -114,6 +119,19 @@ const PlansSectionInner = ({ app }: Props) => {
         }
         hasTrackedPageLoad.current = true;
         sendPageLoad();
+
+        checkoutTelemetry.reportInitialization({
+            context: 'settings-upgrade',
+            userCurrency: user?.Currency,
+            subscription,
+            build: APP_NAME,
+            product: app,
+            selectedCoupon: subscription.CouponCode,
+            selectedCurrency: subscription.Currency || preferredCurrency,
+            selectedCycle: subscription.Cycle || DEFAULT_CYCLE,
+            selectedPlanIDs: currentPlanIDs,
+            selectedStep: null,
+        });
     }, [isLoading]);
 
     const handleModal = async (newPlanIDs: PlanIDs, newCycle: Cycle) => {
@@ -225,7 +243,9 @@ const PlansSectionInner = ({ app }: Props) => {
 const PlansSection = (props: Props) => {
     return (
         <PaymentsContextProvider>
-            <PlansSectionInner {...props} />
+            <UpsellModalTelemetryProvider context="settings-upgrade">
+                <PlansSectionInner {...props} />
+            </UpsellModalTelemetryProvider>
         </PaymentsContextProvider>
     );
 };
