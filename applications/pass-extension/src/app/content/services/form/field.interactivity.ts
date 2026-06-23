@@ -43,3 +43,18 @@ export const createInteractivityController = (element: HTMLElement): Interactivi
         },
     };
 };
+
+/** Ad-hoc interactivity locks on elements that aren't tracked form fields.
+ * Suppresses focus-traps that steal focus onto non-field elements during
+ * cross-frame dropdown focus acquisition (see `FormManager::onFrameFieldLock`) */
+export const createFocusGuard = () => {
+    const controllers = new WeakMap<HTMLElement, InteractivityController>();
+
+    return {
+        lock: (element: HTMLElement, release: number) => {
+            const ctrl = controllers.get(element) ?? createInteractivityController(element);
+            controllers.set(element, ctrl);
+            ctrl.lock(release);
+        },
+    };
+};
