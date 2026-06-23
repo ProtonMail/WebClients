@@ -1,4 +1,5 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import browserslist from 'browserslist';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as path from 'path';
@@ -15,10 +16,15 @@ import { webpackOptions } from './webpack.options';
 const isDevServer = Boolean(process.env.WEBPACK_SERVE);
 const assetsFolder = 'assets/static';
 
+// Resolve the transpilation query from the browserslistEnv section of the root .browserslistrc
+const browserslistQuery =
+    webpackOptions.browserslist ?? browserslist(null, { env: webpackOptions.browserslistEnv }).join(', ');
+const loaderOptions = { ...webpackOptions, browserslist: browserslistQuery };
+
 const config: Configuration = {
     mode: webpackOptions.isProduction ? 'production' : 'development',
     entry: ['./src/app/main.tsx'],
-    target: 'web',
+    target: `browserslist:${webpackOptions.browserslistEnv}`,
     experiments: { asyncWebAssembly: true },
     devtool: webpackOptions.isProduction ? 'source-map' : 'cheap-module-source-map',
     devServer: {
@@ -33,11 +39,7 @@ const config: Configuration = {
     },
     module: {
         strictExportPresence: true, // Make missing exports an error instead of warning
-        rules: [
-            ...getJsLoaders(webpackOptions),
-            ...getCssLoaders({ browserslist: undefined, noLogicalScss: true }),
-            ...getAssetsLoaders(webpackOptions),
-        ],
+        rules: [...getJsLoaders(loaderOptions), ...getCssLoaders(loaderOptions), ...getAssetsLoaders(loaderOptions)],
     },
     resolve: {
         alias: { 'proton-authenticator': path.resolve(__dirname, 'src/') },
