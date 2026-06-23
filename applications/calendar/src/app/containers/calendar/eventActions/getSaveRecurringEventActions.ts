@@ -1,5 +1,6 @@
-import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import type { PublicKeyReference } from '@protontech/crypto';
+
+import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import {
     getHasDefaultNotifications,
     getIsAutoAddedInvite,
@@ -60,7 +61,6 @@ import {
     handleConferenceDataInMergedVeventIfNeeded,
 } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
-import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncrementedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
 
@@ -233,21 +233,13 @@ const getSaveRecurringEventActions = async ({
             let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
 
             if (isSendInviteType) {
-                const {
-                    veventComponent: finalVevent,
-                    inviteActions: finalInviteActions,
-                    sendPreferencesMap,
-                } = await sendIcs({
+                const { addedAttendeesPublicKeysMap: finalAddedAttendeesPublicKeysMap } = await sendIcs({
                     inviteActions: inviteActionsWithSharedData,
                     vevent: correctedVevent,
                     cancelVevent: oldVeventComponent,
                 });
 
-                addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
-                    veventComponent: finalVevent,
-                    inviteActions: finalInviteActions,
-                    sendPreferencesMap,
-                });
+                addedAttendeesPublicKeysMap = finalAddedAttendeesPublicKeysMap;
             }
 
             const hasUpdatedInviteData = getHasUpdatedInviteData({
@@ -620,8 +612,7 @@ const getSaveRecurringEventActions = async ({
 
                             const {
                                 veventComponent: finalVevent,
-                                inviteActions: finalInviteActions,
-                                sendPreferencesMap,
+                                addedAttendeesPublicKeysMap: finalAddedAttendeesPublicKeysMap,
                             } = await sendIcs({
                                 inviteActions: updatedSingleEditInviteActions,
                                 vevent: updatedSingleEditVevent,
@@ -633,11 +624,7 @@ const getSaveRecurringEventActions = async ({
                                 noCheckSendPrefs: true,
                             });
                             updatedSingleEditVevent = finalVevent;
-                            addedAttendeesSingleEditPublicKeysMap = getAddedAttendeesPublicKeysMap({
-                                veventComponent: finalVevent,
-                                inviteActions: finalInviteActions,
-                                sendPreferencesMap,
-                            });
+                            addedAttendeesSingleEditPublicKeysMap = finalAddedAttendeesPublicKeysMap;
                         }
 
                         const updateSingleEditOperation = getUpdateSyncOperation({
@@ -682,17 +669,18 @@ const getSaveRecurringEventActions = async ({
                         })
                 );
             }
-            const [{ veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions, sendPreferencesMap }] =
-                await Promise.all([originalIcsPromise, ...singleEditIcsPromises]);
+            const [
+                {
+                    veventComponent: cleanVeventComponent,
+                    inviteActions: cleanInviteActions,
+                    addedAttendeesPublicKeysMap: cleanAddedAttendeesPublicKeysMap,
+                },
+            ] = await Promise.all([originalIcsPromise, ...singleEditIcsPromises]);
 
             if (cleanVeventComponent) {
                 updatedVeventComponent = cleanVeventComponent;
                 updatedInviteActions = cleanInviteActions;
-                addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
-                    veventComponent: updatedVeventComponent,
-                    inviteActions: updatedInviteActions,
-                    sendPreferencesMap,
-                });
+                addedAttendeesPublicKeysMap = cleanAddedAttendeesPublicKeysMap;
             }
         } else if (updateAllPossibilities === UpdateAllPossibilities.KEEP_SINGLE_MODIFICATIONS) {
             deleteOperations = [];

@@ -1,3 +1,5 @@
+import type { PublicKeyReference } from '@protontech/crypto';
+
 import type { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import type { Address, RequireSome } from '@proton/shared/lib/interfaces';
 import type {
@@ -67,6 +69,7 @@ export type SendIcs = {
         inviteActions: InviteActions;
         timestamp: number;
         sendPreferencesMap: SimpleMap<SendPreferences>;
+        addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference>;
     }>;
     (
         data: SendIcsActionData,
@@ -76,6 +79,7 @@ export type SendIcs = {
         inviteActions: InviteActions;
         timestamp: number;
         sendPreferencesMap: SimpleMap<SendPreferences>;
+        addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference>;
     }>;
 };
 
