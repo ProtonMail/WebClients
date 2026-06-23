@@ -239,5 +239,25 @@ describe('DropdownFocusController', () => {
             expect(iframe.sendPortMessage).not.toHaveBeenCalled();
             expect(ctrl.willFocus).toBe(false);
         });
+
+        test('should keep `willFocus` armed after dispatching focus until the grace timer elapses', async () => {
+            anchor.current = { type: 'field', field: field };
+            const ctrl = createController();
+
+            const onRequest = getHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST);
+            const req = onRequest?.();
+
+            /** Advance just enough to release focus and dispatch `DROPDOWN_FOCUS`,
+             * but short of the `DROPDOWN_FOCUS_TRAP_TIMEOUT` grace period. */
+            await jest.advanceTimersByTimeAsync(DROPDOWN_FOCUS_TRAP_TIMEOUT / 2);
+            expect(iframe.sendPortMessage).toHaveBeenCalledWith({ type: InlinePortMessageType.DROPDOWN_FOCUS });
+            expect(ctrl.willFocus).toBe(true);
+
+            /** Without a `DROPDOWN_FOCUSED`, the grace period clears via its timer. */
+            await jest.advanceTimersByTimeAsync(DROPDOWN_FOCUS_TRAP_TIMEOUT);
+            expect(ctrl.willFocus).toBe(false);
+
+            await req;
+        });
     });
 });

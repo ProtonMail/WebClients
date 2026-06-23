@@ -1087,7 +1087,7 @@ const CC_ATTRIBUTES = [
     'data-encrypted-name',
 ];
 
-const CC_INPUT_TYPES = ['tel', 'phone', 'text', 'number', 'password'];
+const CC_INPUT_TYPES = ['tel', 'text', 'number', 'password'];
 
 const CC_EXP_YEAR_FORMAT = ['YYYY', 'AAAA', 'YY', 'AA'];
 
@@ -1431,8 +1431,7 @@ const getCachedCCSubtype = (el) => {
 const getCCFieldType = (field) => {
     const cachedSubType = getCachedCCSubtype(field);
     if (cachedSubType) return cachedSubType;
-    const type = field.getAttribute('type');
-    if (field.tagName === 'INPUT' && type && !CC_INPUT_TYPES.includes(type)) return;
+    if (field.tagName === 'INPUT' && !CC_INPUT_TYPES.includes(field.type)) return;
     const haystack = getCCHaystack(field);
     const autocompletes = getAutocompletes(field);
     if (haystack) {
@@ -1814,7 +1813,7 @@ const IDENTITY_MATCHERS = [
 
 const IDENTITY_ATTRIBUTES = ['autocomplete', 'name', 'id', 'data-bhw'];
 
-const IDENTITY_INPUT_TYPES = ['tel', 'phone', 'text', 'number'];
+const IDENTITY_INPUT_TYPES = ['tel', 'text', 'number'];
 
 const getCachedIdentitySubType = (el) => {
     const subType = getCachedSubType(el);
@@ -1830,8 +1829,7 @@ const getIdentityFieldType = (input) => {
     const cachedSubType = getCachedIdentitySubType(input);
     if (cachedSubType) return cachedSubType;
     if (getCachedSubType(input) !== undefined) return;
-    const type = input.getAttribute('type');
-    if (type && !IDENTITY_INPUT_TYPES.includes(type)) return;
+    if (!IDENTITY_INPUT_TYPES.includes(input.type)) return;
     if (input.getAttribute('autocomplete')?.includes('email')) return;
     const haystack = getIdentityHaystack(input);
     const autocompletes = getAutocompletes(input);
