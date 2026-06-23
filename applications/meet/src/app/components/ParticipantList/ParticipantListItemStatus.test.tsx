@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 import { cleanup, render, screen } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
 import {
@@ -15,15 +15,8 @@ import {
 } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { ParticipantListItemStatus } from './ParticipantListItemStatus';
-
-vi.mock('@proton/unleash/useFlag', () => ({
-    useFlag: vi.fn(),
-}));
-
-const mockUseFlag = vi.mocked(useFlag);
 
 const participantIdentity = 'participant-1';
 const otherParticipantIdentity = 'participant-2';
@@ -77,10 +70,6 @@ const renderWithStore = (options: MockStoreOptions = {}, identity: string = part
 };
 
 describe('ParticipantListItemStatus', () => {
-    beforeEach(() => {
-        mockUseFlag.mockReturnValue(true);
-    });
-
     afterEach(() => {
         cleanup();
         vi.clearAllMocks();
@@ -119,14 +108,6 @@ describe('ParticipantListItemStatus', () => {
         expect(screen.getByText('Recording')).toBeInTheDocument();
     });
 
-    it('does not render "Recording" when the multiple recording flag is disabled', () => {
-        mockUseFlag.mockReturnValue(false);
-
-        const { container } = renderWithStore({ isRecording: true });
-
-        expect(container).toBeEmptyDOMElement();
-    });
-
     it('renders host and presenting status together with a separator', () => {
         renderWithStore({ isHost: true, isScreenSharing: true });
 
@@ -149,14 +130,5 @@ describe('ParticipantListItemStatus', () => {
         renderWithStore({ isHost: true, isScreenSharing: true, isRecording: true });
 
         expect(screen.getByText('Host · Presenting · Recording')).toBeInTheDocument();
-    });
-
-    it('only includes host and presenting when the recording flag is disabled but the participant is recording', () => {
-        mockUseFlag.mockReturnValue(false);
-
-        renderWithStore({ isHost: true, isScreenSharing: true, isRecording: true });
-
-        expect(screen.getByText('Host · Presenting')).toBeInTheDocument();
-        expect(screen.queryByText(/Recording/)).not.toBeInTheDocument();
     });
 });

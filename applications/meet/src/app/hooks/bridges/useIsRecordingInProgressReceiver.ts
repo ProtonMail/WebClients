@@ -7,21 +7,15 @@ import type { Participant, RemoteParticipant } from 'livekit-client';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
-import {
-    addParticipantRecording,
-    removeParticipantRecording,
-    setIsRecording,
-} from '@proton/meet/store/slices/recordingStatusSlice';
+import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import type { ParticipantEntity } from '@proton/meet/types/types';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { PublishableDataTypes, RecordingStatus } from '../../types';
 import { isValidMessageString } from '../../utils/isValidMessageString';
 import type { MeetCoreClient } from '../../wasm/MeetCoreClient';
 
 export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => {
-    const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
     const { reportMeetError } = useMeetErrorReporting();
 
     const store = useMeetStore();
@@ -72,34 +66,6 @@ export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => 
             }
 
             if (!mls) {
-                return;
-            }
-
-            // Remove with MeetMultipleRecording ff cleanup
-            if (!isMeetMultipleRecordingEnabled) {
-                try {
-                    const decodedPayload = new TextDecoder().decode(payload);
-
-                    if (
-                        !isValidMessageString(decodedPayload) ||
-                        decodedPayload.length === 0 ||
-                        decodedPayload.length > 50000
-                    ) {
-                        return;
-                    }
-
-                    const decodedMessage = JSON.parse(decodedPayload);
-
-                    if (decodedMessage.type !== PublishableDataTypes.RecordingStatus) {
-                        return;
-                    }
-
-                    dispatch(setIsRecording(decodedMessage.message === RecordingStatus.Started));
-                } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.error('Error handling chat message:', error);
-                }
-
                 return;
             }
 
@@ -172,7 +138,7 @@ export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => 
                 console.error('Error handling recording status message', error);
             }
         },
-        [dispatch, isMeetMultipleRecordingEnabled, mls, reportMeetError, waitForParticipant]
+        [dispatch, mls, reportMeetError, waitForParticipant]
     );
 
     const handleParticipantDisconnected = useCallback(
@@ -188,15 +154,11 @@ export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => 
         }
 
         room.on(RoomEvent.DataReceived, handleDataReceive);
-        if (isMeetMultipleRecordingEnabled) {
-            room.on(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
-        }
+        room.on(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
 
         return () => {
             room.off(RoomEvent.DataReceived, handleDataReceive);
-            if (isMeetMultipleRecordingEnabled) {
-                room.off(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
-            }
+            room.off(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
         };
-    }, [room, handleDataReceive]);
+    }, [room, handleDataReceive, handleParticipantDisconnected]);
 };
