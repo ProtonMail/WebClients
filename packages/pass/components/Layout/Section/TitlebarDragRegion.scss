@@ -1,0 +1,32 @@
+@use '~@proton/styles/scss/pass/pass-lib' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+/**
+ * macOS hides the native title bar, so the top-left strip of the window must be
+ * declared as a draggable region. It cannot live in the sidebar flow: Chromium
+ * computes -webkit-app-region from layout rects in DOM order, ignoring z-index
+ * and overflow clipping (see app.scss / electron#7605). A scrolled vault list
+ * full of `no-drag` buttons therefore subtracts the drag zone as it scrolls.
+ *
+ * Portalling this fixed element to the end of <body> keeps its `drag` rect
+ * united last, so nothing can carve it back out. It only covers the sidebar
+ * strip, which exists above the `>medium` breakpoint (sidebar is `hidden
+ * lg:flex`); below that the layout changes and the strip would sit over
+ * interactive content, so it is disabled.
+ */
+.pass-titlebar-drag-region {
+	display: none;
+
+	@include im.media('>medium') {
+		display: block;
+		position: fixed;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		inline-size: var(--pass-sidebar-size);
+		block-size: rem(52);
+		-webkit-app-region: drag;
+	}
+}
