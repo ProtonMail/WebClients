@@ -6,20 +6,23 @@ import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transfor
 import type { Maybe, Share, ShareContent, ShareGetResponse, ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 
-type Options = { eventId?: string };
+type ShareParserOptions = { eventId?: string; strategy?: SyncStrategy };
 
-/** Fetch latest event ID if not provided - pass `eventId` in
- * options to avoid  unnecessary API calls when already known. */
+/** Resolves the latest event ID when the sync strategy is `LEGACY`.
+ * The strategy defaults to the global `SYNC_STRATEGY` but can be overridden.
+ * Pass `SyncStrategy.LEGACY` to force resolution during a V2→V1 rollback, or
+ * `SyncStrategy.USER_EVENTS` to skip it for shares that won't be polled. Pass
+ * `eventId` to reuse a known value and skip the extra request. */
 export const parseShareResponse = async <T extends ShareType = ShareType>(
     encryptedShare: ShareGetResponse,
-    options?: Options
+    options?: ShareParserOptions
 ): Promise<Maybe<Share<T>>> => {
     const shareId = encryptedShare.ShareID;
 
     try {
         const encryptedShareKeys = PassCrypto.canOpenShare(shareId) ? undefined : await getAllShareKeys(shareId);
         const eventId =
-            SYNC_STRATEGY === SyncStrategy.LEGACY
+            (options?.strategy ?? SYNC_STRATEGY) === SyncStrategy.LEGACY
                 ? (options?.eventId ?? (await getShareLatestEventId(shareId)))
                 : undefined;
 
@@ -55,3 +58,7 @@ export const parseShareResponse = async <T extends ShareType = ShareType>(
         logger.warn(`[share] Failed parsing share ${logId(shareId)}`, err);
     }
 };
+
+export const parseUnpolledShareResponse = <T extends ShareType = ShareType>(
+    encryptedShare: ShareGetResponse
+): Promise<Maybe<Share<T>>> => parseShareResponse(encryptedShare, { strategy: SyncStrategy.USER_EVENTS });
