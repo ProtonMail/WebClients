@@ -52,7 +52,6 @@ import { IcEraser } from '@proton/icons/icons/IcEraser'
 import { IcEye } from '@proton/icons/icons/IcEye'
 import { IcFileLines } from '@proton/icons/icons/IcFileLines'
 import { IcImage } from '@proton/icons/icons/IcImage'
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
 import { IcLink } from '@proton/icons/icons/IcLink'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
 import { IcListNumbers } from '@proton/icons/icons/IcListNumbers'
@@ -62,7 +61,6 @@ import { IcTextBold } from '@proton/icons/icons/IcTextBold'
 import { IcTextItalic } from '@proton/icons/icons/IcTextItalic'
 import { IcTextQuote } from '@proton/icons/icons/IcTextQuote'
 import { IcTextStrikethrough } from '@proton/icons/icons/IcTextStrikethrough'
-import { IcTextTitle } from '@proton/icons/icons/IcTextTitle'
 import { IcTextUnderline } from '@proton/icons/icons/IcTextUnderline'
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
@@ -118,10 +116,8 @@ import { isMobile } from './isMobile'
 import type { ToolbarItems } from './ToolbarItems'
 import { OverflowMenuItem } from './OverflowMenuItem'
 import { ToolbarItem } from './ToolbarItem'
-import { TableOfContents } from './TableOfContents'
-import { useApplication } from '../Containers/ApplicationProvider'
 import { useSyncedState } from '../Hooks/useSyncedState'
-import { isDevOrBlack } from '@proton/utils/env'
+import { useIsAlpha } from '../Hooks/useIsAlpha'
 
 function SubscriptIcon() {
   return (
@@ -158,7 +154,7 @@ export default function DocumentEditorToolbar({
   clientInvoker?: EditorRequiresClientMethods
   isEditorHidden?: boolean
 }) {
-  const { application } = useApplication()
+  const isAlpha = useIsAlpha()
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
 
@@ -724,7 +720,6 @@ export default function DocumentEditorToolbar({
   const isEditMode = userMode === EditorUserMode.Edit
   const isPreviewMode = userMode === EditorUserMode.Preview
   const isSuggestionMode = userMode === EditorUserMode.Suggest
-  const areAlphaOnlyEditorFeaturesEnabled = application.environment === 'alpha' || isDevOrBlack()
 
   const { shouldShowTooltip: suggestionTooltipNotShownPreviously } = useTooltipOnce(
     TooltipKey.DocsSuggestionModeSpotlight,
@@ -1265,7 +1260,7 @@ export default function DocumentEditorToolbar({
       ],
       showInToolbar: false,
     },
-    ...(areAlphaOnlyEditorFeaturesEnabled
+    ...(isAlpha
       ? [
           {
             id: 'alpha-text-formatting-options',
@@ -1295,7 +1290,7 @@ export default function DocumentEditorToolbar({
       : []),
   ]
 
-  if (areAlphaOnlyEditorFeaturesEnabled) {
+  if (isAlpha) {
     toolbarItems.splice(6, 0, {
       id: 'page-break-option',
       items: [
@@ -1316,39 +1311,6 @@ export default function DocumentEditorToolbar({
         },
       ],
       showInToolbar: false,
-    })
-  }
-
-  const isTableOfContentsEnabled = areAlphaOnlyEditorFeaturesEnabled
-
-  if (isTableOfContentsEnabled) {
-    toolbarItems.unshift({
-      id: 'toc-option',
-      items: [
-        {
-          id: 'toc-button',
-          type: 'dropdown',
-          label: (target) => (
-            <>
-              <IcTextTitle />
-              <span className={clsx(target === 'toolbar' && 'sr-only')}>{c('Action').t`Table of contents`}</span>
-            </>
-          ),
-          disabled: false,
-          dropdownProps: DropdownContentProps,
-          overflowBehavior: 'submenu',
-          tooltip: c('Action').t`Table of contents`,
-          menu: (
-            <>
-              <div className="bg-weak color-danger flex items-center gap-2 px-3 py-1 text-sm">
-                <IcInfoCircle className="align-middle" />
-                <span className="align-middle">{c('Info').t`Alpha only experimental feature`}</span>
-              </div>
-              <TableOfContents />
-            </>
-          ),
-        },
-      ],
     })
   }
 

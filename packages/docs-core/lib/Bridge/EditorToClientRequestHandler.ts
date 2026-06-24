@@ -200,6 +200,14 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     return this.docOrchestrator.hasBasePatches()
   }
 
+  async getDocumentUrl(): Promise<string> {
+    return window.location.href
+  }
+
+  async replaceDocumentUrl(url: string): Promise<void> {
+    window.history.replaceState(null, '', url)
+  }
+
   reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void {
     this.docOrchestrator.reportSheetsYjsDriftDetected(reason)
   }

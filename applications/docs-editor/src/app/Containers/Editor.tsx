@@ -58,10 +58,12 @@ import { FixBrokenTabNode } from '../Plugins/FixBrokenTabNode'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 import { PageBreakPlugin } from '../Plugins/PageBreak/PageBreakPlugin'
 import { useApplication } from './ApplicationProvider'
-import { isDevOrBlack } from '@proton/utils/env'
 import { SCROLL_TO_USER_CURSOR_COMMAND } from '../Plugins/Collaboration/ScrollToUserCursorPlugin'
 import { useNotifications } from '@proton/components'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
+import { TableOfContents } from '../Components/TableOfContents'
+import DocsLayout from './DocsLayout'
+import { useIsAlpha } from '../Hooks/useIsAlpha'
 
 const TypingBotEnabled = false
 
@@ -109,6 +111,7 @@ export function Editor({
   logger,
 }: Props) {
   const { application } = useApplication()
+  const isAlpha = useIsAlpha()
   const editorRef = useRef<LexicalEditor | null>(null)
 
   const [collabCursorsContainer, setCollabCursorsContainer] = useState<HTMLDivElement | null>(null)
@@ -150,7 +153,6 @@ export function Editor({
 
   const isSuggestionMode = userMode === EditorUserMode.Suggest
   const hasMutationDisplay = systemMode === EditorSystemMode.Edit && userMode !== EditorUserMode.Preview
-  const isPageBreakEnabled = application.environment === 'alpha' || isDevOrBlack()
 
   const letterForAnonymousUser = useMemo(() => {
     if (!isAnonymousUser) {
@@ -219,6 +221,9 @@ export function Editor({
     [showAlertModal],
   )
 
+  const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
+  const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
+
   return (
     <CustomCollaborationContextProvider
       value={{
@@ -237,8 +242,6 @@ export function Editor({
         ></div>
       )}
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
-        <FixBrokenTabNode />
-        <KeyboardShortcutsPlugin />
         {(systemMode === EditorSystemMode.Edit || systemMode === EditorSystemMode.PublicView) && (
           <Toolbar
             clientInvoker={clientInvoker}
@@ -249,43 +252,44 @@ export function Editor({
             userMode={userMode}
           />
         )}
-        <RichTextPlugin
-          contentEditable={
-            <div
-              className="relative overflow-auto"
-              style={{
-                gridColumn: '1 / 3',
-                gridRow: '2',
+        <DocsLayout.Grid>
+          {isAlpha && (
+            <DocsLayout.LeftPanel>
+              <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
+            </DocsLayout.LeftPanel>
+          )}
+          <RichTextPlugin
+            contentEditable={
+              <DocsLayout.RightPanel>
+                <ProtonContentEditable
+                  className={clsx(
+                    'DocumentEditor w-full max-w-full overflow-x-hidden px-[10%] lg:w-full lg:max-w-full lg:pl-4 lg:pr-[var(--right-panel-padding)] print:w-full print:max-w-full',
+                    isSuggestionMode && 'suggestion-mode',
+                  )}
+                  style={{
+                    fontFamily: DefaultFont.value,
+                    gridRow: 1,
+                    gridColumn: 1,
+                    justifySelf: 'center',
+                  }}
+                  isSuggestionMode={isSuggestionMode}
+                  data-testid={systemMode === EditorSystemMode.Revision ? 'main-editor-revision' : 'main-editor'}
+                />
+                <div className="Lexical__cursorsContainer" ref={setCollabCursorsContainer} />
+              </DocsLayout.RightPanel>
+            }
+            placeholder={null}
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+        </DocsLayout.Grid>
 
-                display: 'grid',
-                gridTemplateRows: '1fr',
-              }}
-            >
-              <ProtonContentEditable
-                className={clsx(
-                  'DocumentEditor w-full max-w-full overflow-x-hidden px-[10%] lg:w-full lg:max-w-full lg:px-[calc((100%-816px)/2)] print:w-full print:max-w-full',
-                  isSuggestionMode && 'suggestion-mode',
-                )}
-                style={{
-                  fontFamily: DefaultFont.value,
-                  gridRow: 1,
-                  gridColumn: 1,
-                  justifySelf: 'center',
-                }}
-                isSuggestionMode={isSuggestionMode}
-                data-testid={systemMode === EditorSystemMode.Revision ? 'main-editor-revision' : 'main-editor'}
-              />
-              <div className="Lexical__cursorsContainer" ref={setCollabCursorsContainer} />
-            </div>
-          }
-          placeholder={null}
-          ErrorBoundary={LexicalErrorBoundary}
-        />
+        <FixBrokenTabNode />
+        <KeyboardShortcutsPlugin />
         <FormattingPlugin />
         <BlockTypePlugin />
         <MarkdownShortcutPlugin transformers={MarkdownTransformers} />
         <HorizontalRulePlugin />
-        {isPageBreakEnabled && <PageBreakPlugin />}
+        {isAlpha && <PageBreakPlugin />}
         <ListPlugin />
         <CheckListPlugin />
         <CustomOrderedListPlugin />
@@ -324,7 +328,6 @@ export function Editor({
         <AutoFocusPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
-
         <WordCountPlugin
           onWordCountChange={(wordCountInfo) =>
             systemMode !== EditorSystemMode.Revision && clientInvoker.reportWordCount(wordCountInfo)
