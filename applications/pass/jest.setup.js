@@ -20,5 +20,5 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn();
 
-jest.mock('loglevel');
+jest.mock('loglevel', () => require('@proton/pass/utils/logger/loglevel.mock'));
 jest.mock('@proton/pass/lib/core/ui.proxy');
