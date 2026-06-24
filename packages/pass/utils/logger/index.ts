@@ -8,16 +8,16 @@ export const logId = (id: string) =>
 
 const EXTERNAL_IMPORT = typeof BUILD_TARGET === 'undefined' || typeof ENV === 'undefined';
 
-// Needed to prevent console output from polluting the root logger
-const passLog = log.getLogger('pass');
+/** Prevent console output from polluting the root logger */
+const PASS_LOGGER = log.getLogger('pass');
 
 /** Swallows all console outputs */
-if (EXTERNAL_IMPORT || ENV !== 'development') passLog.methodFactory = () => noop;
+if (EXTERNAL_IMPORT || ENV !== 'development') PASS_LOGGER.methodFactory = () => noop;
 
 export const registerLoggerEffect = (effect: (...args: any[]) => void) => {
-    const originalFactory = passLog.methodFactory;
+    const originalFactory = PASS_LOGGER.methodFactory;
 
-    passLog.methodFactory = function (methodName, logLevel, loggerName) {
+    PASS_LOGGER.methodFactory = function (methodName, logLevel, loggerName) {
         const originalMethod = originalFactory(methodName, logLevel, loggerName);
 
         return function (...logs: any[]) {
@@ -28,10 +28,10 @@ export const registerLoggerEffect = (effect: (...args: any[]) => void) => {
         };
     };
 
-    passLog.rebuild();
+    PASS_LOGGER.rebuild();
 };
 
-passLog.setLevel(
+PASS_LOGGER.setLevel(
     (() => {
         if (EXTERNAL_IMPORT) return 'SILENT';
         return ENV === 'development' ? 'DEBUG' : 'INFO';
@@ -39,4 +39,4 @@ passLog.setLevel(
     false
 );
 
-export const logger = passLog;
+export const logger = PASS_LOGGER;
