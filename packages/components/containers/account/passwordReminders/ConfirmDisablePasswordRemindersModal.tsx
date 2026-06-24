@@ -23,7 +23,7 @@ const ConfirmDisablePasswordRemindersModal = ({ open, onClose }: Props) => {
 
     const disablePasswordReminders = async () => {
         await dispatch(setPasswordReminderFlag({ value: PASSWORD_REMINDERS_VALUE.DISABLED }));
-        createNotification({ text: c('Success').t`Password reminders disabled` });
+        createNotification({ text: c('Success').t`Password check-ins disabled` });
         sendDisable();
         onClose();
     };
@@ -34,7 +34,7 @@ const ConfirmDisablePasswordRemindersModal = ({ open, onClose }: Props) => {
         <Prompt
             open={open}
             onClose={handleClose}
-            title={c('password_reminder').t`Turn off password reminders?`}
+            title={c('password_reminder').t`Turn off password check-ins?`}
             buttons={[
                 <Button
                     color="danger"
@@ -43,7 +43,7 @@ const ConfirmDisablePasswordRemindersModal = ({ open, onClose }: Props) => {
                         void withSubmitting(disablePasswordReminders());
                     }}
                 >
-                    {c('password_reminder').t`Turn off reminders`}
+                    {c('password_reminder').t`Turn off check-ins`}
                 </Button>,
                 <Button onClick={onClose} disabled={submitting}>
                     {c('Action').t`Cancel`}
