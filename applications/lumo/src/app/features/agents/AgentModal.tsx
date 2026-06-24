@@ -110,7 +110,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
             <ModalTwoHeader
                 title={title}
                 subline={c('collider_2025:Subline')
-                    .t`Agents turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.`}
+                    .t`Custom ${LUMO_SHORT_APP_NAME}s turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.`}
             />
             <ModalTwoContent>
                 <div className="flex flex-column gap-4">
@@ -118,7 +118,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                         <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
                         <InputFieldTwo
                             id="agent-name"
-                            placeholder={c('collider_2025:Placeholder').t`Account recovery assistant`}
+                            placeholder={c('collider_2025:Placeholder').t`Fluffy McFluff Face`}
                             value={name}
                             onValue={setName}
                             maxLength={100}
@@ -151,7 +151,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                         <TextAreaTwo
                             id="agent-instructions"
                             placeholder={c('collider_2025:Placeholder')
-                                .t`Describe the role, scope, and behavior you want ${LUMO_SHORT_APP_NAME} to adopt for this agent.`}
+                                .t`Describe the role, scope, and behavior you want ${LUMO_SHORT_APP_NAME} to adopt.`}
                             value={instructions}
                             className="border border-weak rounded-lg"
                             onValue={setInstructions}
@@ -199,18 +199,6 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                         </div>
                     </div>
 
-                    <div className="flex flex-nowrap items-center justify-space-between gap-2">
-                        <label htmlFor="agent-hidden" className="flex flex-column">
-                            <span className="text-semibold text-sm color-norm">
-                                {c('collider_2025:Label').t`Hide from list`}
-                            </span>
-                            <span className="text-sm color-weak">
-                                {c('collider_2025:Info')
-                                    .t`Keep this agent out of the picker. It can still be opened with a shared link.`}
-                            </span>
-                        </label>
-                        <Toggle id="agent-hidden" checked={hidden} onChange={() => setHidden((prev) => !prev)} />
-                    </div>
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
@@ -231,7 +219,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                     </Button>
                 )}
                 <Button onClick={handleSave} color="norm" disabled={isSaveDisabled}>
-                    {existing ? c('collider_2025:Button').t`Save` : c('collider_2025:Button').t`Create agent`}
+                    {existing ? c('collider_2025:Button').t`Save` : c('collider_2025:Button').t`Create`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>

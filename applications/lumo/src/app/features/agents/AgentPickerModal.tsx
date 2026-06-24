@@ -246,7 +246,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                         onClick={() => openEditor(undefined)}
                     >
                         <IcPlus size={4} />
-                        {c('collider_2025:Action').t`New ${LUMO_SHORT_APP_NAME}`}
+                        {c('collider_2025:Action').t`Create`}
                     </Button>
                 </ModalTwoContent>
             </ModalTwo>
