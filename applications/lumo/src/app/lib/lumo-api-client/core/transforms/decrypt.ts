@@ -2,7 +2,12 @@ import { decryptUint8Array } from '../../../../crypto';
 import { consider } from '../../../../util/nullable';
 import { decryptString } from '../encryption';
 import type { RequestEncryptionParams } from '../encryptionParams';
-import type { GenerationResponseMessage, GenerationResponseMessageDecrypted } from '../types';
+import type {
+    GenerationResponseMessage,
+    GenerationResponseMessageDecrypted,
+    ServerToolCallMessage,
+    ServerToolResultMessage,
+} from '../types';
 
 export type DecryptionTransformerParams = {
     encryption: RequestEncryptionParams | null;
@@ -58,6 +63,48 @@ const makeDecryptionTransformer = (
                 } catch (error) {
                     console.error('Failed to decrypt image data:', error);
                     // do nothing - do not emit the encrypted chunk, do not throw an error
+                    return;
+                }
+            }
+
+            // Decrypt server_tool_call arguments (dispatch chunk only — announce has no arguments)
+            const shouldDecryptToolCall =
+                value.type === 'server_tool_call' &&
+                value.encrypted &&
+                value.arguments !== undefined &&
+                encryption &&
+                responseAd;
+
+            if (shouldDecryptToolCall) {
+                try {
+                    const decryptedArgs = await decryptString(
+                        (value as ServerToolCallMessage).arguments!,
+                        encryption.requestKey,
+                        responseAd
+                    );
+                    controller.enqueue({ ...value, arguments: decryptedArgs, encrypted: false });
+                    return;
+                } catch (error) {
+                    console.error('Failed to decrypt tool call arguments:', error);
+                    return;
+                }
+            }
+
+            // Decrypt server_tool_result content
+            const shouldDecryptToolResult =
+                value.type === 'server_tool_result' && value.encrypted && encryption && responseAd;
+
+            if (shouldDecryptToolResult) {
+                try {
+                    const decryptedContent = await decryptString(
+                        (value as ServerToolResultMessage).content,
+                        encryption.requestKey,
+                        responseAd
+                    );
+                    controller.enqueue({ ...value, content: decryptedContent, encrypted: false });
+                    return;
+                } catch (error) {
+                    console.error('Failed to decrypt tool result content:', error);
                     return;
                 }
             }

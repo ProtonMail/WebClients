@@ -94,43 +94,47 @@ function serializeMessages(turns: WireTurn[]): ChatCompletionsMessage[] {
             return message;
         }
 
-        // Multimodal messages use OpenAI's content-parts array. Encryption stays
-        // at the message level (mirroring the text-only case): the `encrypted`
-        // flag marks the whole message, and the text/image parts carry ciphertext
-        // (the image ciphertext wrapped as a `data:` URL, see `toImagePart`).
+        // Multimodal messages use OpenAI's content-parts array. Each part carries
+        // its own `encrypted` flag as a sibling to the sensitive field.
+        // Normally, message.encrypted is not necessary. However,
+        // for temporary backward compatibility reason, we also set a
+        // message-level `encrypted` flag for the parts-content form.
         const parts: ChatCompletionsContentPart[] = [];
 
         if (turn.content) {
-            parts.push({ type: 'text', text: turn.content });
+            const textPart: ChatCompletionsContentPart = { type: 'text', text: turn.content };
+            if (turn.encrypted) {
+                textPart.encrypted = true;
+            }
+            parts.push(textPart);
         }
 
         for (const image of turn.images!) {
             parts.push(toImagePart(image));
         }
 
-        const message: ChatCompletionsMessage = { role, content: parts };
-        if (turn.encrypted) {
-            message.encrypted = true;
-        }
-        return message;
+        // Compat: set encrypted at the message level too.
+        const encrypted = turn.images!.some((im) => im.encrypted);
+
+        return { role, content: parts, ...(encrypted ? { encrypted: true } : {}) };
     });
 }
 
 /**
  * Convert a WireImage into an OpenAI `image_url` content part.
  *
- * The `url` is always a `data:<mime>;base64,...` URL. For an unencrypted image the
- * MIME type is inferred from the payload's magic bytes. For an encrypted image the
- * payload is U2L ciphertext (not real image bytes), so a generic
- * `application/octet-stream` MIME is used; the backend strips the prefix and
- * decrypts the bytes at the worker boundary. Encryption is signalled by the
- * message-level `encrypted` flag, not per part.
+ * The `url` is always a `data:<mime>;base64,...` URL. For an encrypted image the
+ * payload is U2L ciphertext so a generic `application/octet-stream` MIME is used;
+ * encryption is additionally signalled by `image_url.encrypted` as a sibling to `url`.
  */
 function toImagePart(image: WireImage): ChatCompletionsImagePart {
     const mimeType = image.encrypted ? 'application/octet-stream' : inferImageMimeType(image.data);
     return {
         type: 'image_url',
-        image_url: { url: `data:${mimeType};base64,${image.data}` },
+        image_url: {
+            url: `data:${mimeType};base64,${image.data}`,
+            ...(image.encrypted ? { encrypted: true } : {}),
+        },
     };
 }
 
