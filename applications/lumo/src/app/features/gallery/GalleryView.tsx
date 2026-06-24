@@ -24,6 +24,7 @@ import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { CreatedGrid } from './CreatedGrid';
 import { DiscoverList } from './InspirationPanel';
+import { GalleryImageLimitUpsell } from './GalleryImageLimitUpsell';
 import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
 import { useNativeComposerImageGenerationStateApi } from './hooks/useNativeComposerImageGenerationStateApi';
 import type { GalleryPromptSuggestion } from './promptSuggestions';
@@ -108,6 +109,7 @@ const GalleryTabContent = ({
             )}
             <div className={clsx('gallery-bottom w-full', !isSmallScreen && hasImages && 'absolute')}>
                 <div className="gallery-inner">
+                    <GalleryImageLimitUpsell />
                     <div className="gallery-composer-wrapper">
                         <ComposerComponent
                             composerMode={ComposerMode.GALLERY}
@@ -155,6 +157,7 @@ const CreateTabContent = ({
                     </h1>
                 </div>
                 <div className="composer-container md:px-4 w-full">
+                    <GalleryImageLimitUpsell />
                     <ComposerComponent
                         composerMode={ComposerMode.GALLERY}
                         handleSendMessage={handleSendMessage}

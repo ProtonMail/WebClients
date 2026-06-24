@@ -76,6 +76,7 @@ export class LumoApiClient {
             enableExternalTools = false,
             enableImageTools = false,
             enableReasoning = false,
+            modelTier = 'auto',
             enableSuggestedQuestions = false,
             requestKey,
             requestId,
@@ -168,7 +169,7 @@ export class LumoApiClient {
                 responseContext,
                 chunkCallback,
                 finishCallback,
-                { target: 'message' }
+                { target: 'message', modelTier }
             )
         );
 
@@ -184,7 +185,7 @@ export class LumoApiClient {
         responseContext: ResponseContext,
         chunkCallback: ChunkCallback | undefined,
         finishCallback: FinishCallback | undefined,
-        options: { enableSmoothing?: boolean; target?: LumoCompletionTarget } = {}
+        options: { enableSmoothing?: boolean; target?: LumoCompletionTarget; modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' } = {}
     ) {
         const enableSmoothing = options.enableSmoothing ?? this.config.enableSmoothing;
         const thisNotifyResponse = this.notifyResponse.bind(this);
@@ -194,6 +195,7 @@ export class LumoApiClient {
 
         const postData = this.prepareChatEndpointPostData(request, {
             enableReasoning: Boolean(request.options?.reasoning),
+            modelTier: options.modelTier,
             target: options.target,
         });
 
@@ -241,10 +243,11 @@ export class LumoApiClient {
 
     private prepareChatEndpointPostData(
         request: LumoApiGenerationRequest,
-        options: { enableReasoning: boolean; target?: LumoCompletionTarget }
+        options: { enableReasoning: boolean; modelTier?: 'auto' | 'lumo-lite' | 'lumo-max'; target?: LumoCompletionTarget }
     ) {
         return toChatCompletionsBody(request, {
             enableReasoning: options.enableReasoning,
+            modelTier: options.modelTier,
             target: options.target,
         });
     }

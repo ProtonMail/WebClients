@@ -1,10 +1,15 @@
 import { type ReactNode, createContext, useCallback, useContext, useState } from 'react';
 
-export type ModelTier = 'auto' | 'fast' | 'thinking';
+import { ModelTierLimitsSync } from './ModelTierLimitsSync';
+
+export type ModelTier = 'auto' | 'lumo-lite' | 'lumo-max';
+export type ResponseMode = 'fast' | 'thinking';
 
 interface ModelTierContextType {
     modelTier: ModelTier;
     setModelTier: (mode: ModelTier) => void;
+    responseMode: ResponseMode;
+    setResponseMode: (mode: ResponseMode) => void;
     isThinkingEnabled: boolean;
 }
 
@@ -15,20 +20,31 @@ interface ModelTierProviderProps {
 }
 
 export const ModelTierProvider = ({ children }: ModelTierProviderProps) => {
-    const [modelTier, setModelTierState] = useState<ModelTier>('auto');
+    const [modelTier, setModelTierState] = useState<ModelTier>('lumo-lite');
+    const [responseMode, setResponseModeState] = useState<ResponseMode>('fast');
 
     const setModelTier = useCallback((mode: ModelTier) => {
         setModelTierState(mode);
     }, []);
 
+    const setResponseMode = useCallback((mode: ResponseMode) => {
+        setResponseModeState(mode);
+    }, []);
+
     const value: ModelTierContextType = {
         modelTier: modelTier,
         setModelTier: setModelTier,
-        // TODO: remove this once we have a proper thinking tier
-        isThinkingEnabled: true,
+        responseMode: responseMode,
+        setResponseMode: setResponseMode,
+        isThinkingEnabled: responseMode === 'thinking',
     };
 
-    return <ModelTierContext.Provider value={value}>{children}</ModelTierContext.Provider>;
+    return (
+        <ModelTierContext.Provider value={value}>
+            <ModelTierLimitsSync />
+            {children}
+        </ModelTierContext.Provider>
+    );
 };
 
 export const useModelTier = (): ModelTierContextType => {
@@ -37,4 +53,12 @@ export const useModelTier = (): ModelTierContextType => {
         throw new Error('useModelTier must be used within a ModelTierProvider');
     }
     return context;
+};
+
+export const useOptionalModelTier = (): ModelTierContextType | undefined => {
+    return useContext(ModelTierContext);
+};
+
+export const getSelectedModelTier = (modelTier: ModelTier): Exclude<ModelTier, 'auto'> => {
+    return modelTier === 'lumo-max' ? 'lumo-max' : 'lumo-lite';
 };

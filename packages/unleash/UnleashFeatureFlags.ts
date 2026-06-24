@@ -352,6 +352,8 @@ enum LumoFeatureFlag {
     LumoNativeAuth = 'LumoNativeAuth',
     LumoCustomAgents = 'LumoCustomAgents',
     LumoAiPaperTrail = 'LumoAiPaperTrail',
+    LumoMaxAvailableGuest = 'LumoMaxAvailableGuest',
+    LumoMaxAvailableFree = 'LumoMaxAvailableFree',
 }
 
 export type FeatureFlag =

@@ -20,6 +20,8 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - lumoSurveyGuestUsers: Survey flag for guest users
  * - memory: Enable the memory feature (saved memories used to personalize general chats)
  * - customAgents: Enable the custom agents option in the composer tools dropdown
+ * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)
+ * - maxAvailableGuest: When enabled, guest users can select Lumo Max (default off during high load)
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -38,6 +40,8 @@ export const useLumoFlags = () => {
     const lumoNativeAuth = useFlag('LumoNativeAuth');
     const customAgents = useFlag('LumoCustomAgents');
     const aiPaperTrail = useFlag('LumoAiPaperTrail');
+    const maxAvailableFree = useFlag('LumoMaxAvailableFree');
+    const maxAvailableGuest = useFlag('LumoMaxAvailableGuest');
 
     return {
         memory,
@@ -56,5 +60,7 @@ export const useLumoFlags = () => {
         apiKeyManagement,
         lumoSurvey,
         lumoNativeAuth,
+        maxAvailableFree,
+        maxAvailableGuest,
     };
 };

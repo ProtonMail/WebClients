@@ -1,5 +1,10 @@
 import { Role } from '../../../types-api';
-import { DEFAULT_CHAT_MODEL, DEFAULT_REASONING_MODEL, toChatCompletionsBody } from './chat-completions';
+import {
+    DEFAULT_CHAT_MODEL,
+    LUMO_LITE_MODEL,
+    LUMO_MAX_MODEL,
+    toChatCompletionsBody,
+} from './chat-completions';
 import type { LumoApiGenerationRequest } from './types';
 
 const baseRequest: LumoApiGenerationRequest = {
@@ -14,12 +19,13 @@ describe('toChatCompletionsBody', () => {
             model: DEFAULT_CHAT_MODEL,
             messages: [{ role: 'user', content: 'Hello' }],
             stream: true,
+            stream_options: { include_usage: true },
             reasoning_effort: 'none',
             lumo: { client_type: 'frontend' },
         });
     });
 
-    it('uses the reasoning model and effort when enabled', () => {
+    it('sets reasoning effort independently from the selected model', () => {
         const request: LumoApiGenerationRequest = {
             ...baseRequest,
             options: { reasoning: true },
@@ -28,17 +34,25 @@ describe('toChatCompletionsBody', () => {
         expect(
             toChatCompletionsBody(request, {
                 enableReasoning: true,
+                modelTier: 'lumo-lite',
             })
         ).toEqual({
-            model: DEFAULT_REASONING_MODEL,
+            model: LUMO_LITE_MODEL,
             messages: [{ role: 'user', content: 'Hello' }],
             stream: true,
+            stream_options: { include_usage: true },
             reasoning_effort: 'high',
             lumo: { client_type: 'frontend' },
         });
     });
 
-    it('serializes built-in tools as name-only objects and maps the Lumo ToolCall role to lumo_tool_call and ToolResult to the standard OpenAI tool role', () => {
+    it('maps model tiers to API model names', () => {
+        expect(toChatCompletionsBody(baseRequest, { modelTier: 'lumo-lite' }).model).toBe(LUMO_LITE_MODEL);
+        expect(toChatCompletionsBody(baseRequest, { modelTier: 'lumo-max' }).model).toBe(LUMO_MAX_MODEL);
+        expect(toChatCompletionsBody(baseRequest, { modelTier: 'auto' }).model).toBe(DEFAULT_CHAT_MODEL);
+    });
+
+    it('serializes built-in tools as name-only objects and maps Lumo roles to OpenAI roles', () => {
         const request: LumoApiGenerationRequest = {
             ...baseRequest,
             turns: [
@@ -61,6 +75,7 @@ describe('toChatCompletionsBody', () => {
                 { role: 'user', content: 'Hello' },
             ],
             stream: true,
+            stream_options: { include_usage: true },
             reasoning_effort: 'none',
             tools: [{ name: 'web_search' }],
             tool_choice: 'auto',

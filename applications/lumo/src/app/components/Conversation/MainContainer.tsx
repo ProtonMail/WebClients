@@ -10,6 +10,11 @@ import { useConversationActions } from '../../providers/ConversationActionsProvi
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import type { Attachment } from '../../types';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { useLumoSelector } from '../../redux/hooks';
+import { selectTierErrors } from '../../redux/slices/meta/errors';
+import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
+import UpsellCard from '../../upsells/components/UpsellCard';
 import { ComposerMode, type Message } from '../../types';
 // import { Blobs } from '../Blobs/Blobs';
 import { ComposerComponent } from '../Composer/ComposerComponent';
@@ -48,6 +53,14 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
         autoShowDriveBrowser?: boolean;
     }>({ type: null });
     const { isGhostChatMode } = useGhostChat();
+    const tierErrors = useLumoSelector((state) => selectTierErrors({ errors: state.errors }));
+    const { hasLumoPlus } = useLumoPlan();
+    const remainingLimits = useRemainingLimits();
+    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(
+        remainingLimits,
+        tierErrors.length > 0,
+        hasLumoPlus
+    );
     const filePreviewModal = useModalStateObject();
     const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
 
@@ -124,6 +137,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                         {aiPaperTrail && <PaperTrailPanel />}
 
                         <div className="composer-container md:px-4 w-full relative">
+                            {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
                             {/* {aiPaperTrail && isEditorEmpty && (
                                 <button
                                     type="button"

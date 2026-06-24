@@ -813,6 +813,9 @@ export enum LUMO_UPSELL_PATHS {
     QUESTION_LIMIT_B2B_B2C = 'paid-user-question-limit',
     LUMO_PLUS_UPGRADE_MODAL = 'lumo-plus-upgrade-modal',
     LUMO_PLUS_UPGRADE_TOGGLE = 'lumo-plus-upgrade-toggle',
+    COMPOSER_MODEL_SELECTOR = 'composer-model-selector',
+    COMPOSER_IMAGE_SELECTOR = 'composer-image-selector',
+    GALLERY_IMAGE_LIMIT = 'gallery-image-limit',
 }
 
 export enum SHARED_UPSELL_PATHS {

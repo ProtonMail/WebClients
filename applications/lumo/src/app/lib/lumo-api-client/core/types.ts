@@ -171,6 +171,7 @@ export interface AssistantCallOptions {
     enableExternalTools?: boolean;
     enableImageTools?: boolean;
     enableReasoning?: boolean;
+    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
     enableSuggestedQuestions?: boolean;
     requestKey?: AesGcmCryptoKey;
     requestId?: RequestId;

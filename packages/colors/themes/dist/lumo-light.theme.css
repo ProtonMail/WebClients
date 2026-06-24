@@ -130,4 +130,11 @@
   --lumo-logo-tag-plus-background: #e8e9eb;
   --lumo-logo-tag-pro-text: var(--text-invert);
   --lumo-logo-tag-plus-text: #7a7a7a;
+  --lumo-secondary-upsell-background:
+    linear-gradient(
+      180deg,
+      rgba(245, 246, 254, 0.5) 76.09%,
+      rgba(255, 244, 231, 0.5) 100%
+    ),
+    #fff;
 }

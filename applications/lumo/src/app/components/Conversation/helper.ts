@@ -85,6 +85,7 @@ export type UiContext = {
     enableExternalTools: boolean;
     enableImageTools: boolean;
     enableReasoning?: boolean;
+    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
     enableSmoothing?: boolean; // todo remove optional
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
@@ -399,6 +400,7 @@ export function sendMessage({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         generateTitle,
                         imageAspectRatio: ui.imageAspectRatio,
@@ -603,6 +605,7 @@ export function regenerateMessage({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
@@ -803,6 +806,7 @@ export function retrySendMessage({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         generateTitle: requestTitle,
                         config: {

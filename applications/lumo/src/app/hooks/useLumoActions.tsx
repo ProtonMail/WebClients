@@ -6,7 +6,6 @@ import type { User } from '@proton/shared/lib/interfaces';
 import { useNativeComposerPromptApi } from '../components/Composer/hooks/useNativeComposerPromptApi';
 import {
     formatPersonalization,
-    generateFakeConversationToShowTierError,
     regenerateMessage,
     retrySendMessage,
     sendMessage,
@@ -16,7 +15,6 @@ import { addContextToMessages, fillAttachmentData, fillOneAttachmentData } from 
 import { getApproximateTokenCount } from '../llm/tokenizer';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
-import { useGuestTracking } from '../providers/GuestTrackingProvider';
 import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
@@ -30,12 +28,12 @@ import type { ActionParams, Attachment, ErrorContext, ImageGenerationOptions, Re
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
 import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
+import { useChatLimitGate } from './useChatLimitGate';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
 import { useLumoFlags } from './useLumoFlags';
 import { usePersonalization } from './usePersonalization';
 import usePreferredSiblings from './usePreferredSiblings';
-import { useTierErrors } from './useTierErrors';
 
 // Constants
 const OPERATION_MESSAGES = {
@@ -84,9 +82,8 @@ export const useLumoActions = ({
     const api = useApi();
     const messageChainRef = useRef<HTMLDivElement | null>(null);
     const { preferredSiblings, preferSibling, getSiblingInfo } = usePreferredSiblings(messageMap);
-    const guestTracking = useGuestTracking();
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
-    const { hasTierErrors } = useTierErrors();
+    const { isBlocked: isChatLimitBlocked, ensureTierError } = useChatLimitGate();
     const {
         smoothRendering: ffSmoothRendering,
         externalTools: ffExternalTools,
@@ -102,7 +99,7 @@ export const useLumoActions = ({
 
     // Custom hooks
     const { isGhostChatMode: isGhostMode } = useGhostChat();
-    const { isThinkingEnabled } = useModelTier();
+    const { isThinkingEnabled, modelTier } = useModelTier();
     const { ensureConversationAndSpace } = useConversationState({
         conversationId,
         spaceId: space?.id,
@@ -267,6 +264,7 @@ export const useLumoActions = ({
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
+                    modelTier,
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
@@ -282,9 +280,6 @@ export const useLumoActions = ({
         // Clear @mention provisionals now that the message has been sent.
         // Uploaded provisionals (non-mention) were promoted to the space by sendMessage.
         dispatch(clearProvisionalAttachments());
-
-        // Increment guest question count after successful send
-        guestTracking?.incrementCount();
     };
 
     const handleRetryAction = async (
@@ -357,6 +352,7 @@ export const useLumoActions = ({
                     updateSibling: preferSibling,
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableReasoning: isThinkingEnabled,
+                    modelTier,
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,
@@ -421,6 +417,7 @@ export const useLumoActions = ({
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableImageTools: ffImageTools,
                     enableReasoning: isThinkingEnabled,
+                    modelTier,
                     navigateCallback,
                     enableSmoothing: ffSmoothRendering,
                     isGhostMode,
@@ -430,9 +427,6 @@ export const useLumoActions = ({
                 },
             })
         );
-
-        // Increment guest question count after successful edit
-        guestTracking?.incrementCount();
     };
 
     // Function to add retry instructions based on strategy
@@ -522,6 +516,7 @@ export const useLumoActions = ({
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
+                    modelTier,
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,
@@ -540,7 +535,6 @@ export const useLumoActions = ({
     const handleMessageAction = async (actionParams: ActionParams) => {
         const {
             actionType,
-            newMessageContent,
             originalMessage,
             retryStrategy = 'simple',
             customRetryInstructions,
@@ -553,18 +547,8 @@ export const useLumoActions = ({
             return;
         }
 
-        // TODO: test when Jails with weekly limits are updated
-        //TODO: check if this code is still needed
-        if (hasTierErrors) {
-            // if on main page and tier errors exists, generate fake conversation to show tier error
-            if (!conversationId) {
-                await dispatch(
-                    generateFakeConversationToShowTierError({
-                        newMessageContent: newMessageContent ?? '',
-                        navigateCallback,
-                    })
-                );
-            }
+        if (isChatLimitBlocked) {
+            ensureTierError();
             return;
         }
 

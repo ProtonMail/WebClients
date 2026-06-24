@@ -82,6 +82,41 @@ describe('StreamProcessor', () => {
         ]);
     });
 
+    it('maps usage-only chunks to usage messages', () => {
+        const processor = new StreamProcessor();
+
+        const messages = processor.processChunk(
+            `data: ${JSON.stringify({
+                usage: {
+                    completion_tokens: 42,
+                    remaining_limits: {
+                        lite: 98,
+                        max: 20,
+                        images: 19,
+                    },
+                    applied_limit_category: 'lite',
+                    image_limit_applied: false,
+                },
+            })}\n\n`
+        );
+
+        expect(messages).toEqual([
+            {
+                type: 'usage',
+                usage: {
+                    completion_tokens: 42,
+                    remaining_limits: {
+                        lite: 98,
+                        max: 20,
+                        images: 19,
+                    },
+                    applied_limit_category: 'lite',
+                    image_limit_applied: false,
+                },
+            },
+        ]);
+    });
+
     it('emits done on [DONE] and stream errors on error chunks', () => {
         const processor = new StreamProcessor();
 

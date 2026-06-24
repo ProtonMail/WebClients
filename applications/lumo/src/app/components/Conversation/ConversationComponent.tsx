@@ -12,6 +12,8 @@ import { useConversationActions } from '../../providers/ConversationActionsProvi
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
 import { ComposerMode, type Conversation } from '../../types';
 import UpsellCard from '../../upsells/components/UpsellCard';
 import { ComposerComponent } from '../Composer/ComposerComponent';
@@ -83,6 +85,13 @@ const ConversationComponent = ({
         conversationId ? selectConversationErrors(state, conversationId) : []
     );
     const tierErrors = useLumoSelector(selectTierErrors);
+    const { hasLumoPlus } = useLumoPlan();
+    const remainingLimits = useRemainingLimits();
+    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(
+        remainingLimits,
+        tierErrors.length > 0,
+        hasLumoPlus
+    );
 
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
@@ -147,7 +156,7 @@ const ConversationComponent = ({
                             {conversationErrors.length > 0 && (
                                 <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
                             )}
-                            {tierErrors.length > 0 && <UpsellCard error={tierErrors[0]} />}
+                            {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
                             <ConversationSurvey isGenerating={isGenerating} />
                             <div
                                 ref={composerContainerRef}

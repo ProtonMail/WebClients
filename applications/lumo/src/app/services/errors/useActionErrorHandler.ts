@@ -5,6 +5,7 @@ import { useErrorHandler as useProtonErrorHandler } from '@proton/components';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useLumoDispatch } from '../../redux/hooks';
 import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
+import { applyTierLimitRejectionFromApi } from '../../services/usageLimitsStore';
 import { type ErrorContext, LUMO_API_ERRORS } from '../../types';
 import { analyzeError } from './errorAnalyzer';
 import { handleGenerationError, handleTierError } from './errorHandling';
@@ -33,6 +34,7 @@ export const useActionErrorHandler = () => {
             switch (analyzed.category) {
                 case 'api':
                     if (analyzed.lumoErrorType === LUMO_API_ERRORS.TIER_LIMIT) {
+                        applyTierLimitRejectionFromApi();
                         dispatch(handleTierError(lumoUserType));
                     } else if (analyzed.lumoErrorType) {
                         dispatch(

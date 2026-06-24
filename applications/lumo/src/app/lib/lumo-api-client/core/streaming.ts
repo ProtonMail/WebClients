@@ -7,6 +7,10 @@ import type {
     ServerToolCallMessage,
     ServerToolResultMessage,
 } from './types';
+import type {
+    LumoStreamUsage,
+    UsageMessage,
+} from '../../../types-api';
 import { isGenerationResponseMessage } from './types';
 
 type OpenAiDelta = {
@@ -33,7 +37,7 @@ type OpenAiChunk = {
         delta?: OpenAiDelta;
         finish_reason?: string | null;
     }[];
-    usage?: Record<string, number>;
+    usage?: LumoStreamUsage;
     error?: {
         message?: string;
         type?: string;
@@ -340,12 +344,23 @@ export class StreamProcessor {
             return [{ type: mapStreamErrorCode(chunk.error.code) }];
         }
 
+        // const messages: GenerationResponseMessage[] = [];
+
+        // if (chunk.usage) {
+        //     messages.push(this.createUsageMessage(chunk.usage));
+        // }
+
+        const messages: GenerationResponseMessage[] = [];
+
+        if (chunk.usage) {
+            messages.push(this.createUsageMessage(chunk.usage));
+        }
+
         if (!chunk.choices?.length) {
-            return [];
+            return messages;
         }
 
         const choice = chunk.choices[0];
-        const messages: GenerationResponseMessage[] = [];
 
         if (choice.finish_reason === 'content_filter') {
             messages.push({ type: 'harmful' });
@@ -359,6 +374,13 @@ export class StreamProcessor {
         messages.push(...this.processDelta(choice.delta, target));
 
         return messages;
+    }
+
+    private createUsageMessage(usage: LumoStreamUsage): UsageMessage {
+        return {
+            type: 'usage',
+            usage,
+        };
     }
 
     private processDelta(delta: OpenAiDelta, defaultTarget: GenerationTarget): GenerationResponseMessage[] {

@@ -16,6 +16,7 @@ import { useConversationAgent } from '../../hooks/useConversationAgent';
 import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
+import { useChatLimitGate } from '../../hooks/useChatLimitGate';
 import { useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -31,6 +32,7 @@ import { createAttachmentFromPastedContent, getPasteConversionMessage } from '..
 import { AttachmentArea } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
+import { ModelSwitchNotificationCard } from '../Notifications/ModelSwitchNotificationCard';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
@@ -137,6 +139,7 @@ const ComposerComponentInner = ({
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const isGuest = useIsGuest();
+    const { isBlocked: isChatLimitBlocked, ensureTierError } = useChatLimitGate();
 
     const { selectedAspectRatio, handleAspectRatioChange, isCreateImageMode, setIsCreateImageMode, getAspectRatio } =
         useImageGenerationMode();
@@ -246,13 +249,24 @@ const ComposerComponentInner = ({
             if (!value.trim()) {
                 return;
             }
+            if (isChatLimitBlocked) {
+                ensureTierError();
+                return;
+            }
             composerInput.clear();
             const imageOptions = isImageGenerationMode ? { aspectRatio: getAspectRatio() } : undefined;
             await handleSendMessage(value, isWebSearchButtonToggled, imageOptions);
         },
         // composerInput.clear is intentionally omitted from deps — it's stable but the object is created below
         // getAspectRatio is stable (useCallback with no deps), intentionally omitted
-        [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment, isImageGenerationMode]
+        [
+            handleSendMessage,
+            isWebSearchButtonToggled,
+            isProcessingAttachment,
+            isImageGenerationMode,
+            isChatLimitBlocked,
+            ensureTierError,
+        ]
     );
 
     const composerInput = useComposerInput({
@@ -267,7 +281,7 @@ const ComposerComponentInner = ({
 
     const { isEmpty, clear, textareaRef, setValue, handleSubmit } = composerInput;
 
-    const sendIsDisabled = !(isGenerating ?? false) && (isEmpty || isProcessingAttachment);
+    const sendIsDisabled = !(isGenerating ?? false) && (isEmpty || isProcessingAttachment || isChatLimitBlocked);
     const canShowSendButton = (isGenerating ?? false) || !isEmpty;
 
     // Update parent component when empty state changes
@@ -279,9 +293,13 @@ const ComposerComponentInner = ({
     const handleInitialQueryReady = useCallback(async () => {
         const currentValue = textareaRef.current?.value ?? '';
         if (!currentValue.trim()) return;
+        if (isChatLimitBlocked) {
+            ensureTierError();
+            return;
+        }
         clear();
         await handleSendMessage(currentValue, isWebSearchButtonToggled);
-    }, [textareaRef, clear, handleSendMessage, isWebSearchButtonToggled]);
+    }, [textareaRef, clear, handleSendMessage, isWebSearchButtonToggled, isChatLimitBlocked, ensureTierError]);
 
     useEditorQuery(initialQuery, textareaRef, setValue, isProcessingAttachment, handleInitialQueryReady);
     useEditorQuery(prefillQuery, textareaRef, setValue, isProcessingAttachment);
@@ -335,6 +353,7 @@ const ComposerComponentInner = ({
             {isGuest && canShowGuestNotificationCard && (
                 <GuestNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
             )}
+            <ModelSwitchNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
             <div
                 style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
                 className="w-full"
