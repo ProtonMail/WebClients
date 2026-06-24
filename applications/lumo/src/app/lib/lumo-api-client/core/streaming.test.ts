@@ -89,6 +89,54 @@ describe('StreamProcessor', () => {
         expect(processor.processChunk('data: {"error":{"message":"boom"}}\n\n')).toEqual([{ type: 'error' }]);
     });
 
+    it('maps stream error codes to legacy terminal types', () => {
+        const processor = new StreamProcessor();
+        const rejectedEvent =
+            '{"error":{"message":"Request was rejected due to high demand. Please try again later.","type":"server_error","code":"rejected"}}';
+
+        expect(processor.processChunk('data: {"error":{"code":"timeout","type":"server_error"}}\n\n')).toEqual([
+            { type: 'timeout' },
+        ]);
+        expect(processor.processChunk(`data: ${rejectedEvent}\n\n`)).toEqual([{ type: 'rejected' }]);
+        expect(processor.processChunk('data: {"error":{"code":"error","type":"server_error"}}\n\n')).toEqual([
+            { type: 'error' },
+        ]);
+        expect(processor.processChunk('data: {"error":{"code":"upstream_failure"}}\n\n')).toEqual([{ type: 'error' }]);
+    });
+
+    it('maps normalised context_length_exceeded stream errors to tool-error', () => {
+        const processor = new StreamProcessor();
+        const event =
+            '{"error":{"message":"This model\'s maximum context length is 8192 tokens. However, you requested 99999 tokens. Please reduce the length of the messages.","type":"invalid_request_error","code":"context_length_exceeded"}}';
+
+        expect(processor.processChunk(`data: ${event}\n\n`)).toEqual([
+            {
+                type: 'tool-error',
+                error: {
+                    code: 'context_length_exceeded',
+                    message:
+                        "This model's maximum context length is 8192 tokens. However, you requested 99999 tokens. Please reduce the length of the messages.",
+                },
+            },
+        ]);
+    });
+
+    it('passes through legacy tool-error events for context_length_exceeded', () => {
+        const processor = new StreamProcessor();
+        const event =
+            '{"type":"tool-error","error":{"code":"context_length_exceeded","message":"This model\'s maximum context length is 8192 tokens"}}';
+
+        expect(processor.processChunk(`data: ${event}\n\n`)).toEqual([
+            {
+                type: 'tool-error',
+                error: {
+                    code: 'context_length_exceeded',
+                    message: "This model's maximum context length is 8192 tokens",
+                },
+            },
+        ]);
+    });
+
     it('maps content_filter finish_reason to harmful', () => {
         const processor = new StreamProcessor();
 
