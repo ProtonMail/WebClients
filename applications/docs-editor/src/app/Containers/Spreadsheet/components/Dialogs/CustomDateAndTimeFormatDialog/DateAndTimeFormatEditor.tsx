@@ -311,7 +311,7 @@ function TokenChip({ nodeKey, tokenPointer }: { nodeKey: NodeKey; tokenPointer: 
       </Ariakit.MenuButton>
 
       <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} render={<Ariakit.Menu />}>
-        <Ariakit.MenuGroup className="px-3">
+        <UI.MenuGroup>
           {tokenDef.variants.map((variant) => (
             <UI.MenuItem key={variant.code} onClick={() => setVariant(variant.code)}>
               {variant.label} (
@@ -320,7 +320,7 @@ function TokenChip({ nodeKey, tokenPointer }: { nodeKey: NodeKey; tokenPointer: 
           ))}
           <UI.MenuSeparator />
           <UI.MenuItem onClick={deleteToken}>{s('Delete')}</UI.MenuItem>
-        </Ariakit.MenuGroup>
+        </UI.MenuGroup>
       </Atoms.DropdownPopover>
     </Ariakit.MenuProvider>
   )
