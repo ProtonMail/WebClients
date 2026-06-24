@@ -59,7 +59,7 @@ describe('StreamProcessor', () => {
 
         processor.processChunk(
             formatOpenAiChunk({
-                tool_calls: [{ index: 0, function: { name: 'web_search', arguments: '{"search_term":' } }],
+                tool_calls: [{ index: 0, function: { name: 'web_search', arguments: '{"query":' } }],
             })
         );
 
@@ -76,7 +76,7 @@ describe('StreamProcessor', () => {
                 count: 1,
                 content: JSON.stringify({
                     name: 'web_search',
-                    parameters: { search_term: 'weather' },
+                    parameters: { query: 'weather' },
                 }),
             },
         ]);
