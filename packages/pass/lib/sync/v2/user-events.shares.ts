@@ -43,8 +43,9 @@ function* onShareDeleted(shareId: ShareId) {
 }
 
 /** Fetches shares in batches using the provided fetcher, dispatching an action
- * per resolved result. Null-resolved and failed fetches are silently omitted.
- * Returns `true` if every fetch in every batch succeeded. */
+ * per resolved result. Null-resolved fetches (undecryptable shares) are omitted
+ * from the dispatch but tolerated. A failed fetch (rejected request) flips the
+ * result to `false` so the batch is retried on next poll. */
 function* processShareBatches<T>(
     shares: SyncEventShareOutput[],
     fetcher: (shareId: ShareId) => Promise<MaybeNull<T>>,
@@ -58,11 +59,11 @@ function* processShareBatches<T>(
         );
 
         const resolved = results
-            .filter((res): res is PromiseFulfilledResult<T> => res.status === 'fulfilled' && res.value !== null)
+            .filter((res): res is PromiseFulfilledResult<MaybeNull<T>> => res.status === 'fulfilled')
             .map(prop('value'));
 
         if (resolved.length < batch.length) processed = false;
-        for (const value of resolved) yield put(action(value));
+        for (const value of resolved) if (value) yield put(action(value));
     }
 
     return processed;
