@@ -13,7 +13,6 @@ import { useGuestChatHandler } from '../../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
-import { setNativeGhostMode } from '../../../remote/nativeComposerBridgeHelpers';
 
 export const NewChatSidebarButton = () => {
     const isGuest = useIsGuest();
@@ -24,14 +23,11 @@ export const NewChatSidebarButton = () => {
     const isNewChatRoute = useRouteMatch('/')?.isExact;
 
     const handleNewChat = useCallback(() => {
-        // Only reset ghost mode if the toggle is currently off
-        // This allows the persistent ghost mode setting to take effect for new chats
+        // Keep the persistent ghost toggle as-is across new chats; only ensure it's
+        // reset when already off. setGhostChatMode keeps the native bridge in sync,
+        // so no manual native call is needed here.
         if (!isGhostChatMode) {
             setGhostChatMode(false);
-            setNativeGhostMode(false);
-        } else {
-            // If ghost mode is enabled via toggle, ensure native bridge is also set correctly
-            setNativeGhostMode(true);
         }
         history.push('/');
     }, [setGhostChatMode, history, isGhostChatMode]);

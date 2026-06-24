@@ -6,6 +6,7 @@ import {
     setGhostChatMode as setGhostChatModeAction,
     toggleGhostChatMode as toggleGhostChatModeAction,
 } from '../redux/slices/ghostChat';
+import { setNativeGhostMode } from '../remote/nativeComposerBridgeHelpers';
 import { sendGhostChatToggledEvent } from '../util/telemetry';
 
 interface GhostChatContextValue {
@@ -38,6 +39,10 @@ export const GhostChatProvider = ({ children }: GhostChatProviderProps) => {
     const setGhostChatMode = useCallback(
         (enabled: boolean) => {
             dispatch(setGhostChatModeAction(enabled));
+            // Keep native (iOS/Android) ghost mode in sync. Centralised here so every
+            // caller that toggles ghost mode notifies native, instead of each UI entry
+            // point having to remember to call setNativeGhostMode itself.
+            setNativeGhostMode(enabled);
             sendGhostChatToggledEvent(enabled);
         },
         [dispatch]

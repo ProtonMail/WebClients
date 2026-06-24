@@ -13,7 +13,6 @@ import type { IconSize } from '@proton/icons/types';
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { setNativeGhostMode } from '../../remote/nativeComposerBridgeHelpers';
 import { GuestChatDisclaimerModal } from '../Guest/GuestChatDisclaimerModal';
 
 // Hook to manage delayed text rendering for smooth animations
@@ -54,7 +53,6 @@ const NewChatButtonGuest = ({ buttonProps, children, toolTipPlacement }: NewChat
 
     const handleButtonClick = useCallback(() => {
         setGhostChatMode(false);
-        setNativeGhostMode(false);
         history.push('/');
     }, [setGhostChatMode, history]);
 
@@ -83,7 +81,6 @@ const NewChatButtonAuthenticated = ({ buttonProps, children, toolTipPlacement }:
 
     const handleClick = useCallback(() => {
         setGhostChatMode(false);
-        setNativeGhostMode(false);
         history.push('/');
     }, [setGhostChatMode, history]);
 
