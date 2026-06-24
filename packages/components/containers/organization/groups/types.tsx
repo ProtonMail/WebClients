@@ -29,6 +29,7 @@ export interface GroupFormData {
     address: string;
     permissions: GroupPermissions;
     members: string;
+    adminRoles: string[];
 }
 
 export interface SerializedGroupFormData {
