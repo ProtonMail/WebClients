@@ -126,18 +126,16 @@ function* onCoreEvent(
         (event.User && event.User.Subscribed !== cachedUser?.Subscribed) ||
         (event.Organization && event.Organization.PlanName !== cachedPlan?.InternalName);
 
-    /* Synchronize whenever polling for core user events:
-     * · User access (revalidate on plan change)
-     * · In-app Notification (revalidate on plan change)
+    /* Synchronize whenever polling for core user events.
+     * These actions are throttled via `maxAge` metadata:
      * · Feature flags
-     * · Organization
-     * These actions are throttled via `maxAge` metadata */
+     * · In-app notifications (revalidate on plan change)
+     * · Organization pause-list [EXTENSION ONLY]
+     * · User access (revalidate on plan change) [LEGACY ONLY]
+     * · Organization settings [LEGACY ONLY] */
     yield put(getUserFeaturesIntent(userId));
-
-    if (EXTENSION_BUILD) yield put(getOrganizationPauseList.intent());
-
-    yield put(getOrganizationPauseList.intent());
     yield put((planChanged ? withRevalidate : identity)(getInAppNotifications.intent()));
+    if (EXTENSION_BUILD) yield put(getOrganizationPauseList.intent());
 
     if (legacySync) {
         yield put((planChanged ? withRevalidate : identity)(getUserAccessIntent(userId)));
