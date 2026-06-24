@@ -39,7 +39,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import type { Eligibility, PlanCombination } from './subscriptionEligbility';
 import { getEligibility } from './subscriptionEligbility';
 
-const getParameters = (
+export const getParameters = (
     search: string,
     plans: Plan[],
     subscription: Subscription | FreeSubscription,
