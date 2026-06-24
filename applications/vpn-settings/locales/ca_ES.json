@@ -3749,10 +3749,10 @@
         "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
       ],
       "You can still login with this address and re-connect at any time.": [
-        "Encara podeu iniciar sessió amb aquesta adreça i reconnectar en qualsevol moment."
+        "Encara podeu iniciar sessió amb aquesta adreça i tornar-vos a connectar en qualsevol moment."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus electrònics a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
+        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Esteu redirigint ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
@@ -4867,6 +4867,15 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "No drive found to import": [
+        "No s'ha trobat cap unitat per importar"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "S'ha produït un error inesperat, no podem importar els fitxers"
       ]
     },
     "error": {
@@ -9146,6 +9155,12 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Només fitxers (ni fotos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }): fins a un total de 100 GB, 100.000 fitxers i 50 GB per fitxer"
+      ],
+      "Synced from identity provider": [
+        "Sincronitzat des del proveïdor d'identitat"
       ]
     },
     "info": {
@@ -9246,6 +9261,9 @@
       ],
       "Sending invite...": [
         "S'està enviant la invitació..."
+      ],
+      "Group Owner": [
+        "Propietari del grup"
       ]
     },
     "Invoice state display as badge": {
@@ -10961,6 +10979,9 @@
       ],
       "Sign in": [
         "Inicia la sessió"
+      ],
+      "Change backup password": [
+        "Canviar la contrasenya de recuperació"
       ]
     },
     "Message": {
@@ -18113,6 +18134,9 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]
     },
     "Users table: badge": {

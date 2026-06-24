@@ -3728,7 +3728,7 @@
         "您仍可以使用此地址登录，并随时重新连接。"
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "您将无法再使用 ${ address.Email } 在 ${ BRAND_NAME } 中接收和发送邮件。另请注意，来自 ${ BRAND_NAME } 发送到此地址的消息将不再采用端到端加密！"
+        "您将无法再使用 ${ address.Email } 在 ${ BRAND_NAME } 中收发邮件。请注意，发送到此地址的 ${ BRAND_NAME } 邮件将不再采用端到端加密。"
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "您正在将 ${ numAddressesOrSync } 个 Gmail 地址转发到 ${ MAIL_APP_NAME }。"
@@ -4834,6 +4834,15 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "No drive found to import": [
+        "未找到可导入的云端硬盘"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "您的 ${ DRIVE_APP_NAME } 存储空间不足"
+      ],
+      "Unexpected error, we can't import the files": [
+        "出现意外错误，无法导入文件"
       ]
     },
     "error": {
@@ -9026,6 +9035,12 @@
       ],
       "New group created via your identity provider and pending review.": [
         "通过身份提供商创建的新群组待审核"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "仅限文件 (不含照片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }) - 总计上限 100 GB，文件数量上限 100,000 个，单文件大小上限 50 GB"
+      ],
+      "Synced from identity provider": [
+        "已从身份提供商同步"
       ]
     },
     "info": {
@@ -9124,6 +9139,9 @@
       ],
       "Sending invite...": [
         "发送邀请中..."
+      ],
+      "Group Owner": [
+        "群组所有者"
       ]
     },
     "Invoice state display as badge": {
@@ -10819,6 +10837,9 @@
       ],
       "Sign in": [
         "登录"
+      ],
+      "Change backup password": [
+        "更改备份密码"
       ]
     },
     "Message": {
@@ -17857,6 +17878,9 @@
       ],
       "Writing assistant": [
         "写作助手"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "用户接受邀请后，您即可为其分配角色。"
       ]
     },
     "Users table: badge": {

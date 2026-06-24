@@ -3752,7 +3752,7 @@
         "Vous pouvez toujours vous connecter avec cette adresse et vous reconnecter à tout moment."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Vous ne pourrez plus utiliser ${ address.Email } pour recevoir et envoyer des emails dans ${ BRAND_NAME }. Notez également que les messages envoyés à cette adresse depuis ${ BRAND_NAME } ne seront plus chiffrés de bout en bout."
+        "Vous ne pourrez plus utiliser ${ address.Email } pour recevoir et envoyer des e-mails dans ${ BRAND_NAME }. Notez également que les messages envoyés à cette adresse depuis ${ BRAND_NAME } ne seront plus chiffrés de bout en bout."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Vous transférez ${ numAddressesOrSync } adresse Gmail vers ${ MAIL_APP_NAME }.",
@@ -4867,6 +4867,15 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "No drive found to import": [
+        "Aucun lecteur détecté pour l'importation"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
       ]
     },
     "error": {
@@ -9138,6 +9147,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
+      ],
+      "Synced from identity provider": [
+        "Synchronisé depuis le fournisseur d'identité"
       ]
     },
     "info": {
@@ -9238,6 +9253,9 @@
       ],
       "Sending invite...": [
         "Envoi de l'invitation..."
+      ],
+      "Group Owner": [
+        "Propriétaire du groupe"
       ]
     },
     "Invoice state display as badge": {
@@ -10953,6 +10971,9 @@
       ],
       "Sign in": [
         "Se connecter"
+      ],
+      "Change backup password": [
+        "Changer le mot de passe de secours"
       ]
     },
     "Message": {
@@ -18201,6 +18222,9 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
       ]
     },
     "Users table: badge": {

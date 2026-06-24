@@ -3749,10 +3749,10 @@
         "Artık bu adresi kullanarak ${ BRAND_NAME } üzerinden e-posta gönderebilirsiniz."
       ],
       "You can still login with this address and re-connect at any time.": [
-        "Bu adres ile her zaman oturum açabilir ve yeniden bağlanabilirsiniz."
+        "Bu adresle oturum açmaya devam edebilir ve istediğiniz zaman yeniden bağlanabilirsiniz."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "${ BRAND_NAME } üzerinden e-posta almak ve göndermek için artık ${ address.Email } adresini kullanamayacaksınız. Ayrıca ${ BRAND_NAME } üzerinden bu adrese gönderilen iletilerin de artık uçtan uca şifrelenmeyeceğini de unutmayın."
+        "Artık ${ BRAND_NAME } üzerinden e-posta almak ve göndermek için ${ address.Email } adresini kullanamayacaksınız. Ayrıca ${ BRAND_NAME } üzerinden bu adrese gönderilen iletilerin artık uçtan uca şifrelenmeyeceğini de lütfen unutmayın."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "${ numAddressesOrSync } Gmail adresini ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
@@ -4867,6 +4867,15 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "No drive found to import": [
+        "İçe aktarılacak drive bulunamadı"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
       ]
     },
     "error": {
@@ -9149,6 +9158,12 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+      ],
+      "Synced from identity provider": [
+        "Kimlik sağlayıcısından eşitlendi"
       ]
     },
     "info": {
@@ -9249,6 +9264,9 @@
       ],
       "Sending invite...": [
         "Davet gönderiliyor..."
+      ],
+      "Group Owner": [
+        "Grup Sahibi"
       ]
     },
     "Invoice state display as badge": {
@@ -10964,6 +10982,9 @@
       ],
       "Sign in": [
         "Oturum aç"
+      ],
+      "Change backup password": [
+        "Yedek parolayı değiştir"
       ]
     },
     "Message": {
@@ -18209,6 +18230,9 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Kullanıcı daveti kabul ettikten sonra rol ataması yapabileceksiniz."
       ]
     },
     "Users table: badge": {

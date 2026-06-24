@@ -1210,6 +1210,33 @@
       ],
       "Verify password": [
         "Vahvista salasana"
+      ],
+      "Back to sign in": [
+        "Palaa kirjautumiseen"
+      ],
+      "Continue cancelling": [
+        "Jatka perumista"
+      ],
+      "Continue to sign in": [
+        "Jatka kirjautumiseen"
+      ],
+      "Enter code": [
+        "Syötä koodi"
+      ],
+      "Keep current plan": [
+        "Pidä nykyinen tilauksesi"
+      ],
+      "Read the story": [
+        "Lue juttu"
+      ],
+      "Recover account": [
+        "Palauta tili"
+      ],
+      "Send feedback": [
+        "Lähetä palautetta"
+      ],
+      "Switch to free plan": [
+        "Vaihda ilmaiseen tilaukseen"
       ]
     },
     "action": {
@@ -1300,6 +1327,9 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "Add-on": [
+        "Lisäosa"
       ]
     },
     "Address action": {
@@ -1811,6 +1841,12 @@
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
+      ],
+      "All": [
+        "Kaikki"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "Browser": {
@@ -3872,6 +3908,9 @@
       ],
       "Trusted contact": [
         "Luotettu yhteyshenkilö"
+      ],
+      "Contacts": [
+        "Yhteystiedot"
       ]
     },
     "Empty group name": {
@@ -4987,6 +5026,15 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "500 GB storage": [
+        "500 Gt tallennustilaa"
+      ],
+      "500 MB storage": [
+        "500 Mt tallennustilaa"
       ]
     },
     "Features": {
@@ -8306,6 +8354,36 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Uusi ryhmä on luotu identiteetin tarjoajan kautta ja odottaa tarkastusta."
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Forgot password?": [
+        "Unohtunut salasana?"
+      ],
+      "New sidebar": [
+        "Uusi sivupalkki"
+      ],
+      "Other": [
+        "Muu"
+      ],
+      "Password verified": [
+        "Salasana vahvistettu"
+      ],
+      "RECOMMENDED": [
+        "SUOSITELTU"
+      ],
+      "Reddit": [
+        "Reddit"
+      ],
+      "Synced from identity provider": [
+        "Synkronoitu identiteetin tarjoajalta"
+      ],
+      "TikTok": [
+        "TikTok"
+      ],
+      "Your feedback": [
+        "Palautteesi"
       ]
     },
     "info": {
@@ -8401,6 +8479,9 @@
       ],
       "Sending invite...": [
         "Lähetetään kutsua..."
+      ],
+      "Group Owner": [
+        "Ryhmän omistaja"
       ]
     },
     "Invoice state display as badge": {
@@ -9273,6 +9354,30 @@
       ],
       "Import your emails": [
         "Tuo sähköpostisi"
+      ],
+      "Custom domain": [
+        "Oma verkkotunnus"
+      ],
+      "Free VPN included": [
+        "Sisältää ilmaisen VPN:n"
+      ],
+      "Invite people": [
+        "Kutsu ihmisiä"
+      ],
+      "No": [
+        "Ei"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
+      ],
+      "Third-party ads": [
+        "Kolmansien osapuolten mainokset"
+      ],
+      "Version history": [
+        "Versiohistoria"
+      ],
+      "Yearly": [
+        "Vuosittain"
       ]
     },
     "label": {
@@ -9580,6 +9685,9 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ],
+      "Contact support": [
+        "Ota yhteyttä tukeen"
       ]
     },
     "Link (Scribe)": {
@@ -9837,6 +9945,9 @@
       ],
       "Sign in": [
         "Kirjaudu sisään"
+      ],
+      "Change backup password": [
+        "Vaihda varasalasanaa"
       ]
     },
     "Message": {
@@ -10981,6 +11092,10 @@
       "Support for ${ n } custom email domain": [
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
+      ],
+      "${ n } country": [
+        "${ n } maa",
+        "${ n } maata"
       ]
     },
     "news": {
@@ -12298,6 +12413,9 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Other": [
+        "Muu"
       ]
     },
     "q1campaign: Action": {
@@ -15929,6 +16047,30 @@
       ],
       "Are you sure you want to disconnect and disable this address?": [
         "Haluatko varmasti katkaista yhteyden ja poistaa tämän osoitteen käytöstä?"
+      ],
+      "Account": [
+        "Tili"
+      ],
+      "Download apps": [
+        "Lataa sovellukset"
+      ],
+      "Edit group": [
+        "Muokkaa ryhmää"
+      ],
+      "Free plan": [
+        "Ilmainen tilaus"
+      ],
+      "Help us improve": [
+        "Auta meitä kehittymään"
+      ],
+      "My VPN": [
+        "Oma VPN"
+      ],
+      "VPN": [
+        "VPN"
+      ],
+      "Your current plan": [
+        "Nykyinen tilauksesi"
       ]
     },
     "Title for payment methods table": {
@@ -16438,6 +16580,9 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Voit määrittää roolit, kun käyttäjä on hyväksynyt kutsun."
       ]
     },
     "Users table: badge": {
@@ -16747,6 +16892,50 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Aikaisemmista tuonneista peräisin olevat kaksoiskappaleet ohitetaan. Voit peruuttaa toiminnon tai tuoda vanhempia viestejä ${ PRODUCT_NAMES.EASY_SWITCH } -asetuksissa."
+      ]
+    },
+    "Confirm cancellation": {
+      "Cancel subscription": [
+        "Peru tilaus"
+      ],
+      "Keep current plan": [
+        "Pidä nykyinen tilauksesi"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Jatka perumista"
+      ],
+      "Keep current plan": [
+        "Pidä nykyinen tilauksesi"
+      ]
+    },
+    "Live Chat Modal": {
+      "Open support form": [
+        "Avaa tukilomake"
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Lisää ${ planName }"
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Henkilökohtaiseen käyttöön"
+      ]
+    },
+    "Temporary need": {
+      "Continue cancelling": [
+        "Jatka perumista"
+      ],
+      "Keep current plan": [
+        "Pidä nykyinen tilauksesi"
+      ]
+    },
+    "Themes": {
+      "Themes": [
+        "Teemat"
       ]
     }
   }

@@ -1273,6 +1273,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Verify password": [
+        "Passwort bestätigen"
       ]
     },
     "action": {
@@ -4813,6 +4816,15 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "No drive found to import": [
+        "Es wurde kein Laufwerk zum Importieren gefunden"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Nicht genügend Speicherplatz in deinem ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Unerwarteter Fehler, wir können die Dateien nicht importieren"
       ]
     },
     "error": {
@@ -9081,6 +9093,23 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
+        "${ invitedMemberCount } Benutzer muss die Einladung annehmen, um Gruppen-E-Mails zu erhalten.",
+        "${ invitedMemberCount } Benutzer müssen die Einladung annehmen, um Gruppen-E-Mails zu erhalten."
+      ],
+      "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingAdminMemberCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf die Überprüfung.",
+        "${ pendingAdminMemberCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf die Überprüfung."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
+      ],
+      "New group created via your identity provider and pending review.": [
+        "Neue Gruppe wurde über deinen Identitätsanbieter hinzugefügt und wartet auf die Überprüfung."
+      ],
+      "Synced from identity provider": [
+        "Vom Identitätsanbieter synchronisiert"
       ]
     },
     "info": {
@@ -9181,6 +9210,9 @@
       ],
       "Sending invite...": [
         "Einladung wird versendet..."
+      ],
+      "Group Owner": [
+        "Gruppenbesitzer"
       ]
     },
     "Invoice state display as badge": {
@@ -10893,6 +10925,9 @@
       ],
       "Sign in": [
         "Anmelden"
+      ],
+      "Change backup password": [
+        "Backup-Passwort ändern"
       ]
     },
     "Message": {
@@ -17784,6 +17819,9 @@
       ],
       "Your DKIM signing is working.": [
         "Deine DKIM-Signatur funktioniert."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ]
     },
     "tooltip": {
@@ -18120,6 +18158,9 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
       ]
     },
     "Users table: badge": {

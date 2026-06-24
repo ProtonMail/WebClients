@@ -3676,10 +3676,10 @@
         "Ya puedes enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
       ],
       "You can still login with this address and re-connect at any time.": [
-        "Aún puedes iniciar sesión con esta dirección y volver a conectarla en cualquier momento."
+        "Todavía puedes iniciar sesión con esta dirección y reconectarte en cualquier momento."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Ya no podrás usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Ten en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
+        "Ya no puedes usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Ten en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no están cifrados de extremo a extremo."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Estás reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
@@ -4788,6 +4788,15 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "No drive found to import": [
+        "No se ha encontrado ninguna unidad para importar"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hay suficiente espacio de almacenamiento en tu ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no se pueden importar los archivos"
       ]
     },
     "error": {
@@ -8995,6 +9004,12 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
+      ],
+      "Synced from identity provider": [
+        "Sincronizado desde el proveedor de identidad"
       ]
     },
     "info": {
@@ -9095,6 +9110,9 @@
       ],
       "Sending invite...": [
         "Enviando la invitación..."
+      ],
+      "Group Owner": [
+        "Propietario del grupo"
       ]
     },
     "Invoice state display as badge": {
@@ -10698,6 +10716,9 @@
       ],
       "Sign in": [
         "Iniciar sesión"
+      ],
+      "Change backup password": [
+        "Cambiar contraseña de recuperación"
       ]
     },
     "Message": {
@@ -17801,6 +17822,9 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrás asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Users table: badge": {

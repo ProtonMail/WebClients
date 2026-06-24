@@ -16764,6 +16764,11 @@
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "検証に成功しても、この TXT レコードを削除しないでください。ドメインを引き続き所有していることを確認するためにこの TXT レコードが必要です。"
       ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "前のインポートとの重複は無視されます。元に戻すか、${ PRODUCT_NAMES.EASY_SWITCH }の設定で古いメールをインポートしましょう。"
+      ]
     }
   }
 }
