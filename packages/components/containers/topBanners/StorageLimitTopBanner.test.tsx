@@ -22,6 +22,18 @@ const mockedSub = useSubscription as jest.Mock;
 jest.mock('@proton/components/hooks/useConfig');
 const mockConfig = useConfig as jest.Mock;
 
+// LockedStateTopBanner (rendered for lock-state banners) resolves its upgrade path through
+// useUpgradePath, which reads previousSubscription via useGetPreviousSubscription + useStore. This
+// test renders without a Redux Provider, so stub both rather than wire up a store.
+jest.mock('@proton/account/previousSubscription/hooks', () => ({
+    useGetPreviousSubscription: jest.fn().mockReturnValue(jest.fn().mockResolvedValue(undefined)),
+}));
+
+jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
+    ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),
+    useStore: () => ({ getState: () => ({ previousSubscription: { value: undefined } }) }),
+}));
+
 const userWithNearFullPooledStorage: Partial<UserModel> = {
     MaxSpace: 1000,
     UsedSpace: 990,
