@@ -16,7 +16,7 @@ import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
-import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
+import { NoiseCancellingToggle } from '../Settings/NoiseCancellingToggle';
 
 import './AudioSettingsDropdown.scss';
 
