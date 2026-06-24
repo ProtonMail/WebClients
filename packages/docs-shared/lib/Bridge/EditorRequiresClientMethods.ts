@@ -118,5 +118,8 @@ export interface EditorRequiresClientMethods {
   storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void>
   hasBasePatchesStored(): Promise<boolean>
 
+  getDocumentUrl(): Promise<string>
+  replaceDocumentUrl(url: string): Promise<void>
+
   reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void
 }

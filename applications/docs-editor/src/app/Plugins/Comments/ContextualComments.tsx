@@ -22,6 +22,7 @@ const dispatchRecalculateEvent = () => {
 const SIXTY_FPS_TO_MS = 1000 / 60
 
 const COMMENT_INPUT_ID = 'comment-input'
+const COMMENTS_WIDTH = 'max(20.5vw, 300px)'
 
 function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
@@ -67,7 +68,7 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
             top: 0,
             left: 0,
             transform: `translate3d(${position.left}px, ${position.top}px, 0)`,
-            width: 'var(--comments-width)',
+            width: COMMENTS_WIDTH,
           }}
           ref={combinedRef}
         >
@@ -176,10 +177,9 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
               item: <ThreadComponent thread={item.thread} isViewportLarge={isViewportLarge} />,
               itemProps: {
                 style: {
-                  left: isViewportLarge ? '50%' : undefined,
+                  left: isViewportLarge ? 0 : undefined,
                   right: isViewportLarge ? undefined : 0,
                   width: isViewportLarge ? 'calc(100% - 2rem)' : 'auto',
-                  '--translate-x': isViewportLarge ? '-50%' : undefined,
                 },
               },
               position: markRect.y,
@@ -272,7 +272,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
           gridRow: 1,
           gridColumn: 1,
           justifySelf: 'end',
-          width: isViewportLarge ? 'var(--comments-width)' : 'max-content',
+          width: isViewportLarge ? COMMENTS_WIDTH : 'max-content',
         }}
         scrollContainer={editor.getRootElement()?.parentElement}
       />
