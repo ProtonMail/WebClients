@@ -11,8 +11,8 @@ import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
+import { BackgroundBlurToggle } from '../Settings/BackgroundBlurToggle';
 
 interface VideoSettingsDropdownProps {
     anchorRef: RefObject<HTMLButtonElement>;
