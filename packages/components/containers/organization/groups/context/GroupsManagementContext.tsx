@@ -13,12 +13,9 @@ import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import { useGroups } from '@proton/account/groups/hooks';
 import { getGroupRoles, updateGroupRoles } from '@proton/account/groups/index';
 import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
-import { setRole } from '@proton/account/members/actions';
+import { promoteMemberToOrgAdmin } from '@proton/account/members/actions';
 import { useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { getMemberEditPayload } from '@proton/account/organizationKey/actions';
-import { classifyRoleChange } from '@proton/account/organizationKey/classifyRoleChange';
-import { organizationKeyThunk } from '@proton/account/organizationKey/index';
 import { isOrgKeyRequired, isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -27,15 +24,12 @@ import useGroupKeys from '@proton/components/containers/organization/groups/useG
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
-import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces/GroupMember';
-import { getIsPasswordless } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash/useFlag';
 import setsContainSameElements from '@proton/utils/setsContainSameElements';
 
@@ -69,7 +63,6 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const { value: groupRolesMap } = useGroupRoles({ groups });
     const [user, loadingUser] = useUser();
     const api = useApi();
-    const silentApi = useSilentApi();
     const dispatch = useDispatch();
     const [organizationRoles] = useOrganizationRoles();
     const isAdminRolesEnabled = useFlag('AdminRoleMVP');
@@ -242,22 +235,14 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
 
         // Members inherit the group's roles. When a newly added role needs the organization key,
         // each non-admin member must be promoted so they receive it. Role removals are demoted by the BE.
-        const organizationKey = await dispatch(organizationKeyThunk());
-        const isPasswordlessOrg = getIsPasswordless(organizationKey?.Key);
         for (const groupMember of transformedGroupMembers) {
             const member = groupMember.Email ? addressEmailToMemberMap[groupMember.Email] : undefined;
-            if (!member || member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+            if (!member) {
                 continue;
             }
 
             try {
-                const classification = classifyRoleChange({
-                    member,
-                    targetRole: MEMBER_ROLE.ORGANIZATION_ADMIN,
-                    isPasswordlessOrg,
-                });
-                const payload = await dispatch(getMemberEditPayload({ member, classification, api: silentApi }));
-                await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
+                await dispatch(promoteMemberToOrgAdmin({ member, api }));
             } catch (error) {
                 // TODO(partial-failure): the group roles are saved but promoting this member failed.
                 // Reconcile / surface a recovery path in a follow-up MR.
