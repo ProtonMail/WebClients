@@ -31,7 +31,7 @@ const markForked = (uid: string): void => {
  *
  * Runs only when:
  *  - we're inside the native mobile WebView (`ProtonLumo/` UA), and
- *  - the native app supports native auth (version >= 2.0.0), and
+ *  - the native app supports native auth (iOS >= 2.1.0, Android >= 2.0.0), and
  *  - there's a logged-in web session that wasn't previously forked to native.
  *
  * It mints an independent fork of the current session, reads its refresh token,
