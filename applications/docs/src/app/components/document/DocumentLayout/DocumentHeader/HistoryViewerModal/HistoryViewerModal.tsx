@@ -34,6 +34,8 @@ import type { SerializedEditorState } from 'lexical'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import { downloadExport } from '@proton/docs-core/lib/UseCase/ExportAndDownload'
+import { downloadJSONFile } from '~/utils/download-json-file'
+import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 
 type RestoreType = 'replace' | 'as-copy'
 
@@ -333,6 +335,77 @@ function HistoryViewerModalContent({
                 >
                   {c('Action').t`Export this version (as xlsx)`}
                 </Button>
+              )}
+              {documentType === 'doc' && (
+                <>
+                  <Button
+                    className="mt-2 w-full"
+                    data-testid="export-revision"
+                    loading={isExporting}
+                    disabled={!editorInvoker}
+                    onClick={() => {
+                      if (!editorInvoker) {
+                        return
+                      }
+                      void withExporting(async () => {
+                        const data = await editorInvoker.exportData('docx')
+                        downloadExport(data, documentState.getProperty('documentName'), 'docx')
+                      })
+                    }}
+                  >
+                    {c('Action').t`Export this version (as docx)`}
+                  </Button>
+                  {isDebugMode && (
+                    <>
+                      <Button
+                        className="mt-2 w-full"
+                        data-testid="export-revision"
+                        loading={isExporting}
+                        disabled={!editorInvoker}
+                        onClick={() => {
+                          if (!editorInvoker) {
+                            return
+                          }
+                          void withExporting(async () => {
+                            const data = await editorInvoker.getCurrentEditorState()
+                            if (!data) {
+                              return
+                            }
+                            downloadJSONFile(
+                              data,
+                              `${documentState.getProperty('documentName')}-editor-state-${selectedBatchTimestamp}.json`,
+                            )
+                          })
+                        }}
+                      >
+                        {c('Action').t`Export editor state for version`}
+                      </Button>
+                      <Button
+                        className="mt-2 w-full"
+                        data-testid="export-revision"
+                        loading={isExporting}
+                        disabled={!editorInvoker}
+                        onClick={() => {
+                          if (!editorInvoker) {
+                            return
+                          }
+                          void withExporting(async () => {
+                            const data = await editorInvoker.getDocumentState()
+                            if (!data) {
+                              return
+                            }
+                            downloadFile(
+                              new Blob([data]),
+                              `${documentState.getProperty('documentName')}-yjs-state-${selectedBatchTimestamp}.bin`,
+                            )
+                          })
+                        }}
+                      >
+                        {c('Action').t`Export YJS state for version`}
+                      </Button>
+                    </>
+                  )}
+                </>
               )}
             </>
           )}
