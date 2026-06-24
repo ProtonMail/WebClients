@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
@@ -44,6 +45,12 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
             if (isNetworkError(error) || isDecryptionError(error)) {
                 console.error(error);
                 setHasNetworkError(true);
+
+                const errorType = isNetworkError(error) ? 'network' : 'decryption';
+                traceInitiativeError(SentryMailInitiatives.COMPOSER, error, {
+                    tags: { feature: 'auto-save', errorType },
+                    fingerprint: ['composer', 'auto-save-failed', errorType],
+                });
             } else {
                 throw error;
             }
