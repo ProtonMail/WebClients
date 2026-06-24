@@ -120,18 +120,15 @@ export type ChatCompletionsTool = {
 export type ChatCompletionsTextPart = {
     type: 'text';
     text: string;
+    encrypted?: boolean;
 };
 
 export type ChatCompletionsImagePart = {
     type: 'image_url';
     image_url: {
-        /**
-         * A `data:<mime>;base64,...` URL. When the message is encrypted (see the
-         * message-level `encrypted` flag), the base64 payload is U2L ciphertext
-         * wrapped with a generic MIME type rather than real image bytes.
-         */
         url: string;
         detail?: 'auto' | 'low' | 'high';
+        encrypted?: boolean;
     };
 };
 
@@ -141,9 +138,9 @@ export type ChatCompletionsMessage = {
     role: 'system' | 'user' | 'assistant' | 'tool';
     content?: string | ChatCompletionsContentPart[];
     /**
-     * Lumo extension: marks `content` as U2L-encrypted ciphertext. Applies to both
-     * string content and multimodal content-part arrays (text parts hold ciphertext
-     * and image `url`s carry ciphertext wrapped as a `data:` URL).
+     * Lumo extension: marks string `content` as U2L-encrypted ciphertext.
+     * Only valid when `content` is a plain string. For parts-content messages,
+     * each part carries its own `encrypted` flag as a sibling to the sensitive field.
      */
     encrypted?: boolean;
 };
@@ -228,16 +225,41 @@ export type ToolErrorMessage = {
 
 export const CONTEXT_LENGTH_EXCEEDED_CODE = 'context_length_exceeded';
 
+// Server-side tool call dispatched by the scheduler (chat.tool_call SSE chunk).
+// Emitted twice: announce (arguments absent) then dispatch (arguments present).
+export type ServerToolCallMessage = {
+    type: 'server_tool_call';
+    call_id: string;
+    name: string;
+    arguments?: string;
+    encrypted?: boolean;
+};
+
+// Server-side tool result returned after execution (chat.tool_result SSE chunk).
+export type ServerToolResultMessage = {
+    type: 'server_tool_result';
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    call_id: string;
+    content: string;
+    encrypted?: boolean;
+};
+
 export type EncryptedTokenDataMessage = Encrypted<TokenDataMessage>;
 export type DecryptedTokenDataMessage = Decrypted<TokenDataMessage>;
 export type EncryptedImageDataMessage = Encrypted<ImageDataMessage>;
 export type DecryptedImageDataMessage = Decrypted<ImageDataMessage>;
+export type EncryptedServerToolCallMessage = Encrypted<ServerToolCallMessage>;
+export type DecryptedServerToolCallMessage = Decrypted<ServerToolCallMessage>;
+export type EncryptedServerToolResultMessage = Encrypted<ServerToolResultMessage>;
+export type DecryptedServerToolResultMessage = Decrypted<ServerToolResultMessage>;
 
 export type GenerationResponseMessage =
     | QueuedMessage
     | IngestingMessage
     | TokenDataMessage
     | ImageDataMessage
+    | ServerToolCallMessage
+    | ServerToolResultMessage
     | DoneMessage
     | TimeoutMessage
     | ErrorMessage
@@ -250,6 +272,8 @@ export type GenerationResponseMessageDecrypted =
     | IngestingMessage
     | DecryptedTokenDataMessage
     | DecryptedImageDataMessage
+    | DecryptedServerToolCallMessage
+    | DecryptedServerToolResultMessage
     | DoneMessage
     | TimeoutMessage
     | ErrorMessage
@@ -366,12 +390,53 @@ export function isDecryptedImageDataMessage(obj: any): obj is DecryptedImageData
     return isDecrypted(obj, isImageDataMessage);
 }
 
+export function isServerToolCallMessage(obj: any): obj is ServerToolCallMessage {
+    return (
+        typeof obj === 'object' &&
+        obj !== null &&
+        obj.type === 'server_tool_call' &&
+        typeof obj.call_id === 'string' &&
+        typeof obj.name === 'string' &&
+        (!('arguments' in obj) || typeof obj.arguments === 'string') &&
+        (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
+    );
+}
+
+export function isServerToolResultMessage(obj: any): obj is ServerToolResultMessage {
+    return (
+        typeof obj === 'object' &&
+        obj !== null &&
+        obj.type === 'server_tool_result' &&
+        typeof obj.call_id === 'string' &&
+        typeof obj.content === 'string' &&
+        (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
+    );
+}
+
+export function isEncryptedServerToolCallMessage(obj: any): obj is EncryptedServerToolCallMessage {
+    return isEncrypted(obj, isServerToolCallMessage);
+}
+
+export function isDecryptedServerToolCallMessage(obj: any): obj is DecryptedServerToolCallMessage {
+    return isDecrypted(obj, isServerToolCallMessage);
+}
+
+export function isEncryptedServerToolResultMessage(obj: any): obj is EncryptedServerToolResultMessage {
+    return isEncrypted(obj, isServerToolResultMessage);
+}
+
+export function isDecryptedServerToolResultMessage(obj: any): obj is DecryptedServerToolResultMessage {
+    return isDecrypted(obj, isServerToolResultMessage);
+}
+
 export function isGenerationResponseMessage(obj: any): obj is GenerationResponseMessage {
     return (
         isQueuedMessage(obj) ||
         isIngestingMessage(obj) ||
         isTokenDataMessage(obj) ||
         isImageDataMessage(obj) ||
+        isServerToolCallMessage(obj) ||
+        isServerToolResultMessage(obj) ||
         isDoneMessage(obj) ||
         isTimeoutMessage(obj) ||
         isErrorMessage(obj) ||
