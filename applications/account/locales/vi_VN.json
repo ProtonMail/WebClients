@@ -2193,6 +2193,48 @@
       ],
       "Use your own email domain": [
         "Sử dụng miền email của riêng bạn"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } và ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } dung lượng lưu trữ"
+      ],
+      "1 user account": [
+        "1 tài khoản người dùng"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lưu trữ: gấp 40 lần gói hiện tại"
+      ],
+      "6 user accounts": [
+        "6 tài khoản người dùng"
+      ],
+      "Admin panel to manage your family": [
+        "Bảng quản trị để quản lý gia đình"
+      ],
+      "Advanced account protection": [
+        "Bảo vệ tài khoản nâng cao"
+      ],
+      "Easily add or remove users": [
+        "Dễ dàng thêm hoặc xóa người dùng"
+      ],
+      "One-time payment, lifetime deal": [
+        "Thanh toán một lần, ưu đãi trọn đời"
+      ],
+      "Online document editor": [
+        "Trình chỉnh sửa tài liệu trực tuyến"
+      ],
+      "Password health alerts": [
+        "Cảnh báo tình trạng mật khẩu"
+      ],
+      "Recover previous file versions": [
+        "Khôi phục các phiên bản tệp trước đó"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Thư mục, nhãn và bộ lọc không giới hạn"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Không giới hạn đăng nhập, thẻ tín dụng, biệt danh hide-my-email và hơn thế nữa"
       ]
     },
     "Billing cycle": {
@@ -19461,6 +19503,27 @@
       ],
       "Secure streaming": [
         "Phát trực tuyến bảo mật"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 người dùng"
+      ],
+      "All paid Mail and Calendar features": [
+        "Tất cả các tính năng Mail và Lịch trả phí"
+      ],
+      "High speed VPN": [
+        "VPN Tốc độ cao"
+      ],
+      "Premium early access": [
+        "Quyền truy cập sớm bản Premium"
+      ],
+      "Secure cloud storage": [
+        "Lưu trữ đám mây bảo mật"
+      ],
+      "Support online privacy": [
+        "Ủng hộ bảo vệ quyền riêng tư trực tuyến"
       ]
     },
     "specialoffer: Footer": {
@@ -19515,6 +19578,60 @@
       ],
       "Save ${ discount }%": [
         "Tiết kiệm ${ discount }%"
+      ],
+      "${ n } month": [
+        "${ n } tháng"
+      ],
+      "1 year": [
+        "1 năm"
+      ],
+      "15 months": [
+        "15 tháng"
+      ],
+      "2 years": [
+        "2 năm"
+      ],
+      "30 months": [
+        "30 tháng"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Thanh toán ${ amount } cho 1 tháng"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Thanh toán ${ amount } cho 12 tháng"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Thanh toán ${ amount } cho 15 tháng"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Thanh toán ${ amount } cho 24 tháng"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Thanh toán ${ amount } cho 30 tháng"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Gia hạn sau 1 năm với giá ưu đãi ${ discountedAmount } thay vì ${ regularAmount } (giảm ${ discount }%)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Gia hạn sau 2 năm với giá ưu đãi ${ discountedAmount } thay vì ${ regularAmount } (giảm ${ discount }%)"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Giá tiêu chuẩn ${ amount } cho 1 tháng"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Giá tiêu chuẩn ${ amount } cho 12 tháng"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Giá tiêu chuẩn ${ amount } cho 15 tháng"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Giá tiêu chuẩn ${ amount } cho 24 tháng"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Giá tiêu chuẩn ${ amount } cho 30 tháng"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Ưu đãi đặc biệt có hiệu lực trong 2 năm đầu"
       ]
     },
     "specialoffer: Title": {
@@ -23918,6 +24035,116 @@
       ],
       "Yearly, ${ untilString }": [
         "Hàng năm, ${ untilString }"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Bao gồm hỗ trợ cho 1 miền email tùy chỉnh, 10 địa chỉ email, 10 biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Thanh toán ${ amount } một lần"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Gia hạn sau 1 tháng với giá ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm hơn 8.500 máy chủ tại hơn 110 quốc gia, 10 thiết bị, phát trực tuyến tốc độ cao, trình chặn quảng cáo và bảo vệ khỏi phần mềm độc hại, VPN Accelerator và hơn thế nữa."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Đăng nhập an toàn trên tất cả thiết bị. Bao gồm không giới hạn biệt danh hide-my-email, chia sẻ, tích hợp 2FA, ${ DARK_WEB_MONITORING_NAME } và nhiều hơn nữa."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Bảo mật email và lịch trình bằng mã hóa đầu cuối. Bao gồm địa chỉ email ${ addresses }, hỗ trợ miền email tùy chỉnh, trợ lý soạn thảo ${ BRAND_NAME } Scribe, biệt danh hide-my-email không giới hạn và các dịch vụ khác."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Bảo mật email và lịch trình bằng mã hóa đầu cuối. Bao gồm địa chỉ email ${ addresses }, hỗ trợ cho các miền email tùy chỉnh, biệt danh hide-my-email không giới hạn và nhiều hơn nữa."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Bảo vệ email và lịch trình bằng mã hóa đầu cuối. Bao gồm 15 địa chỉ email, hỗ trợ miền email tùy chỉnh, trợ lý soạn thảo ${ BRAND_NAME } Scribe, biệt danh hide-my-email không giới hạn và các dịch vụ khác."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Bảo vệ email và lịch trình bằng mã hóa đầu cuối. Bao gồm 15 địa chỉ email, hỗ trợ miền email tùy chỉnh, biệt danh hide-my-email không giới hạn và hơn thế nữa."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm trình chỉnh sửa tài liệu trực tuyến, sao lưu ảnh, lịch sử phiên bản, chia sẻ tệp đã mã hóa và hơn thế nữa."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Không gian lưu trữ được chia sẻ trên tất cả các dịch vụ ${ BRAND_NAME }."
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Lịch sử phiên bản mở rộng"
+      ],
+      "Priority support": [
+        "Hỗ trợ ưu tiên"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Tổng dung lượng lưu trữ 3 TB"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Không gian lưu trữ được chia sẻ giữa các thành viên gia đình trên ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } và ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Tối đa 6 người dùng"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bao gồm 2.700 máy chủ tại hơn 65 quốc gia, kết nối tối đa 10 thiết bị, truy cập dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Bao gồm hỗ trợ cho 3 miền email tùy chỉnh, 90 địa chỉ email, không giới hạn biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Bảo vệ tệp với bộ lưu trữ đám mây đã mã hóa. Bao gồm đồng bộ tự động, chia sẻ tệp mã hóa, v.v."
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm 1700 máy chủ tại hơn 60 quốc gia, tốc độ VPN cao nhất, 10 kết nối VPN cho mỗi người dùng, dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm 1700 máy chủ tại hơn 60 quốc gia, tốc độ VPN cao nhất, 10 kết nối VPN, dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Tất cả dịch vụ cao cấp của chúng tôi với giới hạn cao nhất: 100 địa chỉ email, hỗ trợ 10 miền tùy chỉnh, không giới hạn biệt danh hide-my-email, chia sẻ lịch, lưu trữ đám mây mã hóa và chia sẻ tệp, v.v."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Bao gồm hỗ trợ cho 3 miền email tùy chỉnh, 15 địa chỉ email, không giới hạn biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Phù hợp cho gia đình hoặc nhóm nhỏ, mỗi người có thể sở hữu hộp thư đến và biệt danh riêng. Yêu cầu miền tùy chỉnh."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Nhận miễn phí phiên bản trả phí của tất cả các dịch vụ bảo mật mới chúng tôi phát hành trong tương lai, cùng với quyền truy cập sớm vào tất cả các tính năng và sản phẩm tương lai."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm đồng bộ tự động, chia sẻ tệp mã hóa, v.v."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Tạo thông tin đăng nhập bảo mật trên mọi thiết bị. Bao gồm không giới hạn biệt danh, 20 kho lưu trữ, tích hợp 2FA, tự động điền thẻ tín dụng và nhiều tính năng khác."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bao gồm hơn 2.950 máy chủ tại hơn 65 quốc gia, kết nối tối đa 10 thiết bị, truy cập dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Bao gồm hỗ trợ cho 1 miền email tùy chỉnh, 10 địa chỉ email, 10 biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm lịch sử phiên bản, chia sẻ tệp mã hóa, v.v."
       ]
     }
   }
