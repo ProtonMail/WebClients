@@ -5,6 +5,7 @@ import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     addSSOSamlMember,
     checkMemberAddressAvailability,
@@ -385,6 +386,28 @@ export const assignMemberRoles = ({
         const roleAssignments = await dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
         await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
         return roleAssignments;
+    };
+};
+
+export const promoteMemberToOrgAdmin = ({
+    member,
+    api,
+}: {
+    member: EnhancedMember;
+    api: Api;
+}): ThunkAction<Promise<void>, KtState & OrganizationKeyState & MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+            return;
+        }
+        const organizationKey = await dispatch(organizationKeyThunk());
+        const classification = classifyRoleChange({
+            member,
+            targetRole: MEMBER_ROLE.ORGANIZATION_ADMIN,
+            isPasswordlessOrg: getIsPasswordless(organizationKey?.Key),
+        });
+        const payload = await dispatch(getMemberEditPayload({ member, classification, api: getSilentApi(api) }));
+        await dispatch(setRole({ member, role: MEMBER_ROLE.ORGANIZATION_ADMIN, payload, api }));
     };
 };
 

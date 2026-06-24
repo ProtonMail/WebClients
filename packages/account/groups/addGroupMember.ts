@@ -30,13 +30,22 @@ import type { AddressesState } from '../addresses';
 import { replaceMemberAddressTokensIfNeeded } from '../addresses/replaceAddressToken';
 import { type GroupMembersState, groupMembersThunk } from '../groupMembers';
 import { getGroupKey } from '../groups/getGroupKey';
+import { type GroupsState, getGroupRoles } from '../groups/index';
 import { disableGroupAddressEncryption } from '../groups/setGroupAddressFlags';
 import type { KtState } from '../kt';
-import { getMemberAddresses, membersThunk } from '../members';
+import { type MembersState, getMemberAddresses, membersThunk } from '../members';
+import { promoteMemberToOrgAdmin } from '../members/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import { isOrgKeyRequired } from '../organizationRoles/helpers';
 import type { UserKeysState } from '../userKeys';
 
-type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState & GroupMembersState;
+type RequiredState = AddressesState &
+    UserKeysState &
+    OrganizationKeyState &
+    KtState &
+    GroupMembersState &
+    GroupsState &
+    MembersState;
 
 const signMemberEmail = async (memberEmail: string, groupKey: PrivateKeyReference) => {
     // we must always sign using the canonical email, canonicalize even if it's already canonical
@@ -278,18 +287,31 @@ export const addGroupMembersThunk = ({
             await dispatch(disableGroupAddressEncryption({ groupAddress, forwarderKey }));
         }
 
+        const groupRoles = await dispatch(getGroupRoles({ group: { ID: groupId } }));
+        const shouldPromote = groupRoles.some(({ Role }) => isOrgKeyRequired(Role));
+        const members = shouldPromote ? await dispatch(membersThunk()) : [];
+
         // Add each member, passing pre-computed values
         const results = await Promise.allSettled(
-            emails.map((email, index) =>
-                dispatch(
+            emails.map(async (email, index) => {
+                await dispatch(
                     addGroupMemberThunk({
                         groupId,
                         email,
                         groupMemberPublicKeys: allMemberPublicKeys[index],
                         forwarderKey,
                     })
-                )
-            )
+                );
+
+                if (shouldPromote) {
+                    const member = getMemberByEmail(members, canonicalizeInternalEmail(email));
+                    if (member) {
+                        // TODO(partial-failure): the member is added to the group but promotion may fail here.
+                        // Reconcile / surface a recovery path in a follow-up MR.
+                        await dispatch(promoteMemberToOrgAdmin({ member, api: extra.api }));
+                    }
+                }
+            })
         );
 
         const firstError = results.find((result): result is PromiseRejectedResult => result.status === 'rejected');
