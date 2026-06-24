@@ -1,7 +1,7 @@
 import {
     type NoiseSuppressionAudioWorkletHandle,
     createNoiseSuppressionAudioWorklet,
-} from '@proton-meet/noise-suppression/audio-worklet';
+} from '@workadventure/noise-suppression/audio-worklet';
 import type { AudioProcessorOptions, Track, TrackProcessor } from 'livekit-client';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
