@@ -380,6 +380,7 @@ type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDeps
     // local updates propagate without the dry-run audit/guard (original behavior).
     isDriftDetectionEnabled: boolean
     onYjsDriftDetected?: (result: SpreadsheetLocalYjsUpdateAuditResult) => void
+    isPatchesStorageEnabled: boolean
   }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
@@ -449,6 +450,9 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     }
   }, [hasBasePatchesStored, pushPatches])
   const pushLatestPatches = useEvent(async (update?: Uint8Array<ArrayBuffer>, type?: SheetsPatchesType) => {
+    if (!deps.isPatchesStorageEnabled) {
+      return
+    }
     const patches = structuredClone(latestPatches.current.shift())
     if (patches) {
       await writeBasePatchIfNecessary()
@@ -573,6 +577,9 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const canvasGridMethods = useSpreadsheet()
 
   useEffect(() => {
+    if (!deps.isPatchesStorageEnabled) {
+      return
+    }
     async function handleUpdatePropagation(update: Uint8Array<ArrayBuffer>) {
       await pushLatestPatches(update)
     }
@@ -580,7 +587,14 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     return () => {
       deps.docState.removeUpdatePropagationListener(handleUpdatePropagation)
     }
-  }, [deps.docState, hasBasePatchesStored, pushLatestPatches, pushPatches, writeBasePatchIfNecessary])
+  }, [
+    deps.docState,
+    hasBasePatchesStored,
+    pushLatestPatches,
+    pushPatches,
+    writeBasePatchIfNecessary,
+    deps.isPatchesStorageEnabled,
+  ])
 
   const previousLocaleResolved = useRef(localeResolved)
   const { receivedEverythingFromRTS } = useSyncedState()
