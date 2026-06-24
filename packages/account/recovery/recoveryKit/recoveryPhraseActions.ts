@@ -23,11 +23,14 @@ export const generateRecoveryKitData = (): ThunkAction<
     return async (dispatch, getState, extra) => {
         const createMnemonicData = selectMnemonicData(getState());
         const api = extra.api;
+        const isShareFeatureEnabled = extra.unleashClient.isEnabled('RecoveryFileShareEnabled');
+
         const data = await generateDeferredMnemonicData({
             api,
             emailAddress: createMnemonicData.emailAddress,
             username: createMnemonicData.username,
             getUserKeys: () => dispatch(userKeysThunk()),
+            isShareFeatureEnabled: isShareFeatureEnabled,
         });
         if (!data) {
             throw new Error('Failed to prepare recovery kit data');

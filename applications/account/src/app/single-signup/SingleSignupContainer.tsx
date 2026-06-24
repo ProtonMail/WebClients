@@ -50,6 +50,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
@@ -187,6 +188,7 @@ const SingleSignupContainer = ({
     const { getPreferredCurrency } = useCurrencies();
 
     useMetaTags(metaTags);
+    const isShareFeatureEnabled = useFlag('RecoveryFileShareEnabled');
 
     const [signupParameters, setSignupParameters] = useState(() => {
         const result = getSignupSearchParams(location.pathname, getSearchParams());
@@ -588,6 +590,7 @@ const SingleSignupContainer = ({
                     const { method, overrides } = getTelemetryParams();
                     reportPaymentFailure(method, overrides);
                 },
+                isShareFeatureEnabled,
             }),
             wait(3500),
         ]);

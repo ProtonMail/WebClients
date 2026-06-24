@@ -1,4 +1,5 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
+
 import type { SetMnemonicPhrasePayload } from '@proton/shared/lib/api/settingsMnemonic';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
@@ -73,11 +74,13 @@ export const generateDeferredMnemonicData = async ({
     emailAddress,
     username,
     getUserKeys,
+    isShareFeatureEnabled,
 }: {
     api: Api;
     emailAddress: string;
     username: string;
     getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>;
+    isShareFeatureEnabled: boolean;
 }): Promise<DeferredMnemonicData> => {
     const generatedRecoveryPhrasePayload = await generateRecoveryPhrasePayload({ username, getUserKeys, api });
 
@@ -93,6 +96,6 @@ export const generateDeferredMnemonicData = async ({
         recoveryKitBlob,
         payload,
         hasSentPayload: false,
-        save: getRecoveryKitSaveData({ recoveryPhrase, recoveryKitBlob }),
+        save: getRecoveryKitSaveData({ recoveryPhrase, recoveryKitBlob, isShareFeatureEnabled }),
     };
 };
