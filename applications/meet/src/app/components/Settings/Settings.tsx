@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
@@ -14,14 +13,16 @@ import {
 } from '@proton/meet/store/slices/uiStateSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
-import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
+import { BackgroundBlurToggle } from './BackgroundBlurToggle';
+import { NoiseCancellingToggle } from './NoiseCancellingToggle';
+import { WaitingRoomToggle } from './WaitingRoomToggle';
+import { SettingsArea } from './shared/SettingsArea';
+import { SettingsToggle } from './shared/SettingsToggle';
 
 import './Settings.scss';
 
@@ -59,116 +60,74 @@ export const Settings = () => {
             <div className="overflow-y-auto flex-1 min-h-0">
                 <div className="flex flex-column flex-nowrap w-full gap-4 pr-4">
                     {(isLocalParticipantAdmin || isLocalParticipantHost) && (
-                        <div className="flex flex-column flex-nowrap w-full gap-4 shrink-0">
-                            <h3 className="text-semibold text-rg color-weak pb-2 shrink-0">{c('Title').t`Security`}</h3>
-                            <div className="flex flex-column flex-nowrap w-full gap-4 pl-4">
-                                <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap shrink-0">
-                                    <label
-                                        className={clsx('setting-label', isMeetingLocked ? 'color-norm' : 'color-hint')}
-                                        htmlFor="lock-meeting"
-                                    >{c('Action').t`Lock meeting`}</label>
-                                    <Toggle
-                                        id="lock-meeting"
-                                        checked={isMeetingLocked}
-                                        onChange={() => {
-                                            void withLoadingLock(handleMeetingLockToggle());
-                                        }}
-                                        className={clsx(
-                                            'settings-toggle',
-                                            isMeetingLocked ? '' : 'settings-toggle-inactive'
-                                        )}
-                                        aria-label={c('Alt').t`Lock meeting`}
-                                        loading={loadingLock}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                        <SettingsArea title={c('Title').t`Security`}>
+                            <WaitingRoomToggle />
+                            <SettingsToggle
+                                id="lock-meeting"
+                                label={c('Action').t`Lock meeting`}
+                                ariaLabel={c('Alt').t`Lock meeting`}
+                                onChange={() => {
+                                    void withLoadingLock(handleMeetingLockToggle());
+                                }}
+                                checked={isMeetingLocked}
+                                loading={loadingLock}
+                            />
+                        </SettingsArea>
                     )}
-                    <div className="flex flex-column flex-nowrap w-full gap-4 shrink-0">
-                        <h3 className="text-semibold text-rg color-weak py-2 shrink-0">{c('Title').t`Video`}</h3>
-                        <div className="flex flex-column flex-nowrap w-full gap-4 pl-4 shrink-0">
-                            {!isMobile() && (
-                                <BackgroundBlurToggle
-                                    backgroundBlur={backgroundBlur}
-                                    loadingBackgroundBlur={loadingBackgroundBlur}
-                                    isBackgroundBlurSupported={isBackgroundBlurSupported}
-                                    onChange={() => {
-                                        void withLoadingBackgroundBlur(toggleBackgroundBlur());
-                                    }}
-                                    withTooltip={true}
-                                />
-                            )}
-                            <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap shrink-0">
-                                <label
-                                    className={clsx('setting-label', disableVideos ? 'color-norm' : 'color-hint')}
-                                    htmlFor="disable-videos"
-                                >{c('Action').t`Turn off incoming video`}</label>
-                                <Toggle
-                                    id="disable-videos"
-                                    checked={disableVideos}
-                                    onChange={() => dispatch(setDisableVideos(!disableVideos))}
-                                    className={clsx('settings-toggle', disableVideos ? '' : 'settings-toggle-inactive')}
-                                />
-                            </div>
-                            <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap shrink-0">
-                                <label
-                                    className={clsx('setting-label', !selfView ? 'color-norm' : 'color-hint')}
-                                    htmlFor="self-view"
-                                >{c('Action').t`Hide self view`}</label>
-                                <Toggle
-                                    id="self-view"
-                                    checked={!selfView}
-                                    onChange={() => dispatch(setSelfView(!selfView))}
-                                    className={clsx('settings-toggle', !selfView ? '' : 'settings-toggle-inactive')}
-                                />
-                            </div>
-                            <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap shrink-0">
-                                <label
-                                    className={clsx('setting-label', pipEnabled ? 'color-norm' : 'color-hint')}
-                                    htmlFor="pip-enabled"
-                                >{c('Action').t`Show floating thumbnail during screensharing`}</label>
-                                <Toggle
-                                    id="pip-enabled"
-                                    checked={pipEnabled}
-                                    onChange={() => dispatch(setPipEnabled(!pipEnabled))}
-                                    className={clsx('settings-toggle', pipEnabled ? '' : 'settings-toggle-inactive')}
-                                    disabled={isLocalScreenShare}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex flex-column flex-nowrap w-full gap-4 shrink-0">
-                        <h3 className="text-semibold text-rg color-weak py-2 shrink-0">{c('Title').t`Audio`}</h3>
-                        <div className="flex flex-column w-full gap-4 pl-4 shrink-0">
+                    <SettingsArea title={c('Title').t`Video`}>
+                        {!isMobile() && (
+                            <BackgroundBlurToggle
+                                backgroundBlur={backgroundBlur}
+                                loadingBackgroundBlur={loadingBackgroundBlur}
+                                isBackgroundBlurSupported={isBackgroundBlurSupported}
+                                onChange={() => {
+                                    void withLoadingBackgroundBlur(toggleBackgroundBlur());
+                                }}
+                                withTooltip={true}
+                            />
+                        )}
+                        <SettingsToggle
+                            id="disable-videos"
+                            label={c('Action').t`Turn off incoming video`}
+                            ariaLabel={c('Alt').t`Turn off incoming video`}
+                            onChange={() => dispatch(setDisableVideos(!disableVideos))}
+                            checked={disableVideos}
+                        />
+                        <SettingsToggle
+                            id="self-view"
+                            label={c('Action').t`Hide self view`}
+                            ariaLabel={c('Alt').t`Hide self view`}
+                            onChange={() => dispatch(setSelfView(!selfView))}
+                            checked={!selfView}
+                        />
+                        <SettingsToggle
+                            id="pip-enabled"
+                            label={c('Action').t`Show floating thumbnail during screensharing`}
+                            ariaLabel={c('Alt').t`Show floating thumbnail during screensharing`}
+                            onChange={() => dispatch(setPipEnabled(!pipEnabled))}
+                            checked={pipEnabled}
+                            disabled={isLocalScreenShare}
+                        />
+                    </SettingsArea>
+                    <SettingsArea title={c('Title').t`Audio`}>
+                        <div className="flex flex-column w-full gap-4 shrink-0">
                             <NoiseCancellingToggle
                                 idBase="settings"
                                 noiseFilter={noiseFilter}
                                 toggleNoiseFilter={toggleNoiseFilter}
                             />
                         </div>
-                    </div>
+                    </SettingsArea>
                     {isPaidUser && (
-                        <div className="flex flex-column flex-nowrap w-full gap-4 shrink-0">
-                            <h3 className="text-semibold text-rg color-weak py-2 shrink-0">{c('Title')
-                                .t`Meeting settings`}</h3>
-                            <div className="flex flex-column flex-nowrap w-full gap-4 pl-4 shrink-0">
-                                <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap shrink-0">
-                                    <label
-                                        className={clsx('setting-label', showDuration ? 'color-norm' : 'color-hint')}
-                                        htmlFor="show-duration"
-                                    >{c('Title').t`Show duration`}</label>
-                                    <Toggle
-                                        id="show-duration"
-                                        className={clsx(
-                                            'settings-toggle',
-                                            showDuration ? '' : 'settings-toggle-inactive'
-                                        )}
-                                        checked={showDuration}
-                                        onChange={() => dispatch(toggleShowDuration())}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                        <SettingsArea title={c('Title').t`Meeting settings`}>
+                            <SettingsToggle
+                                id="show-duration"
+                                label={c('Action').t`Show duration`}
+                                ariaLabel={c('Alt').t`Show duration`}
+                                onChange={() => dispatch(toggleShowDuration())}
+                                checked={showDuration}
+                            />
+                        </SettingsArea>
                     )}
                 </div>
             </div>
