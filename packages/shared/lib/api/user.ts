@@ -24,6 +24,7 @@ export const queryCreateUser = (
             [key: string]: string;
         };
         Salt?: string;
+        VisitorId: string | undefined;
     },
     product: ProductParam
 ): FetchConfig => ({

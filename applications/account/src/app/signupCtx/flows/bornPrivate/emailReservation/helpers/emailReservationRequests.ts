@@ -45,6 +45,7 @@ export const createDonationUser = async ({
                     Payload: payload,
                     TokenPayment: paymentToken, // Payment token as verification
                     Domain: domain,
+                    VisitorId: undefined,
                 },
                 productParam
             ),
