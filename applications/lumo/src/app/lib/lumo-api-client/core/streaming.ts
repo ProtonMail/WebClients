@@ -1,4 +1,10 @@
-import type { GenerationResponseMessage, GenerationTarget, LumoCompletionTarget } from './types';
+import type {
+    GenerationResponseMessage,
+    GenerationTarget,
+    LumoCompletionTarget,
+    ServerToolCallMessage,
+    ServerToolResultMessage,
+} from './types';
 import { isGenerationResponseMessage } from './types';
 
 type OpenAiDelta = {
@@ -6,6 +12,7 @@ type OpenAiDelta = {
     content?: string;
     reasoning_content?: string;
     reasoning?: string;
+    encrypted?: boolean;
     target?: GenerationTarget;
     tool_calls?: OpenAiToolCallDelta[];
 };
@@ -39,6 +46,25 @@ type LumoImageDataChunk = {
         id: string;
         data: string;
         seed?: number;
+        encrypted?: boolean;
+    };
+};
+
+type ChatToolCallChunk = {
+    object: 'chat.tool_call';
+    tool_call: {
+        id: string;
+        name: string;
+        arguments?: string;
+        encrypted?: boolean;
+    };
+};
+
+type ChatToolResultChunk = {
+    object: 'chat.tool_result';
+    tool_result: {
+        call_id: string;
+        content: string;
         encrypted?: boolean;
     };
 };
@@ -139,14 +165,27 @@ export class StreamProcessor {
         }
 
         try {
-            const item = JSON.parse(payload) as OpenAiChunk | GenerationResponseMessage | LumoImageDataChunk;
+            const item = JSON.parse(payload) as
+                | OpenAiChunk
+                | GenerationResponseMessage
+                | LumoImageDataChunk
+                | ChatToolCallChunk
+                | ChatToolResultChunk;
 
             if (isGenerationResponseMessage(item)) {
                 return [this.applyDefaultTarget(item)];
             }
 
-            if ('object' in item && item.object === 'lumo.image_data') {
-                return [this.processLumoImageDataChunk(item)];
+            if ('object' in item) {
+                if (item.object === 'lumo.image_data') {
+                    return [this.processLumoImageDataChunk(item)];
+                }
+                if (item.object === 'chat.tool_call') {
+                    return [this.processChatToolCallChunk(item)];
+                }
+                if (item.object === 'chat.tool_result') {
+                    return [this.processChatToolResultChunk(item)];
+                }
             }
 
             return this.processOpenAiChunk(item as OpenAiChunk);
@@ -164,6 +203,28 @@ export class StreamProcessor {
             seed: chunk.image.seed,
             encrypted: chunk.image.encrypted,
             is_final: true,
+        };
+    }
+
+    private processChatToolCallChunk(chunk: ChatToolCallChunk): ServerToolCallMessage {
+        const { id, name, arguments: args, encrypted } = chunk.tool_call;
+        return {
+            type: 'server_tool_call',
+            call_id: id,
+            name,
+            ...(args !== undefined ? { arguments: args } : {}),
+            ...(encrypted ? { encrypted: true } : {}),
+        };
+    }
+
+    private processChatToolResultChunk(chunk: ChatToolResultChunk): ServerToolResultMessage {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        const { call_id, content, encrypted } = chunk.tool_result;
+        return {
+            type: 'server_tool_result',
+            call_id,
+            content,
+            ...(encrypted ? { encrypted: true } : {}),
         };
     }
 
@@ -211,12 +272,12 @@ export class StreamProcessor {
         const messages: GenerationResponseMessage[] = [];
 
         if (typeof delta.content === 'string' && delta.content.length > 0) {
-            messages.push(this.createTokenData(defaultTarget, delta.content));
+            messages.push(this.createTokenData(defaultTarget, delta.content, delta.encrypted));
         }
 
         const reasoning = delta.reasoning_content ?? delta.reasoning;
         if (typeof reasoning === 'string' && reasoning.length > 0) {
-            messages.push(this.createTokenData('reasoning', reasoning));
+            messages.push(this.createTokenData('reasoning', reasoning, delta.encrypted));
         }
 
         if (Array.isArray(delta.tool_calls)) {
@@ -288,7 +349,7 @@ export class StreamProcessor {
         return message;
     }
 
-    private createTokenData(target: GenerationTarget, content: string): GenerationResponseMessage {
+    private createTokenData(target: GenerationTarget, content: string, encrypted?: boolean): GenerationResponseMessage {
         const counterKey = this.getCounterKey(target);
 
         return {
@@ -296,6 +357,7 @@ export class StreamProcessor {
             target,
             count: this.counters[counterKey]++,
             content,
+            ...(encrypted ? { encrypted: true } : {}),
         };
     }
 
