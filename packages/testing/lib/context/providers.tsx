@@ -200,9 +200,9 @@ export const withReduxStore =
     };
 
 export const withMemoryRouter =
-    () =>
+    (initialEntries?: string[]) =>
     <T extends {}>(Component: ComponentType<T>) => {
-        const history = createMemoryHistory();
+        const history = createMemoryHistory({ initialEntries });
 
         const MemoryRouterHoc = (props: T & JSX.IntrinsicAttributes) => {
             return (

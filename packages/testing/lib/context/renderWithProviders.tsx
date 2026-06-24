@@ -19,9 +19,16 @@ import { setupStore } from './store';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
     preloadedState?: Partial<Parameters<typeof setupStore>[0]['preloadedState']>;
+    // URL the MemoryRouter starts at, e.g. '/path?foo=bar', so components can read it on first render.
+    initialUrl?: string;
 }
 
-export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloadedState']) => {
+interface StoreWrapperOptions {
+    preloadedState?: ExtendedRenderOptions['preloadedState'];
+    initialUrl?: ExtendedRenderOptions['initialUrl'];
+}
+
+export const getStoreWrapper = ({ preloadedState, initialUrl }: StoreWrapperOptions = {}) => {
     const store = setupStore({
         preloadedState: getPreloadedState(preloadedState),
     });
@@ -34,7 +41,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
         withNotifications(),
         withEventManager(),
         withAuthentication(),
-        withMemoryRouter()
+        withMemoryRouter(initialUrl ? [initialUrl] : undefined)
     );
 
     function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
@@ -47,8 +54,8 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
 
 export function renderWithProviders(
     ui: ReactElement,
-    { preloadedState, ...renderOptions }: ExtendedRenderOptions = {}
+    { preloadedState, initialUrl, ...renderOptions }: ExtendedRenderOptions = {}
 ) {
-    const { store, Wrapper } = getStoreWrapper(preloadedState);
+    const { store, Wrapper } = getStoreWrapper({ preloadedState, initialUrl });
     return { store, ...originalRender(ui, { wrapper: Wrapper, ...renderOptions }) };
 }
