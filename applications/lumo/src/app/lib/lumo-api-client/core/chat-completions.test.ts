@@ -101,7 +101,7 @@ describe('toChatCompletionsBody', () => {
         ]);
     });
 
-    it('carries U2L ciphertext via a data URL and a message-level encrypted flag', () => {
+    it('carries U2L ciphertext via a data URL with per-part encrypted flags', () => {
         const request: LumoApiGenerationRequest = {
             ...baseRequest,
             turns: [
@@ -117,14 +117,14 @@ describe('toChatCompletionsBody', () => {
         expect(toChatCompletionsBody(request).messages).toEqual([
             {
                 role: 'user',
-                encrypted: true,
                 content: [
-                    { type: 'text', text: 'cipher-text-refs' },
+                    { type: 'text', text: 'cipher-text-refs', encrypted: true },
                     {
                         type: 'image_url',
-                        image_url: { url: 'data:application/octet-stream;base64,cipher-text-bytes' },
+                        image_url: { url: 'data:application/octet-stream;base64,cipher-text-bytes', encrypted: true },
                     },
                 ],
+                encrypted: true, // tmp backward compat, see note in `serializeMessages()`.
             },
         ]);
     });
