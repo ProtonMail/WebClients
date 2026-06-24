@@ -1,6 +1,7 @@
 import { RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
 import { isIos, isIpad } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import noop from '@proton/utils/noop';
 
 import type { RecoveryKitBlob } from './generateRecoveryKitBlob';
 
@@ -50,6 +51,7 @@ export interface RecoveryKitSaveReturnValue {
 export const getRecoveryKitSaveData = ({
     recoveryPhrase,
     recoveryKitBlob,
+    isShareFeatureEnabled,
 }: {
     recoveryPhrase: string;
     /**
@@ -57,13 +59,22 @@ export const getRecoveryKitSaveData = ({
      * Null if an error occurred while generating.
      */
     recoveryKitBlob: RecoveryKitBlob | null;
+    isShareFeatureEnabled: boolean;
 }): RecoveryKitSaveReturnValue => {
-    const canDownloadRecoveryKit = !!recoveryKitBlob && canUseRecoveryKitPdfDownload();
+    const canShareRecoveryKitInMobile = isShareFeatureEnabled && isIos();
+    const canDownloadRecoveryKit = !!recoveryKitBlob && (canShareRecoveryKitInMobile || canUseRecoveryKitPdfDownload());
 
     const handleDownload = async () => {
         if (!recoveryKitBlob) {
             return;
         }
+
+        const file = new File([recoveryKitBlob], RECOVERY_KIT_FILE_NAME, { type: 'application/pdf' });
+
+        if (canShareRecoveryKitInMobile && navigator.canShare?.({ files: [file] })) {
+            return navigator.share({ files: [file] }).catch(noop);
+        }
+
         downloadFile(recoveryKitBlob, RECOVERY_KIT_FILE_NAME);
     };
 

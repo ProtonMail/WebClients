@@ -9,7 +9,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {
-    exportRecoveryFile,
+    generateRecoveryFile,
     generateRecoverySecret,
     getHasOutdatedRecoveryFile,
     getIsRecoveryFileAvailable,
@@ -19,9 +19,12 @@ import {
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
 
-export const downloadRecoveryFileThunk = (
-    persistPasswordScope: boolean = false
-): ThunkAction<Promise<void>, UserState & UserKeysState & UserSettingsState, ProtonThunkArguments, UnknownAction> => {
+export const downloadRecoveryFileThunk = (persistPasswordScope: boolean = false): ThunkAction<
+    Promise<string | undefined>,
+    UserState & UserKeysState & UserSettingsState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch, getState, extra) => {
         const user = await dispatch(userThunk());
         const userKeys = await dispatch(userKeysThunk());
@@ -41,12 +44,13 @@ export const downloadRecoveryFileThunk = (
                     PersistPasswordScope: persistPasswordScope,
                 })
             );
-            await exportRecoveryFile({ recoverySecret, userKeys });
-            await Promise.all([
+
+            const [recoveryFileContents] = await Promise.all([
+                generateRecoveryFile({ recoverySecret, userKeys }),
                 dispatch(userSettingsThunk({ cache: CacheType.None })),
                 dispatch(userThunk({ cache: CacheType.None })),
             ]);
-            return;
+            return recoveryFileContents;
         }
 
         const valid = await validateRecoverySecret(primaryRecoverySecret, primaryUserKey.publicKey);
@@ -54,7 +58,7 @@ export const downloadRecoveryFileThunk = (
             throw new Error('Unable to verify recovery file signature');
         }
 
-        await exportRecoveryFile({
+        return generateRecoveryFile({
             recoverySecret: primaryRecoverySecret.RecoverySecret,
             userKeys,
         });
