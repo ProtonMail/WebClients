@@ -4265,6 +4265,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "No drive found to import": [
+        "İçe aktarılacak drive bulunamadı"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
       ]
     },
     "error": {
@@ -6798,6 +6807,9 @@
       ],
       "All your files will be imported": [
         "Tüm dosyalarınız içe aktarılacak"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ]
     },
     "info": {
@@ -12885,7 +12897,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
+        "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
       "Load image": [
         "Görsel yükle"

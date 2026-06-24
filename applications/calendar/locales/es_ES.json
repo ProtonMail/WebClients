@@ -4262,6 +4262,15 @@
       ],
       "Address could not be added.": [
         "No se ha podido añadir la dirección."
+      ],
+      "No drive found to import": [
+        "No se ha encontrado ninguna unidad para importar"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hay suficiente espacio de almacenamiento en tu ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no se pueden importar los archivos"
       ]
     },
     "error": {
@@ -6784,6 +6793,9 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Confía en la clave «${ activeSignerText }» para verificar los nuevos mensajes de este contacto."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
       ]
     },
     "info": {
@@ -12792,6 +12804,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
