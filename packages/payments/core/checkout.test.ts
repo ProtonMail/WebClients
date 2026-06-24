@@ -1,7 +1,12 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
-import { getCheckoutUi, getInformedOptimisticSubscriptionEstimation, getUsersAndAddons } from './checkout';
+import {
+    getCheckoutUi,
+    getCouponDiscountBreakdownInfo,
+    getInformedOptimisticSubscriptionEstimation,
+    getUsersAndAddons,
+} from './checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
 import { InvalidCouponError, WrongBillingAddressError } from './errors';
 import type { PlanIDs } from './interface';
@@ -1460,5 +1465,156 @@ describe('getCheckoutUi couponDiscountBreakdown', () => {
         expect(omitBreakdownAndCheckResult(withBreakdownPresent)).toEqual(
             omitBreakdownAndCheckResult(withoutBreakdown)
         );
+    });
+});
+
+describe('getCouponDiscountBreakdownInfo', () => {
+    const planIDs: PlanIDs = { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 };
+
+    const baseCheckResult: SubscriptionEstimation = {
+        Amount: 23976,
+        AmountDue: 17376,
+        Cycle: CYCLE.YEARLY,
+        CouponDiscount: -6600,
+        Coupon: { Code: 'JUNE26BUNDLESALE', Description: '', MaximumRedemptionsPerUser: null },
+        Currency: 'EUR',
+        SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
+        PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
+        requestData: {
+            Plans: planIDs,
+            Currency: 'EUR',
+            Cycle: CYCLE.YEARLY,
+        },
+    };
+
+    const callWith = ({
+        CouponDiscountBreakdown,
+        CouponDiscount = baseCheckResult.CouponDiscount,
+        cycle = CYCLE.YEARLY,
+        planName = PLANS.BUNDLE,
+    }: {
+        CouponDiscountBreakdown: CouponDiscountBreakdownBE;
+        CouponDiscount?: number;
+        cycle?: CYCLE;
+        planName?: PLANS | null;
+    }) =>
+        getCouponDiscountBreakdownInfo({
+            checkResult: {
+                ...baseCheckResult,
+                CouponDiscount,
+                Coupon: { ...baseCheckResult.Coupon!, CouponDiscountBreakdown },
+            },
+            planIDs,
+            planName,
+            cycle,
+        });
+
+    it('returns undefined when no breakdown is present', () => {
+        expect(
+            getCouponDiscountBreakdownInfo({
+                checkResult: baseCheckResult,
+                planIDs,
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.YEARLY,
+            })
+        ).toBeUndefined();
+    });
+
+    it('returns undefined for an empty breakdown', () => {
+        expect(callWith({ CouponDiscountBreakdown: [] })).toBeUndefined();
+    });
+
+    it('returns undefined when CouponDiscount is missing even though a breakdown is present', () => {
+        const { CouponDiscount, ...checkResultWithoutDiscount } = baseCheckResult;
+
+        expect(
+            getCouponDiscountBreakdownInfo({
+                checkResult: {
+                    ...checkResultWithoutDiscount,
+                    Coupon: {
+                        ...baseCheckResult.Coupon!,
+                        CouponDiscountBreakdown: [{ Name: PLANS.BUNDLE, Amount: -4200 }],
+                    },
+                },
+                planIDs,
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.YEARLY,
+            })
+        ).toBeUndefined();
+    });
+
+    it('returns undefined when an entry is not part of the request', () => {
+        expect(
+            callWith({
+                CouponDiscountBreakdown: [
+                    { Name: PLANS.BUNDLE, Amount: -4200 },
+                    { Name: PLANS.MAIL, Amount: -2400 },
+                ],
+            })
+        ).toBeUndefined();
+    });
+
+    it('returns undefined when an amount has the wrong sign', () => {
+        expect(
+            callWith({
+                CouponDiscountBreakdown: [
+                    { Name: PLANS.BUNDLE, Amount: -4200 },
+                    { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: 2400 },
+                ],
+            })
+        ).toBeUndefined();
+    });
+
+    it('computes per-cycle and per-month discounts for the base plan and addons', () => {
+        const result = callWith({
+            CouponDiscountBreakdown: [
+                { Name: PLANS.BUNDLE, Amount: -4200 },
+                { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: -2400 },
+            ],
+        });
+
+        expect(result).toEqual({
+            basePlanPerCycleDiscount: -4200,
+            basePlanPerMonthDiscount: -350,
+            perAddonPerCycleDiscount: { [ADDON_NAMES.LUMO_BUNDLE]: -2400 },
+            perAddonPerMonthDiscount: { [ADDON_NAMES.LUMO_BUNDLE]: -200 },
+        });
+    });
+
+    it('accumulates multiple breakdown entries that share the same name', () => {
+        const result = callWith({
+            CouponDiscountBreakdown: [
+                { Name: PLANS.BUNDLE, Amount: -3000 },
+                { Name: PLANS.BUNDLE, Amount: -1200 },
+                { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: -1500 },
+                { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: -900 },
+            ],
+        });
+
+        expect(result).toEqual({
+            basePlanPerCycleDiscount: -4200,
+            basePlanPerMonthDiscount: -350,
+            perAddonPerCycleDiscount: { [ADDON_NAMES.LUMO_BUNDLE]: -2400 },
+            perAddonPerMonthDiscount: { [ADDON_NAMES.LUMO_BUNDLE]: -200 },
+        });
+    });
+
+    it('treats every line as an addon when none matches the base plan name', () => {
+        const result = callWith({
+            planName: null,
+            CouponDiscountBreakdown: [
+                { Name: PLANS.BUNDLE, Amount: -4200 },
+                { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: -2400 },
+            ],
+        });
+
+        expect(result).toEqual({
+            basePlanPerCycleDiscount: 0,
+            basePlanPerMonthDiscount: 0,
+            perAddonPerCycleDiscount: { [PLANS.BUNDLE]: -4200, [ADDON_NAMES.LUMO_BUNDLE]: -2400 },
+            perAddonPerMonthDiscount: { [PLANS.BUNDLE]: -350, [ADDON_NAMES.LUMO_BUNDLE]: -200 },
+        });
     });
 });
