@@ -1,3 +1,5 @@
+import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../../../types-api';
+import { mapStreamErrorCode } from './generation-terminal';
 import type {
     GenerationResponseMessage,
     GenerationTarget,
@@ -244,7 +246,18 @@ export class StreamProcessor {
     private processOpenAiChunk(chunk: OpenAiChunk): GenerationResponseMessage[] {
         if (chunk.error) {
             console.warn('[STREAM] Stream error:', chunk.error);
-            return [{ type: 'error' }];
+            if (chunk.error.code === CONTEXT_LENGTH_EXCEEDED_CODE) {
+                return [
+                    {
+                        type: 'tool-error',
+                        error: {
+                            code: CONTEXT_LENGTH_EXCEEDED_CODE,
+                            message: chunk.error.message,
+                        },
+                    },
+                ];
+            }
+            return [{ type: mapStreamErrorCode(chunk.error.code) }];
         }
 
         if (!chunk.choices?.length) {

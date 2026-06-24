@@ -16,7 +16,7 @@ export const useActionErrorHandler = () => {
 
     const handleActionError = useCallback(
         (error: any, context: ErrorContext) => {
-            const analyzed = analyzeError(error, context);
+            const analyzed = analyzeError(error);
 
             // Don't show validation or abort errors to user
             if (!analyzed.shouldShowToUser) {
