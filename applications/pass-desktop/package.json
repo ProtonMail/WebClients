@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "@proton/icons": "workspace:^",
+        "browserslist": "^4.28.2",
         "electron-log": "^5.4.3",
         "electron-store": "^8.2.0",
         "proton-pass-web": "workspace:applications/pass"

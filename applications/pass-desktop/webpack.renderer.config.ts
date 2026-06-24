@@ -1,4 +1,5 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import browserslist from 'browserslist';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import type { Configuration } from 'webpack';
@@ -10,10 +11,15 @@ import { getJsLoaders } from '@proton/pack/webpack/js.loader.swc';
 import { webpackOptions } from './webpack.options';
 import plugins from './webpack.plugins';
 
-const { browserslist, isProduction } = webpackOptions;
+const { isProduction } = webpackOptions;
+
+// This renderer ships inside Electron, so it targets the bundled Chromium version
+// (the [electron-applications] section of the root .browserslistrc) rather than the web matrix.
+const browserslistEnv = 'electron-applications';
+const browserslistQuery = browserslist(null, { env: browserslistEnv }).join(', ');
 
 const config: Configuration = {
-    target: `browserslist:${browserslist}`,
+    target: `browserslist:${browserslistEnv}`,
     mode: isProduction ? 'production' : 'development',
     bail: isProduction,
     devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
@@ -39,7 +45,7 @@ const config: Configuration = {
     module: {
         strictExportPresence: true,
         rules: [
-            ...getJsLoaders({ ...webpackOptions, hasReactRefresh: false }),
+            ...getJsLoaders({ ...webpackOptions, browserslist: browserslistQuery, hasReactRefresh: false }),
             ...getCssLoaders({ browserslist: undefined, noLogicalScss: true }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],

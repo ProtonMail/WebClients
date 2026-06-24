@@ -1,0 +1,26 @@
+# Default browserlist target for production, should not be overriden
+
+[production]
+> 0.5%
+not IE 11
+Firefox ESR
+Safari 14
+iOS 14
+Chrome 80
+
+[electron-applications]
+Chrome 142
+
+[development]
+last 1 chrome version
+last 1 firefox version
+last 1 safari version
+
+# Browserlist override for specific apps
+
+[verify]
+> 0.1%
+IE 11
+Firefox ESR
+Safari 10
+Chrome 50
