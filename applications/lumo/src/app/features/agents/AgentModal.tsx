@@ -10,7 +10,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     TextAreaTwo,
-    Toggle,
 } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
@@ -198,7 +197,6 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                             })}
                         </div>
                     </div>
-
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
