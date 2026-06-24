@@ -127,7 +127,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
                  * by the `hydrate` call above inside `getUserData` */
                 yield put(withRevalidate(getUserFeaturesIntent(userID)));
                 yield put(withRevalidate(getUserSettings.intent(userID)));
-                yield put(withRevalidate(getOrganizationPauseList.intent()));
+                if (EXTENSION_BUILD) yield put(withRevalidate(getOrganizationPauseList.intent()));
 
                 if (legacySync) {
                     /** In V2 mode these are covered by user events:
