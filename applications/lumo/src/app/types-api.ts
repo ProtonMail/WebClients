@@ -217,12 +217,12 @@ export type RejectedMessage = { type: 'rejected' };
 export type HarmfulMessage = { type: 'harmful' };
 
 /*
- * Structured tool/upstream error emitted mid-stream. The backend forwards the
- * upstream provider error verbatim. The most important case for the client is
- * `code === 'context_length_exceeded'`, which triggers context compaction.
+ * Context-window overflow surfaced mid-stream. The chat-completions adapter maps
+ * the normalised OpenAI error shape to this legacy message for compaction:
+ *   data:{"error":{"code":"context_length_exceeded","type":"invalid_request_error",...}}
  *
- * Wire shape:
- *   data:{"type":"tool-error","error":{"code":"context_length_exceeded","message":"<verbatim upstream body>"}}
+ * Legacy wire shape (still accepted):
+ *   data:{"type":"tool-error","error":{"code":"context_length_exceeded","message":"..."}}
  */
 export type ToolErrorMessage = {
     type: 'tool-error';

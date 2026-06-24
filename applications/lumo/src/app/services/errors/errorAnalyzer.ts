@@ -2,7 +2,9 @@
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { type ErrorContext, LUMO_API_ERRORS } from '../../types';
+import { getTerminalTypeFromApiError } from '../../lib/lumo-api-client/core/generation-terminal';
+import { LUMO_API_ERRORS } from '../../types';
+import { getErrorTypeFromMessage } from './errorHandling';
 
 export interface AnalyzedError {
     category: 'api' | 'network' | 'abort' | 'validation' | 'unknown';
@@ -11,7 +13,7 @@ export interface AnalyzedError {
     lumoErrorType?: LUMO_API_ERRORS;
 }
 
-export function analyzeError(error: any, context: ErrorContext): AnalyzedError {
+export function analyzeError(error: any): AnalyzedError {
     const { code } = getApiError(error);
 
     // Abort errors - user initiated
@@ -30,6 +32,17 @@ export function analyzeError(error: any, context: ErrorContext): AnalyzedError {
             isRetryable: true,
             shouldShowToUser: true,
             lumoErrorType: error.type,
+        };
+    }
+
+    // Terminal generation failures from /chat/completions HTTP responses (pre-stream).
+    const terminalType = getTerminalTypeFromApiError(error);
+    if (terminalType) {
+        return {
+            category: 'api',
+            isRetryable: true,
+            shouldShowToUser: true,
+            lumoErrorType: getErrorTypeFromMessage(terminalType),
         };
     }
 

@@ -101,7 +101,9 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
     };
 
     const isSaveDisabled = !name.trim();
-    const title = existing ? c('collider_2025:Title').t`Edit agent` : c('collider_2025:Title').t`Create agent`;
+    const title = existing
+        ? c('collider_2025:Title').t`Edit custom ${LUMO_SHORT_APP_NAME}`
+        : c('collider_2025:Title').t`Create a custom ${LUMO_SHORT_APP_NAME}`;
 
     return (
         <ModalTwo {...modalProps} onClose={handleClose} size="large">
@@ -163,8 +165,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                             {c('collider_2025:Label').t`Conversation starters (optional)`}
                         </label>
                         <p className="text-sm color-weak mt-0 mb-2">
-                            {c('collider_2025:Info')
-                                .t`Example prompts shown when a conversation with this agent begins.`}
+                            {c('collider_2025:Info').t`Example prompts shown when a conversation begins.`}
                         </p>
                         <div className="flex flex-column gap-2">
                             {starterFields.map((starter, index) => {
