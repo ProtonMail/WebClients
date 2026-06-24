@@ -134,6 +134,7 @@ enum AccountFlag {
     UserGroupsScimGroups = 'UserGroupsScimGroups',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     PasswordReminderASR = 'PasswordReminderASR',
+    RecoveryFileShareEnabled = 'RecoveryFileShareEnabled',
 }
 
 enum PaymentsFlag {
