@@ -31,6 +31,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import recoveryKitSrc from '@proton/styles/assets/img/illustrations/recovery-kit.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import methodErrorSrc from '../../assets/method-error.svg';
@@ -244,11 +245,18 @@ const DownloadPhraseContainer = () => {
     const [generatingData, withGeneratingData] = useLoading(true);
 
     const [recoveryPhraseData, setRecoveryPhraseData] = useState<DeferredMnemonicData>();
+    const isShareFeatureEnabled = useFlag('RecoveryFileShareEnabled');
 
     useEffect(() => {
         const generateMnemonicData = async () => {
             const emailAddress = Email || Name || '';
-            const data = await generateDeferredMnemonicData({ api, emailAddress, username: Name, getUserKeys });
+            const data = await generateDeferredMnemonicData({
+                api,
+                emailAddress,
+                username: Name,
+                getUserKeys,
+                isShareFeatureEnabled,
+            });
 
             setRecoveryPhraseData(data);
         };
