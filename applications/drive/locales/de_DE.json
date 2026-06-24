@@ -4134,6 +4134,9 @@
       ],
       "Unexpected error, we can't import the files": [
         "Unerwarteter Fehler, wir können die Dateien nicht importieren"
+      ],
+      "Folder not found": [
+        "Ordner nicht gefunden"
       ]
     },
     "error": {
@@ -7357,6 +7360,15 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Wir konnten nicht verifizieren, dass ${ nameAuthor } ${ nodeName } hochgeladen hat. Möglicherweise wurde Folgendes manipuliert: Reihenfolge der Dateidaten. Öffne die Datei nur, wenn du ihr vertraust."
+      ],
+      "Could not scan file for malware": [
+        "Die Datei konnte nicht auf Malware überprüft werden"
+      ],
+      "File could not be scanned": [
+        "Datei konnte nicht überprüft werden"
+      ],
+      "File flagged as potentially malicious": [
+        "Datei als potenziell schädlich markiert"
       ]
     },
     "info": {
@@ -11135,6 +11147,9 @@
       ],
       "Search": [
         "Suchen"
+      ],
+      "Search for users or addresses": [
+        "Nach Benutzern oder Adressen suchen"
       ]
     },
     "Placeholder for contact group name": {
@@ -14334,6 +14349,33 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
+      ],
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fehler"
+      ],
+      "Migrated": [
+        "Migriert"
+      ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
+      "Pending": [
+        "Ausstehend"
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
+      "Size": [
+        "Größe"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "q2campaign2026: Action": {
