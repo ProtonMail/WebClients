@@ -1092,6 +1092,25 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Copiar '${ code }' al portapapeles"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Copiar '${ code }' al portapapeles y mover a la papelera"
+      ],
+      "Hide ${ title }": [
+        "Ocultar ${ title }"
+      ],
+      "Previous conversation": [
+        "Conversación anterior"
+      ],
+      "Show ${ title }": [
+        "Mostrar ${ title }"
+      ],
+      "Trust key": [
+        "Confiar clave",
+        "Confiar claves"
       ]
     },
     "action": {
@@ -3305,6 +3324,22 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Para tener acceso ilimitado al asistente de escritura y más, actualice a ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a su suscripción."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicite acceso a su administración."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Se importan sus correos antiguos y se sincronizan los nuevos mensajes de Gmail a partir de ahora."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Está reenviando correos electrónicos de ${ forwardingCount } dirección de Gmail. Al conectarla, podrá recibir y responder en ${ MAIL_APP_NAME }.",
+        "Está reenviando correos electrónicos de ${ forwardingCount } direcciones de Gmail. Al conectarlas, podrá recibir y responder en ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -4067,6 +4102,10 @@
       ],
       "Your import will not be processed.": [
         "No se procesará la importación."
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "No puede abrir más de ${ maxActiveComposer } ventana de editor a la vez",
+        "No puede abrir más de ${ maxActiveComposer } ventanas de editor a la vez"
       ]
     },
     "error": {
@@ -4651,6 +4690,9 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación de escritorio ${ MAIL_APP_NAME }"
+      ],
+      "Start free trial": [
+        "Iniciar la prueba gratuita"
       ]
     },
     "Gmail forwarding": {
@@ -4722,6 +4764,9 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Configurar el asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -6508,6 +6553,150 @@
       ],
       "Insert image": [
         "Insertar imagen"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembro)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembros)"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } de ${ totalProgress }",
+        "${ currentProgress } de ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } conversación se marcará como leída.",
+        "${ elementsCount } conversaciones se marcarán como leídas."
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } mensaje se etiquetará como:",
+        "${ elementsCount } mensajes se etiquetarán como:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } mensaje se marcará como leído.",
+        "${ elementsCount } mensajes se marcarán como leídos."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } mensaje se marcará como no leído.",
+        "${ elementsCount } mensajes se marcarán como no leídos."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } mensaje será movido",
+        "${ elementsCount } mensajes serán movidos"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } imagen incrustada",
+        "${ embeddedAttachmentsCount } imágenes incrustadas"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } le ayuda a redactar mejores correos de forma rápida y sin esfuerzo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panel de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } enlace limpiado",
+        "${ numberOfUTMTrackers } enlaces limpiados"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } ocurrencia encontrada",
+        "${ numOccurrences } ocurrencias encontradas"
+      ],
+      "${ total } message": [
+        "${ total } mensaje",
+        "${ total } mensajes"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } rastreador bloqueado",
+        "${ trackersCount } rastreadores bloqueados"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } mensaje programado",
+        "${ unreadCount } mensajes programados"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** resultado encontrado en ${ labelName }",
+        "**${ total }** resultados encontrados en ${ labelName }"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "¿En verdad desea eliminar permanentemente ${ count } borrador?",
+        "¿En verdad desea eliminar permanentemente ${ count } borradores?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "¿En verdad desea eliminar permanentemente ${ count } mensaje?",
+        "¿En verdad desea eliminar permanentemente ${ count } mensajes?"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "¿Desea descargar este archivo adjunto de todos modos?",
+        "¿Desea descargar estos archivos adjuntos de todos modos?"
+      ],
+      "embedded image": [
+        "imagen incrustada",
+        "imágenes incrustadas"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Expira en menos de ${ hoursDiff } hora",
+        "Expira en menos de ${ hoursDiff } horas"
+      ],
+      "file attached": [
+        "archivo adjunto",
+        "archivos adjuntos"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratis para probar durante ${ ASSISTANT_TRIAL_TIME_DAYS } día",
+        "Gratis para probar durante ${ ASSISTANT_TRIAL_TIME_DAYS } días"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establezca ${ MAIL_APP_NAME } como su aplicación de correo electrónico por defecto."
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Seleccionar ${ elementsCount } elemento en ${ location }",
+        "Seleccionar todos los ${ elementsCount } en ${ location }"
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Error al verificar ${ contactNames }: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
+        "Error al verificar ${ contactNames }: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Esta conversación será marcada como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?",
+        "Estas conversaciones serán marcadas como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Este mensaje será marcado como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?",
+        "Estos mensajes serán marcados como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Tiene ${ unread } en ${ label }."
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Tiene **${ count } mensaje** guardado en esta carpeta",
+        "Tiene **${ count } mensajes** guardados en esta carpeta"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Seleccionó **${ count } mensaje** etiquetado con esta etiqueta",
+        "Seleccionó **${ count } mensajes** etiquetados con esta etiqueta"
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Seleccionó **${ count } conversación** de esta carpeta",
+        "Seleccionó **${ count } conversaciones** de esta carpeta"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Seleccionó **${ elementsCount } conversación** en ${ location }",
+        "Seleccionó **${ elementsCount } conversaciones** en ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Seleccionó **${ elementsCount } conversación**.",
+        "Seleccionó **${ elementsCount } conversaciones**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Seleccionó **${ elementsCount } mensaje** en ${ location }",
+        "Seleccionó **${ elementsCount } mensajes** en ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Seleccionó **${ elementsCount } mensaje**.",
+        "Seleccionó **${ elementsCount } mensajes**."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Su mensaje expirará en ${ numberOfDays } día.",
+        "Su mensaje expirará en ${ numberOfDays } días."
       ]
     },
     "info": {
@@ -7401,6 +7590,54 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Clear logs": [
+        "Borrar registros"
+      ],
+      "Context page": [
+        "Página de contexto"
+      ],
+      "Context total": [
+        "Contexto total"
+      ],
+      "Current context": [
+        "Contexto actual"
+      ],
+      "Elements in store": [
+        "Elementos en el almacén"
+      ],
+      "Filter": [
+        "Filtro"
+      ],
+      "Import your emails": [
+        "Importar sus correos electrónicos"
+      ],
+      "Information": [
+        "Información"
+      ],
+      "Label ID": [
+        "ID de la etiqueta"
+      ],
+      "Mail debugging information": [
+        "Información de depuración de correo"
+      ],
+      "Mail logs": [
+        "Registros de correo"
+      ],
+      "Refresh logs": [
+        "Actualizar registros"
+      ],
+      "Sort": [
+        "Ordenar"
+      ],
+      "Store state": [
+        "Estado del almacén"
+      ],
+      "Tab age": [
+        "Antigüedad de la pestaña"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9153,6 +9390,12 @@
       ],
       "No parent folder": [
         "No hay carpeta principal"
+      ],
+      "Remind me later": [
+        "Recordarme más tarde"
+      ],
+      "Yes, don't show again": [
+        "Sí, no volver a mostrar"
       ]
     },
     "Option group": {
@@ -9730,6 +9973,27 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Anunciar próximos eventos en un boletín”"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Cancelar mi suscripción al gimnasio”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Invitar a Ana a mi fiesta”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Agradecer a mi compañero de trabajo por su ayuda en un proyecto”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Escribir una carta de presentación para unas prácticas”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Escribir un correo de seguimiento a un cliente”"
+      ],
+      "the writing assistant": [
+        "El asistente de escritura"
       ]
     },
     "Placeholder for contact group name": {
@@ -11278,6 +11542,85 @@
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
+      ],
+      "${ count } draft deleted": [
+        "${ count } borrador eliminado",
+        "${ count } borradores eliminados"
+      ],
+      "${ count } message deleted": [
+        "${ count } mensaje eliminado",
+        "${ count } mensajes eliminados"
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } conversación marcada como leída.",
+        "${ elementsCount } conversaciones marcadas como leídas."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } conversación marcada como destacada.",
+        "${ elementsCount } conversaciones marcadas como destacadas."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } conversación marcada como no leída.",
+        "${ elementsCount } conversaciones marcadas como no leídas."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } conversación movida a ${ labelName }.",
+        "${ elementsCount } conversaciones movidas a ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } conversación movida a spam y el remitente agregado a la lista de spam.",
+        "${ elementsCount } conversaciones movidas a spam y los remitentes agregados a la lista de spam."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } conversación borrada de ${ labelName }.",
+        "${ elementsCount } conversaciones borradas de ${ labelName }."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversación borrada de Destacados.",
+        "${ elementsCount } conversaciones borradas de Destacados."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } conversación pausada",
+        "${ elementsCount } conversaciones pausadas"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } conversación con pausa desactivada",
+        "${ elementsCount } conversaciones con pausa desactivadas"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } mensaje agregado a ${ labelName }.",
+        "${ elementsCount } mensajes agregados a ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } mensaje marcado como leído.",
+        "${ elementsCount } mensajes marcados como leídos."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } mensaje marcado como no leído.",
+        "${ elementsCount } mensajes marcados como no leídos."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } mensaje movido a ${ labelName } y remitente agregado a la lista de no spam.",
+        "${ elementsCount } mensajes movidos a ${ labelName } y remitentes agregados a la lista de no spam."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } mensaje movido a ${ labelName }.",
+        "${ elementsCount } mensajes movidos a ${ labelName }."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } mensaje eliminado de ${ labelName }.",
+        "${ elementsCount } mensajes eliminados de ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } mensaje borrado de Destacados.",
+        "${ elementsCount } mensajes borrados de Destacados."
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Se ha copiado '${ code }' al portapapeles"
+      ],
+      "Move ${ selectionCount } message": [
+        "Mover ${ selectionCount } mensaje",
+        "Mover ${ selectionCount } mensajes"
       ]
     },
     "Success notification": {
@@ -12117,6 +12460,43 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } mensaje",
+        "${ numMessages } mensajes"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } mensaje sin leer",
+        "${ unreads } mensajes sin leer"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Redacte mejores correos con ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Delete ${ count } conversation": [
+        "Eliminar ${ count } conversación",
+        "Eliminar ${ count } conversaciones"
+      ],
+      "Delete ${ count } draft": [
+        "Eliminar ${ count } borrador",
+        "Eliminar ${ count } borradores"
+      ],
+      "Delete ${ count } message": [
+        "Eliminar ${ count } mensaje",
+        "Eliminar ${ count } mensajes"
+      ],
+      "Keep this banner hidden?": [
+        "¿Mantener oculta esta barra?"
+      ],
+      "Mailing list": [
+        "Lista de correo",
+        "Listas de correo"
+      ],
+      "Trust new key?": [
+        "¿Confiar clave nueva?",
+        "¿Confiar claves nuevas?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12208,6 +12588,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ]
     },
     "tooltip": {
@@ -12427,6 +12810,10 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Error en la verificación de la firma del archivo adjunto.\nTodavía puede descargar este archivo adjunto, pero puede haber sido manipulado.",
+        "Error en la verificación de algunas firmas de los archivos adjuntos.\nTodavía puede descargar estos archivos adjuntos, pero pueden haber sido manipulados."
       ]
     },
     "Weekly recurring event, frequency": {
@@ -12685,6 +13072,45 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Se omiten los duplicados de las importaciones anteriores. Deshaga o importe mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } día",
+        "${ remainingDaysCount } días"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } día restante",
+        "${ remainingDaysCount } días restantes"
+      ]
+    },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } participante",
+        "${ totalAttendees } participantes"
+      ]
+    },
+    "Key pinning": {
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Ha activado la verificación de direcciones con claves de confianza para esta dirección de correo,\npero no se han confiado claves de cifrado activas.\nDebe confiar en una clave válida para poder enviar mensajes a esta dirección.",
+        "Ha activado la verificación de direcciones con claves de confianza para estas direcciones de correo,\npero no se han confiado claves de cifrado activas.\nDebe confiar en las claves válidas para poder enviar mensajes a estas direcciones."
+      ]
+    },
+    "Send email with errors": {
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Hemos detectado errores. El correo no puede ser enviado a la dirección de correo ingresada por el siguiente motivo:",
+        "Hemos detectado errores. El correo no puede ser enviado a ninguna de las direcciones de correo ingresadas por los siguientes motivos:"
+      ]
+    },
+    "Send email with warnings": {
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Hemos detectado algunas advertencias. Es posible que la siguiente dirección de correo electrónico no reciba correos electrónicos:",
+        "Hemos detectado algunas advertencias. Es posible que las siguientes direcciones de correo electrónico no reciban correos electrónicos:"
       ]
     }
   }

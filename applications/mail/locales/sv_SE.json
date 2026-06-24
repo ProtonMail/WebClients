@@ -1675,6 +1675,13 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
+      ],
+      "View rendered HTML": [
+        "Visa återgiven HTML"
       ]
     },
     "action": {
@@ -5270,6 +5277,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } för <${ email }>. Du kan lägga till en annan nyckel eller inaktivera kryptering för denna kontakt för att lösa problemet."
+      ],
+      "Error while sending the message. Message is not sent.": [
+        "Fel när meddelandet skulle skickas. Meddelandet skickades inte."
+      ],
+      "Maximum expiration time reached.": [
+        "Maximal utgångstid uppnådd."
+      ],
+      "Signature verification error.": [
+        "Fel vid signaturverifiering."
       ]
     },
     "error": {
@@ -8897,6 +8916,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Du har ${ unread } i ${ label }."
       ]
     },
     "info": {
@@ -9983,6 +10005,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Current context": [
+        "Nuvarande kontext"
+      ],
+      "Import your emails": [
+        "Importera din e-post"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10321,6 +10352,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du måste återaktivera dina nycklar för att se den uppdaterade inbjudan"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Återaktivera adressen länkad till denna kalender för att hantera din inbjudan."
       ]
     },
     "Link to calendar event": {
@@ -11858,6 +11892,9 @@
       ],
       "Some popular services": [
         "Några populära tjänster"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Växla tjänsterna du använder varje dag till din ${ BRAND_NAME }-adress för bättre säkerhet och integritet."
       ]
     },
     "Onboarding modal": {
@@ -12073,6 +12110,9 @@
       ],
       "Remind me later": [
         "Påminn mig senare"
+      ],
+      "Yes, don't show again": [
+        "Ja, visa inte igen"
       ]
     },
     "Option group": {
@@ -12680,6 +12720,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "the writing assistant": [
+        "skrivassistenten"
       ]
     },
     "Placeholder for contact group name": {
@@ -12993,6 +13036,12 @@
       ],
       "PGP-signed message. Sender verification failed": [
         "PGP-signerat meddelande. Avsändarverifiering misslyckades"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst"
+      ],
+      "Stored with zero-access encryption": [
+        "Lagrad med kryptering med noll åtkomst"
       ]
     },
     "Referral": {
@@ -13262,6 +13311,9 @@
       "Sent by you with end-to-end encryption to verified recipient": [
         "Skickat av dig med end-to-end-kryptering till verifierad mottagare",
         "Skickat av dig med end-to-end-kryptering till verifierade mottagare"
+      ],
+      "Stored with zero-access encryption": [
+        "Lagrad med kryptering med noll åtkomst"
       ]
     },
     "session_recovery:available:action": {
@@ -14651,6 +14703,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Kopierade '${ code }' till urklipp"
       ]
     },
     "Success notification": {
@@ -15914,6 +15969,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Folder options": [
+        "Mappalternativ"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16492,6 +16550,11 @@
     "Adding expiration to a message will create an expiring message": {
       "Expiring message": [
         "Utlöpt meddelande"
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Krypterad med noll åtkomst. Mottagaren har inaktiverat end-to-end-kryptering på sitt konto."
       ]
     }
   }

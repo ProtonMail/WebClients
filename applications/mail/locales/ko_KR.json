@@ -6599,6 +6599,27 @@
       ],
       "You selected **${ count } conversation** with this label": [
         "이 라벨에 있는 **대화 ${ count }개**를 선택했습니다"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup }개)"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount }개 대화가 다음 이름으로 라벨됩니다:"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount }개 이미지 첨부됨"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "메일 내용에서 ${ numOccurrences }개 발견되었습니다"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount }개 트래커 차단됨"
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "${ location }(에)서 **${ elementsCount }개 메시지**를 선택했습니다."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "메시지가 ${ numberOfDays }일 뒤에 만료됩니다."
       ]
     },
     "info": {
@@ -7506,6 +7527,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "${ CALENDAR_APP_NAME }에서 예약 페이지를 통해 가능한 일정을 공유하고, ${ MEET_APP_NAME }으로 안전하게 회의를 개최하세요."
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "개인 및 업무 이메일, 거기에 중요한 업데이트 및 알림"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11380,6 +11404,24 @@
       ],
       "Recategorized ${ elementsCount } message.": [
         "${ elementsCount }개 메시지가 재분류되었습니다."
+      ],
+      "${ count } message deleted": [
+        "메시지 ${ count }개가 삭제됨"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ labelName } 라벨로 ${ elementsCount }개의 대화를 이동했습니다."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount }개의 대화가 스팸함으로 이동되었고 발신자가 스팸 아님 목록에 추가되었습니다."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ labelName }(에)서 대화 ${ elementsCount }개를 삭제했습니다."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount }개의 메시지가 스팸함으로 이동되고 보낸 사람이 스팸 목록에 추가되었습니다."
+      ],
+      "Move ${ selectionCount } conversation": [
+        "대화 ${ selectionCount }개 이동"
       ]
     },
     "Success notification": {
@@ -12249,6 +12291,9 @@
       ],
       "We protected you from ${ trackersCount } tracker": [
         "${ trackersCount }개 트래커로부터 보호되었습니다"
+      ],
+      "Delete ${ count } draft": [
+        "${ count }개의 초안 삭제"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12864,6 +12909,11 @@
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
         "인증된 수신자에게 제로 액세스 암호화로 발송됨"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays }일"
       ]
     }
   }

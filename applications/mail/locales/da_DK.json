@@ -1108,6 +1108,10 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Trust key": [
+        "Betro nøgle",
+        "Betro nøgler"
       ]
     },
     "action": {
@@ -3334,6 +3338,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi importerer dine gamle e-mails og synkroniserer nye beskeder fra Gmail fremover."
       ]
     },
     "description": {
@@ -6771,6 +6778,9 @@
       ],
       "Insert image": [
         "Indsæt billede"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Du har ${ unread } i ${ label }"
       ]
     },
     "info": {
@@ -7723,6 +7733,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Drive": [
+        "Drev"
+      ],
+      "Import your emails": [
+        "Importér dine e-mails"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13217,6 +13233,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importér ældre beskeder i ${ PRODUCT_NAMES.EASY_SWITCH } indstillinger."
       ]
     }
   }
