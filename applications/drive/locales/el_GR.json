@@ -4134,6 +4134,15 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
+      ],
+      "No drive found to import": [
+        "Δε βρέθηκε drive για εισαγωγή"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των αρχείων"
       ]
     },
     "error": {
@@ -7366,6 +7375,9 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι ο/η ${ nameAuthor } ανέβασε το ${ nodeName }. Το ακόλουθο ενδέχεται να έχει παραποιηθεί: σειρά δεδομένων αρχείου. Ανοίξτε το μόνο αν το εμπιστεύεστε."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ]
     },
     "info": {
