@@ -97,6 +97,7 @@ export const handleCreateUser = async ({
                                 Type: clientType,
                                 Username: username,
                                 Payload: payload,
+                                VisitorId: visitorId,
                                 ...getTokenPayment(paymentToken),
                                 ...getSignupTypeQuery(accountData),
                                 ...getReferralDataQuery(referralData),
