@@ -10,9 +10,7 @@ const result = (opts: WebpackEnvArguments): Configuration => {
 
     return getConfig({
         ...webpackOptions,
-        browserslist: webpackOptions.isProduction
-            ? '>0.1%, IE 11, Firefox ESR, Safari 10, Chrome 50'
-            : webpackOptions.browserslist,
+        browserslistEnv: webpackOptions.isProduction ? 'verify' : webpackOptions.browserslistEnv,
     });
 };
 

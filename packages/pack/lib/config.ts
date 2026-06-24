@@ -100,10 +100,6 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         version: appData.version,
     };
 
-    const defaultBrowsersList = isProduction
-        ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14, Chrome 80`
-        : 'last 1 chrome version, last 1 firefox version, last 1 safari version';
-
     // No logical SCSS is opt-out, to make code easier in config the option is reversed
     const logicalScss = !protonPackOptions.noLogicalScss;
 
@@ -132,7 +128,9 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         api: appData.api,
         appData,
         appMode: protonPackOptions.appMode ?? 'standalone',
-        browserslist: protonPackOptions.browserslist ?? defaultBrowsersList,
+        // Allow application to override the default browserslist query set in browserslistEnv and .browserslistrc
+        browserslist: protonPackOptions.browserslist,
+        browserslistEnv: isProduction ? 'production' : 'development',
         buildData,
         defineWebpackConfig,
         babelLoader: protonPackOptions.babelLoader ?? false,
