@@ -232,6 +232,60 @@ export function sendMessageWithRedux(
                                 dispatch(pushAttachmentRequest({ id: message.image_id }));
                             }
                             break;
+
+                        case 'server_tool_call':
+                            // Server-side tool calls arrive as dedicated `chat.tool_call` SSE chunks
+                            // (parsed into 'server_tool_call' messages in streaming.ts, decrypted in
+                            // decrypt.ts). We funnel them into the same block-render path used by the
+                            // streamed delta tool calls (setToolCall -> setToolCallInBlocks). The
+                            // playground branch routes its tool calls into this exact path too, so
+                            // this stays compatible when that branch is merged in.
+                            //
+                            // Each call is emitted twice: an "announce" chunk (name only) followed by
+                            // a "dispatch" chunk (name + arguments). setToolCallInBlocks replaces the
+                            // announce block with the dispatch block because they share the same name,
+                            // giving streaming-style updates for free.
+                            if (messageId) {
+                                // `arguments` is an object when the backend sends plaintext, a
+                                // decrypted JSON string when encrypted, or absent on the announce.
+                                const rawArguments = message.arguments as unknown;
+                                let toolArguments: unknown;
+                                if (typeof rawArguments === 'string') {
+                                    try {
+                                        toolArguments = JSON.parse(rawArguments);
+                                    } catch {
+                                        toolArguments = rawArguments;
+                                    }
+                                } else {
+                                    toolArguments = rawArguments;
+                                }
+                                dispatch(
+                                    setToolCall({
+                                        messageId,
+                                        content: JSON.stringify({
+                                            name: message.name,
+                                            ...(toolArguments !== undefined ? { arguments: toolArguments } : {}),
+                                        }),
+                                    })
+                                );
+                            }
+                            break;
+
+                        case 'server_tool_result':
+                            // Companion to 'server_tool_call'; routed into the same block-render path
+                            // via setToolResult. `content` is an object for plaintext payloads and a
+                            // decrypted JSON string when encrypted.
+                            if (messageId) {
+                                const rawContent = message.content as unknown;
+                                dispatch(
+                                    setToolResult({
+                                        messageId,
+                                        content:
+                                            typeof rawContent === 'string' ? rawContent : JSON.stringify(rawContent),
+                                    })
+                                );
+                            }
+                            break;
                     }
 
                     // Call the original callback if provided
