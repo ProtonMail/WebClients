@@ -37,6 +37,7 @@ import { logId, logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import chunk from '@proton/utils/chunk';
 import identity from '@proton/utils/identity';
+import noop from '@proton/utils/noop';
 
 import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
@@ -282,10 +283,11 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
         })
     ).Revision;
 
-/** Request a single item */
-export const requestItem = async (shareId: ShareId, itemId: ItemId): Promise<ItemRevision> => {
+/** Requests a single item. Resolves `undefined` on decrypt/parse failure
+ * (corrupted or newer proto version) - still throws on fetch error. */
+export const requestItem = async (shareId: ShareId, itemId: ItemId): Promise<Maybe<ItemRevision>> => {
     const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'get' });
-    return parseItemRevision(shareId, Item);
+    return parseItemRevision(shareId, Item).catch(noop);
 };
 
 export const requestAllItemsForShareId = async (
@@ -306,13 +308,13 @@ export const requestAllItemsForShareId = async (
     })();
 
 /** Will not throw on decryption errors : this avoids blocking the
- *  user if one item is corrupted or is using a newer proto version */
+ * user if one item is corrupted or is using a newer proto version */
 export async function requestItemsForShareId(
     shareId: string,
     onBatch?: (progress: number) => void
 ): Promise<ItemRevision[]> {
     const encryptedItems = await requestAllItemsForShareId({ shareId }, onBatch);
-    const items = await Promise.all(encryptedItems.map((item) => parseItemRevision(shareId, item).catch(() => null)));
+    const items = await Promise.all(encryptedItems.map((item) => parseItemRevision(shareId, item).catch(noop)));
     return items.filter(truthy);
 }
 
