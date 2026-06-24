@@ -5,7 +5,13 @@ import type { ContentKind } from './normalize';
 // characters) so the source stays lint-clean and readable.
 const INVISIBLE_CHARS_RE = /[\u200B-\u200F\u202A-\u202E\u2060\uFEFF]/g;
 const WHITESPACE_RE = /\s+/g;
-const BETWEEN_TAG_WS_RE = /(?<=>)\s+|\s+(?=<)/g;
+
+// Lookbehind is unsupported in Safari 14; we consume the leading boundary and
+// capture the code in group 1 instead.
+//
+// We can restore the commented lookbehind variants once all browsers support it.
+// const BETWEEN_TAG_WS_RE = /(?<=>)\s+|\s+(?=<)/g;
+const BETWEEN_TAG_WS_RE = /(>)\s+|\s+(?=<)/g;
 const HIDDEN_STYLE_RE = /display\s*:\s*none|visibility\s*:\s*hidden|opacity\s*:\s*0|max-height\s*:\s*0/i;
 
 const DROP_TAGS = ['script', 'style', 'meta', 'noscript', 'head'];
@@ -36,7 +42,7 @@ export function clean(text: string): string {
 // `>123456<`-style matches survive attribute quoting and pretty-printed markup.
 // Used to derive `collapsedHtml` once per body for the tag-content extractors.
 export function collapseTagWhitespace(html: string): string {
-    return html.replace(/['"]/g, '').replace(BETWEEN_TAG_WS_RE, '');
+    return html.replace(/['"]/g, '').replace(BETWEEN_TAG_WS_RE, '$1');
 }
 
 export function textNodes(doc: Document): string[] {
