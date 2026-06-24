@@ -4463,6 +4463,9 @@
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Για να συνεχίσετε να χρησιμοποιείτε το ${ LUMO_SHORT_APP_NAME } στο ${ MAIL_APP_NAME }, ζητήστε πρόσβαση από τον διαχειριστή σας."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συγχρονίσουμε τα νέα μηνύματα από το Gmail στο εξής"
       ]
     },
     "description": {
@@ -5457,6 +5460,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "No drive found to import": [
+        "Δε βρέθηκε drive για εισαγωγή"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των αρχείων"
       ]
     },
     "error": {
@@ -9275,6 +9287,9 @@
       ],
       "You have ${ unread } in ${ label }.": [
         "Έχετε ${ unread } στα ${ label } σας."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ]
     },
     "info": {
@@ -10425,6 +10440,9 @@
       ],
       "Mail debugging information": [
         "Πληροφορίες εντοπισμού σφαλμάτων αλληλογραφίας"
+      ],
+      "Import your emails": [
+        "Εισαγωγή των ηλεκτρονικών μηνυμάτων σας"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17026,6 +17044,11 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Τα διπλότυπα από προηγούμενες εισαγωγές θα παραλειφθούν. Αναιρέστε ή εισαγάγετε παλαιότερα μηνύματα στις ρυθμίσεις ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

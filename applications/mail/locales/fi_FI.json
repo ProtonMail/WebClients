@@ -136,7 +136,7 @@
         "Toteuta"
       ],
       "Archive": [
-        "Pakattu"
+        "Arkistoi"
       ],
       "As Scheduled": [
         "Kuten ajoitettu"
@@ -700,7 +700,7 @@
         "Piilota enemmän etuja"
       ],
       "Hide toolbar": [
-        "Piilota työkalurivi"
+        "Piilota työkalupalkki"
       ],
       "Hide-my-email": [
         "Hide-my-email"
@@ -1409,7 +1409,7 @@
         "Näytä sivupaneeli"
       ],
       "Show toolbar": [
-        "Näytä työkalurivi"
+        "Näytä työkalupalkki"
       ],
       "Sign out": [
         "Kirjaudu ulos"
@@ -1430,7 +1430,7 @@
         "Torkutus"
       ],
       "Star": [
-        "Merkitse tähdellä"
+        "Lisää tähti"
       ],
       "Start import": [
         "Aloita tuonti"
@@ -1706,6 +1706,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Show ${ title }": [
+        "Näytä ${ title }"
       ]
     },
     "action": {
@@ -1829,7 +1832,7 @@
         "Merkitse viesti tähdellä"
       ],
       "Unread email": [
-        "Lukematon viesti"
+        "Lukematon sähköposti"
       ],
       "Unstar conversation": [
         "Poista keskustelun tähtimerkintä"
@@ -2165,6 +2168,12 @@
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
+      ],
+      "All": [
+        "Kaikki"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "Browser": {
@@ -2564,7 +2573,7 @@
     },
     "Cancel expiration of the message": {
       "Cancel": [
-        "Keskeytä"
+        "Peruuta"
       ],
       "Cancel expiration": [
         "Peru tuhoutuminen"
@@ -2893,7 +2902,7 @@
         "Siirry arkistoon"
       ],
       "Go to Drafts": [
-        "Avaa luonnokset"
+        "Siirry luonnoksiin"
       ],
       "Go to Inbox": [
         "Siirry saapuneisiin"
@@ -4135,7 +4144,7 @@
         "Kansioita ei ole"
       ],
       "No labels": [
-        "Tunnisteita ei ole"
+        "Ei tunnisteita"
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lue, vastaa ja pysy ajan tasalla Gmailista suoraan ${ MAIL_APP_NAME } -sovelluksessa"
@@ -4289,6 +4298,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Saat rajoittamattoman pääsyn kirjoitusavustajaan ja muihin ominaisuuksiin päivittämällä ${ LUMO_SHORT_APP_NAME }:on."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Tuomme vanhat sähköpostisi ja synkronoimme jatkossa uudet viestit Gmailista"
       ]
     },
     "description": {
@@ -6763,7 +6778,7 @@
         "(suodata, jos JOTKIN seuraavista ehdoista täyttyvät)"
       ],
       "(No Recipient)": [
-        "(Ei vastaanottajaa)"
+        "(Ei vastaanottajia)"
       ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** tulos kohteessa ${ labelName }",
@@ -7047,7 +7062,7 @@
         "Valitse palvelu, johon haluat yhdistää"
       ],
       "Clear browser data": [
-        "Tyhjennä selaimen välimuisti"
+        "Tyhjennä selaimen tiedot"
       ],
       "Clear data": [
         "Tyhjennä tiedot"
@@ -7721,7 +7736,7 @@
         "Joka kuukauden ${ onDayString }"
       ],
       "More info": [
-        "Lisätiedot"
+        "Lisätietoja"
       ],
       "More refine actions": [
         "Lisää parannusehdotuksia"
@@ -7971,7 +7986,7 @@
         "Ensisijainen"
       ],
       "Print email": [
-        "Tulosta viesti"
+        "Tulosta sähköposti"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Yksityinen selaus (tai \"incognito\"-tila) on hyödyllinen pitämään toimintasi piilotettuna vain laitteellasi. Se estää selainta tallentamasta selaushistoriaa ja evästeitä, mutta se ei tee sinusta näkymätöntä. Internet-palveluntarjoajasi, verkon ylläpitäjäsi ja vierailemasi verkkosivustot näkevät edelleen, mitä teet verkossa."
@@ -8522,7 +8537,7 @@
         "Tallentamattomia muutoksia"
       ],
       "Unsubscribe": [
-        "Peru tilaus"
+        "Peruuta tilaus"
       ],
       "Unsupported file": [
         "Tiedostomuotoa ei tueta"
@@ -8987,7 +9002,22 @@
         "Kaikki tiedostosi tuodaan"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovelluksesi."
+        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovellukseksesi"
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME } paneeli"
+      ],
+      "Forgot password?": [
+        "Unohtunut salasana?"
+      ],
+      "Password verified": [
+        "Salasana vahvistettu"
+      ],
+      "RECOMMENDED": [
+        "SUOSITELTU"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Sinulla on ${ unread } viestiä kategoriassa ${ label }."
       ]
     },
     "info": {
@@ -9332,7 +9362,7 @@
         "Kaikki yhteystiedot"
       ],
       "Also archive": [
-        "Siirrä samalla arkistoon"
+        "Arkistoi samalla"
       ],
       "Always label sender's emails": [
         "Merkitse lähettäjän viestit aina tunnisteella"
@@ -10053,6 +10083,54 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Clear logs": [
+        "Tyhjennä lokit"
+      ],
+      "Context page": [
+        "Kontekstisivu"
+      ],
+      "Context total": [
+        "Kontekstin kokonaismäärä"
+      ],
+      "Current context": [
+        "Nykyinen konteksti"
+      ],
+      "Elements in store": [
+        "Elementit säiliössä"
+      ],
+      "Email categories": [
+        "Sähköpostiluokat"
+      ],
+      "Filter": [
+        "Suodata"
+      ],
+      "Import your emails": [
+        "Tuo sähköpostisi"
+      ],
+      "Information": [
+        "Tiedot"
+      ],
+      "Label ID": [
+        "Tunniste"
+      ],
+      "Mail debugging information": [
+        "Sähköpostin virheenkorjaustiedot"
+      ],
+      "Mail logs": [
+        "Sähköpostilokit"
+      ],
+      "Refresh logs": [
+        "Päivitä lokit"
+      ],
+      "Sort": [
+        "Järjestä"
+      ],
+      "Store state": [
+        "Säilö tila"
+      ],
+      "Tab age": [
+        "Välilehden ikä"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10174,7 +10252,7 @@
         "Kaikki viestit"
       ],
       "Archive": [
-        "Pakattu"
+        "Arkistoi"
       ],
       "clearing your browser cache": [
         "selaimen välimuistin tyhjennys"
@@ -10345,7 +10423,7 @@
         "Torkutetut"
       ],
       "Spam": [
-        "Roskapostia"
+        "Roskaposti"
       ],
       "Starred": [
         "Tähdellä"
@@ -10406,7 +10484,7 @@
     },
     "Link to settings": {
       "settings": [
-        "asetuksissa"
+        "asetukset"
       ]
     },
     "Loading info": {
@@ -10507,7 +10585,7 @@
         "Saapuneet"
       ],
       "Spam": [
-        "Roskapostia"
+        "Roskaposti"
       ],
       "Trash": [
         "Poista"
@@ -11681,6 +11759,10 @@
       "Support for ${ n } custom email domain": [
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
+      ],
+      "${ n } country": [
+        "${ n } maa",
+        "${ n } maata"
       ]
     },
     "Notification": {
@@ -11881,7 +11963,7 @@
         "Turvaa tilisi"
       ],
       "Skip for now": [
-        "Ohita toistaiseksi"
+        "Ohita tällä kertaa"
       ],
       "Some popular services": [
         "Jotkut suositut palvelut"
@@ -12689,6 +12771,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Kerro ${ subject }, mitä kirjoittaa. Esimerkki: ”Ilmoita tulevista tapahtumista uutiskirjeessä”"
+      ],
+      "the writing assistant": [
+        "kirjoitusavustaja"
       ]
     },
     "Placeholder for contact group name": {
@@ -12788,6 +12876,9 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Other": [
+        "Muu"
       ]
     },
     "q1campaign: Action": {
@@ -14630,7 +14721,7 @@
         "Ongelma raportoitu"
       ],
       "Public key trusted": [
-        "Julkiseen avaimeen luotettu"
+        "Julkiseen avaimeen luotettiin"
       ],
       "Read receipt sent": [
         "Lukukuittaus lähetettiin"
@@ -14874,7 +14965,7 @@
         "Hanki oma \"@${ PM_DOMAIN }\"-osoite"
       ],
       "Open ": [
-        "Avoin "
+        "Avaa "
       ],
       "Show me how": [
         "Näytä miten"
@@ -15120,7 +15211,7 @@
         "Päiväteema"
       ],
       "Decryption error": [
-        "Salauksen purun virhe"
+        "Salauksen purkuvirhe"
       ],
       "Delete ${ count } contact": [
         "Poista ${ count } yhteystieto",
@@ -15320,7 +15411,7 @@
         "Ihmisvahvistus"
       ],
       "Image": [
-        "Kuvatiedosto"
+        "Kuva"
       ],
       "Import as simple event?": [
         "Tuodaanko yksinkertaisena tapahtumana?",
@@ -15634,7 +15725,7 @@
         "Poistetaanko listalta?"
       ],
       "Reply": [
-        "Vastaus"
+        "Vastaa"
       ],
       "Reply all": [
         "Vastaa kaikille"
@@ -15685,7 +15776,7 @@
         "Lähetä ja vastaanota Gmail-viestejä ${ MAIL_APP_NAME } -sovelluksella"
       ],
       "Send email": [
-        "Lähetä viesti"
+        "Lähetä sähköposti"
       ],
       "Send with changed preferences?": [
         "Lähetetäänkö muuttuneilla asetuksilla?"
@@ -15815,7 +15906,7 @@
         "Kaksivaiheinen tunnistautuminen"
       ],
       "Unsubscribe": [
-        "Peru tilaus"
+        "Peruuta tilaus"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Perutaanko tilaus ${ subscription.Name }?"
@@ -15928,6 +16019,9 @@
       ],
       "Keep this banner hidden?": [
         "Pidä tämä ilmoitus piilossa?"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Luo parempia sähköposteja ${ LUMO_SHORT_APP_NAME }:n avulla"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16511,6 +16605,11 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Aikaisemmista tuonneista peräisin olevat kaksoiskappaleet ohitetaan. Voit peruuttaa toiminnon tai tuoda vanhempia viestejä ${ PRODUCT_NAMES.EASY_SWITCH } -asetuksissa."
       ]
     }
   }

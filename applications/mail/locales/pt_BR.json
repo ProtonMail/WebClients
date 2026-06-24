@@ -1718,6 +1718,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Hide ${ title }": [
+        "Ocultar o ${ title }"
       ]
     },
     "action": {
@@ -4421,6 +4424,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Para acesso ilimitado ao assistente de escrita e muito mais, faça upgrade para ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "description": {
@@ -6724,16 +6730,16 @@
         "${ elementsCount } conversas serão marcadas como:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } conversa será marcada como lida.",
-        "${ elementsCount } conversas serão marcadas como lidas."
+        "A conversa ${ elementsCount } será marcada como lida.",
+        "As conversas ${ elementsCount } serão marcadas como lidas."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } conversa será marcada como não lida.",
-        "${ elementsCount } conversas serão marcadas como não lidas."
+        "A conversa ${ elementsCount } será marcada como não lida.",
+        "As conversas ${ elementsCount } serão marcadas como não lidas."
       ],
       "${ elementsCount } conversation will be moved": [
-        "${ elementsCount } conversa será movida",
-        "${ elementsCount } conversas serão movidas"
+        "A conversa ${ elementsCount } será movida",
+        "As conversas ${ elementsCount } serão movidas"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
         "${ elementsCount } conversa não será rotulada de:",
@@ -6866,7 +6872,7 @@
         "${ storage } de armazenamento"
       ],
       "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } não lida",
+        "${ subscription.UnreadMessageCount } não lidas",
         "${ subscription.UnreadMessageCount } não lidas"
       ],
       "${ total } conversation": [
@@ -7463,7 +7469,7 @@
         "Endereço de e-mail"
       ],
       "Email copied to clipboard": [
-        "E-mail copiado para a área de transferência"
+        "E-mail copiado para área de transferência"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
@@ -7641,7 +7647,7 @@
         "Como funcionam os aliases do hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
-        "Estou enviando essa mensagem para um usuário que não usam o ${ MAIL_APP_NAME }."
+        "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -8120,7 +8126,7 @@
         "Compartilhe qual é o problema"
       ],
       "Please share what you expected": [
-        "Compartilhe o que você esperava"
+        "Por favor, compartilhe o que você esperava"
       ],
       "Please try again in a few moments": [
         "Por favor, tente novamente em alguns instantes"
@@ -10305,6 +10311,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Clear logs": [
+        "Limpar registros"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10636,7 +10645,7 @@
         "Você precisa ativar suas chaves de calendário para gerenciar este convite"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "Você precisa ativar suas chaves de calendário para ver o evento atualizado"
+        "Você precisa ativar suas chaves de calendário para ver o evento atualizado."
       ],
       "You need to activate your calendar keys to see the updated invitation": [
         "Você precisa ativar as chaves de calendário para ver o convite atualizado"
@@ -13073,6 +13082,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Diga ao ${ subject } o que deve ser escrito. Exemplo: \"Convidar a Joana para minha festa\""
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Diga ao ${ subject } o que escrever. Exemplo: “Agradeça ao meu colega de trabalho pela ajuda em um projeto”"
       ]
     },
     "Placeholder for contact group name": {
@@ -13888,7 +13903,7 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensagem criptografada pelo PGP. Erro na verificação do remetente: ${ verificationErrorsMessage }"
+        "Mensagem criptografada pelo PGP. Falha na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Mensagem assinada pelo PGP. Erro na verificação do remetente: ${ verificationErrorsMessage }"
@@ -13903,7 +13918,7 @@
         "Falha na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        "Erro na verificação de chaves de confiança do remetente"
+        "Falha na verificação de chaves confiáveis do remetente"
       ]
     },
     "Signing preference for emails": {
@@ -14198,7 +14213,7 @@
         "Proteção de rastreamento de e-mail"
       ],
       "Schedule send": [
-        "Agendar envio"
+        "Envio agendado"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
         "Este é agora o seu endereço padrão. Abra o menu suspenso para enviar de um endereço diferente. "
@@ -15002,7 +15017,7 @@
         "Mensagem marcada como lida."
       ],
       "Message marked as Starred.": [
-        "Mensagem marcada com estrela."
+        "Mensagem marcada como Favorita."
       ],
       "Message marked as unread.": [
         "Mensagem marcada como não lida."
@@ -15803,7 +15818,7 @@
         "Rotular como"
       ],
       "Label options": [
-        "Opções de marcador"
+        "Opções do marcador"
       ],
       "Limit reached": [
         "Limite atingido"
@@ -16474,6 +16489,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistência instantânea com IA, com um especialista à disposição!"
       ]
     },
     "tooltip": {

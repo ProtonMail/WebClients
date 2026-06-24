@@ -199,7 +199,7 @@
         "パスワードを変更"
       ],
       "Change sorting": [
-        "並べ替えの変更"
+        "並べ替えを変更"
       ],
       "Chat with us": [
         "チャットする"
@@ -250,7 +250,7 @@
         "ここをクリック"
       ],
       "Click to copy ${ defaultEmailAddress } to clipboard": [
-        "クリックして${ defaultEmailAddress }をクリップボードにコピー"
+        "クリックして${ defaultEmailAddress }をコピー"
       ],
       "Close": [
         "閉じる"
@@ -307,7 +307,7 @@
         "${ planOrAppName } に進む"
       ],
       "Continue with categories": [
-        "カテゴリを続ける"
+        "カテゴリで続ける"
       ],
       "Continue with Free": [
         "無料で続行"
@@ -415,7 +415,7 @@
         "下書きを削除"
       ],
       "Delete folder": [
-        "フォルダ削除"
+        "フォルダを削除"
       ],
       "Delete label": [
         "ラベルを削除"
@@ -505,7 +505,7 @@
         "暗号化を編集"
       ],
       "Edit folder": [
-        "フォルダを編集"
+        "フォルダーを編集"
       ],
       "Edit label": [
         "ラベルを編集"
@@ -562,7 +562,7 @@
         "有効期限"
       ],
       "Explore ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }を探索"
+        "${ VPN_APP_NAME }を探検"
       ],
       "Explore other plans": [
         "その他のプランを表示"
@@ -604,7 +604,7 @@
         "パスワードを生成"
       ],
       "Generate text": [
-        "テキストを生成"
+        "文章を生成"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } を ${ priceCoupon }で入手"
@@ -649,7 +649,7 @@
         "ラベルへ移動"
       ],
       "Go to next page": [
-        "次のページに移動"
+        "次のページへ"
       ],
       "Go to page ${ page }": [
         "${ page } ページに移動"
@@ -658,7 +658,7 @@
         "パネル ${ index } に移動"
       ],
       "Go to previous page": [
-        "前のページに移動"
+        "前のページへ"
       ],
       "Go to settings": [
         "設定に移動"
@@ -688,7 +688,7 @@
         "添付ファイルの詳細を隠す"
       ],
       "Hide details": [
-        "詳細を非表示"
+        "詳細を隠す"
       ],
       "Hide messages": [
         "メッセージを非表示"
@@ -901,7 +901,7 @@
         "修正"
       ],
       "Modify selection": [
-        "修正項目"
+        "選択部分を編集"
       ],
       "Monday": [
         "月曜日"
@@ -931,7 +931,7 @@
         "検索オプションを表示"
       ],
       "Most frequent": [
-        "最も頻度の高い"
+        "頻度の高い順"
       ],
       "Most read": [
         "既読が多い順"
@@ -1042,7 +1042,7 @@
         "ソート済みリスト"
       ],
       "Page ${ pageNumber }": [
-        "${ pageNumber }ページ"
+        "ページ ${ pageNumber }"
       ],
       "Passphrase": [
         "パスフレーズ"
@@ -1258,7 +1258,7 @@
         "${ planOrAppName } を選択"
       ],
       "Select All": [
-        "すべて選択"
+        "全て選択"
       ],
       "Select all": [
         "すべて選択"
@@ -1375,7 +1375,7 @@
         "詳細を表示"
       ],
       "Show fewer search options": [
-        "表示する検索オプションを減らします"
+        "検索オプションを非表示"
       ],
       "Show less": [
         "詳細を非表示"
@@ -1832,7 +1832,7 @@
         "会話のスターを外す"
       ],
       "Unstar message": [
-        "星印を外す"
+        "メッセージの星印を外す"
       ]
     },
     "Alternative text for conversation image": {
@@ -2332,7 +2332,7 @@
         "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。"
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "${ participantName } はいずれかの予定への招待を承諾しました。"
+        "${ participantName }はこの予定のうちの一つへの招待を承諾しました。"
       ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } はこの予定への招待を承諾しました。"
@@ -2392,7 +2392,7 @@
         "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } はいずれかの予定への招待を承諾しました。"
+        "${ participantName }はこの予定のうちの一つへの招待を承諾していました。"
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } はこの予定への招待を承諾していました。"
@@ -2401,7 +2401,7 @@
         "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
+        "${ participantName } は招待を承諾し、この予定の新しい時間を提案していました。回答と提案は古くなっています。"
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
@@ -2410,7 +2410,7 @@
         "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } はいずれかの予定への招待を辞退しました。"
+        "${ participantName }はこの予定のうちの一つへの招待を辞退していました。"
       ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } はこの予定への招待を辞退しました。"
@@ -2503,7 +2503,7 @@
         "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。"
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } はいずれかの予定への招待を仮承諾しました。"
+        "${ participantName }はこの予定のうちの一つへの招待を仮承諾しました。"
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "${ participantName } は招待を仮承諾しました。"
@@ -2942,7 +2942,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "エンドツーエンド暗号化"
+        "エンドツーエンド暗号化済み"
       ],
       "End-to-end encrypted to verified recipient": [
         "検証済みの宛先への、エンドツーエンド暗号化による送信"
@@ -4147,7 +4147,7 @@
         "${ senderEmailAddress } と ${ otherSendersCount } からの新しいメールは受信されず、完全に削除されます。"
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
-        "${ senderEmailAddress }からのメールは今後一切受信しません。"
+        "${ senderEmailAddress } からの新しいメールは今後受信されず、完全に削除されます。"
       ],
       "No ads. No trackers.": [
         "広告なし。トラッカーなし。"
@@ -4156,7 +4156,7 @@
         "フォルダがありません。"
       ],
       "No labels": [
-        "ラベルがありません"
+        "ラベルなし"
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }内からGmailの閲覧、返信、最新情報の確認が行えます"
@@ -4310,6 +4310,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "執筆アシスタントなどを無制限に利用するには、${ LUMO_SHORT_APP_NAME } にアップグレードしましょう。"
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "${ MAIL_APP_NAME }内で${ LUMO_SHORT_APP_NAME }を使い続けるには、管理者にアクセスを頼んでください。"
       ]
     },
     "description": {
@@ -4978,7 +4984,7 @@
         "名前、姓、または表示名のいずれかを入力してください。"
       ],
       "Please select a category and what went wrong with the generated text": [
-        "カテゴリと生成されたテキストの間違いを選択してください"
+        "カテゴリと、生成されたテキストの問題を選択してください"
       ],
       "Please select a country": [
         "国を選択してください"
@@ -5107,7 +5113,7 @@
         "テキストが長すぎて修正できません"
       ],
       "Thanks for the feedback!": [
-        "ご意見ありがとうございます!"
+        "ご意見ありがとうございます！"
       ],
       "That action can't be performed on emails in this folder": [
         "このフォルダ内のメールに対して、そのアクションを実行することはできません。"
@@ -5263,7 +5269,7 @@
         "インポートできませんでした。"
       ],
       "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
-        "メッセージの復号化ができませんでした。アドレスキーを削除した場合は、${ reimportKeyLink }して再インポートしてください。${ learnMoreLink }"
+        "メッセージを復号化できませんでした。アドレスキーを削除した場合は、${ reimportKeyLink }して再インポートしてください。${ learnMoreLink }"
       ],
       "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "このメッセージは復号化できません。このメッセージを暗号化するために使用されたキーは、お客様のアドレスに関連付けられたキーのいずれとも一致しません。アドレスキーを削除した場合は、${ reimportKeyLink }してください。${ learnMoreLink }"
@@ -5296,7 +5302,7 @@
         "送信済みのメッセージを受信トレイに移動することはできません"
       ],
       "Sent messages cannot be moved to Spam": [
-        "送信済みのメッセージを迷惑メールに移動することはできません"
+        "送信済みのメールを迷惑メールに移動することはできません"
       ],
       "This action cannot be performed": [
         "このアクションを行うことはできません"
@@ -5962,7 +5968,7 @@
         "残り ${ remainingDaysCount } 日"
       ],
       "Block email communications from scammers permanently.": [
-        "詐欺のメールを永久にブロック"
+        "詐欺メールを永久にブロックしましょう。"
       ],
       "Block unsavory senders": [
         "不適切な送信者をブロックする"
@@ -6738,7 +6744,7 @@
         "アカウントが正常に更新されました。"
       ],
       "Activation in progress": [
-        "アクティベーションが進行中です"
+        "有効化中"
       ],
       "Active": [
         "アクティブ"
@@ -6873,7 +6879,7 @@
         "${ count } 件のメッセージを完全に削除してよろしいですか？"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "本当にこの会話を完全に削除しますか？"
+        "この会話を完全に削除してよろしいですか？"
       ],
       "Are you sure you want to permanently delete this draft?": [
         "この下書きを完全に削除してよろしいですか？"
@@ -7677,7 +7683,7 @@
         "クリアされたリンクはありません"
       ],
       "No messages found": [
-        "メッセージが見つかりませんでした"
+        "メッセージはありません"
       ],
       "No messages to show": [
         "表示するメッセージはありません"
@@ -7692,7 +7698,7 @@
         "該当する項目がありません"
       ],
       "No trackers found": [
-        "トラッカーは見つかりませんでした"
+        "トラッカーなし"
       ],
       "non-${ MAIL_APP_NAME }": [
         "非 ${ MAIL_APP_NAME }"
@@ -7734,7 +7740,7 @@
         "推奨されるアクションと役立つリンクのガイドを開きます。"
       ],
       "Optional": [
-        "オプション"
+        "任意"
       ],
       "or discover other features:": [
         "または他の機能を発見することもできます:"
@@ -7824,7 +7830,7 @@
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
       "Please share what the issue is": [
-        "問題を共有してください"
+        "問題は何ですか"
       ],
       "Please share what you expected": [
         "期待していたことを共有してください"
@@ -7842,7 +7848,7 @@
         "他のブラウザを使用するか、このファイルをダウンロードしてください。"
       ],
       "Please wait for the action to be completed": [
-        "処理が完了するまでしばらくお待ちください。"
+        "処理が完了するまでお待ちください"
       ],
       "Please wait till your changes are synced with the server.": [
         "変更がサーバーで同期されるまでお待ちください。"
@@ -7884,7 +7890,7 @@
         "選択範囲を校正する"
       ],
       "Proofread text": [
-        "テキストを校正する"
+        "文章を校正"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "ニュースレターや迷惑メールの配信リストから、${ hideMyEmailAliasesLink }で自分のメールアドレスを守りましょう。"
@@ -8229,7 +8235,7 @@
         "このファイルは、非常に大きいためプレビューできません"
       ],
       "This invitation is saved in a disabled calendar.": [
-        "招待は無効化されたカレンダーに保存されています。"
+        "この招待は無効化されたカレンダーに保存されています。"
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "これは組織の名称またはニックネームであり、ユーザーに表示されます。いつでも変更できます。"
@@ -8250,7 +8256,7 @@
         "これは、お客様のISPと利用したウェブサイトが、お客様のオンライン上の活動と個人情報を紐づけられないことを意味します。"
       ],
       "This message has a key attached, that has not been trusted yet.": [
-        "このメッセージには、まだ信頼されていないキーが添付されています。"
+        "このメッセージには、まだ信頼されていない鍵が添付されています。"
       ],
       "This message has been adjusted to comply with a dark background.": [
         "このメッセージは暗い背景に合わせるために調整されました。"
@@ -8262,7 +8268,7 @@
         "このメッセージは ${ PASS_APP_NAME } エイリアスからのものです。"
       ],
       "This message is from a mailing list.": [
-        "このメッセージはメーリングリストからのものです。"
+        "これはメーリングリストからのメッセージです。"
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "このメッセージはまだ信頼されていない鍵で署名されています。"
@@ -8397,7 +8403,7 @@
         "追跡"
       ],
       "Trash existing messages": [
-        "既存のメッセージを破棄する"
+        "既存のメッセージを削除"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
@@ -8559,7 +8565,7 @@
         "お客様のお支払いを銀行で認証する必要があります。"
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "広告主や他のユーザーがあなたのオンライン アクティビティを追跡しようとすることから保護するために、次のリンクから追跡情報を削除しました。"
+        "広告主などからあなたのオンラインプライバシーを守るため、次のリンクから追跡情報を削除しました。"
       ],
       "We use 3-D Secure to protect your payments": [
         "支払いを保護するために3Dセキュアを使用しています"
@@ -8682,7 +8688,7 @@
         "招待されたアドレスから返信することはできません。"
       ],
       "You do not have any messages here": [
-        "ここにはメッセージがありません"
+        "ここにはメッセージはありません"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
@@ -8709,7 +8715,7 @@
         "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "このメールには件名がありません。このままメッセージを送信しますか？"
+        "メールに件名がありません。このまま送信してもよろしいですか？"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "ストレージ容量の100%に達しました。新しいメッセージを作成するには、ストレージ容量を少し空けるか、容量追加のためにアップグレードしましょう。"
@@ -8878,6 +8884,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "${ LUMO_SHORT_APP_NAME } パネル"
       ]
     },
     "info": {
@@ -9378,7 +9387,7 @@
         "日付"
       ],
       "Date:": [
-        "日時："
+        "日付:"
       ],
       "Deals, offers, marketing emails": [
         "お得な情報、特典、マーケティングメール"
@@ -9441,7 +9450,7 @@
         "デスクトップ通知を有効にする"
       ],
       "Enable filter": [
-        "フィルターを有効にする"
+        "フィルターを有効化"
       ],
       "Encrypt emails": [
         "メールを暗号化"
@@ -9955,6 +9964,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Email categories": [
+        "メールカテゴリ"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10085,7 +10097,7 @@
         "お問い合わせ"
       ],
       "Create a calendar linked to an active email address.": [
-        "アクティブなメールアドレスにリンクされたカレンダーを作成します。"
+        "有効なメールアドレスにリンクされたカレンダーを作成しましょう。"
       ],
       "Create a new calendar to add this event": [
         "この予定を追加するための新しいカレンダーを作成しましょう"
@@ -10202,7 +10214,7 @@
         "またはカレンダーを削除し、有効なメールアドレスにリンクされたカレンダーを作成することができます。"
       ],
       "Outbox": [
-        "送信箱"
+        "送信トレイ"
       ],
       "Pay invoice": [
         "請求の支払い"
@@ -10238,7 +10250,7 @@
         "設定"
       ],
       "Sign up for free": [
-        "無料でサインアップ"
+        "無料登録"
       ],
       "Snooze": [
         "スヌーズ"
@@ -10262,7 +10274,7 @@
         "利用規約"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
-        "この ICS ファイルには 1 つ以上の予定を含んでいます。ダウンロードして ${ CALENDAR_APP_NAME } で予定をインポートしてください"
+        "この ICS ファイルには ２つ以上の予定が含まれています。ダウンロードして ${ CALENDAR_APP_NAME } で予定をインポートしてください"
       ],
       "Trash": [
         "ごみ箱"
@@ -10286,7 +10298,7 @@
         "この招待を管理するにはカレンダーの鍵を有効にする必要があります"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "更新された予定を表示するには、カレンダーの鍵を有効にする必要があります"
+        "更新されたイベントを表示するには、カレンダーの鍵を有効にする必要があります"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
         "更新された招待を表示するには、カレンダーの鍵を有効にする必要があります"
@@ -11801,7 +11813,7 @@
         "${ addFreePromiseTitle } は、お客様のアプリでスポンサー広告が一切表示されないことを意味します。"
       ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
-        "${ advancedEncryptionTitle } は、お客様と意図した宛先のみがメールにアクセスできることを保証します。"
+        "${ advancedEncryptionTitle } は、あなたと意図した宛先のみがメールにアクセスできることを保証します。"
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } は、詐欺メールが受信トレイに届かないようにします。"
@@ -11810,7 +11822,7 @@
         "App Store での ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
-        "Play Store での ${ MAIL_APP_NAME }"
+        "Play Store の ${ MAIL_APP_NAME }"
       ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } は、お客様がこれ以上インターネット上で追いかけ回されないようにします。"
@@ -11840,7 +11852,7 @@
         "ブラウザ"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "30 日放っておいた迷惑メールや削除されたメールを、自動的に完全に削除しましょう。"
+        "30 日以上前の迷惑メールや削除済みメールを、自動的に消去。"
       ],
       "Continue": [
         "続ける"
@@ -11852,7 +11864,7 @@
         "${ MAIL_APP_NAME } を発見"
       ],
       "Distraction-free emailing": [
-        "自由なメール送信"
+        "集中できるメール"
       ],
       "Download the desktop app": [
         "デスクトップアプリをダウンロード"
@@ -12449,7 +12461,7 @@
         "Cortex Inc."
       ],
       "Describe what to change": [
-        "何を変更するかを説明する"
+        "何を変えたいかを説明しましょう"
       ],
       "E.g., ": [
         "例: "
@@ -12618,6 +12630,12 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "${ subject }に何を書けばいいのか伝えましょう。例：「ニュースレターで今後の予定を知らせる」"
+      ],
+      "the writing assistant": [
+        "執筆アシスタント"
       ]
     },
     "Placeholder for contact group name": {
@@ -12905,10 +12923,10 @@
         "エンドツーエンド暗号化された署名付きメッセージ"
       ],
       "End-to-end encrypted message": [
-        "エンドツーエンド暗号化されたメッセージ"
+        "端末相互間で暗号化されたメッセージ"
       ],
       "End-to-end encrypted message from verified sender": [
-        "検証済みの送信者からの、エンドツーエンド暗号化済みメッセージ"
+        "検証済みの差出人からの、エンドツーエンド暗号化されたメッセージ"
       ],
       "PGP-encrypted and signed message": [
         "PGP 暗号化された署名付きメッセージ"
@@ -13046,7 +13064,7 @@
         "送信予約メッセージはありません"
       ],
       "No results found": [
-        "結果が見つかりません"
+        "何も見つかりませんでした"
       ],
       "No snoozed messages": [
         "スヌーズされたメッセージはありません"
@@ -13201,7 +13219,7 @@
         "検証済みの PGP の宛先への、エンドツーエンド暗号化による送信"
       ],
       "End-to-end encrypted to verified recipient": [
-        "検証済みの宛先への、エンドツーエンド暗号化による送信"
+        "検証済み受信者への端末相互間の暗号化による送信"
       ],
       "PGP-signed": [
         "PGP 署名済み"
@@ -13424,7 +13442,7 @@
         "送信者の検証に失敗しました: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        "送信者の信頼されたキーの検証に失敗しました"
+        "送信者の信頼された鍵の検証に失敗しました"
       ]
     },
     "Signing preference for emails": {
@@ -14406,7 +14424,7 @@
         "会話を${ labelName }に移動し、差出人のアドレスは迷惑メールから除外されました。"
       ],
       "Conversation moved to ${ labelName }.": [
-        "会話が ${ labelName } に移動されました。"
+        "会話を ${ labelName } に移動しました。"
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "会話を迷惑メールに移動し、差出人のアドレスは迷惑メールリストに追加されました。"
@@ -14421,13 +14439,13 @@
         "${ sendersList }との会話は${ labelsList }のラベルが付きます"
       ],
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
-        "${ sendersList }との会話を${ folder }に移動します"
+        "${ sendersList }との会話は${ folder }に移動されます"
       ],
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
       "Draft deleted": [
-        "下書きが削除されました"
+        "下書きを削除しました"
       ],
       "Email address copied to clipboard": [
         "メールアドレスがクリップボードにコピーされました"
@@ -14514,7 +14532,7 @@
         "支払い方法が更新されました"
       ],
       "Phishing reported": [
-        "フィッシングが報告されました"
+        "詐欺を報告しました"
       ],
       "Phone number copied to clipboard": [
         "電話番号がクリップボードにコピーされました"
@@ -14765,7 +14783,7 @@
         "開く "
       ],
       "Show me how": [
-        "方法を表示"
+        "どうやってやるの？"
       ]
     },
     "Title": {
@@ -15250,7 +15268,7 @@
         "ラベル付け"
       ],
       "Label options": [
-        "ラベルオプション"
+        "ラベルの設定"
       ],
       "Limit reached": [
         "上限に達しました"
@@ -15292,7 +15310,7 @@
         "メッセージを既読にする"
       ],
       "Mark messages as unread": [
-        "メッセージを未読にする"
+        "メールを未読にする"
       ],
       "Merge contacts": [
         "連絡先の統合"
@@ -15316,7 +15334,7 @@
         "モバイル"
       ],
       "More": [
-        "もっと見る"
+        "その他"
       ],
       "More actions": [
         "その他の操作"
@@ -15815,6 +15833,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME }でより良いメールを作成"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16356,6 +16377,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "前のインポートとの重複は無視されます。元に戻すか、${ PRODUCT_NAMES.EASY_SWITCH }の設定で古いメールをインポートしましょう。"
       ]
     }
   }

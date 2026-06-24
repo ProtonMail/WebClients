@@ -1520,8 +1520,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Betro nøgle",
+        "Betro nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -4463,6 +4463,9 @@
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Anmod om adgang fra din administrator for at fortsætte med at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Vi importerer dine gamle e-mails og synkroniserer nye beskeder fra Gmail fremover."
       ]
     },
     "description": {
@@ -9269,6 +9272,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME }-panel"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Du har ${ unread } i ${ label }"
       ]
     },
     "info": {
@@ -10416,6 +10422,12 @@
       ],
       "Tab age": [
         "Tab alder"
+      ],
+      "Drive": [
+        "Drev"
+      ],
+      "Import your emails": [
+        "Importér dine e-mails"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17113,6 +17125,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importér ældre beskeder i ${ PRODUCT_NAMES.EASY_SWITCH } indstillinger."
       ]
     }
   }

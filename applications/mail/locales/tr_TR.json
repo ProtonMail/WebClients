@@ -4463,6 +4463,9 @@
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmayı sürdürmek için yöneticinizden erişme izni vermesini isteyin."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Eski e-postalarınız içe aktarılacak ve bundan sonra Gmail üzerine gelen yeni iletiler eşitlenecek"
       ]
     },
     "description": {
@@ -5457,6 +5460,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlayarak yeniden deneyin."
+      ],
+      "No drive found to import": [
+        "İçe aktarılacak drive bulunamadı"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
       ]
     },
     "error": {
@@ -9275,6 +9287,9 @@
       ],
       "You have ${ unread } in ${ label }.": [
         "${ label } etiketinde ${ unread } iletiniz var."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ]
     },
     "info": {
@@ -10425,6 +10440,9 @@
       ],
       "URL": [
         "İnternet adresi"
+      ],
+      "Import your emails": [
+        "E-postalarınızı içe aktarın"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17122,6 +17140,11 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Önceki içe aktarmalardan gelen yinelenen iletiler atlanacak. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski iletileri içe aktarabilirsiniz."
       ]
     }
   }

@@ -4456,6 +4456,9 @@
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicita acceso a tu administrador."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Se importan tus correos antiguos y se sincronizan los nuevos mensajes de Gmail a partir de ahora."
       ]
     },
     "description": {
@@ -5447,6 +5450,15 @@
       ],
       "Address could not be added.": [
         "No se ha podido añadir la dirección."
+      ],
+      "No drive found to import": [
+        "No se ha encontrado ninguna unidad para importar"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hay suficiente espacio de almacenamiento en tu ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no se pueden importar los archivos"
       ]
     },
     "error": {
@@ -9251,6 +9263,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "Panel de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Tienes ${ unread } en ${ label }."
       ]
     },
     "info": {
@@ -10398,6 +10416,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Import your emails": [
+        "Importar tus correos electrónicos"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17078,6 +17099,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Se omiten los duplicados de las importaciones anteriores. Deshaz o importa mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

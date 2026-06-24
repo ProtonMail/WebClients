@@ -9177,6 +9177,9 @@
       ],
       "All your files will be imported": [
         "Alla dina filer kommer att importeras"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Du har ${ unread } i ${ label }."
       ]
     },
     "info": {
@@ -10291,6 +10294,15 @@
       ],
       "Label ID": [
         "Etikett-ID"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "Current context": [
+        "Nuvarande kontext"
+      ],
+      "Import your emails": [
+        "Importera din e-post"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10547,7 +10559,7 @@
         "Integritetspolicy"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Återaktivera adressen som är länkad till denna kalender för att hantera din inbjudan."
+        "Återaktivera adressen länkad till denna kalender för att hantera din inbjudan."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Återaktivera adressen länkad till denna kalender för att uppdatera din inbjudan."
@@ -13030,6 +13042,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "the writing assistant": [
+        "skrivassistenten"
       ]
     },
     "Placeholder for contact group name": {
@@ -15056,6 +15071,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Kopierade '${ code }' till urklipp"
       ]
     },
     "Success notification": {

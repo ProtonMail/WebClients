@@ -1718,6 +1718,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "Copiar '${ code }' al portapapeles"
+      ],
+      "Copy '${ code }' to clipboard and move to Trash": [
+        "Copiar '${ code }' al portapapeles y mover a la papelera"
+      ],
+      "Hide ${ title }": [
+        "Ocultar ${ title }"
+      ],
+      "Show ${ title }": [
+        "Mostrar ${ title }"
       ]
     },
     "action": {
@@ -4442,6 +4454,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
+        "Para tener acceso ilimitado al asistente de escritura y más, actualice a ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a su suscripción."
+      ],
+      "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para seguir usando ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicite acceso a su administración."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Se importan sus correos antiguos y se sincronizan los nuevos mensajes de Gmail a partir de ahora."
       ]
     },
     "description": {
@@ -6129,7 +6153,7 @@
         "No se requiere tarjeta de crédito."
       ],
       "Start free trial": [
-        "Iniciar prueba gratuita"
+        "Iniciar la prueba gratuita"
       ],
       "Try the new desktop app": [
         "Pruebe la nueva aplicación de escritorio"
@@ -6319,6 +6343,9 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Configurar el asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Hint": {
@@ -6393,8 +6420,8 @@
     },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
-        "${ totalAttendees } invitado",
-        "${ totalAttendees } invitados"
+        "${ totalAttendees } participante",
+        "${ totalAttendees } participantes"
       ],
       "Organizer:": [
         "Organizador:"
@@ -8301,7 +8328,7 @@
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Seleccionar ${ elementsCount } elemento en ${ location }",
-        "Seleccionar ${ elementsCount } elemento en ${ location }"
+        "Seleccionar todos los ${ elementsCount } en ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione el formato de correo que quiere usar por defecto al enviar un correo a esta dirección."
@@ -9239,6 +9266,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
+        "${ LUMO_SHORT_APP_NAME } le ayuda a redactar mejores correos de forma rápida y sin esfuerzo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } panel": [
+        "Panel de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "You have ${ unread } in ${ label }.": [
+        "Tiene ${ unread } en ${ label }."
       ]
     },
     "info": {
@@ -10341,6 +10377,54 @@
       ],
       "URL": [
         "URL"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Clear logs": [
+        "Borrar registros"
+      ],
+      "Context page": [
+        "Página de contexto"
+      ],
+      "Context total": [
+        "Contexto total"
+      ],
+      "Current context": [
+        "Contexto actual"
+      ],
+      "Elements in store": [
+        "Elementos en el almacén"
+      ],
+      "Filter": [
+        "Filtro"
+      ],
+      "Import your emails": [
+        "Importar sus correos electrónicos"
+      ],
+      "Information": [
+        "Información"
+      ],
+      "Label ID": [
+        "ID de la etiqueta"
+      ],
+      "Mail debugging information": [
+        "Información de depuración de correo"
+      ],
+      "Mail logs": [
+        "Registros de correo"
+      ],
+      "Refresh logs": [
+        "Actualizar registros"
+      ],
+      "Sort": [
+        "Ordenar"
+      ],
+      "Store state": [
+        "Estado del almacén"
+      ],
+      "Tab age": [
+        "Antigüedad de la pestaña"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13109,6 +13193,27 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Tell ${ subject } what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Anunciar próximos eventos en un boletín”"
+      ],
+      "Tell ${ subject } what to write. Example: “Cancel my gym membership”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Cancelar mi suscripción al gimnasio”"
+      ],
+      "Tell ${ subject } what to write. Example: “Invite Jane to my party”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Invitar a Ana a mi fiesta”"
+      ],
+      "Tell ${ subject } what to write. Example: “Thank my coworker for help on a project”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Agradecer a mi compañero de trabajo por su ayuda en un proyecto”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a cover letter for an internship”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Escribir una carta de presentación para unas prácticas”"
+      ],
+      "Tell ${ subject } what to write. Example: “Write a follow-up email to a client”": [
+        "Dígale a ${ subject } qué escribir. Ejemplo: “Escribir un correo de seguimiento a un cliente”"
+      ],
+      "the writing assistant": [
+        "El asistente de escritura"
       ]
     },
     "Placeholder for contact group name": {
@@ -14896,8 +15001,8 @@
         "${ elementsCount } mensajes marcados como no leídos."
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } mensaje movido a ${ labelName } y el remitente agregado a la lista de no spam.",
-        "${ elementsCount } mensaje movido a ${ labelName } y los remitentes agregados a la lista de no spam."
+        "${ elementsCount } mensaje movido a ${ labelName } y remitente agregado a la lista de no spam.",
+        "${ elementsCount } mensajes movidos a ${ labelName } y remitentes agregados a la lista de no spam."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } mensaje movido a ${ labelName }.",
@@ -15138,6 +15243,9 @@
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
+      ],
+      "Copied '${ code }' to clipboard": [
+        "Se ha copiado '${ code }' al portapapeles"
       ]
     },
     "Success notification": {
@@ -16419,6 +16527,12 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Redacte mejores correos con ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17008,6 +17122,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Se omiten los duplicados de las importaciones anteriores. Deshaga o importe mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

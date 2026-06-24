@@ -8549,8 +8549,8 @@
         "Denne samtalen inneholder meldinger i papirkurven."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne samtalen merkes som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
-        "Disse samtalene merkes som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
+        "Denne samtalen merkes som søppelpost. Ønsker du også å melde deg av fremtidige e-poster?",
+        "Disse samtalene merkes som søppelpost. Ønsker du også å melde deg av fremtidige e-poster?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Denne e-posten har ikke oppfylt domenets autentiseringskrav. Den kan være forfalsket eller feilaktig videresendt."
@@ -14860,8 +14860,8 @@
         "${ elementsCount } samtaler flyttet til ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } samtale flyttet til søppelpost og avsender lagt til søppelpostlisten din.",
-        "${ elementsCount } samtaler flyttet til søppelpost og avsenderene lagt til søppelpostlisten din."
+        "${ elementsCount } samtale er flyttet til søppelpost, og avsenderen er lagt til i søppelpostlisten din.",
+        "${ elementsCount } samtaler er flyttet til søppelpost, og avsenderene er lagt til i søppelpostlisten din."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } samtale fjernet fra ${ labelName }.",
@@ -14876,8 +14876,8 @@
         "${ elementsCount } samtaler slumret"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } samtale slumring av",
-        "${ elementsCount } samtaler slumring av"
+        "${ elementsCount } samtale hentet ut av slumring",
+        "${ elementsCount } samtaler hentet ut av slumring"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } melding lagt til ${ labelName }.",

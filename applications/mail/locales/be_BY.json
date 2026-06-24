@@ -133,7 +133,7 @@
         "Усе непрачытаныя"
       ],
       "All Unstarred": [
-        "Усе без зорачкі"
+        "Усе непазначаныя"
       ],
       "Apply": [
         "Прымяніць"
@@ -661,7 +661,7 @@
         "Перайсці ў меткі"
       ],
       "Go to next page": [
-        "Перайсці на наступную старонку"
+        "Перайсці да наступнай старонкі"
       ],
       "Go to page ${ page }": [
         "Перайсці на старонку ${ page }"
@@ -1441,7 +1441,7 @@
         "Прапусціць спраўджанне"
       ],
       "Snooze": [
-        "Адкладанне"
+        "Адкласці"
       ],
       "Star": [
         "Пазначыць зорачкай"
@@ -1573,7 +1573,7 @@
         "Скасаваць адкладанне"
       ],
       "Unstar": [
-        "Прыбраць зорачку"
+        "Зняць пазнаку"
       ],
       "Unsubscribe": [
         "Адпісацца"
@@ -1898,7 +1898,7 @@
         "Прыбраць зорачку з размовы"
       ],
       "Unstar message": [
-        "Прыбраць зорачку з паведамлення"
+        "Зняць пазнаку з паведамлення"
       ]
     },
     "Alternative text for conversation image": {
@@ -2512,7 +2512,7 @@
         "${ participantName } спытаў аб апошніх абнаўленнях для падзеі, якой больш не існуе ў вашым календары."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } спытаў аб апошніх абнаўленнях для падзеі, якая не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў вашым календары."
+        "${ participantName } спытаў аб апошніх абнаўленнях для падзеі, якая не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў сваім календары."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } адхіліў запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
@@ -2554,7 +2554,7 @@
         "${ participantName } ужо прымаў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо прымаў ваша запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } прымае ваша запрашэнне і прапануе новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ужо адхіляў запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
@@ -2692,7 +2692,7 @@
         "Запрашэнне састарэла. Падзея была абноўлена."
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Гэта прапанова новага часу не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў вашым календары."
+        "Гэта прапанова новага часу не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў сваім календары."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Гэты адказ не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў сваім календары."
@@ -3107,7 +3107,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Зашыфравана скразным метадам"
+        "Скразное шыфраванне"
       ],
       "End-to-end encrypted to verified recipient": [
         "Зашыфравана скразным метадам для спраўджанага атрымальніка"
@@ -5254,7 +5254,7 @@
         "Паспрабуйце яшчэ раз або абнавіце старонку."
       ],
       "Please try generating the text again": [
-        "Паспрабуйце згенераваць тэкст паўторна"
+        "Паспрабуйце згенерыраваць тэкст паўторна"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
@@ -5296,7 +5296,7 @@
         "паўторна актываваць папярэдні ключ"
       ],
       "re-importing": [
-        "паўторнае імпартаванне"
+        "паўторна імпартаваць"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Выдалены дублікат атрымальніка: ${ recipents }",
@@ -5320,7 +5320,7 @@
         "Подпіс не спраўджаны"
       ],
       "Signature verification error.": [
-        "Памылка праверкі подпісу."
+        "Памылка спраўджання подпісу."
       ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
@@ -5539,7 +5539,7 @@
         "Ваша імпартаванне не будзе апрацавана."
       ],
       "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
-        "Ваша паведамленне не можа быць расшыфравана. Паспрабуйце ${ reimportKeyLink } адрасныя ключы, калі вы выдалілі адзін з іх. ${ learnMoreLink }"
+        "Немагчыма расшыфраваць ваша паведамленне. Паспрабуйце ${ reimportKeyLink } адрасныя ключы, калі вы выдалілі адзін з іх. ${ learnMoreLink }"
       ],
       "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Немагчыма расшыфраваць ваша паведамленне. Ключ, які выкарыстоўваўся для шыфравання гэтага паведамлення, не супадае ні з адным з ключоў, якія звязаны з вашым адрасам. Паспрабуйце ${ reimportKeyLink } адрасныя ключы, калі вы выдалялі якія-небудзь з іх. ${ learnMoreLink }"
@@ -7191,7 +7191,7 @@
         "(Фільтраваць, калі выканана ЛЮБАЯ з наступных умоў)"
       ],
       "(No Recipient)": [
-        "(без атрымальніка)"
+        "(Няма атрымальнікаў)"
       ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** вынік знойдзены ў ${ labelName }",
@@ -7938,7 +7938,7 @@
         "тут"
       ],
       "Hide original message": [
-        "Схаваць арыгінальнае паведамленне"
+        "Схаваць зыходнае паведамленне"
       ],
       "High Priority": [
         "Высокі прыярытэт"
@@ -8274,7 +8274,7 @@
         "Спасылкі не ачышчаны"
       ],
       "No messages found": [
-        "Паведамленняў не знойдзена"
+        "Паведамленні не знойдзены"
       ],
       "No messages to show": [
         "Няма паведамленняў для паказу"
@@ -8490,7 +8490,7 @@
         "Вычытаць выбранае"
       ],
       "Proofread text": [
-        "Вычытаць тэкст"
+        "Вычытка тэксту"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Абараняйце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай ${ hideMyEmailAliasesLink }."
@@ -9321,7 +9321,7 @@
         "Вы не можаце адказаць з запрошанага адраса."
       ],
       "You do not have any messages here": [
-        "Тут няма паведамленняў"
+        "У вас пакуль няма тут паведамленняў"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -9360,7 +9360,7 @@
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Вы не пазначылі тэму ліста. Вы ўсё роўна хочаце адправіць паведамленне?"
+        "Вы не вызначылі тэму паведамлення. Усё роўна адправіць паведамленне?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Ёмістасць сховішча запоўнена на 100%. Паспрабуйце вызваліць крыху прасторы або павялічце аб'ём сховішча ў сваім уліковым запісе, каб працягнуць ствараць новыя паведамленні."
@@ -10388,7 +10388,7 @@
         "Метка не знойдзена"
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
-        "Цяпер вы больш не прапусціце важныя паведамленні! Цяпер яны адлюстроўваюцца ў раздзеле ${ primaryCopy }. Усё астатняе адсартавана па катэгорыях, таму іх лёгка знайсці і яны не захламляюць вашу паштовую скрыню."
+        "Больш вы не прапусціце важныя паведамленні! Цяпер яны адлюстроўваюцца ў раздзеле ${ primaryCopy }. Усё астатняе адсартавана па катэгорыях, таму іх лёгка знайсці і яны не захламляюць вашу паштовую скрыню."
       ],
       "Non-promotional content and news": [
         "Нерэкламны змесціва і навіны"
@@ -10529,7 +10529,7 @@
         "Адпраўнік"
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
-        "Абагуляйце сваю даступнасць з дапамогай старонак браніравання ў ${ CALENDAR_APP_NAME } і праводзьце бяспечныя сустрэчы з ${ MEET_APP_NAME }."
+        "Абагульвайце сваю даступнасць з дапамогай старонак браніравання ў ${ CALENDAR_APP_NAME } і праводзьце бяспечныя сустрэчы з ${ MEET_APP_NAME }."
       ],
       "Sign emails": [
         "Падпісваць лісты"
@@ -10870,7 +10870,7 @@
         "Стварыць новы каляндар, каб дадаць гэту падзею"
       ],
       "Create a new calendar to answer this invitation": [
-        "Стварыць новы каляндар, каб адказаць на гэта запрашэнне"
+        "Стварыце новы каляндар, каб адказаць на гэта запрашэнне"
       ],
       "Create a new calendar to manage your invitations": [
         "Стварыць новы каляндар, каб кіраваць вашымі запрашэннямі"
@@ -11332,7 +11332,7 @@
         "Запланаваная адпраўка адроблена"
       ],
       "Scheduling canceled. Message has been moved to Drafts.": [
-        "Планаванне скасавана. Паведамленне было перамешчана ў Чарнавікі."
+        "Планаванне скасавана. Паведамленне было перамешчана ў чарнавікі."
       ],
       "Sending undone": [
         "Адпраўка адроблена"
@@ -13825,13 +13825,13 @@
     },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
-        "Зашыфраванае скразным метадам і падпісанае паведамленне"
+        "Паведамленне падпісана і зашыфравана скразным метадам"
       ],
       "End-to-end encrypted message": [
         "Паведамленне зашыфравана скразным метадам"
       ],
       "End-to-end encrypted message from verified sender": [
-        "Паведамленне зашыфравана скразным метадам ад праверанага адпраўніка"
+        "Паведамленне зашыфравана скразным метадам ад спраўджанага адпраўніка"
       ],
       "PGP-encrypted and signed message": [
         "Паведамленне падпісана і зашыфравана з дапамогай PGP"
@@ -14446,7 +14446,7 @@
     },
     "Sort option": {
       "Largest first": [
-        "Спачатку самыя вялікія"
+        "Спачатку вялікія"
       ],
       "Newest first": [
         "Спачатку самыя новыя"
@@ -15512,7 +15512,7 @@
         "Змесціва скапіявана ў буфер абмену"
       ],
       "Conversation added to ${ labelName }.": [
-        "Размова дададзена ў ${ labelName }."
+        "Размова дададзена да ${ labelName }"
       ],
       "Conversation deleted": [
         "Размова выдалена"
@@ -16530,7 +16530,7 @@
         "Больш дзеянняў"
       ],
       "More options": [
-        "Дадатковыя параметры"
+        "Пашыраныя налады"
       ],
       "More selections": [
         "Дадатковыя варыянты выбару"
@@ -17717,6 +17717,11 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }

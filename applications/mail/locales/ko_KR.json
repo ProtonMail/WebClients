@@ -6582,7 +6582,7 @@
         "${ currentProgress } / ${ totalProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount }개 대화가 다음으로 라벨됩니다:"
+        "${ elementsCount }개 대화가 다음 이름으로 라벨됩니다:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount }개 대회가 읽음으로 표시됩니다."
@@ -10043,6 +10043,9 @@
       ],
       "Mail debugging information": [
         "메일 디버깅 정보"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "개인 및 업무 이메일, 거기에 중요한 업데이트 및 알림"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14428,7 +14431,7 @@
         "${ labelName } 라벨로 ${ elementsCount }개의 대화를 이동했습니다."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "대화 ${ elementsCount }개가 스팸으로 이동되고 보낸 사람이 스팸 목록에 추가되었습니다."
+        "${ elementsCount }개의 대화가 스팸함으로 이동되었고 발신자가 스팸 아님 목록에 추가되었습니다."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName }(에)서 대화 ${ elementsCount }개를 삭제했습니다."
@@ -15137,7 +15140,7 @@
         "${ count }개의 대화 삭제"
       ],
       "Delete ${ count } draft": [
-        "${ count } 개의 임시 메일 삭제"
+        "${ count }개의 초안 삭제"
       ],
       "Delete ${ count } message": [
         "메시지 ${ count }개 삭제"

@@ -1115,7 +1115,7 @@
         "La confirmation de lecture a été envoyée."
       ],
       "Recently read": [
-        "Récemment lu"
+        "Lu récemment"
       ],
       "Recently received": [
         "Récemment reçus"
@@ -1241,7 +1241,7 @@
         "Enregistrement${ ellipsis }"
       ],
       "Schedule message": [
-        "Programmer l'envoi"
+        "Programmer le message"
       ],
       "Scroll to bottom": [
         "Défiler vers le bas"
@@ -1872,7 +1872,7 @@
         "Retirer la conversation des Favoris"
       ],
       "Unstar message": [
-        "Retirer le message des Favoris"
+        "Retirer le message des favoris"
       ]
     },
     "Alternative text for conversation image": {
@@ -4463,6 +4463,9 @@
       ],
       "To continue to use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Pour continuer à utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, demandez l'accès à votre administrateur."
+      ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Nous importerons vos anciens messages et synchroniserons désormais les nouveaux messages provenant de Gmail."
       ]
     },
     "description": {
@@ -5457,6 +5460,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "No drive found to import": [
+        "Aucun lecteur détecté pour l'importation"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
       ]
     },
     "error": {
@@ -5621,7 +5633,7 @@
         "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
       ],
       "An error occurred with the categories": [
-        "Une erreur est survenue avec les catégories"
+        "Une erreur est survenue avec les catégories."
       ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
@@ -6150,7 +6162,7 @@
         "Aucune carte bancaire n’est nécessaire."
       ],
       "Start free trial": [
-        "Commencer votre essai gratuit"
+        "Commencer l'essai gratuit"
       ],
       "Try the new desktop app": [
         "Essayez la nouvelle application de bureau"
@@ -6171,8 +6183,8 @@
         "${ remainingDaysCount } jours"
       ],
       "${ remainingDaysCount } day left": [
-        "${ remainingDaysCount } jour restant.",
-        "${ remainingDaysCount } jours restants."
+        "${ remainingDaysCount } jour restant",
+        "${ remainingDaysCount } jours restants"
       ],
       "Block email communications from scammers permanently.": [
         "Bloquez définitivement les messages envoyés par les escrocs."
@@ -6787,8 +6799,8 @@
         "${ elementsCount } conversations seront déplacées."
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } conversation ne sera plus labellisée de :",
-        "${ elementsCount } conversations ne seront plus labellisées de :"
+        "${ elementsCount } conversation ne sera plus labellisée",
+        "${ elementsCount } conversations ne seront plus labellisées"
       ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } message sera labellisé",
@@ -6841,16 +6853,16 @@
         "${ n } conversations non lues"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } lien nettoyé",
-        "${ numberOfUTMTrackers } liens nettoyés"
+        "${ numberOfUTMTrackers } lien a été nettoyé.",
+        "${ numberOfUTMTrackers } liens ont été nettoyés."
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } message dans la conversation",
         "${ NumMessages } messages dans la conversation"
       ],
       "${ numOccurrences } occurrence found": [
-        "${ numOccurrences } occurrence trouvée",
-        "${ numOccurrences } occurrences trouvées"
+        "${ numOccurrences } occurrence a été trouvée.",
+        "${ numOccurrences } occurrences ont été trouvées."
       ],
       "${ numOccurrences } occurrence found in the mail content": [
         "${ numOccurrences } occurrence a été trouvée dans le contenu de l'e-mail.",
@@ -6945,8 +6957,8 @@
         "${ unreadCount } newsletters"
       ],
       "${ unreadCount } scheduled message": [
-        "${ unreadCount } message a été programmé.",
-        "${ unreadCount } messages ont été programmés."
+        "${ unreadCount } message est programmé.",
+        "${ unreadCount } messages sont programmés."
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
@@ -6972,10 +6984,10 @@
         "(filtrer si UNE des conditions suivantes est remplie)"
       ],
       "(No Recipient)": [
-        "(aucun destinataire)"
+        "(Aucun destinataire)"
       ],
       "**${ total }** result found in ${ labelName }": [
-        "**${ total }** résultat a été trouvé dans ${ labelName }.",
+        "**${ total }** a été trouvé dans ${ labelName }.",
         "**${ total }** résultats ont été trouvés dans ${ labelName }."
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
@@ -7283,7 +7295,7 @@
         "Effacer la sélection"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "En effaçant les données du navigateur, vous désactivez aussi la recherche dans le contenu des messages sur cet appareil. Pour effectuer par la suite une recherche dans vos messages, il faudra télécharger à nouveau tous vos messages."
+        "En effaçant les données du navigateur, vous désactivez aussi la recherche dans le contenu des messages sur cet appareil. Pour effectuer une recherche dans vos messages, il faudra les télécharger à nouveau."
       ],
       "Clears browser data (including downloaded messages, …)": [
         "Efface les données du navigateur (y compris les messages téléchargés…)"
@@ -7607,7 +7619,7 @@
         "Expire dans ${ minutesDiff } minutes"
       ],
       "Expires in less than ${ hoursDiff } hour": [
-        "Expire dans moins d'une ${ hoursDiff } heure",
+        "Expire dans moins de ${ hoursDiff } heure",
         "Expire dans moins de ${ hoursDiff } heures"
       ],
       "file attached": [
@@ -8324,8 +8336,8 @@
         "Vous êtes à jour."
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Sélectionnez ${ elementsCount } dans ${ location }.",
-        "Sélectionnez ${ elementsCount } dans ${ location }."
+        "Sélectionner tous les ${ elementsCount } dans ${ location }",
+        "Sélectionner tous les ${ elementsCount } dans ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
@@ -8530,8 +8542,8 @@
         "L'expéditeur a demandé une confirmation de lecture."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "${ contactNames } n'a pas pu être vérifié : le contact n'est pas correctement signé.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer le contact pour pouvoir envoyer un message à ${ contactAddresses } ou le modifier.",
-        "${ contactNames } n'a pas pu être vérifié : les contacts ne sont pas correctement signés.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer les contacts pour pouvoir envoyer un message à ${ contactAddresses } ou les modifier."
+        "${ contactNames } n'a pas pu être vérifié : le contact n'est pas correctement signé.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer le contact pour pouvoir envoyer un message à ${ contactAddresses } ou modifier le contact.",
+        "${ contactNames } n'ont pas pu être vérifiés : les contacts ne sont pas correctement signés.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer les contacts pour pouvoir envoyer un message à ${ contactAddresses } ou les modifier."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
@@ -8631,8 +8643,8 @@
         "Ce message sera automatiquement supprimé le ${ value }."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Ce message sera considéré indésirable. Voulez-vous aussi vous désabonner des prochains messages ?",
-        "Ces messages seront considérés indésirables. Voulez-vous aussi vous désabonner des prochains messages ?"
+        "Ce message sera considéré comme indésirable. Voulez-vous aussi vous désabonner des prochains messages ?",
+        "Ces messages seront considérés comme indésirables. Voulez-vous aussi vous désabonner des prochains messages ?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Ce message sera déplacé dans le dossier Brouillons pour que vous puissiez le modifier. Vous devrez reprogrammer la date et l'heure d'envoi."
@@ -9061,12 +9073,12 @@
         "Vous avez **${ count } conversations** stockées dans ce dossier."
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Vous avez **${ count } conversation** marqué avec ce label.",
+        "Vous avez **${ count } conversation** marquée avec ce label.",
         "Vous avez **${ count } conversations** marquées avec ce label."
       ],
       "You have **${ count } message** stored in this folder": [
-        "Vous avez **${ count } message** stocké dans ce dossier",
-        "Vous avez **${ count } messages** stocké dans ce dossier"
+        "Vous avez **${ count } message** stocké dans ce dossier.",
+        "Vous avez **${ count } messages** stockés dans ce dossier."
       ],
       "You have **${ count } message** tagged with this label": [
         "Vous avez **${ count } message** marqué avec ce label.",
@@ -9110,8 +9122,8 @@
         "Vous avez sélectionné **${ count } messages** avec ce label."
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Vous avez sélectionné **${ elementsCount } conversation** dans ${ location }",
-        "Vous avez sélectionné **${ elementsCount } conversations** dans ${ location }"
+        "Vous avez sélectionné **${ elementsCount } conversation** dans ${ location }.",
+        "Vous avez sélectionné **${ elementsCount } conversations** dans ${ location }."
       ],
       "You selected **${ elementsCount } conversation**.": [
         "Vous avez sélectionné **${ elementsCount } conversation**.",
@@ -9275,6 +9287,9 @@
       ],
       "You have ${ unread } in ${ label }.": [
         "Vous avez ${ unread } dans ${ label }."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ]
     },
     "info": {
@@ -10070,7 +10085,7 @@
         "Aucun label n'a été trouvé."
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
-        "Vous ne manquerez plus de messages importants ! Ceux-ci apparaissent désormais sous ${ primaryCopy }. Tout le reste est trié par catégorie, ce qui les rend faciles à trouver et évite d'encombrer votre boîte de réception."
+        "Plus aucun message important manqué ! Ceux-ci apparaissent désormais sous ${ primaryCopy }. Tout le reste est trié par catégorie, ce qui les rend faciles à trouver et évite d'encombrer votre boîte de réception."
       ],
       "Non-promotional content and news": [
         "Contenu non-promotionnel et actualités"
@@ -10425,6 +10440,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Import your emails": [
+        "Importez vos messages"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12156,7 +12174,7 @@
         "La phrase secrète a été copiée dans le presse-papiers."
       ],
       "Password has been set successfully": [
-        "Le mot de passe a été défini."
+        "Le mot de passe a bien été défini."
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "L'expéditeur ${ firstSenderAddress } a été bloqué."
@@ -12387,7 +12405,7 @@
         "navigateur"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Supprimez les e-mails dans la corbeille et les spams après 30 jours."
+        "Supprimez les e-mails dans la corbeille et indésirables après 30 jours."
       ],
       "Continue": [
         "Continuer"
@@ -13045,7 +13063,7 @@
         "Filtrez les groupes."
       ],
       "Filter labels": [
-        "Filtrez les labels."
+        "Filtrer les labels"
       ],
       "Filter quick actions": [
         "Filtrer les actions rapides"
@@ -13650,7 +13668,7 @@
         "Aucun message n'est programmé."
       ],
       "No results found": [
-        "Aucun résultat trouvé."
+        "Aucun résultat n'a été trouvé."
       ],
       "No snoozed messages": [
         "Aucun message en attente"
@@ -14383,7 +14401,7 @@
     },
     "Step": {
       "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
-        "Saisissez votre adresse ${ MAIL_APP_NAME } comme nouvelle adresse, enregistrez-la, confirmez-la ou vérifiez les modifications."
+        "Saisissez votre adresse ${ MAIL_APP_NAME } comme nouvelle adresse, puis enregistrez, confirmez ou vérifiez les modifications."
       ],
       "In the account settings, look for the option to edit or change your email address ": [
         "Dans les paramètres du compte, recherchez l'option pour modifier ou changer votre adresse e-mail. "
@@ -14925,16 +14943,16 @@
     },
     "Success": {
       "${ count } conversation deleted": [
-        "${ count } conversation a été supprimée",
-        "${ count } conversations ont été supprimées"
+        "${ count } conversation a été supprimée.",
+        "${ count } conversations ont été supprimées."
       ],
       "${ count } draft deleted": [
-        "${ count } brouillon supprimé",
-        "${ count } brouillons supprimés"
+        "${ count } brouillon a été supprimé.",
+        "${ count } brouillons ont été supprimés."
       ],
       "${ count } message deleted": [
-        "${ count } message supprimé",
-        "${ count } messages supprimés"
+        "${ count } message a été supprimé.",
+        "${ count } messages ont été supprimés."
       ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contact semble identique.",
@@ -14945,16 +14963,16 @@
         "${ elementsCount } conversations ont été ajoutées à ${ labelName }."
       ],
       "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } conversation marquée comme lue.",
-        "${ elementsCount } conversations marquées comme lues."
+        "${ elementsCount } conversation a été marquée comme lue.",
+        "${ elementsCount } conversations ont été marquées comme lues."
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } conversation a été marquée comme favorite.",
         "${ elementsCount } conversations ont été marquées comme favorites."
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } conversation marquée comme non lue.",
-        "${ elementsCount } conversations marquées comme non lues."
+        "${ elementsCount } conversation a été marquée comme non lue.",
+        "${ elementsCount } conversations ont été marquées comme non lues."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } conversation a été déplacée vers ${ labelName } et l'expéditeur a été ajouté à votre liste des non indésirables/spam.",
@@ -14986,7 +15004,7 @@
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } message a été ajouté à ${ labelName }.",
-        "${ elementsCount } messages ont été ajoutés à ${ labelName }"
+        "${ elementsCount } messages ont été ajoutés à ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } message a été marqué comme lu.",
@@ -14997,8 +15015,8 @@
         "${ elementsCount } messages marqués comme favoris."
       ],
       "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } message est marqué comme non lu.",
-        "${ elementsCount } messages sont marqués comme non lus."
+        "${ elementsCount } message a été marqué comme non lu.",
+        "${ elementsCount } messages ont été marqués comme non lus."
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } conversation a été déplacée vers ${ labelName } et l'expéditeur a été ajouté à votre liste des non indésirables/spam.",
@@ -15089,7 +15107,7 @@
         "La conversation a été retirée des favoris."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
-        "Les conversations de ${ sendersList } seront labellisées comme ${ labelsList }"
+        "Les conversations de ${ sendersList } seront labellisées comme ${ labelsList }."
       ],
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
         "Les conversations de ${ sendersList } seront déplacées vers ${ folder }."
@@ -15174,8 +15192,8 @@
         "Déplacer ${ selectionCount } conversations"
       ],
       "Move ${ selectionCount } message": [
-        "Déplacer ${ selectionCount } message.",
-        "Déplacer ${ selectionCount } messages."
+        "Déplacer ${ selectionCount } message",
+        "Déplacer ${ selectionCount } messages"
       ],
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
@@ -15208,8 +15226,8 @@
         "La confirmation de lecture a été envoyée."
       ],
       "Recategorized ${ elementsCount } message.": [
-        "${ elementsCount } message recatégorisé.",
-        "${ elementsCount } message recatégorisés."
+        "${ elementsCount } message a été recatégorisé.",
+        "${ elementsCount } messages ont été recatégorisés."
       ],
       "Secret passphrase updated": [
         "Phrase secrète mise à jour"
@@ -15838,7 +15856,7 @@
         "Le nom du filtre ne doit pas contenir uniquement des espaces."
       ],
       "Filter on...": [
-        "Filtrer"
+        "Filtrer sur"
       ],
       "Folder options": [
         "Options de dossier"
@@ -17122,6 +17140,11 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     }
   }
