@@ -25,6 +25,9 @@ export default defineConfig([
             'monorepo-cop/no-relative-import-outside-package': 'off',
             'import/no-extraneous-dependencies': 'off',
             'import/no-cycle': 'off',
+
+            // TODO: Remove this rule once the compat issue is resolved
+            'compat/compat': 'off',
         },
     },
 ]);

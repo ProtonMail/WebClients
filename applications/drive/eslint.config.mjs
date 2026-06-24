@@ -54,6 +54,9 @@ export default defineConfig([
             'max-classes-per-file': 'off',
             // TODO: Remove this rule once the cycle dependency is fixed
             'import/no-cycle': 'off',
+
+            // TODO: Remove this rule once the compat issue is resolved
+            'compat/compat': 'off',
         },
     },
     {
