@@ -1019,6 +1019,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit booking page": [
+        "Muokkaa varaussivua"
       ]
     },
     "action": {
@@ -1437,6 +1440,12 @@
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
+      ],
+      "All": [
+        "Kaikki"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "Browser": {
@@ -6514,6 +6523,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Forgot password?": [
+        "Unohtunut salasana?"
+      ],
+      "Password verified": [
+        "Salasana vahvistettu"
+      ],
+      "RECOMMENDED": [
+        "SUOSITELTU"
       ]
     },
     "info": {
@@ -8705,6 +8723,10 @@
       "Support for ${ n } custom email domain": [
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
+      ],
+      "${ n } country": [
+        "${ n } maa",
+        "${ n } maata"
       ]
     },
     "Note": {
@@ -9808,6 +9830,9 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Other": [
+        "Muu"
       ]
     },
     "q1campaign: Action": {
@@ -12380,6 +12405,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
       ]
     },
     "tooltip": {
