@@ -18,6 +18,8 @@ export const getGroupSourcedRoleIds = (roles: RoleAssignment[]): Set<string> =>
 
 export const isOrgKeyRequired = (role: OrganizationRole): boolean => ROLE_NAMES_REQUIRING_ORG_KEY.has(role.Name);
 
+export const isOwnerRole = (role: OrganizationRole): boolean => role.Name === PREDEFINED_ROLE_NAME.OWNER;
+
 export const isLegacyOrgAdminState = (isLegacyOrgAdmin: boolean, adminRolesIds: Set<string>): boolean =>
     isLegacyOrgAdmin && adminRolesIds.size === 0;
 
