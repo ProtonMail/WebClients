@@ -95,9 +95,9 @@ export function* notifyInactiveShares() {
  * 1. Anchor the V2 cursor at the server's current state. This MUST happen
  *    before draining so that V2 polling will cover any events that occur
  *    during the drain window. The drain processes V1 events up to this
- *    point, and V2 continues from here — no gap, no overlap.
+ *    point, and V2 continues from here.
  * 2. Revalidate user-access and organization state (may have changed while
- *    V1 was active).
+ *    V1 was active). These writes commit immediately.
  * 3. Drain all V1 channels imperatively:
  *    a. Per-share events (parallel across all shares, recursive until no
  *       `EventsPending`)
@@ -105,8 +105,9 @@ export function* notifyInactiveShares() {
  *    c. Invites (user + group)
  * 4. Commit the strategy switch + store the V2 event cursor.
  *
- * If any step throws, the caller should keep the old strategy and retry
- * on next boot. */
+ * Step 4 is the only atomic commit that flips the client to V2. If any step
+ * throws before it, the strategy stays LEGACY and the migration retries on
+ * next boot. Step-2 revalidations are harmless and re-run on the next attempt. */
 export function* migrateV2(options: RootSagaOptions) {
     /** 1. Anchor V2 event cursor at current server state */
     const userEventId: string = yield call(getUserEventLatestID);

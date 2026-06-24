@@ -24,12 +24,14 @@ export function* processItemsUpdated(updated: SyncEventShareItemOutput[]): Event
             Promise.allSettled(batch.map(({ ShareID, ItemID }) => requestItem(ShareID, ItemID)))
         );
 
-        const items = results
+        const fulfilled = results
             .filter((res): res is PromiseFulfilledResult<Maybe<ItemRevision>> => res.status === 'fulfilled')
             .map(prop('value'));
 
-        if (items.length < batch.length) processed = false;
-        if (items.length > 0) yield put(itemsUpdated(items.filter(truthy)));
+        const items = fulfilled.filter(truthy);
+
+        if (fulfilled.length < batch.length) processed = false;
+        if (items.length > 0) yield put(itemsUpdated(items));
     }
 
     return processed;
