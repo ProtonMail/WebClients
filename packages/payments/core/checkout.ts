@@ -244,7 +244,7 @@ export type CheckoutCouponDiscountBreakdown = ReturnType<typeof getCouponDiscoun
  * whenever the breakdown is absent or fails any invariant, so callers fall back to the aggregate coupon
  * discount and existing behavior is preserved.
  */
-const getCouponDiscountBreakdownInfo = ({
+export const getCouponDiscountBreakdownInfo = ({
     checkResult,
     planIDs,
     planName,
