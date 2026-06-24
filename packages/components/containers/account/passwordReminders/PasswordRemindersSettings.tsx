@@ -37,7 +37,7 @@ const PasswordRemindersSettings = () => {
 
     const enablePasswordReminders = async () => {
         await dispatch(setPasswordReminderFlag({ value: PASSWORD_REMINDERS_VALUE.ENABLED }));
-        createNotification({ text: c('Success').t`Password reminders enabled` });
+        createNotification({ text: c('Success').t`Password check-ins enabled` });
         sendEnable();
     };
 
@@ -51,7 +51,7 @@ const PasswordRemindersSettings = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="passwordRemindersToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Password reminders`}</span>
+                        <span className="mr-2">{c('Label').t`Password check-ins`}</span>
                         <Info
                             title={c('Info')
                                 .t`Periodically prompts you to verify your ${BRAND_NAME} password to ensure you don't forget it. You'll be asked less frequently over time.`}
