@@ -168,6 +168,7 @@ export const handleSetupUser = async ({
     referralRegistrationPlan,
     build,
     telemetryContext,
+    isShareFeatureEnabled,
 }: {
     accountData: AccountData;
     api: Api;
@@ -181,6 +182,7 @@ export const handleSetupUser = async ({
     referralRegistrationPlan: ReferralRegistrationPlan | undefined;
     build: APP_NAMES;
     telemetryContext: PaymentTelemetryContext;
+    isShareFeatureEnabled: boolean;
 }) => {
     const { username, email, domain, password, signupType } = accountData;
 
@@ -252,6 +254,7 @@ export const handleSetupUser = async ({
                 return userKeys;
             },
             api,
+            isShareFeatureEnabled,
         });
     } catch (error) {
         /**

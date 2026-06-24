@@ -1,6 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
+import { isIos } from '@proton/shared/lib/helpers/browser';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -90,18 +91,39 @@ export const generateRecoveryFileMessage = async ({
     return message;
 };
 
-export const exportRecoveryFile = async ({
+export class RecoveryFileShareAbortedError extends Error {
+    constructor() {
+        super('Recovery file download canceled by user');
+        Object.setPrototypeOf(this, RecoveryFileShareAbortedError.prototype);
+    }
+}
+
+export const generateRecoveryFile = async ({
     recoverySecret,
     userKeys,
 }: {
     recoverySecret: string;
     userKeys: DecryptedKey[];
 }) => {
-    const message = await generateRecoveryFileMessage({
+    return generateRecoveryFileMessage({
         recoverySecret,
         privateKeys: userKeys.map(({ privateKey }) => privateKey),
     });
+};
+
+export const exportRecoveryFile = async (message: string, isShareFeatureEnabled: boolean) => {
     const blob = new Blob([message], { type: 'text/plain' });
+    const file = new File([blob], RECOVERY_FILE_FILE_NAME, { type: 'text/plain' });
+
+    if (isShareFeatureEnabled && isIos() && navigator.canShare?.({ files: [file] })) {
+        return navigator.share({ files: [file] }).catch((error) => {
+            if (typeof error === 'object' && error.name === 'AbortError') {
+                throw new RecoveryFileShareAbortedError();
+            } else {
+                throw error;
+            }
+        });
+    }
     downloadFile(blob, RECOVERY_FILE_FILE_NAME);
 };
 
