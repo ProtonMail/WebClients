@@ -1,11 +1,12 @@
 import type { KeyboardEvent } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { Form, FormikProvider } from 'formik';
 import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -58,10 +59,8 @@ const EditGroupModal = () => {
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
 
-    const [selectedRoles, setSelectedRoles] = useState<Set<string>>(
-        () => new Set(groupData?.GroupOrganizationRoles?.map(({ Role }) => Role.OrganizationRoleID) ?? [])
-    );
     const [organizationRoles, loadingRoles] = useOrganizationRoles();
+    const groupAssignableRoles = organizationRoles?.filter((role) => !isOwnerRole(role));
     const showRolesTab = useFlag('AdminRoleMVP');
 
     const onCancel = () => {
@@ -231,9 +230,9 @@ const EditGroupModal = () => {
                                       title: c('group_modal').t`Roles and permissions`,
                                       content: (
                                           <RolesAndPermissionsTab
-                                              selectedRoles={selectedRoles}
-                                              onChange={setSelectedRoles}
-                                              organizationRoles={organizationRoles}
+                                              selectedRoles={new Set(formValues.adminRoles)}
+                                              onChange={(roles) => setFieldValue('adminRoles', Array.from(roles))}
+                                              organizationRoles={groupAssignableRoles}
                                               loadingRoles={loadingRoles}
                                               isGroupContext
                                           />
