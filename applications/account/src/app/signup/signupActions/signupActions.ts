@@ -398,6 +398,7 @@ export const handleSetupUser = async ({
     reportPaymentSuccess,
     reportPaymentFailure,
     telemetryContext,
+    isShareFeatureEnabled,
 }: {
     cache: SignupCacheResult;
     api: Api;
@@ -407,6 +408,7 @@ export const handleSetupUser = async ({
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
     telemetryContext?: PaymentTelemetryContext;
+    isShareFeatureEnabled: boolean;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { username, email, domain, password, signupType },
@@ -485,6 +487,7 @@ export const handleSetupUser = async ({
                 return userKeys;
             },
             api,
+            isShareFeatureEnabled,
         });
     }
 
