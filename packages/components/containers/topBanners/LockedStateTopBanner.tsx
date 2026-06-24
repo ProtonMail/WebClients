@@ -1,11 +1,14 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { selectPreviousSubscription } from '@proton/account/previousSubscription';
+import { useGetPreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { PLANS, getPlanName } from '@proton/payments';
+import { PLANS, type PlanIDs, getPlanName, getPlanNameFromIDs } from '@proton/payments';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -14,11 +17,20 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
+import noop from '@proton/utils/noop';
 
 import TopBanner from './TopBanner';
 
-const StorageBannerText = ({ type, cta, user }: { type: UserLockedFlags; cta: ReactNode; user: UserModel }) => {
-    switch (type) {
+const StorageBannerText = ({
+    lockedFlag,
+    cta,
+    user,
+}: {
+    lockedFlag: UserLockedFlags;
+    cta: ReactNode;
+    user: UserModel;
+}) => {
+    switch (lockedFlag) {
         case UserLockedFlags.BASE_STORAGE_EXCEEDED:
             const mailStorage = getAppStorage(MAIL_SHORT_APP_NAME);
             // Translator: Your Mail storage is full. To send or receive emails, free up space or upgrade for more storage.
@@ -51,8 +63,8 @@ const StorageBannerText = ({ type, cta, user }: { type: UserLockedFlags; cta: Re
     }
 };
 
-const getCTAText = (type: UserLockedFlags) => {
-    switch (type) {
+const getCTAText = (lockedFlag: UserLockedFlags) => {
+    switch (lockedFlag) {
         case UserLockedFlags.BASE_STORAGE_EXCEEDED:
         case UserLockedFlags.DRIVE_STORAGE_EXCEEDED:
         case UserLockedFlags.STORAGE_EXCEEDED:
@@ -64,34 +76,108 @@ const getCTAText = (type: UserLockedFlags) => {
     }
 };
 
-const StorageBannerCTA = ({
+const useUpgradePath = ({
+    subscription,
+    user,
+    lockedFlag,
+    app,
+}: {
+    subscription: MaybeFreeSubscription;
+    user: UserModel;
+    lockedFlag: UserLockedFlags;
+    app: APP_NAMES;
+}) => {
+    const currentSubscriptionPlanName = subscription ? getPlanName(subscription) : undefined;
+
+    const getPreviousSubscription = useGetPreviousSubscription();
+    const store = useStore();
+    const previousSubscription = selectPreviousSubscription(store.getState()).value?.previousSubscription;
+    const canRestoreFullAccess = lockedFlag === UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN;
+
+    useEffect(
+        function conditionallyFetchPreviousSubscription() {
+            if (canRestoreFullAccess) {
+                getPreviousSubscription().catch(noop);
+            }
+        },
+        [canRestoreFullAccess]
+    );
+
+    if (canRestoreFullAccess) {
+        const previousSubscriptionPlanIDs: PlanIDs = previousSubscription?.plans ?? {};
+        const previousSubscriptionPlanName = getPlanNameFromIDs(previousSubscriptionPlanIDs);
+
+        const planName = currentSubscriptionPlanName ?? previousSubscriptionPlanName;
+
+        const target = planName ? 'checkout' : 'compare';
+
+        return getUpgradePath({ user, plan: planName, target });
+    }
+
+    const fallbackPlanName = (() => {
+        if (currentSubscriptionPlanName) {
+            return currentSubscriptionPlanName;
+        }
+
+        return app === APPS.PROTONDRIVE ? PLANS.DRIVE : PLANS.MAIL;
+    })();
+
+    return getUpgradePath({ user, plan: fallbackPlanName, subscription });
+};
+
+const UpgradeSettingsLink = ({
     user,
     subscription,
     upsellRef,
-    plan,
-    type,
+    lockedFlag,
+    ctaText,
+    app,
 }: {
     user: UserModel;
     subscription: MaybeFreeSubscription;
     upsellRef: string | undefined;
-    plan: PLANS;
-    type: UserLockedFlags;
+    lockedFlag: UserLockedFlags;
+    ctaText: string | undefined;
+    app: APP_NAMES;
 }) => {
-    const ctaText = getCTAText(type);
-    return type === UserLockedFlags.ORG_ISSUE_FOR_MEMBER ? (
-        <Href href={getKnowledgeBaseUrl('/free-plan-limits')}>{ctaText}</Href>
-    ) : (
-        <SettingsLink
-            key="upgrade-link"
-            className="color-inherit"
-            path={addUpsellPath(getUpgradePath({ user, plan, subscription }), upsellRef)}
-        >
+    const upgradePath = useUpgradePath({ subscription, user, lockedFlag, app });
+
+    return (
+        <SettingsLink key="upgrade-link" className="color-inherit" path={addUpsellPath(upgradePath, upsellRef)}>
             {ctaText}
         </SettingsLink>
     );
 };
 
-const getBannerTypeFromLockedFlags = (lockedFlags: number): UserLockedFlags | null => {
+const StorageBannerCTA = ({
+    user,
+    subscription,
+    upsellRef,
+    lockedFlag,
+    app,
+}: {
+    user: UserModel;
+    subscription: MaybeFreeSubscription;
+    upsellRef: string | undefined;
+    lockedFlag: UserLockedFlags;
+    app: APP_NAMES;
+}) => {
+    const ctaText = getCTAText(lockedFlag);
+    return lockedFlag === UserLockedFlags.ORG_ISSUE_FOR_MEMBER ? (
+        <Href href={getKnowledgeBaseUrl('/free-plan-limits')}>{ctaText}</Href>
+    ) : (
+        <UpgradeSettingsLink
+            user={user}
+            subscription={subscription}
+            upsellRef={upsellRef}
+            ctaText={ctaText}
+            lockedFlag={lockedFlag}
+            app={app}
+        />
+    );
+};
+
+const getLockedFlagFromLockedFlags = (lockedFlags: number): UserLockedFlags | null => {
     if (hasBit(lockedFlags, UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN)) {
         return UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN;
     }
@@ -125,15 +211,9 @@ interface Props {
 }
 
 export const LockedStateTopBanner = ({ app, user, subscription, upsellRef, lockedFlags }: Props) => {
-    const planName = getPlanName(subscription);
-    let plan = planName;
-    if (plan === undefined) {
-        plan = app === APPS.PROTONDRIVE ? PLANS.DRIVE : PLANS.MAIL;
-    }
+    const lockedFlag = getLockedFlagFromLockedFlags(lockedFlags);
 
-    const type = getBannerTypeFromLockedFlags(lockedFlags);
-
-    if (type === null) {
+    if (lockedFlag === null) {
         // Unknown flag, don't show banner
         return null;
     }
@@ -144,14 +224,14 @@ export const LockedStateTopBanner = ({ app, user, subscription, upsellRef, locke
             user={user}
             subscription={subscription}
             upsellRef={upsellRef}
-            plan={plan}
-            type={type}
+            app={app}
+            lockedFlag={lockedFlag}
         />
     );
 
     return (
         <TopBanner className="bg-danger" data-testid="storage-banner:lock-state">
-            <StorageBannerText type={type} cta={cta} user={user} />
+            <StorageBannerText lockedFlag={lockedFlag} cta={cta} user={user} />
         </TopBanner>
     );
 };
