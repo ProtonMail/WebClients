@@ -159,6 +159,14 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('checkIfFeatureFlagIsEnabled', [featureFlag])
   }
 
+  async getDocumentUrl(): Promise<string> {
+    return this.invokeClientMethod('getDocumentUrl', [])
+  }
+
+  async replaceDocumentUrl(url: string): Promise<void> {
+    return this.invokeClientMethod('replaceDocumentUrl', [url])
+  }
+
   public handleReplyFromClient(message: ClientToEditorReplyMessage): void {
     const pendingMessage = this.pendingMessages.find((m) => m.messageId === message.messageId)
     if (pendingMessage) {

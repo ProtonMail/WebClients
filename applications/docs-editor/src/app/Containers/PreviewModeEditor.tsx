@@ -1,3 +1,5 @@
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
+import type { MouseEventHandler } from 'react'
 import { SafeLexicalComposer } from '../Tools/SafeLexicalComposer'
 import { BuildInitialEditorConfig } from '../Lib/InitialEditorConfig'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
@@ -7,8 +9,6 @@ import { ProtonContentEditable } from '../ContentEditable/ProtonContentEditable'
 import { DefaultFont } from '../Shared/Fonts'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { EditorSystemMode, type DocumentRole } from '@proton/docs-shared'
-import type { MouseEventHandler } from 'react'
-import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
 import Toolbar from '../Toolbar/Toolbar'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import type { EditorState } from 'lexical'
@@ -17,6 +17,9 @@ import { $rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestio
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { setScrollableTablesActive } from '@lexical/table'
 import { isHTMLElement } from '../Utils/guard'
+import { TableOfContents } from '../Components/TableOfContents'
+import DocsLayout from './DocsLayout'
+import { useIsAlpha } from '../Hooks/useIsAlpha'
 
 export function PreviewModeEditor({
   clonedEditorState,
@@ -31,6 +34,8 @@ export function PreviewModeEditor({
   clientInvoker: EditorRequiresClientMethods
   initialScrollTop: number | null
 }) {
+  const isAlpha = useIsAlpha()
+
   const handlePreviewModeLinkClick: MouseEventHandler = useCallback(
     (event) => {
       const target = event.target
@@ -47,6 +52,9 @@ export function PreviewModeEditor({
     },
     [clientInvoker],
   )
+
+  const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
+  const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
 
   return (
     <SafeLexicalComposer
@@ -70,37 +78,36 @@ export function PreviewModeEditor({
         isPreviewModeToolbar
         systemMode={EditorSystemMode.PublicView}
       />
-      <RichTextPlugin
-        contentEditable={
-          <div
-            className="relative overflow-auto"
-            style={{
-              gridColumn: '1 / 3',
-              gridRow: '2',
+      <DocsLayout.Grid>
+        {isAlpha && (
+          <DocsLayout.LeftPanel>
+            <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
+          </DocsLayout.LeftPanel>
+        )}
+        <RichTextPlugin
+          contentEditable={
+            <DocsLayout.RightPanel>
+              <ProtonContentEditable
+                className={clsx(
+                  'DocumentEditor w-full max-w-full overflow-x-hidden px-[10%] lg:w-full lg:max-w-full lg:pl-4 lg:pr-[var(--right-panel-padding)] print:w-full print:max-w-full',
+                )}
+                style={{
+                  fontFamily: DefaultFont.value,
+                  gridRow: 1,
+                  gridColumn: 1,
+                  justifySelf: 'center',
+                }}
+                isSuggestionMode={false}
+                data-testid="preview-mode-editor"
+                onClick={handlePreviewModeLinkClick}
+              />
+            </DocsLayout.RightPanel>
+          }
+          placeholder={null}
+          ErrorBoundary={LexicalErrorBoundary}
+        />
+      </DocsLayout.Grid>
 
-              display: 'grid',
-              gridTemplateRows: '1fr',
-            }}
-          >
-            <ProtonContentEditable
-              className={clsx(
-                'DocumentEditor w-[80%] max-w-[80%] lg:w-[816px] lg:max-w-[816px] print:w-full print:max-w-full',
-              )}
-              style={{
-                fontFamily: DefaultFont.value,
-                gridRow: 1,
-                gridColumn: 1,
-                justifySelf: 'center',
-              }}
-              isSuggestionMode={false}
-              data-testid="preview-mode-editor"
-              onClick={handlePreviewModeLinkClick}
-            />
-          </div>
-        }
-        placeholder={null}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
       <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />
       <PreviewScrollRestorePlugin initialScrollTop={initialScrollTop} />
       <PreviewCleanupPlugin />
