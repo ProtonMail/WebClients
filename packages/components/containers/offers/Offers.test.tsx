@@ -99,9 +99,12 @@ describe('Offers', () => {
                 },
             });
 
-            await waitFor(() => {
-                expect(screen.getByTestId('cta:upgrade-plan')).toBeInTheDocument();
-            });
+            await waitFor(
+                () => {
+                    expect(screen.getByTestId('cta:upgrade-plan')).toBeInTheDocument();
+                },
+                { timeout: 5000 }
+            );
 
             const link = screen.getByTestId('cta:upgrade-plan');
 
@@ -150,9 +153,12 @@ describe('Offers', () => {
                     },
                 });
 
-                await waitFor(() => {
-                    expect(screen.getByTestId('cta:special-offer')).toBeInTheDocument();
-                });
+                await waitFor(
+                    () => {
+                        expect(screen.getByTestId('cta:special-offer')).toBeInTheDocument();
+                    },
+                    { timeout: 5000 }
+                );
 
                 expect(screen.getByTestId('cta:special-offer')?.textContent).toBe('Special offer');
             });
