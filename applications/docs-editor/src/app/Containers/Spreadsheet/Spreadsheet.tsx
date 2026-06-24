@@ -123,6 +123,13 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       .then((enabled) => setIsDriftDetectionEnabled(enabled || isDevOrBlack()))
       .catch(console.error)
   }, [clientInvoker])
+  const [isPatchesStorageEnabled, setIsPatchesStorageEnabled] = useState(false)
+  useEffect(() => {
+    void clientInvoker
+      .checkIfFeatureFlagIsEnabled('SheetsPatchesStorageEnabled')
+      .then((enabled) => setIsPatchesStorageEnabled(enabled))
+      .catch(console.error)
+  }, [clientInvoker])
 
   const state = useProtonSheetsState({
     docState,
@@ -133,6 +140,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     hasBasePatchesStored,
     isDriftDetectionEnabled,
     onYjsDriftDetected: handleYjsDriftDetected,
+    isPatchesStorageEnabled,
   })
   const didSetInitialVersion = useRef(false)
   const { setInitialVersion } = useVersioning(
