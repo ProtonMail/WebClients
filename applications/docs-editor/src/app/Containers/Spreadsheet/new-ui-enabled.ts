@@ -1,6 +1,5 @@
-import { isDevOrBlack } from '@proton/utils/env'
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { useApplication } from '../ApplicationProvider'
+import { useIsAlpha } from '../../Hooks/useIsAlpha'
 
 const LOCAL_STORAGE_KEY = 'new-ui-enabled-new-key'
 const EVENT_NAME = 'konami-time'
@@ -24,7 +23,7 @@ const KONAMI_SEQUENCE = [
 const KONAMI_SEQUENCE_JOINED = KONAMI_SEQUENCE.join(',')
 
 export function useNewUIEnabled() {
-  const { application } = useApplication()
+  const isAlpha = useIsAlpha()
   const [enabled, setEnabled] = useState(() => isEnabled())
 
   useEffect(() => {
@@ -41,8 +40,7 @@ export function useNewUIEnabled() {
   }, [])
 
   useEffect(() => {
-    const canBeToggled = isDevOrBlack() || application.environment === 'alpha'
-    if (!canBeToggled) {
+    if (!isAlpha) {
       if (!isEnabled()) {
         updateLocalStorage(true) // Force enable the new UI if not in dev or alpha
       }
@@ -59,7 +57,7 @@ export function useNewUIEnabled() {
 
     window.addEventListener('keydown', handleKeydown)
     return () => window.removeEventListener('keydown', handleKeydown)
-  }, [application.environment, updateLocalStorage])
+  }, [isAlpha, updateLocalStorage])
 
   return enabled
 }
