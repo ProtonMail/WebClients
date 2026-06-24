@@ -230,6 +230,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (itemsDeleteEvent.match(action)) {
             const { shareId } = action.payload;
             const itemIds = new Set(action.payload.itemIds);
+            if (!state[shareId]) return state;
 
             return { ...state, [shareId]: objectFilter(state[shareId], (itemId) => !itemIds.has(itemId)) };
         }

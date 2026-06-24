@@ -9,6 +9,7 @@ import type {
     SyncEventChangedWithTokenOutput,
     SyncEventShareItemOutput,
 } from '@proton/pass/types';
+import { NoDefaultVaultError } from '@proton/pass/utils/errors/errors';
 
 /** Alias notes are retrieved at the UI layer level for now, no need
  * to process this event for now. If we ever decide to cache the `slNote`
@@ -26,7 +27,10 @@ export function* processPendingAliasToCreate(event?: MaybeNull<SyncEventChangedW
         yield put(aliasPendingCreated(items));
 
         return true;
-    } catch {
+    } catch (err) {
+        /** Avoid blocking the parent event cursor if syncing
+         * pending aliases cannot succeed on vault-less account */
+        if (err instanceof NoDefaultVaultError) return true;
         return false;
     }
 }

@@ -4,12 +4,13 @@ import { createAliasesFromPending, getPendingAliases } from '@proton/pass/lib/al
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { selectUserDefaultShareID } from '@proton/pass/store/selectors';
 import type { AliasPending, ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
+import { NoDefaultVaultError } from '@proton/pass/utils/errors/errors';
 import { logger } from '@proton/pass/utils/logger';
 
 export function* syncPendingAliases(): Generator<unknown, ItemRevision[]> {
     try {
         const shareId: Maybe<string> = yield select(selectUserDefaultShareID);
-        if (!shareId) throw new Error('Could not resolve user default vault');
+        if (!shareId) throw new NoDefaultVaultError('Missing default vault for pending aliases');
 
         const pendingAliases: AliasPending[] = yield getPendingAliases();
         const encryptedItems: ItemRevisionContentsResponse[] = yield createAliasesFromPending({
