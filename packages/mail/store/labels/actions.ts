@@ -79,14 +79,14 @@ export const deleteLabel = ({
 
 export const updateLastSeenEventId = ({
     labelID,
-    lastEventID,
 }: {
     labelID: string;
-    lastEventID: string;
 }): ThunkAction<Promise<void>, RequiredState & CategoriesState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
+        const lastEventID = extra.eventManager.getEventID();
         const folder = selectCategories(getState()).value?.find((label) => label.ID === labelID);
-        if (!folder || !hasUnseenTracking(folder) || folder.LastUnseenMessageEventID === null) {
+
+        if (!folder || !hasUnseenTracking(folder) || folder.LastUnseenMessageEventID === null || !lastEventID) {
             return;
         }
 
