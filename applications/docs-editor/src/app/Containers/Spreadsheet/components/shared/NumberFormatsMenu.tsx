@@ -5,6 +5,7 @@ import { CURRENCY } from '../../constants'
 import { createStringifier } from '../../stringifier'
 import * as UI from '../ui'
 import { useUI } from '../../ui-store'
+import { useIsSheetsCustomDateTimeFormatEnabled, useIsSheetsCustomNumberFormatEnabled } from '../../feature-flags'
 
 const { s } = createStringifier(strings)
 
@@ -40,6 +41,8 @@ export type NumberFormatsMenuPopoverProps = {
 function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopoverProps) {
   const menu = Ariakit.useMenuContext()
   const values = Ariakit.useStoreState(menu, 'values')
+  const isSheetsCustomNumberFormatEnabled = useIsSheetsCustomNumberFormatEnabled()
+  const isSheetsCustomDateTimeFormatEnabled = useIsSheetsCustomDateTimeFormatEnabled()
   const currencySubMenu = Ariakit.useMenuStore({ values, focusLoop: true })
   const currencyMounted = Ariakit.useStoreState(currencySubMenu, 'mounted')
   const Menu = asSubmenu ? UI.SubMenu : UI.Menu
@@ -170,12 +173,16 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
       <UI.MenuItem leadingIndent onClick={customCurrencyFormatDialogStore.show}>
         {s('Custom currency')}
       </UI.MenuItem>
-      <UI.MenuItem leadingIndent onClick={customNumberFormatDialogStore.show}>
-        {s('Custom number')}
-      </UI.MenuItem>
-      <UI.MenuItem leadingIndent onClick={customDateAndTimeFormatDialogStore.show}>
-        {s('Custom date and time')}
-      </UI.MenuItem>
+      {isSheetsCustomNumberFormatEnabled && (
+        <UI.MenuItem leadingIndent onClick={customNumberFormatDialogStore.show}>
+          {s('Custom number')}
+        </UI.MenuItem>
+      )}
+      {isSheetsCustomDateTimeFormatEnabled && (
+        <UI.MenuItem leadingIndent onClick={customDateAndTimeFormatDialogStore.show}>
+          {s('Custom date and time')}
+        </UI.MenuItem>
+      )}
     </Menu>
   )
 }
