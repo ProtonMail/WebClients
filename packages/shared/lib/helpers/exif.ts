@@ -1,8 +1,8 @@
 function loadImage(file: File): Promise<ImageBitmap> {
-    if (!('createImageBitmap' in window)) {
-        throw new Error('createImageBitmap is not supported in this environment');
+    if ('createImageBitmap' in window) {
+        return createImageBitmap(file);
     }
-    return createImageBitmap(file);
+    throw new Error('createImageBitmap is not supported in this environment');
 }
 
 async function removeImageMetadata(file: File): Promise<File> {

@@ -53,7 +53,7 @@ export const convertToRetentionRuleFormData = (retentionRule: RetentionRule): Re
 };
 
 export const generateClientIDForRuleScope = () => {
-    return CLIENT_ID_PREFIX + crypto.randomUUID();
+    return CLIENT_ID_PREFIX + crypto.getRandomValues(new Uint8Array(16)).toHex();
 };
 
 export const isClientIDRuleScope = (id: string) => {

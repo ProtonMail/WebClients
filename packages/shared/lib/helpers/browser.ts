@@ -147,7 +147,6 @@ export const isLinux = () => ua.ua.match(/(L|l)inux/);
 export const isDebianBased = () => !!ua.os.name && ['Ubuntu', 'Debian'].includes(ua.os.name);
 export const isFedoraOrRedHatBased = () => !!ua.os.name && ['Fedora', 'Red Hat'].includes(ua.os.name);
 export const hasTouch = typeof document === 'undefined' ? false : 'ontouchstart' in document.documentElement;
-export const hasCookie = () => navigator.cookieEnabled;
 export const getOs = () => ua.os;
 export const getBrowser = () => ua.browser;
 export const getDevice = () => ua.device;
@@ -190,6 +189,7 @@ export const hasPDFSupport = () => {
     // mimeTypes is deprecated in favor of pdfViewerEnabled.
     return (
         (navigator.mimeTypes && 'application/pdf' in navigator.mimeTypes) ||
+        // eslint-disable-next-line compat/compat
         navigator.pdfViewerEnabled ||
         (isFirefox() && isDesktop()) ||
         isIos() ||

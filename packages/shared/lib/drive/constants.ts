@@ -8,6 +8,7 @@ export const FOLDER_PAGE_SIZE = 150;
 export const BATCH_REQUEST_SIZE = 50;
 export const FILE_CHUNK_SIZE = 4 * MB;
 export const MEMORY_DOWNLOAD_LIMIT = (isMobile() ? 100 : 500) * MB;
+//eslint-disable-next-line compat/compat -- the code works with Safari, we can remove this once we target Safari and iOS 15.4
 export const HARDWARE_CONCURRENCY = (typeof window !== 'undefined' && window.navigator?.hardwareConcurrency) || 1;
 // openpgp.js creates hardwareConcurrency of web workers to do decryption.
 // Using less threads for download means we don't use available potential.

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { isBigIntSupported, isGoodPrngAvailable, isWebCryptoAvailable } from '@protontech/crypto/compatibilityChecks';
+
 import { isFirefoxWithBrokenX25519Support } from '@proton/shared/lib/helpers/browser';
 
 export type CompatibilityItem = {
@@ -11,6 +12,7 @@ export type CompatibilityItem = {
 
 const hasCookies = () => {
     try {
+        // eslint-disable-next-line compat/compat -- this is the compatibility probe itself; read is guarded by try/catch
         return navigator.cookieEnabled;
     } catch (e: any) {
         // Safari throws SecurityError if storage is disabled
