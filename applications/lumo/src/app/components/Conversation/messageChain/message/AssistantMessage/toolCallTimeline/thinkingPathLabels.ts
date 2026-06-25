@@ -13,7 +13,9 @@ type ThinkingPhase =
     | 'web_search'
     | 'weather'
     | 'finance'
-    | 'image'
+    | 'describe_image'
+    | 'generate_image'
+    | 'edit_image'
     | 'proton_info'
     | 'web_extract'
     | 'other';
@@ -41,9 +43,11 @@ function toolCallToPhase(toolCall: ToolCallData): ThinkingPhase {
         case 'cryptocurrency':
             return 'finance';
         case 'describe_image':
+            return 'describe_image';
         case 'generate_image':
+            return 'generate_image';
         case 'edit_image':
-            return 'image';
+            return 'edit_image';
         case 'proton_info':
             return 'proton_info';
         case 'web_extract':
@@ -95,9 +99,17 @@ const PHASE_ACTIVE: Record<ThinkingPhase, readonly (() => string)[]> = {
         () => c('collider_2025:Reasoning').t`Looking up market data`,
         () => c('collider_2025:Reasoning').t`Checking prices`,
     ],
-    image: [
-        () => c('collider_2025:Reasoning').t`Working on an image`,
+    describe_image: [
         () => c('collider_2025:Reasoning').t`Looking at your image`,
+        () => c('collider_2025:Reasoning').t`Working on an image`,
+    ],
+    generate_image: [
+        () => c('collider_2025:Reasoning').t`Generating image`,
+        () => c('collider_2025:Reasoning').t`Creating an image`,
+    ],
+    edit_image: [
+        () => c('collider_2025:Reasoning').t`Editing image`,
+        () => c('collider_2025:Reasoning').t`Updating your image`,
     ],
     proton_info: [() => c('collider_2025:Reasoning').t`Checking ${BRAND_NAME} knowledge`],
     web_extract: [
@@ -124,9 +136,17 @@ const PHASE_COMPLETE: Record<ThinkingPhase, readonly (() => string)[]> = {
         () => c('collider_2025:Reasoning').t`Looked up market data`,
         () => c('collider_2025:Reasoning').t`Checked prices`,
     ],
-    image: [
-        () => c('collider_2025:Reasoning').t`Worked on an image`,
+    describe_image: [
         () => c('collider_2025:Reasoning').t`Looked at your image`,
+        () => c('collider_2025:Reasoning').t`Worked on an image`,
+    ],
+    generate_image: [
+        () => c('collider_2025:Reasoning').t`Generated image`,
+        () => c('collider_2025:Reasoning').t`Created an image`,
+    ],
+    edit_image: [
+        () => c('collider_2025:Reasoning').t`Edited image`,
+        () => c('collider_2025:Reasoning').t`Updated your image`,
     ],
     proton_info: [() => c('collider_2025:Reasoning').t`Checked ${BRAND_NAME} knowledge`],
     web_extract: [

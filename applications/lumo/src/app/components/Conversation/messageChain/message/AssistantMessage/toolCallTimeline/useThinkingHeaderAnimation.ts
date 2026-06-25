@@ -31,8 +31,6 @@ function getGeneratingPhrases(): string[] {
         c('collider_2025:Reasoning').t`Working on this`,
         c('collider_2025:Reasoning').t`One moment`,
         c('collider_2025:Reasoning').t`Looking into this`,
-        c('collider_2025:Reasoning').t`Searching`,
-        c('collider_2025:Reasoning').t`Checking sources`,
     ];
 }
 
@@ -88,11 +86,18 @@ function scrambleToTarget(targetText: string, onUpdate: (value: string) => void,
     };
 }
 
-export function useThinkingHeaderAnimation(isActive: boolean, messageId: string): string {
-    const phrases = useMemo(
-        () => shuffleStable(getGeneratingPhrases(), `${messageId}:thinking-cycle`),
-        [messageId]
-    );
+export function useThinkingHeaderAnimation(
+    isActive: boolean,
+    messageId: string,
+    contextualHeader?: string
+): string {
+    const phrases = useMemo(() => {
+        if (contextualHeader?.trim()) {
+            return [contextualHeader];
+        }
+
+        return shuffleStable(getGeneratingPhrases(), `${messageId}:thinking-cycle`);
+    }, [messageId, contextualHeader]);
     const [phraseIndex, setPhraseIndex] = useState(0);
     const [displayText, setDisplayText] = useState(phrases[0] ?? '');
 

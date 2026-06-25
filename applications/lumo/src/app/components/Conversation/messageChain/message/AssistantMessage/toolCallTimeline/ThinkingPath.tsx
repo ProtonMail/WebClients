@@ -512,13 +512,14 @@ export const ThinkingPath = ({
     const hasActiveStep = hasActiveThinkingStep(displaySteps);
     const isThinking = hasActiveStep || (isGenerating && isLastMessage);
     const [isExpanded, setIsExpanded] = useState(false);
-    const animatedHeader = useThinkingHeaderAnimation(isThinking, message.id);
+    const activeHeader = getThinkingPathHeader(displaySteps, message.id, true);
+    const completeHeader = getThinkingPathHeader(displaySteps, message.id, false);
+    const animatedHeader = useThinkingHeaderAnimation(isThinking, message.id, activeHeader);
 
     if (displaySteps.length === 0) return null;
 
     const showDone = !isThinking;
-    const completeHeader = getThinkingPathHeader(displaySteps, message.id, false);
-    const headerLabel = isThinking ? animatedHeader || completeHeader : completeHeader;
+    const headerLabel = isThinking ? animatedHeader || activeHeader : completeHeader;
     return (
         <div className="thinking-path">
             <button
