@@ -28,7 +28,6 @@ export const DiscoverList = ({ onSuggestionClick }: { onSuggestionClick: (s: Gal
 
     return (
         <div className="w-full overflow-x-auto mt-10">
-
             <div className="flex flex-row flex-nowrap gap-4">
                 {visible.map((s) => (
                     <button
@@ -37,14 +36,14 @@ export const DiscoverList = ({ onSuggestionClick }: { onSuggestionClick: (s: Gal
                         style={{ '--min-w-custom': '250px', '--min-h-custom': '100px' }}
                         onClick={() => onSuggestionClick(s)}
                         type="button"
-                        aria-label={s.title}
+                        aria-label={s.getTitle()}
                     >
                         <span className="inspiration-discover__thumb-wrap">
                             <img src={s.img} alt="" className="inspiration-discover__thumb" />
                         </span>
                         <div className="flex flex-column flex-nwowrap">
-                            <span className="text-semibold">{s.title}</span>
-                            <span className="text-sm color-hint">{s.hint}</span>
+                            <span className="text-semibold">{s.getTitle()}</span>
+                            <span className="text-sm color-hint">{s.getHint?.()}</span>
                         </div>
                     </button>
                 ))}

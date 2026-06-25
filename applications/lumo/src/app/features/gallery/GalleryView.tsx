@@ -23,8 +23,8 @@ import { injectNativeImageGenerationHelper } from '../../remote/nativeComposerBr
 import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { CreatedGrid } from './CreatedGrid';
-import { DiscoverList } from './InspirationPanel';
 import { GalleryImageLimitUpsell } from './GalleryImageLimitUpsell';
+import { DiscoverList } from './InspirationPanel';
 import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
 import { useNativeComposerImageGenerationStateApi } from './hooks/useNativeComposerImageGenerationStateApi';
 import type { GalleryPromptSuggestion } from './promptSuggestions';
@@ -217,17 +217,17 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
         (suggestion: GalleryPromptSuggestion) => {
             if (suggestion.action === 'sketch') {
                 if (nativeComposerVisibilityApi.showWebComposer()) {
-                    setComposerPrefill(suggestion.prompt);
+                    setComposerPrefill(suggestion.getPrompt());
                 }
-                pendingEditPromptRef.current = suggestion.prompt;
+                pendingEditPromptRef.current = suggestion.getPrompt();
                 setGallerySketchTrigger(true);
                 setTimeout(() => setGallerySketchTrigger(false), 0);
                 injectNativeImageGenerationHelper(pendingEditPromptRef.current);
             } else if (suggestion.action === 'edit_image') {
-                pendingEditPromptRef.current = suggestion.prompt;
+                pendingEditPromptRef.current = suggestion.getPrompt();
                 editImageFileRef.current?.click();
             } else {
-                navigate(`/?q=${encodeURIComponent(suggestion.prompt)}`);
+                navigate(`/?q=${encodeURIComponent(suggestion.getPrompt())}`);
             }
         },
         [navigate, nativeComposerVisibilityApi]
