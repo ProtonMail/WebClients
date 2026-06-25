@@ -1489,6 +1489,12 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -1507,6 +1513,9 @@
       "Emails": [
         "E-Mails"
       ],
+      "Errors": [
+        "Fehler"
+      ],
       "Estimated size": [
         "Geschätzte Größe"
       ],
@@ -1522,6 +1531,9 @@
       "Migrate": [
         "Migrieren"
       ],
+      "Migrated": [
+        "Migriert"
+      ],
       "Migration status": [
         "Migrationsstatus"
       ],
@@ -1531,14 +1543,26 @@
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
       ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
+      "Pending": [
+        "Ausstehend"
+      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
+      "Size": [
+        "Größe"
       ],
       "Status": [
         "Status"
@@ -1551,6 +1575,9 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -6891,6 +6918,9 @@
       "City": [
         "Stadt"
       ],
+      "Clear logs": [
+        "Protokolle entfernen"
+      ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
@@ -6918,6 +6948,12 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Context page": [
+        "Kontextseite"
+      ],
+      "Context total": [
+        "Gesamtkontext"
+      ],
       "Continue cancelling": [
         "Kündigung fortsetzen"
       ],
@@ -6938,6 +6974,9 @@
       ],
       "Credits": [
         "Guthaben"
+      ],
+      "Current context": [
+        "Aktueller Kontext"
       ],
       "Date": [
         "Datum"
@@ -6965,6 +7004,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "z. B. Amazon, eBay, Etsy"
+      ],
+      "Elements in store": [
+        "Elemente im Speicher"
       ],
       "Email": [
         "E-Mail-Adresse"
@@ -7007,6 +7049,9 @@
       ],
       "Extremely Satisfied": [
         "Sehr zufrieden"
+      ],
+      "Filter": [
+        "Filter"
       ],
       "Filter Name": [
         "Filtername"
@@ -7077,6 +7122,9 @@
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
       ],
+      "Information": [
+        "Information"
+      ],
       "Integrated 2FA authenticator": [
         "Integrierter 2FA-Authentifikator"
       ],
@@ -7088,6 +7136,9 @@
       ],
       "Label as": [
         "Folgender Kategorie zuordnen"
+      ],
+      "Label ID": [
+        "Kategorien-ID"
       ],
       "Label messages as": [
         "Nachrichten kategorisieren als"
@@ -7109,6 +7160,12 @@
       ],
       "Location": [
         "Ort"
+      ],
+      "Mail debugging information": [
+        "Fehlersuche-Informationen per E-Mail"
+      ],
+      "Mail logs": [
+        "E-Mail-Protokolle"
       ],
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
@@ -7242,6 +7299,9 @@
       "Read": [
         "Gelesen"
       ],
+      "Refresh logs": [
+        "Protokolle aktualisieren"
+      ],
       "Region": [
         "Region"
       ],
@@ -7275,6 +7335,9 @@
       "Social media updates and activity": [
         "Aktualisierungen und Aktivitäten in sozialen Medien"
       ],
+      "Sort": [
+        "Sortieren"
+      ],
       "Starred": [
         "Markiert"
       ],
@@ -7286,6 +7349,9 @@
       ],
       "Statement": [
         "Aussage"
+      ],
+      "Store state": [
+        "Speicherstatus"
       ],
       "Street address": [
         "Straße und Hausnummer"
@@ -7304,6 +7370,9 @@
       ],
       "System information": [
         "Systeminformationen"
+      ],
+      "Tab age": [
+        "Registerkarte „Alter“"
       ],
       "Tell us more about your experience": [
         "Erzähl uns mehr von deiner Erfahrung"
@@ -9684,6 +9753,9 @@
       ],
       "Search for name or email": [
         "Nach Namen oder E-Mail-Adressen suchen"
+      ],
+      "Search for users or addresses": [
+        "Nach Benutzern oder Adressen suchen"
       ],
       "Search parent folder": [
         "Übergeordneten Ordner durchsuchen"
