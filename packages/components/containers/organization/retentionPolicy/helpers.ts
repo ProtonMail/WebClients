@@ -6,6 +6,7 @@ import {
     RetentionRuleAction,
     RetentionRuleProduct,
 } from '@proton/shared/lib/interfaces/RetentionRule';
+import getRandomString from '@proton/utils/getRandomString';
 
 import type { RetentionRuleFormData } from './types';
 
@@ -53,7 +54,11 @@ export const convertToRetentionRuleFormData = (retentionRule: RetentionRule): Re
 };
 
 export const generateClientIDForRuleScope = () => {
-    return CLIENT_ID_PREFIX + crypto.randomUUID();
+    if ('randomUUID' in crypto) {
+        return CLIENT_ID_PREFIX + crypto.randomUUID();
+    } else {
+        return CLIENT_ID_PREFIX + getRandomString(20);
+    }
 };
 
 export const isClientIDRuleScope = (id: string) => {
