@@ -224,9 +224,6 @@
       "Connected": [
         "Ansluten"
       ],
-      "Contact support": [
-        "Kontakta support"
-      ],
       "Contact Support Center": [
         "Kontakta supportcenter"
       ],
@@ -499,9 +496,6 @@
       ],
       "Forgot password?": [
         "Glömt lösenord?"
-      ],
-      "Forgot recovery method?": [
-        "Glömt återställningsmetod?"
       ],
       "Generate new recovery phrase": [
         "Generera ny återställningsfras"
@@ -4934,9 +4928,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Konto är borttaget eller inaktiverat"
-      ],
       "App currently unavailable": [
         "App är för närvarande inte tillgänglig"
       ],
@@ -6200,9 +6191,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Du kommer att förlora åtkomst till alla nuvarande krypterade data på ditt konto om du fortsätter."
-      ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } delar aldrig din information med tredje part. Data kommer från ${ BRAND_NAME }s egna analyser och Constella Intelligence."
       ],
@@ -6849,9 +6837,6 @@
       "Data locked": [
         "Data låst"
       ],
-      "Data recoverable on this device": [
-        "Data återställningsbart på denna enhet"
-      ],
       "Data recoverable with recovery phrase": [
         "Data återställningsbar med återställningsfras"
       ],
@@ -6934,9 +6919,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Förlora inte åtkomst till dina premiumfunktioner. Aktivera automatisk förnyelse idag."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Klart! Vi skickade en kod till ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Kan du inte din återställningsfras?"
@@ -7057,12 +7039,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Ange koden från din autentiseringsapp"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Ange koden som skickades till ditt telefonnummer ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Ange koden som skickades till ${ email }. Om du inte kan hitta meddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ange inloggningsuppgifter till e-postkontot du vill importera från."
@@ -7222,9 +7198,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Om du är inloggad någon annanstans kan du ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Om du tror att detta är felaktigt, kontakta oss ${ contactLink }."
@@ -7621,9 +7594,6 @@
       "On": [
         "På"
       ],
-      "Once you reset your password:": [
-        "När du har återställt ditt lösenord:"
-      ],
       "Open source": [
         "Öppen källkod"
       ],
@@ -7741,9 +7711,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Kontrollera din fil, eller prova använda vår ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Ange återställningsfrasen på 12 ord som är associerat med ditt konto."
       ],
       "Please fill in all required fields.": [
         "Fyll i alla obligatoriska fält."
@@ -8350,9 +8317,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Provperiod slutar den ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "betrodd enhet"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
       ],
@@ -8376,9 +8340,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Tyvärr finns det ingen återställningsmetod tillgänglig för detta konto."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Det finns ingen återställningsmetod sparad för detta konto."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikt ID genererat av din identitetsleverantör, vanligtvis i form av en URL som innehåller identitetsleverantörens namn (t.ex. https://idp.exempel.se/XXXXX)."
@@ -8515,9 +8476,6 @@
       "Want to learn more?": [
         "Vill du lära dig mer?"
       ],
-      "Warning:": [
-        "Varning:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Varning: borttagning av ditt konto är permanent."
       ],
@@ -8551,14 +8509,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi rekommenderar att du aviserar organisationsmedlemmarna och ber dem ställa in 2FA för sina konton innan verkställning med användningen av 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Vi rekommenderar att du använder en återställningsfras istället."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Vi lagrar säkert återställningsinformation på din betrodda enhet för att förhindra att du förlorar din data"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Vi lagrade en säkerhetskopia i den här webbläsaren eftersom du har tillåtit dataåterställning på den här ${ deviceLink }. Om säkerhetskopiera filen är giltig, kommer du omedelbart att återfå fullständig eller partiell åtkomst till dina krypterade data."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
@@ -8592,12 +8544,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Vi skickar en återställningskod till ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Vi kommer skicka en återställningskod till e-postadressen som du angav för kontoåterställning."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Vi kommer skicka en återställningskod till det telefonnummer som du angav för kontoåterställning."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
@@ -9030,8 +8976,8 @@
       "Declined": [
         "Avböjd"
       ],
-      "Owner": [
-        "Ägare"
+      "Group Owner": [
+        "Gruppägare"
       ],
       "Paused": [
         "Pausad"
@@ -9294,9 +9240,6 @@
       ],
       "City": [
         "Ort"
-      ],
-      "Code": [
-        "Kod"
       ],
       "Code is 6 digits without spaces": [
         "Kod är 6 siffror utan mellanslag"
@@ -9569,6 +9512,9 @@
       "Import to:": [
         "Importera till:"
       ],
+      "Import your emails": [
+        "Importera din e-post"
+      ],
       "Include application logs in bug report": [
         "Inkludera applikationsloggar i felrapport"
       ],
@@ -9745,9 +9691,6 @@
       ],
       "Password": [
         "Lösenord"
-      ],
-      "Password reminders": [
-        "Lösenordspåminnelser"
       ],
       "Password strength": [
         "Lösenordsstyrka"
@@ -10162,9 +10105,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Förklaring av kontoåterställning"
-      ],
       "activity monitor": [
         "aktivitetsövervakare"
       ],
@@ -10314,9 +10254,6 @@
       ],
       "Pay invoice": [
         "Betala faktura"
-      ],
-      "perform a password reset from your active session": [
-        "utför en lösenordsåterställning från din aktiva session"
       ],
       "Privacy policy": [
         "Integritetspolicy"
@@ -12583,23 +12520,6 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Se till att du memorerar eller förvarar ditt lösenord säkert eftersom det är nyckeln till att dekryptera dina data."
-      ],
-      "Turn off password reminders?": [
-        "Stäng av lösenordspåminnelser?"
-      ],
-      "Turn off reminders": [
-        "Stäng av påminnelser"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med ditt ** gamla lösenord**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med din **återställningsfras** eller ditt ** gamla lösenord**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Alla metoder för **tvåfaktorsautentisering (2FA)** på ditt konto kommer att inaktiveras."
       ]
     },
     "passwordless": {
@@ -15641,12 +15561,6 @@
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
-      "Password reminders disabled": [
-        "Lösenordspåminnelser inaktiverade"
-      ],
-      "Password reminders enabled": [
-        "Lösenordspåminnelser aktiverade"
-      ],
       "Password updated": [
         "Lösenord uppdaterad"
       ],
@@ -16516,9 +16430,6 @@
       "Find email or username": [
         "Hitta e-post eller användarnamn"
       ],
-      "Forgot recovery method": [
-        "Glömt återställningsmetod"
-      ],
       "Free plan": [
         "Free-paket"
       ],
@@ -16702,9 +16613,6 @@
       ],
       "No events yet": [
         "Inga händelser ännu"
-      ],
-      "No recovery method": [
-        "Ingen återställningsmetod"
       ],
       "Open": [
         "Öppen"

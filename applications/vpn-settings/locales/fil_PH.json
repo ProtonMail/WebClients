@@ -203,9 +203,6 @@
       "Connected": [
         "Konektado"
       ],
-      "Contact support": [
-        "Makipag-ugnayan sa suporta"
-      ],
       "Contact us": [
         "Makipag-ugnayan sa amin"
       ],
@@ -451,9 +448,6 @@
       ],
       "Forgot password?": [
         "Nakalimutan ang password?"
-      ],
-      "Forgot recovery method?": [
-        "Nakalimutan ang paraan ng pag-recover?"
       ],
       "Generate new recovery phrase": [
         "Mag-generate ng bagong parirala ng pag-recover"
@@ -5497,9 +5491,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Kailangan ng ${ appName } ang pahintulot upang ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Mawawalan ka ng access sa lahat ng kasalukuyang naka-encrypt na data sa iyong account kung magpapatuloy ka."
-      ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "Hindi kailanman isine-share ng ${ BRAND_NAME } ang impormasyon mo sa mga third party. Ang data ay nagmumula sa sariling pagsusuri ng ${ BRAND_NAME } at Constella Intelligence."
       ],
@@ -6047,9 +6038,6 @@
       "Data locked": [
         "Naka-lock ang data"
       ],
-      "Data recoverable on this device": [
-        "Mare-recover ang data sa device na ito"
-      ],
       "dedicated servers": [
         "mga dedicated server"
       ],
@@ -6126,9 +6114,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Huwag mawalan ng access sa iyong mga premium feature. Paganahin ang auto-renew ngayon."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Tapos na! Nagpadala kami ng code sa ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Hindi alam ang parirala ng pag-recover?"
@@ -6234,12 +6219,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Ilagay ang code mula sa authenticator app"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Ilagay ang code na ipinadala sa iyong numero ng telepono na ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Ilagay ang code na ipinadala sa ${ email }. Kung hindi mahanap ang mensahe sa inbox, pakitingnan ang iyong spam folder."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ilagay ang mga kredensyal ng email account na gusto mong pagmulan ng import."
@@ -6354,9 +6333,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Kung nagkakaproblema sa paggawa ng account, mangyaring humiling ng imbitasyon at tutugon kami sa loob ng isang araw ng negosyo."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Kung naka-sign in ka sa ibang lugar, maaari mong ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Kung naniniwala kang error ito, mangyaring makipag-ugnayan sa amin sa ${ contactLink }."
@@ -6729,9 +6705,6 @@
       "On": [
         "Naka-on"
       ],
-      "Once you reset your password:": [
-        "Kapag na-reset mo na ang iyong password:"
-      ],
       "Open source": [
         "Open source"
       ],
@@ -6840,9 +6813,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Mangyaring suriin ang file, o subukang gamitin ang aming ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Pakilagay ang 12-salitang parirala ng pag-recover na nauugnay sa iyong account."
       ],
       "Please fill in all required fields.": [
         "Pakipunan ang lahat ng kinakailangang field."
@@ -7377,9 +7347,6 @@
       "Total VPN connections": [
         "Kabuuang mga koneksyon ng VPN"
       ],
-      "trusted device": [
-        "pinagkakatiwalaang device"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Subukan ang ${ productName } nang walang panganib - kung magbago ang isip mo sa anumang dahilan, makakatanggap ka ng buong refund. Wala nang itatanong"
       ],
@@ -7397,9 +7364,6 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Hindi ma-verify ang signature ng recovery file. Mangyaring makipag-ugnayan sa suporta."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Sa kasamaang palad, walang naka-save na paraan ng pag-recover para sa account na ito."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Natatanging ID na na-generate ng provider ng pagkakakilanlan, karaniwang nasa anyo ng URL na naglalaman ng pangalan ng provider ng pagkakakilanlan (hal. https://idp.example.com/XXXXX)."
@@ -7524,9 +7488,6 @@
       "Want to learn more?": [
         "Gustong matuto pa?"
       ],
-      "Warning:": [
-        "Babala:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Babala: permanente ang pag-delete sa account."
       ],
@@ -7557,14 +7518,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Inirerekomenda naming ipaalam sa mga miyembro ng organisasyon at hilingin sa kanila na i-set up ang 2FA para sa kanilang mga account bago ipatupad ang paggamit ng 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Inirerekomenda namin ang paggamit ng iyong parirala ng pag-recover sa halip."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Ligtas naming iniimbak ang impormasyon sa pag-recover sa iyong pinagkakatiwalaang device upang maiwasan ang pagkawala ng iyong data"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Nag-imbak kami ng backup file sa browser na ito dahil pinayagan mo ang pag-recover ng data sa ${ deviceLink } na ito. Kung valid ang backup file, agad mong mababawi nang kumpleto o bahagyang access sa iyong naka-encrypt na data."
       ],
       "We use 3-D Secure to protect your payments": [
         "Gumagamit ng 3-D Secure upang protektahan ang iyong mga pagbabayad"
@@ -7592,12 +7547,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Magpapadala ng reset code sa ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Magpapadala kami ng reset code sa email address na ibinigay mo para sa pag-recover ng account."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Magpapadala ng reset code sa numero ng telepono na ibinigay para sa pag-recover ng account."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kapag pinagagana ang SAML para sa ${ appName } sa iyong identity provider, maaaring hilingin sa iyo na gamitin ang callback (ACS) URL at ID ng issuer. I-copy-paste lang ang data sa ibaba sa mga field ng iyong identity provider."
@@ -8223,9 +8172,6 @@
       ],
       "City": [
         "Lungsod"
-      ],
-      "Code": [
-        "Code"
       ],
       "Code is 6 digits without spaces": [
         "Ang code ay 6 na digit na walang mga espasyo"
@@ -9098,9 +9044,6 @@
       ],
       "Pay invoice": [
         "Bayaran ang invoice"
-      ],
-      "perform a password reset from your active session": [
-        "magsagawa ng pag-reset ng password mula sa aktibong session"
       ],
       "Privacy policy": [
         "Patakaran sa Privacy"
@@ -11177,17 +11120,6 @@
       ],
       "Limited-time deal.": [
         "Limited-time deal."
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "Ang **lahat ng umiiral na data** (mga email, kaganapan, contact, file, entry ng ${ PASS_APP_NAME }, atbp.) ay **malo-lock** at maaari lamang i-unlock gamit ang iyong **lumang password**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "Ang **lahat ng iyong umiiral na data** (mga email, kaganapan, contact, file, entry ng ${ PASS_APP_NAME } atbp.) ay **malo-lock** at maaari lamang i-unlock gamit ang iyong **parirala ng pag-recover** o ang iyong **lumang password**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Ang anumang paraan ng **two-factor authentication (2FA)** sa iyong account ay hindi pagaganahin."
       ]
     },
     "passwordless": {
@@ -14726,9 +14658,6 @@
       "Find email or username": [
         "Hanapin ang email o username"
       ],
-      "Forgot recovery method": [
-        "Nakalimutan ang paraan ng pag-recover"
-      ],
       "Gateway": [
         "Gateway"
       ],
@@ -14861,9 +14790,6 @@
       ],
       "No events": [
         "Walang mga kaganapan"
-      ],
-      "No recovery method": [
-        "Walang paraan ng pag-recover"
       ],
       "Open": [
         "Bukas"

@@ -227,9 +227,6 @@
       "Connected": [
         "Verbunden"
       ],
-      "Contact support": [
-        "Support kontaktieren"
-      ],
       "Contact Support Center": [
         "Support-Center kontaktieren"
       ],
@@ -502,9 +499,6 @@
       ],
       "Forgot password?": [
         "Passwort vergessen?"
-      ],
-      "Forgot recovery method?": [
-        "Wiederherstellungsmethode vergessen?"
       ],
       "Generate new recovery phrase": [
         "Neue Wiederherstellungsphrase erstellen"
@@ -1995,6 +1989,12 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -2009,6 +2009,9 @@
       ],
       "Emails": [
         "E-Mails"
+      ],
+      "Errors": [
+        "Fehler"
       ],
       "Estimated size": [
         "Geschätzte Größe"
@@ -2025,6 +2028,9 @@
       "Migrate": [
         "Migrieren"
       ],
+      "Migrated": [
+        "Migriert"
+      ],
       "Migration status": [
         "Migrationsstatus"
       ],
@@ -2034,14 +2040,26 @@
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
       ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
+      "Pending": [
+        "Ausstehend"
+      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
+      "Size": [
+        "Größe"
       ],
       "Status": [
         "Status"
@@ -2054,6 +2072,9 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -4981,9 +5002,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Konto ist gelöscht oder deaktiviert"
-      ],
       "App currently unavailable": [
         "App ist zurzeit nicht verfügbar"
       ],
@@ -6256,9 +6274,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME }-Business-Abonnemente bieten deinem Team alle Tools für die Zusammenarbeit, die es benötigt, um produktiv und gut organisiert zu arbeiten, und schützen gleichzeitig dein Unternehmen."
       ],
@@ -6949,9 +6964,6 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "Data recoverable on this device": [
-        "Daten, die auf diesem Gerät wiederhergestellt werden können"
-      ],
       "Data recoverable with recovery phrase": [
         "Daten mit Wiederherstellungsphrase wiederherstellbar"
       ],
@@ -7037,9 +7049,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Verliere nicht den Zugang auf Premium-Funktionen. Aktiviere automatische Verlängerung heute."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Fertig! Es wurde ein Code an „${ destination }“ gesendet."
       ],
       "Don’t know your recovery phrase?": [
         "Du kennst deine Wiederherstellungsphrase nicht?"
@@ -7163,12 +7172,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Code aus deiner Authentifizierungs-App ein eingeben"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Gib den an deine Telefonnummer „${ phone }“ gesendeten Code ein."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Gib den an „${ email }” gesendeten Code ein. Solltest du die Nachricht nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
@@ -7337,9 +7340,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Wenn du an einem anderen Ort angemeldet bist, kannst du möglicherweise ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Wenn du in einem **anderen Browser** in einer ${ BRAND_NAME }-Web-App angemeldet bist, kannst du eventuell ein Zurücksetzen des Passworts von deiner aktiven Sitzung aus durchführen."
@@ -7751,9 +7751,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Sobald der Zugriff auf dein Konto gewährt wurde, können sie auf deine **Wiederherstellungs**-Einstellungen zugreifen und dein ${ ACCOUNT_APP_NAME }-Passwort für dich **ändern**."
       ],
-      "Once you reset your password:": [
-        "Sobald du dein Passwort zurücksetzt:"
-      ],
       "Open source": [
         "Quelloffen"
       ],
@@ -7874,9 +7871,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Bitte überprüfe deine Datei auf Fehler oder versuche es mit unserer ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
       ],
       "Please fill in all required fields.": [
         "Bitte fülle alle Pflichtfelder aus."
@@ -8222,6 +8216,9 @@
       "Symbols (#$&)": [
         "Symbole (#$&)"
       ],
+      "Synced from identity provider": [
+        "Vom Identitätsanbieter synchronisiert"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Empfohlen von TechRadar Pro mit einer Bewertung von 4,2 von 5 Sternen"
       ],
@@ -8489,9 +8486,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Testversion endet am ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "Vertrauenswürdiges Gerät"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Teste ${ productName } völlig risikofrei - wenn du aus irgendeinem Grund deine Meinung änderst, erhältst du eine volle Rückerstattung. Es werden keine Fragen gestellt."
       ],
@@ -8515,9 +8509,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Leider ist keine Wiederherstellungsmethode für dieses Konto verfügbar."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Eindeutige ID, generiert von deinem Identitätsanbieter, normalerweise in Form einer URL, die den Namen des Identitätsanbieters enthält (z.B. https://idp.beispiel.com/XXXXX)."
@@ -8654,9 +8645,6 @@
       "Want to learn more?": [
         "Möchtest du mehr erfahren?"
       ],
-      "Warning:": [
-        "Warnung:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Achtung: Die Löschung deines Kontos ist dauerhaft."
       ],
@@ -8693,14 +8681,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Wir empfehlen, die Mitglieder der Organisation zu benachrichtigen und sie zu bitten, 2FA für ihre Konten einzurichten, bevor du die Verwendung von 2FA erzwingst."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Wir empfehlen, stattdessen deine Wiederherstellungsphrase zu verwenden."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Wir speichern die Wiederherstellungsinformationen sicher auf deinem vertrauenswürdigen Gerät, um zu verhindern, dass du deine Daten verlierst."
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Wir haben eine Sicherungsdatei in diesem Browser gespeichert, da du die Datenwiederherstellung auf diesem ${ deviceLink } zugelassen hast. Wenn die Sicherungsdatei gültig ist, erhältst du sofort vollständigen oder teilweisen Zugriff auf deine verschlüsselten Daten."
       ],
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
@@ -8734,12 +8716,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Wir senden einen Reset-Code an ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Du erhältst dann einen Rücksetzungscode an die E-Mail-Adresse, die du für die Wiederherstellung deines Kontos angegeben hast."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Du erhältst dann einen Rücksetzungscode an die Telefonnummer, die du für die Wiederherstellung deines Kontos angegeben hast."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Beim Aktivieren von SAML für ${ appName } in deinem Identitätsanbieter wirst du vielleicht aufgefordert, die Callback (ACS) URL und die Aussteller-ID zu nutzen. Kopiere einfach die Daten unten in die Felder deines Identitätsanbieters."
@@ -9198,8 +9174,8 @@
       "Declined": [
         "Abgelehnt"
       ],
-      "Owner": [
-        "Besitzer"
+      "Group Owner": [
+        "Gruppenbesitzer"
       ],
       "Paused": [
         "Angehalten"
@@ -9471,9 +9447,6 @@
       ],
       "City": [
         "Stadt"
-      ],
-      "Code": [
-        "Code"
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
@@ -9929,8 +9902,8 @@
       "Password": [
         "Passwort"
       ],
-      "Password reminders": [
-        "Passworterinnerungen"
+      "Password check-ins": [
+        "Passwort-Check-ins"
       ],
       "Password strength": [
         "Passwortstärke"
@@ -10345,9 +10318,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Erläuterung zur Kontowiederherstellung"
-      ],
       "activity monitor": [
         "Aktivitätsüberwachung"
       ],
@@ -10500,9 +10470,6 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
-      ],
-      "perform a password reset from your active session": [
-        "dein Passwort in deiner aktiven Sitzung zurücksetzen"
       ],
       "Privacy policy": [
         "Datenschutzerklärung"
@@ -10885,6 +10852,9 @@
       ],
       "Add address": [
         "Adresse hinzufügen"
+      ],
+      "Change backup password": [
+        "Backup-Passwort ändern"
       ],
       "Change password": [
         "Passwort ändern"
@@ -12830,22 +12800,11 @@
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Merke dir dein Passwort unbedingt oder bewahre es sicher auf, da es der Schlüssel zur Entschlüsselung deiner Daten ist."
       ],
-      "Turn off password reminders?": [
-        "Passworterinnerungen ausschalten?"
+      "Turn off check-ins": [
+        "Check-ins ausschalten"
       ],
-      "Turn off reminders": [
-        "Erinnerungen ausschalten"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Alle deine vorhandenen Daten** (E-Mails, Termine, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deinem **alten Passwort** entsperrt werden."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Alle deine vorhandenen Daten** (E-Mails, Termine, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deiner **Wiederherstellungsphrase** oder deinem **alten Passwort** entsperrt werden."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Jegliche **Zwei-Faktor-Authentifizierungsmethoden (2FA)** deines Kontos werden deaktiviert."
+      "Turn off password check-ins?": [
+        "Passwort-Check-ins ausschalten?"
       ]
     },
     "passwordless": {
@@ -13372,6 +13331,9 @@
       ],
       "Search for an email or IP address": [
         "Nach einer E-Mail-Adresse oder IP-Adresse suchen"
+      ],
+      "Search for users or addresses": [
+        "Nach Benutzern oder Adressen suchen"
       ],
       "Search parent folder": [
         "Übergeordneten Ordner durchsuchen"
@@ -15902,14 +15864,14 @@
       "Organization name updated": [
         "Organisationsname aktualisiert"
       ],
+      "Password check-ins disabled": [
+        "Passwort-Check-ins deaktiviert"
+      ],
+      "Password check-ins enabled": [
+        "Passwort-Check-ins aktiviert"
+      ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert."
-      ],
-      "Password reminders disabled": [
-        "Passwort-Erinnerungen deaktiviert"
-      ],
-      "Password reminders enabled": [
-        "Passwort-Erinnerungen aktiviert"
       ],
       "Password updated": [
         "Passwort aktualisiert"
@@ -16780,9 +16742,6 @@
       "Find email or username": [
         "E-Mail-Adresse oder Benutzername suchen"
       ],
-      "Forgot recovery method": [
-        "Wiederherstellungsmethode vergessen"
-      ],
       "Free plan": [
         "Kostenloses Abonnement"
       ],
@@ -16966,9 +16925,6 @@
       ],
       "No events yet": [
         "Noch keine Aktivitäten"
-      ],
-      "No recovery method": [
-        "Keine Wiederherstellungsmethode"
       ],
       "Open": [
         "Offen"
@@ -18055,6 +18011,9 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
       ]
     },
     "Users table: badge": {
