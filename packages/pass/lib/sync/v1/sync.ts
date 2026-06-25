@@ -7,6 +7,7 @@ import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
 import { notifyInactiveShares } from '@proton/pass/lib/sync/migrate';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
@@ -31,7 +32,7 @@ export type SyncResultV1 = {
     v: 1;
 };
 
-export function* syncV1({ getCore }: RootSagaOptions) {
+export function* syncV1({ getCore }: RootSagaOptions): Generator<any, SyncResultV1> {
     const state: State = asIfNotOptimistic((yield select()) as State, reducerMap);
     const cachedShares = selectAllShares(state);
     const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
@@ -57,7 +58,10 @@ export function* syncV1({ getCore }: RootSagaOptions) {
         remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(
             async (encryptedShare): Promise<RemoteShare> => ({
                 shareId: encryptedShare.ShareID,
-                share: await parseShareResponse(encryptedShare),
+                /** Force `LEGACY` so per-share `eventIds` are always resolved: a V1
+                 * sync needs them even when the ambient `SYNC_STRATEGY` is still
+                 * `USER_EVENTS` during a V2→V1 rollback, before commit. */
+                share: await parseShareResponse(encryptedShare, { strategy: SyncStrategy.LEGACY }),
             })
         )
     )) as RemoteShare[];

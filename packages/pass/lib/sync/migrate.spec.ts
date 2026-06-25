@@ -1,0 +1,107 @@
+import { runSaga } from 'redux-saga';
+
+import * as inviteRequests from '@proton/pass/lib/invites/invite.requests';
+import * as organizationRequests from '@proton/pass/lib/organization/organization.requests';
+import * as shareRequests from '@proton/pass/lib/shares/share.requests';
+import { createTestShare } from '@proton/pass/lib/shares/share.test.utils';
+import * as v1Sync from '@proton/pass/lib/sync/v1/sync';
+import * as userEventRequests from '@proton/pass/lib/sync/v2/user-events.requests';
+import * as userRequests from '@proton/pass/lib/user/user.requests';
+import { setUserAccess, syncMigration } from '@proton/pass/store/actions';
+import { type HydratedAccessState, default as rootReducer } from '@proton/pass/store/reducers';
+import { sagaReturn, sagaSetup } from '@proton/pass/store/sagas/testing';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { Maybe } from '@proton/pass/types';
+import { type PassEventListResponse, PlanType } from '@proton/pass/types';
+
+import { migrate } from './migrate';
+import type { SyncResult } from './types';
+import { SyncStrategy } from './types';
+
+const getUserEventLatestID = jest.spyOn(userEventRequests, 'getUserEventLatestID');
+const getUserAccess = jest.spyOn(userRequests, 'getUserAccess');
+const getOrganizationForPlan = jest.spyOn(organizationRequests, 'getOrganizationForPlan');
+const getShares = jest.spyOn(shareRequests, 'getShares');
+const getUserInvites = jest.spyOn(inviteRequests, 'getUserInvites');
+const syncV1 = jest.spyOn(v1Sync, 'syncV1');
+const getShareEvents = jest.spyOn(shareRequests, 'getShareEvents');
+const getGroupInvites = jest.spyOn(inviteRequests, 'getGroupInvites');
+
+const access = { plan: { Type: PlanType.FREE } } as HydratedAccessState;
+const v1Result = { v: 1 } as v1Sync.SyncResultV1;
+const migrateAction = syncMigration({ userEventId: 'evt-1', strategy: SyncStrategy.USER_EVENTS });
+
+const shareEvents = (overrides?: Partial<PassEventListResponse>): PassEventListResponse =>
+    ({
+        LatestEventID: 'se-0',
+        DeletedItemIDs: [],
+        UpdatedItems: [],
+        EventsPending: false,
+        ...overrides,
+    }) as PassEventListResponse;
+
+const run = async (next: SyncStrategy, state?: Partial<State>) => {
+    const setup = sagaSetup({ ...rootReducer(undefined, { type: '__INIT__' }), ...state });
+    const result = await runSaga(setup.options, migrate, next, {} as RootSagaOptions).toPromise<Maybe<SyncResult>>();
+    return { result, dispatched: setup.dispatched };
+};
+
+beforeEach(() => {
+    jest.clearAllMocks();
+    getUserEventLatestID.mockResolvedValue('evt-1');
+    getUserAccess.mockResolvedValue(access);
+    getOrganizationForPlan.mockResolvedValue(null);
+    getShares.mockResolvedValue([]);
+    getShareEvents.mockResolvedValue(shareEvents());
+    getUserInvites.mockResolvedValue({ Invites: [], Code: 1000 });
+    getGroupInvites.mockResolvedValue({ Invites: { Invites: [], Total: 0 }, Code: 1000 });
+    syncV1.mockImplementation(sagaReturn(v1Result));
+});
+
+describe('migrate', () => {
+    test('commits the strategy switch and cursor when migrating to `USER_EVENTS`', async () => {
+        const { result, dispatched } = await run(SyncStrategy.USER_EVENTS);
+        expect(result).toBeUndefined();
+        expect(dispatched).toContainEqual(setUserAccess(access));
+        expect(dispatched).toContainEqual(migrateAction);
+    });
+
+    test('does not commit the strategy when a drain step fails', async () => {
+        getShares.mockRejectedValue(new Error());
+        const { dispatched } = await run(SyncStrategy.USER_EVENTS);
+        expect(dispatched).not.toContainEqual(migrateAction);
+    });
+
+    test('rollbacks & clears cursor when migrating to `LEGACY`', async () => {
+        const { result, dispatched } = await run(SyncStrategy.LEGACY);
+        expect(syncV1).toHaveBeenCalled();
+        expect(result).toBe(v1Result);
+        expect(dispatched).toContainEqual(syncMigration({ userEventId: null, strategy: SyncStrategy.LEGACY }));
+    });
+
+    test('anchors the cursor before draining each channel', async () => {
+        await run(SyncStrategy.USER_EVENTS, { shares: { s1: createTestShare({ shareId: 's1', eventId: 'se-0' }) } });
+        expect(getShareEvents).toHaveBeenCalledWith('s1', 'se-0');
+        expect(getShares).toHaveBeenCalled();
+        expect(getUserInvites).toHaveBeenCalled();
+        expect(getGroupInvites).not.toHaveBeenCalled(); /** non-B2B state */
+
+        /** Assert `getUserEventLatestID` is ALWAYS called first */
+        const getUserEventLatestIDCallOrder = getUserEventLatestID.mock.invocationCallOrder[0];
+        [getUserAccess, getOrganizationForPlan, getShares, getShareEvents, getUserInvites].forEach((fn) => {
+            const fnCallOrder = fn.mock.invocationCallOrder[0];
+            expect(getUserEventLatestIDCallOrder).toBeLessThan(fnCallOrder);
+        });
+    });
+
+    test('drains share events recursively until none are pending', async () => {
+        getShareEvents
+            .mockResolvedValueOnce(shareEvents({ LatestEventID: 'se-1', EventsPending: true }))
+            .mockResolvedValueOnce(shareEvents({ LatestEventID: 'se-2', EventsPending: false }));
+
+        await run(SyncStrategy.USER_EVENTS, { shares: { s1: createTestShare({ shareId: 's1', eventId: 'se-0' }) } });
+        expect(getShareEvents).toHaveBeenNthCalledWith(1, 's1', 'se-0');
+        expect(getShareEvents).toHaveBeenNthCalledWith(2, 's1', 'se-1');
+        expect(getShareEvents).toHaveBeenCalledTimes(2);
+    });
+});
