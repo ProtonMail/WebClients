@@ -717,9 +717,6 @@
       "Forgot password?": [
         "Quên mật khẩu?"
       ],
-      "Forgot recovery method?": [
-        "Quên phương thức khôi phục?"
-      ],
       "Generate": [
         "Tạo"
       ],
@@ -2187,12 +2184,93 @@
         "Ưu đãi không khả dụng"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Bao gồm hỗ trợ cho 1 miền email tùy chỉnh, 10 địa chỉ email, 10 biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Ứng dụng ${ MAIL_APP_NAME } trên máy tính để bàn"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } và ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } dung lượng lưu trữ"
+      ],
+      "1 user account": [
+        "1 tài khoản người dùng"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lưu trữ: gấp 40 lần gói hiện tại"
+      ],
+      "6 user accounts": [
+        "6 tài khoản người dùng"
+      ],
+      "Admin panel to manage your family": [
+        "Bảng quản trị để quản lý gia đình"
+      ],
+      "Advanced account protection": [
+        "Bảo vệ tài khoản nâng cao"
+      ],
+      "Easily add or remove users": [
+        "Dễ dàng thêm hoặc xóa người dùng"
+      ],
+      "One-time payment, lifetime deal": [
+        "Thanh toán một lần, ưu đãi trọn đời"
+      ],
+      "Online document editor": [
+        "Trình chỉnh sửa tài liệu trực tuyến"
+      ],
+      "Password health alerts": [
+        "Cảnh báo tình trạng mật khẩu"
+      ],
+      "Recover previous file versions": [
+        "Khôi phục các phiên bản tệp trước đó"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Thư mục, nhãn và bộ lọc không giới hạn"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Không giới hạn đăng nhập, thẻ tín dụng, biệt danh hide-my-email và hơn thế nữa"
+      ],
       "Use your own email domain": [
         "Sử dụng miền email của riêng bạn"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Thanh toán ${ amount } một lần"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Gia hạn sau 1 tháng với giá ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm hơn 8.500 máy chủ tại hơn 110 quốc gia, 10 thiết bị, phát trực tuyến tốc độ cao, trình chặn quảng cáo và bảo vệ khỏi phần mềm độc hại, VPN Accelerator và hơn thế nữa."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Đăng nhập an toàn trên tất cả thiết bị. Bao gồm không giới hạn biệt danh hide-my-email, chia sẻ, tích hợp 2FA, ${ DARK_WEB_MONITORING_NAME } và nhiều hơn nữa."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Bảo mật email và lịch trình bằng mã hóa đầu cuối. Bao gồm địa chỉ email ${ addresses }, hỗ trợ miền email tùy chỉnh, trợ lý soạn thảo ${ BRAND_NAME } Scribe, biệt danh hide-my-email không giới hạn và các dịch vụ khác."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Bảo mật email và lịch trình bằng mã hóa đầu cuối. Bao gồm địa chỉ email ${ addresses }, hỗ trợ cho các miền email tùy chỉnh, biệt danh hide-my-email không giới hạn và nhiều hơn nữa."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Bảo vệ email và lịch trình bằng mã hóa đầu cuối. Bao gồm 15 địa chỉ email, hỗ trợ miền email tùy chỉnh, trợ lý soạn thảo ${ BRAND_NAME } Scribe, biệt danh hide-my-email không giới hạn và các dịch vụ khác."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Bảo vệ email và lịch trình bằng mã hóa đầu cuối. Bao gồm 15 địa chỉ email, hỗ trợ miền email tùy chỉnh, biệt danh hide-my-email không giới hạn và hơn thế nữa."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm trình chỉnh sửa tài liệu trực tuyến, sao lưu ảnh, lịch sử phiên bản, chia sẻ tệp đã mã hóa và hơn thế nữa."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Không gian lưu trữ được chia sẻ trên tất cả các dịch vụ ${ BRAND_NAME }."
       ]
     },
     "Billing cycle": {
@@ -4980,6 +5058,14 @@
         "Các giải pháp được thiết kế riêng cho các tổ chức lớn có nhu cầu tùy chỉnh"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Lịch sử phiên bản mở rộng"
+      ],
+      "Priority support": [
+        "Hỗ trợ ưu tiên"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/tháng"
@@ -6947,9 +7033,19 @@
         "Có thể lưu tệp ICS của các sự kiện đã xuất thành công."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Tổng dung lượng lưu trữ 3 TB"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Lợi ích của tài khoản"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Không gian lưu trữ được chia sẻ giữa các thành viên gia đình trên ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } và ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -6982,6 +7078,11 @@
       ],
       "View invitation": [
         "Xem lời mời"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Tối đa 6 người dùng"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7228,6 +7329,17 @@
       ],
       "Set family name": [
         "Thiết lập tên gia đình"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bao gồm 2.700 máy chủ tại hơn 65 quốc gia, kết nối tối đa 10 thiết bị, truy cập dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Bao gồm hỗ trợ cho 3 miền email tùy chỉnh, 90 địa chỉ email, không giới hạn biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Bảo vệ tệp với bộ lưu trữ đám mây đã mã hóa. Bao gồm đồng bộ tự động, chia sẻ tệp mã hóa, v.v."
       ]
     },
     "Feature": {
@@ -8360,9 +8472,6 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } sẽ được đặt làm lịch mặc định."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Sẽ mất quyền truy cập vào tất cả dữ liệu đã mã hóa hiện tại trong tài khoản nếu tiếp tục."
-      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } là quyền riêng tư đáng tin cậy, được đảm bảo bởi mã hóa mạnh, mã nguồn mở và tuân thủ luật quyền riêng tư của Thụy Sĩ. Chúng tôi tin rằng không ai có quyền khai thác dữ liệu, chấm hết. Công nghệ và hoạt động kinh doanh của chúng tôi dựa trên định nghĩa về quyền riêng tư mạnh mẽ hơn về cơ bản này."
       ],
@@ -9098,9 +9207,6 @@
       "Data locked": [
         "Đã khóa dữ liệu"
       ],
-      "Data recoverable on this device": [
-        "Dữ liệu có thể khôi phục trên thiết bị này"
-      ],
       "dedicated servers": [
         "máy chủ chuyên dụng"
       ],
@@ -9187,9 +9293,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Đừng để mất quyền truy cập vào các tính năng cao cấp. Hãy kích hoạt tự động gia hạn ngay hôm nay."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Xong! Chúng tôi đã gửi mã đến ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Không biết cụm từ khôi phục?"
@@ -9331,12 +9434,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Nhập mã từ ứng dụng xác thực của bạn"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Nhập mã được gửi đến số điện thoại ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Nhập mã đã được gửi đến ${ email }. Nếu không tìm thấy thư trong hộp thư đến, vui lòng kiểm tra thư mục thư rác."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Nhập thông tin đăng nhập của tài khoản email muốn nhập thư."
@@ -9547,9 +9644,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Nếu bạn đang gặp khó khăn trong việc tạo tài khoản, vui lòng yêu cầu một lời mời và chúng tôi sẽ hồi đáp trong một ngày làm việc."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Nếu đã đăng nhập ở nơi khác, có thể ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Nếu tin rằng đã xảy ra lỗi, vui lòng liên hệ với chúng tôi ${ contactLink }."
@@ -10025,9 +10119,6 @@
       "On Ubuntu?": [
         "Trên Ubuntu?"
       ],
-      "Once you reset your password:": [
-        "Sau khi đặt lại mật khẩu:"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Chỉ thay đổi các cài đặt này nếu đang dùng PGP với người nhận không thuộc ${ BRAND_NAME }."
       ],
@@ -10165,9 +10256,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Vui lòng kiểm tra tệp, hoặc thử sử dụng ${ csvTemplateButton } của chúng tôi."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Vui lòng nhập 12 từ trong cụm từ khôi phục liên kết tới tài khoản."
       ],
       "Please fill in all required fields.": [
         "Vui lòng điền vào tất cả các trường bắt buộc."
@@ -10874,9 +10962,6 @@
       "Total: ${ totalPrice }": [
         "Tổng: ${ totalPrice }"
       ],
-      "trusted device": [
-        "thiết bị tin cậy"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Dùng thử ${ productName } hoàn toàn không rủi ro - nếu vì bất kỳ lý do gì bạn thay đổi ý định, bạn sẽ được hoàn tiền đầy đủ. Không cần lý do."
       ],
@@ -10894,9 +10979,6 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Không thể xác minh chữ ký tệp khôi phục. Vui lòng liên hệ với bộ phận hỗ trợ."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Rất tiếc, không có phương thức khôi phục nào được lưu cho tài khoản này."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID duy nhất được tạo bởi nhà cung cấp danh tính, thường ở dạng URL có chứa tên nhà cung cấp danh tính bên trong (ví dụ: https://idp.example.com/XXXXX)."
@@ -11054,9 +11136,6 @@
       "Want to learn more?": [
         "Muốn tìm hiểu thêm?"
       ],
-      "Warning:": [
-        "Cảnh báo:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Cảnh báo: việc xóa tài khoản là vĩnh viễn."
       ],
@@ -11096,14 +11175,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Nên thông báo cho các thành viên trong tổ chức và yêu cầu họ thiết lập 2FA cho tài khoản trước khi bắt buộc sử dụng 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Nên sử dụng cụm từ khôi phục."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Lưu trữ thông tin khôi phục một cách bảo mật trên thiết bị đáng tin cậy để ngăn chặn mất dữ liệu"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Đã lưu trữ tệp sao lưu trong trình duyệt này vì bạn đã cho phép khôi phục dữ liệu trên ${ deviceLink } này. Nếu tệp sao lưu hợp lệ, bạn sẽ ngay lập tức lấy lại quyền truy cập hoàn toàn hoặc một phần vào dữ liệu đã mã hóa."
       ],
       "We use 3-D Secure to protect your payments": [
         "Chúng tôi dùng 3-D Secure để bảo vệ các thanh toán của bạn"
@@ -11137,12 +11210,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Chúng tôi sẽ gửi mã đặt lại đến ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Chúng tôi sẽ gửi mã đặt lại đến địa chỉ email bạn đã cung cấp để khôi phục tài khoản."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Chúng tôi sẽ gửi mã đặt lại đến số điện thoại bạn đã cung cấp để khôi phục tài khoản."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Khi bị vô hiệu hóa sẽ ngăn các tệp hình ảnh tải về thiết bị mà bạn không biết."
@@ -11645,9 +11712,6 @@
     "invitation status": {
       "Declined": [
         "Đã từ chối"
-      ],
-      "Owner": [
-        "Chủ sở hữu"
       ],
       "Paused": [
         "Đã tạm dừng"
@@ -12415,9 +12479,6 @@
       ],
       "City": [
         "Thành phố"
-      ],
-      "Code": [
-        "Mã"
       ],
       "Code is 6 digits without spaces": [
         "Mã gồm 6 chữ số không có khoảng trắng"
@@ -13825,9 +13886,6 @@
       ],
       "Pay invoice": [
         "Thanh toán hóa đơn"
-      ],
-      "perform a password reset from your active session": [
-        "thực hiện đặt lại mật khẩu từ phiên đang hoạt động"
       ],
       "Privacy policy": [
         "Chính sách quyền riêng tư"
@@ -16841,17 +16899,6 @@
         "Ưu đãi trong thời gian có hạn."
       ]
     },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Tất cả dữ liệu hiện có** (email, sự kiện, liên hệ, tệp, tệp ${ PASS_APP_NAME }, v.v.) **sẽ bị khóa** và chỉ có thể mở khóa bằng **mật khẩu cũ**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Tất cả dữ liệu hiện tại** (email, sự kiện, liên hệ, tệp, tệp ${ PASS_APP_NAME },vv.) **sẽ bị khóa** và chỉ có thể mở khóa bằng **cụm từ khôi phục** hoặc **mật khẩu cũ**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Bất kỳ phương thức **xác thực hai yếu tố (2FA)** nào trên tài khoản sẽ bị vô hiệu hóa."
-      ]
-    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Tất cả quản trị viên sẽ có quyền truy cập vào khóa."
@@ -19447,6 +19494,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 người dùng"
+      ],
+      "All paid Mail and Calendar features": [
+        "Tất cả các tính năng Mail và Lịch trả phí"
+      ],
+      "High speed VPN": [
+        "VPN Tốc độ cao"
+      ],
       "Highest VPN speed": [
         "Tốc độ VPN cao nhất"
       ],
@@ -19459,8 +19518,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
+      "Premium early access": [
+        "Quyền truy cập sớm bản Premium"
+      ],
+      "Secure cloud storage": [
+        "Lưu trữ đám mây bảo mật"
+      ],
       "Secure streaming": [
         "Phát trực tuyến bảo mật"
+      ],
+      "Support online privacy": [
+        "Ủng hộ bảo vệ quyền riêng tư trực tuyến"
       ]
     },
     "specialoffer: Footer": {
@@ -19504,17 +19572,71 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } tháng"
+      ],
       "/ month": [
         "/ tháng"
       ],
       "/month": [
         "/tháng"
       ],
+      "1 year": [
+        "1 năm"
+      ],
+      "15 months": [
+        "15 tháng"
+      ],
+      "2 years": [
+        "2 năm"
+      ],
+      "30 months": [
+        "30 tháng"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Thanh toán ${ amount } cho 1 tháng"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Thanh toán ${ amount } cho 12 tháng"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Thanh toán ${ amount } cho 15 tháng"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Thanh toán ${ amount } cho 24 tháng"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Thanh toán ${ amount } cho 30 tháng"
+      ],
       "Get the deal": [
         "Nhận ưu đãi"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Gia hạn sau 1 năm với giá ưu đãi ${ discountedAmount } thay vì ${ regularAmount } (giảm ${ discount }%)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Gia hạn sau 2 năm với giá ưu đãi ${ discountedAmount } thay vì ${ regularAmount } (giảm ${ discount }%)"
+      ],
       "Save ${ discount }%": [
         "Tiết kiệm ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Giá tiêu chuẩn ${ amount } cho 1 tháng"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Giá tiêu chuẩn ${ amount } cho 12 tháng"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Giá tiêu chuẩn ${ amount } cho 15 tháng"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Giá tiêu chuẩn ${ amount } cho 24 tháng"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Giá tiêu chuẩn ${ amount } cho 30 tháng"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Ưu đãi đặc biệt có hiệu lực trong 2 năm đầu"
       ]
     },
     "specialoffer: Title": {
@@ -19538,6 +19660,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Nâng cấp và tiết kiệm hơn với 2 năm gói ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm 1700 máy chủ tại hơn 60 quốc gia, tốc độ VPN cao nhất, 10 kết nối VPN cho mỗi người dùng, dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Truy cập nội dung bị chặn và duyệt web riêng tư. Bao gồm 1700 máy chủ tại hơn 60 quốc gia, tốc độ VPN cao nhất, 10 kết nối VPN, dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Tất cả dịch vụ cao cấp của chúng tôi với giới hạn cao nhất: 100 địa chỉ email, hỗ trợ 10 miền tùy chỉnh, không giới hạn biệt danh hide-my-email, chia sẻ lịch, lưu trữ đám mây mã hóa và chia sẻ tệp, v.v."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Bao gồm hỗ trợ cho 3 miền email tùy chỉnh, 15 địa chỉ email, không giới hạn biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Phù hợp cho gia đình hoặc nhóm nhỏ, mỗi người có thể sở hữu hộp thư đến và biệt danh riêng. Yêu cầu miền tùy chỉnh."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Nhận miễn phí phiên bản trả phí của tất cả các dịch vụ bảo mật mới chúng tôi phát hành trong tương lai, cùng với quyền truy cập sớm vào tất cả các tính năng và sản phẩm tương lai."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm đồng bộ tự động, chia sẻ tệp mã hóa, v.v."
       ]
     },
     "Spotlight": {
@@ -20798,6 +20943,20 @@
         "Chi tiết về các sự kiện không thể xuất"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Tạo thông tin đăng nhập bảo mật trên mọi thiết bị. Bao gồm không giới hạn biệt danh, 20 kho lưu trữ, tích hợp 2FA, tự động điền thẻ tín dụng và nhiều tính năng khác."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bao gồm hơn 2.950 máy chủ tại hơn 65 quốc gia, kết nối tối đa 10 thiết bị, truy cập dịch vụ phát trực tuyến toàn cầu, trình chặn phần mềm độc hại và quảng cáo, v.v."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Bao gồm hỗ trợ cho 1 miền email tùy chỉnh, 10 địa chỉ email, 10 biệt danh hide-my-email, chia sẻ lịch và nhiều tính năng khác."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm lịch sử phiên bản, chia sẻ tệp mã hóa, v.v."
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Địa chỉ"
@@ -21683,9 +21842,6 @@
       "Forgot password": [
         "Quên mật khẩu"
       ],
-      "Forgot recovery method": [
-        "Quên phương thức khôi phục"
-      ],
       "Forward and auto-reply": [
         "Chuyển tiếp và tự động trả lời"
       ],
@@ -21946,9 +22102,6 @@
       ],
       "No need to empty the trash": [
         "Không cần làm sạch thùng rác"
-      ],
-      "No recovery method": [
-        "Không có phương thức khôi phục"
       ],
       "Notifications": [
         "Thông báo"

@@ -227,9 +227,6 @@
       "Connected": [
         "Connectat"
       ],
-      "Contact support": [
-        "Contactar amb el suport"
-      ],
       "Contact Support Center": [
         "Contacteu amb el Centre d'ajuda"
       ],
@@ -502,9 +499,6 @@
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
-      ],
-      "Forgot recovery method?": [
-        "Heu oblidat el mètode de recuperació?"
       ],
       "Generate new recovery phrase": [
         "Genera una nova frase de recuperació "
@@ -5020,9 +5014,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "S'ha eliminat el compte o s'ha desactivat"
-      ],
       "App currently unavailable": [
         "L'aplicació no està disponible actualment."
       ],
@@ -6295,9 +6286,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Els plans d'empresa de ${ BRAND_NAME } donen al vostre equip totes les eines de col·laboració que necessiten per ser productius i organitzats en la seva feina, mentre protegeixen el vostre negoci."
       ],
@@ -6985,9 +6973,6 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "Data recoverable on this device": [
-        "Dades recuperables en aquest dispositiu"
-      ],
       "Data recoverable with recovery phrase": [
         "Podeu recuperar les dades amb la frase de recuperació"
       ],
@@ -7073,9 +7058,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "No perdeu l'accés a les funcions prèmium. Activeu la renovació automàtica avui mateix."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Fet! Hem enviat un codi a ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "No sabeu la vostra frase de recuperació?"
@@ -7199,12 +7181,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Introduïu el codi enviat al vostre número de telefon ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Introduïu el codi que s'ha enviat a ${ email }. Si no trobeu el missatge a la vostra safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
@@ -7373,9 +7349,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Si teniu sessió iniciada a qualsevol altre lloc, podríeu ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Si heu iniciat sessió en una aplicació web de ${ BRAND_NAME } en un **altre navegador**, és possible que pugueu realitzar un restabliment de contrasenya des de la vostra sessió activa."
@@ -7787,9 +7760,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Un cop concedit l'accés al vostre compte, podran anar a la vostra configuració de **Recuperació** i canviar-vos la **contrasenya de ${ ACCOUNT_APP_NAME }**."
       ],
-      "Once you reset your password:": [
-        "Un cop restabliu la contrasenya:"
-      ],
       "Open source": [
         "Codi obert"
       ],
@@ -7910,9 +7880,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Comproveu el vostre fitxer o proveu d'utilitzar el nostre ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Introduïu la frase de recuperació de 12 paraules associada amb el vostre compte."
       ],
       "Please fill in all required fields.": [
         "Empleneu tots els camps obligatoris."
@@ -8258,6 +8225,9 @@
       "Symbols (#$&)": [
         "Símbols (#$&)"
       ],
+      "Synced from identity provider": [
+        "Sincronitzat des del proveïdor d'identitat"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomanat per TechRadar Pro amb una puntuació de 4,2 sobre 5 estrelles"
       ],
@@ -8525,9 +8495,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "La prova finalitza el ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "dispositiu de confiança"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Proveu ${ productName } totalment sense riscos. Si per qualsevol motiu canvieu d'opinió, rebreu un reemborsament complet. Sense preguntes."
       ],
@@ -8551,9 +8518,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Malauradament no hi ha cap mètode de recuperació disponible per aquest compte."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Malauradament no hi ha cap mètode de recuperació establert per a aquest compte."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Identificador únic generat pel vostre proveïdor d'identitat, normalment en forma d'URL que conté el nom del proveïdor d'identitat dins d'ell (p. ex. https://idp.exemple.com/XXXXX)."
@@ -8690,9 +8654,6 @@
       "Want to learn more?": [
         "Voleu saber-ne més?"
       ],
-      "Warning:": [
-        "Atenció:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Atenció: La supressió del compte és permanent."
       ],
@@ -8729,14 +8690,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de doble factor (2FA) per als seus comptes abans de fer-ne complir l'ús."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Recomanem utilitzar la frase de recuperació."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Emmagatzemem de manera segura la informació de recuperació al vostre dispositiu de confiança per a evitar que perdeu les vostres dades"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Hem emmagatzemat un fitxer de còpia de seguretat en aquest navegador perquè heu permès la recuperació de dades en aquest ${ deviceLink }. Si el fitxer de còpia de seguretat és vàlid, recuperareu immediatament l'accés complet o parcial a les vostres dades xifrades."
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
@@ -8770,12 +8725,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Enviarem un codi de restabliment a ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Enviarem un codi de restabliment a l'adreça de correu electrònic que heu proporcionat per a la recuperació del compte."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Enviarem un codi de restabliment al número de telèfon que heu proporcionat per a la recuperació del compte."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
@@ -9234,8 +9183,8 @@
       "Declined": [
         "Rebutjat"
       ],
-      "Owner": [
-        "Propietari"
+      "Group Owner": [
+        "Propietari del grup"
       ],
       "Paused": [
         "En pausa"
@@ -9507,9 +9456,6 @@
       ],
       "City": [
         "Ciutat"
-      ],
-      "Code": [
-        "Codi"
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
@@ -9968,8 +9914,8 @@
       "Password": [
         "Contrasenya"
       ],
-      "Password reminders": [
-        "Recordatoris de contrasenya"
+      "Password check-ins": [
+        "Inicis de sessió amb contrasenya"
       ],
       "Password strength": [
         "Nivell de seguretat de la contrasenya"
@@ -10384,9 +10330,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Explicació de la recuperació del compte"
-      ],
       "activity monitor": [
         "monitor d’activitats"
       ],
@@ -10539,9 +10482,6 @@
       ],
       "Pay invoice": [
         "Paga la factura"
-      ],
-      "perform a password reset from your active session": [
-        "realitzar un restabliment de contrasenya des de la vostra sessió activa"
       ],
       "Privacy policy": [
         "Política de privacitat"
@@ -10924,6 +10864,9 @@
       ],
       "Add address": [
         "Afegeix una adreça"
+      ],
+      "Change backup password": [
+        "Canviar la contrasenya de recuperació"
       ],
       "Change password": [
         "Canvia la contrasenya"
@@ -12869,22 +12812,11 @@
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Assegureu-vos de memoritzar o desar de manera segura la contrasenya, ja que és la clau per desxifrar les vostres dades."
       ],
-      "Turn off password reminders?": [
-        "Voleu desactivar els recordatoris de contrasenya?"
+      "Turn off check-ins": [
+        "Desactivar les entrades"
       ],
-      "Turn off reminders": [
-        "Desactiveu els recordatoris"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Totes les vostres dades** (correus electrònics, esdeveniments, contactes, fitxers, entrades de ${ PASS_APP_NAME }, etc.) **es bloquejaran** i només es podran desbloquejar amb la **contrasenya antiga**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Totes les vostres dades** (correus electrònics, esdeveniments, contactes, fitxers, entrades de ${ PASS_APP_NAME }, etc.) **es bloquejaran** i només es podran desbloquejar amb la **frase de recuperació** o la **contrasenya antiga**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Es desactivarà qualsevol mètode d'**autenticació de doble factor (A2F)** del vostre compte."
+      "Turn off password check-ins?": [
+        "Voleu desactivar les entrades amb contrasenya?"
       ]
     },
     "passwordless": {
@@ -15953,14 +15885,14 @@
       "Organization name updated": [
         "S'ha actualitzat el nom de l'organització."
       ],
+      "Password check-ins disabled": [
+        "Els inicis de sessió amb contrasenya estan desactivats"
+      ],
+      "Password check-ins enabled": [
+        "Els inicis de sessió amb contrasenya estan habilitats"
+      ],
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls."
-      ],
-      "Password reminders disabled": [
-        "S'han deshabilitat els recordatoris de contrasenya"
-      ],
-      "Password reminders enabled": [
-        "S'han habilitat els recordatoris de contrasenya"
       ],
       "Password updated": [
         "Contrasenya actualitzada"
@@ -16834,9 +16766,6 @@
       "Find email or username": [
         "Cerca correu electrònic o nom d’usuari"
       ],
-      "Forgot recovery method": [
-        "Oblideu el mètode de recuperació"
-      ],
       "Free plan": [
         "Pla gratuït"
       ],
@@ -17020,9 +16949,6 @@
       ],
       "No events yet": [
         "Encara no hi ha esdeveniments"
-      ],
-      "No recovery method": [
-        "No hi ha mètode de recuperació"
       ],
       "Open": [
         "Pendent"
@@ -18109,6 +18035,9 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ]
     },
     "Users table: badge": {

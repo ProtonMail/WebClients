@@ -1050,6 +1050,10 @@
       "Trust": [
         "Faire confiance"
       ],
+      "Trust key": [
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
+      ],
       "Try again": [
         "Réessayer"
       ],
@@ -4884,6 +4888,10 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } jour",
+        "${ remainingDaysCount } jours"
+      ],
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } jour restant",
         "${ remainingDaysCount } jours restants"
@@ -5371,6 +5379,22 @@
         "${ currentProgress } sur ${ totalProgress }",
         "${ currentProgress } sur ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } conversation sera labellisée",
+        "${ elementsCount } conversations seront labellisées"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } conversation sera marquée comme lue.",
+        "${ elementsCount } conversations seront marquées comme lues."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } conversation sera déplacée.",
+        "${ elementsCount } conversations seront déplacées."
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } conversation ne sera plus labellisée",
+        "${ elementsCount } conversations ne seront plus labellisées"
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } message sera labellisé",
         "${ elementsCount } messages seront labellisés"
@@ -5424,6 +5448,10 @@
         "${ numOccurrences } occurrence a été trouvée.",
         "${ numOccurrences } occurrences ont été trouvées."
       ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } occurrence a été trouvée dans le contenu de l'e-mail.",
+        "${ numOccurrences } occurrences ont été trouvées dans le contenu de l'e-mail."
+      ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } vous permet de stocker vos mots de passe, notes et autres informations sensibles avec un chiffrement de bout en bout. Disponible sur ${ ios }, ${ android } et dans votre ${ browser }."
       ],
@@ -5473,9 +5501,17 @@
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } non lu",
+        "${ subscription.UnreadMessageCount } non lus"
+      ],
       "${ total } conversation": [
         "${ total } conversation",
         "${ total } conversations"
+      ],
+      "${ total } message": [
+        "${ total } message",
+        "${ total } messages"
       ],
       "${ total } user found": [
         "${ total } utilisateur trouvé",
@@ -5484,6 +5520,10 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } traqueur a été bloqué.",
         "${ trackersCount } traqueurs ont été bloqués."
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newsletters"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } message est programmé.",
@@ -5514,6 +5554,10 @@
       ],
       "(No Recipient)": [
         "(Aucun destinataire)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** a été trouvé dans ${ labelName }.",
+        "**${ total }** résultats ont été trouvés dans ${ labelName }."
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Connexion automatique** : cette option ouvre et vous connecte au VPN dès que vous allumez votre appareil."
@@ -7046,6 +7090,10 @@
       ]
     },
     "Key pinning": {
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Voulez-vous faire confiance à la clé publique principale avec l'empreinte suivante ?",
+        "Voulez-vous faire confiance aux clés publiques principales avec les empreintes suivantes ?"
+      ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Vous avez activé la vérification d'adresse avec des clés de confiance pour cette adresse e-mail, mais aucune clé de chiffrement active n'a été approuvée.\nVous devez approuver une clé de confiance valide pour envoyer un message à cette adresse.",
         "Vous avez activé la vérification d'adresse avec des clés de confiance pour ces adresses e-mail, mais aucune clé de chiffrement active n'a été approuvée.\nVous devez approuver des clés de confiance valides pour envoyer un message à ces adresses."
@@ -10727,6 +10775,10 @@
       ]
     },
     "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } j",
+        "${ remainingDays } j"
+      ],
       "<1 d": [
         "<1 j"
       ]
@@ -11864,6 +11916,14 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } conversation a été supprimée.",
+        "${ count } conversations ont été supprimées."
+      ],
+      "${ count } draft deleted": [
+        "${ count } brouillon a été supprimé.",
+        "${ count } brouillons ont été supprimés."
+      ],
       "${ count } message deleted": [
         "${ count } message a été supprimé.",
         "${ count } messages ont été supprimés."
@@ -11872,9 +11932,17 @@
         "${ countMergeableContacts } contact semble identique.",
         "${ countMergeableContacts } contacts semblent identiques."
       ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } conversation a été ajoutée à ${ labelName }.",
+        "${ elementsCount } conversations ont été ajoutées à ${ labelName }."
+      ],
       "${ elementsCount } conversation marked as read.": [
         "${ elementsCount } conversation a été marquée comme lue.",
         "${ elementsCount } conversations ont été marquées comme lues."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } conversation a été marquée comme favorite.",
+        "${ elementsCount } conversations ont été marquées comme favorites."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } conversation a été marquée comme non lue.",
@@ -11908,6 +11976,10 @@
         "${ elementsCount } conversation n'est plus en attente.",
         "${ elementsCount } conversations ne sont plus en attente"
       ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } message a été ajouté à ${ labelName }.",
+        "${ elementsCount } messages ont été ajoutés à ${ labelName }."
+      ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } message a été marqué comme lu.",
         "${ elementsCount } messages ont été marqués comme lus."
@@ -11923,6 +11995,10 @@
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } message a été déplacé vers ${ labelName }.",
         "${ elementsCount } messages ont été déplacés vers ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } message a été déplacé dans le dossier Indésirables/spam et l'expéditeur ajouté à votre liste d'indésirables/spam.",
+        "${ elementsCount } messages ont été déplacés dans le dossier Indésirables/spam et les expéditeurs ajoutés à votre liste d'indésirables/spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message a été retiré de ${ labelName }.",
@@ -12031,6 +12107,10 @@
       ],
       "Problem reported": [
         "Le problème a été signalé."
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } message a été recatégorisé.",
+        "${ elementsCount } messages ont été recatégorisés."
       ],
       "Secret passphrase updated": [
         "Phrase secrète mise à jour"
@@ -12452,6 +12532,10 @@
       "Delete ${ count } draft": [
         "Supprimer ${ count } brouillon",
         "Supprimer ${ count } brouillons"
+      ],
+      "Delete ${ count } message": [
+        "Supprimer ${ count } message",
+        "Supprimer ${ count } messages"
       ],
       "Delete ${ value }": [
         "Supprimer ${ value } "
@@ -12953,6 +13037,10 @@
       ],
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Nous vous avons protégé contre ${ trackersCount } traqueur.",
+        "Nous vous avons protégé contre ${ trackersCount } traqueurs."
       ],
       "We'd love to hear from you!": [
         "N'hésitez pas à nous donner votre avis !"

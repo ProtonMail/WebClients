@@ -227,9 +227,6 @@
       "Connected": [
         "Συνδεδεμένο"
       ],
-      "Contact support": [
-        "Επικοινωνήστε με την υποστήριξη πελατών"
-      ],
       "Contact Support Center": [
         "Επικοινωνία Κέντρου Υποστήριξης"
       ],
@@ -502,9 +499,6 @@
       ],
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
-      ],
-      "Forgot recovery method?": [
-        "Ξεχάσατε τη μέθοδο ανάκτησης;"
       ],
       "Generate new recovery phrase": [
         "Παραγωγή νέας φράσης ανάκτησης"
@@ -4527,6 +4521,9 @@
       "No contacts found to import": [
         "Δεν βρέθηκαν επαφές προς εισαγωγή"
       ],
+      "No drive found to import": [
+        "Δε βρέθηκε drive για εισαγωγή"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
@@ -4538,6 +4535,9 @@
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
@@ -4795,6 +4795,9 @@
       "Unexpected error, we can't import the contacts": [
         "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
       ],
+      "Unexpected error, we can't import the files": [
+        "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των αρχείων"
+      ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
       ],
@@ -5011,9 +5014,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Ο λογαριασμός έχει διαγραφεί ή απενεργοποιηθεί"
-      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -6286,9 +6286,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Αν συνεχίσετε, θα χάσετε την πρόσβαση σε όλα τα τωρινά κρυπτογραφημένα δεδομένα εντός του λογαριασμού σας."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Τα ${ BRAND_NAME } Business πλάνα παρέχουν στην ομάδα σας όλα τα εργαλεία συνεργασίας που χρειάζονται για να είναι παραγωγικοί και οργανωμένοι στη δουλειά τους, ενώ ταυτόχρονα προστατεύουν την επιχείρησή σας."
       ],
@@ -6979,9 +6976,6 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "Data recoverable on this device": [
-        "Δεδομένα ανακτήσιμα σε αυτήν τη συσκευή"
-      ],
       "Data recoverable with recovery phrase": [
         "Ανακτήσιμα δεδομένα με φράση ανάκτησης"
       ],
@@ -7067,9 +7061,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Μη χάσετε την πρόσβαση στις προηγμένες δυνατότητες. Ενεργοποιήστε σήμερα την αυτόματη ανανέωση."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Δεν γνωρίζετε τη φράση ανάκτησης;"
@@ -7194,12 +7185,6 @@
       "Enter the code from your authenticator app": [
         "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
       ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Εισάγετε τον κωδικό που στάλθηκε στον αριθμό τηλεφώνου σας ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Εισάγετε τον κωδικό που στάλθηκε στο ${ email }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο των ενοχλητικών."
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
@@ -7259,6 +7244,9 @@
       ],
       "Failed to fetch logs.": [
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ],
       "Fill in user details": [
         "Συμπληρώστε τα στοιχεία χρήστη"
@@ -7364,9 +7352,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Εάν είστε συνδεδεμένοι κάπου αλλού, ενδέχεται να μπορείτε να ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Εάν είστε συνδεδεμένοι σε μια εφαρμογή ιστού ${ BRAND_NAME } σε **άλλο πρόγραμμα περιήγησης**, ενδέχεται να μπορείτε να πραγματοποιήσετε επαναφορά κωδικού πρόσβασης από την ενεργή σας περίοδο λειτουργίας."
@@ -7778,9 +7763,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Μόλις τους παραχωρηθεί πρόσβαση στον λογαριασμό σας, μπορούν να έχουν πρόσβαση στις ρυθμίσεις **Ανάκτησης** και **να αλλάξουν τον κωδικό πρόσβασής σας ${ ACCOUNT_APP_NAME }** για εσάς."
       ],
-      "Once you reset your password:": [
-        "Μετά την αλλαγή του κωδικού σας:"
-      ],
       "Open source": [
         "Ανοιχτού κώδικα"
       ],
@@ -7901,9 +7883,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Παρακαλούμε ελέγξτε το αρχείο σας ή δοκιμάστε να χρησιμοποιήσετε το ${ csvTemplateButton } μας."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Παρακαλούμε εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
       ],
       "Please fill in all required fields.": [
         "Παρακαλούμε συμπληρώστε όλα τα απαιτούμενα πεδία."
@@ -8249,6 +8228,9 @@
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
       ],
+      "Synced from identity provider": [
+        "Συγχρονισμένο από τον πάροχο ταυτότητας"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Το TechRadar Pro το συνιστά με βαθμολογία 4,2 στα 5 αστέρια"
       ],
@@ -8516,9 +8498,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Η δοκιμαστική περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "αξιόπιστη συσκευή"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
       ],
@@ -8542,9 +8521,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Δυστυχώς, δεν υπάρχει διαθέσιμη μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Δυστυχώς δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Μοναδικό αναγνωριστικό που δημιουργείται από τον πάροχο ταυτότητάς σας, συνήθως με τη μορφή διεύθυνσης URL που περιέχει το όνομα του παρόχου ταυτότητας (π.χ. https://idp.example.com/XXXXX)."
@@ -8681,9 +8657,6 @@
       "Want to learn more?": [
         "Θέλετε να μάθετε περισσότερα;"
       ],
-      "Warning:": [
-        "Προειδοποίηση:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Προειδοποίηση: η διαγραφή του λογαριασμού σας είναι μόνιμη."
       ],
@@ -8720,14 +8693,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Συνιστούμε να ειδοποιήσετε τα μέλη του οργανισμού και να τους ζητήσετε να ρυθμίσουν το 2FA για τους λογαριασμούς τους πριν επιβάλετε τη χρήση του 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Αντί για αυτό, συνιστούμε χρήση της φράσης σας ανάκτησης."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Αποθηκεύουμε με ασφάλεια πληροφορίες ανάκτησης στην αξιόπιστη συσκευή σας για να αποτρέψουμε την απώλεια των δεδομένων σας"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Αποθηκεύσαμε ένα αρχείο αντίγραφου ασφαλείας σε αυτό το πρόγραμμα περιήγησης, επειδή επιτρέψατε την ανάκτηση δεδομένων στη συσκευή ${ deviceLink }. Εάν το αρχείο αντίγραφου ασφαλείας είναι έγκυρο, θα αποκτήσετε αμέσως πλήρη ή μερική πρόσβαση στα κρυπτογραφημένα δεδομένα σας."
       ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
@@ -8761,12 +8728,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Θα στείλουμε έναν κωδικό επαναφοράς στο ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Θα στείλουμε έναν κωδικό επαναφοράς στην ηλ. διεύθυνση που καθορίσατε για ανακτήσεις λογαριασμού."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Θα στείλουμε έναν κωδικό επαναφοράς στον αριθμό τηλεφώνου που καθορίσατε για ανακτήσεις λογαριασμού."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
@@ -9225,8 +9186,8 @@
       "Declined": [
         "Απορρίφθηκε"
       ],
-      "Owner": [
-        "Ιδιοκτήτης"
+      "Group Owner": [
+        "Κάτοχος Ομάδας"
       ],
       "Paused": [
         "Σε παύση"
@@ -9498,9 +9459,6 @@
       ],
       "City": [
         "Πόλη"
-      ],
-      "Code": [
-        "Κωδικός"
       ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
@@ -9959,8 +9917,8 @@
       "Password": [
         "Κωδικός πρόσβασης"
       ],
-      "Password reminders": [
-        "Υπενθυμίσεις κωδικού πρόσβασης"
+      "Password check-ins": [
+        "Έλεγχοι κωδικού πρόσβασης"
       ],
       "Password strength": [
         "Ισχύς Κωδικού Πρόσβασης"
@@ -10375,9 +10333,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Επεξήγηση της ανάκτησης λογαριασμού"
-      ],
       "activity monitor": [
         "παρακολούθηση δραστηριότητας"
       ],
@@ -10530,9 +10485,6 @@
       ],
       "Pay invoice": [
         "Εξόφληση τιμολογίου"
-      ],
-      "perform a password reset from your active session": [
-        "εκτελέστε επαναφορά κωδικού πρόσβασης από την ενεργή περίοδο λειτουργίας σας"
       ],
       "Privacy policy": [
         "Πολιτική απορρήτου"
@@ -10915,6 +10867,9 @@
       ],
       "Add address": [
         "Προσθήκη διεύθυνσης"
+      ],
+      "Change backup password": [
+        "Αλλαγή κωδικού πρόσβασης αντιγράφων ασφαλείας"
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
@@ -12860,22 +12815,11 @@
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Βεβαιωθείτε ότι έχετε απομνημονεύσει ή αποθηκεύσει με ασφάλεια τον κωδικό πρόσβασής σας, καθώς είναι το κλειδί για την αποκρυπτογράφηση των δεδομένων σας."
       ],
-      "Turn off password reminders?": [
-        "Απενεργοποίηση υπενθυμίσεων κωδικού πρόσβασης;"
+      "Turn off check-ins": [
+        "Απενεργοποίηση των ελέγχων κωδικού πρόσβασης"
       ],
-      "Turn off reminders": [
-        "Απενεργοποίηση υπενθυμίσεων"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Όλα τα υπάρχοντα δεδομένα σας** (μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα, επαφές, αρχεία, καταχωρήσεις ${ PASS_APP_NAME } κλπ.) **θα κλειδωθούν** και μπορούν να ξεκλειδωθούν μόνο με τον **παλιό κωδικό πρόσβασης** σας."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Όλα τα υπάρχοντα δεδομένα σας** (μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα, επαφές, αρχεία, καταχωρήσεις ${ PASS_APP_NAME } κλπ.) **θα κλειδωθούν** και μπορούν να ξεκλειδωθούν μόνο με τη **φράση ανάκτησης** ή τον **παλιό κωδικό πρόσβασης** σας."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Οποιαδήποτε μέθοδος **ελέγχου ταυτότητας δύο παραγόντων (2FA)** στον λογαριασμό σας θα απενεργοποιηθεί."
+      "Turn off password check-ins?": [
+        "Απενεργοποίηση των ελέγχων κωδικού πρόσβασης;"
       ]
     },
     "passwordless": {
@@ -15941,14 +15885,14 @@
       "Organization name updated": [
         "Το όνομα του οργανισμού ενημερώθηκε"
       ],
+      "Password check-ins disabled": [
+        "Οι έλεγχοι κωδικών πρόσβασης είναι απενεργοποιημένοι"
+      ],
+      "Password check-ins enabled": [
+        "Οι έλεγχοι κωδικών πρόσβασης είναι ενεργοποιημένοι"
+      ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
-      ],
-      "Password reminders disabled": [
-        "Οι υπενθυμίσεις κωδικού πρόσβασης απενεργοποιήθηκαν"
-      ],
-      "Password reminders enabled": [
-        "Οι υπενθυμίσεις κωδικού πρόσβασης ενεργοποιήθηκαν"
       ],
       "Password updated": [
         "Ο κωδικός πρόσβασης ενημερώθηκε"
@@ -16822,9 +16766,6 @@
       "Find email or username": [
         "Αναζήτηση E-mail ή όνομα χρήστη"
       ],
-      "Forgot recovery method": [
-        "Ξεχάσατε τη μέθοδο ανάκτησης"
-      ],
       "Free plan": [
         "Δωρεάν πλάνο"
       ],
@@ -17008,9 +16949,6 @@
       ],
       "No events yet": [
         "Δεν υπάρχουν ακόμη γεγονότα"
-      ],
-      "No recovery method": [
-        "Χωρίς μέθοδο ανάκτησης"
       ],
       "Open": [
         "Άνοιγμα"
@@ -18097,6 +18035,9 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
       ]
     },
     "Users table: badge": {

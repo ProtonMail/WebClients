@@ -30,6 +30,9 @@
         "Um participante saiu da reunião"
       ],
       "A participant lowered their hand": [
+        "Um participante abaixou a mão"
+      ],
+      "A participant raised their hand": [
         "Um participante levantou a mão"
       ],
       "A participant reacted with ${ emoji }": [
@@ -157,6 +160,9 @@
       "Disable camera": [
         "Desativar câmera"
       ],
+      "Disable waiting room": [
+        "Desativar sala de espera"
+      ],
       "Dismiss": [
         "Descartar"
       ],
@@ -178,6 +184,9 @@
       "Download participant report": [
         "Baixar relatório de participantes"
       ],
+      "Download recording": [
+        "Baixar gravação"
+      ],
       "Download room level report": [
         "Baixar relatório de nível da sala"
       ],
@@ -198,6 +207,9 @@
       ],
       "Enable video": [
         "Ativar vídeo"
+      ],
+      "Enable waiting room": [
+        "Ativar sala de espera"
       ],
       "End meeting": [
         "Encerrar reunião"
@@ -361,6 +373,9 @@
       "Settings": [
         "Configurações"
       ],
+      "Show duration": [
+        "Exibir duração"
+      ],
       "Show floating thumbnail during screensharing": [
         "Mostrar miniatura flutuante durante o compartilhamento de tela"
       ],
@@ -465,6 +480,9 @@
       ],
       "View invoice": [
         "Visualizar fatura"
+      ],
+      "Waiting room": [
+        "Sala de espera"
       ]
     },
     "Alt": {
@@ -495,6 +513,9 @@
       "Go to dashboard": [
         "Ir para painel de controle"
       ],
+      "Hide self view": [
+        "Ocultar minha visualização"
+      ],
       "Leave Meeting": [
         "Sair da reunião"
       ],
@@ -506,6 +527,9 @@
       ],
       "Meeting details": [
         "Detalhes da reunião"
+      ],
+      "Noise cancellation": [
+        "Cancelamento de ruído"
       ],
       "Open chat message search": [
         "Abrir pesquisa de mensagens do bate-papo"
@@ -531,6 +555,12 @@
       "Settings": [
         "Configurações"
       ],
+      "Show duration": [
+        "Mostrar duração"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Mostrar miniatura flutuante durante o compartilhamento de tela"
+      ],
       "Show passphrase": [
         "Mostrar frase secreta"
       ],
@@ -554,6 +584,9 @@
       ],
       "Toggle settings": [
         "Alternar configurações"
+      ],
+      "Turn off incoming video": [
+        "Desativar vídeo de entrada"
       ],
       "Video settings": [
         "Configurações de vídeo"
@@ -3019,6 +3052,9 @@
       "Chat": [
         "Bate-papo"
       ],
+      "Couldn't prepare the recording": [
+        "Não foi possível preparar a gravação"
+      ],
       "Create new room": [
         "Criar nova sala"
       ],
@@ -3119,6 +3155,9 @@
       "Personal meeting room": [
         "Sala de reunião pessoal"
       ],
+      "Preparing your recording…": [
+        "Preparando sua gravação…"
+      ],
       "Publications": [
         "Publicações"
       ],
@@ -3158,9 +3197,6 @@
       "Settings": [
         "Configurações"
       ],
-      "Show duration": [
-        "Mostrar duração"
-      ],
       "Sign out": [
         "Encerrar sessão"
       ],
@@ -3193,6 +3229,9 @@
       ],
       "Your feedback has been submitted": [
         "Seu feedback foi enviado"
+      ],
+      "Your recording is ready": [
+        "Sua gravação está pronta"
       ]
     },
     "Today icon tooltip in mini calendar": {

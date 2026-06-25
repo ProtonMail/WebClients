@@ -227,9 +227,6 @@
       "Connected": [
         "Conectat"
       ],
-      "Contact support": [
-        "Contactați asistența"
-      ],
       "Contact Support Center": [
         "Contactați centrul de asistență"
       ],
@@ -502,9 +499,6 @@
       ],
       "Forgot password?": [
         "Ați uitat parola?"
-      ],
-      "Forgot recovery method?": [
-        "Ați uitat metoda de recuperare?"
       ],
       "Generate new recovery phrase": [
         "Generare frază de recuperare"
@@ -3777,6 +3771,12 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
       ],
+      "You can still login with this address and re-connect at any time.": [
+        "Încă vă puteți conecta cu această adresă și reconecta oricând."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Nu veți mai putea folosi ${ address.Email } pentru a primi și trimite mesaje în ${ BRAND_NAME }. În plus, mesajele trimise la această adresă din ${ BRAND_NAME } nu vor fi criptate bilateral."
+      ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Transferați ${ numAddressesOrSync } adresă Gmail către ${ MAIL_APP_NAME }.",
         "Transferați ${ numAddressesOrSync } adrese Gmail către ${ MAIL_APP_NAME }.",
@@ -4553,6 +4553,9 @@
       "No contacts found to import": [
         "Nu s-au găsit contacte de importat."
       ],
+      "No drive found to import": [
+        "Nu s-a găsit nici o unitate de importat."
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
       ],
@@ -4564,6 +4567,9 @@
       ],
       "Not a valid number": [
         "Nu este un număr valid"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Nu există spațiu suficient în ${ DRIVE_APP_NAME }."
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
@@ -4822,6 +4828,9 @@
       "Unexpected error, we can't import the contacts": [
         "Eroare neașteptată. Nu se pot importa contactele."
       ],
+      "Unexpected error, we can't import the files": [
+        "Eroare neașteptată. Fișierele nu se pot importa."
+      ],
       "Unknown error": [
         "Eroare necunoscută"
       ],
@@ -5039,9 +5048,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Contul este șters sau dezactivat."
-      ],
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
       ],
@@ -6339,9 +6345,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Planurile ${ BRAND_NAME } Business vă oferă echipei toate instrumentele de colaborare de care are nevoie pentru a fi productivă și organizată în activitatea sa, protejându-vă în același timp afacerea."
       ],
@@ -7071,9 +7074,6 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Data recoverable on this device": [
-        "Datele recuperabile pe acest dispozitiv"
-      ],
       "Data recoverable with recovery phrase": [
         "Date recuperabile cu fraza de recuperare"
       ],
@@ -7161,9 +7161,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Nu pierdeți accesul la funcțiile premium. Activați reînnoirea automată astăzi."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Gata! S-a trimis un cod către ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Nu vă cunoașteți fraza de recuperare?"
@@ -7288,12 +7285,6 @@
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
       ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Introduceți codul trimis la numărul de telefon ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Introduceți codul de recuperare trimis la ${ email }. Dacă nu găsiți mesajul în mesajele primite, verificați în folderul cu mesaje nedorite."
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
@@ -7353,6 +7344,9 @@
       ],
       "Failed to fetch logs.": [
         "Eșuare preluare jurnale."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Doar fișiere (fără fotografii, ${ DOCS_APP_NAME } sau ${ SHEETS_APP_NAME }) - până la 100 GiB total, 100.000 de fișiere și 50 GiB per fișier."
       ],
       "Fill in user details": [
         "Completați detaliile utilizatorului"
@@ -7458,9 +7452,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Dacă v-ați conectat în altă parte, puteți să ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Dacă v-ați conectat la o aplicație web ${ BRAND_NAME } într-un **alt navigator web**, este posibil să puteți reseta parola din sesiunea activă."
@@ -7874,9 +7865,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "După ce a fost acordat accesul la cont, aceștia vă pot accesa setările de **Recuperare** și vă **schimbe parola ${ ACCOUNT_APP_NAME }**."
       ],
-      "Once you reset your password:": [
-        "După ce veți reseta parola:"
-      ],
       "Open source": [
         "Cod sursă public"
       ],
@@ -8001,9 +7989,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verificați fișierul sau încercați să folosiți ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
       ],
       "Please fill in all required fields.": [
         "Completați toate câmpurile obligatorii."
@@ -8351,6 +8336,9 @@
       "Symbols (#$&)": [
         "Simboluri (#$&)"
       ],
+      "Synced from identity provider": [
+        "Sincronizat de la furnizorul de identitate"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro l-a recomandat cu o evaluare de 4,2 din 5 stele"
       ],
@@ -8621,9 +8609,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Perioada de evaluare expiră la ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "dispozitiv aprobat"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Încercați ${ productName } fără riscuri - dacă din orice motiv vă răzgândiți, veți primi o rambursare completă. Fără întrebări."
       ],
@@ -8647,9 +8632,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Din păcate nu există nicio metodă de recuperare disponibilă pentru acest cont."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID unic generat de furnizorul de identitate, de obicei sub forma unei adrese URL care conține numele furnizorului de identitate (ex. https://idp.exemplu.com/XXXX)."
@@ -8786,9 +8768,6 @@
       "Want to learn more?": [
         "Doriți să aflați mai multe?"
       ],
-      "Warning:": [
-        "Avertizare:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Avertizare: ștergerea contului este permanentă."
       ],
@@ -8825,14 +8804,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Se recomandă notificarea membrilor organizației și solicitarea ca aceștia să-ți activeze autentificarea cu doi factori înainte de forțarea utilizării acesteia."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Vă recomandăm să folosiți în schimb fraza de recuperare."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Stocăm în siguranță informațiile de recuperare pe dispozitivul dvs. de încredere pentru a preveni pierderea datelor."
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Am stocat un fișier de conservare în acest navigator web, deoarece ați permis recuperarea datelor pe acest ${ deviceLink }. Dacă fișierul de conservare este valid, veți recăpăta imediat acces complet sau parțial la datele personale criptate."
       ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
@@ -8866,12 +8839,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Veți primi un cod de resetare la ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Veți primi un cod de resetare la adresa de e-mail pe care ați furnizat-o pentru recuperarea contului."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Veți primi un cod de resetare la numărul de telefon pe care l-ați furnizat pentru recuperarea contului."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
@@ -9344,8 +9311,8 @@
       "Declined": [
         "Refuzată"
       ],
-      "Owner": [
-        "Proprietar"
+      "Group Owner": [
+        "Proprietar grup"
       ],
       "Paused": [
         "Suspendată"
@@ -9621,9 +9588,6 @@
       ],
       "City": [
         "Oraş"
-      ],
-      "Code": [
-        "Cod"
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
@@ -10083,9 +10047,6 @@
       "Password": [
         "Parola"
       ],
-      "Password reminders": [
-        "Mementouri parole"
-      ],
       "Password strength": [
         "Dificultate parolă"
       ],
@@ -10501,9 +10462,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Recuperarea contului explicată"
-      ],
       "activity monitor": [
         "monitorizare activitate"
       ],
@@ -10656,9 +10614,6 @@
       ],
       "Pay invoice": [
         "Plată factură"
-      ],
-      "perform a password reset from your active session": [
-        "efectuați o resetare a parolei din sesiunea activă"
       ],
       "Privacy policy": [
         "Politica de confidențialitate"
@@ -11054,6 +11009,9 @@
       ],
       "Add address": [
         "Adăugare adresă"
+      ],
+      "Change backup password": [
+        "Modificare parolă de rezervă"
       ],
       "Change password": [
         "Modificare parolă"
@@ -13032,23 +12990,6 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Asigurați-vă că memorați sau stocați în siguranță parola, deoarece este cheia pentru decriptarea datelor."
-      ],
-      "Turn off password reminders?": [
-        "Opriți mementourile pentru parolă?"
-      ],
-      "Turn off reminders": [
-        "Oprire mementouri"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Toate datele existente** (e-mailuri, evenimente, contacte, fișiere, intrări ${ PASS_APP_NAME } etc.) **vor fi blocate** și pot fi deblocate numai cu **parola veche**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Toate datele existente** (e-mailuri, evenimente, contacte, fișiere, intrări ${ PASS_APP_NAME } etc.) **vor fi blocate** și pot fi deblocate numai cu **expresia de recuperare** sau **parola veche**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Orice metodă de **autentificare cu doi factori (A2F)** din cont va fi dezactivată."
       ]
     },
     "passwordless": {
@@ -15421,7 +15362,7 @@
     },
     "storage_split: feature": {
       "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
-        "Spațiu de stocare pentru date generate de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, și ${ PASS_SHORT_APP_NAME }."
+        "Spațiu de stocare pentru datele generate de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, și ${ PASS_SHORT_APP_NAME }."
       ],
       "Up to ${ totalStorageSize } Drive storage": [
         "Până la ${ totalStorageSize } spațiu în Drive"
@@ -16180,12 +16121,6 @@
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
-      ],
-      "Password reminders disabled": [
-        "Mementouri pentru parolă dezactivate"
-      ],
-      "Password reminders enabled": [
-        "Mementouri pentru parolă activate"
       ],
       "Password updated": [
         "Parolă actualizată"
@@ -17069,9 +17004,6 @@
       "Find email or username": [
         "Căutare e-mail sau utilizator"
       ],
-      "Forgot recovery method": [
-        "Ați uitat metoda de recuperare"
-      ],
       "Free plan": [
         "Plan gratuit"
       ],
@@ -17256,9 +17188,6 @@
       ],
       "No events yet": [
         "Încă nu există evenimente"
-      ],
-      "No recovery method": [
-        "Nu există metodă de recuperare"
       ],
       "Open": [
         "Deschise"
@@ -18347,6 +18276,9 @@
       ],
       "Writing assistant": [
         "Asistent de scriere"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
       ]
     },
     "Users table: badge": {

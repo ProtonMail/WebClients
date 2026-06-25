@@ -3958,6 +3958,9 @@
       "No contacts found to import": [
         "Δεν βρέθηκαν επαφές προς εισαγωγή"
       ],
+      "No drive found to import": [
+        "Δε βρέθηκε drive για εισαγωγή"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
@@ -3972,6 +3975,9 @@
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
       ],
       "Number of occurrences cannot be empty": [
         "Ο αριθμός επαναλήψεων δεν μπορεί να είναι κενός"
@@ -4210,6 +4216,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των αρχείων"
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -5788,6 +5797,9 @@
       ],
       "Failed to update meeting schedule": [
         "Αποτυχία ενημέρωσης του προγράμματος σύσκεψης"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ],
       "finance": [
         "οικονομικά"

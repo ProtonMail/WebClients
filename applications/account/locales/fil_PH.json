@@ -711,9 +711,6 @@
       "Forgot password?": [
         "Nakalimutan ang password?"
       ],
-      "Forgot recovery method?": [
-        "Nakalimutan ang paraan ng pag-recover?"
-      ],
       "Generate": [
         "Mag-generate"
       ],
@@ -2178,12 +2175,95 @@
         "Hindi available ang offer"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Kasama ang suporta para sa 1 custom na domain ng email, 10 email address, 10 hide-my-email alias, pag-share ng kalendaryo, at marami pa."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } at ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } na storage"
+      ],
+      "1 user account": [
+        "1 user account"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB storage: 40x ng kasalukuyang plano"
+      ],
+      "6 user accounts": [
+        "6 na user account"
+      ],
+      "Admin panel to manage your family": [
+        "Admin panel para pamahalaan ang pamilya"
+      ],
+      "Advanced account protection": [
+        "Advanced na proteksyon sa account"
+      ],
+      "Easily add or remove users": [
+        "Madaling magdagdag o alisin ang mga user"
+      ],
+      "One-time payment, lifetime deal": [
+        "One-time payment lang, lifetime deal na"
+      ],
+      "Online document editor": [
+        "Online na editor ng dokumento"
+      ],
+      "Password health alerts": [
+        "Mga alerto sa katatagan ng password"
+      ],
+      "Recover previous file versions": [
+        "I-recover ang mga nakaraang bersyon ng file"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Walang limitasyong mga folder, label, at filter"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Walang limitasyong mga login, credit card, hide-my-email alias, at marami pa"
+      ],
       "Use your own email domain": [
         "Gamitin ang sariling domain ng email"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Siningil ng ${ amount } nang isang beses"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Magre-renew pagkalipas ng 1 buwan sa halagang ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "I-access ang naka-block na nilalaman at mag-browse nang pribado. Kasama ang 8,500+ server sa 110+ bansa, 10 device, mabilis na streaming, ad-blocker at proteksyon sa malware, VPN Accelerator, at marami pa."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Mga secure na login sa lahat ng device. Kasama ang walang limitasyong mga hide-my-email alias, pagbabahagi, pinagsamang 2FA, ${ DARK_WEB_MONITORING_NAME }, at marami pa."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang ${ addresses } email address, suporta para sa mga custom na domain ng email, ${ BRAND_NAME } Scribe writing assistant, walang limitasyong mga hide-my-email alias, at marami pa.",
+        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang ${ addresses } na email address, suporta para sa mga custom na domain ng email, ${ BRAND_NAME } Scribe writing assistant, walang limitasyong mga hide-my-email alias, at marami pa."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang ${ addresses } email address, suporta para sa mga custom na domain ng email, walang limitasyong mga hide-my-email alias, at marami pa.",
+        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang ${ addresses } na email address, suporta para sa mga custom na domain ng email, walang limitasyong mga hide-my-email alias, at marami pa."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang 15 email address, suporta para sa mga custom na domain ng email, ${ BRAND_NAME } Scribe writing assistant, walang limitasyong mga hide-my-email alias, at marami pa."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang 15 email address, suporta para sa mga custom na domain ng email, walang limitasyong mga hide-my-email alias, at marami pa."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang online na editor ng dokumento, backup ng larawan, history ng bersyon, naka-encrypt na pagbabahagi ng file, at marami pa."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Ang espasyo ng storage ay naka-share sa lahat ng serbisyo ng ${ BRAND_NAME }."
       ]
     },
     "Billing cycle": {
@@ -4892,6 +4972,14 @@
         "Mga iniakmang solusyon para sa malalaking organisasyon na may custom na pangangailangan"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Pinalawak na history ng bersyon"
+      ],
+      "Priority support": [
+        "Prayoridad na suporta"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/buwan"
@@ -6736,9 +6824,19 @@
         "Maaari kang mag-save ng ICS file ng mga kaganapang matagumpay na na-export."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB kabuuang storage"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Mga benepisyo ng account"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Ang espasyo ng storage ay naka-share sa mga miyembro ng pamilya sa buong ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, at ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -6771,6 +6869,11 @@
       ],
       "View invitation": [
         "Tingnan ang imbitasyon"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Hanggang 6 na user"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7022,6 +7125,17 @@
       ],
       "Set family name": [
         "Itakda ang pangalan ng pamilya"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Kasama ang 2700 server sa 65+ bansa, kumonekta hanggang sa 10 device, i-access ang mga serbisyo sa streaming sa buong mundo, malware at ad-blocker, at higit pa."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Kasama ang suporta para sa 3 custom na domain ng email, 90 email address, unlimited na hide-my-email alias, pagbabahagi ng kalendaryo at higit pa."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang automatic sync, pagbabahagi ng naka-encrypt na file, at higit pa."
       ]
     },
     "Feature": {
@@ -8158,9 +8272,6 @@
       "${ boldName } will be set as default calendar.": [
         "Itatakda ang ${ boldName } bilang default na kalendaryo."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Mawawalan ka ng access sa lahat ng kasalukuyang naka-encrypt na data sa iyong account kung magpapatuloy ka."
-      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "Ang ${ BRAND_NAME } ay privacy na mapagkakatiwalaan, tinitiyak ng malakas na encryption, open-source code, at Swiss privacy laws. Naniniwala kaming walang sinuman ang dapat na makapagsamantala sa iyong data, period. Ang aming teknolohiya at negosyo ay nakabatay sa pundamental na mas malakas na kahulugan ng privacy na ito."
       ],
@@ -8915,9 +9026,6 @@
       "Data locked": [
         "Naka-lock ang data"
       ],
-      "Data recoverable on this device": [
-        "Mare-recover ang data sa device na ito"
-      ],
       "dedicated servers": [
         "mga dedicated server"
       ],
@@ -9006,9 +9114,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Huwag mawalan ng access sa iyong mga premium feature. Paganahin ang auto-renew ngayon."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Tapos na! Nagpadala kami ng code sa ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Hindi alam ang parirala ng pag-recover?"
@@ -9150,12 +9255,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Ilagay ang code mula sa authenticator app"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Ilagay ang code na ipinadala sa iyong numero ng telepono na ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Ilagay ang code na ipinadala sa ${ email }. Kung hindi mahanap ang mensahe sa inbox, pakitingnan ang iyong spam folder."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ilagay ang mga kredensyal ng email account na gusto mong pagmulan ng import."
@@ -9360,9 +9459,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Kung nagkakaproblema sa paggawa ng account, mangyaring humiling ng imbitasyon at tutugon kami sa loob ng isang araw ng negosyo."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Kung naka-sign in ka sa ibang lugar, maaari mong ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Kung naniniwala kang error ito, mangyaring makipag-ugnayan sa amin sa ${ contactLink }."
@@ -9831,9 +9927,6 @@
       "On Ubuntu?": [
         "Sa Ubuntu?"
       ],
-      "Once you reset your password:": [
-        "Kapag na-reset mo na ang iyong password:"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Baguhin lamang ang mga setting na ito kung gumagamit ka ng PGP kasama ang mga tatanggap na hindi gumagamit ng ${ BRAND_NAME }."
       ],
@@ -9975,9 +10068,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Mangyaring suriin ang file, o subukang gamitin ang aming ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Pakilagay ang 12-salitang parirala ng pag-recover na nauugnay sa iyong account."
       ],
       "Please fill in all required fields.": [
         "Pakipunan ang lahat ng kinakailangang field."
@@ -10680,9 +10770,6 @@
       "Total VPN connections": [
         "Kabuuang mga koneksyon ng VPN"
       ],
-      "trusted device": [
-        "pinagkakatiwalaang device"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Subukan ang ${ productName } nang walang panganib - kung magbago ang isip mo sa anumang dahilan, makakatanggap ka ng buong refund. Wala nang itatanong"
       ],
@@ -10700,9 +10787,6 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Hindi ma-verify ang signature ng recovery file. Mangyaring makipag-ugnayan sa suporta."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Sa kasamaang palad, walang naka-save na paraan ng pag-recover para sa account na ito."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Natatanging ID na na-generate ng provider ng pagkakakilanlan, karaniwang nasa anyo ng URL na naglalaman ng pangalan ng provider ng pagkakakilanlan (hal. https://idp.example.com/XXXXX)."
@@ -10851,9 +10935,6 @@
       "Want to learn more?": [
         "Gustong matuto pa?"
       ],
-      "Warning:": [
-        "Babala:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Babala: permanente ang pag-delete sa account."
       ],
@@ -10890,14 +10971,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Inirerekomenda naming ipaalam sa mga miyembro ng organisasyon at hilingin sa kanila na i-set up ang 2FA para sa kanilang mga account bago ipatupad ang paggamit ng 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Inirerekomenda namin ang paggamit ng iyong parirala ng pag-recover sa halip."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Ligtas naming iniimbak ang impormasyon sa pag-recover sa iyong pinagkakatiwalaang device upang maiwasan ang pagkawala ng iyong data"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Nag-imbak kami ng backup file sa browser na ito dahil pinayagan mo ang pag-recover ng data sa ${ deviceLink } na ito. Kung valid ang backup file, agad mong mababawi nang kumpleto o bahagyang access sa iyong naka-encrypt na data."
       ],
       "We use 3-D Secure to protect your payments": [
         "Gumagamit ng 3-D Secure upang protektahan ang iyong mga pagbabayad"
@@ -10931,12 +11006,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Magpapadala ng reset code sa ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Magpapadala kami ng reset code sa email address na ibinigay mo para sa pag-recover ng account."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Magpapadala ng reset code sa numero ng telepono na ibinigay para sa pag-recover ng account."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kapag hindi pinagana, pinipigilan nito ang pag-load ng mga image file sa device nang hindi nalalaman."
@@ -12206,9 +12275,6 @@
       ],
       "City": [
         "Lungsod"
-      ],
-      "Code": [
-        "Code"
       ],
       "Code is 6 digits without spaces": [
         "Ang code ay 6 na digit na walang mga espasyo"
@@ -13597,9 +13663,6 @@
       ],
       "Pay invoice": [
         "Bayaran ang invoice"
-      ],
-      "perform a password reset from your active session": [
-        "magsagawa ng pag-reset ng password mula sa aktibong session"
       ],
       "Privacy policy": [
         "Patakaran sa Privacy"
@@ -16633,17 +16696,6 @@
         "Limited-time deal."
       ]
     },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "Ang **lahat ng umiiral na data** (mga email, kaganapan, contact, file, entry ng ${ PASS_APP_NAME }, atbp.) ay **malo-lock** at maaari lamang i-unlock gamit ang iyong **lumang password**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "Ang **lahat ng iyong umiiral na data** (mga email, kaganapan, contact, file, entry ng ${ PASS_APP_NAME } atbp.) ay **malo-lock** at maaari lamang i-unlock gamit ang iyong **parirala ng pag-recover** o ang iyong **lumang password**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Ang anumang paraan ng **two-factor authentication (2FA)** sa iyong account ay hindi pagaganahin."
-      ]
-    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Magkakaroon ng access ang lahat ng administrator sa key."
@@ -19221,6 +19273,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 na user"
+      ],
+      "All paid Mail and Calendar features": [
+        "Lahat ng bayad na feature ng Mail at Kalendaryo"
+      ],
+      "High speed VPN": [
+        "Mabilis na VPN"
+      ],
       "Highest VPN speed": [
         "Pinakamataas na bilis ng VPN"
       ],
@@ -19233,8 +19297,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium na ${ appName1 }, ${ appName2 }, at ${ appName3 }"
       ],
+      "Premium early access": [
+        "Premium na maagang pag-access"
+      ],
+      "Secure cloud storage": [
+        "Secure na cloud storage"
+      ],
       "Secure streaming": [
         "Secure na streaming"
+      ],
+      "Support online privacy": [
+        "Suportahan ang online privacy"
       ]
     },
     "specialoffer: Footer": {
@@ -19278,17 +19351,72 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } buwan",
+        "${ n } na buwan"
+      ],
       "/ month": [
         "/ buwan"
       ],
       "/month": [
         "/buwan"
       ],
+      "1 year": [
+        "1 taon"
+      ],
+      "15 months": [
+        "15 buwan"
+      ],
+      "2 years": [
+        "2 taon"
+      ],
+      "30 months": [
+        "30 buwan"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Sisingilin ng ${ amount } para sa 1 buwan"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Sisingilin ng ${ amount } para sa 12 buwan"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Sisingilin ng ${ amount } para sa 15 buwan"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Sisingilin ng ${ amount } para sa 24 na buwan"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Sisingilin ng ${ amount } para sa 30 buwan"
+      ],
       "Get the deal": [
         "Kunin ang deal"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Magre-renew pagkatapos ng 1 taon sa diskwentadong presyo na ${ discountedAmount } sa halip na ${ regularAmount } (${ discount }% na diskwento)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Magre-renew pagkatapos ng 2 taon sa diskwentadong presyo na ${ discountedAmount } sa halip na ${ regularAmount } (${ discount }% na diskwento)"
+      ],
       "Save ${ discount }%": [
         "I-save ang ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standard na presyo na ${ amount } para sa 1 buwan"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standard na presyo na ${ amount } para sa 12 buwan"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standard na presyo na ${ amount } para sa 15 buwan"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standard na presyo na ${ amount } para sa 24 na buwan"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standard na presyo na ${ amount } para sa 30 buwan"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Ang espesyal na alok ay valid para sa unang 2 taon"
       ]
     },
     "specialoffer: Title": {
@@ -19312,6 +19440,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "I-upgrade at i-save nang higit pa gamit ang 2 taon ng ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "I-access ang naka-block na content at mag-browse nang pribado. Kasama ang 1700 server sa 60+ bansa, pinakamabilis na VPN, 10 koneksyon sa VPN bawat user, serbisyo sa streaming sa buong mundo, malware at ad-blocker, at higit pa."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "I-access ang naka-block na content at mag-browse nang pribado. Kasama ang 1700 server sa 60+ bansa, pinakamabilis na VPN, 10 koneksyon sa VPN, serbisyo sa streaming sa buong mundo, malware at ad-blocker, at higit pa."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Lahat ng premium na serbisyo na may pinakamataas na limitasyon: 100 email address, suporta para sa 10 custom na domain, unlimited na hide-my-email alias, pagbabahagi ng kalendaryo, naka-encrypt na cloud storage at pagbabahagi ng file, at higit pa."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Kasama ang suporta para sa 3 custom na domain ng email, 15 email address, unlimited na hide-my-email alias, pagbabahagi ng kalendaryo, at higit pa."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Tamang-tama para sa mga pamilya o maliliit na team, bawat isa ay maaaring magkaroon ng sariling inbox at alias. Nangangailangan ng custom na domain."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Tanggapin nang walang dagdag na gastos ang mga bayad na bersyon ng lahat ng bagong serbisyo sa privacy na ilalabas sa hinaharap, kasama ang maagang pag-access sa lahat ng feature at produkto sa hinaharap."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang automatic sync, pagbabahagi ng naka-encrypt na file, at higit pa."
       ]
     },
     "Spotlight": {
@@ -20588,6 +20739,20 @@
         "Mga detalye tungkol sa mga kaganapang hindi na-export"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Gumawa ng mga secure na detalye sa pag-login sa lahat ng device. Kasama ang unlimited na alias, 20 vault, integrated 2FA, credit card auto-fill at higit pa."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Kasama ang 2950+ na server sa 65+ na bansa, kumonekta hanggang sa 10 device, i-access ang mga serbisyo sa streaming sa buong mundo, malware at ad-blocker, at higit pa."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Kasama ang suporta para sa 1 custom na domain ng email, 10 email address, 10 hide-my-email alias, pagbabahagi ng kalendaryo, at higit pa."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang history ng bersyon, pagbabahagi ng naka-encrypt na file, at higit pa."
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Mga address"
@@ -21462,9 +21627,6 @@
       "Forgot password": [
         "Nakalimutan ang password"
       ],
-      "Forgot recovery method": [
-        "Nakalimutan ang paraan ng pag-recover"
-      ],
       "Forward and auto-reply": [
         "I-forward at auto-reply"
       ],
@@ -21714,9 +21876,6 @@
       ],
       "No need to empty the trash": [
         "Hindi kailangang i-empty ang basura"
-      ],
-      "No recovery method": [
-        "Walang paraan ng pag-recover"
       ],
       "Notifications": [
         "Mga abiso"
