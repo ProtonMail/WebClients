@@ -1,4 +1,5 @@
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../../../types-api';
+import type { LumoStreamUsage, UsageMessage } from '../../../types-api';
 import { mapStreamErrorCode } from './generation-terminal';
 import type {
     GenerationResponseMessage,
@@ -7,10 +8,6 @@ import type {
     ServerToolCallMessage,
     ServerToolResultMessage,
 } from './types';
-import type {
-    LumoStreamUsage,
-    UsageMessage,
-} from '../../../types-api';
 import { isGenerationResponseMessage } from './types';
 
 type OpenAiDelta = {
@@ -74,49 +71,6 @@ type ChatToolResultChunk = {
         encrypted?: boolean;
     };
 };
-
-// type ChatToolCallChunk = {
-//     object: 'chat.tool_call';
-//     tool_call: {
-//         id: string;
-//         name: string;
-//         arguments?: string;
-//         encrypted?: boolean;
-//     };
-// };
-
-// type ChatToolResultChunk = {
-//     object: 'chat.tool_result';
-//     tool_result: {
-//         call_id: string;
-//         content: string;
-//         encrypted?: boolean;
-//     };
-// };
-
-// type LumoChatToolCallChunk = {
-//     object: 'chat.tool_call';
-//     tool_call: {
-//         id?: string;
-//         name: string;
-//         arguments?: Record<string, unknown>;
-//     };
-// };
-
-// type LumoChatToolResultChunk = {
-//     object: 'chat.tool_result';
-//     tool_result: {
-//         call_id?: string;
-//         content: unknown;
-//     };
-// };
-
-// type ParsedStreamItem =
-//     | OpenAiChunk
-//     | GenerationResponseMessage
-//     | LumoImageDataChunk
-//     | LumoChatToolCallChunk
-//     | LumoChatToolResultChunk;
 
 type StreamCounters = {
     message: number;
@@ -242,43 +196,11 @@ export class StreamProcessor {
                 }
             }
 
-            // if ('object' in item && item.object === 'chat.tool_call') {
-            //     return [this.processLumoToolCallChunk(item)];
-            // }
-
-            // if ('object' in item && item.object === 'chat.tool_result') {
-            //     return [this.processLumoToolResultChunk(item)];
-            // }
-
             return this.processOpenAiChunk(item as OpenAiChunk);
         } catch (error) {
             console.warn('Error parsing a data line from chat endpoint', error);
             return [];
         }
-    }
-
-    private processLumoToolCallChunk(chunk: LumoChatToolCallChunk): GenerationResponseMessage {
-        const { name, arguments: args } = chunk.tool_call;
-        const payload: Record<string, unknown> = { name };
-        if (args !== undefined) {
-            payload.arguments = args;
-        }
-
-        return {
-            type: 'token_data',
-            target: 'tool_call',
-            count: this.counters.toolCall++,
-            content: JSON.stringify(payload),
-        };
-    }
-
-    private processLumoToolResultChunk(chunk: LumoChatToolResultChunk): GenerationResponseMessage {
-        return {
-            type: 'token_data',
-            target: 'tool_result',
-            count: this.counters.toolResult++,
-            content: serializeToolResultContent(chunk.tool_result.content),
-        };
     }
 
     private processLumoImageDataChunk(chunk: LumoImageDataChunk): GenerationResponseMessage {
@@ -492,24 +414,4 @@ export class StreamProcessor {
                 return 'message';
         }
     }
-}
-
-/** Serialize backend tool-result payloads into the JSON string stored on message blocks. */
-function serializeToolResultContent(content: unknown): string {
-    if (typeof content === 'string') {
-        return content;
-    }
-
-    if (typeof content !== 'object' || content === null) {
-        return JSON.stringify(content);
-    }
-
-    const obj = content as Record<string, unknown>;
-
-    // Web search results arrive nested under `content.results`.
-    if (Array.isArray(obj.results)) {
-        return JSON.stringify({ results: obj.results });
-    }
-
-    return JSON.stringify(content);
 }
