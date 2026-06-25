@@ -45,6 +45,11 @@ export function PublicDocumentCopier({ openAction }: { openAction: DocumentActio
 
   const handleMessage = useCallback(
     (event: MessageEvent) => {
+      if (event.origin !== new URL(getAppHref('/', APPS.PROTONDOCS)).origin) {
+        console.error('Invalid origin: ', event.origin)
+        return
+      }
+
       if (event.data.type === ('data-for-copying' satisfies PublicDocumentPostMessageEvent)) {
         const { name, yjsData } = event.data.doc as PublicDocumentPostMessageDataForCopying
         void performCopy(name, yjsData)
