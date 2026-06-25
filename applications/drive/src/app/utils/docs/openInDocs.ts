@@ -5,7 +5,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
-import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
+import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import { extraThunkArguments } from '../../redux-store/thunk';
 import { tmpConvertNewDocTypeToOld } from './tmpConvertNewDocTypeToOld';
@@ -42,9 +42,8 @@ export const getOpenInDocsInfo = (mediaType: string): OpenInDocsType | undefined
     return openInDocsType;
 };
 
-type OpenDocumentWindowParams = {
+type DocumentUrlParams = {
     type: DocumentType | ProtonDocumentType;
-    windowHandle: Window;
 } & (
     | {
           mode: 'open' | 'convert' | 'download' | 'history';
@@ -84,8 +83,8 @@ type OpenDocumentWindowParams = {
       }
 );
 
-const openDocumentWindow = (params: OpenDocumentWindowParams) => {
-    const { type: originalType, mode, windowHandle } = params;
+const buildDocumentUrl = (params: DocumentUrlParams): URL => {
+    const { type: originalType, mode } = params;
     const type = tmpConvertNewDocTypeToOld(originalType);
 
     const getLocalID = () => {
@@ -113,7 +112,7 @@ const openDocumentWindow = (params: OpenDocumentWindowParams) => {
         url.hash = params.urlPassword;
     }
 
-    windowHandle.location.assign(url);
+    return url;
 };
 
 export const createDocument = async ({
@@ -125,19 +124,12 @@ export const createDocument = async ({
     type: DocumentType | ProtonDocumentType;
     openBehavior?: 'tab' | 'redirect';
 }) => {
-    const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
     const { volumeId, nodeId } = splitNodeUid(parentUid);
-    try {
-        openDocumentWindow({
-            type,
-            mode: 'create',
-            windowHandle: w.handle,
-            volumeId,
-            parentLinkId: nodeId,
-        });
-    } catch (e) {
-        w.close();
-        throw e;
+    const url = buildDocumentUrl({ type, mode: 'create', volumeId, parentLinkId: nodeId });
+    if (openBehavior === 'tab') {
+        getNewWindow(url.toString());
+    } else {
+        window.location.assign(url);
     }
 };
 
@@ -150,38 +142,13 @@ const openDocument = async ({
     openBehavior?: 'tab' | 'redirect';
     type: DocumentType | ProtonDocumentType;
 }) => {
-    const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
     const { volumeId, nodeId } = splitNodeUid(uid);
-    try {
-        openDocumentWindow({
-            type,
-            mode: 'open',
-            windowHandle: w.handle,
-            volumeId,
-            linkId: nodeId,
-        });
-    } catch (e) {
-        w.close();
-        throw e;
+    const url = buildDocumentUrl({ type, mode: 'open', volumeId, linkId: nodeId });
+    if (openBehavior === 'tab') {
+        getNewWindow(url.toString());
+    } else {
+        window.location.assign(url);
     }
-};
-
-const getDocsWindow = ({
-    openBehavior,
-    customPassword,
-}: {
-    openBehavior: 'tab' | 'redirect';
-    customPassword: string | undefined;
-}) => {
-    if (openBehavior === 'redirect') {
-        return getCurrentTab();
-    }
-
-    if (customPassword) {
-        return handleDocsCustomPassword(customPassword);
-    }
-
-    return getNewWindow();
 };
 
 const openPublicDocument = async ({
@@ -200,19 +167,21 @@ const openPublicDocument = async ({
     customPassword?: string;
 }) => {
     const { nodeId } = splitNodeUid(uid);
-    const w = getDocsWindow({ openBehavior, customPassword });
-    try {
-        openDocumentWindow({
-            type,
-            mode: 'open-url',
-            windowHandle: w.handle,
-            linkId: nodeId,
-            token,
-            urlPassword,
-        });
-    } catch (e) {
-        w.close();
-        throw e;
+    const url = buildDocumentUrl({ type, mode: 'open-url', linkId: nodeId, token, urlPassword });
+    if (openBehavior === 'redirect') {
+        window.location.assign(url);
+    } else if (customPassword) {
+        // handleDocsCustomPassword opens a blank window before showing the password
+        // prompt — the two-step pattern is intentional here.
+        const w = handleDocsCustomPassword(customPassword);
+        try {
+            w.handle.location.assign(url);
+        } catch (e) {
+            w.close();
+            throw e;
+        }
+    } else {
+        getNewWindow(url.toString());
     }
 };
 
@@ -225,19 +194,12 @@ export const downloadDocument = async ({
     openBehavior?: 'tab' | 'redirect';
     type: DocumentType | ProtonDocumentType;
 }) => {
-    const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
     const { volumeId, nodeId } = splitNodeUid(uid);
-    try {
-        openDocumentWindow({
-            type,
-            mode: 'download',
-            windowHandle: w.handle,
-            volumeId,
-            linkId: nodeId,
-        });
-    } catch (e) {
-        w.close();
-        throw e;
+    const url = buildDocumentUrl({ type, mode: 'download', volumeId, linkId: nodeId });
+    if (openBehavior === 'tab') {
+        getNewWindow(url.toString());
+    } else {
+        window.location.assign(url);
     }
 };
 
@@ -254,57 +216,23 @@ export const downloadPublicDocument = async ({
     token: string;
     urlPassword: string;
 }) => {
-    const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
     const { nodeId } = splitNodeUid(uid);
-    try {
-        openDocumentWindow({
-            type,
-            mode: 'open-url-download',
-            windowHandle: w.handle,
-            linkId: nodeId,
-            token,
-            urlPassword,
-        });
-    } catch (e) {
-        w.close();
-        throw e;
+    const url = buildDocumentUrl({ type, mode: 'open-url-download', linkId: nodeId, token, urlPassword });
+    if (openBehavior === 'tab') {
+        getNewWindow(url.toString());
+    } else {
+        window.location.assign(url);
     }
 };
 
 const convertDocument = async ({ uid, type }: { uid: string; type: DocumentType | ProtonDocumentType }) => {
-    const w = getNewWindow();
     const { volumeId, nodeId } = splitNodeUid(uid);
-
-    try {
-        openDocumentWindow({
-            type,
-            mode: 'convert',
-            windowHandle: w.handle,
-            volumeId,
-            linkId: nodeId,
-        });
-    } catch (e) {
-        w.close();
-        throw e;
-    }
+    getNewWindow(buildDocumentUrl({ type, mode: 'convert', volumeId, linkId: nodeId }).toString());
 };
 
 export const openDocumentHistory = async ({ uid, type }: { uid: string; type: DocumentType | ProtonDocumentType }) => {
-    const w = getNewWindow();
     const { volumeId, nodeId } = splitNodeUid(uid);
-
-    try {
-        openDocumentWindow({
-            type,
-            mode: 'history',
-            windowHandle: w.handle,
-            volumeId,
-            linkId: nodeId,
-        });
-    } catch (e) {
-        w.close();
-        throw e;
-    }
+    getNewWindow(buildDocumentUrl({ type, mode: 'history', volumeId, linkId: nodeId }).toString());
 };
 
 export const openDocsOrSheetsDocument = async ({
