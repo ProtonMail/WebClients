@@ -780,9 +780,6 @@
       "Forgot password?": [
         "Zapomenuté heslo?"
       ],
-      "Forgot recovery method?": [
-        "Zapomněli jste metodu obnovení?"
-      ],
       "Generate": [
         "Vygenerovat"
       ],
@@ -2450,12 +2447,145 @@
         "Nabídka je nedostupná"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } úložiště"
+      ],
+      "1 user account": [
+        "1 uživatelský účet"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB prostoru: 40x váš současný tarif"
+      ],
+      "6 user accounts": [
+        "6 uživatelských účtů"
+      ],
+      "Admin panel to manage your family": [
+        "Panel správce pro správu rodiny"
+      ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
+      "Easily add or remove users": [
+        "Snadné přidávání a odebírání uživatelů"
+      ],
+      "One-time payment, lifetime deal": [
+        "Jednorázová platba, doživotní přístup"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Password health alerts": [
+        "Upozornění na sílu hesla"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neomezený počet přihlášení, platebních karet, aliasů hide-my-email a další"
+      ],
       "Use your own email domain": [
         "Použijte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Účtováno ${ amount } jednorázově"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Obnovuje se po 1 měsíci za ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Přístup k blokovanému obsahu a soukromé procházení internetu. K dispozici je více než 8500 serverů ve více než 110 zemích, možnost připojit až 10 zařízení, vysokorychlostní streamování, blokování reklam a ochrana před malware, VPN Accelerator a další."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování ${ DARK_WEB_MONITORING_NAME } a další funkce."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje online editor dokumentů, zálohování fotek, historii verzí souborů, šifrované sdílení souborů a další funkce."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB úložiště dat"
+      ],
+      "3 TB data storage": [
+        "3 TB úložiště dat"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15000+ serverům v 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné ověřování 2FA"
+      ],
+      "Connect 10 devices at once": [
+        "Připojte až 10 zařízení současně"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Celá historie konverzací se snadným vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Speciálně navržený NetShield chrání vaše zařízení a zrychluje vaše prohlížení blokováním reklam, sledovacích prvků a malwaru."
       ]
     },
     "Billing cycle": {
@@ -5505,6 +5635,14 @@
         "Řešení na míru pro větší organizace se specifickými potřebami"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/měsíc"
@@ -7444,9 +7582,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Účet je smazán nebo deaktivován"
-      ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
       ],
@@ -7645,9 +7780,19 @@
         "Můžete uložit ICS soubor s událostmi, které byly úspěšně exportovány."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB celkového úložiště"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Výhody vašeho účtu"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi členy rodiny v ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -7680,6 +7825,11 @@
       ],
       "View invitation": [
         "Zobrazit pozvánku"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Až 6 uživatelů"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7944,6 +8094,17 @@
       ],
       "Set family name": [
         "Nastavit jméno rodiny"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Zahrnuje podporu 3 vlastních e-mailových domén, 90 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ]
     },
     "Feature": {
@@ -9226,9 +9387,6 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } bude nastaven jako výchozí kalendář."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Tarify ${ BRAND_NAME } Business poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k produktivní a organizované práci, a zároveň chrání vaši firmu."
       ],
@@ -10216,9 +10374,6 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Data recoverable on this device": [
-        "Data obnovitelná v tomto zařízení"
-      ],
       "Data recoverable with recovery phrase": [
         "Data, která lze obnovit pomocí obnovovací fráze"
       ],
@@ -10320,9 +10475,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Neztraťte přístup k vašim prémiovým funkcím. Povolte dnes automatické obnovení."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Hotovo! Odeslali jsme kód na adresu ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Neznáte svoji frázi pro obnovu?"
@@ -10482,12 +10634,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Zadejte kód, který byl zaslán na Vaše telefonní číslo ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Zadejte ověřovací kód, který byl zaslán na ${ email }. Pokud nemůžete ve své schránce zprávu nalézt, prosím podívejte se do spamové složky."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
@@ -10764,9 +10910,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Pokud jste přihlášeni jinde, můžete mít možnost ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Pokud jste přihlášeni do webové aplikace ${ BRAND_NAME } v **jiném prohlížeči**, můžete si heslo resetovat z aktuální relace."
@@ -11305,9 +11448,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Jakmile bude přístup k vašemu účtu povolen, budou mít přístup k vašim nastavením **Obnovení** a budou moci za vás **změnit heslo k aplikaci ${ ACCOUNT_APP_NAME }**."
       ],
-      "Once you reset your password:": [
-        "Po resetu vašeho hesla:"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
       ],
@@ -11466,9 +11606,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Zkontrolujte prosím svůj soubor nebo zkuste použít náš ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
       "Please fill in all required fields.": [
         "Vyplňte prosím všechna povinná pole."
@@ -12298,9 +12435,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Zkušební období končí ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "důvěryhodné zařízení"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyzkoušejte ${ productName } zcela bez rizika - pokud si to z jakéhokoli důvodu rozmyslíte, dostanete zpět plnou částku. Bez otázek."
       ],
@@ -12324,9 +12458,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Bohužel pro tento účet neexistuje žádný způsob obnovení."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Bohužel neexistuje žádná metoda obnovení uložená pro tento účet."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikátní ID vygenerované vyším poskytovatelem identity. Obvykle má podobu URL adresy, která obsahuje jméno vašeho poskytovatele identity (např. https://idp.example.com/XXXXX)."
@@ -12496,9 +12627,6 @@
       "Want to learn more?": [
         "Chcete se dozvědět více?"
       ],
-      "Warning:": [
-        "Upozornění:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Varování: smazání vašeho účtu je trvalé."
       ],
@@ -12547,14 +12675,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Před vynucením používání 2FA doporučujeme informovat členy organizace a požádat je, aby si v účtech nastavili 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Místo toho doporučujeme použít frázi pro obnovení."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Abyste o svá data nepřišli, bezpečně ukládáme informace pro obnovení do vašeho důvěryhodného zařízení"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Záložní soubor jsme uložili do tohoto prohlížeče, protože jste povolili obnovení dat na tomto ${ deviceLink }. Pokud je záložní soubor platný, okamžitě získáte úplný nebo částečný přístup k šifrovaným datům."
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Důrazně doporučujeme, aby si každý aktivoval obnovení pomocí obnovovací fráze."
@@ -12594,12 +12716,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Odešleme kód pro resetování na ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Na zadanou e-mailovou adresu Vám zašleme kód pro obnovení účtu."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Na zadané telefonní číslo zašleme kód pro obnovení účtu."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pokud je vypnuto, zabraňuje načítání obrázkových souborů na vašem zařízení bez vašeho vědomí."
@@ -13216,9 +13332,6 @@
     "invitation status": {
       "Declined": [
         "Odmítnuto"
-      ],
-      "Owner": [
-        "Vlastník"
       ],
       "Paused": [
         "Pozastaveno"
@@ -14049,9 +14162,6 @@
       ],
       "City": [
         "Město"
-      ],
-      "Code": [
-        "Kód"
       ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
@@ -15457,9 +15567,6 @@
       "${ BRAND_NAME } Foundation's": [
         "${ BRAND_NAME } Foundation"
       ],
-      "Account recovery explained": [
-        "Obnovení účtu vysvětleno"
-      ],
       "Activity log": [
         "Protokol o činnosti"
       ],
@@ -15627,9 +15734,6 @@
       ],
       "Pay invoice": [
         "Zaplatit fakturu"
-      ],
-      "perform a password reset from your active session": [
-        "resetujte heslo z vaší aktuální relace"
       ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
@@ -18993,17 +19097,6 @@
         "Časově omezená nabídka."
       ]
     },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Všechna vaše stávající data** (e-maily, události, kontakty, soubory, položky ${ PASS_APP_NAME } atd.) **budou uzamčena** a lze je odemknout pouze pomocí vašeho **starého hesla**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Všechna vaše stávající data** (e-maily, události, kontakty, soubory, položky ${ PASS_APP_NAME } atd.) **budou uzamčena** a lze je odemknout pouze pomocí **obnovovací fráze** nebo **starého hesla**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Jakákoli metoda **dvoufázového ověření (2FA)** bude na vašem účtu deaktivována."
-      ]
-    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Ke klíči získají přístup všichni správci."
@@ -22069,6 +22162,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 uživatelů"
+      ],
+      "All paid Mail and Calendar features": [
+        "Všechny placené Mail a Calendar funkce"
+      ],
+      "High speed VPN": [
+        "Vysokorychlostní VPN"
+      ],
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
@@ -22081,8 +22186,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Prémiové funkce ${ appName1 }, ${ appName2 } a ${ appName3 }"
       ],
+      "Premium early access": [
+        "Prémiový předběžný přístup"
+      ],
+      "Secure cloud storage": [
+        "Bezpečné cloudové úložiště"
+      ],
       "Secure streaming": [
         "Bezpečné streamování"
+      ],
+      "Support online privacy": [
+        "Podpořte online soukromí"
       ]
     },
     "specialoffer: Footer": {
@@ -22126,17 +22240,74 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
       "/ month": [
         "/ měsíc"
       ],
       "/month": [
         "/měsíčně"
       ],
+      "1 year": [
+        "1 rok"
+      ],
+      "15 months": [
+        "15 měsíců"
+      ],
+      "2 years": [
+        "2 roky"
+      ],
+      "30 months": [
+        "30 měsíců"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Účtováno ${ amount } za 1 měsíc"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Účtováno ${ amount } za 12 měsíců"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Účtováno ${ amount } za 15 měsíců"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Účtováno ${ amount } za 24 měsíců"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Účtováno ${ amount } za 30 měsíců"
+      ],
       "Get the deal": [
         "Využít nabídku"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovení po 1 roce za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount } % sleva)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovení po 2 letech za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount } % sleva)"
+      ],
       "Save ${ discount }%": [
         "Ušetřete ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standardní cena ${ amount } za 1 měsíc"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standardní cena ${ amount } za 12 měsíců"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standardní cena ${ amount } za 15 měsíců"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standardní cena ${ amount } za 24 měsíců"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standardní cena ${ amount } za 30 měsíců"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Speciální nabídka platí první 2 roky"
       ]
     },
     "specialoffer: Title": {
@@ -22163,6 +22334,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Navyšte tarif a ušetřete více s 2 roky ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malware a reklamy a další."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokování malware a reklamy a další."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů hide-my-email, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zahrnuje podporu 3 vlastních e-mailových domén, 15 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Ideální pro rodiny nebo malé týmy, každý může mít vlastní schránku a aliasy. Vyžaduje vlastní doménu."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Získejte zdarma placené verze všech nových služeb ochrany soukromí, které v budoucnu vydáme, včetně předběžného přístupu ke všem budoucím funkcím a produktům."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ]
     },
     "Spotlight": {
@@ -23650,6 +23844,20 @@
         "Detaily událostí, které nemohly být exportovány"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Vytvoření zabezpečených přihlašovacích údajů na všech zařízeních. Obsahuje neomezený počet aliasů, 20 trezorů, integrovanou funkci 2FA, automatické vyplňování kreditních karet a další funkce."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí souborů, šifrované sdílení souborů a další funkce."
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Adresy"
@@ -24701,9 +24909,6 @@
       "Forgot password": [
         "Zapomenuté heslo"
       ],
-      "Forgot recovery method": [
-        "Zapomenutá metoda obnovení"
-      ],
       "Forward and auto-reply": [
         "Přeposlat a odpovědět"
       ],
@@ -25012,9 +25217,6 @@
       ],
       "No need to empty the trash": [
         "Nemusíte sami vyprazdňovat koš"
-      ],
-      "No recovery method": [
-        "Žádná metoda pro obnovení"
       ],
       "Notifications": [
         "Upozornění"

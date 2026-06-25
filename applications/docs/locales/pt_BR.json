@@ -381,6 +381,9 @@
       "Export selection as .vcf": [
         "Exportar seleção como .vcf"
       ],
+      "Export this version (as docx)": [
+        "Exportar essa versão (como docx)"
+      ],
       "Export this version (as xlsx)": [
         "Exportar essa versão (como xlsx)"
       ],
@@ -3126,6 +3129,15 @@
       "Failed to fetch sharing info": [
         "Erro ao obter as informações para compartilhar"
       ],
+      "Failed to load 'My files' folder": [
+        "Falha ao carregar a pasta 'Meus arquivos'"
+      ],
+      "Failed to load document details": [
+        "Falha ao carregar os detalhes de documento"
+      ],
+      "Failed to load recent documents": [
+        "Falha ao carregar os documentos recentes"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ],
@@ -3134,6 +3146,9 @@
       ],
       "Failed to remove older revisions": [
         "Falha ao remover revisões antigas"
+      ],
+      "Failed to rename document": [
+        "Falha ao renomear o documento"
       ],
       "Failed to rename document. Please try again later.": [
         "A renomeação do documento falhou, tente novamente mais tarde"
@@ -3451,6 +3466,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -4872,6 +4890,9 @@
       ],
       "Geoblocking": [
         "Bloqueio geográfico"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Obtenha um endereço de e-mail profissional @sua-empresa.com, 1 TB de armazenamento seguro por usuário, videochamadas mais longas e muito mais com a ${ BRAND_NAME } Workspace."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Receba atualizações por e-mail para comentários e sugestões adicionados nos seus documentos."
@@ -9905,6 +9926,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperação de conta"

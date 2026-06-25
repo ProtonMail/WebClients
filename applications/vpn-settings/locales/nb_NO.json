@@ -227,9 +227,6 @@
       "Connected": [
         "Tilkoblet"
       ],
-      "Contact support": [
-        "Kontakt brukerstøtte"
-      ],
       "Contact Support Center": [
         "Kontakt kundestøttesenteret"
       ],
@@ -502,9 +499,6 @@
       ],
       "Forgot password?": [
         "Glemt passord?"
-      ],
-      "Forgot recovery method?": [
-        "Glemt gjenopprettingsmetode?"
       ],
       "Generate new recovery phrase": [
         "Generer ny gjenopprettingsfrase"
@@ -4991,9 +4985,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Kontoen er slettet eller deaktivert"
-      ],
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
       ],
@@ -6266,9 +6257,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning }. Du vil miste tilgang til alle gjeldende krypterte data i kontoen din hvis du fortsetter."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } Business gir teamet ditt alle samarbeidsverktøyene de trenger for å være produktive og organiserte i arbeidet sitt, samtidig som det beskytter virksomheten din."
       ],
@@ -6951,9 +6939,6 @@
       "Data locked": [
         "Data låst"
       ],
-      "Data recoverable on this device": [
-        "Data kan gjenopprettes på denne enheten"
-      ],
       "Data recoverable with recovery phrase": [
         "Data kan gjenopprettes med gjenopprettingsfrase"
       ],
@@ -7039,9 +7024,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Ikke mist tilgangen til dine premiumfunksjoner. Aktiver automatisk fornyelse i dag."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Ferdig! Vi sendte en kode til ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Kjenner du ikke gjenopprettingsfrasen din?"
@@ -7165,12 +7147,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Skriv inn koden fra autentiseringsappen"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Skriv inn koden sendt til ditt telefonnummer ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Skriv inn koden som ble sendt til ${ email }. Finner du ikke meldingen i innboksen din, sjekk søppelpostmappen."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
@@ -7336,9 +7312,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Hvis du er logget på et annet sted, kan du kanskje ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Hvis du er logget på en ${ BRAND_NAME }-nettapp i **en annen nettleser**, kan du kanskje tilbakestille passordet fra den aktive økten."
@@ -7747,9 +7720,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Når tilgang til kontoen din er gitt, kan de få tilgang til **gjenopprettingsinnstillingene** dine og **endre ${ ACCOUNT_APP_NAME }-passordet** for deg."
       ],
-      "Once you reset your password:": [
-        "Når du har tilbakestilt passordet:"
-      ],
       "Open source": [
         "Åpen kildekode"
       ],
@@ -7870,9 +7840,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Sjekk filen din, eller prøv å bruke vår ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Angi gjenopprettingsfrasen bestående av 12 ord som er tilknyttet din konto."
       ],
       "Please fill in all required fields.": [
         "Fyll ut alle obligatoriske felt."
@@ -8485,9 +8452,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Prøveperioden avsluttes ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "klarert enhet"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt risikofritt - hvis du av en eller annen grunn ombestemmer deg, vil du motta full refusjon. Ingen spørsmål."
       ],
@@ -8511,9 +8475,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Dessverre finnes det ingen gjenopprettingsmetode tilgjengelig for denne kontoen."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Dessverre er det ingen gjenopprettingsmetode lagret for denne kontoen."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unik ID generert av identitetsleverandøren din, vanligvis i form av en URL som inneholder identitetsleverandørens navn (f.eks. https://idp.example.com/XXXXX)."
@@ -8650,9 +8611,6 @@
       "Want to learn more?": [
         "Vil du lære mer?"
       ],
-      "Warning:": [
-        "Advarsel:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Advarsel: sletting av kontoen din er permanent."
       ],
@@ -8689,14 +8647,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi anbefaler å varsle organisasjonsmedlemmene og be dem om å sette opp 2FA for kontoene sine før du håndhever bruken av 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Vi anbefaler å bruke din gjenopprettingsfrase istedenfor."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Vi lagrer sikkert gjenopprettinginformasjon på din klarerte enhet for å forhindre at du mister dine data"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Vi har lagret en sikkerhetskopifil i denne nettleseren fordi du har tillatt datagjenoppretting på ${ deviceLink }. Hvis sikkerhetskopifilen er gyldig, kan du umiddelbart motta fullstendig eller delvis tilgang igjen til krypterte data."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
@@ -8730,12 +8682,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Vi sender en tilbakestillingskode til ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Vi vil sende en tilbakestillingskode til e-postadressen du oppga for kontogjenoppretting."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Vi vil sende en tilbakestillingskode til telefonnummeret du oppga for kontogjenoppretting."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
@@ -9194,9 +9140,6 @@
       "Declined": [
         "Avslått"
       ],
-      "Owner": [
-        "Eier"
-      ],
       "Paused": [
         "Satt på pause"
       ],
@@ -9467,9 +9410,6 @@
       ],
       "City": [
         "Poststed"
-      ],
-      "Code": [
-        "Kode"
       ],
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
@@ -9922,9 +9862,6 @@
       "Password": [
         "Passord"
       ],
-      "Password reminders": [
-        "Passordpåminnelser"
-      ],
       "Password strength": [
         "Passordstyrke"
       ],
@@ -10338,9 +10275,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Forklaring av kontogjenoppretting"
-      ],
       "activity monitor": [
         "aktivitetsovervåkeren"
       ],
@@ -10493,9 +10427,6 @@
       ],
       "Pay invoice": [
         "Betal faktura"
-      ],
-      "perform a password reset from your active session": [
-        "utføre en tilbakestilling av passord fra den aktive økten"
       ],
       "Privacy policy": [
         "Personvernerklæring"
@@ -12810,23 +12741,6 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Sørg for at du husker eller lagrer passordet ditt sikkert, da det er nøkkelen til å dekryptere dataene dine."
-      ],
-      "Turn off password reminders?": [
-        "Slå av passordpåminnelser?"
-      ],
-      "Turn off reminders": [
-        "Slå av påminnelser"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Alle dine eksisterende data** (e-post, hendelser, kontakter, filer, ${ PASS_APP_NAME }-oppføringer, osv.) **vil bli låst** og kan bare låses opp med ditt **gamle passord**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Alle dine eksisterende data** (e-post, hendelser, kontakter, filer, ${ PASS_APP_NAME }-oppføringer, osv.) **vil bli låst** og kan bare låses opp med din **gjenopprettingsfrase** eller ditt **gamle passord**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Alle **tofaktorautentiseringsmetoder (2FA)** på kontoen din deaktiveres."
       ]
     },
     "passwordless": {
@@ -15889,12 +15803,6 @@
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
       ],
-      "Password reminders disabled": [
-        "Passordpåminnelser deaktivert"
-      ],
-      "Password reminders enabled": [
-        "Passordpåminnelser aktivert"
-      ],
       "Password updated": [
         "Passord oppdatert"
       ],
@@ -16764,9 +16672,6 @@
       "Find email or username": [
         "Finn e-post eller brukernavn"
       ],
-      "Forgot recovery method": [
-        "Glemt gjenopprettingsmetode"
-      ],
       "Free plan": [
         "Free-plan"
       ],
@@ -16950,9 +16855,6 @@
       ],
       "No events yet": [
         "Ingen hendelser ennå"
-      ],
-      "No recovery method": [
-        "Ingen gjenopprettingsmetode"
       ],
       "Open": [
         "Åpen"
