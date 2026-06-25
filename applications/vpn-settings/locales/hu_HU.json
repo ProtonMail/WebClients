@@ -192,9 +192,6 @@
       "Connected": [
         "Csatlakoztatva"
       ],
-      "Contact support": [
-        "Kapcsolatfelvétel"
-      ],
       "Contact us": [
         "Kapcsolatfelvétel"
       ],
@@ -440,9 +437,6 @@
       ],
       "Forgot password?": [
         "Elfelejtett jelszó?"
-      ],
-      "Forgot recovery method?": [
-        "Elfelejtette a helyreállítási módszert?"
       ],
       "Generate new recovery phrase": [
         "Új helyreállító jelmondat létrehozása"
@@ -5282,9 +5276,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } A fiókjában lévő összes titkosított adathoz elveszti a hozzáférést ha folytatja."
-      ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "A ${ BRAND_NAME } soha nem osztja meg az adatait harmadik felekkel. Az adatok a ${ BRAND_NAME } saját elemzéséből származnak és a Constella Intelligence adataiból."
       ],
@@ -5801,9 +5792,6 @@
       "Data locked": [
         "Adatok zárolva"
       ],
-      "Data recoverable on this device": [
-        "Ezen az eszközön helyreállíthatók az adatok"
-      ],
       "dedicated servers": [
         "dedikált szerverek"
       ],
@@ -5871,9 +5859,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Ne veszítse el a prémium funkciókhoz való hozzáférést. Engedélyezze az automatikus megújítást még ma."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Kész! Elküldtük a kódot ide: ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Nem ismeri a helyreállítási mondatot?"
@@ -5970,12 +5955,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Írja be a kódot a hitelesítő alkalmazásból"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Adja meg a telefonszámára (${ phone }) küldött kódot."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Adja meg az e-mail címre (${ email }) küldött kódot. Ha nem találja az üzenetet a beérkezett leveleknél, nézze meg a Levélszemét közt is."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
@@ -6075,9 +6054,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "A máshonnan még be van jelentkezve, megpróbálhatja ${ signedInPasswordResetLink }"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
@@ -6432,9 +6408,6 @@
       "On": [
         "Be"
       ],
-      "Once you reset your password:": [
-        "Ha visszaállítja a jelszavát:"
-      ],
       "Open source": [
         "Nyílt forráskódú"
       ],
@@ -6531,9 +6504,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Ellenőrizze a fájlt, vagy használja a ${ csvTemplateButton } fájlunkat."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Írja be a fiókhoz tartozó, 12 szóból álló, helyreállítási jelmondatát."
       ],
       "Please fill in all required fields.": [
         "Kérjük, töltse ki az összes kötelező mezőt."
@@ -7047,9 +7017,6 @@
       "Total VPN connections": [
         "Összes VPN kapcsolat"
       ],
-      "trusted device": [
-        "megbízható eszköz"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Próbálja ki a ${ productName } terméket teljesen kockázatmentesen - ha bármilyen okból meggondolja magát, teljes visszatérítést kap. Kérdések nélkül."
       ],
@@ -7064,9 +7031,6 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nem sikerült a helyreállítási fájl aláírásának ellenőrzése. Kérjük, lépjen kapcsolatba velünk."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Sajnos, nincs helyreállítási módszer beállítva ehhez a fiókhoz."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "A személyazonosság-szolgáltató által generált egyedi azonosító, amely általában egy URL formájában jelenik meg, és amely tartalmazza a személyazonosság-szolgáltató nevét (pl. https://idp.pelda.com/XXXXX)."
@@ -7188,9 +7152,6 @@
       "Want to learn more?": [
         "Szeretne többet megtudni?"
       ],
-      "Warning:": [
-        "Figyelem:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Figyelmeztetés: a fiók törlése végleges."
       ],
@@ -7221,14 +7182,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Mielőtt kötelezővé teszi a kétlépcsős hitelesítést, javasoljuk, hogy kérje meg a szervezet tagjait arra, hogy állítsák be maguknak a fiókjukban."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Javasoljuk, hogy inkább a helyreállító mondatát használja."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Biztonságban tároljuk a helyreállítási információkat a megbízható eszközén, hogy elkerülhető legyen az adatai elvesztése"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Ebben a böngészőben mentettünk egy biztonsági másolatot, mert engedélyezte az adatvisszaállítást ezen a ${ deviceLink } eszközön. Ha a biztonsági mentési fájl érvényes, azonnal visszanyeri a titkosított adatokhoz való teljes vagy részleges hozzáférést."
       ],
       "We use 3-D Secure to protect your payments": [
         "Fizetéseit a 3-D Secure technológia védi"
@@ -7256,12 +7211,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Küldünk egy visszaállító kódot erre a címre: ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "A fiók helyreállítási célra megadott e-mail címére fog kapni egy visszaállító kódot."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "A fiók helyreállítási célra megadott telefonszámára fog kapni egy visszaállító kódot."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Amikor engedélyezi a SAML-t a ${ appName } szolgáltatáshoz a személyazonosság-szolgáltatójában, a rendszer kérheti a visszahívási (ACS) URL-t és a kiállító azonosítóját. Másolja be az alábbi adatokat a személyazonosság-szolgáltatója mezőibe."
@@ -7846,9 +7795,6 @@
       ],
       "City": [
         "Település"
-      ],
-      "Code": [
-        "Kód"
       ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
@@ -8685,9 +8631,6 @@
       ],
       "Pay invoice": [
         "Számla kifizetése"
-      ],
-      "perform a password reset from your active session": [
-        "visszaállítani a jelszavát az aktív munkafolyamatból."
       ],
       "Privacy policy": [
         "Adatvédelmi irányelvek"
@@ -10629,17 +10572,6 @@
       ],
       "Limited-time deal.": [
         "Korlátozott ideig érvényes ajánlat."
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Minden meglévő adata** (e-mailek, események, névjegyek, fájlok, ${ PASS_APP_NAME } adatok stb.) **zárolásra kerül** és csak a **régi jelszavával** tudja majd feloldani."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Minden meglévő adata** (e-mailek, események, névjegyek, fájlok, ${ PASS_APP_NAME } adatok stb.) **zárolásra kerül** és csak a **helyreállító jelmondattal** vagy a **régi jelszavával** tudja majd feloldani."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Ha van bármilyen **kétlépcsős hitelesítés** a fiókján, az kikapcsolásra kerül."
       ]
     },
     "passwordless": {
@@ -13929,9 +13861,6 @@
       "Find email or username": [
         "E-mail cím vagy felhasználónév megkeresése"
       ],
-      "Forgot recovery method": [
-        "Elfelejtett helyreállítási módszer"
-      ],
       "Gateway": [
         "Átjáró"
       ],
@@ -14055,9 +13984,6 @@
       ],
       "No account information was found in any data breaches": [
         "A fiók adatai nem találhatók meg egyik adatvédelmi incidensben sem"
-      ],
-      "No recovery method": [
-        "Nincs helyreállítási módszer"
       ],
       "Open": [
         "Megnyitás"
