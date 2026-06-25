@@ -90,6 +90,9 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "Adds it above your existing message": [
+        "Дадае яго вышэй вашага існуючага паведамлення"
+      ],
       "Align center": [
         "Выраўнаваць па цэнтры"
       ],
@@ -137,6 +140,9 @@
       ],
       "Block": [
         "Блакіраваць"
+      ],
+      "Block sender": [
+        "Заблакіраваць адпраўніка"
       ],
       "Bold": [
         "Тлусты"
@@ -201,8 +207,14 @@
       "Click here.": [
         "Націсніце тут."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Націсніце, каб скапіяваць ${ defaultEmailAddress } у буфер абмену"
+      ],
       "Close": [
         "Закрыць"
+      ],
+      "Close composer": [
+        "Закрыць рэдактар"
       ],
       "Close navigation": [
         "Закрыць панэль навігацыі"
@@ -393,6 +405,9 @@
       "Download the desktop app": [
         "Спампаваць праграму для камп'ютара"
       ],
+      "Downloading": [
+        "Спампоўваецца"
+      ],
       "Edit": [
         "Рэдагаваць"
       ],
@@ -401,6 +416,9 @@
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
+      ],
+      "Edit folder": [
+        "Змяніць папку"
       ],
       "Edit label": [
         "Рэдагаваць метку"
@@ -603,6 +621,12 @@
         "Уставіць ${ totalChecked } кантактаў",
         "Уставіць ${ totalChecked } кантактаў"
       ],
+      "Insert contact": [
+        "Уставіць кантакт"
+      ],
+      "Insert contacts": [
+        "Уставіць кантакты"
+      ],
       "Insert image": [
         "Уставіць відарыс"
       ],
@@ -654,6 +678,9 @@
       "Load more": [
         "Загрузіць больш"
       ],
+      "Loading${ ellipsis }": [
+        "Загрузка ${ ellipsis }"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты"
       ],
@@ -686,6 +713,9 @@
       ],
       "Mark for deletion": [
         "Пазначыць для выдалення"
+      ],
+      "Mark legitimate": [
+        "Пазначыць як надзейнае"
       ],
       "Maybe": [
         "Магчыма"
@@ -723,11 +753,17 @@
       "Move": [
         "Перамясціць"
       ],
+      "Move all to archive": [
+        "Перамясціць усё ў архіў"
+      ],
       "move emails to": [
         "перамясціць лісты ў"
       ],
       "Move to archive": [
         "Перамясціць у архіў"
+      ],
+      "Move to category...": [
+        "Перамяшчэнне ў катэгорыю..."
       ],
       "Move to folder": [
         "Перамясціць у папку"
@@ -816,6 +852,9 @@
       "Previous conversation": [
         "Папярэдняя размова"
       ],
+      "Previous message": [
+        "Папярэдняе паведамленне"
+      ],
       "Previous month": [
         "Папярэдні месяц"
       ],
@@ -879,6 +918,9 @@
       "Remove video conference": [
         "Выдаліць відэаканферэнцыю"
       ],
+      "Replaces the selected text in your message": [
+        "Замяняе выбраны тэкст у вашым паведамленні"
+      ],
       "Reply securely": [
         "Бяспечны адказ"
       ],
@@ -908,6 +950,9 @@
       ],
       "Reset to default": [
         "Скінуць да прадвызначаных"
+      ],
+      "Resize panel": [
+        "Змяніць памер панэлі"
       ],
       "Restore": [
         "Аднавіць"
@@ -1074,6 +1119,9 @@
       "Stay": [
         "Застацца"
       ],
+      "Stop marking as read": [
+        "Не пазначаць як прачытанае"
+      ],
       "Strikethrough": [
         "Перакрэслены"
       ],
@@ -1103,6 +1151,12 @@
       ],
       "Trust": [
         "Давяраць"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
@@ -1368,6 +1422,9 @@
       ]
     },
     "Alt": {
+      "Star conversation": [
+        "Пазначыць размову зорачкай"
+      ],
       "Unstar message": [
         "Зняць пазнаку з паведамлення"
       ]
@@ -1942,6 +1999,9 @@
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } адхіліў запрашэнне на гэту падзею."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } ужо прымаў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
+      ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
         "${ participantName } ужо прымаў запрашэнне на адно паўтарэнне падзеі."
       ],
@@ -1986,6 +2046,9 @@
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Гэта прапанова новага часу не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў сваім календары."
+      ],
+      "This response is out of date.": [
+        "Гэты адказ састарэў."
       ],
       "This response is out of date. You have no calendars.": [
         "Гэты адказ састарэў. У вас няма календароў."
@@ -2324,6 +2387,9 @@
       ]
     },
     "Commander action": {
+      "Go to Drafts": [
+        "Перайсці ў Чарнавікі"
+      ],
       "Go to Sent": [
         "Перайсці ў Адпраўленыя"
       ],
@@ -3312,6 +3378,9 @@
       ]
     },
     "CustomFilter": {
+      "Next": [
+        "Далей"
+      ],
       "Sender": [
         "Адпраўнік"
       ]
@@ -3862,6 +3931,11 @@
         "Падзея пачнецца заўтра"
       ]
     },
+    "Email reminder out of date alert": {
+      "Event was updated. This reminder is out-of-date.": [
+        "Падзея была абноўлена. Гэты напамін састарэў."
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Скасаванне падзеі ${ formattedStart }"
@@ -3962,6 +4036,9 @@
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
+      ],
+      "Choose a date in the future.": [
+        "Выберыце дату ў будучыні."
       ],
       "Choose a date within the next ${ n } day.": [
         "Выберыце дату ў межах наступнага ${ n } дня.",
@@ -4374,6 +4451,9 @@
       "The folder name is too long. Please choose a different name.": [
         "Назва папкі занадта доўгая. Выберыце іншую назву."
       ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Не ўдалося выняць уласцівасці ключа для ${ emailAddress }"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Памылковая назва меткі. Выберыце іншую назву."
       ],
@@ -4397,6 +4477,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
+      ],
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Узнікла праблема з пошукам змесціва. Замест гэтага быў выкарыстаны прадвызначаны пошук."
       ],
       "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
         "Узнікла праблема з расшыфроўкай вашага паведамлення. Звярніцеся ў службу падтрымкі кліентаў, калі праблема застанецца."
@@ -4496,6 +4579,9 @@
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Вы дасягнулі максімальнай колькасці сімвалаў. Скараціце сваё паведамленне."
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Вашы лісты не могуць быць расшыфраваны з прычыны нядаўняга скідання пароля. Калі вы памятаеце свой папярэдні пароль, то можна ${ reActivateKeyLink } для атрымання доступу да сваіх паведамленняў. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
@@ -5014,6 +5100,9 @@
       "Filter and sort emails": [
         "Фільтрацыя і сартаванне лістоў"
       ],
+      "Has attachments": [
+        "Змяшчае ўкладанні"
+      ],
       "Reset": [
         "Скінуць"
       ]
@@ -5144,6 +5233,9 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Атрымайце неабмежаваны доступ з любым тарыфным планам ${ MAIL_APP_NAME }."
       ],
       "Start free trial": [
         "Пачаць бясплатны пробны перыяд"
@@ -6008,6 +6100,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
+      "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
+        "Запыт на адмову ад падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку і апрацаваны аўтаматычна."
+      ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
       ],
@@ -6053,6 +6148,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі адкрытыя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
+      "Addresses settings": [
+        "Налады адрасоў"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
       ],
@@ -6082,6 +6180,9 @@
       ],
       "All messages stored with this label will be permanently deleted.": [
         "Усе паведамленні, якія захоўваюцца з гэтай меткай будуць незваротна выдалены."
+      ],
+      "All your calendars are disabled.": [
+        "Усе вашы календары адключаны."
       ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
@@ -6154,6 +6255,9 @@
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
         "У канцы вашага пробнага перыяду ${ boldCancelDate }, ваш тарыфны план будзе паніжаны да ${ boldProtonFree }. Усе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Attach public key": [
+        "Далучыць адкрыты ключ"
       ],
       "Attention required": [
         "Патрабуецца ўвага"
@@ -6497,6 +6601,9 @@
         "файлаў далучаны",
         "файлаў далучаны"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтры працуюць для ўсіх лістоў, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
       ],
@@ -6629,6 +6736,12 @@
       "Included": [
         "Уключае"
       ],
+      "Included for free with your plan": [
+        "Уваходзіць у ваш тарыфны план бясплатна"
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Уключае маркетынгавыя лісты, такія як прапановы і абвяшчэнні аб прадуктах."
+      ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
       ],
@@ -6667,6 +6780,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а астатнія дзеянні будуць зроблены праграмай."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Захоўвайце свае ўліковыя даныя і інфармацыю аб крэдытнай картцы ў бяспецы, але заўсёды пад рукой, дадаўшы іх у ${ PASS_APP_NAME }. Гэта бясплатна і ўваходзіць у ваш уліковы запіс ${ BRAND_NAME }."
       ],
       "Key fingerprint": [
         "Адбітак ключа"
@@ -6724,6 +6840,9 @@
       ],
       "Member": [
         "Удзельнік"
+      ],
+      "Members": [
+        "Удзельнікі"
       ],
       "Merged": [
         "Аб'яднана"
@@ -6995,6 +7114,9 @@
       "Right to Left": [
         "Справа налева"
       ],
+      "Saved at ${ dateString }": [
+        "Захавана ${ dateString }"
+      ],
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
@@ -7145,6 +7267,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
+      "The message has expired": [
+        "Тэрмін дзеяння паведамлення мінуў"
+      ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Пачатковы адпраўнік гэтага паведамлення больш не з'яўляецца сапраўдным. Ваша паведамленне будзе адпраўлена з прадвызначанага адраса ${ defaultEmail }."
       ],
@@ -7205,6 +7330,9 @@
       "This message has a key attached, that has not been trusted yet.": [
         "У гэтага паведамлення ёсць далучаны ключ, якому яшчэ не давяраюць."
       ],
+      "This message is automatically generated as a response to a previous message.": [
+        "Гэта паведамленне аўтаматычна створана ў адказ на папярэдняе паведамленне."
+      ],
       "This message is from a mailing list.": [
         "Гэта паведамленне са спіса рассылкі."
       ],
@@ -7216,6 +7344,9 @@
         "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
         "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
         "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?"
+      ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Гэта паведамленне будзе перамешчана ў папку Чарнавікі, таму вы зможаце рэдагаваць яго. Вам неабходна будзе зноў запланаваць яго перад адпраўкай."
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
@@ -7391,6 +7522,9 @@
       "Week": [
         "Тыдзень"
       ],
+      "When do you want your message to self-destruct?": [
+        "Калі вы хочаце, каб ваша паведамленне было самазнішчана?"
+      ],
       "When working remotely": [
         "Пры аддаленай працы"
       ],
@@ -7441,6 +7575,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Тым часам вы можаце закрыць укладку або браўзер."
+      ],
+      "You can either update your search query or clear it": [
+        "Вы можаце абнавіць свой пошукавы запыт або ачысціць яго"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
@@ -8221,6 +8358,9 @@
       "Don't ask again": [
         "Больш не пытаць"
       ],
+      "Don't like the style": [
+        "Не падабаецца стыль"
+      ],
       "Don't show this again": [
         "Больш не паказваць"
       ],
@@ -8412,6 +8552,9 @@
       ],
       "Mark as": [
         "Пазначыць як"
+      ],
+      "Marked as read": [
+        "Пазначана як прачытанае"
       ],
       "Message:": [
         "Паведамленне:"
@@ -8617,6 +8760,9 @@
       "Tell us more about your experience": [
         "Раскажыце нам больш пра свой досвед"
       ],
+      "The filter is disabled. ${ enableButton }": [
+        "Фільтр адключаны. ${ enableButton }"
+      ],
       "Theme": [
         "Тэма"
       ],
@@ -8819,6 +8965,9 @@
       "Enable the email address linked to the disabled calendar to cancel the event.": [
         "Уключыце адрас электроннай пошты, які звязаны з адключаным календаром, каб скасаваць гэту падзею."
       ],
+      "Enable your address again to modify your answer.": [
+        "Уключыце свой адрас зноў, каб змяніць свой адказ."
+      ],
       "Enforcing 2FA for organizations": [
         "Прымусовае ўключэнне 2ФА для арганізацый"
       ],
@@ -8879,6 +9028,9 @@
       "Manage blocked email addresses": [
         "Кіраваць заблакіраванымі адрасамі электроннай пошты"
       ],
+      "More": [
+        "Яшчэ"
+      ],
       "Open updated event in ${ CALENDAR_APP_NAME }": [
         "Адкрыць абноўленую падзею ў ${ CALENDAR_APP_NAME }"
       ],
@@ -8938,6 +9090,11 @@
       ],
       "You need to activate your calendar keys to see the updated event": [
         "Вам неабходна актываваць ключы календара, каб паглядзець абноўленую падзею"
+      ]
+    },
+    "Link to settings": {
+      "settings": [
+        "налады"
       ]
     },
     "Loading info": {
@@ -9166,6 +9323,9 @@
     "Message notification": {
       "Scheduling canceled. Message has been moved to Drafts.": [
         "Планаванне скасавана. Паведамленне было перамешчана ў чарнавікі."
+      ],
+      "Sending undone": [
+        "Адпраўка адроблена"
       ]
     },
     "MIME type": {
@@ -10355,6 +10515,9 @@
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
       ],
+      "Block removed": [
+        "Блакіроўка знята"
+      ],
       "Contact group created": [
         "Група кантактаў створана"
       ],
@@ -11222,6 +11385,9 @@
       "Search": [
         "Пошук"
       ],
+      "Search date, name, email address, or subject line": [
+        "Пошук па даце, імені, адрасе электроннай пошце або радку тэмы"
+      ],
       "Search for group name": [
         "Шукаць па назве групы"
       ],
@@ -11588,6 +11754,9 @@
         "${ remainingDays } дні",
         "${ remainingDays } дзён",
         "${ remainingDays } дзён"
+      ],
+      "<1 d": [
+        "<1 дз"
       ]
     },
     "Reply to calendar invitation": {
@@ -13066,6 +13235,9 @@
       "Message added to ${ labelName }.": [
         "Паведамленне дададзена ў ${ labelName }."
       ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Паведамленне перамешчана ў ${ labelName }, а адпраўнік дададзены ў ваш спіс не спам."
+      ],
       "Message moved to ${ labelName }.": [
         "Паведамленне перамешчана ў ${ labelName }."
       ],
@@ -13089,6 +13261,9 @@
       ],
       "Payment method updated": [
         "Спосаб аплаты абноўлены"
+      ],
+      "Phishing reported": [
+        "Скарга на фішынг пададзена"
       ],
       "Phone number copied to clipboard": [
         "Нумар тэлефона скапіяваны ў буфер абмену"
@@ -13314,6 +13489,9 @@
       ]
     },
     "Tip Action": {
+      "Activate": [
+        "Актываваць"
+      ],
       "Show me how": [
         "Паказаць як зрабіць гэта"
       ]
@@ -13757,6 +13935,9 @@
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
+      "Load embedded images": [
+        "Загружаць убудаваныя відарысы"
+      ],
       "Mailing list": [
         "Спіс рассылкі",
         "Спісы рассылкі",
@@ -13793,6 +13974,9 @@
       "More": [
         "Больш"
       ],
+      "More actions": [
+        "Больш дзеянняў"
+      ],
       "More options": [
         "Пашыраныя налады"
       ],
@@ -13822,6 +14006,9 @@
       ],
       "Night theme": [
         "Начная тэма"
+      ],
+      "No active newsletters": [
+        "Актыўныя рассылкі адсутнічаюць"
       ],
       "No breaches detected": [
         "Парушэнні не выяўлены"
@@ -14011,6 +14198,9 @@
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
+      ],
+      "Storage capacity warning": [
+        "Папярэджанне пра ёмістасць сховішча"
       ],
       "Subscription canceled": [
         "Падпіска скасавана"
