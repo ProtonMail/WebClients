@@ -1525,6 +1525,10 @@
       "Trust": [
         "Güven"
       ],
+      "Trust key": [
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
+      ],
       "Trust public key": [
         "Herkese açık anahtara güven"
       ],
@@ -5057,7 +5061,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak drive bulunamadı"
+        "İçe aktarılacak bir drive bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -5072,7 +5076,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
+        "${ DRIVE_APP_NAME } depolamanızda yeterli alan yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -5389,7 +5393,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
+        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -7622,7 +7626,7 @@
         "dosya eklendi"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad, bir koşul ve bir işlem bulunmalıdır."
