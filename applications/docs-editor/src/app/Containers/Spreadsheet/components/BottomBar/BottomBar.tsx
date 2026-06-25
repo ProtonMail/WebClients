@@ -21,6 +21,7 @@ import type { ProtonSheetsUIState } from '../../ui-state'
 import { getStringifiedColor } from '@rowsncolumns/spreadsheet'
 import { ColorPicker } from '../shared/ColorPicker'
 import { SheetStatus } from './SheetStatus'
+import { useIsSheetsStatusBarEnabled } from '../../feature-flags'
 
 const { s } = createStringifier(strings)
 
@@ -344,6 +345,8 @@ const NewSheetButton = memo(function NewSheetButton() {
 export interface BottomBarProps extends ComponentPropsWithoutRef<'div'> {}
 
 export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
+  const isSheetsStatusBarEnabled = useIsSheetsStatusBarEnabled()
+
   return (
     <div
       {...props}
@@ -355,9 +358,11 @@ export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
         <NewSheetButton />
       </div>
 
-      <div className="ml-auto shrink-0">
-        <SheetStatus />
-      </div>
+      {isSheetsStatusBarEnabled && (
+        <div className="ml-auto shrink-0">
+          <SheetStatus />
+        </div>
+      )}
     </div>
   )
 })

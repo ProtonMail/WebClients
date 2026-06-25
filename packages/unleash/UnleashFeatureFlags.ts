@@ -216,6 +216,9 @@ enum DocsFeatureFlag {
     SheetsODSExportEnabled = 'SheetsODSExportEnabled',
     SheetsDriftDetectionEnabled = 'SheetsDriftDetectionEnabled',
     SheetsPatchesStorageEnabled = 'SheetsPatchesStorageEnabled',
+    SheetsStatusBarEnabled = 'SheetsStatusBarEnabled',
+    SheetsCustomNumberFormatEnabled = 'SheetsCustomNumberFormatEnabled',
+    SheetsCustomDateTimeFormatEnabled = 'SheetsCustomDateTimeFormatEnabled',
     // Update compression and chunking
     DocsUpdateCompressionEnabled = 'DocsUpdateCompressionEnabled',
     DocsUpdateChunkingEnabled = 'DocsUpdateChunkingEnabled',
