@@ -13,14 +13,14 @@ import useLoading from '@proton/hooks/useLoading';
 import { recoverThunk } from '../../../incomingActions';
 import { ContactView } from '../../../shared/ContactView';
 import type { EnrichedIncomingDelegatedAccess } from '../../../shared/incoming/interface';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 interface RequestAccessEmergencyContactModalProps extends Omit<ModalProps, 'children' | 'buttons'> {
     value: EnrichedIncomingDelegatedAccess;
 }
 
 export const RecoverIncomingRecoveryContactModal = ({ value, ...rest }: RequestAccessEmergencyContactModalProps) => {
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
