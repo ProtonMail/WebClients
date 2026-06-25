@@ -34,15 +34,16 @@ export const useConversationPanelState = () => {
 
     const handleOpenSources = useCallback(
         (message: Message) => {
-            if (openPanel.type === 'sources' && openPanel.message === message) {
-                setOpenPanel({ type: null });
-                close();
-            } else {
-                setOpenPanel({ type: 'sources', message });
+            setOpenPanel((prev) => {
+                if (prev.type === 'sources' && prev.message?.id === message.id) {
+                    close();
+                    return { type: null };
+                }
                 open();
-            }
+                return { type: 'sources', message };
+            });
         },
-        [open, close, openPanel.type, openPanel.message]
+        [open, close]
     );
 
     const handleOpenFiles = useCallback(
