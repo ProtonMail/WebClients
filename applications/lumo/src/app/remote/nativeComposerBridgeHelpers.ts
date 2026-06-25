@@ -1,4 +1,5 @@
 import type { ModelTier, ResponseMode } from '../providers/ModelTierProvider';
+import type { LUMO_API_ERRORS } from '../types';
 import {
     type LimitReachedPayload,
     type LimitReachedResource,
@@ -8,7 +9,7 @@ import {
     limitResourceToErrorType,
 } from './nativeComposerBridge';
 
-export const onComposerError = (error: string): void => {
+export const onComposerError = (error: LUMO_API_ERRORS): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');
         return;

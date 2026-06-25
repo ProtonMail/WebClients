@@ -561,7 +561,7 @@ class NativeComposerApi {
         injectImageGenerationHelperPrompt(prompt);
     }
 
-    public onComposerError(error: string): void {
+    public onComposerError(error: LUMO_API_ERRORS): void {
         console.log(`Native Composer Bridge: on composer error: ${error}`);
         sendResultToNative('', { status: 'error', error: error });
     }

@@ -15,7 +15,7 @@ import { onComposerError } from '../../../remote/nativeComposerBridgeHelpers';
 import { handleFileAsync } from '../../../services/files';
 import { type ExcelSheetInfo, createExcelSheetFile, getExcelSheetsFromFile } from '../../../services/files/excelSheets';
 import { SearchService } from '../../../services/search/searchService';
-import type { AttachmentId, Message, ProjectSpace } from '../../../types';
+import { type AttachmentId, LUMO_API_ERRORS, type Message, type ProjectSpace } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
 import {
     isExcelFile,
@@ -87,7 +87,7 @@ export const useFileHandling = ({
                 // The web notifications above are invisible inside the native mobile
                 // composer (the web UI is hidden), so also notify native to surface its
                 // own "file type not supported" message (e.g. for videos).
-                onComposerError('UnsupportedFile');
+                onComposerError(LUMO_API_ERRORS.UNSUPPORTED_FILE);
                 return false;
             }
 

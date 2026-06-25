@@ -1086,6 +1086,11 @@ export enum LUMO_API_ERRORS {
     ASSET_LIMIT_REACHED = 'AssetLimitReached',
     CONVERSATION_LIMIT_REACHED = 'ConversationLimitReached',
     SPACE_LIMIT_REACHED = 'SpaceLimitReached',
+    // File upload errors surfaced to the native composer
+    DUPLICATE_FILE = 'DuplicateFile',
+    UNSUPPORTED_FILE = 'UnsupportedFile',
+    // Generic fallback
+    UNKNOWN = 'Unknown',
 }
 
 export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';
