@@ -20,16 +20,16 @@
 	inset-inline-start: 0;
 	z-index: 200;
 	min-inline-size: rem(180);
-	background: var(--background-norm);
-	border: 1px solid var(--border-norm);
-	box-shadow: var(--shadow-lifted-lg, 0 rem(8) rem(32) rgb(0 0 0 / 0.14));
+}
+
+.image-style-menu--down {
+	.image-style-menu__popup {
+		inset-block: calc(100% + #{rem(6)}) auto;
+		inset-inline-start: 0;
+	}
 }
 
 .image-style-menu__item {
-	border: none;
-	background: transparent;
-	color: var(--text-norm);
-	font-weight: 500;
 	cursor: pointer;
 	transition: background 0.1s;
 
@@ -99,43 +99,207 @@
 	}
 }
 
+// ── Image lightbox modal ─────────────────────────────────────────────────────
+
 .image-lightbox {
 	z-index: 9999;
 	background: rgb(233 234 252 / 0.5);
 	backdrop-filter: blur(3.5px);
+	animation: image-lightbox-fade-in 0.22s ease;
+}
+
+@keyframes image-lightbox-fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.image-lightbox__content {
+	padding: rem(64) rem(32) rem(16);
+	overflow-y: auto;
+}
+
+.image-lightbox__date {
+	text-align: center;
+	padding-block-end: rem(24);
+	color: rgb(255 255 255 / 0.5);
+	font-size: rem(12);
 }
 
 .image-preview-shell {
 	position: relative;
-	inline-size: fit-content;
-	max-inline-size: 100%;
+	inline-size: min(60vw, #{rem(960)});
+	max-inline-size: min(60vw, #{rem(960)});
+	animation: image-lightbox-enter 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-// Floating close control: above and outside the card’s top-right corner
+@keyframes image-lightbox-enter {
+	from {
+		opacity: 0;
+		transform: scale(0.97) translateY(#{rem(8)});
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+@media (max-width: rem(768)) {
+	.image-lightbox__content {
+		padding: rem(48) rem(12) rem(12);
+		align-items: flex-end;
+	}
+
+	.image-preview-shell {
+		inline-size: 100%;
+		max-inline-size: 100%;
+		animation: image-lightbox-enter-mobile 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+}
+
+@keyframes image-lightbox-enter-mobile {
+	from {
+		opacity: 0;
+		transform: translateY(#{rem(24)});
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.image-lightbox,
+	.image-preview-shell {
+		animation: none;
+	}
+}
+
+// Floating close control: above and outside the card's top-right corner
 .image-preview-close {
 	position: absolute;
 	z-index: 2;
 	inset-block-start: 0;
 	inset-inline-end: 0;
 	transform: translate(50%, calc(-100% - #{rem(8)}));
+	inline-size: rem(36);
+	block-size: rem(36);
+	padding: 0;
+	cursor: pointer;
+	box-shadow:
+		0 rem(1) rem(3) rgb(0 0 0 / 0.06),
+		0 rem(4) rem(12) rgb(64 41 163 / 0.08);
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease,
+		box-shadow 0.15s ease,
+		color 0.15s ease;
+
+	&:hover {
+		background: var(--background-strong);
+		border-color: var(--border-norm);
+		box-shadow:
+			0 rem(2) rem(6) rgb(0 0 0 / 0.1),
+			0 rem(8) rem(20) rgb(64 41 163 / 0.14);
+	}
+
+	&:active {
+		background: var(--background-weak);
+		box-shadow: 0 rem(1) rem(2) rgb(0 0 0 / 0.08);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
 }
 
-.image-lightbox-back {
-	position: absolute;
-	z-index: 2;
-	inset-block-start: #{rem(16)};
-	inset-inline-end: #{rem(16)};
+@media (max-width: rem(768)) {
+	.image-preview-close {
+		inset-block-start: rem(8);
+		inset-inline-end: rem(8);
+		transform: none;
+	}
 }
 
 .image-preview-container {
+	inline-size: 100%;
 	box-shadow:
 		0 299px 84px 0 rgb(64 41 163 / 0),
 		0 191px 76px 0 rgb(64 41 163 / 0.01),
 		0 107px 64px 0 rgb(64 41 163 / 0.02),
 		0 48px 48px 0 rgb(64 41 163 / 0.04),
 		0 12px 26px 0 rgb(64 41 163 / 0.05);
+	max-block-size: calc(100vh - #{rem(96)});
+	overflow: visible;
 
 	.button {
 		border-radius: var(--border-radius-lg);
+	}
+}
+
+.image-preview-container--preview {
+	.image-preview-media {
+		max-block-size: calc(100vh - #{rem(300)});
+	}
+
+	.image-preview-image {
+		max-inline-size: 100%;
+		max-block-size: calc(100vh - #{rem(300)});
+	}
+}
+
+.image-preview-actions {
+	flex-shrink: 0;
+}
+
+// Only add inset padding for very wide or very tall images.
+.image-preview-container--extreme-aspect {
+	.image-preview-media,
+	.sketch-canvas__canvas-area {
+		padding: rem(24);
+	}
+
+	.image-preview-image,
+	.canvas__element--embedded {
+		border-radius: var(--border-radius-xxl);
+	}
+}
+
+.image-preview-image {
+	object-fit: contain;
+	border-radius: var(--border-radius-xxl) var(--border-radius-xxl) 0 0;
+}
+
+@media (max-width: rem(768)) {
+	.image-preview-container {
+		max-block-size: calc(100dvh - #{rem(24)});
+		border-radius: var(--border-radius-xxl) var(--border-radius-xxl) 0 0;
+	}
+
+	.image-preview-container--extreme-aspect {
+		.image-preview-media,
+		.sketch-canvas__canvas-area {
+			padding: rem(16);
+		}
+	}
+
+	.image-preview-container--preview {
+		.image-preview-media,
+		.image-preview-image {
+			max-block-size: calc(100dvh - #{rem(220)});
+		}
+	}
+
+	.image-preview-actions {
+		flex-wrap: wrap;
+		padding: rem(16);
+		gap: rem(6);
 	}
 }

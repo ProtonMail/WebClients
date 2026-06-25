@@ -3,8 +3,7 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
@@ -12,9 +11,14 @@ import type { DrawingMode } from '../drawingcanvas/types';
 import { ImageDownloadButton, ImageModifyButton, ImageStyleDropdown } from './ImageActionButtons';
 
 import '../drawingcanvas/SketchCanvas.scss';
+import '../drawingcanvas/Canvas.scss';
 import './imageActions.scss';
 
 type OverlayMode = 'preview' | 'edit';
+
+/** Wider than 2:1 or taller than 1:2 — add inset padding so the image doesn't feel cramped. */
+const EXTREME_ASPECT_MAX = 2;
+const EXTREME_ASPECT_MIN = 0.5;
 
 export interface ImagePreviewOverlayProps {
     isOpen: boolean;
@@ -47,6 +51,7 @@ export const ImagePreviewOverlay = ({
 }: ImagePreviewOverlayProps) => {
     const [mode, setMode] = useState<OverlayMode>(defaultMode);
     const [canvasDims, setCanvasDims] = useState<{ width: number; height: number } | null>(null);
+    const [imageAspect, setImageAspect] = useState<number | null>(null);
 
     // Sync mode when overlay opens/closes
     useEffect(() => {
@@ -55,6 +60,7 @@ export const ImagePreviewOverlay = ({
         } else {
             setMode('preview');
             setCanvasDims(null);
+            setImageAspect(null);
         }
     }, [isOpen, defaultMode]);
 
@@ -90,6 +96,7 @@ export const ImagePreviewOverlay = ({
             width: Math.round(img.naturalWidth * scale),
             height: Math.round(img.naturalHeight * scale),
         });
+        setImageAspect(img.naturalWidth / img.naturalHeight);
     };
 
     const handleModify = () => {
@@ -114,8 +121,17 @@ export const ImagePreviewOverlay = ({
         year: createdAt.getFullYear() !== new Date().getFullYear() ? 'numeric' : undefined,
     });
 
+    const isExtremeAspect =
+        imageAspect !== null && (imageAspect > EXTREME_ASPECT_MAX || imageAspect < EXTREME_ASPECT_MIN);
+
     return createPortal(
-        <div className="image-lightbox fixed inset-0 flex flex-column" style={{ zIndex: 9999 }}>
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+        <div
+            className="image-lightbox fixed inset-0 flex flex-column"
+            role="dialog"
+            aria-modal="true"
+            aria-label={filename || c('collider_2025:Label').t`Image preview`}
+        >
             {/*
              * Hidden image: always present so dims are precomputed regardless of
              * which mode is active. Not shown to the user.
@@ -128,124 +144,76 @@ export const ImagePreviewOverlay = ({
                 style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', width: 0, height: 0 }}
             />
 
-            {/* Top-right: back arrow in edit mode, download + close in preview mode
-            <div className="flex gap-2" style={{ position: 'absolute', top: '1rem', right: '1rem', zIndex: 1 }}>
-                {mode === 'preview' && onDownload && (
-                    <button
-                        className="image-icon-btn inline-flex items-center justify-center w-8 h-8 rounded-lg"
-                        onClick={onDownload}
-                        title={c('collider_2025:Action').t`Download`}
-                    >
-                        <IcArrowDownLine size={4} />
-                    </button>
-                )}
-                <button
-                    className="image-icon-btn inline-flex items-center justify-center w-8 h-8 rounded-lg"
-                    onClick={mode === 'edit' ? () => setMode('preview') : onClose}
-                    title={mode === 'edit' ? c('collider_2025:Action').t`Back` : c('collider_2025:Action').t`Close`}
-                >
-                    {mode === 'edit' ? <IcArrowLeft size={4} /> : <IcCross size={4} />}
-                </button>
-            </div> */}
-
-            {mode === 'preview' ? (
-                <>
-                    {/* Centered image */}
-                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                    <div
-                        className="flex-1 min-h-0 flex items-center justify-center"
-                        style={{ padding: '4rem 2rem 1rem' }}
-                        onClick={onClose}
-                    >
-                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                        <div
-                            className="image-preview-shell flex flex-column max-h-full"
-                            onClick={(e) => e.stopPropagation()}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+            <div className="image-lightbox__content flex-1 min-h-0 flex items-center justify-center" onClick={onClose}>
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                <div className="image-preview-shell flex flex-column max-h-full" onClick={(e) => e.stopPropagation()}>
+                    <Tooltip title={c('collider_2025:Action').t`Close`}>
+                        <button
+                            type="button"
+                            className="image-preview-close inline-flex items-center justify-center border rounded-full bg-norm color-norm"
+                            onClick={onClose}
+                            aria-label={c('collider_2025:Action').t`Close`}
                         >
-                            <Button
-                                className="image-preview-close shrink-0 bg-norm"
-                                icon
-                                size="small"
-                                shape="ghost"
-                                onClick={onClose}
-                                title={c('collider_2025:Action').t`Close`}
-                            >
-                                <IcCross size={4} />
-                            </Button>
-                            <div className="image-preview-container bg-norm flex flex-column flex-nowrap items-center justify-center p-6 pb-8 rounded-xxl gap-6 max-h-full">
+                            <IcCross size={4} />
+                        </button>
+                    </Tooltip>
+
+                    <div
+                        className={[
+                            'image-preview-container bg-norm flex flex-column flex-nowrap items-center rounded-xxl max-h-full border border-weak',
+                            mode === 'preview' ? 'image-preview-container--preview' : 'image-preview-container--edit overflow-hidden',
+                            isExtremeAspect ? 'image-preview-container--extreme-aspect' : '',
+                        ]
+                            .filter(Boolean)
+                            .join(' ')}
+                    >
+                        {mode === 'preview' ? (
+                            <>
                                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
-                                <img
-                                    src={imageDataUrl}
-                                    alt={filename || 'Generated image'}
-                                    className="block rounded-xxl "
-                                    style={{
-                                        maxWidth: '60vw',
-                                        maxHeight: '100%',
-                                        objectFit: 'contain',
-                                    }}
-                                    onClick={(e) => e.stopPropagation()}
-                                />
+                                <div className="image-preview-media flex justify-center items-center w-full min-h-0">
+                                    <img
+                                        src={imageDataUrl}
+                                        alt={filename || 'Generated image'}
+                                        className="image-preview-image block"
+                                        onClick={(e) => e.stopPropagation()}
+                                    />
+                                </div>
+
                                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                 <div
-                                    className="flex items-center justify-center gap-2 flex-wrap"
+                                    className="image-preview-actions flex shrink-0 items-center justify-center w-full gap-2 px-6 pt-6 pb-8"
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     {onExport && <ImageModifyButton onClick={handleModify} />}
                                     {showStyleOptions && onChangeStyle && (
                                         <ImageStyleDropdown onSelect={handleStyleChange} stopPropagation />
                                     )}
-                                    {mode === 'preview' && onDownload && <ImageDownloadButton onClick={onDownload} />}
+                                    {onDownload && <ImageDownloadButton onClick={onDownload} />}
                                 </div>
+                            </>
+                        ) : !canvasDims ? (
+                            <div className="image-preview-loading flex items-center justify-center p-12 w-full">
+                                <div className="canvas__loading-spinner inline-block rounded-full" />
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Action bar */}
-                    {}
-                    {/* <div
-                        className="flex items-center justify-center gap-2 flex-wrap pb-20"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        {onExport && <ImageModifyButton onClick={handleModify} />}
-                        {showStyleOptions && onChangeStyle && (
-                            <ImageStyleDropdown onSelect={handleStyleChange} stopPropagation />
+                        ) : (
+                            <SketchCanvas
+                                mode="overlay"
+                                baseImage={imageDataUrl}
+                                width={canvasDims.width}
+                                height={canvasDims.height}
+                                showDescription
+                                onExport={handleExport}
+                                onClose={() => setMode('preview')}
+                            />
                         )}
-                    </div> */}
+                    </div>
+                </div>
+            </div>
 
-                    {formattedDate && (
-                        <div
-                            style={{
-                                textAlign: 'center',
-                                paddingBottom: '1.5rem',
-                                color: 'rgba(255,255,255,0.5)',
-                                fontSize: '12px',
-                            }}
-                        >
-                            {c('collider_2025:Label').t`Created on`} {formattedDate}
-                        </div>
-                    )}
-                </>
-            ) : (
-                /* Edit mode: SketchCanvas takes all remaining space */
-                <div className="flex-1 min-h-0 relative">
-                    <Button
-                        className="image-lightbox-back shrink-0 bg-norm"
-                        icon
-                        size="small"
-                        shape="ghost"
-                        onClick={() => setMode('preview')}
-                        title={c('collider_2025:Action').t`Back`}
-                    >
-                        <IcArrowLeft size={4} />
-                    </Button>
-                    <SketchCanvas
-                        mode="overlay"
-                        baseImage={imageDataUrl}
-                        width={canvasDims?.width}
-                        height={canvasDims?.height}
-                        onExport={handleExport}
-                        onClose={() => setMode('preview')}
-                    />
+            {formattedDate && mode === 'preview' && (
+                <div className="image-lightbox__date">
+                    {c('collider_2025:Label').t`Created on`} {formattedDate}
                 </div>
             )}
         </div>,
