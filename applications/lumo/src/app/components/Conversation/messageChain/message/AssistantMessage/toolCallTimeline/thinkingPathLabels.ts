@@ -184,5 +184,5 @@ export function getThinkingPathHeader(steps: ThinkingStep[], messageId: string, 
     const actions = active ? buildActiveActions(steps, seed) : buildCompleteActions(steps, seed);
     const joined = joinActions(actions);
 
-    return active ? c('collider_2025:Reasoning').t`${joined}...` : joined;
+    return active ? `${joined}...` : joined;
 }
