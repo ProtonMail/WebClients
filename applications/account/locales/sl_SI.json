@@ -641,9 +641,6 @@
       "Forgot password?": [
         "Pozabljeno geslo?"
       ],
-      "Forgot recovery method?": [
-        "Ste pozabili način obnovitve?"
-      ],
       "Generate": [
         "Ustvari"
       ],
@@ -1917,12 +1914,136 @@
         "Ponudba ni na voljo."
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za eno e-poštno domeno po meri, 10 e-poštnih naslovov, 10 vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } shrambe"
+      ],
+      "1 user account": [
+        "1 uporabniški račun"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40x vaš trenutni paket"
+      ],
+      "6 user accounts": [
+        "6 uporabniških računov"
+      ],
+      "Admin panel to manage your family": [
+        "Administrativna plošča za upravljanje vaše družine"
+      ],
+      "Advanced account protection": [
+        "Napredni program za zaščito računa"
+      ],
+      "Easily add or remove users": [
+        "Enostavno dodajte ali odstranite uporabnike"
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Password health alerts": [
+        "Opozorila o kakovosti gesla"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neomejeno število prijav, kreditnih kartic, hide-my-email vzdevkov in več"
+      ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Zaračunano ${ amount } enkrat"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Obnovitev po enem mesecu za ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, pretočne storitve z visoko hitrostjo, onemogočanje oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svojo e-pošto in urnik s celovitim šifriranjem. Vključuje 15 e-poštnih naslovov, podporo za prilagojene e-poštne domene, neomejeno število vzdevkov hide-my-email in drugo."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Zaščitite svoje datoteke s šifrirano shrambo v oblaku. Vključuje spletni urejevalnik dokumentov, varnostno kopijo fotografij, zgodovino različic, šifrirano delitev datotek in še več."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB prostora za shranjevanje"
+      ],
+      "3 TB data storage": [
+        "3 TB prostora za shranjevanje"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostop do več kot 15.000 strežnikov v več kot 120 državah"
+      ],
+      "Access advanced AI models": [
+        "Dostop do naprednih modelov UI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Vse premijske funkcije ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
+      ],
+      "Connect 10 devices at once": [
+        "Povežite 10 naprav hkrati"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Celotna zgodovina klepetov z enostavnim iskanjem in možnostjo priljubljenih"
+      ],
+      "Individual accounts for 6 users": [
+        "Posamezni računi za 6 uporabnikov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Posamezni računi za vas in partnerja"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeno število dnevnih pogovorov"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Posebej zasnovan NetShield ščiti vaše naprave in pospeši vaše brskanje z blokiranjem oglasov, sledilnikov in zlonamerne programske opreme."
       ]
     },
     "Billing cycle": {
@@ -4329,6 +4450,14 @@
         "Prilagojene rešitve za večje organizacije, ki potrebujejo storitve po meri"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Razširjena zgodovina različic"
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/mesec"
@@ -5853,9 +5982,19 @@
         "Lahko shranite datoteko ICS dogodkov, ki so bili uspešno izvoženi."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB skupnega prostora shrambe"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Koristi vašega računa"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Prostor za shranjevanje si delijo družinski člani ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } in ${ DRIVE_APP_NAME }"
       ]
     },
     "familyOffer_2023:Action": {
@@ -5882,6 +6021,11 @@
       ],
       "View invitation": [
         "Ogled povabila"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Do šest uporabnikov"
       ]
     },
     "familyOffer_2023:Error": {
@@ -6113,6 +6257,17 @@
       ],
       "Set family name": [
         "Določite družinsko ime."
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Vključuje 2700 strežnikov v več kot 65 državah, povežite do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Vključuje podporo za tri e-poštne domene po meri, 90 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
       ]
     },
     "Feature": {
@@ -7227,9 +7382,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Če nadaljujete, boste izgubili dostop do vseh trenutno šifriranih podatkov v vašem računu."
-      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } je zasebnost, ki ji lahko zaupate, zagotovljena z močnim šifriranjem, z odprto kodo in s švicarskimi zakoni o zasebnosti. Verjamemo, da nihče ne sme izkoriščati vaših podatkov in pika. Naša tehnologija in poslovanje temeljita na tem bistveno močnejšem konceptu zasebnosti."
       ],
@@ -7986,9 +8138,6 @@
         "uporabljenih domen",
         "uporabljenih domen"
       ],
-      "Done! We sent a code to ${ destination }.": [
-        "Končano! Poslali smo kodo na ${ destination }."
-      ],
       "Don’t know your recovery phrase?": [
         "Ne poznate obnovitvene fraze?"
       ],
@@ -8102,12 +8251,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Vnesite kodo iz aplikacije za preverjanje pristnosti"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Vnesite kodo, poslano na vašo telefonsko številko ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Vnesite kodo, ki je bila poslana na ${ email }. Če ne najdete sporočila v svojem nabiralniku, preverite mapo z neželeno pošto."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Vnesite poverilnice e-poštnega računa, iz katerega želite uvoziti podatke."
@@ -8312,9 +8455,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Če ste prijavljeni drugje, lahko izvedete ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Če menite, da je prišlo do pomote, se obrnite na nas ${ contactLink }."
@@ -8700,9 +8840,6 @@
       "On Ubuntu?": [
         "Uporabljate Ubuntu?"
       ],
-      "Once you reset your password:": [
-        "Ko ponovno nastavite geslo:"
-      ],
       "Open source": [
         "Odprtokoden"
       ],
@@ -8822,9 +8959,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Preverite datoteko ali poskusite uporabiti našo ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Vnesite obnovitveno frazo z 12 besedami, ki je povezana z vašim računom."
       ],
       "Please fill in all required fields.": [
         "Izpolnite vsa zahtevana polja."
@@ -9453,9 +9587,6 @@
       "Total: ${ totalPrice }": [
         "Skupaj: ${ totalPrice }"
       ],
-      "trusted device": [
-        "zaupanja vredna naprava"
-      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Način z dvema gesloma zahteva dve gesli: eno za prijavo v vaš račun in drugo za dešifriranje vaših podatkov. (Napredno)"
       ],
@@ -9464,9 +9595,6 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ni mogoče preveriti podpisa datoteke za obnovitev. Prosim, obrnite se na podporo."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Na žalost ni shranjenega načina za obnovitev tega računa."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Enolični ID, ki ga ustvari vaš ponudnik identitete, običajno v obliki URL-ja, ki vsebuje ime ponudnika identitete (npr. https://idp.example.com/XXXXX)."
@@ -9603,9 +9731,6 @@
       "Want to learn more?": [
         "Želite izvedeti več?"
       ],
-      "Warning:": [
-        "Opozorilo:"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Svetujemo vam, da če je le mogoče, uporabljate uradne aplikacije ${ VPN_APP_NAME }."
       ],
@@ -9638,9 +9763,6 @@
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Priporočamo, da obvestite člane organizacije in jih prosite, naj nastavijo dvojno preverjanje pristnosti za svoje račune, preden zahtevate uporabo tega preverjanja."
-      ],
-      "We recommend using your recovery phrase instead.": [
-        "Namesto tega priporočamo uporabo vaše obnovitvene fraze."
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Varno shranimo podatke za obnovitev na vaši zaupanja vredni napravi, da preprečimo izgubo podatkov."
@@ -9677,12 +9799,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Poslali bomo kodo za ponastavitev na ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Poslali vam bomo kodo za ponastavitev na e-poštni naslov, ki ste ga navedli za obnovitev računa."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Poslali vam bomo kodo za ponastavitev na telefonsko številko, ki ste jo navedli za obnovitev računa."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Če je onemogočeno, preprečuje nalaganje slik na vašo napravo brez vaše vednosti."
@@ -10143,9 +10259,6 @@
     "invitation status": {
       "Declined": [
         "Zavrnjeno"
-      ],
-      "Owner": [
-        "Lastnik"
       ],
       "Paused": [
         "Začasno zaustavljeno"
@@ -10755,9 +10868,6 @@
       ],
       "City": [
         "Mesto"
-      ],
-      "Code": [
-        "Koda"
       ],
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
@@ -11921,9 +12031,6 @@
       ],
       "Pay invoice": [
         "Plačilo računa"
-      ],
-      "perform a password reset from your active session": [
-        "ponastavitev gesla iz aktivne seje"
       ],
       "Privacy policy": [
         "Pravilnik o zasebnosti"
@@ -14792,17 +14899,6 @@
         "Časovno omejena ponudba."
       ]
     },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Vsi vaši obstoječi podatki** (e-pošta, dogodki, stiki, datoteke, vnosi v ${ PASS_APP_NAME } in podobno) **bodo zaklenjeni** in jih lahko odklenete le z vašim **starim geslom**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Vsi vaši obstoječi podatki** (e-pošta, dogodki, stiki, datoteke, vnosi v ${ PASS_APP_NAME } in podobno) **bodo zaklenjeni** in jih lahko odklenete le z vašo **obnovitveno frazo** ali z vašim **starim geslom**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Vse metode **dvojnega preverjanja pristnosti (2FA)** na vašem računu bodo onemogočene."
-      ]
-    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Vsi skrbniki bodo imeli dostop do ključa."
@@ -16827,6 +16923,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 uporabnikov"
+      ],
+      "All paid Mail and Calendar features": [
+        "Vse plačljive funkcije Pošte in Koledarja"
+      ],
+      "High speed VPN": [
+        "Visoka hitrost VPN"
+      ],
       "Highest VPN speed": [
         "Najhitrejši VPN"
       ],
@@ -16839,8 +16947,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premijski ${ appName1 }, ${ appName2 } in ${ appName3 }"
       ],
+      "Premium early access": [
+        "Premijski zgodnji dostop"
+      ],
+      "Secure cloud storage": [
+        "Varna shramba v oblaku"
+      ],
       "Secure streaming": [
         "Varni pretočni prenos"
+      ],
+      "Support online privacy": [
+        "Podprite zasebnost na spletu"
       ]
     },
     "specialoffer: Footer": {
@@ -16872,17 +16989,74 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mesec",
+        "${ n } meseca",
+        "${ n } meseci",
+        "${ n } mesecev"
+      ],
       "/ month": [
         "/mesec"
       ],
       "/month": [
         "/mesec"
       ],
+      "1 year": [
+        "1 leto"
+      ],
+      "15 months": [
+        "15 mesecev"
+      ],
+      "2 years": [
+        "2 leti"
+      ],
+      "30 months": [
+        "30 mesecev"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Zaračunano ${ amount } za en mesec"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Zaračunano ${ amount } za 12 mesecev"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Zaračunano ${ amount } za 15 mesecev"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Zaračunano ${ amount } za 24 mesecev"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Zaračunano ${ amount } za 30 mesecev"
+      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovitev po 1 letu po znižani ceni ali ${ discountedAmount } namesto ${ regularAmount } (${ discount }% popusta)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovitev po 2 letih po znižani ceni ali ${ discountedAmount } namesto ${ regularAmount } (${ discount }% popust)"
+      ],
       "Save ${ discount }%": [
         "Prihranite ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Običajna cena ${ amount } za en mesec"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Običajna cena ${ amount } za 12 mesecev"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Običajna cena ${ amount } za 15 mesecev"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Običajna cena ${ amount } za 24 mesecev"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Običajna cena ${ amount } za 30 mesecev"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Posebna ponudba velja za prvi 2 leti."
       ]
     },
     "specialoffer: Title": {
@@ -16894,6 +17068,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Nadgradite in prihranite več z 2 leti ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje 1700 strežnikov v več kot 60 državah, najvišjo hitrost VPN, 10 povezav VPN na uporabnika, storitve pretakanja po vsem svetu, zlonamerno programsko opremo in zaviralce oglasov ter več."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje 1700 strežnikov v več kot 60 državah, najvišjo hitrost VPN, 10 povezav VPN, storitve pretakanja po vsem svetu, zlonamerno programsko opremo in zaviralce oglasov ter več."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Vse naše premijske storitve z največjim možnim obsegom: 100 e-poštnih naslovov, podpora za 10 e-poštnih domen po meri, neomejeno število vzdevkov hide-my-email, deljenje koledarjev, šifrirana shramba v oblaku in še več."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za tri e-poštne domene po meri, 15 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Odlično za družine ali majhne ekipe, vsak ima lahko svoj nabiralnik in vzdevke. Zahtevana je domena po meri."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Brez dodatnih stroškov prejmite plačljive različice vseh novih storitev zasebnosti, ki jih izdamo v prihodnosti, skupaj z zgodnjim dostopom do vseh prihodnjih funkcij in izdelkov."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
       ]
     },
     "sso": {
@@ -18110,6 +18307,20 @@
         "Podrobnosti dogodkov, ki jih ni bilo mogoče izvoziti"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje plačilnih kartic in drugo."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Vključuje več kot 2950 strežnikov v več kot 65 državah, povezovanje do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za eno e-poštno domeno po meri, 10 e-poštnih naslovov, 10 vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje zgodovino različic, šifrirano delitev datotek in drugo."
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Naslovi"
@@ -18929,9 +19140,6 @@
       "Forgot password": [
         "Pozabljeno geslo"
       ],
-      "Forgot recovery method": [
-        "Pozabljen način obnovitve"
-      ],
       "Forward and auto-reply": [
         "Posredovanje in samodejni odgovor"
       ],
@@ -19168,9 +19376,6 @@
       ],
       "No need to empty the trash": [
         "Ni vam treba prazniti smeti"
-      ],
-      "No recovery method": [
-        "Ni načina obnovitve"
       ],
       "Notifications": [
         "Obvestila"
