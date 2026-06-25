@@ -759,9 +759,6 @@
       "Forgot password?": [
         "비밀번호를 잊어버리셨나요?"
       ],
-      "Forgot recovery method?": [
-        "복구 방법을 잊으셨나요?"
-      ],
       "Generate": [
         "생성"
       ],
@@ -2323,12 +2320,139 @@
         "제안 사용 불가"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크톱 앱"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 및 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "저장공간 ${ storageSize }"
+      ],
+      "1 user account": [
+        "1개 사용자 계정"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장 공간: 현재 플랜의 40배에 해당"
+      ],
+      "6 user accounts": [
+        "6개 사용자 계정"
+      ],
+      "Admin panel to manage your family": [
+        "내 가족 계정 관리를 위한 관리자 패널"
+      ],
+      "Advanced account protection": [
+        "향상된 계정 보호 기능"
+      ],
+      "Easily add or remove users": [
+        "쉬운 사용자 추가 및 제거"
+      ],
+      "One-time payment, lifetime deal": [
+        "일회성 결제, 평생 이용"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Password health alerts": [
+        "비밀번호 건강도 알림"
+      ],
+      "Recover previous file versions": [
+        "기존 파일 버전 복원"
+      ],
+      "Unlimited folders, labels and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "무제한 로그인, 신용 카드, hide-my-email 별칭 등"
+      ],
       "Use your own email domain": [
         "기존 이메일 도메인 사용"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "${ amount } 1회 청구"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "${ regularAmount }(으)로 1개월 후 갱신됩니다."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "차단된 콘텐츠에 접근 및 비공개로 브라우징하세요. 110여개 이상 국가에서 8500개 이상 서버와 10개 기기, 고속 스트리밍, 광고 제거 및 멀웨어 보호, VPN Accelerator 등이 포함됩니다."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "모든 기기의 로그인 항목을 보호하세요. 무제한 hide-my-email 별칭 공유, 통합된 2단계 인증기, ${ DARK_WEB_MONITORING_NAME } 등 기능이 포함되어 있습니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "온라인 문서 편집기, 사진 백업, 버전 기록, 암호화된 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "총 2 TB 저장공간"
+      ],
+      "3 TB data storage": [
+        "3 TB 저장공간"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120개 이상 국가 내의 15,000개 이상 서버에 접근"
+      ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
+      ],
+      "Block ads, trackers, and malware": [
+        "광고, 트래커 및 멀웨어 차단"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증기"
+      ],
+      "Connect 10 devices at once": [
+        "한 번에 10대 기기 연결"
+      ],
+      "Full chat history with easy search and favorites": [
+        "쉬운 검색과 즐겨찾기 기능으로 전체 채팅 기록 보관"
+      ],
+      "Individual accounts for 6 users": [
+        "6명 사용자에 대한 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "회원님과 파트너를 위한 개별 계정"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협으로부터 대항하는 더 강력한 보호"
+      ],
+      "Unlimited daily chats": [
+        "일일 무제한 채팅"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "특수 설계된 NetShield는 광고나 추적기 및 멀웨어를 차단하여 기기를 보호하고 브라우징 성능을 향상시켜줍니다."
       ]
     },
     "Billing cycle": {
@@ -5239,6 +5363,14 @@
         "특정 보안 요구가 있는 대규모 조직을 위한 맞춤형 솔루션"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "연장된 버전 기록"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/월간"
@@ -7142,9 +7274,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "계정이 삭제되었거나 비활성화되었습니다"
-      ],
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
       ],
@@ -7337,9 +7466,19 @@
         "성공적으로 내보내진 이벤트의 ICS 파일을 저장할 수 있습니다."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "총 3TB 저장공간"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "나의 계정 혜택"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } 및 ${ DRIVE_APP_NAME }에 가족 간 스토리지 공간이 공유됩니다."
       ]
     },
     "familyOffer_2023:Action": {
@@ -7372,6 +7511,11 @@
       ],
       "View invitation": [
         "초대 보기"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "최대 6명의 사용자"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7621,6 +7765,17 @@
       ],
       "Set family name": [
         "가족 이름을 설정하세요"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65개 이상 국가의 2700여개 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "3개 커스텀 이메일 도메인, 90개 이메일 주소, 무제한 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ]
     },
     "Feature": {
@@ -8791,9 +8946,6 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName }이(가) 기본 일정으로 설정됩니다."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없게 됩니다."
-      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME }은 당신이 신뢰할 수 있는 프라이버시 보호, 강력한 암호화 보장, 오픈 소스 코드, 스위스 법률로 보호됩니다. 우리는 아무도 당신의 데이터를 악용해서는 안 된다고 믿습니다. 우리 기술과 사업은 근본적으로 더 강력한 프라이버시 보호에 기초를 두고 있죠."
       ],
@@ -9640,9 +9792,6 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "Data recoverable on this device": [
-        "이 장치에서 데이터 복구 가능"
-      ],
       "Data recoverable with recovery phrase": [
         "복구 키로 데이터 복구 가능"
       ],
@@ -9744,9 +9893,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "프리미엄 기능을 놓치지 마세요. 오늘 자동 갱신을 활성화 하세요."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "완료! ${ destination } 로 코드를 전송했습니다."
       ],
       "Don’t know your recovery phrase?": [
         "복구 구문을 잊어버리셨나요?"
@@ -9903,12 +10049,6 @@
       ],
       "Enter the code from your authenticator app": [
         "인증 앱에서 코드를 입력하세요."
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "회원님의 전화번호 ${ phone }(으)로 전송된 코드를 입력해주세요."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "${ email } (으) 로 전송된 코드를 입력하세요. 받은 편지함에서 이메일을 찾을 수 없는 경우 스팸 폴더를 확인하세요."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
@@ -10173,9 +10313,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "다른 어딘가에서 로그인하셨다면 ${ signedInPasswordResetLink }"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
@@ -10678,9 +10815,6 @@
       "On Ubuntu?": [
         "Ubuntu를 사용하시나요?"
       ],
-      "Once you reset your password:": [
-        "지금 비밀번호를 재설정하면 다음 사항이 적용됩니다:"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "비 ${ BRAND_NAME } 수신자와 PGP를 사용하는 경우에만 이 설정을 변경해 주세요."
       ],
@@ -10821,9 +10955,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "파일을 확인하거나 ${ csvTemplateButton } 를 사용해 보세요."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "회원님의 계정과 연계된 12자리 복구 구문을 입력해 주세요."
       ],
       "Please fill in all required fields.": [
         "필수 입력란을 모두 입력해주세요."
@@ -11617,9 +11748,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "무료 체험이 ${ formattedPeriodEndDate }에 종료됨"
       ],
-      "trusted device": [
-        "신뢰할 수 있는 장치"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName }을(를) 걱정 없이 사용해 보세요 - 만약 어떠한 이유로든 회원님의 마음이 바뀌었다면, 전액 환불 받으실 수 있어요. 환불 사유를 묻지 않습니다."
       ],
@@ -11637,9 +11765,6 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "복구 파일의 서명을 검증할 수 없습니다. 고객지원으로 문의해 주십시오."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "이 계정에는 저장된 복구 방법이 없습니다."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID 공급자에 의해 생성된 고유 ID는 일반적으로 ID 공급자의 이름이 포함된 URL의 형태입니다. (예: e.g. https://idp.example.com/XXXXX)"
@@ -11803,9 +11928,6 @@
       "Want to learn more?": [
         "더 알아보시겠어요?"
       ],
-      "Warning:": [
-        "주의:"
-      ],
       "Warning: deleting your account is permanent.": [
         "경고: 계정 삭제는 영구적입니다."
       ],
@@ -11854,14 +11976,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "2단계 인증 요구 시작 전에 조직 구성원에게 알린 다음 계정에 2단계 인증을 설정하도록 요청하는 것이 권장됩니다."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "복구 방법을 사용하는 것을 권장합니다."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Proton이 사용자가 데이터를 상실하지 않도록 신뢰할 수 있는 기기에 복구 정보를 안전하게 저장합니다."
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "사용자가 이 기기 ${ deviceLink }(에)서 데이터 복구를 허용하여 이 브라우저에 백업 파일이 저장되었습니다. 백업 파일이 유효한 경우 암호화된 데이터에 대한 전체 또는 부분적인 접근 권한을 즉시 다시 회수할 수 있게 됩니다."
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "복구 키로 복구를 활성화하는 것을 강력하게 권장합니다."
@@ -11901,12 +12017,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "${ boldValue }(으)로 재설정 코드를 보내드립니다."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "계정 복구를 위해 제공하신 이메일 주소로 재설정 코드를 보내드립니다."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "계정 복구를 위해 제공하신 휴대폰 번호로 재설정 코드를 보내드립니다."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "비활성화시, 사용자가 알아차리기 전 이미지가 다운로드 되는 것을 방지해 줍니다."
@@ -12466,9 +12576,6 @@
     "invitation status": {
       "Declined": [
         "거절됨"
-      ],
-      "Owner": [
-        "소유자"
       ],
       "Paused": [
         "일시정지됨"
@@ -13274,9 +13381,6 @@
       ],
       "City": [
         "시/군/구"
-      ],
-      "Code": [
-        "코드"
       ],
       "Code is 6 digits without spaces": [
         "코드는 공백 없이 6자리에요."
@@ -14741,9 +14845,6 @@
       ],
       "Pay invoice": [
         "청구서 지불"
-      ],
-      "perform a password reset from your active session": [
-        "활성 상태의 세션에서 비밀번호를 재설정하시기 바랍니다."
       ],
       "Privacy policy": [
         "개인 정보 정책"
@@ -17909,17 +18010,6 @@
       ],
       "Limited-time deal.": [
         "기간 한정 할인."
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**기존의 모든 데이터**(이메일, 이벤트, 연락처, 파일, ${ PASS_APP_NAME } 입력사항 외 기타)가 **잠길 것이고** 내 **이전 패스워드**로만 잠금해제할 수 있습니다."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**기존의 모든 데이터**(이메일, 이벤트, 연락처, 파일, ${ PASS_APP_NAME } 입력사항 외 기타)가 **잠길 것이고** 내 **복구 문구** 또는 **이전 비밀번호**로만 잠금해제할 수 있습니다."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "모든 **2단계 인증 (2FA)** 수단이 비활성화됩니다."
       ]
     },
     "passwordless": {
@@ -21102,6 +21192,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "사용자 6명"
+      ],
+      "All paid Mail and Calendar features": [
+        "모든 유료 메일 및 캘린더 기능"
+      ],
+      "High speed VPN": [
+        "고속 VPN"
+      ],
       "Highest VPN speed": [
         "가장 빠른 VPN 속도"
       ],
@@ -21114,8 +21216,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "프리미엄 ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
+      "Premium early access": [
+        "프리미엄 얼리 엑세스"
+      ],
+      "Secure cloud storage": [
+        "안전한 클라우드 저장 공간"
+      ],
       "Secure streaming": [
         "보안 스트리밍"
+      ],
+      "Support online privacy": [
+        "온라인 개인정보 보호 지원"
       ]
     },
     "specialoffer: Footer": {
@@ -21159,17 +21270,71 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
       "/ month": [
         "/ 월"
       ],
       "/month": [
         "/월간"
       ],
+      "1 year": [
+        "1년"
+      ],
+      "15 months": [
+        "15개월"
+      ],
+      "2 years": [
+        "2년"
+      ],
+      "30 months": [
+        "30개월"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "1달에 ${ amount }씩 청구됨"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "12달에 ${ amount }씩 청구됨"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15달에 ${ amount }씩 청구됨"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "24달에 ${ amount }씩 청구됨"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30달에 ${ amount }씩 청구됨"
+      ],
       "Get the deal": [
         "특가로 구매"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "1년 뒤 할인된 가격의 ${ discountedAmount } 가 ${ regularAmount } 으로 갱신됩니다. (${ discount }% 할인)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "2년 뒤 할인된 가격의 ${ discountedAmount } 가 ${ regularAmount } 으로 갱신됩니다. (${ discount }% 할인)"
+      ],
       "Save ${ discount }%": [
         "${ discount }% 절약"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "1달에 기본 가격 ${ amount }씩 청구됨"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "12달에 기본 가격 ${ amount }씩 청구됨"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15달에 기본 가격 ${ amount }씩 청구됨"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "24달에 기본 가격 ${ amount }씩 청구됨"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30달에 기본 가격 ${ amount }씩 청구됨"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "본 특가 할인은 최초 2년간 유효합니다"
       ]
     },
     "specialoffer: Title": {
@@ -21196,6 +21361,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "업그레이드로 2년 동안 더 저렴하게 ${ planName } 사용하기"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "60개 이상의 국가의 1700여개 서버로 차단된 콘텐츠에 접근하고 비공개적으로 브라우징 하고, 빠른 VPN 속도, 사용자 당 10개 VPN 연결, 월드와이드 스트리밍 서비스, 멀웨어 및 광고 차단기 등을 누리십시오."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "60개 이상의 국가의 1700여개 서버로 차단된 콘텐츠에 접근하고 비공개적으로 브라우징 하고, 빠른 VPN 속도, 10개 VPN 연결, 월드와이드 스트리밍 서비스, 멀웨어 및 광고 차단기 등을 누리십시오."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "자사 프리미엄 서비스의 최대 제한: 100개 이메일 주소, 10개 지정 도메인 지원, 무제한 hide-my-email 별칭, 캘린더 공유, 암호화된 클라우드 저장 공간 및 파일 공유 등."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3개 커스텀 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "가족이나 소규모 팀에 딱 맞습니다. 각 구성원이 그만의 받은 편지함과 별칭을 가지며 커스텀 도메인을 필요로 합니다."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "향후 모든 기능 및 제품에 대한 얼리 액세스와 함께 향후 출시할 모든 새로운 개인 정보 보호 서비스의 유료 버전을 추가 비용 없이 누리세요."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ]
     },
     "Spotlight": {
@@ -22530,6 +22718,20 @@
         "내보낼 수 없는 이벤트에 대한 세부 사항"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "모든 기기에서 안전한 로그인 세부사항을 생성하세요. 무제한 별칭, 20개의 금고, 통합된 2단계 인증기, 신용카드 자동 완성 등이 포함되어 있습니다."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65개 이상 국가의 2950개 이상의 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ]
+    },
     "Tab": {
       "For personal use": [
         "개인용"
@@ -23498,9 +23700,6 @@
       "Forgot password": [
         "비밀번호를 잊어버리셨나요?"
       ],
-      "Forgot recovery method": [
-        "복구 방법 분실"
-      ],
       "Forward and auto-reply": [
         "전달 및 자동 회신"
       ],
@@ -23779,9 +23978,6 @@
       ],
       "No need to empty the trash": [
         "휴지통을 비울 필요 없어요."
-      ],
-      "No recovery method": [
-        "복구 방법 없음"
       ],
       "Notifications": [
         "알림"
