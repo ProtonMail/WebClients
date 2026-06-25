@@ -15,8 +15,10 @@ const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 export const groupMeetingsByDay = (
     meetings: (Meeting & { adjustedStartTime: number; adjustedEndTime: number })[],
     groupBy: 'CreateTime' | 'adjustedStartTime' | 'adjustedEndTime' | 'LastUsedTime'
-): MeetingsByDay => {
-    return meetings.reduce((acc, meeting) => {
+): { meetingsByDay: MeetingsByDay; meetingsCount: number } => {
+    let meetingsCount = 0;
+
+    const meetingsByDay = meetings.reduce((acc, meeting) => {
         // Skip meetings without a start time
         if (!meeting[groupBy]) {
             return acc;
@@ -34,8 +36,15 @@ export const groupMeetingsByDay = (
 
         acc[date].push(meeting);
 
+        meetingsCount++;
+
         return acc;
     }, {} as MeetingsByDay);
+
+    return {
+        meetingsByDay,
+        meetingsCount,
+    };
 };
 
 const getRelativeDate = (dateString: string, absoluteDate: string): string | null => {

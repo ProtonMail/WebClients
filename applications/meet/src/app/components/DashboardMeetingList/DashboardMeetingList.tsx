@@ -121,7 +121,10 @@ export const DashboardMeetingList = ({
     // Sticky header positioning
     const { isStuck, stickyRef, previousElementRef } = useSticky({ shouldUseSticky: shouldShowSearchBar });
 
-    const meetingsByDay = groupMeetingsByDay(timeBasedMeetings, selectedSortOption?.groupBy ?? 'adjustedStartTime');
+    const { meetingsByDay, meetingsCount } = groupMeetingsByDay(
+        timeBasedMeetings,
+        selectedSortOption?.groupBy ?? 'adjustedStartTime'
+    );
 
     const sortedMeetingsByDayEntries = Object.entries(meetingsByDay).sort((a, b) => {
         // Force newly-created meeting to be at the top of the list
@@ -149,7 +152,7 @@ export const DashboardMeetingList = ({
                 <DashboardMeetingListTabs
                     activeTab={activeTab}
                     setActiveTab={handleTabChange}
-                    timeBasedMeetingsCount={meetingsObject[DashboardMeetingListTab.TimeBased].length}
+                    timeBasedMeetingsCount={meetingsCount}
                     meetingRoomsCount={roomNumber > 0 ? roomNumber : 1}
                     ref={previousElementRef}
                     isStuck={isStuck}
