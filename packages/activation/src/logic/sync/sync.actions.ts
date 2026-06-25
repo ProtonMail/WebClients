@@ -127,7 +127,7 @@ export const createSyncItem = createAsyncThunk<
 
         // When reconnecting the BYOE address, the user can choose a different gmail account that the BYOE he's trying to reconnect.
         // We need to make sure they are matching to continue
-        if (expectedEmailAddress && Account !== expectedEmailAddress) {
+        if (expectedEmailAddress && Account.toLowerCase() !== expectedEmailAddress.toLowerCase()) {
             thunkApi.extra.notificationManager.createNotification({
                 type: 'error',
                 text: c('error').t`Please sign in with the same Gmail address you originally connected`,
