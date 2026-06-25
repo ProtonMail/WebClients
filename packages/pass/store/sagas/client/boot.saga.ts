@@ -72,16 +72,17 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
         /** By this time: hydration of an existing cache will have hydrated the sync strategy. */
-        const syncResult: Maybe<SyncResult> = fromCache ? undefined : yield call(sync, state, options);
+        let syncResult: Maybe<SyncResult> = fromCache ? undefined : yield call(sync, state, options);
 
         if (fromCache && state && online) {
             /** If the feature flag has changed since this cache was created,
              * migrate the sync strategy before polling starts. On failure,
-             * the old strategy remains and migration retries on next boot. */
+             * the old strategy remains and migration retries on next boot.
+             * A V2→V1 rollback returns its V1 sync result to apply via `bootSuccess`. */
             const syncV2 = selectFeatureFlag(PassFeature.PassUserEventsV1)(state);
             const currStrategy = selectSyncStrategy(state);
             const nextStrategy = SyncStrategy[syncV2 ? 'USER_EVENTS' : 'LEGACY'];
-            if (currStrategy !== nextStrategy) yield call(migrate, nextStrategy, options);
+            if (currStrategy !== nextStrategy) syncResult = yield call(migrate, nextStrategy, options);
         }
 
         /** Sync settings after successful hydration and synchronization.
