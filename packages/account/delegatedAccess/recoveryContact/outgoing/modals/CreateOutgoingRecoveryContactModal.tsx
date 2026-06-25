@@ -23,7 +23,7 @@ import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';
 import { useAddContactInputs } from '../../../shared/outgoing/useAddContactInputs';
 import shieldSuccess from '../../../shared/shield-success.svg';
 import shield from '../../../shared/shield.svg';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 export interface AddOutgoingTrustedContactModalProps extends Omit<
     ModalProps<'form'>,
@@ -44,7 +44,7 @@ const getHeader = (text: string, email: string, svg = shield) => {
 
 export const CreateOutgoingRecoveryContactModal = ({ ...rest }: AddOutgoingTrustedContactModalProps) => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const [delegatedAccess, setDelegatedAccess] = useState<OutgoingDelegatedAccessOutput | null>(null);

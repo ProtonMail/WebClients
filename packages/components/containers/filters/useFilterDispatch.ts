@@ -8,4 +8,4 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 type DelegatedAccessDispatch = ReturnType<
     typeof baseUseDispatch<ThunkDispatch<MailFiltersState, ProtonThunkArguments, Action>>
 >;
-export const useDispatch: () => DelegatedAccessDispatch = baseUseDispatch;
+export const useFilterDispatch: () => DelegatedAccessDispatch = baseUseDispatch;

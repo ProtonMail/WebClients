@@ -9,7 +9,7 @@ import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/Delegated
 
 import { deleteDelegatedAccessThunk } from '../../../outgoingActions';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 interface Props extends Omit<PromptProps, 'children' | 'buttons'> {
     value: EnrichedOutgoingDelegatedAccess;
@@ -19,7 +19,7 @@ export const DeleteOutgoingEmergencyContactModal = ({ value, ...rest }: Props) =
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
 
     const user = (
         <span key="user" className="text-bold text-break">
