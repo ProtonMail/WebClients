@@ -9,4 +9,4 @@ import type { DelegatedAccessState } from './index';
 type DelegatedAccessDispatch = ReturnType<
     typeof baseUseDispatch<ThunkDispatch<DelegatedAccessState, ProtonThunkArguments, Action>>
 >;
-export const useDispatch: () => DelegatedAccessDispatch = baseUseDispatch;
+export const useDelegatedAccessDispatch: () => DelegatedAccessDispatch = baseUseDispatch;

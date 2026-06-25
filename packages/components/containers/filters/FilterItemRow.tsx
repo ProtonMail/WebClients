@@ -13,7 +13,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
-import { useDispatch } from '@proton/components/containers/filters/useDispatch';
+import { useFilterDispatch } from '@proton/components/containers/filters/useFilterDispatch';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { deleteFilter, enableFilter } from '@proton/mail/store/filters/actions';
@@ -39,7 +39,7 @@ function FilterItemRow({ index, filter, filters, onApplyFilter }: Props) {
     const { isDragging, ref: sortableRef, handleRef } = useSortable({ id: filter.ID, index });
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
-    const dispatch = useDispatch();
+    const dispatch = useFilterDispatch();
     const { createNotification } = useNotifications();
 
     const [applyFilterModalOpen, setApplyFilterModalOpen] = useState(false);

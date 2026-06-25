@@ -12,7 +12,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useDispatch } from '@proton/components/containers/filters/useDispatch';
+import { useFilterDispatch } from '@proton/components/containers/filters/useFilterDispatch';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -70,7 +70,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [filters = []] = useFilters();
     const { createNotification, hideNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useFilterDispatch();
     const sieveHelperEnabled = useFlag(MailFeatureFlag.LumoSieveHelper);
 
     const [closeFilterModalProps, setCloseFilterModalOpen] = useModalState();

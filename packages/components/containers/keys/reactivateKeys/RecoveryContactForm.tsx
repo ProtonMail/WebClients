@@ -14,7 +14,7 @@ import {
     getCanOutgoingDelegatedAccessRecoverStep2,
 } from '@proton/account/delegatedAccess/shared/outgoing/helper';
 import type { EnrichedOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/shared/outgoing/interface';
-import { useDispatch } from '@proton/account/delegatedAccess/useDispatch';
+import { useDelegatedAccessDispatch } from '@proton/account/delegatedAccess/useDelegatedAccessDispatch';
 import Radio from '@proton/components/components/input/Radio';
 import type { ReactivateKeysContentProps } from '@proton/components/containers/keys/reactivateKeys/interface';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -88,7 +88,7 @@ export const RecoveryContactFormStep1 = ({
     const handleError = useErrorHandler();
     const [selectedContactId, setSelectedContactId] = useState<string | null>(null);
     const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const goToSettings = useSettingsLink();
 
     const handleSubmit = async (recoveryContact: (typeof recoveryContacts)[0]) => {
