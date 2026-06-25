@@ -3,15 +3,17 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcDuplicate } from '@proton/icons/icons/IcDuplicate';
 
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
 import type { DrawingMode } from '../drawingcanvas/types';
 import { ImageDownloadButton, ImageModifyButton, ImageStyleDropdown } from './ImageActionButtons';
 
-import '../drawingcanvas/SketchCanvas.scss';
 import '../drawingcanvas/Canvas.scss';
+import '../drawingcanvas/SketchCanvas.scss';
 import './imageActions.scss';
 
 type OverlayMode = 'preview' | 'edit';
@@ -35,6 +37,10 @@ export interface ImagePreviewOverlayProps {
     onChangeStyle?: (prompt: string) => void;
     /** Pass false to hide the style dropdown entirely. Defaults to true. */
     showStyleOptions?: boolean;
+    /** Prompt text to display inside the overlay (used for inspiration images). */
+    prompt?: string;
+    /** Called when the user clicks "Try this". */
+    onTryPrompt?: () => void;
 }
 
 export const ImagePreviewOverlay = ({
@@ -48,6 +54,8 @@ export const ImagePreviewOverlay = ({
     onExport,
     onChangeStyle,
     showStyleOptions = true,
+    prompt,
+    onTryPrompt,
 }: ImagePreviewOverlayProps) => {
     const [mode, setMode] = useState<OverlayMode>(defaultMode);
     const [canvasDims, setCanvasDims] = useState<{ width: number; height: number } | null>(null);
@@ -162,16 +170,19 @@ export const ImagePreviewOverlay = ({
                     <div
                         className={[
                             'image-preview-container bg-norm flex flex-column flex-nowrap items-center rounded-xxl max-h-full border border-weak',
-                            mode === 'preview' ? 'image-preview-container--preview' : 'image-preview-container--edit overflow-hidden',
+                            mode === 'preview'
+                                ? 'image-preview-container--preview'
+                                : 'image-preview-container--edit overflow-hidden',
                             isExtremeAspect ? 'image-preview-container--extreme-aspect' : '',
                         ]
                             .filter(Boolean)
                             .join(' ')}
                     >
+                        {/* eslint-disable-next-line no-nested-ternary */}
                         {mode === 'preview' ? (
                             <>
-                                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                                 <div className="image-preview-media flex justify-center items-center w-full min-h-0">
+                                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                                     <img
                                         src={imageDataUrl}
                                         alt={filename || 'Generated image'}
@@ -179,6 +190,32 @@ export const ImagePreviewOverlay = ({
                                         onClick={(e) => e.stopPropagation()}
                                     />
                                 </div>
+
+                                {prompt && (
+                                    <div className="px-2 pt-2">
+                                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                                        <div
+                                            className="image-preview-prompt w-full"
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            <p className="image-preview-prompt__text">{prompt}</p>
+                                            <Button
+                                                icon
+                                                size="small"
+                                                shape="solid"
+                                                color="weak"
+                                                className="image-preview-prompt__copy"
+                                                onClick={() => {
+                                                    void navigator.clipboard.writeText(prompt);
+                                                }}
+                                                title={c('collider_2025:Action').t`Copy prompt`}
+                                                aria-label={c('collider_2025:Action').t`Copy prompt`}
+                                            >
+                                                <IcDuplicate size={4} />
+                                            </Button>
+                                        </div>
+                                    </div>
+                                )}
 
                                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                 <div
@@ -190,6 +227,11 @@ export const ImagePreviewOverlay = ({
                                         <ImageStyleDropdown onSelect={handleStyleChange} stopPropagation />
                                     )}
                                     {onDownload && <ImageDownloadButton onClick={onDownload} />}
+                                    {onTryPrompt && (
+                                        <Button shape="solid" color="norm" size="medium" onClick={onTryPrompt}>
+                                            {c('collider_2025:Action').t`Try this`}
+                                        </Button>
+                                    )}
                                 </div>
                             </>
                         ) : !canvasDims ? (

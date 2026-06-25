@@ -63,6 +63,11 @@ im.$media-expressions: $media-expressions;
 		line-height: rem(24);
 		letter-spacing: -0.8px;
 	}
+
+	&.medium {
+		font-size: rem(24);
+		letter-spacing: -0.96px;
+	}
 }
 
 .lumo-welcome-section {

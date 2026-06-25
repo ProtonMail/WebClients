@@ -119,7 +119,8 @@
 }
 
 .image-lightbox__content {
-	padding: rem(64) rem(32) rem(16);
+	padding-block: rem(64) rem(16);
+	padding-inline: rem(32);
 	overflow-y: auto;
 }
 
@@ -149,9 +150,10 @@
 	}
 }
 
-@media (max-width: rem(768)) {
+@media (width <= rem(768)) {
 	.image-lightbox__content {
-		padding: rem(48) rem(12) rem(12);
+		padding-block: rem(48) rem(12);
+		padding-inline: rem(12);
 		align-items: flex-end;
 	}
 
@@ -220,12 +222,36 @@
 	}
 }
 
-@media (max-width: rem(768)) {
+@media (width <= rem(768)) {
 	.image-preview-close {
 		inset-block-start: rem(8);
 		inset-inline-end: rem(8);
 		transform: none;
 	}
+}
+
+// ── Inspiration prompt block (shown inside preview shell for explore images) ───
+
+.image-preview-prompt {
+	position: relative;
+	inline-size: 100%;
+	background: var(--background-weak);
+	border-radius: 10px;
+	padding-block: 12px;
+	padding-inline: 14px 44px;
+}
+
+.image-preview-prompt__text {
+	font-size: 13px;
+	line-height: 1.5;
+	color: var(--text-norm);
+	margin: 0;
+}
+
+.image-preview-prompt__copy {
+	position: absolute;
+	inset-block-start: 10px;
+	inset-inline-end: 10px;
 }
 
 .image-preview-container {
@@ -277,7 +303,7 @@
 	border-radius: var(--border-radius-xxl) var(--border-radius-xxl) 0 0;
 }
 
-@media (max-width: rem(768)) {
+@media (width <= rem(768)) {
 	.image-preview-container {
 		max-block-size: calc(100dvh - #{rem(24)});
 		border-radius: var(--border-radius-xxl) var(--border-radius-xxl) 0 0;

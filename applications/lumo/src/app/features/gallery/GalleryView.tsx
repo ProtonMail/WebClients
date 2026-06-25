@@ -4,7 +4,6 @@ import type { RefObject } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
@@ -23,6 +22,7 @@ import { injectNativeImageGenerationHelper } from '../../remote/nativeComposerBr
 import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { CreatedGrid } from './CreatedGrid';
+import { ExploreGalleryGrid } from './ExploreGalleryGrid';
 import { GalleryImageLimitUpsell } from './GalleryImageLimitUpsell';
 import { DiscoverList } from './InspirationPanel';
 import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
@@ -33,17 +33,7 @@ import './GalleryView.scss';
 
 type GalleryTab = 'create' | 'gallery';
 
-interface GalleryEmptyProps {
-    onCreateTabClick: () => void;
-}
-
-const GalleryEmpty = ({ onCreateTabClick }: GalleryEmptyProps) => {
-    const link = (
-        <InlineLinkButton key="inspiration-link" type="button" onClick={onCreateTabClick}>
-            {c('collider_2025:Action').t`here`}
-        </InlineLinkButton>
-    );
-
+const GalleryEmpty = () => {
     return (
         <div className="gallery-empty">
             <LazyLottie
@@ -52,14 +42,47 @@ const GalleryEmpty = ({ onCreateTabClick }: GalleryEmptyProps) => {
                 autoplay
                 className="gallery-empty__lottie"
             />
-            <div className="gallery-empty-container flex flex-column items-center justify-center gap-2 mt-6 text-center">
-                <p className="text-xl color-norm text-semibold m-0">
-                    {c('collider_2025:Title').t`Get started by generating an image`}
+            <div className="gallery-empty-container flex flex-column items-center justify-center gap-2 mt-4 text-center">
+                <p className="text-lg color-norm text-semibold m-0">
+                    {c('collider_2025:Title').t`Your image gallery is empty`}
                 </p>
-                <p className="color-weak m-0">
-                    {c('collider_2025:Info')
-                        .jt`Generate images, apply styles, and sketch ideas. For inspiration, click ${link}.`}
-                </p>
+                {/* <p className="color-weak text-sm m-0">
+                    {c('collider_2025:Info').t`Generate images, apply styles, and sketch ideas.`}
+                </p> */}
+            </div>
+        </div>
+    );
+};
+
+interface GalleryComposerPanelProps {
+    isSmallScreen: boolean;
+    handleSendMessage: ReturnType<typeof useConversationActions>['handleSendMessage'];
+    isProcessingAttachment: boolean;
+    composerPrefill: string | undefined;
+    gallerySketchTrigger: boolean;
+}
+
+const GalleryComposerPanel = ({
+    isSmallScreen,
+    handleSendMessage,
+    isProcessingAttachment,
+    composerPrefill,
+    gallerySketchTrigger,
+}: GalleryComposerPanelProps) => {
+    return (
+        <div className={clsx('gallery-bottom w-full', !isSmallScreen && 'absolute')}>
+            <div className="gallery-inner">
+                <GalleryImageLimitUpsell />
+                <div className="gallery-composer-wrapper">
+                    <ComposerComponent
+                        composerMode={ComposerMode.GALLERY}
+                        handleSendMessage={handleSendMessage}
+                        isProcessingAttachment={isProcessingAttachment}
+                        prefillQuery={composerPrefill}
+                        autoOpenSketch={gallerySketchTrigger}
+                        placeholder={c('collider_2025:Placeholder').t`Describe your image...`}
+                    />
+                </div>
             </div>
         </div>
     );
@@ -70,12 +93,12 @@ interface GalleryTabContentProps {
     createdScrollRef: RefObject<HTMLDivElement>;
     galleryImages: ReturnType<typeof useGeneratedGalleryImages>;
     handleSketchEditExport: (imageData: string, mode: DrawingMode, description: string) => Promise<void>;
-    onCreateTabClick: () => void;
     isSmallScreen: boolean;
     handleSendMessage: ReturnType<typeof useConversationActions>['handleSendMessage'];
     isProcessingAttachment: boolean;
     composerPrefill: string | undefined;
     gallerySketchTrigger: boolean;
+    onTryPrompt: (prompt: string) => void;
 }
 
 const GalleryTabContent = ({
@@ -83,45 +106,60 @@ const GalleryTabContent = ({
     createdScrollRef,
     galleryImages,
     handleSketchEditExport,
-    onCreateTabClick,
     isSmallScreen,
     handleSendMessage,
     isProcessingAttachment,
     composerPrefill,
     gallerySketchTrigger,
+    onTryPrompt,
 }: GalleryTabContentProps) => {
+    const itemCount = galleryImages.sections.reduce((n, s) => n + s.items.length, 0);
+    const showExplore = !hasImages || (galleryImages.status === 'loaded' && itemCount <= 10);
+    const scrollPbStyle = !isSmallScreen ? ({ '--gallery-scroll-pb': '8rem' } as React.CSSProperties) : undefined;
+
+    const composerPanel = (
+        <GalleryComposerPanel
+            isSmallScreen={isSmallScreen}
+            handleSendMessage={handleSendMessage}
+            isProcessingAttachment={isProcessingAttachment}
+            composerPrefill={composerPrefill}
+            gallerySketchTrigger={gallerySketchTrigger}
+        />
+    );
+
+    if (!hasImages) {
+        return (
+            <>
+                <div ref={createdScrollRef} className="gallery-created-scroll" style={scrollPbStyle}>
+                    <GalleryEmpty />
+                    <div className="gallery-inner max-w-full">
+                        <ExploreGalleryGrid onTryPrompt={onTryPrompt} />
+                    </div>
+                </div>
+                {composerPanel}
+            </>
+        );
+    }
+
     return (
         <>
-            {hasImages ? (
-                <div ref={createdScrollRef} className="gallery-created-scroll">
-                    <div className="gallery-inner max-w-full">
-                        <CreatedGrid
-                            sections={galleryImages.sections}
-                            status={galleryImages.status}
-                            hasMore={galleryImages.hasMore}
-                            loadMore={galleryImages.loadMore}
-                            onExport={handleSketchEditExport}
-                        />
-                    </div>
-                </div>
-            ) : (
-                <GalleryEmpty onCreateTabClick={onCreateTabClick} />
-            )}
-            <div className={clsx('gallery-bottom w-full', !isSmallScreen && hasImages && 'absolute')}>
-                <div className="gallery-inner">
-                    <GalleryImageLimitUpsell />
-                    <div className="gallery-composer-wrapper">
-                        <ComposerComponent
-                            composerMode={ComposerMode.GALLERY}
-                            handleSendMessage={handleSendMessage}
-                            isProcessingAttachment={isProcessingAttachment}
-                            prefillQuery={composerPrefill}
-                            autoOpenSketch={gallerySketchTrigger}
-                            placeholder={c('collider_2025:Placeholder').t`Describe your image...`}
-                        />
-                    </div>
+            <div
+                ref={createdScrollRef}
+                className="gallery-created-scroll"
+                style={showExplore ? scrollPbStyle : undefined}
+            >
+                <div className="gallery-inner max-w-full">
+                    <CreatedGrid
+                        sections={galleryImages.sections}
+                        status={galleryImages.status}
+                        hasMore={galleryImages.hasMore}
+                        loadMore={galleryImages.loadMore}
+                        onExport={handleSketchEditExport}
+                    />
+                    {showExplore && <ExploreGalleryGrid onTryPrompt={onTryPrompt} />}
                 </div>
             </div>
+            {composerPanel}
         </>
     );
 };
@@ -233,6 +271,11 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
         [navigate, nativeComposerVisibilityApi]
     );
 
+    const handleTryPrompt = useCallback((prompt: string) => {
+        setComposerPrefill(prompt);
+        setActiveTab('create');
+    }, []);
+
     // Suppress hover overlays while the created section is scrolling
     useEffect(() => {
         const el = createdScrollRef.current;
@@ -330,12 +373,12 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
                         createdScrollRef={createdScrollRef}
                         galleryImages={galleryImages}
                         handleSketchEditExport={handleSketchEditExport}
-                        onCreateTabClick={() => setActiveTab('create')}
                         isSmallScreen={isSmallScreen}
                         handleSendMessage={handleSendMessage}
                         isProcessingAttachment={isProcessingAttachment}
                         composerPrefill={composerPrefill}
                         gallerySketchTrigger={gallerySketchTrigger}
+                        onTryPrompt={handleTryPrompt}
                     />
                 )}
             </div>
