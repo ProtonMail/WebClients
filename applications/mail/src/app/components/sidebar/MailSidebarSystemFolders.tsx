@@ -17,6 +17,7 @@ import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCo
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import { getCategorySystemFolder } from '../categoryView/categoriesHelpers';
+import { useMarkCategorySeen } from '../categoryView/categoriesTabs/useMarkCategorySeen';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import SidebarItem from './SidebarItem';
 
@@ -72,6 +73,8 @@ const MailSidebarSystemFolders = ({
     const { categoryViewAccess, activeCategoriesTabs } = useCategoriesView();
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
     const { getLocationCount } = useMailboxCounter();
+
+    const markCategorySeen = useMarkCategorySeen();
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -225,6 +228,9 @@ const MailSidebarSystemFolders = ({
         if (isCategoryLabel(labelID)) {
             sendReportCategoriesNav('sidebar', labelID);
         }
+
+        // Mark the labelID as seen to remove unseen badge
+        markCategorySeen(labelID);
     };
 
     sidebarElements.forEach((item) => {
@@ -283,6 +289,7 @@ const MailSidebarSystemFolders = ({
                             collapsed={collapsed}
                             moveToFolder={moveToFolder}
                             applyLabels={applyLabels}
+                            onClickCallback={() => markCategorySeen(labelID)}
                         />
                     </DnDElementWrapper>
                 );
