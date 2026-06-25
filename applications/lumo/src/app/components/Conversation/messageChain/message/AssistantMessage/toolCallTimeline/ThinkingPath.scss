@@ -1,55 +1,177 @@
 @use '~@proton/styles/scss/lib' as *;
 
+.thinking-path {
+    --thinking-padding-x: #{rem(8)};
+    --thinking-icon-col: #{rem(24)};
+    --thinking-gap: #{rem(12)};
+    --thinking-step-font-size: #{rem(14)};
+    --thinking-icon-size: #{rem(12)};
+    --thinking-line-start: calc(var(--thinking-icon-size) + #{rem(2)});
+
+    margin-block-end: rem(8);
+}
+
+.thinking-path-header {
+    display: grid;
+    grid-template-columns: var(--thinking-icon-col) minmax(0, 1fr) auto;
+    column-gap: var(--thinking-gap);
+    align-items: center;
+    inline-size: 100%;
+    padding-block: rem(4);
+    padding-inline: var(--thinking-padding-x);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: rem(6);
+    transition: background-color 0.15s ease;
+    color: var(--text-weak);
+    font-size: var(--thinking-step-font-size);
+    line-height: 1.43;
+    text-align: start;
+
+    &:hover {
+        background-color: var(--background-weak);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--focus-outline);
+        outline-offset: 2px;
+    }
+}
+
+.thinking-path-header-spacer {
+    inline-size: var(--thinking-icon-col);
+}
+
+.thinking-path-header-label {
+    display: inline-flex;
+    align-items: center;
+    min-inline-size: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.thinking-path-header--active {
+    color: var(--text-norm);
+}
+
+.thinking-path-header-scramble {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+}
+
+.thinking-path-progress-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(3);
+    margin-inline-start: rem(6);
+    flex-shrink: 0;
+}
+
+.thinking-path-progress-dot {
+    inline-size: rem(4);
+    block-size: rem(4);
+    border-radius: 50%;
+    background-color: var(--text-hint);
+    animation: thinking-dot-pulse 1.2s ease-in-out infinite;
+
+    &:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+}
+
+@keyframes thinking-dot-pulse {
+    0%,
+    80%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.85);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.thinking-path-header-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    color: var(--text-weak);
+
+    &--expanded {
+        transform: rotate(180deg);
+    }
+}
+
+.thinking-path-steps {
+    margin-block-start: rem(2);
+    padding-inline: var(--thinking-padding-x);
+}
 
 .thinking-step {
+    display: grid;
+    grid-template-columns: var(--thinking-icon-col) minmax(0, 1fr);
+    column-gap: var(--thinking-gap);
+    align-items: stretch;
+}
+
+.thinking-step-track {
     position: relative;
     display: flex;
-    inline-size: 100%;
-    padding-inline-start: rem(40);
-    padding-block: rem(8);
-    min-block-size: rem(40);
+    justify-content: center;
+    align-items: flex-start;
+    padding-block-start: rem(2);
 
+    // Line below the icon down to the next step
     &::before {
         content: '';
         position: absolute;
-        inset-inline-start: rem(12);
-        inset-block-start: rem(32);
-        inset-block-end: 0;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
         inline-size: 1px;
         background-color: var(--border-norm);
+        inset-block-start: var(--thinking-line-start);
+        inset-block-end: 0;
     }
 
+    // Line above the icon from the previous step
     &::after {
         content: '';
         position: absolute;
-        inset-inline-start: rem(12);
-        inset-block-start: 0;
-        block-size: rem(16);
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
         inline-size: 1px;
         background-color: var(--border-norm);
+        inset-block-start: 0;
+        block-size: rem(2);
     }
 
     &--first::after {
-        opacity: 0;
+        display: none;
     }
 
     &--last::before {
-        opacity: 0;
+        display: none;
     }
 }
 
-.thinking-step-icon-container {
-    position: absolute;
-    inset-inline-start: rem(6.5);
-    inset-block-start: rem(12);
-}
-
 .thinking-step-icon-badge {
+    position: relative;
+    z-index: 1;
     color: var(--text-weak);
 
     &--active {
         color: var(--interaction-norm);
         animation: gentlePulse 1.5s ease-in-out infinite;
+    }
+
+    &--done {
+        color: var(--text-hint);
     }
 
     &--error {
@@ -61,25 +183,76 @@
 .thinking-step-content {
     flex: 1;
     min-inline-size: 0;
-    padding-block-start: rem(4);
+    padding-block: rem(4);
+    font-size: var(--thinking-step-font-size);
+    line-height: 1.43;
+}
+
+.thinking-step-content--reasoning {
+    color: var(--text-weak);
+
+    * {
+        color: var(--text-weak) !important;
+        font-size: inherit !important;
+        line-height: inherit;
+    }
+
+    :global {
+        .prose {
+            font-size: inherit;
+            line-height: inherit;
+            max-inline-size: none;
+            color: var(--text-weak);
+        }
+
+        .prose > :first-child {
+            margin-block-start: 0;
+        }
+
+        p {
+            margin-block-end: rem(8);
+
+            &:last-child {
+                margin-block-end: 0;
+            }
+        }
+
+        ul,
+        ol {
+            margin-block: rem(8) rem(8);
+            padding-inline-start: rem(20);
+        }
+
+        li {
+            margin-block-end: rem(4);
+
+            &:last-child {
+                margin-block-end: 0;
+            }
+        }
+
+        a {
+            color: var(--interaction-norm) !important;
+        }
+    }
 }
 
 .thinking-step-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: rem(8);
     inline-size: 100%;
-    padding-block: rem(4);
-    padding-inline: rem(8);
-    margin-block: rem(-4);
-    margin-inline: rem(-8);
+    padding: 0;
+    margin: 0;
     background: transparent;
     border: none;
     cursor: pointer;
     border-radius: rem(6);
     transition: background-color 0.15s ease;
     color: var(--text-weak);
-    font-size: rem(14);
+    font-size: var(--thinking-step-font-size);
+    line-height: 1.43;
     text-align: start;
     animation: fadeIn 0.2s ease-out;
 
@@ -103,21 +276,18 @@
 }
 
 .thinking-step-label {
-    font-size: rem(14);
-    padding-block-start: rem(2);
+    font-size: inherit;
+    line-height: inherit;
 }
 
 .thinking-step-details {
     margin-block-start: rem(8);
-    padding: rem(3);
-    font-size: rem(13);
+    padding: 0;
+    font-size: var(--thinking-step-font-size);
+    line-height: 1.43;
     color: var(--text-weak);
     animation: fadeIn 0.2s ease-out;
 
-    // Force all descendant text to adopt the container's weak color and size.
-    // The LazyProgressiveMarkdownRenderer renders a `.prose` wrapper that sets
-    // its own color/size, so we need to be explicit here rather than rely on
-    // cascade alone.
     * {
         color: var(--text-weak) !important;
         font-size: inherit;
@@ -131,7 +301,7 @@
         }
 
         p {
-            margin-block-end: rem(10);
+					margin-block-end: rem(8);
 
             &:last-child {
                 margin-block-end: 0;
@@ -139,7 +309,7 @@
         }
 
         pre {
-            margin-block-end: rem(12);
+            margin-block-end: rem(8);
 
             &:last-child {
                 margin-block-end: 0;
@@ -148,8 +318,8 @@
 
         ul,
         ol {
-            margin-block-end: rem(12);
-            padding-inline-start: rem(24);
+            margin-block-end: rem(8);
+            padding-inline-start: rem(20);
         }
 
         li {
@@ -198,47 +368,4 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-// Streaming reasoning trail (shown while model is actively thinking)
-
-.thinking-stream-header {
-    margin-block: rem(-4);
-    margin-inline: rem(-8);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-
-    &:hover {
-        background-color: var(--background-weak);
-    }
-
-    &:focus-visible {
-        outline: 2px solid var(--focus-outline);
-        outline-offset: 2px;
-    }
-}
-
-.thinking-stream-container {
-    position: relative;
-    max-block-size: rem(128);
-    overflow: hidden;
-}
-
-.thinking-stream-fade {
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline: 0;
-    block-size: rem(40);
-    background: linear-gradient(to bottom, var(--background-norm, #fff), transparent);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.thinking-stream-line {
-    font-size: rem(13);
-    line-height: 1.5;
-    white-space: pre-wrap;
-    word-break: break-word;
 }
