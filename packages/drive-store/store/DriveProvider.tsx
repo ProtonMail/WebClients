@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-import { PhotosWithAlbumsProvider } from '../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { PublicSessionProvider } from './_api';
 import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
@@ -27,9 +26,7 @@ export function DriveProvider({ children }: DriveProviderProps) {
                             <DownloadsProvider>
                                 <UploadProvider>
                                     <SearchProvider>
-                                        <PhotosWithAlbumsProvider>
-                                            <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                                        </PhotosWithAlbumsProvider>
+                                        <InvitationsStateProvider>{children}</InvitationsStateProvider>
                                     </SearchProvider>
                                 </UploadProvider>
                             </DownloadsProvider>

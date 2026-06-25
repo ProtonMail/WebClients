@@ -8,7 +8,6 @@ import clsx from '@proton/utils/clsx';
 import { stopPropagation } from '../../../utils/stopPropagation';
 import { useCheckbox, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { SelectionState } from '../../FileBrowser/hooks/useSelectionControls';
-import type { DeviceItem } from '../Devices/Devices';
 import type { DriveItem } from '../Drive/Drive';
 import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
 import type { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
@@ -22,7 +21,7 @@ const GridViewItemBase = ({
 }: {
     IconComponent: React.ReactNode;
     SignatureIconComponent?: React.ReactNode;
-    item: DriveItem | TrashItem | SharedLinkItem | DeviceItem | SharedWithMeItem;
+    item: DriveItem | TrashItem | SharedLinkItem | SharedWithMeItem;
     disableSelection?: boolean;
 }) => {
     const selectionControls = useSelection()!;
