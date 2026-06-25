@@ -227,9 +227,6 @@
       "Connected": [
         "Verbonden"
       ],
-      "Contact support": [
-        "Neem contact op met ondersteuning"
-      ],
       "Contact Support Center": [
         "Bezoek het helpcentrum"
       ],
@@ -502,9 +499,6 @@
       ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
-      ],
-      "Forgot recovery method?": [
-        "Herstelmethode vergeten?"
       ],
       "Generate new recovery phrase": [
         "Genereer nieuwe herstelzin"
@@ -4991,9 +4985,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Account is verwijderd of uitgeschakeld"
-      ],
       "App currently unavailable": [
         "App momenteel niet beschikbaar"
       ],
@@ -6266,9 +6257,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } Business abonnementen bieden uw team alle samenwerkingstools die ze nodig hebben om productief en georganiseerd te werken, terwijl uw bedrijf wordt beschermd."
       ],
@@ -6951,9 +6939,6 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "Data recoverable on this device": [
-        "Gegevens herstelbaar op dit apparaat"
-      ],
       "Data recoverable with recovery phrase": [
         "Gegevens kunnen worden hersteld met een herstelzin."
       ],
@@ -7039,9 +7024,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Raak de toegang tot uw premium functies niet kwijt. Schakel vandaag automatisch vernieuwen in."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Klaar! We hebben een code verzonden naar ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "U weet uw herstelzin niet?"
@@ -7165,12 +7147,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw authenticatie app in"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Voer de code in die naar uw telefoonnummer ${ phone } is gestuurd."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Voer de code in die is verzonden naar ${ email }. Als u het bericht niet kan vinden in uw inbox, kijk dan in de map 'Spam'."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
@@ -7336,9 +7312,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Indien u ergens anders ingelogd bent, kunt u mogelijk ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Als u bent ingelogd bij een ${ BRAND_NAME } web-app in **een andere browser**, kunt u mogelijk uw wachtwoord opnieuw instellen vanuit uw actieve sessie."
@@ -7747,9 +7720,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Zodra zij toegang tot uw account hebben gekregen, kunnen zij uw **herstelinstellingen** bekijken en **uw wachtwoord voor ${ ACCOUNT_APP_NAME }** voor u wijzigen."
       ],
-      "Once you reset your password:": [
-        "Zodra u uw wachtwoord herstelt:"
-      ],
       "Open source": [
         "Open source"
       ],
@@ -7870,9 +7840,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Controleer uw bestand, of probeer onze ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Voer de herstelzin van 12 woorden in die bij uw account hoort."
       ],
       "Please fill in all required fields.": [
         "Vul alle verplichte velden in."
@@ -8485,9 +8452,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Proefversie eindigt op ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "vertrouwd apparaat"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Probeer ${ productName } volledig risicoloos - als u om een andere reden van gedachten verandert, krijgt u een volledige terugbetaling. Zonder vragen."
       ],
@@ -8511,9 +8475,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Helaas is er geen herstelmethode beschikbaar voor dit account."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Helaas is er geen herstelmethode opgeslagen voor dit account."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unieke ID gegenereerd door uw identiteitsprovider, meestal in de vorm van een URL die de naam van de identiteitsprovider erin bevat (bv. https://idp.example.com/XXXXX)."
@@ -8650,9 +8611,6 @@
       "Want to learn more?": [
         "Wilt u meer weten?"
       ],
-      "Warning:": [
-        "Waarschuwing:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Opgelet: het verwijderen van uw account is permanent."
       ],
@@ -8689,14 +8647,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "We raden aan om de organisatieleden op de hoogte te brengen en ze te vragen om 2FA in te stellen voor hun account voordat u het gebruik van 2FA forceert."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Wij slaan herstelinformatie veilig op uw vertrouwde apparaat op om te voorkomen dat u uw gegevens verliest"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Wij hebben een back-upbestand in deze browser opgeslagen omdat u gegevens herstellen voor dit ${ deviceLink } toestond. Als het back-upbestand geldig is, krijgt u onmiddellijk volledige of gedeeltelijke toegang tot uw versleutelde gegevens."
       ],
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
@@ -8730,12 +8682,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "We zullen een reset code sturen naar ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "We sturen een resetcode naar het telefoonnummer dat u hebt opgegeven voor het herstel van uw account."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Wanneer u SAML inschakelt voor ${ appName } in uw identiteitsprovider, kunt u worden gevraagd om de callback (ACS) URL en uitgevende ID te gebruiken. Kopieer en plak onderstaande gegevens in de velden van uw identiteitsprovider."
@@ -9194,9 +9140,6 @@
       "Declined": [
         "Afgewezen"
       ],
-      "Owner": [
-        "Eigenaar"
-      ],
       "Paused": [
         "Onderbroken"
       ],
@@ -9467,9 +9410,6 @@
       ],
       "City": [
         "Stad"
-      ],
-      "Code": [
-        "Code"
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
@@ -9922,9 +9862,6 @@
       "Password": [
         "Wachtwoord"
       ],
-      "Password reminders": [
-        "Wachtwoordherinneringen"
-      ],
       "Password strength": [
         "Wachtwoordsterkte"
       ],
@@ -10338,9 +10275,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Accountherstel uitgelegd"
-      ],
       "activity monitor": [
         "activiteitenmonitor"
       ],
@@ -10493,9 +10427,6 @@
       ],
       "Pay invoice": [
         "Factuur betalen"
-      ],
-      "perform a password reset from your active session": [
-        "mogelijk een wachtwoord reset vanuit uw actieve sessie uitvoeren"
       ],
       "Privacy policy": [
         "Privacybeleid"
@@ -12810,23 +12741,6 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Zorg ervoor dat u uw wachtwoord onthoudt of veilig opslaat, aangezien dit de sleutel is om uw gegevens te ontsleutelen."
-      ],
-      "Turn off password reminders?": [
-        "Wachtwoordherinneringen uitschakelen?"
-      ],
-      "Turn off reminders": [
-        "Schakel herinneringen uit"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Al uw bestaande gegevens** (e-mails, evenementen, contactpersonen, bestanden, ${ PASS_APP_NAME } gegevens, etc.) **zullen worden vergrendeld** en kunnen alleen ontgrendeld worden met uw **oude wachtwoord**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Al uw bestaande gegevens** (e-mails, evenementen, contactpersonen, bestanden, ${ PASS_APP_NAME } gegevens, etc.) **zullen worden vergrendeld** en kunnen alleen ontgrendeld worden met uw **herstelzin** of uw **oude wachtwoord**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Elke **tweestapsverificatie (2FA)** methode op uw account wordt uitgeschakeld."
       ]
     },
     "passwordless": {
@@ -15889,12 +15803,6 @@
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
       ],
-      "Password reminders disabled": [
-        "Wachtwoordherinneringen uitgeschakeld"
-      ],
-      "Password reminders enabled": [
-        "Wachtwoordherinneringen ingeschakeld"
-      ],
       "Password updated": [
         "Wachtwoord bijgewerkt"
       ],
@@ -16764,9 +16672,6 @@
       "Find email or username": [
         "Vind e-mail of gebruikersnaam"
       ],
-      "Forgot recovery method": [
-        "Herstelmethode vergeten"
-      ],
       "Free plan": [
         "Gratis abonnement"
       ],
@@ -16950,9 +16855,6 @@
       ],
       "No events yet": [
         "Nog geen afspraken"
-      ],
-      "No recovery method": [
-        "Geen herstelmethode"
       ],
       "Open": [
         "Open"

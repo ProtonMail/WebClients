@@ -227,9 +227,6 @@
       "Connected": [
         "Bağlı"
       ],
-      "Contact support": [
-        "Destek ekibimizle görüşün"
-      ],
       "Contact Support Center": [
         "Destek merkeziyle görüşün"
       ],
@@ -502,9 +499,6 @@
       ],
       "Forgot password?": [
         "Parolamı unuttum"
-      ],
-      "Forgot recovery method?": [
-        "Kurtarma yöntemi unutulsun mu?"
       ],
       "Generate new recovery phrase": [
         "Yeni kurtarma ifadesi oluştur"
@@ -3754,10 +3748,10 @@
         "Artık bu adresi kullanarak ${ BRAND_NAME } üzerinden e-posta gönderebilirsiniz."
       ],
       "You can still login with this address and re-connect at any time.": [
-        "Bu adresle oturum açmaya devam edebilir ve istediğiniz zaman yeniden bağlanabilirsiniz."
+        "Bu adres ile her zaman oturum açabilir ve yeniden bağlanabilirsiniz."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
-        "Artık ${ BRAND_NAME } üzerinden e-posta almak ve göndermek için ${ address.Email } adresini kullanamayacaksınız. Ayrıca ${ BRAND_NAME } üzerinden bu adrese gönderilen iletilerin artık uçtan uca şifrelenmeyeceğini de lütfen unutmayın."
+        "${ BRAND_NAME } üzerinden e-posta almak ve göndermek için artık ${ address.Email } adresini kullanamayacaksınız. Ayrıca ${ BRAND_NAME } üzerinden bu adrese gönderilen iletilerin de artık uçtan uca şifrelenmeyeceğini de unutmayın."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "${ numAddressesOrSync } Gmail adresini ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
@@ -4528,7 +4522,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak drive bulunamadı"
+        "İçe aktarılacak bir drive bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -4543,7 +4537,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } alanınızda yeterli depolama alanı yok"
+        "${ DRIVE_APP_NAME } depolamanızda yeterli alan yok"
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
@@ -4802,7 +4796,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmedik bir hata oluştu. Dosyaları içe aktaramıyoruz"
+        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -5020,9 +5014,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Hesap silinmiş ya da kullanımdan kaldırılmış"
-      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -6295,9 +6286,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } for Business tarifeleri ekibinize işlerinde verimli ve düzenli olmaları için gereken tüm iş birliği araçlarını sağlarken kuruluşunuzu da korur."
       ],
@@ -6988,9 +6976,6 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "Data recoverable on this device": [
-        "Bu aygıttaki veriler kurtarılabilir"
-      ],
       "Data recoverable with recovery phrase": [
         "Veriler kurtarma ifadesi kurtarılabilir"
       ],
@@ -7076,9 +7061,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Ücretli özelliklerinize erişiminizi kaybetmeyin. Otomatik yenilemeyi açın."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Tamam! ${ destination } alıcısına bir kod gönderdik."
       ],
       "Don’t know your recovery phrase?": [
         "Kurtarma ifadenizi bilmiyor musunuz?"
@@ -7203,12 +7185,6 @@
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
       ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "${ phone } numaranıza gönderdiğimiz kodu yazın."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı Gelen kutunuzda bulamazsanız, İstenmeyen kutusuna bakmayı unutmayın."
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
@@ -7270,7 +7246,7 @@
         "Günlük kayıtları alınamadı."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraflar, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
@@ -7376,9 +7352,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Başka bir yerde oturum açmışsanız, ${ signedInPasswordResetLink } seçeneğini kullanabilirsiniz."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "**Başka bir tarayıcıda** ${ BRAND_NAME } internet uygulamasında oturumunuz açıksa, etkin oturumunuzdan parolanızı sıfırlayabilirsiniz."
@@ -7790,9 +7763,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Hesabınıza erişme izni verildiğinde **Kurtarma** ayarlarınıza erişebilir ve sizin adınıza **${ ACCOUNT_APP_NAME } parolanızı değiştirebilir.**"
       ],
-      "Once you reset your password:": [
-        "Parolanızı sıfırladığınızda:"
-      ],
       "Open source": [
         "Açık kaynaklı"
       ],
@@ -7913,9 +7883,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Lütfen dosyanızı denetleyin ya da hazır ${ csvTemplateButton }nı kullanmayı deneyin."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
       ],
       "Please fill in all required fields.": [
         "Lütfen tüm zorunlu alanları doldurun."
@@ -8261,6 +8228,9 @@
       "Symbols (#$&)": [
         "Simgeler (#$&)"
       ],
+      "Synced from identity provider": [
+        "Kimlik hizmeti sağlayıcısından eşitlendi"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Tech Radar Pro tarafından 5 üzerinden 4,2 puanla önerildi"
       ],
@@ -8528,9 +8498,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Deneme süresi ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ],
-      "trusted device": [
-        "güvenilen aygıt"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
       ],
@@ -8554,9 +8521,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Ne yazık ki, bu hesap için herhangi bir kurtarma yöntemi yok."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Kimlik hizmeti sağlayıcınız tarafından oluşturulan, genellikle kimlik hizmeti sağlayıcının adının bulunduğu bir adres biçimindeki benzersiz kimlik (örnek: https://idp.ornek.com/XXXXX)."
@@ -8693,9 +8657,6 @@
       "Want to learn more?": [
         "Ayrıntılı bilgi almak ister misiniz?"
       ],
-      "Warning:": [
-        "Uyarı:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Uyarı: Hesabınızın sildikten sonra geri alamazsınız."
       ],
@@ -8732,14 +8693,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "İki adımlı doğrulama kullanımını zorunlu kılmadan önce kuruluş üyelerini bilgilendirmenizi ve hesapları için iki adımlı doğrulamayı kurmalarını istemenizi öneririz."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Bunun yerine kurtarma ifadesini kullanmanızı öneririz."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Verilerinizi kaybetmenizi önlemek için kurtarma bilgilerini güvenilen aygıtınızda güvenli bir şekilde saklarız"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Bu ${ deviceLink } aygıtı üzerindeki verilerin kurtarılmasına izin verdiğiniz için bu tarayıcıda bir yedek dosyası kaydedildi. Yedek dosya geçerliyse, şifrelenmiş verilerinizin hemen tümüne veya bir bölümüne erişebileceksiniz."
       ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
@@ -8773,12 +8728,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "${ boldValue } adresine sıfırlama kodu göndereceğiz."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Hesap kurtarma için ayarladığınız e-posta adresine bir sıfırlama kodu göndereceğiz."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Hesap kurtarma için ayarladığınız telefon numarasına bir sıfırlama kodu göndereceğiz."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
@@ -9237,8 +9186,8 @@
       "Declined": [
         "Reddedildi"
       ],
-      "Owner": [
-        "Sahip"
+      "Group Owner": [
+        "Grup sahibi"
       ],
       "Paused": [
         "Duraklatılmış"
@@ -9510,9 +9459,6 @@
       ],
       "City": [
         "İl"
-      ],
-      "Code": [
-        "Kod"
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
@@ -9971,8 +9917,8 @@
       "Password": [
         "Parola"
       ],
-      "Password reminders": [
-        "Parola anımsatıcıları"
+      "Password check-ins": [
+        "Parola kontrolü"
       ],
       "Password strength": [
         "Parola zorluğu"
@@ -10387,9 +10333,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Hesap kurtarma ile ilgili bilgiler"
-      ],
       "activity monitor": [
         "etkinlik izleyici"
       ],
@@ -10542,9 +10485,6 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
-      ],
-      "perform a password reset from your active session": [
-        "etkin oturumunuzdan parola sıfırlama isteğinde bulunun"
       ],
       "Privacy policy": [
         "Gizlilik ilkesi"
@@ -10927,6 +10867,9 @@
       ],
       "Add address": [
         "Adres ekle"
+      ],
+      "Change backup password": [
+        "Yedek parolayı değiştir"
       ],
       "Change password": [
         "Parolayı değiştir"
@@ -12872,22 +12815,11 @@
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Verilerinizin şifresini çözmenin anahtarı olduğu için parolanızı ezberlediğinizden veya güvenli bir şekilde sakladığınızdan emin olun."
       ],
-      "Turn off password reminders?": [
-        "Parola anımsatıcıları kapatılsın mı?"
+      "Turn off check-ins": [
+        "Kontrol özelliğini kapat"
       ],
-      "Turn off reminders": [
-        "Anımsatıcıları kapat"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Var olan tüm verileriniz** (e-postalar, etkinlikler, kişiler, dosyalar, ${ PASS_APP_NAME } kayıtları vb.) **kilitlenecek** ve kilidi yalnızca **eski parolanız** ile açılabilecek ."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Var olan tüm verileriniz** (e-postalar, etkinlikler, kişiler, dosyalar, ${ PASS_APP_NAME } kayıtları vb.) **kilitlenecek** ve kilidi yalnızca **kurtarma ifadeniz** ya da **eski parolanız** ile açılabilecek ."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Hesabınızdaki **iki adımlı doğrulama (2FA)** yöntemlerinin tümü kullanımdan kaldırılacak."
+      "Turn off password check-ins?": [
+        "Parola kontrolü kapatılsın mı?"
       ]
     },
     "passwordless": {
@@ -15953,14 +15885,14 @@
       "Organization name updated": [
         "Kuruluş adı güncellendi"
       ],
+      "Password check-ins disabled": [
+        "Parola kontrolü devre dışı bırakıldı"
+      ],
+      "Password check-ins enabled": [
+        "Parola kontrolü etkinleştirildi"
+      ],
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
-      ],
-      "Password reminders disabled": [
-        "Parola anımsatıcıları kapatıldı"
-      ],
-      "Password reminders enabled": [
-        "Parola anımsatıcıları açıldı"
       ],
       "Password updated": [
         "Parola güncellendi"
@@ -16834,9 +16766,6 @@
       "Find email or username": [
         "E-posta adresi veya kullanıcı adı bulun"
       ],
-      "Forgot recovery method": [
-        "Kurtarma yöntemini unut"
-      ],
       "Free plan": [
         "Free tarifesi"
       ],
@@ -17020,9 +16949,6 @@
       ],
       "No events yet": [
         "Henüz bir etkinlik yok"
-      ],
-      "No recovery method": [
-        "Herhangi bir kurtarma yöntemi yok"
       ],
       "Open": [
         "Açık"
@@ -18109,6 +18035,9 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
       ]
     },
     "Users table: badge": {

@@ -221,9 +221,6 @@
       "Connected": [
         "Připojeno"
       ],
-      "Contact support": [
-        "Kontaktovat podporu"
-      ],
       "Contact Support Center": [
         "Kontaktovat centrum podpory"
       ],
@@ -493,9 +490,6 @@
       ],
       "Forgot password?": [
         "Zapomenuté heslo?"
-      ],
-      "Forgot recovery method?": [
-        "Zapomněli jste metodu obnovení?"
       ],
       "Generate new recovery phrase": [
         "Vygenerovat novou obnovovací frázi"
@@ -4951,9 +4945,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Účet je smazán nebo deaktivován"
-      ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
       ],
@@ -6262,9 +6253,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Tarify ${ BRAND_NAME } Business poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k produktivní a organizované práci, a zároveň chrání vaši firmu."
       ],
@@ -6985,9 +6973,6 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Data recoverable on this device": [
-        "Data obnovitelná v tomto zařízení"
-      ],
       "Data recoverable with recovery phrase": [
         "Data, která lze obnovit pomocí obnovovací fráze"
       ],
@@ -7074,9 +7059,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Neztraťte přístup k vašim prémiovým funkcím. Povolte dnes automatické obnovení."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Hotovo! Odeslali jsme kód na adresu ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Neznáte svoji frázi pro obnovu?"
@@ -7197,12 +7179,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Zadejte kód, který byl zaslán na Vaše telefonní číslo ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Zadejte ověřovací kód, který byl zaslán na ${ email }. Pokud nemůžete ve své schránce zprávu nalézt, prosím podívejte se do spamové složky."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
@@ -7362,9 +7338,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Pokud jste přihlášeni jinde, můžete mít možnost ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Pokud jste přihlášeni do webové aplikace ${ BRAND_NAME } v **jiném prohlížeči**, můžete si heslo resetovat z aktuální relace."
@@ -7777,9 +7750,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Jakmile bude přístup k vašemu účtu povolen, budou mít přístup k vašim nastavením **Obnovení** a budou moci za vás **změnit heslo k aplikaci ${ ACCOUNT_APP_NAME }**."
       ],
-      "Once you reset your password:": [
-        "Po resetu vašeho hesla:"
-      ],
       "Open source": [
         "Otevřený zdrojový kód"
       ],
@@ -7902,9 +7872,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Zkontrolujte prosím svůj soubor nebo zkuste použít náš ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
       "Please fill in all required fields.": [
         "Vyplňte prosím všechna povinná pole."
@@ -8515,9 +8482,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Zkušební období končí ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "důvěryhodné zařízení"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyzkoušejte ${ productName } zcela bez rizika - pokud si to z jakéhokoli důvodu rozmyslíte, dostanete zpět plnou částku. Bez otázek."
       ],
@@ -8541,9 +8505,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Bohužel pro tento účet neexistuje žádný způsob obnovení."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Bohužel neexistuje žádná metoda obnovení uložená pro tento účet."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikátní ID vygenerované vyším poskytovatelem identity. Obvykle má podobu URL adresy, která obsahuje jméno vašeho poskytovatele identity (např. https://idp.example.com/XXXXX)."
@@ -8680,9 +8641,6 @@
       "Want to learn more?": [
         "Chcete se dozvědět více?"
       ],
-      "Warning:": [
-        "Upozornění:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Varování: smazání vašeho účtu je trvalé."
       ],
@@ -8719,14 +8677,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Před vynucením používání 2FA doporučujeme informovat členy organizace a požádat je, aby si v účtech nastavili 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Místo toho doporučujeme použít frázi pro obnovení."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Abyste o svá data nepřišli, bezpečně ukládáme informace pro obnovení do vašeho důvěryhodného zařízení"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Záložní soubor jsme uložili do tohoto prohlížeče, protože jste povolili obnovení dat na tomto ${ deviceLink }. Pokud je záložní soubor platný, okamžitě získáte úplný nebo částečný přístup k šifrovaným datům."
       ],
       "We use 3-D Secure to protect your payments": [
         "K zabezpečení vašich plateb používáme 3-D Secure"
@@ -8757,12 +8709,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Odešleme kód pro resetování na ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Na zadanou e-mailovou adresu Vám zašleme kód pro obnovení účtu."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Na zadané telefonní číslo zašleme kód pro obnovení účtu."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
@@ -9246,9 +9192,6 @@
       "Declined": [
         "Odmítnuto"
       ],
-      "Owner": [
-        "Vlastník"
-      ],
       "Paused": [
         "Pozastaveno"
       ],
@@ -9524,9 +9467,6 @@
       ],
       "City": [
         "Město"
-      ],
-      "Code": [
-        "Kód"
       ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
@@ -10392,9 +10332,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Obnovení účtu vysvětleno"
-      ],
       "activity monitor": [
         "monitor aktivity"
       ],
@@ -10541,9 +10478,6 @@
       ],
       "Pay invoice": [
         "Zaplatit fakturu"
-      ],
-      "perform a password reset from your active session": [
-        "resetujte heslo z vaší aktuální relace"
       ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
@@ -12890,17 +12824,6 @@
       ],
       "Limited-time deal.": [
         "Časově omezená nabídka."
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Všechna vaše stávající data** (e-maily, události, kontakty, soubory, položky ${ PASS_APP_NAME } atd.) **budou uzamčena** a lze je odemknout pouze pomocí vašeho **starého hesla**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Všechna vaše stávající data** (e-maily, události, kontakty, soubory, položky ${ PASS_APP_NAME } atd.) **budou uzamčena** a lze je odemknout pouze pomocí **obnovovací fráze** nebo **starého hesla**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Jakákoli metoda **dvoufázového ověření (2FA)** bude na vašem účtu deaktivována."
       ]
     },
     "passwordless": {
@@ -16918,9 +16841,6 @@
       "Find email or username": [
         "Najít e-mail nebo uživatelské jméno"
       ],
-      "Forgot recovery method": [
-        "Zapomenutá metoda obnovení"
-      ],
       "Free plan": [
         "Tarif Free"
       ],
@@ -17103,9 +17023,6 @@
       ],
       "No events yet": [
         "Zatím žádné události"
-      ],
-      "No recovery method": [
-        "Žádná metoda pro obnovení"
       ],
       "Open": [
         "Otevřít"

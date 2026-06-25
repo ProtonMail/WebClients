@@ -33,6 +33,9 @@
       "Are you sure you want to delete all conversations?": [
         "Tem certeza de que deseja excluir todas as conversas?"
       ],
+      "Are you sure you want to delete this conversation?": [
+        "Tem certeza de que deseja excluir esta conversa?"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -982,6 +985,9 @@
       "Create image": [
         "Criar imagem"
       ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME } personalizados"
+      ],
       "Dark": [
         "Escuro"
       ],
@@ -1002,6 +1008,9 @@
       ],
       "Enable ghost mode": [
         "Ativar modo fantasma"
+      ],
+      "Generate from chats": [
+        "Gerar a partir debate-papos"
       ],
       "Generate workflow": [
         "Gerar fluxo de trabalho"
@@ -1083,6 +1092,10 @@
       ],
       "Update from chats": [
         "Atualizar a partir do bate-papos"
+      ],
+      "Update from chats (${ newPromptsSinceLastUpdate } new)": [
+        "Atualização dos bate-papos (${ newPromptsSinceLastUpdate } novo)",
+        "Atualização dos bate-papos (${ newPromptsSinceLastUpdate } novos)"
       ],
       "Upload file to Drive": [
         "Enviar arquivo para o Drive"
@@ -1189,6 +1202,11 @@
       ],
       "You’re in control": [
         "Você está no controle"
+      ]
+    },
+    "collider_2025: Compaction": {
+      "dropped old messages": [
+        "mensagens antigas descartadas"
       ]
     },
     "collider_2025: Context": {
@@ -1380,6 +1398,9 @@
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Crie uma conta gratuitamente para continuar conversando e desbloquear acesso ao histórico de bate-papo, bate-papos favoritos e mais recursos."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "The provided URL is invalid.": [
         "O URL fornecido é inválido."
@@ -1767,6 +1788,9 @@
       "No usage yet": [
         "Não usado ainda"
       ],
+      "Over capacity": [
+        "Excesso de capacidade"
+      ],
       "Partial content": [
         "Conteúdo parcial"
       ],
@@ -1892,6 +1916,9 @@
       ],
       "You are about to visit an external website:": [
         "Você está prestes a visitar um site externo:"
+      ],
+      "Your memories are already up to date.": [
+        "Suas memórias já estão atualizadas."
       ]
     },
     "collider_2025: Job": {
@@ -2601,12 +2628,18 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "O ${ LUMO_SHORT_APP_NAME } é muito ocupado"
       ],
+      "Conversation too long": [
+        "Conversa muito longa"
+      ],
       "Failed to index file for search: ${ processingResult.message }": [
         "Falha ao indexar o arquivo para pesquisa: ${ processingResult.message }"
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Suspeito: ${ urlParts.subdomainCount } subdomínio",
         "Suspeito: ${ urlParts.subdomainCount } subdomínios"
+      ],
+      "This conversation is getting long": [
+        "Essa conversa está ficando longa"
       ],
       "This is the only time you'll see this key. Copy it now.": [
         "Esta é a única vez que você verá esta chave. Copie-a agora."
@@ -2782,9 +2815,6 @@
       ],
       "Request a shorter, more focused response": [
         "Peça uma resposta mais curta e focada"
-      ],
-      "Retry": [
-        "Tentar novamente"
       ],
       "Retry with the same prompt": [
         "Tentar novamente com o mesmo prompt"
@@ -2981,6 +3011,9 @@
       "Failed to link Drive folder": [
         "Falha ao vincular a pasta do Drive"
       ],
+      "Failed to load image": [
+        "Falha ao carregar a imagem"
+      ],
       "Failed to load images. Please try again.": [
         "Erro ao carregar as imagens.Tente novamente."
       ],
@@ -3145,6 +3178,9 @@
       "Conversation encrypted": [
         "Conversa criptografada"
       ],
+      "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
+        "Crie imagens, aplique estilos e esboce ideias. Inicie sessão ou crie uma conta gratuita para salvar suas criações."
+      ],
       "Current chat:": [
         "Bate-papo atual:"
       ],
@@ -3162,6 +3198,9 @@
       ],
       "From ${ DRIVE_APP_NAME }": [
         "A partir de ${ DRIVE_APP_NAME }"
+      ],
+      "Generate images, apply styles, and sketch ideas. For inspiration, click ${ link }.": [
+        "Crie imagens, aplique estilos e esboce ideias. Para se inspirar, clique em ${ link }."
       ],
       "Initializing Drive...": [
         "Inicializando Drive..."
@@ -3198,6 +3237,9 @@
       ],
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Esse projeto já tem arquivos. Remova todos os arquivos antes de vincular uma pasta do Drive."
+      ],
+      "This usually happens when:": [
+        "Isso geralmente acontece quando:"
       ],
       "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
         "Isso removerá todos os ${ fileCount } arquivos deste projeto. Esta ação não pode ser desfeita."
@@ -3308,6 +3350,9 @@
       ],
       "Search chats": [
         "Pesquisar bate-papos"
+      ],
+      "Search custom ${ LUMO_SHORT_APP_NAME }": [
+        "Pesquisar ${ LUMO_SHORT_APP_NAME } personalizados"
       ],
       "Sign in required": [
         "É necessário iniciar sessão"
@@ -3600,8 +3645,8 @@
       "Built by the team that knows privacy": [
         "Desenvolvido pela equipe que entende de privacidade"
       ],
-      "Create agent": [
-        "Criar agente"
+      "Create a custom ${ LUMO_SHORT_APP_NAME }": [
+        "Criar ${ LUMO_SHORT_APP_NAME } personalizados"
       ],
       "Create folder": [
         "Criar pasta"
@@ -3618,8 +3663,8 @@
       "Earlier": [
         "Anterior"
       ],
-      "Edit agent": [
-        "Editar agente"
+      "Edit custom ${ LUMO_SHORT_APP_NAME }": [
+        "Editar ${ LUMO_SHORT_APP_NAME } personalizados"
       ],
       "Edit Instructions": [
         "Editar instruções"
@@ -8538,6 +8583,9 @@
       ],
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Conta restrita"
