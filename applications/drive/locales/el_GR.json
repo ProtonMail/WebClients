@@ -3726,6 +3726,9 @@
       "No contacts found to import": [
         "Δεν βρέθηκαν επαφές προς εισαγωγή"
       ],
+      "No drive found to import": [
+        "Δε βρέθηκε drive για εισαγωγή"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
@@ -3737,6 +3740,9 @@
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Δεν υπάρχει αρκετός χώρος αποθήκευσης στο ${ DRIVE_APP_NAME } σας"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
@@ -3975,6 +3981,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των αρχείων"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Άγνωστη στρατηγική διένεξης: ${ strategy }"
@@ -5649,6 +5658,9 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Τα αρχεία και οι φάκελοι που έχουν μοιραστεί μαζί σας άλλοι χρήστες θα εμφανίζονται εδώ"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ],
       "finance": [
         "οικονομικά"
@@ -9506,9 +9518,6 @@
       "All items deleted permanently from trash": [
         "Όλα τα στοιχεία εξαλείφθηκαν οριστικά από τα διαγραμμένα"
       ],
-      "An invitation has been sent": [
-        "Έχει σταλεί μία πρόσκληση"
-      ],
       "Cannot load link": [
         "Αποτυχία φόρτωσης συνδέσμου"
       ],
@@ -9544,9 +9553,6 @@
       ],
       "Failed to accept share invitation": [
         "Αποτυχία αποδοχής πρόσκλησης κοινής χρήσης"
-      ],
-      "Failed to convert external invitation": [
-        "Αποτυχία μετατροπής εξωτερικής πρόσκλησης"
       ],
       "Failed to load sharing details": [
         "Αποτυχία φόρτωσης λεπτομερειών κοινής χρήσης"
