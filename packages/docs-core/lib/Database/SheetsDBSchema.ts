@@ -4,7 +4,6 @@ export const SHEETS_DATABASE_NAME = 'proton-sheets'
 export enum SheetsPatchesType {
   Base = 0,
   Delta = 1,
-  Drifted = 2,
 }
 
 export interface SheetsPatches {
