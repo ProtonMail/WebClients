@@ -6,7 +6,7 @@ import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite
 import { getOrganizationForPlan } from '@proton/pass/lib/organization/organization.requests';
 import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
 import { setSyncStrategy } from '@proton/pass/lib/sync/global';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
+import { type SyncResult, SyncStrategy } from '@proton/pass/lib/sync/types';
 import type { GroupInvitesGetResponse } from '@proton/pass/lib/sync/v1/invite-polling.processor';
 import {
     processGroupInvitePollingEvent,
@@ -18,7 +18,7 @@ import {
     processSharesIncomingEvent,
     processSharesPollingEvent,
 } from '@proton/pass/lib/sync/v1/share-polling.processor';
-import { syncV1 } from '@proton/pass/lib/sync/v1/sync';
+import { type SyncResultV1, syncV1 } from '@proton/pass/lib/sync/v1/sync';
 import { getUserEventLatestID } from '@proton/pass/lib/sync/v2/user-events.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { notification, setUserAccess, syncMigration } from '@proton/pass/store/actions';
@@ -29,7 +29,7 @@ import type { SharesState } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShareState } from '@proton/pass/store/selectors';
 import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { InvitesGetResponse, MaybeNull, PassEventListResponse, ShareGetResponse } from '@proton/pass/types';
+import type { InvitesGetResponse, Maybe, MaybeNull, PassEventListResponse, ShareGetResponse } from '@proton/pass/types';
 import type { Share } from '@proton/pass/types/data/shares';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
@@ -131,25 +131,26 @@ export function* migrateV2(options: RootSagaOptions) {
     yield call(updateSyncStrategy, SyncStrategy.USER_EVENTS, userEventId);
 }
 
-/** V2 → V1 rollback. Full V1 sync re-establishes all per-share state
- * and eventIDs (which went stale while V2 was active). Clears the V2
- * cursor and reverts strategy to LEGACY. Like `migrateV2`, runs at
- * boot-time only — if any step throws, the caller should keep the
- * current strategy and retry on next boot. */
-export function* rollbackV2(options: RootSagaOptions) {
-    yield call(syncV1, options);
+/** V2 → V1 rollback. Runs a full V1 sync and returns its result so the boot
+ * sequence can apply it through `bootSuccess`. Reverts the strategy to `LEGACY`
+ * with a null cursor. Boot-time only: if any step throws, the current strategy
+ * is kept and the rollback retries on next boot. */
+export function* rollbackV2(options: RootSagaOptions): Generator<unknown, SyncResultV1> {
+    const result: SyncResultV1 = yield call(syncV1, options);
     yield call(updateSyncStrategy, SyncStrategy.LEGACY, null);
+    return result;
 }
 
-export function* migrate(next: SyncStrategy, options: RootSagaOptions) {
+/** Returns the rollback's `SyncResult` or applies the migrated state
+ * incrementally and returns nothing when migrating to `USER_EVENTS`. */
+export function* migrate(next: SyncStrategy, options: RootSagaOptions): Generator<unknown, Maybe<SyncResult>> {
     try {
         switch (next) {
             case SyncStrategy.LEGACY:
-                yield call(rollbackV2, options);
-                break;
+                return yield call(rollbackV2, options);
             case SyncStrategy.USER_EVENTS:
                 yield call(migrateV2, options);
-                break;
+                return;
         }
     } catch (err) {
         logger.warn(`[SyncStrategy::migration] Migrating to ${next} failed`, err);
