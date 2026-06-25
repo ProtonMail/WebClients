@@ -36,9 +36,7 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
@@ -234,7 +232,7 @@ export const getStoreWrapper = ({
             getPersistent: jest.fn(() => false),
         } as any,
         api: api as any,
-        eventManager: jest.fn() as any,
+        eventManager: { getEventID: jest.fn() } as any,
         history,
         unleashClient: {
             isEnabled: () => false,

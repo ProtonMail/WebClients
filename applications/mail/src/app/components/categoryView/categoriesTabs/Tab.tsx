@@ -11,6 +11,8 @@ import {
     getTitleFromCategoryId,
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
+import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
@@ -18,7 +20,6 @@ import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import { TabBadge } from './TabBadge';
 import { TabState, categoryColorClassName } from './tabsInterface';
 import { useCategoriesBadge } from './useCategoriesBadge';
-import { useMarkCategorySeen } from './useMarkCategorySeen';
 
 interface Props {
     category: CategoryTab;
@@ -33,10 +34,10 @@ const navClasses: Record<TabState, string> = {
 };
 
 export const Tab = ({ category, tabState }: Props) => {
+    const dispatch = useDispatch();
     const { call } = useEventManager();
 
     const { shouldShowCounter, shouldShowNewBadge } = useCategoriesBadge({ tabState, category });
-    const markCategorySeen = useMarkCategorySeen();
 
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
@@ -51,7 +52,8 @@ export const Tab = ({ category, tabState }: Props) => {
             sendReportCategoriesNav('tab', category.id);
         }
         sendReportCategoriesNav('tab', category.id);
-        markCategorySeen(category.id);
+
+        void dispatch(updateLastSeenEventId({ labelID: category.id }));
     };
 
     const navigateTo = setCategoryInUrl(category.id);
