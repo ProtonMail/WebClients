@@ -67,7 +67,7 @@ export const useActionErrorHandler = () => {
 
                 default:
                     // Use fallback handler for unknown errors
-                    onComposerError('Unknown');
+                    onComposerError(LUMO_API_ERRORS.UNKNOWN);
                     handleError(error);
                     break;
             }
