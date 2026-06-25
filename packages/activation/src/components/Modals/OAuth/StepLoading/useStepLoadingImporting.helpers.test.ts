@@ -17,6 +17,8 @@ jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     captureMessage: jest.fn(),
 }));
 
+const BASE64_PASSPHRASE = new TextEncoder().encode('clear-passphrase').toBase64();
+
 // The SDK prepares the crypto material for an orphaned import folder; we fake it.
 const makeDriveClient = (folderOverrides: Record<string, unknown> = {}) =>
     ({
@@ -30,7 +32,7 @@ const makeDriveClient = (folderOverrides: Record<string, unknown> = {}) =>
                 armoredKey: 'node-key',
                 armoredHashKey: 'hash-key',
                 signatureEmail: 'sig@proton.me',
-                passphrase: 'clear-passphrase',
+                base64Passphrase: BASE64_PASSPHRASE,
                 armoredExtendedAttributes: 'xattr',
                 ...folderOverrides,
             }),
@@ -117,7 +119,7 @@ describe('createImporterTask', () => {
                 NodeKey: 'node-key',
                 NodeHashKey: 'hash-key',
                 SignatureAddress: 'sig@proton.me',
-                NodePassphraseClearText: 'clear-passphrase',
+                NodePassphraseClearText: BASE64_PASSPHRASE,
                 XAttr: 'xattr',
             },
         });
