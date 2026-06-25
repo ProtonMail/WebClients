@@ -69,16 +69,27 @@ const HYPHENATED_ALPHA_RE = /\b[A-Z]{3}-[A-Z]{3}\b/g;
 const HYPHENATED_ALPHA_FULL_RE = /^[A-Z]{3}-[A-Z]{3}$/;
 const TITLE_ENDS_HYPHENATED_RE = /^[A-Z0-9]{3}-[A-Z0-9]{3}$/;
 
-const BODY_TAGS_NUM_RE = /(?<=>)[0-9]{6,10}(?=<)/g;
-const BODY_TAGS_GENERAL_RE = /(?<=>)[A-Za-z0-9]{6,10}(?=<)/g;
+// Lookbehind is unsupported in Safari 14; we consume the leading boundary and
+// capture the code in group 1 instead.
+//
+// We can restore the commented lookbehind variants once all browsers support it.
+// const BODY_TAGS_NUM_RE = /(?<=>)[0-9]{6,10}(?=<)/g;
+const BODY_TAGS_NUM_RE = />([0-9]{6,10})(?=<)/g;
+// const BODY_TAGS_GENERAL_RE = /(?<=>)[A-Za-z0-9]{6,10}(?=<)/g;
+const BODY_TAGS_GENERAL_RE = />([A-Za-z0-9]{6,10})(?=<)/g;
 
-const OTP_LONG_RE = /(?<!\S)[0-9]{6,10}(?!\S)/g;
-const OTP_SHORT_RE = /(?<!\S)[0-9]{4}(?!\S)/g;
-const TOKEN_DASH_SPLIT_RE = /(?<!\S)[A-Za-z0-9]+-[A-Za-z0-9]+(?!\S)/g;
-const SPACE_SPLIT_DIGITS_RE = /(?<!\S)[0-9]+(?:\s[0-9]+)+(?!\S)/g;
+// const OTP_LONG_RE = /(?<!\S)[0-9]{6,10}(?!\S)/g;
+const OTP_LONG_RE = /(?:^|\s)([0-9]{6,10})(?!\S)/g;
+// const OTP_SHORT_RE = /(?<!\S)[0-9]{4}(?!\S)/g;
+const OTP_SHORT_RE = /(?:^|\s)([0-9]{4})(?!\S)/g;
+// const TOKEN_DASH_SPLIT_RE = /(?<!\S)[A-Za-z0-9]+-[A-Za-z0-9]+(?!\S)/g;
+const TOKEN_DASH_SPLIT_RE = /(?:^|\s)([A-Za-z0-9]+-[A-Za-z0-9]+)(?!\S)/g;
+// const SPACE_SPLIT_DIGITS_RE = /(?<!\S)[0-9]+(?:\s[0-9]+)+(?!\S)/g;
+const SPACE_SPLIT_DIGITS_RE = /(?:^|\s)([0-9]+(?:\s[0-9]+)+)(?!\S)/g;
 
 const EDGE_LEADING_RE = /^\s*([0-9]{6,10})(?![0-9A-Za-z-])/;
-const EDGE_TRAILING_RE = /(?<![0-9A-Za-z-])([0-9]{6,10})[\s.,;:!?]*$/;
+// const EDGE_TRAILING_RE = /(?<![0-9A-Za-z-])([0-9]{6,10})[\s.,;:!?]*$/;
+const EDGE_TRAILING_RE = /(?:^|[^0-9A-Za-z-])([0-9]{6,10})[\s.,;:!?]*$/;
 
 const COLON_OTP_RE = /[A-Za-zÀ-ÿ]\s*:\s+([A-Za-z0-9]{4,10})(?![A-Za-z0-9])/g;
 

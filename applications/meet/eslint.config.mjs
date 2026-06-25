@@ -9,5 +9,8 @@ export default defineConfig(config, globalIgnores(['src/background-blur-assets/*
         // TODO: Remove this rule once the cycle dependency is fixed
         'import/no-cycle': 'warn',
         'react-hooks/exhaustive-deps': 'warn',
+
+        // TODO: Remove this rule once the compat issue is resolved
+        'compat/compat': 'off',
     },
 });
