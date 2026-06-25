@@ -82,6 +82,9 @@
       "Allow access": [
         "Permitir el acceso"
       ],
+      "Approve participants before they can join": [
+        "Aprobar a los participantes antes de que se unan"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "Asignar a ${ selectedParticipantName } como anfitrión"
       ],
@@ -163,6 +166,9 @@
       "Disable camera": [
         "Desactivar la cámara"
       ],
+      "Disable waiting room": [
+        "Desactivar sala de espera"
+      ],
       "Dismiss": [
         "Descartar"
       ],
@@ -207,6 +213,9 @@
       ],
       "Enable video": [
         "Habilitar vídeo"
+      ],
+      "Enable waiting room": [
+        "Activar sala de espera"
       ],
       "End meeting": [
         "Finalizar reunión"
@@ -295,6 +304,9 @@
       "Open link": [
         "Abrir enlace"
       ],
+      "Participants join the call directly": [
+        "Los participantes se unen directamente a la llamada"
+      ],
       "Previous month": [
         "Mes anterior"
       ],
@@ -373,6 +385,9 @@
       ],
       "Settings": [
         "Ajustes"
+      ],
+      "Show duration": [
+        "Mostrar duración"
       ],
       "Show floating thumbnail during screensharing": [
         "Mostrar miniatura flotante al compartir pantalla"
@@ -458,6 +473,9 @@
       "Upgrade": [
         "Cambiar de plan"
       ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Actualiza tu plan para usar la sala de espera en tu próxima reunión."
+      ],
       "Use authentication code": [
         "Usar un código de autenticación"
       ],
@@ -478,6 +496,9 @@
       ],
       "View invoice": [
         "Ver la factura"
+      ],
+      "Waiting room": [
+        "Sala de espera"
       ]
     },
     "Alt": {
@@ -508,6 +529,9 @@
       "Go to dashboard": [
         "Ir al panel de control"
       ],
+      "Hide self view": [
+        "Ocultar vista propia"
+      ],
       "Leave Meeting": [
         "Salir de la reunión"
       ],
@@ -519,6 +543,9 @@
       ],
       "Meeting details": [
         "Detalles de la reunión"
+      ],
+      "Noise cancellation": [
+        "Cancelación de ruido"
       ],
       "Open chat message search": [
         "Abrir búsqueda de mensajes del chat"
@@ -544,6 +571,12 @@
       "Settings": [
         "Ajustes"
       ],
+      "Show duration": [
+        "Mostrar duración"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Mostrar miniatura flotante al compartir pantalla"
+      ],
       "Show passphrase": [
         "Mostrar contraseña"
       ],
@@ -567,6 +600,9 @@
       ],
       "Toggle settings": [
         "Abre/Cierra configuración"
+      ],
+      "Turn off incoming video": [
+        "Desactivar vídeo entrante"
       ],
       "Video settings": [
         "Ajustes de vídeo"
@@ -3141,9 +3177,6 @@
       ],
       "Settings": [
         "Configuración"
-      ],
-      "Show duration": [
-        "Mostrar duración"
       ],
       "Sign out": [
         "Cerrar sesión"

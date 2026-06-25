@@ -82,6 +82,9 @@
       "Allow access": [
         "Erişime izin ver"
       ],
+      "Approve participants before they can join": [
+        "Katılımcıların gruba katılabilmesi için önce onaylanmaları gerekir"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName } katılımcısını görüşme sahibi olarak ata"
       ],
@@ -163,6 +166,9 @@
       "Disable camera": [
         "Kamerayı kapat"
       ],
+      "Disable waiting room": [
+        "Bekleme odasını devre dışı bırak"
+      ],
       "Dismiss": [
         "Yok say"
       ],
@@ -207,6 +213,9 @@
       ],
       "Enable video": [
         "Görünütüyü aç"
+      ],
+      "Enable waiting room": [
+        "Bekleme odasını etkinleştir"
       ],
       "End meeting": [
         "Görüşmeyi sonlandır"
@@ -295,6 +304,9 @@
       "Open link": [
         "Bağlantıyı aç"
       ],
+      "Participants join the call directly": [
+        "Katılımcılar görüşmeye doğrudan katılırlar"
+      ],
       "Previous month": [
         "Önceki ay"
       ],
@@ -373,6 +385,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Show duration": [
+        "Süreyi göster"
       ],
       "Show floating thumbnail during screensharing": [
         "Ekran paylaşımı yaparken kayan küçük görsel görüntülensin"
@@ -458,6 +473,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Bir sonraki toplantınızda bekleme odasını kullanabilmek için tarifenizi yükseltin."
+      ],
       "Use authentication code": [
         "Kimlik doğrulama kodunu kullanın"
       ],
@@ -478,6 +496,9 @@
       ],
       "View invoice": [
         "Faturayı görüntüle"
+      ],
+      "Waiting room": [
+        "Bekleme odası"
       ]
     },
     "Alt": {
@@ -508,6 +529,9 @@
       "Go to dashboard": [
         "Panoya git"
       ],
+      "Hide self view": [
+        "Kendi görüntünü gizle"
+      ],
       "Leave Meeting": [
         "Görüşmeden ayrıl"
       ],
@@ -519,6 +543,9 @@
       ],
       "Meeting details": [
         "Görüşme ayrıntıları"
+      ],
+      "Noise cancellation": [
+        "Gürültü engelleme"
       ],
       "Open chat message search": [
         "Sohbet iletisi aramayı aç"
@@ -544,6 +571,12 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Show duration": [
+        "Süreyi göster"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Ekran paylaşımı sırasında kayan küçük görseli göster"
+      ],
       "Show passphrase": [
         "Parola ifadesini görüntüle"
       ],
@@ -567,6 +600,9 @@
       ],
       "Toggle settings": [
         "Ayarları aç/kapat"
+      ],
+      "Turn off incoming video": [
+        "Gelen videoyu kapat"
       ],
       "Video settings": [
         "Görüntü ayarları"
@@ -1678,7 +1714,7 @@
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
-        "Tarayıcınızın depolama alanı doldu. Bu noktaya kadar olan kaydı kaydettik."
+        "Tarayıcınızın depolama alanı doldu. Bu ana kadar olan kayıt kaydedildi."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Aygıtınızın saati eşitlenmemiş gibi görünüyor. Lütfen sistem saatinizi denetleyip yeniden deneyin."
@@ -3188,9 +3224,6 @@
       ],
       "Settings": [
         "Ayarlar"
-      ],
-      "Show duration": [
-        "Süreyi göster"
       ],
       "Sign out": [
         "Oturumu kapat"
