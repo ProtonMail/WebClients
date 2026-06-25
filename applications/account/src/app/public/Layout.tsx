@@ -1,9 +1,10 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributeAnchorTarget, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { Logo, ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme } from '@proton/components';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { addDesktopAppVersion } from '@proton/shared/lib/desktop/version';
@@ -54,9 +55,18 @@ const getStaticAppUrl = (appName: APP_NAMES | undefined) => {
         case APPS.PROTONPASS:
             return getStaticURL('/pass');
         case APPS.PROTONMEET:
-            return getStaticURL('/meet');
+            return getAppHref('/', APPS.PROTONMEET);
         default:
             return getStaticURL('');
+    }
+};
+
+const getLinkTarget = (appName: APP_NAMES | undefined): HTMLAttributeAnchorTarget | undefined => {
+    switch (appName) {
+        case APPS.PROTONMEET:
+            return '_self';
+        default:
+            return;
     }
 };
 
@@ -137,6 +147,7 @@ const Layout = ({
                                 isElectronOnMac && 'md:pl-14 lg:pl-8'
                             )}
                             href={getStaticAppUrl(toApp)}
+                            target={getLinkTarget(toApp)}
                         >
                             {protonLogoBrand}
                         </Href>
