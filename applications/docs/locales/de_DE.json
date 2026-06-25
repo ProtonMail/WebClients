@@ -378,11 +378,20 @@
       "Export contact group": [
         "Kontaktgruppe exportieren"
       ],
+      "Export editor state for version": [
+        "Bearbeiter-Status für Version exportieren"
+      ],
       "Export selection as .vcf": [
         "Auswahl im .vcf-Format exportieren"
       ],
+      "Export this version (as docx)": [
+        "Diese Version exportieren (als docx)"
+      ],
       "Export this version (as xlsx)": [
         "Diese Version exportieren (als xlsx)"
+      ],
+      "Export YJS state for version": [
+        "YJS-Status für Version exportieren"
       ],
       "Forgot password?": [
         "Passwort vergessen?"
@@ -1218,6 +1227,12 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -1232,6 +1247,9 @@
       ],
       "Emails": [
         "E-Mails"
+      ],
+      "Errors": [
+        "Fehler"
       ],
       "Estimated size": [
         "Geschätzte Größe"
@@ -1248,6 +1266,9 @@
       "Migrate": [
         "Migrieren"
       ],
+      "Migrated": [
+        "Migriert"
+      ],
       "Migration status": [
         "Migrationsstatus"
       ],
@@ -1257,14 +1278,26 @@
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
       ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
+      "Pending": [
+        "Ausstehend"
+      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
+      "Size": [
+        "Größe"
       ],
       "Status": [
         "Status"
@@ -1277,6 +1310,9 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -3119,6 +3155,9 @@
       ],
       "Failed to remove older revisions": [
         "Fehler beim Entfernen älterer Versionen"
+      ],
+      "Failed to rename document": [
+        "Das Umbenennen des Dokuments ist fehlgeschlagen"
       ],
       "Failed to rename document. Please try again later.": [
         "Fehler beim Umbenennen des Dokuments. Bitte versuche es später erneut."
@@ -8580,6 +8619,9 @@
       ],
       "Search for name or email": [
         "Nach Namen oder E-Mail-Adressen suchen"
+      ],
+      "Search for users or addresses": [
+        "Nach Benutzern oder Adressen suchen"
       ],
       "Search parent folder": [
         "Übergeordneten Ordner durchsuchen"
