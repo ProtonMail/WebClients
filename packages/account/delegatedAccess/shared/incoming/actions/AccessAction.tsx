@@ -7,7 +7,7 @@ import noop from '@proton/utils/noop';
 
 import AccessIncomingEmergencyContactModal from '../../../emergencyContact/incoming/modals/AccessIncomingEmergencyContactModal';
 import { accessDelegatedAccessThunk } from '../../../incomingActions';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { useIncomingController } from '../../IncomingDelegatedAccessProvider';
 import type { EnrichedIncomingDelegatedAccess } from '../interface';
 
@@ -17,7 +17,7 @@ export const AccessAction = ({ app }: { app: APP_NAMES }) => {
     const loadingRef = useRef(false);
 
     const handleError = useErrorHandler();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
 
     const [tmpIncomingDelegatedAccess, setTmpIncomingDelegatedAccess] =
         useState<EnrichedIncomingDelegatedAccess | null>(null);
