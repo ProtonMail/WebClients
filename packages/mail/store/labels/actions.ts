@@ -10,7 +10,7 @@ import {
     create as createConfig,
     deleteLabel as deleteLabelConfig,
     updateLabel as updateLabelConfig,
-    updateLastEventID,
+    updateLastSeenEventID,
 } from '@proton/shared/lib/api/labels';
 import { type Category, type Label, hasUnseenTracking } from '@proton/shared/lib/interfaces';
 
@@ -77,7 +77,7 @@ export const deleteLabel = ({
     };
 };
 
-export const updateLastUnseenEventId = ({
+export const updateLastSeenEventId = ({
     labelID,
     lastEventID,
 }: {
@@ -92,7 +92,7 @@ export const updateLastUnseenEventId = ({
 
         dispatch(categoriesActions.upsertCategory({ ...folder, LastUnseenMessageEventID: null }));
         try {
-            await extra.api(updateLastEventID(labelID, { LastEventID: lastEventID }));
+            await extra.api(updateLastSeenEventID(labelID, { LastEventID: lastEventID }));
         } catch (error) {
             dispatch(categoriesActions.upsertCategory(folder));
             throw error;

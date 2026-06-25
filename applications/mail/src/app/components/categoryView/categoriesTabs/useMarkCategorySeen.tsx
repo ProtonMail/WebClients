@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { useEventManager } from '@proton/components/index';
-import { updateLastUnseenEventId } from '@proton/mail/store/labels/actions';
+import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 export const useMarkCategorySeen = () => {
@@ -14,7 +14,7 @@ export const useMarkCategorySeen = () => {
             if (!lastEventID) {
                 return;
             }
-            void dispatch(updateLastUnseenEventId({ labelID, lastEventID }));
+            void dispatch(updateLastSeenEventId({ labelID, lastEventID }));
         },
         [dispatch, getEventID]
     );
