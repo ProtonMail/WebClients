@@ -5,7 +5,13 @@ import { clean } from '../preprocessing';
 
 const ISOLATED_CODE_RE = /^([A-Za-z0-9]+(?:-[A-Za-z0-9]+)?)$/;
 const ISOLATED_SPLIT_RE = /^([0-9]+)[ -]([0-9]+)$/;
-const JOINED_OTP_RE = /(?<![A-Za-z0-9-])[A-Za-z0-9]{6,10}(?![A-Za-z0-9-])/g;
+
+// Lookbehind is unsupported in Safari 14; we consume the leading boundary and
+// capture the code in group 1 instead.
+//
+// We can restore the commented lookbehind variants once all browsers support it.
+// const JOINED_OTP_RE = /(?<![A-Za-z0-9-])[A-Za-z0-9]{6,10}(?![A-Za-z0-9-])/g;
+const JOINED_OTP_RE = /(?:^|[^A-Za-z0-9-])([A-Za-z0-9]{6,10})(?![A-Za-z0-9-])/g;
 const WHITESPACE_RE = /\s+/g;
 
 const MAX_LEAF_LEN = 20;
