@@ -15,7 +15,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { grantDelegatedAccessThunk, resetDelegatedAccessThunk } from '../../../outgoingActions';
 import { getMetaOutgoingDelegatedAccess } from '../../../shared/outgoing/helper';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { getFormattedAccessibleAtDate } from '../../date';
 import { getDaysFromMilliseconds } from '../../helper';
 import userExclamation from '../user-exclamation.svg';
@@ -34,7 +34,7 @@ export const ViewOutgoingEmergencyContactModal = ({
     ...rest
 }: ViewAccessOutgoingEmergencyContactModalProps) => {
     const handleError = useErrorHandler();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const { createNotification } = useNotifications();
 
     const [loading, withLoading] = useLoading();
