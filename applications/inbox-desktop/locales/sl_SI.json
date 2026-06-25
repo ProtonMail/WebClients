@@ -137,6 +137,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Odstrani ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Ko je omogočeno strojno pospeševanje, aplikacija uporablja namensko grafično strojno opremo vaše naprave. To lahko v nekaterih sistemih povzroči težave z združljivostjo."
+      ],
+      "Without hardware acceleration, the app uses software rendering instead of your graphics card. You may notice slower animations and higher CPU usage.": [
+        "Brez strojnega pospeševanja aplikacija namesto grafične kartice uporablja programsko izrisovanje. Zaradi tega so lahko animacije upočasnjene, poraba CPE pa višja."
+      ],
       "Zoom": [
         "Povečaj"
       ],
