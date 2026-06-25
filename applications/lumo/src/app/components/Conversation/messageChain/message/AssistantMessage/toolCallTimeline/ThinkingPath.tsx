@@ -501,13 +501,13 @@ const ToolCallStep = ({
 
 export const ThinkingPath = ({ steps, message, handleLinkClick }: ThinkingPathProps) => {
     const displaySteps = mergeConsecutiveReasoningSteps(steps);
+    const isThinking = hasActiveThinkingStep(displaySteps);
+    const [isExpanded, setIsExpanded] = useState(false);
+    const animatedHeader = useThinkingHeaderAnimation(isThinking, message.id);
 
     if (displaySteps.length === 0) return null;
 
-    const isThinking = hasActiveThinkingStep(displaySteps);
-    const [isExpanded, setIsExpanded] = useState(false);
     const showDone = !isThinking;
-    const animatedHeader = useThinkingHeaderAnimation(isThinking, message.id);
     const headerLabel = isThinking
         ? animatedHeader
         : getThinkingPathHeader(displaySteps, message.id, false);
