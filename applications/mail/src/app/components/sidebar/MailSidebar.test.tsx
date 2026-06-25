@@ -31,6 +31,10 @@ const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 jest.mock('@proton/account/retentionPolicies/hooks');
 const mockedUseRetentionPolicies = useRetentionPolicies as jest.MockedFunction<any>;
 
+jest.mock('../categoryView/categoriesTabs/useMarkCategorySeen', () => ({
+    useMarkCategorySeen: () => jest.fn(),
+}));
+
 loudRejection();
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
