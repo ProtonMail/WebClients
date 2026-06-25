@@ -17,7 +17,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 
 import { editDelegatedAccessThunk } from '../../../outgoingActions';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { getDefaultWaitTimeOptionValue, getWaitTimeOptions } from './getWaitTimeOptions';
 
 export interface EditOutgoingEmergencyContactModalProps extends Omit<
@@ -29,7 +29,7 @@ export interface EditOutgoingEmergencyContactModalProps extends Omit<
 
 export const EditOutgoingEmergencyContactModal = ({ value, ...rest }: EditOutgoingEmergencyContactModalProps) => {
     const handleError = useErrorHandler();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 

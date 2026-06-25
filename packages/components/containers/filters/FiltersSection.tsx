@@ -6,7 +6,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import { useDispatch } from '@proton/components/containers/filters/useDispatch';
+import { useFilterDispatch } from '@proton/components/containers/filters/useFilterDispatch';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { filtersThunk } from '@proton/mail/store/filters';
@@ -21,7 +21,7 @@ import FilterSortableList from './FilterSortableList';
 import type { Filter } from './interfaces';
 
 function FiltersSection() {
-    const dispatch = useDispatch();
+    const dispatch = useFilterDispatch();
     const [filters, loading] = useFilters();
     const api = useApi();
     const { createNotification } = useNotifications();

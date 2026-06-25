@@ -11,7 +11,7 @@ import RetrySignedKeyListError from '../../../RetrySignedKeyListError';
 import { recoverDelegatedAccessStep1Thunk, recoverDelegatedAccessStep2Thunk } from '../../../outgoingActions';
 import { RecoverOutgoingRecoveryContactModal } from '../../../recoveryContact/outgoing/modals/RecoverOutgoingRecoveryContactModal';
 import { RetryWarningRecoverOutgoingRecoveryContactModal } from '../../../recoveryContact/outgoing/modals/RetryWarningRecoverOutgoingRecoveryContactModal';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { useOutgoingController } from '../../OutgoingDelegatedAccessProvider';
 import type { EnrichedOutgoingDelegatedAccess, RecoverActionPayload } from '../interface';
 
@@ -22,7 +22,7 @@ export const RecoverAction = () => {
     const [errorDetails, setErrorDetails] = useState<string | null>(null);
 
     const handleError = useErrorHandler();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const { createNotification } = useNotifications();
 
     const [tmpOutgoingDelegatedAccess, setTmpOutgoingDelegatedAccess] =
