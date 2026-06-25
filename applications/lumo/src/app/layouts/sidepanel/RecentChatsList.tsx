@@ -41,7 +41,7 @@ const ConversationListItem = memo(
                 <LumoLink
                     to={`/c/${conversation.id}`}
                     className={clsx(
-                        'absolute inset-0 flex items-center gap-2 pl-2 hover:text-primary',
+                        'absolute inset-0 flex items-center gap-2 px-1.5 hover:text-primary',
                         showDropdown ? 'pr-8' : 'pr-2'
                     )}
                     onClick={onItemClick}
@@ -73,7 +73,7 @@ const RecentChatsList = memo(({ conversations, selectedConversationId, disabled,
     const isTouchDevice = useIsTouchDevice();
 
     return (
-        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 shrink-0 pl-1 my-0">
+        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 shrink-0 my-0">
             {conversations.map((conversation) => (
                 <ConversationListItem
                     key={conversation.id}

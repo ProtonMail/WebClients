@@ -1,52 +1,84 @@
- import { isToday, isWithinInterval, startOfDay, subDays, subMonths } from 'date-fns';
+import { differenceInCalendarDays, startOfDay, subDays } from 'date-fns';
+import { c } from 'ttag';
 
+import { FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
+import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation } from '../../types';
 
-export type DateBucketedConversations = {
-    today: Conversation[];
-    lastWeek: Conversation[];
-    expiringSoon: Conversation[]; // 5-7 days old (will be deleted in 0-2 days for free users)
-    lastMonth: Conversation[];
-    earlier: Conversation[];
-};
+export type ConversationSortField = ChatHistoryDateField;
 
-export const categorizeConversations = (conversations: Conversation[], hasLumoPlus: boolean = false): DateBucketedConversations => {
-    const now = startOfDay(new Date());
+export interface ConversationDateGroup {
+    key: string;
+    title: string;
+    conversations: Conversation[];
+}
 
-    const result: DateBucketedConversations = {
-        today: [],
-        lastWeek: [],
-        expiringSoon: [],
-        lastMonth: [],
-        earlier: [],
-    };
+const DEFAULT_OLDER_THAN_DAYS = 30;
 
-    for (const c of conversations) {
-        const createdAt = startOfDay(new Date(c.createdAt));
+export const sortConversationsByField = (
+    conversations: Conversation[],
+    sortBy: ConversationSortField = 'updatedAt'
+): Conversation[] =>
+    [...conversations].sort((a, b) => new Date(b[sortBy]).getTime() - new Date(a[sortBy]).getTime());
 
-        if (isToday(createdAt)) {
-            result.today.push(c);
-        } else if (isWithinInterval(createdAt, { start: subDays(now, 7), end: subDays(now, 1) })) {
-            // Days 1-7 ago
-            if (hasLumoPlus) {
-                result.lastWeek.push(c);
-            } else {
-                // Free users: split into "Last 7 days" (1-4 days) and "Expiring Soon" (5-7 days)
-                if (isWithinInterval(createdAt, { start: subDays(now, 5), end: subDays(now, 1) })) {
-                    result.lastWeek.push(c);
-                } else {
-                    result.expiringSoon.push(c);
-                }
-            }
-        } else if (isWithinInterval(createdAt, { start: subMonths(now, 1), end: subDays(now, 7) })) {
-            // 8-30 days ago
-            result.lastMonth.push(c);
-        } else {
-            result.earlier.push(c);
-        }
+export const formatConversationDateGroupLabel = (dayStart: Date, now: Date = startOfDay(new Date())): string => {
+    const dayDiff = differenceInCalendarDays(now, dayStart);
+
+    if (dayDiff === 0) {
+        return c('collider_2025: Date').t`Today`;
+    }
+    if (dayDiff === 1) {
+        return c('collider_2025: Date').t`Yesterday`;
     }
 
-    return result;
+    return dayStart.toLocaleDateString(undefined, {
+        month: 'short',
+        day: 'numeric',
+        year: dayStart.getFullYear() !== now.getFullYear() ? 'numeric' : undefined,
+    });
+};
+
+/**
+ * Group conversations by calendar day (Claude-style): Today, Yesterday, individual
+ * dates, then Older for chats beyond the recent window.
+ */
+export const groupConversationsByDate = (
+    conversations: Conversation[],
+    {
+        sortBy = 'updatedAt',
+        olderThanDays = DEFAULT_OLDER_THAN_DAYS,
+    }: { sortBy?: ConversationSortField; olderThanDays?: number } = {}
+): ConversationDateGroup[] => {
+    const now = startOfDay(new Date());
+    const sorted = sortConversationsByField(conversations, sortBy);
+    const groups = new Map<string, ConversationDateGroup>();
+
+    for (const conversation of sorted) {
+        const dayStart = startOfDay(new Date(conversation[sortBy]));
+        const dayDiff = differenceInCalendarDays(now, dayStart);
+        const isOlder = dayDiff > olderThanDays;
+        const key = isOlder ? 'older' : `day-${dayStart.toISOString()}`;
+
+        const existing = groups.get(key);
+        if (existing) {
+            existing.conversations.push(conversation);
+            continue;
+        }
+
+        groups.set(key, {
+            key,
+            title: isOlder
+                ? c('collider_2025:Title').t`Older`
+                : formatConversationDateGroupLabel(dayStart, now),
+            conversations: [conversation],
+        });
+    }
+
+    return [...groups.values()].sort((a, b) => {
+        if (a.key === 'older') return 1;
+        if (b.key === 'older') return -1;
+        return b.key.localeCompare(a.key);
+    });
 };
 
 export const searchConversations = (conversations: Conversation[], searchInput: string) => {
@@ -56,30 +88,29 @@ export const searchConversations = (conversations: Conversation[], searchInput: 
 };
 
 /**
- * Filter conversations to only those within the last 7 days.
- * Used to enforce the 7-day retention policy for free users.
+ * Filter conversations to only those within the free-user retention window.
+ * Retention is based on createdAt.
  */
-export const filterConversationsWithin7Days = (conversations: Conversation[]): Conversation[] => {
-    const now = startOfDay(new Date());
-    const sevenDaysAgo = subDays(now, 7);
+export const filterConversationsWithinRetentionWindow = (
+    conversations: Conversation[],
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS
+): Conversation[] => {
+    const cutoff = subDays(startOfDay(new Date()), retentionDays);
 
     return conversations.filter((conversation) => {
         const createdAt = startOfDay(new Date(conversation.createdAt));
-        return createdAt >= sevenDaysAgo;
+        return createdAt >= cutoff;
     });
 };
 
 /**
- * Apply retention policy based on subscription status.
- * Free users can only access conversations from the last 7 days.
- * Lumo Plus users have access to all conversations.
+ * Apply chat retention policy based on subscription status.
+ * Free users can only access conversations from the retention window.
  */
-export const applyRetentionPolicy = (
-    conversations: Conversation[],
-    hasLumoPlus: boolean
-): Conversation[] => {
+export const applyRetentionPolicy = (conversations: Conversation[], hasLumoPlus: boolean): Conversation[] => {
     if (hasLumoPlus) {
         return conversations;
     }
-    return filterConversationsWithin7Days(conversations);
+
+    return filterConversationsWithinRetentionWindow(conversations);
 };

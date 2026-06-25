@@ -58,6 +58,8 @@ export interface Memory {
     source?: MemorySource;
 }
 
+export type ChatHistoryDateField = 'updatedAt' | 'createdAt';
+
 export interface LumoUserSettings {
     theme: 'light' | 'dark' | 'auto';
     personalization: PersonalizationSettings;
@@ -65,6 +67,7 @@ export interface LumoUserSettings {
     indexedDriveFolders?: IndexedDriveFolder[];
     customAgents?: CustomAgent[];
     showProjectConversationsInHistory?: boolean;
+    chatHistoryDateField?: ChatHistoryDateField;
     automaticWebSearch?: boolean;
     animatedBackgroundEnabled?: boolean;
     animatedBackgroundBlobMode?: 'ambient' | 'lavaLamp';
@@ -113,6 +116,7 @@ export const createInitialLumoUserSettings = (): LumoUserSettings => {
         customAgents: [],
     automaticWebSearch: true, // Default to enabled (automatic)
         showGallerySuggestions: true,
+        chatHistoryDateField: 'updatedAt',
         memories: [],
         isMemoryEnabled: false,
         isMemoryAutoSaveEnabled: true,

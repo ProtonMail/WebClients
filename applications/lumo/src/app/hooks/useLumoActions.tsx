@@ -556,7 +556,12 @@ export const useLumoActions = ({
             clearErrors();
         }
 
-        const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensureConversationAndSpace();
+        const ensuredConversation = ensureConversationAndSpace();
+        if (!ensuredConversation) {
+            return;
+        }
+
+        const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensuredConversation;
 
         // Register the generation in the app-level registry, keyed by the final conversation id.
         // This must happen after the conversation exists so abort/stop and the in-progress guard

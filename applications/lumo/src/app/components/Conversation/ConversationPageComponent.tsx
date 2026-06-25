@@ -171,7 +171,7 @@ const ConversationPageComponentInner = () => {
         // (remoteWasSynced will transition from false to true).
         // It is deliberately not re-ran when the conversation object changes (e.g. new title) or
         // when the messageMap changes (e.g. new message posted).
-        [dispatch, curConversationId, remoteWasSynced]
+        [dispatch, curConversationId, remoteWasSynced, conversation, isGenerating, navigate, isGuest]
     );
 
     // ** Main layout **

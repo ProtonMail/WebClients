@@ -1,0 +1,12 @@
+.chat-history-group-by-menu-label {
+	font-weight: 600;
+}
+
+.chat-history-group-by-menu-button {
+	color: var(--text-weak);
+}
+
+.chat-history-group-by-menu-button:hover,
+.chat-history-group-by-menu-button.is-active {
+	color: var(--text-norm);
+}

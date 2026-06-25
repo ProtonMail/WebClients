@@ -43,14 +43,16 @@ export const CollapsibleSidebarSection = ({
 
     return (
         <div className={clsx('collapsible-sidebar-section flex-nowrap', className)}>
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
-                className="collapsible-section-header flex items-center cursor-pointer py-2 px-1.5 rounded-lg"
-                onClick={handleContainerClick}
+                className="collapsible-section-header flex items-center py-2 px-1.5 rounded-lg"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <span className="flex-1 flex items-center gap-1 font-bold text-nowrap overflow-hidden">
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                <div
+                    className="flex-1 flex items-center gap-1 font-bold text-nowrap overflow-hidden cursor-pointer min-w-0"
+                    onClick={handleContainerClick}
+                >
                     <span className="collapsible-section--title overflow-hidden text-ellipsis">{label}</span>
                     {labelExtra}
                     {isHovered && (
@@ -62,7 +64,7 @@ export const CollapsibleSidebarSection = ({
                             )}
                         </>
                     )}
-                </span>
+                </div>
                 {!isSmallScreen && actionButton}
             </div>
             {isExpanded && children}
