@@ -9,12 +9,15 @@ import type { Label } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { TabState } from './tabsInterface';
 import { useCategoriesBadge } from './useCategoriesBadge';
 
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/mail/store/labels/hooks');
 jest.mock('@proton/unleash/useFlag');
+jest.mock('proton-mail/store/hooks');
 
 const category: CategoryTab = {
     id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
@@ -41,6 +44,8 @@ describe('useCategoriesBadge', () => {
             false,
         ]);
         jest.mocked(useSystemFolders).mockReturnValue([[], false]);
+        // selectDisabledCategoriesIDs — no disabled categories by default
+        jest.mocked(useMailSelector).mockReturnValue([]);
     });
 
     afterEach(() => {
@@ -145,6 +150,75 @@ describe('useCategoriesBadge', () => {
             jest.mocked(useSystemFolders).mockReturnValue([[], false]);
 
             const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
+
+            expect(result.current.shouldShowNewBadge).toBe(false);
+        });
+    });
+
+    describe('shouldShowNewBadge on the primary tab (folds in disabled categories)', () => {
+        const primaryCategory: CategoryTab = {
+            id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+            display: true,
+            notify: true,
+            colorShade: CATEGORIES_COLOR_SHADES.IRIS,
+        };
+
+        const defaultFolderWithoutUnseen: Label = {
+            ID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+            Name: 'Primary',
+            Color: '#000000',
+            Type: 4,
+            Order: 0,
+            Path: '',
+            LastUnseenMessageEventID: null,
+        };
+
+        it('is true when a disabled category folded into the primary tab has an unseen event', () => {
+            jest.mocked(useMailSelector).mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]);
+            jest.mocked(useSystemFolders).mockReturnValue([[defaultFolderWithoutUnseen, folderWithUnseen], false]);
+
+            const { result } = renderHook(() =>
+                useCategoriesBadge({ category: primaryCategory, tabState: TabState.INACTIVE })
+            );
+
+            expect(result.current.shouldShowNewBadge).toBe(true);
+        });
+
+        it('is true when the default folder itself has an unseen event', () => {
+            jest.mocked(useMailSelector).mockReturnValue([]);
+            jest.mocked(useSystemFolders).mockReturnValue([
+                [{ ...defaultFolderWithoutUnseen, LastUnseenMessageEventID: 42 }],
+                false,
+            ]);
+
+            const { result } = renderHook(() =>
+                useCategoriesBadge({ category: primaryCategory, tabState: TabState.INACTIVE })
+            );
+
+            expect(result.current.shouldShowNewBadge).toBe(true);
+        });
+
+        it('is false when neither the default nor the disabled categories have an unseen event', () => {
+            jest.mocked(useMailSelector).mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]);
+            jest.mocked(useSystemFolders).mockReturnValue([
+                [defaultFolderWithoutUnseen, { ...folderWithUnseen, LastUnseenMessageEventID: null }],
+                false,
+            ]);
+
+            const { result } = renderHook(() =>
+                useCategoriesBadge({ category: primaryCategory, tabState: TabState.INACTIVE })
+            );
+
+            expect(result.current.shouldShowNewBadge).toBe(false);
+        });
+
+        it('ignores the unseen event of a category that is not folded into the primary tab', () => {
+            jest.mocked(useMailSelector).mockReturnValue([]);
+            jest.mocked(useSystemFolders).mockReturnValue([[defaultFolderWithoutUnseen, folderWithUnseen], false]);
+
+            const { result } = renderHook(() =>
+                useCategoriesBadge({ category: primaryCategory, tabState: TabState.INACTIVE })
+            );
 
             expect(result.current.shouldShowNewBadge).toBe(false);
         });
