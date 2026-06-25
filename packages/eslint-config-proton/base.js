@@ -1,5 +1,6 @@
 //@ts-check
 import protontechEnforceUint8ArrayArraybuffer from '@protontech/eslint-plugin-enforce-uint8array-arraybuffer';
+import compat from 'eslint-plugin-compat';
 import importPlugin from 'eslint-plugin-import';
 import lodash from 'eslint-plugin-lodash';
 import monorepoCop from 'eslint-plugin-monorepo-cop';
@@ -30,6 +31,21 @@ export default defineConfig(
     {
         name: 'monorepo',
         rules: /** @type {Partial<import('@eslint/core').RulesConfig>} */ (monorepoCop.configs.recommended.rules),
+    },
+
+    compat.configs['flat/recommended'],
+    {
+        name: 'compat-polyfills',
+        settings: {
+            polyfills: ['es:all', 'ResizeObserver'],
+        },
+    },
+    {
+        name: 'compat-disable-tests',
+        files: ['**/*.test.ts', '**/*.test.tsx', '**/__mocks__/**'],
+        rules: {
+            'compat/compat': 'off',
+        },
     },
 
     // Unfortunately we are not using prettier recommended
