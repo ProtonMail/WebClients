@@ -7,6 +7,8 @@ import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
+import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -17,7 +19,6 @@ import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCo
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import { getCategorySystemFolder } from '../categoryView/categoriesHelpers';
-import { useMarkCategorySeen } from '../categoryView/categoriesTabs/useMarkCategorySeen';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import SidebarItem from './SidebarItem';
 
@@ -74,7 +75,7 @@ const MailSidebarSystemFolders = ({
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
     const { getLocationCount } = useMailboxCounter();
 
-    const markCategorySeen = useMarkCategorySeen();
+    const dispatch = useDispatch();
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -230,7 +231,7 @@ const MailSidebarSystemFolders = ({
         }
 
         // Mark the labelID as seen to remove unseen badge
-        markCategorySeen(labelID);
+        void dispatch(updateLastSeenEventId({ labelID }));
     };
 
     sidebarElements.forEach((item) => {
@@ -289,7 +290,7 @@ const MailSidebarSystemFolders = ({
                             collapsed={collapsed}
                             moveToFolder={moveToFolder}
                             applyLabels={applyLabels}
-                            onClickCallback={() => markCategorySeen(labelID)}
+                            onClickCallback={() => dispatch(updateLastSeenEventId({ labelID }))}
                         />
                     </DnDElementWrapper>
                 );
