@@ -259,7 +259,7 @@ export const ModelModePanel = ({
                 )}
             >
                 <div className="model-mode-panel-body flex flex-column flex-nowrap w-full gap-4">
-                    <section className="model-mode-section flex flex-column flex-nowrap gap-1">
+                    <section className="model-mode-section flex flex-column flex-nowrap gap-1 pb-3">
                         <span className="model-mode-section-title">{c('collider_2025: Label').t`AI model`}</span>
                         {modelOptions.map((option) => {
                             const isDisabled = option.isDisabled?.() ?? false;
@@ -277,7 +277,7 @@ export const ModelModePanel = ({
                     </section>
 
                     <section
-                        className={clsx('model-mode-section flex flex-column flex-nowrap', isSheet ? 'gap-1' : 'gap-2')}
+                        className={clsx('model-mode-section flex flex-column flex-nowrap pb-3', isSheet ? 'gap-1' : 'gap-2')}
                     >
                         <span className="model-mode-section-title">{c('collider_2025: Label').t`Answer mode`}</span>
                         {isSheet ? (
