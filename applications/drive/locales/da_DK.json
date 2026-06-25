@@ -4134,6 +4134,15 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
+      ],
+      "No drive found to import": [
+        "Intet drev fundet til import"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Mangler plads i din ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet fejl, vi kan ikke importere filerne"
       ]
     },
     "error": {
@@ -7353,6 +7362,9 @@
       ],
       "All your files will be imported": [
         "Alle dine filer vil blive importeret"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen billeder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ]
     },
     "info": {
