@@ -56,7 +56,7 @@ function toolCallToPhase(toolCall: ToolCallData): ThinkingPhase {
 function getPhases(steps: ThinkingStep[]): ThinkingPhase[] {
     const phases: ThinkingPhase[] = [];
 
-    if (steps.some((step) => step.type === 'reasoning' && step.content.trim())) {
+    if (steps.some((step) => step.type === 'reasoning')) {
         phases.push('reasoning');
     }
 
@@ -69,6 +69,10 @@ function getPhases(steps: ThinkingStep[]): ThinkingPhase[] {
 
         seen.add(phase);
         phases.push(phase);
+    }
+
+    if (phases.length === 0 && steps.length > 0) {
+        phases.push('reasoning');
     }
 
     return phases;
@@ -137,19 +141,25 @@ function getPhaseLabel(phase: ThinkingPhase, seed: string, active: boolean): str
     return pickStable(options, `${seed}:${phase}:${active ? 'active' : 'complete'}`)();
 }
 
+function lowercaseLeadingAction(action: string): string {
+    if (!action) return action;
+    return action.charAt(0).toLowerCase() + action.slice(1);
+}
+
 function joinActions(actions: string[]): string {
     if (actions.length === 0) return '';
     if (actions.length === 1) return actions[0];
 
     const firstAction = actions[0];
-    const secondAction = actions[1];
+    const secondAction = lowercaseLeadingAction(actions[1]);
     if (actions.length === 2) {
-        return c('collider_2025:Reasoning').t`${firstAction} and ${secondAction}`;
+        return `${firstAction} and ${secondAction}`;
     }
 
-    const leadingActions = actions.slice(0, -1).join(', ');
-    const lastAction = actions[actions.length - 1];
-    return c('collider_2025:Reasoning').t`${leadingActions} and ${lastAction}`;
+    const middleActions = actions.slice(1, -1).map(lowercaseLeadingAction).join(', ');
+    const lastAction = lowercaseLeadingAction(actions[actions.length - 1]);
+    const leadingActions = middleActions ? `${firstAction}, ${middleActions}` : firstAction;
+    return `${leadingActions} and ${lastAction}`;
 }
 
 function buildCompleteActions(steps: ThinkingStep[], seed: string): string[] {
@@ -183,6 +193,12 @@ export function getThinkingPathHeader(steps: ThinkingStep[], messageId: string, 
     const seed = `${messageId}:thinking-header`;
     const actions = active ? buildActiveActions(steps, seed) : buildCompleteActions(steps, seed);
     const joined = joinActions(actions);
+
+    if (!joined.trim()) {
+        return active
+            ? c('collider_2025:Reasoning').t`Thinking...`
+            : c('collider_2025:Reasoning').t`Thought this through`;
+    }
 
     return active ? `${joined}...` : joined;
 }

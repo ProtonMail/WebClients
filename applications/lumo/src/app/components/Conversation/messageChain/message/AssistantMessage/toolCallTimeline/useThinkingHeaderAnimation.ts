@@ -119,5 +119,5 @@ export function useThinkingHeaderAnimation(isActive: boolean, messageId: string)
         return scrambleToTarget(targetText, setDisplayText, () => undefined);
     }, [isActive, phraseIndex, phrases]);
 
-    return displayText;
+    return displayText || phrases[0] || c('collider_2025:Reasoning').t`Thinking`;
 }

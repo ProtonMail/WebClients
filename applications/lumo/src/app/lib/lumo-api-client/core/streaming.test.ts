@@ -76,7 +76,7 @@ describe('StreamProcessor', () => {
                 count: 1,
                 content: JSON.stringify({
                     name: 'web_search',
-                    parameters: { query: 'weather' },
+                    arguments: { query: 'weather' },
                 }),
             },
         ]);
@@ -182,7 +182,7 @@ describe('StreamProcessor', () => {
         expect(messages).toEqual([{ type: 'harmful' }]);
     });
 
-    it('maps chat.tool_call chunks to legacy tool_call token_data', () => {
+    it('maps chat.tool_call chunks to server_tool_call messages', () => {
         const processor = new StreamProcessor();
 
         const nameOnly = processor.processChunk(
@@ -194,10 +194,9 @@ describe('StreamProcessor', () => {
 
         expect(nameOnly).toEqual([
             {
-                type: 'token_data',
-                target: 'tool_call',
-                count: 0,
-                content: JSON.stringify({ name: 'web_search' }),
+                type: 'server_tool_call',
+                call_id: 'call_0',
+                name: 'web_search',
             },
         ]);
 
@@ -214,18 +213,15 @@ describe('StreamProcessor', () => {
 
         expect(withArgs).toEqual([
             {
-                type: 'token_data',
-                target: 'tool_call',
-                count: 1,
-                content: JSON.stringify({
-                    name: 'web_search',
-                    arguments: { query: 'Newcastle United today news latest', topic: 'news' },
-                }),
+                type: 'server_tool_call',
+                call_id: 'call_0',
+                name: 'web_search',
+                arguments: { query: 'Newcastle United today news latest', topic: 'news' },
             },
         ]);
     });
 
-    it('maps chat.tool_result chunks to legacy tool_result token_data', () => {
+    it('maps chat.tool_result chunks to server_tool_result messages', () => {
         const processor = new StreamProcessor();
 
         const messages = processor.processChunk(
@@ -244,12 +240,13 @@ describe('StreamProcessor', () => {
 
         expect(messages).toEqual([
             {
-                type: 'token_data',
-                target: 'tool_result',
-                count: 0,
-                content: JSON.stringify({
+                type: 'server_tool_result',
+                call_id: 'call_0',
+                content: {
+                    answer: 'Summary',
                     results: [{ title: 'Example', url: 'https://example.com' }],
-                }),
+                    type: 'WebSearch',
+                },
             },
         ]);
     });
@@ -266,10 +263,10 @@ describe('StreamProcessor', () => {
 
         expect(messages).toEqual([
             {
-                type: 'token_data',
-                target: 'tool_call',
-                count: 0,
-                content: JSON.stringify({ name: 'stock', arguments: { symbol: 'AAPL' } }),
+                type: 'server_tool_call',
+                call_id: 'call_0',
+                name: 'stock',
+                arguments: { symbol: 'AAPL' },
             },
         ]);
     });

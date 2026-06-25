@@ -309,7 +309,13 @@ export const RenderBlocks = ({
 
                     return (
                         <div key={idx}>
-                            <ThinkingPath steps={item.steps} message={message} handleLinkClick={handleLinkClick} />
+                            <ThinkingPath
+                                steps={item.steps}
+                                message={message}
+                                isGenerating={isGenerating}
+                                isLastMessage={isLastMessage}
+                                handleLinkClick={handleLinkClick}
+                            />
                             {hasCards && (
                                 <>
                                     {hasFinanceCards && (

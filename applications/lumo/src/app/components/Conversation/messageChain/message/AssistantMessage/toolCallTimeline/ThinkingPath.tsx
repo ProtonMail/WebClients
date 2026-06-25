@@ -104,6 +104,8 @@ export type ThinkingStep =
 interface ThinkingPathProps {
     steps: ThinkingStep[];
     message: Message;
+    isGenerating: boolean;
+    isLastMessage: boolean;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }
 
@@ -499,18 +501,24 @@ const ToolCallStep = ({
     );
 };
 
-export const ThinkingPath = ({ steps, message, handleLinkClick }: ThinkingPathProps) => {
+export const ThinkingPath = ({
+    steps,
+    message,
+    isGenerating,
+    isLastMessage,
+    handleLinkClick,
+}: ThinkingPathProps) => {
     const displaySteps = mergeConsecutiveReasoningSteps(steps);
-    const isThinking = hasActiveThinkingStep(displaySteps);
+    const hasActiveStep = hasActiveThinkingStep(displaySteps);
+    const isThinking = hasActiveStep || (isGenerating && isLastMessage);
     const [isExpanded, setIsExpanded] = useState(false);
     const animatedHeader = useThinkingHeaderAnimation(isThinking, message.id);
 
     if (displaySteps.length === 0) return null;
 
     const showDone = !isThinking;
-    const headerLabel = isThinking
-        ? animatedHeader
-        : getThinkingPathHeader(displaySteps, message.id, false);
+    const completeHeader = getThinkingPathHeader(displaySteps, message.id, false);
+    const headerLabel = isThinking ? animatedHeader || completeHeader : completeHeader;
     return (
         <div className="thinking-path">
             <button

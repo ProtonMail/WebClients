@@ -353,7 +353,13 @@ function normalizeToolCallPayload(parsed: unknown): unknown {
         const argsObj = args as Record<string, unknown>;
         if (name === 'web_search' || name === 'web_extract') {
             if (typeof argsObj.query !== 'string') {
-                args = { ...argsObj, query: '' };
+                const query =
+                    typeof argsObj.search_term === 'string'
+                        ? argsObj.search_term
+                        : typeof argsObj.q === 'string'
+                          ? argsObj.q
+                          : '';
+                args = { ...argsObj, query };
             }
         }
     } else if (name === 'web_search' || name === 'web_extract') {
