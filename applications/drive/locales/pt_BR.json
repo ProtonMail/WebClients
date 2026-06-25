@@ -3952,6 +3952,9 @@
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
       ],
+      "Unexpected error, we can't import the files": [
+        "Erro inesperado, não podemos importar os arquivos"
+      ],
       "Unknown conflict strategy: ${ strategy }": [
         "Estratégia de conflito desconhecida: ${ strategy }"
       ],
@@ -9486,9 +9489,6 @@
       "All items deleted permanently from trash": [
         "Todos os itens excluídos permanentemente da lixeira"
       ],
-      "An invitation has been sent": [
-        "Um convite foi enviado"
-      ],
       "Cannot load link": [
         "Não foi possível carregar o link"
       ],
@@ -9524,9 +9524,6 @@
       ],
       "Failed to accept share invitation": [
         "Falha ao aceitar convite de compartilhamento"
-      ],
-      "Failed to convert external invitation": [
-        "Falha ao converter convite externo"
       ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente"
@@ -12207,6 +12204,9 @@
       ],
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } de envios gratuitos."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Recuperação de conta"
