@@ -102,10 +102,6 @@ function isImageAttachmentTextBlock(block: ContentBlock): boolean {
     return block.type === 'text' && IMAGE_ATTACHMENT_MARKDOWN.test(block.content.trim());
 }
 
-function isActiveThinkingStep(step: ThinkingStep): boolean {
-    return (step.type === 'reasoning' || step.type === 'tool_call') && step.isActive;
-}
-
 /**
  * Build render items with all thinking steps grouped at the top and response
  * content below. Keeps the thinking path pinned while generation continues, even
@@ -297,18 +293,13 @@ export const RenderBlocks = ({
         }
     });
 
-    // Suppress response content while the model is still in an active thinking step.
-    // Any text blocks that follow an active step group are hidden until thinking completes.
-    let pastActiveSteps = false;
+    // Hold back response text only while finance charts are still mounting, to avoid layout flash.
     let pastUnreadyFinanceCard = false;
 
     return (
         <>
             {interleavedItems.map((item, idx) => {
                 if (item.type === 'steps') {
-                    const hasActiveSteps = item.steps.some(isActiveThinkingStep);
-                    if (hasActiveSteps) pastActiveSteps = true;
-
                     const isLastFinanceGroup = idx === lastFinanceGroupIdx;
                     const weatherCards = weatherCardsByIdx.get(idx) ?? [];
                     const hasWeather = weatherCards.length > 0;
@@ -348,8 +339,7 @@ export const RenderBlocks = ({
                     );
                 }
 
-                // Hold back response content until all preceding thinking steps have completed
-                if (pastActiveSteps || pastUnreadyFinanceCard) return null;
+                if (pastUnreadyFinanceCard) return null;
 
                 const isLastTextBlock = item === textBlocks[textBlocks.length - 1];
                 return (

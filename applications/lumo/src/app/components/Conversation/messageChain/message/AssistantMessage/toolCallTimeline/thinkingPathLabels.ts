@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+
 import type { ToolCallData } from '../../../../../../lib/toolCall/types';
-import {BRAND_NAME} from "@proton/shared/lib/constants";
 
 type ThinkingStep =
     | { type: 'reasoning'; content: string; isActive: boolean; durationMs?: number }
@@ -73,77 +74,62 @@ function getPhases(steps: ThinkingStep[]): ThinkingPhase[] {
     return phases;
 }
 
-const PRIVACY_PREFIXES = [
-    () => c('collider_2025:Reasoning').t`Just between us`,
-    () => c('collider_2025:Reasoning').t`Privately`,
-    () => c('collider_2025:Reasoning').t`Keeping this hush-hush`,
-    () => c('collider_2025:Reasoning').t`In your private lane`,
-] as const;
-
 const PHASE_ACTIVE: Record<ThinkingPhase, readonly (() => string)[]> = {
     reasoning: [
-        () => c('collider_2025:Reasoning').t`ruminating`,
-        () => c('collider_2025:Reasoning').t`purring over this`,
-        () => c('collider_2025:Reasoning').t`pawing through this`,
-        () => c('collider_2025:Reasoning').t`whisker-twitching`,
+        () => c('collider_2025:Reasoning').t`Thinking`,
+        () => c('collider_2025:Reasoning').t`Working through this`,
     ],
     web_search: [
-        () => c('collider_2025:Reasoning').t`prowling the web`,
-        () => c('collider_2025:Reasoning').t`sniffing around online`,
-        () => c('collider_2025:Reasoning').t`hunting down answers`,
+        () => c('collider_2025:Reasoning').t`Searching the web`,
+        () => c('collider_2025:Reasoning').t`Looking things up online`,
     ],
     weather: [
-        () => c('collider_2025:Reasoning').t`checking the forecast`,
-        () => c('collider_2025:Reasoning').t`sniffing out the weather`,
+        () => c('collider_2025:Reasoning').t`Checking the weather`,
+        () => c('collider_2025:Reasoning').t`Looking up the forecast`,
     ],
     finance: [
-        () => c('collider_2025:Reasoning').t`stalking the markets`,
-        () => c('collider_2025:Reasoning').t`tracking the tickers`,
+        () => c('collider_2025:Reasoning').t`Looking up market data`,
+        () => c('collider_2025:Reasoning').t`Checking prices`,
     ],
     image: [
-        () => c('collider_2025:Reasoning').t`sketching something`,
-        () => c('collider_2025:Reasoning').t`conjuring an image`,
-        () => c('collider_2025:Reasoning').t`grooming a picture`,
+        () => c('collider_2025:Reasoning').t`Working on an image`,
+        () => c('collider_2025:Reasoning').t`Looking at your image`,
     ],
-    proton_info: [() => c('collider_2025:Reasoning').t`consulting ${BRAND_NAME} knowledge`],
+    proton_info: [() => c('collider_2025:Reasoning').t`Checking ${BRAND_NAME} knowledge`],
     web_extract: [
-        () => c('collider_2025:Reasoning').t`digging into a page`,
-        () => c('collider_2025:Reasoning').t`extracting page content`,
+        () => c('collider_2025:Reasoning').t`Reading a web page`,
+        () => c('collider_2025:Reasoning').t`Extracting page content`,
     ],
-    other: [() => c('collider_2025:Reasoning').t`using a tool`],
+    other: [() => c('collider_2025:Reasoning').t`Using a tool`],
 };
 
 const PHASE_COMPLETE: Record<ThinkingPhase, readonly (() => string)[]> = {
     reasoning: [
-        () => c('collider_2025:Reasoning').t`ruminated`,
-        () => c('collider_2025:Reasoning').t`purred over this`,
-        () => c('collider_2025:Reasoning').t`pawed through this`,
-        () => c('collider_2025:Reasoning').t`had a quiet think`,
+        () => c('collider_2025:Reasoning').t`Thought this through`,
+        () => c('collider_2025:Reasoning').t`Worked through your question`,
     ],
     web_search: [
-        () => c('collider_2025:Reasoning').t`prowled the web`,
-        () => c('collider_2025:Reasoning').t`sniffed around online`,
-        () => c('collider_2025:Reasoning').t`hunted down answers`,
+        () => c('collider_2025:Reasoning').t`Searched the web`,
+        () => c('collider_2025:Reasoning').t`Looked things up online`,
     ],
     weather: [
-        () => c('collider_2025:Reasoning').t`checked the forecast`,
-        () => c('collider_2025:Reasoning').t`sniffed out the weather`,
+        () => c('collider_2025:Reasoning').t`Checked the weather`,
+        () => c('collider_2025:Reasoning').t`Looked up the forecast`,
     ],
     finance: [
-        () => c('collider_2025:Reasoning').t`stalked the markets`,
-        () => c('collider_2025:Reasoning').t`tracked the tickers`,
+        () => c('collider_2025:Reasoning').t`Looked up market data`,
+        () => c('collider_2025:Reasoning').t`Checked prices`,
     ],
     image: [
-        () => c('collider_2025:Reasoning').t`sketched something`,
-        () => c('collider_2025:Reasoning').t`conjured an image`,
-        () => c('collider_2025:Reasoning').t`groomed a picture`,
+        () => c('collider_2025:Reasoning').t`Worked on an image`,
+        () => c('collider_2025:Reasoning').t`Looked at your image`,
     ],
-    proton_info: [() => c('collider_2025:Reasoning').t`consulted ${BRAND_NAME} knowledge`],
+    proton_info: [() => c('collider_2025:Reasoning').t`Checked ${BRAND_NAME} knowledge`],
     web_extract: [
-        () => c('collider_2025:Reasoning').t`dug into a page`,
-        () => c('collider_2025:Reasoning').t`extracted page content`,
+        () => c('collider_2025:Reasoning').t`Read a web page`,
+        () => c('collider_2025:Reasoning').t`Extracted page content`,
     ],
-    other: [() => c('collider_2025:Reasoning').t`used a tool`],
+    other: [() => c('collider_2025:Reasoning').t`Used a tool`],
 };
 
 function getPhaseLabel(phase: ThinkingPhase, seed: string, active: boolean): string {
@@ -190,11 +176,8 @@ function buildActiveActions(steps: ThinkingStep[], seed: string): string[] {
 
 export function getThinkingPathHeader(steps: ThinkingStep[], messageId: string, active: boolean): string {
     const seed = `${messageId}:thinking-header`;
-    const privacy = pickStable(PRIVACY_PREFIXES, seed)();
     const actions = active ? buildActiveActions(steps, seed) : buildCompleteActions(steps, seed);
     const joined = joinActions(actions);
 
-    return active
-        ? c('collider_2025:Reasoning').t`${privacy} — ${joined}...`
-        : c('collider_2025:Reasoning').t`${privacy} — ${joined}`;
+    return active ? c('collider_2025:Reasoning').t`${joined}...` : joined;
 }

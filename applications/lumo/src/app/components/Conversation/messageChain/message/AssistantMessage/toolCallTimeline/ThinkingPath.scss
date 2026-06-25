@@ -1,37 +1,24 @@
 @use '~@proton/styles/scss/lib' as *;
 
 .thinking-path {
-    --thinking-padding-x: #{rem(8)};
     --thinking-icon-col: #{rem(24)};
     --thinking-gap: #{rem(12)};
-    --thinking-step-font-size: #{rem(14)};
     --thinking-icon-size: #{rem(12)};
-    --thinking-line-start: calc(var(--thinking-icon-size) + #{rem(2)});
+    --thinking-line-start: calc(var(--thinking-icon-size) + #{rem(3)});
 
+    position: relative;
     margin-block-end: rem(8);
 }
 
 .thinking-path-header {
-    display: grid;
-    grid-template-columns: var(--thinking-icon-col) minmax(0, 1fr) auto;
-    column-gap: var(--thinking-gap);
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    inline-size: 100%;
-    padding-block: rem(4);
-    padding-inline: var(--thinking-padding-x);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    border-radius: rem(6);
+    justify-content: space-between;
+    gap: var(--thinking-gap);
+    padding-block: rem(4) rem(6);
+    padding-inline: 0;
     transition: background-color 0.15s ease;
-    color: var(--text-weak);
-    font-size: var(--thinking-step-font-size);
-    line-height: 1.43;
-    text-align: start;
-
-    &:hover {
-        background-color: var(--background-weak);
-    }
 
     &:focus-visible {
         outline: 2px solid var(--focus-outline);
@@ -39,40 +26,14 @@
     }
 }
 
-.thinking-path-header-spacer {
-    inline-size: var(--thinking-icon-col);
-}
-
-.thinking-path-header-label {
-    display: inline-flex;
-    align-items: center;
-    min-inline-size: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.thinking-path-header--active {
-    color: var(--text-norm);
-}
-
 .thinking-path-header-scramble {
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.02em;
 }
 
-.thinking-path-progress-dots {
-    display: inline-flex;
-    align-items: center;
-    gap: rem(3);
-    margin-inline-start: rem(6);
-    flex-shrink: 0;
-}
-
 .thinking-path-progress-dot {
     inline-size: rem(4);
     block-size: rem(4);
-    border-radius: 50%;
     background-color: var(--text-hint);
     animation: thinking-dot-pulse 1.2s ease-in-out infinite;
 
@@ -99,9 +60,7 @@
 }
 
 .thinking-path-header-chevron {
-    flex-shrink: 0;
     transition: transform 0.2s ease;
-    color: var(--text-weak);
 
     &--expanded {
         transform: rotate(180deg);
@@ -109,55 +68,35 @@
 }
 
 .thinking-path-steps {
-    margin-block-start: rem(2);
-    padding-inline: var(--thinking-padding-x);
+    position: relative;
+    margin-block-start: 0;
+    padding-block-end: rem(8);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset-inline-start: calc(var(--thinking-icon-col) / 2);
+        transform: translateX(-50%);
+        inset-block-start: var(--thinking-line-start);
+        inset-block-end: var(--thinking-line-start);
+        inline-size: 1px;
+        background-color: var(--border-norm);
+        pointer-events: none;
+    }
 }
 
 .thinking-step {
     display: grid;
     grid-template-columns: var(--thinking-icon-col) minmax(0, 1fr);
     column-gap: var(--thinking-gap);
-    align-items: stretch;
+    align-items: start;
 }
 
 .thinking-step-track {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-block-start: rem(2);
-
-    // Line below the icon down to the next step
-    &::before {
-        content: '';
-        position: absolute;
-        inset-inline-start: 50%;
-        transform: translateX(-50%);
-        inline-size: 1px;
-        background-color: var(--border-norm);
-        inset-block-start: var(--thinking-line-start);
-        inset-block-end: 0;
-    }
-
-    // Line above the icon from the previous step
-    &::after {
-        content: '';
-        position: absolute;
-        inset-inline-start: 50%;
-        transform: translateX(-50%);
-        inline-size: 1px;
-        background-color: var(--border-norm);
-        inset-block-start: 0;
-        block-size: rem(2);
-    }
-
-    &--first::after {
-        display: none;
-    }
-
-    &--last::before {
-        display: none;
-    }
+    z-index: 1;
+    padding-block-start: rem(3);
+    min-block-size: var(--thinking-icon-size);
 }
 
 .thinking-step-icon-badge {
@@ -181,11 +120,11 @@
 }
 
 .thinking-step-content {
-    flex: 1;
-    min-inline-size: 0;
-    padding-block: rem(4);
-    font-size: var(--thinking-step-font-size);
-    line-height: 1.43;
+    padding-block: rem(0.7);
+}
+
+.thinking-step-complete-check {
+    color: var(--text-hint);
 }
 
 .thinking-step-content--reasoning {
@@ -197,23 +136,25 @@
         line-height: inherit;
     }
 
-    :global {
-        .prose {
-            font-size: inherit;
-            line-height: inherit;
-            max-inline-size: none;
-            color: var(--text-weak);
-        }
+    .progressive-markdown-content,
+    .markdown-rendering {
+        font-size: inherit;
+        line-height: inherit;
+        max-inline-size: none;
+        color: var(--text-weak);
+        gap: 0;
 
-        .prose > :first-child {
-            margin-block-start: 0;
+        > div {
+            margin: 0;
         }
 
         p {
-            margin-block-end: rem(8);
+            margin-block: 0;
+            margin-inline: 0;
+            line-height: inherit;
 
-            &:last-child {
-                margin-block-end: 0;
+            &:not(:last-child) {
+                margin-block-end: rem(8);
             }
         }
 
@@ -221,6 +162,10 @@
         ol {
             margin-block: rem(8) rem(8);
             padding-inline-start: rem(20);
+
+            &:first-child {
+                margin-block-start: 0;
+            }
         }
 
         li {
@@ -238,27 +183,7 @@
 }
 
 .thinking-step-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: rem(8);
-    inline-size: 100%;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    border-radius: rem(6);
-    transition: background-color 0.15s ease;
-    color: var(--text-weak);
-    font-size: var(--thinking-step-font-size);
-    line-height: 1.43;
-    text-align: start;
     animation: fadeIn 0.2s ease-out;
-
-    &:hover {
-        background-color: var(--background-weak);
-    }
 
     &:focus-visible {
         outline: 2px solid var(--focus-outline);
@@ -268,23 +193,14 @@
 
 .thinking-step-chevron {
     transition: transform 0.2s ease;
-    color: var(--text-weak);
 
     &--expanded {
         transform: rotate(180deg);
     }
 }
 
-.thinking-step-label {
-    font-size: inherit;
-    line-height: inherit;
-}
-
 .thinking-step-details {
-    margin-block-start: rem(8);
     padding: 0;
-    font-size: var(--thinking-step-font-size);
-    line-height: 1.43;
     color: var(--text-weak);
     animation: fadeIn 0.2s ease-out;
 
@@ -293,50 +209,56 @@
         font-size: inherit;
     }
 
-    :global {
-        .prose {
-            font-size: inherit;
-            max-inline-size: none;
-            color: var(--text-weak);
+    .progressive-markdown-content,
+    .markdown-rendering {
+        font-size: inherit;
+        max-inline-size: none;
+        color: var(--text-weak);
+        gap: 0;
+
+        > div {
+            margin: 0;
         }
 
         p {
-					margin-block-end: rem(8);
+            margin-block: 0;
+            margin-inline: 0;
+            line-height: inherit;
 
-            &:last-child {
-                margin-block-end: 0;
+            &:not(:last-child) {
+                margin-block-end: rem(8);
             }
         }
+    }
 
-        pre {
-            margin-block-end: rem(8);
+    pre {
+        margin-block-end: rem(8);
 
-            &:last-child {
-                margin-block-end: 0;
-            }
+        &:last-child {
+            margin-block-end: 0;
         }
+    }
 
-        ul,
-        ol {
-            margin-block-end: rem(8);
-            padding-inline-start: rem(20);
-        }
+    ul,
+    ol {
+        margin-block-end: rem(8);
+        padding-inline-start: rem(20);
+    }
 
-        li {
-            margin-block-end: rem(4);
-        }
+    li {
+        margin-block-end: rem(4);
+    }
 
-        code {
-            font-size: 0.85em;
-        }
+    code {
+        font-size: 0.85em;
+    }
 
-        strong {
-            font-weight: 600;
-        }
+    strong {
+        font-weight: 600;
+    }
 
-        a {
-            color: var(--interaction-norm) !important;
-        }
+    a {
+        color: var(--interaction-norm) !important;
     }
 }
 
@@ -350,13 +272,6 @@
         opacity: 0.6;
         transform: scale(1.1);
     }
-}
-
-.line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 @keyframes fadeIn {

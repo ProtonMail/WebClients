@@ -28,14 +28,11 @@ function shuffleStable<T>(items: readonly T[], seed: string): T[] {
 function getGeneratingPhrases(): string[] {
     return [
         c('collider_2025:Reasoning').t`Thinking`,
-        c('collider_2025:Reasoning').t`Encrypting privately`,
-        c('collider_2025:Reasoning').t`Just between us`,
-        c('collider_2025:Reasoning').t`Keeping this hush-hush`,
-        c('collider_2025:Reasoning').t`Purring over this`,
-        c('collider_2025:Reasoning').t`Privately ruminating`,
-        c('collider_2025:Reasoning').t`Sealed end-to-end`,
-        c('collider_2025:Reasoning').t`In your private lane`,
-        c('collider_2025:Reasoning').t`Whisker-twitching`,
+        c('collider_2025:Reasoning').t`Working on this`,
+        c('collider_2025:Reasoning').t`One moment`,
+        c('collider_2025:Reasoning').t`Looking into this`,
+        c('collider_2025:Reasoning').t`Searching`,
+        c('collider_2025:Reasoning').t`Checking sources`,
     ];
 }
 

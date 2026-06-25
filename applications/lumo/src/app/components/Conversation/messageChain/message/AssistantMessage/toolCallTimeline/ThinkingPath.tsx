@@ -111,10 +111,6 @@ function hasActiveThinkingStep(steps: ThinkingStep[]): boolean {
     return steps.some((step) => (step.type === 'reasoning' || step.type === 'tool_call') && step.isActive);
 }
 
-function getVisibleStepCount(steps: ThinkingStep[]): number {
-    return steps.filter((step) => step.type !== 'reasoning' || step.content.trim()).length;
-}
-
 function mergeConsecutiveReasoningSteps(steps: ThinkingStep[]): ThinkingStep[] {
     const merged: ThinkingStep[] = [];
 
@@ -141,38 +137,18 @@ function mergeConsecutiveReasoningSteps(steps: ThinkingStep[]): ThinkingStep[] {
     return merged;
 }
 
-const ThinkingStepTrack = ({
-    isFirst,
-    isLast,
-    children,
-}: {
-    isFirst: boolean;
-    isLast: boolean;
-    children: ReactNode;
-}) => (
-    <div
-        className={clsx(
-            'thinking-step-track',
-            isFirst && 'thinking-step-track--first',
-            isLast && 'thinking-step-track--last'
-        )}
-    >
-        {children}
-    </div>
+const ThinkingStepTrack = ({ children }: { children: ReactNode }) => (
+    <div className="thinking-step-track flex flex-nowrap justify-center items-start">{children}</div>
 );
 
 const ReasoningContent = ({
     content,
     isActive,
-    isFirst,
-    isLast,
     message,
     handleLinkClick,
 }: {
     content: string;
     isActive: boolean;
-    isFirst: boolean;
-    isLast: boolean;
     message: Message;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) => {
@@ -182,14 +158,14 @@ const ReasoningContent = ({
 
     return (
         <div className="thinking-step">
-            <ThinkingStepTrack isFirst={isFirst} isLast={isLast}>
+            <ThinkingStepTrack>
                 <IcLightbulb
                     size={3}
-                    className={clsx('thinking-step-icon-badge', isActive && 'thinking-step-icon-badge--active')}
+                    className={clsx('thinking-step-icon-badge shrink-0', isActive && 'thinking-step-icon-badge--active')}
                 />
             </ThinkingStepTrack>
 
-            <div className="thinking-step-content thinking-step-content--reasoning">
+            <div className="thinking-step-content thinking-step-content--reasoning min-w-0 text-rg lh130">
                 <LazyProgressiveMarkdownRenderer
                     content={content}
                     isStreaming={isActive}
@@ -201,14 +177,14 @@ const ReasoningContent = ({
     );
 };
 
-const DoneStep = ({ isFirst, isLast }: { isFirst: boolean; isLast: boolean }) => (
+const DoneStep = () => (
     <div className="thinking-step">
-        <ThinkingStepTrack isFirst={isFirst} isLast={isLast}>
-            <IcCheckmark size={3} className="thinking-step-icon-badge thinking-step-icon-badge--done" />
+        <ThinkingStepTrack>
+            <IcCheckmark size={3} className="thinking-step-icon-badge thinking-step-icon-badge--done shrink-0" />
         </ThinkingStepTrack>
 
-        <div className="thinking-step-content">
-            <span className="thinking-step-label color-hint">{c('collider_2025:Reasoning').t`Done`}</span>
+        <div className="thinking-step-content min-w-0 text-rg lh130">
+            <span className="color-hint">{c('collider_2025:Reasoning').t`Done`}</span>
         </div>
     </div>
 );
@@ -283,20 +259,19 @@ const parseImageToolResult = (result: string): ImageToolResult | null => {
     return null;
 };
 
+const toolStepToggleClassName =
+    'thinking-step-toggle flex flex-nowrap items-center justify-space-between gap-2 w-full p-0 m-0 rounded border-none text-left bg-transparent hover:bg-weak color-weak text-rg lh130';
+
 const ToolCallStep = ({
     toolCall,
     result,
     isActive,
-    isFirst,
-    isLast,
     message,
     handleLinkClick,
 }: {
     toolCall: ToolCallData;
     result?: string;
     isActive: boolean;
-    isFirst: boolean;
-    isLast: boolean;
     message: Message;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) => {
@@ -325,31 +300,29 @@ const ToolCallStep = ({
 
     return (
         <div className="thinking-step">
-            <ThinkingStepTrack isFirst={isFirst} isLast={isLast}>
+            <ThinkingStepTrack>
                 <Icon
                     name={iconName as IconName}
                     size={3}
                     className={clsx(
-                        'thinking-step-icon-badge',
+                        'thinking-step-icon-badge shrink-0',
                         isActive && 'thinking-step-icon-badge--active',
                         hasError && 'thinking-step-icon-badge--error'
                     )}
                 />
             </ThinkingStepTrack>
 
-            <div className="thinking-step-content">
+            <div className="thinking-step-content min-w-0 text-rg lh130">
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {hasInlineCard && !isActive ? (
-                    <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
-                        <span className="thinking-step-label color-weak">{label}</span>
-                        <IcCheckmarkCircleFilled size={3} className="color-success shrink-0" />
+                    <div className={clsx(toolStepToggleClassName, 'cursor-default')}>
+                        <span className="color-weak">{label}</span>
+                        <IcCheckmark size={3} className="thinking-step-complete-check shrink-0" />
                     </div>
                 ) : // eslint-disable-next-line no-nested-ternary
                 hasInlineImageStatus ? (
-                    <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
-                        <span className={clsx('thinking-step-label', hasError ? 'color-danger' : 'color-weak')}>
-                            {label}
-                        </span>
+                    <div className={clsx(toolStepToggleClassName, 'cursor-default')}>
+                        <span className={hasError ? 'color-danger' : 'color-weak'}>{label}</span>
                         <div className="flex items-center gap-2 shrink-0">
                             {imageToolResult!.elapsed_ms !== undefined && (
                                 <span className="text-sm color-weak">
@@ -359,24 +332,23 @@ const ToolCallStep = ({
                             {hasError ? (
                                 <IcExclamationCircleFilled size={3} className="color-danger" />
                             ) : (
-                                <IcCheckmarkCircleFilled size={3} className="color-success" />
+                                <IcCheckmark size={3} className="thinking-step-complete-check" />
                             )}
                         </div>
                     </div>
                 ) : hasDetails ? (
                     <>
                         <button
-                            className="thinking-step-toggle"
+                            className={clsx(toolStepToggleClassName, 'cursor-pointer')}
                             onClick={() => setIsExpanded(!isExpanded)}
                             type="button"
                             aria-expanded={isExpanded}
                         >
                             <span
-                                className={clsx(
-                                    'thinking-step-label',
+                                className={
                                     // eslint-disable-next-line no-nested-ternary
                                     isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak'
-                                )}
+                                }
                             >
                                 {label}
                             </span>
@@ -417,7 +389,7 @@ const ToolCallStep = ({
                         </button>
 
                         {isExpanded && (
-                            <div className="thinking-step-details">
+                            <div className="thinking-step-details mt-2 text-rg lh130">
                                 {/* eslint-disable-next-line no-nested-ternary */}
                                 {webExtractResult ? (
                                     <div className="flex flex-column gap-2">
@@ -478,7 +450,7 @@ const ToolCallStep = ({
                                                 >
                                                     {searchResult.title}
                                                 </a>
-                                                <p className="text-sm color-weak m-0 line-clamp-2">
+                                                <p className="text-sm color-weak m-0 text-ellipsis-two-lines">
                                                     {searchResult.description}
                                                 </p>
                                                 <p className="text-xs color-weak m-0 mt-1">
@@ -520,7 +492,7 @@ const ToolCallStep = ({
                         )}
                     </>
                 ) : (
-                    <p className={clsx('thinking-step-label m-0', isActive ? 'color-norm' : 'color-weak')}>{label}</p>
+                    <p className={clsx('m-0', isActive ? 'color-norm' : 'color-weak')}>{label}</p>
                 )}
             </div>
         </div>
@@ -539,64 +511,49 @@ export const ThinkingPath = ({ steps, message, handleLinkClick }: ThinkingPathPr
     const headerLabel = isThinking
         ? animatedHeader
         : getThinkingPathHeader(displaySteps, message.id, false);
-    const visibleStepCount = getVisibleStepCount(displaySteps);
-    const totalTimelineItems = visibleStepCount + (showDone ? 1 : 0);
-    let timelineIndex = 0;
-
-    const getTimelinePosition = () => {
-        const isFirst = timelineIndex === 0;
-        const isLast = timelineIndex === totalTimelineItems - 1;
-        timelineIndex += 1;
-        return { isFirst, isLast };
-    };
-
     return (
         <div className="thinking-path">
             <button
-                className={clsx('thinking-path-header', isThinking && 'thinking-path-header--active')}
+                className={clsx(
+                    'thinking-path-header w-full rounded border-none cursor-pointer text-left bg-transparent hover:bg-weak color-weak text-rg lh130',
+                    isThinking && 'color-norm'
+                )}
                 onClick={() => setIsExpanded(!isExpanded)}
                 type="button"
                 aria-expanded={isExpanded}
                 aria-busy={isThinking}
             >
-                <span className="thinking-path-header-spacer" aria-hidden="true" />
-                <span className="thinking-path-header-label">
+                <span className="inline-flex flex-nowrap items-center min-w-0 text-ellipsis flex-1">
                     <span className={clsx(isThinking && 'thinking-path-header-scramble')}>{headerLabel}</span>
                     {isThinking && <ThinkingProgressDots />}
                 </span>
                 <IcChevronDown
                     size={3}
                     className={clsx(
-                        'thinking-path-header-chevron',
+                        'thinking-path-header-chevron shrink-0 color-weak',
                         isExpanded && 'thinking-path-header-chevron--expanded'
                     )}
                 />
             </button>
 
             {isExpanded && (
-                <div className="thinking-path-steps">
+                <div className="thinking-path-steps flex flex-nowrap flex-column gap-4 mt-2">
                     {displaySteps.map((step, idx) => {
                         if (step.type === 'reasoning') {
                             if (!step.content.trim()) {
                                 return null;
                             }
 
-                            const { isFirst, isLast } = getTimelinePosition();
-
                             return (
                                 <ReasoningContent
                                     key={`reasoning-${idx}-${step.isActive}`}
                                     content={step.content}
                                     isActive={step.isActive}
-                                    isFirst={isFirst}
-                                    isLast={isLast}
                                     message={message}
                                     handleLinkClick={handleLinkClick}
                                 />
                             );
                         }
-
-                        const { isFirst, isLast } = getTimelinePosition();
 
                         return (
                             <ToolCallStep
@@ -604,15 +561,13 @@ export const ThinkingPath = ({ steps, message, handleLinkClick }: ThinkingPathPr
                                 toolCall={step.toolCall}
                                 result={step.result}
                                 isActive={step.isActive}
-                                isFirst={isFirst}
-                                isLast={isLast}
                                 message={message}
                                 handleLinkClick={handleLinkClick}
                             />
                         );
                     })}
 
-                    {showDone && <DoneStep isFirst={visibleStepCount === 0} isLast />}
+                    {showDone && <DoneStep />}
                 </div>
             )}
         </div>
