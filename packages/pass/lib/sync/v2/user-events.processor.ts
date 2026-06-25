@@ -2,6 +2,7 @@ import { all, call } from 'redux-saga/effects';
 
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import {
     processGroupInvitesChanged,
     processInvitesChanged,
@@ -38,7 +39,7 @@ const shouldSkipEvent = (events: SyncEventListOutput): boolean => {
  * Returns `true` if all processors succeeded, `false` otherwise.
  * When returning `false`, the caller should NOT update the eventID
  * so that the same events are retried on the next poll. */
-export function* processUserEvents(event: SyncEventListOutput, options: RootSagaOptions) {
+export function* processUserEvents(event: SyncEventListOutput, options: RootSagaOptions): EventProcessor {
     if (shouldSkipEvent(event)) return false;
 
     /** Trigger full sync and update `LastEventID` */

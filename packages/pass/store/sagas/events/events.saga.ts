@@ -25,7 +25,7 @@ type EventChannel = (api: Api, options: RootSagaOptions) => Generator;
 /** Switch event channel polling mechanism depending on `SYNC_STRATEGY`.
  * For legacy V1: standard shares, invites polling
  * For modern V2: leverage new user events processor */
-function* getEventChannels(): Generator<unknown, EventChannel[]> {
+export function* getEventChannels(): Generator<unknown, EventChannel[]> {
     switch (SYNC_STRATEGY) {
         case SyncStrategy.LEGACY:
             const channels = [coreChannel, shareChannels, sharesChannel, invitesChannel];

@@ -22,3 +22,10 @@ export const sagaSetup = (state: unknown = {}) => {
         } satisfies RunSagaOptions<unknown, unknown>,
     };
 };
+
+/** Mocks a saga-called generator to resolve to `value` (its return value
+ * once run by `call`). Use with `mockImplementation` to avoid casting. */
+export const sagaReturn = <T>(value: T) =>
+    function* (): Generator<any, T> {
+        return value;
+    };
