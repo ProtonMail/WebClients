@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
@@ -7,8 +9,6 @@ import { useShallow } from 'zustand/react/shallow';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { usePreventLeave } from '@proton/components';
-import type { PrivateKeyReference } from '@protontech/crypto';
-import { CryptoProxy } from '@protontech/crypto';
 import {
     queryDeleteLockedVolumes,
     queryGetDriveVolume,
@@ -21,7 +21,6 @@ import { type GetDriveVolumeResult, VolumeType } from '@proton/shared/lib/interf
 import { encryptPassphrase, generateLookupHash, sign } from '@proton/shared/lib/keys/driveKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useCreatePhotosWithAlbums } from '../../../photos/PhotosStore/useCreatePhotosWithAlbums';
 import { useSharesStore } from '../../../zustand/share/shares.store';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
@@ -54,7 +53,6 @@ export default function useLockedVolume() {
     const [addressesKeys, setAddressesKeys] = useState<AddressesKeysResult>(undefined);
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
-    const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
 
     // Fetch and store the keys associated with each address
     // It first fetches all addresses, and then fetch all keys for each address.
@@ -83,7 +81,6 @@ export default function useLockedVolume() {
         prepareVolumeForRestore,
         getLinkHashKey,
         getLinkPrivateKey,
-        createPhotosWithAlbumsShare,
     });
 }
 
@@ -96,7 +93,6 @@ type LockedVolumesCallbacks = {
     prepareVolumeForRestore: typeof prepareVolumeForRestore;
     getLinkPrivateKey: ReturnType<typeof useLink>['getLinkPrivateKey'];
     getLinkHashKey: ReturnType<typeof useLink>['getLinkHashKey'];
-    createPhotosWithAlbumsShare: ReturnType<typeof useCreatePhotosWithAlbums>['createPhotosWithAlbumsShare'];
 };
 
 export function useLockedVolumeInner({
@@ -108,7 +104,6 @@ export function useLockedVolumeInner({
     prepareVolumeForRestore,
     getLinkPrivateKey,
     getLinkHashKey,
-    createPhotosWithAlbumsShare,
 }: LockedVolumesCallbacks) {
     const { preventLeave } = usePreventLeave();
     const debouncedFunction = useDebouncedFunction();
@@ -215,7 +210,7 @@ export function useLockedVolumeInner({
             lockedPhotos.map(async (photo) => {
                 const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
                     sign(photo.shareDecryptedPassphrase, addressKey),
-                    getEncryptedSessionKey(photo.shareSessionKey, addressKey).then(bytes => bytes.toBase64()),
+                    getEncryptedSessionKey(photo.shareSessionKey, addressKey).then((bytes) => bytes.toBase64()),
                 ]);
                 return {
                     sharePassphraseSignature,
@@ -295,7 +290,7 @@ export function useLockedVolumeInner({
                 lockedDevices.map(async (device) => {
                     const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
                         sign(device.shareDecryptedPassphrase, addressKey),
-                        getEncryptedSessionKey(device.shareSessionKey, addressKey).then(bytes => bytes.toBase64()),
+                        getEncryptedSessionKey(device.shareSessionKey, addressKey).then((bytes) => bytes.toBase64()),
                     ]);
                     return {
                         sharePassphraseSignature,
@@ -307,7 +302,7 @@ export function useLockedVolumeInner({
                 lockedPhotos.map(async (photo) => {
                     const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
                         sign(photo.shareDecryptedPassphrase, addressKey),
-                        getEncryptedSessionKey(photo.shareSessionKey, addressKey).then(bytes => bytes.toBase64()),
+                        getEncryptedSessionKey(photo.shareSessionKey, addressKey).then((bytes) => bytes.toBase64()),
                     ]);
                     return {
                         sharePassphraseSignature,
@@ -358,32 +353,19 @@ export function useLockedVolumeInner({
                 queryGetDriveVolume(lockedVolume.lockedVolumeId)
             );
             const isPhotosVolume = Volume.Type === VolumeType.Photos;
-            let defaultShare:
+            const defaultShare:
                 | undefined
                 | {
                       volumeId: string;
                       shareId: string;
                       rootLinkId: string;
                       addressId: string;
-                  };
-            defaultShare = isPhotosVolume
+                  } = isPhotosVolume
                 ? await getDefaultPhotosShare(abortSignal, true)
                 : await getDefaultShare(abortSignal);
 
             if (!defaultShare) {
-                if (!isPhotosVolume) {
-                    return false;
-                } else {
-                    // Photo share is optional and if used doesn't have any yet, we create one.
-                    // If we don't, there is no place where to recover old photos.
-                    const defaultPhotoShare = await createPhotosWithAlbumsShare();
-                    defaultShare = {
-                        volumeId: defaultPhotoShare.volumeId,
-                        shareId: defaultPhotoShare.shareId,
-                        rootLinkId: defaultPhotoShare.linkId,
-                        addressId: defaultPhotoShare.addressId,
-                    };
-                }
+                return false;
             }
 
             const {
