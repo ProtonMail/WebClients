@@ -1584,6 +1584,12 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -1598,6 +1604,9 @@
       ],
       "Emails": [
         "E-Mails"
+      ],
+      "Errors": [
+        "Fehler"
       ],
       "Estimated size": [
         "Geschätzte Größe"
@@ -1614,6 +1623,9 @@
       "Migrate": [
         "Migrieren"
       ],
+      "Migrated": [
+        "Migriert"
+      ],
       "Migration status": [
         "Migrationsstatus"
       ],
@@ -1623,14 +1635,26 @@
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
       ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
+      "Pending": [
+        "Ausstehend"
+      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
+      "Size": [
+        "Größe"
       ],
       "Status": [
         "Status"
@@ -1643,6 +1667,9 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -3596,6 +3623,9 @@
       "Folder name cannot be empty.": [
         "Name des Ordners kann nicht leer sein."
       ],
+      "Folder not found": [
+        "Ordner nicht gefunden"
+      ],
       "Forward address is required": [
         "Weiterleitungsadresse ist erforderlich"
       ],
@@ -5394,6 +5424,9 @@
       "Copy your referral link": [
         "Einladungslink kopieren"
       ],
+      "Could not scan file for malware": [
+        "Die Datei konnte nicht auf Malware überprüft werden"
+      ],
       "Country code": [
         "Ländercode"
       ],
@@ -5598,6 +5631,12 @@
       ],
       "Feb": [
         "Feb"
+      ],
+      "File could not be scanned": [
+        "Datei konnte nicht überprüft werden"
+      ],
+      "File flagged as potentially malicious": [
+        "Datei als potenziell schädlich markiert"
       ],
       "File will not be updated": [
         "Datei wird nicht aktualisiert."
@@ -9518,9 +9557,6 @@
       "All items deleted permanently from trash": [
         "Alle Einträge dauerhaft aus dem Papierkorb gelöscht."
       ],
-      "An invitation has been sent": [
-        "Eine Einladung wurde versendet."
-      ],
       "Cannot load link": [
         "Link kann nicht geladen werden"
       ],
@@ -9556,9 +9592,6 @@
       ],
       "Failed to accept share invitation": [
         "Einladung zur gemeinsamen Nutzung fehlgeschlagen"
-      ],
-      "Failed to convert external invitation": [
-        "Fehler beim Konvertieren der externen Einladung."
       ],
       "Failed to load sharing details": [
         "Die Details zur gemeinsamen Nutzung konnten nicht geladen werden"
@@ -10576,6 +10609,9 @@
       ],
       "Search for name or email": [
         "Nach Namen oder E-Mail-Adressen suchen"
+      ],
+      "Search for users or addresses": [
+        "Nach Benutzern oder Adressen suchen"
       ],
       "Search parent folder": [
         "Übergeordneten Ordner durchsuchen"

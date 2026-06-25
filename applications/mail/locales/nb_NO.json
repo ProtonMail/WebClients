@@ -4048,6 +4048,10 @@
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
       ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Du kan ikke åpne mer enn ${ maxActiveComposer } skrivevindu samtidig",
+        "Du kan ikke åpne mer enn ${ maxActiveComposer } skrivevinduer samtidig"
+      ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
       ],
@@ -5126,6 +5130,22 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } ut av ${ totalProgress }",
+        "${ currentProgress } ut av ${ totalProgress }"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } melding merkes som:",
+        "${ elementsCount } meldinger merkes som:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } melding merkes som lest.",
+        "${ elementsCount } meldinger merkes som lest."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } melding flyttes",
+        "${ elementsCount } meldinger flyttes"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: bilde i full størrelse"
       ],
@@ -6066,6 +6086,10 @@
       "Scan the QR code with your mobile device": [
         "Skann QR-koden med mobilenheten din"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Velg alle ${ elementsCount } i ${ location }",
+        "Velg alle ${ elementsCount } i ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
       ],
@@ -6186,6 +6210,10 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Verifiseringen av ${ contactNames } mislyktes: kontakten er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontakten på nytt for å sende en melding til ${ contactAddresses } eller redigere kontakten.",
+        "Verifiseringen av ${ contactNames } mislyktes: kontaktene er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontaktene på nytt for å sende en melding til ${ contactAddresses } eller redigere kontaktene."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
@@ -6444,6 +6472,10 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
+      "You selected **${ count } conversation** from this folder": [
+        "Du valgte **${ count } samtale** fra denne mappen",
+        "Du valgte **${ count } samtaler** fra denne mappen"
+      ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Du valgte **${ elementsCount } samtale** i ${ location }.",
         "Du valgte **${ elementsCount } samtaler** i ${ location }"
@@ -6455,6 +6487,10 @@
       "You selected **${ elementsCount } message** in ${ location }": [
         "Du valgte **${ elementsCount } melding** i ${ location }.",
         "Du valgte **${ elementsCount } meldinger** i ${ location }."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Du valgte **${ elementsCount } melding**.",
+        "Du valgte **${ elementsCount } meldinger**."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
@@ -11177,6 +11213,10 @@
         "${ elementsCount } samtale fjernet fra ${ labelName }.",
         "${ elementsCount } samtaler fjernet fra ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } samtale fjernet fra stjernemerket.",
+        "${ elementsCount } samtaler fjernet fra stjernemerket."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } samtale slumret",
         "${ elementsCount } samtaler slumret"
@@ -11192,6 +11232,10 @@
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } melding flyttet til ${ labelName }.",
         "${ elementsCount } meldinger flyttet til ${ labelName }."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } melding fjernet fra ${ labelName }.",
+        "${ elementsCount } meldinger fjernet fra ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } melding fjernet fra stjernemerket.",
@@ -11252,6 +11296,10 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Sist endrede aliaser lagret i ditt eldste hvelv"
+      ],
+      "Move ${ selectionCount } message": [
+        "Flytt ${ selectionCount } melding",
+        "Flytt ${ selectionCount } meldinger"
       ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
@@ -11829,6 +11877,10 @@
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
+      "Mailing list": [
+        "E-postliste",
+        "E-postlister"
+      ],
       "Make a secure connection your default": [
         "Gjør en sikker tilkobling til standard"
       ],
@@ -12050,6 +12102,10 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
+      ],
+      "Trust new key?": [
+        "Klarére ny nøkkel?",
+        "Klarére nye nøkler?"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
@@ -12414,6 +12470,10 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Noen av kontaktene som skal slås sammen, viser feil. Gjennomgå dem individuelt."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Bekreftelsen av vedleggets signatur mislyktes.\\nDu kan fortsatt laste ned dette vedlegget, men det kan ha blitt tuklet med.",
+        "Noen av vedleggenes signaturer ble ikke bekreftet. Du kan fortsatt laste ned disse vedleggene, men de kan ha blitt tuklet med."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdataene er skadet og kan ikke vises."

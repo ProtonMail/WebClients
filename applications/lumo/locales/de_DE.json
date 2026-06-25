@@ -965,10 +965,13 @@
         "Abbrechen (Esc)"
       ],
       "Clear": [
-        "Leeren"
+        "Entfernen"
       ],
       "Clear all": [
-        "Alle löschen"
+        "Alle entfernen"
+      ],
+      "Clear auto-generated": [
+        "Automatisch Erstelltes entfernen"
       ],
       "Close": [
         "Schließen"
@@ -988,6 +991,9 @@
       "Dark": [
         "Dunkel"
       ],
+      "Delete memory": [
+        "Erinnerungen entfernen"
+      ],
       "Disable ghost mode": [
         "Ghost-Modus deaktivieren"
       ],
@@ -997,8 +1003,14 @@
       "Edit": [
         "Bearbeiten"
       ],
+      "Edit memory": [
+        "Erinnerung bearbeiten"
+      ],
       "Enable ghost mode": [
         "Ghost-Modus aktivieren"
+      ],
+      "Generate from chats": [
+        "Aus Chats erstellen"
       ],
       "Generate workflow": [
         "Workflow generieren"
@@ -1036,6 +1048,9 @@
       "Save": [
         "Speichern"
       ],
+      "Save (⌘+Enter)": [
+        "Sichern (⌘+Enter)"
+      ],
       "Select all": [
         "Alles auswählen"
       ],
@@ -1071,6 +1086,13 @@
       ],
       "Turn on memory": [
         "Speicherfunktion einschalten"
+      ],
+      "Update from chats": [
+        "Aus Chats aktualisieren"
+      ],
+      "Update from chats (${ newPromptsSinceLastUpdate } new)": [
+        "Aus Chats (${ newPromptsSinceLastUpdate } neuer) aktualisieren",
+        "Aus Chats (${ newPromptsSinceLastUpdate } neue) aktualisieren"
       ],
       "Upload file to Drive": [
         "Datei auf Drive hochladen"
@@ -1283,6 +1305,12 @@
       "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
         "${ BRAND_NAME } führt eine bezahlte Umfrage zum Thema KI-Assistenten durch. Hast du Interesse? Die Teilnahme dauert nur 2 Minuten. Wenn du ausgewählt wirst, erhältst du £ 80."
       ],
+      "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
+        "${ LUMO_SHORT_APP_NAME } greift auf deine gespeicherten Erinnerungen zurück, um die Antworten individuell anzupassen – Kommunikationsstil, Fachwissen, häufig verwendete Tools und laufende Projekte."
+      ],
+      "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
+        "Deine eigenen Erinnerungen hinzufügen, beliebige automatisch generierte Einträge bearbeiten oder jederzeit alles entfernen. Bearbeitete, automatisch generierte Erinnerungen werden zu deinen eigenen."
+      ],
       "Always enable web search for new conversations": [
         "Immer Websuche für neue Unterhaltungen aktivieren"
       ],
@@ -1310,8 +1338,17 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Mehr erfahren, wie ${ LUMO_SHORT_APP_NAME } eingesetzt werden kann"
       ],
+      "Memories are stored encrypted.": [
+        "Erinnerungen sind verschlüsselt gespeichert"
+      ],
+      "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
+        "Dank Erinnerungen kann sich ${ LUMO_SHORT_APP_NAME } deine Einstellungen und den Kontext über alle Chats hinweg merken, sodass du dich nicht immer wieder wiederholen musst."
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Lösche dein Projekt und deine Chats dauerhaft. Das ist unwiderruflich."
+      ],
+      "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
+        "Projekt-Chats sind vollständig isoliert. Sie greifen auf ihre eigenen Anweisungen und Dateien zurück und ignorieren deine globalen Erinnerungen vollständig."
       ],
       "Quick responses": [
         "Schnelle Antworten"
@@ -1327,6 +1364,12 @@
       ],
       "Switch between light and dark mode": [
         "Wechseln Sie zwischen Hell- und Dunkelmodus"
+      ],
+      "This removes memories generated from your chats. Memories you added yourself will be kept.": [
+        "Dadurch werden die aus deinen Chats generierten Erinnerungen entfernt. Erinnerungen, die du selbst hinzugefügt hast, bleiben erhalten."
+      ],
+      "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
+        "Dadurch werden alle gespeicherten Erinnerungen dauerhaft entfernt. ${ LUMO_SHORT_APP_NAME } wird sie in zukünftigen Chats nicht mehr verwenden."
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Wenn du die Speicherfunktion ausschaltest, werden alle ${ memories.length } gespeicherten Erinnerungen endgültig gelöscht. Du kannst die Speicherfunktion später wieder einschalten, die gelöschten Erinnerungen lassen sich jedoch nicht wiederherstellen."
@@ -1411,6 +1454,9 @@
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Melde dich kostenlos an, um weiter zu chatten und Zugang zu deinem Chatverlauf, markierten Chats und weiteren Funktionen freizuschalten."
       ],
+      "Something went wrong. Please try again.": [
+        "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+      ],
       "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some from this chat before uploading new ones to keep things purring.": [
         "Das sind eine Menge Dateien, die ${ LUMO_SHORT_APP_NAME } verarbeiten muss. Lösche einige aus diesem Chat, bevor du neue hochlädst, damit alles reibungslos läuft."
       ],
@@ -1463,6 +1509,9 @@
       ]
     },
     "collider_2025: Error Message": {
+      "If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.": [
+        "Sollte ein erneuter Versuch nicht funktionieren, versuche es bitte in ein paar Minuten erneut. In der Zwischenzeit tun wir unser Bestes, um sicherzustellen, dass alles reibungslos verläuft."
+      ],
       "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
         "Wenn ein erneuter Versuch nicht funktioniert, schau später noch einmal vorbei oder erwäge ein Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um in Spitzenzeiten Priorität zu genießen."
       ],
@@ -1597,6 +1646,9 @@
       ]
     },
     "collider_2025: Hint": {
+      "Memory is only used in general chats — never inside projects. Stored end-to-end encrypted.": [
+        "Erinnerungen werden nur in allgemeinen Chats verwendet – niemals innerhalb von Projekten. Die Speicherung erfolgt Ende-zu-Ende-verschlüsselt."
+      ],
       "You can turn it off again at any time.": [
         "Du kannst es jederzeit wieder ausschalten."
       ]
@@ -1667,6 +1719,9 @@
       ],
       "All API requests must include your API key in the ": [
         "Alle API-Aufrufe müssen deinen API-Schlüssel enthalten im "
+      ],
+      "All files in this chat": [
+        "Alle Dateien in diesem Chat"
       ],
       "An API key — generate one in ": [
         "Ein API-Schlüssel – einen generieren in "
@@ -1782,6 +1837,9 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Generiere eine Workflow-Grafik und Implementierungscode für das folgende Ziel. Zielsprache für den Code:"
       ],
+      "Generate them from your recent chats, or add your own below.": [
+        "Erstelle diese anhand deiner letzten Chats oder füge unten eigene hinzu."
+      ],
       "Generating…": [
         "Wird erstellt…"
       ],
@@ -1836,8 +1894,14 @@
       "No content available.": [
         "Keine Inhalte verfügbar."
       ],
+      "No data rows found.": [
+        "Keine Datenzeilen gefunden."
+      ],
       "No files available": [
         "Keine Dateien verfügbar"
+      ],
+      "No new memories were found in your recent chats.": [
+        "In deinen letzten Chats wurden keine neuen Erinnerungen gefunden."
       ],
       "No nodes in this workflow.": [
         "Keine Knoten in diesem Workflow."
@@ -1910,6 +1974,9 @@
       ],
       "Shared with you": [
         "Mit dir geteilt"
+      ],
+      "Shared with you by ${ file.sharedBy }": [
+        "Von ${ file.sharedBy } mit dir geteilt"
       ],
       "Show all files": [
         "Alle Dateien anzeigen"
@@ -1985,6 +2052,9 @@
       ],
       "You are about to visit an external website:": [
         "Du bist dabei, eine externe Webseite zu besuchen:"
+      ],
+      "Your memories are already up to date.": [
+        "Deine Erinnerungen sind bereits aktuell"
       ]
     },
     "collider_2025: Job": {
@@ -2074,7 +2144,7 @@
         "Datei-Upload"
       ],
       "From chats": [
-        "Aus Unterhaltungen"
+        "Aus Chats"
       ],
       "Loop": [
         "Schleife"
@@ -2307,6 +2377,9 @@
       "General": [
         "Allgemeines"
       ],
+      "Memory": [
+        "Erinnerung"
+      ],
       "Personalization": [
         "Personalisierung"
       ]
@@ -2332,6 +2405,10 @@
       ]
     },
     "collider_2025: Success": {
+      "Added ${ added } memory from your chats": [
+        "${ added } Erinnerung aus deinen Chats hinzugefügt",
+        "${ added } Erinnerungen aus deinen Chats hinzugefügt"
+      ],
       "All chats deleted successfully": [
         "Alle Chats erfolgreich gelöscht"
       ],
@@ -2369,6 +2446,12 @@
       "Avoid passwords, tokens, or sensitive personal identifiers.": [
         "Vermeide Passwörter, Tokens oder sensible persönliche Identifikationsmerkmale."
       ],
+      "Include how you like to communicate (tone, format, language).": [
+        "Angeben, wie du am liebsten kommunizierst (Tonfall, Format, Sprache)."
+      ],
+      "Keep each memory short - one preference or fact per line.": [
+        "Halte jede Erinnerung kurz – eine Vorliebe oder eine Tatsache pro Zeile."
+      ],
       "Write stable facts, not one-off questions.": [
         "Schreibe fundierte Fakten auf, keine einmaligen Fragen."
       ]
@@ -2386,6 +2469,9 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Über ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Add your own memory": [
+        "Deine eigene Erinnerung hinzufügen"
+      ],
       "API calls per day": [
         "API-Aufrufe pro Tag"
       ],
@@ -2401,6 +2487,9 @@
       "Authentication": [
         "Authentifizierung"
       ],
+      "Auto update memory": [
+        "Erinnerungen automatisch aktualisieren"
+      ],
       "Automatic web search": [
         "Automatische Websuche"
       ],
@@ -2409,6 +2498,12 @@
       ],
       "Chat": [
         "Chat"
+      ],
+      "Clear all memories?": [
+        "Alle Erinnerungen entfernen?"
+      ],
+      "Clear chat-based memories?": [
+        "Chat-basierte Erinnerungen entfernen?"
       ],
       "Conversational AI": [
         "Konversationelle KI"
@@ -2452,11 +2547,17 @@
       "No API keys yet": [
         "Noch keine API-Schlüssel"
       ],
+      "No memories yet": [
+        "Noch keine Erinnerungen"
+      ],
       "Opening External Link": [
         "Externen Link öffnen"
       ],
       "Parameters": [
         "Parameter"
+      ],
+      "Personalizes general chats": [
+        "Passt allgemeine Chats individuell an"
       ],
       "Prerequisites": [
         "Voraussetzungen"
@@ -2476,6 +2577,9 @@
       "Save your favorites": [
         "Deine Favoriten speichern"
       ],
+      "Saved memories": [
+        "Erinnerungen speichern"
+      ],
       "Search Index": [
         "Suchindex"
       ],
@@ -2493,6 +2597,9 @@
       ],
       "Tokens per day": [
         "Token pro Tag"
+      ],
+      "Turn off memory?": [
+        "Erinnerungen ausschalten?"
       ],
       "Upload files": [
         "Dateien hochladen"
@@ -2529,8 +2636,18 @@
       ]
     },
     "collider_2025: Tooltip": {
+      "${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages. ${ promptsUntilAutoSave } message left until the next update.": [
+        "${ LUMO_SHORT_APP_NAME } aktualisiert die Chat-basierten Erinnerungen alle ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } Nachrichten. Es verbleibt noch ${ promptsUntilAutoSave } Nachricht bis zur nächsten Aktualisierung.",
+        "${ LUMO_SHORT_APP_NAME } aktualisiert die Chat-basierten Erinnerungen alle ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } Nachrichten. Es verbleiben noch ${ promptsUntilAutoSave } Nachrichten bis zur nächsten Aktualisierung."
+      ],
       "Contact your admin to upgrade": [
         "Kontaktiere deinen Administrator für ein Upgrade"
+      ],
+      "Every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats, ${ LUMO_SHORT_APP_NAME } extracts short excerpts and adds new chat-based memories in the background.": [
+        "Alle ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } Nachrichten in allgemeinen Chats: ${ LUMO_SHORT_APP_NAME } extrahiert kurze Auszüge und fügt im Hintergrund neue Chat-basierte Erinnerungen hinzu."
+      ],
+      "When enabled, ${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats. Only short excerpts are sent.": [
+        "Wenn diese Funktion aktiviert ist, aktualisiert ${ LUMO_SHORT_APP_NAME } die Chat-basierten Erinnerungen alle ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } Nachrichten in allgemeinen Chats. Es werden nur kurze Auszüge gesendet."
       ]
     },
     "collider_2025: Top nav link": {
@@ -2750,6 +2867,9 @@
       ],
       "Change agent": [
         "Agent wechseln"
+      ],
+      "Change style": [
+        "Aussehen ändern"
       ],
       "Choose project icon": [
         "Projektsymbol auswählen"
@@ -3128,6 +3248,9 @@
       ]
     },
     "collider_2025:Finance": {
+      "Dividend Yield": [
+        "Dividendenrendite"
+      ],
       "Exchange": [
         "Austauschen"
       ],
@@ -3205,8 +3328,8 @@
       "Drive files are not available for guest users": [
         "Drive-Dateien sind für Gastbenutzer nicht verfügbar"
       ],
-      "Example prompts shown when a conversation with this agent begins.": [
-        "Beispielfragen, die zu Beginn eines Gesprächs mit diesem Agenten angezeigt werden."
+      "Example prompts shown when a conversation begins.": [
+        "Beispiel-Eingabeaufforderungen, die zu Beginn eines Gesprächs angezeigt werden."
       ],
       "File \"${ file.name }\" is already in this project": [
         "Die Datei \"${ file.name }\" ist bereits in diesem Projekt"
@@ -3530,6 +3653,9 @@
       ]
     },
     "collider_2025:Reasoning": {
+      "Dividend Yield": [
+        "Dividendenrendite"
+      ],
       "Edited image": [
         "Bild bearbeitet"
       ],
@@ -3624,8 +3750,8 @@
       "Built by the team that knows privacy": [
         "Entwickelt vom Team, das Datenschutz versteht"
       ],
-      "Create agent": [
-        "Agent erstellen"
+      "Create a custom ${ LUMO_SHORT_APP_NAME }": [
+        "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME } erstellen"
       ],
       "Create folder": [
         "Ordner erstellen"
@@ -3642,8 +3768,8 @@
       "Earlier": [
         "Früher"
       ],
-      "Edit agent": [
-        "Agent bearbeiten"
+      "Edit custom ${ LUMO_SHORT_APP_NAME }": [
+        "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME } bearbeiten"
       ],
       "Edit Instructions": [
         "Anweisungen bearbeiten"
@@ -6275,6 +6401,9 @@
       "Notifications": [
         "Benachrichtigungen"
       ],
+      "Open a conversation to enable generation error testing.": [
+        "Eine Unterhaltung öffnen, um die Fehlerprüfung bei der Erzeugung zu aktivieren."
+      ],
       "Preview \"IndexedDB unavailable\" screen": [
         "Vorschau des Bildschirms „IndexedDB nicht verfügbar“"
       ],
@@ -6332,11 +6461,20 @@
       "Tokens/sec": [
         "Tokens/Sek."
       ],
+      "Trigger generation rejected": [
+        "Trigger-Erzeugung abgelehnt"
+      ],
       "Trigger harmful content": [
         "Schädlichen Inhalt auslösen"
       ],
       "Trigger high demand": [
         "Hohe Nachfrage auslösen"
+      ],
+      "Trigger stream disconnected": [
+        "Trigger-Stream getrennt"
+      ],
+      "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
+        "Löst Fehlermeldungen mit stufenspezifischen Meldungen aus. Benutzertyp: ${ lumoUserType }"
       ],
       "Unsynced conversations": [
         "Nicht synchronisierte Unterhaltungen"

@@ -25,6 +25,9 @@
       "Allow access": [
         "Autoriser l'accès"
       ],
+      "Approve participants before they can join": [
+        "Approuver les participants avant qu'ils puissent joindre"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "Désigner ${ selectedParticipantName } comme hôte"
       ],
@@ -106,6 +109,9 @@
       "Disable camera": [
         "Désactiver la caméra"
       ],
+      "Disable waiting room": [
+        "Désactiver la salle d'attente"
+      ],
       "Dismiss": [
         "Annuler"
       ],
@@ -150,6 +156,9 @@
       ],
       "Enable video": [
         "Activer la vidéo"
+      ],
+      "Enable waiting room": [
+        "Activer la salle d'attente"
       ],
       "End meeting": [
         "Terminer la réunion"
@@ -238,6 +247,9 @@
       "Open link": [
         "Ouvrir le lien"
       ],
+      "Participants join the call directly": [
+        "Les participants se joignent directement à l'appel"
+      ],
       "Previous month": [
         "Mois précédent"
       ],
@@ -316,6 +328,9 @@
       ],
       "Settings": [
         "Paramètres"
+      ],
+      "Show duration": [
+        "Afficher la durée"
       ],
       "Show floating thumbnail during screensharing": [
         "Afficher une vignette flottante pendant le partage d'écran"
@@ -401,6 +416,9 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
+      "Upgrade your plan to use waiting room in your next meeting.": [
+        "Mettre à niveau votre abonnement pour utiliser la salle d’attente lors de votre prochaine réunion."
+      ],
       "Use authentication code": [
         "Utiliser le code d'authentification"
       ],
@@ -421,6 +439,9 @@
       ],
       "View invoice": [
         "Voir la facture"
+      ],
+      "Waiting room": [
+        "Salle d'attente"
       ]
     },
     "Alt": {
@@ -451,6 +472,9 @@
       "Go to dashboard": [
         "Aller au tableau de bord"
       ],
+      "Hide self view": [
+        "Masquer ma vue"
+      ],
       "Leave Meeting": [
         "Quitter la réunion"
       ],
@@ -462,6 +486,9 @@
       ],
       "Meeting details": [
         "Informations de la réunion"
+      ],
+      "Noise cancellation": [
+        "Suppression du bruit"
       ],
       "Open chat message search": [
         "Rechercher dans les discussions ouvertes"
@@ -487,6 +514,12 @@
       "Settings": [
         "Paramètres"
       ],
+      "Show duration": [
+        "Afficher la durée"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Afficher la miniature flottante pendant le partage d'écran"
+      ],
       "Show passphrase": [
         "Afficher la phrase secrète"
       ],
@@ -510,6 +543,9 @@
       ],
       "Toggle settings": [
         "Afficher/masquer les paramètres"
+      ],
+      "Turn off incoming video": [
+        "Désactiver la vidéo entrante"
       ],
       "Video settings": [
         "Paramètres vidéo"
@@ -2282,7 +2318,7 @@
         "Trier par"
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
-        "La sélection de l'hautparleur n'est pas disponible dans ce navigateur. Utilisez les paramètres de votre système pour choisir un autre hautparleur."
+        "La sélection du haut-parleur n'est pas disponible dans ce navigateur. Utilisez les paramètres de votre système pour choisir un autre haut-parleur."
       ],
       "Start recording": [
         "Démarrer l'enregistrement"
@@ -2988,7 +3024,7 @@
         "Discussion"
       ],
       "Couldn't prepare the recording": [
-        "Impossible de préparer l'enregistrement"
+        "L'enregistrement n'a pas pu être préparé."
       ],
       "Create new room": [
         "Créer une nouvelle salle"
@@ -3091,7 +3127,7 @@
         "Salle de réunion personnelle"
       ],
       "Preparing your recording…": [
-        "Préparation de votre enregistrement en cours…"
+        "Préparation de votre enregistrement en cours"
       ],
       "Publications": [
         "Publications"
@@ -3131,9 +3167,6 @@
       ],
       "Settings": [
         "Paramètres"
-      ],
-      "Show duration": [
-        "Afficher la durée"
       ],
       "Sign out": [
         "Se déconnecter"

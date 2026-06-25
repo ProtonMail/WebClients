@@ -209,9 +209,6 @@
       "Connected": [
         "Terhubung"
       ],
-      "Contact support": [
-        "Hubungi layanan dukungan"
-      ],
       "Contact us": [
         "Hubungi kami"
       ],
@@ -460,9 +457,6 @@
       ],
       "Forgot password?": [
         "Lupa kata sandi?"
-      ],
-      "Forgot recovery method?": [
-        "Lupa metode pemulihan?"
       ],
       "Generate new recovery phrase": [
         "Buat frasa pemulihan baru"
@@ -5584,9 +5578,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
-      ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } tidak pernah membagikan informasi Anda dengan pihak ketiga. Data yang tersedia bersumber dari analisis mandiri ${ BRAND_NAME } dan Constella Intelligence."
       ],
@@ -6112,9 +6103,6 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Data recoverable on this device": [
-        "Data pada perangkat ini dapat dipulihkan"
-      ],
       "dedicated servers": [
         "server khusus"
       ],
@@ -6189,9 +6177,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Jangan sampai Anda kehilangan akses ke seluruh fitur premium yang ada. Aktifkan pembaruan otomatis sekarang juga."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Berhasil! Kami telah mengirimkan kode Anda ke ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Tidak mengetahui frasa pemulihan Anda?"
@@ -6297,12 +6282,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Masukkan kode yang tertera pada aplikasi autentikator Anda"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Masukkan kode yang terkirim ke nomor ponsel ${ phone } milik Anda."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Masukkan kode yang terkirim ke ${ email }. Apabila Anda tidak menemukan kode ini pada kotak masuk, silakan periksa folder spam Anda."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang ingin Anda impor."
@@ -6420,9 +6399,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Apabila Anda sedang terhubung masuk di tempat lain, Anda mungkin akan dapat ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jika Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
@@ -6799,9 +6775,6 @@
       "On": [
         "Nyala"
       ],
-      "Once you reset your password:": [
-        "Setelah Anda mengatur ulang kata sandi Anda:"
-      ],
       "Open source": [
         "Open source"
       ],
@@ -6909,9 +6882,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Silakan periksa file Anda atau gunakan ${ csvTemplateButton } kami."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Silakan masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
       ],
       "Please fill in all required fields.": [
         "Harap isi semua kolom yang diwajibkan."
@@ -7453,9 +7423,6 @@
       "Total VPN connections": [
         "Total koneksi VPN"
       ],
-      "trusted device": [
-        "perangkat tepercaya"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Coba ${ productName } sepenuhnya tanpa risiko — jika dengan alasan apa pun Anda berubah pikiran, Anda akan menerima pengembalian dana penuh. Tanpa pertanyaan."
       ],
@@ -7473,9 +7440,6 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Tidak dapat memverifikasi tanda tangan file pemulihan. Silakan hubungi layanan dukungan."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID unik yang dibuat oleh penyedia identitas Anda, biasanya berupa URL yang memuat nama penyedia identitas di dalamnya (misalnya https://idp.example.com/XXXXX\n)."
@@ -7606,9 +7570,6 @@
       "Want to learn more?": [
         "Ingin mempelajari lebih lanjut?"
       ],
-      "Warning:": [
-        "Peringatan:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Peringatan: menghapus akun Anda bersifat permanen."
       ],
@@ -7639,14 +7600,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Sebelum Anda mewajibkan penggunaan 2FA, kami menyarankan Anda untuk terlebih dahulu memberi tahu anggota organisasi Anda dan meminta mereka untuk menyiapkan 2FA pada akun mereka masing-masing."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Kami menyimpan informasi pemulihan pada perangkat yang Anda percaya secara aman untuk mencegah Anda kehilangan data"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Kami menyimpan file cadangan pada peramban ini karena Anda mengizinkan pemulihan data pada ${ deviceLink }. Apabila file cadangan ini valid, Anda akan segera memperoleh kembali akses menuju data terenkripsi Anda baik secara parsial ataupun menyeluruh."
       ],
       "We use 3-D Secure to protect your payments": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran Anda"
@@ -7674,12 +7629,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Kami akan mengirimkan kode atur ulang ke ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Kami akan mengirimkan kode untuk mengatur ulang akun ke alamat email yang telah Anda tentukan sebelumnya."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Kami akan mengirimkan kode untuk mengatur ulang akun ke nomor telpon yang telah Anda tentukan sebelumnya."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
@@ -8061,9 +8010,6 @@
       "Declined": [
         "Ditolak"
       ],
-      "Owner": [
-        "Pemilik"
-      ],
       "Paused": [
         "Dijeda"
       ],
@@ -8297,9 +8243,6 @@
       ],
       "City": [
         "Kota"
-      ],
-      "Code": [
-        "Kode"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
@@ -9173,9 +9116,6 @@
       ],
       "Pay invoice": [
         "Bayar faktur"
-      ],
-      "perform a password reset from your active session": [
-        "lakukan atur ulang kata sandi dari sesi aktif Anda"
       ],
       "Privacy policy": [
         "Kebijakan privasi"
@@ -11231,17 +11171,6 @@
       ],
       "Limited-time deal.": [
         "Penawaran waktu terbatas."
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Semua data Anda** (email, acara, kontak, file, entri ${ PASS_APP_NAME }, dll.) **akan dikunci** dan hanya akan dapat dibuka kembali dengan **kata sandi lama** Anda"
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Seluruh data Anda** (email, acara, kontak, file, entri ${ PASS_APP_NAME }, dll.) **akan dikunci** dan hanya akan dapat dibuka kembali dengan **frasa keamanan** atau **kata sandi lama** Anda"
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Seluruh metode **autentikasi dua-faktor (2FA)** pada akun Anda akan dinonaktifkan."
       ]
     },
     "passwordless": {
@@ -14813,9 +14742,6 @@
       "Find email or username": [
         "Cari email atau nama pengguna"
       ],
-      "Forgot recovery method": [
-        "Lupakan metode pemulihan"
-      ],
       "Gateway": [
         "Gateway"
       ],
@@ -14953,9 +14879,6 @@
       ],
       "No events": [
         "Tidak ada acara"
-      ],
-      "No recovery method": [
-        "Tidak ada metode pemulihan"
       ],
       "Open": [
         "Buka"

@@ -227,9 +227,6 @@
       "Connected": [
         "Pripojené"
       ],
-      "Contact support": [
-        "Kontaktovať podporu"
-      ],
       "Contact Support Center": [
         "Kontaktovať centrum podpory"
       ],
@@ -502,9 +499,6 @@
       ],
       "Forgot password?": [
         "Zabudli ste heslo?"
-      ],
-      "Forgot recovery method?": [
-        "Zabudli ste metódu obnovenia?"
       ],
       "Generate new recovery phrase": [
         "Vygenerovať novú frázu pre obnovenie"
@@ -5062,9 +5056,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "Účet je vymazaný alebo deaktivovaný"
-      ],
       "App currently unavailable": [
         "Aplikácia momentálne nie je k dispozícii"
       ],
@@ -6387,9 +6378,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Ak budete pokračovať, stratíte prístup ku všetkým aktuálnym zašifrovaným údajom vo vašom účte."
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } plán Business poskytuje vášmu tímu všetky nástroje na spoluprácu, ktoré potrebuje na produktívnu a organizovanú prácu, a zároveň chráni vašu firmu."
       ],
@@ -7158,9 +7146,6 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "Data recoverable on this device": [
-        "Údaje obnoviteľné v tomto zariadení"
-      ],
       "Data recoverable with recovery phrase": [
         "Dáta obnoviteľné pomocou obnovovacej frázy"
       ],
@@ -7250,9 +7235,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "Nestraťte prístup k vašim prémiovým funkciám . Povoľte automatickú obnovu ešte dnes."
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "Hotovo! Odoslali sme kód na ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
         "Nepoznáte svoju frázu na obnovenie?"
@@ -7376,12 +7358,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Zadajte kód z vašej overovacej aplikácie"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Zadajte kód zaslaný na vaše telefónne číslo ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Zadajte kód odoslaný na ${ email }. Ak správu nenájdete vo svojej doručenej pošte, skontrolujte priečinok so spamom."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadajte prihlasovacie údaje emailového účtu, z ktorého chcete importovať."
@@ -7547,9 +7523,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "Ak ste sa prihlásili niekde inde, máte možnosť ${ signedInPasswordResetLink }."
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "Ak ste prihlásený do webovej aplikácie ${ BRAND_NAME } v **inom prehliadači**, môžete vykonať reset hesla zo svojej aktívnej relácie."
@@ -7965,9 +7938,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Akonáhle bude udelený prístup k vášmu účtu, budú môcť otvoriť vaše nastavenia **Obnovenia** a **zmeniť vaše heslo k aplikácii ${ ACCOUNT_APP_NAME }** za vás."
       ],
-      "Once you reset your password:": [
-        "Po resete vašeho hesla:"
-      ],
       "Open source": [
         "Open source"
       ],
@@ -8096,9 +8066,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Skontrolujte svoj súbor alebo skúste použiť náš ${ csvTemplateButton }."
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Zadajte 12-slovnú frázu na obnovenie spojenú s vaším účtom, prosím."
       ],
       "Please fill in all required fields.": [
         "Vyplňte všetky povinné polia, prosím."
@@ -8721,9 +8688,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "Skúšobná doba skončí ${ formattedPeriodEndDate }"
       ],
-      "trusted device": [
-        "dôveryhodné zariadenie"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyskúšajte ${ productName } úplne bez rizika - ak si to z akéhokoľvek dôvodu rozmyslíte, dostanete plnú náhradu. Bez otázok."
       ],
@@ -8747,9 +8711,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Pre tento účet, bohužiaľ, nie je k dispozícii žiadna metóda obnovy."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Pre tento účet, bohužiaľ, nie je uložená žiadna metóda obnovy."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Jedinečné ID vygenerované poskytovateľom identity, zvyčajne vo forme URL adresy, ktorá obsahuje názov poskytovateľa identity (napr. https://idp.example.com/XXXXX)."
@@ -8886,9 +8847,6 @@
       "Want to learn more?": [
         "Chcete sa dozvedieť viac?"
       ],
-      "Warning:": [
-        "Upozornenie:"
-      ],
       "Warning: deleting your account is permanent.": [
         "Upozornenie: vymazanie účtu je trvalé."
       ],
@@ -8925,14 +8883,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Odporúčame upozorniť členov organizácie a požiadať ich, aby si nastavili 2FA pre svoje kontá skôr, ako začne vynútené používanie 2FA."
       ],
-      "We recommend using your recovery phrase instead.": [
-        "Namiesto toho doporučujeme použiť obnovovaciu frázu."
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Aby sme zabránili strate údajov, na vašom dôveryhodnom zariadení bezpečne ukladáme informácie na obnovenie"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "Záložný súbor sme uložili do tohto prehliadača, pretože ste povolili obnovu údajov na tomto ${ deviceLink }. Ak je záložný súbor platný, okamžite získate úplný alebo čiastočný prístup k zašifrovaným údajom."
       ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
@@ -8966,12 +8918,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Odošleme resetovací kód na adresu ${ boldValue }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Pošleme resetovací kód na emailovú adresu, ktorú ste poskytli pre obnovenie účtu."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Na telefónne číslo, ktoré ste uviedli v prípade obnovenia účtu odošleme kód pre obnovenie."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pri povolení SAML pre ${ appName } u poskytovateľa identity sa môže zobraziť výzva na použitie URL adresy spätného volania (ACS) a ID vydavateľa. Stačí skopírovať a vložiť nižšie uvedené údaje do polí poskytovateľa identity."
@@ -9458,9 +9404,6 @@
       "Declined": [
         "Odmietnuté"
       ],
-      "Owner": [
-        "Vlastník"
-      ],
       "Paused": [
         "Pozastavené"
       ],
@@ -9739,9 +9682,6 @@
       ],
       "City": [
         "Mesto"
-      ],
-      "Code": [
-        "Kód"
       ],
       "Code is 6 digits without spaces": [
         "Kód je 6 čísiel bez medzier"
@@ -10199,9 +10139,6 @@
       "Password": [
         "Heslo"
       ],
-      "Password reminders": [
-        "Pripomienky hesla"
-      ],
       "Password strength": [
         "Sila hesla"
       ],
@@ -10619,9 +10556,6 @@
       ]
     },
     "Link": {
-      "Account recovery explained": [
-        "Vysvetlenie obnovy účtu"
-      ],
       "activity monitor": [
         "monitoru aktivity"
       ],
@@ -10774,9 +10708,6 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
-      ],
-      "perform a password reset from your active session": [
-        "resetovať heslo z Vášho aktuálneho prihlásenia"
       ],
       "Privacy policy": [
         "Ochrana osobných údajov"
@@ -13185,23 +13116,6 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Heslo si zapamätajte alebo ho bezpečne uložte, pretože je kľúčom k dešifrovaniu vašich údajov."
-      ],
-      "Turn off password reminders?": [
-        "Vypnúť pripomínanie hesla?"
-      ],
-      "Turn off reminders": [
-        "Vypnúť pripomienky"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Všetky vaše existujúce údaje** (emaily, udalosti, kontakty, súbory, položky ${ PASS_APP_NAME } atď.) **budú uzamknuté** a odomknúť ich možno len pomocou vášho **starého hesla**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Všetky vaše existujúce údaje** (emaily, udalosti, kontakty, súbory, položky ${ PASS_APP_NAME } atď.) **budú uzamknuté** a odomknúť ich možno len pomocou vašej **frázy na obnovenie** alebo vášho **starého hesla**."
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "Všetky metódy **dvojfaktorového overenia (2FA)** budú na vašom účte deaktivované."
       ]
     },
     "passwordless": {
@@ -16395,12 +16309,6 @@
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
       ],
-      "Password reminders disabled": [
-        "Funkcia pripomenutia hesla je zakázaná"
-      ],
-      "Password reminders enabled": [
-        "Funkcia pripomenutia hesla je povolená"
-      ],
       "Password updated": [
         "Heslo bolo aktualizované"
       ],
@@ -17290,9 +17198,6 @@
       "Find email or username": [
         "Nájsť email alebo používateľské meno"
       ],
-      "Forgot recovery method": [
-        "Zabudnutá metóda obnovenia"
-      ],
       "Free plan": [
         "Bezplatný plán"
       ],
@@ -17478,9 +17383,6 @@
       ],
       "No events yet": [
         "Zatiaľ žiadne udalosti"
-      ],
-      "No recovery method": [
-        "Žiadna metóda pre obnovenie"
       ],
       "Open": [
         "Otvoriť"

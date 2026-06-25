@@ -604,9 +604,6 @@
       "Forgot password?": [
         "忘記密碼?"
       ],
-      "Forgot recovery method?": [
-        "忘記復原方法?"
-      ],
       "Generate new recovery phrase": [
         "生成新的還原短語"
       ],
@@ -1844,12 +1841,124 @@
         "優惠不再提供"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 且 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } 儲存空間"
+      ],
+      "1 user account": [
+        "1 使用者帳號"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間: 40x 您目前的方案"
+      ],
+      "6 user accounts": [
+        "6 位使用者帳號"
+      ],
+      "Admin panel to manage your family": [
+        "管理員面板以管理您的家庭"
+      ],
+      "Advanced account protection": [
+        "進階的帳號保護"
+      ],
+      "Easily add or remove users": [
+        "輕鬆新增或移除使用者"
+      ],
+      "One-time payment, lifetime deal": [
+        "一次付款，終身方案"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Password health alerts": [
+        "密碼堅固性警示"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Unlimited folders, labels and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "無上限登入、信用卡、 hide-my-email 別名和更多"
+      ],
       "Use your own email domain": [
         "使用您的電子郵件網域"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "單次收費 ${ amount }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "1個月之後續訂 ${ regularAmount }。"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "暢遊網路，保護隱私。提供 110 多個國家 8,500 多台伺服器、10 個裝置、高速串流、廣告阻擋和惡意軟體防護、VPN 加速器等功能。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "於全部裝置安全登入。包和無限hide-my-email別名，共享，整合雙重驗證，${ DARK_WEB_MONITORING_NAME }及更多。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含${ addresses }電子郵件地址,支援自訂電子郵件網域,無限hide-my-email別名及更多"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含 15 電子郵件地址、支援自訂電子郵件網域、無限hide-my-email別名及更多"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於全部的 ${ BRAND_NAME } 服務。"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 的總儲存空間"
+      ],
+      "3 TB data storage": [
+        "3 TB 的總儲存空間"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "存取 15,000+ 臺伺服器，分布於 120+ 個國家"
+      ],
+      "Access advanced AI models": [
+        "存取進階 AI 模型"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版服 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "攔截廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證機制"
+      ],
+      "Connect 10 devices at once": [
+        "同時連線 10 臺裝置"
+      ],
+      "Individual accounts for 6 users": [
+        "給 6 位使用者的個人帳戶"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     },
     "Billing cycle": {
@@ -4141,6 +4250,14 @@
         "已有超過 50,000 間組織受益於 ${ BRAND_NAME } 的高安全性，快加入我們的行列吧。"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "展開版本紀錄"
+      ],
+      "Priority support": [
+        "優先支援"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/月"
@@ -5307,9 +5424,19 @@
         "(無標題)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB 的總儲存空間"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "您帳號的好處"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "儲存空間由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 的家庭成員共享。"
       ]
     },
     "familyOffer_2023:Action": {
@@ -5336,6 +5463,11 @@
       ],
       "View invitation": [
         "檢視邀請"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "多達 6 位使用者"
       ]
     },
     "familyOffer_2023:Error": {
@@ -5540,6 +5672,17 @@
       ],
       "Set family name": [
         "設定家庭名稱"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含在 65 個以上的國家的 2700 臺伺服器，可連結多達 10 個裝置，存取世界各地的串流服務，惡意程式防護與廣告攔截器，還有更多功能。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "包含對 3 組自訂電子郵件網域、90 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ]
     },
     "Feature": {
@@ -6559,9 +6702,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
-      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME }是您可信任的隱私，使用高強度的加密、開源、及受瑞士隱私法管理。我們相信無人能夠取得您的資料。我們的科技及企業定義更高一層的隱私。"
       ],
@@ -7225,9 +7365,6 @@
       "domain used": [
         "個網域已使用"
       ],
-      "Done! We sent a code to ${ destination }.": [
-        "完成！我們已將代碼傳送至 ${ destination }."
-      ],
       "Don’t know your recovery phrase?": [
         "無法存取您的復原詞彙?"
       ],
@@ -7344,12 +7481,6 @@
       ],
       "Enter the code from your authenticator app": [
         "輸入驗證應用程式中的驗證代碼"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "輸入傳送到您的手機號碼 ${ phone } 的代碼。"
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "輸入傳送到 ${ email } 的代碼。如果您在您的收件匣中找不到訊息，請檢查您的垃圾郵件資料夾。"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
@@ -7506,9 +7637,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "若您於其他地方登入，您將可以${ signedInPasswordResetLink }。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
@@ -7921,9 +8049,6 @@
       "On": [
         "開"
       ],
-      "Once you reset your password:": [
-        "一旦您重設您的密碼："
-      ],
       "Open source": [
         "開放原始碼"
       ],
@@ -8031,9 +8156,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "請檢查您的檔案，或試試我們的 ${ csvTemplateButton }。"
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "請輸入與您的帳號關連的12字復原短語。"
       ],
       "Please fill in all required fields.": [
         "請填寫所有必填的欄位"
@@ -8653,9 +8775,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "無法驗證復原檔案的簽章。請聯絡我們。"
       ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "很遺憾，此帳號未有儲存任何復原方法。"
-      ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "由您的身分識別者產生的唯一 ID，形式通常是一個包含身分提供者名稱的 URL (範例：https://idp.example.com/XXXXX)。"
       ],
@@ -8788,9 +8907,6 @@
       "Want to learn more?": [
         "點擊瞭解更多"
       ],
-      "Warning:": [
-        "警告："
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "我們建議您使用正版 ${ VPN_APP_NAME } 應用程式。"
       ],
@@ -8820,9 +8936,6 @@
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我們建議於強制啟用雙重驗證前通知組織成員為帳號設定雙重驗證"
-      ],
-      "We recommend using your recovery phrase instead.": [
-        "我們建議您使用你的復原短語取代它。"
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "我們在您信任的裝置上妥善保管復原金鑰，以防發生資料丟失"
@@ -8859,12 +8972,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "我們將發送一個重設代碼到 ${ boldValue }。"
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "我們將會傳送重設代碼到您先前所提供的電郵位址。"
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "我們將會傳送重設代碼到您先前所提供的手機號碼。"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "功能停用時，即可防止在您不知情的狀況下，圖像檔案意外載入至您的裝置。"
@@ -9847,9 +9954,6 @@
       ],
       "City": [
         "縣市"
-      ],
-      "Code": [
-        "代碼"
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
@@ -10984,9 +11088,6 @@
       ],
       "Pay invoice": [
         "繳付帳單"
-      ],
-      "perform a password reset from your active session": [
-        "從您目前的作業階段採取密碼重設"
       ],
       "Privacy policy": [
         "隱私權政策"
@@ -15389,6 +15490,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 個使用者"
+      ],
+      "All paid Mail and Calendar features": [
+        "所有付費郵件與行事曆功能"
+      ],
+      "High speed VPN": [
+        "高速 VPN"
+      ],
       "Highest VPN speed": [
         "業界最高 VPN 速率"
       ],
@@ -15401,8 +15514,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "進階 ${ appName1 }、${ appName2 } 與 ${ appName3 }"
       ],
+      "Premium early access": [
+        "進階版搶先體驗"
+      ],
+      "Secure cloud storage": [
+        "安全的雲端儲存空間"
+      ],
       "Secure streaming": [
         "安全的串流"
+      ],
+      "Support online privacy": [
+        "支援線上隱私"
       ]
     },
     "specialoffer: Footer": {
@@ -15443,17 +15565,71 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n }個月"
+      ],
       "/ month": [
         "/ 月"
       ],
       "/month": [
         "/個月"
       ],
+      "1 year": [
+        "1年"
+      ],
+      "15 months": [
+        "15個月"
+      ],
+      "2 years": [
+        "2 年"
+      ],
+      "30 months": [
+        "30個月"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "為期 1 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "12 個月的費用為${ amount }"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "為期 15 個月收費 ${ amount }"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "為期 24 個月收費 ${ amount }"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30 個月的費用為${ amount }"
+      ],
       "Get the deal": [
         "取得優惠"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "2年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }(${ discount }% 折扣)續訂"
+      ],
       "Save ${ discount }%": [
         "省下 ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "長達 1 個月的標準價 ${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "長達 12 個月的標準價 ${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15 個月的原價 ${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "長達 24 個月的標準價 ${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30 個月的原價 ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特別優惠適用於最的初兩年。"
       ]
     },
     "specialoffer: Title": {
@@ -15477,6 +15653,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取被攔截的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、每個使用者 10 個 VPN 連線、全球影音串流服務、惡意軟體與廣告攔截器等。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取攔截的內容並進行私密瀏覽。包含 60 多個國家的 1700 臺伺服器、最高的 VPN 速度、10 個 VPN 連線、全球串流影音服務以及惡意軟體與廣告攔截器等。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "我們所有具有最高限制的進階版服務：100 組電子郵件位址、支援 10 組自訂網域、無限制的隱藏 hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 3 個自訂電子郵件網域、15 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "非常適合家庭或小型團隊，每個人都可以擁有自己的收件匣與別名。需要自訂網域。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "免費取得我們未來釋出的所有新隱私服務的付費版本，以及對所有未來功能和產品的搶先體驗。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ]
     },
     "Spotlight": {
@@ -16610,6 +16809,20 @@
         "每月每位用戶"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "於您全部的裝置創建安全登入的詳細資料。包含無限別名、20個保管庫、組合雙重驗證、信用卡自動填入及更多。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含於65+國家的2950+伺服器，連接最多10臺裝置，存取全球影音串流服務和惡意軟體、廣告攔截程式，及更多。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "位址"
@@ -17356,9 +17569,6 @@
       "Forgot password": [
         "忘記密碼"
       ],
-      "Forgot recovery method": [
-        "忘記復原方法"
-      ],
       "Forward and auto-reply": [
         "轉寄及自動回覆"
       ],
@@ -17571,9 +17781,6 @@
       ],
       "No need to empty the trash": [
         "不用清空垃圾桶"
-      ],
-      "No recovery method": [
-        "沒有復原方法"
       ],
       "Notifications": [
         "通知"

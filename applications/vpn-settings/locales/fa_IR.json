@@ -101,9 +101,6 @@
       "Connected": [
         "متصل"
       ],
-      "Contact support": [
-        "تماس با پشتیبانی"
-      ],
       "Contact us": [
         "تماس با ما"
       ],
@@ -3105,9 +3102,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } به اجازه شما برای ${ enableDesktopNotifications } نیاز دارد."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } اگر ادامه دهید تمام داده های رمزگذاری شده موجود در حساب خود را از دست میدهید."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } تقویم جدید",
         "${ calendarsToBeCreatedCount } تقویم جدید"
@@ -3347,9 +3341,6 @@
         "دامنه استفاده شد",
         "دامنه استفاده شد"
       ],
-      "Done! We sent a code to ${ destination }.": [
-        "انجام شد! ما یک کد به ${ destination } ارسال کردیم."
-      ],
       "Downgrade": [
         "تنزل"
       ],
@@ -3382,12 +3373,6 @@
       ],
       "Enter the code from your authenticator app": [
         "کد سامانه تایید کننده را وارد نمایید"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "کدی که به شماره تلفن ${ phone } شما فرستاده شد را وارد کنید."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "کدی که به ${ email } فرستاده شد را وارد کنید. اگر نمی‌توانید پیام را در صندوق ورودی پیدا کنید، لطفا پوشه هرزنامه خود را بررسی کنید."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "اعتبارنامه‌های حساب رایانامه‌ای که می‌خواهید از آن درون‌برد کنید را وارد نمایید."
@@ -3618,9 +3603,6 @@
       "per month, billed at ${ price }": [
         "به ازای هر ماه ${ price }"
       ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "لطفاً عبارت بازیابی ١٢ واژه‌ای مرتبط با حساب خود را وارد نمایید."
-      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "لطفاً از آن مکانی امن نگهداری کنید. اگر رمزعبور خود را بازیابی کنید، برای دسترسی به حساب خود و رمزگشایی اطلاعاتتان به آن نیاز خواهید داشت."
       ],
@@ -3845,9 +3827,6 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "اعتبار سنجی امضای فایل بازیابی ممکن نیست. لطفا با پشتیبانی تماس بگیرید."
       ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "متاسفانه هیچ روش بازیابی برای این حساب ذخیره نشده است."
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "تا زمانی که از حساب خود خارج نشوید یا گذرواژه خود را تغییر ندهید، نشست شما فعال خواهد ماند. نشست‌ها پس از 60 روز عدم فعالیت منقضی می‌شوند."
       ],
@@ -3890,14 +3869,8 @@
       "Want to learn more?": [
         "می‌خواهید بیشتر بدانید؟"
       ],
-      "Warning:": [
-        "هشدار:"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "توصیه میکنیم درصورت امکان از برنامه های رسمی ${ VPN_APP_NAME } استفاده کنید."
-      ],
-      "We recommend using your recovery phrase instead.": [
-        "پیشنهاد می‌کنیم به‌جای آن از عبارت بازیابی خود استفاده کنید."
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "ما برای جلوگیری شما از از دست دادن داده های شما اطلاعات بازیابی را به طور ایمن بر روی دستگاه قابل اعتماد شما ذخیر می کنیم"
@@ -3919,12 +3892,6 @@
       ],
       "Welcome": [
         "خوش آمدید"
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "برای بازیابی حسابتان، ما یک کد بازنشانی به آدرس ایمیل بازیابی که ارائه کرده‌اید ارسال می‌کنیم."
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "برای بازیابی حسابتان، ما یک کد بازنشانی به شماره تلفن بازیابی که ارائه کرده‌اید ارسال می‌کنیم."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "هنگامی که اشتراک شما تمدید می‌شود، قبل از اینکه روش پرداخت فوق را شارژ کنیم، اعتبارات موجود را اعمال خواهیم کرد."
@@ -4223,9 +4190,6 @@
       ],
       "City": [
         "شهر"
-      ],
-      "Code": [
-        "کد"
       ],
       "Code is 6 digits without spaces": [
         "کد ۶ رقمی بدون فاصله می‌باشد"
@@ -6990,9 +6954,6 @@
       ],
       "Next": [
         "بعدی"
-      ],
-      "No recovery method": [
-        "هیچ روش بازیابی"
       ],
       "Open": [
         "بازگشایی"
