@@ -266,17 +266,18 @@ export function isCryptocurrencyArguments(args: unknown): args is Cryptocurrency
     );
 }
 
-export type ToolResultData = WebSearchToolResultData | ToolResultError;
+export type ToolResultData = WebSourceToolResultData | ToolResultError;
 
 export function isToolResultData(data: unknown): data is ToolResultData {
-    return isWebSearchToolResultData(data) || isToolResultError(data);
+    return isWebSourceToolResultData(data) || isToolResultError(data);
 }
 
-export type WebSearchToolResultData = {
+// Shared result shape returned by web_search and web_extract tool calls.
+export type WebSourceToolResultData = {
     results: SearchItem[];
 };
 
-export function isWebSearchToolResultData(data: unknown): data is WebSearchToolResultData {
+export function isWebSourceToolResultData(data: unknown): data is WebSourceToolResultData {
     // prettier-ignore
     return (
         typeof data === 'object' &&
