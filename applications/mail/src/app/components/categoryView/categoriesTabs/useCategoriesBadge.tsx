@@ -16,16 +16,20 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
 
     const showBadge = useFlag('CategoriesUnseenBadge');
 
-    // The counter is displayed if the setting is enabled or if the tab is active
-    const shouldShowCounter = mailSettings.MailCategoryViewCountersEnabled || tabState === TabState.ACTIVE;
+    if (!showBadge) {
+        return { shouldShowCounter: false, shouldShowNewBadge: false };
+    }
 
-    // The badge is displayed if the category folder exists and has a non-null LastUnseenMessageEventID
+    const countersEnabled = mailSettings?.MailCategoryViewCountersEnabled ?? false;
+    const isActive = tabState === TabState.ACTIVE;
+
     const categoryFolder = systemFolders?.find((folder) => folder.ID === category.id);
-    const eventID = categoryFolder?.LastUnseenMessageEventID ?? null;
-    const shouldShowNewBadge = eventID !== null && tabState !== TabState.ACTIVE;
+    const hasUnseen = (categoryFolder?.LastUnseenMessageEventID ?? null) !== null;
 
     return {
-        shouldShowCounter: shouldShowCounter && showBadge,
-        shouldShowNewBadge: shouldShowNewBadge && showBadge,
+        // Counter shows when counters are enabled, or for the active tab
+        shouldShowCounter: countersEnabled || isActive,
+        // Unseen badge shows only when counters are off, the tab is inactive, and there's an unseen event
+        shouldShowNewBadge: !countersEnabled && !isActive && hasUnseen,
     };
 };
