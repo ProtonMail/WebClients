@@ -26,21 +26,30 @@ export const getCurrentTab = (): WindowHandle => ({
 /**
  * Creates a {@link WindowHandle} for a new tab. Falls back to the current tab.
  *
- * @example
+ * When `url` is provided the tab opens directly to that URL, avoiding the
+ * `about:blank` → navigate two-step that ad-blockers flag as a popup redirect.
+ * Pass a URL whenever it can be computed synchronously (i.e. before any async
+ * work). Omit it only when the URL is not yet known at the time the window
+ * must be opened (e.g. the URL depends on an in-flight API call).
+ *
+ * @example — URL known upfront (preferred)
+ *
+ * getNewWindow(url.toString());
+ *
+ * @example — URL unknown at open time (async gap)
  *
  * const w = getNewWindow();
  *
  * try {
  *     const result = await somethingAsynchronous();
- *     w.handle.location = new URL(result);
+ *     w.handle.location.assign(new URL(result));
  * } catch (e) {
  *     reportError(e);
- *     // Close the window if the call fails (edge case)
  *     w.close();
  * }
  */
-export const getNewWindow = (): WindowHandle => {
-    const handle = window.open('', '_blank');
+export const getNewWindow = (url?: string): WindowHandle => {
+    const handle = window.open(url ?? '', '_blank');
 
     if (!handle) {
         // In case we weren't able to open a new window,
@@ -48,6 +57,10 @@ export const getNewWindow = (): WindowHandle => {
 
         // eslint-disable-next-line no-console
         console.warn('Failed to open new window, using current tab');
+
+        if (url) {
+            window.location.assign(url);
+        }
 
         return getCurrentTab();
     }
