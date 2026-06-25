@@ -12,8 +12,20 @@ export enum Status {
 let notifications: Notification[] = [];
 
 export const hasNotificationSupport = (): boolean => 'Notification' in window;
-export const hasPermission = (): boolean => Notification.permission === Status.GRANTED;
-export const hasDenied = (): boolean => Notification.permission === Status.DENIED;
+
+export const hasPermission = (): boolean => {
+    if (hasNotificationSupport()) {
+        return Notification.permission === Status.GRANTED;
+    }
+    return false;
+};
+
+export const hasDenied = (): boolean => {
+    if (hasNotificationSupport()) {
+        return Notification.permission === Status.DENIED;
+    }
+    return false;
+};
 
 const addNotification = (notification: Notification) => {
     notifications.push(notification);
@@ -70,27 +82,27 @@ export const request = async (onGranted: () => void = noop, onDenied: () => void
         return;
     }
 
-    const permission = await Notification.requestPermission();
+    if (hasNotificationSupport()) {
+        const permission = await Notification.requestPermission();
 
-    if (permission === Status.GRANTED) {
-        onGranted();
-    } else {
-        onDenied();
+        if (permission === Status.GRANTED) {
+            onGranted();
+        } else {
+            onDenied();
+        }
     }
 };
 
 const createWebNotification = (title: string, options?: NotificationOptions, onClick?: () => void) => {
-    if (!isEnabled()) {
-        return;
+    if (isEnabled()) {
+        const notification = new Notification(title, options);
+
+        addNotification(notification);
+
+        setupNotificationHandlers(notification, onClick);
+
+        return notification;
     }
-
-    const notification = new Notification(title, options);
-
-    addNotification(notification);
-
-    setupNotificationHandlers(notification, onClick);
-
-    return notification;
 };
 
 export const createElectronNotification = (payload: ElectronNotification) => {
