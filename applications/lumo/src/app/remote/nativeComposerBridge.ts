@@ -15,7 +15,7 @@ import {
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
 
-import { type ModelTier, type ResponseMode, getSelectedModelTier } from '../providers/ModelTierProvider';
+import { type ModelTier, type ResponseMode, DEFAULT_MODEL_TIER, DEFAULT_RESPONSE_MODE, getSelectedModelTier } from '../providers/ModelTierProvider';
 import { LUMO_API_ERRORS } from '../types';
 
 /**
@@ -223,9 +223,9 @@ class NativeComposerApi {
     private state: State = {
         isGhostModeEnabled: false,
         lumoMode: LumoMode.Idle,
-        modelTier: 'fast',
-        model: 'lumo-lite',
-        responseMode: 'fast',
+        modelTier: 'thinking',
+        model: getSelectedModelTier(DEFAULT_MODEL_TIER),
+        responseMode: DEFAULT_RESPONSE_MODE,
         isCreateImageEnabled: false,
         attachedFiles: [],
         isWebSearchEnabled: false,

@@ -40,8 +40,6 @@ export const ModelModeDropdown = () => {
     const responseModeOptions = getResponseModeOptions();
     const selectedModelTier = getSelectedModelTier(modelTier);
     const currentModelOption = modelOptions.find((option) => option.tier === selectedModelTier) ?? modelOptions[0];
-    const currentResponseModeOption =
-        responseModeOptions.find((option) => option.mode === responseMode) ?? responseModeOptions[0];
 
     useNativeComposerModelTierApi(modelTier, setModelTier, responseMode, setResponseMode);
 
@@ -88,9 +86,6 @@ export const ModelModeDropdown = () => {
             >
                 <span className={clsx('font-medium', !isSmallScreen && 'hidden sm:block')}>
                     {currentModelOption.getLabel()}
-                </span>
-                <span className="model-mode-trigger-badge inline-flex items-center py-0.5 px-1.5 rounded-full text-xs text-semibold text-nowrap">
-                    {currentResponseModeOption.getShortLabel()}
                 </span>
                 <IcChevronDown size={3} className="color-weak" />
             </Button>

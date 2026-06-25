@@ -5,6 +5,9 @@ import { ModelTierLimitsSync } from './ModelTierLimitsSync';
 export type ModelTier = 'auto' | 'lumo-lite' | 'lumo-max';
 export type ResponseMode = 'fast' | 'thinking';
 
+export const DEFAULT_MODEL_TIER: ModelTier = 'lumo-max';
+export const DEFAULT_RESPONSE_MODE: ResponseMode = 'thinking';
+
 interface ModelTierContextType {
     modelTier: ModelTier;
     setModelTier: (mode: ModelTier) => void;
@@ -20,8 +23,8 @@ interface ModelTierProviderProps {
 }
 
 export const ModelTierProvider = ({ children }: ModelTierProviderProps) => {
-    const [modelTier, setModelTierState] = useState<ModelTier>('lumo-lite');
-    const [responseMode, setResponseModeState] = useState<ResponseMode>('fast');
+    const [modelTier, setModelTierState] = useState<ModelTier>(DEFAULT_MODEL_TIER);
+    const [responseMode, setResponseModeState] = useState<ResponseMode>(DEFAULT_RESPONSE_MODE);
 
     const setModelTier = useCallback((mode: ModelTier) => {
         setModelTierState(mode);

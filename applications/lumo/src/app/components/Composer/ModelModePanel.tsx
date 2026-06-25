@@ -24,7 +24,6 @@ export interface ModelModeOption {
 export interface ResponseModeOption {
     mode: ResponseMode;
     getLabel: () => string;
-    getShortLabel: () => string;
     getDescription: () => string;
 }
 
@@ -32,13 +31,11 @@ export const getResponseModeOptions = (): ResponseModeOption[] => [
     {
         mode: 'fast',
         getLabel: () => c('collider_2025: Label').t`Fast mode`,
-        getShortLabel: () => c('collider_2025: Label').t`Fast`,
         getDescription: () => c('collider_2025: Description').t`Quick answers, less waiting`,
     },
     {
         mode: 'thinking',
         getLabel: () => c('collider_2025: Label').t`Thinking mode`,
-        getShortLabel: () => c('collider_2025: Label').t`Thinking`,
         getDescription: () => c('collider_2025: Description').t`More thorough answers, but can take longer`,
     },
 ];

@@ -115,6 +115,18 @@ export function isModelTierSelectable(
     return !isModelTierLimitExhausted(modelTier, limits);
 }
 
+/** Default model tier: max when selectable, otherwise lite. */
+export function resolveDefaultModelTier(
+    limits: LumoRemainingLimits | null,
+    options?: ModelTierAvailabilityOptions
+): UsageModelTier {
+    if (isModelTierSelectable('lumo-max', limits, options)) {
+        return 'lumo-max';
+    }
+
+    return 'lumo-lite';
+}
+
 /** Prefer the current model when available; otherwise switch to the other tier if it has quota. */
 export function resolveAvailableModelTier(
     currentTier: ModelTier,

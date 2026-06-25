@@ -1,4 +1,16 @@
-import { resolveAvailableModelTier, shouldShowModelSwitchSuggestion } from './usageLimitsStore';
+import { resolveAvailableModelTier, resolveDefaultModelTier, shouldShowModelSwitchSuggestion } from './usageLimitsStore';
+
+describe('resolveDefaultModelTier', () => {
+    it('prefers max when it is selectable', () => {
+        expect(resolveDefaultModelTier({ lite: 10, max: 20 })).toBe('lumo-max');
+        expect(resolveDefaultModelTier(null)).toBe('lumo-max');
+    });
+
+    it('falls back to lite when max is unavailable', () => {
+        expect(resolveDefaultModelTier({ lite: 10, max: 20 }, { isMaxAvailable: false })).toBe('lumo-lite');
+        expect(resolveDefaultModelTier({ lite: 10, max: 0 })).toBe('lumo-lite');
+    });
+});
 
 describe('resolveAvailableModelTier', () => {
     it('keeps the current model when it has quota', () => {
