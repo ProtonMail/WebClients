@@ -140,11 +140,16 @@ function getPhaseLabel(phase: ThinkingPhase, seed: string, active: boolean): str
 function joinActions(actions: string[]): string {
     if (actions.length === 0) return '';
     if (actions.length === 1) return actions[0];
+
+    const firstAction = actions[0];
+    const secondAction = actions[1];
     if (actions.length === 2) {
-        return c('collider_2025:Reasoning').t`${actions[0]} and ${actions[1]}`;
+        return c('collider_2025:Reasoning').t`${firstAction} and ${secondAction}`;
     }
-    return c('collider_2025:Reasoning')
-        .t`${actions.slice(0, -1).join(', ')} and ${actions[actions.length - 1]}`;
+
+    const leadingActions = actions.slice(0, -1).join(', ');
+    const lastAction = actions[actions.length - 1];
+    return c('collider_2025:Reasoning').t`${leadingActions} and ${lastAction}`;
 }
 
 function buildCompleteActions(steps: ThinkingStep[], seed: string): string[] {
