@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,10 +6,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
+import { getMessageBlocks } from '../../../../../messageHelpers';
 import type { Message } from '../../../../../types';
 import { useNativeComposerVisibilityApi } from '../../../../Composer/hooks/useNativeComposerVisibilityApi';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import { ToolCallInfo } from './ToolCallInfo';
+import { extractSearchResults } from './toolCallUtils';
 
 interface WebSearchSourcesViewProps {
     message: Message;
@@ -21,6 +23,10 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
     useNativeComposerVisibilityApi({ isBlocking: true });
     const [currentLink, setCurrentLink] = useState<string>('');
     const linkWarningModal = useModalStateObject();
+    const searchResults = useMemo(
+        () => extractSearchResults(getMessageBlocks(message)),
+        [message.blocks, message.toolCall, message.toolResult]
+    );
 
     const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
@@ -46,11 +52,7 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
                     </Button>
                 </div>
                 <div className="flex flex-1 overflow-y-auto">
-                    <ToolCallInfo
-                        toolCall={message.toolCall}
-                        toolResult={message.toolResult}
-                        handleLinkClick={handleLinkClick}
-                    />
+                    {searchResults && <ToolCallInfo results={searchResults} handleLinkClick={handleLinkClick} />}
                 </div>
             </div>
             {linkWarningModal.render && (
