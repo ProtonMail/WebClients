@@ -134,9 +134,6 @@
       "Connected": [
         "Povezano"
       ],
-      "Contact support": [
-        "Kontaktiraj podršku"
-      ],
       "Contact us": [
         "Kontaktirajte nas"
       ],
@@ -343,9 +340,6 @@
       ],
       "Forgot password?": [
         "Zaboravili ste lozinku?"
-      ],
-      "Forgot recovery method?": [
-        "Zaboravili ste metodu oporavka?"
       ],
       "Generate new recovery phrase": [
         "Generirajte novu frazu za oporavak"
@@ -3764,9 +3758,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Izgubit ćete pristup svim trenutnim šifriranim podacima na svom korisničkom računu ako nastavite."
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe pomoćnik za pisanje"
       ],
@@ -4092,12 +4083,6 @@
       ],
       "Enter key manually instead": [
         "Ručno unesite ključ"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "Unesite kôd poslan na vaš broj telefona ${ phone }."
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Unesite kôd koji je poslan na ${ email }. Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Unesite podatke za prijavu računa e-pošte s kojeg želite uvesti."
@@ -4425,9 +4410,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Molimo, provjerite svoju datoteku ili pokušajte koristiti naš ${ csvTemplateButton }."
       ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "Molimo, unesite frazu za oporavak od 12 riječi povezanu s Vašim korisničkim računom."
-      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Molimo, čuvajte ju na sigurnom. Trebat će Vam za pristup vašem korisničkom računu i dešifriranje Vaših podataka u slučaju resetiranja lozinke."
       ],
@@ -4689,17 +4671,11 @@
       "Total VPN connections": [
         "Ukupno VPN veza"
       ],
-      "trusted device": [
-        "pouzdani uređaj"
-      ],
       "Unable to check gateways monitoring current status.": [
         "Nije moguće provjeriti trenutačno stanje nadzora pristupnika."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nije moguće provjeriti potpis datoteke za oporavak. Molimo kontaktirajte podršku."
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "Nažalost, za ovaj račun nije postavljen način oporavka."
       ],
       "Unknown event type": [
         "Nepoznata vrsta događaja"
@@ -4769,9 +4745,6 @@
       ],
       "Want to learn more?": [
         "Želite li saznati više?"
-      ],
-      "Warning:": [
-        "Upozorenje:"
       ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
         "Pratimo tamni web za slučajeve u kojima su vaši osobni podaci (kao što je e-pošta ili lozinka korištena na web-mjestu treće strane) procurili ili su kompromitirani."
@@ -5163,9 +5136,6 @@
       ],
       "City": [
         "Grad"
-      ],
-      "Code": [
-        "Kôd"
       ],
       "Code is 6 digits without spaces": [
         "Kod se sastoji od 6 znamenki bez razmaka."
@@ -6827,14 +6797,6 @@
     "pass_signup_2024: Info": {
       "Activity log": [
         "Zapisnici aktivnosti"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Svi vaši postojeći podaci** (e-pošta, događaji, kontakti, datoteke, ${ PASS_APP_NAME } stavke itd.) **bit će zaključani** i mogu se otključati samo s Vašom **starom lozinkom**."
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Svi Vaši postojeći podaci** (e-pošta, događaji, kontakti, datoteke, ${ PASS_APP_NAME } stavke itd.) **bit će zaključani** i mogu se otključati samo s Vašom **frazom za oporavak** ili Vašom **starom lozinkom**."
       ]
     },
     "passwordless": {
@@ -8911,9 +8873,6 @@
       "Find email or username": [
         "Adresa e-pošte ili korisničko ime"
       ],
-      "Forgot recovery method": [
-        "Zaboravili ste metodu oporavka"
-      ],
       "Gateway": [
         "Pristupnik"
       ],
@@ -9009,9 +8968,6 @@
       ],
       "Night theme": [
         "Noćna tema"
-      ],
-      "No recovery method": [
-        "Nema načina za oporavak"
       ],
       "Open": [
         "Otvori"
