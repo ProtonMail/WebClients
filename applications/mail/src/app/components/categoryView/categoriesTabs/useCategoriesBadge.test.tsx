@@ -118,6 +118,18 @@ describe('useCategoriesBadge', () => {
             expect(result.current.shouldShowNewBadge).toBe(false);
         });
 
+        it('is false when the mail category view counter setting is enabled', () => {
+            jest.mocked(useSystemFolders).mockReturnValue([[folderWithUnseen], false]);
+            jest.mocked(useMailSettings).mockReturnValue([
+                { ...DEFAULT_MAIL_SETTINGS, MailCategoryViewCountersEnabled: true },
+                false,
+            ]);
+
+            const { result } = renderHook(() => useCategoriesBadge({ category, tabState: TabState.INACTIVE }));
+
+            expect(result.current.shouldShowNewBadge).toBe(false);
+        });
+
         it('is false when the folder has no unseen event', () => {
             jest.mocked(useSystemFolders).mockReturnValue([
                 [{ ...folderWithUnseen, LastUnseenMessageEventID: null }],
