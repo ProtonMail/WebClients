@@ -121,7 +121,7 @@ const prepareDriveImportFolder = async (drive: ProtonDriveClient): Promise<Drive
         NodeKey: folder.armoredKey,
         NodeHashKey: folder.armoredHashKey,
         SignatureAddress: folder.signatureEmail,
-        NodePassphraseClearText: folder.passphrase,
+        NodePassphraseClearText: folder.base64Passphrase,
         ...(folder.armoredExtendedAttributes !== undefined && { XAttr: folder.armoredExtendedAttributes }),
     };
 };
