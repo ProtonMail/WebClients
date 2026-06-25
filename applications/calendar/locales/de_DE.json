@@ -1471,6 +1471,12 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -1485,6 +1491,9 @@
       ],
       "Emails": [
         "E-Mails"
+      ],
+      "Errors": [
+        "Fehler"
       ],
       "Estimated size": [
         "Geschätzte Größe"
@@ -1501,6 +1510,9 @@
       "Migrate": [
         "Migrieren"
       ],
+      "Migrated": [
+        "Migriert"
+      ],
       "Migration status": [
         "Migrationsstatus"
       ],
@@ -1510,14 +1522,26 @@
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
       ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
+      "Pending": [
+        "Ausstehend"
+      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Wähle genau aus, was du migrieren möchtest. Dies gilt für alle Benutzer der Organisation."
+      ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
+      "Size": [
+        "Größe"
       ],
       "Status": [
         "Status"
@@ -1530,6 +1554,9 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -10106,6 +10133,9 @@
       ],
       "Search for name or email": [
         "Nach Namen oder E-Mail-Adressen suchen"
+      ],
+      "Search for users or addresses": [
+        "Nach Benutzern oder Adressen suchen"
       ],
       "Search parent folder": [
         "Übergeordneten Ordner durchsuchen"
