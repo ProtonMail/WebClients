@@ -12,7 +12,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useDispatch } from '@proton/components/containers/filters/useDispatch';
+import { useFilterDispatch } from '@proton/components/containers/filters/useFilterDispatch';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
@@ -117,7 +117,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
     const [folders = [], loadingFolders] = useFolders();
     const api = useApi();
     const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useFilterDispatch();
     const [loading, withLoading] = useLoading();
     const isEdit = !!filter?.ID;
 
