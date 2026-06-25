@@ -5,7 +5,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
 import { FileIcon, TableCell, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
-import { IcTv } from '@proton/icons/icons/IcTv';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -14,13 +13,12 @@ import { useInvitationsActions, useLinkPath } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
 import SignatureIcon from '../../SignatureIcon';
-import type { DeviceItem } from '../Devices/Devices';
 import type { DriveItem } from '../Drive/Drive';
 import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
 import type { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
 import type { TrashItem } from '../Trash/Trash';
 import ShareIcon from './ShareIcon';
-import { getDeviceIconText, getLinkIconText } from './utils';
+import { getLinkIconText } from './utils';
 
 const { LocationCell: LocationCellBase, SizeCell: SizeCellBase, NameCell: NameCellBase, TimeCell } = Cells;
 
@@ -63,32 +61,10 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
     );
 };
 
-export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
-    const iconText = getDeviceIconText(item.name);
-
-    return (
-        <TableCell
-            className="m-0 flex items-center flex-nowrap flex-1 filebrowser-list-device-name-cell"
-            data-testid="column-name"
-        >
-            <IcTv alt={iconText} className="mr-2" />
-            <NameCellBase name={item.name} />
-        </TableCell>
-    );
-};
-
 export const ModifiedCell = ({ item }: { item: DriveItem }) => {
     return (
         <TableCell className="flex items-center m-0 w-1/6" data-testid="column-modified">
             <TimeCell time={item.fileModifyTime} />
-        </TableCell>
-    );
-};
-
-export const ModifiedCellDevice = ({ item }: { item: DeviceItem }) => {
-    return (
-        <TableCell className="flex items-center m-0 w-1/6" data-testid="column-modified">
-            <TimeCell time={item.modificationTime} />
         </TableCell>
     );
 };

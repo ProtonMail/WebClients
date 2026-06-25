@@ -13,15 +13,13 @@ import type {
 import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
-import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/interfaces/drive/volume';
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
-import type { DecryptedLink, EncryptedLink } from '../_links';
-import type { Photo } from '../_photos';
+import type { EncryptedLink } from '../_links';
 import type { DriveFileRevision } from '../_revisions';
 import { ShareType, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type {
@@ -313,38 +311,6 @@ export const shareUrlPayloadToShareUrlLEGACY = (shareUrl: ShareURLPayload): Shar
         srpModulusID: shareUrl.SRPModulusID,
         maxAccesses: shareUrl.MaxAccesses,
         permissions: shareUrl.Permissions,
-    };
-};
-
-export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
-    return {
-        linkId: photo.LinkID,
-        captureTime: photo.CaptureTime,
-        hash: photo.Hash ?? undefined,
-        contentHash: photo.ContentHash ?? undefined,
-        tags: photo.Tags,
-        relatedPhotos: photo.RelatedPhotos?.map((relatedPhoto) => ({
-            linkId: relatedPhoto.LinkID,
-            captureTime: relatedPhoto.CaptureTime,
-            hash: relatedPhoto.Hash ?? undefined,
-            contentHash: relatedPhoto.ContentHash ?? undefined,
-        })),
-    };
-};
-
-export const decryptedLinkToPhotos = (link: DecryptedLink, relatedPhotoLinks: DecryptedLink[]): Photo => {
-    return {
-        linkId: link.linkId,
-        captureTime: link?.activeRevision?.photo?.captureTime ?? link.createTime,
-        hash: link?.activeRevision?.photo?.hash ?? undefined,
-        contentHash: link?.activeRevision?.photo?.contentHash,
-        tags: link.photoProperties?.tags ?? [],
-        relatedPhotos: relatedPhotoLinks.map((relatedPhotoLink) => ({
-            linkId: relatedPhotoLink.linkId,
-            captureTime: relatedPhotoLink?.activeRevision?.photo?.captureTime ?? relatedPhotoLink.createTime,
-            hash: relatedPhotoLink?.activeRevision?.photo?.hash ?? undefined,
-            contentHash: relatedPhotoLink?.activeRevision?.photo?.contentHash,
-        })),
     };
 };
 
