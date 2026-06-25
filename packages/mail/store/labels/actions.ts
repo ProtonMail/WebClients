@@ -12,7 +12,7 @@ import {
     updateLabel as updateLabelConfig,
     updateLastEventID,
 } from '@proton/shared/lib/api/labels';
-import type { Category, Label } from '@proton/shared/lib/interfaces';
+import { type Category, type Label, hasUnseenTracking } from '@proton/shared/lib/interfaces';
 
 import type { CategoriesState } from './index';
 import { categoriesActions, getCategory, selectCategories } from './index';
@@ -86,7 +86,7 @@ export const updateLastUnseenEventId = ({
 }): ThunkAction<Promise<void>, RequiredState & CategoriesState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
         const folder = selectCategories(getState()).value?.find((label) => label.ID === labelID);
-        if (!folder) {
+        if (!folder || !hasUnseenTracking(folder) || folder.LastUnseenMessageEventID === null) {
             return;
         }
 

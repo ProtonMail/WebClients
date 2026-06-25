@@ -18,6 +18,7 @@ import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import { TabBadge } from './TabBadge';
 import { TabState, categoryColorClassName } from './tabsInterface';
 import { useCategoriesBadge } from './useCategoriesBadge';
+import { useMarkCategorySeen } from './useMarkCategorySeen';
 
 interface Props {
     category: CategoryTab;
@@ -34,7 +35,9 @@ const navClasses: Record<TabState, string> = {
 export const Tab = ({ category, tabState }: Props) => {
     const { call } = useEventManager();
 
-    const { shouldShowCounter, shouldShowNewBadge, handleTabClick } = useCategoriesBadge({ tabState, category });
+    const { shouldShowCounter, shouldShowNewBadge } = useCategoriesBadge({ tabState, category });
+    const markCategorySeen = useMarkCategorySeen();
+
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const [refreshing, withRefreshing] = useLoading(false);
@@ -48,7 +51,7 @@ export const Tab = ({ category, tabState }: Props) => {
             sendReportCategoriesNav('tab', category.id);
         }
         sendReportCategoriesNav('tab', category.id);
-        handleTabClick();
+        markCategorySeen(category.id);
     };
 
     const navigateTo = setCategoryInUrl(category.id);
