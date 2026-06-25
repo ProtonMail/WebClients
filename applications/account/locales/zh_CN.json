@@ -801,9 +801,6 @@
       "Forgot password?": [
         "忘记密码？"
       ],
-      "Forgot recovery method?": [
-        "忘记恢复方法？"
-      ],
       "Generate": [
         "生成"
       ],
@@ -2483,12 +2480,139 @@
         "优惠不可用"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } 存储空间"
+      ],
+      "1 user account": [
+        "1 个账户"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 存储空间：您当前套餐的 40 倍"
+      ],
+      "6 user accounts": [
+        "6 个账户"
+      ],
+      "Admin panel to manage your family": [
+        "用于管理家人的管理员面板"
+      ],
+      "Advanced account protection": [
+        "高级账户保护"
+      ],
+      "Easily add or remove users": [
+        "轻松添加或移除用户"
+      ],
+      "One-time payment, lifetime deal": [
+        "一次性付款，终身有效"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Password health alerts": [
+        "密码健康警报"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Unlimited folders, labels and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "无限制登录、信用卡、Hide-my-email 别名等功能"
+      ],
       "Use your own email domain": [
         "个性化邮箱域名"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "按 ${ amount } 一次计费"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "次月起按 ${ regularAmount } 续费。"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "突破网络封锁，保护线上隐私，最多可通过 10 台设备连接全球逾 110 个国家超过 8500 台服务器，畅享全球流媒体服务，拦截恶意软件和广告，还有 VPN 加速器等更多功能等您体验。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "在所有设备上安全登录。包括无限制 Hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 Hide-my-email  别名等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 Hide-my-email 别名等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "使用加密云存储保护您的文件。包含在线文档编辑器、照片备份、版本历史记录、加密文件共享等功能。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "存储空间在所有 ${ BRAND_NAME } 服务之间共享"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 数据存储空间"
+      ],
+      "3 TB data storage": [
+        "3 TB 数据存储空间"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "访问遍布 120 多个国家/地区的 15,000+ 台服务器"
+      ],
+      "Access advanced AI models": [
+        "访问高级 AI 模型"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "包含 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
+      ],
+      "Block ads, trackers, and malware": [
+        "拦截广告、跟踪器和恶意软件"
+      ],
+      "Built-in 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
+      "Connect 10 devices at once": [
+        "同时连接 10 台设备"
+      ],
+      "Full chat history with easy search and favorites": [
+        "完整的聊天历史记录，支持轻松搜索和收藏"
+      ],
+      "Individual accounts for 6 users": [
+        "为 6 位用户提供独立账户"
+      ],
+      "Individual accounts for you and a partner": [
+        "为您和您的伴侣提供独立账户"
+      ],
+      "Stronger protection against cyber threats": [
+        "针对网络威胁提供更强有力的保护"
+      ],
+      "Unlimited daily chats": [
+        "每日无限制聊天"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "专为设备设计的 NetShield 功能，通过拦截广告、跟踪器和恶意软件来保护您的设备并提升浏览速度。"
       ]
     },
     "Billing cycle": {
@@ -5795,6 +5919,14 @@
         "为有定制需求的大型组织量身定制解决方案。"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "更长的版本历史"
+      ],
+      "Priority support": [
+        "优先支持"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/月"
@@ -7749,9 +7881,6 @@
       ]
     },
     "Error message": {
-      "Account is deleted or disabled": [
-        "账户已删除或已禁用"
-      ],
       "App currently unavailable": [
         "应用当前不可用"
       ],
@@ -7947,9 +8076,19 @@
         "您可以保存成功导出事件的 ICS 文件。"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB 总存储空间"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "您的账户福利"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "所有家人共用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的存储空间。"
       ]
     },
     "familyOffer_2023:Action": {
@@ -7982,6 +8121,11 @@
       ],
       "View invitation": [
         "查看邀请详情"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "最多 6 位用户"
       ]
     },
     "familyOffer_2023:Error": {
@@ -8231,6 +8375,17 @@
       ],
       "Set family name": [
         "设置家庭名称"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 Hide-my-email 别名、日历共享等功能的支持。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
     "Feature": {
@@ -9487,9 +9642,6 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } 将被设为默认日历"
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } 如果继续，您将无法访问您账户中的所有当前加密数据。"
-      ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } 企业套餐为您的团队提供所有所需的协作工具，使其在工作中高效且有条理，同时保护您的业务安全。"
       ],
@@ -10426,9 +10578,6 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "Data recoverable on this device": [
-        "此设备上的数据可能被恢复"
-      ],
       "Data recoverable with recovery phrase": [
         "通过恢复短语恢复数据"
       ],
@@ -10530,9 +10679,6 @@
       ],
       "Don't lose access to your premium features. Enable auto-renew today.": [
         "不要失去使用高级功能的机会。立即启用自动续订。"
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        "搞定！我们向 ${ destination } 发送了一个验证码。"
       ],
       "Don’t know your recovery phrase?": [
         "不知道您的恢复短语？"
@@ -10695,12 +10841,6 @@
       ],
       "Enter the code from your authenticator app": [
         "请输入身份验证应用中的验证码"
-      ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        "请输入发送至您手机号码 ${ phone } 的验证码。"
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "输入发送到${ email } 的验证码。如果您在收件箱中没有找到该邮件，请检查您的垃圾邮件文件夹。"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "请输入您要导入的邮箱账户的凭据。"
@@ -10992,9 +11132,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
-      ],
-      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
-        "如果您在其他地方登录，您可能可以使用 ${ signedInPasswordResetLink }。"
       ],
       "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
         "如果您在**其他浏览器**中登录了 ${ BRAND_NAME } 网页应用，则可以通过当前活动会话重置密码。"
@@ -11527,9 +11664,6 @@
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "当您的账户访问权限被授予后，他们可以访问您的**恢复**设置并为您**更改 ${ ACCOUNT_APP_NAME } 密码**！"
       ],
-      "Once you reset your password:": [
-        "当你重置密码后："
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才需要更改下列选项。"
       ],
@@ -11682,9 +11816,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "请检查您的文件，或尝试${ csvTemplateButton }。"
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        "请输入与您账户关联的 12 字恢复短语。"
       ],
       "Please fill in all required fields.": [
         "请填写所有必填项。"
@@ -12151,6 +12282,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用 ${ DRIVE_APP_NAME } 应用程序同步和管理文件。在 ${ DOCS_APP_NAME } 中创建和共享文档，并安全存储。一切尽在 ${ ios }、${ android } 和 ${ desktop }。"
       ],
+      "Synced from identity provider": [
+        "已从身份提供商同步"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro 推荐，评分 4.2 星（满分 5 星）"
       ],
@@ -12526,9 +12660,6 @@
       "Trial ends on ${ formattedPeriodEndDate }": [
         "试用期于 ${ formattedPeriodEndDate } 结束"
       ],
-      "trusted device": [
-        "可信设备"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "试用 ${ productName } 完全无风险 - 如果你因任何原因改变主意，你将获得全额退款。无任何问题。"
       ],
@@ -12552,9 +12683,6 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "很遗憾，此账户没有可用的恢复方式！"
-      ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        "很不幸，此账户没有设置恢复密码的方式。"
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "由身份供应商生成的唯一 ID，通常采用 URL 的形式，其中包含身份供应商的名称（如 https://idp.example.com/XXXXX）。"
@@ -12730,9 +12858,6 @@
       "Want to learn more?": [
         "想详细了解？"
       ],
-      "Warning:": [
-        "警告："
-      ],
       "Warning: deleting your account is permanent.": [
         "警告：删除账户为永久性操作。"
       ],
@@ -12781,14 +12906,8 @@
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我们建议在强制使用 2FA 之前通知组织成员并要求他们为其账户设置 2FA。"
       ],
-      "We recommend using your recovery phrase instead.": [
-        "我们建议您改用恢复短语。"
-      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "我们会将账户恢复信息安全地存储在您的可信设备上，避免数据意外丢失"
-      ],
-      "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
-        "我们在此浏览器中存储了一份备份文件，因为您在此 ${ deviceLink } 启用了数据恢复功能。如果备份文件有效，您将立即恢复对加密数据的完整或部分访问权限。"
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "我们强烈建议所有人启用通过恢复短语恢复。"
@@ -12831,12 +12950,6 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "验证码会发到 ${ boldValue }。"
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        "我们将向您的密保邮箱发送用于账户恢复的重置代码。"
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "我们将向您的密保手机发送用于账户恢复的重置代码。"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
@@ -13418,8 +13531,8 @@
       "Declined": [
         "已拒绝"
       ],
-      "Owner": [
-        "所有者"
+      "Group Owner": [
+        "群组所有者"
       ],
       "Paused": [
         "已暂停"
@@ -14252,9 +14365,6 @@
       "City": [
         "城市"
       ],
-      "Code": [
-        "验证码"
-      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
@@ -14984,8 +15094,8 @@
       "Password": [
         "密码"
       ],
-      "Password reminders": [
-        "密码提醒"
+      "Password check-ins": [
+        "密码签到"
       ],
       "Password strength": [
         "密码强度"
@@ -15703,9 +15813,6 @@
       "${ BRAND_NAME } Foundation's": [
         "${ BRAND_NAME } 基金会的"
       ],
-      "Account recovery explained": [
-        "账户恢复详解"
-      ],
       "Activity log": [
         "活动日志"
       ],
@@ -15882,9 +15989,6 @@
       ],
       "Pay invoice": [
         "前去支付"
-      ],
-      "perform a password reset from your active session": [
-        "从您的活动会话中执行密码重置"
       ],
       "Privacy policy": [
         "隐私政策"
@@ -16394,6 +16498,9 @@
       ],
       "Add address": [
         "添加地址"
+      ],
+      "Change backup password": [
+        "更改备份密码"
       ],
       "Change password": [
         "更改密码"
@@ -19167,22 +19274,11 @@
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "请务必牢记或妥善保管您的密码，因为它是解密您数据的钥匙。"
       ],
-      "Turn off password reminders?": [
-        "关闭密码提醒？"
+      "Turn off check-ins": [
+        "关闭签到"
       ],
-      "Turn off reminders": [
-        "不再提示"
-      ]
-    },
-    "password_reset: info": {
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**所有您现有的数据**（电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等）**将被锁定** 并只能使用您的 **旧密码** 解锁。"
-      ],
-      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**您所有的现有数据**（邮件、事件、联系人、文件、${ PASS_APP_NAME } 条目等）**将被锁定**，并且只能使用**恢复短语**或**旧密码**解锁。"
-      ],
-      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "您账户上的任何 **双因素身份验证 (2FA)** 方法将被禁用。"
+      "Turn off password check-ins?": [
+        "关闭密码签到？"
       ]
     },
     "passwordless": {
@@ -22513,6 +22609,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 位用户"
+      ],
+      "All paid Mail and Calendar features": [
+        "享受 Mail 与 Calendar 的所有付费功能"
+      ],
+      "High speed VPN": [
+        "高速 VPN"
+      ],
       "Highest VPN speed": [
         "VPN 速度最快"
       ],
@@ -22525,8 +22633,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "高级版 ${ appName1 }、${ appName2 } 及 ${ appName3 } 账户"
       ],
+      "Premium early access": [
+        "抢先体验高级功能"
+      ],
+      "Secure cloud storage": [
+        "安全的云存储"
+      ],
       "Secure streaming": [
         "安全看视频"
+      ],
+      "Support online privacy": [
+        "支持网络隐私保护"
       ]
     },
     "specialoffer: Footer": {
@@ -22570,17 +22687,71 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
       "/ month": [
         "/月"
       ],
       "/month": [
         "/每月"
       ],
+      "1 year": [
+        "1 年"
+      ],
+      "15 months": [
+        "15 个月"
+      ],
+      "2 years": [
+        "2 年"
+      ],
+      "30 months": [
+        "30 个月"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "一个月的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "一年的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15个月的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "两年的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30个月的费用为${ amount }"
+      ],
       "Get the deal": [
         "获取优惠"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "两年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
+      ],
       "Save ${ discount }%": [
         "立省 ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "一个月的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "一年的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15个月的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "两年的的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30个月的标准价格为${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特别优惠的有效期为最初的两年"
       ]
     },
     "specialoffer: Title": {
@@ -22607,6 +22778,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，每位用户 10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  Hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 Hide-my-email 别名、日历共享等功能的支持。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "无需额外付费即可享受我们未来推出的所有隐私保护服务，还能抢先体验各类新产品和新功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
     "Spotlight": {
@@ -23824,14 +24018,14 @@
       "Organization name updated": [
         "组织名称已更新"
       ],
+      "Password check-ins disabled": [
+        "密码签到已禁用"
+      ],
+      "Password check-ins enabled": [
+        "密码签到已启用"
+      ],
       "Password copied to clipboard": [
         "密码已复制到剪贴板"
-      ],
-      "Password reminders disabled": [
-        "密码提醒已禁用"
-      ],
-      "Password reminders enabled": [
-        "已启用密码提醒"
       ],
       "Password updated": [
         "密码已更新"
@@ -24032,6 +24226,20 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "无法导出的事件详情"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保险库、集成 2FA、信用卡自动填充等。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
       ]
     },
     "Tab": {
@@ -25066,9 +25274,6 @@
       "Forgot password": [
         "忘记密码"
       ],
-      "Forgot recovery method": [
-        "忘记找回方式"
-      ],
       "Forward and auto-reply": [
         "转发与自动回复"
       ],
@@ -25386,9 +25591,6 @@
       ],
       "No need to empty the trash": [
         "无需清空回收站"
-      ],
-      "No recovery method": [
-        "无法重置密码"
       ],
       "Notifications": [
         "通知"
@@ -26975,6 +27177,9 @@
       ],
       "Writing assistant": [
         "写作助手"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "用户接受邀请后，您即可为其分配角色。"
       ]
     },
     "Users table: badge": {
