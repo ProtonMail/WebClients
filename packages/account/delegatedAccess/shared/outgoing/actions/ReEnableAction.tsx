@@ -9,7 +9,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import noop from '@proton/utils/noop';
 
 import { updateDelegatedAccess } from '../../../outgoingActions';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 import { useOutgoingController } from '../../OutgoingDelegatedAccessProvider';
 import type { ReEnableActionPayload } from '../interface';
 
@@ -17,7 +17,7 @@ export const ReEnableAction = () => {
     const { subscribe } = useOutgoingController();
 
     const handleError = useErrorHandler();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const api = useApi();
     const { createNotification } = useNotifications();
 

@@ -4,7 +4,7 @@ import ValidationError from '@proton/account/delegatedAccess/ValidationError';
 import { addDelegatedAccessesThunk } from '@proton/account/delegatedAccess/outgoingActions';
 import { AddContactInputs } from '@proton/account/delegatedAccess/shared/outgoing/AddContactInputs';
 import { useAddContactInputs } from '@proton/account/delegatedAccess/shared/outgoing/useAddContactInputs';
-import { useDispatch } from '@proton/account/delegatedAccess/useDispatch';
+import { useDelegatedAccessDispatch } from '@proton/account/delegatedAccess/useDelegatedAccessDispatch';
 import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
@@ -30,7 +30,7 @@ export const AddRecoveryContacts = (props: Props) => {
     const { validator, onFormSubmit } = useFormErrors();
 
     const handleError = useErrorHandler();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
 
     const addContactInputs = useAddContactInputs();
 

@@ -20,7 +20,7 @@ import { addDelegatedAccessThunk } from '../../../outgoingActions';
 import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';
 import { useAddContactInputs } from '../../../shared/outgoing/useAddContactInputs';
 import shield from '../../../shared/shield.svg';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 export interface CreateOutgoingEmergencyContactModalProps extends Omit<
     ModalProps<'form'>,
@@ -29,7 +29,7 @@ export interface CreateOutgoingEmergencyContactModalProps extends Omit<
 
 export const CreateOutgoingEmergencyContactModal = ({ ...rest }: CreateOutgoingEmergencyContactModalProps) => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();

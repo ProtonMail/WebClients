@@ -8,7 +8,7 @@ import useLoading from '@proton/hooks/useLoading';
 
 import { resetDelegatedAccessThunk } from '../../../incomingActions';
 import type { EnrichedIncomingDelegatedAccess } from '../../../shared/incoming/interface';
-import { useDispatch } from '../../../useDispatch';
+import { useDelegatedAccessDispatch } from '../../../useDelegatedAccessDispatch';
 
 interface Props extends Omit<PromptProps, 'children' | 'buttons'> {
     value: EnrichedIncomingDelegatedAccess;
@@ -16,7 +16,7 @@ interface Props extends Omit<PromptProps, 'children' | 'buttons'> {
 
 export const CancelIncomingEmergencyContactModal = ({ value, ...rest }: Props) => {
     const handleError = useErrorHandler();
-    const dispatch = useDispatch();
+    const dispatch = useDelegatedAccessDispatch();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
