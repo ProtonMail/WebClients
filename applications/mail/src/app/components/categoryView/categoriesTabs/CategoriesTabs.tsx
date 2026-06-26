@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
-import { useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
+import { selectLabelIDUnreadCount } from 'proton-mail/hooks/mailboxCounter/useMaiboxCounter.selector';
 import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
@@ -27,20 +27,21 @@ export const CategoriesTabsList = () => {
     const activeCategoryID = useMailSelector(selectActiveCategoryID);
     const selectAll = useMailSelector(selectSelectAll);
 
-    const [systemFolder] = useSystemFolders();
     const dispatch = useDispatch();
 
-    const activeUnseenEventID =
-        systemFolder?.find((folder) => folder.ID === activeCategoryID)?.LastUnseenMessageEventID ?? null;
+    const activeCategoryUnreadCount = useMailSelector((state) =>
+        activeCategoryID ? selectLabelIDUnreadCount(state, activeCategoryID) : 0
+    );
 
-    // We mark the current category as seen when we receive an email in the currently selected category
+    // We mark the current category as seen on first load and whenever a new email arrives in the active
+    // category. `activeCategoryUnreadCount` tells us something happened in the active category.
     useEffect(() => {
-        if (activeUnseenEventID === null || !activeCategoryID) {
+        if (!activeCategoryID) {
             return;
         }
 
         void dispatch(updateLastSeenEventId({ labelID: activeCategoryID }));
-    }, [activeCategoryID, activeUnseenEventID, dispatch]);
+    }, [activeCategoryID, activeCategoryUnreadCount, dispatch]);
 
     const { sendReportRecategorizeEmail } = useCategoriesTelemetry();
 
