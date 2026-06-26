@@ -1,0 +1,12 @@
+@use '~@proton/styles/scss/lib/config' as *;
+
+.lumo-business-button {
+	&.button-solid-norm {
+		--button-default-background-color: var(--lumo-logo-tag-pro-background);
+		--button-hover-background-color: var(--lumo-logo-tag-pro-background);
+		--button-active-background-color: var(--lumo-logo-tag-pro-background);
+		--button-default-text-color: var(--lumo-logo-tag-pro-text);
+		--button-hover-text-color: var(--lumo-logo-tag-pro-text);
+		--button-active-text-color: var(--lumo-logo-tag-pro-text);
+	}
+}

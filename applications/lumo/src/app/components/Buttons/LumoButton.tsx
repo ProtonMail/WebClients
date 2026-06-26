@@ -38,7 +38,8 @@ const LumoButton = ({
         <Tooltip title={title} originalPlacement={tooltipPlacement || 'right'}>
             <Button
                 icon
-                shape="ghost"
+                shape="solid"
+                color="weak"
                 className={clsx('shrink-0', className, isActive && 'is-active bg-transparent')}
                 onClick={onClick}
                 size={size || 'small'}

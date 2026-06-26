@@ -1,25 +1,114 @@
 @use '~@proton/styles/scss/lib' as *;
 
-.sketch-canvas__description {
-    padding-block: rem(10) rem(12);
-    padding-inline: rem(16);
-    inline-size: min(#{rem(480)}, 88vw);
+.sketch-canvas--modal {
+	inline-size: 100%;
+
+	.sketch-canvas__canvas-area {
+		max-block-size: calc(100vh - #{rem(280)});
+	}
 }
 
-.sketch-canvas__separator {
-    block-size: 1px;
-    background: var(--border-weak);
+.sketch-canvas__description-input {
+	font-family: inherit;
+	line-height: 1.5;
+	resize: none;
+	padding: 0;
+	border: none;
+	background: transparent;
+	min-block-size: rem(40);
+	overflow: hidden;
+
+	&,
+	&:focus {
+		outline: none;
+	}
+
+	&::placeholder {
+		color: var(--text-weak);
+	}
 }
 
-.sketch-canvas__textarea {
-    font-family: inherit;
-    line-height: 1.5;
-    resize: none;
-    background: transparent;
-    border: none;
+.sketch-toolbar--modal {
+	min-block-size: rem(44);
+}
 
-    &,
-    &:focus {
-        outline: none;
-    }
+.sketch-toolbar__tool {
+	inline-size: rem(36);
+	block-size: rem(36);
+	transition: background 0.12s;
+
+	&:hover:not(:disabled) {
+		background: var(--background-weak);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 1px;
+	}
+}
+
+.sketch-toolbar__colors {
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	block-size: rem(32);
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.sketch-toolbar__color {
+	inline-size: rem(24);
+	block-size: rem(24);
+	border-radius: 50%;
+	cursor: pointer;
+	padding: 0;
+	transition: transform 0.12s;
+
+	&:hover {
+		transform: scale(1.08);
+	}
+
+	&--selected {
+		box-shadow: 0 0 0 2px var(--background-norm), 0 0 0 3px var(--primary);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
+}
+
+.sketch-toolbar__stroke-popup {
+	inset-block-end: calc(100% + #{rem(6)});
+	inset-inline-start: 0;
+	z-index: 200;
+	min-inline-size: rem(140);
+}
+
+.sketch-toolbar__stroke-item {
+	cursor: pointer;
+	transition: background 0.1s;
+
+	&:hover {
+		background: var(--background-strong);
+	}
+}
+
+.sketch-toolbar__stroke-preview {
+	min-inline-size: rem(4);
+	min-block-size: rem(4);
+}
+
+@media (max-width: rem(768)) {
+	.sketch-canvas--modal {
+		.sketch-canvas__canvas-area {
+			max-block-size: calc(100dvh - #{rem(320)});
+		}
+	}
+
+	.sketch-toolbar__stroke-popup {
+		inset-block-end: auto;
+		inset-block-start: calc(100% + #{rem(6)});
+	}
 }

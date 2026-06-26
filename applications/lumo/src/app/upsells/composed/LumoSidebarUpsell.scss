@@ -1,0 +1,28 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+@keyframes lumo-sidebar-upsell-fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.lumo-sidebar-upsell-section {
+	background: linear-gradient(180deg, rgb(245 246 254 / 0.5) 0%, rgb(255 244 231 / 0.5) 100%);
+	background-color: var(--background-weak);
+	transition:
+		background-color 0.2s ease-in-out,
+		border-color 0.2s ease-in-out;
+	animation: lumo-sidebar-upsell-fadein 0.15s ease-in 0.3s both;
+
+	.lumo-plus-upgrade-button {
+		inline-size: 100%;
+	}
+}

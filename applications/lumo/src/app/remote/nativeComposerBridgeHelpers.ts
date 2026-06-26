@@ -1,4 +1,5 @@
-import type { ModelTier } from '../providers/ModelTierProvider';
+import type { ModelTier, ResponseMode } from '../providers/ModelTierProvider';
+import type { LUMO_API_ERRORS } from '../types';
 import {
     type LimitReachedPayload,
     type LimitReachedResource,
@@ -8,7 +9,7 @@ import {
     limitResourceToErrorType,
 } from './nativeComposerBridge';
 
-export const onComposerError = (error: string): void => {
+export const onComposerError = (error: LUMO_API_ERRORS): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');
         return;
@@ -98,6 +99,22 @@ export const setNativeModelTier = (modelTier: ModelTier): void => {
     (window as any).nativeComposerApiInstance.setNativeModelTier(modelTier);
 };
 
+export const setNativeMaxModelAvailable = (available: boolean): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setMaxModelAvailable(available);
+};
+
+export const setNativeResponseMode = (responseMode: ResponseMode): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setNativeResponseMode(responseMode);
+};
+
 export const onNativeHandleFileUploadRequest = (handler: FileUploadEventHandler): (() => void) => {
     window.addEventListener('lumo:uploadFiles', handler as EventListener);
     return () => window.removeEventListener('lumo:uploadFiles', handler as EventListener);
@@ -151,6 +168,11 @@ export const onNativeToggleCreateImage = (handler: SimpleToggleEventHandler): ((
 export const onNativeChangeModelTier = (handler: ChangeModelTypeEventHandler): (() => void) => {
     window.addEventListener('lumo:changeModelTier', handler as EventListener);
     return () => window.removeEventListener('lumo:changeModelTier', handler as EventListener);
+};
+
+export const onNativeChangeResponseMode = (handler: ChangeResponseModeEventHandler): (() => void) => {
+    window.addEventListener('lumo:changeResponseMode', handler as EventListener);
+    return () => window.removeEventListener('lumo:changeResponseMode', handler as EventListener);
 };
 
 export const setNativeComposerVisibility = (visible: boolean): void => {
@@ -251,3 +273,4 @@ export type SimpleToggleEventHandler = (event: CustomEvent<{ source: null }>) =>
 export type RemoveFileEventHandler = (event: CustomEvent<{ attachmentId: string }>) => void;
 export type PreviewFileEventHandler = (event: CustomEvent<{ attachmentId: string }>) => void;
 export type ChangeModelTypeEventHandler = (event: CustomEvent<{ modelTier: ModelTier }>) => void;
+export type ChangeResponseModeEventHandler = (event: CustomEvent<{ responseMode: ResponseMode }>) => void;

@@ -2,35 +2,23 @@ import { memo, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoBusinessLogoDark from '@proton/styles/assets/img/lumo/lumo-business-logo-dark.svg';
-import lumoBusinessLogo from '@proton/styles/assets/img/lumo/lumo-business-logo.svg';
-import lumoLogoDark from '@proton/styles/assets/img/lumo/lumo-logo-v4-dark.svg';
-import lumoLogo from '@proton/styles/assets/img/lumo/lumo-logo-v4.svg';
 
 import { GuestChatDisclaimerModal } from '../../components/Guest/GuestChatDisclaimerModal';
-import LumoPlusLogoInline from '../../components/Icons/LumoPlusLogoInline';
+import { LOGO_HEIGHT, LumoLogoWithTierTag, getLogoSrc } from '../../components/LumoLogoWithTierTag/LumoLogoWithTierTag';
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
-import { ThemeTypes, useLumoTheme } from '../../providers/LumoThemeProvider';
+import { useLumoTheme } from '../../providers/LumoThemeProvider';
 
-const LOGO_HEIGHT = '21px';
-
-const getLogoSrc = (theme: ThemeTypes, hasLumoB2B: boolean, hasLumoSeat: boolean) => {
-    if (hasLumoB2B) {
-        return theme === ThemeTypes.LumoDark ? lumoBusinessLogoDark : lumoBusinessLogo;
-    }
-    if (hasLumoSeat) {
-        return undefined; // Use LumoPlusLogoInline component
-    }
-    return theme === ThemeTypes.LumoDark ? lumoLogoDark : lumoLogo;
-};
+import './LumoLogo.scss';
 
 const LumoLogoHeader = memo(() => {
     const { isGuest, handleGuestClick, handleDisclaimerClose, disclaimerModalProps } = useGuestChatHandler();
     const { theme } = useLumoTheme();
-    const { hasLumoSeat, hasLumoB2B, isLumoPlanLoading } = useLumoPlan();
+    const { isLumoPlanLoading } = useLumoPlan();
 
-    const logoSrc = useMemo(() => getLogoSrc(theme, hasLumoB2B, hasLumoSeat), [theme, hasLumoB2B, hasLumoSeat]);
+    const logoSrc = useMemo(() => {
+        return getLogoSrc(theme);
+    }, [theme]);
 
     const onGuestClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
@@ -39,25 +27,20 @@ const LumoLogoHeader = memo(() => {
 
     // Show default logo during loading instead of blank space
     if (isLumoPlanLoading) {
-        const defaultLogoSrc = theme === ThemeTypes.LumoDark ? lumoLogoDark : lumoLogo;
         return (
-            <Link to="/" aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}>
-                <img src={defaultLogoSrc} alt={LUMO_SHORT_APP_NAME} />
+            <Link to="/" aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`} className="lumo-logo-container">
+                <img src={logoSrc} alt={LUMO_SHORT_APP_NAME} height={LOGO_HEIGHT} />
             </Link>
         );
     }
 
-    const getAltText = () => {
-        if (hasLumoB2B) return `${LUMO_SHORT_APP_NAME} Business`;
-        if (hasLumoSeat) return `${LUMO_SHORT_APP_NAME} Plus`;
-        return LUMO_SHORT_APP_NAME;
-    };
+    const logoContent = <LumoLogoWithTierTag />;
 
     if (isGuest) {
         return (
             <>
                 <Link to="/" onClick={onGuestClick} aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}>
-                    <img src={logoSrc} alt={getAltText()} />
+                    {logoContent}
                 </Link>
                 {disclaimerModalProps.render && (
                     <GuestChatDisclaimerModal onClick={handleDisclaimerClose} {...disclaimerModalProps.modalProps} />
@@ -68,7 +51,7 @@ const LumoLogoHeader = memo(() => {
 
     return (
         <Link to="/" aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}>
-            {logoSrc ? <img src={logoSrc} alt={getAltText()} /> : <LumoPlusLogoInline height={LOGO_HEIGHT} />}
+            {logoContent}
         </Link>
     );
 });

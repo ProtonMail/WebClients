@@ -6,7 +6,6 @@ im.$media-expressions: $media-expressions;
 
 .project-detail-view {
 	block-size: 100%;
-	background-color: var(--background-norm);
 	overflow: hidden;
 	padding: 0;
 	margin: 0;
@@ -57,7 +56,7 @@ im.$media-expressions: $media-expressions;
 		padding-inline-start: 0;
 	}
 
-	@include im.media ('<=small') {
+	@include im.media('<=small') {
 		flex: 1 1 auto;
 		padding-inline-start: 8px;
 	}
@@ -148,8 +147,7 @@ im.$media-expressions: $media-expressions;
 .project-detail-content {
 	// Ensure the flex direction stays row regardless of height
 	display: flex !important;
-	flex-direction: row !important;
-	flex-wrap: nowrap !important;
+	flex-flow: row nowrap !important;
 	min-block-size: 0;
 
 	&.without-sidebar {
@@ -168,8 +166,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .project-detail-main {
-	overflow-x: hidden; // Prevent horizontal scrolling
-	overflow-y: auto; // Allow vertical scrolling
+	overflow: hidden auto; // Prevent horizontal scrolling // Allow vertical scrolling
 	padding-block: 8px 0;
 	padding-inline: 6px 8px;
 	position: relative;
@@ -212,7 +209,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	// At small heights, don't try to center - just stack
-	@media (max-height: 500px) {
+	@media (height <= 500px) {
 		padding-block: 10px;
 		margin-block: 0;
 		justify-content: flex-start;
@@ -251,7 +248,7 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100%;
 
 	// Hide suggestions when viewport height is too small
-	@media (max-height: 700px) {
+	@media (height <= 700px) {
 		display: none;
 	}
 }
@@ -396,7 +393,6 @@ im.$media-expressions: $media-expressions;
 }
 
 .project-detail-composer {
-	background: var(--background-norm);
 	z-index: 10;
 	padding-block: 24px 0;
 	padding-inline: 0;
@@ -415,7 +411,7 @@ im.$media-expressions: $media-expressions;
 		padding-inline: 20px;
 	}
 
-	@media (max-height: 500px) {
+	@media (height <= 500px) {
 		padding-block: 8px 0;
 	}
 }
@@ -475,6 +471,7 @@ im.$media-expressions: $media-expressions;
 
 .keep-projects-button {
 	text-decoration: none;
+
 	&:hover {
 		text-decoration: underline;
 	}

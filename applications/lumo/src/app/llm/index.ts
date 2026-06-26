@@ -21,6 +21,7 @@ import {
 import type { PersonalizationSettings } from '../redux/slices/personalization';
 import type { LumoDispatch } from '../redux/store';
 import { attachmentDataCache } from '../services/attachmentDataCache';
+import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { createGenerationError, getErrorTypeFromMessage } from '../services/errors/errorHandling';
 import {
     type Attachment,
@@ -502,6 +503,10 @@ export function _getCallbacks(
                     // Push attachment to server now that it has spaceId
                     dispatch(pushAttachmentRequest({ id: m.image_id }));
                 }
+                break;
+
+            case 'usage':
+                applyUsageFromStreamMessage(m);
                 break;
         }
         return {}; // No error

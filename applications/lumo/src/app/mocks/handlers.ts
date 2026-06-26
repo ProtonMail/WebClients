@@ -124,7 +124,7 @@ const scenarios = {
         yield formatSSEMessage({
             type: 'token_data',
             target: 'tool_call',
-            content: '{"name": "web_search", "parameters": {"search_term": "test search"}}',
+            content: '{"name": "web_search", "parameters": {"query": "test search"}}',
         });
         await delay(500);
 

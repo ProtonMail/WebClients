@@ -1,17 +1,15 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components';
 
+import DropdownMenu from '../../components/DropdownMenu';
+import type { DropdownOptions } from '../../components/DropdownMenu';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectSpaceById } from '../../redux/selectors';
 import type { ProjectSpace } from '../../types';
-import DropdownMenu from '../../components/DropdownMenu';
-import type { DropdownOptions } from '../../components/DropdownMenu';
+import { useProjectActions } from './hooks/useProjectActions';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
 import { ProjectEditModal } from './modals/ProjectEditModal';
-import { useProjectActions } from './hooks/useProjectActions';
 import type { Project } from './types';
 
 interface ProjectActionsDropdownProps {
@@ -19,7 +17,6 @@ interface ProjectActionsDropdownProps {
 }
 
 export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const space = useLumoSelector(selectSpaceById(project.spaceId || ''));
     const projectSpace = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const { deleteProject } = useProjectActions();
@@ -33,17 +30,12 @@ export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps)
         }
     };
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen((prev) => !prev);
-    };
-
     const options: DropdownOptions[] = [
         {
             label: c('collider_2025:Action').t`Edit project`,
             icon: 'pen',
             onClick: (e) => {
                 e?.stopPropagation();
-                setIsDropdownOpen(false);
                 editModal.openModal(true);
             },
         },
@@ -52,7 +44,6 @@ export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps)
             icon: 'trash',
             onClick: (e) => {
                 e?.stopPropagation();
-                setIsDropdownOpen(false);
                 deleteModal.openModal(true);
             },
         },
@@ -60,7 +51,7 @@ export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps)
 
     return (
         <>
-            <DropdownMenu options={options} onToggle={toggleDropdown} isOpen={isDropdownOpen} />
+            <DropdownMenu options={options} onToggle={() => {}} />
             {editModal.render && projectSpace && (
                 <ProjectEditModal
                     {...editModal.modalProps}
@@ -72,11 +63,7 @@ export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps)
                 />
             )}
             {deleteModal.render && (
-                <DeleteProjectModal
-                    {...deleteModal.modalProps}
-                    project={project}
-                    onConfirmDelete={handleDelete}
-                />
+                <DeleteProjectModal {...deleteModal.modalProps} project={project} onConfirmDelete={handleDelete} />
             )}
         </>
     );

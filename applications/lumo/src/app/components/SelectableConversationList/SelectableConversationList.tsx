@@ -8,6 +8,9 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import type { Conversation, ConversationId } from '../../types';
 import ConfirmDeleteModal from '../Modals/ConfirmDeleteModal';
+import { ConversationExpirationIndicator } from '../../layouts/sidepanel/ConversationExpirationIndicator';
+import { ConversationExpirationLegend } from '../../layouts/sidepanel/ConversationExpirationLegend';
+import { ChatHistoryGroupByMenu } from '../../layouts/sidepanel/ChatHistoryGroupByMenu';
 
 import './SelectableConversationList.scss';
 
@@ -30,6 +33,8 @@ export interface SelectableConversationListProps {
     emptyState?: React.ReactNode;
     /** Optional: Whether to show the date for each conversation */
     showDate?: boolean;
+    /** Optional: Show the shared chat sort menu (Last updated / Date created) */
+    showSortMenu?: boolean;
     /** Optional: Class name for the container */
     className?: string;
 }
@@ -47,6 +52,7 @@ export const SelectableConversationList = ({
     renderConversationActions,
     emptyState,
     showDate = true,
+    showSortMenu = true,
     className = '',
 }: SelectableConversationListProps) => {
     const [isSelectionMode, setIsSelectionMode] = useState(false);
@@ -55,7 +61,8 @@ export const SelectableConversationList = ({
     const confirmDeleteModal = useModalStateObject();
 
     // Get all conversation IDs from all groups
-    const allConversationIds = groups.flatMap((group) => group.conversations.map((c) => c.id));
+    const allConversations = groups.flatMap((group) => group.conversations);
+    const allConversationIds = allConversations.map((conversation) => conversation.id);
     const totalConversations = allConversationIds.length;
     const selectedCount = selectedIds.size;
     const allSelected = totalConversations > 0 && selectedCount === totalConversations;
@@ -137,13 +144,20 @@ export const SelectableConversationList = ({
                     {totalConversations}
                     {c('collider_2025:Info').ngettext(msgid` Chat in Project`, ` Chats in Project`, totalConversations)}
                 </span>
-                <button
-                    className="selectable-conversation-select-link text-sm color-weak bg-transparent border-none cursor-pointer hover:underline"
-                    onClick={toggleSelectionMode}
-                >
-                    {isSelectionMode ? c('collider_2025:Action').t`Cancel` : c('collider_2025:Action').t`Manage chats`}
-                </button>
+                <div className="selectable-conversation-list-header-actions flex items-center gap-1 shrink-0">
+                    {showSortMenu && !isSelectionMode && <ChatHistoryGroupByMenu showSortedByLabel />}
+                    <Button
+                        shape="ghost"
+                        size="small"
+                        className="selectable-conversation-manage-button shrink-0 text-sm"
+                        onClick={toggleSelectionMode}
+                    >
+                        {isSelectionMode ? c('collider_2025:Action').t`Cancel` : c('collider_2025:Action').t`Manage chats`}
+                    </Button>
+                </div>
             </div>
+
+            <ConversationExpirationLegend conversations={allConversations} />
 
             {/* Action row - only shown in selection mode */}
             {isSelectionMode && (
@@ -209,7 +223,7 @@ export const SelectableConversationList = ({
                                                     />
                                                 )}
                                                 <button
-                                                    className="selectable-conversation-button flex items-center flex-1 text-left"
+                                                    className="selectable-conversation-button flex items-center gap-2 flex-1 text-left"
                                                     onClick={() => handleConversationClick(conversation.id)}
                                                     aria-label={
                                                         isSelectionMode
@@ -217,7 +231,11 @@ export const SelectableConversationList = ({
                                                             : c('collider_2025:Action').t`Open conversation`
                                                     }
                                                 >
-                                                    <div className="selectable-conversation-content flex flex-column">
+                                                    <ConversationExpirationIndicator
+                                                        conversation={conversation}
+                                                        className="selectable-conversation-expiration-indicator"
+                                                    />
+                                                    <div className="selectable-conversation-content flex flex-column min-w-0 flex-1">
                                                         <span className="selectable-conversation-title text-md">
                                                             {title}
                                                         </span>

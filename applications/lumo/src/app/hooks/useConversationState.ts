@@ -1,8 +1,8 @@
+import { initializeNewSpaceAndConversation } from '../components/Conversation/helper';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useLumoDispatch } from '../redux/hooks';
 import { createDate } from '../redux/slices/core/messages';
 import type { ConversationId, SpaceId } from '../types';
-import { initializeNewSpaceAndConversation } from '../components/Conversation/helper';
 
 interface UseConversationStateProps {
     conversationId?: ConversationId;

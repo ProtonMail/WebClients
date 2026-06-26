@@ -22,6 +22,8 @@
     --text-markdown: #24292E;
     /* Emphasized text */
     --text-strong: rgb(186 186 247 / 0.3);
+    --text-secondary: #707070;
+    --text-dark: var(--text-norm);
 
     --field-norm: #ADABA8;
     --field-hover: #8F8D8A;
@@ -37,6 +39,8 @@
     --background-weak: #F8FAFC;
     --background-strong: #E5E8EB;
     --background-invert: #1A1A1A;
+    --background-light: #FBFAFF;
+    
     /* composer background for small screens */
     --background-composer-mobile: white;
     /* lumo plus upsell sidebar button background */
@@ -61,17 +65,30 @@
     --backdrop-norm: rgb(38 42 51 / 0.48);
 
     /*  new colors */
+    --background-main-canvas: #F5F6FE;
+    
     --interaction-secondary: #FFAC2F;
     --interaction-secondary-hover: #E69A2A;
     --interaction-secondary-active: #D48F26;
 
+     /* For lumo solid weak button background color */
+     --interaction-solid-weak-custom: #E8EAFC;
+     --interaction-solid-weak-custom-contrast: white;
+     --interaction-solid-weak-custom-active: #dddefb;
+     --interaction-solid-weak-custom-hover: #dddefb;
+
+
     --reinforce-norm: #372580;
     --reinforce-hover: #2F1E6F;
-    --reinforce-active: #27185F;
+    --reinforce-active: #27185F; 
 
     --link-norm: var(--primary);
     --link-hover: var(--interaction-norm-hover);
     --link-active: var(--interaction-norm-active);
+
+    --composer-glow-border: #dddefb;
+    --composer-hover-border: #a9acfa;
+    --composer-focus-outer-ring: #e9eafc;
 
     --optional-promotion-background-start: rgb(109 74 255 / 0.15);
     --optional-promotion-background-end: rgb(70 26 255 / 0.04);
@@ -95,6 +112,20 @@
 
     /* lumo logo */
     --lumo-plus-logo-plus-sign-text:#5325A2;
+
+    /* background particle  */
+    --surface-foreground: #f5f6fe;
+
+    /* welcome text  */
+    --lumo-welcome-text: #311e71;
+
+    /* logo tags */
+     --lumo-logo-tag-pro-background: #1B1340;
+     --lumo-logo-tag-plus-background: #E8E9EB;
+     --lumo-logo-tag-pro-text: var(--text-invert);
+     --lumo-logo-tag-plus-text: #7A7A7A;
+
+     --lumo-secondary-upsell-background: linear-gradient(180deg, rgba(245, 246, 254, 0.50) 76.09%, rgba(255, 244, 231, 0.50) 100%), #FFF;
 
 
 }

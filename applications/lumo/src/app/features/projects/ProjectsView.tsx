@@ -10,10 +10,10 @@ import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestSignInState';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
-import { useSidebar } from '../../providers/SidebarProvider';
 import { ProjectCard } from './ProjectCard';
 import { EXAMPLE_PROJECTS } from './exampleProjects';
 import { useProjects } from './hooks/useProjects';
@@ -34,9 +34,9 @@ export const ProjectsView = () => {
     const newProjectModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
     const myProjects = useProjects();
-    const { isSmallScreen } = useSidebar();
     const [templateData, setTemplateData] = useState<{ name: string; instructions: string; icon: string } | null>(null);
     const randomProjects = useMemo(() => getRandomProjects(3), []);
+    const { isSmallScreen } = useIsLumoSmallScreen();
 
     const handleCreateProject = () => {
         if (isGuest) {
@@ -81,10 +81,14 @@ export const ProjectsView = () => {
         if (myProjects.length > 0) {
             return (
                 <>
-                    <div className="projects-grid-wrapper">
-                        <div className="projects-grid">
+                    <div className="projects-list-wrapper">
+                        <div className="projects-list-header color-hint hidden md:flex">
+                            <span>{c('collider_2025:Label').t`Name`}</span>
+                            <span>{c('collider_2025:Label').t`Created`}</span>
+                        </div>
+                        <div className="projects-list gap-1">
                             {myProjects.map((project) => (
-                                <ProjectCard key={project.id} project={project} />
+                                <ProjectCard key={project.id} project={project} listRow={!isSmallScreen} />
                             ))}
                         </div>
                     </div>
@@ -138,24 +142,24 @@ export const ProjectsView = () => {
 
     return (
         <>
-            <div className="projects-view">
-                {isSmallScreen && (
-                    <HeaderWrapper>
-                        <div />
-                    </HeaderWrapper>
-                )}
-                <div className="projects-header">
-                    <h1 className="projects-title">{c('collider_2025:Title').t`Projects`}</h1>
-                    <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
-                        <span className="flex items-center flex-nowrap">
-                            <IcPlus className="mr-2" />
-                            {c('collider_2025:Button').t`New project`}
-                        </span>
-                    </Button>
-                </div>
+            <LumoLayoutWithDrawer drawer={{ disabled: true }}>
+                <div className="flex flex-column flex-nowrap flex-1 px-4 md:px-10">
+                    <div
+                        className="flex flex-row flex-nowrap justify-space-between w-full my-4 mx-auto max-w-custom"
+                        style={{ '--max-w-custom': '900px' }}
+                    >
+                        <h1 className="main-text">{c('collider_2025:Title').t`My Projects`}</h1>
+                        <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
+                            <span className="flex items-center flex-nowrap">
+                                <IcPlus className="mr-2" />
+                                {c('collider_2025:Button').t`New project`}
+                            </span>
+                        </Button>
+                    </div>
 
-                <div className="projects-content">{renderContent()}</div>
-            </div>
+                    <div className="projects-content h-full">{renderContent()}</div>
+                </div>
+            </LumoLayoutWithDrawer>
 
             {newProjectModal.render && (
                 <NewProjectModal
