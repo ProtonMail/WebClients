@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 
-import { useComposerActions } from '../../../../../providers/ComposerActionsProvider';
+import { useConversationActions } from '../../../../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 
 interface SuggestedQuestionsProps {
@@ -10,18 +10,17 @@ interface SuggestedQuestionsProps {
 }
 
 export const SuggestedQuestions = ({ questions }: SuggestedQuestionsProps) => {
-    const composerActions = useComposerActions();
+    const { handleSendMessage } = useConversationActions();
     const { isWebSearchButtonToggled } = useWebSearch();
 
     const handleClick = useCallback(
         (question: string) => {
-            if (!composerActions) return;
-            void composerActions.handleSendMessage(question, isWebSearchButtonToggled);
+            void handleSendMessage(question, isWebSearchButtonToggled);
         },
-        [composerActions, isWebSearchButtonToggled]
+        [handleSendMessage, isWebSearchButtonToggled]
     );
 
-    if (!questions.length || !composerActions) {
+    if (!questions.length) {
         return null;
     }
 

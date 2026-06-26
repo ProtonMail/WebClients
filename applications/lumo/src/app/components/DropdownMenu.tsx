@@ -22,23 +22,17 @@ export type DropdownOptions = {
 interface Props {
     options: DropdownOptions[];
     onToggle: () => void;
-    isOpen: boolean;
+    visibleOnHover?: boolean;
 }
 
-const DropdownMenu = ({ options, onToggle, isOpen }: Props) => {
+const DropdownMenu = ({ options, onToggle, visibleOnHover = false }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
     const { isSmallScreen } = useIsLumoSmallScreen();
     const isTouchDevice = useIsTouchDevice();
-    const alwaysVisible = isSmallScreen || isTouchDevice;
+    const alwaysVisible = isSmallScreen || isTouchDevice || visibleOnHover;
 
     return (
-        <div
-            className={clsx(
-                'relative shrink-0 flex',
-                !alwaysVisible && 'group-hover:opacity-100',
-                !alwaysVisible && !isOpen && 'group-hover:opacity-100-no-width'
-            )}
-        >
+        <div className={clsx('relative shrink-0 flex', !alwaysVisible && 'group-hover:opacity-100')}>
             <SimpleDropdown
                 as={Button}
                 className="rounded-sm"

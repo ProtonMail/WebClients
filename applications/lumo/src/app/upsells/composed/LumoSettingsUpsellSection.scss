@@ -1,0 +1,13 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.lumo-settings-upsell-section {
+	// On small screens, stack the cards vertically
+	@include im.media('<=small') {
+		.flex-row {
+			flex-direction: column;
+		}
+	}
+}

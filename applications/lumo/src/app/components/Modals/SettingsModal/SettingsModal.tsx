@@ -7,20 +7,22 @@ import { useUser } from '@proton/account/user/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalOwnProps } from '@proton/components/index';
 import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
 
 import { useLumoUserSettings } from '../../../hooks';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
+import { useLumoAnimatedBackground } from '../../../hooks/useLumoAnimatedBackground';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useMessageSearch } from '../../../hooks/useMessageSearch';
 import { DbApi } from '../../../indexedDb/db';
+import LumoLogoHeader from '../../../layouts/header/LumoLogo';
 import { useLumoTheme } from '../../../providers';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../../redux/hooks';
@@ -28,18 +30,16 @@ import { selectAttachments, selectConversations, selectMessages } from '../../..
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { SearchService } from '../../../services/search/searchService';
 import type { Conversation, Message, SpaceId } from '../../../types';
-import { LumoSettingsPanelUpsell } from '../../../upsells';
+import { LumoSettingsUpsellSection } from '../../../upsells/composed/LumoSettingsUpsellSection';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
 import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
 import { SignInButton } from '../../Guest/SignInLink';
-import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
 import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
 import MemoryPanel from './MemoryPanel';
-import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
 import { SettingsSectionItem } from './SettingsSectionItem';
@@ -72,7 +72,13 @@ const BASE_SETTINGS_ITEMS: SettingsItem[] = [
         getText: () => c('collider_2025: Settings Item').t`Memory`,
         guest: false,
     },
-    { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
+    { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: false },
+    {
+        id: 'appearance',
+        icon: 'palette',
+        getText: () => c('collider_2025: Settings Item').t`Appearance`,
+        guest: true,
+    },
     { id: 'about', icon: 'info-circle', getText: () => c('collider_2025: Settings Item').t`About`, guest: true },
 ];
 
@@ -92,10 +98,8 @@ const LumoSettingsSidebar = ({
             className="flex flex-column gap-6 md:max-w-custom md:w-custom"
             style={{ '--md-max-w-custom': '14rem', '--md-w-custom': '10rem' }}
         >
-            {/* Lumo Logo */}
             <div className="hidden md:flex gap-2">
-                <img src={lumoAvatarNeutral} alt="Lumo" height="50px" />
-                <LumoLogoThemeAware height="32px" />
+                <LumoLogoHeader />
             </div>
 
             {/* Navigation Items */}
@@ -123,9 +127,15 @@ const LumoSettingsSidebar = ({
     );
 };
 
-/** Guest-safe General settings panel - only shows theme and about */
-const GeneralSettingsPanelGuest = () => {
+const AppearanceSettingsPanel = () => {
     const { isDarkLumoTheme } = useLumoTheme();
+    const {
+        isAnimatedBackgroundEnabled,
+        isLavaLampMode,
+        isToggleDisabled,
+        setAnimatedBackgroundEnabled,
+        setLavaLampModeEnabled,
+    } = useLumoAnimatedBackground();
 
     return (
         <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
@@ -137,13 +147,72 @@ const GeneralSettingsPanelGuest = () => {
                 />
                 <LumoThemeButton />
             </div>
+
+            <SettingsSectionItem
+                icon="image"
+                text={c('collider_2025: Title').t`Animated background`}
+                subtext={c('collider_2025: Description').t`Show animated background on the home screen`}
+                button={
+                    <Tooltip
+                        title={
+                            isToggleDisabled
+                                ? c('Tooltip').t`The reduce motion setting is already enabled on this device`
+                                : undefined
+                        }
+                        closeDelay={0}
+                        openDelay={0}
+                    >
+                        <Toggle
+                            id="animated-background-toggle"
+                            checked={isAnimatedBackgroundEnabled}
+                            disabled={isToggleDisabled}
+                            onChange={() => {
+                                setAnimatedBackgroundEnabled(!isAnimatedBackgroundEnabled);
+                            }}
+                        />
+                    </Tooltip>
+                }
+            />
+
+            {isAnimatedBackgroundEnabled && (
+                <SettingsSectionItem
+                    icon="fire"
+                    text={c('collider_2025: Title').t`Lava lamp style`}
+                    subtext={
+                        isLavaLampMode
+                            ? c('collider_2025: Description')
+                                  .t`Slow vertical blobs that merge, split, and shift colour`
+                            : c('collider_2025: Description')
+                                  .t`Switch to gooey merge-and-split blobs instead of the soft ambient style`
+                    }
+                    button={
+                        <Tooltip
+                            title={
+                                isToggleDisabled
+                                    ? c('Tooltip').t`The reduce motion setting is already enabled on this device`
+                                    : undefined
+                            }
+                            closeDelay={0}
+                            openDelay={0}
+                        >
+                            <Toggle
+                                id="animated-background-lava-lamp-toggle"
+                                checked={isLavaLampMode}
+                                disabled={isToggleDisabled}
+                                onChange={(event) => {
+                                    setLavaLampModeEnabled(event.target.checked);
+                                }}
+                            />
+                        </Tooltip>
+                    }
+                />
+            )}
         </div>
     );
 };
 
-/** Full General settings panel for authenticated users */
+/** General settings panel for authenticated users */
 const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
-    const { isDarkLumoTheme } = useLumoTheme();
     const { externalTools: isLumoToolingEnabled } = useLumoFlags();
     const [user] = useUser();
     const userId = user?.ID;
@@ -230,15 +299,6 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
 
     return (
         <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
-            <div className="flex flex-column flex-nowrap gap-4 mb-4">
-                <SettingsSectionItem
-                    icon={isDarkLumoTheme ? 'moon' : 'sun'}
-                    text={c('collider_2025: Title').t`Theme`}
-                    subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
-                />
-                <LumoThemeButton />
-            </div>
-
             {/* Project conversations in history toggle */}
             <SettingsSectionItem
                 icon="folder"
@@ -324,7 +384,7 @@ const getPlanName = (hasLumoSeat: boolean, isVisionary: boolean, hasLumoB2B: boo
 };
 const AccountSettingsPanel = () => {
     const [user] = useUser();
-    const { hasLumoSeat, isVisionary, hasLumoB2B, hasLumoPlus } = useLumoPlan();
+    const { hasLumoSeat, isVisionary, hasLumoB2B } = useLumoPlan();
     const planName = getPlanName(hasLumoSeat, isVisionary, hasLumoB2B);
 
     return (
@@ -354,7 +414,7 @@ const AccountSettingsPanel = () => {
                 </div>
                 <IcChevronRight className="color-weak shrink-0 mt-2" size={4} />
             </ButtonLike>
-            {hasLumoPlus ? <PaidSubscriptionPanel /> : <LumoSettingsPanelUpsell />}
+            <LumoSettingsUpsellSection />
         </div>
     );
 };
@@ -363,7 +423,7 @@ const AccountSettingsPanelGuest = () => {
     const createLink = <CreateFreeAccountLink key="create-free-account-link" />;
     return (
         <div className="flex flex-column flex-nowrap gap-4 w-full min-w-0">
-            <LumoSettingsPanelUpsell />
+            <LumoSettingsUpsellSection />
             <SettingsSectionItem
                 icon="user"
                 text={c('collider_2025: Title').t`Guest`}
@@ -390,7 +450,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
     const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
     const SettingsItems = useMemo(
-        () => (isMemoryFeatureEnabled ? BASE_SETTINGS_ITEMS : BASE_SETTINGS_ITEMS.filter((item) => item.id !== 'memory')),
+        () =>
+            isMemoryFeatureEnabled ? BASE_SETTINGS_ITEMS : BASE_SETTINGS_ITEMS.filter((item) => item.id !== 'memory'),
         [isMemoryFeatureEnabled]
     );
 
@@ -477,12 +538,10 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                 {activePanel === 'memory' && isMemoryFeatureEnabled && (
                                     <MemoryPanel onClose={closeModal} />
                                 )}
-                                {activePanel === 'general' &&
-                                    (isGuest ? (
-                                        <GeneralSettingsPanelGuest />
-                                    ) : (
-                                        <GeneralSettingsPanelAuth onClose={closeModal} />
-                                    ))}
+                                {activePanel === 'general' && !isGuest && (
+                                    <GeneralSettingsPanelAuth onClose={closeModal} />
+                                )}
+                                {activePanel === 'appearance' && <AppearanceSettingsPanel />}
                                 {activePanel === 'about' && <AboutPanel />}
                             </div>
                         </div>

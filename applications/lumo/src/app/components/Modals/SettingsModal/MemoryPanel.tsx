@@ -92,9 +92,9 @@ const MemoryEducation = ({ onEnable }: { onEnable?: () => void }) => {
                 .t`Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.`,
         },
         {
-            title: c('collider_2025: Title').t`End-to-end encrypted`,
+            title: c('collider_2025: Title').t`Zero-access encrypted`,
             body: c('collider_2025: Description')
-                .t`Memories are stored encrypted.`,
+                .t`Memories are stored encrypted, only you can access them.`,
         },
     ];
 
@@ -601,7 +601,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                     </div>
                     <p className="m-0 text-xs color-weak lh130">
                         {c('collider_2025: Hint')
-                            .t`Memory is only used in general chats — never inside projects. Stored end-to-end encrypted.`}
+                            .t`Memory is only used in general chats, never inside projects. Stored with zero-access encryption.`}
                     </p>
                 </div>
             )}

@@ -22,7 +22,7 @@ interface ChatHistoryUpsellContainerProps {
 }
 
 const ChatHistoryUpsellContainer = ({ children }: ChatHistoryUpsellContainerProps) => (
-    <div className="chat-history-upsell rounded-sm mt-2 ml-2 mr-2 mb-2 mx-auto">
+    <div className="chat-history-upsell rounded-sm mt-2 mx-1.5 mb-2">
         <div className="p-3 rounded-sm text-sm text-hint">
             <p className="m-0">{children}</p>
         </div>

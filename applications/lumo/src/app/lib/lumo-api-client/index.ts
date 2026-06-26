@@ -46,7 +46,7 @@ export { encryptString, encryptTurns } from './core/encryption';
 
 export { StreamProcessor } from './core/streaming';
 
-export { callChatEndpoint } from './core/network';
+export { callChatEndpoint, fetchUsageLimits, LUMO_LIMITS_ENDPOINT } from './core/network';
 
 export {
     prepareTurns,
