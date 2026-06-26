@@ -135,7 +135,7 @@ export const DifferentProviderContent = ({ onKeepPlan, onContinueCancelling, fee
                             features={B2BConfig.features}
                         />
                         <p className="mt-12">{c('Info')
-                            .t`${BRAND_NAME} Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.`}</p>
+                            .t`${BRAND_NAME} Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.`}</p>
                         <B2BStoryCards />
                     </>
                 )}
