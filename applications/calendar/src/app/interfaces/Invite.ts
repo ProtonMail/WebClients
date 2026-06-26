@@ -69,7 +69,6 @@ export type SendIcs = {
         inviteActions: InviteActions;
         timestamp: number;
         sendPreferencesMap: SimpleMap<SendPreferences>;
-        addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference>;
     }>;
     (
         data: SendIcsActionData,
@@ -79,9 +78,14 @@ export type SendIcs = {
         inviteActions: InviteActions;
         timestamp: number;
         sendPreferencesMap: SimpleMap<SendPreferences>;
-        addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference>;
     }>;
 };
+
+export type GetAddedAttendeesPublicKeysMap = (args: {
+    veventComponent: VcalVeventComponent;
+    inviteActions: InviteActions;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
+}) => Promise<SimpleMap<PublicKeyReference>>;
 
 export type OnSendPrefsErrors = {
     (data: RequireSome<SendIcsActionData, 'vevent'>): Promise<RequireSome<CleanSendIcsActionData, 'vevent'>>;
