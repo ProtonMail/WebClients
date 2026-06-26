@@ -85,7 +85,6 @@ import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/
 import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -308,7 +307,6 @@ const SubscriptionContainerInner = ({
     const [subscriptionEstimationsForNonSelectedCycles, setSubscriptionEstimationsForNonSelectedCycles] =
         useState<SubscriptionEstimation[]>();
     const scribeEnabled = useAssistantFeatureEnabled();
-    const meetAddonFlag = useFlag('MeetAddonCustomizer');
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
     const getUser = useGetUser();
@@ -433,19 +431,14 @@ const SubscriptionContainerInner = ({
         getFreeCheckResult(model.currency, model.cycle)
     );
 
-    const hideLumoAddonForVpn2024 = useFlag('HideLumoAddonForVpn2024');
-
     const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap: plansMapRef.current });
 
     const lumoAddonEnabled = showLumoAddonCustomizer({
         subscription,
         couponConfig,
-        initialCoupon: maybeCoupon,
         planIDs: model.planIDs,
-        cycle: model.cycle,
-        hideLumoAddonForVpn2024,
     });
-    const meetAddonEnabled = showMeetAddonCustomizer({ meetAddonFlag, couponConfig });
+    const meetAddonEnabled = showMeetAddonCustomizer({ couponConfig, planIDs: model.planIDs });
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
             getDefaultSelectedProductPlans({
