@@ -16,20 +16,17 @@
 		align-items: center;
 		padding-block: 0.5rem;
 		padding-inline: 0;
+		gap: 0.5rem;
 	}
 
-	.selectable-conversation-select-link {
-		padding: 0;
+	.selectable-conversation-list-header-actions {
+		margin-inline-start: auto;
+	}
+
+	.selectable-conversation-manage-button {
+		color: var(--text-weak);
 		font-weight: 500;
-
-		&:hover {
-			text-decoration: underline;
-		}
-
-		&:focus {
-			outline: none;
-			text-decoration: underline;
-		}
+		padding-inline: 0.25rem;
 	}
 
 	.selectable-conversation-item {
@@ -46,7 +43,6 @@
 
 	.selectable-conversation-list-actions {
 		padding-block-end: 0.5rem;
-		border-block-end: 1px solid var(--border-weak);
 	}
 
 	.selectable-conversation-group {

@@ -6,7 +6,7 @@ import { ConversationStatus } from '../../types';
 import {
     applyRetentionPolicy,
     countConversationsByExpirationUrgency,
-    formatConversationDateGroupLabel,
+    getConversationDateGroupTitle,
     getConversationExpirationBannerTitle,
     getConversationExpirationTooltip,
     getConversationExpirationUrgency,
@@ -34,24 +34,41 @@ const createTestConversation = (
 };
 
 describe('groupConversationsByDate', () => {
-    it('groups conversations into Today, Yesterday, individual dates, and Older', () => {
+    it('groups conversations into Today, Yesterday, Last week, and Older', () => {
         const conversations = [
             createTestConversation(0, 'today'),
             createTestConversation(1, 'yesterday'),
-            createTestConversation(3, 'three-days'),
-            createTestConversation(40, 'older'),
+            createTestConversation(3, 'last-week'),
+            createTestConversation(10, 'older'),
         ];
 
         const groups = groupConversationsByDate(conversations);
 
         expect(groups).toHaveLength(4);
-        expect(groups[0].title).toBe(formatConversationDateGroupLabel(subDays(new Date(), 0)));
+        expect(groups.map((group) => group.key)).toEqual(['today', 'yesterday', 'last-week', 'older']);
+        expect(groups[0].title).toBe(getConversationDateGroupTitle('today'));
         expect(groups[0].conversations.map((conversation) => conversation.id)).toEqual(['today']);
-        expect(groups[1].title).toBe(formatConversationDateGroupLabel(subDays(new Date(), 1)));
+        expect(groups[1].title).toBe(getConversationDateGroupTitle('yesterday'));
         expect(groups[1].conversations.map((conversation) => conversation.id)).toEqual(['yesterday']);
-        expect(groups[2].conversations.map((conversation) => conversation.id)).toEqual(['three-days']);
-        expect(groups[3].key).toBe('older');
+        expect(groups[2].conversations.map((conversation) => conversation.id)).toEqual(['last-week']);
         expect(groups[3].conversations.map((conversation) => conversation.id)).toEqual(['older']);
+    });
+
+    it('combines chats from multiple days into the Last week bucket', () => {
+        const conversations = [createTestConversation(2, 'two-days'), createTestConversation(5, 'five-days')];
+
+        const groups = groupConversationsByDate(conversations);
+
+        expect(groups).toHaveLength(1);
+        expect(groups[0].key).toBe('last-week');
+        expect(groups[0].conversations.map((conversation) => conversation.id)).toEqual(['two-days', 'five-days']);
+    });
+
+    it('places chats older than 7 days in Older', () => {
+        const groups = groupConversationsByDate([createTestConversation(8, 'eight-days')]);
+
+        expect(groups).toHaveLength(1);
+        expect(groups[0].key).toBe('older');
     });
 
     it('sorts conversations within each group by updatedAt descending', () => {
@@ -77,7 +94,7 @@ describe('groupConversationsByDate', () => {
 
         const groups = groupConversationsByDate([conversation]);
 
-        expect(groups[0].title).toBe(formatConversationDateGroupLabel(new Date()));
+        expect(groups[0].key).toBe('today');
     });
 });
 

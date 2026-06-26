@@ -6,11 +6,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcListBullets } from '@proton/icons/icons/IcListBullets';
 
 import { MenuDropdown } from '../../components/Composer/components/MenuDropdown';
 import { useLumoUserSettings } from '../../hooks';
-import { useLumoPlan } from '../../hooks/useLumoPlan';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 
 import './ChatHistoryGroupByMenu.scss';
@@ -49,39 +49,56 @@ const GroupByMenuItem = ({
     </DropdownMenuButton>
 );
 
-export const ChatHistoryGroupByMenu = () => {
+const getSortedByLabel = (dateField: ChatHistoryDateField): string =>
+    dateField === 'updatedAt'
+        ? c('collider_2025: Info').t`Sorted by last updated`
+        : c('collider_2025: Info').t`Sorted by date created`;
+
+interface ChatHistoryGroupByMenuProps {
+    /** When true, shows the active sort field as text instead of an icon-only button. */
+    showSortedByLabel?: boolean;
+}
+
+export const ChatHistoryGroupByMenu = ({ showSortedByLabel = false }: ChatHistoryGroupByMenuProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const anchorRef = useRef<HTMLButtonElement>(null);
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const { hasLumoPlus } = useLumoPlan();
 
     const dateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
-
-    if (!hasLumoPlus) {
-        return null;
-    }
 
     const setDateField = (nextDateField: ChatHistoryDateField) => {
         updateSettings({ chatHistoryDateField: nextDateField, _autoSave: true });
     };
 
+    const sortedByLabel = getSortedByLabel(dateField);
+
     return (
         <>
             <Button
                 ref={anchorRef}
-                icon
+                icon={!showSortedByLabel}
                 shape="ghost"
                 size="small"
-                className="chat-history-group-by-menu-button shrink-0"
-                aria-label={c('collider_2025:Action').t`Group chats`}
-                title={c('collider_2025:Action').t`Group chats`}
+                className={clsx(
+                    'chat-history-group-by-menu-button shrink-0',
+                    showSortedByLabel && 'chat-history-group-by-menu-button--labeled'
+                )}
+                aria-label={sortedByLabel}
+                title={sortedByLabel}
                 onMouseDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                     event.stopPropagation();
                     setIsOpen((open) => !open);
                 }}
             >
-                <IcListBullets size={3.5} />
+                {showSortedByLabel ? (
+                    <span className="flex items-center gap-1">
+                        <span className="text-sm">{sortedByLabel}</span>
+                        <IcChevronDown size={3} className="color-weak shrink-0" alt="" />
+                    </span>
+                ) : (
+                    <IcListBullets size={3.5} />
+                )}
             </Button>
 
             <MenuDropdown
@@ -91,7 +108,7 @@ export const ChatHistoryGroupByMenu = () => {
                 placement="bottom-end"
                 className="chat-history-group-by-menu"
             >
-                <MenuSectionLabel>{c('collider_2025:Title').t`Group by`}</MenuSectionLabel>
+                <MenuSectionLabel>{c('collider_2025:Title').t`Sort by`}</MenuSectionLabel>
                 <GroupByMenuItem
                     label={c('collider_2025:Option').t`Last updated`}
                     selected={dateField === 'updatedAt'}

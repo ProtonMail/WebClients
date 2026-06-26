@@ -15,7 +15,7 @@ import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { SelectableConversationList } from '../../components/SelectableConversationList';
-import { usePersonalization } from '../../hooks';
+import { useLumoUserSettings, usePersonalization } from '../../hooks';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -85,6 +85,8 @@ const ProjectDetailViewInner = () => {
     const conversations = useLumoSelector(selectConversationsBySpaceId(projectId));
     const allConversations = Object.values(conversations);
     const { hasLumoPlus } = useLumoPlan();
+    const { lumoUserSettings } = useLumoUserSettings();
+    const dateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
 
     // Project data
     const { project } = getProjectInfo(space);
@@ -94,13 +96,7 @@ const ProjectDetailViewInner = () => {
 
     const retainedConversations = applyRetentionPolicy(allConversations, hasLumoPlus);
 
-    const sortedConversations = [...retainedConversations].sort((a, b) => {
-        return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
-    });
-
-    const conversationGroups = groupConversationsByDate(sortedConversations, {
-        sortBy: hasLumoPlus ? 'updatedAt' : 'createdAt',
-    });
+    const conversationGroups = groupConversationsByDate(retainedConversations, { sortBy: dateField });
 
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -248,7 +244,7 @@ const ProjectDetailViewInner = () => {
     ).length;
 
     // Get prompt suggestions based on project category (only shown when no conversations exist)
-    const promptSuggestions = sortedConversations.length === 0 ? getPromptSuggestionsForCategory(category.id) : [];
+    const promptSuggestions = retainedConversations.length === 0 ? getPromptSuggestionsForCategory(category.id) : [];
 
     // Create a Project object for the delete modal
     // Use allConversations.length for the total count (not filtered by conversation limit)
@@ -311,7 +307,7 @@ const ProjectDetailViewInner = () => {
                     {/* Main area - similar to 'outer' in lumo-chat-container */}
                     <div className="outer">
                         <div className="project-detail-main">
-                            {sortedConversations.length === 0 ? (
+                            {retainedConversations.length === 0 ? (
                                 <ProjectEmptyState
                                     promptSuggestions={promptSuggestions}
                                     onSelectSuggestion={setSuggestedPrompt}
@@ -326,6 +322,7 @@ const ProjectDetailViewInner = () => {
                                                     conversations: group.conversations,
                                                 }))
                                                 .filter((group) => group.conversations.length > 0)}
+                                            showDate={false}
                                             onConversationClick={(id) => history.push(`/c/${id}`)}
                                             onDeleteSelected={handleDeleteSelectedConversations}
                                             renderConversationActions={(conversation) => (

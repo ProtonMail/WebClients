@@ -1,20 +1,23 @@
 import { addDays, differenceInCalendarDays, startOfDay, subDays } from 'date-fns';
 import { c } from 'ttag';
 
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
 import { FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation } from '../../types';
-import {LUMO_SHORT_APP_NAME} from "@proton/shared/lib/constants";
 
 export type ConversationSortField = ChatHistoryDateField;
 
+const CONVERSATION_DATE_GROUP_ORDER = ['today', 'yesterday', 'last-week', 'older'] as const;
+
+export type ConversationDateGroupKey = (typeof CONVERSATION_DATE_GROUP_ORDER)[number];
+
 export interface ConversationDateGroup {
-    key: string;
+    key: ConversationDateGroupKey;
     title: string;
     conversations: Conversation[];
 }
-
-const DEFAULT_OLDER_THAN_DAYS = 30;
 
 export const sortConversationsByField = (
     conversations: Conversation[],
@@ -22,64 +25,72 @@ export const sortConversationsByField = (
 ): Conversation[] =>
     [...conversations].sort((a, b) => new Date(b[sortBy]).getTime() - new Date(a[sortBy]).getTime());
 
+export const getConversationDateGroupKey = (dayDiff: number): ConversationDateGroupKey => {
+    if (dayDiff <= 0) {
+        return 'today';
+    }
+
+    if (dayDiff === 1) {
+        return 'yesterday';
+    }
+
+    if (dayDiff <= 7) {
+        return 'last-week';
+    }
+
+    return 'older';
+};
+
+export const getConversationDateGroupTitle = (key: ConversationDateGroupKey): string => {
+    switch (key) {
+        case 'today':
+            return c('collider_2025: Date').t`Today`;
+        case 'yesterday':
+            return c('collider_2025: Date').t`Yesterday`;
+        case 'last-week':
+            return c('collider_2025: Date').t`Last week`;
+        case 'older':
+            return c('collider_2025:Title').t`Older`;
+    }
+};
+
 export const formatConversationDateGroupLabel = (dayStart: Date, now: Date = startOfDay(new Date())): string => {
     const dayDiff = differenceInCalendarDays(now, dayStart);
 
-    if (dayDiff === 0) {
-        return c('collider_2025: Date').t`Today`;
-    }
-    if (dayDiff === 1) {
-        return c('collider_2025: Date').t`Yesterday`;
-    }
-
-    return dayStart.toLocaleDateString(undefined, {
-        month: 'short',
-        day: 'numeric',
-        year: dayStart.getFullYear() !== now.getFullYear() ? 'numeric' : undefined,
-    });
+    return getConversationDateGroupTitle(getConversationDateGroupKey(dayDiff));
 };
 
 /**
- * Group conversations by calendar day (Claude-style): Today, Yesterday, individual
- * dates, then Older for chats beyond the recent window.
+ * Group conversations into Today, Yesterday, Last week, and Older.
+ * Which date field is used is controlled by sortBy (updatedAt or createdAt).
  */
 export const groupConversationsByDate = (
     conversations: Conversation[],
-    {
-        sortBy = 'updatedAt',
-        olderThanDays = DEFAULT_OLDER_THAN_DAYS,
-    }: { sortBy?: ConversationSortField; olderThanDays?: number } = {}
+    { sortBy = 'updatedAt' }: { sortBy?: ConversationSortField } = {}
 ): ConversationDateGroup[] => {
     const now = startOfDay(new Date());
     const sorted = sortConversationsByField(conversations, sortBy);
-    const groups = new Map<string, ConversationDateGroup>();
+    const groups = new Map<ConversationDateGroupKey, Conversation[]>();
 
     for (const conversation of sorted) {
         const dayStart = startOfDay(new Date(conversation[sortBy]));
         const dayDiff = differenceInCalendarDays(now, dayStart);
-        const isOlder = dayDiff > olderThanDays;
-        const key = isOlder ? 'older' : `day-${dayStart.toISOString()}`;
-
+        const key = getConversationDateGroupKey(dayDiff);
         const existing = groups.get(key);
+
         if (existing) {
-            existing.conversations.push(conversation);
+            existing.push(conversation);
             continue;
         }
 
-        groups.set(key, {
-            key,
-            title: isOlder
-                ? c('collider_2025:Title').t`Older`
-                : formatConversationDateGroupLabel(dayStart, now),
-            conversations: [conversation],
-        });
+        groups.set(key, [conversation]);
     }
 
-    return [...groups.values()].sort((a, b) => {
-        if (a.key === 'older') return 1;
-        if (b.key === 'older') return -1;
-        return b.key.localeCompare(a.key);
-    });
+    return CONVERSATION_DATE_GROUP_ORDER.filter((key) => groups.has(key)).map((key) => ({
+        key,
+        title: getConversationDateGroupTitle(key),
+        conversations: groups.get(key)!,
+    }));
 };
 
 export const searchConversations = (conversations: Conversation[], searchInput: string) => {

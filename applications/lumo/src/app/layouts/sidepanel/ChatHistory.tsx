@@ -30,7 +30,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const { hasLumoPlus } = useLumoPlan();
     const { lumoUserSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
-    const dateField = hasLumoPlus ? (lumoUserSettings.chatHistoryDateField ?? 'updatedAt') : 'createdAt';
+    const dateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
 
     const isLoading = false;
 
