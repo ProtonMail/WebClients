@@ -64,11 +64,11 @@
 
 	button {
 		opacity: 0.8;
+		pointer-events: auto;
 	}
 
 	.inline-image-card:hover & {
 		opacity: 1;
-		pointer-events: auto;
 	}
 }
 
