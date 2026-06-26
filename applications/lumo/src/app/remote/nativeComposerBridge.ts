@@ -15,7 +15,13 @@ import {
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
 
-import { type ModelTier, type ResponseMode, DEFAULT_MODEL_TIER, DEFAULT_RESPONSE_MODE, getSelectedModelTier } from '../providers/ModelTierProvider';
+import {
+    DEFAULT_MODEL_TIER,
+    DEFAULT_RESPONSE_MODE,
+    type ModelTier,
+    type ResponseMode,
+    getSelectedModelTier,
+} from '../providers/ModelTierProvider';
 import { LUMO_API_ERRORS } from '../types';
 
 /**
@@ -89,6 +95,12 @@ export interface State {
     modelTier: LegacyModelTier;
     /** Selectable model for new clients (the web's `auto` collapses to lite). */
     model: Exclude<ModelTier, 'auto'>;
+    /**
+     * Whether the Max model can currently be selected. `false` when Max is
+     * temporarily unavailable (e.g. high load) for the current user segment;
+     * native greys out the row and shows a "High load" badge.
+     */
+    isMaxModelAvailable: boolean;
     responseMode: ResponseMode;
     isGhostModeEnabled: boolean;
     isWebSearchEnabled: boolean;
@@ -225,6 +237,7 @@ class NativeComposerApi {
         lumoMode: LumoMode.Idle,
         modelTier: 'thinking',
         model: getSelectedModelTier(DEFAULT_MODEL_TIER),
+        isMaxModelAvailable: true,
         responseMode: DEFAULT_RESPONSE_MODE,
         isCreateImageEnabled: false,
         attachedFiles: [],
@@ -383,6 +396,11 @@ class NativeComposerApi {
     public setNativeModelTier(modelTier: ModelTier): void {
         console.log(`NativeComposerApi: Setting model type to ${modelTier}`);
         this.updateState({ model: getSelectedModelTier(modelTier) });
+    }
+
+    public setMaxModelAvailable(available: boolean): void {
+        console.log(`NativeComposerApi: Setting max model available to ${available}`);
+        this.updateState({ isMaxModelAvailable: available });
     }
 
     public setNativeResponseMode(responseMode: ResponseMode): void {
