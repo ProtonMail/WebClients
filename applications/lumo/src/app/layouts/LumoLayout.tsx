@@ -36,7 +36,7 @@ interface LumoLayoutWithDrawerProps {
 }
 
 export const LumoLayoutWithDrawer = ({ children, header, drawer }: LumoLayoutWithDrawerProps) => {
-    const { close, open, isOpen } = useRightPanel();
+    const { close, open, isOpen, isSmallScreen } = useRightPanel();
 
     // Extract configurations with defaults
     const headerConfig = header || {};
@@ -60,13 +60,24 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer }: LumoLayoutWit
         }
     }, [withoutDrawerToggle, drawerContentComponent, close, isOpen]);
 
-    // Automatically open panel if defaultOpened is true and drawer is enabled with content
+    // Keep defaultOpened drawer behavior desktop-only. On small screens the drawer is an
+    // overlay and should stay closed unless the user opens it explicitly.
     useLayoutEffect(() => {
-        // Open panel synchronously before browser paint to avoid visual flicker
-        if (!withoutDrawerToggle && drawerContentComponent && defaultOpened) {
+        if (withoutDrawerToggle || !drawerContentComponent) {
+            return;
+        }
+
+        if (isSmallScreen) {
+            if (defaultOpened) {
+                close();
+            }
+            return;
+        }
+
+        if (defaultOpened) {
             open();
         }
-    }, [defaultOpened, open]);
+    }, [defaultOpened, open, close, withoutDrawerToggle, drawerContentComponent, isSmallScreen]);
 
     return (
         <div

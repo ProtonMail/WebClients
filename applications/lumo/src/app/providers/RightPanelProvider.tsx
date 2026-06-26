@@ -1,4 +1,4 @@
-import { type ReactNode, createContext, useCallback, useContext, useState } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useLayoutEffect, useRef, useState } from 'react';
 
 import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
 
@@ -25,6 +25,7 @@ export const RightPanelProvider = ({ children }: { children: ReactNode }) => {
     const [title, setTitle] = useState<string | null>(null);
     const [actionButton, setActionButton] = useState<ReactNode | null>(null);
     const { isSmallScreen } = useIsLumoSmallScreen();
+    const wasLargeScreenRef = useRef(!isSmallScreen);
 
     const toggle = useCallback(() => setIsOpen((v) => !v), []);
     const open = useCallback(() => setIsOpen(true), []);
@@ -42,6 +43,16 @@ export const RightPanelProvider = ({ children }: { children: ReactNode }) => {
             return;
         }
         setIsOpen(false);
+    }, [isSmallScreen]);
+
+    // Close the drawer when crossing into the small-screen breakpoint. Desktop layouts
+    // may auto-open the panel, but it should not stay visible as a mobile overlay.
+    useLayoutEffect(() => {
+        if (isSmallScreen && wasLargeScreenRef.current) {
+            setIsOpen(false);
+        }
+
+        wasLargeScreenRef.current = !isSmallScreen;
     }, [isSmallScreen]);
 
     // On small screens, the drawer becomes an overlay

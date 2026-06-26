@@ -51,8 +51,8 @@ const GroupByMenuItem = ({
 
 const getSortedByLabel = (dateField: ChatHistoryDateField): string =>
     dateField === 'updatedAt'
-        ? c('collider_2025: Info').t`Sorted by last updated`
-        : c('collider_2025: Info').t`Sorted by date created`;
+        ? c('collider_2025: Info').t`Sorted by update time`
+        : c('collider_2025: Info').t`Sorted by creation time`;
 
 interface ChatHistoryGroupByMenuProps {
     /** When true, shows the active sort field as text instead of an icon-only button. */
