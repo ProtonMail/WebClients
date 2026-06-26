@@ -43,11 +43,11 @@ export type SearchViewStore = {
     setLoading: (loading: boolean) => void;
     hasEverLoaded: boolean;
 
-    addSearchResultItem: (item: SearchResultItemUI) => void;
-    setSearchResultItems: (items: SearchResultItemUI[]) => void;
+    // Reset all items and loading state for a new search.
+    clearAll: () => void;
 
-    // Remove unused nodes from the store from previous search queries.
-    cleanupStaleItems: (loadedUids: Set<string>) => void;
+    addSearchResultItem: (item: SearchResultItemUI) => void;
+    addSearchResultItems: (items: SearchResultItemUI[]) => void;
 
     getSearchResultItem: (uid: string) => SearchResultItemUI | undefined;
     getAllSearchResultItems: () => SearchResultItemUI[];
@@ -79,46 +79,20 @@ export const useSearchViewStore = create<SearchViewStore>()(
                 });
             },
 
-            addSearchResultItem: (item: SearchResultItemUI) => {
-                set((state) => {
-                    const keyUid = getKeyUid(item);
-                    const isExistingItem = state.searchResultItems.has(keyUid);
-
-                    if (isExistingItem) {
-                        const newItems = new Map(state.searchResultItems);
-                        newItems.set(keyUid, item);
-
-                        return {
-                            searchResultItems: newItems,
-                        };
-                    }
-
-                    // Reset sorting
-                    const items = state.getAllSearchResultItems();
-                    const sortedItemUids = sortItems(
-                        items,
-                        state.sortConfig,
-                        state.direction,
-                        getSearchResultItemSortValue,
-                        getKeyUid
-                    );
-
-                    const newSearchResultItems = new Map(state.searchResultItems);
-                    newSearchResultItems.set(keyUid, item);
-
-                    return {
-                        searchResultItems: newSearchResultItems,
-                        sortedItemUids,
-                    };
+            clearAll: () => {
+                set({
+                    searchResultItems: new Map(),
+                    sortedItemUids: [],
+                    loading: false,
+                    hasEverLoaded: false,
+                    dirty: false,
                 });
             },
 
-            setSearchResultItems: (items: SearchResultItemUI[]) => {
+            addSearchResultItem: (item: SearchResultItemUI) => {
                 set((state) => {
                     const newSearchResultItems = new Map(state.searchResultItems);
-                    for (const item of items) {
-                        newSearchResultItems.set(getKeyUid(item), item);
-                    }
+                    newSearchResultItems.set(getKeyUid(item), item);
 
                     const allItems = Array.from(newSearchResultItems.values());
                     const sortedItemUids = sortItems(
@@ -136,33 +110,24 @@ export const useSearchViewStore = create<SearchViewStore>()(
                 });
             },
 
-            cleanupStaleItems: (loadedUids: Set<string>) => {
+            addSearchResultItems: (items: SearchResultItemUI[]) => {
+                if (items.length === 0) {
+                    return;
+                }
                 set((state) => {
-                    const newItems = new Map(state.searchResultItems);
-
-                    // Find items of the specified type that weren't in the loaded set
-                    for (const [uid, item] of state.searchResultItems) {
-                        const shouldCleanup = !loadedUids.has(getKeyUid(item));
-
-                        if (shouldCleanup) {
-                            newItems.delete(uid);
-                        }
+                    const newSearchResultItems = new Map(state.searchResultItems);
+                    for (const item of items) {
+                        newSearchResultItems.set(getKeyUid(item), item);
                     }
-
-                    // Reset sorting
-                    const items = Array.from(newItems.values());
+                    const allItems = Array.from(newSearchResultItems.values());
                     const sortedItemUids = sortItems(
-                        items,
+                        allItems,
                         state.sortConfig,
                         state.direction,
                         getSearchResultItemSortValue,
                         getKeyUid
                     );
-
-                    return {
-                        searchResultItems: newItems,
-                        sortedItemUids,
-                    };
+                    return { searchResultItems: newSearchResultItems, sortedItemUids };
                 });
             },
 
