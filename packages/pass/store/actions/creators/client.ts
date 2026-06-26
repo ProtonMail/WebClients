@@ -30,6 +30,7 @@ export const cacheRequest = createAction('cache::request', (options: Omit<CacheM
 );
 
 export const cacheCancel = createAction('cache::cancel');
+export const cacheConflict = createAction('cache::conflict');
 
 export const clientInit = requestActionsFactory<{ status: AppStatus } & EndpointOptions, EndpointOptions>('client::init')({
     key: ({ tabId, endpoint }: EndpointOptions) => `${endpoint}::${tabId}`,
@@ -55,10 +56,6 @@ export const bootFailure = createAction('boot::failure', (error?: unknown) =>
     )({ payload: {}, error })
 );
 
-/** ⚠️ This action must not trigger any saga workers that dispatch `withCache` tagged
- * actions. `bootSuccess` is dispatched mid-flight inside `bootWorker`: any `isCachingAction`
- * match would win the boot race and cancel the worker, leaving the app in an inconsistent state.
- * The `dedupe` result is embedded directly in the payload for this reason. */
 export const bootSuccess = createAction('boot::success', (payload?: SyncResult) =>
     pipe(withRequest({ id: bootRequest(), status: 'success' }), withStreamableAction)({ payload })
 );
@@ -98,9 +95,8 @@ export const offlineResume = requestActionsFactory<{ localID?: number; retryable
 
 export const syncResult = createAction('sync::result', (payload: SyncResult) => pipe(withCache, withStreamableAction)({ payload }));
 
-/** Commits a sync strategy migration without triggering cache writes.
- * During boot, a `withCache` action would trip the `isCachingAction`
- * race guard and cancel the boot sequence. */
+/** Commits a sync strategy migration. Dispatched during boot. The strategy and
+ * cursor persist via the post-boot cache flush (writes are gated until `booted`). */
 export const syncMigration = createAction<SyncMigration>('sync::migration');
 
 /** Represents an action object streamed through chunks.
