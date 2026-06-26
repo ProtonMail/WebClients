@@ -18,6 +18,9 @@ const slice = createSlice({
         setParticipantScreenShare: (state, action: PayloadAction<string | null>) => {
             state.participantScreenSharingIdentity = action.payload;
         },
+        resetScreenShareStatus: (state) => {
+            state.participantScreenSharingIdentity = initialState.participantScreenSharingIdentity;
+        },
     },
 });
 
@@ -28,6 +31,6 @@ export const selectIsScreenShare = (state: MeetState) => !!state.screenShareStat
 export const selectIsParticipantScreenSharing = (meetState: MeetState, participantIdentity: string) =>
     meetState.screenShareStatus.participantScreenSharingIdentity === participantIdentity;
 
-export const { setParticipantScreenShare } = slice.actions;
+export const { setParticipantScreenShare, resetScreenShareStatus } = slice.actions;
 
 export const screenShareStatusReducer = { screenShareStatus: slice.reducer };

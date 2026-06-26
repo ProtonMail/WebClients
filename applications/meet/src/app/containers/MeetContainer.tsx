@@ -3,8 +3,8 @@ import { useEffect, useLayoutEffect, useMemo } from 'react';
 import type { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
 import {
-    resetMeetingInfo,
     setMeetingInfo,
     startMeetingDurationTimer,
     stopMeetingDurationTimer,
@@ -134,7 +134,7 @@ export const MeetContainer = ({
 
     useEffect(() => {
         return () => {
-            dispatch(resetMeetingInfo());
+            dispatch(resetMeetingState());
         };
     }, [dispatch]);
 
