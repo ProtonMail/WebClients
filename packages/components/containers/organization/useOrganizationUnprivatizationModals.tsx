@@ -15,6 +15,8 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { Member } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
 import { MemberListBanner, MembersList } from './MemberListBanner';
 
@@ -49,6 +51,7 @@ const ConfirmDeleteMembers = ({ members, onConfirm, ...rest }: Props) => {
 };
 
 const useOrganizationUnprivatizationModals = () => {
+    const isScimGroupsEnabled = useFlag('UserGroupsScimGroups');
     const [organizationKey] = useOrganizationKey();
 
     const joinedUnprivatizationState = useSelector(selectJoinedUnprivatizationState);
@@ -58,6 +61,11 @@ const useOrganizationUnprivatizationModals = () => {
     const { createNotification } = useNotifications();
 
     const unprivatizationApprovalInfo = (() => {
+        // When the SCIM groups feature is enabled, ScimSetupBannerAndModal handles this approval flow.
+        if (isScimGroupsEnabled) {
+            return null;
+        }
+
         const membersToUnprivatize = joinedUnprivatizationState.approval.map(({ member }) => member);
         if (!organizationKey?.privateKey || !membersToUnprivatize.length) {
             return null;
@@ -81,7 +89,7 @@ const useOrganizationUnprivatizationModals = () => {
                         size="small"
                         loading={joinedUnprivatizationState.loading.approval}
                         onClick={() => {
-                            dispatch(unprivatizeMembersManual({ membersToUnprivatize }));
+                            dispatch(unprivatizeMembersManual({ membersToUnprivatize })).catch(noop);
                         }}
                     >
                         {c('unprivatization').t`Confirm all`}
@@ -125,7 +133,7 @@ const useOrganizationUnprivatizationModals = () => {
                                         ignoreRevisionCheck: true,
                                     },
                                 })
-                            );
+                            ).catch(noop);
                         }}
                     >
                         {c('unprivatization').t`Enable manually`}
@@ -189,7 +197,7 @@ const useOrganizationUnprivatizationModals = () => {
                                     });
                                 }
                             })
-                        );
+                        ).catch(noop);
                     }}
                     {...confirmDeleteProps}
                 />

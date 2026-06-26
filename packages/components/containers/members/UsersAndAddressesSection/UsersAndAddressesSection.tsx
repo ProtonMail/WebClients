@@ -9,6 +9,7 @@ import { FeatureCode, useFeature } from '@proton/features';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import ScimSetupBannerAndModal from '../../organization/ScimSetupBannerAndModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
 import useOrganizationUnprivatizationModals from '../../organization/useOrganizationUnprivatizationModals';
 import AdminRolesOnboardingModal from '../rolesAndPermissions/AdminRolesOnboardingModal';
@@ -35,13 +36,16 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     return (
         <SettingsSectionWide>
-            {organizationModals.info}
-            {organizationUnprivatizationModals.memberInfo}
-            {organizationModals.modals}
-
             <SettingsParagraph large className="flex items-center mb-6 gap-2">
                 <UserAndAddressesSectionIntro onOpenNewDomainModal={setNewDomainModalOpen} />
             </SettingsParagraph>
+
+            {organizationModals.info}
+
+            {organizationUnprivatizationModals.memberInfo}
+            {organizationModals.modals}
+
+            <ScimSetupBannerAndModal />
 
             {organization && organization.UsedMembers > paginatedMemberThreshold && hasRemoteMembers ? (
                 <MembersRemote app={app} />
