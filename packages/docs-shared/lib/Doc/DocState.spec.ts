@@ -33,6 +33,8 @@ describe('DocState', () => {
       {
         debug: jest.fn(),
         info: jest.fn(),
+        warn: jest.fn(),
+        error: jest.fn(),
       } as unknown as LoggerInterface,
     )
   })
@@ -315,6 +317,34 @@ describe('DocState', () => {
         }),
         expect.anything(),
       )
+    })
+
+    it('should not propagate update when document update guard blocks it', () => {
+      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+
+      state.runWithDocumentUpdateGuard(
+        () => false,
+        () => {
+          state.handleYDocUpdate(new Uint8Array(), 'local')
+        },
+      )
+
+      expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
+    })
+
+    it('should restore the previous document update guard after a scoped callback', () => {
+      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const firstGuard = jest.fn(() => true)
+      const secondGuard = jest.fn(() => false)
+
+      state.runWithDocumentUpdateGuard(firstGuard, () => {
+        state.runWithDocumentUpdateGuard(secondGuard, () => undefined)
+        state.handleYDocUpdate(new Uint8Array(), 'local')
+      })
+
+      expect(secondGuard).not.toHaveBeenCalled()
+      expect(firstGuard).toHaveBeenCalled()
+      expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalled()
     })
   })
 })

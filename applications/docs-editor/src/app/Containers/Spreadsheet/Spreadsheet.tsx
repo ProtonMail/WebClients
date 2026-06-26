@@ -41,6 +41,10 @@ import type { SpreadsheetConversionType } from '@proton/shared/lib/docs/constant
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { c } from 'ttag'
 
+import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
+import { isDevOrBlack } from '@proton/utils/env'
+
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
   replaceLocalSpreadsheetState: (state: object, broadcastPatches: boolean) => void
@@ -90,6 +94,27 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isCreationOrConversion = !!editorInitializationConfig
   const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
 
+  const handleYjsDriftDetected = useCallback(
+    (result: SpreadsheetLocalYjsUpdateAuditResult) => {
+      for (const difference of result.differences) {
+        void clientInvoker.reportSheetsYjsDriftDetected(difference.reason)
+      }
+      const error = new Error(
+        c('Error')
+          .t`This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.`,
+      )
+      reportErrorToSentry(error, undefined, {
+        driftResult: {
+          localChangedKeys: result.localChangedKeys,
+          observedYjsKeys: result.observedYjsKeys,
+        },
+      })
+
+      void clientInvoker.reportUserInterfaceError(error, { irrecoverable: false, lockEditor: true })
+    },
+    [clientInvoker],
+  )
+
   const pushPatches = useMemo(() => clientInvoker.storeSpreadsheetPatches.bind(clientInvoker), [clientInvoker])
   const hasBasePatchesStored = useMemo(() => clientInvoker.hasBasePatchesStored.bind(clientInvoker), [clientInvoker])
   const [isPatchesStorageEnabled, setIsPatchesStorageEnabled] = useState(false)
@@ -97,6 +122,15 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     void clientInvoker
       .checkIfFeatureFlagIsEnabled('SheetsPatchesStorageEnabled')
       .then((enabled) => setIsPatchesStorageEnabled(enabled))
+      .catch(console.error)
+  }, [clientInvoker])
+  // On dev/black the detector is always on (like other Sheets features); in prod it is gated by
+  // the SheetsDriftDetectionEnabled flag.
+  const [isDriftDetectionEnabled, setIsDriftDetectionEnabled] = useState(isDevOrBlack())
+  useEffect(() => {
+    void clientInvoker
+      .checkIfFeatureFlagIsEnabled('SheetsDriftDetectionEnabled')
+      .then((enabled) => setIsDriftDetectionEnabled(enabled || isDevOrBlack()))
       .catch(console.error)
   }, [clientInvoker])
 
@@ -108,6 +142,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     pushPatches,
     hasBasePatchesStored,
     isPatchesStorageEnabled,
+    isDriftDetectionEnabled,
+    onYjsDriftDetected: handleYjsDriftDetected,
   })
   const didSetInitialVersion = useRef(false)
   const { setInitialVersion } = useVersioning(
