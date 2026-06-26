@@ -8,9 +8,11 @@ import {
     useTrialEndedModal,
 } from '@proton/components';
 import type { StartupModal } from '@proton/components';
+import { useNetPromoterScoreModal } from '@proton/components/components/startupModals/startupModalHooks';
+import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
 
-import { DriveOnboardingModal } from '../../../modals/DriveOnboardingModal';
 import { useDriveDocsFeatureFlag } from '../../../legacy/store/_documents';
+import { DriveOnboardingModal } from '../../../modals/DriveOnboardingModal';
 import { DocsSuggestionsOnboardingModal } from './DocsSuggestionsOnboardingModal';
 
 const useDriveOnboardingModal: () => StartupModal = () => {
@@ -48,8 +50,9 @@ const useStartupModals = () => {
     const docsModal = useDocsSuggestionsOnboardingModal();
     const reminderModal = useCancellationReminderModal();
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();
+    const netPromoterScoreModal = useNetPromoterScoreModal(NPSApplication.WebDrive);
 
-    return [trialEndedModal, welcomeModal, docsModal, reminderModal, lightLabellingFeatureModal];
+    return [trialEndedModal, welcomeModal, docsModal, reminderModal, lightLabellingFeatureModal, netPromoterScoreModal];
 };
 
 export const DriveStartupModals = () => {
