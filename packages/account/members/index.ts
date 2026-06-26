@@ -134,7 +134,10 @@ const slice = createSlice({
             state.meta.fetchedAt = getFetchedAt();
             state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
-        upsertMember: (state, action: PayloadAction<{ member: Member; type?: 'delete' }>) => {
+        upsertMember: (
+            state,
+            action: PayloadAction<{ member: Member; type?: 'delete'; invalidateAddresses?: boolean }>
+        ) => {
             if (!state.value) {
                 return;
             }
@@ -158,7 +161,11 @@ const slice = createSlice({
                 const previousAddressState =
                     previousMember.addressState === 'full'
                         ? {
-                              addressState: previousMember.addressState,
+                              // Keep the cached addresses for display, but when the caller signals the
+                              // member's addresses changed (e.g. unprivatization re-encrypts address
+                              // tokens), mark them 'stale' so the next getMemberAddresses refetches
+                              // instead of serving the cached (now invalid) Token/Signature.
+                              addressState: action.payload.invalidateAddresses ? ('stale' as const) : ('full' as const),
                               Addresses: previousMember.Addresses,
                           }
                         : {};
