@@ -9,7 +9,7 @@ import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
 import { useQueryParam, useSkillParam } from '../../hooks';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
-import { ComposerActionsProvider } from '../../providers/ComposerActionsProvider';
+import { ConversationActionsProvider } from '../../providers/ConversationActionsProvider';
 import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -41,7 +41,7 @@ const ConversationPageComponentInner = () => {
     const user = useSafeUser(); // Get user from context (undefined for guests)
     const navigate = useNavigate();
     const dispatch = useLumoDispatch();
-    const isGalleryRoute = !!useRouteMatch({ path: '/gallery', exact: true });
+    const isGalleryRoute = !!useRouteMatch({ path: '/images', exact: true });
     const { conversationId: curConversationId } = useParams<RouteParams>();
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
@@ -171,23 +171,32 @@ const ConversationPageComponentInner = () => {
         // (remoteWasSynced will transition from false to true).
         // It is deliberately not re-ran when the conversation object changes (e.g. new title) or
         // when the messageMap changes (e.g. new message posted).
-        [dispatch, curConversationId, remoteWasSynced]
+        [dispatch, curConversationId, remoteWasSynced, conversation, isGenerating, navigate, isGuest]
     );
 
     // ** Main layout **
     return (
-        <ComposerActionsProvider handleSendMessage={handleSendMessage}>
+        <ConversationActionsProvider
+            handleSendMessage={handleSendMessage}
+            handleAbort={handleAbort}
+            handleEditMessage={handleEditMessage}
+            handleRegenerateMessage={handleRegenerateMessage}
+            getSiblingInfo={getSiblingInfo}
+            handleRetryGeneration={handleRetryGeneration}
+            messageChain={messageChain}
+            messageChainRef={messageChainRef}
+        >
             <div
-                className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto"
+                className="conversation-page-component relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl"
                 onDrop={onDrop}
                 onDragLeave={onDragLeave}
                 onDragEnter={onDragEnter}
                 onDragOver={onDragOver}
             >
+                {/* <Header conversation={conversation} /> */}
                 {!curConversationId && isGalleryRoute && (
                     <Suspense fallback={<ConversationSkeleton />}>
                         <GalleryView
-                            handleSendMessage={handleSendMessage}
                             isProcessingAttachment={isProcessingAttachment}
                             prefillQuery={prefillQuery || undefined}
                         />
@@ -196,7 +205,6 @@ const ConversationPageComponentInner = () => {
                 {!curConversationId && !isGalleryRoute && (
                     <MainContainer
                         isProcessingAttachment={isProcessingAttachment}
-                        handleSendMessage={handleSendMessage}
                         initialQuery={initialQuery || undefined}
                         prefillQuery={prefillQuery || undefined}
                     />
@@ -206,22 +214,14 @@ const ConversationPageComponentInner = () => {
                     <ConversationComponent
                         key={curConversationId}
                         conversation={conversation}
-                        handleSendMessage={handleSendMessage}
-                        handleAbort={handleAbort}
                         isGenerating={isGenerating}
                         isProcessingAttachment={isProcessingAttachment}
-                        messageChainRef={messageChainRef}
-                        messageChain={messageChain}
-                        handleRegenerateMessage={handleRegenerateMessage}
-                        handleEditMessage={handleEditMessage}
-                        getSiblingInfo={getSiblingInfo}
-                        handleRetryGeneration={handleRetryGeneration}
                         initialQuery={initialQuery || undefined}
                         prefillQuery={pendingPrefill || undefined}
                     />
                 )}
             </div>
-        </ComposerActionsProvider>
+        </ConversationActionsProvider>
     );
 };
 

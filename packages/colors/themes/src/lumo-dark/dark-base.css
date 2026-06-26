@@ -21,8 +21,10 @@
     --text-disabled: #5B576B;
     --text-invert: #343140;
     --text-markdown: white;
+    --text-dark: #0C0C14;
      /* Emphasized text */
     --text-strong: white;
+    --text-secondary: white;
 
     --field-norm: #5B576B;
     --field-hover: #6D697D;
@@ -34,10 +36,12 @@
     --border-norm: #4A4658;
     --border-weak: #343140;
 
-    --background-norm: #16141C;
+    --background-norm: #141414;
     --background-weak: #292733;
     --background-strong: #3F3B4C;
     --background-invert: white;
+    --background-light: var(--background-weak);
+
      /* composer background for small screens */
       --background-composer-mobile: #292733;
      /* lumo plus upsell sidebar button background */
@@ -62,9 +66,16 @@
     --backdrop-norm: rgb(38 42 51 / 0.48);
 
     /*  new colors */
+    --background-main-canvas: #0B0B0B;
     --interaction-secondary: #E57031;
     --interaction-secondary-hover: #F97316;
     --interaction-secondary-active: #FB923C;
+
+    /* For lumo solid weak button background color */
+    --interaction-solid-weak-custom: #292929;
+    --interaction-solid-weak-custom-contrast: #292929;
+    --interaction-solid-weak-custom-active: #525252;
+    --interaction-solid-weak-custom-hover: #3f3f3f;
 
     --reinforce-norm: #5C3BE7;
     --reinforce-hover: #6D4AFF;
@@ -73,6 +84,10 @@
     --link-norm: #9880FF;
     --link-hover: #A898ED;
     --link-active: #BBABFF;
+
+    --composer-glow-border: var(--border-weak);
+    --composer-hover-border: #707070;
+    --composer-focus-outer-ring: #321d77;
 
     --optional-promotion-background-start: rgb(109 74 255 / 0.15);
     --optional-promotion-background-end: rgb(70 26 255 / 0.04);
@@ -94,6 +109,20 @@
     --settings-modal-upsell-background: var(--backdrop-norm);
     --settings-modal-upsell-text: var(--text-norm);
 
-        /* lumo logo */
-        --lumo-plus-logo-plus-sign-text:#F7F5FF;
+    /* lumo logo */
+    --lumo-plus-logo-plus-sign-text:#F7F5FF;
+
+    /* background particle  */
+    --surface-foreground: #141414;
+
+     /* welcome text */
+    --lumo-welcome-text: white;
+
+    /* logo tags */
+    --lumo-logo-tag-pro-background: rgba(255, 255, 255, 0.70);
+    --lumo-logo-tag-plus-background: var(--border-weak);
+    --lumo-logo-tag-pro-text: var(--text-dark);
+    --lumo-logo-tag-plus-text: var(--interaction-weak-active);
+
+    --lumo-secondary-upsell-background: var(--background-upsell-toggle)
 }

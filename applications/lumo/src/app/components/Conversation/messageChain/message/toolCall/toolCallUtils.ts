@@ -1,8 +1,9 @@
 import type { SearchItem, ToolCallData, ToolResultData } from '../../../../../lib/toolCall/types';
 import {
     isToolResultError,
+    isWebExtractToolCallData,
     isWebSearchToolCallData,
-    isWebSearchToolResultData,
+    isWebSourceToolResultData,
     tryParseToolCall,
     tryParseToolResult,
 } from '../../../../../lib/toolCall/types';
@@ -74,29 +75,41 @@ export function getToolCallErrorMessage(toolCall: ToolCallData): string {
     }
 }
 
+function isWebSourceToolCall(toolCall: ToolCallData): boolean {
+    return isWebSearchToolCallData(toolCall) || isWebExtractToolCallData(toolCall);
+}
+
 /**
- * Extract search results from blocks (for legacy sources button).
- * Finds the first web_search tool call and its corresponding result.
+ * Extract search results from blocks (for sources button and panel).
+ * Collects results from every web_search / web_extract tool call in the turn.
  */
 export function extractSearchResults(blocks: ContentBlock[]): SearchItem[] | null {
+    const allResults: SearchItem[] = [];
+    const seenUrls = new Set<string>();
+
     for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
         if (block.type !== 'tool_call') continue;
 
         const toolCall = parseToolCallBlock(block);
-        if (toolCall?.name !== 'web_search') continue;
+        if (!toolCall || !isWebSourceToolCall(toolCall)) continue;
 
-        // Find corresponding result after this tool call
         for (let j = i + 1; j < blocks.length; j++) {
             const resultBlock = blocks[j];
             if (resultBlock.type !== 'tool_result') continue;
 
             const result = parseToolResultBlock(resultBlock);
-            if (result && isWebSearchToolResultData(result)) {
-                return result.results;
+            if (result && isWebSourceToolResultData(result)) {
+                for (const item of result.results) {
+                    if (!seenUrls.has(item.url)) {
+                        seenUrls.add(item.url);
+                        allResults.push(item);
+                    }
+                }
             }
-            break; // Found a result block, stop looking
+            break;
         }
     }
-    return null;
+
+    return allResults.length > 0 ? allResults : null;
 }

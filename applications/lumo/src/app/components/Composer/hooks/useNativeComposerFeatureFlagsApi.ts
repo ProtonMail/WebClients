@@ -2,12 +2,14 @@ import { useEffect } from 'react';
 
 import { useLumoAuthAction } from '../../../hooks/useLumoAuthAction';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { useMaxModelAvailability } from '../../../hooks/useMaxModelAvailability';
 import { useLumoPlan } from '../../../providers/LumoPlanProvider';
 import {
     setNativeComposerIsImageGenEnabled,
     setNativeIsFreeUser,
     setNativeIsGuestUser,
     setNativeIsModelSectionEnabled,
+    setNativeMaxModelAvailable,
 } from '../../../remote/nativeComposerBridgeHelpers';
 import { setNativeIsNativeAccountEnabled } from '../../../remote/nativeFeatureFlagsBridgeHelpers';
 
@@ -17,6 +19,7 @@ export const useNativeComposerFeatureFlagsApi = () => {
     const lumoNativeComposerModelSelectionEnabled = lumoFlags.nativeComposerModelSelection;
     const { isEnabled: isNativeAuthEnabled } = useLumoAuthAction();
     const { isLumoFree, isGuest } = useLumoPlan();
+    const { isMaxAvailableByFlag } = useMaxModelAvailability();
 
     useEffect(() => {
         setNativeComposerIsImageGenEnabled(lumoNativeComposerImageGenEnabled);
@@ -31,4 +34,8 @@ export const useNativeComposerFeatureFlagsApi = () => {
     useEffect(() => {
         setNativeIsGuestUser(isGuest);
     }, [isGuest]);
+
+    useEffect(() => {
+        setNativeMaxModelAvailable(isMaxAvailableByFlag);
+    }, [isMaxAvailableByFlag]);
 };

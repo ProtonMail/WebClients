@@ -12,10 +12,13 @@ interface UseCanvasRendererProps {
 export const useCanvasRenderer = ({ width, height, baseImage, strokes }: UseCanvasRendererProps) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const backgroundImageRef = useRef<HTMLImageElement | null>(null);
+    const strokesRef = useRef(strokes);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    // Render canvas whenever strokes or base image changes
+    strokesRef.current = strokes;
+
+    // Stable render — reads latest strokes from ref so we don't retrigger image loading.
     const render = useCallback(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -29,45 +32,52 @@ export const useCanvasRenderer = ({ width, height, baseImage, strokes }: UseCanv
             drawImage(ctx, backgroundImageRef.current, width, height);
         }
 
-        strokes.forEach((stroke) => {
+        strokesRef.current.forEach((stroke) => {
             drawStroke(ctx, stroke);
         });
-    }, [width, height, strokes]);
+    }, [width, height]);
 
-    // Load base image if in overlay mode.
-    // Must come after `render` is defined so the .then() can call it directly —
-    // the render effect only fires when `render` changes (i.e. when strokes/size
-    // change), so we need to trigger a redraw manually after the async load.
+    // Load base image only when the source changes — not when strokes update.
     useEffect(() => {
         if (!baseImage) {
             backgroundImageRef.current = null;
+            render();
             return;
         }
 
+        let cancelled = false;
         setIsLoading(true);
         setError(null);
 
         loadImage(baseImage)
             .then((img) => {
+                if (cancelled) return;
                 backgroundImageRef.current = img;
                 setIsLoading(false);
                 render();
             })
             .catch((err) => {
+                if (cancelled) return;
                 console.error('Failed to load base image:', err);
                 setError('Failed to load image');
                 setIsLoading(false);
             });
+
+        return () => {
+            cancelled = true;
+        };
     }, [baseImage, render]);
 
-    // Render on stroke/size changes
+    // Redraw committed strokes when they change or canvas size changes.
     useEffect(() => {
         render();
-    }, [render]);
+    }, [strokes, render]);
 
-    // Draw a temporary stroke (for live drawing feedback)
+    // Live preview: full redraw of committed strokes, then draw the in-progress stroke.
     const drawTemporaryStroke = useCallback(
         (stroke: Stroke) => {
+            render();
+
             const canvas = canvasRef.current;
             if (!canvas) return;
 
@@ -76,7 +86,7 @@ export const useCanvasRenderer = ({ width, height, baseImage, strokes }: UseCanv
 
             drawStroke(ctx, stroke);
         },
-        []
+        [render]
     );
 
     return {
