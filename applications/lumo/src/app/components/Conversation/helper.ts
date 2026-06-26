@@ -30,7 +30,6 @@ import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/
 import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/slices/personalization';
 import type { Memory } from '../../redux/slices/lumoUserSettings';
 import type { LumoDispatch as AppDispatch, LumoDispatch, LumoState } from '../../redux/store';
-import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
 import type { MessageId, ShallowAttachment } from '../../types';
@@ -52,7 +51,6 @@ const createLumoErrorHandler =
     () =>
     (message: GenerationResponseMessage, cId: string): GenerationError => {
         const errorMessage = getErrorTypeFromMessage(message.type);
-        onComposerError(errorMessage);
         return createGenerationError(errorMessage, cId, message);
     };
 
