@@ -12,7 +12,8 @@ import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
 import { useUploadInput } from '../../../legacy/hooks/drive/useUploadInput';
-import { useDocumentActions, useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../legacy/store/_documents';
+import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../legacy/store/_documents';
+import { createDocument } from '../../../utils/docs/openInDocs';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 import { CreateSheetButton } from './ActionMenuButtons/CreateSheetButton';
 
@@ -41,7 +42,6 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
         handleChange: folderChange,
     } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, parentFolderUid), forFolders: true });
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
-    const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
     return (
@@ -96,8 +96,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
                             onClick={() => {
                                 void createDocument({
                                     type: 'doc',
-                                    shareId: activeFolder.shareId,
-                                    parentLinkId: activeFolder.linkId,
+                                    parentUid: generateNodeUid(activeFolder.volumeId, activeFolder.linkId),
                                 });
                             }}
                         />
@@ -107,8 +106,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
                             onClick={() => {
                                 void createDocument({
                                     type: 'sheet',
-                                    shareId: activeFolder.shareId,
-                                    parentLinkId: activeFolder.linkId,
+                                    parentUid: generateNodeUid(activeFolder.volumeId, activeFolder.linkId),
                                 });
                             }}
                         />
