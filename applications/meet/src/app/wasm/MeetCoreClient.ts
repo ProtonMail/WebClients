@@ -1,9 +1,56 @@
-import type { App, ConnectionStateInfo, JoinTypeInfo, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import type {
+    App,
+    ChatComposeResult,
+    ChatEventKind,
+    ChatIncomingEventInfo,
+    ChatProtocolInfo,
+    ConnectionStateInfo,
+    JoinTypeInfo,
+    RejoinReasonInfo,
+} from '@proton-meet/proton-meet-core';
 
 export interface GroupKeyInfoData {
     key: string;
     epoch: bigint;
 }
+
+export interface ChatIncomingEventInfoData {
+    emoji?: string;
+    id: string;
+    in_reply_to_id?: string;
+    kind: ChatEventKind;
+    protocol: ChatProtocolInfo;
+    received_at_ms: bigint;
+    replaces_id?: string;
+    sender_participant_id: string;
+    target_id?: string;
+    text?: string;
+    topic_id?: string;
+}
+
+export interface ChatComposeResultData {
+    local_echo: ChatIncomingEventInfoData;
+    payload: Uint8Array<ArrayBuffer>;
+}
+
+export const toChatIncomingEventInfoData = (event: ChatIncomingEventInfo): ChatIncomingEventInfoData => ({
+    emoji: event.emoji,
+    id: event.id,
+    in_reply_to_id: event.in_reply_to_id,
+    kind: event.kind,
+    protocol: event.protocol,
+    received_at_ms: event.received_at_ms,
+    replaces_id: event.replaces_id,
+    sender_participant_id: event.sender_participant_id,
+    target_id: event.target_id,
+    text: event.text,
+    topic_id: event.topic_id,
+});
+
+export const toChatComposeResultData = (result: ChatComposeResult): ChatComposeResultData => ({
+    local_echo: toChatIncomingEventInfoData(result.local_echo),
+    payload: new Uint8Array(result.payload),
+});
 
 export interface GroupDisplayCodeData {
     full_code: string;
@@ -57,6 +104,10 @@ export interface MeetCoreClient {
     ): Promise<ParticipantTrackSettingsInfoData>;
     endMeeting(): Promise<void>;
     dispose(): void;
+    composeChatMessage(...args: Parameters<App['composeChatMessage']>): Promise<ChatComposeResultData>;
+    composeChatReaction(...args: Parameters<App['composeChatReaction']>): Promise<ChatComposeResultData>;
+    composeChatUnreact(...args: Parameters<App['composeChatUnreact']>): Promise<ChatComposeResultData>;
+    decodeChat(...args: Parameters<App['decodeChat']>): Promise<ChatIncomingEventInfoData>;
 }
 
 export type MeetCoreRejoinReason = RejoinReasonInfo;

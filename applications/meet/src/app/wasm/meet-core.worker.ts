@@ -1,5 +1,6 @@
 import initWasm, { App, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 
+import { toChatComposeResultData, toChatIncomingEventInfoData } from './MeetCoreClient';
 import type {
     MeetCoreCookieAckMessage,
     MeetCoreInitFailureResponseMessage,
@@ -20,11 +21,7 @@ interface WorkerCallbackGlobals extends DedicatedWorkerGlobalScope {
         new_group_key_for: () => Promise<void>;
     };
     livekitAdminChangeEvent?: {
-        on_livekit_admin_changed: (
-            roomId: string,
-            participantUid: string,
-            participantType: number
-        ) => Promise<void>;
+        on_livekit_admin_changed: (roomId: string, participantUid: string, participantType: number) => Promise<void>;
     };
     disconnectionEvent?: {
         disconnection_handler: () => Promise<void>;
@@ -218,6 +215,22 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
         }
         case 'endMeeting':
             return activeApp.endMeeting();
+        case 'composeChatMessage': {
+            const result = await activeApp.composeChatMessage(...request.params);
+            return toChatComposeResultData(result);
+        }
+        case 'composeChatReaction': {
+            const result = await activeApp.composeChatReaction(...request.params);
+            return toChatComposeResultData(result);
+        }
+        case 'composeChatUnreact': {
+            const result = await activeApp.composeChatUnreact(...request.params);
+            return toChatComposeResultData(result);
+        }
+        case 'decodeChat': {
+            const result = await activeApp.decodeChat(...request.params);
+            return toChatIncomingEventInfoData(result);
+        }
     }
 };
 
