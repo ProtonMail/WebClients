@@ -1304,6 +1304,36 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Create a new folder": [
+        "Стварыць новую папку"
+      ],
+      "External encryption": [
+        "Знешняе шыфраванне"
+      ],
+      "Hide messages": [
+        "Схаваць паведамленні"
+      ],
+      "I like this response": [
+        "Мне падабаецца гэты адказ"
+      ],
+      "Monday": [
+        "Панядзелак"
+      ],
+      "Remove from list": [
+        "Выдаліць са спіса"
+      ],
+      "Report phishing": [
+        "Паскардзіцца на фішынг"
+      ],
+      "View HTML": [
+        "Паглядзець HTML"
+      ],
+      "View recipients": [
+        "Праглядзець атрымальнікаў"
+      ],
+      "Write for me": [
+        "Напісаць для мяне"
       ]
     },
     "action": {
@@ -2052,6 +2082,15 @@
       ],
       "This response is out of date. You have no calendars.": [
         "Гэты адказ састарэў. У вас няма календароў."
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
+        "${ participantName } спытаў аб апошніх абнаўленнях для падзеі, якой больш не існуе ў вашым календары."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } ужо адхіляў запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+      ],
+      "${ participantName } had previously tentatively accepted your invitation.": [
+        "${ participantName } умоўна ўжо прымаў раней ваша запрашэнне."
       ]
     },
     "Cancellation reminder": {
@@ -2400,6 +2439,9 @@
     "Composer email icon": {
       "End-to-end encrypted": [
         "Скразное шыфраванне"
+      ],
+      "PGP-encrypted to verified recipient": [
+        "Зашыфравана з дапамогай PGP для спраўджанага атрымальніка"
       ]
     },
     "Condition for custom filter": {
@@ -3383,6 +3425,9 @@
       ],
       "Sender": [
         "Адпраўнік"
+      ],
+      "Attachment": [
+        "Далучэнне"
       ]
     },
     "Cycle": {
@@ -4591,6 +4636,18 @@
       ],
       "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Немагчыма расшыфраваць ваша паведамленне. Ключ, які выкарыстоўваўся для шыфравання гэтага паведамлення, не супадае ні з адным з ключоў, якія звязаны з вашым адрасам. Паспрабуйце ${ reimportKeyLink } адрасныя ключы, калі вы выдалялі якія-небудзь з іх. ${ learnMoreLink }"
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Далучэнні абмежаваныя да ${ readableAttachmentMaxSize }"
+      ],
+      "No address with keys available to compose a message": [
+        "Адсутнічае адрас з даступнымі ключамі для таго, каб напісаць паведамленне"
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Праблема выгрузкі непатрэбных даных, калі памочнік у напісанні неактыўны."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Магчымасць адпраўкі далучэнняў будзе абмежавана да таго моманту, пакуль вы перавышаеце абмежаванні тарыфнага плана. Палепшыце свой тарыфны план, каб зняць гэта абмежаванне."
       ]
     },
     "error": {
@@ -5268,6 +5325,12 @@
       ],
       "Finish setup": [
         "Завяршыць наладжванне"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Цудоўна, што робіце сваю электронную пошту яшчэ больш бяспечнай, зручнай і актуальнай! Мы павялічылі аб'ём вашага бясплатнага месца ў сховішчы да 1 ГБ."
+      ],
+      "Checklist complete": [
+        "Кантрольны спіс завершаны"
       ]
     },
     "Gmail forwarding": {
@@ -5348,6 +5411,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Report an issue": [
+        "Паведаміць аб праблеме"
       ]
     },
     "Hint": {
@@ -7827,6 +7893,51 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Block sender": [
+        "Заблакіраваць адпраўніка"
+      ],
+      "Browser not supported": [
+        "Браўзер не падтрымліваецца"
+      ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Заплануйце адпраўку ліста менавіта тады, калі вашаму атрымальніку найбольш пасуе атрымаць яго."
+      ],
+      "Do you want to re-sign the contact details?": [
+        "Вы сапраўды хочаце паўторна падпісаць кантактныя звесткі?"
+      ],
+      "Manage your folders": [
+        "Кіруйце сваімі папкамі"
+      ],
+      "Quickly spot": [
+        "Хуткае выяўленне"
+      ],
+      "Right-click for options": [
+        "Націсніце правай кнопкай мышы, каб убачыць параметры"
+      ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Параметры пошуку, якія дазваляюць вам бяспечна шукаць па ключавых словах у целе лістоў."
+      ],
+      "Shorten selection": [
+        "Скараціць выбранае"
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Гэта размова змяшчае адно або некалькі паведамленняў з тэрмінам дзеяння"
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Гэта было паказана вам, бо тэма ліста змяшчае ключавыя словы для скідання пароля."
+      ],
+      "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
+        "Вы будзеце перанакіраваны на наступны URL-адрас, каб скасаваць падпіску ад гэтага спіса рассылкі. Там вы атрымаеце інструкцыі ад адпраўніка рассылкі:"
+      ],
+      "Unsubscribe": [
+        "Адпісацца"
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        "Выкарыстоўваць спалучэнні клавіш для больш хуткага кіравання вашымі лістамі."
+      ],
+      "Your message will expire tomorrow.": [
+        "Тэрмін дзеяння вашага паведамлення міне заўтра."
       ]
     },
     "info": {
@@ -7922,6 +8033,9 @@
         "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты.",
         "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты.",
         "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты."
+      ],
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Пры націску кнопкі “Давяраць ключу”, вы звяжаце дадзены адкрыты ключ з гэтым адпраўніком. Лісты з гэтага адраса будуць аўтаматычна крыптаграфічна спраўджаны."
       ]
     },
     "Key validation warning": {
@@ -8852,6 +8966,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Cleaned": [
+        "Ачышчана"
+      ],
+      "Frequency": [
+        "Перыядычнасць"
+      ],
+      "Move ${ sidebarElementName }": [
+        "Перамясціць ${ sidebarElementName }"
+      ],
+      "Moved to Trash": [
+        "Перамешчана ў сметніцу"
+      ],
+      "Original link": [
+        "Арыгінальная спасылка"
+      ],
+      "Remove metadata": [
+        "Выдаліць метаданыя"
+      ],
+      "To:": [
+        "Каму:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8925,6 +9060,9 @@
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
         "У вас адсутнічаюць актыўныя рассылкі або падпіскі на спісы рассылкі."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Скасаваныя вамі падпіскі на рассылкі або на спісы рассылак з'явяцца тут."
       ]
     },
     "Landmarks": {
@@ -9090,6 +9228,9 @@
       ],
       "You need to activate your calendar keys to see the updated event": [
         "Вам неабходна актываваць ключы календара, каб паглядзець абноўленую падзею"
+      ],
+      "Inbox": [
+        "Уваходныя паведамленні"
       ]
     },
     "Link to settings": {
@@ -10762,6 +10903,9 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Вы можаце змяніць тэму ў любы час у наладах."
+      ],
+      "Choose your preferred look and feel.": [
+        "Выберыце пажаданы выгляд і стыль."
       ]
     },
     "Onboarding Trial": {
@@ -11780,6 +11924,9 @@
       ],
       "No results found": [
         "Вынікі не знойдзены"
+      ],
+      "An action is being processed": [
+        "Дзеянне апрацоўваецца"
       ]
     },
     "Section": {
@@ -13306,11 +13453,23 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "Address verification disabled": [
+        "Спраўджанне адраса адключана"
+      ],
+      "Mail list unsubscribed": [
+        "Ваш адрас выдалены са спіса рассылкі"
+      ],
+      "Message removed from Starred.": [
+        "З пазначаных зорачкай выдалена паведамленне."
       ]
     },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } выдалена"
+      ],
+      "The filter is active again": [
+        "Фільтр зноў актыўны"
       ]
     },
     "Suffix": {
@@ -14330,6 +14489,21 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Attachments": [
+        "Далучаныя файлы"
+      ],
+      "Delete message": [
+        "Выдаліць паведамленне"
+      ],
+      "Move to trash": [
+        "Перамясціць у сметніцу"
+      ],
+      "Sending error": [
+        "Памылка адпраўкі"
+      ],
+      "Snooze message": [
+        "Адкласці паведамленне"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14997,6 +15171,24 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Composer size": {
+      "Normal": [
+        "Звычайны"
+      ]
+    },
+    "Encrypted Headers": {
+      "Encrypted Headers filename": [
+        "Назва файла з зашыфраванымі загалоўкамі"
+      ]
+    },
+    "forwardmessage": {
+      "From: ${ senderString }": [
+        "Ад: ${ senderString }"
+      ],
+      "To: ${ toString }": [
+        "Каму: ${ toString }"
       ]
     }
   }

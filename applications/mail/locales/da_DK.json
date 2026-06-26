@@ -1112,6 +1112,189 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "All Read": [
+        "Alle læst"
+      ],
+      "All Unstarred": [
+        "Alle ikke-stjernemarkerede"
+      ],
+      "Attachment": [
+        "Vedhæftning"
+      ],
+      "Block sender": [
+        "Blokér afsender"
+      ],
+      "Block senders": [
+        "Blokér afsendere"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klik for at kopiere ${ defaultEmailAddress } til udklipsholderen"
+      ],
+      "Continue with categories": [
+        "Fortsæt med kategorier"
+      ],
+      "Delete folder": [
+        "Slet mappe"
+      ],
+      "Disabling alias": [
+        "Deaktiverer alias"
+      ],
+      "Download all attachments": [
+        "Download alle vedhæftninger"
+      ],
+      "Downloading": [
+        "Downloader"
+      ],
+      "Edit folder": [
+        "Redigér mappe"
+      ],
+      "Encryption": [
+        "Kryptering"
+      ],
+      "Expand navigation bar to see labels": [
+        "Udvid navigationsbjælken for at se etiketter"
+      ],
+      "Expand URL": [
+        "Udvid URL"
+      ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Opdag ${ VPN_APP_NAME }"
+      ],
+      "Filter on...": [
+        "Filtrér efter..."
+      ],
+      "Formalize": [
+        "Formalisér"
+      ],
+      "Generate text": [
+        "Generér tekst"
+      ],
+      "Hide details": [
+        "Skjul detaljer"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email aliasser"
+      ],
+      "Images will be loaded without a proxy": [
+        "Billeder vil blive indlæst uden en proxy"
+      ],
+      "Insert contact": [
+        "Indsæt kontakt"
+      ],
+      "Insert contacts": [
+        "Indsæt kontakter"
+      ],
+      "Keep inbox as before": [
+        "Behold indbakken som før"
+      ],
+      "Label as": [
+        "Mærk som"
+      ],
+      "Label as...": [
+        "Etikettér som..."
+      ],
+      "Least read": [
+        "Mindst læst"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Gør ${ MAIL_APP_NAME } til din standard-e-mailapplikation"
+      ],
+      "Mark legitimate": [
+        "Markér som legitim"
+      ],
+      "Modify": [
+        "Tilpas"
+      ],
+      "Modify selection": [
+        "Ændr markering"
+      ],
+      "Most frequent": [
+        "Hyppigste"
+      ],
+      "Move all to archive": [
+        "Flyt alle til arkiv"
+      ],
+      "Move to category...": [
+        "Flyt til kategori..."
+      ],
+      "Move to inbox (not spam)": [
+        "Flyt til indbakke (ikke spam)"
+      ],
+      "Never show": [
+        "Vis aldrig"
+      ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "Åbn ${ CALENDAR_APP_NAME }"
+      ],
+      "Page ${ pageNumber }": [
+        "Side ${ pageNumber }"
+      ],
+      "Previous conversation": [
+        "Forrige samtale"
+      ],
+      "Previous message": [
+        "Forrige besked"
+      ],
+      "Proofread": [
+        "Korrekturlæs"
+      ],
+      "Recently read": [
+        "Læst for nyligt"
+      ],
+      "Refine it": [
+        "Præcisér den"
+      ],
+      "Remove ${ attachmentName }": [
+        "Fjern ${ attachmentName }"
+      ],
+      "Reset search form": [
+        "Nulstil søgeformular"
+      ],
+      "Saving${ ellipsis }": [
+        "Gemmer${ ellipsis }"
+      ],
+      "Schedule message": [
+        "Planlæg besked"
+      ],
+      "Select All": [
+        "Vælg alle"
+      ],
+      "Select date and time": [
+        "Vælg dato og tid"
+      ],
+      "Send anyway": [
+        "Send alligevel"
+      ],
+      "Set": [
+        "Angiv"
+      ],
+      "Set encryption": [
+        "Fastsæt kryptering"
+      ],
+      "Snooze": [
+        "Udsæt"
+      ],
+      "Stop marking as read": [
+        "Stop markering som læst"
+      ],
+      "Try categories": [
+        "Prøv kategorier"
+      ],
+      "Unsnooze": [
+        "Stop udsættelse"
+      ],
+      "Unstar": [
+        "Fjern stjernemarkering"
+      ],
+      "View message details": [
+        "Vis beskeddetaljer"
+      ],
+      "View recipients": [
+        "Se modtagere"
+      ],
+      "View rendered HTML": [
+        "Vis gengivet HTML"
       ]
     },
     "action": {
@@ -1252,6 +1435,9 @@
       ],
       "Run on device": [
         "Kør på enhed"
+      ],
+      "Securely run on device": [
+        "Kør sikkert på enheden"
       ]
     },
     "Assistant toggle": {
@@ -3343,6 +3529,25 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Opgradér til ${ BRAND_NAME } Duo for ubegrænset adgang til skriveassistenten og mere."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nye e-mails fra ${ senderEmailAddress } og ${ otherSendersCount } anden vil ikke blive leveret og vil blive permanent slettet.",
+        "Nye e-mails fra ${ senderEmailAddress } og ${ otherSendersCount } andre vil ikke blive leveret og vil blive permanent slettet."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Nye e-mails fra ${ senderEmailAddress } vil ikke blive leveret og vil blive permanent slettet."
+      ],
+      "No labels": [
+        "Ingen etiketter"
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Du kan fortsat bruge skriveassistenten ved at anmode din administrator om adgang."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Med tilpasset udsættelse kan du skjule e-mails og indstille dem til at dukke op igen på et bedre tidspunkt."
       ]
     },
     "description": {
@@ -4123,6 +4328,76 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } for <${ email }>. Du kan tilføje en anden nøgle eller deaktivere kryptering for denne kontakt for at løse problemet."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Vedhæftninger er begrænset til ${ readableAttachmentMaxSize }"
+      ],
+      "Contact your organization’s administrator to resolve this": [
+        "Kontakt din organisations administrator for at løse dette"
+      ],
+      "Error while saving draft. Please try again.": [
+        "Fejl under lagring af udkast. Prøv igen."
+      ],
+      "Failed to encrypt attachment. Please try again.": [
+        "Kryptering af vedhæftning mislykkedes. Forsøg igen."
+      ],
+      "No drive found to import": [
+        "Intet drev fundet til import"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Mangler plads i din ${ DRIVE_APP_NAME }"
+      ],
+      "Please select a category and what went wrong with the generated text": [
+        "Vælg en kategori, og fortæl, hvad der gik galt med den genererede tekst."
+      ],
+      "Please try generating the text again": [
+        "Prøv at generere teksten igen"
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Problem med at hente skriveassistenten. Hvis du bruger privat-tilstand, prøv at bruge normal surfing-tilstand eller kør skriveassistenten på servere."
+      ],
+      "re-activate the previous key": [
+        "genaktivér den forrige nøgle"
+      ],
+      "re-importing": [
+        "Gen-importerer"
+      ],
+      "Text is too long to refine": [
+        "Teksten er for lang til at blive finpudset"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen\nmed et program som for eksempel GnuPG.",
+        "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne\nmed et program som for eksempel GnuPG."
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Nøgleegenskaberne for ${ emailAddress } kunne ikke udtrækkes"
+      ],
+      "The maximum expiration is 4 weeks": [
+        "Den maksimale udløbsperiode er 4 uger"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Systemet er optaget lige nu. Prøv igen om et par minutter."
+      ],
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Der var et problem med indholdssøgning. Standardsøgning er blevet brugt i stedet."
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Der var et problem med at dekryptere din besked. Kontakt vores kundesupport hvis problemet fortsætter."
+      ],
+      "This message has already been sent": [
+        "Denne besked er allerede blevet sendt"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet fejl, vi kan ikke importere filerne"
+      ],
+      "You did not provide a file.": [
+        "Du har ikke angivet en fil."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Din besked kan ikke dekrypteres. Hvis du har slettet nogle af dine adresse-nøgler, forsøg at ${ reimportKeyLink } dem. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -4286,6 +4561,15 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Med ekstra adgangskode aktiveret kan håndteringen af alias kun ske i ${ PASS_APP_NAME }."
+      ],
+      "An error occurred with the categories": [
+        "Der opstod en fejl med kategorierne"
+      ],
+      "No results found": [
+        "Ingen resultater fundet"
+      ],
+      "No results found for \"${ query }\"": [
+        "Ingen resultater fundet for \"${ query }\""
       ]
     },
     "Error notification": {
@@ -4477,6 +4761,9 @@
       ],
       "Set up your family account": [
         "Opsæt din familie-konto"
+      ],
+      "Invite members and get everything up and running.": [
+        "Invitér medlemmer og få alt op at køre."
       ]
     },
     "familyOffer_2023:Title": {
@@ -4630,6 +4917,9 @@
       ],
       "The subject": [
         "Emne"
+      ],
+      "If the recipient": [
+        "Hvis modtageren"
       ]
     },
     "Filter notification": {
@@ -4707,6 +4997,15 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
+      ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Få ubegrænset adgang med ethvert abonnement på ${ MAIL_APP_NAME }."
+      ],
+      "Start free trial": [
+        "Start gratis prøveperiode"
+      ],
+      "Try the new desktop app": [
+        "Prøv den nye desktop-app"
       ]
     },
     "Get started checklist instructions": {
@@ -4717,6 +5016,18 @@
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } dag tilbage",
         "${ remainingDaysCount } dage tilbage"
+      ],
+      "Discover privacy features": [
+        "Opdag privatlivsfunktioner"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Kryptering så stærk, at kun du og de tiltænkte modtagere kan se dine e-mails."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Vi forhindrer annoncører og dataopsamlere i at profilere dig."
+      ],
+      "You've unlocked 1 GB": [
+        "Du har låst op for 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -4867,6 +5178,9 @@
       "${ totalAttendees } participant": [
         "${ totalAttendees } deltager",
         "${ totalAttendees } deltagere"
+      ],
+      "Organizer:": [
+        "Arrangør:"
       ]
     },
     "Import calendar": {
@@ -6783,6 +7097,275 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } fra dem med et klik."
+      ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME }'s adgangskodeadministrator gør det muligt for dig at oprette, gemme og automatisk udfylde adgangskoder, så du aldrig behøver at nulstille dem."
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } besked vil ikke længere have etiketten:",
+        "${ elementsCount } beskeder vil ikke længere have etiketten:"
+      ],
+      "${ n } unread conversation": [
+        "${ n } ulæst samtale",
+        "${ n } ulæste samtaler"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } fil vedhæftet",
+        "${ pureAttachmentsCount } filer vedhæftet"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-mail i sidste måned",
+        "${ receivedMessagesCount } e-mails i sidste måned"
+      ],
+      "${ total } conversation": [
+        "${ total } samtale",
+        "${ total } samtaler"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-mail-tracker blokeret",
+        "${ trackersCount } e-mail-trackere blokeret"
+      ],
+      "(No Recipient)": [
+        "(Ingen modtager)"
+      ],
+      "Activation in progress": [
+        "Aktivering i gang"
+      ],
+      "Addresses settings": [
+        "Adresseindstillinger"
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Alle meddelelser fra denne kontaktliste vil blive flyttet til arkiv."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Alle meddelelser fra denne kontaktliste vil blive flyttet til papirkurven."
+      ],
+      "All your calendars are disabled.": [
+        "Alle dine kalendere er deaktiverede."
+      ],
+      "Another tip will be displayed next time you open Mail": [
+        "Et andet tip vises næste gang, du åbner Mail"
+      ],
+      "Apply to future messages": [
+        "Anvend på fremtidige beskeder"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Er du sikker på, at du vil slette ${ count } samtale permanent?",
+        "Er du sikker på, at du vil slette ${ count } samtaler permanent?"
+      ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "Er du sikker på, at du vil slette denne samtale permanent?"
+      ],
+      "Attach public key": [
+        "Vedhæft offentlig nøgle"
+      ],
+      "Browse privately and access blocked content.": [
+        "Surf privat med adgang til beskyttet indhold."
+      ],
+      "Bulk delete": [
+        "Masse-slet"
+      ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Rydning af browserdata deaktiverer også søgning efter indhold i beskeder på denne enhed. Alle beskeder skal downloades igen for at kunne søge i dem."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Rydder browserdata (herunder hentede beskeder, ...)"
+      ],
+      "Confirm phishing report": [
+        "Bekræft phishing-anmeldelse"
+      ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Detekteringen sker på din enhed så ingen data fra dine e-mails sendes til vores servere."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Vidste du godt det? Vi har reserveret en kortere e-mailadresse kun til dig. Det er dit brugernavn efterfulgt af \"@${ PM_DOMAIN }\"."
+      ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "Vil du gensignere kontaktoplysningerne og i den forbindelse stole på nøglerne med de følgende fingeraftryk?"
+      ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Henter assistenten… ${ progressDisplay } GB"
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Administrér og afmeld dig nemt fra nyhedsbreve og mailinglister."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen billeder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "For at få flere søgeresultater, så søg efter dette nøgleord i indholdet af dine e-mails."
+      ],
+      "Hide original message": [
+        "Skjul oprindelig besked"
+      ],
+      "How hide-my-email aliases works": [
+        "Sådan virker hide-my-email-aliasser"
+      ],
+      "Include Spam/Trash.": [
+        "Inkludér spam/papirkurv"
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Inkluderer marketing-e-mails og ikke-presserende app-notifikationer."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Inkluderer marketing-e-mails såsom tilbud og produktbeskeder."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Tilmeld dig ${ PROTON_SENTINEL_NAME }-programmet for at vores højeste niveau af kontosikkerhed og support."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Opbevar dine login- og betalingskortoplysninger sikkert, men altid lige ved hånden ved at føje dem til ${ PASS_APP_NAME }. Det er gratis og indgår i din ${ BRAND_NAME }-konto."
+      ],
+      "Links cleaned:": [
+        "Links renset:"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Maksimalt antal vedhæftninger (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overskredet."
+      ],
+      "Message headers": [
+        "Beskedoverskrfter"
+      ],
+      "Message sent": [
+        "Besked sendt"
+      ],
+      "Message sent.": [
+        "Besked sendt."
+      ],
+      "No label found": [
+        "Ingen etiket fundet"
+      ],
+      "Optional": [
+        "Valgfrit"
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Vores system markerede denne besked som et phishing-forsøg. Kontrollér at den er legitim."
+      ],
+      "Please add at least one recipient.": [
+        "Angiv mindst én modtager."
+      ],
+      "Please share what the issue is": [
+        "Fortæl hvad problemet er"
+      ],
+      "Please wait for the action to be completed": [
+        "Afvent at handlingen afsluttes"
+      ],
+      "Proofread text": [
+        "Korrekturlæs tekst"
+      ],
+      "Right-click for options": [
+        "Højreklik for flere muligheder"
+      ],
+      "Saved at ${ dateString }": [
+        "Gemt ${ dateString }"
+      ],
+      "Scheduled send of this message will be canceled.": [
+        "Planlagt afsendelse af denne besked aflyses."
+      ],
+      "Selection pane": [
+        "Valgpanel"
+      ],
+      "Sender has been blocked.": [
+        "Afsender er blevet blokeret."
+      ],
+      "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
+        "Afsendelse af beskeder fra @pm.me-adresse er en betalt funktion. Din besked afsendes via din standardadresse ${ email }"
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Angiv ${ MAIL_APP_NAME } som standardprogram til mails for denne browser. ${ MAIL_APP_NAME } vil åbne automatisk, når du klikker på et maillink."
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Udsat indtil i dag, ${ formattedTime }"
+      ],
+      "Sorry, this message does not exist or has already expired.": [
+        "Beklager, denne besked findes ikke eller er allerede udløbet."
+      ],
+      "Subject:": [
+        "Emne:"
+      ],
+      "The data you have entered in the draft may not be saved if you leave the page.": [
+        "De data, du har indtastet i udkastet, gemmes ikke, hvis du forlader siden."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Den oprindelige afsender af denne besked er ikke længere gyldig. Din besked vil blive sendt fra din standardadresse ${ defaultEmail }."
+      ],
+      "This conversation contains non-trashed messages.": [
+        "Denne samtale indeholder ikke-slettede beskeder."
+      ],
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Denne e-mail bestod ikke sit domænes godkendelseskrav. Den kan være falsk eller ukorrekt videresendt."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Denne besked har en vedhæftet nøgle, der endnu ikke er betroet."
+      ],
+      "This message is automatically generated as a response to a previous message.": [
+        "Denne besked genereres automatisk som svar på en tidligere besked."
+      ],
+      "This message is from a mailing list.": [
+        "Denne meddelelse er fra en mailingliste."
+      ],
+      "This message is signed by a key that has not been trusted yet.": [
+        "Denne besked er signeret med en nøgle, der endnu ikke er betroet."
+      ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Denne besked flyttes til udkast, så du kan redigere den. Du skal gen-planlægge, hvornår den skal sendes."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Dette vil fjerne nyhedsbrevposten fra denne liste. Det vil ikke afmelde dig fra nyhedsbrevet. Det vil dukke op igen, hvis du modtager nye beskeder."
+      ],
+      "Trash existing messages": [
+        "Flyt eksisterende beskeder til Papirkurv"
+      ],
+      "Upgrade to level up your privacy.": [
+        "Opgradér for at styrke beskyttelsen af dit privatliv."
+      ],
+      "Upgrade to send email from @pm.me addresses.": [
+        "Opgradér for at sende e-mail fra @pm.me-adresser."
+      ],
+      "Upgrade to send emails to contact groups easily.": [
+        "Opgradér for nemt at sende e-mails til kontaktgrupper."
+      ],
+      "Upgrade to support our mission of privacy for all.": [
+        "Opgradér for at støtte vores mission om privatlivsbeskyttelse for alle."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Opgradér for at låse op for premium-funktioner."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Opgradér for at bruge ${ MAIL_APP_NAME } med Apple Mail, Outlook eller Thunderbird."
+      ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Brug forskellige mailadresser til forskellige formål, så du nemt kan opdele dine mails efter arbejde, privat eller andre områder."
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        "Brug tastaturgenveje for at håndtere dine e-mails hurtigere."
+      ],
+      "When do you want your message to self-destruct?": [
+        "Hvornår ønsker du, at din besked skal selvdestruere?"
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Brug et alias i stedet for din e-mailadresse, når du tilmelder dig et nyhedsbrev. Din identitet forbliver skjult, og du kan altid deaktivere aliasset."
+      ],
+      "You can either update your search query or ${ button }": [
+        "Du kan enten opdatere din søgeforespørgsel eller ${ button }"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "Du har ${ unread } i din indbakke."
+      ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Du har ikke givet din e-mail noget emne. Vil du sende beskeden alligevel?"
+      ],
+      "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
+        "Du har udnyttet 100% af din lagerkapacitet. Overvej at frigøre plads eller at opgradere din konto med ekstra lagerplads for at lave nye beskeder."
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Du valgte **${ count } samtale** med denne etiket",
+        "Du valgte **${ count } samtaler** med denne etiket"
       ]
     },
     "info": {
@@ -7741,6 +8324,64 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Flyt alle meddelelser til ${ boldFolderName }"
+      ],
+      "${ count } unread conversation": [
+        "${ count } ulæst samtale",
+        "${ count } ulæste samtaler"
+      ],
+      "/month": [
+        "/måned"
+      ],
+      "Active filter:": [
+        "Aktivt filter:"
+      ],
+      "BCC": [
+        "BCC"
+      ],
+      "Date:": [
+        "Dato:"
+      ],
+      "Don't like the style": [
+        "Synes ikke om stilen"
+      ],
+      "Email categories": [
+        "E-mailkategorier"
+      ],
+      "Enable filter": [
+        "Aktivér filter"
+      ],
+      "From": [
+        "Fra"
+      ],
+      "Layout": [
+        "Layout"
+      ],
+      "Message:": [
+        "Besked:"
+      ],
+      "Move messages to": [
+        "Flyt beskeder til"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Slut med at gå glip af vigtige beskeder! Disse vises nu under ${ primaryCopy }. Alt andet er sorteret efter kategori, så de er nemme at finde og ikke skaber rod i din indbakke."
+      ],
+      "Remember my choice": [
+        "Husk mit valg"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Del de tidspunkter hvor du er tilgængelig med bookingsider i ${ CALENDAR_APP_NAME }, og afhold sikre møder med ${ MEET_APP_NAME }."
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "Filteret er deaktiveret. ${ enableButton }"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Afmeldt fra ${ truncatedName }."
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7916,6 +8557,45 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Opret en kalender knyttet til en aktiv e-mailadresse."
+      ],
+      "Create a new calendar to add this event": [
+        "Opret en ny kalender for at tilføje denne begivenhed"
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Aktiver den e-mailadresse, der er knyttet til den deaktiverede kalender, for at annullere begivenheden."
+      ],
+      "Inbox": [
+        "Indbakke"
+      ],
+      "Manage blocked email addresses": [
+        "Administrer blokerede e-mailadresser"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Åbn opdateret begivenhed i ${ CALENDAR_APP_NAME }"
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Eller du kan slette en af dine kalendere og oprette en ny, som er knyttet til en aktiv e-mailadresse."
+      ],
+      "Outbox": [
+        "Udbakke"
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Genaktivér adressen knyttet til denne kalender for at opdatere din invitation."
+      ],
+      "Scheduled": [
+        "Planlagt"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Denne ICS-fil indeholder mere end én begivenhed. Download den og importer begivenhederne til ${ CALENDAR_APP_NAME }"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Du skal aktivere dine kalendernøgler for at administrere denne invitation"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Du skal aktivere dine kalendernøgler for at se den opdaterede begivenhed"
       ]
     },
     "Loading info": {
@@ -9255,6 +9935,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Din ${ BRAND_NAME }-adresse er klar til brug"
+      ],
+      "Block removed": [
+        "Blokering fjernet"
+      ],
+      "Password has been set successfully": [
+        "Adgangskoden blev ændret"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Afsender ${ firstSenderAddress } blokeret"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9409,6 +10098,51 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "For at komme i gang skal du vælge et visningsnavn. Det er det, folk vil se, når du sender en e-mail, inviterer dem til en begivenhed eller deler en fil."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } betyder, at du aldrig vil se sponsorerede annoncer i vores apps."
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } sikrer, at kun du og de tiltænkte modtagere har adgang til dine e-mails."
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } i Play Store"
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } betyder, at det er slut med at blive forfulgt på tværs af internettet."
+      ],
+      "Advanced encryption": [
+        "Avanceret kryptering"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Slet slettede e-mails og spam-e-mails efter 30 dage."
+      ],
+      "Continue": [
+        "Fortsæt"
+      ],
+      "Distraction-free emailing": [
+        "Forstyrrelsesfri e-mailing"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Få en hurtigere og mere fokuseret e-mailoplevelse med desktop-appen."
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Let's get started": [
+        "Lad os komme igang"
+      ],
+      "Protection from trackers": [
+        "Beskyttelse mod sporing"
+      ],
+      "Replay introduction": [
+        "Genafspil introduktion"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Velkommen til ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Hvor privatlivsbeskyttelse er standard."
       ]
     },
     "Onboarding Proton": {
@@ -9429,6 +10163,12 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Du kan til enhver tid ændre dit tema i dine indstillinger."
+      ],
+      "Choose your preferred look and feel.": [
+        "Vælg dit foretrukne udseende og stil."
+      ],
+      "Make it your own": [
+        "Gør den til din egen"
       ]
     },
     "Onboarding Trial": {
@@ -10097,6 +10837,18 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Filter labels": [
+        "Filtrér etiketter"
+      ],
+      "Hint": [
+        "Tip"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Søg dato, navn, e-mailadresse eller emnelinje"
+      ],
+      "Subject": [
+        "Emne"
       ]
     },
     "Placeholder for contact group name": {
@@ -10356,6 +11108,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } d",
         "${ remainingDays } d"
+      ],
+      "<1 d": [
+        "<1 dag"
       ]
     },
     "Safety review": {
@@ -10458,6 +11213,9 @@
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "Vi har registreret fejl. Din e-mail kan ikke sendes til den indtastede e-mailadresse af følgende årsag:",
         "Vi har registreret fejl. Din e-mail kan ikke sendes til nogen af de indtastede e-mailadresser af følgende årsager:"
+      ],
+      "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
+        "Vi har opdaget nogle fejl. Din e-mail kan ikke sendes til en eller flere af de indtastede e-mailadresser af de følgende årsager:"
       ]
     },
     "Send email with warnings": {
@@ -10478,6 +11236,15 @@
       "Sent by you with end-to-end encryption to verified recipient": [
         "Sendt af dig med end-to-end-kryptering til en bekræftet modtager",
         "Sendt af dig med ende-til-ende kryptering til bekræftede modtagere"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "End-to-end krypteret til bekræftet modtager"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Sendt af ${ MAIL_APP_NAME } med nuladgangskryptering"
+      ],
+      "Stored with zero-access encryption": [
+        "Lagret med nuladgangskryptering"
       ]
     },
     "session_recovery:available:action": {
@@ -11684,11 +12451,51 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } besked stjernemarkeret.",
+        "${ elementsCount } beskeder stjernemarkeret."
+      ],
+      "Conversation added to ${ labelName }.": [
+        "Samtale føjet til ${ labelName }."
+      ],
+      "Conversation marked as Starred.": [
+        "Samtale stjernemarkeret."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Samtale flyttet til ${ labelName } og afsender føjet til din liste over ikke-spam."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Samtale flyttet til ${ labelName }."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Samtaler fra ${ sendersList } vil blive mærket som ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Samtaler fra ${ sendersList } vil blive flyttet til ${ folder }"
+      ],
+      "Draft deleted": [
+        "Udkast slettet"
+      ],
+      "Mail list unsubscribed": [
+        "Mailliste afmeldt"
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Besked flyttet til ${ labelName } og afsender tilføjet din ikke-spam-liste."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Besked flyttet til ${ labelName }."
+      ],
+      "Phishing reported": [
+        "Phishing anmeldt"
       ]
     },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } fjernet"
+      ],
+      "The filter has been enabled": [
+        "Filtret er aktiveret"
       ]
     },
     "Suffix": {
@@ -12564,6 +13371,129 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Action all messages": [
+        "Anvend på alle beskeder"
+      ],
+      "Bad time for this email?": [
+        "Dårligt tidspunkt for denne e-mail?"
+      ],
+      "BCC": [
+        "BCC"
+      ],
+      "CC": [
+        "CC"
+      ],
+      "Conversation list": [
+        "Samtaleliste"
+      ],
+      "Create folder \"${ search }\"": [
+        "Opret mappe \"${ search }\""
+      ],
+      "Decryption error": [
+        "Dekrypteringsfejl"
+      ],
+      "Delete conversation": [
+        "Slet samtale"
+      ],
+      "Delete draft": [
+        "Slet udkast"
+      ],
+      "Filter on...": [
+        "Filtrér efter..."
+      ],
+      "Increase your privacy with more addresses": [
+        "Forøg beskyttelsen af dit privatliv med flere adresser"
+      ],
+      "Label options": [
+        "Etiketindstillinger"
+      ],
+      "Mark all messages as read": [
+        "Marker alle meddelelser som læste"
+      ],
+      "Mark as unread": [
+        "Markér som ulæst"
+      ],
+      "Mark conversations as unread": [
+        "Markér samtaler som ulæste"
+      ],
+      "Mark email as legitimate": [
+        "Markér e-mail som legitim"
+      ],
+      "Mark messages as unread": [
+        "Markér beskeder som ulæste"
+      ],
+      "Message list": [
+        "Beskedliste"
+      ],
+      "More": [
+        "Mere"
+      ],
+      "Move to": [
+        "Flyt til"
+      ],
+      "Move to inbox": [
+        "Flyt til indbakke"
+      ],
+      "Move to trash": [
+        "Flyt til papirkurv"
+      ],
+      "New message": [
+        "Ny meddelelse"
+      ],
+      "Next conversation": [
+        "Næste samtale"
+      ],
+      "No active newsletters": [
+        "Ingen aktive nyhedsbreve"
+      ],
+      "On-device suggestions": [
+        "Forslag på enheden"
+      ],
+      "Previous conversation": [
+        "Tidligere samtale"
+      ],
+      "Protect yourself from trackers": [
+        "Beskyt dig selv mod sporing"
+      ],
+      "Re-sign contact": [
+        "Gensignér kontakt"
+      ],
+      "Recipients": [
+        "Modtagere"
+      ],
+      "Reply all": [
+        "Svar alle"
+      ],
+      "Schedule send": [
+        "Planlæg afsendelse"
+      ],
+      "Self-destruct message": [
+        "Selvdestruerende besked"
+      ],
+      "Send email": [
+        "Send e-mail"
+      ],
+      "Send with encryption disabled?": [
+        "Send med kryptering deaktiveret?"
+      ],
+      "Sending notice": [
+        "Sender notifikation"
+      ],
+      "Storage capacity warning": [
+        "Advarsel om lagerkapacitet"
+      ],
+      "Trust pinned keys?": [
+        "Stol på fastgjorte nøgler?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Afmelding ikke mulig for denne afsender"
+      ],
+      "Verification error": [
+        "Verifikationsfejl"
+      ],
+      "Your free trial has ended": [
+        "Din gratis prøveperiode er slut"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12658,6 +13588,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Dette sikrer, at ingen kan se placering, enhed og andre oplysninger, der kan bruges til at identificere eller spore dig."
       ]
     },
     "tooltip": {
@@ -13139,6 +14072,367 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Besked med udløb"
+      ]
+    },
+    "Alt": {
+      "Replied to all": [
+        "Besvaret til alle"
+      ],
+      "Star conversation": [
+        "Stjernemarkér samtale"
+      ],
+      "Unstar message": [
+        "Fjern stjerne fra meddelelse"
+      ]
+    },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Ved at indsende denne feedback bliver beskeden og dine kommentarer synlige for ${ BRAND_NAME }'s moderationsteam."
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Har en begivenhed i kalenderen"
+      ]
+    },
+    "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } accepterede en invitation og foreslog et nyt tidspunkt for denne begivenhed."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "${ participantName } accepterede en invitation til én forekomst af begivenheden."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } bad om de seneste opdateringer til en begivenhed, som ikke passer til dine invitationoplysninger. Kontrollér invitationens detaljer i din kalender."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "${ participantName } afslog en invitation og foreslog et nyt tidspunkt for denne begivenhed."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } afslog en invitation til én forekomst af begivenheden."
+      ],
+      "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } afslog din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } accepterede en invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } accepterede en invitation og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } havde accepteret en invitation til én forekomst af begivenheden."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } havde accepteret en invitation til denne begivenhed."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } accepterede din invitation og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "${ participantName } havde afslået en invitation til én forekomst af begivenheden."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } afslog din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } havde foreslået en ny tid til én forekomst af denne begivenhed. Dette forslag er forældet. Begivenheden findes ikke længere i din kalender."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } accepterede en invitation med forbehold og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } accepterede en invitation med forbehold og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } havde foreløbig accepteret en invitation til én forekomst af begivenheden."
+      ],
+      "${ participantName } proposed a new time for one occurrence of this event.": [
+        "${ participantName } foreslog et nyt tidspunkt for én forekomst af denne begivenhed."
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } accepterede din invitation med forbehold og foreslog et nyt tidspunkt for denne begivenhed."
+      ],
+      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } accepterede foreløbig din invitation til én forekomst af begivenheden."
+      ],
+      "This event has been canceled.": [
+        "Denne begivenhed er blevet annulleret."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Dette nye tidsforslag matcher ikke dine invitationsdetaljer. Bekræft invitationsdetaljerne i din kalender."
+      ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Dette svar matcher ikke dine invitationsdetaljer. Kontrollér invitationsdetaljerne i din kalender."
+      ],
+      "This response is out of date. You have no calendars.": [
+        "Dette svar er forældet. Du har ingen kalendere."
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "Annullér"
+      ]
+    },
+    "Commander action": {
+      "Go to Drafts": [
+        "Gå til udkast"
+      ],
+      "Go to Sent": [
+        "Gå til Sendt"
+      ],
+      "Go to Spam": [
+        "Gå til spam"
+      ],
+      "Search": [
+        "Søg"
+      ]
+    },
+    "Composer email icon": {
+      "End-to-end encrypted": [
+        "End-to-end krypteret"
+      ],
+      "PGP-signed": [
+        "PGP-signeret"
+      ]
+    },
+    "Composer size": {
+      "Normal": [
+        "Normal"
+      ]
+    },
+    "CustomFilter": {
+      "Next": [
+        "Næste"
+      ],
+      "Sender": [
+        "Afsender"
+      ]
+    },
+    "Date label": {
+      "Tomorrow": [
+        "I morgen"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Komfortabel"
+      ]
+    },
+    "Email reminder banner": {
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Begivenhed starter om ${ minutesUntilEvent } minut",
+        "Begivenhed starter om ${ minutesUntilEvent } minutter"
+      ],
+      "Event starts tomorrow": [
+        "Begivenhed starter i morgen"
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "Begivenhedsdetaljer er krypterede. Log ind igen for at gendanne kalender og dekryptere dine data. ${ learnMoreLink }"
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was updated. This reminder is out-of-date.": [
+        "Begivenhed blev opdateret. Denne påmindelse er forældet."
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Nuladgangs-krypteret. Modtageren har deaktiveret end-to-end kryptering på sin konto."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Højst ${ maxAttendees } deltager er tilladt pr. invitation",
+        "Højst ${ maxAttendees } deltagere er tilladt pr. invitation"
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "Udkast kan ikke flyttes til indbakke"
+      ],
+      "Drafts cannot be moved to Spam": [
+        "Udkast kan ikke flyttes til spam"
+      ],
+      "Sent messages cannot be moved to Spam": [
+        "Sendte beskeder kan ikke flyttes til spam"
+      ],
+      "This action cannot be performed": [
+        "Denne handling kan ikke udføres"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Filter"
+      ],
+      "Reset": [
+        "Nulstil"
+      ]
+    },
+    "forwardmessage": {
+      "To: ${ toString }": [
+        "Til: ${ toString }"
+      ]
+    },
+    "Key validation warning": {
+      "Recipient's key validation failed: ${ validationErrorsMessage }": [
+        "Modtagers nøglevalidering mislykkedes: ${ validationErrorsMessage }"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Dato"
+      ]
+    },
+    "Label Recipient": {
+      "To": [
+        "Til"
+      ]
+    },
+    "Labels": {
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du har ingen aktive nyhedsbreve eller mailinglisteabonnementer."
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Søjle"
+      ]
+    },
+    "Link to settings": {
+      "settings": [
+        "indstillinger"
+      ]
+    },
+    "Mailbox": {
+      "Archive": [
+        "Arkiv"
+      ],
+      "Inbox": [
+        "Indbakke"
+      ],
+      "Spam": [
+        "Spam"
+      ]
+    },
+    "Message notification": {
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Planlægning annulleret. Besked er blevet flyttet til udkast."
+      ],
+      "Sending undone": [
+        "Afsendelse fortrudt"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Få dine e-mails ind i ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Få dine eksisterende e-mails ind i ${ MAIL_APP_NAME }, så du kan administrere alt fra én privat indbakke."
+      ],
+      "Protect your accounts": [
+        "Beskyt dine konti"
+      ]
+    },
+    "Received email icon": {
+      "End-to-end encrypted and signed message": [
+        "End-to-end krypteret og signeret besked"
+      ],
+      "End-to-end encrypted message from verified sender": [
+        "End-to-end krypteret besked fra bekræftet afsender"
+      ],
+      "PGP-encrypted and signed message": [
+        "PGP-krypteret og signeret besked"
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Re-encrypting invitation failed. Please try again.": [
+        "Genkryptering af invitation mislykkedes. Prøv igen."
+      ]
+    },
+    "Search - no results": {
+      "No messages found": [
+        "Ingen beskeder fundet"
+      ],
+      "No messages scheduled": [
+        "Ingen planlagte beskeder"
+      ],
+      "No results found": [
+        "Ingen resultater fundet"
+      ]
+    },
+    "Signature verification warning": {
+      "Sender's trusted keys verification failed": [
+        "Afsenderens betroede nøgler kunne ikke verificeres"
+      ]
+    },
+    "Snooze message": {
+      "When should the message reappear in your inbox?": [
+        "Hvornår skal beskeden igen dukke op i din indbakke?"
+      ]
+    },
+    "Sort option": {
+      "Sort by": [
+        "Sortér efter"
+      ]
+    },
+    "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Se, hvad der er inkluderet i dit abonnement og drag nytte af fordelene."
+      ],
+      "Email tracking protection": [
+        "Beskyttelse mod sporing af e-mail"
+      ],
+      "Schedule send": [
+        "Planlæg afsendelse"
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Dette er nu din standard-adresse. Åbn dropdownmenuen for at sende fra en anden adresse. "
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Slå ${ DARK_WEB_MONITORING_NAME } til for at få besked, hvis dine data er blevet lækket fra en tredjepartstjeneste."
+      ]
+    },
+    "Status": {
+      "Unsubscribed": [
+        "Afmeldt"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Indsæt din ${ MAIL_APP_NAME }-adresse som den nye adresse og gem, bekræft eller verificér ændringen."
+      ],
+      "Select service to update": [
+        "Vælg tjeneste, der skal opdateres"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Aktivér"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Opret mappen \"${ suggestedFolderName }\""
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Download ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Download desktop-appen"
+      ],
+      "Show me how": [
+        "Vis mig hvordan"
+      ]
+    },
+    "WeekDay": {
+      "Sun, ${ formatTime }": [
+        "Søndag, ${ formatTime }"
       ]
     }
   }

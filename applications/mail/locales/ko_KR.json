@@ -1130,6 +1130,18 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "All Unstarred": [
+        "모두 별표하지 않음"
+      ],
+      "Remove ${ attachmentName }": [
+        "${ attachmentName } 삭제"
+      ],
+      "Select All": [
+        "모두 선택"
+      ],
+      "Set encryption": [
+        "암호화 설정"
       ]
     },
     "action": {
@@ -1723,6 +1735,9 @@
       ],
       "This response is out of date. You have no calendars.": [
         "응답할 기한이 지났습니다. 캘린더가 없습니다."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 거부했습니다."
       ]
     },
     "Cancellation reminder": {
@@ -3249,7 +3264,7 @@
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 사용자의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -3291,10 +3306,10 @@
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "사용자의 ${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "사용자의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
@@ -4086,6 +4101,9 @@
       ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "중복된 수신자를 삭제했습니다: ${ recipents }"
       ]
     },
     "error": {
@@ -4322,7 +4340,7 @@
         "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+        "답장이 전송되었습니다, 이벤트가 사용자의 캘린더에서 업데이트되지 않을 수 있습니다"
       ]
     },
     "Event title": {
@@ -4714,6 +4732,9 @@
       ],
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount }일 남음"
+      ],
+      "Discover privacy features": [
+        "개인정보 보호 기능 알아보기"
       ]
     },
     "Gmail forwarding": {
@@ -5535,7 +5556,7 @@
         "복사한 링크 붙이기"
       ],
       "Copy your referral link": [
-        "당신의 추천인 링크를 공유하세요"
+        "나의 추천인 링크를 공유하세요"
       ],
       "Country code": [
         "국가 코드"
@@ -6685,6 +6706,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "(No Recipient)": [
+        "(수신자 없음)"
+      ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "이 대화를 영구적으로 삭제하시겠습니까?"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "${ minutesDiff }분 뒤 만료"
+      ],
+      "Hide original message": [
+        "처음 메시지 숨기기"
+      ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "이메일에 제목이 누락되어 있습니다. 이 메시지를 계속 보내시겠어요?"
       ]
     },
     "info": {
@@ -7592,6 +7628,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "중요한 메시지를 더 이상 놓치지 마세요! 중요한 메시지가 이제 ${ primaryCopy } 아래에 표시돼요. 다른 모든 메시지는 카테고리별로 정렬되어 찾기 쉬우면서도 받은 편지함을 어지럽히지 않게 되었어요."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9889,6 +9928,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "the writing assistant": [
+        "글쓰기 도우미"
       ]
     },
     "Placeholder for contact group name": {
@@ -11416,6 +11458,9 @@
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
+      ],
+      "Draft deleted": [
+        "초안이 삭제되었습니다."
       ]
     },
     "Success notification": {
@@ -12288,6 +12333,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Next conversation": [
+        "다음 대화"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12815,6 +12863,21 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "기존에 불러온 항목 중 중복되는 것은 생략됩니다. ${ PRODUCT_NAMES.EASY_SWITCH } 설정에서 실행 취소하거나 더 오래된 메시지를 불러올 수 있습니다."
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Re-encrypting invitation failed. Please try again.": [
+        "초대 재암호화 실패. 다시 시도해주세요."
+      ]
+    },
+    "Sort option": {
+      "Sort by": [
+        "정렬 기준"
       ]
     }
   }
