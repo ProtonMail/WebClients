@@ -23,7 +23,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@babel/plugin-transform-runtime": "^7.28.5",
+        "@babel/plugin-transform-runtime": "^7.29.7",
         "@proton/account": "workspace:^",
         "@proton/activation": "workspace:^",
         "@proton/atoms": "workspace:^",
@@ -59,6 +59,7 @@
         "@types/react": "^18.3.28",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
+        "browserslist": "^4.28.2",
         "clsx": "^2.1.1",
         "comlink": "^4.4.2",
         "cross-env": "^10.1.0",
