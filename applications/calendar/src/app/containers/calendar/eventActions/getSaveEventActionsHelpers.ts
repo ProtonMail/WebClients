@@ -12,7 +12,12 @@ import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/share
 import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 
 import type { EventOldData } from '../../../interfaces/EventData';
-import type { InviteActions, OnSendPrefsErrors, SendIcs } from '../../../interfaces/Invite';
+import type {
+    GetAddedAttendeesPublicKeysMap,
+    InviteActions,
+    OnSendPrefsErrors,
+    SendIcs,
+} from '../../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import { getCreateSyncOperation, getUpdateSyncOperation } from '../getSyncMultipleEventsPayload';
@@ -148,6 +153,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
     memberID,
     getCalendarKeys,
     sendIcs,
+    getAddedAttendeesPublicKeysMap,
     onSendPrefsErrors,
     handleSyncActions,
     isBreakingChange,
@@ -161,6 +167,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
     memberID: string;
     getCalendarKeys: GetCalendarKeys;
     sendIcs: SendIcs;
+    getAddedAttendeesPublicKeysMap: GetAddedAttendeesPublicKeysMap;
     onSendPrefsErrors: OnSendPrefsErrors;
     isBreakingChange: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
@@ -180,7 +187,11 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         onSendPrefsErrors,
         handleSyncActions,
     });
-    const { veventComponent: finalVevent, addedAttendeesPublicKeysMap } = await sendIcs(
+    const {
+        veventComponent: finalVevent,
+        inviteActions: finalInviteActions,
+        sendPreferencesMap,
+    } = await sendIcs(
         {
             inviteActions: intermediateInviteActions,
             vevent: intermediateVevent,
@@ -190,6 +201,12 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         // we pass the calendarID here as we want to call the event manager in case the operation fails
         calendarID
     );
+
+    const addedAttendeesPublicKeysMap = await getAddedAttendeesPublicKeysMap({
+        veventComponent: finalVevent,
+        inviteActions: finalInviteActions,
+        sendPreferencesMap,
+    });
 
     return getUpdateSyncOperation({
         veventComponent: finalVevent,
