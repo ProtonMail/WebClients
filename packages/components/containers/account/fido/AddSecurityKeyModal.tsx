@@ -60,6 +60,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     const { validator, onFormSubmit, reset } = useFormErrors();
     const [name, setName] = useState('');
     const [fidoError, setFidoError] = useState(false);
+    const [awaitingTouch, setAwaitingTouch] = useState(false);
     const registrationPayloadRef = useRef<RegisterCredentialsPayload>();
     const [allowPlatformKeys, setAllowPlatformKeys] = useState(false);
 
@@ -84,6 +85,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             }
             try {
                 setFidoError(false);
+                setAwaitingTouch(true);
 
                 handleAbort();
                 const abortController = new AbortController();
@@ -92,11 +94,13 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                 registrationPayloadRef.current = await getCreatePayload(response, abortController.signal);
             } catch (error) {
                 setFidoError(true);
+                setAwaitingTouch(false);
                 captureMessage('Security key registration', {
                     level: 'error',
                     extra: { error },
                 });
                 // Purposefully logging the error for somewhat easier debugging
+                // eslint-disable-next-line no-console
                 console.error(error);
                 return;
             } finally {
@@ -190,6 +194,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             <ModalContent>
                 {step === Steps.Tutorial && (
                     <RegisterSecurityKeyContent
+                        awaitingTouch={awaitingTouch}
                         error={fidoError}
                         checkbox={
                             <>
