@@ -1,16 +1,14 @@
-import { c } from 'ttag';
-
 import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
-import { handleSdkError, shouldTrackError } from '@proton/drive/legacy/errorHandling';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import {
     getFormattedNodeLocation,
     getNodeEffectiveRole,
     getNodeName,
     isMissingNode,
 } from '@proton/drive/modules/nodes';
-import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
+import { createDebouncedBuffer } from '../../../../utils/createDebouncedBuffer';
 import { getSignatureIssues } from '../../../../utils/sdk/getSignatureIssues';
 import type { SearchResultItemUI } from '../../searchView/store';
 import { useSearchViewStore } from '../../searchView/store';
@@ -65,58 +63,39 @@ const resolveNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<
     };
 };
 
-// Load nodes by UID from the SDK, convert them to UI presentation objects and store them in the store.
-export const loadNodesForSearchView = async (nodeUids: string[], abortSignal: AbortSignal) => {
+export type LoadNodesResult = {
+    hadPartialErrors: boolean;
+};
+
+// Stream all nodeUids through iterateNodes in one call. Re-renders the list
+// progressively via a debounced buffer as nodes resolve.
+export const loadNodesForSearchView = async (
+    nodeUids: string[],
+    abortSignal: AbortSignal
+): Promise<LoadNodesResult> => {
     const drive = getDrive();
-    const notificationsManager = getNotificationsManager();
+    let hadPartialErrors = false;
 
-    useSearchViewStore.getState().setLoading(true);
-    const loadedUids = new Set<string>();
-    const collectedItems: SearchResultItemUI[] = [];
-    try {
-        let showErrorNotification = false;
+    const buffer = createDebouncedBuffer<SearchResultItemUI>((items) => {
+        useSearchViewStore.getState().addSearchResultItems(items);
+    });
 
-        for await (const maybeMissingNode of drive.iterateNodes(nodeUids, abortSignal)) {
-            try {
-                if (isMissingNode(maybeMissingNode)) {
-                    // The search index engine does not do a good job at tracking deleted nodes.
-                    // We silence these errors for now but when integrating the new search index,
-                    // we should
-                    continue;
-                }
-                const item = await resolveNode(maybeMissingNode, drive);
-                if (item) {
-                    collectedItems.push(item);
-                    loadedUids.add(item.nodeUid);
-                }
-            } catch (e) {
-                handleSdkError(e, {
-                    showNotification: false,
-                });
-                showErrorNotification = true;
+    for await (const maybeMissingNode of drive.iterateNodes(nodeUids, abortSignal)) {
+        try {
+            if (isMissingNode(maybeMissingNode)) {
+                continue;
             }
+            const item = await resolveNode(maybeMissingNode, drive);
+            if (item) {
+                buffer.push(item);
+            }
+        } catch (e) {
+            handleSdkError(e, { showNotification: false });
+            hadPartialErrors = true;
         }
-
-        // Batch-update the store once with all collected items.
-        if (collectedItems.length > 0) {
-            useSearchViewStore.getState().setSearchResultItems(collectedItems);
-        }
-
-        if (showErrorNotification) {
-            notificationsManager.createNotification({
-                type: 'error',
-                text: c('Error').t`We were not able to load some search results`,
-            });
-        }
-    } catch (e) {
-        if (e instanceof Error && shouldTrackError(e)) {
-            return;
-        }
-        handleSdkError(e, { fallbackMessage: c('Error').t`We were not able to load some search results` });
-    } finally {
-        // Remove previously loaded node uids from previous search queries.
-        useSearchViewStore.getState().cleanupStaleItems(loadedUids);
-        useSearchViewStore.getState().setLoading(false);
-        useSearchViewStore.getState().markStoreAsDirty(false);
     }
+
+    buffer.drain();
+
+    return { hadPartialErrors };
 };
