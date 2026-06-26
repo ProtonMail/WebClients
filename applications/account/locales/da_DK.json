@@ -5571,6 +5571,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Du kan stadig logge ind med denne adresse og genoprette forbindelsen når som helst."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Du vil ikke længere kunne bruge ${ address.Email } til at modtage og sende e-mails i ${ BRAND_NAME }. Bemærk at beskeder sendt til denne adresse fra ${ BRAND_NAME } ikke længere vil være end-to-end-krypterede."
       ]
     },
     "description": {
@@ -7766,6 +7772,15 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "No drive found to import": [
+        "Intet drev fundet til import"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Mangler plads i din ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Uventet fejl, vi kan ikke importere filerne"
       ]
     },
     "error": {
@@ -13552,6 +13567,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen billeder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
+      ],
+      "Synced from identity provider": [
+        "Synkroniseret fra identitetsudbyder"
       ]
     },
     "info": {
@@ -13669,6 +13690,9 @@
       ],
       "Sending invite...": [
         "Sender invitation..."
+      ],
+      "Group Owner": [
+        "Gruppe-ejer"
       ]
     },
     "Invoice state display as badge": {
@@ -15749,6 +15773,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Password check-ins": [
+        "Adgangskode check-ins"
       ]
     },
     "label": {
@@ -16681,6 +16708,9 @@
       ],
       "Sign in": [
         "Log ind"
+      ],
+      "Change backup password": [
+        "Skift backup-adgangskode"
       ]
     },
     "Message": {
@@ -19460,6 +19490,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Sørg for at du husker din adgangskode eller opbevarer den sikkert, da den er nøglen til at dekryptere dine data."
+      ],
+      "Turn off check-ins": [
+        "Slå check-ins fra"
+      ],
+      "Turn off password check-ins?": [
+        "Slå adgangskode check-ins fra?"
       ]
     },
     "passwordless": {
@@ -21846,6 +21882,9 @@
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Giver dig mulighed for at tilføje en Zoom-videokonference til enhver af dine kalenderbegivenheder"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Føj til ${ CALENDAR_APP_NAME }"
       ]
     },
     "session_recovery:available:action": {
@@ -24380,6 +24419,12 @@
       ],
       "Your address has been activated": [
         "Din adresse er blevet aktiveret"
+      ],
+      "Password check-ins disabled": [
+        "Adgangskode check-ins deaktiveret"
+      ],
+      "Password check-ins enabled": [
+        "Adgangskode check-ins aktiveret"
       ]
     },
     "Success message": {
@@ -25988,7 +26033,7 @@
         "prioriteret support:"
       ],
       "Privacy": [
-        "Privatliv"
+        "Privatlivsbeskyttelse"
       ],
       "Privacy and data collection": [
         "Privatliv og dataindsamling"
@@ -27452,6 +27497,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller, når brugeren har accepteret invitationen."
       ]
     },
     "Users table: badge": {
