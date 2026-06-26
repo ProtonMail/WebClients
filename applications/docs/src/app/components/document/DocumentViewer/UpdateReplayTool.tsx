@@ -18,6 +18,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
     setApplyMultiple: (applyMultiple: number) => void
     ws: WebSocket | null
     snapshots: unknown[]
+    isTimeTravelEnabled: boolean
 
     loadZipFile: (file: File, broadcastToWS: boolean) => Promise<void>
     applyNextUpdate: () => Promise<void>
@@ -27,6 +28,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
     handleStateChangeMessage: (state: any) => Promise<void>
     sendStateChangeMessage: () => void
     goToSnapshot: (index: number) => Promise<void>
+    setIsTimeTravelEnabled: (isTimeTravelEnabled: boolean) => void
   }>()((set, get) => ({
     fileHash: '',
     updatesToApply: [],
@@ -37,6 +39,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
     setApplyMultiple: (applyMultiple: number) => set({ applyMultiple }),
     ws: null,
     snapshots: [],
+    isTimeTravelEnabled: true,
 
     loadZipFile: async (file: File, broadcastToWS = false) => {
       const hash = await getBufferHash(await file.arrayBuffer())
@@ -56,7 +59,9 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
       }
       set({ fileHash: hash, updatesToApply: updates, appliedUpdates: 0, timeTravelIndex: 0 })
       const initialState = await editorController.getLocalSpreadsheetStateJSON()
-      set({ snapshots: [initialState] })
+      if (get().isTimeTravelEnabled) {
+        set({ snapshots: [initialState] })
+      }
       const store = get()
       if (broadcastToWS && store.ws && store.ws.readyState === WebSocket.OPEN) {
         const msgType = 'file-loaded'
@@ -84,7 +89,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
       await editorController.applyUpdate(update)
       const snapshot = await editorController.getLocalSpreadsheetStateJSON()
       set((state) => ({
-        snapshots: [...state.snapshots, snapshot],
+        snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots,
         appliedUpdates: state.appliedUpdates + 1,
         timeTravelIndex: state.appliedUpdates + 1,
       }))
@@ -98,7 +103,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
         }
         await editorController.applyUpdate(update)
         const snapshot = await editorController.getLocalSpreadsheetStateJSON()
-        set((state) => ({ snapshots: [...state.snapshots, snapshot] }))
+        set((state) => ({ snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots }))
       }
       const newAppliedUpdates = store.appliedUpdates + count
       set({ appliedUpdates: newAppliedUpdates, timeTravelIndex: newAppliedUpdates })
@@ -201,6 +206,8 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
       await editorController.replaceLocalSpreadsheetState(snapshot as object, false)
       set({ timeTravelIndex: index })
     },
+
+    setIsTimeTravelEnabled: (isTimeTravelEnabled: boolean) => set({ isTimeTravelEnabled }),
   }))
 }
 
@@ -229,6 +236,8 @@ export default function UpdateReplayTool({
     closeConnection,
     sendStateChangeMessage,
     goToSnapshot,
+    isTimeTravelEnabled,
+    setIsTimeTravelEnabled,
   } = useStore(store)
 
   const didSetupInitialConnection = useRef(false)
@@ -329,9 +338,18 @@ export default function UpdateReplayTool({
         >
           Apply next update
         </Button>
-        {snapshots.length > 0 && isSpreadsheet && (
+        {isSpreadsheet && (
           <div className="flex flex-col gap-1.5">
             <div className="text-sm leading-none">Time travel:</div>
+            <label className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                className="!opacity-100"
+                checked={isTimeTravelEnabled}
+                onChange={(event) => setIsTimeTravelEnabled(event.target.checked)}
+              />
+              Enabled
+            </label>
             <div className="flex items-center gap-2">
               <Button
                 size="small"
@@ -345,7 +363,7 @@ export default function UpdateReplayTool({
                 Previous
               </Button>
               <span className="min-w-[3rem] shrink-0 text-sm">
-                {timeTravelIndex} / {snapshots.length - 1}
+                {timeTravelIndex} / {snapshots.length > 0 ? snapshots.length - 1 : 0}
               </span>
               <Button
                 size="small"
