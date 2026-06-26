@@ -119,7 +119,7 @@ const SubscriptionCheckoutWithPayments = ({
                 disablePlanSelection={disablePlanSelection}
             />
             {!lifetimePlan && <SubscriptionCheckoutBillingCycleSection minimumCycle={minimumCycle} />}
-            <SubscriptionCheckoutAddonSection initialCoupon={checkoutModel.coupon} />
+            <SubscriptionCheckoutAddonSection />
             <SubscriptionCheckoutPaymentSection
                 subscribing={subscribing}
                 paymentFacade={paymentFacade}
