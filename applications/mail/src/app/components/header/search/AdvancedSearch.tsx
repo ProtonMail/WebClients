@@ -19,7 +19,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { contentIndexingProgress } from '@proton/encrypted-search/esIDB';
 import type { ESIndexingState } from '@proton/encrypted-search/models';
 import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
-import { getHumanLabelID } from '@proton/mail/helpers/location';
+import { getHumanLabelID, isCategoryLabel } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -169,20 +169,26 @@ const AdvancedSearch = ({
         const { keyword, begin, end, wildcard, from, to, address, hasAttachments } = reset ? DEFAULT_MODEL : model;
         const filter = hasAttachments ? 'has-file' : UNDEFINED;
 
-        history.push(
-            changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.hash, {
-                keyword: getKeyword({ keyword, reset, isSmallViewport }),
-                from: from ? String(from) : UNDEFINED,
-                to: to.length ? formatRecipients(to) : UNDEFINED,
-                address: address === ALL_ADDRESSES ? UNDEFINED : address,
-                begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
-                end: end ? String(getUnixTime(add(end, { days: 1 }))) : UNDEFINED,
-                wildcard: wildcard ? String(wildcard) : UNDEFINED,
-                filter,
-                sort: UNDEFINED, // Make sure to reset sort parameter when performing an advanced search
-                page: UNDEFINED, // Reset page parameter when performing an advanced search so that search results are shown from the first page
-            })
-        );
+        // We remain on the inbox page when searching in a category
+        const labelID = isCategoryLabel(model.labelID)
+            ? getHumanLabelID(MAILBOX_LABEL_IDS.INBOX)
+            : getHumanLabelID(model.labelID);
+
+        const newURL = changeSearchParams(`/${labelID}`, history.location.hash, {
+            category: isCategoryLabel(model.labelID) ? getHumanLabelID(model.labelID) : UNDEFINED,
+            keyword: getKeyword({ keyword, reset, isSmallViewport }),
+            from: from ? String(from) : UNDEFINED,
+            to: to.length ? formatRecipients(to) : UNDEFINED,
+            address: address === ALL_ADDRESSES ? UNDEFINED : address,
+            begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
+            end: end ? String(getUnixTime(add(end, { days: 1 }))) : UNDEFINED,
+            wildcard: wildcard ? String(wildcard) : UNDEFINED,
+            filter,
+            sort: UNDEFINED, // Make sure to reset sort parameter when performing an advanced search
+            page: UNDEFINED, // Reset page parameter when performing an advanced search so that search results are shown from the first page
+        });
+
+        history.push(newURL);
 
         onClose();
     };
