@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import Option from '@proton/components/components/option/Option';
 
-const STATIC_PODCASTS = [
+const STATIC_PODCASTS: { name: string; value: string }[] = [
     {
         name: 'The Kit & Krysta Podcast',
         value: 'the_kit_krysta_podcast',
@@ -109,10 +109,85 @@ const STATIC_PODCASTS = [
     },
 ] as const;
 
-export const usePodcasts = () => {
-    const podcasts = useMemo(
-        () => STATIC_PODCASTS.map(({ name, value }) => <Option key={value} title={name} value={value} />),
+const STATIC_YOUTUBE_CHANNELS: { name: string; value: string }[] = [
+    {
+        name: 'The Cyberpunk Dingo',
+        value: 'the_cyberpunk_dingo',
+    },
+    {
+        name: 'Alán Barroso Clips',
+        value: 'alan_barroso_clips',
+    },
+    {
+        name: 'David Bombal',
+        value: 'david_bombal',
+    },
+    {
+        name: 'BENDER',
+        value: 'bender',
+    },
+    {
+        name: 'Art Chad',
+        value: 'art_chad',
+    },
+    {
+        name: 'Kitboga',
+        value: 'kitboga',
+    },
+    {
+        name: 'Anders Puck Nielsen',
+        value: 'anders_puck_nielsen',
+    },
+    {
+        name: 'JaviPonzo',
+        value: 'javiponzo',
+    },
+    {
+        name: 'No Text To Speech',
+        value: 'no_text_to_speech',
+    },
+    {
+        name: 'Lord Draugr',
+        value: 'lord_draugr',
+    },
+    {
+        name: 'Expressions Oozing',
+        value: 'expressions_oozing',
+    },
+    {
+        name: 'foci',
+        value: 'foci',
+    },
+    {
+        name: 'The Big 6ix',
+        value: 'the_big_6ix',
+    },
+    {
+        name: 'TurkishLDN',
+        value: 'turkishldn',
+    },
+    {
+        name: 'Faysal',
+        value: 'faysal',
+    },
+    {
+        name: 'Parafantástico',
+        value: 'parafantástico',
+    },
+    {
+        name: 'Un Podcast Sobre Bitcoin',
+        value: 'un_podcast_sobre_bitcoin',
+    },
+] as const;
+
+export const useStaticSurveyOptions = () => {
+    const [podcasts, youtubeChannels] = useMemo(
+        () => [
+            STATIC_PODCASTS.map(({ name, value }) => <Option key={value} title={name} value={value} />),
+            STATIC_YOUTUBE_CHANNELS.map(({ name, value }) => <Option key={value} title={name} value={value} />),
+        ],
         []
     );
-    return { podcasts };
+
+    return { podcasts, youtubeChannels };
 };

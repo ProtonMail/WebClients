@@ -103,13 +103,17 @@ describe('FeedbackSurveyModal', () => {
         });
         expect(onClose).toHaveBeenCalled();
     });
-    it('should disable submit button when Podcast option is selected but there is podcast value selected', async () => {
-        const onClose = vi.fn();
 
-        render(<FeedbackSurveyModal open onClose={onClose} />);
+    it.each(['Podcast', 'YouTube', 'Other'])(
+        'should disable submit button when %s option is selected but there is no value selected',
+        async (option) => {
+            const onClose = vi.fn();
 
-        await userEvent.click(screen.getByText('Podcast'));
+            render(<FeedbackSurveyModal open onClose={onClose} />);
 
-        expect(screen.getByText('Submit')).toBeDisabled();
-    });
+            await userEvent.click(screen.getByText(option));
+
+            expect(screen.getByText('Submit')).toBeDisabled();
+        }
+    );
 });
