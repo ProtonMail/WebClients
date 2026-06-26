@@ -149,6 +149,7 @@ import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import usePauseCalendarEventLoop from '../../hooks/usePauseCalendarEventLoop';
 import type {
     AttendeeDeleteSingleEditOperation,
+    GetAddedAttendeesPublicKeysMap,
     InviteActions,
     OnSendPrefsErrors,
     RecurringActionData,
@@ -1236,23 +1237,26 @@ const InteractiveCalendarView = ({
 
         await sendIcsAction();
 
-        const addedAttendeesPublicKeysMap = cleanVevent
-            ? await getAddedAttendeesPublicKeysMap({
-                  veventComponent: cleanVevent,
-                  inviteActions: cleanInviteActions,
-                  sendPreferencesMap,
-                  getEncryptionPreferences,
-                  canAutoAddDisabledE2EEAttendees,
-              })
-            : {};
-
         return {
             veventComponent: cleanVevent,
             inviteActions: cleanInviteActions,
             timestamp: currentTimestamp,
             sendPreferencesMap,
-            addedAttendeesPublicKeysMap,
         };
+    };
+
+    const handleGetAddedAttendeesPublicKeysMap: GetAddedAttendeesPublicKeysMap = ({
+        veventComponent,
+        inviteActions,
+        sendPreferencesMap,
+    }) => {
+        return getAddedAttendeesPublicKeysMap({
+            veventComponent,
+            inviteActions,
+            sendPreferencesMap,
+            getEncryptionPreferences,
+            canAutoAddDisabledE2EEAttendees,
+        });
     };
 
     const handleCloseConfirmation = () => {
@@ -1903,6 +1907,7 @@ const InteractiveCalendarView = ({
                 getAddressKeys,
                 getCanonicalEmailsMap,
                 sendIcs: handleSendIcs,
+                getAddedAttendeesPublicKeysMap: handleGetAddedAttendeesPublicKeysMap,
                 getCalendarEventRaw,
                 reencryptSharedEvent: handleReencryptSharedEvent,
                 onSendPrefsErrors: handleSendPrefsErrors,
