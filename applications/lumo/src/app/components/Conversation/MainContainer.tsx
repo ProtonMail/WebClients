@@ -1,50 +1,51 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { clsx } from 'clsx';
-
 import { useModalStateObject } from '@proton/components';
-import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
+import PaperTrailPanel from '../../features/aiPaperTrail/PaperTrailPanel';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
-import type { HandleSendMessage } from '../../hooks/useLumoActions';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
+import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
+import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useOnboardingContext } from '../../providers/OnboardingProvider';
 import type { Attachment } from '../../types';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { useLumoSelector } from '../../redux/hooks';
+import { selectTierErrors } from '../../redux/slices/meta/errors';
+import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
+import UpsellCard from '../../upsells/components/UpsellCard';
 import { ComposerMode, type Message } from '../../types';
-import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
-import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
+// import { Blobs } from '../Blobs/Blobs';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
 import { PublicHeader } from '../Guest/PublicHeader';
-import { LumoCat } from '../LumoAvatar';
+import TermsAndConditions from '../TermsAndConditions';
 import WhatsNew from '../WhatsNew/WhatsNew';
+import LumoCatAnimation from './MainContainer/LumoCatAnimation';
 import LumoMainText from './MainContainer/LumoMainText';
 import MainContainerFooter from './MainContainer/MainContainerFooter';
-import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
+import ProtectedByProton from './MainContainer/ProtectedByProton';
 
 import './MainContainer.scss';
 
-const MainContainer = ({
-    handleSendMessage,
-    isProcessingAttachment,
-    initialQuery,
-    prefillQuery,
-}: {
-    handleSendMessage: HandleSendMessage;
+interface MainContainerProps {
     isProcessingAttachment: boolean;
     initialQuery?: string;
     prefillQuery?: string;
-}) => {
-    const { isOnboardingCompleted } = useOnboardingContext();
+}
+
+const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: MainContainerProps) => {
+    const { handleSendMessage } = useConversationActions();
+    // const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
+    const { aiPaperTrail } = useLumoFlags();
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
-    const [isEditorEmpty, setIsEditorEmpty] = useState(true);
-    const [promptSuggestion, setPromptSuggestion] = useState<string | undefined>(undefined);
+    const [, setIsEditorEmpty] = useState(true);
+    const [promptSuggestion] = useState<string | undefined>(undefined);
     // Files panel states
     const [openPanel, setOpenPanel] = useState<{
         type: 'files' | null;
@@ -52,6 +53,14 @@ const MainContainer = ({
         autoShowDriveBrowser?: boolean;
     }>({ type: null });
     const { isGhostChatMode } = useGhostChat();
+    const tierErrors = useLumoSelector((state) => selectTierErrors({ errors: state.errors }));
+    const { hasLumoPlus } = useLumoPlan();
+    const remainingLimits = useRemainingLimits();
+    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(
+        remainingLimits,
+        tierErrors.length > 0,
+        hasLumoPlus
+    );
     const filePreviewModal = useModalStateObject();
     const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
 
@@ -84,99 +93,110 @@ const MainContainer = ({
         setOpenPanel({ type: 'files', filterMessage: undefined, autoShowDriveBrowser: false });
     }, []);
 
-    // Handler for prompt suggestion click
-    const handlePromptSuggestionClick = useCallback((prompt: string) => {
-        setPromptSuggestion(prompt);
-    }, []);
+    // // Handler for prompt suggestion click
+    // const handlePromptSuggestionClick = useCallback((prompt: string) => {
+    //     setPromptSuggestion(prompt);
+    // }, []);
 
-    // Determine if lumo-welcome-section should be visible
-    // Hide when input is active (has content) on small screens, always show on large screens
-    const shouldShowWelcomeSection = !isSmallScreen || isEditorEmpty;
+    // // Determine if lumo-welcome-section should be visible
+    // // Hide when input is active (has content) on small screens, always show on large screens
+    // const shouldShowWelcomeSection = !isSmallScreen || isEditorEmpty;
 
     return (
         <>
-            {isSmallScreen && (
-                <HeaderWrapper>
-                    <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} onlyShowOffers={true} />
-                    <NewGhostChatButton />
-                </HeaderWrapper>
-            )}
-            {isGuest && <PublicHeader />}
-            {/* Lumo Plus upsell button in navbar - only show for medium and larger screens */}
-            <div className="absolute top-custom w-full justify-center hidden md:flex" style={{ '--top-custom': '8px' }}>
-                <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} />
-            </div>
-            <div
-                className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pb-8 pt-0"
-                style={{
-                    '--md-max-w-custom': '90%',
-                    '--lg-max-w-custom': '43rem',
-                }}
+            <LumoLayoutWithDrawer
+                header={{ component: isGuest ? <PublicHeader /> : null }}
+                drawer={{ disabled: true }}
+                // drawer={{
+                //     content: (
+                //         <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1 main-container-lumo-layout">
+                //             <FilesManagementView
+                //                 messageChain={[]}
+                //                 filesContainerRef={filesContainerRef}
+                //                 onClose={handleCloseFiles}
+                //                 filterMessage={openPanel.filterMessage}
+                //                 onClearFilter={handleClearFilter}
+                //                 initialShowDriveBrowser={false}
+                //             />
+                //         </div>
+                //     ),
+                // }}
             >
-                {/* {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />} */}
-                <div
-                    className={clsx(
-                        'lumo-welcome-section flex flex-column-reverse md:flex-row w-full flex-nowrap px-8 relative',
-                        isSmallScreen && 'top-custom',
-                        shouldShowWelcomeSection ? 'is-visible' : 'is-hidden'
-                    )}
-                    style={{
-                        '--top-custom': isSmallScreen ? '-6rem' : undefined,
-                    }}
-                >
-                    <div className="main-text-container flex-1 my-auto flex flex-column relative w-full">
-                        <LumoMainText
-                            isOnboardingCompleted={isOnboardingCompleted}
-                            isSmallScreen={isSmallScreen}
-                            isGhostMode={isGhostChatMode}
-                        />
+                <div className="main-container-component rounded-xl flex flex-column flex-nowrap flex-1">
+                    <div
+                        className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pt-0 main-container-content"
+                        style={{
+                            '--md-max-w-custom': '90%',
+                            '--lg-max-w-custom': '43rem',
+                        }}
+                    >
+                        <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
+                            <LumoCatAnimation isGhostMode={isGhostChatMode} />
+                            <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
+                        </div>
+                        {aiPaperTrail && <PaperTrailPanel />}
 
-                        <ThemedPromptSuggestion onClick={handlePromptSuggestionClick} canShow={!isSmallScreen} />
+                        <div className="composer-container md:px-4 w-full relative">
+                            {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
+                            {/* {aiPaperTrail && isEditorEmpty && (
+                                <button
+                                    type="button"
+                                    className="ai-paper-trail-spotlight flex flex-row flex-nowrap items-center gap-2 mb-3 px-4 py-2 rounded-full"
+                                    onClick={() => navigate('/ai-paper-trail')}
+                                >
+                                    <IcMagicWand size={4} className="color-primary shrink-0" />
+                                    <span className="text-sm text-semibold">
+                                        {c('collider_2025:Action').t`See your AI paper trail`}
+                                    </span>
+                                    <IcArrowRight size={4} className="shrink-0" />
+                                </button>
+                            )} */}
+
+                            <ComposerComponent
+                                composerMode={ComposerMode.NEW_CONVERSATION}
+                                handleSendMessage={handleSendMessage}
+                                isProcessingAttachment={isProcessingAttachment}
+                                className="main-container fixed bottom-0 md:static w-full z-20"
+                                setIsEditorFocused={setIsEditorFocused}
+                                isEditorFocused={isEditorFocused}
+                                setIsEditorEmpty={setIsEditorEmpty}
+                                handleOpenFiles={handleOpenFiles}
+                                onShowDriveBrowser={handleShowDriveBrowser}
+                                onOpenFilePreview={handleOpenFilePreview}
+                                canShowLegalDisclaimer={isGuest && isSmallScreen}
+                                canShowLumoUpsellToggle={true}
+                                initialQuery={promptSuggestion || initialQuery}
+                                prefillQuery={prefillQuery}
+                                optionalElementBelowComposer={
+                                    isGuest ? (
+                                        <TermsAndConditions className="m-0 hidden md:block" />
+                                    ) : (
+                                        <ProtectedByProton />
+                                    )
+                                }
+                            />
+                            {/* <Blobs /> */}
+                        </div>
+                        <WhatsNew />
                     </div>
-                    <LumoCat isSmallScreen={isSmallScreen} isGhostChatMode={isGhostChatMode} />
-                </div>
-                <ThemedPromptSuggestion
-                    onClick={handlePromptSuggestionClick}
-                    className="align-self-center"
-                    canShow={isSmallScreen && isEditorEmpty}
-                />
+                    {filePreviewModal.render && previewAttachment && (
+                        <FilePreviewModal attachment={previewAttachment} {...filePreviewModal.modalProps} />
+                    )}
+                    {openPanel.type === 'files' && (
+                        <FilesManagementView
+                            messageChain={[]}
+                            filesContainerRef={filesContainerRef}
+                            onClose={handleCloseFiles}
+                            filterMessage={openPanel.filterMessage}
+                            onClearFilter={handleClearFilter}
+                            initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                            forceModal={true}
+                        />
+                    )}
 
-                <div className="composer-container md:px-4 w-full">
-                    <ComposerComponent
-                        composerMode={ComposerMode.NEW_CONVERSATION}
-                        handleSendMessage={handleSendMessage}
-                        isProcessingAttachment={isProcessingAttachment}
-                        className="fixed bottom-0 md:static w-full z-20"
-                        setIsEditorFocused={setIsEditorFocused}
-                        isEditorFocused={isEditorFocused}
-                        setIsEditorEmpty={setIsEditorEmpty}
-                        handleOpenFiles={handleOpenFiles}
-                        onShowDriveBrowser={handleShowDriveBrowser}
-                        onOpenFilePreview={handleOpenFilePreview}
-                        canShowLegalDisclaimer={isGuest && isSmallScreen}
-                        canShowLumoUpsellToggle={true}
-                        initialQuery={promptSuggestion || initialQuery}
-                        prefillQuery={prefillQuery}
-                    />
+                    <MainContainerFooter />
                 </div>
-                <WhatsNew />
-            </div>
-            {filePreviewModal.render && previewAttachment && (
-                <FilePreviewModal attachment={previewAttachment} {...filePreviewModal.modalProps} />
-            )}
-            {openPanel.type === 'files' && (
-                <FilesManagementView
-                    messageChain={[]} // Empty message chain for MainContainer
-                    filesContainerRef={filesContainerRef}
-                    onClose={handleCloseFiles}
-                    filterMessage={openPanel.filterMessage}
-                    onClearFilter={handleClearFilter}
-                    initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
-                    forceModal={true}
-                />
-            )}
-
-            <MainContainerFooter />
+            </LumoLayoutWithDrawer>
         </>
     );
 };

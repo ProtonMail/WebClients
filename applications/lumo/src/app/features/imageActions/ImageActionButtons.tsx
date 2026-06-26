@@ -1,20 +1,34 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 
 import { IMAGE_STYLE_OPTIONS } from './styleOptions';
 
-const BUTTON_STYLE = 'flex flex-row gap-2 flex-nowrap items-center rounded-full w-fit-content';
+const BUTTON_STYLE = 'image-action-btn flex flex-row gap-2 flex-nowrap items-center w-fit-content';
 
-export const ImageModifyButton = ({ onClick }: { onClick: () => void }) => (
-    <Button className={BUTTON_STYLE} shape="outline" size="medium" onClick={onClick}>
+export const ImageModifyButton = ({ onClick, className }: { onClick: () => void; className?: string }) => (
+    <Button
+        className={[BUTTON_STYLE, className].filter(Boolean).join(' ')}
+        shape="solid"
+        color="weak"
+        size="medium"
+        onClick={onClick}
+    >
         <IcPen size={3.5} />
-        {c('collider_2025:Action').t`Modify...`}
+        {c('collider_2025:Action').t`Modify`}
+    </Button>
+);
+
+export const ImageDownloadButton = ({ onClick }: { onClick: () => void }) => (
+    <Button className={BUTTON_STYLE} shape="outline" size="medium" onClick={onClick}>
+        <IcArrowDownLine size={3.5} />
+        {c('collider_2025:Action').t`Download`}
     </Button>
 );
 
@@ -26,8 +40,20 @@ interface ImageStyleDropdownProps {
     stopPropagation?: boolean;
 }
 
-export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = false }: ImageStyleDropdownProps) => {
+const MENU_ITEM_HEIGHT = 36;
+const MENU_PADDING = 8;
+const MENU_VIEWPORT_MARGIN = 16;
+
+const getEstimatedMenuHeight = () => IMAGE_STYLE_OPTIONS.length * MENU_ITEM_HEIGHT + MENU_PADDING;
+
+export const ImageStyleDropdown = ({
+    onSelect,
+    side = false,
+    stopPropagation = false,
+}: ImageStyleDropdownProps) => {
     const [showMenu, setShowMenu] = useState(false);
+    const [opensDown, setOpensDown] = useState(false);
+    const [maxMenuHeight, setMaxMenuHeight] = useState<number | undefined>();
     const menuRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
@@ -41,7 +67,28 @@ export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = f
         return () => document.removeEventListener('mousedown', handler);
     }, [showMenu]);
 
-    const wrapperClass = ['image-style-menu relative inline-block', side ? 'image-style-menu--side' : '']
+    useLayoutEffect(() => {
+        if (!showMenu || !menuRef.current || side) {
+            return;
+        }
+
+        const rect = menuRef.current.getBoundingClientRect();
+        const estimatedMenuHeight = getEstimatedMenuHeight();
+        const spaceBelow = window.innerHeight - rect.bottom - MENU_VIEWPORT_MARGIN;
+        const spaceAbove = rect.top - MENU_VIEWPORT_MARGIN;
+
+        const shouldOpenDown =
+            spaceBelow >= estimatedMenuHeight || (spaceBelow > spaceAbove && spaceBelow >= MENU_ITEM_HEIGHT * 2);
+
+        setOpensDown(shouldOpenDown);
+        setMaxMenuHeight(Math.max(MENU_ITEM_HEIGHT * 2, shouldOpenDown ? spaceBelow : spaceAbove));
+    }, [showMenu, side]);
+
+    const wrapperClass = [
+        'image-style-menu relative inline-block',
+        side ? 'image-style-menu--side' : '',
+        opensDown ? 'image-style-menu--down' : '',
+    ]
         .filter(Boolean)
         .join(' ');
 
@@ -61,13 +108,14 @@ export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = f
             {showMenu && (
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                 <span
-                    className="image-style-menu__popup absolute inline-flex flex-column gap-0.5 p-1 rounded-xl"
+                    className="image-style-menu__popup absolute inline-flex flex-column gap-0.5 p-1 rounded-xl border bg-norm shadow-lifted overflow-y-auto"
+                    style={maxMenuHeight ? { maxBlockSize: maxMenuHeight } : undefined}
                     onClick={stopPropagation ? (e) => e.stopPropagation() : undefined}
                 >
                     {IMAGE_STYLE_OPTIONS.map((style) => (
                         <button
                             key={style.id}
-                            className="image-style-menu__item flex items-center w-full py-2 px-3 rounded-lg text-sm text-semibold text-left"
+                            className="image-style-menu__item flex items-center w-full py-2 px-3 rounded-lg text-sm text-semibold text-left border-none bg-transparent color-norm"
                             onClick={() => {
                                 onSelect(style.prompt);
                                 setShowMenu(false);

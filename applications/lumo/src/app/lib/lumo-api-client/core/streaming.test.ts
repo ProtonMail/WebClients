@@ -76,8 +76,43 @@ describe('StreamProcessor', () => {
                 count: 1,
                 content: JSON.stringify({
                     name: 'web_search',
-                    parameters: { query: 'weather' },
+                    arguments: { query: 'weather' },
                 }),
+            },
+        ]);
+    });
+
+    it('maps usage-only chunks to usage messages', () => {
+        const processor = new StreamProcessor();
+
+        const messages = processor.processChunk(
+            `data: ${JSON.stringify({
+                usage: {
+                    completion_tokens: 42,
+                    remaining_limits: {
+                        lite: 98,
+                        max: 20,
+                        images: 19,
+                    },
+                    applied_limit_category: 'lite',
+                    image_limit_applied: false,
+                },
+            })}\n\n`
+        );
+
+        expect(messages).toEqual([
+            {
+                type: 'usage',
+                usage: {
+                    completion_tokens: 42,
+                    remaining_limits: {
+                        lite: 98,
+                        max: 20,
+                        images: 19,
+                    },
+                    applied_limit_category: 'lite',
+                    image_limit_applied: false,
+                },
             },
         ]);
     });
@@ -145,5 +180,94 @@ describe('StreamProcessor', () => {
         );
 
         expect(messages).toEqual([{ type: 'harmful' }]);
+    });
+
+    it('maps chat.tool_call chunks to server_tool_call messages', () => {
+        const processor = new StreamProcessor();
+
+        const nameOnly = processor.processChunk(
+            `data: ${JSON.stringify({
+                object: 'chat.tool_call',
+                tool_call: { id: 'call_0', name: 'web_search' },
+            })}\n\n`
+        );
+
+        expect(nameOnly).toEqual([
+            {
+                type: 'server_tool_call',
+                call_id: 'call_0',
+                name: 'web_search',
+            },
+        ]);
+
+        const withArgs = processor.processChunk(
+            `data: ${JSON.stringify({
+                object: 'chat.tool_call',
+                tool_call: {
+                    id: 'call_0',
+                    name: 'web_search',
+                    arguments: { query: 'Newcastle United today news latest', topic: 'news' },
+                },
+            })}\n\n`
+        );
+
+        expect(withArgs).toEqual([
+            {
+                type: 'server_tool_call',
+                call_id: 'call_0',
+                name: 'web_search',
+                arguments: { query: 'Newcastle United today news latest', topic: 'news' },
+            },
+        ]);
+    });
+
+    it('maps chat.tool_result chunks to server_tool_result messages', () => {
+        const processor = new StreamProcessor();
+
+        const messages = processor.processChunk(
+            `data: ${JSON.stringify({
+                object: 'chat.tool_result',
+                tool_result: {
+                    call_id: 'call_0',
+                    content: {
+                        answer: 'Summary',
+                        results: [{ title: 'Example', url: 'https://example.com' }],
+                        type: 'WebSearch',
+                    },
+                },
+            })}\n\n`
+        );
+
+        expect(messages).toEqual([
+            {
+                type: 'server_tool_result',
+                call_id: 'call_0',
+                content: {
+                    answer: 'Summary',
+                    results: [{ title: 'Example', url: 'https://example.com' }],
+                    type: 'WebSearch',
+                },
+            },
+        ]);
+    });
+
+    it('accepts bare JSON lines without an SSE data prefix', () => {
+        const processor = new StreamProcessor();
+
+        const messages = processor.processChunk(
+            `${JSON.stringify({
+                object: 'chat.tool_call',
+                tool_call: { id: 'call_0', name: 'stock', arguments: { symbol: 'AAPL' } },
+            })}\n\n`
+        );
+
+        expect(messages).toEqual([
+            {
+                type: 'server_tool_call',
+                call_id: 'call_0',
+                name: 'stock',
+                arguments: { symbol: 'AAPL' },
+            },
+        ]);
     });
 });

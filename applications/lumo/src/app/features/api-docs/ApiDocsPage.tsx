@@ -15,6 +15,7 @@ import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shar
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { SignInButton } from '../../components/Guest/SignInLink';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
+import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import GetLumoPlusButton from '../../upsells/primitives/GetLumoPlusButton';
@@ -137,52 +138,51 @@ export const ApiDocsPage = () => {
 
     useNativeComposerVisibilityApi({ isBlocking: true });
 
-    return (
-        <div className="api-docs-page">
-            <div className="api-docs-page-header flex shrink-0 justify-center px-5 py-3">
-                <div className="api-docs-page-header-inner">
-                    <div className="api-docs-page-tabs-row flex flex-row justify-center w-full">
-                        <div
-                            className="api-docs-page-tabs"
-                            role="tablist"
-                            aria-label={c('collider_2025: Title').t`API docs sections`}
-                        >
-                            <button
-                                type="button"
-                                role="tab"
-                                aria-selected={docsTab === 'api'}
-                                className={clsx('api-docs-page-tab', docsTab === 'api' && 'is-active')}
-                                onClick={() => selectDocsTab('api')}
-                            >
-                                {c('collider_2025: Tab').t`API`}
-                            </button>
-                            <button
-                                type="button"
-                                role="tab"
-                                aria-selected={docsTab === 'keys'}
-                                className={clsx('api-docs-page-tab', docsTab === 'keys' && 'is-active')}
-                                onClick={() => selectDocsTab('keys')}
-                            >
-                                {c('collider_2025: Tab').t`Manage keys`}
-                            </button>
-                            <button
-                                type="button"
-                                role="tab"
-                                aria-selected={docsTab === 'workflow'}
-                                className={clsx('api-docs-page-tab', docsTab === 'workflow' && 'is-active')}
-                                onClick={() => selectDocsTab('workflow')}
-                            >
-                                {c('collider_2025: Tab').t`Workflow Builder`}
-                                <Badge className={'ml-2'} type="warning">
-                                    Beta
-                                </Badge>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    const docsTabsHeader = (
+        <div className="api-docs-page-tabs-row flex flex-row justify-center w-full">
+            <div
+                className="api-docs-page-tabs"
+                role="tablist"
+                aria-label={c('collider_2025: Title').t`API docs sections`}
+            >
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected={docsTab === 'api'}
+                    className={clsx('api-docs-page-tab', docsTab === 'api' && 'is-active')}
+                    onClick={() => selectDocsTab('api')}
+                >
+                    {c('collider_2025: Tab').t`API`}
+                </button>
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected={docsTab === 'keys'}
+                    className={clsx('api-docs-page-tab', docsTab === 'keys' && 'is-active')}
+                    onClick={() => selectDocsTab('keys')}
+                >
+                    {c('collider_2025: Tab').t`Manage keys`}
+                </button>
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected={docsTab === 'workflow'}
+                    className={clsx('api-docs-page-tab', docsTab === 'workflow' && 'is-active')}
+                    onClick={() => selectDocsTab('workflow')}
+                >
+                    {c('collider_2025: Tab').t`Workflow Builder`}
+                    <Badge className={'ml-2'} type="warning">
+                        Beta
+                    </Badge>
+                </button>
             </div>
+        </div>
+    );
 
-            <div className="api-docs-page-body flex flex-1 min-h-0 overflow-y-auto flex-column items-center w-full">
+    return (
+        <LumoLayoutWithDrawer drawer={{ disabled: true }} header={{ component: docsTabsHeader }}>
+            <div className="api-docs-page">
+                <div className="api-docs-page-body flex flex-1 min-h-0 overflow-y-auto flex-column items-center w-full">
                 {docsTab === 'api' && (
                     <div className="api-docs-page-body-panel">
                         <div className="api-docs-page-layout">
@@ -641,7 +641,8 @@ export const ApiDocsPage = () => {
                         <WorkflowCodegenPanel isGuest={isGuest} />
                     </div>
                 )}
+                </div>
             </div>
-        </div>
+        </LumoLayoutWithDrawer>
     );
 };

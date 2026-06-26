@@ -1,6 +1,6 @@
 // utils/errorAnalyzer.ts
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { getTerminalTypeFromApiError } from '../../lib/lumo-api-client/core/generation-terminal';
 import { LUMO_API_ERRORS } from '../../types';
@@ -14,7 +14,7 @@ export interface AnalyzedError {
 }
 
 export function analyzeError(error: any): AnalyzedError {
-    const { code } = getApiError(error);
+    const { code, status } = getApiError(error);
 
     // Abort errors - user initiated
     if (error.name === 'AbortError' || error.code === 'AbortError') {
@@ -46,8 +46,8 @@ export function analyzeError(error: any): AnalyzedError {
         };
     }
 
-    // Tier limit error - from jails
-    if (code === API_CUSTOM_ERROR_CODES.BANNED) {
+    // Tier limit error - from jails or HTTP 429 when limits are exhausted
+    if (code === API_CUSTOM_ERROR_CODES.BANNED || status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
         return {
             category: 'api',
             isRetryable: false,

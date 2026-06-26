@@ -1,3 +1,9 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 @keyframes notif-slide-up {
 	from {
 		opacity: 0;
@@ -40,6 +46,15 @@
 	inset-block-end: 10px;
 	inset-inline-end: 7px;
 	z-index: 1000;
+
+	// On small screens, stretch into a full-width top banner with a small gap all around.
+	@include im.media('<=small') {
+		inline-size: auto;
+
+		// inset-block: calc(10px + env(safe-area-inset-top, 0px)) auto;
+		inset-block: 10px auto;
+		inset-inline: 10px;
+	}
 }
 
 .notification-panel-icon {

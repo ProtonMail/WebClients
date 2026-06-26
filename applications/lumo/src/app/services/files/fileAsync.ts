@@ -2,7 +2,7 @@ import { selectAttachments } from '../../redux/selectors';
 import { deleteAttachment, newAttachmentId } from '../../redux/slices/core/attachments';
 import type { LumoDispatch, LumoState } from '../../redux/store';
 import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
-import type { Attachment, Message } from '../../types';
+import { type Attachment, LUMO_API_ERRORS, type Message } from '../../types';
 import { calculateAttachmentTokenCount, storeAttachmentInRedux } from '../../util/attachmentHelpers';
 import { isImageFile } from '../../util/fileTypeHelpers';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
@@ -45,7 +45,7 @@ export const handleFileAsync =
         if (!renameOnConflict) {
             const duplicate = findDuplicateAttachment(file, messageChain, allAttachments);
             if (duplicate) {
-                onComposerError('DuplicateFile');
+                onComposerError(LUMO_API_ERRORS.DUPLICATE_FILE);
                 console.log(`Duplicate file detected in current conversation: ${file.name} (${file.size} bytes)`);
                 return {
                     success: false,

@@ -11,12 +11,12 @@ const ForBusinessSidebarButton = ({ isSmallScreen }: { isSmallScreen: boolean })
         return null;
     }
     return (
-        <LumoB2BUpsellLink className="sidebar-item color-norm flex flex-row items-center flex-nowrap">
-            <div className="sidebar-item-icon">
+        <LumoB2BUpsellLink className="sidebar-item flex items-center w-full cursor-pointer py-2 px-1.5">
+            <div className="sidebar-item-icon flex items-center justify-center shrink-0 mr-1.5">
                 <IcBuildings size={4} className="rtl:mirror" />
             </div>
-            <span className="flex flex-row items-center flex-nowrap">
-                <span className="sidebar-item-text">{c('collider_2025: b2b').t`For Business`} </span>
+            <span className="sidebar-item-text flex-1 flex items-center text-nowrap overflow-hidden">
+                {c('collider_2025: b2b').t`For Business`}
             </span>
         </LumoB2BUpsellLink>
     );

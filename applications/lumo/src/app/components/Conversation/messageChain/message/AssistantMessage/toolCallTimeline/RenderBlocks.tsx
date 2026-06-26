@@ -96,12 +96,16 @@ function toToolCallStep(
 
 type InterleavedItem = { type: 'steps'; steps: ThinkingStep[] } | { type: 'text'; block: ContentBlock };
 
+const IMAGE_ATTACHMENT_MARKDOWN = /^!\[[^\]]*\]\(attachment:[^)]+\)$/;
+
+function isImageAttachmentTextBlock(block: ContentBlock): boolean {
+    return block.type === 'text' && IMAGE_ATTACHMENT_MARKDOWN.test(block.content.trim());
+}
+
 /**
- * Build an interleaved sequence of [steps, text, steps, text, ...] items.
- *
- * Uses thinkingTimeline (if available) to place reasoning segments in-line with
- * tool calls, then flushes accumulated steps before each text block.
- * Falls back to a simpler structure when no timeline is present.
+ * Build render items with all thinking steps grouped at the top and response
+ * content below. Keeps the thinking path pinned while generation continues, even
+ * when the model streams preamble text or image markdown mid-turn.
  */
 function buildInterleavedItems(
     blocks: ContentBlock[],
@@ -112,149 +116,58 @@ function buildInterleavedItems(
     messageCreatedAt?: string
 ): InterleavedItem[] {
     const toolCallBlocks = blocks.filter(isToolCallBlock);
+    const textBlocks = blocks.filter((block) => block.type === 'text' && block.content.trim().length > 0);
     const result: InterleavedItem[] = [];
+    const allSteps: ThinkingStep[] = [];
 
-    // Parse message creation time once as a fallback end-time for the last reasoning segment.
     const messageCreatedAtMs = messageCreatedAt ? new Date(messageCreatedAt).getTime() : undefined;
 
     if (timeline && timeline.length > 0) {
-        let timelinePos = 0;
-        let pendingSteps: ThinkingStep[] = [];
-        // Track which toolCallIndex values have already been turned into a step so
-        // duplicate timeline entries (e.g. retried or split events) don't produce
-        // duplicate rows in the UI.
         const processedToolCallIndices = new Set<number>();
-
-        // If text content has already started streaming, reasoning is done regardless
-        // of whether the overall generation is still in progress.
-        const hasAnyTextContent = blocks.some((b) => b.type === 'text' && b.content.trim().length > 0);
 
         const makeReasoningStep = (pos: number): ThinkingStep => {
             const event = timeline[pos] as { type: 'reasoning'; content: string; timestamp: number };
             const isLast = pos === timeline.length - 1;
-            const isActive = isGenerating && isLastMessage && isLast && !hasAnyTextContent;
+            const isActive = isGenerating && isLastMessage && isLast;
             const nextEvent = timeline[pos + 1];
             let durationMs: number | undefined;
             if (!isActive) {
                 if (nextEvent !== undefined) {
                     durationMs = nextEvent.timestamp - event.timestamp;
                 } else if (messageCreatedAtMs !== undefined && messageCreatedAtMs > event.timestamp) {
-                    // Last reasoning segment: use message creation time as approximate end
                     durationMs = messageCreatedAtMs - event.timestamp;
                 }
             }
             return { type: 'reasoning', content: event.content, isActive, durationMs };
         };
 
-        // Consume timeline events up to and including the given tool call index.
-        const consumeTimelineThrough = (maxToolCallIdx: number) => {
-            while (timelinePos < timeline.length) {
-                const event = timeline[timelinePos];
-                if (event.type === 'tool_call' && event.toolCallIndex > maxToolCallIdx) break;
-
-                if (event.type === 'reasoning') {
-                    pendingSteps.push(makeReasoningStep(timelinePos));
-                } else if (event.type === 'tool_call') {
-                    if (!processedToolCallIndices.has(event.toolCallIndex)) {
-                        processedToolCallIndices.add(event.toolCallIndex);
-                        const block = toolCallBlocks[event.toolCallIndex];
-                        if (block) {
-                            const step = toToolCallStep(block, blocks, isGenerating, isLastMessage);
-                            if (step) pendingSteps.push(step);
-                        }
-                    }
-                }
-                timelinePos++;
-            }
-        };
-
-        // Consume reasoning events (and any tool_call events that have no corresponding block,
-        // i.e. phantom events) until we hit a real tool_call that still needs processing.
-        const consumeTrailingReasoning = () => {
-            while (timelinePos < timeline.length) {
-                const event = timeline[timelinePos];
-                if (event.type === 'reasoning') {
-                    pendingSteps.push(makeReasoningStep(timelinePos));
-                    timelinePos++;
-                } else if (event.type === 'tool_call') {
-                    // If this tool call has no corresponding block it's a phantom — skip it.
-                    // Otherwise stop so the block-loop can process it properly.
-                    if (event.toolCallIndex >= toolCallBlocks.length) {
-                        timelinePos++;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-            }
-        };
-
-        for (const block of blocks) {
-            if (block.type === 'tool_call') {
-                const toolCallIdx = toolCallBlocks.indexOf(block);
-                consumeTimelineThrough(toolCallIdx);
-            } else if (block.type === 'tool_result') {
-                // Handled implicitly via tool_call processing above
-            } else if (block.type === 'text') {
-                // Skip empty text blocks — they would otherwise split step groups
-                // (e.g. break a two-stock comparison into two separate groups).
-                if (!block.content.trim()) continue;
-
-                // Pull in any reasoning that happened after the last tool call but before this text
-                consumeTrailingReasoning();
-
-                if (pendingSteps.length > 0) {
-                    result.push({ type: 'steps', steps: [...pendingSteps] });
-                    pendingSteps = [];
-                }
-                result.push({ type: 'text', block });
-            }
-        }
-
-        // Consume any remaining timeline events (e.g. active reasoning with no text yet)
-        while (timelinePos < timeline.length) {
-            const event = timeline[timelinePos];
-
+        for (let pos = 0; pos < timeline.length; pos++) {
+            const event = timeline[pos];
             if (event.type === 'reasoning') {
-                pendingSteps.push(makeReasoningStep(timelinePos));
+                allSteps.push(makeReasoningStep(pos));
             } else if (event.type === 'tool_call' && !processedToolCallIndices.has(event.toolCallIndex)) {
                 processedToolCallIndices.add(event.toolCallIndex);
                 const block = toolCallBlocks[event.toolCallIndex];
                 if (block) {
                     const step = toToolCallStep(block, blocks, isGenerating, isLastMessage);
-                    if (step) pendingSteps.push(step);
+                    if (step) allSteps.push(step);
                 }
             }
-            timelinePos++;
         }
 
-        if (pendingSteps.length > 0) {
-            // If there are text blocks already in result, move these trailing steps
-            // to just before the last text block so reasoning always precedes content.
-            const lastTextIdx = result.map((r) => r.type).lastIndexOf('text');
-            if (lastTextIdx !== -1) {
-                const prevItem = result[lastTextIdx - 1];
-                if (prevItem?.type === 'steps') {
-                    // Merge into the existing step group before the last text block
-                    prevItem.steps.push(...pendingSteps);
-                } else {
-                    result.splice(lastTextIdx, 0, { type: 'steps', steps: pendingSteps });
-                }
-            } else {
-                result.push({ type: 'steps', steps: pendingSteps });
-            }
-        }
+        toolCallBlocks.forEach((block, toolCallIdx) => {
+            if (processedToolCallIndices.has(toolCallIdx)) return;
+            const step = toToolCallStep(block, blocks, isGenerating, isLastMessage);
+            if (step) allSteps.push(step);
+        });
     } else {
-        // Fallback: no timeline — put reasoning first, then interleave tool calls with text
-        const pendingSteps: ThinkingStep[] = [];
         const toolCalls = blocks.filter(isToolCallBlock);
         const anyToolCallInProgress = toolCalls.some(
-            (b) => toToolCallStep(b, blocks, isGenerating, isLastMessage)?.isActive
+            (block) => toToolCallStep(block, blocks, isGenerating, isLastMessage)?.isActive
         );
 
         if (reasoning && reasoning.trim()) {
-            pendingSteps.push({
+            allSteps.push({
                 type: 'reasoning',
                 content: reasoning,
                 isActive: isGenerating && isLastMessage && !anyToolCallInProgress,
@@ -264,21 +177,20 @@ function buildInterleavedItems(
         for (const block of blocks) {
             if (block.type === 'tool_call') {
                 const step = toToolCallStep(block, blocks, isGenerating, isLastMessage);
-                if (step) pendingSteps.push(step);
-            } else if (block.type === 'tool_result') {
-                // skip
-            } else if (block.type === 'text') {
-                if (pendingSteps.length > 0) {
-                    result.push({ type: 'steps', steps: [...pendingSteps] });
-                    pendingSteps.splice(0);
-                }
-                result.push({ type: 'text', block });
+                if (step) allSteps.push(step);
             }
         }
+    }
 
-        if (pendingSteps.length > 0) {
-            result.push({ type: 'steps', steps: pendingSteps });
-        }
+    if (allSteps.length > 0) {
+        result.push({ type: 'steps', steps: allSteps });
+    }
+
+    const imageTextBlocks = textBlocks.filter(isImageAttachmentTextBlock);
+    const proseTextBlocks = textBlocks.filter((block) => !isImageAttachmentTextBlock(block));
+
+    for (const block of [...imageTextBlocks, ...proseTextBlocks]) {
+        result.push({ type: 'text', block });
     }
 
     return result;
@@ -381,19 +293,13 @@ export const RenderBlocks = ({
         }
     });
 
-    // Suppress text content while the model is still in an active reasoning step.
-    // A step group is "blocking" if it contains at least one isActive reasoning step.
-    // Any text blocks that follow a blocking step group are hidden until thinking completes.
-    let pastActiveReasoning = false;
+    // Hold back response text only while finance charts are still mounting, to avoid layout flash.
     let pastUnreadyFinanceCard = false;
 
     return (
         <>
             {interleavedItems.map((item, idx) => {
                 if (item.type === 'steps') {
-                    const hasActiveReasoning = item.steps.some((s) => s.type === 'reasoning' && s.isActive);
-                    if (hasActiveReasoning) pastActiveReasoning = true;
-
                     const isLastFinanceGroup = idx === lastFinanceGroupIdx;
                     const weatherCards = weatherCardsByIdx.get(idx) ?? [];
                     const hasWeather = weatherCards.length > 0;
@@ -401,26 +307,15 @@ export const RenderBlocks = ({
                     const hasCards = hasFinanceCards || hasWeather;
                     if (hasFinanceCards && isWaitingForFinanceRender) pastUnreadyFinanceCard = true;
 
-                    // When cards are present, split the steps at the boundary between the last
-                    // tool call and any subsequent reasoning so the card appears right after the
-                    // tool calls that produced it, with post-tool reasoning below the card.
-                    let preCardSteps = item.steps;
-                    let postCardSteps: ThinkingStep[] = [];
-
-                    if (hasCards) {
-                        const lastToolCallIdx = item.steps.reduce(
-                            (last, s, i) => (s.type === 'tool_call' ? i : last),
-                            -1
-                        );
-                        if (lastToolCallIdx !== -1 && lastToolCallIdx < item.steps.length - 1) {
-                            preCardSteps = item.steps.slice(0, lastToolCallIdx + 1);
-                            postCardSteps = item.steps.slice(lastToolCallIdx + 1);
-                        }
-                    }
-
                     return (
                         <div key={idx}>
-                            <ThinkingPath steps={preCardSteps} message={message} handleLinkClick={handleLinkClick} />
+                            <ThinkingPath
+                                steps={item.steps}
+                                message={message}
+                                isGenerating={isGenerating}
+                                isLastMessage={isLastMessage}
+                                handleLinkClick={handleLinkClick}
+                            />
                             {hasCards && (
                                 <>
                                     {hasFinanceCards && (
@@ -446,19 +341,11 @@ export const RenderBlocks = ({
                                     ))}
                                 </>
                             )}
-                            {postCardSteps.length > 0 && (
-                                <ThinkingPath
-                                    steps={postCardSteps}
-                                    message={message}
-                                    handleLinkClick={handleLinkClick}
-                                />
-                            )}
                         </div>
                     );
                 }
 
-                // Hold back text content until all preceding active reasoning has completed
-                if (pastActiveReasoning || pastUnreadyFinanceCard) return null;
+                if (pastUnreadyFinanceCard) return null;
 
                 const isLastTextBlock = item === textBlocks[textBlocks.length - 1];
                 return (

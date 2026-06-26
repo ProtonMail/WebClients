@@ -25,7 +25,7 @@ export const RenderingTab = () => {
             updatedAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
             spaceKey,
             isProject: true,
-            projectName: 'Test Space (Expiring Chats)',
+            projectName: 'Test Space (Conversation Limit)',
             projectIcon: 'test',
         };
 
@@ -93,7 +93,7 @@ export const RenderingTab = () => {
         });
 
         alert(
-            `Created ${testConversations.length} test conversations!\n\nCheck the sidebar to see:\n- Today section (1 chat)\n- Last 7 days (1 chat)\n- Expiring Soon (3 chats) ⚠️\n- Last 30 days (1 chat - hidden for free users)`
+            `Created ${testConversations.length} test conversations!\n\nCheck the sidebar to see age buckets. Free users only see their ${10} most recent chats.`
         );
     };
 

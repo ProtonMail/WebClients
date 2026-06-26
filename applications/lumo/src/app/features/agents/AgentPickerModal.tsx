@@ -16,14 +16,18 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
-import { BRAND_NAME, LUMO_SHORT_APP_NAME} from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useConversationAgent } from '../../hooks/useConversationAgent';
+import { useCustomAgentLimit } from '../../hooks/useCustomAgentLimit';
 import { useCustomAgents } from '../../hooks/useCustomAgents';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { closeAgentPicker } from '../../redux/slices/composerActions';
+import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
+import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
 import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
 import { AgentModal } from './AgentModal';
+import { CustomAgentLimitModal } from './CustomAgentLimitModal';
 import { DEFAULT_AGENT_ICON } from './constants';
 import { getAgentByline, isAgentEditable } from './registry';
 
@@ -43,9 +47,11 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
     const dispatch = useLumoDispatch();
     const isOpen = useLumoSelector((state) => state.composerActions.agentPickerOpen);
     const { personalAgents, protonAgents, createAgent } = useCustomAgents();
+    const { canCreateCustomAgent } = useCustomAgentLimit();
     const { activeAgentId, activateAgent } = useConversationAgent(conversationId);
 
     const editorModal = useModalStateObject();
+    const customAgentLimitModal = useModalStateObject();
     const [editorAgentId, setEditorAgentId] = useState<string | undefined>(undefined);
     const [filter, setFilter] = useState<AgentFilter>('all');
     const [search, setSearch] = useState('');
@@ -62,9 +68,26 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
         editorModal.openModal(true);
     };
 
+    const handleCreate = () => {
+        openEditor(undefined);
+    };
+
+    const handleUpgradeForMore = () => {
+        sendUpgradeButtonClickedEvent({
+            feature: LUMO_UPSELL_PATHS.CUSTOM_AGENTS,
+            to: 'modal',
+        });
+        customAgentLimitModal.openModal(true);
+    };
+
     // Clone any agent (typically a read-only default) into an editable personal copy, then
     // open it in the editor so the user can tailor it.
     const handleClone = (agent: CustomAgent) => {
+        if (!canCreateCustomAgent) {
+            customAgentLimitModal.openModal(true);
+            return;
+        }
+
         const copySuffix = c('collider_2025:Agent').t`(copy)`;
         const created = createAgent({
             name: `${agent.name} ${copySuffix}`,
@@ -156,7 +179,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                     return (
                                         <div
                                             key={agent.id}
-                                            className="grid items-center gap-1 rounded-lg pl-2 pr-1 min-h-custom w-full max-w-full"
+                                            className="grid items-center gap-1 rounded-lg pr-2 min-h-custom w-full max-w-full"
                                             style={
                                                 {
                                                     '--min-h-custom': '3.5rem',
@@ -166,7 +189,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                         >
                                             <button
                                                 type="button"
-                                                className="flex flex-nowrap items-center gap-2 min-w-0 overflow-hidden text-left h-full w-full interactive-pseudo-inset rounded-lg"
+                                                className="flex flex-nowrap items-center gap-2 min-w-0 overflow-hidden text-left h-full w-full interactive-pseudo-inset rounded-lg pl-2 pr-2"
                                                 onClick={() => handlePick(agent.id)}
                                             >
                                                 <Icon
@@ -239,15 +262,24 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                         )}
                     </div>
 
-                    <Button
-                        fullWidth
-                        shape="outline"
-                        className="flex items-center justify-center gap-2 mb-2"
-                        onClick={() => openEditor(undefined)}
-                    >
-                        <IcPlus size={4} />
-                        {c('collider_2025:Action').t`New ${LUMO_SHORT_APP_NAME}`}
-                    </Button>
+                    {canCreateCustomAgent ? (
+                        <Button
+                            fullWidth
+                            shape="outline"
+                            className="flex items-center justify-center gap-2 mb-2"
+                            onClick={handleCreate}
+                        >
+                            <IcPlus size={4} />
+                            {c('collider_2025:Action').t`Create`}
+                        </Button>
+                    ) : (
+                        <BasicUpgradeButton
+                            className="w-full mb-2"
+                            buttonText={c('collider_2025:Action')
+                                .t`Upgrade for more custom ${LUMO_SHORT_APP_NAME}s`}
+                            onClick={handleUpgradeForMore}
+                        />
+                    )}
                 </ModalTwoContent>
             </ModalTwo>
 
@@ -261,6 +293,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                     }}
                 />
             )}
+            {customAgentLimitModal.render && <CustomAgentLimitModal {...customAgentLimitModal.modalProps} />}
         </>
     );
 };

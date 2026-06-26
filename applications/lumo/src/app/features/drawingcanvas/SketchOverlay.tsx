@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
 import { SketchCanvas } from './SketchCanvas';
@@ -65,26 +66,35 @@ export const SketchOverlay = ({
             className="image-lightbox fixed inset-0 flex flex-column"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="drawing-canvas-title"
+            aria-label={c('collider_2025:Label').t`Draw a sketch`}
         >
-            <button
-                className="image-icon-btn absolute inline-flex items-center justify-center w-8 h-8 rounded-lg"
-                style={{ top: '1rem', right: '1rem', zIndex: 1 }}
-                onClick={onClose}
-                title={c('collider_2025:Action').t`Close`}
-            >
-                <IcCross size={4} />
-            </button>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+            <div className="image-lightbox__content flex-1 min-h-0 flex items-center justify-center" onClick={onClose}>
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                <div className="image-preview-shell flex flex-column max-h-full" onClick={(e) => e.stopPropagation()}>
+                    <Tooltip title={c('collider_2025:Action').t`Close`}>
+                        <button
+                            type="button"
+                            className="image-preview-close inline-flex items-center justify-center border rounded-full bg-norm color-norm"
+                            onClick={onClose}
+                            aria-label={c('collider_2025:Action').t`Close`}
+                        >
+                            <IcCross size={4} />
+                        </button>
+                    </Tooltip>
 
-            <div className="flex-1 min-h-0 relative">
-                <SketchCanvas
-                    mode={mode}
-                    baseImage={baseImage}
-                    width={canvasWidth ?? 1200}
-                    height={canvasHeight ?? 800}
-                    onExport={handleExport}
-                    onClose={onClose}
-                />
+                    <div className="image-preview-container image-preview-container--edit bg-norm flex flex-column flex-nowrap items-center rounded-xxl max-h-full overflow-hidden">
+                        <SketchCanvas
+                            mode={mode}
+                            baseImage={baseImage}
+                            width={canvasWidth ?? 1200}
+                            height={canvasHeight ?? 800}
+                            showDescription={false}
+                            onExport={handleExport}
+                            onClose={onClose}
+                        />
+                    </div>
+                </div>
             </div>
         </div>,
         document.body

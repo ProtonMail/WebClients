@@ -10,6 +10,7 @@ interface CanvasProps {
     currentColor: string;
     strokeWidth: number;
     onStrokeComplete: (stroke: Stroke) => void;
+    embedded?: boolean;
 }
 
 const DEFAULT_WIDTH = 800;
@@ -21,11 +22,12 @@ export const Canvas = ({
     currentColor,
     strokeWidth,
     onStrokeComplete,
+    embedded = false,
 }: CanvasProps) => {
     const width = config.width ?? DEFAULT_WIDTH;
     const height = config.height ?? DEFAULT_HEIGHT;
 
-    const { canvasRef, isLoading, error, drawTemporaryStroke } = useCanvasRenderer({
+    const { canvasRef, isLoading, error, drawTemporaryStroke, render } = useCanvasRenderer({
         width,
         height,
         baseImage: config.baseImage,
@@ -63,6 +65,7 @@ export const Canvas = ({
         const handleMouseLeave = () => {
             if (isDrawing) {
                 cancelDrawing();
+                render();
             }
         };
 
@@ -77,7 +80,7 @@ export const Canvas = ({
             canvas.removeEventListener('mouseup', handleMouseUp);
             canvas.removeEventListener('mouseleave', handleMouseLeave);
         };
-    }, [canvasRef, startDrawing, continueDrawing, stopDrawing, cancelDrawing, isDrawing, drawTemporaryStroke]);
+    }, [canvasRef, startDrawing, continueDrawing, stopDrawing, cancelDrawing, isDrawing, drawTemporaryStroke, render]);
 
     // Touch event handlers
     useEffect(() => {
@@ -101,6 +104,7 @@ export const Canvas = ({
 
         const handleTouchCancel = () => {
             cancelDrawing();
+            render();
         };
 
         canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
@@ -114,7 +118,7 @@ export const Canvas = ({
             canvas.removeEventListener('touchend', handleTouchEnd);
             canvas.removeEventListener('touchcancel', handleTouchCancel);
         };
-    }, [canvasRef, startDrawing, continueDrawing, stopDrawing, cancelDrawing, drawTemporaryStroke]);
+    }, [canvasRef, startDrawing, continueDrawing, stopDrawing, cancelDrawing, drawTemporaryStroke, render]);
 
     if (error) {
         return (
@@ -125,7 +129,13 @@ export const Canvas = ({
     }
 
     return (
-        <div ref={containerRef} className="w-full h-full flex items-center justify-center p-12">
+        <div
+            ref={containerRef}
+            className={[
+                'canvas flex items-center justify-center',
+                embedded ? 'canvas--embedded w-full' : 'w-full h-full p-12',
+            ].join(' ')}
+        >
             {isLoading && (
                 <div className="canvas__loading-overlay absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
@@ -138,7 +148,16 @@ export const Canvas = ({
                 ref={canvasRef}
                 width={width}
                 height={height}
-                className="canvas__element block"
+                className={['canvas__element block', embedded ? 'canvas__element--embedded' : ''].join(' ')}
+                style={
+                    embedded
+                        ? {
+                              aspectRatio: `${width} / ${height}`,
+                              width: '100%',
+                              height: 'auto',
+                          }
+                        : undefined
+                }
             />
         </div>
     );

@@ -23,6 +23,7 @@ import {
     type ChunkCallback,
     type FinishCallback,
     type GenerationResponseMessage,
+    type ImageAspectRatio,
     type LumoApiClientConfig,
     type LumoApiGenerationRequest,
     type RequestContext,
@@ -75,11 +76,13 @@ export class LumoApiClient {
             enableExternalTools = false,
             enableImageTools = false,
             enableReasoning = false,
+            modelTier = 'auto',
             enableSuggestedQuestions = false,
             requestKey,
             requestId,
             generateTitle = false,
             autoGenerateEncryption = true,
+            imageAspectRatio,
         } = options;
         const { enableU2LEncryption, endpoint } = this.config;
 
@@ -91,12 +94,19 @@ export class LumoApiClient {
 
         const titleSourceText = generateTitle ? extractTitleSourceText(turns) : null;
 
-        let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(turns, encryption, {
-            enableExternalTools,
-            enableImageTools,
-            enableReasoning,
-            enableSuggestedQuestions: false,
-        });
+        // Prepare the request
+        // TODO consider just passing `options` instead of rebuilding a narrower object
+        let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(
+            turns,
+            encryption,
+            {
+                enableExternalTools,
+                enableImageTools,
+                    enableReasoning,
+                enableSuggestedQuestions: false,
+            },
+            { imageAspectRatio }
+        );
 
         // Prepare request context and run interceptors
         const requestContext: RequestContext = this.initializeRequestContext(endpoint, {
@@ -159,7 +169,7 @@ export class LumoApiClient {
                 responseContext,
                 chunkCallback,
                 finishCallback,
-                { target: 'message' }
+                { target: 'message', modelTier }
             )
         );
 
@@ -175,7 +185,7 @@ export class LumoApiClient {
         responseContext: ResponseContext,
         chunkCallback: ChunkCallback | undefined,
         finishCallback: FinishCallback | undefined,
-        options: { enableSmoothing?: boolean; target?: LumoCompletionTarget } = {}
+        options: { enableSmoothing?: boolean; target?: LumoCompletionTarget; modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' } = {}
     ) {
         const enableSmoothing = options.enableSmoothing ?? this.config.enableSmoothing;
         const thisNotifyResponse = this.notifyResponse.bind(this);
@@ -185,6 +195,7 @@ export class LumoApiClient {
 
         const postData = this.prepareChatEndpointPostData(request, {
             enableReasoning: Boolean(request.options?.reasoning),
+            modelTier: options.modelTier,
             target: options.target,
         });
 
@@ -232,10 +243,11 @@ export class LumoApiClient {
 
     private prepareChatEndpointPostData(
         request: LumoApiGenerationRequest,
-        options: { enableReasoning: boolean; target?: LumoCompletionTarget }
+        options: { enableReasoning: boolean; modelTier?: 'auto' | 'lumo-lite' | 'lumo-max'; target?: LumoCompletionTarget }
     ) {
         return toChatCompletionsBody(request, {
             enableReasoning: options.enableReasoning,
+            modelTier: options.modelTier,
             target: options.target,
         });
     }
@@ -248,10 +260,14 @@ export class LumoApiClient {
             enableImageTools: boolean;
             enableReasoning: boolean;
             enableSuggestedQuestions: boolean;
+        },
+        additionalOptions?: {
+            imageAspectRatio?: ImageAspectRatio;
         }
     ): Promise<LumoApiGenerationRequest> {
         const { lumoPubKey } = this.config;
         const { enableExternalTools, enableImageTools, enableReasoning, enableSuggestedQuestions } = flags;
+        const { imageAspectRatio } = additionalOptions || {};
 
         // Encrypt request if needed
         if (encryption) {
@@ -264,6 +280,7 @@ export class LumoApiClient {
             options: {
                 tools,
                 reasoning: enableReasoning,
+                ...(enableImageTools && imageAspectRatio && { image_aspect_ratio: imageAspectRatio }),
                 suggested_questions: enableSuggestedQuestions,
             },
             request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,

@@ -163,10 +163,32 @@ export type ChatCompletionsLumoExtension = {
     request_id?: string;
 };
 
+export type ChatCompletionsStreamOptions = {
+    include_usage?: boolean;
+};
+
+export type LumoRemainingLimits = {
+    lite?: number;
+    max?: number;
+    images?: number;
+};
+
+export type LumoUsageLimitsResponse = {
+    limits: LumoRemainingLimits;
+};
+
+export type LumoStreamUsage = {
+    completion_tokens?: number;
+    remaining_limits?: LumoRemainingLimits;
+    applied_limit_category?: string;
+    image_limit_applied?: boolean;
+};
+
 export type ChatCompletionsRequest = {
     model: string;
     messages: ChatCompletionsMessage[];
     stream: boolean;
+    stream_options?: ChatCompletionsStreamOptions;
     reasoning_effort?: 'none' | 'high';
     tools?: ChatCompletionsTool[];
     tool_choice?: 'auto' | 'none' | 'required';
@@ -180,10 +202,13 @@ export type ChatEndpointGenerationRequest = {
     Prompt: LumoApiGenerationRequest;
 };
 
+export type ImageAspectRatio = '1:1' | '2:3' | '3:2' | '9:16' | '16:9';
+
 export type Options = {
     tools?: ToolName[] | boolean;
     reasoning?: boolean;
     suggested_questions?: boolean;
+    image_aspect_ratio?: ImageAspectRatio;
 };
 
 // *** Utility types for encryption state ***
@@ -215,6 +240,7 @@ export type TimeoutMessage = { type: 'timeout' };
 export type ErrorMessage = { type: 'error' };
 export type RejectedMessage = { type: 'rejected' };
 export type HarmfulMessage = { type: 'harmful' };
+export type UsageMessage = { type: 'usage'; usage: LumoStreamUsage };
 
 /*
  * Context-window overflow surfaced mid-stream. The chat-completions adapter maps
@@ -274,6 +300,7 @@ export type GenerationResponseMessage =
     | ErrorMessage
     | RejectedMessage
     | HarmfulMessage
+    | UsageMessage
     | ToolErrorMessage;
 
 export type GenerationResponseMessageDecrypted =
@@ -288,6 +315,7 @@ export type GenerationResponseMessageDecrypted =
     | ErrorMessage
     | RejectedMessage
     | HarmfulMessage
+    | UsageMessage
     | ToolErrorMessage;
 
 // *** Type Guards ***
@@ -352,6 +380,16 @@ export function isRejectedMessage(obj: any): obj is RejectedMessage {
 
 export function isHarmfulMessage(obj: any): obj is HarmfulMessage {
     return typeof obj === 'object' && obj !== null && obj.type === 'harmful';
+}
+
+export function isUsageMessage(obj: any): obj is UsageMessage {
+    return (
+        typeof obj === 'object' &&
+        obj !== null &&
+        obj.type === 'usage' &&
+        typeof obj.usage === 'object' &&
+        obj.usage !== null
+    );
 }
 
 export function isToolErrorMessage(obj: any): obj is ToolErrorMessage {
@@ -451,6 +489,7 @@ export function isGenerationResponseMessage(obj: any): obj is GenerationResponse
         isErrorMessage(obj) ||
         isRejectedMessage(obj) ||
         isHarmfulMessage(obj) ||
+        isUsageMessage(obj) ||
         isToolErrorMessage(obj)
     );
 }
