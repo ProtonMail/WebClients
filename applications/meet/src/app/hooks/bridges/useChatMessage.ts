@@ -9,6 +9,7 @@ import { addChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice
 import { escape, unescape } from '@proton/sanitize/escape';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMLSContext } from '../../contexts/MLSContext';
 import { PublishableDataTypes } from '../../types';
@@ -25,6 +26,8 @@ export const useChatMessage = () => {
 
     const mls = useMLSContext();
 
+    const isNewChatHandling = useFlag('MeetNewChatHandling');
+
     const handleError = (errorCause: string) => {
         reportMeetError('Failed to send chat message', {
             level: 'error',
@@ -39,28 +42,44 @@ export const useChatMessage = () => {
         });
     };
 
-    const sendMessage = async (content: string) => {
-        const trimmedContent = trimMessage(content);
-        // Escape HTML entities before sanitization to preserve plain text like "<test"
-        // This prevents DOMPurify from treating incomplete tags as HTML and removing them.
-        // After sanitization, unescape to restore the original text for display.
-        // Security note: Unescaping is safe here because:
-        // 1. DOMPurify has already sanitized the escaped content, removing any dangerous HTML
-        // 2. The message is rendered as plain text in React (which auto-escapes HTML)
-        // 3. We only unescape content that DOMPurify allowed through as safe text
-        const escapedContent = escape(trimmedContent);
-        const sanitizedEscapedContent = sanitizeMessage(escapedContent);
-        const sanitizedContent = unescape(sanitizedEscapedContent);
+    const sendMessageNew = async (sanitizedContent: string) => {
+        try {
+            const { payload, local_echo: localEcho } = await mls.composeChatMessage(sanitizedContent);
 
-        if (!room || !mls || !sanitizedContent) {
+            try {
+                await room.localParticipant.publishData(payload, { reliable: true });
+            } catch (error) {
+                handleError('Failed to send chat message');
+
+                return false;
+            }
+
+            dispatch(
+                addChatMessages([
+                    {
+                        id: localEcho.id,
+                        message: localEcho.text ?? '',
+                        timestamp: Number(localEcho.received_at_ms),
+                        identity: room.localParticipant.identity,
+                        seen: true,
+                        type: 'message',
+                    },
+                ])
+            );
+
+            return true;
+        } catch (error) {
+            handleError('Unknown error');
             return false;
         }
+    };
 
+    const sendMessageLegacy = async (sanitizedContent: string) => {
         try {
             let encryptedMessage: Uint8Array<ArrayBuffer> | undefined;
 
             try {
-                encryptedMessage = (await mls?.encryptMessage(sanitizedContent)) as Uint8Array<ArrayBuffer>;
+                encryptedMessage = (await mls.encryptMessage(sanitizedContent)) as Uint8Array<ArrayBuffer>;
             } catch (error) {
                 handleError('Failed to encrypt chat message');
                 return false;
@@ -100,6 +119,26 @@ export const useChatMessage = () => {
             handleError('Unknown error');
             return false;
         }
+    };
+
+    const sendMessage = async (content: string) => {
+        const trimmedContent = trimMessage(content);
+        // Escape HTML entities before sanitization to preserve plain text like "<test"
+        // This prevents DOMPurify from treating incomplete tags as HTML and removing them.
+        // After sanitization, unescape to restore the original text for display.
+        // Security note: Unescaping is safe here because:
+        // 1. DOMPurify has already sanitized the escaped content, removing any dangerous HTML
+        // 2. The message is rendered as plain text in React (which auto-escapes HTML)
+        // 3. We only unescape content that DOMPurify allowed through as safe text
+        const escapedContent = escape(trimmedContent);
+        const sanitizedEscapedContent = sanitizeMessage(escapedContent);
+        const sanitizedContent = unescape(sanitizedEscapedContent);
+
+        if (!room || !mls || !sanitizedContent) {
+            return false;
+        }
+
+        return isNewChatHandling ? sendMessageNew(sanitizedContent) : sendMessageLegacy(sanitizedContent);
     };
 
     return sendMessage;

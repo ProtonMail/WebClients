@@ -9,5 +9,6 @@ export const useBridges = () => {
     useParticipantEvents();
     useEmojiReactionReceiver();
     useRaiseHandReceiver();
+    // No-op when MeetNewChatHandling is enabled (reactions handled in useChat).
     useChatMessageReactionReceiver();
 };

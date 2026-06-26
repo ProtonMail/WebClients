@@ -7,18 +7,25 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { toggleChatMessageReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMLSContext } from '../../contexts/MLSContext';
 import { PublishableDataTypes } from '../../types';
 
+/**
+ * Legacy chat reaction receiver (MeetNewChatHandling disabled). When the new chat
+ * handling is enabled, reactions are decoded and dispatched from `useChat` instead.
+ */
 export const useChatMessageReactionReceiver = () => {
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
     const mls = useMLSContext();
     const { reportMeetError } = useMeetErrorReporting();
 
+    const isNewChatHandling = useFlag('MeetNewChatHandling');
+
     useEffect(() => {
-        if (!room || !mls) {
+        if (isNewChatHandling || !room || !mls) {
             return;
         }
 
@@ -109,5 +116,5 @@ export const useChatMessageReactionReceiver = () => {
         return () => {
             room.off('dataReceived', handleDataReceived);
         };
-    }, [room, mls, dispatch, reportMeetError]);
+    }, [room, mls, dispatch, reportMeetError, isNewChatHandling]);
 };
