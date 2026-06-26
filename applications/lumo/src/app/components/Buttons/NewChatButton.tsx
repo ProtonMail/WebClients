@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -13,6 +13,9 @@ import type { IconSize } from '@proton/icons/types';
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
+import { useLumoSelector } from '../../redux/hooks';
+import { selectConversationById, selectSpaceById } from '../../redux/selectors';
+import { getProjectInfo } from '../../types';
 import { GuestChatDisclaimerModal } from '../Guest/GuestChatDisclaimerModal';
 
 // Hook to manage delayed text rendering for smooth animations
@@ -78,11 +81,21 @@ const NewChatButtonGuest = ({ buttonProps, children, toolTipPlacement }: NewChat
 const NewChatButtonAuthenticated = ({ buttonProps, children, toolTipPlacement }: NewChatButtonProps) => {
     const history = useHistory();
     const { setGhostChatMode } = useGhostChat();
+    const conversationRouteMatch = useRouteMatch<{ conversationId: string }>('/c/:conversationId');
+    const conversationId = conversationRouteMatch?.params.conversationId;
+
+    const conversation = useLumoSelector(selectConversationById(conversationId ?? ''));
+    const space = useLumoSelector(selectSpaceById(conversation?.spaceId ?? ''));
+    const { project } = getProjectInfo(space);
 
     const handleClick = useCallback(() => {
         setGhostChatMode(false);
-        history.push('/');
-    }, [setGhostChatMode, history]);
+        if (project && conversation?.spaceId) {
+            history.push(`/projects/${conversation.spaceId}`);
+        } else {
+            history.push('/');
+        }
+    }, [setGhostChatMode, history, project, conversation?.spaceId]);
 
     return (
         <Tooltip title={c('collider_2025: Action').t`New chat`} originalPlacement={toolTipPlacement}>
@@ -148,10 +161,10 @@ export const NewChatButtonHeader = ({ iconSize = 5 }: { iconSize?: IconSize }) =
     return (
         <NewChatButton
             buttonProps={{
-                shape: 'solid',
+                shape: 'ghost',
                 size: 'medium',
                 icon: true,
-                className: 'shrink-0 block md:hidden',
+                className: 'shrink-0',
             }}
             toolTipPlacement="left"
         >
