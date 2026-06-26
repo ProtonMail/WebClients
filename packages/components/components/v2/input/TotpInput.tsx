@@ -113,13 +113,20 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
     const marginWidth = Math.floor(maxInputWidth * ratios.elementMargin);
     const dividerWidth = Math.floor(maxInputWidth * ratios.dividerMargin);
 
-    const numberOfInputsWithMargin = (length - 2) / length;
-    const marginWidthPerInput = Math.floor(marginWidth * numberOfInputsWithMargin);
-    const dividerWidthPerInput = Math.floor(dividerWidth / length);
+    const marginCount = Math.max(centerDivider ? length - 2 : length - 1, 0);
+    const totalMarginWidth = marginCount * marginWidth;
+    const totalDividerWidth = centerDivider ? dividerWidth : 0;
 
-    const inputWidth = maxInputWidth - marginWidthPerInput - dividerWidthPerInput;
+    const available = Math.max(rect?.width || 0, 0);
+    const inputWidth = Math.max(Math.floor((available - totalMarginWidth - totalDividerWidth) / length), size.minWidth);
     const inputHeight = Math.floor(inputWidth * ratios.height);
     const fontSize = Math.floor(inputWidth * ratios.fontSize);
+
+    const gapCount = Math.max(length - 1, 0);
+    const remainder = Math.max(0, available - (length * inputWidth + totalMarginWidth + totalDividerWidth));
+    const gapBonus = gapCount > 0 ? remainder / gapCount : 0;
+    const roundedMarginWidth = marginWidth + gapBonus;
+    const roundedDividerWidth = totalDividerWidth + (centerDivider ? gapBonus : 0);
 
     // Force LTR because it's recommended to enter digits in this order
     return (
@@ -134,8 +141,8 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                         {i === centerIndex && (
                             <div
                                 style={{
-                                    minWidth: `${dividerWidth}px`,
-                                    width: `${dividerWidth}px`,
+                                    minWidth: `${roundedDividerWidth}px`,
+                                    width: `${roundedDividerWidth}px`,
                                 }}
                             />
                         )}
@@ -157,7 +164,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                                     height: `${inputHeight}px`,
                                     fontSize: `${fontSize}px`,
                                     ...(i !== length - 1 && i !== centerIndex - 1
-                                        ? { marginRight: `${marginWidth}px` }
+                                        ? { marginRight: `${roundedMarginWidth}px` }
                                         : undefined),
                                 },
                             }}
