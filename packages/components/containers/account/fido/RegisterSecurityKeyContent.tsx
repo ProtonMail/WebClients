@@ -11,9 +11,10 @@ interface Props {
     loading?: boolean;
     error?: boolean;
     checkbox: ReactNode;
+    awaitingTouch: boolean;
 }
 
-const RegisterSecurityKeyContent = ({ loading, error, checkbox }: Props) => {
+const RegisterSecurityKeyContent = ({ loading, awaitingTouch, error, checkbox }: Props) => {
     return (
         <>
             <div className="flex justify-center mt-4 mb-6 relative">
@@ -28,7 +29,11 @@ const RegisterSecurityKeyContent = ({ loading, error, checkbox }: Props) => {
                     alt={c('fido2: Info').t`Security key`}
                 />
             </div>
-            <div>{c('fido2: Info').t`Insert your security key into your device's USB port.`}</div>
+            <div>
+                {awaitingTouch
+                    ? c('fido2: Info').t`Touch your security key.`
+                    : c('fido2: Info').t`Insert your security key into your device.`}
+            </div>
             {checkbox && <div className="mt-2">{checkbox}</div>}
             {error && (
                 <div className="mt-4">

@@ -187,6 +187,7 @@ interface Fido2FormProps {
 const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
     const [loading, withLoading] = useLoading(false);
     const [fidoError, setFidoError] = useState(false);
+    const [awaitingTouch, setAwaitingTouch] = useState(false);
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -201,7 +202,7 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
 
     return (
         <>
-            <AuthSecurityKeyContent error={fidoError} />
+            <AuthSecurityKeyContent awaitingTouch={awaitingTouch} error={fidoError} />
             <div className="flex justify-space-between">
                 <Button
                     autoFocus={true}
@@ -219,6 +220,7 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
                             let authenticationCredentialsPayload: Fido2Data;
                             try {
                                 setFidoError(false);
+                                setAwaitingTouch(true);
                                 handleAbort();
                                 const abortController = new AbortController();
                                 abortControllerRef.current = abortController;
@@ -228,6 +230,7 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
                                 );
                             } catch (error) {
                                 setFidoError(true);
+                                setAwaitingTouch(false);
                                 // Ignore console.error to help with debugging
                                 // eslint-disable-next-line no-console
                                 console.error(error);
