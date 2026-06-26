@@ -78,7 +78,12 @@ const RolesAndPermissionsTab = ({
                     <CircleLoader />
                 </div>
             ) : (
-                <RoleCheckList rows={rows} onToggle={handleToggle} disabled={disabled} />
+                <RoleCheckList
+                    rows={rows}
+                    onToggle={handleToggle}
+                    disabled={disabled}
+                    isGroupContext={isGroupContext}
+                />
             )}
         </div>
     );
