@@ -1,4 +1,5 @@
 // Custom Jest transform implementation that injects test-specific babel presets.
+const browserslist = require('browserslist');
 module.exports = require('babel-jest').default.createTransformer({
     presets: [
         [
@@ -8,6 +9,9 @@ module.exports = require('babel-jest').default.createTransformer({
                 useBuiltIns: 'usage',
                 shippedProposals: true,
                 corejs: require('core-js/package.json').version,
+                targets: {
+                    browsers: browserslist(null, { env: 'verify' }).join(', '),
+                },
             },
         ],
         ['@babel/preset-react', { runtime: 'automatic' }],
