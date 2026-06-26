@@ -12,10 +12,11 @@ import {
     updateLabel as updateLabelConfig,
     updateLastSeenEventID,
 } from '@proton/shared/lib/api/labels';
-import { type Category, type Label, hasUnseenTracking } from '@proton/shared/lib/interfaces';
+import type { Category, Label } from '@proton/shared/lib/interfaces';
 
 import type { CategoriesState } from './index';
-import { categoriesActions, getCategory, selectCategories } from './index';
+import { categoriesActions, getCategory } from './index';
+import { selectCategoriesToMarkSeen } from './selector';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 
@@ -84,17 +85,24 @@ export const updateLastSeenEventId = ({
 }): ThunkAction<Promise<void>, RequiredState & CategoriesState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
         const lastEventID = extra.eventManager.getEventID();
-        const folder = selectCategories(getState()).value?.find((label) => label.ID === labelID);
+        const categoriesToUpdate = selectCategoriesToMarkSeen(getState(), labelID);
 
-        if (!folder || !hasUnseenTracking(folder) || folder.LastUnseenMessageEventID === null || !lastEventID) {
+        if (!lastEventID || categoriesToUpdate.length === 0) {
             return;
         }
 
-        dispatch(categoriesActions.upsertCategory({ ...folder, LastUnseenMessageEventID: null }));
+        categoriesToUpdate.forEach((category) => {
+            dispatch(categoriesActions.upsertCategory({ ...category, LastUnseenMessageEventID: null }));
+        });
+
         try {
-            await extra.api(updateLastSeenEventID(labelID, { LastEventID: lastEventID }));
+            await Promise.all(
+                categoriesToUpdate.map((category) =>
+                    extra.api(updateLastSeenEventID(category.ID, { LastEventID: lastEventID }))
+                )
+            );
         } catch (error) {
-            dispatch(categoriesActions.upsertCategory(folder));
+            categoriesToUpdate.forEach((category) => dispatch(categoriesActions.upsertCategory(category)));
             throw error;
         }
     };
