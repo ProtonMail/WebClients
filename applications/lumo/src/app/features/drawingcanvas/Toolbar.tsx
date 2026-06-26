@@ -70,14 +70,11 @@ export const Toolbar = ({
 
     return (
         <div className="sketch-toolbar sketch-toolbar--modal w-full flex flex-column items-stretch gap-3 pt-3 md:flex-row md:flex-wrap md:items-center md:gap-2">
-            <div className="sketch-toolbar__primary flex flex-wrap items-center gap-2 gap-y-2 min-w-0 flex-1 md:flex-nowrap md:gap-y-0">
+            <div className="sketch-toolbar__primary flex flex-wrap items-center gap-2 gap-y-2 min-w-0 flex-auto md:flex-nowrap md:gap-y-0">
                 <span ref={strokeMenuRef} className="sketch-toolbar__pen-menu relative shrink-0 inline-block">
                     <button
                         type="button"
-                        className={clsx(
-                            TOOL_BUTTON_CLASS,
-                            (showStrokeMenu || config.tool === 'pen') && 'bg-weak'
-                        )}
+                        className={clsx(TOOL_BUTTON_CLASS, (showStrokeMenu || config.tool === 'pen') && 'bg-weak')}
                         title={c('Action').t`Pen thickness`}
                         aria-label={c('Action').t`Pen thickness`}
                         aria-expanded={showStrokeMenu}
