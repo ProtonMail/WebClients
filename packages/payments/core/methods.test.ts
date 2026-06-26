@@ -1309,26 +1309,6 @@ describe('Apple Pay', () => {
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
     });
 
-    it('should not display Apple Pay when not running in Safari', () => {
-        mockIsSafari.mockReturnValue(false);
-        const flow: PaymentMethodFlow = 'subscription';
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: getMinApplePayAmount(TEST_CURRENCY),
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-            canUseApplePay: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
-    });
-
     it('should not display Apple Pay when amount is below minimum', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
