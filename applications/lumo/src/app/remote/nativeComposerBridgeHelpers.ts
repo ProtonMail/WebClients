@@ -99,6 +99,14 @@ export const setNativeModelTier = (modelTier: ModelTier): void => {
     (window as any).nativeComposerApiInstance.setNativeModelTier(modelTier);
 };
 
+export const setNativeMaxModelAvailable = (available: boolean): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setMaxModelAvailable(available);
+};
+
 export const setNativeResponseMode = (responseMode: ResponseMode): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');
