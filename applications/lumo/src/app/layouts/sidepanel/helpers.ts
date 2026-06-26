@@ -1,9 +1,10 @@
-import { differenceInCalendarDays, startOfDay, subDays } from 'date-fns';
+import { addDays, differenceInCalendarDays, startOfDay, subDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation } from '../../types';
+import {LUMO_SHORT_APP_NAME} from "@proton/shared/lib/constants";
 
 export type ConversationSortField = ChatHistoryDateField;
 
@@ -113,4 +114,108 @@ export const applyRetentionPolicy = (conversations: Conversation[], hasLumoPlus:
     }
 
     return filterConversationsWithinRetentionWindow(conversations);
+};
+
+export type ConversationExpirationUrgency = 'warning' | 'urgent';
+
+/**
+ * Calendar days until a free-user conversation falls outside the retention window.
+ * Returns 0 on the last day the chat is still accessible.
+ */
+export const getConversationRetentionDaysRemaining = (
+    conversation: Conversation,
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    now: Date = new Date()
+): number => {
+    const createdAt = startOfDay(new Date(conversation.createdAt));
+    const expirationDay = addDays(createdAt, retentionDays);
+
+    return differenceInCalendarDays(expirationDay, startOfDay(now));
+};
+
+/**
+ * Returns an urgency level when a conversation is within 2 days of expiring for free users.
+ */
+export const getConversationExpirationUrgency = (
+    conversation: Conversation,
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    now: Date = new Date()
+): ConversationExpirationUrgency | null => {
+    const daysRemaining = getConversationRetentionDaysRemaining(conversation, retentionDays, now);
+
+    if (daysRemaining > 2) {
+        return null;
+    }
+
+    if (daysRemaining <= 1) {
+        return 'urgent';
+    }
+
+    return 'warning';
+};
+
+export const getConversationExpirationTooltip = (daysRemaining: number): string => {
+    if (daysRemaining === 0) {
+        return c('collider_2025: Info')
+            .t`This chat will be removed today unless you upgrade to ${LUMO_SHORT_APP_NAME} Plus.`;
+    }
+
+    if (daysRemaining === 1) {
+        return c('collider_2025: Info')
+            .t`This chat will be removed tomorrow unless you upgrade to ${LUMO_SHORT_APP_NAME} Plus.`;
+    }
+
+    return c('collider_2025: Info')
+        .t`This chat will be removed in 2 days. Upgrade to ${LUMO_SHORT_APP_NAME} Plus to keep it.`;
+};
+
+export const getConversationExpirationBannerTitle = (daysRemaining: number): string => {
+    if (daysRemaining === 0) {
+        return c('collider_2025: Warning').t`This chat expires today`;
+    }
+
+    if (daysRemaining === 1) {
+        return c('collider_2025: Warning').t`This chat expires tomorrow`;
+    }
+
+    return c('collider_2025: Warning').t`This chat expires in 2 days`;
+};
+
+export interface ConversationExpirationCounts {
+    expiringInTwoDays: number;
+    expiringInOneDay: number;
+    expiringToday: number;
+}
+
+export const countConversationsByExpirationUrgency = (
+    conversations: Conversation[],
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    now: Date = new Date()
+): ConversationExpirationCounts => {
+    let expiringInTwoDays = 0;
+    let expiringInOneDay = 0;
+    let expiringToday = 0;
+
+    for (const conversation of conversations) {
+        const urgency = getConversationExpirationUrgency(conversation, retentionDays, now);
+
+        if (urgency === 'warning') {
+            expiringInTwoDays++;
+            continue;
+        }
+
+        if (urgency !== 'urgent') {
+            continue;
+        }
+
+        const daysRemaining = getConversationRetentionDaysRemaining(conversation, retentionDays, now);
+
+        if (daysRemaining === 0) {
+            expiringToday++;
+        } else {
+            expiringInOneDay++;
+        }
+    }
+
+    return { expiringInTwoDays, expiringInOneDay, expiringToday };
 };

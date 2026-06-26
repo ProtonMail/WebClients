@@ -7,6 +7,7 @@ import { LumoLink } from '../../components/Links/LumoLink';
 import { useIsTouchDevice } from '../../hooks/useIsTouchDevice';
 import type { Conversation, ConversationId } from '../../types';
 import ChatDropdownMenu from './ChatDropdownMenu';
+import { ConversationExpirationIndicator } from './ConversationExpirationIndicator';
 
 interface ConversationListItemProps {
     conversation: Conversation;
@@ -41,12 +42,13 @@ const ConversationListItem = memo(
                 <LumoLink
                     to={`/c/${conversation.id}`}
                     className={clsx(
-                        'absolute inset-0 flex items-center gap-2 px-1.5 hover:text-primary',
-                        showDropdown ? 'pr-8' : 'pr-2'
+                        'flex items-center gap-1.5 flex-1 min-w-0 px-1.5 hover:text-primary',
+                        showDropdown ? 'pr-1' : 'pr-2'
                     )}
                     onClick={onItemClick}
                 >
-                    <span className="sidebar-nav-list--label text-ellipsis flex-1" title={label}>
+                    <ConversationExpirationIndicator conversation={conversation} />
+                    <span className="sidebar-nav-list--label text-ellipsis flex-1 min-w-0" title={label}>
                         {label}
                     </span>
                 </LumoLink>

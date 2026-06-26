@@ -10,6 +10,7 @@ import { IcListBullets } from '@proton/icons/icons/IcListBullets';
 
 import { MenuDropdown } from '../../components/Composer/components/MenuDropdown';
 import { useLumoUserSettings } from '../../hooks';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 
 import './ChatHistoryGroupByMenu.scss';
@@ -52,8 +53,13 @@ export const ChatHistoryGroupByMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
     const anchorRef = useRef<HTMLButtonElement>(null);
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const { hasLumoPlus } = useLumoPlan();
 
     const dateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
+
+    if (!hasLumoPlus) {
+        return null;
+    }
 
     const setDateField = (nextDateField: ChatHistoryDateField) => {
         updateSettings({ chatHistoryDateField: nextDateField, _autoSave: true });

@@ -5,7 +5,12 @@ import type { Conversation } from '../../types';
 import { ConversationStatus } from '../../types';
 import {
     applyRetentionPolicy,
+    countConversationsByExpirationUrgency,
     formatConversationDateGroupLabel,
+    getConversationExpirationBannerTitle,
+    getConversationExpirationTooltip,
+    getConversationExpirationUrgency,
+    getConversationRetentionDaysRemaining,
     groupConversationsByDate,
 } from './helpers';
 
@@ -90,5 +95,74 @@ describe('applyRetentionPolicy', () => {
         expect(applyRetentionPolicy([recent, expired], false).map((conversation) => conversation.id)).toEqual([
             'recent',
         ]);
+    });
+});
+
+describe('getConversationRetentionDaysRemaining', () => {
+    it('returns days until the retention window ends based on createdAt', () => {
+        const conversation = createTestConversation(5, 'expiring-soon');
+
+        expect(getConversationRetentionDaysRemaining(conversation)).toBe(2);
+    });
+
+    it('returns 0 on the last accessible day', () => {
+        const conversation = createTestConversation(FREE_USER_CHAT_RETENTION_DAYS, 'last-day');
+
+        expect(getConversationRetentionDaysRemaining(conversation)).toBe(0);
+    });
+});
+
+describe('getConversationExpirationUrgency', () => {
+    it('returns null when more than 2 days remain', () => {
+        const conversation = createTestConversation(3, 'safe');
+
+        expect(getConversationExpirationUrgency(conversation)).toBeNull();
+    });
+
+    it('returns warning when 2 days remain', () => {
+        const conversation = createTestConversation(5, 'warning');
+
+        expect(getConversationExpirationUrgency(conversation)).toBe('warning');
+    });
+
+    it('returns urgent when 1 day or less remains', () => {
+        const tomorrow = createTestConversation(6, 'urgent-tomorrow');
+        const today = createTestConversation(FREE_USER_CHAT_RETENTION_DAYS, 'urgent-today');
+
+        expect(getConversationExpirationUrgency(tomorrow)).toBe('urgent');
+        expect(getConversationExpirationUrgency(today)).toBe('urgent');
+    });
+});
+
+describe('getConversationExpirationTooltip', () => {
+    it('returns the expected message for each urgency window', () => {
+        expect(getConversationExpirationTooltip(2)).toContain('2 days');
+        expect(getConversationExpirationTooltip(1)).toContain('tomorrow');
+        expect(getConversationExpirationTooltip(0)).toContain('today');
+    });
+});
+
+describe('getConversationExpirationBannerTitle', () => {
+    it('returns the expected title for each urgency window', () => {
+        expect(getConversationExpirationBannerTitle(2)).toContain('2 days');
+        expect(getConversationExpirationBannerTitle(1)).toContain('tomorrow');
+        expect(getConversationExpirationBannerTitle(0)).toContain('today');
+    });
+});
+
+describe('countConversationsByExpirationUrgency', () => {
+    it('counts conversations by expiration urgency', () => {
+        const conversations = [
+            createTestConversation(3, 'safe'),
+            createTestConversation(5, 'two-days'),
+            createTestConversation(6, 'one-day'),
+            createTestConversation(FREE_USER_CHAT_RETENTION_DAYS, 'today'),
+        ];
+
+        expect(countConversationsByExpirationUrgency(conversations)).toEqual({
+            expiringInTwoDays: 1,
+            expiringInOneDay: 1,
+            expiringToday: 1,
+        });
     });
 });

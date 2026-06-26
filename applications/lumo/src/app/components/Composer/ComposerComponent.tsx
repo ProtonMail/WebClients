@@ -36,6 +36,7 @@ import { ModelSwitchNotificationCard } from '../Notifications/ModelSwitchNotific
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
+import { ComposerExpirationBanner } from './ComposerExpirationBanner';
 import { ComposerToolbar } from './ComposerToolbar';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
@@ -378,6 +379,8 @@ const ComposerComponentInner = ({
                         spaceId={spaceId}
                         onOpenFiles={handleOpenFiles}
                     />
+
+                    <ComposerExpirationBanner conversationId={messageChain?.[0]?.conversationId} />
 
                     {composerMode === ComposerMode.NEW_CONVERSATION && isEmpty && agentStarters.length > 0 && (
                         <ConversationStarters

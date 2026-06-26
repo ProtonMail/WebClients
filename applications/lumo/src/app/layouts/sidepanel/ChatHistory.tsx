@@ -11,7 +11,6 @@ import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectHistoryConversationsSorted } from '../../redux/selectors';
 import { selectSpaceMap } from '../../redux/slices/core/spaces';
-import { LumoChatHistoryUpsell } from '../../upsells';
 import RecentChatsList from './RecentChatsList';
 import { applyRetentionPolicy, groupConversationsByDate, searchConversations } from './helpers';
 
@@ -31,16 +30,15 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const { hasLumoPlus } = useLumoPlan();
     const { lumoUserSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
-    const dateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
+    const dateField = hasLumoPlus ? (lumoUserSettings.chatHistoryDateField ?? 'updatedAt') : 'createdAt';
 
     const isLoading = false;
 
-    const { conversationGroups, noConversationAtAll, noSearchMatch, showHistoryUpsell } = useMemo(() => {
+    const { conversationGroups, noConversationAtAll, noSearchMatch } = useMemo(() => {
         const empty = {
             conversationGroups: [],
             noConversationAtAll: true,
             noSearchMatch: false,
-            showHistoryUpsell: false,
         };
 
         if (isGuest) {
@@ -62,7 +60,6 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
             conversationGroups,
             noConversationAtAll: conversations.length === 0,
             noSearchMatch: filteredConversations.length === 0 && conversations.length > 0,
-            showHistoryUpsell: !hasLumoPlus && retainedConversations.length > 0,
         };
     }, [sortedConversations, spaceMap, searchInput, isGuest, showProjectConversationsInHistory, dateField, hasLumoPlus]);
 
@@ -86,7 +83,6 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                     .t`No result.`}</p>
             )}
             <div className="chat-history-list">
-                {showHistoryUpsell && <LumoChatHistoryUpsell />}
                 {conversationGroups.map((group, index) => (
                     <div key={group.key}>
                         <h4 className={`block color-weak text-sm px-1.5 ${index === 0 ? 'my-2' : 'mt-3 mb-2'}`}>

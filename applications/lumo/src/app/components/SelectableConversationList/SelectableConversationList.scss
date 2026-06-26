@@ -87,6 +87,11 @@
 		overflow: hidden;
 	}
 
+	.selectable-conversation-expiration-indicator {
+		align-self: flex-start;
+		margin-block-start: 0.125rem;
+	}
+
 	.selectable-conversation-content {
 		min-inline-size: 0; // Allow text truncation
 		inline-size: 100%;

@@ -38,7 +38,6 @@ import {
 } from '../../redux/slices/core/conversations';
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import { ComposerMode, getProjectInfo } from '../../types';
-import { LumoChatHistoryUpsell } from '../../upsells';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
 import { ConversationDropdown } from './components/ConversationDropdown';
 import { ProjectEmptyState } from './components/ProjectEmptyState';
@@ -99,8 +98,9 @@ const ProjectDetailViewInner = () => {
         return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
     });
 
-    const conversationGroups = groupConversationsByDate(sortedConversations);
-    const showHistoryUpsell = !hasLumoPlus && retainedConversations.length > 0;
+    const conversationGroups = groupConversationsByDate(sortedConversations, {
+        sortBy: hasLumoPlus ? 'updatedAt' : 'createdAt',
+    });
 
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -281,20 +281,6 @@ const ProjectDetailViewInner = () => {
     return (
         <LumoLayoutWithDrawer
             header={{
-                // leftButton: (
-                //     <Button
-                //         onClick={() => history.push('/projects')}
-                //         icon
-                //         shape="ghost"
-                //         color="weak"
-                //         size="small"
-                //         className="shrink-0"
-                //     >
-                //         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                //             <rect width="40" height="40" rx="12" fill="#F5F6FE" />
-                //         </svg>
-                //     </Button>
-                // ),
                 component: (
                     <ProjectTitleSection
                         projectName={projectName}
@@ -318,21 +304,6 @@ const ProjectDetailViewInner = () => {
             }}
         >
             <div className="project-detail-view flex flex-column">
-                {/* {isMobileViewport && (
-                    <HeaderWrapper>
-                        <></>
-                    </HeaderWrapper>
-                )} */}
-                {/* <ProjectDetailHeader
-                    projectName={projectName}
-                    category={category}
-                    showSidebar={showSidebar}
-                    isMobileView={isMobileViewport}
-                    onBack={() => history.push('/projects')}
-                    onProjectSettingsClick={handleProjectSettingsButtonClick}
-                    onSaveTitle={handleSaveTitle}
-                    onDeleteProject={() => deleteModal.openModal(true)}
-                /> */}
 
                 <div
                     className={`project-detail-content flex-1 relative overflow-hidden ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}
@@ -348,7 +319,6 @@ const ProjectDetailViewInner = () => {
                             ) : (
                                 <div className="project-detail-conversations pt-5 mb-0">
                                     <div className="project-detail-conversation-list p-0 md:py-4 md:pl-8 md:pr-6">
-                                        {showHistoryUpsell && <LumoChatHistoryUpsell />}
                                         <SelectableConversationList
                                             groups={conversationGroups
                                                 .map((group) => ({
