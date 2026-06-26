@@ -39,7 +39,7 @@ export interface PendingGroupItem {
 }
 
 const useScimSetupData = () => {
-    const isEnabled = useFlag('UserGroupsGroupOwner');
+    const isEnabled = useFlag('UserGroupsScimGroups');
 
     const [phase, setPhase] = useState<Phase>(Phase.Idle);
     const [userStatuses, setUserStatuses] = useState<Record<string, ItemStatus>>({});
@@ -61,12 +61,15 @@ const useScimSetupData = () => {
 
     // TODO: add a way to know how many group members need to be activated per group
     useEffect(() => {
+        if (!isEnabled) {
+            return;
+        }
         for (const group of groups ?? []) {
             if (getIsScimGroup(group)) {
                 void getGroupMembers(group.ID);
             }
         }
-    }, [groups]);
+    }, [groups, isEnabled]);
 
     const applyScimProgress = (update: ScimProgress) => {
         switch (update.type) {
