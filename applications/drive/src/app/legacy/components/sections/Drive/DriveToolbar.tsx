@@ -2,12 +2,14 @@ import { useMemo } from 'react';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { type DecryptedLink, useActions, useDocumentActions } from '../../../../legacy/store';
+import { type DecryptedLink, useActions } from '../../../../legacy/store';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../../legacy/store/_documents';
+import { createDocument } from '../../../../utils/docs/openInDocs';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -61,7 +63,6 @@ const DriveToolbar = ({
     const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
     const { trashLinks, renameLink } = useActions();
-    const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
 
@@ -92,12 +93,16 @@ const DriveToolbar = ({
                             {isEditEnabled && <CreateNewFileButton />}
                             {isDocsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
                                 <CreateNewDocumentButton
-                                    onClick={() => createDocument({ type: 'doc', shareId, parentLinkId: linkId })}
+                                    onClick={() =>
+                                        createDocument({ type: 'doc', parentUid: generateNodeUid(volumeId, linkId) })
+                                    }
                                 />
                             )}
                             {isSheetsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
                                 <CreateNewSheetButton
-                                    onClick={() => createDocument({ type: 'sheet', shareId, parentLinkId: linkId })}
+                                    onClick={() =>
+                                        createDocument({ type: 'sheet', parentUid: generateNodeUid(volumeId, linkId) })
+                                    }
                                 />
                             )}
                             <Vr />

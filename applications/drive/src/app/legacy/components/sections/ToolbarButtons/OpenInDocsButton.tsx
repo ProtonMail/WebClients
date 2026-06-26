@@ -1,12 +1,14 @@
 import { MimeIcon, ToolbarButton } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
-import { useOpenInDocs } from '../../../../legacy/store/_documents';
+import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 
 interface Props {
     selectedBrowserItems: {
         rootShareId: string;
+        volumeId: string;
         linkId: string;
         mimeType: string;
         parentLinkId: string;
@@ -16,17 +18,27 @@ interface Props {
 
 const OpenInDocsButton = ({ selectedBrowserItems }: Props) => {
     const selectedBrowserItem = selectedBrowserItems.length > 0 ? selectedBrowserItems[0] : undefined;
-    const openInDocs = useOpenInDocs(selectedBrowserItem);
+    const openInDocsInfo = selectedBrowserItem?.mimeType ? getOpenInDocsInfo(selectedBrowserItem.mimeType) : undefined;
 
-    if (!openInDocs.canOpen || isMultiSelect(selectedBrowserItems) || hasFoldersSelected(selectedBrowserItems)) {
+    if (!openInDocsInfo || isMultiSelect(selectedBrowserItems) || hasFoldersSelected(selectedBrowserItems)) {
         return null;
     }
 
     return (
         <ToolbarButton
-            title={getOpenInDocsString(openInDocs, openInDocs.mimeType)}
-            icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocs)} className="mr-2" />}
-            onClick={() => openInDocs.openDocument()}
+            title={getOpenInDocsString(openInDocsInfo, selectedBrowserItem?.mimeType ?? '')}
+            icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocsInfo)} className="mr-2" />}
+            onClick={() => {
+                if (!selectedBrowserItem) {
+                    return;
+                }
+                void openDocsOrSheetsDocument({
+                    uid: generateNodeUid(selectedBrowserItem.volumeId, selectedBrowserItem.linkId),
+                    type: openInDocsInfo.type,
+                    isNative: openInDocsInfo.isNative,
+                    openBehavior: 'tab',
+                });
+            }}
             data-testid="toolbar-open-document"
         />
     );
