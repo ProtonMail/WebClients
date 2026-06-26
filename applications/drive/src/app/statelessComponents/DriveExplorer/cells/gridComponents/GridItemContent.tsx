@@ -59,7 +59,7 @@ export function GridItemContent({
             )}
             {!thumbnailUrl && type !== NodeType.Album && (
                 <FileIcon
-                    mimeType={(type === NodeType.File && mediaType) || 'Folder'}
+                    mimeType={type === NodeType.File || type === NodeType.Photo ? mediaType || '' : 'Folder'}
                     alt={iconText}
                     size={12}
                     style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
