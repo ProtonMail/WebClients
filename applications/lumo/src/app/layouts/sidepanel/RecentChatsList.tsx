@@ -32,7 +32,7 @@ const ConversationListItem = memo(
             <li
                 className={clsx(
                     'relative group-hover-hide-container group-hover-opacity-container',
-                    'flex items-center shrink-0 navigation-link w-full',
+                    'flex items-center min-w-0 overflow-hidden navigation-link w-full',
                     'hover:bg-weak rounded-md transition-colors text-sm',
                     isSelected && 'is-active'
                 )}
@@ -42,19 +42,23 @@ const ConversationListItem = memo(
                 <LumoLink
                     to={`/c/${conversation.id}`}
                     className={clsx(
-                        'flex items-center gap-1.5 flex-1 min-w-0 px-1.5 hover:text-primary',
-                        showDropdown ? 'pr-1' : 'pr-2'
+                        'absolute inset-0 flex items-center gap-1.5 min-w-0 overflow-hidden pl-1.5 hover:text-primary',
+                        showDropdown ? 'pr-8' : 'pr-2'
                     )}
                     onClick={onItemClick}
                 >
                     <ConversationExpirationIndicator conversation={conversation} />
-                    <span className="sidebar-nav-list--label text-ellipsis flex-1 min-w-0" title={label}>
+                    <span className="sidebar-nav-list--label text-ellipsis min-w-0 flex-1" title={label}>
                         {label}
                     </span>
                 </LumoLink>
-                {mountDropdown && (
-                    <div className="relative z-1 ml-auto pl-1 flex-shrink-0">
-                        <ChatDropdownMenu conversation={conversation} onOpenChange={setIsDropdownOpen} />
+                {showDropdown && (
+                    <div className="relative z-1 ml-auto pl-1 shrink-0">
+                        {mountDropdown ? (
+                            <ChatDropdownMenu conversation={conversation} onOpenChange={setIsDropdownOpen} />
+                        ) : (
+                            <span aria-hidden="true" className="chat-history-item-actions-spacer" />
+                        )}
                     </div>
                 )}
             </li>
@@ -75,7 +79,7 @@ const RecentChatsList = memo(({ conversations, selectedConversationId, disabled,
     const isTouchDevice = useIsTouchDevice();
 
     return (
-        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 shrink-0 my-0">
+        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
             {conversations.map((conversation) => (
                 <ConversationListItem
                     key={conversation.id}

@@ -7,6 +7,9 @@ im.$media-expressions: $media-expressions;
 .lumo-sidebar {
 	padding: #{rem(12)};
 	gap: #{rem(8)};
+	min-inline-size: 0;
+	max-inline-size: 100%;
+	overflow-x: hidden;
 
 	// ul {
 	// 	span {
@@ -50,6 +53,30 @@ im.$media-expressions: $media-expressions;
 	.sidebar-nav-list--label {
 		font-weight: normal;
 		color: var(--text-norm);
+		min-inline-size: 0;
+		overflow: hidden;
+	}
+
+	.chat-history-list {
+		min-inline-size: 0;
+		max-inline-size: 100%;
+
+		.navigation-link {
+			min-block-size: #{rem(32)};
+			max-inline-size: 100%;
+
+			> a {
+				min-inline-size: 0;
+				max-inline-size: 100%;
+				overflow: hidden;
+			}
+		}
+	}
+
+	.chat-history-item-actions-spacer {
+		inline-size: #{rem(28)};
+		block-size: #{rem(28)};
+		flex-shrink: 0;
 	}
 
 	.collapsible-section--title {
@@ -85,6 +112,7 @@ im.$media-expressions: $media-expressions;
 // the available height on small screens, content scrolls rather than being clipped.
 .sidebar-main-content {
 	min-block-size: 0;
+	min-inline-size: 0;
 	overflow: hidden auto;
 	gap: 8px;
 
@@ -128,11 +156,13 @@ im.$media-expressions: $media-expressions;
 .chat-history-sidebar-section {
 	flex: 1;
 	min-block-size: 0;
+	min-inline-size: 0;
 }
 
 // Chat history content area - owns the scroll
 .chat-history-content {
 	min-block-size: 0;
+	min-inline-size: 0;
 	overflow: hidden auto;
 	animation: sidebar-fade-in 0.25s ease-in-out;
 }

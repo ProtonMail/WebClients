@@ -108,7 +108,7 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
                         aria-label={c('collider_2025:Button').t`Create project`}
                         title={c('collider_2025:Button').t`Create project`}
                         size="small"
-                        shape="solid"
+                        shape="ghost"
                     >
                         <IcPlus size={3} />
                     </Button>

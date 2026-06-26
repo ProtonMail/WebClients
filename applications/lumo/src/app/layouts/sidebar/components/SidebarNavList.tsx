@@ -19,13 +19,13 @@ interface SidebarNavListProps {
 }
 
 export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
-    <ul className="unstyled flex flex-column flex-nowrap gap-0.5 shrink-0 my-0">
+    <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
         {items.map(({ id, to, label, isSelected, leadingContent, trailingContent }) => (
             <li
                 key={id}
                 className={clsx(
                     'relative group-hover-hide-container group-hover-opacity-container',
-                    'flex items-center shrink-0 navigation-link w-full',
+                    'flex items-center min-w-0 overflow-hidden navigation-link w-full',
                     'hover:bg-weak rounded-md transition-colors text-sm',
                     isSelected && 'is-active'
                 )}
@@ -39,7 +39,7 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
                     onClick={onItemClick}
                 >
                     {leadingContent}
-                    <span className="sidebar-nav-list--label text-ellipsis flex-1 " title={label}>
+                    <span className="sidebar-nav-list--label text-ellipsis flex-1 min-w-0" title={label}>
                         {label}
                     </span>
                 </LumoLink>

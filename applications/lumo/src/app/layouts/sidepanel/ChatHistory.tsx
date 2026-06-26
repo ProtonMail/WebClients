@@ -72,7 +72,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     }
 
     return (
-        <div className="chat-history-container flex flex-column flex-nowrap gap-2">
+        <div className="chat-history-container flex flex-column flex-nowrap gap-2 min-w-0 overflow-hidden">
             {!isGuest && noConversationAtAll && (
                 <div className="color-weak text-sm my-2 px-1.5">
                     {c('collider_2025:Title').t`No chat history yet. Let's start chatting!`}
