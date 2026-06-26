@@ -13,15 +13,13 @@ import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
 import type { MaybeNull } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { type ServiceWorkerClient, createServiceWorkerClient } from './client';
+import { ServiceWorkerClientID, ServiceWorkerEnabled } from './constants';
 
 type ServiceWorkerState = { updateAvailable: boolean };
 type ServiceWorkerContextValue = { client: ServiceWorkerClient; state: ServiceWorkerState };
 
-export const ServiceWorkerClientID = uniqueId(16);
-export const ServiceWorkerEnabled = 'serviceWorker' in navigator;
 export const ServiceWorkerContext = createContext<MaybeNull<ServiceWorkerContextValue>>(null);
 
 const client = ServiceWorkerEnabled ? createServiceWorkerClient(ServiceWorkerClientID) : null;
