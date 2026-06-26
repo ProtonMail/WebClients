@@ -60,6 +60,7 @@ const createMockStore = (overrides?: { chatMessages?: MeetChatMessage[]; events?
                 events: overrides?.events ?? mockParticipantEvents,
                 raisedHands: [],
                 activeReactions: {},
+                reactionEventIndex: {},
             },
             meetingInfo: {
                 ...initialMeetingInfoState,

@@ -291,6 +291,7 @@ enum MeetFeatureFlag {
     PersonalMeetingRotation = 'PersonalMeetingRotation',
     MeetPromptOnTabClose = 'MeetPromptOnTabClose',
     MeetSoundNotificationsEnabled = 'MeetSoundNotificationsEnabled',
+    MeetNewChatHandling = 'MeetNewChatHandling',
     MeetNewJoinType = 'MeetNewJoinType',
     MeetNewSwitchJoinType = 'MeetNewSwitchJoinType',
     MeetSwitchJoinType = 'MeetSwitchJoinType',
