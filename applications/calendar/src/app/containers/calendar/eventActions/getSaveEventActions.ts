@@ -22,6 +22,7 @@ import { modelToVeventComponent } from '../../../components/eventModal/eventForm
 import { getCanEditSharedEventData } from '../../../helpers/event';
 import type { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import type {
+    GetAddedAttendeesPublicKeysMap,
     InviteActions,
     OnSendPrefsErrors,
     ReencryptInviteActionData,
@@ -55,6 +56,7 @@ const getSaveSingleEventActionsHelper = async ({
     getCalendarKeys,
     onSaveConfirmation,
     sendIcs,
+    getAddedAttendeesPublicKeysMap,
     reencryptSharedEvent,
     onSendPrefsErrors,
     inviteActions,
@@ -69,6 +71,7 @@ const getSaveSingleEventActionsHelper = async ({
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     sendIcs: SendIcs;
+    getAddedAttendeesPublicKeysMap: GetAddedAttendeesPublicKeysMap;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: OnSendPrefsErrors;
     onSaveConfirmation: OnSaveConfirmationCb;
@@ -117,6 +120,7 @@ const getSaveSingleEventActionsHelper = async ({
         canEditOnlyPersonalPart,
         isAttendee,
         sendIcs,
+        getAddedAttendeesPublicKeysMap,
         reencryptSharedEvent,
         onSendPrefsErrors,
         onEquivalentAttendees,
@@ -150,6 +154,7 @@ interface Arguments {
     getAddressKeys: GetAddressKeys;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
     sendIcs: SendIcs;
+    getAddedAttendeesPublicKeysMap: GetAddedAttendeesPublicKeysMap;
     getCalendarEventRaw: GetCalendarEventRaw;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: OnSendPrefsErrors;
@@ -172,6 +177,7 @@ const getSaveEventActions = async ({
     getAddressKeys,
     getCanonicalEmailsMap,
     sendIcs,
+    getAddedAttendeesPublicKeysMap,
     getCalendarEventRaw,
     reencryptSharedEvent,
     onSendPrefsErrors,
@@ -283,6 +289,7 @@ const getSaveEventActions = async ({
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
+            getAddedAttendeesPublicKeysMap,
             reencryptSharedEvent,
             onEquivalentAttendees: handleEquivalentAttendees,
             onSendPrefsErrors,
@@ -337,6 +344,7 @@ const getSaveEventActions = async ({
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
+            getAddedAttendeesPublicKeysMap,
             reencryptSharedEvent,
             onEquivalentAttendees: handleEquivalentAttendees,
             onSendPrefsErrors,
@@ -363,6 +371,7 @@ const getSaveEventActions = async ({
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
+            getAddedAttendeesPublicKeysMap,
             reencryptSharedEvent,
             onEquivalentAttendees: handleEquivalentAttendees,
             onSendPrefsErrors,
@@ -483,6 +492,7 @@ const getSaveEventActions = async ({
         isAttendee,
         isBreakingChange,
         sendIcs,
+        getAddedAttendeesPublicKeysMap,
         getCalendarEventRaw,
         handleSyncActions,
         reencryptSharedEvent,
