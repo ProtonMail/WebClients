@@ -1,0 +1,7 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.model-switch-notification-icon {
+	background-color: var(--interaction-norm-minor-1);
+	block-size: #{rem(40)};
+	inline-size: #{rem(40)};
+}

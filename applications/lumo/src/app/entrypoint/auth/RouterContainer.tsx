@@ -8,6 +8,7 @@ import { ConversationProvider } from '../../providers/ConversationProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
+import { UsageLimitsTierSync } from '../../providers/UsageLimitsTierSync';
 import { LumoUpsellModalProvider } from '../../upsells/providers/LumoUpsellModalProvider';
 import { InnerApp } from '../InnerApp';
 
@@ -26,6 +27,7 @@ export const RouterContainer = () => {
                     <IsGuestProvider isGuest={false}>
                         <LumoPlanProvider>
                             <LumoUpsellModalProvider>
+                                <UsageLimitsTierSync />
                                 <SafeUserProvider>
                                     <Router>
                                         <Switch>

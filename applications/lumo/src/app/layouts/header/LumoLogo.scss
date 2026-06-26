@@ -1,0 +1,18 @@
+@use '@proton/styles/scss/lib' as lib;
+
+// .lumo-logo-container {
+//     display: flex;
+//     align-items: center;
+//     gap: lib.rem(8);
+// }
+
+a {
+	text-decoration: none !important;
+
+	&:hover,
+	&:focus,
+	&:visited,
+	&:active {
+		text-decoration: none !important;
+	}
+}

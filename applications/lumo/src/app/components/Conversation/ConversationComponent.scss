@@ -10,13 +10,3 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 }
-
-// Minimal agent surface (e.g. embedded /agent view): let messages and the composer use the
-// full available width instead of the Lumo app's centered reading column.
-.lumo-agent-fullwidth {
-	.lumo-chat-item {
-		inline-size: 100%;
-		max-inline-size: none;
-		margin-inline: 0;
-	}
-}

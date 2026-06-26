@@ -35,17 +35,16 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.projects-title {
-	font-size: 28px;
-	font-weight: 600;
-	margin: 0;
-	color: var(--text-norm);
-}
+// .projects-title {
+// 	font-size: 28px;
+// 	font-weight: 600;
+// 	margin: 0;
+// 	color: var(--text-norm);
+// }
 
 .projects-content {
 	flex: 1;
 	overflow: hidden;
-	padding: 32px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -54,7 +53,6 @@ im.$media-expressions: $media-expressions;
 	min-block-size: 0;
 
 	@include im.media('<=small') {
-		padding: 20px;
 		gap: 24px;
 	}
 }
@@ -65,6 +63,31 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100%;
 	max-inline-size: 900px;
 	min-block-size: 0;
+}
+
+.projects-list-wrapper {
+	flex: 1;
+	overflow-y: auto;
+	inline-size: 100%;
+	max-inline-size: 900px;
+	min-block-size: 0;
+}
+
+.projects-list-header {
+	display: flex;
+	justify-content: space-between;
+	padding-block: 8px;
+	padding-inline: 8px;
+	font-size: 12px;
+	color: var(--text-weak);
+	font-weight: 500;
+	letter-spacing: 0.05em;
+}
+
+.projects-list {
+	display: flex;
+	flex-direction: column;
+	inline-size: 100%;
 }
 
 .projects-grid {
@@ -87,7 +110,7 @@ im.$media-expressions: $media-expressions;
 	gap: 12px;
 	max-inline-size: 900px;
 
-	@include im.media ('<=small') {
+	@include im.media('<=small') {
 		display: flex;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;

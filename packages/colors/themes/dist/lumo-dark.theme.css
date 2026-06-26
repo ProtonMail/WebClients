@@ -64,7 +64,9 @@
   --text-disabled: #5b576b;
   --text-invert: #343140;
   --text-markdown: white;
+  --text-dark: #0c0c14;
   --text-strong: white;
+  --text-secondary: white;
   --field-norm: #5b576b;
   --field-hover: #6d697d;
   --field-disabled: #3f3b4c;
@@ -72,10 +74,11 @@
   --focus-ring: rgba(109, 74, 255, 0.3);
   --border-norm: #4a4658;
   --border-weak: #343140;
-  --background-norm: #16141c;
+  --background-norm: #141414;
   --background-weak: #292733;
   --background-strong: #3f3b4c;
   --background-invert: white;
+  --background-light: var(--background-weak);
   --background-composer-mobile: #292733;
   --background-upsell-button: #292733;
   --background-upsell-toggle: rgba(91, 87, 107, 0.6);
@@ -89,15 +92,23 @@
   --shadow-raised-opacity: 0.1;
   --shadow-lifted-opacity: 0.16;
   --backdrop-norm: rgb(38 42 51 / 0.48);
+  --background-main-canvas: #0b0b0b;
   --interaction-secondary: #e57031;
   --interaction-secondary-hover: #f97316;
   --interaction-secondary-active: #fb923c;
+  --interaction-solid-weak-custom: #292929;
+  --interaction-solid-weak-custom-contrast: #292929;
+  --interaction-solid-weak-custom-active: #525252;
+  --interaction-solid-weak-custom-hover: #3f3f3f;
   --reinforce-norm: #5c3be7;
   --reinforce-hover: #6d4aff;
   --reinforce-active: #7c5cff;
   --link-norm: #9880ff;
   --link-hover: #a898ed;
   --link-active: #bbabff;
+  --composer-glow-border: var(--border-weak);
+  --composer-hover-border: #707070;
+  --composer-focus-outer-ring: #321d77;
   --optional-promotion-background-start: rgb(109 74 255 / 0.15);
   --optional-promotion-background-end: rgb(70 26 255 / 0.04);
   --optional-upgrade-color-1: #ffac2e;
@@ -113,4 +124,11 @@
   --settings-modal-upsell-background: var(--backdrop-norm);
   --settings-modal-upsell-text: var(--text-norm);
   --lumo-plus-logo-plus-sign-text: #f7f5ff;
+  --surface-foreground: #141414;
+  --lumo-welcome-text: white;
+  --lumo-logo-tag-pro-background: rgba(255, 255, 255, 0.7);
+  --lumo-logo-tag-plus-background: var(--border-weak);
+  --lumo-logo-tag-pro-text: var(--text-dark);
+  --lumo-logo-tag-plus-text: var(--interaction-weak-active);
+  --lumo-secondary-upsell-background: var(--background-upsell-toggle);
 }

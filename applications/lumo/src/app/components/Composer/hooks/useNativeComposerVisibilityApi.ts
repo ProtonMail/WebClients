@@ -23,7 +23,7 @@ export const useNativeComposerVisibilityApi = ({
     showFileModal = false,
     isBlocking = false,
 }: NativeComposerVisibilityConfig = {}) => {
-    const { isVisible: isSidebarVisible, isCollapsed, isSmallScreen } = useSidebar();
+    const { isVisible: isSidebarVisible, isSmallScreen } = useSidebar();
     const { nativeComposer: lumoNativeComposerEnabled } = useLumoFlags();
 
     useEffect(() => {
@@ -31,8 +31,7 @@ export const useNativeComposerVisibilityApi = ({
     }, [isSmallScreen]);
 
     useEffect(() => {
-        const shouldShowNativeComposer =
-            (!isSidebarVisible && isSmallScreen) || (isSidebarVisible && !isSmallScreen && isCollapsed);
+        const shouldShowNativeComposer = (!isSidebarVisible && isSmallScreen) || (isSidebarVisible && !isSmallScreen);
 
         if (isBlocking) {
             setNativeComposerVisibility(false);
@@ -53,7 +52,6 @@ export const useNativeComposerVisibilityApi = ({
         lumoNativeComposerEnabled,
         isSidebarVisible,
         isSmallScreen,
-        isCollapsed,
         showDrawingModal,
         showNewModal,
         showFileModal,

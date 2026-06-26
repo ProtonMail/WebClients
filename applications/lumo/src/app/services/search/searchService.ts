@@ -6,7 +6,7 @@ import type {SpaceMap} from '../../redux/slices/core/spaces';
 import {getStoreRef} from '../../redux/storeRef';
 import {Role} from '../../types';
 import type {DriveDocument} from '../../types/documents';
-import {applyRetentionPolicy} from '../../layouts/sidepanel/helpers';
+import { applyRetentionPolicy } from '../../layouts/sidepanel/helpers';
 import {BM25Index} from './bm25Index';
 import {chunkDocument} from './documentChunker';
 import type {SearchResult, SearchServiceStatus, SearchState} from './types';
@@ -330,15 +330,14 @@ export class SearchService {
     async getAllConversations(state: SearchState, options?: { hasLumoPlus?: boolean }): Promise<SearchResult[]> {
         const { conversations, spaces } = state;
 
-        // Apply retention policy (7-day limit for free users)
-        const hasLumoPlus = options?.hasLumoPlus ?? true; // Default to Plus access if not specified
+        const hasLumoPlus = options?.hasLumoPlus ?? true;
         // Exclude ghost conversations from search - they are transient and should never surface in results
         const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost);
         const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);
 
         const results: SearchResult[] = accessibleConversations.map((conversation) => {
             const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
-            const timestamp = new Date(conversation.createdAt).getTime();
+            const timestamp = new Date(conversation.updatedAt).getTime();
 
             return {
                 type: 'conversation',
@@ -413,8 +412,7 @@ export class SearchService {
         const results: SearchResult[] = [];
         const { conversations, messages, spaces } = state;
 
-        // Apply retention policy (7-day limit for free users)
-        const hasLumoPlus = options?.hasLumoPlus ?? true; // Default to Plus access if not specified
+        const hasLumoPlus = options?.hasLumoPlus ?? true;
         // Exclude ghost conversations from search - they are transient and should never surface in results
         const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost);
         const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);
@@ -430,7 +428,7 @@ export class SearchService {
 
                 foundConversationIds.add(conversationId);
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
-                const timestamp = new Date(conversation.createdAt).getTime();
+                const timestamp = new Date(conversation.updatedAt).getTime();
 
                 results.push({
                     type: 'conversation',
@@ -448,7 +446,7 @@ export class SearchService {
             const title = conversation.title?.toLowerCase() || '';
             if (title.includes(normalizedQuery)) {
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
-                const timestamp = new Date(conversation.createdAt).getTime();
+                const timestamp = new Date(conversation.updatedAt).getTime();
 
                 results.push({
                     type: 'conversation',

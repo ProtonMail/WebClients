@@ -1,16 +1,26 @@
-/* @font-face {
-    font-family: 'Arizona Sans';
-    src: url('./ABCArizonaSansVariable.woff2') format('woff2');
+@font-face {
+    font-family: 'ABC Arizona';
+    src: url('./assets/fonts/ABCArizonaSansVariable.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Arizona Flare';
-    src: url('./ABCArizonaFlareVariable.woff2') format('woff2');
+    font-family: 'ABC Arizona Flare';
+    src: url('./assets/fonts/ABCArizonaFlareVariable.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
-} */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ABC Arizona';
+    src: url('./assets/fonts/ABCArizonaFlareVariable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
 
 @font-face {
     font-family: Syne;

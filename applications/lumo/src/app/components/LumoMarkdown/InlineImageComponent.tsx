@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import type { DrawingMode } from '../../features/drawingcanvas/types';
@@ -127,11 +129,10 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
 
     return (
         <>
-            {/* Image left, action panel right */}
-            <span className="inline-image-card inline-flex items-start">
+            <span className="inline-image-card">
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                 <span
-                    className="inline-image-card__img shrink-0 cursor-pointer rounded-xl overflow-hidden"
+                    className="cursor-pointer"
                     onClick={() => {
                         setOverlayDefaultMode('preview');
                         setOverlayOpen(true);
@@ -140,13 +141,41 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                     <img src={imageDataUrl} alt={alt || attachment.filename} />
                 </span>
 
-                <span className="inline-image-card__actions inline-flex flex-column mt-auto">
+                <span className="inline-image-card__overlay">
+                    <Button
+                        className="inline-image-card__btn inline-image-card__btn--expand"
+                        shape="solid"
+                        color="weak"
+                        icon
+                        size="small"
+                        title={c('collider_2025:Action').t`Expand`}
+                        onClick={() => {
+                            setOverlayDefaultMode('preview');
+                            setOverlayOpen(true);
+                        }}
+                    >
+                        <IcArrowsFromCenter size={4} />
+                    </Button>
+
                     <ImageModifyButton
+                        className="inline-image-card__btn inline-image-card__btn--modify"
                         onClick={() => {
                             setOverlayDefaultMode('edit');
                             setOverlayOpen(true);
                         }}
                     />
+
+                    <Button
+                        className="inline-image-card__btn inline-image-card__btn--download"
+                        shape="solid"
+                        color="weak"
+                        icon
+                        size="small"
+                        title={c('collider_2025:Action').t`Download`}
+                        onClick={(e) => handleDownload(e)}
+                    >
+                        <IcArrowDownLine size={4} />
+                    </Button>
                 </span>
             </span>
 

@@ -1,3 +1,17 @@
+import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
+
+const SHORT_DATE_OPTIONS: Intl.DateTimeFormatOptions = {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+};
+
+export const formatShortDate = (date: string | Date, locale?: string) => {
+    const parsedDate = typeof date === 'string' ? new Date(date) : date;
+
+    return formatIntlDate(parsedDate, SHORT_DATE_OPTIONS, locale);
+};
+
 export function dateIsoToHuman(isoDateString: string): string {
     const date = new Date(isoDateString);
 

@@ -64,7 +64,9 @@
   --text-disabled: #9e9b98;
   --text-invert: white;
   --text-markdown: #24292e;
-  --text-strong: rgb(186 186 247 / 0.3); 
+  --text-strong: rgb(186 186 247 / 0.3);
+  --text-secondary: #707070;
+  --text-dark: var(--text-norm);
   --field-norm: #adaba8;
   --field-hover: #8f8d8a;
   --field-disabled: #d1cfcd;
@@ -76,6 +78,7 @@
   --background-weak: #f8fafc;
   --background-strong: #e5e8eb;
   --background-invert: #1a1a1a;
+  --background-light: #fbfaff;
   --background-composer-mobile: white;
   --background-upsell-button: white;
   --background-upsell-toggle: #e5e1f5;
@@ -89,15 +92,23 @@
   --shadow-raised-opacity: 0.1;
   --shadow-lifted-opacity: 0.16;
   --backdrop-norm: rgb(38 42 51 / 0.48);
+  --background-main-canvas: #f5f6fe;
   --interaction-secondary: #ffac2f;
   --interaction-secondary-hover: #e69a2a;
   --interaction-secondary-active: #d48f26;
+  --interaction-solid-weak-custom: #e8eafc;
+  --interaction-solid-weak-custom-contrast: white;
+  --interaction-solid-weak-custom-active: #dddefb;
+  --interaction-solid-weak-custom-hover: #dddefb;
   --reinforce-norm: #372580;
   --reinforce-hover: #2f1e6f;
   --reinforce-active: #27185f;
   --link-norm: var(--primary);
   --link-hover: var(--interaction-norm-hover);
   --link-active: var(--interaction-norm-active);
+  --composer-glow-border: #dddefb;
+  --composer-hover-border: #a9acfa;
+  --composer-focus-outer-ring: #e9eafc;
   --optional-promotion-background-start: rgb(109 74 255 / 0.15);
   --optional-promotion-background-end: rgb(70 26 255 / 0.04);
   --optional-upgrade-color-1: #ffac2e;
@@ -113,4 +124,17 @@
   --settings-modal-upsell-background: #f9fafb;
   --settings-modal-upsell-text: var(--text-weak);
   --lumo-plus-logo-plus-sign-text: #5325a2;
+  --surface-foreground: #f5f6fe;
+  --lumo-welcome-text: #311e71;
+  --lumo-logo-tag-pro-background: #1b1340;
+  --lumo-logo-tag-plus-background: #e8e9eb;
+  --lumo-logo-tag-pro-text: var(--text-invert);
+  --lumo-logo-tag-plus-text: #7a7a7a;
+  --lumo-secondary-upsell-background:
+    linear-gradient(
+      180deg,
+      rgba(245, 246, 254, 0.5) 76.09%,
+      rgba(255, 244, 231, 0.5) 100%
+    ),
+    #fff;
 }

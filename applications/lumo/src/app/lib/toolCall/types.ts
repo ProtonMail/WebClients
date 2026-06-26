@@ -266,17 +266,18 @@ export function isCryptocurrencyArguments(args: unknown): args is Cryptocurrency
     );
 }
 
-export type ToolResultData = WebSearchToolResultData | ToolResultError;
+export type ToolResultData = WebSourceToolResultData | ToolResultError;
 
 export function isToolResultData(data: unknown): data is ToolResultData {
-    return isWebSearchToolResultData(data) || isToolResultError(data);
+    return isWebSourceToolResultData(data) || isToolResultError(data);
 }
 
-export type WebSearchToolResultData = {
+// Shared result shape returned by web_search and web_extract tool calls.
+export type WebSourceToolResultData = {
     results: SearchItem[];
 };
 
-export function isWebSearchToolResultData(data: unknown): data is WebSearchToolResultData {
+export function isWebSourceToolResultData(data: unknown): data is WebSourceToolResultData {
     // prettier-ignore
     return (
         typeof data === 'object' &&
@@ -353,7 +354,13 @@ function normalizeToolCallPayload(parsed: unknown): unknown {
         const argsObj = args as Record<string, unknown>;
         if (name === 'web_search' || name === 'web_extract') {
             if (typeof argsObj.query !== 'string') {
-                args = { ...argsObj, query: '' };
+                const query =
+                    typeof argsObj.search_term === 'string'
+                        ? argsObj.search_term
+                        : typeof argsObj.q === 'string'
+                          ? argsObj.q
+                          : '';
+                args = { ...argsObj, query };
             }
         }
     } else if (name === 'web_search' || name === 'web_extract') {
@@ -380,11 +387,9 @@ export function tryParseToolResult(toolResult: string): ToolResultData | null {
         return null;
     }
     try {
-        console.log('Trying to parse tool result: ', toolResult);
         const parsed = JSON.parse(toolResult);
         return isToolResultData(parsed) ? parsed : null;
-    } catch (e) {
-        console.log('Failed to parse tool result: ', e);
+    } catch {
         return null;
     }
 }

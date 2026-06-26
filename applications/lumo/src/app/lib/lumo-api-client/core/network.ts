@@ -1,8 +1,9 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import type { ChatCompletionsRequest } from './types';
+import type { ChatCompletionsRequest, LumoRemainingLimits, LumoUsageLimitsResponse } from '../../../types-api';
 
 export const LUMO_CHAT_ENDPOINT = 'ai/v1/chat/completions';
+export const LUMO_LIMITS_ENDPOINT = 'ai/v1/limits';
 
 /**
  * Call the chat completions endpoint.
@@ -37,4 +38,17 @@ export async function callChatEndpoint(
         timeout: 60_000,
     });
     return response;
+}
+
+/**
+ * Read-only snapshot of remaining usage for the current session tier.
+ */
+export async function fetchUsageLimits(api: Api): Promise<LumoRemainingLimits> {
+    const response = await api<LumoUsageLimitsResponse>({
+        url: LUMO_LIMITS_ENDPOINT,
+        method: 'get',
+        silence: true,
+    });
+
+    return response.limits;
 }
