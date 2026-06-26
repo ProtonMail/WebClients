@@ -8,7 +8,7 @@ import * as syncProtocol from 'y-protocols/sync'
 import * as awarenessProtocol from 'y-protocols/awareness'
 import type { SafeDocsUserState } from './DocsAwareness'
 import { DocsAwareness } from './DocsAwareness'
-import type { DocStateInterface } from './DocStateInterface'
+import type { DocStateInterface, DocumentUpdateGuard } from './DocStateInterface'
 import type { DocStateCallbacks } from './DocStateCallbacks'
 import type { RtsMessagePayload } from './RtsMessagePayload'
 import { EventTypeEnum } from '@proton/docs-proto'
@@ -48,6 +48,8 @@ export class DocState extends Observable<string> implements DocStateInterface {
   importSubscriptionCallbacks: (() => void)[] = []
 
   updatePropagationListeners: Set<(update: Uint8Array<ArrayBuffer>) => void> = new Set()
+
+  private documentUpdateGuard: DocumentUpdateGuard | undefined
 
   constructor(
     readonly callbacks: DocStateCallbacks,
@@ -110,6 +112,16 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
   public getClientId(): number {
     return this.doc.clientID
+  }
+
+  public runWithDocumentUpdateGuard<T>(guard: DocumentUpdateGuard, callback: () => T): T {
+    const previousGuard = this.documentUpdateGuard
+    this.documentUpdateGuard = guard
+    try {
+      return callback()
+    } finally {
+      this.documentUpdateGuard = previousGuard
+    }
   }
 
   public performOpeningCeremony(): void {
@@ -233,6 +245,21 @@ export class DocState extends Observable<string> implements DocStateInterface {
     const isNonUserInitiatedChange = origin === this || origin === DocUpdateOrigin.BaseCommit
     if (isNonUserInitiatedChange) {
       return
+    }
+
+    if (this.documentUpdateGuard) {
+      try {
+        const shouldPropagateUpdate = this.documentUpdateGuard({ update, origin })
+        if (!shouldPropagateUpdate) {
+          this.logger.warn('Document update guard blocked propagation of local Yjs update')
+          return
+        }
+      } catch (error) {
+        this.logger.error(
+          'Document update guard failed; propagating update',
+          error instanceof Error ? error.message : String(error),
+        )
+      }
     }
 
     if (this.isSheetsExcelImport) {
