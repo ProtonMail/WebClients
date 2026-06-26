@@ -49,7 +49,7 @@ export const NameCell = ({
                     />
                 ) : (
                     <FileIcon
-                        mimeType={((type === NodeType.File || type === NodeType.Photo) && mediaType) || 'Folder'}
+                        mimeType={type === NodeType.File || type === NodeType.Photo ? mediaType || '' : 'Folder'}
                         alt={name}
                         className="file-browser-list-item--icon mr-2"
                         style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
