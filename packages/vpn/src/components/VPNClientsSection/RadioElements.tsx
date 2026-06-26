@@ -8,20 +8,20 @@ import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import clsx from '@proton/utils/clsx';
 
-import { usePodcasts } from './usePodcasts';
+import { useStaticSurveyOptions } from './useStaticSurveyOptions';
 
 export const RadioElements = ({
     onChangeRadio,
     radioValue,
-    onChangePodcast,
-    podcastValue,
+    onChangeSupplementary,
+    supplementaryInputs,
     options,
     className,
 }: {
     onChangeRadio: (value: string) => void;
-    onChangePodcast: (value: string) => void;
+    onChangeSupplementary: (choice: string, value: string) => void;
     radioValue: string;
-    podcastValue: string;
+    supplementaryInputs: Record<string, string>;
     options: {
         value: string;
         label: ReactNode;
@@ -29,7 +29,7 @@ export const RadioElements = ({
     }[];
     className?: string;
 }) => {
-    const { podcasts } = usePodcasts();
+    const { podcasts, youtubeChannels } = useStaticSurveyOptions();
     const [searchValue, setSearchValue] = useState('');
 
     // If we dont have marginBottom or vertical margin in className, let's add default one
@@ -39,6 +39,13 @@ export const RadioElements = ({
 
     const podcastOptions = [
         ...podcasts,
+        ...(searchValue
+            ? [<Option key={searchValue} title={searchValue} value={searchValue.toLowerCase().replace(/\s+/g, '_')} />]
+            : []),
+    ];
+
+    const youtubeOptions = [
+        ...youtubeChannels,
         ...(searchValue
             ? [<Option key={searchValue} title={searchValue} value={searchValue.toLowerCase().replace(/\s+/g, '_')} />]
             : []),
@@ -63,12 +70,26 @@ export const RadioElements = ({
                     key="podcast-selector"
                     caretClassName="hidden"
                     search
-                    value={podcastValue}
-                    onChange={({ value }) => onChangePodcast(value)}
+                    value={supplementaryInputs.Podcast || ''}
+                    onChange={({ value }) => onChangeSupplementary('Podcast', value)}
                     placeholder={c('Info').t`Please specify...`}
                     onSearchInputChange={setSearchValue}
                 >
                     {podcastOptions}
+                </SearchableSelect>
+            ) : undefined}
+
+            {option.value === 'YouTube' && radioValue === 'YouTube' ? (
+                <SearchableSelect
+                    key="youtube-selector"
+                    caretClassName="hidden"
+                    search
+                    value={supplementaryInputs.YouTube || ''}
+                    onChange={({ value }) => onChangeSupplementary('YouTube', value)}
+                    placeholder={c('Info').t`Please specify...`}
+                    onSearchInputChange={setSearchValue}
+                >
+                    {youtubeOptions}
                 </SearchableSelect>
             ) : undefined}
         </Fragment>
