@@ -10,6 +10,7 @@ import type { IconName } from '@proton/icons/types';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch } from '../../redux/hooks';
 import { openAgentPicker } from '../../redux/slices/composerActions';
@@ -34,6 +35,7 @@ export const ToolMenuDropdown = ({
     canUseAgents = false,
 }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
+    const isGuest = useIsGuest();
     const { imageTools: isImageToolsFlagEnabled, customAgents: isCustomAgentsFlagEnabled } = useLumoFlags();
     const { hasLumoPlus } = useLumoPlan();
     const remainingLimits = useRemainingLimits();
@@ -72,9 +74,12 @@ export const ToolMenuDropdown = ({
         {
             iconName: 'robot' as IconName,
             getLabel: () => c('collider_2025: Action').t`Custom ${LUMO_SHORT_APP_NAME}s`,
+            getDescription: isGuest ? () => c('collider_2025:Placeholder').t`Sign in required` : undefined,
             onClick: () => dispatch(openAgentPicker()),
             onClose: onClose,
-            canShow: canUseAgents && isCustomAgentsFlagEnabled,
+            canShow: isCustomAgentsFlagEnabled && (canUseAgents || isGuest),
+            isDisabled: isGuest,
+            isSignInRequired: isGuest,
         },
     ];
     const visibleToolMenuItems = toolMenuItems.filter((item) => item.canShow);
@@ -92,7 +97,10 @@ export const ToolMenuDropdown = ({
             {visibleToolMenuItems.map((item) => (
                 <div
                     key={item.iconName}
-                    className={clsx(item.isDisabled && 'tool-menu-item--disabled pointer-events-none opacity-55')}
+                    className={clsx(
+                        item.isSignInRequired && 'tool-menu-item--sign-in-required',
+                        item.isDisabled && !item.isSignInRequired && 'tool-menu-item--disabled pointer-events-none opacity-55'
+                    )}
                 >
                     <MenuItem {...item} />
                 </div>

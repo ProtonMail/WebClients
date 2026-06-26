@@ -4,3 +4,19 @@
 	// fix bug where light theme field-norm value is not being applied
 	--field-norm: #adaba8;
 }
+
+.tool-menu-item--sign-in-required {
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.75;
+
+	.text-sm,
+	.text-xs,
+	[aria-hidden='true'] {
+		color: var(--text-hint);
+	}
+
+	svg {
+		opacity: 0.65;
+	}
+}
