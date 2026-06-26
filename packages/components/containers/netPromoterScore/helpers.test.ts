@@ -17,6 +17,12 @@ describe('helper functions', () => {
             expect(result).toBe(FeatureCode.NPSFeedbackWebCalendar);
         });
 
+        it('returns NPSFeedbackWebDrive for WebDrive application', () => {
+            const result = getFeatureCode(NPSApplication.WebDrive);
+
+            expect(result).toBe(FeatureCode.NPSFeedbackWebDrive);
+        });
+
         it('returns NPSFeedbackDesktopMail for DesktopMail application', () => {
             const result = getFeatureCode(NPSApplication.DesktopMail);
 
