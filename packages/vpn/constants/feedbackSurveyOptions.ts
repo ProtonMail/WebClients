@@ -96,7 +96,7 @@ const stringFeedbackSurveyOptions: RawFeedbackSurveyOptions[] = [
         disabled: false,
         category: 'friends_family',
     },
-];
+] as const;
 
 export const getFeedbackSurveyOptions = (): RawFeedbackSurveyOptions[] => [
     ...shuffle(stringFeedbackSurveyOptions),
