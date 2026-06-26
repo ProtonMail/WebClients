@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Input } from '@proton/atoms/Input/Input';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
 
@@ -32,19 +33,32 @@ export const Default: Story = {
     },
 };
 
-export const CustomLength: Story = {
+export const DynamicLength: Story = {
     render: () => {
         const [value, setValue] = useState('1a2b');
         const [centerDivider, setCenterDivider] = useState(true);
+        const [length, setLength] = useState(4);
 
         return (
             <div>
+                <div className="mb-4 flex items-center gap-4">
+                    <label htmlFor="length" className="text-sm">
+                        Change length
+                    </label>
+                    <Input
+                        id="length"
+                        type="number"
+                        min={1}
+                        value={length}
+                        onValue={(value) => setLength(Number(value))}
+                    />
+                </div>
                 <div className="mb-4">
                     <div className="flex justify-center">
                         <div className="w-2/3">
                             <TotpInput
                                 value={value}
-                                length={4}
+                                length={length}
                                 onValue={setValue}
                                 type="alphabet"
                                 centerDivider={centerDivider}
