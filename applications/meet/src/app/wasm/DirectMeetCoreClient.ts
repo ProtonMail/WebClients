@@ -1,15 +1,38 @@
 import type { App, ConnectionStateInfo } from '@proton-meet/proton-meet-core';
 
 import type {
+    ChatComposeResultData,
+    ChatIncomingEventInfoData,
     DecryptedMessageInfoData,
     GroupDisplayCodeData,
     GroupKeyInfoData,
     MeetCoreClient,
     ParticipantTrackSettingsInfoData,
 } from './MeetCoreClient';
+import { toChatComposeResultData, toChatIncomingEventInfoData } from './MeetCoreClient';
 
 export class DirectMeetCoreClient implements MeetCoreClient {
     public constructor(private readonly app: App) {}
+
+    public async composeChatMessage(...args: Parameters<App['composeChatMessage']>): Promise<ChatComposeResultData> {
+        const result = await this.app.composeChatMessage(...args);
+        return toChatComposeResultData(result);
+    }
+
+    public async composeChatReaction(...args: Parameters<App['composeChatReaction']>): Promise<ChatComposeResultData> {
+        const result = await this.app.composeChatReaction(...args);
+        return toChatComposeResultData(result);
+    }
+
+    public async composeChatUnreact(...args: Parameters<App['composeChatUnreact']>): Promise<ChatComposeResultData> {
+        const result = await this.app.composeChatUnreact(...args);
+        return toChatComposeResultData(result);
+    }
+
+    public async decodeChat(...args: Parameters<App['decodeChat']>): Promise<ChatIncomingEventInfoData> {
+        const result = await this.app.decodeChat(...args);
+        return toChatIncomingEventInfoData(result);
+    }
 
     public ping(): Promise<bigint> {
         return this.app.ping();

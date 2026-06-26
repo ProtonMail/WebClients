@@ -3,9 +3,15 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { toggleChatMessageReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
+import {
+    addChatMessageReaction,
+    removeChatMessageReaction,
+    selectChatReactionId,
+    toggleChatMessageReaction,
+} from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMLSContext } from '../../contexts/MLSContext';
 import { PublishableDataTypes } from '../../types';
@@ -13,9 +19,12 @@ import { PublishableDataTypes } from '../../types';
 export const useChatMessageReaction = () => {
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
+    const store = useMeetStore();
     const { reportMeetError } = useMeetErrorReporting();
     const notifications = useNotifications();
     const mls = useMLSContext();
+
+    const isNewChatHandling = useFlag('MeetNewChatHandling');
 
     const handleError = (errorCause: string) => {
         reportMeetError('Failed to send chat message reaction', {
@@ -29,11 +38,42 @@ export const useChatMessageReaction = () => {
         });
     };
 
-    const sendReaction = async (messageId: string, emoji: string) => {
-        if (!room || !mls) {
+    const sendReactionNew = async (messageId: string, emoji: string) => {
+        const identity = room.localParticipant.identity;
+
+        // A reaction acts as a toggle: if we already reacted with this emoji we unreact,
+        // referencing the original reaction event id (`replaces_id`).
+        const existingReactionId = selectChatReactionId(store.getState(), messageId, emoji, identity);
+        const isRemoving = existingReactionId !== undefined;
+
+        try {
+            const { payload, local_echo: localEcho } = isRemoving
+                ? await mls.composeChatUnreact(messageId, existingReactionId)
+                : await mls.composeChatReaction(messageId, emoji);
+
+            try {
+                await room.localParticipant.publishData(payload, { reliable: true });
+            } catch {
+                handleError('Failed to send chat message reaction');
+                return false;
+            }
+
+            const action = isRemoving
+                ? removeChatMessageReaction({ replacesId: existingReactionId, identity })
+                : addChatMessageReaction({ reactionId: localEcho.id, messageId, emoji, identity });
+
+            dispatch(action);
+
+            return true;
+        } catch {
+            handleError(
+                isRemoving ? 'Failed to compose chat message unreact' : 'Failed to compose chat message reaction'
+            );
             return false;
         }
+    };
 
+    const sendReactionLegacy = async (messageId: string, emoji: string) => {
         const identity = room.localParticipant.identity;
 
         // Optimistic update: reflect the reaction immediately in the UI
@@ -72,6 +112,14 @@ export const useChatMessageReaction = () => {
         }
 
         return true;
+    };
+
+    const sendReaction = async (messageId: string, emoji: string) => {
+        if (!room || !mls) {
+            return false;
+        }
+
+        return isNewChatHandling ? sendReactionNew(messageId, emoji) : sendReactionLegacy(messageId, emoji);
     };
 
     return sendReaction;
