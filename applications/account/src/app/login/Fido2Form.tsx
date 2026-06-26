@@ -18,6 +18,7 @@ interface Props {
 const Fido2Form = ({ onSubmit, fido2 }: Props) => {
     const [loading, withLoading] = useLoading(false);
     const [fidoError, setFidoError] = useState(false);
+    const [awaitingTouch, setAwaitingTouch] = useState(false);
     const abortControllerRef = useRef<AbortController | null>(null);
 
     const handleAbort = useCallback(() => {
@@ -31,7 +32,7 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
 
     return (
         <>
-            <AuthSecurityKeyContent error={fidoError} />
+            <AuthSecurityKeyContent awaitingTouch={awaitingTouch} error={fidoError} />
             <Button
                 autoFocus={true}
                 size="large"
@@ -48,6 +49,7 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
                         let authenticationCredentialsPayload: Fido2Data;
                         try {
                             setFidoError(false);
+                            setAwaitingTouch(true);
                             handleAbort();
                             const abortController = new AbortController();
                             abortControllerRef.current = abortController;
@@ -57,8 +59,10 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
                             );
                         } catch (error) {
                             setFidoError(true);
-                            // Purposefully logging the error for somewhat easier debugging
+                            setAwaitingTouch(false);
                             captureMessage('Security key auth', { level: 'error', extra: { error } });
+                            // Purposefully logging the error for somewhat easier debugging
+                            // eslint-disable-next-line no-console
                             console.error(error);
                             return;
                         } finally {
