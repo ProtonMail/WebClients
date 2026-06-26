@@ -5,10 +5,16 @@ import { c } from 'ttag';
 import { IcHeart } from '@proton/icons/icons/IcHeart';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { useChatLimitGate } from '../../hooks/useChatLimitGate';
+import { useTierErrors } from '../../hooks/useTierErrors';
+import { useRemainingLimits, shouldShowModelSwitchSuggestion, shouldShowWeeklyLimitUpsell } from '../../services/usageLimitsStore';
+import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import type { Message } from '../../types';
 import { sendGuestNotificationCtaClickedEvent, sendGuestNotificationDismissedEvent } from '../../util/telemetry';
 import { CreateFreeAccountButton } from '../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
 import { ComposerNotificationCard } from './ComposerNotificationCard';
+import { getSelectedModelTier, useOptionalModelTier } from '../../providers/ModelTierProvider';
 
 import './GuestNotificationCard.scss';
 
@@ -28,6 +34,25 @@ interface GuestNotificationCardProps {
 // Only shown for medium and larger screens
 export const GuestNotificationCard = ({ messageChain, isGenerating = false }: GuestNotificationCardProps) => {
     const { isSmallScreen } = useIsLumoSmallScreen();
+    const { isBlocked: isChatLimitBlocked } = useChatLimitGate();
+    const { hasTierErrors } = useTierErrors();
+    const { hasLumoPlus } = useLumoPlan();
+    const { isMaxAvailableByFlag } = useMaxModelAvailability();
+    const remainingLimits = useRemainingLimits();
+    const weeklyLimitUpsellVisible = shouldShowWeeklyLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus);
+    const modelTierContext = useOptionalModelTier();
+    const selectedModelTier = modelTierContext ? getSelectedModelTier(modelTierContext.modelTier) : undefined;
+    const modelSwitchSuggestionVisible =
+        selectedModelTier !== undefined &&
+        shouldShowModelSwitchSuggestion({
+            hasLumoPlus,
+            selectedModelTier,
+            remainingLimits,
+            weeklyLimitUpsellVisible,
+            messageCount: messageChain.length,
+            isGenerating,
+            isMaxAvailableByFlag,
+        });
     const [dismissed, setDismissed] = useState(false);
     const [dismissedAtMessageCount, setDismissedAtMessageCount] = useState(-1);
 
@@ -37,6 +62,9 @@ export const GuestNotificationCard = ({ messageChain, isGenerating = false }: Gu
     const hasCompletedExchange = messageChain.length >= 2;
 
     const shouldShow =
+        !weeklyLimitUpsellVisible &&
+        !modelSwitchSuggestionVisible &&
+        !isChatLimitBlocked &&
         hasCompletedExchange &&
         !isGenerating &&
         (!dismissed || (dismissed && messageChain.length > dismissedAtMessageCount && messageChain.length % 2 === 0));

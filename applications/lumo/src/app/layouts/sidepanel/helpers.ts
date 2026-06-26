@@ -1,52 +1,96 @@
- import { isToday, isWithinInterval, startOfDay, subDays, subMonths } from 'date-fns';
+import { addDays, differenceInCalendarDays, startOfDay, subDays } from 'date-fns';
+import { c } from 'ttag';
 
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
+import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import type { Conversation } from '../../types';
 
-export type DateBucketedConversations = {
-    today: Conversation[];
-    lastWeek: Conversation[];
-    expiringSoon: Conversation[]; // 5-7 days old (will be deleted in 0-2 days for free users)
-    lastMonth: Conversation[];
-    earlier: Conversation[];
-};
+export type ConversationSortField = ChatHistoryDateField;
 
-export const categorizeConversations = (conversations: Conversation[], hasLumoPlus: boolean = false): DateBucketedConversations => {
-    const now = startOfDay(new Date());
+const CONVERSATION_DATE_GROUP_ORDER = ['today', 'yesterday', 'last-week', 'older'] as const;
 
-    const result: DateBucketedConversations = {
-        today: [],
-        lastWeek: [],
-        expiringSoon: [],
-        lastMonth: [],
-        earlier: [],
-    };
+export type ConversationDateGroupKey = (typeof CONVERSATION_DATE_GROUP_ORDER)[number];
 
-    for (const c of conversations) {
-        const createdAt = startOfDay(new Date(c.createdAt));
+export interface ConversationDateGroup {
+    key: ConversationDateGroupKey;
+    title: string;
+    conversations: Conversation[];
+}
 
-        if (isToday(createdAt)) {
-            result.today.push(c);
-        } else if (isWithinInterval(createdAt, { start: subDays(now, 7), end: subDays(now, 1) })) {
-            // Days 1-7 ago
-            if (hasLumoPlus) {
-                result.lastWeek.push(c);
-            } else {
-                // Free users: split into "Last 7 days" (1-4 days) and "Expiring Soon" (5-7 days)
-                if (isWithinInterval(createdAt, { start: subDays(now, 5), end: subDays(now, 1) })) {
-                    result.lastWeek.push(c);
-                } else {
-                    result.expiringSoon.push(c);
-                }
-            }
-        } else if (isWithinInterval(createdAt, { start: subMonths(now, 1), end: subDays(now, 7) })) {
-            // 8-30 days ago
-            result.lastMonth.push(c);
-        } else {
-            result.earlier.push(c);
-        }
+export const sortConversationsByField = (
+    conversations: Conversation[],
+    sortBy: ConversationSortField = 'updatedAt'
+): Conversation[] =>
+    [...conversations].sort((a, b) => new Date(b[sortBy]).getTime() - new Date(a[sortBy]).getTime());
+
+export const getConversationDateGroupKey = (dayDiff: number): ConversationDateGroupKey => {
+    if (dayDiff <= 0) {
+        return 'today';
     }
 
-    return result;
+    if (dayDiff === 1) {
+        return 'yesterday';
+    }
+
+    if (dayDiff <= 7) {
+        return 'last-week';
+    }
+
+    return 'older';
+};
+
+export const getConversationDateGroupTitle = (key: ConversationDateGroupKey): string => {
+    switch (key) {
+        case 'today':
+            return c('collider_2025: Date').t`Today`;
+        case 'yesterday':
+            return c('collider_2025: Date').t`Yesterday`;
+        case 'last-week':
+            return c('collider_2025: Date').t`Last week`;
+        case 'older':
+            return c('collider_2025:Title').t`Older`;
+    }
+};
+
+export const formatConversationDateGroupLabel = (dayStart: Date, now: Date = startOfDay(new Date())): string => {
+    const dayDiff = differenceInCalendarDays(now, dayStart);
+
+    return getConversationDateGroupTitle(getConversationDateGroupKey(dayDiff));
+};
+
+/**
+ * Group conversations into Today, Yesterday, Last week, and Older.
+ * Which date field is used is controlled by sortBy (updatedAt or createdAt).
+ */
+export const groupConversationsByDate = (
+    conversations: Conversation[],
+    { sortBy = 'updatedAt' }: { sortBy?: ConversationSortField } = {}
+): ConversationDateGroup[] => {
+    const now = startOfDay(new Date());
+    const sorted = sortConversationsByField(conversations, sortBy);
+    const groups = new Map<ConversationDateGroupKey, Conversation[]>();
+
+    for (const conversation of sorted) {
+        const dayStart = startOfDay(new Date(conversation[sortBy]));
+        const dayDiff = differenceInCalendarDays(now, dayStart);
+        const key = getConversationDateGroupKey(dayDiff);
+        const existing = groups.get(key);
+
+        if (existing) {
+            existing.push(conversation);
+            continue;
+        }
+
+        groups.set(key, [conversation]);
+    }
+
+    return CONVERSATION_DATE_GROUP_ORDER.filter((key) => groups.has(key)).map((key) => ({
+        key,
+        title: getConversationDateGroupTitle(key),
+        conversations: groups.get(key)!,
+    }));
 };
 
 export const searchConversations = (conversations: Conversation[], searchInput: string) => {
@@ -56,30 +100,133 @@ export const searchConversations = (conversations: Conversation[], searchInput: 
 };
 
 /**
- * Filter conversations to only those within the last 7 days.
- * Used to enforce the 7-day retention policy for free users.
+ * Filter conversations to only those within the free-user retention window.
+ * Retention is based on createdAt.
  */
-export const filterConversationsWithin7Days = (conversations: Conversation[]): Conversation[] => {
-    const now = startOfDay(new Date());
-    const sevenDaysAgo = subDays(now, 7);
+export const filterConversationsWithinRetentionWindow = (
+    conversations: Conversation[],
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS
+): Conversation[] => {
+    const cutoff = subDays(startOfDay(new Date()), retentionDays);
 
     return conversations.filter((conversation) => {
         const createdAt = startOfDay(new Date(conversation.createdAt));
-        return createdAt >= sevenDaysAgo;
+        return createdAt >= cutoff;
     });
 };
 
 /**
- * Apply retention policy based on subscription status.
- * Free users can only access conversations from the last 7 days.
- * Lumo Plus users have access to all conversations.
+ * Apply chat retention policy based on subscription status.
+ * Free users can only access conversations from the retention window.
  */
-export const applyRetentionPolicy = (
-    conversations: Conversation[],
-    hasLumoPlus: boolean
-): Conversation[] => {
+export const applyRetentionPolicy = (conversations: Conversation[], hasLumoPlus: boolean): Conversation[] => {
     if (hasLumoPlus) {
         return conversations;
     }
-    return filterConversationsWithin7Days(conversations);
+
+    return filterConversationsWithinRetentionWindow(conversations);
+};
+
+export type ConversationExpirationUrgency = 'warning' | 'urgent';
+
+/**
+ * Calendar days until a free-user conversation falls outside the retention window.
+ * Returns 0 on the last day the chat is still accessible.
+ */
+export const getConversationRetentionDaysRemaining = (
+    conversation: Conversation,
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    now: Date = new Date()
+): number => {
+    const createdAt = startOfDay(new Date(conversation.createdAt));
+    const expirationDay = addDays(createdAt, retentionDays);
+
+    return differenceInCalendarDays(expirationDay, startOfDay(now));
+};
+
+/**
+ * Returns an urgency level when a conversation is within 2 days of expiring for free users.
+ */
+export const getConversationExpirationUrgency = (
+    conversation: Conversation,
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    now: Date = new Date()
+): ConversationExpirationUrgency | null => {
+    const daysRemaining = getConversationRetentionDaysRemaining(conversation, retentionDays, now);
+
+    if (daysRemaining > 2) {
+        return null;
+    }
+
+    if (daysRemaining <= 1) {
+        return 'urgent';
+    }
+
+    return 'warning';
+};
+
+export const getConversationExpirationTooltip = (daysRemaining: number): string => {
+    if (daysRemaining === 0) {
+        return c('collider_2025: Info')
+            .t`This chat will be removed today unless you upgrade to ${LUMO_SHORT_APP_NAME} Plus.`;
+    }
+
+    if (daysRemaining === 1) {
+        return c('collider_2025: Info')
+            .t`This chat will be removed tomorrow unless you upgrade to ${LUMO_SHORT_APP_NAME} Plus.`;
+    }
+
+    return c('collider_2025: Info')
+        .t`This chat will be removed in 2 days. Upgrade to ${LUMO_SHORT_APP_NAME} Plus to keep it.`;
+};
+
+export const getConversationExpirationBannerTitle = (daysRemaining: number): string => {
+    if (daysRemaining === 0) {
+        return c('collider_2025: Warning').t`This chat expires today`;
+    }
+
+    if (daysRemaining === 1) {
+        return c('collider_2025: Warning').t`This chat expires tomorrow`;
+    }
+
+    return c('collider_2025: Warning').t`This chat expires in 2 days`;
+};
+
+export interface ConversationExpirationCounts {
+    expiringInTwoDays: number;
+    expiringInOneDay: number;
+    expiringToday: number;
+}
+
+export const countConversationsByExpirationUrgency = (
+    conversations: Conversation[],
+    retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
+    now: Date = new Date()
+): ConversationExpirationCounts => {
+    let expiringInTwoDays = 0;
+    let expiringInOneDay = 0;
+    let expiringToday = 0;
+
+    for (const conversation of conversations) {
+        const urgency = getConversationExpirationUrgency(conversation, retentionDays, now);
+
+        if (urgency === 'warning') {
+            expiringInTwoDays++;
+            continue;
+        }
+
+        if (urgency !== 'urgent') {
+            continue;
+        }
+
+        const daysRemaining = getConversationRetentionDaysRemaining(conversation, retentionDays, now);
+
+        if (daysRemaining === 0) {
+            expiringToday++;
+        } else {
+            expiringInOneDay++;
+        }
+    }
+
+    return { expiringInTwoDays, expiringInOneDay, expiringToday };
 };

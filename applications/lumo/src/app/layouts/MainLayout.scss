@@ -1,0 +1,8 @@
+.outer-layout-background {
+	background: var(--background-main-canvas);
+}
+
+.inner-layout-background {
+	position: relative;
+	z-index: 2;
+}

@@ -1,0 +1,14 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.lumo-cat-animation {
+	display: flex;
+	justify-content: center;
+	inline-size: rem(72);
+	block-size: rem(74);
+	margin-block-end: rem(24);
+
+	&__lottie {
+		inline-size: rem(72);
+		block-size: rem(74);
+	}
+}

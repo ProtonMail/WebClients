@@ -3,15 +3,14 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAssetsLimitStatus, useMessagesLimitStatus } from '../../hooks/useResourceLimitStatus';
 import { useGhostChat } from '../../providers/GhostChatProvider';
-import { setNativeGhostMode } from '../../remote/nativeComposerBridgeHelpers';
 import type { ConversationId, SpaceId } from '../../types';
+import { getIsMobileDevice } from '../../util/device';
 import { ComposerNotificationCard, type NotificationSeverity } from '../Notifications/ComposerNotificationCard';
-import {IcExclamationCircle} from "@proton/icons/icons/IcExclamationCircle";
-import {getIsMobileDevice} from "../../util/device";
 
 interface Props {
     conversationId?: ConversationId;
@@ -47,7 +46,6 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
 
     const startNewChat = useCallback(() => {
         setGhostChatMode(false);
-        setNativeGhostMode(false);
         history.push('/');
     }, [history, setGhostChatMode]);
 

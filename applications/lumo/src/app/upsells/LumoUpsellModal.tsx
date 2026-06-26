@@ -9,8 +9,8 @@ import Loader from '@proton/components/components/loader/Loader';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
-import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
+import { LumoLogoWithTierTag } from '../components/LumoLogoWithTierTag/LumoLogoWithTierTag';
 import LumoPlusBackdropOverlay from './LumoPlusBackdropOverlay';
 
 import './LumoPlusUpsellModal.scss';
@@ -97,7 +97,7 @@ const LumoUpsellModal = ({ modalProps, specialBackdrop = false, ctaButton, optio
                     <div className="modal-two-content-container overflow-auto">
                         <ModalTwoContent className="my-8 mx-8">
                             <div className="mb-4">
-                                <img src={lumoPlusLogo} alt="lumo+" style={{ height: '24px' }} />
+                                <LumoLogoWithTierTag tierTag="plus" height="24px" />
                             </div>
                             <p className="mt-2 mb-6 color-weak">{description}</p>
 
