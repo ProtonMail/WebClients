@@ -38,7 +38,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';
@@ -112,8 +111,6 @@ const AccountStepPayment = ({
     onMethodChanged,
     couponConfig,
 }: Props) => {
-    const meetAddonFlag = useFlag('MeetAddonCustomizer');
-
     const signupV2Theme = useSignupV2Theme();
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -360,7 +357,7 @@ const AccountStepPayment = ({
     const loadingPaymentsForm = model.loadingDependencies;
 
     const showLumoCustomizer = app === APPS.PROTONLUMO;
-    const showMeetCustomizer = meetAddonFlag && app === APPS.PROTONMEET;
+    const showMeetCustomizer = app === APPS.PROTONMEET;
 
     const paymentsForm = (
         <>
