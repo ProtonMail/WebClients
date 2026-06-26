@@ -89,6 +89,7 @@ interface Fido2FormProps {
 }
 const Fido2Form = ({ formId, onSubmit, twoFactorAuthRef, fido2, loading }: Fido2FormProps) => {
     const [fidoError, setFidoError] = useState(false);
+    const [awaitingTouch, setAwaitingTouch] = useState(false);
     const abortControllerRef = useRef<AbortController | null>(null);
 
     const handleAbort = useCallback(() => {
@@ -119,6 +120,7 @@ const Fido2Form = ({ formId, onSubmit, twoFactorAuthRef, fido2, loading }: Fido2
                 const getPayload = async () => {
                     try {
                         setFidoError(false);
+                        setAwaitingTouch(true);
                         if (!fido2) {
                             throw new Error('Missing fido2 data');
                         }
@@ -129,6 +131,7 @@ const Fido2Form = ({ formId, onSubmit, twoFactorAuthRef, fido2, loading }: Fido2
                         return await getAuthentication(fido2.AuthenticationOptions, abortController.signal);
                     } catch (error) {
                         setFidoError(true);
+                        setAwaitingTouch(false);
                         captureMessage('Security key auth', { level: 'error', extra: { error } });
                         // Purposefully logging the error for somewhat easier debugging
                         // eslint-disable-next-line no-console
@@ -146,7 +149,7 @@ const Fido2Form = ({ formId, onSubmit, twoFactorAuthRef, fido2, loading }: Fido2
                 onSubmit(getPayload());
             }}
         >
-            <AuthSecurityKeyContent error={fidoError} />
+            <AuthSecurityKeyContent awaitingTouch={awaitingTouch} error={fidoError} />
         </Form>
     );
 };
