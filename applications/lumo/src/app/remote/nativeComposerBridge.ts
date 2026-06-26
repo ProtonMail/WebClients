@@ -15,8 +15,21 @@ import {
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
 
-import type { ModelTier } from '../providers/ModelTierProvider';
+import {
+    DEFAULT_MODEL_TIER,
+    DEFAULT_RESPONSE_MODE,
+    type ModelTier,
+    type ResponseMode,
+    getSelectedModelTier,
+} from '../providers/ModelTierProvider';
 import { LUMO_API_ERRORS } from '../types';
+
+/**
+ * Legacy model tier vocabulary kept for already-released native clients that
+ * predate the model/mode split. Newer clients read `model` + `responseMode`
+ * instead; this field exists so old clients can still decode the bridge state.
+ */
+export type LegacyModelTier = 'auto' | 'fast' | 'thinking';
 
 /**
  * Native Composer Bridge
@@ -78,7 +91,17 @@ export interface EditMode {
 
 export interface State {
     lumoMode: LumoMode;
-    modelTier: ModelTier;
+    /** Legacy field for old native clients; derived from `responseMode`. */
+    modelTier: LegacyModelTier;
+    /** Selectable model for new clients (the web's `auto` collapses to lite). */
+    model: Exclude<ModelTier, 'auto'>;
+    /**
+     * Whether the Max model can currently be selected. `false` when Max is
+     * temporarily unavailable (e.g. high load) for the current user segment;
+     * native greys out the row and shows a "High load" badge.
+     */
+    isMaxModelAvailable: boolean;
+    responseMode: ResponseMode;
     isGhostModeEnabled: boolean;
     isWebSearchEnabled: boolean;
     isCreateImageEnabled: boolean;
@@ -212,7 +235,10 @@ class NativeComposerApi {
     private state: State = {
         isGhostModeEnabled: false,
         lumoMode: LumoMode.Idle,
-        modelTier: 'auto',
+        modelTier: 'thinking',
+        model: getSelectedModelTier(DEFAULT_MODEL_TIER),
+        isMaxModelAvailable: true,
+        responseMode: DEFAULT_RESPONSE_MODE,
         isCreateImageEnabled: false,
         attachedFiles: [],
         isWebSearchEnabled: false,
@@ -369,7 +395,19 @@ class NativeComposerApi {
 
     public setNativeModelTier(modelTier: ModelTier): void {
         console.log(`NativeComposerApi: Setting model type to ${modelTier}`);
-        this.updateState({ modelTier: modelTier });
+        this.updateState({ model: getSelectedModelTier(modelTier) });
+    }
+
+    public setMaxModelAvailable(available: boolean): void {
+        console.log(`NativeComposerApi: Setting max model available to ${available}`);
+        this.updateState({ isMaxModelAvailable: available });
+    }
+
+    public setNativeResponseMode(responseMode: ResponseMode): void {
+        console.log(`NativeComposerApi: Setting response mode to ${responseMode}`);
+        // Keep the legacy `modelTier` field in sync so already-released native
+        // clients still reflect the fast/thinking choice.
+        this.updateState({ responseMode, modelTier: responseMode === 'thinking' ? 'thinking' : 'fast' });
     }
 
     public setWebSearch(enabled: boolean): void {
@@ -405,6 +443,17 @@ class NativeComposerApi {
         console.log(`NativeComposerApi: Change model`);
         const event = new CustomEvent('lumo:changeModelTier', {
             detail: { source: 'nativeComposer', modelTier: modelTier },
+        });
+        window.dispatchEvent(event);
+
+        // Return success (the actual API call will be handled by the web app)
+        return { success: true };
+    }
+
+    public async changeResponseMode(responseMode: ResponseMode): Promise<any> {
+        console.log(`NativeComposerApi: Change response mode`);
+        const event = new CustomEvent('lumo:changeResponseMode', {
+            detail: { source: 'nativeComposer', responseMode: responseMode },
         });
         window.dispatchEvent(event);
 
@@ -530,7 +579,7 @@ class NativeComposerApi {
         injectImageGenerationHelperPrompt(prompt);
     }
 
-    public onComposerError(error: string): void {
+    public onComposerError(error: LUMO_API_ERRORS): void {
         console.log(`Native Composer Bridge: on composer error: ${error}`);
         sendResultToNative('', { status: 'error', error: error });
     }
@@ -622,6 +671,7 @@ try {
         setCreateImage: createNativeWrapper('setCreateImage'),
         toggleCreateImage: createNativeWrapper('toggleCreateImage'),
         changeModelTier: createNativeWrapper('changeModelTier'),
+        changeResponseMode: createNativeWrapper('changeResponseMode'),
 
         // Actions
         uploadFiles: createNativeWrapper('uploadFiles'),

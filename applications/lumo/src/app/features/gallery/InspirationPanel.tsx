@@ -1,9 +1,7 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoArtist from '@proton/styles/assets/img/lumo/lumo-artist.svg';
 
 import { type GalleryPromptSuggestion, getGalleryPromptSuggestions } from './promptSuggestions';
@@ -22,49 +20,30 @@ function pickSuggestions(
     return [...source].sort(() => Math.random() - 0.5).slice(0, DISCOVER_PER_PAGE);
 }
 
-const DiscoverList = ({ onSuggestionClick }: { onSuggestionClick: (s: GalleryPromptSuggestion) => void }) => {
+// TODO: clean up if we don't need shuffle functionality for final version
+export const DiscoverList = ({ onSuggestionClick }: { onSuggestionClick: (s: GalleryPromptSuggestion) => void }) => {
     const pool = useMemo(() => getGalleryPromptSuggestions(), []);
-    const [visible, setVisible] = useState<GalleryPromptSuggestion[]>(() => pickSuggestions(pool, []));
-
-    const handleShuffle = useCallback(() => {
-        setVisible((prev) => pickSuggestions(pool, prev));
-    }, [pool]);
-
-    const canShuffle = pool.length > DISCOVER_PER_PAGE;
+    // const [visible, setVisible] = useState<GalleryPromptSuggestion[]>(() => pickSuggestions(pool, []));
+    const visible = useMemo(() => pickSuggestions(pool, []), [pool]);
 
     return (
-        <div className="inspiration-discover">
-            <div className="inspiration-discover__header">
-                <h2 className="text-bold text-lg">
-                    {c('collider_2025:Label').t`Discover what ${LUMO_SHORT_APP_NAME} can create`}
-                </h2>
-                {canShuffle && (
-                    <button
-                        className="inspiration-discover__shuffle"
-                        onClick={handleShuffle}
-                        type="button"
-                        title={c('collider_2025:Action').t`Shuffle suggestions`}
-                    >
-                        <IcArrowsRotate size={3.5} />
-                    </button>
-                )}
-            </div>
-
-            <div className="inspiration-discover__grid">
+        <div className="w-full overflow-x-auto mt-10">
+            <div className="flex flex-row flex-nowrap gap-4">
                 {visible.map((s) => (
                     <button
                         key={s.id}
-                        className="inspiration-discover__item border border-weak"
+                        className="inspiration-discover__item border border-weak min-w-custom flex flex-row flex-nowrap gap-4 items-center p-4 rounded-xl text-left min-h-custom"
+                        style={{ '--min-w-custom': '250px', '--min-h-custom': '100px' }}
                         onClick={() => onSuggestionClick(s)}
                         type="button"
-                        aria-label={s.title}
+                        aria-label={s.getTitle()}
                     >
                         <span className="inspiration-discover__thumb-wrap">
                             <img src={s.img} alt="" className="inspiration-discover__thumb" />
                         </span>
                         <div className="flex flex-column flex-nwowrap">
-                            <span className="text-semibold">{s.title}</span>
-                            <span className="text-sm color-hint">{s.hint}</span>
+                            <span className="text-semibold">{s.getTitle()}</span>
+                            <span className="text-sm color-hint">{s.getHint?.()}</span>
                         </div>
                     </button>
                 ))}
@@ -73,7 +52,7 @@ const DiscoverList = ({ onSuggestionClick }: { onSuggestionClick: (s: GalleryPro
     );
 };
 
-// ── InspirationPanel ──────────────────────────────────────────────────────────
+//TODO: remove if this is no longer used
 
 export const InspirationPanel = ({
     onSuggestionClick,

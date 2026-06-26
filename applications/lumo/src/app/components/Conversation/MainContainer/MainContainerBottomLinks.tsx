@@ -18,17 +18,17 @@ export const MainContainerBottomLinks = ({ className }: { className?: string }) 
             <li className="pt-1 no-print">
                 <Href
                     href={showNewMarketingLinks ? getMarketingUrl('/lumo') : '/about'}
-                    className="inline-flex py-3 px-4 color-weak text-no-decoration"
+                    className="inline-flex py-3 px-4 color-hint text-no-decoration"
                 >{c('collider_2025: Top nav link').t`About`}</Href>
             </li>
             <li className="pt-1 no-print">
-                <Href href="https://proton.me" className="inline-flex py-3 px-4 color-weak text-no-decoration">{c(
+                <Href href="https://proton.me" className="inline-flex py-3 px-4 color-hint text-no-decoration">{c(
                     'collider_2025: b2b'
                 ).t`By ${BRAND_NAME}`}</Href>
             </li>
             {showForBusinessLink && (
                 <li className="pt-1 no-print">
-                    <LumoB2BUpsellLink className="inline-flex py-3 px-4 color-weak text-no-decoration flex flex-row items-center gap-1" />
+                    <LumoB2BUpsellLink className="inline-flex py-3 px-4 color-hint text-no-decoration flex flex-row items-center gap-1" />
                 </li>
             )}
         </ul>

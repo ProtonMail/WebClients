@@ -1,4 +1,5 @@
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../../../types-api';
+import type { LumoStreamUsage, UsageMessage } from '../../../types-api';
 import { mapStreamErrorCode } from './generation-terminal';
 import type {
     GenerationResponseMessage,
@@ -33,7 +34,7 @@ type OpenAiChunk = {
         delta?: OpenAiDelta;
         finish_reason?: string | null;
     }[];
-    usage?: Record<string, number>;
+    usage?: LumoStreamUsage;
     error?: {
         message?: string;
         type?: string;
@@ -153,11 +154,16 @@ export class StreamProcessor {
             return this.processCommentLine(trimmed);
         }
 
-        if (!trimmed.startsWith('data:')) {
+        let payload: string | undefined;
+        if (trimmed.startsWith('data:')) {
+            payload = trimmed.slice(5).trim();
+        } else if (trimmed.startsWith('{')) {
+            // Some endpoints emit bare JSON lines without an SSE `data:` prefix.
+            payload = trimmed;
+        } else {
             return [];
         }
 
-        const payload = trimmed.slice(5).trim();
         if (!payload) {
             return [];
         }
@@ -260,12 +266,23 @@ export class StreamProcessor {
             return [{ type: mapStreamErrorCode(chunk.error.code) }];
         }
 
+        // const messages: GenerationResponseMessage[] = [];
+
+        // if (chunk.usage) {
+        //     messages.push(this.createUsageMessage(chunk.usage));
+        // }
+
+        const messages: GenerationResponseMessage[] = [];
+
+        if (chunk.usage) {
+            messages.push(this.createUsageMessage(chunk.usage));
+        }
+
         if (!chunk.choices?.length) {
-            return [];
+            return messages;
         }
 
         const choice = chunk.choices[0];
-        const messages: GenerationResponseMessage[] = [];
 
         if (choice.finish_reason === 'content_filter') {
             messages.push({ type: 'harmful' });
@@ -279,6 +296,13 @@ export class StreamProcessor {
         messages.push(...this.processDelta(choice.delta, target));
 
         return messages;
+    }
+
+    private createUsageMessage(usage: LumoStreamUsage): UsageMessage {
+        return {
+            type: 'usage',
+            usage,
+        };
     }
 
     private processDelta(delta: OpenAiDelta, defaultTarget: GenerationTarget): GenerationResponseMessage[] {
@@ -322,10 +346,10 @@ export class StreamProcessor {
             return null;
         }
 
-        let parameters: Record<string, unknown> = {};
+        let toolArguments: Record<string, unknown> = {};
         if (existing.arguments) {
             try {
-                parameters = JSON.parse(existing.arguments);
+                toolArguments = JSON.parse(existing.arguments);
             } catch {
                 return {
                     type: 'token_data',
@@ -333,7 +357,7 @@ export class StreamProcessor {
                     count: this.counters.toolCall++,
                     content: JSON.stringify({
                         name: existing.name,
-                        parameters: existing.arguments,
+                        arguments: existing.arguments,
                     }),
                 };
             }
@@ -345,7 +369,7 @@ export class StreamProcessor {
             count: this.counters.toolCall++,
             content: JSON.stringify({
                 name: existing.name,
-                parameters,
+                arguments: toolArguments,
             }),
         };
     }

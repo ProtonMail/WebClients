@@ -1,0 +1,27 @@
+.animated-bg-canvas {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	border-radius: inherit;
+	transition:
+		opacity 0.3s ease-in-out,
+		visibility 0.3s ease-in-out;
+}
+
+.animated-bg-shader {
+	z-index: 0;
+}
+
+.animated-bg-particles {
+	z-index: 1;
+	opacity: 1;
+}
+
+.animated-bg-hidden-shader {
+	visibility: hidden !important;
+	opacity: 0 !important;
+}
+
+.animated-bg-hidden-particles {
+	opacity: 0 !important;
+}

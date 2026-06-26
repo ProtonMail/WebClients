@@ -164,7 +164,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                 <Button
                     icon
                     size="small"
-                    shape="ghost"
+                    shape="solid"
                     className="lumo-no-copy"
                     // style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
                     disabled={disableButtons}
@@ -178,7 +178,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                 <Button
                     icon
                     size="small"
-                    shape="ghost"
+                    shape="solid"
                     className="lumo-no-copy"
                     // style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
                     disabled={disableButtons}

@@ -21,8 +21,8 @@ export const useSidebarVisibility = (): SidebarVisibility => {
         isSmallScreen,
         isGuest,
         showMobileHeader: isSmallScreen,
-        // Search is hidden only for guests on mobile
-        showSearch: !(isSmallScreen && isGuest),
+        // Search is hidden only for guests
+        showSearch: !isGuest,
         showGallery: imageTools,
         showUserDropdown: !isGuest,
         // Collapse toggle is desktop-only regardless of auth state

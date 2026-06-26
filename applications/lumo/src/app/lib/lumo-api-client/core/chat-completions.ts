@@ -1,4 +1,3 @@
-import type { LumoModelId } from '../../../features/api-docs/lumoApiDocs.config';
 import type {
     ChatCompletionsContentPart,
     ChatCompletionsImagePart,
@@ -15,30 +14,45 @@ import type {
 import { Role } from '../../../types-api';
 
 export const DEFAULT_CHAT_MODEL = 'lumo';
-export const DEFAULT_REASONING_MODEL: LumoModelId = 'lumo-plus-v1';
+export const LUMO_LITE_MODEL = 'lumo-lite';
+export const LUMO_MAX_MODEL = 'lumo-max';
+
+export type LumoApiModelTier = 'auto' | 'lumo-lite' | 'lumo-max';
 
 export type ToChatCompletionsOptions = {
     enableReasoning?: boolean;
     model?: string;
-    reasoningModel?: string;
+    modelTier?: LumoApiModelTier;
     target?: LumoCompletionTarget;
 };
+
+export function resolveChatModel(modelTier: LumoApiModelTier = 'auto', model?: string): string {
+    if (model) {
+        return model;
+    }
+
+    switch (modelTier) {
+        case 'lumo-lite':
+            return LUMO_LITE_MODEL;
+        case 'lumo-max':
+            return LUMO_MAX_MODEL;
+        default:
+            return DEFAULT_CHAT_MODEL;
+    }
+}
 
 export function toChatCompletionsBody(
     request: LumoApiGenerationRequest,
     options: ToChatCompletionsOptions = {}
 ): ChatCompletionsRequest {
-    const {
-        enableReasoning = Boolean(request.options?.reasoning),
-        model = DEFAULT_CHAT_MODEL,
-        reasoningModel = DEFAULT_REASONING_MODEL,
-    } = options;
+    const { enableReasoning = Boolean(request.options?.reasoning), model, modelTier = 'auto' } = options;
 
     const tools = normalizeTools(request.options?.tools);
     const body: ChatCompletionsRequest = {
-        model: enableReasoning ? reasoningModel : model,
+        model: resolveChatModel(modelTier, model),
         messages: serializeMessages(request.turns),
         stream: true,
+        stream_options: { include_usage: true },
         reasoning_effort: enableReasoning ? 'high' : 'none',
     };
 

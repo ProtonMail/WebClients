@@ -4,6 +4,7 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/lib/em' as *;
 
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
@@ -13,7 +14,7 @@ im.$media-expressions: $media-expressions;
 // packages/styles/scss/base/_fonts.scss and takes precedence over InterVariable
 // while still respecting the user's --setting-font-family preference.
 :root {
-	--optional-font-family: 'OpenRunde', system-ui, sans-serif;
+	--optional-font-family: 'Inter', system-ui, sans-serif;
 }
 
 .main-text-container {
@@ -28,21 +29,44 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
+// TODO: need to investigate why this only works here
+// @import './layouts/sidebar/Sidebar.scss';
+
+// TODO: might not need ABC arizona
+
 .main-text {
-	font-family: Syne, Inter, system-ui, sans-serif;
-	font-size: rem(36);
+	font-family: 'ABC Arizona Flare', 'ABC Arizona', Syne, Inter, system-ui, sans-serif;
+	font-size: rem(32);
+	font-weight: normal;
+	line-height: rem(38);
+	letter-spacing: -1.28px;
 	font-feature-settings: 'ss04';
 
 	@include im.media('<=medium') {
-		font-size: rem(30);
+		font-size: rem(28);
+		line-height: rem(34);
+		letter-spacing: -1.12px;
 	}
 
 	@container maintext (width < 16rem) {
-		font-size: rem(24);
+		font-size: rem(22);
+		line-height: rem(26);
+		letter-spacing: -0.88px;
+	}
+
+	&--upsells {
+		font-size: rem(26);
 	}
 
 	&.small {
-		font-size: rem(22);
+		font-size: rem(20);
+		line-height: rem(24);
+		letter-spacing: -0.8px;
+	}
+
+	&.medium {
+		font-size: rem(24);
+		letter-spacing: -0.96px;
 	}
 }
 
@@ -58,100 +82,6 @@ im.$media-expressions: $media-expressions;
 		opacity: 1;
 		pointer-events: auto;
 	}
-}
-
-.sidebar {
-	// Smooth width transitions for desktop
-	transition:
-		inline-size 0.3s ease-in-out,
-		transform 0.3s ease-in-out;
-
-	// Hardware acceleration
-	will-change: inline-size, transform;
-	backface-visibility: hidden;
-
-	// Only apply translateZ on desktop to avoid conflicts with mobile translateX
-	@include im.media('>small') {
-		transform: translateZ(0);
-	}
-
-	&--collapsed {
-		inline-size: 64px; // Collapsed width - fits icons + padding
-	}
-
-	&:not(.sidebar--collapsed) {
-		inline-size: 300px; // Expanded width - comfortable for text
-	}
-
-	// Mobile sidebar transitions - true overlay that doesn't affect layout
-	@include im.media('<=small') {
-		position: fixed !important;
-		inset-block-start: 0 !important;
-		inset-inline-start: 0 !important;
-		block-size: 100% !important;
-		z-index: 100 !important;
-		inline-size: 100% !important;
-
-		// Force transitions to work even with immediate class changes
-		transition: transform 0.3s ease-in-out !important;
-		will-change: transform !important;
-
-		// Mobile hidden state - completely off-screen (default state)
-		transform: translateX(-100%) !important;
-
-		// Mobile overlay state - slide into view as overlay
-		&.sidebar-expanded {
-			transform: translateX(0) !important;
-		}
-
-		// Ensure transition works both ways
-		&:not(.sidebar-expanded) {
-			transform: translateX(-100%) !important;
-		}
-
-		// Ensure sidebar doesn't affect main content layout
-		margin: 0 !important;
-		padding: 0 !important;
-
-		// Remove any width that might affect layout calculations
-		flex: none !important;
-		flex-basis: auto !important;
-	}
-}
-
-.sidebar-expanded {
-	background-color: var(--background-weak);
-
-	// Safari performance optimizations for expanded state
-	will-change: transform;
-	backface-visibility: hidden;
-	transform: translateZ(0);
-
-	.lumo-guest-disclaimer {
-		background-color: var(--background-weak);
-	}
-}
-
-// Sidebar backdrop - base properties (mobile enhancements in LumoSidebar.scss)
-.sidebar-backdrop {
-	position: fixed;
-	inset-block-start: 0;
-	inset-inline-start: 0;
-	inline-size: 100vw;
-	block-size: 100%; // Use percentage instead of viewport units for Safari compatibility
-	opacity: 1;
-	pointer-events: auto;
-	z-index: 90; // Behind sidebar (which is z-index: 100) but above content
-
-	// Use hardware acceleration for backdrop
-	will-change: opacity;
-	backface-visibility: hidden;
-	transform: translateZ(0);
-
-	// Smooth backdrop transitions
-	transition:
-		opacity 0.3s ease-in-out,
-		backdrop-filter 0.3s ease-in-out;
 }
 
 .navigation-link.is-active {
@@ -181,18 +111,6 @@ im.$media-expressions: $media-expressions;
 // TODO: check that this cna be deleted, was from old designs jade/ v1
 .user-dropdown-text:not(.homepage-wrapper *, .mobile-user-dropdown *, .desktop-sidebar-user-dropdown *) {
 	display: none;
-}
-
-.user-dropdown-button {
-	flex-shrink: 0;
-
-	.user-initials {
-		font-size: rem(12);
-	}
-
-	.rounded {
-		border-radius: var(--border-radius-md);
-	}
 }
 
 .chat-container {
@@ -282,11 +200,6 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.dropdown {
-	--selection-background-color: var(--interaction-default-hover);
-	--selection-text-color: var(--interaction-weak-contrast);
-}
-
 .new-label {
 	background-color: #8080ff;
 	color: white;
@@ -296,4 +209,103 @@ im.$media-expressions: $media-expressions;
 .dropdown-content svg {
 	stroke-width: 0.3px;
 	stroke: currentcolor;
+}
+
+// Do not delete - used for development layout debugging
+// body::before {
+// 	position: fixed;
+// 	display: flex;
+// 	inset-block-start: 0;
+// 	background-color: red;
+// 	color: white;
+// 	inset-inline-start: 0;
+// 	z-index: 12000;
+// }
+
+// overrides
+// TOGGLE COMPONENT
+.toggle-container {
+	background-color: var(--background-upsell-toggle) !important;
+
+	&::after {
+		border: none;
+	}
+
+	&::before {
+		background-color: var(--background-upsell-toggle-button);
+		margin-inline-start: 5px;
+		margin-block: auto;
+		inline-size: calc(#{em(24)} - 6px);
+		block-size: calc(#{em(24)} - 6px);
+	}
+
+	.toggle-container-text .toggle-container-img {
+		opacity: 0;
+	}
+
+	&--checked {
+		background-color: var(--interaction-norm) !important;
+
+		&::before {
+			background-color: var(--background-upsell-toggle-button);
+
+			// track(em(40)) - base-thumb(em(24)) - em(4) to preserve 5px margin on each side
+			transform: translateX(#{em(40) - em(24) - em(4)});
+
+			@at-root {
+				[dir='rtl'] & {
+					transform: translateX(-#{em(40) - em(24) - em(4)});
+				}
+			}
+		}
+	}
+
+	// Keep Lumo colors for disabled states; base opacity: 0.5 handles the visual fade
+	&--disabled:not(.toggle-container--loading) {
+		background-color: var(--background-upsell-toggle) !important;
+
+		&::before {
+			background-color: var(--background-upsell-toggle-button) !important;
+		}
+
+		&.toggle-container--checked {
+			background-color: var(--interaction-norm) !important;
+		}
+	}
+
+	// No hover state changes
+	&:not(.toggle-container--disabled):hover::before,
+	&:not(.toggle-container--disabled).toggle-container--checked:hover::before {
+		background-color: var(--background-upsell-toggle-button);
+	}
+}
+
+// Dropdown
+
+.dropdown {
+	--selection-background-color: var(--interaction-default-hover);
+	--selection-text-color: var(--interaction-weak-contrast);
+	--border-norm: var(--border-weak);
+
+	box-shadow: 0 4px 28px 0 rgb(0 0 0 / 0.1);
+	padding: 0.25rem;
+	border-radius: var(--border-radius-xl);
+
+	.dropdown-item-button {
+		border-radius: var(--border-radius-md);
+	}
+}
+
+// Button
+
+button {
+	&.--lumo-background {
+		--button-default-background-color: #f5f6fe;
+
+		background-color: var(--button-default-background-color);
+	}
+}
+
+.button-solid-weak {
+	--interaction-weak: var(--interaction-solid-weak-custom);
 }

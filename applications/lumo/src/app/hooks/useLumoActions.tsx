@@ -6,7 +6,6 @@ import type { User } from '@proton/shared/lib/interfaces';
 import { useNativeComposerPromptApi } from '../components/Composer/hooks/useNativeComposerPromptApi';
 import {
     formatPersonalization,
-    generateFakeConversationToShowTierError,
     regenerateMessage,
     retrySendMessage,
     sendMessage,
@@ -14,28 +13,27 @@ import {
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { addContextToMessages, fillAttachmentData, fillOneAttachmentData } from '../llm/attachments';
 import { getApproximateTokenCount } from '../llm/tokenizer';
-import { SearchService } from '../services/search/searchService';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
-import { useGuestTracking } from '../providers/GuestTrackingProvider';
 import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
+import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
-import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
-import type { ActionParams, Attachment, ErrorContext, RetryStrategy } from '../types';
+import { SearchService } from '../services/search/searchService';
+import type { ActionParams, Attachment, ErrorContext, ImageGenerationOptions, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
 import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
+import { useChatLimitGate } from './useChatLimitGate';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
 import { useLumoFlags } from './useLumoFlags';
 import { usePersonalization } from './usePersonalization';
 import usePreferredSiblings from './usePreferredSiblings';
-import { useTierErrors } from './useTierErrors';
 
 // Constants
 const OPERATION_MESSAGES = {
@@ -55,7 +53,11 @@ interface Props {
     navigateCallback: (conversationId: ConversationId) => void;
 }
 
-export type HandleSendMessage = (newMessage: string, isWebSearchButtonToggled: boolean) => Promise<void>;
+export type HandleSendMessage = (
+    newMessage: string,
+    isWebSearchButtonToggled: boolean,
+    imageOptions?: ImageGenerationOptions
+) => Promise<void>;
 export type HandleRegenerateMessage = (
     message: Message,
     isWebSearchButtonToggled: boolean,
@@ -80,9 +82,8 @@ export const useLumoActions = ({
     const api = useApi();
     const messageChainRef = useRef<HTMLDivElement | null>(null);
     const { preferredSiblings, preferSibling, getSiblingInfo } = usePreferredSiblings(messageMap);
-    const guestTracking = useGuestTracking();
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
-    const { hasTierErrors } = useTierErrors();
+    const { isBlocked: isChatLimitBlocked, ensureTierError } = useChatLimitGate();
     const {
         smoothRendering: ffSmoothRendering,
         externalTools: ffExternalTools,
@@ -98,7 +99,7 @@ export const useLumoActions = ({
 
     // Custom hooks
     const { isGhostChatMode: isGhostMode } = useGhostChat();
-    const { isThinkingEnabled } = useModelTier();
+    const { isThinkingEnabled, modelTier } = useModelTier();
     const { ensureConversationAndSpace } = useConversationState({
         conversationId,
         spaceId: space?.id,
@@ -217,7 +218,7 @@ export const useLumoActions = ({
         spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal
     ) => {
-        const { newMessageContent, isWebSearchButtonToggled } = actionParams;
+        const { newMessageContent, isWebSearchButtonToggled, imageOptions } = actionParams;
         if (!newMessageContent) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
@@ -263,9 +264,11 @@ export const useLumoActions = ({
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
+                    modelTier,
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
+                    imageAspectRatio: imageOptions?.aspectRatio,
                 },
                 settingsContext: {
                     personalization,
@@ -277,9 +280,6 @@ export const useLumoActions = ({
         // Clear @mention provisionals now that the message has been sent.
         // Uploaded provisionals (non-mention) were promoted to the space by sendMessage.
         dispatch(clearProvisionalAttachments());
-
-        // Increment guest question count after successful send
-        guestTracking?.incrementCount();
     };
 
     const handleRetryAction = async (
@@ -352,6 +352,7 @@ export const useLumoActions = ({
                     updateSibling: preferSibling,
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableReasoning: isThinkingEnabled,
+                    modelTier,
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,
@@ -416,6 +417,7 @@ export const useLumoActions = ({
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableImageTools: ffImageTools,
                     enableReasoning: isThinkingEnabled,
+                    modelTier,
                     navigateCallback,
                     enableSmoothing: ffSmoothRendering,
                     isGhostMode,
@@ -425,9 +427,6 @@ export const useLumoActions = ({
                 },
             })
         );
-
-        // Increment guest question count after successful edit
-        guestTracking?.incrementCount();
     };
 
     // Function to add retry instructions based on strategy
@@ -517,6 +516,7 @@ export const useLumoActions = ({
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
+                    modelTier,
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,
@@ -535,7 +535,6 @@ export const useLumoActions = ({
     const handleMessageAction = async (actionParams: ActionParams) => {
         const {
             actionType,
-            newMessageContent,
             originalMessage,
             retryStrategy = 'simple',
             customRetryInstructions,
@@ -548,18 +547,8 @@ export const useLumoActions = ({
             return;
         }
 
-        // TODO: test when Jails with weekly limits are updated
-        //TODO: check if this code is still needed
-        if (hasTierErrors) {
-            // if on main page and tier errors exists, generate fake conversation to show tier error
-            if (!conversationId) {
-                await dispatch(
-                    generateFakeConversationToShowTierError({
-                        newMessageContent: newMessageContent ?? '',
-                        navigateCallback,
-                    })
-                );
-            }
+        if (isChatLimitBlocked) {
+            ensureTierError();
             return;
         }
 
@@ -567,7 +556,12 @@ export const useLumoActions = ({
             clearErrors();
         }
 
-        const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensureConversationAndSpace();
+        const ensuredConversation = ensureConversationAndSpace();
+        if (!ensuredConversation) {
+            return;
+        }
+
+        const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensuredConversation;
 
         // Register the generation in the app-level registry, keyed by the final conversation id.
         // This must happen after the conversation exists so abort/stop and the in-progress guard
@@ -632,14 +626,18 @@ export const useLumoActions = ({
         }
     };
 
-    const handleSendMessage: HandleSendMessage = async (messageContent: string, isWebSearchButtonToggled: boolean) => {
-        // send telemetry for send message
+    const handleSendMessage: HandleSendMessage = async (
+        messageContent: string,
+        isWebSearchButtonToggled: boolean,
+        imageOptions?: ImageGenerationOptions
+    ) => {
         sendMessageSendEvent();
 
         return handleMessageAction({
             actionType: 'send',
             newMessageContent: messageContent,
             isWebSearchButtonToggled,
+            imageOptions,
         });
     };
 

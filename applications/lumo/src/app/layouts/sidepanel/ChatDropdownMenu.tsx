@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,10 +13,11 @@ import type { Conversation } from '../../types';
 interface Props {
     conversation: Conversation;
     onOpenChange?: (isOpen: boolean) => void;
+    additionalOptions?: DropdownOptions[];
 }
 
-const ChatDropdownMenu = ({ conversation, onOpenChange }: Props) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const ChatDropdownMenu = ({ conversation, onOpenChange, additionalOptions = [] }: Props) => {
+    const isOpenRef = useRef(false);
 
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
@@ -29,14 +30,11 @@ const ChatDropdownMenu = ({ conversation, onOpenChange }: Props) => {
         });
 
     const toggleDropdown = () => {
-        setIsDropdownOpen((prev) => {
-            const next = !prev;
-            onOpenChange?.(next);
-            return next;
-        });
+        isOpenRef.current = !isOpenRef.current;
+        onOpenChange?.(isOpenRef.current);
     };
 
-    const options: DropdownOptions[] = [
+    const defaultOptions: DropdownOptions[] = [
         {
             label: !isStarred ? c('Option').t`Add to favorites` : c('Option').t`Remove from favorites`,
             icon: 'star',
@@ -45,9 +43,11 @@ const ChatDropdownMenu = ({ conversation, onOpenChange }: Props) => {
         { label: c('Option').t`Delete`, icon: 'trash', onClick: openConfirmationModal },
     ];
 
+    const options = [...additionalOptions, ...defaultOptions];
+
     return (
         <>
-            <DropdownMenu options={options} onToggle={toggleDropdown} isOpen={isDropdownOpen} />
+            <DropdownMenu options={options} onToggle={toggleDropdown} />
             {showConfirmDeleteModal && <ConfirmDeleteModal handleDelete={handleDelete} {...confirmDeleteModalProps} />}
             {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />}
         </>

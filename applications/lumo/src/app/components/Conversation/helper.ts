@@ -32,7 +32,7 @@ import type { Memory } from '../../redux/slices/lumoUserSettings';
 import type { LumoDispatch as AppDispatch, LumoDispatch, LumoState } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
-import type { MessageId, ShallowAttachment } from '../../types';
+import type { ImageAspectRatio, MessageId, ShallowAttachment } from '../../types';
 import {
     type Attachment,
     type ConversationId,
@@ -85,9 +85,11 @@ export type UiContext = {
     enableExternalTools: boolean;
     enableImageTools: boolean;
     enableReasoning?: boolean;
+    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
     enableSmoothing?: boolean; // todo remove optional
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
+    imageAspectRatio?: ImageAspectRatio;
 };
 
 export type SettingsContext = {
@@ -398,9 +400,11 @@ export function sendMessage({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         generateTitle,
-                        config: {
+                        imageAspectRatio: ui.imageAspectRatio,
+                    config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
                         },
@@ -601,6 +605,7 @@ export function regenerateMessage({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
@@ -801,6 +806,7 @@ export function retrySendMessage({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         generateTitle: requestTitle,
                         config: {

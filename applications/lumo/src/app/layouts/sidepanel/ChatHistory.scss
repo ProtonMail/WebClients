@@ -1,4 +1,10 @@
 .chat-history-container {
 	// Hardware acceleration for smooth scroll
 	transform: translateZ(0);
+	min-inline-size: 0;
+}
+
+.chat-history-list {
+	min-inline-size: 0;
+	overflow-x: hidden;
 }
