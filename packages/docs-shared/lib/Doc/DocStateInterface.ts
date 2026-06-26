@@ -3,6 +3,13 @@ import type { Doc } from 'yjs'
 import type { DocsAwareness } from './DocsAwareness'
 import type { RtsMessagePayload } from './RtsMessagePayload'
 
+export type DocumentUpdateGuardContext = {
+  update: Uint8Array<ArrayBuffer>
+  origin: unknown
+}
+
+export type DocumentUpdateGuard = (context: DocumentUpdateGuardContext) => boolean
+
 export interface DocStateInterface extends Observable<string> {
   receiveMessage(message: RtsMessagePayload): void
   getDocState(): Uint8Array<ArrayBuffer>
@@ -10,6 +17,7 @@ export interface DocStateInterface extends Observable<string> {
   performClosingCeremony(): void
   getClientId(): number
   getDoc(): Doc
+  runWithDocumentUpdateGuard<T>(guard: DocumentUpdateGuard, callback: () => T): T
 
   awareness: DocsAwareness
 
