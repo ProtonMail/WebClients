@@ -6,8 +6,24 @@ import { type EffectiveRole, getFormattedNodeLocation, getNodeEffectiveRole } fr
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
+import { createDebouncedBuffer } from '../../../../utils/createDebouncedBuffer';
 import { useSearchViewStore } from '../../searchView/store';
 import { loadNodesForSearchView } from './loadNodesForSearchView';
+
+// Use a synchronous pass-through buffer so tests don't need fake timers.
+jest.mock('../../../../utils/createDebouncedBuffer', () => ({
+    createDebouncedBuffer: jest.fn((flush: (items: unknown[]) => void) => {
+        const buffer: unknown[] = [];
+        return {
+            push: (item: unknown) => buffer.push(item),
+            drain: () => {
+                if (buffer.length > 0) {
+                    flush(buffer.splice(0));
+                }
+            },
+        };
+    }),
+}));
 
 jest.mock('@proton/drive/index', () => ({
     ...jest.requireActual('@proton/drive/index'),
@@ -34,22 +50,14 @@ const mockedGetNodeEffectiveRole = jest.mocked(getNodeEffectiveRole);
 describe('loadNodesForSearchView', () => {
     let mockDrive: Partial<ProtonDriveClient>;
     let mockCreateNotification: jest.Mock;
-    let mockHandleError: jest.Mock;
-    let mockSetSearchResultItems: jest.Mock;
-    let mockSetLoading: jest.Mock;
-    let mockCleanupStaleItems: jest.Mock;
-    let mockMarkStoreAsDirty: jest.Mock;
+    let mockAddSearchResultItems: jest.Mock;
     let mockAbortSignal: AbortSignal;
 
     beforeEach(() => {
         jest.clearAllMocks();
 
         mockCreateNotification = jest.fn();
-        mockHandleError = jest.fn();
-        mockSetSearchResultItems = jest.fn();
-        mockSetLoading = jest.fn();
-        mockCleanupStaleItems = jest.fn();
-        mockMarkStoreAsDirty = jest.fn();
+        mockAddSearchResultItems = jest.fn();
         mockAbortSignal = new AbortController().signal;
 
         mockDrive = {
@@ -64,10 +72,7 @@ describe('loadNodesForSearchView', () => {
         } as any);
 
         jest.spyOn(useSearchViewStore, 'getState').mockReturnValue({
-            setSearchResultItems: mockSetSearchResultItems,
-            setLoading: mockSetLoading,
-            cleanupStaleItems: mockCleanupStaleItems,
-            markStoreAsDirty: mockMarkStoreAsDirty,
+            addSearchResultItems: mockAddSearchResultItems,
         } as any);
 
         mockedGetFormattedNodeLocation.mockResolvedValue('/some/location');
@@ -83,24 +88,22 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
 
-        expect(mockSetLoading).toHaveBeenCalledWith(true);
-        expect(mockSetSearchResultItems).toHaveBeenCalledWith([
-            expect.objectContaining({
-                nodeUid: 'node-1',
-                name: 'mock-file.txt',
-                type: mockNode.type,
-                role: 'viewer',
-                mediaType: mockNode.mediaType,
-                activeRevisionUid: expect.any(String),
-                size: mockNode.totalStorageSize,
-                modificationTime: mockNode.modificationTime,
-                location: '/some/location',
-                haveSignatureIssues: false,
-            }),
-        ]);
-        expect(mockCleanupStaleItems).toHaveBeenCalled();
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
-        expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
+        expect(mockAddSearchResultItems).toHaveBeenCalledWith(
+            expect.arrayContaining([
+                expect.objectContaining({
+                    nodeUid: 'node-1',
+                    name: 'mock-file.txt',
+                    type: mockNode.type,
+                    role: 'viewer',
+                    mediaType: mockNode.mediaType,
+                    activeRevisionUid: expect.any(String),
+                    size: mockNode.totalStorageSize,
+                    modificationTime: mockNode.modificationTime,
+                    location: '/some/location',
+                    haveSignatureIssues: false,
+                }),
+            ])
+        );
     });
 
     it('should filter out nodes that are trashed', async () => {
@@ -112,9 +115,7 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
 
-        expect(mockSetSearchResultItems).not.toHaveBeenCalled();
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
-        expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
+        expect(mockAddSearchResultItems).not.toHaveBeenCalled();
     });
 
     it('should filter out nodes whose parent is trashed', async () => {
@@ -131,9 +132,7 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['child-1'], mockAbortSignal);
 
-        expect(mockSetSearchResultItems).not.toHaveBeenCalled();
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
-        expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
+        expect(mockAddSearchResultItems).not.toHaveBeenCalled();
     });
 
     it('should filter out nodes whose grandparent is trashed', async () => {
@@ -154,9 +153,7 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['child-1'], mockAbortSignal);
 
-        expect(mockSetSearchResultItems).not.toHaveBeenCalled();
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
-        expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
+        expect(mockAddSearchResultItems).not.toHaveBeenCalled();
     });
 
     it('should handle missing nodes and skip them', async () => {
@@ -168,10 +165,8 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['missing-1'], mockAbortSignal);
 
-        expect(mockHandleError).not.toHaveBeenCalled();
+        expect(mockAddSearchResultItems).not.toHaveBeenCalled();
         expect(mockCreateNotification).not.toHaveBeenCalled();
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
-        expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
     });
 
     it('should handle multiple nodes including some missing and some trashed', async () => {
@@ -187,28 +182,19 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['node-1', 'node-2', 'node-3'], mockAbortSignal);
 
-        // Only the valid node should be added
-        expect(mockSetSearchResultItems).toHaveBeenCalledTimes(1);
-        expect(mockSetSearchResultItems).toHaveBeenCalledWith([
-            expect.objectContaining({
-                nodeUid: 'node-1',
-            }),
-        ]);
+        const allFlushed = mockAddSearchResultItems.mock.calls.flat(2);
+        expect(allFlushed).toHaveLength(1);
+        expect(allFlushed[0]).toMatchObject({ nodeUid: 'node-1' });
         expect(mockCreateNotification).not.toHaveBeenCalled();
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
-        expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
     });
 
-    it('should handle errors during iteration and not show notification if error should be tracked', async () => {
+    it('propagates fatal errors from iterateNodes to the caller', async () => {
         mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            throw new Error('Abort error');
+            throw new Error('fatal error');
         });
 
-        await loadNodesForSearchView(['node-1'], mockAbortSignal);
-
-        expect(mockHandleError).not.toHaveBeenCalled();
+        await expect(loadNodesForSearchView(['node-1'], mockAbortSignal)).rejects.toThrow('fatal error');
         expect(mockCreateNotification).not.toHaveBeenCalled();
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
     });
 
     it('should handle nodes with signature issues', async () => {
@@ -226,12 +212,8 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
 
-        expect(mockSetSearchResultItems).toHaveBeenCalledWith([
-            expect.objectContaining({
-                nodeUid: 'node-1',
-                haveSignatureIssues: true,
-            }),
-        ]);
+        const allFlushed = mockAddSearchResultItems.mock.calls.flat(2);
+        expect(allFlushed[0]).toMatchObject({ nodeUid: 'node-1', haveSignatureIssues: true });
     });
 
     it('should use modificationTime or fallback to creationTime', async () => {
@@ -243,62 +225,8 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
 
-        expect(mockSetSearchResultItems).toHaveBeenCalledWith([
-            expect.objectContaining({
-                modificationTime: mockNode.creationTime,
-            }),
-        ]);
-    });
-
-    it('should cleanup stale items with loaded uids', async () => {
-        const mockNode1 = createMockNodeEntity({ uid: 'node-1' });
-        const mockNode2 = createMockNodeEntity({ uid: 'node-2' });
-
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield mockNode1;
-            yield mockNode2;
-        });
-
-        await loadNodesForSearchView(['node-1', 'node-2'], mockAbortSignal);
-
-        const loadedUids = mockCleanupStaleItems.mock.calls[0][0];
-        expect(loadedUids).toBeInstanceOf(Set);
-        expect(loadedUids.has('node-1')).toBe(true);
-        expect(loadedUids.has('node-2')).toBe(true);
-    });
-
-    it('should not include trashed or missing nodes in cleanup', async () => {
-        const validNode = createMockNodeEntity({ uid: 'node-1' });
-        const trashedNode = createMockNodeEntity({ uid: 'node-2', trashTime: new Date() });
-        const missingNode = { missingUid: 'node-3' };
-
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            yield validNode;
-            yield trashedNode;
-            yield missingNode;
-        });
-
-        await loadNodesForSearchView(['node-1', 'node-2', 'node-3'], mockAbortSignal);
-
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
-
-        const loadedUids = mockCleanupStaleItems.mock.calls[0][0];
-        expect(loadedUids).toBeInstanceOf(Set);
-        expect(loadedUids.size).toBe(1);
-        expect(loadedUids.has('node-1')).toBe(true);
-        expect(loadedUids.has('node-2')).toBe(false);
-        expect(loadedUids.has('node-3')).toBe(false);
-    });
-
-    it('should always set loading to false even if an error occurs', async () => {
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-            throw new Error('Unexpected error');
-        });
-
-        await loadNodesForSearchView(['node-1'], mockAbortSignal);
-
-        expect(mockSetLoading).toHaveBeenCalledWith(true);
-        expect(mockSetLoading).toHaveBeenCalledWith(false);
+        const allFlushed = mockAddSearchResultItems.mock.calls.flat(2);
+        expect(allFlushed[0]).toMatchObject({ modificationTime: mockNode.creationTime });
     });
 
     it('should include admin role when node has admin role', async () => {
@@ -312,12 +240,8 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
 
-        expect(mockSetSearchResultItems).toHaveBeenCalledWith([
-            expect.objectContaining({
-                nodeUid: 'node-1',
-                role: 'admin',
-            }),
-        ]);
+        const allFlushed = mockAddSearchResultItems.mock.calls.flat(2);
+        expect(allFlushed[0]).toMatchObject({ nodeUid: 'node-1', role: 'admin' });
     });
 
     it('should include editor role when node has editor role', async () => {
@@ -331,11 +255,27 @@ describe('loadNodesForSearchView', () => {
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
 
-        expect(mockSetSearchResultItems).toHaveBeenCalledWith([
-            expect.objectContaining({
-                nodeUid: 'node-1',
-                role: 'editor',
-            }),
-        ]);
+        const allFlushed = mockAddSearchResultItems.mock.calls.flat(2);
+        expect(allFlushed[0]).toMatchObject({ nodeUid: 'node-1', role: 'editor' });
+    });
+
+    it('uses createDebouncedBuffer and drains it after all nodes are resolved', async () => {
+        const nodes = Array.from({ length: 3 }, (_, i) => createMockNodeEntity({ uid: `node-${i + 1}` }));
+
+        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+            for (const node of nodes) {
+                yield node;
+            }
+        });
+
+        await loadNodesForSearchView(
+            nodes.map((n) => n.uid),
+            mockAbortSignal
+        );
+
+        expect(createDebouncedBuffer).toHaveBeenCalledTimes(1);
+        // All 3 nodes flushed via drain() at the end
+        expect(mockAddSearchResultItems).toHaveBeenCalledTimes(1);
+        expect(mockAddSearchResultItems.mock.calls[0][0]).toHaveLength(3);
     });
 });

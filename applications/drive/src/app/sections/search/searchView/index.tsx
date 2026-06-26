@@ -20,7 +20,6 @@ import { NoSearchResultsView } from './NoSearchResultsView';
 import { SearchContextMenu } from './SearchContextMenu';
 import { getCellDefinitions, getGridDefinition } from './SearchDriveExplorerDefinitions';
 import { SearchResultViewToolbar } from './Toolbar';
-import { loadNodesForSearchView } from './hooks/loadNodesForSearchView';
 import { useSearchResultItems } from './hooks/useSearchResultItems';
 import { useSearchViewModel } from './hooks/useSearchViewModel';
 import { useSearchViewStore } from './store';
@@ -45,7 +44,6 @@ export const SearchView = () => {
         isSearchable,
         startIndexing,
         isSearching,
-        resultUids,
         refreshResults,
         indexingProgress,
     } = searchModel;
@@ -69,20 +67,6 @@ export const SearchView = () => {
     // The store can go in a dirty state when one of the search results has changed
     // (renamed, moved, trashed, deleted, etc).
     const isStoreDirty = useSearchViewStore((state) => state.dirty);
-
-    // Load nodes for current search query.
-    useEffect(
-        function loadSearchResultNodes() {
-            const abortController = new AbortController();
-            if (resultUids) {
-                void loadNodesForSearchView(resultUids, abortController.signal);
-            }
-            return () => {
-                abortController.abort();
-            };
-        },
-        [resultUids]
-    );
 
     useEffect(
         function listenToSearchStore() {
@@ -133,7 +117,7 @@ export const SearchView = () => {
         );
     }
 
-    if (!isSearching && resultUids.length === 0) {
+    if (!isSearching && !loading && sortedItemUids.length === 0) {
         return <NoSearchResultsView />;
     }
 
