@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
-import { IcArrowUpAndLeft } from '@proton/icons/icons/IcArrowUpAndLeft';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
@@ -15,17 +16,11 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { ToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
+import { getThinkingPathHeader } from './thinkingPathLabels';
+import { ThinkingProgressDots } from './ThinkingProgressDots';
+import { useThinkingHeaderAnimation } from './useThinkingHeaderAnimation';
 
 import './ThinkingPath.scss';
-
-function formatDuration(ms: number): string {
-    const seconds = Math.round(ms / 1000);
-    if (seconds < 1) return '<1s';
-    if (seconds < 60) return `${seconds}s`;
-    const minutes = Math.floor(seconds / 60);
-    const remaining = seconds % 60;
-    return remaining > 0 ? `${minutes}m ${remaining}s` : `${minutes}m`;
-}
 
 /**
  * Get icon name for tool call type.
@@ -109,111 +104,92 @@ export type ThinkingStep =
 interface ThinkingPathProps {
     steps: ThinkingStep[];
     message: Message;
+    isGenerating: boolean;
+    isLastMessage: boolean;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }
 
-const REASONING_PREVIEW_LINES = 6;
+function hasActiveThinkingStep(steps: ThinkingStep[]): boolean {
+    return steps.some((step) => (step.type === 'reasoning' || step.type === 'tool_call') && step.isActive);
+}
 
-const ReasoningStep = ({
+function mergeConsecutiveReasoningSteps(steps: ThinkingStep[]): ThinkingStep[] {
+    const merged: ThinkingStep[] = [];
+
+    for (const step of steps) {
+        if (step.type !== 'reasoning') {
+            merged.push(step);
+            continue;
+        }
+
+        const previous = merged[merged.length - 1];
+        if (previous?.type === 'reasoning') {
+            merged[merged.length - 1] = {
+                ...previous,
+                content: previous.content + step.content,
+                isActive: step.isActive,
+                durationMs: step.durationMs ?? previous.durationMs,
+            };
+            continue;
+        }
+
+        merged.push({ ...step });
+    }
+
+    return merged;
+}
+
+const ThinkingStepTrack = ({ children }: { children: ReactNode }) => (
+    <div className="thinking-step-track flex flex-nowrap justify-center items-start">{children}</div>
+);
+
+const ReasoningContent = ({
     content,
     isActive,
-    durationMs,
-    isFirst,
-    isLast,
     message,
     handleLinkClick,
 }: {
     content: string;
     isActive: boolean;
-    durationMs?: number;
-    isFirst: boolean;
-    isLast: boolean;
     message: Message;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    // When actively streaming, show the last N lines as a live trail
-    if (isActive && !isExpanded) {
-        const lines = content.split('\n').filter((l) => l.trim().length > 0);
-        const visibleLines = lines.slice(-REASONING_PREVIEW_LINES);
-        const hasMore = lines.length > REASONING_PREVIEW_LINES;
-
-        return (
-            <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
-                <div className="thinking-step-icon-container">
-                    <IcLightbulb size={3} className="thinking-step-icon-badge thinking-step-icon-badge--active" />
-                </div>
-
-                <div className="thinking-step-content">
-                    <button
-                        className="thinking-stream-header flex items-center justify-space-between w-full py-1 px-2 rounded color-weak text-sm text-left"
-                        onClick={() => setIsExpanded(true)}
-                        type="button"
-                        aria-label={c('collider_2025:Reasoning').t`Expand reasoning`}
-                    >
-                        <span className="thinking-step-label flex-1">
-                            {c('collider_2025:Reasoning').t`Thinking...`}
-                        </span>
-                        <IcArrowUpAndLeft size={3} className="thinking-step-chevron shrink-0" />
-                    </button>
-
-                    <div className="thinking-stream-container mt-1.5 rounded">
-                        {hasMore && <div className="thinking-stream-fade" />}
-                        <div className="flex flex-column gap-0.5 py-1 px-2">
-                            {visibleLines.map((line, i) => (
-                                <p key={i} className="thinking-stream-line m-0 color-weak">
-                                    {line}
-                                </p>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
+    if (!content.trim()) {
+        return null;
     }
 
     return (
-        <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
-            <div className="thinking-step-icon-container">
+        <div className="thinking-step">
+            <ThinkingStepTrack>
                 <IcLightbulb
                     size={3}
-                    className={clsx('thinking-step-icon-badge', isActive && 'thinking-step-icon-badge--active')}
+                    className={clsx('thinking-step-icon-badge shrink-0', isActive && 'thinking-step-icon-badge--active')}
                 />
-            </div>
+            </ThinkingStepTrack>
 
-            <div className="thinking-step-content">
-                <button
-                    className="thinking-step-toggle"
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    type="button"
-                    aria-expanded={isExpanded}
-                >
-                    <span className="thinking-step-label">
-                        {durationMs !== undefined
-                            ? c('collider_2025:Reasoning').t`Thought for ` + formatDuration(durationMs)
-                            : c('collider_2025:Reasoning').t`Thought about this`}
-                    </span>
-                    <IcChevronDown
-                        size={3}
-                        className={clsx('thinking-step-chevron', isExpanded && 'thinking-step-chevron--expanded')}
-                    />
-                </button>
-
-                {isExpanded && (
-                    <div className="thinking-step-details">
-                        <LazyProgressiveMarkdownRenderer
-                            content={content}
-                            isStreaming={false}
-                            handleLinkClick={handleLinkClick}
-                            message={message}
-                        />
-                    </div>
-                )}
+            <div className="thinking-step-content thinking-step-content--reasoning min-w-0 text-rg lh130">
+                <LazyProgressiveMarkdownRenderer
+                    content={content}
+                    isStreaming={isActive}
+                    handleLinkClick={handleLinkClick}
+                    message={message}
+                />
             </div>
         </div>
     );
 };
+
+const DoneStep = () => (
+    <div className="thinking-step">
+        <ThinkingStepTrack>
+            <IcCheckmark size={3} className="thinking-step-icon-badge thinking-step-icon-badge--done shrink-0" />
+        </ThinkingStepTrack>
+
+        <div className="thinking-step-content min-w-0 text-rg lh130">
+            <span className="color-hint">{c('collider_2025:Reasoning').t`Done`}</span>
+        </div>
+    </div>
+);
 
 interface WebSearchResult {
     title: string;
@@ -285,20 +261,19 @@ const parseImageToolResult = (result: string): ImageToolResult | null => {
     return null;
 };
 
+const toolStepToggleClassName =
+    'thinking-step-toggle flex flex-nowrap items-center justify-space-between gap-2 w-full p-0 m-0 rounded border-none text-left bg-transparent hover:bg-weak color-weak text-rg lh130';
+
 const ToolCallStep = ({
     toolCall,
     result,
     isActive,
-    isFirst,
-    isLast,
     message,
     handleLinkClick,
 }: {
     toolCall: ToolCallData;
     result?: string;
     isActive: boolean;
-    isFirst: boolean;
-    isLast: boolean;
     message: Message;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) => {
@@ -322,39 +297,34 @@ const ToolCallStep = ({
             toolCall.name === 'weather' ||
             toolCall.name === 'proton_info');
 
-    // Image tools render as an inline status row (no accordion)
     const hasInlineImageStatus = imageToolResult !== null && !isActive;
-
-    // Check if the tool call failed
     const hasError = imageToolResult?.error === true;
 
     return (
-        <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
-            <div className="thinking-step-icon-container">
+        <div className="thinking-step">
+            <ThinkingStepTrack>
                 <Icon
                     name={iconName as IconName}
                     size={3}
                     className={clsx(
-                        'thinking-step-icon-badge',
+                        'thinking-step-icon-badge shrink-0',
                         isActive && 'thinking-step-icon-badge--active',
                         hasError && 'thinking-step-icon-badge--error'
                     )}
                 />
-            </div>
+            </ThinkingStepTrack>
 
-            <div className="thinking-step-content">
+            <div className="thinking-step-content min-w-0 text-rg lh130">
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {hasInlineCard && !isActive ? (
-                    <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
-                        <span className="thinking-step-label color-weak">{label}</span>
-                        <IcCheckmarkCircleFilled size={3} className="color-success shrink-0" />
+                    <div className={clsx(toolStepToggleClassName, 'cursor-default')}>
+                        <span className="color-weak">{label}</span>
+                        <IcCheckmark size={3} className="thinking-step-complete-check shrink-0" />
                     </div>
                 ) : // eslint-disable-next-line no-nested-ternary
                 hasInlineImageStatus ? (
-                    <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
-                        <span className={clsx('thinking-step-label', hasError ? 'color-danger' : 'color-weak')}>
-                            {label}
-                        </span>
+                    <div className={clsx(toolStepToggleClassName, 'cursor-default')}>
+                        <span className={hasError ? 'color-danger' : 'color-weak'}>{label}</span>
                         <div className="flex items-center gap-2 shrink-0">
                             {imageToolResult!.elapsed_ms !== undefined && (
                                 <span className="text-sm color-weak">
@@ -364,25 +334,23 @@ const ToolCallStep = ({
                             {hasError ? (
                                 <IcExclamationCircleFilled size={3} className="color-danger" />
                             ) : (
-                                <IcCheckmarkCircleFilled size={3} className="color-success" />
+                                <IcCheckmark size={3} className="thinking-step-complete-check" />
                             )}
                         </div>
                     </div>
                 ) : hasDetails ? (
                     <>
                         <button
-                            className="thinking-step-toggle"
+                            className={clsx(toolStepToggleClassName, 'cursor-pointer')}
                             onClick={() => setIsExpanded(!isExpanded)}
                             type="button"
                             aria-expanded={isExpanded}
                         >
-                            {}
                             <span
-                                className={clsx(
-                                    'thinking-step-label',
+                                className={
                                     // eslint-disable-next-line no-nested-ternary
                                     isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak'
-                                )}
+                                }
                             >
                                 {label}
                             </span>
@@ -423,7 +391,7 @@ const ToolCallStep = ({
                         </button>
 
                         {isExpanded && (
-                            <div className="thinking-step-details">
+                            <div className="thinking-step-details mt-2 text-rg lh130">
                                 {/* eslint-disable-next-line no-nested-ternary */}
                                 {webExtractResult ? (
                                     <div className="flex flex-column gap-2">
@@ -470,25 +438,25 @@ const ToolCallStep = ({
                                 ) : // eslint-disable-next-line no-nested-ternary
                                 webSearchResults ? (
                                     <div className="flex flex-column gap-2">
-                                        {webSearchResults.results.map((result, idx) => (
+                                        {webSearchResults.results.map((searchResult, idx) => (
                                             <div
                                                 key={idx}
                                                 className="pb-2 border-bottom border-weak last:border-0 last:pb-0"
                                             >
                                                 <a
-                                                    href={result.url}
+                                                    href={searchResult.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="text-semibold color-primary text-no-decoration hover:underline block mb-1"
-                                                    onClick={(e) => handleLinkClick?.(e, result.url)}
+                                                    onClick={(e) => handleLinkClick?.(e, searchResult.url)}
                                                 >
-                                                    {result.title}
+                                                    {searchResult.title}
                                                 </a>
-                                                <p className="text-sm color-weak m-0 line-clamp-2">
-                                                    {result.description}
+                                                <p className="text-sm color-weak m-0 text-ellipsis-two-lines">
+                                                    {searchResult.description}
                                                 </p>
                                                 <p className="text-xs color-weak m-0 mt-1">
-                                                    {new URL(result.url).hostname}
+                                                    {new URL(searchResult.url).hostname}
                                                 </p>
                                             </div>
                                         ))}
@@ -526,50 +494,91 @@ const ToolCallStep = ({
                         )}
                     </>
                 ) : (
-                    <p className={clsx('thinking-step-label m-0', isActive ? 'color-norm' : 'color-weak')}>{label}</p>
+                    <p className={clsx('m-0', isActive ? 'color-norm' : 'color-weak')}>{label}</p>
                 )}
             </div>
         </div>
     );
 };
 
-export const ThinkingPath = ({ steps, message, handleLinkClick }: ThinkingPathProps) => {
-    if (steps.length === 0) return null;
+export const ThinkingPath = ({
+    steps,
+    message,
+    isGenerating,
+    isLastMessage,
+    handleLinkClick,
+}: ThinkingPathProps) => {
+    const displaySteps = mergeConsecutiveReasoningSteps(steps);
+    const hasActiveStep = hasActiveThinkingStep(displaySteps);
+    const isThinking = hasActiveStep || (isGenerating && isLastMessage);
+    const [isExpanded, setIsExpanded] = useState(false);
+    const activeHeader = getThinkingPathHeader(displaySteps, message.id, true);
+    const completeHeader = getThinkingPathHeader(displaySteps, message.id, false);
+    const animatedHeader = useThinkingHeaderAnimation(isThinking, message.id, activeHeader);
 
+    if (displaySteps.length === 0) return null;
+
+    const showDone = !isThinking;
+    const headerLabel = isThinking ? animatedHeader || activeHeader : completeHeader;
     return (
         <div className="thinking-path">
-            {steps.map((step, idx) => {
-                const isFirst = idx === 0;
-                const isLast = idx === steps.length - 1;
+            <button
+                className={clsx(
+                    'thinking-path-header w-full rounded border-none cursor-pointer text-left bg-transparent hover:bg-weak color-weak text-rg lh130',
+                    isThinking && 'color-norm'
+                )}
+                onClick={() => setIsExpanded(!isExpanded)}
+                type="button"
+                aria-expanded={isExpanded}
+                aria-busy={isThinking}
+            >
+                <span className="inline-flex flex-nowrap items-center min-w-0 text-ellipsis flex-1">
+                    <span className={clsx(isThinking && 'text-tabular-nums')}>{headerLabel}</span>
+                    {isThinking && <ThinkingProgressDots />}
+                </span>
+                <IcChevronDown
+                    size={3}
+                    className={clsx(
+                        'thinking-path-header-chevron shrink-0 color-weak',
+                        isExpanded && 'thinking-path-header-chevron--expanded'
+                    )}
+                />
+            </button>
 
-                if (step.type === 'reasoning') {
-                    return (
-                        <ReasoningStep
-                            key={`reasoning-${idx}-${step.isActive}`}
-                            content={step.content}
-                            isActive={step.isActive}
-                            durationMs={step.durationMs}
-                            isFirst={isFirst}
-                            isLast={isLast}
-                            message={message}
-                            handleLinkClick={handleLinkClick}
-                        />
-                    );
-                } else {
-                    return (
-                        <ToolCallStep
-                            key={idx}
-                            toolCall={step.toolCall}
-                            result={step.result}
-                            isActive={step.isActive}
-                            isFirst={isFirst}
-                            isLast={isLast}
-                            message={message}
-                            handleLinkClick={handleLinkClick}
-                        />
-                    );
-                }
-            })}
+            {isExpanded && (
+                <div className="thinking-path-steps flex flex-nowrap flex-column gap-4 mt-2">
+                    {displaySteps.map((step, idx) => {
+                        if (step.type === 'reasoning') {
+                            if (!step.content.trim()) {
+                                return null;
+                            }
+
+                            return (
+                                <ReasoningContent
+                                    key={`reasoning-${idx}-${step.isActive}`}
+                                    content={step.content}
+                                    isActive={step.isActive}
+                                    message={message}
+                                    handleLinkClick={handleLinkClick}
+                                />
+                            );
+                        }
+
+                        return (
+                            <ToolCallStep
+                                key={idx}
+                                toolCall={step.toolCall}
+                                result={step.result}
+                                isActive={step.isActive}
+                                message={message}
+                                handleLinkClick={handleLinkClick}
+                            />
+                        );
+                    })}
+
+                    {showDone && <DoneStep />}
+                </div>
+            )}
         </div>
     );
 };

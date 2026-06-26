@@ -1,6 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { addAttachment, pushAttachmentRequest } from '../../../redux/slices/core/attachments';
+import { applyUsageFromStreamMessage } from '../../../services/usageLimitsStore';
 import {
     changeConversationTitle,
     pushConversationRequest,
@@ -232,6 +233,10 @@ export function sendMessageWithRedux(
                                 dispatch(pushAttachmentRequest({ id: message.image_id }));
                             }
                             break;
+
+                    case 'usage':
+                        applyUsageFromStreamMessage(message);
+                        break;
 
                         case 'server_tool_call':
                             // Server-side tool calls arrive as dedicated `chat.tool_call` SSE chunks

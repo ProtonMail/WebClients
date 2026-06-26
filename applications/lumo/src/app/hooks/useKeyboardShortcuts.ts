@@ -6,7 +6,6 @@ import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useIsGuest } from '../providers/IsGuestProvider';
-import { setNativeGhostMode } from '../remote/nativeComposerBridgeHelpers';
 import { useGuestChatHandler } from './useGuestChatHandler';
 
 interface UseKeyboardShortcutsProps {
@@ -25,7 +24,6 @@ export const useKeyboardShortcuts = ({ onOpenSearch }: UseKeyboardShortcutsProps
             handleGuestClick();
         } else {
             setGhostChatMode(false);
-            setNativeGhostMode(false);
             history.push('/');
         }
     }, [isGuest, handleGuestClick, setGhostChatMode, history]);

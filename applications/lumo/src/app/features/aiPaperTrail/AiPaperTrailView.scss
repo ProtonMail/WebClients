@@ -1,0 +1,335 @@
+@use '~@proton/styles/scss/specifics/arizona' as *;
+
+.ai-paper-trail {
+    --apt-bg: #f6f5f2;
+    --apt-text: #1c1340;
+    --apt-muted: #6b6a7b;
+    --apt-accent: #6d4aff;
+    --apt-card: #ffffff;
+    --apt-border: #eceaf3;
+    --apt-display: Arizona, 'Times New Roman', serif;
+
+    position: relative;
+    inline-size: 100%;
+    min-block-size: 100%;
+    block-size: 100%;
+    overflow: auto;
+    color: var(--apt-text);
+    background:
+        radial-gradient(55% 45% at 10% 12%, rgba(124, 92, 255, 0.18), transparent 60%),
+        radial-gradient(50% 45% at 92% 16%, rgba(255, 150, 178, 0.18), transparent 60%),
+        radial-gradient(45% 45% at 90% 88%, rgba(255, 188, 140, 0.16), transparent 62%),
+        radial-gradient(50% 50% at 18% 92%, rgba(150, 196, 255, 0.14), transparent 60%),
+        var(--apt-bg);
+    background-attachment: fixed;
+
+    &__brand {
+        display: flex;
+        justify-content: center;
+        padding: 2.5rem 1.5rem 0.5rem;
+    }
+
+    &__brand-logo {
+        inline-size: 3.5rem;
+        block-size: 3.5rem;
+    }
+
+    &__inner {
+        inline-size: 100%;
+        max-inline-size: 38rem;
+        margin-inline: auto;
+        padding: 1.5rem 1.5rem 5rem;
+        text-align: center;
+    }
+
+    &__landing {
+        max-inline-size: 44rem;
+        padding-block-start: 2rem;
+    }
+
+    &__loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        padding-block-start: 3.5rem;
+    }
+
+    &__loader {
+        display: inline-flex;
+        color: var(--apt-accent);
+    }
+
+    &__status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-block-end: 0.5rem;
+    }
+
+    &__status-title {
+        font-family: var(--apt-display);
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--apt-accent);
+    }
+
+    &__status-step {
+        font-size: 0.98rem;
+        color: var(--apt-muted);
+        min-block-size: 1.5em;
+        margin-block: 0 2.75rem;
+    }
+
+    &__lesson {
+        inline-size: 100%;
+        max-inline-size: 40rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__lesson-eyebrow {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--apt-accent);
+        margin-block-end: 1.1rem;
+    }
+
+    &__lesson-card {
+        display: flex;
+        gap: 1.4rem;
+        text-align: start;
+        padding: 2rem 2.2rem;
+        border-radius: 1.4rem;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 24px 60px rgba(28, 19, 64, 0.12);
+        border: 1px solid rgba(109, 74, 255, 0.14);
+        min-block-size: 11.5rem;
+        inline-size: 100%;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+            opacity 0.45s ease,
+            transform 0.45s ease;
+
+        &.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: opacity 0.2s ease;
+            transform: none;
+        }
+    }
+
+    &__lesson-emoji {
+        font-size: 2.6rem;
+        line-height: 1;
+        flex: 0 0 auto;
+        inline-size: 4.25rem;
+        block-size: 4.25rem;
+        border-radius: 1rem;
+        background: rgba(109, 74, 255, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__lesson-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__lesson-tag {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--apt-accent);
+    }
+
+    &__lesson-title {
+        font-family: var(--apt-display);
+        font-size: 1.65rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin: 0;
+        color: var(--apt-ink, #1c1340);
+    }
+
+    &__lesson-text {
+        font-size: 1.08rem;
+        line-height: 1.55;
+        color: var(--apt-muted);
+        margin: 0;
+    }
+
+    &__lesson-dots {
+        display: flex;
+        gap: 0.4rem;
+        margin-block-start: 1.5rem;
+    }
+
+    &__lesson-dot {
+        inline-size: 0.5rem;
+        block-size: 0.5rem;
+        border-radius: 999px;
+        background: rgba(109, 74, 255, 0.2);
+        transition: all 0.3s ease;
+
+        &.is-active {
+            inline-size: 1.4rem;
+            background: var(--apt-accent);
+        }
+    }
+
+    &__eyebrow {
+        display: inline-block;
+        margin-block-end: 1rem;
+        padding: 0.3rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(109, 74, 255, 0.1);
+        color: var(--apt-accent);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-family: var(--apt-display);
+        font-size: 3.4rem;
+        font-weight: 600;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        margin-block: 0 1.25rem;
+        color: var(--apt-accent);
+    }
+
+    &__subtitle {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: var(--apt-muted);
+        margin-block: 0 2.25rem;
+        max-inline-size: 36rem;
+        margin-inline: auto;
+    }
+
+    &__muted {
+        color: var(--apt-muted);
+    }
+
+    &__dropzone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-block-size: 14rem;
+        padding: 2rem;
+        border: 2px dashed rgba(109, 74, 255, 0.3);
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 30px rgba(28, 19, 64, 0.06);
+        cursor: pointer;
+        transition:
+            border-color 0.15s ease,
+            box-shadow 0.15s ease,
+            transform 0.15s ease;
+
+        &:hover,
+        &.is-dragging {
+            border-color: var(--apt-accent);
+            box-shadow: 0 14px 36px rgba(109, 74, 255, 0.16);
+        }
+    }
+
+    &__upload-icon {
+        color: var(--apt-accent);
+    }
+
+    &__error {
+        background: #fdecec;
+        color: #b42318;
+        text-align: start;
+    }
+
+    &__privacy {
+        justify-content: center;
+        text-align: start;
+        color: var(--apt-muted);
+    }
+
+    &__steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin-block-start: 2.5rem;
+        text-align: start;
+    }
+
+    &__step {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1.25rem;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(8px);
+        border: 1px solid var(--apt-border);
+        border-radius: 1rem;
+        box-shadow: 0 1px 3px rgba(28, 19, 64, 0.05);
+    }
+
+    &__step-title {
+        font-family: var(--apt-display);
+        font-weight: 600;
+        font-size: 1.1rem;
+        letter-spacing: -0.01em;
+    }
+
+    &__step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        inline-size: 1.75rem;
+        block-size: 1.75rem;
+        border-radius: 50%;
+        background: rgba(109, 74, 255, 0.12);
+        color: var(--apt-accent);
+        font-weight: 800;
+        font-size: 0.9rem;
+    }
+
+    &__step-detail {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: var(--apt-muted);
+    }
+
+    &__footnote {
+        margin-block-start: 2.5rem;
+        padding-block-start: 1.5rem;
+        border-block-start: 1px solid var(--apt-border);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--apt-muted);
+    }
+
+    @media (max-width: 40em) {
+        &__steps {
+            grid-template-columns: 1fr;
+        }
+
+        &__title {
+            font-size: 2.1rem;
+        }
+    }
+}

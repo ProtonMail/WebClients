@@ -742,16 +742,16 @@ describe('Lumo Persistence Integration Tests', () => {
                     await waitForSpaceSyncWithServer(dbApi, space.id);
                 }
 
+                // Wait for all conversations to finish syncing (messages depend on conversation remote IDs)
+                console.log('Wait for all conversations to sync with server');
+                for (const conversation of testData.conversations) {
+                    await waitForConversationSyncWithServer(dbApi, conversation.id);
+                }
+
                 // Wait for all messages to finish syncing (no dirty flags)
                 console.log('Wait for all messages to sync with server');
                 for (const message of testData.messages) {
                     await waitForMessageSyncWithServer(dbApi, message.id);
-                }
-
-                // Wait for all conversations to finish syncing
-                console.log('Wait for all conversations to sync with server');
-                for (const conversation of testData.conversations) {
-                    await waitForConversationSyncWithServer(dbApi, conversation.id);
                 }
 
                 // Wait for spaces to appear in remote list
@@ -1908,16 +1908,16 @@ describe('Lumo Persistence Integration Tests', () => {
                     return testData.spaces.every((space) => result.spaces[space.id] !== undefined);
                 });
 
+                // Wait for all conversations to finish syncing (messages depend on conversation remote IDs)
+                console.log('Waiting for all conversations to sync with server');
+                for (const conversation of testData.conversations) {
+                    await waitForConversationSyncWithServer(dbApi, conversation.id);
+                }
+
                 // Wait for all messages to finish syncing (no dirty flags)
                 console.log('Waiting for all messages to sync with server');
                 for (const message of testData.messages) {
                     await waitForMessageSyncWithServer(dbApi, message.id);
-                }
-
-                // Wait for all conversations to finish syncing
-                console.log('Waiting for all conversations to sync with server');
-                for (const conversation of testData.conversations) {
-                    await waitForConversationSyncWithServer(dbApi, conversation.id);
                 }
 
                 // Verify initial counts
@@ -3105,8 +3105,7 @@ describe('Lumo Persistence Integration Tests', () => {
 
     describe('Failed assistant messages should survive page reload', () => {
         it('should persist a failed assistant message to IDB so it survives reload', async () => {
-            const { store, dispatch, dbApi, actionHistory } =
-                await setupTestEnvironment();
+            const { store, dispatch, dbApi, actionHistory } = await setupTestEnvironment();
             allowConsoleError = true;
             allowConsoleWarn = true;
 
@@ -3219,8 +3218,12 @@ describe('Lumo Persistence Integration Tests', () => {
                     const encoder = new TextEncoder();
                     return new ReadableStream({
                         start(controller) {
-                            controller.enqueue(encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"The "}}]}\n\n'));
-                            controller.enqueue(encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"answer is"}}]}\n\n'));
+                            controller.enqueue(
+                                encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"The "}}]}\n\n')
+                            );
+                            controller.enqueue(
+                                encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"answer is"}}]}\n\n')
+                            );
                             controller.enqueue(encoder.encode('data: {"error":{"message":"generation failed"}}\n\n'));
                             controller.close();
                         },
@@ -3255,10 +3258,13 @@ describe('Lumo Persistence Integration Tests', () => {
                 expect(pushActions.length).toBeGreaterThan(0);
 
                 // The failed assistant message should be persisted to IDB
-                await waitForCondition(async () => {
-                    const msg = await dbApi.getMessageById(assistantMessageId);
-                    return msg !== undefined;
-                }, { message: `waiting for failed message ${assistantMessageId} to appear in IDB` });
+                await waitForCondition(
+                    async () => {
+                        const msg = await dbApi.getMessageById(assistantMessageId);
+                        return msg !== undefined;
+                    },
+                    { message: `waiting for failed message ${assistantMessageId} to appear in IDB` }
+                );
 
                 const idbMessage = await dbApi.getMessageById(assistantMessageId);
                 expect(idbMessage).toBeDefined();
@@ -3363,8 +3369,12 @@ describe('Lumo Persistence Integration Tests', () => {
                     const encoder = new TextEncoder();
                     return new ReadableStream({
                         start(controller) {
-                            controller.enqueue(encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"The answer"}}]}\n\n'));
-                            controller.enqueue(encoder.encode('data: {"choices":[{"index":0,"delta":{"content":" is"}}]}\n\n'));
+                            controller.enqueue(
+                                encoder.encode('data: {"choices":[{"index":0,"delta":{"content":"The answer"}}]}\n\n')
+                            );
+                            controller.enqueue(
+                                encoder.encode('data: {"choices":[{"index":0,"delta":{"content":" is"}}]}\n\n')
+                            );
                             controller.enqueue(encoder.encode('data: {"error":{"message":"generation failed"}}\n\n'));
                             controller.close();
                         },
@@ -3385,10 +3395,13 @@ describe('Lumo Persistence Integration Tests', () => {
                 }
 
                 // Wait for the push saga to persist the failed message
-                await waitForCondition(async () => {
-                    const msg = await dbApi.getMessageById(assistantMessageId);
-                    return msg !== undefined;
-                }, { message: `waiting for failed message ${assistantMessageId} to appear in IDB` });
+                await waitForCondition(
+                    async () => {
+                        const msg = await dbApi.getMessageById(assistantMessageId);
+                        return msg !== undefined;
+                    },
+                    { message: `waiting for failed message ${assistantMessageId} to appear in IDB` }
+                );
             } finally {
                 dispatch(stopRootSaga());
                 await sleep(100);

@@ -49,7 +49,7 @@ const SuggestionCard = ({
                 </span>
             </span>
             <span className="gallery-suggestion-card__body">
-                <span className="gallery-suggestion-card__title">{suggestion.title}</span>
+                <span className="gallery-suggestion-card__title">{suggestion.getTitle()}</span>
             </span>
         </button>
     );
