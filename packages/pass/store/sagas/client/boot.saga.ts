@@ -13,6 +13,7 @@ import {
     bootFailure,
     bootIntent,
     bootSuccess,
+    cacheConflict,
     cacheRequest,
     draftsGarbageCollect,
     getBreaches,
@@ -30,7 +31,6 @@ import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/
 import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
-import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectFeatureFlag, selectProxiedSettings, selectSyncStrategy } from '@proton/pass/store/selectors';
@@ -151,10 +151,10 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
     }
 }
 
-/** If during the boot sequence we detect a state destruction or a caching
- * request, cancel the booting task. The `bootWorker` may have already
- * dispatched `bootSuccess` before being cancelled, so we must explicitly set
- * the app status to ERROR to avoid leaving the app stuck in a BOOTING state. */
+/** Cancel the booting task if we detect a state destruction or another tab
+ * persisting a newer cache that staled this tab's hydration. The `bootWorker`
+ * may have already dispatched `bootSuccess` before being cancelled, so we must
+ * set the app status to `ERROR` to avoid stucking the app in a `BOOTING` state. */
 export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(bootIntent.match, function* (action) {
         /** Gate the API to session-resume routes for the duration of an
@@ -162,14 +162,14 @@ export default function* watcher(options: RootSagaOptions) {
          * boot in the same lifecycle clears the gate. */
         api.setResumeLock(Boolean(action.payload?.offline));
 
-        const { caching, destroyed } = (yield race({
+        const { conflict, destroyed } = (yield race({
             booted: call(bootWorker, action, options),
-            caching: take(isCachingAction),
+            conflict: take(cacheConflict.match),
             destroyed: take(stateDestroy.match),
-        })) as { caching?: Action; destroyed?: Action };
+        })) as { conflict?: Action; destroyed?: Action };
 
-        if (caching || destroyed) {
-            logger.warn(`[Saga::Boot] boot cancelled [caching=${Boolean(caching)}, destroyed=${Boolean(destroyed)}]`);
+        if (conflict || destroyed) {
+            logger.warn(`[Saga::Boot] boot cancelled [conflict=${Boolean(conflict)}, destroyed=${Boolean(destroyed)}]`);
             yield put(bootFailure(new Error(c('Action').t`Please retry`)));
             options.setAppStatus(AppStatus.ERROR);
             options.onBoot?.({ ok: false, clearCache: false, offline: action.payload?.offline ?? false });
