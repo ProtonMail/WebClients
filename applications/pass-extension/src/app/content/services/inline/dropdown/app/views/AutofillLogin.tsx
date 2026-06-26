@@ -98,7 +98,7 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
             );
 
             if (otpRes.type === 'success' && otpRes.token) {
-                await writeToClipboard(otpRes.token, undefined);
+                await writeToClipboard(otpRes.token, settings.clipboard?.timeoutMs);
                 notification = c('Info').t`2FA code copied to clipboard`;
             }
         }
