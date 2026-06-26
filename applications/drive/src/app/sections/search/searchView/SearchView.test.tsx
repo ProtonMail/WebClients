@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
+import { useSearchResultItems } from './hooks/useSearchResultItems';
 import { useSearchViewModel } from './hooks/useSearchViewModel';
 import { SearchView } from './index';
 
@@ -17,10 +18,6 @@ jest.mock('./hooks/useSearchResultItems', () => ({
         layout: 0,
         previewModal: null,
     })),
-}));
-
-jest.mock('./hooks/loadNodesForSearchView', () => ({
-    loadNodesForSearchView: jest.fn(),
 }));
 
 jest.mock('./subscribeSearchStoreToEvents', () => ({
@@ -58,6 +55,7 @@ jest.mock('./SearchContextMenu', () => ({
 }));
 
 const mockedUseFoundationSearchAdapter = jest.mocked(useSearchViewModel);
+const mockedUseSearchResultItems = jest.mocked(useSearchResultItems);
 
 const defaultAdapter: ReturnType<typeof useSearchViewModel> = {
     isSearchAvailable: true,
@@ -65,7 +63,6 @@ const defaultAdapter: ReturnType<typeof useSearchViewModel> = {
     isSearchable: true,
     startIndexing: jest.fn(),
     isSearching: false,
-    resultUids: [],
     refreshResults: jest.fn(),
     indexingProgress: { files: 0, folders: 0, albums: 0, photos: 0 },
 };
@@ -77,6 +74,16 @@ const withAdapter = (overrides: Partial<ReturnType<typeof useSearchViewModel>>) 
 describe('SearchView', () => {
     beforeEach(() => {
         withAdapter({});
+        mockedUseSearchResultItems.mockReturnValue({
+            sortedItemUids: [],
+            loading: false,
+            sortParams: { sortField: 'name', sortOrder: 'ASC' },
+            handleOpenItem: jest.fn(),
+            handleSorting: jest.fn(),
+            handleRenderItem: jest.fn(),
+            layout: 0,
+            previewModal: null,
+        } as any);
     });
 
     it('renders nothing when search is not available', () => {
@@ -110,19 +117,29 @@ describe('SearchView', () => {
     });
 
     it('shows NoSearchResultsView when searchable with no results and not searching', () => {
-        withAdapter({ isSearchable: true, resultUids: [], isSearching: false });
+        withAdapter({ isSearchable: true, isSearching: false });
         render(<SearchView />);
         expect(screen.getByText('No results found')).toBeInTheDocument();
     });
 
     it('shows DriveExplorer when searching (even with empty results)', () => {
-        withAdapter({ isSearchable: true, resultUids: [], isSearching: true });
+        withAdapter({ isSearchable: true, isSearching: true });
         render(<SearchView />);
         expect(screen.getByTestId('drive-explorer')).toBeInTheDocument();
     });
 
     it('shows DriveExplorer when there are results', () => {
-        withAdapter({ isSearchable: true, resultUids: ['uid-1', 'uid-2'], isSearching: false });
+        withAdapter({ isSearchable: true, isSearching: false });
+        mockedUseSearchResultItems.mockReturnValue({
+            sortedItemUids: ['uid-1', 'uid-2'],
+            loading: false,
+            sortParams: { sortField: 'name', sortOrder: 'ASC' },
+            handleOpenItem: jest.fn(),
+            handleSorting: jest.fn(),
+            handleRenderItem: jest.fn(),
+            layout: 0,
+            previewModal: null,
+        } as any);
         render(<SearchView />);
         expect(screen.getByTestId('drive-explorer')).toBeInTheDocument();
     });
