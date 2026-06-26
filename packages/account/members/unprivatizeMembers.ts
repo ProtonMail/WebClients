@@ -239,7 +239,9 @@ export const unprivatizeMembersManual = ({
         }
 
         membersToUpdate.forEach((member) => {
-            dispatch(upsertMember({ member }));
+            // Unprivatization re-encrypts the member's address-key Token/Signature, so invalidate the
+            // cached addresses — otherwise upsertMember preserves the stale 'full' ones.
+            dispatch(upsertMember({ member, invalidateAddresses: true }));
         });
 
         return membersToUpdate;
