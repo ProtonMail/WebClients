@@ -212,6 +212,28 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('endMeeting', []);
     }
 
+    public composeChatMessage(
+        ...args: Parameters<MeetCoreClient['composeChatMessage']>
+    ): ReturnType<MeetCoreClient['composeChatMessage']> {
+        return this.request('composeChatMessage', args);
+    }
+
+    public composeChatReaction(
+        ...args: Parameters<MeetCoreClient['composeChatReaction']>
+    ): ReturnType<MeetCoreClient['composeChatReaction']> {
+        return this.request('composeChatReaction', args);
+    }
+
+    public composeChatUnreact(
+        ...args: Parameters<MeetCoreClient['composeChatUnreact']>
+    ): ReturnType<MeetCoreClient['composeChatUnreact']> {
+        return this.request('composeChatUnreact', args);
+    }
+
+    public decodeChat(...args: Parameters<MeetCoreClient['decodeChat']>): ReturnType<MeetCoreClient['decodeChat']> {
+        return this.request('decodeChat', args);
+    }
+
     public dispose(): void {
         if (this.disposed) {
             return;
