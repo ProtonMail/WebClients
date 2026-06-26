@@ -197,7 +197,7 @@ export const ProjectFilesPanel = ({
             })}
             style={{ outline: '1px solid green' }}
         >
-            <div className="project-files-panel-content">
+            <div className="project-files-panel-content h-full min-h-full">
                 {/* Instructions Section */}
                 <div className="project-files-section flex-none md:flex-1 flex flex-column flex-nowrap">
                     <div className="project-files-section-header">
