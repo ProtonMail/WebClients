@@ -23,8 +23,8 @@ jest.mock('../../../legacy/hooks/drive/useNavigate', () => ({
     default: () => ({ navigateToLink: jest.fn(), navigateToRoot: jest.fn() }),
 }));
 
-jest.mock('../../../legacy/store/_documents', () => ({
-    useOpenInDocs: () => ({ canOpen: false }),
+jest.mock('../../../utils/docs/openInDocs', () => ({
+    getOpenInDocsInfo: () => undefined,
 }));
 
 jest.mock('../../../modules/userSettings', () => ({
