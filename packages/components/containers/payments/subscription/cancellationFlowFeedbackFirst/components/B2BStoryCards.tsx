@@ -32,7 +32,7 @@ export const B2BStoryCards = () => {
                 title={c('Title').t`Stay secure and connected anywhere`}
                 subtitle={c('Description')
                     .t`Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.`}
-                linkText={c('Action').t`Read the story`}
+                linkText={c('Action').t`Learn more`}
                 url={getStaticURL('/mail/download')}
             />
         </div>
