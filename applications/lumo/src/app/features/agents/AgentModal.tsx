@@ -10,13 +10,16 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     TextAreaTwo,
+    useModalStateObject,
 } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useCustomAgentLimit } from '../../hooks/useCustomAgentLimit';
 import { useCustomAgents } from '../../hooks/useCustomAgents';
 import { IconPicker } from '../projects/components/IconPicker';
+import { CustomAgentLimitModal } from './CustomAgentLimitModal';
 import {
     AGENT_INSTRUCTIONS_MAX_LENGTH,
     CONVERSATION_STARTER_MAX_LENGTH,
@@ -34,6 +37,8 @@ interface AgentModalProps extends ModalStateProps {
 
 export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModalProps) => {
     const { getAgent, createAgent, updateAgent, deleteAgent } = useCustomAgents();
+    const { canCreateCustomAgent } = useCustomAgentLimit();
+    const customAgentLimitModal = useModalStateObject();
     const existing = getAgent(agentId);
 
     const [name, setName] = useState('');
@@ -89,6 +94,11 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
     };
 
     const handleSave = () => {
+        if (!existing && !canCreateCustomAgent) {
+            customAgentLimitModal.openModal(true);
+            return;
+        }
+
         const draft = { name, description, instructions, icon: selectedIcon, hidden, conversationStarters };
         if (existing) {
             updateAgent(existing.id, draft);
@@ -105,7 +115,8 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
         : c('collider_2025:Title').t`Create a custom ${LUMO_SHORT_APP_NAME}`;
 
     return (
-        <ModalTwo {...modalProps} onClose={handleClose} size="large">
+        <>
+            <ModalTwo {...modalProps} onClose={handleClose} size="large">
             <ModalTwoHeader
                 title={title}
                 subline={c('collider_2025:Subline')
@@ -220,6 +231,8 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                     {existing ? c('collider_2025:Button').t`Save` : c('collider_2025:Button').t`Create`}
                 </Button>
             </ModalTwoFooter>
-        </ModalTwo>
+            </ModalTwo>
+            {customAgentLimitModal.render && <CustomAgentLimitModal {...customAgentLimitModal.modalProps} />}
+        </>
     );
 };
