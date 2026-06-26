@@ -22,7 +22,6 @@ export type DropdownOptions = {
 interface Props {
     options: DropdownOptions[];
     onToggle: () => void;
-    // isOpen: boolean;
     visibleOnHover?: boolean;
 }
 

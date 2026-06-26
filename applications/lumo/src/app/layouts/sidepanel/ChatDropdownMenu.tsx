@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const ChatDropdownMenu = ({ conversation, onOpenChange, additionalOptions = [] }: Props) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const isOpenRef = useRef(false);
 
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
@@ -30,11 +30,8 @@ const ChatDropdownMenu = ({ conversation, onOpenChange, additionalOptions = [] }
         });
 
     const toggleDropdown = () => {
-        setIsDropdownOpen((prev) => {
-            const next = !prev;
-            onOpenChange?.(next);
-            return next;
-        });
+        isOpenRef.current = !isOpenRef.current;
+        onOpenChange?.(isOpenRef.current);
     };
 
     const defaultOptions: DropdownOptions[] = [
@@ -50,12 +47,7 @@ const ChatDropdownMenu = ({ conversation, onOpenChange, additionalOptions = [] }
 
     return (
         <>
-            <DropdownMenu
-                options={options}
-                onToggle={toggleDropdown}
-                isOpen={isDropdownOpen}
-                // visibleOnHover={visibleOnHover}
-            />
+            <DropdownMenu options={options} onToggle={toggleDropdown} />
             {showConfirmDeleteModal && <ConfirmDeleteModal handleDelete={handleDelete} {...confirmDeleteModalProps} />}
             {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />}
         </>
