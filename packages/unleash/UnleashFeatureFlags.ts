@@ -65,7 +65,6 @@ export enum CommonFeatureFlag {
     OlesM1 = 'OlesM1',
     OrganizationLevelEasySwitch = 'OrganizationLevelEasySwitch',
     WebNPSModal = 'WebNPSModal',
-    MeetAddonCustomizer = 'MeetAddonCustomizer',
     WebApiRateLimiter = 'WebApiRateLimiter',
     PassSimpleLoginLifetimeOffer = 'PassSimpleLoginLifetimeOffer',
     MaxContactsImport = 'MaxContactsImport',
@@ -148,7 +147,6 @@ enum PaymentsFlag {
     PaypalKrw = 'PaypalKrw',
     GreenlandOfferRegionalPaymentBlock = 'GreenlandOfferRegionalPaymentBlock',
     PaymentsValidateBillingAddress = 'PaymentsValidateBillingAddress',
-    HideLumoAddonForVpn2024 = 'HideLumoAddonForVpn2024',
     DomainVpnBiz2023 = 'DomainVpnBiz2023',
     Vpn2024AddonsExperiment = 'Vpn2024AddonsExperiment',
 }
