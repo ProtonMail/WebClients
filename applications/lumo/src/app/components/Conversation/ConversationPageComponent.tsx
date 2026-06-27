@@ -11,7 +11,6 @@ import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { ConversationActionsProvider } from '../../providers/ConversationActionsProvider';
 import { useConversation } from '../../providers/ConversationProvider';
-import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
@@ -46,8 +45,6 @@ const ConversationPageComponentInner = () => {
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
-    const { onDragOver, onDragEnter, onDragLeave, onDrop } = useDragArea();
-
     // Extract query parameters from URL (will be cleared after reading)
     const initialQuery = useQueryParam('q');
     const prefillQuery = useQueryParam('prefill');
@@ -186,13 +183,7 @@ const ConversationPageComponentInner = () => {
             messageChain={messageChain}
             messageChainRef={messageChainRef}
         >
-            <div
-                className="conversation-page-component relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl"
-                onDrop={onDrop}
-                onDragLeave={onDragLeave}
-                onDragEnter={onDragEnter}
-                onDragOver={onDragOver}
-            >
+            <div className="conversation-page-component relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl">
                 {/* <Header conversation={conversation} /> */}
                 {!curConversationId && isGalleryRoute && (
                     <Suspense fallback={<ConversationSkeleton />}>
@@ -227,12 +218,10 @@ const ConversationPageComponentInner = () => {
 
 export const ConversationPageComponent = () => {
     return (
-        <DragAreaProvider>
-            <WebSearchProvider>
-                <ModelTierProvider>
-                    <ConversationPageComponentInner />
-                </ModelTierProvider>
-            </WebSearchProvider>
-        </DragAreaProvider>
+        <WebSearchProvider>
+            <ModelTierProvider>
+                <ConversationPageComponentInner />
+            </ModelTierProvider>
+        </WebSearchProvider>
     );
 };
