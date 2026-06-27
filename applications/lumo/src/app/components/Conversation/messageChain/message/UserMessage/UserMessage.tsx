@@ -228,7 +228,7 @@ const UserMessage = ({
     return (
         <div className={clsx('flex flex-column flex-nowrap items-end gap-2 min-w-0 max-w-full', isEditing && 'w-full')}>
             {hasAttachments && (!isCollapsed || isEditing) && (
-                <div className={clsx('overflow-x-auto flex-nowrap w-full max-w-full flex flex-row gap-3')}>
+                <div className={clsx('overflow-x-auto flex-nowrap w-full max-w-full flex flex-row gap-3 pb-1')}>
                     {manualAttachments.map((attachment) => (
                         <AttachmentFileCard
                             key={attachment.id}
