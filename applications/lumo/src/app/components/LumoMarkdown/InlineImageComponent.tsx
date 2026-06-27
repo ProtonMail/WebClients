@@ -16,6 +16,7 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { clearAttachmentLoading } from '../../redux/slices/attachmentLoadingState';
 import { setPendingPrefill } from '../../redux/slices/composerActions';
 import { pullAttachmentRequest } from '../../redux/slices/core/attachments';
+import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
@@ -36,6 +37,19 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     const [overlayDefaultMode, setOverlayDefaultMode] = useState<'preview' | 'edit'>('preview');
 
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
+
+    // The overlay covers the viewport, so hide the native composer while it's
+    // open and restore it on close.
+    const handleOpenOverlay = useCallback((mode: 'preview' | 'edit') => {
+        setOverlayDefaultMode(mode);
+        setOverlayOpen(true);
+        setNativeComposerVisibility(false);
+    }, []);
+
+    const handleCloseOverlay = useCallback(() => {
+        setOverlayOpen(false);
+        setNativeComposerVisibility(true);
+    }, []);
 
     const imageDataUrl = useMemo(() => {
         if (!attachment) return null;
@@ -131,13 +145,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
         <>
             <span className="inline-image-card">
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                <span
-                    className="cursor-pointer"
-                    onClick={() => {
-                        setOverlayDefaultMode('preview');
-                        setOverlayOpen(true);
-                    }}
-                >
+                <span className="cursor-pointer" onClick={() => handleOpenOverlay('preview')}>
                     <img src={imageDataUrl} alt={alt || attachment.filename} />
                 </span>
 
@@ -149,20 +157,14 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                         icon
                         size="small"
                         title={c('collider_2025:Action').t`Expand`}
-                        onClick={() => {
-                            setOverlayDefaultMode('preview');
-                            setOverlayOpen(true);
-                        }}
+                        onClick={() => handleOpenOverlay('preview')}
                     >
                         <IcArrowsFromCenter size={4} />
                     </Button>
 
                     <ImageModifyButton
                         className="inline-image-card__btn inline-image-card__btn--modify"
-                        onClick={() => {
-                            setOverlayDefaultMode('edit');
-                            setOverlayOpen(true);
-                        }}
+                        onClick={() => handleOpenOverlay('edit')}
                     />
 
                     <Button
@@ -184,7 +186,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                 defaultMode={overlayDefaultMode}
                 imageDataUrl={imageDataUrl}
                 filename={attachment.filename}
-                onClose={() => setOverlayOpen(false)}
+                onClose={handleCloseOverlay}
                 onDownload={handleDownload}
                 onExport={handleSketchExport}
                 onChangeStyle={handleChangeStyle}
