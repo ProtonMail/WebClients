@@ -523,18 +523,6 @@ export const KnowledgeBasePanel = ({
 
     const IndicatorIcon = showKnowledgeExplanation ? IcChevronUp : IcChevronDown;
 
-    if (isEmpty) {
-        return (
-            <div className={panelClassName} ref={filesContainerRef}>
-                <EmptyStateWithUpload
-                    messageChain={messageChain}
-                    onShowDriveBrowser={() => setShowDriveBrowser(true)}
-                    spaceId={spaceId}
-                />
-            </div>
-        );
-    }
-
     return (
         <>
             <div className={panelClassName} ref={filesContainerRef}>
@@ -635,11 +623,11 @@ export const KnowledgeBasePanel = ({
                         )}
 
                         {isEmpty && (
-                            <div className="flex flex-1 flex-column items-center justify-center text-center h-full">
-                                <IcFile size={8} className="color-weak mb-2" />
-                                <p className="color-weak text-sm m-0">{c('collider_2025: Info')
-                                    .t`No files available`}</p>
-                            </div>
+                            <EmptyStateWithUpload
+                                messageChain={messageChain}
+                                onShowDriveBrowser={() => setShowDriveBrowser(true)}
+                                spaceId={spaceId}
+                            />
                         )}
                     </div>
 
