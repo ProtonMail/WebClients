@@ -108,16 +108,15 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                   ? protonAgents
                   : [...protonAgents, ...personalAgents];
         const query = search.trim().toLowerCase();
+        const visibleAgents = byFilter.filter((agent) => !agent.hidden || agent.id === activeAgentId);
         if (query) {
-            // Searching is an explicit lookup, so hidden agents are included in results.
-            return byFilter.filter(
+            return visibleAgents.filter(
                 (agent) =>
                     agent.name.toLowerCase().includes(query) ||
                     (agent.description?.toLowerCase().includes(query) ?? false)
             );
         }
-        // When browsing, hide hidden agents unless one is currently active for this conversation.
-        return byFilter.filter((agent) => !agent.hidden || agent.id === activeAgentId);
+        return visibleAgents;
     }, [filter, search, personalAgents, protonAgents, activeAgentId]);
 
     const tabs: { id: AgentFilter; label: string; disabled?: boolean }[] = [
