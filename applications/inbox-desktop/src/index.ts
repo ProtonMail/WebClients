@@ -21,6 +21,7 @@ import { getTheme, updateNativeTheme } from "./utils/themes";
 import { isWindowValid } from "./utils/view/windowUtils";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
+import { withTimeout } from "./utils/withTimeout";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
 import { checkDefaultProtocols } from "./utils/protocol/default";
@@ -55,7 +56,13 @@ import { quitTracker } from "./utils/log/quitTracker";
     initializeLog();
     captureUncaughtErrors();
     registerIOStreamErrorHandlers();
-    await initializeSentry();
+
+    // Sentry's main-process init synchronously sets up the Crashpad / minidump
+    // uploader on Windows. On some Hyper-V CI runners that step has been seen
+    // to stall the event loop past Playwright's 65s launch timeout, freezing
+    // electron.launch() forever. Cap the await so a stuck Sentry init can
+    // never freeze startup; the init keeps running in the background.
+    await withTimeout(initializeSentry(), 15_000, "initializeSentry");
     profiler.mark("sentry-done");
     logInitialAppInfo();
     handleStartupMailto();
@@ -64,7 +71,10 @@ import { quitTracker } from "./utils/log/quitTracker";
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed
     // during the uninstall process (or any other procees that implies application restart).
-    await handleSquirrelEvents();
+    // Capped for the same reason as initializeSentry above: in non-Squirrel launches
+    // (e.g. e2e tests on packaged builds) this should short-circuit in <10ms, but if
+    // it ever stalls we'd rather log and continue than freeze startup.
+    await withTimeout(handleSquirrelEvents(), 15_000, "handleSquirrelEvents");
     profiler.mark("squirrel-done");
 
     // Security addition

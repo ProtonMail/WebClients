@@ -252,6 +252,19 @@ export const isBornPrivateURL = (urlString: string) => {
 };
 
 export const isHostAllowed = (host: string) => {
+    // Internal Chromium/Electron schemes (about:blank, chrome://, devtools://, ...) are
+    // never "allowed proton hosts" but are also not parseable as `new URL(...)` after the
+    // `https://` prefix shim below; short-circuit them so they don't spam the logs with
+    // "TypeError: Invalid URL" when our e2e placeholder navigations or DevTools open one.
+    if (
+        host.startsWith("about:") ||
+        host.startsWith("chrome:") ||
+        host.startsWith("chrome-extension:") ||
+        host.startsWith("devtools:")
+    ) {
+        return false;
+    }
+
     try {
         const appURL = getAppURL();
         let finalURL = host;

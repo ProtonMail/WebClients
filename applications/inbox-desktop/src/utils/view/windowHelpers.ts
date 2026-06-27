@@ -33,6 +33,14 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
     const { x, y, width, height } = getWindowBounds();
     const settings = getSettings();
 
+    // Under Electron 42 the e2e launch flags (--no-sandbox + --disable-gpu) are incompatible
+    // with `webPreferences.sandbox: true`: the renderer crashes during preload bootstrap with
+    // "Cannot destructure property 'preloadScripts' of 'binding.startupData'", which prevents
+    // Playwright from completing electron.launch (65s timeout). In production we still call
+    // app.enableSandbox() in index.ts and want the renderer sandbox; in PLAYWRIGHT_TEST mode
+    // we already skip app.enableSandbox(), so we must also turn off the renderer-level sandbox.
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+
     return {
         title: isProdEnv() ? MAIL_APP_NAME : `${MAIL_APP_NAME} Dev`,
         icon: getIconResourcePath(isWindows ? "icon.ico" : "icon.png"),
@@ -54,7 +62,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
             nodeIntegration: false,
             contextIsolation: true,
             disableBlinkFeatures: "Auxclick",
-            sandbox: true,
+            sandbox: !isPlaywrightTest,
             ...(getOSSpecificConfig().webPreferences || {}),
         },
     };
@@ -70,6 +78,10 @@ export const getWindowPlaywrightConfig = (): BrowserWindowConstructorOptions => 
         webPreferences: {
             ...config.webPreferences,
             backgroundThrottling: false,
+            // Belt and suspenders: even if PLAYWRIGHT_TEST somehow doesn't reach
+            // getWindowConfig (e.g. future refactor), this config is reserved for tests
+            // and must always disable the renderer sandbox.
+            sandbox: false,
         },
     };
 };

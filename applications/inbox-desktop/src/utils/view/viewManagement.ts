@@ -103,12 +103,15 @@ export const viewCreationAppStartup = async () => {
 
     // We need this for E2E tests because Playwright waits for something
     // to be loaded before connecting to the browser view.
-    // We need to check if removing this after the Electron version update
-    // will work
     const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
     if (isPlaywrightTest) {
-        await mainWindow.loadURL("about:blank");
+        // Under Electron 42 + the e2e launch flags, the renderer for a fresh about:blank
+        // window does not reliably emit did-finish-load on some Windows CI runners, which
+        // hung `await loadURL("about:blank")` past Playwright's 65s launch timeout.
+        // Playwright's firstWindow() only needs the BrowserWindow to exist and be shown,
+        // so show() first and fire the placeholder load without awaiting it.
         mainWindow.show();
+        mainWindow.loadURL("about:blank").catch(() => {});
     }
 
     createViews();
@@ -201,7 +204,24 @@ export const viewCreationAppStartup = async () => {
 };
 
 const createView = (viewID: ViewID) => {
-    const view = new WebContentsView(getWindowConfig());
+    // In Playwright test mode use the playwright config so views inherit sandbox:false,
+    // matching the main BrowserWindow and avoiding the Electron 42 sandbox_bundle crash
+    // ("Cannot destructure property 'preloadScripts' of 'binding.startupData'").
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+    const view = new WebContentsView(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
+
+    // Playwright's CRBrowser.connect() ends with _waitForAllPagesToBeInitialized(), which
+    // awaits _firstNonInitialNavigationCommittedPromise on every CDP target it sees as a
+    // "page". A fresh WebContentsView has Chromium's uninitialized URL state (":"), which
+    // Playwright treats as "initial empty page" and waits forever for a real navigation.
+    // In production we always navigate every view via loadURL() before the user sees it,
+    // but in Playwright mode only the mail view is loaded - calendar and account stay
+    // uninitialized and block electron.launch() at the 65s timeout. Kicking off a
+    // placeholder about:blank load here (no await, no logging on failure) gives each
+    // view a committed navigation so Playwright's launch can resolve.
+    if (isPlaywrightTest) {
+        view.webContents.loadURL("about:blank").catch(() => {});
+    }
 
     if (viewID) {
         handleBeforeHandle(viewID, view);
@@ -634,7 +654,8 @@ async function showLoadingPage(title: string): Promise<void> {
     }
 
     mainLogger.info("Show loading view");
-    loadingView = new WebContentsView(getWindowConfig());
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+    loadingView = new WebContentsView(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
     await renderLoadingPage(loadingView, title);
 
     mainWindow.setContentView(loadingView);
