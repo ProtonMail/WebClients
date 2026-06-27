@@ -206,6 +206,8 @@ const UserMessage = ({
         .filter(Boolean) as Attachment[];
 
     const hasAttachments = manualAttachments.length > 0;
+    const hasTextContent = Boolean(messageContent?.trim());
+    const isAttachmentOnly = hasAttachments && !hasTextContent;
 
     const { contentRef, isCollapsed, showCollapseButton, toggleCollapse } = useCollapsibleMessageContent(message);
     const canBeCollapsed = showCollapseButton || hasAttachments;
@@ -225,8 +227,41 @@ const UserMessage = ({
         }
     };
 
+    const messageToolbar = !isEditing && (
+        <div
+            className={clsx(
+                'user-toolbar flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center',
+                !isMobile && 'group-hover:opacity-100'
+            )}
+            style={{ '--bottom-custom': '-1.5rem' }}
+        >
+            <div className=" bg-norm border border-weak rounded-lg">
+                <UserActionToolbar
+                    onEdit={handleEdit}
+                    onToggleCollapse={toggleCollapse}
+                    isCollapsed={isCollapsed}
+                    canBeCollapsed={canBeCollapsed}
+                />
+            </div>
+            {hasSiblingInfo && (
+                <div className="bg-norm rounded-lg border border-weak">
+                    <SiblingSelector siblingInfo={siblingInfo} />
+                </div>
+            )}
+        </div>
+    );
+
+    const showMessageBubble = isEditing || hasTextContent || !hasAttachments;
+
     return (
-        <div className={clsx('flex flex-column flex-nowrap items-end gap-2 min-w-0 max-w-full', isEditing && 'w-full')}>
+        <div
+            className={clsx(
+                'flex flex-column flex-nowrap items-end gap-2 min-w-0 max-w-full',
+                isEditing && 'w-full',
+                isAttachmentOnly && !isEditing && 'group-hover-opacity-container relative'
+            )}
+            ref={isAttachmentOnly && !isEditing ? newMessageRef : undefined}
+        >
             {hasAttachments && (!isCollapsed || isEditing) && (
                 <div className={clsx('overflow-x-auto flex-nowrap w-full max-w-full flex flex-row gap-3 pb-1')}>
                     {manualAttachments.map((attachment) => (
@@ -240,68 +275,49 @@ const UserMessage = ({
                     ))}
                 </div>
             )}
-            <div
-                className={clsx(
-                    'user-msg-container group-hover-opacity-container *:min-size-auto gap-2 rounded-xl p-4 min-h-custom relative',
-                    !isEditing && 'markdown-rendering',
-                    !isEditing && isDarkLumoTheme && 'user-msg-container--dark',
-                    isEditing && 'w-full'
-                )}
-                style={{ '--min-h-custom': '3.25rem' /*52px*/ }} //to prevent the size change when buttons are shown on hover
-                ref={newMessageRef}
-            >
-                {isEditing ? (
-                    <MessageEditor
-                        messageContent={messageContent || ''}
-                        handleEditMessage={(newContent) => {
-                            void handleEditMessage(message, newContent, isWebSearchButtonToggled);
-                            setIsEditing(false);
-                        }}
-                        handleCancel={() => setIsEditing(false)}
-                    />
-                ) : (
-                    <div className="test-container flex *:min-size-auto flex-1 flex-row flex-nowrap gap-2 justify-space-between items-center">
-                        <div
-                            className={clsx(
-                                'lumo-markdown w-full max-w-full flex-1 text-pre-line',
-                                isCollapsed && 'line-clamp-1'
-                            )}
-                            ref={contentRef}
-                        >
-                            <MessageContentWithMentions
-                                content={messageContent || ''}
-                                message={message}
-                                allAttachments={allAttachments}
-                                onView={onOpenFilePreview}
-                            />
-                        </div>
-                    </div>
-                )}
-
-                {!isEditing && (
-                    <div
-                        className={clsx(
-                            'user-toolbar flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center',
-                            !isMobile && 'group-hover:opacity-100'
-                        )}
-                        style={{ '--bottom-custom': '-1.5rem' }}
-                    >
-                        <div className=" bg-norm border border-weak rounded-lg">
-                            <UserActionToolbar
-                                onEdit={handleEdit}
-                                onToggleCollapse={toggleCollapse}
-                                isCollapsed={isCollapsed}
-                                canBeCollapsed={canBeCollapsed}
-                            />
-                        </div>
-                        {hasSiblingInfo && (
-                            <div className="bg-norm rounded-lg border border-weak">
-                                <SiblingSelector siblingInfo={siblingInfo} />
+            {showMessageBubble && (
+                <div
+                    className={clsx(
+                        'user-msg-container group-hover-opacity-container *:min-size-auto gap-2 rounded-xl p-4 min-h-custom relative',
+                        !isEditing && 'markdown-rendering',
+                        !isEditing && isDarkLumoTheme && 'user-msg-container--dark',
+                        isEditing && 'w-full'
+                    )}
+                    style={{ '--min-h-custom': '3.25rem' /*52px*/ }} //to prevent the size change when buttons are shown on hover
+                    ref={!isAttachmentOnly || isEditing ? newMessageRef : undefined}
+                >
+                    {isEditing ? (
+                        <MessageEditor
+                            messageContent={messageContent || ''}
+                            handleEditMessage={(newContent) => {
+                                void handleEditMessage(message, newContent, isWebSearchButtonToggled);
+                                setIsEditing(false);
+                            }}
+                            handleCancel={() => setIsEditing(false)}
+                        />
+                    ) : (
+                        <div className="test-container flex *:min-size-auto flex-1 flex-row flex-nowrap gap-2 justify-space-between items-center">
+                            <div
+                                className={clsx(
+                                    'lumo-markdown w-full max-w-full flex-1 text-pre-line',
+                                    isCollapsed && 'line-clamp-1'
+                                )}
+                                ref={contentRef}
+                            >
+                                <MessageContentWithMentions
+                                    content={messageContent || ''}
+                                    message={message}
+                                    allAttachments={allAttachments}
+                                    onView={onOpenFilePreview}
+                                />
                             </div>
-                        )}
-                    </div>
-                )}
-            </div>
+                        </div>
+                    )}
+
+                    {!isAttachmentOnly && messageToolbar}
+                </div>
+            )}
+            {isAttachmentOnly && messageToolbar}
         </div>
     );
 };

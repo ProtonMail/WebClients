@@ -11,12 +11,12 @@ import { AgentPickerModal } from '../../features/agents/AgentPickerModal';
 import { ComposerAgentBar } from '../../features/agents/ComposerAgentBar';
 import { ConversationStarters } from '../../features/agents/ConversationStarters';
 import { SketchOverlay } from '../../features/drawingcanvas';
+import { useChatLimitGate } from '../../hooks/useChatLimitGate';
 import useComposerInput from '../../hooks/useComposerInput';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
-import { useChatLimitGate } from '../../hooks/useChatLimitGate';
 import { useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -35,8 +35,8 @@ import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
 import { ModelSwitchNotificationCard } from '../Notifications/ModelSwitchNotificationCard';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
-import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerExpirationBanner } from './ComposerExpirationBanner';
+import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerToolbar } from './ComposerToolbar';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
@@ -247,7 +247,7 @@ const ComposerComponentInner = ({
                 console.log('Submission blocked: files are still being processed');
                 return;
             }
-            if (!value.trim()) {
+            if (!value.trim() && !hasAttachments) {
                 return;
             }
             if (isChatLimitBlocked) {
@@ -267,6 +267,7 @@ const ComposerComponentInner = ({
             isImageGenerationMode,
             isChatLimitBlocked,
             ensureTierError,
+            hasAttachments,
         ]
     );
 
@@ -278,12 +279,14 @@ const ComposerComponentInner = ({
         onFocus: handleFocus,
         onBlur: handleBlur,
         onPasteLargeContent: handlePasteLargeContent,
+        canSubmitWithoutText: hasAttachments,
     });
 
     const { isEmpty, clear, textareaRef, setValue, handleSubmit } = composerInput;
 
-    const sendIsDisabled = !(isGenerating ?? false) && (isEmpty || isProcessingAttachment || isChatLimitBlocked);
-    const canShowSendButton = (isGenerating ?? false) || !isEmpty;
+    const canSubmit = !isEmpty || hasAttachments;
+    const sendIsDisabled = !(isGenerating ?? false) && (!canSubmit || isProcessingAttachment || isChatLimitBlocked);
+    const canShowSendButton = (isGenerating ?? false) || canSubmit;
 
     // Update parent component when empty state changes
     useEffect(() => {
@@ -393,12 +396,7 @@ const ComposerComponentInner = ({
                     )}
 
                     <div className="composer-input-glow-wrapper w-full">
-                        <div
-                            className={clsx(
-                                'lumo-input-container bg-norm w-full',
-                                isGhostChatMode && 'ghost-mode'
-                            )}
-                        >
+                        <div className={clsx('lumo-input-container bg-norm w-full', isGhostChatMode && 'ghost-mode')}>
                             {canUseAgents && <ComposerAgentBar conversationId={messageChain?.[0]?.conversationId} />}
                             {hasAttachments && (
                                 <ComposerAttachmentArea
