@@ -27,6 +27,7 @@ import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvid
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import {
     selectAttachmentsBySpaceId,
+    selectConversationHasGeneratedImages,
     selectConversationsBySpaceId,
     selectProvisionalAttachments,
     selectSpaceById,
@@ -70,6 +71,9 @@ const ProjectDetailViewInner = () => {
     const deleteModal = useModalStateObject();
     const deleteConversationModal = useModalStateObject();
     const [conversationToDelete, setConversationToDelete] = useState<string | null>(null);
+    const hasGeneratedImagesInConversationToDelete = useLumoSelector(
+        selectConversationHasGeneratedImages(conversationToDelete)
+    );
     const sidebarModal = useModalStateObject();
     const driveBrowserModal = useModalStateObject();
     const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
@@ -413,6 +417,7 @@ const ProjectDetailViewInner = () => {
                             confirmDeleteConversation();
                             deleteConversationModal.openModal(false);
                         }}
+                        hasGeneratedImages={hasGeneratedImagesInConversationToDelete}
                     />
                 )}
 

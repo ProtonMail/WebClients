@@ -5,7 +5,11 @@ import { c } from 'ttag';
 import { useModalStateObject, useNotifications } from '@proton/components';
 
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
-import { selectConversationsBySpaceId, selectSpaceById } from '../redux/selectors';
+import {
+    selectConversationHasGeneratedImages,
+    selectConversationsBySpaceId,
+    selectSpaceById,
+} from '../redux/selectors';
 import { locallyDeleteConversationFromLocalRequest } from '../redux/slices/core/conversations';
 import { locallyDeleteSpaceFromLocalRequest, pushSpaceRequest } from '../redux/slices/core/spaces';
 import type { Conversation } from '../types';
@@ -28,6 +32,7 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
     const searchService = useSearchService();
     const space = useLumoSelector(selectSpaceById(spaceId));
     const conversationsInSpace = useLumoSelector(selectConversationsBySpaceId(spaceId));
+    const hasGeneratedImages = useLumoSelector(selectConversationHasGeneratedImages(conversationId));
 
     const openConfirmationModal = useCallback(() => {
         confirmDeleteModal.openModal(true);
@@ -78,5 +83,6 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
         showConfirmDeleteModal: confirmDeleteModal.render,
         confirmDeleteModalProps: confirmDeleteModal.modalProps,
         handleDelete,
+        hasGeneratedImages,
     };
 };
