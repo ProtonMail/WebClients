@@ -1,5 +1,9 @@
 import type { ShallowAttachment, SpaceId } from '../types';
 
+export function isGeneratedImageAttachment(attachment: { role?: 'user' | 'assistant'; mimeType?: string }): boolean {
+    return attachment.role === 'assistant' && (attachment.mimeType?.startsWith('image/') ?? false);
+}
+
 /**
  * Helper to create an assistant-generated image attachment from base64 data
  */

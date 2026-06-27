@@ -24,7 +24,7 @@ const ChatDropdownMenu = ({ conversation, onOpenChange, additionalOptions = [] }
         location: 'sidebar',
     });
 
-    const { openConfirmationModal, showConfirmDeleteModal, handleDelete, confirmDeleteModalProps } =
+    const { openConfirmationModal, showConfirmDeleteModal, handleDelete, confirmDeleteModalProps, hasGeneratedImages } =
         useConversationDelete({
             conversation,
         });
@@ -48,7 +48,13 @@ const ChatDropdownMenu = ({ conversation, onOpenChange, additionalOptions = [] }
     return (
         <>
             <DropdownMenu options={options} onToggle={toggleDropdown} />
-            {showConfirmDeleteModal && <ConfirmDeleteModal handleDelete={handleDelete} {...confirmDeleteModalProps} />}
+            {showConfirmDeleteModal && (
+                <ConfirmDeleteModal
+                    handleDelete={handleDelete}
+                    hasGeneratedImages={hasGeneratedImages}
+                    {...confirmDeleteModalProps}
+                />
+            )}
             {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />}
         </>
     );
