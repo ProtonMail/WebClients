@@ -14,6 +14,7 @@ export interface ComposerInputProps {
     onFocus?: () => void;
     onBlur?: () => void;
     onPasteLargeContent?: (content: string) => void;
+    canSubmitWithoutText?: boolean;
 }
 
 const useComposerInput = ({
@@ -25,6 +26,7 @@ const useComposerInput = ({
     onFocus,
     onBlur,
     onPasteLargeContent,
+    canSubmitWithoutText = false,
 }: ComposerInputProps) => {
     const [value, setValue] = useState(content || '');
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -75,11 +77,11 @@ const useComposerInput = ({
 
             // Enter: submit
             e.preventDefault();
-            if (value.trim()) {
+            if (value.trim() || canSubmitWithoutText) {
                 onSubmitCallback(value);
             }
         },
-        [isGenerating, isProcessingAttachment, isAutocompleteActiveRef, value, onSubmitCallback]
+        [isGenerating, isProcessingAttachment, isAutocompleteActiveRef, value, onSubmitCallback, canSubmitWithoutText]
     );
 
     const handlePaste = useCallback(
@@ -100,10 +102,10 @@ const useComposerInput = ({
         if (isProcessingAttachment) {
             return;
         }
-        if (value.trim()) {
+        if (value.trim() || canSubmitWithoutText) {
             onSubmitCallback(value);
         }
-    }, [isProcessingAttachment, value, onSubmitCallback]);
+    }, [isProcessingAttachment, value, onSubmitCallback, canSubmitWithoutText]);
 
     const clear = useCallback(() => {
         setValue('');
