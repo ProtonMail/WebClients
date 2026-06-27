@@ -16,6 +16,7 @@ import { CYCLE, PLANS } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
 
+import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
 import { sendSubscriptionModalSubscribedEvent } from '../../util/telemetry';
 
 import '../projects/modals/ProjectLimitModal.scss';
@@ -125,7 +126,12 @@ export const CustomAgentLimitModal = ({ ...modalProps }: ModalProps) => {
                 <Button onClick={modalProps.onClose} shape="outline">
                     {c('collider_2025:Action').t`Cancel`}
                 </Button>
-                <Button color="norm" loading={loadingSubscriptionModal} onClick={handleUpgrade}>
+                <Button
+                    color="norm"
+                    loading={loadingSubscriptionModal}
+                    onClick={handleUpgrade}
+                    className={LUMO_UPGRADE_TRIGGER_CLASS}
+                >
                     {c('collider_2025:Action').t`Upgrade to Plus`}
                 </Button>
             </ModalTwoFooter>
