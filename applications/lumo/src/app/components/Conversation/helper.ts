@@ -3,14 +3,13 @@ import { c } from 'ttag';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
-import { runGenerationWithCompaction } from './compactionFlow';
+import { findAgentById } from '../../features/agents/registry';
 import { collectContextAttachmentIds, retrieveDocumentContextForProject } from '../../lib/rag';
 import { type ContextFilter, ENABLE_U2L_ENCRYPTION, prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
+import { clearPendingAgent } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
-import { findAgentById } from '../../features/agents/registry';
-import { clearPendingAgent } from '../../redux/slices/composerActions';
 import {
     addConversation,
     newConversationId,
@@ -27,8 +26,8 @@ import {
     pushMessageRequest,
 } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/slices/personalization';
 import type { Memory } from '../../redux/slices/lumoUserSettings';
+import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/slices/personalization';
 import type { LumoDispatch as AppDispatch, LumoDispatch, LumoState } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
@@ -46,6 +45,7 @@ import {
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
 import { parseFileReferences } from '../../util/fileReferences';
+import { runGenerationWithCompaction } from './compactionFlow';
 
 const createLumoErrorHandler =
     () =>
@@ -186,7 +186,7 @@ export function sendMessage({
     settingsContext: SettingsContext;
 }) {
     return async (dispatch: AppDispatch, getState: () => any): Promise<Message | undefined> => {
-        if (!m.content.trim()) {
+        if (!m.content.trim() && m.attachments.length === 0) {
             return undefined;
         }
 
@@ -404,7 +404,7 @@ export function sendMessage({
                         enableSuggestedQuestions: false,
                         generateTitle,
                         imageAspectRatio: ui.imageAspectRatio,
-                    config: {
+                        config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
                         },
@@ -585,8 +585,7 @@ export function regenerateMessage({
             // The regenerated assistant answers its parent user message; the
             // compaction branch (if any) attaches there.
             const parentMessageId =
-                assistantMessage?.parentId ??
-                updatedMessagesWithContext.filter((m) => m.role === Role.User).pop()?.id;
+                assistantMessage?.parentId ?? updatedMessagesWithContext.filter((m) => m.role === Role.User).pop()?.id;
 
             await dispatch(
                 runGenerationWithCompaction({
@@ -773,9 +772,7 @@ export function retrySendMessage({
                 ? formatMemories(state.lumoUserSettings?.memories)
                 : '';
 
-        const agentInstructions = c.conversationId
-            ? dispatch(resolveAgentInstructions(c.conversationId))
-            : undefined;
+        const agentInstructions = c.conversationId ? dispatch(resolveAgentInstructions(c.conversationId)) : undefined;
 
         const buildTurns = (chain: Message[]) =>
             prepareTurns(

@@ -23,11 +23,11 @@ import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
+import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
 import { SearchService } from '../services/search/searchService';
 import type { ActionParams, Attachment, ErrorContext, ImageGenerationOptions, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
-import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
 import { useChatLimitGate } from './useChatLimitGate';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
@@ -219,7 +219,7 @@ export const useLumoActions = ({
         signal: AbortSignal
     ) => {
         const { newMessageContent, isWebSearchButtonToggled, imageOptions } = actionParams;
-        if (!newMessageContent) return;
+        if (!newMessageContent?.trim() && provisionalAttachments.length === 0) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
         const enableImageTools = ffImageTools;
@@ -250,7 +250,7 @@ export const useLumoActions = ({
                     signal,
                 },
                 newMessageData: {
-                    content: newMessageContent,
+                    content: newMessageContent ?? '',
                     attachments: filledAttachments,
                 },
                 conversationContext: {
@@ -533,12 +533,7 @@ export const useLumoActions = ({
     };
 
     const handleMessageAction = async (actionParams: ActionParams) => {
-        const {
-            actionType,
-            originalMessage,
-            retryStrategy = 'simple',
-            customRetryInstructions,
-        } = actionParams;
+        const { actionType, originalMessage, retryStrategy = 'simple', customRetryInstructions } = actionParams;
         const isWebSearchButtonToggled = actionParams.isWebSearchButtonToggled;
 
         // Validate input parameters
@@ -734,7 +729,7 @@ export const useLumoActions = ({
 
         switch (actionType) {
             case 'send':
-                return !!newMessageContent?.trim();
+                return !!newMessageContent?.trim() || provisionalAttachments.length > 0;
             case 'edit':
                 return !!(originalMessage && newMessageContent?.trim());
             case 'regenerate':
