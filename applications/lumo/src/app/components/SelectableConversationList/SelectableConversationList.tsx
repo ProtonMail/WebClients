@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -6,11 +6,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, useModalStateObject } from '@proton/components';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
-import type { Conversation, ConversationId } from '../../types';
-import ConfirmDeleteModal from '../Modals/ConfirmDeleteModal';
+import { ChatHistoryGroupByMenu } from '../../layouts/sidepanel/ChatHistoryGroupByMenu';
 import { ConversationExpirationIndicator } from '../../layouts/sidepanel/ConversationExpirationIndicator';
 import { ConversationExpirationLegend } from '../../layouts/sidepanel/ConversationExpirationLegend';
-import { ChatHistoryGroupByMenu } from '../../layouts/sidepanel/ChatHistoryGroupByMenu';
+import { useLumoMemoSelector } from '../../redux/hooks';
+import { selectConversationsHaveGeneratedImages } from '../../redux/selectors';
+import type { Conversation, ConversationId } from '../../types';
+import ConfirmDeleteModal from '../Modals/ConfirmDeleteModal';
 
 import './SelectableConversationList.scss';
 
@@ -59,6 +61,8 @@ export const SelectableConversationList = ({
     const [selectedIds, setSelectedIds] = useState<Set<ConversationId>>(new Set());
     const [isDeleting, setIsDeleting] = useState(false);
     const confirmDeleteModal = useModalStateObject();
+    const selectedConversationIds = useMemo(() => Array.from(selectedIds), [selectedIds]);
+    const hasGeneratedImages = useLumoMemoSelector(selectConversationsHaveGeneratedImages, [selectedConversationIds]);
 
     // Get all conversation IDs from all groups
     const allConversations = groups.flatMap((group) => group.conversations);
@@ -152,7 +156,9 @@ export const SelectableConversationList = ({
                         className="selectable-conversation-manage-button shrink-0 text-sm"
                         onClick={toggleSelectionMode}
                     >
-                        {isSelectionMode ? c('collider_2025:Action').t`Cancel` : c('collider_2025:Action').t`Manage chats`}
+                        {isSelectionMode
+                            ? c('collider_2025:Action').t`Cancel`
+                            : c('collider_2025:Action').t`Manage chats`}
                     </Button>
                 </div>
             </div>
@@ -261,6 +267,7 @@ export const SelectableConversationList = ({
                     {...confirmDeleteModal.modalProps}
                     handleDelete={handleDeleteSelected}
                     count={selectedCount}
+                    hasGeneratedImages={hasGeneratedImages}
                     loading={isDeleting}
                 />
             )}
