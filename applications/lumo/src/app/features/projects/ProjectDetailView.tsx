@@ -121,7 +121,7 @@ const ProjectDetailViewInner = () => {
     const handleSendInProject = useCallback(
         async (content: string, webSearchEnabled: boolean) => {
             try {
-                if (!content.trim()) {
+                if (!content.trim() && provisionalAttachments.length === 0) {
                     console.log('Empty content, skipping send');
                     return;
                 }
@@ -300,7 +300,6 @@ const ProjectDetailViewInner = () => {
             }}
         >
             <div className="project-detail-view flex flex-column">
-
                 <div
                     className={`project-detail-content flex-1 relative overflow-hidden ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}
                 >
