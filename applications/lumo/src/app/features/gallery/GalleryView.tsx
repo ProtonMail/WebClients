@@ -311,15 +311,17 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
 
     if (isGuest) {
         return (
-            <div className="gallery-view">
-                <GuestSignInState
-                    image={lumoImageLight}
-                    imageAlt=""
-                    title={c('collider_2025:Title').t`Sign in to build your gallery`}
-                    description={c('collider_2025:Info')
-                        .t`Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.`}
-                />
-            </div>
+            <LumoLayoutWithDrawer drawer={{ disabled: true }}>
+                <div className="gallery-view">
+                    <GuestSignInState
+                        image={lumoImageLight}
+                        imageAlt=""
+                        title={c('collider_2025:Title').t`Sign in to build your gallery`}
+                        description={c('collider_2025:Info')
+                            .t`Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.`}
+                    />
+                </div>
+            </LumoLayoutWithDrawer>
         );
     }
 
