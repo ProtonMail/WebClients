@@ -4,6 +4,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import type { UserState } from '@proton/account';
 
+import { isGeneratedImageAttachment } from '../lib/imageAttachment';
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
 import type { Attachment, AttachmentId, Conversation, Message, Space } from '../types';
 import { type ConversationId, type MessageId, Role, type SpaceId } from '../types';
@@ -11,6 +12,7 @@ import { listify, mapIds, setify } from '../util/collections';
 import { sortByDate } from '../util/date';
 import { objectFilterV } from '../util/objects';
 import { getInitials } from '../util/username';
+import type { AttachmentMap } from './slices/core/attachments';
 import { EMPTY_ATTACHMENT_MAP } from './slices/core/attachments';
 import { EMPTY_CONVERSATION_MAP } from './slices/core/conversations';
 import { EMPTY_MESSAGE_MAP } from './slices/core/messages';
@@ -177,4 +179,40 @@ export const selectHistoryConversationsSorted = createSelector([selectConversati
     Object.values(conversations)
         .filter((c: Conversation) => !c.ghost && !c.starred)
         .sort(sortByDate<Conversation>('desc', 'updatedAt'))
+);
+
+function messageHasGeneratedImages(message: Message, attachments: AttachmentMap): boolean {
+    return (message.attachments ?? []).some((shallow) => {
+        const attachment = attachments[shallow.id] ?? shallow;
+        return isGeneratedImageAttachment(attachment);
+    });
+}
+
+export const selectConversationHasGeneratedImages =
+    (conversationId: ConversationId | null | undefined): LumoSelector<boolean> =>
+    (state) => {
+        if (!conversationId) {
+            return false;
+        }
+
+        const messages = selectMessagesByConversationId(conversationId)(state);
+        return Object.values(messages).some((message) => messageHasGeneratedImages(message, state.attachments));
+    };
+
+export const selectConversationsHaveGeneratedImages =
+    (conversationIds: ConversationId[]): LumoSelector<boolean> =>
+    (state) => {
+        if (conversationIds.length === 0) {
+            return false;
+        }
+
+        const conversationIdSet = new Set(conversationIds);
+        return Object.values(state.messages).some(
+            (message) =>
+                conversationIdSet.has(message.conversationId) && messageHasGeneratedImages(message, state.attachments)
+        );
+    };
+
+export const selectAnyGeneratedImages = createSelector([selectMessages, selectAttachments], (messages, attachments) =>
+    Object.values(messages).some((message) => messageHasGeneratedImages(message, attachments))
 );
