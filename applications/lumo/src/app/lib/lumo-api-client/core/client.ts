@@ -120,10 +120,14 @@ export class LumoApiClient {
         const parallelTasks: Promise<void>[] = [];
 
         if (titleSourceText !== null) {
+            const titleTurns: Turn[] = [
+                { role: Role.User, content: titleSourceText },
+                { role: Role.Assistant, content: '' },
+            ];
             parallelTasks.push(
                 this.runTargetedGeneration(
                     api,
-                    turns,
+                    titleTurns,
                     'title',
                     endpoint,
                     signal,
