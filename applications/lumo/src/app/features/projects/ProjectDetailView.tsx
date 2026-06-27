@@ -21,7 +21,6 @@ import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { applyRetentionPolicy, groupConversationsByDate } from '../../layouts/sidepanel/helpers';
-import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
 import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
@@ -439,12 +438,10 @@ const ProjectDetailViewInner = () => {
 
 export const ProjectDetailView = () => {
     return (
-        <DragAreaProvider>
-            <WebSearchProvider>
-                <ModelTierProvider>
-                    <ProjectDetailViewInner />
-                </ModelTierProvider>
-            </WebSearchProvider>
-        </DragAreaProvider>
+        <WebSearchProvider>
+            <ModelTierProvider>
+                <ProjectDetailViewInner />
+            </ModelTierProvider>
+        </WebSearchProvider>
     );
 };

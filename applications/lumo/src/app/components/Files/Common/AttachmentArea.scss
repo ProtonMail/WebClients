@@ -1,3 +1,10 @@
 .lumoblur {
 	backdrop-filter: blur(20px);
 }
+
+// Full-screen overlay above sidebar (z-index 100) and right drawer.
+.attachment-area-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 110;
+}
