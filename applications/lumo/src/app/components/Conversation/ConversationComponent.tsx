@@ -6,13 +6,13 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
 import { useConversationPanelState } from '../../hooks/useConversationPanelState';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useRetryPanel } from '../../hooks/useRetryPanel';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
-import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
 import { ComposerMode, type Conversation } from '../../types';
 import UpsellCard from '../../upsells/components/UpsellCard';
@@ -87,11 +87,7 @@ const ConversationComponent = ({
     const tierErrors = useLumoSelector(selectTierErrors);
     const { hasLumoPlus } = useLumoPlan();
     const remainingLimits = useRemainingLimits();
-    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(
-        remainingLimits,
-        tierErrors.length > 0,
-        hasLumoPlus
-    );
+    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
 
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
@@ -151,6 +147,7 @@ const ConversationComponent = ({
                                 handleOpenFilePreview={handleOpenFilePreview}
                                 onRetryPanelToggle={handleRetryPanelToggle}
                                 composerContainerRef={composerContainerRef}
+                                conversationId={conversationId}
                             />
                             {/* TODO: update to show all conversations errors at some point */}
                             {conversationErrors.length > 0 && (
