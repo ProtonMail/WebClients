@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/useLumoActions';
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
-import { type Attachment, type Message, Role } from '../../../types';
+import { type Attachment, type ConversationId, type Message, Role } from '../../../types';
 import { ScrollToBottomButton } from './ScrollToBottomButton/ScrollToBottomButton';
 import { MessageComponent } from './message/MessageComponent';
 
@@ -21,6 +21,7 @@ export type MessageChainComponentProps = {
     composerContainerRef: React.RefObject<HTMLDivElement>;
     /** Extra classes for the scrollable message container (e.g. top spacing in minimal mode). */
     className?: string;
+    conversationId?: ConversationId;
 };
 
 interface ScrollState {
@@ -40,10 +41,15 @@ const scrollReducer = (state: ScrollState, action: ScrollAction): ScrollState =>
     }
 };
 
+// How long the message chain and DOM must be idle before we stop auto-scrolling on open.
+// Remote pulls can trickle in messages and full bodies over many seconds.
+const INITIAL_SCROLL_IDLE_MS = 1500;
+
 const useAutoScroll = (
     messageChainRef: React.MutableRefObject<HTMLDivElement | null>,
     messageChain: Message[],
-    isGenerating?: boolean
+    isGenerating?: boolean,
+    conversationId?: ConversationId
 ) => {
     const [scrollState, dispatch] = useReducer(scrollReducer, {
         userHasScrolledUp: false,
@@ -158,6 +164,57 @@ const useAutoScroll = (
     };
 
     const previousGeneratingRef = useRef(isGenerating);
+    const isInitialScrollPendingRef = useRef(true);
+    const initialScrollIdleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const initialScrollRafRef = useRef<number | null>(null);
+    const userHasScrolledUpRef = useRef(scrollState.userHasScrolledUp);
+    const messageChainLengthRef = useRef(messageChain.length);
+    const lastMessageId = messageChain.at(-1)?.id;
+
+    userHasScrolledUpRef.current = scrollState.userHasScrolledUp;
+    messageChainLengthRef.current = messageChain.length;
+
+    const clearInitialScrollIdleTimer = useCallback(() => {
+        if (initialScrollIdleTimerRef.current) {
+            clearTimeout(initialScrollIdleTimerRef.current);
+            initialScrollIdleTimerRef.current = null;
+        }
+    }, []);
+
+    const scheduleInitialScrollComplete = useCallback(() => {
+        clearInitialScrollIdleTimer();
+        initialScrollIdleTimerRef.current = setTimeout(() => {
+            if (messageChainLengthRef.current === 0) {
+                return;
+            }
+            isInitialScrollPendingRef.current = false;
+        }, INITIAL_SCROLL_IDLE_MS);
+    }, [clearInitialScrollIdleTimer]);
+
+    const tryInitialScroll = useCallback(() => {
+        if (
+            !isInitialScrollPendingRef.current ||
+            userHasScrolledUpRef.current ||
+            messageChain.length === 0 ||
+            !messageChainRef.current
+        ) {
+            return;
+        }
+
+        scrollToBottom(true);
+        scheduleInitialScrollComplete();
+    }, [messageChain.length, messageChainRef, scheduleInitialScrollComplete, scrollToBottom]);
+
+    const scheduleTryInitialScroll = useCallback(() => {
+        if (initialScrollRafRef.current !== null) {
+            return;
+        }
+
+        initialScrollRafRef.current = requestAnimationFrame(() => {
+            initialScrollRafRef.current = null;
+            tryInitialScroll();
+        });
+    }, [tryInitialScroll]);
 
     useEffect(() => {
         const wasGenerating = previousGeneratingRef.current;
@@ -165,6 +222,7 @@ const useAutoScroll = (
 
         // Only scroll when generation STARTS (not during streaming or when it ends)
         if (isGenerating && !wasGenerating) {
+            isInitialScrollPendingRef.current = false;
             setTimeout(() => {
                 scrollQuestionToTopRef.current?.();
             }, 100);
@@ -181,16 +239,43 @@ const useAutoScroll = (
         };
     }, [handleScroll]);
 
-    const hasScrolledInitially = useRef(false);
     useEffect(() => {
-        if (messageChain.length > 0 && messageChainRef.current && !hasScrolledInitially.current) {
-            hasScrolledInitially.current = true;
-            // Show the first message at the top on open. The container's default scroll
-            // position is already 0, so this just ensures it's explicitly reset in case
-            // the container was previously scrolled (e.g. conversation switch).
-            messageChainRef.current.scrollTo({ top: 0, behavior: 'instant' });
+        isInitialScrollPendingRef.current = true;
+        clearInitialScrollIdleTimer();
+
+        return () => {
+            clearInitialScrollIdleTimer();
+            if (initialScrollRafRef.current !== null) {
+                cancelAnimationFrame(initialScrollRafRef.current);
+                initialScrollRafRef.current = null;
+            }
+        };
+    }, [clearInitialScrollIdleTimer, conversationId]);
+
+    // Scroll before paint when the chain changes (new messages from remote / IDB).
+    useLayoutEffect(() => {
+        tryInitialScroll();
+    }, [conversationId, lastMessageId, messageChain.length, tryInitialScroll]);
+
+    // Full message bodies, markdown, and images load after the chain length stabilizes.
+    useEffect(() => {
+        const container = messageChainRef.current;
+        if (!container) {
+            return;
         }
-    }, [messageChain.length, messageChainRef]);
+
+        const observer = new MutationObserver(() => {
+            scheduleTryInitialScroll();
+        });
+
+        observer.observe(container, {
+            childList: true,
+            subtree: true,
+            characterData: true,
+        });
+
+        return () => observer.disconnect();
+    }, [conversationId, messageChainRef, scheduleTryInitialScroll]);
 
     useEffect(() => {
         return () => {
@@ -219,9 +304,15 @@ export const MessageChainComponent = ({
     onRetryPanelToggle,
     composerContainerRef,
     className,
+    conversationId,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
-    const { userHasScrolledUp, scrollToBottom } = useAutoScroll(messageChainRef, messageChain, isGenerating);
+    const { userHasScrolledUp, scrollToBottom } = useAutoScroll(
+        messageChainRef,
+        messageChain,
+        isGenerating,
+        conversationId
+    );
     const [hasNewContentBelow, setHasNewContentBelow] = useState(false);
 
     useEffect(() => {
