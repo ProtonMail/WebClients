@@ -3,10 +3,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
-import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments } from '../../../redux/selectors';
@@ -17,6 +13,7 @@ import { Role } from '../../../types';
 import { storeAttachmentInRedux } from '../../../util/attachmentHelpers';
 import { isFileTypeSupported, mimeToHuman } from '../../../util/filetypes';
 import { isPastedContentAttachment, updatePastedContentAttachment } from '../../../util/pastedContentHelper';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
 
 interface FilePreviewPanelProps {
@@ -270,7 +267,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }
         if (!hasContent) {
             return (
                 <div className="flex flex-column items-center justify-center h-full p-6 text-center">
-                    <IcFileSlash size={8} className="color-weak mb-3" />
+                    <LumoIcon name="FileX" size={32} className="color-weak mb-3" />
                     <p className="text-sm color-weak">{c('collider_2025: Info').t`No content available.`}</p>
                 </div>
             );
@@ -307,7 +304,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }
             {/* Header */}
             <div className="shrink-0 flex flex-row items-center gap-2 p-3 pb-1">
                 <Button icon size="small" shape="ghost" onClick={onBack} title={c('collider_2025: Action').t`Back`}>
-                    <IcArrowLeft size={4} />
+                    <LumoIcon name="ArrowLeft" size={16} />
                 </Button>
                 <div className="flex-1 min-w-0">
                     <p className="m-0 text-sm text-bold truncate" title={attachment.filename}>
@@ -326,7 +323,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }
                         onClick={handleStartEdit}
                         title={c('collider_2025: Action').t`Edit`}
                     >
-                        <IcPencil size={4} />
+                        <LumoIcon name="Pencil" size={16} />
                     </Button>
                 )}
                 <Button
@@ -336,7 +333,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }
                     onClick={handleClose}
                     title={c('collider_2025: Action').t`Close`}
                 >
-                    <IcCross size={4} />
+                    <LumoIcon name="X" size={16} />
                 </Button>
             </div>
 

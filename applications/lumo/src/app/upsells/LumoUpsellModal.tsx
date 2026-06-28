@@ -4,12 +4,11 @@ import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
-import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
 
+import { type IconName, LumoIcon } from '../components/LumoIcon/LumoIcon';
 import { LumoLogoWithTierTag } from '../components/LumoLogoWithTierTag/LumoLogoWithTierTag';
 import LumoPlusBackdropOverlay from './LumoPlusBackdropOverlay';
 
@@ -22,31 +21,31 @@ interface Feature {
 
 const features: Feature[] = [
     {
-        icon: 'globe',
+        icon: 'Globe',
         getText: () => c('collider_2025: Feature').t`Get answers with real-time web search`,
     },
     {
-        icon: 'speech-bubble',
+        icon: 'MessageSquare',
         getText: () => c('collider_2025: Feature').t`Chat as much as you need with no limits`,
     },
     {
-        icon: 'clock-rotate-left',
+        icon: 'History',
         getText: () => c('collider_2025: Feature').t`Access all your past conversations anytime`,
     },
     {
-        icon: 'folder',
+        icon: 'Folder',
         getText: () => c('collider_2025: Feature').t`Organize work in projects with custom instructions`,
     },
     {
-        icon: 'star',
+        icon: 'Star',
         getText: () => c('collider_2025: Feature').t`Save unlimited conversations as favorites`,
     },
     {
-        icon: 'arrow-up-line',
+        icon: 'ArrowUpFromLine',
         getText: () => c('collider_2025: Feature').t`Upload and analyze larger files`,
     },
     {
-        icon: 'chip',
+        icon: 'Cpu',
         getText: () => c('collider_2025: Feature').t`Use the most advanced AI models`,
     },
 ];
@@ -104,7 +103,7 @@ const LumoUpsellModal = ({ modalProps, specialBackdrop = false, ctaButton, optio
                             <div className="mb-6">
                                 {features.map((feature, index) => (
                                     <div key={index} className="flex items-center gap-3 py-3">
-                                        <Icon className="color-primary shrink-0" name={feature.icon} size={4} />
+                                        <LumoIcon className="color-primary shrink-0" name={feature.icon} size={16} />
                                         <span>{feature.getText()}</span>
                                     </div>
                                 ))}

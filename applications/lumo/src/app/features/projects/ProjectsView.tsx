@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestSignInState';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -151,7 +151,7 @@ export const ProjectsView = () => {
                         <h1 className="main-text">{c('collider_2025:Title').t`My Projects`}</h1>
                         <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
                             <span className="flex items-center flex-nowrap">
-                                <IcPlus className="mr-2" />
+                                <LumoIcon name="Plus" className="mr-2" />
                                 {c('collider_2025:Button').t`New project`}
                             </span>
                         </Button>

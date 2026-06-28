@@ -4,8 +4,8 @@ import { clsx } from 'clsx';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components/index';
-import type { IconName } from '@proton/icons/types';
+
+import { type IconName, LumoIcon } from '../../LumoIcon/LumoIcon';
 
 interface SettingsSectionItemProps {
     icon: IconName;
@@ -37,7 +37,7 @@ export const SettingsSectionItem = ({
     return (
         <div className="flex flex-row flex-nowrap gap-2 md:gap-4 items-start p-2">
             <Avatar color="weak" className="settings-section-icon">
-                <Icon className="shrink-0 color-weak" name={icon} size={5} />
+                <LumoIcon className="shrink-0 color-weak" name={icon} size={20} />
             </Avatar>
             <div className="flex-1 flex flex-column *:min-size-auto sm:flex-row flex-nowrap gap-2">
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0">
@@ -91,7 +91,7 @@ export const SettingsSectionItemButton = ({
             fullWidth
         >
             <Avatar color="weak" className="settings-section-icon">
-                <Icon className="shrink-0 color-weak" name={icon} size={5} />
+                <LumoIcon className="shrink-0 color-weak" name={icon} size={20} />
             </Avatar>
             <div className="flex-1 flex flex-row *:min-size-auto flex-nowrap gap-2">
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0 items-baseline">
