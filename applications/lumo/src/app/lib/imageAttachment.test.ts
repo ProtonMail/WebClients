@@ -1,4 +1,4 @@
-import { lumoImageMarker } from './imageAttachment';
+import { lumoImageMarker, stripUnshareableAttachmentContent } from './imageAttachment';
 
 describe('lumoImageMarker', () => {
     it('emits a user marker with a filename', () => {
@@ -29,5 +29,20 @@ describe('lumoImageMarker', () => {
         expect(lumoImageMarker('abc', 'user', 'a"b&c<d>e.jpg')).toBe(
             '<lumo-image id="abc" source="user" name="a%22b%26c%3Cd%3Ee.jpg" />'
         );
+    });
+});
+
+describe('stripUnshareableAttachmentContent', () => {
+    it('removes attachment markdown image references', () => {
+        const content = 'Hello\n\n![Generated image](attachment:6e4b1178-332a-44ee-843f-6003a8321f2f)\n\nWorld';
+
+        expect(stripUnshareableAttachmentContent(content)).toBe('Hello\n\nWorld');
+    });
+
+    it('removes multiple attachment placeholders and collapses blank lines', () => {
+        const content =
+            'Start\n\n![Generated image](attachment:one)\n\n\n![Image](attachment:two)\n\nEnd';
+
+        expect(stripUnshareableAttachmentContent(content)).toBe('Start\n\nEnd');
     });
 });
