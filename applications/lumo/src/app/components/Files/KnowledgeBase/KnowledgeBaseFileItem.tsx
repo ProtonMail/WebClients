@@ -5,12 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FileIcon } from '@proton/components';
-import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
-import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
-import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { useFileItemData } from '../fileUtils';
 
 interface KnowledgeBaseFileItemProps {
@@ -112,11 +108,11 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
             {!readonly && (
                 <div className="flex flex-row flex-nowrap items-center gap-2 ml-2">
                     {/* Status indicators - always visible */}
-                    {file.processing && <IcArrowsRotate className="color-primary animate-spin" size={4} />}
-                    {file.error && <IcExclamationTriangleFilled className="color-danger" size={4} />}
+                    {file.processing && <LumoIcon name="RefreshCw" className="color-primary animate-spin" size={16} />}
+                    {file.error && <LumoIcon name="TriangleAlert" className="color-danger" size={16} />}
                     {isTooLargeForPreview && (
                         <Tooltip title={c('collider_2025: Info').t`File too large for preview (>150k tokens)`}>
-                            <IcExclamationTriangleFilled className="color-warning" size={4} />
+                            <LumoIcon name="TriangleAlert" className="color-warning" size={16} />
                         </Tooltip>
                     )}
 
@@ -130,7 +126,7 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
                                 onClick={handleRemoveClick}
                                 data-testid="remove-button"
                             >
-                                <IcCross size={4} />
+                                <LumoIcon name="X" size={16} />
                             </Button>
                         </Tooltip>
                     )}
@@ -152,9 +148,9 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
                                 data-testid="toggle-button"
                             >
                                 {isActive ? (
-                                    <IcMinusCircle size={4} className={'color-weak'} />
+                                    <LumoIcon name="CircleMinus" size={16} className={'color-weak'} />
                                 ) : (
-                                    <IcPlusCircle size={4} className={'color-weak'} />
+                                    <LumoIcon name="CirclePlus" size={16} className={'color-weak'} />
                                 )}
                             </Button>
                         </Tooltip>

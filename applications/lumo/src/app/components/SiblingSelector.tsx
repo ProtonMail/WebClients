@@ -16,18 +16,18 @@ const SiblingSelector = ({ siblingInfo }: SiblingSelectorProps) => {
                 >
                     <LumoButton
                         onClick={onPrev}
-                        iconName="chevron-left"
+                        iconName="ChevronLeft"
                         title={c('collider_2025:Action').t`Previous message`}
                         tooltipPlacement="top"
                         disabled={idx <= 0}
                     />
-                    <div className="flex flex-row flex-nowrap items-center">
+                    <div className="flex flex-row flex-nowrap items-center mx-1">
                         {idx + 1} / {count}
                     </div>
 
                     <LumoButton
                         onClick={onNext}
-                        iconName="chevron-right"
+                        iconName="ChevronRight"
                         title={c('collider_2025:Action').t`Next message`}
                         tooltipPlacement="top"
                         disabled={idx >= count - 1}

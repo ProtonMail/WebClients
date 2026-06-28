@@ -4,10 +4,9 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
 import type { ImageAspectRatio } from '../../types';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { MenuDropdown, MenuItem } from './components/MenuDropdown';
 
 interface RatioOption {
@@ -74,7 +73,7 @@ const AspectRatioDropdown = ({ selectedRatio, onSelect }: AspectRatioDropdownPro
             >
                 <CurrentIcon />
                 <span className="font-medium">{currentOption.getLabel()}</span>
-                <IcChevronDown size={3} className="color-weak" />
+                <LumoIcon name="ChevronDown" width={12} height={12} className="color-weak" />
             </Button>
 
             <MenuDropdown
@@ -89,7 +88,7 @@ const AspectRatioDropdown = ({ selectedRatio, onSelect }: AspectRatioDropdownPro
                 {RATIO_OPTIONS.map((option) => (
                     <MenuItem
                         key={option.ratio}
-                        iconSvg={option.IconComponent}
+                        icon={<option.IconComponent />}
                         getLabel={option.getLabel}
                         onClick={() => {
                             onSelect(option.ratio);
@@ -104,7 +103,7 @@ const AspectRatioDropdown = ({ selectedRatio, onSelect }: AspectRatioDropdownPro
                                     selectedRatio !== option.ratio && 'visibility-hidden'
                                 )}
                             >
-                                <IcCheckmark size={4} className="color-primary" />
+                                <LumoIcon name="Check" size={16} className="color-primary" />
                             </span>
                         }
                     />

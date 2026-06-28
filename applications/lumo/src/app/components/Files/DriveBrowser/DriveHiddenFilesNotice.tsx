@@ -2,8 +2,9 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 interface DriveHiddenFilesNoticeProps {
     hiddenProtonDocsCount: number;
@@ -21,7 +22,7 @@ export const DriveHiddenFilesNotice: React.FC<DriveHiddenFilesNoticeProps> = ({
     return (
         <div className="mb-3 p-3 bg-weak rounded border border-weak">
             <div className="flex items-center gap-2 text-sm color-weak">
-                <IcInfoCircle size={4} />
+                <LumoIcon name="Info" size={16} />
                 <div className="flex flex-col">
                     {hiddenProtonDocsCount > 0 && (
                         <span>

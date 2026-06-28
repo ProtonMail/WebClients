@@ -19,8 +19,6 @@ import {
     useNotifications,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { IcThumbDown } from '@proton/icons/icons/IcThumbDown';
-import { IcThumbUp } from '@proton/icons/icons/IcThumbUp';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 
@@ -28,6 +26,7 @@ import { stripUnshareableAttachmentContent } from '../../lib/imageAttachment';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectMessageById } from '../../redux/selectors';
 import type { Message } from '../../types';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import {
     hasSeenNegativeFeedbackIntro,
     hasSeenPositiveFeedbackIntro,
@@ -257,7 +256,11 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     loading={loading}
                     onClick={handleThumbUpClick}
                 >
-                    <IcThumbUp size={4} alt={c('collider_2025: Action').t`I like this response`} />
+                    <LumoIcon
+                        name="ThumbsUp"
+                        size={16}
+                        aria-label={c('collider_2025: Action').t`I like this response`}
+                    />
                 </Button>
             </Tooltip>
             <Tooltip title={c('collider_2025: Action').t`Report an issue`}>
@@ -270,7 +273,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     disabled={disableButtons}
                     onClick={handleThumbDownClick}
                 >
-                    <IcThumbDown size={4} alt={c('collider_2025: Action').t`Report an issue`} />
+                    <LumoIcon name="ThumbsDown" size={16} aria-label={c('collider_2025: Action').t`Report an issue`} />
                 </Button>
             </Tooltip>
             <ModalTwo {...introModal.modalProps}>
