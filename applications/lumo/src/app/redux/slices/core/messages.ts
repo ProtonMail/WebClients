@@ -127,15 +127,20 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
             }
 
             message.thinkingTimeline ??= [];
-            const toolCallIndex = (message.blocks?.filter(b => b.type === 'tool_call').length ?? 0);
-            message.thinkingTimeline.push({
-                type: 'tool_call',
-                timestamp: Date.now(),
-                toolCallIndex,
-            });
+            message.blocks ??= [];
+            const existingToolCallCount = message.blocks.filter((block) => block.type === 'tool_call').length;
+            const isStreamingToolCallUpdate =
+                existingToolCallCount > 0 && message.blocks[message.blocks.length - 1]?.type === 'tool_call';
+
+            if (!isStreamingToolCallUpdate) {
+                message.thinkingTimeline.push({
+                    type: 'tool_call',
+                    timestamp: Date.now(),
+                    toolCallIndex: existingToolCallCount,
+                });
+            }
 
             message.toolCall = chunk.content;
-            message.blocks ??= [];
             message.blocks = setToolCallInBlocks(message.blocks, chunk.content);
         })
         .addCase(setToolResult, (state, action) => {
