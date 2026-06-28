@@ -16,8 +16,8 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { ToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
-import { getThinkingPathHeader } from './thinkingPathLabels';
 import { ThinkingProgressDots } from './ThinkingProgressDots';
+import { getThinkingPathHeader } from './thinkingPathLabels';
 import { useThinkingHeaderAnimation } from './useThinkingHeaderAnimation';
 
 import './ThinkingPath.scss';
@@ -104,14 +104,99 @@ export type ThinkingStep =
 interface ThinkingPathProps {
     steps: ThinkingStep[];
     message: Message;
-    isGenerating: boolean;
-    isLastMessage: boolean;
+    isThinking: boolean;
+    showThinkingTrace: boolean;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }
 
-function hasActiveThinkingStep(steps: ThinkingStep[]): boolean {
-    return steps.some((step) => (step.type === 'reasoning' || step.type === 'tool_call') && step.isActive);
+const THINKING_TRACE_LINE_COUNT = 5;
+
+function stripMarkdownLine(line: string): string {
+    return line
+        .replace(/`([^`]+)`/g, '$1')
+        .replace(/^#{1,6}\s+/, '')
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/__([^_]+)__/g, '$1')
+        .replace(/\*([^*\n]+)\*/g, '$1')
+        .replace(/_([^_\n]+)_/g, '$1')
+        .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+        .replace(/^>\s?/, '')
+        .replace(/^[-*+]\s+/, '')
+        .replace(/^\d+\.\s+/, '')
+        .trim();
 }
+
+function reasoningContentToLines(content: string): string[] {
+    if (!content.trim()) {
+        return [];
+    }
+
+    return content
+        .split('\n')
+        .map(stripMarkdownLine)
+        .filter((line) => line.length > 0);
+}
+
+function buildThinkingTraceLines(steps: ThinkingStep[]): string[] {
+    const lines: string[] = [];
+
+    for (const step of steps) {
+        if (step.type === 'reasoning') {
+            lines.push(...reasoningContentToLines(step.content));
+            continue;
+        }
+
+        const [presentLabel, pastLabel] = getToolCallLabel(step.toolCall);
+        lines.push(step.isActive ? presentLabel : pastLabel);
+    }
+
+    const activeToolStep = [...steps]
+        .reverse()
+        .find(
+            (step): step is Extract<ThinkingStep, { type: 'tool_call' }> =>
+                step.type === 'tool_call' && step.isActive
+        );
+
+    if (activeToolStep) {
+        const [presentLabel] = getToolCallLabel(activeToolStep.toolCall);
+        if (lines.at(-1) !== presentLabel) {
+            lines.push(presentLabel);
+        }
+    }
+
+    return lines;
+}
+
+function getTraceLineOpacity(index: number, total: number): number {
+    if (total <= 1) {
+        return 1;
+    }
+
+    const minOpacity = 0.2;
+    return minOpacity + (index / (total - 1)) * (1 - minOpacity);
+}
+
+const ThinkingPathTrace = ({ lines }: { lines: string[] }) => {
+    const visibleLines = lines.slice(-THINKING_TRACE_LINE_COUNT);
+
+    if (visibleLines.length === 0) {
+        return null;
+    }
+
+    return (
+        <div className="thinking-path-trace" aria-hidden="true">
+            {visibleLines.map((line, index) => (
+                <p
+                    key={`${index}-${line.slice(-24)}`}
+                    className="thinking-path-trace-line m-0 color-weak text-rg lh130"
+                    style={{ opacity: getTraceLineOpacity(index, visibleLines.length) }}
+                >
+                    {line}
+                </p>
+            ))}
+        </div>
+    );
+};
 
 function mergeConsecutiveReasoningSteps(steps: ThinkingStep[]): ThinkingStep[] {
     const merged: ThinkingStep[] = [];
@@ -163,7 +248,10 @@ const ReasoningContent = ({
             <ThinkingStepTrack>
                 <IcLightbulb
                     size={3}
-                    className={clsx('thinking-step-icon-badge shrink-0', isActive && 'thinking-step-icon-badge--active')}
+                    className={clsx(
+                        'thinking-step-icon-badge shrink-0',
+                        isActive && 'thinking-step-icon-badge--active'
+                    )}
                 />
             </ThinkingStepTrack>
 
@@ -504,13 +592,11 @@ const ToolCallStep = ({
 export const ThinkingPath = ({
     steps,
     message,
-    isGenerating,
-    isLastMessage,
+    isThinking,
+    showThinkingTrace,
     handleLinkClick,
 }: ThinkingPathProps) => {
     const displaySteps = mergeConsecutiveReasoningSteps(steps);
-    const hasActiveStep = hasActiveThinkingStep(displaySteps);
-    const isThinking = hasActiveStep || (isGenerating && isLastMessage);
     const [isExpanded, setIsExpanded] = useState(false);
     const activeHeader = getThinkingPathHeader(displaySteps, message.id, true);
     const completeHeader = getThinkingPathHeader(displaySteps, message.id, false);
@@ -520,6 +606,9 @@ export const ThinkingPath = ({
 
     const showDone = !isThinking;
     const headerLabel = isThinking ? animatedHeader || activeHeader : completeHeader;
+    const traceLines = buildThinkingTraceLines(displaySteps);
+    const showTrace = !isExpanded && showThinkingTrace && traceLines.length > 0;
+
     return (
         <div className="thinking-path">
             <button
@@ -544,6 +633,8 @@ export const ThinkingPath = ({
                     )}
                 />
             </button>
+
+            {showTrace && <ThinkingPathTrace lines={traceLines} />}
 
             {isExpanded && (
                 <div className="thinking-path-steps flex flex-nowrap flex-column gap-4 mt-2">
