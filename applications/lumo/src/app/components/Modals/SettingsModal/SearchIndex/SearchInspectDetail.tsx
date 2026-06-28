@@ -5,10 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
-import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
+import { LumoIcon } from '../../../LumoIcon/LumoIcon';
 import type { GroupedDocument } from './SearchInspectList';
 
 interface Props {
@@ -28,7 +26,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
         <div className="flex flex-column gap-4 flex-nowrap overflow-y-auto *:min-size-auto">
             <div className="flex items-center gap-2 mb-2">
                 <Button shape="ghost" size="small" onClick={onBack}>
-                    <IcArrowLeft size={4} className="mr-1" />
+                    <LumoIcon name="ArrowLeft" size={16} className="mr-1" />
                     {c('Action').t`Back`}
                 </Button>
                 <span className="text-semibold truncate">{doc.name}</span>
@@ -68,7 +66,6 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                     {chunks.map((chunk, index) => {
                         const isExpanded = expandedChunk === index;
                         const chunkSize = chunk.content ? new TextEncoder().encode(chunk.content).byteLength : 0;
-                        const IndicatorIcon = isExpanded ? IcChevronDown : IcChevronRight;
 
                         return (
                             <div
@@ -81,7 +78,11 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                                     className="w-full p-3 text-left flex items-center gap-3 hover:bg-norm transition-colors"
                                     onClick={() => setExpandedChunk(isExpanded ? null : index)}
                                 >
-                                    <IndicatorIcon size={4} className="color-weak shrink-0" />
+                                    {isExpanded ? (
+                                        <LumoIcon name="ChevronDown" size={16} className="color-weak shrink-0" />
+                                    ) : (
+                                        <LumoIcon name="ChevronRight" size={16} className="color-weak shrink-0" />
+                                    )}
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
                                             <span className="text-sm text-semibold">

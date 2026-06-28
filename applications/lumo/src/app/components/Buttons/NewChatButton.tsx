@@ -7,8 +7,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { PopperPlacement } from '@proton/components';
-import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
-import type { IconSize } from '@proton/icons/types';
 
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -17,31 +15,7 @@ import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationById, selectSpaceById } from '../../redux/selectors';
 import { getProjectInfo } from '../../types';
 import { GuestChatDisclaimerModal } from '../Guest/GuestChatDisclaimerModal';
-
-// Hook to manage delayed text rendering for smooth animations
-// const useDelayedTextVisibility = (isCollapsed: boolean) => {
-//     const [shouldShowText, setShouldShowText] = useState(!isCollapsed);
-
-//     useEffect(() => {
-//         if (isCollapsed) {
-//             // Immediately hide text when collapsing
-//             setShouldShowText(false);
-//         } else {
-//             // Delay showing text to allow animation to complete
-//             const timer = setTimeout(() => {
-//                 setShouldShowText(true);
-//             }, 320); // Match the sidebar animation timing
-//             return () => clearTimeout(timer);
-//         }
-//     }, [isCollapsed]);
-
-//     return shouldShowText;
-// };
-
-// interface Props {
-//     isCollapsed: boolean;
-//     isSmallScreen: boolean;
-// }
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 interface NewChatButtonProps {
     buttonProps: ButtonLikeProps<'button'>;
@@ -120,44 +94,7 @@ const NewChatButton = ({ buttonProps, children, toolTipPlacement }: NewChatButto
     );
 };
 
-// const NewChatButtonSidebar = ({ isCollapsed, isSmallScreen }: Props) => {
-//     const shouldShowText = useDelayedTextVisibility(isCollapsed);
-
-//     if (isSmallScreen) {
-//         return null;
-//     }
-
-//     const buttonClassName = clsx(
-//         'w-full flex items-center',
-//         isCollapsed ? 'justify-center px-0' : 'justify-start px-3'
-//     );
-
-//     return (
-//         <div className="px-3 py-2 shrink-0 md:block">
-//             <NewChatButton
-//                 buttonProps={{
-//                     className: buttonClassName,
-//                     size: 'medium',
-//                     color: 'norm',
-//                     icon: true,
-//                 }}
-//                 toolTipPlacement="right"
-//             >
-//                 <div className="flex items-center gap-2">
-//                     <IcPenSquare
-//                         className={clsx('shrink-0', isCollapsed && 'mx-auto')}
-//                         alt={c('collider_2025:Button').t`New chat`}
-//                     />
-//                     {shouldShowText && <span className="text-ellipsis">{c('collider_2025:Button').t`New chat`}</span>}
-//                 </div>
-//             </NewChatButton>
-//         </div>
-//     );
-// };
-
-// export default NewChatButtonSidebar;
-
-export const NewChatButtonHeader = ({ iconSize = 5 }: { iconSize?: IconSize }) => {
+export const NewChatButtonHeader = () => {
     return (
         <NewChatButton
             buttonProps={{
@@ -168,7 +105,7 @@ export const NewChatButtonHeader = ({ iconSize = 5 }: { iconSize?: IconSize }) =
             }}
             toolTipPlacement="left"
         >
-            <IcPenSquare size={iconSize} alt={c('collider_2025: Link').t`New chat`} />
+            <LumoIcon name="SquarePen" size={20} aria-label={c('collider_2025: Link').t`New chat`} />
         </NewChatButton>
     );
 };

@@ -5,8 +5,6 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { IcGlobe } from '@proton/icons/icons/IcGlobe';
-import type { IconName } from '@proton/icons/types';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -15,9 +13,10 @@ import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch } from '../../redux/hooks';
 import { openAgentPicker } from '../../redux/slices/composerActions';
 import { isLimitExhausted, useRemainingLimits } from '../../services/usageLimitsStore';
-import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
 import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
+import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
 import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { MenuDropdown, type MenuDropdownProps, MenuItem } from './components/MenuDropdown';
 
 import './ToolMenuDropdown.scss';
@@ -59,9 +58,29 @@ export const ToolMenuDropdown = ({
         onClickCreateImageOption();
     }, [imageLimitExhausted, onClickCreateImageOption]);
 
+    let imageUpsellOnClick: (() => void) | undefined;
+    if (imageUpsellConfig?.onUpgrade) {
+        imageUpsellOnClick = () => {
+            sendUpgradeButtonClickedEvent({
+                feature: LUMO_UPSELL_PATHS.COMPOSER_IMAGE_SELECTOR,
+                to: 'modal',
+            });
+            imageUpsellConfig.onUpgrade?.();
+            onClose();
+        };
+    } else if (imageUpsellConfig?.path) {
+        imageUpsellOnClick = () => {
+            sendUpgradeButtonClickedEvent({
+                feature: LUMO_UPSELL_PATHS.COMPOSER_IMAGE_SELECTOR,
+                to: 'path',
+            });
+            onClose();
+        };
+    }
+
     const toolMenuItems = [
         {
-            iconName: 'palette' as IconName,
+            icon: <LumoIcon name="Palette" size={16} />,
             getLabel: () => c('collider_2025: Action').t`Create image`,
             getDescription: imageLimitExhausted
                 ? () => c('collider_2025: Info').t`You've reached your image limit for this period.`
@@ -72,7 +91,7 @@ export const ToolMenuDropdown = ({
             isDisabled: imageLimitExhausted,
         },
         {
-            iconName: 'robot' as IconName,
+            icon: <LumoIcon name="Bot" size={16} />,
             getLabel: () => c('collider_2025: Action').t`Custom ${LUMO_SHORT_APP_NAME}s`,
             getDescription: isGuest ? () => c('collider_2025:Placeholder').t`Sign in required` : undefined,
             onClick: () => dispatch(openAgentPicker()),
@@ -94,12 +113,14 @@ export const ToolMenuDropdown = ({
             className="tool-menu-dropdown"
             width="200px"
         >
-            {visibleToolMenuItems.map((item) => (
+            {visibleToolMenuItems.map((item, index) => (
                 <div
-                    key={item.iconName}
+                    key={index}
                     className={clsx(
                         item.isSignInRequired && 'tool-menu-item--sign-in-required',
-                        item.isDisabled && !item.isSignInRequired && 'tool-menu-item--disabled pointer-events-none opacity-55'
+                        item.isDisabled &&
+                            !item.isSignInRequired &&
+                            'tool-menu-item--disabled pointer-events-none opacity-55'
                     )}
                 >
                     <MenuItem {...item} />
@@ -113,32 +134,12 @@ export const ToolMenuDropdown = ({
             {showImageUpsellFooter && (
                 <div className="tool-menu-upsell flex flex-column gap-3 p-3 border-top border-weak">
                     <p className="m-0 text-sm color-norm">
-                        {c('collider_2025: Info')
-                            .t`Upgrade for more image generations and access to advanced models.`}
+                        {c('collider_2025: Info').t`Upgrade for more image generations and access to advanced models.`}
                     </p>
                     <BasicUpgradeButton
                         className="shrink-0"
                         path={imageUpsellConfig?.path}
-                        onClick={
-                            imageUpsellConfig?.onUpgrade
-                                ? () => {
-                                      sendUpgradeButtonClickedEvent({
-                                          feature: LUMO_UPSELL_PATHS.COMPOSER_IMAGE_SELECTOR,
-                                          to: 'modal',
-                                      });
-                                      imageUpsellConfig.onUpgrade?.();
-                                      onClose();
-                                  }
-                                : imageUpsellConfig?.path
-                                  ? () => {
-                                        sendUpgradeButtonClickedEvent({
-                                            feature: LUMO_UPSELL_PATHS.COMPOSER_IMAGE_SELECTOR,
-                                            to: 'path',
-                                        });
-                                        onClose();
-                                    }
-                                  : undefined
-                        }
+                        onClick={imageUpsellOnClick}
                     />
                 </div>
             )}
@@ -149,7 +150,7 @@ export const ToolMenuDropdown = ({
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-center gap-3">
-                    <IcGlobe size={4} className="" />
+                    <LumoIcon name="Globe" size={16} />
                     <div className="flex flex-column">
                         <span className="text-sm font-medium">{c('collider_2025: Action').t`Web search`}</span>
                     </div>

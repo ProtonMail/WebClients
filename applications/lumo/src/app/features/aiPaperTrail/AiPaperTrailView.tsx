@@ -5,12 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
-import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
 import { selectConversationById, selectMessagesByConversationId } from '../../redux/selectors';
@@ -49,7 +47,8 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
     return (
         <div className="ai-paper-trail__inner ai-paper-trail__landing">
             <span className="ai-paper-trail__eyebrow">{c('collider_2025:Title').t`AI Paper Trail`}</span>
-            <h1 className="ai-paper-trail__title">{c('collider_2025:Title').t`AI knows more about you than you think`}</h1>
+            <h1 className="ai-paper-trail__title">{c('collider_2025:Title')
+                .t`AI knows more about you than you think`}</h1>
             <p className="ai-paper-trail__subtitle">
                 {c('collider_2025:Info')
                     .t`Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.`}
@@ -87,10 +86,8 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
                     }}
                 />
                 <div className="flex flex-column items-center gap-3 text-center">
-                    <IcFileArrowInUp size={8} className="ai-paper-trail__upload-icon" />
-                    <span className="text-lg text-semibold">
-                        {c('collider_2025:Action').t`Upload your AI export`}
-                    </span>
+                    <LumoIcon name="FileUp" size={32} className="ai-paper-trail__upload-icon" />
+                    <span className="text-lg text-semibold">{c('collider_2025:Action').t`Upload your AI export`}</span>
                     <span className="ai-paper-trail__muted text-sm">
                         {c('collider_2025:Info').t`Choose or drop .zip or conversations.json from Chat GPT or Claude.`}
                     </span>
@@ -99,13 +96,13 @@ const UploadStage = ({ onFile, error }: { onFile: (file: File | undefined) => vo
 
             {error && (
                 <div className="ai-paper-trail__error flex flex-row flex-nowrap items-start gap-2 mt-4 p-3 rounded">
-                    <IcExclamationCircleFilled className="color-danger shrink-0 mt-0.5" size={4} />
+                    <LumoIcon name="CircleAlert" size={16} className="color-danger shrink-0 mt-0.5" />
                     <span>{error}</span>
                 </div>
             )}
 
             <div className="ai-paper-trail__privacy flex flex-row flex-nowrap items-center gap-2 mt-6">
-                <IcLockFilled size={4} className="shrink-0" />
+                <LumoIcon name="Lock" size={16} className="shrink-0" />
                 <span className="text-sm">
                     {c('collider_2025:Info')
                         .t`Your file never leaves your device. It's read locally and is never stored.`}
@@ -311,7 +308,7 @@ export const AiPaperTrailView = () => {
     } else {
         content = (
             <div className="ai-paper-trail__inner flex flex-column items-center gap-4 text-center">
-                <IcExclamationCircleFilled className="color-danger" size={8} />
+                <LumoIcon name="CircleAlert" size={32} className="color-danger" />
                 <h2 className="ai-paper-trail__title m-0">{c('collider_2025:Title')
                     .t`We couldn't read your paper trail`}</h2>
                 <p className="ai-paper-trail__subtitle m-0">

@@ -5,19 +5,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { IcKey } from '@proton/icons/icons/IcKey';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { TokenUsageState } from '../../hooks/usePersonalAccessTokenUsage';
 import type { PersonalAccessToken } from '../../remote/personalAccessToken';
 import { ApiKeyUsageExpanded, UsageSparklineCompact } from './ApiKeyUsageCharts';
-import {
-    formatDate,
-    getDaysRemaining,
-    getTokenStatus,
-    type TokenStatus,
-} from './apiKeysHelpers';
+import { type TokenStatus, formatDate, getDaysRemaining, getTokenStatus } from './apiKeysHelpers';
 
 const StatusBadge = ({ status }: { status: TokenStatus }) => {
     const labels: Record<TokenStatus, string> = {
@@ -54,6 +47,7 @@ export const ApiKeyCard = ({
 
     return (
         <div className={clsx('api-keys-card-wrap', expanded && 'api-keys-card-wrap--expanded')}>
+            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role*/}
             <div
                 className={clsx(
                     'api-keys-card',
@@ -72,7 +66,7 @@ export const ApiKeyCard = ({
                 }}
             >
                 <div className="api-keys-card-icon flex items-center justify-center shrink-0 rounded-lg">
-                    <IcKey size={4} />
+                    <LumoIcon name="Key" size={16} />
                 </div>
 
                 <div className="flex-1 min-w-0 flex flex-column gap-1">
@@ -100,16 +94,19 @@ export const ApiKeyCard = ({
                             disabled={isDeleting}
                             aria-label={c('Action').t`Delete ${token.Name}`}
                         >
-                            <IcTrash size={4} />
+                            <LumoIcon name="Trash2" size={16} />
                         </Button>
                     </Tooltip>
                 </div>
 
                 <span
-                    className={clsx('api-keys-card-chevron flex items-center justify-center shrink-0', expanded && 'is-open')}
+                    className={clsx(
+                        'api-keys-card-chevron flex items-center justify-center shrink-0',
+                        expanded && 'is-open'
+                    )}
                     aria-hidden
                 >
-                    <IcChevronDown size={4} />
+                    <LumoIcon name="ChevronDown" size={16} />
                 </span>
             </div>
             {expanded && (

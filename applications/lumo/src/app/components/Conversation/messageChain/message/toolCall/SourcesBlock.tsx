@@ -4,9 +4,9 @@ import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 
 import type { SearchItem } from '../../../../../lib/toolCall/types';
+import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import { getDomain } from './helpers';
 import { useSourceFavIcon } from './useSourceFavIcon';
 
@@ -23,7 +23,7 @@ export const SourceFavIcon = ({ domain }: { domain: string }) => {
         if (domain) {
             return <ColoredDisk domain={domain} />;
         } else {
-            return <IcGlobe className="color-norm" size={4} />;
+            return <LumoIcon name="Globe" size={16} className="color-norm" />;
         }
     }
 

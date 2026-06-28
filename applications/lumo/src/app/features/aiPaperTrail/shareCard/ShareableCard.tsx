@@ -6,16 +6,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
 import { IcBrandFacebook } from '@proton/icons/icons/IcBrandFacebook';
 import { IcBrandLinkedin } from '@proton/icons/icons/IcBrandLinkedin';
 import { IcBrandReddit } from '@proton/icons/icons/IcBrandReddit';
 import { IcBrandTwitter } from '@proton/icons/icons/IcBrandTwitter';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { IcLink } from '@proton/icons/icons/IcLink';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import type { PaperTrailCardData } from '../reportTypes';
 import { CARD_HEIGHT, CARD_WIDTH, type ShareCardTheme, renderShareCard } from './drawShareCard';
 import { SHARE_TEXT, SHARE_URL, type SocialPlatform, buildShareIntentUrl } from './socialShare';
@@ -190,7 +187,7 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
                                 aria-label={c('collider_2025:Action').t`Copy link & caption`}
                                 onClick={handleCopyLink}
                             >
-                                {linkCopied ? <IcCheckmark size={5} /> : <IcLink size={5} />}
+                                {linkCopied ? <LumoIcon name="Check" size={20} /> : <LumoIcon name="Link" size={20} />}
                             </button>
                         </Tooltip>
                     </div>
@@ -202,12 +199,12 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={handleDownload}>
-                    <IcArrowDownLine className="mr-2" />
+                    <LumoIcon name="ArrowDownToLine" className="mr-2" />
                     {c('collider_2025:Action').t`Download`}
                 </Button>
                 {canShareFiles && (
                     <Button color="norm" onClick={handleShare}>
-                        <IcArrowUpFromSquare className="mr-2" />
+                        <LumoIcon name="Share" className="mr-2" />
                         {c('collider_2025:Action').t`Share`}
                     </Button>
                 )}

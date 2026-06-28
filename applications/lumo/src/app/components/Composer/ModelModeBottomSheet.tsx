@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Portal } from '@proton/components/components/portal';
-import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 interface ModelModeBottomSheetProps {
     open: boolean;
@@ -65,7 +66,7 @@ export const ModelModeBottomSheet = ({ open, onClose, children }: ModelModeBotto
                                 icon
                                 onClick={onClose}
                             >
-                                <IcCrossBig alt={c('Action').t`Close`} />
+                                <LumoIcon name="X" aria-label={c('Action').t`Close`} />
                             </Button>
                         </Tooltip>
                     </div>

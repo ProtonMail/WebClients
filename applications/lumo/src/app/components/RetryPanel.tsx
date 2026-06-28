@@ -3,12 +3,9 @@ import React, { useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
-import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import type { IconName } from '@proton/icons/types';
-
 import type { RetryStrategy } from '../types';
 import { isImeComposing } from '../util/keyboard';
+import { type IconName, LumoIcon } from './LumoIcon/LumoIcon';
 
 export type RetryOption = {
     strategy: RetryStrategy;
@@ -21,25 +18,25 @@ const RETRY_OPTIONS: RetryOption[] = [
     {
         strategy: 'try_again',
         label: c('collider_2025:Action').t`Try again`,
-        icon: 'arrows-rotate',
+        icon: 'RotateCcw',
         description: c('collider_2025:Action').t`Retry with the same prompt`,
     },
     {
         strategy: 'add_details',
         label: c('collider_2025:Action').t`Add details`,
-        icon: 'list-bullets',
+        icon: 'List',
         description: c('collider_2025:Action').t`Add more information to improve the response`,
     },
     {
         strategy: 'more_concise',
         label: c('collider_2025:Action').t`More concise`,
-        icon: 'text-align-left',
+        icon: 'TextAlignStart',
         description: c('collider_2025:Action').t`Request a shorter, more focused response`,
     },
     {
         strategy: 'think_longer',
         label: c('collider_2025:Action').t`Think longer`,
-        icon: 'clock',
+        icon: 'Clock',
         description: c('collider_2025:Action').t`Ask the model to be more careful and thorough`,
     },
 ];
@@ -123,7 +120,12 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                         zIndex: 10,
                     }}
                 >
-                    <IcArrowRight size={3} className={customInstructions.trim() ? 'text-white' : 'text-hint'} />
+                    <LumoIcon
+                        name="ArrowRight"
+                        width={12}
+                        height={12}
+                        className={customInstructions.trim() ? 'text-white' : 'text-hint'}
+                    />
                 </button>
             </div>
 
@@ -137,7 +139,7 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                         disabled={disabled}
                         title={option.description}
                     >
-                        <Icon name={option.icon} className="shrink-0" />
+                        <LumoIcon name={option.icon} className="shrink-0" />
                         <span className="text-sm">{option.label}</span>
                     </button>
                 ))}

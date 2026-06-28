@@ -3,19 +3,15 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi, useNotifications } from '@proton/components/index';
-import { IcKey } from '@proton/icons/icons/IcKey';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import { getLoadingUsageState, useAllPersonalAccessTokensUsage } from '../../hooks/usePersonalAccessTokenUsage';
 import {
-    getLoadingUsageState,
-    useAllPersonalAccessTokensUsage,
-} from '../../hooks/usePersonalAccessTokenUsage';
-import {
-    deletePersonalAccessTokenRequest,
-    listPersonalAccessTokensRequest,
     type ListPersonalAccessTokensResponse,
     type PersonalAccessToken,
+    deletePersonalAccessTokenRequest,
+    listPersonalAccessTokensRequest,
 } from '../../remote/personalAccessToken';
 import { ApiKeyCard } from './ApiKeyCard';
 import { ApiKeysUsageOverview } from './ApiKeyUsageCharts';
@@ -40,15 +36,17 @@ const ApiKeysPanel = () => {
     const [revealedToken, setRevealedToken] = useState<string | null>(null);
 
     const tokenIds = useMemo(() => tokens.map((t) => t.PersonalAccessTokenID), [tokens]);
-    const { byId, aggregate, isLoading: usageBatchLoading, error: usageBatchError } =
-        useAllPersonalAccessTokensUsage(tokenIds);
+    const {
+        byId,
+        aggregate,
+        isLoading: usageBatchLoading,
+        error: usageBatchError,
+    } = useAllPersonalAccessTokensUsage(tokenIds);
 
     const loadTokens = useCallback(async () => {
         setIsLoading(true);
         try {
-            const response = await apiRef.current<ListPersonalAccessTokensResponse>(
-                listPersonalAccessTokensRequest()
-            );
+            const response = await apiRef.current<ListPersonalAccessTokensResponse>(listPersonalAccessTokensRequest());
             setTokens(response.PersonalAccessTokens.PersonalAccessTokens ?? []);
         } catch {
             createNotificationRef.current({
@@ -121,9 +119,7 @@ const ApiKeysPanel = () => {
 
     return (
         <div className="api-keys-panel flex flex-column gap-5 w-full">
-            {revealedToken && (
-                <TokenRevealModal token={revealedToken} onClose={() => setRevealedToken(null)} />
-            )}
+            {revealedToken && <TokenRevealModal token={revealedToken} onClose={() => setRevealedToken(null)} />}
 
             <div className="flex items-center justify-space-between gap-4 pt-2">
                 <p className="api-keys-description m-0 flex-1">
@@ -136,15 +132,13 @@ const ApiKeysPanel = () => {
                         onClick={() => setShowCreateForm(true)}
                         type="button"
                     >
-                        <IcPlus size={3} />
+                        <LumoIcon name="Plus" width={12} height={12} />
                         {c('Action').t`New key`}
                     </button>
                 )}
             </div>
 
-            {showCreateForm && (
-                <CreateKeyForm onCancel={() => setShowCreateForm(false)} onCreated={handleCreated} />
-            )}
+            {showCreateForm && <CreateKeyForm onCancel={() => setShowCreateForm(false)} onCreated={handleCreated} />}
 
             {isLoading ? (
                 <div className="flex flex-column gap-2">
@@ -154,7 +148,7 @@ const ApiKeysPanel = () => {
             ) : tokens.length === 0 ? (
                 <div className="flex flex-column items-center justify-center text-center gap-3 pt-12 pb-8">
                     <div className="api-keys-empty-icon flex items-center justify-center rounded-xl">
-                        <IcKey size={6} />
+                        <LumoIcon name="KeyRound" size={24} />
                     </div>
                     <p className="api-keys-empty-title m-0">{c('collider_2025: Title').t`No API keys yet`}</p>
                     <p className="api-keys-empty-subtitle m-0">

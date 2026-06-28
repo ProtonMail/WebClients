@@ -3,13 +3,13 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAssetsLimitStatus, useMessagesLimitStatus } from '../../hooks/useResourceLimitStatus';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import type { ConversationId, SpaceId } from '../../types';
 import { getIsMobileDevice } from '../../util/device';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { ComposerNotificationCard, type NotificationSeverity } from '../Notifications/ComposerNotificationCard';
 
 interface Props {
@@ -116,7 +116,7 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
 
     return (
         <ComposerNotificationCard
-            icon={<IcExclamationCircle />}
+            icon={<LumoIcon name="Info" />}
             title={banner.title}
             description={banner.description}
             action={banner.action}

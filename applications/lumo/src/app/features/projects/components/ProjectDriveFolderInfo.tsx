@@ -4,13 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownMenu, DropdownMenuButton } from '@proton/components';
-import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { BreadcrumbItem } from '../../../components/Files/DriveBrowser/DriveBreadcrumbs';
+import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 
 interface ProjectDriveFolderInfoProps {
     breadcrumbs: BreadcrumbItem[];
@@ -55,7 +53,12 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                                 {breadcrumb.node.name}
                                             </button>
                                             {index < breadcrumbs.length - 1 && (
-                                                <IcChevronRight size={3} className="color-weak" />
+                                                <LumoIcon
+                                                    name="ChevronRight"
+                                                    width={12}
+                                                    height={12}
+                                                    className="color-weak"
+                                                />
                                             )}
                                         </div>
                                     ))
@@ -71,7 +74,12 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                             >
                                                 {breadcrumbs[0].node.name}
                                             </button>
-                                            <IcChevronRight size={3} className="color-weak" />
+                                            <LumoIcon
+                                                name="ChevronRight"
+                                                width={12}
+                                                height={12}
+                                                className="color-weak"
+                                            />
                                         </div>
 
                                         {/* Dropdown button for middle breadcrumbs */}
@@ -85,7 +93,12 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                             >
                                                 ...
                                             </button>
-                                            <IcChevronRight size={3} className="color-weak" />
+                                            <LumoIcon
+                                                name="ChevronRight"
+                                                width={12}
+                                                height={12}
+                                                className="color-weak"
+                                            />
                                         </div>
 
                                         {/* Last breadcrumb */}
@@ -142,7 +155,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                         onClick={onCreateFolder}
                         title={c('collider_2025:Action').t`Create folder`}
                     >
-                        <IcFolderPlus size={4} />
+                        <LumoIcon name="FolderPlus" size={16} />
                     </Button>
                     <Button
                         icon
@@ -151,7 +164,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                         onClick={onUpload}
                         title={c('collider_2025:Action').t`Upload file`}
                     >
-                        <IcArrowUpLine size={4} />
+                        <LumoIcon name="ArrowUpToLine" size={16} />
                     </Button>
                 </div>
             )}

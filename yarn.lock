@@ -35669,6 +35669,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^1.21.0":
+  version: 1.21.0
+  resolution: "lucide-react@npm:1.21.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10/71215c7818f45c0baaecf2524e62bc31b335d607020ed92d4e901e55099b4b40cf80c8d22ee9386514e6a66ea9b0a1c070c36aafdbdbe8c1b0c7192ec9f9f358
+  languageName: node
+  linkType: hard
+
 "lucide@npm:^0.577.0":
   version: 0.577.0
   resolution: "lucide@npm:0.577.0"
@@ -41660,6 +41669,7 @@ __metadata:
     jszip: "npm:^3.10.1"
     lodash: "npm:^4.18.1"
     lottie-react: "npm:^2.4.1"
+    lucide-react: "npm:^1.21.0"
     msw: "npm:2.12.14"
     p-limit: "npm:^6.2.0"
     pdfjs-dist: "npm:^4.10.38"

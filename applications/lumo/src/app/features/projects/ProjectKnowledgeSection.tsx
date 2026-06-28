@@ -7,11 +7,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
-import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -20,6 +15,7 @@ import type { BreadcrumbItem } from '../../components/Files/DriveBrowser/DriveBr
 import type { DriveBrowserHandle } from '../../components/Files/DriveBrowser/DriveBrowser';
 import { type UploadProgress, UploadProgressOverlay } from '../../components/Files/DriveBrowser/UploadProgressOverlay';
 import { KnowledgeBaseFileItem } from '../../components/Files/KnowledgeBase/KnowledgeBaseFileItem';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { Attachment, LinkedDriveFolder } from '../../types';
 import { ProjectDriveFolderInfo } from './components/ProjectDriveFolderInfo';
 
@@ -165,7 +161,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                             shape="ghost"
                             size="small"
                         >
-                            <IcInfoCircle size={4} />
+                            <LumoIcon name="Info" size={16} />
                         </ButtonLike>
                     </Tooltip>
                 </h3>
@@ -180,7 +176,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                                 onClick={onAddFiles}
                                 title={c('collider_2025:Action').t`Upload files`}
                             >
-                                <IcArrowUpLine size={4} />
+                                <LumoIcon name="ArrowUpToLine" size={16} />
                             </Button>
                             <Button
                                 icon
@@ -190,7 +186,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                                 className="project-files-remove-all-button"
                                 title={c('collider_2025:Action').t`Remove all files`}
                             >
-                                <IcTrash size={4} />
+                                <LumoIcon name="Trash2" size={16} />
                             </Button>
                         </>
                     )}
@@ -203,7 +199,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                             onClick={onLinkDriveFolder}
                             title={c('collider_2025:Action').t`Manage Drive folder link`}
                         >
-                            <IcMeetSettings size={4} />
+                            <LumoIcon name="Settings2" size={16} />
                         </Button>
                     )}
                 </div>
@@ -215,7 +211,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                     <Banner
                         className="mb-1 color-weak border-none"
                         variant="norm-outline"
-                        icon={<IcLightLightbulb size={3.5} />}
+                        icon={<LumoIcon name="Lightbulb" width={14} height={14} />}
                     >
                         {c('collider_2025:Info').t`Type @filename to ask questions about a specific file`}
                     </Banner>
@@ -231,7 +227,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                         <UploadProgressOverlay uploadProgress={uploadProgress} />
                     </div>
                 )}
-                {/* eslint-disable-next-line no-nested-ternary */}
+                {}
                 {isDriveMode ? (
                     <DriveFolderContent driveProps={driveProps} onUpload={onAddFiles} />
                 ) : files.length === 0 ? (

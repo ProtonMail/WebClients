@@ -12,20 +12,17 @@ import {
     ModalTwoHeader,
     useModalStateObject,
 } from '@proton/components';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { IcPen } from '@proton/icons/icons/IcPen';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import { useCustomAgentLimit } from '../../hooks/useCustomAgentLimit';
 import { useCustomAgents } from '../../hooks/useCustomAgents';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { closeAgentPicker } from '../../redux/slices/composerActions';
+import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
 import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
-import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
 import { AgentModal } from './AgentModal';
 import { CustomAgentLimitModal } from './CustomAgentLimitModal';
 import { DEFAULT_AGENT_ICON } from './constants';
@@ -101,7 +98,6 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
 
     const filteredAgents = useMemo(() => {
         const byFilter: CustomAgent[] =
-            // eslint-disable-next-line no-nested-ternary
             filter === 'mine'
                 ? personalAgents
                 : filter === 'default'
@@ -203,7 +199,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                         </span>
                                                         {isActive && (
                                                             <span className="inline-flex items-center gap-0.5 text-xs text-semibold color-primary bg-weak rounded-full px-1.5 py-0.5 shrink-0">
-                                                                <IcCheckmark size={3.5} />
+                                                                <LumoIcon name="Check" width={14} height={14} />
                                                                 {c('collider_2025:Badge').t`Selected`}
                                                             </span>
                                                         )}
@@ -219,7 +215,9 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                     </span>
                                                     <span
                                                         className="text-sm color-weak text-ellipsis min-w-0 block w-full"
-                                                        title={bylineFull.length > byline.length ? bylineFull : undefined}
+                                                        title={
+                                                            bylineFull.length > byline.length ? bylineFull : undefined
+                                                        }
                                                     >
                                                         {byline || '\u00A0'}
                                                     </span>
@@ -238,7 +236,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                         title={c('collider_2025:Action').t`Edit agent`}
                                                         aria-label={c('collider_2025:Action').t`Edit agent`}
                                                     >
-                                                        <IcPen size={4} />
+                                                        <LumoIcon name="Pen" size={16} />
                                                     </Button>
                                                 ) : (
                                                     <Button
@@ -250,7 +248,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                         title={c('collider_2025:Action').t`Make a copy`}
                                                         aria-label={c('collider_2025:Action').t`Make a copy`}
                                                     >
-                                                        <IcSquares size={4} />
+                                                        <LumoIcon name="Copy" size={16} />
                                                     </Button>
                                                 )}
                                             </span>
@@ -268,14 +266,13 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                             className="flex items-center justify-center gap-2 mb-2"
                             onClick={handleCreate}
                         >
-                            <IcPlus size={4} />
+                            <LumoIcon name="Plus" size={16} />
                             {c('collider_2025:Action').t`Create`}
                         </Button>
                     ) : (
                         <BasicUpgradeButton
                             className="w-full mb-2"
-                            buttonText={c('collider_2025:Action')
-                                .t`Upgrade for more custom ${LUMO_SHORT_APP_NAME}s`}
+                            buttonText={c('collider_2025:Action').t`Upgrade for more custom ${LUMO_SHORT_APP_NAME}s`}
                             onClick={handleUpgradeForMore}
                         />
                     )}

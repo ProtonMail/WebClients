@@ -4,6 +4,7 @@ import { useModalStateObject } from '@proton/components';
 
 import DropdownMenu from '../../components/DropdownMenu';
 import type { DropdownOptions } from '../../components/DropdownMenu';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectSpaceById } from '../../redux/selectors';
 import type { ProjectSpace } from '../../types';
@@ -33,7 +34,7 @@ export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps)
     const options: DropdownOptions[] = [
         {
             label: c('collider_2025:Action').t`Edit project`,
-            icon: 'pen',
+            icon: <LumoIcon name="Pen" size={16} />,
             onClick: (e) => {
                 e?.stopPropagation();
                 editModal.openModal(true);
@@ -41,7 +42,7 @@ export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps)
         },
         {
             label: c('collider_2025:Action').t`Delete project`,
-            icon: 'trash',
+            icon: <LumoIcon name="Trash2" size={16} />,
             onClick: (e) => {
                 e?.stopPropagation();
                 deleteModal.openModal(true);

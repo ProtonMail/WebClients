@@ -19,11 +19,11 @@ im.$media-expressions: $media-expressions;
 	// 	}
 	// }
 
-	// Add V2 icon styling
-	svg {
-		stroke-width: 0.3px;
-		stroke: currentcolor;
-	}
+	// // Add V2 icon styling
+	// svg {
+	// 	stroke-width: 0.3px;
+	// 	stroke: currentcolor;
+	// }
 
 	// `.lumo-plus-button` provides its own SVG styling, opt it out of the
 	// chunky-stroke treatment applied to the rest of the sidebar icons.

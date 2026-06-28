@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
-import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
+
+import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 
 interface ConversationDropdownProps {
     conversationId: string;
@@ -29,12 +29,12 @@ export const ConversationDropdown = ({ onDelete }: ConversationDropdownProps) =>
                     toggle();
                 }}
             >
-                <IcThreeDotsVertical size={4} />
+                <LumoIcon name="EllipsisVertical" size={16} />
             </button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} className="chat-dropdown-menu">
                 <DropdownMenu>
                     <DropdownMenuButton className="text-left color-danger" onClick={handleDelete}>
-                        <IcTrash className="mr-2" />
+                        <LumoIcon name="Trash2" className="mr-2" />
                         {c('collider_2025:Action').t`Delete conversation`}
                     </DropdownMenuButton>
                 </DropdownMenu>
