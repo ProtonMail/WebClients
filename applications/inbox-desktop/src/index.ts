@@ -71,10 +71,11 @@ import { quitTracker } from "./utils/log/quitTracker";
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed
     // during the uninstall process (or any other procees that implies application restart).
-    // Capped for the same reason as initializeSentry above: in non-Squirrel launches
-    // (e.g. e2e tests on packaged builds) this should short-circuit in <10ms, but if
-    // it ever stalls we'd rather log and continue than freeze startup.
-    await withTimeout(handleSquirrelEvents(), 15_000, "handleSquirrelEvents");
+    // NOT wrapped in withTimeout: we have no evidence Squirrel hangs, and forcing startup
+    // to proceed mid-install/uninstall would re-introduce the exact race this await guards
+    // against. The e2e launches don't pass any --squirrel-* flags so this call returns in
+    // <10ms there anyway.
+    await handleSquirrelEvents();
     profiler.mark("squirrel-done");
 
     // Security addition
