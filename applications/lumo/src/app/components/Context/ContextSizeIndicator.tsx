@@ -4,10 +4,10 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
 
 import { countAttachmentToken, getFileSizeLevel } from '../../llm/utils';
 import type { Attachment } from '../../types';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 interface ContextSizeIndicatorProps {
     attachment: Attachment;
@@ -32,7 +32,7 @@ export const ContextSizeIndicator = ({ attachment }: ContextSizeIndicatorProps) 
 
     const getSizeIndicatorProps = () => {
         return {
-            icon: 'exclamation-filled' as const,
+            icon: 'TriangleAlert' as const,
             colorClass: 'color-weak',
             label: c('collider_2025: Info').t`Large file`,
             tooltip: c('collider_2025: Info').t`This file uses significant context space`,
@@ -45,7 +45,7 @@ export const ContextSizeIndicator = ({ attachment }: ContextSizeIndicatorProps) 
     return (
         <Tooltip title={props.tooltip}>
             <span className={clsx('flex items-center gap-1 text-xs', props.colorClass)}>
-                <Icon name={props.icon} size={3} className={clsx('shrink-0', props.colorClass)} />
+                <LumoIcon name={props.icon} width={12} height={12} className={clsx('shrink-0', props.colorClass)} />
                 <span>{props.label}</span>
             </span>
         </Tooltip>

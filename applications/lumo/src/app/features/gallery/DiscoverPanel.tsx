@@ -2,10 +2,9 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
-import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoUserSettings } from '../../hooks/useLumoUserSettings';
 import { type GalleryPromptSuggestion, getGalleryPromptSuggestions } from './promptSuggestions';
 
@@ -25,9 +24,9 @@ function pickSuggestions(
 }
 
 const ACTION_META: Record<GalleryPromptSuggestion['action'], { label: string; icon: string }> = {
-    edit_image: { label: 'Upload', icon: 'arrow-up-line' },
-    sketch: { label: 'Sketch', icon: 'pen' },
-    prompt: { label: 'Create', icon: 'magic-wand' },
+    edit_image: { label: 'Upload', icon: 'ArrowUpFromLine' },
+    sketch: { label: 'Sketch', icon: 'Pen' },
+    prompt: { label: 'Create', icon: 'WandSparkles' },
 };
 
 const SuggestionCard = ({
@@ -44,7 +43,7 @@ const SuggestionCard = ({
             <span className="gallery-suggestion-card__img-wrap">
                 <img src={suggestion.img} alt="" className="gallery-suggestion-card__img" />
                 <span className="gallery-suggestion-card__badge">
-                    <Icon name={meta.icon as any} size={3} />
+                    <LumoIcon name={meta.icon as any} width={12} height={12} />
                     {meta.label}
                 </span>
             </span>
@@ -86,7 +85,7 @@ export const DiscoverPanel = ({ onSuggestionClick }: { onSuggestionClick: (s: Ga
                             title={c('collider_2025:Action').t`Shuffle suggestions`}
                             aria-label={c('collider_2025:Action').t`Shuffle suggestions`}
                         >
-                            <IcArrowsRotate size={3.5} />
+                            <LumoIcon name="RefreshCw" width={14} height={14} />
                         </button>
                     )}
                     <button className="gallery-discover__toggle" onClick={handleToggle} type="button">

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import type { ModalProps } from '@proton/components';
-import { Icon, ModalContent, ModalTwo, ModalTwoFooter } from '@proton/components';
+import { ModalContent, ModalTwo, ModalTwoFooter } from '@proton/components';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { LazyLottie } from '../LazyLottie';
@@ -36,16 +36,9 @@ const WhatsNewModal = ({ feature, onCallToAction, onCancel, ...modalProps }: Wha
                         {feature.getDescription && <p className="m-0 color-weak">{feature.getDescription()}</p>}
                         {feature.getFeaturePoints && (
                             <ul className="unstyled my-0">
-                                {feature.getFeaturePoints().map((point: FeaturePoint) => (
-                                    <li
-                                        key={point.icon}
-                                        className="feature-point flex flex-nowrap items-center gap-3 my-2"
-                                    >
-                                        {point.svg ? (
-                                            point.svg
-                                        ) : (
-                                            <Icon name={point.icon} className="shrink-0" size={4} />
-                                        )}
+                                {feature.getFeaturePoints().map((point: FeaturePoint, index: number) => (
+                                    <li key={index} className="feature-point flex flex-nowrap items-center gap-3 my-2">
+                                        {point.icon}
                                         <span>{point.getText()}</span>
                                     </li>
                                 ))}

@@ -4,13 +4,13 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { Message } from '../../../../types';
 import { FileUploadButton } from '../../../Common';
 import { useFileHandling } from '../../../Composer/hooks/useFileHandling';
+import { LumoIcon } from '../../../LumoIcon/LumoIcon';
 
 interface EmptyStateWithUploadProps {
     messageChain: Message[];
@@ -52,7 +52,7 @@ export const EmptyStateWithUpload = ({
                 className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
                 title={c('collider_2025: Info').t`Add from computer`}
             >
-                <IcArrowUpLine size={4} />
+                <LumoIcon name="ArrowUpToLine" size={16} />
                 <span>{c('collider_2025: Info').t`Add from computer`}</span>
             </FileUploadButton>
         </div>

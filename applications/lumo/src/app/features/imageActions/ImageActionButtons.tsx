@@ -3,11 +3,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
-import { IcPen } from '@proton/icons/icons/IcPen';
-import { IcSquares } from '@proton/icons/icons/IcSquares';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { IMAGE_STYLE_OPTIONS } from './styleOptions';
 
 const BUTTON_STYLE = 'image-action-btn flex flex-row gap-2 flex-nowrap items-center w-fit-content';
@@ -20,14 +18,14 @@ export const ImageModifyButton = ({ onClick, className }: { onClick: () => void;
         size="medium"
         onClick={onClick}
     >
-        <IcPen size={3.5} />
+        <LumoIcon name="Pen" width={14} height={14} />
         {c('collider_2025:Action').t`Modify`}
     </Button>
 );
 
 export const ImageDownloadButton = ({ onClick }: { onClick: () => void }) => (
     <Button className={BUTTON_STYLE} shape="outline" size="medium" onClick={onClick}>
-        <IcArrowDownLine size={3.5} />
+        <LumoIcon name="ArrowDownToLine" width={14} height={14} />
         {c('collider_2025:Action').t`Download`}
     </Button>
 );
@@ -46,11 +44,7 @@ const MENU_VIEWPORT_MARGIN = 16;
 
 const getEstimatedMenuHeight = () => IMAGE_STYLE_OPTIONS.length * MENU_ITEM_HEIGHT + MENU_PADDING;
 
-export const ImageStyleDropdown = ({
-    onSelect,
-    side = false,
-    stopPropagation = false,
-}: ImageStyleDropdownProps) => {
+export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = false }: ImageStyleDropdownProps) => {
     const [showMenu, setShowMenu] = useState(false);
     const [opensDown, setOpensDown] = useState(false);
     const [maxMenuHeight, setMaxMenuHeight] = useState<number | undefined>();
@@ -95,7 +89,7 @@ export const ImageStyleDropdown = ({
     return (
         <span ref={menuRef} className={wrapperClass}>
             <Button className={BUTTON_STYLE} shape="outline" size="medium" onClick={() => setShowMenu((v) => !v)}>
-                <IcSquares size={3.5} />
+                <LumoIcon name="Copy" width={14} height={14} />
                 {c('collider_2025:Action').t`Change style`}
                 <IcChevronDownFilled
                     size={3}

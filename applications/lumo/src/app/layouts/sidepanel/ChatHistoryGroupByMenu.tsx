@@ -5,11 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcListBullets } from '@proton/icons/icons/IcListBullets';
 
 import { MenuDropdown } from '../../components/Composer/components/MenuDropdown';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoUserSettings } from '../../hooks';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 
@@ -17,7 +15,7 @@ import './ChatHistoryGroupByMenu.scss';
 
 const Checkmark = ({ visible }: { visible: boolean }) => (
     <span className={clsx('flex items-center shrink-0', !visible && 'visibility-hidden')}>
-        <IcCheckmark size={4} className="color-primary" />
+        <LumoIcon name="Check" size={16} className="color-primary" />
     </span>
 );
 
@@ -25,15 +23,7 @@ const MenuSectionLabel = ({ children }: { children: React.ReactNode }) => (
     <div className="chat-history-group-by-menu-label px-4 py-2 text-sm color-weak">{children}</div>
 );
 
-const GroupByMenuItem = ({
-    label,
-    selected,
-    onSelect,
-}: {
-    label: string;
-    selected: boolean;
-    onSelect: () => void;
-}) => (
+const GroupByMenuItem = ({ label, selected, onSelect }: { label: string; selected: boolean; onSelect: () => void }) => (
     <DropdownMenuButton
         className="justify-start"
         onMouseDown={(event) => event.preventDefault()}
@@ -94,10 +84,10 @@ export const ChatHistoryGroupByMenu = ({ showSortedByLabel = false }: ChatHistor
                 {showSortedByLabel ? (
                     <span className="flex items-center gap-1">
                         <span className="text-sm">{sortedByLabel}</span>
-                        <IcChevronDown size={3} className="color-weak shrink-0" alt="" />
+                        <LumoIcon name="ChevronDown" width={12} height={12} className="color-weak shrink-0" />
                     </span>
                 ) : (
-                    <IcListBullets size={3.5} />
+                    <LumoIcon name="List" width={14} height={14} />
                 )}
             </Button>
 

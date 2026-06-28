@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components';
-import { IcCross } from '@proton/icons/icons/IcCross';
 
 import { getMessageBlocks } from '../../../../../messageHelpers';
 import type { Message } from '../../../../../types';
 import { useNativeComposerVisibilityApi } from '../../../../Composer/hooks/useNativeComposerVisibilityApi';
+import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import { ToolCallInfo } from './ToolCallInfo';
 import { extractSearchResults } from './toolCallUtils';
@@ -48,7 +48,7 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
                         title={c('collider_2025: Web Search').t`Close`}
                         aria-label={c('collider_2025: Web Search').t`Close`}
                     >
-                        <IcCross size={4} />
+                        <LumoIcon name="X" size={16} />
                     </Button>
                 </div>
                 <div className="flex flex-1 overflow-y-auto">

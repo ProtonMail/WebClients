@@ -1,8 +1,6 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
-import { IcArrowLeftAndDown } from '@proton/icons/icons/IcArrowLeftAndDown';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 const PressEnterToReturn = () => {
     const shiftEnterBoldText = (
@@ -12,7 +10,7 @@ const PressEnterToReturn = () => {
     );
     return (
         <div className="hidden md:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint">
-            <IcArrowLeftAndDown />
+            <LumoIcon name="CornerDownLeft" size={16} />
             <span className="text-xs">{c('collider_2025: Info').jt`Press ${shiftEnterBoldText} to ask`}</span>
         </div>
     );

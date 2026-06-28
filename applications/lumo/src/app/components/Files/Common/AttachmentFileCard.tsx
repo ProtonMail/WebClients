@@ -6,15 +6,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { CircularProgress, FileIcon } from '@proton/components';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
-import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 
 import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
 import { mimeToHuman } from '../../../util/filetypes';
 import { isPastedContentAttachment } from '../../../util/pastedContentHelper';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 import './AttachmentFileCard.scss';
 
@@ -98,7 +96,7 @@ const RemoveButton = ({ processing, onRemove }: RemoveButtonProps) => {
     if (processing) {
         return (
             <Tooltip title={c('collider_2025:Info').t`Processing file...`}>
-                <span className="file-card-dismiss-button file-card-progress bg-white rounded-full border" >
+                <span className="file-card-dismiss-button file-card-progress bg-white rounded-full border">
                     <CircularProgress progress={75} size={15} />
                 </span>
             </Tooltip>
@@ -114,7 +112,7 @@ const RemoveButton = ({ processing, onRemove }: RemoveButtonProps) => {
                 className="file-card-dismiss-button text-center"
                 data-testid="remove-button"
             >
-                <IcCross size={4} />
+                <LumoIcon name="X" size={16} />
             </Button>
         </Tooltip>
     );
@@ -140,7 +138,7 @@ const FileInfo = ({ filename, prettyType, processing, autoRetrieved, mimeTypeIco
             </p>
             {autoRetrieved && (
                 <span className="text-xs color-primary flex items-center gap-1 mt-0.5">
-                    <IcMagicWand size={3} />
+                    <LumoIcon name="WandSparkles" width={12} height={12} />
                     {c('collider_2025:Info').t`Auto-retrieved`}
                 </span>
             )}
@@ -154,7 +152,7 @@ interface ErrorDisplayProps {
 
 const ErrorDisplay = ({ errorMessage }: ErrorDisplayProps) => (
     <span className="flex flex-row flex-nowrap gap-2 mt-1 items-start">
-        <IcExclamationTriangleFilled size={4} className="mt-0.5 shrink-0 color-danger" />
+        <LumoIcon name="TriangleAlert" size={16} className="mt-0.5 shrink-0 color-danger" />
         <p className="text-sm m-0 color-danger">
             {errorMessage || c('collider_2025: Info').t`Error processing attachment`}
         </p>

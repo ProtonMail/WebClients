@@ -5,10 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
-import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import type { DriveDocument } from '../../../../types/documents';
+import { LumoIcon } from '../../../LumoIcon/LumoIcon';
 
 /** A grouped document with all its chunks */
 export interface GroupedDocument {
@@ -69,7 +68,7 @@ export const SearchInspectList: FunctionComponent<Props> = ({
         <div className="flex flex-column gap-4 flex-nowrap overflow-y-auto *:min-size-auto">
             <div className="flex items-center gap-2 mb-2">
                 <Button shape="ghost" size="small" onClick={onBack}>
-                    <IcArrowLeft size={4} className="mr-1" />
+                    <LumoIcon name="ArrowLeft" size={16} className="mr-1" />
                     {c('Action').t`Back to search settings`}
                 </Button>
                 <span className="text-semibold">{c('Title').t`Indexed Drive documents`}</span>
@@ -116,7 +115,7 @@ export const SearchInspectList: FunctionComponent<Props> = ({
                                         )}
                                         <div className="text-sm color-weak">{sizeText}</div>
                                     </div>
-                                    <IcChevronRight size={4} className="color-weak shrink-0 my-auto" />
+                                    <LumoIcon name="ChevronRight" size={16} className="color-weak shrink-0 my-auto" />
                                 </div>
                             </button>
                         );

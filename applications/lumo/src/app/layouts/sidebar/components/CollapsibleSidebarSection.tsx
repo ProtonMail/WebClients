@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
 
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-
+import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { useSidebar } from '../../../providers/SidebarProvider';
 
 import './CollapsibleSidebarSection.scss';
@@ -58,9 +56,9 @@ export const CollapsibleSidebarSection = ({
                     {isHovered && (
                         <>
                             {isExpanded ? (
-                                <IcChevronDown size={3} className="shrink-0" />
+                                <LumoIcon name="ChevronDown" width={12} height={12} className="shrink-0" />
                             ) : (
-                                <IcChevronRight size={3} className="shrink-0" />
+                                <LumoIcon name="ChevronRight" width={12} height={12} className="shrink-0" />
                             )}
                         </>
                     )}

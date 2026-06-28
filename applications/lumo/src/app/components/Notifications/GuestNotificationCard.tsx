@@ -2,26 +2,29 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { IcHeart } from '@proton/icons/icons/IcHeart';
-
-import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useChatLimitGate } from '../../hooks/useChatLimitGate';
-import { useTierErrors } from '../../hooks/useTierErrors';
-import { useRemainingLimits, shouldShowModelSwitchSuggestion, shouldShowWeeklyLimitUpsell } from '../../services/usageLimitsStore';
-import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
+import { useTierErrors } from '../../hooks/useTierErrors';
+import { getSelectedModelTier, useOptionalModelTier } from '../../providers/ModelTierProvider';
+import {
+    shouldShowModelSwitchSuggestion,
+    shouldShowWeeklyLimitUpsell,
+    useRemainingLimits,
+} from '../../services/usageLimitsStore';
 import type { Message } from '../../types';
 import { sendGuestNotificationCtaClickedEvent, sendGuestNotificationDismissedEvent } from '../../util/telemetry';
 import { CreateFreeAccountButton } from '../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { ComposerNotificationCard } from './ComposerNotificationCard';
-import { getSelectedModelTier, useOptionalModelTier } from '../../providers/ModelTierProvider';
 
 import './GuestNotificationCard.scss';
 
 const HeartIcon = () => {
     return (
         <div className="guest-notification-heart-icon inline-flex items-center justify-center shrink-0 rounded-full">
-            <IcHeart size={5} color="#7F77DD" />
+            <LumoIcon name="Heart" size={20} color="#7F77DD" />
         </div>
     );
 };

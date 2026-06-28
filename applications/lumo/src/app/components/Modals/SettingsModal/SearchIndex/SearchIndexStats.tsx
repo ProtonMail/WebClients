@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
-import { IcSquares } from '@proton/icons/icons/IcSquares';
 
 import type { SearchServiceStatus } from '../../../../services/search/types';
+import { LumoIcon } from '../../../LumoIcon/LumoIcon';
 
 interface Props {
     foundationStatus: SearchServiceStatus | undefined;
@@ -33,7 +33,7 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
         <div className="flex justify-space-between">
             <span>{c('Info').t`Advanced search:`}</span>
             <span className="text-semibold">
-                {/* eslint-disable-next-line no-nested-ternary */}
+                {}
                 {enableFoundationSearch
                     ? foundationStatus?.isEnabled
                         ? c('Status').t`Enabled`
@@ -73,7 +73,7 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
         {foundationStatus?.driveChunks && foundationStatus.driveChunks > 0 && (
             <div className="flex justify-space-between">
                 <span className="flex items-center gap-2 pl-6">
-                    <IcSquares size={4} className="color-weak" />
+                    <LumoIcon name="Copy" size={16} className="color-weak" />
                     <span className="color-weak">{c('Info').t`Searchable chunks:`}</span>
                 </span>
                 <span className="text-semibold color-weak">{foundationStatus.driveChunks}</span>

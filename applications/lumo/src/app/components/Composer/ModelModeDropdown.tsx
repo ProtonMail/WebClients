@@ -4,7 +4,6 @@ import { clsx } from 'clsx';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
@@ -15,6 +14,7 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { clearTierErrors } from '../../redux/slices/meta/errors';
 import { areAllModelLimitsExhausted, isModelTierSelectable, useRemainingLimits } from '../../services/usageLimitsStore';
 import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { ModelModeBottomSheet } from './ModelModeBottomSheet';
 import { ModelModePanel, buildModelModeOptions, getResponseModeOptions } from './ModelModePanel';
 import { MenuDropdown } from './components/MenuDropdown';
@@ -88,7 +88,7 @@ export const ModelModeDropdown = () => {
                 <span className={clsx('font-medium', !isSmallScreen && 'hidden sm:block')}>
                     {currentModelOption.getLabel()}
                 </span>
-                <IcChevronDown size={3} className="color-weak" />
+                <LumoIcon name="ChevronDown" width={12} height={12} className="color-weak" />
             </Button>
 
             {isSmallScreen ? (
