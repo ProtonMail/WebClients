@@ -1,281 +1,313 @@
 @use '~@proton/styles/scss/lib' as *;
 
 .thinking-path {
-    --thinking-icon-col: #{rem(24)};
-    --thinking-gap: #{rem(12)};
-    --thinking-icon-size: #{rem(12)};
-    --thinking-line-start: calc(var(--thinking-icon-size) + #{rem(3)});
+	--thinking-icon-col: #{rem(24)};
+	--thinking-gap: #{rem(12)};
+	--thinking-icon-size: #{rem(12)};
+	--thinking-line-start: calc(var(--thinking-icon-size) + #{rem(3)});
 
-    position: relative;
-    margin-block-end: rem(8);
+	position: relative;
+	margin-block-end: rem(8);
 }
 
 .thinking-path-header {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--thinking-gap);
-    padding-block: rem(4) rem(6);
-    padding-inline: 0;
-    transition: background-color 0.15s ease;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--thinking-gap);
+	padding-block: rem(4) rem(6);
+	padding-inline: 0;
+	transition: background-color 0.15s ease;
 
-    &:focus-visible {
-        outline: 2px solid var(--focus-outline);
-        outline-offset: 2px;
-    }
+	&:focus-visible {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
 }
 
 .thinking-path-progress-dot {
-    inline-size: rem(4);
-    block-size: rem(4);
-    background-color: var(--text-hint);
-    animation: thinking-dot-pulse 1.2s ease-in-out infinite;
+	inline-size: rem(4);
+	block-size: rem(4);
+	background-color: var(--text-hint);
+	animation: thinking-dot-pulse 1.2s ease-in-out infinite;
 
-    &:nth-child(2) {
-        animation-delay: 0.15s;
-    }
+	&:nth-child(2) {
+		animation-delay: 0.15s;
+	}
 
-    &:nth-child(3) {
-        animation-delay: 0.3s;
-    }
+	&:nth-child(3) {
+		animation-delay: 0.3s;
+	}
 }
 
 @keyframes thinking-dot-pulse {
-    0%,
-    80%,
-    100% {
-        opacity: 0.25;
-        transform: scale(0.85);
-    }
-    40% {
-        opacity: 1;
-        transform: scale(1);
-    }
+	0%,
+	80%,
+	100% {
+		opacity: 0.25;
+		transform: scale(0.85);
+	}
+
+	40% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .thinking-path-header-chevron {
-    transition: transform 0.2s ease;
+	transition: transform 0.2s ease;
 
-    &--expanded {
-        transform: rotate(180deg);
-    }
+	&--expanded {
+		transform: rotate(180deg);
+	}
+}
+
+.thinking-path-trace {
+	--thinking-trace-line-height: 1.3;
+	--thinking-trace-lines: 5;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	gap: rem(2);
+	max-block-size: calc(var(--thinking-trace-lines) * var(--thinking-trace-line-height) * 1em);
+	overflow: hidden;
+	padding-block: rem(2) rem(4);
+	padding-inline: 0;
+	mask-image: linear-gradient(to bottom, transparent, rgb(0 0 0 / 1) 35%);
+
+	@media (prefers-reduced-motion: no-preference) {
+		.thinking-path-trace-line {
+			transition: opacity 0.25s ease;
+		}
+	}
+}
+
+.thinking-path-trace-line {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	line-clamp: 1;
+	text-overflow: ellipsis;
 }
 
 .thinking-path-steps {
-    position: relative;
-    margin-block-start: 0;
-    padding-block-end: rem(8);
+	position: relative;
+	margin-block-start: 0;
+	padding-block-end: rem(8);
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset-inline-start: calc(var(--thinking-icon-col) / 2);
-        transform: translateX(-50%);
-        inset-block-start: var(--thinking-line-start);
-        inset-block-end: var(--thinking-line-start);
-        inline-size: 1px;
-        background-color: var(--border-norm);
-        pointer-events: none;
-    }
+	&::before {
+		content: '';
+		position: absolute;
+		inset-inline-start: calc(var(--thinking-icon-col) / 2);
+		transform: translateX(-50%);
+		inset-block: var(--thinking-line-start) var(--thinking-line-start);
+		inline-size: 1px;
+		background-color: var(--border-norm);
+		pointer-events: none;
+	}
 }
 
 .thinking-step {
-    display: grid;
-    grid-template-columns: var(--thinking-icon-col) minmax(0, 1fr);
-    column-gap: var(--thinking-gap);
-    align-items: start;
+	display: grid;
+	grid-template-columns: var(--thinking-icon-col) minmax(0, 1fr);
+	column-gap: var(--thinking-gap);
+	align-items: start;
 }
 
 .thinking-step-track {
-    position: relative;
-    z-index: 1;
-    padding-block-start: rem(3);
-    min-block-size: var(--thinking-icon-size);
+	position: relative;
+	z-index: 1;
+	padding-block-start: rem(3);
+	min-block-size: var(--thinking-icon-size);
 }
 
 .thinking-step-icon-badge {
-    position: relative;
-    z-index: 1;
-    color: var(--text-weak);
+	position: relative;
+	z-index: 1;
+	color: var(--text-weak);
 
-    &--active {
-        color: var(--interaction-norm);
-        animation: gentlePulse 1.5s ease-in-out infinite;
-    }
+	&--active {
+		color: var(--interaction-norm);
+		animation: gentlePulse 1.5s ease-in-out infinite;
+	}
 
-    &--done {
-        color: var(--text-hint);
-    }
+	&--done {
+		color: var(--text-hint);
+	}
 
-    &--error {
-        background-color: var(--signal-danger);
-        color: var(--signal-danger-contrast);
-    }
+	&--error {
+		background-color: var(--signal-danger);
+		color: var(--signal-danger-contrast);
+	}
 }
 
 .thinking-step-content {
-    padding-block: rem(0.7);
+	padding-block: rem(0.7);
 }
 
 .thinking-step-complete-check {
-    color: var(--text-hint);
+	color: var(--text-hint);
 }
 
 .thinking-step-content--reasoning {
-    color: var(--text-weak);
+	color: var(--text-weak);
 
-    * {
-        color: var(--text-weak) !important;
-        font-size: inherit !important;
-        line-height: inherit;
-    }
+	* {
+		color: var(--text-weak) !important;
+		font-size: inherit !important;
+		line-height: inherit;
+	}
 
-    .progressive-markdown-content,
-    .markdown-rendering {
-        font-size: inherit;
-        line-height: inherit;
-        max-inline-size: none;
-        color: var(--text-weak);
-        gap: 0;
+	.progressive-markdown-content,
+	.markdown-rendering {
+		font-size: inherit;
+		line-height: inherit;
+		max-inline-size: none;
+		color: var(--text-weak);
+		gap: 0;
 
-        > div {
-            margin: 0;
-        }
+		> div {
+			margin: 0;
+		}
 
-        p {
-            margin-block: 0;
-            margin-inline: 0;
-            line-height: inherit;
+		p {
+			margin-block: 0;
+			margin-inline: 0;
+			line-height: inherit;
 
-            &:not(:last-child) {
-                margin-block-end: rem(8);
-            }
-        }
+			&:not(:last-child) {
+				margin-block-end: rem(8);
+			}
+		}
 
-        ul,
-        ol {
-            margin-block: rem(8);
-            padding-inline-start: rem(20);
+		ul,
+		ol {
+			margin-block: rem(8);
+			padding-inline-start: rem(20);
 
-            &:first-child {
-                margin-block-start: 0;
-            }
-        }
+			&:first-child {
+				margin-block-start: 0;
+			}
+		}
 
-        li {
-            margin-block-end: rem(4);
+		li {
+			margin-block-end: rem(4);
 
-            &:last-child {
-                margin-block-end: 0;
-            }
-        }
+			&:last-child {
+				margin-block-end: 0;
+			}
+		}
 
-        a {
-            color: var(--interaction-norm) !important;
-        }
-    }
+		a {
+			color: var(--interaction-norm) !important;
+		}
+	}
 }
 
 .thinking-step-toggle {
-    animation: fadeIn 0.2s ease-out;
+	animation: fadeIn 0.2s ease-out;
 
-    &:focus-visible {
-        outline: 2px solid var(--focus-outline);
-        outline-offset: 2px;
-    }
+	&:focus-visible {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
 }
 
 .thinking-step-chevron {
-    transition: transform 0.2s ease;
+	transition: transform 0.2s ease;
 
-    &--expanded {
-        transform: rotate(180deg);
-    }
+	&--expanded {
+		transform: rotate(180deg);
+	}
 }
 
 .thinking-step-details {
-    padding: 0;
-    color: var(--text-weak);
-    animation: fadeIn 0.2s ease-out;
+	padding: 0;
+	color: var(--text-weak);
+	animation: fadeIn 0.2s ease-out;
 
-    * {
-        color: var(--text-weak) !important;
-        font-size: inherit;
-    }
+	* {
+		color: var(--text-weak) !important;
+		font-size: inherit;
+	}
 
-    .progressive-markdown-content,
-    .markdown-rendering {
-        font-size: inherit;
-        max-inline-size: none;
-        color: var(--text-weak);
-        gap: 0;
+	.progressive-markdown-content,
+	.markdown-rendering {
+		font-size: inherit;
+		max-inline-size: none;
+		color: var(--text-weak);
+		gap: 0;
 
-        > div {
-            margin: 0;
-        }
+		> div {
+			margin: 0;
+		}
 
-        p {
-            margin-block: 0;
-            margin-inline: 0;
-            line-height: inherit;
+		p {
+			margin-block: 0;
+			margin-inline: 0;
+			line-height: inherit;
 
-            &:not(:last-child) {
-                margin-block-end: rem(8);
-            }
-        }
-    }
+			&:not(:last-child) {
+				margin-block-end: rem(8);
+			}
+		}
+	}
 
-    pre {
-        margin-block-end: rem(8);
+	pre {
+		margin-block-end: rem(8);
 
-        &:last-child {
-            margin-block-end: 0;
-        }
-    }
+		&:last-child {
+			margin-block-end: 0;
+		}
+	}
 
-    ul,
-    ol {
-        margin-block-end: rem(8);
-        padding-inline-start: rem(20);
-    }
+	ul,
+	ol {
+		margin-block-end: rem(8);
+		padding-inline-start: rem(20);
+	}
 
-    li {
-        margin-block-end: rem(4);
-    }
+	li {
+		margin-block-end: rem(4);
+	}
 
-    code {
-        font-size: 0.85em;
-    }
+	code {
+		font-size: 0.85em;
+	}
 
-    strong {
-        font-weight: 600;
-    }
+	strong {
+		font-weight: 600;
+	}
 
-    a {
-        color: var(--interaction-norm) !important;
-    }
+	a {
+		color: var(--interaction-norm) !important;
+	}
 }
 
 @keyframes gentlePulse {
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.6;
-        transform: scale(1.1);
-    }
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	50% {
+		opacity: 0.6;
+		transform: scale(1.1);
+	}
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(rem(-4));
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+	from {
+		opacity: 0;
+		transform: translateY(rem(-4));
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
