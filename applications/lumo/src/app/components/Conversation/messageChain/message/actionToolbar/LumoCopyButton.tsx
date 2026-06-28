@@ -1,12 +1,13 @@
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcSquares } from '@proton/icons/icons/IcSquares';
+
 import { copyDomToClipboard, isFirefox } from '@proton/shared/lib/helpers/browser';
+import {LumoIcon} from "../../../../LumoIcon/LumoIcon.tsx";
 
 interface Props extends Omit<ButtonProps, 'value'> {
     containerRef: React.MutableRefObject<HTMLDivElement | null>;
@@ -122,7 +123,10 @@ const LumoCopyButton = ({ children, onSuccess, containerRef, ...rest }: Props) =
                 {...rest}
                 onClick={handleClick}
             >
-                <IcSquares />
+                <LumoIcon
+                    name="Copy"
+                    size={16}
+                />
             </Button>
         </Tooltip>
     );

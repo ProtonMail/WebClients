@@ -3,8 +3,6 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { IcClock } from '@proton/icons/icons/IcClock';
-import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import {
@@ -18,6 +16,7 @@ import type { ConversationId } from '../../types';
 import InlineUpsell from '../../upsells/primitives/InlineUpsell';
 import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
 import { getIsMobileDevice } from '../../util/device';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { ComposerNotificationCard } from '../Notifications/ComposerNotificationCard';
 
 interface Props {
@@ -52,8 +51,7 @@ const getExpirationBannerDescription = (
         );
     }
 
-    return c('collider_2025: Info')
-        .t`Free accounts keep chat history for 7 days from when a chat was created.`;
+    return c('collider_2025: Info').t`Free accounts keep chat history for 7 days from when a chat was created.`;
 };
 
 /**
@@ -99,7 +97,12 @@ export const ComposerExpirationBanner = ({ conversationId }: Props) => {
         setDismissedKeys((previous) => new Set(previous).add(banner.dismissKey));
     }, [banner]);
 
-    if (getIsMobileDevice() || !banner || isBannerDismissed(banner.dismissKey) || dismissedKeys.has(banner.dismissKey)) {
+    if (
+        getIsMobileDevice() ||
+        !banner ||
+        isBannerDismissed(banner.dismissKey) ||
+        dismissedKeys.has(banner.dismissKey)
+    ) {
         return null;
     }
 
@@ -109,9 +112,9 @@ export const ComposerExpirationBanner = ({ conversationId }: Props) => {
         <ComposerNotificationCard
             icon={
                 banner.urgency === 'urgent' ? (
-                    <IcHourglass className="color-weak" />
+                    <LumoIcon name="Hourglass" size={16} className="color-weak" />
                 ) : (
-                    <IcClock className="color-weak" />
+                    <LumoIcon name="Clock" size={16} className="color-weak" />
                 )
             }
             title={banner.title}

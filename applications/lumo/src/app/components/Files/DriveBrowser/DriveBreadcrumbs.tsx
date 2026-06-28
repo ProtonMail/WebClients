@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-
 import type { DriveNode } from '../../../hooks/useDriveSDK';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 export interface BreadcrumbItem {
     node: DriveNode;
@@ -32,7 +31,9 @@ export const DriveBreadcrumbs: React.FC<DriveBreadcrumbsProps> = ({
                     >
                         {breadcrumb.node.name}
                     </button>
-                    {index < breadcrumbs.length - 1 && <IcChevronRight size={3} className="color-weak shrink-0" />}
+                    {index < breadcrumbs.length - 1 && (
+                        <LumoIcon name="ChevronRight" width={12} height={12} className="color-weak shrink-0" />
+                    )}
                 </React.Fragment>
             ))}
         </div>

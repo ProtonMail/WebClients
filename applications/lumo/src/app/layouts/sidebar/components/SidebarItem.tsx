@@ -1,12 +1,11 @@
-import type { ComponentType } from 'react';
-
 import { clsx } from 'clsx';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
-import type { IconSize } from '@proton/icons/types';
+
+import { type IconName, LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 
 export interface SidebarItemProps {
-    icon: ComponentType<{ size?: IconSize; className?: string }>;
+    icon: IconName;
     label: string;
     onClick: () => void;
     className?: string;
@@ -16,7 +15,7 @@ export interface SidebarItemProps {
 }
 
 export const SidebarItem = ({
-    icon: IconComponent,
+    icon,
     label,
     onClick,
     className,
@@ -35,7 +34,7 @@ export const SidebarItem = ({
         disabled={disabled}
     >
         <div className="sidebar-item-icon flex items-center justify-center shrink-0 mr-1.5">
-            <IconComponent size={4} className="rtl:mirror" />
+            <LumoIcon name={icon} size={16} className="rtl:mirror" />
         </div>
         <span className="sidebar-item-text flex-1 flex items-center justify-space-between text-nowrap overflow-hidden gap-2">
             <span className="sidebar-item-label">{label}</span>

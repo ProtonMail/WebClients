@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { IcLock } from '@proton/icons/icons/IcLock';
-
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { CreateFreeAccountButton } from '../CreateFreeAccountLink/CreateFreeAccountLink';
 import { SignInButton } from '../SignInLink';
 
@@ -37,7 +36,7 @@ export const GuestSignInState = ({ image, imageAlt = '', title, description, ico
             </div>
 
             <p className="guest-signin-state__footer flex items-center gap-1 mt-4 color-weak">
-                <IcLock size={3} className="mr-1" />
+                <LumoIcon name="Lock" width={12} height={12} className="mr-1" />
                 {c('collider_2025:Info').t`Your information is zero-access encrypted`}
             </p>
         </div>

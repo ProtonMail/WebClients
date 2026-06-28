@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants.ts';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import lumoCatAlert from '@proton/styles/assets/img/lumo/lumo-cat-alert.svg';
 
@@ -15,7 +15,7 @@ import {
     getThemeConfig,
     matchDarkTheme,
 } from '../providers';
-import {LUMO_SHORT_APP_NAME} from "@proton/shared/lib/constants.ts";
+import { LumoIcon } from './LumoIcon/LumoIcon';
 
 /**
  * Full-page screen shown when IndexedDB is unavailable and Lumo cannot start.
@@ -76,7 +76,7 @@ const IndexedDBUnavailablePage = () => {
 
                     <div className="mt-2">
                         <Button color="norm" onClick={() => window.location.reload()}>
-                            <IcArrowRotateRight className="mr-2" />
+                            <LumoIcon name="RotateCw" className="mr-2" />
                             <span>{c('Action').t`Reload`}</span>
                         </Button>
                     </div>

@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcCross } from '@proton/icons/icons/IcCross';
 import lumoAlert from '@proton/styles/assets/img/lumo/lumo-cat-alert.svg';
 
 import { useLumoDispatch } from '../../redux/hooks';
@@ -9,6 +8,7 @@ import type { ConversationError } from '../../redux/slices/meta/errors';
 import { dismissConversationError } from '../../redux/slices/meta/errors';
 import { LUMO_API_ERRORS } from '../../types';
 import ChatContainerItem from '../ChatContainerItem';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 import './ErrorCard.scss';
 
@@ -70,7 +70,7 @@ const ErrorCard = ({
                     className="error-card-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm group-hover:opacity-100"
                     onClick={handleDismiss}
                 >
-                    <IcCross color="danger" />
+                    <LumoIcon name="X" color="danger" />
                 </Button>
             </div>
         </ChatContainerItem>

@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, useModalStateObject } from '@proton/components';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { ChatHistoryGroupByMenu } from '../../layouts/sidepanel/ChatHistoryGroupByMenu';
 import { ConversationExpirationIndicator } from '../../layouts/sidepanel/ConversationExpirationIndicator';
@@ -12,6 +11,7 @@ import { ConversationExpirationLegend } from '../../layouts/sidepanel/Conversati
 import { useLumoMemoSelector } from '../../redux/hooks';
 import { selectConversationsHaveGeneratedImages } from '../../redux/selectors';
 import type { Conversation, ConversationId } from '../../types';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import ConfirmDeleteModal from '../Modals/ConfirmDeleteModal';
 
 import './SelectableConversationList.scss';
@@ -183,7 +183,7 @@ export const SelectableConversationList = ({
                             disabled={isDeleting}
                             className="text-sm"
                         >
-                            <IcTrash className="mr-1" size={3} />
+                            <LumoIcon name="Trash2" width={12} height={12} className="mr-1" />
                             {c('collider_2025:Action').t`Delete`} ({selectedCount})
                         </Button>
                     )}

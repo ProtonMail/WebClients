@@ -5,10 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components';
-import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { DismissedFeaturePill } from '../../components/DismissedFeaturePill';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { NewProjectModal, useProjects } from '../../features/projects';
 import { ProjectActionsDropdown } from '../../features/projects/ProjectActionsDropdown';
 import { ProjectLimitModal } from '../../features/projects/modals/ProjectLimitModal';
@@ -74,7 +73,7 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
                     aria-label={c('collider_2025:Button').t`Projects`}
                 >
                     <div className="sidebar-item-icon flex items-center justify-center shrink-0 mr-1.5">
-                        <IcFolderOpen size={4} className="rtl:mirror" />
+                        <LumoIcon name="FolderOpen" size={16} className="rtl:mirror" />
                     </div>
                     <span className="sidebar-item-text flex-1 flex items-center text-nowrap overflow-hidden gap-2">
                         {c('collider_2025:Button').t`Projects`}
@@ -88,7 +87,7 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
     if (isSmallScreen) {
         return (
             <SidebarItem
-                icon={IcFolderOpen}
+                icon="FolderOpen"
                 label={c('collider_2025:Button').t`Projects`}
                 onClick={handleProjectsHeaderClick}
             />
@@ -110,16 +109,8 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
                         size="small"
                         shape="ghost"
                     >
-                        <IcPlus size={3} />
+                        <LumoIcon name="Plus" width={14} height={14} />
                     </Button>
-                    // <button
-                    //     className="projects-create-button --lumo-background"
-                    //     onClick={handleCreateProject}
-                    //     aria-label={c('collider_2025:Button').t`Create project`}
-                    //     title={c('collider_2025:Button').t`Create project`}
-                    // >
-                    //     <IcPlus size={3} />
-                    // </button>
                 }
                 className="projects-sidebar-section"
             >

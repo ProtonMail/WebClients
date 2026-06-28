@@ -6,13 +6,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FileIcon } from '@proton/components';
 import { NodeType } from '@proton/drive';
-import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
-import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
-import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 
 import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../util/filetypes';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { formatFileSize } from '../fileUtils';
 
 export interface FileItemAction {
@@ -105,7 +101,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
             {/* File icon */}
             <div className="shrink-0 mr-3 relative">
                 {file.type === NodeType.Folder ? (
-                    <IcFolderFilled size={variant === 'simple' ? 10 : 6} className="color-warning" />
+                    <LumoIcon name="Folder" size={variant === 'simple' ? 40 : 24} className="color-warning" />
                 ) : (
                     <FileIcon mimeType={file.mediaType || detectedMimeType} size={variant === 'simple' ? 10 : 6} />
                 )}
@@ -127,7 +123,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
                                 boxShadow: '0 0 0 1px var(--background-norm)',
                             }}
                         >
-                            <IcUsersFilled size={3} className="color-primary" />
+                            <LumoIcon name="Users" width={12} height={12} className="color-primary" />
                         </span>
                     </Tooltip>
                 )}
@@ -174,9 +170,9 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
 
             {/* Actions on the right */}
             <div className={`flex flex-row items-center gap-2 shrink-0 ${file.type === NodeType.Folder ? 'mr-1' : ''}`}>
-                {isProcessing && <IcArrowsRotate className="color-primary animate-spin" size={4} />}
+                {isProcessing && <LumoIcon name="RefreshCw" className="color-primary animate-spin" size={16} />}
 
-                {hasError && <IcExclamationTriangleFilled className="color-danger" size={4} />}
+                {hasError && <LumoIcon name="TriangleAlert" className="color-danger" size={16} />}
 
                 {actions.map((action, index) => {
                     const isDisabled = action.disabled || action.loading;
@@ -210,7 +206,9 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
                 })}
 
                 {/* Chevron for folders */}
-                {file.type === NodeType.Folder && isClickable && <IcChevronRight className="color-weak" size={4} />}
+                {file.type === NodeType.Folder && isClickable && (
+                    <LumoIcon name="ChevronRight" className="color-weak" size={16} />
+                )}
             </div>
         </div>
     );

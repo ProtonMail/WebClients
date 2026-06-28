@@ -9,14 +9,11 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
 import { UserDropdownContext } from '@proton/components/containers/heading/UserDropdownContext';
 import { useActiveBreakpoint, useModalStateObject } from '@proton/components/index';
-import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
-import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { ForkType } from '@proton/shared/lib/authentication/fork';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import SettingsModal from '../../components/Modals/SettingsModal/SettingsModal';
 
 const AddAccountButton = ({
@@ -57,7 +54,7 @@ const AddAccountButton = ({
             )}
             {...commonProps}
         >
-            <IcPlus className="shrink-0" />
+            <LumoIcon name="Plus" className="shrink-0" />
             {copy}
         </a>
     );
@@ -123,7 +120,7 @@ const LumoUserDropdownContent = () => {
                             onClick={() => settingsModal.openModal(true)}
                             className="inline-flex items-center pl-5 pr-4 gap-4"
                         >
-                            <IcCogWheel className="shrink-0" />
+                            <LumoIcon name="Settings" className="shrink-0" />
                             {c('Action').t`Settings`}
                         </Button>
 
@@ -134,7 +131,7 @@ const LumoUserDropdownContent = () => {
                             onClick={() => onOpenHelpModal()}
                             className="inline-flex items-center pl-5 pr-4 gap-4"
                         >
-                            <IcSpeechBubble className="shrink-0" />
+                            <LumoIcon name="MessageSquare" className="shrink-0" />
                             {c('Action').t`Help`}
                         </Button>
 
@@ -145,7 +142,7 @@ const LumoUserDropdownContent = () => {
                             onClick={onSignOut}
                             className="inline-flex items-center pl-5 pr-4 gap-4"
                         >
-                            <IcArrowOutFromRectangle className="shrink-0" />
+                            <LumoIcon name="LogOut" className="shrink-0" />
                             {c('Action').t`Sign out`}
                         </Button>
                     </div>

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 import './OnboardingPill.scss';
 
@@ -20,8 +21,8 @@ const OnboardingPill = ({ onClick, className }: OnboardingPillProps) => {
             color="weak"
             className={clsx('lumo--onboarding-pill inline-flex flex-row flex-nowrap gap-2 items-center', className)}
         >
-            <IcLockCheckFilled />
-            <span className="text-sm">{c('collider_2025: Pill').t`Protected by ${BRAND_NAME}`}</span>
+            <LumoIcon name="LockKeyhole" size={16} />
+            <span>{c('collider_2025: Pill').t`Protected by ${BRAND_NAME}`}</span>
         </Button>
     );
 };
