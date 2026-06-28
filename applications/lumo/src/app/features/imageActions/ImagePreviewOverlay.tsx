@@ -182,13 +182,14 @@ export const ImagePreviewOverlay = ({
                         {mode === 'preview' ? (
                             <>
                                 <div className="image-preview-media flex justify-center items-center w-full min-h-0">
-                                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
-                                    <img
-                                        src={imageDataUrl}
-                                        alt={filename || 'Generated image'}
-                                        className="image-preview-image block"
-                                        onClick={(e) => e.stopPropagation()}
-                                    />
+                                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                                    <div className="image-preview-image-frame" onClick={(e) => e.stopPropagation()}>
+                                        <img
+                                            src={imageDataUrl}
+                                            alt={filename || 'Generated image'}
+                                            className="image-preview-image block"
+                                        />
+                                    </div>
                                 </div>
 
                                 {prompt && (
