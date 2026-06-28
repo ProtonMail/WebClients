@@ -4,11 +4,8 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowUpAndLeftBig } from '@proton/icons/icons/IcArrowUpAndLeftBig';
-import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
-import { IcPen } from '@proton/icons/icons/IcPen';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { ToolbarConfig } from './types';
 
 interface ToolbarProps {
@@ -80,7 +77,7 @@ export const Toolbar = ({
                         aria-expanded={showStrokeMenu}
                         onClick={() => setShowStrokeMenu((v) => !v)}
                     >
-                        <IcPen size={4} />
+                        <LumoIcon name="Pen" size={16} />
                     </button>
                     {showStrokeMenu && (
                         <span className="sketch-toolbar__stroke-popup absolute inline-flex flex-column gap-0.5 p-1 rounded-xl border bg-norm shadow-lifted">
@@ -139,7 +136,7 @@ export const Toolbar = ({
                         title={c('Action').t`Undo`}
                         aria-label={c('Action').t`Undo`}
                     >
-                        <IcArrowUpAndLeftBig size={4} />
+                        <LumoIcon name="Undo2" size={16} />
                     </button>
 
                     <button
@@ -150,7 +147,7 @@ export const Toolbar = ({
                         title={c('Action').t`Redo`}
                         aria-label={c('Action').t`Redo`}
                     >
-                        <IcArrowUpAndRightBig size={4} />
+                        <LumoIcon name="Redo2" size={16} />
                     </button>
 
                     <button
@@ -160,7 +157,7 @@ export const Toolbar = ({
                         title={c('Action').t`Clear canvas`}
                         aria-label={c('Action').t`Clear canvas`}
                     >
-                        <IcTrash size={4} />
+                        <LumoIcon name="Trash2" size={16} />
                     </button>
                 </div>
             </div>

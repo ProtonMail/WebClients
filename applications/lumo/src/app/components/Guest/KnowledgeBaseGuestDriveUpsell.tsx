@@ -3,11 +3,10 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { IcCross } from '@proton/icons/icons/IcCross';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { GuestSignInState } from './GuestSignInState/GuestSignInState';
 
 interface KnowledgeBaseGuestDriveUpsellProps {
@@ -41,13 +40,13 @@ export const KnowledgeBaseGuestDriveUpsell = ({
                         <div className="flex flex-row items-center gap-1">
                             {onBack && (
                                 <Button onClick={onBack} size="small" shape="ghost">
-                                    <IcArrowLeft size={4} />
+                                    <LumoIcon name="ArrowLeft" size={16} />
                                 </Button>
                             )}
                             <p className="m-0 text-lg text-bold">{DRIVE_APP_NAME}</p>
                         </div>
                         <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
-                            <IcCross />
+                            <LumoIcon name="X" />
                         </Button>
                     </div>
                     <GuestSignInState

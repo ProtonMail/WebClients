@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+
+import { LumoIcon } from '../../../LumoIcon/LumoIcon';
 
 import './ScrollToBottomButton.scss';
 
@@ -68,7 +69,7 @@ export const ScrollToBottomButton = ({
                         pointerEvents: 'auto',
                     }}
                 >
-                    <IcChevronDown />
+                    <LumoIcon name="ChevronDown" />
                 </button>
             </Tooltip>
         </div>

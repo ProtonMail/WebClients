@@ -4,19 +4,18 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
-import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
-import type { IconName } from '@proton/icons/types';
+import { DropdownMenuButton, SimpleDropdown } from '@proton/components';
 
 import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
 import { useIsTouchDevice } from '../hooks/useIsTouchDevice';
+import { LumoIcon } from './LumoIcon/LumoIcon';
 
 import './DropdownMenu.scss';
 
 export type DropdownOptions = {
     label: string;
     value?: string;
-    icon: IconName;
+    icon: React.ReactNode;
     onClick: (e?: React.MouseEvent) => void | Promise<void> | ((option: string) => void) | (() => Promise<void>);
 };
 interface Props {
@@ -40,7 +39,7 @@ const DropdownMenu = ({ options, onToggle, visibleOnHover = false }: Props) => {
                 hasCaret={false}
                 shape="ghost"
                 size="small"
-                content={<IcThreeDotsHorizontal alt={c('collider_2025:Title').t`More options`} />}
+                content={<LumoIcon name="Ellipsis" aria-label={c('collider_2025:Title').t`More options`} />}
                 onToggle={onToggle}
                 dropdownClassName="chat-dropdown-menu"
             >
@@ -52,7 +51,7 @@ const DropdownMenu = ({ options, onToggle, visibleOnHover = false }: Props) => {
                             className="flex flex-row flex-nowrap items-center gap-2 w-full"
                             ref={ref}
                         >
-                            <Icon name={option.icon} />
+                            {option.icon}
                             <span>{option.label}</span>
                         </DropdownMenuButton>
                     );

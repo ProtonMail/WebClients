@@ -4,8 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { IcEye } from '@proton/icons/icons/IcEye';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { ENABLE_FOUNDATION_SEARCH } from '../../../../config/search';
 import { useLumoUserSettings } from '../../../../hooks';
@@ -16,6 +14,7 @@ import { SearchService } from '../../../../services/search/searchService';
 import type { SearchServiceStatus } from '../../../../services/search/types';
 import type { SpaceId } from '../../../../types';
 import type { DriveDocument } from '../../../../types/documents';
+import { LumoIcon } from '../../../LumoIcon/LumoIcon';
 import { SearchIndexStats } from './SearchIndexStats';
 import { SearchInspectDetail } from './SearchInspectDetail';
 import { type GroupedDocument, SearchInspectList } from './SearchInspectList';
@@ -88,7 +87,6 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
         return () => clearInterval(interval);
     }, [enabled, userId, validSpaceIds]);
 
-    /* eslint-disable no-nested-ternary */
     const displayDriveDocs =
         hasIndexEntries && foundationStatus?.driveDocuments && foundationStatus.driveDocuments > 0
             ? foundationStatus.driveDocuments
@@ -101,7 +99,6 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
             : hasIndexEntries
               ? indexedFoldersCount
               : 0;
-    /* eslint-enable no-nested-ternary */
 
     const progressColor = (count: number) => (count > 0 ? 'var(--text-success)' : 'var(--text-weak)');
 
@@ -260,7 +257,7 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
                             shape="solid"
                             size="small"
                         >
-                            <IcTrash size={3.5} className="mr-1" />
+                            <LumoIcon name="Trash2" width={14} height={14} className="mr-1" />
                             {c('Action').t`Clean up orphaned documents`}
                         </Button>
                     </div>
@@ -268,7 +265,7 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
             )}
 
             <Button onClick={handleInspect} shape="outline" className="self-start">
-                <IcEye size={4} className="mr-2" />
+                <LumoIcon name="Eye" size={16} className="mr-2" />
                 {c('Action').t`Inspect indexed documents`}
             </Button>
         </div>

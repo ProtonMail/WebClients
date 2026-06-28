@@ -4,9 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
-import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { ImageModifyButton } from '../../features/imageActions/ImageActionButtons';
@@ -21,6 +18,7 @@ import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { useFileHandling } from '../Composer/hooks/useFileHandling';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 import '../../features/imageActions/imageActions.scss';
 
@@ -117,7 +115,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                 style={{ background: '#f8d7da', borderColor: '#f5c6cb', color: '#721c24', maxWidth: '300px' }}
             >
                 <span className="flex items-center gap-2 mb-2">
-                    <IcExclamationCircle size={4} />
+                    <LumoIcon name="Info" size={16} />
                     <span className="text-sm font-bold">{c('collider_2025:Error').t`Failed to load image`}</span>
                 </span>
                 {error && <span className="block mb-2 text-xs">{error}</span>}
@@ -159,7 +157,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                         title={c('collider_2025:Action').t`Expand`}
                         onClick={() => handleOpenOverlay('preview')}
                     >
-                        <IcArrowsFromCenter size={4} />
+                        <LumoIcon name="Maximize2" size={16} />
                     </Button>
 
                     <ImageModifyButton
@@ -176,7 +174,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                         title={c('collider_2025:Action').t`Download`}
                         onClick={(e) => handleDownload(e)}
                     >
-                        <IcArrowDownLine size={4} />
+                        <LumoIcon name="ArrowDownToLine" size={16} />
                     </Button>
                 </span>
             </span>

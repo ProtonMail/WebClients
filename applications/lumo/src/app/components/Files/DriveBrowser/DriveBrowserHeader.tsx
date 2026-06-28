@@ -3,11 +3,9 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
-import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
-import { IcCross } from '@proton/icons/icons/IcCross';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 interface DriveBrowserHeaderProps {
     onBack?: () => void;
@@ -43,7 +41,7 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
                 <div className="flex flex-row flex-nowrap items-center gap-1">
                     {onBack && !initialShowDriveBrowser && (
                         <Button icon className="shrink-0" size="small" shape="ghost" onClick={onBack}>
-                            <IcArrowLeft size={4} alt={c('collider_2025: Action').t`Back`} />
+                            <LumoIcon name="ArrowLeft" size={16} aria-label={c('collider_2025: Action').t`Back`} />
                         </Button>
                     )}
                     <p className="m-0 text-lg text-bold">{DRIVE_APP_NAME}</p>
@@ -61,7 +59,7 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
                                 disabled={loading || isRefreshing}
                                 title={c('collider_2025: Action').t`Refresh folder contents`}
                             >
-                                <IcArrowRotateRight size={4} className={isRefreshing ? 'animate-spin' : ''} />
+                                <LumoIcon name="RotateCw" size={16} className={isRefreshing ? 'animate-spin' : ''} />
                             </Button>
 
                             <Button
@@ -72,13 +70,13 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
                                 disabled={loading || isRefreshing || !hasCurrentFolder}
                                 title={c('collider_2025: Action').t`Upload file to Drive`}
                             >
-                                <IcArrowUpLine size={4} />
+                                <LumoIcon name="ArrowUpToLine" size={16} />
                             </Button>
                         </>
                     )}
 
                     <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
-                        <IcCross size={4} alt={c('collider_2025: Action').t`Close`} />
+                        <LumoIcon name="X" size={16} aria-label={c('collider_2025: Action').t`Close`} />
                     </Button>
                 </div>
             </div>

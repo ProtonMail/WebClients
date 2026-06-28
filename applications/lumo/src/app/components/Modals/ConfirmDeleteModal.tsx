@@ -3,8 +3,9 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Prompt } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 interface Props extends ModalStateProps {
     handleDelete: () => void;
@@ -74,7 +75,7 @@ const ConfirmDeleteModal = ({
             <p className="m-0">{message}</p>
             {imageTools && hasGeneratedImages && (
                 <div className="flex flex-row flex-nowrap items-start gap-2 mt-4 p-3 rounded bg-weak">
-                    <IcExclamationTriangleFilled className="color-warning shrink-0 mt-0.5" size={4} />
+                    <LumoIcon name="TriangleAlert" className="color-warning shrink-0 mt-0.5" size={16} />
                     <span className="text-bold">{imagesMessage}</span>
                 </div>
             )}

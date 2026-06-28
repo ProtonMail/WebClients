@@ -5,12 +5,10 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { AppsDropdown, useModalStateObject } from '@proton/components';
-import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
-import { IcCode } from '@proton/icons/icons/IcCode';
-import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import { GuestSidebarSignInSection } from '../../components/Guest/ChatHistoryUpsell.tsx/GuestSidebarSignInSection';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { SearchModal } from '../../components/Modals/SearchModal/SearchModal';
 import SettingsModal from '../../components/Modals/SettingsModal/SettingsModal';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -69,7 +67,7 @@ const LumoSidebarContent = () => {
                             aria-label={c('collider_2025:Button').t`Close sidebar`}
                             style={{ width: '32px', height: '32px' }}
                         >
-                            <IcChevronLeft size={4} />
+                            <LumoIcon name="ChevronLeft" size={16} />
                         </button>
                     </div>
                 )}
@@ -80,7 +78,7 @@ const LumoSidebarContent = () => {
                     {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
                     {apiKeyManagement && (
                         <SidebarItem
-                            icon={IcCode}
+                            icon="CodeXml"
                             label={c('collider_2025:Button').t`API`}
                             onClick={() => {
                                 history.push('/docs/api');
@@ -103,7 +101,7 @@ const LumoSidebarContent = () => {
                     {isGuest ? (
                         <>
                             <SidebarItem
-                                icon={IcCogWheel}
+                                icon="Cog"
                                 label={c('collider_2025:Button').t`Settings`}
                                 onClick={() => settingsModal.openModal(true)}
                             />
@@ -113,33 +111,6 @@ const LumoSidebarContent = () => {
                     ) : (
                         <LumoSidebarUpsell />
                     )}
-
-                    {/* <SidebarItem
-                        icon="question-circle"
-                        label={c('collider_2025:Button').t`Help and support`}
-                        onClick={() => window.open(getKnowledgeBaseUrl('/lumo'), '_blank')}
-                    /> */}
-
-                    {/* {isGuest && (
-                        <SidebarItem
-                            icon={IcCogWheel}
-                            label={c('collider_2025:Button').t`Settings`}
-                            onClick={() => settingsModal.openModal(true)}
-                        />
-                    )} */}
-
-                    {/* <ForBusinessSidebarButton isSmallScreen={isSmallScreen} /> */}
-
-                    {/* <Button
-                        shape="ghost"
-                        color="weak"
-                        fullWidth
-                        onClick={() => settingsModal.openModal(true)}
-                        className="inline-flex items-center gap-4"
-                    >
-                        <IcCogWheel className="shrink-0" />
-                        {c('Action').t`Settings`}
-                    </Button> */}
                     <SidebarBottomUserArea />
                 </div>
             </div>

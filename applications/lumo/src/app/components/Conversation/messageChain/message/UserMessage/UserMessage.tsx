@@ -6,9 +6,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
-import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
 import { useLumoFlags } from '../../../../../hooks/useLumoFlags';
@@ -23,6 +20,7 @@ import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
 import { canShowWebComposer, canUseNativeEditMode, isNativeMobileApp } from '../../../../../util/userAgent';
 import { AttachmentFileCard } from '../../../../Files/Common';
+import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import SiblingSelector from '../../../../SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';
@@ -132,7 +130,7 @@ const UserActionToolbar = ({ onEdit, onToggleCollapse, isCollapsed, canBeCollaps
         <div className="flex flex-row flex-nowrap gap-px p-0.5" style={{ inlineSize: 'max-content' }}>
             <Tooltip title={c('collider_2025:Button').t`Edit`} originalPlacement="top">
                 <Button icon shape="ghost" className="shrink-0" onClick={onEdit} size="small">
-                    <IcPencil alt={c('collider_2025:Button').t`Edit`} />
+                    <LumoIcon name="Pencil" aria-label={c('collider_2025:Button').t`Edit`} />
                 </Button>
             </Tooltip>
             {canBeCollapsed && (
@@ -148,7 +146,7 @@ const UserActionToolbar = ({ onEdit, onToggleCollapse, isCollapsed, canBeCollaps
                         onClick={onToggleCollapse}
                         size="small"
                     >
-                        {isCollapsed ? <IcChevronDown /> : <IcChevronUp />}
+                        {isCollapsed ? <LumoIcon name="ChevronDown" /> : <LumoIcon name="ChevronUp" />}
                     </Button>
                 </Tooltip>
             )}

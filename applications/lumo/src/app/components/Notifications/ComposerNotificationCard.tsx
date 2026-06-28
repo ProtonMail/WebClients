@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors';
-import { IcCross } from '@proton/icons/icons/IcCross';
+
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 import './ComposerNotificationCard.scss';
 
@@ -123,7 +124,7 @@ export const ComposerNotificationCard = ({
                     onClick={onDismiss}
                     title={c('Action').t`Dismiss`}
                 >
-                    <IcCross size={3} color="danger" alt={c('Action').t`Dismiss`} />
+                    <LumoIcon name="X" width={12} height={12} color="danger" aria-label={c('Action').t`Dismiss`} />
                 </Button>
             )}
         </div>

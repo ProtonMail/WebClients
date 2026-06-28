@@ -4,10 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
-import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
-import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
 
+import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 import { useProjectActions } from '../hooks/useProjectActions';
 
@@ -91,22 +89,25 @@ export const ProjectTitleSection = ({
                 onClick={toggle}
                 title={c('collider_2025:Action').t`More options`}
             >
-                <IcThreeDotsHorizontal />
+                <LumoIcon name="Ellipsis" size={16} />
             </Button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} className="chat-dropdown-menu">
                 <DropdownMenu>
-                    <DropdownMenuButton className="text-left" onClick={navigateToAllProjects}>
-                        <IcFolderOpen className="mr-2" />
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap items-center"
+                        onClick={navigateToAllProjects}
+                    >
+                        <LumoIcon name="FolderOpen" size={16} className="mr-2" />
                         {c('collider_2025:Action').t`Go to all projects`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left color-danger"
+                        className="text-left color-danger flex flex-nowrap items-center"
                         onClick={() => {
                             close();
                             onDeleteProject();
                         }}
                     >
-                        <IcTrash className="mr-2" />
+                        <LumoIcon name="Trash" size={16} className="mr-2" />
                         {c('collider_2025:Action').t`Delete project`}
                     </DropdownMenuButton>
                 </DropdownMenu>

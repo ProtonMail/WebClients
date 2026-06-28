@@ -6,11 +6,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useNotifications } from '@proton/components';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcFile } from '@proton/icons/icons/IcFile';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAutoRetrievedAttachments, useFilteredFiles } from '../../../hooks';
@@ -26,6 +21,7 @@ import { useExcelSheetSelection } from '../../Composer/ExcelSheetSelectionModal'
 import { useFileHandling } from '../../Composer/hooks/useFileHandling';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { KnowledgeBaseGuestDriveUpsell } from '../../Guest/KnowledgeBaseGuestDriveUpsell';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { FilePreviewPanel } from '../Common/FilePreviewPanel';
 import { DriveBrowser } from '../DriveBrowser';
 import { ContextUsageBreakdown } from './ContextUsageBreakdown';
@@ -133,7 +129,7 @@ const FilteredFilesContent = ({
             {manualFiles.length > 0 && (
                 <div className="mb-6 w-full">
                     <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                        <IcFile size={4} />
+                        <LumoIcon name="File" size={16} />
                         {c('collider_2025: Info').t`Attached Files`} ({manualFiles.length})
                     </h3>
                     {manualFiles.map((file) => (
@@ -521,7 +517,7 @@ export const KnowledgeBasePanel = ({
         autoRetrievedAttachments.length === 0 &&
         !linkedDriveFolder;
 
-    const IndicatorIcon = showKnowledgeExplanation ? IcChevronUp : IcChevronDown;
+    const indicatorIconName = showKnowledgeExplanation ? 'ChevronUp' : 'ChevronDown';
 
     return (
         <>
@@ -556,7 +552,7 @@ export const KnowledgeBasePanel = ({
                             )}
 
                             <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
-                                <IcCross size={4} />
+                                <LumoIcon name="X" size={16} />
                             </Button>
                         </div>
                     </div>
@@ -572,7 +568,7 @@ export const KnowledgeBasePanel = ({
                                 className="text-info hover:text-info-dark p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
                                 title={c('collider_2025: Info').t`Show all files`}
                             >
-                                <IcCross size={3} />
+                                <LumoIcon name="X" width={12} height={12} />
                                 <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
                             </Button>
                         </div>
@@ -640,11 +636,11 @@ export const KnowledgeBasePanel = ({
                                 onClick={() => setShowKnowledgeExplanation(!showKnowledgeExplanation)}
                                 aria-expanded={showKnowledgeExplanation}
                             >
-                                <IcInfoCircle className="shrink-0 color-weak" />
+                                <LumoIcon name="Info" className="shrink-0 color-weak" />
                                 <h4 className="m-0 text-sm text-bold flex-1 text-left">
                                     {c('collider_2025: Info').t`Context usage for this conversation`}
                                 </h4>
-                                <IndicatorIcon size={4} className="color-weak shrink-0" />
+                                <LumoIcon name={indicatorIconName} size={4} className="color-weak shrink-0" />
                             </button>
 
                             {showKnowledgeExplanation && (

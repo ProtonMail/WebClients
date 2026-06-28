@@ -5,9 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcDuplicate } from '@proton/icons/icons/IcDuplicate';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
 import type { DrawingMode } from '../drawingcanvas/types';
 import { ImageDownloadButton, ImageModifyButton, ImageStyleDropdown } from './ImageActionButtons';
@@ -163,7 +162,7 @@ export const ImagePreviewOverlay = ({
                             onClick={onClose}
                             aria-label={c('collider_2025:Action').t`Close`}
                         >
-                            <IcCross size={4} />
+                            <LumoIcon name="X" size={16} />
                         </button>
                     </Tooltip>
 
@@ -178,7 +177,7 @@ export const ImagePreviewOverlay = ({
                             .filter(Boolean)
                             .join(' ')}
                     >
-                        {/* eslint-disable-next-line no-nested-ternary */}
+                        {}
                         {mode === 'preview' ? (
                             <>
                                 <div className="image-preview-media flex justify-center items-center w-full min-h-0">
@@ -212,7 +211,7 @@ export const ImagePreviewOverlay = ({
                                                 title={c('collider_2025:Action').t`Copy prompt`}
                                                 aria-label={c('collider_2025:Action').t`Copy prompt`}
                                             >
-                                                <IcDuplicate size={4} />
+                                                <LumoIcon name="Copy" size={16} />
                                             </Button>
                                         </div>
                                     </div>

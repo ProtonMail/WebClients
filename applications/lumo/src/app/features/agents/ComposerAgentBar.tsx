@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
-import { IcCross } from '@proton/icons/icons/IcCross';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import { useLumoDispatch } from '../../redux/hooks';
 import { openAgentPicker } from '../../redux/slices/composerActions';
@@ -49,7 +49,7 @@ export const ComposerAgentBar = ({ conversationId }: ComposerAgentBarProps) => {
                     aria-label={c('collider_2025:Action').t`Remove agent`}
                     title={c('collider_2025:Action').t`Remove agent`}
                 >
-                    <IcCross size={3} />
+                    <LumoIcon name="X" width={12} height={12} />
                 </button>
             </span>
             <button

@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components';
 import { Prompt } from '@proton/components';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcShield } from '@proton/icons/icons/IcShield';
+
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 interface Props extends ModalProps {
     url: string;
@@ -136,7 +136,12 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                                 ? c('collider_2025: Action').t`Hide safety information`
                                 : c('collider_2025: Action').t`Show safety information`}
                         </span>
-                        <IcChevronDown size={3} className={`color-primary ${showSafetyInfo ? 'rotate-180' : ''}`} />
+                        <LumoIcon
+                            name="ChevronDown"
+                            width={12}
+                            height={12}
+                            className={`color-primary ${showSafetyInfo ? 'rotate-180' : ''}`}
+                        />
                     </div>
                 </Button>
 
@@ -153,21 +158,21 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                                 </span>
                             </div>
                             <div className="flex flex-row flex-nowrap gap-2">
-                                <IcExclamationTriangleFilled className={'color-warning'} />
+                                <LumoIcon name="TriangleAlert" className={'color-warning'} />
                                 <span>
                                     <span className="text-bold">{c('collider_2025: Info').t`Domain name`}</span> -{' '}
                                     {c('collider_2025: Info').t`Check this is the site you expect to visit`}
                                 </span>
                             </div>
                             <div className="flex flex-row flex-nowrap gap-2">
-                                <IcExclamationTriangleFilled className={'color-warning'} />
+                                <LumoIcon name="TriangleAlert" className={'color-warning'} />
                                 <span>
                                     {/* eslint-disable-next-line no-restricted-syntax */}
                                     {c('collider_2025: Info').t`Watch for misspellings (e.g., proton.me vs pr0t0n.me)`}
                                 </span>
                             </div>
                             <div className="flex flex-row flex-nowrap gap-2">
-                                <IcExclamationTriangleFilled className={'color-warning'} />
+                                <LumoIcon name="TriangleAlert" className={'color-warning'} />
                                 <span>
                                     {c('collider_2025: Info')
                                         .t`Be cautious of unfamiliar domains or excessive subdomains`}

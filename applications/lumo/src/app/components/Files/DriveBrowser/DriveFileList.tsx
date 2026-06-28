@@ -3,13 +3,11 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { NodeType } from '@proton/drive';
-import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
-import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { MAX_ASSET_SIZE } from '../../../constants';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { CircularProgress } from './CircularProgress';
 import { DriveFileItemCard, type FileItemData } from './DriveFileItemCard';
 
@@ -37,7 +35,8 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
     if (children.length === 0) {
         return (
             <div className="flex items-center justify-center text-center py-8">
-                <p className="color-weak text-sm m-0">{c('collider_2025: Info').t`No supported files in this folder`}</p>
+                <p className="color-weak text-sm m-0">{c('collider_2025: Info')
+                    .t`No supported files in this folder`}</p>
             </div>
         );
     }
@@ -76,12 +75,12 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                 const fileExists = existingFiles.some((existing) => existing.filename === child.name);
                 const exceedsFileSizeLimit = child.size && child.size > MAX_ASSET_SIZE;
 
-                const CheckmarkIcon = () => <IcCheckmarkCircle />;
-                const ErrorIcon = () => <IcExclamationTriangleFilled className="color-danger" size={4} />;
+                const CheckmarkIcon = () => <LumoIcon name="CircleCheck" />;
+                const ErrorIcon = () => <LumoIcon name="TriangleAlert" className="color-danger" size={16} />;
                 const ProgressIcon = () => (
                     <CircularProgress progress={fileData.downloadProgress || 0} size={16} className="text-primary" />
                 );
-                const AddIcon = () => <IcPlusCircle />;
+                const AddIcon = () => <LumoIcon name="CirclePlus" />;
 
                 const getActionIcon = () => {
                     if (fileExists) {
@@ -119,10 +118,9 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                                           onFileClick(child);
                                       }
                                   },
-                                  disabled:
-                                      downloadingFile === child.nodeUid || fileExists || exceedsFileSizeLimit,
+                                  disabled: downloadingFile === child.nodeUid || fileExists || exceedsFileSizeLimit,
                                   loading: downloadingFile === child.nodeUid,
-                                  // eslint-disable-next-line no-nested-ternary
+
                                   variant: fileExists ? 'secondary' : exceedsFileSizeLimit ? 'danger' : 'primary',
                               },
                           ]
@@ -134,12 +132,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                         return;
                     }
 
-                    if (
-                        child.type === NodeType.File &&
-                        !fileExists &&
-                        !exceedsFileSizeLimit &&
-                        !folderSelectionMode
-                    ) {
+                    if (child.type === NodeType.File && !fileExists && !exceedsFileSizeLimit && !folderSelectionMode) {
                         onFileClick(child);
                     }
                 };

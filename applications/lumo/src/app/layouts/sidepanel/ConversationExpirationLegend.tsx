@@ -2,9 +2,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { IcClock } from '@proton/icons/icons/IcClock';
-import { IcHourglass } from '@proton/icons/icons/IcHourglass';
-
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import type { Conversation } from '../../types';
 import { countConversationsByExpirationUrgency } from './helpers';
@@ -57,7 +55,7 @@ export const ConversationExpirationLegend = ({ conversations }: ConversationExpi
         <div className="conversation-expiration-legend flex flex-column gap-1 mb-3 text-sm color-weak">
             {expiringInTwoDays > 0 && (
                 <div className="flex items-center gap-1.5">
-                    <IcClock size={4} className="color-weak shrink-0" alt="" />
+                    <LumoIcon name="Clock" size={16} className="color-weak shrink-0" aria-label="" />
                     <span>
                         {c('collider_2025: Info').ngettext(
                             msgid`${expiringInTwoDays} chat will expire in 2 days`,
@@ -69,7 +67,7 @@ export const ConversationExpirationLegend = ({ conversations }: ConversationExpi
             )}
             {urgentTotal > 0 && (
                 <div className="flex items-center gap-1.5">
-                    <IcHourglass size={4} className="color-weak shrink-0" alt="" />
+                    <LumoIcon name="Hourglass" size={16} className="color-weak shrink-0" aria-label="" />
                     <span>{getUrgentLegendLabel(expiringInOneDay, expiringToday)}</span>
                 </div>
             )}

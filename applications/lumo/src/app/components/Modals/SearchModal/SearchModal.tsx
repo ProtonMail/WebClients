@@ -8,8 +8,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Icon } from '@proton/components/index';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
-import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
-import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 import { getProjectCategory } from '../../../features/projects/constants';
@@ -20,6 +18,7 @@ import { SearchService } from '../../../services/search/searchService';
 import type { SearchResult } from '../../../services/search/types';
 import type { Attachment } from '../../../types';
 import { FilePreviewPanel } from '../../Files/Common/FilePreviewPanel';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 import './SearchModal.scss';
 
@@ -122,7 +121,7 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                     )}
                     {result.documentPreview && (
                         <div className="search-result-preview search-result-folder-path">
-                            <IcFolder size={3} className="mr-1" color="var(--text-norm)" />
+                            <LumoIcon name="Folder" width={12} height={12} className="mr-1" color="var(--text-norm)" />
                             {result.documentPreview}
                         </div>
                     )}
@@ -396,7 +395,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
                 {error && (
                     <div className="search-modal-error">
-                        <IcExclamationCircle className="search-modal-error-icon" />
+                        <LumoIcon name="Info" className="search-modal-error-icon" />
                         <p className="search-modal-error-text">{error}</p>
                     </div>
                 )}
@@ -418,12 +417,10 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                                     <span className="search-modal-section-title">{groupName}</span>
                                 </div>
                                 {groupResults.map((result, index) => {
-                                    // eslint-disable-next-line no-nested-ternary
                                     const key =
                                         result.type === 'document'
                                             ? `doc-${result.documentId}-${index}`
-                                            : // eslint-disable-next-line no-nested-ternary
-                                              result.type === 'message'
+                                            : result.type === 'message'
                                               ? `msg-${result.conversationId}-${result.messageId}-${index}`
                                               : result.type === 'project'
                                                 ? `proj-${result.projectId}-${index}`
