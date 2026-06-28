@@ -3,6 +3,8 @@ import { Suspense, lazy, useCallback, useState } from 'react';
 import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
+import type { ToolCallData } from '../../../../../../lib/toolCall/types';
+import { tryParseToolCall } from '../../../../../../lib/toolCall/types';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 import { WeatherToolResult, parseWeatherResult } from './WeatherToolResult';
@@ -56,7 +58,7 @@ function preprocessContent(content: string | undefined): string {
 /**
  * Check if a tool call is in progress (no result yet).
  */
-function isToolCallInProgress(
+export function isToolCallInProgress(
     block: ToolCallBlock,
     allBlocks: ContentBlock[],
     isGenerating: boolean,
@@ -73,6 +75,33 @@ function isToolCallInProgress(
     return isLastToolCall && !hasResult;
 }
 
+function createInProgressToolCallStep(content: string): ThinkingStep {
+    return {
+        type: 'tool_call',
+        toolCall: tryParseToolCall(content) ?? ({ name: 'pending_tool' } as unknown as ToolCallData),
+        isActive: true,
+    };
+}
+
+export function isThinkingInProgress(
+    steps: ThinkingStep[],
+    blocks: ContentBlock[],
+    isGenerating: boolean,
+    isLastMessage: boolean
+): boolean {
+    if (steps.some((step) => (step.type === 'reasoning' || step.type === 'tool_call') && step.isActive)) {
+        return true;
+    }
+
+    if (!isGenerating || !isLastMessage) {
+        return false;
+    }
+
+    return blocks
+        .filter(isToolCallBlock)
+        .some((block) => isToolCallInProgress(block, blocks, isGenerating, isLastMessage));
+}
+
 /**
  * Convert a tool call block to timeline step data.
  */
@@ -82,10 +111,12 @@ function toToolCallStep(
     isGenerating: boolean,
     isLastMessage: boolean
 ): ThinkingStep | null {
-    const toolCall = parseToolCallBlock(block);
-    if (!toolCall) return null;
-
     const isInProgress = isToolCallInProgress(block, allBlocks, isGenerating, isLastMessage);
+    const toolCall = parseToolCallBlock(block);
+
+    if (!toolCall) {
+        return isInProgress ? createInProgressToolCallStep(block.content) : null;
+    }
 
     const blockIndex = allBlocks.indexOf(block);
     const resultBlock = allBlocks.find((b, idx) => idx > blockIndex && isToolResultBlock(b));
@@ -100,6 +131,12 @@ const IMAGE_ATTACHMENT_MARKDOWN = /^!\[[^\]]*\]\(attachment:[^)]+\)$/;
 
 function isImageAttachmentTextBlock(block: ContentBlock): boolean {
     return block.type === 'text' && IMAGE_ATTACHMENT_MARKDOWN.test(block.content.trim());
+}
+
+function hasStartedProseResponse(blocks: ContentBlock[]): boolean {
+    return blocks.some(
+        (block) => block.type === 'text' && block.content.trim().length > 0 && !isImageAttachmentTextBlock(block)
+    );
 }
 
 /**
@@ -122,13 +159,18 @@ function buildInterleavedItems(
 
     const messageCreatedAtMs = messageCreatedAt ? new Date(messageCreatedAt).getTime() : undefined;
 
+    const proseStarted = hasStartedProseResponse(blocks);
+    const anyToolCallInProgress = toolCallBlocks.some((block) =>
+        isToolCallInProgress(block, blocks, isGenerating, isLastMessage)
+    );
+
     if (timeline && timeline.length > 0) {
         const processedToolCallIndices = new Set<number>();
 
         const makeReasoningStep = (pos: number): ThinkingStep => {
             const event = timeline[pos] as { type: 'reasoning'; content: string; timestamp: number };
-            const isLast = pos === timeline.length - 1;
-            const isActive = isGenerating && isLastMessage && isLast;
+            const isLastTimelineEvent = pos === timeline.length - 1;
+            const isActive = isGenerating && isLastMessage && isLastTimelineEvent && !proseStarted;
             const nextEvent = timeline[pos + 1];
             let durationMs: number | undefined;
             if (!isActive) {
@@ -161,16 +203,11 @@ function buildInterleavedItems(
             if (step) allSteps.push(step);
         });
     } else {
-        const toolCalls = blocks.filter(isToolCallBlock);
-        const anyToolCallInProgress = toolCalls.some(
-            (block) => toToolCallStep(block, blocks, isGenerating, isLastMessage)?.isActive
-        );
-
         if (reasoning && reasoning.trim()) {
             allSteps.push({
                 type: 'reasoning',
                 content: reasoning,
-                isActive: isGenerating && isLastMessage && !anyToolCallInProgress,
+                isActive: isGenerating && isLastMessage && !anyToolCallInProgress && !proseStarted,
             });
         }
 
@@ -179,6 +216,16 @@ function buildInterleavedItems(
                 const step = toToolCallStep(block, blocks, isGenerating, isLastMessage);
                 if (step) allSteps.push(step);
             }
+        }
+    }
+
+    if (anyToolCallInProgress && !allSteps.some((step) => step.type === 'tool_call' && step.isActive)) {
+        const inProgressBlock = toolCallBlocks.find((block) =>
+            isToolCallInProgress(block, blocks, isGenerating, isLastMessage)
+        );
+        if (inProgressBlock) {
+            const step = toToolCallStep(inProgressBlock, blocks, isGenerating, isLastMessage);
+            if (step) allSteps.push(step);
         }
     }
 
@@ -295,6 +342,7 @@ export const RenderBlocks = ({
 
     // Hold back response text only while finance charts are still mounting, to avoid layout flash.
     let pastUnreadyFinanceCard = false;
+    const inThinkingPhase = isGenerating && isLastMessage && !hasStartedProseResponse(blocks);
 
     return (
         <>
@@ -312,8 +360,8 @@ export const RenderBlocks = ({
                             <ThinkingPath
                                 steps={item.steps}
                                 message={message}
-                                isGenerating={isGenerating}
-                                isLastMessage={isLastMessage}
+                                isThinking={isThinkingInProgress(item.steps, blocks, isGenerating, isLastMessage)}
+                                showThinkingTrace={inThinkingPhase}
                                 handleLinkClick={handleLinkClick}
                             />
                             {hasCards && (
