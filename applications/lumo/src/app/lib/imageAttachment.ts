@@ -41,3 +41,16 @@ export function imageMarkdownFragment(imageId: string): string {
 export function generateImageMarkdown(imageId: string): string {
     return `\n\n${imageMarkdownFragment(imageId)}\n\n`;
 }
+
+const ATTACHMENT_IMAGE_MARKDOWN = /!\[[^\]]*\]\(attachment:[^)]+\)/g;
+
+/**
+ * Removes image attachment placeholders from content shared via feedback.
+ * The referenced binary/image data is never included in feedback payloads.
+ */
+export function stripUnshareableAttachmentContent(content: string): string {
+    return content
+        .replace(ATTACHMENT_IMAGE_MARKDOWN, '')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+}
