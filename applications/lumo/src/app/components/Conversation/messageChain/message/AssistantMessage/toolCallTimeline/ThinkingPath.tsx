@@ -4,17 +4,11 @@ import type { ReactNode } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
-import type { IconName } from '@proton/icons/types';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { ToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
+import { type IconName, LumoIcon } from '../../../../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
 import { ThinkingProgressDots } from './ThinkingProgressDots';
 import { getThinkingPathHeader } from './thinkingPathLabels';
@@ -25,23 +19,23 @@ import './ThinkingPath.scss';
 /**
  * Get icon name for tool call type.
  */
-function getToolCallIcon(toolCall: ToolCallData): string {
+function getToolCallIcon(toolCall: ToolCallData): IconName {
     switch (toolCall.name) {
         case 'web_search':
-            return 'globe';
+            return 'Globe';
         case 'weather':
-            return 'cloud';
+            return 'Cloud';
         case 'stock':
         case 'cryptocurrency':
-            return 'chart-line';
+            return 'TrendingUp';
         case 'describe_image':
         case 'generate_image':
         case 'edit_image':
-            return 'image';
+            return 'Image';
         case 'proton_info':
-            return 'brand-proton';
+            return 'Shield';
         default:
-            return 'wrench';
+            return 'Wrench';
     }
 }
 
@@ -246,8 +240,10 @@ const ReasoningContent = ({
     return (
         <div className="thinking-step">
             <ThinkingStepTrack>
-                <IcLightbulb
-                    size={3}
+                <LumoIcon
+                    name="Lightbulb"
+                    width={12}
+                    height={12}
                     className={clsx(
                         'thinking-step-icon-badge shrink-0',
                         isActive && 'thinking-step-icon-badge--active'
@@ -270,7 +266,12 @@ const ReasoningContent = ({
 const DoneStep = () => (
     <div className="thinking-step">
         <ThinkingStepTrack>
-            <IcCheckmark size={3} className="thinking-step-icon-badge thinking-step-icon-badge--done shrink-0" />
+            <LumoIcon
+                name="Check"
+                width={12}
+                height={12}
+                className="thinking-step-icon-badge thinking-step-icon-badge--done shrink-0"
+            />
         </ThinkingStepTrack>
 
         <div className="thinking-step-content min-w-0 text-rg lh130">
@@ -391,9 +392,10 @@ const ToolCallStep = ({
     return (
         <div className="thinking-step">
             <ThinkingStepTrack>
-                <Icon
-                    name={iconName as IconName}
-                    size={3}
+                <LumoIcon
+                    name={iconName}
+                    width={12}
+                    height={12}
                     className={clsx(
                         'thinking-step-icon-badge shrink-0',
                         isActive && 'thinking-step-icon-badge--active',
@@ -407,7 +409,12 @@ const ToolCallStep = ({
                 {hasInlineCard && !isActive ? (
                     <div className={clsx(toolStepToggleClassName, 'cursor-default')}>
                         <span className="color-weak">{label}</span>
-                        <IcCheckmark size={3} className="thinking-step-complete-check shrink-0" />
+                        <LumoIcon
+                            name="Check"
+                            width={12}
+                            height={12}
+                            className="thinking-step-complete-check shrink-0"
+                        />
                     </div>
                 ) : // eslint-disable-next-line no-nested-ternary
                 hasInlineImageStatus ? (
@@ -420,9 +427,14 @@ const ToolCallStep = ({
                                 </span>
                             )}
                             {hasError ? (
-                                <IcExclamationCircleFilled size={3} className="color-danger" />
+                                <LumoIcon name="CircleAlert" width={12} height={12} className="color-danger" />
                             ) : (
-                                <IcCheckmark size={3} className="thinking-step-complete-check" />
+                                <LumoIcon
+                                    name="Check"
+                                    width={12}
+                                    height={12}
+                                    className="thinking-step-complete-check"
+                                />
                             )}
                         </div>
                     </div>
@@ -445,7 +457,7 @@ const ToolCallStep = ({
                             <div className="flex items-center gap-2 shrink-0">
                                 {hasError && (
                                     <span className="flex items-center gap-1 text-sm color-danger">
-                                        <IcExclamationCircleFilled size={3} />
+                                        <LumoIcon name="CircleAlert" width={12} height={12} />
                                         Failed
                                     </span>
                                 )}
@@ -468,8 +480,10 @@ const ToolCallStep = ({
                                         )}
                                     </span>
                                 )}
-                                <IcChevronDown
-                                    size={3}
+                                <LumoIcon
+                                    name="ChevronDown"
+                                    width={12}
+                                    height={12}
                                     className={clsx(
                                         'thinking-step-chevron',
                                         isExpanded && 'thinking-step-chevron--expanded'
@@ -485,8 +499,10 @@ const ToolCallStep = ({
                                     <div className="flex flex-column gap-2">
                                         {webExtractResult.results.map((item, idx) => (
                                             <div key={idx} className="pb-2 last:pb-0 flex items-start gap-2">
-                                                <IcCheckmarkCircleFilled
-                                                    size={3}
+                                                <LumoIcon
+                                                    name="CircleCheck"
+                                                    width={12}
+                                                    height={12}
                                                     className="color-success shrink-0 mt-0.5"
                                                 />
                                                 <div className="min-w-0">
@@ -510,8 +526,10 @@ const ToolCallStep = ({
                                                 key={`failed-${idx}`}
                                                 className="pb-2 border-bottom border-weak last:border-0 last:pb-0 flex items-start gap-2"
                                             >
-                                                <IcExclamationCircleFilled
-                                                    size={3}
+                                                <LumoIcon
+                                                    name="CircleAlert"
+                                                    width={12}
+                                                    height={12}
                                                     className="color-danger shrink-0 mt-0.5"
                                                 />
                                                 <div className="min-w-0">
@@ -625,8 +643,10 @@ export const ThinkingPath = ({
                     <span className={clsx(isThinking && 'text-tabular-nums')}>{headerLabel}</span>
                     {isThinking && <ThinkingProgressDots />}
                 </span>
-                <IcChevronDown
-                    size={3}
+                <LumoIcon
+                    name="ChevronDown"
+                    width={12}
+                    height={12}
                     className={clsx(
                         'thinking-path-header-chevron shrink-0 color-weak',
                         isExpanded && 'thinking-path-header-chevron--expanded'

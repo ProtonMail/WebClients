@@ -1,8 +1,5 @@
-import type { IconName } from '@proton/icons/types';
-
 export interface FeaturePoint {
-    icon: IconName;
-    svg?: React.ReactNode;
+    icon: React.ReactNode;
     getText: () => string;
 }
 

@@ -5,17 +5,17 @@ import { useModalStateObject } from '@proton/components';
 import PaperTrailPanel from '../../features/aiPaperTrail/PaperTrailPanel';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import type { Attachment } from '../../types';
-import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectTierErrors } from '../../redux/slices/meta/errors';
 import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
-import UpsellCard from '../../upsells/components/UpsellCard';
+import type { Attachment } from '../../types';
 import { ComposerMode, type Message } from '../../types';
+import UpsellCard from '../../upsells/components/UpsellCard';
 // import { Blobs } from '../Blobs/Blobs';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
@@ -56,11 +56,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const tierErrors = useLumoSelector((state) => selectTierErrors({ errors: state.errors }));
     const { hasLumoPlus } = useLumoPlan();
     const remainingLimits = useRemainingLimits();
-    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(
-        remainingLimits,
-        tierErrors.length > 0,
-        hasLumoPlus
-    );
+    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
     const filePreviewModal = useModalStateObject();
     const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
 
@@ -138,19 +134,6 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
 
                         <div className="composer-container md:px-4 w-full relative">
                             {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
-                            {/* {aiPaperTrail && isEditorEmpty && (
-                                <button
-                                    type="button"
-                                    className="ai-paper-trail-spotlight flex flex-row flex-nowrap items-center gap-2 mb-3 px-4 py-2 rounded-full"
-                                    onClick={() => navigate('/ai-paper-trail')}
-                                >
-                                    <IcMagicWand size={4} className="color-primary shrink-0" />
-                                    <span className="text-sm text-semibold">
-                                        {c('collider_2025:Action').t`See your AI paper trail`}
-                                    </span>
-                                    <IcArrowRight size={4} className="shrink-0" />
-                                </button>
-                            )} */}
 
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}

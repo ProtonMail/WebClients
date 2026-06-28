@@ -4,8 +4,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { PopperPlacement } from '@proton/components/index';
-import { Icon } from '@proton/components/index';
-import type { IconName, IconSize } from '@proton/icons/types';
+
+import { type IconName, LumoIcon } from '../LumoIcon/LumoIcon';
 
 interface LumoButtonProps {
     iconName: IconName;
@@ -18,7 +18,7 @@ interface LumoButtonProps {
     disabled?: boolean;
     buttonRef?: React.MutableRefObject<HTMLButtonElement | null>;
     className?: string;
-    iconSize?: IconSize;
+    iconSize?: number;
 }
 
 const LumoButton = ({
@@ -32,7 +32,7 @@ const LumoButton = ({
     disabled,
     buttonRef,
     className,
-    iconSize = 4,
+    iconSize = 16,
 }: LumoButtonProps) => {
     return (
         <Tooltip title={title} originalPlacement={tooltipPlacement || 'right'}>
@@ -47,7 +47,7 @@ const LumoButton = ({
                 ref={buttonRef}
                 aria-pressed={isActive}
             >
-                <Icon name={iconName} alt={alt} size={iconSize} />
+                <LumoIcon name={iconName} aria-label={alt} size={iconSize} />
             </Button>
         </Tooltip>
     );

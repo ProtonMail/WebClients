@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { DropdownOptions } from '../../components/DropdownMenu';
 import DropdownMenu from '../../components/DropdownMenu';
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { useConversationDelete } from '../../hooks/useConversationDelete';
 import { useConversationStar } from '../../hooks/useConversationStar';
@@ -37,10 +38,10 @@ const ChatDropdownMenu = ({ conversation, onOpenChange, additionalOptions = [] }
     const defaultOptions: DropdownOptions[] = [
         {
             label: !isStarred ? c('Option').t`Add to favorites` : c('Option').t`Remove from favorites`,
-            icon: 'star',
+            icon: <LumoIcon name="Star" size={16} />,
             onClick: handleStarToggle,
         },
-        { label: c('Option').t`Delete`, icon: 'trash', onClick: openConfirmationModal },
+        { label: c('Option').t`Delete`, icon: <LumoIcon name="Trash2" size={16} />, onClick: openConfirmationModal },
     ];
 
     const options = [...additionalOptions, ...defaultOptions];

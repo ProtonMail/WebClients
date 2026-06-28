@@ -4,7 +4,6 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
@@ -18,6 +17,7 @@ import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from '../../..
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import LumoButton from '../../../../Buttons/LumoButton';
 import { ReferenceFilesButton } from '../../../../Files';
+import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import SiblingSelector from '../../../../SiblingSelector';
@@ -110,7 +110,7 @@ const AssistantActionToolbar = ({
                     <LumoButton
                         buttonRef={retryButtonRef}
                         className="lumo-no-copy"
-                        iconName="arrows-rotate"
+                        iconName="RefreshCw"
                         title={c('collider_2025:Action').t`Regenerate`}
                         tooltipPlacement="top"
                         onClick={() => {
@@ -324,7 +324,7 @@ const AssistantMessage = ({
 const EmptyMessage = () => (
     <>
         <div className="flex flex-row items-center gap-2 color-hint px-1 py-2">
-            <IcInfoCircle size={4} />
+            <LumoIcon name="Info" size={16} />
             <p className="text-sm">{c('collider_2025:Info').t`This message is empty. Sorry about that.`}</p>
         </div>
     </>

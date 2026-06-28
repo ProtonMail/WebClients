@@ -4,8 +4,8 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcCross } from '@proton/icons/icons/IcCross';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { SketchCanvas } from './SketchCanvas';
 import type { DrawingMode } from './types';
 
@@ -79,7 +79,7 @@ export const SketchOverlay = ({
                             onClick={onClose}
                             aria-label={c('collider_2025:Action').t`Close`}
                         >
-                            <IcCross size={4} />
+                            <LumoIcon name="X" size={16} />
                         </button>
                     </Tooltip>
 

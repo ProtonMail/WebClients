@@ -3,8 +3,8 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
-import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
+
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 interface DriveEmptyStateProps {
     onUpload: () => void;
@@ -35,7 +35,7 @@ export const DriveEmptyState: React.FC<DriveEmptyStateProps> = ({
                     disabled={isDisabled}
                     title={c('collider_2025: Action').t`Upload files`}
                 >
-                    <IcArrowUpLine className="mr-1" />
+                    <LumoIcon name="ArrowUpToLine" className="mr-1" />
                     {c('collider_2025: Action').t`Upload files`}
                 </Button>
                 {onCreateFolder && (
@@ -46,7 +46,7 @@ export const DriveEmptyState: React.FC<DriveEmptyStateProps> = ({
                         disabled={isDisabled}
                         title={c('collider_2025: Action').t`Create folder`}
                     >
-                        <IcFolderPlus className="mr-1" />
+                        <LumoIcon name="FolderPlus" className="mr-1" />
                         {c('collider_2025: Action').t`Create folder`}
                     </Button>
                 )}

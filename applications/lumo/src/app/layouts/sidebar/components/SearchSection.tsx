@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 import { useSidebar } from '../../../providers/SidebarProvider';
@@ -15,7 +14,7 @@ export const SearchSection = ({ onSearchClick }: Props) => {
 
     return (
         <SidebarItem
-            icon={IcMagnifier}
+            icon="Search"
             label={c('collider_2025:Button').t`Search`}
             onClick={onSearchClick}
             shortcut={!isSmallScreen ? `${metaKey}+K` : undefined}

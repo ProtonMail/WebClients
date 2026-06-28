@@ -2,9 +2,9 @@ import React from 'react';
 
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
-import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 
 import { getMimeTypeFromExtension } from '../../util/filetypes';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import type { FileItem, FileMentionState } from './hooks/useFileMentionAutocomplete';
 
 interface FileMentionComponentProps {
@@ -104,7 +104,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                         {mimeType ? (
                             <FileIcon mimeType={mimeType} className="shrink-0" size={3.5} />
                         ) : (
-                            <IcFileLines size={3.5} className="color-weak shrink-0" />
+                            <LumoIcon name="FileText" width={14} height={14} className="color-weak shrink-0" />
                         )}
                         <div className="flex-1 min-w-0 overflow-hidden">
                             {folderPath && (

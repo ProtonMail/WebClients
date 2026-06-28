@@ -3,12 +3,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
-import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
-import lumoCat from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import lumoCat from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 interface HtmlPreviewPanelProps {
     html: string;
@@ -48,7 +46,13 @@ function injectScripts(html: string): string {
     return INJECTED_SCRIPT + html;
 }
 
-export const HtmlPreviewPanel = ({ html, isFullscreen, onToggleFullscreen, onClose, onRetryWithError }: HtmlPreviewPanelProps) => {
+export const HtmlPreviewPanel = ({
+    html,
+    isFullscreen,
+    onToggleFullscreen,
+    onClose,
+    onRetryWithError,
+}: HtmlPreviewPanelProps) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [renderError, setRenderError] = useState<string | null>(null);
@@ -106,25 +110,29 @@ export const HtmlPreviewPanel = ({ html, isFullscreen, onToggleFullscreen, onClo
                         <p className="m-0 text-md text-bold">{c('collider_2025: Label').t`HTML Preview`}</p>
                     </div>
                 </div>
-                <Tooltip title={isFullscreen ? c('collider_2025: Action').t`Exit full screen` : c('collider_2025: Action').t`Full screen`}>
+                <Tooltip
+                    title={
+                        isFullscreen
+                            ? c('collider_2025: Action').t`Exit full screen`
+                            : c('collider_2025: Action').t`Full screen`
+                    }
+                >
                     <Button icon size="small" shape="ghost" onClick={onToggleFullscreen}>
-                        {isFullscreen ? <IcArrowsToCenter size={4} /> : <IcArrowsFromCenter size={4} />}
+                        {isFullscreen ? (
+                            <LumoIcon name="Minimize2" size={16} />
+                        ) : (
+                            <LumoIcon name="Maximize2" size={16} />
+                        )}
                     </Button>
                 </Tooltip>
-                <Button
-                    icon
-                    size="small"
-                    shape="ghost"
-                    onClick={onClose}
-                    title={c('collider_2025: Action').t`Close`}
-                >
-                    <IcCross size={4} />
+                <Button icon size="small" shape="ghost" onClick={onClose} title={c('collider_2025: Action').t`Close`}>
+                    <LumoIcon name="X" size={16} />
                 </Button>
             </div>
 
             {renderError && (
                 <div className="shrink-0 mx-3 mb-2 flex flex-row flex-nowrap items-center gap-2 px-3 py-1.5 rounded-lg bg-weak border border-weak text-sm">
-                    <IcExclamationTriangleFilled size={3} className="shrink-0 color-warning" />
+                    <LumoIcon name="TriangleAlert" width={12} height={12} className="shrink-0 color-warning" />
                     <Tooltip title={renderError}>
                         <span className="flex-1 text-ellipsis overflow-hidden color-weak">{renderError}</span>
                     </Tooltip>
@@ -143,7 +151,7 @@ export const HtmlPreviewPanel = ({ html, isFullscreen, onToggleFullscreen, onClo
                         </Button>
                     )}
                     <Button icon size="small" shape="ghost" onClick={() => setRenderError(null)}>
-                        <IcCross size={3} aria-label={c('collider_2025: Action').t`Close`} />
+                        <LumoIcon name="X" width={12} height={12} aria-label={c('collider_2025: Action').t`Close`} />
                     </Button>
                 </div>
             )}

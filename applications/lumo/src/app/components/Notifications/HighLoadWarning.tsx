@@ -3,13 +3,13 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcCross } from '@proton/icons/icons/IcCross';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { SignInLink } from '../Guest/SignInLink';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 import './ErrorCard.scss';
 
@@ -100,7 +100,7 @@ const HighLoadWarning = () => {
                     color="weak"
                     shape="ghost"
                 >
-                    <IcCross size={4} alt={c('Action').t`Dismiss`} />
+                    <LumoIcon name="X" size={16} aria-label={c('Action').t`Dismiss`} />
                 </Button>
             </div>
         </div>

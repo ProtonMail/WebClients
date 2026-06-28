@@ -2,8 +2,8 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
+import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import ProjectSettingsButton from '../ProjectSettingsButton';
 import { ProjectTitleSection } from './ProjectTitleSection';
 
@@ -43,7 +43,7 @@ export const ProjectDetailHeader = ({
                         className="project-detail-back-button flex items-center px-0"
                         title={c('collider_2025:Action').t`Back to projects`}
                     >
-                        <IcArrowLeft className="mr-1" />
+                        <LumoIcon name="ArrowLeft" className="mr-1" />
                         <span className="project-detail-back-text">
                             {c('collider_2025:Navigation').t`All projects`}
                         </span>

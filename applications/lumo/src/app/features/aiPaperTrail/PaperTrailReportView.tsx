@@ -3,11 +3,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader, useModalStateObject } from '@proton/components';
-import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { type PaperTrailReport, deriveCardData, toHandle } from './reportTypes';
 import { ShareableCard } from './shareCard/ShareableCard';
 
@@ -242,7 +241,14 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                                     <span className="pt-score__row-inner">
                                         <span className="pt-score__area">
                                             {exposure.area}
-                                            {exposure.detail && <IcInfoCircle className="pt-score__info" size={3.5} />}
+                                            {exposure.detail && (
+                                                <LumoIcon
+                                                    name="Info"
+                                                    width={14}
+                                                    height={14}
+                                                    className="pt-score__info"
+                                                />
+                                            )}
                                         </span>
                                         <span className="pt-score__bar">
                                             <span
@@ -401,7 +407,7 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
             <div className="pt-card pt-card--cta">
                 <div className="pt-cta__actions">
                     <Button color="norm" size="large" pill onClick={() => shareModal.openModal(true)}>
-                        <IcArrowUpFromSquare className="mr-2" />
+                        <LumoIcon name="Share" className="mr-2" />
                         {c('collider_2025:Action').t`Create shareable card`}
                     </Button>
                     <Button shape="ghost" size="large" pill onClick={onStartOver}>
@@ -409,10 +415,7 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                     </Button>
                 </div>
                 <p className="pt-cta__title">{c('collider_2025:Title').t`You saw the profile?`}</p>
-                <p className="pt-cta__sub">
-                    {c('collider_2025:Info')
-                        .t`Now protect the person behind it.`}
-                </p>
+                <p className="pt-cta__sub">{c('collider_2025:Info').t`Now protect the person behind it.`}</p>
                 <Button color="norm" size="large" pill className="mt-4" onClick={onTryLumo}>
                     {c('collider_2025:Action').t`Try ${LUMO_SHORT_APP_NAME} free`}
                 </Button>

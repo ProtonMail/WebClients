@@ -1,31 +1,31 @@
-import { useCallback } from 'react';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+// import { useCallback } from 'react';
+// import { useHistory, useRouteMatch } from 'react-router-dom';
 
-import { c } from 'ttag';
+// import { c } from 'ttag';
 
-import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+// import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 
-import { useGhostChat } from '../../../providers/GhostChatProvider';
-import { SidebarItem } from './SidebarItem';
+// import { useGhostChat } from '../../../providers/GhostChatProvider';
+// import { SidebarItem } from './SidebarItem';
 
-export const NewGhostChatButton = () => {
-    const { isGhostChatMode, setGhostChatMode } = useGhostChat();
-    const isInMainComponent = useRouteMatch('/')?.isExact;
-    const history = useHistory();
+// export const NewGhostChatButton = () => {
+//     const { isGhostChatMode, setGhostChatMode } = useGhostChat();
+//     const isInMainComponent = useRouteMatch('/')?.isExact;
+//     const history = useHistory();
 
-    const handleNewGhostChat = useCallback(() => {
-        if (!isInMainComponent) {
-            history.push('/');
-        }
-        setGhostChatMode(true);
-    }, [isInMainComponent, setGhostChatMode, history]);
+//     const handleNewGhostChat = useCallback(() => {
+//         if (!isInMainComponent) {
+//             history.push('/');
+//         }
+//         setGhostChatMode(true);
+//     }, [isInMainComponent, setGhostChatMode, history]);
 
-    return (
-        <SidebarItem
-            icon={IcCrossCircle}
-            label={c('collider_2025: Action').t`New ghost chat`}
-            onClick={handleNewGhostChat}
-            disabled={isGhostChatMode}
-        />
-    );
-};
+//     return (
+//         <SidebarItem
+//             icon={IcCrossCircle}
+//             label={c('collider_2025: Action').t`New ghost chat`}
+//             onClick={handleNewGhostChat}
+//             disabled={isGhostChatMode}
+//         />
+//     );
+// };

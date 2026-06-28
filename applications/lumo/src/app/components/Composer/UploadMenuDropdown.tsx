@@ -1,14 +1,16 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import type { MenuDropdownProps, MenuItemProps } from './components/MenuDropdown';
 import { MenuDropdown, MenuItem } from './components/MenuDropdown';
 import type { FileUploadMode } from './hooks/useFileHandling';
 
 import './UploadMenuDropdown.scss';
+import {IcBrandProtonDrive} from "@proton/icons/icons/IcBrandProtonDrive";
+import {IcBrandProtonDriveFilled} from "@proton/icons/icons/IcBrandProtonDriveFilled";
 
 interface UploadActionItemProps extends MenuItemProps {
     canShow: boolean;
@@ -37,19 +39,23 @@ export const UploadMenuDropdown = ({
     // Show "Add from Drive" browse option only for authenticated users without a linked folder and guest users (will trigger upsell)
     // The agent surface keeps the composer minimal, so Drive browsing is hidden there.
     const showBrowseDriveOption = fileUploadMode !== 'linked-drive' && !isAgent;
-    // If drive fodler linked, uploads should go to drive, otherwise they will be handled locally
+    // If drive folder linked, uploads should go to drive, otherwise they will be handled locally
     const showUploadToDrive = fileUploadMode === 'linked-drive';
 
     const uploadMenuItems: UploadActionItemProps[] = [
         {
-            iconName: 'brand-proton-drive' as IconName,
+            icon: <IcBrandProtonDrive size={4} />,
             getLabel: () => c('collider_2025: UploadAction').t`Add from ${DRIVE_APP_NAME}`,
             onClick: onBrowseDrive,
             onClose: onClose,
             canShow: showBrowseDriveOption,
         },
         {
-            iconName: showUploadToDrive ? ('brand-proton-drive-filled' as IconName) : ('file-arrow-in-up' as IconName),
+            icon: showUploadToDrive ? (
+                <IcBrandProtonDriveFilled size={4} />
+            ) : (
+                <LumoIcon name="Upload" size={16} />
+            ),
             getLabel: () =>
                 showUploadToDrive
                     ? c('collider_2025: Action').t`Add file to ${DRIVE_APP_NAME}`
@@ -59,7 +65,7 @@ export const UploadMenuDropdown = ({
             canShow: true,
         },
         {
-            iconName: 'pencil' as IconName,
+            icon: <LumoIcon name="Pencil" size={16} />,
             getLabel: () => c('collider_2025: Action').t`Draw a sketch`,
             onClick: onDrawSketch,
             onClose: onClose,
@@ -74,8 +80,8 @@ export const UploadMenuDropdown = ({
             onClose={onClose}
             className="upload-menu-dropdown rounded-xl"
         >
-            {uploadMenuItems.map((item) => (
-                <MenuItem key={item.iconName} {...item} />
+            {uploadMenuItems.map((item, index) => (
+                <MenuItem key={index} {...item} />
             ))}
         </MenuDropdown>
     );

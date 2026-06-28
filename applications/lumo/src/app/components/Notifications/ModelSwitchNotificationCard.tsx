@@ -2,13 +2,12 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
-import { useTierErrors } from '../../hooks/useTierErrors';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
+import { useTierErrors } from '../../hooks/useTierErrors';
 import { getSelectedModelTier, useModelTier } from '../../providers/ModelTierProvider';
 import {
     shouldShowModelSwitchSuggestion,
@@ -16,6 +15,7 @@ import {
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
 import type { Message } from '../../types';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { ComposerNotificationCard } from './ComposerNotificationCard';
 
 import './ModelSwitchNotificationCard.scss';
@@ -74,7 +74,7 @@ export const ModelSwitchNotificationCard = ({
         <ComposerNotificationCard
             icon={
                 <div className="model-switch-notification-icon inline-flex items-center justify-center shrink-0 rounded-full">
-                    <Icon name="diamond" size={4} className="color-primary" />
+                    <LumoIcon name="Gem" size={16} className="color-primary" />
                 </div>
             }
             title={c('collider_2025: Notification')

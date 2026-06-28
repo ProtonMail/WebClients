@@ -6,32 +6,26 @@ import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { InputFieldTwo, Prompt, Toggle, useModalStateObject, useNotifications } from '@proton/components/index';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
-import { IcPencil } from '@proton/icons/icons/IcPencil';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
-import {IcArchiveBox} from "@proton/icons/icons/IcArchiveBox";
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks';
 import { useMemoryGeneration } from '../../../hooks/useMemoryGeneration';
 import { useLumoDispatch, useLumoStore } from '../../../redux/hooks';
 import { appendGeneratedMemoriesThunk } from '../../../redux/slices/lumoUserSettings';
 import type { Memory } from '../../../redux/slices/lumoUserSettings';
-
 import {
+    MEMORY_AUTO_SAVE_PROMPT_THRESHOLD,
+    MEMORY_MAX_CONTENT_LENGTH,
     applyMemoryEdit,
     createMemory,
     isUserMemory,
-    MEMORY_AUTO_SAVE_PROMPT_THRESHOLD,
-    MEMORY_MAX_CONTENT_LENGTH,
     normalizeMemories,
     partitionMemories,
     sortMemoriesByDate,
 } from '../../../util/memoryHelpers';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
+
 import './MemoryPanel.scss';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 interface MemoryPanelProps {
     onClose?: () => void;
@@ -69,7 +63,7 @@ const formatMemoryDate = (timestamp: number) => {
 const InfoTooltip = ({ title }: { title: string }) => (
     <Tooltip title={title}>
         <span className="memory-panel-info inline-flex items-center color-weak" aria-label={title}>
-            <IcInfoCircle size={4} />
+            <LumoIcon name="Info" size={16} />
         </span>
     </Tooltip>
 );
@@ -93,8 +87,7 @@ const MemoryEducation = ({ onEnable }: { onEnable?: () => void }) => {
         },
         {
             title: c('collider_2025: Title').t`Zero-access encrypted`,
-            body: c('collider_2025: Description')
-                .t`Memories are stored encrypted, only you can access them.`,
+            body: c('collider_2025: Description').t`Memories are stored encrypted, only you can access them.`,
         },
     ];
 
@@ -113,7 +106,7 @@ const MemoryEducation = ({ onEnable }: { onEnable?: () => void }) => {
                 {facts.map((fact) => (
                     <li key={fact.title} className="flex flex-row flex-nowrap items-start gap-3">
                         <span className="shrink-0 inline-flex color-success mt-0.5" aria-hidden="true">
-                            <IcCheckmark size={4} />
+                            <LumoIcon name="Check" size={16} />
                         </span>
                         <div className="flex flex-column flex-nowrap gap-1 flex-1 min-w-0">
                             <p className="m-0 text-sm text-semibold lh130">{fact.title}</p>
@@ -180,7 +173,9 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
         <li className="memory-panel-list-item flex flex-row flex-nowrap items-start gap-3 p-3 group-hover-opacity-container">
             <div className="flex flex-column flex-nowrap flex-1 min-w-0 gap-1">
                 <div className="flex flex-row flex-nowrap items-center gap-2 text-xs color-weak">
-                    <time dateTime={new Date(memory.createdAt).toISOString()}>{formatMemoryDate(memory.createdAt)}</time>
+                    <time dateTime={new Date(memory.createdAt).toISOString()}>
+                        {formatMemoryDate(memory.createdAt)}
+                    </time>
                     <span aria-hidden="true">·</span>
                     <span className={`memory-panel-source-pill${isUserMemory(memory) ? '' : ' is-generated'}`}>
                         {isUserMemory(memory)
@@ -197,7 +192,7 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
                         value={draft}
                         maxLength={MEMORY_MAX_CONTENT_LENGTH}
                         assistContainerClassName="hidden"
-                        className='memory-panel-edit-field w-full'
+                        className="memory-panel-edit-field w-full"
                         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setDraft(e.target.value)}
                         onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
                             if (e.key === 'Escape') {
@@ -214,7 +209,9 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
                 )}
             </div>
 
-            <div className={`flex flex-row flex-nowrap items-center gap-0 shrink-0${isEditing ? '' : ' group-hover:opacity-100'}`}>
+            <div
+                className={`flex flex-row flex-nowrap items-center gap-0 shrink-0${isEditing ? '' : ' group-hover:opacity-100'}`}
+            >
                 {isEditing ? (
                     <>
                         <Tooltip title={c('collider_2025: Action').t`Save (⌘+Enter)`}>
@@ -227,7 +224,7 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
                                 disabled={!draft.trim()}
                                 aria-label={c('collider_2025: Action').t`Save`}
                             >
-                                <IcCheckmark size={4} />
+                                <LumoIcon name="Check" size={16} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={c('collider_2025: Action').t`Cancel (Esc)`}>
@@ -238,7 +235,7 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
                                 onClick={onCancelEdit}
                                 aria-label={c('collider_2025: Action').t`Cancel`}
                             >
-                                <IcCross size={4} />
+                                <LumoIcon name="X" size={16} />
                             </Button>
                         </Tooltip>
                     </>
@@ -252,7 +249,7 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
                                 onClick={onStartEdit}
                                 aria-label={c('collider_2025: Action').t`Edit memory`}
                             >
-                                <IcPencil size={4} />
+                                <LumoIcon name="Pencil" size={16} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={c('collider_2025: Action').t`Delete memory`}>
@@ -263,7 +260,7 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
                                 onClick={onDelete}
                                 aria-label={c('collider_2025: Action').t`Delete memory`}
                             >
-                                <IcTrash size={4} />
+                                <LumoIcon name="Trash2" size={16} />
                             </Button>
                         </Tooltip>
                     </>
@@ -290,10 +287,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         () => sortMemoriesByDate(normalizeMemories(lumoUserSettings.memories)),
         [lumoUserSettings.memories]
     );
-    const { user: userMemories, generated: generatedMemories } = useMemo(
-        () => partitionMemories(memories),
-        [memories]
-    );
+    const { user: userMemories, generated: generatedMemories } = useMemo(() => partitionMemories(memories), [memories]);
 
     const isMemoryEnabled = lumoUserSettings.isMemoryEnabled ?? false;
     const isMemoryAutoSaveEnabled = lumoUserSettings.isMemoryAutoSaveEnabled ?? true;
@@ -419,8 +413,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         }
     };
 
-    const disableMemoryText = c('collider_2025: DisableMemory')
-        .t`Turn off ${LUMO_SHORT_APP_NAME} Memory at any time.`;
+    const disableMemoryText = c('collider_2025: DisableMemory').t`Turn off ${LUMO_SHORT_APP_NAME} Memory at any time.`;
 
     const autoUpdateTooltip = isMemoryAutoSaveEnabled
         ? promptsUntilAutoSave === 0
@@ -482,9 +475,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                         <header className="flex flex-row flex-nowrap items-center justify-space-between gap-2 py-2 px-3 border-bottom border-weak bg-norm">
                             <div className="flex flex-row flex-nowrap items-center gap-1 text-sm text-semibold">
                                 <span>{c('collider_2025: Title').t`Saved memories`}</span>
-                                {hasMemories && (
-                                    <span className="color-weak text-normal">({memories.length})</span>
-                                )}
+                                {hasMemories && <span className="color-weak text-normal">({memories.length})</span>}
                             </div>
                             {hasMemories && hasNewChats && (
                                 <Button
@@ -495,7 +486,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                     disabled={!canGenerateFromChats || isGenerating}
                                     loading={isBootstrapping}
                                 >
-                                    <IcMagicWand size={4} className="mr-2" />
+                                    <LumoIcon name="WandSparkles" size={16} className="mr-2" />
                                     {updateButtonLabel}
                                 </Button>
                             )}
@@ -518,7 +509,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                         ) : (
                             <div className="flex flex-column flex-nowrap items-center justify-center gap-2 py-6 px-4 text-center flex-1 min-h-0">
                                 <span className="memory-panel-empty-icon mb-1" aria-hidden="true">
-                                    <IcArchiveBox size={5} />
+                                    <LumoIcon name="Archive" size={20} />
                                 </span>
                                 <p className="m-0 text-sm text-semibold">
                                     {c('collider_2025: Title').t`No memories yet`}
@@ -536,7 +527,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                     disabled={!canGenerateFromChats}
                                     loading={isBootstrapping}
                                 >
-                                    <IcMagicWand size={4} className="mr-2" />
+                                    <LumoIcon name="WandSparkles" size={16} className="mr-2" />
                                     {c('collider_2025: Action').t`Generate from chats`}
                                 </Button>
                             </div>

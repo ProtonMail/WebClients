@@ -1,13 +1,11 @@
 import { useMemo } from 'react';
 
 import { clsx } from 'clsx';
-
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcClock } from '@proton/icons/icons/IcClock';
-import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import type { Conversation } from '../../types';
 import {
@@ -21,10 +19,7 @@ interface ConversationExpirationIndicatorProps {
     className?: string;
 }
 
-export const ConversationExpirationIndicator = ({
-    conversation,
-    className,
-}: ConversationExpirationIndicatorProps) => {
+export const ConversationExpirationIndicator = ({ conversation, className }: ConversationExpirationIndicatorProps) => {
     const { hasLumoPlus } = useLumoPlan();
 
     const { urgency, tooltip } = useMemo(() => {
@@ -58,16 +53,13 @@ export const ConversationExpirationIndicator = ({
     return (
         <Tooltip title={tooltip}>
             <span
-                className={clsx(
-                    'conversation-expiration-indicator relative z-1 shrink-0 flex items-center',
-                    className
-                )}
+                className={clsx('conversation-expiration-indicator relative z-1 shrink-0 flex items-center', className)}
                 aria-label={tooltip}
             >
                 {urgency === 'urgent' ? (
-                    <IcHourglass size={4} className="color-weak" alt={iconAlt} />
+                    <LumoIcon name="Hourglass" size={16} className="color-weak" aria-label={iconAlt} />
                 ) : (
-                    <IcClock size={4} className="color-weak" alt={iconAlt} />
+                    <LumoIcon name="Clock" size={16} className="color-weak" aria-label={iconAlt} />
                 )}
             </span>
         </Tooltip>

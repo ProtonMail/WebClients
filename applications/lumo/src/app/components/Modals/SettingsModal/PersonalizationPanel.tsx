@@ -6,9 +6,6 @@ import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { InputFieldTwo, TextAreaTwo } from '@proton/components/index';
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks';
@@ -27,6 +24,7 @@ import {
 } from '../../../redux/slices/personalization';
 import { safeLogger } from '../../../util/safeLogger';
 import { GuestSignInState } from '../../Guest/GuestSignInState/GuestSignInState';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 import './PersonalizationPanel.scss';
 
@@ -286,7 +284,7 @@ const PersonalizationPanel = () => {
                 {isGuest ? (
                     // Guest user: Show sign-in prompt
                     <GuestSignInState
-                        icon={<IcSliders size={6} />}
+                        icon={<LumoIcon name="SlidersHorizontal" size={24} />}
                         title={c('collider_2025: Personalization')
                             .t`Personalize your ${LUMO_SHORT_APP_NAME} experience`}
                         description={c('collider_2025: Personalization')
@@ -363,7 +361,7 @@ const PersonalizationPanel = () => {
                                                     className="trait-pill"
                                                     onClick={() => handleTraitToggle(trait.id)}
                                                 >
-                                                    <IcPlus size={3} className="mr-1" />
+                                                    <LumoIcon name="Plus" width={12} height={12} className="mr-1" />
                                                     {trait.label}
                                                 </Button>
                                             </Tooltip>
@@ -395,7 +393,7 @@ const PersonalizationPanel = () => {
                                                     );
                                                 }}
                                             >
-                                                <IcArrowRotateRight size={3} />
+                                                <LumoIcon name="RotateCw" width={12} height={12} />
                                             </Button>
                                         </Tooltip>
                                     )}

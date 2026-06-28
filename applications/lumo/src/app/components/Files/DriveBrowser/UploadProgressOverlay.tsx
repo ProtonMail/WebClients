@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 export interface UploadProgress {
     fileName: string;
@@ -21,7 +21,7 @@ export const UploadProgressOverlay: React.FC<UploadProgressOverlayProps> = ({ up
         <div className="px-3 py-2 bg-weak rounded mb-2">
             <div className="flex items-center gap-2">
                 {uploadProgress.isProcessing ? (
-                    <IcCheckmark className="color-success flex-shrink-0" />
+                    <LumoIcon name="Check" className="color-success flex-shrink-0" />
                 ) : (
                     <div className="animate-spin rounded-full w-4 h-4 border-2 border-primary border-t-transparent flex-shrink-0"></div>
                 )}

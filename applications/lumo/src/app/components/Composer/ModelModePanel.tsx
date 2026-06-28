@@ -1,14 +1,13 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
-import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import type { ModelTier, ResponseMode } from '../../providers/ModelTierProvider';
 import { isLimitExhausted, isModelTierSelectable } from '../../services/usageLimitsStore';
 import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 export type ModelModePanelLayout = 'dropdown' | 'sheet';
 
@@ -98,9 +97,9 @@ const SelectionOptionRow = ({
         >
             <div className="model-mode-option-radio shrink-0">
                 {isSelected ? (
-                    <IcCheckmarkCircle size={5} className="color-norm" />
+                    <LumoIcon name="CircleCheck" size={20} className="color-norm" />
                 ) : (
-                    <IcCircleRadioEmpty size={5} className={clsx(isDisabled ? 'color-hint' : 'color-weak')} />
+                    <LumoIcon name="Circle" size={20} className={clsx(isDisabled ? 'color-hint' : 'color-weak')} />
                 )}
             </div>
             <div className="flex flex-column flex-nowrap flex-1 gap-0.5 min-w-0">
@@ -274,7 +273,10 @@ export const ModelModePanel = ({
                     </div>
 
                     <div
-                        className={clsx('model-mode-section flex flex-column flex-nowrap pb-3', isSheet ? 'gap-1' : 'gap-2')}
+                        className={clsx(
+                            'model-mode-section flex flex-column flex-nowrap pb-3',
+                            isSheet ? 'gap-1' : 'gap-2'
+                        )}
                     >
                         <span className="model-mode-section-title">{c('collider_2025: Label').t`Answer mode`}</span>
                         {isSheet ? (

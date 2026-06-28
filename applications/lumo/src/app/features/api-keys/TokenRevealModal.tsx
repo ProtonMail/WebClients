@@ -4,9 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useNotifications } from '@proton/components/index';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
-import { IcKey } from '@proton/icons/icons/IcKey';
+
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 
 export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: () => void }) => {
     const { createNotification } = useNotifications();
@@ -21,12 +20,13 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
 
     return (
         <div className="api-keys-token-reveal fixed inset-0 flex items-center justify-center p-4">
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div className="api-keys-token-reveal-overlay absolute inset-0" onClick={onClose} />
             <div className="api-keys-token-reveal-dialog relative overflow-hidden">
                 <div className="api-keys-token-reveal-header flex items-start justify-space-between gap-2">
                     <div className="flex items-center gap-3">
                         <div className="api-keys-token-reveal-icon flex items-center justify-center shrink-0 rounded-lg">
-                            <IcKey size={5} />
+                            <LumoIcon name="KeyRound" size={20} />
                         </div>
                         <div>
                             <h3 className="api-keys-token-reveal-title m-0 mb-1">
@@ -38,19 +38,22 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
                         </div>
                     </div>
                     <Button icon shape="ghost" size="small" onClick={onClose} title={c('Action').t`Close`}>
-                        <IcCross size={4} />
+                        <LumoIcon name="X" size={16} />
                     </Button>
                 </div>
 
                 <div className="api-keys-token-reveal-body">
                     <div className="api-keys-token-warning flex items-center gap-2 rounded-lg mb-4">
-                        <IcExclamationCircle size={4} className="shrink-0" />
+                        <LumoIcon name="CircleAlert" size={16} className="shrink-0" />
                         {c('collider_2025: Warning').t`This is the only time you'll see this key. Copy it now.`}
                     </div>
 
+                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                     <div className="api-keys-token-box relative rounded-lg mb-4" onClick={handleCopy}>
                         <span className="api-keys-token-text block">{token}</span>
-                        <span className={`api-keys-token-copied absolute ${copied ? 'api-keys-token-copied--visible' : ''}`}>
+                        <span
+                            className={`api-keys-token-copied absolute ${copied ? 'api-keys-token-copied--visible' : ''}`}
+                        >
                             {c('collider_2025: Status').t`Copied!`}
                         </span>
                     </div>
