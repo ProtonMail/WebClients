@@ -4,11 +4,6 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcMicrophone } from '@proton/icons/icons/IcMicrophone';
-import { IcPalette } from '@proton/icons/icons/IcPalette';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -16,6 +11,7 @@ import type { ImageAspectRatio } from '../../types';
 import { ComposerMode } from '../../types';
 import { getAcceptAttributeString, getAcceptAttributeStringWithoutImages } from '../../util/filetypes';
 import { sendFileUploadEvent, sendVoiceEntryClickEvent } from '../../util/telemetry';
+import { LumoIcon } from '../LumoIcon/LumoIcon';
 import AspectRatioDropdown from './AspectRatioDropdown';
 import { ModelModeDropdown } from './ModelModeDropdown';
 import { ToolMenuDropdown } from './ToolMenuDropdown';
@@ -38,7 +34,7 @@ const UploadMenuSection = ({
     onDrawSketch,
     fileUploadMode,
     isAgent = false,
-    buttonIcon = <IcPlus size={4} />,
+    buttonIcon = <LumoIcon name="Plus" />,
 }: UploadMenuSectionProps) => {
     const uploadButtonRef = useRef<HTMLButtonElement>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -182,7 +178,8 @@ export const ComposerToolbar = ({
                             shape="ghost"
                             size="small"
                         >
-                            <IcSliders size={4} />
+                            {/* <IcSliders size={4} /> */}
+                            <LumoIcon name="SlidersHorizontal" />
                             <span className="hidden sm:block text-sm">{c('collider_2025: Button').t`Tools`}</span>
                         </Button>
                         <ToolMenuDropdown
@@ -203,9 +200,9 @@ export const ComposerToolbar = ({
                         title={c('collider_2025: Button').t`Create image`}
                         aria-label={c('collider_2025: Button').t`Create image`}
                     >
-                        <IcPalette size={4} />
+                        <LumoIcon name="Palette" size={16} />
                         <span className="text-sm hidden sm:block">{c('collider_2025: Button').t`Create image`}</span>
-                        <IcCross size={3} className="group-hover:opacity-100" />
+                        <LumoIcon name="X" width={12} height={12} className="group-hover:opacity-100" />
                     </Button>
                 )}
             </div>
@@ -219,7 +216,7 @@ export const ComposerToolbar = ({
                         size="small"
                         onClick={sendVoiceEntryClickEvent}
                     >
-                        <IcMicrophone size={6} />
+                        <LumoIcon name="Mic" size={16} />
                     </Button>
                 </div>
                 {isImageToolsFlagEnabled &&

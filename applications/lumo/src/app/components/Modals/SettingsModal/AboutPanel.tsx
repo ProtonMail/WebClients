@@ -19,7 +19,7 @@ const AboutPanel = () => {
             <AuthenticatedReportBugSection />
 
             <SettingsSectionItemButton
-                icon="question-circle"
+                icon="CircleQuestionMark"
                 text={c('collider_2025: Title').t`Help and support`}
                 subtext={c('collider_2025: Description').jt`Learn more about how to use ${LUMO_SHORT_APP_NAME}`}
                 button={<IcArrowWithinSquare className="shrink-0 color-hint mr-2" />}
@@ -28,7 +28,7 @@ const AboutPanel = () => {
             />
 
             <SettingsSectionItem
-                icon="info-circle"
+                icon="Info"
                 text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
                 subtext={c('collider_2025: Description').jt`Last updated on ${formattedDate}`}
             />

@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalProps } from '@proton/components';
-import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
 import { Role } from '../../../types';
 import { isFileTypeSupported, mimeToHuman } from '../../../util/filetypes';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
 
 interface FileContentModalProps extends Omit<ModalProps, 'children'> {
@@ -313,7 +313,7 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
             return (
                 <div className="flex flex-column items-center justify-center p-8 text-center">
                     <div className="mb-4">
-                        <IcFileSlash size={8} />
+                        <LumoIcon name="FileX" size={32} />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">{c('collider_2025: Info').t`No Content Available`}</h3>
                     <p className="text-sm color-weak">
@@ -433,7 +433,7 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                                     : `${c('collider_2025: Info').t`Processed content`} (${attachment.markdown?.length || 0} ${c('collider_2025: Info').t`characters`})`}
                             </span>
                             <Button size="small" shape="outline" onClick={() => setShowRaw(!showRaw)}>
-                                {/* eslint-disable-next-line no-nested-ternary */}
+                                {}
                                 {showRaw
                                     ? isCSVOrExcel
                                         ? c('collider_2025: Info').t`Show Table`

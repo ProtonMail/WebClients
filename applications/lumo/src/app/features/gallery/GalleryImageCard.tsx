@@ -3,10 +3,9 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { IcPen } from '@proton/icons/icons/IcPen';
 
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
 import { useLazyAttachment } from '../../hooks/useLazyAttachment';
@@ -121,7 +120,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
                                     aria-label={c('collider_2025:Action').t`Edit image`}
                                     title={c('collider_2025:Action').t`Edit image`}
                                 >
-                                    <IcPen size={4} />
+                                    <LumoIcon name="Pen" size={16} />
                                 </button>
                             )}
                             <button
@@ -130,7 +129,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
                                 aria-label={c('collider_2025:Action').t`Download image`}
                                 title={c('collider_2025:Action').t`Download image`}
                             >
-                                <IcArrowDownLine size={4} />
+                                <LumoIcon name="ArrowDownToLine" size={16} />
                             </button>
                         </div>
                     </div>

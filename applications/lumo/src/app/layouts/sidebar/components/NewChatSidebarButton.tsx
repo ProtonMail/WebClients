@@ -4,11 +4,11 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
-import { Icon } from '@proton/components';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 import { GuestChatDisclaimerModal } from '../../../components/Guest/GuestChatDisclaimerModal';
+import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { useGuestChatHandler } from '../../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
@@ -53,7 +53,7 @@ export const NewChatSidebarButton = () => {
                     aria-label={c('collider_2025:Button').t`New chat`}
                 >
                     <div className="sidebar-item-icon flex items-center justify-center shrink-0 mr-1.5">
-                        <Icon name="pen-square" size={4} className="rtl:mirror" />
+                        <LumoIcon name="SquarePen" className="rtl:mirror" />
                     </div>
                     <span className="sidebar-item-text flex-1 flex items-center justify-space-between text-nowrap overflow-hidden gap-2 flex-nowrap">
                         <span className="sidebar-item-label w-full text-ellipsis">{c('collider_2025:Button')

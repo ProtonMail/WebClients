@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Icon, useModalStateObject } from '@proton/components';
-import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { formatShortDate } from '../../util/date';
@@ -75,7 +75,7 @@ export const ProjectCard = ({
                     <span className="project-card-title">{project.name}</span>
                     {project.conversationCount !== undefined && (
                         <span className="project-card-stat text-sm ml-1">
-                            <IcSpeechBubble size={3.5} className="mr-1" />
+                            <LumoIcon name="MessageSquare" width={14} height={14} className="mr-1" />
                             {project.conversationCount}{' '}
                             {project.conversationCount === 1
                                 ? c('collider_2025:Label').t`chat`
@@ -129,7 +129,7 @@ export const ProjectCard = ({
                     <div className="project-card-stats">
                         {project.conversationCount !== undefined && (
                             <span className="project-card-stat">
-                                <IcSpeechBubble size={3.5} className="mr-1" />
+                                <LumoIcon name="MessageSquare" width={14} height={14} className="mr-1" />
                                 {project.conversationCount}{' '}
                                 {project.conversationCount === 1
                                     ? c('collider_2025:Label').t`chat`

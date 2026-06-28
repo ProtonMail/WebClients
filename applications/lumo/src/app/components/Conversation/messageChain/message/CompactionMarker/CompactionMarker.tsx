@@ -1,21 +1,19 @@
-import { memo, useMemo, useState, type CSSProperties } from 'react';
+import { type CSSProperties, memo, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
-import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants.ts';
 
 import { deriveCompactionAudit } from '../../../../../llm/compaction/audit';
 import { formatTokenCount } from '../../../../../llm/utils';
 import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments, selectMessages } from '../../../../../redux/selectors';
 import type { CompactionAudit, CompactionStrategyName, Message } from '../../../../../types';
+import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../../../LumoMarkdown/LazyMarkdownComponents';
 
 import './CompactionMarker.scss';
-import {LUMO_SHORT_APP_NAME} from "@proton/shared/lib/constants.ts";
 
 const SUMMARY_MAX_HEIGHT = '22rem';
 
@@ -143,11 +141,7 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
         if (compaction.stats.audit) {
             return compaction.stats.audit;
         }
-        return deriveCompactionAudit(
-            compaction.summarizedMessageIds,
-            messagesById,
-            Object.values(attachmentsById)
-        );
+        return deriveCompactionAudit(compaction.summarizedMessageIds, messagesById, Object.values(attachmentsById));
     }, [attachmentsById, compaction, messagesById]);
 
     if (!compaction) {
@@ -202,15 +196,15 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
                     onClick={() => setExpanded((v) => !v)}
                     aria-expanded={expanded}
                 >
-                    <IcArrowsToCenter className="shrink-0 color-weak" />
+                    <LumoIcon name="Shrink" className="shrink-0 color-weak" />
                     <span className="flex-1 text-semibold">{headline}</span>
                     <span className="compaction-marker-badge bg-strong color-weak text-sm py-0.5 px-1 rounded-sm text-nowrap">
                         {reclaimed}
                     </span>
                     {expanded ? (
-                        <IcChevronUp className="shrink-0 color-weak" />
+                        <LumoIcon name="ChevronUp" className="shrink-0 color-weak" />
                     ) : (
-                        <IcChevronDown className="shrink-0 color-weak" />
+                        <LumoIcon name="ChevronDown" className="shrink-0 color-weak" />
                     )}
                 </button>
 
@@ -228,7 +222,10 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
 
                         {audit && <CompactionAuditDetails audit={audit} />}
 
-                        <div className="compaction-marker-scroll overflow-y-auto max-h-custom px-3 py-3" style={scrollStyle}>
+                        <div
+                            className="compaction-marker-scroll overflow-y-auto max-h-custom px-3 py-3"
+                            style={scrollStyle}
+                        >
                             <p className="compaction-marker-summary-label m-0 pb-2 text-xs text-semibold color-norm">
                                 {summaryHeading}
                             </p>

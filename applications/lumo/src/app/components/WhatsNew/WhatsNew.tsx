@@ -32,8 +32,7 @@ const WhatsNew = () => {
                 },
                 getFeaturePoints: () => [
                     {
-                        icon: 'lock',
-                        svg: (
+                        icon: (
                             <svg
                                 width="16"
                                 height="16"
@@ -61,8 +60,7 @@ const WhatsNew = () => {
                                 .t`Chats, files, and context stay together in an encrypted workspace.`,
                     },
                     {
-                        icon: 'arrow-up-and-left-big',
-                        svg: (
+                        icon: (
                             <svg
                                 width="16"
                                 height="16"
@@ -102,8 +100,7 @@ const WhatsNew = () => {
                                 .t`Project-specific instructions mean no repeating yourself.`,
                     },
                     {
-                        icon: 'pen-sparks',
-                        svg: (
+                        icon: (
                             <svg
                                 width="16"
                                 height="16"
@@ -156,7 +153,6 @@ const WhatsNew = () => {
     };
     const whatsNewModalProps = useModalStateObject({ onClose: declineCurrentFeature });
     const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({ showNewModal: whatsNewModalProps.render });
-
 
     useEffect(() => {
         isMountedRef.current = true;

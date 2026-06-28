@@ -5,8 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo } from '@proton/components';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { IcFolder } from '@proton/icons/icons/IcFolder';
 
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import ChatDropdownMenu from '../../../layouts/sidepanel/ChatDropdownMenu';
@@ -19,6 +17,7 @@ import { type Conversation, type Message, getProjectInfo } from '../../../types'
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
 import type { DropdownOptions } from '../../DropdownMenu';
 import FavoritesUpsellPrompt from '../../Guest/FavoritesUpsellPrompt';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 import './ConversationHeader.scss';
 
@@ -173,12 +172,12 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
         ? [
               {
                   label: c('Option').t`Go to project`,
-                  icon: 'arrow-up-and-left',
+                  icon: <LumoIcon name="ArrowUpLeft" size={16} />,
                   onClick: handleNavigateToProject,
               },
               {
                   label: c('Option').t`Go to all projects`,
-                  icon: 'folder-open',
+                  icon: <LumoIcon name="FolderOpen" size={16} />,
                   onClick: navigateToAllProjects,
               },
           ]
@@ -277,10 +276,15 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
                             className="py-1 px-2 flex flex-row items-center gap-1 shrink-0 project-breadcrumb"
                             title={c('collider_2025:Action').t`Go to project`}
                         >
-                            <IcFolder size={4} />
-                            <span className="text-sm color-weak">{projectName}</span>
+                            <LumoIcon name="Folder" size={16} />
+                            <span className="color-weak">{projectName}</span>
                         </Button>
-                        <IcChevronRight size={3} className="color-weak shrink-0 hide-on-small-screens" />
+                        <LumoIcon
+                            name="ChevronRight"
+                            width={12}
+                            height={12}
+                            className="color-weak shrink-0 hide-on-small-screens"
+                        />
                     </>
                 )}
                 {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
