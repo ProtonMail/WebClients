@@ -74,6 +74,7 @@ const AgentConversationComponent = ({
                 onRetryPanelToggle={handleRetryPanelToggle}
                 composerContainerRef={composerContainerRef}
                 className="pt-2 md:px-6"
+                conversationId={conversationId}
             />
             {conversationErrors.length > 0 && (
                 <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
