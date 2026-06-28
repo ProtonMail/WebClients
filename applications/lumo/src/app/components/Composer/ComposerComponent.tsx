@@ -29,7 +29,6 @@ import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
-import { AttachmentArea } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
 import { ModelSwitchNotificationCard } from '../Notifications/ModelSwitchNotificationCard';
@@ -124,7 +123,7 @@ const ComposerComponentInner = ({
     isAgent = false,
     driveContext,
 }: ComposerComponentInnerProps) => {
-    const { isDragging: isDraggingOverScreen } = useDragArea();
+    const { registerFileDropHandler } = useDragArea();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { isWebSearchButtonToggled } = useWebSearch();
     const hasAttachments = provisionalAttachments.length > 0;
@@ -181,6 +180,10 @@ const ComposerComponentInner = ({
         uploadToDrive: driveContext?.uploadFile,
         onSelectExcelSheets: handleSelectExcelSheets,
     });
+
+    useEffect(() => {
+        return registerFileDropHandler(handleFileProcessing);
+    }, [registerFileDropHandler, handleFileProcessing]);
 
     const handleDrawSketch = useCallback(() => {
         setShowDrawingModal(true);
@@ -444,8 +447,6 @@ const ComposerComponentInner = ({
                         <TermsAndConditions className={clsx('m-0', isAgent ? 'text-center' : 'hidden md:block')} />
                     )} */}
                 </section>
-
-                {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}
             </div>
 
             <SketchOverlay
