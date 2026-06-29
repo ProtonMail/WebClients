@@ -87,6 +87,7 @@ type Props = {
   showTreeView: boolean
   lexicalError?: Error
   logger: LoggerInterface
+  tableOfContentsVisible: boolean
 }
 
 export function Editor({
@@ -109,6 +110,7 @@ export function Editor({
   isSuggestionsFeatureEnabled,
   lexicalError,
   logger,
+  tableOfContentsVisible,
 }: Props) {
   const { application } = useApplication()
   const isAlpha = useIsAlpha()
@@ -253,7 +255,7 @@ export function Editor({
           />
         )}
         <DocsLayout.Grid>
-          {isAlpha && (
+          {tableOfContentsVisible && (
             <DocsLayout.LeftPanel>
               <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
             </DocsLayout.LeftPanel>
