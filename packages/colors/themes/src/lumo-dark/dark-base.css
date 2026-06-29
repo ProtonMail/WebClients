@@ -85,6 +85,10 @@
     --link-hover: #A898ED;
     --link-active: #BBABFF;
 
+    /* Lumo dark surfaces: minor-2 is a lighter purple highlight (e.g. avatar hover). */
+    --interaction-norm-minor-1: #322956;
+    --interaction-norm-minor-2: #3f3770;
+
     --composer-glow-border: var(--border-weak);
     --composer-hover-border: #707070;
     --composer-focus-outer-ring: #321d77;
@@ -124,5 +128,9 @@
     --lumo-logo-tag-pro-text: var(--text-dark);
     --lumo-logo-tag-plus-text: var(--interaction-weak-active);
 
-    --lumo-secondary-upsell-background: var(--background-upsell-toggle)
+    --lumo-secondary-upsell-background: linear-gradient(
+        180deg,
+        rgb(197 183 255 / 0.42) 0%,
+        rgb(255 244 231 / 0.16) 100%
+    ), rgb(92 84 128);
 }

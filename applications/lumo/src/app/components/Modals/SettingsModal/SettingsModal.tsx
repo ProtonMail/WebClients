@@ -66,7 +66,7 @@ const BASE_SETTINGS_ITEMS: SettingsItem[] = [
     },
     {
         id: 'memory',
-        icon: 'Archive',
+        icon: 'BrainCircuit',
         getText: () => c('collider_2025: Settings Item').t`Memory`,
         guest: false,
     },
