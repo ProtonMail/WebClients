@@ -1,7 +1,3 @@
-import { useLocation } from 'react-router';
-
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-
 import SelectionPane from './SelectionPane';
 import WelcomePane from './WelcomePane';
 
@@ -13,22 +9,11 @@ interface Props {
 }
 
 const PlaceholderView = ({ welcomeFlag, labelID = '', checkedIDs = [], onCheckAll }: Props) => {
-    const location = useLocation();
-    const [mailSettings] = useMailSettings();
-
     if (welcomeFlag) {
-        return <WelcomePane mailSettings={mailSettings} location={location} />;
+        return <WelcomePane />;
     }
 
-    return (
-        <SelectionPane
-            labelID={labelID}
-            mailSettings={mailSettings}
-            location={location}
-            checkedIDs={checkedIDs}
-            onCheckAll={onCheckAll}
-        />
-    );
+    return <SelectionPane labelID={labelID} checkedIDs={checkedIDs} onCheckAll={onCheckAll} />;
 };
 
 export default PlaceholderView;
