@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import useApi from '@proton/components/hooks/useApi';
 
+import { debugCompactCurrentConversation } from '../../components/Conversation/compactionDebug';
 import IndexedDBUnavailablePage from '../../components/IndexedDBUnavailablePage';
 import { DbApi } from '../../indexedDb/db';
 import { isIndexedDBAvailable } from '../../indexedDb/util';
-import { useLumoSelector } from '../../redux/hooks';
+import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectConversations, selectMessages } from '../../redux/selectors';
 
 interface StorageStats {
@@ -42,6 +44,8 @@ interface StorageTabProps {
 export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
     const [user] = useUser();
     const userId = user?.ID;
+    const dispatch = useLumoDispatch();
+    const api = useApi();
     const spaces = useLumoSelector((state) => state.spaces || {});
     const conversations = useLumoSelector(selectConversations);
     const messages = useLumoSelector(selectMessages);
@@ -51,6 +55,30 @@ export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
     const [previewUnavailable, setPreviewUnavailable] = useState(false);
+
+    const [compactionRunning, setCompactionRunning] = useState(false);
+    const [compactionError, setCompactionError] = useState<string | null>(null);
+
+    const runCompaction = async (forceLlmSummary: boolean) => {
+        if (!currentConversationId) {
+            return;
+        }
+        setCompactionRunning(true);
+        setCompactionError(null);
+        try {
+            await dispatch(
+                debugCompactCurrentConversation({
+                    api,
+                    conversationId: currentConversationId,
+                    forceLlmSummary,
+                })
+            );
+        } catch (e: any) {
+            setCompactionError(e?.message || String(e));
+        } finally {
+            setCompactionRunning(false);
+        }
+    };
 
     const refresh = async () => {
         setError(null);
@@ -247,6 +275,45 @@ export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
                 <div className="debug-view-hint">
                     {c('lumo: Debug View')
                         .t`Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.`}
+                </div>
+            </div>
+
+            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                <span className="debug-view-header-icon">🗜️</span>
+                {c('lumo: Debug View').t`Compaction`}
+            </div>
+
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Current conversation`}</span>
+                <span className={`debug-view-value ${currentConversationId ? '' : 'debug-view-value--warn'}`}>
+                    {currentConversationId ?? c('lumo: Debug View').t`None open`}
+                </span>
+            </div>
+
+            {compactionError && (
+                <div className="debug-view-row">
+                    <span className="debug-view-value debug-view-value--danger">{compactionError}</span>
+                </div>
+            )}
+
+            <div className="debug-view-section debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--primary"
+                    onClick={() => runCompaction(false)}
+                    disabled={!currentConversationId || compactionRunning}
+                >
+                    🗜️ {c('lumo: Debug View').t`Trigger compaction`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => runCompaction(true)}
+                    disabled={!currentConversationId || compactionRunning}
+                >
+                    🧠 {c('lumo: Debug View').t`Trigger compaction (force summarization)`}
+                </button>
+                <div className="debug-view-hint">
+                    {c('lumo: Debug View')
+                        .t`Runs the compaction engine over the displayed branch and inserts a compaction boundary, without generating a reply. "Force summarization" always runs the LLM summary step even when cheaper strategies already free up enough space.`}
                 </div>
             </div>
         </div>
