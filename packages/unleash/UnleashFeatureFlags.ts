@@ -356,6 +356,7 @@ enum LumoFeatureFlag {
     LumoAiPaperTrail = 'LumoAiPaperTrail',
     LumoMaxAvailableGuest = 'LumoMaxAvailableGuest',
     LumoMaxAvailableFree = 'LumoMaxAvailableFree',
+    WhatsNewV2 = 'WhatsNewV2',
 }
 
 export type FeatureFlag =
