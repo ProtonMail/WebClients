@@ -7,7 +7,10 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import { CategoryIcon } from '@proton/mail/features/categoriesView/CategoryIcon';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
-import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import {
+    getLabelFromCategoryId,
+    getTitleFromCategoryId,
+} from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -63,7 +66,7 @@ export const Tab = ({ category, tabState }: Props) => {
             )}
             role="tab"
             aria-selected={tabState === TabState.ACTIVE}
-            title={getLabelFromCategoryId(category.id)}
+            title={getTitleFromCategoryId(category.id)}
             aria-label={getLabelFromCategoryId(category.id)}
             data-testid={`category-tab-${category.id}`}
             data-color={category.colorShade}
