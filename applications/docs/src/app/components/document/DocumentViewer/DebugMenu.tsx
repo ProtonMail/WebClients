@@ -15,13 +15,8 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import clsx from '@proton/utils/clsx'
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { isDevOrBlack } from '@proton/utils/env'
-import {
-  decompressDocumentUpdate,
-  isCompressedDocumentUpdate,
-} from '@proton/docs-core/lib/utils/document-update-compression'
 import { Tooltip } from '@proton/docs-shared/components/ui/ui'
 import * as Ariakit from '@ariakit/react'
-import { downloadUpdateTimeline } from '@proton/docs-core/lib/utils/create-update-timeline'
 
 const UpdateReplayTool = lazy(() => import('./UpdateReplayTool'))
 
@@ -126,35 +121,6 @@ export function DebugMenu({ docController, editorController, documentState, docu
     a.click()
     URL.revokeObjectURL(url)
     a.remove()
-  }
-
-  const downloadBaseCommit = async () => {
-    const baseCommit = documentState.getProperty('baseCommit')
-    if (!baseCommit) {
-      return
-    }
-    const JSZip = (await import('jszip')).default
-    const zip = new JSZip()
-    for (const message of baseCommit.messages) {
-      const content = message.content
-      if (isCompressedDocumentUpdate(content)) {
-        const decompressed = decompressDocumentUpdate(content)
-        zip.file(`${message.timestamp}.bin`, decompressed)
-      } else {
-        zip.file(`${message.timestamp}.bin`, content)
-      }
-    }
-    const zipBlob = await zip.generateAsync({ type: 'blob' })
-    const zipUrl = URL.createObjectURL(zipBlob)
-    const zipLink = document.createElement('a')
-    zipLink.href = zipUrl
-    zipLink.download = 'all-updates-in-base-commit.zip'
-    document.body.appendChild(zipLink)
-    zipLink.click()
-    document.body.removeChild(zipLink)
-    URL.revokeObjectURL(zipUrl)
-    const yDocJSON = await editorController.getYDocAsJSON()
-    await downloadUpdateTimeline(baseCommit.messages, yDocJSON)
   }
 
   const isDocument = documentType === 'doc'
@@ -278,7 +244,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
               <Tooltip>Downloads the current Yjs state as a single update</Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
-          <Button size="small" onClick={downloadBaseCommit}>
+          <Button size="small" onClick={() => editorController.downloadBaseCommit()}>
             Download base commit updates
             <Ariakit.TooltipProvider>
               <Ariakit.TooltipAnchor render={<IcInfoCircle />} />

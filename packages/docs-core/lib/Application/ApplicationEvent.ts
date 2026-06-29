@@ -6,6 +6,7 @@ export enum ApplicationEvent {
   GeneralUserDisplayableErrorOccurred = 'GeneralUserDisplayableErrorOccurred',
   GenericInfo = 'GenericInfo',
   SheetsImportErrorOccurred = 'SheetsImportErrorOccurred',
+  SheetsYjsDriftDetected = 'SheetsYjsDriftDetected',
 }
 
 export type GenericInfoEventPayload = {
