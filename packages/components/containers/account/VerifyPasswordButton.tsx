@@ -8,8 +8,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 const VerifyPasswordButton = () => {
     const [passwordReminderModalProps, setPasswordReminderModalOpen, renderPasswordReminderModal] = useModalState();
 
-    const { isAvailable } = usePasswordReminder();
-    if (!isAvailable) {
+    const { isAvailable, isEnabled } = usePasswordReminder();
+    if (!isAvailable || !isEnabled) {
         return null;
     }
 
