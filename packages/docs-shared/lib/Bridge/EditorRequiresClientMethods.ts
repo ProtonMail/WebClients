@@ -100,7 +100,11 @@ export interface EditorRequiresClientMethods {
    */
   reportUserInterfaceError(
     error: Error,
-    extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
+    extraInfo?: {
+      irrecoverable?: boolean
+      errorInfo?: ErrorInfo
+      lockEditor?: boolean
+    },
   ): Promise<void>
   reportWordCount(wordCountInfo: WordCountInfoCollection): Promise<void>
   updateFrameSize(size: number): void
@@ -122,4 +126,5 @@ export interface EditorRequiresClientMethods {
   replaceDocumentUrl(url: string): Promise<void>
 
   reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void
+  showYjsDriftDetectedErrorModal(): void
 }

@@ -46,7 +46,7 @@ import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useAuthentication, useConfig, MimeIcon } from '@proton/components'
+import { useAuthentication, useConfig, MimeIcon, useModalState, AuthenticatedBugModal } from '@proton/components'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
@@ -68,6 +68,7 @@ import { manageEventsSubscription } from '../../../utils/drive-events'
 import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
 import { logger } from '@proton/pass/utils/logger'
 import { getNodeName } from '../../../utils/drive-sdk'
+import { getDocsReportContextLines } from '~/utils/report-context'
 
 const subscribeToEvents = manageEventsSubscription()
 
@@ -98,7 +99,7 @@ export function DocumentViewer({
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
   const { isDebugMode } = useDebugMode()
-  const { APP_VERSION } = useConfig()
+  const { APP_VERSION, CLIENT_TYPE } = useConfig()
 
   const { removeLocalIDFromUrl } = useDocsUrlBar()
 
@@ -270,6 +271,21 @@ export function DocumentViewer({
     }, ApplicationEvent.GenericInfo)
   }, [application.eventBus, showGenericInfoModal])
 
+  const downloadDebugInfo = useCallback(async () => {
+    if (docController) {
+      void docController.downloadAllUpdatesAsZip()
+      if (editorController) {
+        const yDocJSON = await editorController.getYDocAsJSON()
+        void docController.downloadUpdatesInformation(yDocJSON)
+      }
+    } else {
+      void editorController?.downloadBaseCommit()
+    }
+    if (tmpConvertNewDocTypeToOld(documentType) === 'sheet') {
+      void editorController?.downloadSpreadsheetPatches()
+    }
+  }, [docController, documentType, editorController])
+
   useEffect(() => {
     return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>(
       (payload: GeneralUserDisplayableErrorOccurredPayload) => {
@@ -293,6 +309,27 @@ export function DocumentViewer({
       ApplicationEvent.GeneralUserDisplayableErrorOccurred,
     )
   }, [application, application.eventBus, showGenericAlertModal])
+
+  const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState()
+  useEffect(
+    () =>
+      application.eventBus.addEventCallback(() => {
+        showGenericAlertModal({
+          title: c('Title').t`Editing paused`,
+          translatedMessage: c('Info')
+            .t`Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.
+Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.`,
+          renderCustomFooter: () => (
+            <div className="flex items-center gap-2.5">
+              <Button color="norm" onClick={() => setBugReportModal(true)}>{c('Action').t`Report issue`}</Button>
+              <Button color="weak" onClick={downloadDebugInfo}>{c('Action').t`Download debug information`}</Button>
+              <Button color="weak" onClick={() => window.location.reload()}>{c('Action').t`Reload spreadsheet`}</Button>
+            </div>
+          ),
+        })
+      }, ApplicationEvent.SheetsYjsDriftDetected),
+    [application.eventBus, downloadDebugInfo, showGenericAlertModal, setBugReportModal],
+  )
 
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
@@ -601,6 +638,16 @@ export function DocumentViewer({
       {signatureFailedModal}
       {genericAlertModal}
       {genericInfoModal}
+      {renderBugReportModal && (
+        <AuthenticatedBugModal
+          {...bugReportModal}
+          app={APPS.PROTONDOCS}
+          reportDescriptionContext={getDocsReportContextLines({
+            appVersion: APP_VERSION,
+            clientType: CLIENT_TYPE,
+          })}
+        />
+      )}
     </div>
   )
 }
