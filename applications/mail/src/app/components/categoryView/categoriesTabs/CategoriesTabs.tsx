@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
+
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
+import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
+import { useSystemFolders } from '@proton/mail/store/labels/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
+import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
 
@@ -19,7 +24,23 @@ export const CategoriesTabsList = () => {
     const { activeCategoriesTabs } = useCategoriesView();
 
     const categoryIDs = useMailSelector(selectCategoryIDs);
+    const activeCategoryID = useMailSelector(selectActiveCategoryID);
     const selectAll = useMailSelector(selectSelectAll);
+
+    const [systemFolder] = useSystemFolders();
+    const dispatch = useDispatch();
+
+    const activeUnseenEventID =
+        systemFolder?.find((folder) => folder.ID === activeCategoryID)?.LastUnseenMessageEventID ?? null;
+
+    // We mark the current category as seen when we receive an email in the currently selected category
+    useEffect(() => {
+        if (activeUnseenEventID === null || !activeCategoryID) {
+            return;
+        }
+
+        void dispatch(updateLastSeenEventId({ labelID: activeCategoryID }));
+    }, [activeCategoryID, activeUnseenEventID, dispatch]);
 
     const { sendReportRecategorizeEmail } = useCategoriesTelemetry();
 
