@@ -635,5 +635,31 @@ describe('mailboxHelpers', () => {
                 expect(result).toBe('2 conversations moved to Inbox and senders added to your not spam list.');
             });
         });
+
+        describe('category cases', () => {
+            it('should return the recategorized notification when moving one message to a category', () => {
+                const result = getNotificationTextLabelAdded({
+                    isMessage: true,
+                    elementsCount: 1,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    labels: [],
+                    folders: [],
+                    isComingFromSpam: false,
+                });
+                expect(result).toBe('Moved to Social. Similar message will be categorized here in the future.');
+            });
+
+            it('should return the recategorized notification when moving multiple messages to a category', () => {
+                const result = getNotificationTextLabelAdded({
+                    isMessage: true,
+                    elementsCount: 3,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                    labels: [],
+                    folders: [],
+                    isComingFromSpam: false,
+                });
+                expect(result).toBe('Moved to Promotions. Similar messages will be categorized here in the future.');
+            });
+        });
     });
 });
