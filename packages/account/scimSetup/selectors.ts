@@ -1,11 +1,13 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { type EnhancedMember, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 
 import { selectGroupMembers } from '../groupMembers';
 import { selectGroups } from '../groups';
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '../groups/groupFlags';
+import { selectMembers } from '../members';
 import { selectJoinedUnprivatizationState } from '../members/unprivatizeMembers';
 
 /** Members awaiting manual approval (unprivatization). */
@@ -17,14 +19,26 @@ export const selectPendingScimUsers = createSelector(selectJoinedUnprivatization
 export const selectPendingScimMembersByGroup = createSelector(
     selectGroups,
     selectGroupMembers,
-    (groupsState, groupMembersState) => {
+    selectMembers,
+    (groupsState, groupMembersState, membersState) => {
+        const addressToMemberMap: Record<string, EnhancedMember | undefined> = {};
+        for (const member of membersState.value ?? []) {
+            for (const address of member.Addresses ?? []) {
+                addressToMemberMap[address.ID] = member;
+            }
+        }
+
         const pendingMembersByGroup: Record<string, GroupMember[]> = {};
         for (const group of groupsState.value ?? []) {
-            const members = groupMembersState[group.ID]?.value;
-            if (members) {
-                pendingMembersByGroup[group.ID] = Object.values(members).filter(
-                    (m) => m.State === GROUP_MEMBER_STATE.PENDING_ADMIN
-                );
+            const groupMembers = groupMembersState[group.ID]?.value;
+            if (groupMembers) {
+                pendingMembersByGroup[group.ID] = Object.values(groupMembers).filter((m) => {
+                    if (m.State !== GROUP_MEMBER_STATE.PENDING_ADMIN) {
+                        return false;
+                    }
+
+                    return getIsMemberSetup(m.AddressID ? addressToMemberMap[m.AddressID] : undefined);
+                });
             }
         }
         return pendingMembersByGroup;
