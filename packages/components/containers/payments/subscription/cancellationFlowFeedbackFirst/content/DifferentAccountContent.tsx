@@ -6,9 +6,9 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
 import accounts from '@proton/styles/assets/img/illustrations/accounts.svg';
 import envelopeAddress from '@proton/styles/assets/img/illustrations/envelope-address.svg';
+
 import { CallToActionBanner } from '../components/CallToActionBanner';
 
 interface Props {
@@ -32,7 +32,8 @@ export const DifferentAccountContent = ({ onKeepPlan, onContinueCancelling }: Pr
             description: c('Description')
                 .t`Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.`,
             ctaText: c('Link').t`Manage addresses`,
-            ctaHref: '/mail/identity-addresses',
+            ctaHref: '/identity-addresses',
+            isSettingsLink: true,
         },
     ];
 
@@ -46,7 +47,7 @@ export const DifferentAccountContent = ({ onKeepPlan, onContinueCancelling }: Pr
                 </p>
 
                 <div className="border border-weak rounded-lg overflow-hidden mt-8">
-                    {cards.map(({ image, title, description, ctaText, ctaHref }, index) => {
+                    {cards.map(({ image, title, description, ctaText, ctaHref, isSettingsLink }, index) => {
                         return (
                             <CallToActionBanner
                                 key={title}
@@ -55,6 +56,7 @@ export const DifferentAccountContent = ({ onKeepPlan, onContinueCancelling }: Pr
                                 description={description}
                                 ctaText={ctaText}
                                 ctaHref={ctaHref}
+                                isSettingsLink={isSettingsLink}
                                 index={index}
                             />
                         );
