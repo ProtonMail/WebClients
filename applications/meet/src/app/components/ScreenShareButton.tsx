@@ -25,6 +25,7 @@ export const ScreenShareButton = () => {
             onClick={handleClick}
             variant={isSharing ? 'active' : 'default'}
             ariaLabel={c('Alt').t`Toggle screen share`}
+            ariaPressed={isSharing}
             tooltipTitle={isSharing ? c('Info').t`Stop sharing your screen` : c('Info').t`Share screen`}
         />
     );

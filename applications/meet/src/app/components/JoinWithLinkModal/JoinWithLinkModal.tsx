@@ -13,6 +13,13 @@ import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
 
 import './JoinWithLinkModal.scss';
 
+// Example link shown as the field's placeholder. VoiceOver/iOS read the native
+// `placeholder` attribute aloud by design (via the AXPlaceholderValue API), and
+// no ARIA attribute suppresses that. To keep the visual placeholder without
+// having the full URL read out, the attribute is only present while the field is
+// blurred and removed on focus (when screen readers announce the field).
+const MEETING_LINK_PLACEHOLDER = 'https://meet.proton.me/join/id-abc#pwd-123';
+
 interface JoinWithLinkModalProps {
     open: boolean;
     onClose: () => void;
@@ -21,6 +28,7 @@ interface JoinWithLinkModalProps {
 
 export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalProps) => {
     const [meetingLink, setMeetingLink] = useState('');
+    const [isInputFocused, setIsInputFocused] = useState(false);
 
     const getMeetingParams = () => {
         try {
@@ -80,9 +88,13 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                         />
                         <Input
                             className="meeting-link-input rounded-full p-2"
+                            type="url"
                             value={meetingLink}
                             onChange={(e) => setMeetingLink(e.target.value)}
-                            placeholder="https://meet.proton.me/join/id-abc#pwd-123"
+                            placeholder={isInputFocused ? undefined : MEETING_LINK_PLACEHOLDER}
+                            aria-label={c('Label').t`Meeting link`}
+                            onFocus={() => setIsInputFocused(true)}
+                            onBlur={() => setIsInputFocused(false)}
                             error={isError}
                             autoFocus
                         />

@@ -135,9 +135,15 @@ export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
                 className="flex flex-column md:flex-row items-center gap-2 mt-20 mb-5 w-full max-w-custom"
                 style={{ '--max-w-custom': '37rem' }}
             >
-                <span className="text-semibold text-left feedback-form-rating-label">{c('Label')
-                    .t`How was the call quality?`}</span>
-                <StarRating value={rating} onChange={SetRating} className="md:flex-1 flex-nowrap"></StarRating>
+                <span id="feedback-form-rating-label" className="text-semibold text-left feedback-form-rating-label">{c(
+                    'Label'
+                ).t`How was the call quality?`}</span>
+                <StarRating
+                    value={rating}
+                    onChange={SetRating}
+                    className="md:flex-1 flex-nowrap"
+                    ariaDescribedBy="feedback-form-rating-label"
+                />
                 {isHighRating && (
                     <Button
                         className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto"
@@ -158,16 +164,19 @@ export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
                         .t`What went wrong?`}</div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4 w-full md:w-auto">
                         <FeedbackOptionColumn
+                            groupLabel={c('Label').t`Audio`}
                             options={audioOptions}
                             selectedOptions={selectedOptions}
                             onOptionSelect={handleOptionSelect}
                         />
                         <FeedbackOptionColumn
+                            groupLabel={c('Label').t`Video`}
                             options={videoOptions}
                             selectedOptions={selectedOptions}
                             onOptionSelect={handleOptionSelect}
                         />
                         <FeedbackOptionColumn
+                            groupLabel={c('Label').t`Screen share`}
                             options={screenShareOptions}
                             selectedOptions={selectedOptions}
                             onOptionSelect={handleOptionSelect}

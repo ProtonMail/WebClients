@@ -3,18 +3,39 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
+import { announcementMessages } from '../MeetingAnnouncer/messages';
+import { AnnouncementPriority } from '../MeetingAnnouncer/types';
+import { useAnnounce } from '../MeetingAnnouncer/useAnnounce';
 
 interface AutoCloseMeetingModalProps {
     participantCount: number;
     onLeave: () => void;
 }
 
+const autoCloseTimeInSeconds = 420; // 7 minutes
+const showAutoCloseAfterSeconds = 300; // 5 minutes
+
+// Seconds remaining, high → low. First message carries the context; the rest are terse.
+const ANNOUNCEMENT_THRESHOLDS: { secondsLeft: number; message: () => string }[] = [
+    {
+        secondsLeft: autoCloseTimeInSeconds - showAutoCloseAfterSeconds,
+        message: announcementMessages.autoCloseDisplayed,
+    },
+    { secondsLeft: 60, message: announcementMessages.autoCloseIn1Minute },
+    { secondsLeft: 30, message: announcementMessages.autoCloseIn30Seconds },
+    { secondsLeft: 15, message: announcementMessages.autoCloseIn15Seconds },
+];
+
 export const AutoCloseMeetingModal = ({ participantCount, onLeave }: AutoCloseMeetingModalProps) => {
+    const announce = useAnnounce();
+
     const [timeAlone, setTimeAlone] = useState(0);
     const timeAloneRef = useRef(0);
     timeAloneRef.current = timeAlone;
-    const autoCloseTimeInSeconds = 420; // 7 minutes
-    const showAutoCloseAfterSeconds = 300; // 5 minutes
+
+    const firedThresholdsRef = useRef<Set<number>>(new Set());
+
+    const isShown = timeAlone >= showAutoCloseAfterSeconds;
 
     useEffect(() => {
         setTimeAlone(0);
@@ -30,7 +51,25 @@ export const AutoCloseMeetingModal = ({ participantCount, onLeave }: AutoCloseMe
 
             return () => clearInterval(intervalId);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [participantCount]);
+
+    useEffect(() => {
+        // Reset while hidden so a fresh countdown (e.g. after choosing to stay) announces again.
+        if (!isShown) {
+            firedThresholdsRef.current.clear();
+            return;
+        }
+
+        const secondsLeft = autoCloseTimeInSeconds - timeAlone;
+        for (const { secondsLeft: threshold, message } of ANNOUNCEMENT_THRESHOLDS) {
+            if (secondsLeft <= threshold && !firedThresholdsRef.current.has(threshold)) {
+                firedThresholdsRef.current.add(threshold);
+                announce(message(), { dedupeKey: `auto-close-${threshold}`, priority: AnnouncementPriority.High });
+                break;
+            }
+        }
+    }, [timeAlone, isShown, announce]);
 
     function formatCountDown(seconds: number): string {
         const mins = Math.floor(seconds / 60);
@@ -41,14 +80,18 @@ export const AutoCloseMeetingModal = ({ participantCount, onLeave }: AutoCloseMe
     }
 
     const timeLeft = (
-        <span key="time-left" className="text-tabular-nums">
+        <span key="time-left" className="text-tabular-nums" aria-hidden="true">
             {formatCountDown(autoCloseTimeInSeconds - timeAlone)}
         </span>
     );
 
     return (
-        timeAlone >= showAutoCloseAfterSeconds && (
+        isShown && (
             <ConfirmationModal
+                // Announced via the live region (threshold effect above). Opt out of the focus trap
+                // so the dialog doesn't steal focus / auto-announce itself and swallow that
+                // announcement (mirrors RecordingInProgressModal).
+                enableFocusTrap={false}
                 title={c('Info').jt`Meeting will end in ${timeLeft}`}
                 message={c('meet_2025')
                     .t`Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?`}

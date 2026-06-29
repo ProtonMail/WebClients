@@ -23,6 +23,8 @@ interface CircleButtonProps {
     variant?: CircleButtonVariant;
     ariaLabel?: string;
     ariaPressed?: boolean;
+    ariaExpanded?: boolean;
+    ariaHasPopup?: React.AriaAttributes['aria-haspopup'];
     noBorder?: boolean;
     tooltipTitle?: string;
     anchorRef?: RefObject<HTMLButtonElement>;
@@ -42,6 +44,8 @@ export const CircleButton = ({
     variant = 'default',
     ariaLabel,
     ariaPressed,
+    ariaExpanded,
+    ariaHasPopup,
     noBorder = true,
     tooltipTitle,
     anchorRef,
@@ -83,6 +87,8 @@ export const CircleButton = ({
                 onClick={onClick}
                 aria-label={ariaLabel}
                 aria-pressed={ariaPressed}
+                aria-expanded={ariaExpanded}
+                aria-haspopup={ariaHasPopup}
                 ref={anchorRef}
                 style={buttonStyle}
                 disabled={disabled || loading}

@@ -160,7 +160,9 @@ export const useMlsSession = ({
                     message = c('Error').t`Failed to join meeting. Please try again later.`;
             }
             createNotification({ type: 'error', text: message });
-            throw new Error(message);
+            const err = new Error(message);
+            Object.assign(err, { userNotified: true });
+            throw err;
         }
     };
 
