@@ -4,6 +4,13 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
+@mixin tm-progress-sweep {
+	background-image: linear-gradient(90deg, transparent 0%, rgb(255 255 255 / 0.45) 50%, transparent 100%);
+	background-size: 40% 100%;
+	background-repeat: no-repeat;
+	animation: tm-progress-sweep 1.4s ease-in-out infinite;
+}
+
 .transfer-manager-fixed-position {
 	position: fixed;
 	inset-block-end: 2rem;
@@ -36,6 +43,48 @@ im.$media-expressions: $media-expressions;
 
 		&::-webkit-progress-bar {
 			background-color: var(--background-strong);
+		}
+	}
+
+	// Indeterminate bar shown while a download is still traversing its folders and the total
+	// size is unknown: a light stroke sweeping across the bar to signal that we are downloading
+	// and parsing at the same time. Applied to a <progress value="100"> element.
+	// Firefox paints background set directly on the <progress> element, so the sweep lives on the
+	// element and ::-moz-progress-bar (the fill) is made transparent so it doesn't cover it.
+	// WebKit/Chrome ignores the element's own background and only paints the pseudo elements, so the
+	// sweep is duplicated onto ::-webkit-progress-value — at value=100 the fill spans the full width,
+	// giving the same look while reliably animating (animating ::-webkit-progress-bar does not).
+	.tm-progress-indeterminate {
+		@include tm-progress-sweep;
+
+		&::-webkit-progress-value {
+			background-color: var(--background-strong);
+
+			@include tm-progress-sweep;
+		}
+
+		&::-moz-progress-bar {
+			background: transparent;
+		}
+	}
+
+	@keyframes tm-progress-sweep {
+		from {
+			background-position: -50% center;
+		}
+
+		to {
+			background-position: 150% center;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.tm-progress-indeterminate {
+			animation: none;
+
+			&::-webkit-progress-value {
+				animation: none;
+			}
 		}
 	}
 }
