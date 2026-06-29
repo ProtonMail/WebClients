@@ -60,41 +60,43 @@ export const DashboardContainerBody = ({
             {!isGuest && <UpsellBanner />}
             <div className="flex-1 min-h-0 w-full meet-container-padding-x flex flex-column flex-nowrap meet-container relative">
                 <PageHeader showAppSwitcher={!isElectronApp} />
-                <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
-                    <h1 className="meet-dashboard-headline text-center">{getHeadline()}</h1>
-                    <span className="meet-dashboard-subtitle mt-4 mb-5 text-center text-wrap-balance">{c('Header')
-                        .t`Protect your conversations with end-to-end encryption`}</span>
-                    <div className="flex justify-center meet-dashboard-cta-wrapper mt-5 mb-5 w-full">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <CreateMeetingDropdown
-                                className="w-full"
-                                onScheduleClick={onScheduleClick}
-                                onStartMeetingClick={onStartMeetingClick}
-                                onCreateRoomClick={onCreateRoomClick}
-                            />
-                            <Button
-                                className="rounded-full border-none flex justify-center items-center tertiary text-rg py-4 px-6"
-                                size="large"
-                                onClick={onJoinWithLinkClick}
-                            >
-                                <span className="inline-flex items-center mr-2">
-                                    <IcLink size={4} className="shrink-0 mr-2" />
-                                    {c('Action').t`Join with a link`}
-                                </span>
-                            </Button>
+                <main id="main-content" className="flex flex-column flex-nowrap flex-1">
+                    <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
+                        <h1 className="meet-dashboard-headline text-center">{getHeadline()}</h1>
+                        <span className="meet-dashboard-subtitle mt-4 mb-5 text-center text-wrap-balance">{c('Header')
+                            .t`Protect your conversations with end-to-end encryption`}</span>
+                        <div className="flex justify-center meet-dashboard-cta-wrapper mt-5 mb-5 w-full">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <CreateMeetingDropdown
+                                    className="w-full"
+                                    onScheduleClick={onScheduleClick}
+                                    onStartMeetingClick={onStartMeetingClick}
+                                    onCreateRoomClick={onCreateRoomClick}
+                                />
+                                <Button
+                                    className="rounded-full border-none flex justify-center items-center tertiary text-rg py-4 px-6"
+                                    size="large"
+                                    onClick={onJoinWithLinkClick}
+                                >
+                                    <span className="inline-flex items-center mr-2">
+                                        <IcLink size={4} className="shrink-0 mr-2" />
+                                        {c('Action').t`Join with a link`}
+                                    </span>
+                                </Button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <DashboardMeetingListLoading
-                    meetingsListStatus={meetingsListStatus}
-                    meetings={meetings}
-                    handleScheduleInCalendar={handleScheduleInCalendar}
-                    handleScheduleClick={onScheduleClick}
-                    handleNewRoomClick={handleNewRoomClick}
-                    handleRotatePersonalMeeting={handleRotatePersonalMeeting}
-                    loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
-                    newlyCreatedMeetingId={newlyCreatedMeetingId}
-                />
+                    <DashboardMeetingListLoading
+                        meetingsListStatus={meetingsListStatus}
+                        meetings={meetings}
+                        handleScheduleInCalendar={handleScheduleInCalendar}
+                        handleScheduleClick={onScheduleClick}
+                        handleNewRoomClick={handleNewRoomClick}
+                        handleRotatePersonalMeeting={handleRotatePersonalMeeting}
+                        loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
+                        newlyCreatedMeetingId={newlyCreatedMeetingId}
+                    />
+                </main>
             </div>
         </div>
     );

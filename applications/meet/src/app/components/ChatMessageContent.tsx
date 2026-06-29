@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { getHostname } from '@proton/components/helpers/url';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
-import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { isSubDomain } from '@proton/shared/lib/helpers/url';
 
 import { OpenLinkModal } from './OpenLinkModal/OpenLinkModal';
@@ -36,17 +35,6 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
 
     const [currentLink, setCurrentLink] = useState<string | null>(null);
 
-    const handleLinkClick = (link: string) => {
-        const hostName = getHostname(link);
-        if (PROTON_DOMAINS.some((domain) => isSubDomain(hostName, domain))) {
-            openNewTab(link);
-
-            return;
-        }
-
-        setCurrentLink(link);
-    };
-
     return (
         <>
             {parts.map((part, i) => {
@@ -57,15 +45,35 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
                 const url = matches[i];
                 const { valid, url: validatedUrl } = validateUrl(url);
 
+                if (!valid || !validatedUrl) {
+                    return (
+                        <>
+                            {part}
+                            {c('Info').t`-Removed dangerous URL-`}
+                        </>
+                    );
+                }
+
+                const isProtonUrl = PROTON_DOMAINS.some((domain) => isSubDomain(getHostname(validatedUrl), domain));
+
                 return (
                     <>
                         {part}
-                        {valid && validatedUrl ? (
-                            <InlineLinkButton key={`link-${i}`} onClick={() => handleLinkClick(validatedUrl)}>
+                        {isProtonUrl ? (
+                            <a
+                                key={`link-${i}`}
+                                href={validatedUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="link link-focus align-baseline text-left"
+                            >
+                                {validatedUrl}
+                                <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
+                            </a>
+                        ) : (
+                            <InlineLinkButton key={`link-${i}`} onClick={() => setCurrentLink(validatedUrl)}>
                                 {validatedUrl}
                             </InlineLinkButton>
-                        ) : (
-                            <>{c('Info').t`-Removed dangerous URL-`}</>
                         )}
                     </>
                 );

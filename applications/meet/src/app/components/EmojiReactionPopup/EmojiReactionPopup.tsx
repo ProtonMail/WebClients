@@ -24,7 +24,11 @@ export const EmojiReactionPopup = () => {
 
     return (
         <div className="emoji-reaction-popup-container">
-            <div className="emoji-reaction-popup large-meet-radius rounded-lg p-2 flex border border-weak">
+            <div
+                className="emoji-reaction-popup large-meet-radius rounded-lg p-2 flex border border-weak"
+                role="toolbar"
+                aria-label={c('Label').t`Emoji reactions`}
+            >
                 <div className="flex gap-2 items-center">
                     {EMOJI_REACTIONS.map((emoji: EmojiReaction) => (
                         <button
@@ -32,12 +36,13 @@ export const EmojiReactionPopup = () => {
                             type="button"
                             className="emoji-reaction-button text-3xl rounded-full w-custom h-custom flex items-center justify-center interactive"
                             style={{ '--w-custom': '2.75rem', '--h-custom': '2.75rem' } as React.CSSProperties}
+                            aria-label={c('Action').t`React with ${emoji}`}
                             onClick={() => {
                                 void sendEmojiReaction(emoji);
                                 dispatch(setEmojiReactionPopupOpen(false));
                             }}
                         >
-                            {emoji}
+                            <span aria-hidden="true">{emoji}</span>
                         </button>
                     ))}
                     <div className="w-px self-stretch bg-weak mx-1" />

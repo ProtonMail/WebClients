@@ -23,11 +23,13 @@ export const SideBarSearch = ({
         <div className="flex items-center w-full side-bar-search">
             <IcMagnifier className="color-norm shrink-0 ml-2" size={6} />
             <Input
+                type="search"
                 value={searchExpression}
                 onChange={(e) => setSearchExpression(e.target.value)}
                 unstyled={true}
                 className="flex-1"
                 placeholder={placeholder}
+                aria-label={placeholder}
                 autoFocus
                 inputClassName="text-ellipsis ml-0.5 pr-1 mr-0"
             />

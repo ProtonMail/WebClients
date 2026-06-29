@@ -97,6 +97,8 @@ export const LeaveMeetingPopup = () => {
                 size="large"
                 onClick={handleButtonClick}
                 aria-label={c('Alt').t`Leave Meeting`}
+                aria-expanded={popupState[PopUpControls.LeaveMeeting]}
+                aria-haspopup="dialog"
             >
                 {isLargerThanMd ? c('Action').t`Leave` : <IcMeetPhone className="shrink-0" size={8} />}
             </Button>
@@ -108,6 +110,7 @@ export const LeaveMeetingPopup = () => {
                 originalPlacement="top-start"
                 availablePlacements={['top-start', 'top', 'top-end', 'bottom-start', 'bottom', 'bottom-end']}
                 size={{ width: '24.5rem', maxWidth: '24.5rem' }}
+                aria-label={c('Label').t`Leave meeting options`}
             >
                 <div className="px-4 pb-4 pt-2 flex flex-column flex-nowrap gap-2">
                     <div className="w-full flex justify-end">

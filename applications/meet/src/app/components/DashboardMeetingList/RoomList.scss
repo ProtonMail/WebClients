@@ -7,10 +7,18 @@
 		border: 1px dashed var(--border-weak);
 
 		&:hover,
-		&:active,
-		&:focus {
+		&:active {
 			background: var(--background-weak);
-			outline: none;
+
+			.placeholder-button-icon-container {
+				border-color: var(--text-disabled);
+			}
+		}
+
+		&:focus-visible {
+			background: var(--background-weak);
+			outline: 1px solid var(--focus-outline);
+			outline-offset: 2px;
 
 			.placeholder-button-icon-container {
 				border-color: var(--text-disabled);

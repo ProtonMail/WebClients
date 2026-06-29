@@ -6,12 +6,16 @@ import { clearRecording, selectRecordingStatus } from '@proton/meet/store/slices
 
 import { useLastRecordingDownload } from '../../../hooks/useMeetingRecorder/hooks/useLastRecordingDownload';
 import { ConfirmationModal } from '../../ConfirmationModal/ConfirmationModal';
+import { announcementMessages } from '../../MeetingAnnouncer/messages';
+import { AnnouncementPriority } from '../../MeetingAnnouncer/types';
+import { useAnnounce } from '../../MeetingAnnouncer/useAnnounce';
 import { RecordingProcessingModal } from './RecordingProcessingModal';
 
 export const RecordingDownloadModal = () => {
     const dispatch = useMeetDispatch();
     const status = useMeetSelector(selectRecordingStatus);
     const { downloadLastRecording } = useLastRecordingDownload();
+    const announce = useAnnounce();
 
     if (status === null) {
         return null;
@@ -37,6 +41,10 @@ export const RecordingDownloadModal = () => {
     const handleDownload = async () => {
         try {
             await downloadLastRecording();
+            announce(announcementMessages.recordingSaved(), {
+                dedupeKey: 'recording-saved',
+                priority: AnnouncementPriority.High,
+            });
             close();
         } catch {
             // Cancelled or failed, keep the modal open so the user can retry.

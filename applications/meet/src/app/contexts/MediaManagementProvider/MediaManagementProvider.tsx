@@ -40,6 +40,8 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { AnnouncementPriority } from '../../components/MeetingAnnouncer/types';
+import { useAnnounce } from '../../components/MeetingAnnouncer/useAnnounce';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
 import type { SwitchActiveDevice } from '../../types';
@@ -57,6 +59,7 @@ const SWITCH_DEVICE_TIMEOUT_MS = 5000;
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
     const room = useRoomContext();
     const { createNotification } = useNotifications();
+    const announce = useAnnounce();
     const { reportMeetError } = useMeetErrorReporting();
     const dispatch = useMeetDispatch();
     const store = useMeetStore();
@@ -348,6 +351,10 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 createNotification({
                     type: 'warning',
                     text: errorMessage,
+                });
+                announce(errorMessage, {
+                    dedupeKey: `media-device-access-${Boolean(cameraError)}-${Boolean(microphoneError)}`,
+                    priority: AnnouncementPriority.High,
                 });
             }
         };

@@ -35,22 +35,17 @@ export const JoiningRoomLoader = ({ participantCount, header, subtitle }: Joinin
     const displaySubtitle = subtitle ?? joiningRoomTitles[titleIndex].description;
 
     return (
-        <div
+        <output
             className="flex flex-column flex-nowrap items-center justify-center md:justify-start md:h-custom md:w-custom pt-6"
             style={{ '--md-w-custom': '24.625rem', '--md-h-custom': '24rem' }}
         >
-            <h2 className="mt-6 mb-4 text-center text-semibold" aria-live="polite" aria-atomic="true">
-                {displayHeader}
-            </h2>
-            {displaySubtitle && (
-                <div className="color-weak mb-8 text-center" aria-live="polite" aria-atomic="true">
-                    {displaySubtitle}
-                </div>
-            )}
+            <h2 className="mt-6 mb-4 text-center text-semibold">{displayHeader}</h2>
+            {displaySubtitle && <div className="color-weak mb-8 text-center">{displaySubtitle}</div>}
             <CircleLoader
+                aria-hidden="true"
                 className="color-primary w-custom h-custom"
                 style={{ '--w-custom': '5.3rem', '--h-custom': '5.3rem', '--stroke-width': 1.3 }}
             />
-        </div>
+        </output>
     );
 };

@@ -9,6 +9,7 @@ import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 import { isDevOrBlack } from '@proton/utils/env';
 
+import { MeetingAnnouncerProvider } from '../../components/MeetingAnnouncer/MeetingAnnouncerContext';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
 import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
@@ -112,15 +113,17 @@ export const WrappedProtonMeetContainer = () => {
     return (
         <RoomContext.Provider value={room}>
             <SubscriptionManagementProvider>
-                <MediaManagementProvider>
-                    <SortedParticipantsProvider>
-                        {isGuest ? (
-                            <ProtonMeetContainer room={room} keyProvider={keyProvider} />
-                        ) : (
-                            <ProtonMeetContainerWithUser room={room} keyProvider={keyProvider} />
-                        )}
-                    </SortedParticipantsProvider>
-                </MediaManagementProvider>
+                <MeetingAnnouncerProvider>
+                    <MediaManagementProvider>
+                        <SortedParticipantsProvider>
+                            {isGuest ? (
+                                <ProtonMeetContainer room={room} keyProvider={keyProvider} />
+                            ) : (
+                                <ProtonMeetContainerWithUser room={room} keyProvider={keyProvider} />
+                            )}
+                        </SortedParticipantsProvider>
+                    </MediaManagementProvider>
+                </MeetingAnnouncerProvider>
             </SubscriptionManagementProvider>
         </RoomContext.Provider>
     );

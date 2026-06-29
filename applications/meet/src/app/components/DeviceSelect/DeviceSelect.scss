@@ -5,7 +5,12 @@
 .device-select {
 	&#{&} {
 		padding-inline: 1.5rem;
-		outline: none;
+		box-shadow: none;
+	}
+
+	&:focus-visible {
+		outline: 1px solid var(--focus-outline);
+		outline-offset: 2px;
 		box-shadow: none !important;
 	}
 

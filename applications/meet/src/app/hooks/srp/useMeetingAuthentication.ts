@@ -55,6 +55,7 @@ export const useMeetingAuthentication = () => {
                         type: 'error',
                         text: c('Error').t`The meeting password is incorrect`,
                     });
+                    Object.assign(error as object, { userNotified: true });
                 }
 
                 throw error;
@@ -88,6 +89,7 @@ export const useMeetingAuthentication = () => {
                 throw error;
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [getSessionToken, getMeetingInfo]
     );
 

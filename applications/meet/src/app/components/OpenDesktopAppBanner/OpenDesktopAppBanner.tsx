@@ -61,6 +61,7 @@ export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps)
                         onClick={handleDownloadApp}
                     >
                         {c('Action').t`Download app`}
+                        <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
                     </Button>
                     <Button
                         className="open-desktop-app-banner-button action-button-new rounded-full bg-transparent"

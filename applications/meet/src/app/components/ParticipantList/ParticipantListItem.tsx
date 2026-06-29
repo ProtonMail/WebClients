@@ -71,6 +71,7 @@ export const ParticipantListItem = memo(
                 getParticipantInitials(participantName)
             ) : (
                 <CircleLoader
+                    aria-hidden="true"
                     className="color-primary w-custom h-custom"
                     style={{ '--w-custom': '1rem', '--h-custom': '1rem' }}
                 />
@@ -149,7 +150,7 @@ export const ParticipantListItem = memo(
                                         dispatch(disableParticipantVideo(participant.identity));
                                     }
                                 }}
-                                aria-label={c('Action').t`Enable video`}
+                                aria-label={getLabel()}
                                 aria-pressed={!isVideoDisabled}
                                 style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                             >

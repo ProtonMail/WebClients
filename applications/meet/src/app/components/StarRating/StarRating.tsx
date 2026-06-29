@@ -12,9 +12,10 @@ export interface StarRatingProps {
     value?: number;
     onChange: (value: number) => void;
     className?: string;
+    ariaDescribedBy?: string;
 }
 
-export const StarRating = ({ value, onChange, className }: StarRatingProps) => {
+export const StarRating = ({ value, onChange, className, ariaDescribedBy }: StarRatingProps) => {
     const [hoveredStar, setHoveredStar] = useState<number | undefined>(undefined);
 
     const handleChange = (numberOfStars: number) => {
@@ -24,7 +25,14 @@ export const StarRating = ({ value, onChange, className }: StarRatingProps) => {
     const stars = range(1, 6);
 
     return (
-        <div className={clsx('star-rating flex flex-row items-center justify-center', className)}>
+        <div
+            className={clsx('star-rating flex flex-row items-center justify-center', className)}
+            onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                    setHoveredStar(undefined);
+                }
+            }}
+        >
             <svg width="0" height="0" className="absolute">
                 <defs>
                     <linearGradient id="starGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -46,12 +54,14 @@ export const StarRating = ({ value, onChange, className }: StarRatingProps) => {
                         onClick={() => handleChange(numberOfStars)}
                         onMouseEnter={() => setHoveredStar(numberOfStars)}
                         onMouseLeave={() => setHoveredStar(undefined)}
+                        onFocus={() => setHoveredStar(numberOfStars)}
                         aria-label={c('Label').ngettext(
                             msgid`${numberOfStars} star`,
                             `${numberOfStars} stars`,
                             numberOfStars
                         )}
-                        aria-pressed={shouldShowGold}
+                        aria-pressed={isFilled}
+                        aria-describedby={ariaDescribedBy}
                     >
                         <IcStarFilled size={5} />
                     </button>
