@@ -1,5 +1,6 @@
 import { MAX_MAX_BATCH_PER_REQUEST, MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
+import { isShareRemovedError } from '@proton/pass/lib/api/errors';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
@@ -284,10 +285,17 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
     ).Revision;
 
 /** Requests a single item. Resolves `undefined` on decrypt/parse failure
- * (corrupted or newer proto version) - still throws on fetch error. */
+ * (corrupted or newer proto version) or when the share has been removed
+ * (a phantom event referencing a deleted/disabled share). Throws on any
+ * other fetch error. */
 export const requestItem = async (shareId: ShareId, itemId: ItemId): Promise<Maybe<ItemRevision>> => {
-    const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'get' });
-    return parseItemRevision(shareId, Item).catch(noop);
+    try {
+        const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'get' });
+        return await parseItemRevision(shareId, Item).catch(noop);
+    } catch (err) {
+        if (isShareRemovedError(err)) return undefined;
+        throw err;
+    }
 };
 
 export const requestAllItemsForShareId = async (
