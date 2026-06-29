@@ -1,21 +1,17 @@
-import type { ReactNode } from 'react';
 import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 
-import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import capitalize from '@proton/utils/capitalize';
 
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 
@@ -31,20 +27,14 @@ const Container = ({ children }: ContainerProps) => (
     </section>
 );
 
-interface Props {
-    mailSettings: MailSettings;
-    location: Location;
-}
-
-const WelcomePane = ({ mailSettings, location }: Props) => {
+const WelcomePane = () => {
     const theme = useTheme();
-
-    const conversationMode = isConversationMode(MAILBOX_LABEL_IDS.INBOX, mailSettings, location);
-
+    const location = useLocation();
     const [user, loadingUser] = useUser();
+    const [mailSettings] = useMailSettings();
 
-    const categoryIDs = useMailSelector(selectCategoryIDs);
-    const { getCurrentLocationCount } = useMailboxCounter();
+    const { getLocationCount } = useMailboxCounter();
+    const conversationMode = isConversationMode(MAILBOX_LABEL_IDS.INBOX, mailSettings, location);
 
     if (loadingUser) {
         return (
@@ -60,45 +50,34 @@ const WelcomePane = ({ mailSettings, location }: Props) => {
         </span>
     );
 
-    const total = getCurrentLocationCount().Total;
-    const totalLabel = conversationMode ? (
-        <strong key="total-label">
-            {c('Info').ngettext(msgid`${total} conversation`, `${total} conversations`, total)}
-        </strong>
-    ) : (
-        <strong key="total-label">{c('Info').ngettext(msgid`${total} message`, `${total} messages`, total)}</strong>
-    );
+    const total = getLocationCount(MAILBOX_LABEL_IDS.INBOX, { ignoreCategories: true })?.Total || 0;
+    const totalCopy = conversationMode
+        ? c('Info').ngettext(msgid`${total} conversation`, `${total} conversations`, total)
+        : c('Info').ngettext(msgid`${total} message`, `${total} messages`, total);
 
-    const getUnreadText = (unread: ReactNode) => {
-        if (categoryIDs.length === 0) {
-            return c('Info').jt`You have ${unread} in your inbox.`;
-        } else {
-            const label = getLabelFromCategoryId(categoryIDs[0]);
-            return c('Info').jt`You have ${unread} in ${label}.`;
-        }
-    };
+    const totalLabel = <strong key="total-label">{totalCopy}</strong>;
 
-    const counterMessage = getUnreadText(totalLabel);
     return (
-        <>
-            <Container>
-                <div className="text-rg mb-4">
-                    <img
-                        src={getInboxEmptyPlaceholder({
-                            size: total,
-                            theme: theme.information.theme,
-                        })}
-                        height={128}
-                        className="w-auto"
-                        alt=""
-                    />
-                </div>
-                <h1 className="text-lg text-semibold color-weak" id="welcome-header">
-                    {user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}
-                </h1>
-                {total ? <p className="my-2 p-0 color-weak text-keep-space">{counterMessage}</p> : null}
-            </Container>
-        </>
+        <Container>
+            <div className="text-rg mb-4">
+                <img
+                    src={getInboxEmptyPlaceholder({
+                        size: total,
+                        theme: theme.information.theme,
+                    })}
+                    height={128}
+                    className="w-auto"
+                    alt=""
+                />
+            </div>
+            <h1 className="text-lg text-semibold color-weak" id="welcome-header">
+                {user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}
+            </h1>
+            {total ? (
+                <p className="my-2 p-0 color-weak text-keep-space">{c('Info')
+                    .jt`You have ${totalLabel} in your inbox.`}</p>
+            ) : null}
+        </Container>
     );
 };
 

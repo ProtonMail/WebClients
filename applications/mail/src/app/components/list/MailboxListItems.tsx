@@ -98,8 +98,7 @@ const MailboxListItems = ({
         ) {
             return (
                 <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-center text-sm color-weak">{c('Info')
-                        .t`Seems like you are all caught up for now`}</p>
+                    <p className="text-center color-weak">{c('Info').t`Seems like you are all caught up for now`}</p>
                 </div>
             );
         }

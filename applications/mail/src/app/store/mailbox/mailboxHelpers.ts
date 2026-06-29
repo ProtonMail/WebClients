@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
@@ -174,9 +175,11 @@ export const getNotificationTextLabelAdded = ({
     }
 
     if (isCategoryLabel(destinationLabelID)) {
+        const label = getLabelFromCategoryId(destinationLabelID);
+
         return c('Success').ngettext(
-            msgid`Recategorized ${elementsCount} message.`,
-            `Recategorized ${elementsCount} messages.`,
+            msgid`Moved to ${label}. Similar message will be categorized here in the future.`,
+            `Moved to ${label}. Similar messages will be categorized here in the future.`,
             elementsCount
         );
     }
