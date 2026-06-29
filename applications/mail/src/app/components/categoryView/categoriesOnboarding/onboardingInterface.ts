@@ -10,7 +10,7 @@ export interface OnboardingInfo {
 }
 
 export enum CategoriesOnboardingFlags {
-    FULL_DISPLAY = 1 << 0,
+    INITIAL_MODAL = 1 << 0,
 }
 
 export const FeatureValueDefault = -1 as const;

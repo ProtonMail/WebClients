@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 
-import { hasSeeFullDisplay } from './categoriesOnboarding.helpers';
+import { hasSeenOnboardingModal } from './categoriesOnboarding.helpers';
 import { AudienceType } from './onboardingInterface';
 import { useCategoriesOnboarding } from './useCategoriesOnboarding';
 
@@ -18,7 +18,7 @@ export const CategoriesOnboarding = () => {
             return;
         }
 
-        const hasSeenModal = hasSeeFullDisplay(onboarding.flagValue);
+        const hasSeenModal = hasSeenOnboardingModal(onboarding.flagValue);
         if (hasSeenModal || !onboarding.isUserEligible) {
             return;
         }

@@ -53,7 +53,7 @@ export const GlobalCategoriesB2BOnboarding = () => {
         }
 
         await handleChange({ checked: enableCategories, notification: false });
-        void update(setBit(b2bModalProps.flagValue, CategoriesOnboardingFlags.FULL_DISPLAY));
+        void update(setBit(b2bModalProps.flagValue, CategoriesOnboardingFlags.INITIAL_MODAL));
 
         modalProps.onClose?.();
         if (enableCategories) {
