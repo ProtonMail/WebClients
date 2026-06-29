@@ -54,7 +54,7 @@ export const GlobalCategoriesB2COnboarding = () => {
         }
 
         await handleChange({ checked: enableCategories, notification: false });
-        void update(setBit(b2cModalProps.flagValue, CategoriesOnboardingFlags.FULL_DISPLAY));
+        void update(setBit(b2cModalProps.flagValue, CategoriesOnboardingFlags.INITIAL_MODAL));
 
         modalProps.onClose?.();
         if (enableCategories) {
@@ -80,13 +80,15 @@ export const GlobalCategoriesB2COnboarding = () => {
                         </div>
                         <p className="text-center color-weak mt-4 mb-0">
                             {c('Info')
-                                .t`${MAIL_APP_NAME} now sorts your emails into Primary, Social, Promotions, and more - so the important stuff is always front and center.`}
+                                .t`${MAIL_APP_NAME} now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.`}
                         </p>
                         <div className="text-center color-weak mb-12 mt-2">
                             <span>{c('Info').t`Private by design.`}</span>{' '}
-                            <Href key="learn" className="color-weak" href={getKnowledgeBaseUrl('/mail-categories')}>{c(
-                                'Link'
-                            ).t`Learn more.`}</Href>
+                            <Href
+                                key="learn"
+                                className="color-weak inline-block"
+                                href={getKnowledgeBaseUrl('/mail-categories')}
+                            >{c('Link').t`Learn more.`}</Href>
                         </div>
 
                         <div className="flex justify-center mb-4">
