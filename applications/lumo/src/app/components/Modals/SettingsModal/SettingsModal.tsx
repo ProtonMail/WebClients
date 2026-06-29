@@ -127,11 +127,7 @@ const LumoSettingsSidebar = ({
 
 const AppearanceSettingsPanel = () => {
     const { isDarkLumoTheme } = useLumoTheme();
-    const {
-        isAnimatedBackgroundEnabled,
-        isToggleDisabled,
-        setAnimatedBackgroundEnabled,
-    } = useLumoAnimatedBackground();
+    const { isAnimatedBackgroundEnabled, isToggleDisabled, setAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
 
     return (
         <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
@@ -418,7 +414,6 @@ const AccountSettingsPanelGuest = () => {
     const createLink = <CreateFreeAccountLink key="create-free-account-link" />;
     return (
         <div className="flex flex-column flex-nowrap gap-4 w-full min-w-0">
-            <LumoSettingsUpsellSection />
             <SettingsSectionItem
                 icon="User"
                 text={c('collider_2025: Title').t`Guest`}
@@ -429,6 +424,7 @@ const AccountSettingsPanelGuest = () => {
                 }
                 button={<SignInButton color="weak" shape="outline" />}
             />
+            <LumoSettingsUpsellSection />
         </div>
     );
 };
