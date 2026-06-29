@@ -17,7 +17,7 @@ import {
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import type { DocsApi } from '../../Api/DocsApi'
-import { PostApplicationError } from '../../Application/ApplicationEvent'
+import { ApplicationEvent, PostApplicationError } from '../../Application/ApplicationEvent'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTracker'
@@ -62,6 +62,14 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     if (extraInfo.lockEditor) {
       this.documentState.setProperty('editorHasRenderingIssue', true)
     }
+  }
+
+  showYjsDriftDetectedErrorModal(): void {
+    this.eventBus.publish({
+      type: ApplicationEvent.SheetsYjsDriftDetected,
+      payload: undefined,
+    })
+    this.documentState.setProperty('editorHasRenderingIssue', true)
   }
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, updateSource: BroadcastSource): Promise<void> {

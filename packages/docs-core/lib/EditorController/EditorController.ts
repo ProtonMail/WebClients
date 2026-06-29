@@ -24,6 +24,7 @@ import { downloadExport } from '../UseCase/ExportAndDownload'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
 import type { SheetsStorageService } from '../Services/SheetsStorageService'
 import { SheetsPatchesType } from '../Database/SheetsDBSchema'
+import { downloadUpdateTimeline } from '../utils/create-update-timeline'
 
 export interface EditorControllerInterface {
   getCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<string | null>
@@ -58,6 +59,7 @@ export interface EditorControllerInterface {
   generateSpreadsheetPatches(): Promise<unknown>
   applyPatches(patches: unknown): Promise<void>
   setTableOfContentsVisible(visible: boolean): Promise<void>
+  downloadBaseCommit(): Promise<void>
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -610,5 +612,34 @@ export class EditorController implements EditorControllerInterface {
     }
 
     await this.editorInvoker.setTableOfContentsVisible(visible)
+  }
+
+  async downloadBaseCommit(): Promise<void> {
+    const baseCommit = this.documentState.getProperty('baseCommit')
+    if (!baseCommit) {
+      return
+    }
+    const JSZip = (await import('jszip')).default
+    const zip = new JSZip()
+    for (const message of baseCommit.messages) {
+      const content = message.content
+      if (isCompressedDocumentUpdate(content)) {
+        const decompressed = decompressDocumentUpdate(content)
+        zip.file(`${message.timestamp}.bin`, decompressed)
+      } else {
+        zip.file(`${message.timestamp}.bin`, content)
+      }
+    }
+    const zipBlob = await zip.generateAsync({ type: 'blob' })
+    const zipUrl = URL.createObjectURL(zipBlob)
+    const zipLink = document.createElement('a')
+    zipLink.href = zipUrl
+    zipLink.download = 'all-updates-in-base-commit.zip'
+    document.body.appendChild(zipLink)
+    zipLink.click()
+    document.body.removeChild(zipLink)
+    URL.revokeObjectURL(zipUrl)
+    const yDocJSON = await this.getYDocAsJSON()
+    await downloadUpdateTimeline(baseCommit.messages, yDocJSON)
   }
 }

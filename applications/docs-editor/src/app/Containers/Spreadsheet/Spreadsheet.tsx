@@ -101,7 +101,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       }
       const error = new Error(
         c('Error')
-          .t`This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.`,
+          .t`This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.`,
       )
       reportErrorToSentry(error, undefined, {
         driftResult: {
@@ -109,8 +109,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           observedYjsKeys: result.observedYjsKeys,
         },
       })
-
-      void clientInvoker.reportUserInterfaceError(error, { irrecoverable: false, lockEditor: true })
+      void clientInvoker.showYjsDriftDetectedErrorModal()
     },
     [clientInvoker],
   )
