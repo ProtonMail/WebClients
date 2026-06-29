@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Exibição em lista"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecionar avaliação ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentários"
       ]
     },
     "Action: Docs": {
@@ -8170,6 +8176,15 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Extremely Satisfied": [
+        "Extremamente satisfeito"
+      ],
+      "Tell us more about your experience": [
+        "Conte-nos mais sobre sua experiência"
+      ],
+      "Very Dissatisfied": [
+        "Muito insatisfeito"
       ]
     },
     "Label for contact group color": {
@@ -11079,6 +11094,9 @@
       ],
       "Search for users or addresses": [
         "Pesquisar por um usuários ou endereços"
+      ],
+      "Optional feedback": [
+        "Feedback opcional"
       ]
     },
     "Placeholder for contact group name": {
@@ -13818,6 +13836,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "We'd love to hear from you!": [
+        "Adoraríamos ouvir você!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14347,6 +14368,11 @@
       ],
       "SUMMER SALE": [
         "OFERTA ESPECIAL"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Estamos sempre nos esforçando para tornar o ${ config.appName } melhor. Qual seu nível de satisfação com sua experiência?"
       ]
     }
   }

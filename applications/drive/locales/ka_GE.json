@@ -1271,6 +1271,12 @@
       ],
       "List layout": [
         "სიის განლაგება"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "შეაფასეთ ${ n } ${ to }-დან"
+      ],
+      "Send Feedback": [
+        "უკუკავშირის გაგზავნა"
       ]
     },
     "Action: Docs": {
@@ -7581,6 +7587,18 @@
       ],
       "Emails": [
         "ელფოსტები"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Extremely Satisfied": [
+        "ძალიან კმაყოფილი"
+      ],
+      "Tell us more about your experience": [
+        "გვიამბეთ მეტი თქვენი გამოცდილების შესახებ"
+      ],
+      "Very Dissatisfied": [
+        "ძალიან უკმაყოფილო"
       ]
     },
     "Label for contact group color": {
@@ -10237,6 +10255,9 @@
       ],
       "Search": [
         "ძებნა"
+      ],
+      "Optional feedback": [
+        "არასავალდებულო უკუკავშირი"
       ]
     },
     "Placeholder for contact group name": {
@@ -12762,6 +12783,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
+      "We'd love to hear from you!": [
+        "სიამოვნებით მოვისმენდით თქვენს აზრს!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13232,6 +13256,11 @@
       ],
       "SUMMER SALE": [
         "ზაფხულის ფასდაკლება"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "ჩვენ ყოველთვის ვცდილობთ, ${ config.appName } უკეთესი გავხადოთ. რამდენად კმაყოფილი ბრძანდებით მისით?"
       ]
     }
   }

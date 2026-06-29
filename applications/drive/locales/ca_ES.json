@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Disseny de la llista"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccioneu la valoració ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Envieu-nos els vostres comentaris"
       ]
     },
     "Action: Docs": {
@@ -4567,6 +4573,9 @@
       ],
       "Security key": [
         "Clau de seguretat"
+      ],
+      "Touch your security key.": [
+        "Toqueu la vostra clau de seguretat."
       ]
     },
     "fido2: Label": {
@@ -8243,6 +8252,15 @@
       ],
       "Drive": [
         "Unitat"
+      ],
+      "Extremely Satisfied": [
+        "Altament satisfet"
+      ],
+      "Tell us more about your experience": [
+        "Expliqueu-nos més sobre la vostra experiència"
+      ],
+      "Very Dissatisfied": [
+        "Molt insatisfet"
       ]
     },
     "Label for contact group color": {
@@ -11165,6 +11183,9 @@
       ],
       "Search for users or addresses": [
         "Cercar un usuari o adreça"
+      ],
+      "Optional feedback": [
+        "Comentaris opcionals"
       ]
     },
     "Placeholder for contact group name": {
@@ -13838,6 +13859,9 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "No hem pogut verificar que ${ author } hagi carregat aquesta carpeta."
+      ],
+      "We'd love to hear from you!": [
+        "Ens agradaria rebre la vostra opinió!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14382,6 +14406,11 @@
       ],
       "SUMMER SALE": [
         "REBAIXES D'ESTIU"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Treballem constantment per millorar ${ config.appName }. Quin grau de satisfacció teniu amb la vostra experiència?"
       ]
     }
   }

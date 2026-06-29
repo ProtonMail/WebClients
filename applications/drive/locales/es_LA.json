@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Diseño de lista"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccione una puntuación del ${ n } al ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentarios"
       ]
     },
     "Action: Docs": {
@@ -4567,6 +4573,9 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Touch your security key.": [
+        "Toque su llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -7374,7 +7383,7 @@
         "No pudimos verificar que ${ nameAuthor } haya cargado ${ nodeName }. Es posible que los elementos hayan sido manipulados. Abra el archivo solo si confía en él."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
       ]
     },
     "info": {
@@ -8237,6 +8246,18 @@
       ],
       "Emails": [
         "Correos"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Extremely Satisfied": [
+        "Extremadamente satisfactoria"
+      ],
+      "Tell us more about your experience": [
+        "Cuéntenos más sobre su experiencia."
+      ],
+      "Very Dissatisfied": [
+        "Poco satisfactoria"
       ]
     },
     "Label for contact group color": {
@@ -11159,6 +11180,9 @@
       ],
       "Search for users or addresses": [
         "Buscar usuarios o direcciones"
+      ],
+      "Optional feedback": [
+        "Comentarios opcionales"
       ]
     },
     "Placeholder for contact group name": {
@@ -13900,16 +13924,16 @@
         "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Digital signature verified. This file was securely created by ${ author }.": [
-        "Firma digital verificada. Este archivo se ha creado de forma segura por ${ author }."
+        "Firma digital verificada. Este archivo se creó de forma segura por ${ author }."
       ],
       "Digital signature verified. This file was securely uploaded by ${ author }.": [
-        "Firma digital verificada. Este archivo se ha cargado de forma segura por ${ author }."
+        "Firma digital verificada. Este archivo se cargó de forma segura por ${ author }."
       ],
       "Digital signature verified. This folder was securely created by ${ author }.": [
-        "Firma digital verificada. Esta carpeta se ha creado de forma segura por ${ author }."
+        "Firma digital verificada. Esta carpeta se cargó de forma segura por ${ author }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ author }.": [
-        "Firma digital verificada. Esta carpeta se ha cargado de forma segura por ${ author }."
+        "Firma digital verificada. Esta carpeta se cargó de forma segura por ${ author }."
       ],
       "We couldn’t verify that ${ author } created this file.": [
         "No pudimos verificar que ${ author } haya creado este archivo."
@@ -13924,10 +13948,13 @@
         "No pudimos verificar que ${ author } haya cargado esta carpeta."
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
-        "No hemos podido confirmar que el nombre se ha creado o modificado por ${ claimedNameAuthor }. El motivo es el siguiente: ${ node.nameAuthor.error.error }"
+        "No pudimos confirmar que el nombre se creó o modificó por ${ claimedNameAuthor }. El motivo es el siguiente: ${ node.nameAuthor.error.error }"
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "No hemos podido confirmar que el nodo se ha creado por ${ claimedKeyAuthor }. El motivo es el siguiente: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Nos encantaría saber su opinión"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14030,7 +14057,7 @@
         "¡Nuevo!"
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
+        "¡Asistencia IA inmediata, experto humano a su disposición!"
       ]
     },
     "tooltip": {
@@ -14469,6 +14496,11 @@
       ],
       "SUMMER SALE": [
         "OFERTAS DE VERANO"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
       ]
     }
   }

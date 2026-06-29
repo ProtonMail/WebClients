@@ -1259,6 +1259,12 @@
       ],
       "Continue with Free": [
         "無料で続行"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "${ to }段階中の${ n }評価を選択"
+      ],
+      "Send Feedback": [
+        "フィードバックを送信"
       ]
     },
     "Action: Docs": {
@@ -7752,6 +7758,15 @@
       ],
       "Emails": [
         "メール"
+      ],
+      "Extremely Satisfied": [
+        "非常に満足"
+      ],
+      "Tell us more about your experience": [
+        "ご利用時の体験について詳しいご意見をお聞かせください"
+      ],
+      "Very Dissatisfied": [
+        "非常に不満"
       ]
     },
     "Label for contact group color": {
@@ -10445,6 +10460,9 @@
       ],
       "Search": [
         "検索"
+      ],
+      "Optional feedback": [
+        "フィードバック(任意)"
       ]
     },
     "Placeholder for contact group name": {
@@ -13094,6 +13112,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
+      "We'd love to hear from you!": [
+        "ぜひ、ご意見をお寄せください！"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13546,6 +13567,11 @@
       ],
       "SUMMER SALE": [
         "サマーセール"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "私たちは常に${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足されておりますでしょうか？"
       ]
     }
   }

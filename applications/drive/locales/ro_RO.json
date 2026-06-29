@@ -1312,6 +1312,12 @@
       ],
       "List layout": [
         "Aspect listă"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selectare evaluare ${ n } din ${ to }"
+      ],
+      "Send Feedback": [
+        "Trimitere feedback"
       ]
     },
     "Action: Docs": {
@@ -4602,6 +4608,9 @@
       ],
       "Security key": [
         "Cheie de securitate"
+      ],
+      "Touch your security key.": [
+        "Atingeți cheia de securitate."
       ]
     },
     "fido2: Label": {
@@ -8360,6 +8369,15 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Extremely Satisfied": [
+        "Extrem de mulțumit(ă)"
+      ],
+      "Tell us more about your experience": [
+        "Spuneți-ne mai multe despre experiența proprie"
+      ],
+      "Very Dissatisfied": [
+        "Foarte nemulțumit(ă)"
       ]
     },
     "Label for contact group color": {
@@ -11304,6 +11322,9 @@
       ],
       "Search for users or addresses": [
         "Căutare utilizator sau adresă"
+      ],
+      "Optional feedback": [
+        "Feedback opțional"
       ]
     },
     "Placeholder for contact group name": {
@@ -14130,6 +14151,9 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "Nu s-a putut verifica dacă ${ author } a încărcat acest folder."
+      ],
+      "We'd love to hear from you!": [
+        "Ne-ar plăcea să avem vești de la tine!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14691,6 +14715,11 @@
       ],
       "SUMMER SALE": [
         "REDUCERI DE VARĂ"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Ne străduim mereu să îmbunătățim ${ config.appName }. Cum evaluați experiența avută?"
       ]
     }
   }
