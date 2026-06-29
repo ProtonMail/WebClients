@@ -138,8 +138,8 @@ export const useTransferManagerState = () => {
             status = TransferManagerStatus.Empty;
         } else if (
             statesMap.get(BaseTransferStatus.InProgress) ||
+            statesMap.get(BaseTransferStatus.Preparing) ||
             statesMap.get(BaseTransferStatus.Pending) ||
-            statesMap.get(UploadStatus.Preparing) ||
             statesMap.get(UploadStatus.Waiting)
         ) {
             status = TransferManagerStatus.InProgress;
@@ -165,6 +165,13 @@ export const useTransferManagerState = () => {
             lastCompletionDate = Date.now();
         }
 
+        // While a download is traversing its folder structure in parallel, its total size is not
+        // known yet, so there is no meaningful percentage to show. Flag it so the UI can show an
+        // indeterminate bar instead of a misleading 0% that jumps once the size lands.
+        const isCalculatingProgress = allTransfers.some(
+            (t) => t.type === 'download' && t.status === BaseTransferStatus.Preparing
+        );
+
         let transferType: TransferType = 'empty';
         if (downloads.length && uploads.length) {
             transferType = 'both';
@@ -178,7 +185,7 @@ export const useTransferManagerState = () => {
             switch (status) {
                 case BaseTransferStatus.InProgress:
                     return 7;
-                case UploadStatus.Preparing:
+                case BaseTransferStatus.Preparing:
                     return 6;
                 case BaseTransferStatus.Failed:
                 case BaseTransferStatus.MalwareDetected:
@@ -214,6 +221,7 @@ export const useTransferManagerState = () => {
             items: sortedTransfers,
             transferType,
             progressPercentage,
+            isCalculatingProgress,
             status,
             isVisible: sortedTransfers.length > 0,
         };
