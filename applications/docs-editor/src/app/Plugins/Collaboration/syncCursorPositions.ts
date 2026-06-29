@@ -221,8 +221,8 @@ function updateCursor(
       cursorsContainer.appendChild(selection)
     }
 
-    const top = selectionRect.top + (cursorsContainerOffsetParent.scrollTop - containerRect.top)
-    const left = selectionRect.left
+    const top = selectionRect.top - containerRect.top + cursorsContainerOffsetParent.scrollTop
+    const left = selectionRect.left - containerRect.left + cursorsContainerOffsetParent.scrollLeft
     const style = `position:absolute;top:${top}px;left:${left}px;height:${selectionRect.height}px;width:${selectionRect.width}px;pointer-events:none;`
     selection.style.cssText = style
     ;(selection.firstChild as HTMLSpanElement).style.cssText =
