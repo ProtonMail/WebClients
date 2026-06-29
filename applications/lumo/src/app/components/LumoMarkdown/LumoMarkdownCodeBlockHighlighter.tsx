@@ -23,8 +23,8 @@ export default function LumoMarkdownCodeBlockHighlighter({
         <PrismHighlighter
             language={language}
             style={theme === ThemeTypes.LumoDark ? oneDark : oneLight}
-            wrapLongLines={true}
             PreTag="div"
+            className="lumo-syntax-highlighter"
         >
             {code}
         </PrismHighlighter>
