@@ -4,7 +4,6 @@ export type LocationCountMap = Partial<Record<string, SafeLabelCount>>;
 
 export interface MailboxCounterReturn {
     loading: boolean;
-    counterMap: LocationCountMap;
-    getLocationCount: (labelID: string) => SafeLabelCount;
+    getLocationCount: (labelID: string, options?: { ignoreCategories: boolean }) => SafeLabelCount;
     getCurrentLocationCount: () => SafeLabelCount;
 }
