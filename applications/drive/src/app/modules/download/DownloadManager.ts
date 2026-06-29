@@ -55,6 +55,7 @@ export class DownloadManager {
     private readonly pendingAbortControllers = new Map<string, AbortController>();
     private requestedDownloads = new Map<string, NodeEntity[]>();
     private readonly malwareDetection: MalwareDetection;
+
     private readonly downloadSpeedMetrics = new TransferSpeedMetrics((values) => {
         downloadLogDebug('Download speed metrics', values);
         metrics.drive_download_speed_histogram.observe({
@@ -404,19 +405,23 @@ export class DownloadManager {
         this.pendingAbortControllers.set(downloadId, abortController);
 
         try {
-            // Traversing all folders to get the node entities + parentPath
+            const traversalStart = Date.now();
             const { nodesQueue, traversalCompletedPromise, parentPathByUid } = traverseNodeStructure(
                 nodes,
                 abortController.signal
             );
             this.downloadSpeedMetrics.onFileStarted(downloadId);
+            updateDownloadItem(downloadId, { status: DownloadStatus.Preparing });
 
+            // Traverse the archive in parallel with the download instead of blocking on it.
+            // Status stays Preparing (total size unknown) until traversal reports the full size,
+            // then transitions to InProgress.
+            // Traversal timing is logged inside traverseNodeStructure ('Traversal complete').
             void traversalCompletedPromise.then((traversalResult) => {
-                downloadLogDebug('Archive traversal complete', traversalResult);
                 totalEncryptedSize = traversalResult.totalEncryptedSize;
                 updateDownloadItem(downloadId, {
-                    storageSize: totalEncryptedSize,
                     status: DownloadStatus.InProgress,
+                    storageSize: totalEncryptedSize,
                     unsupportedFileDetected: traversalResult.containsUnsupportedFile ? IssueStatus.Detected : undefined,
                 });
             });
@@ -473,7 +478,6 @@ export class DownloadManager {
                 });
 
                 if (abortController.signal.aborted || archiveStreamGenerator.lastError) {
-                    // Super important that we don't save the file if cancelled or erroring
                     return;
                 }
                 await savePromise;
@@ -508,7 +512,13 @@ export class DownloadManager {
                             downloadedBytes: totalEncryptedSize,
                         });
                     }
-                    downloadLogDebug('Completed download', { downloadId, currentDownloadedBytes, totalEncryptedSize });
+                    const totalMs = Date.now() - traversalStart;
+                    downloadLogDebug('Completed download', {
+                        downloadId,
+                        currentDownloadedBytes,
+                        totalEncryptedSize,
+                        totalMs,
+                    });
                 },
                 onError: async (error) => {
                     handleDownloadError(downloadId, nodes, error, abortController.signal.aborted);
