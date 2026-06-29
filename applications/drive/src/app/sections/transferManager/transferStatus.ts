@@ -8,8 +8,8 @@ import type { TransferManagerEntry } from './useTransferManagerState';
 export const isCancellable = (entry: TransferManagerEntry): boolean => {
     return (
         entry.status === BaseTransferStatus.InProgress ||
+        entry.status === BaseTransferStatus.Preparing ||
         entry.status === BaseTransferStatus.Pending ||
-        entry.status === UploadStatus.Preparing ||
         entry.status === UploadStatus.Waiting ||
         entry.status === UploadStatus.ConflictFound
     );
