@@ -1,0 +1,40 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+@keyframes sidebar-upsell-fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.sidebar-upsell-section {
+	background: var(--lumo-secondary-upsell-background);
+	border: 1px solid rgb(197 183 255 / 0.15);
+	transition:
+		background 0.2s ease-in-out,
+		border-color 0.2s ease-in-out,
+		box-shadow 0.2s ease-in-out;
+
+	// Wait for the sidebar width transition to finish before appearing
+	animation: sidebar-upsell-fadein 0.15s ease-in 0.3s both;
+
+	a {
+		text-decoration-line: none;
+	}
+
+	&:hover {
+		border-color: rgb(197 183 255 / 0.25);
+		box-shadow: 0 2px 8px rgb(109 74 255 / 0.1);
+	}
+
+	.lumo-plus-upgrade-button {
+		inline-size: 100%;
+	}
+}
