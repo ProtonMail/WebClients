@@ -16,7 +16,6 @@ import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/
 import type { Attachment } from '../../types';
 import { ComposerMode, type Message } from '../../types';
 import UpsellCard from '../../upsells/components/UpsellCard';
-// import { Blobs } from '../Blobs/Blobs';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
@@ -38,7 +37,6 @@ interface MainContainerProps {
 
 const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: MainContainerProps) => {
     const { handleSendMessage } = useConversationActions();
-    // const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { aiPaperTrail } = useLumoFlags();
     const filesContainerRef = useRef<HTMLDivElement>(null);
@@ -53,13 +51,12 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
         autoShowDriveBrowser?: boolean;
     }>({ type: null });
     const { isGhostChatMode } = useGhostChat();
+    const filePreviewModal = useModalStateObject();
+    const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
     const tierErrors = useLumoSelector((state) => selectTierErrors({ errors: state.errors }));
     const { hasLumoPlus } = useLumoPlan();
     const remainingLimits = useRemainingLimits();
     const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
-    const filePreviewModal = useModalStateObject();
-    const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
-
     const handleOpenFilePreview = useCallback(
         (attachment: Attachment) => {
             setPreviewAttachment(attachment);
@@ -89,35 +86,9 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
         setOpenPanel({ type: 'files', filterMessage: undefined, autoShowDriveBrowser: false });
     }, []);
 
-    // // Handler for prompt suggestion click
-    // const handlePromptSuggestionClick = useCallback((prompt: string) => {
-    //     setPromptSuggestion(prompt);
-    // }, []);
-
-    // // Determine if lumo-welcome-section should be visible
-    // // Hide when input is active (has content) on small screens, always show on large screens
-    // const shouldShowWelcomeSection = !isSmallScreen || isEditorEmpty;
-
     return (
         <>
-            <LumoLayoutWithDrawer
-                header={{ component: isGuest ? <PublicHeader /> : null }}
-                drawer={{ disabled: true }}
-                // drawer={{
-                //     content: (
-                //         <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1 main-container-lumo-layout">
-                //             <FilesManagementView
-                //                 messageChain={[]}
-                //                 filesContainerRef={filesContainerRef}
-                //                 onClose={handleCloseFiles}
-                //                 filterMessage={openPanel.filterMessage}
-                //                 onClearFilter={handleClearFilter}
-                //                 initialShowDriveBrowser={false}
-                //             />
-                //         </div>
-                //     ),
-                // }}
-            >
+            <LumoLayoutWithDrawer header={{ component: isGuest ? <PublicHeader /> : null }} drawer={{ disabled: true }}>
                 <div className="main-container-component rounded-xl flex flex-column flex-nowrap flex-1">
                     <div
                         className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pt-0 main-container-content"
@@ -133,8 +104,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                         {aiPaperTrail && <PaperTrailPanel />}
 
                         <div className="composer-container md:px-4 w-full relative">
-                            {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
-
+                            {showWeeklyLimitUpsell && <UpsellCard showSadCat={false} error={tierErrors[0]} />}
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}
                                 handleSendMessage={handleSendMessage}
@@ -158,7 +128,6 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                                     )
                                 }
                             />
-                            {/* <Blobs /> */}
                         </div>
                         <WhatsNew />
                     </div>
