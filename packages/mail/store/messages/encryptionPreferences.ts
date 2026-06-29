@@ -31,9 +31,13 @@ const DEFAULT_LIFETIME = 5 * MINUTE;
 
 const cache = new Map<string, Record<EncryptionPreferences>>();
 
+// The cache key combines the canonical email with `intendedForEmail` (see `getEncryptionPreferencesThunk`).
+const getCacheKey = (email: string, intendedForEmail: boolean) => `${canonicalizeEmail(email)}:${intendedForEmail}`;
+
 export const removeEmailsFromEncryptionPreferencesCache = (emails: string[]) => {
     emails.forEach((email) => {
-        cache.delete(email);
+        cache.delete(getCacheKey(email, true));
+        cache.delete(getCacheKey(email, false));
     });
 };
 
@@ -130,6 +134,10 @@ export const getEncryptionPreferencesThunk = ({
 > => {
     return async (dispatch) => {
         const canonicalEmail = canonicalizeEmail(email);
+        // `intendedForEmail` changes which keys are fetched (e.g. internal keys with E2EE disabled for mail are
+        // only returned when it is false), so it must be part of the cache key to avoid serving a result that
+        // was resolved for a different purpose.
+        const cacheKey = getCacheKey(email, intendedForEmail ?? true);
         const miss = () =>
             dispatch(
                 getEncryptionPreferences({
@@ -139,6 +147,6 @@ export const getEncryptionPreferencesThunk = ({
                     contactEmailsMap,
                 })
             );
-        return getPromiseValue(cache, canonicalEmail, miss, lifetime);
+        return getPromiseValue(cache, cacheKey, miss, lifetime);
     };
 };
