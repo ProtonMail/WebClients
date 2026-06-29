@@ -51,10 +51,12 @@ export const TransferManagerHeader = ({
     cancelAll,
     retryFailedTransfers,
 }: Props) => {
-    const { progressPercentage, status, items } = useTransferManagerState();
+    const { progressPercentage, isCalculatingProgress, status, items } = useTransferManagerState();
     const headerText = getHeaderTextFromStatus(status);
     const normalizedProgress = Math.min(100, Math.max(0, Math.round(progressPercentage)));
-    const progressText = c('Info').t`${normalizedProgress}% completed`;
+    const progressText = isCalculatingProgress
+        ? c('Info').t`Preparing…`
+        : c('Info').t`${normalizedProgress}% completed`;
     const cancelText = c('Action').t`Cancel all`;
     const retryAllText = c('Action').t`Retry failed items`;
     const pbStatus = getProgressBarStatus(status);
@@ -114,9 +116,14 @@ export const TransferManagerHeader = ({
             </div>
             <div>
                 <Progress
-                    className={clsx([`progress-bar--${pbStatus}`, 'tm-progress'])}
-                    value={normalizedProgress}
+                    className={clsx([
+                        isCalculatingProgress ? 'tm-progress-indeterminate' : `progress-bar--${pbStatus}`,
+                        'tm-progress',
+                    ])}
+                    value={isCalculatingProgress ? 100 : normalizedProgress}
                     max={100}
+                    aria-label={isCalculatingProgress ? c('Info').t`Preparing download` : undefined}
+                    data-testid={isCalculatingProgress ? 'transfer-manager:header:progress-indeterminate' : undefined}
                 />
             </div>
         </div>
