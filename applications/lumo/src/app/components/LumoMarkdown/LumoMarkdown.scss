@@ -9,9 +9,47 @@
 
 	// Remove content-visibility from elements with overflow (Safari/compatibility issue)
 	.markdown-table-wrapper,
-	.markdown-rendering {
+	.markdown-rendering,
+	.code-container {
 		content-visibility: unset;
 		contain-intrinsic-size: unset;
+	}
+}
+
+// Syntax highlighter output (PreTag="div") — not matched by `pre` rules below.
+.code-container {
+	contain: none;
+
+	.lumo-syntax-highlighter {
+		background: var(--markdown-pre-background) !important;
+		border-radius: 0.5rem;
+		overflow-x: auto;
+		margin-block: 0.75rem;
+		padding: 1rem 3rem 1rem 1rem !important;
+		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+		font-size: 0.8125rem;
+		line-height: 1.6;
+	}
+
+	code[class*='language-'] {
+		// Theme applies background on both the wrapper and <code>; transparent here so
+		// token spans don't each paint their own box (visible as white patches).
+		background: none !important;
+		background-color: transparent !important;
+		// Global reset sets `code { line-height: 1 }`, which collapses multi-line blocks.
+		white-space: pre-wrap !important;
+		line-height: 1.6 !important;
+		display: block;
+		padding: 0 !important;
+		margin: 0 !important;
+		font-size: inherit !important;
+		font-family: inherit !important;
+
+		span {
+			background: none !important;
+			background-color: transparent !important;
+			line-height: inherit;
+		}
 	}
 }
 
