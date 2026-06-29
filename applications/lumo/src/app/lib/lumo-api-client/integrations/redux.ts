@@ -1,7 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { selectAttachmentsBySpaceId } from '../../../redux/selectors';
 import { addAttachment, pushAttachmentRequest } from '../../../redux/slices/core/attachments';
-import { applyUsageFromStreamMessage } from '../../../services/usageLimitsStore';
 import {
     changeConversationTitle,
     pushConversationRequest,
@@ -19,7 +19,7 @@ import {
     setToolCall,
     setToolResult,
 } from '../../../redux/slices/core/messages';
-import type { LumoDispatch } from '../../../redux/store';
+import type { LumoDispatch, LumoState } from '../../../redux/store';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import {
     ContextLengthExceededError,
@@ -27,6 +27,7 @@ import {
     isContextLengthExceededApiError,
     isContextLengthExceededError,
 } from '../../../services/errors/contextLengthError';
+import { applyUsageFromStreamMessage } from '../../../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../../../types';
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../../../types-api';
 import { createImageAttachment, generateImageMarkdown } from '../../imageAttachment';
@@ -50,7 +51,7 @@ export function sendMessageWithRedux(
         errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
     } = {} as any
 ) {
-    return async (dispatch: LumoDispatch): Promise<void> => {
+    return async (dispatch: LumoDispatch, getState: () => LumoState): Promise<void> => {
         const {
             config,
             messageId,
@@ -64,6 +65,10 @@ export function sendMessageWithRedux(
         let accumulatedContent = '';
         let accumulatedTitle = '';
         let persistedTitle: string | undefined = undefined;
+        // Filenames generated for images during this response. The Redux store may not yet
+        // reflect just-added attachments when the next image_data chunk arrives, so we track
+        // them locally to keep collision suffixes ((2), (3), …) correct within one response.
+        const generatedImageFilenames = new Set<string>();
 
         const client = new LumoApiClient(config);
 
@@ -217,11 +222,17 @@ export function sendMessageWithRedux(
                             });
 
                             if (message.image_id && message.data && messageId && spaceId) {
+                                const storeFilenames = Object.values(
+                                    selectAttachmentsBySpaceId(spaceId)(getState())
+                                ).map((a) => a.filename);
+                                const existingFilenames = [...storeFilenames, ...generatedImageFilenames];
                                 const { attachment, data: imageData } = createImageAttachment(
                                     message.image_id,
                                     message.data,
-                                    spaceId
+                                    spaceId,
+                                    existingFilenames
                                 );
+                                generatedImageFilenames.add(attachment.filename);
 
                                 // Store image data in cache instead of Redux
                                 attachmentDataCache.setData(attachment.id, imageData);
@@ -234,9 +245,9 @@ export function sendMessageWithRedux(
                             }
                             break;
 
-                    case 'usage':
-                        applyUsageFromStreamMessage(message);
-                        break;
+                        case 'usage':
+                            applyUsageFromStreamMessage(message);
+                            break;
 
                         case 'server_tool_call':
                             // Server-side tool calls arrive as dedicated `chat.tool_call` SSE chunks
