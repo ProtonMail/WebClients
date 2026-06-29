@@ -138,7 +138,7 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
                         </button>
                     )}
                     {projects.length === 0 && (
-                        <div className="px-3 py-2 text-sm color-weak">{c('collider_2025:Info').t`No projects yet`}</div>
+                        <div className="px-2 py-2 text-sm color-weak">{c('collider_2025:Info').t`No projects yet`}</div>
                     )}
                 </div>
             </CollapsibleSidebarSection>

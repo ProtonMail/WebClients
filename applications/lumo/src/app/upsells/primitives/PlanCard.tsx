@@ -19,7 +19,7 @@ export const PlanCard = ({ planName, features, children }: PlanCardProps) => (
         <h3 className="text-lg text-semibold m-0">{planName}</h3>
         <ul className="unstyled m-0 flex flex-column gap-3 flex-auto">
             {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-2">
+                <li key={index} className="flex items-center gap-2 flex-nowrap">
                     <Icon name={feature.icon} size={4} className="shrink-0 color-weak" />
                     <span className="color-weak text-sm">{feature.getText()}</span>
                 </li>
