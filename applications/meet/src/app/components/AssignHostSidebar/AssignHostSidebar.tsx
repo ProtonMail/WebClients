@@ -63,10 +63,14 @@ export const AssignHostSidebar = () => {
         : '';
 
     return (
-        <SideBar onClose={() => dispatch(toggleSideBarState(MeetingSideBars.AssignHost))} paddingClassName="px-2 py-4">
+        <SideBar
+            onClose={() => dispatch(toggleSideBarState(MeetingSideBars.AssignHost))}
+            aria-label={c('Aria').t`Assign host`}
+            paddingClassName="px-2 py-4"
+        >
             <div className="assign-host-sidebar flex-1 w-full flex flex-column flex-nowrap gap-4 h-full">
                 <div className="text-center flex flex-column gap-3 flex-nowrap mb-4 px-6">
-                    <div className="text-4xl text-semibold">{c('Title').t`Assign a new host`}</div>
+                    <h2 className="text-4xl text-semibold">{c('Title').t`Assign a new host`}</h2>
                     <div className="color-hint">{c('Info')
                         .t`Select a participant to assign as the new host before you go: `}</div>
                 </div>
@@ -95,12 +99,13 @@ export const AssignHostSidebar = () => {
                             </div>
                         )}
                     </div>
-                    <div
+                    <section
                         className="overflow-y-auto w-full flex flex-column flex-nowrap gap-0 flex-1 pb-custom"
                         onScroll={(event) => {
                             setIsScrolled(event.currentTarget.scrollTop > 0);
                         }}
                         style={{ '--pb-custom': '5rem' }}
+                        aria-label={c('Aria').t`Participants list`}
                     >
                         {filteredParticipants.map((participant: Participant, index) => {
                             const name = participantDecryptedNameMap[participant.identity] ?? c('Info').t`Loading...`;
@@ -160,7 +165,7 @@ export const AssignHostSidebar = () => {
                                 </button>
                             );
                         })}
-                    </div>
+                    </section>
                 </div>
                 <div
                     className={clsx(

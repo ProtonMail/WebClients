@@ -56,8 +56,9 @@ const ConfirmationModalContent = ({
                     }}
                     shape="ghost"
                     size="small"
+                    aria-label={c('Action').t`Close`}
                 >
-                    <IcCross className="color-hint" size={5} alt={c('Action').t`Close`} />
+                    <IcCross className="color-hint" size={5} aria-hidden="true" />
                 </Button>
             )}
             <div

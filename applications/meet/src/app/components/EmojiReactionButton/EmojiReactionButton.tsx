@@ -35,6 +35,9 @@ export const EmojiReactionButton = () => {
                 onClick={() => dispatch(setEmojiReactionPopupOpen(!emojiReactionPopupOpen))}
                 variant={emojiReactionPopupOpen ? 'active' : 'default'}
                 ariaLabel={c('Alt').t`Toggle emoji reactions`}
+                ariaPressed={emojiReactionPopupOpen}
+                ariaExpanded={emojiReactionPopupOpen}
+                ariaHasPopup="true"
             />
             <Popper
                 className="fixed w-fit-content h-fit-content z-up"

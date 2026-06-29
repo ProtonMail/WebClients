@@ -13,17 +13,36 @@ interface PaginationProps {
 export const Pagination = ({ totalPages, currentPage, onPageChange }: PaginationProps) => {
     const isFirstPage = currentPage === 0;
     const isLastPage = currentPage === totalPages - 1;
+    const pageCounterId = 'pagination-page-counter';
+    const displayPage = currentPage + 1;
 
     return (
         <div className="flex flex-nowrap gap-2 items-center user-select-none text-lg">
-            <Button shape="ghost" onClick={() => onPageChange(currentPage - 1)} disabled={isFirstPage} icon>
-                <IcChevronLeft alt={c('Action').t`Previous page`} />
+            <Button
+                shape="ghost"
+                onClick={() => onPageChange(currentPage - 1)}
+                disabled={isFirstPage}
+                icon
+                aria-label={c('Action').t`Previous page`}
+                aria-controls={pageCounterId}
+            >
+                <IcChevronLeft aria-hidden="true" />
             </Button>
-            <div>
-                {currentPage + 1}/{totalPages}
+            <div
+                id={pageCounterId}
+                aria-label={c('Info').t`Page ${displayPage} of ${totalPages}`}
+            >
+                {displayPage}/{totalPages}
             </div>
-            <Button shape="ghost" onClick={() => onPageChange(currentPage + 1)} disabled={isLastPage} icon>
-                <IcChevronRight alt={c('Action').t`Next page`} />
+            <Button
+                shape="ghost"
+                onClick={() => onPageChange(currentPage + 1)}
+                disabled={isLastPage}
+                icon
+                aria-label={c('Action').t`Next page`}
+                aria-controls={pageCounterId}
+            >
+                <IcChevronRight aria-hidden="true" />
             </Button>
         </div>
     );

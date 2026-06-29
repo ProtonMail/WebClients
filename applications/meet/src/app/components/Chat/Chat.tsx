@@ -97,6 +97,7 @@ export const Chat = () => {
     return (
         <SideBar
             onClose={() => dispatch(toggleSideBarState(MeetingSideBars.Chat))}
+            aria-label={c('Aria').t`Chat`}
             absoluteHeader={true}
             isScrolled={isScrolled}
             paddingClassName="py-4"
@@ -106,7 +107,7 @@ export const Chat = () => {
                         <div className="text-semibold flex items-center">
                             <SecurityShield title={c('Info').t`End-to-end encryption is active for this chat.`} />
 
-                            <div className="text-semibold text-3xl">{c('Title').t`Chat`}</div>
+                            <h2 className="text-semibold text-3xl m-0">{c('Title').t`Chat`}</h2>
                             <Button
                                 className="search-open-button p-0 ml-2 flex items-center justify-center"
                                 shape="ghost"
@@ -129,7 +130,7 @@ export const Chat = () => {
                 </div>
             }
         >
-            <div
+            <section
                 ref={scrollRef}
                 className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap pb-4 px-4 message-list"
                 onScroll={handleScroll}
@@ -165,10 +166,14 @@ export const Chat = () => {
                         <div className="text-center color-disabled">{c('Info').t`No search results`}</div>
                     </div>
                 )}
-                {filteredMeetingRoomUpdates.map((item) => (
-                    <ChatItem key={`${item.identity}-${item.timestamp}`} item={item} roomName={roomName} />
-                ))}
-            </div>
+                <ul className="unstyled m-0 p-0" aria-label={c('Aria').t`Chat messages`} aria-live="polite">
+                    {filteredMeetingRoomUpdates.map((item) => (
+                        <li key={`${item.identity}-${item.timestamp}`}>
+                            <ChatItem item={item} roomName={roomName} />
+                        </li>
+                    ))}
+                </ul>
+            </section>
             <ChatMessage onMessageSend={sendMessage} />
         </SideBar>
     );

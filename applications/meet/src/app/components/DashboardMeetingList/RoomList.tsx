@@ -31,21 +31,28 @@ export const RoomList = ({
 }: RoomListProps) => {
     return (
         <div className="room-list flex flex-column flex-nowrap gap-0 shrink-0 relative meet-glow-effect">
-            {isGuest && <PersonalMeetingRowUpsell />}
             {isSearchActive && meetingRooms.length === 0 && <NoResultsPlaceholder />}
-            {meetingRooms.map((meeting, index) => (
-                <MeetingRow
-                    key={meeting.ID}
-                    meeting={meeting}
-                    isFirst={index === 0}
-                    isLast={index === meetingRooms.length - 1}
-                    isRoom={true}
-                    getSubtitle={selectedSortOption?.getSubtitle}
-                    handleEditRoom={handleNewRoomClick}
-                    handleRotatePersonalMeeting={handleRotatePersonalMeeting}
-                    loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
-                />
-            ))}
+            <ul className="unstyled m-0 p-0 flex flex-column flex-nowrap gap-0" aria-label={c('Aria').t`Meeting rooms`}>
+                {isGuest && (
+                    <li>
+                        <PersonalMeetingRowUpsell />
+                    </li>
+                )}
+                {meetingRooms.map((meeting, index) => (
+                    <li key={meeting.ID}>
+                        <MeetingRow
+                            meeting={meeting}
+                            isFirst={index === 0}
+                            isLast={index === meetingRooms.length - 1}
+                            isRoom={true}
+                            getSubtitle={selectedSortOption?.getSubtitle}
+                            handleEditRoom={handleNewRoomClick}
+                            handleRotatePersonalMeeting={handleRotatePersonalMeeting}
+                            loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
+                        />
+                    </li>
+                ))}
+            </ul>
             {(meetingRooms.length !== 0 || isGuest) && (
                 <button
                     className="add-meeting-room-button p-6 flex items-center gap-6 flex-column md:flex-row cursor-pointer"
