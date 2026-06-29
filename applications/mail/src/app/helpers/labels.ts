@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
@@ -392,31 +391,6 @@ export const getLabelName = (labelID: string, labels: Label[] = [], folders: Fol
     }
 
     return labelID;
-};
-
-// Helper to get the label with categories name support
-export const getLabelNameWithCategory = ({
-    labelID,
-    labels,
-    folders,
-    categoryIDs,
-    hasAccessToCategoryView,
-}: {
-    labelID: string;
-    labels: Label[];
-    folders: Folder[];
-    categoryIDs: string[];
-    hasAccessToCategoryView: boolean;
-}) => {
-    const category = categoryIDs[0];
-    if (labelID === MAILBOX_LABEL_IDS.INBOX && hasAccessToCategoryView && category) {
-        const folders = getStandardFolders();
-        const name = folders[MAILBOX_LABEL_IDS.INBOX].name;
-        const categoryLabel = getLabelFromCategoryId(category as CategoryLabelID);
-        return `${name} • ${categoryLabel}`;
-    }
-
-    return getLabelName(labelID, labels, folders);
 };
 
 /**

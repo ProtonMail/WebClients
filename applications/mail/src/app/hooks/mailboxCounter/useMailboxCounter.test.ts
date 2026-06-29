@@ -257,6 +257,15 @@ describe('useMailboxCounter', () => {
                 getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 50, 60)
             );
         });
+
+        it('should not redirect inbox to CATEGORY_DEFAULT when ignoreCategories is set, even with category access enabled', () => {
+            jest.mocked(useCategoriesView).mockReturnValue(getMockCategoryView({ categoryViewAccess: true }));
+
+            const { result } = renderHook(() => useMailboxCounter());
+            expect(result.current.getLocationCount(MAILBOX_LABEL_IDS.INBOX, { ignoreCategories: true })).toStrictEqual(
+                getCount(MAILBOX_LABEL_IDS.INBOX, 30, 40)
+            );
+        });
     });
 
     describe('getCurrentLocationCount', () => {
