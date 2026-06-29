@@ -7,6 +7,7 @@ import generateUID from '@proton/utils/generateUID';
 // TODO: Maybe find a new home for this const since it's shared between download/upload
 export enum BaseTransferStatus {
     InProgress = 'inProgress',
+    Preparing = 'preparing',
     Failed = 'failed',
     Paused = 'paused',
     PausedServer = 'pausedServer',
@@ -26,6 +27,8 @@ export enum DownloadStatus {
     Finished = BaseTransferStatus.Finished,
     // Download waiting to start in queue
     Pending = BaseTransferStatus.Pending,
+    // Download is parsing the tree for archive creation
+    Preparing = BaseTransferStatus.Preparing,
     Cancelled = BaseTransferStatus.Cancelled,
     MalwareDetected = BaseTransferStatus.MalwareDetected,
     MalwareScanUnavailable = BaseTransferStatus.MalwareScanUnavailable,
