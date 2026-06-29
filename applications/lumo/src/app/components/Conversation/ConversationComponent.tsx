@@ -6,13 +6,13 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
 import { useConversationPanelState } from '../../hooks/useConversationPanelState';
-import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useRetryPanel } from '../../hooks/useRetryPanel';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
 import { ComposerMode, type Conversation } from '../../types';
 import UpsellCard from '../../upsells/components/UpsellCard';
@@ -153,13 +153,13 @@ const ConversationComponent = ({
                             {conversationErrors.length > 0 && (
                                 <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
                             )}
-                            {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
                             <ConversationSurvey isGenerating={isGenerating} />
                             <div
                                 ref={composerContainerRef}
                                 className="lumo-chat-item flex flex-column no-print w-full md:w-2/3 mx-auto max-w-custom"
                                 style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
                             >
+                                {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
                                 <ComposerComponent
                                     composerMode={ComposerMode.CONVERSATION}
                                     handleSendMessage={handleSendMessage}
@@ -182,33 +182,6 @@ const ConversationComponent = ({
                                     .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
                             </p>
                         </div>
-                        {/* <RightPanelSlot>
-                        {openPanel.type === 'sources' && openPanel.message && (
-                            <WebSearchSourcesView
-                                message={openPanel.message}
-                                sourcesContainerRef={sourcesContainerRef}
-                                onClose={() => setOpenPanel({ type: null })}
-                            />
-                        )}
-                        {openPanel.type === 'files' && (
-                            <FilesManagementView
-                                messageChain={messageChain}
-                                filesContainerRef={filesContainerRef}
-                                onClose={handleCloseFiles}
-                                filterMessage={openPanel.filterMessage}
-                                onClearFilter={handleClearFilter}
-                                initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
-                                spaceId={conversation?.spaceId}
-                            />
-                        )}
-                        {openPanel.type === 'file-preview' && openPanel.attachment && (
-                            <FilePreviewPanel
-                                attachment={openPanel.attachment}
-                                onBack={() => setOpenPanel({ type: 'files' })}
-                                onClose={() => setOpenPanel({ type: null })}
-                            />
-                        )}
-                    </RightPanelSlot> */}
                     </div>
 
                     {/* Floating Retry Panel */}
