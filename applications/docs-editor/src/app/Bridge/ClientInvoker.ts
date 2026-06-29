@@ -126,7 +126,11 @@ export class ClientInvoker implements EditorRequiresClientMethods {
 
   async reportUserInterfaceError(
     error: Error,
-    extraInfo: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
+    extraInfo: {
+      irrecoverable?: boolean
+      errorInfo?: ErrorInfo
+      lockEditor?: boolean
+    },
   ): Promise<void> {
     return this.invokeClientMethod('reportUserInterfaceError', [error, extraInfo])
   }
@@ -224,5 +228,9 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs',
   ): Promise<void> {
     return this.invokeClientMethod('reportSheetsYjsDriftDetected', [reason])
+  }
+
+  async showYjsDriftDetectedErrorModal(): Promise<void> {
+    return this.invokeClientMethod('showYjsDriftDetectedErrorModal', [])
   }
 }
