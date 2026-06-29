@@ -2,6 +2,7 @@ import type { Action } from 'redux';
 import { call, put, select } from 'redux-saga/effects';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { isShareRemovedError } from '@proton/pass/lib/api/errors';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -43,8 +44,9 @@ function* onShareDeleted(shareId: ShareId) {
 }
 
 /** Fetches shares in batches using the provided fetcher, dispatching an action
- * per resolved result. Null-resolved fetches (undecryptable shares) are omitted
- * from the dispatch but tolerated. A failed fetch (rejected request) flips the
+ * per resolved result. Null-resolved fetches (undecryptable shares) and
+ * share-removed errors (phantom events referencing a deleted/disabled share)
+ * are omitted from the dispatch but tolerated. Any other failed fetch flips the
  * result to `false` so the batch is retried on next poll. */
 function* processShareBatches<T>(
     shares: SyncEventShareOutput[],
@@ -55,7 +57,14 @@ function* processShareBatches<T>(
 
     for (const batch of chunk(shares, MIN_MAX_BATCH_PER_REQUEST)) {
         const results: PromiseSettledResult<MaybeNull<T>>[] = yield call(() =>
-            Promise.allSettled(batch.map(({ ShareID }) => fetcher(ShareID)))
+            Promise.allSettled(
+                batch.map(({ ShareID }) =>
+                    fetcher(ShareID).catch((err) => {
+                        if (isShareRemovedError(err)) return;
+                        throw err;
+                    })
+                )
+            )
         );
 
         const resolved = results
