@@ -15,7 +15,7 @@ im.$media-expressions: $media-expressions;
 	// Base styles
 	position: relative;
 	border: var(--1px) solid var(--composer-glow-border) !important;
-	border-radius: #{rem(22)};
+	border-radius: #{rem(28)};
 	padding: #{rem(6)};
 	transition:
 		border-color 0.3s ease-out,
