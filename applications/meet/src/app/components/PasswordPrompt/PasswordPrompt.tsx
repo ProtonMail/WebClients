@@ -35,8 +35,8 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
         >
             <ModalTwoContent className="py-4">
                 <div className="flex flex-column items-center">
-                    <div className="text-3xl text-semibold text-center mb-4 mt-4">{c('Info')
-                        .t`This meeting is password protected`}</div>
+                    <h2 className="text-3xl text-semibold text-center mb-4 mt-4">{c('Info')
+                        .t`This meeting is password protected`}</h2>
                     <div className="my-4 color-weak text-center">{c('Info')
                         .t`Please enter the passphrase to decrypt and view this meeting`}</div>
 

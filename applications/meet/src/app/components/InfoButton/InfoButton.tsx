@@ -55,6 +55,9 @@ export const InfoButton = () => {
                 onClick={() => dispatch(toggleSideBarState(MeetingSideBars.MeetingDetails))}
                 variant={getVariant()}
                 ariaLabel={c('Alt').t`Toggle meeting details`}
+                ariaPressed={sideBarState[MeetingSideBars.MeetingDetails]}
+                ariaExpanded={sideBarState[MeetingSideBars.MeetingDetails] || meetingReadyPopupOpen}
+                ariaHasPopup="true"
             />
             <Popper
                 className="fixed w-fit-content h-fit-content z-up"

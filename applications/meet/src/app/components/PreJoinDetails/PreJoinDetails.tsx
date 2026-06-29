@@ -78,11 +78,11 @@ export const PreJoinDetails = ({
             <div className="pre-join-details-header flex flex-column gap-2">
                 {!isLoadingMeetings && (
                     <>
-                        <div
-                            className={`title text-semibold text-center hidden md:block ${isPersonalRoom ? 'color-primary' : ''}`}
+                        <h1
+                            className={`title text-semibold text-center hidden md:block m-0 ${isPersonalRoom ? 'color-primary' : ''}`}
                         >
                             {title || ' '}
-                        </div>
+                        </h1>
                         <div className="text-center color-weak hidden md:block">{subtitle}</div>
                     </>
                 )}

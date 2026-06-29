@@ -81,6 +81,10 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
         useMeetSelector((state) => selectParticipantName(state, participant.identity)) ??
         (isLocalParticipant ? displayName : c('Info').t`Loading...`);
 
+    const audioStateLabel = audioIsOn ? c('Accessibility').t`microphone on` : c('Accessibility').t`microphone muted`;
+    const videoStateLabel = shouldShowVideo ? c('Accessibility').t`camera on` : c('Accessibility').t`camera off`;
+    const tileAriaLabel = `${participantName}, ${audioStateLabel}, ${videoStateLabel}`;
+
     const { width, height } = cameraVideoPublication?.dimensions ?? {
         width: 0,
         height: 0,
@@ -97,6 +101,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
             };
         }
         // Intentionally track sid so we cleanup/re-register on publication changes.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cameraVideoPublication?.trackSid, participant.identity, register, unregister]);
 
     const handleRefreshTracks = async () => {
@@ -158,12 +163,15 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     };
 
     return (
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
+            aria-label={tileAriaLabel}
             className={clsx(
                 'participant-tile-body',
                 'relative w-full h-full flex flex-nowrap items-center justify-center',
                 viewSize === 'large' ? 'radius-normal' : 'radius-small'
             )}
+            role="group"
         >
             <div
                 className="absolute top-custom right-custom flex items-center justify-center gap-2 z-up"
@@ -210,6 +218,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                 )}
                 {!audioIsOn && (
                     <div
+                        aria-hidden="true"
                         className="user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full"
                         style={{
                             '--w-custom': AUDIO_ICON_SIZE[viewSize],
@@ -289,6 +298,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
             )}
             <ParticipantTileReaction participantIdentity={participant.identity} position={POSITION_BY_SIZE[viewSize]} />
             <div
+                aria-hidden="true"
                 className={clsx(
                     'color-norm absolute left-custom bottom-custom participant-tile-name max-w-custom flex flex-nowrap items-center',
                     viewSize !== 'large' && 'text-sm'
@@ -298,7 +308,6 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     '--bottom-custom': `${POSITION_BY_SIZE[viewSize]}rem`,
                     '--max-w-custom': '85%',
                 }}
-                title={participantName}
             >
                 <SecurityShield
                     title={c('Info').t`End-to-end encryption is active for audio and video.`}

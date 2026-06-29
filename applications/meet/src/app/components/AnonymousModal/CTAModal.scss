@@ -85,4 +85,11 @@ im.$media-expressions: $media-expressions;
 .upsell-modal-button {
 	line-height: 1.5rem;
 	background: linear-gradient(316deg, var(--interaction-norm) 21.43%, #d1cbff 115.05%) !important;
+	color: var(--text-invert);
+
+	&:hover,
+	&:active,
+	&:focus-visible {
+		color: var(--text-invert);
+	}
 }

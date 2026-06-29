@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
@@ -50,10 +48,10 @@ export const ChatItem = ({
     const participantName = useMeetSelector((state) => selectParticipantName(state, identity));
     const sendReaction = useChatMessageReaction();
 
-    const [isHovered, setIsHovered] = useState(false);
     const { participantColors } = useParticipantDisplayColors(identity);
 
     const showReactionControls = isMeetChatMessage(item) && !ellipsisOverflow;
+    const messageA11yDescriptionId = isMeetChatMessage(item) ? `chat-message-a11y-${item.id}` : undefined;
 
     const roomNameLabel = (
         <span key="room-name" className="ml-1 room-name">
@@ -62,16 +60,17 @@ export const ChatItem = ({
     );
 
     return (
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
             key={`${type}-${identity}-${timestamp}`}
             className={clsx(
                 'chat-item flex gap-2 height-custom flex-nowrap shrink-0 mr-2 py-2 px-1',
                 (shouldGrow || ellipsisOverflow) && 'flex-1',
-                isHovered && 'chat-item-message-hover'
+                showReactionControls && 'chat-item--with-reactions'
             )}
             style={{ '--height-custom': 'fit-content' }}
-            onMouseEnter={() => showReactionControls && setIsHovered(true)}
-            onMouseLeave={() => showReactionControls && setIsHovered(false)}
+            role={showReactionControls ? 'group' : undefined}
+            aria-label={showReactionControls ? c('Info').t`Message from ${participantName}` : undefined}
         >
             <div className="flex flex-nowrap items-start shrink-0">
                 <div
@@ -92,36 +91,22 @@ export const ChatItem = ({
                         <bdi>{participantName}</bdi>
                     </span>
                     {displayDate && (
-                        <div className="ml-2 color-weak text-nowrap shrink-0">
+                        <time
+                            dateTime={new Date(timestamp).toISOString()}
+                            className="ml-2 color-weak text-nowrap shrink-0"
+                        >
                             {new Date(timestamp).toLocaleTimeString([], {
                                 hour: 'numeric',
                                 minute: '2-digit',
                                 hour12: true,
                             })}
-                        </div>
+                        </time>
                     )}
                 </div>
                 {isMeetChatMessage(item) && (
                     <div className="relative">
-                        {showReactionControls && isHovered && (
-                            <div className="chat-item-quick-reactions flex gap-1 p-1 rounded-lg border border-weak bg-norm absolute">
-                                {QUICK_REACTIONS.map((emoji) => (
-                                    <button
-                                        key={emoji}
-                                        type="button"
-                                        className="chat-item-quick-reaction-btn text-xl rounded-full flex items-center justify-center"
-                                        aria-label={c('Action').t`React with ${emoji}`}
-                                        onClick={() => {
-                                            void sendReaction(item.id, emoji);
-                                            setIsHovered(false);
-                                        }}
-                                    >
-                                        {emoji}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
                         <div
+                            id={messageA11yDescriptionId}
                             className={clsx(
                                 'color-norm text-semibold chat-message text-break',
                                 ellipsisOverflow && 'text-ellipsis-four-lines'
@@ -130,8 +115,31 @@ export const ChatItem = ({
                             <ChatMessageContent message={item.message} />
                         </div>
                         {showReactionControls && (
+                            <div
+                                className="chat-item-quick-reactions flex gap-1 p-1 rounded-lg border border-weak bg-norm absolute"
+                                role="toolbar"
+                                aria-label={c('Info').t`Quick reactions`}
+                            >
+                                {QUICK_REACTIONS.map((emoji) => (
+                                    <button
+                                        key={emoji}
+                                        type="button"
+                                        className="chat-item-quick-reaction-btn text-xl rounded-full flex items-center justify-center"
+                                        aria-label={c('Action').t`React with ${emoji}`}
+                                        aria-describedby={messageA11yDescriptionId}
+                                        onClick={() => {
+                                            void sendReaction(item.id, emoji);
+                                        }}
+                                    >
+                                        {emoji}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                        {showReactionControls && (
                             <ChatMessageReactions
                                 messageId={item.id}
+                                messageAriaDescriptionId={messageA11yDescriptionId}
                                 onReact={(emoji) => {
                                     void sendReaction(item.id, emoji);
                                 }}

@@ -51,6 +51,7 @@ export const Settings = () => {
     return (
         <SideBar
             onClose={() => dispatch(toggleSideBarStateAction(MeetingSideBars.Settings))}
+            aria-label={c('Aria').t`Settings`}
             header={
                 <div className="flex items-center">
                     <h2 className="text-3xl text-semibold">{c('Title').t`Settings`}</h2>

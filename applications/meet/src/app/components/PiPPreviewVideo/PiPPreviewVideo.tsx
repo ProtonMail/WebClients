@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Feedback } from '@dnd-kit/dom';
 import { DragDropProvider, type DragEndEvent, useDraggable } from '@dnd-kit/react';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
@@ -134,7 +135,7 @@ const PiPPreviewVideoInternal = ({
                             type="button"
                             onClick={toggleMinimize}
                             className="rounded-full"
-                            aria-label="Minimize preview"
+                            aria-label={c('Action').t`Minimize preview`}
                             shape="ghost"
                             size="small"
                             icon
@@ -145,7 +146,7 @@ const PiPPreviewVideoInternal = ({
                             type="button"
                             onClick={handleClose}
                             className="rounded-full"
-                            aria-label="Close preview"
+                            aria-label={c('Action').t`Close preview`}
                             shape="ghost"
                             size="small"
                             icon

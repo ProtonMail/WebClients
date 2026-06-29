@@ -13,15 +13,28 @@ interface OptionButtonProps {
     Icon: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
     iconSize?: IconProps['size'];
     loading?: boolean;
+    role?: string;
+    ariaSelected?: boolean;
 }
 
-export const OptionButton = ({ showIcon, label, onClick, Icon, iconSize, loading }: OptionButtonProps) => {
+export const OptionButton = ({
+    showIcon,
+    label,
+    onClick,
+    Icon,
+    iconSize,
+    loading,
+    role,
+    ariaSelected,
+}: OptionButtonProps) => {
     return (
         <Button
             className="option-button w-full max-w-custom flex items-center justify-start flex-nowrap pl-0 text-rg meet-font-weight rounded-xl pr-2"
             onClick={onClick}
             shape="ghost"
             style={{ '--max-w-custom': '25rem' }}
+            role={role}
+            aria-selected={ariaSelected}
         >
             <div
                 className="flex items-center justify-center w-custom min-w-custom w-4 mr-2"

@@ -3,8 +3,10 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { ConnectionState, DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
+import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -122,6 +124,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     const { initializeDevices } = useMediaManagementContext();
 
     const { reportMeetError, clearSentryReportErrorCounts } = useMeetErrorReporting();
+    const { createNotification } = useNotifications();
     const meetingLinkNameRef = useRef<string>('');
     const withMeetingLinkNameTag = useCallback((options?: unknown) => {
         const meetingLinkName = meetingLinkNameRef.current;
@@ -733,6 +736,13 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
             }
             if (isConnectionTimeoutError(error)) {
                 setIsConnectionFailedModalOpen(true);
+                return;
+            }
+            if (!error?.userNotified) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Failed to join meeting. Please try again.`,
+                });
             }
         }
     };
@@ -808,6 +818,12 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         } catch (error: any) {
             reportMeetError('Failed to create instant meeting', withMeetingLinkNameTag(error));
             setJoiningInProgress(false);
+            if (!error?.userNotified) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Failed to start meeting. Please try again.`,
+                });
+            }
         }
 
         joinBlockedRef.current = false;
@@ -867,6 +883,12 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
             } catch (error: any) {
                 setJoiningInProgress(false);
                 joinBlockedRef.current = false;
+                if (!error?.userNotified) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`Failed to join meeting. Please try again.`,
+                    });
+                }
                 return;
             }
 

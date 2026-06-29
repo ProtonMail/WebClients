@@ -29,7 +29,6 @@ import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { SpatialAudioRoomAudioRenderer } from '../../utils/spatialAudio/SpatialAudioRoomAudioRenderer';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Chat } from '../Chat/Chat';
-import { MeetingAnnouncer } from '../MeetingAnnouncer/MeetingAnnouncer';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingName } from '../MeetingName/MeetingName';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
@@ -103,7 +102,7 @@ export const MeetingBody = ({
 
     // Firefox/macOS leaves focus on browser chrome after joining; move it into the page so the
     // live region is observed immediately without the user having to click first.
-    const mainContainerRef = useRef<HTMLDivElement>(null);
+    const mainContainerRef = useRef<HTMLElement>(null);
     useEffect(() => {
         mainContainerRef.current?.focus();
     }, []);
@@ -183,14 +182,7 @@ export const MeetingBody = ({
     };
 
     return (
-        <div ref={mainContainerRef} tabIndex={-1} className="w-full h-full flex flex-column flex-nowrap outline-none">
-            <MeetingAnnouncer
-                isReconnecting={isReconnecting}
-                mlsRetrying={mlsRetrying}
-                isDisconnected={isDisconnected}
-                liveKitConnectionState={liveKitConnectionState}
-                showReconnectedMessage={showReconnectedMessage}
-            />
+        <main ref={mainContainerRef} tabIndex={-1} className="w-full h-full flex flex-column flex-nowrap outline-none">
             <RecordingTopBanner />
             <div
                 className={clsx(
@@ -203,6 +195,8 @@ export const MeetingBody = ({
                     <TopBanner
                         className="bg-norm meet-radius turn-top-banner"
                         onClose={() => setBannerIsClosed(true)}
+                        // Announced centrally by useTurnRelayAnnouncements to avoid a double read.
+                        announce={false}
                     >{c('Banner')
                         .t`Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.`}</TopBanner>
                 )}
@@ -265,7 +259,8 @@ export const MeetingBody = ({
                 >
                     {isScreenShare ? (
                         <>
-                            <div
+                            <section
+                                aria-label={screenShareLabel}
                                 className="bg-strong h-full overflow-hidden mx-auto my-0 rounded relative shrink-1"
                                 style={{
                                     flexGrow: isLargerThanMd
@@ -284,6 +279,8 @@ export const MeetingBody = ({
                                     manageSubscription={false}
                                 />
                                 <div
+                                    aria-live="polite"
+                                    aria-atomic="true"
                                     className="screen-share-label absolute bottom-custom left-custom flex rounded opacity-80"
                                     style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
                                 >
@@ -320,7 +317,7 @@ export const MeetingBody = ({
                                         />
                                     </button>
                                 )}
-                            </div>
+                            </section>
                             {isLargerThanMd && (
                                 <ParticipantSidebar
                                     participantSideBarOpen={participantSideBarOpen}
@@ -355,6 +352,6 @@ export const MeetingBody = ({
                 {isXSmallScreen && <MeetingReadyPopup meetingLink={meetingLink} closeBySlide={true} />}
                 <RecordingInProgressModal />
             </div>
-        </div>
+        </main>
     );
 };

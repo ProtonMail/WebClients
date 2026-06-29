@@ -16,6 +16,7 @@ export const ScheduleMeetingRecapAnimatedIcon = ({
         viewBox="0 0 64 57"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
         className={clsx('mb-5', className)}
     >
         <rect y="4.84375" width="57.6363" height="37.4764" rx="9.68644" fill={MeetingColorsMap[variant][0]} />

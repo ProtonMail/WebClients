@@ -97,9 +97,10 @@ export const ManageRecordingsContainer = () => {
     const renderContent = () => {
         if (loading) {
             return (
-                <div className="flex justify-center py-7">
-                    <CircleLoader size="medium" />
-                </div>
+                <output className="flex justify-center py-7">
+                    <CircleLoader size="medium" aria-hidden="true" />
+                    <span className="sr-only">{c('Info').t`Loading recordings…`}</span>
+                </output>
             );
         }
 
