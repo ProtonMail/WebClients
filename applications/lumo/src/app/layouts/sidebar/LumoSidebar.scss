@@ -258,9 +258,20 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.user-initials {
-		background-color: #baf8e6;
+		background-color: var(--interaction-norm-minor-1);
 		border: none;
-		color: var(--text-dark);
+		color: var(--primary);
+		transition: background-color 0.15s ease;
+	}
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.is-active,
+	&[aria-expanded='true'] {
+		.user-initials {
+			background-color: var(--interaction-norm-minor-2);
+		}
 	}
 }
 
