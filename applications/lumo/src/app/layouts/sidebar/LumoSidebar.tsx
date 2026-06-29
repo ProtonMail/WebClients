@@ -98,19 +98,12 @@ const LumoSidebarContent = () => {
                 </div>
 
                 <div className="sidebar-section sidebar-bottom flex flex-column gap-1">
-                    {isGuest ? (
-                        <>
-                            <SidebarItem
-                                icon="Cog"
-                                label={c('collider_2025:Button').t`Settings`}
-                                onClick={() => settingsModal.openModal(true)}
-                            />
-                            {/* <ChatHistoryGuestUserUpsell /> */}
-                            <GuestSidebarSignInSection />
-                        </>
-                    ) : (
-                        <LumoSidebarUpsell />
-                    )}
+                    <SidebarItem
+                        icon="Cog"
+                        label={c('collider_2025:Button').t`Settings`}
+                        onClick={() => settingsModal.openModal(true)}
+                    />
+                    {isGuest ? <GuestSidebarSignInSection /> : <LumoSidebarUpsell />}
                     <SidebarBottomUserArea />
                 </div>
             </div>
