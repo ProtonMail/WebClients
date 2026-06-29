@@ -21,7 +21,6 @@ import { getTheme, updateNativeTheme } from "./utils/themes";
 import { isWindowValid } from "./utils/view/windowUtils";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
-import { withTimeout } from "./utils/withTimeout";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
 import { checkDefaultProtocols } from "./utils/protocol/default";
@@ -57,12 +56,9 @@ import { quitTracker } from "./utils/log/quitTracker";
     captureUncaughtErrors();
     registerIOStreamErrorHandlers();
 
-    // Sentry's main-process init synchronously sets up the Crashpad / minidump
-    // uploader on Windows. On some Hyper-V CI runners that step has been seen
-    // to stall the event loop past Playwright's 65s launch timeout, freezing
-    // electron.launch() forever. Cap the await so a stuck Sentry init can
-    // never freeze startup; the init keeps running in the background.
-    await withTimeout(initializeSentry(), 15_000, "initializeSentry");
+    if (!isPlaywrightTest) {
+        await initializeSentry();
+    }
     profiler.mark("sentry-done");
     logInitialAppInfo();
     handleStartupMailto();
@@ -71,10 +67,6 @@ import { quitTracker } from "./utils/log/quitTracker";
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed
     // during the uninstall process (or any other procees that implies application restart).
-    // NOT wrapped in withTimeout: we have no evidence Squirrel hangs, and forcing startup
-    // to proceed mid-install/uninstall would re-introduce the exact race this await guards
-    // against. The e2e launches don't pass any --squirrel-* flags so this call returns in
-    // <10ms there anyway.
     await handleSquirrelEvents();
     profiler.mark("squirrel-done");
 
