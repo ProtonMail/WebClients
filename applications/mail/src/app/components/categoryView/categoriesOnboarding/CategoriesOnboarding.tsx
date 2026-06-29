@@ -1,16 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
 import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { B2COnboarding } from './B2COnboarding';
-import { CategoryCard } from './CategoryCard';
-import { hasSeeFullDisplay } from './categoriesOnboarding.helpers';
-import { AudienceType, B2BOnboardinCategoriesWithCards, B2COnboardinCategoriesWithCards } from './onboardingInterface';
+import { hasSeenOnboardingModal } from './categoriesOnboarding.helpers';
+import { AudienceType } from './onboardingInterface';
 import { useCategoriesOnboarding } from './useCategoriesOnboarding';
 
 export const CategoriesOnboarding = () => {
@@ -18,65 +12,35 @@ export const CategoriesOnboarding = () => {
     const onboarding = useCategoriesOnboarding();
     const hasTriggeredModalRef = useRef(false);
 
-    const categoryIDs = useMailSelector(selectCategoryIDs);
-    const categoryID = categoryIDs.includes(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
-        ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
-        : categoryIDs[0];
-
     useEffect(() => {
         // Only trigger modal once per session
         if (hasTriggeredModalRef.current) {
             return;
         }
 
-        if (!onboarding.isUserEligible || onboarding.audienceType !== AudienceType.B2B) {
+        const hasSeenModal = hasSeenOnboardingModal(onboarding.flagValue);
+        if (hasSeenModal || !onboarding.isUserEligible) {
             return;
         }
 
-        const hasSeenModal = hasSeeFullDisplay(onboarding.flagValue);
-        if (!hasSeenModal) {
+        if (onboarding.audienceType === AudienceType.B2C) {
             hasTriggeredModalRef.current = true;
             notify({
-                type: ModalType.CategoriesViewB2BOnboarding,
+                type: ModalType.CategoriesViewB2COnboarding,
+                value: {
+                    flagValue: onboarding.flagValue,
+                },
+            });
+        } else if (onboarding.audienceType === AudienceType.B2B) {
+            hasTriggeredModalRef.current = true;
+            notify({
+                type: ModalType.CategoriesViewB2COnboarding,
                 value: {
                     flagValue: onboarding.flagValue,
                 },
             });
         }
     }, [onboarding, notify]);
-
-    if (!onboarding.isUserEligible) {
-        return null;
-    }
-
-    if (onboarding.audienceType === AudienceType.B2B) {
-        if (B2BOnboardinCategoriesWithCards.has(categoryID)) {
-            return (
-                <CategoryCard
-                    audienceType={AudienceType.B2B}
-                    categoryID={categoryID}
-                    flagValue={onboarding.flagValue}
-                />
-            );
-        }
-    } else if (onboarding.audienceType === AudienceType.B2C) {
-        if (categoryID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            // We don't want to show the onboarding if the user has already seen it
-            if (hasSeeFullDisplay(onboarding.flagValue)) {
-                return null;
-            }
-
-            return <B2COnboarding flagValue={onboarding.flagValue} />;
-        } else if (B2COnboardinCategoriesWithCards.has(categoryID)) {
-            return (
-                <CategoryCard
-                    audienceType={AudienceType.B2C}
-                    categoryID={categoryID}
-                    flagValue={onboarding.flagValue}
-                />
-            );
-        }
-    }
 
     return null;
 };
