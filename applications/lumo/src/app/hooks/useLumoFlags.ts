@@ -29,7 +29,7 @@ export const useLumoFlags = () => {
     const externalTools = useFlag('LumoTooling');
     const specialTheme = useFlag('LumoSpecialTheme');
     const deactivateGuestMode = useFlag('LumoDeactivateGuestModeFrontend');
-    const whatsNew = useFlag('WhatsNewV1p3');
+    const whatsNew = useFlag('WhatsNewV2');
     const highLoad = useFlag('LumoHighLoad');
     const nativeComposer = useFlag('LumoNativeComposer');
     const nativeComposerImages = useFlag('LumoNativeComposerImage');

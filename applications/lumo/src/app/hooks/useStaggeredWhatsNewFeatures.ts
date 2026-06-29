@@ -1,4 +1,4 @@
-import {useCallback, useMemo} from 'react';
+import {useCallback, useMemo, useState} from 'react';
 
 import {useIsGuest} from '../providers/IsGuestProvider';
 import type {WhatsNewFeature} from '../components/WhatsNew/types';
@@ -22,6 +22,7 @@ export const useStaggeredWhatsNewFeatures = (
 ): UseStaggeredWhatsNewFeaturesReturn => {
     const { isDismissed, dismissFlag, featureFlags } = useFeatureFlags();
     const isGuest = useIsGuest();
+    const [dismissalVersion, setDismissalVersion] = useState(0);
 
     const dismissFeature = useCallback(
         (featureId: string, versionFlag: string) => {
@@ -30,6 +31,7 @@ export const useStaggeredWhatsNewFeatures = (
             } else {
                 dismissFlag(featureId, versionFlag, false);
             }
+            setDismissalVersion((version) => version + 1);
         },
         [dismissFlag, isGuest]
     );
@@ -41,6 +43,7 @@ export const useStaggeredWhatsNewFeatures = (
             } else {
                 dismissFlag(featureId, versionFlag, true);
             }
+            setDismissalVersion((version) => version + 1);
         },
         [dismissFlag, isGuest]
     );
@@ -119,5 +122,5 @@ export const useStaggeredWhatsNewFeatures = (
             declineFeature,
             isFeatureDismissed,
         };
-    }, [features, isFeatureEnabled, isFeatureDismissed, dismissFlag, isGuest, featureFlags, declineFeature]);
+    }, [features, isFeatureEnabled, isFeatureDismissed, dismissFlag, isGuest, featureFlags, declineFeature, dismissalVersion]);
 };

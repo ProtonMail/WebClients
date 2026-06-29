@@ -1,14 +1,25 @@
+import type { IconName } from '../LumoIcon/LumoIcon';
+
 export interface FeaturePoint {
-    icon: React.ReactNode;
+    icon: IconName;
     getText: () => string;
+}
+
+export type WhatsNewStageImageScale = 'sm' | 'md' | 'lg';
+
+export interface WhatsNewStage {
+    id: string;
+    image?: string;
+    imageAlt?: string;
+    imageScale?: WhatsNewStageImageScale;
+    getTitle: () => string;
+    getDescription?: () => string;
+    getFeaturePoints?: () => FeaturePoint[];
 }
 
 export interface WhatsNewModalFeature {
     lottieAnimation?: () => Promise<{ default: object }>;
-    image?: any;
-    getTitle: () => string;
-    getDescription?: () => string;
-    getFeaturePoints?: () => FeaturePoint[];
+    stages: WhatsNewStage[];
 }
 
 export type WhatsNewFeature = WhatsNewModalFeature & {
