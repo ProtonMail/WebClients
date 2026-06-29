@@ -66,6 +66,7 @@ import {
   useIsDownloadLogsAllowed,
   useMoveModalDriveSdkEnabled,
   useRenameWithSDK,
+  useIsTableOfContentsEnabled,
 } from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
@@ -76,6 +77,7 @@ import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid, getDrive } from '@proton/drive'
+import { IcListBullets } from '@proton/icons/icons/IcListBullets'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -110,12 +112,14 @@ export function DocumentTitleDropdown({
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
   const renameWithSDK = useRenameWithSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
+  const isTableOfContentsFeatureEnabled = useIsTableOfContentsEnabled()
 
   const [pdfModal, openPdfModal] = useExportToPDFModal()
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
   const [sheetImportModal, showSheetImportModal] = useSheetImportModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
 
+  const [tableOfContentsVisible, setTableOfContentsVisible] = useState(isTableOfContentsFeatureEnabled)
   const [title, setTitle] = useState<string | undefined>(documentState.getProperty('documentName'))
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
   const [trashState, setTrashState] = useState<DocTrashState | undefined>(
@@ -370,6 +374,26 @@ export function DocumentTitleDropdown({
       documentState,
     })
   }, [authenticatedController, editorController, documentType, showHistoryModal, documentState])
+
+  useEffect(() => {
+    function syncTableOfContentsStateToEditor() {
+      void editorController.setTableOfContentsVisible(tableOfContentsVisible)
+    }
+    if (documentState.getProperty('editorReady')) {
+      syncTableOfContentsStateToEditor()
+    }
+    return documentState.subscribeToProperty('editorReady', (ready) => {
+      if (ready) {
+        syncTableOfContentsStateToEditor()
+      }
+    })
+  }, [documentState, editorController, tableOfContentsVisible])
+
+  function handleTableOfContentsToggle() {
+    const nextTableOfContentsVisible = !tableOfContentsVisible
+    setTableOfContentsVisible(nextTableOfContentsVisible)
+    void editorController.setTableOfContentsVisible(nextTableOfContentsVisible)
+  }
 
   const openHelp = useCallback(() => {
     window.open(getStaticURL(isSpreadsheet ? '/support/drive/sheets' : '/support/drive'), '_blank')
@@ -747,6 +771,13 @@ export function DocumentTitleDropdown({
             </SimpleDropdown>
           )}
 
+          {!isSpreadsheet && isTableOfContentsFeatureEnabled && (
+            <DropdownMenuButton className="flex items-center text-left" onClick={handleTableOfContentsToggle}>
+              <IcListBullets className="color-weak mr-2" />
+              {tableOfContentsVisible ? c('Info').t`Disable table of contents` : c('Info').t`Enable table of contents`}
+            </DropdownMenuButton>
+          )}
+
           {documentState.getProperty('userRole').canTrash() && (
             <DropdownMenuButton
               disabled={trashState === 'trashing' || trashState === 'trashed'}
@@ -763,6 +794,7 @@ export function DocumentTitleDropdown({
               {trashState === 'trashing' && <CircleLoader size="small" className="ml-auto" />}
             </DropdownMenuButton>
           )}
+
           <hr className="my-1 min-h-px" />
 
           <DropdownMenuButton className="flex items-center text-left" onClick={printAsPDF} data-testid="dropdown-print">

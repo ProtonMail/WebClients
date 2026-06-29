@@ -2,14 +2,17 @@ import React from 'react'
 import clsx from '@proton/utils/clsx'
 import { useMediaQuery } from '../Hooks/useMediaQuery'
 
+// screen breakpoint at which the left panel is enabled
+const LEFT_PANEL_ENABLED_BREAKPOINT = 1024
 const EDITOR_WIDTH = 816
-const MIN_LEFT_PANEL_WIDTH = 100
+// screen breakpoint used to determine the minimum allowed width of the left panel
+const LEFT_PANEL_MIN_WIDTH_BREAKPOINT = 1300
+const MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT = 260
+const MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT = 100
 const MAX_LEFT_PANEL_WIDTH = 800
-// breakpoint at which the left panel is enabled
-const ENABLED_LEFT_PANEL_BREAKPOINT = 1024
 
 function LeftPanel({ children }: React.PropsWithChildren) {
-  const { updateLeftPanelWidth, leftPanelWidth, defaultLeftPanelWidth, leftPanelActive, leftPanelEnabled } =
+  const { updateLeftPanelWidth, leftPanelWidth, resetLeftPanelToDefault, leftPanelActive, leftPanelEnabled } =
     useDocsLayoutContext()
   const [canResize, setCanResize] = React.useState(false)
   // store event listeners created on resize to cleanup on unmount if resize interrupted
@@ -61,39 +64,8 @@ function LeftPanel({ children }: React.PropsWithChildren) {
     handle.addEventListener('pointercancel', onPointerUp)
   }
 
-  function handleResetToDefault() {
-    updateLeftPanelWidth(defaultLeftPanelWidth)
-  }
-
   if (!leftPanelEnabled) {
     return null
-  }
-
-  if (leftPanelActive) {
-    return (
-      <div
-        className="relative overflow-hidden"
-        style={{
-          gridRow: 1,
-          gridColumn: '1 / 2',
-        }}
-        onMouseEnter={() => setCanResize(true)}
-        onMouseLeave={() => setCanResize(false)}
-        onMouseOver={() => setCanResize(true)}
-        onFocus={() => setCanResize(true)}
-      >
-        {children}
-        <div
-          aria-orientation="vertical"
-          onPointerDown={handleResize}
-          onDoubleClick={handleResetToDefault}
-          className="absolute bottom-0 right-0 top-0 h-full w-3 cursor-col-resize transition-all"
-          style={{ opacity: canResize ? 1 : 0 }}
-        >
-          <div className="mx-auto h-full w-[1px] bg-[--border-weak]" />
-        </div>
-      </div>
-    )
   }
 
   return (
@@ -103,8 +75,23 @@ function LeftPanel({ children }: React.PropsWithChildren) {
         gridRow: 1,
         gridColumn: '1 / 2',
       }}
+      onMouseEnter={leftPanelActive ? () => setCanResize(true) : undefined}
+      onMouseLeave={leftPanelActive ? () => setCanResize(false) : undefined}
+      onMouseOver={leftPanelActive ? () => setCanResize(true) : undefined}
+      onFocus={leftPanelActive ? () => setCanResize(true) : undefined}
     >
       {children}
+      {leftPanelActive && (
+        <div
+          aria-orientation="vertical"
+          onPointerDown={handleResize}
+          onDoubleClick={resetLeftPanelToDefault}
+          className="absolute bottom-0 right-0 top-0 h-full w-3 cursor-col-resize transition-all"
+          style={{ opacity: canResize ? 1 : 0 }}
+        >
+          <div className="mx-auto h-full w-[1px] bg-[--border-weak]" />
+        </div>
+      )}
     </div>
   )
 }
@@ -147,8 +134,9 @@ type DocsLayoutContextValue = {
   updateLeftPanelWidth: (width: number) => void
   defaultLeftPanelWidth: number
   leftPanelActive: boolean
-  setLeftPanelActive: (active: boolean) => void
+  setLeftPanelActive: React.Dispatch<React.SetStateAction<boolean>>
   leftPanelEnabled: boolean
+  resetLeftPanelToDefault: () => void
 }
 
 const DocsLayoutContext = React.createContext<DocsLayoutContextValue>({
@@ -158,14 +146,21 @@ const DocsLayoutContext = React.createContext<DocsLayoutContextValue>({
   leftPanelActive: false,
   setLeftPanelActive: () => {},
   leftPanelEnabled: false,
+  resetLeftPanelToDefault: () => {},
 })
 
 export function useDocsLayoutContext() {
   return React.useContext(DocsLayoutContext)
 }
 
-function DocsLayoutProvider({ children }: React.PropsWithChildren) {
-  const leftPanelEnabled = useMediaQuery(`only screen and (min-width: ${ENABLED_LEFT_PANEL_BREAKPOINT}px)`)
+interface DocsLayoutProviderProps {
+  tableOfContentsVisible: boolean
+}
+
+function DocsLayoutProvider({ children, tableOfContentsVisible }: React.PropsWithChildren<DocsLayoutProviderProps>) {
+  const leftPanelEnabled = useMediaQuery(`only screen and (min-width: ${LEFT_PANEL_ENABLED_BREAKPOINT}px)`)
+  const isGreaterThanBreakpoint = useMediaQuery(`only screen and (min-width: ${LEFT_PANEL_MIN_WIDTH_BREAKPOINT}px)`)
+
   const [defaultLeftPanelWidth, setDefaultLeftPanelWidth] = React.useState<number>(0)
   const [leftPanelWidth, setLeftPanelWidth] = React.useState<number>(0)
   const [leftPanelActive, setLeftPanelActive] = React.useState<boolean>(false)
@@ -185,12 +180,29 @@ function DocsLayoutProvider({ children }: React.PropsWithChildren) {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const updateLeftPanelWidth = React.useCallback(
+    (width: number) => {
+      if (isGreaterThanBreakpoint) {
+        setLeftPanelWidth(Math.min(Math.max(width, MIN_LEFT_PANEL_WIDTH_GREATER_THAN_BREAKPOINT), MAX_LEFT_PANEL_WIDTH))
+      } else {
+        setLeftPanelWidth(Math.min(Math.max(width, MIN_LEFT_PANEL_WIDTH_LESS_THAN_BREAKPOINT), MAX_LEFT_PANEL_WIDTH))
+      }
+    },
+    [isGreaterThanBreakpoint],
+  )
+
+  const resetLeftPanelToDefault = React.useCallback(() => {
+    updateLeftPanelWidth(defaultLeftPanelWidth)
+  }, [defaultLeftPanelWidth, updateLeftPanelWidth])
+
+  React.useEffect(() => {
+    if (!tableOfContentsVisible) {
+      resetLeftPanelToDefault()
+    }
+  }, [tableOfContentsVisible, resetLeftPanelToDefault])
+
   function getDefaultWidth() {
     return (window.innerWidth - EDITOR_WIDTH) / 2
-  }
-
-  function updateLeftPanelWidth(width: number) {
-    setLeftPanelWidth(Math.min(Math.max(width, MIN_LEFT_PANEL_WIDTH), MAX_LEFT_PANEL_WIDTH))
   }
 
   return (
@@ -202,6 +214,7 @@ function DocsLayoutProvider({ children }: React.PropsWithChildren) {
         leftPanelActive,
         setLeftPanelActive,
         leftPanelEnabled,
+        resetLeftPanelToDefault,
       }}
     >
       {children}
@@ -211,11 +224,12 @@ function DocsLayoutProvider({ children }: React.PropsWithChildren) {
 
 interface ContainerProps {
   isSuggestionMode: boolean
+  tableOfContentsVisible: boolean
 }
 
-function Container({ isSuggestionMode, children }: React.PropsWithChildren<ContainerProps>) {
+function Container({ children, isSuggestionMode, tableOfContentsVisible }: React.PropsWithChildren<ContainerProps>) {
   return (
-    <DocsLayoutProvider>
+    <DocsLayoutProvider tableOfContentsVisible={tableOfContentsVisible}>
       <div
         className={clsx('relative grid h-full w-full bg-[white]', isSuggestionMode && 'suggestion-mode')}
         style={{
