@@ -1,48 +1,57 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { usePlans } from '@proton/account/plans/hooks';
 import type { ModalStateProps } from '@proton/components';
-import { Price, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS, getPlanByName } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { LUMO_BUSINESS_PATH } from '../constants';
 import { sendSubscriptionModalInitializedEvent, sendSubscriptionModalSubscribedEvent } from '../util/telemetry';
-import LumoUpsellModal from './LumoUpsellModal';
+import { getMarketingUrl } from '../util/marketingUrls';
+import LumoUpsellModal, { type UpsellAudience } from './LumoUpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
     upsellRef?: string;
-    specialBackdrop?: boolean;
 }
 
-// TODO: Add the logic to refresh after subscription is completed
-
-const LumoPlusUpsellModal = ({ modalProps, upsellRef, specialBackdrop = false }: Props) => {
+const LumoPlusUpsellModal = ({ modalProps, upsellRef }: Props) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const { plansMap, plansMapLoading } = usePreferredPlansMap();
+    const [plansResult] = usePlans();
+    const { plansMap, plansMapLoading, preferredCurrency } = usePreferredPlansMap(true);
 
     const handleSubscriptionModalSubscribed = () => {
         modalProps.onClose();
         sendSubscriptionModalSubscribedEvent(upsellRef);
     };
 
-    const handleOpenSubscriptionModal = () => {
+    const openCheckout = (plan: PLANS) => {
         modalProps.onClose();
-
         sendSubscriptionModalInitializedEvent(upsellRef);
 
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             maximumCycle: CYCLE.YEARLY,
-            plan: PLANS.LUMO,
+            plan,
             onSubscribed: () => {
                 handleSubscriptionModalSubscribed();
             },
             upsellRef,
         });
+    };
+
+    const handleUpgrade = (audience: UpsellAudience) => {
+        if (audience === 'business' && !plansMap[PLANS.LUMO_BUSINESS]) {
+            modalProps.onClose();
+            window.location.assign(getMarketingUrl(LUMO_BUSINESS_PATH));
+            return;
+        }
+
+        openCheckout(audience === 'business' ? PLANS.LUMO_BUSINESS : PLANS.LUMO);
     };
 
     if (plansMapLoading) {
@@ -54,30 +63,31 @@ const LumoPlusUpsellModal = ({ modalProps, upsellRef, specialBackdrop = false }:
     if (!lumoPlan) {
         return <Loader />;
     }
-    const monthlyAmount = (lumoPlan.Pricing[CYCLE.YEARLY] || 0) / CYCLE.YEARLY;
 
-    const price = (
-        <Price currency={lumoPlan.Currency} suffix={c('Suffix').t`/month`} key="monthlyAmount">
-            {monthlyAmount}
-        </Price>
-    );
+    const lumoBusinessPlan =
+        plansMap[PLANS.LUMO_BUSINESS] ??
+        (plansResult?.plans
+            ? getPlanByName(plansResult.plans, PLANS.LUMO_BUSINESS, preferredCurrency, CYCLE.YEARLY, true)
+            : undefined);
+    const plusMonthlyAmount = (lumoPlan.Pricing[CYCLE.YEARLY] || 0) / CYCLE.YEARLY;
 
     return (
         <LumoUpsellModal
             modalProps={modalProps}
-            upsellRef={upsellRef}
-            specialBackdrop={specialBackdrop}
-            ctaButton={
-                <ButtonLike
-                    onClick={handleOpenSubscriptionModal}
-                    loading={loadingSubscriptionModal}
-                    size="large"
-                    color="norm"
-                    shape="solid"
-                    fullWidth
-                    className="lumo-payment-trigger"
-                >{c('collider_2025: Action').jt`Get ${LUMO_SHORT_APP_NAME} Plus from only ${price}`}</ButtonLike>
-            }
+            plusPlan={{
+                planName: c('collider_2025: Plan Name').t`${LUMO_SHORT_APP_NAME} AI Plus`,
+                currency: lumoPlan.Currency,
+                monthlyAmount: plusMonthlyAmount,
+                ctaText: c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} AI Plus`,
+            }}
+            businessPlan={{
+                planName: c('collider_2025: Plan Name').t`${LUMO_SHORT_APP_NAME} AI Pro`,
+                currency: lumoBusinessPlan?.Currency ?? lumoPlan.Currency,
+                monthlyAmount: 1199,
+                ctaText: c('collider_2025: Upsell Title').t`Get ${LUMO_SHORT_APP_NAME} AI Pro`
+            }}
+            onUpgrade={handleUpgrade}
+            loading={loadingSubscriptionModal}
         />
     );
 };

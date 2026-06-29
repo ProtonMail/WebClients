@@ -1,121 +1,240 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { ModalTwo, ModalTwoContent, Price } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import type { Currency } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
+import lumoUpsellModalPlus from '@proton/styles/assets/img/lumo/lumo-upsell-modal-plus.svg';
+import lumoUpsellModalBusiness from '@proton/styles/assets/img/lumo/lumo-upsell-modal-pro.svg';
+import clsx from '@proton/utils/clsx';
 
 import { type IconName, LumoIcon } from '../components/LumoIcon/LumoIcon';
-import { LumoLogoWithTierTag } from '../components/LumoLogoWithTierTag/LumoLogoWithTierTag';
-import LumoPlusBackdropOverlay from './LumoPlusBackdropOverlay';
+import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
+import { useLumoPlan } from '../providers/LumoPlanProvider';
 
 import './LumoPlusUpsellModal.scss';
 
-interface Feature {
+export type UpsellAudience = 'personal' | 'business';
+
+interface PlanFeature {
     icon: IconName;
     getText: () => string;
 }
 
-const features: Feature[] = [
+const plusFeatures: PlanFeature[] = [
     {
-        icon: 'Globe',
-        getText: () => c('collider_2025: Feature').t`Get answers with real-time web search`,
+        icon: 'Lightbulb',
+        getText: () => c('collider_2025: Characteristic').t`More Max model usage`,
     },
     {
-        icon: 'MessageSquare',
-        getText: () => c('collider_2025: Feature').t`Chat as much as you need with no limits`,
+        icon: 'MessageCircleMore',
+        getText: () => c('collider_2025: Characteristic').t`More messages & chat history`,
     },
     {
-        icon: 'History',
-        getText: () => c('collider_2025: Feature').t`Access all your past conversations anytime`,
+        icon: 'ImagePlus',
+        getText: () => c('collider_2025: Characteristic').t`More image generations`,
     },
     {
-        icon: 'Folder',
-        getText: () => c('collider_2025: Feature').t`Organize work in projects with custom instructions`,
+        icon: 'FolderOpen',
+        getText: () => c('collider_2025: Characteristic').t`Unlimited Projects`,
     },
     {
-        icon: 'Star',
-        getText: () => c('collider_2025: Feature').t`Save unlimited conversations as favorites`,
-    },
-    {
-        icon: 'ArrowUpFromLine',
-        getText: () => c('collider_2025: Feature').t`Upload and analyze larger files`,
-    },
-    {
-        icon: 'Cpu',
-        getText: () => c('collider_2025: Feature').t`Use the most advanced AI models`,
+        icon: 'BotMessageSquare',
+        getText: () => c('collider_2025: Characteristic').t`Unlimited Custom Lumos`,
     },
 ];
 
-interface Props {
-    modalProps: ModalStateProps;
-    upsellRef?: string;
-    specialBackdrop?: boolean;
-    // subTitle?: string;
-    ctaButton?: React.ReactNode;
-    loading?: boolean;
-    options?: {
-        subTitle?: string | any[];
-        illustration?: string;
-    };
+const businessFeatures: PlanFeature[] = [
+    ...plusFeatures,
+    {
+        icon: 'UserCog',
+        getText: () => c('collider_2025: Characteristic').t`Administrative tools`,
+    },
+];
+
+export interface UpsellPlanPricing {
+    planName: string;
+    currency: Currency;
+    monthlyAmount?: number;
+    ctaText: string;
 }
 
-// TODO: Add the logic to refresh after subscription is completed
+interface Props {
+    modalProps: ModalStateProps;
+    plusPlan: UpsellPlanPricing;
+    businessPlan: UpsellPlanPricing;
+    onUpgrade: (audience: UpsellAudience) => void;
+    loading?: boolean;
+}
 
-const LumoUpsellModal = ({ modalProps, specialBackdrop = false, ctaButton, options, loading = false }: Props) => {
-    const [showModal, setShowModal] = useState(!specialBackdrop);
+const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loading = false }: Props) => {
+    const { canShowLumoUpsellB2B } = useLumoPlan();
+    const { isSmallScreen } = useIsLumoSmallScreen();
+    const [audience, setAudience] = useState<UpsellAudience>(canShowLumoUpsellB2B ? 'business' : 'personal');
 
-    const handleBackdropAnimationComplete = () => {
-        setShowModal(true);
-    };
+    const isBusinessAudience = audience === 'business';
+    const activePlan = isBusinessAudience ? businessPlan : plusPlan;
+    const activeFeatures = isBusinessAudience ? businessFeatures : plusFeatures;
 
-    const description =
-        options?.subTitle ||
-        c('collider_2025: Description')
-            .t`Elevate your private AI experience and unlock advanced models and premium features with ${LUMO_SHORT_APP_NAME} Plus.`;
+    const modalTitle = useMemo(() => {
+        if (isBusinessAudience) {
+            return c('collider_2025: Upsell Title').t`Upgrade to ${LUMO_SHORT_APP_NAME} AI Pro`;
+        }
+
+        return c('collider_2025: Upsell Title').t`Upgrade to ${LUMO_SHORT_APP_NAME} AI Plus`;
+    }, [isBusinessAudience]);
+
+    const ctaContent = loading ? (
+        <Loader size="medium" />
+    ) : (
+        <Button
+            color="norm"
+            shape="solid"
+            size="large"
+            fullWidth
+            className="lumo-payment-trigger"
+            onClick={() => onUpgrade(audience)}
+        >
+            {activePlan.ctaText}
+        </Button>
+    );
 
     return (
         <>
-            {specialBackdrop && (
-                <LumoPlusBackdropOverlay show={modalProps.open} onAnimationComplete={handleBackdropAnimationComplete} />
+            {createPortal(
+                <Tooltip title={c('collider_2025:Action').t`Close`}>
+                    <button
+                        type="button"
+                        className="lumo-upsell-modal-close inline-flex items-center justify-center"
+                        onClick={modalProps.onClose}
+                        aria-label={c('collider_2025:Action').t`Close`}
+                    >
+                        <IcCross size={4} />
+                    </button>
+                </Tooltip>,
+                document.body
             )}
-            {showModal && (
-                <ModalTwo
-                    className={`modal-two--twocolors modal-two--upsell-lumoplus ${specialBackdrop ? 'modal-two--no-backdrop lumo-modal-animated' : ''}`}
-                    {...modalProps}
-                >
-                    <div className="modal-two--upsell-lumoplus-gradient">
-                        <ModalTwoHeader />
-                        <div className="modal-two-illustration-container mb-2 relative text-center">
-                            <img src={options?.illustration || lumoCatLoaf} alt="" />
+
+            <ModalTwo
+                className={clsx('modal-two--upsell-lumoplus', isSmallScreen && 'modal-two--upsell-lumoplus--small')}
+                enableCloseWhenClickOutside
+                {...modalProps}
+            >
+                <ModalTwoContent unstyled>
+                    <div className={clsx('lumo-upsell-modal', isSmallScreen && 'lumo-upsell-modal--small')}>
+                        <div className="lumo-upsell-modal-header">
+                            <h1 className={clsx('lumo-upsell-modal-title m-0 main-text', isSmallScreen && 'small')}>
+                                {modalTitle}
+                            </h1>
                         </div>
-                    </div>
-                    <div className="modal-two-content-container overflow-auto">
-                        <ModalTwoContent className="my-8 mx-8">
-                            <div className="mb-4">
-                                <LumoLogoWithTierTag tierTag="plus" height="24px" />
-                            </div>
-                            <p className="mt-2 mb-6 color-weak">{description}</p>
 
-                            <div className="mb-6">
-                                {features.map((feature, index) => (
-                                    <div key={index} className="flex items-center gap-3 py-3">
-                                        <LumoIcon className="color-primary shrink-0" name={feature.icon} size={16} />
-                                        <span>{feature.getText()}</span>
-                                    </div>
-                                ))}
+                        <div className="lumo-upsell-audience-toggle-wrapper">
+                            <div
+                                className="lumo-upsell-audience-toggle"
+                                role="tablist"
+                                aria-label={c('Title').t`Plan type`}
+                            >
+                                <button
+                                    type="button"
+                                    role="tab"
+                                    aria-selected={audience === 'personal'}
+                                    className={clsx(
+                                        'lumo-upsell-audience-toggle-item',
+                                        audience === 'personal' && 'is-selected'
+                                    )}
+                                    onClick={() => setAudience('personal')}
+                                >
+                                    {c('collider_2025: Plan Name').t`Personal`}
+                                </button>
+                                <button
+                                    type="button"
+                                    role="tab"
+                                    aria-selected={audience === 'business'}
+                                    className={clsx(
+                                        'lumo-upsell-audience-toggle-item',
+                                        audience === 'business' && 'is-selected'
+                                    )}
+                                    onClick={() => setAudience('business')}
+                                >
+                                    {c('collider_2025: Plan Name').t`Business`}
+                                </button>
                             </div>
+                        </div>
 
-                            <div className="mt-6 mb-6 text-center">
-                                {loading ? <Loader size="medium" /> : ctaButton}
+                        <div className="lumo-upsell-plan-card-shell">
+                            <div className="lumo-upsell-plan-card">
+                                {isSmallScreen ? (
+                                    <>
+                                        <img
+                                            src={isBusinessAudience ? lumoUpsellModalBusiness : lumoUpsellModalPlus}
+                                            alt=""
+                                            className="lumo-upsell-plan-image p-4 pb-0"
+                                        />
+                                        <ul className="lumo-upsell-features unstyled m-0">
+                                            {activeFeatures.map((feature) => (
+                                                <li key={feature.icon} className="lumo-upsell-feature">
+                                                    <LumoIcon
+                                                        name={feature.icon}
+                                                        size={16}
+                                                        className="color-norm-major shrink-0"
+                                                    />
+                                                    <span>{feature.getText()}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                ) : (
+                                    <>
+                                        <h2 className="lumo-upsell-plan-name m-0 main-text medium">
+                                            {activePlan.planName}
+                                        </h2>
+
+                                        {activePlan.monthlyAmount !== undefined && (
+                                            <div className="lumo-upsell-pricing">
+                                                <span className="lumo-upsell-pricing-label">
+                                                    {c('collider_2025: Upsell Title').t`From only`}
+                                                </span>
+                                                <Price className="lumo-upsell-price" currency={activePlan.currency}>
+                                                    {activePlan.monthlyAmount}
+                                                </Price>
+                                                <span className="lumo-upsell-pricing-sublabel">
+                                                    {isBusinessAudience
+                                                        ? c('Subtitle').t`per user/month, billed annually`
+                                                        : c('Subtitle').t`per month, billed annually`}
+                                                </span>
+                                            </div>
+                                        )}
+
+                                        <div className="lumo-upsell-cta">{ctaContent}</div>
+
+                                        <ul className="lumo-upsell-features unstyled m-0">
+                                            {activeFeatures.map((feature) => (
+                                                <li key={feature.icon} className="lumo-upsell-feature">
+                                                    <LumoIcon
+                                                        name={feature.icon}
+                                                        size={16}
+                                                        className="color-norm-major shrink-0"
+                                                    />
+                                                    <span>{feature.getText()}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                )}
                             </div>
-                        </ModalTwoContent>
+                        </div>
+
+                        {isSmallScreen && <div className="lumo-upsell-cta">{ctaContent}</div>}
                     </div>
-                </ModalTwo>
-            )}
+                </ModalTwoContent>
+            </ModalTwo>
         </>
     );
 };
