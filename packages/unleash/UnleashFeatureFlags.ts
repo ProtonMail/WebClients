@@ -156,6 +156,7 @@ export enum CalendarFeatureFlag {
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     CalendarMetrics = 'CalendarMetrics',
     RsvpCommentWeb = 'RsvpCommentWeb',
+    AutoAddDisabledE2EEAttendees = 'AutoAddDisabledE2EEAttendees',
 }
 
 export enum CalendarKillSwitchFlag {
