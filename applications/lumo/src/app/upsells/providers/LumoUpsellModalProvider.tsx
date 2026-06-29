@@ -116,7 +116,6 @@ export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = (
                     <LumoPlusUpsellModal
                         modalProps={lumoPlusUpsellModalProps}
                         upsellRef={lumoPlusUpsellModalProps.data.upsellRef}
-                        specialBackdrop
                     />
                 </Suspense>
             )}
