@@ -1,20 +1,22 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { RefObject } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
+import lumojiCreateDark from '@proton/styles/assets/img/lumo/lumoji-create-dark.svg';
+import lumojiCreateLight from '@proton/styles/assets/img/lumo/lumoji-create-light.svg';
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
-import LumoCatAnimation from '../../components/Conversation/MainContainer/LumoCatAnimation';
 import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestSignInState';
 import { LazyLottie } from '../../components/LazyLottie';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
+import { useLumoTheme } from '../../providers';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
@@ -179,6 +181,7 @@ const CreateTabContent = ({
     gallerySketchTrigger,
     onSuggestionClick,
 }: CreateTabContentProps) => {
+    const { isDarkLumoTheme } = useLumoTheme();
     return (
         <div className="main-container-component rounded-xl flex flex-column flex-nowrap flex-1">
             <div
@@ -188,8 +191,8 @@ const CreateTabContent = ({
                     '--lg-max-w-custom': '43rem',
                 }}
             >
-                <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
-                    <LumoCatAnimation isGhostMode={false} />
+                <div className="lumo-welcome-section flex flex-column items-center text-center w-full flex-none md:flex-auto justify-end">
+                    <img src={isDarkLumoTheme ? lumojiCreateDark : lumojiCreateLight} alt="" />
                     <h1 className="main-text lh100 text-wrap-balance text-center mb-8 relative z-10">
                         {c('collider_2025:Title').t`What do you want to create today?`}
                     </h1>

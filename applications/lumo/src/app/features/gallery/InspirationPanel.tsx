@@ -27,13 +27,13 @@ export const DiscoverList = ({ onSuggestionClick }: { onSuggestionClick: (s: Gal
     const visible = useMemo(() => pickSuggestions(pool, []), [pool]);
 
     return (
-        <div className="w-full overflow-x-auto mt-10">
-            <div className="flex flex-row flex-nowrap gap-4">
+        <div className="w-full flex-none md:flex-auto justify-center flex flex-column">
+            <div className="flex flex-row flex-nowrap gap-4 w-full overflow-x-auto">
                 {visible.map((s) => (
                     <button
                         key={s.id}
-                        className="inspiration-discover__item border border-weak min-w-custom flex flex-row flex-nowrap gap-4 items-center p-4 rounded-xl text-left min-h-custom"
-                        style={{ '--min-w-custom': '250px', '--min-h-custom': '100px' }}
+                        className="inspiration-discover__item border border-weak min-w-custom flex flex-row flex-nowrap gap-4 items-center px-3 py-2 rounded-xl text-left min-h-custom"
+                        style={{ '--min-w-custom': '250px', '--min-h-custom': '140px' }}
                         onClick={() => onSuggestionClick(s)}
                         type="button"
                         aria-label={s.getTitle()}
