@@ -142,7 +142,7 @@
         "パスワードを変更"
       ],
       "Change sorting": [
-        "並べ替えを変更"
+        "並べ替えの変更"
       ],
       "Chat with us": [
         "チャットする"
@@ -190,7 +190,7 @@
         "ここをクリック"
       ],
       "Click to copy ${ defaultEmailAddress } to clipboard": [
-        "クリックして${ defaultEmailAddress }をコピー"
+        "クリックして${ defaultEmailAddress }をクリップボードにコピー"
       ],
       "Close": [
         "閉じる"
@@ -241,7 +241,7 @@
         "${ planOrAppName } に進む"
       ],
       "Continue with categories": [
-        "カテゴリで続ける"
+        "カテゴリを続ける"
       ],
       "Continue with Free": [
         "無料で続行"
@@ -322,7 +322,7 @@
         "下書きを削除"
       ],
       "Delete folder": [
-        "フォルダを削除"
+        "フォルダ削除"
       ],
       "Delete permanently": [
         "完全に削除"
@@ -385,7 +385,7 @@
         "メールアドレスを編集"
       ],
       "Edit folder": [
-        "フォルダーを編集"
+        "フォルダを編集"
       ],
       "Edit label": [
         "ラベルを編集"
@@ -421,7 +421,7 @@
         "ビデオ会議ウィジェットを拡張"
       ],
       "Explore ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }を探検"
+        "${ VPN_APP_NAME }を探索"
       ],
       "Explore other plans": [
         "その他のプランを表示"
@@ -451,7 +451,7 @@
         "パスワードを生成"
       ],
       "Generate text": [
-        "文章を生成"
+        "テキストを生成"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } を ${ priceCoupon }で入手"
@@ -496,13 +496,13 @@
         "ラベルへ移動"
       ],
       "Go to next page": [
-        "次のページへ"
+        "次のページに移動"
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
       ],
       "Go to previous page": [
-        "前のページへ"
+        "前のページに移動"
       ],
       "Go to settings": [
         "設定に移動"
@@ -526,7 +526,7 @@
         "拡張 PGP 設定を非表示"
       ],
       "Hide details": [
-        "詳細を隠す"
+        "詳細を非表示"
       ],
       "Hide more benefits": [
         "その他のメリットを隠す"
@@ -676,7 +676,7 @@
         "連絡先を統合"
       ],
       "Modify selection": [
-        "選択部分を編集"
+        "修正項目"
       ],
       "More": [
         "詳細"
@@ -694,7 +694,7 @@
         "アカウントのその他のオプション"
       ],
       "Most frequent": [
-        "頻度の高い順"
+        "最も頻度の高い"
       ],
       "Move": [
         "移動"
@@ -763,7 +763,7 @@
         "ソート済みリスト"
       ],
       "Page ${ pageNumber }": [
-        "ページ ${ pageNumber }"
+        "${ pageNumber }ページ"
       ],
       "Passphrase": [
         "パスフレーズ"
@@ -910,7 +910,7 @@
         "${ planOrAppName } を選択"
       ],
       "Select All": [
-        "全て選択"
+        "すべて選択"
       ],
       "Select all": [
         "すべて選択"
@@ -988,7 +988,7 @@
         "拡張 PGP 設定を表示"
       ],
       "Show fewer search options": [
-        "検索オプションを非表示"
+        "表示する検索オプションを減らします"
       ],
       "Show less": [
         "詳細を非表示"
@@ -1202,6 +1202,498 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "A to Z": [
+        "A～Z"
+      ],
+      "Active": [
+        "有効"
+      ],
+      "Add Bcc recipients": [
+        "Bcc に宛先を追加"
+      ],
+      "Add Cc recipients": [
+        "Cc に宛先を追加"
+      ],
+      "Add participant": [
+        "参加者を追加"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } に追加"
+      ],
+      "Adds it above your existing message": [
+        "既存のメッセージの上に追加します"
+      ],
+      "All Read": [
+        "すべて既読"
+      ],
+      "All Starred": [
+        "すべてのスターつき"
+      ],
+      "All Unread": [
+        "すべて未読"
+      ],
+      "All Unstarred": [
+        "全て星印なし"
+      ],
+      "Archive": [
+        "アーカイブ"
+      ],
+      "As Scheduled": [
+        "予定通り"
+      ],
+      "Attachment": [
+        "添付ファイル"
+      ],
+      "Blind Carbon Copy": [
+        "ブラインドカーボンコピー"
+      ],
+      "Block email tracking": [
+        "メールトラッキングをブロックする"
+      ],
+      "Block messages from this sender": [
+        "この送信者からのメッセージをブロックする"
+      ],
+      "Block senders": [
+        "差出人をブロック"
+      ],
+      "Carbon Copy": [
+        "カーボンコピー"
+      ],
+      "Clear application data": [
+        "アプリケーションデータの削除"
+      ],
+      "Close composer": [
+        "メール作成を閉じる"
+      ],
+      "Collapse URL": [
+        "URL を折りたたむ"
+      ],
+      "Continue without categories": [
+        "カテゴリを指定せずに続行"
+      ],
+      "Contract composer": [
+        "元に戻す"
+      ],
+      "Copy addresses": [
+        "アドレスをコピー"
+      ],
+      "Copy password to clipboard": [
+        "パスワードをクリップボードにコピー"
+      ],
+      "Create a new folder": [
+        "新しいフォルダを作成"
+      ],
+      "Create a new label": [
+        "新しいラベルを作成"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "「${ boldFolderName }」フォルダを作成"
+      ],
+      "Create new message": [
+        "新しいメッセージを作成"
+      ],
+      "Custom": [
+        "カスタム"
+      ],
+      "Delete label": [
+        "ラベルを削除"
+      ],
+      "Deselect all messages": [
+        "すべてのメッセージの選択を解除"
+      ],
+      "Disabling alias": [
+        "エイリアスを無効化"
+      ],
+      "Download ${ attachmentName }": [
+        "${ attachmentName } をダウンロード"
+      ],
+      "Download all attachments": [
+        "すべての添付ファイルをダウンロード"
+      ],
+      "Download application logs": [
+        "アプリのログをダウンロード"
+      ],
+      "Edit address": [
+        "アドレスを編集"
+      ],
+      "Edit draft": [
+        "下書きを編集"
+      ],
+      "Edit encryption": [
+        "暗号化を編集"
+      ],
+      "Encryption": [
+        "暗号化"
+      ],
+      "exclude message content": [
+        "メッセージの内容を除外"
+      ],
+      "Expand composer": [
+        "広げる"
+      ],
+      "Expand navigation bar to see folders": [
+        "ナビゲーションバーを展開してフォルダーを表示"
+      ],
+      "Expand navigation bar to see labels": [
+        "ナビゲーションバーを展開してラベルを表示"
+      ],
+      "Expand URL": [
+        "URL を展開"
+      ],
+      "Expiration time": [
+        "有効期限"
+      ],
+      "External encryption": [
+        "外部への暗号化"
+      ],
+      "Fewer search options": [
+        "検索オプションを非表示"
+      ],
+      "Filter on...": [
+        "絞り込み"
+      ],
+      "Formalize": [
+        "フォーマルにする"
+      ],
+      "Go to page ${ page }": [
+        "${ page } ページに移動"
+      ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタントを非表示"
+      ],
+      "Hide attachment details": [
+        "添付ファイルの詳細を隠す"
+      ],
+      "Hide messages": [
+        "メッセージを非表示"
+      ],
+      "Hide toolbar": [
+        "ツールバーを非表示"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email エイリアス"
+      ],
+      "I like this response": [
+        "この返信が好みです"
+      ],
+      "In the morning": [
+        "午前中"
+      ],
+      "Inline": [
+        "インライン"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "${ totalChecked } 件の連絡先を挿入"
+      ],
+      "Is this private?": [
+        "これはプライベートですか？"
+      ],
+      "Later this week": [
+        "今週中"
+      ],
+      "Least read": [
+        "既読数が少ない順"
+      ],
+      "Loading${ ellipsis }": [
+        "読み込み中${ ellipsis }"
+      ],
+      "Make it friendly": [
+        "フレンドリーにする"
+      ],
+      "Manage Snooze": [
+        "スヌーズを管理"
+      ],
+      "Mark as read": [
+        "既読にする"
+      ],
+      "Mark as unread": [
+        "未読にする"
+      ],
+      "Maximize composer": [
+        "最大化"
+      ],
+      "Messages from this sender": [
+        "この差出人からのメッセージ"
+      ],
+      "Messages to this recipient": [
+        "この宛先へのメッセージ"
+      ],
+      "Minimize composer": [
+        "最小化"
+      ],
+      "Modify": [
+        "修正"
+      ],
+      "Monday": [
+        "月曜日"
+      ],
+      "More details about ${ ariaLabelTitle }": [
+        "${ ariaLabelTitle } についての詳細"
+      ],
+      "More refine actions": [
+        "その他の修正操作"
+      ],
+      "More search options": [
+        "検索オプションを表示"
+      ],
+      "Most read": [
+        "既読が多い順"
+      ],
+      "Move all to archive": [
+        "すべてアーカイブに移動"
+      ],
+      "Move all to trash": [
+        "すべてをごみ箱に移動"
+      ],
+      "Move to": [
+        "移動先"
+      ],
+      "Move to Archive": [
+        "アーカイブに移動"
+      ],
+      "Move to inbox": [
+        "受信トレイに移動"
+      ],
+      "Move to spam": [
+        "迷惑メールに移動"
+      ],
+      "Move to spam and unsubscribe": [
+        "迷惑メールに移動し購読解除"
+      ],
+      "Move to...": [
+        "に移動"
+      ],
+      "Never show": [
+        "常に非表示"
+      ],
+      "Next conversation": [
+        "次の会話"
+      ],
+      "Next message": [
+        "次のメッセージ"
+      ],
+      "Not saved": [
+        "未保存"
+      ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } を開く"
+      ],
+      "Preview ${ attachmentName }": [
+        "${ attachmentName } をプレビュー"
+      ],
+      "Previous message": [
+        "前のメッセージ"
+      ],
+      "Proofread": [
+        "校正する"
+      ],
+      "Read message": [
+        "メッセージを読む"
+      ],
+      "Read receipt sent": [
+        "開封確認が送信されました"
+      ],
+      "Recently received": [
+        "最近受信したもの"
+      ],
+      "Refine it": [
+        "絞り込む"
+      ],
+      "Remove encryption": [
+        "暗号化を削除"
+      ],
+      "Remove expiration time": [
+        "有効期限を削除"
+      ],
+      "Remove from list": [
+        "リストから削除"
+      ],
+      "Remove self-destruction": [
+        "自己破棄機能を取り除く"
+      ],
+      "Replace": [
+        "置き換える"
+      ],
+      "Replaces the selected text in your message": [
+        "メッセージ内の選択したテキストを置き換えます"
+      ],
+      "Report phishing": [
+        "フィッシング詐欺を報告"
+      ],
+      "Reset search form": [
+        "検索欄をクリア"
+      ],
+      "Resize panel": [
+        "パネルのサイズ変更"
+      ],
+      "Resume downloading": [
+        "ダウンロードを再開"
+      ],
+      "Revert to original display": [
+        "元の表示に戻す"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } サーバー上で実行"
+      ],
+      "Saving${ ellipsis }": [
+        "保存中${ ellipsis }"
+      ],
+      "Search in ${ option.text }": [
+        "${ option.text } 内を検索"
+      ],
+      "Search message content": [
+        "メッセージ内容の検索"
+      ],
+      "See business plans": [
+        "ビジネスプランを表示"
+      ],
+      "Select all messages": [
+        "すべてのメッセージを選択"
+      ],
+      "Self-destruct in 7 days": [
+        "有効期限を 7 日後に設定"
+      ],
+      "Self-destruct message": [
+        "メッセージの自己破棄"
+      ],
+      "Self-destruct on ...": [
+        "有効期限を設定..."
+      ],
+      "Send read receipt": [
+        "開封確認を送信する"
+      ],
+      "Send unsubscribe email": [
+        "登録解除メールを送る"
+      ],
+      "Set": [
+        "設定する"
+      ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "${ MAIL_APP_NAME } をデフォルトのメールアプリケーションとして設定する"
+      ],
+      "Set expiration time": [
+        "有効期限を設定"
+      ],
+      "Shorten": [
+        "短縮する"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタントを表示"
+      ],
+      "Show attachment details": [
+        "添付ファイルの詳細を表示"
+      ],
+      "Show details": [
+        "詳細を表示"
+      ],
+      "Show messages": [
+        "メッセージを表示"
+      ],
+      "Show more search options": [
+        "検索オプションをさらに表示"
+      ],
+      "Show toolbar": [
+        "ツールバーを表示"
+      ],
+      "Snooze": [
+        "スヌーズ"
+      ],
+      "Star": [
+        "スターを付ける"
+      ],
+      "Stop downloading assistant": [
+        "アシスタントのダウンロードを停止"
+      ],
+      "Stop generating result": [
+        "結果の生成を停止"
+      ],
+      "Stop moving to Archive": [
+        "アーカイブへの移動を停止"
+      ],
+      "Stop moving to Trash": [
+        "ごみ箱への移動を停止"
+      ],
+      "This message contains embedded images.": [
+        "このメッセージには埋め込み画像が含まれています。"
+      ],
+      "This message contains remote content.": [
+        "このメッセージには外部コンテンツが含まれています。"
+      ],
+      "This weekend": [
+        "今週末"
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "メールを安全に検索するには、メッセージのコピーをブラウザにダウンロードする必要があります。初回のダウンロードには時間がかかることがあります。"
+      ],
+      "Toggle security center app": [
+        "セキュリティセンターアプリを切り替える"
+      ],
+      "Toggle VPN dashboard": [
+        "VPNダッシュボードを切り替える"
+      ],
+      "Tomorrow": [
+        "明日"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "トラッカープロテクションにより、一部の画像の読み込みが防止されました。送信者を信頼できる場合は、それらを読み込んでください。"
+      ],
+      "Trust public key": [
+        "公開鍵を信頼"
+      ],
+      "Try categories": [
+        "カテゴリを試す"
+      ],
+      "Unblock": [
+        "ブロックを解除する"
+      ],
+      "Unsnooze": [
+        "スヌーズを解除"
+      ],
+      "Unsubscribed": [
+        "登録解除済み"
+      ],
+      "Unsubscribing": [
+        "登録を解除しています"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を使用"
+      ],
+      "Use this": [
+        "これを使用"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
+      ],
+      "View headers": [
+        "ヘッダーを表示する"
+      ],
+      "View HTML": [
+        "HTMLで表示する"
+      ],
+      "View keys": [
+        "鍵を表示"
+      ],
+      "View message details": [
+        "メッセージの詳細を表示"
+      ],
+      "View recipients": [
+        "宛先を表示"
+      ],
+      "View rendered HTML": [
+        "HTML 描画で表示"
+      ],
+      "Why not?": [
+        "どうして？"
+      ],
+      "Write for me": [
+        "私の代わりに返信"
+      ],
+      "Your email writing assistant": [
+        "メール執筆アシスタント"
       ]
     },
     "action": {
@@ -1303,7 +1795,25 @@
         "会話に星印をつける"
       ],
       "Unstar message": [
-        "メッセージの星印を外す"
+        "星印を外す"
+      ],
+      "Forwarded": [
+        "転送済み"
+      ],
+      "Replied to": [
+        "返信済み"
+      ],
+      "Replied to all": [
+        "全員に返信済み"
+      ],
+      "Star message": [
+        "メッセージにスターをつける"
+      ],
+      "Unread email": [
+        "未読メール"
+      ],
+      "Unstar conversation": [
+        "会話のスターを外す"
       ]
     },
     "Animation": {
@@ -1348,6 +1858,18 @@
       ],
       "Run on device": [
         "デバイス上で実行"
+      ],
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "プライバシーを保護するため、データはデバイス上に保存されます。ダウンロードと互換性のあるハードウェアが必要です。"
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "お客様のプライバシーを保護するためにログは保持されません。処理が速くなります。"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } サーバー上で安全に実行"
+      ],
+      "Securely run on device": [
+        "デバイス上で安全に実行"
       ]
     },
     "Assistant toggle": {
@@ -1775,7 +2297,7 @@
         "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。"
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "${ participantName }はこの予定のうちの一つへの招待を承諾しました。"
+        "${ participantName } はいずれかの予定への招待を承諾しました。"
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "${ participantName } は招待の詳細と一致しない予定の最新情報を問い合わせてきました。カレンダーで招待の詳細を確認してください。"
@@ -1784,16 +2306,16 @@
         "${ participantName }はこの予定のうちの一つへの招待を辞退しました。"
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName }はこの予定のうちの一つへの招待を承諾していました。"
+        "${ participantName } はいずれかの予定への招待を承諾しました。"
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } はこの予定への招待を承諾していました。"
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } は招待を承諾し、この予定の新しい時間を提案していました。回答と提案は古くなっています。"
+        "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName }はこの予定のうちの一つへの招待を辞退していました。"
+        "${ participantName } はいずれかの予定への招待を辞退しました。"
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } は招待を辞退し、この予定のどれか一つに新しい時間を提案していました。この回答と提案は古くなっています。"
@@ -1805,7 +2327,7 @@
         "${ participantName } はこの予定への招待を仮承諾しました。"
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName }はこの予定のうちの一つへの招待を仮承諾しました。"
+        "${ participantName } はいずれかの予定への招待を仮承諾しました。"
       ],
       "This invitation is out of date. The event has been deleted.": [
         "この招待は古くなっています。この予定は削除されました。"
@@ -1815,6 +2337,204 @@
       ],
       "This response is out of date. You have no calendars.": [
         "この回答は古くなっています。カレンダーがありません。"
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        "${ participantName } はこの予定への招待を承諾しました。"
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を承諾し、この予定の1回の繰り返しについて新しい時間を提案しました。"
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } accepted your invitation to one occurrence of the event.": [
+        "${ participantName } はいずれかの予定への招待を承諾しました。"
+      ],
+      "${ participantName } accepted your invitation.": [
+        "${ participantName } は招待を承諾しました。"
+      ],
+      "${ participantName } asked for the latest event updates.": [
+        "${ participantName } は予定の最新情報を問い合わせてきました。"
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
+        "${ participantName } はもう存在しない予定の最新情報を問い合わせてきました。カレンダーがありません。"
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
+        "${ participantName } はあなたのカレンダーにもう存在しない予定の最新情報を問い合わせてきました。"
+      ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } はこの予定への招待を辞退しました。"
+      ],
+      "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } declined your invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } declined your invitation to one occurrence of the event.": [
+        "${ participantName } はいずれかの予定への招待を辞退しました。"
+      ],
+      "${ participantName } declined your invitation.": [
+        "${ participantName } は招待を辞退しました。"
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        "${ participantName } はこの予定への招待を辞退しました。"
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
+        "${ participantName } は以前にいずれかの予定への招待を承諾していました。"
+      ],
+      "${ participantName } had previously accepted your invitation.": [
+        "${ participantName } は以前に招待を承諾していました。"
+      ],
+      "${ participantName } had previously declined your invitation to one occurrence of the event.": [
+        "${ participantName } は以前にいずれかの予定への招待を辞退していました。"
+      ],
+      "${ participantName } had previously declined your invitation.": [
+        "${ participantName } は以前に招待を辞退していました。"
+      ],
+      "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } は以前にいずれかの予定への招待を仮承諾していました。"
+      ],
+      "${ participantName } had previously tentatively accepted your invitation.": [
+        "${ participantName } は以前に招待を仮承諾していました。"
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
+        "${ participantName } はいずれかの予定の新しい時間を提案しました。この提案は古くなっています。"
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } はいずれかの予定の新しい時間を提案しました。この提案は古くなっています。この予定はお客様のカレンダーに存在しません。"
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } はいずれかの予定の新しい時間を提案しました。この提案は古くなっています。カレンダーがありません。"
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
+        "${ participantName } はこの予定の新しい時間を提案していました。この提案は古くなっています。"
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } はこの予定の新しい時間を提案しました。この提案は古くなっています。この予定はお客様のカレンダーに存在しません。"
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } はこの予定の新しい時間を提案しました。この提案は古くなっています。カレンダーがありません。"
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } はいずれかの予定への招待を仮承諾しました。"
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } はこの予定への招待を仮承諾していました。"
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } is not in the participants list.": [
+        "${ participantName } は参加者リストにいません。"
+      ],
+      "${ participantName } proposed a new time for one occurrence of this event.": [
+        "${ participantName } はいずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } proposed a new time for this event.": [
+        "${ participantName } はこの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を仮承諾し、この予定の1回目の新しい時間を提案しました。"
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } はいずれかの予定への招待を仮承諾しました。"
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } tentatively accepted your invitation.": [
+        "${ participantName } は招待を仮承諾しました。"
+      ],
+      "(Attendance optional)": [
+        "(参加は任意です)"
+      ],
+      "Adding occurrences to an event is not supported for the moment": [
+        "予定に繰り返しを追加することには現在対応しておりません。"
+      ],
+      "Event refreshing is not supported for the moment": [
+        "予定の再読み込みには現在対応していません"
+      ],
+      "Event rescheduling is not supported for the moment": [
+        "予定の再スケジュールは現在サポートされていません"
+      ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "現時点ではシリーズの全イベントへの回答しかサポートされていないので、この回答を ${ CALENDAR_APP_NAME } に追加できません"
+      ],
+      "This event has been canceled.": [
+        "この予定はキャンセルされました。"
+      ],
+      "This event has been updated.": [
+        "この予定は更新されました。"
+      ],
+      "This invitation is out of date. The event has been canceled.": [
+        "この招待は古くなっています。この予定はキャンセルされました。"
+      ],
+      "This invitation is out of date. The event has been updated.": [
+        "この招待は古くなっています。この予定は更新されました。"
+      ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "この回答は招待の詳細と一致しません。カレンダーで招待の詳細を確認してください。"
+      ],
+      "This response is out of date.": [
+        "この回答は古くなっています。"
+      ],
+      "This response is out of date. The event does not exist in your calendar anymore.": [
+        "この回答は最新ではありません。予定はもうカレンダーに存在しません。"
+      ],
+      "You already accepted this invitation.": [
+        "この招待を承諾済みです。"
+      ],
+      "You already declined this invitation.": [
+        "この招待を辞退済みです。"
+      ],
+      "You already tentatively accepted this invitation.": [
+        "この招待を仮承諾済みです。"
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "現時点で参加者リストに含まれていない場合、${ BRAND_NAME }の招待には応答できません。"
+      ],
+      "Your email address is not in the original participants list.": [
+        "あなたのメールアドレスは元の参加者リストに含まれていません。"
       ]
     },
     "Cancellation reminder": {
@@ -2143,11 +2863,59 @@
       ],
       "Search": [
         "検索"
+      ],
+      "Create a new folder": [
+        "新しいフォルダを作成"
+      ],
+      "Create a new label": [
+        "新しいラベルを作成"
+      ],
+      "Go to Archive": [
+        "アーカイブを開く"
+      ],
+      "Go to Drafts": [
+        "下書きを開く"
+      ],
+      "Go to Inbox": [
+        "受信トレイを開く"
+      ],
+      "Go to Spam": [
+        "迷惑メールを開く"
+      ],
+      "Go to Starred": [
+        "スター付きを開く"
+      ],
+      "Go to Trash": [
+        "ごみ箱へ移動"
+      ],
+      "New message": [
+        "新しいメッセージ"
       ]
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "エンドツーエンド暗号化済み"
+        "エンドツーエンド暗号化"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "検証済みの宛先への、エンドツーエンド暗号化による送信"
+      ],
+      "End-to-end encrypted. ${ warningsText }": [
+        "エンドツーエンド暗号化 (${ warningsText })"
+      ],
+      "PGP-encrypted": [
+        "PGP 暗号化"
+      ],
+      "PGP-encrypted to verified recipient": [
+        "検証済みの宛先への、PGP 暗号化による送信"
+      ],
+      "PGP-encrypted. ${ warningsText }": [
+        "PGP 暗号化 (${ warningsText })"
+      ],
+      "PGP-signed": [
+        "PGP 署名済み"
+      ],
+      "The address might be misspelled": [
+        "アドレスの綴りが違う可能性があります"
       ]
     },
     "Condition for custom filter": {
@@ -2188,6 +2956,12 @@
       ],
       "Quit import?": [
         "インポートを終了しますか？"
+      ],
+      "Edit and reschedule": [
+        "編集してもう一度送信予約"
+      ],
+      "Message saved to Drafts": [
+        "メッセージを下書きに保存しました"
       ]
     },
     "Contact field label": {
@@ -3122,6 +3896,21 @@
     "CustomFilter": {
       "Sender": [
         "差出人"
+      ],
+      "Attachment": [
+        "添付ファイル"
+      ],
+      "Filter on": [
+        "絞り込み"
+      ],
+      "Next": [
+        "次へ"
+      ],
+      "Recipient": [
+        "宛先"
+      ],
+      "Subject": [
+        "件名"
       ]
     },
     "Cycle": {
@@ -3277,13 +4066,13 @@
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
-        "${ senderEmailAddress } からの新しいメールは今後受信されず、完全に削除されます。"
+        "${ senderEmailAddress }からのメールは今後一切受信しません。"
       ],
       "No ads. No trackers.": [
         "広告なし。トラッカーなし。"
       ],
       "No labels": [
-        "ラベルなし"
+        "ラベルがありません"
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }内からGmailの閲覧、返信、最新情報の確認が行えます"
@@ -3404,6 +4193,57 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "設定の${ manageBlockedAddressesSettingsLink }"
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "今すぐメールを送信したくないですか？適切な時間に予約しましょう。"
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "執筆アシスタントなどを無制限に利用するために、${ BRAND_NAME } Duo にアップグレードしてください。"
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "${ senderEmailAddress } と ${ otherSendersCount } からの新しいメールは受信されず、完全に削除されます。"
+      ],
+      "No folders": [
+        "フォルダがありません。"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "${ MAIL_APP_NAME }で直接Gmailメッセージを送受信できます。${ addressesSettingsLink }でお客様のアドレスを接続してください。"
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
+      ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "執筆アシスタントを引き続き使用するには、サブスクリプションを追加してください。"
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "執筆アシスタントを引き続き使用するには、管理者にアクセス権をリクエストしてください。"
+      ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "メール トラッカー保護をオンにして、広告主などがお客様の位置情報やオンライン アクティビティを追跡しないようにします。"
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "オンラインサービスにサインインするには、${ MAIL_APP_NAME } を使用してください。他のメールプロバイダーとは異なり、私たちはお客様のデータを追跡したり、第三者と共有したりすることは決してありません。"
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "このメールには既知のトラッカーと追跡URLは見つかりませんでした。"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "お客様の以前のメールを取り込み、Gmailを${ MAIL_APP_NAME }に接続することで、新しいメッセージが自動的に表示されるようになります。"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "古いメールをインポートし、重複をスキップして、新しいメッセージが自動的に表示されるようにお客様のGmailに接続します。インポートは、Easy Switchの設定からいつでも元に戻すことができます。"
+      ],
+      "When do you want your message to be sent?": [
+        "いつメッセージを送信しますか？"
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "カスタムスヌーズを使用すると、メールを非表示にして、より適切なタイミングで再表示するように設定できます。"
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "${ forwardingCount }件のGmailアドレスからメールを転送しています。接続することで、${ MAIL_APP_NAME }で受信および返信ができるようになります"
       ]
     },
     "description": {
@@ -3609,6 +4449,15 @@
     "Email reminder banner": {
       "Event starts tomorrow": [
         "予定は明日始まります"
+      ],
+      "Event is tomorrow": [
+        "予定は明日です"
+      ],
+      "Event starting now": [
+        "予定は今から始まります"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "予定は ${ minutesUntilEvent } 分後に始まります"
       ]
     },
     "Email subject": {
@@ -3959,7 +4808,7 @@
         "名前、姓、または表示名のいずれかを入力してください。"
       ],
       "Please select a category and what went wrong with the generated text": [
-        "カテゴリと、生成されたテキストの問題を選択してください"
+        "カテゴリと生成されたテキストの間違いを選択してください"
       ],
       "Please select a country": [
         "国を選択してください"
@@ -4055,7 +4904,7 @@
         "タブが閉じられました"
       ],
       "Thanks for the feedback!": [
-        "ご意見ありがとうございます！"
+        "ご意見ありがとうございます!"
       ],
       "The amount due has changed. Please try again.": [
         "金額が変更されました。もう一度やり直してください。"
@@ -4187,7 +5036,133 @@
         "インポートできませんでした。"
       ],
       "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
-        "メッセージを復号化できませんでした。アドレスキーを削除した場合は、${ reimportKeyLink }して再インポートしてください。${ learnMoreLink }"
+        "メッセージの復号化ができませんでした。アドレスキーを削除した場合は、${ reimportKeyLink }して再インポートしてください。${ learnMoreLink }"
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "<${ email }> で次のエラーが発生しました: ${ error.message }。この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "添付ファイルは${ readableAttachmentMaxSize }に制限されています"
+      ],
+      "Choose a date in the future.": [
+        "未来の日付を入力してください。"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "次の ${ n } 日間から日付を選択してください"
+      ],
+      "Decryption error: decryption of this message's encrypted content failed.": [
+        "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
+      ],
+      "Draft could not be saved. Try again.": [
+        "下書きを保存できませんでした。もう一度お試しください。"
+      ],
+      "Due to an error, text generation couldn't be canceled": [
+        "エラーのため、テキストの生成をキャンセルできませんでした。"
+      ],
+      "Enter a password": [
+        "パスワードを入力"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "ドメイン（@example.com）を含めずにユーザー名を入力してください。"
+      ],
+      "Error while saving draft. Please try again.": [
+        "下書きを保存しているときにエラーが発生しました。再度お試しください。"
+      ],
+      "Error while sending the message. Message is not sent.": [
+        "メッセージの送信中にエラーが発生しました。メッセージは送信されていません。"
+      ],
+      "Error while uploading attachments. Message is not sent.": [
+        "添付ファイルのアップロード中にエラーが発生しました。メッセージは送信されていません。"
+      ],
+      "Failed to encrypt attachment. Please try again.": [
+        "添付ファイルの暗号化に失敗しました。もう一度お試しください。"
+      ],
+      "Invalid expiration time": [
+        "無効な有効期限です"
+      ],
+      "Maximum expiration time reached.": [
+        "最大有効期限に達しています。"
+      ],
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "添付ファイルの最大数 (${ attachmentsCountLimit }) を超えました。"
+      ],
+      "Message needs to be sent first": [
+        "メッセージを最初に送信する必要があります"
+      ],
+      "Message processing error.": [
+        "メッセージの処理にエラーが発生しました。"
+      ],
+      "Network error: Please check your connection and try again.": [
+        "ネットワークエラー: インターネット接続を確認し、もう一度やり直してください。"
+      ],
+      "No address with keys available to compose a message": [
+        "メールアドレスに有効な暗号鍵が設定されていないため、メッセージが作成できません"
+      ],
+      "No address with sending permissions": [
+        "送信権限を持つアドレスがありません"
+      ],
+      "Please try again or refresh the page.": [
+        "もう一度やり直すか、ページを再読み込みしてください。"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "執筆アシスタントのダウンロード中に問題が発生しました。もう一度やり直してください。"
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "執筆アシスタントをデバイスに読み込む際に問題が発生しました。もう一度やり直してください。"
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "データの非読み込みの問題は、執筆アシスタントが非アクティブなときには必要ありません。"
+      ],
+      "Public key could not be trusted": [
+        "公開鍵を信頼できません"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "重複していた宛先を削除しました: ${ recipents }"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "添付ファイルの送信は、ご利用中のプランの制限を満たすか、プランをアップグレードするまで制限されています。"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "添付ファイルの送信は、プランの制限を超えている間は制限されます。プランをアップグレードすれば、制限を解除できます。"
+      ],
+      "Signature verification error.": [
+        "署名を検証できませんでした。"
+      ],
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "申し訳ありません、${ BRAND_NAME } はメッセージを復号できません。すべてのキーが有効か確認してください。"
+      ],
+      "Text is too long to refine": [
+        "テキストが長すぎて修正できません"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "このフォルダ内のメールに対して、そのアクションを実行することはできません。"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "いくつかの添付ファイルは復号できませんでした。\n関連する秘密鍵を持っている場合は、GnuPG などのプログラムを使ってファイルを復号することができます。"
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "${ emailAddress } の鍵情報が抽出できませんでした"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "現在システムが混雑しています。数分後にもう一度お試しください。"
+      ],
+      "This action cannot be performed": [
+        "このアクションを行うことはできません"
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "このメッセージは既に送信済みです。新しい下書きが保存されました。"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "同時に ${ maxActiveComposer } つ以上のメール作成画面を開くことはできません"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "最近パスワードをリセットしたため、メールを復号化できません。以前のパスワードを覚えていらっしゃる場合、${ reActivateKeyLink }してメッセージにアクセスすることができます。${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "このメッセージは復号化できません。このメッセージを暗号化するために使用されたキーは、お客様のアドレスに関連付けられたキーのいずれとも一致しません。アドレスキーを削除した場合は、${ reimportKeyLink }してください。${ learnMoreLink }"
+      ],
+      "Your search matched too many results. Please limit your search and try again.": [
+        "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
       ]
     },
     "error": {
@@ -4206,7 +5181,13 @@
         "送信済みのメッセージを受信トレイに移動することはできません"
       ],
       "Sent messages cannot be moved to Spam": [
-        "送信済みのメールを迷惑メールに移動することはできません"
+        "送信済みのメッセージを迷惑メールに移動することはできません"
+      ],
+      "Drafts cannot be moved to Spam": [
+        "下書きを迷惑メールに移動することはできません"
+      ],
+      "This action cannot be performed": [
+        "このアクションを行うことはできません"
       ]
     },
     "Error importing calendar": {
@@ -4364,6 +5345,18 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "追加のパスワードが有効になっている場合、エイリアスの管理は ${ PASS_APP_NAME } でのみ行うことができます。"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "エイリアスは、${ PASS_APP_NAME } で追加のパスワードが有効になっている場合には使用できません。"
+      ],
+      "No results found": [
+        "結果が見つかりません"
+      ],
+      "No results found for \"${ query }\"": [
+        "「${ query }」に該当する結果が見つかりませんでした"
+      ],
+      "You do not have any contact yet. Start by creating a new contact": [
+        "連絡先がありません。新しい連絡先を作成して始めましょう"
       ]
     },
     "Error notification": {
@@ -4554,6 +5547,9 @@
       ],
       "Set up your family account": [
         "家族アカウントの設定"
+      ],
+      "Invite members and get everything up and running.": [
+        "メンバーを招待して、全てを始めましょう。"
       ]
     },
     "familyOffer_2023:Title": {
@@ -4611,6 +5607,9 @@
     "fido2: Info": {
       "Security key": [
         "セキュリティキー"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "お客様の ${ BRAND_NAME } アカウントにリンクされたセキュリティキーを挿入してください。"
       ]
     },
     "fido2: Label": {
@@ -4658,6 +5657,9 @@
       ],
       "Filter and sort emails": [
         "メールのフィルタと並べ替え"
+      ],
+      "Reset": [
+        "リセット"
       ]
     },
     "Filter Actions": {
@@ -4706,6 +5708,18 @@
       ],
       "The subject": [
         "件名"
+      ],
+      "If the attachments": [
+        "添付ファイルが"
+      ],
+      "If the recipient": [
+        "宛先が"
+      ],
+      "If the sender": [
+        "差出人が"
+      ],
+      "If the subject": [
+        "件名が"
       ]
     },
     "Filter notification": {
@@ -4792,17 +5806,101 @@
       ],
       "Try the new desktop app": [
         "新しいデスクトップアプリを試す"
+      ],
+      "14-day desktop app trial.": [
+        "14 日間のデスクトップアプリのトライアルです。"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "迅速で安全、かつ気を散らさない受信トレイとカレンダーへのアクセスをお楽しみください。"
+      ],
+      "No credit card required.": [
+        "クレジットカード不要。"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
       ]
     },
     "Get started checklist instructions": {
       "Block email communications from scammers permanently.": [
-        "詐欺メールを永久にブロックしましょう。"
+        "詐欺のメールを永久にブロック"
       ],
       "Claim ${ BRAND_NAME } address": [
         "${ BRAND_NAME }アドレスを取得"
       ],
       "Discover privacy features": [
         "プライバシー機能を見る"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store での ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store での ${ MAIL_APP_NAME }"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } 日"
+      ],
+      "${ remainingDaysCount } day left": [
+        "残り ${ remainingDaysCount } 日"
+      ],
+      "Block unsavory senders": [
+        "不適切な送信者をブロックする"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "メールがさらに安全に、便利に、そして関連性が向上しました! 無料のストレージも合計 1 GB に増やしました。"
+      ],
+      "Checklist complete": [
+        "チェックリストが完了しました"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "無料でストレージ容量を2倍にするために、${ daysCount }日以内にこのチェックリストを完了しましょう。"
+      ],
+      "Download apps": [
+        "アプリをダウンロード"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "強力な暗号化により、お客様と意図した宛先の受信者のみがメールを閲覧できます。"
+      ],
+      "Finish setup": [
+        "セットアップを完了"
+      ],
+      "For your eyes only": [
+        "あなたの目だけに"
+      ],
+      "Get storage bonus": [
+        "容量ボーナスを獲得"
+      ],
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "${ MAIL_APP_NAME } のモバイルアプリを入手"
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "${ MAIL_APP_NAME } を引き続き使用して、${ BRAND_NAME } がプライバシーを保護しメールの送受信をより簡単にする方法をさらに見つけてください。"
+      ],
+      "Learn more": [
+        "より詳しく"
+      ],
+      "Protection from trackers": [
+        "トラッカーからの保護"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "モバイル端末でサインインして、このステップを達成"
+      ],
+      "Storage unlocked": [
+        "ストレージのロック解除"
+      ],
+      "Tasks to complete count": [
+        "タスクの完了数"
+      ],
+      "This feature is currently unavailable": [
+        "この機能は現在ご利用いただけません。"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "モバイル端末を使って、QR コードをスキャンするか iOS や Android のストアを見る。"
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "私たちは広告主やデータ収集者によるお客様の行動の推定を阻止します。"
+      ],
+      "You've unlocked 1 GB": [
+        "1GBのロックを解除しました"
       ]
     },
     "Gmail forwarding": {
@@ -4854,6 +5952,12 @@
       ],
       "Services": [
         "サービス"
+      ],
+      "Custom folders": [
+        "カスタムフォルダー"
+      ],
+      "Default folders": [
+        "既定のフォルダ"
       ]
     },
     "Header": {
@@ -4880,6 +5984,18 @@
       ],
       "Username": [
         "ユーザー名"
+      ],
+      "Report an issue": [
+        "問題を報告"
+      ],
+      "Resume downloading": [
+        "ダウンロードを再開"
+      ],
+      "Set up the writing assistant": [
+        "執筆アシスタントを設定"
+      ],
+      "Tell us more": [
+        "より詳しく教えてください"
       ]
     },
     "Hint": {
@@ -4954,6 +6070,9 @@
     "ICS widget label for event details": {
       "Organizer:": [
         "主催者:"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } 人の参加者"
       ]
     },
     "Import calendar": {
@@ -5378,7 +6497,7 @@
         "アカウントが正常に更新されました。"
       ],
       "Activation in progress": [
-        "有効化中"
+        "アクティベーションが進行中です"
       ],
       "Active": [
         "アクティブ"
@@ -5456,7 +6575,7 @@
         "インポートを破棄してもよろしいですか?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "この会話を完全に削除してよろしいですか？"
+        "本当にこの会話を完全に削除しますか？"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
@@ -5981,7 +7100,7 @@
         "ラベルが選択されていません"
       ],
       "No messages found": [
-        "メッセージはありません"
+        "メッセージが見つかりませんでした"
       ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
@@ -5990,7 +7109,7 @@
         "該当する項目がありません"
       ],
       "No trackers found": [
-        "トラッカーなし"
+        "トラッカーは見つかりませんでした"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "アップロードされた鍵はすべて暗号化には使用できないものです。指定のアドレスにメールを送信するには、正しい鍵をアップロードするかメールの暗号化をオフにしてください。"
@@ -6026,7 +7145,7 @@
         "推奨されるアクションと役立つリンクのガイドを開きます。"
       ],
       "Optional": [
-        "任意"
+        "オプション"
       ],
       "or discover other features:": [
         "または他の機能を発見することもできます:"
@@ -6110,7 +7229,7 @@
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
       "Please share what the issue is": [
-        "問題は何ですか"
+        "問題を共有してください"
       ],
       "Please try again in a few moments": [
         "しばらくしてからもう一度お試しください"
@@ -6125,7 +7244,7 @@
         "他のブラウザを使用するか、このファイルをダウンロードしてください。"
       ],
       "Please wait for the action to be completed": [
-        "処理が完了するまでお待ちください"
+        "処理が完了するまでしばらくお待ちください。"
       ],
       "Please wait till your changes are synced with the server.": [
         "変更がサーバーで同期されるまでお待ちください。"
@@ -6158,7 +7277,7 @@
         "プライベートブラウジング (「シークレット」モードとも言います)は、お客様の活動をデバイス上で非表示することにおいてのみ有効です。履歴やCookieの保存をすることを防ぎますが、お客様を不可視にするものではありません。依然として、お客様のISPとネットワーク管理者、及びお客様が利用するウェブサイトは、お客様のオンライン上での活動を監視できます。"
       ],
       "Proofread text": [
-        "文章を校正"
+        "テキストを校正する"
       ],
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
@@ -6344,7 +7463,7 @@
         "このファイルは、非常に大きいためプレビューできません"
       ],
       "This invitation is saved in a disabled calendar.": [
-        "この招待は無効化されたカレンダーに保存されています。"
+        "招待は無効化されたカレンダーに保存されています。"
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "これは組織の名称またはニックネームであり、ユーザーに表示されます。いつでも変更できます。"
@@ -6362,10 +7481,10 @@
         "これは、お客様のISPと利用したウェブサイトが、お客様のオンライン上の活動と個人情報を紐づけられないことを意味します。"
       ],
       "This message has a key attached, that has not been trusted yet.": [
-        "このメッセージには、まだ信頼されていない鍵が添付されています。"
+        "このメッセージには、まだ信頼されていないキーが添付されています。"
       ],
       "This message is from a mailing list.": [
-        "これはメーリングリストからのメッセージです。"
+        "このメッセージはメーリングリストからのものです。"
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "このメッセージはまだ信頼されていない鍵で署名されています。"
@@ -6419,7 +7538,7 @@
         "追跡"
       ],
       "Trash existing messages": [
-        "既存のメッセージを削除"
+        "既存のメッセージを破棄する"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
@@ -6509,7 +7628,7 @@
         "お客様のお支払いを銀行で認証する必要があります。"
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "広告主などからあなたのオンラインプライバシーを守るため、次のリンクから追跡情報を削除しました。"
+        "広告主や他のユーザーがあなたのオンライン アクティビティを追跡しようとすることから保護するために、次のリンクから追跡情報を削除しました。"
       ],
       "We use 3-D Secure to protect your payments": [
         "支払いを保護するために3Dセキュアを使用しています"
@@ -6593,7 +7712,7 @@
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
       "You do not have any messages here": [
-        "ここにはメッセージはありません"
+        "ここにはメッセージがありません"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
@@ -6608,7 +7727,7 @@
         "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "メールに件名がありません。このまま送信してもよろしいですか？"
+        "このメールには件名がありません。このままメッセージを送信しますか？"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "ストレージ容量の100%に達しました。新しいメッセージを作成するには、ストレージ容量を少し空けるか、容量追加のためにアップグレードしましょう。"
@@ -6726,6 +7845,918 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }、アーカイブ、古いメールをフォルダーに移動します。"
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "いらなくなった登録を${ boldQuicklySpot }"
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "ワンクリックで${ boldUnsubscribe }できます。"
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribeは、より良いメールを迅速かつ簡単に作成するのを手助けします。"
+      ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME }のパスワードマネージャーは、パスワードを作成、保存、自動入力することができるので、パスワードをリセットする必要がなくなります。"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName }(${ numberOfSelectedContacts }/${ numberOfContactsInGroup }人のメンバー)"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ totalProgress } のうち ${ currentProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } 件の会話に次のラベルを付けます:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } 件の会話を既読にします。"
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } 件の会話を未読にします。"
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } 件の会話を移動します"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } 件の会話から次のラベルを外します:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } 件のメッセージに次のラベルを付けます:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } 件のメッセージを既読にします。"
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } 件のメッセージを未読にします。"
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } 件のメッセージを移動します"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } 件のメッセージから次のラベルを外します:"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } 枚の埋め込み画像"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
+      ],
+      "${ n } unread conversation": [
+        "${ n } 件の未読の会話"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } 件のリンクがクリアされました"
+      ],
+      "${ NumMessages } message in conversation": [
+        "会話内に ${ NumMessages } 件のメッセージ"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } 件の繰り返しが見つかりました"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "メールコンテンツ内に ${ numOccurrences } 件の繰り返しが見つかりました"
+      ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } は、実際のメールアドレスを公開したくない信頼できないサードパーティのサイトでログインを作成する簡単な方法を提供します。"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } 件の添付ファイル"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "先月受信した${ receivedMessagesCount }件のメール"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } 件が未読"
+      ],
+      "${ total } conversation": [
+        "${ total } 件の会話"
+      ],
+      "${ total } message": [
+        "${ total } 件のメッセージ"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } 個のメールトラッカーをブロックしました"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount }個のトラッカーをブロックしました"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } 件のニュースレター"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } 件の送信予約メッセージ"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "${ labelName } 内で **${ total }** 件の結果が見つかりました"
+      ],
+      "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
+        "メーリングリストの購読解除のリクエストがニュースレターの差出人に送信され、自動で処理されます"
+      ],
+      "Addresses settings": [
+        "アドレス設定"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "このメーリングリストからのすべてのメッセージは、既読としてマークされます。"
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "このメーリングリストからのすべてのメッセージは、ごみ箱に移動されます。"
+      ],
+      "All messages stored in this folder will be permanently deleted.": [
+        "このフォルダに保存されているすべてのメッセージが完全に削除されます。"
+      ],
+      "All your calendars are disabled.": [
+        "すべてのカレンダーが無効です。"
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "お客様に代わって、登録解除メールが送信されます。"
+      ],
+      "Another tip will be displayed next time you open Mail": [
+        "次回メールを開いた際に、別のヒントが表示されます"
+      ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "送信予約やスヌーズされたメールはすべて取り消されます。"
+      ],
+      "Apply to future messages": [
+        "今後のメッセージに適用する"
+      ],
+      "Applying actions to conversations": [
+        "会話を操作中"
+      ],
+      "Applying actions to messages": [
+        "メッセージを操作中"
+      ],
+      "Archive existing messages": [
+        "既存のメッセージをアーカイブする"
+      ],
+      "Are you sure you want to delete all messages in this folder?": [
+        "このフォルダー内のすべてのメッセージを削除してよろしいですか?"
+      ],
+      "Are you sure you want to delete all messages with this label?": [
+        "このラベルが付いたすべてのメッセージを削除してよろしいですか？"
+      ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "この場所にあるすべてのメッセージをアーカイブに移動してもよろしいですか？"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "この場所にあるすべてのメッセージをごみ箱に移動してもよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "${ count } 件の会話を完全に削除してよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "${ count } 件の下書きを完全に削除してよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "${ count } 件のメッセージを完全に削除してよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete this draft?": [
+        "この下書きを完全に削除してよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete this message?": [
+        "このメッセージを完全に削除してよろしいですか？"
+      ],
+      "Attach public key": [
+        "公開鍵を添付する"
+      ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "30 日以上経過したごみ箱のメールと迷惑メールを自動で削除します。"
+      ],
+      "Block sender": [
+        "差出人をブロック"
+      ],
+      "Body: ": [
+        "本文: "
+      ],
+      "Browser not supported": [
+        "このブラウザはサポートされていません"
+      ],
+      "Bulk delete": [
+        "一括削除"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "探しているものが見つかりませんか? ${ displayAllMailButton }"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "カテゴリは、迷惑メールフィルターと同様に機能します。${ MAIL_APP_NAME } がメールを読んだり、データを共有したりすることはありません。"
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "カテゴリは迷惑メールフィルターのように機能します。暗号化なしのヘッダー・技術的なデータ内でのみパターンを検索するので、当社がメールを閲覧したり、お客様のデータを共有したり、プライバシーを侵害することはありません。"
+      ],
+      "Clear browser data": [
+        "ブラウザーデータをクリア"
+      ],
+      "Clear selection": [
+        "選択解除"
+      ],
+      "Click to view group details": [
+        "クリックしてグループの詳細を表示"
+      ],
+      "Composer:": [
+        "作成者："
+      ],
+      "Confirm phishing report": [
+        "フィッシング報告の確認"
+      ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "受信者がメールを受信するのに最適なタイミングを検討し、送信を予約できます。"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "例えば「${ suggestedFolderName }」というフォルダを作成し、すべてのオンラインレシートを1か所に保存できます。"
+      ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "検出はお客様のデバイス上で行われるため、お客様のメールのデータは当社のサーバーに送信されません。"
+      ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "${ BRAND_NAME }アカウントに暗号化済みのクラウドストレージが含まれていることを知っていましたか？ ${ DRIVE_APP_NAME } へ移動して、ストレージスペースを最大限に活用しましょう。無料でご利用いただけます。"
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "あなた専用の短いメールアドレスを予約しておいたことをご存じでしょうか。あなたのユーザー名に「@${ PM_DOMAIN }」を付けたものです。"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "添付ファイルをダウンロードしますか?"
+      ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "連絡先の詳細を再署名して、これらのフィンガープリントの鍵を信頼してよろしいですか？"
+      ],
+      "Do you want to re-sign the contact details?": [
+        "連絡先の詳細に再署名しますか?"
+      ],
+      "Don't forget to share the password with the recipient": [
+        "宛先にパスワードを伝えることを忘れないでください"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "後で確認したい重要なメールがありますか？受信トレイに再表示される時間を設定することができます。"
+      ],
+      "Download application logs for troubleshooting": [
+        "トラブルシューティングのためにアプリのログをダウンロード"
+      ],
+      "Downloading paused": [
+        "ダウンロード一時停止"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "ダウンロードを一時停止: ${ progressDisplay } GB"
+      ],
+      "Draft": [
+        "下書き"
+      ],
+      "Draft discarded": [
+        "下書きは破棄されました"
+      ],
+      "Draft saved.": [
+        "下書きが保存されました。"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "宛先の構成により、このメッセージは有効期限付きでは送信できません。"
+      ],
+      "Edit encryption": [
+        "暗号化を編集"
+      ],
+      "Edit expiration time": [
+        "有効期限を編集"
+      ],
+      "Email copied to clipboard": [
+        "メールをクリップボードにコピーしました"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "本来のメールアドレスを隠したまま、メールボックスにメールを転送します。"
+      ],
+      "Email tracker protection is disabled": [
+        "メールトラッカー保護は無効になっています"
+      ],
+      "embedded image": [
+        "個の埋め込み画像"
+      ],
+      "Encrypt message": [
+        "メッセージを暗号化"
+      ],
+      "Enter code": [
+        "コードを入力してください"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。${ digit }桁目。"
+      ],
+      "Expand selection": [
+        "選択を展開"
+      ],
+      "Expand text": [
+        "文章を展開"
+      ],
+      "Expires in ${ formattedDate }": [
+        "${ formattedDate } に期限が切れます"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "有効期限は ${ minutesDiff } 分です。"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "有効期限は ${ hoursDiff } 時間未満です。"
+      ],
+      "file attached": [
+        "個のファイル添付"
+      ],
+      "Folder": [
+        "フォルダ"
+      ],
+      "For messages newer than ${ oldestDate }": [
+        "${ oldestDate } 以降のメッセージ"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "さらに検索結果を表示するには、メッセージ内容の検索をお試しください。"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "無料で${ ASSISTANT_TRIAL_TIME_DAYS }日間お試しいただけます"
+      ],
+      "From": [
+        "差出人"
+      ],
+      "Generate text": [
+        "テキストを生成"
+      ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "請求書には「${ suggestedLabelName }」のような色分けされたラベルを付け、支払いが完了したら、ラベルを「${ suggestedPaidLabelName }」に変更しましょう。"
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "${ numAttachments } 件の添付ファイル (${ numAttachmentsSize })"
+      ],
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "このメッセージを非 ${ MAIL_APP_NAME } ユーザーに送信しています。"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "認証アプリへのアクセスを失った場合は、2要素認証のセットアップ時に提供された16個のバックアップ回復用コードの1つを使用できます。${ learnMoreLink }"
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "エイリアスが売却、漏洩、悪用された場合は、そのエイリアスを無効にするだけで迷惑メールを遮断できます。"
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "お客様のパスワードがダークウェブに流出した場合、${ BRAND_NAME } はどのサービスからデータが漏洩したのか、そして被害を食い止める方法をお知らせします。"
+      ],
+      "Include Spam/Trash.": [
+        "迷惑メール・ごみ箱を含める。"
+      ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "プロンプトと応答を記入して、サービスの改善を手伝ってください"
+      ],
+      "Included for free with your plan": [
+        "プランに無料で含まれています"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "請求書、領収書、注文、予約が含まれます。"
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "請求書、注文書、および支払確認書が含まれます。"
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "マーケティングメールと緊急性の低いアプリの通知が含まれます。"
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "ニュースの要約とプロモーション以外のコンテンツが含まれています。 "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "ソーシャルネットワークおよびメディア共有サイトからの更新が含まれます。"
+      ],
+      "Initializing…": [
+        "初期化中…"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "最高水準のアカウントセキュリティとサポートのために ${ PROTON_SENTINEL_NAME } プログラムに参加しましょう。"
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "${ PASS_APP_NAME } にログイン情報やクレジットカード情報を追加して、安全かつ便利に保管しましょう。${ BRAND_NAME } アカウントに無料で含まれています。"
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "メールボックスを整理するために、30日以上経過した迷惑メールやごみ箱のメールを自動的に削除します。"
+      ],
+      "Learn more about the writing assistant": [
+        "執筆アシスタントの詳細"
+      ],
+      "Links cleaned:": [
+        "クリアしたリンク:"
+      ],
+      "Loading message": [
+        "メッセージを読み込み中"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }を規定のメールアプリにしましょう。"
+      ],
+      "Manage your folders": [
+        "フォルダを管理"
+      ],
+      "Manage your labels": [
+        "ラベルを管理"
+      ],
+      "Mark all as read": [
+        "すべて既読にする"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "添付ファイルの最大数 (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) を超えました。"
+      ],
+      "Members": [
+        "メンバー"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "メッセージ操作中です。しばらく時間がかかる場合があります。"
+      ],
+      "Message download status:": [
+        "メッセージのダウンロード状況:"
+      ],
+      "Message headers": [
+        "メッセージヘッダー"
+      ],
+      "Message list": [
+        "メッセージリスト"
+      ],
+      "Message view": [
+        "メッセージビュー"
+      ],
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "メッセージは ${ dateString } の ${ formattedTime } に送信されます"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "メッセージは今日の ${ formattedTime } に送信されます"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "メッセージは明日の ${ formattedTime } に送信されます"
+      ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "ゴミ箱・迷惑メールへ移動したメッセージは 30 日後に自動的に削除されます。"
+      ],
+      "More info": [
+        "もっと詳しく"
+      ],
+      "More refine actions": [
+        "その他の修正操作"
+      ],
+      "newsletter": [
+        "ニュースレター"
+      ],
+      "No change will be made to the selected emails": [
+        "選択されたメールには変更は加えられません。"
+      ],
+      "No folder found": [
+        "フォルダが見つかりませんでした"
+      ],
+      "No label found": [
+        "ラベルが見つかりませんでした"
+      ],
+      "No links cleaned": [
+        "クリアされたリンクはありません"
+      ],
+      "No messages to show": [
+        "表示するメッセージはありません"
+      ],
+      "No more results found": [
+        "これ以上の結果が見つかりません"
+      ],
+      "non-${ MAIL_APP_NAME }": [
+        "非 ${ MAIL_APP_NAME }"
+      ],
+      "Normal": [
+        "通常"
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "このメールは怪しいと判断されました。フィッシングや詐欺メールでない場合は、正当なものとしてマークしてください。"
+      ],
+      "Plain text": [
+        "プレーンテキスト"
+      ],
+      "Please share what you expected": [
+        "期待していたことを共有してください"
+      ],
+      "Preferences updated": [
+        "設定が更新されました"
+      ],
+      "Print email": [
+        "メールを印刷"
+      ],
+      "Proofread selection": [
+        "選択範囲を校正する"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "ニュースレターや迷惑メールの配信リストから、${ hideMyEmailAliasesLink }で自分のメールアドレスを守りましょう。"
+      ],
+      "Quickly spot": [
+        "すばやく見つける"
+      ],
+      "Recipient: ": [
+        "宛先: "
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "パスワードマネージャーや、アカウントやログイン情報を保管している場所での更新をお忘れなく。"
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "このアプリに関連するすべてのデータを削除します (ダウンロードしたメッセージなど…)"
+      ],
+      "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
+        "フィッシング詐欺としてこのメッセージを報告すると、私たちにこのメッセージが送信され、私たちはこのメッセージを分析してフィルターを改善することができます。メッセージを報告すると、このメッセージのすべての内容を私たちが閲覧可能になります。"
+      ],
+      "Request read receipt": [
+        "開封確認を要求"
+      ],
+      "Right-click for options": [
+        "右クリックしてオプションを表示"
+      ],
+      "Sat, ${ formatTime }": [
+        "${ formatTime }土曜日"
+      ],
+      "Saved yesterday": [
+        "昨日保存済み"
+      ],
+      "Saved: ${ dateString }": [
+        "保存済み: ${ dateString }"
+      ],
+      "Saving draft": [
+        "下書きを保存中"
+      ],
+      "Scheduling message": [
+        "メッセージを送信予約中"
+      ],
+      "Scribe panel": [
+        "Scribe パネル"
+      ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "メール本文中のキーワードを安全に検索できる検索オプション。"
+      ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "検索時間が長すぎますか? 検索セッションから ${ dropdownButton } か ${ toggleOffButton } してください。"
+      ],
+      "Seems like you are all caught up for now": [
+        "現在、確認すべきメッセージはありません"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "${ location } 内のすべての ${ elementsCount } を選択"
+      ],
+      "Selection pane": [
+        "選択ペイン"
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "パスワード保護され暗号化されたメッセージを${ boldText } メールアドレスに送信します。"
+      ],
+      "Sending": [
+        "送信中"
+      ],
+      "Sending message": [
+        "メッセージを送信中"
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "${ MAIL_APP_NAME } をこのブラウザの既定のメールアプリに設定すると、メールのリンクをクリックした際に自動で ${ MAIL_APP_NAME } が開かれます。"
+      ],
+      "Shorten selection": [
+        "選択範囲を短縮する"
+      ],
+      "Shorten text": [
+        "テキストを短縮する"
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "${ dateString } の ${ formattedTime } までスヌーズされています"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "本日 ${ formattedTime } までスヌーズされています"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "明日の ${ formattedTime } までスヌーズされています"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "この会話のスヌーズが取り消されます。"
+      ],
+      "Sorry, this message does not exist or has already expired.": [
+        "申し訳ありません、このメッセージは存在しないか有効期限切れです。"
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "ストレージ機能はこのブラウザではサポートされていません。コンテンツの検索を有効にするためには、このサポートが必要です。"
+      ],
+      "Subject": [
+        "件名"
+      ],
+      "Subject is end-to-end encrypted": [
+        "件名はエンドツーエンド暗号化済みです"
+      ],
+      "Subject:": [
+        "件名:"
+      ],
+      "The data you have entered in the draft may not be saved if you leave the page.": [
+        "このページを離れると入力したデータの下書きは保存されません。"
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "メールアドレス${ boldNoReplyEmail }は返信を受け付けていないようです。本当にメッセージを送信しますか？"
+      ],
+      "The initial setup may take a few minutes.": [
+        "初期設定には数分かかる場合があります。"
+      ],
+      "The local database is being prepared": [
+        "ローカルのデータベースを準備しています"
+      ],
+      "The message has expired": [
+        "メッセージの期限が切れています"
+      ],
+      "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
+        "現在転送もしくは返信しようとしているメールはまだ送信されていませんが、続行するとメールの送信取り消しはできなくなります。"
+      ],
+      "The sender has requested a read receipt.": [
+        "差出人が開封確認を要求しています。"
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "${ contactNames } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットしたことが原因です。\n${ contactAddresses } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "執筆アシスタントを使用するには、ダウンロードを完了する必要があります。"
+      ],
+      "Themes can give your inbox a new look.": [
+        "テーマで受信トレイを新しい見た目に変更できます。"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "受信トレイには、この差出人からのメッセージはありません。"
+      ],
+      "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
+        "連絡先の詳細の検証に使われる署名にエラーがあります。おそらくパスワードリセットによって引き起こされています。"
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "これらの会話は、お客様の組織のデータ保持ポリシーに基づいてここに保持されています。"
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "本来のメールアドレスを知られなければ、迷惑メールを送られることもありません。Hide-my-email で受信トレイを守りましょう。"
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "この会話には送信予約メッセージが含まれます。送信予約はキャンセルされます。"
+      ],
+      "This conversation contains one or more expiring messages": [
+        "この会話には1つ以上の期限切れメッセージが含まれています"
+      ],
+      "This conversation contains trashed messages.": [
+        "この会話にはゴミ箱にあるメッセージが含まれています"
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "この会話を迷惑メールに設定します。今後このアドレスからの受信を拒否しますか？"
+      ],
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "メールのドメイン認証の要求に失敗しました。なりすましや不適切な転送の可能性があります。"
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "これは文書作成の補助として意図されています。念のため、生成されたテキストをご確認ください。${ learnMoreResult }"
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        "このメッセージは暗い背景に合わせるために調整されました。"
+      ],
+      "This message is automatically generated as a response to a previous message.": [
+        "このメッセージは以前のメッセージに対する自動応答です。"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "このメッセージは ${ PASS_APP_NAME } エイリアスからのものです。"
+      ],
+      "This message is signed by the key attached, that has not been trusted yet.": [
+        "このメッセージはまだ信頼されていない添付された鍵で署名されています。"
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "このメッセージは ${ value } に自動的に削除されます。"
+      ],
+      "This message will be automatically deleted on ${ value }": [
+        "このメッセージは ${ value } に自動的に削除されます。"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "これらのメッセージは迷惑メールとしてマークされます。今後のメールの購読を解除しますか？"
+      ],
+      "This message will be purged on ${ value }": [
+        "このメッセージは ${ value } に削除されます"
+      ],
+      "This message will be purged today at ${ value }": [
+        "このメッセージは本日 ${ value } に削除されます"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "このメッセージは明日の ${ value } に削除されます"
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "このメッセージは朝の ${ formattedTime } に送信されます"
+      ],
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "このメッセージは ${ dateString } の ${ formattedTime } に送信されます"
+      ],
+      "This message will be sent shortly": [
+        "このメッセージはまもなく送信されます"
+      ],
+      "This message will be sent today at ${ formattedTime }": [
+        "このメッセージは今日の ${ formattedTime } に送信されます"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "このメッセージは明日の ${ formattedTime } に送信されます"
+      ],
+      "This message will expire ${ formattedDate }": [
+        "このメッセージの期限は ${ formattedDate } までです"
+      ],
+      "This message will expire on ${ value }": [
+        "このメッセージの有効期限は ${ value } です。"
+      ],
+      "This message will expire today at ${ value }": [
+        "このメッセージの有効期限は今日の ${ value } までです"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "このメッセージの有効期限は明日の ${ value } までです"
+      ],
+      "This only needs to be done once.": [
+        "一度だけ行えばいい操作です。"
+      ],
+      "This public key will be automatically used for encrypting email sent to this address.": [
+        "この公開鍵は自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
+      ],
+      "This sender's public key has not been trusted yet.": [
+        "この差出人の公開鍵はまだ信頼されていません。"
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "これは、メールの件名にパスワードリセットキーワードが含まれているため表示されました。"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "このリストからニュースレターのエントリを削除します。ニュースレターの登録を解除することはありません。新規メッセージを受信すると、再び表示されます。"
+      ],
+      "to ${ destinationElement } folder.": [
+        "${ destinationElement } フォルダへ"
+      ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "ブラウザでタブを開いて脱線することを避けるには、デスクトップアプリを使用してください。"
+      ],
+      "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
+        "このニュースレターの配信を解除するには、送信元が指定している次のリンクを開くことになります。"
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "明日、${ formattedTime }"
+      ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "送信予約メッセージが多すぎます。他のメッセージが送信されれば、このメッセージを送信予約できます。"
+      ],
+      "Trackers blocked:": [
+        "ブロックしたトラッカー:"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "オフにすると、日付、名前、メールアドレス、件名のみで検索できます。メッセージ内容の検索を無効にする(およびこの機能を有効にするためにダウンロードしたメッセージを削除する)には、設定へ進んでください。"
+      ],
+      "Turn on to search the content of your messages": [
+        "メッセージ内容の検索をオンにします"
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "このブラウザではストレージ機能へのアクセスができません、メッセージ内容の検索を有効にするためには、このアクセスが必要です。"
+      ],
+      "Unlock message": [
+        "メッセージのロックを解除"
+      ],
+      "Unread conversations": [
+        "未読の会話"
+      ],
+      "Unsubscribe": [
+        "登録解除"
+      ],
+      "Updating message content search...": [
+        "メッセージ内容の検索を更新中..."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "${ plan }にアップグレードしてロックを解除する"
+      ],
+      "Upgrade to add more addresses to your account.": [
+        "アップグレードしてさらにアドレスを手に入れましょう。"
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "ゴミ箱や迷惑メールへ移動したメッセージを30日後に自動的に削除するには、アップグレードしましょう。"
+      ],
+      "Upgrade to create more folders, filters, and addresses.": [
+        "アップグレードしてさらなるフォルダー、フィルター、アドレスを作成します。"
+      ],
+      "Upgrade to level up your privacy.": [
+        "アップグレードして、お客様のプライバシーを次のレベルへ。"
+      ],
+      "Upgrade to send email from @pm.me addresses.": [
+        "アップグレードして @pm.me アドレスからメールを送信します。"
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "独自メールドメインからメールを送信するにはアップグレードしてください。"
+      ],
+      "Upgrade to send emails to contact groups easily.": [
+        "簡単に連絡先グループにメールを送信するためにアップグレードしてください。"
+      ],
+      "Upgrade to support a privacy-first internet.": [
+        "アップグレードしてプライバシー第一のインターネットをサポートします。"
+      ],
+      "Upgrade to support privacy and get more features.": [
+        "さらなる機能を入手しプライバシーをサポートするためにアップグレードしてください。"
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "離席中に自動返信を使用するにはアップグレードしてください。"
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        "キーボードショートカットを使ってメールを素早く管理します。"
+      ],
+      "Version ${ appVersion }": [
+        "バージョン ${ appVersion }"
+      ],
+      "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
+        "申し訳ございません。スパム判定を誤ってしまった可能性があります。このメールを迷惑メールから除外しますか？"
+      ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "次の広告主および組織が、このメールを開いた時間、使用されているデバイス、位置情報などを確認できないようにブロックしました。"
+      ],
+      "We cannot enable message content search in this browser.": [
+        "このブラウザではメッセージ内容の検索はできません。"
+      ],
+      "We could not verify the sender's trusted keys.": [
+        "差出人の信頼された鍵を検証できませんでした。"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "宛先の受信トレイとあなたの送信済みフォルダーからメッセージをいつ自動的に削除しますか？"
+      ],
+      "When do you want your message to self-destruct?": [
+        "メッセージの有効期限をいつに設定しますか？"
+      ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "メールアドレスを伝える際には、本来のメールアドレスではなく専用の使い捨てhide-my-emailエイリアスを使用しましょう。"
+      ],
+      "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
+        "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "ニュースレターを購読する際は、メールアドレスの代わりにエイリアスを使用しましょう。あなたの個人情報は秘匿され、いつでもエイリアスを無効にすることができます。"
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "旅行中や公共WiFiを使用する際は、${ VPN_APP_NAME } に接続することで、オンライン活動の追跡やデータの盗難を防ぐことができます。無料でご利用いただけます。"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "新しいメールカテゴリにより、重要なメッセージのみがお客様のプライマリー受信トレイに届きます。それ以外のすべてはカテゴリに整理されます。"
+      ],
+      "writing assistant iframe": [
+        "執筆アシスタント iframe"
+      ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "添付ファイルを追加するか、メール内に直接インラインで表示させることができます。"
+      ],
+      "You can either update your search query or ${ button }": [
+        "検索クエリを更新するか、 ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "検索内容を変更、または消去できます"
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "今日、${ VPN_APP_NAME } を無料で使用できます。"
+      ],
+      "You cannot reply from the invited address.": [
+        "招待されたアドレスから返信することはできません。"
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "このフォルダー内に **${ count } 件の会話**があります"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "このラベルがついた **${ count } 件の会話**があります"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "このフォルダー内に **${ count } 件のメッセージ**があります"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "このラベルがついた **${ count } 件のメッセージ**があります"
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "返信数の上限（5件）に達しました。"
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "このフォルダー内の **${ count } 件の会話**を選択中"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "このラベルがついた **${ count } 件の会話**を選択中"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "このフォルダー内の **${ count } 件のメッセージ**を選択中"
+      ],
+      "You selected **${ count } message** with this label": [
+        "このラベルがついた **${ count } 件のメッセージ**を選択中"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "${ location } 内の **${ elementsCount } 件の会話**を選択しました。"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "**${ elementsCount } 件の会話**を選択しました。"
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "${ location } 内の **${ elementsCount } 件のメッセージ**を選択しました。"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "**${ elementsCount } 件のメッセージ**を選択しました。"
+      ],
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        "「${ attachmentsFoundKeyword }」 と書かれてありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "あなたのブラウザは執筆アシスタントをサポートしていません。サーバーでの実行をお試しください。"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "お客様のハードウェアはローカルでの執筆アシスタントの実行をサポートしていません。サーバーでの実行をお試しください。"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "メッセージの有効期限は残り ${ numberOfDays } 日です。"
+      ],
+      "Your message will expire today.": [
+        "メッセージの有効期限は今日までです。"
+      ],
+      "Your message will expire tomorrow.": [
+        "メッセージの有効期限は明日までです。"
+      ],
+      "Your private writing assistant": [
+        "プライベート執筆アシスタント"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "不要なものが整理された受信トレイまで、あと数クリックです。"
       ]
     },
     "info": {
@@ -6794,6 +8825,15 @@
     "Key pinning": {
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "「鍵を信頼する」をクリックすると、新しい連絡先が作成され、この公開鍵がこの差出人に関連付けられます。このアドレスからのメールは自動的に暗号化検証されます。"
+      ],
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "「Trust Key 」をクリックすると、この公開鍵がこの送信者に関連付けられ、このアドレスからのメールは自動的に暗号検証されます。"
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "次のフィンガープリントのプライマリー鍵を信頼しますか？"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "これらのメールアドレスに対して、信頼されたキーによるアドレス確認を有効にしていますが、アクティブな暗号化キーが信頼されていません。\nこれらのメールアドレスにメッセージを送信するには、送信に有効なキーを信頼する必要があります。"
       ]
     },
     "Key validation warning": {
@@ -7169,7 +9209,7 @@
         "日付"
       ],
       "Date:": [
-        "日付:"
+        "日時："
       ],
       "Deals, offers, marketing emails": [
         "お得な情報、特典、マーケティングメール"
@@ -7232,7 +9272,7 @@
         "デスクトップ通知を有効にする"
       ],
       "Enable filter": [
-        "フィルターを有効化"
+        "フィルターを有効にする"
       ],
       "Encrypt emails": [
         "メールを暗号化"
@@ -7641,6 +9681,162 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } すべてのメッセージを既読としてマークする"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } すべてのメッセージを ${ boldFolderName } に移動"
+      ],
+      "${ count } unread conversation": [
+        "${ count } 件の未読の会話"
+      ],
+      "${ count } unread message": [
+        "${ count } 件の未読メッセージ"
+      ],
+      "/month": [
+        "/ 月"
+      ],
+      "Active filter:": [
+        "有効なフィルター:"
+      ],
+      "All contacts": [
+        "すべての連絡先"
+      ],
+      "Always label sender's emails": [
+        "この差出人のメールを常にラベル付け"
+      ],
+      "Always move sender's emails": [
+        "この差出人のメールを常に移動"
+      ],
+      "Apply to future messages": [
+        "今後のメッセージに適用する"
+      ],
+      "BCC": [
+        "BCC"
+      ],
+      "Blind Carbon Copy": [
+        "ブラインドカーボンコピー"
+      ],
+      "Carbon Copy": [
+        "カーボンコピー"
+      ],
+      "Category:": [
+        "カテゴリー:"
+      ],
+      "CC": [
+        "CC"
+      ],
+      "Choose what to do instead": [
+        "代わりに何をするか選択してください"
+      ],
+      "Cleaned": [
+        "クリア済み"
+      ],
+      "Did not follow instructions": [
+        "指示に従っていない"
+      ],
+      "Don't show again": [
+        "次回から表示しない"
+      ],
+      "Don't show this suggestion": [
+        "今後このメッセージを表示しない"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "「${ newFolderName }」フォルダを作成できませんでした"
+      ],
+      "Filters": [
+        "フィルター"
+      ],
+      "Frequency": [
+        "間隔"
+      ],
+      "From": [
+        "差出人"
+      ],
+      "From:": [
+        "差出人："
+      ],
+      "Has attachments": [
+        "添付ファイルあり"
+      ],
+      "Keyword": [
+        "キーワード"
+      ],
+      "Layout": [
+        "レイアウト"
+      ],
+      "Manage my addresses": [
+        "アドレスの管理"
+      ],
+      "Marked as read": [
+        "既読にしました"
+      ],
+      "Move ${ sidebarElementName }": [
+        "${ sidebarElementName } を移動"
+      ],
+      "Moved to ${ labelName }": [
+        "${ labelName }に移動しました"
+      ],
+      "Moved to Archive": [
+        "アーカイブに移動しました"
+      ],
+      "Moved to Trash": [
+        "ごみ箱に移動しました"
+      ],
+      "Newsletter entry deleted": [
+        "ニュースレターの登録が削除されました"
+      ],
+      "Not factually correct": [
+        "事実と異なる"
+      ],
+      "Open in a new tab": [
+        "新しいタブで開く"
+      ],
+      "Original link": [
+        "元のリンク"
+      ],
+      "Password hint": [
+        "パスワードのヒント"
+      ],
+      "Recipient": [
+        "宛先"
+      ],
+      "Remember my choice": [
+        "選択を記憶する"
+      ],
+      "Remove metadata": [
+        "メタデータを削除"
+      ],
+      "Search in": [
+        "検索対象"
+      ],
+      "Sender": [
+        "差出人"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "${ CALENDAR_APP_NAME }で予約ページと利用可能な時間を共有し、${ MEET_APP_NAME }で安全な会議をホストしましょう。"
+      ],
+      "Size:": [
+        "サイズ:"
+      ],
+      "Subject:": [
+        "件名:"
+      ],
+      "Time": [
+        "時間"
+      ],
+      "To:": [
+        "宛先:"
+      ],
+      "Undisclosed Recipients": [
+        "非公開の宛先"
+      ],
+      "Unsafe or problematic": [
+        "安全でない・問題を引き起こす可能性"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "${ truncatedName }の登録を解除しました。"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7671,6 +9867,9 @@
     "Label Recipient": {
       "To": [
         "宛先"
+      ],
+      "From": [
+        "差出人"
       ]
     },
     "Label, credit card": {
@@ -7711,6 +9910,15 @@
     "Labels": {
       "You don't have any active newsletters or mailing list subscriptions.": [
         "ニュースレターやメーリングリストの購読はありません。"
+      ],
+      "Loading your newsletter subscriptions...": [
+        "購読サプスクリクションを読み込み中..."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "登録解除したニュースレターまたはメーリングリストがここに表示されます。"
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "ニュースレターまたはメーリングリストのサブスクリプションはありません。"
       ]
     },
     "Landmarks": {
@@ -7740,7 +9948,7 @@
         "お問い合わせ"
       ],
       "Create a calendar linked to an active email address.": [
-        "有効なメールアドレスにリンクされたカレンダーを作成しましょう。"
+        "アクティブなメールアドレスにリンクされたカレンダーを作成します。"
       ],
       "Create a new calendar to add this event": [
         "この予定を追加するための新しいカレンダーを作成しましょう"
@@ -7812,7 +10020,7 @@
         "${ CALENDAR_APP_NAME } で更新された予定を開く"
       ],
       "Outbox": [
-        "送信トレイ"
+        "送信箱"
       ],
       "Pay invoice": [
         "請求の支払い"
@@ -7836,7 +10044,7 @@
         "設定"
       ],
       "Sign up for free": [
-        "無料登録"
+        "無料でサインアップ"
       ],
       "Terms": [
         "利用規約"
@@ -7848,7 +10056,7 @@
         "利用規約"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
-        "この ICS ファイルには ２つ以上の予定が含まれています。ダウンロードして ${ CALENDAR_APP_NAME } で予定をインポートしてください"
+        "この ICS ファイルには 1 つ以上の予定を含んでいます。ダウンロードして ${ CALENDAR_APP_NAME } で予定をインポートしてください"
       ],
       "Trash": [
         "ごみ箱"
@@ -7863,7 +10071,103 @@
         "この招待を管理するにはカレンダーの鍵を有効にする必要があります"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "更新されたイベントを表示するには、カレンダーの鍵を有効にする必要があります"
+        "更新された予定を表示するには、カレンダーの鍵を有効にする必要があります"
+      ],
+      "All mail": [
+        "すべてのメール"
+      ],
+      "Archive": [
+        "アーカイブ"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "招待に回答するには新しいカレンダーを作成しましょう"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "招待を管理するには新しいカレンダーを作成しましょう"
+      ],
+      "Deleted": [
+        "削除しました"
+      ],
+      "Drafts": [
+        "下書き"
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "カレンダーにリンクされたメールアドレスを有効にします"
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "回答を変更するには、無効化されている当該カレンダーのメールアドレスを有効化してください。"
+      ],
+      "Enable your address again to modify your answer.": [
+        "回答を変更するにはアドレスを再有効化してください。"
+      ],
+      "Enable your address to answer this invitation.": [
+        "この招待に回答するには、アドレスを有効にしましょう。"
+      ],
+      "Folders": [
+        "フォルダ"
+      ],
+      "Inbox": [
+        "受信トレイ"
+      ],
+      "Less": [
+        "隠す"
+      ],
+      "Manage your folders": [
+        "フォルダを管理"
+      ],
+      "More": [
+        "もっと見る"
+      ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } で開く"
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "またはカレンダーを削除し、有効なメールアドレスにリンクされたカレンダーを作成することができます。"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "招待を管理するには、このカレンダーにリンクされたメールアドレスを再度有効化してください。"
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "招待を更新するには、このカレンダーにリンクされたメールアドレスを再度有効化してください。"
+      ],
+      "Scheduled": [
+        "スケジュール済み"
+      ],
+      "Sent": [
+        "送信済み"
+      ],
+      "Snooze": [
+        "スヌーズ"
+      ],
+      "Snoozed": [
+        "スヌーズ"
+      ],
+      "Spam": [
+        "迷惑メール"
+      ],
+      "Starred": [
+        "スター付き"
+      ],
+      "Views": [
+        "表示"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "この予定を追加するには、カレンダーの鍵を有効にする必要があります"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "この招待に回答するにはカレンダーの鍵を有効にする必要があります"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "更新された招待を表示するには、カレンダーの鍵を有効にする必要があります"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "この招待を管理するには鍵を再度有効にする必要があります"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "更新された予定を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "更新された招待を表示するには、鍵を再度有効にする必要があります"
       ]
     },
     "Link to settings": {
@@ -7965,6 +10269,9 @@
       ],
       "Spam": [
         "迷惑メール"
+      ],
+      "Trash": [
+        "ごみ箱"
       ]
     },
     "meet_2025: Addon": {
@@ -8048,6 +10355,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "無料トライアルは終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
+      ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ date } に ${ senderString } が作成:"
       ]
     },
     "Message display when a new app version is available": {
@@ -8061,6 +10371,12 @@
       ],
       "Sending undone": [
         "送信が取り消されました"
+      ],
+      "Scheduled sending undone": [
+        "送信予約を取り消しました"
+      ],
+      "Undoing send...": [
+        "送信を取り消しています..."
       ]
     },
     "MIME type": {
@@ -8710,6 +11026,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "${ options }-day file version history": [
+        "${ options }日間のファイルバージョン履歴"
       ]
     },
     "new_plans: feature highlight": {
@@ -9168,6 +11487,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME }アドレスの準備が整いました"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "送信者 ${ firstSenderAddress } をブロックしました"
+      ],
+      "Senders blocked": [
+        "送信者をブロックしました"
+      ],
+      "The writing assistant is ready to use": [
+        "執筆アシスタントを使用する準備ができました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9316,14 +11644,23 @@
     "Onboarding List Placeholder": {
       "Protect your accounts": [
         "アカウントを保護"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "メールを${ MAIL_APP_NAME }に取り込む"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "お客様の既存のメールを ${ MAIL_APP_NAME } に取り込み、1つのプライベートな受信トレイですべてを管理できるようにしましょう。"
+      ],
+      "Maybe later": [
+        "今度やる"
       ]
     },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
-        "${ advancedEncryptionTitle } は、あなたと意図した宛先のみがメールにアクセスできることを保証します。"
+        "${ advancedEncryptionTitle } は、お客様と意図した宛先のみがメールにアクセスできることを保証します。"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
-        "Play Store の ${ MAIL_APP_NAME }"
+        "Play Store での ${ MAIL_APP_NAME }"
       ],
       "Advanced encryption": [
         "高度な暗号化"
@@ -9332,13 +11669,13 @@
         "ブラウザ"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "30 日以上前の迷惑メールや削除済みメールを、自動的に消去。"
+        "30 日放っておいた迷惑メールや削除されたメールを、自動的に完全に削除しましょう。"
       ],
       "Desktop": [
         "デスクトップ"
       ],
       "Distraction-free emailing": [
-        "集中できるメール"
+        "自由なメール送信"
       ],
       "Download the desktop app": [
         "デスクトップアプリをダウンロード"
@@ -9351,6 +11688,93 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "利用開始の前に、表示名を設定してください。あなたがメール送信した人や予定に招待した人、ファイルを共有した人に表示されます。"
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } は、お客様のアプリでスポンサー広告が一切表示されないことを意味します。"
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } は、詐欺メールが受信トレイに届かないようにします。"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store での ${ MAIL_APP_NAME }"
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } は、お客様がこれ以上インターネット上で追いかけ回されないようにします。"
+      ],
+      "Activate premium features": [
+        "プレミアム機能を有効にする"
+      ],
+      "Activate selected": [
+        "選択済みをアクティベート"
+      ],
+      "Ad-free promise": [
+        "広告なしの約束"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "Anytime, anywhere access": [
+        "いつでもどこでもアクセス"
+      ],
+      "Auto-delete spam and trash": [
+        "迷惑メールとごみ箱のメールを自動削除"
+      ],
+      "Continue": [
+        "続ける"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } を発見"
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "メールと最適化されたモバイルエクスペリエンスへいつでもアクセスするためには、 ${ mobileAppAppStoreLink } または ${ mobileAppGooglePlayLink } アプリをダウンロードしてください。"
+      ],
+      "Get notified if your password is compromised.": [
+        "パスワードの安全性が損なわれた場合に通知を受け取る"
+      ],
+      "Industry-leading spam protection": [
+        "業界をリードするスパム対策"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Let's get started": [
+        "始めましょう"
+      ],
+      "Make the most of your paid plan.": [
+        "有料プランを最大限に活用してください。"
+      ],
+      "Maybe later": [
+        "たぶんあとで"
+      ],
+      "Next": [
+        "次"
+      ],
+      "Replay introduction": [
+        "リプレイの紹介"
+      ],
+      "Set a display name": [
+        "表示名を設定する"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "${ BRAND_NAME }を使い始めましょう"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "より短く、覚えやすいメールアドレスを使い始めましょう。"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } へようこそ"
+      ],
+      "Where privacy is default.": [
+        "プライバシーが最初から組み込まれている場所。"
+      ],
+      "You are all set!": [
+        "準備完了です！"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "あなたのドメイン ${ domain } と ${ subscriptionName } サブスクリプションを使用する準備ができました。"
+      ],
+      "Your domain and subscription are ready to use.": [
+        "ドメインとサブスクリプションを使用する準備ができました。"
       ]
     },
     "Onboarding Proton": {
@@ -9374,6 +11798,12 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "設定でいつでもテーマを変更できます"
+      ],
+      "Choose your preferred look and feel.": [
+        "お好みの外観と雰囲気を選択してください。"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "ドメイン名をリンクし、組織のすべてのメンバーのアカウントを作成します。"
       ]
     },
     "Onboarding Trial": {
@@ -9438,6 +11868,15 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
+      ],
+      "All": [
+        "すべて"
+      ],
+      "Remind me later": [
+        "後で通知する"
+      ],
+      "Yes, don't show again": [
+        "次回から表示しない"
       ]
     },
     "Option group": {
@@ -9875,7 +12314,7 @@
         "Cortex Inc."
       ],
       "Describe what to change": [
-        "何を変えたいかを説明しましょう"
+        "何を変更するかを説明する"
       ],
       "E.g., ": [
         "例: "
@@ -10005,6 +12444,51 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Filter folders": [
+        "フォルダの絞り込み"
+      ],
+      "Generating": [
+        "生成中"
+      ],
+      "Hint": [
+        "ヒント"
+      ],
+      "Please share what you expected": [
+        "期待していたことを共有してください"
+      ],
+      "Search date, name, email address, or subject line": [
+        "日付、名前、メールアドレス、件名で検索"
+      ],
+      "Search messages": [
+        "メッセージを検索"
+      ],
+      "Search name, email or group": [
+        "名前、メール、グループを検索"
+      ],
+      "Subject": [
+        "件名"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "執筆アシスタントに何を書くか伝えてください。例: \"ニュースレターで今後の予定をお知らせします\""
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "執筆アシスタントに何を書くべきか伝えましょう。例：「体操のメンバーシップをキャンセルする」"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "執筆アシスタントに何を書くか伝えてください。例: ジェーンをパーティーに招待してください"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "ライティングアシスタントに何を書くべきかを伝えます。例：\"同僚にプロジェクトでの支援を感謝する\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "執筆アシスタントに何を書くべきかを伝えます。例：\"インターンシップのカバーレターを書いてください\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "執筆アシスタントに何を書くか伝えてください。例: \"顧客へのフォローアップメールを書いてください\""
+      ],
+      "To": [
+        "宛先"
       ]
     },
     "Placeholder for contact group name": {
@@ -10196,13 +12680,34 @@
         "エンドツーエンド暗号化された署名付きメッセージ"
       ],
       "End-to-end encrypted message": [
-        "端末相互間で暗号化されたメッセージ"
+        "エンドツーエンド暗号化されたメッセージ"
       ],
       "End-to-end encrypted message from verified sender": [
-        "検証済みの差出人からの、エンドツーエンド暗号化されたメッセージ"
+        "検証済みの送信者からの、エンドツーエンド暗号化済みメッセージ"
       ],
       "PGP-encrypted and signed message": [
         "PGP 暗号化された署名付きメッセージ"
+      ],
+      "PGP-encrypted message": [
+        "PGP 暗号化されたメッセージ"
+      ],
+      "PGP-encrypted message from verified sender": [
+        "検証済みの送信者からのPGP暗号化メッセージ"
+      ],
+      "PGP-signed message": [
+        "PGP 署名付きメッセージ"
+      ],
+      "PGP-signed message from verified sender": [
+        "検証済みの送信者からの、PGP 署名付きメッセージ"
+      ],
+      "PGP-signed message. Sender verification failed": [
+        "PGP 署名されたメッセージです。送信者の検証に失敗しました"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "${ MAIL_APP_NAME } によって送信された、ゼロアクセス暗号化されたメッセージ"
+      ],
+      "Stored with zero-access encryption": [
+        "ゼロアクセス暗号化で保存されています"
       ]
     },
     "Referral": {
@@ -10270,6 +12775,21 @@
     "Reply to calendar invitation": {
       "Re-encrypting invitation failed. Please try again.": [
         "招待の再暗号化に失敗しました。再度お試しください。"
+      ],
+      "Answer sent": [
+        "回答を送信しました"
+      ],
+      "Answering invitation failed": [
+        "招待への回答に失敗しました"
+      ],
+      "Calendar event created": [
+        "カレンダーの予定が作成されました"
+      ],
+      "Calendar event updated": [
+        "カレンダーの予定が更新されました"
+      ],
+      "Cannot send to organizer address: ${ errorMessage }": [
+        "主催者のアドレスに送信できません: ${ errorMessage }"
       ]
     },
     "Safety review": {
@@ -10287,7 +12807,19 @@
         "送信予約メッセージはありません"
       ],
       "No results found": [
-        "何も見つかりませんでした"
+        "結果が見つかりません"
+      ],
+      "An action is being processed": [
+        "処理中のアクションです"
+      ],
+      "No messages found": [
+        "メッセージが見つかりませんでした"
+      ],
+      "No snoozed messages": [
+        "スヌーズされたメッセージはありません"
+      ],
+      "No unread messages found": [
+        "未読メッセージは見つかりませんでした"
       ]
     },
     "Section": {
@@ -10378,7 +12910,46 @@
     },
     "Sent email icon": {
       "End-to-end encrypted to verified recipient": [
-        "検証済み受信者への端末相互間の暗号化による送信"
+        "検証済みの宛先への、エンドツーエンド暗号化による送信"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } による暗号化"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "PGP 宛先へ、${ MAIL_APP_NAME } によって送信された、暗号化されたメッセージ"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "${ MAIL_APP_NAME } によって暗号化・宛先はPGP検証済み"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "検証済みの宛先へ、${ MAIL_APP_NAME } によって送信された、暗号化されたメッセージ"
+      ],
+      "End-to-end encrypted": [
+        "エンドツーエンド暗号化"
+      ],
+      "End-to-end encrypted to PGP recipient": [
+        "PGP の宛先への、エンドツーエンド暗号化による送信"
+      ],
+      "End-to-end encrypted to verified PGP recipient": [
+        "検証済みの PGP の宛先への、エンドツーエンド暗号化による送信"
+      ],
+      "PGP-signed": [
+        "PGP 署名済み"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "${ MAIL_APP_NAME } によって送信された、ゼロアクセス暗号化されたメッセージ"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "検証済みの受信者にゼロアクセス暗号化で ${ MAIL_APP_NAME } によって送信されました"
+      ],
+      "Sent by you with end-to-end encryption": [
+        "あなたによって送信された、エンドツーエンド暗号化されたメッセージ"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "検証済みの受信者にエンドツーエンドの暗号化で送信されました"
+      ],
+      "Stored with zero-access encryption": [
+        "ゼロアクセス暗号化で保存されています"
       ]
     },
     "session_recovery:available:action": {
@@ -10571,7 +13142,19 @@
         "送信者を検証できませんでした: メッセージが署名されていません"
       ],
       "Sender's trusted keys verification failed": [
-        "送信者の信頼された鍵の検証に失敗しました"
+        "送信者の信頼されたキーの検証に失敗しました"
+      ],
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP 暗号化されたメッセージです。送信者の検証に失敗しました: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP 署名されたメッセージです。差出人の検証に失敗しました: ${ verificationErrorsMessage }"
+      ],
+      "Sender verification failed": [
+        "送信者検証の失敗"
+      ],
+      "Sender verification failed: ${ verificationErrorsMessage }": [
+        "送信者の検証に失敗しました: ${ verificationErrorsMessage }"
       ]
     },
     "Signing preference for emails": {
@@ -10603,6 +13186,18 @@
     "Sort option": {
       "Sort by": [
         "並べ替え"
+      ],
+      "Largest first": [
+        "容量の大きい順"
+      ],
+      "Newest first": [
+        "新しい順"
+      ],
+      "Oldest first": [
+        "古い順"
+      ],
+      "Smallest first": [
+        "容量の小さい順"
       ]
     },
     "specialoffer: Action": {
@@ -10839,6 +13434,24 @@
       ],
       "Schedule send": [
         "送信予約"
+      ],
+      "Discover your subscription benefits": [
+        "サブスクリプションの特典をご覧ください"
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "これは現在の既定のアドレスです。別のアドレスから送信する場合はドロップダウンを開いてください。 "
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "サードパーティサービスからあなたのデータが流出した場合に通知を受け取るために、${ DARK_WEB_MONITORING_NAME }をオンにしましょう。"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "デフォルトで画像を読み込みつつ、差出人による追跡を防ぎます。これは${ settingsLink }で変更できます。"
+      ],
+      "You can now schedule your messages to be sent later": [
+        "メッセージの送信を予約できます"
+      ],
+      "Your pm.me email is active": [
+        "pm.me メールが有効です"
       ]
     },
     "sso": {
@@ -10863,6 +13476,12 @@
       ],
       "Select service to update": [
         "アップデートするサービスを選択"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "アカウント設定で、メールアドレスを編集したり変更するオプションが確認できます "
+      ],
+      "Sign in to the service": [
+        "サービスにサインイン"
       ]
     },
     "Step in filter modal": {
@@ -11417,19 +14036,19 @@
         "会話を${ labelName }に移動し、差出人のアドレスは迷惑メールから除外されました。"
       ],
       "Conversation moved to ${ labelName }.": [
-        "会話を ${ labelName } に移動しました。"
+        "会話が ${ labelName } に移動されました。"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList }との会話は${ labelsList }のラベルが付きます"
       ],
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
-        "${ sendersList }との会話は${ folder }に移動されます"
+        "${ sendersList }との会話を${ folder }に移動します"
       ],
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
       "Draft deleted": [
-        "下書きを削除しました"
+        "下書きが削除されました"
       ],
       "Email address copied to clipboard": [
         "メールアドレスがクリップボードにコピーされました"
@@ -11468,7 +14087,7 @@
         "支払い方法が更新されました"
       ],
       "Phishing reported": [
-        "詐欺を報告しました"
+        "フィッシングが報告されました"
       ],
       "Phone number copied to clipboard": [
         "電話番号がクリップボードにコピーされました"
@@ -11505,11 +14124,182 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "${ count } conversation deleted": [
+        "${ count } 件の会話が削除されました"
+      ],
+      "${ count } draft deleted": [
+        "${ count } 件の下書きが削除されました"
+      ],
+      "${ count } message deleted": [
+        "${ count } 件のメッセージが削除されました"
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount }件の会話に${ labelName }のラベルを付けました。"
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } 件の会話を既読にしました。"
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } 件の会話にスターをつけました。"
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } 件の会話を未読にしました。"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount }件の会話を${ labelName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } 件の会話を ${ labelName } に移動しました。"
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } 件の会話を迷惑メールに移動し、送信元のアドレスを迷惑メールリストに登録しました。"
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } 件の会話から ${ labelName } のラベルを外しました。"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } 件の会話がスター付きから削除されました"
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } 件の会話をスヌーズしました"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } 件の会話のスヌーズを解除しました"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } 件のメッセージが ${ labelName } に追加されました。"
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } 件のメッセージを既読にしました。"
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } 件のメッセージにスターをつけました。"
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } 件のメッセージを未読にしました。"
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount }件のメールを${ labelName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } 件のメッセージが ${ labelName } に移動されました。"
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount }件のメールを迷惑メールに移動しました。差出人は迷惑メールリストに登録済みです。"
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } 件のメッセージが ${ labelName } から削除されました。"
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } 件のメッセージがスター付きから削除されました。"
+      ],
+      "Address verification disabled": [
+        "アドレス検証を無効にしました"
+      ],
+      "Content copied to clipboard": [
+        "内容をクリップボードにコピーしました"
+      ],
+      "Conversation marked as read.": [
+        "会話を既読にしました。"
+      ],
+      "Conversation marked as Starred.": [
+        "会話にスターをつけました。"
+      ],
+      "Conversation marked as unread.": [
+        "会話を未読にしました。"
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "会話を迷惑メールに移動し、差出人のアドレスは迷惑メールリストに追加されました。"
+      ],
+      "Conversation removed from ${ labelName }.": [
+        "会話から${ labelName }のラベルを外しました。"
+      ],
+      "Conversation removed from Starred.": [
+        "会話がスター付きから削除されました。"
+      ],
+      "Labels applied.": [
+        "ラベルが適用されました。"
+      ],
+      "Mail list unsubscribed": [
+        "メールリストの購読を解除しました"
+      ],
+      "Message content search enabled": [
+        "メッセージ内容の検索が有効になりました"
+      ],
+      "Message deleted": [
+        "メッセージが削除されました"
+      ],
+      "Message expiration canceled": [
+        "メッセージの有効期限がキャンセルされました"
+      ],
+      "Message marked as legitimate": [
+        "メッセージを正当なもとしてマークしました"
+      ],
+      "Message marked as read.": [
+        "メッセージを既読にしました。"
+      ],
+      "Message marked as Starred.": [
+        "メッセージにスターを付けました。"
+      ],
+      "Message marked as unread.": [
+        "メッセージを未読にしました。"
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "メールを迷惑メールに移動し、送信元のアドレスを迷惑メールリストに追加しました。"
+      ],
+      "Message removed from ${ labelName }.": [
+        "メッセージを ${ labelName } から削除しました。"
+      ],
+      "Message removed from Starred.": [
+        "メッセージがスター付きから削除されました。"
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } からのメッセージに ${ labelsList } ラベルをつけます"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } からのメッセージを ${ folder } に移動します"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "${ selectionCount } 件の会話を移動"
+      ],
+      "Move ${ selectionCount } message": [
+        "${ selectionCount } 件のメッセージを移動"
+      ],
+      "Public key trusted": [
+        "公開鍵が信頼されました。"
+      ],
+      "Read receipt sent": [
+        "開封確認が送信されました"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount }件のメッセージを再分類しました。"
+      ],
+      "Self-destruction removed": [
+        "有効期限が削除されました"
+      ],
+      "Self-destruction set": [
+        "有効期限が設定されました"
+      ],
+      "Thanks for the feedback!": [
+        "フィードバックありがとうございます！"
       ]
     },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } が削除されました"
+      ],
+      " is now active": [
+        " は現在アクティブです"
+      ],
+      "The filter has been disabled": [
+        "フィルターは無効化されました"
+      ],
+      "The filter has been enabled": [
+        "フィルターは有効化されました"
+      ],
+      "The filter is active again": [
+        "フィルターが再度有効になりました"
       ]
     },
     "Suffix": {
@@ -11662,7 +14452,34 @@
         "有効化"
       ],
       "Show me how": [
-        "どうやってやるの？"
+        "方法を表示"
+      ],
+      "Create an alias": [
+        "エイリアスを作成"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "「${ suggestedLabelName }」ラベルを作成"
+      ],
+      "Create new email address": [
+        "新しいメールアドレスを作成"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "「${ suggestedFolderName }」というフォルダを作成"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } をダウンロード"
+      ],
+      "Download the desktop app": [
+        "デスクトップアプリをダウンロード"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } を有効にする"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "「@${ PM_DOMAIN }」アドレスを取得"
+      ],
+      "Open ": [
+        "開く "
       ]
     },
     "Title": {
@@ -12039,7 +14856,7 @@
         "このバーナーを隠したままにしますか？"
       ],
       "Label options": [
-        "ラベルの設定"
+        "ラベルオプション"
       ],
       "Limit reached": [
         "上限に達しました"
@@ -12057,7 +14874,7 @@
         "メールを正当なものとしてマーク"
       ],
       "Mark messages as unread": [
-        "メールを未読にする"
+        "メッセージを未読にする"
       ],
       "Merge contacts": [
         "連絡先の統合"
@@ -12072,7 +14889,7 @@
         "モバイル"
       ],
       "More": [
-        "その他"
+        "もっと見る"
       ],
       "Multiple accounts, 1 private inbox": [
         "複数のアカウント、1つのプライベート受信トレイ"
@@ -12388,6 +15205,336 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } 件のメッセージ"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } 件の未読メッセージ"
+      ],
+      "Action all conversations": [
+        "すべての会話を操作"
+      ],
+      "Archive all messages?": [
+        "すべてのメッセージをアーカイブしますか？"
+      ],
+      "Attachments": [
+        "添付ファイル"
+      ],
+      "Bad time for this email?": [
+        "このメールを送信するタイミングが悪いですか？"
+      ],
+      "BCC": [
+        "BCC"
+      ],
+      "Blind Carbon Copy": [
+        "ブラインドカーボンコピー"
+      ],
+      "Block sender": [
+        "差出人をブロック"
+      ],
+      "Built for privacy": [
+        "プライバシーのために構築"
+      ],
+      "Carbon Copy": [
+        "カーボンコピー"
+      ],
+      "CC": [
+        "CC"
+      ],
+      "Confirm recipient address?": [
+        "宛先のアドレスを確認しますか?"
+      ],
+      "Conversation list": [
+        "会話リスト"
+      ],
+      "Craft better emails": [
+        "より良いメールを作成する"
+      ],
+      "Create label \"${ search }\"": [
+        "「${ search }」ラベルを作成"
+      ],
+      "Delete ${ count } conversation": [
+        "${ count } 件の会話を削除"
+      ],
+      "Delete ${ count } draft": [
+        "${ count } 件の下書きを削除"
+      ],
+      "Delete ${ count } message": [
+        "${ count } 件のメッセージを削除"
+      ],
+      "Delete all messages": [
+        "すべてのメッセージを削除"
+      ],
+      "Delete conversation": [
+        "会話を削除"
+      ],
+      "Delete message": [
+        "メッセージを削除する"
+      ],
+      "Discover your subscription benefits": [
+        "サブスクリプションの特典をご覧ください"
+      ],
+      "Don't give spam a chance": [
+        "迷惑メールを送らせない"
+      ],
+      "Email content": [
+        "メール内容"
+      ],
+      "Enable message content search": [
+        "メッセージ内容の検索を有効化"
+      ],
+      "External encryption": [
+        "外部への暗号化"
+      ],
+      "Filter on...": [
+        "絞り込み"
+      ],
+      "Folder options": [
+        "フォルダー設定"
+      ],
+      "Forward": [
+        "転送"
+      ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }でメールを非表示に"
+      ],
+      "How to update your email address": [
+        "メールアドレスの更新方法"
+      ],
+      "Image": [
+        "画像"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }でセキュリティを強化"
+      ],
+      "Increase your privacy with more addresses": [
+        "より多くのメールアドレスを使用してプライバシーを向上させましょう"
+      ],
+      "Insert contacts": [
+        "連絡先を挿入"
+      ],
+      "Introducing email categories": [
+        "メールカテゴリのご紹介"
+      ],
+      "Label as": [
+        "ラベル付け"
+      ],
+      "Load embedded images": [
+        "埋め込み画像を読み込む"
+      ],
+      "Load remote content": [
+        "外部コンテンツの読み込み"
+      ],
+      "Mailing list": [
+        "メーリングリスト"
+      ],
+      "Mark all messages as read": [
+        "すべてのメッセージを既読にする"
+      ],
+      "Mark as read": [
+        "既読にする"
+      ],
+      "Mark as unread": [
+        "未読にする"
+      ],
+      "Mark conversations as read": [
+        "会話を既読にする"
+      ],
+      "Mark messages as read": [
+        "メッセージを既読にする"
+      ],
+      "Message details": [
+        "メッセージの詳細"
+      ],
+      "Message list": [
+        "メッセージリスト"
+      ],
+      "Message will expire": [
+        "メッセージは期限切れになります"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "お客様の組織を${ BRAND_NAME }に移行する"
+      ],
+      "More actions": [
+        "その他の操作"
+      ],
+      "More options": [
+        "詳細設定を表示"
+      ],
+      "More selections": [
+        "選択方法を指定"
+      ],
+      "Move all conversations": [
+        "すべての会話を移動"
+      ],
+      "Move all messages": [
+        "すべてのメッセージを移動"
+      ],
+      "Move all messages to archive": [
+        "すべてのメッセージをアーカイブへ移動"
+      ],
+      "Move all messages to trash": [
+        "すべてのメッセージをごみ箱へ移動"
+      ],
+      "Move to": [
+        "移動先"
+      ],
+      "Move to inbox": [
+        "受信トレイに移動"
+      ],
+      "Move to inbox (not spam)": [
+        "受信トレイに移動 (迷惑メールではありません)"
+      ],
+      "Move to spam": [
+        "迷惑メールに移動"
+      ],
+      "Move to trash": [
+        "ゴミ箱に移動"
+      ],
+      "Moving a scheduled message": [
+        "送信予約メッセージを移動中"
+      ],
+      "Moving a snoozed message": [
+        "スヌーズされたメッセージを移動"
+      ],
+      "Newsletters": [
+        "ニュースレター"
+      ],
+      "Newsletters view": [
+        "ニュースレタービュー"
+      ],
+      "Next message": [
+        "次のメッセージ"
+      ],
+      "No active newsletters": [
+        "有効なニュースレターはありません"
+      ],
+      "No attachment found": [
+        "添付ファイルが見つかりませんでした"
+      ],
+      "No newsletters found": [
+        "ニュースレターが見つかりません"
+      ],
+      "No trackers found": [
+        "トラッカーは見つかりませんでした"
+      ],
+      "No unsubscribed newsletters": [
+        "購読解除されたニュースレターはありません"
+      ],
+      "No-reply address detected": [
+        "返信できないアドレスが検知されました"
+      ],
+      "On-device suggestions": [
+        "デバイス上の提案"
+      ],
+      "Previous message": [
+        "前のメッセージ"
+      ],
+      "Protect yourself from trackers": [
+        "トラッカーから身を守る"
+      ],
+      "Recipient missing": [
+        "宛先がありません"
+      ],
+      "Recipients": [
+        "宛先"
+      ],
+      "Reply": [
+        "返信"
+      ],
+      "Reply all": [
+        "全員に返信"
+      ],
+      "Schedule now, send later": [
+        "今すぐ予約、後で送信"
+      ],
+      "Select a theme": [
+        "テーマを選択"
+      ],
+      "Self-destruct message": [
+        "有効期限付きメッセージ"
+      ],
+      "Send email": [
+        "メール送信"
+      ],
+      "Send with changed preferences?": [
+        "設定を変更したうえで送信しますか?"
+      ],
+      "Send without expiration?": [
+        "期限なしで送信しますか?"
+      ],
+      "Sender": [
+        "差出人"
+      ],
+      "Sender changed": [
+        "送信者が変更されました"
+      ],
+      "Sending error": [
+        "送信エラー"
+      ],
+      "Sending notice": [
+        "通知の送信"
+      ],
+      "Sending original message": [
+        "元のメッセージを送信しています"
+      ],
+      "Snooze": [
+        "スヌーズ"
+      ],
+      "Snooze message": [
+        "メッセージをスヌーズ"
+      ],
+      "Storage capacity warning": [
+        "ストレージ容量の警告"
+      ],
+      "Subject missing": [
+        "件名がありません"
+      ],
+      "To": [
+        "宛先"
+      ],
+      "Trash all messages?": [
+        "すべてのメッセージをごみ箱に入れますか？"
+      ],
+      "Trust new key?": [
+        "新しい鍵を信頼しますか？"
+      ],
+      "Trust pinned keys?": [
+        "固定されたキーを信頼しますか?"
+      ],
+      "Trust public key?": [
+        "公開鍵を信頼しますか?"
+      ],
+      "Unsubscribe": [
+        "購読解除"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "${ subscription.Name } の登録を解除しますか？"
+      ],
+      "Unsubscribe not available for this sender": [
+        "この差出人の登録解除は利用できません"
+      ],
+      "Unsubscribe request sent": [
+        "購読解除リクエストを送信しました"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Gmail を ${ MAIL_APP_NAME } で安全に使用する"
+      ],
+      "Verification error": [
+        "検証エラーが発生しました"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "${ trackersCount } 件のトラッカーから保護しました"
+      ],
+      "Welcome": [
+        "ようこそ"
+      ],
+      "Welcome ${ userName }": [
+        "ようこそ ${ userName } さん"
+      ],
+      "Your newsletters in one place": [
+        "ニュースレターを一か所に"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12479,6 +15626,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "これにより、あなたを特定または追跡するために使用される可能性のある場所、デバイス、およびその他の情報を誰も見ることができなくなります。"
       ]
     },
     "tooltip": {
@@ -12684,6 +15834,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "お客様のトライアルは${ textDate }に終了します。${ textDate }までにキャンセルした場合、料金は請求されません。${ action }"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "添付ファイルの署名の検証に失敗しました。\n添付ファイルはダウンロードできますが、改ざんされている可能性があります。"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -12912,6 +16065,254 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        "参加者の追加に失敗しました"
+      ],
+      "Invitation sent and participant added": [
+        "招待は送信され参加者が追加されました"
+      ],
+      "Participant added": [
+        "参加者が追加されました"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "有効期限付きメッセージ"
+      ]
+    },
+    "Alternative text for conversation image": {
+      "Conversation": [
+        "会話"
+      ]
+    },
+    "Attachment signature verification": {
+      "Sender verification failed": [
+        "送信者検証の失敗"
+      ],
+      "Sender verification passed": [
+        "送信者検証に成功しました"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "カレンダーの予定付き"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "予定は終了しました"
+      ],
+      "Event in progress": [
+        "予定が進行中です"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Cancel expiration": [
+        "有効期限をキャンセル"
+      ]
+    },
+    "Composer size": {
+      "Maximized": [
+        "最大化"
+      ],
+      "Normal": [
+        "通常"
+      ]
+    },
+    "Date label": {
+      "Today": [
+        "今日"
+      ],
+      "Tomorrow": [
+        "明日"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "快適性"
+      ],
+      "Compact": [
+        "コンパクト"
+      ]
+    },
+    "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length }件の新着メッセージ"
+      ],
+      "From: ${ sender } - ${ Subject }": [
+        "送信者: ${ sender } - ${ Subject }"
+      ]
+    },
+    "Desktop notification title": {
+      "New email received": [
+        "新しいメールを受信しました"
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "予定の詳細は暗号化されています。再度サインインしてカレンダーを復元しデータを復元します。${ learnMoreLink }"
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "予定の詳細を復号できませんでした。${ whyNotLink }"
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        "予定はあなたのカレンダーで利用できません"
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        "予定は中止されました"
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        "予定が更新されました。リマインダーは古くなっています。"
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "ゼロアクセス暗号化。受信者のアカウントでエンドツーエンドの暗号化を無効にしています。"
+      ]
+    },
+    "Encrypted Headers": {
+      "Encrypted Headers filename": [
+        "暗号化されたヘッダーファイル名"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "1つの招待ごとに最大で${ maxAttendees }人の参加者が許可されています。"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        "${ email } に招待を送信できません。${ errorMessage }"
+      ]
+    },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "日付: ${ date }"
+      ],
+      "From: ${ senderString }": [
+        "送信者: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "件名: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "宛先: ${ toString }"
+      ]
+    },
+    "Import ICS file from Mail": {
+      "Calendar event created": [
+        "カレンダーの予定が作成されました"
+      ],
+      "Creating calendar event failed": [
+        "カレンダーの予定の作成に失敗しました"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "時間"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "列"
+      ],
+      "Row": [
+        "行"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } で開く"
+      ]
+    },
+    "Message image": {
+      "Image could not be loaded.": [
+        "画像が読み込めませんでした。"
+      ],
+      "Image has not been loaded in order to protect your privacy.": [
+        "プライバシー保護のため、画像は読み込まれませんでした。"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } 日"
+      ],
+      "<1 d": [
+        "1日未満"
+      ]
+    },
+    "Send email with changed preferences": {
+      "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
+        "以下のアドレスの連絡先が削除されました。それに関連して、紐づく暗号化設定が更新されました。"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "次のアドレスの連絡先は、アカウントのエンドツーエンド暗号化を無効にしているため、対応する暗号化設定が更新されました："
+      ]
+    },
+    "Send email with errors": {
+      "Do you want to send the email anyway?": [
+        "とりあえずメールを送信しますか?"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "問題を検出しました。入力したメールアドレスにメールを送信することができません。原因:"
+      ],
+      "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
+        "いくつかの問題を検出しました。入力したメールアドレスにメールを送信することができません。原因:"
+      ]
+    },
+    "Send email with warnings": {
+      "Do you want to send the email anyway?": [
+        "とりあえずメールを送信しますか？"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "次のアドレスは有効ではありません: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "いくつかの警告を検出しました。次のアドレスはメールを受け取ることができません:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "送信者検証"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "メッセージをスヌーズ"
+      ],
+      "When should the message reappear in your inbox?": [
+        "いつメッセージを受信トレイに再表示しますか？"
+      ]
+    },
+    "Status": {
+      "Alias disabled": [
+        "エイリアスが無効になっています"
+      ],
+      "Unsubscribed": [
+        "登録解除されました"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "月曜日の${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "${ formatTime }土曜日"
+      ],
+      "Sun, ${ formatTime }": [
+        "${ formatTime }日曜日"
       ]
     }
   }

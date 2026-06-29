@@ -460,7 +460,7 @@
         "Ladda ner ${ DRIVE_APP_NAME } appen"
       ],
       "Download all attachments": [
-        "Ladda ned alla bilagor"
+        "Ladda ner alla bilagor"
       ],
       "Download application logs": [
         "Ladda ner applikationsloggar"
@@ -878,10 +878,10 @@
         "Meddelanden till denna mottagare"
       ],
       "Modify": [
-        "Ändra"
+        "Modifiera"
       ],
       "Modify selection": [
-        "Ändra val"
+        "Modifiera val"
       ],
       "Monday": [
         "Måndag"
@@ -1001,7 +1001,7 @@
         "Inte nu"
       ],
       "Not saved": [
-        "Inte sparat"
+        "Inte sparad"
       ],
       "OK": [
         "OK"
@@ -1034,7 +1034,7 @@
         "Lösenfras"
       ],
       "Pause": [
-        "Paus"
+        "Pausa"
       ],
       "Pay": [
         "Betala"
@@ -1088,7 +1088,7 @@
         "Läskvitto skickat"
       ],
       "Recently read": [
-        "Nyligen lästa"
+        "Nyligen läst"
       ],
       "Recently received": [
         "Nyligen mottaget"
@@ -1403,7 +1403,7 @@
         "Snooza"
       ],
       "Star": [
-        "Stjärna"
+        "Stjärnmärk"
       ],
       "Start import": [
         "Starta import"
@@ -1418,10 +1418,10 @@
         "Stanna"
       ],
       "Stop downloading assistant": [
-        "Stoppa ladda ner assistent"
+        "Stoppa nedladdning av assistent"
       ],
       "Stop generating result": [
-        "Stoppa generera resultat"
+        "Sluta generera resultat"
       ],
       "Stop marking as read": [
         "Sluta markera som läst"
@@ -1487,8 +1487,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1527,7 +1526,7 @@
         "Osorterad lista"
       ],
       "Unsnooze": [
-        "Stäng av snooze"
+        "Avsnooza"
       ],
       "Unstar": [
         "Ta bort stjärnmärkning"
@@ -1602,7 +1601,7 @@
         "Använd återställningskod"
       ],
       "Use this": [
-        "Använd detta"
+        "Använd denna"
       ],
       "Use this Gmail address": [
         "Använd denna Gmail-adress"
@@ -1682,6 +1681,51 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Add Bcc recipients": [
+        "Lägg till mottagare av hemlig kopia"
+      ],
+      "Add Cc recipients": [
+        "Lägg till mottagare av kopia"
+      ],
+      "Blind Carbon Copy": [
+        "Hemlig kopia"
+      ],
+      "Carbon Copy": [
+        "Kopia"
+      ],
+      "Close composer": [
+        "Stäng redigeringsfönster"
+      ],
+      "Contract composer": [
+        "Krymp redigeringsfönster"
+      ],
+      "Expand composer": [
+        "Expandera redigeringsfönster"
+      ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Dölj ${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Maximize composer": [
+        "Maximera redigeringsfönster"
+      ],
+      "Minimize composer": [
+        "Minimera redigeringsfönster"
+      ],
+      "Saving${ ellipsis }": [
+        "Sparar${ ellipsis }"
+      ],
+      "Search message content": [
+        "Sök meddelandeinnehåll"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Visa ${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "View headers": [
+        "Visa rubriker"
       ]
     },
     "action": {
@@ -1724,7 +1768,7 @@
     },
     "Adding expiration to a message will create an expiring message": {
       "Expiring message": [
-        "Utlöpt meddelande"
+        "Utlöpta meddelanden"
       ]
     },
     "Addon": {
@@ -2449,7 +2493,7 @@
         "${ participantName } hade accepterat en inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } hade accepterat en inbjudan till en förekomst av händelsen."
+        "${ participantName } har accepterat en inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } hade accepterat en inbjudan till denna händelse."
@@ -2488,7 +2532,7 @@
         "${ participantName } hade tidigare avböjt din inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } hade tidigare avböjt din inbjudan."
+        "${ participantName } har tidigare avböjt din inbjudan."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
         "${ participantName } hade tidigare preliminärt accepterat din inbjudan till en förekomst av händelsen."
@@ -2581,7 +2625,7 @@
         "Denna inbjudan är inaktuell. Händelsen har uppdaterats."
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Det här nya tidsförslaget matchar inte dina inbjudningsdetaljer. Verifiera inbjudningsdetaljerna i din kalender."
+        "Detta nya tidsförslag matchar inte dina inbjudningsdetaljer. Verifiera inbjudningsdetaljerna i din kalender."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Detta svar matchar inte dina inbjudningsdetaljer. Verifiera inbjudningsdetaljerna i din kalender."
@@ -2609,11 +2653,29 @@
       ],
       "Your email address is not in the original participants list.": [
         "Din e-postadress finns inte i den ursprungliga deltagarlistan."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } bad om de senaste uppdateringarna av en händelse som inte matchar dina inbjudningsdetaljer. Verifiera inbjudningsdetaljerna i din kalender."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hade preliminärt accepterat en inbjudan och föreslagit en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } har preliminärt accepterat en inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } har preliminärt accepterat en inbjudan till denna händelse."
+      ],
+      "(Attendance optional)": [
+        "(Frivilligt deltagande)"
+      ],
+      "This event has been canceled.": [
+        "Denna händelse har avbrutits."
       ]
     },
     "Calendar widget banner": {
       "Event already ended": [
-        "Händelse har redan slutat"
+        "Händelsen har redan slutat"
       ],
       "Event in progress": [
         "Händelse pågår"
@@ -2622,6 +2684,9 @@
     "Cancel expiration of the message": {
       "Cancel": [
         "Avbryt"
+      ],
+      "Cancel expiration": [
+        "Avbryt giltighetstid"
       ]
     },
     "Cancellation reminder": {
@@ -2979,7 +3044,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "End-to-end-krypterat"
+        "End-to-end-krypterad"
       ],
       "End-to-end encrypted to verified recipient": [
         "End-to-end-krypterat till verifierad mottagare"
@@ -2988,7 +3053,7 @@
         "End-to-end-krypterat. ${ warningsText }"
       ],
       "PGP-encrypted": [
-        "PGP-krypterat"
+        "PGP-krypterad"
       ],
       "PGP-encrypted to verified recipient": [
         "PGP-krypterad till verifierad mottagare"
@@ -2997,7 +3062,7 @@
         "PGP-krypterad. ${ warningsText }"
       ],
       "PGP-signed": [
-        "PGP-signerat"
+        "PGP-signerad"
       ],
       "The address might be misspelled": [
         "Adressen kan vara felstavad"
@@ -3994,7 +4059,7 @@
         "Bilaga"
       ],
       "Filter on": [
-        "Filter på"
+        "Filtrera på"
       ],
       "Next": [
         "Nästa"
@@ -4360,6 +4425,16 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Vi importerar dina gamla e-postmeddelanden, hoppar över dubbletter och ansluter till ditt Gmail så att nya meddelanden visas automatiskt. Du kan ångra importen när som helst i inställningarna för Easy Switch."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adress. Genom att ansluta den kommer du att kunna både ta emot och svara i ${ MAIL_APP_NAME }",
+        "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adresser. Genom att ansluta dem kan du både ta emot och svara i ${ MAIL_APP_NAME }"
       ]
     },
     "description": {
@@ -4601,7 +4676,10 @@
     },
     "Email reminder out of date alert": {
       "Event was updated. This reminder is out-of-date.": [
-        "Händelse uppdaterades. Denna påminnelse är inaktuell."
+        "Händelsen uppdaterades. Denna påminnelse är inaktuell."
+      ],
+      "Event was canceled": [
+        "Händelsen blev inställd"
       ]
     },
     "Email subject": {
@@ -4866,7 +4944,7 @@
         "Ogiltigt förfallodatum"
       ],
       "Invalid expiration time": [
-        "Ogiltig utgångstid"
+        "Ogiltig förfallotid"
       ],
       "Invalid IBAN": [
         "Ogiltigt IBAN"
@@ -5141,7 +5219,7 @@
         "Text är för lång för att finjustera"
       ],
       "Thanks for the feedback!": [
-        "Tack för feedbacken!"
+        "Tack för din feedback!"
       ],
       "That action can't be performed on emails in this folder": [
         "Denna åtgärd kan inte utföras på e-post i denna mapp"
@@ -5296,6 +5374,33 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Kan inte ställa in utgång längre än vad lagringspolicy tillåter."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Välj ett datum inom den kommande ${ n } dagen.",
+        "Välj ett datum inom de kommande ${ n } dagarna."
+      ],
+      "No address with keys available to compose a message": [
+        "Ingen adress med nycklar tillgängliga för att skriva ett meddelande"
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Fel vid urladdning av data som inte behövs när skrivassistenten är inaktiv"
+      ],
+      "Public key could not be trusted": [
+        "Kunde inte lita på publik nyckel"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Bilagan kunde inte dekrypteras.\nOm du har motsvarande privat nyckel kommer du fortfarande att kunna dekryptera\nfilen med ett program som exempelvis GnuPG.",
+        "Några av bilagorna kunde inte dekrypteras.\nOm du har motsvarande privat nyckel kommer du fortfarande att kunna dekryptera\nfilerna med ett program som exempelvis GnuPG."
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Du kan inte öppna fler än ${ maxActiveComposer } redigeringsfönster samtidigt",
+        "Du kan inte öppna fler än ${ maxActiveComposer } redigeringsfönster samtidigt"
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Dina e-postmeddelanden kan inte dekrypteras på grund av en nylig lösenordsåterställning. Om du kommer ihåg ditt tidigare lösenord kan du ${ reActivateKeyLink } för att komma åt dina meddelanden. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -6077,7 +6182,7 @@
         "Använd din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
       ],
       "We stop advertisers and data collectors from profiling you.": [
-        "Vi stoppar annonsörer och datainsamlare från att profilera dig."
+        "Vi hindrar annonsörer och datainsamlare från att profilera dig."
       ],
       "You've unlocked 1 GB": [
         "Du har låst upp 1 GB"
@@ -6658,7 +6763,7 @@
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        "${ MAIL_APP_NAME } kan skydda ditt företag också."
+        "${ MAIL_APP_NAME } kan också skydda ditt företag."
       ],
       "${ n } unread conversation": [
         "${ n } oläst konversation",
@@ -6948,7 +7053,7 @@
         "Arkivera befintliga meddelanden"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "Är du säker på att du vill radera alla meddelanden i denna mapp?"
+        "Är du säker på att du vill ta bort alla meddelanden i denna mapp?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Är du säker på att du vill ta bort alla meddelanden med denna etikett?"
@@ -7205,7 +7310,7 @@
         "Visste du att du har krypterad molnlagring inkluderat med ditt ${ BRAND_NAME }-konto? Gå till ${ DRIVE_APP_NAME } och få ut det mesta av ditt utrymme. Det är gratis."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
-        "Visste du detta? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
+        "Visste du detta ? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Upptäck nya funktioner upplåsta och börja använda dem direkt!"
@@ -7305,7 +7410,7 @@
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "E-post vidarebefordras till din brevlåda, din e-postadress förblir dold."
+        "E-post vidarebefordras till din brevlåda; din e-postadress förblir dold."
       ],
       "Email tracker protection is disabled": [
         "Spårningsskydd för e-post är inaktiverad"
@@ -7571,7 +7676,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7703,7 +7809,7 @@
         "Meddelandelista"
       ],
       "Message sent": [
-        "Meddelandet skickat"
+        "Meddelande skickat"
       ],
       "Message sent.": [
         "Meddelande skickat."
@@ -7992,7 +8098,7 @@
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
       ],
       "Proofread selection": [
-        "Korrekturläs urval"
+        "Korrekturläs markering"
       ],
       "Proofread text": [
         "Korrekturläs text"
@@ -8095,7 +8201,7 @@
         "Skicka meddelanden vid rätt tidpunkt"
       ],
       "Sender has been blocked.": [
-        "Avsändare har blockerats."
+        "Avsändaren har blockerats."
       ],
       "Sending": [
         "Skickar"
@@ -8137,7 +8243,7 @@
         "Ställer in din nya adress…"
       ],
       "Shorten selection": [
-        "Förkorta val"
+        "Förkorta markering"
       ],
       "Shorten text": [
         "Förkorta text"
@@ -8297,10 +8403,10 @@
         "Denna konversation innehåller ett schemalagt meddelande. Sändningen av detta meddelande kommer att avbrytas."
       ],
       "This conversation contains non-trashed messages.": [
-        "Denna konversation innehåller meddelanden utanför papperskorgen."
+        "Denna konversation innehåller icke kastade meddelanden."
       ],
       "This conversation contains one or more expiring messages": [
-        "Denna konversation innehåller ett eller fler utlöpta meddelanden"
+        "Denna konversation innehåller ett eller flera utlöpta meddelanden"
       ],
       "This conversation contains trashed messages.": [
         "Denna konversation innehåller kastade meddelanden."
@@ -8923,6 +9029,150 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME }s lösenordshanterare kan du skapa, lagra och autofylla lösenord, så att du aldrig behöver återställa dem."
+      ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } tillhandahåller ett enkelt sätt att skapa inloggningar på opålitliga tredjepartswebbplatser där du inte vill avslöja din faktiska e-postadress."
+      ],
+      "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
+        "En begäran om att avsluta prenumeration från denna e-postlista kommer att skickas till avsändaren av nyhetsbrevet och behandlas automatiskt."
+      ],
+      "All your files will be imported": [
+        "Alla dina filer kommer att importeras"
+      ],
+      "Another tip will be displayed next time you open Mail": [
+        "Ett annat tips kommer att visas nästa gång du öppnar Mail"
+      ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Genom att rensa webbläsardata inaktiverades även sökning av meddelandeinnehåll på denna enhet. Alla meddelanden måste laddas ner igen för att kunna söka i dem."
+      ],
+      "Composer:": [
+        "Redigeringsfönster:"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Skapa en mapp som t.ex. “${ suggestedFolderName }“ för att hålla alla dina onlinekvitton på ett ställe."
+      ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "Vill du signera kontaktuppgifterna igen och samtidigt lita på nycklarna med följande fingeravtryck?"
+      ],
+      "Draft discarded": [
+        "Utkast kastades"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "På grund av mottagarens konfiguration kan det här meddelandet inte skickas med ett utgångsdatum till ${ firstRecipients }."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "På grund av mottagarens konfiguration kan det här meddelandet inte skickas med ett utgångsdatum."
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Smidigt hantera och avsluta prenumerationer på nyhetsbrev och e-postlistor."
+      ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Ge inkommande räkningar en färgkodad etikett, t.ex. “${ suggestedLabelName }“. När de har betalats ändrar du etiketten till “${ suggestedPaidLabelName }“."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Inkluderar fakturor, kvitton, beställningar och bokningar."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Inkluderar fakturor, inköpsordrar och betalningsbekräftelser."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Håll ordning i din brevlåda genom att automatiskt rensa bort skräp och skräppost som har funnits där i mer än 30 dagar."
+      ],
+      "Message headers": [
+        "Meddelanderubriker"
+      ],
+      "Sat, ${ formatTime }": [
+        "Lör. ${ formatTime }"
+      ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Sökalternativ som låter dig söka på ett säkert sätt efter nyckelord i brödtexten i e-postmeddelanden."
+      ],
+      "Selection pane": [
+        "Valpanel"
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Skicka ett krypterat och lösenordsskyddat meddelande till en ${ boldText }e-postadress."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Lagringsmöjligheter stöds inte av den där webbläsaren och vi behöver stöd för det för att aktivera sökning av meddelandeinnehåll."
+      ],
+      "The data you have entered in the draft may not be saved if you leave the page.": [
+        "De data du har angett i utkastet kanske inte sparas om du lämnar sidan."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Den ursprungliga avsändaren av detta meddelande är inte längre giltig. Ditt meddelande kommer att skickas från din standardadress ${ defaultEmail }."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Verifieringen av ${ contactNames } misslyckades: kontakten är inte undertecknad korrekt.\nDetta kan vara resultatet av en lösenordsåterställning.\nDu måste signera kontakten igen för att skicka ett meddelande till ${ contactAddresses } eller redigera kontakten.",
+        "Verifieringen av ${ contactNames } misslyckades: kontakterna är inte undertecknade korrekt.\nDetta kan vara resultatet av en lösenordsåterställning.\nDu måste signera kontakterna igen för att skicka ett meddelande till ${ contactAddresses } eller redigera kontakterna."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Skrivassistenten måste slutföra nedladdningen innan den kan användas."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Denna konversation kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?",
+        "Dessa konversationer kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?"
+      ],
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Det här e-postmeddelandet har misslyckats med domänens autentiseringskrav. Det kan vara förfalskat eller felaktigt vidarebefordrat."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Detta är tänkt som ett skrivhjälpmedel. Kontrollera den föreslagna texten för noggrannhet. ${ learnMoreResult }"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Detta meddelande kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?",
+        "Dessa meddelanden kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?"
+      ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Detta meddelande kommer att flyttas till “Utkast“ så du kan redigera det. Du måste schemalägga det igen när det ska skickas."
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Detta meddelande kommer att tömmas imorgon kl. ${ value }"
+      ],
+      "This sender's public key has not been trusted yet.": [
+        "Avsändarens publika nyckal har inte blivit betrodd ännu."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Detta visades för dig eftersom ämnesraden i ditt e-postmeddelande innehåller nyckelord för återställning av lösenord."
+      ],
+      "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
+        "För att avsluta prenumeration från denna e-postlista kommer ett e-postmeddelande skickas från ${ boldFrom } med följande detaljer som definierats av avsändaren av nyhetsbrevet:"
+      ],
+      "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
+        "För att avsluta prenumeration från denna e-postlista kommer du att tas till följande URL där instruktioner kommer att ges av avsändaren av nyhetsbrevet:"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Stäng av för att endast söka efter datum, namn, e-postadress eller ämnesrad. För att inaktivera sökning av meddelandeinnehåll (och ta bort nedladdade meddelanden för att aktivera denna funktion) gå till inställningar."
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Kunde inte komma åt lagringsmöjligheter i den här webbläsaren och vi behöver åtkomst för att aktivera sökning av meddelandeinnehåll."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Uppgradera för att ta bort meddelanden som har legat i papperskorg och skräppost i mer än 30 dagar automatiskt."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Vi tog bort spårningsinformation från följande länkar för att skydda dig från annonsörer och andra som försöker spåra din onlineaktivitet."
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "När vill du att ditt meddelande ska tas bort automatiskt från mottagarens inkorg och din mapp “Skickat“?"
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "När du reser eller använder offentligt WiFi, anslut till ${ VPN_APP_NAME } för att förhindra att någon spårar din aktivitet online eller stjäl din data. Det är gratis."
+      ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "Du kan lägga till den som en bilaga eller visa den inline i din e-posttext."
+      ],
+      "You can either update your search query or ${ button }": [
+        "Du kan antingen uppdatera din sökfråga eller ${ button }"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Din prenumeration på ${ plan } kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Det återstående saldot på din prenumeration kommer att läggas till på ditt konto. Lifetime-erbjudandet för ${ PASS_SHORT_APP_NAME } har inget förnyelsepris – det är en engångsbetalning för att få livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -8998,6 +9248,16 @@
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Vill du lita på den primära offentliga nyckeln med följande fingeravtryck?",
         "Vill du lita på de primära offentliga nycklarna med följande fingeravtryck?"
+      ],
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Genom att klicka på ”lita på nyckel” kopplas den här publika nyckeln till denna avsändare och e-postmeddelanden från den här adressen kommer automatiskt att verifieras kryptografiskt."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Genom att klicka på ”lita på nyckel” kopplas den här publika nyckeln till denna avsändare. E-postmeddelanden från den här adressen kommer automatiskt att verifieras kryptografiskt."
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Du har aktiverat adressverifiering med betrodda nycklar för denna e-postadress, men ingen aktiv krypteringsnyckel har blivit betrodd.\nDu måste lita på en giltig nyckel för att skicka ett meddelande till den här e-postadressen.",
+        "Du har aktiverat adressverifiering med betrodda nycklar för denna e-postadress, men ingen aktiva krypteringsnycklar har blivit betrodda.\nDu måste lita på giltiga nycklar för att skicka ett meddelande till den här e-postadressen."
       ]
     },
     "Key validation warning": {
@@ -10015,6 +10275,27 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "BCC": [
+        "Hemlig kopia"
+      ],
+      "Blind Carbon Copy": [
+        "Hemlig kopia"
+      ],
+      "Carbon Copy": [
+        "Kopia"
+      ],
+      "Category:": [
+        "Kategori:"
+      ],
+      "CC": [
+        "Kopia"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Inga fler missade viktiga meddelanden! Dessa visas nu under ${ primaryCopy }. Allt annat är sorterat efter kategori så att de är lätta att hitta och inte skräpar ner din inkorg."
+      ],
+      "Undisclosed Recipients": [
+        "Hemliga mottagare"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10136,7 +10417,7 @@
         "All e-post"
       ],
       "Archive": [
-        "Arkiv"
+        "Arkivera"
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
@@ -10241,7 +10522,7 @@
         "Lär dig mer"
       ],
       "Less": [
-        "Mindre"
+        "Färre"
       ],
       "Manage blocked email addresses": [
         "Hantera blockerade e-postadresser"
@@ -10271,7 +10552,7 @@
         "Integritetspolicy"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Återaktivera adressen länkad till denna kalender för att hantera din inbjudan."
+        "Återaktivera adressen som är länkad till denna kalender för att hantera din inbjudan."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Återaktivera adressen länkad till denna kalender för att uppdatera din inbjudan."
@@ -10356,6 +10637,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du måste återaktivera dina nycklar för att se den uppdaterade inbjudan"
+      ],
+      "Views": [
+        "Visningar"
       ]
     },
     "Link to calendar event": {
@@ -10571,6 +10855,12 @@
       ],
       "Undoing send...": [
         "Ångrar skicka …"
+      ],
+      "Scheduled sending undone": [
+        "Schemalagd sändning ångrad"
+      ],
+      "Sending undone": [
+        "Skickar ångrad"
       ]
     },
     "MIME type": {
@@ -11957,7 +12247,7 @@
         "Njut av en snabbare, fokuserad e-postupplevelse med appen för stationär dator."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
-        "För åtkomst när som helst till e-post och en optimerad mobilupplevelse, ladda ner vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }."
+        "För åtkomst när som helst till e-post och en optimerad mobil upplevelse ladda ner vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }-app."
       ],
       "Get notified if your password is compromised.": [
         "Bli aviserad om ditt lösenord är komprometterat."
@@ -12012,6 +12302,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Din domän och din prenumeration är redo att användas."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } hindrar bedragares e-postmeddelanden från att någonsin nå din inkorg."
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Rensa bort borttagna e-postmeddelanden och skräppost efter 30 dagar."
       ]
     },
     "Onboarding Proton": {
@@ -12724,6 +13020,24 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Meddela kommande händelser i ett nyhetsbrev”"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Avsluta mitt gymmedlemskap”"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Berätta för skrivassistenten vad du vill skriva. Exempel: ”Bjud in Jane till min fest”"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Tacka min medarbetare för hjälpen med ett projekt”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Skriv ett personligt brev till en praktikplats”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Skriv ett uppföljande e-postmeddelande till en klient”"
       ]
     },
     "Placeholder for contact group name": {
@@ -12940,7 +13254,7 @@
         "PGP-signerat meddelande från verifierad avsändare"
       ],
       "PGP-signed message. Sender verification failed": [
-        "PGP-signerat meddelande. Avsändarverifiering misslyckades"
+        "PGP-signerat meddelande. Avsändarverifieringen misslyckades"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst"
@@ -13035,6 +13349,12 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Kan inte skicka till organisatörens adress: ${ errorMessage }"
+      ],
+      "Answering invitation failed": [
+        "Misslyckades med att besvara inbjudan"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "Misslyckades att kryptera inbjudan igen. Försök igen."
       ]
     },
     "Safety review": {
@@ -13159,6 +13479,10 @@
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Vi har upptäckt några fel. Din e-post kan inte skickas till en eller flera av de angivna e-postadresserna på grund av följande anledning:"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Vi har upptäckt fel. Din e-post kan inte skickas till den angivna e-postadressen på grund av följande anledning:",
+        "Vi har upptäckt fel. Din e-post kan inte skickas till någon av de angivna e-postadresserna på grund av följande anledningar:"
       ]
     },
     "Send email with warnings": {
@@ -13168,6 +13492,10 @@
       "The following address is not valid: ${ invalidAddresses }": [
         "Följande adress är inte giltig: ${ invalidAddresses }",
         "Följande adresser är inte giltiga: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Vi har upptäckt några varningar. Följande e-postadress kanske inte tar emot e-postmeddelanden:",
+        "Vi har upptäckt några varningar. Följande e-postadresser kanske inte tar emot e-postmeddelanden:"
       ]
     },
     "Sender verification details": {
@@ -13189,7 +13517,7 @@
         "Krypterad av ${ MAIL_APP_NAME } till verifierad mottagare"
       ],
       "End-to-end encrypted": [
-        "End-to-end-krypterat"
+        "End-to-end-krypterad"
       ],
       "End-to-end encrypted to PGP recipient": [
         "End-to-end-krypterat till PGP-mottagare"
@@ -13201,7 +13529,7 @@
         "End-to-end-krypterat till verifierad mottagare"
       ],
       "PGP-signed": [
-        "PGP-signerat"
+        "PGP-signerad"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst"
@@ -13473,7 +13801,7 @@
     },
     "Sort option": {
       "Largest first": [
-        "Störst först"
+        "Största först"
       ],
       "Newest first": [
         "Nyast först"
@@ -13482,7 +13810,7 @@
         "Äldsta först"
       ],
       "Smallest first": [
-        "Minst först"
+        "Minsta först"
       ],
       "Sort by": [
         "Sortera efter"
@@ -13765,7 +14093,7 @@
     },
     "Status": {
       "Alias disabled": [
-        "Alias inaktiverad"
+        "Alias inaktiverat"
       ],
       "Unsubscribed": [
         "Prenumeration avslutad"
@@ -14341,7 +14669,7 @@
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } konversation markerad som oläst.",
-        "${ elementsCount } konversationer markerad som olästa."
+        "${ elementsCount } konversationer markerade som olästa."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
         "${ elementsCount } konversation flyttades till ${ labelName }.",
@@ -14611,6 +14939,28 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } meddelande flyttades till ${ labelName } och avsändaren lades till på Tillåt-listan.",
+        "${ elementsCount } meddelanden flyttades till ${ labelName } och avsändarna lades till på Tillåt-listan."
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } konversation avsnoozad",
+        "${ elementsCount } konversationer avsnoozade"
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } meddelande flyttades till ${ labelName } och avsändaren lades till på Tillåt-listan.",
+        "${ elementsCount } meddelanden flyttades till ${ labelName } och avsändarna lades till på Tillåt-listan."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } meddelande flyttad till skräppost och avsändare lades till i din skräppostlista.",
+        "${ elementsCount } meddelanden flyttade till skräppost och avsändare lades till i din skräppostlista."
+      ],
+      "Message content search enabled": [
+        "Innehållssökning för meddelande aktiverad"
+      ],
+      "Message expiration canceled": [
+        "Meddelandets utgångstid avbröts"
       ]
     },
     "Success notification": {
@@ -15095,7 +15445,7 @@
         "Ta bort etikett?"
       ],
       "Delete message": [
-        "Ta bort meddelande"
+        "Radera meddelande"
       ],
       "Deleting contacts": [
         "Tar bort kontakter"
@@ -15200,7 +15550,7 @@
         "Mappalternativ"
       ],
       "Forward": [
-        "Vidarebefordra"
+        "Vidarebefordrad"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i krediter med ${ planTitle }"
@@ -15282,7 +15632,7 @@
         "Importera din data till ${ BRAND_NAME }"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
-        "Öka säkerhet med ${ VPN_APP_NAME }"
+        "Öka säkerheten med ${ VPN_APP_NAME }"
       ],
       "Increase your privacy with more addresses": [
         "Öka din integritet med fler adresser"
@@ -15631,7 +15981,7 @@
         "Skicka och ta emot Gmail med ${ MAIL_APP_NAME }"
       ],
       "Send email": [
-        "Skicka epost"
+        "Skicka e-post"
       ],
       "Send with changed preferences?": [
         "Skicka med ändrade preferenser?"
@@ -15877,6 +16227,18 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "BCC": [
+        "Hemlig kopia"
+      ],
+      "Blind Carbon Copy": [
+        "Hemlig kopia"
+      ],
+      "Carbon Copy": [
+        "Kopia"
+      ],
+      "CC": [
+        "Kopia"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16105,6 +16467,9 @@
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
         "Krypterad och säker ${ MAIL_APP_NAME } e-postadress. Du kan enkelt skicka Bitcoin till vem som helst med bara deras ${ BRAND_NAME }-namn."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Överför Bitcoin på ett säkert sätt via e-post istället för att använda komplexa Bitcoin-adresser med 26 tecken som är känsliga för fel"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -16187,11 +16552,21 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Den bifogade filens signatur kunde inte verifieras.\nDu kan fortfarande ladda ner den här bilagan, men den kan ha manipulerats.",
+        "Några av de bifogade filernas signaturer kunde inte verifieras.\nDu kan fortfarande ladda ner de här bilagorna, men de kan ha manipulerats."
       ]
     },
     "WeekDay": {
       "Mon, ${ formatTime }": [
-        "Mån, ${ formatTime }"
+        "Mån. ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Lör. ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Sön. ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -16450,6 +16825,29 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "Händelseinformation är krypterad. Logga in igen för att återställa kalendern och dekryptera dina data. ${ learnMoreLink }"
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "Händelseinformation kan inte dekrypteras. ${ whyNotLink }"
+      ]
+    },
+    "Encrypted Headers": {
+      "Encrypted Headers filename": [
+        "Filnamn för krypterade rubriker"
+      ]
+    },
+    "Send email with changed preferences": {
+      "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
+        "Kontakterna för följande adresser har tagits bort, så motsvarande krypteringsinställningar har uppdaterats i enlighet med detta:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Kontakterna för följande adresser har inaktiverat end-to-end-kryptering på sitt konto. Så motsvarande krypteringsinställningar har uppdaterats i enlighet med detta:"
       ]
     }
   }

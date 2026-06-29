@@ -103,7 +103,7 @@
         "Adicionar passphrase secreta"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        "Adicionar ao ${ CALENDAR_APP_NAME }"
+        "Adicionar o ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Adicionar ao grupo"
@@ -389,7 +389,7 @@
         "Plano atual"
       ],
       "Custom": [
-        "Personalizado"
+        "Personalizada"
       ],
       "Customize": [
         "Personalizar"
@@ -1634,7 +1634,7 @@
         "Usar um código de recuperação"
       ],
       "Use this": [
-        "Usar este"
+        "Usar isso"
       ],
       "Use this Gmail address": [
         "Usar este endereço de Gmail"
@@ -1720,6 +1720,15 @@
       ],
       "Copy '${ code }' to clipboard and move to Trash": [
         "Copiar '${ code }' para a área de transferência e mover para a Lixeira"
+      ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Ocultar assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Mostrar assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
+      "Trust key": [
+        "Chave de confiança"
       ]
     },
     "action": {
@@ -1867,7 +1876,7 @@
     },
     "Alternative text for conversation image": {
       "Conversation": [
-        "Conversação"
+        "Conversa"
       ]
     },
     "Animation": {
@@ -1920,7 +1929,7 @@
         "Executar no dispositivo"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
-        "Executa de forma segura nos servidores da ${ BRAND_NAME }"
+        "Executa de forma segura nos servidores ${ BRAND_NAME }"
       ],
       "Securely run on device": [
         "Executar com segurança no dispositivo"
@@ -1953,7 +1962,7 @@
     },
     "Attachment signature verification": {
       "Sender verification failed": [
-        "Falha na verificação do remetente"
+        "Erro na verificação do remetente"
       ],
       "Sender verification passed": [
         "Verificação do remetente bem-sucedida"
@@ -2616,7 +2625,7 @@
         "A reprogramação de eventos não é suportada no momento"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
-        "Esta resposta não pode ser adicionada o ${ CALENDAR_APP_NAME } pois apenas aceitamos respostas para todos os eventos de uma série, no momento"
+        "Não é possível adicionar esta resposta ao ${ CALENDAR_APP_NAME } pois apenas aceitamos respostas para todos os eventos de uma série, no momento."
       ],
       "This event has been canceled.": [
         "Este evento foi cancelado."
@@ -4420,6 +4429,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Vamos importar seus e-mails antigos, pular duplicatas e conectar ao seu Gmail para que as novas mensagens apareçam automaticamente. Você pode desfazer a importação a qualquer momento nas configurações do Easy Switch."
       ]
     },
     "description": {
@@ -5157,7 +5172,7 @@
         "Ocorreu um problema ao carregar o assistente de escrita no seu dispositivo. Tente novamente."
       ],
       "Problem unloading data not needed when the writing assistant is inactive": [
-        "Problema ao descarregar dados não necessários quando o assistente de escrita está inativo"
+        "Problema ao descarregar dados desnecessários quando o assistente de escrita está inativo"
       ],
       "Process aborted": [
         "Processo abortado"
@@ -5587,7 +5602,7 @@
         "Nenhum resultado encontrado"
       ],
       "No results found for \"${ query }\"": [
-        "Nenhum resultado encontrado para \"${ query }\""
+        "Não foram encontrados resultados para \"${ query }\""
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
@@ -6104,7 +6119,7 @@
         "Cartão de crédito não necessário."
       ],
       "Start free trial": [
-        "Iniciar avaliação gratuita"
+        "Iniciar a avaliação gratuita"
       ],
       "Try the new desktop app": [
         "Teste o novo aplicativo para computador"
@@ -6539,7 +6554,7 @@
         "Evento de calendário criado"
       ],
       "Creating calendar event failed": [
-        "Falha ao criar evento no calendário"
+        "Erro ao criar evento no calendário"
       ]
     },
     "Import instructions": {
@@ -6729,16 +6744,16 @@
         "${ elementsCount } conversas serão marcadas como:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "A conversa ${ elementsCount } será marcada como lida.",
-        "As conversas ${ elementsCount } serão marcadas como lidas."
+        "${ elementsCount } conversa será marcada como lida.",
+        "${ elementsCount } conversas serão marcadas como lidas."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "A conversa ${ elementsCount } será marcada como não lida.",
-        "As conversas ${ elementsCount } serão marcadas como não lidas."
+        "${ elementsCount } conversa será marcada como não lida.",
+        "${ elementsCount } conversas serão marcadas como não lidas."
       ],
       "${ elementsCount } conversation will be moved": [
-        "A conversa ${ elementsCount } será movida",
-        "As conversas ${ elementsCount } serão movidas"
+        "${ elementsCount } conversa será movida",
+        "${ elementsCount } conversas serão movidas"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
         "${ elementsCount } conversa não será rotulada de:",
@@ -6757,8 +6772,8 @@
         "${ elementsCount } mensagens serão marcadas como não lidas."
       ],
       "${ elementsCount } message will be moved": [
-        "A mensagem ${ elementsCount } será movida",
-        "As mensagens ${ elementsCount } serão movidas"
+        "${ elementsCount } mensagem será movida",
+        "${ elementsCount } mensagens serão movidas"
       ],
       "${ elementsCount } message will be unlabelled from:": [
         "${ elementsCount } mensagem não será desmarcada de:",
@@ -6809,7 +6824,7 @@
         "${ NumMessages } mensagens na conversa"
       ],
       "${ numOccurrences } occurrence found": [
-        "${ numOccurrences } ocorrências encontrada",
+        "${ numOccurrences } ocorrência encontrada",
         "${ numOccurrences } ocorrências encontradas"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
@@ -6877,7 +6892,7 @@
         "${ storage } de armazenamento"
       ],
       "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } não lidas",
+        "${ subscription.UnreadMessageCount } não lida",
         "${ subscription.UnreadMessageCount } não lidas"
       ],
       "${ total } conversation": [
@@ -6932,7 +6947,7 @@
         "(Filtrar se qualquer uma das seguintes condições for atendida)"
       ],
       "(No Recipient)": [
-        "(Sem destinatário)"
+        "(Nenhum destinatário)"
       ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** resultado encontrado em ${ labelName }",
@@ -7087,7 +7102,7 @@
         "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados na pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
       ],
       "Apply to future messages": [
-        "Aplicar para mensagens faturas"
+        "Aplicar para as mensagens futuras"
       ],
       "Applying actions to conversations": [
         "Aplicando ações para as conversas"
@@ -7127,12 +7142,12 @@
         "Você tem certeza de que deseja excluir permanentemente estas ${ count } conversas?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "Você tem certeza de que deseja excluir permanentemente este ${ count } rascunho?",
+        "Você tem certeza de que deseja excluir permanentemente ${ count } rascunho?",
         "Você tem certeza de que quer excluir permanentemente ${ count } rascunhos?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "Você tem certeza de que deseja excluir permanentemente esta ${ count } mensagem?",
-        "Você tem certeza de que deseja excluir permanentemente estas ${ count } mensagens?"
+        "Você tem certeza de que deseja excluir permanentemente ${ count } mensagem?",
+        "Você tem certeza de que deseja excluir permanentemente ${ count } mensagens?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Você tem certeza de que quer excluir permanentemente esta conversa?"
@@ -7380,7 +7395,7 @@
         "Você lembra sua senha ? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
-        "Você quer baixar este anexo mesmo assim?",
+        "Você deseja baixar este anexo mesmo assim?",
         "Você deseja baixar esses anexos mesmo assim?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
@@ -7474,7 +7489,7 @@
         "Endereço de e-mail"
       ],
       "Email copied to clipboard": [
-        "E-mail copiado para área de transferência"
+        "E-mail copiado para a área de transferência"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
@@ -7554,7 +7569,7 @@
         "Expandir texto"
       ],
       "Expiration time": [
-        "Tempo de expiração"
+        "Tempo para expiração"
       ],
       "Expired": [
         "Expirado"
@@ -7652,7 +7667,7 @@
         "Como funcionam os aliases do hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
-        "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME }."
+        "Estou enviando essa mensagem para um usuário que não usam o ${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -7758,7 +7773,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8082,7 +8098,7 @@
         "Texto simples"
       ],
       "Please add at least one recipient.": [
-        "Adicione ao menos um destinatário."
+        "Insira pelo menos um destinatário."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Solicite ao proprietário para convidá-lo diretamente para o documento."
@@ -8131,7 +8147,7 @@
         "Compartilhe qual é o problema"
       ],
       "Please share what you expected": [
-        "Por favor, compartilhe o que você esperava"
+        "Compartilhe o que você esperava"
       ],
       "Please try again in a few moments": [
         "Por favor, tente novamente em alguns instantes"
@@ -8291,7 +8307,7 @@
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
       ],
       "Selection pane": [
-        "Painel de seleção"
+        "Painel de Seleção"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Enviar uma mensagem criptografada protegida com senha para um endereço de e-mail ${ boldText }."
@@ -8766,7 +8782,7 @@
         "Faça upgrade para excluir automaticamente mensagens que estão na Lixeira ou no Spam por mais de 30 dias."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Faça upgrade para criar mais pastas, filtros e endereços."
+        "Atualize para criar mais pastas, filtros e endereços."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Faça upgrade para manter seus benefícios ${ planTitle }."
@@ -8913,7 +8929,7 @@
         "Quando você se conectar à VPN, ela usa tecnologia de criptografia para ocultar seu endereço IP (um código exclusivo atribuído ao seu dispositivo)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        "Quando você ativou as chaves confiáveis para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
+        "Quando você ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ao se inscrever para receber um boletim informativo, use um alias em vez do seu endereço de e-mail. Sua identidade permanece oculta, e você pode desativar o alias a qualquer momento."
@@ -8993,7 +9009,7 @@
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
       ],
       "You can use ${ VPN_APP_NAME } for free, today.": [
-        "Você pode usar o ${ VPN_APP_NAME } de graça hoje."
+        "Você pode usar o ${ VPN_APP_NAME } gratuitamente, hoje."
       ],
       "You cannot reply from the invited address.": [
         "Você não pode responder a partir do endereço convidado."
@@ -9214,6 +9230,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "All your files will be imported": [
+        "Todos os seus arquivos serão importados"
       ]
     },
     "info": {
@@ -9610,7 +9629,7 @@
         "Aplicar filtro aos e-mails existentes"
       ],
       "Apply to future messages": [
-        "Aplicar para mensagens faturas"
+        "Aplicar para as mensagens futuras"
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
@@ -10180,7 +10199,7 @@
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search in": [
-        "Pesquisar em"
+        "Procurar em"
       ],
       "Select which Gmail address to connect": [
         "Selecione o endereço do Gmail que deseja conectar"
@@ -10361,6 +10380,9 @@
       ],
       "Store state": [
         "Estado de armazenamento"
+      ],
+      "Category:": [
+        "Categoria:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10599,7 +10621,7 @@
         "Mais"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
-        "Abrir no ${ CALENDAR_APP_NAME }"
+        "Abrir em ${ CALENDAR_APP_NAME }"
       ],
       "Open updated event in ${ CALENDAR_APP_NAME }": [
         "Abrir evento atualizado em ${ CALENDAR_APP_NAME }"
@@ -10638,7 +10660,7 @@
         "Agendado"
       ],
       "Sent": [
-        "Enviada"
+        "Enviados"
       ],
       "settings": [
         "configurações"
@@ -10692,7 +10714,7 @@
         "Você precisa ativar suas chaves de calendário para gerenciar este convite"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "Você precisa ativar suas chaves de calendário para ver o evento atualizado."
+        "Você precisa ativar suas chaves de calendário para ver o evento atualizado"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
         "Você precisa ativar as chaves de calendário para ver o convite atualizado"
@@ -10709,7 +10731,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        "Abrir no ${ CALENDAR_APP_NAME }"
+        "Abrir em ${ CALENDAR_APP_NAME }"
       ]
     },
     "Link to settings": {
@@ -12317,7 +12339,7 @@
         "Acesso a qualquer hora, em qualquer lugar"
       ],
       "Auto-delete spam and trash": [
-        "Exclusão automática de conteúdo de spam e da lixeira"
+        "Auto-exclusão de spam e Lixeira"
       ],
       "browser": [
         "navegador"
@@ -12365,7 +12387,7 @@
         "Talvez mais tarde"
       ],
       "Next": [
-        "Avançar"
+        "Próximo"
       ],
       "Protection from trackers": [
         "Proteção contra rastreadores"
@@ -13122,7 +13144,7 @@
         "Andrea"
       ],
       "To": [
-        "Para"
+        "Até"
       ],
       "Type text or keyword": [
         "Digite o texto ou a palavra-chave"
@@ -13132,6 +13154,24 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Anuncie os próximos eventos em um boletim informativo”"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Diga ao assistente de escrita o que escrever. Exemplo: \"Cancelar minha inscrição na academia\"."
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: \"Convidar a Joana para minha festa\""
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Diga ao assistente de escrita o que escrever. Exemplo: “Agradeça ao meu colega de trabalho pela ajuda em um projeto”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escrever uma carta de apresentação para um estágio”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escreva um email de acompanhamento para um cliente”"
       ]
     },
     "Placeholder for contact group name": {
@@ -13348,7 +13388,7 @@
         "Mensagem assinada por PGP de um remetente verificado"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Mensagem assinada pelo PGP. Falha na verificação do remetente"
+        "Mensagem assinada pelo PGP. Erro na verificação do remetente"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Enviado pelo ${ MAIL_APP_NAME } com criptografia de acesso zero"
@@ -13586,7 +13626,7 @@
         "Detectamos erros. Seu e-mail não pode ser enviado para nenhum dos endereços de e-mail informados pelos seguintes motivos:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Detectamos alguns erros. Seu e-mail não pode ser enviado para um ou mais dos endereços de e-mail inseridos pelos seguintes motivos:"
+        "Detectamos alguns erros. Não é possível enviar seu e-mail para um ou mais dos endereços de e-mail inseridos pelos seguintes motivos:"
       ]
     },
     "Send email with warnings": {
@@ -13851,22 +13891,22 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensagem criptografada pelo PGP. Falha na verificação do remetente: ${ verificationErrorsMessage }"
+        "Mensagem criptografada pelo PGP. Erro na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensagem assinada pelo PGP. Falha na verificação do remetente: ${ verificationErrorsMessage }"
+        "Mensagem assinada pelo PGP. Erro na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
         "Não foi possível verificar o remetente: a mensagem não foi assinada."
       ],
       "Sender verification failed": [
-        "Falha na verificação do remetente"
+        "Erro na verificação do remetente"
       ],
       "Sender verification failed: ${ verificationErrorsMessage }": [
         "Falha na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        "Falha na verificação de chaves confiáveis do remetente"
+        "Erro na verificação de chaves de confiança do remetente"
       ]
     },
     "Signing preference for emails": {
@@ -14161,7 +14201,7 @@
         "Proteção de rastreamento de e-mail"
       ],
       "Schedule send": [
-        "Envio agendado"
+        "Agendar envio"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
         "Este é agora o seu endereço padrão. Abra o menu suspenso para enviar de um endereço diferente. "
@@ -14890,7 +14930,7 @@
         "Conversação marcada como lida."
       ],
       "Conversation marked as Starred.": [
-        "Conversa marcada como Favorita."
+        "Conversa marcada com estrela."
       ],
       "Conversation marked as unread.": [
         "Conversação marcada como não lida."
@@ -14908,7 +14948,7 @@
         "Conversa removida de ${ labelName }."
       ],
       "Conversation removed from Starred.": [
-        "Mensagem removida dos Favoritos."
+        "Conversa removida com estrela."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "As conversas de ${ sendersList } serão marcadas como ${ labelsList }"
@@ -14968,7 +15008,7 @@
         "Mensagem marcada como lida."
       ],
       "Message marked as Starred.": [
-        "Mensagem marcada como Favorita."
+        "Mensagem marcada com estrela."
       ],
       "Message marked as unread.": [
         "Mensagem marcada como não lida."
@@ -15265,13 +15305,13 @@
         "Baixe o aplicativo para computador"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
-        "Ative o ${ DARK_WEB_MONITORING_NAME }"
+        "Ativar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Obter meu endereço “@${ PM_DOMAIN }“"
       ],
       "Open ": [
-        "Abrir "
+        "Aberto "
       ],
       "Show me how": [
         "Mostre-me como"
@@ -15496,7 +15536,7 @@
         "Criar pasta \"${ search }\""
       ],
       "Create label \"${ search }\"": [
-        "Criar marcador \"${ search }\""
+        "Criar o marcador \"${ search }\""
       ],
       "Create new group": [
         "Criar um grupo"
@@ -15772,10 +15812,10 @@
         "Manter este painel oculto?"
       ],
       "Label as": [
-        "Marcar como"
+        "Rotular como"
       ],
       "Label options": [
-        "Opções do marcador"
+        "Opções de marcador"
       ],
       "Limit reached": [
         "Limite atingido"
@@ -16073,7 +16113,7 @@
         "Agende agora, envie depois"
       ],
       "Schedule send": [
-        "Agendar envio"
+        "Envio agendado"
       ],
       "Schedule send:": [
         "Envio agendado:"
@@ -16300,7 +16340,7 @@
         "Adoraríamos ouvir você!"
       ],
       "Welcome": [
-        "Boas-vindas"
+        "Bem-vindo"
       ],
       "Welcome ${ userName }": [
         "Bem-vindo(a), ${ userName }"

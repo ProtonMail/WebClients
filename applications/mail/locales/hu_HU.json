@@ -1056,6 +1056,625 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "A to Z": [
+        "A-tól Z-ig"
+      ],
+      "Active": [
+        "Aktív"
+      ],
+      "Add Bcc recipients": [
+        "Titkos másolat címzettek hozzáadása"
+      ],
+      "Add Cc recipients": [
+        "Másolat címzettek hozzáadása"
+      ],
+      "Add participant": [
+        "Résztvevő hozzáadása"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Hozzáadás a csoporthoz: ${ CALENDAR_APP_NAME }"
+      ],
+      "Adds it above your existing message": [
+        "A meglévő üzenete fölé adja hozzá"
+      ],
+      "All Read": [
+        "Összes olvasott"
+      ],
+      "All Starred": [
+        "Összes csillagozott"
+      ],
+      "All Unread": [
+        "Összes olvasatlan"
+      ],
+      "All Unstarred": [
+        "Összes csillagozatlan"
+      ],
+      "Archive": [
+        "Archívum"
+      ],
+      "As Scheduled": [
+        "Terv szerint"
+      ],
+      "Attachment": [
+        "Melléklet"
+      ],
+      "Blind Carbon Copy": [
+        "Titkos másolat"
+      ],
+      "Block email tracking": [
+        "E-mail követés megakadályozása"
+      ],
+      "Block messages from this sender": [
+        "Üzenetek tiltása ettől a feladótól"
+      ],
+      "Block sender": [
+        "Feladó tiltása"
+      ],
+      "Block senders": [
+        "Feladók letiltása"
+      ],
+      "Carbon Copy": [
+        "Másolat"
+      ],
+      "Change sorting": [
+        "Rendezés módosítása"
+      ],
+      "Clear application data": [
+        "Alkalmazás adatainak törlése"
+      ],
+      "clear it": [
+        "törlés"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Kattintson a ${ defaultEmailAddress } vágólapra másolásához"
+      ],
+      "Close composer": [
+        "Szerkesztő bezárása"
+      ],
+      "Collapse URL": [
+        "URL elrejtése"
+      ],
+      "Continue with categories": [
+        "Folytatás kategóriákkal"
+      ],
+      "Continue without categories": [
+        "Folytatás kategóriák nélkül"
+      ],
+      "Contract composer": [
+        "Szerkesztő lekicsinyítése"
+      ],
+      "Copy addresses": [
+        "Címek másolása"
+      ],
+      "Copy password to clipboard": [
+        "Jelszó másolása a vágólapra"
+      ],
+      "Create a new folder": [
+        "Új mappa létrehozása"
+      ],
+      "Create a new label": [
+        "Új címke létrehozása"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "${ boldFolderName } mappa létrehozása"
+      ],
+      "Create new message": [
+        "Új üzenet létrehozása"
+      ],
+      "Custom": [
+        "Egyéni"
+      ],
+      "Delete draft": [
+        "Piszkozat törlése"
+      ],
+      "Delete folder": [
+        "Mappa törlése"
+      ],
+      "Delete label": [
+        "Címke törlése"
+      ],
+      "Deselect all messages": [
+        "Kijelölés megszüntetése"
+      ],
+      "Disabling alias": [
+        "E-mail álnév letiltása"
+      ],
+      "Download ${ attachmentName }": [
+        "${ attachmentName } letöltése"
+      ],
+      "Download all attachments": [
+        "Összes melléklet letöltése"
+      ],
+      "Download application logs": [
+        "Alkalmazásnaplók letöltése"
+      ],
+      "Downloading": [
+        "Letöltés"
+      ],
+      "Edit address": [
+        "Cím szerkesztése"
+      ],
+      "Edit draft": [
+        "Vázlat szerkesztése"
+      ],
+      "Edit encryption": [
+        "Titkosítás szerkesztése"
+      ],
+      "Edit folder": [
+        "Mappa szerkesztése"
+      ],
+      "Encryption": [
+        "Titkosítás"
+      ],
+      "exclude message content": [
+        "zárja ki az üzenetek tartalmában való keresést"
+      ],
+      "Expand composer": [
+        "Szerkesztő kinagyítása"
+      ],
+      "Expand navigation bar to see folders": [
+        "A navigációs sáv kibontásával megtekintheti a mappákat"
+      ],
+      "Expand navigation bar to see labels": [
+        "A navigációs sáv kibontásával megtekintheti a címkéket"
+      ],
+      "Expand URL": [
+        "URL kifejtése"
+      ],
+      "Expiration time": [
+        "Időkorlát"
+      ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Fedezze fel a ${ VPN_APP_NAME } szolgáltatást"
+      ],
+      "External encryption": [
+        "Külső titkosítás"
+      ],
+      "Fewer search options": [
+        "Kevesebb keresési beállítás"
+      ],
+      "Filter on...": [
+        "Szűrés..."
+      ],
+      "Formalize": [
+        "Hivatalos"
+      ],
+      "Generate text": [
+        "Szöveg létrehozása"
+      ],
+      "Go to next page": [
+        "A következő oldalra"
+      ],
+      "Go to page ${ page }": [
+        "Váltás ${ page }. oldalra"
+      ],
+      "Go to previous page": [
+        "Az előző oldalra"
+      ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe írósegéd elrejtése"
+      ],
+      "Hide attachment details": [
+        "Csatolmány részleteinek elrejtése"
+      ],
+      "Hide details": [
+        "Részletek elrejtése"
+      ],
+      "Hide messages": [
+        "Üzenetek elrejtése"
+      ],
+      "Hide toolbar": [
+        "Eszköztár elrejtése"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email e-mail álnevek"
+      ],
+      "I like this response": [
+        "Tetszik ez a válasz"
+      ],
+      "Images will be loaded without a proxy": [
+        "A képek proxy nélkül lesznek betöltve"
+      ],
+      "In the morning": [
+        "Reggel"
+      ],
+      "Inline": [
+        "Beágyazott"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "${ totalChecked } névjegy beszúrása",
+        "${ totalChecked } névjegy beszúrása"
+      ],
+      "Insert contact": [
+        "Névjegy beszúrása"
+      ],
+      "Insert contacts": [
+        "Névjegy beszúrása"
+      ],
+      "Is this private?": [
+        "Ez privát?"
+      ],
+      "Keep inbox as before": [
+        "Hagyja változatlanul a beérkezett üzeneteket"
+      ],
+      "Label as": [
+        "Címkézés"
+      ],
+      "Label as...": [
+        "Címkézés..."
+      ],
+      "Later this week": [
+        "Később ezen a héten"
+      ],
+      "Least read": [
+        "Legkevésbé olvasott"
+      ],
+      "Load embedded images": [
+        "Beágyazott képek betöltése"
+      ],
+      "Loading${ ellipsis }": [
+        "Betöltés${ ellipsis }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Tegye a ${ MAIL_APP_NAME } alkalmazást az alapértelmezett e-mail alkalmazásává"
+      ],
+      "Make it friendly": [
+        "Legyen barátságos"
+      ],
+      "Manage Snooze": [
+        "Szüneteltetés kezelése"
+      ],
+      "Mark as read": [
+        "Megjelölés olvasottként"
+      ],
+      "Mark as unread": [
+        "Megjelölés olvasatlanként"
+      ],
+      "Mark legitimate": [
+        "Megjelölés helyénvalóként"
+      ],
+      "Maximize composer": [
+        "Szerkesztő maximalizálása"
+      ],
+      "Messages from this sender": [
+        "Üzenetek ettől a feladótól"
+      ],
+      "Messages to this recipient": [
+        "Üzenetek ennek a címzettnek"
+      ],
+      "Minimize composer": [
+        "Szerkesztő minimalizálása"
+      ],
+      "Modify": [
+        "Módosítás"
+      ],
+      "Modify selection": [
+        "Kiválasztás módosítása"
+      ],
+      "Monday": [
+        "Hétfő"
+      ],
+      "More details about ${ ariaLabelTitle }": [
+        "Több részlet erről: ${ ariaLabelTitle }"
+      ],
+      "More refine actions": [
+        "További pontosító műveletek"
+      ],
+      "More search options": [
+        "További keresési beállítások"
+      ],
+      "Most frequent": [
+        "Leggyakoribb"
+      ],
+      "Most read": [
+        "Legolvasottabb"
+      ],
+      "Move all to archive": [
+        "Összes áthelyezése az archívumba"
+      ],
+      "Move all to trash": [
+        "Az összes áthelyezése a lomtárba"
+      ],
+      "Move to": [
+        "Áthelyezés ide"
+      ],
+      "Move to archive": [
+        "Archiválás"
+      ],
+      "Move to Archive": [
+        "Áthelyezés az archívumba"
+      ],
+      "Move to inbox": [
+        "Áthelyezés a beérkezett üzenetekhez"
+      ],
+      "Move to inbox (not spam)": [
+        "Áthelyezés a beérkezett üzenetekhez (nem levélszemét)"
+      ],
+      "Move to spam": [
+        "Áthelyezés a levélszeméthez"
+      ],
+      "Move to spam and unsubscribe": [
+        "Megjelölés levélszemétként és leiratkozás"
+      ],
+      "Move to...": [
+        "Áthelyezés ide..."
+      ],
+      "Never show": [
+        "Elrejtés"
+      ],
+      "Next conversation": [
+        "Következő beszélgetés"
+      ],
+      "Next message": [
+        "Következő üzenet"
+      ],
+      "Not saved": [
+        "Nincs mentve"
+      ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } megnyitása"
+      ],
+      "Page ${ pageNumber }": [
+        "${ pageNumber }. oldal"
+      ],
+      "Pause": [
+        "Szüneteltetés"
+      ],
+      "Preview ${ attachmentName }": [
+        "${ attachmentName } előnézete"
+      ],
+      "Previous conversation": [
+        "Előző beszélgetés"
+      ],
+      "Previous message": [
+        "Előző üzenet"
+      ],
+      "Proofread": [
+        "Lektorálás"
+      ],
+      "Read message": [
+        "Üzenet elolvasása"
+      ],
+      "Read receipt sent": [
+        "Olvasási visszaigazolás elküldve"
+      ],
+      "Recently read": [
+        "Legutóbb olvasott"
+      ],
+      "Recently received": [
+        "Nemrég érkezett"
+      ],
+      "Refine it": [
+        "Finomítsa"
+      ],
+      "Remove ${ attachmentName }": [
+        "${ attachmentName } eltávolítása"
+      ],
+      "Remove encryption": [
+        "Titkosítás kikapcsolása"
+      ],
+      "Remove expiration time": [
+        "Időkorlát eltávolítása"
+      ],
+      "Remove from list": [
+        "Eltávolítás a listából"
+      ],
+      "Remove self-destruction": [
+        "Önmegsemmisítés eltávolítása"
+      ],
+      "Replace": [
+        "Csere"
+      ],
+      "Replaces the selected text in your message": [
+        "A kijelölt szöveget lecseréli az üzenetben"
+      ],
+      "Reply securely": [
+        "Válasz biztonságosan"
+      ],
+      "Report phishing": [
+        "Adathalászat bejelentése"
+      ],
+      "Reset search form": [
+        "Keresőmező alaphelyzetbe állítása"
+      ],
+      "Resize panel": [
+        "Panel átméretezése"
+      ],
+      "Resume downloading": [
+        "Letöltés folytatása"
+      ],
+      "Revert to original display": [
+        "Visszatérés az eredeti megjelenéshez"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Futtatás a ${ BRAND_NAME } szerverein"
+      ],
+      "Saving${ ellipsis }": [
+        "Mentés${ ellipsis }"
+      ],
+      "Schedule message": [
+        "Üzenet ütemezése"
+      ],
+      "Search in ${ option.text }": [
+        "Keresés itt: ${ option.text }"
+      ],
+      "Search message content": [
+        "Keresés az üzenetek tartalmában"
+      ],
+      "See business plans": [
+        "Üzleti csomagok megtekintése"
+      ],
+      "Select All": [
+        "Összes kijelölése"
+      ],
+      "Select all messages": [
+        "Minden kijelölése"
+      ],
+      "Select date and time": [
+        "Dátum és idő kiválasztása"
+      ],
+      "Self-destruct in 7 days": [
+        "Önmegsemmisítés 7 nap múlva"
+      ],
+      "Self-destruct message": [
+        "Önmegsemmisítő üzenet"
+      ],
+      "Self-destruct on ...": [
+        "Önmegsemmisítés ekkor ..."
+      ],
+      "Send anyway": [
+        "Küldés mindenképpen"
+      ],
+      "Send read receipt": [
+        "Olvasási visszaigazolás küldése"
+      ],
+      "Send unsubscribe email": [
+        "Leiratkozó e-mail küldése"
+      ],
+      "Set": [
+        "Beállítás"
+      ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "${ MAIL_APP_NAME } beállítása alapértelmezett email alkalmazásnak"
+      ],
+      "Set encryption": [
+        "Titkosítás beállítása"
+      ],
+      "Set expiration time": [
+        "Időkorlát megadása"
+      ],
+      "Shorten": [
+        "Rövidíteni"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scrib írósegéd megjelenítése"
+      ],
+      "Show attachment details": [
+        "Csatolmány részleteinek mutatása"
+      ],
+      "Show details": [
+        "Részletek megjelenítése"
+      ],
+      "Show fewer search options": [
+        "Kevesebb keresési beállítás megjelenítése"
+      ],
+      "Show messages": [
+        "Üzenetek megjelenítése"
+      ],
+      "Show more search options": [
+        "További keresési beállítások megjelenítése"
+      ],
+      "Show toolbar": [
+        "Eszköztár mutatása"
+      ],
+      "Snooze": [
+        "Szüneteltetés"
+      ],
+      "Star": [
+        "Csillagozás"
+      ],
+      "Stop downloading assistant": [
+        "Asszisztens letöltésének leállítása"
+      ],
+      "Stop generating result": [
+        "Ne generáljon eredményt"
+      ],
+      "Stop marking as read": [
+        "Ne jelölje meg olvasottként"
+      ],
+      "Stop moving to Archive": [
+        "Az archiválás leállítása"
+      ],
+      "Stop moving to Trash": [
+        "Ne helyezze át a Lomtárba"
+      ],
+      "This message contains embedded images.": [
+        "Ez az üzenet beágyazott képet tartalmaz."
+      ],
+      "This message contains remote content.": [
+        "Ez az üzenet \"Távoli tartalmat\" tartalmaz."
+      ],
+      "This weekend": [
+        "Ezen a hétvégén"
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Az e-mailekben való biztonságos kereséshez, először le kell tölteni az üzeneteket a böngészőbe. Az első letöltés eltarthat egy kis ideig."
+      ],
+      "Toggle security center app": [
+        "Biztonsági központ alkalmazás be-/kikapcsolása"
+      ],
+      "Toggle VPN dashboard": [
+        "VPN-vezérlőpult be-/kikapcsolása"
+      ],
+      "Tomorrow": [
+        "Holnap"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "A Tracker védelem megakadályozta egyes képek betöltését. Töltse be őket, ha megbízik a feladóban."
+      ],
+      "Trust key": [
+        "Megbízható kulcs"
+      ],
+      "Trust public key": [
+        "Nyilvános kulcs megjelölése megbízhatóként"
+      ],
+      "Try categories": [
+        "Kategóriák kipróbálása"
+      ],
+      "Unblock": [
+        "Feloldás"
+      ],
+      "Unsnooze": [
+        "Szüneteltetés megszüntetése"
+      ],
+      "Unstar": [
+        "Csillagozás törlése"
+      ],
+      "Unsubscribed": [
+        "Leiratkozás kész"
+      ],
+      "Unsubscribing": [
+        "Leiratkozás"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } használata"
+      ],
+      "Use this": [
+        "Ennek használata"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        "Az egérrel átméretezheti a nézetet. Ha a billentyűzetet használja, a jobba és balra nyilakkal méretezheti át."
+      ],
+      "View headers": [
+        "Fejlécek megtekintése"
+      ],
+      "View HTML": [
+        "HTML megjelenítése"
+      ],
+      "View keys": [
+        "Kulcsok megtekintése"
+      ],
+      "View message details": [
+        "Üzenet részleteinek megtekintése"
+      ],
+      "View recipients": [
+        "Címzettek megjelenítése"
+      ],
+      "View rendered HTML": [
+        "HTML nézet"
+      ],
+      "Why not?": [
+        "Miért ne?"
+      ],
+      "Write for me": [
+        "Írj helyettem"
+      ],
+      "Your email writing assistant": [
+        "Az Ön e-mail író segédje"
       ]
     },
     "action": {
@@ -1155,6 +1774,18 @@
       ],
       "Run on device": [
         "Eszköz futtatás"
+      ],
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Az adatok az eszközön maradnak az adatvédelem érdekében. Letöltés és kompatibilis hardver szükséges."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "A naplófájlok nem maradnak meg az adatvédelem érdekében. Gyorsabb feldolgozás."
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Biztonságosan működik a ${ BRAND_NAME } szerverein"
+      ],
+      "Securely run on device": [
+        "Biztonságosan fut az eszközön"
       ]
     },
     "Assistant toggle": {
@@ -1786,6 +2417,12 @@
       ],
       "Quit import?": [
         "Elveti az importálást?"
+      ],
+      "Edit and reschedule": [
+        "Szerkesztés és újraütemezés"
+      ],
+      "Message saved to Drafts": [
+        "Üzenet áthelyezve a Vázlatokba"
       ]
     },
     "Contact field label": {
@@ -2951,6 +3588,61 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Már létrehozott 10 e-mail álnevet. Szerezzen korlátlan e-mail álnevet és 500 GB tárhelyet a ${ BRAND_NAME } Unlimited szolgáltatással."
+      ],
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } a beállításoknál."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Nem akarja most elküldeni az e-mailt? Ütemezze át a megfelelő időpontra."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Ha korlátlan hozzáférést szeretne a szövegíró asszisztenshez és más funkciókhoz, frissítsen ${ BRAND_NAME } Duo verzióra."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "A ${ senderEmailAddress } és ${ otherSendersCount } másik címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek.",
+        "A ${ senderEmailAddress } és ${ otherSendersCount } más címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "A ${ senderEmailAddress } címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek."
+      ],
+      "No folders": [
+        "Nincsenek mappák"
+      ],
+      "No labels": [
+        "Nincsenek címkék"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Küldjön és fogadjon Gmail-üzeneteket közvetlenül a ${ MAIL_APP_NAME } alkalmazásban. Csatlakoztassa a címét itt: ${ addressesSettingsLink }."
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
+      ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Ha továbbra is használni szeretné az írási segédet, adja hozzá az előfizetéséhez."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "A folytatáshoz, hogy használhassa az írási segédet, kérjen hozzáférést az adminisztrátorától."
+      ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Kapcsolja be az e-mail nyomkövetés elleni védelmet, hogy megakadályozza, hogy a hirdetők és mások nyomon kövessék az Ön tartózkodási helyét és online tevékenységét."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "A ${ MAIL_APP_NAME } használatával jelentkezzen be az online szolgáltatásokba, mivel más e-mail szolgáltatókkal ellentétben mi soha nem fogjuk nyomon követni az adatait, és megosztani azokat harmadik féllel."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Nem találtunk egyetlen ismert követőt és követő hivatkozást sem ebben az e-mailben."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Áthozzuk a régi e-mailjeit, és összekapcsoljuk a Gmailjét a ${ MAIL_APP_NAME } alkalmazással, így az új üzenetek automatikusan megjelennek"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importáljuk a régi e-mailjeit, átugorjuk a duplikátumokat, és kapcsolódunk a Gmail-fiókjához, hogy az új üzenetek automatikusan megjelenjenek. Az importálást bármikor visszavonhatja az Easy Switch beállításaiban"
+      ],
+      "When do you want your message to be sent?": [
+        "Mikor szeretné elküldeni az üzenetet?"
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Az egyéni némítás funkcióval elrejtheti az e-maileket, és beállíthatja, hogy egy alkalmasabb időpontban újra megjelenjenek."
       ]
     },
     "description": {
@@ -3654,6 +4346,166 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message }. Címzett: <${ email }>. A megoldáshoz megadhat egy másik kulcsot, vagy kikapcsolhatja a titkosítást ehhez a címzetthez."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "A mellékletek mérete legfeljebb ${ readableAttachmentMaxSize } lehet"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "A megőrzési szabályzatban megengedettnél hosszabb időkorlát nem éllítható be."
+      ],
+      "Choose a date in the future.": [
+        "Egy jövőbeli időpontot válasszon ki."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Válasszon egy időpontot a következő ${ n } napból.",
+        "Válasszon egy időpontot a következő ${ n } napból."
+      ],
+      "Contact your organization’s administrator to resolve this": [
+        "A megoldáshoz lépjen kapcsolatba a szervezet adminisztrátorával"
+      ],
+      "Decryption error: decryption of this message's encrypted content failed.": [
+        "Visszafejtési hiba: Az üzenet titkosított tartalmának visszafejtése sikertelen."
+      ],
+      "Draft could not be saved. Try again.": [
+        "Piszkozat mentése nem sikerült. Próbálja újra."
+      ],
+      "Due to an error, text generation couldn't be canceled": [
+        "Egy hiba miatt a szöveg generálását nem lehet visszavonni"
+      ],
+      "Enter a password": [
+        "Írja be a jelszót"
+      ],
+      "Error while saving draft. Please try again.": [
+        "Hiba a piszkozat mentése közben. Próbálja újra."
+      ],
+      "Error while sending the message. Message is not sent.": [
+        "Hiba az üzenet elküldése közben. Nincs elküldve."
+      ],
+      "Error while uploading attachments. Message is not sent.": [
+        "Hiba történt a mellékletek feltöltése közben. Az üzenet nincs elküldve."
+      ],
+      "Failed to encrypt attachment. Please try again.": [
+        "Hiba a melléklet titkosítása során. Próbálja újra."
+      ],
+      "Invalid expiration time": [
+        "Érvénytelen időkorlát"
+      ],
+      "Maximum expiration time reached.": [
+        "Elérte a maximális lejárati időt."
+      ],
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Túllépte a mellékletek maximális számát (${ attachmentsCountLimit })"
+      ],
+      "Message needs to be sent first": [
+        "Az üzenetet előbb el kell küldeni"
+      ],
+      "Message processing error.": [
+        "Üzenet feldolgozási hiba."
+      ],
+      "Network error: Please check your connection and try again.": [
+        "Hálózati hiba: Ellenőrizze a kapcsolatot és próbálkozzon újra."
+      ],
+      "No address with keys available to compose a message": [
+        "Nincs elérhető kulcsokkal rendelkező cím az üzenet íráshoz"
+      ],
+      "No address with sending permissions": [
+        "Nincs cím küldési jogosultságokkal"
+      ],
+      "Please select a category and what went wrong with the generated text": [
+        "Kérem válasszon egy kategóriát és adja meg, mi sikerült félre a létrehozott szöveg kapcsán."
+      ],
+      "Please try again or refresh the page.": [
+        "Kérjük, próbálja újra, vagy frissítse az oldalt."
+      ],
+      "Please try generating the text again": [
+        "Próbálja meg újragenerálni a szöveget"
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Hiba az író asszisztens letöltése közben. Ha privát módban van kérjük próbálja meg a sima böngészési módot vagy futtassa az asszisztenset a szervereken."
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Hiba történt az írássegéd letöltése közben. Kérjük, próbálja újra."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Hiba történt az írássegéd betöltésekor. Kérjük, próbálja újra."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Probléma merült fel a nem szükséges adatok eltávolításakor, amikor az írósegéd inaktív"
+      ],
+      "Public key could not be trusted": [
+        "Ez a nyilvános kulcs nem jelölhető meg megbízhatóként"
+      ],
+      "re-activate the previous key": [
+        "újra aktiválhatja az előző kulcsot"
+      ],
+      "re-importing": [
+        "újraimportálás"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Kettőzött címzett eltávolítása: ${ recipents }",
+        "Kettőzött címzettek eltávolítása: ${ recipents }"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Elérte az Ön által választott csomag által megengedett határokat, ezért a csatolmányok küldése korlátozott lehet, amíg magasabb csomagra nem vált."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Elérte az Ön által választott csomag által megengedett határokat, ezért a csatolmányok küldése korlátozott lehet, amíg magasabb csomagra nem vált."
+      ],
+      "Signature verification error.": [
+        "Aláírás ellenőrzése sikertelen."
+      ],
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "Az üzenetet a ${ BRAND_NAME } nem tudta visszafejteni. Kérjük ellenőrizze, hogy minden kulcsa aktív-e."
+      ],
+      "Text is too long to refine": [
+        "A szöveg túl hosszú a finomításhoz."
+      ],
+      "Thanks for the feedback!": [
+        "Köszönjük a visszajelzést!"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "A csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG.",
+        "Néhány csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG."
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "A ${ emailAddress } cím kulcsadatait nem sikerült kibontani"
+      ],
+      "The maximum expiration is 4 weeks": [
+        "A leghosszabb időkorlát 4 hét lehet"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Jelenleg a rendszer elfoglalt. Próbálja meg újra néhány perc múlva."
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "A írási segéd nem tudja feldolgozni a kérését. Próbáljon meg más utasítást adni."
+      ],
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Hiba történt a tartalomban való keresés közben. Alapértelmezett keresés történt."
+      ],
+      "This action cannot be performed": [
+        "Ez a művelet nem hajtható végre"
+      ],
+      "This message has already been sent": [
+        "Ez az üzenet már el lett küldve"
+      ],
+      "This message has already been sent. A new draft has been saved.": [
+        "Az üzenet már elküldésre került. Egy új piszkozat került mentésre."
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Egyszerre maximum ${ maxActiveComposer } szerkesztő ablakot nyithat meg",
+        "Egyszerre maximum ${ maxActiveComposer } szerkesztő ablakot nyithat meg"
+      ],
+      "You did not provide a file.": [
+        "Nem adott meg fájlt."
+      ],
+      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
+        "Az üzenetek visszafejtése nem lehetséges, a jelszó korábbi visszaállítása miatt. Ha emlékszik az előző jelszavára, ${ reActivateKeyLink } az üzenetek eléréséhez. ${ learnMoreLink }"
+      ],
+      "Your search matched too many results. Please limit your search and try again.": [
+        "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
       ]
     },
     "error": {
@@ -3814,6 +4666,21 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Ha az extra jelszó engedélyezve van, az e-mail álnév kezelése csak a ${ PASS_APP_NAME } alkalmazásban végezhető el."
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Az e-mail álnevek nem használhatók, ha a ${ PASS_APP_NAME } alkalmazásban egy extra jelszó engedélyezve van."
+      ],
+      "An error occurred with the categories": [
+        "Hiba történt a kategóriákkal"
+      ],
+      "No results found": [
+        "Nincs találat"
+      ],
+      "No results found for \"${ query }\"": [
+        "Nincs találat a következőre: \"${ query }\""
+      ],
+      "You do not have any contact yet. Start by creating a new contact": [
+        "Még nincs névjegy. Hozzon létre egyet"
       ]
     },
     "Error notification": {
@@ -4005,6 +4872,9 @@
       ],
       "Set up your family account": [
         "Family csomag beállítása"
+      ],
+      "Invite members and get everything up and running.": [
+        "Hívja meg a tagokat, és intézze el, hogy minden működjön."
       ]
     },
     "familyOffer_2023:Title": {
@@ -4150,6 +5020,18 @@
       ],
       "The subject": [
         "A tárgy"
+      ],
+      "If the attachments": [
+        "Ha a mellékletek"
+      ],
+      "If the recipient": [
+        "Ha a címzett"
+      ],
+      "If the sender": [
+        "Ha a feladó"
+      ],
+      "If the subject": [
+        "Ha a tárgy"
       ]
     },
     "Filter notification": {
@@ -4227,6 +5109,27 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
+      "14-day desktop app trial.": [
+        "14 napos asztali alkalmazás próba."
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Használja a gyors, biztonságos és zavaró dolgoktól mentes levelesládát és naptárat."
+      ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Szerezzen korlátlan hozzáférést bármelyik ${ MAIL_APP_NAME } csomaggal."
+      ],
+      "No credit card required.": [
+        "Nincs szükség bankkártya megadására."
+      ],
+      "Start free trial": [
+        "Ingyenes próba megkezdése"
+      ],
+      "Try the new desktop app": [
+        "Próbálja ki az új asztali alkalmazást"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "Gmail forwarding": {
@@ -4275,6 +5178,15 @@
       ],
       "Services": [
         "Szolgáltatások"
+      ],
+      "Custom folders": [
+        "Saját mappák"
+      ],
+      "Default folders": [
+        "Alapértelmezett mappák"
+      ],
+      "Labels": [
+        "Címkék"
       ]
     },
     "Header": {
@@ -4298,6 +5210,21 @@
       ],
       "Username": [
         "Felhasználónév"
+      ],
+      "Hardware not compatible": [
+        "A hardver nem kompatibilis"
+      ],
+      "Report an issue": [
+        "Hibajelentés"
+      ],
+      "Resume downloading": [
+        "Letöltés folytatása"
+      ],
+      "Set up the writing assistant": [
+        "Az írási segéd beállítása"
+      ],
+      "Tell us more": [
+        "Mondjon többet"
       ]
     },
     "Hint": {
@@ -5199,6 +6126,7 @@
         "Örökölve a tartalmazó mappáról"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -5960,6 +6888,1093 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete }, archiválja vagy helyezze át a régi e-maileket egy mappába."
+      ],
+      "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
+        "${ boldQuicklySpot } mely előfizetések nem relevánsak."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } egy kattintással."
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe segítségével gyorsan és könnyedén készíthet jobb e-maileket."
+      ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "A ${ BRAND_NAME } jelszókezelő lehetővé teszi jelszavak létrehozását, tárolását és automatikus kitöltését, így soha nem kell visszaállítania azokat."
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } tag)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } tag)"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "Jelenleg: ${ currentProgress }, összesen: ${ totalProgress }",
+        "Jelenleg: ${ currentProgress }, összesen: ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } beszélgetést címkéz mint:",
+        "${ elementsCount } beszélgetést címkéz mint:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } beszélgetést jelöl meg olvasottnak.",
+        "${ elementsCount } beszélgetést jelöl meg olvasottnak."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } beszélgetést jelöl meg olvasatlannak.",
+        "${ elementsCount } beszélgetést jelöl meg olvasatlannak."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } beszélgetést helyez át",
+        "${ elementsCount } beszélgetést helyez át"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } beszélgetésről veszi le a címkét:",
+        "${ elementsCount } beszélgetésről veszi le a címkét:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } üzenetet címkéz mint:",
+        "${ elementsCount } üzenetet címkéz mint:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } üzenetet jelöl meg olvasottnak.",
+        "${ elementsCount } üzenetet jelöl meg olvasottnak."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } üzenetet jelöl meg olvasatlannak.",
+        "${ elementsCount } üzenetet jelöl meg olvasatlannak."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } üzenetet helyez át",
+        "${ elementsCount } üzenetet helyez át"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } üzenetről veszi le a címkét:",
+        "${ elementsCount } üzenetről veszi le a címkét:"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } beágyazott kép",
+        "${ embeddedAttachmentsCount } beágyazott kép"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "A ${ MAIL_APP_NAME } képes megvédeni üzletét is."
+      ],
+      "${ n } unread conversation": [
+        "${ n } olvasatlan beszélgetés",
+        "${ n } olvasatlan beszélgetés"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } hivatkozás megtisztítva",
+        "${ numberOfUTMTrackers } hivatkozás megtisztítva"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } üzenet a beszélgetésben",
+        "${ NumMessages } üzenet a beszélgetésben"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } találat",
+        "${ numOccurrences } találat"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } találat a levél tartalmában",
+        "${ numOccurrences } találat a levél tartalmában"
+      ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "A ${ PASS_APP_NAME } egyszerű módot biztosít arra, hogy bejelentkezéseket hozzon létre olyan nem megbízható harmadik fél webhelyeken, ahol nem szeretné felfedni a tényleges e-mail címét."
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } fájl csatolva",
+        "${ pureAttachmentsCount } fájl csatolva"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-mail az elmúlt hónapban",
+        "${ receivedMessagesCount } e-mail az elmúlt hónapban"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } olvasatlan",
+        "${ subscription.UnreadMessageCount } olvasatlan"
+      ],
+      "${ total } conversation": [
+        "${ total } beszélgetés",
+        "${ total } beszélgetés"
+      ],
+      "${ total } message": [
+        "${ total } üzenet",
+        "${ total } üzenet"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-mail-követő blokkolva",
+        "${ trackersCount } e-mail-követő blokkolva"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } követő blokkolva",
+        "${ trackersCount } követő blokkolva"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } hírlevél",
+        "${ unreadCount } hírlevél"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } időzített üzenet",
+        "${ unreadCount } időzített üzenet"
+      ],
+      "(No Recipient)": [
+        "(Nincs címzett)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** találat a következő címkére: ${ labelName }",
+        "**${ total }** találat a következő címkére: ${ labelName }"
+      ],
+      "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
+        "A hírlevél küldőjéhez elküldésre kerül egy leiratkozási kérelem, amelyet automatikusan feldolgoznak."
+      ],
+      "Activation in progress": [
+        "A bekapcsolás folyamatban"
+      ],
+      "Addresses settings": [
+        "Címek beállításai"
+      ],
+      "All messages from this mailing list will be marked as read.": [
+        "Az összes üzenet erről a levelezőlistáról olvasottként lesz megjelölve."
+      ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "Ennek a levelezőlistának minden üzenete az Archívumba kerül."
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "Minden üzenet erről a levelezőlistáról a Lomtárba kerül."
+      ],
+      "All messages stored in this folder will be permanently deleted.": [
+        "Az összes, ebben a mappában található üzenet véglegesen törlésre kerül."
+      ],
+      "All messages stored with this label will be permanently deleted.": [
+        "Az összes, ezzel a címkével megjelölt üzenet véglegesen törlésre kerül."
+      ],
+      "All your calendars are disabled.": [
+        "Minden naptára le van tiltva."
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Leiratkozási e-mailt küldünk az Ön nevében."
+      ],
+      "Another tip will be displayed next time you open Mail": [
+        "Még egy tipp ki lesz írva, amikor legközelebb megnyitja a Proton Mail-t."
+      ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Minden időzített vagy némított üzenet le lesz mondva"
+      ],
+      "Apply to future messages": [
+        "Alkalmazás a jövőbeli üzenetekre"
+      ],
+      "Applying actions to conversations": [
+        "Műveletek alkalmazása beszélgetésekre"
+      ],
+      "Applying actions to messages": [
+        "Műveletek alkalmazása üzenetekre"
+      ],
+      "Archive existing messages": [
+        "Meglévő üzenetek archiválása"
+      ],
+      "Are you sure you want to delete all messages in this folder?": [
+        "Biztosan törli az összes üzenetet ebben a mappában?"
+      ],
+      "Are you sure you want to delete all messages with this label?": [
+        "Biztosan törli az összes, ezzel a címkével megjelölt üzenetet?"
+      ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Biztosan áthelyezi az összes üzenetet itt az Archívumba?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Biztosan áthelyezi az összes üzenetet ebben a Kukába?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Biztos, hogy véglegesen töröl ${ count } kijelölt beszélgetést?",
+        "Biztos, hogy véglegesen töröl ${ count } kijelölt beszélgetést?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Biztos, hogy véglegesen töröl ${ count } piszkozatot?",
+        "Biztos, hogy véglegesen töröl ${ count } piszkozatot?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Biztos, hogy véglegesen töröl ${ count } üzenetet?",
+        "Biztos, hogy véglegesen töröl ${ count } üzenetet?"
+      ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "Biztos, hogy végleg törölni szeretné ezt a beszélgetést?"
+      ],
+      "Are you sure you want to permanently delete this draft?": [
+        "Biztos, hogy véglegesen törli ezt a piszkozatot?"
+      ],
+      "Are you sure you want to permanently delete this message?": [
+        "Biztos, hogy véglegesen törli ezt az üzenetet?"
+      ],
+      "Attach public key": [
+        "Nyilvános kulcs csatolása"
+      ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "A 30 napnál régebben a lomtárba vagy a levélszemét mappába helyezett üzenetek automatikus törlése."
+      ],
+      "Block sender": [
+        "Feladó tiltása"
+      ],
+      "Body: ": [
+        "Szöveg: "
+      ],
+      "Browse privately and access blocked content.": [
+        "Böngésszen privát módon, és férjen hozzá a letiltott tartalmakhoz."
+      ],
+      "Browser not supported": [
+        "A böngésző nem támogatott"
+      ],
+      "Bulk delete": [
+        "Tömeges törlés"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Nem találja, amit keres? ${ displayAllMailButton }"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "A kategóriák éppúgy működnek, mint a levélszemét szűrők. ${ MAIL_APP_NAME } soha nem olvassa el az e-mailjeit, és nem osztja meg az adatait."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "A kategóriák úgy működnek, mint a levélszemét szűrők. A rendszer csak a nem titkosított fejlécben és műszaki adatokban keres mintákat, nem fér hozzá az e-mail tartalmához. Az adatit nem osztjuk meg, és nem sértjük meg a magánszféráját."
+      ],
+      "Clear browser data": [
+        "Böngészőadatok törlése"
+      ],
+      "Clear selection": [
+        "Kijelölés megszüntetése "
+      ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "A böngésző adatok törlése letiltja az üzenetek szövegében való keresést ezen az eszközön. A keresés újbóli engedélyezéséhez az összes üzenetet ismét le kell majd tölteni."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Törli a böngésző adatait (beleértve a letöltött üzeneteket, …)"
+      ],
+      "Click to view group details": [
+        "Kattintson ide a csoport részletekért"
+      ],
+      "Composer:": [
+        "Szerkesztő:"
+      ],
+      "Confirm phishing report": [
+        "Erősítse meg az adathalász bejelentést"
+      ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Gondolja át, mikor a legalkalmasabb az adott címzett számára az e-mail fogadása, és időzítse a küldést arra az időpontra."
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Csináljon egy mappát például \"${ suggestedFolderName }\" névvel, hogy minden online visszaigazolását egy helyen tárolja."
+      ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Az észlelés az Ön eszközén történik, így az e-mailek tartalma nem kerül a szervereinkre."
+      ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Tudta, hogy a ${ BRAND_NAME } titkosított felhőalapú tárhelyet is tartalmaz? \nMenjen át a ${ DRIVE_APP_NAME } oldalra, és hozza ki a legtöbbet a tárhelyéből. Ez ingyenes."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Tudtad? Lefoglaltunk neked egy rövidebb e-mail címet. Ez a felhasználóneved és utána \"@${ PM_DOMAIN }\"."
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Ettől függetlenül letölti a mellékletet?",
+        "Ettől függetlenül letölti a mellékleteket?"
+      ],
+      "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
+        "Aláírja újra a névjegyet és megbízhatóként jelöli meg az alábbi ujjlenyomatú kulcsokat?"
+      ],
+      "Do you want to re-sign the contact details?": [
+        "Aláírja újra a névjegyet?"
+      ],
+      "Don't forget to share the password with the recipient": [
+        "Ne felejtse el megosztani a jelszót a címzettel"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Nincs ideje most foglalkozni egy fontos e-maillel, de nem akarja elfelejteni? Állítson be egy alkalmasabb időpontot, hogy akkor megjelenjen a beérkezett üzenetek között."
+      ],
+      "Download application logs for troubleshooting": [
+        "Alkalmazásnaplók letöltése hibaelhárításhoz"
+      ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Segédprogram letöltése… ${ progressDisplay } GB"
+      ],
+      "Downloading paused": [
+        "Letöltés szüneteltetve"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Letöltés felfüggesztve: ${ progressDisplay } GB"
+      ],
+      "Draft": [
+        "Piszkozat"
+      ],
+      "Draft discarded": [
+        "Piszkozat elvetve"
+      ],
+      "Draft saved.": [
+        "Piszkozat mentve."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "A címzett konfigurációja miatt ez az üzenet nem küldhető el lejárati dátummal a ${ firstRecipients } címre."
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "A címzett konfigurációja miatt ez az üzenet nem küldhető el lejárati dátummal."
+      ],
+      "Easily manage and unsubscribe from newsletters and mailing lists.": [
+        "Könnyedén kezelheti és leiratkozhat hírlevelekről és levelezőlistákról."
+      ],
+      "Edit encryption": [
+        "Titkosítás szerkesztése"
+      ],
+      "Edit expiration time": [
+        "Időkorlát szerkesztése"
+      ],
+      "Email copied to clipboard": [
+        "E-mail vágólapra másolva"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "A levelek az e-mail címére továbbítódnak, a címe mégis rejtett marad."
+      ],
+      "Email tracker protection is disabled": [
+        "E-mail követő védelem ki van kapcsolva"
+      ],
+      "embedded image": [
+        "beágyazott kép",
+        "beágyazott kép"
+      ],
+      "Encrypt message": [
+        "Üzenet titkosítása"
+      ],
+      "Expand selection": [
+        "Kiválasztás bővítése"
+      ],
+      "Expand text": [
+        "Szöveg bővítése"
+      ],
+      "Expiration time": [
+        "Időkorlát"
+      ],
+      "Expires in ${ formattedDate }": [
+        "Lejár ennyi idő múlva: ${ formattedDate }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Lejár ${ minutesDiff } perc múlva",
+        "Lejár ${ minutesDiff } perc múlva"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Kevesebb, mint ${ hoursDiff } órán belül lejár",
+        "Kevesebb, mint ${ hoursDiff } órán belül lejár"
+      ],
+      "file attached": [
+        "fájl csatolva",
+        "fájl csatolva"
+      ],
+      "Folder": [
+        "Mappa"
+      ],
+      "For messages newer than ${ oldestDate }": [
+        "Üzeneteknek, melyek újabbak mint ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "További keresési eredményekért, próbáljon meg erre a kulcsszóra keresni az e-mail üzenetek tartalmában"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "${ ASSISTANT_TRIAL_TIME_DAYS } napig ingyenesen kipróbálható",
+        "${ ASSISTANT_TRIAL_TIME_DAYS } napig ingyenesen kipróbálható"
+      ],
+      "From": [
+        "Küldő"
+      ],
+      "Generate text": [
+        "Szöveg létrehozása"
+      ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Adjon egy színes címkét a számláknak például \"${ suggestedLabelName }\". Miután be lettek fizetve változtassa meg a címkét \"${ suggestedPaidLabelName }-re\""
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Mellékletek száma: ${ numAttachments } (${ numAttachmentsSize })",
+        "Mellékletek száma: ${ numAttachments } (${ numAttachmentsSize })"
+      ],
+      "Hide original message": [
+        "Eredeti üzenet elrejtése"
+      ],
+      "How hide-my-email aliases works": [
+        "Hogyan működnek a hide-my-email álnevek"
+      ],
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "Egy nem-${ MAIL_APP_NAME } címzettnek küldöm ezt az üzenetet."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Ha az alternatív címét eladják, kiszivárog vagy rossz kezekbe kerül, egyszerűen kikapcsolhatja, hogy ne érkezzen rá több levélszemét."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Ha jelszava a sötét weben köt ki, a ${ BRAND_NAME } meg tudja mondani, melyik szolgáltatásból szivárogtak ki adatai, és hogyan állíthatja meg a kárt."
+      ],
+      "Include Spam/Trash.": [
+        "A Levélszemét/Kuka hozzáadása"
+      ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Adja meg a kérést és a választ, amivel segíthet nekünk a pontosság javításában."
+      ],
+      "Included for free with your plan": [
+        "Az ingyenes csomag is tartalmazza"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "A számlákat, visszaigazolásokat, megrendeléseket és foglalásokat tartalmazza."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "A számlákat, megrendeléseket és fizetési visszaigazolásokat tartalmazza."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "A marketing e-maileket és a nem sürgős alkalmazás-értesítéseket tartalmazza."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Marketing e-maileket tartalmaz, mint például ajánlatokat és termékbejelentéseket."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Hírösszefoglalókat és egyéb nem promóciós tartalmakat tartalmaz. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Közösségi médiából és média-megosztó oldalakról származó híreket tartalmaz."
+      ],
+      "Initializing…": [
+        "Inicializálás…"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Csatlakozzon a ${ PROTON_SENTINEL_NAME } programhoz a legmagasabb szintű fiókbiztonságért és támogatásért."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Tartsa tisztán a postafiókját azáltal, hogy automatikusan törli a 30 napnál régebbi Lomtár és levélszemét tartalmat."
+      ],
+      "Learn more about the writing assistant": [
+        "Tudj meg többet az író asszisztensről"
+      ],
+      "Links cleaned:": [
+        "Hivatkozások megtisztítva:"
+      ],
+      "Loading message": [
+        "Üzenet betöltése"
+      ],
+      "Manage your folders": [
+        "Mappák kezelése"
+      ],
+      "Manage your labels": [
+        "Címkék kezelése"
+      ],
+      "Mark all as read": [
+        "Összes megjelölése olvasottként"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Mellékletek maximális száma (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) túllépve."
+      ],
+      "Members": [
+        "Tagok"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "A művelet folyamatban van. Ez egy ideig eltarthat."
+      ],
+      "Message download status:": [
+        "Üzenet letöltés aktuális állapot:"
+      ],
+      "Message headers": [
+        "Üzenet fejlécek"
+      ],
+      "Message list": [
+        "Üzenet lista"
+      ],
+      "Message sent": [
+        "Üzenet elküldve"
+      ],
+      "Message sent.": [
+        "Üzenet elküldve."
+      ],
+      "Message view": [
+        "Üzenet nézet"
+      ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Az üzenet reggel kerül elküldésre, ekkor: ${ formattedTime }"
+      ],
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Az üzenet a következő időpontban lesz elküldve: ${ dateString } ${ formattedTime }"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Az üzenet ma, ${ formattedTime }-kor lesz elküldve"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Az üzenet holnap, ${ formattedTime }-kor lesz elküldve"
+      ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "A 30 napnál régebben lomtárba vagy a levélszemét mappába került üzenetek automatikusan törlésre kerülnek."
+      ],
+      "More info": [
+        "További információk"
+      ],
+      "More refine actions": [
+        "További pontosító műveletek"
+      ],
+      "newsletter": [
+        "hírlevél"
+      ],
+      "No change will be made to the selected emails": [
+        "Nem történik változtatás a kiválasztott e-maileken"
+      ],
+      "No folder found": [
+        "Nem található mappa"
+      ],
+      "No label found": [
+        "Nem található címke"
+      ],
+      "No links cleaned": [
+        "Nincs megtisztítandó hivatkozás"
+      ],
+      "No messages to show": [
+        "Nincs megjeleníthető üzenet"
+      ],
+      "No more results found": [
+        "Nincs több találat"
+      ],
+      "No trackers found": [
+        "Nem található követő"
+      ],
+      "non-${ MAIL_APP_NAME }": [
+        "nem-${ MAIL_APP_NAME }"
+      ],
+      "Normal": [
+        "Normál"
+      ],
+      "Optional": [
+        "Nem kötelező"
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "A rendszerünk ezt gyanúsnak jelezte. Ha nem adathalász vagy csaló e-mail, minősítse jogosnak."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Rendszerünk ezt az üzenetet adathalász kísérletnek jelölte. Kérjük, ellenőrizze, hogy az üzenet valódi-e."
+      ],
+      "Plain text": [
+        "Egyszerű szöveg"
+      ],
+      "Please add at least one recipient.": [
+        "Kérjük, adjon meg legalább egy címzettet."
+      ],
+      "Please share what the issue is": [
+        "Kérjük ossza meg velünk a problémát."
+      ],
+      "Please share what you expected": [
+        "Kérjük, ossza meg mire számított."
+      ],
+      "Preferences updated": [
+        "Beállítások frissítve"
+      ],
+      "Print email": [
+        "E-mail nyomtatása"
+      ],
+      "Proofread selection": [
+        "Lektorált válogatás"
+      ],
+      "Proofread text": [
+        "Lektorált szöveg"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Akadályozza meg, hogy e-mail címe levelezőlistákra vagy levélszemét küldők kezébe kerüljön: ${ hideMyEmailAliasesLink }!"
+      ],
+      "Quickly spot": [
+        "Gyorsabb észrevenni"
+      ],
+      "Recipient: ": [
+        "Címzett: "
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Ne felejtse el frissíteni a jelszókezelőben, vagy ahol a fiók- és bejelentkezési adatait tárolja."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Eltávolítja az ehhez az alkalmazáshoz tartozó összes adatot (beleértve a letöltött üzeneteket, …)"
+      ],
+      "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
+        "Az adathalász kísérletként megjelölt üzeneteket a rendszer hozzánk továbbítja, hogy kiértékelhessük és fejleszthessük a szűrőinket. Ebben az esetben az üzenet teljes szövegéhez hozzáférhetünk."
+      ],
+      "Request read receipt": [
+        "Olvasási visszaigazolás igénylése"
+      ],
+      "Right-click for options": [
+        "Jobb-klikk az opciókhoz"
+      ],
+      "Sat, ${ formatTime }": [
+        "Szombat,${ formatTime }"
+      ],
+      "Saved at ${ dateString }": [
+        "Mentve: ${ dateString }"
+      ],
+      "Saved yesterday": [
+        "Tegnap mentve"
+      ],
+      "Saved: ${ dateString }": [
+        "Mentve: ${ dateString }"
+      ],
+      "Saving draft": [
+        "Piszkozat mentése"
+      ],
+      "Scheduled send of this message will be canceled.": [
+        "Az üzenet időzített elküldése törlésre kerül."
+      ],
+      "Scheduling message": [
+        "Üzenet ütemezése"
+      ],
+      "Scribe panel": [
+        "Scribe panel"
+      ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Keresési lehetőség, amellyel az üzenetek törzsében is biztonságosan kereshet szavakat."
+      ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Túl sokáig tart a keresés? ${ dropdownButton } vagy ${ toggleOffButton } ebből a keresési munkafolyamatból."
+      ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Helyezze biztonságba fájljait titkosított felhőtárhellyel ingyen, már ma."
+      ],
+      "Seems like you are all caught up for now": [
+        "Úgy tűnik minden el van intézve"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Minden (${ elementsCount }) üzenet kiválasztása, itt: ${ location }",
+        "Mind a(z) ${ elementsCount } üzenet kiválasztása, itt: ${ location }"
+      ],
+      "Selection pane": [
+        "Kijelölési panel"
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Titkosított, jelszóval védett üzenet küldése ${ boldText } e-mail címre."
+      ],
+      "Sender has been blocked.": [
+        "A feladó tiltólistára került."
+      ],
+      "Sending": [
+        "Küldés"
+      ],
+      "Sending message": [
+        "Üzenet küldése"
+      ],
+      "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
+        "Üzenetek küldése a @pm.me címről előfizetéshez kötött. Az Ön üzenete az ${ email }, alapértelmezett címről lesz elküldve"
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Állítsa be, hogy a ${ MAIL_APP_NAME } legyen az alapértelmezett e-mail alkalmazás ebben a böngészőben. A ${ MAIL_APP_NAME } automatikusan meg fog nyílni, amikor egy e-mail hivatkozást megnyit."
+      ],
+      "Shorten selection": [
+        "Rövidíteni a kiválasztást"
+      ],
+      "Shorten text": [
+        "Rövidíteni a szöveget"
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Némítva eddig: ${ dateString }, ekkor: ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "A ma napig némított,${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Holnapig némított,${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "A beszélgetések némítása amíg vissza nincs vonva."
+      ],
+      "Sorry, this message does not exist or has already expired.": [
+        "Sajnáljuk, az üzenet nem létezik vagy már lejárt."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "A tárolási képességek nincsenek támogatva ebben a böngészőben, szükségünk van erre a funkcióra, hogy lehetővé tegyük az üzenetek tartalmának keresését."
+      ],
+      "Subject": [
+        "Tárgy"
+      ],
+      "Subject is end-to-end encrypted": [
+        "A tárgy végpontok közt titkosított"
+      ],
+      "Subject:": [
+        "Tárgy:"
+      ],
+      "Subject: ": [
+        "Tárgy: "
+      ],
+      "The data you have entered in the draft may not be saved if you leave the page.": [
+        "A piszkozatba beírt adatok nem kerülnek elmentésre, ha elhagyja az oldalt."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Az e-mail cím ${ boldNoReplyEmail } nem fogad el válaszokat. Biztos el akarja küldeni az üzenetet?"
+      ],
+      "The initial setup may take a few minutes.": [
+        "A kezdeti beállítás néhány percig eltarthat."
+      ],
+      "The local database is being prepared": [
+        "A helyi adatbázis előkészítés alatt"
+      ],
+      "The message has expired": [
+        "Az üzenet lejárt"
+      ],
+      "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
+        "Az eredeti levél amelyre válaszolna vagy továbbítaná, éppen kiküldés alatt áll. Ha folytatja, már nem lesz lehetősége a kiküldés alatt álló levél elküldésének megszakítására."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Az üzenet eredeti feladója már érvénytelen. Az üzenet a jelenlegi alapértelmezett címével kerül elküldésre: ${ defaultEmail }."
+      ],
+      "The sender has requested a read receipt.": [
+        "A feladó olvasási visszaigazolást kért."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "${ contactNames } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddresses }) újra alá kell írni vagy átszerkeszteni a névjegyet.",
+        "${ contactNames } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddresses }) újra alá kell írni vagy átszerkeszteni a névjegyeket."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Az írásban segítő szoftvernek az első használat előtt le kell töltődnie."
+      ],
+      "Themes can give your inbox a new look.": [
+        "A témák egy új kinézetet adnak a levelezésének."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Nincsenek üzenetek ettől a feladótól a beérkezett üzenetek között."
+      ],
+      "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
+        "Hiba történt a névjegy aláírásnak ellenőrzésekor. Ezt jelszó visszaállítás is okozhatja."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Ezek a beszélgetések a szervezete adatmegőrzési szabályai alapján itt vannak tárolva."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "Senki sem tud önnek levélszemetet küldeni, ha nem ismerik a valós e-mail címét. Védje meg az e-mail címét a hide-my-email szolgáltatással."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Ez a beszélgetés egy időzítetten elküldendő üzenetet tartalmaz. Az üzenet küldése törlésre kerül."
+      ],
+      "This conversation contains non-trashed messages.": [
+        "Ez a beszélgetés nem-törölt üzeneteket is tartalmaz."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Ez a beszélgetés egy vagy több lejáró üzenetet tartalmaz"
+      ],
+      "This conversation contains trashed messages.": [
+        "Ez a beszélgetés törölt üzeneteket is tartalmaz."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Ezt a beszélgetést levélszemétként jelöli meg. Le szeretne iratkozni a további e-mailekről?",
+        "Ezeket a beszélgetéseket levélszemétként jelöli meg. Le szeretne iratkozni a további e-mailekről?"
+      ],
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Az e-mail nem felelt meg a domain név ellenőrzési követelményeinek. Lehet becsapós üzenet vagy hibásan továbbított."
+      ],
+      "This invitation is saved in a disabled calendar.": [
+        "Ez a meghívó egy letiltott naptárban van."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Ez az eszköz írási segédletnek készült. Ellenőrizze a javasolt szöveg pontosságát. ${ learnMoreResult }"
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Ez az üzenet módosításra került, hogy sötét háttérrel is megfelelő legyen."
+      ],
+      "This message is automatically generated as a response to a previous message.": [
+        "Ez egy automatikusan generált üzenet, válaszként egy korábbi üzenetre."
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Ez az üzenet egy ${ PASS_APP_NAME } e-mail álnévről érkezett."
+      ],
+      "This message is from a mailing list.": [
+        "Ez az üzenet egy levelezőlistáról származik."
+      ],
+      "This message is signed by a key that has not been trusted yet.": [
+        "Ez az üzenet egy olyan kulccsal van aláírva, ami még nincs megbízhatóként megjelölve."
+      ],
+      "This message is signed by the key attached, that has not been trusted yet.": [
+        "Ez az üzenet a csatolt kulccsal van aláírva, ami még nincs megbízhatóként megjelölve."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "Ez az üzenet automatikusan törlésre kerül, ekkor: ${ value }"
+      ],
+      "This message will be automatically deleted on ${ value }": [
+        "Ez az üzenet automatikusan törlésre kerül, ekkor: ${ value }"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Ezt az üzenetet levélszemétként jelöli meg. Le szeretne iratkozni a további e-mailekről?",
+        "Ezeket az üzeneteket levélszemétként jelöli meg. Le szeretne iratkozni a további e-mailekről?"
+      ],
+      "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
+        "Ez az üzenet átkerül a Vázlatokba, hogy szerkeszthesse. Újra meg kell majd adnia az elküldés időpontját."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Ez az üzenet reggel kerül elküldésre, ekkor: ${ formattedTime }"
+      ],
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Ez az üzenet a következő időpontban lesz elküldve: ${ dateString } ${ formattedTime }"
+      ],
+      "This message will be sent shortly": [
+        "Ez az üzenet hamarosan elküldésre kerül"
+      ],
+      "This message will be sent today at ${ formattedTime }": [
+        "Ez az üzenet ma, ${ formattedTime }-kor lesz elküldve"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Ez az üzenet holnap, ${ formattedTime }-kor lesz elküldve"
+      ],
+      "This message will expire ${ formattedDate }": [
+        "Ez az üzenet időkorlátos, lejár: ${ formattedDate }"
+      ],
+      "This message will expire on ${ value }": [
+        "Ez az üzenet le fog járni, ekkor: ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Ez az üzenet ma fog lejárni, ekkor: ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Ez az üzenet holnap fog lejárni, ekkor: ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "Ezt csak egyszer kell elvégezni."
+      ],
+      "This public key will be automatically used for encrypting email sent to this address.": [
+        "Erre a címre küldéskor automatikusan ez a nyilvános kulcs lesz használva a titkosításhoz."
+      ],
+      "This sender's public key has not been trusted yet.": [
+        "A feladó nyilvános kulcsa még nincs megbízhatóként jelölve."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Ezt azért mutattuk meg Önnek, mert az e-mailje tárgysorában jelszó-visszaállítási kulcsszavak szerepelnek."
+      ],
+      "to ${ destinationElement } folder.": [
+        "${ destinationElement } mappa áthelyezése."
+      ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "A böngészőben megnyitott fülök miatti figyelemelterelés elkerülése érdekében használja az asztali alkalmazást."
+      ],
+      "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
+        "A levelezési listáról való leiratkozáshoz egy e-mail kerül elküldésre a ${ boldFrom } címről, a hírlevél feladójának beállításai szerinti alábbi adatokkal:"
+      ],
+      "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
+        "A leiratkozáshoz a következő címre kerül átirányításra, ahol a hírlevél feladója ad további útmutatást:"
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "Holnap, ${ formattedTime }"
+      ],
+      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
+        "Túl sok üzenet vár elküldésre. Várjon amíg elküldődik egy üzenet, mielőtt ezt ütemezné."
+      ],
+      "Trackers blocked:": [
+        "Követők blokkolva:"
+      ],
+      "Trash existing messages": [
+        "Meglévő üzenetek lomtárazása"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Kapcsolja ki, hogy csak dátum, név, e-mail cím vagy tárgysor alapján keressen. Az üzenetek tartalma keresésének letiltásához (és a letöltött üzenetek törléséhez) lépjen a Beállítások menüpontba."
+      ],
+      "Turn on to search the content of your messages": [
+        "Kapcsolja be, hogy az üzenetek szövegében is kereshessen"
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Ebben a böngészőben nem érhetőek el a tárolási lehetőségek, az üzenetek tartalmának kereséséhez szükségünk van erre a hozzáférésre."
+      ],
+      "Unlock message": [
+        "Üzenet feloldása"
+      ],
+      "Unread conversations": [
+        "Olvasatlan beszélgetések"
+      ],
+      "Unread messages": [
+        "Olvasatlan üzenetek"
+      ],
+      "Unsubscribe": [
+        "Leiratkozás"
+      ],
+      "Updating message content search...": [
+        "Üzenetek tartalmában való keresés frissítése..."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Váltson ${ plan } csomagra a feloldáshoz"
+      ],
+      "Upgrade to add more addresses to your account.": [
+        "Váltson nagyobb csomagra, hogy több címet hozhasson létre a fiókjában."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Váltson nagyobb csomagra a 30 napja lomtárban vagy a levélszemét mappában lévő üzenetek automatikus törléséhez."
+      ],
+      "Upgrade to create more folders, filters, and addresses.": [
+        "Váltson nagyobb csomagra, hogy több mappát, szűrőt és címet hozhasson létre."
+      ],
+      "Upgrade to level up your privacy.": [
+        "Váltson nagyobb csomagra a mégmagasabb adatvédelemért."
+      ],
+      "Upgrade to send email from @pm.me addresses.": [
+        "Váltson nagyobb csomagra, hogy @pm.me címről is küldhessen levelet."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Váltson nagyobb csomagra, hogy saját domain néven levelezhessen."
+      ],
+      "Upgrade to send emails to contact groups easily.": [
+        "Váltson nagyobb csomagra, hogy egyszerre csoportoknak is könnyen küldhessen leveleket."
+      ],
+      "Upgrade to support a privacy-first internet.": [
+        "Váltson nagyobb csomagra, hogy támogassa a magánszféra-barát internetet."
+      ],
+      "Upgrade to support our mission of privacy for all.": [
+        "Váltson nagyobb csomagra, hogy támogassa a mindenki számára elérhető adatvédelmet."
+      ],
+      "Upgrade to support privacy and get more features.": [
+        "Váltson nagyobb csomagra, hogy támogassa a magánszféra védelmét és további szolgáltatásokhoz férjen hozzá."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Váltson nagyobb csomagra a prémium lehetőségekért."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Váltson nagyobb csomagra, hogy a ${ MAIL_APP_NAME } leveleit Apple Mail, Outlook vagy Thunderbird segítségével olvashassa."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Váltson nagyobb csomagra az automatikus válasz lehetőség használatához."
+      ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Használjon különböző e-mail címeket különböző célokra, így könnyen szétválaszthatja e-mailjeit munka, szórakozás vagy egyéb szempontok szerint."
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        "Az e-mail egyszerűbb kezeléséhez használjon gyorsbillentyűket."
+      ],
+      "Version ${ appVersion }": [
+        "Verzió: ${ appVersion }"
+      ],
+      "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
+        "Elnézést, ez egy téves kiértékelés lehetett a mi részünkről. Megerősíti, hogy ez az üzenet helyénvaló?"
+      ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Megakadályoztuk, hogy a következő hirdetők és szervezetek lássák, mikor nyitja meg ezt az e-mailt, milyen eszközt használ, és hol tartózkodik."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Ebben a böngészőben nem tudjuk engedélyezni az üzenetek tartalmának keresését."
+      ],
+      "We could not verify the sender's trusted keys.": [
+        "Nem sikerült a feladó megbízható kulcsainak ellenőrzése."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Eltávolítottuk a nyomkövető információkat a következő hivatkozásokról, annak megakadályozására, hogy hirdetők és mások az online tevékenységét nyomon követhessék."
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Mikor szeretné, hogy az üzenet automatikusan törlődjön a címzett fiókjából és az elküldött üzenetekből?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Mikor szeretné, hogy az üzenet megsemmisítse önmagát?"
+      ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Amikor megadja valahol az e-mail címét, adjon meg egy egyedi, eldobható, hide-my-email alternatív címet a valós e-mail címe helyett."
+      ],
+      "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
+        "Amikor engedélyezte a megbízható kulcsok kezelését \"${ senderName }\" címzetthez, a nyilvános kulcsok bekerültek a névjegyébe."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Amikor feliratkozik egy hírlevélre, használjon e-mail álnevet, így az adatai rejtve maradnak. Az álnév bármikor kikapcsolható."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Amikor utazik vagy nyilvános Wi-Fi hálózatot használ, a ${ VPN_APP_NAME } szolgáltatáshoz kapcsolódva megakadályozhatja, hogy bárki nyomon kövesse az online tevékenységét, vagy ellopja az adatait. Ez ingyenes."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Az új e-mail kategóriákkal csak a fontos üzenetek kerülnek az elsődleges beérkezett üzenetek közé. Minden más kategóriákba rendeződik."
+      ],
+      "writing assistant iframe": [
+        "írási segéd iframe"
+      ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "Hozzáadhatja mellékletként, vagy megjelenítheti az üzenet szövegében."
+      ],
+      "You can either update your search query or ${ button }": [
+        "Próbálkozzon másik kereséssel vagy ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "Módosíthatja a keresést, vagy törölheti azt"
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Használhatja a ${ VPN_APP_NAME }-t ingyen, már ma."
+      ],
+      "You cannot reply from the invited address.": [
+        "Nem válaszolhat a meghívott címről."
+      ],
+      "You do not have any messages here": [
+        "Itt nincsenek üzenetek"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "A beérkezett üzeneteknél ${ unread } van."
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Ebben a mappában **${ count } beszélgetés** van tárolva",
+        "Ebben a mappában **${ count } beszélgetés** van tárolva"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Ezzel a címkével **${ count } beszélgetés** van megjelölve",
+        "Ezzel a címkével **${ count } beszélgetés** van megjelölve"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Ebben a mappában **${ count } üzenet** van tárolva",
+        "Ebben a mappában **${ count } üzenet** van tárolva"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Ezzel a címkével **${ count } üzenet** van megjelölve",
+        "Ezzel a címkével **${ count } üzenet** van megjelölve"
+      ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Nem adott meg tárgyat az üzenethez. Elküldi tárgy nélkül?"
+      ],
+      "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
+        "Teljesen betelt a tárhelye. További üzenetek küldéséhez szabadítson fel helyet vagy vásároljon további tárhelyet."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Elérte a maximálisan lehetséges 5 választ."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Ebből a mappából **${ count } beszélgetés** van kiválasztva",
+        "Ebből a mappából **${ count } beszélgetés** van kiválasztva"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Ezzel a címkével **${ count } beszélgetést** választott ki",
+        "Ezzel a címkével **${ count } beszélgetést** választott ki"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Ebből a mappából **${ count } üzenet** van kiválasztva",
+        "Ebből a mappából **${ count } üzenet** van kiválasztva"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Ezzel a címkével **${ count } üzenetet** választott ki",
+        "Ezzel a címkével **${ count } üzenetet** választott ki"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "**${ elementsCount } beszélgetést** választott ki, itt: ${ location }",
+        "**${ elementsCount } beszélgetést** választott ki, itt, ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "**${ elementsCount } beszélgetést** választott ki.",
+        "**${ elementsCount } beszélgetést** választott ki."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "**${ elementsCount } üzenetet** választott ki, itt: ${ location }",
+        "**${ elementsCount } üzenetet** választott ki, itt: ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "**${ elementsCount } üzenetet** választott ki.",
+        "**${ elementsCount } üzenetet** választott ki."
+      ],
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        "A levél tartalmazza a \"${ attachmentsFoundKeyword }\" kifejezést, de nem csatolt mellékletet. Biztos, hogy elküldi így a levelet?"
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Az Ön böngészője nem támogatja az írási asszisztenst. Pórbálja a mi szervereinken futtatni azt."
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Az Ön eszköze nem támogatja, hogy az írási asszisztenst helyben futtassa. Próbálja a mi szervereinken futtatni azt."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Az üzenete ${ numberOfDays } nap múlva lejár.",
+        "Az üzenete ${ numberOfDays } nap múlva lejár."
+      ],
+      "Your message will expire today.": [
+        "Az üzenete ma lejár."
+      ],
+      "Your message will expire tomorrow.": [
+        "Az üzenete holnap lejár."
+      ],
+      "Your private writing assistant": [
+        "Az Ön privát írói asszisztense"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
       ]
     },
     "info": {
@@ -6789,6 +8804,182 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "${ boldActive } Mark all messages as read": [
+        "${ boldActive } Minden üzenet megjelölése olvasottként"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Összes üzenet áthelyezése ide: ${ boldFolderName }"
+      ],
+      "${ count } unread conversation": [
+        "${ count } olvasatlan beszélgetés",
+        "${ count } olvasatlan beszélgetés"
+      ],
+      "${ count } unread message": [
+        "${ count } olvasatlan üzenet",
+        "${ count } olvasatlan üzenet"
+      ],
+      "/month": [
+        "/hó"
+      ],
+      "Active filter:": [
+        "Aktív szűrő:"
+      ],
+      "All contacts": [
+        "Összes névjegy"
+      ],
+      "Also archive": [
+        "Archiválás is"
+      ],
+      "Always label sender's emails": [
+        "A feladó leveleit mindig jelölje címkékkel"
+      ],
+      "Always move sender's emails": [
+        "A feladó leveleit mindig helyezze át"
+      ],
+      "Apply to future messages": [
+        "Alkalmazás a jövőbeli üzenetekre"
+      ],
+      "BCC": [
+        "Titkos másolat"
+      ],
+      "Blind Carbon Copy": [
+        "Titkos másolat"
+      ],
+      "Carbon Copy": [
+        "Másolat"
+      ],
+      "Category:": [
+        "Kategória:"
+      ],
+      "CC": [
+        "Másolat"
+      ],
+      "Choose what to do instead": [
+        "Válassza ki, mit tegyen helyette"
+      ],
+      "Cleaned": [
+        "Megtisztítva"
+      ],
+      "Date:": [
+        "Dátum:"
+      ],
+      "Did not follow instructions": [
+        "Nem követte az utasításokat"
+      ],
+      "Don't like the style": [
+        "Nem tetszik a stílus"
+      ],
+      "Don't show again": [
+        "Ne jelenjen meg újra"
+      ],
+      "Don't show this suggestion": [
+        "Ne jelenjen meg többet ez a javaslat"
+      ],
+      "Enable filter": [
+        "Szűrő engedélyezése"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Nem sikerült létrehozni a(z) ${ newFolderName } mappát"
+      ],
+      "Frequency": [
+        "Gyakoriság"
+      ],
+      "From": [
+        "Feladó"
+      ],
+      "From:": [
+        "Feladó:"
+      ],
+      "Keyword": [
+        "Kulcsszó"
+      ],
+      "Layout": [
+        "Elrendezés"
+      ],
+      "Manage my addresses": [
+        "Saját címek kezelése"
+      ],
+      "Marked as read": [
+        "Megjelölve olvasottként"
+      ],
+      "Message:": [
+        "Üzenet:"
+      ],
+      "Move ${ sidebarElementName }": [
+        "${ sidebarElementName } áthelyezése"
+      ],
+      "Move messages to": [
+        "Üzenetek áthelyezése ide:"
+      ],
+      "Moved to ${ labelName }": [
+        "Áthelyezve ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Áthelyezve az archívumba"
+      ],
+      "Moved to Trash": [
+        "Áthelyezve a Lomtárba"
+      ],
+      "Newsletter entry deleted": [
+        "Hírlevél feliratkozás törölve"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Mostantól nem hagyja ki a fontos üzeneteket. Ezek a ${ primaryCopy } alatt jelennek meg. Minden más kategóriákba van rendezve, így könnyen megtalálhatja és nem terhelik a bejövő üzeneteket."
+      ],
+      "Not factually correct": [
+        "Nem felel meg a tényeknek"
+      ],
+      "Open in a new tab": [
+        "Megnyitás új lapon"
+      ],
+      "Original link": [
+        "Eredeti hivatkozás"
+      ],
+      "Password hint": [
+        "Jelszó emlékeztető"
+      ],
+      "Recipient": [
+        "Címzett"
+      ],
+      "Remember my choice": [
+        "Jegyezze meg a választást"
+      ],
+      "Remove metadata": [
+        "Metadata eltávolítása"
+      ],
+      "Search in": [
+        "Keresés:"
+      ],
+      "Sender": [
+        "Feladó"
+      ],
+      "Size:": [
+        "Méret:"
+      ],
+      "Subject:": [
+        "Tárgy:"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "A szűrő le van tiltva. ${ enableButton }"
+      ],
+      "Time": [
+        "Idő"
+      ],
+      "To:": [
+        "Címzett:"
+      ],
+      "Undisclosed Recipients": [
+        "Címzettek nem láthatók"
+      ],
+      "Unsafe or problematic": [
+        "Nem biztonságos vagy problémás"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Leiratkozott erről: ${ truncatedName }."
+      ],
+      "Writing assistant": [
+        "Írási segéd"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6961,6 +9152,135 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ],
+      "All mail": [
+        "Összes levél"
+      ],
+      "Archive": [
+        "Archívum"
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Naptár létrehozása egy aktív e-mail címhez."
+      ],
+      "Create a new calendar to add this event": [
+        "Az esemény hozzáadásához, hozzon létre egy új naptárat"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "A meghívó megválaszolásához, hozzon létre egy új naptárat"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Hozzon létre egy új naptárat a meghívói kezeléséhez"
+      ],
+      "Deleted": [
+        "Törölve"
+      ],
+      "Drafts": [
+        "Piszkozatok"
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Engedélyezzen egy a naptárakhoz kapcsolt e-mail címet."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Az esemény lemondásához engedélyeznie kell a letiltott naptárhoz tartozó e-mail címét."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "A válasz megváltoztatásához engedélyeznie kell a letiltott naptárhoz tartozó e-mail címét."
+      ],
+      "Enable your address again to modify your answer.": [
+        "A válasz megváltoztatásához engedélyeznie kell az e-mail címét."
+      ],
+      "Enable your address to answer this invitation.": [
+        "A meghívó megválaszolásához engedélyezze az e-mail címét."
+      ],
+      "Folders": [
+        "Mappák"
+      ],
+      "Inbox": [
+        "Bejövő"
+      ],
+      "Labels": [
+        "Címkék"
+      ],
+      "Less": [
+        "Kevesebb"
+      ],
+      "Manage blocked email addresses": [
+        "Letiltott e-mail címek kezelése"
+      ],
+      "Manage your folders": [
+        "Mappák kezelése"
+      ],
+      "More": [
+        "Tovább"
+      ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Megnyitás ebben: ${ CALENDAR_APP_NAME }"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "A frissített esemény megnyitása ${ CALENDAR_APP_NAME } használatával"
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Vagy törölhet egy naptárat és létrehozhat egy újat az egyik aktív e-mail címéhez."
+      ],
+      "Outbox": [
+        "Kimenő"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "A meghívó kezeléséhez, engedélyezze újra a naptárhoz tartozó címét."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "A meghívó frissítéséhez, engedélyezze újra a naptárhoz tartozó címét."
+      ],
+      "Scheduled": [
+        "Ütemezett"
+      ],
+      "Sent": [
+        "Elküldött"
+      ],
+      "Sign up for free": [
+        "Regisztráljon ingyenesen"
+      ],
+      "Snooze": [
+        "Szüneteltetés"
+      ],
+      "Snoozed": [
+        "Szüneteltetett"
+      ],
+      "Spam": [
+        "Levélszemét"
+      ],
+      "Starred": [
+        "Csillagozott"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Ez az ICS fájl több eseményt tartalmaz. Kérjük, töltse le és importálja a ${ CALENDAR_APP_NAME } alkalmazásban"
+      ],
+      "Views": [
+        "Megtekintések"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "A esemény hozzáadásához előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "A meghívó megválaszolásához előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "A meghívó kezeléséhez előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "A frissített esemény megtekintéséhez előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "A frissített meghívó megtekintéséhez előbb aktiválnia kell a naptár kulcsait"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "A meghívó kezeléséhez előbb újra kell aktiválnia a kulcsait"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "A frissített esemény megtekintéséhez előbb újra kell aktiválnia a kulcsait"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "A frissített meghívó megtekintéséhez előbb újra kell aktiválnia a kulcsait"
       ]
     },
     "Loading info": {
@@ -7077,6 +9397,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Igyenes próbaideje lejárt. Hozzáférés a fiókjához hamarosan le lesz tiltva. ${ action }"
+      ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ date } keltezéssel, ${ senderString } írta:"
       ]
     },
     "Message display when a new app version is available": {
@@ -8180,6 +10503,21 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "A(z) ${ BRAND_NAME }-címe használatra kész"
+      ],
+      "Block removed": [
+        "Tiltás megszüntetve"
+      ],
+      "Password has been set successfully": [
+        "A jelszó beállítása sikeres"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "${ firstSenderAddress } feladó letiltva"
+      ],
+      "Senders blocked": [
+        "Feladók letiltva"
+      ],
+      "The writing assistant is ready to use": [
+        "Az írósegéd készen áll a használatra."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8316,6 +10654,117 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "A kezdéshez válasszon egy megjelenített nevet. Ezt fogják látni az emberek, ha e-mailt küld nekik, ha meghívja őket egy eseményre vagy megoszt velük egy fájlt."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } azt jelenti, hogy soha nem fog szponzorált hirdetéseket látni az alkalmazásainkban."
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "A(z) ${ advancedEncryptionTitle } biztosítja, hogy csak Ön és a címzettek férhessenek hozzá az e-mailjeihez."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "A ${ industryLeadingSpamProtectionTitle } megakadályozza, hogy az átveréses e-mailek egyáltalán a beérkezett üzenetek közé kerüljenek."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } az App Store-ban"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } a Play Áruházban"
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "A ${ protectionFromTrackersTitle } azt jelenti, hogy Önt többé nem követik az interneten."
+      ],
+      "Activate premium features": [
+        "Prémium jellemzők aktiválása"
+      ],
+      "Activate selected": [
+        "Kiválasztottak aktiválása"
+      ],
+      "Ad-free promise": [
+        "Reklámmentességi garancia"
+      ],
+      "Advanced encryption": [
+        "Fejlett titkosítás"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "Anytime, anywhere access": [
+        "Hozzáférés bárhol, bármikor"
+      ],
+      "Auto-delete spam and trash": [
+        "Levélszemét és lomtár automatikus törlése"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Törölt levelek és levélszemét eltávolítása 30 nap után."
+      ],
+      "Continue": [
+        "Folytatás"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } felfedezése"
+      ],
+      "Distraction-free emailing": [
+        "Figyelemelterelés nélküli e-mailezés"
+      ],
+      "Download the desktop app": [
+        "Asztali alkalmazás letöltése"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Élvezze a gyorsabb, koncentráltabb e-mailezés élményét az asztali alkalmazással."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Hogy bármikor hozzáférjen az e-mailhez és optimalizált mobil élményt kapjon, töltse le a ${ mobileAppAppStoreLink } vagy ${ mobileAppGooglePlayLink } alkalmazásunkat."
+      ],
+      "Get notified if your password is compromised.": [
+        "Értesítést kap, ha a jelszava kiszivárog."
+      ],
+      "Industry-leading spam protection": [
+        "Levélszemét elleni, iparágvezető védelem"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Let's get started": [
+        "Kezdjük"
+      ],
+      "Make the most of your paid plan.": [
+        "Hozza ki a legtöbbet az előfizetéses csomagjából."
+      ],
+      "Maybe later": [
+        "Talán később"
+      ],
+      "Next": [
+        "Tovább"
+      ],
+      "Protection from trackers": [
+        "Védelem a nyomkövetőkkel szemben"
+      ],
+      "Replay introduction": [
+        "Bemutató ismétlése"
+      ],
+      "Set a display name": [
+        "Megjelenített név megadása"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "${ BRAND_NAME } használatának megkezdése"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Kezdje el használni az e-mail címe rövidebb, frappánsabb változatát."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Üdvözöljük a következőkben: ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Ahol az adatvédelem az alap."
+      ],
+      "You are all set!": [
+        "Minden beállítva!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "A(z) ${ domain } domain név és a(z) ${ subscriptionName } előfizetése használatra kész."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "A domainnév és az előfizetés használatra kész."
       ]
     },
     "Onboarding Proton": {
@@ -8336,6 +10785,15 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "A beállítások között bármikor módosíthatja a témát."
+      ],
+      "Choose your preferred look and feel.": [
+        "Válassza ki az Önnek tetsző megjelenést."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Kapcsolja össze a domain nevét, és hozzon létre fiókokat a szervezet összes tagja számára."
+      ],
+      "Make it your own": [
+        "Hozzon létre sajátot"
       ]
     },
     "Onboarding Trial": {
@@ -8400,6 +10858,9 @@
       ],
       "No parent folder": [
         "Nincs szülő-mappa"
+      ],
+      "All": [
+        "Összes"
       ]
     },
     "Option group": {
@@ -8876,6 +11337,57 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Describe what to change": [
+        "Írja le, mit szeretne megváltoztatni"
+      ],
+      "Filter folders": [
+        "Mappák szűrése"
+      ],
+      "Filter labels": [
+        "Címkék szűrése"
+      ],
+      "Generating": [
+        "Generáljuk"
+      ],
+      "Hint": [
+        "Emlékeztető"
+      ],
+      "Please share what you expected": [
+        "Kérjük, ossza meg mire számított."
+      ],
+      "Search date, name, email address, or subject line": [
+        "Keresés dátum, név, e-mail cím vagy tárgy alapján"
+      ],
+      "Search messages": [
+        "Üzenetek keresése"
+      ],
+      "Search name, email or group": [
+        "Név, e-mail vagy csoport keresése"
+      ],
+      "Subject": [
+        "Tárgy"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Jelentsd be a közelgő eseményeket a hírlevélben.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Mondja le az edzőtermi tagságomat.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Mondja meg az írósegédnek, hogy mit írjon. Példa: \"Hívd meg Jane-t a bulimra.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Köszönd meg a kollégámnak a segítséget a projekten.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Írj egy kísérőlevelet egy gyakornoki pozícióhoz.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Mondja meg az írósegédnek, hogy mit írjon. Példa: \"Írj egy utánkövető e-mailt egy kliensnek.\""
+      ],
+      "To": [
+        "Címzett"
       ]
     },
     "Placeholder for contact group name": {
@@ -10234,11 +12746,238 @@
       ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
+      ],
+      "${ count } conversation deleted": [
+        "${ count } beszélgetés törölve",
+        "${ count } beszélgetés törölve"
+      ],
+      "${ count } draft deleted": [
+        "${ count } piszkozat törölve",
+        "${ count } piszkozat törölve"
+      ],
+      "${ count } message deleted": [
+        "${ count } üzenet törölve",
+        "${ count } üzenet törölve"
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } beszélgetés megjelölve ${ labelName } címkével.",
+        "${ elementsCount } beszélgetés megjelölve ${ labelName } címkével."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } beszélgetés olvasottnak megjelölve.",
+        "${ elementsCount } beszélgetés olvasottnak megjelölve."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } beszélgetés csillaggal jelölve.",
+        "${ elementsCount } beszélgetés csillaggal jelölve."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } beszélgetés olvasatlannak jelölve.",
+        "${ elementsCount } beszélgetés olvasatlannak jelölve."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } beszélgetés átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába.",
+        "${ elementsCount } beszélgetés átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } beszélgetés áthelyezve a(z) ${ labelName } mappába.",
+        "${ elementsCount } beszélgetés áthelyezve a(z) ${ labelName } mappába."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } beszélgetés átkerült a levélszeméthez, a feladó pedig a levélszemét listára.",
+        "${ elementsCount } beszélgetés átkerült a levélszeméthez, a feladó pedig a levélszemét listára."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ labelName } címke eltávolítva ${ elementsCount } beszélgetésről.",
+        "${ labelName } címke eltávolítva ${ elementsCount } beszélgetésről."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } beszélgetés eltávolítva a csillaggal jelöltek közül.",
+        "${ elementsCount } beszélgetés eltávolítva a csillaggal jelöltek közül."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } beszélgetés némítva",
+        "${ elementsCount } beszélgetés némítva"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } beszélgetésnél visszavonva a némítás",
+        "${ elementsCount } beszélgetésnél visszavonva a némítás"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } üzenet megjelölve ${ labelName } címkével.",
+        "${ elementsCount } üzenet megjelölve ${ labelName } címkével."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } üzenet olvasottnak megjelölve.",
+        "${ elementsCount } üzenet olvasottnak megjelölve."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } üzenet csillaggal megjelölve.",
+        "${ elementsCount } üzenet csillaggal megjelölve."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } üzenet olvasatlannak jelölve.",
+        "${ elementsCount } üzenet olvasatlannak jelölve."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } üzenet átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába.",
+        "${ elementsCount } üzenet átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } üzenet áthelyezve a(z) ${ labelName } mappába.",
+        "${ elementsCount } üzenet áthelyezve a(z) ${ labelName } mappába."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } üzenet átkerült a levélszeméthez, a feladó pedig a tiltólistára.",
+        "${ elementsCount } üzenet átkerült a levélszeméthez, a feladó pedig a tiltólistára."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ labelName } címke eltávolítva ${ elementsCount } üzenetről.",
+        "${ labelName } címke eltávolítva ${ elementsCount } üzenetről."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } üzenet eltávolítva a csillaggal jelöltek közül.",
+        "${ elementsCount } üzenet eltávolítva a csillaggal jelöltek közül."
+      ],
+      "Address verification disabled": [
+        "Cím ellenőrzés kikapcsolva"
+      ],
+      "Content copied to clipboard": [
+        "A tartalom a Vágólapra másolva"
+      ],
+      "Conversation added to ${ labelName }.": [
+        "A beszélgetés megjelölve ${ labelName } címkével."
+      ],
+      "Conversation marked as read.": [
+        "Beszélgetés olvasottnak megjelölve."
+      ],
+      "Conversation marked as Starred.": [
+        "Beszélgetés csillaggal megjelölve."
+      ],
+      "Conversation marked as unread.": [
+        "Beszélgetés olvasatlannak megjelölve."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "A beszélgetés átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "A beszélgetés átkerült a ${ labelName } mappába."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "A beszélgetés átkerült a levélszeméthez, a feladó pedig a levélszemét listára."
+      ],
+      "Conversation removed from ${ labelName }.": [
+        "${ labelName } címke eltávolítva a beszélgetésről."
+      ],
+      "Conversation removed from Starred.": [
+        "Beszélgetés eltávolítva a csillaggal jelöltek közül."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } érkező üzenetek a(z) ${ labelsList } címkével lesznek megjelölve"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } érkező beszélgetések a(z) ${ folder } mappába kerülnek áthelyezésre"
+      ],
+      "Draft deleted": [
+        "Piszkozat törölve"
+      ],
+      "Labels applied.": [
+        "Címkék alkalmazva."
+      ],
+      "Mail list unsubscribed": [
+        "Leiratkozva a levelezési listáról"
+      ],
+      "Message added to ${ labelName }.": [
+        "Az üzenet ${ labelName } címkével megjelölve."
+      ],
+      "Message content search enabled": [
+        "Keresés az üzenetek tartalmában bekapcsolva"
+      ],
+      "Message deleted": [
+        "Üzenet törölve"
+      ],
+      "Message expiration canceled": [
+        "Üzenet lejárati dátuma törölve"
+      ],
+      "Message marked as legitimate": [
+        "Üzenet helyénvalóként megjelölve"
+      ],
+      "Message marked as read.": [
+        "Megjelölve olvasottként."
+      ],
+      "Message marked as Starred.": [
+        "Üzenet csillaggal megjelölve."
+      ],
+      "Message marked as unread.": [
+        "Üzenet megjelölve olvasatlanként."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Az üzenet átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Üzenet áthelyezve a ${ labelName } mappába."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Az üzenet átkerült a levélszeméthez, a feladó pedig a levélszemét listára."
+      ],
+      "Message removed from ${ labelName }.": [
+        "${ labelName } címke eltávolítva az üzenetről."
+      ],
+      "Message removed from Starred.": [
+        "Üzenet eltávolítva a csillaggal jelöltek közül."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } érkező üzenetek a(z) ${ labelsList } címkével lesznek megjelölve"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } érkező üzenetek a(z) ${ folder } mappába kerülnek áthelyezésre"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "${ selectionCount } beszélgetés áthelyezése",
+        "${ selectionCount } beszélgetés áthelyezése"
+      ],
+      "Move ${ selectionCount } message": [
+        "${ selectionCount } üzenet áthelyezése",
+        "${ selectionCount } üzenet áthelyezése"
+      ],
+      "Phishing reported": [
+        "Adathalászat bejelentve"
+      ],
+      "Public key trusted": [
+        "Nyilvános kulcs megbízhatóként megjelölve"
+      ],
+      "Read receipt sent": [
+        "Olvasási visszaigazolás elküldve"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } üzenet átkategorizálva.",
+        "${ elementsCount } üzenet átkategorizálva."
+      ],
+      "Self-destruction removed": [
+        "Önmegsemmisítés eltávolítva"
+      ],
+      "Self-destruction set": [
+        "Önmegsemmisítés beállítva"
+      ],
+      "Thanks for the feedback!": [
+        "Köszönjük a visszajelzést!"
       ]
     },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } törölve"
+      ],
+      " is now active": [
+        " jelenleg aktív"
+      ],
+      "The filter has been disabled": [
+        "A szűrő le van tiltva"
+      ],
+      "The filter has been enabled": [
+        "A szűrő engedélyezve lett"
+      ],
+      "The filter is active again": [
+        "A szűrő újra aktív"
       ]
     },
     "Suffix": {
@@ -11028,6 +13767,385 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } üzenet",
+        "${ numMessages } üzenet"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } olvasatlan üzenet",
+        "${ unreads } olvasatlan üzenet"
+      ],
+      "Action all conversations": [
+        "Művelet az összes beszélgetésen"
+      ],
+      "Action all messages": [
+        "Művelet az összes üzeneten"
+      ],
+      "Archive all messages?": [
+        "Minden üzenet archiválása?"
+      ],
+      "Attachments": [
+        "Mellékletek"
+      ],
+      "Bad time for this email?": [
+        "Nem jókor jött ez az e-mail?"
+      ],
+      "BCC": [
+        "Titkos másolat"
+      ],
+      "Blind Carbon Copy": [
+        "Titkos másolat"
+      ],
+      "Block sender": [
+        "Feladó tiltása"
+      ],
+      "Built for privacy": [
+        "Az adatvédelem jegyében készült"
+      ],
+      "Carbon Copy": [
+        "Másolat"
+      ],
+      "CC": [
+        "Másolat"
+      ],
+      "Confirm recipient address?": [
+        "Elfogadja a címzett címét?"
+      ],
+      "Conversation list": [
+        "Beszélgetéslista"
+      ],
+      "Craft better emails": [
+        "Jobb e-maileket készíthet"
+      ],
+      "Create folder \"${ search }\"": [
+        "Mappa létrehozása: \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Címke létrehozása: \"${ search }\""
+      ],
+      "Decryption error": [
+        "Visszafejtési hiba"
+      ],
+      "Delete ${ count } conversation": [
+        "${ count } beszélgetés törlése",
+        "${ count } beszélgetés törlése"
+      ],
+      "Delete ${ count } draft": [
+        "${ count } piszkozat törlése",
+        "${ count } piszkozat törlése"
+      ],
+      "Delete ${ count } message": [
+        "${ count } üzenet törlése",
+        "${ count } üzenet törlése"
+      ],
+      "Delete all messages": [
+        "Összes üzenet törlése"
+      ],
+      "Delete conversation": [
+        "Beszélgetés törlése"
+      ],
+      "Delete draft": [
+        "Piszkozat törlése"
+      ],
+      "Delete message": [
+        "Üzenet törlése"
+      ],
+      "Discover your subscription benefits": [
+        "Fedezze fel az előfizetése előnyeit"
+      ],
+      "Don't give spam a chance": [
+        "Ne adjon esélyt a levélszemétnek"
+      ],
+      "Email content": [
+        "E-mail tartalma"
+      ],
+      "Enable message content search": [
+        "Üzenetek tartalmában való keresés engedélyezése"
+      ],
+      "External encryption": [
+        "Külső titkosítás"
+      ],
+      "Filter on...": [
+        "Szűrés..."
+      ],
+      "Folder options": [
+        "Mappa beállításai"
+      ],
+      "Forward": [
+        "Továbbítás"
+      ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Rejtse el az e-mail címét ezzel: ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Az e-mail cím frissítése"
+      ],
+      "Image": [
+        "Kép"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Növelje a biztonságot a ${ VPN_APP_NAME } segítségével"
+      ],
+      "Increase your privacy with more addresses": [
+        "Növelje adatai védelmét további e-mail címek használatával"
+      ],
+      "Insert contacts": [
+        "Névjegy beszúrása"
+      ],
+      "Introducing email categories": [
+        "Ez e-mail kategóriák bemutatása"
+      ],
+      "Label as": [
+        "Címkézés"
+      ],
+      "Label options": [
+        "Címke beállításai"
+      ],
+      "Load embedded images": [
+        "Beágyazott képek betöltése"
+      ],
+      "Load remote content": [
+        "Távoli tartalom betöltése"
+      ],
+      "Mark all messages as read": [
+        "Minden üzenet megjelölése olvasottként"
+      ],
+      "Mark as read": [
+        "Megjelölés olvasottként"
+      ],
+      "Mark as unread": [
+        "Megjelölés olvasatlanként"
+      ],
+      "Mark conversations as read": [
+        "Megjelölés olvasottként"
+      ],
+      "Mark conversations as unread": [
+        "Megjelölés olvasatlanként"
+      ],
+      "Mark email as legitimate": [
+        "E-mail megjelölése helyénvalóként"
+      ],
+      "Mark messages as read": [
+        "Megjelölés olvasottként"
+      ],
+      "Mark messages as unread": [
+        "Megjelölés olvasatlanként"
+      ],
+      "Message details": [
+        "Üzenet részletei"
+      ],
+      "Message list": [
+        "Üzenet lista"
+      ],
+      "Message will expire": [
+        "Az üzenet lejár"
+      ],
+      "More": [
+        "Tovább"
+      ],
+      "More actions": [
+        "További műveletek"
+      ],
+      "More options": [
+        "További lehetőségek"
+      ],
+      "More selections": [
+        "További kijelölési lehetőségek"
+      ],
+      "Move all conversations": [
+        "Az összes beszélgetés áthelyezése"
+      ],
+      "Move all messages": [
+        "Az összes üzenetet áthelyezése"
+      ],
+      "Move all messages to archive": [
+        "Az összes üzenetet áthelyezése a Archívumba"
+      ],
+      "Move all messages to trash": [
+        "Az összes üzenetet áthelyezése a Lomtárba"
+      ],
+      "Move to": [
+        "Áthelyezés ide"
+      ],
+      "Move to inbox": [
+        "Áthelyezés a beérkezett üzenetekhez"
+      ],
+      "Move to inbox (not spam)": [
+        "Áthelyezés a beérkezett üzenetekhez (nem levélszemét)"
+      ],
+      "Move to spam": [
+        "Áthelyezés a levélszeméthez"
+      ],
+      "Move to trash": [
+        "Áthelyezés a Lomtárba"
+      ],
+      "Moving a scheduled message": [
+        "Üzemezett üzenet áthelyezése"
+      ],
+      "Moving a snoozed message": [
+        "Halasztott üzenet áthelyezése"
+      ],
+      "New message": [
+        "Új üzenet"
+      ],
+      "Newsletters": [
+        "Hírlevelek"
+      ],
+      "Newsletters view": [
+        "Hírlevelek nézet"
+      ],
+      "Next conversation": [
+        "Következő beszélgetés"
+      ],
+      "Next message": [
+        "Következő üzenet"
+      ],
+      "No active newsletters": [
+        "Nincsenek aktív hírlevelek"
+      ],
+      "No attachment found": [
+        "Nincs melléklet"
+      ],
+      "No newsletters found": [
+        "Nincsenek hírlevelek"
+      ],
+      "No trackers found": [
+        "Nem található követő"
+      ],
+      "No unsubscribed newsletters": [
+        "Nincsenek leiratkozott hírlevelek"
+      ],
+      "No-reply address detected": [
+        "Nem válaszolható cím észlelve"
+      ],
+      "On-device suggestions": [
+        "Eszközön belüli javaslatok"
+      ],
+      "Previous conversation": [
+        "Előző beszélgetés"
+      ],
+      "Previous message": [
+        "Előző üzenet"
+      ],
+      "Protect yourself from trackers": [
+        "Védje magát a követőktől"
+      ],
+      "Re-sign contact": [
+        "Névjegy ismételt aláírása"
+      ],
+      "Recipient missing": [
+        "Címzett hiányzik"
+      ],
+      "Recipients": [
+        "Címzettek"
+      ],
+      "Remove from list?": [
+        "Eltávolítás a listából?"
+      ],
+      "Reply": [
+        "Válasz"
+      ],
+      "Reply all": [
+        "Válasz mindenkinek"
+      ],
+      "Schedule now, send later": [
+        "Ütemezze most, küldje el később"
+      ],
+      "Schedule send": [
+        "Küldés ütemezése"
+      ],
+      "Select a theme": [
+        "Téma kiválasztása"
+      ],
+      "Self-destruct message": [
+        "Önmegsemmisítő üzenet"
+      ],
+      "Send email": [
+        "E-mail küldése"
+      ],
+      "Send with changed preferences?": [
+        "Elküldi a megváltoztatott beállításokkal?"
+      ],
+      "Send with encryption disabled?": [
+        "Titkosítás nélkül küldi?"
+      ],
+      "Send without expiration?": [
+        "Küldés időkorlát nélkül?"
+      ],
+      "Sender": [
+        "Feladó"
+      ],
+      "Sender changed": [
+        "Feladó megváltoztatva"
+      ],
+      "Sending error": [
+        "Hiba a küldés közben"
+      ],
+      "Sending notice": [
+        "Küldési tudnivaló"
+      ],
+      "Sending original message": [
+        "Eredeti üzenet küldése"
+      ],
+      "Snooze": [
+        "Szüneteltetés"
+      ],
+      "Snooze message": [
+        "Üzenet némítása"
+      ],
+      "Storage capacity warning": [
+        "Tárhely figyelmeztetés"
+      ],
+      "Subject missing": [
+        "Tárgy hiányzik"
+      ],
+      "To": [
+        "Címzett"
+      ],
+      "Trash all messages?": [
+        "Összes üzenet lomtárazása?"
+      ],
+      "Trust new key?": [
+        "Megjelöli az új kulcsot megbízhatóként?",
+        "Megjelöli az új kulcsokat megbízhatóként?"
+      ],
+      "Trust pinned keys?": [
+        "Megbízik a kitűzött kulcsokban?"
+      ],
+      "Trust public key?": [
+        "Nyilvános kulcs megjelölése megbízhatóként?"
+      ],
+      "Unsubscribe": [
+        "Leiratkozás"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "Leiratkozás erről: ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "A leiratkozás nem elérhető ennél a feladónál."
+      ],
+      "Unsubscribe request sent": [
+        "Leiratkozási kérés elküldve"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Használja biztonságosan a Gmailt a ${ MAIL_APP_NAME } alkalmazásban"
+      ],
+      "Verification error": [
+        "Ellenőrzési hiba"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Megvédtük ${ trackersCount } követőtől",
+        "Megvédtük ${ trackersCount } követőtől"
+      ],
+      "Welcome": [
+        "Üdvözli"
+      ],
+      "Welcome ${ userName }": [
+        "Üdvözöljük, ${ userName }"
+      ],
+      "Your free trial has ended": [
+        "Az ön ingyenes próbaidőszaka végett ért"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11119,6 +14237,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Ez biztosítja, hogy senki se láthassa a tartózkodási helyet, az eszközt és egyéb információkat, amelyek felhasználhatók az Ön azonosítására vagy nyomon követésére."
       ]
     },
     "tooltip": {
@@ -11333,6 +14454,10 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "A próbaidőszak vége: ${ textDate }. Nem kerül díj felszámításra, ha ennél korábban lemondja: ${ textDate }. ${ action }"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "A melléklet aláírásának ellenőrzése nem sikerült.\nLetöltheti a mellékletet, de elképzelhető, hogy megváltoztatták a tartalmát.",
+        "A mellékletek aláírásának ellenőrzése nem sikerült.\nLetöltheti a mellékleteket, de elképzelhető, hogy megváltoztatták a tartalmát."
       ]
     },
     "Weekly recurring event, frequency": {
@@ -11591,6 +14716,1061 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        "Résztvevő hozzáadása nem sikerült"
+      ],
+      "Invitation sent and participant added": [
+        "Meghívó elküldve és résztvevő hozzáadva"
+      ],
+      "Participant added": [
+        "Résztvevő hozzáadva"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Időkorlátos üzenet"
+      ]
+    },
+    "Alt": {
+      "Forwarded": [
+        "Továbbítva"
+      ],
+      "Replied to": [
+        "Válaszolt"
+      ],
+      "Replied to all": [
+        "Válasz mindenkinek"
+      ],
+      "Star conversation": [
+        "Beszélgetés csillagozása"
+      ],
+      "Star message": [
+        "Üzenet csillagozása"
+      ],
+      "Unread email": [
+        "Olvasatlan e-mail"
+      ],
+      "Unstar conversation": [
+        "Beszélgetés csillagozásának visszavonása"
+      ],
+      "Unstar message": [
+        "Üzenet csillagozásának visszavonása"
+      ]
+    },
+    "Alternative text for conversation image": {
+      "Conversation": [
+        "Beszélgetés"
+      ]
+    },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "A visszajelzés elküldésével a kérés és az Ön megjegyzései láthatóvá válnak a ${ BRAND_NAME } moderációs csapata számára."
+      ]
+    },
+    "Attachment signature verification": {
+      "Sender verification failed": [
+        "A feladó ellenőrzése sikertelen volt"
+      ],
+      "Sender verification passed": [
+        "A feladó ellenőrzése megtörtént"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Egy naptár eseményt tartalmaz"
+      ]
+    },
+    "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára."
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } elfogadott egy meghívást és új időpontot javasolt az eseményhez."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "${ participantName } elfogadott egy meghívást az esemény egy alkalmára."
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        "${ participantName } elfogadott egy meghívást erre az eseményre."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára."
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } elfogadta a meghívását és új időpontot javasolt az eseményhez."
+      ],
+      "${ participantName } accepted your invitation to one occurrence of the event.": [
+        "${ participantName } elfogadta a meghívását az esemény egy alkalmára."
+      ],
+      "${ participantName } accepted your invitation.": [
+        "$${ participantName } elfogadta a meghívását."
+      ],
+      "${ participantName } asked for the latest event updates.": [
+        "${ participantName } friss információkat kért egy eseményről."
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
+        "${ participantName } friss információkat kért egy eseményről amely már nem is létezik. Önnek nincs is naptára."
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
+        "${ participantName } friss információkat kért egy eseményről amely már nem is létezik az ön naptárában."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } a legfrissebb változtatásokról kért tájékoztatást egy olyan eseményről, ami nem fedi az ön meghívási adatait. Ellenőrizze a meghívási részleteit a naptárában."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } elutasított egy meghívást és új időpontot javasolt az esemény egy alkalmára."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "${ participantName } elutasított egy meghívást és új időpontot javasolt az eseményhez."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } elutasított egy meghívást az esemény egy alkalmára."
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } visszautasított egy meghívást erre az eseményre."
+      ],
+      "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } elutasította a meghívását és új időpontot javasolt az esemény egy alkalmára."
+      ],
+      "${ participantName } declined your invitation and proposed a new time for this event.": [
+        "${ participantName } elutasította a meghívását és új időpontot javasolt az eseményhez."
+      ],
+      "${ participantName } declined your invitation to one occurrence of the event.": [
+        "${ participantName } elutasította a meghívását az esemény egy alkalmára."
+      ],
+      "${ participantName } declined your invitation.": [
+        "${ participantName } elutasította a meghívását."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } elfogadott egy meghívást és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } elfogadott egy meghívást az esemény egy alkalmára."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } elfogadott egy meghívást erre az eseményre."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } elfogadta a meghívását és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } elutasított egy meghívást és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } elutasított egy meghívást és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "${ participantName } visszautasított egy meghívást az esemény egy alkalmára."
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        "${ participantName } visszautasított egy meghívást erre az eseményre."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } elutasította a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } elutasította a meghívását és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
+        "${ participantName } már korábban elfogadta a meghívását az esemény egy alkalmára."
+      ],
+      "${ participantName } had previously accepted your invitation.": [
+        "${ participantName } már korábban elfogadta a meghívását."
+      ],
+      "${ participantName } had previously declined your invitation to one occurrence of the event.": [
+        "${ participantName } már korábban elutasította a meghívását az esemény egy alkalmára."
+      ],
+      "${ participantName } had previously declined your invitation.": [
+        "${ participantName } már korábban elutasította a meghívását."
+      ],
+      "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } már korábban feltételesen elfogadta a meghívását az esemény egy alkalmára."
+      ],
+      "${ participantName } had previously tentatively accepted your invitation.": [
+        "${ participantName } már korábban feltételesen elfogadta a meghívását."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
+        "${ participantName } új időpontot javasolt az esemény egyik alkalmára. A javaslat elavult."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } új időpontot javasolt az esemény egyik alkalmára. A javaslat elavult. Az esemény már nem szerepel az ön naptárában."
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } új időpontot javasolt az esemény egyik alkalmára. A javaslat elavult. Önnek nincs is naptára."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
+        "${ participantName } új időpontot javasolt az eseményhez. A javaslat elavult."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } új időpontot javasolt az eseményhez. A javaslat elavult. Az esemény már nem szerepel az ön naptárában."
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } új időpontot javasolt az eseményhez. A javaslat elavult. Önnek nincs is naptára."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } feltételesen elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } feltételesen elfogadott egy meghívást és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } feltételesen elfogadott egy meghívást az esemény egy alkalmára."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } feltételesen elfogadott egy meghívást erre az eseményre."
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } is not in the participants list.": [
+        "${ participantName } nincs a résztvevők listáján."
+      ],
+      "${ participantName } proposed a new time for one occurrence of this event.": [
+        "${ participantName } új időpontot javasolt az esemény egy alkalmára."
+      ],
+      "${ participantName } proposed a new time for this event.": [
+        "${ participantName } új időpontot javasolt ehhez az eseményhez."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } feltételesen elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } feltételesen elfogadott egy meghívást és új időpontot javasolt az eseményhez."
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } feltételesen elfogadott egy meghívást az esemény egy alkalmára."
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        "${ participantName } feltételesen elfogadott egy meghívást erre az eseményre."
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára."
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az eseményhez."
+      ],
+      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } feltételesen elfogadta a meghívását az esemény egy alkalmára."
+      ],
+      "${ participantName } tentatively accepted your invitation.": [
+        "${ participantName } feltételesen elfogadta a meghívását."
+      ],
+      "(Attendance optional)": [
+        "(Részvétel opcionális)"
+      ],
+      "Adding occurrences to an event is not supported for the moment": [
+        "További alkalmak hozzáadása egy eseményhez jelenleg nem támogatott"
+      ],
+      "Event refreshing is not supported for the moment": [
+        "Esemény frissítés jelenleg nem támogatott"
+      ],
+      "Event rescheduling is not supported for the moment": [
+        "Az esemény újraidőzítés jelenleg nem támogatott"
+      ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "A válasz nem adható a ${ CALENDAR_APP_NAME } naptárhoz, mert jelenleg csak a sorozat összes eseményéhez való válasz támogatott"
+      ],
+      "This event has been canceled.": [
+        "Ezt az eseményt törölték."
+      ],
+      "This event has been updated.": [
+        "Ez eseményt frissítették."
+      ],
+      "This invitation is out of date. The event has been canceled.": [
+        "A meghívó elavult. Az eseményt törölték."
+      ],
+      "This invitation is out of date. The event has been deleted.": [
+        "A meghívó elavult. Az eseményt törölték."
+      ],
+      "This invitation is out of date. The event has been updated.": [
+        "A meghívó elavult. Az eseményt frissítették."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Ez az új javasolt időpont nem fedi a meghívó adatait. Ellenőrizze a meghívó részleteit a naptárában."
+      ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Ez a válasz nem fedi az ön meghívási adatait. Ellenőrizze a meghívási részleteit a naptárában."
+      ],
+      "This response is out of date.": [
+        "Ez a válasz már lejárt."
+      ],
+      "This response is out of date. The event does not exist in your calendar anymore.": [
+        "Ez a válasz elavult. Az esemény már nem létezik már az ön naptárában."
+      ],
+      "This response is out of date. You have no calendars.": [
+        "Ez a válasz elavult. Önnek nincs is naptára."
+      ],
+      "You already accepted this invitation.": [
+        "Már elfogadta ezt a meghívást."
+      ],
+      "You already declined this invitation.": [
+        "Már visszautasította ezt a meghívást."
+      ],
+      "You already tentatively accepted this invitation.": [
+        "Már feltételesen elfogadta ezt meghívást."
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Jelenleg nem tudsz válaszolni ${ BRAND_NAME } meghívásáira hacsak nem vagy a résztvevők listáján."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Az e-mail címed nincs az eredeti résztvevők listájában."
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "Az esemény már befejeződött"
+      ],
+      "Event in progress": [
+        "Az esemény folyamatban van"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "Törlés"
+      ],
+      "Cancel expiration": [
+        "Időkorlát eltávolítása"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Új mappa létrehozása"
+      ],
+      "Create a new label": [
+        "Új címke létrehozása"
+      ],
+      "Go to Archive": [
+        "Ugrás az archívumhoz"
+      ],
+      "Go to Drafts": [
+        "Ugrás a piszkozatokhoz"
+      ],
+      "Go to Inbox": [
+        "Ugrás a beérkezett üzenetekhez"
+      ],
+      "Go to Sent": [
+        "Ugrás az elküldött levelekhez"
+      ],
+      "Go to Spam": [
+        "Ugrás a levélszeméthez"
+      ],
+      "Go to Starred": [
+        "Ugrás a csillagozottakhoz"
+      ],
+      "Go to Trash": [
+        "Ugrás a lomtárhoz"
+      ],
+      "New message": [
+        "Új üzenet"
+      ],
+      "Search": [
+        "Keresés"
+      ]
+    },
+    "Composer email icon": {
+      "End-to-end encrypted": [
+        "Végponttól végpontig titkosítva"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "Végpontok közt titkosított, ellenőrzött címzettnek"
+      ],
+      "End-to-end encrypted. ${ warningsText }": [
+        "Végpontok közt titkosított. ${ warningsText }"
+      ],
+      "PGP-encrypted": [
+        "PGP titkosított"
+      ],
+      "PGP-encrypted to verified recipient": [
+        "PGP titkosított, ellenőrzött címzettnek"
+      ],
+      "PGP-encrypted. ${ warningsText }": [
+        "PGP titkosított. ${ warningsText }"
+      ],
+      "PGP-signed": [
+        "PGP aláírt"
+      ],
+      "The address might be misspelled": [
+        "Lehetséges, hogy a cím el van írva"
+      ]
+    },
+    "Composer size": {
+      "Maximized": [
+        "Teljes méretű"
+      ],
+      "Normal": [
+        "Normál"
+      ]
+    },
+    "CustomFilter": {
+      "Attachment": [
+        "Melléklet"
+      ],
+      "Filter on": [
+        "Szűrés"
+      ],
+      "Next": [
+        "Tovább"
+      ],
+      "Recipient": [
+        "Címzett"
+      ],
+      "Sender": [
+        "Feladó"
+      ],
+      "Subject": [
+        "Tárgy"
+      ]
+    },
+    "Date label": {
+      "Today": [
+        "Ma"
+      ],
+      "Tomorrow": [
+        "Holnap"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Kényelmes"
+      ],
+      "Compact": [
+        "Tömör"
+      ]
+    },
+    "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } új üzenet",
+        "${ notificationsToShow.length } új üzenet"
+      ],
+      "From: ${ sender } - ${ Subject }": [
+        "Feladó: ${ sender } - ${ Subject }"
+      ]
+    },
+    "Desktop notification title": {
+      "New email received": [
+        "Új üzenet érkezett"
+      ]
+    },
+    "Email reminder banner": {
+      "Event is tomorrow": [
+        "Az esemény holnap lesz"
+      ],
+      "Event starting now": [
+        "Az esemény most kezdődik"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Az esemény ${ minutesUntilEvent } perc múlva kezdődik",
+        "Az esemény ${ minutesUntilEvent } perc múlva kezdődik"
+      ],
+      "Event starts tomorrow": [
+        "Az esemény holnap kezdődik"
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "Az esemény adatai titkosítva vannak. Lépjen be újra a naptár visszaállításához és az adatok visszafejtéséhez. ${ learnMoreLink }"
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "Az esemény adatainak visszafejtése nem sikerült. ${ whyNotLink }"
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        "Az esemény már nincs a naptárában"
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        "Az eseményt törölték"
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        "Az eseményt frissítették. Ez az emlékeztető elavult."
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Zéró hozzáférésű, titkosított. A címzett letiltotta a végpontok közötti titkosítást a fiókjában."
+      ]
+    },
+    "Encrypted Headers": {
+      "Encrypted Headers filename": [
+        "Titkosított Fejlécek fájlnév"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Legfeljebb ${ maxAttendees } résztvevő megengedett meghívónként",
+        "Legfeljebb ${ maxAttendees } résztvevő megengedett meghívónként"
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "Vázlat nem helyezethő át a Bejövő üzenetekhez"
+      ],
+      "Drafts cannot be moved to Spam": [
+        "Vázlat nem helyezethő át a Levélszemét közé"
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        "Az elküldött üzenetek nem helyezhetők át a Bejövő mappába"
+      ],
+      "Sent messages cannot be moved to Spam": [
+        "Az elküldött üzenetek nem helyezhetők át a Levélszemét közé"
+      ],
+      "This action cannot be performed": [
+        "Ez a művelet nem hajtható végre"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        "Meghívó elküldése nem sikerült: ${ email }. ${ errorMessage }"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Szűrő"
+      ]
+    },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "Dátum: ${ date }"
+      ],
+      "From: ${ senderString }": [
+        "Forrás: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "Tárgy: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "Címzett: ${ toString }"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } az App Store-ban"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } a Play Áruházban"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } nap",
+        "${ remainingDaysCount } nap"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } nap van hátra",
+        "${ remainingDaysCount } nap van hátra"
+      ],
+      "Block email communications from scammers permanently.": [
+        "A csalók e-mail kommunikációjának végleges blokkolása."
+      ],
+      "Block unsavory senders": [
+        "Blokkolja a kellemetlen feladókat"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Gratulálunk, hogy még biztonságosabbá, kényelmesebbé és relevánsabbá tette a fiókját! Ingyenes tárhelyét 1 GB-ra növeltük."
+      ],
+      "Checklist complete": [
+        "Az ellenőrző lista kész"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } cím igénylése"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Teljesítse ezt a feladatlistát ${ daysCount } napon belül, és ingyen megduplázhatja a tárhelyét."
+      ],
+      "Discover privacy features": [
+        "Adatvédelmi funkciók felfedezése"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "A titkosítás olyan erős, hogy csak Ön és a címzettek láthatják az e-mail üzeneteit."
+      ],
+      "Finish setup": [
+        "Beállítás befejezése"
+      ],
+      "For your eyes only": [
+        "Csak Önnek látható"
+      ],
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "Töltse le a ${ MAIL_APP_NAME } mobil alkalmazást"
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Használja továbbra is a ${ MAIL_APP_NAME } alkalmazást, hogy felfedezze, hogyan védi a ${ BRAND_NAME } a magánszféráját és hogyan egyszerűsíti az e-mailezést."
+      ],
+      "Learn more": [
+        "További információk"
+      ],
+      "Protection from trackers": [
+        "Védelem a nyomkövetőkkel szemben"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Jelentkezzen be a mobilalkalmazásba, hogy befejezze ezt a lépést"
+      ],
+      "Storage unlocked": [
+        "Tárhely feloldva"
+      ],
+      "Tasks to complete count": [
+        "Elvégzendő feladatok száma"
+      ],
+      "This feature is currently unavailable": [
+        "Ez a funkció jelenleg nem elérhető."
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Olvassa be ezt a QR-kódot a mobil eszközével, vagy pedig látogassa meg az iOS vagy az Android áruházat."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Megakadályozzuk, hogy a hirdetők és az adatgyűjtők profilokat készítsenek Önről."
+      ],
+      "You've unlocked 1 GB": [
+        "Ön feloldott 1 GB-ot"
+      ]
+    },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } résztvevő",
+        "${ totalAttendees } résztvevő"
+      ],
+      "Organizer:": [
+        "Szervező:"
+      ]
+    },
+    "Import ICS file from Mail": {
+      "Calendar event created": [
+        "Esemény létrehozva"
+      ],
+      "Creating calendar event failed": [
+        "Esemény létrehozása nem sikerült"
+      ]
+    },
+    "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "A \"Megbízható Kulcsra\" kattintás hozzákapcsolja ezt a nyilvános kulcsot a feladóhoz, és az erről a címről érkező levelek automatikusan kriptográfiai ellenőrzésre kerülnek."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "A \"Megbízható Kulcsra\" kattintás egy új névjegyet hoz létre és hozzákapcsolja ezt a nyilvános kulcsot a feladóhoz Az erről a címről érkező levelek automatikusan kriptográfiai ellenőrzésre kerülnek."
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Megjelöli megbízhatóként a következő ujjlenyomatú elsődleges nyilvános kulcsot?",
+        "Megjelöli megbízhatóként a következő ujjlenyomatú elsődleges nyilvános kulcsokat?"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Ön engedélyezte erre a címre a megbízható kulcsokkal való cím hitelesítést, de az aktív titkosítási kulcsok nincsenek megbízhatóként megjelölve.\nA küldéshez a címzett egyik kulcsát megbízhatóként kell megjelölnie.",
+        "Ön engedélyezte ezekre a címekre a megbízható kulcsokkal való cím hitelesítést, de az aktív titkosítási kulcsok nincsenek megbízhatóként megjelölve.\nA küldéshez a címzettek egyik kulcsát megbízhatóként kell megjelölnie."
+      ]
+    },
+    "Key validation warning": {
+      "Recipient's key validation failed: ${ validationErrorsMessage }": [
+        "A címzett kulcsának ellenőrzése nem sikerült: ${ validationErrorsMessage }"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Dátum"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Idő"
+      ]
+    },
+    "Label Recipient": {
+      "From": [
+        "Küldő"
+      ],
+      "To": [
+        "Címzett"
+      ]
+    },
+    "Labels": {
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Itt fognak megjelenni azok a hírlevelek vagy levelezőlisták, amelyekről leiratkozik."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Nincsenek aktív hírlevelei vagy levelezőlista-előfizetései."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Nincsenek hírlevelei vagy levelezőlista feliratkozásai."
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Oszlop"
+      ],
+      "Row": [
+        "Sor"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Megnyitás ebben: ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link to settings": {
+      "settings": [
+        "beállításoknál"
+      ]
+    },
+    "Mailbox": {
+      "Archive": [
+        "Archívum"
+      ],
+      "Inbox": [
+        "Bejövő"
+      ],
+      "Spam": [
+        "Levélszemét"
+      ],
+      "Trash": [
+        "Lomtár"
+      ]
+    },
+    "Message image": {
+      "Image could not be loaded.": [
+        "A kép nem tölthető be."
+      ],
+      "Image has not been loaded in order to protect your privacy.": [
+        "Az adatai védelme érdekében a kép nem került betöltésre."
+      ]
+    },
+    "Message notification": {
+      "Scheduled sending undone": [
+        "Ütemezett küldés visszavonva"
+      ],
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Az ütemezett elküldés törölve. Az üzenet a Vázlatok mappába került."
+      ],
+      "Sending undone": [
+        "Küldés megszakítva"
+      ],
+      "Undoing send...": [
+        "Küldés visszavonása..."
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Hozza át e-mailjeit a ${ MAIL_APP_NAME } alkalmazásba"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Hozza át meglévő e-mailjeit a ${ MAIL_APP_NAME } alkalmazásba, hogy mindent egyetlen privát beérkezett üzenetek mappából kezelhessen."
+      ],
+      "Maybe later": [
+        "Talán később"
+      ]
+    },
+    "Received email icon": {
+      "End-to-end encrypted and signed message": [
+        "Végpontok közt titkosított és aláírt üzenet"
+      ],
+      "End-to-end encrypted message": [
+        "Végpontok közt titkosított üzenet"
+      ],
+      "End-to-end encrypted message from verified sender": [
+        "Végpontok közt titkosított üzenet, ellenőrzött feladótól"
+      ],
+      "PGP-encrypted and signed message": [
+        "PGP titkosított és aláírt üzenet"
+      ],
+      "PGP-encrypted message": [
+        "PGP titkosított üzenet"
+      ],
+      "PGP-encrypted message from verified sender": [
+        "PGP titkosított üzenet, ellenőrzött feladótól"
+      ],
+      "PGP-signed message": [
+        "PGP aláírt üzenet"
+      ],
+      "PGP-signed message from verified sender": [
+        "PGP aláírt üzenet, ellenőrzött feladótól"
+      ],
+      "PGP-signed message. Sender verification failed": [
+        "PGP aláírt üzenet. Feladó ellenőrzése sikertelen"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "A ${ MAIL_APP_NAME } küldte, zéró-hozzáférés titkosítással"
+      ],
+      "Stored with zero-access encryption": [
+        "Zéró-hozzáférés titkosítással tárolva"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } n",
+        "${ remainingDays } n"
+      ],
+      "<1 d": [
+        "<1 nap"
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Answer sent": [
+        "Válasz elküldve"
+      ],
+      "Answering invitation failed": [
+        "A meghívó megválaszolása nem sikerült"
+      ],
+      "Calendar event created": [
+        "Esemény létrehozva"
+      ],
+      "Calendar event updated": [
+        "Esemény frissítve"
+      ],
+      "Cannot send to organizer address: ${ errorMessage }": [
+        "Nem sikerült a szervező címére küldeni: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "A meghívó újra-titkosítása sikertelen. Próbálja meg újra."
+      ]
+    },
+    "Search - no results": {
+      "No messages found": [
+        "Nincsenek üzenetek"
+      ],
+      "No messages scheduled": [
+        "Nincs ütemezett üzenet"
+      ],
+      "No results found": [
+        "Nincs találat"
+      ],
+      "No snoozed messages": [
+        "Nincsenek elhalasztott üzenetek"
+      ],
+      "No unread messages found": [
+        "Nincs olvasatlan üzenet"
+      ]
+    },
+    "Send email with changed preferences": {
+      "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
+        "A következő címekhez tartozó névjegyek törlésre kerültek, így a vonatkozó titkosítási beállítások ennek megfelelően frissültek:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "A következő címekhez tartozó névjegyek letiltották a végpontok közti titkosítást a fiókjukban, ezért a megfelelő titkosítási beállítások ennek megfelelően frissítve lettek:"
+      ]
+    },
+    "Send email with errors": {
+      "Do you want to send the email anyway?": [
+        "Mindenképp elküldi?"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Hiba történt. Az üzenet nem küldhető el a megadott e-mail címre, a következő hiba miatt:",
+        "Hiba történt. Az üzenet nem küldhető el a megadott e-mail címekre, a következő hibák miatt:"
+      ],
+      "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
+        "Hiba történt. Az üzenet nem küldhető el a megadott e-mail címek mindegyikére, a következő hibák miatt:"
+      ]
+    },
+    "Send email with warnings": {
+      "Do you want to send the email anyway?": [
+        "Mindenképp elküldi?"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "A következő cím érvénytelen: ${ invalidAddresses }",
+        "A következő címek érvénytelenek: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Hiba történhetett. A következő címzett nem biztos, hogy megkapja az üzenetet:",
+        "Hiba történhetett. A következő címzettek nem biztos, hogy megkapják az üzenetet:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Feladó ellenőrzése"
+      ]
+    },
+    "Sent email icon": {
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "A ${ MAIL_APP_NAME } által titkosítva"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "A ${ MAIL_APP_NAME } titkosította PGP címzettnek"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "A ${ MAIL_APP_NAME } által titkosítva, ellenőrzött PGP címzettnek"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "A ${ MAIL_APP_NAME } által titkosítva, ellenőrzött címzettnek"
+      ],
+      "End-to-end encrypted": [
+        "Végponttól végpontig titkosítva"
+      ],
+      "End-to-end encrypted to PGP recipient": [
+        "Végpontok közt titkosított, PGP címzettnek"
+      ],
+      "End-to-end encrypted to verified PGP recipient": [
+        "Végpontok közt titkosított, PGP címzettnek"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "Végpontok közt titkosított, ellenőrzött címzettnek"
+      ],
+      "PGP-signed": [
+        "PGP aláírt"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "A ${ MAIL_APP_NAME } küldte, zéró-hozzáférés titkosítással"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "A ${ MAIL_APP_NAME } küldte, zéró-hozzáférés titkosítással, ellenőrzött címzettnek",
+        "A ${ MAIL_APP_NAME } küldte, zéró-hozzáférés titkosítással, ellenőrzött címzetteknek"
+      ],
+      "Sent by you with end-to-end encryption": [
+        "Ön küldte, végpontok közt titkosítva"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Ön küldte, végpontok közt titkosítva, ellenőrzött címzettnek",
+        "Ön küldte, végpontok közt titkosítva, ellenőrzött címzetteknek"
+      ],
+      "Stored with zero-access encryption": [
+        "Zéró-hozzáférés titkosítással tárolva"
+      ]
+    },
+    "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP titkosított üzenet. A feladó ellenőrzése sikertelen: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP aláírt üzenet. A feladó ellenőrzése sikertelen: ${ verificationErrorsMessage }"
+      ],
+      "Sender could not be verified: Message not signed": [
+        "A feladó nem ellenőrizhető. Az üzenet nincs aláírva"
+      ],
+      "Sender verification failed": [
+        "A feladó ellenőrzése sikertelen volt"
+      ],
+      "Sender verification failed: ${ verificationErrorsMessage }": [
+        "A feladó ellenőrzése sikertelen: ${ verificationErrorsMessage }"
+      ],
+      "Sender's trusted keys verification failed": [
+        "A feladó megbízható kulcsának ellenőrzése nem sikerült"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Üzenet némítása"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Mikor jelenjen meg újra az üzenet a beérkezett üzenetek mappában?"
+      ]
+    },
+    "Sort option": {
+      "Largest first": [
+        "Nagyobbak előre"
+      ],
+      "Newest first": [
+        "Újabbak előre"
+      ],
+      "Oldest first": [
+        "Régebbiek előre"
+      ],
+      "Smallest first": [
+        "Kisebbek előre"
+      ],
+      "Sort by": [
+        "Rendezés"
+      ]
+    },
+    "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Nézze meg, mit tartalmaz az előfizetése, és kezdje el kihasználni az előnyöket."
+      ],
+      "Discover your subscription benefits": [
+        "Fedezze fel az előfizetése előnyeit"
+      ],
+      "Email tracking protection": [
+        "E-mail követési védelem"
+      ],
+      "Schedule send": [
+        "Küldés ütemezése"
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Ez most az alapértelmezett címe. A legördülő menü megnyitásával másik címről is küldhet. "
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást, hogy értesítést kapjon, ha az adatai egy harmadik fél szolgáltatásából kiszivárogtak."
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "A képek már alapértelmezetten betöltődnek, a feladók általi követés megakadályozásával. Ez megváltoztatható a ${ settingsLink }."
+      ],
+      "You can now schedule your messages to be sent later": [
+        "Most már ütemezheti is a leveleit későbbi elküldésre"
+      ],
+      "Your pm.me email is active": [
+        "Az Ön pm.me e-mail címe aktív"
+      ]
+    },
+    "Status": {
+      "Alias disabled": [
+        "E-mail álnév letiltva"
+      ],
+      "Unsubscribed": [
+        "Leiratkozás kész"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Adja meg a ${ MAIL_APP_NAME } címet új címként, és mentse, erősítse meg vagy ellenőrizze a módosítást."
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "A fiók beállítások között keresse meg az e-mail cím szerkesztésére vagy megváltoztatására szolgáló lehetőséget. "
+      ],
+      "Select service to update": [
+        "Válassza ki a frissítendő szolgáltatást"
+      ],
+      "Sign in to the service": [
+        "Jelentkezzen be a szolgáltatásba"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Aktiválás"
+      ],
+      "Create an alias": [
+        "E-mail álnév létrehozása"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "„${ suggestedLabelName }“ címke létrehozása"
+      ],
+      "Create new email address": [
+        "Új e-mail cím létrehozása"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "„${ suggestedFolderName }” mappa létrehozása"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } letöltése"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } engedélyezése"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Saját „@${ PM_DOMAIN }” címem lekérése"
+      ],
+      "Open ": [
+        "Megnyitás "
+      ],
+      "Show me how": [
+        "Segítség megjelenítése"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Hétfő, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Szombat,${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Vasárnap, ${ formatTime }"
       ]
     }
   }
