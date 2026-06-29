@@ -1,7 +1,7 @@
 import { normalizeKeyword } from '@proton/encrypted-search/esHelpers';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
-import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS_SET } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
@@ -52,29 +52,34 @@ export const testMetadata = (
     recipients: string[],
     sender: string[]
 ) => {
-    const { search, labelIDs, filter } = normalisedSearchParams;
-    const { address, from, to, begin, end } = search || {};
-    const { AddressID, Time, LabelIDs, NumAttachments, Unread } = messageToSearch;
+    const { search, labelIDs: searchedLabelIDs, filter } = normalisedSearchParams;
+    const { AddressID, Time, LabelIDs: messageLabelIDs, NumAttachments, Unread } = messageToSearch;
 
-    // This prevents from showing messages that are not in the inbox anymore but still have a category label
-    let isMessageInCategoryButNotInbox = false;
-    const searchingACategory = labelIDs.some((id) => CATEGORY_LABEL_IDS_SET.has(id as CategoryLabelID));
-    if (searchingACategory) {
-        const messageToSearchHasCategory = LabelIDs.some((id) => labelIDs.includes(id));
-        const hasInbox = LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX);
+    const categoriesInSearch: string[] = [];
+    const mailboxLabelInSearch: string[] = [];
+    searchedLabelIDs.forEach((id) => {
+        if (CATEGORY_LABEL_IDS_SET.has(id as CategoryLabelID)) {
+            categoriesInSearch.push(id);
+        } else {
+            mailboxLabelInSearch.push(id);
+        }
+    });
 
-        isMessageInCategoryButNotInbox = messageToSearchHasCategory && !hasInbox;
-    }
+    // The message must be in the label we're searching
+    const matchesMailbox = mailboxLabelInSearch.some((id) => messageLabelIDs.includes(id));
+    const hasNoCategory = categoriesInSearch.length === 0;
+    // and in the searched category. When no category is searched, this requirement doesn't apply.
+    const matchesCategory = hasNoCategory || categoriesInSearch.some((id) => messageLabelIDs.includes(id));
 
     if (
-        isMessageInCategoryButNotInbox ||
-        !LabelIDs.some((id) => labelIDs.includes(id)) ||
-        (address && AddressID !== address) ||
+        !matchesMailbox ||
+        !matchesCategory ||
+        (search.address && AddressID !== search.address) ||
         isExpired(messageToSearch) ||
-        (begin && Time < begin) ||
-        (end && Time > end) ||
-        (from && !sender.some((string) => string.includes(from))) ||
-        (to && !recipients.some((string) => string.includes(to))) ||
+        (search.begin && Time < search.begin) ||
+        (search.end && Time > search.end) ||
+        (search.from && !sender.some((string) => string.includes(search.from!))) ||
+        (search.to && !recipients.some((string) => string.includes(search.to!))) ||
         // In some cases NumAttachment is undefined for some reason, and are returned in search results.
         (filter?.Attachments && (NumAttachments ?? 0) === 0) ||
         (typeof filter?.Unread !== 'undefined' && filter?.Unread !== Unread)
