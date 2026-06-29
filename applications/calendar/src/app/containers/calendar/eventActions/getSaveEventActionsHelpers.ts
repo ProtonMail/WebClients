@@ -12,17 +12,17 @@ import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/share
 import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 
 import type { EventOldData } from '../../../interfaces/EventData';
-import type { InviteActions, OnSendPrefsErrors, SendIcs } from '../../../interfaces/Invite';
+import type {
+    GetAddedAttendeesPublicKeysMap,
+    InviteActions,
+    OnSendPrefsErrors,
+    SendIcs,
+} from '../../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import { getCreateSyncOperation, getUpdateSyncOperation } from '../getSyncMultipleEventsPayload';
 import { getStartDateTimeMerged } from '../recurrence/getDateTimeMerged';
-import {
-    getAddedAttendeesPublicKeysMap,
-    getAttendeesDiff,
-    getCorrectedSaveInviteActions,
-    getOrganizerDiff,
-} from './inviteActions';
+import { getAttendeesDiff, getCorrectedSaveInviteActions, getOrganizerDiff } from './inviteActions';
 
 export const getOldDataHasVeventComponent = (
     eventData: EventOldData
@@ -153,6 +153,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
     memberID,
     getCalendarKeys,
     sendIcs,
+    getAddedAttendeesPublicKeysMap,
     onSendPrefsErrors,
     handleSyncActions,
     isBreakingChange,
@@ -166,6 +167,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
     memberID: string;
     getCalendarKeys: GetCalendarKeys;
     sendIcs: SendIcs;
+    getAddedAttendeesPublicKeysMap: GetAddedAttendeesPublicKeysMap;
     onSendPrefsErrors: OnSendPrefsErrors;
     isBreakingChange: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
@@ -200,7 +202,7 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         calendarID
     );
 
-    const addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
+    const addedAttendeesPublicKeysMap = await getAddedAttendeesPublicKeysMap({
         veventComponent: finalVevent,
         inviteActions: finalInviteActions,
         sendPreferencesMap,

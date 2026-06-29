@@ -1,3 +1,5 @@
+import type { PublicKeyReference } from '@protontech/crypto';
+
 import type { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import type { Address, RequireSome } from '@proton/shared/lib/interfaces';
 import type {
@@ -78,6 +80,12 @@ export type SendIcs = {
         sendPreferencesMap: SimpleMap<SendPreferences>;
     }>;
 };
+
+export type GetAddedAttendeesPublicKeysMap = (args: {
+    veventComponent: VcalVeventComponent;
+    inviteActions: InviteActions;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
+}) => Promise<SimpleMap<PublicKeyReference>>;
 
 export type OnSendPrefsErrors = {
     (data: RequireSome<SendIcsActionData, 'vevent'>): Promise<RequireSome<CleanSendIcsActionData, 'vevent'>>;
