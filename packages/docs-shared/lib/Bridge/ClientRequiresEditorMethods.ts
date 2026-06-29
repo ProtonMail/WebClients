@@ -62,4 +62,6 @@ export interface ClientRequiresEditorMethods {
   syncEvent(event: SyncedEditorEvent): Promise<void>
 
   markImportUpdateAsSuccessful(uuid: string): Promise<void>
+
+  setTableOfContentsVisible(visible: boolean): Promise<void>
 }
