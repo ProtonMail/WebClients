@@ -2493,6 +2493,9 @@
       ],
       "Åland Islands": [
         "Ålandské ostrovy"
+      ],
+      "Canary Islands": [
+        "Kanárské ostrovy"
       ]
     },
     "customer_support.feature.all": {
@@ -2707,6 +2710,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémový přechod vašeho týmu na ${ BRAND_NAME } importujte svá data ze služeb Google, Outlook a dalších."
       ]
     },
     "description": {
@@ -3912,6 +3918,9 @@
       ],
       "Security key": [
         "Bezpečnostní klíč"
+      ],
+      "Touch your security key.": [
+        "Dotkněte se svého bezpečnostního klíče."
       ]
     },
     "fido2: Label": {
@@ -5520,13 +5529,13 @@
         "Aktualizovat nedávné dokumenty"
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -6369,6 +6378,9 @@
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (důvěryhodný kontakt)"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znaků"
       ]
     },
     "Label for contact group color": {
@@ -7475,6 +7487,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Access all countries": [
+        "Přístup ke všem zemím"
+      ],
+      "No streaming support": [
+        "Bez podpory streamování"
+      ],
+      "Unlock streaming": [
+        "Odemknout streamování"
       ]
     },
     "new_plans: feature highlight": {
@@ -7887,6 +7908,12 @@
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén"
+      ],
+      "${ n } country": [
+        "${ n } země",
+        "${ n } země",
+        "${ n } zemí",
+        "${ n } zemí"
       ]
     },
     "Notification": {
@@ -10699,6 +10726,12 @@
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistent pro psaní ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrujte svou organizaci do ${ BRAND_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10784,6 +10817,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá asistence AI, lidský expert po ruce!"
       ]
     },
     "tooltip": {

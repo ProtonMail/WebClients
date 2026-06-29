@@ -940,6 +940,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Export editor state for version": [
+        "Eksportér editortilstand for version"
+      ],
+      "Export this version (as docx)": [
+        "Eksportér denne version (som docx)"
+      ],
+      "Export YJS state for version": [
+        "Eksportér YJS-tilstand for version"
       ]
     },
     "Actions message": {
@@ -3542,6 +3551,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Failed to rename document": [
+        "Kunne ikke omdøbe dokumentet"
+      ],
+      "No drive found to import": [
+        "Intet drev fundet til import"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Ikke nok lagerplads i din ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Der skete en uventet fejl, og vi kan ikke importere filerne"
       ]
     },
     "error": {
@@ -3945,6 +3966,9 @@
       ],
       "Security key": [
         "Sikkerhedsnøgle"
+      ],
+      "Touch your security key.": [
+        "Tryk på din sikkerhedsnøgle."
       ]
     },
     "fido2: Label": {
@@ -5801,6 +5825,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen billeder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ]
     },
     "info": {

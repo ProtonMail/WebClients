@@ -907,6 +907,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continua su ${ planOrAppName }"
+      ],
+      "Hide": [
+        "Nascondi"
       ]
     },
     "Actions message": {
@@ -970,6 +976,14 @@
       ],
       "Writing assistant seats": [
         "Posti dell'assistente alla scrittura"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } server VPN dedicato",
+        "${ ips } server VPN dedicati"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licenza AI ${ LUMO_APP_NAME }",
+        "${ seats } licenze AI ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -1142,6 +1156,36 @@
       ],
       "Built-in 2FA authenticator": [
         "Autenticazione 2FA integrata"
+      ],
+      "3 TB data storage": [
+        "3 TB di spazio di archiviazione dati"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accedi a oltre 15.000 server in più di 120 paesi"
+      ],
+      "Access advanced AI models": [
+        "Accedi a modelli di IA avanzati"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Connect 10 devices at once": [
+        "Connetti 10 dispositivi contemporaneamente"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Cronologia chat completa con ricerca facile e preferiti"
+      ],
+      "Individual accounts for 6 users": [
+        "Account individuali per 6 utenti"
+      ],
+      "Individual accounts for you and a partner": [
+        "Account individuali per te e un partner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione più forte contro le minacce informatiche"
+      ],
+      "Unlimited daily chats": [
+        "Chat giornaliere illimitate"
       ]
     },
     "BOSS": {
@@ -1347,6 +1391,9 @@
       "Total for ${ n } month": [
         "Totale per ${ n } mese",
         "Totale per ${ n } mesi"
+      ],
+      "Subtotal": [
+        "Totale parziale"
       ]
     },
     "Collapsible tooltip": {
@@ -2379,6 +2426,12 @@
       ],
       "Åland Islands": [
         "Isole Åland"
+      ],
+      "Canary Islands": [
+        "Isole Canarie"
+      ],
+      "North Macedonia": [
+        "Macedonia del Nord"
       ]
     },
     "customer_support.feature.all": {
@@ -2590,6 +2643,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per un onboarding senza problemi del tuo team su ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ci dispiace vederti andare via. Se hai un momento, apprezzeremmo molto sapere perché desideri annullare. Il tuo feedback ci aiuta a rendere ${ BRAND_NAME } migliore per tutti."
       ]
     },
     "description": {
@@ -3355,6 +3414,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Impossibile caricare i dati dell'abbonamento. Riprova più tardi."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Il regime di inversione contabile non è supportato per questo piano"
+      ],
+      "Wrong billing address": [
+        "Indirizzo di fatturazione errato"
       ]
     },
     "error": {
@@ -3750,6 +3818,12 @@
     "fido2: Info": {
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
+      ],
+      "Touch your security key.": [
+        "Tocca la tua chiave di sicurezza."
       ]
     },
     "fido2: Label": {
@@ -5507,6 +5581,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "Each code can only be used once": [
+        "Ogni codice può essere utilizzato una sola volta"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Inserisci il codice di verifica. Cifra ${ digit }."
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tutto quello che è incluso in ${ planOrAppName }, e in più:"
       ]
     },
     "info": {
@@ -6037,6 +6120,21 @@
       ],
       "Your password (trusted contact)": [
         "La tua password (contatto attendibile)"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caratteri"
+      ],
+      "Additional comments": [
+        "Commenti aggiuntivi"
+      ],
+      "Continue cancelling": [
+        "Continua con l'annullamento"
+      ],
+      "Main reason for cancelling": [
+        "Motivo principale dell'annullamento"
+      ],
+      "Skip feedback": [
+        "Ignora feedback"
       ]
     },
     "Label for contact group color": {
@@ -6260,6 +6358,12 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licenza ${ MEET_APP_NAME }",
         "${ seats } licenze ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "Licenza ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licenze ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -6315,6 +6419,9 @@
       "Video meetings, ${ n } participant": [
         "Videoconferenze, ${ n } partecipante",
         "Videoconferenze, ${ n } partecipanti"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Gli organizzatori possono registrare le riunioni localmente sul proprio computer"
       ]
     },
     "Message": {
@@ -7098,6 +7205,27 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "Access all countries": [
+        "Accedi a tutti i paesi"
+      ],
+      "Data retention policies": [
+        "Policy di conservazione dei dati"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Server dedicati ottimizzati per la velocità"
+      ],
+      "No streaming support": [
+        "Nessun supporto per lo streaming"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat AI privata (${ LUMO_APP_NAME })"
+      ],
+      "Unlock streaming": [
+        "Sblocca lo streaming"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con ad-blocker e protezione da malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -8216,6 +8344,15 @@
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
+      ],
+      "Anything you'd like us to know": [
+        "Qualsiasi cosa tu voglia farci sapere"
+      ],
+      "Enter a name": [
+        "Inserisci un nome"
+      ],
+      "Select a provider": [
+        "Seleziona un fornitore"
       ]
     },
     "Placeholder for contact group name": {
@@ -8453,7 +8590,7 @@
         "Una volta che il tuo abbonamento completo inizia, puoi ancora annullare entro 30 giorni e ottenere un rimborso proporzionale."
       ],
       "Refer friends": [
-        "Segnala amici"
+        "Invita amici"
       ],
       "Start earning credits": [
         "Inizia a guadagnare crediti"
@@ -10045,6 +10182,12 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura di ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migra la tua organizzazione su ${ BRAND_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10127,6 +10270,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Abbiamo spedito un invito per accedere all'elemento."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistenza IA istantanea, esperto umano a tua disposizione!"
       ]
     },
     "tooltip": {
@@ -10342,6 +10488,41 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield, appositamente progettato, protegge i tuoi dispositivi e velocizza la tua navigazione bloccando annunci, tracker e malware."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altro"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Nuovo foglio di calcolo"
       ]
     }
   }

@@ -868,6 +868,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos.",
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos."
+      ],
+      "Hide": [
+        "Ocultar"
       ]
     },
     "Actions message": {
@@ -919,6 +922,26 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licenças do ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licença de IA do ${ LUMO_APP_NAME }",
+        "${ seats } licenças de IA do ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ]
     },
     "Alert": {
@@ -1023,6 +1046,27 @@
       ],
       "Use your own email domain": [
         "Utilize o seu próprio domínio de e-mail"
+      ],
+      "1 user account": [
+        "1 conta de utilizador"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40 vezes o seu plano atual"
+      ],
+      "6 user accounts": [
+        "6 contas de utilizador"
+      ],
+      "Admin panel to manage your family": [
+        "Painel de administrador para gerir a sua família"
+      ],
+      "Easily add or remove users": [
+        "Adicionar ou remover utilizadores facilmente"
+      ],
+      "Password health alerts": [
+        "Alertas de integridade das palavras-passe"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versões anteriores de ficheiros"
       ]
     },
     "BF2024: Offers": {
@@ -1050,6 +1094,15 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agendamentos com encriptação ponta a ponta. Inclui 15 endereços de e-mail, suporte a domínios de e-mail personalizados, aliases de hide-my-email ilimitados e mais."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja os seus e-mails e a sua agenda com encriptação ponto a ponto. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases hide-my-email ilimitados e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Proteja os seus ficheiros com armazenamento na nuvem encriptado. Inclui editor de documentos online, cópia de segurança de fotografias, histórico de versões, partilha de ficheiros encriptada e muito mais."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "O espaço de armazenamento é partilhado por todos os serviços da ${ BRAND_NAME }."
       ]
     },
     "BF2025: Deal details": {
@@ -1067,6 +1120,30 @@
       ],
       "Unlimited daily chats": [
         "Conversas diárias ilimitadas"
+      ],
+      "3 TB data storage": [
+        "3 TB de armazenamento de dados"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Aceda a mais de 15 000 servidores em mais de 120 países"
+      ],
+      "Access advanced AI models": [
+        "Aceda a modelos de IA avançados"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas as funcionalidades premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Histórico de chat completo com pesquisa fácil e favoritos"
+      ],
+      "Individual accounts for 6 users": [
+        "Contas individuais para 6 utilizadores"
+      ],
+      "Individual accounts for you and a partner": [
+        "Contas individuais para si e para um parceiro"
+      ],
+      "Stronger protection against cyber threats": [
+        "Maior proteção contra ameaças cibernéticas"
       ]
     },
     "BF2025: Tooltip": {
@@ -1160,6 +1237,12 @@
       ],
       "Website access problem": [
         "Problema de acesso à página web"
+      ],
+      "Authenticator problem": [
+        "Problema com o autenticador"
+      ],
+      "Sheets problem": [
+        "Problema com as folhas"
       ]
     },
     "Button": {
@@ -1222,6 +1305,9 @@
       ],
       "Ultra fast and private VPN": [
         "VPN privada ultrarrápida"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas as funcionalidades premium do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Checkout row": {
@@ -1239,6 +1325,9 @@
       "Total for ${ n } month": [
         "Total por ${ n } mês",
         "Total por ${ n } meses"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ]
     },
     "Collapsible tooltip": {
@@ -1276,6 +1365,24 @@
       ],
       "Web search access": [
         "Acesso à pesquisa na Web"
+      ],
+      "Built and based in Europe": [
+        "Criado e sediado na Europa"
+      ],
+      "Full chat history with search": [
+        "Histórico completo de conversas com pesquisa"
+      ],
+      "Limited daily chats": [
+        "Conversas diárias limitadas"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Upload and query small files": [
+        "Carregar e consultar ficheiros pequenos"
+      ],
+      "Zero-access encryption": [
+        "Encriptação de acesso zero"
       ]
     },
     "collider_2025: Info": {
@@ -1284,6 +1391,9 @@
       ],
       "Private video calls for the conversations that matter.": [
         "Chamadas de vídeo privadas para as conversas que importam."
+      ],
+      "Advanced account and network security in one plan": [
+        "Segurança avançada de conta e de rede num único plano"
       ]
     },
     "color": {
@@ -2250,6 +2360,12 @@
       ],
       "Åland Islands": [
         "Ilhas Åland"
+      ],
+      "Canary Islands": [
+        "Ilhas Canárias"
+      ],
+      "North Macedonia": [
+        "Macedónia do Norte"
       ]
     },
     "customer_support.feature.all": {
@@ -2459,6 +2575,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma integração simples da sua equipa na ${ BRAND_NAME }, importe os seus dados do Google, do Outlook e de outros."
       ]
     },
     "description": {
@@ -3169,6 +3288,21 @@
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ],
+      "An error occurred": [
+        "Ocorreu um erro"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduza o seu nome de utilizador sem o domínio (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "O regime de autoliquidação não é suportado por este plano"
+      ],
+      "Wrong billing address": [
+        "Endereço de faturação incorreto"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nome não desencriptável"
       ]
     },
     "error": {
@@ -3555,6 +3689,12 @@
     "fido2: Info": {
       "Security key": [
         "Chave de segurança"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insira uma chave de segurança ligada à sua conta ${ BRAND_NAME }."
+      ],
+      "Touch your security key.": [
+        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -5245,6 +5385,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
+      ],
+      "Each code can only be used once": [
+        "Cada código só pode ser utilizado uma vez"
+      ],
+      "Enter code": [
+        "Introduzir código"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduza o código de verificação. Dígito ${ digit }."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduza a sua própria palavra-passe (como contacto de confiança)."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Se perdeu o acesso à sua aplicação de autenticação, pode utilizar 1 dos 16 códigos de recuperação de cópia de segurança fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "A sua próxima data de faturação é ${ renewalTime }. Pode cancelar a qualquer momento. Contacte o apoio ao cliente se precisar de uma alteração de plano imediata."
       ]
     },
     "info": {
@@ -5748,6 +5906,27 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } carateres"
+      ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
+      "Continue cancelling": [
+        "Continuar a cancelar"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ],
+      "Main reason for cancelling": [
+        "Principal motivo para cancelar"
+      ],
+      "Skip feedback": [
+        "Ignorar comentários"
+      ],
+      "Your password (trusted contact)": [
+        "A sua palavra-passe (contacto de confiança)"
       ]
     },
     "Label for contact group color": {
@@ -5974,6 +6153,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licença do ${ MEET_APP_NAME }",
         "${ seats } licenças do ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "Licença do ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -6008,6 +6190,30 @@
       "Video meetings, ${ n } participant": [
         "Reuniões por vídeo para ${ n } participante",
         "Reuniões por vídeo para ${ n } participantes"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunião"
+      ],
+      "Booking pages": [
+        "Páginas de reserva"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicações de navegador, móveis e de desktop"
+      ],
+      "Built-in chat": [
+        "Chat integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Partilha de ecrã encriptada de ponto a ponto e chat temporário na chamada"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Os anfitriões podem gravar reuniões localmente nos seus computadores"
+      ],
+      "One active meeting at a time": [
+        "Uma reunião ativa de cada vez"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniões ilimitadas por dia"
       ]
     },
     "Message": {
@@ -6749,6 +6955,22 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nós analisamos a dark web para verificar se os seus endereços ou aliases ${ BRAND_NAME } foram vazados e alertamo-lo imediatamente se encontrarmos algo."
+      ],
+      "${ options }-day file version history": [
+        "Histórico de versões de ficheiros de ${ options } dia",
+        "${ options }-dniowa historia wersji plików"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Benefícios existentes do ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "No streaming support": [
+        "Sem apoio ao cliente para streaming"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Apoio ao cliente por telefone (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utilizadores)"
+      ],
+      "Short domain (@pm.me)": [
+        "Domínio curto (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -7099,6 +7321,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Pode ter mais do que um administrador. Todos os administradores podem adicionar e gerir utilizadores, mas apenas o administrador principal tem controlo sobre a faturação."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "O apoio ao cliente por telefone está disponível através da equipa de apoio ao cliente da ${ BRAND_NAME } durante o horário de expediente europeu, para clientes com ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais utilizadores"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7621,6 +7846,9 @@
       ],
       "Team policies": [
         "Regras da equipa"
+      ],
+      "File attachments (up to 10GB)": [
+        "Anexos de ficheiros (até 10 GB)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7708,6 +7936,15 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } mês. Pode cancelar a qualquer momento.",
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (excl. taxas)"
+      ],
+      "terms and conditions": [
+        "termos e condições"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "O preço com desconto especial é válido para o primeiro mês. Depois, será renovado automaticamente para ${ renewPriceStr } todos os meses. Pode cancelar a qualquer momento."
       ]
     },
     "PGP key encryption warning": {
@@ -7821,6 +8058,12 @@
       ],
       "Your organization name": [
         "O nome da sua organização"
+      ],
+      "Enter a name": [
+        "Introduza um nome"
+      ],
+      "Select a provider": [
+        "Selecione um fornecedor"
       ]
     },
     "Placeholder for contact group name": {
@@ -7897,6 +8140,18 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Other": [
+        "Outro"
+      ],
+      "Outlook": [
+        "Outlook"
       ]
     },
     "q2campaign2026: Action": {
@@ -9584,6 +9839,15 @@
       ],
       "Your exposed information": [
         "As suas informações expostas"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Account temporarily locked": [
+        "Conta temporariamente bloqueada"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migre a sua organização para a ${ BRAND_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9666,6 +9930,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviámos-lhes um convite para aceder ao item."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistência de IA instantânea, especialista humano à disposição!"
       ]
     },
     "tooltip": {
@@ -9790,6 +10057,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Endereço de e-mail ${ MAIL_APP_NAME } encriptado e seguro. Pode enviar facilmente Bitcoin para qualquer pessoa apenas com o respetivo nome ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Troque Bitcoin de forma segura via e-mail, em vez de utilizar endereços Bitcoin complexos de 26 carateres propensos a erros"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -9872,6 +10145,29 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "O seu período experimental termina em ${ textDate }. Não lhe será cobrado qualquer valor se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Para o ${ MEET_APP_NAME }"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ocorreu um erro ao autenticar com a sua chave de segurança. Tente novamente."
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Todas as funcionalidades premium do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas as funcionalidades premium do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Nova folha de cálculo"
       ]
     }
   }

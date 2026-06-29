@@ -2628,7 +2628,7 @@
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 사용자의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -2652,13 +2652,16 @@
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "사용자의 ${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "사용자의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "귀하의 팀이 ${ BRAND_NAME }(으)로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오세요."
       ]
     },
     "description": {
@@ -3644,7 +3647,7 @@
         "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+        "답장이 전송되었습니다, 이벤트가 사용자의 캘린더에서 업데이트되지 않을 수 있습니다"
       ]
     },
     "Event title": {
@@ -3828,6 +3831,9 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Touch your security key.": [
+        "귀하의 보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -4530,7 +4536,7 @@
         "복사한 링크 붙이기"
       ],
       "Copy your referral link": [
-        "당신의 추천인 링크를 공유하세요"
+        "나의 추천인 링크를 공유하세요"
       ],
       "Country code": [
         "국가 코드"
@@ -5593,6 +5599,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Enter code": [
+        "코드 입력"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7157,6 +7169,18 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "Access all countries": [
+        "모든 국가 접근"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }개의 예약 페이지가 포함된 약속 일정 예약"
+      ],
+      "No streaming support": [
+        "스트리밍 서비스 미지원"
+      ],
+      "Unlock streaming": [
+        "스트리밍 서비스 차단 해제"
       ]
     },
     "new_plans: feature highlight": {
@@ -10147,6 +10171,12 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10232,6 +10262,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "즉각적인 AI 지원, 상시 대기 중인 전문가!"
       ]
     },
     "tooltip": {
