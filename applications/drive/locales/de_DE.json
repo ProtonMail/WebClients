@@ -1299,6 +1299,12 @@
       ],
       "List layout": [
         "Listenlayout"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Wähle Bewertung ${ n } von ${ to }"
+      ],
+      "Send Feedback": [
+        "Feedback senden"
       ]
     },
     "Action: Docs": {
@@ -4561,6 +4567,9 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Touch your security key.": [
+        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -5717,7 +5726,7 @@
         "Passwort eingeben"
       ],
       "Enter the code from your authenticator app": [
-        "Code aus deiner Authentifizierungs-App ein eingeben"
+        "Code aus deiner Authentifizierungs-App eingeben"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
@@ -8228,6 +8237,15 @@
       ],
       "Emails": [
         "E-Mails"
+      ],
+      "Extremely Satisfied": [
+        "Sehr zufrieden"
+      ],
+      "Tell us more about your experience": [
+        "Erzähl uns mehr von deiner Erfahrung"
+      ],
+      "Very Dissatisfied": [
+        "Sehr unzufrieden"
       ]
     },
     "Label for contact group color": {
@@ -11150,6 +11168,9 @@
       ],
       "Search for users or addresses": [
         "Nach Benutzern oder Adressen suchen"
+      ],
+      "Optional feedback": [
+        "Optionales Feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -13916,6 +13937,12 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Wir konnten nicht bestätigen, dass der Knoten von ${ claimedKeyAuthor } erstellt wurde. Der Grund dafür ist: ${ node.keyAuthor.error.error }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "We'd love to hear from you!": [
+        "Wir würden uns freuen, von dir zu hören."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14448,6 +14475,11 @@
       ],
       "SUMMER SALE": [
         "SOMMER SALE"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wir sind stets bemüht, ${ config.appName } zu verbessern. Wie zufrieden bist du mit deiner Erfahrung?"
       ]
     }
   }

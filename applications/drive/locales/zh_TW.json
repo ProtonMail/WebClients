@@ -1247,6 +1247,12 @@
       ],
       "Verify now": [
         "立即驗證"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "選取評價 ${ n } 之 ${ to }"
+      ],
+      "Send Feedback": [
+        "傳送意見回饋"
       ]
     },
     "Action: Sheets": {
@@ -7596,6 +7602,15 @@
       ],
       "Emails": [
         "電郵"
+      ],
+      "Extremely Satisfied": [
+        "非常滿意"
+      ],
+      "Tell us more about your experience": [
+        "告訴我們您的體驗"
+      ],
+      "Very Dissatisfied": [
+        "非常不滿意"
       ]
     },
     "Label for contact group color": {
@@ -10233,6 +10248,9 @@
       ],
       "Search": [
         "搜尋"
+      ],
+      "Optional feedback": [
+        "選擇性意見回饋"
       ]
     },
     "Placeholder for contact group name": {
@@ -12739,6 +12757,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }訂閱撰寫扳手"
+      ],
+      "We'd love to hear from you!": [
+        "我們很想聽見您的想法!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13171,6 +13192,11 @@
       ],
       "SUMMER SALE": [
         "夏季特賣"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "我們隨時致力於讓 ${ config.appName } 更好。您如何滿意於您的體驗?"
       ]
     }
   }

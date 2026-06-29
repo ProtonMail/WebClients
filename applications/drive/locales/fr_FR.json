@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Disposition en liste"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Choisir une note entre ${ n } et ${ to }"
+      ],
+      "Send Feedback": [
+        "Envoyer un commentaire"
       ]
     },
     "Action: Docs": {
@@ -4562,6 +4568,9 @@
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+      ],
+      "Touch your security key.": [
+        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -8235,6 +8244,15 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Extremely Satisfied": [
+        "Extrêmement satisfait"
+      ],
+      "Tell us more about your experience": [
+        "Faites-nous part de votre expérience"
+      ],
+      "Very Dissatisfied": [
+        "Très insatisfaisant"
       ]
     },
     "Label for contact group color": {
@@ -11157,6 +11175,9 @@
       ],
       "Search for users or addresses": [
         "Rechercher des utilisateurs ou des adresses"
+      ],
+      "Optional feedback": [
+        "Commentaire facultatif"
       ]
     },
     "Placeholder for contact group name": {
@@ -13926,6 +13947,9 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "Nous n'avons pas pu vérifier que ${ author } a importé ce dossier."
+      ],
+      "We'd love to hear from you!": [
+        "N'hésitez pas à nous donner votre avis !"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14475,6 +14499,11 @@
       ],
       "SUMMER SALE": [
         "OFFRE ESTIVALE"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Nous nous efforçons toujours d'améliorer ${ config.appName }. Dans quelle mesure êtes-vous satisfait de votre expérience ?"
       ]
     }
   }

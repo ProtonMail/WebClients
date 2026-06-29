@@ -1298,6 +1298,12 @@
       ],
       "List layout": [
         "列表布局"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "选择评分 ${ n } 分，满分 ${ to } 分"
+      ],
+      "Send Feedback": [
+        "发送反馈"
       ]
     },
     "Action: Docs": {
@@ -4526,6 +4532,9 @@
       ],
       "Security key": [
         "安全密钥"
+      ],
+      "Touch your security key.": [
+        "请触碰您的安全密钥！"
       ]
     },
     "fido2: Label": {
@@ -8105,6 +8114,15 @@
       ],
       "Drive": [
         "云盘"
+      ],
+      "Extremely Satisfied": [
+        "非常满意"
+      ],
+      "Tell us more about your experience": [
+        "请告诉我们更多关于您的体验"
+      ],
+      "Very Dissatisfied": [
+        "非常不满意"
       ]
     },
     "Label for contact group color": {
@@ -10891,6 +10909,9 @@
       ],
       "Search for users or addresses": [
         "搜索用户或地址"
+      ],
+      "Optional feedback": [
+        "可选反馈"
       ]
     },
     "Placeholder for contact group name": {
@@ -13507,6 +13528,9 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "我们无法验证 ${ author } 上传了此文件夹！"
+      ],
+      "We'd love to hear from you!": [
+        "我们期待听到您的反馈！"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14034,6 +14058,11 @@
       ],
       "SUMMER SALE": [
         "夏季大促"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "我们始终致力于让 ${ config.appName } 变得更好，您对当前体验的满意度如何？"
       ]
     }
   }
