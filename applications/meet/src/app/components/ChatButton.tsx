@@ -32,6 +32,7 @@ export const ChatButton = () => {
                     indicatorContent={unreadMessages > 0 ? unreadMessages.toString() : undefined}
                     indicatorStatus="success"
                     ariaLabel={c('Alt').t`Toggle chat`}
+                    ariaPressed={sideBarState[MeetingSideBars.Chat]}
                     tooltipTitle={c('Info').t`Chat with everyone`}
                 />
             </div>

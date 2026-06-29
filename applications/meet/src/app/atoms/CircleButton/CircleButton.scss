@@ -9,10 +9,14 @@
 	block-size: var(--circle-button-size);
 	background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
 
-	&:hover,
+	&:hover {
+		background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
+	}
+
 	&:focus-visible {
 		background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
-		outline: none !important; // specificity issue with focus-visible
+		outline: 1px solid var(--focus-outline) !important;
+		outline-offset: 2px;
 	}
 }
 

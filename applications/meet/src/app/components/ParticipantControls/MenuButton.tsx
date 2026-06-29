@@ -120,7 +120,14 @@ export const MenuButton = () => {
     return (
         <>
             <div>
-                <CircleButton IconComponent={IcThreeDotsVertical} onClick={() => setIsOpen(!isOpen)} />
+                <CircleButton
+                    IconComponent={IcThreeDotsVertical}
+                    onClick={() => setIsOpen(!isOpen)}
+                    ariaLabel={c('Alt').t`More options`}
+                    ariaPressed={isOpen}
+                    ariaExpanded={isOpen}
+                    ariaHasPopup="true"
+                />
             </div>
             {isOpen && (
                 <SlideClosable onClose={() => setIsOpen(false)}>
@@ -155,8 +162,9 @@ export const MenuButton = () => {
                                                     onClick={() => {
                                                         void sendEmojiReaction(emoji);
                                                     }}
+                                                    aria-label={c('Action').t`React with ${emoji}`}
                                                 >
-                                                    {emoji}
+                                                    <span aria-hidden="true">{emoji}</span>
                                                 </button>
                                             ))}
                                         </div>

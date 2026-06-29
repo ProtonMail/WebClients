@@ -105,6 +105,7 @@ export const MeetingRow = ({
         });
 
         return { month, day, startTime, endTime };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [meeting.adjustedStartTime, meeting.adjustedEndTime, meeting.EndTime]);
 
     const meetingLink = getMeetingLink(meeting.MeetingLinkName, meeting.Password?.split(PASSWORD_SEPARATOR)[0] ?? '');
@@ -229,6 +230,7 @@ export const MeetingRow = ({
                                     size="medium"
                                     shape="ghost"
                                     icon
+                                    aria-label={c('Action').t`Delete`}
                                     onClick={() => setIsDeleteMeetingModalOpen(true)}
                                 >
                                     <IcTrash className="m-auto" />
@@ -242,6 +244,7 @@ export const MeetingRow = ({
                                 size="medium"
                                 shape="ghost"
                                 icon
+                                aria-label={c('Action').t`Edit`}
                                 onClick={() => handleEditMeeting()}
                             >
                                 <IcPenSquare className="m-auto" />
@@ -263,6 +266,7 @@ export const MeetingRow = ({
                             size="medium"
                             onClick={handleCopyLink}
                             icon
+                            aria-label={isRoom ? c('Action').t`Copy room link` : c('Action').t`Copy meeting link`}
                         >
                             <IcSquares />
                         </Button>

@@ -71,6 +71,7 @@ export const ParticipantHostControls = ({
                 )}
                 size="small"
                 style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
+                aria-haspopup="menu"
                 icon
             >
                 <IcThreeDotsVertical className="shrink-0" alt={c('Alt').t`Participant host control options`} size={5} />
@@ -81,11 +82,14 @@ export const ParticipantHostControls = ({
                 onClose={close}
                 className="participant-host-controls-dropdown p-0 meet-radius border border-norm"
                 size={{ width: DropdownSizeUnit.Dynamic, maxWidth: '15rem' }}
+                role="menu"
+                aria-label={c('Label').t`Participant controls`}
             >
                 <DropdownMenu className="h-full flex flex-column items-start py-2 px-1 flex-nowrap gap-2">
                     <DropdownMenuButton
                         className="participant-host-controls-dropdown-item text-left rounded flex flex-nowrap items-center gap-2 border-none shrink-0 color-norm"
                         liClassName="w-full"
+                        role="menuitem"
                         onClick={() =>
                             isVideoEnabled &&
                             withLoading(
@@ -108,6 +112,7 @@ export const ParticipantHostControls = ({
                     <DropdownMenuButton
                         className="participant-host-controls-dropdown-item rounded text-left flex flex-nowrap items-center gap-2 border-none shrink-0 color-norm"
                         liClassName="w-full"
+                        role="menuitem"
                         onClick={() =>
                             isAudioEnabled &&
                             withLoading(
@@ -129,6 +134,7 @@ export const ParticipantHostControls = ({
                     <DropdownMenuButton
                         className="participant-host-controls-dropdown-item rounded text-left participant-host-controls-kick-button flex flex-nowrap items-center gap-2 border-none shrink-0"
                         liClassName="w-full"
+                        role="menuitem"
                         loading={loading}
                         disabled={loading}
                         onClick={() => withLoading(mls.removeParticipant(participant.identity))}

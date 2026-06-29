@@ -14,11 +14,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import Popper from '@proton/components/components/popper/Popper';
 import usePopper from '@proton/components/components/popper/usePopper';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import useLoading from '@proton/hooks/useLoading';
 import { IcEmoji } from '@proton/icons/icons/IcEmoji';
 import { IcMeetSend } from '@proton/icons/icons/IcMeetSend';
@@ -65,6 +67,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
 
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const emojiAnchorRef = useRef<HTMLButtonElement>(null);
+    const emojiPopperRef = useRef<HTMLDivElement>(null);
 
     const dispatch = useMeetDispatch();
 
@@ -78,6 +81,16 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
         availablePlacements: ['top-end', 'top'],
         offset: 8,
     });
+
+    // The picker is portaled outside the side-bar's focus trap, so it needs its own trap to become
+    // the active one — otherwise the side-bar trap steals focus back and defeats `autoFocus`.
+    const emojiFocusTrapProps = useFocusTrap({
+        rootRef: emojiPopperRef,
+        active: emojiPickerOpen,
+        enableInitialFocus: false,
+    });
+
+    const setEmojiPopperRef = useCombinedRefs<HTMLDivElement>(emojiPopperRef, floating);
 
     const draftMessage = useMeetSelector(selectDraftMessage);
     const [message, setMessage] = useState(draftMessage);
@@ -148,6 +161,30 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
         [message, updateMessage]
     );
 
+    useEffect(() => {
+        if (!emojiPickerOpen) {
+            return;
+        }
+
+        const handleClickOutside = ({ target }: MouseEvent) => {
+            const node = target as Node | null;
+            if (!node || emojiPopperRef.current?.contains(node) || emojiAnchorRef.current?.contains(node)) {
+                return;
+            }
+            setEmojiPickerOpen(false);
+        };
+
+        // Defer so the opening click doesn't immediately close the picker.
+        const timeoutId = window.setTimeout(() => {
+            document.addEventListener('click', handleClickOutside, { capture: true });
+        }, 0);
+
+        return () => {
+            window.clearTimeout(timeoutId);
+            document.removeEventListener('click', handleClickOutside, { capture: true });
+        };
+    }, [emojiPickerOpen]);
+
     useHotkeys(
         textareaRef,
         [
@@ -189,6 +226,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     value={message}
                     onChange={handleMessageChange}
                     placeholder={c('Placeholder').t`Type an encrypted message...`}
+                    aria-label={c('Label').t`Message`}
                     unstyled={true}
                     className={clsx('border-none resize-none px-0 my-auto', 'hide-scrollbar wrap-placeholder')}
                     style={{
@@ -226,23 +264,25 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                         '--h-custom': '2.25rem',
                     }}
                     aria-label={c('Action').t`Send an encrypted message`}
+                    aria-busy={chatMessageLoading}
                     disabled={!trimMessage(message) || chatMessageLoading}
                 >
-                    {chatMessageLoading ? <CircleLoader /> : <IcMeetSend size={5} className="color-invert ml-0.5" />}
+                    {chatMessageLoading ? (
+                        <CircleLoader aria-hidden="true" />
+                    ) : (
+                        <IcMeetSend size={5} className="color-invert ml-0.5" />
+                    )}
                 </Button>
             </div>
+            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <Popper
                 className="fixed w-fit-content h-fit-content z-up"
-                divRef={floating}
+                divRef={setEmojiPopperRef}
                 isOpen={emojiPickerOpen}
                 style={position}
-                onBlur={(e) => {
-                    const next = e.relatedTarget as Node | null;
-                    if (next && emojiAnchorRef.current?.contains(next)) {
-                        return;
-                    }
-                    setEmojiPickerOpen(false);
-                }}
+                role="dialog"
+                aria-label={c('Label').t`Emoji picker`}
+                {...emojiFocusTrapProps}
             >
                 <EmojiPicker
                     autoFocus={true}

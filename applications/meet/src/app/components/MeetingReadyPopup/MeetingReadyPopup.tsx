@@ -41,11 +41,12 @@ export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPop
 
     return (
         <WrapperComponent className="meeting-ready-popup-container" onClose={() => setMeetingReadyPopupOpen(false)}>
-            <div
+            <dialog
                 className="meeting-ready-popup large-meet-radius rounded-lg p-4 md:p-6 relative flex flex-column items-center w-full sm:w-custom md:h-fit-content gap-6 border border-weak w-max-custom"
                 style={{
                     '--sm-w-custom': '24.5rem',
                 }}
+                aria-labelledby="meeting-ready-title"
             >
                 {!isMobile() && (
                     <CloseButton
@@ -56,7 +57,8 @@ export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPop
                 )}
 
                 <div className="flex flex-column items-center gap-2">
-                    <div className="text-3xl text-center text-semibold">{c('Info').t`Your meeting is ready`}</div>
+                    <div id="meeting-ready-title" className="text-3xl text-center text-semibold color-norm">{c('Info')
+                        .t`Your meeting is ready`}</div>
 
                     <div className="color-weak text-center">{c('Info')
                         .t`Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.`}</div>
@@ -86,7 +88,7 @@ export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPop
                 </Button>
 
                 <div className="popup-caret"></div>
-            </div>
+            </dialog>
         </WrapperComponent>
     );
 };

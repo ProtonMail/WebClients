@@ -21,7 +21,14 @@ export const SpeakerIndicator = ({ size = 16, participant }: SpeakerIndicatorPro
     const centerY = 8;
 
     return (
-        <svg width={size} height={size} viewBox="0 0 16 16" fill="none" className="sound-wave color-inherit">
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+            className="sound-wave color-inherit"
+        >
             {BAR_CONFIG.map((bar, i) => {
                 const scaledAudioLevel = Math.pow(participant.audioLevel, 0.7);
                 const height = bar.minH + (bar.maxH - bar.minH) * scaledAudioLevel;

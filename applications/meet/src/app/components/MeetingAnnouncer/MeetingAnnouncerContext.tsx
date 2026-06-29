@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import { useFlag } from '@proton/unleash/useFlag';
+
 import type { AnnounceFn } from './types';
 import { AnnouncementPriority } from './types';
 
@@ -9,6 +11,11 @@ const DEDUPE_WINDOW_MS = 3000;
 const MIN_INTERVAL_MS = 800;
 // Long enough to be read; cleared so stale text isn't found when navigating the region.
 const MESSAGE_TTL_MS = 3000;
+// Defer the write off the triggering commit. Some events (e.g. a remote recording start) update the
+// region in the same tick that opens a modal and moves focus; screen readers drop an assertive update
+// that lands mid-reflow/mid-utterance, so the message is only read if focus already happens to be
+// stable. Writing a beat later lets that churn settle so the empty -> message transition is picked up.
+const WRITE_DELAY_MS = 100;
 
 interface Candidate {
     message: string;
@@ -39,24 +46,41 @@ const useAnnouncementChannel = (): Channel => {
         const index = activeRegionRef.current;
         activeRegionRef.current = index === 0 ? 1 : 0;
 
+        // Reset the target region now, then write the message after a short delay (see WRITE_DELAY_MS).
+        // Decoupling the write from the triggering render keeps the assertive update from being dropped
+        // while the DOM is reflowing / focus is moving (e.g. the recording consent modal opening).
         setRegions((prev) => {
+            if (prev[index] === '') {
+                return prev;
+            }
             const next: [string, string] = [prev[0], prev[1]];
-            next[index] = item.message;
+            next[index] = '';
             return next;
         });
 
-        const clear = setTimeout(() => {
-            clearTimeoutsRef.current.delete(clear);
+        const write = setTimeout(() => {
+            clearTimeoutsRef.current.delete(write);
+
             setRegions((prev) => {
-                if (prev[index] !== item.message) {
-                    return prev;
-                }
                 const next: [string, string] = [prev[0], prev[1]];
-                next[index] = '';
+                next[index] = item.message;
                 return next;
             });
-        }, MESSAGE_TTL_MS);
-        clearTimeoutsRef.current.add(clear);
+
+            const clear = setTimeout(() => {
+                clearTimeoutsRef.current.delete(clear);
+                setRegions((prev) => {
+                    if (prev[index] !== item.message) {
+                        return prev;
+                    }
+                    const next: [string, string] = [prev[0], prev[1]];
+                    next[index] = '';
+                    return next;
+                });
+            }, MESSAGE_TTL_MS);
+            clearTimeoutsRef.current.add(clear);
+        }, WRITE_DELAY_MS);
+        clearTimeoutsRef.current.add(write);
 
         if (cooldownRef.current !== null) {
             clearTimeout(cooldownRef.current);
@@ -106,25 +130,32 @@ const useAnnouncementChannel = (): Channel => {
 
 export interface MeetingAnnouncerContextValue {
     announce: AnnounceFn;
+    /**
+     * Drop non-critical announcements while set (e.g. during reconnect churn, to avoid
+     * re-announcing existing participants as fresh joins). Controlled by descendants that
+     * know the connection phase, since this provider is mounted above them.
+     */
+    setSuspendNonCritical: (suspend: boolean) => void;
 }
 
 export const MeetingAnnouncerContext = createContext<MeetingAnnouncerContextValue | null>(null);
 
 interface MeetingAnnouncerProviderProps {
     children: ReactNode;
-    /** Drop non-critical announcements during reconnect churn (avoids re-announcing existing participants as joins). */
-    suspendNonCritical?: boolean;
 }
 
 /** Live region with priority queue, dedupe, and stable focus. */
-export const MeetingAnnouncerProvider = ({ children, suspendNonCritical = false }: MeetingAnnouncerProviderProps) => {
+const MeetingAnnouncerProviderInner = ({ children }: MeetingAnnouncerProviderProps) => {
     const { regions, submit } = useAnnouncementChannel();
 
     const recentRef = useRef<Map<string, number>>(new Map());
     const seqRef = useRef(0);
 
-    const suspendRef = useRef(suspendNonCritical);
-    suspendRef.current = suspendNonCritical;
+    const suspendRef = useRef(false);
+
+    const setSuspendNonCritical = useCallback((suspend: boolean) => {
+        suspendRef.current = suspend;
+    }, []);
 
     const announce = useCallback<AnnounceFn>(
         (rawMessage, options) => {
@@ -158,7 +189,10 @@ export const MeetingAnnouncerProvider = ({ children, suspendNonCritical = false 
         [submit]
     );
 
-    const value = useMemo<MeetingAnnouncerContextValue>(() => ({ announce }), [announce]);
+    const value = useMemo<MeetingAnnouncerContextValue>(
+        () => ({ announce, setSuspendNonCritical }),
+        [announce, setSuspendNonCritical]
+    );
 
     return (
         <MeetingAnnouncerContext.Provider value={value}>
@@ -187,4 +221,16 @@ export const MeetingAnnouncerProvider = ({ children, suspendNonCritical = false 
                 )}
         </MeetingAnnouncerContext.Provider>
     );
+};
+
+// Mount once around the meeting subtree (inside the Redux + LiveKit room providers). When the
+// accessibility flag is off, no context is provided so `useAnnounce` becomes a no-op.
+export const MeetingAnnouncerProvider = ({ children }: MeetingAnnouncerProviderProps) => {
+    const enableAccessibilityAnnouncements = useFlag('EnableAccessibilityAnnouncements');
+
+    if (!enableAccessibilityAnnouncements) {
+        return <>{children}</>;
+    }
+
+    return <MeetingAnnouncerProviderInner>{children}</MeetingAnnouncerProviderInner>;
 };

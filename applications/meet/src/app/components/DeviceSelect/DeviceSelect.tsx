@@ -51,6 +51,8 @@ export const DeviceSelect = <T extends object>({
                 ref={anchorRef}
                 disabled={disabled}
                 className="device-select tertiary rounded-full py-10 border-norm w-full"
+                aria-label={title}
+                aria-haspopup="dialog"
             >
                 <div className="flex flex-nowrap items-center">
                     <div className="flex items-center h-full mr-3 w-custom shrink-0" style={{ '--w-custom': '1.5rem' }}>

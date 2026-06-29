@@ -18,7 +18,8 @@
 		-webkit-box-orient: vertical;
 	}
 
-	&.chat-item-message-hover {
+	&.chat-item--with-reactions:hover,
+	&.chat-item--with-reactions:focus-within {
 		border-radius: var(--border-radius-md);
 		background: var(--interaction-default-hover);
 	}
@@ -28,6 +29,19 @@
 		inset-inline-end: 0;
 		z-index: 1;
 		background: color-mix(in srgb, var(--interaction-weak-minor-3) 60%, transparent);
+
+		// Kept mounted but hidden so the buttons stay in the tab order; revealing
+		// via opacity (not display/visibility) is what lets keyboard focus trigger
+		// :focus-within on the parent to show the toolbar.
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.1s ease;
+	}
+
+	&:hover .chat-item-quick-reactions,
+	&:focus-within .chat-item-quick-reactions {
+		opacity: 1;
+		pointer-events: auto;
 	}
 
 	.chat-item-quick-reaction-btn {
@@ -40,6 +54,11 @@
 
 		&:hover {
 			background: rgb(255 255 255 / 0.2);
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--focus-outline, var(--interaction-norm));
+			outline-offset: 2px;
 		}
 	}
 }

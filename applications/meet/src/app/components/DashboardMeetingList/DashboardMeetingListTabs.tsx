@@ -28,6 +28,9 @@ const TabButton = ({ isActive, handleClick, tabName, tabCounter, tooltipTitle }:
                 )}
                 shape="ghost"
                 size="large"
+                role="tab"
+                aria-selected={isActive}
+                tabIndex={0}
                 onClick={handleClick}
             >
                 {tabName}
@@ -58,6 +61,7 @@ export const DashboardMeetingListTabs = forwardRef(
         return (
             <div
                 ref={ref}
+                role="tablist"
                 className={clsx(
                     'dashboard-meeting-list-tabs flex align-items-center justify-start shrink-0',
                     isStuck && 'is-stuck'

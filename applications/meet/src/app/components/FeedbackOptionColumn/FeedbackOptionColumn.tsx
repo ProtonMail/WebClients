@@ -3,14 +3,21 @@ import { Button } from '@proton/atoms/Button/Button';
 import './FeedbackOptionColumn.scss';
 
 interface FeedbackOptionColumnProps {
+    groupLabel: string;
     options: string[];
     selectedOptions: string[];
     onOptionSelect: (option: string) => void;
 }
 
-export const FeedbackOptionColumn = ({ options, selectedOptions, onOptionSelect }: FeedbackOptionColumnProps) => {
+export const FeedbackOptionColumn = ({
+    groupLabel,
+    options,
+    selectedOptions,
+    onOptionSelect,
+}: FeedbackOptionColumnProps) => {
     return (
-        <div className="flex flex-column gap-2 flex-1">
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+        <div aria-label={groupLabel} className="flex flex-column gap-2 flex-1" role="group">
             {options.map((option) => {
                 const isSelected = selectedOptions.includes(option);
                 return (

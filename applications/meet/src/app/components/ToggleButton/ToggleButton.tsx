@@ -1,6 +1,8 @@
 import type { RefObject } from 'react';
 import { useRef } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -129,6 +131,8 @@ export const ToggleButton = ({
                     '--right-custom': '0.25rem',
                 }}
                 aria-label={secondaryAriaLabel}
+                aria-expanded={isOpen}
+                aria-haspopup="true"
             >
                 {isOpen ? (
                     <IcChevronUp size={viewportWidth.xsmall ? 5 : 6} />
@@ -148,8 +152,9 @@ export const ToggleButton = ({
                         '--left-custom': '50%',
                         transform: 'translate(-50%, -50%)',
                     }}
+                    aria-label={c('Info').t`Warning`}
                 >
-                    !
+                    <span aria-hidden="true">!</span>
                 </div>
             )}
             <div className="relative flex flex-nowrap items-center flex-column">

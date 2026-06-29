@@ -43,6 +43,8 @@ export const TimeBasedMeetingList = ({
     return (
         <div className="time-based-meeting-list flex flex-column flex-nowrap gap-4 shrink-0 relative meet-glow-effect">
             {sortedMeetingsByDayEntries.map(([date, meetings]) => {
+                const formattedDate = getGroupWithPrefix(formatMeetingDate(date, dateFormat, true));
+                const listLabelId = `meeting-list-day-${date}`;
                 return (
                     <div key={date} className="w-full flex flex-column gap-4 flex-nowrap shrink-0">
                         <div
@@ -51,22 +53,25 @@ export const TimeBasedMeetingList = ({
                                 date === today && 'meeting-list-day-header--today'
                             )}
                         >
-                            <h2 className="text-sm shrink-0">
-                                {getGroupWithPrefix(formatMeetingDate(date, dateFormat, true))}
+                            <h2 id={listLabelId} className="text-sm shrink-0">
+                                {formattedDate}
                             </h2>
                             <div className="meeting-list-day-header-line flex-1" aria-hidden="true" />
                         </div>
-                        <div className="flex flex-column gap-0 flex-nowrap">
+                        <ul
+                            className="unstyled m-0 p-0 flex flex-column gap-0 flex-nowrap"
+                        >
                             {meetings.map((meeting, index) => (
-                                <MeetingRow
-                                    key={meeting.ID}
-                                    meeting={meeting}
-                                    isFirst={index === 0}
-                                    isLast={index === meetings.length - 1}
-                                    handleEditScheduleMeeting={handleScheduleClick}
-                                />
+                                <li key={meeting.ID}>
+                                    <MeetingRow
+                                        meeting={meeting}
+                                        isFirst={index === 0}
+                                        isLast={index === meetings.length - 1}
+                                        handleEditScheduleMeeting={handleScheduleClick}
+                                    />
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                 );
             })}
