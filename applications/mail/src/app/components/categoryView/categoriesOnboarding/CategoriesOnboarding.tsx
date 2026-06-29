@@ -8,9 +8,8 @@ import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors'
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { B2COnboarding } from './B2COnboarding';
-import { CategoryCard } from './CategoryCard';
 import { hasSeeFullDisplay } from './categoriesOnboarding.helpers';
-import { AudienceType, B2BOnboardinCategoriesWithCards, B2COnboardinCategoriesWithCards } from './onboardingInterface';
+import { AudienceType } from './onboardingInterface';
 import { useCategoriesOnboarding } from './useCategoriesOnboarding';
 
 export const CategoriesOnboarding = () => {
@@ -49,33 +48,13 @@ export const CategoriesOnboarding = () => {
         return null;
     }
 
-    if (onboarding.audienceType === AudienceType.B2B) {
-        if (B2BOnboardinCategoriesWithCards.has(categoryID)) {
-            return (
-                <CategoryCard
-                    audienceType={AudienceType.B2B}
-                    categoryID={categoryID}
-                    flagValue={onboarding.flagValue}
-                />
-            );
+    if (onboarding.audienceType === AudienceType.B2C && categoryID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+        // We don't want to show the onboarding if the user has already seen it
+        if (hasSeeFullDisplay(onboarding.flagValue)) {
+            return null;
         }
-    } else if (onboarding.audienceType === AudienceType.B2C) {
-        if (categoryID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            // We don't want to show the onboarding if the user has already seen it
-            if (hasSeeFullDisplay(onboarding.flagValue)) {
-                return null;
-            }
 
-            return <B2COnboarding flagValue={onboarding.flagValue} />;
-        } else if (B2COnboardinCategoriesWithCards.has(categoryID)) {
-            return (
-                <CategoryCard
-                    audienceType={AudienceType.B2C}
-                    categoryID={categoryID}
-                    flagValue={onboarding.flagValue}
-                />
-            );
-        }
+        return <B2COnboarding flagValue={onboarding.flagValue} />;
     }
 
     return null;
