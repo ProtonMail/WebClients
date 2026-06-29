@@ -31,7 +31,13 @@ import clsx from '@proton/utils/clsx';
 import AddressInput from 'proton-mail/components/composer/addresses/AddressInput';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { extractSearchParameters, filterFromUrl, keywordToString, setFilterInUrl } from '../../../helpers/mailboxUrl';
+import {
+    categoryIDFromUrl,
+    extractSearchParameters,
+    filterFromUrl,
+    keywordToString,
+    setFilterInUrl,
+} from '../../../helpers/mailboxUrl';
 import AddressesInput from '../../composer/addresses/AddressesInput';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
 import LocationField from './AdvancedSearchFields/LocationField';
@@ -79,8 +85,10 @@ const initializeModel = (history: History, selectedLabelID: string, searchInputV
     const hasAttachments = filterUrl.Attachments === 1;
     const filter = hasAttachments ? 'has-file' : UNDEFINED;
 
+    const category = categoryIDFromUrl(history.location);
+
     return {
-        ...(keyword && { labelID: selectedLabelID }),
+        ...(keyword && { labelID: category ?? selectedLabelID }),
         keyword: searchInputValue ?? keyword ?? '',
         address: address || ALL_ADDRESSES,
         wildcard,
