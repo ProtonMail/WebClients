@@ -935,6 +935,9 @@
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům"
+      ],
+      "Verify now": [
+        "Ověřit nyní"
       ]
     },
     "Actions message": {
@@ -2493,6 +2496,9 @@
       ],
       "Åland Islands": [
         "Ålandské ostrovy"
+      ],
+      "Canary Islands": [
+        "Kanárské ostrovy"
       ]
     },
     "customer_support.feature.all": {
@@ -2707,6 +2713,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémové zahájení používání ${ BRAND_NAME } vaším týmem importujte data ze služeb Google, Outlook a dalších."
       ]
     },
     "description": {
@@ -3912,6 +3921,9 @@
       ],
       "Security key": [
         "Bezpečnostní klíč"
+      ],
+      "Touch your security key.": [
+        "Dotkněte se svého bezpečnostního klíče."
       ]
     },
     "fido2: Label": {
@@ -5800,6 +5812,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamatujete si své heslo? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
+      ],
+      "Password verified": [
+        "Heslo ověřeno"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, které chcete importovat:"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Důvěřujte klíči \"${ activeSignerText }\" pro ověření nových zpráv od tohoto kontaktu."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
       ]
     },
     "info": {
@@ -5881,6 +5923,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktivní podpisový klíč"
+      ],
+      "Fallback": [
+        "Záložní"
       ]
     },
     "Label": {
@@ -6369,6 +6417,12 @@
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (důvěryhodný kontakt)"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znaků"
+      ],
+      "Drive": [
+        "Disk"
       ]
     },
     "Label for contact group color": {
@@ -7475,6 +7529,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Access all countries": [
+        "Přístup ke všem zemím"
+      ],
+      "No streaming support": [
+        "Bez podpory streamování"
+      ],
+      "Unlock streaming": [
+        "Odblokování streamování"
       ]
     },
     "new_plans: feature highlight": {
@@ -7887,6 +7950,12 @@
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén",
         "Podpora ${ n } vlastních e-mailových domén"
+      ],
+      "${ n } country": [
+        "${ n } země",
+        "${ n } země",
+        "${ n } zemí",
+        "${ n } zemí"
       ]
     },
     "Notification": {
@@ -8569,6 +8638,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Doporučujeme, abyste u tohoto klíče zvolili \"Nedůvěřovat\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v současnosti podepisuje zprávy tímto klíčem"
+      ],
+      "This key is used for message verification": [
+        "Tento klíč se používá k ověření zpráv"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento klíč se používá k šifrování zpráv tomuto kontaktu ve starších aplikacích"
       ]
     },
     "PGP key warning": {
@@ -10699,6 +10777,12 @@
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrujte svou organizaci do ${ BRAND_NAME }"
+      ],
+      "Verify your password": [
+        "Ověření hesla"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10784,6 +10868,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá asistence AI, lidský expert po ruce!"
       ]
     },
     "tooltip": {

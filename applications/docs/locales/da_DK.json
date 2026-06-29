@@ -940,6 +940,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Export editor state for version": [
+        "Eksportér editortilstand for version"
+      ],
+      "Export this version (as docx)": [
+        "Eksportér denne version (som docx)"
+      ],
+      "Export YJS state for version": [
+        "Eksportér YJS-tilstand for version"
       ]
     },
     "Actions message": {
@@ -3542,6 +3551,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Failed to rename document": [
+        "Kunne ikke omdøbe dokumentet"
       ]
     },
     "error": {
@@ -3945,6 +3957,9 @@
       ],
       "Security key": [
         "Sikkerhedsnøgle"
+      ],
+      "Touch your security key.": [
+        "Tryk på din sikkerhedsnøgle."
       ]
     },
     "fido2: Label": {

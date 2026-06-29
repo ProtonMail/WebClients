@@ -949,6 +949,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
+      ],
+      "Download debug information": [
+        "Descarregueu la informació de depuració"
+      ],
+      "Reload spreadsheet": [
+        "Torneu a carregar el full de càlcul"
+      ],
+      "Report issue": [
+        "Informeu d'un problema"
       ]
     },
     "Actions message": {
@@ -3966,6 +3975,9 @@
       ],
       "Security key": [
         "Clau de seguretat"
+      ],
+      "Touch your security key.": [
+        "Toqueu la vostra clau de seguretat."
       ]
     },
     "fido2: Label": {
@@ -5825,6 +5837,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Disable table of contents": [
+        "Desactiveu la taula de continguts"
+      ],
+      "Enable table of contents": [
+        "Habiliteu la taula de continguts"
       ]
     },
     "info": {
@@ -10611,6 +10629,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Editing paused": [
+        "S'ha pausat l'edició"
       ]
     },
     "Today icon tooltip in mini calendar": {

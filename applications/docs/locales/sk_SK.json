@@ -947,6 +947,15 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
+      ],
+      "Export editor state for version": [
+        "Exportovať stav editora pre danú verziu"
+      ],
+      "Export this version (as docx)": [
+        "Exportovať túto verziu (ako docx)"
+      ],
+      "Export YJS state for version": [
+        "Exportovať stav YJS pre danú verziu"
       ]
     },
     "Actions message": {
@@ -3595,6 +3604,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "Failed to rename document": [
+        "Premenovanie dokumentu zlyhalo"
       ]
     },
     "error": {
@@ -4002,6 +4014,9 @@
       ],
       "Security key": [
         "Bezpečnostný kľúč"
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -6200,7 +6215,7 @@
         "Stiahnuť aj tak"
       ],
       "Drive": [
-        "Drive"
+        "Jednotka"
       ],
       "Duplicate found": [
         "Nájdený duplikát"
@@ -8354,6 +8369,9 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavenia boli úspešne zmenené"
+      ],
+      "Failed to load sharing details": [
+        "Nepodarilo sa načítať podrobnosti zdieľania"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
