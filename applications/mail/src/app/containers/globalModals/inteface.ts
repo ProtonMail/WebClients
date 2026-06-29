@@ -6,6 +6,7 @@ export enum ModalType {
     Snooze = 'snooze',
     Unsubscribe = 'unsubscribe',
     CategoriesViewB2BOnboarding = 'categoriesViewB2BOnboarding',
+    CategoriesViewB2COnboarding = 'categoriesViewB2COnboarding',
     BYOESpotlight = 'BYOESpotlight',
 }
 
@@ -40,6 +41,13 @@ export interface CategoriesViewB2BOnboardingModalPayload {
     };
 }
 
+export interface CategoriesViewB2COnboardingModalPayload {
+    type: ModalType.CategoriesViewB2COnboarding;
+    value: {
+        flagValue: number;
+    };
+}
+
 export interface BYOESpotlightModalPayload {
     type: ModalType.BYOESpotlight;
     value: {
@@ -53,6 +61,7 @@ export type ModalPayload =
     | SnoozeModalPayload
     | UnsubscribeModalPayload
     | CategoriesViewB2BOnboardingModalPayload
+    | CategoriesViewB2COnboardingModalPayload
     | BYOESpotlightModalPayload;
 export type ModalListener = (payload: ModalPayload) => void;
 
