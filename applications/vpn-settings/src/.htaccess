@@ -11,7 +11,8 @@ DirectorySlash Off
 # Ignore any requests to the assets folder, to avoid the index.html fallback and return 404 there
 RewriteRule ^assets/ - [L]
 
-RewriteRule ^(.*)/$ /$1 [L,R=301]
+# Strip trailing slashes (/foo/ → /foo).
+RewriteRule ^(.*)/$ https://%{HTTP_HOST}/$1 [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule (.*) $1/index.html [L]
