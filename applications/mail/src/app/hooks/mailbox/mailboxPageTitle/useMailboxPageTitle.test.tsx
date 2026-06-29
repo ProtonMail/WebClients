@@ -36,7 +36,6 @@ describe('useMailboxPageTitle', () => {
         jest.mocked(useMailSelector).mockReturnValue(MAILBOX_LABEL_IDS.INBOX);
         jest.mocked(useMailboxCounter).mockReturnValue({
             loading: false,
-            counterMap: {},
             getLocationCount: jest.fn().mockReturnValue({ Unread: INBOX_UNREAD_COUNT, Total: 7 }),
             getCurrentLocationCount: jest.fn().mockReturnValue({ Unread: INBOX_UNREAD_COUNT, Total: 11 }),
         });
@@ -58,7 +57,6 @@ describe('useMailboxPageTitle', () => {
         it('should return the primary label count when on default category', () => {
             jest.mocked(useMailboxCounter).mockReturnValue({
                 loading: false,
-                counterMap: {},
                 getLocationCount: jest.fn().mockReturnValue({ Unread: CATEGORY_DEFAULT_UNREAD_COUNT, Total: 7 }),
                 getCurrentLocationCount: jest.fn().mockReturnValue({ Unread: INBOX_UNREAD_COUNT, Total: 11 }),
             });

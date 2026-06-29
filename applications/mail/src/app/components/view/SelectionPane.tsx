@@ -1,19 +1,16 @@
 import type { PropsWithChildren } from 'react';
-import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { isCustomLabel as testIsCustomLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
@@ -21,13 +18,14 @@ import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isSearch as testIsSearch } from '../../helpers/elements';
-import { getLabelNameWithCategory } from '../../helpers/labels';
+import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { loadedEmpty, selectCategoryIDs, taskRunningInLabel } from '../../store/elements/elementsSelectors';
+import { loadedEmpty, selectActiveCategoryID, taskRunningInLabel } from '../../store/elements/elementsSelectors';
 import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
+import { getCategoryText, getFolderText, getLabelText } from './SelectionPane.strings';
 
 import './SelectionPane.scss';
 
@@ -45,14 +43,14 @@ const SelectionPaneWrapper = ({ children }: PropsWithChildren) => {
 
 interface Props {
     labelID: string;
-    mailSettings: MailSettings;
-    location: Location;
     checkedIDs?: string[];
     onCheckAll: (checked: boolean) => void;
 }
 
-const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onCheckAll }: Props) => {
+const SelectionPane = ({ labelID, checkedIDs = [], onCheckAll }: Props) => {
     const theme = useTheme();
+    const location = useLocation();
+    const [mailSettings] = useMailSettings();
 
     const appLocation = useLocation();
     const conversationMode = isConversationMode(labelID, mailSettings, location);
@@ -62,8 +60,8 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
 
     const taskIsRunningInLabel = useMailSelector((state) => taskRunningInLabel(state, { labelID }));
     const isLoadedEmpty = useMailSelector(loadedEmpty);
-    const categoryIDs = useMailSelector(selectCategoryIDs);
 
+    const categoryID = useMailSelector(selectActiveCategoryID);
     const { getCurrentLocationCount } = useMailboxCounter();
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
@@ -71,31 +69,7 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const checkeds = checkedIDs.length;
     const count = checkeds || total;
 
-    const { hasAccessToCategoryView } = useCategoriesData();
-
-    const labelName = useMemo(() => {
-        if (count === 0) {
-            if (!isLoadedEmpty) {
-                return getLabelNameWithCategory({
-                    labelID,
-                    labels: labels || [],
-                    folders: folders || [],
-                    categoryIDs: categoryIDs,
-                    hasAccessToCategoryView: hasAccessToCategoryView,
-                });
-            }
-            return c('Info').t`No messages found`;
-        }
-
-        return getLabelNameWithCategory({
-            labelID,
-            labels: labels || [],
-            folders: folders || [],
-            categoryIDs,
-            hasAccessToCategoryView,
-        });
-    }, [labelID, labels, folders, count, isLoadedEmpty, categoryIDs, hasAccessToCategoryView]);
-
+    const labelName = getLabelName(labelID, labels, folders);
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(appLocation), [appLocation]);
     const isSearch = testIsSearch(searchParameters);
 
@@ -106,79 +80,34 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
         onCheckAll(false);
     };
 
-    /*
-     * With ttag we cannot have JSX in plural forms
-     * We need a workaround to have the number of messages/conversations in a strong tag
-     * So we are surrounding the bold part with ** to replace it later by a strong tag
-     */
-    const getFolderText = () => {
-        if (checkeds) {
-            // translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{count} conversation/s" will be bold. You need to put them in your translation too.
-            return conversationMode
-                ? c('Info').ngettext(
-                      msgid`You selected **${count} conversation** from this folder`,
-                      `You selected **${count} conversations** from this folder`,
-                      count
-                  )
-                : // translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{count} message/s" will be bold. You need to put them in your translation too.
-                  c('Info').ngettext(
-                      msgid`You selected **${count} message** from this folder`,
-                      `You selected **${count} messages** from this folder`,
-                      count
-                  );
-        }
-        // translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{count} conversation/s" will be bold. You need to put them in your translation too.
-        return conversationMode
-            ? c('Info').ngettext(
-                  msgid`You have **${count} conversation** stored in this folder`,
-                  `You have **${count} conversations** stored in this folder`,
-                  count
-              )
-            : // translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{count} message/s" will be bold. You need to put them in your translation too.
-              c('Info').ngettext(
-                  msgid`You have **${count} message** stored in this folder`,
-                  `You have **${count} messages** stored in this folder`,
-                  count
-              );
-    };
-
-    /*
-     * With ttag we cannot have JSX in plural forms
-     * We need a workaround to have the number of messages/conversations in a strong tag
-     * So we are surrounding the bold part with ** to replace it later by a strong tag
-     */
-    const getLabelText = () => {
-        if (checkeds) {
-            // translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{count} conversation/s" will be bold. You need to put them in your translation too.
-            return conversationMode
-                ? c('Info').ngettext(
-                      msgid`You selected **${count} conversation** with this label`,
-                      `You selected **${count} conversations** with this label`,
-                      count
-                  )
-                : // translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{count} message/s" will be bold. You need to put them in your translation too.
-                  c('Info').ngettext(
-                      msgid`You selected **${count} message** with this label`,
-                      `You selected **${count} messages** with this label`,
-                      count
-                  );
-        }
-        // translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{count} conversation/s" will be bold. You need to put them in your translation too.
-        return conversationMode
-            ? c('Info').ngettext(
-                  msgid`You have **${count} conversation** tagged with this label`,
-                  `You have **${count} conversations** tagged with this label`,
-                  count
-              )
-            : // translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{count} message/s" will be bold. You need to put them in your translation too.
-              c('Info').ngettext(
-                  msgid`You have **${count} message** tagged with this label`,
-                  `You have **${count} messages** tagged with this label`,
-                  count
-              );
-    };
-
     const getSelectionPaneText = () => {
+        // Search still wins inside a category (preserves "N results found in X")
+        if (isSearch && !checkeds) {
+            if (total === 0) {
+                return undefined;
+            }
+
+            const text = c('Info').ngettext(
+                msgid`**${total}** result found in ${labelName}`,
+                `**${total}** results found in ${labelName}`,
+                total
+            );
+            return getBoldFormattedText(text);
+        }
+
+        if (selectAll) {
+            const bannerText = getBannerTextWithLocation();
+            return (
+                <span className="selection-pane" title={bannerText}>
+                    {getBoldFormattedText(bannerText)}
+                </span>
+            );
+        }
+
+        if (categoryID) {
+            return getBoldFormattedText(getCategoryText(checkeds, total, conversationMode, categoryID));
+        }
+
         if (total === 0) {
             return undefined;
         }
@@ -196,28 +125,20 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
             );
 
             return getBoldFormattedText(text);
-        } else {
-            if (selectAll) {
-                const bannerText = getBannerTextWithLocation();
-                // Warning, we are forced to add a custom class here (ttag does not support JSX + plural forms)
-                // And we need to style the last span of the string so that it does not overflow
-                // In case the string it updated, do not forget to update the style if necessary
-                return (
-                    <span className="selection-pane" title={bannerText}>
-                        {getBoldFormattedText(bannerText)}
-                    </span>
-                );
-            }
-            return getBoldFormattedText(isCustomLabel ? getLabelText() : getFolderText());
         }
+
+        return getBoldFormattedText(
+            isCustomLabel
+                ? getLabelText(checkeds, count, conversationMode)
+                : getFolderText(checkeds, count, conversationMode)
+        );
     };
 
     if (isSearch && isLoadedEmpty) {
         return <EmptyView isSearch isUnread={false} labelID={labelID} isTaskRunningInLabel={!!taskIsRunningInLabel} />;
     }
 
-    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === MAILBOX_LABEL_IDS.SPAM;
-    if (showSimpleLoginPlaceholder) {
+    if (checkeds === 0 && labelID === MAILBOX_LABEL_IDS.SPAM) {
         return (
             <SelectionPaneWrapper>
                 <ProtonPassPlaceholder />
