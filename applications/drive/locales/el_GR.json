@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Διάταξη λίστας"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Επιλέξτε βαθμολογία ${ n } από ${ to }"
+      ],
+      "Send Feedback": [
+        "Αποστολή Σχολίων"
       ]
     },
     "Action: Docs": {
@@ -4567,6 +4573,9 @@
       ],
       "Security key": [
         "Κλειδί ασφαλείας"
+      ],
+      "Touch your security key.": [
+        "Αγγίξτε το κλειδί ασφαλείας σας."
       ]
     },
     "fido2: Label": {
@@ -8240,6 +8249,15 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Extremely Satisfied": [
+        "Εξαιρετικά Ικανοποιημένος"
+      ],
+      "Tell us more about your experience": [
+        "Πείτε μας περισσότερα για την εμπειρία σας"
+      ],
+      "Very Dissatisfied": [
+        "Πολύ Δυσαρεστημένος"
       ]
     },
     "Label for contact group color": {
@@ -11105,6 +11123,9 @@
       ],
       "Search for users or addresses": [
         "Αναζήτηση χρηστών ή διευθύνσεων"
+      ],
+      "Optional feedback": [
+        "Προαιρετικά σχόλια"
       ]
     },
     "Placeholder for contact group name": {
@@ -13778,6 +13799,9 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } μεταφόρτωσε αυτόν τον φάκελο."
+      ],
+      "We'd love to hear from you!": [
+        "Θα χαρούμε να ακούσουμε τη γνώμη σας!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14322,6 +14346,11 @@
       ],
       "SUMMER SALE": [
         "ΚΑΛΟΚΑΙΡΙΝΕΣ ΕΚΠΤΩΣΕΙΣ"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Προσπαθούμε πάντα να βελτιώνουμε το ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
       ]
     }
   }

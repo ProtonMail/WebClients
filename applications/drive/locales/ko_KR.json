@@ -1265,6 +1265,12 @@
       ],
       "Verify now": [
         "지금 인증"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "평점을 ${ to }점 중 ${ n }점 선택"
+      ],
+      "Send Feedback": [
+        "피드백 보내기"
       ]
     },
     "Action: Docs": {
@@ -7886,6 +7892,15 @@
       ],
       "Emails": [
         "이메일"
+      ],
+      "Extremely Satisfied": [
+        "매우 만족"
+      ],
+      "Tell us more about your experience": [
+        "회원님의 경험에 대해 더 자세히 알려주세요"
+      ],
+      "Very Dissatisfied": [
+        "매우 불만족"
       ]
     },
     "Label for contact group color": {
@@ -10594,6 +10609,9 @@
       ],
       "Search": [
         "검색"
+      ],
+      "Optional feedback": [
+        "선택 피드백"
       ]
     },
     "Placeholder for contact group name": {
@@ -13258,6 +13276,9 @@
       ],
       "Verify your password": [
         "비밀번호 확인"
+      ],
+      "We'd love to hear from you!": [
+        "회원님의 의견을 기다리고 있어요!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13717,6 +13738,11 @@
       ],
       "SUMMER SALE": [
         "여름 세일"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName }의 경험 향상을 위해 Proton은 항상 노력하고 있습니다. 회원님의 경험에 얼마나 만족하시나요?"
       ]
     }
   }

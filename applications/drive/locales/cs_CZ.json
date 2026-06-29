@@ -1295,6 +1295,12 @@
       ],
       "Continue with Free": [
         "Pokračovat s tarifem Free"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnocení ${ n } z ${ to }"
+      ],
+      "Send Feedback": [
+        "Odeslat zpětnou vazbu"
       ]
     },
     "Action: Docs": {
@@ -7408,10 +7414,10 @@
         "Včetně"
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ]
     },
     "info": {
@@ -8223,6 +8229,15 @@
       ],
       "Emails": [
         "E-maily"
+      ],
+      "Extremely Satisfied": [
+        "Velmi spokojen(a)"
+      ],
+      "Tell us more about your experience": [
+        "Řekněte nám více o svých zkušenostech"
+      ],
+      "Very Dissatisfied": [
+        "Velmi nespokojen(a)"
       ]
     },
     "Label for contact group color": {
@@ -11204,6 +11219,9 @@
       ],
       "Search": [
         "Vyhledat"
+      ],
+      "Optional feedback": [
+        "Volitelná zpětná vazba"
       ]
     },
     "Placeholder for contact group name": {
@@ -14042,6 +14060,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "We'd love to hear from you!": [
+        "Budeme rádi za váš názor!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14559,6 +14580,11 @@
       ],
       "SUMMER SALE": [
         "LETNÍ VÝPRODEJ"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále se snažíme vylepšovat ${ config.appName }. Nakolik uspokojivá je vaše zkušenost?"
       ]
     }
   }

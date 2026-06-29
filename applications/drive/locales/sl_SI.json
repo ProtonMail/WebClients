@@ -1214,6 +1214,12 @@
       ],
       "Verify now": [
         "Preveri zdaj"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Izberi oceno ${ n } od ${ to }"
+      ],
+      "Send Feedback": [
+        "Pošlji povratne informacije"
       ]
     },
     "Actions": {
@@ -2783,6 +2789,9 @@
       ],
       "Åland Islands": [
         "Alandski otoki"
+      ],
+      "Canary Islands": [
+        "Kanarski otoki"
       ]
     },
     "customer_support.feature.all": {
@@ -2988,6 +2997,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Žal nam je, da odhajate. Če imate trenutek časa, bi bili zelo hvaležni, če bi nam povedali, zakaj želite prekiniti naročnino. Vaša povratna informacija nam pomaga izboljševati ${ BRAND_NAME } za vse."
       ]
     },
     "description": {
@@ -6962,6 +6974,21 @@
       ],
       "RECOMMENDED": [
         "PRIPOROČENO"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } uporabniška mesta"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Pridobijo ${ refereeRewardAmount }** v dobroimetju, če se naročijo."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Zaupaj ključu \"${ activeSignerText }\", da boš lahko preverjal nova sporočila od tega stika."
       ]
     },
     "info": {
@@ -7743,6 +7770,18 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Command line interface (CLI)": [
+        "Ukazna vrstica (CLI)"
+      ],
+      "Extremely Satisfied": [
+        "Izjemno zadovoljen/-na"
+      ],
+      "Tell us more about your experience": [
+        "Povejte nam več o vaši izkušnji"
+      ],
+      "Very Dissatisfied": [
+        "Zelo nezadovoljen/-na"
       ]
     },
     "Label for contact group color": {
@@ -8057,6 +8096,9 @@
         "Video sestanki, ${ n } udeleženca",
         "Video sestanki, ${ n } udeleženci",
         "Video sestanki, ${ n } udeležencev"
+      ],
+      "Meeting recording": [
+        "Snemanje seje"
       ]
     },
     "Message": {
@@ -8842,6 +8884,15 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN z blokiranjem oglasov in zaščito pred zlonamerno programsko opremo"
+      ],
+      "Access all countries": [
+        "Dostop do vseh držav"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Namenski strežniki, optimizirani za hitrost"
+      ],
+      "Unlock streaming": [
+        "Odkleni pretakanje"
       ]
     },
     "new_plans: feature highlight": {
@@ -12905,6 +12956,12 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
+      "Verify your password": [
+        "Preverite geslo"
+      ],
+      "We'd love to hear from you!": [
+        "Radi bi vas slišali!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13367,6 +13424,11 @@
         "${ seats } sedeža vključena",
         "${ seats } sedeži vključeni",
         "${ seats } sedežev vključenih"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Venomer se trudimo izboljšati ${ config.appName }. Kako ste zadovoljni s svojo izkušnjo?"
       ]
     }
   }

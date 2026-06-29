@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Liste yerleşimi"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Değerlendirin ${ n } / ${ to }"
+      ],
+      "Send Feedback": [
+        "Geri bildirim gönder"
       ]
     },
     "Action: Docs": {
@@ -4567,6 +4573,9 @@
       ],
       "Security key": [
         "Güvenlik anahtarı"
+      ],
+      "Touch your security key.": [
+        "Güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -8240,6 +8249,15 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Extremely Satisfied": [
+        "Çok memnunum"
+      ],
+      "Tell us more about your experience": [
+        "Bize deneyiminiz ile ilgili bilgi verin"
+      ],
+      "Very Dissatisfied": [
+        "Hiç memnun değilim"
       ]
     },
     "Label for contact group color": {
@@ -11105,6 +11123,9 @@
       ],
       "Search for users or addresses": [
         "Kullanıcıları veya adresleri ara"
+      ],
+      "Optional feedback": [
+        "İsteğe bağlı geri bildirim"
       ]
     },
     "Placeholder for contact group name": {
@@ -13874,6 +13895,9 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "Bu klasörün ${ author } tarafından yüklendiği doğrulanamadı."
+      ],
+      "We'd love to hear from you!": [
+        "Sizden haber almak isteriz!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14418,6 +14442,11 @@
       ],
       "SUMMER SALE": [
         "YAZ İNDİRİMİ"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName } uygulamasını geliştirmek için sürekli çalışıyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     }
   }

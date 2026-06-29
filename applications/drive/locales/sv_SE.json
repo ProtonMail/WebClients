@@ -1305,6 +1305,12 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "Prova ${ BRAND_NAME } Workspace"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Välj betyg ${ n } av ${ to }"
+      ],
+      "Send Feedback": [
+        "Skicka feedback"
       ]
     },
     "Action: Docs": {
@@ -4095,6 +4101,9 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Något gick fel med sök: Inte tillräckligt lagringsutrymme."
+      ],
+      "Unexpected error, we can't import the files": [
+        "Oväntat fel, vi kan inte importera filerna"
       ]
     },
     "error": {
@@ -4519,6 +4528,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Touch your security key.": [
+        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -8107,6 +8119,15 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Extremely Satisfied": [
+        "Extremt nöjd"
+      ],
+      "Tell us more about your experience": [
+        "Berätta mer om din upplevelse"
+      ],
+      "Very Dissatisfied": [
+        "Väldigt missnöjd"
       ]
     },
     "Label for contact group color": {
@@ -11007,6 +11028,9 @@
       ],
       "Search for users or addresses": [
         "Sök efter användare eller adresser"
+      ],
+      "Optional feedback": [
+        "Valfri feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -13761,6 +13785,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Vi kunde inte bekräfta att noden skapades av ${ claimedKeyAuthor }. Orsaken är: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vill gärna att du hör av dig!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14271,6 +14298,11 @@
       ],
       "SUMMER SALE": [
         "SOMMARREA"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi strävar alltid efter att göra ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
       ]
     }
   }

@@ -1319,6 +1319,12 @@
       ],
       "List layout": [
         "Макет спіса"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Выберыце ацэнку ${ n } з ${ to }"
+      ],
+      "Send Feedback": [
+        "Адправіць водгук"
       ]
     },
     "Action: Docs": {
@@ -4198,6 +4204,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Недастаткова прасторы ў сховішчы ${ DRIVE_APP_NAME }"
       ]
     },
     "error": {
@@ -8465,6 +8474,15 @@
       ],
       "Emails": [
         "Лісты"
+      ],
+      "Extremely Satisfied": [
+        "Вельмі задаволены"
+      ],
+      "Tell us more about your experience": [
+        "Раскажыце нам больш пра свой досвед"
+      ],
+      "Very Dissatisfied": [
+        "Вельмі незадаволены"
       ]
     },
     "Label for contact group color": {
@@ -11536,6 +11554,9 @@
       ],
       "Search for users or addresses": [
         "Пошук карыстальнікаў або адрасоў"
+      ],
+      "Optional feedback": [
+        "Неабавязковы водгук"
       ]
     },
     "Placeholder for contact group name": {
@@ -14296,6 +14317,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Не ўдалося пацвердзіць, што вузел быў створаны ${ claimedKeyAuthor }. Прычына: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Нам было б прыемна пачуць гэта!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14871,6 +14895,11 @@
       ],
       "SUMMER SALE": [
         "ЛЕТНІ РАСПРОДАЖ"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Мы заўсёды імкнёмся зрабіць ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
       ]
     }
   }

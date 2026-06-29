@@ -1319,6 +1319,12 @@
       ],
       "List layout": [
         "Rozloženie so zoznamom"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnotenie ${ n } z ${ to }"
+      ],
+      "Send Feedback": [
+        "Odoslať spätnú väzbu"
       ]
     },
     "Action: Docs": {
@@ -8462,6 +8468,15 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Extremely Satisfied": [
+        "Mimoriadna spokojnosť"
+      ],
+      "Tell us more about your experience": [
+        "Povedzte nám viac o svojich skúsenostiach"
+      ],
+      "Very Dissatisfied": [
+        "Veľká nespokojnosť"
       ]
     },
     "Label for contact group color": {
@@ -11482,6 +11497,9 @@
       ],
       "Search for users or addresses": [
         "Hľadať používateľov alebo adresy"
+      ],
+      "Optional feedback": [
+        "Voliteľná spätná väzba"
       ]
     },
     "Placeholder for contact group name": {
@@ -14242,6 +14260,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Nepodarilo sa nám potvrdiť, že uzol vytvoril používateľ ${ claimedKeyAuthor }. Dôvod: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Radi si vypočujeme váš názor!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14817,6 +14838,11 @@
       ],
       "SUMMER SALE": [
         "LETNÝ VÝPREDAJ"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále sa snažíme vylepšovať ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
       ]
     }
   }

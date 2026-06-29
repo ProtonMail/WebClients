@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Listelayout"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vælg vurdering ${ n } ud af ${ to }"
+      ],
+      "Send Feedback": [
+        "Send feedback"
       ]
     },
     "Action: Docs": {
@@ -4139,10 +4145,10 @@
         "Intet drev fundet til import"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Mangler plads i din ${ DRIVE_APP_NAME }"
+        "Ikke nok lagerplads i din ${ DRIVE_APP_NAME }"
       ],
       "Unexpected error, we can't import the files": [
-        "Uventet fejl, vi kan ikke importere filerne"
+        "Der skete en uventet fejl, og vi kan ikke importere filerne"
       ]
     },
     "error": {
@@ -4562,6 +4568,9 @@
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Touch your security key.": [
+        "Tryk på din sikkerhedsnøgle."
       ]
     },
     "fido2: Label": {
@@ -8227,6 +8236,15 @@
       ],
       "Drive": [
         "Drev"
+      ],
+      "Extremely Satisfied": [
+        "Yderst tilfreds"
+      ],
+      "Tell us more about your experience": [
+        "Fortæl os mere om din oplevelse"
+      ],
+      "Very Dissatisfied": [
+        "Meget utilfreds"
       ]
     },
     "Label for contact group color": {
@@ -11092,6 +11110,9 @@
       ],
       "Search for users or addresses": [
         "Søg efter brugere eller adresser"
+      ],
+      "Optional feedback": [
+        "Valgfri feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -13839,16 +13860,16 @@
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "Digital signature verified. This file was securely created by ${ author }.": [
-        "Digital signatur verificeret. Denne fil blev oprettet sikkert af ${ author }."
+        "Digital signatur bekræftet. Denne fil blev oprettet sikkert af ${ author }."
       ],
       "Digital signature verified. This file was securely uploaded by ${ author }.": [
-        "Digital signatur verificeret. Denne fil blev uploadet sikkert af ${ author }."
+        "Digital signatur bekræftet. Denne fil blev uploadet sikkert af ${ author }."
       ],
       "Digital signature verified. This folder was securely created by ${ author }.": [
-        "Digital signatur verificeret. Denne mappe blev oprettet sikkert af ${ author }."
+        "Digital signatur bekræftet. Denne mappe blev oprettet sikkert af ${ author }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ author }.": [
-        "Digital signatur verificeret. Denne mappe blev uploadet sikkert af ${ author }."
+        "Digital signatur bekræftet. Denne mappe blev uploadet sikkert af ${ author }."
       ],
       "We couldn’t verify that ${ author } created this file.": [
         "Vi kunne ikke bekræfte, at ${ author } har oprettet denne fil."
@@ -13861,6 +13882,9 @@
       ],
       "We couldn’t verify that ${ author } uploaded this folder.": [
         "Vi kunne ikke bekræfte, at ${ author } uploadede denne mappe."
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil meget gerne høre fra dig"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14415,6 +14439,11 @@
       ],
       "SUMMER SALE": [
         "SOMMERUDSALG"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi stræber altid efter at forbedre ${ config.appName }. Hvor tilfreds er du med din oplevelse?"
       ]
     }
   }

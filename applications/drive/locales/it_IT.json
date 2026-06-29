@@ -1250,6 +1250,12 @@
       ],
       "Continue with Free": [
         "Continua con la versione gratuita"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleziona valutazione ${ n } su ${ to }"
+      ],
+      "Send Feedback": [
+        "Invia Feedback"
       ]
     },
     "Action: Docs": {
@@ -7731,6 +7737,15 @@
       ],
       "Emails": [
         "Email"
+      ],
+      "Extremely Satisfied": [
+        "Estremamente soddisfatto"
+      ],
+      "Tell us more about your experience": [
+        "Raccontaci di più sulla tua esperienza"
+      ],
+      "Very Dissatisfied": [
+        "Molto insoddisfatto"
       ]
     },
     "Label for contact group color": {
@@ -10538,6 +10553,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Optional feedback": [
+        "Feedback opzionale"
       ]
     },
     "Placeholder for contact group name": {
@@ -10786,7 +10804,7 @@
         "Una volta che il tuo abbonamento completo inizia, puoi ancora annullare entro 30 giorni e ottenere un rimborso proporzionale."
       ],
       "Refer friends": [
-        "Segnala amici"
+        "Invita amici"
       ],
       "Start earning credits": [
         "Inizia a guadagnare crediti"
@@ -11080,6 +11098,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Apri in ${ appName }"
+      ],
+      "New spreadsheet": [
+        "Nuovo foglio di calcolo"
       ]
     },
     "Signing preference for emails": {
@@ -13214,6 +13235,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
+      "We'd love to hear from you!": [
+        "Ci piacerebbe sapere cosa ne pensi!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13643,6 +13667,11 @@
       "${ seats } seat included": [
         "${ seats } licenza inclusa",
         "${ seats } licenze incluse"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Cerchiamo sempre di migliorare ${ config.appName }. Quanto sei soddisfatto della tua esperienza?"
       ]
     }
   }

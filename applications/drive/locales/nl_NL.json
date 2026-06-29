@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Lijstweergave"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecteer beoordeling ${ n } van de ${ to }"
+      ],
+      "Send Feedback": [
+        "Feedback Versturen"
       ]
     },
     "Action: Docs": {
@@ -8208,6 +8214,15 @@
       ],
       "Emails": [
         "E-mails"
+      ],
+      "Extremely Satisfied": [
+        "Zeer tevreden"
+      ],
+      "Tell us more about your experience": [
+        "Vertel ons meer over uw ervaring"
+      ],
+      "Very Dissatisfied": [
+        "Erg ontevreden"
       ]
     },
     "Label for contact group color": {
@@ -11070,6 +11085,9 @@
       ],
       "Search for users or addresses": [
         "Naar gebruikers of adressen zoeken"
+      ],
+      "Optional feedback": [
+        "Optionele feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -12104,7 +12122,7 @@
         "${ planName } geeft u toegang tot alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }. Privacy is ingebouwd, zodat u verder kunt, wetende dat uw gegevens en identiteit veilig zijn."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over uw gegevens en de beveiliging daarvan te hebben."
       ],
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planName } geeft u onbeperkte privacy en meer opslagruimte voor tot wel 2 personen."
@@ -13806,6 +13824,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
+      ],
+      "We'd love to hear from you!": [
+        "We horen graag van jou!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14352,6 +14373,11 @@
       ],
       "SUMMER SALE": [
         "ZOMER SALE"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wij streven er altijd naar om ${ config.appName } te verbeteren. Hoe tevreden bent u met uw ervaring?"
       ]
     }
   }

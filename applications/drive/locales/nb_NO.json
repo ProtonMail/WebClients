@@ -1305,6 +1305,12 @@
       ],
       "List layout": [
         "Listeoppsett"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Velg vurdering ${ n } av ${ to }"
+      ],
+      "Send Feedback": [
+        "Send tilbakemelding"
       ]
     },
     "Action: Docs": {
@@ -8207,6 +8213,15 @@
       ],
       "Emails": [
         "E-poster"
+      ],
+      "Extremely Satisfied": [
+        "Ekstremt fornøyd"
+      ],
+      "Tell us more about your experience": [
+        "Fortell oss mer om din opplevelse"
+      ],
+      "Very Dissatisfied": [
+        "Svært misfornøyd"
       ]
     },
     "Label for contact group color": {
@@ -11126,6 +11141,9 @@
       ],
       "Search for users or addresses": [
         "Søk etter brukere eller adresser"
+      ],
+      "Optional feedback": [
+        "Valgfri tilbakemelding"
       ]
     },
     "Placeholder for contact group name": {
@@ -13862,6 +13880,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil gjerne høre fra deg!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14403,6 +14424,11 @@
       ],
       "SUMMER SALE": [
         "SOMMERSALG"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi streber alltid etter å gjøre ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
       ]
     }
   }
