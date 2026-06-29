@@ -198,7 +198,7 @@ function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
 
 function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererProps) {
   const [editor] = useLexicalComposerContext()
-  const { setLeftPanelActive, leftPanelActive } = useDocsLayoutContext()
+  const { setLeftPanelActive, leftPanelActive, resetLeftPanelToDefault } = useDocsLayoutContext()
 
   const scrollToNode = React.useCallback(
     (key: NodeKey) => {
@@ -217,6 +217,12 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
     [editor],
   )
 
+  React.useEffect(() => {
+    if (!leftPanelActive) {
+      resetLeftPanelToDefault()
+    }
+  }, [leftPanelActive, resetLeftPanelToDefault])
+
   return (
     <>
       <HeadingParamListener scrollToNode={scrollToNode} />
@@ -225,16 +231,17 @@ function TableOfContentsRenderer({ tableOfContents }: TableOfContentsRendererPro
       <div className="flex h-full min-w-0 flex-col gap-4 p-4" data-testid="table-of-contents">
         <div className="relative flex items-center gap-2">
           <button
-            onClick={() => setLeftPanelActive(!leftPanelActive)}
+            onClick={() => setLeftPanelActive((prev: boolean) => !prev)}
             className="bg-weak z-20 flex min-h-8 min-w-8 items-center justify-center rounded-full p-2"
             data-testid="toc-toggle"
           >
             <Icon name={leftPanelActive ? 'arrow-left' : 'list-bullets'} />
           </button>
           <span
-            className="text-weak z-10 truncate text-sm font-medium transition-transform"
+            className="text-weak z-10 truncate text-sm font-medium transition-all"
             style={{
               transform: leftPanelActive ? 'translateX(0)' : 'translateX(calc(-100% - 64px))',
+              opacity: leftPanelActive ? 1 : 0,
             }}
           >
             {c('Title').t`Outline`}

@@ -19,7 +19,15 @@ import { setScrollableTablesActive } from '@lexical/table'
 import { isHTMLElement } from '../Utils/guard'
 import { TableOfContents } from '../Components/TableOfContents'
 import DocsLayout from './DocsLayout'
-import { useIsAlpha } from '../Hooks/useIsAlpha'
+
+interface PreviewModeEditorProps {
+  clonedEditorState: EditorState
+  role: DocumentRole
+  onUserModeChange: (mode: EditorUserMode) => void
+  clientInvoker: EditorRequiresClientMethods
+  initialScrollTop: number | null
+  tableOfContentsVisible: boolean
+}
 
 export function PreviewModeEditor({
   clonedEditorState,
@@ -27,15 +35,8 @@ export function PreviewModeEditor({
   onUserModeChange,
   clientInvoker,
   initialScrollTop,
-}: {
-  clonedEditorState: EditorState
-  role: DocumentRole
-  onUserModeChange: (mode: EditorUserMode) => void
-  clientInvoker: EditorRequiresClientMethods
-  initialScrollTop: number | null
-}) {
-  const isAlpha = useIsAlpha()
-
+  tableOfContentsVisible,
+}: PreviewModeEditorProps) {
   const handlePreviewModeLinkClick: MouseEventHandler = useCallback(
     (event) => {
       const target = event.target
@@ -79,7 +80,7 @@ export function PreviewModeEditor({
         systemMode={EditorSystemMode.PublicView}
       />
       <DocsLayout.Grid>
-        {isAlpha && (
+        {tableOfContentsVisible && (
           <DocsLayout.LeftPanel>
             <TableOfContents getDocumentUrl={getDocumentUrl} replaceDocumentUrl={replaceDocumentUrl} />
           </DocsLayout.LeftPanel>
