@@ -166,6 +166,7 @@ export const usePublicLink = (): UsePublicLinkResult => {
                     const openInDocsInfo = getOpenInDocsInfo(node.mediaType);
                     if (openInDocsInfo) {
                         const { token, urlPassword } = getPublicTokenAndPassword(window.location.pathname);
+                        isRedirecting = true;
                         await openPublicDocsOrSheetsDocument({
                             uid: node.uid,
                             type: openInDocsInfo.type,
