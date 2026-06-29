@@ -158,6 +158,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('applyPatches', [patches])
   }
 
+  async setTableOfContentsVisible(visible: boolean): Promise<void> {
+    return this.invokeEditorMethod('setTableOfContentsVisible', [visible])
+  }
+
   async initializeEditor(
     documentId: string,
     userAddress: string,

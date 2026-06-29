@@ -197,6 +197,7 @@ enum DocsFeatureFlag {
     DocsAppSwitcher = 'DocsAppSwitcher',
     DocsPublicEditing = 'DocsPublicEditing',
     DriveWebTextFileEdit = 'DriveWebTextFileEdit',
+    DocsTableOfContents = 'DocsTableOfContents',
     // Comments
     DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
     // Homepage

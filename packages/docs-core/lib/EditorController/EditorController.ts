@@ -57,6 +57,7 @@ export interface EditorControllerInterface {
   removeSpreadsheetPatches(): Promise<void>
   generateSpreadsheetPatches(): Promise<unknown>
   applyPatches(patches: unknown): Promise<void>
+  setTableOfContentsVisible(visible: boolean): Promise<void>
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -601,5 +602,13 @@ export class EditorController implements EditorControllerInterface {
     }
 
     await this.editorInvoker.applyPatches(patches)
+  }
+
+  async setTableOfContentsVisible(visible: boolean): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to set table of contents visible before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.setTableOfContentsVisible(visible)
   }
 }
