@@ -456,6 +456,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Nie je možné previesť dokument programu Word. Je chránený heslom? Ak áno, odstráňte heslo a skúste to znova."
+      ],
+      "This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.": [
+        "V tejto tabuľke bola zistená lokálna nezhoda pri synchronizácii. Pred pokračovaním znovu načítajte dokument, prosím."
       ]
     },
     "Error message": {
@@ -2299,11 +2302,37 @@
       ],
       "Language not supported": [
         "Jazyk nie je podporovaný"
+      ],
+      "Outline": [
+        "Okraje"
       ]
     },
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Vytváranie návrhov vo vnútri blokov kódu nie je podporované"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Average": [
+        "Priemer"
+      ],
+      "Count": [
+        "Počet"
+      ],
+      "Customize Status Bar": [
+        "Prispôsobenie stavového riadku"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Numerical count": [
+        "Číselný súčet"
+      ],
+      "Sum": [
+        "Súčet"
       ]
     }
   }
