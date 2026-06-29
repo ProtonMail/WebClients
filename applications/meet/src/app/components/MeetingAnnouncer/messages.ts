@@ -40,6 +40,8 @@ export const announcementMessages = {
 
     recordingStopped: () => c('Accessibility announcement').t`Recording stopped`,
 
+    recordingSaved: () => c('Accessibility announcement').t`Recording saved`,
+
     mutedByHost: () => c('Accessibility announcement').t`You have been muted by the host`,
 
     cameraDisabledByHost: () => c('Accessibility announcement').t`Your camera has been turned off by the host`,
@@ -54,4 +56,40 @@ export const announcementMessages = {
     reconnected: () => c('Accessibility announcement').t`Reconnected to the meeting`,
 
     disconnected: () => c('Accessibility announcement').t`You have been disconnected from the meeting`,
+
+    screenShareStarted: (name?: string) =>
+        name
+            ? c('Accessibility announcement').t`Screen share started by ${name}`
+            : c('Accessibility announcement').t`Screen share started`,
+
+    screenShareStopped: (name?: string) =>
+        name
+            ? c('Accessibility announcement').t`Screen share stopped by ${name}`
+            : c('Accessibility announcement').t`Screen share stopped`,
+
+    // Meeting end countdown (free-tier limit / hard expiry). Distinct strings per threshold avoid
+    // run-time plural handling and read more naturally to screen readers.
+    meetingEndingIn10Minutes: () => c('Accessibility announcement').t`The meeting will end in 10 minutes`,
+
+    meetingEndingIn5Minutes: () => c('Accessibility announcement').t`The meeting will end in 5 minutes`,
+
+    meetingEndingIn1Minute: () => c('Accessibility announcement').t`The meeting will end in 1 minute`,
+
+    meetingEndingIn15Seconds: () => c('Accessibility announcement').t`The meeting will end in 15 seconds`,
+
+    // Auto-close (you are the only participant). The first message carries the reason since the
+    // following thresholds are kept terse.
+    autoCloseDisplayed: () =>
+        c('Accessibility announcement')
+            .t`You are the only participant. The meeting will close in 2 minutes unless someone joins.`,
+
+    autoCloseIn1Minute: () => c('Accessibility announcement').t`The meeting will close in 1 minute`,
+
+    autoCloseIn30Seconds: () => c('Accessibility announcement').t`The meeting will close in 30 seconds`,
+
+    autoCloseIn15Seconds: () => c('Accessibility announcement').t`The meeting will close in 15 seconds`,
+
+    turnRelayActive: () =>
+        c('Accessibility announcement')
+            .t`Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.`,
 };

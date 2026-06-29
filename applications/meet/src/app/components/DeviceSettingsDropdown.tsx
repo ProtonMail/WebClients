@@ -1,5 +1,7 @@
 import type { ReactNode, RefObject } from 'react';
 
+import { c } from 'ttag';
+
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { PopperPlacement, PopperPosition } from '@proton/components/components/popper/interface';
@@ -22,6 +24,7 @@ export const DeviceSettingsDropdown = ({
     return (
         <Dropdown
             className="meet-dropdown device-selector-dropdown border border-card rounded-xl shadow-none meet-radius meet-scrollbar py-2 overflow-x-hidden overflow-y-auto"
+            aria-label={c('Aria').t`Device settings`}
             isOpen={true}
             anchorRef={anchorRef}
             onClose={onClose}

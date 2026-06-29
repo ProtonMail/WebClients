@@ -54,7 +54,7 @@ export const WebRtcUnsupportedModal = ({ onClose }: WebRtcUnsupportedModalProps)
                         onClick={onClose}
                         size="large"
                     >
-                        Close
+                        {c('Action').t`Close`}
                     </Button>
                 </div>
             </ModalTwoContent>
