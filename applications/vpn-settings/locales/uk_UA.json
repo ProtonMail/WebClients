@@ -4960,7 +4960,7 @@
         "(${ serverPrice } / місяць)"
       ],
       "(default)": [
-        "(за замовчуванням)"
+        "(типово)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Отримайте адресу ${ BRAND_NAME }**, щоб користуватися всіма службами ${ BRAND_NAME_TWO }, включно з ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }."
@@ -5299,7 +5299,7 @@
         "Виділені сервери з окремими IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу."
       ],
       "default email address": [
-        "адреса електронної пошти за замовчуванням"
+        "типова поштова адреса"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету ${ MAIL_APP_NAME }."
@@ -7921,6 +7921,15 @@
       ],
       "What’s this?": [
         "Що це?"
+      ],
+      "Don't have access to your 2FA?": [
+        "Немає доступу до вашої 2FA?"
+      ],
+      "Frequent sign-in problems": [
+        "Часті проблеми з входом"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Отримати допомогу від ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Loading info": {

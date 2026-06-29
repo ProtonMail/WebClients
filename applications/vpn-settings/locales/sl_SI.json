@@ -2907,6 +2907,9 @@
       ],
       "Åland Islands": [
         "Alandski otoki"
+      ],
+      "Canary Islands": [
+        "Kanarski otoki"
       ]
     },
     "CountryInfo": {
@@ -3179,6 +3182,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Žal nam je, da odhajate. Če imate trenutek časa, bi bili zelo hvaležni, če bi nam povedali, zakaj želite prekiniti naročnino. Vaša povratna informacija nam pomaga izboljševati ${ BRAND_NAME } za vse."
       ]
     },
     "description": {
@@ -7650,6 +7656,18 @@
       ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } uporabniška mesta"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Pridobijo ${ refereeRewardAmount }** v dobroimetju, če se naročijo."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
       ]
     },
     "info": {
@@ -8555,6 +8573,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Command line interface (CLI)": [
+        "Ukazna vrstica (CLI)"
       ]
     },
     "label": {
@@ -8831,6 +8852,15 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ],
+      "Don't have access to your 2FA?": [
+        "Nimate dostopa do svoje 2FA?"
+      ],
+      "Frequent sign-in problems": [
+        "Pogoste težave s prijavo"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Poiščite pomoč pri ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Live Chat Modal": {
@@ -9082,6 +9112,9 @@
         "Video sestanki, ${ n } udeleženca",
         "Video sestanki, ${ n } udeleženci",
         "Video sestanki, ${ n } udeležencev"
+      ],
+      "Meeting recording": [
+        "Snemanje seje"
       ]
     },
     "meet_2025: Info": {
@@ -9786,6 +9819,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "Access all countries": [
+        "Dostop do vseh držav"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Namenski strežniki, optimizirani za hitrost"
+      ],
+      "Unlock streaming": [
+        "Odkleni pretakanje"
       ]
     },
     "new_plans: feature highlight": {
@@ -14708,6 +14750,9 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Verify your password": [
+        "Preverite geslo"
       ]
     },
     "Title for payment methods table": {

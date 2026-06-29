@@ -4766,6 +4766,15 @@
       ],
       "What’s this?": [
         "این چیست؟"
+      ],
+      "Don't have access to your 2FA?": [
+        "به اصالت‌سنجی دو-عاملی خود دسترسی ندارید؟"
+      ],
+      "Frequent sign-in problems": [
+        "مشکلات متداول ورود به حساب"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "دریافت راهنمایی از ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -7440,6 +7449,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "پس از تایید موفقیت آمیز، این سابقه TXT را حذف نکنید زیرا برای تایید ادامه مالکیت دامنه لازم است."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "از دستیار واردسازی Easy Switch استفاده کنید"
       ]
     }
   }

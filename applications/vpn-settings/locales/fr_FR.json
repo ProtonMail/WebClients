@@ -1270,6 +1270,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Finish": [
+        "Terminer"
+      ],
+      "Review changes": [
+        "Examiner les modifications"
       ]
     },
     "action": {
@@ -5600,6 +5606,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Votre clé d'authentification à deux facteurs est prête à être utilisée."
+      ],
+      "Insert your security key into your device.": [
+        "Insérez votre clé de sécurité dans votre appareil."
+      ],
+      "Touch your security key.": [
+        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -5806,6 +5818,12 @@
       ],
       "Roles and permissions": [
         "Rôles et permissions"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gérez les utilisateurs et les groupes, attribuez des rôles et attribuez des licences aux membres."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gère les paramètres de sécurité et peut afficher tous les journaux d'événements et les informations de l'utilisateur."
       ]
     },
     "Header": {
@@ -9086,6 +9104,9 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Les abonnements ${ BRAND_NAME } Business offrent à votre équipe tous les outils dont elle a besoin pour être productive et organisée dans son travail, tout en protégeant votre entreprise."
       ]
     },
     "info": {
@@ -10229,7 +10250,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Pour"
+        "À"
       ]
     },
     "Label BYOE": {
@@ -17470,6 +17491,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Approve changes": [
+        "Approuver les modifications"
       ]
     },
     "Title for payment methods table": {
@@ -18030,6 +18054,15 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, sécurité, facturation et configurations système."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gérez les utilisateurs et les groupes, attribuez des rôles et attribuez des licences aux membres."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gère les paramètres de sécurité et peut afficher tous les journaux d'événements et les informations de l'utilisateur."
       ]
     },
     "Users table: badge": {
@@ -18364,6 +18397,77 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Une fois la vérification réussie, ne retirez pas cet enregistrement TXT : il est nécessaire pour confirmer que vous restez propriétaire du domaine."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nouveau membre",
+        "${ memberCount } nouveaux membres"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } groupe synchronisé",
+        "${ numberOfPendingGroups } groupes synchronisés"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } utilisateur synchronisé",
+        "${ numberOfPendingUsers } utilisateurs synchronisés"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } groupe",
+        "${ pendingGroupsCount } groupes"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } groupe synchronisé.",
+        "${ pendingGroupsCount } groupes synchronisés."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } utilisateur",
+        "${ pendingUsersCount } utilisateurs"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } utilisateur synchronisé.",
+        "${ pendingUsersCount } utilisateurs synchronisés."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } et ${ groupsText } synchronisés."
+      ],
+      "Approve changes from your identity provider": [
+        "Approuvez les modifications de votre fournisseur d'identité"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Approbation finale nécessaire pour accorder l'accès à tous les services ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "De votre fournisseur d'identité"
+      ],
+      "New": [
+        "Nouveau"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Une fois approuvés, ils peuvent accéder à tous les services ${ BRAND_NAME } et les partager en toute sécurité."
+      ],
+      "Private user": [
+        "Utilisateur privé"
+      ],
+      "Review users and groups before finishing setup": [
+        "Examinez les utilisateurs et les groupes avant de terminer la configuration"
+      ],
+      "Updated": [
+        "Mis à jour"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Les utilisateurs que vous avez définis comme privés doivent accepter l'invitation pour terminer la configuration. Nous leur enverrons une invitation une fois que vous aurez approuvé."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... en attente"
+      ],
+      "completed": [
+        "terminé"
+      ],
+      "finalizing": [
+        "finalisation en cours"
       ]
     }
   }

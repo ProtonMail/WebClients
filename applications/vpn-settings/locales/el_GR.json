@@ -1270,6 +1270,12 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Finish": [
+        "Ολοκλήρωση"
+      ],
+      "Review changes": [
+        "Επισκόπιση αλλαγών"
       ]
     },
     "action": {
@@ -5600,6 +5606,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Το κλειδί ελέγχου ταυτότητας δύο παραγόντων είναι έτοιμο για χρήση."
+      ],
+      "Insert your security key into your device.": [
+        "Τοποθετήστε το κλειδί ασφαλείας στη συσκευή σας."
+      ],
+      "Touch your security key.": [
+        "Αγγίξτε το κλειδί ασφαλείας σας."
       ]
     },
     "fido2: Label": {
@@ -5806,6 +5818,12 @@
       ],
       "Roles and permissions": [
         "Ρόλοι και δικαιώματα"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Διαχειριστείτε χρήστες και ομάδες, αναθέστε ρόλους και εκχωρήστε άδειες χρήσης σε μέλη."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Διαχειρίζεται τις ρυθμίσεις ασφαλείας και μπορεί να δει όλα τα αρχεία καταγραφής συμβάντων και τα στοιχεία χρήστη."
       ]
     },
     "Header": {
@@ -9097,6 +9115,9 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Τα ${ BRAND_NAME } Business πλάνα παρέχουν στην ομάδα σας όλα τα εργαλεία συνεργασίας που χρειάζονται για να είναι παραγωγικοί και οργανωμένοι στη δουλειά τους, ενώ ταυτόχρονα προστατεύουν την επιχείρησή σας."
       ]
     },
     "info": {
@@ -17478,6 +17499,9 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Approve changes": [
+        "Έγκριση αλλαγών"
       ]
     },
     "Title for payment methods table": {
@@ -18038,6 +18062,15 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Διαχειριστείτε χρήστες και ομάδες, αναθέστε ρόλους και εκχωρήστε άδειες χρήσης σε μέλη."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Διαχειρίζεται τις ρυθμίσεις ασφαλείας και μπορεί να δει όλα τα αρχεία καταγραφής συμβάντων και τα στοιχεία χρήστη."
       ]
     },
     "Users table: badge": {
@@ -18372,6 +18405,77 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Μετά την επιτυχή επαλήθευση, μην καταργήσετε αυτήν την εγγραφή TXT, διότι απαιτείται για να επιβεβαιώσετε ότι συνεχίζετε να είστε ο ιδιοκτήτης του τομέα."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } νέο μέλος",
+        "${ memberCount } νέα μέλη"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } ομάδα συγχρονίστηκε",
+        "${ numberOfPendingGroups } ομάδες συγχρονίστηκαν"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } χρήστης συγχρονίστηκε",
+        "${ numberOfPendingUsers } χρήστες συγχρονίστηκαν"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } ομάδα",
+        "${ pendingGroupsCount } ομάδες"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } ομάδα συγχρονίστηκε.",
+        "${ pendingGroupsCount } ομάδες συγχρονίστηκαν."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } χρήστης",
+        "${ pendingUsersCount } χρήστες"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } χρήστης συγχρονίστηκε.",
+        "${ pendingUsersCount } χρήστες συγχρονίστηκαν."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "Τα ${ usersText } και ${ groupsText } συγχρονίστηκαν."
+      ],
+      "Approve changes from your identity provider": [
+        "Έγκριση αλλαγών από τον πάροχο ταυτότητάς σας"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Απαιτείται τελική έγκριση για την παραχώρηση πρόσβασης σε όλες τις υπηρεσίες ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "Από τον πάροχο ταυτότητάς σας"
+      ],
+      "New": [
+        "Νέο"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Μόλις εγκριθούν, μπορούν να έχουν πρόσβαση σε όλες τις υπηρεσίες ${ BRAND_NAME } και να τις κοινοποιούν με ασφάλεια."
+      ],
+      "Private user": [
+        "Ιδιωτικός χρήστης"
+      ],
+      "Review users and groups before finishing setup": [
+        "Ελέγξτε τους χρήστες και τις ομάδες πριν από την ολοκλήρωση της ρύθμισης"
+      ],
+      "Updated": [
+        "Ενημερώθηκε"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Οι χρήστες που έχετε ορίσει ως ιδιωτικοί πρέπει να αποδεχτούν την πρόσκληση για να ολοκληρώσουν τη ρύθμιση. Θα τους στείλουμε μια πρόσκληση μόλις την εγκρίνετε."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... σε αναμονή"
+      ],
+      "completed": [
+        "ολοκληρώθηκε"
+      ],
+      "finalizing": [
+        "οριστικοποιείται"
       ]
     }
   }

@@ -1270,6 +1270,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Finish": [
+        "Afslut"
+      ],
+      "Review changes": [
+        "Gennemse ændringer"
       ]
     },
     "action": {
@@ -2223,7 +2229,7 @@
     },
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importér ældre beskeder i ${ PRODUCT_NAMES.EASY_SWITCH } indstillinger."
+        "Duplikater fra tidligere importer springes over. Fortryd eller importér ældre beskeder i ${ PRODUCT_NAMES.EASY_SWITCH } indstillinger."
       ]
     },
     "Cancellation upsell": {
@@ -3721,7 +3727,7 @@
         "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Vi importerer dine gamle e-mails og synkroniserer nye beskeder fra Gmail fremover."
+        "Vi importerer dine gamle e-mails og synkroniserer nye beskeder fra Gmail fremover"
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
@@ -3771,6 +3777,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Du kan stadig logge ind med denne adresse og genoprette forbindelsen når som helst."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Du vil ikke længere kunne bruge ${ address.Email } til at modtage og sende e-mails i ${ BRAND_NAME }. Bemærk at beskeder sendt til denne adresse fra ${ BRAND_NAME } ikke længere vil være end-to-end-krypterede."
       ]
     },
     "description": {
@@ -4845,6 +4857,15 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "No drive found to import": [
+        "Intet drev fundet til import"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "Ikke nok lagerplads i din ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Der skete en uventet fejl, og vi kan ikke importere filerne"
       ]
     },
     "error": {
@@ -5585,6 +5606,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Din to-faktor-godkendelsesnøgle er klar til brug."
+      ],
+      "Insert your security key into your device.": [
+        "Indsæt din sikkerhedsnøgle i din enhed."
+      ],
+      "Touch your security key.": [
+        "Tryk på din sikkerhedsnøgle."
       ]
     },
     "fido2: Label": {
@@ -5791,6 +5818,12 @@
       ],
       "Roles and permissions": [
         "Roller og tilladelser"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Administrer brugere og grupper, og tildel roller og licenser til medlemmer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Administrerer sikkerhedsindstillinger og kan se alle logs og brugerdetaljer."
       ]
     },
     "Header": {
@@ -9076,6 +9109,15 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } Business abonnementer giver dit team alle værktøjerne til at samarbejde produktivt og på en organiseret måde, samtidig med at holde din virksomhed sikker."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Kun filer (ingen billeder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
+      ],
+      "Synced from identity provider": [
+        "Synkroniseret fra identitetsudbyder"
       ]
     },
     "info": {
@@ -9173,6 +9215,9 @@
       ],
       "Sending invite...": [
         "Sender invitation..."
+      ],
+      "Group Owner": [
+        "Gruppeejer"
       ]
     },
     "Invoice state display as badge": {
@@ -10193,6 +10238,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Password check-ins": [
+        "Adgangskode check-ins"
       ]
     },
     "label": {
@@ -10876,6 +10924,9 @@
       ],
       "Sign in": [
         "Log ind"
+      ],
+      "Change backup password": [
+        "Skift backup-adgangskode"
       ]
     },
     "Message": {
@@ -12784,6 +12835,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Sørg for at du husker din adgangskode eller opbevarer den sikkert, da den er nøglen til at dekryptere dine data."
+      ],
+      "Turn off check-ins": [
+        "Slå check-ins fra"
+      ],
+      "Turn off password check-ins?": [
+        "Slå adgangskode check-ins fra?"
       ]
     },
     "passwordless": {
@@ -15917,6 +15974,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil modtage dit brugernavn via SMS indenfor et minut, hvis du har indtastet et gyldigt telefonnummer til gendannelse."
+      ],
+      "Password check-ins disabled": [
+        "Adgangskode check-ins deaktiveret"
+      ],
+      "Password check-ins enabled": [
+        "Adgangskode check-ins aktiveret"
       ]
     },
     "Success message": {
@@ -17436,6 +17499,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Approve changes": [
+        "Godkend ændringer"
       ]
     },
     "Title for payment methods table": {
@@ -17993,6 +18059,18 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Administrer brugere og grupper, og tildel roller og licenser til medlemmer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Administrerer sikkerhedsindstillinger og kan se alle logs og brugerdetaljer."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brugeren har accepteret invitationen."
       ]
     },
     "Users table: badge": {
@@ -18327,6 +18405,77 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter vellykket verifikation skal du ikke fjerne denne TXT-post, da den er nødvendig for at bekræfte, at du fortsætter med at eje domænet."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nyt medlem",
+        "${ memberCount } nye medlemmer"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } gruppe synkroniseret",
+        "${ numberOfPendingGroups } grupper synkroniseret"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } bruger synkroniseret",
+        "${ numberOfPendingUsers } brugere synkroniseret"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } gruppe",
+        "${ pendingGroupsCount } grupper"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } gruppe synkroniseret.",
+        "${ pendingGroupsCount } grupper synkroniseret."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } bruger",
+        "${ pendingUsersCount } brugere"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } bruger synkroniseret.",
+        "${ pendingUsersCount } brugere synkroniseret."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } og ${ groupsText } synkroniseret."
+      ],
+      "Approve changes from your identity provider": [
+        "Godkend ændringer fra din identitetsudbyder"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Endelig godkendelse kræves for at give adgang på tværs af alle ${ BRAND_NAME }-tjenester."
+      ],
+      "From your identity provider": [
+        "Fra din identitetsudbyder"
+      ],
+      "New": [
+        "Ny"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Når det er godkendt, kan de tilgå alle ${ BRAND_NAME }-tjenester og dele sikkert."
+      ],
+      "Private user": [
+        "Privat bruger"
+      ],
+      "Review users and groups before finishing setup": [
+        "Gennemgå brugere og grupper før konfigurationen færdiggøres"
+      ],
+      "Updated": [
+        "Opdateret"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Brugere, du har angivet som private, skal acceptere invitationen for at færdiggøre konfigurationen. Vi sender dem en invitation når du har godkendt."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... venter"
+      ],
+      "completed": [
+        "fuldført"
+      ],
+      "finalizing": [
+        "færdiggør"
       ]
     }
   }

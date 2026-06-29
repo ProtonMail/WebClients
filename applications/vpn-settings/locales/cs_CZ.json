@@ -1252,6 +1252,9 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Finish": [
+        "Dokončit"
       ]
     },
     "action": {
@@ -7130,7 +7133,7 @@
         "Povolte automatické obnovení pro zachování přístupu k prémiovým funkcím."
       ],
       "Enable email notifications": [
-        "Povolení e-mailových oznámení"
+        "Povolit e-mailová upozornění"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivujte jednotné přihlášení (SSO), aby byla vaše organizace v bezpečí"
@@ -8375,7 +8378,7 @@
         "Tímto trvale smažete data a všechny e-mailové adresy spojené s tímto uživatelem."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Tímto trvale smažete Váš účet a všechna jeho data. Tento účet neubude možné znovu aktivovat."
+        "Tímto trvale smažete Váš účet a všechna jeho data. Tento účet nebude možné znovu aktivovat."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
@@ -8528,13 +8531,13 @@
         "Neověřená e-mailová adresa."
       ],
       "Upgrade anytime to bring over the rest": [
-        "Kdykoli upgradujte, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet, abyste přenesli i zbytek"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
+        "Kdykoli navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -10529,6 +10532,12 @@
       ],
       "What’s this?": [
         "Co je to?"
+      ],
+      "Frequent sign-in problems": [
+        "Časté problémy s přihlášením"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Získejte pomoc od ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Link (Scribe)": {

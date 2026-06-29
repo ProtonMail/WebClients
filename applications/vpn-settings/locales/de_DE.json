@@ -1270,6 +1270,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Finish": [
+        "Beenden"
+      ],
+      "Review changes": [
+        "Änderungen prüfen"
       ]
     },
     "action": {
@@ -1379,6 +1385,9 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "Add-on": [
+        "Erweiterung"
       ]
     },
     "Address action": {
@@ -5588,6 +5597,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Dein Zwei-Faktor-Authentifizierungsschlüssel ist jetzt einsatzbereit."
+      ],
+      "Insert your security key into your device.": [
+        "Deinen Sicherheitsschlüssel in dein Gerät stecken."
+      ],
+      "Touch your security key.": [
+        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -5794,6 +5809,12 @@
       ],
       "Roles and permissions": [
         "Rollen und Rechte"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Benutzer und Gruppen verwalten, Rollen zuweisen und Lizenzen an Mitglieder vergeben."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Verwaltet die Sicherheitseinstellungen und kann alle Ereignisprotokolle und Benutzerdaten einsehen."
       ]
     },
     "Header": {
@@ -7171,7 +7192,7 @@
         "Gib die 12-Wort-Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
       ],
       "Enter the code from your authenticator app": [
-        "Code aus deiner Authentifizierungs-App ein eingeben"
+        "Code aus deiner Authentifizierungs-App eingeben"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
@@ -9085,6 +9106,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME }-Business-Abonnemente bieten deinem Team alle Tools für die Zusammenarbeit, die es benötigt, um produktiv und gut organisiert zu arbeiten, und schützen gleichzeitig dein Unternehmen."
       ]
     },
     "info": {
@@ -10225,7 +10249,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "An"
+        "Bis"
       ]
     },
     "Label BYOE": {
@@ -15297,6 +15321,9 @@
       "VPN connection for ${ n } device per user": [
         "VPN-Verbindung für ${ n } Gerät pro Benutzer",
         "VPN-Verbindung für ${ n } Geräte pro Benutzer"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe Schreibassistent"
       ]
     },
     "Subscription change warning": {
@@ -17454,6 +17481,12 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "Approve changes": [
+        "Änderungen genehmigen"
       ]
     },
     "Title for payment methods table": {
@@ -18014,6 +18047,15 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Benutzer und Gruppen verwalten, Rollen zuweisen und Lizenzen an Mitglieder vergeben."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Verwaltet die Sicherheitseinstellungen und kann alle Ereignisprotokolle und Benutzerdaten einsehen."
       ]
     },
     "Users table: badge": {
@@ -18348,6 +18390,77 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } neues Mitglied",
+        "${ memberCount } neue Mitglieder"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } Gruppe synchronisiert",
+        "${ numberOfPendingGroups } Gruppen synchronisiert"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } Benutzer synchronisiert",
+        "${ numberOfPendingUsers } Benutzer synchronisiert"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } Gruppe",
+        "${ pendingGroupsCount } Gruppen"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } Gruppe synchronisiert.",
+        "${ pendingGroupsCount } Gruppen synchronisiert."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } Benutzer",
+        "${ pendingUsersCount } Benutzer"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } Benutzer synchronisiert.",
+        "${ pendingUsersCount } Benutzer synchronisiert."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } und ${ groupsText } synchronisiert."
+      ],
+      "Approve changes from your identity provider": [
+        "Änderungen deines Identitätsanbieters genehmigen"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Es ist eine endgültige Genehmigung erforderlich, um Zugriff auf alle Dienste von ${ BRAND_NAME } zu gewähren."
+      ],
+      "From your identity provider": [
+        "Von deinem Identitätsanbieter"
+      ],
+      "New": [
+        "Neu"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Sobald sie freigeschaltet sind, können sie auf alle Dienste von ${ BRAND_NAME } zugreifen und Daten sicher weitergeben."
+      ],
+      "Private user": [
+        "Privater Benutzer"
+      ],
+      "Review users and groups before finishing setup": [
+        "Überprüfe die Benutzer und Gruppen, bevor du das Einrichten abschließt"
+      ],
+      "Updated": [
+        "Aktualisiert"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Benutzer, die du als privat markiert hast, müssen die Einladung annehmen, um das Einrichten abzuschließen. Wir senden ihnen eine Einladung, sobald du diese genehmigt hast."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... warte"
+      ],
+      "completed": [
+        "Abgeschlossen"
+      ],
+      "finalizing": [
+        "Fertiggestellt"
       ]
     }
   }

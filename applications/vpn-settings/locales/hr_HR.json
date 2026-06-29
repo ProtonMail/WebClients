@@ -844,6 +844,9 @@
       ],
       "Zoom out": [
         "Smanji"
+      ],
+      "Switch or add account": [
+        "Promijenite ili dodajte korisnički račun"
       ]
     },
     "Action for user session": {
@@ -5790,6 +5793,15 @@
       ],
       "What’s this?": [
         "Što je ovo?"
+      ],
+      "Don't have access to your 2FA?": [
+        "Nemate pristup svojem 2FA-u?"
+      ],
+      "Frequent sign-in problems": [
+        "Česti problemi s prijavom"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Potražite pomoć od ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -9716,6 +9728,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Nakon uspješne provjere, ne uklanjajte ovaj TXT zapis jer je potreban za potvrdu da i dalje posjedujete domenu."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "upotrijebite pomoćnika za uvoz Easy Switch"
       ]
     }
   }

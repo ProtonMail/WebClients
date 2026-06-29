@@ -1270,6 +1270,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Finish": [
+        "Finalizare"
+      ],
+      "Review changes": [
+        "Revizuire modificări"
       ]
     },
     "action": {
@@ -5643,6 +5649,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Cheia de autentificare cu doi factori este pregătită de utilizare."
+      ],
+      "Insert your security key into your device.": [
+        "Introduceți cheia de securitate în dispozitiv."
+      ],
+      "Touch your security key.": [
+        "Atingeți cheia de securitate."
       ]
     },
     "fido2: Label": {
@@ -5856,6 +5868,12 @@
       ],
       "Roles and permissions": [
         "Roluri și permisiuni"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionați utilizatorii și grupurile, atribuiți roluri și alocați licențe membrilor."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestionează setările de securitate și poate vizualiza toate jurnalele de evenimente și detaliile utilizatorului."
       ]
     },
     "Header": {
@@ -9220,6 +9238,9 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Planurile ${ BRAND_NAME } Business vă oferă echipei toate instrumentele de colaborare de care are nevoie pentru a fi productivă și organizată în activitatea sa, protejându-vă în același timp afacerea."
       ]
     },
     "info": {
@@ -10348,6 +10369,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Password check-ins": [
+        "Verificări parolă"
       ]
     },
     "label": {
@@ -12990,6 +13014,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Asigurați-vă că memorați sau stocați în siguranță parola, deoarece este cheia pentru decriptarea datelor."
+      ],
+      "Turn off check-ins": [
+        "Dezactivare verificări"
+      ],
+      "Turn off password check-ins?": [
+        "Dezactivați verificările parolei?"
       ]
     },
     "passwordless": {
@@ -16187,6 +16217,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Veți primi numele de utilizator prin SMS într-un minut dacă ați introdus un număr de telefon de recuperare valid."
+      ],
+      "Password check-ins disabled": [
+        "Verificări parolă dezactivate"
+      ],
+      "Password check-ins enabled": [
+        "Verificări parolă activate"
       ]
     },
     "Success message": {
@@ -17718,6 +17754,9 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Approve changes": [
+        "Aprobare modificări"
       ]
     },
     "Title for payment methods table": {
@@ -18279,6 +18318,15 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionați utilizatorii și grupurile, atribuiți roluri și alocați licențe membrilor."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestionează setările de securitate și poate vizualiza toate jurnalele de evenimente și detaliile utilizatorului."
       ]
     },
     "Users table: badge": {
@@ -18626,6 +18674,84 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "După reușirea verificării, nu eliminați această înregistrare TXT deoarece este necesară pentru a confirma că dețineți domeniul în continuare."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "Membri: ${ memberCount }",
+        "Membri: ${ memberCount }",
+        "Membri: ${ memberCount }"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "Grupuri sincronizate: ${ numberOfPendingGroups }",
+        "Grupuri sincronizate: ${ numberOfPendingGroups }",
+        "Grupuri sincronizate: ${ numberOfPendingGroups }"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "Utilizatori sincronizați: ${ numberOfPendingUsers }",
+        "Utilizatori sincronizați: ${ numberOfPendingUsers }",
+        "Utilizatori sincronizați: ${ numberOfPendingUsers }"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grup",
+        "${ pendingGroupsCount } grupuri",
+        "${ pendingGroupsCount } de grupuri"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "Grupuri sincronizate: ${ pendingGroupsCount }",
+        "Grupuri sincronizate: ${ pendingGroupsCount }",
+        "Grupuri sincronizate: ${ pendingGroupsCount }"
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } utilizator",
+        "${ pendingUsersCount } utilizatori",
+        "${ pendingUsersCount } de utilizatori"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "Utilizatori sincronizați: ${ pendingUsersCount }",
+        "Utilizatori sincronizați: ${ pendingUsersCount }",
+        "Utilizatori sincronizați: ${ pendingUsersCount }"
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "S-au sincronizat ${ usersText } și ${ groupsText }"
+      ],
+      "Approve changes from your identity provider": [
+        "Aprobați modificările de la furnizorul de identitate"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Este necesară aprobarea finală pentru a acorda acces la toate serviciile ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "De la furnizorul de identitate"
+      ],
+      "New": [
+        "Nou"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "După aprobare, aceștia pot accesa toate serviciile ${ BRAND_NAME } și pot partaja în siguranță."
+      ],
+      "Private user": [
+        "Utilizator privat"
+      ],
+      "Review users and groups before finishing setup": [
+        "Examinați utilizatorii și grupurile înainte de a finaliza configurarea"
+      ],
+      "Updated": [
+        "Actualizat"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Utilizatorii pe care i-ați setat ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "...în așteptare"
+      ],
+      "completed": [
+        "finalizat"
+      ],
+      "finalizing": [
+        "se finalizează"
       ]
     }
   }

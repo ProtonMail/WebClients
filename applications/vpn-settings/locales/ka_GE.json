@@ -1174,6 +1174,9 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Finish": [
+        "დასრულება"
       ]
     },
     "action": {
@@ -1276,6 +1279,9 @@
       ],
       "Writing assistant seats": [
         "წერაში დამხმარის ადგილები"
+      ],
+      "Add-on": [
+        "დამატება"
       ]
     },
     "Address action": {
@@ -9010,6 +9016,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Drive": [
+        "Drive"
       ]
     },
     "label": {
@@ -9302,6 +9311,15 @@
       ],
       "What’s this?": [
         "რა არის ეს?"
+      ],
+      "Don't have access to your 2FA?": [
+        "არ გაქვთ წვდომა თქვენს 2FA-ზე?"
+      ],
+      "Frequent sign-in problems": [
+        "შესვლის ხშირი პრობლემები"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "მიიღეთ დახმარება ${ LUMO_SHORT_APP_NAME }-სგან"
       ]
     },
     "Link (Scribe)": {
@@ -12374,6 +12392,9 @@
     "Role": {
       "User Admin": [
         "მომხმარებლის ადმინისტრატორი"
+      ],
+      "Owner": [
+        "მფლობელი"
       ]
     },
     "Safety review": {
@@ -16402,6 +16423,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "წარმატებული შემოწმების შემდეგ ნუ წაშლით ამ TXT ჩანაწერს. ის იმ ფაქტის შესამოწმებლად გამოიყენება, რომ დომენი, ჯერ კიდევ, თქვენ გეკუთვნით."
+      ]
+    },
+    "scim": {
+      "New": [
+        "ახალი"
       ]
     }
   }

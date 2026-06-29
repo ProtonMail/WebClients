@@ -1267,6 +1267,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Finish": [
+        "Fullfør"
       ]
     },
     "action": {
@@ -18272,6 +18275,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Etter vellykket verifisering, ikke fjern denne TXT-posten da den trengs for å bekrefte at du fortsetter å eie domenet."
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikater fra tidligere importer vil bli hoppet over. Angre eller importer eldre meldinger i ${ PRODUCT_NAMES.EASY_SWITCH }-innstillingene."
       ]
     }
   }

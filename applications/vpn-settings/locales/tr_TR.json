@@ -1270,6 +1270,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Finish": [
+        "Tamamla"
+      ],
+      "Review changes": [
+        "Değişiklikleri gözden geçir"
       ]
     },
     "action": {
@@ -5600,6 +5606,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "İki adımlı doğrulama anahtarınız kullanılmaya hazır."
+      ],
+      "Insert your security key into your device.": [
+        "Güvenlik anahtarınızı cihazınıza takın."
+      ],
+      "Touch your security key.": [
+        "Güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -5806,6 +5818,12 @@
       ],
       "Roles and permissions": [
         "Roller ve izinler"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Kullanıcıları ve grupları yönetin, roller atayın ve üyelere lisans tahsis edin."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Güvenlik ayarlarını yönetir ve tüm olay günlüklerini ve kullanıcı bilgilerini görüntüleyebilir."
       ]
     },
     "Header": {
@@ -9097,6 +9115,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } Business tarfiesi ekibinize işlerinde verimli ve düzenli olmaları için ihtiyaç duydukları tüm işbirliği araçlarını sunarken aynı zamanda işletmenizi de korur."
       ]
     },
     "info": {
@@ -9918,7 +9939,7 @@
         "Parola"
       ],
       "Password check-ins": [
-        "Parola kontrolü"
+        "Parola denetimleri"
       ],
       "Password strength": [
         "Parola zorluğu"
@@ -12816,10 +12837,10 @@
         "Verilerinizin şifresini çözmenin anahtarı olduğu için parolanızı ezberlediğinizden veya güvenli bir şekilde sakladığınızdan emin olun."
       ],
       "Turn off check-ins": [
-        "Kontrol özelliğini kapat"
+        "Denetimleri kapat"
       ],
       "Turn off password check-ins?": [
-        "Parola kontrolü kapatılsın mı?"
+        "Parola denetimleri kapatılsın mı?"
       ]
     },
     "passwordless": {
@@ -15886,10 +15907,10 @@
         "Kuruluş adı güncellendi"
       ],
       "Password check-ins disabled": [
-        "Parola kontrolü devre dışı bırakıldı"
+        "Parola denetimleri kapatıldı"
       ],
       "Password check-ins enabled": [
-        "Parola kontrolü etkinleştirildi"
+        "Parola denetimleri açık"
       ],
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
@@ -17478,6 +17499,9 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Approve changes": [
+        "Değişiklikleri onayla"
       ]
     },
     "Title for payment methods table": {
@@ -18038,6 +18062,15 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturalandırmayı ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Kullanıcıları ve grupları yönetin, roller atayın ve üyelere lisans tahsis edin."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Güvenlik ayarlarını yönetir ve tüm olay günlüklerini ve kullanıcı bilgilerini görüntüleyebilir."
       ]
     },
     "Users table: badge": {
@@ -18372,6 +18405,77 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } yeni üye",
+        "${ memberCount } yeni üye"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } grup eşitlendi",
+        "${ numberOfPendingGroups } grup eşitlendi"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } kullanıcı eşitlendi",
+        "${ numberOfPendingUsers } kullanıcı eşitlendi"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grup",
+        "${ pendingGroupsCount } grup"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } grup eşitlendi.",
+        "${ pendingGroupsCount } grup eşitlendi."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } kullanıcı",
+        "${ pendingUsersCount } kullanıcı"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } kullanıcı eşitlendi.",
+        "${ pendingUsersCount } kullanıcı eşitlendi."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } ve ${ groupsText } eşitlendi."
+      ],
+      "Approve changes from your identity provider": [
+        "Kimlik sağlayıcınızdan gelen değişiklikleri onaylayın"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Tüm ${ BRAND_NAME } hizmetlerine erişim izni vermek için nihai onay gereklidir."
+      ],
+      "From your identity provider": [
+        "Kimlik sağlayıcınızdan"
+      ],
+      "New": [
+        "Yeni"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Onaylandıktan sonra tüm ${ BRAND_NAME } hizmetlerine erişebilir ve güvenli bir şekilde paylaşım yapabilirler."
+      ],
+      "Private user": [
+        "Gizli kullanıcı"
+      ],
+      "Review users and groups before finishing setup": [
+        "Kurulumu tamamlamadan önce kullanıcıları ve grupları gözden geçirin"
+      ],
+      "Updated": [
+        "Güncellendi"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Gizli olarak ayarladığınız kullanıcıların kurulumu tamamlamak için daveti kabul etmeleri gerekir. Onayladığınızda onlara bir davet göndereceğiz."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... bekleniyor"
+      ],
+      "completed": [
+        "tamamlandı"
+      ],
+      "finalizing": [
+        "tamamlanıyor"
       ]
     }
   }

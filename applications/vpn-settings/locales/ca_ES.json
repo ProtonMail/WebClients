@@ -1270,6 +1270,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Finish": [
+        "Finalitzar"
+      ],
+      "Review changes": [
+        "Revisar els canvis"
       ]
     },
     "action": {
@@ -5600,6 +5606,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "La vostra clau d'autenticació de doble factor està llesta."
+      ],
+      "Insert your security key into your device.": [
+        "Introduïu la clau de seguretat al vostre dispositiu."
+      ],
+      "Touch your security key.": [
+        "Toqueu la vostra clau de seguretat."
       ]
     },
     "fido2: Label": {
@@ -5806,6 +5818,12 @@
       ],
       "Roles and permissions": [
         "Rols i permisos"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestioneu usuaris i grups, assigneu rols i distribuïu llicències als membres."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestiona els paràmetres de seguretat i pot veure tots els registres d'esdeveniments i detalls dels usuaris."
       ]
     },
     "Header": {
@@ -9094,6 +9112,9 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Els plans de negoci de ${ BRAND_NAME } li donen al vostre equip totes les eines de col·laboració que necessiten per ser productius i organitzats en el seu treball, alhora que protegeixen la vostra empresa."
       ]
     },
     "info": {
@@ -17478,6 +17499,9 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Approve changes": [
+        "Aprovar els canvis"
       ]
     },
     "Title for payment methods table": {
@@ -18038,6 +18062,15 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestioneu usuaris i grups, assigneu rols i distribuïu llicències als membres."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestiona els paràmetres de seguretat i pot veure tots els registres d'esdeveniments i detalls dels usuaris."
       ]
     },
     "Users table: badge": {
@@ -18372,6 +18405,77 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Després de la verificació, no esborreu aquest registre TXT, ja que cal confirmar que continueu posseint el domini."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nou membre",
+        "${ memberCount } nous membres"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } grup sincronitzat",
+        "${ numberOfPendingGroups } grups sincronitzats"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } usuari sincronitzat",
+        "${ numberOfPendingUsers } usuaris sincronitzats"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grup",
+        "${ pendingGroupsCount } grups"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } grup sincronitzat.",
+        "${ pendingGroupsCount } grups sincronitzats."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } usuari",
+        "${ pendingUsersCount } usuaris"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } usuari sincronitzat.",
+        "${ pendingUsersCount } usuaris sincronitzats."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } i ${ groupsText } s'han sincronitzat."
+      ],
+      "Approve changes from your identity provider": [
+        "Aproveu els canvis del vostre proveïdor d'identitat"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Cal l'aprovació final per concedir accés a tots els serveis de ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "Del vostre proveïdor d'identitat"
+      ],
+      "New": [
+        "Nou"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Un cop aprovats, podran accedir a tots els serveis de ${ BRAND_NAME } i compartir de manera segura."
+      ],
+      "Private user": [
+        "Usuari privat"
+      ],
+      "Review users and groups before finishing setup": [
+        "Reviseu els usuaris i els grups abans de completar la configuració"
+      ],
+      "Updated": [
+        "Actualitzat"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Els usuaris que hàgiu configurat com a privats han d'acceptar la invitació per completar la configuració. Els enviarem una invitació un cop els aproveu."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... esperant"
+      ],
+      "completed": [
+        "s'ha completat"
+      ],
+      "finalizing": [
+        "està finalitzant"
       ]
     }
   }

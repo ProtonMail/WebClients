@@ -1267,6 +1267,15 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Finish": [
+        "Finalizar"
+      ],
+      "Review changes": [
+        "Revisar mudanças"
+      ],
+      "Verify password": [
+        "Verificar senha"
       ]
     },
     "action": {
@@ -9031,6 +9040,9 @@
       ],
       "Sending invite...": [
         "Enviando convite..."
+      ],
+      "Group Owner": [
+        "Proprietário do grupo"
       ]
     },
     "Invoice state display as badge": {
@@ -10051,6 +10063,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Password check-ins": [
+        "Verificações de senha"
       ]
     },
     "label": {
@@ -12006,6 +12021,9 @@
       ],
       "Recovery checklist": [
         "Lista de verificação de recuperação"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "De 1 a 4 e-mails por ano. Lembretes para manter seus métodos de recuperação atualizados."
       ]
     },
     "Notification": {
@@ -15738,6 +15756,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Você receberá seu nome de usuário por SMS em um minuto se tiver inserido um número de telefone de recuperação válido."
+      ],
+      "Password check-ins disabled": [
+        "A verificação de senha está desativada"
+      ],
+      "Password check-ins enabled": [
+        "A verificação de senha está ativada"
       ]
     },
     "Success message": {
@@ -18142,6 +18166,61 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
+      ]
+    },
+    "password_reminder": {
+      "Turn off check-ins": [
+        "Desativar verificações"
+      ],
+      "Turn off password check-ins?": [
+        "Desativar verificações de senha?"
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } novo membro",
+        "${ memberCount } novos membros"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } grupo sincronizado",
+        "${ numberOfPendingGroups } grupos sincronizados"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } usuário sincronizado",
+        "${ numberOfPendingUsers } usuários sincronizados"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grupo",
+        "${ pendingGroupsCount } grupos"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } grupo sincronizado.",
+        "${ pendingGroupsCount } grupos sincronizados."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } usuário",
+        "${ pendingUsersCount } usuários"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } usuário sincronizado.",
+        "${ pendingUsersCount } usuários sincronizados."
+      ],
+      "New": [
+        "Novo"
+      ],
+      "Private user": [
+        "Usuário privado"
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... aguarde"
+      ],
+      "completed": [
+        "concluído"
+      ],
+      "finalizing": [
+        "finalizando"
       ]
     }
   }

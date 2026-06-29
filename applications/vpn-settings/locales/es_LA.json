@@ -1270,6 +1270,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Finish": [
+        "Terminar"
+      ],
+      "Review changes": [
+        "Revisar cambios"
       ]
     },
     "action": {
@@ -3771,6 +3777,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Su plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail",
         "Su plan soporta un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail"
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Todavía puede iniciar sesión con esta dirección y volver a conectarse en cualquier momento."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
       ]
     },
     "description": {
@@ -4845,6 +4857,15 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "No drive found to import": [
+        "No se ha encontrado ninguna unidad para importar"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "No hay suficiente espacio de almacenamiento en su ${ DRIVE_APP_NAME }"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Error inesperado, no se pueden importar los archivos"
       ]
     },
     "error": {
@@ -5585,6 +5606,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "La llave para la autenticación de dos factores está lista para usarse."
+      ],
+      "Insert your security key into your device.": [
+        "Inserte su llave de seguridad en su dispositivo."
+      ],
+      "Touch your security key.": [
+        "Toque su llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -5791,6 +5818,12 @@
       ],
       "Roles and permissions": [
         "Roles y permisos"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionar usuarios y grupos, asignar roles y asignar licencias a los miembros."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestionar configuración de seguridad y ver todos los registros de eventos y los detalles de los usuarios."
       ]
     },
     "Header": {
@@ -6383,8 +6416,8 @@
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de su suscripción ${ planTitle } se mantienen sin cambios."
       ],
       "${ pendingAdminMemberCount } new member added via your identity provider and pending review.": [
-        "Se ha añadido ${ pendingAdminMemberCount } nuevo miembro a través de tu proveedor de identidad y está pendiente de revisión.",
-        "Se han añadido ${ pendingAdminMemberCount } nuevos miembros a través de tu proveedor de identidad y están pendientes de revisión."
+        "Se añadió ${ pendingAdminMemberCount } miembro nuevo a través de su proveedor de identidad y está pendiente de revisión.",
+        "Se añadió ${ pendingAdminMemberCount } miembros nuevos a través de su proveedor de identidad y está pendiente de revisión."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -9076,6 +9109,15 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Los planes ${ BRAND_NAME } Business ofrecen a su equipo todas las herramientas de colaboración que necesita para trabajar de forma productiva y organizada, al tiempo que protegen su negocio."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
+      ],
+      "Synced from identity provider": [
+        "Sincronizado desde el proveedor de identidad"
       ]
     },
     "info": {
@@ -9173,6 +9215,9 @@
       ],
       "Sending invite...": [
         "Enviando la invitación..."
+      ],
+      "Group Owner": [
+        "Propietario del grupo"
       ]
     },
     "Invoice state display as badge": {
@@ -10190,6 +10235,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Password check-ins": [
+        "Comprobaciones de contraseña"
       ]
     },
     "label": {
@@ -10873,6 +10924,9 @@
       ],
       "Sign in": [
         "Iniciar sesión"
+      ],
+      "Change backup password": [
+        "Cambiar contraseña de respaldo"
       ]
     },
     "Message": {
@@ -12781,6 +12835,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Asegúrese de memorizar o guardar de manera segura porque es la clave para descifrar sus datos."
+      ],
+      "Turn off check-ins": [
+        "Desactivar comprobaciones"
+      ],
+      "Turn off password check-ins?": [
+        "¿Desactivar comprobaciones de contraseña?"
       ]
     },
     "passwordless": {
@@ -15914,6 +15974,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Recibirá su nombre de usuario por SMS en un minuto si ha ingresado un número de teléfono de recuperación válido."
+      ],
+      "Password check-ins disabled": [
+        "Se han desactivado las comprobaciones de contraseña"
+      ],
+      "Password check-ins enabled": [
+        "Comprobaciones de contraseña activadas"
       ]
     },
     "Success message": {
@@ -17433,6 +17499,9 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Approve changes": [
+        "Aprobar cambios"
       ]
     },
     "Title for payment methods table": {
@@ -17578,7 +17647,7 @@
         "Incluye correo electrónico profesional en @sudominio.com, almacenamiento en la nube con edición colaborativa de documentos, programación y videoconferencias, gestión de contraseñas, una VPN segura de ${ VPN_SHORT_APP_NAME } y más."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Asistencia IA inmediata, experto humano a su disposición!"
+        "¡Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."
@@ -17990,6 +18059,18 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionar todos los usuarios, grupos, seguridad, facturación y configuraciones del sistema."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionar usuarios y grupos, asignar roles y asignar licencias a los miembros."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestionar configuración de seguridad y ver todos los registros de eventos y los detalles de los usuarios."
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
       ]
     },
     "Users table: badge": {
@@ -18324,6 +18405,77 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Después de la verificación, no elimine este registro TXT ya que se necesita para confirmar que continúa siendo el propietario del dominio."
+      ]
+    },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } miembro nuevo",
+        "${ memberCount } miembros nuevos"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } grupo sincronizado",
+        "${ numberOfPendingGroups } grupos sincronizados"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } usuario sincronizado",
+        "${ numberOfPendingUsers } usuarios sincronizados"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grupo",
+        "${ pendingGroupsCount } grupos"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } grupo sincronizado.",
+        "${ pendingGroupsCount } grupos sincronizados."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } usuario",
+        "${ pendingUsersCount } usuarios"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } usuario sincronizado.",
+        "${ pendingUsersCount } usuarios sincronizados."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } y ${ groupsText } sincronizados."
+      ],
+      "Approve changes from your identity provider": [
+        "Aprobar cambios desde su proveedor de identidad"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Se necesita una aprobación final para acceder a través de todos los servicios de ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "Desde su proveedor de identidad"
+      ],
+      "New": [
+        "Nuevo"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Una vez aprobado, podrán acceder a todos los servicios de ${ BRAND_NAME } y compartir de forma segura."
+      ],
+      "Private user": [
+        "Usuario privado"
+      ],
+      "Review users and groups before finishing setup": [
+        "Revise usuarios y grupos antes de terminar la configuración"
+      ],
+      "Updated": [
+        "Actualizado"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Usuarios que ha establecido como privados necesitan aceptar la invitación para finalizar la configuración. Les enviaremos una invitación una vez que los apruebe."
+      ]
+    },
+    "Status": {
+      "... waiting": [
+        "... esperando"
+      ],
+      "completed": [
+        "completado"
+      ],
+      "finalizing": [
+        "finalizando"
       ]
     }
   }
