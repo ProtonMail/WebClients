@@ -30,7 +30,7 @@ const Pricing = ({ plan }: { plan: PLANS }) => {
     );
 
     return pricingInitialized ? (
-        <span className="color-weak text-sm">
+        <span className="color-weak text-sm" data-testid="referral:pricing">
             {isVPNPlanWithoutTrial ? c('Signup').jt`From ${priceElement}` : c('Signup').jt`Then ${priceElement}`}
         </span>
     ) : (
