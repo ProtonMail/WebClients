@@ -47,6 +47,13 @@ describe('processItemsUpdated', () => {
         expect(result).toBe(false);
         expect(dispatched).toContainEqual(itemsUpdated([item]));
     });
+
+    test('returns `true` and skips dispatch when an item resolves `undefined` (removed share / undecryptable)', async () => {
+        requestItem.mockResolvedValue(undefined);
+        const { result, dispatched } = await run(processItemsUpdated, [createEvent('s1', 'i1')]);
+        expect(result).toBe(true);
+        expect(dispatched).toHaveLength(0);
+    });
 });
 
 describe('processItemsDeleted', () => {

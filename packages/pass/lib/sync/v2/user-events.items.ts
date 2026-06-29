@@ -12,9 +12,10 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import chunk from '@proton/utils/chunk';
 
 /** Processes item updates in batches, dispatching `itemsUpdated` per batch.
- * Items that fail to decrypt resolve to `undefined` and are omitted from the
- * dispatch without blocking the parent event cursor. A failed fetch (rejected
- * request) flips the result to `false` so the batch is retried on next poll. */
+ * Items that fail to decrypt, or that belong to a removed share, resolve to
+ * `undefined` and are omitted from the dispatch without blocking the parent
+ * event cursor. Any other failed fetch flips the result to `false` so the
+ * batch is retried on next poll. */
 export function* processItemsUpdated(updated: SyncEventShareItemOutput[]): EventProcessor {
     if (updated.length === 0) return true;
     let processed = true;

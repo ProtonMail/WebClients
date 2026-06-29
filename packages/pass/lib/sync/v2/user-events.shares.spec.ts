@@ -5,11 +5,12 @@ import * as itemRequests from '@proton/pass/lib/items/item.requests';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
 import * as shareParser from '@proton/pass/lib/shares/share.parser';
 import * as shareRequests from '@proton/pass/lib/shares/share.requests';
-import { createTestShare } from '@proton/pass/lib/shares/share.test.utils';
+import { createShareRemovedError, createTestShare } from '@proton/pass/lib/shares/share.test.utils';
 import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { shareCreated, shareDeleted, shareUpdated } from '@proton/pass/store/actions';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import type { PassCryptoWorker, ShareGetResponse, ShareId, SyncEventShareOutput } from '@proton/pass/types';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
 import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
 
@@ -51,6 +52,13 @@ describe('processSharesCreated', () => {
         expect(result).toBe(true);
         expect(dispatched).toContainEqual(shareCreated({ share, items }));
     });
+
+    test('tolerates share-removed errors: returns `true` and skips dispatch', async () => {
+        requestItemsForShareId.mockRejectedValueOnce(createShareRemovedError());
+        const { result, dispatched } = await run(processSharesCreated, [createEvent('s1')]);
+        expect(result).toBe(true);
+        expect(dispatched).not.toContainEqual(shareCreated({ share, items }));
+    });
 });
 
 describe('processSharesUpdated', () => {
@@ -59,6 +67,19 @@ describe('processSharesUpdated', () => {
         expect(requestShare).toHaveBeenCalledWith('s1');
         expect(result).toBe(true);
         expect(dispatched).toContainEqual(shareUpdated(share));
+    });
+
+    test('tolerates share-removed errors: returns `true` and skips dispatch', async () => {
+        requestShare.mockRejectedValueOnce(createShareRemovedError());
+        const { result, dispatched } = await run(processSharesUpdated, [createEvent('s1')]);
+        expect(result).toBe(true);
+        expect(dispatched).not.toContainEqual(shareUpdated(share));
+    });
+
+    test('returns `false` on a non-share-removed fetch error', async () => {
+        requestShare.mockRejectedValueOnce(new ApiError('', 500, 'TestError'));
+        const { result } = await run(processSharesUpdated, [createEvent('s1')]);
+        expect(result).toBe(false);
     });
 });
 

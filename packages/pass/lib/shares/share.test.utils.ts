@@ -1,5 +1,7 @@
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { Share } from '@proton/pass/types';
 import { ShareRole, ShareType } from '@proton/pass/types';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
 export const createTestShare = (overrides: Partial<Share> = {}): Share => ({
     shareId: 'share',
@@ -23,3 +25,10 @@ export const createTestShare = (overrides: Partial<Share> = {}): Share => ({
     ...overrides,
     ...overrides,
 });
+
+export const createShareRemovedError = (code: PassErrorCode = PassErrorCode.NOT_EXIST_SHARE) => {
+    const data = { Code: code, Error: '[TEST] Share Removed' };
+    const err = new ApiError(data.Error, 422, 'StatusCodeError');
+    err.data = data;
+    return err;
+};
