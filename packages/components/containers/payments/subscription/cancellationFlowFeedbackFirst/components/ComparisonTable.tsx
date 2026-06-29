@@ -41,6 +41,26 @@ export interface ComparisonFeatureRow {
     tooltip?: string;
 }
 
+interface FeatureLabelProps {
+    label: string;
+    tooltip?: string;
+}
+
+const FeatureLabel = ({ label, tooltip }: FeatureLabelProps) => {
+    return (
+        <span>
+            {label}
+            {tooltip && (
+                <Tooltip openDelay={200} title={tooltip}>
+                    <span className="inline-flex shrink-0 items-center justify-center align-text-bottom ml-1">
+                        <IcInfoCircle className="color-primary shrink-0" />
+                    </span>
+                </Tooltip>
+            )}
+        </span>
+    );
+};
+
 const StackRow = ({ icon, label, value, tooltip }: StackRowProps) => {
     return (
         <TableRow>
@@ -48,13 +68,8 @@ const StackRow = ({ icon, label, value, tooltip }: StackRowProps) => {
                 <div className="flex flex-row flex-nowrap gap-2">
                     {icon && <span className="flex shrink-0 items-start pt-0.5">{icon}</span>}
                     <div className="flex-1 flex flex-nowrap items-center justify-space-between gap-1">
-                        <div className="flex flex-1 items-center gap-2">
-                            <span>{label}</span>
-                            {tooltip && (
-                                <Tooltip openDelay={200} title={tooltip}>
-                                    <IcInfoCircle className="color-primary shrink-0" />
-                                </Tooltip>
-                            )}
+                        <div className="flex-1">
+                            <FeatureLabel label={label} tooltip={tooltip} />
                         </div>
                         <span className="shrink-0">{value}</span>
                     </div>
@@ -120,13 +135,8 @@ const SideBySideTable = ({ leftHeader, rightHeader, features, headerClassName }:
                             <TableCell className="w-2/5">
                                 <div className="flex flex-nowrap flex-row items-start gap-2">
                                     <span className="shrink-0 flex mt-0.5">{icon}</span>
-                                    <div className="flex flex-1 items-center gap-2">
-                                        <span>{label}</span>
-                                        {tooltip && (
-                                            <Tooltip openDelay={200} title={tooltip}>
-                                                <IcInfoCircle className="color-primary shrink-0" />
-                                            </Tooltip>
-                                        )}
+                                    <div className="flex-1">
+                                        <FeatureLabel label={label} tooltip={tooltip} />
                                     </div>
                                 </div>
                             </TableCell>
