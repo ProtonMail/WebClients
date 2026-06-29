@@ -3,66 +3,7 @@ import { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-// Custom hook for encrypted text animation
-const useEncryptedTextAnimation = (targetText: string, trigger: boolean, duration: number = 600) => {
-    const [displayText, setDisplayText] = useState(targetText);
-    const [isAnimating, setIsAnimating] = useState(false);
-
-    useEffect(() => {
-        if (!trigger) {
-            setDisplayText(targetText);
-            return;
-        }
-
-        setIsAnimating(true);
-        const chars = '0123456789ABCDEF'; // Simple hex characters
-        const totalChars = targetText.length;
-
-        const revealedChars = new Set<number>();
-        const animationSteps = 15; // Much fewer steps for speed
-        const stepDelay = duration / animationSteps;
-
-        const animate = (step: number) => {
-            if (step >= animationSteps) {
-                setDisplayText(targetText);
-                setIsAnimating(false);
-                return;
-            }
-
-            // Linear progress for consistent speed
-            const progress = step / animationSteps;
-            const charsToReveal = Math.floor(progress * totalChars);
-
-            // Reveal characters from left to right with some randomness
-            while (revealedChars.size < charsToReveal && revealedChars.size < totalChars) {
-                let nextChar = revealedChars.size;
-                // Add slight randomness but keep mostly left-to-right
-                if (Math.random() < 0.3 && nextChar + 1 < totalChars) {
-                    nextChar = revealedChars.size + Math.floor(Math.random() * 2);
-                }
-                revealedChars.add(nextChar);
-            }
-
-            let newText = '';
-            for (let i = 0; i < targetText.length; i++) {
-                if (targetText[i] === ' ') {
-                    newText += ' ';
-                } else if (revealedChars.has(i)) {
-                    newText += targetText[i];
-                } else {
-                    newText += chars[Math.floor(Math.random() * chars.length)];
-                }
-            }
-
-            setDisplayText(newText);
-            setTimeout(() => animate(step + 1), stepDelay);
-        };
-
-        animate(0);
-    }, [targetText, trigger, duration]);
-
-    return { displayText, isAnimating };
-};
+import { useEncryptedTextAnimation } from '../../../hooks/useEncryptedTextAnimation';
 
 interface LumoMainTextProps {
     isOnboardingCompleted?: boolean;
@@ -91,7 +32,7 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
         targetText = c('collider_2025:Title').t`How can I help?`;
     }
 
-    const { displayText } = useEncryptedTextAnimation(targetText, shouldAnimate, 600);
+    const { displayText } = useEncryptedTextAnimation(targetText, { trigger: shouldAnimate, duration: 600 });
 
     const textClassName = clsx(
         'main-text lh100 transition-all duration-50 ease-out',
@@ -114,10 +55,6 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
     if (isSmallScreen) {
         return <h1 className={textClassName}>{displayText}</h1>;
     }
-
-    // if (isOnboardingCompleted) {
-    //     return <h1 className={`${textClassName} onboarded`}>{displayText}</h1>;
-    // }
 
     return <h1 className={clsx(textClassName, 'text-center mb-8 relative z-10')}>{displayText}</h1>;
 };
