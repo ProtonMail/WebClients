@@ -92,6 +92,7 @@ export const ParticipantList = () => {
     return (
         <SideBar
             onClose={() => dispatch(toggleSideBarState(MeetingSideBars.Participants))}
+            aria-label={c('Aria').t`Participants`}
             absoluteHeader={true}
             isScrolled={isScrolled}
             paddingClassName="py-4"
@@ -107,8 +108,8 @@ export const ParticipantList = () => {
                     ) : (
                         <div className="text-semibold flex items-center flex-nowrap">
                             <div className="flex items-baseline gap-1 flex-nowrap">
-                                <span className="text-semibold text-2xl text-ellipsis">{c('Title')
-                                    .t`Participants`}</span>
+                                <h2 className="text-semibold text-2xl text-ellipsis m-0">{c('Title')
+                                    .t`Participants`}</h2>
                                 <span className="text-semibold text-sm color-hint text-tabular-nums">
                                     {maxParticipants
                                         ? `(${participantsCount}/${maxParticipants})`
@@ -131,41 +132,45 @@ export const ParticipantList = () => {
             }
         >
             <div
-                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full participants-list px-4"
+                className="flex-1 overflow-y-auto w-full h-full participants-list px-4"
                 onScroll={(event) => {
                     setIsScrolled(event.currentTarget.scrollTop > 0);
                 }}
             >
-                {filteredParticipants.map((participant: Participant) => {
-                    // We manage video and audio publication outside ParticipantListItem because livekit participant changes don't trigger
-                    // a rerender on the consumers.
-                    const videoPublication = Array.from(participant.trackPublications.values()).find(
-                        (pub) => pub.kind === Track.Kind.Video && pub.source === Track.Source.Camera
-                    );
-                    const audioPublication = Array.from(participant.trackPublications.values()).find(
-                        (pub) => pub.kind === Track.Kind.Audio && pub.source === Track.Source.Microphone
-                    );
+                <h2 className="sr-only">{c('Title').t`Participants`}</h2>
+                <ul className="unstyled m-0 p-0 flex flex-column flex-nowrap gap-4">
+                    {filteredParticipants.map((participant: Participant) => {
+                        // We manage video and audio publication outside ParticipantListItem because livekit participant changes don't trigger
+                        // a rerender on the consumers.
+                        const videoPublication = Array.from(participant.trackPublications.values()).find(
+                            (pub) => pub.kind === Track.Kind.Video && pub.source === Track.Source.Camera
+                        );
+                        const audioPublication = Array.from(participant.trackPublications.values()).find(
+                            (pub) => pub.kind === Track.Kind.Audio && pub.source === Track.Source.Microphone
+                        );
 
-                    return (
-                        <ParticipantListItem
-                            key={participant.identity}
-                            participant={participant}
-                            isSpeaking={activeSpeakers.has(participant.identity)}
-                            isMuted={!audioPublication || audioPublication.isMuted}
-                            hasVideoPublication={
-                                !!videoPublication && (!videoPublication.isMuted || participant.isLocal)
-                            }
-                            isVideoDisabled={
-                                participant.isLocal
-                                    ? !isVideoEnabled
-                                    : participantsWithDisabledVideos.includes(participant.identity)
-                            }
-                            isLocalParticipantAdmin={isLocalParticipantAdmin}
-                            isLocalParticipantHost={isLocalParticipantHost}
-                            toggleVideo={toggleVideo}
-                        />
-                    );
-                })}
+                        return (
+                            <li key={participant.identity}>
+                                <ParticipantListItem
+                                    participant={participant}
+                                    isSpeaking={activeSpeakers.has(participant.identity)}
+                                    isMuted={!audioPublication || audioPublication.isMuted}
+                                    hasVideoPublication={
+                                        !!videoPublication && (!videoPublication.isMuted || participant.isLocal)
+                                    }
+                                    isVideoDisabled={
+                                        participant.isLocal
+                                            ? !isVideoEnabled
+                                            : participantsWithDisabledVideos.includes(participant.identity)
+                                    }
+                                    isLocalParticipantAdmin={isLocalParticipantAdmin}
+                                    isLocalParticipantHost={isLocalParticipantHost}
+                                    toggleVideo={toggleVideo}
+                                />
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
         </SideBar>
     );

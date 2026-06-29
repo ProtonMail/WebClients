@@ -77,72 +77,80 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
     );
 
     return (
-        <div
-            className="meet-page-header w-full py-4 flex items-center justify-space-between shrink-0 h-custom"
-            style={{ '--h-custom': '5.625rem' }}
-        >
-            <div className={clsx('flex items-center', showAppSwitcher ? 'gap-4' : 'gap-2')}>
-                <button
-                    className="logo-button rounded-full hidden md:block p-2"
-                    onClick={() => history.push('/dashboard')}
-                    aria-label={c('Alt').t`Go to dashboard`}
+        <>
+            <a href="#main-content" className="skip-to-content">
+                {c('Action').t`Skip to main content`}
+            </a>
+            <header
+                className="meet-page-header w-full py-4 flex items-center justify-space-between shrink-0 h-custom"
+                style={{ '--h-custom': '5.625rem' }}
+            >
+                <nav
+                    className={clsx('flex items-center', showAppSwitcher ? 'gap-4' : 'gap-2')}
+                    aria-label={c('Aria').t`Primary navigation`}
                 >
-                    <img className="logo cursor-pointer" src={logo} alt="" />
-                </button>
-                <button
-                    className="logo-button interactive rounded-full block md:hidden p-1 flex items-center justify-center"
-                    onClick={() => history.push('/dashboard')}
-                    aria-label={c('Alt').t`Go to dashboard`}
-                >
-                    <MeetLogo variant="glyph-only" className="logo cursor-pointer" />
-                </button>
+                    <button
+                        className="logo-button rounded-full hidden md:block p-2"
+                        onClick={() => history.push('/dashboard')}
+                        aria-label={c('Alt').t`Go to dashboard`}
+                    >
+                        <img className="logo cursor-pointer" src={logo} alt="" />
+                    </button>
+                    <button
+                        className="logo-button interactive rounded-full block md:hidden p-1 flex items-center justify-center"
+                        onClick={() => history.push('/dashboard')}
+                        aria-label={c('Alt').t`Go to dashboard`}
+                    >
+                        <MeetLogo variant="glyph-only" className="logo cursor-pointer" />
+                    </button>
 
-                <div className="hidden md:inline-block w-fit-content">{buttons}</div>
-            </div>
+                    <div className="hidden md:inline-block w-fit-content">{buttons}</div>
+                </nav>
 
-            {!isInstantJoin && (
-                <div className="flex flex-nowrap gap-2 items-center">
-                    <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
-                        {buttons}
-                    </div>
-                    <div>
-                        <div className="flex items-center sign-in-header-button-container">
-                            {isGuest ? (
-                                <>
-                                    <MeetSignIn className="sign-in-header-button rounded-full py-2">
-                                        {c('Action').t`Sign in`}
-                                    </MeetSignIn>
-                                    <Button
-                                        className="create-account-header-button rounded-full py-2"
-                                        onClick={handleSignUpClick}
-                                        size="medium"
-                                        shape="ghost"
-                                    >
-                                        {c('Action').t`Create an account`}
-                                    </Button>
-                                </>
-                            ) : (
-                                <>
-                                    <UserDropdown
-                                        app={APPS.PROTONMEET}
-                                        logoutRedirectUrl={logoutRedirectUrl}
-                                        extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
-                                        sessionOptions={
-                                            switchAccountReturnPath
-                                                ? { path: switchAccountReturnPath, target: '_self' }
-                                                : undefined
-                                        }
-                                    />
-                                    <SettingsDropdown />
-                                </>
-                            )}
-                            {(isJoinPage || isSchedulePage) && (
-                                <CloseButton onClose={() => history.push('/dashboard')} />
-                            )}
+                {!isInstantJoin && (
+                    <div className="flex flex-nowrap gap-2 items-center">
+                        <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
+                            {buttons}
+                        </div>
+                        <div>
+                            <div className="flex items-center sign-in-header-button-container">
+                                {isGuest ? (
+                                    <>
+                                        <MeetSignIn className="sign-in-header-button rounded-full py-2">
+                                            {c('Action').t`Sign in`}
+                                        </MeetSignIn>
+                                        <Button
+                                            className="create-account-header-button rounded-full py-2"
+                                            onClick={handleSignUpClick}
+                                            size="medium"
+                                            shape="ghost"
+                                        >
+                                            {c('Action').t`Create an account`}
+                                        </Button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <UserDropdown
+                                            app={APPS.PROTONMEET}
+                                            logoutRedirectUrl={logoutRedirectUrl}
+                                            extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
+                                            sessionOptions={
+                                                switchAccountReturnPath
+                                                    ? { path: switchAccountReturnPath, target: '_self' }
+                                                    : undefined
+                                            }
+                                        />
+                                        <SettingsDropdown />
+                                    </>
+                                )}
+                                {(isJoinPage || isSchedulePage) && (
+                                    <CloseButton onClose={() => history.push('/dashboard')} />
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </header>
+        </>
     );
 };

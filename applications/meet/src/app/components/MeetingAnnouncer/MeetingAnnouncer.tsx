@@ -1,33 +1,53 @@
+import type { ReactNode } from 'react';
+import { useEffect } from 'react';
+
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MeetingAnnouncerProvider } from './MeetingAnnouncerContext';
 import { useAnnouncementSources } from './announcementSources/useAnnouncementSources';
 import { getConnectionPhase } from './announcementSources/useConnectionAnnouncements';
 import type { ConnectionAnnouncementState } from './types';
+import { useSetSuspendNonCritical } from './useAnnounce';
 
-const AnnouncementSourcesRunner = ({ connectionState }: { connectionState: ConnectionAnnouncementState }) => {
-    useAnnouncementSources(connectionState);
+const useSuspendNonCriticalSync = (connectionState: ConnectionAnnouncementState) => {
+    const setSuspendNonCritical = useSetSuspendNonCritical();
+    const suspendNonCritical = getConnectionPhase(connectionState) !== 'connected';
+
+    useEffect(() => {
+        setSuspendNonCritical(suspendNonCritical);
+        return () => setSuspendNonCritical(false);
+    }, [suspendNonCritical, setSuspendNonCritical]);
+};
+
+const AnnouncementSourcesRunner = ({
+    connectionState,
+    isUsingTurnRelay,
+}: {
+    connectionState: ConnectionAnnouncementState;
+    isUsingTurnRelay: boolean;
+}) => {
+    useSuspendNonCriticalSync(connectionState);
+    useAnnouncementSources({ connectionState, isUsingTurnRelay });
     return null;
 };
 
-export type MeetingAnnouncerProps = ConnectionAnnouncementState;
+export type MeetingAnnouncerProps = ConnectionAnnouncementState & {
+    isUsingTurnRelay: boolean;
+    children: ReactNode;
+};
 
-// Mount once inside the meeting providers (Redux + LiveKit room).
-export const MeetingAnnouncer = (props: MeetingAnnouncerProps) => {
+// Drives the announcement sources and connection-based suspension for the meeting subtree. The
+// provider itself is mounted higher up (see MeetingAnnouncerProvider in WrappedProtonMeetContainer).
+export const MeetingAnnouncer = ({ isUsingTurnRelay, children, ...connectionState }: MeetingAnnouncerProps) => {
     const enableAccessibilityAnnouncements = useFlag('EnableAccessibilityAnnouncements');
 
     if (!enableAccessibilityAnnouncements) {
-        return null;
+        return <>{children}</>;
     }
 
-    // While not steadily connected, suppress non-critical chatter. A recoverable reconnect
-    // (e.g. STATE_MISMATCH) clears and repopulates the store while this stays mounted, which
-    // would otherwise re-announce every existing participant as a fresh join.
-    const suspendNonCritical = getConnectionPhase(props) !== 'connected';
-
     return (
-        <MeetingAnnouncerProvider suspendNonCritical={suspendNonCritical}>
-            <AnnouncementSourcesRunner connectionState={props} />
-        </MeetingAnnouncerProvider>
+        <>
+            <AnnouncementSourcesRunner connectionState={connectionState} isUsingTurnRelay={isUsingTurnRelay} />
+            {children}
+        </>
     );
 };

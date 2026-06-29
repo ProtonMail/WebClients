@@ -13,10 +13,11 @@ const MAX_TOOLTIP_PARTICIPANTS = 50;
 
 interface ChatMessageReactionsProps {
     messageId: string;
+    messageAriaDescriptionId?: string;
     onReact: (emoji: string) => void;
 }
 
-export const ChatMessageReactions = ({ messageId, onReact }: ChatMessageReactionsProps) => {
+export const ChatMessageReactions = ({ messageId, messageAriaDescriptionId, onReact }: ChatMessageReactionsProps) => {
     const reactions = useMeetSelector((state) => selectChatMessageReactions(state, messageId));
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const { localParticipant } = useLocalParticipant();
@@ -28,7 +29,10 @@ export const ChatMessageReactions = ({ messageId, onReact }: ChatMessageReaction
     }
 
     return (
-        <div className="chat-message-reactions flex flex-wrap gap-1 mt-1">
+        <ul
+            className="chat-message-reactions unstyled m-0 p-0 flex flex-wrap gap-1 mt-1"
+            aria-label={c('Info').t`Reactions`}
+        >
             {entries.map(([emoji, identities]) => {
                 const hasReacted = identities.includes(localParticipant.identity);
                 const displayedParticipants = identities.slice(0, MAX_TOOLTIP_PARTICIPANTS);
@@ -53,36 +57,47 @@ export const ChatMessageReactions = ({ messageId, onReact }: ChatMessageReaction
                     : c('Info').jt`${reactorNames} reacted with ${emoji}`;
 
                 return (
-                    <Tooltip
-                        key={emoji}
-                        title={tooltipContent}
-                        originalPlacement="top"
-                        tooltipClassName="meet-tooltip bg-strong color-norm"
-                        tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
-                    >
-                        <button
-                            type="button"
-                            className={clsx(
-                                'chat-message-reaction-pill flex items-center gap-1',
-                                hasReacted && 'chat-message-reaction-pill--active'
-                            )}
-                            onClick={() => onReact(emoji)}
-                            aria-pressed={hasReacted}
-                            aria-label={c('Action').ngettext(
-                                // translator: {emoji} is the reaction emoji character (e.g. 👍), the number is how many people reacted with it
-                                msgid`React with ${emoji}, ${identities.length} reaction`,
-                                `React with ${emoji}, ${identities.length} reactions`,
-                                identities.length
-                            )}
+                    <li key={emoji} className="flex">
+                        <Tooltip
+                            title={tooltipContent}
+                            originalPlacement="top"
+                            tooltipClassName="meet-tooltip bg-strong color-norm"
+                            tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
                         >
-                            <span aria-hidden="true">{emoji}</span>
-                            <span className="text-xs" aria-hidden="true">
-                                {identities.length}
-                            </span>
-                        </button>
-                    </Tooltip>
+                            <button
+                                type="button"
+                                className={clsx(
+                                    'chat-message-reaction-pill flex items-center gap-1',
+                                    hasReacted && 'chat-message-reaction-pill--active'
+                                )}
+                                onClick={() => onReact(emoji)}
+                                aria-pressed={hasReacted}
+                                aria-describedby={messageAriaDescriptionId}
+                                aria-label={
+                                    hasReacted
+                                        ? c('Action').ngettext(
+                                              // translator: {emoji} is the reaction emoji character (e.g. 👍), the number is how many people reacted with it
+                                              msgid`Remove reaction ${emoji}, ${identities.length} reaction`,
+                                              `Remove reaction ${emoji}, ${identities.length} reactions`,
+                                              identities.length
+                                          )
+                                        : c('Action').ngettext(
+                                              // translator: {emoji} is the reaction emoji character (e.g. 👍), the number is how many people reacted with it
+                                              msgid`React with ${emoji}, ${identities.length} reaction`,
+                                              `React with ${emoji}, ${identities.length} reactions`,
+                                              identities.length
+                                          )
+                                }
+                            >
+                                <span aria-hidden="true">{emoji}</span>
+                                <span className="text-xs" aria-hidden="true">
+                                    {identities.length}
+                                </span>
+                            </button>
+                        </Tooltip>
+                    </li>
                 );
             })}
-        </div>
+        </ul>
     );
 };

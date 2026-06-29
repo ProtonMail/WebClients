@@ -1,3 +1,6 @@
+import { useRef } from 'react';
+
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../CloseButton/CloseButton';
@@ -7,6 +10,7 @@ import './SideBar.scss';
 interface SideBarProps {
     children: React.ReactNode;
     onClose: () => void;
+    'aria-label': string;
     header?: React.ReactNode;
     absoluteHeader?: boolean;
     isScrolled?: boolean;
@@ -17,18 +21,33 @@ interface SideBarProps {
 export const SideBar = ({
     children,
     onClose,
+    'aria-label': ariaLabel,
     header,
     absoluteHeader = false,
     isScrolled = false,
     paddingClassName = 'p-4',
     paddingHeaderClassName = '',
 }: SideBarProps) => {
+    const asideRef = useRef<HTMLDivElement>(null);
+
+    // Trap Tab focus within the open side-bar, focus it on open, and restore
+    // focus to the opener on close. `disableRestoreByPointer` is off so focus
+    // returns to the opener even when closed via a pointer click.
+    const focusTrapProps = useFocusTrap({
+        rootRef: asideRef,
+        enableInitialFocus: false,
+        disableRestoreByPointer: false,
+    });
+
     return (
-        <div
+        <aside
+            ref={asideRef}
+            aria-label={ariaLabel}
             className={clsx(
                 'meet-side-bar border border-norm flex flex-nowrap flex-column h-full w-full meet-radius relative max-w-full z-1',
                 paddingClassName
             )}
+            {...focusTrapProps}
         >
             <div
                 className={clsx(
@@ -47,6 +66,6 @@ export const SideBar = ({
             </div>
 
             {children}
-        </div>
+        </aside>
     );
 };

@@ -98,6 +98,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     return (
         <SideBar
             onClose={() => dispatch(toggleSideBarState(MeetingSideBars.MeetingDetails))}
+            aria-label={c('Aria').t`Meeting details`}
             absoluteHeader={true}
             paddingClassName="py-4"
             paddingHeaderClassName="px-4"
@@ -107,7 +108,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                 </div>
             }
         >
-            <div className="flex-1 overflow-auto min-h-0 px-4 outline-none--at-all">
+            <section className="flex-1 overflow-auto min-h-0 px-4 outline-none--at-all">
                 <div className="meeting-info-wrapper meet-radius p-4 mt-20">
                     <h3 className="text-semibold text-rg mb-4">
                         {instantMeeting ? c('Title').t`Meeting details` : c('Title').t`Meeting`}
@@ -264,7 +265,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                         </Table>
                     </div>
                 )}
-            </div>
+            </section>
         </SideBar>
     );
 };

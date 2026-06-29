@@ -78,12 +78,30 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
         }
     };
 
+    const handleFocus = () => {
+        if (canOpenDropdown) {
+            setIsHovered(true);
+        }
+    };
+
+    const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node) && !forceShowPopup) {
+            setIsHovered(false);
+        }
+    };
+
     return (
         <div
             className="relative inline-block h-full flex items-center"
             ref={anchorRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+            tabIndex={canOpenDropdown ? 0 : undefined}
+            aria-haspopup="dialog"
+            aria-expanded={isPopupOpen}
         >
             {children}
             <Dropdown
@@ -93,6 +111,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
                 noCaret
                 originalPlacement={'bottom-start'}
                 availablePlacements={['top-start', 'bottom-start']}
+                disableFocusTrap
                 disableDefaultArrowNavigation
                 autoClose={false}
                 autoCloseOutside={true}
@@ -151,6 +170,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
                                     size="medium"
                                 >
                                     {c('Action').t`Get Meet Professional`}
+                                    <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
                                 </Button>
                             </SettingsLink>
                         </div>
@@ -177,9 +197,9 @@ export const MeetingName = ({ classNames }: MeetingNameProps) => {
     return (
         <Container>
             <div className={clsx('flex items-center gap-2 flex-nowrap items-baseline', classNames?.root)}>
-                <div className={clsx('meeting-name flex-1 text-ellipsis overflow-hidden', classNames?.name)}>
+                <h1 className={clsx('meeting-name flex-1 text-ellipsis overflow-hidden m-0', classNames?.name)}>
                     {roomName}
-                </div>
+                </h1>
                 {showDuration && <MeetingDuration className={classNames?.duration} />}
             </div>
         </Container>

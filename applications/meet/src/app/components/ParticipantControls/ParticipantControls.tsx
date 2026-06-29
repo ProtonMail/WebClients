@@ -42,6 +42,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
+import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
 import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
@@ -96,6 +97,8 @@ export const ParticipantControls = () => {
     const hasMicrophonePermission = microphonePermission === 'granted';
 
     const { toggleVideo, toggleAudio } = useMediaManagementContext();
+
+    const { toolbarProps } = useToolbarRovingFocus<HTMLDivElement>();
 
     // Closing popups with device selection options upon losing permissions
     useEffect(() => {
@@ -157,7 +160,12 @@ export const ParticipantControls = () => {
                     <MeetingName classNames={{ root: 'pl-4 h3', duration: 'ml-2' }} />
                 </div>
 
-                <div className="participant-controls-buttons flex flex-nowrap w-full lg:w-auto gap-1 sm:gap-2 items-center">
+                <div
+                    {...toolbarProps}
+                    role="toolbar"
+                    aria-label={c('Accessibility').t`Meeting controls`}
+                    className="participant-controls-buttons flex flex-nowrap w-full lg:w-auto gap-1 sm:gap-2 items-center"
+                >
                     {!isMobile() ? (
                         <>
                             <ToggleButton
