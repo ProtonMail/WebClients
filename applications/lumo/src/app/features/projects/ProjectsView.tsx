@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components';
+import lumoEmptyProjects from '@proton/styles/assets/img/lumo/lumo-empty-projects.svg';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
@@ -113,7 +114,7 @@ export const ProjectsView = () => {
                 <div className="projects-empty-state-wrapper">
                     <div className="projects-empty-state">
                         <div className="projects-empty-icon">
-                            <img src={lumoProjects} alt="Projects" width={300} />
+                            <img src={lumoEmptyProjects} alt="Projects" width={300} />
                         </div>
                         <h2 className="projects-empty-title">
                             {c('collider_2025:Title').t`Get started by creating a new project`}
