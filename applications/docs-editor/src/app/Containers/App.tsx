@@ -95,6 +95,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
   const [isEditorRefReady, setIsEditorRefReady] = useState(false)
   const scrollPositionBeforePreview = useRef<number | null>(null)
+  const [tableOfContentsVisibleState, setTableOfContentsVisibleState] = useState(false)
 
   useEffect(() => {
     if (userMode !== EditorUserMode.Preview) {
@@ -492,6 +493,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           spreadsheetRef.current.applyPatches(patches)
         }
       },
+
+      async setTableOfContentsVisible(visible: boolean) {
+        setTableOfContentsVisibleState(visible)
+      },
     }
 
     application.logger.info('Setting request handler for bridge')
@@ -657,7 +662,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
   if (documentType === 'doc') {
     return (
-      <DocsLayout.Container isSuggestionMode={isSuggestionMode}>
+      <DocsLayout.Container isSuggestionMode={isSuggestionMode} tableOfContentsVisible={tableOfContentsVisibleState}>
         {showPreviewModeEditor && (
           <PreviewModeEditor
             clonedEditorState={clonedEditorState}
@@ -665,6 +670,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             onUserModeChange={onUserModeChange}
             clientInvoker={bridge.getClientInvoker()}
             initialScrollTop={scrollPositionBeforePreview.current}
+            tableOfContentsVisible={tableOfContentsVisibleState}
           />
         )}
 
@@ -689,6 +695,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             systemMode={systemMode}
             userMode={userMode}
             userAddress={editorConfig.current.userAddress}
+            tableOfContentsVisible={tableOfContentsVisibleState}
           />
         </div>
       </DocsLayout.Container>

@@ -32,6 +32,10 @@ export function useMoveModalDriveSdkEnabled() {
   return useFlag('DocsMoveModalDriveSDK')
 }
 
+export function useIsTableOfContentsEnabled() {
+  return useFlag('DocsTableOfContents') || isDevOrBlack()
+}
+
 /**
  * Checks if the user is allowed to download logs.
  * It will only be active for alpha and dev/black environments for now.
