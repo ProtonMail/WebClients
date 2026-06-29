@@ -2,6 +2,7 @@ import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'reac
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Prompt, useLocation } from 'react-router';
 
+import { type SessionKey, serverTime } from '@protontech/crypto';
 import { addMinutes, differenceInMinutes, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
@@ -33,7 +34,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import usePreventCloseTab from '@proton/components/hooks/usePreventCloseTab';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { type SessionKey, serverTime } from '@protontech/crypto';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
@@ -149,6 +149,7 @@ import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import usePauseCalendarEventLoop from '../../hooks/usePauseCalendarEventLoop';
 import type {
     AttendeeDeleteSingleEditOperation,
+    GetAddedAttendeesPublicKeysMap,
     InviteActions,
     OnSendPrefsErrors,
     RecurringActionData,
@@ -178,7 +179,7 @@ import EditRecurringConfirmModal from './confirmationModals/editRecurring/EditRe
 import EditSingleConfirmModal from './confirmationModals/editSingleModal/EditSingleConfirmModal';
 import getDeleteEventActions from './eventActions/getDeleteEventActions';
 import getSaveEventActions from './eventActions/getSaveEventActions';
-import { getSendIcsAction } from './eventActions/inviteActions';
+import { getAddedAttendeesPublicKeysMap, getSendIcsAction } from './eventActions/inviteActions';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
 import {
     deleteConferenceData,
@@ -371,6 +372,7 @@ const InteractiveCalendarView = ({
     const [{ hasPaidMail }] = useUser();
     const isSavingEvent = useRef(false);
     const isEditSingleOccurrenceEnabled = useFlag('EditSingleOccurrenceWeb');
+    const canAutoAddDisabledE2EEAttendees = useFlag('AutoAddDisabledE2EEAttendees');
     const [targetEventElement, setTargetEventElement] = useState<HTMLElement | null>(null);
     const [targetMoreElement, setTargetMoreElement] = useState<HTMLDivElement | null>(null);
     const eventInPopoverUniqueIdRef = useRef<string | undefined>(undefined);
@@ -1234,12 +1236,27 @@ const InteractiveCalendarView = ({
         });
 
         await sendIcsAction();
+
         return {
             veventComponent: cleanVevent,
             inviteActions: cleanInviteActions,
             timestamp: currentTimestamp,
             sendPreferencesMap,
         };
+    };
+
+    const handleGetAddedAttendeesPublicKeysMap: GetAddedAttendeesPublicKeysMap = ({
+        veventComponent,
+        inviteActions,
+        sendPreferencesMap,
+    }) => {
+        return getAddedAttendeesPublicKeysMap({
+            veventComponent,
+            inviteActions,
+            sendPreferencesMap,
+            getEncryptionPreferences,
+            canAutoAddDisabledE2EEAttendees,
+        });
     };
 
     const handleCloseConfirmation = () => {
@@ -1890,6 +1907,7 @@ const InteractiveCalendarView = ({
                 getAddressKeys,
                 getCanonicalEmailsMap,
                 sendIcs: handleSendIcs,
+                getAddedAttendeesPublicKeysMap: handleGetAddedAttendeesPublicKeysMap,
                 getCalendarEventRaw,
                 reencryptSharedEvent: handleReencryptSharedEvent,
                 onSendPrefsErrors: handleSendPrefsErrors,

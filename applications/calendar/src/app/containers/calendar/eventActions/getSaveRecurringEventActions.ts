@@ -1,5 +1,6 @@
-import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import type { PublicKeyReference } from '@protontech/crypto';
+
+import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import {
     getHasDefaultNotifications,
     getIsAutoAddedInvite,
@@ -26,6 +27,7 @@ import unary from '@proton/utils/unary';
 import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import type { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import type {
+    GetAddedAttendeesPublicKeysMap,
     InviteActions,
     OnSendPrefsErrors,
     ReencryptInviteActionData,
@@ -60,7 +62,6 @@ import {
     handleConferenceDataInMergedVeventIfNeeded,
 } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
-import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncrementedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
 
@@ -83,6 +84,7 @@ interface SaveRecurringArguments {
     isBreakingChange: boolean;
     inviteActions: InviteActions;
     sendIcs: SendIcs;
+    getAddedAttendeesPublicKeysMap: GetAddedAttendeesPublicKeysMap;
     getCalendarEventRaw: GetCalendarEventRaw;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
@@ -120,6 +122,7 @@ const getSaveRecurringEventActions = async ({
     isAttendee,
     isBreakingChange,
     sendIcs,
+    getAddedAttendeesPublicKeysMap,
     getCalendarEventRaw,
     handleSyncActions,
     onSendPrefsErrors,
@@ -243,7 +246,7 @@ const getSaveRecurringEventActions = async ({
                     cancelVevent: oldVeventComponent,
                 });
 
-                addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
+                addedAttendeesPublicKeysMap = await getAddedAttendeesPublicKeysMap({
                     veventComponent: finalVevent,
                     inviteActions: finalInviteActions,
                     sendPreferencesMap,
@@ -324,6 +327,7 @@ const getSaveRecurringEventActions = async ({
                   memberID: newMemberID,
                   getCalendarKeys,
                   sendIcs,
+                  getAddedAttendeesPublicKeysMap,
                   onSendPrefsErrors,
                   handleSyncActions,
                   isBreakingChange,
@@ -633,7 +637,7 @@ const getSaveRecurringEventActions = async ({
                                 noCheckSendPrefs: true,
                             });
                             updatedSingleEditVevent = finalVevent;
-                            addedAttendeesSingleEditPublicKeysMap = getAddedAttendeesPublicKeysMap({
+                            addedAttendeesSingleEditPublicKeysMap = await getAddedAttendeesPublicKeysMap({
                                 veventComponent: finalVevent,
                                 inviteActions: finalInviteActions,
                                 sendPreferencesMap,
@@ -688,7 +692,7 @@ const getSaveRecurringEventActions = async ({
             if (cleanVeventComponent) {
                 updatedVeventComponent = cleanVeventComponent;
                 updatedInviteActions = cleanInviteActions;
-                addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
+                addedAttendeesPublicKeysMap = await getAddedAttendeesPublicKeysMap({
                     veventComponent: updatedVeventComponent,
                     inviteActions: updatedInviteActions,
                     sendPreferencesMap,

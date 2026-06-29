@@ -1,5 +1,6 @@
-import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import type { PublicKeyReference } from '@protontech/crypto';
+
+import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { getAttendeeEmail, getEquivalentAttendees, withPartstat } from '@proton/shared/lib/calendar/attendees';
 import type { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
@@ -18,6 +19,7 @@ import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import type { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
@@ -148,11 +150,7 @@ export const getHasProtonAttendees = (
     });
 };
 
-const extractProtonAttendeePublicKey = (email: string, sendPreferencesMap: SimpleMap<SendPreferences>) => {
-    const sendPreferences = sendPreferencesMap[email];
-    if (!sendPreferences) {
-        return;
-    }
+const extractProtonAttendeePublicKey = (sendPreferences: SendPreferences) => {
     const { publicKeys, isInternal, error } = sendPreferences;
     if (!isInternal) {
         // Not a Proton Attendee then
@@ -187,22 +185,52 @@ const extractNewInvitedAttendeeEmails = (veventComponent: VcalVeventComponent, i
     return [];
 };
 
-export const getAddedAttendeesPublicKeysMap = ({
+export const getAddedAttendeesPublicKeysMap = async ({
     veventComponent,
     inviteActions,
     sendPreferencesMap,
+    getEncryptionPreferences,
+    canAutoAddDisabledE2EEAttendees,
 }: {
     veventComponent: VcalVeventComponent;
     inviteActions: InviteActions;
     sendPreferencesMap: SimpleMap<SendPreferences>;
+    getEncryptionPreferences: GetEncryptionPreferences;
+    canAutoAddDisabledE2EEAttendees: boolean;
 }) => {
     const addedAttendeesEmails = extractNewInvitedAttendeeEmails(veventComponent, inviteActions);
-    return addedAttendeesEmails.reduce<SimpleMap<PublicKeyReference>>((acc, email) => {
-        const publicKey = extractProtonAttendeePublicKey(email, sendPreferencesMap);
-        if (!publicKey) {
-            return acc;
+
+    const entries = await Promise.all(
+        addedAttendeesEmails.map(async (email): Promise<[string, PublicKeyReference | undefined]> => {
+            const sendPreferences = sendPreferencesMap[email];
+            if (!sendPreferences) {
+                return [email, undefined];
+            }
+
+            // Internal attendees (with E2EE enabled for mail) already carry their public key in the mail
+            // send preferences, so we reuse it directly without an extra request.
+            if (sendPreferences.isInternal) {
+                return [email, extractProtonAttendeePublicKey(sendPreferences)];
+            }
+
+            // Internal attendees with E2EE disabled for mail are reported as external (without keys) by the mail
+            // send preferences. We refetch their encryption preferences as internal keys (intendedForEmail: false)
+            // to retrieve the address public key needed to auto-add the event to their calendar.
+            // Gated behind a flag as the backend must support auto-adding such attendees first.
+            if (canAutoAddDisabledE2EEAttendees && sendPreferences.encryptionDisabled) {
+                const { isInternal, sendKey } = await getEncryptionPreferences({ email, intendedForEmail: false });
+                return [email, isInternal ? sendKey : undefined];
+            }
+
+            // Genuine external attendees are not auto-added.
+            return [email, undefined];
+        })
+    );
+
+    return entries.reduce<SimpleMap<PublicKeyReference>>((acc, [email, publicKey]) => {
+        if (publicKey) {
+            acc[email] = publicKey;
         }
-        acc[email] = publicKey;
         return acc;
     }, {});
 };
