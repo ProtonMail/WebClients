@@ -67,6 +67,15 @@ export const taskRunning = (state: MailState) => state.elements.taskRunning;
 const awaitingStaleRetryMap = (state: MailState) => state.elements.awaitingStaleRetry;
 export const addresses = (state: MailState) => state.addresses;
 
+export const selectActiveCategoryID = createSelector(
+    [selectCategoryIDs],
+    (categoryIDs): CategoryLabelID | undefined => {
+        return categoryIDs.includes(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
+            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+            : categoryIDs[0];
+    }
+);
+
 const currentPage = (_: MailState, { page }: { page: number }) => page;
 const currentSearch = (_: MailState, { search }: { search: SearchParameters }) => search;
 const currentESDBStatus = (
