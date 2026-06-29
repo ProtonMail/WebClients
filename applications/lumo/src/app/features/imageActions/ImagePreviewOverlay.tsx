@@ -158,7 +158,7 @@ export const ImagePreviewOverlay = ({
                     <Tooltip title={c('collider_2025:Action').t`Close`}>
                         <button
                             type="button"
-                            className="image-preview-close inline-flex items-center justify-center border rounded-full bg-norm color-norm"
+                            className="image-preview-close inline-flex items-center justify-center border rounded-lg bg-norm color-norm"
                             onClick={onClose}
                             aria-label={c('collider_2025:Action').t`Close`}
                         >

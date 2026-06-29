@@ -14,7 +14,7 @@ import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/
 import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestSignInState';
 import { LazyLottie } from '../../components/LazyLottie';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
-import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
+// import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useLumoTheme } from '../../providers';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
@@ -26,10 +26,8 @@ import { base64ToFile } from '../../util/imageHelpers';
 import { CreatedGrid } from './CreatedGrid';
 import { ExploreGalleryGrid } from './ExploreGalleryGrid';
 import { GalleryImageLimitUpsell } from './GalleryImageLimitUpsell';
-import { DiscoverList } from './InspirationPanel';
 import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
 import { useNativeComposerImageGenerationStateApi } from './hooks/useNativeComposerImageGenerationStateApi';
-import type { GalleryPromptSuggestion } from './promptSuggestions';
 
 import './GalleryView.scss';
 
@@ -171,7 +169,7 @@ interface CreateTabContentProps {
     isProcessingAttachment: boolean;
     composerPrefill: string | undefined;
     gallerySketchTrigger: boolean;
-    onSuggestionClick: (suggestion: GalleryPromptSuggestion) => void;
+    // onSuggestionClick: (suggestion: GalleryPromptSuggestion) => void;
 }
 
 const CreateTabContent = ({
@@ -179,7 +177,7 @@ const CreateTabContent = ({
     isProcessingAttachment,
     composerPrefill,
     gallerySketchTrigger,
-    onSuggestionClick,
+    // onSuggestionClick,
 }: CreateTabContentProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
     return (
@@ -191,7 +189,7 @@ const CreateTabContent = ({
                     '--lg-max-w-custom': '43rem',
                 }}
             >
-                <div className="lumo-welcome-section flex flex-column items-center text-center w-full flex-none md:flex-auto justify-end">
+                <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
                     <img src={isDarkLumoTheme ? lumojiCreateDark : lumojiCreateLight} alt="" />
                     <h1 className="main-text lh100 text-wrap-balance text-center mb-8 relative z-10">
                         {c('collider_2025:Title').t`What do you want to create today?`}
@@ -209,7 +207,7 @@ const CreateTabContent = ({
                         className="main-container fixed bottom-0 md:static w-full z-20"
                     />
                 </div>
-                <DiscoverList onSuggestionClick={onSuggestionClick} />
+                {/* <DiscoverList onSuggestionClick={onSuggestionClick} /> */}
             </div>
         </div>
     );
@@ -224,14 +222,14 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     const { handleSendMessage } = useConversationActions();
     const { isSmallScreen } = useSidebar();
     const isGuest = useIsGuest();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
     const editImageFileRef = useRef<HTMLInputElement>(null);
     const createdScrollRef = useRef<HTMLDivElement>(null);
     const pendingEditPromptRef = useRef<string>('');
     const [composerPrefill, setComposerPrefill] = useState<string | undefined>(externalPrefill);
-    const [gallerySketchTrigger, setGallerySketchTrigger] = useState(false);
+    const [gallerySketchTrigger] = useState(false);
     // Guests see only the sign-in state (no composer), so block the native
     // composer while mounted as a guest. Visibility is restored on unmount.
     const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({ isBlocking: isGuest });
@@ -256,25 +254,25 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
         [handleFilesSelected]
     );
 
-    const handleSuggestionClick = useCallback(
-        (suggestion: GalleryPromptSuggestion) => {
-            if (suggestion.action === 'sketch') {
-                if (nativeComposerVisibilityApi.showWebComposer()) {
-                    setComposerPrefill(suggestion.getPrompt());
-                }
-                pendingEditPromptRef.current = suggestion.getPrompt();
-                setGallerySketchTrigger(true);
-                setTimeout(() => setGallerySketchTrigger(false), 0);
-                injectNativeImageGenerationHelper(pendingEditPromptRef.current);
-            } else if (suggestion.action === 'edit_image') {
-                pendingEditPromptRef.current = suggestion.getPrompt();
-                editImageFileRef.current?.click();
-            } else {
-                navigate(`/?q=${encodeURIComponent(suggestion.getPrompt())}`);
-            }
-        },
-        [navigate, nativeComposerVisibilityApi]
-    );
+    // const handleSuggestionClick = useCallback(
+    //     (suggestion: GalleryPromptSuggestion) => {
+    //         if (suggestion.action === 'sketch') {
+    //             if (nativeComposerVisibilityApi.showWebComposer()) {
+    //                 setComposerPrefill(suggestion.getPrompt());
+    //             }
+    //             pendingEditPromptRef.current = suggestion.getPrompt();
+    //             setGallerySketchTrigger(true);
+    //             setTimeout(() => setGallerySketchTrigger(false), 0);
+    //             injectNativeImageGenerationHelper(pendingEditPromptRef.current);
+    //         } else if (suggestion.action === 'edit_image') {
+    //             pendingEditPromptRef.current = suggestion.getPrompt();
+    //             editImageFileRef.current?.click();
+    //         } else {
+    //             navigate(`/?q=${encodeURIComponent(suggestion.getPrompt())}`);
+    //         }
+    //     },
+    //     [navigate, nativeComposerVisibilityApi]
+    // );
 
     const handleTryPrompt = useCallback((prompt: string) => {
         setComposerPrefill(prompt);
@@ -371,7 +369,7 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
                         isProcessingAttachment={isProcessingAttachment}
                         composerPrefill={composerPrefill}
                         gallerySketchTrigger={gallerySketchTrigger}
-                        onSuggestionClick={handleSuggestionClick}
+                        // onSuggestionClick={handleSuggestionClick}
                     />
                 )}
                 {activeTab === 'gallery' && (
