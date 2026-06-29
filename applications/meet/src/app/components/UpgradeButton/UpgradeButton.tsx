@@ -23,6 +23,7 @@ export const UpgradeButton = () => {
         <SettingsLink path={'/dashboard'} target={'_blank'} className="upgrade-button-link">
             <Button icon={true} className="shrink-0 md:hidden button-promotion color-norm">
                 <UpgradeIcon />
+                <span className="sr-only">{c('Accessibility').t`Upgrade (opens in new tab)`}</span>
             </Button>
             <Button
                 size="medium"
@@ -32,6 +33,7 @@ export const UpgradeButton = () => {
             >
                 <UpgradeIcon />
                 <div className="ml-2">{c('Upgrade Button').t`Upgrade`}</div>
+                <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
             </Button>
         </SettingsLink>
     );

@@ -50,27 +50,38 @@ const VideoSettingsDropdownComponent = ({
             onClose={onClose}
             originalPlacement={activeBreakpoint === 'small' ? 'top-end' : 'top-start'}
         >
-            <div className="flex flex-column gap-2 px-4 py-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
+            <section
+                className="flex flex-column gap-2 px-4 py-2 meet-scrollbar overflow-x-hidden overflow-y-auto"
+                aria-label={c('Aria').t`Video settings`}
+                // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+                tabIndex={0}
+            >
                 <div className="flex flex-column gap-2">
-                    <div className="color-weak meet-font-weight text-uppercase text-sm">
+                    <div className="color-weak meet-font-weight text-uppercase text-sm" id="video-camera-label">
                         {noCameraDetected ? c('Info').t`No camera detected` : c('Info').t`Select a camera`}
                     </div>
-                    {cameras.map((camera) => (
-                        <OptionButton
-                            key={camera.deviceId}
-                            showIcon={camera.deviceId === videoDeviceId}
-                            label={camera.label}
-                            onClick={() => {
-                                if (camera.deviceId === videoDeviceId) {
-                                    return;
-                                }
+                    {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
+                    <div role="listbox" aria-labelledby="video-camera-label" className="flex flex-column gap-2">
+                        {cameras.map((camera) => (
+                            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+                            <OptionButton
+                                key={camera.deviceId}
+                                showIcon={camera.deviceId === videoDeviceId}
+                                label={camera.label}
+                                onClick={() => {
+                                    if (camera.deviceId === videoDeviceId) {
+                                        return;
+                                    }
 
-                                void withCameraLoading(camera.deviceId, () => handleCameraChange(camera.deviceId));
-                            }}
-                            loading={isCameraLoading(camera.deviceId)}
-                            Icon={IcCheckmark}
-                        />
-                    ))}
+                                    void withCameraLoading(camera.deviceId, () => handleCameraChange(camera.deviceId));
+                                }}
+                                loading={isCameraLoading(camera.deviceId)}
+                                Icon={IcCheckmark}
+                                role="option"
+                                ariaSelected={camera.deviceId === videoDeviceId}
+                            />
+                        ))}
+                    </div>
                 </div>
                 <div className="flex flex-column gap-4">
                     <div className="color-weak meet-font-weight text-uppercase text-sm">{c('Info')
@@ -87,7 +98,7 @@ const VideoSettingsDropdownComponent = ({
                         />
                     </div>
                 </div>
-            </div>
+            </section>
         </DeviceSettingsDropdown>
     );
 };

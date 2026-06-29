@@ -30,7 +30,7 @@ export const MicrophoneWithVolume = ({ size, volume }: MicrophoneWithVolumeProps
     const clipPathY = clipPathYValues[Math.floor(Math.min(clipPathYValues.length - 1, volumeIndicatorTop))];
 
     return (
-        <svg className={`icon-size-${size}`} viewBox="0 0 16 16">
+        <svg className={`icon-size-${size}`} viewBox="0 0 16 16" aria-hidden="true">
             <g>
                 <use href="#ic-meet-microphone" />
                 <defs>

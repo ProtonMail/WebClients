@@ -71,6 +71,7 @@ export const ParticipantsButton = ({
             indicatorContent={totalParticipantCount.toString()}
             indicatorStatus={getParticipantCountIndicatorVariant()}
             ariaLabel={c('Alt').t`Toggle participants`}
+            ariaPressed={sideBarState[MeetingSideBars.Participants]}
             tooltipTitle={getParticipantButtonTooltipTitle()}
         />
     );

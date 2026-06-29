@@ -28,6 +28,8 @@ export const selectIsLocalScreenShare = (state: MeetState) =>
     state.screenShareStatus.participantScreenSharingIdentity !== null &&
     state.screenShareStatus.participantScreenSharingIdentity === state.sortedParticipants.localParticipantIdentity;
 export const selectIsScreenShare = (state: MeetState) => !!state.screenShareStatus.participantScreenSharingIdentity;
+export const selectScreenSharingParticipantIdentity = (state: MeetState) =>
+    state.screenShareStatus.participantScreenSharingIdentity;
 export const selectIsParticipantScreenSharing = (meetState: MeetState, participantIdentity: string) =>
     meetState.screenShareStatus.participantScreenSharingIdentity === participantIdentity;
 
