@@ -257,6 +257,7 @@ export type IconName =
     | 'image-stacked'
     | 'inbox'
     | 'inbox-filled'
+    | 'infinite'
     | 'info-circle'
     | 'info-circle-filled'
     | 'key'
