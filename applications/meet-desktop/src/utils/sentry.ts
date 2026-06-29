@@ -1,6 +1,5 @@
 import {
     addBreadcrumb,
-    anrIntegration,
     captureMessage,
     childProcessIntegration,
     electronMinidumpIntegration,
@@ -69,15 +68,12 @@ export async function initializeSentry() {
         getSessions: () => [appSession(), updateSession()],
         maxBreadcrumbs: 100,
         attachStacktrace: true,
-        autoSessionTracking: true,
+        sampleRate: 1.0,
         environment,
         release,
-        integrations: (defaultIntegrations) => [
-            ...defaultIntegrations,
-            electronMinidumpIntegration(),
-            childProcessIntegration(),
-            anrIntegration({ captureStackTrace: true }),
-        ],
+        integrations: (defaultIntegrations) => {
+            return [...defaultIntegrations, electronMinidumpIntegration(), childProcessIntegration()];
+        },
     });
 
     setUser({
