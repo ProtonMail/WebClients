@@ -2,6 +2,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getMessageBlocks } from '../../messageHelpers';
 import type { Attachment, CompactionStats, CompactionStrategyName, Message, MessageId } from '../../types';
+import { buildCompactionAudit, collectClearedToolNames, collectDroppedToolNames } from './audit';
 import {
     CLEARED_TOOL_RESULT_PLACEHOLDER,
     COMPACTION_TARGET_TOKENS,
@@ -19,11 +20,6 @@ import {
     estimateTextTokens,
 } from './tokens';
 import { buildTranscript } from './transcript';
-import {
-    buildCompactionAudit,
-    collectClearedToolNames,
-    collectDroppedToolNames,
-} from './audit';
 
 export type Summarizer = (transcript: string) => Promise<string>;
 
@@ -39,6 +35,13 @@ export type CompactionEngineOptions = {
      * condensed transcript is returned instead.
      */
     summarize?: Summarizer;
+    /**
+     * Force the LLM summarization step to run even when the cheaper strategies
+     * (or the existing size) already bring the head within budget. Used by the
+     * debug console to exercise the full summarization path on demand; a
+     * summarizer (or `api`) must be available for this to have any effect.
+     */
+    forceLlmSummary?: boolean;
     /**
      * Full conversation attachments, used to account for the real token cost of
      * the summarized region. Without these the reported stats only reflect
@@ -187,7 +190,7 @@ export async function compactConversation(
     let summary: string;
     let usedLlmSummary = false;
 
-    if (!withinBudget() && summarizer) {
+    if ((!withinBudget() || options.forceLlmSummary) && summarizer) {
         summary = await summarizer(truncateTranscriptForSummary(transcript));
         usedLlmSummary = true;
         appliedStrategies.push('llm_summary');
