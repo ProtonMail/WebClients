@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import { isGeneratedImageAttachment } from '../lib/imageAttachment';
 import type { ContextFilter } from '../llm';
 import { getSummarizedMessageIds } from '../llm/compaction';
 import { useLumoSelector } from '../redux/hooks';
@@ -37,6 +38,9 @@ export const useFilteredFiles = (
     const contextFilters = useLumoSelector(selectContextFilters);
     const summarizedMessageIds = useMemo(() => getSummarizedMessageIds(messageChain), [messageChain]);
 
+    const shouldShowInFilesPanel = (attachment: Attachment) =>
+        attachment.role !== 'assistant' || isGeneratedImageAttachment(attachment);
+
     // Build a lookup map that includes both Redux attachments AND shallow attachments from messages
     // This is important because auto-retrieved Drive attachments are not pushed to server,
     // so on synced browsers they only exist as shallow attachments in the message chain
@@ -60,14 +64,18 @@ export const useFilteredFiles = (
         // Skip deleted Drive files (unlinked folders)
         // If it's a Drive file (has driveNodeId) and not in the attachment store, it was deleted
         if (!fullAtt && shallowAttachment.driveNodeId) {
-            console.log('[useFilteredFiles] Skipping deleted Drive attachment:', shallowAttachment.id, shallowAttachment.filename);
+            console.log(
+                '[useFilteredFiles] Skipping deleted Drive attachment:',
+                shallowAttachment.id,
+                shallowAttachment.filename
+            );
             return null;
         }
 
         return fullAtt;
     };
 
-    // Get files to display based on filtering (excluding assistant-generated images)
+    // Get files to display based on filtering (excluding non-image assistant attachments)
     const allFiles = useMemo(() => {
         if (!filterMessage) {
             // Show all files from messages in the conversation
@@ -77,8 +85,8 @@ export const useFilteredFiles = (
                         ?.map((shallowAttachment) => {
                             const fullAttachment = getFullAttachmentFromShallow(shallowAttachment);
                             if (!fullAttachment) return null;
-                            // Filter out assistant-generated attachments (e.g., inline images)
-                            if (fullAttachment.role === 'assistant') return null;
+                            // Skip non-image assistant attachments; Lumo-generated images are shown.
+                            if (!shouldShowInFilesPanel(fullAttachment)) return null;
                             return {
                                 ...fullAttachment,
                                 // Merge autoRetrieved flag from shallow attachment (for project files)
@@ -111,7 +119,7 @@ export const useFilteredFiles = (
                     const fullAttachment = combinedAttachments[attachmentId];
                     if (!fullAttachment) return null;
                     // Filter out assistant-generated attachments
-                    if (fullAttachment.role === 'assistant') return null;
+                    if (!shouldShowInFilesPanel(fullAttachment)) return null;
 
                     // Find which message this attachment belongs to for display purposes
                     let messageId = '';
@@ -143,7 +151,7 @@ export const useFilteredFiles = (
                     const fullAttachment = getFullAttachmentFromShallow(shallowAttachment);
                     if (!fullAttachment) return null;
                     // Filter out assistant-generated attachments
-                    if (fullAttachment.role === 'assistant') return null;
+                    if (!shouldShowInFilesPanel(fullAttachment)) return null;
                     return {
                         ...fullAttachment,
                         // Merge autoRetrieved flag from shallow attachment
