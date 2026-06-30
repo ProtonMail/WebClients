@@ -90,6 +90,9 @@
       "Add": [
         "Přidat"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Přidat ${ BRAND_NAME } Účet"
       ],
@@ -1782,6 +1785,9 @@
       "Verify domain": [
         "Ověřit doménu"
       ],
+      "Verify now": [
+        "Ověřit nyní"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Ověřit doménu ${ unverifiedSSODomain.DomainName }"
       ],
@@ -2912,6 +2918,9 @@
       ],
       "Configure migration": [
         "Nastavte migraci"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Pro zahájení migrace kontaktujte svého správce."
       ],
       "Contacts": [
         "Kontakty"
@@ -4044,6 +4053,9 @@
       "Canada": [
         "Kanada"
       ],
+      "Canary Islands": [
+        "Kanárské ostrovy"
+      ],
       "Cape Verde": [
         "Kapverdské ostrovy"
       ],
@@ -5071,6 +5083,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Každý člen vaší organizace se může připojit ke sdíleným serverům ve všech zemích."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pro bezproblémové zahájení používání ${ BRAND_NAME } vaším týmem importujte data ze služeb Google, Outlook a dalších."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
@@ -5195,7 +5210,7 @@
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
       ],
       "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
-        "S novými kategoriemi e-mailů budou do Vaší primární doručené pošty chodit pouze důležité zprávy. Kategorie fungují přesně jako filtry spamu. ${ MAIL_APP_NAME } nikdy nečte Vaše e-maily ani nesdílí Vaše data."
+        "Díky novým kategoriím e-mailů se do vaší hlavní doručené pošty dostanou pouze důležité zprávy. Kategorie fungují stejně jako filtry spamu. ${ MAIL_APP_NAME } nikdy nečte vaše e-maily ani nesdílí vaše data."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Již máte adresu Gmail, která přeposílá na ${ MAIL_APP_NAME }. Připojte ji níže a posílejte a přijímejte e-maily přímo z ${ MAIL_APP_NAME }."
@@ -7097,6 +7112,9 @@
       "Please add a payment method before reactivating your subscription": [
         "Před opětovnou aktivací předplatného přidejte platební metodu"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Zkontrolujte prosím, zda je vaše ABN registrováno pro přeshraniční DPH"
+      ],
       "Please complete the billing details": [
         "Prosím, doplňte fakturační údaje"
       ],
@@ -7372,6 +7390,9 @@
       ],
       "Validation error": [
         "Chyba ověření"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "DIČ musí začínat ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Ověření se nezdařilo, zkuste to prosím za hodinu znovu."
@@ -8310,9 +8331,6 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Vložte bezpečnostní klíč do USB portu v zařízení."
-      ],
       "Security key": [
         "Bezpečnostní klíč"
       ],
@@ -8324,6 +8342,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Tím odstraníte všechny bezpečnostní klíče spojené s vaším účtem."
+      ],
+      "Touch your security key.": [
+        "Dotkněte se svého bezpečnostního klíče."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Ověřte svou identitu pomocí fyzického bezpečnostního klíče U2F nebo FIDO2"
@@ -9387,9 +9408,6 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } bude nastaven jako výchozí kalendář."
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "Tarify ${ BRAND_NAME } Business poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k produktivní a organizované práci, a zároveň chrání vaši firmu."
-      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } je soukromí, kterému můžete důvěřovat, zajištěné silným šifrováním, otevřeným zdrojovým kódem a švýcarskými zákony o ochraně osobních údajů. Věříme, že nikdo by neměl mít možnost zneužít vaše data, tečka. Naše technologie a podnikání jsou založeny na takto vysoké definici soukromí."
       ],
@@ -9660,6 +9678,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } byl aktualizován"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skrývá váš síťový provoz. ${ PASS_SHORT_APP_NAME } skrývá vaši identitu\n— neomezené **hide-my-email aliasy** a **upozornění na úniky na dark webu**, pokud by došlo k úniku vašich dat."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Země vyžaduje tarif ${ vpnPlus }."
       ],
@@ -9714,14 +9735,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importovat vaše stávající kódy** z jiných 2FA aplikací, například Google Authenticator"
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
       "**Sync codes** to all your devices": [
         "**Synchronizovat kódy** na všechny vaše zařízení"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Oni získají ${ refereeRewardAmount }** v kreditech, pokud si přihlásí odběr."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Tímto dojde k deaktivaci dvoufázové ověřování.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Toto deaktivuje koncově šifrovaná přeposílání e-mailů:** můžete je znovu nastavit později."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Získáte ${ referrerRewardAmount }** v kreditech za každého přítele, který si přihlásí odběr."
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Samotný e-mail pro obnovení vám neumožňuje obnovit zašifrovaná data** po resetování vašeho hesla."
@@ -9800,6 +9830,9 @@
       ],
       "Activity Monitor": [
         "Monitor aktivity"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Přidat ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Přidat ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10314,6 +10347,12 @@
       "Create a new code on your TV and try again.": [
         "Vytvořte na televizoru nový kód a zkuste to znovu."
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvořte bezpečný cloud pro ${ memberCount } člena",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členy",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členů",
+        "Vytvořte bezpečný cloud pro ${ memberCount } členů"
+      ],
       "Create an account": [
         "Vytvořit účet"
       ],
@@ -10452,6 +10491,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Heslo NEZAPOMEŇTE. Bez hesla nebudete moci spravovat svou organizaci."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamatujete si své heslo? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušit všechny ostatní relace než tu stávající?"
       ],
@@ -10564,7 +10606,7 @@
         "Povolte automatické obnovení pro zachování přístupu k prémiovým funkcím."
       ],
       "Enable email notifications": [
-        "Povolení e-mailových oznámení"
+        "Povolit e-mailová upozornění"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivujte jednotné přihlášení (SSO), aby byla vaše organizace v bezpečí"
@@ -10755,8 +10797,14 @@
       "For easy access to your passwords and more.": [
         "Pro snadný přístup k heslům a dalším údajům."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Za pouhých ${ bundlePlanPriceInline }"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pro uživatele, kteří přecházejí na ${ MAIL_APP_NAME } z jiné e-mailové služby, vyberte kartu ${ boldAddresses } a před změnou záznamu MX přidejte všechny aktivní e-mailové adresy, aby byl zajištěn plynulý přechod."
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
       ],
       "Free forever": [
         "Navždy zdarma"
@@ -11559,6 +11607,9 @@
       "Password must have:": [
         "Heslo musí obsahovat:"
       ],
+      "Password verified": [
+        "Heslo ověřeno"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
@@ -11633,6 +11684,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vyberte štítky, které chcete importovat:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Prosím vyberte druh odkazu, který chcete vložit a vyplňte všechna pole."
@@ -11723,6 +11777,9 @@
       ],
       "Recently used servers:": [
         "Nedávno použité servery:"
+      ],
+      "RECOMMENDED": [
+        "DOPORUČENO"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Doporučeno na důvěryhodných zařízeních. ${ keepMeSignedInLearnMoreLink }"
@@ -12069,6 +12126,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro doporučuje s hodnocením 4,2 z 5 hvězd"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Dočasně nedostupné z důvodu vysokého vytížení. Zkuste to prosím později."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
@@ -12304,7 +12364,7 @@
         "Tímto trvale smažete data a všechny e-mailové adresy spojené s tímto uživatelem."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Tímto trvale smažete Váš účet a všechna jeho data. Tento účet neubude možné znovu aktivovat."
+        "Tímto trvale smažete Váš účet a všechna jeho data. Tento účet nebude možné znovu aktivovat."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
@@ -12383,6 +12443,9 @@
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Abychom zajistili bezpečnost vašeho účtu, potřebujeme se ujistit, že se skutečně pokoušíte přihlásit vy."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
@@ -12695,6 +12758,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Později Vám připomeneme, abyste si znovu ověřili své heslo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
@@ -13676,6 +13742,16 @@
         "Týdenní přehled"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Přepnout na ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Přepnout na ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Zkratky akcí"
@@ -13688,6 +13764,9 @@
       ],
       "Composer shortcuts": [
         "Zkratky editoru"
+      ],
+      "Desktop app navigation": [
+        "Navigace desktopové aplikace"
       ],
       "Folder shortcuts": [
         "Zkratky složek"
@@ -13820,6 +13899,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Ochrana ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znaků"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
@@ -14233,7 +14315,7 @@
         "Pokračovat v rušení"
       ],
       "Conversation grouping": [
-        "Seskupování konverzací"
+        "Seskupovat konverzace"
       ],
       "Conversations per page": [
         "Konverzace na stránku"
@@ -14372,6 +14454,9 @@
       ],
       "Donation amount": [
         "Částka daru"
+      ],
+      "Drive": [
+        "Disk"
       ],
       "Duration": [
         "Doba trvání"
@@ -15636,6 +15721,9 @@
       "Forgot username?": [
         "Zapomněli jste uživatelské jméno?"
       ],
+      "Frequent sign-in problems": [
+        "Časté problémy s přihlášením"
+      ],
       "General": [
         "Obecné"
       ],
@@ -15644,6 +15732,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Získat ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Získejte pomoc od ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Skupiny"
@@ -16899,6 +16990,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Access all countries": [
+        "Přístup ke všem zemím"
+      ],
       "Activity logs and policy": [
         "Logy aktivit a zásady"
       ],
@@ -17085,6 +17179,9 @@
       "Multiple admin roles": [
         "Více rolí správce"
       ],
+      "No streaming support": [
+        "Bez podpory streamování"
+      ],
       "No-logs policy": [
         "Politika neukládání logů"
       ],
@@ -17246,6 +17343,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
+      ],
+      "Unlock streaming": [
+        "Odblokování streamování"
       ],
       "Up to ${ n } user": [
         "Až ${ n } uživatel",
@@ -17737,6 +17837,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } země",
+        "${ n } země",
+        "${ n } zemí",
+        "${ n } zemí"
+      ],
       "Access advanced VPN features": [
         "Odemkněte pokročilé VPN funkce"
       ],
@@ -25158,6 +25264,9 @@
       "Messages and composing": [
         "Zprávy a psaní"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrujte svou organizaci do ${ BRAND_NAME }"
+      ],
       "Migration assistant": [
         "Asistent migrace"
       ],
@@ -25842,6 +25951,9 @@
       "Verify your email": [
         "Ověřte svůj e-mail"
       ],
+      "Verify your password": [
+        "Ověření hesla"
+      ],
       "Verifying your card...": [
         "Ověřování vaší karty..."
       ],
@@ -26189,6 +26301,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Zahrnuje profesionální e-mailovou adresu ve formátu @vasedomena.cz, cloudové úložiště s možností společné úpravy dokumentů, plánování schůzek a videokonference, správu hesel, zabezpečenou ${ VPN_SHORT_APP_NAME } a další funkce."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Okamžitá asistence AI, lidský expert po ruce!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Členové, kteří 2FA nepoužívají, dostanou e-mail s výzvou, aby si ho co nejdříve aktivovali. Uživatelé s jednotným přihlášením nebudou dostávat e-mailové připomenutí."

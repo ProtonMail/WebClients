@@ -584,6 +584,9 @@
       "North Korea": [
         "Triều Tiên"
       ],
+      "North Macedonia": [
+        "Bắc Macedonia"
+      ],
       "Northern Mariana Islands": [
         "Quần đảo Bắc Mariana"
       ],
@@ -864,8 +867,14 @@
       "Enter 6 digits": [
         "Nhập 6 chữ số"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Nhập tên người dùng không bao gồm tên miền (@example.com)"
+      ],
       "Incorrect username": [
         "Sai tên người dùng"
+      ],
+      "Invalid verification code": [
+        "Mã xác thực không hợp lệ"
       ],
       "Not a valid number": [
         "Số không hợp lệ"
@@ -915,9 +924,20 @@
         "Không thể tải trang này. Vui lòng làm mới trang hoặc kiểm tra kết nối internet."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Đã xảy ra lỗi trong quá trình xác thực khóa bảo mật. Vui lòng thử lại."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Chèn khóa bảo mật liên kết với Tài khoản ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Khóa bảo mật"
+      ],
+      "Touch your security key.": [
+        "Chạm vào khóa bảo mật."
       ]
     },
     "fido2: Label": {
@@ -1017,14 +1037,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Việc tạo nhiều tài khoản miễn phí không được phép theo ${ termsLink } của chúng tôi."
       ],
+      "Each code can only be used once": [
+        "Mỗi mã chỉ có thể sử dụng một lần."
+      ],
       "Edit email address": [
         "Chỉnh sửa địa chỉ email"
+      ],
+      "Enter code": [
+        "Nhập mã"
       ],
       "Enter the code from your authenticator app": [
         "Nhập mã từ ứng dụng xác thực của bạn"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Hãy nhập mã xác thực đã được gửi tới ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Nhập mã xác minh. Chữ số ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Nhập mật khẩu của chính bạn (với tư cách là quản trị viên tổ chức)."
@@ -1043,6 +1072,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Nếu bạn không thấy thư điện tử đó trong hộp thư, vui lòng kiểm tra thư mục thư rác."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Nếu mất quyền truy cập vào ứng dụng xác thực, có thể sử dụng 1 trong 16 mã khôi phục sao lưu được cung cấp khi thiết lập xác thực hai yếu tố. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "Kết nối internet bị lỗi"
@@ -1177,6 +1209,9 @@
       "${ n } message per day": [
         "${ n } thư mỗi ngày"
       ],
+      "${ options }-day file version history": [
+        "Lịch sử phiên bản tệp trong ${ options } ngày"
+      ],
       "${ size } attachment size": [
         "Kích thước tập tin đính kèm ${ size }"
       ],
@@ -1245,6 +1280,9 @@
       ],
       "Custom email domains": [
         "Miền email tùy chỉnh"
+      ],
+      "Data retention policies": [
+        "Chính sách lưu giữ dữ liệu"
       ],
       "Desktop app": [
         "Ứng dụng cho máy tính để bàn"
@@ -1496,6 +1534,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Mã được gửi tới ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Xác thực thành công"
       ]
     },
     "Title": {
@@ -1507,6 +1548,9 @@
       ],
       "Enter your password": [
         "Nhập mật khẩu"
+      ],
+      "Human verification": [
+        "Xác minh con người"
       ],
       "Invalid verification code": [
         "Mã xác minh không hợp lệ"

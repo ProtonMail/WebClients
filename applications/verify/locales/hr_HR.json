@@ -75,6 +75,14 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
+      ],
+      "Use your own email domain": [
+        "Koristite vlastitu domenu e-pošte"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Pohrana u oblaku i dijeljenje velikih datoteka"
       ]
     },
     "Country name": {
@@ -576,6 +584,9 @@
       "North Korea": [
         "Sjeverna Koreja"
       ],
+      "North Macedonia": [
+        "Sjeverna Makedonija"
+      ],
       "Northern Mariana Islands": [
         "Sjeverni Marijanski Otoci"
       ],
@@ -847,11 +858,23 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "Domena nije dostupna, pokušajte kasnije"
+      ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
       ],
       "Enter 6 digits": [
         "Unesite 6 znamenki"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Unesite svoje korisničko ime bez domene (@example.com)"
+      ],
+      "Incorrect username": [
+        "Netočno korisničko ime"
+      ],
+      "Invalid verification code": [
+        "Nevažeći kôd za provjeru"
       ],
       "Not a valid number": [
         "Broj telefona nije važeći"
@@ -859,11 +882,23 @@
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
+      "Request timed out": [
+        "Zahtjev je istekao"
+      ],
+      "The email addresses do not match": [
+        "Adrese e-pošte se ne podudaraju"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ovo polje premašuje maksimalni broj od ${ maximumLength } znakova."
+      ],
       "This field is required": [
         "Ovo polje je obavezno"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Pokušajte koristiti samo slova, brojeve i _.-"
       ],
       "Unknown error": [
         "Nepoznata pogreška"
@@ -881,11 +916,25 @@
       ],
       "Something went wrong": [
         "Nešto je pošlo po zlu"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nismo uspjeli učitati ovu stranicu. Osvježite stranicu ili provjerite svoju internetsku vezu."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Nešto je pošlo po zlu prilikom provjere autentičnosti Vašeg sigurnosnog ključa. Pokušajte ponovno."
       ]
     },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Umetnite sigurnosni ključ povezan s Vašim ${ BRAND_NAME } korisničkim računom."
+      ],
       "Security key": [
         "Sigurnosni ključ"
+      ],
+      "Touch your security key.": [
+        "Dodirnite svoj sigurnosni ključ."
       ]
     },
     "fido2: Label": {
@@ -982,6 +1031,12 @@
       ]
     },
     "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Telefonski broj može se koristiti samo za potvrdu jednog ${ BRAND_NAME } korisničkog računa"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Prije zahtjeva za novi kôd za potvrdu, provjerite svoju mapu s neželjenom poštom i provjerite je li ${ strong } ispravna adresa."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
@@ -991,11 +1046,29 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Stvaranje više besplatnih računa nije dopušteno prema našim ${ termsLink }."
       ],
+      "Each code can only be used once": [
+        "Svaki se kôd može upotrijebiti samo jednom"
+      ],
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
+      "Enter code": [
+        "Unesite kôd"
+      ],
+      "Enter the code from your authenticator app": [
+        "Unesi kôd iz svoje autentifikator apl."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Unesite kôd za potvrdu. Znamenka ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Unesi vlastitu lozinku (kao administrator organizacije)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Unesite vlastitu lozinku (kao pouzdani kontakt)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Za dodatne informacije i za uklanjanje ograničenja, prijavite se na ${ mailLink }."
@@ -1009,6 +1082,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Ako ste izgubili pristup svojoj autentifikator apl., možete upotrijebiti 1 od 16 sigurnosnih kôdova za oporavak koji su vam pruženi kada ste postavili dvofaktorsku autentikaciju. ${ learnMoreLink }"
+      ],
       "Internet connection lost": [
         "Prekinuta je internetska veza"
       ],
@@ -1020,6 +1096,9 @@
       ],
       "No results found": [
         "Nema rezultata"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Poslužitelji nisu dostupni. Molimo pokušajte ponovo za nekoliko minuta"
       ],
       "Session timed out": [
         "Sesija je istekla"
@@ -1033,11 +1112,20 @@
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Imamo pretplate koje su posebno osmišljene za korisnike poput Vas koji trebaju više od jedne adrese e-pošte."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Poslat ćemo novi kôd za potvrdu na ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
       ],
+      "Would you like to receive a new verification code?": [
+        "Želite li primiti novi kôd za potvrdu?"
+      ],
       "You can now return to the application to continue": [
         "Sada se možete vratiti u aplikaciju i nastaviti"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Vaš ${ BRAND_NAME } korisnički račun je trenutno suspendiran. Nakon 28 dana, e-pošta se više neće isporučivati u vašu pristiglu poštu, poveznice za dijeljenje na vašem disku bit će blokirane, a nećete moći učitati nove datoteke. Kako biste nastavili koristiti uobičajenu uslugu, molimo vas da platite sve neplaćene fakture."
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
@@ -1073,6 +1161,9 @@
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaša lozinka (pouzdani kontakt)"
       ]
     },
     "Link": {
@@ -1087,6 +1178,11 @@
       ],
       "terms of service": [
         "uvjeti korištenja"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Organizirajte svoju pristiglu poštu pomoću mapa"
       ]
     },
     "new_plans: Action": {
@@ -1141,11 +1237,23 @@
       "${ size } attachment size": [
         "Veličina privitka: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } sigurne pohrane po korisniku"
+      ],
+      "${ size } storage": [
+        "${ size } pohrane"
+      ],
       "${ size } storage per user": [
         "${ size } prostora za pohranu po korisniku"
       ],
+      "10-year file version history": [
+        "10-godišnja povijest verzija datoteka"
+      ],
       "15 GB storage": [
         "15 GB pohrane"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Sve osnovne ${ BRAND_NAME } usluge (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Automatsko brisanje neželjene pošte i otpada"
@@ -1153,14 +1261,26 @@
       "Auto-reply": [
         "Automatski odgovor"
       ],
+      "Automatic email forwarding": [
+        "Automatsko prosljeđivanje e-pošte"
+      ],
       "Calendar sharing": [
         "Dijeljenje kalendara"
+      ],
+      "Catch-all": [
+        "Dohvati-sve"
+      ],
+      "Collaborate and share large files": [
+        "Surađujte i podijelite velike datoteke"
       ],
       "Contact groups": [
         "Grupa kontakata"
       ],
       "Contact groups management": [
         "Upravljanje grupama kontakata"
+      ],
+      "Custom and secure business email": [
+        "Prilagođena i sigurna poslovna e-pošta"
       ],
       "Custom email domains": [
         "Prilagođene domene"
@@ -1189,11 +1309,26 @@
       "Online document editor": [
         "Online uređivač dokumenata"
       ],
+      "Password health": [
+        "Zdravlje lozinke"
+      ],
       "Password-protected Emails": [
         "Emailovi zaštićeni lozinkom"
       ],
+      "Recover previous file versions": [
+        "Oporavi prethodne verzije datoteka"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Planirajte i odgodite e-poštu za bilo koje vrijeme"
+      ],
+      "Share files with no size limit": [
+        "Dijeli datoteke bez ograničenja veličine"
+      ],
       "SMTP submission": [
         "SMTP predaja"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sinkronizirajte i napravite sigurnosnu kopiju svih svojih datoteka na svim uređajima"
       ],
       "Unlimited filters": [
         "Neograničen broj filtera"
@@ -1209,11 +1344,38 @@
       ],
       "Unlimited messages per day": [
         "Neograničen broj poruka dnevno"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Do ${ totalStorageSize } pohrane"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Osigurajte svoje datoteke šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Osigurajte svoju e-poštu uz end-to-end šifriranje. Uključuje podršku za prilagođene domene e-pošte, 15 adresa e-pošte, neograničene hide-my-email pseudonime i još mnogo toga."
+      ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
         "Pristupite ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME } iz udobnosti svoje radne površine"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adrese imaju punu mogućnost slanja i primanja. Korisniku se može dodijeliti više adresa; međutim, jedna adresa se ne može dodijeliti više korisnika."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Omogućuje vam da postavite automatske odgovore (automatski odgovor) za svoje dolazne poruke"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Automatski očistite poruke starije od 30 dana iz otpada i neželjene pošte"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Automatski proslijedite e-poštu poslanu na vaš korisnički račun ${ MAIL_APP_NAME } na bilo koju drugu adresu e-pošte."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Masovno slanje promotivne ili programske e-pošte trenutno nije podržano. Za ovaj slučaj upotrebe preporučujemo korištenje namjenskog davatelja usluga e-pošte."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Odaberite prilagođeno vrijeme za podsjetnik o e-pošti ili za slanje poruke"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Stvorite više računa e-pošte za Vaše online identitete, npr. IvanKupvoina@${ domain } za račune za kupovinu, IvanVijesti@${ domain } za pretplate na vijesti"
@@ -1221,11 +1383,41 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Stvorite do ${ n } adresa e-pošte/pseudonima koje možete dodijeliti članovima obitelji. Koristite ih za mrežne identitete, npr. IvanKupovina@${ domain } za korisničke račune za kupnju."
       ],
+      "Email everyone in a group with a single email address": [
+        "Pošaljite e-poštu svima u grupi s jednom adresom e-pošte"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Osigurava da primite svu e-poštu poslanu na vašu domenu, čak i ako e-pošta ne postoji, više ne postoji ili sadrži tipfeler"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Podrška za IMAP ograničena je na upotrebu aplikacija za stolna računala (npr. Outlook, Apple Mail, Thunderbird) putem ${ MAIL_APP_NAME } Bridgea. IMAP integracije temeljene na oblaku trenutno nisu podržane."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Oznake su jednostavne oznake koje možete dodati porukama kako bi ih lakše pronašli ili na njih primijenili filtre"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personaliziraj svoj potpis e-pošte s logotipovima, slikama, ikonama društvenih mreža, poveznicama na svoje podatke o kontaktu i još mnogo toga"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Sprječava pristup porukama od strane ${ BRAND_NAME } ili trećih strana. Jedine osobe koje mogu pročitati poruke su pošiljatelj i namjeravani primatelj."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Brzo postavi poruke izvan ureda"
+      ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
         "Brzo prenesite svoje e-pošte, kalendare ili kontakte od bilo kojeg davatelja usluga"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Sigurno pohranite pojedinosti svojih kontakata, kao što su broj telefona, adresa, rođendan i osobne bilješke. Šifriranje bez pristupa osigurava da im čak ni ${ BRAND_NAME } ne može pristupiti."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Brzo i jednostavno šaljite e-poštu velikim grupama stvaranjem onoliko grupa kontakata koliko vam je potrebno (do 100 kontakata po grupi)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Postavi filtre za automatski odgovor na e-poštu, njihovo razvrstavanje i/ili dodjeljivanje oznaka"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Podijelite svoje datoteke ili mape s bilo kim pomoću sigurnih, djeljivih poveznica"
@@ -1235,6 +1427,12 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Prostor za pohranu dijeli se između ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } o ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Prostor za pohranu dijeli se između ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Administratori mogu dodijeliti različite količine prostora za pohranu korisnicima u svojoj organizaciji"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Prostor za pohranu dijeli se između korisnika u ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } i ${ PASS_APP_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Koristite vlastite adrese e-pošte s prilagođenom domenom, npr. vi@vaseime.com"
@@ -1252,11 +1450,26 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Povećajte svoj prostor za pohranu na ukupno ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podrška za ${ n } prilagođenu domenu e-pošte",
+        "Podrška za ${ n } prilagođene domene e-pošte",
+        "Podrška za ${ n } prilagođenih domena e-pošte"
       ]
     },
     "Placeholder": {
       "Password": [
         "Lozinka"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke od ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Prijava nije uspješno dovršena."
       ]
     },
     "sso": {
@@ -1271,6 +1484,9 @@
       ]
     },
     "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Pohrana za podatke koje generiraju ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
+      ],
       "Up to ${ totalStorageSize } Drive storage": [
         "Do ${ totalStorageSize } pohrane na Driveu"
       ],
@@ -1278,17 +1494,31 @@
         "Do ${ totalStorageSize } pohrane e-pošte"
       ]
     },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Za sve ${ BRAND_NAME } usluge"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Uspješna provjera"
       ]
     },
     "Title": {
       "Account restricted": [
         "Račun ograničen"
       ],
+      "Account temporarily locked": [
+        "Korisnički račun privremeno zaključan"
+      ],
       "Enter your password": [
         "Unesite lozinku"
+      ],
+      "Human verification": [
+        "Ljudska provjera"
       ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"

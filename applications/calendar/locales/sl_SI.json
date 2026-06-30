@@ -359,6 +359,9 @@
       "Expand video conferencing widget": [
         "Razširi gradnik za videokonference"
       ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Raziščite ${ MEET_SHORT_APP_NAME }"
+      ],
       "Export": [
         "Izvozi"
       ],
@@ -2156,6 +2159,9 @@
       "Canada": [
         "Kanada"
       ],
+      "Canary Islands": [
+        "Kanarski otoki"
+      ],
       "Cape Verde": [
         "Zelenortski otoki"
       ],
@@ -3106,6 +3112,9 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Začeli smo uvažati vašo e-pošto iz Gmaila. Obvestili vas bomo, ko bo končano."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Žal nam je, da odhajate. Če imate trenutek časa, bi bili zelo hvaležni, če bi nam povedali, zakaj želite prekiniti naročnino. Vaša povratna informacija nam pomaga izboljševati ${ BRAND_NAME } za vse."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "S skupinami stikov lahko pošljete e-pošto vsem v skupini z enim klikom."
@@ -5045,6 +5054,9 @@
         "${ groupCounts } najdene skupine",
         "${ groupCounts } najdenih skupin"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } uporabniška mesta"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } doživljenjska ponudba nima cene za podaljšanje, gre za enkratno plačilo za doživljenjski dostop do ${ PASS_SHORT_APP_NAME }. Cena in datum podaljšanja vaše naročnine ${ planTitle } ostaneta nespremenjena."
       ],
@@ -5129,6 +5141,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Stikalo za odklop**: Ustavi uhajanje podatkov tako, da blokira vašo internetno povezavo, če VPN nepričakovano preneha delovati."
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Pridobijo ${ refereeRewardAmount }** v dobroimetju, če se naročijo."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } dodaten prostor za shranjevanje"
       ],
@@ -5173,6 +5188,9 @@
       ],
       "Ad targeting": [
         "Ciljno oglaševanje"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Dodaj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -6059,6 +6077,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Za uvoz dogodkov najprej ustvarite koledar v aplikaciji ${ CALENDAR_APP_NAME }. Tam se bodo dogodki po uvozu prikazali."
       ],
@@ -6085,6 +6106,9 @@
       ],
       "Tracking": [
         "Sledenje"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Zaupaj ključu \"${ activeSignerText }\", da boš lahko preverjal nova sporočila od tega stika."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Preizkusite nove zmožnosti, posodobitve in izdelke ${ BRAND_NAME }, preden postanejo dostopni širši javnosti. Aplikacija se bo znova naložila."
@@ -6577,6 +6601,11 @@
         "Tedenski pogled"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Preklopi na ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut name, switch to Mail": {
       "Switch to ${ MAIL_APP_NAME }": [
         "Preklopi na ${ MAIL_APP_NAME }"
@@ -6706,6 +6735,9 @@
       ],
       "Colors": [
         "Barve"
+      ],
+      "Command line interface (CLI)": [
+        "Ukazna vrstica (CLI)"
       ],
       "Company": [
         "Podjetje"
@@ -7431,6 +7463,9 @@
       "60 minutes per meeting": [
         "60 minut na sestanek"
       ],
+      "Meeting recording": [
+        "Snemanje seje"
+      ],
       "One active meeting at a time": [
         "En aktivni sestanek naenkrat"
       ],
@@ -7905,6 +7940,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Access all countries": [
+        "Dostop do vseh držav"
+      ],
       "Ad-blocker and malware protection": [
         "Prepoved oglasov in zaščita pred zlonamerno programsko opremo"
       ],
@@ -7988,6 +8026,9 @@
       ],
       "Data retention policies": [
         "Pravilniki hrambe podatkov"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Namenski strežniki, optimizirani za hitrost"
       ],
       "Desktop app": [
         "Namizna aplikacija"
@@ -8207,6 +8248,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neomejena količina/pretočnost podatkov"
+      ],
+      "Unlock streaming": [
+        "Odkleni pretakanje"
       ],
       "Up to ${ n } user": [
         "Do ${ n } uporabnika",
@@ -12045,6 +12089,9 @@
       ],
       "Verification failed": [
         "Preverjanje ni uspelo"
+      ],
+      "Verify your password": [
+        "Preverite geslo"
       ],
       "Verifying your card...": [
         "Preverjanje vaše kartice ..."

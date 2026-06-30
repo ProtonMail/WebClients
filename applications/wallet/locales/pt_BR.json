@@ -2142,6 +2142,9 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Garanta que você ainda possa acessar sua conta e seus dados, mesmo que perca sua senha do ${ BRAND_NAME }."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma integração perfeita da sua equipe ao ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
       ],
@@ -2381,6 +2384,9 @@
       "Payment process not supported": [
         "Processo de pagamento não suportado"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Por favor, verifique se o seu ABN está registrado para IVA transfronteiriço"
+      ],
       "Please complete the billing details": [
         "Complete os detalhes de faturamento"
       ],
@@ -2413,6 +2419,9 @@
       ],
       "Request timed out": [
         "A solicitação expirou"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "O regime de reverse charge não é suportado para este plano"
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
@@ -2466,7 +2475,7 @@
         "O nome de usuário deve terminar com uma letra ou dígito"
       ],
       "VAT number must start with ${ prefixes }": [
-        "O número de IVA deve começar por ${ prefixes }"
+        "O número de IVA deve começar com ${ prefixes }"
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
@@ -2576,6 +2585,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Touch your security key.": [
+        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -3206,6 +3218,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Sua conta está configurada atualmente para aplicar o regime de reverse charge. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Seu checkout foi aberto em uma nova guia. Por favor, finalize seu pagamento lá e retorne a esta página quando terminar."
@@ -4843,6 +4858,9 @@
       "VAT number": [
         "Número de IVA"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "O mecanismo de reverse charge de IVA se aplica."
+      ],
       "You already have a subscription to this plan.": [
         "Você já assina este plano."
       ],
@@ -5583,9 +5601,6 @@
       ],
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
-      ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Conta restrita"

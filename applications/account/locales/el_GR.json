@@ -1383,6 +1383,9 @@
       "Review": [
         "Αναθεώρηση"
       ],
+      "Review changes": [
+        "Επισκόπιση αλλαγών"
+      ],
       "Review recovery options": [
         "Εξέταση επιλογών ανάκτησης"
       ],
@@ -8645,8 +8648,8 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Τοποθετήστε το κλειδί ασφαλείας στη θύρα USB της συσκευής σας."
+      "Insert your security key into your device.": [
+        "Τοποθετήστε το κλειδί ασφαλείας στη συσκευή σας."
       ],
       "Security key": [
         "Κλειδί ασφαλείας"
@@ -8659,6 +8662,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Αυτό θα διαγράψει όλα τα κλειδιά ασφαλείας που είναι συνδεδεμένα με τον λογαριασμό σας."
+      ],
+      "Touch your security key.": [
+        "Αγγίξτε το κλειδί ασφαλείας σας."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Επαληθεύστε την ταυτότητά σας με ένα φυσικό κλειδί ασφαλείας U2F ή FIDO2"
@@ -9071,6 +9077,12 @@
       ],
       "General": [
         "Γενικά"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Διαχειριστείτε χρήστες και ομάδες, αναθέστε ρόλους και εκχωρήστε άδειες χρήσης σε μέλη."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Διαχειρίζεται τις ρυθμίσεις ασφαλείας και μπορεί να δει όλα τα αρχεία καταγραφής συμβάντων και τα στοιχεία χρήστη."
       ],
       "Roles and permissions": [
         "Ρόλοι και δικαιώματα"
@@ -9722,7 +9734,7 @@
       "${ boldName } will be set as default calendar.": [
         "Το ${ boldName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Τα ${ BRAND_NAME } Business πλάνα παρέχουν στην ομάδα σας όλα τα εργαλεία συνεργασίας που χρειάζονται για να είναι παραγωγικοί και οργανωμένοι στη δουλειά τους, ενώ ταυτόχρονα προστατεύουν την επιχείρησή σας."
       ],
       "${ BRAND_NAME } Free": [
@@ -21697,6 +21709,66 @@
         "Δοκιμή διαμόρφωσης SAML"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } νέο μέλος",
+        "${ memberCount } νέα μέλη"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } ομάδα συγχρονίστηκε",
+        "${ numberOfPendingGroups } ομάδες συγχρονίστηκαν"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } χρήστης συγχρονίστηκε",
+        "${ numberOfPendingUsers } χρήστες συγχρονίστηκαν"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } ομάδα",
+        "${ pendingGroupsCount } ομάδες"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } ομάδα συγχρονίστηκε.",
+        "${ pendingGroupsCount } ομάδες συγχρονίστηκαν."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } χρήστης",
+        "${ pendingUsersCount } χρήστες"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } χρήστης συγχρονίστηκε.",
+        "${ pendingUsersCount } χρήστες συγχρονίστηκαν."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "Τα ${ usersText } και ${ groupsText } συγχρονίστηκαν."
+      ],
+      "Approve changes from your identity provider": [
+        "Έγκριση αλλαγών από τον πάροχο ταυτότητάς σας"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Απαιτείται τελική έγκριση για την παραχώρηση πρόσβασης σε όλες τις υπηρεσίες ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "Από τον πάροχο ταυτότητάς σας"
+      ],
+      "New": [
+        "Νέο"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Μόλις εγκριθούν, μπορούν να έχουν πρόσβαση σε όλες τις υπηρεσίες ${ BRAND_NAME } και να τις κοινοποιούν με ασφάλεια."
+      ],
+      "Private user": [
+        "Ιδιωτικός χρήστης"
+      ],
+      "Review users and groups before finishing setup": [
+        "Ελέγξτε τους χρήστες και τις ομάδες πριν από την ολοκλήρωση της ρύθμισης"
+      ],
+      "Updated": [
+        "Ενημερώθηκε"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Οι χρήστες που έχετε ορίσει ως ιδιωτικοί πρέπει να αποδεχτούν την πρόσκληση για να ολοκληρώσουν τη ρύθμιση. Θα τους στείλουμε μια πρόσκληση μόλις την εγκρίνετε."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Ρύθμιση παραμέτρων SCIM"
@@ -23391,6 +23463,9 @@
         "${ count } άτομο",
         "${ count } άτομα"
       ],
+      "... waiting": [
+        "... σε αναμονή"
+      ],
       "Add a phone number": [
         "Προσθέστε έναν αριθμό τηλεφώνου"
       ],
@@ -23400,11 +23475,17 @@
       "Available on this device": [
         "Διαθέσιμο σε αυτή τη συσκευή"
       ],
+      "completed": [
+        "ολοκληρώθηκε"
+      ],
       "Disable recovery by email": [
         "Απενεργοποίηση ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
       "Disable recovery by phone": [
         "Απενεργοποίηση ανάκτησης μέσω τηλεφώνου"
+      ],
+      "finalizing": [
+        "οριστικοποιείται"
       ],
       "Generate a recovery phrase": [
         "Παραγωγή μιας φράσης ανάκτησης"
@@ -24971,6 +25052,9 @@
       ],
       "Apply gift code": [
         "Εφαρμογή κωδικού δώρου"
+      ],
+      "Approve changes": [
+        "Έγκριση αλλαγών"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "Έχετε ήδη συνδεθεί στο ${ BRAND_NAME } σε κάποιο πρόγραμμα περιήγησης;"
@@ -27461,6 +27545,15 @@
       ],
       "Invitation email": [
         "Μήνυμα πρόσκλησης"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Διαχειριστείτε χρήστες και ομάδες, αναθέστε ρόλους και εκχωρήστε άδειες χρήσης σε μέλη."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Διαχειρίζεται τις ρυθμίσεις ασφαλείας και μπορεί να δει όλα τα αρχεία καταγραφής συμβάντων και τα στοιχεία χρήστη."
       ],
       "Name": [
         "Όνομα"

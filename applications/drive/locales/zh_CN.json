@@ -951,6 +951,12 @@
       "Select country": [
         "选择国家/地区"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "选择评分 ${ n } 分，满分 ${ to } 分"
+      ],
+      "Send Feedback": [
+        "发送反馈"
+      ],
       "Set as album cover": [
         "设置为专辑封面"
       ],
@@ -4468,6 +4474,9 @@
       ],
       "Security key": [
         "安全密钥"
+      ],
+      "Touch your security key.": [
+        "请触碰您的安全密钥！"
       ]
     },
     "fido2: Label": {
@@ -5118,7 +5127,7 @@
         "30 天内可退款。"
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "${ DRIVE_APP_NAME } 有新版本可用，请重新加载以继续使用搜索功能。"
+        "新版本 ${ DRIVE_APP_NAME } 可用，请重新加载以继续使用搜索功能。"
       ],
       "A number will be added to the filename": [
         "将在文件名中添加一个编号"
@@ -6103,6 +6112,12 @@
       ],
       "Preparing": [
         "正在准备"
+      ],
+      "Preparing download": [
+        "正在准备下载"
+      ],
+      "Preparing…": [
+        "正在准备…"
       ],
       "Preview failed to be loaded": [
         "预览加载失败"
@@ -7321,6 +7336,9 @@
       "Extended address": [
         "详细地址"
       ],
+      "Extremely Satisfied": [
+        "非常满意"
+      ],
       "File": [
         "文件"
       ],
@@ -7654,6 +7672,9 @@
       "System information": [
         "系统信息"
       ],
+      "Tell us more about your experience": [
+        "请告诉我们更多关于您的体验"
+      ],
       "Theme": [
         "主题"
       ],
@@ -7695,6 +7716,9 @@
       ],
       "Verification code": [
         "验证码"
+      ],
+      "Very Dissatisfied": [
+        "非常不满意"
       ],
       "Viewer": [
         "查看者"
@@ -8082,7 +8106,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "${ appName } 有新版本，请${ reloadButton }。"
+        "新版本 ${ appName } 可用，请${ reloadButton }。"
       ]
     },
     "MIME type": {
@@ -8920,6 +8944,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您当前套餐享受优惠价格。如果降级账户，您将失去该优惠价格，且再次订阅时无法重新获得。"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "我们始终致力于让 ${ config.appName } 变得更好，您对当前体验的满意度如何？"
       ]
     },
     "new_plans: Subtext": {
@@ -10364,6 +10393,9 @@
       ],
       "New name": [
         "新名称"
+      ],
+      "Optional feedback": [
+        "可选反馈"
       ],
       "Organization name": [
         "组织名称"
@@ -12944,6 +12976,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "我们无法确认该节点由 ${ claimedKeyAuthor } 创建。原因：${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "我们期待听到您的反馈！"
       ],
       "Welcome offer": [
         "迎新优惠"

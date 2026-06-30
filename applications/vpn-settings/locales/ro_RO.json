@@ -494,6 +494,9 @@
       "Extend": [
         "Extindere"
       ],
+      "Finish": [
+        "Finalizare"
+      ],
       "Fit to window": [
         "Potrivire la fereastră"
       ],
@@ -889,6 +892,9 @@
       ],
       "Review": [
         "Revizuire"
+      ],
+      "Review changes": [
+        "Revizuire modificări"
       ],
       "Revoke": [
         "Anulare"
@@ -2240,7 +2246,7 @@
     },
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicatele din importurile anterioare vor fi omise. Anulați sau importați mesajele mai vechi în setările din ${ PRODUCT_NAMES.EASY_SWITCH }."
+        "Duplicatele din importările anterioare vor fi omise. Anulați sau importați mesajele mai vechi în setările din ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -3745,7 +3751,7 @@
         "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
       ],
       "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Se vor importa mesajele vechi și sincroniza mesajele noi din Gmail de acum încolo."
+        "Se vor importa mesajele vechi și de acum înainte se vor sincroniza mesajele noi din Gmail."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
@@ -5618,8 +5624,8 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Introduceți o cheie de securitate legată la contul ${ BRAND_NAME }."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Introduceți cheia de securitate în portul USB al dispozitivului."
+      "Insert your security key into your device.": [
+        "Introduceți cheia de securitate în dispozitiv."
       ],
       "Security key": [
         "Cheie de securitate"
@@ -5632,6 +5638,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Se vor șterge toate cheile de securitate asociate contului."
+      ],
+      "Touch your security key.": [
+        "Atingeți cheia de securitate."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vă verificați identitatea cu o cheie fizică U2F sau FIDO2."
@@ -5853,6 +5862,12 @@
       ],
       "General": [
         "Generale"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionați utilizatorii și grupurile, atribuiți roluri și alocați licențe membrilor."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestionează setările de securitate și poate vizualiza toate jurnalele de evenimente și detaliile utilizatorului."
       ],
       "Roles and permissions": [
         "Roluri și permisiuni"
@@ -6345,7 +6360,7 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Planurile ${ BRAND_NAME } Business vă oferă echipei toate instrumentele de colaborare de care are nevoie pentru a fi productivă și organizată în activitatea sa, protejându-vă în același timp afacerea."
       ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
@@ -10047,6 +10062,9 @@
       "Password": [
         "Parola"
       ],
+      "Password check-ins": [
+        "Verificări parolă"
+      ],
       "Password strength": [
         "Dificultate parolă"
       ],
@@ -12990,6 +13008,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Asigurați-vă că memorați sau stocați în siguranță parola, deoarece este cheia pentru decriptarea datelor."
+      ],
+      "Turn off check-ins": [
+        "Dezactivare verificări"
+      ],
+      "Turn off password check-ins?": [
+        "Dezactivați verificările parolei?"
       ]
     },
     "passwordless": {
@@ -14260,6 +14284,73 @@
         "Testare configurare SAML"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "Membri: ${ memberCount }",
+        "Membri: ${ memberCount }",
+        "Membri: ${ memberCount }"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "Grupuri sincronizate: ${ numberOfPendingGroups }",
+        "Grupuri sincronizate: ${ numberOfPendingGroups }",
+        "Grupuri sincronizate: ${ numberOfPendingGroups }"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "Utilizatori sincronizați: ${ numberOfPendingUsers }",
+        "Utilizatori sincronizați: ${ numberOfPendingUsers }",
+        "Utilizatori sincronizați: ${ numberOfPendingUsers }"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grup",
+        "${ pendingGroupsCount } grupuri",
+        "${ pendingGroupsCount } de grupuri"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "Grupuri sincronizate: ${ pendingGroupsCount }",
+        "Grupuri sincronizate: ${ pendingGroupsCount }",
+        "Grupuri sincronizate: ${ pendingGroupsCount }"
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } utilizator",
+        "${ pendingUsersCount } utilizatori",
+        "${ pendingUsersCount } de utilizatori"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "Utilizatori sincronizați: ${ pendingUsersCount }",
+        "Utilizatori sincronizați: ${ pendingUsersCount }",
+        "Utilizatori sincronizați: ${ pendingUsersCount }"
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "S-au sincronizat ${ usersText } și ${ groupsText }"
+      ],
+      "Approve changes from your identity provider": [
+        "Aprobați modificările de la furnizorul de identitate"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Este necesară aprobarea finală pentru a acorda acces la toate serviciile ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "De la furnizorul de identitate"
+      ],
+      "New": [
+        "Nou"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "După aprobare, aceștia pot accesa toate serviciile ${ BRAND_NAME } și pot partaja în siguranță."
+      ],
+      "Private user": [
+        "Utilizator privat"
+      ],
+      "Review users and groups before finishing setup": [
+        "Examinați utilizatorii și grupurile înainte de a finaliza configurarea"
+      ],
+      "Updated": [
+        "Actualizat"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Utilizatorii pe care i-ați setat ca privați trebuie să accepte invitația pentru a finaliza configurarea. Li se va trimite o invitație după ce o aprobați."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Configurare SCIM"
@@ -15347,6 +15438,17 @@
         "Vi se anulează abonamentul, așteptați."
       ]
     },
+    "Status": {
+      "... waiting": [
+        "...în așteptare"
+      ],
+      "completed": [
+        "finalizat"
+      ],
+      "finalizing": [
+        "se finalizează"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "Mărire spațiu"
@@ -16119,6 +16221,12 @@
       "Organization name updated": [
         "S-a actualizat numele organizației"
       ],
+      "Password check-ins disabled": [
+        "Verificări parolă dezactivate"
+      ],
+      "Password check-ins enabled": [
+        "Verificări parolă activate"
+      ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
       ],
@@ -16607,6 +16715,9 @@
       ],
       "Apply gift code": [
         "Aplicare cod cadou"
+      ],
+      "Approve changes": [
+        "Aprobare modificări"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "V-ați conectat deja la ${ BRAND_NAME } într-un navigator web?"
@@ -18243,6 +18354,15 @@
       ],
       "Invitation email": [
         "E-mail de invitare"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gestionați utilizatorii și grupurile, atribuiți roluri și alocați licențe membrilor."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gestionează setările de securitate și poate vizualiza toate jurnalele de evenimente și detaliile utilizatorului."
       ],
       "Name": [
         "Nume"

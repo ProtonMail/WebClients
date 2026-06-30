@@ -851,6 +851,9 @@
       "Enter 6 digits": [
         "Sláðu inn 6 tölustafi"
       ],
+      "Invalid verification code": [
+        "Ógildur sannvottunarkóði"
+      ],
       "Not a valid number": [
         "Ekki gild tala"
       ],
@@ -1255,11 +1258,17 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kóði var sendur á ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Sannvottun tókst"
       ]
     },
     "Title": {
       "Enter your password": [
         "Settu inn lykilorðið þitt"
+      ],
+      "Human verification": [
+        "Mennskupróf"
       ],
       "Invalid verification code": [
         "Ógildur sannvottunarkóði"

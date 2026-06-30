@@ -211,9 +211,6 @@
       "Enable camera": [
         "Habilitar la cámara"
       ],
-      "Enable video": [
-        "Habilitar vídeo"
-      ],
       "Enable waiting room": [
         "Activar sala de espera"
       ],
@@ -1745,9 +1742,20 @@
         "Ninguna imagen seleccionada"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Touch your security key.": [
+        "Toca tu llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -2020,6 +2028,9 @@
       ],
       "Download current logs": [
         "Descargar los registros actuales"
+      ],
+      "Each code can only be used once": [
+        "Cada código solo se puede usar una vez"
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
@@ -2444,6 +2455,9 @@
       "Video effects": [
         "Efectos de vídeo"
       ],
+      "Warning": [
+        "Advertencia"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
       ],
@@ -2629,6 +2643,9 @@
       ],
       "Meeting ID": [
         "Identificador de la reunión"
+      ],
+      "Message": [
+        "Mensaje"
       ],
       "Microphone Active": [
         "Micrófono activo"

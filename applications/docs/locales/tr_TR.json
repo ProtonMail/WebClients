@@ -336,6 +336,9 @@
       "Download anyway": [
         "Yine de indir"
       ],
+      "Download debug information": [
+        "Hata ayıklama bilgilerini indir"
+      ],
       "Download logs": [
         "Günlüğü indir"
       ],
@@ -379,19 +382,19 @@
         "Kişi grubunu dışa aktar"
       ],
       "Export editor state for version": [
-        "Sürüm için düzenleyici durumunu dışa aktar"
+        "Sürümün düzenleyici durumunu dışa aktar"
       ],
       "Export selection as .vcf": [
         "Seçimi .vcf olarak dışa aktar"
       ],
       "Export this version (as docx)": [
-        "Bu sürümü (docx olarak) dışa aktar"
+        "Bu sürümü dışa aktar (docx olarak)"
       ],
       "Export this version (as xlsx)": [
         "Bu sürümü dışa aktar (xlsx olarak)"
       ],
       "Export YJS state for version": [
-        "Sürüm için YJS durumunu dışa aktar"
+        "Sürümün YJS durumunu dışa aktar"
       ],
       "Forgot password?": [
         "Parolamı unuttum"
@@ -645,6 +648,9 @@
       "Reload": [
         "Yenile"
       ],
+      "Reload spreadsheet": [
+        "Hesap tablosunu yeniden yükle"
+      ],
       "Remove": [
         "Kaldır"
       ],
@@ -674,6 +680,9 @@
       ],
       "Report a problem": [
         "Sorun bildirin"
+      ],
+      "Report issue": [
+        "Sorunu bildir"
       ],
       "Request a call": [
         "Arama isteği gönder"
@@ -3263,7 +3272,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak bir drive bulunamadı"
+        "İçe aktarılacak sürücü bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -3275,7 +3284,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } depolamanızda yeterli alan yok"
+        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -3498,7 +3507,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
+        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -3963,6 +3972,9 @@
       ],
       "Security key": [
         "Güvenlik anahtarı"
+      ],
+      "Touch your security key.": [
+        "Güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -4765,11 +4777,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
       ],
+      "Disable table of contents": [
+        "İçindekiler bölümünü devre dışı bırak"
+      ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
       ],
       "Do you remember your password? ${ verifyButton }": [
-        "Parolanızı anımsıyor musunuz? ${ verifyButton }"
+        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
       ],
       "Document is in trash": [
         "Belge çöp kutusunda"
@@ -4818,6 +4833,9 @@
       ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
+      ],
+      "Enable table of contents": [
+        "İçindekiler bölümünü etkinleştir"
       ],
       "End-to-end encrypted": [
         "Uçtan uca şifrelenmiş"
@@ -4895,7 +4913,7 @@
         "Dosya güncellenmeyecek"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "finance": [
         "finans"
@@ -5162,6 +5180,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
+      ],
+      "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.\nHelp us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
+        "Eyvah! Bu hesap tablosu en son düzenlemelerinizi kaydedemiyor; bu nedenle, çalışmalarınızı kaybetmenizi önlemek amacıyla düzenleme işlemini duraklattık. Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Hesap tablosunun içeriğini paylaşmakta sakınca görmüyorsanız, raporunuza aşağıdaki hata ayıklama bilgilerini ekleyin."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
@@ -5595,7 +5616,7 @@
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
       "We'll remind you to verify your password again later": [
-        "Daha sonra yeniden parolanızı doğrulamanızı anımsatacağız."
+        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -10163,6 +10184,9 @@
       ],
       "Edit image": [
         "Görseli düzenle"
+      ],
+      "Editing paused": [
+        "Düzenleme duraklatıldı"
       ],
       "Email addresses": [
         "E-posta adresleri"

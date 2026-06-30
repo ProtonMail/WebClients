@@ -1383,6 +1383,9 @@
       "Review": [
         "Skontrolovať"
       ],
+      "Review changes": [
+        "Skontrolovať zmeny"
+      ],
       "Review recovery options": [
         "Skontrolovať možnosti obnovy"
       ],
@@ -1835,6 +1838,9 @@
       ],
       "Verify now": [
         "Overiť teraz"
+      ],
+      "Verify password": [
+        "Potvrďte heslo"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Overiť doménu ${ unverifiedSSODomain.DomainName }"
@@ -3513,6 +3519,11 @@
       ],
       "Take a tour": [
         "Absolvovať prehliadku"
+      ]
+    },
+    "BYOE": {
+      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
+        "Duplikáty z predchádzajúcich importov budú preskočené. V nastaveniach ${ PRODUCT_NAMES.EASY_SWITCH } môžu byť staršie správy vrátené späť alebo importované."
       ]
     },
     "Calendar access select label": {
@@ -5575,6 +5586,9 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
       ],
+      "We'll import your old emails and sync new messages from Gmail going forward": [
+        "Importujeme vaše staré emaily a odteraz budeme synchronizovať nové správy z Gmailu"
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
       ],
@@ -5607,6 +5621,12 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Stále sa môžete prihlásiť pomocou tejto adresy a kedykoľvek sa znova pripojiť."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Na prijímanie a odosielanie emailov v službe ${ BRAND_NAME } už nebudete môcť používať adresu ${ address.Email }. Upozorňujeme tiež, že správy odosielané na túto adresu zo služby ${ BRAND_NAME } už nebudú end-to-end šifrované."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Preposielate ${ numAddressesOrSync } Gmailovú adresu do aplikácie ${ MAIL_APP_NAME }.",
@@ -6712,6 +6732,9 @@
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Ak vás o pomoc nepožiadali**, je možné, že sa niekto iný pokúša získať prístup k ich účtu. V takom prípade túto žiadosť ignorujte."
       ],
+      "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
+        "**Chráňte svoje dedičstvo.** Zvýšte úroveň svojho balíka a pridajte núdzové kontakty."
+      ],
       "Access account": [
         "Prístup k účtu"
       ],
@@ -7466,6 +7489,9 @@
       "No contacts found to import": [
         "Neboli nájdené žiadne kontakty na import"
       ],
+      "No drive found to import": [
+        "Nenašiel sa žiadny disk na import"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
       ],
@@ -7483,6 +7509,9 @@
       ],
       "Not a valid number": [
         "Neplatné číslo"
+      ],
+      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
+        "V aplikácii ${ DRIVE_APP_NAME } nie je dostatok úložného priestoru"
       ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
@@ -7780,6 +7809,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočakávaná chyba, nemôžeme importovať kontakty"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Neočakávaná chyba, nemôžeme importovať súbory"
       ],
       "Unknown error": [
         "Neznáma chyba"
@@ -8742,8 +8774,8 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Vložte bezpečnostný kľúč do USB portu zariadenia."
+      "Insert your security key into your device.": [
+        "Vložte bezpečnostný kľúč do vášho zariadenia."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -8756,6 +8788,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Týmto odstránite všetky bezpečnostné kľúče prepojené s vaším účtom."
+      ],
+      "Touch your security key.": [
+        "Dotknite sa svojho bezpečnostného kľúča."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Overte svoju identitu fyzickým bezpečnostným kľúčom U2F alebo FIDO2"
@@ -9184,6 +9219,12 @@
       ],
       "General": [
         "Všeobecné"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Spravujte používateľov a skupiny, prideľujte pozície a prideľujte licencie členom."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Spravuje nastavenia zabezpečenia a má prístup ku všetkým protokolom udalostí a údajom o používateľoch."
       ],
       "Roles and permissions": [
         "Pozície a oprávnenia"
@@ -9853,7 +9894,7 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } bude nastavený ako predvolený kalendár."
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } plán Business poskytuje vášmu tímu všetky nástroje na spoluprácu, ktoré potrebuje na produktívnu a organizovanú prácu, a zároveň chráni vašu firmu."
       ],
       "${ BRAND_NAME } Free": [
@@ -11272,6 +11313,9 @@
       "Featured in ZDNet": [
         "Odporúčané v ZDNet"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
+      ],
       "Fill in user details": [
         "Vyplňte podrobnosti o používateľovi"
       ],
@@ -12643,6 +12687,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizujte a spravujte súbory pomocou aplikácie ${ DRIVE_APP_NAME }. Vytvárajte a zdieľajte dokumenty v aplikácii ${ DOCS_APP_NAME } a bezpečne ich ukladajte. Všetko v aplikáciách pre ${ ios }, ${ android } a ${ desktop }."
       ],
+      "Synced from identity provider": [
+        "Synchronizované z poskytovateľa identít"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro odporúča s hodnotením 4,2 z 5 hviezdičiek"
       ],
@@ -13940,6 +13987,9 @@
       "Declined": [
         "Odmietnuté"
       ],
+      "Group Owner": [
+        "Vlastník skupiny"
+      ],
       "Paused": [
         "Pozastavené"
       ],
@@ -15000,7 +15050,7 @@
         "Výška daru"
       ],
       "Drive": [
-        "Drive"
+        "Jednotka"
       ],
       "Duration": [
         "Trvanie"
@@ -15230,6 +15280,9 @@
       "Import to:": [
         "Importovať do:"
       ],
+      "Import your emails": [
+        "Importovanie vašich emailov"
+      ],
       "Inbox": [
         "Doručené"
       ],
@@ -15425,6 +15478,9 @@
       "Newsletters": [
         "Newslettery"
       ],
+      "Newsletters - News, editorial emails, and non-promotional content": [
+        "Newslettery – novinky, redakčné emaily a obsah, ktorý nie je reklamného charakteru"
+      ],
       "No": [
         "Nie"
       ],
@@ -15515,6 +15571,9 @@
       "Password": [
         "Heslo"
       ],
+      "Password check-ins": [
+        "Prihlásenie pomocou hesla"
+      ],
       "Password strength": [
         "Sila hesla"
       ],
@@ -15578,11 +15637,17 @@
       "Primary": [
         "Primárne"
       ],
+      "Primary - Personal and work emails, plus important updates": [
+        "Hlavná – Osobné a pracovné emaily, ako aj dôležité aktualizácie"
+      ],
       "Priority support": [
         "Prednostná podpora"
       ],
       "Promotions": [
         "Propagačné akcie"
+      ],
+      "Promotions - Deals, offers, and marketing emails": [
+        "Propagačné akcie – Zľavy, ponuky a marketingové emaily"
       ],
       "Prompt to trust keys": [
         "Výzva na dôverovanie kľúčom"
@@ -15761,6 +15826,9 @@
       "Social": [
         "Sociálne siete"
       ],
+      "Social - Social media updates, activity, and messages": [
+        "Sociálne siete – aktualizácie, aktivita a správy na sociálnych sieťach"
+      ],
       "Social media updates and activity": [
         "Aktualizácie a aktivita na sociálnych médiách"
       ],
@@ -15869,6 +15937,9 @@
       "Transactions": [
         "Transakcie"
       ],
+      "Transactions - Receipts, bookings, bills, and orders": [
+        "Transakcie – príjmy, rezervácie, faktúry a objednávky"
+      ],
       "Two-password mode": [
         "Režim s dvomi heslami"
       ],
@@ -15889,6 +15960,9 @@
       ],
       "Updates": [
         "Aktualizácie"
+      ],
+      "Updates - Automated confirmations, alerts, and account updates": [
+        "Aktualizácie – Automatické potvrdenia, upozornenia a aktualizácie účtu"
       ],
       "Upload 1 or more encryption keys": [
         "Nahrať 1 alebo viac šifrovacích kľúčov"
@@ -16967,6 +17041,9 @@
       ],
       "Add address": [
         "Pridať adresu"
+      ],
+      "Change backup password": [
+        "Zmeniť záložné heslo"
       ],
       "Change password": [
         "Zmeniť heslo"
@@ -18565,11 +18642,17 @@
       "1-2 emails per month": [
         "1-2 emaily mesačne"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1–4 emaily ročne. Upozornenia, aby ste si pravidelne aktualizovali svoje metódy obnovy."
+      ],
       "2-4 emails per year": [
         "2-4 emaily za rok"
       ],
       "4-6 emails per year": [
         "4-6 emailov za rok"
+      ],
+      "Account email updates": [
+        "Aktualizácie účtu emailom"
       ],
       "Application notifications": [
         "Notifikácie aplikácie"
@@ -18594,6 +18677,12 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Zapojte sa do prieskumov s cieľom zlepšiť služby ${ BRAND_NAME }"
+      ],
+      "Product email updates": [
+        "Emailové aktualizácie o produktoch"
+      ],
+      "Recovery checklist": [
+        "Kontrolný zoznam pre obnovu"
       ]
     },
     "Notification": {
@@ -19856,6 +19945,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Heslo si zapamätajte alebo ho bezpečne uložte, pretože je kľúčom k dešifrovaniu vašich údajov."
+      ],
+      "Turn off check-ins": [
+        "Vypnúť prihlásenie"
+      ],
+      "Turn off password check-ins?": [
+        "Vypnúť prihlasovanie pomocou hesla?"
       ]
     },
     "passwordless": {
@@ -21444,6 +21539,9 @@
       ]
     },
     "Role": {
+      "Owner": [
+        "Vlastník"
+      ],
       "Security Admin": [
         "Bezpečnostný správca"
       ],
@@ -22085,6 +22183,80 @@
         "Testovanie nastavenia SAML"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nový člen",
+        "${ memberCount } noví členovia",
+        "${ memberCount } nových členov",
+        "${ memberCount } nových členov"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } skupina synchronizovaná",
+        "${ numberOfPendingGroups } skupiny synchronizované",
+        "${ numberOfPendingGroups } skupín synchronizovaných",
+        "${ numberOfPendingGroups } skupín synchronizovaných"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } používateľ synchronizovaný",
+        "${ numberOfPendingUsers } používatelia synchronizovaní",
+        "${ numberOfPendingUsers } používateľov synchronizovaných",
+        "${ numberOfPendingUsers } používateľov synchronizovaných"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } skupina",
+        "${ pendingGroupsCount } skupiny",
+        "${ pendingGroupsCount } skupín",
+        "${ pendingGroupsCount } skupín"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } skupina synchronizovaná.",
+        "${ pendingGroupsCount } skupiny synchronizované.",
+        "${ pendingGroupsCount } skupín synchronizovaných.",
+        "${ pendingGroupsCount } skupín synchronizovaných."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } používateľ",
+        "${ pendingUsersCount } používatelia",
+        "${ pendingUsersCount } používateľov",
+        "${ pendingUsersCount } používateľov"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } používateľ synchronizovaný.",
+        "${ pendingUsersCount } používatelia synchronizovaní.",
+        "${ pendingUsersCount } používateľov synchronizovaných.",
+        "${ pendingUsersCount } používateľov synchronizovaných."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } a ${ groupsText } synchronizované."
+      ],
+      "Approve changes from your identity provider": [
+        "Schváľte zmeny od vášho poskytovateľa identít"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Na udelenie prístupu ku všetkým službám ${ BRAND_NAME } je potrebné konečné schválenie."
+      ],
+      "From your identity provider": [
+        "Od vášho poskytovateľa identít"
+      ],
+      "New": [
+        "Nové"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Po schválení budú mať prístup ku všetkým službám ${ BRAND_NAME } a budú môcť bezpečne zdieľať obsah."
+      ],
+      "Private user": [
+        "Súkromný používateľ"
+      ],
+      "Review users and groups before finishing setup": [
+        "Pred dokončením nastavenia skontrolujte používateľov a skupiny"
+      ],
+      "Updated": [
+        "Aktualizované"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Používatelia, ktorých ste nastavili ako súkromných, musia prijať pozvánku, aby mohli dokončiť nastavenie. Akonáhle ich schválite, pošleme im pozvánku."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Konfigurovať SCIM"
@@ -22265,6 +22437,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Pridať do ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Umožňuje pridať videokonferenciu Zoom k akejkoľvek udalosti v kalendári"
       ]
@@ -23860,6 +24035,9 @@
         "${ count } ľudí",
         "${ count } ľudí"
       ],
+      "... waiting": [
+        "... čaká sa"
+      ],
       "Add a phone number": [
         "Pridať telefónne číslo"
       ],
@@ -23869,11 +24047,17 @@
       "Available on this device": [
         "Dostupné na tomto zariadení"
       ],
+      "completed": [
+        "dokončené"
+      ],
       "Disable recovery by email": [
         "Deaktivovať obnovenie emailom"
       ],
       "Disable recovery by phone": [
         "Zakázať obnovenie telefónom"
+      ],
+      "finalizing": [
+        "dokončovanie"
       ],
       "Generate a recovery phrase": [
         "Vygenerovať obnovovaciu frázu"
@@ -24832,6 +25016,12 @@
       "Organization name updated": [
         "Názov organizácie aktualizovaný"
       ],
+      "Password check-ins disabled": [
+        "Prihlásenie pomocou hesla je deaktivované"
+      ],
+      "Password check-ins enabled": [
+        "Prihlásenie pomocou hesla je povolené"
+      ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
       ],
@@ -25281,6 +25471,9 @@
         "${ friendsSubscribed } priateľov s predplatným",
         "${ friendsSubscribed } priateľov s predplatným"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistenta písania"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportný nástroj ${ MAIL_APP_NAME }"
       ],
@@ -25505,6 +25698,9 @@
       ],
       "Apply gift code": [
         "Použiť darčekový kód"
+      ],
+      "Approve changes": [
+        "Schváliť zmeny"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "Už ste prihlásený do ${ BRAND_NAME } v prehliadači?"
@@ -25784,6 +25980,9 @@
       ],
       "Dashboard": [
         "Prehľad"
+      ],
+      "Data collection": [
+        "Zber údajov"
       ],
       "Data locked": [
         "Dáta uzamknuté"
@@ -26567,6 +26766,9 @@
       ],
       "Priority support:": [
         "Prioritná podpora:"
+      ],
+      "Privacy": [
+        "Súkromie"
       ],
       "Privacy and data collection": [
         "Ochrana a zber osobných údajov"
@@ -28004,6 +28206,15 @@
       "Invitation email": [
         "Pozývací email"
       ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Spravujte všetkých používateľov, skupiny, zabezpečenie, fakturáciu a systémové konfigurácie."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Spravujte používateľov a skupiny, prideľujte pozície a prideľujte licencie členom."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Spravuje nastavenia zabezpečenia a má prístup ku všetkým protokolom udalostí a údajom o používateľoch."
+      ],
       "Name": [
         "Meno"
       ],
@@ -28036,6 +28247,9 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."
       ]
     },
     "Users table: badge": {

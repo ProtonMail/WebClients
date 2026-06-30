@@ -448,8 +448,8 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Der opstod en fejl ved behandlingen af opdateringer til dokumentet. Indlæs siden igen og prøv så igen."
       ],
-      "This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.": [
-        "Dette regneark registrerede en lokal synkroniseringsfejl. Genindlæs dokumentet før du fortsætter."
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Dette regneark har registreret en lokal synkroniseringsinkonsekvens. Redigering er blevet deaktiveret for at forhindre datatab. Indsend en rapport - og hvis du har det fint med at dele indholdet kan du downloade og inkludere nedenstående fejlfindingsoplysninger."
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Dette regneark er ikke kompatibelt med den nuværende klientversion. Prøv at genindlæse klienten. Kontakt support hvis problemet fortsætter."
@@ -2315,6 +2315,9 @@
       ],
       "Language not supported": [
         "Sprog ikke understøttet"
+      ],
+      "Outline": [
+        "Kontur"
       ]
     },
     "Warning": {

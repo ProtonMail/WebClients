@@ -72,9 +72,6 @@
       "Close": [
         "Fechar"
       ],
-      "Close navigation": [
-        "Fechar navegação"
-      ],
       "Collaborate on documents": [
         "Colaborar em documentos"
       ],
@@ -172,9 +169,6 @@
       "Forgot password?": [
         "Esqueceu sua senha?"
       ],
-      "Generate image": [
-        "Gerar imagem"
-      ],
       "Get ${ planOrAppName }": [
         "Obtenha o ${ planOrAppName }"
       ],
@@ -192,6 +186,12 @@
       ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
+      ],
+      "Go to panel ${ index }": [
+        "Ir para o painel ${ index }"
+      ],
+      "Help": [
+        "Ajuda"
       ],
       "Help and feedback": [
         "Ajuda e comentários"
@@ -219,9 +219,6 @@
       ],
       "Let's talk": [
         "Vamos conversar"
-      ],
-      "Manage": [
-        "Gerenciar"
       ],
       "Manage advanced account protections": [
         "Gerenciar proteções avançada de conta"
@@ -259,9 +256,6 @@
       "Open file preview": [
         "Abrir pré-visualização do arquivo"
       ],
-      "Open navigation": [
-        "Abrir navegação"
-      ],
       "Open project": [
         "Abrir projeto"
       ],
@@ -270,6 +264,9 @@
       ],
       "Pay ${ price } now": [
         "Pagar ${ price } agora"
+      ],
+      "Pen thickness": [
+        "Espessura da caneta"
       ],
       "Previous page": [
         "Página anterior"
@@ -994,9 +991,6 @@
       "Delete memory": [
         "Excluir memória"
       ],
-      "Disable ghost mode": [
-        "Desativar modo fantasma"
-      ],
       "Draw a sketch": [
         "Desenhar um rascunho"
       ],
@@ -1006,17 +1000,11 @@
       "Edit memory": [
         "Editar memória"
       ],
-      "Enable ghost mode": [
-        "Ativar modo fantasma"
-      ],
       "Generate from chats": [
         "Gerar a partir debate-papos"
       ],
       "Generate workflow": [
         "Gerar fluxo de trabalho"
-      ],
-      "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
-        "Adquira o ${ LUMO_SHORT_APP_NAME } Plus por apenas ${ price }"
       ],
       "Hide safety information": [
         "Ocultar informações de segurança"
@@ -1032,9 +1020,6 @@
       ],
       "New chat": [
         "Novo bate-papo"
-      ],
-      "New ghost chat": [
-        "Novo bate-papo fantasma"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Abrir no ${ DRIVE_APP_NAME }"
@@ -1057,6 +1042,9 @@
       "Select all": [
         "Selecionar tudo"
       ],
+      "Send feedback": [
+        "Enviar feedback"
+      ],
       "Send message": [
         "Enviar mensagem"
       ],
@@ -1074,6 +1062,9 @@
       ],
       "Submit": [
         "Enviar"
+      ],
+      "Switch to Max": [
+        "Alternar para Max"
       ],
       "System": [
         "Sistema"
@@ -1113,9 +1104,6 @@
     "collider_2025: b2b": {
       "By ${ BRAND_NAME }": [
         "Pela ${ BRAND_NAME }"
-      ],
-      "For Business": [
-        "Para empresas"
       ]
     },
     "collider_2025: Badge": {
@@ -1133,8 +1121,14 @@
       ]
     },
     "collider_2025: Button": {
+      "Back": [
+        "Voltar"
+      ],
       "Close": [
         "Fechar"
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Create image": [
         "Criar imagem"
@@ -1142,8 +1136,11 @@
       "Delete all": [
         "Excluir tudo"
       ],
-      "Maybe later": [
-        "Talvez mais tarde"
+      "Get started": [
+        "Começar a usar"
+      ],
+      "Next": [
+        "Avançar"
       ],
       "Open Link": [
         "Abrir link"
@@ -1151,22 +1148,40 @@
       "Retry": [
         "Tentar novamente"
       ],
+      "Skip": [
+        "Pular"
+      ],
       "Tools": [
         "Ferramentas"
-      ],
-      "Try it now": [
-        "Experimente agora"
       ]
     },
     "collider_2025: Characteristic": {
-      "${ LUMO_SHORT_APP_NAME }’s code is fully open source, so anyone can independently verify that it’s private and secure—and that we never use your data to train the model.": [
-        "O ${ LUMO_SHORT_APP_NAME } é totalmente de código aberto, então qualquer pessoa pode verificar independentemente que ele é privado e seguro — e que nunca usamos seus dados para treinar o modelo."
+      "${ LUMO_SHORT_APP_NAME }'s code is fully open source, so anyone can independently verify that it's private and secure—and that we never use your data to train the model.": [
+        "O código do ${ LUMO_SHORT_APP_NAME } é totalmente de código aberto, para que qualquer pessoa possa verificar de forma independente que ele é privado e seguro — e que nós nunca usamos seus dados para treinar o modelo."
+      ],
+      "1 TB cloud storage": [
+        "1 TB de armazenamento em nuvem"
+      ],
+      "Advanced AI models": [
+        "Modelos avançados de IA"
+      ],
+      "And much more": [
+        "E muito mais"
+      ],
+      "Everything in Business": [
+        "Tudo que está incluso no Business"
+      ],
+      "Everything in Plus": [
+        "Tudo que está incluso no Plus"
       ],
       "Extended chat history": [
         "Histórico de bate-papo estendido"
       ],
       "Multiple large uploads": [
         "Múltiplos envios grandes"
+      ],
+      "Password manager": [
+        "Gerenciador de senhas"
       ],
       "Priority access": [
         "Acesso prioritário"
@@ -1180,33 +1195,79 @@
       "Unlimited projects": [
         "Projetos ilimitados"
       ],
-      "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
+      "User management": [
+        "Gerenciamento de usuários"
+      ],
+      "Video meetings": [
+        "Reuniões de vídeo"
+      ],
+      "VPN connections": [
+        "Conexões VPN"
+      ],
+      "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can't be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
         "Não mantemos registros do que você pergunta ou do que o ${ LUMO_SHORT_APP_NAME } responde. Seus bate-papos não podem ser vistos, compartilhados nem usados para criar seu perfil. O ${ LUMO_SHORT_APP_NAME } não salva nada em nossos servidores."
       ],
-      "Your data isn’t shared with advertisers, governments, or anyone else. ${ LUMO_SHORT_APP_NAME } is a European service subject to GDPR, so you can delete your data anytime.": [
-        "Seus dados não são compartilhados com anunciantes, governos nem qualquer outra pessoa. O ${ LUMO_SHORT_APP_NAME } é um serviço europeu sujeito ao RGPD, então você pode excluir seus dados a qualquer momento."
+      "Your data isn't shared with advertisers, governments, or anyone else. ${ LUMO_SHORT_APP_NAME } is a European service subject to GDPR, so you can delete your data anytime.": [
+        "Seus dados não são compartilhados com anunciantes, governos ou qualquer outra pessoa. O ${ LUMO_SHORT_APP_NAME } é um serviço europeu sujeito ao GDPR, para que você possa excluir seus dados a qualquer momento."
       ]
     },
     "collider_2025: Characteristic Title": {
-      "Enter": [
-        "Digite"
-      ],
       "Only you have access": [
         "Só você tem acesso"
       ],
       "Tech that you can trust": [
         "Tecnologia em que você pode confiar"
       ],
+      "You're in control": [
+        "Você está no controle"
+      ],
       "Your chats are yours alone": [
         "Seus bate-papos são somente seus"
-      ],
-      "You’re in control": [
-        "Você está no controle"
       ]
     },
     "collider_2025: Compaction": {
+      "${ removed } freed": [
+        "${ removed } liberados"
+      ],
+      "${ stats.summarizedMessageCount } earlier message condensed": [
+        "${ stats.summarizedMessageCount } mensagem anterior resumida",
+        "${ stats.summarizedMessageCount } mensagens anteriores resumidas"
+      ],
+      "Chat shortened to keep going": [
+        "Chat encurtado para continuar"
+      ],
+      "cleared old tool results": [
+        "resultados de ferramentas antigos limpos"
+      ],
       "dropped old messages": [
         "mensagens antigas descartadas"
+      ],
+      "Files from summarized messages": [
+        "Arquivos de mensagens resumidas"
+      ],
+      "No longer sent to the model": [
+        "Não é mais enviado para o modelo"
+      ],
+      "removed file context": [
+        "contexto do arquivo removido"
+      ],
+      "removed tool calls": [
+        "chamadas de ferramentas removidas"
+      ],
+      "summarized the conversation": [
+        "resumiu a conversa"
+      ],
+      "This chat got long — summarizing earlier messages so we can keep going…": [
+        "Essa bate-papo já está ficando longa — vou resumir as mensagens anteriores para podermos continuar…"
+      ],
+      "Tool calls removed": [
+        "Chamadas de ferramentas removidas"
+      ],
+      "Tool output cleared": [
+        "Saída da ferramenta limpa"
+      ],
+      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
+        "O que o ${ LUMO_SHORT_APP_NAME } ainda lembra"
       ]
     },
     "collider_2025: Context": {
@@ -1260,6 +1321,9 @@
       ]
     },
     "collider_2025: Date": {
+      "Last week": [
+        "Última semana"
+      ],
       "Today": [
         "Hoje"
       ],
@@ -1271,23 +1335,26 @@
       "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
         "A ${ BRAND_NAME } está realizando uma pesquisa remunerada sobre assistentes de IA. Está interessado? Leva apenas 2 minutos. Se for selecionado, você receberá £80."
       ],
+      "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
+        "O ${ LUMO_SHORT_APP_NAME } faz referência às suas memórias salvas para personalizar as respostas — estilo de comunicação, especialidade, ferramentas recorrentes e projetos de longa duração."
+      ],
+      "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
+        "Adicione suas próprias memórias, edite qualquer entrada gerada automaticamente ou limpe tudo a qualquer momento. As memórias geradas que você editar serão promovidas a memórias criadas por você."
+      ],
       "Always enable web search for new conversations": [
         "Sempre ativar a pesquisa na web para novas conversas"
       ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "As chaves de API permitem acessar o ${ LUMO_SHORT_APP_NAME } por meio de programação. Cada chave é exibida apenas uma vez após a criação."
       ],
-      "Auto choose the best model": [
-        "Escolher automaticamente o melhor modelo"
-      ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Crie uma chave para integrar o ${ LUMO_SHORT_APP_NAME } aos seus scripts e ferramentas."
       ],
-      "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
-        "Eleve sua experiência de IA privada e desbloqueie modelos avançados e recursos premium com ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
       "Encrypted search index for chats and Drive files.": [
         "Índice de pesquisa criptografado para bate-papos e arquivos do Drive."
+      ],
+      "High-performance model for complex tasks": [
+        "Modelo de alto desempenho para tarefas complexas"
       ],
       "Include project conversations in the main chat history": [
         "Inclua conversas sobre projetos no histórico principal do bate-papo"
@@ -1301,26 +1368,50 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Saiba mais sobre como usar o ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Memories are stored encrypted.": [
-        "As memórias são armazenadas de forma criptografada."
+      "Lightweight model for everyday tasks": [
+        "Modelo leve para tarefas diárias"
+      ],
+      "Memories are stored encrypted, only you can access them.": [
+        "As memórias são armazenadas criptografadas, apenas você pode acessá-las."
+      ],
+      "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
+        "A memória permite que o ${ LUMO_SHORT_APP_NAME } se lembre de preferências e contextos estáveis em chats gerais, para que você não precise se repetir."
+      ],
+      "More thorough answers, but can take longer": [
+        "Respostas mais detalhadas, mas podem demorar mais"
       ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Exclua permanentemente seu projeto e bate-papos. Isso é irreversível."
       ],
-      "Quick responses": [
-        "Respostas rápidas"
+      "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
+        "Os chats do projeto são mantidos totalmente isolados. Eles contam com suas próprias instruções e arquivos e ignoram totalmente suas memórias globais."
+      ],
+      "Quick answers, less waiting": [
+        "Respostas rápidas, menos espera"
       ],
       "Report a bug or feature request": [
         "Reporte um erro ou solicitação de recurso"
       ],
+      "Show animated background on the home screen": [
+        "Mostrar plano de fundo animado na tela inicial"
+      ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie uma sessão para acessar sua conta e desbloquear mais recursos. Ainda não tem uma conta? ${ createLink }"
       ],
-      "Solves complex problems": [
-        "Resolve problemas complexos"
-      ],
       "Switch between light and dark mode": [
         "Alternar entre os modos claro e escuro"
+      ],
+      "Temporarily unavailable due to high load": [
+        "Temporariamente indisponível devido à alta carga"
+      ],
+      "This removes memories generated from your chats. Memories you added yourself will be kept.": [
+        "Isso remove as memórias geradas a partir dos seus chats. As memórias que você mesmo adicionou serão mantidas."
+      ],
+      "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
+        "Isso removerá permanentemente todas as memórias salvas. O ${ LUMO_SHORT_APP_NAME } não as usará mais em chats futuros."
+      ],
+      "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
+        "Desativar a memória excluirá permanentemente todas as ${ memories.length } memórias salvas. Você poderá ativar a memória mais tarde, mas as memórias excluídas não poderão ser recuperadas."
       ]
     },
     "collider_2025: DisableMemory": {
@@ -1339,6 +1430,9 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not generate a workflow. Try again.": [
+        "Não foi possível gerar um fluxo de trabalho. Tente novamente."
+      ],
       "Could not load usage for this key.": [
         "Não foi possível carregar o uso desta chave."
       ],
@@ -1402,11 +1496,35 @@
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente."
       ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some from this chat before uploading new ones to keep things purring.": [
+        "São muitos arquivos para o ${ LUMO_SHORT_APP_NAME } processar. Remova alguns deste chat antes de enviar novos para manter tudo funcionando perfeitamente."
+      ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some from this project before uploading new ones to keep things purring.": [
+        "São muitos arquivos para o ${ LUMO_SHORT_APP_NAME } gerenciar. Remova alguns deste projeto antes de enviar novos para manter tudo funcionando perfeitamente."
+      ],
+      "That's all the projects ${ LUMO_SHORT_APP_NAME } can keep purring at once. Delete one before creating a new one.": [
+        "Esse é o número máximo de projetos que o ${ LUMO_SHORT_APP_NAME } consegue manter ativos ao mesmo tempo. Exclua um antes de criar um novo."
+      ],
       "The provided URL is invalid.": [
         "O URL fornecido é inválido."
       ],
+      "The response could not be parsed. Raw output is shown below.": [
+        "Não foi possível analisar a resposta. A saída bruta é apresentada abaixo."
+      ],
+      "This chat is full to the whiskers. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Este chat está cheio até os bigodes. Inicie um novo chat para manter o ${ LUMO_SHORT_APP_NAME } funcionando perfeitamente."
+      ],
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Essa conversa está muito longa para continuar. Inicie um novo bate-papo para manter o ${ LUMO_SHORT_APP_NAME } funcionando bem e ágil."
+      ],
+      "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Este projeto está cheio até os bigodes. Exclua uma conversa para abrir espaço para uma nova e manter o ${ LUMO_SHORT_APP_NAME } funcionando perfeitamente."
+      ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para bate-papos ilimitados, histórico estendido, acesso a modelos de IA avançados e muito mais."
+      ],
+      "You can attach up to ${ MAX_PROVISIONAL_ATTACHMENTS } files at a time. Remove some to add more.": [
+        "Você pode anexar até ${ MAX_PROVISIONAL_ATTACHMENTS } arquivos de cada vez. Remova alguns para adicionar mais."
       ],
       "You've reached a usage limit. Please try again later.": [
         "Você alcançou o limite de uso. Tente novamente mais tarde."
@@ -1433,6 +1551,9 @@
       ]
     },
     "collider_2025: Error Message": {
+      "If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.": [
+        "Se tentar novamente não funcionar, volte em alguns minutos. Enquanto isso, estamos fazendo o possível para garantir que sua experiência seja a melhor possível."
+      ],
       "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
         "Se tentar novamente não funcionar, volte mais tarde ou considere fazer upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter prioridade durante os horários de pico."
       ],
@@ -1525,50 +1646,55 @@
       ]
     },
     "collider_2025: Feature": {
-      "Access all your past conversations anytime": [
-        "Acesse todas as suas conversas passadas a qualquer momento"
-      ],
-      "Chat as much as you need with no limits": [
-        "Converse o quanto precisar, sem limites"
-      ],
-      "Get answers with real-time web search": [
-        "Obtenha respostas com a pesquisa na web em tempo real"
-      ],
       "New": [
         "Novo"
       ],
-      "Organize work in projects with custom instructions": [
-        "Organize o trabalho em projetos com instruções personalizadas"
-      ],
-      "Save unlimited conversations as favorites": [
-        "Salvar conversas ilimitadas como favoritas"
-      ],
-      "Upload and analyze larger files": [
-        "Enviar e analisar arquivos maiores"
-      ],
-      "Use the most advanced AI models": [
-        "Use os modelos de IA mais avançados"
+      "What's new": [
+        "Novidades"
       ]
     },
     "collider_2025: Guest Signin": {
-      "Save your chats": [
-        "Salvar seus bate-papos"
+      "Create a free account to keep your chats, organize them in projects, and get higher usage limits.": [
+        "Crie uma conta gratuita para manter suas conversas, organizá-las em projetos e obter limites de uso maiores."
       ],
-      "Sign in to save your conversations and access them from anywhere.": [
-        "Inicie sessão para salvar suas conversas e acessá-las de qualquer lugar."
+      "Save your chat history": [
+        "Salve seu histórico de chat"
       ]
     },
     "collider_2025: Header": {
       "Choose sheets to add": [
         "Escolha as planilhas a serem adicionadas"
       ],
+      "Review what you're sharing": [
+        "Revise o que você está compartilhando"
+      ],
       "Tell us more": [
         "Forneça mais informações"
+      ],
+      "Your feedback is private": [
+        "Seu feedback é privado"
       ]
     },
     "collider_2025: Hint": {
+      "Memory is only used in general chats, never inside projects. Stored with zero-access encryption.": [
+        "A memória só é usada em chats gerais, nunca dentro de projetos. Armazenada com criptografia de acesso zero."
+      ],
       "You can turn it off again at any time.": [
         "Você pode desativá-lo novamente a qualquer momento."
+      ]
+    },
+    "collider_2025: Image alt": {
+      "Image generation": [
+        "Geração de imagens"
+      ],
+      "Memory settings": [
+        "Configurações de memória"
+      ],
+      "Model selection menu": [
+        "Menu de seleção de modelo"
+      ],
+      "Web search": [
+        "Pesquisa na web"
       ]
     },
     "collider_2025: Info": {
@@ -1584,20 +1710,45 @@
       " files are hidden (unsupported file types)": [
         " arquivos estão ocultos (tipos de arquivo não suportados)"
       ],
-      " talk to your admin.": [
-        " fale com seu administrador."
+      " header. Keys are scoped to your account and can be revoked from ": [
+        " cabeçalho. As chaves são limitadas à sua conta e podem ser revogadas em "
+      ],
+      " to have higher limits.": [
+        " para ter limites maiores."
+      ],
+      "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
+        "\"${ fileName }\" contém várias planilhas. Selecione as planilhas que deseja incluir no contexto da conversa."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "O armazenamento de ${ DRIVE_SHORT_APP_NAME } ainda não foi configurado"
       ],
+      "${ expiringInOneDay } chat will expire in 1 day": [
+        "${ expiringInOneDay } conversa expirará em 1 dia",
+        "${ expiringInOneDay } conversas expirarão em 1 dia"
+      ],
+      "${ expiringInTwoDays } chat will expire in 2 days": [
+        "${ expiringInTwoDays } conversa expirará em 2 dias",
+        "${ expiringInTwoDays } conversas expirarão em 2 dias"
+      ],
+      "${ expiringToday } chat will expire today": [
+        "${ expiringToday } conversa expirará hoje",
+        "${ expiringToday } conversas expirarão hoje"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
       ],
-      "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
-        "${ LUMO_SHORT_APP_NAME } dá acesso a modelos avançados para ajudar com consultas mais complexas e fornecer respostas melhores"
+      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
+        "O ${ LUMO_SHORT_APP_NAME } pode processar uma quantidade limitada de informações por conversa. Aqui você vê o que está ocupando esse espaço no momento; quando ele ficar cheio, as mensagens mais antigas serão automaticamente resumidas para que você possa continuar conversando."
+      ],
+      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
+        "${ LUMO_SHORT_APP_NAME }+ — O acesso e as chaves da API estão incluídos em uma assinatura do ${ LUMO_SHORT_APP_NAME }+ (inicie a sessão para fazer upgrade ou gerenciar as chaves)"
       ],
       "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
         "${ LUMO_SHORT_APP_NAME }+ — a API do ${ LUMO_SHORT_APP_NAME } e as chaves de API exigem uma assinatura ativa do ${ LUMO_SHORT_APP_NAME }+. "
+      ],
+      "${ urgentTotal } chat will expire within 24 hours": [
+        "${ urgentTotal } conversa expirará em até 24 horas",
+        "${ urgentTotal } conversas expirarão em até 24 horas"
       ],
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         "Segue o esquema da API da OpenAI — basta inserir seu cliente existente com uma única alteração."
@@ -1608,17 +1759,29 @@
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Uma conta do ${ LUMO_SHORT_APP_NAME }"
       ],
+      "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
+        "Um fluxo de trabalho que envia uma pasta de PDFs, extrai o texto, pede para o ${ LUMO_SHORT_APP_NAME } resumir cada arquivo e grava um resumo em Markdown por documento."
+      ],
       "Access ${ DRIVE_APP_NAME }": [
         "Acessar o ${ DRIVE_APP_NAME }"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
       ],
+      "Add from ${ DRIVE_SHORT_APP_NAME }": [
+        "Adicionar do ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Add from computer": [
+        "Adicionar do computador"
+      ],
       "Add to active": [
         "Adicionar a ativos"
       ],
       "Advanced account and network security in one plan": [
         "Segurança avançada de conta e rede em um único plano"
+      ],
+      "All API requests must include your API key in the ": [
+        "Todas as solicitações de API devem incluir sua chave de API no "
       ],
       "All files in this chat": [
         "Todos os arquivos deste bate-papo"
@@ -1644,6 +1807,9 @@
       "Attached Files": [
         "Arquivos anexados"
       ],
+      "Authenticates the request. Never expose this in client-side code.": [
+        "Autentica a solicitação. Nunca exponha isso no código do lado do cliente."
+      ],
       "Auto-matched": [
         "Correspondência automática"
       ],
@@ -1662,8 +1828,17 @@
       "characters processed": [
         "caracteres processados"
       ],
+      "Chat expiring soon": [
+        "Chat expirando em breve"
+      ],
+      "Chat expiring very soon": [
+        "Chat expirando muito em breve"
+      ],
       "Check this is the site you expect to visit": [
         "Verifique se este é o site que você espera visitar"
+      ],
+      "Context usage for this conversation": [
+        "Contexto de uso desta conversa"
       ],
       "Conversation": [
         "Conversação"
@@ -1682,6 +1857,9 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Arraste e solte seus arquivos aqui para adicioná-los ao bate-papo."
+      ],
+      "Earlier messages were summarized to make room, so they no longer take up space here.": [
+        "As mensagens anteriores foram resumidas para liberar espaço, de modo que não ocupam mais espaço aqui."
       ],
       "Error processing attachment": [
         "Erro ao processar anexo"
@@ -1704,6 +1882,9 @@
       "Expires tomorrow": [
         "Expira amanhã"
       ],
+      "Extract, analyse, and summarise documents, PDFs, and images.": [
+        "Extrair, analisar e resumir documentos, PDFs e imagens."
+      ],
       "File too large for preview (>150k tokens)": [
         "Arquivo muito grande para pré-visualização (>150k tokens)"
       ],
@@ -1722,14 +1903,38 @@
       "Files automatically retrieved based on your questions.": [
         "Arquivos recuperados automaticamente com base em suas perguntas."
       ],
+      "Files included in the next model request.": [
+        "Arquivos incluídos na próxima solicitação de modelo."
+      ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Para cada dia, a média de tokens por chamada de API (tokens ÷ chamadas, ou 0 se não houver chamadas)."
+      ],
+      "Free accounts keep chat history for 7 days from when a chat was created.": [
+        "Contas gratuitas mantêm o histórico de chat por 7 dias a partir do momento em que o chat foi criado."
+      ],
+      "Free accounts keep chat history for 7 days. ": [
+        "Contas gratuitas mantêm o histórico de chat por 7 dias. "
+      ],
+      "Free accounts keep chat history for 7 days. Talk to your admin to keep this chat.": [
+        "Contas gratuitas mantêm o histórico de conversas por 7 dias. Fale com o seu administrador para manter esta conversa."
       ],
       "Free space": [
         "Espaço livre"
       ],
+      "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
+        "Gere um gráfico de fluxo de trabalho e o código de implementação para o seguinte objetivo. Linguagem de destino para o código:"
+      ],
+      "Generate them from your recent chats, or add your own below.": [
+        "Gere-as a partir dos seus chats recentes ou adicione as suas próprias abaixo."
+      ],
       "Generating…": [
         "Gerando…"
+      ],
+      "Given a topic, use ${ LUMO_SHORT_APP_NAME } to outline sub-questions, answer each in turn, and merge the answers into a single structured brief.": [
+        "Dado um tópico, use o ${ LUMO_SHORT_APP_NAME } para esboçar subperguntas, responder a cada uma delas por vez e mesclar as respostas em um único documento estruturado."
+      ],
+      "High load": [
+        "Carga alta"
       ],
       "High-speed chats and advanced AI features.": [
         "Bate-papos de alta velocidade e recursos avançados de IA."
@@ -1737,11 +1942,14 @@
       "How to identify safe links:": [
         "Como identificar links seguros:"
       ],
-      "Include your prompt and the response to help us improve accuracy.": [
-        "Inclua seu prompt e a resposta para nos ajudar a melhorar a precisão."
+      "In the generated code, use Authorization: Bearer, model \"auto\", stream: true, and null-safe parsing of choices[].delta (delta may be null; only append string content).": [
+        "No código gerado, use Authorization: Bearer, model \"auto\", stream: true e análise segura de nulos (null-safe) de choices[].delta (delta pode ser nulo; apenas anexe o conteúdo da string)."
       ],
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
         "Receba uma mensagem do cliente, classifique a urgência e o tópico com ${ LUMO_SHORT_APP_NAME }, determine se é necessário escaloná-la e, em seguida, redija uma resposta ou a encaminhe para um atendente humano."
+      ],
+      "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
+        "Carregue duas versões de uma política, solicite ao ${ LUMO_SHORT_APP_NAME } que liste as diferenças e os riscos e, em seguida, elabore uma recomendação sucinta sobre qual versão adotar."
       ],
       "Loading": [
         "Carregando"
@@ -1761,9 +1969,6 @@
       "Manage keys after you sign in": [
         "Gerenciar chaves após o início de sessão"
       ],
-      "Maybe later": [
-        "Talvez mais tarde"
-      ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nunca inclua chaves de API em pacotes do lado do cliente. Em produção, utilize variáveis ​​de ambiente e um proxy do lado do servidor."
       ],
@@ -1776,8 +1981,8 @@
       "No data rows found.": [
         "Nenhuma linha de dados encontrada."
       ],
-      "No files available": [
-        "Nenhum arquivo disponível"
+      "No new memories were found in your recent chats.": [
+        "Nenhuma nova memória foi encontrada nos seus chats recentes."
       ],
       "No nodes in this workflow.": [
         "Não há nós neste fluxo de trabalho."
@@ -1787,6 +1992,9 @@
       ],
       "No usage yet": [
         "Não usado ainda"
+      ],
+      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
+        "Apenas o texto abaixo será enviado. Imagens e outros anexos não estão incluídos. Remova tudo o que você não deseja compartilhar."
       ],
       "Over capacity": [
         "Excesso de capacidade"
@@ -1803,9 +2011,6 @@
       "Please wait for files to finish processing": [
         "Aguarde o processamento dos arquivos"
       ],
-      "Press ${ shiftEnterBoldText } to ask": [
-        "Pressione ${ shiftEnterBoldText } para perguntar"
-      ],
       "Private video calls for the conversations that matter.": [
         "Videochamadas privadas para as conversas importantes."
       ],
@@ -1817,6 +2022,12 @@
       ],
       "Project knowledge": [
         "Conhecimento do projeto"
+      ],
+      "Ran out": [
+        "Esgotou"
+      ],
+      "Read a batch of text files, extract people, organizations, and dates with ${ LUMO_SHORT_APP_NAME }, then emit a CSV of entities per file.": [
+        "Ler um lote de arquivos de texto, extrair pessoas, organizações e datas com o ${ LUMO_SHORT_APP_NAME } e depois gerar um CSV de entidades por arquivo."
       ],
       "Relevant files will be automatically retrieved based on your questions.": [
         "Os arquivos relevantes serão recuperados automaticamente com base em suas perguntas."
@@ -1830,11 +2041,23 @@
       "Removed from future questions": [
         "Removido de perguntas futuras"
       ],
+      "Removed when chat was shortened": [
+        "Removido quando o chat foi encurtado"
+      ],
+      "Required on all POST requests with a JSON body.": [
+        "Obrigatório em todas as solicitações POST com um corpo JSON."
+      ],
+      "Reserved to keep chatting": [
+        "Reservado para continuar conversando"
+      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Salve todas as suas conversas em um histórico de bate-papo que só você pode ver. Inicie uma sessão ou crie uma conta."
       ],
       "Secure connection (encrypted)": [
         "Conexão segura (criptografada)"
+      ],
+      "Share your prompt and the response with us.": [
+        "Compartilhe seu prompt e a resposta conosco."
       ],
       "Shared by ${ file.sharedBy }": [
         "Compartilhado por ${ file.sharedBy }"
@@ -1857,6 +2080,12 @@
       "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
         "Inicie sessão para gerar fluxos de trabalho com ${ LUMO_SHORT_APP_NAME }."
       ],
+      "Sorted by creation time": [
+        "Ordenado por hora de criação"
+      ],
+      "Sorted by update time": [
+        "Ordenado por horário de atualização"
+      ],
       "Space usage: ": [
         "Espaço utilizado: "
       ],
@@ -1865,6 +2094,9 @@
       ],
       "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
         "A API do ${ LUMO_SHORT_APP_NAME } e as chaves de API estão incluídas no ${ LUMO_SHORT_APP_NAME }+. Peça ao administrador da sua organização para atribuir uma licença do ${ LUMO_SHORT_APP_NAME } à sua conta."
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
+        "A API do ${ LUMO_SHORT_APP_NAME } oferece a você acesso programático a modelos de linguagem com a arquitetura de privacidade integrada da ${ BRAND_NAME }. Sem treinamento de dados com as suas solicitações. Sem rastreamento."
       ],
       "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
         "A API do ${ LUMO_SHORT_APP_NAME } é uma interface RESTful disponível em "
@@ -1875,11 +2107,32 @@
       "There was an error processing this file.": [
         "Houve um erro ao processar este arquivo."
       ],
+      "These files belonged to summarized messages and are no longer sent to the model.": [
+        "Estes arquivos pertenciam a mensagens resumidas e não são mais enviados para o modelo."
+      ],
       "These files won't be used for future questions.": [
         "Estes arquivos não serão usados para perguntas futuras."
       ],
+      "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
+        "Este chat será removido em 2 dias. Faça o upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para mantê-lo."
+      ],
+      "This chat will be removed today unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Este chat será removido hoje, a menos que você faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Este chat será removido amanhã, a menos que você faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
       "This folder is empty": [
         "Esta pasta está vazia"
+      ],
+      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
+        "Esta é a única vez que vemos seu conteúdo. Nós o usamos para melhorar nossos prompts de sistema e entender como os problemas ocorreram. Esses dados são excluídos automaticamente após 90 dias."
+      ],
+      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
+        "Isso nos permite saber que você ficou satisfeito com a resposta. Nós nunca vemos seu prompt ou a resposta do ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
+        "Isso nos permite saber que você não ficou satisfeito com a resposta. Nós nunca vemos seu prompt ou a resposta do ${ LUMO_SHORT_APP_NAME }, a menos que você os compartilhe explicitamente conosco."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Para começar, abra ${ DRIVE_APP_NAME } para configurar o armazenamento seguro."
@@ -1893,11 +2146,17 @@
       "tokens / 30d": [
         "tokens / 30d"
       ],
-      "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
-        "Experimente a versão mais inteligente do ${ LUMO_SHORT_APP_NAME }, com recursos avançados."
-      ],
       "Trying...": [
         "Tentando..."
+      ],
+      "Unable to parse this file as a table.": [
+        "Não foi possível analisar este arquivo como uma tabela."
+      ],
+      "Upgrade for more image generations and access to advanced models.": [
+        "Faça upgrade para ter mais gerações de imagens e acesso a modelos avançados."
+      ],
+      "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
+        "Faça upgrade para ter chats ilimitados, projetos, envios de arquivos maiores e muito mais."
       ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "Enviando \"${ file.name }\" para o ${ DRIVE_APP_NAME }..."
@@ -1916,6 +2175,24 @@
       ],
       "You are about to visit an external website:": [
         "Você está prestes a visitar um site externo:"
+      ],
+      "You've reached your image limit for this period.": [
+        "Você atingiu o limite de imagens para este período."
+      ],
+      "You've reached your image limit for this period. Upgrade to keep creating images.": [
+        "Você atingiu seu limite de imagens para este período. Faça um upgrade para continuar criando imagens."
+      ],
+      "You've run out of weekly chats, please ": [
+        "Você atingiu o limite de chats semanalmente, por favor "
+      ],
+      "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
+        "Você atingiu o limite de chats semanais, por favor, inicie sessão ou crie uma conta para ter limites maiores."
+      ],
+      "You've run out of weekly chats, please upgrade to have higher limits.": [
+        "Você atingiu o limite de chats semanais, por favor, faça upgrade para ter limites maiores."
+      ],
+      "You've run out of weekly chats. Contact your admin to get higher limits.": [
+        "Você esgotou seus chats semanais. Entre em contato com seu administrador para obter limites maiores."
       ],
       "Your memories are already up to date.": [
         "Suas memórias já estão atualizadas."
@@ -1961,14 +2238,20 @@
       ]
     },
     "collider_2025: Label": {
+      "AI model": [
+        "Modelo de IA"
+      ],
+      "AI response": [
+        "Resposta da IA"
+      ],
+      "Answer mode": [
+        "Modo de resposta"
+      ],
       "API calls": [
         "Chamadas de API"
       ],
       "API calls (30d)": [
         "Chamadas de API (30d)"
-      ],
-      "Auto": [
-        "Automático"
       ],
       "Avg tokens / call": [
         "Média tokens/chamada"
@@ -2006,8 +2289,8 @@
       "Example ideas": [
         "Ideias de exemplo"
       ],
-      "Fast": [
-        "Rápido"
+      "Fast mode": [
+        "Modo rápido"
       ],
       "File upload": [
         "Envio de arquivo"
@@ -2023,6 +2306,9 @@
       ],
       "Method": [
         "Método"
+      ],
+      "Model and response mode": [
+        "Modelo e modo de resposta"
       ],
       "Not factually correct": [
         "Não é factualmente correto"
@@ -2066,8 +2352,8 @@
       "Support ticket triage": [
         "Triagem de ticket de suporte"
       ],
-      "Thinking": [
-        "Pensando"
+      "Thinking mode": [
+        "Modo de pensamento"
       ],
       "Tokens (30d)": [
         "Tokens (30d)"
@@ -2086,6 +2372,9 @@
       ],
       "You": [
         "Você"
+      ],
+      "Your prompt": [
+        "Seu prompt"
       ],
       "Your workflow": [
         "Seu fluxo de trabalho"
@@ -2129,6 +2418,9 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "upgrade": [
+        "fazer upgrade"
+      ],
       "Upgrade": [
         "Fazer upgrade"
       ],
@@ -2162,6 +2454,9 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Crie uma conta ou inicie a sessão para salvar suas conversas e aumentar os limites."
+      ],
+      "You're on ${ LUMO_SHORT_APP_NAME } Lite. Switch to Max for more capable answers.": [
+        "Você está no ${ LUMO_SHORT_APP_NAME } Lite. Mude para o Max para obter respostas mais completas."
       ]
     },
     "collider_2025: Option": {
@@ -2232,11 +2527,25 @@
       ]
     },
     "collider_2025: Placeholder": {
+      "e.g. I prefer concise, bullet-point answers": [
+        "Ex.: Prefiro respostas concisas em tópicos"
+      ],
       "New chat": [
         "Novo bate-papo"
       ],
       "Please share what you expected": [
         "Compartilhe o que você esperava"
+      ]
+    },
+    "collider_2025: Plan Name": {
+      "${ BRAND_NAME } Workspace": [
+        "${ BRAND_NAME } Workspace"
+      ],
+      "Business": [
+        "Business"
+      ],
+      "Plus": [
+        "Plus"
       ]
     },
     "collider_2025: Settings Item": {
@@ -2245,6 +2554,9 @@
       ],
       "Account": [
         "Conta"
+      ],
+      "Appearance": [
+        "Aparência"
       ],
       "General": [
         "Geral"
@@ -2257,9 +2569,6 @@
       ]
     },
     "collider_2025: Status": {
-      "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
-        "${ LUMO_SHORT_APP_NAME }+ está incluído no seu plano Visionary e você tem acesso a estes recursos:"
-      ],
       "Active": [
         "Ativo"
       ],
@@ -2271,9 +2580,6 @@
       ],
       "Expiring soon": [
         "Expirando em breve"
-      ],
-      "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
-        "Você está inscrito no ${ LUMO_SHORT_APP_NAME }+ e tem acesso a estes recursos:"
       ]
     },
     "collider_2025: Success": {
@@ -2318,6 +2624,12 @@
       "Avoid passwords, tokens, or sensitive personal identifiers.": [
         "Evite senhas, tokens ou identificadores pessoais confidenciais."
       ],
+      "Include how you like to communicate (tone, format, language).": [
+        "Inclua como você gosta de se comunicar (tom, formato, idioma)."
+      ],
+      "Keep each memory short - one preference or fact per line.": [
+        "Mantenha cada memória curta: uma preferência ou fato por linha."
+      ],
       "Write stable facts, not one-off questions.": [
         "Escreva fatos concretos, não perguntas pontuais."
       ]
@@ -2337,6 +2649,9 @@
       ],
       "Add your own memory": [
         "Adicionar sua própria lembrança"
+      ],
+      "Animated background": [
+        "Plano de fundo animado"
       ],
       "API calls per day": [
         "Chamadas de API por dia"
@@ -2385,9 +2700,6 @@
       ],
       "Don't lose the thread": [
         "Não perca o fio"
-      ],
-      "End-to-end encrypted": [
-        "Criptografado de ponta a ponta"
       ],
       "Generated code": [
         "Código gerado"
@@ -2494,13 +2806,29 @@
       "Workflow output": [
         "Saída do fluxo de trabalho"
       ],
+      "You stay in control": [
+        "Você segue no controle"
+      ],
       "Your new API key": [
         "Sua nova chave de API"
+      ],
+      "Zero-access encrypted": [
+        "Criptografado com zero acesso"
       ]
     },
     "collider_2025: Tooltip": {
+      "${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages. ${ promptsUntilAutoSave } message left until the next update.": [
+        "O ${ LUMO_SHORT_APP_NAME } atualiza as memórias baseadas no chat a cada ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } mensagens. Resta ${ promptsUntilAutoSave } mensagem até a próxima atualização.",
+        "O ${ LUMO_SHORT_APP_NAME } atualiza as memórias baseadas no chat a cada ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } mensagens. Restam ${ promptsUntilAutoSave } mensagens até a próxima atualização."
+      ],
       "Contact your admin to upgrade": [
         "Entre em contato com seu administrador para fazer upgrade"
+      ],
+      "Every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats, ${ LUMO_SHORT_APP_NAME } extracts short excerpts and adds new chat-based memories in the background.": [
+        "A cada ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } mensagens em chats gerais, o ${ LUMO_SHORT_APP_NAME } extrai pequenos trechos e adiciona novas memórias baseadas no chat em segundo plano."
+      ],
+      "When enabled, ${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats. Only short excerpts are sent.": [
+        "Quando ativada, o ${ LUMO_SHORT_APP_NAME } atualiza as memórias baseadas no chat a cada ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } mensagens em chats gerais. Apenas trechos curtos são enviados."
       ]
     },
     "collider_2025: Top nav link": {
@@ -2509,9 +2837,6 @@
       ],
       "For Business": [
         "Para empresas"
-      ],
-      "Try ${ MAIL_APP_NAME }": [
-        "Experimente o ${ MAIL_APP_NAME }"
       ]
     },
     "collider_2025: Trait": {
@@ -2609,19 +2934,37 @@
       ]
     },
     "collider_2025: Upsell": {
-      "Upgrade": [
-        "Fazer upgrade"
+      "Keep your chat history": [
+        "Mantenha seu histórico de conversas"
       ],
-      "Your chat history is limited to 7 days. For unlimited chat history and other premium features, ": [
-        "Seu histórico de bate-papo é limitado a 7 dias. Para histórico de bate-papo estendido e outros recursos premium, "
+      "Your chat history is limited to 7 days. Talk to your admin for unlimited chat history and other premium features.": [
+        "Seu histórico de bate-papo é limitado a 7 dias. Converse com seu administrador para histórico de bate-papo estendido e outros recursos premium."
+      ],
+      "Your chat history is limited to 7 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited history and other premium features.": [
+        "Seu histórico de chat é limitado a 7 dias. Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter histórico ilimitado e outros recursos premium."
       ]
     },
     "collider_2025: Upsell Title": {
+      "Elevate your AI experience": [
+        "Eleve sua experiência com IA"
+      ],
+      "Elevate your business AI experience": [
+        "Eleve o nível da experiência de IA na sua empresa"
+      ],
       "Get": [
         "Obter"
       ],
-      "Upgrade to": [
-        "Faça upgrade para"
+      "Get ${ BRAND_NAME } Workspace": [
+        "Obter ${ BRAND_NAME } Workspace"
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Business": [
+        "Obtenha o ${ LUMO_SHORT_APP_NAME } Business"
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Obtenha o ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Fazer upgrade para o ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Warning": {
@@ -2634,15 +2977,51 @@
       "Failed to index file for search: ${ processingResult.message }": [
         "Falha ao indexar o arquivo para pesquisa: ${ processingResult.message }"
       ],
+      "Long conversations can slow down responses. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Conversas longas podem tornar as respostas mais lentas. Inicie um novo bate-papo para manter o ${ LUMO_SHORT_APP_NAME } funcionando sem problemas."
+      ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Suspeito: ${ urlParts.subdomainCount } subdomínio",
         "Suspeito: ${ urlParts.subdomainCount } subdomínios"
       ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some before uploading new ones to keep things purring.": [
+        "São muitos arquivos para o ${ LUMO_SHORT_APP_NAME } processar. Remova alguns antes de enviar novos para manter tudo funcionando perfeitamente."
+      ],
+      "This chat expires in 2 days": [
+        "Este chat expira em 2 dias"
+      ],
+      "This chat expires today": [
+        "Este chat expira hoje"
+      ],
+      "This chat expires tomorrow": [
+        "Este chat expira amanhã"
+      ],
       "This conversation is getting long": [
         "Essa conversa está ficando longa"
       ],
+      "This conversation is getting long. Start a new chat soon to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Essa conversa está ficando longa. Comece um novo bate-papo logo para manter o ${ LUMO_SHORT_APP_NAME } funcionando perfeitamente."
+      ],
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Esta conversa está longa demais para continuar. Inicie um novo chat para manter o ${ LUMO_SHORT_APP_NAME } funcionando perfeitamente e responsivo."
+      ],
       "This is the only time you'll see this key. Copy it now.": [
         "Esta é a única vez que você verá esta chave. Copie-a agora."
+      ],
+      "This project is filling up": [
+        "Este projeto está ficando cheio"
+      ],
+      "This project is filling up. Tidying away conversations you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Este projeto está ficando cheio. Organizar as conversas de que você não precisa mais mantém o ${ LUMO_SHORT_APP_NAME } funcionando perfeitamente."
+      ],
+      "This project is filling up. Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Este projeto está ficando cheio. Organizar os arquivos que você não precisa mais mantém o ${ LUMO_SHORT_APP_NAME } funcionando perfeitamente."
+      ],
+      "Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Organizar os arquivos que você não precisa mais mantém o ${ LUMO_SHORT_APP_NAME } funcionando perfeitamente."
+      ],
+      "Too many files to juggle": [
+        "Muitos arquivos para processar"
       ],
       "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
         "Estamos com muito tráfego agora, mas como cliente ${ LUMO_SHORT_APP_NAME } Plus, você está na pista rápida. Como sempre, estamos priorizando suas solicitações."
@@ -2652,6 +3031,9 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Estamos com um tráfego acima do normal, então as respostas podem ser um pouco mais lentas. Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter acesso prioritário durante os horários de pico."
+      ],
+      "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
+        "Você está se aproximando do limite de projetos que o ${ LUMO_SHORT_APP_NAME } consegue manter ativos."
       ]
     },
     "collider_2025: Web Search": {
@@ -2675,17 +3057,11 @@
       "Add more information to improve the response": [
         "Inclua mais informações para melhorar a resposta"
       ],
+      "Analyse another export": [
+        "Analisar outra exportação"
+      ],
       "Ask the model to be more careful and thorough": [
         "Peça ao modelo para ser mais cauteloso e detalhista"
-      ],
-      "Back": [
-        "Voltar"
-      ],
-      "Back to project": [
-        "Voltar ao projeto"
-      ],
-      "Back to projects": [
-        "Voltar aos projetos"
       ],
       "Cancel": [
         "Cancelar"
@@ -2708,11 +3084,23 @@
       "Close": [
         "Fechar"
       ],
+      "Copy link & caption": [
+        "Copiar link e legenda"
+      ],
+      "Copy prompt": [
+        "Copiar prompt"
+      ],
       "Create": [
         "Criar"
       ],
       "Create folder": [
         "Criar pasta"
+      ],
+      "Create shareable card": [
+        "Criar cartão compartilhável"
+      ],
+      "Dark": [
+        "Escuro"
       ],
       "Delete": [
         "Excluir"
@@ -2747,20 +3135,20 @@
       "Edit project": [
         "Editar projeto"
       ],
+      "Expand": [
+        "Expandir"
+      ],
+      "Go to all projects": [
+        "Ir para todos os projetos"
+      ],
       "Go to project": [
         "Ir para o projeto"
       ],
-      "here": [
-        "aqui"
+      "Hide knowledge panel": [
+        "Ocultar painel de conhecimento"
       ],
-      "Hide settings": [
-        "Ocultar configurações"
-      ],
-      "Hide sidebar": [
-        "Ocultar barra lateral"
-      ],
-      "Keep these chats": [
-        "Manter estes bate-papos"
+      "Light": [
+        "Claro"
       ],
       "Make a copy": [
         "Fazer uma cópia"
@@ -2771,8 +3159,8 @@
       "Manage Drive folder link": [
         "Gerenciar link de pasta do Drive"
       ],
-      "Modify...": [
-        "Modificar..."
+      "Modify": [
+        "Modificar"
       ],
       "More breadcrumbs": [
         "Mais trilhas"
@@ -2782,9 +3170,6 @@
       ],
       "More options": [
         "Mais opções"
-      ],
-      "New ${ LUMO_SHORT_APP_NAME }": [
-        "Novo ${ LUMO_SHORT_APP_NAME }"
       ],
       "Next message": [
         "Próxima mensagem"
@@ -2816,8 +3201,14 @@
       "Request a shorter, more focused response": [
         "Peça uma resposta mais curta e focada"
       ],
+      "Retry": [
+        "Tentar novamente"
+      ],
       "Retry with the same prompt": [
         "Tentar novamente com o mesmo prompt"
+      ],
+      "Reveal my profile": [
+        "Revelar meu perfil"
       ],
       "Select all": [
         "Selecionar tudo"
@@ -2825,20 +3216,14 @@
       "Select conversation": [
         "Selecionar conversa"
       ],
-      "Settings": [
-        "Configurações"
+      "Share": [
+        "Compartilhar"
       ],
-      "Show instructions and files": [
-        "Mostar instruções e arquivos"
-      ],
-      "Show settings": [
-        "Mostrar configurações"
+      "Show knowledge panel": [
+        "Mostrar painel de conhecimento"
       ],
       "Show sidebar": [
         "Mostrar barra lateral"
-      ],
-      "Shuffle suggestions": [
-        "Sugestões aleatórias"
       ],
       "Think longer": [
         "Pense mais"
@@ -2846,11 +3231,20 @@
       "Toggle selection": [
         "Alternar seleção"
       ],
+      "Try ${ LUMO_SHORT_APP_NAME } free": [
+        "Experimente o ${ LUMO_SHORT_APP_NAME } grátis"
+      ],
       "Try again": [
         "Tentar novamente"
       ],
+      "Try this": [
+        "Tente isto"
+      ],
       "Unlink Folder": [
         "Desvincular pasta"
+      ],
+      "Upgrade for more custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Faça upgrade para ter mais ${ LUMO_SHORT_APP_NAME }s personalizados"
       ],
       "Upgrade to Plus": [
         "Fazer upgrade para o Plus"
@@ -2860,6 +3254,9 @@
       ],
       "Upload files": [
         "Enviar arquivos"
+      ],
+      "Upload your AI export": [
+        "Envie sua exportação de IA"
       ],
       "What needs changed?": [
         "O que precisa ser alterado?"
@@ -2871,8 +3268,17 @@
       ]
     },
     "collider_2025:Agent description": {
+      "Draft, refine and proofread your writing.": [
+        "Escreva rascunhos, refine e revise seus textos."
+      ],
       "Help with login, password, 2FA and recovery issues.": [
         "Ajuda com problemas de início de sessão, senha, A2F e recuperação."
+      ],
+      "Summarize documents into clear, concise takeaways.": [
+        "Resuma os documentos em conclusões claras e concisas."
+      ],
+      "Turn a CSV or spreadsheet into a clear analysis.": [
+        "Transforme um CSV ou uma planilha em uma análise clara."
       ]
     },
     "collider_2025:Agent name": {
@@ -2913,8 +3319,8 @@
       "Close sidebar": [
         "Fechar barra lateral"
       ],
-      "Create agent": [
-        "Criar agente"
+      "Create": [
+        "Criar"
       ],
       "Create project": [
         "Criar projeto"
@@ -2928,17 +3334,8 @@
       "Expand": [
         "Expandir"
       ],
-      "Favorite": [
-        "Favorito"
-      ],
-      "Gallery": [
-        "Galeria"
-      ],
-      "Get ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Obtenha o ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Hide sidebar": [
-        "Ocultar barra lateral"
+      "Images": [
+        "Imagens"
       ],
       "Link this folder": [
         "Vincular esta pasta"
@@ -2948,9 +3345,6 @@
       ],
       "Load more": [
         "Carregar mais"
-      ],
-      "Manage chat knowledge files (${ totalFiles })": [
-        "Gerenciar arquivos da base de conhecimento dos bate-papos (${ totalFiles })"
       ],
       "New chat": [
         "Novo bate-papo"
@@ -2976,12 +3370,6 @@
       "Settings": [
         "Configurações"
       ],
-      "Show sidebar": [
-        "Mostrar barra lateral"
-      ],
-      "Unfavorite": [
-        "Remover dos favoritos"
-      ],
       "Untitled chat": [
         "Bate-papo sem título"
       ],
@@ -2990,6 +3378,9 @@
       ]
     },
     "collider_2025:Error": {
+      "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
+        "O ${ LUMO_SHORT_APP_NAME } precisa de armazenamento de banco de dados local (IndexedDB) para funcionar, mas ele não está disponível neste navegador. Isso pode acontecer quando cookies ou dados de sites são bloqueados, na navegação privada ou com o Modo de Bloqueio ativado. Permita os dados de sites para este site e recarregue a página."
+      ],
       "Cannot link the root folder. Please select a subfolder.": [
         "Não é possível vincular a pasta raiz. Selecione uma subpasta."
       ],
@@ -3046,19 +3437,11 @@
       "Priority access & faster responses": [
         "Acesso prioritário e respostas mais rápidas"
       ],
+      "Unlimited custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Personalizações de ${ LUMO_SHORT_APP_NAME }s ilimitadas"
+      ],
       "Unlimited projects": [
         "Projetos ilimitados"
-      ]
-    },
-    "collider_2025:FeaturePoint": {
-      "Chats, files, and context stay together in an encrypted workspace.": [
-        "As conversas, os arquivos e o contexto permanecem juntos em um espaço de trabalho criptografado."
-      ],
-      "Project-specific instructions mean no repeating yourself.": [
-        "Instruções específicas para o projeto significam que não há necessidade de repeti-las."
-      ],
-      "Tailored responses based on your project’s files and instructions.": [
-        "Respostas personalizadas com base nos arquivos e instruções do seu projeto."
       ]
     },
     "collider_2025:Filter": {
@@ -3067,6 +3450,9 @@
       ],
       "Built-in": [
         "Integrado"
+      ],
+      "Mine": [
+        "Meus"
       ]
     },
     "collider_2025:Finance": {
@@ -3092,61 +3478,16 @@
         "Receita (TTM)"
       ]
     },
-    "collider_2025:Gallery suggestion hint": {
-      "Draw a sketch to bring to life": [
-        "Faça um esboço para dar vida à ideia"
-      ],
-      "Upload a photo to caricature": [
-        "Envie uma foto para fazer uma caricatura"
-      ],
-      "Upload a photo to package": [
-        "Envie uma foto para o pacote"
-      ],
-      "Upload a photo to plushify": [
-        "Envie uma foto para transformá-la em pelúcia"
-      ],
-      "Upload a photo to transform": [
-        "Envie uma foto para transformar"
-      ]
-    },
-    "collider_2025:Gallery suggestion title": {
-      "Bauhaus Modern Art": [
-        "Arte moderna Bauhaus"
-      ],
-      "Comic Caricature": [
-        "Caricatura humorística"
-      ],
-      "Cubist Deconstruction": [
-        "Desconstrução cubista"
-      ],
-      "Decorated Cookie": [
-        "Biscoito decorado"
-      ],
-      "Impressionist Painting": [
-        "Pintura impressionista"
-      ],
-      "Plushie Transformation": [
-        "Transformação de pelúcias"
-      ],
-      "Product Packaging": [
-        "Embalagem de produto"
-      ],
-      "Renaissance Portrait": [
-        "Retrato renascentista"
-      ],
-      "Sketch to Reality": [
-        "Do esboço à realidade"
-      ]
-    },
-    "collider_2025:Icon": {
-      "Expiring soon": [
-        "Expirando em breve"
-      ]
-    },
     "collider_2025:Info": {
       " Chat in Project": [
         " Bate-papo no projeto",
         " Bate-papos no projeto"
+      ],
+      "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
+        "O ${ LUMO_SHORT_APP_NAME } precisa de armazenamento de banco de dados local (IndexedDB) para manter suas conversas neste dispositivo, mas ele não está disponível aqui."
+      ],
+      "${ LUMO_SHORT_APP_NAME } remembers your preferences, so each conversation can build on the last. It can also handle longer chats and larger documents.": [
+        "O ${ LUMO_SHORT_APP_NAME } lembra das suas preferências, para que cada conversa possa aproveitar a anterior. Ele também pode lidar com chats mais longos e documentos maiores."
       ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } conversa"
@@ -3160,32 +3501,107 @@
       "${ project.fileCount } files": [
         "${ project.fileCount } arquivos"
       ],
-      "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
-        "As IAs das big techs são criadas para coletar seus dados, mas o ${ LUMO_SHORT_APP_NAME } é diferente. Ele foi criado pelos cientistas por trás de serviços inovadores e que priorizam a privacidade, como o ${ MAIL_APP_NAME } e o ${ VPN_APP_NAME }. E é propriedade de uma organização suíça sem fins lucrativos, cuja missão é promover a privacidade e nunca lucrar com os dados dos usuários."
+      "A few habits go a long way to shrinking your paper trail.": [
+        "Alguns hábitos ajudam muito a reduzir seu rastro de dados."
+      ],
+      "A profile like this powers ads and messaging engineered to push your buttons — products, opinions, even how you vote.": [
+        "Um perfil como este alimenta anúncios e mensagens criados para mexer com suas emoções — produtos, opiniões e até mesmo o seu voto."
+      ],
+      "ad value": [
+        "valor publicitário"
+      ],
+      "Advanced models, a new look, new features, and the same privacy you trust. Click through to see what’s new.": [
+        "Modelos avançados, um novo visual, novos recursos e a mesma privacidade em que você confia. Clique aqui para ver as novidades."
+      ],
+      "Agents turn a chat into a focused assistant with its own instructions.": [
+        "Os agentes transformam um bate-papo em um assistente especializado com suas próprias instruções."
+      ],
+      "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it's owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
+        "As IAs das Big Techs são criadas com base na coleta dos seus dados. Mas o ${ LUMO_SHORT_APP_NAME } é diferente. Ele foi criado pelos cientistas por trás de serviços inovadores e focados em privacidade como o ${ MAIL_APP_NAME } e o ${ VPN_APP_NAME }. Além disso, pertence a uma organização sem fins lucrativos suíça, cuja missão é promover a privacidade e nunca lucrar com os dados dos usuários."
       ],
       "All messages and chat history": [
         "Todo o histórico de mensagens e chats"
       ],
+      "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what cover you're offered and what you pay.": [
+        "Uma simples menção a estresse, um diagnóstico ou um medicamento pode alimentar modelos de risco que afetam silenciosamente a cobertura oferecida a você e quanto você paga."
+      ],
+      "Any images generated in these conversations will also be deleted.": [
+        "Todas as imagens geradas nessas conversas também serão excluídas."
+      ],
+      "Any images generated in this conversation will also be deleted.": [
+        "Toda imagem geradas nesta conversa também serão excluídas."
+      ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Você tem certeza de que deseja excluir \"${ project.name }\"? Esta ação não pode ser desfeita."
+      ],
+      "Ask a question to get started. Your conversation is private.": [
+        "Faça uma pergunta para começar. Sua conversa é privada."
+      ],
+      "Assembling your profile…": [
+        "Montando seu perfil…"
       ],
       "Auto-retrieved": [
         "Recuperado automaticamente"
       ],
+      "Automated systems increasingly weigh data profiles in decisions about loans, jobs, and housing — with little transparency or recourse.": [
+        "Sistemas automatizados ponderam cada vez mais os perfis de dados em decisões sobre empréstimos, empregos e habitação — com pouca transparência ou recurso."
+      ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navegue até a pasta do ${ DRIVE_SHORT_APP_NAME } que você deseja vincular a este projeto e clique em \"Vincular esta pasta\"."
+      ],
+      "Built-in ${ BRAND_NAME } agent": [
+        "Agente integrado da ${ BRAND_NAME }"
+      ],
+      "Choose apps where the provider can't read your content in the first place.": [
+        "Escolha aplicativos nos quais o provedor não consiga ler seu conteúdo em primeiro lugar."
+      ],
+      "Choose or drop .zip or conversations.json from Chat GPT or Claude.": [
+        "Escolha ou arraste o arquivo .zip ou conversations.json do ChatGPT ou Claude."
+      ],
+      "Companies quietly adjust prices and offers based on what they think you can afford.": [
+        "As empresas ajustam discretamente preços e ofertas com base no que acham que você pode pagar."
       ],
       "Conversation encrypted": [
         "Conversa criptografada"
       ],
+      "Conversational AI doesn't just answer — it asks follow-up questions. Each time you add detail (\"actually, I'm 34 and based in Berlin\"), you hand over another verified fact.": [
+        "A IA conversacional não apenas responde — ela faz perguntas de acompanhamento. Cada vez que você adiciona detalhes (\"na verdade, tenho 34 anos e moro em Berlim\"), você entrega mais um fato verificado."
+      ],
+      "Cookies or website data are blocked in your browser settings": [
+        "Os cookies ou dados do site estão bloqueados nas configurações do seu navegador"
+      ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Crie imagens, aplique estilos e esboce ideias. Inicie sessão ou crie uma conta gratuita para salvar suas criações."
+      ],
+      "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
+        "Crie assistentes feitos sob medida com as suas próprias instruções. Configure-os uma vez e eles seguirão as suas preferências sempre."
+      ],
+      "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
+        "Crie recursos visuais a partir de um prompt, edite fotos, analise gráficos ou transforme esboços em gráficos polidos."
       ],
       "Current chat:": [
         "Bate-papo atual:"
       ],
+      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it's out, it's out.": [
+        "Os dados coletados hoje podem ser vazados, intimados judicialmente ou reaproveitados anos mais tarde. Uma vez expostos, já era."
+      ],
+      "data points": [
+        "pontos de dados"
+      ],
+      "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
+        "Descubra o que a IA das Big Techs poderia deduzir sobre você a partir do seu histórico de conversas — e obtenha uma pontuação de privacidade que você pode compartilhar."
+      ],
+      "Download your data from ChatGPT (Settings → Data Controls → Export), or Claude (Settings → Privacy → Export data).": [
+        "Baixe seus dados do ChatGPT (Configurações → Controles de dados → Exportar) ou Claude (Configurações → Privacidade → Exportar dados)."
+      ],
       "Drive files are not available for guest users": [
         "Arquivos do Drive não estão disponíveis para usuários convidados"
+      ],
+      "Every conversation with AI leaves a paper trail. Your job. Your health. Your relationships. Even where you live. Upload your AI data and see what Big Tech could piece together from your words alone. But unlike them, we can't see it.": [
+        "Toda conversa com IA deixa um rastro de papel. Seu trabalho. Sua saúde. Seus relacionamentos. Até onde você mora. Envie seus dados de IA e veja o que as Big Techs poderiam deduzir apenas com suas palavras. Mas, ao contrário delas, nós não podemos ver isso."
+      ],
+      "Example prompts shown when a conversation begins.": [
+        "Prompts de exemplo exibidos quando uma conversa começa."
       ],
       "File \"${ file.name }\" is already in this project": [
         "O arquivo \"${ file.name }\" já está neste projeto"
@@ -3199,11 +3615,32 @@
       "From ${ DRIVE_APP_NAME }": [
         "A partir de ${ DRIVE_APP_NAME }"
       ],
-      "Generate images, apply styles, and sketch ideas. For inspiration, click ${ link }.": [
-        "Crie imagens, aplique estilos e esboce ideias. Para se inspirar, clique em ${ link }."
+      "Get faster, more accurate answers from the web, with citations so you can check the source.": [
+        "Obtenha respostas mais rápidas e precisas da web, com citações para que você possa verificar a fonte."
+      ],
+      "Heads up — some of what you pasted may cross common workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
+        "Atenção — parte do que você colou pode violar limites comuns de ambiente de trabalho, jurídicos ou de proteção de dados. Isso está aqui para ajudar você a identificar, não para julgar."
+      ],
+      "If a profile suggests you can pay more — or that you're in a hurry — you may simply see a higher price than the next person.": [
+        "Se um perfil sugerir que você pode pagar mais — ou que está com pressa —, você poderá simplesmente ver um preço mais alto do que a próxima pessoa."
+      ],
+      "In ChatGPT and Claude, disable chat history and model training wherever the setting exists.": [
+        "No ChatGPT e no Claude, desative o histórico de chat e o treinamento de modelos onde quer que a configuração exista."
+      ],
+      "Inferred details are packaged and traded. A single profile can pass through dozens of companies you've never heard of.": [
+        "Detalhes deduzidos são empacotados e comercializados. Um único perfil pode passar por dezenas de empresas das quais você nunca ouviu falar."
+      ],
+      "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
+        "Tendências políticas inferidas alimentam mensagens de microdirecionamento criadas para mudar como você se sente — e como vota —, muitas vezes sem que você perceba."
+      ],
+      "Inferred traits get bundled and sold to brokers, advertisers, and anyone willing to pay.": [
+        "As características inferidas são agrupadas em pacotes e vendidas para corretores de dados, anunciantes e quem mais estiver disposto a pagar."
       ],
       "Initializing Drive...": [
         "Inicializando Drive..."
+      ],
+      "Keep names, addresses, health details, and financial specifics out of your prompts.": [
+        "Mantenha nomes, endereços, detalhes de saúde e dados financeiros específicos fora dos seus prompts."
       ],
       "Learn more about how project knowledge works": [
         "Saiba mais sobre como funciona o conhecimento do projeto"
@@ -3214,11 +3651,29 @@
       "Lockdown Mode is enabled on your device": [
         "Modo de isolamento está ativado no seu dispositivo"
       ],
+      "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
+        "Não há detalhes pessoais neste cartão — apenas sua pontuação de exposição por área. Quanto menor ela for, menos você revelou."
+      ],
       "No projects yet": [
         "Nenhum projeto ainda"
       ],
+      "Now protect the person behind it.": [
+        "Agora proteja a pessoa por trás dele."
+      ],
+      "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
+        "No iPhone ou iPad, abra Ajustes → Apps → Safari e certifique-se de que a opção \"Bloquear Todos os Cookies\" esteja desativada e, em seguida, recarregue a página."
+      ],
+      "Once collected, your data can be breached, handed over on request, or kept indefinitely.": [
+        "Uma vez coletados, seus dados podem ser violados, entregues mediante solicitação ou mantidos indefinidamente."
+      ],
       "PASTED": [
         "COLADO"
+      ],
+      "Periodically review, download, and delete the data AI services hold on you.": [
+        "Revise, baixe e exclua periodicamente os dados que os serviços de IA têm sobre você."
+      ],
+      "Pick services that don't train on or sell your conversations — like ${ LUMO_SHORT_APP_NAME }, which can't read your chats.": [
+        "Escolha serviços que não treinam modelos nem vendem suas conversas — como o ${ LUMO_SHORT_APP_NAME }, que não pode ler seus chats."
       ],
       "Processing file...": [
         "Processando arquivo..."
@@ -3226,11 +3681,56 @@
       "Processing...": [
         "Processando..."
       ],
+      "Profiled by Big Tech AI": [
+        "Perfil traçado por IA de Big Tech"
+      ],
+      "Profiles can feed into insurance, lending, and hiring outcomes — without you ever knowing.": [
+        "Os perfis podem influenciar os resultados de seguros, empréstimos e contratações — sem que você saiba."
+      ],
       "Projects help you organize conversations with custom instructions and files.": [
         "Os projetos ajudam você a organizar conversas com instruções e arquivos personalizados."
       ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "Os projetos ajudam você a organizar conversas com instruções e arquivos personalizados. Inicie sessão ou crie uma conta gratuita para começar.iniciar sessão"
+      ],
+      "Reading your prompts…": [
+        "Lendo seus prompts…"
+      ],
+      "red flags": [
+        "sinais de alerta"
+      ],
+      "Scoring how much you revealed…": [
+        "Avaliando o quanto você revelou…"
+      ],
+      "See the profile an AI company can piece together from your conversations alone.": [
+        "Veja o perfil que uma empresa de IA pode traçar apenas com base nas suas conversas."
+      ],
+      "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
+        "Veja o que a IA da Big Tech sabe sobre você. Feito com o ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Something went wrong analysing this export. Please try again.": [
+        "Ocorreu um erro ao analisar esta exportação. Tente novamente."
+      ],
+      "Spotting the patterns in what you typed…": [
+        "Identificando padrões no que você digitou…"
+      ],
+      "The fuller the bar, the more of that area Big Tech could reconstruct from your chats. Lower is better. Hover a row to see what gave it away.": [
+        "Quanto mais cheia a barra, mais dessa área as Big Techs poderiam reconstruir a partir dos seus chats. Menos é melhor. Passe o mouse sobre uma linha para ver o que revelou isso."
+      ],
+      "The more an attacker knows about you, the more believable the phishing message. Personalised scams are far harder to spot.": [
+        "Quanto mais um invasor souber sobre você, mais convincente será a mensagem de phishing. Golpes personalizados são muito mais difíceis de detectar."
+      ],
+      "The more that's known about you, the more believable phishing and fraud attempts become.": [
+        "Quanto mais se sabe sobre você, mais convincentes se tornam as tentativas de phishing e fraude."
+      ],
+      "These are the most sensitive categories Big Tech AI could infer about you from your chats.": [
+        "Estas são as categorias mais sensíveis que a IA da Big Tech pode inferir sobre você a partir dos seus chats."
+      ],
+      "This is exactly the kind of profiling ${ LUMO_SHORT_APP_NAME } is built to stop. With ${ LUMO_SHORT_APP_NAME }, your conversations are encrypted and never used to build a profile of you.": [
+        "Esse é exatamente o tipo de criação de perfil que o ${ LUMO_SHORT_APP_NAME } foi feito para impedir. Com o ${ LUMO_SHORT_APP_NAME }, suas conversas são criptografadas e nunca são usadas para criar um perfil seu."
+      ],
+      "This isn't just trivia. Here's what a profile like yours can actually be used for.": [
+        "Isso não é apenas curiosidade. Veja para que um perfil como o seu realmente pode ser usado."
       ],
       "This message is empty. Sorry about that.": [
         "Lamentamos, mas esta mensagem está vazia."
@@ -3250,11 +3750,35 @@
       "Type @filename to ask questions about a specific file": [
         "Digite @nomedoarquivo para fazer perguntas sobre um arquivo específico"
       ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
+        "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar ${ LUMO_SHORT_APP_NAME }s personalizados ilimitados, desbloquear modelos de IA avançados e muito mais."
+      ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar projetos ilimitados, desbloquear modelos avançados de IA e muito mais."
       ],
+      "Use email aliases and hide-my-email so your real address isn't tied to every account.": [
+        "Use aliases de e-mail e hide-my-email para que seu endereço real não fique associado a todas as contas."
+      ],
+      "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
+        "Use o modelo Max para trabalhos complexos ou o modelo Lite para tarefas cotidianas. Escolha o modo Rápido para respostas rápidas ou o modo Pensamento para perguntas mais difíceis."
+      ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Usar o ${ DRIVE_APP_NAME } permite que o ${ LUMO_SHORT_APP_NAME } funcione com arquivos maiores."
+      ],
+      "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
+        "Salvaremos seu cartão para que você possa anexá-lo à publicação — as redes sociais não podem adicionar a imagem para você."
+      ],
+      "Working out what Big Tech AI could infer…": [
+        "Analisando o que a IA das Big Techs poderia inferir…"
+      ],
+      "You're using private browsing": [
+        "Você está navegando no modo de navegação privada"
+      ],
+      "Your file is analysed on the spot to build your report. Nothing is uploaded to our servers or stored.": [
+        "Seu arquivo é analisado na hora para criar seu relatório. Nada é enviado para nossos servidores ou armazenado."
+      ],
+      "Your file never leaves your device. It's read locally and is never stored.": [
+        "Seu arquivo nunca sai do seu dispositivo. Ele é lido localmente e nunca é armazenado."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Seus arquivos são grandes. ${ LUMO_SHORT_APP_NAME } talvez não consiga processar todas as informações."
@@ -3263,7 +3787,96 @@
         "Sua informação é criptografada com acesso zero"
       ]
     },
+    "collider_2025:Inspiration suggestion prompt": {
+      "3D animated character in a high-quality family film style, expressive face, large emotional eyes, soft subsurface skin, stylized proportions, vibrant colors, detailed hair and clothing, cinematic lighting, shallow depth of field, friendly and charming personality, ultra polished render, studio-quality animation still.": [
+        "Personagem animado em 3D em estilo de filme familiar de alta qualidade, rosto expressivo, olhos grandes e expressivos, pele macia de subsuperfície, proporções estilizadas, cores vibrantes, cabelo e roupas detalhados, iluminação cinematográfica, profundidade de campo rasa, personalidade amigável e charmosa, renderização ultra polida, frame de animação com qualidade de estúdio."
+      ],
+      "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
+        "Um close-up onírico de flores transformadas em suaves rastros radiais pelo movimento de rotação da câmera, onde o centro floresce em detalhes nítidos enquanto as pétalas se dissolvem para fora em um bokeh cremoso sob luz natural suave."
+      ],
+      "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
+        "Um estudo monocromático impressionante em amarelo — apenas um fragmento da arquitetura contemporânea emergindo de seus arredores igualmente dourados, com variações de tom que sozinhas esculpem as superfícies geométricas e dão à cena uma sensação serena de profundidade e forma."
+      ],
+      "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
+        "Uma sala de estar aconchegante e acolhedora no estilo Japandi, estética minimalista, sofá modular creme, almofadas decorativas em tons neutros e mostarda, pufe tecido, tapete grande texturizado com franjas, arte de parede botânica minimalista, palmeira interna grande, iluminação dourada suave, velas, atmosfera serena e pacífica, fotorrealista, fotografia de design de interiores."
+      ],
+      "Abstract composition of translucent glass shapes floating in space, soft refraction and reflection, smooth curved forms, frosted and clear glass mix, pastel lighting with subtle purple and blue tones, minimalist design, premium modern aesthetic, soft shadows, ultra clean background, high resolution, 3D render style.": [
+        "Composição abstrata de formas de vidro translúcido flutuando no espaço, refração e reflexão suaves, formas curvas suaves, mistura de vidro fosco e transparente, iluminação pastel com tons sutis de roxo e azul, design minimalista, estética moderna premium, sombras suaves, fundo ultra-limpo, alta resolução, estilo de renderização 3D."
+      ],
+      "Abstract frozen ice background in soft pastel lavender and light purple tones, translucent crystalline ice textures, subtle frost patterns, glowing icy surface, smooth gradients, sparkling frozen details, ethereal winter atmosphere, clean and minimal design, soft lighting, elegant luxury aesthetic, high resolution, dreamy frozen landscape, delicate reflections, ultra-detailed, background only, no objects, no text.": [
+        "Fundo abstrato de gelo congelado em tons suaves de lavanda pastel e roxo-claro, texturas de gelo cristalino translúcido, padrões sutis de geada, superfície congelada brilhante, gradientes suaves, detalhes congelados cintilantes, atmosfera invernal etérea, design limpo e minimalista, iluminação suave, estética de luxo elegante, alta resolução, paisagem congelada de sonho, reflexos delicados, ultradetalhado, apenas fundo, sem objetos, sem texto."
+      ],
+      "Abstract futuristic background with flowing horizontal ribbon waves, layered luminous bands, soft neon green and cyan gradients, smooth organic curves, subtle motion blur, glossy depth, dark high-contrast backdrop, dynamic light streaks, modern tech aesthetic, clean geometric rhythm, cinematic glow, ultra-detailed digital art, premium UI background, 3D render.": [
+        "Fundo futurista abstrato com ondas horizontais fluidas de fitas, faixas luminosas em camadas, gradientes suaves de verde neon e ciano, curvas orgânicas suaves, desfoque de movimento sutil, profundidade brilhante, fundo escuro de alto contraste, feixes de luz dinâmicos, estética de tecnologia moderna, ritmo geométrico limpo, brilho cinematográfico, arte digital ultradetalhada, plano de fundo de interface premium, renderização em 3D."
+      ],
+      "Abstract glass background design, translucent glass morphism style, smooth flowing shapes and layered glass panels, soft refraction and light dispersion, purple and deep violet dominant color palette, blended with rich blue tones and subtle accents of warm yellow light, cinematic lighting, ultra soft gradients, glossy and frosted glass textures, depth and blur effects, minimal but premium aesthetic, high resolution, 3D rendered, modern tech UI background, elegant and futuristic atmosphere": [
+        "Design abstrato de fundo de vidro, estilo glassmorphism translúcido, formas fluidas suaves e painéis de vidro em camadas, refração suave e dispersão de luz, paleta de cores dominante roxa e violeta escuro, mesclada com tons de azul intensos e toques sutis de luz amarela quente, iluminação cinematográfica, gradientes ultra-suaves, texturas de vidro brilhante e fosco, efeitos de profundidade e desfoque, estética minimalista mas premium, alta resolução, renderizado em 3D, fundo de interface de tecnologia moderna, atmosfera elegante e futurista"
+      ],
+      "Abstract minimalist background, soft light purple and pastel yellow color palette, smooth gradient transitions, flowing organic shapes, subtle glow, airy and modern aesthetic, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
+        "Fundo minimalista abstrato, paleta de cores roxo-claro suave e amarelo pastel, transições de gradiente suaves, formas orgânicas fluidas, brilho sutil, estética arejada e moderna, composição limpa, efeitos de luz delicados, design de alto padrão, profundidade suave, atmosfera elegante e de sonho, resolução ultra-alta."
+      ],
+      "Aerial photograph of rolling agricultural hills forming smooth, wave-like patterns across a vast landscape. The fields are divided into soft gradients of green and golden yellow, suggesting different crops or stages of growth. Long, curved tractor tracks trace elegant lines through the terrain, emphasizing the rhythm and geometry of the land. Warm sunlight casts gentle shadows across the contours, enhancing depth and texture. Minimalist composition, highly detailed natural patterns, serene and atmospheric, captured in a cinematic landscape photography style with soft contrast and rich natural color tones.": [
+        "Fotografia aérea de colinas agrícolas onduladas formando padrões suaves que lembram ondas em uma vasta paisagem. Os campos são divididos em gradientes suaves de verde e amarelo dourado, sugerindo diferentes culturas ou estágios de crescimento. Rastros longos e curvos de tratores desenham linhas elegantes pelo terreno, enfatizando o ritmo e a geometria da terra. A luz solar quente projeta sombras suaves sobre os contornos, realçando a profundidade e a textura. Composição minimalista, padrões naturais altamente detalhados, serena e atmosférica, capturada em um estilo de fotografia de paisagem cinematográfica com contraste suave e tons ricos de cores naturais."
+      ],
+      "Back view silhouette of a woman with hair tied up typing on a laptop. Dark purple screen, clean light purple background, high-contrast studio lighting, minimalist tech mockup style.": [
+        "Silhueta em vista traseira de uma mulher com o cabelo preso digitando em um laptop. Tela roxa escura, fundo roxo claro limpo, iluminação de estúdio de alto contraste, estilo mockup de tecnologia minimalista."
+      ],
+      "Close-up texture of polished cross-section tree trunk, intricate swirling growth rings, detailed cracks and wood grain, warm brown and amber tones, natural organic pattern, high resolution.": [
+        "Textura em close-up de um tronco de árvore polido em corte transversal, anéis de crescimento intrincados em espiral, rachaduras e veios de madeira detalhados, tons quentes de marrom e âmbar, padrão orgânico natural, alta resolução."
+      ],
+      "Ethereal portrait of a person wearing a sleek dark VR headset, body dissolving into a glowing cyan-teal haze. Centered composition, uniform saturated teal-blue gradient background, backlit silhouette with luminous rim lighting on the headset and fingertips. One hand loosely clenched, the other reaching forward palm-out. Futuristic sci-fi atmosphere, minimalist and dreamlike, digital art style, shallow depth of field.": [
+        "Retrato etéreo de uma pessoa usando um headset VR escuro e moderno, com o corpo se dissolvendo em uma névoa brilhante de tom ciano-verde-azulado. Composição centralizada, fundo de gradiente azul-esverdeado saturado uniforme, silhueta retroiluminada com iluminação de borda luminosa no headset e nas pontas dos dedos. Uma mão levemente fechada, a outra estendida para frente com a palma para fora. Atmosfera de ficção científica futurista, minimalista e onírica, estilo de arte digital, profundidade de campo rasa."
+      ],
+      "Futuristic abstract background, neon green and blue gradient, smooth organic shapes, subtle glow, ethereal atmosphere, clean composition, gentle light effects, high-end design, soft depth, elegant and dreamy atmosphere, ultra-high resolution.": [
+        "Fundo abstrato futurista, gradiente verde neon e azul, formas orgânicas suaves, brilho sutil, atmosfera etérea, composição limpa, efeitos de luz suaves, design sofisticado, profundidade suave, atmosfera elegante e onírica, resolução ultra-alta."
+      ],
+      "Heavily blurred, out of focus surreal profile portrait. Vibrant neon gradient with bright orange, hot pink, and deep electric blue. High contrast, heavy film grain, minimalist abstract aesthetic.": [
+        "Retrato de perfil surreal muito desfocado e fora de foco. Gradiente neon vibrante com laranja brilhante, rosa choque e azul elétrico profundo. Alto contraste, granulação de filme pesada, estética abstrata minimalista."
+      ],
+      "Hyper-realistic voluminous fluffy white clouds, dense and soft textures, minimalist pale blue gradient sky, soft cinematic lighting, clean aesthetic, ethereal and peaceful mood, studio 3D render style, 8k resolution": [
+        "Nuvens brancas fofas e volumosas hiper-realistas, texturas densas e suaves, céu minimalista com gradiente azul-claro, iluminação cinematográfica suave, estética limpa, clima etéreo e pacífico, estilo de renderização 3D de estúdio, resolução 8k"
+      ],
+      "Minimalist Asian ink wash painting style. A winding white path trails along a mountain ridge covered in deep blue and indigo trees, fading into a heavy white fog. A vibrant, textured solid red sun hangs in the upper right. Surreal, serene, and high-contrast composition.": [
+        "Estilo de pintura minimalista com tinta nanquim asiática. Um caminho branco sinuoso segue ao longo de uma cordilheira coberta de árvores azul-escuras e índigo, desaparecendo em uma névoa branca densa. Um sol vermelho sólido, vibrante e texturizado surge no canto superior direito. Composição surreal, serena e de alto contraste."
+      ],
+      "Minimalist op-art graphic of the number \"5\" formed by a distorted halftone grid blurred. Black dots varying in size create a 3D bulging illusion on a vibrant solid yellow background. Clean vector aesthetic, high contrast, mathematical pattern distortion.": [
+        "Gráfico de op-art minimalista do número \"5\" formado por uma grade de meio-tom distorcida e desfocada. Pontos pretos de tamanhos variados criam uma ilusão de saliência 3D em um fundo amarelo sólido vibrante. Estética vetorial limpa, alto contraste, distorção de padrão matemático."
+      ],
+      "Modern two-story minimalist white villa with rounded edges, large sliding glass doors, and a swimming pool. Minimalist patio furniture, mediterranean vibe, architectural photography style, bright sunny day.": [
+        "Vila moderna de dois andares, branca e minimalista, com bordas arredondadas, grandes portas de vidro de correr e uma piscina. Móveis de pátio minimalistas, clima mediterrâneo, estilo de fotografia de arquitetura, dia ensolarado."
+      ],
+      "Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.": [
+        "Mockup fotorrealista de camiseta branca pendurada em uma parede dentro de uma moderna loja de roupas boutique, camiseta branca de algodão premium lisa exibida perfeitamente em um cabide de madeira, montada contra uma parede de cor pastel suave (bege claro, rosa blush ou verde sálvia), interior elegante da loja de varejo ao fundo com araras de roupas e prateleiras suavemente desfocadas, luz natural do dia misturada com iluminação ambiente quente da loja, textura e dobras de tecido realistas, estética minimalista limpa, merchandising de moda de luxo, profundidade de campo rasa, composição centralizada, mockup de vestuário comercial, camiseta lisa pronta para aplicação de design personalizado, ultrarrealista, alta resolução, 8k."
+      ],
+      "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
+        "Velocidade pura destilada em um único frame — o carro de F1 rasgando o asfalto com desfoque de movimento cobrindo tudo atrás dele, faíscas brilhando na superfície e a fibra de carbono capturando a luz naquele ângulo baixo visceral bem junto ao asfalto."
+      ],
+      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
+        "A palavra \"FLUORISH\" formada inteiramente por uma grama verde exuberante e vegetação natural, cada letra criada a partir de folhas de grama frescas e densas, textura orgânica realista, tons de verde vibrantes, detalhes botânicos complexos, tipografia de natureza fotorrealista, luz solar natural suave, sombras sutis, design ecológico altamente detalhado, isolada em um fundo limpo, letras 3D premium, ultrarrealista, 8k, foco nítido, qualidade de publicidade profissional."
+      ],
+      "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
+        "Foto aérea minimalista de cima para baixo de uma longa prancha de surfe laranja flutuando em águas azuis cristalinas. A água tem contornos de ondas suaves e curvas e padrões de luz cáustica brilhantes e cintilantes. Uma sombra suave é projetada diretamente sob a prancha, criando uma estética limpa, serena e moderna."
+      ]
+    },
     "collider_2025:Label": {
+      "16:9": [
+        "16:9"
+      ],
+      "1:1": [
+        "1:1"
+      ],
+      "2:3": [
+        "2:3"
+      ],
+      "3:2": [
+        "3:2"
+      ],
+      "9:16": [
+        "9:16"
+      ],
+      "Card theme": [
+        "Tema do cartão"
+      ],
       "chat": [
         "bate-papo"
       ],
@@ -3273,40 +3886,98 @@
       "Conversation starters (optional)": [
         "Iniciadores de conversa (opcional)"
       ],
+      "Created": [
+        "Criado"
+      ],
       "Created on": [
         "Criada em"
+      ],
+      "Data brokers": [
+        "Corretores de dados"
+      ],
+      "Describe what to change": [
+        "Descreva o que mudar"
       ],
       "Description (optional)": [
         "Descrição (opcional)"
       ],
-      "Discover what ${ LUMO_SHORT_APP_NAME } can create": [
-        "Descubra o que o ${ LUMO_SHORT_APP_NAME } pode criar"
+      "Draw a sketch": [
+        "Desenhe um esboço"
       ],
       "Edit conversation title": [
         "Editar título da conversa"
       ],
+      "Fine": [
+        "Fino"
+      ],
       "Folder name": [
         "Nome da pasta"
       ],
-      "Hide from list": [
-        "Ocultar da lista"
+      "High": [
+        "Alta"
+      ],
+      "How AI gets more out of you": [
+        "Como a IA consegue mais de você"
+      ],
+      "Image preview": [
+        "Pré-visualização da imagem"
+      ],
+      "Inspiration image": [
+        "Imagem de inspiração"
       ],
       "Instructions": [
         "Instruções"
       ],
+      "Insurance": [
+        "Seguros"
+      ],
+      "It doesn't expire": [
+        "Não expira"
+      ],
+      "Lending & hiring": [
+        "Empréstimos e contratações"
+      ],
+      "Low": [
+        "Baixo"
+      ],
+      "Medium": [
+        "Medio"
+      ],
+      "Minimal": [
+        "Mínimo"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Personalised pricing": [
+        "Preço personalizado"
+      ],
+      "Politics": [
+        "Política"
+      ],
       "Project Instructions (optional)": [
         "Instruções do projeto (opcional)"
+      ],
+      "Scams": [
+        "Golpes"
       ],
       "Selected:": [
         "Selecionado:"
       ],
+      "Share to": [
+        "Compartilhar para"
+      ],
+      "Thick": [
+        "Grosso"
+      ],
+      "Tip": [
+        "Dica"
+      ],
       "Untitled chat": [
         "Bate-papo sem título"
-      ]
-    },
-    "collider_2025:Navigation": {
-      "All projects": [
-        "Todos os projetos"
+      ],
+      "While you wait — how your data gets used": [
+        "Enquanto você espera — como seus dados são usados"
       ]
     },
     "collider_2025:Notification": {
@@ -3317,10 +3988,15 @@
         "Copiado para área de transferência"
       ]
     },
-    "collider_2025:Placeholder": {
-      "Account recovery assistant": [
-        "Assistente de recuperação de conta"
+    "collider_2025:Option": {
+      "Date created": [
+        "Data de criação"
       ],
+      "Last updated": [
+        "Última atualização"
+      ]
+    },
+    "collider_2025:Placeholder": {
       "Add a conversation starter": [
         "Adicionar um iniciador de conversa"
       ],
@@ -3333,8 +4009,17 @@
       "Ask anything…": [
         "Pergunte qualquer coisa…"
       ],
+      "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Descreva a função, o escopo e o comportamento que você deseja que o ${ LUMO_SHORT_APP_NAME } adote."
+      ],
       "Describe your image...": [
         "Descreva sua imagem..."
+      ],
+      "Draw and/or describe what to change, \"remove the items\", etc.": [
+        "Desenhe e/ou descreva o que deseja alterar, \"remover os itens\", etc."
+      ],
+      "e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.": [
+        "Ex.: iterar sobre documentos em uma pasta, extrair pessoas e datas de cada um e, em seguida, criar um gráfico de como os termos se relacionam."
       ],
       "Enter folder name": [
         "Insira o nome da pasta"
@@ -3342,14 +4027,14 @@
       "Enter project name": [
         "Insira o nome do projeto"
       ],
+      "Fluffy McFluff Face": [
+        "Fluffy McFluff Face"
+      ],
       "Help with login, password and recovery issues.": [
         "Ajuda com problemas de início de sessão, senha e recuperação."
       ],
       "Holiday planner": [
         "Planejador de feriados"
-      ],
-      "Search chats": [
-        "Pesquisar bate-papos"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Pesquisar ${ LUMO_SHORT_APP_NAME } personalizados"
@@ -3450,9 +4135,6 @@
       "Help me understand what this code does": [
         "Ajude-me a entender o que este código faz"
       ],
-      "How does the world celebrate the Spring Equinox?": [
-        "Como o mundo celebra o Equinócio de Primavera?"
-      ],
       "Identify any unusual or potentially unfavorable terms": [
         "Identifique quaisquer termos incomuns ou potencialmente desfavoráveis."
       ],
@@ -3506,14 +4188,41 @@
       "Checked ${ BRAND_NAME } knowledge": [
         "Verifiquei os conhecimentos sobre a ${ BRAND_NAME }"
       ],
+      "Checked prices": [
+        "Preços verificados"
+      ],
+      "Checked the weather": [
+        "Verificado o tempo"
+      ],
+      "Checking ${ BRAND_NAME } knowledge": [
+        "Verificando o conhecimento de ${ BRAND_NAME }"
+      ],
       "Checking ${ BRAND_NAME } knowledge...": [
         "Verificando os conhecimentos sobre a ${ BRAND_NAME }..."
+      ],
+      "Checking prices": [
+        "Verificando preços"
+      ],
+      "Checking the weather": [
+        "Verificando o tempo"
+      ],
+      "Created an image": [
+        "Criou uma imagem"
+      ],
+      "Creating an image": [
+        "Criando uma imagem"
       ],
       "Dividend Yield": [
         "Rendimento de dividendos"
       ],
+      "Done": [
+        "Concluído"
+      ],
       "Edited image": [
         "Imagem editada"
+      ],
+      "Editing image": [
+        "Editando imagem"
       ],
       "Editing image...": [
         "Editando imagem..."
@@ -3524,17 +4233,20 @@
       "Executing tool...": [
         "Executando ferramenta..."
       ],
-      "Expand reasoning": [
-        "Expandir raciocínio"
-      ],
       "Extracted page content": [
         "Conteúdo extraído da página"
       ],
       "Extracting content from page...": [
         "Extraindo conteúdo da página..."
       ],
+      "Extracting page content": [
+        "Extraindo o conteúdo da página"
+      ],
       "Generated image": [
         "A imagem foi gerada"
+      ],
+      "Generating image": [
+        "Gerando imagem"
       ],
       "Generating image...": [
         "Gerando imagem..."
@@ -3545,11 +4257,38 @@
       "Looked at your image": [
         "Olhei para a sua imagem"
       ],
+      "Looked things up online": [
+        "Pesquisei na internet"
+      ],
+      "Looked up market data": [
+        "Consultei os dados do mercado"
+      ],
+      "Looked up the forecast": [
+        "Consultei a previsão do tempo"
+      ],
+      "Looking at your image": [
+        "Olhando para a sua foto"
+      ],
       "Looking at your image...": [
         "Olhando para a sua foto..."
       ],
+      "Looking into this": [
+        "Analisando isso"
+      ],
+      "Looking things up online": [
+        "Pesquisando coisas on-line"
+      ],
+      "Looking up market data": [
+        "Pesquisando dados de mercado"
+      ],
+      "Looking up the forecast": [
+        "Consultando a previsão do tempo"
+      ],
       "Market Cap": [
         "Capitalização de mercado"
+      ],
+      "One moment": [
+        "Um momento"
       ],
       "P/E Ratio": [
         "Índice P/L"
@@ -3563,17 +4302,56 @@
       "Profit Margin": [
         "Margem de lucro"
       ],
+      "Read a web page": [
+        "Ler uma página da web"
+      ],
+      "Reading a web page": [
+        "Lendo uma página da web"
+      ],
       "Revenue TTM": [
         "Receita TTM"
+      ],
+      "Searched the web": [
+        "Pesquisei na web"
+      ],
+      "Searching the web": [
+        "Pesquisando na web"
+      ],
+      "Thinking": [
+        "Pensando"
       ],
       "Thinking...": [
         "Pensando..."
       ],
-      "Thought about this": [
-        "Pensando nisso"
+      "Thought this through": [
+        "Refletiu sobre isso"
       ],
-      "Thought for ": [
-        "Pensando por "
+      "Updated your image": [
+        "Atualizou sua imagem"
+      ],
+      "Updating your image": [
+        "Atualizando sua imagem"
+      ],
+      "Used a tool": [
+        "Usou uma ferramenta"
+      ],
+      "Using a tool": [
+        "Usando a ferramenta"
+      ],
+      "Worked on an image": [
+        "Trabalhou em uma imagem"
+      ],
+      "Worked through your question": [
+        "Analisou sua pergunta"
+      ],
+      "Working on an image": [
+        "Trabalhando em uma imagem"
+      ],
+      "Working on this": [
+        "Trabalhando nisso"
+      ],
+      "Working through this": [
+        "Trabalhando nisso"
       ]
     },
     "collider_2025:Status": {
@@ -3597,6 +4375,9 @@
       ]
     },
     "collider_2025:Subline": {
+      "Custom ${ LUMO_SHORT_APP_NAME }s turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
+        "${ LUMO_SHORT_APP_NAME }s personalizados transformam um chat em um assistente focado com suas próprias instruções. Escolha um no compositor para iniciar uma conversa."
+      ],
       "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
         "Os projetos ajudam você a manter bate-papos, arquivos e instruções relacionados em um só lugar. Eles facilitam a organização e a reutilização do contexto entre os bate-papos."
       ]
@@ -3639,11 +4420,26 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } não pode iniciar"
       ],
-      "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
-        "Um assistente de IA deve empoderar você, não explorá-lo por seus dados. É por isso que desenvolvemos o ${ LUMO_SHORT_APP_NAME }: para proporcionar a você todos os benefícios da IA, sem comprometer sua privacidade e segurança de dados."
+      "AI knows more about you than you think": [
+        "A IA sabe mais sobre você do que você imagina"
+      ],
+      "AI Paper Trail": [
+        "Rastro de Papel da IA"
+      ],
+      "An AI assistant should empower you, not exploit you for your data.": [
+        "Um assistente de IA deve empoderar você, não explorar você por seus dados."
+      ],
+      "Better web search": [
+        "Melhor pesquisa na web"
+      ],
+      "Building your paper trail": [
+        "Construindo seu rastro de papel"
       ],
       "Built by the team that knows privacy": [
         "Desenvolvido pela equipe que entende de privacidade"
+      ],
+      "Chat knowledge": [
+        "Base de conhecimento dos bate-papos"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Criar ${ LUMO_SHORT_APP_NAME } personalizados"
@@ -3657,11 +4453,14 @@
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "${ LUMO_SHORT_APP_NAME } personalizados"
       ],
+      "Decisions made about you": [
+        "Decisões tomadas sobre você"
+      ],
       "Delete project?": [
         "Excluir projeto?"
       ],
-      "Earlier": [
-        "Anterior"
+      "Detail makes fraud convincing": [
+        "Os detalhes tornam as fraudes convincentes"
       ],
       "Edit custom ${ LUMO_SHORT_APP_NAME }": [
         "Editar ${ LUMO_SHORT_APP_NAME } personalizados"
@@ -3672,32 +4471,53 @@
       "Edit Project": [
         "Editar projeto"
       ],
-      "Expiring Soon": [
-        "Expira em breve"
+      "Every clarification is a new data point": [
+        "Cada esclarecimento é um novo ponto de dados"
+      ],
+      "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
+        "Explore imagens criadas com o ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Export & delete regularly": [
+        "Exporte e exclua regularmente"
+      ],
+      "Export your data": [
+        "Exporte seus dados"
+      ],
+      "Exposure scorecard": [
+        "Placar de exposição"
       ],
       "Favorites": [
         "Favoritos"
       ],
+      "File preview": [
+        "Pré-visualização do arquivo"
+      ],
       "Get started by creating a new project": [
         "Comece criando um projeto"
       ],
-      "Get started by generating an image": [
-        "Comece gerando uma imagem"
+      "Get your AI Paper Trail": [
+        "Obtenha seu AI Paper Trail"
       ],
       "Ghost mode": [
         "Modo fantasma"
       ],
-      "Hello! How can I help you today?": [
-        "Olá! Como posso ajudar você hoje?"
-      ],
-      "Hey, I'm ${ LUMO_SHORT_APP_NAME }. Ask me anything. It's confidential.": [
-        "Olá! Eu sou o ${ LUMO_SHORT_APP_NAME }. Pergunte-me qualquer coisa. É confidencial."
+      "Health hints can shape your premiums": [
+        "Dicas de saúde podem influenciar seus prêmios"
       ],
       "History": [
         "Histórico"
       ],
+      "How can I help?": [
+        "Como posso ajudar?"
+      ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Como o ${ LUMO_SHORT_APP_NAME } mantém nossas conversas confidenciais?"
+      ],
+      "How to stay private": [
+        "Como manter a privacidade"
+      ],
+      "Image generation and editing": [
+        "Geração e edição de imagens"
       ],
       "Inspiration": [
         "Inspiração"
@@ -3705,17 +4525,8 @@
       "Instructions": [
         "Instruções"
       ],
-      "Introducing Projects": [
-        "Apresentamos os Projetos"
-      ],
-      "Last 30 days": [
-        "Últimos 30 dias"
-      ],
-      "Last 5 days": [
-        "Últimos 5 dias"
-      ],
-      "Last 7 days": [
-        "Últimos 7 dias"
+      "Introducing ${ LUMO_SHORT_APP_NAME } 2.0": [
+        "Apresentamos ${ LUMO_SHORT_APP_NAME } 2.0"
       ],
       "Link Drive Folder": [
         "Vincular pasta do Drive"
@@ -3723,11 +4534,32 @@
       "Linked Drive Folder": [
         "Pasta do Drive vinculado"
       ],
+      "Mask your identity": [
+        "Mascare sua identidade"
+      ],
+      "Memory": [
+        "Memória"
+      ],
+      "More convincing scams": [
+        "Golpes mais convincentes"
+      ],
+      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Mais ${ LUMO_SHORT_APP_NAME }s personalizado com o ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
       "More options": [
         "Mais opções"
       ],
       "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
         "Mais Projetos no ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Most revealing": [
+        "Mais revelador"
+      ],
+      "My AI paper trail": [
+        "Meu rastro digital de IA"
+      ],
+      "My Projects": [
+        "Meus projetos"
       ],
       "No chat history yet. Let's start chatting!": [
         "Nenhum histórico de bate-papo ainda. Vamos começar a conversar!"
@@ -3741,17 +4573,32 @@
       "Older": [
         "Mais antigo"
       ],
+      "Out of your control": [
+        "Fora do seu controle"
+      ],
+      "Oversharing blind spots": [
+        "Pontos cegos de compartilhamento excessivo"
+      ],
+      "Personalised pricing": [
+        "Preços personalizados"
+      ],
+      "Prefer end-to-end encryption": [
+        "Preferir criptografia de ponta a ponta"
+      ],
+      "Profiles can decide your future": [
+        "Os perfis podem decidir seu futuro"
+      ],
       "Project knowledge": [
         "Conhecimento do projeto"
-      ],
-      "Projects": [
-        "Projetos"
       ],
       "Remove all files?": [
         "Remover todos os arquivos?"
       ],
-      "Settings": [
-        "Configurações"
+      "See your AI paper trail": [
+        "Veja seu rastro de IA"
+      ],
+      "Share less with AI": [
+        "Compartilhe menos com a IA"
       ],
       "Sign in to build your gallery": [
         "Inicie sessão para criar a sua galeria"
@@ -3759,8 +4606,23 @@
       "Sign in to create projects": [
         "Inicie a sessão para criar projetos"
       ],
+      "Sold to data brokers": [
+        "Vendido para corretores de dados"
+      ],
+      "Sort by": [
+        "Ordenar por"
+      ],
+      "Sources": [
+        "Fontes"
+      ],
       "Start a new conversation": [
         "Iniciar uma nova conversa"
+      ],
+      "Targeted manipulation": [
+        "Manipulação direcionada"
+      ],
+      "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
+        "Por isso criamos o ${ LUMO_SHORT_APP_NAME }: para trazer a você todos os benefícios da IA, sem comprometer sua privacidade e a segurança dos seus dados."
       ],
       "The AI that respects your privacy": [
         "A IA que respeita sua privacidade"
@@ -3768,11 +4630,58 @@
       "This chat disappears when you close it and is never saved.": [
         "Este bate-papo desaparece quando você o fecha e nunca é salvo."
       ],
-      "Today": [
-        "Hoje"
+      "Turn off history & training": [
+        "Desativar histórico e treinamento"
+      ],
+      "Two models, two modes": [
+        "Dois modelos, dois modos"
+      ],
+      "Upload it privately": [
+        "Envie de forma privada"
+      ],
+      "Use privacy-first tools": [
+        "Use ferramentas focadas em privacidade"
+      ],
+      "We couldn't read your paper trail": [
+        "Não conseguimos ler seu rastro digital"
+      ],
+      "What Big Tech inferred": [
+        "O que as Big Techs inferiram"
       ],
       "What do you want to create today?": [
         "O que você quer criar hoje?"
+      ],
+      "What this profile exposes": [
+        "O que este perfil expõe"
+      ],
+      "Why this matters": [
+        "Por que isso é importante"
+      ],
+      "You can't un-share it": [
+        "Você não pode desfazer o compartilhamento"
+      ],
+      "You might be shown a higher price": [
+        "Um preço mais alto pode ser mostrado para você"
+      ],
+      "You saw the profile?": [
+        "Você viu o perfil?"
+      ],
+      "Your image gallery is empty": [
+        "Sua galeria de imagens está vazia"
+      ],
+      "Your shareable card": [
+        "Seu cartão compartilhável"
+      ],
+      "Your traits get bundled and sold": [
+        "Suas características são agrupadas em pacotes e vendidas"
+      ],
+      "Your views can be used to nudge you": [
+        "Suas opiniões podem ser usadas para influenciar você"
+      ]
+    },
+    "collider_2025:Toggle": {
+      "Ghost chat mode": [
+        "Modo chat fantasma"
       ]
     },
     "collider_2025:Tooltip": {
@@ -3789,26 +4698,6 @@
       ],
       "This will also permanently delete:": [
         "Isso também excluirá permanentemente:"
-      ]
-    },
-    "Color": {
-      "Black": [
-        "Preto"
-      ],
-      "Blue": [
-        "Azul"
-      ],
-      "Green": [
-        "Verde"
-      ],
-      "Orange": [
-        "Laranja"
-      ],
-      "Purple": [
-        "Roxo"
-      ],
-      "Red": [
-        "Vermelho"
       ]
     },
     "color": {
@@ -3871,6 +4760,26 @@
       ],
       "strawberry": [
         "morango"
+      ]
+    },
+    "Color": {
+      "Black": [
+        "Preto"
+      ],
+      "Blue": [
+        "Azul"
+      ],
+      "Orange": [
+        "Laranja"
+      ],
+      "Pink": [
+        "Rosa"
+      ],
+      "White": [
+        "Branco"
+      ],
+      "Yellow": [
+        "Amarelo"
       ]
     },
     "Country name": {
@@ -4759,6 +5668,9 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Garanta que você ainda possa acessar sua conta e seus dados, mesmo que perca sua senha do ${ BRAND_NAME }."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma integração perfeita da sua equipe ao ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
       ],
@@ -4962,6 +5874,9 @@
       "Payment process not supported": [
         "Processo de pagamento não suportado"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Por favor, verifique se o seu ABN está registrado para IVA transfronteiriço"
+      ],
       "Please complete the billing details": [
         "Complete os detalhes de faturamento"
       ],
@@ -4994,6 +5909,9 @@
       ],
       "Request timed out": [
         "A solicitação expirou"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "O regime de reverse charge não é suportado para este plano"
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
@@ -5044,7 +5962,7 @@
         "O nome de usuário deve terminar com uma letra ou dígito"
       ],
       "VAT number must start with ${ prefixes }": [
-        "O número de IVA deve começar por ${ prefixes }"
+        "O número de IVA deve começar com ${ prefixes }"
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
@@ -5163,6 +6081,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Touch your security key.": [
+        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -5832,6 +6753,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Sua conta está configurada atualmente para aplicar o regime de reverse charge. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
       ],
@@ -6232,6 +7156,9 @@
       "Buffer size": [
         "Tamanho do buffer"
       ],
+      "Calls NativeComposerApi.onLimitReachedError directly (skips the toast flow).": [
+        "Chama NativeComposerApi.onLimitReachedError diretamente (pula o fluxo de avisos temporários/toast)."
+      ],
       "Clear History": [
         "Limpar histórico"
       ],
@@ -6240,6 +7167,9 @@
       ],
       "Close preview": [
         "Fechar pré-visualização"
+      ],
+      "Composer limit banner preview": [
+        "Pré-visualização do banner de limite do compositor"
       ],
       "Conversations": [
         "Conversas"
@@ -6253,6 +7183,9 @@
       "Differential": [
         "Diferencial"
       ],
+      "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
+        "Dispara um erro de limite 422 simulado, que será exibido pelo notificador interno do aplicativo."
+      ],
       "Export all chats (JSON)": [
         "Exportar todas os bate-papos (JSON)"
       ],
@@ -6261,6 +7194,9 @@
       ],
       "Export unsynced only (JSON)": [
         "Exportar apenas os arquivos não sincronizados (JSON)"
+      ],
+      "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
+        "Força o banner do compositor incorporado para o estado de \"se aproximando\" ou \"no limite\" para que você possa visualizá-lo em qualquer contexto."
       ],
       "FPS": [
         "FPS"
@@ -6292,14 +7228,23 @@
       "Messages": [
         "Mensagens"
       ],
+      "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
+        "As mensagens rejeitadas pelo backend (por exemplo, limites) permanecem localmente no IndexedDB com uma flag indicando alteração (dirty flag). As exportações descriptografam o conteúdo do estado do Redux na memória e marcam as mensagens não sincronizadas com _dirty: true. As chaves de criptografia de espaço são removidas."
+      ],
       "Native bridge: onLimitReachedError": [
         "Ponte nativa: onLimitReachedError"
+      ],
+      "Native composer bridge not detected — calls will be logged but no-op. Open the app inside the iOS/Android wrapper to exercise the bridge.": [
+        "Ponte nativa do compositor não detectada — as chamadas serão registradas, mas não farão nada (no-op). Abra o aplicativo dentro do wrapper iOS/Android para testar a ponte."
       ],
       "No": [
         "Não"
       ],
       "Notifications": [
         "Notificações"
+      ],
+      "Open a conversation to enable generation error testing.": [
+        "Abra uma conversa para ativar o teste de erro de geração."
       ],
       "Performance": [
         "Desempenho"
@@ -6331,6 +7276,12 @@
       "Search": [
         "Pesquisar"
       ],
+      "Send assets limit to native": [
+        "Enviar limite de ativos para o aplicativo nativo"
+      ],
+      "Send conversations limit to native": [
+        "Enviar limite de conversas para o nativo"
+      ],
       "Send messages limit to native": [
         "Enviar limite de mensagens para nativo"
       ],
@@ -6342,6 +7293,9 @@
       ],
       "Spaces": [
         "Espaços"
+      ],
+      "Spin up the test renderer or seed the sidebar with conversations across age buckets.": [
+        "Inicie o renderizador de teste ou popule a barra lateral com conversas em diferentes faixas etárias."
       ],
       "Spring state": [
         "Estado da mola"
@@ -6382,6 +7336,9 @@
       "Trigger generation rejected": [
         "Gatilho de geração rejeitado"
       ],
+      "Trigger harmful content": [
+        "Disparar conteúdo nocivo"
+      ],
       "Trigger high demand": [
         "Ativar alta demanda"
       ],
@@ -6393,6 +7350,9 @@
       ],
       "Trigger stream disconnected": [
         "Disparador de streaming desconectado"
+      ],
+      "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
+        "Dispara mensagens de erro de geração com mensagens específicas para cada plano. Tipo de usuário: ${ lumoUserType }"
       ],
       "Unsynced conversations": [
         "Conversas não sincronizadas"
@@ -7449,6 +8409,12 @@
       "Delete": [
         "Excluir"
       ],
+      "Go to all projects": [
+        "Ir para todos os projetos"
+      ],
+      "Go to project": [
+        "Ir para o projeto"
+      ],
       "No parent folder": [
         "Nenhuma pasta acima"
       ],
@@ -7693,6 +8659,9 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "O mecanismo de reverse charge de IVA se aplica."
       ],
       "You already have a subscription to this plan.": [
         "Você já assina este plano."
@@ -8481,6 +9450,11 @@
         "Economize ${ priceString }"
       ]
     },
+    "Subtitle": {
+      "per month, billed annually": [
+        "por mês, com cobrança anual"
+      ]
+    },
     "Success": {
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
@@ -8583,9 +9557,6 @@
       ],
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
-      ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Conta restrita"
@@ -8819,6 +9790,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de assinatura começa em ${ formattedTime }"
+      ],
+      "The reduce motion setting is already enabled on this device": [
+        "A configuração de reduzir movimento já está ativada neste dispositivo"
       ]
     },
     "tooltip": {

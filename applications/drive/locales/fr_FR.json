@@ -956,6 +956,12 @@
       "Select country": [
         "Sélectionnez un pays."
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Choisir une note entre ${ n } et ${ to }"
+      ],
+      "Send Feedback": [
+        "Envoyer un commentaire"
+      ],
       "Set as album cover": [
         "Définir en tant que couverture d'album"
       ],
@@ -3726,9 +3732,6 @@
       "No contacts found to import": [
         "Aucun contact n'a été trouvé pour l'importation."
       ],
-      "No drive found to import": [
-        "Aucun lecteur détecté pour l'importation"
-      ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
@@ -3740,9 +3743,6 @@
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "L'un des contacts n'a pas d'adresse e-mail : ${ noEmailsContactNamesList }",
@@ -3981,9 +3981,6 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
-      ],
-      "Unexpected error, we can't import the files": [
-        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Conflit de stratégie inconnu : ${ strategy }"
@@ -4502,6 +4499,9 @@
       ],
       "Security key": [
         "Clé de sécurité"
+      ],
+      "Touch your security key.": [
+        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -5659,9 +5659,6 @@
       "Files and folders that others shared with you will appear here": [
         "Les dossiers et fichiers partagés avec vous par d'autres utilisateurs s'afficheront ici."
       ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
-      ],
       "finance": [
         "finance"
       ],
@@ -6193,6 +6190,12 @@
       ],
       "Preparing": [
         "Préparation en cours"
+      ],
+      "Preparing download": [
+        "Préparation du téléchargement"
+      ],
+      "Preparing…": [
+        "Préparation en cours…"
       ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé."
@@ -7431,6 +7434,9 @@
       "Extended address": [
         "Complément d’adresse"
       ],
+      "Extremely Satisfied": [
+        "Extrêmement satisfait"
+      ],
       "File": [
         "Fichier"
       ],
@@ -7764,6 +7770,9 @@
       "System information": [
         "Informations système"
       ],
+      "Tell us more about your experience": [
+        "Faites-nous part de votre expérience"
+      ],
       "Theme": [
         "Thème"
       ],
@@ -7808,6 +7817,9 @@
       ],
       "Verification code": [
         "Code de vérification"
+      ],
+      "Very Dissatisfied": [
+        "Très insatisfaisant"
       ],
       "Viewer": [
         "Lecteur"
@@ -9127,6 +9139,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Nous nous efforçons toujours d'améliorer ${ config.appName }. Dans quelle mesure êtes-vous satisfait de votre expérience ?"
       ]
     },
     "new_plans: Subtext": {
@@ -10606,6 +10623,9 @@
       ],
       "New name": [
         "Nouveau nom"
+      ],
+      "Optional feedback": [
+        "Commentaire facultatif"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -12297,9 +12317,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } d'importations gratuites."
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
-      ],
       "Account recovery": [
         "Récupération du compte"
       ],
@@ -13240,6 +13257,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Nous n'avons pas pu confirmer que le nœud a été créé par ${ claimedKeyAuthor }. La raison est la suivante : ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "N'hésitez pas à nous donner votre avis !"
       ],
       "Welcome offer": [
         "Offre de bienvenue"

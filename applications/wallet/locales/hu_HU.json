@@ -91,6 +91,9 @@
       "Continue": [
         "Tovább"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Folytatás itt: ${ planOrAppName }"
+      ],
       "Copy address": [
         "Cím másolása"
       ],
@@ -447,6 +450,15 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikált VPN szerverek"
+      ],
+      "Domains": [
+        "Domain nevek"
+      ],
+      "Writing assistant": [
+        "Írási segéd"
       ]
     },
     "Address list": {
@@ -498,6 +510,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Akár ${ TRIAL_MAX_DEDICATED_IPS } dedikált szerverrel is rendelkezhet a próbaidőszakban."
       ],
@@ -560,6 +575,9 @@
       ],
       "Annually": [
         "Évente"
+      ],
+      "Billed monthly": [
+        "Havonta számlázva"
       ],
       "Lifetime": [
         "Élettartam"
@@ -1053,6 +1071,9 @@
       ],
       "Web search access": [
         "Webes keresési hozzáférés"
+      ],
+      "Zero-access encryption": [
+        "Zéró hozzáférésű titkosítás"
       ]
     },
     "collider_2025: Info": {
@@ -1254,6 +1275,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanári-szigetek"
       ],
       "Cape Verde": [
         "Zöld-foki Köztársaság"
@@ -2318,6 +2342,9 @@
       ],
       "Username must end with a letter or digit": [
         "Felhasználónévnek betűvel vagy számmal kell végződnie"
+      ],
+      "Wrong billing address": [
+        "Hibás számlázási cím"
       ]
     },
     "Error message": {
@@ -2625,6 +2652,10 @@
       ],
       "Country code": [
         "Országkód"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
@@ -3186,6 +3217,9 @@
       "Sign message": [
         "Üzenet aláírása"
       ],
+      "Skip feedback": [
+        "Visszajelzés kihagyása"
+      ],
       "Start date": [
         "Kezdő dátum"
       ],
@@ -3360,6 +3394,16 @@
         "${ seats } ${ MEET_APP_NAME } licenc"
       ]
     },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } résztvevő",
+        "${ n } résztvevő"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } résztvevő",
+        "Akár ${ n } résztvevő"
+      ]
+    },
     "meet_2025: Info": {
       "${ seats } seat included": [
         "${ seats } licencet tartalmaz",
@@ -3516,6 +3560,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Hozzáférés minden országhoz"
+      ],
       "Ad-blocker and malware protection": [
         "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
@@ -3530,6 +3577,10 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Minden alapvető ${ BRAND_NAME } szolgáltatás (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Időpontfoglalás ${ n } jelentkezési oldallal",
+        "Időpontfoglalás ${ n } jelentkezési oldallal"
       ],
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
@@ -4146,6 +4197,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ország",
+        "${ n } ország"
+      ],
       "Access advanced VPN features": [
         "További VPN lehetőségek elérése"
       ],
@@ -4345,6 +4400,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Ez idő alatt nem tudja módosítani vagy törölni az előfizetését. Kérjük, várjon, amíg a fizetés befejeződik, mielőtt bármilyen változtatással próbálkozna. Köszönjük türelmét."
+      ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
       ],
       "Got it": [
         "Értem."
@@ -4561,6 +4619,9 @@
       ],
       "Postal code": [
         "Irányítószám"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Keresés"

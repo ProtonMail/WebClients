@@ -127,6 +127,9 @@
       "Continue": [
         "繼續"
       ],
+      "Copy": [
+        "複製"
+      ],
       "Copy and close": [
         "複製並關閉"
       ],
@@ -273,6 +276,9 @@
       ],
       "Get Started": [
         "入門指南"
+      ],
+      "Hide": [
+        "隱藏"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "如何從${ PROVIDER_INFO_MAP[form.values.provider].title }匯出資料?"
@@ -1195,6 +1201,9 @@
       ],
       "Enabling PIN auto-lock": [
         "啟用 PIN 自動鎖定"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證碼。第 ${ digit } 位數字。"
       ],
       "Enter your extra password": [
         "輸入你的第二密碼"

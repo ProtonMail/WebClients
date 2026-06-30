@@ -1055,6 +1055,9 @@
       "Failed to change mailbox": [
         "메일함 변경 실패"
       ],
+      "Failed to create access token": [
+        "액세스 토큰을 생성할 수 없음"
+      ],
       "Failed to create domain": [
         "도메인 생성에 오류가 발생했습니다"
       ],
@@ -1063,6 +1066,9 @@
       ],
       "Failed to create the contact": [
         "연락처 생성에 실패했습니다"
+      ],
+      "Failed to delete access token": [
+        "액세스 토큰을 삭제할 수 없음"
       ],
       "Failed to delete domain": [
         "도메인 삭제에 오류가 발생했습니다"
@@ -1096,6 +1102,9 @@
       ],
       "Failed to load item history": [
         "항목 내역 불러오기 실패"
+      ],
+      "Failed to load token actions": [
+        "토큰 동작 불러오기 실패"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\"에서 모든 항목을 이동하는데 실패했습니다."
@@ -1153,6 +1162,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "무작위 접두사 생성 설정을 업데이트하는 데 실패했습니다."
+      ],
+      "Failed to update vault access": [
+        "금고 접근 업데이트에 실패했습니다"
       ],
       "Failed to verify domain": [
         "도메인 인증에 오류가 발생했습니다"
@@ -2017,9 +2029,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -3932,6 +3941,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason }이(가) 활성화 되었습니다."
+      ],
+      "Access token deleted": [
+        "엑세스 토큰 삭제됨"
       ]
     },
     "Option": {

@@ -956,6 +956,12 @@
       "Select country": [
         "Seleccioneu el país"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccioneu la valoració ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Envieu-nos els vostres comentaris"
+      ],
       "Set as album cover": [
         "Estableix com a portada de l'àlbum"
       ],
@@ -4502,6 +4508,9 @@
       ],
       "Security key": [
         "Clau de seguretat"
+      ],
+      "Touch your security key.": [
+        "Toqueu la vostra clau de seguretat."
       ]
     },
     "fido2: Label": {
@@ -6194,6 +6203,12 @@
       "Preparing": [
         "En preparació"
       ],
+      "Preparing download": [
+        "S'està preparant la descàrrega"
+      ],
+      "Preparing…": [
+        "S'està preparant…"
+      ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
       ],
@@ -7431,6 +7446,9 @@
       "Extended address": [
         "Adreça completa"
       ],
+      "Extremely Satisfied": [
+        "Altament satisfet"
+      ],
       "File": [
         "Fitxer"
       ],
@@ -7764,6 +7782,9 @@
       "System information": [
         "Informació del sistema"
       ],
+      "Tell us more about your experience": [
+        "Expliqueu-nos més sobre la vostra experiència"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7808,6 +7829,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Very Dissatisfied": [
+        "Molt insatisfet"
       ],
       "Viewer": [
         "Visualitzador"
@@ -9127,6 +9151,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Treballem constantment per millorar ${ config.appName }. Quin grau de satisfacció teniu amb la vostra experiència?"
       ]
     },
     "new_plans: Subtext": {
@@ -10606,6 +10635,9 @@
       ],
       "New name": [
         "Nom nou"
+      ],
+      "Optional feedback": [
+        "Comentaris opcionals"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -13240,6 +13272,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "No hem pogut confirmar que el node hagi estat creat per ${ claimedKeyAuthor }. El motiu és: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Ens agradaria rebre la vostra opinió!"
       ],
       "Welcome offer": [
         "Oferta de benvinguda"

@@ -1383,6 +1383,9 @@
       "Review": [
         "Revisão"
       ],
+      "Review changes": [
+        "Revisar mudanças"
+      ],
       "Review recovery options": [
         "Revisar opções de recuperação"
       ],
@@ -1835,6 +1838,9 @@
       ],
       "Verify now": [
         "Verificar agora"
+      ],
+      "Verify password": [
+        "Verificar senha"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificar o domínio ${ unverifiedSSODomain.DomainName }"
@@ -5261,6 +5267,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Todos na sua organização podem se conectar a servidores compartilhados em todos os países."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma integração perfeita da sua equipe ao ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
       ],
@@ -7275,6 +7284,9 @@
       "Please add a payment method before reactivating your subscription": [
         "Adicione um método de pagamento antes de reativar sua assinatura."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Por favor, verifique se o seu ABN está registrado para IVA transfronteiriço"
+      ],
       "Please complete the billing details": [
         "Complete os detalhes de faturamento"
       ],
@@ -7375,6 +7387,9 @@
       ],
       "Request timed out": [
         "A solicitação expirou"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "O regime de reverse charge não é suportado para este plano"
       ],
       "Server not found": [
         "Servidor não encontrado"
@@ -7526,9 +7541,6 @@
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
       ],
-      "Unexpected error, we can't import the files": [
-        "Erro inesperado, não podemos importar os arquivos"
-      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -7551,7 +7563,7 @@
         "Erro de validação"
       ],
       "VAT number must start with ${ prefixes }": [
-        "O número de IVA deve começar por ${ prefixes }"
+        "O número de IVA deve começar com ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "A verificação não obteve êxito. Tente novamente dentro de uma hora."
@@ -8473,9 +8485,6 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Insira sua chave de segurança na porta USB do seu dispositivo."
-      ],
       "Security key": [
         "Chave de segurança"
       ],
@@ -8487,6 +8496,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Isso excluirá todas as chaves de seguranças vinculadas a sua conta."
+      ],
+      "Touch your security key.": [
+        "Toque na sua chave de segurança."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique a sua identidade com chave de segurança física U2F ou FIDO2"
@@ -11713,6 +11725,9 @@
       "Please select the folders you would like to import:": [
         "Selecione as pastas que deseja importar:"
       ],
+      "Please select the labels you would like to import:": [
+        "Selecione os marcadores que você deseja importar:"
+      ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecione a categoria de link que você deseja inserir e preencha em todos os campos."
       ],
@@ -12148,6 +12163,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por Tech Radar Pro com classificação de 4,2 de 5"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporariamente indisponível devido à alta demanda. Tente novamente mais tarde."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -12452,7 +12470,7 @@
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
-        "Para ajudar você a lembrar sua senha, pediremos que você a digite periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
+        "Para ajudar você a lembrar sua senha, pediremos que você a insira periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
@@ -12765,6 +12783,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Nós te avisaremos quando a importação estiver concluída."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Lembriremos você de verificar sua senha novamente mais tarde"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
@@ -13143,6 +13164,9 @@
       "Your account has been successfully updated.": [
         "Sua conta foi atualizada com sucesso."
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Sua conta está configurada atualmente para aplicar o regime de reverse charge. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
+      ],
       "Your account was successfully updated with this promotion": [
         "Sua conta foi atualizada com essa promoção."
       ],
@@ -13374,6 +13398,9 @@
     "invitation status": {
       "Declined": [
         "Recusado"
+      ],
+      "Group Owner": [
+        "Proprietário do grupo"
       ],
       "Paused": [
         "Pausado"
@@ -14653,9 +14680,6 @@
       "Import to:": [
         "Importar para:"
       ],
-      "Import your emails": [
-        "Importar seus e-mails"
-      ],
       "Inbox": [
         "Caixa de entrada"
       ],
@@ -14940,6 +14964,9 @@
       ],
       "Password": [
         "Senha"
+      ],
+      "Password check-ins": [
+        "Verificações de senha"
       ],
       "Password strength": [
         "Força da senha"
@@ -17888,6 +17915,9 @@
       "1-2 emails per month": [
         "1-2 e-mails por mês"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "De 1 a 4 e-mails por ano. Lembretes para manter seus métodos de recuperação atualizados."
+      ],
       "2-4 emails per year": [
         "2-4 e-mails por ano"
       ],
@@ -19151,6 +19181,14 @@
         "Você lembra sua senha da ${ BRAND_NAME }?"
       ]
     },
+    "password_reminder": {
+      "Turn off check-ins": [
+        "Desativar verificações"
+      ],
+      "Turn off password check-ins?": [
+        "Desativar verificações de senha?"
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Todos os administradores terão acesso à chave."
@@ -19412,6 +19450,9 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "O mecanismo de reverse charge de IVA se aplica."
       ],
       "You already have a subscription to this plan.": [
         "Você já assina este plano."
@@ -21257,6 +21298,45 @@
         "Testando configuração do SAML"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } novo membro",
+        "${ memberCount } novos membros"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } grupo sincronizado",
+        "${ numberOfPendingGroups } grupos sincronizados"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } usuário sincronizado",
+        "${ numberOfPendingUsers } usuários sincronizados"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } grupo",
+        "${ pendingGroupsCount } grupos"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } grupo sincronizado.",
+        "${ pendingGroupsCount } grupos sincronizados."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } usuário",
+        "${ pendingUsersCount } usuários"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } usuário sincronizado.",
+        "${ pendingUsersCount } usuários sincronizados."
+      ],
+      "New": [
+        "Novo"
+      ],
+      "Private user": [
+        "Usuário privado"
+      ],
+      "Updated": [
+        "Atualizado"
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Configurar SCIM"
@@ -22927,6 +23007,9 @@
         "${ count } pessoa",
         "${ count } pessoas"
       ],
+      "... waiting": [
+        "... aguarde"
+      ],
       "Add a phone number": [
         "Adicionar um número de telefone"
       ],
@@ -22936,11 +23019,17 @@
       "Available on this device": [
         "Disponível neste dispositivo"
       ],
+      "completed": [
+        "concluído"
+      ],
       "Disable recovery by email": [
         "Desativar recuperação por e-mail"
       ],
       "Disable recovery by phone": [
         "Desativar recuperação por telefone"
+      ],
+      "finalizing": [
+        "finalizando"
       ],
       "Generate a recovery phrase": [
         "Gerar uma frase de recuperação"
@@ -23836,6 +23925,12 @@
       "Organization name updated": [
         "Nome da organização atualizado"
       ],
+      "Password check-ins disabled": [
+        "A verificação de senha está desativada"
+      ],
+      "Password check-ins enabled": [
+        "A verificação de senha está ativada"
+      ],
       "Password copied to clipboard": [
         "A senha foi copiada para a área de transferências."
       ],
@@ -24261,9 +24356,6 @@
         "${ friendsSubscribed } amigo(a) inscrito(a)",
         "${ friendsSubscribed } amigos(as) inscritos(as)"
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
@@ -24489,6 +24581,9 @@
       ],
       "Apply gift code": [
         "Adicionar código de vale-presente"
+      ],
+      "Approve changes": [
+        "Aprovar alterações"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "Você já está iniciado sessão à ${ BRAND_NAME } em um navegador?"
@@ -24766,6 +24861,9 @@
       ],
       "Dashboard": [
         "Painel de controle"
+      ],
+      "Data collection": [
+        "Coleta de dados"
       ],
       "Data locked": [
         "Dados bloqueados"

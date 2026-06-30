@@ -584,6 +584,9 @@
       "North Korea": [
         "เกาหลีเหนือ"
       ],
+      "North Macedonia": [
+        "มาซิโดเนียเหนือ"
+      ],
       "Northern Mariana Islands": [
         "หมู่เกาะนอร์เทิร์นมาเรียนา"
       ],
@@ -864,8 +867,14 @@
       "Enter 6 digits": [
         "ป้อนหมายเลข 6 หลัก"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "ป้อนชื่อผู้ใช้โดยไม่มีโดเมน (@example.com)"
+      ],
       "Incorrect username": [
         "ชื่อผู้ใช้ไม่ถูกต้อง"
+      ],
+      "Invalid verification code": [
+        "รหัสการตรวจสอบสิทธิ์ไม่ถูกต้อง"
       ],
       "Not a valid number": [
         "หมายเลขไม่ถูกต้อง"
@@ -915,9 +924,20 @@
         "ไม่สามารถโหลดหน้านี้ได้ โปรดรีเฟรชหน้าหรือตรวจสอบการเชื่อมต่ออินเทอร์เน็ต"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "เกิดข้อผิดพลาดในการยืนยันตัวตนด้วยคีย์ความปลอดภัย โปรดลองใหม่อีกครั้ง"
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "แทรกคีย์ความปลอดภัยที่เชื่อมโยงกับบัญชี ${ BRAND_NAME }"
+      ],
       "Security key": [
         "คีย์ความปลอดภัย"
+      ],
+      "Touch your security key.": [
+        "แตะคีย์ความปลอดภัย"
       ]
     },
     "fido2: Label": {
@@ -1017,14 +1037,23 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "การสร้างบัญชีฟรีหลายบัญชีไม่ได้รับอนุญาตตาม ${ termsLink }"
       ],
+      "Each code can only be used once": [
+        "แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
+      ],
       "Edit email address": [
         "แก้ไขที่อยู่อีเมล"
+      ],
+      "Enter code": [
+        "ป้อนรหัส"
       ],
       "Enter the code from your authenticator app": [
         "ป้อนรหัสจากแอปยืนยันตัวตนของคุณ"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "โปรดป้อนโค๊ดยืนยันตัวตนที่ได้ส่งไปให้คุณที่ ${ destinationText }"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "ป้อนรหัสยืนยัน หลักที่ ${ digit }"
       ],
       "Enter your own password (as organization admin).": [
         "ป้อนรหัสผ่านของคุณเอง (ในฐานะผู้ดูแลระบบองค์กร)"
@@ -1043,6 +1072,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "หากไม่พบอีเมลเพื่อการยืนยันตัวตนในกล่องขาเข้าของคุณ โปรดดูที่แฟ้มสแปม"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "หากสูญเสียการเข้าถึงแอปยืนยันตัวตน สามารถใช้ 1 ใน 16 รหัสกู้คืนสำรองข้อมูลที่ให้ไว้เมื่อตั้งค่าการยืนยันตัวตนผ่านสองขั้นตอน ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "การเชื่อมต่ออินเทอร์เน็ตขาดหาย"
@@ -1177,6 +1209,9 @@
       "${ n } message per day": [
         "${ n }ข้อความต่อวัน"
       ],
+      "${ options }-day file version history": [
+        "ประวัติเวอร์ชันไฟล์ ${ options } วัน"
+      ],
       "${ size } attachment size": [
         "ขนาดไฟล์แนบ ${ size }"
       ],
@@ -1245,6 +1280,9 @@
       ],
       "Custom email domains": [
         "โดเมนอีเมลที่กำหนดเอง"
+      ],
+      "Data retention policies": [
+        "นโยบายการเก็บรักษาข้อมูล"
       ],
       "Desktop app": [
         "แอปเดสก์ท็อป"
@@ -1496,6 +1534,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "ได้ส่งรหัสไปที่ ${ methodTo }"
+      ],
+      "Verification successful": [
+        "ยืนยันสำเร็จ"
       ]
     },
     "Title": {
@@ -1507,6 +1548,9 @@
       ],
       "Enter your password": [
         "ป้อนรหัสผ่าน"
+      ],
+      "Human verification": [
+        "ยืนยันตัวตนว่าไม่ใช่หุ่นยนต์"
       ],
       "Invalid verification code": [
         "รหัสยืนยันไม่ถูกต้อง"
