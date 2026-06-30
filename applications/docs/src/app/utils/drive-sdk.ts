@@ -1,6 +1,7 @@
-import { MemberRole, type NodeEntity, type ProtonDriveClient } from '@proton/drive'
+import { MemberRole, type NodeEntity } from '@proton/drive'
 import { findUserAddress } from '@proton/shared/lib/helpers/address'
 import type { Address } from '@proton/shared/lib/interfaces'
+import { c } from 'ttag'
 
 export function getNodeName(node: NodeEntity) {
   if (typeof node.name === 'string') {
@@ -11,55 +12,19 @@ export function getNodeName(node: NodeEntity) {
   }
 }
 
-export async function getFullPath(drive: ProtonDriveClient, nodeUid: string) {
+/**
+ *
+ * @param ancestry root first, most immediate parent last
+ */
+export function getFullPathFromAncestry(ancestry: NodeEntity[]) {
   const path: string[] = []
-
-  const ancestry = await getNodeAncestry(drive, nodeUid, false)
   const [_root, ...children] = ancestry
   for (const ancestor of children) {
     if (ancestor.name.ok) {
       path.push(ancestor.name.value)
     }
   }
-
-  return { path, ancestry }
-}
-
-export async function getNodeAncestry(drive: ProtonDriveClient, nodeUid: string, includeSelf: boolean = true) {
-  const ancestors: NodeEntity[] = []
-
-  const node = await drive.getNode(nodeUid)
-  let currentNode = node
-  if (includeSelf) {
-    ancestors.push(node)
-  }
-  while (getParentUid(currentNode)) {
-    const parent = await getNodeParent(drive, currentNode)
-    if (parent !== null) {
-      ancestors.unshift(parent)
-      currentNode = parent
-    } else {
-      break
-    }
-  }
-
-  return ancestors
-}
-
-export async function getNodeParent(drive: ProtonDriveClient, node: NodeEntity) {
-  const parentUid = getParentUid(node)
-  if (!parentUid) {
-    return null
-  }
-  return drive.getNode(parentUid)
-}
-
-export function getParentUid(node: NodeEntity) {
-  return node.parentUid
-}
-
-export function extractNodeUid(node: NodeEntity) {
-  return node.uid
+  return path
 }
 
 export function getIsSharedWithMe(node: NodeEntity, addresses: Address[] | undefined) {
@@ -71,7 +36,18 @@ export function getIsSharedWithMe(node: NodeEntity, addresses: Address[] | undef
 }
 
 export function getAuthorName(node: NodeEntity) {
-  if (node.keyAuthor.ok) {
-    return node.keyAuthor.value ?? undefined
+  const author = node.keyAuthor
+
+  if (author.ok) {
+    if (author.value === null) {
+      return c('Label').t`Unknown user`
+    }
+    return author.value
   }
+
+  if (author.error && author.error.claimedAuthor) {
+    return author.error.claimedAuthor
+  }
+
+  return c('Label').t`Unknown user`
 }
