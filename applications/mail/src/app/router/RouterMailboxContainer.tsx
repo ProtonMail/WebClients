@@ -15,6 +15,8 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/s
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
+import { CategoriesOnboardingProvider } from 'proton-mail/components/categoryView/categoriesOnboarding/CategoriesOnboardingContext';
+import { SpotlightCustomize } from 'proton-mail/components/categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from 'proton-mail/constants';
@@ -110,63 +112,69 @@ export const RouterMailboxContainer = () => {
 
     return (
         <MailboxContainerContextProvider containerRef={messageContainerRef} isResizing={isResizing}>
-            <MailHeader
-                elementsData={elementsData}
-                actions={actions}
-                labelID={labelID}
-                settingsButton={<InboxQuickSettingsAppButton />}
-                toolbar={
-                    // Show toolbar in header when in row layout and an email is selected
-                    !shouldSeeWideToolbars && ((!isColumnModeActive && elementID) || viewPortIsNarrow) ? (
-                        <MailboxToolbar
-                            inHeader
-                            navigation={navigation}
-                            elementsData={elementsData}
-                            actions={actions}
+            <CategoriesOnboardingProvider>
+                <MailHeader
+                    elementsData={elementsData}
+                    actions={actions}
+                    labelID={labelID}
+                    settingsButton={
+                        <SpotlightCustomize>
+                            <InboxQuickSettingsAppButton />
+                        </SpotlightCustomize>
+                    }
+                    toolbar={
+                        // Show toolbar in header when in row layout and an email is selected
+                        !shouldSeeWideToolbars && ((!isColumnModeActive && elementID) || viewPortIsNarrow) ? (
+                            <MailboxToolbar
+                                inHeader
+                                navigation={navigation}
+                                elementsData={elementsData}
+                                actions={actions}
+                            />
+                        ) : undefined
+                    }
+                />
+                <PrivateMainArea
+                    className={clsx([
+                        'flex',
+                        !isColumnModeActive && elementID && 'row-layout-email-view full-width-email',
+                        isColumnModeActive && 'column-layout-view',
+                        breakpoints.viewportWidth['<=small'] && 'border-none',
+                    ])}
+                    innerClassName={breakpoints.viewportWidth['<=small'] ? 'border-none' : ''}
+                    hasToolbar
+                    hasRowMode={hasRowMode}
+                    ref={mainAreaRef}
+                    drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
+                    drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+                    mainBordered={canShowDrawer && !!showDrawerSidebar}
+                >
+                    <Switch>
+                        <Route
+                            path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
+                            render={() => (
+                                <NewsletterSubscriptionView
+                                    elementsData={elementsData}
+                                    actions={actions}
+                                    navigation={navigation}
+                                />
+                            )}
                         />
-                    ) : undefined
-                }
-            />
-            <PrivateMainArea
-                className={clsx([
-                    'flex',
-                    !isColumnModeActive && elementID && 'row-layout-email-view full-width-email',
-                    isColumnModeActive && 'column-layout-view',
-                    breakpoints.viewportWidth['<=small'] && 'border-none',
-                ])}
-                innerClassName={breakpoints.viewportWidth['<=small'] ? 'border-none' : ''}
-                hasToolbar
-                hasRowMode={hasRowMode}
-                ref={mainAreaRef}
-                drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
-                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
-                mainBordered={canShowDrawer && !!showDrawerSidebar}
-            >
-                <Switch>
-                    <Route
-                        path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
-                        render={() => (
-                            <NewsletterSubscriptionView
-                                elementsData={elementsData}
-                                actions={actions}
-                                navigation={navigation}
-                            />
-                        )}
-                    />
-                    <Route
-                        path={ROUTE_LABEL}
-                        render={() => (
-                            <RouterLabelContainer
-                                navigation={navigation}
-                                elementsData={elementsData}
-                                actions={actions}
-                                hasRowMode={hasRowMode}
-                                onResizingChange={setIsResizing}
-                            />
-                        )}
-                    />
-                </Switch>
-            </PrivateMainArea>
+                        <Route
+                            path={ROUTE_LABEL}
+                            render={() => (
+                                <RouterLabelContainer
+                                    navigation={navigation}
+                                    elementsData={elementsData}
+                                    actions={actions}
+                                    hasRowMode={hasRowMode}
+                                    onResizingChange={setIsResizing}
+                                />
+                            )}
+                        />
+                    </Switch>
+                </PrivateMainArea>
+            </CategoriesOnboardingProvider>
         </MailboxContainerContextProvider>
     );
 };
