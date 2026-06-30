@@ -3161,6 +3161,9 @@
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Isso pode acontecer se as permissões foram removidas ou se a sua senha foi alterada."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma integração perfeita da sua equipe ao ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
       ]
     },
     "description": {
@@ -4121,10 +4124,16 @@
         "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
       ],
       "VAT number must start with ${ prefixes }": [
-        "O número de IVA deve começar por ${ prefixes }"
+        "O número de IVA deve começar com ${ prefixes }"
       ],
       "Unexpected error, we can't import the files": [
         "Erro inesperado, não podemos importar os arquivos"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Por favor, verifique se o seu ABN está registrado para IVA transfronteiriço"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "O regime de reverse charge não é suportado para este plano"
       ]
     },
     "error": {
@@ -4549,6 +4558,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Touch your security key.": [
+        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -7306,7 +7318,7 @@
         "Um pacote criptografado. Proteção total para sua empresa."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
-        "Para ajudar você a lembrar sua senha, pediremos que você a digite periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
+        "Para ajudar você a lembrar sua senha, pediremos que você a insira periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Confie na chave \"${ activeSignerText }\" para verificar novas mensagens deste contato."
@@ -7314,6 +7326,21 @@
       "We couldn't save this photo to your Drive": [
         "Não foi possível salvar esta foto no seu Drive",
         "Não foi possível salvar várias fotos no seu Drive"
+      ],
+      "Please select the labels you would like to import:": [
+        "Selecione os marcadores que você deseja importar:"
+      ],
+      "Preparing download": [
+        "Preparando para baixar"
+      ],
+      "Preparing…": [
+        "Preparando…"
+      ],
+      "We'll remind you to verify your password again later": [
+        "Lembriremos você de verificar sua senha novamente mais tarde"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Sua conta está configurada atualmente para aplicar o regime de reverse charge. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
       ]
     },
     "info": {
@@ -7405,6 +7432,9 @@
       ],
       "Fallback": [
         "Alternativa"
+      ],
+      "Active Signer": [
+        "Signatário ativo"
       ]
     },
     "Label": {
@@ -10141,6 +10171,9 @@
       "${ addedUids.length } photo have been added to \"${ albumName }\"": [
         "${ addedUids.length } foto foi adicionada a \"${ albumName }\"",
         "${ addedUids.length } fotos foram adicionadas a \"${ albumName }\""
+      ],
+      "Failed to load sharing details": [
+        "Falha ao carregar os detalhes de compartilhamento"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10807,6 +10840,9 @@
       ],
       "Edit billing address": [
         "Editar o endereço de cobrança"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "O mecanismo de reverse charge de IVA se aplica."
       ]
     },
     "Payments.Error": {
@@ -10952,6 +10988,9 @@
       ],
       "This key is used to encrypt messages to this contact on older apps": [
         "Esta chave é usada para criptografar mensagens para este contato em aplicativos antigos"
+      ],
+      "This contact currently signs messages with this key": [
+        "Este contato assina atualmente as mensagens com esta chave"
       ]
     },
     "PGP key warning": {
