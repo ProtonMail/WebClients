@@ -364,6 +364,9 @@
       "Get Started": [
         "Bắt Đầu"
       ],
+      "Hide": [
+        "Ẩn"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Làm sao để tôi xuất dữ liệu của mình từ ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -986,6 +989,9 @@
       ],
       "Error reporting problem": [
         "Lỗi khi báo cáo vấn đề"
+      ],
+      "Failed loading group members": [
+        "Không tải được các thành viên nhóm"
       ],
       "Failed removing the invite.": [
         "Không xóa được lời mời."
@@ -1689,6 +1695,9 @@
       "Enter the address you want to email.": [
         "Nhập địa chỉ bạn muốn gửi email."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Nhập mã xác minh. Chữ số ${ digit }."
+      ],
       "Enter your extra password": [
         "Nhập mật khẩu bổ sung"
       ],
@@ -1877,9 +1886,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -2838,6 +2844,9 @@
       ],
       "Expired": [
         "Đã hết hạn"
+      ],
+      "Expires in": [
+        "Hết hạn sau"
       ],
       "Expiry Date": [
         "Ngày hết hạn"
@@ -3856,6 +3865,9 @@
       ],
       "Coupon": [
         "Phiếu mua hàng"
+      ],
+      "e.g. My automation script": [
+        "Ví dụ: Tập lệnh tự động hóa của tôi"
       ],
       "E.g., ": [
         "Ví dụ, "

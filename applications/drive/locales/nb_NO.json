@@ -956,6 +956,12 @@
       "Select country": [
         "Velg land"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Velg vurdering ${ n } av ${ to }"
+      ],
+      "Send Feedback": [
+        "Send tilbakemelding"
+      ],
       "Set as album cover": [
         "Angi som albumomslag"
       ],
@@ -4493,6 +4499,9 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
+      ],
+      "Touch your security key.": [
+        "Berør sikkerhetsnøkkelen din."
       ]
     },
     "fido2: Label": {
@@ -7347,6 +7356,9 @@
       "Download anyway": [
         "Last ned uansett"
       ],
+      "Drive": [
+        "Stasjon"
+      ],
       "Duplicate found": [
         "Duplikat funnet"
       ],
@@ -7409,6 +7421,9 @@
       ],
       "Extended address": [
         "Utvidet adresse"
+      ],
+      "Extremely Satisfied": [
+        "Ekstremt fornøyd"
       ],
       "File": [
         "Fil"
@@ -7743,6 +7758,9 @@
       "System information": [
         "Systeminformasjon"
       ],
+      "Tell us more about your experience": [
+        "Fortell oss mer om din opplevelse"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7787,6 +7805,9 @@
       ],
       "Verification code": [
         "Verifiseringskode"
+      ],
+      "Very Dissatisfied": [
+        "Svært misfornøyd"
       ],
       "Viewer": [
         "Leser"
@@ -9106,6 +9127,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi streber alltid etter å gjøre ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
       ]
     },
     "new_plans: Subtext": {
@@ -10582,6 +10608,9 @@
       ],
       "New name": [
         "Nytt navn"
+      ],
+      "Optional feedback": [
+        "Valgfri tilbakemelding"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -13184,6 +13213,9 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Vi klarte ikke å bekrefte at filinnholdet ble lastet opp av ${ claimedContentAuthor }. Årsaken er: ${ activeRevision.contentAuthor.error.error }"
       ],
+      "We'd love to hear from you!": [
+        "Vi vil gjerne høre fra deg!"
+      ],
       "Welcome offer": [
         "Velkomsttilbud"
       ],
@@ -13298,6 +13330,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Øyeblikkelig AI-assistanse, menneskelig ekspert er klar!"
       ],
       "Load image": [
         "Last inn bilde"

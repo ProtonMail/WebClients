@@ -90,6 +90,9 @@
       "Add": [
         "추가"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 추가하기"
       ],
@@ -2771,6 +2774,9 @@
       "Configure migration": [
         "이전 작업 구성"
       ],
+      "Contact your administrator to start a migration.": [
+        "마이그레이션을 시작하려면 관리자에게 문의하세요."
+      ],
       "Contacts": [
         "연락처"
       ],
@@ -4847,6 +4853,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "조직의 모든 구성원이 모든 국가의 공유 서버에 연결할 수 있습니다."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "귀하의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
       ],
@@ -4904,6 +4913,9 @@
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "새로운 Gmail 주소를 연결하려면, ${ BRAND_NAME }로 전달되는 기존 Gmail 주소를 삭제하세요."
       ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "최대 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 연결하려면 ${ planName }로 업그레이드하세요."
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
       ],
@@ -4941,13 +4953,13 @@
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 사용자의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
       ],
       "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
-        "새로운 이메일 카테고리를 사용하면 중요한 메시지만 귀하의 우선순위 받은 편지함에 도착합니다. 카테고리는 스팸 필터처럼 작동합니다. ${ MAIL_APP_NAME }은 절대 귀하의 이메일을 읽거나 귀하의 데이터를 공유하지 않습니다."
+        "새로운 이메일 카테고리를 사용하면 중요한 메시지만 회원님의 우선순위 받은 편지함에 도착합니다. 카테고리는 스팸 필터처럼 작동합니다. ${ MAIL_APP_NAME }은 절대 회원님의 이메일을 읽거나 데이터를 공유하지 않습니다."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "이미 ${ MAIL_APP_NAME }에 전달되는 Gmail 주소가 있습니다. 아래에서 주소를 연결 하고 ${ MAIL_APP_NAME }에서 직접 이메일을 주고 받을 수 있습니다."
@@ -4981,6 +4993,12 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "현재 요금제는 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "귀하의 요금제는 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
       ]
     },
     "description": {
@@ -6795,6 +6813,9 @@
       "Please add a payment method before reactivating your subscription": [
         "구독을 다시 활성화하기 전 결제 수단을 추가해 주세요."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "귀하의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주십시오"
+      ],
       "Please complete the billing details": [
         "청구 상세 정보를 입력해 주세요."
       ],
@@ -7411,7 +7432,7 @@
         "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+        "답장이 전송되었습니다, 이벤트가 사용자의 캘린더에서 업데이트되지 않을 수 있습니다"
       ]
     },
     "Event title": {
@@ -7936,9 +7957,6 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
       ],
-      "Insert your security key into your device's USB port.": [
-        "기기의 USB 포트에 보안 키를 삽입하세요."
-      ],
       "Security key": [
         "보안 키"
       ],
@@ -7950,6 +7968,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "이 작업은 사용자의 계정에 연결된 모든 보안 키를 삭제합니다."
+      ],
+      "Touch your security key.": [
+        "귀하의 보안 키를 터치해 주세요."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원 확인"
@@ -9138,6 +9159,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } 업데이트됨"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME }은(는) 귀하의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }은(는) 귀하의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "국가 수준의 접속에는 ${ vpnPlus }가 필요합니다."
       ],
@@ -9278,6 +9302,9 @@
       ],
       "Activity Monitor": [
         "활동 모니터링"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 추가"
@@ -9712,7 +9739,7 @@
         "클립보드로 비밀번호 제안을 복사하십시오"
       ],
       "Copy your referral link": [
-        "당신의 추천인 링크를 공유하세요"
+        "나의 추천인 링크를 공유하세요"
       ],
       "Couldn´t send feedback": [
         "피드백을 전송할 수 없음"
@@ -10038,6 +10065,9 @@
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "비밀번호를 입력하여 ${ BRAND_NAME } 계정을 완료하고 모든 기기에서 ${ VPN_APP_NAME } 사용을 시작해 보세요!"
       ],
+      "Enter code": [
+        "코드 입력"
+      ],
       "Enter key manually instead": [
         "수동으로 키 입력"
       ],
@@ -10166,6 +10196,9 @@
       ],
       "For easy access to your passwords and more.": [
         "비밀번호 등에 쉽게 접근할 수 있습니다."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "${ bundlePlanPriceInline }에 이용 가능"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
@@ -10334,6 +10367,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2단계 인증 기기를 분실한 경우, 6자리 인증코드 대신 이 코드들을 사용하여 계정에 로그인 할 수 있습니다. 각 코드는 한번씩만 사용이 가능합니다."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -10914,6 +10950,9 @@
       "Password must have:": [
         "비밀번호는 다음 조건을 충족해야 합니다:"
       ],
+      "Password verified": [
+        "비밀번호 확인 완료"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
@@ -10982,6 +11021,9 @@
       ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
+      ],
+      "Please select the labels you would like to import:": [
+        "불러올 라벨을 선택해 주십시오:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "빈칸을 채우고, 추가할 링크 형식을 선택하세요."
@@ -11697,6 +11739,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "계정을 안전하게 보호하기 위해, 로그인하려는 사람이 정말로 본인인지 확인하려고 합니다."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
       ],
@@ -11998,7 +12043,7 @@
         "처리가 완료되면 알려드리겠습니다."
       ],
       "We'll remind you to verify your password again later": [
-        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
+        "귀하의 비밀번호를 나중에 다시 확인하도록 알려드리겠습니다"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -12925,6 +12970,11 @@
         "${ CALENDAR_APP_NAME }로 전환하기"
       ]
     },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }으로 전환"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "단축키 동작"
@@ -13576,6 +13626,9 @@
       ],
       "Donation amount": [
         "기부 금액"
+      ],
+      "Drive": [
+        "드라이브"
       ],
       "Duration": [
         "기간"
@@ -14753,6 +14806,9 @@
       "Forgot username?": [
         "아이디를 잊으셨나요?"
       ],
+      "Frequent sign-in problems": [
+        "자주 발생하는 로그인 문제"
+      ],
       "General": [
         "일반"
       ],
@@ -14761,6 +14817,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } 받기"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME }에서 도움받기"
       ],
       "Groups": [
         "그룹"
@@ -15870,6 +15929,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "모든 국가로 접근"
+      ],
       "Activity logs and policy": [
         "활동 로그 및 정책"
       ],
@@ -15902,6 +15964,9 @@
       ],
       "Appointment scheduling": [
         "일정 예약"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }개의 예약 페이지를 통한 일정 예약"
       ],
       "Apps for": [
         "전용 앱"
@@ -15970,7 +16035,7 @@
         "전용 서버 및 IP"
       ],
       "Dedicated servers optimized for speed": [
-        "속도를 위해 최적화된 전용 서버"
+        "속도에 최적화된 전용 서버"
       ],
       "Desktop app": [
         "데스크톱 앱"
@@ -16043,6 +16108,9 @@
       ],
       "Multiple admin roles": [
         "다중 관리자 역할"
+      ],
+      "No streaming support": [
+        "스트리밍 서비스 지원 안 됨"
       ],
       "No-logs policy": [
         "무로그 정책"
@@ -16205,6 +16273,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "무제한 볼륨/대역폭"
+      ],
+      "Unlock streaming": [
+        "스트리밍 서비스 차단 해제"
       ],
       "Up to ${ n } user": [
         "사용자 최대 ${ n }명"
@@ -20996,7 +21067,7 @@
         "모든 준비가 완료되었어요"
       ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
-        "귀하의 계정에는 ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ LUMO_SHORT_APP_NAME }의 무료 기능에 대한 접근 권한이 포함됩니다."
+        "회원님의 계정에 ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ LUMO_SHORT_APP_NAME }의 무료 기능에 대한 접근 권한이 포함됩니다."
       ],
       "Your plan": [
         "내 플랜"
@@ -22007,6 +22078,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "premium 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } 및 ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
       ],
@@ -23925,6 +24002,9 @@
       "Messages and composing": [
         "메시지 및 작성"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+      ],
       "Migration assistant": [
         "이전 작업 도우미"
       ],
@@ -24884,6 +24964,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "즉각적인 AI 지원, 상시 대기 중인 전문가!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "2단계 인증을 사용하지 않는 회원은 가능 한 빠른 시일 내로 활성화해 달라는 이메일을 받게 됩니다. 싱글 사인온(SSO) 사용자는 이메일 알림을 받지 않습니다."

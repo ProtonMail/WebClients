@@ -1964,6 +1964,11 @@
         "شما می‌توانید رویدادها را در قالب iCal وارد کنید (فایل ICS). اندازه فایل باید حداکثر ${ MAX_IMPORT_FILE_SIZE_STRING } و حداکثر ${ MAX_IMPORT_EVENTS_STRING } رویداد داشته باشد. اگر فایل شما بزرگتر است، لطفا آن را به فایل‌های کوچکتر تقسیم کنید."
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "از دستیار واردسازی Easy Switch استفاده کنید"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "همچنین، ما زمینه‌های CSV را با زمینه‌های کارت ویزیت مجازی به طور خودکار مطابقت داده‌ایم. می‌توانید این تطابق را به صورت دستی بررسی و تغییر دهید."
@@ -4698,6 +4703,9 @@
       "Create account": [
         "ساختن حساب"
       ],
+      "Don't have access to your 2FA?": [
+        "به اصالت‌سنجی دو-عاملی خود دسترسی ندارید؟"
+      ],
       "Encryption and keys": [
         "رمزگذاری و کلیدها"
       ],
@@ -4707,8 +4715,14 @@
       "Forgot username?": [
         "نام کاربریتان را فراموش کرده‌اید؟"
       ],
+      "Frequent sign-in problems": [
+        "مشکلات متداول ورود به حساب"
+      ],
       "Get ${ VPN_APP_NAME }": [
         "دریافت ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "دریافت راهنمایی از ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "گروه‌ها"

@@ -956,6 +956,12 @@
       "Select country": [
         "Vælg land"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vælg vurdering ${ n } ud af ${ to }"
+      ],
+      "Send Feedback": [
+        "Send feedback"
+      ],
       "Set as album cover": [
         "Indstil som albumcover"
       ],
@@ -4493,6 +4499,9 @@
       ],
       "Security key": [
         "Sikkerhedsnøgle"
+      ],
+      "Touch your security key.": [
+        "Tryk på din sikkerhedsnøgle."
       ]
     },
     "fido2: Label": {
@@ -6182,6 +6191,12 @@
       "Preparing": [
         "Forbereder"
       ],
+      "Preparing download": [
+        "Forbereder download"
+      ],
+      "Preparing…": [
+        "Forbereder..."
+      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
@@ -7416,6 +7431,9 @@
       "Extended address": [
         "Udvidet adresse"
       ],
+      "Extremely Satisfied": [
+        "Yderst tilfreds"
+      ],
       "File": [
         "Fil"
       ],
@@ -7749,6 +7767,9 @@
       "System information": [
         "Systemoplysninger"
       ],
+      "Tell us more about your experience": [
+        "Fortæl os mere om din oplevelse"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7793,6 +7814,9 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "Very Dissatisfied": [
+        "Meget utilfreds"
       ],
       "Viewer": [
         "Seer"
@@ -9055,6 +9079,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du forsøger at abonnere igen."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi stræber altid efter at forbedre ${ config.appName }. Hvor tilfreds er du med din oplevelse?"
       ]
     },
     "new_plans: Subtext": {
@@ -10534,6 +10563,9 @@
       ],
       "New name": [
         "Nyt navn"
+      ],
+      "Optional feedback": [
+        "Valgfri feedback"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -12225,9 +12257,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } af gratis uploads."
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
-      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -12489,16 +12518,16 @@
         "Digital signatur delvist verificeret. Denne mappe blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
       ],
       "Digital signature verified. This file was securely created by ${ author }.": [
-        "Digital signatur verificeret. Denne fil blev oprettet sikkert af ${ author }."
+        "Digital signatur bekræftet. Denne fil blev oprettet sikkert af ${ author }."
       ],
       "Digital signature verified. This file was securely uploaded by ${ author }.": [
-        "Digital signatur verificeret. Denne fil blev uploadet sikkert af ${ author }."
+        "Digital signatur bekræftet. Denne fil blev uploadet sikkert af ${ author }."
       ],
       "Digital signature verified. This folder was securely created by ${ author }.": [
-        "Digital signatur verificeret. Denne mappe blev oprettet sikkert af ${ author }."
+        "Digital signatur bekræftet. Denne mappe blev oprettet sikkert af ${ author }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ author }.": [
-        "Digital signatur verificeret. Denne mappe blev uploadet sikkert af ${ author }."
+        "Digital signatur bekræftet. Denne mappe blev uploadet sikkert af ${ author }."
       ],
       "Discard": [
         "Kassér"
@@ -13168,6 +13197,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Vi kunne ikke bekræfte, at noden blev oprettet af ${ claimedKeyAuthor }. Årsagen: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil meget gerne høre fra dig"
       ],
       "Welcome offer": [
         "Velkomsttilbud"

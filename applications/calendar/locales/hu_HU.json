@@ -201,6 +201,9 @@
       "Continue import": [
         "Importálás folytatása"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Folytatás itt: ${ planOrAppName }"
+      ],
       "Continue with Free": [
         "Folytatás az ingyenes verzióval"
       ],
@@ -1018,6 +1021,15 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikált VPN szerverek"
+      ],
+      "Domains": [
+        "Domain nevek"
+      ],
+      "Writing assistant": [
+        "Írási segéd"
       ]
     },
     "Alarm notification": {
@@ -1114,6 +1126,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Akár ${ TRIAL_MAX_DEDICATED_IPS } dedikált szerverrel is rendelkezhet a próbaidőszakban."
       ],
@@ -1222,6 +1237,14 @@
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnevet és további lehetőségeket tartalmaz."
       ]
     },
+    "BF2025: Deal details": {
+      "3 TB data storage": [
+        "3 TB tárhely"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "15,000+ szerver elérése, 120+ országban"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } hónap",
@@ -1239,6 +1262,9 @@
       ],
       "Annually": [
         "Évente"
+      ],
+      "Billed monthly": [
+        "Havonta számlázva"
       ],
       "Lifetime": [
         "Élettartam"
@@ -1665,6 +1691,9 @@
       ],
       "Web search access": [
         "Webes keresési hozzáférés"
+      ],
+      "Zero-access encryption": [
+        "Zéró hozzáférésű titkosítás"
       ]
     },
     "collider_2025: Info": {
@@ -2001,6 +2030,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanári-szigetek"
       ],
       "Cape Verde": [
         "Zöld-foki Köztársaság"
@@ -3266,6 +3298,9 @@
       "Account does not exist": [
         "Fiók nem létezik"
       ],
+      "Address could not be added.": [
+        "A cím hozzáadása nem sikerült."
+      ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
@@ -3761,6 +3796,9 @@
       ],
       "Validation error": [
         "Érvényesítési hiba"
+      ],
+      "Wrong billing address": [
+        "Hibás számlázási cím"
       ],
       "You already added this holidays calendar": [
         "Már hozzáadta ezt a munkaszüneti naptárat"
@@ -4595,6 +4633,9 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Túl sok lekérdezés történt. Próbálja újra egy kis várakozás után."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
+      ],
       "Use your app password if:": [
         "Az alkalmazásjelszót használja ha:"
       ],
@@ -5053,6 +5094,10 @@
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ memberCount } tagnak"
+      ],
       "Create in": [
         "Létrehozás itt"
       ],
@@ -5192,6 +5237,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "További biztonság érdekében beállíthat egy jelszót. Ez nem lesz benne a naptár meghívóban, ne feledje külön megosztani a meghívottakkal."
+      ],
+      "Forgot password?": [
+        "Elfelejtette a jelszavát?"
       ],
       "Frequency modifications will be lost.": [
         "Az ismétlődés változtatásai el fognak veszni."
@@ -6620,6 +6668,9 @@
       "Sign emails": [
         "Üzenetek aláírása"
       ],
+      "Skip feedback": [
+        "Visszajelzés kihagyása"
+      ],
       "Start date": [
         "Kezdő dátum"
       ],
@@ -6869,6 +6920,9 @@
       "settings": [
         "beállítások"
       ],
+      "Terms and conditions": [
+        "Felhasználási feltételek"
+      ],
       "Types of recovery methods": [
         "Helyreállítási módszerek típusai"
       ],
@@ -6985,6 +7039,16 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } résztvevő",
+        "${ n } résztvevő"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } résztvevő",
+        "Akár ${ n } résztvevő"
       ]
     },
     "meet_2025: Info": {
@@ -7389,6 +7453,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Hozzáférés minden országhoz"
+      ],
       "Ad-blocker and malware protection": [
         "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
@@ -7409,6 +7476,10 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Minden alapvető ${ BRAND_NAME } szolgáltatás (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Időpontfoglalás ${ n } jelentkezési oldallal",
+        "Időpontfoglalás ${ n } jelentkezési oldallal"
       ],
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
@@ -8068,6 +8139,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ország",
+        "${ n } ország"
+      ],
       "Access advanced VPN features": [
         "További VPN lehetőségek elérése"
       ],
@@ -8722,6 +8797,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Ez idő alatt nem tudja módosítani vagy törölni az előfizetését. Kérjük, várjon, amíg a fizetés befejeződik, mielőtt bármilyen változtatással próbálkozna. Köszönjük türelmét."
       ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
+      ],
       "Got it": [
         "Értem."
       ],
@@ -9012,6 +9090,9 @@
       ],
       "Postal code": [
         "Irányítószám"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Keresés"
@@ -10263,6 +10344,10 @@
       "Version history": [
         "Verziótörténet"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videós megbeszélések, ${ PAID_PREMIUM_MAX_PARTICIPANTS } résztvevővel",
+        "Videós megbeszélések, akár ${ PAID_PREMIUM_MAX_PARTICIPANTS } résztvevővel"
+      ],
       "Watch the interview": [
         "Nézze meg az interjút"
       ],
@@ -11219,6 +11304,9 @@
       "Select contact group": [
         "Névjegy csoport kiválasztása"
       ],
+      "Select data to import": [
+        "Válassza ki az importálni kívánt adatokat"
+      ],
       "Select event end date": [
         "Válassza ki az esemény befejező dátumát"
       ],
@@ -11398,6 +11486,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Az ön ${ planName } ingyenes próbaidőszaka végett ér: ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "A ${ planTitle } előfizetése elindult."
       ],
       "Your account is protected": [
         "A fiókja védve van"

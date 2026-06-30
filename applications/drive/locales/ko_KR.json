@@ -45,6 +45,9 @@
       "Add": [
         "추가"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "새로운 앨범으로 ${ photoCount }개 사진 추가"
       ],
@@ -923,6 +926,12 @@
       ],
       "Select country": [
         "국가 선택"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "평점을 ${ to }점 중 ${ n }점 선택"
+      ],
+      "Send Feedback": [
+        "피드백 보내기"
       ],
       "Set as album cover": [
         "앨범 커버로 사용하기"
@@ -2955,6 +2964,9 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } 비밀번호를 분실한 경우에도 계정과 데이터에 접근 가능한지 여부를 확인하세요."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "귀하의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
       ],
@@ -3652,6 +3664,9 @@
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "귀하의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주십시오"
+      ],
       "Please complete the billing details": [
         "청구 상세 정보를 입력해 주세요."
       ],
@@ -4171,7 +4186,7 @@
         "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+        "답장이 전송되었습니다, 이벤트가 사용자의 캘린더에서 업데이트되지 않을 수 있습니다"
       ]
     },
     "Event title": {
@@ -4360,6 +4375,9 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Touch your security key.": [
+        "귀하의 보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -4958,6 +4976,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME }가 IP를 가려 웹 사이트에서 사용자를 식별할 수 없게 됩니다."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME }은(는) 귀하의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }은(는) 귀하의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
       ],
@@ -5020,6 +5041,9 @@
       ],
       "Ad targeting": [
         "광고 트래킹"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 추가"
@@ -5226,7 +5250,7 @@
         "복사한 링크 붙이기"
       ],
       "Copy your referral link": [
-        "당신의 추천인 링크를 공유하세요"
+        "나의 추천인 링크를 공유하세요"
       ],
       "Could not scan file for malware": [
         "파일의 멀웨어 여부를 검사할 수 없음"
@@ -5384,6 +5408,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 무료 ${ BRAND_NAME } 이메일 주소를 받아보세요."
       ],
+      "Enter code": [
+        "코드 입력"
+      ],
       "Enter password": [
         "비밀번호 입력"
       ],
@@ -5447,6 +5474,9 @@
       "for ${ price }": [
         "${ price }으로"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "${ bundlePlanPriceInline }에 이용 가능"
+      ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
       ],
@@ -5503,6 +5533,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "만약 이들 중 하나를 가지고 있다면, ${ BRAND_NAME } 계정 설정에서 차단 해제 절차를 계속하세요."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -5828,6 +5861,9 @@
       "Password must have:": [
         "비밀번호는 다음 조건을 충족해야 합니다:"
       ],
+      "Password verified": [
+        "비밀번호 확인 완료"
+      ],
       "Paused": [
         "일시 정지됨"
       ],
@@ -5890,6 +5926,9 @@
       ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
+      ],
+      "Please select the labels you would like to import:": [
+        "불러올 라벨을 선택해 주십시오:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "${ groupCount }개 그룹에 추가 할 이메일 주소를 선택하세요."
@@ -6278,6 +6317,9 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "사용자를 보호하는데 도움이 되도록 ${ DRIVE_APP_NAME }가 개인정보를 보호하는 방식으로 파일을 스캔하고 멀웨어 파일을 차단합니다. 여전히 신뢰된 출처에서만 파일을 다운로드해야 합니다. "
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
       ],
@@ -6315,7 +6357,7 @@
         "휴지통이 비어있음"
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "이 연럭처로부터 산규 매시지를 인증하려면 키 \"${ activeSignerText }\"을(를) 신뢰하세요."
+        "이 연락처로부터 오는 새 메시지를 인증하려면 \"${ activeSignerText }\" 키를 신뢰하세요."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
@@ -6444,7 +6486,7 @@
         "처리가 완료되면 알려드리겠습니다."
       ],
       "We'll remind you to verify your password again later": [
-        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
+        "귀하의 비밀번호를 나중에 다시 확인하도록 알려드리겠습니다"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -6752,11 +6794,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "활성 서명자"
+      ],
       "Compromised": [
         "유출됨"
       ],
       "Expired": [
         "만료됨"
+      ],
+      "Fallback": [
+        "대체용"
       ],
       "KOO": [
         "KOO"
@@ -7012,6 +7060,9 @@
       "Download anyway": [
         "무시하고 다운로드"
       ],
+      "Drive": [
+        "드라이브"
+      ],
       "Duplicate found": [
         "중복 발견"
       ],
@@ -7068,6 +7119,9 @@
       ],
       "Extended address": [
         "상세 주소"
+      ],
+      "Extremely Satisfied": [
+        "매우 만족"
       ],
       "File": [
         "파일"
@@ -7375,6 +7429,9 @@
       "System information": [
         "시스템 정보"
       ],
+      "Tell us more about your experience": [
+        "회원님의 경험에 대해 더 자세히 알려주세요"
+      ],
       "Theme": [
         "테마"
       ],
@@ -7419,6 +7476,9 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "Very Dissatisfied": [
+        "매우 불만족"
       ],
       "Viewer": [
         "뷰어"
@@ -8184,6 +8244,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "모든 국가로 접근"
+      ],
       "Ad-blocker and malware protection": [
         "광고 차단기 및 멀웨어 보호"
       ],
@@ -8207,6 +8270,9 @@
       ],
       "Appointment scheduling": [
         "일정 예약"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }개의 예약 페이지를 통한 일정 예약"
       ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
@@ -8263,7 +8329,7 @@
         "데이터 보존 정책"
       ],
       "Dedicated servers optimized for speed": [
-        "속도를 위해 최적화된 전용 서버"
+        "속도에 최적화된 전용 서버"
       ],
       "Desktop app": [
         "데스크톱 앱"
@@ -8336,6 +8402,9 @@
       ],
       "Multiple admin roles": [
         "다중 관리자 역할"
+      ],
+      "No streaming support": [
+        "스트리밍 서비스 지원 안 됨"
       ],
       "Online document editor": [
         "온라인 문서 편집기"
@@ -8487,6 +8556,9 @@
       "Unlimited volume/bandwidth": [
         "무제한 볼륨/대역폭"
       ],
+      "Unlock streaming": [
+        "스트리밍 서비스 차단 해제"
+      ],
       "Up to ${ n } user": [
         "사용자 최대 ${ n }명"
       ],
@@ -8632,6 +8704,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName }의 경험 향상을 위해 Proton은 항상 노력하고 있습니다. 회원님의 경험에 얼마나 만족하시나요?"
       ]
     },
     "new_plans: Subtext": {
@@ -9918,11 +9995,17 @@
       "External key automatically fetched via WKD.": [
         "외부 키가 자동적으로 WKD를 통해 가져와졌습니다."
       ],
+      "This contact currently signs messages with this key": [
+        "이 연락처는 현재 이 키로 메시지에 서명합니다"
+      ],
       "This key is used for message verification": [
         "이 키는 메시지 검증에 사용됩니다."
       ],
       "This key is used to encrypt messages to this contact": [
         "이 키는 이 연락처에 암호화된 메시지를 보내는데 사용했습니다."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "이 키는 이전 앱에서 이 연락처로 메시지를 암호화하는 데 사용됩니다"
       ],
       "We recommend that you \"untrust\" this key.": [
         "이 키를 \"신뢰하지 않는 것을\" 권장합니다."
@@ -10008,6 +10091,9 @@
       ],
       "New name": [
         "새 이름"
+      ],
+      "Optional feedback": [
+        "선택 피드백"
       ],
       "Organization name": [
         "조직 이름"
@@ -11028,6 +11114,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "premium 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } 및 ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
       ],
@@ -12118,6 +12210,9 @@
       "Message": [
         "메시지"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
+      ],
       "Minicalendar": [
         "간편 캘린더"
       ],
@@ -12538,6 +12633,9 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "${ claimedContentAuthor }님이 파일을 업로드했는지 확인할 수 없었습니다. 원인: ${ activeRevision.contentAuthor.error.error }"
       ],
+      "We'd love to hear from you!": [
+        "회원님의 의견을 기다리고 있어요!"
+      ],
       "Welcome offer": [
         "환영 혜택"
       ],
@@ -12652,6 +12750,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "즉각적인 AI 지원, 상시 대기 중인 전문가!"
       ],
       "Load image": [
         "이미지 불러오기"

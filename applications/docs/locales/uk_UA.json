@@ -51,6 +51,9 @@
       "Add address": [
         "Додати адресу"
       ],
+      "Add another account": [
+        "Додати інший обліковий запис"
+      ],
       "Add birthday": [
         "Додати день народження"
       ],
@@ -171,6 +174,12 @@
       "Confirm opening of link ${ linkToShow }": [
         "Підтвердити відкриття посилання ${ linkToShow }"
       ],
+      "Connect apps and devices": [
+        "Підключіть програми та пристрої"
+      ],
+      "Connect to video conferencing": [
+        "Підключіться до відеоконференцій"
+      ],
       "Contact group": [
         "Група контактів"
       ],
@@ -276,6 +285,9 @@
       "Download": [
         "Завантажити"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Завантажте програми ${ DRIVE_APP_NAME }"
+      ],
       "Download anyway": [
         "Усе одно завантажити"
       ],
@@ -360,8 +372,20 @@
       "Help": [
         "Довідка"
       ],
+      "Help and feedback": [
+        "Довідка та відгуки"
+      ],
+      "Help and resources": [
+        "Довідка та ресурси"
+      ],
+      "Hide": [
+        "Сховати"
+      ],
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
+      ],
+      "Hide more benefits": [
+        "Сховати інші переваги"
       ],
       "Image could not be loaded with tracker protection.": [
         "Зображення неможливо завантажити, якщо увімкнено захист від стеження."
@@ -380,6 +404,9 @@
       ],
       "Import data": [
         "Імпортувати дані"
+      ],
+      "Import emails, calendars, contacts": [
+        "Імпортуйте електронні листи, календарі, контакти"
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
@@ -411,11 +438,20 @@
       "Manage addresses": [
         "Керувати адресами"
       ],
+      "Manage advanced account protections": [
+        "Керуйте розширеним захистом облікового запису"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
+      "Manage groups": [
+        "Керуйте групами"
+      ],
       "Manage labels": [
         "Керувати мітками"
+      ],
+      "Manage users/addresses": [
+        "Керуйте користувачами та адресами"
       ],
       "Mark as resolved": [
         "Позначити як вирішене"
@@ -438,8 +474,14 @@
       "More actions": [
         "Додаткові дії"
       ],
+      "More benefits": [
+        "Більше переваг"
+      ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Більше варіантів для облікових записів"
       ],
       "Move": [
         "Перемістити"
@@ -615,11 +657,17 @@
       "Select all": [
         "Вибрати все"
       ],
+      "Set recovery methods": [
+        "Налаштуйте методи відновлення"
+      ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
       "Set up 2FA": [
         "Налаштувати 2ЕП"
+      ],
+      "Set up a custom domain": [
+        "Налаштуйте власний домен"
       ],
       "Set up email forwarding": [
         "Налаштувати пересилання пошти"
@@ -630,11 +678,17 @@
       "Share": [
         "Поділитися"
       ],
+      "Share your calendar with your team": [
+        "Поділіться своїм календарем із командою"
+      ],
       "Show advanced PGP settings": [
         "Показати розширені налаштування PGP"
       ],
       "Show more": [
         "Розгорнути"
+      ],
+      "Show more benefits": [
+        "Показати більше переваг"
       ],
       "Show options": [
         "Показати опції"
@@ -681,6 +735,9 @@
       "Try another method": [
         "Спробувати інший спосіб"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Увімкніть ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Undo": [
         "Скасувати"
       ],
@@ -705,6 +762,9 @@
       "Upgrade now": [
         "Покращити"
       ],
+      "Upload and share files": [
+        "Вивантажуйте та діліться файлами"
+      ],
       "Upload anyway": [
         "Все одно вивантажити"
       ],
@@ -713,6 +773,9 @@
       ],
       "Use ${ label } theme": [
         "Використовувати тему ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Використовуйте ${ PASS_APP_NAME } для бізнесу"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
@@ -783,6 +846,18 @@
         "${ domains } додаткові власні домени",
         "${ domains } додаткових власних доменів",
         "${ domains } додаткових власних доменів"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } виділений VPN-сервер",
+        "${ ips } виділені VPN-сервери",
+        "${ ips } виділених VPN-серверів",
+        "${ ips } виділених VPN-серверів"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ліцензія AI для ${ LUMO_APP_NAME }",
+        "${ seats } ліцензії AI для ${ LUMO_APP_NAME }",
+        "${ seats } ліцензій AI для ${ LUMO_APP_NAME }",
+        "${ seats } ліцензій AI для ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } ліцензія",
@@ -863,11 +938,26 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
+      "1 user account": [
+        "1 обліковий запис користувача"
+      ],
+      "6 user accounts": [
+        "6 облікових записів користувачів"
+      ],
+      "Admin panel to manage your family": [
+        "Панель адміністратора для керування вашою родиною"
+      ],
       "Advanced account protection": [
         "Розширений захист облікового запису"
+      ],
+      "Easily add or remove users": [
+        "Легко додавайте або вилучайте користувачів"
       ],
       "One-time payment, lifetime deal": [
         "Одноразовий платіж, довічна пропозиція"
@@ -875,8 +965,14 @@
       "Online document editor": [
         "Онлайн редактор документів"
       ],
+      "Password health alerts": [
+        "Сповіщення про якість паролів"
+      ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Необмежена кількість вхідних даних, банківських карток, псевдонімів hide-my-email тощо"
       ],
       "Use your own email domain": [
         "Використовуйте свій власний домен електронної пошти"
@@ -885,9 +981,18 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Рахунок виставлено раз в ${ amount }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Подовжується через 1 місяць за ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Отримуйте доступ до заблокованого вмісту та користуйтеся інтернетом конфіденційно. До пакета входять понад 8 500 серверів у більш ніж 110 країнах, підтримка 10 пристроїв, високошвидкісна потокова трансляція, блокувальник реклами та захист від зловмисних програм, VPN Accelerator тощо."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Безпечний вхід на всіх ваших пристроях. До пакета входять необмежена кількість псевдонімів hide-my-email, спільний доступ, інтегрована 2FA, ${ DARK_WEB_MONITORING_NAME } тощо."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адресу електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
@@ -899,6 +1004,18 @@
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Захистіть свою електронну пошту та розклад за допомогою наскрізного шифрування. До пакета входять 15 адрес електронної пошти, підтримка власних доменів електронної пошти, асистент із написання текстів ${ BRAND_NAME } Scribe, необмежена кількість псевдонімів hide-my-email тощо."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Захистіть свою електронну пошту та розклад за допомогою наскрізного шифрування. До пакета входять 15 адрес електронної пошти, підтримка власних доменів електронної пошти, необмежена кількість псевдонімів hide-my-email тощо."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Захистіть свої файли за допомогою зашифрованого хмарного сховища. До пакета входять онлайн-редактор документів, резервне копіювання фотографій, історія версій, спільний доступ до зашифрованих файлів тощо."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Простір сховища є спільним для всіх сервісів ${ BRAND_NAME }."
       ]
     },
     "Browser": {
@@ -907,6 +1024,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Проблема з ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Проблема з програмою"
       ],
@@ -954,6 +1074,9 @@
       ],
       "Payments problem": [
         "Проблема з оплатою"
+      ],
+      "Sheets problem": [
+        "Проблема з аркушами"
       ],
       "Sign in problem": [
         "Проблема з входом"
@@ -1006,6 +1129,9 @@
       ],
       "Advanced account protection": [
         "Розширений захист облікового запису"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміум-функції ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Скасувати та понизити"
@@ -1758,6 +1884,9 @@
       "North Korea": [
         "Північна Корея"
       ],
+      "North Macedonia": [
+        "Північна Македонія"
+      ],
       "Northern Mariana Islands": [
         "Північні Маріанські острови"
       ],
@@ -2078,14 +2207,23 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дає змогу працювати разом з іншими в безпечному, зашифрованому середовищі."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двоетапна автентифікація підвищує рівень безпеки, запобігаючи несанкціонованому доступу."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Додавайте папки та файли до ${ DRIVE_APP_NAME } та запрошуйте членів команди для перегляду або зміни."
+      ],
       "Also included": [
         "Також включено"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Автоматично пересилайте вхідну пошту на іншу адресу електронної пошти."
       ],
       "Available storage: ${ storageText }": [
         "Доступне сховище: ${ storageText }"
@@ -2096,20 +2234,41 @@
       "Connect your CRM, website, printers, and more.": [
         "Приєднайте вашу CRM, сайт, принтери і т.д."
       ],
+      "Create groups you can email with a single address.": [
+        "Створюйте групи, яким можна надсилати листи на одну адресу."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Отримуйте простий доступ до своєї електронної пошти та календаря на комп'ютері та мобільному пристрої."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Легко синхронізуйте файли у хмару з комп'ютера та отримуйте доступ до них із мобільного пристрою."
+      ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
         "Електронні листи, надіслані на ${ connectedAddressText }, тепер з'являтимуться в ${ MAIL_APP_NAME }."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Сприяйте використанню двоетапної перевірки у вашій організації для додаткової безпеки."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "Enough room for years of emails, attachments and more.": [
         "Достатньо місця для електронних листів, вкладень та багато чого іншого на роки вперед."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Забезпечте безпечний доступ до даних організації, навіть якщо ваша команда працює віддалено або використовує публічний WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Забезпечте першокласну безпеку свого облікового запису за допомогою програми ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Переконайтеся, що ви зможете отримати доступ до свого облікового запису та даних, навіть якщо втратите пароль від ${ BRAND_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
@@ -2120,6 +2279,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
       ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Дає змогу миттєво додавати посилання на зустрічі до ваших запрошень на події."
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
@@ -2128,6 +2290,12 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Налаштуйте облікові записи для всіх користувачів і запросіть їх приєднатися до ${ BRAND_NAME }."
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "Спростіть синхронізацію та планування за допомогою спільних календарів."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Це може статися, якщо дозволи було вилучено або ваш пароль змінився."
@@ -2144,11 +2312,17 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Для початку вкажіть назву вашої організації."
+      ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Розблокуйте 15 ГБ сховища всього за ${ config.offerPrice }."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Скористайтеся цим посібником, щоб ваша організація могла швидко оцінити переваги провідних у галузі технологій шифрування та екосистеми приватності ${ BRAND_NAME }."
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Ми більше не маємо доступу до ${ boldEmails }."
@@ -2391,6 +2565,9 @@
       "Already a member of this share": [
         "Вже є учасником цього спільного доступу"
       ],
+      "An error occurred": [
+        "Сталася помилка"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Виникла помилка при спробі перетворення документа. Спробуйте ще раз."
       ],
@@ -2462,6 +2639,9 @@
       ],
       "Enter 6 digits": [
         "Введіть 6 цифр"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Введіть ім'я користувача без домену (@example.com)"
       ],
       "Error decrypting a computer": [
         "Помилка розшифрування комп'ютера"
@@ -2819,6 +2999,9 @@
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Нерозшифровна назва"
       ]
     },
     "Error importing calendar": {
@@ -3184,9 +3367,25 @@
         "Необмежена кількість псевдонімів Hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Блискавична швидкість"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставте ключ безпеки, пов'язаний із вашим обліковим записом ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Ключ безпеки"
+      ],
+      "Touch your security key.": [
+        "Торкніться свого ключа безпеки."
       ]
     },
     "fido2: Label": {
@@ -3835,6 +4034,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?"
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Після закінчення пробного періоду ${ boldCancelDate } вас буде переведено на тарифний план ${ boldProtonFree }. Усі облікові записи користувачів буде вилучено з вашої організації."
+      ],
       "Attention required": [
         "Потребує уваги"
       ],
@@ -3952,6 +4154,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
       ],
+      "Download current logs": [
+        "Завантажити поточні журнали"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Завантаження ${ downloadFileName } буде скасовано"
       ],
@@ -3966,6 +4171,9 @@
       ],
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
+      ],
+      "Each code can only be used once": [
+        "Кожен код можна використати лише один раз"
       ],
       "Edit email address": [
         "Змінити адресу електронної пошти"
@@ -3985,6 +4193,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Забезпечте повністю приватне й зашифроване спілкування. Отримайте безкоштовну адресу електронної пошти ${ BRAND_NAME } просто зараз."
       ],
+      "Enter code": [
+        "Введіть код"
+      ],
       "Enter password": [
         "Введіть пароль"
       ],
@@ -3997,8 +4208,14 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введіть код підтвердження. Цифра ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Введіть власний пароль (як довірена особа)."
       ],
       "Error Syncing": [
         "Помилка синхронізації"
@@ -4068,6 +4285,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Якщо ви втратили доступ до своєї програми-автентифікатора, ви можете скористатися 1 із 16 резервних кодів відновлення, наданих під час налаштування двоетапної перевірки. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
@@ -4249,6 +4469,9 @@
       "Opening...": [
         "Відкриття..."
       ],
+      "Other accounts": [
+        "Інші облікові записи"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
       ],
@@ -4402,6 +4625,12 @@
       "Something went wrong": [
         "Виникла проблема"
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Передплата автоматично подовжується кожен ${ cycle } місяць.",
+        "Передплата автоматично поновлюється кожні ${ cycle } місяців.",
+        "Передплата автоматично поновлюється кожні ${ cycle } місяців.",
+        "Передплата автоматично поновлюється кожні ${ cycle } місяців."
+      ],
       "Subscription auto-renews every month.": [
         "Передплата автоматично поновлюється щомісяця."
       ],
@@ -4437,6 +4666,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Цей документ має велику активність. Деякі функції можуть бути тимчасово недоступними."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Це назва або псевдонім вашої організації, які бачитимуть ваші користувачі. Ви можете змінити її будь-коли."
       ],
       "This item already exists in your library": [
         "Цей елемент вже існує у вашій бібліотеці"
@@ -4645,6 +4877,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Вашу передплату ${ plan } буде замінено на ${ PASS_SHORT_APP_NAME } Lifetime. Залишок коштів за передплату буде додано до вашого облікового запису. Довічна пропозиція ${ PASS_SHORT_APP_NAME } не потребує подовження дії, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
       ],
@@ -4699,8 +4934,20 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ваш запланований тарифний план почне діяти ${ renewalTime } й автоматично подовжуватиметься кожен ${ cycle } місяць.",
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися кожні ${ cycle } місяців.",
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися кожні ${ cycle } місяців.",
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися кожні ${ cycle } місяців."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Ваша передплата автоматично подовжиться ${ renewalTime }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Ви також втратите доступ до функцій тарифного плану ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -4971,6 +5218,9 @@
       "Import to:": [
         "Імпортувати до:"
       ],
+      "Include application logs in bug report": [
+        "Додати журнали програми до звіту про помилку"
+      ],
       "Include message and file name in invite email": [
         "Додайте повідомлення та ім'я файлу до листа-запрошення"
       ],
@@ -5174,6 +5424,9 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (довірена особа)"
       ]
     },
     "Label for contact group color": {
@@ -5228,11 +5481,50 @@
       "clearing your browser cache": [
         "очищення кешу браузера"
       ],
+      "Enforcing 2FA for organizations": [
+        "Обов'язкова 2FA для організацій"
+      ],
+      "How to add users": [
+        "Як додавати користувачів"
+      ],
+      "How to add Zoom links": [
+        "Як додавати посилання Zoom"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Як працювати разом у ${ DOCS_SHORT_APP_NAME }"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Як увімкнути ${ PROTON_SENTINEL_NAME }"
       ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Як перейти на ${ BRAND_NAME }"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Як налаштувати ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Як налаштувати власний домен"
+      ],
+      "How to set up SMTP": [
+        "Як налаштувати SMTP"
+      ],
+      "How to share a calendar": [
+        "Як поділитися календарем"
+      ],
+      "How to share via email": [
+        "Як поділитися через електронну пошту"
+      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Як використовувати ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Як використовувати ${ PASS_APP_NAME } для бізнесу"
+      ],
+      "How to use email forwarding": [
+        "Як використовувати пересилання пошти"
+      ],
+      "How to use Groups": [
+        "Як використовувати групи"
       ],
       "Learn more": [
         "Докладніше"
@@ -5341,6 +5633,9 @@
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помічник з написання ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Доповнення з безплатним пробним періодом"
       ]
     },
     "Message": {
@@ -5713,6 +6008,12 @@
         "${ n } VPN-з'єднань",
         "${ n } VPN-з'єднань"
       ],
+      "${ options }-day file version history": [
+        "історія версій файлів за ${ options } день",
+        "история версий файлов за ${ options } дня",
+        "история версий файлов за ${ options } дней",
+        "история версий файлов за ${ options } дней"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin lifetime"
       ],
@@ -5902,6 +6203,9 @@
       "Limited support": [
         "Обмежена підтримка"
       ],
+      "Manage user permissions and access": [
+        "Керування дозволами та доступом користувачів"
+      ],
       "Multiple admin roles": [
         "Різні адміністративні ролі"
       ],
@@ -5982,6 +6286,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Розділене тунелювання (Android і Windows)"
+      ],
+      "SSO integration": [
+        "Інтеграція SSO"
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
@@ -6111,6 +6418,12 @@
       ]
     },
     "new_plans: info": {
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ТБ хмарного сховища для зручного зберігання, синхронізації та обміну файлами. Захищено наскрізним шифруванням."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 ГБ хмарного сховища для зручного зберігання, синхронізації та обміну файлами. Захищено наскрізним шифруванням."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Розширена мережева безпека та управління доступом за допомогою спеціальних захищених мережевих шлюзів"
       ],
@@ -6150,11 +6463,17 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Наш тарифний план ${ visionary } більше недоступний новим передплатникам, оскільки це особливий план для користувачів оригінального ${ BRAND_NAME } зі спеціальними функціями та перевагами."
       ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Платіть один раз і захистіть свої паролі та особисті дані назавжди."
+      ],
       "Popular": [
         "Популярний"
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Захистіть конфіденційну ділову інформацію та безпечно співпрацюйте."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Захистіть свою родину за допомогою всіх преміум-функцій ${ plusTitle } для 6 користувачів."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Захистіть приватність своєї родини за допомогою усіх послуг ${ BRAND_NAME }."
@@ -6776,11 +7095,38 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " відвідайте наш ${ helpCenterLink } або ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Скасуйте будь-коли до ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "зв'яжіться з нашою службою підтримки"
+      ],
       "Continue": [
         "Продовжити"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Користуйтеся безплатними функціями безпеки для бізнесу до ${ trialEndsOnFormatted }."
+      ],
       "help center": [
         "довідковий центр"
+      ],
+      "If you need help,": [
+        "Якщо вам потрібна допомога,"
+      ],
+      "Once your full subscription starts...": [
+        "Коли почнеться дія повної передплати..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Ви все одно можете скасувати передплату протягом 30 днів і отримати пропорційне відшкодування."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Ви можете користуватися тарифом ${ planTitle } до завершення пробного періоду без додаткової плати."
+      ],
+      "Your free trial has started": [
+        "Ваш безплатний пробний період розпочався"
       ]
     },
     "Option": {
@@ -6827,6 +7173,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
+      ],
+      "Secure vault, item and link sharing": [
+        "Безпечне сховище, спільний доступ до елементів і посилань"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Необмежена кількість вхідних даних, нотаток, банківських карток тощо"
       ]
     },
     "pass_signup_2024: Info": {
@@ -6888,6 +7240,9 @@
       "The organization key must be activated first.": [
         "Спочатку необхідно активувати ключ організації."
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Ви повинні видалити всі групи перед створенням нового ключа організації"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Ви повинні приватизувати всіх користувачів перед створенням нового ключа організації"
       ],
@@ -6896,11 +7251,26 @@
       ]
     },
     "Payments": {
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Вартість подовження може змінюватися відповідно до ${ termsAndConditionsLink }."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Поновлюється за ціною ${ renewPriceStr }, скасувати можна будь-коли."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Спеціальна знижена ціна ${ priceWithDiscount } дійсна протягом першого ${ subscriptionLength } місяця.",
+        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом перших ${ subscriptionLength } місяців.",
+        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом перших ${ subscriptionLength } місяців.",
+        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом перших ${ subscriptionLength } місяців."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом першого місяця. Потім вона буде автоматично поновлюватися за ціною ${ renewPriceStr } щомісяця. Ви можете скасувати її в будь-який момент."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяць. Ви можете скасувати передплату в будь-який момент.",
+        "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяці. Ви можете скасувати передплату в будь-який момент.",
+        "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяців. Ви можете скасувати передплату в будь-який момент.",
+        "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяця. Ви можете скасувати передплату в будь-який момент."
       ]
     },
     "PGP key encryption warning": {
@@ -7005,11 +7375,22 @@
       ],
       "Start typing an email address": [
         "Почніть вводити адресу е-пошти"
+      ],
+      "Your organization name": [
+        "Назва вашої організації"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Назва"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Усі преміум-функції ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміум-функції ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Progress bar description": {
@@ -7176,9 +7557,19 @@
         "Учора"
       ]
     },
+    "Safety review": {
+      "Review account safety": [
+        "Перевірити безпеку облікового запису"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Вхід не був успішно завершений."
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Налаштування організації та безпека облікового запису"
       ]
     },
     "Security Center": {
@@ -7454,6 +7845,11 @@
         "Надано спільний доступ від ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Нова електронна таблиця"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Не підписувати"
@@ -7544,6 +7940,14 @@
         "Підтримка онлайн-приватності"
       ]
     },
+    "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Спеціальна пропозиція дійсна протягом перших 2 років."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Ваша передплата подовжуватиметься за тим самим тарифом щороку."
+      ]
+    },
     "specialoffer: Link": {
       "Get unlimited aliases": [
         "Отримайте необмежену кількість псевдонімів"
@@ -7621,6 +8025,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Стандартна ціна ${ amount } за 30 місяців"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Спеціальна пропозиція дійсна протягом перших 2 років"
       ]
     },
     "specialoffer: Title": {
@@ -7805,6 +8212,12 @@
         "${ n } VPN-з'єднання на користувача",
         "${ n } VPN-з'єднань на користувача",
         "${ n } VPN-з'єднання на користувача"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-з'єднання для ${ n } пристрою на користувача",
+        "VPN з'єднання для ${ n } пристроїв на користувача",
+        "VPN з'єднання для ${ n } пристроїв на користувача",
+        "VPN з'єднання для ${ n } пристроїв на користувача"
       ]
     },
     "Subscription change warning": {
@@ -8155,6 +8568,9 @@
       "Account security": [
         "Безпека облікового запису"
       ],
+      "Account temporarily locked": [
+        "Обліковий запис тимчасово заблоковано"
+      ],
       "Add contact group name": [
         "Додати назву групи контактів"
       ],
@@ -8217,6 +8633,15 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Підтвердьте втрату бонусів ${ BRAND_NAME }"
+      ],
+      "Connect apps and devices": [
+        "Підключіть програми та пристрої"
+      ],
+      "Connect to video conferencing": [
+        "Підключіться до відеоконференцій"
+      ],
+      "Connect your custom domain": [
+        "Підключіть власний домен"
       ],
       "Contact Details": [
         "Подробиці контакту"
@@ -8326,6 +8751,9 @@
       "Download ${ date }": [
         "Завантажити ${ date }"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Завантажте програми ${ DRIVE_APP_NAME }"
+      ],
       "Download the app": [
         "Завантажити програму"
       ],
@@ -8365,8 +8793,14 @@
       "Enable 2FA": [
         "Увімкнути двоетапну автентифікацію"
       ],
+      "Enable advanced account protection": [
+        "Увімкніть розширений захист облікового запису"
+      ],
       "End-to-end encrypted": [
         "Захищено наскрізним шифруванням"
+      ],
+      "Enhance security with 2FA": [
+        "Посильте безпеку за допомогою 2FA"
       ],
       "Enter your password": [
         "Введіть ваш пароль"
@@ -8385,6 +8819,9 @@
       ],
       "Groups": [
         "Групи"
+      ],
+      "Help and feedback": [
+        "Довідка та відгуки"
       ],
       "Help center": [
         "Довідковий центр"
@@ -8439,6 +8876,9 @@
       ],
       "Merging contacts": [
         "Об'єднання контактів"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Перенесіть свою організацію до ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Мінікалендар"
@@ -8533,6 +8973,9 @@
       "Select link expiration time": [
         "Оберіть час завершення дії посилання"
       ],
+      "Set recovery methods": [
+        "Налаштуйте методи відновлення"
+      ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
@@ -8548,6 +8991,9 @@
       "Share ${ name }": [
         "Спільний доступ ${ name }"
       ],
+      "Share your calendar with your team": [
+        "Поділіться своїм календарем із командою"
+      ],
       "Shared with me": [
         "Поширено для мене"
       ],
@@ -8556,6 +9002,12 @@
       ],
       "Sign out": [
         "Вийти"
+      ],
+      "Simplify email distribution": [
+        "Спростіть розсилку електронної пошти"
+      ],
+      "Simplify password management": [
+        "Спростіть керування паролями"
       ],
       "Something went wrong": [
         "Виникла проблема"
@@ -8587,6 +9039,9 @@
       "This document is password protected": [
         "Цей документ захищено паролем"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Увімкніть ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
       ],
@@ -8595,6 +9050,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Покращити до ${ planName }"
+      ],
+      "Upload and share files": [
+        "Вивантажуйте та діліться файлами"
       ],
       "Uploading a large file or folder": [
         "Вивантаження великого файлу або теки"
@@ -8610,6 +9068,9 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Ласкаво просимо до ${ BRAND_NAME } для бізнесу"
       ],
       "You are all set": [
         "Усе готово"
@@ -8675,6 +9136,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично присвоює категорії деяким електронним листам, як-от \"Соцмережі\" або \"Реклама\". Ви можете вибрати, куди імпортувати такі листи."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Миттєва допомога ШІ, живий експерт завжди поруч!"
+      ],
       "Load image": [
         "Завантажити зображення"
       ],
@@ -8719,6 +9183,9 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратори не мають доступу до даних приватних користувачів і не можуть скинути їхній пароль."
+      ],
+      "Member activation incomplete": [
+        "Активацію учасника не завершено"
       ],
       "Organization key must be activated to request data access": [
         "Ключ організації має бути активований для запиту доступу до даних"
@@ -8844,6 +9311,17 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin через пошту"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Зашифрована та безпечна адреса електронної пошти ${ MAIL_APP_NAME }. Ви можете легко надіслати Bitcoin будькому, знаючи лише його ім'я ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Безпечно обмінюйтеся Bitcoin електронною поштою замість використання складних 26-значних Bitcoin-адрес, у яких легко припуститися помилки"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Більш безпечний спосіб зберігання Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

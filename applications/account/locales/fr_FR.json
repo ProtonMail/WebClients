@@ -1380,6 +1380,9 @@
       "Review": [
         "Examiner"
       ],
+      "Review changes": [
+        "Examiner les modifications"
+      ],
       "Revoke": [
         "Révoquer"
       ],
@@ -3465,11 +3468,6 @@
         "Laissez-vous guider"
       ]
     },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
-      ]
-    },
     "Calendar access select label": {
       "Add people or groups": [
         "Ajouter des personnes ou des groupes"
@@ -5502,9 +5500,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
       ],
-      "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Nous importerons vos anciens messages et synchroniserons désormais les nouveaux messages provenant de Gmail."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ],
@@ -7375,9 +7370,6 @@
       "No contacts found to import": [
         "Aucun contact n'a été trouvé pour l'importation."
       ],
-      "No drive found to import": [
-        "Aucun lecteur détecté pour l'importation"
-      ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
@@ -7395,9 +7387,6 @@
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
-      ],
-      "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "Espace de stockage insuffisant dans votre ${ DRIVE_APP_NAME }"
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
@@ -7691,9 +7680,6 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
-      ],
-      "Unexpected error, we can't import the files": [
-        "Une erreur inattendue s'est produite. Les fichiers n'ont pas pu être importés."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -8639,8 +8625,8 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Insérez votre clé de sécurité dans le port USB de votre appareil."
+      "Insert your security key into your device.": [
+        "Insérez votre clé de sécurité dans votre appareil."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -8653,6 +8639,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Cela supprimera toutes les clés de sécurité liées à votre compte."
+      ],
+      "Touch your security key.": [
+        "Touchez votre clé de sécurité."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmez votre identité avec une clé de sécurité physique U2F ou FIDO2."
@@ -9065,6 +9054,12 @@
       ],
       "General": [
         "Général"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gérez les utilisateurs et les groupes, attribuez des rôles et attribuez des licences aux membres."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gère les paramètres de sécurité et peut afficher tous les journaux d'événements et les informations de l'utilisateur."
       ],
       "Roles and permissions": [
         "Rôles et permissions"
@@ -9716,7 +9711,7 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } sera défini comme calendrier par défaut."
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Les abonnements ${ BRAND_NAME } Business offrent à votre équipe tous les outils dont elle a besoin pour être productive et organisée dans son travail, tout en protégeant votre entreprise."
       ],
       "${ BRAND_NAME } Free": [
@@ -11044,9 +11039,6 @@
       ],
       "Featured in ZDNet": [
         "Ils en parlent sur ZDNet"
-      ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Fichiers uniquement (pas de photos, ni ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ],
       "Fill in user details": [
         "Renseignez les informations de l'utilisateur."
@@ -13506,7 +13498,7 @@
         "Votre phrase de récupération est une série de 12 mots générés aléatoirement dans un ordre spécifique."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Votre phrase de récupération vous permettra de vous connecter et de récupérer vos données si vous ne parvenez plus à déverrouiller votre compte ${ BRAND_NAME }. Elle est composée de 12 mots et agis comme un mot de passe de secours."
+        "Votre phrase de récupération vous permettra de vous connecter et de récupérer vos données si vous ne parvenez plus à déverrouiller votre compte ${ BRAND_NAME }. Elle est composée de 12 mots et agit comme un mot de passe de secours."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois.",
@@ -14943,9 +14935,6 @@
       "Import to:": [
         "Importer dans :"
       ],
-      "Import your emails": [
-        "Importez vos messages"
-      ],
       "Inbox": [
         "Boite de réception"
       ],
@@ -15782,7 +15771,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Pour"
+        "À"
       ]
     },
     "Label BYOE": {
@@ -17071,7 +17060,7 @@
         "Documents"
       ],
       "Inbox": [
-        "Boite de réception"
+        "Boîte de réception"
       ],
       "Pass vaults": [
         "Coffres-forts Pass"
@@ -21638,6 +21627,66 @@
         "Test de la configuration SAML en cours"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nouveau membre",
+        "${ memberCount } nouveaux membres"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } groupe synchronisé",
+        "${ numberOfPendingGroups } groupes synchronisés"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } utilisateur synchronisé",
+        "${ numberOfPendingUsers } utilisateurs synchronisés"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } groupe",
+        "${ pendingGroupsCount } groupes"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } groupe synchronisé.",
+        "${ pendingGroupsCount } groupes synchronisés."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } utilisateur",
+        "${ pendingUsersCount } utilisateurs"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } utilisateur synchronisé.",
+        "${ pendingUsersCount } utilisateurs synchronisés."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } et ${ groupsText } synchronisés."
+      ],
+      "Approve changes from your identity provider": [
+        "Approuvez les modifications de votre fournisseur d'identité"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Approbation finale nécessaire pour accorder l'accès à tous les services ${ BRAND_NAME }."
+      ],
+      "From your identity provider": [
+        "De votre fournisseur d'identité"
+      ],
+      "New": [
+        "Nouveau"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Une fois approuvés, ils peuvent accéder à tous les services ${ BRAND_NAME } et les partager en toute sécurité."
+      ],
+      "Private user": [
+        "Utilisateur privé"
+      ],
+      "Review users and groups before finishing setup": [
+        "Examinez les utilisateurs et les groupes avant de terminer la configuration"
+      ],
+      "Updated": [
+        "Mis à jour"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Les utilisateurs que vous avez définis comme privés doivent accepter l'invitation pour terminer la configuration. Nous leur enverrons une invitation une fois que vous aurez approuvé."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Configurer le SCIM"
@@ -23335,6 +23384,9 @@
         "${ count } personne",
         "${ count } personnes"
       ],
+      "... waiting": [
+        "... en attente"
+      ],
       "Add a phone number": [
         "Ajouter un numéro de téléphone"
       ],
@@ -23344,11 +23396,17 @@
       "Available on this device": [
         "Disponible sur cet appareil"
       ],
+      "completed": [
+        "terminé"
+      ],
       "Disable recovery by email": [
         "Désactiver la récupération par e-mail"
       ],
       "Disable recovery by phone": [
         "Désactiver la récupération par téléphone"
+      ],
+      "finalizing": [
+        "finalisation en cours"
       ],
       "Generate a recovery phrase": [
         "Générer une phrase de récupération"
@@ -24690,9 +24748,6 @@
         "${ friendsSubscribed } ami abonné",
         "${ friendsSubscribed } amis abonnés"
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"
       ],
@@ -24915,6 +24970,9 @@
       ],
       "Apply gift code": [
         "Appliquer un code-cadeau"
+      ],
+      "Approve changes": [
+        "Approuver les modifications"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "Êtes-vous déjà connecté à ${ BRAND_NAME } dans un navigateur ?"
@@ -27405,6 +27463,15 @@
       ],
       "Invitation email": [
         "E-mail d’invitation"
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, sécurité, facturation et configurations système."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Gérez les utilisateurs et les groupes, attribuez des rôles et attribuez des licences aux membres."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Gère les paramètres de sécurité et peut afficher tous les journaux d'événements et les informations de l'utilisateur."
       ],
       "Name": [
         "Nom"

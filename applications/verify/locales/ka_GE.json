@@ -867,8 +867,14 @@
       "Enter 6 digits": [
         "შეიყვანეთ 6 ციფრი"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "შეიყვანეთ თქვენი მომხმარებლის სახელი დომენის (@example.com) გარეშე"
+      ],
       "Incorrect username": [
         "მომხმარებლის სახელი არასწორია"
+      ],
+      "Invalid verification code": [
+        "შემოწმების არასწორი კოდი"
       ],
       "Not a valid number": [
         "არასწორი ნომერი"
@@ -918,9 +924,20 @@
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "თქვენი უსაფრთხოების გასაღებით ავტორიზაციისას მოხდა შეცდომა. გთხოვთ, სცადოთ თავიდან."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "ჩასვით უსაფრთხოების გასაღები, რომელიც დაკავშირებულია თქვენს ${ BRAND_NAME }-ის ანგარიშთან."
+      ],
       "Security key": [
         "უსაფრთხოების გასაღები"
+      ],
+      "Touch your security key.": [
+        "შეეხეთ თქვენს უსაფრთხოების გასაღებს."
       ]
     },
     "fido2: Label": {
@@ -1026,6 +1043,9 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "ერთზე მეტი უფასო ანგარიშის შექმნა თქვენი ${ termsLink }-სთვის მხარდაჭერილი არაა."
       ],
+      "Each code can only be used once": [
+        "თითოეული კოდის გამოყენება შესაძლებელია მხოლოდ ერთხელ"
+      ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
@@ -1037,6 +1057,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "შეიყვანეთ დამოწმების კოდი. ციფრი ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
@@ -1055,6 +1078,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "თუ დაკარგეთ წვდომა თქვენს აუტენტიფიკატორ აპლიკაციაზე, შეგიძლიათ გამოიყენოთ ორფაქტორიანი აუტენტიფიკაციის აწყობისას მოწოდებული 16 სარეზერვო აღდგენის კოდიდან 1. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
@@ -1265,6 +1291,9 @@
       ],
       "Custom email domains": [
         "თქვენი ელფოსტის დომენები"
+      ],
+      "Data retention policies": [
+        "მონაცემთა შენახვის პოლიტიკა"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -1477,6 +1506,11 @@
         "პაროლი"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "ყველა პრემიუმ ფუნქცია ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-ისგან, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }-ისგან"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "შესვლა წარმატებით არ დასრულდა."
@@ -1512,6 +1546,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "კოდი გაგზავნილია ${ methodTo }-თან"
+      ],
+      "Verification successful": [
+        "გადამოწმება წარმატებულია"
       ]
     },
     "Title": {
@@ -1523,6 +1560,9 @@
       ],
       "Enter your password": [
         "შეიყვანეთ თქვენი პაროლი"
+      ],
+      "Human verification": [
+        "ადამიანის შემოწმება"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"

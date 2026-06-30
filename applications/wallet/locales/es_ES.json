@@ -2321,6 +2321,9 @@
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Inténtalo de nuevo más tarde."
+      ],
       "Incorrect username": [
         "El nombre de usuario no es correcto."
       ],
@@ -2571,9 +2574,20 @@
         "Velocidades ultrarrápidas"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Touch your security key.": [
+        "Toca tu llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -2867,6 +2881,9 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
+      ],
+      "Each code can only be used once": [
+        "Cada código solo se puede usar una vez"
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
@@ -4738,6 +4755,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
+      ],
       "Got it": [
         "Entiendo"
       ],
@@ -5571,9 +5591,6 @@
       ],
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
-      ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Cuenta restringida"

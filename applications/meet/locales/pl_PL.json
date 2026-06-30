@@ -122,9 +122,6 @@
       "Enable camera": [
         "Włącz kamerę"
       ],
-      "Enable video": [
-        "Włącz wideo"
-      ],
       "End meeting": [
         "Zakończ spotkanie"
       ],
@@ -476,6 +473,9 @@
       "Application problem": [
         "Problem z aplikacją"
       ],
+      "Authenticator problem": [
+        "Problem z aplikacją uwierzytelniającą"
+      ],
       "Bridge problem": [
         "Problem z aplikacją Bridge"
       ],
@@ -511,6 +511,9 @@
       ],
       "Manual setup problem": [
         "Problem z konfiguracją"
+      ],
+      "Meet problem": [
+        "Problem z Meet"
       ],
       "Other": [
         "Inna"
@@ -1121,6 +1124,9 @@
       "North Korea": [
         "Korea Północna"
       ],
+      "North Macedonia": [
+        "Macedonia Północna"
+      ],
       "Northern Mariana Islands": [
         "Mariany Północne"
       ],
@@ -1568,6 +1574,9 @@
       ],
       "Security key": [
         "Klucz bezpieczeństwa"
+      ],
+      "Touch your security key.": [
+        "Dotknij swojego klucza bezpieczeństwa."
       ]
     },
     "fido2: Label": {
@@ -1799,6 +1808,9 @@
       "Download current logs": [
         "Pobierz logi"
       ],
+      "Each code can only be used once": [
+        "Każdego kodu można użyć tylko raz"
+      ],
       "Edit email address": [
         "Edytuj adres e-mail"
       ],
@@ -1811,11 +1823,17 @@
       "End-to-end encryption is active for this chat.": [
         "Szyfrowanie end-to-end jest aktywne dla tego czatu."
       ],
+      "Enter code": [
+        "Wpisz kod"
+      ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
@@ -1852,6 +1870,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jeśli stracisz dostęp do swojej aplikacji uwierzytelniającej, możesz użyć 1 z 16 zapasowych kodów odzyskiwania dostarczonych podczas konfigurowania uwierzytelniania dwustopniowego. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Jeśli używasz przeglądarki Firefox, upewnij się, że opcja PeerConnection jest włączona."
@@ -2104,6 +2125,9 @@
       ],
       "Video effects": [
         "Efekty wideo"
+      ],
+      "Warning": [
+        "Ostrzeżenie"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
@@ -2463,6 +2487,9 @@
       "E.g., ": [
         "Np. "
       ],
+      "Enter passphrase": [
+        "Wpisz hasło"
+      ],
       "Enter time": [
         "Wpisz godzinę"
       ],
@@ -2616,6 +2643,9 @@
     "Title": {
       "Account restricted": [
         "Konto zostało ograniczone"
+      ],
+      "Account temporarily locked": [
+        "Konto tymczasowo zablokowane"
       ],
       "Activity events": [
         "Wydarzenia aktywności"
@@ -2791,6 +2821,9 @@
     "Tooltip": {
       "Background blur is not supported on your browser": [
         "Rozmycie tła nie jest wspierane w Twojej przeglądarce"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Błyskawiczna pomoc AI, ludzki ekspert pod ręką!"
       ],
       "Recurring meeting": [
         "Spotkanie cykliczne"

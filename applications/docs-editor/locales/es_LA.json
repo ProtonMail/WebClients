@@ -448,8 +448,8 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Hubo un error al procesar las actualizaciones del documento. Actualice la página e inténtelo de nuevo."
       ],
-      "This spreadsheet detected a local syncing inconsistency. Please reload the document before continuing.": [
-        "Esta hoja de cálculo ha detectado una inconsistencia de sincronización local. Recargue el documento antes de continuar."
+      "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
+        "Esta hoja de cálculo detectó una inconsistencia de sincronización local. Se desactivó la edición para evitar la pérdida de datos. Envíe un reporte y, si está de acuerdo en compartir el contenido, descargue e incluya la información de depuración que se encuentra a continuación."
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Esta hoja de cálculo no es compatible con la versión actual de la aplicación. Intente recargarla. Si el error persiste, contacte con el equipo de soporte."
@@ -2315,6 +2315,9 @@
       ],
       "Language not supported": [
         "Este idioma no está disponible."
+      ],
+      "Outline": [
+        "Esquema"
       ]
     },
     "Warning": {
