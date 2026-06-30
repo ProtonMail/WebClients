@@ -1271,6 +1271,9 @@
       ],
       "Send Feedback": [
         "피드백 보내기"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ]
     },
     "Action: Docs": {
@@ -3098,13 +3101,16 @@
         "새 메시지를 위한 공간을 확보하기 위해 저장공간의 80%를 사용하면 불러오기가 일시정지됩니다."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail에서 사용자의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+        "Gmail에서 귀하의 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "사용자의 ${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 메시지 중 ${ newUserStorageText }만 불러옵니다."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "사용자의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+        "귀하의 ${ MAIL_APP_NAME } 무료 계정은 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "귀하의 팀이 ${ BRAND_NAME }으로 원활하게 온보딩할 수 있도록 Google, Outlook 등에서 데이터를 불러오기 하세요"
       ]
     },
     "description": {
@@ -4063,6 +4069,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "귀하의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주십시오"
       ]
     },
     "error": {
@@ -4484,6 +4493,9 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Touch your security key.": [
+        "귀하의 보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -7089,13 +7101,37 @@
         "비밀번호가 기억 나시나요? ${ verifyButton }"
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "이 연럭처로부터 산규 매시지를 인증하려면 키 \"${ activeSignerText }\"을(를) 신뢰하세요."
+        "이 연락처로부터 오는 새 메시지를 인증하려면 \"${ activeSignerText }\" 키를 신뢰하세요."
       ],
       "We'll remind you to verify your password again later": [
-        "비밀번호를 잊어버리지 않도록 나중에 다시 알려드립니다"
+        "귀하의 비밀번호를 나중에 다시 확인하도록 알려드리겠습니다"
       ],
       "Could not scan file for malware": [
         "파일의 멀웨어 여부를 검사할 수 없음"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME }은(는) 귀하의 트래픽을 숨깁니다. ${ PASS_SHORT_APP_NAME }은(는) 귀하의 신원을 숨깁니다\n— 무제한 **hide-my-email 별칭** 및 데이터 유출 시 **다크 웹 알림**을 제공합니다."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
+      ],
+      "Enter code": [
+        "코드 입력"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "${ bundlePlanPriceInline }에 이용 가능"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "귀하의 인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+      ],
+      "Password verified": [
+        "비밀번호 확인 완료"
+      ],
+      "Please select the labels you would like to import:": [
+        "불러올 라벨을 선택해 주십시오:"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
       ]
     },
     "info": {
@@ -7182,6 +7218,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "활성 서명자"
+      ],
+      "Fallback": [
+        "대체용"
       ]
     },
     "Label": {
@@ -7901,6 +7943,9 @@
       ],
       "Very Dissatisfied": [
         "매우 불만족"
+      ],
+      "Drive": [
+        "드라이브"
       ]
     },
     "Label for contact group color": {
@@ -8939,7 +8984,19 @@
         "일정 예약"
       ],
       "Dedicated servers optimized for speed": [
-        "속도를 위해 최적화된 전용 서버"
+        "속도에 최적화된 전용 서버"
+      ],
+      "Access all countries": [
+        "모든 국가로 접근"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }개의 예약 페이지를 통한 일정 예약"
+      ],
+      "No streaming support": [
+        "스트리밍 서비스 지원 안 됨"
+      ],
+      "Unlock streaming": [
+        "스트리밍 서비스 차단 해제"
       ]
     },
     "new_plans: feature highlight": {
@@ -10470,6 +10527,12 @@
       ],
       "This key is used for message verification": [
         "이 키는 메시지 검증에 사용됩니다."
+      ],
+      "This contact currently signs messages with this key": [
+        "이 연락처는 현재 이 키로 메시지에 서명합니다"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "이 키는 이전 앱에서 이 연락처로 메시지를 암호화하는 데 사용됩니다"
       ]
     },
     "PGP key warning": {
@@ -11847,6 +11910,12 @@
       ],
       "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
         "최대 ${ PAID_PREMIUM_MAX_PARTICIPANTS }명 참가자의 화상 회의"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "premium 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } 및 ${ LUMO_APP_NAME }"
       ]
     },
     "subscription reminder": {
@@ -13279,6 +13348,9 @@
       ],
       "We'd love to hear from you!": [
         "회원님의 의견을 기다리고 있어요!"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "귀하의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13379,6 +13451,9 @@
       ],
       "New!": [
         "신규"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "즉각적인 AI 지원, 상시 대기 중인 전문가!"
       ]
     },
     "tooltip": {
