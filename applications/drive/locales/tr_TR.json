@@ -956,6 +956,12 @@
       "Select country": [
         "Ülke seçin"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Değerlendirin ${ n } / ${ to }"
+      ],
+      "Send Feedback": [
+        "Geri bildirim gönder"
+      ],
       "Set as album cover": [
         "Albüm kapağı olarak ayarla"
       ],
@@ -3727,7 +3733,7 @@
         "İçe aktarılabilecek bir kişi kaydı bulunamadı"
       ],
       "No drive found to import": [
-        "İçe aktarılacak bir drive bulunamadı"
+        "İçe aktarılacak sürücü bulunamadı"
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
@@ -3742,7 +3748,7 @@
         "Numara geçerli değil"
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } depolamanızda yeterli alan yok"
+        "${ DRIVE_APP_NAME }'da yeterli depolama alanı yok"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -3983,7 +3989,7 @@
         "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unexpected error, we can't import the files": [
-        "Beklenmeyen bir sorun çıktı. Dosyalar içe aktarılamadı"
+        "Beklenmedik bir hata oluştu; dosyaları içe aktaramıyoruz"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Çakışma yöntemi bilinmiyor: ${ strategy }"
@@ -4502,6 +4508,9 @@
       ],
       "Security key": [
         "Güvenlik anahtarı"
+      ],
+      "Touch your security key.": [
+        "Güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -5512,7 +5521,7 @@
         "Discover ProtectBuy logosu"
       ],
       "Do you remember your password? ${ verifyButton }": [
-        "Parolanızı anımsıyor musunuz? ${ verifyButton }"
+        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
       ],
       "Done": [
         "Tamam"
@@ -5660,7 +5669,7 @@
         "Başkalarının sizinle paylaştığı dosyalar ve klasörler burada görüntülenir"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
+        "Yalnızca dosyalar (fotoğraflar hariç, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } hariç) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
       "finance": [
         "finans"
@@ -6193,6 +6202,12 @@
       ],
       "Preparing": [
         "Hazırlanıyor"
+      ],
+      "Preparing download": [
+        "İndirmeye hazırlanıyor"
+      ],
+      "Preparing…": [
+        "Hazırlanıyor…"
       ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
@@ -6754,7 +6769,7 @@
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
       "We'll remind you to verify your password again later": [
-        "Daha sonra yeniden parolanızı doğrulamanızı anımsatacağız."
+        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -7428,6 +7443,9 @@
       "Extended address": [
         "Açık adres"
       ],
+      "Extremely Satisfied": [
+        "Çok memnunum"
+      ],
       "File": [
         "Dosya"
       ],
@@ -7761,6 +7779,9 @@
       "System information": [
         "Sistem bilgileri"
       ],
+      "Tell us more about your experience": [
+        "Bize deneyiminiz ile ilgili bilgi verin"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7805,6 +7826,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Very Dissatisfied": [
+        "Hiç memnun değilim"
       ],
       "Viewer": [
         "Görüntüleyici"
@@ -9067,6 +9091,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName } uygulamasını geliştirmek için sürekli çalışıyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     },
     "new_plans: Subtext": {
@@ -10546,6 +10575,9 @@
       ],
       "New name": [
         "Yeni ad"
+      ],
+      "Optional feedback": [
+        "İsteğe bağlı geri bildirim"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -13180,6 +13212,9 @@
       ],
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Düğümün ${ claimedKeyAuthor } tarafından oluşturulduğu doğrulanamadı. Nedeni: ${ node.keyAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Sizden haber almak isteriz!"
       ],
       "Welcome offer": [
         "Karşılama teklifi"

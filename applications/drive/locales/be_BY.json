@@ -966,6 +966,12 @@
       "Select country": [
         "Выберыце краіну"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Выберыце ацэнку ${ n } з ${ to }"
+      ],
+      "Send Feedback": [
+        "Адправіць водгук"
+      ],
       "Set as album cover": [
         "Задаць у якасці вокладкі альбома"
       ],
@@ -4561,6 +4567,9 @@
       ],
       "Security key": [
         "Ключ бяспекі"
+      ],
+      "Touch your security key.": [
+        "Дакраніцеся да свайго ключа бяспекі."
       ]
     },
     "fido2: Label": {
@@ -5815,9 +5824,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Тут будуць з'яўляцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі."
-      ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
       ],
       "finance": [
         "фінансы"
@@ -7567,6 +7573,9 @@
       "Download anyway": [
         "Усё роўна спампаваць"
       ],
+      "Drive": [
+        "Дыск"
+      ],
       "Duplicate found": [
         "Знойдзены дублікат"
       ],
@@ -7629,6 +7638,9 @@
       ],
       "Extended address": [
         "Пашыраны адрас"
+      ],
+      "Extremely Satisfied": [
+        "Вельмі задаволены"
       ],
       "File": [
         "Файл"
@@ -7963,6 +7975,9 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
+      "Tell us more about your experience": [
+        "Раскажыце нам больш пра свой досвед"
+      ],
       "Theme": [
         "Тэма"
       ],
@@ -8007,6 +8022,9 @@
       ],
       "Verification code": [
         "Код спраўджання"
+      ],
+      "Very Dissatisfied": [
+        "Вельмі незадаволены"
       ],
       "Viewer": [
         "Праглядальнік"
@@ -9394,6 +9412,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Мы заўсёды імкнёмся зрабіць ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
       ]
     },
     "new_plans: Subtext": {
@@ -10940,6 +10963,9 @@
       ],
       "New name": [
         "Новая назва"
+      ],
+      "Optional feedback": [
+        "Неабавязковы водгук"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -12723,9 +12749,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } бясплатных запамповак."
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
-      ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
@@ -13656,6 +13679,9 @@
       "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ node.keyAuthor.error.error }": [
         "Не ўдалося пацвердзіць, што вузел быў створаны ${ claimedKeyAuthor }. Прычына: ${ node.keyAuthor.error.error }"
       ],
+      "We'd love to hear from you!": [
+        "Нам было б прыемна пачуць гэта!"
+      ],
       "Welcome offer": [
         "Прывітальная прапанова"
       ],
@@ -13770,6 +13796,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
       ],
       "Load image": [
         "Загрузіць відарыс"

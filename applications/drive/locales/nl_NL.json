@@ -956,6 +956,12 @@
       "Select country": [
         "Selecteer land"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecteer beoordeling ${ n } van de ${ to }"
+      ],
+      "Send Feedback": [
+        "Feedback Versturen"
+      ],
       "Set as album cover": [
         "Instellen als omslag"
       ],
@@ -4493,6 +4499,9 @@
       ],
       "Security key": [
         "Beveiligingssleutel"
+      ],
+      "Touch your security key.": [
+        "Raak uw beveiligingssleutel aan."
       ]
     },
     "fido2: Label": {
@@ -7347,6 +7356,9 @@
       "Download anyway": [
         "Toch downloaden"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Duplicate found": [
         "Duplicaat gevonden"
       ],
@@ -7409,6 +7421,9 @@
       ],
       "Extended address": [
         "Adrestoevoeging"
+      ],
+      "Extremely Satisfied": [
+        "Zeer tevreden"
       ],
       "File": [
         "Bestand"
@@ -7743,6 +7758,9 @@
       "System information": [
         "Systeeminformatie"
       ],
+      "Tell us more about your experience": [
+        "Vertel ons meer over uw ervaring"
+      ],
       "Theme": [
         "Thema"
       ],
@@ -7787,6 +7805,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Very Dissatisfied": [
+        "Erg ontevreden"
       ],
       "Viewer": [
         "Kijker"
@@ -9049,6 +9070,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wij streven er altijd naar om ${ config.appName } te verbeteren. Hoe tevreden bent u met uw ervaring?"
       ]
     },
     "new_plans: Subtext": {
@@ -10526,6 +10552,9 @@
       "New name": [
         "Nieuwe naam"
       ],
+      "Optional feedback": [
+        "Optionele feedback"
+      ],
       "Organization name": [
         "Organisatienaam"
       ],
@@ -11607,7 +11636,7 @@
         "${ planName } geeft u toegang tot alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }. Privacy is ingebouwd, zodat u verder kunt, wetende dat uw gegevens en identiteit veilig zijn."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over uw gegevens en de beveiliging daarvan te hebben."
       ],
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planName } geeft u onbeperkte privacy en meer opslagruimte voor tot wel 2 personen."
@@ -13127,6 +13156,9 @@
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "We konden niet bevestigen dat het bestand is geüpload door ${ claimedContentAuthor }. De reden is: ${ activeRevision.contentAuthor.error.error }"
       ],
+      "We'd love to hear from you!": [
+        "We horen graag van jou!"
+      ],
       "Welcome offer": [
         "Welkomstaanbieding"
       ],
@@ -13241,6 +13273,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Directe AI-ondersteuning, menselijke expert binnen handbereik!"
       ],
       "Load image": [
         "Laad foto"

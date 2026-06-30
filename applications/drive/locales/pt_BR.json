@@ -956,6 +956,12 @@
       "Select country": [
         "Selecionar país"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecionar avaliação ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentários"
+      ],
       "Set as album cover": [
         "Definir como capa do álbum"
       ],
@@ -3052,6 +3058,9 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Garanta que você ainda possa acessar sua conta e seus dados, mesmo que perca sua senha do ${ BRAND_NAME }."
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para uma integração perfeita da sua equipe ao ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
       ],
@@ -3761,6 +3770,9 @@
       "Please activate your search again": [
         "Ative a pesquisa novamente."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Por favor, verifique se o seu ABN está registrado para IVA transfronteiriço"
+      ],
       "Please complete the billing details": [
         "Complete os detalhes de faturamento"
       ],
@@ -3828,6 +3840,9 @@
       ],
       "Request timed out": [
         "A solicitação expirou"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "O regime de reverse charge não é suportado para este plano"
       ],
       "Search failed": [
         "Erro de pesquisa"
@@ -3952,9 +3967,6 @@
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
       ],
-      "Unexpected error, we can't import the files": [
-        "Erro inesperado, não podemos importar os arquivos"
-      ],
       "Unknown conflict strategy: ${ strategy }": [
         "Estratégia de conflito desconhecida: ${ strategy }"
       ],
@@ -3983,7 +3995,7 @@
         "Erro de validação"
       ],
       "VAT number must start with ${ prefixes }": [
-        "O número de IVA deve começar por ${ prefixes }"
+        "O número de IVA deve começar com ${ prefixes }"
       ],
       "We cannot retrieve this item": [
         "Não foi possível recuperar este item"
@@ -4472,6 +4484,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Touch your security key.": [
+        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -6112,6 +6127,9 @@
       "Please select the folders you would like to import:": [
         "Selecione as pastas que deseja importar:"
       ],
+      "Please select the labels you would like to import:": [
+        "Selecione os marcadores que você deseja importar:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecione qual endereço de e-mail ou endereços adicionar ao grupo ${ groupCount }.",
         "Selecione qual endereço de e-mail ou endereços adicionar aos grupos ${ groupCount }."
@@ -6142,6 +6160,12 @@
       ],
       "Preparing": [
         "Preparando"
+      ],
+      "Preparing download": [
+        "Preparando para baixar"
+      ],
+      "Preparing…": [
+        "Preparando…"
       ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
@@ -6515,7 +6539,7 @@
         "Para ajudar a te proteger, o ${ DRIVE_APP_NAME } pode escanear seus arquivos de uma forma que preserve a privacidade e bloquear arquivos maliciosos. No entanto, ainda é melhor baixar arquivos somente de fontes confiáveis. "
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
-        "Para ajudar você a lembrar sua senha, pediremos que você a digite periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
+        "Para ajudar você a lembrar sua senha, pediremos que você a insira periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
@@ -6688,6 +6712,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Nós te avisaremos quando a importação estiver concluída."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Lembriremos você de verificar sua senha novamente mais tarde"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
@@ -6869,6 +6896,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Sua conta está configurada atualmente para aplicar o regime de reverse charge. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
@@ -6998,6 +7028,9 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Signatário ativo"
+      ],
       "Compromised": [
         "Comprometida"
       ],
@@ -7352,6 +7385,9 @@
       "Extended address": [
         "Endereço completo"
       ],
+      "Extremely Satisfied": [
+        "Extremamente satisfeito"
+      ],
       "File": [
         "Arquivo"
       ],
@@ -7685,6 +7721,9 @@
       "System information": [
         "Informações do sistema"
       ],
+      "Tell us more about your experience": [
+        "Conte-nos mais sobre sua experiência"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7729,6 +7768,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Very Dissatisfied": [
+        "Muito insatisfeito"
       ],
       "Viewer": [
         "Visualizador"
@@ -9044,6 +9086,11 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Estamos sempre nos esforçando para tornar o ${ config.appName } melhor. Qual seu nível de satisfação com sua experiência?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "A partir de ${ priceLine }"
@@ -9524,6 +9571,9 @@
       ],
       "Failed to accept share invitation": [
         "Falha ao aceitar convite de compartilhamento"
+      ],
+      "Failed to load sharing details": [
+        "Falha ao carregar os detalhes de compartilhamento"
       ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente"
@@ -10267,6 +10317,9 @@
       "VAT number": [
         "Número de IVA"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "O mecanismo de reverse charge de IVA se aplica."
+      ],
       "You already have a subscription to this plan.": [
         "Você já assina este plano."
       ],
@@ -10421,6 +10474,9 @@
       "External key automatically fetched via WKD.": [
         "Chave externa obtida automaticamente via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Este contato assina atualmente as mensagens com esta chave"
+      ],
       "This key is used for message verification": [
         "Essa chave já foi usado para verificação por mensagem"
       ],
@@ -10514,6 +10570,9 @@
       ],
       "New name": [
         "Novo nome"
+      ],
+      "Optional feedback": [
+        "Feedback opcional"
       ],
       "Organization name": [
         "Nome da organização"
@@ -12205,9 +12264,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } de envios gratuitos."
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
-      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -13118,6 +13174,9 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Não foi possível confirmar que o conteúdo do arquivo foi enviado por ${ claimedContentAuthor }. O motivo é: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We'd love to hear from you!": [
+        "Adoraríamos ouvir você!"
       ],
       "Welcome offer": [
         "Oferta de boas-vindas"
