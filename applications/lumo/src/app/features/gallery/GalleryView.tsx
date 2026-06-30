@@ -10,6 +10,7 @@ import lumojiCreateLight from '@proton/styles/assets/img/lumo/lumoji-create-ligh
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
+import { FilesManagementView } from '../../components/Files';
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestSignInState';
 import { LazyLottie } from '../../components/LazyLottie';
@@ -60,6 +61,7 @@ interface GalleryComposerPanelProps {
     isProcessingAttachment: boolean;
     composerPrefill: string | undefined;
     gallerySketchTrigger: boolean;
+    onShowDriveBrowser: () => void;
 }
 
 const GalleryComposerPanel = ({
@@ -68,6 +70,7 @@ const GalleryComposerPanel = ({
     isProcessingAttachment,
     composerPrefill,
     gallerySketchTrigger,
+    onShowDriveBrowser,
 }: GalleryComposerPanelProps) => {
     return (
         <div className={clsx('gallery-bottom w-full', !isSmallScreen && 'absolute')}>
@@ -80,6 +83,7 @@ const GalleryComposerPanel = ({
                         isProcessingAttachment={isProcessingAttachment}
                         prefillQuery={composerPrefill}
                         autoOpenSketch={gallerySketchTrigger}
+                        onShowDriveBrowser={onShowDriveBrowser}
                         placeholder={c('collider_2025:Placeholder').t`Describe your image...`}
                     />
                 </div>
@@ -99,6 +103,7 @@ interface GalleryTabContentProps {
     composerPrefill: string | undefined;
     gallerySketchTrigger: boolean;
     onTryPrompt: (prompt: string) => void;
+    onShowDriveBrowser: () => void;
 }
 
 const GalleryTabContent = ({
@@ -112,6 +117,7 @@ const GalleryTabContent = ({
     composerPrefill,
     gallerySketchTrigger,
     onTryPrompt,
+    onShowDriveBrowser,
 }: GalleryTabContentProps) => {
     const itemCount = galleryImages.sections.reduce((n, s) => n + s.items.length, 0);
     const showExplore = !hasImages || (galleryImages.status === 'loaded' && itemCount <= 10);
@@ -124,6 +130,7 @@ const GalleryTabContent = ({
             isProcessingAttachment={isProcessingAttachment}
             composerPrefill={composerPrefill}
             gallerySketchTrigger={gallerySketchTrigger}
+            onShowDriveBrowser={onShowDriveBrowser}
         />
     );
 
@@ -169,6 +176,7 @@ interface CreateTabContentProps {
     isProcessingAttachment: boolean;
     composerPrefill: string | undefined;
     gallerySketchTrigger: boolean;
+    onShowDriveBrowser: () => void;
     // onSuggestionClick: (suggestion: GalleryPromptSuggestion) => void;
 }
 
@@ -177,6 +185,7 @@ const CreateTabContent = ({
     isProcessingAttachment,
     composerPrefill,
     gallerySketchTrigger,
+    onShowDriveBrowser,
     // onSuggestionClick,
 }: CreateTabContentProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
@@ -190,7 +199,7 @@ const CreateTabContent = ({
                 }}
             >
                 <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
-                    <img src={isDarkLumoTheme ? lumojiCreateDark : lumojiCreateLight} alt="" />
+                    <img src={isDarkLumoTheme ? lumojiCreateDark : lumojiCreateLight} alt="" className={"pb-4"} />
                     <h1 className="main-text lh100 text-wrap-balance text-center mb-8 relative z-10">
                         {c('collider_2025:Title').t`What do you want to create today?`}
                     </h1>
@@ -203,6 +212,7 @@ const CreateTabContent = ({
                         isProcessingAttachment={isProcessingAttachment}
                         prefillQuery={composerPrefill}
                         autoOpenSketch={gallerySketchTrigger}
+                        onShowDriveBrowser={onShowDriveBrowser}
                         placeholder={c('collider_2025:Placeholder').t`Describe your image...`}
                         className="main-container fixed bottom-0 md:static w-full z-20"
                     />
@@ -227,6 +237,8 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
     const editImageFileRef = useRef<HTMLInputElement>(null);
     const createdScrollRef = useRef<HTMLDivElement>(null);
+    const filesContainerRef = useRef<HTMLDivElement>(null);
+    const [showDriveBrowser, setShowDriveBrowser] = useState(false);
     const pendingEditPromptRef = useRef<string>('');
     const [composerPrefill, setComposerPrefill] = useState<string | undefined>(externalPrefill);
     const [gallerySketchTrigger] = useState(false);
@@ -277,6 +289,14 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     const handleTryPrompt = useCallback((prompt: string) => {
         setComposerPrefill(prompt);
         setActiveTab('create');
+    }, []);
+
+    const handleShowDriveBrowser = useCallback(() => {
+        setShowDriveBrowser(true);
+    }, []);
+
+    const handleCloseDriveBrowser = useCallback(() => {
+        setShowDriveBrowser(false);
     }, []);
 
     // Suppress hover overlays while the created section is scrolling
@@ -369,6 +389,7 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
                         isProcessingAttachment={isProcessingAttachment}
                         composerPrefill={composerPrefill}
                         gallerySketchTrigger={gallerySketchTrigger}
+                        onShowDriveBrowser={handleShowDriveBrowser}
                         // onSuggestionClick={handleSuggestionClick}
                     />
                 )}
@@ -384,6 +405,16 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
                         composerPrefill={composerPrefill}
                         gallerySketchTrigger={gallerySketchTrigger}
                         onTryPrompt={handleTryPrompt}
+                        onShowDriveBrowser={handleShowDriveBrowser}
+                    />
+                )}
+                {showDriveBrowser && (
+                    <FilesManagementView
+                        messageChain={[]}
+                        filesContainerRef={filesContainerRef}
+                        onClose={handleCloseDriveBrowser}
+                        initialShowDriveBrowser
+                        forceModal
                     />
                 )}
             </div>

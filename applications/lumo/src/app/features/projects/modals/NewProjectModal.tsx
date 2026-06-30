@@ -73,7 +73,7 @@ export const NewProjectModal = ({
 
     return (
         <>
-            <ModalTwo {...modalProps} onClose={handleCancel} size="large">
+            <ModalTwo {...modalProps} onClose={handleCancel} size="large" enableCloseWhenClickOutside>
                 <ModalTwoHeader title={c('collider_2025:Title').t`Create new project`} subline={c('collider_2025:Subline').t`Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.`}/>
                 
                 <ModalTwoContent>
