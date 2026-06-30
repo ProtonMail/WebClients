@@ -3,17 +3,9 @@ import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';
 
 import { getMinApplePayAmount, getMinBitcoinAmount, getMinPaypalAmountChargebee } from './amount-limits';
-import {
-    Autopay,
-    CYCLE,
-    FREE_SUBSCRIPTION,
-    MethodStorage,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-    signupFlows,
-} from './constants';
+import { Autopay, CYCLE, FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES, PLANS, signupFlows } from './constants';
 import type { PaymentMethodFlow, PaymentStatus, PaymentsApi, SavedPaymentMethod } from './interface';
-import { PaymentMethods, initializePaymentMethods } from './methods';
+import { PaymentMethods, formatPaymentMethod, initializePaymentMethods } from './methods';
 
 const TEST_CURRENCY = 'USD' as const;
 
@@ -31,6 +23,226 @@ beforeEach(() => {
             Google: true,
         },
     };
+});
+
+describe('formatPaymentMethod()', () => {
+    it('should normalize a paypal method to CHARGEBEE_PAYPAL', () => {
+        const method = {
+            ID: '0rvX37nrqhxhCB87AISMcRYQWLa0hLk-0tIKCFtZbpLmamvej3SovOWjyYFoj_CmSplwb_vffWkT9zlG0MgU9Q==',
+            Type: 'paypal',
+            Autopay: Autopay.ENABLE,
+
+            Order: 500,
+            Details: {
+                BillingAgreementID: 'B-5AG87924V96420614',
+                PayerID: '9A7V38V3A2R7A',
+                Payer: 'buyer@protonmail.com',
+            },
+        } as unknown as SavedPaymentMethod;
+
+        const result = formatPaymentMethod(method);
+
+        expect(result.Type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
+    });
+
+    it('should preserve all other fields when normalizing paypal', () => {
+        const method = {
+            ID: 'paypal-id',
+            Type: 'paypal',
+            Autopay: Autopay.ENABLE,
+
+            Order: 500,
+            Details: {
+                BillingAgreementID: 'B-5AG87924V96420614',
+                PayerID: '9A7V38V3A2R7A',
+                Payer: 'buyer@protonmail.com',
+            },
+        } as unknown as SavedPaymentMethod;
+
+        const result = formatPaymentMethod(method);
+
+        expect(result).toEqual({
+            ID: 'paypal-id',
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            Autopay: Autopay.ENABLE,
+
+            Order: 500,
+            Details: {
+                BillingAgreementID: 'B-5AG87924V96420614',
+                PayerID: '9A7V38V3A2R7A',
+                Payer: 'buyer@protonmail.com',
+            },
+        });
+    });
+
+    it('should keep an already normalized CHARGEBEE_PAYPAL method as CHARGEBEE_PAYPAL', () => {
+        const method = {
+            ID: 'paypal-id',
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            Details: { BillingAgreementID: 'B-1', PayerID: 'P-1', Payer: 'buyer@protonmail.com' },
+        } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
+    });
+
+    it('should not normalize a paypal method without Details', () => {
+        const method = {
+            ID: 'paypal-id',
+            Type: 'paypal',
+        } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe('paypal');
+    });
+
+    it.each(['sepa-direct-debit', 'sepadirectdebit'])(
+        'should normalize SEPA type "%s" to CHARGEBEE_SEPA_DIRECT_DEBIT even without Details',
+        (type) => {
+            const method = { ID: 'sepa-id', Type: type } as unknown as SavedPaymentMethod;
+
+            expect(formatPaymentMethod(method).Type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
+        }
+    );
+
+    it('should normalize "sepa_direct_debit" with Details to CHARGEBEE_SEPA_DIRECT_DEBIT', () => {
+        const method = {
+            ID: 'sepa-id',
+            Type: 'sepa_direct_debit',
+            Details: { IBAN: 'DE00', AccountName: 'Holder' },
+        } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
+    });
+
+    it('should not normalize "sepa_direct_debit" without Details', () => {
+        const method = { ID: 'sepa-id', Type: 'sepa_direct_debit' } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe('sepa_direct_debit');
+    });
+
+    it.each(['applepay', PAYMENT_METHOD_TYPES.APPLE_PAY])(
+        'should normalize Apple Pay type "%s" with Details to APPLE_PAY',
+        (type) => {
+            const method = {
+                ID: 'apple-id',
+                Type: type,
+                Details: { Last4: '4242' },
+            } as unknown as SavedPaymentMethod;
+
+            expect(formatPaymentMethod(method).Type).toBe(PAYMENT_METHOD_TYPES.APPLE_PAY);
+        }
+    );
+
+    it('should not normalize an Apple Pay method without Details', () => {
+        const method = { ID: 'apple-id', Type: 'applepay' } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe('applepay');
+    });
+
+    it.each(['googlepay', PAYMENT_METHOD_TYPES.GOOGLE_PAY])(
+        'should normalize Google Pay type "%s" with Details to GOOGLE_PAY',
+        (type) => {
+            const method = {
+                ID: 'google-id',
+                Type: type,
+                Details: { Last4: '4242' },
+            } as unknown as SavedPaymentMethod;
+
+            expect(formatPaymentMethod(method).Type).toBe(PAYMENT_METHOD_TYPES.GOOGLE_PAY);
+        }
+    );
+
+    it('should not normalize a Google Pay method without Details', () => {
+        const method = { ID: 'google-id', Type: 'googlepay' } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe('googlepay');
+    });
+
+    it.each([PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN])(
+        'should return a "%s" method unchanged',
+        (type) => {
+            const method = { ID: 'other-id', Type: type } as unknown as SavedPaymentMethod;
+
+            expect(formatPaymentMethod(method)).toEqual(method);
+        }
+    );
+
+    it('should normalize a card method to CHARGEBEE_CARD', () => {
+        const method = {
+            ID: 'Dgh_mKP_sZz-1Q3EIp-EOb5PpFVjuY2ktWUp2cga6ABbQ0LyUDKfBX6BskoQmUwdESsSw13E0sokdabDP6L3WQ==',
+            Type: 'card',
+            Autopay: Autopay.ENABLE,
+
+            Order: 499,
+            Details: {
+                Last4: '4242',
+                Brand: 'Visa',
+                ExpMonth: '01',
+                ExpYear: '2033',
+                Name: '',
+                Country: 'DE',
+                ZIP: null,
+                ThreeDSSupport: false,
+            },
+        } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+    });
+
+    it('should preserve all other fields when normalizing card', () => {
+        const method = {
+            ID: 'card-id',
+            Type: 'card',
+            Autopay: Autopay.ENABLE,
+
+            Order: 499,
+            Details: {
+                Last4: '4242',
+                Brand: 'Visa',
+                ExpMonth: '01',
+                ExpYear: '2033',
+                Name: '',
+                Country: 'DE',
+                ZIP: null,
+                ThreeDSSupport: false,
+            },
+        } as unknown as SavedPaymentMethod;
+
+        const result = formatPaymentMethod(method);
+
+        expect(result).toEqual({
+            ID: 'card-id',
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Autopay: Autopay.ENABLE,
+
+            Order: 499,
+            Details: {
+                Last4: '4242',
+                Brand: 'Visa',
+                ExpMonth: '01',
+                ExpYear: '2033',
+                Name: '',
+                Country: 'DE',
+                ZIP: null,
+                ThreeDSSupport: false,
+            },
+        });
+    });
+
+    it('should keep an already normalized CHARGEBEE_CARD method as CHARGEBEE_CARD', () => {
+        const method = {
+            ID: 'card-id',
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Details: { Last4: '4242', Brand: 'Visa', ExpMonth: '01', ExpYear: '2033' },
+        } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+    });
+
+    it('should not normalize a card method without Details', () => {
+        const method = { ID: 'card-id', Type: 'card' } as unknown as SavedPaymentMethod;
+
+        expect(formatPaymentMethod(method).Type).toBe('card');
+    });
 });
 
 describe('getNewMethods()', () => {
@@ -65,7 +277,7 @@ describe('getNewMethods()', () => {
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(false);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
     });
 
     // tests for PayPal
@@ -98,7 +310,7 @@ describe('getNewMethods()', () => {
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
     });
 
     it('should not include PayPal when already used as payment method', () => {
@@ -107,14 +319,13 @@ describe('getNewMethods()', () => {
             paymentMethods: [
                 {
                     ID: '1',
-                    Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                     Order: 500,
                     Details: {
                         BillingAgreementID: 'BA-123',
                         PayerID: '123',
                         Payer: '123',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
             ],
             amount: 500,
@@ -126,7 +337,7 @@ describe('getNewMethods()', () => {
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
     });
 
     it('should include Bitcoin when Bitcoin is available', () => {
@@ -244,18 +455,17 @@ describe('getUsedMethods()', () => {
             paymentMethods: [
                 {
                     ID: '1',
-                    Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                     Order: 500,
                     Details: {
                         BillingAgreementID: 'BA-123',
                         PayerID: '123',
                         Payer: '123',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
                 {
                     ID: '2',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 501,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -267,12 +477,11 @@ describe('getUsedMethods()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
                 // one more card
                 {
                     ID: '3',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 502,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -284,7 +493,6 @@ describe('getUsedMethods()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
             ],
             amount: 500,
@@ -296,9 +504,9 @@ describe('getUsedMethods()', () => {
             enableSepa: true,
         });
 
-        expect(methods.getUsedMethods().some((method) => method.type === 'paypal')).toBe(true);
+        expect(methods.getUsedMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
         expect(methods.getUsedMethods().some((method) => method.value === '1')).toBe(true);
-        expect(methods.getUsedMethods().filter((method) => method.type === 'card').length).toBe(2);
+        expect(methods.getUsedMethods().filter((method) => method.type === 'chargebee-card').length).toBe(2);
         expect(methods.getUsedMethods().some((method) => method.value === '2')).toBe(true);
         expect(methods.getUsedMethods().some((method) => method.value === '3')).toBe(true);
     });
@@ -318,7 +526,6 @@ describe('getAvailablePaymentMethods()', () => {
                         PayerID: '123',
                         Payer: '123',
                     },
-                    External: MethodStorage.EXTERNAL,
                 },
                 {
                     ID: '2',
@@ -334,7 +541,6 @@ describe('getAvailablePaymentMethods()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.EXTERNAL,
                 },
                 // one more card
                 {
@@ -351,7 +557,6 @@ describe('getAvailablePaymentMethods()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.EXTERNAL,
                 },
             ],
             amount: 500,
@@ -384,18 +589,17 @@ describe('getLastUsedMethod()', () => {
             paymentMethods: [
                 {
                     ID: '1',
-                    Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                     Order: 500,
                     Details: {
                         BillingAgreementID: 'BA-123',
                         PayerID: '123',
                         Payer: '123',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
                 {
                     ID: '2',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 501,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -407,12 +611,11 @@ describe('getLastUsedMethod()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
                 // one more card
                 {
                     ID: '3',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 502,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -424,7 +627,6 @@ describe('getLastUsedMethod()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
             ],
             amount: 500,
@@ -439,7 +641,7 @@ describe('getLastUsedMethod()', () => {
         const lastUsedMethod = methods.getLastUsedMethod();
 
         expect(lastUsedMethod).toEqual({
-            type: PAYMENT_METHOD_TYPES.PAYPAL,
+            type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             paymentMethodId: '1',
             value: '1',
             isSaved: true,
@@ -456,18 +658,17 @@ describe('getSavedMethodById()', () => {
             paymentMethods: [
                 {
                     ID: '1',
-                    Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                     Order: 500,
                     Details: {
                         BillingAgreementID: 'BA-123',
                         PayerID: '123',
                         Payer: '123',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
                 {
                     ID: '2',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 501,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -479,12 +680,11 @@ describe('getSavedMethodById()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
                 // one more card
                 {
                     ID: '3',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 502,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -496,12 +696,10 @@ describe('getSavedMethodById()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.INTERNAL,
                 },
-                // external card
                 {
                     ID: '4',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 503,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -513,7 +711,6 @@ describe('getSavedMethodById()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.EXTERNAL,
                 },
             ],
             amount: 500,
@@ -529,7 +726,7 @@ describe('getSavedMethodById()', () => {
 
         expect(savedMethod).toEqual({
             ID: '2',
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Order: 501,
             Autopay: Autopay.ENABLE,
             Details: {
@@ -541,14 +738,13 @@ describe('getSavedMethodById()', () => {
                 Last4: '1234',
                 Brand: 'Visa',
             },
-            External: MethodStorage.INTERNAL,
         });
 
-        const externalMethod = methods.getSavedMethodById('4');
+        const savedMethod2 = methods.getSavedMethodById('4');
 
-        expect(externalMethod).toEqual({
+        expect(savedMethod2).toEqual({
             ID: '4',
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Order: 503,
             Autopay: Autopay.ENABLE,
             Details: {
@@ -560,7 +756,6 @@ describe('getSavedMethodById()', () => {
                 Last4: '4242',
                 Brand: 'Visa',
             },
-            External: MethodStorage.EXTERNAL,
         });
     });
 });
@@ -583,7 +778,7 @@ describe('initializePaymentMethods()', () => {
         const paymentMethods: SavedPaymentMethod[] = [
             {
                 ID: '1',
-                Type: PAYMENT_METHOD_TYPES.CARD,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 Order: 500,
                 Autopay: Autopay.ENABLE,
                 Details: {
@@ -595,7 +790,6 @@ describe('initializePaymentMethods()', () => {
                     Last4: '1234',
                     Brand: 'Visa',
                 },
-                External: MethodStorage.INTERNAL,
             },
         ];
 
@@ -1081,170 +1275,6 @@ describe('Chargebee Bitcoin', () => {
     });
 });
 
-describe('Bitcoin', () => {
-    it('should NOT be present when chargebee-bitcoin is available', () => {
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: 'subscription',
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
-    it('should not display bitcoin if status is false', () => {
-        const st = { ...status, Bitcoin: false };
-        const flow: PaymentMethodFlow = 'subscription';
-
-        const methods = new PaymentMethods({
-            paymentStatus: st,
-            paymentMethods: [],
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
-    it.each([
-        'invoice',
-        'signup',
-        'signup-v2',
-        'signup-v2-upgrade',
-        'signup-vpn',
-        'add-card',
-        'add-paypal',
-    ] as PaymentMethodFlow[])('should not display bitcoin in %s flow', (flow) => {
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
-    it('should not display bitcoin if amount is less than minimum', () => {
-        const flow: PaymentMethodFlow = 'subscription';
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: getMinBitcoinAmount(TEST_CURRENCY) - 1,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
-    it.each([PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024])(
-        'should not display bitcoin for b2b plans',
-        (plan) => {
-            const flow: PaymentMethodFlow = 'subscription';
-
-            const methods = new PaymentMethods({
-                paymentStatus: status,
-                paymentMethods: [],
-                amount: 500,
-                currency: TEST_CURRENCY,
-                coupon: '',
-                flow: flow,
-                selectedPlanName: plan,
-                billingAddress: undefined,
-                enableSepa: true,
-            });
-
-            expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-        }
-    );
-
-    it('should not display bitcoin if user has unpaid invoices', () => {
-        const user = buildUser({
-            Delinquent: UNPAID_STATE.AVAILABLE,
-        });
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: 'subscription',
-            user,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
-    it('should display bitcoin if user is not delinquent', () => {
-        const user = buildUser({
-            Delinquent: UNPAID_STATE.NOT_UNPAID,
-        });
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: 'subscription',
-            user,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
-    });
-
-    it('should not display bitcoin if user has unpaid invoices', () => {
-        const user = buildUser({
-            Delinquent: UNPAID_STATE.AVAILABLE,
-        });
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: 'subscription',
-            user,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
-    });
-});
-
 // Mock browser helper functions
 jest.mock('@proton/shared/lib/helpers/browser', () => ({
     isSafari: jest.fn(),
@@ -1537,7 +1567,7 @@ describe('Chargebee PayPal', () => {
             paymentMethods: [
                 {
                     ID: '123',
-                    Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                     Order: 500,
                     Details: {
                         BillingAgreementID: 'BA-123',

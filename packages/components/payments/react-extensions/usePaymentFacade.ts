@@ -42,13 +42,11 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 
 import useBitcoin from './useBitcoin';
-import { useCard } from './useCard';
 import { useChargebeeCard } from './useChargebeeCard';
 import { useChargebeePaypal } from './useChargebeePaypal';
 import type { OnMethodChangedHandler } from './useMethods';
 import { useMethods } from './useMethods';
 import { usePaymentsApi } from './usePaymentsApi';
-import { usePaypal } from './usePaypal';
 import { useSavedChargebeeMethod } from './useSavedChargebeeMethod';
 import { useSavedMethod } from './useSavedMethod';
 import { useSepaDirectDebit } from './useSepaDirectDebit';
@@ -276,7 +274,6 @@ export const usePaymentFacade = (
         api,
         isAuthenticated,
         verifyPayment,
-        verifyPaymentPaypal,
         verifyPaymentChargebeeCard,
         chargebeeHandles,
         chargebeeEvents,
@@ -287,7 +284,6 @@ export const usePaymentFacade = (
         api: Api;
         isAuthenticated: boolean;
         verifyPayment: PaymentVerificator;
-        verifyPaymentPaypal: PaymentVerificator;
         verifyPaymentChargebeeCard: PaymentVerificatorV5;
         chargebeeHandles: ChargebeeIframeHandles;
         chargebeeEvents: ChargebeeIframeEvents;
@@ -404,61 +400,6 @@ export const usePaymentFacade = (
         }
     );
 
-    const card = useCard(
-        {
-            amountAndCurrency,
-            onChargeable: (params) =>
-                onChargeable(
-                    getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v4',
-                        paymentMethodValue: PAYMENT_METHOD_TYPES.CARD,
-                        ...operationProps,
-                    }),
-                    {
-                        chargeablePaymentParameters: params,
-                        source: PAYMENT_METHOD_TYPES.CARD,
-                        sourceType: params.type,
-                        context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v4',
-                        paymentProcessorType: card.meta.type,
-                    }
-                ),
-            verifyOnly: flow === 'add-card',
-        },
-        {
-            api,
-            verifyPayment,
-        }
-    );
-
-    const paypalIgnoreAmountCheck = flow === 'invoice';
-    const paypal = usePaypal(
-        {
-            amountAndCurrency,
-            onChargeable: (params) =>
-                onChargeable(
-                    getOperations(api, params, paymentContext.getOperationsData(), {
-                        paymentsVersion: 'v4',
-                        paymentMethodValue: PAYMENT_METHOD_TYPES.PAYPAL,
-                        ...operationProps,
-                    }),
-                    {
-                        chargeablePaymentParameters: params,
-                        source: PAYMENT_METHOD_TYPES.PAYPAL,
-                        sourceType: params.type,
-                        context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v4',
-                        paymentProcessorType: paypal.meta.type,
-                    }
-                ),
-            ignoreAmountCheck: paypalIgnoreAmountCheck,
-        },
-        {
-            api,
-            verifyPayment: verifyPaymentPaypal,
-        }
-    );
-
     const chargebeeCard = useChargebeeCard(
         {
             amountAndCurrency,
@@ -521,31 +462,6 @@ export const usePaymentFacade = (
     );
 
     const paymentMethodValue: PaymentMethodType | undefined = methods.selectedMethod?.value;
-    const bitcoinInhouse = useBitcoin({
-        api,
-        Amount: amount,
-        Currency: currency,
-        enablePolling: paymentMethodValue === PAYMENT_METHOD_TYPES.BITCOIN,
-        paymentsVersion: 'v4',
-        onTokenValidated: (params: ChargeablePaymentParameters) => {
-            return onChargeable(
-                getOperations(api, params, paymentContext.getOperationsData(), {
-                    paymentsVersion: 'v4',
-                    paymentMethodValue: PAYMENT_METHOD_TYPES.BITCOIN,
-                    ...operationProps,
-                }),
-                {
-                    chargeablePaymentParameters: params,
-                    source: PAYMENT_METHOD_TYPES.BITCOIN,
-                    sourceType: params.type,
-                    context: paymentContext.getOperationsData(),
-                    paymentsVersion: 'v4',
-                    paymentProcessorType: bitcoinInhouse.meta.type,
-                }
-            );
-        },
-    });
-
     const bitcoinChargebee = useBitcoin({
         api,
         Amount: amount,
@@ -675,24 +591,12 @@ export const usePaymentFacade = (
             }
         }
 
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CARD) {
-            return card;
-        }
-
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL) {
-            return paypal;
-        }
-
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
             return chargebeeCard;
         }
 
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
             return chargebeePaypal;
-        }
-
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.BITCOIN) {
-            return bitcoinInhouse;
         }
 
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
@@ -713,9 +617,7 @@ export const usePaymentFacade = (
     }, [
         paymentMethodValue,
         paymentMethodType,
-        card,
         savedMethod,
-        paypal,
         savedChargebeeMethod,
         chargebeeCard,
         chargebeePaypal,
@@ -729,11 +631,8 @@ export const usePaymentFacade = (
         [
             savedMethod,
             savedChargebeeMethod,
-            card,
-            paypal,
             chargebeeCard,
             chargebeePaypal,
-            bitcoinInhouse,
             bitcoinChargebee,
             directDebit,
             applePay,
@@ -750,13 +649,10 @@ export const usePaymentFacade = (
     return {
         methods,
         savedMethod,
-        card,
-        paypal,
         chargebeeCard,
         chargebeePaypal,
         applePay,
         googlePay,
-        bitcoinInhouse,
         bitcoinChargebee,
         selectedProcessor,
         flow,
