@@ -11,12 +11,7 @@ import SettingsSection from '@proton/components/containers/account/SettingsSecti
 import useConfig from '@proton/components/hooks/useConfig';
 import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
-import {
-    MethodStorage,
-    PAYMENT_METHOD_TYPES,
-    type SavedPaymentMethod,
-    getAvailableSubscriptionActions,
-} from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, getAvailableSubscriptionActions } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -53,13 +48,9 @@ const PaymentMethodsSection = ({ app }: { app: APP_NAMES }) => {
             ? 'https://protonvpn.com/support/payment-options/'
             : getKnowledgeBaseUrl('/payment-options');
 
-    const paypalPredicate = (method: SavedPaymentMethod) =>
-        method.Type === PAYMENT_METHOD_TYPES.PAYPAL &&
-        (method.External === MethodStorage.INTERNAL || method.External === MethodStorage.EXTERNAL);
-
-    const canAddPaypalV5 = !paymentMethods.some(paypalPredicate);
-
     const subscriptionActions = getAvailableSubscriptionActions(subscription);
+
+    const hasSavedPaypal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
 
     return (
         <SettingsSection>
@@ -87,7 +78,7 @@ const PaymentMethodsSection = ({ app }: { app: APP_NAMES }) => {
                     <IcCreditCard className="mr-2" />
                     <span>{c('Action').t`Add credit / debit card`}</span>
                 </Button>
-                {canAddPaypalV5 && (
+                {!hasSavedPaypal && (
                     <AddPaypalButton
                         onClick={() => {
                             if (redirectToAccountApp()) {

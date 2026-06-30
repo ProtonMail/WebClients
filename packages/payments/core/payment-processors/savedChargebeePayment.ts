@@ -9,8 +9,6 @@ import type {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
     SavedPaymentMethod,
-    SavedPaymentMethodExternal,
-    SavedPaymentMethodInternal,
     V5PaymentToken,
 } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
@@ -21,8 +19,6 @@ interface SavedChargebeePaymentState {
         type:
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-            | PAYMENT_METHOD_TYPES.CARD
-            | PAYMENT_METHOD_TYPES.PAYPAL
             | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
             | PAYMENT_METHOD_TYPES.APPLE_PAY
             | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
@@ -42,7 +38,7 @@ export class SavedChargebeePaymentProcessor extends PaymentProcessor<SavedCharge
          * For the on-session v4-v5 migration, the saved payment method can also be internal.
          * In this case the frontend will send the internal saved method to v5 and the backend will do the migration.
          */
-        savedMethod: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod,
+        savedMethod: SavedPaymentMethod,
         public onTokenIsChargeable: (data: ChargeablePaymentParameters) => Promise<unknown>,
         public onDeclined: () => void
     ) {
@@ -106,7 +102,7 @@ export class SavedChargebeePaymentProcessor extends PaymentProcessor<SavedCharge
         }
     }
 
-    updateSavedMethod(savedMethod: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod) {
+    updateSavedMethod(savedMethod: SavedPaymentMethod) {
         this.state.method = {
             paymentMethodId: savedMethod.ID,
             type: savedMethod.Type,

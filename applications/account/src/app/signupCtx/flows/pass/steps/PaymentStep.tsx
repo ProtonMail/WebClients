@@ -123,7 +123,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         onBack();
     };
 
-    const methodsAllowed: string[] = [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD];
+    const methodsAllowed: string[] = [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD];
     const showAlert3ds = methodsAllowed.includes(paymentFacade.selectedMethodType ?? '');
 
     const months = getMonths(payments.checkoutUi.cycle);

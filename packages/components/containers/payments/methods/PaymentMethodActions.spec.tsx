@@ -1,7 +1,6 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
@@ -35,9 +34,9 @@ jest.mock('../../../hooks/useEventManager', () =>
 
 jest.mock('@proton/components/hooks/useApi', () => jest.fn().mockReturnValue(jest.fn()));
 
-jest.mock('../../../components/dropdown/DropdownActions', () =>
-    jest.fn().mockImplementation(({ list }) => list.map(({ text }: any) => <span>{text}</span>))
-);
+// The real DropdownActions renders its overflow actions inside a Portal-backed dropdown.
+// Mocking Portal to render its children inline lets us exercise the real component.
+jest.mock('@proton/components/components/portal/Portal');
 
 jest.mock('@proton/payments/ui', () => ({
     __esModule: true,
@@ -49,12 +48,19 @@ beforeEach(() => {
     mockUseSubscription();
 });
 
+const openActionsDropdown = async () => {
+    const toggle = screen.queryByTestId('dropdownActions:dropdown');
+    if (toggle) {
+        await userEvent.click(toggle);
+    }
+};
+
 describe('PaymentMethodActions', () => {
-    it('should show only delete button if paypal is the first method', () => {
+    it('should show only delete button if paypal is the first method', async () => {
         const method: SavedPaymentMethod = {
             Order: 1,
             ID: 'id-123',
-            Type: PAYMENT_METHOD_TYPES.PAYPAL,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             Details: {
                 BillingAgreementID: 'agreement-123',
                 PayerID: 'payer-123',
@@ -64,17 +70,18 @@ describe('PaymentMethodActions', () => {
         };
 
         const { container } = render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
+        await openActionsDropdown();
 
         expect(container).not.toHaveTextContent('Edit');
         expect(container).not.toHaveTextContent('Mark as default');
         expect(container).toHaveTextContent('Delete');
     });
 
-    it('should show "delete" and "mark as default" button if paypal is not the first', () => {
+    it('should show "delete" and "mark as default" button if paypal is not the first', async () => {
         const method: SavedPaymentMethod = {
             Order: 1,
             ID: 'id-123',
-            Type: PAYMENT_METHOD_TYPES.PAYPAL,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             Details: {
                 BillingAgreementID: 'agreement-123',
                 PayerID: 'payer-123',
@@ -82,18 +89,19 @@ describe('PaymentMethodActions', () => {
             },
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
+        render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
+        await openActionsDropdown();
 
-        expect(container).not.toHaveTextContent('Edit');
-        expect(container).toHaveTextContent('Mark as default');
-        expect(container).toHaveTextContent('Delete');
+        expect(screen.queryByText('Edit')).not.toBeInTheDocument();
+        expect(await screen.findByText('Mark as default')).toBeInTheDocument();
+        expect(await screen.findByText('Delete')).toBeInTheDocument();
     });
 
-    it('should show Edit, Default and Delete buttons for non-first card', () => {
+    it('should show Edit, Default and Delete buttons for non-first card', async () => {
         const method: SavedPaymentMethod = {
             Order: 1,
             ID: 'id-123',
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Details: {
                 Name: 'John Smith',
                 ExpMonth: '01',
@@ -106,18 +114,19 @@ describe('PaymentMethodActions', () => {
             Autopay: Autopay.ENABLE,
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
+        render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
+        await openActionsDropdown();
 
-        expect(container).toHaveTextContent('Edit');
-        expect(container).toHaveTextContent('Mark as default');
-        expect(container).toHaveTextContent('Delete');
+        expect(await screen.findByText('Edit')).toBeInTheDocument();
+        expect(await screen.findByText('Mark as default')).toBeInTheDocument();
+        expect(await screen.findByText('Delete')).toBeInTheDocument();
     });
 
-    it('should show Edit and Delete buttons for first card', () => {
+    it('should show Edit and Delete buttons for first card', async () => {
         const method: SavedPaymentMethod = {
             Order: 1,
             ID: 'id-123',
-            Type: PAYMENT_METHOD_TYPES.CARD,
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             Details: {
                 Name: 'John Smith',
                 ExpMonth: '01',
@@ -131,30 +140,20 @@ describe('PaymentMethodActions', () => {
             IsDefault: true,
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
+        render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
+        await openActionsDropdown();
 
-        expect(container).toHaveTextContent('Edit');
-        expect(container).not.toHaveTextContent('Mark as default');
-        expect(container).toHaveTextContent('Delete');
+        expect(await screen.findByText('Edit')).toBeInTheDocument();
+        expect(screen.queryByText('Mark as default')).not.toBeInTheDocument();
+        expect(await screen.findByText('Delete')).toBeInTheDocument();
     });
 
     describe('action handlers', () => {
-        beforeEach(() => {
-            const DropdownActionsMock: jest.Mock = DropdownActions as any;
-            DropdownActionsMock.mockReset().mockImplementation(({ list }: { list: any[] }) =>
-                list.map(({ text, onClick }, actionIndex) => (
-                    <button type="button" onClick={onClick} data-testid={`actionIndex-${actionIndex}`}>
-                        {text}
-                    </button>
-                ))
-            );
-        });
-
         it('should open EditCardModal on Edit', async () => {
             const method: SavedPaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
-                Type: PAYMENT_METHOD_TYPES.CARD,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 Details: {
                     Name: 'John Smith',
                     ExpMonth: '01',
@@ -167,20 +166,18 @@ describe('PaymentMethodActions', () => {
                 Autopay: Autopay.ENABLE,
             };
 
-            const { findByTestId, findByText } = render(
-                <PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />
-            );
+            render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
 
-            await userEvent.click(await findByTestId('actionIndex-0'));
+            await userEvent.click(await screen.findByTestId('Edit'));
 
-            expect(await findByText('Edit Card Modal')).toBeInTheDocument();
+            expect(await screen.findByText('Edit Card Modal')).toBeInTheDocument();
         });
 
         it('should make an API call on Mark as Default', async () => {
             const method0: SavedPaymentMethod = {
                 Order: 0,
                 ID: 'id-000',
-                Type: PAYMENT_METHOD_TYPES.CARD,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 Details: {
                     Name: 'John Smith',
                     ExpMonth: '01',
@@ -197,7 +194,7 @@ describe('PaymentMethodActions', () => {
             const method1: SavedPaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
-                Type: PAYMENT_METHOD_TYPES.CARD,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 Details: {
                     Name: 'John Smith',
                     ExpMonth: '01',
@@ -220,11 +217,10 @@ describe('PaymentMethodActions', () => {
             const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
 
-            const { findByTestId } = render(
-                <PaymentMethodActions method={method1} methods={[method0, method1]} app={APPS.PROTONMAIL} />
-            );
+            render(<PaymentMethodActions method={method1} methods={[method0, method1]} app={APPS.PROTONMAIL} />);
 
-            await userEvent.click(await findByTestId('actionIndex-1'));
+            await openActionsDropdown();
+            await userEvent.click(await screen.findByText('Mark as default'));
 
             await waitFor(async () => {
                 expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'], 'v5')); // a request to change the order of the payment methods
@@ -265,12 +261,11 @@ describe('PaymentMethodActions', () => {
             const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
 
-            const { findByTestId } = render(
-                <PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />
-            );
+            render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
 
-            await userEvent.click(await findByTestId('actionIndex-1'));
-            await userEvent.click(await findByTestId('confirm-deletion'));
+            await openActionsDropdown();
+            await userEvent.click(await screen.findByTestId('Delete'));
+            await userEvent.click(await screen.findByTestId('confirm-deletion'));
 
             await waitFor(async () => {
                 expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123', 'v5'));

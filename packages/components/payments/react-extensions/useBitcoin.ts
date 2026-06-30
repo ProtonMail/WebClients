@@ -197,7 +197,7 @@ const useBitcoin = ({
             const params: ChargeablePaymentParameters = {
                 Amount,
                 Currency,
-                type: paymentsVersion === 'v4' ? PAYMENT_METHOD_TYPES.BITCOIN : PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+                type: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
                 chargeable: true,
                 v: 5,
                 PaymentToken: token,
