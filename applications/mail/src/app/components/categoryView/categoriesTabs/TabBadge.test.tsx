@@ -42,14 +42,7 @@ describe('TabBadge', () => {
         it('renders the raw unread count', () => {
             jest.mocked(useMailSelector).mockReturnValue(5);
 
-            render(
-                <TabBadge
-                    category={category}
-                    tabState={TabState.INACTIVE}
-                    shouldShowCounter={false}
-                    shouldShowNewBadge={false}
-                />
-            );
+            render(<TabBadge category={category} tabState={TabState.INACTIVE} shouldShowCounter={false} />);
             expect(screen.getByText('5')).toBeInTheDocument();
         });
 
@@ -57,57 +50,23 @@ describe('TabBadge', () => {
             jest.mocked(useMailSelector).mockReturnValue(0);
 
             const { container } = render(
-                <TabBadge
-                    category={category}
-                    tabState={TabState.INACTIVE}
-                    shouldShowCounter={false}
-                    shouldShowNewBadge={false}
-                />
+                <TabBadge category={category} tabState={TabState.INACTIVE} shouldShowCounter={false} />
             );
             expect(container).toBeEmptyDOMElement();
         });
     });
 
-    it('renders the New badge and takes precedence over the counter', () => {
-        jest.mocked(useMailSelector).mockReturnValue(5);
-
-        render(
-            <TabBadge
-                category={category}
-                tabState={TabState.INACTIVE}
-                shouldShowCounter={true}
-                shouldShowNewBadge={true}
-            />
-        );
-        expect(screen.getByText('New')).toBeInTheDocument();
-        expect(screen.queryByText('5')).not.toBeInTheDocument();
-    });
-
     it('renders the counter when enabled and there are unread messages', () => {
         jest.mocked(useMailSelector).mockReturnValue(5);
 
-        render(
-            <TabBadge
-                category={category}
-                tabState={TabState.INACTIVE}
-                shouldShowCounter={true}
-                shouldShowNewBadge={false}
-            />
-        );
+        render(<TabBadge category={category} tabState={TabState.INACTIVE} shouldShowCounter={true} />);
         expect(screen.getByText('5')).toBeInTheDocument();
     });
 
     it('caps the displayed count at 999+', () => {
         jest.mocked(useMailSelector).mockReturnValue(1500);
 
-        render(
-            <TabBadge
-                category={category}
-                tabState={TabState.INACTIVE}
-                shouldShowCounter={true}
-                shouldShowNewBadge={false}
-            />
-        );
+        render(<TabBadge category={category} tabState={TabState.INACTIVE} shouldShowCounter={true} />);
         expect(screen.getByText('999+')).toBeInTheDocument();
     });
 
@@ -115,12 +74,7 @@ describe('TabBadge', () => {
         jest.mocked(useMailSelector).mockReturnValue(0);
 
         const { container } = render(
-            <TabBadge
-                category={category}
-                tabState={TabState.INACTIVE}
-                shouldShowCounter={true}
-                shouldShowNewBadge={false}
-            />
+            <TabBadge category={category} tabState={TabState.INACTIVE} shouldShowCounter={true} />
         );
         expect(container).toBeEmptyDOMElement();
     });
@@ -129,12 +83,7 @@ describe('TabBadge', () => {
         jest.mocked(useMailSelector).mockReturnValue(5);
 
         const { container } = render(
-            <TabBadge
-                category={category}
-                tabState={TabState.INACTIVE}
-                shouldShowCounter={false}
-                shouldShowNewBadge={false}
-            />
+            <TabBadge category={category} tabState={TabState.INACTIVE} shouldShowCounter={false} />
         );
         expect(container).toBeEmptyDOMElement();
     });
