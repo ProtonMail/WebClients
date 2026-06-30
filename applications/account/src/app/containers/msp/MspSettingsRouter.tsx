@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import { PrivateMainSettingsArea } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
+import MspCompaniesSection from './components/MspCompaniesSection';
+import MspMonthlyCostsSection from './components/MspMonthlyCostsSection';
 import type { getMspAppRoutes } from './routes';
 
 const MspSettingsRouter = ({
@@ -27,12 +29,16 @@ const MspSettingsRouter = ({
         <Switch>
             {getIsSectionAvailable(companies) && (
                 <Route path={getSectionPath(path, companies)}>
-                    <PrivateMainSettingsArea config={companies}>Companies</PrivateMainSettingsArea>
+                    <PrivateMainSettingsArea config={companies}>
+                        <MspCompaniesSection />
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {getIsSectionAvailable(monthlyCosts) && (
                 <Route path={getSectionPath(path, monthlyCosts)}>
-                    <PrivateMainSettingsArea config={monthlyCosts}>Monthly Costs</PrivateMainSettingsArea>
+                    <PrivateMainSettingsArea config={monthlyCosts}>
+                        <MspMonthlyCostsSection />
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {redirect}
