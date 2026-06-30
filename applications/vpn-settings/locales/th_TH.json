@@ -56,6 +56,9 @@
       "Add": [
         "เพิ่ม"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "เพิ่ม ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "เพิ่มที่อยู่ ${ BRAND_NAME }"
       ],
@@ -217,6 +220,9 @@
       ],
       "Continue import": [
         "ดำเนินการนำเข้าต่อ"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "ดำเนินการต่อไปที่ ${ planOrAppName }"
       ],
       "Continue with Free": [
         "ใช้งานเวอร์ชันฟรีต่อไป"
@@ -536,6 +542,9 @@
       "Help and resources": [
         "ความช่วยเหลือและทรัพยากร"
       ],
+      "Hide": [
+        "ซ่อน"
+      ],
       "Hide more benefits": [
         "ซ่อนสิทธิประโยชน์เพิ่มเติม"
       ],
@@ -673,6 +682,9 @@
       ],
       "Or": [
         "หรือ"
+      ],
+      "Or remove forwarding address": [
+        "หรือลบที่อยู่การส่งต่อออก"
       ],
       "Or use a different Gmail address": [
         "หรือใช้ที่อยู่ Gmail อื่น"
@@ -1115,6 +1127,9 @@
       "Verify domain": [
         "ยืนยันโดเมน"
       ],
+      "Verify now": [
+        "ยืนยันตอนนี้"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "ยืนยันโดเมน ${ unverifiedSSODomain.DomainName }"
       ],
@@ -1178,6 +1193,11 @@
         "เปิดใช้งานอีกครั้ง"
       ]
     },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "เปิดใน ${ SHEETS_APP_NAME }"
+      ]
+    },
     "Addon": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "ผู้ช่วยการเขียน ${ BRAND_NAME } Scribe"
@@ -1188,11 +1208,20 @@
       "${ domains } additional custom domain": [
         "โดเมนที่กำหนดเองเพิ่มเติม ${ domains } โดเมน"
       ],
+      "${ ips } dedicated VPN server": [
+        "เซิร์ฟเวอร์ VPN เฉพาะ ${ ips } เครื่อง"
+      ],
       "${ LUMO_APP_NAME } AI assistant": [
         "ผู้ช่วย AI ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "ผู้ช่วย AI ${ LUMO_APP_NAME } (สำหรับผู้ใช้ ${ quantity } คน)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "สิทธิ์ใช้งาน AI ของ ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "สิทธิ์ผู้ใช้ ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } ต่อเซิร์ฟเวอร์เฉพาะ"
@@ -1209,14 +1238,38 @@
       "${ quantity } custom domain": [
         "โดเมนที่กำหนดเอง ${ quantity } โดเมน"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "สิทธิ์การใช้งาน AI ${ LUMO_APP_NAME } ${ seats } สิทธิ์"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } สิทธิ์ผู้ใช้ ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "ใบอนุญาต ${ MEET_APP_NAME } ${ seats } ใบ"
       ],
       "${ seats } writing assistant seat": [
         "สิทธิ์ผู้ใช้ผู้ช่วยด้านการเขียน ${ seats } สิทธิ์"
       ],
       "${ users } user": [
         "${ users }ผู้ใช้งาน"
+      ],
+      "Dedicated VPN servers": [
+        "เซิร์ฟเวอร์ VPN เฉพาะ"
+      ],
+      "Domains": [
+        "โดเมน"
+      ],
+      "Servers": [
+        "เซิร์ฟเวอร์"
+      ],
+      "Users": [
+        "ผู้ใช้งาน"
+      ],
+      "Writing assistant": [
+        "ผู้ช่วยด้านการเขียน"
+      ],
+      "Writing assistant seats": [
+        "สิทธิ์ผู้ใช้ผู้ช่วยด้านการเขียน"
       ]
     },
     "Address action": {
@@ -1608,6 +1661,52 @@
         "พื้นที่จัดเก็บจะถูกแชร์ร่วมกันในบริการทั้งหมดของ ${ BRAND_NAME }"
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "พื้นที่จัดเก็บข้อมูล 2 TB"
+      ],
+      "3 TB data storage": [
+        "พื้นที่จัดเก็บข้อมูล 3 TB"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "เข้าถึงเซิร์ฟเวอร์กว่า 15,000 แห่งในกว่า 120 ประเทศ"
+      ],
+      "Access advanced AI models": [
+        "เข้าถึงโมเดล AI ขั้นสูง"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "คุณสมบัติพรีเมียมทั้งหมดของ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } และ ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "บล็อกโฆษณา ตัวติดตาม และมัลแวร์"
+      ],
+      "Built-in 2FA authenticator": [
+        "ตัวยืนยันตัวตน 2FA ในตัว"
+      ],
+      "Connect 10 devices at once": [
+        "เชื่อมต่ออุปกรณ์ได้ 10 เครื่องพร้อมกัน"
+      ],
+      "Full chat history with easy search and favorites": [
+        "ประวัติการแชททั้งหมดพร้อมการค้นหาและรายการโปรดที่ใช้งานง่าย"
+      ],
+      "Individual accounts for 6 users": [
+        "บัญชีส่วนตัวสำหรับผู้ใช้ 6 ราย"
+      ],
+      "Individual accounts for you and a partner": [
+        "บัญชีส่วนตัวสำหรับคุณและคู่หู"
+      ],
+      "Stronger protection against cyber threats": [
+        "การป้องกันภัยคุกคามทางไซเบอร์ที่แข็งแกร่งยิ่งขึ้น"
+      ],
+      "Unlimited daily chats": [
+        "แชตได้ไม่จำกัดต่อวัน"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield ที่ออกแบบมาเป็นพิเศษช่วยปกป้องอุปกรณ์และเพิ่มความเร็วในการท่องเว็บโดยการบล็อกโฆษณา ตัวติดตาม และมัลแวร์"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "ต่ออายุอัตโนมัติในราคา ${ renewPrice } เป็นเวลา ${ renewCycle } เดือน"
@@ -1617,6 +1716,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } เดือน"
+      ],
+      "${ n } year": [
+        "${ n } ปี"
+      ],
       "1 month": [
         "1 เดือน"
       ],
@@ -1626,8 +1731,14 @@
       "Annually": [
         "รายปี"
       ],
+      "Billed monthly": [
+        "เรียกเก็บเงินรายเดือน"
+      ],
       "Lifetime": [
         "ตลอดชีพ"
+      ],
+      "Lifetime access": [
+        "สิทธิ์เข้าถึงตลอดชีพ"
       ],
       "Monthly": [
         "รายเดือน"
@@ -1924,6 +2035,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users }ผู้ใช้งาน"
+      ],
+      "Subtotal": [
+        "ยอดรวมย่อย"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "ยอดรวมย่อยสำหรับ ${ cycle } เดือน"
       ],
       "Total": [
         "รวม"
@@ -2314,6 +2431,9 @@
       ],
       "Canada": [
         "แคนาดา"
+      ],
+      "Canary Islands": [
+        "หมู่เกาะคานารี"
       ],
       "Cape Verde": [
         "เคปเวิร์ด"
@@ -2713,6 +2833,9 @@
       ],
       "North Korea": [
         "เกาหลีเหนือ"
+      ],
+      "North Macedonia": [
+        "มาซิโดเนียเหนือ"
       ],
       "Northern Mariana Islands": [
         "หมู่เกาะนอร์เทิร์นมาเรียนา"
@@ -3195,6 +3318,9 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "ทุกคนในองค์กรของคุณสามารถเชื่อมต่อกับเซิร์ฟเวอร์ที่แชร์ในทุกประเทศ"
       ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "เพื่อการเริ่มต้นใช้งาน ${ BRAND_NAME } อย่างราบรื่นสำหรับทีม ให้นำเข้าข้อมูลจาก Google, Outlook และอื่นๆ"
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "รับการแจ้งเตือนหากรหัสผ่านหรือข้อมูลอื่นๆ รั่วไหลจากบริการของบุคคลที่สาม"
       ],
@@ -3231,11 +3357,20 @@
       "This may happen if permissions were removed or your password changed.": [
         "กรณีนี้อาจเกิดขึ้นหากสิทธิ์การใช้งานถูกลบออกหรือรหัสผ่านถูกเปลี่ยน"
       ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "หากต้องการเชื่อมต่อที่อยู่อีเมล Gmail อื่น ให้ลบที่อยู่อีเมล Gmail ที่ส่งต่อไปยัง ${ BRAND_NAME } ออก"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "หากต้องการเชื่อมต่อที่อยู่ Gmail สูงสุด ${ MAX_SYNC_PAID_USER } รายการ ให้อัปเกรดเป็น ${ planName }"
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "เพื่อรับและส่งข้อความ Gmail ใน ${ BRAND_NAME } ต่อไป โปรดเชื่อมต่อบัญชีอีกครั้ง"
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "เพื่อรับและส่งข้อความ Gmail ใน ${ BRAND_NAME } ต่อไป โปรดเชื่อมต่อบัญชีต่างๆ อีกครั้ง"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "ในการนำเข้าผ่านไฟล์ CSV และ VCF ตรวจสอบให้แน่ใจว่าไฟล์มีขนาดไม่เกิน ${ MAX_IMPORT_FILE_SIZE_STRING } หรือมีผู้ติดต่อไม่เกิน ${ maxContactString } รายการ หากไฟล์ใหญ่กว่านี้ โปรดแบ่งเป็นไฟล์ย่อยๆ ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "เพื่อนำเข้ารายชื่อผู้ติดต่อของคุณจาก Google หรือ Outlook, ${ easySwitchLink }"
@@ -3249,6 +3384,9 @@
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "ปลดล็อกพื้นที่จัดเก็บข้อมูลขนาด 15 GB ในราคาเพียง ${ config.offerPrice }"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "อัปเกรดเป็น ${ planName } เพื่อเชื่อมต่อบัญชีสูงสุด ${ MAX_SYNC_PAID_USER } บัญชี"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "ใช้คู่มือนี้เพื่อให้องค์กรได้รับประโยชน์ทันทีจากระบบนิเวศความเป็นส่วนตัวและการเข้ารหัสลับชั้นนำของอุตสาหกรรมของ ${ BRAND_NAME }"
       ],
@@ -3260,6 +3398,9 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "เริ่มนำเข้าอีเมลจาก Gmail แล้ว จะแจ้งให้ทราบเมื่อดำเนินการเสร็จสิ้น"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "รู้สึกเสียดายที่ต้องจากไป หากมีเวลา โปรดแชร์เหตุผลที่ต้องการยกเลิก ข้อเสนอแนะมีส่วนช่วยให้ ${ BRAND_NAME } ดีขึ้นสำหรับทุกคน"
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "มีที่อยู่ Gmail ที่ส่งต่อมายัง ${ MAIL_APP_NAME } อยู่แล้ว เชื่อมต่อที่อยู่ดังกล่าวที่ด้านล่างเพื่อส่งและรับอีเมลโดยตรงผ่าน ${ MAIL_APP_NAME }"
@@ -3273,11 +3414,26 @@
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "สามารถส่งอีเมลจาก ${ BRAND_NAME } โดยใช้ที่อยู่นี้ได้แล้ว"
       ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "กำลังส่งต่อที่อยู่ Gmail ${ numAddressesOrSync } รายการไปยัง ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "คุณได้เชื่อมต่อที่อยู่ Gmail ${ MAX_SYNC_PAID_USER } รายการแล้ว หากต้องการเพิ่มรายการอื่น โปรดปิดใช้งานบัญชีที่เชื่อมต่ออยู่รายการใดรายการหนึ่งก่อน"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "เชื่อมต่อที่อยู่บัญชีภายนอกหนึ่งบัญชีเข้ากับ ${ MAIL_APP_NAME }"
+      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "บัญชี ${ MAIL_APP_NAME } แบบฟรีมีพื้นที่จัดเก็บที่จำกัด ดังนั้นจะนำเข้าเฉพาะข้อความ Gmail ล่าสุดขนาด ${ newUserStorageText } เท่านั้น"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "บัญชี ${ MAIL_APP_NAME } แบบฟรีมีพื้นที่จัดเก็บที่จำกัด ดังนั้นจะนำเข้าเฉพาะอีเมล Gmail ล่าสุดเท่านั้น"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "แผนของคุณรองรับที่อยู่ Gmail ${ MAX_SYNC_FREE_USER } รายการ"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "แผนรองรับที่อยู่ Gmail รวม ${ MAX_SYNC_PAID_USER } รายการ"
       ]
     },
     "description": {
@@ -3533,6 +3689,14 @@
         "แชร์สิทธิประโยชน์ของแผนด้วย ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "ในการส่งต่ออีเมลจากบัญชีสูงสุด ${ MAX_SYNC_PAID_USER } บัญชี ให้อัปเกรดเป็น ${ planName }"
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "กำลังส่งต่ออีเมลจากบัญชีภายนอกหนึ่งบัญชีไปยัง ${ MAIL_APP_NAME }"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "ช่องข้อความเป็นข้อมูลทางเลือก ข้อมูลที่ระบุในแบบฟอร์มนี้จะปรากฏบนใบแจ้งค่าชำระบริการที่ออกในอนาคตเท่านั้น และจะไม่ส่งผลต่อใบแจ้งค่าชำระบริการที่มีอยู่"
@@ -3742,6 +3906,9 @@
       "A group with this name already exists": [
         "มีกลุ่มหนึ่งที่ใช้ชื่อนี้อยู่แล้ว"
       ],
+      "Address could not be added.": [
+        "ไม่สามารถเพิ่มที่อยู่ได้"
+      ],
       "Address is already added to your account": [
         "เพิ่มที่อยู่นี้ในบัญชีแล้ว"
       ],
@@ -3768,6 +3935,9 @@
       ],
       "Checkout expired, please try again": [
         "การชำระเงินหมดอายุ, โปรดลองอีกครั้ง"
+      ],
+      "Company name or personal name is required": [
+        "จำเป็นต้องระบุชื่อบริษัทหรือชื่อบุคคล"
       ],
       "Couldn't load invoices. Please try again later.": [
         "ไม่สามารถโหลดใบแจ้งหนี้ได้ โปรดลองใหม่อีกครั้งในภายหลัง"
@@ -3802,6 +3972,9 @@
       "Enter 6 digits": [
         "ป้อนหมายเลข 6 หลัก"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "ป้อนชื่อผู้ใช้โดยไม่มีโดเมน (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "เกิดข้อผิดพลาดในการเชื่อมต่อไปยัง Bitcoin API"
       ],
@@ -3813,6 +3986,9 @@
       ],
       "Failed to load OAuth modal.": [
         "โหลดโมดอล OAuth ไม่สำเร็จ"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "ไม่สามารถโหลดข้อมูลการสมัครสมาชิกได้ โปรดลองอีกครั้งในภายหลัง"
       ],
       "Failed to load the STL preview": [
         "ไม่สามารถโหลดการดูตัวอย่าง STL ได้"
@@ -3874,6 +4050,9 @@
       "Invalid code": [
         "รหัสไม่ถูกต้อง"
       ],
+      "Invalid coupon": [
+        "คูปองไม่ถูกต้อง"
+      ],
       "Invalid domain": [
         "ที่อยู่โดเมนไม่ถูกต้อง"
       ],
@@ -3897,6 +4076,9 @@
       ],
       "Invalid private key file": [
         "ไฟล์คีย์ส่วนตัวไม่ถูกต้อง"
+      ],
+      "Invalid VAT number": [
+        "หมายเลขภาษีมูลค่าเพิ่มไม่ถูกต้อง"
       ],
       "Invalid verification code": [
         "รหัสการตรวจสอบสิทธิ์ไม่ถูกต้อง"
@@ -3969,6 +4151,12 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "โปรดเพิ่มวิธีการชำระเงินก่อนเปิดใช้งานการสมัครสมาชิกอีกครั้ง"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "โปรดตรวจสอบว่า ABN ได้ลงทะเบียนสำหรับ VAT ข้ามพรมแดนไว้หรือไม่"
+      ],
+      "Please complete the billing details": [
+        "โปรดระบุรายละเอียดการเรียกเก็บเงินให้ครบถ้วน"
       ],
       "Please configure a custom domain before adding addresses.": [
         "โปรดกำหนดค่าโดเมนที่กำหนดเองก่อนเพิ่มที่อยู่"
@@ -4051,6 +4239,9 @@
       "Request timed out": [
         "คำขอหมดเวลา"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "ไม่รองรับกลไกการเรียกเก็บภาษีแบบย้อนกลับสำหรับแผนนี้"
+      ],
       "Server not found": [
         "ไม่พบเซิร์ฟเวอร์"
       ],
@@ -4126,6 +4317,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "จำนวนเครดิตขั้นต่ำที่สามารถเพิ่มได้คือ ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "จำนวนเงินบริจาคขั้นต่ำคือ ${ price }"
+      ],
       "The policy name must be between 3 and 40 characters.": [
         "ชื่อนโยบายต้องมีความยาวระหว่าง 3 ถึง 40 ตัวอักษร"
       ],
@@ -4134,6 +4328,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ช่องกรอกนี้เกินขนาดสูงสุด ${ maximumLength } ตัวอักษรแล้ว"
+      ],
+      "This field is invalid": [
+        "ช่องข้อมูลนี้ไม่ถูกต้อง"
       ],
       "This field is required": [
         "ต้องระบุข้อมูลในช่องนี้"
@@ -4186,11 +4383,17 @@
       "Username must end with a letter or digit": [
         "ชื่อผู้ใช้ต้องลงท้ายด้วยตัวอักษรหรือตัวเลข"
       ],
+      "VAT number must start with ${ prefixes }": [
+        "หมายเลข VAT ต้องขึ้นต้นด้วย ${ prefixes }"
+      ],
       "Verification did not succeed, please try again in an hour.": [
         "การตรวจสอบความถูกต้องไม่สำเร็จ โปรดลองอีกครั้งภายในหนึ่งชั่วโมง"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "เราได้หยุดการลงลายเซ็น DKIM เนื่องจากมีปัญหากับการกำหนดค่า DNS ของคุณ โปรดทำตามคำแนะนำด้านล่างเพื่อลงลายเซ็นต่อ"
+      ],
+      "Wrong billing address": [
+        "ที่อยู่สำหรับการเรียกเก็บเงินไม่ถูกต้อง"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "วลีกู้คืนไม่ถูกต้อง โปรดลองใหม่อีกครั้งภายหลัง หรือใช้วิธีการกู้คืนบัญชีอื่น"
@@ -4286,6 +4489,9 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "เกิดข้อผิดพลาดระหว่างการอัปโหลดไฟล์ จึงไม่ได้เลือกไฟล์"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "ไฟล์ ${ formattedFilename } มีรายการติดต่อเกิน ${ maxContactString } รายการ"
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "ไฟล์ ${ formattedFilename } ของคุณไม่มีชื่อติต่อที่จะนำเข้ามาได้"
@@ -4851,6 +5057,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "เกิดข้อผิดพลาดในการยืนยันตัวตนด้วยคีย์ความปลอดภัย โปรดลองใหม่อีกครั้ง"
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "เกิดข้อผิดพลาดในการลงทะเบียนคีย์ความปลอดภัยของคุณ โปรดลองอีกครั้ง"
       ]
@@ -4871,8 +5080,8 @@
       "Are you sure you want to delete security key ${ name }?": [
         "คุณแน่ใจหรือไม่ว่าต้องการลบคีย์ความปลอดภัย ${ name }?"
       ],
-      "Insert your security key into your device's USB port.": [
-        "แทรกคีย์ความปลอดภัยของคุณลงในพอร์ต USB ของอุปกรณ์"
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "แทรกคีย์ความปลอดภัยที่เชื่อมโยงกับบัญชี ${ BRAND_NAME }"
       ],
       "Security key": [
         "คีย์ความปลอดภัย"
@@ -4885,6 +5094,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "การดำเนินการนี้จะลบคีย์ความปลอดภัยทั้งหมดที่เชื่อมโยงกับบัญชีของคุณ"
+      ],
+      "Touch your security key.": [
+        "แตะคีย์ความปลอดภัย"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "ยืนยันข้อมูลระบุตัวตนของคุณด้วยคีย์ความปลอดภัย U2F หรือ FIDO2 แบบกายภาพ"
@@ -5585,6 +5797,12 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } ยังสามารถใช้กับรหัสผ่านเดียวซึ่งแทนที่ทั้งรหัสผ่านเพื่อเข้าสู่ระบบและรหัสผ่านที่สอง หากต้องการเปลี่ยนไปใช้โหมดรหัสผ่านเดียว ให้ป้อนรหัสผ่านเดียวที่คุณต้องการใช้แล้วคลิกบันทึก"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } คือโซลูชันการประชุมทางวิดีโอที่เข้ารหัสลับจากต้นทางถึงปลายทาง เพิ่มลงในแผนเพื่อโฮสต์การประชุมที่ปลอดภัย"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } สิทธิ์ผู้ใช้"
+      ],
       "${ n } address": [
         "${ n } ที่อยู่"
       ],
@@ -5678,6 +5896,9 @@
       "${ vaultLink } updated": [
         "อัปเดต ${ vaultLink } แล้ว"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } ซ่อนทราฟฟิก ${ PASS_SHORT_APP_NAME } ซ่อนข้อมูลระบุตัวตน\n— **นามแฝง hide-my-email** ไม่จำกัด และ **การแจ้งเตือนดาร์กเว็บ** หากมีการรั่วไหลของข้อมูล"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "จำเป็นต้องมี ${ vpnPlus } สำหรับการเชื่อมต่อระดับประเทศ"
       ],
@@ -5702,8 +5923,17 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**นำเข้ารหัสที่มีอยู่ของคุณ** จากแอป 2FA อื่นๆ เช่น Google Authenticator"
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**เชิญเพื่อน**มายัง ${ BRAND_NAME } ด้วยลิงก์แนะนำ"
+      ],
       "**Sync codes** to all your devices": [
         "**ซิงค์รหัส** ไปยังอุปกรณ์ทั้งหมดของคุณ"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**จะได้รับเครดิต ${ refereeRewardAmount }** หากสมัครรับข้อมูล"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**รับเครดิต ${ referrerRewardAmount }** สำหรับเพื่อนทุกคนที่สมัครรับข้อมูล"
       ],
       "+ ${ invisibleCount } More": [
         "+ อีก ${ invisibleCount } รายการ"
@@ -5752,6 +5982,12 @@
       ],
       "active": [
         "กำลังเปิดใช้งานอยู่"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "เพิ่ม ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "เพิ่ม ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "add a recovery method": [
         "เพิ่มวิธีการกู้คืน"
@@ -5812,6 +6048,9 @@
       ],
       "All your changes will be lost.": [
         "จะสูญเสียการแก้ไขทั้งหมด"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "ผู้ติดต่อทั้งหมดของคุณจะถูกนำเข้า สูงสุดไม่เกิน ${ maxContact } รายการ"
       ],
       "Allocated": [
         "จัดสรรแล้ว"
@@ -6014,6 +6253,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "สร้างป้ายกำกับสำหรับข้อความที่นำเข้า ช่วงเวลาสำหรับการนำเข้านี้ และป้ายกำกับที่ต้องการนำเข้า"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "สร้างคลาวด์ที่ปลอดภัยสำหรับสมาชิก ${ memberCount } คน"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "สร้างและจัดการบัญชีย่อยและกำหนดที่อยู่อีเมลของบัญชีย่อยบนโดเมนที่กำหนดเองของคุณ"
       ],
@@ -6107,6 +6349,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "อย่าลืมรหัสผ่านนี้ ถ้าคุณลืม คุณจะไม่สามารถจัดการองค์กรของคุณได้"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "จำรหัสผ่านได้หรือไม่? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "คุณต้องการที่จะยกเลิกเซสชั่นทั้งหมด ยกเว้นเซสชั่นปัจจุบัน หรือไม่?"
       ],
@@ -6157,6 +6402,9 @@
       ],
       "Drop to import": [
         "วางเพื่อนำเข้า"
+      ],
+      "Each code can only be used once": [
+        "แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "แต่ละโดเมนสามารถมีระเบียน SPF (TXT) ได้เพียงรายการเดียว หากคุณต้องการเก็บระเบียน SPF (TXT) ที่มีอยู่ไว้ คุณสามารถเพิ่ม ${ spf } ลงในระเบียนปัจจุบันของคุณ (วางไว้หลัง ${ spfValue })"
@@ -6224,6 +6472,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "มั่นใจในการสื่อสารที่เป็นส่วนตัวและเข้ารหัสอย่างสมบูรณ์ รับสิทธิ์ที่อยู่อีเมล ${ BRAND_NAME } ฟรีตอนนี้"
       ],
+      "Enter code": [
+        "ป้อนรหัส"
+      ],
       "Enter key manually instead": [
         "ป้อนคีย์ด้วยตนเองแทน"
       ],
@@ -6244,6 +6495,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "โปรดป้อนโค๊ดยืนยันตัวตนที่ได้ส่งไปให้คุณที่ ${ destinationText }"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "ป้อนรหัสยืนยัน หลักที่ ${ digit }"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "ป้อนรายละเอียดบัญชี ${ BRAND_NAME } ของคุณ"
@@ -6269,6 +6523,9 @@
       "Everything in ${ planOrAppName }": [
         "ทุกอย่างใน ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "ทุกอย่างที่มีใน ${ planOrAppName } เพิ่มเติมด้วย:"
+      ],
       "Example: ${ spfExample }": [
         "ตัวอย่าง: ${ spfExample }"
       ],
@@ -6287,11 +6544,20 @@
       "finance": [
         "การเงิน"
       ],
+      "for ${ price }": [
+        "ในราคา ${ price }"
+      ],
       "for choosing ${ product }": [
         "ที่เลือก ${ product }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "ในราคาเพียง ${ bundlePlanPriceInline }"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "สำหรับผู้ใช้ที่กำลังเปลี่ยนมาใช้ ${ MAIL_APP_NAME } จากบริการอีเมลอื่น เลือกแท็บ ${ boldAddresses } และเพิ่มที่อยู่อีเมลที่ใช้งานอยู่ทั้งหมดก่อนเปลี่ยนระเบียน MX เพื่อให้แน่ใจว่าการเปลี่ยนแปลงจะเป็นไปอย่างราบรื่น"
+      ],
+      "Forgot password?": [
+        "ลืมรหัสผ่าน?"
       ],
       "Free trial": [
         "ทดลองใช้ฟรี"
@@ -6367,6 +6633,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "หากทำอุปกรณ์ที่เปิดใช้งานการยืนยันตัวตนผ่านสองขั้นตอนหาย สามารถใช้รหัสเหล่านี้แทนรหัสการยืนยันตัวตนผ่านสองขั้นตอน 6 หลักเพื่อเข้าสู่ระบบบัญชีได้ แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "หากสูญเสียการเข้าถึงแอปยืนยันตัวตน สามารถใช้ 1 ใน 16 รหัสกู้คืนสำรองข้อมูลที่ให้ไว้เมื่อตั้งค่าการยืนยันตัวตนผ่านสองขั้นตอน ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "หากคุณดำเนินการดาวน์เกรดต่อ คุณจะสูญเสียการเข้าถึงคุณสมบัติที่ต้องชำระเงินของ ${ MAIL_APP_NAME } และ ${ VPN_APP_NAME }"
@@ -6791,6 +7060,9 @@
       "Password must have:": [
         "รหัสผ่านต้องมี:"
       ],
+      "Password verified": [
+        "ยืนยันรหัสผ่านแล้ว"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "การชำระเงินจะถูกป้องกันโดยการเข้ารหัสแบบ TLS และกฎหมายด้านความเป็นส่วนตัวของประเทศสวิตเซอร์แลนด์"
       ],
@@ -6838,6 +7110,9 @@
       ],
       "Please select the folders you would like to import:": [
         "โปรดเลือกโฟลเดอร์ที่ต้องการนำเข้า:"
+      ],
+      "Please select the labels you would like to import:": [
+        "โปรดเลือกป้ายกำกับที่ต้องการนำเข้า:"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "โปรดลองอีกครั้งโดยใช้วิธีการชำระเงินอื่น หรือติดต่อธนาคาร"
@@ -6895,6 +7170,9 @@
       ],
       "Recently used servers:": [
         "เซิร์ฟเวอร์ที่ใช้ล่าสุด:"
+      ],
+      "RECOMMENDED": [
+        "แนะนำ"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "แนะนำบนอุปกรณ์ที่เชื่อถือได้ ${ keepMeSignedInLearnMoreLink }"
@@ -7124,6 +7402,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "แนะนำโดย TechRadar Pro ด้วยคะแนน 4.2 จาก 5 ดาว"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "ไม่สามารถใช้งานได้ชั่วคราวเนื่องจากมีผู้ใช้งานจำนวนมาก โปรดลองใหม่อีกครั้งในภายหลัง"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "ไม่สามารถใช้งานได้ชั่วคราว โปรดกลับมาตรวจสอบในภายหลัง"
       ],
@@ -7318,6 +7599,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "เพื่อป้องกันการโจมตีจากสแปมและการละเมิด โปรดยืนยันว่าคุณไม่ใช่หุ่นยนต์"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "เพื่อช่วยให้จดจำรหัสผ่านได้ จะมีการขอให้ป้อนรหัสผ่านเป็นระยะ โดยความถี่ในการขอจะลดลงเมื่อเวลาผ่านไป"
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "ในการนำเข้ากิจกรรม ให้สร้างปฏิทินใน ${ CALENDAR_APP_NAME } ก่อน ซึ่งจะเป็นที่ที่กิจกรรมจะปรากฏขึ้นหลังจากการนำเข้า"
@@ -7547,6 +7831,9 @@
       "We'll notify you when the import is done.": [
         "จะแจ้งให้ทราบเมื่อการนำเข้าเสร็จสิ้น"
       ],
+      "We'll remind you to verify your password again later": [
+        "ระบบจะแจ้งเตือนให้ยืนยันรหัสผ่านอีกครั้งในภายหลัง"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "เราจะส่งรหัสยืนยันใหม่ไปยัง ${ strong }"
       ],
@@ -7751,6 +8038,12 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "คุณจะไม่สามารถกู้คืนข้อมูลที่ถูกล็อกโดยใช้ไฟล์กู้คืนที่ดาวน์โหลดไว้ การดำเนินการนี้จะปิดใช้งานการกู้คืนโดยใช้อุปกรณ์ด้วย"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "จะได้รับรางวัลเครดิต 1 เดือนหลังจากที่เพื่อนสมัครรับข้อมูลแผนรายปี และ 2 เดือนหลังจากที่เพื่อนสมัครรับข้อมูลแผนรายเดือน"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "ระบบจะเรียกเก็บเงินทุก ${ renewCycle } เดือน เป็นจำนวน ${ renewAmountStr } สามารถยกเลิกได้ตลอดเวลา"
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "คุณเปิดใช้งานการส่งต่อบนที่อยู่ Gmail ${ MAX_SYNC_PAID_USER } รายการแล้ว หากต้องการเพิ่มอีก โปรดปิดใช้งานรายการใดรายการหนึ่งก่อน"
       ],
@@ -7775,6 +8068,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "การเข้าใช้งานกำลังจะถูกระงับเร็วๆ นี้เนื่องจากมีใบแจ้งค่าชำระบริการอย่างน้อย 1 ใบจากบัญชีของคุณ ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "บัญชีถูกกำหนดค่าให้ใช้กลไกการเรียกเก็บภาษีแบบย้อนกลับอยู่ในขณะนี้ ซึ่งไม่รองรับแผนที่เลือกไว้ หากต้องการดำเนินการต่อ โปรดลบหมายเลข VAT ออกจากที่อยู่สำหรับเรียกเก็บเงิน หรือเลือกแผนอื่น"
+      ],
       "Your account was successfully updated with this promotion": [
         "บัญชีของคุณได้รับการอัปเดตด้วยโปรโมชันนี้แล้ว"
       ],
@@ -7798,6 +8094,12 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "ข้อมูลของการล็อคอินของคุณจะไม่ได้รับการบันทึกหลังจากเสร็จสิ้นการนำเข้าข้อมูล"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "วันที่เรียกเก็บเงินรอบถัดไปคือ ${ renewalTime } สามารถยกเลิกได้ทุกเมื่อ"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "วันที่เรียกเก็บเงินถัดไปคือ ${ renewalTime } สามารถยกเลิกได้ทุกเมื่อ โปรดติดต่อฝ่ายสนับสนุนหากต้องการเปลี่ยนแผนทันที"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "องค์กรของคุณใช้การลงชื่อเข้าใช้เพียงครั้งเดียว (SSO) กดเข้าสู่ระบบเพื่อดำเนินการต่อกับผู้ให้บริการ SSO ของคุณ"
@@ -8026,6 +8328,9 @@
       "${ nbDay } day": [
         "${ nbDay } วัน"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } ตัวอักษร"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(ไม่สามารถใช้งานได้ชั่วคราว โปรดกลับมาตรวจสอบในภายหลัง)"
       ],
@@ -8049,6 +8354,9 @@
       ],
       "Add all organization members": [
         "เพิ่มสมาชิกองค์กรทั้งหมด"
+      ],
+      "Additional comments": [
+        "ความคิดเห็นเพิ่มเติม"
       ],
       "Address": [
         "ที่อยู่"
@@ -8212,6 +8520,9 @@
       "Contacts": [
         "รายชื่อผู้ติดต่อ"
       ],
+      "Continue cancelling": [
+        "ดำเนินการยกเลิกต่อ"
+      ],
       "Copy": [
         "คัดลอก"
       ],
@@ -8278,6 +8589,9 @@
       "Don't show this again": [
         "ไม่ต้องแสดงสิ่งนี้อีก"
       ],
+      "Drive": [
+        "ไดรฟ์"
+      ],
       "e.g. example.com": [
         "เช่น example.com"
       ],
@@ -8301,6 +8615,9 @@
       ],
       "Emails (last 3 months)": [
         "อีเมล (3 เดือนล่าสุด)"
+      ],
+      "Emails (last 6 months)": [
+        "อีเมล (6 เดือนล่าสุด)"
       ],
       "Emails (last month)": [
         "อีเมล (เดือนล่าสุด)"
@@ -8425,6 +8742,9 @@
       "Last 3 months only": [
         "3 เดือนล่าสุดเท่านั้น"
       ],
+      "Last 6 months only": [
+        "6 เดือนล่าสุดเท่านั้น"
+      ],
       "Last month only": [
         "เดือนล่าสุดเท่านั้น"
       ],
@@ -8442,6 +8762,9 @@
       ],
       "Main": [
         "รายชื่อติดต่อหลัก"
+      ],
+      "Main reason for cancelling": [
+        "เหตุผลหลักที่ยกเลิก"
       ],
       "Manage categories": [
         "จัดการหมวดหมู่"
@@ -8682,6 +9005,9 @@
       ],
       "Single sign-on URL": [
         "URL การลงชื่อเข้าใช้แบบครั้งเดียว"
+      ],
+      "Skip feedback": [
+        "ข้ามข้อเสนอแนะ"
       ],
       "Spam": [
         "สแปม"
@@ -8938,6 +9264,9 @@
       "Create an alias": [
         "สร้างนามแฝง"
       ],
+      "Don't have access to your 2FA?": [
+        "ไม่สามารถเข้าถึง 2FA ใช่หรือไม่?"
+      ],
       "Encryption and keys": [
         "คีย์ต่างๆ และการเข้ารหัส"
       ],
@@ -8953,11 +9282,17 @@
       "Forgot username?": [
         "ลืมชื่อผู้ใช้หรือไม่?"
       ],
+      "Frequent sign-in problems": [
+        "ปัญหาการเข้าสู่ระบบที่พบบ่อย"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "รับ ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "รับ ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "รับความช่วยเหลือจาก ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "กลุ่ม"
@@ -9269,6 +9604,17 @@
         "รับ ${ planTitle } ในราคา ${ discountedPriceElement }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "ใบอนุญาต ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } สิทธิ์ผู้ใช้"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "สิทธิ์ผู้ใช้ ${ MEET_APP_NAME } ${ seats } สิทธิ์"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: การประชุมทางวิดีโอที่เป็นความลับสำหรับบทสนทนาที่สำคัญ"
@@ -9276,11 +9622,17 @@
       "${ n } active meeting at a time": [
         "การประชุมที่ใช้งานอยู่ ${ n } รายการในแต่ละครั้ง"
       ],
+      "${ n } participant": [
+        "ผู้เข้าร่วม ${ n } คน"
+      ],
       "24 hours per meeting": [
         "24 ชั่วโมงต่อการประชุม"
       ],
       "60 minutes per meeting": [
         "60 นาทีต่อการประชุม"
+      ],
+      "Booking pages": [
+        "หน้าการจอง"
       ],
       "Browser, mobile, and desktop apps": [
         "แอปเบราว์เซอร์ มือถือ และเดสก์ท็อป"
@@ -9290,6 +9642,12 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "การแชร์หน้าจอที่เข้ารหัสลับจากต้นทางถึงปลายทางและการแชทในสายแบบชั่วคราว"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "โฮสต์สามารถบันทึกการประชุมไว้ในคอมพิวเตอร์ได้"
+      ],
+      "Meeting recording": [
+        "การบันทึกการประชุม"
       ],
       "One active meeting at a time": [
         "การประชุมที่ใช้งานอยู่หนึ่งรายการในแต่ละครั้ง"
@@ -9305,6 +9663,17 @@
       ],
       "Up to ${ n } participant": [
         "ผู้เข้าร่วมสูงสุด ${ n } คน"
+      ],
+      "Video meetings, ${ n } participant": [
+        "การประชุมผ่านวิดีโอ ผู้เข้าร่วม ${ n } คน"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "รวมสิทธิ์ผู้ใช้ ${ seats } สิทธิ์"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "สามารถมีสิทธิ์ผู้ใช้ ${ MEET_SHORT_APP_NAME } ได้สูงสุด ${ TRIAL_MAX_MEET_SEATS } สิทธิ์ในช่วงการทดลองใช้"
       ]
     },
     "Member action": {
@@ -9561,6 +9930,9 @@
       "${ n } VPN connection": [
         "${ n }การเชื่อมต่อ VPN"
       ],
+      "${ options }-day file version history": [
+        "ประวัติเวอร์ชันไฟล์ ${ options } วัน"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin ตลอดชีพ"
       ],
@@ -9615,6 +9987,9 @@
       "99.95% SLA": [
         "SLA 99.95%"
       ],
+      "Access all countries": [
+        "เข้าถึงได้ทุกประเทศ"
+      ],
       "Activity logs and policy": [
         "บันทึกกิจกรรมและนโยบาย"
       ],
@@ -9641,6 +10016,12 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "บริการพื้นฐานทั้งหมดของ ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "การกำหนดเวลานัดหมาย"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "การกำหนดเวลานัดหมายด้วยหน้าการจอง ${ n } หน้า"
       ],
       "Apps for": [
         "แอปสำหรับ"
@@ -9699,8 +10080,14 @@
       "Data breach monitoring": [
         "การตรวจสอบการละเมิดข้อมูล"
       ],
+      "Data retention policies": [
+        "นโยบายการเก็บรักษาข้อมูล"
+      ],
       "Dedicated servers and IP": [
         "เซิร์ฟเวอร์และ IP เฉพาะ"
+      ],
+      "Dedicated servers optimized for speed": [
+        "เซิร์ฟเวอร์เฉพาะที่ปรับให้เหมาะสมเพื่อความเร็ว"
       ],
       "Desktop app": [
         "แอปเดสก์ท็อป"
@@ -9774,6 +10161,9 @@
       "Multiple admin roles": [
         "บทบาทผู้ดูแลระบบหลายรายการ"
       ],
+      "No streaming support": [
+        "ไม่มีฝ่ายสนับสนุนการสตรีม"
+      ],
       "No-logs policy": [
         "นโยบายไม่บันทึกข้อมูลการใช้งาน"
       ],
@@ -9798,6 +10188,9 @@
       "Password-protected Emails": [
         "อีเมลที่ป้องกันด้วยรหัสผ่าน"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "ฝ่ายสนับสนุนทางโทรศัพท์ (ผู้ใช้ ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ คน)"
+      ],
       "Priority email support": [
         "ฝ่ายสนับสนุนทางอีเมลแบบพิเศษ"
       ],
@@ -9806,6 +10199,9 @@
       ],
       "Priority support & live chat": [
         "การสนับสนุนพิเศษ & พูดคุยกับเจ้าหน้าที่"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "แชท AI ส่วนตัว (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "การสำรองข้อมูลรูปภาพส่วนตัว"
@@ -9927,6 +10323,9 @@
       "Unlimited volume/bandwidth": [
         "ปริมาณข้อมูล/แบนด์วิดท์ไม่จำกัด"
       ],
+      "Unlock streaming": [
+        "ปลดล็อกการสตรีม"
+      ],
       "Up to ${ n } user": [
         "ผู้ใช้สูงสุด ${ n } ราย"
       ],
@@ -9956,6 +10355,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "การแชร์ห้องนิรภัยกับผู้คนสูงสุด ${ n } คน"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN พร้อมตัวบล็อกโฆษณาและการป้องกันมัลแวร์"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "เราสแกนเว็บมืดเพื่อตรวจสอบว่าที่อยู่หรือนามแฝง ${ BRAND_NAME } ของคุณรั่วไหลหรือไม่ และแจ้งเตือนทันทีหากพบข้อมูล"
@@ -10266,6 +10668,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "ปรับแต่งลายเซ็นอีเมลของคุณด้วยโลโก้ รูปภาพ ไอคอนโซเชียลมีเดีย ลิงก์ไปยังรายละเอียดผู้ติดต่อ และอื่นๆ"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "ฝ่ายสนับสนุนทางโทรศัพท์ให้บริการโดยทีมฝ่ายสนับสนุนลูกค้า ${ BRAND_NAME } ในช่วงเวลาทำการของยุโรป สำหรับลูกค้าที่มีผู้ใช้ตั้งแต่ ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } คนขึ้นไป"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "ป้องกันไม่ให้ข้อความถูกเข้าถึงโดย ${ BRAND_NAME } หรือบุคคลที่สาม ผู้ที่สามารถอ่านข้อความได้มีเพียงผู้ส่งและผู้รับที่ตั้งใจไว้เท่านั้น"
       ],
@@ -10366,6 +10771,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ประเทศ"
+      ],
       "Access advanced VPN features": [
         "เข้าถึงคุณสมบัติ VPN ขั้นสูง"
       ],
@@ -11205,6 +11613,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (ไม่รวมภาษี)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "ภาษี ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "ภาษี ${ rate }%: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "ยอดที่ต้องชำระหลังการทดลองใช้ในวันที่ ${ formattedDate }"
       ],
@@ -11226,11 +11643,26 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "ในช่วงเวลานี้ จะไม่สามารถแก้ไขหรือยกเลิกการสมัครสมาชิกได้ โปรดรอจนกว่าการชำระเงินจะเสร็จสมบูรณ์ก่อนทำการเปลี่ยนแปลงใดๆ ขอบคุณสำหรับความอดทน"
       ],
+      "Edit billing address": [
+        "แก้ไขที่อยู่สำหรับการเรียกเก็บเงิน"
+      ],
       "Got it": [
         "รับทราบ"
       ],
       "I'm purchasing as a business": [
         "ฉันกำลังซื้อในนามธุรกิจ"
+      ],
+      "Including ${ rate }% tax": [
+        "รวมภาษี ${ rate }%"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "รวมภาษี ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "รวมภาษี ${ rate }%"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "รวมภาษี ${ rate }%: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "ดด/ปป"
@@ -11256,14 +11688,29 @@
       "Sorry, this offer is not available with your current plan.": [
         "ขออภัย ข้อเสนอนี้ไม่พร้อมใช้งานกับแผนปัจจุบันของคุณ"
       ],
+      "Tax ${ rate }%": [
+        "ภาษี ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "ภาษี ${ rate }%"
+      ],
       "terms and conditions": [
         "ข้อกำหนดและเงื่อนไข"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ส่วนลดนี้ใช้ได้สำหรับการต่ออายุ ${ renewalsWithCoupon } ครั้ง"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "ราคาลดพิเศษใช้ได้สำหรับ ${ couponRedemptions } เดือน จากนั้นจะต่ออายุอัตโนมัติที่ ${ renewPriceStr } เป็นเวลา 1 เดือน คุณสามารถยกเลิกได้ตลอดเวลา"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "ราคาลดพิเศษใช้ได้สำหรับ ${ subscriptionLength } เดือนแรก"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "ราคาลดพิเศษใช้ได้สำหรับเดือนแรก จากนั้นจะต่ออายุอัตโนมัติที่ ${ renewPriceStr } ทุกเดือน สามารถยกเลิกได้ตลอดเวลา"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "ราคาลดพิเศษ ${ priceWithDiscount } ใช้ได้สำหรับ ${ couponRedemptions } เดือน จากนั้นจะต่ออายุอัตโนมัติที่ ${ renewPriceStr } เป็นเวลา 1 เดือน คุณสามารถยกเลิกได้ตลอดเวลา"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "ราคาลดพิเศษ ${ priceWithDiscount } ใช้ได้สำหรับ ${ subscriptionLength } เดือนแรก"
@@ -11291,6 +11738,9 @@
       ],
       "VAT number": [
         "หมายเลข VAT"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "ใช้กลไกการเรียกเก็บภาษีแบบย้อนกลับของ VAT"
       ],
       "You already have a subscription to this plan.": [
         "มีการสมัครสมาชิกสำหรับแผนนี้อยู่แล้ว"
@@ -11385,6 +11835,20 @@
         "ฟรี"
       ]
     },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "ราคาต่ออายุขึ้นอยู่กับภูมิภาคที่เรียกเก็บเงินและหมายเลข ABN"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "ราคาต่ออายุขึ้นอยู่กับภูมิภาคที่เรียกเก็บเงินและหมายเลขทะเบียนธุรกิจ"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "ราคาต่ออายุขึ้นอยู่กับภูมิภาคที่เรียกเก็บเงินและหมายเลข EIN"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "ราคาต่ออายุขึ้นอยู่กับภูมิภาคที่เรียกเก็บเงินและหมายเลขประจำตัวผู้เสียภาษี"
+      ]
+    },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Apple Pay - บัตรที่ลงท้ายด้วย ${ paymentMethod.Details.Last4 }"
@@ -11460,6 +11924,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "ข้อมูลที่ต้องการแจ้งให้ทราบ"
+      ],
       "Anytown": [
         "Anytown"
       ],
@@ -11474,6 +11941,9 @@
       ],
       "Confirm": [
         "ยืนยัน"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
       ],
       "domain.com": [
         "domain.com"
@@ -11495,6 +11965,9 @@
       ],
       "End date": [
         "วันที่สิ้นสุด"
+      ],
+      "Enter a name": [
+        "ป้อนชื่อ"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -11532,6 +12005,9 @@
       "Postal code": [
         "รหัสไปรษณีย์"
       ],
+      "San Francisco": [
+        "ซานฟรานซิสโก"
+      ],
       "Search": [
         "ค้นหา"
       ],
@@ -11552,6 +12028,9 @@
       ],
       "Select": [
         "เลือก"
+      ],
+      "Select a provider": [
+        "เลือกผู้ให้บริการ"
       ],
       "Select a reason": [
         "เลือกเหตุผล"
@@ -11695,6 +12174,26 @@
       ],
       "Unknown": [
         "ระบุไม่ได้"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "อื่นๆ"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q2campaign2026: Action": {
@@ -12665,6 +13164,14 @@
         "แชร์โดย ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "เปิดใน ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "เปิดใน ${ appName } (เบต้า)"
+      ]
+    },
     "Signup": {
       "1 month": [
         "1 เดือน"
@@ -12884,6 +13391,9 @@
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "รับนามแฝงไม่จำกัดเพื่อปกป้องข้อมูลระบุตัวตนของคุณและลดสแปม"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "เก็บรักษารหัสผ่านให้ปลอดภัยและเป็นระเบียบในห้องนิรภัยหลายแห่ง"
       ],
       "Protect your account from threats with Sentinel": [
         "ปกป้องบัญชีของคุณจากภัยคุกคามด้วย Sentinel"
@@ -13390,6 +13900,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "ผู้ช่วยการเขียน ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } และ ${ LUMO_APP_NAME } พร้อมคุณสมบัติพรีเมียม"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } และ ${ VPN_SHORT_APP_NAME } พร้อมคุณสมบัติพรีเมียม"
       ],
@@ -13641,6 +14157,9 @@
       ],
       "Version history": [
         "ประวัติเวอร์ชัน"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "การประชุมผ่านวิดีโอ ผู้เข้าร่วมสูงสุด ${ PAID_PREMIUM_MAX_PARTICIPANTS } คน"
       ],
       "Watch the interview": [
         "ดูบทสัมภาษณ์"
@@ -14333,6 +14852,9 @@
       "Change second password": [
         "เปลี่ยนรหัสผ่านที่สอง"
       ],
+      "Choose a provider": [
+        "เลือกผู้ให้บริการ"
+      ],
       "Choose user affiliations": [
         "เลือกสังกัดของผู้ใช้"
       ],
@@ -14428,6 +14950,9 @@
       ],
       "Currency": [
         "สกุลเงิน"
+      ],
+      "Custom": [
+        "กำหนดเอง"
       ],
       "Custom selection of users": [
         "เลือกผู้ใช้แบบกำหนดเอง"
@@ -14705,6 +15230,9 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "นำเข้าโดย ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "นำเข้าข้อมูลไปยัง ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "ข้อมูลที่ถูกเปิดเผยในการละเมิดข้อมูล"
       ],
@@ -14728,6 +15256,9 @@
       ],
       "Main password": [
         "รหัสผ่านหลัก"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "ย้ายองค์กรไปยัง ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "ปฏิทินขนาดเล็ก"
@@ -14897,6 +15428,9 @@
       "Restore administrator privileges": [
         "คืนสิทธิ์ให้กับผู้ดูแลระบบ"
       ],
+      "Reverse charge not supported": [
+        "ไม่รองรับการเรียกเก็บเงินย้อนกลับ"
+      ],
       "Revoke certificate?": [
         "ยกเลิกใบรับรอง?"
       ],
@@ -14923,6 +15457,9 @@
       ],
       "Select contact group": [
         "เลือกกลุ่มรายชื่อติดต่อ"
+      ],
+      "Select data to import": [
+        "เลือกข้อมูลที่จะนำเข้า"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "ส่งและรับ Gmail ผ่าน ${ MAIL_APP_NAME }"
@@ -15124,6 +15661,9 @@
       ],
       "Verification failed": [
         "การยืนยันล้มเหลว"
+      ],
+      "Verify your password": [
+        "ยืนยันรหัสผ่าน"
       ],
       "Verifying your card...": [
         "กำลังยืนยันบัตร..."
@@ -15327,6 +15867,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "หากคุณมีรหัสของขวัญจากการซื้อหรือจากทีมสนับสนุนของเรา โปรดใส่รหัสในช่องด้านล่างนี้"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "ช่วยเหลือด้วย AI ทันใจ พร้อมมีผู้เชี่ยวชาญที่เป็นมนุษย์คอยให้บริการ!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "สมาชิกที่ไม่ได้ใช้ 2FA จะได้รับอีเมลเพื่อขอให้เปิดใช้งานโดยเร็วที่สุด ผู้ใช้ Single Sign-On จะไม่ได้รับอีเมลแจ้งเตือน"

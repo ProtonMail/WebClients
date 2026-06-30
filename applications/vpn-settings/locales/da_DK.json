@@ -494,6 +494,9 @@
       "Extend": [
         "Forlæng"
       ],
+      "Finish": [
+        "Afslut"
+      ],
       "Fit to window": [
         "Tilpas til vinduet"
       ],
@@ -889,6 +892,9 @@
       ],
       "Review": [
         "Gennemse"
+      ],
+      "Review changes": [
+        "Gennemse ændringer"
       ],
       "Revoke": [
         "Tilbagekald"
@@ -2219,11 +2225,6 @@
       ],
       "Take a tour": [
         "Tag en tour"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importér ældre beskeder i ${ PRODUCT_NAMES.EASY_SWITCH } indstillinger."
       ]
     },
     "Cancellation upsell": {
@@ -3720,9 +3721,6 @@
       "We will pause imports at 80% storage to reserve space for new messages.": [
         "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
       ],
-      "We'll import your old emails and sync new messages from Gmail going forward": [
-        "Vi importerer dine gamle e-mails og synkroniserer nye beskeder fra Gmail fremover."
-      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
       ],
@@ -3746,6 +3744,12 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Du kan stadig logge ind med denne adresse og genoprette forbindelsen når som helst."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Du vil ikke længere kunne bruge ${ address.Email } til at modtage og sende e-mails i ${ BRAND_NAME }. Bemærk at beskeder sendt til denne adresse fra ${ BRAND_NAME } ikke længere vil være end-to-end-krypterede."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
@@ -5561,8 +5565,8 @@
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
       ],
-      "Insert your security key into your device's USB port.": [
-        "Indsæt din sikkerhedsnøgle i din enheds USB-port."
+      "Insert your security key into your device.": [
+        "Indsæt din sikkerhedsnøgle i din enhed."
       ],
       "Security key": [
         "Sikkerhedsnøgle"
@@ -5575,6 +5579,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Dette vil slette alle sikkerhedsnøgler forbundet til din konto."
+      ],
+      "Touch your security key.": [
+        "Tryk på din sikkerhedsnøgle."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekræft din identitet med en fysisk U2F- eller FIDO2-sikkerhedsnøgle"
@@ -5788,6 +5795,12 @@
       ],
       "General": [
         "Generelt"
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Administrer brugere og grupper, og tildel roller og licenser til medlemmer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Administrerer sikkerhedsindstillinger og kan se alle logs og brugerdetaljer."
       ],
       "Roles and permissions": [
         "Roller og tilladelser"
@@ -6271,7 +6284,7 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+      "${ BRAND_NAME } Business plans give your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } Business abonnementer giver dit team alle værktøjerne til at samarbejde produktivt og på en organiseret måde, samtidig med at holde din virksomhed sikker."
       ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
@@ -8210,6 +8223,9 @@
       "Symbols (#$&)": [
         "Symboler (#$&)"
       ],
+      "Synced from identity provider": [
+        "Synkroniseret fra identitetsudbyder"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro anbefalet - bedømt til 4,2 ud af 5 stjerner"
       ],
@@ -9165,6 +9181,9 @@
       "Declined": [
         "Afvist"
       ],
+      "Group Owner": [
+        "Gruppeejer"
+      ],
       "Paused": [
         "Sat på pause"
       ],
@@ -9710,9 +9729,6 @@
       "Import to:": [
         "Importer til:"
       ],
-      "Import your emails": [
-        "Importér dine e-mails"
-      ],
       "Include application logs in bug report": [
         "Inkluder applikationslogfiler i fejlrapporten"
       ],
@@ -9892,6 +9908,9 @@
       ],
       "Password": [
         "Adgangskode"
+      ],
+      "Password check-ins": [
+        "Adgangskode check-ins"
       ],
       "Password strength": [
         "Adgangskodestyrke"
@@ -10840,6 +10859,9 @@
       ],
       "Add address": [
         "Tilføj adresse"
+      ],
+      "Change backup password": [
+        "Skift backup-adgangskode"
       ],
       "Change password": [
         "Skift adgangskode"
@@ -12784,6 +12806,12 @@
       ],
       "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
         "Sørg for at du husker din adgangskode eller opbevarer den sikkert, da den er nøglen til at dekryptere dine data."
+      ],
+      "Turn off check-ins": [
+        "Slå check-ins fra"
+      ],
+      "Turn off password check-ins?": [
+        "Slå adgangskode check-ins fra?"
       ]
     },
     "passwordless": {
@@ -14040,6 +14068,66 @@
         "Tester SAML-konfiguration"
       ]
     },
+    "scim": {
+      "${ memberCount } new member": [
+        "${ memberCount } nyt medlem",
+        "${ memberCount } nye medlemmer"
+      ],
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } gruppe synkroniseret",
+        "${ numberOfPendingGroups } grupper synkroniseret"
+      ],
+      "${ numberOfPendingUsers } user synced": [
+        "${ numberOfPendingUsers } bruger synkroniseret",
+        "${ numberOfPendingUsers } brugere synkroniseret"
+      ],
+      "${ pendingGroupsCount } group": [
+        "${ pendingGroupsCount } gruppe",
+        "${ pendingGroupsCount } grupper"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } gruppe synkroniseret.",
+        "${ pendingGroupsCount } grupper synkroniseret."
+      ],
+      "${ pendingUsersCount } user": [
+        "${ pendingUsersCount } bruger",
+        "${ pendingUsersCount } brugere"
+      ],
+      "${ pendingUsersCount } user synced.": [
+        "${ pendingUsersCount } bruger synkroniseret.",
+        "${ pendingUsersCount } brugere synkroniseret."
+      ],
+      "${ usersText } and ${ groupsText } synced.": [
+        "${ usersText } og ${ groupsText } synkroniseret."
+      ],
+      "Approve changes from your identity provider": [
+        "Godkend ændringer fra din identitetsudbyder"
+      ],
+      "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
+        "Endelig godkendelse kræves for at give adgang på tværs af alle ${ BRAND_NAME }-tjenester."
+      ],
+      "From your identity provider": [
+        "Fra din identitetsudbyder"
+      ],
+      "New": [
+        "Ny"
+      ],
+      "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
+        "Når det er godkendt, kan de tilgå alle ${ BRAND_NAME }-tjenester og dele sikkert."
+      ],
+      "Private user": [
+        "Privat bruger"
+      ],
+      "Review users and groups before finishing setup": [
+        "Gennemgå brugere og grupper før konfigurationen færdiggøres"
+      ],
+      "Updated": [
+        "Opdateret"
+      ],
+      "Users that you have set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
+        "Brugere, du har angivet som private, skal acceptere invitationen for at færdiggøre konfigurationen. Vi sender dem en invitation når du har godkendt."
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Konfigurér SCIM"
@@ -15101,6 +15189,17 @@
         "Opsiger dit abonnement, vent venligst"
       ]
     },
+    "Status": {
+      "... waiting": [
+        "... venter"
+      ],
+      "completed": [
+        "fuldført"
+      ],
+      "finalizing": [
+        "færdiggør"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "Opgradér lagerplads"
@@ -15849,6 +15948,12 @@
       "Organization name updated": [
         "Organisationens navn opdateret"
       ],
+      "Password check-ins disabled": [
+        "Adgangskode check-ins deaktiveret"
+      ],
+      "Password check-ins enabled": [
+        "Adgangskode check-ins aktiveret"
+      ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
       ],
@@ -16171,9 +16276,6 @@
         "${ friendsSubscribed } ven har abonneret",
         "${ friendsSubscribed } venner har abonneret"
       ],
-      "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "${ LUMO_SHORT_APP_NAME }-skriveassistent"
-      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } til organisationer"
       ],
@@ -16330,6 +16432,9 @@
       ],
       "Apply gift code": [
         "Tilføj gavekode"
+      ],
+      "Approve changes": [
+        "Godkend ændringer"
       ],
       "Are you already signed in to ${ BRAND_NAME } in a browser?": [
         "Er du allerede logget ind på ${ BRAND_NAME } i en browser?"
@@ -17961,6 +18066,15 @@
       "Invitation email": [
         "Invitationsmail"
       ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
+      ],
+      "Manage users and groups, assign roles, and allocate licenses to members.": [
+        "Administrer brugere og grupper, og tildel roller og licenser til medlemmer."
+      ],
+      "Manages security settings and can view all event logs and user details.": [
+        "Administrerer sikkerhedsindstillinger og kan se alle logs og brugerdetaljer."
+      ],
       "Name": [
         "Navn"
       ],
@@ -17993,6 +18107,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "You'll be able to assign roles once the user has accepted the invitation.": [
+        "Du vil kunne tildele roller når brugeren har accepteret invitationen."
       ]
     },
     "Users table: badge": {

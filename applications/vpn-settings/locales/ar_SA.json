@@ -467,6 +467,9 @@
       "Extend": [
         "تمديد"
       ],
+      "Finish": [
+        "انتهى"
+      ],
       "Fit to window": [
         "ملاءمة للنافذة"
       ],
@@ -553,6 +556,9 @@
       ],
       "Help and resources": [
         "المساعدة والمصادر"
+      ],
+      "Hide": [
+        "إخفاء"
       ],
       "Hide more benefits": [
         "إخفاء المزيد من المزايا"
@@ -1228,6 +1234,14 @@
         "${ domains } نطاقًا مخصصًا إضافيًا",
         "${ domains } نطاق مخصص إضافي"
       ],
+      "${ ips } dedicated VPN servers": [
+        "لا يوجد خادم VPN مخصص ${ ips }",
+        "خادم VPN مخصص واحد ${ ips }",
+        "خادمان VPN مخصصان ${ ips }",
+        "${ ips } خوادم VPN مخصصة",
+        "${ ips } خادم VPN مخصص",
+        "${ ips } خادم VPN مخصص"
+      ],
       "${ LUMO_APP_NAME } AI assistant": [
         "مساعد الذكاء الاصطناعي ${ LUMO_APP_NAME }"
       ],
@@ -1265,6 +1279,14 @@
         "${ quantity } نطاقًا مخصصًا",
         "${ quantity } نطاق مخصص"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI licenses": [
+        "لا يوجد ترخيص ${ LUMO_APP_NAME } للذكاء الاصطناعي لـ ${ seats }",
+        "${ seats } ترخيص AI لـ ${ LUMO_APP_NAME }",
+        "${ seats } ترخيصان AI لـ ${ LUMO_APP_NAME }",
+        "${ seats } تراخيص AI لـ ${ LUMO_APP_NAME }",
+        "${ seats } ترخيصاً AI لـ ${ LUMO_APP_NAME }",
+        "${ seats } ترخيص AI لـ ${ LUMO_APP_NAME }"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seats": [
         "${ seats } من مقاعد ${ LUMO_APP_NAME }",
         "مقعد واحد (${ seats }) في ${ LUMO_APP_NAME }",
@@ -1272,6 +1294,14 @@
         "${ seats } مقاعد في ${ LUMO_APP_NAME }",
         "${ seats } مقعدًا في ${ LUMO_APP_NAME }",
         "${ seats } مقعد في ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } licenses": [
+        "${ seats } ترخيص لـ ${ MEET_APP_NAME }",
+        "${ seats } ترخيص لـ ${ MEET_APP_NAME }",
+        "${ seats } ترخيصان لـ ${ MEET_APP_NAME }",
+        "${ seats } تراخيص لـ ${ MEET_APP_NAME }",
+        "${ seats } ترخيصاً لـ ${ MEET_APP_NAME }",
+        "${ seats } ترخيص لـ ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seats": [
         "${ seats } من مقاعد مساعد الكتابة",
@@ -2479,6 +2509,9 @@
       "Canada": [
         "كندا"
       ],
+      "Canary Islands": [
+        "جزر الكناري"
+      ],
       "Cape Verde": [
         "الرأس الأخضر"
       ],
@@ -2877,6 +2910,9 @@
       ],
       "North Korea": [
         "كوريا الشمالية"
+      ],
+      "North Macedonia": [
+        "مقدونيا الشمالية"
       ],
       "Northern Mariana Islands": [
         "جزر ماريانا الشمالية"
@@ -3404,6 +3440,14 @@
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "لربط عنوان Gmail آخر، أزل عناوين Gmail الإضافية التي تقوم بإعادة توجيه الرسائل إلى ${ BRAND_NAME }."
       ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail addresses, upgrade to ${ planName }.": [
+        "لربط ما يصل إلى ${ MAX_SYNC_PAID_USER } من عناوين Gmail، قم بالترقية إلى ${ planName }.",
+        "لربط ما يصل إلى ${ MAX_SYNC_PAID_USER } من عناوين Gmail، قم بالترقية إلى ${ planName }.",
+        "لربط ما يصل إلى ${ MAX_SYNC_PAID_USER } من عناوين Gmail، قم بالترقية إلى ${ planName }.",
+        "لربط ما يصل إلى ${ MAX_SYNC_PAID_USER } من عناوين Gmail، قم بالترقية إلى ${ planName }.",
+        "لربط ما يصل إلى ${ MAX_SYNC_PAID_USER } من عناوين Gmail، قم بالترقية إلى ${ planName }.",
+        "لربط ما يصل إلى ${ MAX_SYNC_PAID_USER } من عناوين Gmail، قم بالترقية إلى ${ planName }."
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "لمواصلة استلام رسائل Gmail وإرسالها في ${ BRAND_NAME }، يرجى إعادة توصيل حسابك."
       ],
@@ -3460,6 +3504,14 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "يمكنك الآن إرسال رسائل البريد الإلكتروني من ${ BRAND_NAME } باستخدام هذا العنوان."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of your connected accounts.": [
+        "لقد قمت باتصال ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة",
+        "لقد قمت باتصال ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة.",
+        "لقد قمت بربط ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة.",
+        "لقد قمت بربط ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة.",
+        "لقد قمت بربط ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة.",
+        "لقد قمت بربط ${ MAX_SYNC_PAID_USER } من عناوين Gmail. لإضافة عنوان آخر، قم أولًا بتعطيل أحد حساباتك المرتبطة."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "لقد قمت بتوصيل عنوان حساب خارجي واحد ب ${ MAIL_APP_NAME }."
@@ -3747,6 +3799,9 @@
       ]
     },
     "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "لإعادة توجيه رسائل البريد الإلكتروني من ما يصل إلى ${ MAX_SYNC_PAID_USER } حسابًا، قم بالترقية إلى ${ planName }."
+      ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "أنت تقوم بإعادة توجيه رسائل البريد الإلكتروني من حساب خارجي واحد إلى ${ MAIL_APP_NAME }."
       ]
@@ -4068,6 +4123,9 @@
       "Enter 6 digits": [
         "أدخل ٦ أرقام"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "أدخل اسم مستخدمك دون النطاق (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "خطأ في الاتصال بـ API Bitcoin."
       ],
@@ -4079,6 +4137,9 @@
       ],
       "Failed to load OAuth modal.": [
         "فشل تحميل نافذة OAuth."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "تعذر تحميل بيانات الإشتراك. يُرجى المحاولة مرة أخرى لاحقًا."
       ],
       "Failed to load the STL preview": [
         "فشل تحميل معاينة STL"
@@ -4886,6 +4947,14 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "ستُصدر فاتورة الاشتراك للمسؤول الأساسي لهذه الخطة."
       ],
+      "View the invitations": [
+        "رؤية الدعوة",
+        "رؤية الدعوة",
+        "عرض الدعوات",
+        "عرض الدعوات",
+        "رؤية الدعوات",
+        "عرض الدعوة"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "أنت مدعو للانضمام إلى ${ invite.OrganizationName }"
       ],
@@ -5195,6 +5264,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "حدث خطأ أثناء المصادقة باستخدام مفتاح الأمان. يرجى المحاولة مجددًا."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "حدث خطأ ما أثناء تسجيل مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
       ]
@@ -5215,8 +5287,8 @@
       "Are you sure you want to delete security key ${ name }?": [
         "هل أنت متأكد من أنك تريد حذف مفتاح الأمان ${ name }؟"
       ],
-      "Insert your security key into your device's USB port.": [
-        "أدرج مفتاح الأمان في منفذ USB بجهازك."
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "إدراج مفتاح أمان مرتبط بحساب ${ BRAND_NAME }."
       ],
       "Security key": [
         "مفتاح الأمان"
@@ -5229,6 +5301,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "سيؤدي هذا إلى حذف جميع مفاتيح الأمان المرتبطة بحسابك."
+      ],
+      "Touch your security key.": [
+        "المس مفتاح أمانك."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "تحقق من هويتك باستخدام مفتاح أمان مادي U2F أو FIDO2"
@@ -6815,6 +6890,9 @@
       "Drop to import": [
         "أفلت للاستيراد"
       ],
+      "Each code can only be used once": [
+        "يمكن استخدام كل رمز مرة واحدة فقط"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "يمكن أن يحتوي كل نطاق على سجل SPF (TXT) واحد فقط. إذا كنت تريد الاحتفاظ بسجل SPF (TXT) الحالي، فيمكنك إضافة ${ spf } إلى سجلك الحالي (ضعه بعد ${ spfValue })."
       ],
@@ -6881,6 +6959,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "اضمن اتصالاً خاصًا ومشفّرًا بالكامل. طالب بعنوان بريدك الإلكتروني المجاني من ${ BRAND_NAME } الآن."
       ],
+      "Enter code": [
+        "أدخل الرمز"
+      ],
       "Enter key manually instead": [
         "أدخل المفتاح يدوياً بدلاً من ذلك"
       ],
@@ -6904,6 +6985,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "إدخال رمز التحقق. الرقم ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } الخاص بك."
@@ -7069,6 +7153,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "إذا فقدت الوصول إلى جهاز المصادقة الثنائية، يمكنك استخدام الرموز الاحتياطية لتسجيل الدخول إلى حسابك. يستخدم الرمز الاحتياطي مرة واحدة فقط."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "في حال فقدان الوصول إلى تطبيق المصادقة، يمكن استخدام رمز واحد من رموز الاسترداد الاحتياطية الـ 16 المقدمة عند إعداد المصادقة الثنائية. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "إذا تابعت عملية التخفيض، فستفقد الوصول إلى الميزات المدفوعة في ${ MAIL_APP_NAME } و${ VPN_APP_NAME }."
@@ -7576,6 +7663,9 @@
       ],
       "Please select the folders you would like to import:": [
         "يرجى تحديد المجلدات التي ترغب في استيرادها:"
+      ],
+      "Please select the labels you would like to import:": [
+        "يرجى تحديد التسميات التي ترغب في استيرادها:"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "يرجى المحاولة مرة أخرى باستخدام طريقة دفع مختلفة، أو الاتصال بالبنك الذي تتعامل معه."
@@ -8088,6 +8178,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "لمكافحة البريد المزعج وإساءة المعاملة، يرجى التحقق من أنك بشري."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "للمساعدة في تذكر كلمة المرور، سيُطلب إدخالها بشكل دوري. وستقل وتيرة الطلب مع مرور الوقت."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "لاستيراد الأحداث، أنشئ أولاً تقويمًا في ${ CALENDAR_APP_NAME }. هذا هو المكان الذي ستظهر فيه الأحداث بعد الاستيراد."
       ],
@@ -8585,6 +8678,14 @@
       ],
       "You'll receive the credit reward 2 months after your friend's trial ended.": [
         "ستحصل على مكافأة الائتمان بعد شهرين من انتهاء تجربة صديقك."
+      ],
+      "You'll then be billed every ${ renewCycle } months at ${ renewAmountStr }. You can cancel at any time.": [
+        "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } شهرًا بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت.",
+        "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } شهر بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت.",
+        "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } شهرين بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت.",
+        "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } أشهر بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت.",
+        "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } شهرًا بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت.",
+        "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } شهر بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
         "لقد فعَلتً إعادة التوجيه على ${ MAX_SYNC_PAID_USER } عنوان Gmail. لإضافة عنوان آخر، قم بتعطيل أحدها أولاً.",
@@ -9174,6 +9275,9 @@
       ],
       "Don't show this again": [
         "لا تظهر لي هذا مرة أخرى"
+      ],
+      "Drive": [
+        "سحابة التخزين"
       ],
       "e.g. example.com": [
         "على سبيل المثال example.com"
@@ -9863,6 +9967,9 @@
       "Details": [
         "تفاصيل"
       ],
+      "Don't have access to your 2FA?": [
+        "تعذر الوصول إلى المصادقة الثنائية (2FA)؟"
+      ],
       "Encryption and keys": [
         "التشفير والمفاتيح"
       ],
@@ -9886,6 +9993,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "أحصل على ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "الحصول على المساعدة من ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "المجموعات"
@@ -10232,6 +10342,14 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "مقاعد ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seats": [
+        "${ seats } مقعد في ${ MEET_APP_NAME }",
+        "${ seats } مقعد في ${ MEET_APP_NAME }",
+        "${ seats } مقعد في ${ MEET_APP_NAME }",
+        "${ seats } مقاعد في ${ MEET_APP_NAME }",
+        "${ seats } مقعداً في ${ MEET_APP_NAME }",
+        "${ seats } مقعد في ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -10305,6 +10423,14 @@
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seats included": [
+        "${ seats } مقعد مشمول",
+        "${ seats } مقعد مشمول",
+        "${ seats } مقعدان مشمولان",
+        "${ seats } مقاعد مشمولة",
+        "${ seats } مقعدًا مشمولًا",
+        "${ seats } مقعد مشمول"
+      ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "يمكنك الحصول على ما يصل إلى ${ TRIAL_MAX_MEET_SEATS } من مقاعد ${ MEET_SHORT_APP_NAME } خلال فترة التجربة."
       ]
@@ -10680,6 +10806,9 @@
       "99.95% SLA": [
         "اتفاقية مستوى الخدمة (SLA) بنسبة 99.95%"
       ],
+      "Access all countries": [
+        "الوصول إلى جميع الدول"
+      ],
       "Ad-blocker and malware protection": [
         "حظر الإعلانات والحماية من البرامج الضارة"
       ],
@@ -10706,6 +10835,14 @@
       ],
       "Appointment scheduling": [
         "جدولة المواعيد"
+      ],
+      "Appointment scheduling with ${ n } booking pages": [
+        "جدولة المواعيد مع ${ n } صفحة حجز",
+        "جدولة المواعيد مع ${ n } صفحة حجز",
+        "جدولة المواعيد مع ${ n } صفحة حجز",
+        "جدولة المواعيد مع ${ n } صفحات حجز",
+        "جدولة المواعيد مع ${ n } صفحة حجز",
+        "جدولة المواعيد مع ${ n } صفحة حجز"
       ],
       "Apps for": [
         "تطبيقات لـ"
@@ -10769,6 +10906,9 @@
       ],
       "Dedicated servers and IP": [
         "خوادم وعنوان IP مخصص"
+      ],
+      "Dedicated servers optimized for speed": [
+        "خوادم مخصصة ومحسّنة للسرعة"
       ],
       "Desktop app": [
         "تطبيق سطح المكتب"
@@ -11005,6 +11145,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "حجم/عرض نطاق ترددي غير محدود"
+      ],
+      "Unlock streaming": [
+        "فك الحظر عن البث"
       ],
       "Up to ${ n } users": [
         "ما يصل إلى ${ n } مستخدم",
@@ -15207,6 +15350,14 @@
       "Version history": [
         "تاريخ الإصدار"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants": [
+        "اجتماعات فيديو، حتى ${ PAID_PREMIUM_MAX_PARTICIPANTS } مشارك",
+        "اجتماعات فيديو، حتى ${ PAID_PREMIUM_MAX_PARTICIPANTS } مشارك",
+        "اجتماعات فيديو، حتى ${ PAID_PREMIUM_MAX_PARTICIPANTS } مشاركين",
+        "اجتماعات فيديو، حتى ${ PAID_PREMIUM_MAX_PARTICIPANTS } مشاركين",
+        "اجتماعات فيديو، حتى ${ PAID_PREMIUM_MAX_PARTICIPANTS } مشارك",
+        "اجتماعات فيديو، حتى ${ PAID_PREMIUM_MAX_PARTICIPANTS } مشارك"
+      ],
       "Watch the interview": [
         "شاهد المقابلة"
       ],
@@ -16385,6 +16536,9 @@
       "Main password": [
         "كلمة المرور الرئيسية"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "ترحيل مؤسستك إلى ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "التقويم المصغر"
       ],
@@ -16813,6 +16967,9 @@
       "Verify it’s you": [
         "تحقق من أنك أنت"
       ],
+      "Verify your password": [
+        "تحقّق من كلمة المرور"
+      ],
       "Verifying your card...": [
         "جارٍ التحقق من بطاقتك..."
       ],
@@ -17015,6 +17172,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "إذا اشتريت رمز هدية أو تلقيت رمزاً من فريق الدعم لدينا، يمكنك إدخاله هنا."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "مساعدة فورية بالذكاء الاصطناعي، وخبير بشري متوفر!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "سيتلقى الأعضاء الذين لا يستخدمون المصادقة الثنائية (2FA) بريدًا إلكترونيًا يطلب منهم تفعيلها في أقرب وقت ممكن. لن يتلقى مستخدمو تسجيل الدخول الموحد (SSO) رسالة التذكير."
@@ -17457,6 +17617,14 @@
         "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
         "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
         "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "جرّب اسم مستخدم أقصر (بحد أقصى ${ n } حرفًا)",
+        "يُرجى تجربة اسم مستخدم أقصر (بحد أقصى ${ n } حرف)",
+        "يُرجى تجربة اسم مستخدم أقصر (بحد أقصى ${ n } حرفين)",
+        "جرّب اسم مستخدم أقصر (بحد أقصى ${ n } أحرف)",
+        "جرّب اسم مستخدم أقصر (بحد أقصى ${ n } حرفًا)",
+        "جرّب اسم مستخدم أقصر (بحد أقصى ${ n } حرفًا)"
       ]
     },
     "Video control": {
